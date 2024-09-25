@@ -84,5 +84,5 @@ You might notice the use of a _?_ after the _pipeline()_ object reference, which
 
 ## Related content
 
-- [Create a Reflex trigger](../data-activator/data-activator-get-started.md#create-a-reflex-item)
+- [Create a Reflex trigger](../data-activator/data-activator-get-started.md#create-a-data-activator-reflex-item)
 - [Microsoft Fabric event streams](../real-time-analytics/event-streams/overview.md)

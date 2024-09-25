@@ -11,14 +11,14 @@ ms.date: 5/13/2024
 
 # Native execution engine for Fabric Spark
 
-The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with Runtime 1.2 (Spark 3.4), and works with both Parquet and Delta formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
+The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with Runtime 1.2 (Spark 3.4) and Runtime 1.3 (Spark 3.5), and works with both Parquet and Delta formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
 
 The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
 The Native Execution Engine is based on two key OSS components: [Velox](https://github.com/facebookincubator/velox), a C++ database acceleration library introduced by Meta, and [Apache Gluten (incubating)](https://github.com/apache/incubator-gluten), a middle layer responsible for offloading JVM-based SQL engines’ execution to native engines introduced by Intel.
 
 > [!NOTE]
-> The native execution engine is currently in public preview. For more information, see the current [limitations](#limitations). **At this stage of the preview, there is no additional cost associated with using it.**
+> The native execution engine is currently in public preview. For more information, see the current [limitations](#limitations). **Currently, there is no additional cost associated with using native execution engine.**
 
 ## When to use the native execution engine
 
@@ -36,9 +36,29 @@ For information on the operators and functions supported by the native execution
 To use the full capabilities of the native execution engine during the preview phase, specific configurations are necessary. The following procedures show how to activate this feature for notebooks, Spark job definitions, and entire environments.
 
 > [!IMPORTANT]
-> The native execution engine currently supports the latest GA runtime version, which is [Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md).
+> The native execution engine supports the latest GA runtime version, which is [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md) and the older version - [Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md). 
 
-### Enable for a notebook or Spark job definition
+
+### Enable at the environment level
+
+To ensure uniform performance enhancement, enable the native execution engine across all jobs and notebooks associated with your environment:
+
+1. Navigate to your environment settings.
+
+1. Go to **Spark compute**.
+
+1. Go to **Acceleration** Tab.
+ 
+1. Check the box labeled **Enable native execution engine.**
+
+1. **Save and Publish** the changes.
+
+   :::image type="content" source="media\native\enable-environment.png" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enablement.png":::
+
+When enabled at the environment level, all subsequent jobs and notebooks inherit the setting. This inheritance ensures that any new sessions or resources created in the environment automatically benefit from the enhanced execution capabilities.
+
+
+#### Enable for a notebook or Spark job definition
 
 To enable the native execution engine for a single notebook or Spark job definition, you must incorporate the necessary configurations at the beginning of your execution script:
 
@@ -56,29 +76,10 @@ For notebooks, insert the required configuration commands in the first cell. For
 
 :::image type="content" source="media\native\enable.png" alt-text="Screenshot showcasing how to enable the native execution engine inside the notebook." lightbox="media\native\enable.png":::
 
-The native execution engine is integrated with custom pools, meaning that enabling this feature initiates a new session, typically taking up to two minutes to start.
+The Native Execution Engine is integrated with live pools, so once you enable the feature, it takes effect immediately without requiring you to initiate a new session.
 
 > [!IMPORTANT]
 > Configuration of the native execution engine must be done prior to the initiation of the Spark session. After the Spark session starts, the `spark.shuffle.manager` setting becomes immutable and can't be changed. Ensure that these configurations are set within the `%%configure` block in notebooks or in the Spark session builder for Spark job definitions.
-
-### Enable at the environment level
-
-To ensure uniform performance enhancement, enable the native execution engine across all jobs and notebooks associated with your environment:
-
-1. Navigate to your environment settings.
-
-1. Go to **Spark properties**.
-
-1. Complete the fields on the **Spark properties** screen, as shown in the following image.
-
-| Property | Value |
-|:-:|:-:|
-| spark.native.enabled | true |
-| spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
-
-:::image type="content" source="media\native\enable-environment.png" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enable-environment.png":::
-
-When enabled at the environment level, all subsequent jobs and notebooks inherit the setting. This inheritance ensures that any new sessions or resources created in the environment automatically benefit from the enhanced execution capabilities.
 
 ### Control on the query level
 

@@ -18,15 +18,16 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) isn't yet available.
-- Connectors don't support OAuth, Azure key vault (AKV), and Managed System Identity (MSI).
-- Connectors can't use parameters.
-- GetMetaData activity can't have a source from Fabric KQL databases.
-- Script activity can't have a source from Fabric KQL databases.
-- Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
-- Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
-- Pipelines can't use a managed VNet.
-- Web activity does not support service principal based authentication.
-- Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly. 
+-	Connectors don't support OAuth and  Azure key vault (AKV).
+-	Managed System Identity (MSI) is only available for Azure Blob Storage. Support for other sources is coming soon. 
+-	Connectors can't use parameters.
+-	GetMetaData activity can't have a source from Fabric KQL databases.
+-	Script activity can't have a source from Fabric KQL databases.
+-	Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
+-	Validation activity, Mapping Data Flow activity, and the SSIS integration runtime are not available. 
+-	Pipelines can't use a managed virtual network.
+-	Web activity does not support service principal based authentication.
+-	Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly.
 
 ## Data pipeline resource limits
 
