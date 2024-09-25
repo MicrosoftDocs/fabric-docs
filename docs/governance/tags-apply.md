@@ -30,7 +30,7 @@ You must have write permissions on an item to be able to apply tags to it or rem
 
     :::image type="content" source="./media/tags-apply/choose-tags.png" alt-text="Screenshot showing how to choose tags to apply to an item.":::
 
-1. Choose the tags that are relevant for your item. You can select more than one tag. An item can have up to 10 tags applied.
+1. Choose the tags that are relevant for your item. You can select more than one tag. An item can have up to 10 tags.
 
 1. When done, select **Save** or **Apply**, if required. Otherwise, just close the settings pane.
 

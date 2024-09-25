@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 08/06/2024
+ms.date: 09/Z6/2024
 
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
 
@@ -15,6 +15,8 @@ ms.date: 08/06/2024
 # Create and manage a set of tags
 
 This article describes how to create and manage a set of tags in Microsoft Fabric. The target audience is Fabric administrators who want to create and manage such a set in their organization.
+
+For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.md).
 
 [Introduce and explain the purpose of the article.]
 Can create one or more tags at a time.
@@ -51,7 +53,13 @@ This section shows how to create a set of one or more tags.
 
 ## Rename a tag
 
-[TBD]
+1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (Preview)**.
+
+1. Open the options menu of the tag you want to rename and select **Rename**.
+
+    :::image type="content" source="./media/tags-define/rename-tag.png" alt-text="Screenshot showing how to rename a tag.":::
+
+1. Change the name as desired and then select **Rename**. The name changes wherever the tag is applied. 
 
 ## Delete a tag
 
