@@ -59,7 +59,7 @@ From Power BI, you also have the option of creating a pipeline from inside an ex
 
 From the workspace, select **Create deployment pipeline**.
 
-:::image type="content" source="media/get-started-with-deployment-pipelines/workspace-deploy.png" alt-text="Screenshot of the button for creating a pipeline in a workspace.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/create-pipeline.png" alt-text="Screenshot of the button for creating a pipeline in a workspace.":::
 
 ---
 
