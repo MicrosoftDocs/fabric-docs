@@ -87,7 +87,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
     | **Destination table** | *Create new* - enter *TutorialTable* as table name |
     | **Input data format** | *Json* |  
 
-1. Ensure that the box **Activate ingestion after adding the data** is checked. 
+1. Ensure that the box **Activate ingestion after adding the data** is checked.
 1. Select **Save**.
 1. From the menu ribbon, select **Publish**.
 
