@@ -12,7 +12,7 @@ ms.date: 09/30/2024
 
 # Use the Functions activity to run Fabric user data functions and Azure Functions
 
-The Functions activity in Data Factory for Microsoft Fabric allows you to run Fabric user data functions and Azure Functions.
+The Functions activity in Data Factory for Microsoft Fabric allows you to run Fabric user data functions (private preview) and Azure Functions.
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 Selecting the Settings tab, you can choose between 2 radio button options for the type of Functions activity you would like to execute.
 
 
-### 1) Fabric user data functions activity settings
+### 1) Fabric user data functions (private preview) activity settings
 Under the **Settings** tab, you can choose the **Fabric user data functions** option to run your customized user data functions for event driven scenarios. You will need to specify the **Workspace** information, choose an existing or create a new **User data function** and select the **Fabric function** you would like to execute.
 
 :::image type="content" source="media/functions-activity/fabric-user-data-functions-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Fabric user data functions activity.":::
