@@ -24,6 +24,8 @@ To get started, you must complete the following prerequisites:
 
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
+- Enable the preview on your Microsoft Fabric tenant from the Fabric admin portal. Enable the Azure Data Factory preview using admin portal or reach out to your Fabric admin.
+
 ## Bring your Azure Data Factory to Fabric
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
