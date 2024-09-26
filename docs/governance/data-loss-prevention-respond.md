@@ -7,7 +7,7 @@ manager: kfollis
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 09/23/2024
+ms.date: 09/26/2024
 
 #customer intent: As an owner of a Fabric lakehouse or Power BI semantic model, I want to understand how to deal with DLP policy violations on those items.
 
@@ -15,7 +15,7 @@ ms.date: 09/23/2024
 
 # Respond to a DLP policy violation in Fabric and Power BI
 
-When a [supported item type](./data-loss-prevention-overview.md#supported-item-types) you own violates a DLP policy, you may see a violation warning icon on the item in the OneLake data hub or workspace list view. Hover over the icon and select Show full details to display a side panel that displays the details of your item's DLP policy violations and provides options for responding to them. Alternatively:
+When a [supported item type](./data-loss-prevention-overview.md#supported-item-types) you own violates a DLP policy, a violation icon on the item in the OneLake data hub or workspace list view appears. Hover over the icon and select **Show full details** to display a side panel that displays the details of your item's DLP policy violations and provides options for responding to them. Alternatively:
 
 * From a semantic model details page, select the **View all** button on the policy tip.
 

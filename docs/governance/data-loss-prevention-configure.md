@@ -20,9 +20,6 @@ This article describes how to configure Purview data loss prevention (DLP) polic
 
 ## Prerequisites
 
-Data from DLP for Fabric can be viewed in [Activity explorer](/microsoft-365/compliance/data-classification-activity-explorer). There are four roles that grant permission to activity explorer; the account you use for accessing the data must be a member of any one of them.
-
-
 The account you use to create DLP policies must be a member of one of these role groups
 
 * Compliance administrator
@@ -34,7 +31,7 @@ The account you use to create DLP policies must be a member of one of these role
 
 ### SKU/subscriptions licensing
 
-Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you should confirm your [Microsoft 365 subscription](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans?rtc=1). The admin account that sets up the DLP rules must be assigned one of the following licenses:
+Before you get started with DLP for Fabric and Power BI, you should confirm your [Microsoft 365 subscription](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans?rtc=1). The admin account that sets up the DLP rules must be assigned one of the following licenses:
 
 * Microsoft 365 E5
 * Microsoft 365 E5 Compliance
@@ -42,8 +39,6 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
 * Purview capacities
 
 ## Configure a DLP policy for Fabric
-
-[Introduce the procedure.]
 
 1. Open the [data loss prevention policies page](https://purview.microsoft.com/datalossprevention/policies) in the Microsoft Purview portal and select **+ Create policy**.
 
@@ -63,7 +58,7 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
 
     :::image type="content" source="./media/data-loss-prevention-configure/name-policy.png" alt-text="Screenshot of D L P policy name description section.":::
 
-1. Select **Next** when you get to the Assign admin units page.
+1. Select **Next** when you get to the Assign admin units page. Admin units are not supported for DLP in Fabric and Power BI.
 
     :::image type="content" source="./media/data-loss-prevention-configure/admin-units.png" alt-text="Screenshot of D L P policy admin units section.":::
 
@@ -116,13 +111,13 @@ In the condition section, you define the conditions under which the policy will 
 
     ![Screenshot of confidence level setting for sensitive info types.](./media/data-loss-prevention-configure/power-bi-dlp-confidence-level-settings.png) 
 
-    You can add additional sensitivity labels or sensitive info types to the group. To the right of the group name, you can specify **Any of these** or **All of these**. This determines whether matches on all or any of the items in the group is required for the condition to hold. If you specified more than one sensitivity label, you'll only be able to choose **Any of these**, since semantic models can’t have more than one label applied.
+    You can add additional sensitivity labels or sensitive info types to the group. To the right of the group name, you can specify **Any of these** or **All of these**. This determines whether matches on all or any of the items in the group is required for the condition to hold. If you specified more than one sensitivity label, you'll only be able to choose **Any of these**, since Fabric and Power BI items can’t have more than one label applied.
 
     The image below shows a group (Default) that contains two sensitivity label conditions. The logic Any of these means that a match on any one of the sensitivity labels in the group constitutes *true* for that group.
 
     :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-condition-group.png" alt-text="Screenshot of D L P conditions group section.":::
  
-    You can use the Quick summary toggle to get the logic of the rule summarized in a sentence.
+    You can use the **Quick summary** toggle to get the logic of the rule summarized in a sentence.
 
     :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-condition-quick-summary.png" alt-text="Screenshot of D L P conditions quick summary.":::
 
@@ -164,7 +159,7 @@ The options are described below.
 
 * If you select both **Override the rule automatically if they report it as a false positive** and **Require a business justification to override**, users will be able to report the issue as a false positive and automatically override the policy, or they can just override the policy without reporting it as a false positive, but they'll have to provide a business justification.
 
-Overriding a policy means that from now on the policy will no longer check the semantic model for sensitive data.
+Overriding a policy means that from now on the policy will no longer check the item for sensitive data.
 
 Reporting an issue as a false positive means that the data owner believes that the policy has mistakenly identified non-sensitive data as sensitive. You can use false positives to fine tune your rules.
 
@@ -183,7 +178,7 @@ Assign a severity level that will be shown in alerts generated from this policy.
 
 ## Considerations and limitations
 
-* DLP policy templates aren't yet supported for Fabric DLP policies. When creating a DLP policy for Fabric, choose the "custom policy" option.
+* DLP policy templates aren't yet supported for Fabric DLP policies. When creating a DLP policy for Fabric, choose the *custom policy* option.
 * Fabric DLP policy rules currently support sensitivity labels and sensitive info types as conditions.
 
 

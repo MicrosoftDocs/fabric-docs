@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: concept-article #Don't change
-ms.date: 08/10/2024
+ms.date: 09/26/2024
 
 #customer intent: As a Fabric administrator, security or compliance admin, or data owner, I want to understand how Microsoft Purview data loss prevention policies work in Microsoft Fabric.
 
