@@ -122,7 +122,7 @@ When a DLP policy detects an issue with an item:
 
 * If "user notification" is enabled in the policy, the item will be marked in Fabric with an icon that indicates that a DLP policy has detected an issue with the item. Hover over the icon to display a hover card that provides an option to see the full details in a side panel. For more information about what you see in the side panel, see [Respond to a DLP violation in Fabric](./data-loss-prevention-respond.md).
 
-    :::image type="content" source="./media/data-loss-prevention-overview/dlp-policy-tip-indication.png" alt-text="Screenshot of policy tip icon in the OneLake data hub.":::
+    :::image type="content" source="./media/data-loss-prevention-overview/policy-tip-indication.png" alt-text="Screenshot of policy tip icon in the OneLake data hub.":::
 
     For semantic models, opening the details page will show a policy tip that explains the policy violation and how the type of sensitive information detected should be handled. Selecting **View all** opens a side panel with all the policy details.
 
