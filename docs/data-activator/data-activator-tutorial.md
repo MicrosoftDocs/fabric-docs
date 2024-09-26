@@ -32,11 +32,11 @@ Start by opening a workspace that has a Fabric capacity.
 
 1. From the Fabric homepage, select a workspace with a Fabric capacity and select **Create** > **Reflex**.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-create.png" alt-text="Screenshot showing the Reflex preview option.":::
+    :::image type="content" source="media/data-activator-tutorial/data-activator-create.png" alt-text="Screenshot showing the left navigation pane with Create selected.":::
 
 1. Select the sample to create a reflex that is prepopulated with sample events and objects.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-sample.png" alt-text="Screenshot showing the Reflex preview option.":::
+    :::image type="content" source="media/data-activator-tutorial/data-activator-sample.png" alt-text="Screenshot showing the option to add data or use the sample data.":::
 
 ## Explore the data
 
@@ -56,23 +56,23 @@ The Explorer pane displays objects, like event streams, for this reflex. **Deliv
 
 1. In the Explorer pane, select the event stream called **Delivery events**. You can create rules about objects that use data from the **Delivery events** event stream. For example, a rule that checks packages for temperature.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-temperature.png" alt-text="Screenshot showing the Reflex preview option.":::
+    :::image type="content" source="media/data-activator-tutorial/data-activator-temperature.png" alt-text="Screenshot showing Delivery events table and the temperature column.":::
 
 1. Notice that the **Events by object ID** section is organized by **Package ID**. **Package ID** is the column ID that uniquely identifies each package. We use this unique ID to assign the Package events to Package objects.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-unique-id.png" alt-text="Screenshot showing the reflex preview option."Lightbox="media/data-activator-tutorial/data-activator-unique-id.png":::
+    :::image type="content" source="media/data-activator-tutorial/data-activator-unique-id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen."Lightbox="media/data-activator-tutorial/data-activator-unique-id.png":::
 
 1. Select the **Temperature** rule called **Too hot for medicine**. Scroll through the **Definition** pane to see how the rule works.
 
 1. In the **Monitor** section, select **Temperature**. The temperature values come from the  *Temperature* column in the **Delivery events** table. (You can see the **Temperature** column in step 1.)
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-monitor.png" alt-text="Screenshot showing the Reflex preview option.":::
+    :::image type="content" source="media/data-activator-tutorial/data-activator-monitor.png" alt-text="Screenshot showing the Monitor section of the Definition pane.":::
 
 1. Scroll down to **Condition**. Our rule is monitoring temperatures that **become greater than** **50**. 
 
 1. Scroll further down to **Scope**. Our rule applies only to packages containing medicine. In the **Delivery events** table, the rule looks at the column named **SpecialCare**. In the **SpecialCare** column, some of the packages have a value of **Medicine**. 
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-scope.png" alt-text="Screenshot showing the Reflex preview option.":::
+    :::image type="content" source="media/data-activator-tutorial/data-activator-scope.png" alt-text="Screenshot showing the Scope section of the Definition pane.":::
 
 1. Lastly, scroll down to **Action**. Our rule sends a Teams message if the condition is met.
 
