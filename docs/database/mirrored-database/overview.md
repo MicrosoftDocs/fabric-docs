@@ -20,8 +20,6 @@ Mirroring in Fabric allows users to enjoy a highly integrated, end-to-end, and e
 
 The Delta tables can then be used everywhere Fabric, allowing users to accelerate their journey into Fabric.
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Why use Mirroring in Fabric?
 
 Today many organizations have mission critical operational or analytical data sitting in silos.
@@ -58,13 +56,13 @@ In addition to the [Microsoft Fabric SQL Query Editor](/fabric/data-warehouse/sq
 
 Power BI administrators can enable or disable Mirroring for the entire organization or for specific security groups, using the setting found in the Power BI admin portal. The Mirroring items then appear in the **Create** options. For more information, see [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md).
 
-Currently, the following external databases are available in preview.
+Currently, the following external databases are available:
 
 | Platform | Near real-time replication | End-to-end tutorial |
 |:--|:--|:--|
-| [Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db.md) | Yes | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks.md) | Yes |[Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](azure-cosmos-db.md) | Yes | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Databricks (preview)](azure-databricks.md) | Yes |[Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure SQL Database (preview)](azure-sql-database.md) | Yes | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes |[Tutorial: Snowflake](snowflake-tutorial.md) |
 
 ## How does the near real time replication of Mirroring work?
