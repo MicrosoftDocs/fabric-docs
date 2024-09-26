@@ -26,13 +26,14 @@ You must have write permissions on an item to be able to apply tags to it or rem
 
 1. Open the item's settings and go the **Tags** tab.
 
-    Tags that are already applied to the item are listed under **Applied tags**.
+1. Select the **Select tags to apply** drop down to display the list of available tags. Choose the tags that are relevant for your item. You can select more than one tag. An item can have up to 10 tags. Note that tags already applied to the item are listed under **Applied tags**.
 
     :::image type="content" source="./media/tags-apply/choose-tags.png" alt-text="Screenshot showing how to choose tags to apply to an item.":::
 
-1. Choose the tags that are relevant for your item. You can select more than one tag. An item can have up to 10 tags.
+    > [!NOTE]
+    > If the Select tags to apply drop down is disabled, it means you do not have permissions to apply tags to the item.
 
-1. When done, select **Save** or **Apply**, if required. Otherwise, just close the settings pane.
+1. When done, close the settings pane. For Power BI items, select **Save** or **Apply**.
 
 ## Remove tags from an item
 
