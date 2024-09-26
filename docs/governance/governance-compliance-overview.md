@@ -10,7 +10,7 @@ ms.date: 09/26/2024
 
 # Governance overview and guidance
 
-Microsoft Fabric governance and compliance provides set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
+Microsoft Fabric governance and compliance provides a set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
 
 This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance regarding taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
@@ -136,7 +136,7 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 
 For more information, see [Discover data items in the OneLake data hub](../get-started/onelake-data-hub.md).
 
- **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the data hub. Carefully defined domains help set the context for teams and makes for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
+ **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the data hub. Carefully defined domains help set the context for teams and make for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
 
 ### Endorsement
 

@@ -1,6 +1,6 @@
 ---
 title: "Data loss prevention policies in Microsoft Fabric"
-description: "Learn about how Microsoft Purview data loss prevention policies work in Microsoft Fabric."
+description: "Learn about how Microsoft Purview Data Loss Prevention policies work in Microsoft Fabric."
 author: paulinbar
 ms.author: painbar
 ms.service: fabric
@@ -74,7 +74,7 @@ Before you get started with DLP for Fabric, you should confirm your [Microsoft 3
 
 Data from DLP for Fabric can be viewed in [Activity explorer](/microsoft-365/compliance/data-classification-activity-explorer). There are four roles that grant permission to Activity explorer; the account you use for accessing the data must be a member of any one of them.
 
-To view the Activity explorer, the account you use for accessing the data must be a member of any the following roles or above.
+To view the Activity explorer, the account you use for accessing the data must be a member of any of the following roles or above.
 
 * Compliance administrator
 * Security administrator
@@ -135,7 +135,7 @@ When a DLP policy detects an issue with an item:
 
     :::image type="content" source="./media/data-loss-prevention-overview/policy-tip-in-lakehouse-details.png" alt-text="Screenshot of policy tip in lakehouse header flyout.":::
 
-* If alerts are enabled in the policy, an alert will be recorded on the data loss prevention **Alerts** page in the Purview portal, and (if configured) an email will be sent to administrators and/or specified users. For more information, see [Monitor and manage DLP policy violations](./data-loss-prevention-monitor.md).
+* If alerts are enabled in the policy, an alert will be recorded on the data loss prevention **Alerts** page in the Microsoft Purview portal, and (if configured) an email will be sent to administrators and/or specified users. For more information, see [Monitor and manage DLP policy violations](./data-loss-prevention-monitor.md).
 
 ## Related content
 

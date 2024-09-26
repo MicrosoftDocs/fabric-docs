@@ -25,11 +25,11 @@ This article describes the information you see on the side pane and the actions 
 
 ## View an item's DLP violations
 
-The data loss prevention side pane lists the name of the item and all the DLP policy issues detected by a content scan of that item. You can select the items's name if you want to view the items's details.
+The data loss prevention side pane lists the name of the item and all the DLP policy issues detected by a content scan of that item. You can select the item's name if you want to view the item's details.
 
 Each DLP policy issue is shown on a card. The card shows you the policy tip, indicates what kind of sensitive data was detected, and offers actions you can take if you believe the data was falsely identified.
 
-![Screenshot of D L P policies side pane](./media/data-loss-prevention-respond/fabric-dlp-override-pane.png)
+![Screenshot of DLP policies side pane.](./media/data-loss-prevention-respond/fabric-dlp-override-pane.png)
 
 ## Take action on the violation
 
