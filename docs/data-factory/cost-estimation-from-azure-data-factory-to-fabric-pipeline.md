@@ -37,7 +37,7 @@ Pricing for Data Pipeline in Azure Data Factory is calculated based on:
   
   **¹**Orchestration refers to activity runs, trigger executions, and debug runs.
   
-  **²**2Use of the copy activity to egress data out of an Azure data center incurs extra network bandwidth charges, which will show up as a separate outbound data transfer line item on your bill.
+  **²**Use of the copy activity to egress data out of an Azure data center incurs extra network bandwidth charges, which will show up as a separate outbound data transfer line item on your bill.
   
   **³**Pipeline activities execute on integration runtime. Pipeline activities include Lookup, Get Metadata, Delete, and schema operations during authoring (test connection, browse folder list and table list, get schema, and preview data).
   External pipeline activities are managed on integration runtime but execute on linked services. External activities include Databricks, stored procedure, HDInsight activities, and many more.
@@ -111,7 +111,7 @@ By now, you have enough information on how legacy Azure Data Factory and Data Fa
 
 Here we describe the steps to estimate costs for each artifact.
 
-1. For Data Flows Gen 1, obtain the past data flow Gen 1 capacity cost from the Power BI Metric app. Then, recalculate capacity hours for the same number of refreshes in Data Flows Gen2 as shown in the previous table.
+- For Data Flows Gen 1, obtain the past data flow Gen 1 capacity cost from the Power BI Metric app. Then, recalculate capacity hours for the same number of refreshes in Data Flows Gen2 as shown in the previous table.
 
   On the Admin Portal's **Capacity settings**, select **See usage report**:
 
@@ -121,7 +121,7 @@ Here we describe the steps to estimate costs for each artifact.
 
   :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" lightbox="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" alt-text="Screenshot showing the details of the capacity usage report for Power BI.":::
 
-1. For Azure Data Factory, your can get all meter data from your current ADF subscription. Build out a table and  plugin the values for customers. Create the table as shown in the case of the sample table. Like Data Flows Gen 1, you can get pipeline Capacity Units for pipelines in Fabric Metric App. Given ADF cost, calculate Fabric cost for pay-as-you-go. You can interpolate it to one year to get discounted pricing.
+- For Azure Data Factory, your can get all meter data from your current ADF subscription. Build out a table and  plugin the values for customers. Create the table as shown in the case of the sample table. Like Data Flows Gen 1, you can get pipeline Capacity Units for pipelines in Fabric Metric App. Given ADF cost, calculate Fabric cost for pay-as-you-go. You can interpolate it to one year to get discounted pricing.
 
 ## Related content
 
