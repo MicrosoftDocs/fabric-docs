@@ -127,11 +127,11 @@ Create a rule that alerts you if the average time in delivery exceeds a threshol
 
 1. Start your rule by selecting **Save and start**.
 
-Congratulations on completing the tutorial
-
 You created your first object and rule. As next steps, you might try setting up some other rules on the *Package* object. When you're ready to try using Data Activator on your own data, follow the steps in the [Get data for Data Activator](data-activator-get-data-eventstreams.md) article.
 
-Once you finish with the rules you created as part of the tutorial, be sure to stop them so you don’t incur any charges for background processing of the rules. Select each rule in turn and select the **Stop** button from the ribbon.
+## Clean up resources
+
+Once you finish with the rules you created as part of the tutorial, be sure to stop them. If you don't stop the rules, you will continue to receive the rule notifications. You also might incur charges for background processing. Select each rule in turn and select the **Stop** button from the ribbon.
 
 :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for data activator tutorial.":::
 
