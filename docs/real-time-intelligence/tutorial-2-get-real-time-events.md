@@ -48,7 +48,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 ## Transform events
 
 1. Select **Open Eventstream** from the notification that appears after creating the event stream, or browse to the event stream from the Real-time hub and select **Open Eventstream**.
-1. From the menu ribbon, select **Edit**. The authoring canvas, which is the center tile, turns yellow and becomes active for changes.
+1. From the menu ribbon, select **Edit**. The authoring canvas, which is the center section, turns yellow and becomes active for changes.
 1. In the event stream authoring canvas, select the down arrow on the **Transform events or add destination** tile.  
 1. Select **Manage fields**. The tile is renamed to *Manage_fields*.
 1. Select the pencil icon on the *Manage_fields* tile.
