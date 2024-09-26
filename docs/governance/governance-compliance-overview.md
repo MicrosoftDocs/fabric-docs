@@ -14,15 +14,15 @@ Microsoft Fabric governance and compliance provides a set of capabilities that h
 
 This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance regarding taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
-|[Manage your data estate](#manage-your-data-estate)|[Secure, protect, and comply](#secure-protect-and-comply)|[Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use)|[Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act)|
-|:----|:----|:----|:----|
-|[Admin portal](#admin-portal)|[Privacy](#privacy)|[OneLake data hub](#onelake-data-hub)|[Monitoring hub](#monitoring-hub)|
-|[Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust, and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
-|[Domains](#domains)|[Purview Information Protection](#purview-information-protection)*|[Data lineage and impact analysis](#data-lineage-and-impact-analysis)|[Purview hub](#purview-hub)|
-|[Workspaces](#workspaces) |[Purview Data Loss Prevention](#purview-data-loss-prevention)* |[Purview for governance across the org](#purview-for-governance-across-the-org)* |[Admin monitoring](#admin-monitoring) |
-|[Capacities](#capacities) |[Securing Fabric items within a workspace](#securing-items-in-a-workspace) | | |
-|[Metadata scanning](#metadata-scanning) |[Securing data in Fabric items](#securing-data-in-fabric-items) | | |
-| |[Auditing](#auditing) | | |
+| [Manage your data estate](#manage-your-data-estate) | [Secure, protect, and comply](#secure-protect-and-comply) | [Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use) | [Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act) |
+|:-|:-|:-|:-|
+| [Admin portal](#admin-portal) | [Privacy](#privacy) | [OneLake data hub](#onelake-data-hub) | [Monitoring hub](#monitoring-hub) |
+| [Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings) | [Data security](#data-security) | [Endorsement, trust, and reuse](#endorsement) | [Capacity metrics](#capacity-metrics) |
+| [Domains](#domains) | [Purview Information Protection](#purview-information-protection)* | [Tags](#tags) | [Purview hub](#purview-hub) |
+| [Workspaces](#workspaces) | [Purview Data Loss Prevention](#purview-data-loss-prevention)* | [Data lineage and impact analysis](#data-lineage-and-impact-analysis) | [Admin monitoring](#admin-monitoring) |
+| [Capacities](#capacities) | [Securing Fabric items within a workspace](#securing-items-in-a-workspace) | [Purview for governance across the org](#purview-for-governance-across-the-org)* |  |
+| [Metadata scanning](#metadata-scanning) | [Securing data in Fabric items](#securing-data-in-fabric-items) |  |  |
+|  | [Auditing](#auditing) |  |  |
 
 *Requires additional licensing
 
@@ -145,6 +145,12 @@ Endorsement is a way to make trustworthy, quality data more discoverable. Organi
 For more information, see [Endorsement](./endorsement-overview.md).
 
 **Guidance**: Certification enablement should be delegated to domain admins, and the domain admins should authorize data owners and producers to be able to certify the items they create. The data owners and producers should then always certify their items that have been tested and are ready for use by other teams. This helps separate low-quality, nontrusted items from trusted, ready-to-use assets. It also makes these trusted assets easier to find. In addition, data consumers should be educated about how to find trusted assets, and encouraged to use only certified items in their reports and other downstream processing.
+
+### Tags
+
+Tags on configurable text labels that can be applied to Fabric items to enhance item discoverability and use. Fabric administrators can define a set of tags that data owners can use to categorize their items. Once tags have been applied to items, data consumers can view, search, filter by the applied tags across the various Fabric experiences.
+
+For more information, see [Tags in Microsoft Fabric](./tags-overview.md).
 
 ### Data lineage and impact analysis
 
