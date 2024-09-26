@@ -148,7 +148,7 @@ For more information, see [Endorsement](./endorsement-overview.md).
 
 ### Tags
 
-Tags are configurable text labels that can be applied to Fabric items to enhance item discoverability and use. Fabric administrators can define a set of tags that data owners can use to categorize their items. Once tags have been applied to items, data consumers can view, search, filter by the applied tags across the various Fabric experiences.
+Tags are configurable text labels that can be applied to Fabric items to enhance item discoverability and use. Fabric administrators can define a set of tags that data owners can use to categorize their items. Once tags have been applied to items, data consumers can view, search, and filter by the applied tags across the various Fabric experiences.
 
 For more information, see [Tags in Microsoft Fabric](./tags-overview.md).
 
