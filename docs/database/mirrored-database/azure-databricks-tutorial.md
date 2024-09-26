@@ -4,7 +4,7 @@ description: Learn how to create a mirrored database from Azure Databricks in Mi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sheppardshep, whhender
-ms.date: 09/19/2024
+ms.date: 09/26/2024
 ms.topic: overview
 ---
 
@@ -15,7 +15,7 @@ ms.topic: overview
 ## Prerequisites
 
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
-- This requires that the configuring user have the `EXTERNAL USE SCHEMA` privilege on the schema in Unity Catalog that contains the tables that will be accessed from Fabric.  See [Control external access to data in Unity Catalog](/azure/databricks/data-governance/unity-catalog/access-open-api)
+- You must have the `EXTERNAL USE SCHEMA` privilege on the schema in Unity Catalog that contains the tables that will be accessed from Fabric. For more information, see [Control external access to data in Unity Catalog](/azure/databricks/data-governance/unity-catalog/access-open-api).
 
 - You need to use Fabric's permissions model to set access controls for catalogs, schemas, and tables in Fabric.
 - Azure Databricks workspaces shouldn't be behind a private endpoint.
