@@ -37,7 +37,7 @@ Like [domains](./domains.md), tags are an important component of Fabric's data m
 
 * **Data discoverability**: Users can see tags in the UI and use filters to help them find the content they're looking for.
 
-## Optimized Discoverability
+## Discoverability
 
 Once the item has tags applied, an icon will be shown next to the item name.
 
