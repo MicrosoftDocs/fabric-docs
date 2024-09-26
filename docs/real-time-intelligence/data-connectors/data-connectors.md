@@ -133,7 +133,7 @@ The following table summarizes the available connectors and their capabilities:
 
 ### Cribl Stream
 
-[Cribl stream](https://docs.cribl.io/stream/) is a processing engine that securely collects, processes,and streams machine event data from any source. It allows you to parse and process that data for any destination for analysis.
+[Cribl stream](https://docs.cribl.io/stream/) is a processing engine that securely collects, processes, and streams machine event data from any source. It allows you to parse and process that data for any destination for analysis.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
