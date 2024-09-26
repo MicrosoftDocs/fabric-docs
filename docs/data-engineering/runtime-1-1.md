@@ -29,7 +29,7 @@ Microsoft Fabric Runtime 1.1 is one of the runtimes offered within the Microsoft
 - R: 4.2.2
 
 > [!TIP]
-> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.2](./runtime-1-2.md).
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
 Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 

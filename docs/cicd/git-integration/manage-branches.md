@@ -16,7 +16,7 @@ ms.custom:
 
 # Manage branches in Microsoft Fabric workspaces
 
-The goal of this article is to present Fabric developers with different options for building CI/CD processes in Fabric, based on common customer scenarios. This article focuses more on the *continuous integration (CI)* part of the CI/CD process. For a discussion of the continuous delivery (CD) part, see [manage deployment pipelines](../deployment-pipelines/manage-deployment-pipelines.md).
+The goal of this article is to present Fabric developers with different options for building CI/CD processes in Fabric, based on common customer scenarios. This article focuses more on the *continuous integration (CI)* part of the CI/CD process. For a discussion of the continuous delivery (CD) part, see [manage deployment pipelines](../manage-deployment.md).
 
 This article outlines a few distinct integration options, but many organizations use a combination of them.  
 
@@ -84,7 +84,7 @@ See [branching out limitations](./git-integration-process.md#branching-out-limit
 
 ## Release process
 
-The release process begins once new updates have completed a Pull Request process and merged into the team’s shared branch (such as ‘Main’, ‘Dev’ etc.). From this point, we will outline the different options to build a release process in Fabric. You can find the different considerations for the release process in [manage deployment pipelines](../deployment-pipelines/manage-deployment-pipelines.md).
+The release process begins once new updates have completed a Pull Request process and merged into the team’s shared branch (such as ‘Main’, ‘Dev’ etc). From this point, we will outline the different options to build a release process in Fabric. You can find the different considerations for the release process in [manage deployment pipelines](../manage-deployment.md).
 
 ## Switch branches
 

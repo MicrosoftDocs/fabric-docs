@@ -38,9 +38,11 @@ items:
     href: user-flow-4.md
   - name: "Set alerts based on Fabric events"
     href: user-flow-5.md
+  - name: Set Alert on Real Time Dashboard or KQL Queryset
+    href: user-flow-6.md
 - name: Get data
   items:
-  - name: Get, process, and route events
+  - name: Get, process, and route data in Event Streams
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
@@ -78,12 +80,20 @@ items:
         href: event-streams/add-source-mysql-database-change-data-capture.md
       - name: Azure Cosmos DB Change Data Capture
         href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
+      - name: SQL Server on VM DB Change Data Capture
+        href: event-streams/add-source-sql-server-change-data-capture.md
+      - name: Azure SQL Managed Instance Change Data Capture
+        href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
       - name: Google Cloud Pub/Sub
         href: event-streams/add-source-google-cloud-pub-sub.md
       - name: Amazon Kinesis Data Streams
         href: event-streams/add-source-amazon-kinesis-data-streams.md
       - name: Confluent Cloud Kafka
         href: event-streams/add-source-confluent-kafka.md
+      - name: Apache Kafka
+        href: event-streams/add-source-apache-kafka.md
+      - name: Amazon Managed Streaming for Apache Kafka
+        href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
       - name: Fabric Workspace Item events
         href: event-streams/add-source-fabric-workspace.md
       - name: Azure Blob Storage events
@@ -94,7 +104,7 @@ items:
         href: event-streams/add-manage-eventstream-destinations.md
       - name: Derived stream
         href: event-streams/add-destination-derived-stream.md
-      - name: KQL Database
+      - name: Eventhouse
         href: event-streams/add-destination-kql-database.md
       - name: Lakehouse
         href: event-streams/add-destination-lakehouse.md
@@ -118,6 +128,10 @@ items:
       href: event-streams/monitor.md
     - name: Integrate with other Fabric items
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
+    - name: Network security
+      items:
+      - name: Connect to Azure streaming sources using private endpoints
+        href: event-streams/set-up-private-endpoint.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -176,6 +190,8 @@ items:
         href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rti&pivots=fabric
       - name: Azure Stream Analytics
         href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rti&pivots=fabric
+      - name: Cribl Stream
+        href: get-data-cribl-stream.md
       - name: Fluent Bit
         href: get-data-fluent.md
       - name: Logstash
@@ -273,6 +289,8 @@ items:
     - name: Sample gallery
       displayName: Query sample data
       href: sample-gallery.md
+    - name: Create alerts from a KQL Queryset
+      href: ../data-activator/data-activator-alert-queryset.md
   - name: Vector database
     items:
     - name: Eventhouse as a vector database overview
@@ -301,6 +319,8 @@ items:
     items:
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
+    - name: Real-Time Dashboard permissions 
+      href: dashboard-permissions.md
     - name: Explore data in Real-Time Dashboard tiles
       href: dashboard-explore-data.md
     - name: Customize Real-Time Dashboard visuals

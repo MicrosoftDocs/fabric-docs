@@ -15,7 +15,7 @@ ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, I
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
 ---
 
-# Get started with Git integration (preview)
+# Get started with Git integration
 
 This article walks you through the following basic tasks in Microsoft Fabric’s Git integration tool:
 
@@ -25,8 +25,6 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 - [Disconnect from Git](#disconnect-a-workspace-from-git)
 
 It’s recommended to read the [overview of Git integration](./intro-to-git-integration.md) before you begin.
-
- [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
