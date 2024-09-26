@@ -44,7 +44,7 @@ In this step, we explore the event stream data this sample is built on.
 
 The new reflex has an **Explorer** section. Scroll down and select the **Package delivery events** stream. 
 
-These events show the real-time status of packages that are in the process of being delivered by a logistics company.
+These events show the real-time status of packages that are in the process of being delivered.
 
 Look at the incoming events and hover over the event data in the live table. Each data point contains information about the event. You might have to scroll to see it all. 
 
@@ -64,13 +64,13 @@ The Explorer pane displays objects, like event streams, for this reflex. **Deliv
 
 1. Select the **Temperature** rule called **Too hot for medicine**. Scroll through the **Definition** pane to see how the rule works.
 
-1. In the **Monitor** section select **Temperature**. The temperature values come from the  *Temperature* column in the **Delivery events** table. (You can see the **Temperature** column in step 1.)
+1. In the **Monitor** section, select **Temperature**. The temperature values come from the  *Temperature* column in the **Delivery events** table. (You can see the **Temperature** column in step 1.)
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-monitor.png" alt-text="Screenshot showing the Reflex preview option.":::
 
 1. Scroll down to **Condition**. Our rule is monitoring temperatures that **become greater than** **50**. 
 
-1. Scroll further down to **Scope**. Our rule applies only to packages containing medicine. In the **Delivery events** table, this corresponds to the column named **SpecialCare**. In the **SpecialCare** column, some of the packages have a value of **Medicine**. 
+1. Scroll further down to **Scope**. Our rule applies only to packages containing medicine. In the **Delivery events** table, the rule looks at the column named **SpecialCare**. In the **SpecialCare** column, some of the packages have a value of **Medicine**. 
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-scope.png" alt-text="Screenshot showing the Reflex preview option.":::
 
@@ -86,7 +86,7 @@ Now you're familiar with the events and objects used to create a rule. The next 
 
 1. Select **Too hot for medicine**.
 
-1. Optionally, send a test message by selecting **Test**. First check that you are the **Recipient**. Make sure that you receive the message and that it looks the way you expect. 
+1. Optionally, send a test message by selecting **Test**. First check that you're the **Recipient**. Make sure that you receive the message and that it looks the way you expect. 
 
 1. Select **Start**. This causes the rule to become active. You receive a Teams message whenever a medicine package is too hot. The rule should trigger several times every hour.
 
@@ -94,7 +94,7 @@ Now you're familiar with the events and objects used to create a rule. The next 
 
 ## Create an object
 
-Now it's time to create an object of your own. In this section, delete the *Package* object. Then, recreate it to track the status of packages in Redmond where the hours in delivery becomes greater than the average.
+Now it's time to create an object of your own. In this section, delete the *Package* object. Then, recreate it to track the status of packages in Redmond where the hours in delivery become greater than the average.
 
 1. Select and delete the **Package** object.
 1. Select the **Package delivery events** stream.
