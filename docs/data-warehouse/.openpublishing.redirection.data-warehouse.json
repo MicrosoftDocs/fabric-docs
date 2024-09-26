@@ -24,6 +24,11 @@
         "source_path_from_root": "/docs/data-warehouse/restore-points-manage.md",
         "redirect_url": "/fabric/data-warehouse/restore-in-place-portal",
         "redirect_document_id": true
-      }
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/user-audit-logs.md",
+        "redirect_url": "/fabric/admin/operation-list",
+        "redirect_document_id": true
+      }      
     ]
 }

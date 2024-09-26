@@ -43,4 +43,3 @@ When capacity ID and capacity name aren't available in the audit logs, you can v
 ## Related content
 
 * [Operation list](operation-list.md)
-* [Data Warehouse Operation List](../data-warehouse/user-audit-logs.md)
