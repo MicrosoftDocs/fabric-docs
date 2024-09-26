@@ -42,33 +42,31 @@ You can use the REST APIs without PowerShell, but the scripts in this article us
 
 The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve the continuous integration and continuous delivery (CI/CD) of your content. Here are a few examples of what can be done by using the APIs:
 
+* See which items have incoming changes and which items have changes that weren't yet committed to Git with the [**Git status**](/rest/api/fabric/core/git/get-status) API.
+
 * [**Get connection**](/rest/api/fabric/core/git/get-connection) details for the specified workspace.
 
 * [**Connect**](/rest/api/fabric/core/git/connect) and [**disconnect**](/rest/api/fabric/core/git/disconnect) a specific workspace from the Git repository and branch connected to it.
 
-* [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that is connected to Git.
+* [**Bind and unbind**](/rest/api/fabric/core/git/update-my-git-credentials) your cloud connection and the specified Git-connected workspace. (GitHub only)
 
-* See which items have incoming changes and which items have changes that weren't yet committed to Git with the [**Git status**](/rest/api/fabric/core/git/get-status) API.
+* [**Get bound cloud connection**](/rest/api/fabric/core/git/get-my-git-credentials) for the specified Git-connected workspace. (GitHub only)
+
+* [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that is connected to Git.
 
 * [**Commit**](/rest/api/fabric/core/git/commit-to-git) the changes made in the workspace to the connected remote branch.
 
 * [**Update the workspace**](/rest/api/fabric/core/git/update-from-git) with commits pushed to the connected branch.
 
-For GitHub users, the following APIs are also available:
-
-* [**Bind**](/rest/api/fabric/core/git/bind-my-cloud-connection) and [**unbind**](/rest/api/fabric/core/git/unbind-my-cloud-connection) your cloud connection and the specified Git-connected workspace.
-
-* [**Get bound cloud connection**](/rest/api/fabric/core/git/get-my-bound-cloud-connection) for the specified Git-connected workspace.
-
 ## Examples
 
 Use the following PowerShell scripts to understand how to perform several common automation processes. To view or copy the text in a PowerShell sample, use the links in this section. You can also see all the examples in the [Fabric Git integration samples](https://github.com/microsoft/fabric-samples/tree/main/features-samples/git-integration) GitHub repo.
 
-### Commit all
+### Connect and update
 
-This section gives a step by step description of how to programmatically commit all changes from the workspace to Git.
+This section describes the steps involved in connecting and syncing a workspace with Git. This script works in both directions. We commit changes from the workspace to Git and also update workspace items with changes from Git.
 
-For the complete script, see [Commit all changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitAll.ps1).
+For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
 
 1. **Sign in and get access token** - Sign in to Fabric as a *user* (not a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to sign in.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command.
@@ -95,29 +93,96 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     }
     ```
 
-1. **Describe the request body** - In this part of the script you specify which items (such as reports and notebooks) to commit.
+1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 
     ```powershell
-    $commitToGitBody = @{ 		
-        mode = "All"
-        comment = $commitMessage
+
+    # Connect to Git
+
+    Write-Host "Connecting the workspace '$workspaceName' to Git."
+
+    $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
+    
+    $connectToGitBody = @{
+        gitProviderDetails =$azureDevOpsDetails
     } | ConvertTo-Json
+
+    Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
+
+1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
+
+    ```powershell
+     # Initialize Connection
+
+    Write-Host "Initializing Git connection for workspace '$workspaceName'."
+
+    $initializeConnectionUrl = "{0}/workspaces/{1}/git/initializeConnection" -f $global:baseUrl, $workspace.Id
+    $initializeConnectionResponse = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $initializeConnectionUrl -Method POST -Body "{}"
+    ```
+
+1. Based on the response from the Initialize Connection API, call either the [Update From Git](/rest/api/fabric/core/git/update-from-git) API to complete the update, or do nothing if no action required.
+
+   The following script updates and [monitors the progress](#monitor-the-progress-of-long-running-operations):
+
+    ```powershell
+    if ($initializeConnectionResponse.RequiredAction -eq "UpdateFromGit") {
+
+        # Update from Git
+        Write-Host "Updating the workspace '$workspaceName' from Git."
+
+        $updateFromGitUrl = "{0}/workspaces/{1}/git/updateFromGit" -f $global:baseUrl, $workspace.Id
+
+        $updateFromGitBody = @{ 
+            remoteCommitHash = $initializeConnectionResponse.RemoteCommitHash
+      workspaceHead = $initializeConnectionResponse.WorkspaceHead
+        } | ConvertTo-Json
+
+        $updateFromGitResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $updateFromGitUrl -Method POST -Body $updateFromGitBody
+
+        $operationId = $updateFromGitResponse.Headers['x-ms-operation-id']
+        $retryAfter = $updateFromGitResponse.Headers['Retry-After']
+        Write-Host "Long Running Operation ID: '$operationId' has been scheduled for updating the workspace '$workspaceName' from Git with a retry-after time of '$retryAfter' seconds." -ForegroundColor Green
+        
+        # Poll Long Running Operation
+        $getOperationState = "{0}/operations/{1}" -f $global:baseUrl, $operationId
+        do
+        {
+            $operationState = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getOperationState -Method GET
+
+            Write-Host "Update from Git operation status: $($operationState.Status)"
+
+            if ($operationState.Status -in @("NotStarted", "Running")) {
+                Start-Sleep -Seconds $retryAfter
+            }
+        } while($operationState.Status -in @("NotStarted", "Running"))
+    }
+    ```
+
+### Update from Git
+
+In this section, we describe the steps involved in updating a workspace with the changes from Git. In this script, we update the workspace items with changes from Git, but we leave the Git repository unchanged.
+
+For the complete script, see [Update workspace from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-UpdateFromGit.ps1).
+
+1. Log into Git and get authentication.
+1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from Git request body.
+1. Call the [Update From Git](/rest/api/fabric/core/git/update-from-git) API to update the workspace with commits pushed to the connected branch.
+
+### Commit all
+
+This section gives a step by step description of how to programmatically commit all changes from the workspace to Git.
+
+For the complete script, see [Commit all changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitAll.ps1).
+
+1. **Sign in and get access token** - Sign in to Fabric as a *user* (not a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to sign in.
+To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command.
+
+1. **Describe the request body** - In this part of the script you specify which items (such as reports and notebooks) to commit.
 
 1. Call the `CommitAll` REST API:
 
-    ```powershell
-    $commitToGitUrl = "{0}/workspaces/{1}/git/commitToGit" -f $global:baseUrl, $workspace.Id
-
-    $commitToGitResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $commitToGitUrl -Method POST -Body $commitToGitBody
-    ```
-
 1. Get the Long Running OperationId for polling the status of the operation.
-
-    ```powershell
-    $operationId = $commitToGitResponse.Headers['x-ms-operation-id']
-    $retryAfter = $commitToGitResponse.Headers['Retry-After']   
-    ```
 
 ### Selective Commit
 
@@ -130,27 +195,6 @@ For the complete script, see [Commit select changes to Git](https://github.com/m
 1. Call the [Get status](/rest/api/fabric/core/git/get-status) API to see which items workspace were changed.
 1. Select the specific items to commit.
 1. Call the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) API to commit the selected changes from the workspace to the connected remote branch.
-
-### Update from Git
-
-In this section, we describe the steps involved in updating a workspace with the changes from Git. In this script, we update the workspace items with changes from Git, but we leave the Git repository unchanged.
-
-For the complete script, see [Update workspace from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-UpdateFromGit.ps1).
-
-1. Log into Git and get authentication.
-1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from Git request body.
-1. Call the [Update From Git](/rest/api/fabric/core/git/update-from-git) API to update the workspace with commits pushed to the connected branch.
-
-### Connect and Sync
-
-This section describes the steps involved in connecting and syncing a workspace with Git. This script works in both directions. We commit changes from the workspace to Git and also update workspace items with changes from Git.
-
-For the complete script, see [Connect and sync with Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
-
-1. Log into Git and get authentication.
-1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
-1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
-1. Based on the response from the Initialize Connection API, call either the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) or [Update From Git](/rest/api/fabric/core/git/update-from-git) API to complete the sync, or do nothing if no action required.
 
 ### Monitor the progress of long running operations
 
