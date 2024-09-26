@@ -186,7 +186,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 ### Selective Commit
 
-In this section we describe the steps involved in committing only specific changes from the workspace to Git.
+This section describes the steps involved in committing only specific changes from the workspace to Git.
 
 For the complete script, see [Commit select changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitSelective.ps1).
 
@@ -201,7 +201,7 @@ For the complete script, see [Commit select changes to Git](https://github.com/m
 For the complete script, see [Poll a long running operation](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/LongRunningOperation-Polling.ps1).
 
 1. Retrieve the operationId from the [Update From Git](/rest/api/fabric/core/git/update-from-git) or the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) script.
-1. Call the [Get LRO Status](/rest/api/fabric/core/git/get-status) API every x seconds and print the status.
+1. Call the [Get LRO Status](/rest/api/fabric/core/git/get-status) API at specified intervals (in seconds) and print the status.
 
 ## Considerations and limitations
 
@@ -211,6 +211,6 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 ## Related content
 
-* [Get started with Git integration](git-get-started.md)
+* [Git integration - get started](git-get-started.md)
 * [Fabric APIs](/rest/api/fabric/articles/using-fabric-apis)
 * [Git best practices](../best-practices-cicd.md)
