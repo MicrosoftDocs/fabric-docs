@@ -14,32 +14,21 @@ ms.date: 08/06/2024
 
 # Tags in Microsoft Fabric
 
-Tags is a Microsoft Fabric feature that gives organizations the ability to apply additional metadata to items in Fabric to help admins govern data and to enhance data discoverability. Tags are simply labels, such as XXX or XXX, that admins can define according to their organization’s needs. Data and content owners can then apply these tags to their Fabric items, admins can use the tags applied to items to help monitor and manage their organization's data, and users in the organization can use the tags to help them find the data and content they need.
+Tags is a Microsoft Fabric feature that gives organizations the ability to apply additional metadata to items in Fabric to facilitate and enhance data categorization, organization, and discoverability. Tags are simply configurable text labels, such as *Sales – FR 2023*, *HR – Summer Event*, or *FY 2024*, that Fabric administrators can define according to their organization's needs. Data and content owners can then apply these tags to their Fabric items, and users in the organization can use the tags to help them find the data and content they need.
+
+Like [Domains](./domains.md), tags are an important component of Fabric's data mesh architecture. They provide increased flexibility and granularity in data categorization by allowing additional details to be added at the item level, across workspaces and domains.
 
 ## How tags work
 
-1. Admins [create an open list of tags](./tags-define.md) for use across the organization. For example "Financial", "North America", or "Q1 2025".
+1. Fabric admins [create an open set of tags](./tags-define.md) for use across the organization. For example *Financial*, *North America*, or *Q1 2025*. Up to 10,000 tags can be created in an tenant.
 
-1. Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md).
+1. Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md). An item can have up to ten tags applied to it.
 
-1. Once tags are applied, any user in the org can use them to filter or search for the most relevant content.
+1. Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
 
-## How do tags complement domains
+## How tags enhance data discoverability
 
-Like [domains](./domains.md), tags are an important component of Fabric's data mesh architecture. They complement [domains](./domains.md) by providing additional flexibility and granularity:
-
-* Tags are applied at the item level, and hence can be leveraged across workspaces and domains.
-* An item can have multiple tags, whereas it can only belong to one domain.
-
-## What benefits do tags provide
-
-* **Data governance**: By monitoring and analyzing tag use and distribution, admins can use tags to help them manage and govern their organizations data.
-
-* **Data discoverability**: Users can see tags in the UI and use filters to help them find the content they're looking for.
-
-## Discoverability
-
-Once the item has tags applied, a tag icon will appear next to the item name in supported views. Hover over the icon to see what tags have been applied.
+Once an item has tags applied, a tag icon will appear next to the item name in supported views. You can hover over the icon to see what tags have been applied.
 
 :::image type="content" source="./media/tags-overview/tags-icon.png" alt-text="Screenshot showing the tag icon and hover card for a tagged item.":::
 
@@ -61,7 +50,7 @@ In addition, you can see the applied tags in an item's details, in the item's fl
 
     :::image type="content" source="./media/tags-overview/tags-indication-lineage-view.png" alt-text="Screenshot showing the tag indication in lineage view.":::
 
-You can also use the global search to search by tags and see all the relevant results, accompanied by additional metadata, such asitem owner and location.
+You can also use the global search to search by tags and see all the relevant results, accompanied by additional metadata, such as item owner and location.
 
 :::image type="content" source="./media/tags-overview/tags-global-search.png" alt-text="Screenshot showing tags used as a search term in the global search.":::
 
@@ -70,7 +59,7 @@ You can also use the global search to search by tags and see all the relevant re
 * A maximum of 10,000 tags can be created in a tenant.
 * An item can have a maximum of 10 tags applied to it at any one time.
 * Tag icons next to item names are currently supported only in the workspace items list.
-* After a tag as been applied to an item, it may take several hours for the tag icon to show up next to the tag name.
+* After a tag has been applied to an item, it might be several hours before the icon shows up next to the tag name, and before it is possible to find the item in the global search using the tag name as the search term.
 * Filtering by tag is currently avaiable only in workspaces.
 
 ## Related content
