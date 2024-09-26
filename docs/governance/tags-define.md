@@ -24,7 +24,7 @@ As a Fabric administrator, you can:
 
 * [Rename tags](#rename-a-tag). If desired or necessary, you can rename a tag. When you rename a tag, its name changes wherever it has been applied.
 
-* [Delete a tag](#delete-a-tag-from-the-set-of-tags) If you decide that a tag is not needed, you can delete it from the set of tags you've defined. When you delete a tag from the set of defined tags, the tag is removed from all the items it's been applied to.
+* [Delete a tag](#delete-a-tag-from-the-set-of-tags) If you decide that a tag isn't needed, you can delete it from the set of tags you defined. When you delete a tag from the set of defined tags, the tag is removed from all the items it's been applied to.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ This section shows how to create a set of one or more tags.
     * Spaces (not at the beginning of the tag)
     * Special characters (the name can't consist solely of special characters; it must also contain letters and/or numbers)
 
-1. When done, select **Create**. The new tags will be added to the set of tags.
+1. When done, select **Create**. The new tags are added to the set of tags.
 
 ## Rename a tag
 
@@ -70,7 +70,7 @@ This section shows how to create a set of one or more tags.
 
     :::image type="content" source="./media/tags-define/delete-tag.png" alt-text="Screenshot showing how to delete a tag from the set of tags.":::
 
-    The tag is deleted from the set of defined tags, and is removed from all items where it is applied.
+    The tag is deleted from the set of defined tags, and is removed from all items it's applied to.
 
 ## Related content
 
