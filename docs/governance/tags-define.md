@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 09/Z6/2024
+ms.date: 09/26/2024
 
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
 
@@ -22,9 +22,9 @@ As a Fabric administrator, you can:
 
 * [Create a set of tags](#create-a-set-of-tags) that users in your organization can use to categorize their Fabric items.
 
-* [Rename tags](#rename-a-tag). WHen you rename a tag, it's name changes wherever it has been used.
+* [Rename tags](#rename-a-tag). If desired or necessary, you can rename a tag. When you rename a tag, its name changes wherever it has been applied.
 
-* [Delete a tag](#delete-a-tag-from-the-set-of-tags) from the set of tags you've defined. When you delete a tag from the set of defined tags, the tag gets removed from all the items it was applied to.
+* [Delete a tag](#delete-a-tag-from-the-set-of-tags) If you decide that a tag is not needed, you can delete it from the set of tags you've defined. When you delete a tag from the set of defined tags, the tag is removed from all the items it's been applied to.
 
 ## Prerequisites
 

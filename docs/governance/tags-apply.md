@@ -45,7 +45,7 @@ You must have write permissions on an item to be able to apply tags to it or rem
 
 1. Select the **X** next to the names of the tags you wish to remove from the item.
 
-1. When done, select **Save** or **Apply**, if required. Otherwise, just close the settings pane.
+1. When done, close the settings pane. For Power BI items, select **Save** or **Apply**.
 
 ## Related content
 
