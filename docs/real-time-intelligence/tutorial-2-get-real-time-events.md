@@ -57,7 +57,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
     1. Select **Add all fields**
     1. Select **+ Add field**.
     1. From the **Field** dropdown, select **Built-in Date Time Function** > **SYSTEM.Timestamp()**
-    1. Enter *Timestamp* as the **Field name**.
+    1. In **Name**, enter *Timestamp*.
     1. Select **Add**.
 
     :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the event stream manage fields tile in Real-Time Intelligence.":::
