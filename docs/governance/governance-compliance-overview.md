@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: overview
 ms.custom:
-ms.date: 03/27/2024
+ms.date: 09/26/2024
 ---
 
 # Governance overview and guidance
@@ -19,9 +19,21 @@ This article describes at a high level the main features and components that hel
 |[Admin portal](#admin-portal)|[Privacy](#privacy)|[OneLake data hub](#onelake-data-hub)|[Monitoring hub](#monitoring-hub)|
 |[Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust, and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
 |[Domains](#domains)|[Purview Information Protection](#purview-information-protection)*|[Data lineage and impact analysis](#data-lineage-and-impact-analysis)|[Purview hub](#purview-hub)|
-|[Workspaces](#workspaces)|[Securing Fabric items within a workspace](#securing-items-in-a-workspace)|[Purview for governance across the org](#purview-for-governance-across-the-org)*|[Admin monitoring](#admin-monitoring)|
-|[Capacities](#capacities)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
-|[Metadata scanning](#metadata-scanning)|[Auditing](#auditing)|||
+|[Workspaces](#workspaces) |[Purview Data Loss Prevention](#purview-data-loss-prevention)* |[Purview for governance across the org](#purview-for-governance-across-the-org)* |[Admin monitoring](#admin-monitoring) |
+|[Capacities](#capacities) |[Securing Fabric items within a workspace](#securing-items-in-a-workspace) | | |
+|[Metadata scanning](#metadata-scanning) |[Securing data in Fabric items](#securing-data-in-fabric-items) | | |
+| |[Auditing](#auditing) | | |
+
+
+| [Manage your data estate](#manage-your-data-estate)                             | [Secure, protect, and comply](#secure-protect-and-comply)                  | [Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use) | [Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act) |
+|:--------------------------------------------------------------------------------|:---------------------------------------------------------------------------|:------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
+| [Admin portal](#admin-portal)                                                   | [Privacy](#privacy)                                                        | [OneLake data hub](#onelake-data-hub)                                               | [Monitoring hub](#monitoring-hub)                                                |
+| [Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings) | [Data security](#data-security)                                            | [Endorsement, trust, and reuse](#endorsement)                                       | [Capacity metrics](#capacity-metrics)                                            |
+| [Domains](#domains)                                                             | [Purview Information Protection](#purview-information-protection)*         | [Data lineage and impact analysis](#data-lineage-and-impact-analysis)               | [Purview hub](#purview-hub)                                                      |
+| [Workspaces](#workspaces)                                                       | [Purview Data Loss Prevention](#purview-data-loss-prevention)*             | [Purview for governance across the org](#purview-for-governance-across-the-org)*    | [Admin monitoring](#admin-monitoring)                                            |
+| [Capacities](#capacities)                                                       | [Securing Fabric items within a workspace](#securing-items-in-a-workspace) |                                                                                     |                                                                                  |
+| [Metadata scanning](#metadata-scanning)                                         | [Securing data in Fabric items](#securing-data-in-fabric-items)            |                                                                                     |                                                                                  |
+|                                                                                 | [Auditing](#auditing)                                                      |                                                                                     |                                                                                  |
 
 *Requires additional licensing
 
@@ -94,6 +106,14 @@ Information protection in Fabric enables you to discover, classify, and protect 
 For more information, see [Information Protection in Microsoft Fabric](./information-protection.md).
 
 **Guidance**: Sensitivity labels from Microsoft Purview Information Protection and their associated label policies should be specified at an organizational level and be valid for the whole organization.
+
+### Purview Data Loss Prevention
+
+Purview DLP for Fabric policies detect sensitive information as it is uploaded into [DLP-supported item types](./data-loss-prevention-overview.md#supported-item-types) in your Fabric tenant, and help you take risk remediation actions so that your organization stays compliant with governmental and industry regulations.
+
+Compliance and security administrators receive audit logs for every DLP detection. The audit logs give them further visibility into business-critical data and its location within the tenant. They can set up alerts that will be automatically generated whenever sensitive information is detected in a DLP-supported item. They can also create customized messages to users to help guide them as to how to deal with sensitive data. For example, admins could configure a message that would be sent to the Fabric data owner whenever proprietary information is detected in their data, explaining that this information is internal and should not be shared externally.
+
+For more information, see [Data loss prevention policies in Microsoft Fabric](./data-loss-prevention-overview.md).
 
 ### Securing items in a workspace
 
