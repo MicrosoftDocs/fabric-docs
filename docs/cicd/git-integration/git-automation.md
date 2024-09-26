@@ -64,7 +64,7 @@ Use the following PowerShell scripts to understand how to perform several common
 
 ### Connect and update
 
-This section describes the steps involved in connecting and syncing a workspace with Git. This script works in both directions. We commit changes from the workspace to Git and also update workspace items with changes from Git.
+This section describes the steps involved in connecting and updating a workspace with Git.
 
 For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
 
@@ -102,7 +102,18 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Write-Host "Connecting the workspace '$workspaceName' to Git."
 
     $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
-    
+
+    # AzureDevOps details
+
+    $azureDevOpsDetails = @{
+        gitProviderType = "AzureDevOps"
+        organizationName = "<ORGANIZATION NAME>"
+        projectName = "<PROJECT NAME>"
+        repositoryName = "<REPOSITORY NAME>"
+        branchName = "<BRANCH NAME>"
+        directoryName = "<DIRECTORY NAME>"
+    }
+
     $connectToGitBody = @{
         gitProviderDetails =$azureDevOpsDetails
     } | ConvertTo-Json
@@ -177,11 +188,8 @@ For the complete script, see [Commit all changes to Git](https://github.com/micr
 
 1. **Sign in and get access token** - Sign in to Fabric as a *user* (not a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to sign in.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command.
-
 1. **Describe the request body** - In this part of the script you specify which items (such as reports and notebooks) to commit.
-
 1. Call the `CommitAll` REST API:
-
 1. Get the Long Running OperationId for polling the status of the operation.
 
 ### Selective Commit
