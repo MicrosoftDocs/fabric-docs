@@ -18,7 +18,7 @@ It's a common requirement in data warehouses to assign a unique identifier to ea
 
 ## Workaround technique
 
-This article describes a workaround technique that generates unique identifiers in a warehouse table.
+This article describes a workaround technique that generates unique identifiers in a warehouse table.  This technique may fail if more than one user or job runs the sample code at the same time (duplicate "unique" values can be created) since neither job knows what values the other job is creating.
 
 ### Step 1: Create a table with an identifier column
 
