@@ -32,7 +32,7 @@ This article describes how DLP in Fabric works, lists considerations and limitat
 
 * DLP policies apply to workspaces. Only workspaces hosted in Fabric or Premium capacities are supported. For more information, see [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
 
-* DLP evaluation workloads impact capacity. See [CPU metering for DLP policy evaluation](#cpu-metering-for-dlp-policy-evaluation) for more information.
+* DLP evaluation workloads impact capacity. Currently, DLP for Fabric is available at no additional cost, but this is subject to change. Check this document and the Fabric blog for updates.
 
 * DLP policy templates aren't yet supported for Fabric DLP policies. When creating a DLP policy for Fabric, choose the "custom policy" option.
 
@@ -74,7 +74,8 @@ Before you get started with DLP for Fabric, you should confirm your [Microsoft 3
 
 Data from DLP for Fabric can be viewed in [Activity explorer](/microsoft-365/compliance/data-classification-activity-explorer). There are four roles that grant permission to Activity explorer; the account you use for accessing the data must be a member of any one of them.
 
-* Global administrator
+To view the Activity explorer, the account you use for accessing the data must be a member of any the following roles or above.
+
 * Compliance administrator
 * Security administrator
 * Compliance data administrator
