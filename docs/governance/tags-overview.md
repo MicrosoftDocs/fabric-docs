@@ -61,7 +61,7 @@ In addition, you can see the applied tags in an item's details, in the item's fl
 
     :::image type="content" source="./media/tags-overview/tags-indication-lineage-view.png" alt-text="Screenshot showing the tag indication in lineage view.":::
 
-You can also search by tags and see all the relevant results, accompanied by additional metadata (item owner and item location).
+You can also use the global search to search by tags and see all the relevant results, accompanied by additional metadata, such asitem owner and location.
 
 :::image type="content" source="./media/tags-overview/tags-global-search.png" alt-text="Screenshot showing tags used as a search term in the global search.":::
 
