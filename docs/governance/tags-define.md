@@ -48,7 +48,7 @@ This section shows how to create a set of one or more tags.
     * Letters
     * Numbers
     * Spaces (not at the beginning of the tag)
-    * Special characters (that name can't consist solely of special characters; it must also contain letters and/or numbers)
+    * Special characters (the name can't consist solely of special characters; it must also contain letters and/or numbers)
 
 1. When done, select **Create**. The new tags will be added to the set of tags.
 
