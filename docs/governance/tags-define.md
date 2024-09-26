@@ -18,12 +18,13 @@ This article describes how to create and manage a set of tags in Microsoft Fabri
 
 For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.md).
 
-[Introduce and explain the purpose of the article.]
-Can create one or more tags at a time.
-You can delete or rename tags.
-When you delete a tag it gets removed from an items it was applied to.
-When you rename a tag it gets renamed on any item it was applied to.
+As a Fabric administrator, you can:
 
+* [Create a set of tags](#create-a-set-of-tags) that users in your organization can use to categorize their Fabric items.
+
+* [Rename tags](#rename-a-tag). WHen you rename a tag, it's name changes wherever it has been used.
+
+* [Delete a tag](#delete-a-tag-from-the-set-of-tags) from the set of tags you've defined. When you delete a tag from the set of defined tags, the tag gets removed from all the items it was applied to.
 
 ## Prerequisites
 
@@ -35,21 +36,21 @@ This section shows how to create a set of one or more tags.
 
 1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (preview)**.
 
-    The Tags tab opens. All currently defined tags are listed on the tab. (is there a limit on the number of tags that can be defined in the tenant?)
+    The **Tags** tab opens. All currently defined tags are listed on the tab.
 
 1. Select **+ New tag**. If no tags have been defined yet, select **Add your first tags**.
 
-1. In the dialog that appears, provide names for your new tags. Use comma-separated names to create more than one tag at a time. You can create as many tags as you want - there is no limit on the number of tags you can create.
+1. In the dialog that appears, provide names for your new tags. Use comma-separated names to create more than one tag at a time. Up to 10,000 tags can be created in a tenant.
 
     :::image type="content" source="./media/tags-define/create-tags.png" alt-text="Screenshot showing how to create two new tags.":::
 
     Tag names can contain:
     * Letters
     * Numbers
-    * Spaces (not in the beginning of the tag)
-    * Special characters (can't be exclusively special characters, must also contain letters (or numbers?))
+    * Spaces (not at the beginning of the tag)
+    * Special characters (that name can't consist solely of special characters; it must also contain letters and/or numbers)
 
-1. When done, select **Create**. The new tags will be added to the list of tags.
+1. When done, select **Create**. The new tags will be added to the set of tags.
 
 ## Rename a tag
 
@@ -69,7 +70,7 @@ This section shows how to create a set of one or more tags.
 
     :::image type="content" source="./media/tags-define/delete-tag.png" alt-text="Screenshot showing how to delete a tag from the set of tags.":::
 
-1. Select **Delete**. The tag is deleted from the set of defined tags, and is removed from all items where it is applied.
+    The tag is deleted from the set of defined tags, and is removed from all items where it is applied.
 
 ## Related content
 
