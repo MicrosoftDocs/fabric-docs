@@ -76,7 +76,7 @@ Permissions can be combined to permit a client to perform multiple operations wi
 
 Examples of valid permission settings include `rw`, `rd`, `rl`, `wd`, `wl`, and `rl`.  You cannot specify a permission more than once.
 
-To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. When evaluating permissions of a SAS, OneLake evaluates the permissions granted in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake data access roles](/fabric/onelake/security/get-started-data-access-roles), if applicable.  Remember that some operations, such as setting permissions or deleting workspaces, are not permitted on OneLake via Azure Storage APIs generally, and therefore granting that permission (`sp=op`) will still not allow a OneLake SAS to perform those operations.
+To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. When evaluating permissions of a SAS, OneLake evaluates the permissions granted in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake data access roles](security/get-started-data-access-roles.md), if applicable.  Remember that some operations, such as setting permissions or deleting workspaces, are not permitted on OneLake via Azure Storage APIs generally, and therefore granting that permission (`sp=op`) will still not allow a OneLake SAS to perform those operations.
 
 |Permission  |URI symbol  |Resource  |Allowed operations  |
 |---------|---------|---------|---------|
@@ -221,4 +221,4 @@ TODO: Add your next step link(s)
 
 - [Create an Azure Storage user delegation SAS](/rest/api/storageservices/create-user-delegation-sas)
 - [Request a user delegation key](/rest/api/storageservices/get-user-delegation-key)
-- [Get started with OneLake data access roles](/security/get-started-data-access-roles.md)
+- [Get started with OneLake data access roles](security/get-started-data-access-roles.md)
