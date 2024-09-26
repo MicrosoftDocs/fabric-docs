@@ -1,10 +1,9 @@
 ---
-title: Create a OneLake SAS
+title: Create a OneLake shared access signature (SAS) (Preview)
 description: Learn how to create OneLake SAS to provide short-term, delegated access to OneLake
 author: mabasile-MSFT
 ms.author: mabasile
-ms.service: Fabric
-ms.topic: concept
+ms.topic: concept-article
 ms.date: 09/24/2024
 
 #CustomerIntent: #CustomerIntent: As a data engineer, I want to generate OneLake SAS to integrate new applications into my Fabric environment.
@@ -20,17 +19,19 @@ OneLake SAS can grant access to files and folders within data items only, and ca
 
 OneLake SAS are created very similarly to [Azure Storage user-delegated SAS](/rest/api/storageservices/create-user-delegation-sas), deliberately inheriting the same format and parameters for maximum compatibility with tools and applications used to working over Azure Storage.
 
+[!INCLUDE feature-preview-note]
+
 ## Assign permissions
 
-Requesting a user delegation key is a tenant-level operation in Fabric. To request a user deleagtion key, the user or security principle requesting the user delegation key must have at least read permissions in one workspace in the Fabric tenant. Remember that the requesting user's identity is used to authenticate the SAS, meaning that user must permission to the data they wish to grant the SAS access to.  
+Requesting a user delegation key is a tenant-level operation in Fabric. To request a user deleagtion key, the user or security principle requesting the user delegation key must have at least read permissions in one workspace in the Fabric tenant. The requesting user's identity is used to authenticate the SAS, which means that the user must have permission to the data they grant the SAS access to.  
 
 ## Acquire an OAuth 2.0 token
 
-To get the user delegation key, first request an OAuth 2.0 token from Microsoft Entra iD.  Provide the token with the Bearer scheme to authorize the call to the *Get User Delegation Key* operation. For more information about requesting an OAuth token from Microsoft Entra ID, see [Authentication flows and application scenarios](entra/identity-platform/authentication-flows-app-scenarios).
+To get the user delegation key, first request an OAuth 2.0 token from Microsoft Entra iD.  Provide the token with the Bearer scheme to authorize the call to the *Get User Delegation Key* operation. For more information about requesting an OAuth token from Microsoft Entra ID, see [Authentication flows and application scenarios](/entra/identity-platform/authentication-flows-app-scenarios).
 
 ## Request the user delegation key
 
-Calling the *Get User Delegation Key* operation returns the key as a set of avlues that are used as parameters on the user delegation SAS token.  These parameters are described in the [Get User Delegation Key](rest/api/storageservices/get-user-delegation-key) reference and in the next section.'
+Calling the *Get User Delegation Key* operation returns the key as a set of values that are used as parameters on the user delegation SAS token.  These parameters are described in the [Get User Delegation Key](/rest/api/storageservices/get-user-delegation-key) reference and in the next section.'
 
 When a client requests a user delegation key using an OAuth 2.0 token, OneLake returns a user delegation key on behalf of the client.  Any SAS created with this user delegation key are granted at most the permissions granted to the client, scoped down to the permissions explicitly granted in the SAS.
 
@@ -218,6 +219,6 @@ https://onelake.blob.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/File
 
 TODO: Add your next step link(s)
 
-- [Create an Azure Storage user delegation SAS](/rest/api/storageservices/create-user-delegation-sas?plain=1#user-delegation-sas-support-for-directory-scoped-access)
+- [Create an Azure Storage user delegation SAS](/rest/api/storageservices/create-user-delegation-sas)
 - [Request a user delegation key](/rest/api/storageservices/get-user-delegation-key)
-- [Get started with OneLake data access roles](https://learn.microsoft.com/en-us/fabric/onelake/security/get-started-data-access-roles)
+- [Get started with OneLake data access roles](/security/get-started-data-access-roles.md)

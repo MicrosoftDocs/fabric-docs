@@ -47,10 +47,6 @@ items:
     href: onelake-api-parity.md
   - name: Use Python to manage OneLake
     href: onelake-access-python.md
-  - name: What are OneLake SAS?
-    href: onelake-sas-overview.md
-  - name: Create a OneLake SAS
-    href: how-to-create-onelake-sas.md
 - name: Integrate with Azure services
   items:
   - name: Azure Synapse Analytics
@@ -87,6 +83,12 @@ items:
       href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
     - name: For common data architectures
       href: ./security/how-to-common-data-architectures.md
+  - name: Authorize with OneLake shared access signatures (SAS)
+    items:
+    - name: What are OneLake SAS?
+      href: onelake-sas-overview.md
+    - name: Create a OneLake SAS
+      href: how-to-create-onelake-sas.md
   - name: Plan for disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
