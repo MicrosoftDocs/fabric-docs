@@ -64,16 +64,24 @@ items:
     href: data-loss-prevention-monitor.md
 - name: Endorsement
   href: endorsement-overview.md
-- name: Lineage
-  href: lineage.md
-- name: Impact analysis
-  href: impact-analysis.md
 - name: Domains
   items:
   - name: Domains
     href: domains.md
   - name: Audit schema for domains
     href: domains-audit-schema.md
+- name: Tags
+  items:
+  - name: Overview
+    href: tags-overview.md
+  - name: Create and manage a set of tags
+    href: tags-define.md
+  - name: Apply tags to items
+    href: tags-apply.md
+- name: Lineage
+  href: lineage.md
+- name: Impact analysis
+  href: impact-analysis.md
 - name: External data sharing
   items:
   - name: Overview
