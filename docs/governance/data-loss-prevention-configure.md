@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 08/11/2024
+ms.date: 09/26/2024
 
 #customer intent: As a Purview compliance administrator, I want to learn how to configure DLP policies for Fabric so that my organization can detect leakage of sensitive data from Fabric items.
 
