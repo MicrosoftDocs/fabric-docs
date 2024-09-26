@@ -27,7 +27,11 @@ ms.date: 05/21/2024
     1. For **Topic**, enter the Kafka topic. 
     1. For **Consumer group**, enter the consumer group of your Apache Kafka cluster. This field provides you with a dedicated consumer group for getting events.  
     1. Select **Reset auto offset** to specify where to start reading offsets if there's no commit. 
-    1. For **Security protocol**, the default value is **SASL_PLAINTEXT**. The default **SASL mechanism** is typically **PLAIN**, unless configured otherwise. You can select the **SCRAM-SHA-256** or **SCRAM-SHA-512** mechanism that suits your security requirements.   
+    1. For **Security protocol**, the default value is **SASL_PLAINTEXT**.
+       > [!NOTE] 
+> The Apache Kafka source currently supports only unencrypted data transmission between your Apache Kafka cluster and Eventstream. Support for encrypted data transmission via SSL will be available soon.
+       
+       The default **SASL mechanism** is typically **PLAIN**, unless configured otherwise. You can select the **SCRAM-SHA-256** or **SCRAM-SHA-512** mechanism that suits your security requirements.   
     
         :::image type="content" source="./media/apache-kafka-source-connector/configure-source-section.png" alt-text="Screenshot that shows the first page of the Apache Kafka connection settings." lightbox="./media/apache-kafka-source-connector/configure-source-section.png":::      
 1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
