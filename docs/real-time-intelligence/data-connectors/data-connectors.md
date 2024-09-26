@@ -159,7 +159,7 @@ Fluent Bit is an open-source agent that collects logs, metrics, and traces from 
 * **Use cases:** Logs
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/logstash-output-kusto/
-* **Documentation:** [Get data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabriccontext-rti&pivots=fabric)
+* **Documentation:** [Get data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric)
 * **Community Blog:** [How to migrate from Elasticsearch to Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/how-to-migrate-from-elasticsearch-to-azure-data-explorer/ba-p/1621539/)
 
 ## NLog
