@@ -1,16 +1,16 @@
 ---
-title: "Limitations for Microsoft Fabric mirrored databases from Snowflake (preview)"
+title: "Limitations for Microsoft Fabric mirrored databases from Snowflake"
 description: Learn about the limitations of mirrored databases from Snowflake in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
-ms.date: 04/24/2024
+ms.date: 09/25/2024
 ms.topic: conceptual
 ms.custom:
   - references_regions
 ---
 
-# Limitations in Microsoft Fabric mirrored databases from Snowflake (Preview)
+# Limitations in Microsoft Fabric mirrored databases from Snowflake
 
 Current limitations in the Microsoft Fabric mirrored databases from Snowflake are listed in this page. This page is subject to change.
 
@@ -91,5 +91,5 @@ The following are the Fabric regions that support Mirroring for Snowflake:
 ## Related content
 
 - [What is Mirroring in Fabric?](overview.md)
-- [Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake.md)
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake-tutorial.md)
+- [Microsoft Fabric mirrored databases from Snowflake](snowflake.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](snowflake-tutorial.md)

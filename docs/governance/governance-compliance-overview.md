@@ -5,12 +5,12 @@ author: paulinbar
 ms.author: painbar
 ms.topic: overview
 ms.custom:
-ms.date: 03/27/2024
+ms.date: 09/26/2024
 ---
 
 # Governance overview and guidance
 
-Microsoft Fabric governance and compliance provides set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
+Microsoft Fabric governance and compliance provides a set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
 
 This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance regarding taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
@@ -19,9 +19,10 @@ This article describes at a high level the main features and components that hel
 |[Admin portal](#admin-portal)|[Privacy](#privacy)|[OneLake data hub](#onelake-data-hub)|[Monitoring hub](#monitoring-hub)|
 |[Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust, and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
 |[Domains](#domains)|[Purview Information Protection](#purview-information-protection)*|[Data lineage and impact analysis](#data-lineage-and-impact-analysis)|[Purview hub](#purview-hub)|
-|[Workspaces](#workspaces)|[Securing Fabric items within a workspace](#securing-items-in-a-workspace)|[Purview for governance across the org](#purview-for-governance-across-the-org)*|[Admin monitoring](#admin-monitoring)|
-|[Capacities](#capacities)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
-|[Metadata scanning](#metadata-scanning)|[Auditing](#auditing)|||
+|[Workspaces](#workspaces) |[Purview Data Loss Prevention](#purview-data-loss-prevention)* |[Purview for governance across the org](#purview-for-governance-across-the-org)* |[Admin monitoring](#admin-monitoring) |
+|[Capacities](#capacities) |[Securing Fabric items within a workspace](#securing-items-in-a-workspace) | | |
+|[Metadata scanning](#metadata-scanning) |[Securing data in Fabric items](#securing-data-in-fabric-items) | | |
+| |[Auditing](#auditing) | | |
 
 *Requires additional licensing
 
@@ -95,6 +96,14 @@ For more information, see [Information Protection in Microsoft Fabric](./informa
 
 **Guidance**: Sensitivity labels from Microsoft Purview Information Protection and their associated label policies should be specified at an organizational level and be valid for the whole organization.
 
+### Purview Data Loss Prevention
+
+Purview DLP policies for Fabric automatically detect sensitive information as it is uploaded into [DLP-supported item types](./data-loss-prevention-overview.md#supported-item-types) in your Fabric tenant, and help you take risk remediation actions so that your organization stays compliant with governmental and industry regulations.
+
+Compliance and security administrators receive audit logs for every DLP detection. The audit logs give them further visibility into business-critical data and its location within the tenant. They can set up alerts that will be automatically generated whenever sensitive information is detected in a DLP-supported item. They can also create customized messages to users to help guide them about how to deal with sensitive data. For example, admins could configure a message that would be sent to the Fabric data owner whenever proprietary information is detected in their data, explaining that this information is internal and should not be shared externally.
+
+For more information, see [Data loss prevention policies in Microsoft Fabric](./data-loss-prevention-overview.md).
+
 ### Securing items in a workspace
 
 Organizational teams can have individual workspaces where different personas collaborate and work on generating content. Access to the items in the workspace is regulated via workspace roles assigned to users by the workspace admin.
@@ -127,7 +136,7 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 
 For more information, see [Discover data items in the OneLake data hub](../get-started/onelake-data-hub.md).
 
- **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the data hub. Carefully defined domains help set the context for teams and makes for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
+ **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the data hub. Carefully defined domains help set the context for teams and make for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
 
 ### Endorsement
 

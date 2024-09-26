@@ -52,6 +52,16 @@ items:
       href: service-security-sensitivity-label-troubleshooting.md
   - name: Microsoft Defender for Cloud Apps with Power BI
     href: service-security-using-defender-for-cloud-apps-controls.md
+- name: Data loss prevention policies
+  items:
+  - name: Overview
+    href: data-loss-prevention-overview.md
+  - name: Configure a DLP policy for Fabric
+    href: data-loss-prevention-configure.md
+  - name: Respond to a DLP policy violation
+    href: data-loss-prevention-respond.md
+  - name: Monitor DLP policy violations
+    href: data-loss-prevention-monitor.md
 - name: Endorsement
   href: endorsement-overview.md
 - name: Domains
