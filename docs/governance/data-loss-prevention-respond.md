@@ -48,4 +48,5 @@ The action or combination of actions you see may vary depending on the policy co
 
 * [Data loss prevention policies for Fabric and Power BI](./data-loss-prevention-overview.md).
 * [Configure a DLP policy for Fabric and Power BI](./data-loss-prevention-configure.md).
+* [Monitor and manage DLP policy violations](./data-loss-prevention-monitor.md)
 * [Learn about data loss prevention](/microsoft-365/compliance/dlp-learn-about-dlp)

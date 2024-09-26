@@ -141,4 +141,5 @@ When a DLP policy detects an issue with an item:
 
 * [Configure a DLP policy for Fabric](./data-loss-prevention-configure.md).
 * [Respond to a DLP policy violation in Fabric](./data-loss-prevention-respond.md).
+* [Monitor and manage DLP policy violations](./data-loss-prevention-monitor.md)
 * [Learn about data loss prevention](/purview/dlp-learn-about-dlp)
