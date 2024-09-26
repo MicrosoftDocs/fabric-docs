@@ -8,7 +8,7 @@ ms.reviewer: ''
 ms.custom:
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 09/22/2024
 LocalizationGroup: Administration
 ---
 
@@ -21,7 +21,7 @@ If you're an admin for your organization, and want to see who has signed into Fa
 
 ## Requirements
 
-Any user can view a report of their own sign-ins. To see a report for all users, you must be in one of the following roles: Global Administrator, Security Administrator, Security Reader, Global Reader, or Report Reader.
+Any user can view a report of their own sign-ins. To see a report for all users, you must have a Fabric administrator role.
 
 <a name='use-the-azure-ad-admin-center-to-view-sign-ins'></a>
 
@@ -48,7 +48,6 @@ To view sign-in activity, follow these steps:
 1. Select **Apply**.
 
 **Microsoft Power BI** filters to sign-in activity related to the service. **Power BI Gateway** filters to sign-in activity specific to the on-premises data gateway.
-    :::image type="content" source="media/service-admin-access-usage/sign-in-filter.png" alt-text="Screenshot of the Sign-in filter with the Application field highlighted.":::
 
 ## Export the data
 

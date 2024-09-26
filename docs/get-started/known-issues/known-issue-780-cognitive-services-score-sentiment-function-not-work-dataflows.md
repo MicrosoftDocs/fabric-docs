@@ -4,7 +4,7 @@ description: A known issue is posted where the Cognitive Services ScoreSentiment
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/18/2024
+ms.date: 08/14/2024
 ms.custom: known-issue-780
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-780
 
 When using AI insights in a dataflow, you can choose the **ScoreSentiment** function to run text analytics based on a key phrase. If you use this function when creating a dataflow or refresh an existing dataflow with this function, you might receive an error.
 
-**Status:** Open
+**Status:** Fixed: August 14, 2024
 
 **Product Experience:** Power BI
 

@@ -4,7 +4,7 @@ description: A known issue is posted where Delta tables don't appear in the SQL 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/16/2024
+ms.date: 08/28/2024
 ms.custom: known-issue-722
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-722
 
 Delta tables in the Lakehouse don't appear in SQL Analytics Endpoint Object Explorer. Instead of loading the tables in SQL Analytics Endpoint, the loading icon appears but doesn't complete as expected.
 
-**Status:** Open
+**Status:** Fixed: August 28, 2024
 
 **Product Experience:** Data Warehouse
 

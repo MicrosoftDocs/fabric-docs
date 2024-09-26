@@ -15,10 +15,10 @@ ms.date: 07/10/2024
 
 In this tutorial, you go through the whole process of loading data into your workspace, and using deployment pipelines together with Git integration to collaborate with others in the development, testing, and publication of your data and reports.
 
-## Prerequisites
+> [!NOTE]
+> Some of the items for Git integration are in preview. For more information, see the list of [supported items](./git-integration/intro-to-git-integration.md#supported-items).
 
-> [!IMPORTANT]
-> The Git integration feature is in currently in [preview](../get-started/preview.md).
+## Prerequisites
 
 [!INCLUDE [github-prereqs](../includes/github-prereqs.md)]
 

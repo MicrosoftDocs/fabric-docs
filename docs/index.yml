@@ -15,7 +15,8 @@ metadata:
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 01/16/2024
+  ms.date: 07/29/2024
+  adobe-target: true
 # highlightedContent section (optional)
 # Maximum of 8 items 
 highlightedContent:
@@ -54,54 +55,183 @@ conceptualContent:
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
-        - title: "Microsoft Fabric: Get started"
+        - title: "Get started"
           links:
           - url: get-started/fabric-home.md
+            itemType: concept
+            text: Tour the Fabric portal
+          - url: get-started/share-items.md
             itemType: how-to-guide
-            text: Navigate the Fabric portal          
-          - url: get-started/workspaces.md
+            text: Collaborate and share items
+          - url: get-started/task-flow-overview.md
             itemType: concept
-            text: Fabric workspaces and settings
-          - url: get-started/whats-new.md
-            itemType: tutorial
-            text: What's new in Microsoft Fabric?
-          - url: enterprise/buy-subscription.md
+            text: Use task flows
+          - url: get-started/copilot-enable-fabric.md
             itemType: concept
-            text: Buy a Microsoft Fabric subscription
+            text: Try Copilot in Fabric
           # footerLink (optional)
           footerLink:
             url: get-started/index.yml
             text: See more
         # Card
-        - title: Platform admin and governance
+        - title: Decision guides
+          links:
+          - url: get-started/decision-guide-data-store.md
+            itemType: quickstart
+            text: Data store
+          - url: get-started/decision-guide-pipeline-dataflow-spark.md
+            itemType: quickstart
+            text: Data Ingestion and transformation
+          footerLink:
+            url: get-started/index.yml
+            text: See more
+        # Card
+        - title: Migrate to Fabric
+          links:
+          - url: data-factory/upgrade-paths.md
+            itemType: concept
+            text: Migrate to Data Factory
+          - url: data-engineering/migrate-synapse-overview.md
+            itemType: concept
+            text: Migrate from Azure Synapse Spark to Fabric
+          - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
+            itemType: concept
+            text: From Synapse dedicated SQL pools to Fabric
+          footerLink:
+            url: data-engineering/migrate-synapse-overview.md
+            text: See more
+        # Card
+        - title: Administer your resources
           links:
           - url: admin/microsoft-fabric-admin.md
-            itemType: how-to-guide
-            text: Fabric administration
-          - url: governance/governance-compliance-overview.md
-            itemType: how-to-guide
-            text: Data governance and compliance
-          - url: admin/monitoring-workspace.md
+            itemType: overview
+            text: What is Fabric administration?
+          - url: admin/fabric-switch.md
+            itemType: overview
+            text: Enable Fabric
+          - url: admin/admin-center.md
             itemType: concept
-            text: Admin monitoring workspace
-          - url: security/security-overview.md
+            text: What is the admin portal?
+          - url: admin/capacity-settings.md
             itemType: how-to-guide
-            text: Security
+            text: Manage Fabric capacity
           footerLink:
             url: admin/index.yml
             text: See more
         # Card
-        - title: Developer
+        - title: Govern your resources
+          links:
+          - url: governance/governance-compliance-overview.md
+            itemType: overview
+            text: Governance and compliance in Fabric
+          - url: governance/domains.md
+            itemType: concept
+            text: Domains
+          - url: governance/endorsement-overview.md
+            itemType: concept
+            text: Endorsement
+          - url: governance/information-protection.md
+            itemType: how-to-guide
+            text: Information protection
+          footerLink:
+            url: governance/index.yml
+            text: See more
+        # Card
+        - title: Secure resources
+          links:
+          - url: security/security-overview.md
+            itemType: overview
+            text: Security in Fabric
+          - url: security/security-managed-vnets-fabric-overview.md 
+            itemType: concept
+            text: Managed VNets
+          - url: security/security-private-links-overview.md
+            itemType: concept
+            text: Private Links
+          - url: security/security-trusted-workspace-access.md
+            itemType: concept
+            text: Trusted workspace access
+          - url: security/service-admin-row-level-security.md
+            itemType: how-to-guide
+            text: Row-level security (RLS) with Power BI
+          footerLink:
+            url: security/index.yml
+            text: See more
+        # Card
+        - title: Store your data in OneLake
+          links:
+          - url: onelake/onelake-overview.md
+            itemType: overview
+            text: What is OneLake
+          - url: onelake/create-onelake-shortcut.md
+            itemType: how-to-guide
+            text: Create a OneLake shortcut
+          - url: onelake/security/data-access-control-model.md
+            itemType: concept
+            text: OneLake data access control
+          - url: get-started/onelake-data-hub.md
+            itemType: concept
+            text: Discover data items in the OneLake data hub
+          footerLink:
+            url: onelake/index.yml
+            text: See more
+        # Card
+        - title: Copilot in Fabric
+          links:
+          - url: get-started/copilot-enable-fabric.md
+            itemType: concept
+            text: Enable Copilot in Fabric
+          - url: get-started/copilot-fabric-data-factory.md
+            itemType: concept
+            text: Copilot for Data Factory
+          - url: get-started/copilot-notebooks-overview.md
+            itemType: overview
+            text: Copilot for Data Science and Data Engineering
+          - url: data-warehouse/copilot.md
+            itemType: concept
+            text: Microsoft Copilot for Data Warehouse
+          footerLink:
+            url: get-started/copilot-fabric-overview.md
+            text: See more
+        # Card
+        - title: Workspaces
+          links:
+          - url: get-started/workspaces.md
+            itemType: concept
+            text: Workspace roles and permissions
+          - url: get-started/create-workspaces.md
+            itemType: how-to-guide
+            text: Create a workspace
+          - url: cicd/git-integration/git-get-started.md
+            itemType: how-to-guide
+            text: Manage workspaces
+          footerLink:
+            url: get-started/workspaces.md
+            text: See more
+        # Card
+        - title: Data science and AI
+          links:
+          - url: data-science/synapseml-first-model.md
+            itemType: how-to-guide
+            text: Build a model with SynapseML
+          - url: data-science/model-training-overview.md
+            itemType: concept
+            text: Train a model
+          - url: data-science/semantic-link-overview.md
+            itemType: overview
+            text: Semantic link
+          footerLink:
+            url: data-science/index.yml
+            text: See more
+        # Card
+        - title: Develop with Fabric
           links:
             - url: /rest/api/fabric/
               itemType: reference
               text: REST APIs
-
             - url: workload-development-kit/development-kit-overview.md
               itemType: concept
               text: Microsoft Workload Development Kit
-
-
             - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
               itemType: concept
               text: Deployment pipelines
@@ -145,17 +275,17 @@ conceptualContent:
               itemType: concept
               text: Fabric updates blog
         # Card
-        - title: Troubleshooting 
+        - title: Support and troubleshooting 
           links:
           - url: get-started/fabric-known-issues.md
             itemType: how-to-guide
-            text: Known issues
+            text: Check for known issues
           - url: /power-bi/troubleshoot/
             itemType: concept
             text: Troubleshoot issues
           - url: /power-bi/support/service-support-options
             itemType: concept
-            text: Create a support ticket
+            text: Connect with support
           footerLink:
             url: get-started/index.yml
             text: See more

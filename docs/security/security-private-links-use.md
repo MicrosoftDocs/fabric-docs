@@ -102,7 +102,7 @@ This step is used to support Azure Private Endpoint association with your Fabric
 
 The following procedure creates a virtual network with a resource subnet, an Azure Bastion subnet, and an Azure Bastion host.
 
-The number of IP addresses your subnet will need is the number of capacities on your tenant plus five. For example, if you're creating a subnet for a tenant with seven capacities, you'll need twelve IP addresses.
+The number of IP addresses your subnet will need is the number of capacities you created on your tenant plus fifteen. For example, if you're creating a subnet for a tenant with seven capacities, you'll need twenty-two IP addresses.
 
 1. In the Azure portal, search for and select **Virtual networks**.
 

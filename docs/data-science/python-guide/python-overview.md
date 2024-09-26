@@ -57,7 +57,7 @@ For more information about the supported MSSparkUtils commands, see [Use Microso
 
 ## Use Pandas on Spark
 
-The [Pandas API on Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html) allows you to scale your Pandas workload to any size by running it distributed across multiple nodes. If you're already familiar with pandas and want to use Spark for big data, pandas API on Spark makes you immediately productive.
+The [Pandas API on Spark](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_ps.html) allows you to scale your Pandas workload to any size by running it distributed across multiple nodes. If you're already familiar with pandas and want to use Spark for big data, pandas API on Spark makes you immediately productive.
 
 You can migrate your applications without modifying the code. You can have a single codebase that works both with pandas, for tests and smaller datasets, and with Spark, for production and distributed datasets. You can switch between the pandas API and the Pandas API on Spark easily and without overhead.
 
@@ -73,6 +73,6 @@ To learn more about how to create Python visualizations, see [Python visualizati
 
 ## Related content
 
-- Learn how to use the Pandas API on Apache Spark: [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
+- Learn how to use the Pandas API on Apache Spark: [Pandas API on Apache Spark](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_ps.html)
 - [Manage Apache Spark libraries in Microsoft Fabric](../../data-engineering/library-management.md)
 - Visualize data in Python: [Visualize data in Python](./python-visualizations.md)

@@ -75,7 +75,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | Intelligent cache | Yes | Yes |
 | API/SDK support | Yes | Yes |
 
-- **Runtime**: Fabric doesn't support Spark 2.4, 3.1, and 3.2 versions. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md), Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md) and Spark 3.5 with Delta 3.0 within [Runtime 1.3](runtime-1-3.md).
+- **Runtime**: Fabric doesn't support Spark 2.4, 3.1, and 3.2 versions. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md), Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md) and Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md).
 
 - **Autoscale**: In Azure Synapse Spark, the pool can scale up to 200 nodes regardless of the node size. In Fabric, the maximum number of nodes is subjected to node size and provisioned capacity. See the following example for the F64 SKU.
 
@@ -217,8 +217,6 @@ Important [Spark job definition](spark-job-definition.md) considerations:
 - **Import/export**: In Azure Synapse, you can import/export json-based Spark job definitions from the UI. This feature isn't available yet in Fabric.
 
 - **.NET for Spark C#**: Fabric doesn't support .NET Spark (C#). However, the recommendation is that users with [existing workloads written in C# or F# migrate to Python or Scala](/azure/synapse-analytics/spark/spark-dotnet).
-
-- **Pipeline activity support**: Data pipelines in Fabric don't include Spark job definition activity yet. You could use scheduled runs if you want to run your Spark job periodically.
 
 - **Built-in scheduled run support**: Fabric supports [scheduled runs for a Spark job definition](run-spark-job-definition.md).
 

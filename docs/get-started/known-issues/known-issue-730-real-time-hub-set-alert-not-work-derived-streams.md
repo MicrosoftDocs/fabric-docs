@@ -4,7 +4,7 @@ description: A known issue is posted where Real-Time hub **Set alert** doesn't w
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/29/2024
+ms.date: 08/23/2024
 ms.custom: known-issue-730
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-730
 
 On the **Details** page of Real-Time hub, you can open a derived stream of an eventstream. If you select the **Set alert** button, it doesn't function correctly. You're redirected to the Data Activator instance on the default stream instead of the derived stream. Data Activator then receives data with the wrong schema and you can't set the right conditions for the trigger. While we work to resolve this issue, you might see that the **Set alert** button is greyed out to prevent you from going down a path that leads to an error situation.
 
-**Status:** Open
+**Status:** Fixed: August 23, 2024
 
 **Product Experience:** Real-Time Intelligence
 

@@ -9,12 +9,12 @@ ms.author: ssalgado
 author: ssalgadodev
 ms.reviewer: JessicaXYWang
 reviewer: jessiwang
-ms.date: 05/08/2023
+ms.date: 08/21/2024
 ---
 
 # Use LightGBM models with SynapseML in Microsoft Fabric
 
-The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you'll use LightGBM to build classification, regression, and ranking models.
+The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you use LightGBM to build classification, regression, and ranking models.
 
 LightGBM is an open-source, distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or
 MART) framework. LightGBM is part of Microsoft's
@@ -30,7 +30,7 @@ MART) framework. LightGBM is part of Microsoft's
 
 ## Use `LightGBMClassifier` to train a classification model
 
-In this section, you'll use LightGBM to build a classification model for predicting bankruptcy.
+In this section, you use LightGBM to build a classification model for predicting bankruptcy.
 
 1. Read the dataset.
 
@@ -147,7 +147,7 @@ In this section, you'll use LightGBM to build a classification model for predict
 
 ## Use `LightGBMRegressor` to train a quantile regression model
 
-In this section, you'll use LightGBM to build a regression model for drug discovery.
+In this section, you use LightGBM to build a regression model for drug discovery.
 
 1. Read the dataset.
 
@@ -203,7 +203,7 @@ In this section, you'll use LightGBM to build a regression model for drug discov
 
 ## Use `LightGBMRanker` to train a ranking model
 
-In this section, you'll use LightGBM to build a ranking model.
+In this section, you use LightGBM to build a ranking model.
 
 1. Read the dataset.
 
