@@ -51,4 +51,3 @@ You must have write permissions on an item to be able to apply tags to it or rem
 
 * [Tags overview](tags-overview.md).md)
 * [Create and manage a set of tags](tags-define.md)
-* [Monitor tag use](tags-monitor.md)

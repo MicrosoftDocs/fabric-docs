@@ -60,4 +60,3 @@ You can also search by tags and see all the relevant results, accompanied by add
 
 - [Create and manage a set of tags](tags-define.md)
 - [Apply tags](tags-apply.md)
-- [Monitor tag use](tags-monitor.md)

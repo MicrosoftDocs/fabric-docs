@@ -68,8 +68,6 @@ items:
     href: tags-define.md
   - name: Apply tags to items
     href: tags-apply.md
-  - name: Monitor tag use
-    href: tags-monitor.md
 - name: Lineage
   href: lineage.md
 - name: Impact analysis

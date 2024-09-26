@@ -76,4 +76,3 @@ This section shows how to create a set of one or more tags.
 
 * [Tags overview](tags-overview.md)
 * [Apply tags to items](tags-apply.md)
-* [Monitor tag use](tags-monitor.md)
