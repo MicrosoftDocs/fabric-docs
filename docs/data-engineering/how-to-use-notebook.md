@@ -233,7 +233,7 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 
 - **Develop mode**: Read, execute, write permission needed.
 - **Run only mode**: Read, execute permission needed.
-- **Edit mode**: View, write permission needed.
+- **Edit mode**: Read, write permission needed.
 - **View mode**: Read permission needed.
 
 ## Related content
