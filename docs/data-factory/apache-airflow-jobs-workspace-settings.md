@@ -1,6 +1,6 @@
 ---
-title: Data workflows workspace settings
-description: This article enumerates the Data workflow environment run-time configurations.
+title: Apache Airflow Job workspace settings
+description: This article enumerates the Apache Airflow job environment run-time configurations.
 author: nabhishek
 ms.author: abnarain
 ms.reviewer: abnarain
@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 04/24/2024
 ---
 
-# Data workflows workspace settings
+# Apache Airflow Job workspace settings
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow.
+> Apache Airflow job is powered by Apache Airflow.
 >
 > [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-You can configure and manage the runtime settings of Apache Airflow in Data workflows and the default Apache Airflow runtime for the workspace. Data workflow offers the two types of the environment settings, that is, Starter pool and Custom pool. You can use the starter pool which is configured by default or create custom pools for your workspace. If the setting for customizing compute configurations for items is disabled, the starter pool is used for all environments within the workspace. Starter pools offer an instant Apache Airflow runtime, which is automatically deprovisioned when not in use. On the other hand, custom pools provide more flexibility and offer an always-on Apache Airflow runtime. This article outlines each setting and suggests ideal scenarios for their respective usage.
+You can configure and manage the runtime settings of Apache Airflow in Apache Airflow Job and the default Apache Airflow runtime for the workspace. Apache Airflow job offers the two types of the environment settings, that is, Starter pool and Custom pool. You can use the starter pool which is configured by default or create custom pools for your workspace. If the setting for customizing compute configurations for items is disabled, the starter pool is used for all environments within the workspace. Starter pools offer an instant Apache Airflow runtime, which is automatically deprovisioned when not in use. On the other hand, custom pools provide more flexibility and offer an always-on Apache Airflow runtime. This article outlines each setting and suggests ideal scenarios for their respective usage.
 
 ## Starter Pool and Custom Pool
 
@@ -35,7 +35,7 @@ The following table contains the list the properties of both the pools.
 2. In the 'Data Factory' section, click on 'Data Workflow Settings.'
 3. You find that the Default Data Workflow Setting is currently set to Starter Pool. To switch to a Custom Pool, expand the dropdown menu labeled 'Default Data Workflow Setting' and select 'New Pool.'
 
-   :::image type="content" source="media/data-workflows/data-workflow-runtime-settings.png" lightbox="media/data-workflows/data-workflow-runtime-settings.png" alt-text="Screenshot shows data workflows run time settings.":::
+   :::image type="content" source="media/apache-airflow-jobs/data-workflow-runtime-settings.png" lightbox="media/apache-airflow-jobs/data-workflow-runtime-settings.png" alt-text="Screenshot shows data workflows run time settings.":::
 
 4. Customize the following properties according to your needs:
 
@@ -44,10 +44,10 @@ The following table contains the list the properties of both the pools.
    - Enable autoscale: This feature allows your Apache Airflow pool to scale nodes up or down as needed.
    - Extra nodes: Extra nodes enable the pool to run more DAGs concurrently. Each node provides the capacity to run three more workers.
 
-   :::image type="content" source="media/data-workflows/new-custom-pool.png" lightbox="media/data-workflows/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
+   :::image type="content" source="media/apache-airflow-jobs/new-custom-pool.png" lightbox="media/apache-airflow-jobs/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
 
 5. Click on 'Create' to finalize your configuration.
 
 ## Related content
 
-[Quickstart: Create a Data workflow.](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job.](../data-factory/create-apache-airflow-jobs.md)
