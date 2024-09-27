@@ -76,7 +76,7 @@ __Step-by-Step Instructions__
    
 
 ```json
-POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceID>/items HTTP/1.1 
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceID}/items HTTP/1.1 
 Content-Type: application/json 
 Authorization: Bearer <your bearer token> 
 
