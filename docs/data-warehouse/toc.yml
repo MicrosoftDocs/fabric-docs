@@ -68,9 +68,9 @@ items:
     href: copilot-quick-action.md
 - name: Design and Develop
   items:
-                          - name: Collation
-                            href: collation.md
-                            displayName: case insensitive collation
+  - name: Collation
+    href: collation.md
+    displayName: case insensitive collation
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Create a sample warehouse 
