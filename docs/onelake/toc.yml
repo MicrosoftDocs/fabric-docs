@@ -85,10 +85,10 @@ items:
       href: ./security/how-to-common-data-architectures.md
   - name: Authorize with OneLake shared access signatures (SAS)
     items:
-    - name: What are OneLake SAS?
-      href: onelake-sas-overview.md
+    - name: What is OneLake SAS?
+      href: onelake-shared-access-signature-overview.md
     - name: Create a OneLake SAS
-      href: how-to-create-onelake-sas.md
+      href: how-to-create-onelake-shared-access-signatures.md
   - name: Plan for disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
