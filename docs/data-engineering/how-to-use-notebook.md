@@ -152,7 +152,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it support Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
 
-- You can access this feature through 'view and edit' in the file menu. Double-click on file is a faster way.
+- You can access this feature through **'view and edit'** in the file menu. Double-click on file is a faster way.
 
    :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
 
