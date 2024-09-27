@@ -52,6 +52,11 @@ In order to minimize the amount of time it takes to execute your notebook job, y
 
 :::image type="content" source="media/notebook-activity/session-tag-001.png" alt-text="Screenshot showing the Notebook settings tab highlighting the tab, where to add session tag.":::
 
+> [!NOTE]
+> To be able to use the session tag, High concurrency mode for pipeline running multiple notebooks option must be turned on. This option can be found under the High concurrency mode for Spark settings under the Workspace settings
+
+> :::image type="content" source="media/notebook-activity/turning-on-high-concurrency-mode-for-session-tags.png" alt-text="Screenshot showing the Workspace settings tab highlighting the tab, where to enable high concurrency mode for pipelines running multiple notebooks.":::
+
 ## Save and run or schedule the pipeline
 
 Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
