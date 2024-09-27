@@ -55,7 +55,7 @@ In order to minimize the amount of time it takes to execute your notebook job, y
 > [!NOTE]
 > To be able to use the session tag, High concurrency mode for pipeline running multiple notebooks option must be turned on. This option can be found under the High concurrency mode for Spark settings under the Workspace settings
 
-> :::image type="content" source="media/notebook-activity/turning-on-high-concurrency-mode-for-session-tags.png" alt-text="Screenshot showing the Workspace settings tab highlighting the tab, where to enable high concurrency mode for pipelines running multiple notebooks.":::
+> :::image type="content" source="media/notebook-activity/turn-on-high-concurrency-mode-for-session-tags.png" alt-text="Screenshot showing the Workspace settings tab highlighting the tab, where to enable high concurrency mode for pipelines running multiple notebooks.":::
 
 ## Save and run or schedule the pipeline
 
