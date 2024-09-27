@@ -122,7 +122,7 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 
 > [!NOTE]
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
-> - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path “builtin/” will always point to the root notebook’s built-in folder.
+> - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path **builtin/** will always point to the root notebook’s built-in folder.
 
 ### The built-in resources
 
@@ -150,13 +150,13 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 ### File editor
 
-The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include CSV, TXT, HTML, YML, PY, SQL, and more. With the file editor, you can easily access and modify files within the notebook, it support Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
+The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it support Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
 
 - You can access this feature through 'view and edit' in the file menu. Double-click on file is a faster way.
 
    :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
 
-- Content change on file editor need to be saved manually by clicking the Save button or keyboard shortcut: Ctrl+S, file editor doesn't support auto-save.
+- Content change on file editor need to be saved manually by clicking the **Save** button or keyboard shortcut: **Ctrl+S**, file editor doesn't support auto-save.
 - File editor is also affected by [notebook mode](#notebook-mode-switcher). You can only view files but cannot edit them if you are in the notebook mode without editing permission.
 
 > [!NOTE]
