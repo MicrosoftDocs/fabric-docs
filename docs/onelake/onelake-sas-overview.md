@@ -60,7 +60,7 @@ You can also monitor the creation of user delegation keys via the Microsoft Purv
 
 ## Related content
 
-* [How to create a OneLake SAS](how-to-create-a-onelake-shared-access-signature.md)
+* [How to create a OneLake SAS](/how-to-create-a-onelake-shared-access-signature.md)
 * [Generate a user delegation key](/rest/api/storageservices/get-user-delegation-key)
 * [Fabric and OneLake data security](security/data-access-control-model.md)
 * [Create a user delegation SAS for a blob with Python](/azure/storage/blobs/storage-blob-user-delegation-sas-create-python)
