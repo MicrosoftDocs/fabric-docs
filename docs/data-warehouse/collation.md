@@ -73,12 +73,11 @@ __Step-by-Step Instructions__
 1. __Input the Request Details__
 
    - In the file body, type the following request
-   
+* `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceID}/items HTTP/1.1`
+* `Content-Type: application/json`
+* `Authorization: Bearer {bearer token}`
 
 ```json
-POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceID}/items HTTP/1.1 
-Content-Type: application/json 
-Authorization: Bearer {bearer token} 
 
 { 
   "type": "Warehouse", 
