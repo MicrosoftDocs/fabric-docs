@@ -124,7 +124,7 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
 > - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path **builtin/** will always point to the root notebook’s built-in folder.
 
-### The built-in resources
+### Built-in resources folder
 
 The built-in resources folder is a system predefined folder for each notebook item instance. Here are the key capabilities for the notebook resources.
 
@@ -152,7 +152,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it support Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
 
-- You can access this feature through **'view and edit'** in the file menu. Double-click on file is a faster way.
+- You can access this feature through **'View and edit'** in the file menu. Double-click on file is a faster way.
 
    :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
 
@@ -233,8 +233,8 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 
 - **Develop mode**: Read, execute, write permission needed.
 - **Run only mode**: Read, execute permission needed.
-- **Editing mode**: View, write permission needed.
-- **Viewing mode**: Read permission needed.
+- **Edit mode**: View, write permission needed.
+- **View mode**: Read permission needed.
 
 ## Related content
 
