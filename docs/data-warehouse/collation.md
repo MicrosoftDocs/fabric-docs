@@ -15,7 +15,7 @@ ms.date: 10/07/2024
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-All [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] by default are configured with case-sensitive (CS) collation Latin1_General_100_BIN2_UTF8. Users now have the option to create warehouses with case-insensitive (CI) collation - Latin1_General_100_CI_AS_KS_WS_SC_UTF8, providing greater flexibility in data management.
+All [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by default are configured with case-sensitive (CS) collation Latin1_General_100_BIN2_UTF8. Users now have the option to create warehouses with case-insensitive (CI) collation - Latin1_General_100_CI_AS_KS_WS_SC_UTF8, providing greater flexibility in data management.
 
 ## How to Create a Case Insensitive Warehouse
 
@@ -91,9 +91,9 @@ __Step-by-Step Instructions__
 
 __Replace the placeholders:__
 
-- __workspaceID__: Find the workspace GUID in the URL after the /groups/ section or by running SELECT @@SERVERNAME in an existing warehouse.
+- __`<workspaceID>`__: Find the workspace GUID in the URL after the /groups/ section or by running SELECT @@SERVERNAME in an existing warehouse.
 
-- __bearer token__: Obtain this by following these steps:
+- __`<bearer token>`__: Obtain this by following these steps:
 
 1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge or Google Chrome).
 
@@ -105,9 +105,9 @@ __Replace the placeholders:__
 
 1. Paste it in place of `<bearer token>`.
 
-- __Warehouse name here__: Enter the desired warehouse name.
+- __`<Warehouse name here>`__: Enter the desired warehouse name.
 
-- __Warehouse description here__: Enter the desired warehouse description.
+- __`<Warehouse description here>`__: Enter the desired warehouse description.
 
 __5. Send the Request__
 
