@@ -54,13 +54,17 @@ Notebook cell output isn't included when syncing to Git.
 
 You can also use Deployment pipeline to deploy your notebook code across different environments, such as development, test, and production. This feature can enable you to streamline your development process, ensure quality and consistency, and reduce manual errors with lightweight low-code operations. You can also use deployment rules to customize the behavior of your notebooks when they're deployed, such as changing the default lakehouse of a notebook.
 
+> [!NOTE]
+> 
+> With 'New Deployment pipelines' toggle on,  deployment pipeline migrate to the new design. And the old design will be removed in the future.
+
 Use the following steps to complete your notebook deployment using the deployment pipeline.
 
 1. Create a new deployment pipeline or open an existing deployment pipeline. (For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).)
 
 1. Assign workspaces to different stages according to your deployment goals.
 
-1. Select, view, and compare items including notebooks between different stages, as shown in the following example.
+1. Select, view, and compare items including notebooks between different stages, as shown in the following example. Also there is a badge indicating those items not the same as source.
 
     :::image type="content" source="media\notebook-source-control-deployment\compare-stages.png" alt-text="Screenshot of notebook in deployment pipeline." lightbox="media\notebook-source-control-deployment\compare-stages.png":::
 
