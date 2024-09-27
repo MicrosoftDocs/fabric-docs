@@ -108,13 +108,13 @@ __Replace the placeholders:__
 
 1. Paste it in place of <bearer token>.
 
-- __<Warehouse name here>__: Enter your desired warehouse        name.
+- __<Warehouse name here>__: Enter the desired warehouse name.
 
-- __<Warehouse description here>__:        Enter your desired warehouse description.
+- __<Warehouse description here>__: Enter the desired warehouse description.
 
 __5. Send the Request__
 
-- Click the “Send Request” link       displayed above your POST command in the code editor.
+- Click the “Send Request” link displayed above your POST command in the code editor.
 
 ![User's image](media/collation/image2.png)
 
