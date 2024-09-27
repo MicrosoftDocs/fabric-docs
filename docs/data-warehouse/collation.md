@@ -30,7 +30,7 @@ This article provides a step-by-step guide on how to create a data warehouse wit
 
 To create a warehouse with CI collation, use the following API endpoint:
 
-* `POST https://api.fabric.microsoft.com/v1/workspaces/{workspace-id}/items`
+* `POST https://api.fabric.microsoft.com/v1/workspaces/<workspace-id>/items`
 
 ## Example Request Body (JSON)
 
@@ -73,9 +73,9 @@ __Step-by-Step Instructions__
 1. __Input the Request Details__
 
    - In the file body, type the following request
-* `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceID}/items HTTP/1.1`
+* `POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceID>/items HTTP/1.1`
 * `Content-Type: application/json`
-* `Authorization: Bearer {bearer token}`
+* `Authorization: Bearer <bearer token>`
 
 ```json
 
