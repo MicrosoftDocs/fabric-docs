@@ -23,7 +23,7 @@ Every OneLake SAS (and user delegation key) is always backed by a Microsoft Entr
 
 ## How a shared access signature works
 
-A shared access signature is a token appended to the URI for a OneLake resource. The token contains a special set of query parameters that indicate how the client can access the resource. One of the query parameters is the signature. It's constructed from the SAS parameters and signed with the key that was used to create the SAS. OneLake uses this signature to authorize access to the folder or file in OneLake. OneLake SASs use the same format and properties as [Azure Storage user-delegated SAS](/rest/api/storageservices/create-user-delegation-sas), but with additional security restrictions on their lifetime and scope. 
+A shared access signature is a token appended to the URI for a OneLake resource. The token contains a special set of query parameters that indicate how the client can access the resource. One of the query parameters is the signature. It's constructed from the SAS parameters and signed with the key that was used to create the SAS. OneLake uses this signature to authorize access to the folder or file in OneLake. OneLake SASs use the same format and properties as [Azure Storage user-delegated SAS](/rest/api/storageservices/create-user-delegation-sas), but with more security restrictions on their lifetime and scope. 
 
 A OneLake SAS is signed with a user delegation key (UDK), which is backed by a Microsoft Entra credential. You can request a user delegation key with the [Get User Delegation Key](/rest/api/storageservices/get-user-delegation-key) operation. Then, you use this key (while it's still valid) to build the OneLake SAS. The permissions of that Microsoft Entra
  account, along with the permissions explicitly granted to the SAS, determine the client's access to the resource.
@@ -40,10 +40,10 @@ OneLake SASs also supports applications serving as proxies between users and the
 
 ## Managing OneLake SAS
 
-Two settings in your Fabric tenant manage the use of OneLake SASs. The first is a tenant-level setting, **Use short-lived user-delegated SAS tokens**, which manages the generation of user delegation keys. Becaause user delegation keys are generated at the tenant-level, they are controlled by a tenant setting.  This setting is turned on by default, since these user delegation keys have equivalent permissions to the Microsoft Entra identity requesting them and are always short-lived.
+Two settings in your Fabric tenant manage the use of OneLake SASs. The first is a tenant-level setting, **Use short-lived user-delegated SAS tokens**, which manages the generation of user delegation keys. Because user delegation keys are generated at the tenant-level, they're controlled by a tenant setting.  This setting is turned on by default, since these user delegation keys have equivalent permissions to the Microsoft Entra identity requesting them and are always short-lived.
 
-[!NOTE]
-Turning this feature off will prevent all workspaces from making use of OneLake SASs, as all users will be unable to generate user delegation keys.
+> [!NOTE]
+> Turning this feature off will prevent all workspaces from making use of OneLake SASs, as all users will be unable to generate user delegation keys.
 
 The second setting is a delegated workspace setting, **Authenticate with OneLake user-delegated SAS tokens**, which controls whether a workspace accepts a OneLake SAS. This setting is turned off by default and can be turned on by a workspace admin who wants to allow authentication with a OneLake SAS in their workspace. A tenant admin can turn this setting on for all workspaces via the tenant setting, or leave it to workspace admins to turn on.  
   
@@ -53,14 +53,14 @@ You can also monitor the creation of user delegation keys via the Microsoft Purv
 
 - Always use HTTPS to create or distribute a SAS to protect against man-in-the-middle attacks seeking to intercept the SAS.
 - Track your token, key, and SAS token expiry times.  OneLake user delegation keys and SASs have a maximum lifetime of 1 hour. Attempting to request a UDK or build a SAS with a lifetime longer than 1 hour causes the request to fail. To prevent SAS being used to extend the lifetime of expiring OAuth tokens, the lifetime of the token must also be longer than the expiry time of the user delegation key and the SAS.
-- Be careful with a SAS's start time. Setting the start time for a SAS as the current time may cause failures for the first few minutes, due to differing start times between machines (clock skew). Setting the start time to be a few minutes in the past will help protect against these errors.
+- Be careful with a SAS's start time. Setting the start time for a SAS as the current time may cause failures for the first few minutes, due to differing start times between machines (clock skew). Setting the start time to be a few minutes in the past helps protect against these errors.
 - Grant the least possible privileges to the SAS. Providing the minimum required privileges to the fewest possible resources is a security best-practice and lessens the impact if a SAS is compromised.
 - Monitor the generation of user delegation keys. You can audit the creation of user delegation keys in the Microsoft Purview compliance portal. Search for the operation name 'generateonelakeudk' to view keys generated in your tenant.
-- Understand the limitations of OneLake SASs. Because OneLake SASs can't have workspace-level permissions, they are not compatible with some Azure Storage tools which expect container-level permissions to traverse data, like Azure Storage Explorer.
+- Understand the limitations of OneLake SASs. Because OneLake SASs can't have workspace-level permissions, they aren't compatible with some Azure Storage tools which expect container-level permissions to traverse data, like Azure Storage Explorer.
 
 ## Related content
 
-* [How to create a OneLake SAS](/how-to-create-a-onelake-shared-access-signature.md)
+* [How to create a OneLake SAS](how-to-create-a-onelake-shared-access-signature.md)
 * [Generate a user delegation key](/rest/api/storageservices/get-user-delegation-key)
 * [Fabric and OneLake data security](security/data-access-control-model.md)
 * [Create a user delegation SAS for a blob with Python](/azure/storage/blobs/storage-blob-user-delegation-sas-create-python)
