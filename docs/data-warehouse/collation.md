@@ -91,38 +91,38 @@ Authorization: Bearer <your bearer token>
 }
 ```
 
-1. __Replace the placeholders:__
+__Replace the placeholders:__
 
-   - __<workspaceID>__: Find your workspace GUID in the URL after the /groups/ section or by running SELECT @@SERVERNAME in an existing warehouse.
-   
+- __<workspaceID>__: Find your workspace GUID in the URL after the /groups/ section or by running SELECT @@SERVERNAME in an existing warehouse.
+
 ![User's image](media/collation/image.png)
 
-1. __<your bearer token>__: Obtain this by following        these steps:
+- __<your bearer token>__: Obtain this by following        these steps:
 
-   1. Open your Microsoft Fabric         workspace in a browser (Microsoft Edge or Google Chrome).
-   
-   1. Press F12 to open Developer         Tools.
-   
-   1. Select the Console tab.
-   
-   1. Type copy(powerBIAccessToken)         and press Enter. The bearer token will be copied to your clipboard.
-   
-   1. Paste it in place of <your         bearer token>.
-   
-1. __<Warehouse name here>__: Enter your desired warehouse        name.
+1. Open your Microsoft Fabric         workspace in a browser (Microsoft Edge or Google Chrome).
 
-1. __<Warehouse description        here>__:        Enter your desired warehouse description.
+1. Press F12 to open Developer         Tools.
 
-1. __Send the Request__
+1. Select the Console tab.
 
-   - Click the “Send Request” link       displayed above your POST command in the code editor.
-   
+1. Type copy(powerBIAccessToken)         and press Enter. The bearer token will be copied to your clipboard.
+
+1. Paste it in place of <your  bearer token>.
+
+- __<Warehouse name here>__: Enter your desired warehouse        name.
+
+- __<Warehouse description here>__:        Enter your desired warehouse description.
+
+__5. Send the Request__
+
+- Click the “Send Request” link       displayed above your POST command in the code editor.
+
 ![User's image](media/collation/image2.png)
 
-1. __Check the Response__
+__6. Check the Response__
 
-   - You should receive a response with the status code 202 Accepted, along with additional details about your POST request.
-   
+- You should receive a response with the status code 202 Accepted, along with additional details about your POST request.
+
 ![User's image](media/collation/image1.png)
 
 Now, if you go to the newly created Warehouse in the portal and execute this T-SQL statement, you should see that the collation for your warehouse aligns with what you specified in the JSON above: 
