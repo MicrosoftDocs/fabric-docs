@@ -19,7 +19,7 @@ A OneLake shared access signature (SAS) provides secure, short-term, and delegat
 
 Every OneLake SAS (and user delegation key) is always backed by a Microsoft Entra Identity, has a maximum lifetime of 1 hour, and can only grant access to folders and files within a data item, like a lakehouse.
 
-[!INCLUDE feature-preview-note]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## How a shared access signature works
 
@@ -60,8 +60,7 @@ You can also monitor the creation of user delegation keys via the Microsoft Purv
 
 ## Related content
 
-> [!div class="nextstepaction"]
-> [How to create a OneLake SAS](how-to-create-onelake-sas.md)
-> [Generate a user delegation key](/rest/api/storageservices/get-user-delegation-key)
-> [Fabric and OneLake data security](/security/data-access-control-model.md)
-> [Create a user delegation SAS for a blob with Python](/azure/storage/blobs/storage-blob-user-delegation-sas-create-python)
+* [How to create a OneLake SAS](how-to-create-a-onelake-shared-access-signature.md)
+* [Generate a user delegation key](/rest/api/storageservices/get-user-delegation-key)
+* [Fabric and OneLake data security](security/data-access-control-model.md)
+* [Create a user delegation SAS for a blob with Python](/azure/storage/blobs/storage-blob-user-delegation-sas-create-python)

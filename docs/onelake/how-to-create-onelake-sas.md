@@ -1,6 +1,10 @@
 ---
 title: Create a OneLake shared access signature (SAS) (Preview)
+<<<<<<< HEAD
 description: Learn how to create a OneLake SAS to provide short-term, delegated access to OneLake
+=======
+description: Learn how to create OneLake SAS to provide short-term, delegated access to OneLake for secure and temporary access without Microsoft Entra support.
+>>>>>>> 7b352e0a62c14c597ee03f656264e594be813702
 author: mabasile-MSFT
 ms.author: mabasile
 ms.topic: concept-article
@@ -9,17 +13,27 @@ ms.date: 09/24/2024
 #CustomerIntent: #CustomerIntent: As a data engineer, I want to generate a OneLake SAS to integrate new applications into my Fabric environment.
 ---
 
+<<<<<<< HEAD
 # Create a OneLake shared access signature (SAS) (Preview)
+=======
+# Create a OneLake shared access signatures (SAS) (Preview)
+>>>>>>> 7b352e0a62c14c597ee03f656264e594be813702
 
 You can create a OneLake SAS to provide short-term, delegated access to a folder or file in OneLake backed by your Microsoft Entra credentials. OneLake SAS can provide temporary access to applications without support for Microsoft Entra, allowing them to load data or serve as proxies between other customer applications or Independent Software Vendors (ISVs).  
 
-To create a OneLake SAS, you must first request a user delegation key, which you then use to sign the SAS. To request a user delegation key, call the [Get User Delegation Key](/rest/api/storageservices/get-user-delegation-key) operation.  
+To create a OneLake SAS, you must first request a user delegation key, which you then use to sign the SAS. To request a user delegation key, call the [Get User Delegation Key](/rest/api/storageservices/get-user-delegation-key) operation. OneLake SAS can grant access to files and folders within data items only, and can't be used for management operations such as creating or deleting items or workspaces.
 
+<<<<<<< HEAD
 A OneLake SAS can grant access to files and folders within data items only, and can't be used for management operations such as creating workspaces or items.
 
 A OneLake SAS is created similarly to [Azure Storage user-delegated SAS](/rest/api/storageservices/create-user-delegation-sas), using the same parameters for compatibility with tools and applications compatible with Azure Storage.
 
 [!INCLUDE feature-preview-note]
+=======
+OneLake SAS signatures are created similarly to [Azure Storage user-delegated SAS](/rest/api/storageservices/create-user-delegation-sas), deliberately inheriting the same format and parameters for maximum compatibility with tools and applications used to working over Azure Storage.
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+>>>>>>> 7b352e0a62c14c597ee03f656264e594be813702
 
 ## Assign permissions
 
@@ -47,7 +61,7 @@ The following table summarizes the fields that are supported for a OneLake SAS t
 |`signedResource`|`sr`|Required|Specifies which  resources are accessible via the shared access signature. Only blob (`b`) and directory (`d`) are applicable to OneLake.|
 |`signedStart`|`st`|Optional|The time when the shared access signature becomes valid. ISO 8601 UTC format.|
 |`signedExpiry`|`se`|Required|The time when the shared access signature expires|
-|`signedPermissions`|`sp`|Required|Indicates which operations the SAS can perform on the resource. More details in the [Specify permissions](how-to-create-onelake-sas.md#specify-permissions) section|
+|`signedPermissions`|`sp`|Required|Indicates which operations the SAS can perform on the resource. More details in the [Specify permissions](how-to-create-a-onelake-shared-access-signature.md#specify-permissions) section|
 |`signedObjectId`|`skoid`|Required|Identifies a Microsoft Entra security principal.|
 |`signedtenantId`|`sktid`|Required|Specifies the Microsoft Entra tenant in which a security principal is defined.|
 |`signedKeyStartTime`|`skt`|Optional|Time in UTC when the signing key starts. Returned by the *Get User Delegation Key* operation.|
@@ -59,6 +73,7 @@ The following table summarizes the fields that are supported for a OneLake SAS t
 |`signedUnauthorizedObjectId`|`suoid`|Unsupported|OneLake SAS doesn't support this feature.|
 |`signedCorrelationId`|`suoid`|Unsupported|OneLake SAS doesn't support this parameter.|
 |`signedDirectoryDepth`|`sdd`|Optional|Indicates the number of directories within the root folder of the directory specified in the canonicalizedResource field of the string-to-sign. Supported only when `sr=d`.|
+<<<<<<< HEAD
 |`signedEncryptionScope`|`ses`|Unsupported|OneLake SAS doesn't currently support custom encryption scopes.|
 |`signedIP`|`sip`|Unsupported|OneLake SAS doesn't currently support IP filtering|
 |`signedProtocol`|`spr`|Optional|OneLake only supports https requests.|
@@ -67,6 +82,16 @@ The following table summarizes the fields that are supported for a OneLake SAS t
 |`Content-Encoding` response header|`rsce`|Unsupported|OneLake SAS doesn't support this parameter.|
 |`Content-Language` response header|`rscl`|Unsupported|OneLake SAS doesn't support this parameter.|
 |`Content Type` response header|`rsct`|Unsupported|OneLake SAS doesn't support this parameter.|
+=======
+|`signedEncryptionScope`|`ses`|Unsupported|OneLake doesn't currently support custom encryption scopes.|
+|`signedIP`|`sip`|Unsupported|OneLake doesn't currently support IP filtering with OneLake SAS|
+|`signedProtocol`|`spr`|Optional|OneLake only supports https requests.|
+|`Cache-Control` response header|`rscc`|Unsupported|OneLake SAS doesn't support this parameter.|
+|`Content-Disposition` response header|`rscd`|Unsupported|OneLake SAS doesn't support this parameter.|
+|`Content-Encoding` response header|`rsce`|Unsupported|OneLake doesn't support this parameter.|
+|`Content-Language` response header|`rscl`|Unsupported|OneLake doesn't support this parameter.|
+|`Content Type` response header|`rsct`|Unsupported|OneLake doesn't support this parameter.|
+>>>>>>> 7b352e0a62c14c597ee03f656264e594be813702
 
 ## Specify Permissions
 
@@ -76,7 +101,11 @@ Permissions can be combined to permit a client to perform multiple operations wi
 
 Examples of valid permission settings include `rw`, `rd`, `rl`, `wd`, `wl`, and `rl`.  You can't specify a permission more than once.
 
+<<<<<<< HEAD
 To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. OneLake evaluates the permissions granted to a SAS in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake data access roles](/fabric/onelake/security/get-started-data-access-roles), if applicable.  Remember that some operations, such as setting permissions or deleting workspaces, aren't permitted on OneLake via Azure Storage APIs generally, and therefore granting that permission (`sp=op`) won't allow a OneLake SAS to perform those operations.
+=======
+To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. When evaluating permissions of a SAS, OneLake evaluates the permissions granted in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake data access roles](security/get-started-data-access-roles.md), if applicable.  Remember that some operations, such as setting permissions or deleting workspaces, aren't permitted on OneLake via Azure Storage APIs generally, and therefore granting that permission (`sp=op`) will still not allow a OneLake SAS to perform those operations.
+>>>>>>> 7b352e0a62c14c597ee03f656264e594be813702
 
 |Permission  |URI symbol  |Resource  |Allowed operations  |
 |---------|---------|---------|---------|
@@ -191,7 +220,7 @@ StringToSign =  signedPermissions + "\n" +
 
 The `canonicalizedResource` portion of the string is a canonical path to the resource. It must include the OneLake endpoint and the resource name, and must be URL decoded.  A OneLake path must include its workspace, and a directory path must include the number of subdirectories that correspond to the `sdd` parameter.
   
-The following examples show how to convert your OneLake URL to the corresponding canonicalized resource. Remember that OneLake supports both DFS and Blob operations and endpoints, and that the 'account name' for your OneLake is always 'onelake'.
+The following examples show how to convert your OneLake URL to the corresponding canonicalized resource. Remember that OneLake supports both DFS and Blob operations and endpoints, and that the **account name** for your OneLake is always **onelake**.
 
 #### Blob File
 
@@ -217,8 +246,6 @@ https://onelake.blob.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/File
 
 ## Related content
 
-TODO: Add your next step link(s)
-
 - [Create an Azure Storage user delegation SAS](/rest/api/storageservices/create-user-delegation-sas)
 - [Request a user delegation key](/rest/api/storageservices/get-user-delegation-key)
-- [Get started with OneLake data access roles](/security/get-started-data-access-roles.md)
+- [Get started with OneLake data access roles](security/get-started-data-access-roles.md)
