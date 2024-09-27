@@ -169,6 +169,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Dynamic subscriptions don't send emails to recipients
+      href: known-issues/known-issue-859-dynamic-subscriptions-not-send-emails-recipients.md
+    - name: Live connection to semantic models created by template apps fails
+      href: known-issues/known-issue-858-live-connect-semantic-models-template-apps-fails.md
     - name: Unable to close organizational app items in left navigation pane
       href: known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md
     - name: Pipeline fails when copying data to data warehouse with staging
