@@ -546,12 +546,11 @@ notebookutils.fs.mount(
 
 ### How to mount a lakehouse
 
-Sample code for mounting a lakehouse to */test*:
+Sample code for mounting a lakehouse to */<lakehouse_name>*:
 
 ```python
 notebookutils.fs.mount( 
- "abfss://<workspace_id>@msit-onelake.dfs.fabric.microsoft.com/<lakehouse_id>",
- "abfss://<workspace_name>@onelake.dfs.fabric.microsoft.com/<lakehouse_name>.Lakehouse" 
+ "abfss://<workspace_name>@onelake.dfs.fabric.microsoft.com/<lakehouse_name>.Lakehouse", 
  "/<lakehouse_name>"
 )
 ```
