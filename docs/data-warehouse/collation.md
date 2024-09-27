@@ -78,7 +78,7 @@ __Step-by-Step Instructions__
 ```json
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceID}/items HTTP/1.1 
 Content-Type: application/json 
-Authorization: Bearer <your bearer token> 
+Authorization: Bearer <bearer token> 
 
 { 
   "type": "Warehouse", 
@@ -92,9 +92,9 @@ Authorization: Bearer <your bearer token>
 
 __Replace the placeholders:__
 
-- __<workspaceID>__: Find your workspace GUID in the URL after the /groups/ section or by running SELECT @@SERVERNAME in an existing warehouse.
+- __workspaceID__: Find the workspace GUID in the URL after the /groups/ section or by running SELECT @@SERVERNAME in an existing warehouse.
 
-- __<your bearer token>__: Obtain this by following these steps:
+- __bearer token__: Obtain this by following these steps:
 
 1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge or Google Chrome).
 
@@ -106,9 +106,9 @@ __Replace the placeholders:__
 
 1. Paste it in place of <bearer token>.
 
-- __<Warehouse name here>__: Enter the desired warehouse name.
+- __Warehouse name here__: Enter the desired warehouse name.
 
-- __<Warehouse description here>__: Enter the desired warehouse description.
+- __Warehouse description here__: Enter the desired warehouse description.
 
 __5. Send the Request__
 
