@@ -19,7 +19,7 @@ A OneLake SAS can grant access to files and folders within data items only, and 
 
 A OneLake SAS is created similarly to [Azure Storage user-delegated SAS](/rest/api/storageservices/create-user-delegation-sas), using the same parameters for compatibility with tools and applications compatible with Azure Storage.
 
-[!INCLUDE feature-preview-note]
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Assign permissions
 
@@ -35,7 +35,7 @@ Calling the *Get User Delegation Key* operation returns the key as a set of valu
 
 When a client requests a user delegation key using an OAuth 2.0 token, OneLake returns a user delegation key on behalf of the client. A SAS created with this user delegation key is granted at most the permissions granted to the client, scoped down to the permissions explicitly granted in the SAS.
 
-You can create any number of OneLake SASs for the lifetime of the user delegation key. However, a OneLake SAS and user delegation keys can be valid for at most one hour, and can't exceed the lifetime of the token requesting them. These lifetime restrictions are shorter than the maximum lifetime of a Azure Storage user delegated SAS.  
+You can create any number of OneLake SASs for the lifetime of the user delegation key. However, a OneLake SAS and user delegation keys can be valid for at most one hour, and can't exceed the lifetime of the token requesting them. These lifetime restrictions are shorter than the maximum lifetime of an Azure Storage user delegated SAS.  
 
 ## Construct a user delegation SAS
 
