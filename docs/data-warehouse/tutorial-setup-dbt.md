@@ -143,7 +143,7 @@ When integrated with Apache Airflow, a popular workflow management system, dbt b
 
 [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-For more information to operationalize dbt with your warehouse, see [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/data-workflows-dbt-fabric.md).
+For more information to operationalize dbt with your warehouse, see [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/apache-airflow-jobs-dbt-fabric.md).
 
 ## Considerations
 
@@ -164,7 +164,7 @@ Important things to consider when using dbt-fabric adapter:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/data-workflows-dbt-fabric.md)
+> [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/apache-airflow-jobs-dbt-fabric.md)
 
 ## Related content
 
