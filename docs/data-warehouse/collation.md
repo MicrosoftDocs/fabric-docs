@@ -31,3 +31,104 @@ This article provides a step-by-step guide on how to create a data warehouse wit
 
 To create a warehouse with CI collation, use the following API endpoint:
 
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspace-id}/items
+
+## Example Request Body (JSON)
+
+Here’s a sample JSON request body for creating a warehouse:
+
+
+```json
+{ 
+  "type": "Warehouse", 
+  "displayName": "CaseInsensitiveAPIDemo", 
+  "description": "New warehouse with case-insensitive collation", 
+  "creationPayload": { 
+    "defaultCollation": "Latin1_General_100_CI_AS_KS_WS_SC_UTF8" 
+  } 
+}
+```
+
+## Authentication
+
+To authenticate your request, use a Bearer token. Service Principal authentication will be supported soon.
+
+## Using Visual Studio Code to Invoke the CI Collations API
+
+You can easily create a new warehouse with case-insensitive collation using Visual Studio Code (VS Code) and the REST Client extension. Follow these steps:
+
+__Step-by-Step Instructions__
+
+1. __Download and Install VS Code__
+
+   - Visit [Visual Studio Code](https://code.visualstudio.com/download) to download and install the application.
+   
+1. __Install the REST Client Extension__
+
+   - Navigate to the [REST Client - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) and install the extension.
+   
+1. __Create a New File in VS Code__
+
+   - Open VS Code and create a new file with the .http extension.
+   
+1. __Input the Request Details__
+
+   - In the file body, type the following request
+   
+
+```json
+POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceID>/items HTTP/1.1 
+Content-Type: application/json 
+Authorization: Bearer <your bearer token> 
+
+{ 
+  "type": "Warehouse", 
+  "displayName": "<Warehouse name here>", 
+  "description": "<Warehouse description here>", 
+  "creationPayload": { 
+    "defaultCollation": "Latin1_General_100_CI_AS_KS_WS_SC_UTF8" 
+  } 
+}
+```
+
+1. __Replace the placeholders:__
+
+   - __<workspaceID>__: Find your workspace GUID in the URL after the /groups/ section or by running SELECT @@SERVERNAME in an existing warehouse.
+   
+![User's image](media/collation/image.png)
+
+1. __<your bearer token>__: Obtain this by following        these steps:
+
+   1. Open your Microsoft Fabric         workspace in a browser (Microsoft Edge or Google Chrome).
+   
+   1. Press F12 to open Developer         Tools.
+   
+   1. Select the Console tab.
+   
+   1. Type copy(powerBIAccessToken)         and press Enter. The bearer token will be copied to your clipboard.
+   
+   1. Paste it in place of <your         bearer token>.
+   
+1. __<Warehouse name here>__: Enter your desired warehouse        name.
+
+1. __<Warehouse description        here>__:        Enter your desired warehouse description.
+
+1. __Send the Request__
+
+   - Click the “Send Request” link       displayed above your POST command in the code editor.
+   
+![User's image](media/collation/image2.png)
+
+1. __Check the Response__
+
+   - You should receive a response with the status code 202 Accepted, along with additional details about your POST request.
+   
+![User's image](media/collation/image1.png)
+
+Now, if you go to the newly created Warehouse in the portal and execute this T-SQL statement, you should see that the collation for your warehouse aligns with what you specified in the JSON above: 
+
+
+```tsql
+SELECT name, collation_name FROM sys.databases 
+```
+
