@@ -124,7 +124,7 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
 > - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path “builtin/” will always point to the root notebook’s built-in folder.
 
-### Local file system
+### The built-in resources
 
 The built-in resources folder is a system predefined folder for each notebook item instance. Here are the key capabilities for the notebook resources.
 
