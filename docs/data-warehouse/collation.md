@@ -4,7 +4,7 @@
 # For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
 
 title: Creating Data Warehouses with (CI) Case Insensitive Collation
-description: This article provides a step-by-step guide on how to create a data warehouse with case-insensitive collation through the RESTful API. It also explains how to use Visual Studio Code with the REST Client extension to facilitate the process, making it easier for users to configure their warehouses to better meet their data management needs.
+description: This article provides a step-by-step guide on how to create a data warehouse with case-insensitive collation through the RESTful API. It also explains how to use Visual Studio Code with the REST Client extension to facilitate the process making it easier for users to configure their warehouses to better meet their data management needs.
 author:      twinklecyril # GitHub alias
 ms.author:   twcyril # Microsoft alias
 ms.service: fabric
