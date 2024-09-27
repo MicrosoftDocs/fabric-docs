@@ -103,7 +103,7 @@ __Replace the placeholders:__
 
 1. Type copy(powerBIAccessToken) and press Enter. The bearer token will be copied to your clipboard.
 
-1. Paste it in place of <bearer token>.
+1. Paste it in place of `<bearer token>`.
 
 - __Warehouse name here__: Enter the desired warehouse name.
 
