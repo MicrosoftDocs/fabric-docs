@@ -96,17 +96,17 @@ __Replace the placeholders:__
 
 ![User's image](media/collation/image.png)
 
-- __<your bearer token>__: Obtain this by following        these steps:
+- __<your bearer token>__: Obtain this by following these steps:
 
-1. Open your Microsoft Fabric         workspace in a browser (Microsoft Edge or Google Chrome).
+1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge or Google Chrome).
 
-1. Press F12 to open Developer         Tools.
+1. Press F12 to open Developer Tools.
 
 1. Select the Console tab.
 
-1. Type copy(powerBIAccessToken)         and press Enter. The bearer token will be copied to your clipboard.
+1. Type copy(powerBIAccessToken) and press Enter. The bearer token will be copied to your clipboard.
 
-1. Paste it in place of <your  bearer token>.
+1. Paste it in place of <bearer token>.
 
 - __<Warehouse name here>__: Enter your desired warehouse        name.
 
