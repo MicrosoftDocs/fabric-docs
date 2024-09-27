@@ -122,16 +122,16 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 
 > [!NOTE]
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
-> - When using `mssparkutils.notebook.run()`, use the `mssparkutils.nbResPath` command to access the target notebook resource. The relative path “builtin/” will always point to the root notebook’s built-in folder.
+> - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path “builtin/” will always point to the root notebook’s built-in folder.
 
 ### Local file system
 
-This built-in folder is a system predefined folder for each notebook instance. These are the key capabilities of notebook resources:
+The built-in resources folder is a system predefined folder for each notebook item instance. Here are the key capabilities for the notebook resources.
 
 - You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI.
-- You can use relative paths like `builtin/YourData.txt` for quick exploration. The `mssparkutils.nbResPath` method helps you compose the full path.
+- You can use relative paths like `builtin/YourData.txt` for quick exploration. The `notebookutils.nbResPath` method helps you compose the full path.
 - You can easily move your validated data to a lakehouse via the **Write to lakehouse** option. Fabric has embedded rich code snippets for common file types to help you quickly get started.
-- These resources are also available for use in the [Reference notebook run](author-execute-notebook.md) case via ```mssparkutils.notebook.run()```.
+- These resources are also available for use in the [Reference notebook run](author-execute-notebook.md) case via ```notebookutils.notebook.run()```.
 
 ### Environment resources folder
 
@@ -150,13 +150,13 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 ### File editor
 
-The File Editor is a studio that can let user view and edit resources in notebook page. It simplifies the editing and management of files in various development environments.
+The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include CSV, TXT, HTML, YML, PY, SQL, and more. With the file editor, you can easily access and modify files within the notebook, it support Keyword highlighting and provides necessary language service when opening and editing code files like .py and .sql.
 
 - You can access this feature through 'view and edit' in the file menu. Double-click on file is a faster way.
 
    :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
 
-- For file changes, only support manual save.
+- Content change on file editor need to be saved manually by clicking the Save button or keyboard shortcut: Ctrl+s, file editor doesn't support auto-save.
 - File editor is also affected by [notebook mode](#switch-notebook-mode). You can only view files but cannot edit them if you are in the notebook mode without editing permission.
 
 > [!NOTE]
@@ -225,16 +225,16 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
 > [!NOTE]
 > For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
 
-## Switch notebook mode
+## Notebook mode switcher
 
-Fabric notebooks support four modes that you can easily switch between: **Develop** mode，**Run only** mode, **Edit** mode and **View** mode.
+Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients, and they will see the best available notebook mode according to their permission, and they will be able to switch between the mode they have permission to.
 
 :::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes.":::
 
-- **Develop mode**: You can make changes, run and comment.
-- **Run only mode**: You can only run cells, but changes are not allowed.
-- **Editing mode**: You can edit and run the cells and collaborate with others on the notebook.
-- **Viewing mode**: You can only view the cell content, output, and comments of the notebook. All the operations that make changes to the notebook are disabled.
+- **Develop mode**: Read, execute, write permission needed.
+- **Run only mode**: Read, execute permission needed.
+- **Editing mode**: View, write permission needed.
+- **Viewing mode**: Read permission needed.
 
 ## Related content
 
