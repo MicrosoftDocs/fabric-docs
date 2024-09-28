@@ -28,7 +28,7 @@ To make sure Azure Storage is provisioned in the tenant:
 
 1. Log into the [Azure portal](https://portal.azure.com)
 1. Go to **Microsoft Entra ID** > **Enterprise applications**
-1. In the filters, choose **application type = all applications**. The application ID starts with e406a681-f3d4-42a8-90b6-c2b029497af1
+1. In the filters, choose **application type = all applications**. The application ID starts with 66667777-aaaa-8888-bbbb-9999cccc0000
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
@@ -40,7 +40,7 @@ Open **Windows PowerShell** as administrator and run the following script:
 Install-Module az  
 Import-Module az  
 Connect-AzureAD  
-New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
+New-AzureADServicePrincipal -AppId 66667777-aaaa-8888-bbbb-9999cccc0000
 ```
 
 ## Configure your application in Microsoft Entra ID manually 
