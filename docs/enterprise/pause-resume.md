@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/20/2024
+ms.date: 09/29/2024
 ---
 
 # Pause and resume your capacity
@@ -71,6 +71,13 @@ With [Azure runbook](/azure/automation/automation-runbook-types) you can schedul
 
 3. Select the notebook you want to schedule. The scheduling parameters are described in the description of the runbook.
 
+## Use APIs
+
+You can use these Fabric REST APIs to pause and resume your capacity:
+
+* [Pause or suspend your capacity](/rest/api/microsoftfabric/fabric-capacities/suspend)
+
+* [Resume your capacity](/rest/api/microsoftfabric/fabric-capacities/resume)
 
 ## Related content
 

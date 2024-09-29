@@ -103,14 +103,14 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Direct Lake in Power BI Desktop (preview)
-    href: direct-lake-power-bi-desktop.md    
   - name: Develop Direct Lake models
     href: direct-lake-develop.md
   - name: Manage Direct Lake models
     href: direct-lake-manage.md
   - name: Understand storage for Direct Lake
     href: direct-lake-understand-storage.md
+  - name: Direct Lake in Power BI Desktop (preview)
+    href: direct-lake-power-bi-desktop.md        
   - name: Edit tables for Direct Lake semantic models
     href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
@@ -169,6 +169,16 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Dynamic subscriptions don't send emails to recipients
+      href: known-issues/known-issue-859-dynamic-subscriptions-not-send-emails-recipients.md
+    - name: Live connection to semantic models created by template apps fails
+      href: known-issues/known-issue-858-live-connect-semantic-models-template-apps-fails.md
+    - name: Unable to close organizational app items in left navigation pane
+      href: known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md
+    - name: Pipeline fails when copying data to data warehouse with staging
+      href: known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md
+    - name: Intermittent refresh failure through on-premises data gateway
+      href: known-issues/known-issue-844-intermittent-refresh-failure-gateway.md
     - name: PostgreSQL data source connections additions or updates fail
       href: known-issues/known-issue-850-postgresql-connections-additions-updates-fail.md
     - name: Data warehouse exports using deployment pipelines or git fail

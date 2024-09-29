@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: conceptual
-ms.date: 09/24/2024
+ms.date: 09/25/2024
 LocalizationGroup: Admin
 ---
 # Direct Lake in Power BI Desktop (preview)
@@ -187,6 +187,7 @@ Live edit of semantic models in Direct Lake mode in Power BI Desktop is currentl
 * Signing off during editing could lead to unexpected errors.
 * You can open external tools, but the external tool must manage authentication to the remote semantic model.
 * Changing the data category to *barcode* won't allow reports linked to the semantic model to be filtered by barcodes.
+* Externally shared semantic models aren't eligible for live edit.
 
 Additionally, please consider the current known issues and limitations of Direct Lake.
 

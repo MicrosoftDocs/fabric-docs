@@ -21,20 +21,21 @@ In this part of the tutorial, you set up the environment. Specifically, you crea
 
 ## Create an eventhouse
 
-1. Browse to the workspace in which you want to create your tutorial resources.
-1. On the bottom left experience switcher, select **Real-Time Intelligence**.
-1. In the upper left corner, select **+ New > Eventhouse**.
+1. Browse to the workspace in which you want to create your tutorial resources. You must create all resources in the same workspace.
+1. Select **+ New item**.
+1. In the **Filter by item type** search box, enter **Eventhouse**.
+1. Select the Eventhouse item.
 1. Enter *Tutorial* as the eventhouse name. A KQL database is created simultaneously with the same name.
 1. Select **Create**. When provisioning is complete, the eventhouse **System overview** page is shown.
 
 ## Turn on OneLake availability
 
-1. From the **System overview** page, select the KQL database you created in the previous step.
+1. From the **System overview** page, select the KQL database, named *Tutorial*, that you created in the previous step.
 
     :::image type="content" source="media/tutorial/select-tutorial-database.png" alt-text="Screnshot of the System overview for new eventhouse with Tutorial database selected and highlighted with a red box.":::
 
-1. In the **Database details** section, select the **pencil icon** next to **OneLake availability**.
-1. Toggle the button to **Active** and select **Done**.
+1. In the righthand pane, under **OneLake**, toggle the **Availability** to **On**.
+1. Uncheck **Apply to existing tables** and select **Turn on**.
 
     :::image type="content" source="media/tutorial/one-lake-availability.png" alt-text="Screenshot showing how to turn on OneLake availability.":::
 
