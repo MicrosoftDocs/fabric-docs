@@ -20,6 +20,9 @@ This article explains how Git integration and deployment pipelines work for note
 
 Fabric notebooks offer Git integration for source control with Azure DevOps. With Git integration, you can back up and version your notebook, revert to previous stages as needed, collaborate or work alone using Git branches, and manage your notebook content lifecycle entirely within Fabric.
 
+> [!NOTE]
+> This feature upgrade will influence the existing notebook. No matter environment is updated or not, once notebook is committed to the repository, environment logical ID and empty workspace ID are stored in Notebook Metadata and configuration file.
+
 ### Set up a connection
 
 From your workspace settings, you can easily set up a connection to your repo to commit and sync changes. To set up the connection, see [Get started with Git integration](../cicd/git-integration/git-get-started.md). Once connected, your items, including notebooks, appear in the **Source control** panel.
@@ -56,7 +59,12 @@ You can also use Deployment pipeline to deploy your notebook code across differe
 
 > [!NOTE]
 > 
-> With 'New Deployment pipelines' toggle on,  deployment pipeline migrate to the new design. And the old design will be removed in the future.
+> - You are brought to experience the new design for deployment pipelines. The old UI can be accessed by using 'New Deployment pipelines' toggle switch on the top of this page. And the old design will be removed in the future.
+> - Here are some cases for you to make clear the impact of this feature enhancement.
+>   - For existing notebook attached default lakehouse and environment: File modifications will be detected. Open the compared page, it shows dependencies updates of paired items.
+>   - For existing notebook attached default lakehouse, configure it with deployment rules: File modifications will not be detected as config rules has higher priority than auto-binding.
+>   - For existing notebooks without default lakehouse and environment: File modifications will not be detected if there is no updates.
+
 
 Use the following steps to complete your notebook deployment using the deployment pipeline.
 
