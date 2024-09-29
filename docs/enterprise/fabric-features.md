@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
-ms.date: 08/01/2024
+ms.date: 09/29/2024
 ---
 
 # Microsoft Fabric features by SKU
@@ -27,6 +27,7 @@ The following table lists Fabric features according to SKU type. The table lists
 | [On-demand resizing](scale-capacity.md)                                                                  | &#x2705;      | &#x274C; |
 | [Bring your own key for Power BI](/power-bi/enterprise/service-encryption-byok)                          | &#x2705;      | &#x2705; |
 | [Private links](../security/security-private-links-overview.md)                                          | &#x2705;      | &#x2705; |
+| View Power BI items without a per user license                                                           | F64 or higher | &#x2705; |
 
 ## Related content
 
