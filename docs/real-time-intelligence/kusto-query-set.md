@@ -127,7 +127,7 @@ You might want to copy or share the queries you create.
     |Copy results|Copy the results of the query.|
 
 1. Select the desired sharing action from the above table.
-1. Paste this information into any editor, such as Microsoft Word.
+1. Paste this information to edit or share it, for example in Microsoft Word, Microsoft Teams or Outlook.
 
 ## Export query data as CSV
 
