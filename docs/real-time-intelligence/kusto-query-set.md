@@ -45,7 +45,7 @@ Select the tab that corresponds with your desired database type.
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the Connection pane, under **Database**, select **V** to expand the database connections menu.
+1. In the connection pane on the left-hand side of the query page, under **Database**, select **V** to expand the database connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
