@@ -57,7 +57,7 @@ If Azure Private Link is properly configured and **Block public Internet access*
 
 ### OneLake
 
-OneLake supports Private Link. You can explore OneLake in the Fabric portal or from any machine within your established virtual network using via OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
+OneLake supports Private Link. You can explore OneLake in the Fabric portal or from any machine within your established virtual network using OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
