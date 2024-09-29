@@ -11,7 +11,7 @@ ms.date: 09/29/2024
 
 # Publish a workload to Fabric (preview)
 
-Once your workload is ready, you can publish it to Fabric.
+Once your workload is [uploaded](manage-workload.md) to Fabric, you can publish it.
 
 ## How to publish my workload
 
@@ -31,6 +31,6 @@ Follow these steps to publish your workload:
 
 ## Related content
 
-* [Upload a workload](manage-workload.md)
+* [Authentication setup](manage-authentication-tutorial.md)
 
 * [Publishing guidelines and requirements](./publish-workload-requirements.md)
