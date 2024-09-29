@@ -38,7 +38,6 @@ The following properties are supported for MariaDB for Pipeline under the **Sour
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an MariaDB for Pipeline connection from the connection list. If no connection exists, then create a new MariaDB for Pipeline connection by selecting **New**.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
@@ -69,7 +68,6 @@ The following tables contain more information about the copy activity in MariaDB
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|\<your MariaDB for Pipeline connection> |Yes|connection|
 |**Use query** |The way to read data from MariaDB for Pipeline. Apply **Table** to read data from the specified table or apply **Query** to read data using SQL queries.|• **Table** <br>• **Query** |Yes |/|
 | **Table** | Name of the table in the MariaDB for Pipeline. | < table name > | No | tableName |
