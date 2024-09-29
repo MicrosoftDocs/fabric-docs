@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 04/21/2024
+ms.date: 09/23/2024
 ms.search.form: KQL Queryset
 ---
 # Create a KQL queryset
