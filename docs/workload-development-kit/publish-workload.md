@@ -21,7 +21,7 @@ Follow these steps to publish your workload:
 
 2. Select **Workloads**.
 
-3. In th *Public Sample Workload* pane, select the **Publish** tab.
+3. In the *Public Sample Workload* pane, select the **Publish** tab.
 
 4. From the **Select Version** dropdown list, select the version of the workload you want to publish.
 
