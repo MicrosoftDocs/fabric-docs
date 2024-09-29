@@ -31,6 +31,6 @@ Follow these steps to publish your workload:
 
 ## Related content
 
-* [Authentication setup](manage-authentication-tutorial.md)
+* [Authentication setup](authentication-tutorial.md)
 
 * [Publishing guidelines and requirements](./publish-workload-requirements.md)
