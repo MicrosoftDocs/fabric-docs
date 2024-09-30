@@ -316,7 +316,8 @@ This method exits a notebook with a value. You can run nesting function calls in
 notebookutils.notebook.exit("value string")
 ```
 
-> [!NOTE] The exit() function will overwrite the current cell output, to avoid losing the output of other code statements, please call notebookutils.notebook.exit() in a separate cell.
+> [!NOTE]
+> The *exit()* function will overwrite the current cell output, to avoid losing the output of other code statements, please call ```notebookutils.notebook.exit()``` in a separate cell.
 
 For example:
 
