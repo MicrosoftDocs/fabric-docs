@@ -109,7 +109,7 @@ The following metrics are available on the **Data insights** tab for streaming c
 
 To view the data insights for a streaming connector source: 
 
-1. Select **Use external sources**, then choose a streaming connector source.
+1. Select **Use external source**, then choose a streaming connector source.
 2. Configure and publish the streaming connector source.
 3. In the lower pane in live view, select the **Data insights** tab.
 4. If there's data inside the streaming connector source, the metrics chart appears on the Data insights tab.
