@@ -78,7 +78,7 @@ Use the following steps to complete your notebook deployment using the deploymen
 
     :::image type="content" source="media\notebook-source-control-deployment\select-items-and-deploy.png" alt-text="Screenshot of select items and deploy." lightbox="media\notebook-source-control-deployment\select-items-and-deploy.png":::
 
-    :::image type="content" source="media\notebook-source-control-deployment\deploy-to-sync-changes.png" alt-text="Screenshot of deploy to sync changes." lightbox="media\notebook-source-control-deployment\deploy-to-sync-changes.png":::
+    :::image type="content" source="media\notebook-source-control-deployment\deploy-contents-pop-up.png.png" alt-text="Screenshot of deploy contents pop-up.png." lightbox="media\notebook-source-control-deployment\deploy-contents-pop-up.png.png":::
 
 1. (Optional.) You can select **Deployment rules** to create deployment rules for a deployment process. Deployment rules entry is on the target stage for a deployment process.
 
