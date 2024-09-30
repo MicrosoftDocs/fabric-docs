@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-ms.date: 07/02/2024
+ms.date: 09/30/2024
 ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration, GitHub integration
 #customer intent: As developer, I want to learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can simplify continuous integration and continuous delivery (CI/CD) of my content.
 ---
@@ -186,10 +186,9 @@ This section gives a step by step description of how to programmatically commit 
 
 For the complete script, see [Commit all changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitAll.ps1).
 
-1. **Sign in and get access token** - Sign in to Fabric as a *user* (not a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to sign in.
-To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command.
-1. **Describe the request body** - In this part of the script you specify which items (such as reports and notebooks) to commit.
-1. Call the `CommitAll` REST API:
+1. Log into Git and get authentication.
+1. Connect to workspace.
+1. Call the [Commit to git](/rest/api/fabric/core/git/commit-to-git) REST API:
 1. Get the Long Running OperationId for polling the status of the operation.
 
 ### Selective Commit
