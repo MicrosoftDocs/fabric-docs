@@ -70,7 +70,7 @@ Use the following steps to complete your notebook deployment using the deploymen
 
 1. Assign workspaces to different stages according to your deployment goals.
 
-1. Select, view, and compare items including notebooks between different stages, as shown in the following example. Also there is a badge indicating those items not the same as source.
+1. Select, view, and compare items including notebooks between different stages, as shown in the following example. The highlighted badge indicating changed item count between the previous stage and current stage.
 
     :::image type="content" source="media\notebook-source-control-deployment\compare-stages.png" alt-text="Screenshot of notebook in deployment pipeline." lightbox="media\notebook-source-control-deployment\compare-stages.png":::
 
