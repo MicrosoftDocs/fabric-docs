@@ -30,8 +30,9 @@ The plugin is disabled by default.
 1. Enable the **Python language extension** by toggling the button to **On**, then select **Done**.
 
     > [!WARNING]
-    > Enabling the Python plugin consumes more compute resources and may increase cost.
-    > Enabling plugins requires a refresh of the cached data in SSD (disk), which can take up to 1 hour.
+    >
+    > - Enabling the Python plugin consumes additional compute resources, which might lead to increased costs.
+    > - Enabling plugins requires a refresh of the cached data on the SSD disk, which can take up to one hour.
 
     :::image type="content" source="media/python-plugin/enable-python-plugin.png" alt-text="Screenshot of the plugins pane showing the Python language extension. The toggle button is highlighted.":::
 
