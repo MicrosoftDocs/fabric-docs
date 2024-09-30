@@ -76,7 +76,9 @@ Use the following steps to complete your notebook deployment using the deploymen
 
 1. Select **Deploy** to deploy your notebooks across the Development, Test, and Production stages.
 
-    :::image type="content" source="media\notebook-source-control-deployment\set-default-lakehouse.png" alt-text="Screenshot of deploy and sync changes." lightbox="media\notebook-source-control-deployment\deploy-and-sync-changes.png":::
+    :::image type="content" source="media\notebook-source-control-deployment\select-and-deploy.png" alt-text="Screenshot of select and deploy." lightbox="media\notebook-source-control-deployment\select-and-deploy.png":::
+
+    :::image type="content" source="media\notebook-source-control-deployment\deploy-to-sync-changes.png" alt-text="Screenshot of deploy to sync changes." lightbox="media\notebook-source-control-deployment\deploy-to-sync-changes.png":::
 
 1. (Optional.) You can select **Deployment rules** to create deployment rules for a deployment process. Deployment rules entry is on the target stage for a deployment process.
 
