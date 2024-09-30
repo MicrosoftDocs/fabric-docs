@@ -92,7 +92,7 @@ Use the following steps to complete your notebook deployment using the deploymen
 
     > [!NOTE]
     > When setting default lakehouse in deployment rules, the **Lakehouse ID** is must have. You can get the lakehouse id from the item URL link.
-    > The deployment rules has higher priority than auto-binding, the auto-binded lakehouse will be overwrite when there's deployment rule configured.
+    > The deployment rules has higher priority than auto-binding, the auto-binded lakehouse will be overwritten when there's deployment rule configured.
 
 1. Monitor the deployment status from **Deployment history**.
 
