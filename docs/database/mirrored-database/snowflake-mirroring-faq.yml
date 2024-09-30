@@ -8,7 +8,7 @@ metadata:
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 09/25/2024
+  ms.date: 09/30/2024
 title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about Mirroring Snowflake in Microsoft Fabric.
@@ -106,6 +106,10 @@ sections:
           What are licensing options for Fabric Mirroring? 
         answer:
           A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
+      - question: |  
+          What are the Fabric compute costs associated with Mirroring?
+        answer:
+          There's no cost for Mirroring or storing mirrored data in Fabric, unless storage exceeds provisioned capacity.
 
 additionalContent: |
 
@@ -113,5 +117,3 @@ additionalContent: |
 
   - [What is Mirroring in Fabric?](overview.md)
   - [Snowflake connector overview](../../data-factory/connector-snowflake-overview.md)
-
-
