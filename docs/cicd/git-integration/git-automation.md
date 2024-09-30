@@ -48,9 +48,9 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 * [**Connect**](/rest/api/fabric/core/git/connect) and [**disconnect**](/rest/api/fabric/core/git/disconnect) a specific workspace from the Git repository and branch connected to it.
 
-* [**Update**](/rest/api/fabric/core/git/update-my-git-credentials) your connection to the  Git-connected workspace. (GitHub only)
+* [**Update**](/rest/api/fabric/core/git/update-my-git-credentials) your connection to the  Git-connected workspace.
 
-* [**Get git credentials**](/rest/api/fabric/core/git/get-my-git-credentials) for the specified Git-connected workspace. (GitHub only)
+* [**Get git credentials**](/rest/api/fabric/core/git/get-my-git-credentials) for the specified Git-connected workspace.
 
 * [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that is connected to Git.
 
