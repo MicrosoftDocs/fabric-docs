@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 09/29/2024
+ms.date: 09/30/2024
 ---
 
 # Tenant settings index
@@ -20,7 +20,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 | Setting name | Description |
 |------|-------|
 |[Data Activator (preview)](../data-activator/data-activator-get-started.md)|Turn on Data Activator Preview to allow users to define a specific set of conditions about their data, and then receive notifications when those conditions are met. After they receive notifications, users can take action to correct the change in conditions. This setting can be managed at both the tenant and the capacity levels. Data Activator is currently available in  [these regions](https://go.microsoft.com/fwlink/?linkid=2250213). When you turn on Data Activator, you agree to the  [Data Activator Preview terms](https://go.microsoft.com/fwlink/?linkid=2244647).  [Learn More](https://go.microsoft.com/fwlink/?linkid=2237360)|
-|[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users' ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
+|[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users’ ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
 |Users can create and use ADF Mount items (preview)|Users can connect and test existing ADF pipelines in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2250738)|
 |[Sustainability solutions (preview)](/industry/sustainability/sustainability-data-solutions-overview)|Turn on this setting to give your tenant users the permission to deploy the Sustainability solutions (preview) and its associated capabilities.  [Learn More](https://aka.ms/learn-about-sustainability-solutions)|
 |[Retail data solutions (preview)](/industry/retail/retail-data-solutions/overview-retail-data-solutions)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://go.microsoft.com/fwlink/?linkid=2263806)|
@@ -311,7 +311,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Capacity admins and contributors can add and remove additional workloads](../workload-development-kit/environment-setup.md#enable-the-development-tenant-setting)|Capacity admins or individuals granted Contributor permissions in Capacity settings can add and remove additional workloads in capacities. If a workload is removed, users will no longer be able to work with items created with the workload.<br><br>When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings including encryption aren't applied to items created with workloads.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268082)|
 |[Capacity admins can develop additional workloads](../workload-development-kit/more-workloads-add.md)|Capacity admins can develop additional workloads. Turn on to allow developers to connect to capacity with a local machine development environment. Turning off this feature prevents developers from connecting to the Fabric capacity.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268434)|
-																																																																																																																			
+|[Users can see and work with uncertified partner workloads](../workload-development-kit/publish-workload-requirements.md)|Turn on this setting to allow users to see and work with uncertified partner workloads available on the Workloads page. Make sure that you only add uncertified workloads from publishers that you trust to meet your organization’s policies.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2282060)|
 
 ## Related content
 
