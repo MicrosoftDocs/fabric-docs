@@ -127,7 +127,7 @@ To view the runtime logs for Azure event hub source, Azure iot hub source, lakeh
 
 2. In the lower pane, select the **Runtime logs** tab.
 
-3. If there's data inside the Azure event hub source , lakehouse destination or KQL database destination, the logs appear on the **Runtime logs** tab.
+3. If there's data inside the Azure event hub source, lakehouse destination or KQL database destination, the logs appear on the **Runtime logs** tab.
 
 4. Search the logs with the **Filter by keyword** option, or filter the list by changing the severity or type.
 
