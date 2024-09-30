@@ -130,7 +130,7 @@ items:
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
     - name: Network security
       items:
-      - name: Connect to Azure streaming sources using private endpoints
+      - name: Connect to Azure resources using private endpoints
         href: event-streams/set-up-private-endpoint.md
     - name: Tutorials
       items:
