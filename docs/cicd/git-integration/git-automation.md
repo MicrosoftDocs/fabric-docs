@@ -201,7 +201,7 @@ For the complete script, see [Commit select changes to Git](https://github.com/m
 1. Connect to workspace.
 1. Call the [Get status](/rest/api/fabric/core/git/get-status) API to see which items workspace were changed.
 1. Select the specific items to commit.
-1. Call the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) API to commit the selected changes from the workspace to the connected remote branch.
+1. Call the [Selective commit](/rest/api/fabric/core/git/commit-to-git) API to commit the selected changes from the workspace to the connected remote branch.
 
 ### Monitor the progress of long running operations
 
