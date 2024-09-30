@@ -81,6 +81,42 @@ To view the data insights for an Azure event hub source, Azure iot hub source, l
 
 :::image type="content" source="./media/monitor/source-destination-metrics.png" alt-text="Screenshot showing the source and destination metrics." lightbox="./media/monitor/source-destination-metrics.png" :::
 
+### Data insights in streaming connector source nodes
+
+The streaming connector source nodes include the following sources:
+- Azure SQL Database Change Data Capture (CDC)
+- PostgreSQL Database CDC
+- MySQL Database CDC
+- Azure Cosmos DB CDC
+- SQL Server on VM DB (CDC)
+- Azure SQL Managed Instance CDC
+- Google Cloud Pub/Sub
+- Amazon Kinesis Data Streams
+- Confluent Cloud Kafka
+- Apache Kafka
+- Amazon MSK Kafka
+
+The following metrics are available on the **Data insights** tab for streaming connector source nodes:
+
+| Metric                        | Unit  | Description                                                                      |
+|-------------------------------|-------|----------------------------------------------------------------------------------|
+| Source Outgoing Events        | Count | Number of records outputted from the transformations (if any) and written to eventstream for the task belonging to the named source connector in the worker (since the task was last restarted). |
+| Source Incoming Events        | Count | Before transformations are applied, this is the number of records produced or polled by the task belonging to the named source connector in the worker (since the task was last restarted). |
+| Connector Errors Logged       | Count | The number of errors that were logged for this connector task(s).                |
+| Connector Processing Errors   | Count | The number of record processing errors in this connector task(s).                |
+| Connector Processing Failures | Count | The number of record processing failures in this connector task(s), including retry failures. |
+| Connector Events Skipped      | Count | The number of records skipped due to errors within this connector task(s).       |
+
+To view the data insights for a streaming connector source: 
+
+1. Select **Use external sources**, then choose a streaming connector source.
+2. Configure and publish the streaming connector source.
+3. In the lower pane in live view, select the **Data insights** tab.
+4. If there's data inside the streaming connector source, the metrics chart appears on the Data insights tab.
+5. On the right side of the tab, select the checkboxes next to the metrics you want to display.
+
+  :::image type="content" source="./media/monitor/connector-source-metrics.png" alt-text="Screenshot showing the connector source metrics." lightbox="./media/monitor/connector-source-metrics.png" :::
+
 ## Runtime logs
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
