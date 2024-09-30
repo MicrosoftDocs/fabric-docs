@@ -47,13 +47,13 @@ spark.read.option(Constants.DatabaseName, "<warehouse/lakeshouse name>").synapse
 ```
 
 While this connector auto discovers the endpoint for the specified warehouse / lakehouse, if you want to specify it explicitly, you can do it.
-```scala
+```
 //For warehouse
 spark.conf.set("spark.datawarehouse.<warehouse name>.sqlendpoint", "<sql endpoint,port>")
 //For lakehouse
 spark.conf.set("spark.lakehouse.<lakeshouse name>.sqlendpoint", "<sql endpoint,port>")
 //Read from table
-spark.read.synapsesql("<warehouse/lakeshouse name>.<schema name>.<table or view name>") => org.apache.spark.sql.DataFrame
+spark.read.synapsesql("<warehouse/lakeshouse name>.<schema name>.<table or view name>") 
 ```
 
 ### Read data within the same workspace
