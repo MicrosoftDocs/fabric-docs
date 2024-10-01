@@ -77,8 +77,8 @@ For each Fabric workspace, a default starter pool is provisioned, the execution 
 
 ## Submit a Livy API jobs
 
-> [Submit session jobs using the Livy API](get-started-api-livy-session.md)
-> [Submit batch jobs using the Livy API](get-started-api-livy-batch.md)
+* [Submit session jobs using the Livy API](get-started-api-livy-session.md)
+* [Submit batch jobs using the Livy API](get-started-api-livy-batch.md)
 
 ## How to monitor the request history
 
