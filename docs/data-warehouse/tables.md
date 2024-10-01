@@ -4,7 +4,7 @@ description: Learn about tables in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: kecona
-ms.date: 10/09/2024
+ms.date: 10/01/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -82,14 +82,16 @@ CREATE SCHEMA wwi;
 
 ## Collation
 
-Users have the flexibility to configure the warehouse with CI Collation `Latin1_General_100_CI_AS_KS_WS_SC_UTF8` via RESTful API when creating DataWarehouse artifacts in Microsoft Fabric. If no collation is specified, the default will be Case Sensitivity (CS) with `Latin1_General_100_BIN2_UTF8`.
+`Latin1_General_100_BIN2_UTF8` is the default collation for both tables and metadata.
+
+You can create a warehouse with the case-insensitive (CI) collation `Latin1_General_100_CI_AS_KS_WS_SC_UTF8`. For more information, see [How to: Create a warehouse with case insensitive (CI) collation](collation.md).
 
 Supported collations in the API are:
 
-- `Latin1_General_100_BIN2_UTF8 (default)`
+- `Latin1_General_100_BIN2_UTF8` (default)
 - `Latin1_General_100_CI_AS_KS_WS_SC_UTF8`
 
-Once the collation is set during database creation, all subsequent objects (tables, columns, etc.) will inherit this default collation. 
+Once the collation is set during database creation, all subsequent objects (tables, columns, etc.) will inherit this default collation.
 
 ## Statistics
 
