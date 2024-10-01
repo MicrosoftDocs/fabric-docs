@@ -22,7 +22,7 @@ In the Power BI service, you see that reports look different than before. You di
 
 ## Solutions and workarounds
 
-As a workaround, you can manually change the report theme using the [report theme JSON file format](power-bi/create-reports/desktop-report-themes).
+As a workaround, you can manually change the report theme using the [report theme JSON file format](/power-bi/create-reports/desktop-report-themes).
 
 ## Next steps
 
