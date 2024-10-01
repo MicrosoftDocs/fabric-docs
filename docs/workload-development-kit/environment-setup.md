@@ -44,17 +44,25 @@ After the *Capacity admins can develop additional workloads* tenant setting is e
 
 Download and install these tools before you start developing your workload.
 
+* [.NET 6.0 Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer) - You'll use .NET to build your workload.
+
+* [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer) - You'll use ASP.NET Core to build your workload.
+
+* [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - Sends API calls directly from the workload to Fabric.
+
 * [Git](https://git-scm.com/downloads) - A distributed version control system that we use to manage and track project changes.
 
-* [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - The default package manager for Node.js, which is used to manage and share the packages that you use in your project.
+* [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - A workload development component for communicating between your on-premises workload development box and Fabric.
 
 * [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. Used to run the server-side JavaScript code.
+
+   [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - Install as part of the Nodes.js installation. npm is the default package manager for Node.js, which is used to manage and share the packages that you use in your project.
+
+* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - An integrated development environment (IDE).
 
 * [Webpack](https://webpack.js.org/guides/installation/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
 
 * [Webpack CLI](https://webpack.js.org/guides/installation) - A command line interface for Webpack.
-
-* [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - A workload development component for communicating between your on-premises workload development box and Fabric.
 
 ## Related content
 

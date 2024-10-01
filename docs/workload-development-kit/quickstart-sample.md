@@ -15,33 +15,19 @@ This quick start guide shows you how to create and run a Microsoft Fabric worklo
 
 ## Prerequisites
 
-Before you begin, ensure that you have the following installed on your system:
+Before you begin, ensure that you have an environment that's [set up](environment-setup.md) for workload development.
 
-* Access to a Fabric tenant with the workload feature and developer mode enabled. See [Introducing workloads](./workload-environment.md) for more information.
-* [Node.js](https://nodejs.org).
-* [npm](https://www.npmjs.com/).
-* [.NET 6.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer?cid=getdotnetcore).
-* [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer?cid=getdotnetcore).
-* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/).
-* [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516)
+## Step 1: Set up the sample project
 
-## Step-by-step guide
+1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254) repository.
 
-### Enable custom workloads
 
-Configure the admin portal as follows:
 
-1. Log into [Fabric](https://app.fabric.microsoft.com/signin) with an *Admin* account.
 
-1. From **Settings**, go to the **Admin portal**.
 
-   :::image type="content" source="./media/quickstart-sample/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Fabric Admin portal.":::
 
-1. In the **Additional workloads (preview)** section, enable the **Capacity admins and contributors can add and remove additional workloads** tenant setting. You can enable it for the entire organization or specific groups.
 
-### Set up the sample project
 
-1. **Clone the repository**: Clone the repository found here: [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254)
 
 1. **Install dependencies**: Navigate to the `Frontend` directory in the cloned repository and execute the following command:
 
@@ -57,15 +43,15 @@ Configure the admin portal as follows:
 
    The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the *.env.dev* configuration file in the front-end folder.
 
-1. **Enable frontend developer mode**: In the tenant settings in the admin portal, under the **Additional workloads (preview)** section, and activate the **Capacity admins can develop additional workloads.** tenant setting. This setting allows connections to your local server and persists across browser sessions.
 
-### Run a sample workload
+
+## Step2: Run a sample workload
 
 Once the local server is running and *Developer Mode* is enabled, the new sample workload appears in the menu.
 
 1. **Access the sample workload**:  To start the *Create* experience, navigate to the sample workload home page.
 
-### Prepare the development environment
+## Step 3: Prepare the development environment
 
 1. **Clone the boilerplate**: Clone the boilerplate project found here: [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254)
 
