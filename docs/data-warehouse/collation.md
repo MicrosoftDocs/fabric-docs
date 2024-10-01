@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 10/09/2024
 ---
 # How to: Create a warehouse with case insensitive (CI) collation
 
