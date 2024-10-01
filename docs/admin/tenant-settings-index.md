@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 09/30/2024
+ms.date: 10/01/2024
 ---
 
 # Tenant settings index
@@ -35,6 +35,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Product Feedback](../get-started/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
 |Copy Job (preview)|Users can simply move data from any sources into any destinations without creating a pipeline or dataflow. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272307)|
 |[Users can create and share AI skill item types (preview)](../data-science/concept-ai-skill.md)|Users can create natural language data question and answer (Q&amp;A) experiences using generative AI and then save them as AI skill items. AI skill items can be shared with others in the organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2276218)|
+|[Mirrored Azure Databricks Catalog (preview)](../database/mirrored-database/azure-databricks.md)|Turn on this setting to allow users to add Azure Databricks catalogs, schemas, and tables to Fabric workspaces and explore data from Fabric without needing to move data.  [Learn More](https://aka.ms/adbfabricdoc)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
