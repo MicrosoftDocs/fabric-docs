@@ -72,13 +72,11 @@ __Step-by-Step Instructions__
    
 1. __Input the Request Details__
 
-   - In the file body, type the following request
-* `POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceID>/items HTTP/1.1`
-* `Content-Type: application/json`
-* `Authorization: Bearer <bearer token>`
-
+In the file body, type the following request
 ```json
-
+ POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceID>/items HTTP/1.1
+ Content-Type: application/json
+ Authorization: Bearer <bearer token>
 { 
   "type": "Warehouse", 
   "displayName": "<Warehouse name here>", 
@@ -117,7 +115,7 @@ __6. Check the Response__
 
 - You should receive a response with the status code 202 Accepted, along with additional details about your POST request.
 
-Now, if you go to the newly created Warehouse in the portal and execute this T-SQL statement, you should see that the collation for your warehouse aligns with what you specified in the JSON above: 
+Now, if you go to the newly created Warehouse in the portal and execute the following T-SQL statement, you should see that the collation for your warehouse aligns with what you specified in the JSON above: 
 
 
 ```sql
