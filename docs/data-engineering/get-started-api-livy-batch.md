@@ -16,11 +16,11 @@ ms.date: 10/01/2024
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Submit Spark batch jobs using the Livy API for Fabric Data Engineering, using your previously generated \<LivyEndpointURL>, \<EntraAppToken>, \<Fabric_WorkspaceID>, and \<Fabric_LakehouseID>.
+Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
 
 ## Prerequisites
 
-* Fabric Premium or Trial capacity with a LakeHouse.
+* Fabric [Premium](/power-bi/enterprise/service-premium-per-user-faq) or [Trial capacity](../get-started/fabric-trial.md) with a Lakehouse.
 
 * Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API (preview).
 
@@ -28,7 +28,9 @@ Submit Spark batch jobs using the Livy API for Fabric Data Engineering, using yo
 
 * A Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 
-* Some data in your lakehouse.
+* Some data in your lakehouse, this example uses [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page#:~:text=TLC%20Trip%20Record%20Data.%20Yellow%20and%20green%20taxi%20trip%20records) green_tripdata_2022_08 a parquet file loaded to the lakehouse.
+
+The Livy API defines a unified endpoint for operations. Replace the placeholders {Entra_TenantID},  {Entra_ClientID},  {Fabric_WorkspaceID}, and {Fabric_LakehouseID} with your appropriate values when you follow the examples in this article.
 
 ## Configure Visual Studio code for your Livy API Batch
 
@@ -231,6 +233,6 @@ To recap the whole process, you need a remote client such as [Visual Studio Code
 ## Next steps
 
 * [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
-* [Submit Session jobs using the Livy API](get-started-api-livy-session.md)
+* [Submit session jobs using the Livy API](get-started-api-livy-session.md)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Apache Spark application detail](spark-detail-monitoring.md)

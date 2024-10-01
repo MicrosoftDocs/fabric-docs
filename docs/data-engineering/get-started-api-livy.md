@@ -75,7 +75,7 @@ The full swagger files for the Livy API are available below.
 
 For each Fabric workspace, a default starter pool is provisioned, the execution of all the spark code use this starter pool by default. You can use Fabric environments to customize the Livy API Spark jobs.
 
-## Submit a Livy API jobs
+## Submit Livy API jobs
 
 * [Submit session jobs using the Livy API](get-started-api-livy-session.md)
 * [Submit batch jobs using the Livy API](get-started-api-livy-batch.md)

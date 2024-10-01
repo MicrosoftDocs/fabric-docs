@@ -16,11 +16,11 @@ ms.date: 10/01/2024
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Submit Spark Session jobs using the Livy API for Fabric Data Engineering,
+Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
 
 ## Prerequisites
 
-* Fabric Premium or Trial capacity with a LakeHouse.
+* Fabric [Premium](/power-bi/enterprise/service-premium-per-user-faq) or [Trial capacity](../get-started/fabric-trial.md) with a Lakehouse.
 
 * Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API (preview).
 

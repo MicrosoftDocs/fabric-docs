@@ -201,7 +201,7 @@ landingContent:
         links:
           - text: Create and run Spark jobs using the Livy API
             url: get-started-api-livy.md
-          - text: Submit Livy API Sessions jobs
+          - text: Submit Livy API session jobs
             url: get-started-api-livy-session.md
-          - text: Submit Livy API Batch jobs
+          - text: Submit Livy API batch jobs
             url: get-started-api-livy-batch.md

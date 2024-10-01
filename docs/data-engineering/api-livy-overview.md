@@ -31,7 +31,7 @@ The Fabric Livy API allows submitting jobs in two different modes:
 
 ## Get started with the Livy API
 
-learn how to [Create and run Spark jobs using the Livy API in Fabric](get-started-api-livy.md) by choosing either a [Submit Session jobs using the Livy API](get-started-api-livy-session.md) or a [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md).
+learn how to [Create and run Spark jobs using the Livy API in Fabric](get-started-api-livy.md) by choosing either a [Submit Spark session jobs using the Livy API](get-started-api-livy-session.md) or a [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md).
 
 ## Related content
 
