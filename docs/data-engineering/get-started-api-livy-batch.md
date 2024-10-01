@@ -1,0 +1,236 @@
+---
+title: Submit Spark batch jobs using the Livy API
+description: Learn how to submit Spark batch jobs using the Livy API.
+ms.reviewer: sngun
+ms.author: guyhay
+author: GuyHay
+ms.topic: how-to
+ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
+ms.date: 09/11/2024
+---
+
+# Use the Livy API to submit and execute Livy batch jobs
+
+> [!NOTE]
+> The Livy API for Fabric Data Engineering is in preview.
+
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
+
+Submit Spark batch jobs using the Livy API for Fabric Data Engineering, using your previously generated \<LivyEndpointURL>, \<EntraAppToken>, \<Fabric_WorkspaceID>, and \<Fabric_LakehouseID>.
+
+## Prerequisites
+
+* Fabric Premium or Trial capacity with a LakeHouse.
+
+* Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API (preview).
+
+* A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
+
+* A Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+
+* Some data in your lakehouse.
+
+## Configure Visual Studio code for your Livy API Batch
+
+1. Add the sting <?experience=power-bi&lhLivyEndpoint=1> to the end of your browser URL sring when opening your Lakehouse.
+
+1. Click on **Lakehouse Settings** in your Fabric Lakehouse.
+
+    :::image type="content" source="media/livy-API/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-API/Lakehouse-settings.png" :::
+
+1. Navigate to the **Livy endpoint** section.
+
+    :::image type="content" source="media/livy-api/lakehouse-settings-session-job-connection-string.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/lakehouse-settings-session-job-connection-string.png" :::
+
+1. Copy the Batch job connection string (second red box in the image above) to your code.
+
+1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
+
+    :::image type="content" source="media/livy-API/Entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center" lightbox = "media/livy-API/Entra-app-overview.png" :::
+
+## Create a Spark payload and upload to your Lakehouse
+
+1. Create a notebook item in Visual Studio Code of type .ipynb and insert this code.  
+
+   ```python
+   import sys
+   import os
+
+   from pyspark.sql import SparkSession
+   from pyspark.conf import SparkConf
+   from pyspark.sql.functions import col
+
+   if __name__ == "__main__":
+
+        #Spark session builder
+        spark_session = (SparkSession
+          .builder
+          .appName("livybatchdemo") 
+          .getOrCreate())
+    
+        spark_context = spark_session.sparkContext
+        spark_context.setLogLevel("DEBUG")  
+    
+        targetLakehouse = spark_context.getConf().get("spark.targetLakehouse")
+
+        if targetLakehouse is not None:
+          print("targetLakehouse: " + str(targetLakehouse))
+        else:
+          print("targetLakehouse is None")
+
+   df_valid_totalPrice = spark_session.sql("SELECT * FROM Guyhay_LivyDemo2.transactions where TotalPrice > 0")
+   df_valid_totalPrice_plus_year = df_valid_totalPrice.withColumn("transaction_year", col("TransactionDate").substr(1, 4))
+     
+   deltaTablePath = "abfss:<YourABFSSpath>"+str(targetLakehouse)+".Lakehouse/Tables/CleanedTransactions"
+   df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
+   ```
+
+1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse.  It needs to be uploaded to your Lakehouse, and you need the ABFS path of the payload to reference in your Livy API batch job.
+
+    :::image type="content" source="media\Livy-API\Livy-batch-payload.png" alt-text="Screenshot showing the Python payload cell" lightbox="media\Livy-API\Livy-batch-payload.png" :::
+
+1. Upload the Python payload to the files section of your Lakehouse. > Get data > Upload files > click in the Files/ input box.
+
+    :::image type="content" source="media\Livy-API\Livy-batch-payload-in-lakehouse-files.png" alt-text="Screenshot showing payload in Files section of the Lakehouse" lightbox="media\Livy-API\Livy-batch-payload-in-lakehouse-files.png" :::
+
+1. After the file is in the Files section of your Lakehouse, click on the three dots to the right of your payload filename and select Properties.
+
+    :::image type="content" source="media\Livy-API\Livy-batch-ABFS-path.png" alt-text="Screenshot showing payload ABFS path in the Properties of the file in the Lakehouse" lightbox="media\Livy-API\Livy-batch-ABFS-path.png" :::
+
+1. Copy this ABFS path to your Notebook cell below in step x
+
+## Create a Livy API Spark batch session
+
+1. Create a notebook item in Visual Studio Code of type .ipynb and insert this code.
+
+   ```python
+
+   from msal import PublicClientApplication
+   import requests
+   import time
+
+   tenant_id = "<Entra_TenantID>"
+   client_id = "<Entra_ClientID>"
+
+   workspace_id = "<Fabric_WorkspaceID>"
+   lakehouse_id = "<Fabric_LakehouseID>"
+
+   app = PublicClientApplication(
+      client_id,
+      authority="https://login.microsoftonline.com/43a26159-4e8e-442a-9f9c-cb7a13481d48"
+   )
+
+   result = None
+
+   # If no cached tokens or user interaction needed, acquire tokens interactively
+   if not result:
+      result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Lakehouse.ReadWrite.All"])
+      #This works
+      #result = app.acquire_token_interactive(scopes=["User.Read"])
+
+   # Print the access token (you can use it to call APIs)
+   if "access_token" in result:
+      print(f"Access token: {result['access_token']}")
+   else:
+      print("Authentication failed or no access token obtained.")
+
+   if "access_token" in result:
+      access_token = result['access_token']
+      api_base_url_mist='https://api.fabric.microsoft.com/v1/'
+      livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
+      headers = {"Authorization": "Bearer " + access_token}
+   ```
+
+1. Run the notebook cell, a popup should appear in your browser allowing you to choose who you login as.
+
+    :::image type="content" source="media/Livy-API/Entra-logon-user.png" alt-text="Screenshot showing logon screen to Entra app" lightbox="media/Livy-API/Entra-logon-user.png" :::
+
+1. Close the browser window after completing authentication.
+
+    :::image type="content" source="media\Livy-API\Entra-authentication-complete.png" alt-text="Screenshot showing authentication complete" lightbox="media\Livy-API\Entra-authentication-complete.png" :::
+
+1. In Visual Studio Code you should see the Entra token returned.
+
+    :::image type="content" source="media/Livy-API/Livy-session-entra-token.png" alt-text="Screen shot showing the Entra token returned after running cell and logging in" lightbox= "media/Livy-API/Livy-session-entra-token.png":::
+
+1. Add another notebook cell below and insert this code.
+
+   ```python
+   # call get batch API
+
+   get_livy_get_batch = livy_base_url
+   get_batch_response = requests.get(get_livy_get_batch, headers=headers)
+   if get_batch_response.status_code == 200:
+      print("API call successful")
+      print(get_batch_response.json())
+   else:
+      print(f"API call failed with status code: {get_batch_response.status_code}")
+      print(get_batch_response.text)
+   ```
+
+1. Run the nobook cell, you should see two lines printed as the Livy batch job is created.
+
+    :::image type="content" source="media\Livy-API\Livy-batch.png" alt-text="Screenshot showing the results of the batch session creation" lightbox="media\Livy-API\Livy-batch.png" ::::::
+
+## Submit a spark.sql statement using the Livy API batch session
+
+1. Add another notebook cell below and insert this code.
+
+   ```python
+   # submit payload to existing batch session
+
+   print('Submit a spark job via the livy batch API to ') 
+
+   newlakehouseName = "YourNewLakehouseName"
+   create_lakehouse = api_base_url_mist + "/workspaces/" + workspace_id + "/items"
+   create_lakehouse_payload = {
+      "displayName": newlakehouseName,
+      "type": 'Lakehouse'
+   }
+
+   create_lakehouse_response = requests.post(create_lakehouse, headers=headers, json=create_lakehouse_payload)
+   print(create_lakehouse_response.json())
+
+   payload_data = {
+      "name":"livybatchdemo_with"+ newlakehouseName,
+      "file":"abfss://YourABFSPathToYourPayload.py", 
+      "conf": {
+        "spark.targetLakehouse": "Fabric_LakehouseID"
+      }
+   }
+   get_batch_response = requests.post(get_livy_get_batch, headers=headers, json=payload_data)
+
+   print("The Livy batch job submitted successful")
+   print(get_batch_response.json())
+   ```
+
+1. Run the notebook cell, you shoudl see several lines printed as the Livy Batch job is created and run.
+
+    :::image type="content" source="media\Livy-API\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job has been sucessfully submitted" lightbox="media\Livy-API\Livy-batch-job-submission.png" :::
+
+1. Navigate back to your Lakehouse to see the changes.
+
+## View your jobs in the Monitoring hub
+
+You can access the Monitoring hub to view various Apache Spark activities by selecting Monitor in the left-side navigation links.
+
+1. When the batch job is completed state, you can view the session status by navigating to Monitor.
+
+    :::image type="content" source="media\Livy-API\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub" lightbox="media\Livy-API\Livy-batch-job-submission.png":::
+
+1. Select and open most recent activity name.
+
+    :::image type="content" source="media\Livy-API\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub" lightbox="media\Livy-API\Livy-batch-job-submission.png":::
+
+1. In this Livy API session case, you can see your previous batch submission, run details, Spark versions and configuration.  Notice the stopped status on the top right.
+
+    :::image type="content" source="media\Livy-API\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub":::
+
+To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Entra app token, Livy API endpoint URL, authentication against your Lakehouse, a Spark payload in your Lakehouse, and fianlly a batch Livy API session.
+
+## Next steps
+
+* [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
+* [Submit Session jobs using the Livy API](get-started-api-livy-session.md)
+* [Apache Spark monitoring overview](spark-monitoring-overview.md)
+* [Apache Spark application detail](spark-detail-monitoring.md)
