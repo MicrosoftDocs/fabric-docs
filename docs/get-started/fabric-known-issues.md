@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 09/27/2024
+ms.date: 09/30/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 |
+|  867  | Power BI | [Report pages don't show in Fabric org app items](known-issues/known-issue-867-report-pages-not-show-org-app-items.md) | September 30, 2024 |
+|  866  | Power BI | [Can't add My workspace org app items to the org app](known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md) | September 30, 2024 |
+|  862  | Power BI | [Unexpected changes in fonts or themes in reports](known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md) | September 30, 2024 |
 |  859  | Power BI | [Dynamic subscriptions don't send emails to recipients](known-issues/known-issue-859-dynamic-subscriptions-not-send-emails-recipients.md) | September 27, 2024 |
 |  858  | Power BI | [Live connection to semantic models created by template apps fails](known-issues/known-issue-858-live-connect-semantic-models-template-apps-fails.md) | September 27, 2024 |
 |  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 |
@@ -113,8 +117,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |  Fixed: August 16, 2024 |
 |  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 | Fixed: August 16, 2024 |
 |  222  | Power BI |  [Search strings that include Japanese symbols don't return matches](known-issues/known-issue-222-search-strings-japanese-symbols-dont-work.md)   |  August 3, 2022  | Removed: August 16, 2024 |
-|  785  | Power BI | [Add data to a report when scrollbar is present doesn't work](known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md) | July 24, 2024 | Fixed: August 14, 2024 |
-|  780  | Power BI | [Cognitive Services ScoreSentiment function doesn't work in dataflows](known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md) | July 18, 2024 | Fixed: August 14, 2024 |
 
 ## Related content
 
