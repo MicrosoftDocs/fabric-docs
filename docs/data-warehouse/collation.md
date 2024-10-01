@@ -9,13 +9,13 @@ author:      twinklecyril # GitHub alias
 ms.author:   twcyril # Microsoft alias
 ms.service: fabric
 ms.topic: article
-ms.date: 10/09/2024
+ms.date: 10/07/2024
 ---
 # Creating Data Warehouses with (CI) Case Insensitive Collation
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-All [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by default are configured with case-sensitive (CS) collation Latin1_General_100_BIN2_UTF8. Users now have the option to create warehouses with case-insensitive (CI) collation - Latin1_General_100_CI_AS_KS_WS_SC_UTF8, providing greater flexibility in data management.
+All [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by default are configured with case-sensitive (CS) collation **Latin1_General_100_BIN2_UTF8**. Users now have the option to create warehouses with case-insensitive (CI) collation - **Latin1_General_100_CI_AS_KS_WS_SC_UTF8**, providing greater flexibility in data management.
 
 ## How to Create a Case Insensitive Warehouse
 
