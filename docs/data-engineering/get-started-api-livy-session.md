@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 09/11/2024
+ms.date: 10/01/2024
 ---
 
 # Use the Livy API to submit and execute session jobs
@@ -42,7 +42,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Navigate to the **Livy endpoint** section.
 
-    :::image type="content" source="media/livy-api/lakehouse-settings-session-job-connection-string.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/lakehouse-settings-session-job-connection-string.png" :::
+    :::image type="content" source="media/livy-api/livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/livy-endpoint.png" :::
 
 1. Copy the Session job connection string (first red box in the image above) to your code.
 

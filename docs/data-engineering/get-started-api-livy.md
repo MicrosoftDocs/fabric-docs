@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
-ms.date: 08/23/2024
+ms.date: 10/01/2024
 ---
 
 # Use the Livy API to submit and execute Spark jobs
@@ -44,11 +44,11 @@ Add these specific Fabric and Livy API permissions:
 
 * Lakehouse.ReadWrite.All
 
-:::image type="content" source="media/livy-API/Entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Entra admin center":::
+:::image type="content" source="media/livy-API/Entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Entra admin center" lightbox="media/livy-API/Entra-app-API-permissions.png":::
 
 After you've regisitered your application, you will need both the Application (client) ID and the Directory (tenant) ID.
 
-:::image type="content" source="media/livy-API/Entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center":::
+:::image type="content" source="media/livy-API/Entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center" lightbox="media/livy-API/Entra-app-overview.png" :::
 
 The authenticated user calling the Livy API needs to be a workspace member where both the API and data source items are located with a **Contributor role**. For more information, see [Give users access to workspaces](../get-started/give-access-workspaces.md).
 
@@ -56,13 +56,13 @@ The authenticated user calling the Livy API needs to be a workspace member where
 
 To access the Livy endpoint, a Lakehouse artifact is necessary. After the Lakehouse is created, you can find the Livy API endpoint in the settings panel by adding the string '<?experience=power-bi&lhLivyEndpoint=1>' to the end of your browser's URL when viewing your Lakehouse.
 
-:::image type="content" source="media\Livy-API\Lakehouse-settings-Livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media\Livy-API\Lakehouse-settings-Livy-endpoint.png":::
+:::image type="content" source="media\Livy-API\Livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media\Livy-API\Livy-endpoint.png":::
 
 The Livy API endpoint has the follows pattern:
 
-'https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/'
+\<https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/>
 
-The URL will be appended with either \<sessions> or \<batches> depending on what you choose.
+The URL will be appended with either \sessions or \batches depending on what you choose.
 
 ## Download the Livy API swagger files
 

@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
-ms.date: 09/11/2024
+ms.date: 10/01/2024
 ---
 
 # Use the Livy API to submit and execute Livy batch jobs
@@ -40,13 +40,13 @@ Submit Spark batch jobs using the Livy API for Fabric Data Engineering, using yo
 
 1. Navigate to the **Livy endpoint** section.
 
-    :::image type="content" source="media/livy-api/lakehouse-settings-session-job-connection-string.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/lakehouse-settings-session-job-connection-string.png" :::
+    :::image type="content" source="media/livy-api/livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/livy-endpoint.png" :::
 
 1. Copy the Batch job connection string (second red box in the image above) to your code.
 
 1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
 
-    :::image type="content" source="media/livy-API/Entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center" lightbox = "media/livy-API/Entra-app-overview.png" :::
+    :::image type="content" source="media/livy-API/Entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center" lightbox="media/livy-API/Entra-app-overview.png" :::
 
 ## Create a Spark payload and upload to your Lakehouse
 
