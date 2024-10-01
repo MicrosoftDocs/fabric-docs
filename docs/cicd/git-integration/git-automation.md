@@ -207,7 +207,7 @@ For the complete script, see [Commit select changes to Git](https://github.com/m
 
 For the complete script, see [Poll a long running operation](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/LongRunningOperation-Polling.ps1).
 
-1. Retrieve the operationId from the [Update From Git](/rest/api/fabric/core/git/update-from-git) or the [Selective commit](/rest/api/fabric/core/git/commit-to-git) script.
+1. Retrieve the operationId from the [Update From Git](/rest/api/fabric/core/git/update-from-git) or the [Commit to Git](/rest/api/fabric/core/git/commit-to-git) script.
 1. Call the [Get LRO Status](/rest/api/fabric/core/git/get-status) API at specified intervals (in seconds) and print the status.
 
 ## Considerations and limitations
