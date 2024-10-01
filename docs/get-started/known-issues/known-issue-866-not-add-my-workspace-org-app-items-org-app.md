@@ -10,7 +10,7 @@ ms.custom: known-issue-866
 
 # Known issue - Can't add My workspace org app items to the org app
 
-You can create org app items in **My Workspace**, but can't add them to the org app.
+You can create org app items in **My workspace**, but can't add them to the org app.
 
 **Status:** Open
 
