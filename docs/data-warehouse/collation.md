@@ -9,7 +9,7 @@ author:      twinklecyril # GitHub alias
 ms.author:   twcyril # Microsoft alias
 ms.service: fabric
 ms.topic: article
-ms.date: 10/07/2024
+ms.date: 10/09/2024
 ---
 # Creating Data Warehouses with (CI) Case Insensitive Collation
 
