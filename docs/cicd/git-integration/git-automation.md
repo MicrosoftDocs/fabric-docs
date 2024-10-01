@@ -188,7 +188,7 @@ For the complete script, see [Commit all changes to Git](https://github.com/micr
 
 1. Log into Git and get authentication.
 1. Connect to workspace.
-1. Call the [Selective commit](/rest/api/fabric/core/git/commit-to-git) REST API.
+1. Call the [Commit to Git](/rest/api/fabric/core/git/commit-to-git) REST API.
 1. Get the Long Running OperationId for polling the status of the operation.
 
 ### Selective Commit
