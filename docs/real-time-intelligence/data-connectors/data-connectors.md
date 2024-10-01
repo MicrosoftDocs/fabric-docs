@@ -5,7 +5,7 @@ ms.reviewer: aksdi
 ms.author: shsagir
 author: shsagir
 ms.topic: concept-article
-ms.date: 06/27/2024
+ms.date: 07/31/2024
 # CustomerIntent: As a data ingestor, I want to know what data connectors and tools are available, so that I can choose the right one for my use case.
 ---
 # Data connectors overview
@@ -14,26 +14,27 @@ Data ingestion is the process used to load data from one or more sources into a 
 
 The following table summarizes the available data connectors, tools, and integrations.
 
-| Name                                                                                  | Functionality                 | Supports streaming? | Type                                                                                                                          | Use cases                    |
+| Name  | Functionality | Supports streaming? | Type | Use cases |
 | ------------------------------------------------------------------------------------- | ----------------------------- | :-----------------: | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| [Apache Flink](#apache-flink)                                                         | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/Azure/flink-connector-kusto/)                                                                | Telemetry                    |
-| [Apache Kafka](#apache-kafka)                                                         | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/Azure/kafka-sink-azure-kusto/)                                                               | Logs, Telemetry, Time series |
-| [Apache Log4J 2](#apache-log4j-2)                                                     | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/Azure/azure-kusto-log4j)                                                                     | Logs                         |
-| [Apache Spark](#apache-spark)                                                         | **Export**<br />**Ingestion** |                     | [Open source](https://github.com/Azure/azure-kusto-spark/)                                                                    | Telemetry                    |
-| [Apache Spark for Azure Synapse Analytics](#apache-spark-for-azure-synapse-analytics) | **Export**<br />**Ingestion** |                     | First party                                                                                                                   | Telemetry                    |
-| [Azure Data Factory](#azure-data-factory)                                             | **Export**<br />**Ingestion** |                     | First party                                                                                                                   | Data orchestration           |
-| [Azure Event Hubs](#azure-event-hubs)                                                 | **Ingestion**                 | :heavy_check_mark:  | First party                                                                                                                   | Messaging                    |
-| [Azure Functions](#azure-functions)                                                   | **Export**<br />**Ingestion** |                     | First party                                                                                                                   | Workflow integrations        |
-| [Azure Stream Analytics](#azure-stream-analytics)                                     | **Ingestion**                 | :heavy_check_mark:  | First party                                                                                                                   | Event processing             |
-| [Fluent Bit](#fluent-bit)                                                             | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/fluent/fluent-bit_)                                                                          | Logs, Metrics, Traces        |
-| [Logstash](#logstash)                                                                 | **Ingestion**                 |                     | [Open source](https://github.com/Azure/logstash-output-kusto/)                                                                | Logs                         |
-| [NLog](#nlog)                                                                         | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/Azure/azure-kusto-nlog-sink)                                                                 | Telemetry, Logs, Metrics     |
-| [Open Telemetry](#opentelemetry)                                                     | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs        |
-| [Power Automate](#power-automate)                                                     | **Export**<br />**Ingestion** |                     | First party                                                                                                                   | Data orchestration           |
-| [Serilog](#serilog)                                                                   | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/Azure/serilog-sinks-azuredataexplorer)                                                       | Logs                         |
-| [Splunk](#splunk)                                                                     | **Ingestion**                 |                     | [Open source](https://github.com/Azure/azure-kusto-splunk/tree/main/splunk-adx-alert-addon)                                   | Logs                         |
-| [Splunk Universal Forwarder](#splunk-universal-forwarder)                             | **Ingestion**                 |                     | [Open source](https://github.com/Azure/azure-kusto-splunk)                                                                    | Logs                         |
-| [Telegraf](#telegraf)                                                                 | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer)                         | Metrics, Logs                |
+| [Apache Flink](#apache-flink)  | **Ingestion**   | :heavy_check_mark:  | [Open source](https://github.com/Azure/flink-connector-kusto/)  | Telemetry |
+| [Apache Kafka](#apache-kafka) | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/Azure/kafka-sink-azure-kusto/) | Logs, Telemetry, Time series |
+| [Apache Log4J 2](#apache-log4j-2)| **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/Azure/azure-kusto-log4j)  | Logs |
+| [Apache Spark](#apache-spark) | **Export**<br />**Ingestion** |  | [Open source](https://github.com/Azure/azure-kusto-spark/) | Telemetry |
+| [Apache Spark for Azure Synapse Analytics](#apache-spark-for-azure-synapse-analytics) | **Export**<br />**Ingestion** |  | First party   | Telemetry|
+| [Azure Data Factory](#azure-data-factory) | **Export**<br />**Ingestion** | | First party   | Data orchestration |
+| [Azure Event Hubs](#azure-event-hubs)| **Ingestion**  | :heavy_check_mark:  | First party   | Messaging|
+| [Azure Functions](#azure-functions) | **Export**<br />**Ingestion** | | First party   | Workflow integrations   |
+| [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion**  | :heavy_check_mark:  | First party   | Event processing   |
+| [Cribl Stream](#cribl-stream) | **Ingestion** | :heavy_check_mark: | First party | Telemetry, Logs, Metrics, Machine data |
+| [Fluent Bit](#fluent-bit)  | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/fluent/fluent-bit_) | Logs, Metrics, Traces  |
+| [Logstash](#logstash)   | **Ingestion** |  | [Open source](https://github.com/Azure/logstash-output-kusto/)  | Logs |
+| [NLog](#nlog) | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/Azure/azure-kusto-nlog-sink)   | Telemetry, Logs, Metrics|
+| [Open Telemetry](#opentelemetry)| **Ingestion**  | :heavy_check_mark:  | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs   |
+| [Power Automate](#power-automate)| **Export**<br />**Ingestion** |  | First party| Data orchestration |
+| [Serilog](#serilog)| **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/Azure/serilog-sinks-azuredataexplorer)  | Logs |
+| [Splunk](#splunk)  | **Ingestion** |  | [Open source](https://github.com/Azure/azure-kusto-splunk/tree/main/splunk-adx-alert-addon) | Logs |
+| [Splunk Universal Forwarder](#splunk-universal-forwarder)| **Ingestion**   |  | [Open source](https://github.com/Azure/azure-kusto-splunk) | Logs |
+| [Telegraf](#telegraf)   | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer) | Metrics, Logs  |
 
 The following table summarizes the available connectors and their capabilities:
 
@@ -130,6 +131,15 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Event processing
 * **Documentation:** [Get data from Azure Stream Analytics](/azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rti&pivots=fabric)
 
+### Cribl Stream
+
+[Cribl stream](https://docs.cribl.io/stream/) is a processing engine that securely collects, processes, and streams machine event data from any source. It allows you to parse and process that data for any destination for analysis.
+
+* **Functionality:** Ingestion
+* **Ingestion type supported:** Batching, Streaming
+* **Use cases:** Machine data processing including logs, metrics, instrumentation data
+* **Documentation:** [Get data from Cribl Stream](../get-data-cribl-stream.md)
+
 ## Fluent Bit
 
 Fluent Bit is an open-source agent that collects logs, metrics, and traces from various sources. It allows you to filter, modify, and aggregate event data before sending it to storage.
@@ -142,7 +152,7 @@ Fluent Bit is an open-source agent that collects logs, metrics, and traces from 
 
 ## Logstash
 
-[The Logstash plugin](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric) enables you to process events from Logstash into an Azure Data Explorer database for later analysis.
+[The Logstash plugin](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric) enables you to process events from Logstash into a database for later analysis.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching

@@ -5,10 +5,10 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: jburchel
 ms.topic: tutorial
-ms.date: 08/16/2024
+ms.date: 09/16/2024
 ---
 
-# Slowly changing dimension type 2 
+# Slowly changing dimension type 2
 
 >[!TIP]
 >You can [download the Power Query Template file](https://github.com/microsoft/DataFactory/raw/main/Slowly%20Changing%20Dimension%20Type%202.pqt) that has the full Slowly changing dimension type 2 pattern solution to follow along this tutorial.
@@ -32,7 +32,7 @@ As a whole, the architecture requires a minimum of four components:
 * **Logic to update Dimension table**: Once all changes are identified in the **logic to identify changes**, a table with the records to be added and updated can be used to update the **Dimension table**.
 
 >[!NOTE]
->The solution uses Dataflow Gen2 in Microsoft Data Factory. While the logics can be changed and modified to fit your specific needs, the goal of the tutorial is to showcase a simple way to accomplish the slowly changing dimension type 2 pattern using a low code and visual solution like Dataflow Gen2. 
+>The solution uses Dataflow Gen2 in Microsoft Data Factory. While the logic can be changed and modified to fit your specific needs, the goal of the tutorial is to showcase a simple way to accomplish the slowly changing dimension type 2 pattern using a low code and visual solution like Dataflow Gen2. 
 
 ## Source table
 
@@ -63,14 +63,14 @@ This is the definition of the schema for this table and description for the fiel
 |RepSourceID|Number|A natural key from the source table that represents an identifier for an employee|
 |FirstName|Text|The first name of the employee. This field comes from the Source table|
 |LastName|Text|The last name of the employee. This field comes from the Source table|
-|Region|Text| The region in which the employee works for. This field comes from the Source table|
+|Region|Text| The region in which the employee works. This field comes from the Source table|
 |StartDate|Date|Date stamp that establishes when the record becomes effective|
 |EndDate|Date|Date stamp that establishes until when the record is effective|
-|IsCurret|Logical|Simple flag to denote if the record is current or not. True represents that the record is current|
+|IsCurrent|Logical|Simple flag to denote if the record is current or not. True represents that the record is current|
 |Hash|Text|The hash encoding of the fields RepSourceID, FirstName, LastName, and Region combined|
 
 >[!NOTE]
->It is highly encouraged that you create a dimension table with the correct schema before establishing this process. The tutorial takes into consideration that you've already created the dimnension table in advance and have already established a hashing or lookup mechanism that could be used within your Dataflow Gen2 logic.
+>It is highly encouraged that you create a dimension table with the correct schema before establishing this process. The tutorial takes into consideration that you've already created the dimension table in advance and have already established a hashing or lookup mechanism that could be used within your Dataflow Gen2 logic.
 
 The desired outcome is an updated dimension table that has updates to SalesRepID two and three, and a new record four. That table looks as follows:
 
@@ -193,7 +193,7 @@ Using the original Dimension query (Dimension), perform a new **Merge queries as
 
 ![Screenshot of Merge dialog with thh Dimension and Source tables using the hash columns as column pairs and the left anti join kind being selected as the join kind.](../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
 
-The output is a table with records that are no longer used in the Source table. Make sure to expand the newly created column with table values and only expand the Hash column and the later delete it. 
+The output is a table with records that are no longer used in the Source table. Make sure to expand the newly created column with table values and only expand the Hash column and then later delete it. 
 Rename the query to be **RecordsToUpdate**.
 
 You now need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.

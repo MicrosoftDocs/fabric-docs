@@ -12,6 +12,10 @@ ms.search.for: Manage libraries in Environment
 
 Microsoft Fabric environments provide flexible configurations for running your Spark jobs. Libraries provide reusable code that developers want to include in their work. Except for the built-in libraries that come with each Spark runtime, you can install public and custom libraries in your Fabric environments. And you can easily attach environments to your notebooks and Spark job definitions.
 
+> [!NOTE]
+> Modifying the version of a specific package could potentially break other packages that depend on it. For instance, downgrading `azure-storage-blob` might cause problems with `Pandas` and various other libraries that rely on `Pandas`, including `mssparkutils`, `fsspec_wrapper`, and `notebookutils`.
+> You can view the list of preinstalled packages and their versions for each runtime [here](runtime.md).
+
 ## Public libraries
 
 Public libraries are sourced from repositories such as PyPI and Conda, which Fabric currently supports.

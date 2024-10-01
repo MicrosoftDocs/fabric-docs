@@ -452,7 +452,7 @@ When a previously successful deployment fails due to broken links, a warning is 
 
 To deploy successfully, fix or remove the broken rules, and redeploy.
 
-#### Deployment problem: I configured rules, but it did't deploy
+#### Deployment problem: I configured rules, but it didn't deploy
 
 **Cause**: Deployment rules aren't applied immediately after they're configured.
 

@@ -45,6 +45,8 @@ items:
     href: more-workloads-add.md
   - name: Upload and manage a workload
     href: manage-workload.md
+  - name: Publish a workload to Fabric
+    href: publish-workload.md
   - name: Set up authentication
     href: authentication-tutorial.md    
   - name: Front-end implementation guide

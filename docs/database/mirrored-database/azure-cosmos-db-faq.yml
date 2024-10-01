@@ -47,11 +47,12 @@ sections:
       - question: |
           What costs are associated with mirroring Azure Cosmos DB?
         answer: |
-          Mirroring is in preview. There are currently no costs for mirroring or storing mirrored data in Fabric. The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. For more information, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric).
+          Mirroring is in preview. There are currently no costs for compute used to replicate data from Azure Cosmos DB to Fabric OneLake. Storage costs for OneLake are also free upto certain limits. For more information, see [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). 
+          The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
           
-          For Azure Cosmos DB, continuous backup is a prerequisite to mirroring. If you enabled any continuous backup tier before mirroring, you don't accrue any extra cost. If you enable continuous backup specifically for mirroring, you're billed the price associated with that feature. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
-
-           If you use data explorer to view the source data from Azure Cosmos DB, you will accrue costs based on Request Units (RU) usage.         
+          For Azure Cosmos DB, continuous backup is a prerequisite to mirroring. If you enabled any continuous backup tier before mirroring, you don't accrue any extra cost. If you enable continuous backup specifically for mirroring, 7-day backup mode is free of cost; if you enable 30-day backup, you're billed the price associated with that feature. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
+          
+          If you use data explorer to view the source data from Azure Cosmos DB, you will accrue costs based on Request Units (RU) usage.         
       - question: |
           How are egress fees handled for mirroring Azure Cosmos DB?
         answer: |
@@ -69,7 +70,7 @@ sections:
         answer: |
           No, mirroring in Fabric isn't related to Azure Synapse Link.
 
-          In Azure Cosmos DB, continuous backup is a prerequisite for mirroring. This prerequisite allows Fabric to mirror your data without impacting your transactional workloads or requiring the analytical store.
+          In Azure Cosmos DB, continuous backup is a prerequisite for mirroring. This prerequisite allows Fabric to mirror your data without impacting your transactional workloads or requiring the analytical store.          
       - question: |
           Does mirroring affect how Azure Synapse Link works with Azure Cosmos DB?
         answer: |
@@ -86,6 +87,7 @@ sections:
           Can I disable analytical store for my Azure Cosmos DB account after using mirroring?
         answer: |
           Mirroring requires Azure Cosmos DB continuous backup as a prerequisite. Azure Cosmos DB accounts with continuous backup enabled can't disable analytical store. Once you disable analytical store on any collections, you cannot enable continuous backup.
+          This is a temporary limitation.
       - question: |
           With mirroring, are you deprecating Azure Synapse Link for Azure Cosmos DB?
         answer: |

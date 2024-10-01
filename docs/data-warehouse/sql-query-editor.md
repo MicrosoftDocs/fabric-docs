@@ -4,7 +4,9 @@ description: Learn how to use the SQL query editor.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng
-ms.date: 06/25/2024
+ms.date: 09/20/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -28,15 +30,21 @@ The SQL query editor provides support for IntelliSense, code completion, syntax 
 
 The SQL query editor provides a text editor to write queries using T-SQL. To access the built-in SQL query editor:
 
-- Select the **Query** icon located at the bottom of the warehouse editor window.
+- Create a new query using the **New SQL query** button in the ribbon. 
 
-   :::image type="content" source="media/sql-query-editor/query-button-ribbon.png" alt-text="Screenshot showing the SQL query editor query icon.":::
+   :::image type="content" source="media/sql-query-editor/home-ribbon-select-new.png" alt-text="Screenshot showing where to find the New query menu in the ribbon." lightbox="media/sql-query-editor/home-ribbon-select-new.png":::
 
-- Create a new query using the **New SQL query** button. If you select the dropdown list, you can easily create T-SQL objects with code templates that populate in your SQL query window, as shown in the following image.
+- If you select **SQL templates** dropdown list, you can easily create T-SQL objects with code templates that populate in your SQL query window, as shown in the following image.
 
-   :::image type="content" source="media/sql-query-editor/new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data preview view ribbon.":::
+   :::image type="content" source="media/sql-query-editor/new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the SQL templates in the ribbon." lightbox="media/sql-query-editor/new-sql-query-dropdown-templates.png":::
 
 As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab to indicate that your query is being saved.
+
+## Multitask between tabs for data preview, querying, and modeling
+
+The data preview, querying, and modeling experience opens up as individual tabs that you can multitask between in the editor. If you are writing a query, you can switch between seeing a preview of the data and viewing the relationships between tables that you're writing the query for. To view or close all tabs, click on the icon on the right of all tabs. 
+
+:::image type="content" source="media/sql-query-editor/multitask-tabs.png" alt-text="Screenshot showing where to show the tabs for data preview, querying, and modeling." lightbox="media/sql-query-editor/multitask-tabs.png":::
 
 ### View query results
 
@@ -48,7 +56,7 @@ The status bar indicates the query status, duration of the run and number of row
 
 To enable **Save as view**, **Save as table**, **Open in Excel**, **Explore this data (preview)**, and **Visualize results** menus, highlight the SQL statement containing `SELECT` statement in the SQL query editor.
 
-   :::image type="content" source="media/sql-query-editor/editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media/sql-query-editor/editor-commands.png":::
+   :::image type="content" source="media/sql-query-editor/sql-editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media/sql-query-editor/editor-commands.png":::
 
 #### Save as view
 
@@ -82,13 +90,19 @@ Once you have successfully signed in, you'll see the data presented in the sprea
 
 #### Explore this data (preview)
 
-**Explore this data (preview)** provides the capability to perform ad hoc exploration of your query results. With this feature, you can launch a side-by-side matrix and visual view to better understand any trends or patterns behind your query results before diving into building a full Power BI report. For more information, see [Explore your data in the Power BI service (preview)](/power-bi/consumer/explore-data-service).
+**Explore this data (preview)** provides the capability to perform ad-hoc exploration of your query results. With this feature, you can launch a side-by-side matrix and visual view to better understand any trends or patterns behind your query results before diving into building a full Power BI report. For more information, see [Explore your data in the Power BI service](/power-bi/consumer/explore-data-service).
 
 #### Visualize results
 
 **Visualize results** allows you to create reports from your query results within the SQL query editor.
 
    :::image type="content" source="media/sql-query-editor/visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu." lightbox="media/sql-query-editor/visualize-results-query.png":::
+
+#### Copy
+
+The **Copy** dropdown allows you to copy the results and/or column names in the data grid. You can choose to copy results with column names, just copy the results only, or just copy the column names only. 
+
+   :::image type="content" source="media/sql-query-editor/copy-dropdown.png" alt-text="Screenshot showing the options in the Copy dropdown menu." lightbox="media/sql-query-editor/copy-dropdown.png":::
 
 #### Multiple result sets
 

@@ -9,14 +9,12 @@ ms.custom:
   - ignite-2023
   - has-azure-ad-ps-ref
   - azure-ad-ref-level-one-done
-ms.date: 11/02/2023
+ms.date: 09/22/2024
 ---
 
 # Understand Microsoft Fabric admin roles
 
 To be a Microsoft Fabric admin for your organization, you must be in one of the following roles:
-
-* Global administrator
 
 * Power Platform administrator
 

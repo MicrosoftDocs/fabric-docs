@@ -4,7 +4,7 @@ description: A known issue is posted where sample data doesn’t flow after dest
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/06/2024
+ms.date: 08/23/2024
 ms.custom: known-issue-733
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-733
 
 When you select the **Sample data** data source from the Real-Time hub, the **Get Events** wizard guides you through the configuration process. Once completed, an eventstream is created with the sample source added. However, if you open this eventstream and add operators and destinations, the sample data stops emitting. No data flows to the destinations you added.
 
-**Status:** Open
+**Status:** Fixed: August 23, 2024
 
 **Product Experience:** Real-Time Intelligence
 

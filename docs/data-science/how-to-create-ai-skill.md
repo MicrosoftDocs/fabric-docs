@@ -2,13 +2,13 @@
 title: Create an AI skill (preview)
 description: Learn how to create an AI skill.
 author: fbsolo-ms1
-ms.author: avangrootel
+ms.author: amjafari
 ms.reviewer: franksolomon
 reviewer: avangrootel
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 08/05/2024
+ms.date: 09/21/2024
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create an AI skill that relies on generative AI, that my colleagues and I can use to have conversations about our data.
@@ -23,7 +23,8 @@ Are you ready for conversations about your data? You can create AI experiences w
 
 ## Prerequisites
 
-- An F64 Fabric capacity or higher.
+- A paid F64 or higher Fabric capacity resource.
+- [AI skill tenant switch](./ai-skill-tenant-switch.md) is enabled.
 - [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
 - [Cross-geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
 - A warehouse or lakehouse with data.

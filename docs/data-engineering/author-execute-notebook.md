@@ -237,7 +237,7 @@ Select **Cancel all** to cancel the running cells or cells waiting in the queue.
 
 #### Reference run a Notebook
 
-In addition to [mssparkutils reference run API](microsoft-spark-utilities.md), you can also use the ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. The ```%run``` magic command supports nested calls but doesn't support recursive calls. You receive an exception if the statement depth is larger than **five**.
+In addition to [notebookutils reference run API](notebook-utilities.md), you can also use the ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. The ```%run``` magic command supports nested calls but doesn't support recursive calls. You receive an exception if the statement depth is larger than **five**.
 
 Example:
 ``` %run Notebook1 { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true,  "parameterString": "abc" } ```.
@@ -446,20 +446,21 @@ You can personalize your Spark session with the magic command **%%configure**. F
 ```json
 %%configure
 {
-    // You can get a list of valid parameters to config the session from  https://github.com/cloudera/livy#request-body.
+    // You can get a list of valid parameters to config the session from https://github.com/cloudera/livy#request-body.
     "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g", "472g"]
     "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80]
     "executorMemory": "28g",
     "executorCores": 4,
     "jars": ["abfs[s]: //<file_system>@<account_name>.dfs.core.windows.net/<path>/myjar.jar", "wasb[s]: //<containername>@<accountname>.blob.core.windows.net/<path>/myjar1.jar"],
-    "conf": {
+    "conf":
+    {
         // Example of customized property, you can specify count of lines that Spark SQL returns by configuring "livy.rsc.sql.num-rows".
         "livy.rsc.sql.num-rows": "3000",
         "spark.log.level": "ALL"
-    }
+    },
     "defaultLakehouse": {  // This overwrites the default lakehouse for current session
         "name": "<lakehouse-name>",
-        "id": "<lakehouse-id>",
+        "id": "<(optional) lakehouse-id>",
         "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>" // Add workspace ID if it's from another workspace
     },
     "mountPoints": [
@@ -472,6 +473,11 @@ You can personalize your Spark session with the magic command **%%configure**. F
             "source": "abfs[s]://<file_system>@<account_name>.dfs.core.windows.net/<path1>"
         },
     ],
+    "environment": {
+        "id": "<environment-id>",
+        "name": "<environment-name>"
+    },
+    "sessionTimeoutInSeconds": 1200,
     "useStarterPool": false,  // Set to true to force using starter pool
     "useWorkspacePool": "<workspace-pool-name>"
 }
@@ -482,7 +488,7 @@ You can personalize your Spark session with the magic command **%%configure**. F
 > - We recommend that you set the same value for "DriverMemory" and "ExecutorMemory" in %%configure. The "driverCores" and "executorCores" values should also be the same.
 > - The "defaultLakehouse" will overwrite your pinned lakehouse in Lakehouse explorer, but that only works in your current notebook session.
 > - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run will fail due to cannot restart session.
-> - The %%configure used in mssparkutils.notebook.run will be ignored but used in %run notebook will continue executing.
+> - The %%configure used in notebookutils.notebook.run will be ignored but used in %run notebook will continue executing.
 > - The standard Spark configuration properties must be used in the "conf" body. Fabric does not support first level reference for the Spark configuration properties.
 > - Some special Spark properties, including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", and "spark.executor.instances" don't take effect in "conf" body.
 
@@ -637,4 +643,4 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 ## Related content
 
 - [Notebook visualization](notebook-visualization.md)
-- [Introduction of Fabric MSSparkUtils](microsoft-spark-utilities.md)
+- [Introduction of Fabric NotebookUtils](notebook-utilities.md)

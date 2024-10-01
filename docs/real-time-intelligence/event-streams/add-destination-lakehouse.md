@@ -13,7 +13,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add a lakehouse destination to an eventstream
 
-This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric event streams.
+This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric eventstreams. For optimized streaming performance and real-time querying, consider streaming data to an eventhouse with [add Eventhouse destination to an eventstream](add-destination-kql-database.md) and then enable [Eventhouse OneLake Availability](../event-house-onelake-availability.md).
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -81,7 +81,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [Derived stream destination](add-destination-derived-stream.md)
-- [KQL Database destination](add-destination-kql-database.md)
+- [Eventhouse destination](add-destination-kql-database.md)
 - [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
