@@ -76,11 +76,7 @@ For more information, see [Limitations on charts with a time axis](data-activato
 
 ## Allowed recipients of email notifications
 
-Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email notifications to be sent to either external email addresses or guest email addresses. In addition, the email domain of any email notification recipient must match the email domain of the notification owner.
-
-## Maximum data throughput for eventstream data
-
-For eventstream data sources, Data Activator supports throughput up to 10 events per second. If you send eventstream data to Data Activator at a more frequent rate, Data Activator may throttle the input. When throttled, Data Activator doesn't process all events in the stream. At General Availability (GA), reflex item sources will support thousands of events per second. If you have questions or are interested in early access to updates, post in our [Community Forum](https://community.fabric.microsoft.com/t5/Reflex/bd-p/da_reflex).  
+Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email notifications to be sent to either external email addresses or guest email addresses. In addition, the email domain of any email notification recipient must match the email domain of the notification owner. 
 
 ## Maximum data for rule processing limits
 
