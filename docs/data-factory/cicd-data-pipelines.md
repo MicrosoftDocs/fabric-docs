@@ -12,9 +12,9 @@ ms.date: 10/01/2024
 
 In Fabric Data Factory, continuous integration and continuous development (CI/CD) automates the integration, testing, and deployment of code changes to ensure efficient and reliable development.
 
-In Fabric, there are 2 features we currently support in collaboration with the Application Lifecycle Management (ALM) team: Git Integration and deployment pipelines. These features allow users to import/export workspace resources with individual updates.
+In Fabric, there are two features we currently support in collaboration with the Application Lifecycle Management (ALM) team: Git Integration and deployment pipelines. These features allow users to import/export workspace resources with individual updates.
 
-The Fabric Data Factory CI/CD solution deviates from the Azure Data Factory model where whole factory updates using ARM template export methodology is preferred. This change in methodology allows customers to selectively choose which pipelines to update without pausing the whole factory. Both Git integration (bring-your-own Git) and deployment pipelines (built-in CI/CD) use the concept of associated a single workspace with a single environment. You will need to map out different workspaces to your different environments such as development, test, and production.
+The Fabric Data Factory CI/CD solution deviates from the Azure Data Factory model where whole factory updates using ARM template export methodology is preferred. This change in methodology allows customers to selectively choose which pipelines to update without pausing the whole factory. Both Git integration (bring-your-own Git) and deployment pipelines (built-in CI/CD) use the concept of associated a single workspace with a single environment. You need to map out different workspaces to your different environments such as development, test, and production.
 
 ## Why developers use CI/CD
 
@@ -45,7 +45,7 @@ There are a few key workflow essentials to understand when working with Git.
 - **Main branch**: The main branch, sometimes named the _master&nbsp;branch_, holds production ready code.
 - **Feature branches**: These branches are separate from the main branch and allow for isolated development without changing the main branch.
 - **Pull requests (PRs)**: PRs allow users to propose, review, and discuss changes before integration.
-- **Merging**: This occurs when changes are approved. Git will integrate these changes, continuously updating the project.
+- **Merging**: This occurs when changes are approved. Git integrates these changes, continuously updating the project.
 
 ## Deployment pipelines for Git
 
@@ -53,11 +53,11 @@ Deployment pipelines are tightly integrated with Git. When a developer pushes co
 
 ### Stages and jobs
 
-Deployment pipelines consist of multiple stages and jobs within each stage. Typically, these stages are separated into 3 environments: development (compiling code), testing (running tests), and production (deploying the application). The pipeline progresses through these stages, ensuring that the code is thoroughly tested and deployed in a controlled manner.
+Deployment pipelines consist of multiple stages and jobs within each stage. Typically, these stages are separated into three environments: development (compiling code), testing (running tests), and production (deploying the application). The pipeline progresses through these stages, ensuring that the code is thoroughly tested and deployed in a controlled manner.
 
 ### Automated workflows
 
-Deployment pipelines automate the entire process of building, testing, and deploying code. This reduces the risk of human error, speeds up the development process, and ensures code changes are consistently and reliably delivered to production.
+Deployment pipelines automate the entire process of building, testing, and deploying code. This automation reduces the risk of human error, speeds up the development process, and ensures code changes are consistently and reliably delivered to production.
 
 ## Get started with Git integration for Data Factory data pipelines
 
@@ -67,7 +67,7 @@ Take the following steps to set up Git integration for your data pipelines in Da
 
 To access Git with your Microsoft Fabric workspace, ensure the following prerequisites for both Fabric and Git.
 
-- Either a [PowerBI Premium license](/power-bi/enterprise/service-premium-what-is) or [Fabric capacity](../enterprise/licenses.md#capacity).
+- Either a [Power BI Premium license](/power-bi/enterprise/service-premium-what-is) or [Fabric capacity](../enterprise/licenses.md#capacity).
 - Enabled the following tenant switches from the admin portal:
   - [Users can create Fabric items](../admin/fabric-switch.md)
   - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
@@ -90,7 +90,7 @@ To use Git integration with Data Factory pipelines in Fabric, you first need to 
    :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in the Fabric UI.":::
 
 1. Select **Git integration**.
-1. Select your Git provider. Currently, Fabric only support _Azure DevOps_ or _GitHub_. If you use _GitHub_ you need to select **Add account* to connect your GitHub account. After you sign in, select Connect to allow Fabric to access your GitHub account.
+1. Select your Git provider. Currently, Fabric only supports _Azure DevOps_ or _GitHub_. If you use GitHub,_ you need to select **Add account* to connect your GitHub account. After you sign in, select Connect to allow Fabric to access your GitHub account.
 
    :::image type="content" source="media/cicd-data-pipelines/add-github-account.png" alt-text="Screenshot showing where to add a GitHub account for a Fabric workspace Git integration.":::
 
@@ -98,7 +98,7 @@ To use Git integration with Data Factory pipelines in Fabric, you first need to 
 
 Once you connect to a Git repository, you need to connect to a workspace, as described here.
 
-1. From the dropdown menu specify the following details about the branch you want to connect to:
+1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
    1. For Azure DevOps branch connections, specify the following details:
       - **Organization**: The Azure DevOps organization name.
@@ -145,7 +145,7 @@ After the changes are committed, the items that were committed are removed from 
 
    :::image type="content" source="media/cicd-data-pipelines/source-control-update-all.png" alt-text="Screenshot showing the Updates tab of the Source control dialog in the Fabric UI.":::
 
-After it updates successfully, the list of items is removed, and the workspace will point to the new commit that it’s synced to.
+After it updates successfully, the list of items is removed, and the workspace will point to the new commit to which it's synced.
 
 ## Get started with deployment pipelines for Git
 
@@ -200,7 +200,7 @@ After creating a pipeline, you need to add content you want to manage to the pip
 
 The following known limitations apply to CI/CD for data pipelines in Data Factory in Microsoft Fabric:
 
-- **Workspace variables**: CI/CD does not currently support workspace variables.
+- **Workspace variables**: CI/CD doesn't currently support workspace variables.
 - **Git Integration limited support**: Currently, Fabric only supports Git integration with Azure DevOps and GitHub. Azure DevOps Git integration is recommended as GitHub Git integration has more limitations.
 - **Data pipeline activities with OAuth connectors**: For MS Teams and Outlook connectors, when deploying to a higher environment, users must manually open each pipeline and sign into each activity, which is a limitation currently.
 - **Data pipelines invoking dataflows**: When a data pipeline that invokes a dataflow is promoted, it will still reference the dataflow in the previous workspace, which is incorrect. This behavior occurs because dataflows are not currently supported in deployment pipelines.
