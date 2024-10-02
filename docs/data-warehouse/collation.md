@@ -11,7 +11,7 @@ ms.date: 10/09/2024
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-All [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by default are configured with case-sensitive (CS) collation **Latin1_General_100_BIN2_UTF8**. You can also create warehouses with case-insensitive (CI) collation - **Latin1_General_100_CI_AS_KS_WS_SC_UTF8**.
+All Fabric warehouses by default are configured with case-sensitive (CS) collation **Latin1_General_100_BIN2_UTF8**. You can also create warehouses with case-insensitive (CI) collation - **Latin1_General_100_CI_AS_KS_WS_SC_UTF8**.
 
 Currently, the only method available for creating a case-insensitive data warehouse is via REST API. This article provides a step-by-step guide on how to create a warehouse with case-insensitive collation through the REST API. It also explains how to use Visual Studio Code with the REST Client extension to facilitate the process.
 

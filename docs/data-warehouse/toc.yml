@@ -70,7 +70,7 @@ items:
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-analytics-endpoint.md
-  - name: Collation
+  - name: Warehouse collation
     href: collation.md
     displayName: case insensitive collation
   - name: Create a sample warehouse 
