@@ -70,7 +70,7 @@ To access Git with your Microsoft Fabric workspace, ensure the following prerequ
 - Enabled the following tenant switches from the admin portal:
   - [Users can create Fabric items](../admin/fabric-switch.md)
   - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
-  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-github-repositories-preview)
+  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories-preview)
 - Either an Azure DevOps or GitHub account.
   - For an Azure DevOps account:
     - An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
