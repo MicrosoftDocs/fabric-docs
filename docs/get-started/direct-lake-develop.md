@@ -4,7 +4,7 @@ description: "Learn about how to develop Direct Lake semantic models."
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 09/16/2024
+ms.date: 10/03/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -165,6 +165,12 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 - The `compatibilityLevel` property of the database object is 1604 (or higher).
 - The mode property of Direct Lake partitions is set to `directLake`.
 - Direct Lake partitions use shared expressions to define data sources. The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-overview.md#directquery-fallback) mode for any reason).
+
+When changing a semantic model using XMLA, you must update the *ChangedProperties* and *PBI_RemovedChildren* collection for the changed object to include any modified or removed properties, since without doing so, Power BI modeling tools might overwrite any changes the next time the schema is synchronized.
+
+The supported models for changing a semantic model using XMLA are the following:
+* Table/Column rename (*ChangeProperty* = name)
+* Remove table (add table to *PBI_RemovedChildren* annotation in the query expression)
 
 ## Post-publication tasks
 
