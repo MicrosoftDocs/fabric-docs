@@ -52,7 +52,7 @@ For troubleshooting, see:
 
 - A table cannot be mirrored with the following attributes:
     - A table using a primary key defined and used as nonclustered primary key cannot be mirrored.  
-    - A table cannot be mirrored if the primary key is one of the data types: **hierarchyid**, **sql_variant**, **timestamp**.
+    - A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp/rowversion**, **datetime2(7)**, **datetimeoffset(7)**, **time(7)** where 7 is the 7 digit precision. Delta lake supports only 6 digit precision.
     - Clustered columnstore indexes are not currently supported.
 - If one or more columns in the table is of type Large Binary Object (LOB) with a size > 1 MB, the column data is truncated to size of 1 MB in Fabric OneLake.
 - Source tables that have any of the following features in use cannot be mirrored.
