@@ -179,7 +179,7 @@ Before you get started, be sure to set up the following prerequisites:
 
 ### Step 3: Assign a workspace to the deployment pipeline
 
-After creating a pipeline, you need to add content you want to manage to the pipeline. Adding content to the pipeline is done by assigning a workspace to the pipeline stage. You can assign a workspace to any stage. Follow the instructions to [Assign a workspace to a pipeline](..cicd/deployment-pipelines/assign-pipeline.md#assign-a-workspace-to-any-vacant-pipeline-stage).
+After creating a pipeline, you need to add content you want to manage to the pipeline. Adding content to the pipeline is done by assigning a workspace to the pipeline stage. You can assign a workspace to any stage. Follow the instructions to [Assign a workspace to a pipeline](../cicd/deployment-pipelines/assign-pipeline.md#assign-a-workspace-to-any-vacant-pipeline-stage).
 
 ### Step 4: Deploy to an empty stage
 
