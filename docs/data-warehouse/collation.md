@@ -44,7 +44,7 @@ Here's a sample JSON request body for creating a warehouse:
 
 ## Use Visual Studio Code to invoke the REST API
 
-You can easily create a new warehouse with case-insensitive collation using [Visual Studio Code (VS Code)](https://code.visualstudio.com/) and the REST Client extension. Follow these steps:
+You can easily create a new warehouse with case-insensitive collation using [Visual Studio Code (VS Code)](https://code.visualstudio.com/) and the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension. Follow these steps:
 
 1. Create a new text file in VS Code with the `.http` extension.
 1. Input the request details in the file body:
