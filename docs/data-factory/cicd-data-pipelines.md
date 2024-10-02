@@ -1,14 +1,14 @@
 ---
-title: CI/CD for data pipelines in Data Factory
-#customer intent: As a developer, I want to set up CI/CD for data pipelines in Data Factory so that I can automate integration, testing, and deployment.
-description: This article describes how to set up continuous integration and delivery (CI/CD) for data pipelines in Data Factory for Microsoft Fabric.
+title: CI/CD for pipelines in Data Factory
+#customer intent: As a developer, I want to set up CI/CD for pipelines in Data Factory so that I can automate integration, testing, and deployment.
+description: This article describes how to set up continuous integration and delivery (CI/CD) for pipelines in Data Factory for Microsoft Fabric.
 author: conxu-ms
 ms.author: conxu
 ms.topic: how-to
 ms.date: 10/01/2024
 ---
 
-# CI/CD for data pipelines in Data Factory in Microsoft Fabric
+# CI/CD for pipelines in Data Factory in Microsoft Fabric
 
 In Fabric Data Factory, continuous integration and continuous development (CI/CD) automates the integration, testing, and deployment of code changes to ensure efficient and reliable development.
 
@@ -37,9 +37,9 @@ Developers frequently commit to a Git-managed main branch, triggering automated 
 
 Focuses on deploying verified changes to production developments through structured deployment stages within deployment pipelines.
 
-## Git integration with Data Factory data pipelines
+## Git integration with Data Factory pipelines
 
-Git is a version control system that allows developers to track changes in their codebase (or JSON code definitions, in the case of data pipelines) and collaborate with others. It provides a centralized repository where code changes are stored and managed. Currently, Git is supported in Fabric via GitHub or Azure DevOps.
+Git is a version control system that allows developers to track changes in their codebase (or JSON code definitions, in the case of pipelines) and collaborate with others. It provides a centralized repository where code changes are stored and managed. Currently, Git is supported in Fabric via GitHub or Azure DevOps.
 There are a few key workflow essentials to understand when working with Git.
 
 - **Main branch**: The main branch, sometimes named the _master&nbsp;branch_, holds production ready code.
@@ -59,9 +59,9 @@ Deployment pipelines consist of multiple stages and jobs within each stage. Typi
 
 Deployment pipelines automate the entire process of building, testing, and deploying code. This automation reduces the risk of human error, speeds up the development process, and ensures code changes are consistently and reliably delivered to production.
 
-## Get started with Git integration for Data Factory data pipelines
+## Get started with Git integration for Data Factory pipelines
 
-Take the following steps to set up Git integration for your data pipelines in Data Factory:
+Take the following steps to set up Git integration for your pipelines in Data Factory:
 
 ### Prerequisites for Git integration
 
@@ -198,16 +198,16 @@ After creating a pipeline, you need to add content you want to manage to the pip
 
 ## Known limitations
 
-The following known limitations apply to CI/CD for data pipelines in Data Factory in Microsoft Fabric:
+The following known limitations apply to CI/CD for pipelines in Data Factory in Microsoft Fabric:
 
 - **Workspace variables**: CI/CD doesn't currently support workspace variables.
 - **Git Integration limited support**: Currently, Fabric only supports Git integration with Azure DevOps and GitHub. Azure DevOps Git integration is recommended as GitHub Git integration has more limitations.
-- **Data pipeline activities with OAuth connectors**: For MS Teams and Outlook connectors, when deploying to a higher environment, users must manually open each pipeline and sign into each activity, which is a limitation currently.
-- **Data pipelines invoking dataflows**: When a data pipeline that invokes a dataflow is promoted, it will still reference the dataflow in the previous workspace, which is incorrect. This behavior occurs because dataflows are not currently supported in deployment pipelines.
+- **pipeline activities with OAuth connectors**: For MS Teams and Outlook connectors, when deploying to a higher environment, users must manually open each pipeline and sign into each activity, which is a limitation currently.
+- **pipelines invoking dataflows**: When a pipeline that invokes a dataflow is promoted, it will still reference the dataflow in the previous workspace, which is incorrect. This behavior occurs because dataflows are not currently supported in deployment pipelines.
 
 ## Related content
 
 - [Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric](../cicd/cicd-overview.md?source=recommendations)
 - [Get started with Git integration, the Fabric Application Lifecycle Management (ALM) tool](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 - [Get started using deployment pipelines, the Fabric Application Lifecycle Management (ALM) tool](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew%2Cstage-settings-new)
-- [Blog: Exploring CI/CD Capabilities in Microsoft Fabric: A Focus on Data Pipelines](https://blog.fabric.microsoft.com/en-us/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)
+- [Blog: Exploring CI/CD Capabilities in Microsoft Fabric: A Focus on pipelines](https://blog.fabric.microsoft.com/en-us/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)
