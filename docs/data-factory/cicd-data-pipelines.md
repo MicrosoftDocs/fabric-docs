@@ -118,8 +118,96 @@ Once you connect to a Git repository, you need to connect to a workspace, as des
 
    :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
 
-## Step 3: Commit changes to Git
+### Step 3: Commit changes to Git
 
+After you connect to a Git repository and workspace, you can commit changes to Git, as described here.
 
+1. Go to the workspace.
+1. Select the **Source control** icon. This icon shows the number of uncommitted changes.
+
+   :::image type="content" source="media/cicd-data-pipelines/source-control-button.png" alt-text="Screenshot of the Source control button in the Fabric workspace UI.":::
+
+1. Select the **Changes** tab from the **Source control** panel. A list appears with all the items you changed, and an icon indicating the status: **New** ![New icon](media/cicd-data-pipelines/new-icon.png), **Modified** ![Modified icon](media/cicd-data-pipelines/modified-icon.png), **Conflict** ![Conflict icon](media/cicd-data-pipelines/conflict-icon.png), or **Deleted** ![Deleted icon](media/cicd-data-pipelines/deleted-icon.png).
+1. Select the items you want to commit. To select all items, check the top box.
+1. _(Optional)_ Add a commit comment in the box.
+1. Select **Commit**.
+
+   :::image type="content" source="media/cicd-data-pipelines/source-control-commit.png" alt-text="Screenshot of the Source control dialog for a Git commit.":::
+
+After the changes are committed, the items that were committed are removed from the list, and the workspace will point to the new commit that it synced to.
+
+### Step 4: (_Optional_) Update the workspace from Git
+
+1. Go to the workspace.
+1. Select the **Source control** icon.
+1. Select **Updates** from the **Source control** panel. A list appears with all the items that were changed in the branch from your Git connection source since the last update.
+1. Select **Update all**.
+
+   :::image type="content" source="media/cicd-data-pipelines/source-control-update-all.png" alt-text="Screenshot showing the Updates tab of the Source control dialog in the Fabric UI.":::
+
+After it updates successfully, the list of items is removed, and the workspace will point to the new commit that it’s synced to.
+
+## Get started with deployment pipelines for Git
+
+Take the following steps to use Git deployment pipelines with your Fabric workspace. 
+
+### Prerequisites for deployment pipelines
+
+Before you get started, be sure to set up the following prerequisites:
+
+- An active [Microsoft Fabric subscription](../enterprise/licenses.md).
+- Admin access of a [Fabric workspace](../get-started/create-workspaces.md).
+
+### Step 1: Create a deployment pipeline
+
+1. From the **Workspaces** flyout, select **Deployment pipelines**.
+
+   :::image type="content" source="media/cicd-data-pipelines/workspace-deployment-pipelines.png" alt-text="Screenshot showing the Workspaces flyout with the Deployment pipelines button in the Fabric UI. ":::
+
+1. Select **Create pipeline** or **+ New pipeline**.
+
+### Step 2: Name the pipeline and assign stages
+
+1. In the **Create deployment pipeline** dialog box, enter a name and description for the pipeline, and select **Next**.
+1. Set your deployment pipeline’s structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages: _Development_, _Test_, and _Production_.
+
+   :::image type="content" source="media/cicd-data-pipelines/default-deployment-pipeline-stages.png" alt-text="Screenshot showing the default deployment pipeline stages.":::
+
+   You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you’re done.
+
+   :::image type="content" source="media/cicd-data-pipelines/sample-deployment-pipeline.png" alt-text="Screenshot showing a populated sample deployment pipeline.":::
+
+### Step 3: Assign a workspace to the deployment pipeline
+
+After creating a pipeline, you need to add content you want to manage to the pipeline. Adding content to the pipeline is done by assigning a workspace to the pipeline stage. You can assign a workspace to any stage. Follow the instructions to [Assign a workspace to a pipeline](..cicd/deployment-pipelines/assign-pipeline.md#assign-a-workspace-to-any-vacant-pipeline-stage).
+
+### Step 4: Deploy to an empty stage
+
+1. When you finish working with content in one pipeline stage, you can deploy it to the next stage. Deployment pipelines offer three options for deploying your content:
+
+   - **[Full deployment](../cicd/deployment-pipelines/deploy-content.md#deploy-all-content)**: Deploy all your content to the target stage.
+   - **[Selective deployment](../cicd/deployment-pipelines/deploy-content.md#selective-deployment)**: Select which content to deploy to the target stage.
+   - **Backward deployment**: Deploy content from a later stage to an earlier stage in the pipeline. Currently, backward deployment is only possible when the target stage is empty (has no workspace assigned to it).
+
+1. After you choose how to deploy your content, you can [review your deployment and leave a note](../cicd/deployment-pipelines/deploy-content.md#review-your-deployment-and-leave-a-note).
+
+### Step 5: Deploy content from one stage to another
+
+1. Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](../cicd/deployment-pipelines/assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [Deploy content to an existing workspace](../cicd/deployment-pipelines/understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
+1. You can review the deployment history to see the last time content was deployed to each stage. To examine the differences between the two pipelines before you deploy, see [Compare content in different deployment stages](../cicd/deployment-pipelines/compare-pipeline-content.md).
+
+## Known limitations
+
+The following known limitations apply to CI/CD for data pipelines in Data Factory in Microsoft Fabric:
+
+- **Workspace variables**: CI/CD does not currently support workspace variables.
+- **Git Integration limited support**: Currently, Fabric only supports Git integration with Azure DevOps and GitHub. Azure DevOps Git integration is recommended as GitHub Git integration has more limitations.
+- **Data pipeline activities with OAuth connectors**: For MS Teams and Outlook connectors, when deploying to a higher environment, users must manually open each pipeline and sign into each activity, which is a limitation currently.
+- **Data pipelines invoking dataflows**: When a data pipeline that invokes a dataflow is promoted, it will still reference the dataflow in the previous workspace, which is incorrect. This behavior occurs because dataflows are not currently supported in deployment pipelines.
 
 ## Related content
+
+- [Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric](../cicd/cicd-overview.md?source=recommendations)
+- [Get started with Git integration, the Fabric Application Lifecycle Management (ALM) tool](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
+- [Get started using deployment pipelines, the Fabric Application Lifecycle Management (ALM) tool](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew%2Cstage-settings-new)
+- [Blog: Exploring CI/CD Capabilities in Microsoft Fabric: A Focus on Data Pipelines](https://blog.fabric.microsoft.com/en-us/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)
