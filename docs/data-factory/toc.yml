@@ -662,7 +662,7 @@
     - name: Concepts
       items:
       - name: CI/CD for data pipelines
-        href: ci-cd-data-pipelines.md
+        href: cicd-pipelines.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Parameterization
