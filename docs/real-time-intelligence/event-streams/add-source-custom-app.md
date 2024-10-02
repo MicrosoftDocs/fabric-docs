@@ -27,8 +27,6 @@ This article shows you how to add a custom endpoint source or a custom app sourc
 
 Before you start, you must get access to the Fabric premium workspace with Contributor or higher permissions.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
-
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add custom endpoint data as a source
@@ -41,7 +39,7 @@ Before you start, you must get access to the Fabric premium workspace with Contr
 
       ![Screenshot of the dialog for creating a new eventstream.](media/external-sources/new-eventstream.png)
 
-1. To add custom endpoint source, on the get-started page, select **Use custom endpoint**.
+1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**.
 
    ![Screenshot of the option to use a custom endpoint.](media/external-sources/use-custom-endpoint.png)
 
@@ -65,7 +63,7 @@ After you create a custom endpoint source, its data is available for visualizati
 
 The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
 
-**Basic** shows the name, description, type, and status of your custom endpoint.
+**Basic** shows the name, type, and status of your custom endpoint.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-event-basic.png" alt-text="Screenshot that shows basic information on the Details pane of the eventstream live view.":::
 
@@ -122,8 +120,8 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [Azure IoT Hub](add-source-azure-iot-hub.md)
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [Confluent Kafka](add-source-confluent-kafka.md)
-- [Fabric workspace event](add-source-fabric-workspace.md) 
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
+- [Fabric workspace event](add-source-fabric-workspace.md)
+- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
 - [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
 - [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
 - [Sample data](add-source-sample-data.md)
@@ -158,7 +156,7 @@ The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kaf
 
 :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source.png" alt-text="Screenshot that shows a custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source.png":::
 
-**Basic** shows the name, description, type, and status of your custom app.
+**Basic** shows the name, type, and status of your custom app.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\custom-app-details-event-basic.png" alt-text="Screenshot that shows basic information for a custom app on the Details pane of an eventstream.":::
 

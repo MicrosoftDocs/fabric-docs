@@ -13,17 +13,17 @@ ms.search.form: Event Streams Tutorials
 
 # Tutorial: Stream and consume events to and from Real-Time Intelligence by using an Apache Kafka endpoint in an eventstream
 
-In this tutorial, you learn how to use the Apache Kafka endpoint provided by a custom endpoint source in the enhanced capabilities of Microsoft Fabric event streams (called a *custom app* in the standard capabilities of Fabric event streams) to stream events to Real-Time Intelligence. You also learn how to consume these streaming events by using the Apache Kafka endpoint from an eventstream's custom endpoint destination.
+In this tutorial, you learn how to use the Apache Kafka endpoint provided by a custom endpoint source in the enhanced capabilities of Microsoft Fabric event streams to stream events to Real-Time Intelligence. (A custom endpoint is called a *custom app* in the standard capabilities of Fabric event streams.) You also learn how to consume these streaming events by using the Apache Kafka endpoint from an eventstream's custom endpoint destination.
 
 In this tutorial, you:
 
 > [!div class="checklist"]
 >
-> - [Create an eventstream.]
-> - [Get the Kafka endpoint from a custom endpoint source.]
-> - [Send events with a Kafka application.]
-> - [Get the Kafka endpoint from a custom endpoint destination.]
-> - [Consume events with a Kafka application.]
+> - Create an eventstream.
+> - Get the Kafka endpoint from a custom endpoint source.
+> - Send events with a Kafka application.
+> - Get the Kafka endpoint from a custom endpoint destination.
+> - Consume events with a Kafka application.
 
 ## Prerequisites
 
@@ -35,10 +35,8 @@ In this tutorial, you:
 
 ## Create an eventstream in Microsoft Fabric
 
-You can create an eventstream from the **Workspace** page or the **Create hub** page. Follow these steps to create an eventstream:
-
 1. Change your Fabric experience to **Real-Time Intelligence**.
-1. Follow one of these steps to start creating an eventstreams:
+1. Follow one of these steps to start creating an eventstream:
 
    - On the **Real-Time Intelligence** home page, select the **Eventstream** tile.
 
@@ -91,7 +89,7 @@ To add a custom endpoint source to your eventstream:
    - `sasl.mechanism=PLAIN`
    - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
 
-   `{YOUR.BOOTSTRAP.SERVER}` is the **Bootstrap server** value on the **Keys** page. `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** or the **Connection string-secondary key** value.  Choose one to use.
+   `{YOUR.BOOTSTRAP.SERVER}` is the **Bootstrap server** value on the **Keys** page. `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** value or the **Connection string-secondary key** value.  Choose one to use.
 
    :::image type="content" source="media/stream-consume-events-using-kafka-endpoint/kafka-keys-sample-code.png" alt-text="Screenshot that shows Kafka keys and sample code.":::
 
@@ -101,11 +99,11 @@ To add a custom endpoint source to your eventstream:
 
 With the important Kafka information that you obtained from the preceding step, you can replace the connection configurations in your existing Kafka application. Then you can send the events to your eventstream.
 
-Here's one application based on Azure Event Hubs SDK written in Java by following the Kafka protocol. To use this application to stream events to your eventstream, use the following steps to replace the Kafka endpoint information and execute it properly:
+Here's one application based on the Azure Event Hubs SDK written in Java by following the Kafka protocol. To use this application to stream events to your eventstream, use the following steps to replace the Kafka endpoint information and execute it properly:
 
 1. Clone the [Azure Event Hubs for Kafka repository](https://github.com/Azure/azure-event-hubs-for-kafka).
-1. Go to **azure-event-hubs-for-kafka/quickstart/java/producer**.
-1. Update the configuration details for the producer in **src/main/resources/producer.config** as follows:
+1. Go to *azure-event-hubs-for-kafka/quickstart/java/producer*.
+1. Update the configuration details for the producer in *src/main/resources/producer.config* as follows:
 
    - `bootstrap.servers={YOUR.BOOTSTRAP.SERVER}`
    - `security.protocol=SASL_SSL`
@@ -113,7 +111,7 @@ Here's one application based on Azure Event Hubs SDK written in Java by followin
    - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
   
    Replace `{YOUR.BOOTSTRAP.SERVER}` with the **Bootstrap server** value.
-   Replace `{YOUR.CONNECTION.STRING}` with either the **Connection string-primary key** or the **Connection string-secondary key** value. Choose one to use.
+   Replace `{YOUR.CONNECTION.STRING}` with either the **Connection string-primary key** value or the **Connection string-secondary key** value. Choose one to use.
 
    :::image type="content" source="media/stream-consume-events-using-kafka-endpoint/server-string.png" alt-text="Screenshot that shows Kafka bootstrap server and string details.":::
 
@@ -149,7 +147,7 @@ From the **Keys** page, you can get the important Kafka endpoint information:
 - `sasl.mechanism=PLAIN`
 - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
 
-`{YOUR.BOOTSTRAP.SERVER}` is the **Bootstrap server** value. `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** or the **Connection string-secondary key** value. Choose one to use.
+`{YOUR.BOOTSTRAP.SERVER}` is the **Bootstrap server** value. `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** value or the **Connection string-secondary key** value. Choose one to use.
 
 :::image type="content" source="media/stream-consume-events-using-kafka-endpoint/Kafka-connection.png" alt-text="Screenshot that shows a Kafka connection string.":::
 
@@ -158,8 +156,8 @@ From the **Keys** page, you can get the important Kafka endpoint information:
 Now you can use another application in the [Azure Event Hubs for Kafka repository](https://github.com/Azure/azure-event-hubs-for-kafka) to consume the events from your eventstream. To use this application for consuming events from your eventstream, follow these steps to replace the Kafka endpoint details and run it appropriately:
 
 1. Clone the [Azure Event Hubs for Kafka repository](https://github.com/Azure/azure-event-hubs-for-kafka).
-1. Go to **azure-event-hubs-for-kafka/quickstart/java/consumer**.
-1. Update the configuration details for the consumer in **src/main/resources/consumer.config** as follows:
+1. Go to *azure-event-hubs-for-kafka/quickstart/java/consumer*.
+1. Update the configuration details for the consumer in *src/main/resources/consumer.config* as follows:
 
    - `bootstrap.servers={YOUR.BOOTSTRAP.SERVER}`
    - `group.id={YOUR.EVENTHUBS.CONSUMER.GROUP}`
@@ -168,9 +166,9 @@ Now you can use another application in the [Azure Event Hubs for Kafka repositor
    - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString"`
    - `password="{YOUR.CONNECTION.STRING}";`
 
-   Replace `{YOUR.BOOTSTRAP.SERVER}` with the **Bootstrap server** value. You can get the `{YOUR.EVENTHUBS.CONSUMER.GROUP}` value from the **Basic** page on the **Details** pane for the custom endpoint destination. Replace `{YOUR.CONNECTION.STRING}` with either the **Connection string-primary key** or the **Connection string-secondary key** value. Choose one to use.
+   Replace `{YOUR.BOOTSTRAP.SERVER}` with the **Bootstrap server** value. You can get the `{YOUR.EVENTHUBS.CONSUMER.GROUP}` value from the **Basic** page on the **Details** pane for the custom endpoint destination. Replace `{YOUR.CONNECTION.STRING}` with either the **Connection string-primary key** value or the **Connection string-secondary key** value. Choose one to use.
 
-1. Update the topic name with the new topic name on the **Keys** page in **src/main/java/TestConsumer.java** as follows: `private final static String TOPIC = "{YOUR.TOPIC.NAME}";`.
+1. Update the topic name with the new topic name on the **Keys** page in *src/main/java/TestConsumer.java* as follows: `private final static String TOPIC = "{YOUR.TOPIC.NAME}";`.
 
    You can find the `{YOUR.TOPIC.NAME}` value on the **Keys** page under the **Kafka** tab.
 
@@ -189,4 +187,4 @@ By default, Kafka consumers read from the end of the stream rather than the begi
 
 ## Conclusion
 
-Congratulations! You learned how to use the Kafka endpoint exposed from your eventstream to stream and consume the events with your eventstream. If you already have an application that's sending or consuming from a Kafka topic, you can use the same application to send or consume the events within your eventstream without any code changes. Just change the connection's configuration information.
+Congratulations! You learned how to use the Kafka endpoint exposed from your eventstream to stream and consume the events within your eventstream. If you already have an application that's sending or consuming from a Kafka topic, you can use the same application to send or consume the events within your eventstream without any code changes. Just change the connection's configuration information.

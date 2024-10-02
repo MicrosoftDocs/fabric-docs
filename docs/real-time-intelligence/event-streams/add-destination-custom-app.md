@@ -67,7 +67,7 @@ In the live view, select the custom endpoint tile. The **Details** pane that app
 
 Each protocol tab has three pages: **Basic**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
 
-**Basic** shows the name, description, type, and status of your custom endpoint.
+**Basic** shows the name, type, and status of your custom endpoint.
 
 :::image type="content" source="./media/add-destination-custom-app-enhanced/details-basic.png" alt-text="Screenshot that shows basic details for a custom endpoint in the eventstream live view.":::
 
@@ -142,13 +142,13 @@ If you want to route event data to your application, you can add a custom app as
 
 ## Get endpoint details on the Details pane to consume events
 
-After you successfully create the custom application as a destination, you can view the information on the **Details** pane. The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**.
+After you successfully create the custom application as a destination, you can view the information on the **Details** pane.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot that shows the Details pane for a custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png":::
 
-Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
+ The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
 
-**Basic** shows the name, description, type, and status of your custom app.
+**Basic** shows the name, type, and status of your custom app.
 
 :::image type="content" source="./media/add-destination-custom-app-enhanced/custom-app-details-basic.png" alt-text="Screenshot that shows basic details for a custom app on the Details pane of an eventstream.":::
 
@@ -194,7 +194,7 @@ You can choose the protocol format that suits your application needs and prefere
 
 ## Manage a destination
 
-You can edit (via the **Edit** command) or remove (via the **Remove** command) an eventstream destination through either the navigation pane or the canvas.
+You can edit (via the **Edit** command) or remove (via the **Remove** command) an eventstream destination through either the **Data** pane or the canvas.
 
 When you select **Edit**, the edit pane opens on the right side of the main editor. You can modify the configuration as you want, including the event transformation logic through the event processor editor.
 
