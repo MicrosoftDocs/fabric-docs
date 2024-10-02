@@ -39,7 +39,7 @@ If you want to route event data to your app, you can add a custom endpoint as yo
 
 1. In edit mode, add a custom endpoint destination in one of the following ways:
 
-    - Select **Add destination** on the ribbon, select **Custom endpoint**, and then connect the endpoint to your default stream or derived stream.
+    - Select **Add destination** on the ribbon, select **Custom endpoint**, and then connect the endpoint to your default stream or derived stream.
 
       :::image type="content" source="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of a custom endpoint as a destination on the ribbon." lightbox="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png":::
 
@@ -47,7 +47,7 @@ If you want to route event data to your app, you can add a custom endpoint as yo
 
       :::image type="content" source="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of a custom endpoint in the editor." lightbox="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png":::
 
-1. For **Destination name**, enter a name for the custom endpoint. Then select **Save**.
+1. For **Destination name**, enter a name for the custom endpoint. Then select **Save**.
 
     :::image type="content" source="./media/add-destination-custom-app-enhanced/custom-app-name.png" alt-text="Screenshot that shows the pane for entering a name for a custom endpoint." lightbox="./media/add-destination-custom-app-enhanced/custom-app-name.png":::
 

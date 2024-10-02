@@ -63,7 +63,7 @@ After you create a custom endpoint source, its data is available for visualizati
 
 ![Screenshot that shows the eventstream in the live view.](media\add-source-custom-app-enhanced\live-view.png)
 
-The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
+The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
 
 **Basic** shows the name, description, type, and status of your custom endpoint.
 
@@ -154,11 +154,11 @@ To add a custom app source:
 
 After you successfully create the custom application as a source, you can view the information on the **Details** pane.
 
-The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
+The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
 
 :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source.png" alt-text="Screenshot that shows a custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source.png":::
 
-**Basic** shows the name, description, type, and status of your custom app.
+**Basic** shows the name, description, type, and status of your custom app.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\custom-app-details-event-basic.png" alt-text="Screenshot that shows basic information for a custom app on the Details pane of an eventstream.":::
 
