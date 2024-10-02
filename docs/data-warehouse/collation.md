@@ -21,7 +21,6 @@ Currently, the only method available for creating a case-insensitive data wareho
 ## Prerequisites
 
 - A Fabric workspace with an active capacity or trial capacity.
-- Either be a member of the **Administrator**, **Member**, or **Contributor** roles on the workspace.
 - Download and install [Visual Studio Code](https://code.visualstudio.com/download) to download and install the application.
 - Install the [REST Client - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 
