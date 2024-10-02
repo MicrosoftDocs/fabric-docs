@@ -1,9 +1,10 @@
 ---
 title: CI/CD for data pipelines in Data Factory
+#customer intent: As a developer, I want to set up CI/CD for data pipelines in Data Factory so that I can automate integration, testing, and deployment.
 description: This article describes how to set up continuous integration and delivery (CI/CD) for data pipelines in Data Factory for Microsoft Fabric.
 author: conxu-ms
 ms.author: conxu
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 10/01/2024
 ---
 
@@ -36,7 +37,7 @@ Developers frequently commit to a Git-managed main branch, triggering automated 
 
 Focuses on deploying verified changes to production developments through structured deployment stages within deployment pipelines.
 
-## Git integration
+## Git integration with Data Factory data pipelines
 
 Git is a version control system that allows developers to track changes in their codebase (or JSON code definitions, in the case of data pipelines) and collaborate with others. It provides a centralized repository where code changes are stored and managed. Currently, Git is supported in Fabric via GitHub or Azure DevOps.
 There are a few key workflow essentials to understand when working with Git.
@@ -46,7 +47,7 @@ There are a few key workflow essentials to understand when working with Git.
 - **Pull requests (PRs)**: PRs allow users to propose, review, and discuss changes before integration.
 - **Merging**: This occurs when changes are approved. Git will integrate these changes, continuously updating the project.
 
-## Deployment pipelines
+## Deployment pipelines for Git
 
 Deployment pipelines are tightly integrated with Git. When a developer pushes code changes to the Git repository, it triggers the CI/CD pipeline. This integration ensures that the latest code changes are always tested and deployed automatically.
 
@@ -62,7 +63,7 @@ Deployment pipelines automate the entire process of building, testing, and deplo
 
 Take the following steps to set up Git integration for your data pipelines in Data Factory:
 
-### Prerequisites
+### Prerequisites for Git integration
 
 To access Git with your Microsoft Fabric workspace, ensure the following prerequisites for both Fabric and Git.
 
@@ -81,3 +82,44 @@ To access Git with your Microsoft Fabric workspace, ensure the following prerequ
 
 ### Step 1: Connect to a Git repository
 
+To use Git integration with Data Factory pipelines in Fabric, you first need to connect to a Git repository, as described here.
+
+1. Sign into Fabric and navigate to the workspace you want to connect to Git.
+1. Select **Workspace settings**.
+
+   :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in the Fabric UI.":::
+
+1. Select **Git integration**.
+1. Select your Git provider. Currently, Fabric only support _Azure DevOps_ or _GitHub_. If you use _GitHub_ you need to select **Add account* to connect your GitHub account. After you sign in, select Connect to allow Fabric to access your GitHub account.
+
+   :::image type="content" source="media/cicd-data-pipelines/add-github-account.png" alt-text="Screenshot showing where to add a GitHub account for a Fabric workspace Git integration.":::
+
+### Step 2: Connect to a workspace
+
+Once you connect to a Git repository, you need to connect to a workspace, as described here.
+
+1. From the dropdown menu specify the following details about the branch you want to connect to:
+
+   1. For Azure DevOps branch connections, specify the following details:
+      - **Organization**: The Azure DevOps organization name.
+      - **Project**: The Azure DevOps project name.
+      - **Repository**: The Azure DevOps repository name.
+      - **Branch**: The Azure DevOps branch name.
+      - **Folder**: The Azure DevOps folder name.
+
+   1. For GitHub branch connections, specify the following details:
+      - **Repository URL**: The GitHub repository URL.
+      - **Branch**: The GitHub branch name.
+      - **Folder**: The GitHub folder name.
+
+1. Select **Connect and sync**.
+
+1. After you connect, the Workspace displays information about source control that allows users to view the connected branch, the status of each item in the branch, and the time of the last sync. 
+
+   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+
+## Step 3: Commit changes to Git
+
+
+
+## Related content
