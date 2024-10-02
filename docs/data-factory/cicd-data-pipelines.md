@@ -42,7 +42,7 @@ Focuses on deploying verified changes to production developments through structu
 Git is a version control system that allows developers to track changes in their codebase (or JSON code definitions, in the case of data pipelines) and collaborate with others. It provides a centralized repository where code changes are stored and managed. Currently, Git is supported in Fabric via GitHub or Azure DevOps.
 There are a few key workflow essentials to understand when working with Git.
 
-- **Main branch**: The main branch, sometimes named the master branch, holds production ready code.
+- **Main branch**: The main branch, sometimes named the _master&nbsp;branch_, holds production ready code.
 - **Feature branches**: These branches are separate from the main branch and allow for isolated development without changing the main branch.
 - **Pull requests (PRs)**: PRs allow users to propose, review, and discuss changes before integration.
 - **Merging**: This occurs when changes are approved. Git will integrate these changes, continuously updating the project.
@@ -71,7 +71,7 @@ To access Git with your Microsoft Fabric workspace, ensure the following prerequ
 - Enabled the following tenant switches from the admin portal:
   - [Users can create Fabric items](../admin/fabric-switch.md)
   - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
-  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-github-repositories-preview)
+  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories-preview)
 - Either an Azure DevOps or GitHub account.
   - For an Azure DevOps account:
     - An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
