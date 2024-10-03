@@ -4,7 +4,7 @@ description: A known issue is posted where the SQL analytics endpoint and defaul
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/01/2024
+ms.date: 10/03/2024
 ms.custom: known-issue-708
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-708
 
 A lakehouse has an associated SQL analytics endpoint and default semantic model. When the lakehouse is deleted, the two associated items should also be deleted. The two associated items currently remain and can't be deleted.
 
-**Status:** Open
+**Status:** Fixed: October 3, 2024
 
 **Product Experience:** Data Warehouse
 
