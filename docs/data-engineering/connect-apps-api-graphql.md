@@ -57,9 +57,7 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 
 In this example, we create a GraphQL API to expose sample Lakehouse data to clients.
 
-1. In the Fabric portal, select **Data Engineering** from the workload switcher at the bottom of the navigation bar. If you are in the Fabric home, you can also select the **Data Engineering** card.
-
-   :::image type="content" source="media/get-started-api-graphql/switcher-data-engineering.png" alt-text="Screenshot of the Fabric workload switcher.":::
+1. From the Fabric portal home page, select **Data Engineering** from the list of workloads.
 
 1. In the Data Engineering experience, select **Use a sample** and, under **Lakehouse**, select **Public holidays** to automatically create a new Lakehouse with public holidays data.
 
