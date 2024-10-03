@@ -90,7 +90,7 @@ To use Git integration with Data Factory pipelines in Fabric, you first need to 
    :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in the Fabric UI.":::
 
 1. Select **Git integration**.
-1. Select your Git provider. Currently, Fabric only supports _Azure DevOps_ or _GitHub_. If you use GitHub,_ you need to select **Add account* to connect your GitHub account. After you sign in, select Connect to allow Fabric to access your GitHub account.
+1. Select your Git provider. Currently, Fabric only supports _Azure DevOps_ or _GitHub_. If you use GitHub, you need to select **Add account** to connect your GitHub account. After you sign in, select Connect to allow Fabric to access your GitHub account.
 
    :::image type="content" source="media/cicd-data-pipelines/add-github-account.png" alt-text="Screenshot showing where to add a GitHub account for a Fabric workspace Git integration.":::
 
@@ -116,7 +116,7 @@ Once you connect to a Git repository, you need to connect to a workspace, as des
 
 1. After you connect, the Workspace displays information about source control that allows users to view the connected branch, the status of each item in the branch, and the time of the last sync. 
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
 
 ### Step 3: Commit changes to Git
 
@@ -202,8 +202,8 @@ The following known limitations apply to CI/CD for pipelines in Data Factory in 
 
 - **Workspace variables**: CI/CD doesn't currently support workspace variables.
 - **Git Integration limited support**: Currently, Fabric only supports Git integration with Azure DevOps and GitHub. Azure DevOps Git integration is recommended as GitHub Git integration has more limitations.
-- **pipeline activities with OAuth connectors**: For MS Teams and Outlook connectors, when deploying to a higher environment, users must manually open each pipeline and sign into each activity, which is a limitation currently.
-- **pipelines invoking dataflows**: When a pipeline that invokes a dataflow is promoted, it will still reference the dataflow in the previous workspace, which is incorrect. This behavior occurs because dataflows are not currently supported in deployment pipelines.
+- **Pipeline activities with OAuth connectors**: For MS Teams and Outlook connectors, when deploying to a higher environment, users must manually open each pipeline and sign into each activity, which is a limitation currently.
+- **Pipelines invoking dataflows**: When a pipeline that invokes a dataflow is promoted, it will still reference the dataflow in the previous workspace, which is incorrect. This behavior occurs because dataflows are not currently supported in deployment pipelines.
 
 ## Related content
 
