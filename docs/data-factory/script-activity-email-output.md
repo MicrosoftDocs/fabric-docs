@@ -43,7 +43,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Create the connection and specify a SQL script
 
-1. Select the **Settings** tab, and then select an existing Azure SQL or Azure SQL Managed Instance connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+1. Select the **Settings** tab, and then select an existing Azure SQL or Azure SQL Managed Instance connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
 1. Specify a script. You can execute any query, or non-query scripts that perform operations on the database as well, in the **Script** textbox on the Script activity settings page. For this example, you can use this simple SQL script:
 
