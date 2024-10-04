@@ -46,7 +46,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Web activity settings
 
-1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
    :::image type="content" source="media/web-activity/choose-web-connection-and-configure.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 
