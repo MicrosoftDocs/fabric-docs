@@ -28,7 +28,7 @@ To connect an application to an API for GraphQL, you need three important pieces
 
 ## Create a Microsoft Entra app
 
-In the following steps, we showcase how to configure support for a ReactJS application in Entra.
+In the following steps, we showcase how to configure support for a ReactJS application in Microsoft Entra.
 
 1. Sign in to the [Azure portal](https://ms.portal.azure.com/#allservices).
 
@@ -89,11 +89,11 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
    :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint-link.png" alt-text="Screenshot of the Copy link dialog screen, showing where to select Copy.":::
 
-1. As the **Client ID** and **Tenant ID** from the Entra app recorded earlier, copy the endpoint URI as it's required later.
+1. As the **Client ID** and **Tenant ID** from the Microsoft Entra app recorded earlier, copy the endpoint URI as it's required later.
 
 ## Configure a React app to access the public holidays API
 
-1. We use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Entra authentication already configured, including additional files and folders required to be added to the project structure. We only need to change three files to adapt the app for our GraphQL use case.
+1. We use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Microsoft Entra authentication already configured, including additional files and folders required to be added to the project structure. We only need to change three files to adapt the app for our GraphQL use case.
   
 1. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
 
@@ -178,7 +178,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
    > Scopes might change during Microsoft Fabric API for GraphQL preview.
 
 1. Replace the following values with the values from the Microsoft Entra admin center.
-    - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Entra application.
+    - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Microsoft Entra application.
     - `authority` - This is composed of two parts:
         - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](/entra/identity-platform/authentication-national-cloud#azure-ad-authentication-endpoints).
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.

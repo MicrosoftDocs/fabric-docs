@@ -26,7 +26,7 @@ Get started with the Fabric API for GraphQL by creating an API, then linking a d
 
 To create an API for GraphQL:
 
-1. In the Fabric portal home page, select **Data Engineering** from the list of workloads.
+1. From the Fabric portal home page, select **Data Engineering** from the list of workloads.
 
 1. Select **API for GraphQL (Preview)**.
 
