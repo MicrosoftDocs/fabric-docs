@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 09/30/2024
+ms.date: 10/03/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  872  | Data Warehouse | [Data warehouses don't show button friendly names](known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 |
+|  865  | Power BI | [Configure workspace storage to use ADLS Gen2 storage account doesn't work](known-issues/known-issue-865-configure-workspace-storage-adls-gen2-not-work.md) | October 3, 2024 |
 |  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 |
 |  867  | Power BI | [Report pages don't show in Fabric org app items](known-issues/known-issue-867-report-pages-not-show-org-app-items.md) | September 30, 2024 |
 |  866  | Power BI | [Can't add My workspace org app items to the org app](known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md) | September 30, 2024 |
@@ -69,7 +71,6 @@ Select the **Title** to view more information about that specific known issue.
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
 |  716  | Data Warehouse | [Response times when composing SQL queries slower than expected](known-issues/known-issue-716-response-times-composing-sql-queries-slower.md) | May 13, 2024 |
 |  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
-|  708  | Data Warehouse | [SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 |
 |  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 |
 |  658  | Data Engineering | [PySpark import statements fail for .jar files installed through environment](known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md) | March 28, 2024 |
@@ -94,6 +95,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  708  | Data Warehouse | [SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 | Fixed: October 3, 2024 |
 |  840  | Power BI | [Excel enterprise data types feature experiences issues](known-issues/known-issue-840-excel-enterprise-data-types-feature-experiences-issues.md) | September 17, 2024 | Fixed: September 26, 2024 |
 |  657  | OneLake | [Cross-region internal shortcuts don't work with SQL analytics endpoints](known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md) | March 28, 2024 | Fixed: September 25, 2024 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | August 23, 2024 | Fixed: September 23, 2024 |
@@ -114,9 +116,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  733  | Real-Time Intelligence | [Sample data doesn't flow after destination later added into eventstream](known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md) | June 6, 2024 | Fixed: August 23, 2024 |
 |  730  | Real-Time Intelligence | [Real-Time hub **Set alert** doesn't work for derived streams](known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md) | May 29, 2024 | Fixed: August 23, 2024 |
 |  729  | Real-Time Intelligence | [Opening a reflex for a stream in Real-Time hub doesn't work](known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md) | May 29, 2024 | Fixed: August 23, 2024 |
-|  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |  Fixed: August 16, 2024 |
-|  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 | Fixed: August 16, 2024 |
-|  222  | Power BI |  [Search strings that include Japanese symbols don't return matches](known-issues/known-issue-222-search-strings-japanese-symbols-dont-work.md)   |  August 3, 2022  | Removed: August 16, 2024 |
 
 ## Related content
 
