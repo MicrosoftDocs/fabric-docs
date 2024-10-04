@@ -41,7 +41,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ## Configure the Script Activity
 
-1. Selecting the **Settings** tab, you can choose to create a new workspace (within Fabric) connection or an external connection.
+1. Select the **Settings** tab, and choose an existing connection from the dropdown, or create a new one.
 
 1. After selecting your connection, you can choose either **Query** to get a data result or **NonQuery** for any catalog operations.
 
