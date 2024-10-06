@@ -95,6 +95,8 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 
+    ### [Azure DevOps](#tab/ADO)
+
     ```powershell
 
     # Connect to Git
@@ -120,6 +122,39 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
+
+    ### [GitHub](#tab/github)
+
+    ```powershell
+
+    # Connect to Git
+
+    Write-Host "Connecting the workspace '$workspaceName' to Git."
+
+    $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
+
+    # GitHub details
+
+    $gitHubDetails = @{
+        gitProviderType = "GitHub"
+        ownerName = "<OWNER NAME>"
+        repositoryName = "<REPOSITORY NAME>"
+        branchName = "<BRANCH NAME>"
+        directoryName = "<DIRECTORY NAME>"
+    }
+
+    $connectToGitBody = @{
+        gitProviderDetails = $gitHubDetails
+        myGitCredentials = @{
+            source = "ConfiguredConnection"
+            connectionId = $connectionId
+        }
+    } | ConvertTo-Json
+
+    Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
+    ```
+
+    ---
 
 1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
 
