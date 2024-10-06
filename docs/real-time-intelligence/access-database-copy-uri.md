@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/21/2024
+ms.date: 10/06/2024
 ms.search.form: product-kusto
 ---
 # Access an existing KQL database
@@ -29,9 +29,9 @@ To access your existing KQL databases:
 
 1. Select **Filter** on the right side of the ribbon > **KQL Database**.
 
-    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace window that shows the dropdown menu of the Filter option. The entry titled KQL Database is selected."  lightbox="media/database-editor/access-existing-database-2.png":::
+    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace window that shows the dropdown menu of the Filter option. The entry titled KQL Database is highlighted."  lightbox="media/database-editor/access-existing-database-2.png":::
 
-1. Select the desired database.
+1. Select the desired database from the filtered list in the main view pane. The main page of the KQL database opens.
 
 ## Copy URI
 
@@ -45,9 +45,6 @@ The following table lists the two types of URIs that you can copy from the **Dat
 |---|---|
 |Query URI |URI that can be used to run queries or to store management commands.|
 |Ingestion URI |URI that can be used to get data.|
-
-1. Access an [existing KQL database](#access-an-existing-kql-database).
-1. Copy the desired URI type from the **Database details** card in the database dashboard.
 
 ## Related content
 
