@@ -147,7 +147,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
         gitProviderDetails = $gitHubDetails
         myGitCredentials = @{
             source = "ConfiguredConnection"
-            connectionId = <CONNECTION ID>
+            connectionId = "<CONNECTION ID>"
         }
     } | ConvertTo-Json
 
