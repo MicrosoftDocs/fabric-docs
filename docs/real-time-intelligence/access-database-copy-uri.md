@@ -39,7 +39,7 @@ The main page of your KQL database shows an overview of the contents in your dat
 
 :::image type="content" source="media/set-up-connectors/copy-uri.png" alt-text="Screenshot of the database details card showing the database details. The options titled Query URI and Ingestion URI are highlighted.":::
 
-The following table lists the two types of URIs that you can copy from the **Database details** card in your KQL database.
+There are two types of URIs that you can copy from the **Database details** card in your KQL database.
 
 |URI type |Usage |
 |---|---|
