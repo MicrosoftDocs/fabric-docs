@@ -43,8 +43,8 @@ The following table lists the two types of URIs that you can copy from the **Dat
 
 |URI type |Usage |
 |---|---|
-|Query URI |URI that can be used to run queries or management commands.|
-|Ingestion URI |URI that can be used as a target for data ingestion.|
+|Query URI |URI that can be used to run queries or to store management commands.|
+|Ingestion URI |URI that can be used to get data.|
 
 ## Related content
 
