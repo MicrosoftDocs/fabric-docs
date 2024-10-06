@@ -31,7 +31,7 @@ To access your existing KQL databases:
 
     :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace window that shows the dropdown menu of the Filter option. The entry titled KQL Database is highlighted."  lightbox="media/database-editor/access-existing-database-2.png":::
 
-1. Select the desired database from the filtered list in the main view pane. The main page of the KQL database opens.
+1. Select the desired database from the list of items shown in the main view pane. The main page of the KQL database opens.
 
 ## Copy URI
 
@@ -43,8 +43,8 @@ The following table lists the two types of URIs that you can copy from the **Dat
 
 |URI type |Usage |
 |---|---|
-|Query URI |URI that can be used to run queries or to store management commands.|
-|Ingestion URI |URI that can be used to get data.|
+|Query URI |URI that can be used to run queries or management commands.|
+|Ingestion URI |URI that can be used as a target for data ingestion.|
 
 ## Related content
 
