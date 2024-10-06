@@ -17,9 +17,9 @@ items:
     href: data-activator-get-data-real-time-hub.md             
 - name: Create objects and triggers
   items:
-  - name: Assign data to objects in Data Mode
+  - name: Assign data to objects
     href: data-activator-assign-data-objects.md    
-  - name: Create triggers in design mode
+  - name: Create triggers
     href: data-activator-create-triggers-design-mode.md       
   - name: Trigger Fabric items
     href: data-activator-trigger-fabric-items.md       

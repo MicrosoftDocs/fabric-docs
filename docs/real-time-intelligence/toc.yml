@@ -130,7 +130,7 @@ items:
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
     - name: Network security
       items:
-      - name: Connect to Azure streaming sources using private endpoints
+      - name: Connect to Azure resources using private endpoints
         href: event-streams/set-up-private-endpoint.md
     - name: Tutorials
       items:
@@ -190,6 +190,8 @@ items:
         href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rti&pivots=fabric
       - name: Azure Stream Analytics
         href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rti&pivots=fabric
+      - name: Cribl Stream
+        href: get-data-cribl-stream.md
       - name: Fluent Bit
         href: get-data-fluent.md
       - name: Logstash

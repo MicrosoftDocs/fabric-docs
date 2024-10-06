@@ -22,6 +22,9 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
 
 1. In your KQL queryset, copy/paste, and run the following query. This query returns a column chart showing the most recent number of bikes by *BikepointID*.
 
+    > [!NOTE]
+    > Your KQL queryset comes prepopulated with several queries. Make sure there's an empty line between any existing query and the new query you're adding, so that you can run this query separately.
+
     ```kusto
     TutorialTable
     | summarize arg_max(Timestamp, No_Bikes) by BikepointID
@@ -31,7 +34,7 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
 
     :::image type="content" source="media/tutorial/bikes-by-bikepoint.png" alt-text="Screenshot of query showing column chart of bikes by bike point ID. ":::
 
-1. Select **Pin to dashboard**. 
+1. Select **Pin to dashboard**.
 1. Enter the following information:
 
     :::image type="content" source="media/tutorial/pin-dashboard.png" alt-text="Screenshot of pinning query to dashboard in Real-Time Intelligence.":::
@@ -45,7 +48,7 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
 
 1. Select **Create**.
 
-The new dashboard, *TutorialDashboard*, opens with the *Recent bikes by Bikepoint* tile.
+Since you've selected **Open dashboard after creation**, the new Real-Time dashboard, *TutorialDashboard*, opens with the *Recent bikes by Bikepoint* tile. You can also access the Real-Time dashboard by browsing to your workspace and selecting the desired item.
 
 ## Add a new tile to the dashboard
 
@@ -61,8 +64,8 @@ The new dashboard, *TutorialDashboard*, opens with the *Recent bikes by Bikepoin
     | where Neighbourhood == "Chelsea"
     ```
 
-1. From the menu ribbon, Select **Apply changes**. 
-    A new tile is created. 
+1. From the menu ribbon, Select **Apply changes**.
+    A new tile is created.
 1. Rename the tile by selecting the **More menu [...]** on the top right corner of the tile > **Rename tile**.
 1. Enter the new name *Chelsea bikes* to rename the tile.
 

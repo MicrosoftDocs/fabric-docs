@@ -86,8 +86,6 @@ If these operations fail, the workload must ask for a token with ['.default'] as
 
 **Scenario 3**. OBO flow for a specific scope fails with consent required error: *AdditionalScopesToConsent* is 'https://analysis.windows.net/powerbi/api/Workspace.Read.All`
 
-:::image type="content" source="./media/authentication-concept/obo-consent-required-error.png" alt-text="Screenshot showing OBO consent required error.":::
-
 If the OBO flow in the workload back-end fails with a consent required error for a specific scope or scopes, the workload back-end must inform the front-end to call `acquireAccessToken` API with those scopes.
 
 ### claimsForConditionalAccessPolicy

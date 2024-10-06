@@ -103,14 +103,14 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Direct Lake in Power BI Desktop (preview)
-    href: direct-lake-power-bi-desktop.md    
   - name: Develop Direct Lake models
     href: direct-lake-develop.md
   - name: Manage Direct Lake models
     href: direct-lake-manage.md
   - name: Understand storage for Direct Lake
     href: direct-lake-understand-storage.md
+  - name: Direct Lake in Power BI Desktop (preview)
+    href: direct-lake-power-bi-desktop.md        
   - name: Edit tables for Direct Lake semantic models
     href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
@@ -169,6 +169,28 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Data warehouses don't show button friendly names
+      href: known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md
+    - name: Configure workspace storage to use ADLS Gen2 storage account doesn't work
+      href: known-issues/known-issue-865-configure-workspace-storage-adls-gen2-not-work.md
+    - name: Write to shortcut destination using workspace identity fails
+      href: known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md
+    - name: Report pages don't show in Fabric org app items
+      href: known-issues/known-issue-867-report-pages-not-show-org-app-items.md
+    - name: Can't add My workspace org app items to the org app
+      href: known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md
+    - name: Unexpected changes in fonts or themes in reports
+      href: known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md
+    - name: Dynamic subscriptions don't send emails to recipients
+      href: known-issues/known-issue-859-dynamic-subscriptions-not-send-emails-recipients.md
+    - name: Live connection to semantic models created by template apps fails
+      href: known-issues/known-issue-858-live-connect-semantic-models-template-apps-fails.md
+    - name: Unable to close organizational app items in left navigation pane
+      href: known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md
+    - name: Pipeline fails when copying data to data warehouse with staging
+      href: known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md
+    - name: Intermittent refresh failure through on-premises data gateway
+      href: known-issues/known-issue-844-intermittent-refresh-failure-gateway.md
     - name: PostgreSQL data source connections additions or updates fail
       href: known-issues/known-issue-850-postgresql-connections-additions-updates-fail.md
     - name: Data warehouse exports using deployment pipelines or git fail

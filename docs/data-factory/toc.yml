@@ -17,6 +17,8 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Cost estimation from Azure Data Factory to Fabric
+        href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
       - name: Pricing examples
         items:
         - name: Data pipelines
@@ -47,8 +49,8 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Create a Data workflow
-      href: create-data-workflows.md
+    - name: Create an Apache Airflow Job
+      href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
     - name: Decide - Copy activity, dataflow, or Spark?
@@ -659,6 +661,8 @@
         href: webhook-activity.md
     - name: Concepts
       items:
+      - name: CI/CD for data pipelines
+        href: cicd-pipelines.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Parameterization
@@ -867,42 +871,42 @@
           href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
         - name: Download diagnostics logs
           href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json 
-  - name: Data workflows
+  - name: Apache Airflow Job
     items:
       - name: Concepts
-        href: data-workflows-concepts.md
+        href: apache-airflow-jobs-concepts.md
       - name: How-to
         items:
           - name: Synchronize your code from an existing Git repo
-            href: data-workflows-sync-git-repo.md
-          - name: Data workflows workspace settings
-            href: data-workflows-workspace-settings.md
+            href: apache-airflow-jobs-sync-git-repo.md
+          - name: Apache Airflow Job workspace settings
+            href: apache-airflow-jobs-workspace-settings.md
           - name: Install a private package
-            href: data-workflows-install-private-package.md
+            href: apache-airflow-jobs-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
-            href: data-workflows-enable-azure-key-vault.md
+            href: apache-airflow-jobs-enable-azure-key-vault.md
           - name: Set up SMTP Server
-            href: data-workflows-set-smtp-server.md
+            href: apache-airflow-jobs-set-smtp-server.md
           - name: Add a Kubernetes secret
-            href: data-workflows-access-private-container-registry.md
+            href: apache-airflow-jobs-access-private-container-registry.md
           - name: Apache Airflow configurations
-            href: data-workflows-supported-apache-airflow-configurations.md
+            href: apache-airflow-jobs-supported-apache-airflow-configurations.md
           - name: Migrate from Azure Workflow Orchestration Manager
-            href: data-workflows-migrate-azure-workflow-orchestration-manager.md
+            href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
       - name: Tutorials
         items:
-          - name: Hello Data workflows
-            href: data-workflows-hello-world.md
-          - name: Orchestrate ADF pipeline with Data workflows
-            href: data-workflows-run-azure-data-factory-pipeline.md
-          - name: Orchestrate Azure Databricks job with Data workflows
-            href: data-workflows-run-databricks-job.md
+          - name: Hello Apache Airflow Job
+            href: apache-airflow-jobs-hello-world.md
+          - name: Orchestrate ADF pipeline with Apache Airflow Job
+            href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
+          - name: Orchestrate Azure Databricks job with Apache Airflow Job
+            href: apache-airflow-jobs-run-databricks-job.md
           - name: Power BI Semantic Model Refresh
-            href: data-workflows-power-bi-semantic-model-refresh.md
+            href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
-            href: data-workflows-dbt-fabric.md
+            href: apache-airflow-jobs-dbt-fabric.md
           - name: Run a Fabric Item Job
-            href: data-workflows-run-fabric-item-job.md
+            href: apache-airflow-jobs-run-fabric-item-job.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
