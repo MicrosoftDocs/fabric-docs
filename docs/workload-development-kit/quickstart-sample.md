@@ -21,29 +21,19 @@ Before you begin, ensure that you have an environment that's [set up](environmen
 
 1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254) repository.
 
-
-
-
-
-
-
-
-
-1. **Install dependencies**: Navigate to the `Frontend` directory in the cloned repository and execute the following command:
+2. **Install dependencies** - Navigate to the *Frontend* directory in the cloned repository and execute the following command:
 
    ```typescript
    npm install
    ```
 
-1. **Start the local server**: Launch a local Node.js server using `webpack` by running:
+3. **Start the local server** - Launch a local Node.js server using *webpack* by running:
 
    ```typescript
    npm start
    ```
 
-   The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the *.env.dev* configuration file in the front-end folder.
-
-
+4. **Confirm that the server is running** - The server typically runs on port *60006*. Confirm that the server is operational by navigating to `127.0.0.1:60006/manifests` on your browser.
 
 ## Step2: Run a sample workload
 
