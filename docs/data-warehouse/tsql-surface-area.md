@@ -25,7 +25,7 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 - Creating, altering, and dropping tables, and insert, update, and delete are only supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - You can create your own T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - For more about CREATE/DROP TABLE support, see [Tables](tables.md).
-- Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* CTEs. While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. <!-- For more information, see [Nested Common Table Expression (CTE) in Fabric data warehousing (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true). -->
+- Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* CTEs. While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. For more information, see [Nested Common Table Expression (CTE) in Fabric data warehousing (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true).
 - For more about data types, see [Data types](data-types.md).
 - TRUNCATE Table is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
