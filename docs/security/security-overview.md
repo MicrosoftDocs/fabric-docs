@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 08/01/2024
+ms.date: 08/18/2024
 ---
 
 # Security in Microsoft Fabric
@@ -128,10 +128,10 @@ Fabric controls data access using [workspaces](../get-started/workspaces.md). In
 
 Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md).
 
-| Role                           | Workspace access                       | OneLake access                                                        |
-|--------------------------------|----------------------------------------|-----------------------------------------------------------------------|
-| Admin, member, and contributor | Can use all the items in the workspace | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| Viewer                         | Can see all the items in the workspace | :::image type="icon" source="../media/no-icon.svg" border="false":::  |
+| Role                           | Workspace access                       | OneLake access |
+|--------------------------------|----------------------------------------|----------------|
+| Admin, member, and contributor | Can use all the items in the workspace | &#x2705;       |
+| Viewer                         | Can see all the items in the workspace | &#x274C;       |
 
 ### Share items
 

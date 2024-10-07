@@ -1,125 +1,119 @@
 ---
 title: Data Activator tutorial using sample data
-description: Learn how Data Activator works using sample data.
-author: davidiseminger
-ms.author: davidi
-ms.topic: conceptual
-ms.custom: 
-ms.date: 03/22/2024
+description: Learn how Data Activator works using sample data. Data Activator is a powerful tool for working with data and creating triggers based on specific conditions.
+author: mihart
+ms.author: mihart
+ms.topic: how-to
+ms.custom: FY25Q1-Linter
+ms.date: 09/20/2024
+#customer intent: As a Fabric user I want to learn more about Data Activator using a tutorial and sample data.
 ---
 
 # Data Activator tutorial using sample data
 
+This step-by-step tutorial uses the sample *Packages* data that comes with Data Activator. In this tutorial, you learn how to do these tasks:
+
+- Explore the main features of Data Activator.
+- Create an object.
+- Create and start a rule.
+
 > [!IMPORTANT]
 > Data Activator is currently in preview.
 
-This step-by-step tutorial uses the sample *Packages* data that comes with reflex. By the end of this tutorial, you'll have accomplished the following:
-
-1. Explored the main features of data activator.
-2. Created an object.
-3. Created and started a trigger.
-
 ## Prerequisites
 
-Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../get-started/workspaces.md) article.  
+* Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../get-started/workspaces.md) article.
 
-## Step-by-step guide
+## Step 1: Create a sample Data Activator reflex
 
-The following steps walk you through the tutorial and work with sample data for Data Activator.
+From the Fabric homepage, select a workspace with a Fabric capacity and create a new Data Activator reflex. Select the sample to create a reflex that is prepopulated with sample events and objects.
 
-### Step 1: Create a sample reflex
+:::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-image.png" alt-text="Screenshot showing Data Activator selected as well as the Reflex sample preview.":::
 
-From the Fabric homepage, select a workspace with a Fabric capacity. Select the Data Activator experience then select *Reflex sample* to create a reflex that is prepopulated with sample events and objects.
+## Step 2: Explore the package delivery events
 
-:::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-01.png" alt-text="Selecting reflex sample for data activator tutorial data.":::
+In this step, we explore the event stream data this sample is built on.
 
+- In the newly created reflex, select the *Package delivery events* stream. These events show the real-time status of packages that are in the process of being delivered by a logistics company. Look at the incoming events and note the columns on the events. The *Package ID* column uniquely identifies the packages. This column is the unique ID column that we use to assign the Package events to Package objects.
 
-### Step 2: Explore the package events in data mode
+## Step 3: Explore the Package object
 
-In this step we explore data mode. 
+1. In the Explorer pane to the left, look at the event stream called *Delivery events*. **Delivery events** is now added to the Package object. With this data, you can create rules about packages that use data from the event stream.
 
-1. In the newly created reflex, select on the *data* tab, then select the *Package in Transit* events stream. These events show the real-time status of packages that are in the process of being delivered by a logistics company. Look at the incoming events and note the columns on the events. The *PackageId* column uniquely identifies the Packages; this is the ID column that we use to assign the Package events to Package objects.
-2. Select on the other two event streams. These come from different sources in the logistics company, but they're also about packages. They also have a *Package ID* column.
+1. Select the rule called *Too hot for medicine*. Observe how it works:
 
-### Step 3: Explore the Package object in design mode
+   1. It monitors the *Temperature* column from *Delivery events*.
 
-Now we explore design mode. 
+   1. It detects the temperature becoming greater than 10, but only if the *Special Care* column equals *Medicine*.
 
-1. Select the *Design* tab at the bottom of the screen to enter design mode.
+   1. It sends a Teams message if the condition is true.
 
-2. In the left navigation pane, look at the *Events* section of the Package object. All three event streams from data mode are linked to the package object. This enables you to create triggers about packages that use data from any of the three event streams.
+1. Look at the other rules to learn how they work.
 
-3. Select the trigger called *Medicine package too warm*. Observe how it works:
-    
-    1. It selects the *Temperature* column from the *Package in Transit* events
-    2. It detects the Temperature becoming greater than 50, but only if the *Special Care* column equals *Medicine*
-    3. It sends an email if the condition is true
+## Step 4: Start the *Too hot for medicine* rule
 
-4. Look at the other triggers to learn how they work.
+Now that you are familiar with the package events and objects, you're ready to start a rule.
 
-### Step 4: Start the *medicine package too warm* trigger
+1. Select *too hot for medicine*.
 
-Now that you have familiarized yourself with the packages events and objects, you're ready to start a trigger.
+1. Review the *Action* step, which sends a Teams message. Make sure that the recipient is yourself.
 
-1. Select the *medicine too warm* trigger
-2. Review the *Act* step, which sends an email. Make sure that the email address on the trigger is your email address. Alter the subject and message fields to your liking.
-3. Select *Send me a test alert*. You'll receive a test email (it might take a minute or two to arrive). Make sure it looks the way you expect.
-4. In the ribbon, select **Start**. This causes the trigger to email you whenever a medicine package is too warm. The trigger should fire several times every hour. (You might have to wait 10 minutes or so for it to fire.)
-5. Later, you can turn off the trigger using the **Stop** button.
+1. Select **Edit action** to view a preview of the message you're sending. Alter the headline and message fields to your liking.
 
-### Step 5: Create a City object
+1. Select **Test action**. You receive a test Teams message. Make sure it looks the way you expect and matches the preview.
 
-Now it's time to create an object of your own. In this section, you'll create a *City* object that tracks the status of package deliveries at the level of Cities, rather than individual packages.
+1. Select **Save and start**. This causes the rule to message you whenever a medicine package is too hot. The rule should trigger several times every hour.
 
-1. Return to data mode.
-2. Select the *Package In Transit* stream.
-3. Select *Assign your data* in the pane that appears in the right side of the screen.
-4. Name your new object *City* and choose *City* as the Key column.
-5. Select **Save and go to design mode**.
+1. Later, you can turn off the rule using the **Stop** button.
 
-### Step 6: Create a trigger on the City object
+## Step 5: Recreate a package object
 
-Now you'll create a trigger that alerts you if the average time in transit, for any city, exceeds a target.
+Now it's time to create an object of your own. In this section, delete the *Package* object. Then,  recreate it to track the status of packages in Redmond where the hours in delivery becomes greater than the average.
 
-1. Go to design mode and select your new *City* object. Select *New trigger* then name it *Average transit time above target*. After this step, your City object will look like this:
+1. Select the *Package delivery events* stream.
+1. Select *New object* in the ribbon.
+
+1. Name your new object *Package* and choose *Package ID* as the unique ID.
+
+1. Add *Hours in delivery* and *Current city* as properties of the object.
+
+1. Select **Create**.
+
+## Step 6: Create a rule on the Package object
+
+Create a rule that alerts you if the average time in delivery exceeds a threshold.
+
+1. Select your new *Hours in delivery* property. Select *New rule* then name it *Average transit time above target*. Your *Package* object looks like this.
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-02.png" alt-text="Average transit time trigger for data activator tutorial.":::
 
-2. In your trigger’s *select* card, select *HoursInTransit.* Then select *Add* to set an *Average over time* aggregation of 1 hour. After this step, your trigger will look like this:
+1. In your rule's monitor card, select *Hours in delivery.* Then select *Summarize data* to set an aggregation window size of 1 hour and a step size of 1 hour. The Monitor chart updates to reflect the summarization, and your rule looks like this.
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-03.png" alt-text="Average transit time chart for data activator tutorial.":::
 
-3. In the *detect* card, detect whether the average transit time for a given City is greater than 5 hours. Set the trigger to alert you once per hour per city. After you complete this step, your Detect card will look like this:
+1. In the *condition* step, detect when the average transit time becomes greater than 1. Set the rule to alert you every time the condition is met. After you complete this step, the Condition chart updates, and the rule looks like this.
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-04.png" alt-text="Average transit time trigger detection chart for data activator tutorial.":::
 
-4. Specify an action for your trigger. You can choose Email or Teams. Customize your action according to how you would like it to appear:
+1. Specify an action for your rule. You can choose to send a Teams message or Email. Customize your action according to how you would like it to appear.
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-05.png" alt-text="Action trigger window for data activator tutorial.":::
 
-5. Test your trigger by selecting the **Send me a test alert** button. Make sure you get an alert (it might take a minute or two to arrive.)
+1. Test your rule by selecting the **Test** button. Make sure you get an alert. If using email, it might take a minute or two to arrive.
 
-6. Start your trigger by selecting the **Start** button.
+1. Start your rule by selecting **Save and start**.
 
-### Congratulations on completing the tutorial
+## Congratulations on completing the tutorial
 
-Congratulations on creating your first object and trigger. As next steps, you might want to try setting up some other triggers on either the *City* or *Package* objects. When you're ready to try using Data Activator on real data, follow the steps in the [Get data for Data Activator](data-activator-get-data-eventstreams.md) article.
+You created your first object and rule. As next steps, you might try setting up some other rules on the *Package* object. When you're ready to try using Data Activator on your own data, follow the steps in the [Get data for Data Activator](data-activator-get-data-eventstreams.md) article.
 
-Once you’ve finished with the triggers you created as part of the tutorial, be sure to stop them so you don’t incur any charges for background processing of the trigger. Select each trigger in turn, and press the Stop button from the ribbon.
+Once you finish with the rules you created as part of the tutorial, be sure to stop them so you don’t incur any charges for background processing of the rules. Select each rule in turn and select the **Stop** button from the ribbon.
 
 :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for data activator tutorial.":::
 
 ## Related content
-
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
-* [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
-* [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md)
-* [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
-* [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
-* [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
-* [Detection conditions in Data Activator](data-activator-detection-conditions.md)
 
 You can also learn more about Microsoft Fabric:
-
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)

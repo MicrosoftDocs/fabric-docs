@@ -1,9 +1,8 @@
 ---
 title: Adding a Microsoft Fabric workload (preview)
 description: Learn how to add, remove, and use a workload from the workload hub.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: teddyberco
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
 ms.date: 05/21/2024
@@ -15,7 +14,7 @@ The workload hub is a central location where you can view all the workloads avai
 
 :::image type="content" source="./media/more-workloads-add/workload-hub.png" alt-text="Screenshot of the Workload Hub." lightbox="./media/more-workloads-add/workload-hub.png":::
 
-All the workloads available under the **My Workloads** tab can be used and applied in your analytical projects. You can start generating items and performing various operations on them.
+All the workloads available under the **My Workloads** tab can be used to and applied in your analytical projects. You can start generating items and performing various operations on them.
 
 More workloads allow for more functionality in Fabric. Users with the right permissions can add workloads and make them available either to the entire tenant or to a specific capacity.
 
@@ -23,12 +22,12 @@ In the **More workloads** section, workloads published by Microsoft & Partners c
 
 :::image type="content" source="./media/more-workloads-add/workload-hub-more.png" alt-text="Screenshot of the More workloads page." lightbox="./media/more-workloads-add/workload-hub-more.png":::
 
-Each workload includes additional information describing workload capabilities and other information including the following:
+Each workload includes additional information describing workload capabilities and other information including:
 
 * **Item Type**: A list of items this workload can create.
 * **Compatible with**: which items are integrated with by the workload.
-* **Publisher support**: Documentation, Certification page & Help links by the workload publisher.
-* Videos and screenshots material by the publisher.
+* **Publisher support**: Documentation, Certification page & Help links provided by the workload publisher.
+* Videos and screenshots material provided by the publisher.
 
 ## Adding and removing workloads
 
@@ -51,7 +50,7 @@ To add a workload, follow these steps:
 Added workloads can be added to more capacities or removed completely. When a workload is added to any of the capacities, a **Manage capacities** option appears.
 To remove a workload first press "Manage capacities," deselect all capacities and press update.
 
-:::image type="content" source="./media/more-workloads-add/remove.png" alt-text="Screenshot of the Remove workload interface." lightbox="./media/more-workloads-add/remove.png":::
+:::image type="content" source="./media/more-workloads-add/remove.png" alt-text="Screenshot of the Removed workload interface." lightbox="./media/more-workloads-add/remove.png":::
 
 ## Using added workloads
 
@@ -74,3 +73,8 @@ To consent to Microsoft Entra ID application, follow these steps:
 1. Grant consent to the application.
 
 Once consent is granted, users can use the workload without needing to consent again.
+
+## Adding unverified workloads
+Workload publishers can publish a workload directly to specific tenants **before** publishing it through [Microsoft certification process](../workload-development-kit/publish-workload-requirements.md).
+Fabric admins can choose to allow unverified workloads show up in the workload hub to specific users. In this case, unverified workloads show up in the workload hub. Only users that are part of the security group can use unverified workloads items regardless of who created or added the workloads. 
+Additionally, to be able to add unverified workloads users need to be included in both [tenant settings](../admin/tenant-settings-index.md#additional-workloads-preview): "Capacity admins and contributors can add and remove Partner workloads" and "Users can see and work with unvalidated partner workloads."

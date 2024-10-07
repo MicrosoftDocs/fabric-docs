@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 07/17/2024
+ms.date: 10/06/2024
 ---
 
 # Manage your Fabric capacity
@@ -278,7 +278,7 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 ### Delete a capacity
 
-When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](service-admin-portal-capacity-settings.md#fabric-capacity-deletion).
+When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](capacity-settings.md#delete-a-capacity).
 
 Ongoing operations are stopped or canceled and scheduled operations are canceled.
 
@@ -378,11 +378,13 @@ This table summarizes the actions you can take in the details section.
 | Capacity usage report                | The usage report is replaced with the [capacity metrics app](../enterprise/metrics-app.md) |
 | Notifications                        | Enable [notification](service-admin-premium-capacity-notifications.md) for your capacity |
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
-| Admin permissions                    | Give specific users or security groups the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
+| Admin permissions                    | Give specific users the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |
 | Preferred capacity for My workspace  | Designate the capacity as the default capacity for [My workspaces](../admin/portal-workspaces.md#govern-my-workspaces)         |
 | Data Engineering/Science Settings    | Allow workspace admins to set the size of their spark [pools](../data-engineering/workspace-admin-settings.md#pool) |
-| Workspaces assigned to this capacity | Add or remove workspaces assigned to the capacity |
+| Workspaces assigned to this capacity | <sup>*</sup>Add or remove workspaces assigned to the capacity |
+
+<sup>*</sup> To assign a workspace to a Fabric capacity, you need to be a capacity admin with an admin role on the workspace.
 
 ### Delegated tenant settings
 
@@ -392,7 +394,7 @@ This table summarizes the actions you can take in the details section.
 
 * Tenant settings delegated by the Fabric Admin.
 
-By default, delegated tenant settings inherit their configuration from the tenant. To override this configuration, follow these steps:
+By default, delegated tenant settings inherit their configuration from the tenant. To override this configuration, follow the steps below. When the tenant setting delegation is enabled, you can disable delegation by clearing the *Override tenant admin selection* checkbox.
 
 1. From the **Delegate tenant setting** list, open the setting you want to delegate permissions for.
 

@@ -51,13 +51,13 @@ You need to give your Spark job definition a name when you create it. The name m
 
 To create a Spark job definition for PySpark:
 
-1. Download the sample CSV file [yellow_tripdata_2022_01.csv](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) and upload it to the files section of the lakehouse.
+1. Download the sample Parquet file [yellow_tripdata_2022-01.parquet](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) and upload it to the files section of the lakehouse.
 
 1. Create a new Spark job definition.
 
 1. Select **PySpark (Python)** from the **Language** dropdown.
 
-1. Download the [createTablefromCSV.py](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-engineering/createTablefromCSV.py) sample and upload it as the main definition file. The main definition file (*job.Main*) is the file that contains the application logic and is mandatory to run a Spark job. For each Spark job definition, you can only upload one main definition file.
+1. Download the [createTablefromParquet.py](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-engineering/createTablefromParquet.py) sample and upload it as the main definition file. The main definition file (*job.Main*) is the file that contains the application logic and is mandatory to run a Spark job. For each Spark job definition, you can only upload one main definition file.
 
    You can upload the main definition file from your local desktop, or you can upload from an existing Azure Data Lake Storage (ADLS) Gen2 by providing the full ABFSS path of the file. For example, `abfss://your-storage-account-name.dfs.core.windows.net/your-file-path`.
 

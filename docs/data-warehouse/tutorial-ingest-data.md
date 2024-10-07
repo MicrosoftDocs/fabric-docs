@@ -57,7 +57,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
 1. On the **Connection settings** page, configure the settings as follows:
 
-   1. In the **Account name or URL**, enter `https://azuresynapsestorage.blob.core.windows.net/sampledata/`.
+   1. In the **Account name or URL**, enter `https://fabrictutorialdata.blob.core.windows.net/sampledata/`.
 
    1. In the **Connection credentials** section, select **Create new connection** in the dropdown list for the **Connection**. 
 
@@ -69,7 +69,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
 1. Select **Connect**.
 
-1. Change the remaining settings on the **Source** page of the copy activity as follows, to reach the .parquet files in `https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_customer/*.parquet`:
+1. Change the remaining settings on the **Source** page of the copy activity as follows, to reach the .parquet files in `https://fabrictutorialdata.blob.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_customer/*.parquet`:
 
    1. In the **File path** text boxes, provide:
 

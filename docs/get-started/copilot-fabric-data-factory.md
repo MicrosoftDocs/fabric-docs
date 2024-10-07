@@ -30,6 +30,9 @@ With Dataflow Gen2, you can:
 - Provide a summary of the query and the applied steps.
 - Generate a new query that may include sample data or a reference to an existing query.
 
+With Data pipelines, you can:
+- Troubleshoot data pipeline issues with the error explaination capability with troubleshooting guidance.
+
 ## Get started
 
 1. Create a new [Dataflows Gen2](../data-factory/tutorial-end-to-end-dataflow.md).

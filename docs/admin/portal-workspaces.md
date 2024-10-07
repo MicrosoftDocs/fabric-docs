@@ -10,7 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.topic: concept-article
-ms.date: 08/06/2024
+ms.date: 08/19/2024
 LocalizationGroup: Administration
 ---
 
@@ -174,9 +174,11 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities by choosing the workspace license mode. Such movement might be between capacities in different regions.
 
-In Microsoft Fabric, such movement currently has the following restrictions:
+Moving workspaces from one capacity to another, has the following restrictions:
 
-* Workspaces with non Power BI Fabric items can't move from Premium or Fabric license mode to Pro or Premium Per User license mode..
+* When you move a workspace, all jobs related to items in the workspace get cancelled.
+
+* Workspaces with non Power BI Fabric items can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
 
 * Non Power BI Fabric items can't move between regions.
 
@@ -196,4 +198,4 @@ This means the following:
 
 ## Related content
 
-- [About the admin portal](admin-center.md)
+* [About the admin portal](admin-center.md)

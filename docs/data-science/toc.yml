@@ -31,6 +31,18 @@ items:
     href: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use the Copilot chat panel
     href: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+- name: AI skill
+  items: 
+    - name: What is the AI skill?
+      href: concept-ai-skill.md
+    - name: How to create an AI skill
+      href: how-to-create-ai-skill.md
+    - name: AI skill scenario
+      href: ai-skill-scenario.md
+    - name: AI skill tenant switch
+      href: ai-skill-tenant-switch.md
+    - name: AI skill sharing
+      href: ai-skill-sharing.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -103,7 +115,7 @@ items:
     href: read-write-pandas.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
-  - name: Explore and transform Spark data with Data Wrangler (Preview)
+  - name: Explore and transform Spark data with Data Wrangler
     href: data-wrangler-spark.md
   - name: Read from Power BI and write data usable by Power BI
     href: read-write-power-bi-python.md
@@ -173,6 +185,8 @@ items:
       items:
         - name: Runtimes overview
           href: ../data-engineering/runtime.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+        - name: Runtime 1.3 (Spark 3.5)
+          href: ../data-engineering/runtime-1-3.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
         - name: Runtime 1.2 (Spark 3.4)
           href: ../data-engineering/runtime-1-2.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
         - name: Runtime 1.1 (Spark 3.3)
@@ -345,11 +359,3 @@ items:
   items:
     - name: SemPy Python SDK
       href: /python/api/semantic-link/overview-semantic-link
-- name: AI skill
-  items: 
-    - name: What is the AI skill?
-      href: concept-ai-skill.md
-    - name: How to create an AI skill
-      href: how-to-create-ai-skill.md
-    - name: AI skill scenario
-      href: ai-skill-scenario.md

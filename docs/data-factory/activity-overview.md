@@ -5,7 +5,7 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview
-ms.date: 03/19/2024
+ms.date: 09/16/2024
 ms.search.form: Pipeline Activity Overview
 ---
 
@@ -97,11 +97,11 @@ The general settings will always include **Name** and **Description** fields for
 |Retry |Maximum number of retry attempts. |
 |(Advanced properties) Retry interval (sec) |The number of seconds between each retry attempt. |
 |(Advanced properties) Secure output |When checked, output from the activity isn't captured in logging. |
-|(Advanced properties) Secure input |The number of seconds between each retry attempt. |
+|(Advanced properties) Secure input |When checked, input from the activity isn't captured in logging. |
 
 > [!NOTE]
 > There is a default soft limit of maximum 80 activities per pipeline, which includes inner activities for containers.
 
 ## Related content
 
-- [Create your first pipeline](create-first-pipeline-with-sample-data.md)
+- [Create your first pipeline](create-first-pipeline-with-sample-data.md) 
