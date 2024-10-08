@@ -31,7 +31,7 @@ If the **Summarization** section is not shown in your **Definition** pane, selec
 
 When you create a summarization, you specify a time window for your rule.  The time window ranges from ten seconds to 24 hours. A summarization takes all of the values of the rule properties during each time window and converts them into a single summary value for the time window. In this example, our rule summarization is the **Average** aggregation for the attribute **Temperature**. 
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-summarization.png" alt-text="Screenshot showing the Monitor section of the Definition pane with the Temperature attribute selected.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-summarizations.png" alt-text="Screenshot showing the Monitor section of the Definition pane with the Temperature attribute selected.":::
 
 The summarization also includes a step size. The step size ranges from ten seconds to 24 hours. 
 
@@ -56,7 +56,7 @@ You can specify up to three filters.
 
 The third detection setting is **Condition**. Use **Condition** to tell Data Activator when to activate the rule. 
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-03.png" alt-text="Screenshot of using data activator condition types.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of using data activator condition types.":::
 
 Condition types fall into the following categories:
 

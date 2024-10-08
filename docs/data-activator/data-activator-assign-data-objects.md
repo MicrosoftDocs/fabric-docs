@@ -37,7 +37,7 @@ By default the events for five random instances for the previous 24 hours are di
 
 You can assign multiple data streams to a single object. This assignment is useful if data about an object is spread across multiple streams. One example of how this can occur is if you have slowly changing reference data about an object in one event stream, and fast-moving updates about an object in another event stream.
 
-Assign data using the **New object**  option in the ribbon.  The process is the same as for assigning data to a new object, except that you assign the events to an existing object.
+Assign data using the **New object**  option in the ribbon. The process is the same as for assigning data to a new object, except that you assign the events to an existing object.
 
 > [!NOTE]
 > When assigning to an existing object, it is essential that you choose a key column that references the same object IDs that you used when creating the object in the first place. Otherwise, you get unexpected results from your properties and rules.
