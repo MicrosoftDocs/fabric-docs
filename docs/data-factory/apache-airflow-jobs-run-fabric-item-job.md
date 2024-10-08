@@ -114,13 +114,13 @@ Create a new file in the `plugins` folder with the following content:
 ### In Apache Airflow Job UI
 
 1. When you open your DAG file in Fabric Managed Storage, "Results" appears at the bottom. Click on the arrow to view the results of the DAG run.
-   :::image type="content" source="media/apache-airflow-jobs/monitor-in-fabric-ui.png.png" lightbox="media/apache-airflow-jobs/monitor-in-fabric-ui.png.png" alt-text="Screenshot to view Apache Airflow DAG in Apache Airflow job itself.":::
+   :::image type="content" source="media/apache-airflow-jobs/monitor-in-fabric-ui.png.png" lightbox="media/apache-airflow-jobs/monitor-in-fabric-ui.png" alt-text="Screenshot to view Apache Airflow DAG in Apache Airflow job itself.":::
 
 ### In Apache Airflow UI
 
 1. Go to the Airflow UI and select the DAG you created.
 
-2. If you add the plugin, you see an external monitoring link. Clicking it navigates you to the item run.
+2. If you add the plugin, you will see an external monitoring link. Click on it to navigate to the item run.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" alt-text="Screenshot to view Apache Airflow DAGs with external link.":::
 
 3. Xcom Integration: Trigger the DAG to view task outputs in the Xcom tab.
