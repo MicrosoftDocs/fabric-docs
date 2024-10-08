@@ -114,7 +114,7 @@ Create a new file in the `plugins` folder with the following content:
 ### In Apache Airflow Job UI
 
 1. When you open your DAG file in Fabric Managed Storage, "Results" appears at the bottom. Click on the arrow to view the results of the DAG run.
-   :::image type="content" source="media/apache-airflow-jobs/monitor-in-fabric-ui.png.png" lightbox="media/apache-airflow-jobs/monitor-in-fabric-ui.png" alt-text="Screenshot to view Apache Airflow DAG in Apache Airflow job itself.":::
+   :::image type="content" source="media/apache-airflow-jobs/monitor-in-fabric-ui.png" lightbox="media/apache-airflow-jobs/monitor-in-fabric-ui.png" alt-text="Screenshot to view Apache Airflow DAG in Apache Airflow job itself.":::
 
 ### In Apache Airflow UI
 
