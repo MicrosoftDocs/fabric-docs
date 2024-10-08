@@ -1,13 +1,13 @@
 ---
-title: "How to: Create warehouses with case insensitive (CI) collation"
-description: Learn how to create a Fabric warehouse with case-insensitive collation through the RESTful API. It also explains how to use Visual Studio Code with the REST Client extension to facilitate the process making it easier for users to configure their warehouses to better meet their data management needs.
+title: "How to: Create warehouses with case-insensitive (CI) collation"
+description: Learn how to create a Fabric warehouse with case-insensitive collation through the RESTful API. The article also explains how to use Visual Studio Code with the REST Client extension to facilitate the process, making it easier for users to configure their warehouses to better meet their data management needs.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
 ms.topic: how-to
 ms.date: 10/09/2024
 ---
-# How to: Create a warehouse with case insensitive (CI) collation
+# How to: Create a warehouse with case-insensitive (CI) collation
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
