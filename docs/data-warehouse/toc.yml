@@ -9,7 +9,7 @@ items:
   - name: Decision guide - choose a data store
     href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Decision guide - Warehouse and Lakehouse
-    href: ../get-started/decision-guide-lakehouse-warehouse.md
+    href: ../get-started/decision-guide-lakehouse-warehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
@@ -142,8 +142,6 @@ items:
     href: column-level-security.md
   - name: Row-level security
     href: row-level-security.md
-  - name: User audit logs
-    href: user-audit-logs.md
   - name: Dynamic data masking
     href: dynamic-data-masking.md
   - name: How to
@@ -170,6 +168,8 @@ items:
   - name: "How to: Query using time travel"
     href: how-to-query-using-time-travel.md
     displayName: Query using time travel
+  - name: Query data with a T-SQL notebook
+    href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
 - name: Data recovery
   items:
   - name: Restore in-place
@@ -243,6 +243,22 @@ items:
             href: ../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md
           - name: Access data using Lakehouse and notebooks
             href: ../database/mirrored-database/azure-cosmos-db-lakehouse-notebooks.md
+  - name: Mirroring Azure Databricks
+    items:
+      - name: Mirroring Azure Databricks
+        href: ../database/mirrored-database/azure-databricks.md
+      - name: Tutorial
+        displayName: Mirroring Azure Databricks tutorial
+        href: ../database/mirrored-database/azure-databricks-tutorial.md
+      - name: Secure data
+        displayName: Mirroring Azure Databricks security
+        href: ../database/mirrored-database/azure-databricks-security.md
+      - name: Limitations
+        displayName: Mirroring Azure Databricks Limitations
+        href: ../database/mirrored-database/azure-databricks-limitations.md
+      - name: FAQ about Mirroring Azure Databricks
+        displayName: Frequently asked questions about Mirroring Azure Databricks
+        href: ../database/mirrored-database/azure-databricks-faq.yml
   - name: Mirroring Snowflake
     items: 
       - name: Mirrored warehouses from Snowflake

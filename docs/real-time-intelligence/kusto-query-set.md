@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 04/21/2024
+ms.date: 09/23/2024
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
@@ -33,7 +33,7 @@ Select the tab that corresponds with your desired database type.
 ## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. Under **Database**, select **V** to expand the database connections menu.
+1. In the connection pane on the left-hand side of the query page, under **Database**, select **V** to expand the database connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
@@ -45,7 +45,7 @@ Select the tab that corresponds with your desired database type.
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. Under **Database**, select **V** to expand the database connections menu.
+1. In the connection pane on the left-hand side of the query page, under **Database**, select **V** to expand the database connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
@@ -61,7 +61,25 @@ Select the tab that corresponds with your desired database type.
 
 ----
 
- A list of tables associated with this database appears below the database name.
+ A list of tables associated with this database appears below the database name in the connection pane.
+
+## Interact with databases using the connection pane
+
+The connection pane allows you to browse and switch between the databases connected to the queryset. In the connection pane, under **Database**, select **V** to expand the database connections menu. Select the database you want to explore. The connection pane shows a breakdown of the following items that are included in the selected database:
+
+* **Tables**
+* **Materialized View**
+* **Shortcuts**
+* **Functions**
+
+In the connection pane, you can explore what items are included in each section. To open the action menu, hover over the item and select the **More menu** [...]. The menu gives options to:
+
+* **Refresh data**
+* **View data profile**
+* **Insert** to create a script and paste it in to the query editor
+* **Delete**
+
+Different actions are available for different types of items.
 
 ## Write a query
 
@@ -72,7 +90,7 @@ The following examples use data that is publicly available at [https://kustosamp
 1. Write or copy a query in the top pane of the KQL Queryset.
 1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
 
-    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and time used to compute the query results.
+    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query completed successfully, and time used to compute the query results.
 
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
 
@@ -91,7 +109,7 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 You might want to copy or share the queries you create.
 
 1. At the top of the query window, select the **Home** tab.
-1. Select **Copy query**.
+1. In the query pane, select **Copy query**.
 
     :::image type="content" source="media/kusto-query-set/copy-query-results.png" alt-text="Screenshot of the Manage tab of the KQL Queryset showing the dropdown of the copy query or query results option.":::
 
@@ -109,7 +127,7 @@ You might want to copy or share the queries you create.
     |Copy results|Copy the results of the query.|
 
 1. Select the desired sharing action from the above table.
-1. Paste this information into any editor, such as Microsoft Word.
+1. Paste this information to edit or share it, for example in Microsoft Word, Microsoft Teams or Outlook.
 
 ## Export query data as CSV
 
@@ -121,7 +139,7 @@ This is a one-time method to export a CSV file containing the query results.
 
     :::image type="content" source="media/kusto-query-set/export-csv.png" alt-text="Screenshot of the Home tab of the KQL Queryset showing the highlighted option to export results to CSV.":::
 
-1. Select **Export results to CSV**.
+1. In the query pane, select **Export results to CSV**.
 1. Save the CSV file locally.
 
 ## Delete KQL queryset

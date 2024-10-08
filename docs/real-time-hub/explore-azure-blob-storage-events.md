@@ -1,34 +1,34 @@
 ---
 title: Explore Azure blob storage events in Fabric Real-Time hub
 description: This article shows how to explore Azure blob storage events in Fabric Real-Time hub.
-author: ajetasin
-ms.author: ajetasi
+author: mystina
+ms.author: majia
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 09/11/2024
 ---
 
 # Explore Azure blob storage events in Fabric Real-Time hub (preview)
+
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
 
-
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
-
 
 ## View Azure blob storage events detail page
 
-1. In **Real-Time hub**, switch to the **Fabric events** tab. 
-1. Select **Azure blob storage events** in the list. 
+1. In **Real-Time hub**, select **Fabric events**.
+1. Select **Azure blob storage events** in the list.
 
-    :::image type="content" source="./media/explore-azure-blob-storage-events/select-from-list.png" alt-text="Screenshot that shows the selection of Azure blob storage events in the Fabric events tab." :::
-1. You should see the Azure blob storage events detail page. 
+    :::image type="content" source="./media/explore-azure-blob-storage-events/select-from-list.png" alt-text="Screenshot that shows the selection of Azure blob storage events in the Fabric events page." :::
+1. You should see the Azure blob storage events detail page.
 
     :::image type="content" source="./media/explore-azure-blob-storage-events/detail-page.png" alt-text="Screenshot that shows the Azure blob storage events detail page." lightbox="./media/explore-azure-blob-storage-events/detail-page.png":::
 
 ## Actions
+
 At the top of the Azure blob storage events detail page, you see the following two actions.
 
 - **Create eventstream** - lets you create an eventstream based on events from the selected Azure blob storage. 
@@ -36,13 +36,12 @@ At the top of the Azure blob storage events detail page, you see the following t
 
     :::image type="content" source="./media/explore-azure-blob-storage-events/actions.png" alt-text="Screenshot that shows the Actions section of the Azure blob storage events detail page." :::
 
-
 ## See what's using this category
 
-This section shows artifacts using Azure Blob Storage events. Here are the columns and their descriptions shown in the list. 
+This section shows artifacts using Azure Blob Storage events. Here are the columns and their descriptions shown in the list.
 
 | Column | Description |
-| ------ | ------------ | 
+| ------ | ------------ |
 | Name | Name of the artifact that's using Azure Blob Storage events. |
 | Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
@@ -53,7 +52,6 @@ This section shows artifacts using Azure Blob Storage events. Here are the colum
 ## Azure blob storage events profile
 
 :::image type="content" source="./media/explore-azure-blob-storage-events/profile.png" alt-text="Screenshot that shows the events profile section of the Azure blob storage events detail page." :::
-
 
 ### Event types
 
@@ -71,9 +69,10 @@ This section shows artifacts using Azure Blob Storage events. Here are the colum
 | Microsoft.Storage.LifecyclePolicyCompleted | This event refers to the activation of a lifecycle management policy when its defined actions are executed. |
 
 ### Schemas
+
 An event has the following top-level data:
 
-| Property | Type | Description | Example | 
+| Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
 | `source` | string | Full resource path to the event source. This field isn't writeable. Event Grid provides this value. | `/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account`|
 | `subject` | string | Publisher-defined path to the event subject. | `/blobServices/default/containers/my-file-system/blobs/new-file.txt` |

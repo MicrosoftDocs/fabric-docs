@@ -7,23 +7,23 @@ ms.topic: how-to
 ms.custom:
   - build-2024
   - references_regions
-ms.date: 05/21/2024
+ms.date: 09/02/2024
 ---
 
 # Add Amazon Kinesis Data Streams as source in Real-Time hub (preview)
-This article describes how to add Amazon Kinesis Data Streams as an event source in Fabric Real-Time hub. 
+
+This article describes how to add Amazon Kinesis Data Streams as an event source in Fabric Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Prerequisites 
+## Prerequisites
 
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
 - An Amazon Web Services (AWS) account with the Kinesis Data Streams service enabled.
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-## Add Amazon Kiness Data Streams as a source
-
+## Add Amazon Kinesis Data Streams as a source
 
 1. On the **Select a data source** screen, select **Kinesis Data Streams**.
 
@@ -40,7 +40,7 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
     1. For **API Key** and **API Secret**, enter the credentials you use to access your Kinesis Data Stream. Go to the Amazon IAM console and select **Security credentials**. Copy an **Access Key ID** from the **Access keys** screen and paste it into **API Key** and **API Secret**.
   
         ![A screenshot of how to access the AWS Kinesis security credentials.](media/add-source-amazon-kinesis-data-streams/credentials.png)
-    1. Select **Connect**. 
+    1. Select **Connect**.
 
        ![A screenshot of the Connect screen.](media/add-source-amazon-kinesis-data-streams/connect.png)
 1. Now, on the **Connect** page, for **Source name**, enter a source name for this new eventstream source.
@@ -54,13 +54,13 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
 1. Select **Next**.
 1. On the **Review and create** screen, review the summary, and then select **Create source**.
 
-
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page. 
-1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page.
+1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
+
 To learn about consuming data streams, see the following articles:
 
 - [Process data streams](process-data-streams-using-transformations.md)

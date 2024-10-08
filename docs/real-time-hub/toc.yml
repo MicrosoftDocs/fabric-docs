@@ -49,6 +49,10 @@ items:
       href: add-source-mysql-database-cdc.md
     - name: Azure Cosmos DB Change Data Capture
       href: add-source-azure-cosmos-db-cdc.md
+    - name: Azure SQL Managed Instance Change Data Capture
+      href: add-source-azure-sql-managed-instance-cdc.md
+    - name: SQL Server on VM Database Change Data Capture
+      href: add-source-sql-server-on-vm-db-cdc.md
   - name: External sources 
     items:
     - name: Google Cloud Pub/Sub
@@ -73,11 +77,15 @@ items:
     href: preview-data-streams.md
   - name: Endorse data streams
     href: endorse-data-streams.md
+  - name: Explore All data streams
+    href: explore-all-data-streams.md
+  - name: Explore My streams
+    href: explore-my-data-streams.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md    
   - name: Explore Fabric events
     items:
-    - name: Fabric events tab
+    - name: Fabric events page
       href: explore-fabric-events.md    
     - name: Explore Azure Blob Storage events
       href: explore-azure-blob-storage-events.md

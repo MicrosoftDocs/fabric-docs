@@ -48,7 +48,7 @@ The warehouse can be populated by any one of the supported data ingestion method
 
 To get started with the Warehouse, see:
 
-- [Create a warehouse in Microsoft Fabric](/fabric/data-warehouse/create-warehouse)
+- [Create a warehouse in Microsoft Fabric](/fabric/data-warehouse/create-warehouse)
 - [Performance guidelines](guidelines-warehouse-performance.md)
 
 ### SQL analytics endpoint of the Lakehouse

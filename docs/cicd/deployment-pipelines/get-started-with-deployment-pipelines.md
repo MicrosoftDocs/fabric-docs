@@ -18,6 +18,9 @@ ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introd
 
 This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. We recommend reading the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understanding [which items can be deployed](./intro-to-deployment-pipelines.md#supported-items) before you proceed.
 
+> [!NOTE]
+> Some of the items for deployment pipelines are in preview. For more information, see the list of [supported items](./intro-to-deployment-pipelines.md#supported-items).
+
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
 
 >[!NOTE]
@@ -56,7 +59,7 @@ From Power BI, you also have the option of creating a pipeline from inside an ex
 
 From the workspace, select **Create deployment pipeline**.
 
-:::image type="content" source="media/get-started-with-deployment-pipelines/workspace-deploy.png" alt-text="Screenshot of the button for creating a pipeline in a workspace.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/create-pipeline.png" alt-text="Screenshot of the button for creating a pipeline in a workspace.":::
 
 ---
 

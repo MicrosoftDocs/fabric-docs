@@ -6,11 +6,12 @@ ms.author: anboisve
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 09/04/2024
 ---
 
 # Get events from sample data sources into Real-Time hub (preview)
-This article describes how to get events from sample data sources into Real-Time hub. 
+
+This article describes how to get events from sample data sources into Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -22,11 +23,11 @@ This article describes how to get events from sample data sources into Real-Time
 
 ## Add sample data as a source
 
-1. On the **Select a data source** page, select **Sample data**. 
+1. On the **Select a data source** page, select **Sample data**.
 
-    :::image type="content" source="./media/add-source-sample-data/select-sample-data.png" alt-text="Screenshot that shows the selection of Sample data as the source type in the Get events wizard." lightbox="./media/add-source-sample-data/select-sample-data.png":::
+    :::image type="content" source="./media/add-source-sample-data/select-sample-data.png" alt-text="Screenshot that shows the selection of Sample data as the source type in the Add source wizard." lightbox="./media/add-source-sample-data/select-sample-data.png":::
 1. On the **Connect** page, enter a **name for the source**.
-1. Select one of the sample data sources from the drop-down list. 
+1. Select one of the sample data sources from the drop-down list.
 
     :::image type="content" source="./media/add-source-sample-data/sample-sources.png" alt-text="Screenshot that shows the sample data sources available." lightbox="./media/add-source-sample-data/sample-sources.png":::     
 1. In the **Stream details** section of the right pane, do these steps:
@@ -39,20 +40,19 @@ This article describes how to get events from sample data sources into Real-Time
 1. On the **Review and create** page, review the summary, and then select **Create source**.
 
     :::image type="content" source="./media/add-source-sample-data/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/add-source-sample-data/review-create-page.png":::                
- 
 
 ## View data stream details
 
 1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected sample data source. To close the wizard, select **Close** at the bottom of the page. 
 
     :::image type="content" source="./media/add-source-sample-data/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open eventstream and close the wizard. ":::                
-1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page.  For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
  
     :::image type="content" source="./media/add-source-sample-data/verify-data-stream.png" alt-text="Screenshot that shows the Data streams page with the stream that was created. ":::                
 
 
-
 ## Related content
+
 To learn about consuming data streams, see the following articles:
 
 - [Process data streams](process-data-streams-using-transformations.md)

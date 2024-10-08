@@ -4,7 +4,7 @@ description: This article explains what public preview means in Microsoft Fabric
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 11/05/2023
+ms.date: 09/22/2024
 ---
 
 # Microsoft Fabric preview information
@@ -27,13 +27,7 @@ Preview experiences and features:
 
 ## Who can enable a preview experiences and features
 
-To enable a preview experience or feature, you need to have one of these [admin roles](../admin/roles.md):
-
-* Global administrator
-
-* Power Platform administrator
-
-* Fabric administrator
+To enable a preview experience or feature, you need to have a *Fabric administrator* [admin role](../admin/roles.md).
 
 >[!NOTE]
 >When a preview feature is delegated, it can be enabled by a [capacity admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles) for that capacity.

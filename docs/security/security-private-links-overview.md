@@ -57,7 +57,7 @@ If Azure Private Link is properly configured and **Block public Internet access*
 
 ### OneLake
 
-OneLake supports Private Link. You can explore OneLake in the Fabric portal or from any machine within your established virtual network using via OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
+OneLake supports Private Link. You can explore OneLake in the Fabric portal or from any machine within your established virtual network using OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
@@ -91,6 +91,8 @@ ML Model, Experiment, and AI skill supports private link.
 ### Power BI
 
 * If internet access is disabled, and if the Power BI semantic model, Datamart, or Dataflow Gen1 connects to a Power BI semantic model or Dataflow as a data source, the connection will fail.
+
+* Direct Lake mode is currently not supported using Private Link.
 
 * Publish to Web isn't supported when the tenant setting **Azure Private Link** is enabled in Fabric.
 
