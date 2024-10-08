@@ -52,7 +52,7 @@ The SQL Server on VM DB (CDC) source connector for Fabric event streams allows
    
 ## Add SQL Server on VM database as a source 
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

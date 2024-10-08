@@ -60,7 +60,7 @@ To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow 
 
 ## Add Azure Database for PostgreSQL CDC as a source
 
-1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

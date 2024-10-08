@@ -34,7 +34,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 Follow these steps to add a sample data source:
 
-1. To create a new eventstream, select **Eventstream** from the **Home** screen. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. To create a new eventstream, select **Eventstream** from the **Home** screen. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

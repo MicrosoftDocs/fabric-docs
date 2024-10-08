@@ -19,7 +19,7 @@ The event streams feature provides you with various source connectors to fetch e
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities](#tab/enhancedcapabilities)
 
 [!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
 
@@ -39,7 +39,7 @@ If you enabled **Enhanced capabilities** while creating an eventstream, the tran
 ## Route events to destinations
 The Fabric event streams feature supports sending data to the following supported destinations. 
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities](#tab/enhancedcapabilities)
 
 [!INCLUDE [supported-destinations-enhanced](./includes/supported-destinations-enhanced.md)]
 
@@ -67,10 +67,10 @@ The Fabric event streams feature offers an Apache Kafka endpoint on the Eventstr
 Fabric event streams feature is powered by Azure Event Hubs, a fully managed cloud-native service. When an eventstream is created, an event hub namespace is automatically provisioned, and an event hub is allocated to the default stream without requiring any provisioning configurations. To learn more about the Kafka-compatible features in Azure Event Hubs service, see [Azure Event Hubs for Apache Kafka](/azure/event-hubs/azure-event-hubs-kafka-overview)
 
 To learn more about how to obtain the Kafka endpoint details for sending events to eventstream, see [Add custom endpoint source to an eventstream](./add-source-custom-app.md); and for consuming events from eventstream, see [Add a custom endpoint destination to an eventstream](./add-destination-custom-app.md)
-## Enhanced capabilities (preview)
-There are more features, sources, and destinations available when you enable the **Enhanced capabilities (preview)** option while creating an eventstream. Use the **Enhanced capabilities (preview)** and **Standard capabilities** tabs to learn about additional sources and destinations supported with the enhanced capabilities. 
+## Enhanced capabilities
+There are more features, sources, and destinations available when you enable the **Enhanced capabilities** option while creating an eventstream. Use the **Enhanced capabilities** and **Standard capabilities** tabs to learn about additional sources and destinations supported with the enhanced capabilities. 
 
-Here are a few other noteworthy features of Enhanced capabilities (preview):
+Here are a few other noteworthy features of Enhanced capabilities:
 
 - [Edit Mode and Live View](edit-publish.md#edit-mode-and-live-view). Explore two distinct modes for visualizing and designing stream processing.
 - [Default and derived streams](create-default-derived-streams.md). Create a continuous flow of streams with the format you design, with an event processor that can be consumed later in Real-Time hub.

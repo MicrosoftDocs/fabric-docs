@@ -30,7 +30,7 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 
 ## Add Amazon MSK Kafka as a source  
 
-1. Create an eventstream with **Enhanced Capabilities (preview)** option enabled. 
+1. Create an eventstream with **Enhanced capabilities** option enabled. 
 1. On the next screen, select **Add external source**.
 
 ## Configure and connect to Amazon MSK Kafka 

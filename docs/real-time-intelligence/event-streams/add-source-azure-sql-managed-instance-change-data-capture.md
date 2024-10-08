@@ -59,7 +59,7 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
 ## Add Azure SQL Managed Instance CDC as a source
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

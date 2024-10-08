@@ -47,7 +47,7 @@ Fabric event streams supports the following Fabric workspace events:
 
 ## Add Fabric Workspace Item events as source
 
-1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 
