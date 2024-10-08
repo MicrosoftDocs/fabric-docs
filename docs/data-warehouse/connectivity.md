@@ -4,7 +4,7 @@ description: Follow steps to connect SSMS to data warehousing in your Microsoft 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, stwynant, jacinda-eng
-ms.date: 09/03/2024
+ms.date: 10/08/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -171,5 +171,5 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
-- [Add Fabric URLs to your allowlist](/security/fabric-allow-list-urls.md)
+- [Add Fabric URLs to your allowlist](../security/fabric-allow-list-urls.md)
 - [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/en-us/download/details.aspx?id=56519)
