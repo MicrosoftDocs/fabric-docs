@@ -5,29 +5,38 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 09/15/2024
+ms.date: 10/08/2024
 ---
 
 # Detection conditions in Data Activator
 
-This article describes the range of detection conditions available to you when you create a trigger. You learn how detection conditions in triggers and properties operate in Data Activator and how to configure them effectively.
+This article describes the range of detection conditions available to you when you create a trigger. You learn how detection conditions operate in Data Activator and how to configure them effectively.
 
 > [!IMPORTANT]
 > Data Activator is currently in preview.
 
+Our example uses the **Package delivery events** event stream. From this event stream we already created an object named **Temperature** and a rule **Too hot for medicine**. 
+
 ## Summaries over time
 
-Summaries are available in the **Monitor **section cards in **Properties **and **Rules**.
+Detection conditions are set in the **Definition** pane which opens on the right side of Data Activator. Select a rule from the **Explorer** to open the **Definition** pane. Here you'll set the detection **Summarization** and **Condition**.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-01.png" alt-text="Screenshot of adding Data Activator summary.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definiton pane in Data Activator."lightbox="media/data-activator-detection-conditions/data-activator-pane.png":::
 
-When you create a summary, you specify a **time window** which can be between 1 minute and 24 hours long. A summary takes all of the values of the property or column during each time window and converts them into a single summary value for the time window.
+**Summarization**
+
+A summarization is made up of a summarization operation, window size, and a step size for the object used in the rule. In this example, we use the **Temperature** property from our Package delivery events stream. 
+
+When you create a summarization, you specify a time window for your rule.  The time window ranges from ten seconds to 24 hours. A summarization takes all of the values of the rule properties during each time window and converts them into a single summary value for the time window. In this example, our rule is creating an Average summarization for the property **Temperature**. 
+
+The summarization also includes a step size. The step size ranges from ten seconds to 24 hours.XYZ
 
 |Summary type  |Description  |
 |---------|---------|
 |Average over time      |Computes the average value of the property or column over the time window|
 |Count     |Computes the number of events containing the property or column over the time window|
 |Minimum/Maximum over time     |Computes the minimum/maximum value of the property or column during the time window|
+Total  | Computes the total value of the property or column during that time window. 
 
 ## Filters
 
