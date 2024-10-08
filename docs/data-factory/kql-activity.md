@@ -43,9 +43,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### KQL activity settings
 
-1. Select the **Settings** tab, then select a **Data store type**. You can use a KQL database created within your Fabric workspace, or connect to an external database with Azure Data Explorer by providing a cluster URI, database, and credentials.
-
-1. Next, select your **KQL Database** connection. If you select a workspace data store you can use dynamic content to parameterize the database selection by selecting the **Add dynamic content** option that appears in the dropdown.
+1. Select the **Settings** tab, and then select your **KQL Database** connection from the dropdown, or create a new one. If you select a workspace data store you can use dynamic content to parameterize the database selection by selecting the **Add dynamic content** option that appears in the dropdown.
 
 1. Then provide a KQL query to execute against the selected database for the **Command** property. You can use dynamic content in the query by selecting the **Add dynamic content** link that appears when the text box is selected.
 

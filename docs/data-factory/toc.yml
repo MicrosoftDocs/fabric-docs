@@ -327,6 +327,10 @@
           href: format-excel.md
         - name: Configure in Dataflow Gen2
           href: connector-excel-dataflows.md
+      - name: Iceberg
+        items:
+        - name: Configure in Data pipeline
+          href: format-iceberg.md      
       - name: JSON
         items:
         - name: Configure in Data pipeline
@@ -661,6 +665,8 @@
         href: webhook-activity.md
     - name: Concepts
       items:
+      - name: CI/CD for data pipelines
+        href: cicd-pipelines.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Parameterization

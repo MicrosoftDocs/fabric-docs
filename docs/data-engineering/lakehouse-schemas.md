@@ -83,7 +83,6 @@ Below listed unsupported features/functionalities are for current release of pub
 | Public API	| Public APIs (List tables, Load table, exposing defaultSchema extended property etc.) aren't supported for schema enabled Lakehouse. Existing public APIs called on a schema enabled Lakehouse results an error. |
 | Table maintenance	| Not supported. |
 | Update table properties	 | Not supported. |
-| Spark 3.5	| Spark 3.5 runtime isn't supported |
 | Workspace name containing special characters	| Workspace with special characters (for example, space, slashes) isn't supported. A user error is shown. |
 | Spark views | Not supported. |
 | Hive specific features | Not supported. |
