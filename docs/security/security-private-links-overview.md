@@ -155,6 +155,8 @@ There are several considerations to keep in mind while working with private endp
 
 * **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway doesn't work properly when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links. A potential workaround is to disable the **Azure Private Link** tenant setting, configure the gateway in a remote region (a region other than the recommended region), then re-enable Azure Private Link. After Private Link is re-enabled, the gateway in the remote region won't use private links. However, we don't provide support for this scenario.
 
+* Private Links will not work with VNet Data Gateway download diagnostics.
+
 * Private links resource REST APIs don't support tags.
 
 * The following URLs must be accessible from the client browser:
