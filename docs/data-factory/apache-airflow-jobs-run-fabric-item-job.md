@@ -33,6 +33,9 @@ To get started, you must complete the following prerequisites:
 - Tenant level admin account must enable the setting 'Allow user consent for apps'. Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
   :::image type="content" source="media/apache-airflow-jobs/user-consent.png" lightbox="media/apache-airflow-jobs/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
 
+- Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
+:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to enable user consent in tenant.":::
+
 - Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
 
 - Enable the Triggerers in data workflows to allow the usage of deferrable operators.
