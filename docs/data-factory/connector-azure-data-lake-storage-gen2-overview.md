@@ -27,7 +27,7 @@ The Azure Data Lake Storage Gen2 connector supports the following capabilities i
 | --- | --- | ---|
 | **Copy activity (Source/Destination)** | None <br> On-premises | Account Key<br/>Organizational account<br/>Shared Access Signature (SAS)<br/>Service principal<br/>Workspace Identity |
 | **Lookup activity** | None <br> On-premises | Account Key<br/>Organizational account<br/>Shared Access Signature (SAS)<br/>Service principal<br/>Workspace Identity  |
-| **GetMetadata activity** | None <br> On-premises | Account Key<br/>Organizational account<br/>Shared Access Signature (SAS)<br/>Service principal<br/>Workspace Identity  |
+| **Get Metadata activity** | None <br> On-premises | Account Key<br/>Organizational account<br/>Shared Access Signature (SAS)<br/>Service principal<br/>Workspace Identity  |
 | **Delete data activity** | None <br> On-premises | Account Key<br/>Organizational account<br/>Shared Access Signature (SAS)<br/>Service principal<br/>Workspace Identity |
 
 To learn about how to connect to Azure Data Lake Storage Gen2 in Data pipeline, go to [Set up your Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md#set-up-your-connection-in-a-data-pipeline).
