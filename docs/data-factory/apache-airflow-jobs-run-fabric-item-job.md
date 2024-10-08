@@ -34,7 +34,7 @@ To get started, you must complete the following prerequisites:
   :::image type="content" source="media/apache-airflow-jobs/user-consent.png" lightbox="media/apache-airflow-jobs/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
 
 - Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
-:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to enable user consent in tenant.":::
+:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service prinicpal as a contributor.":::
 
 - Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
 
@@ -123,7 +123,7 @@ Create a new file in the `plugins` folder with the following content:
 
 1. Go to the Airflow UI and select the DAG you created.
 
-2. If you add the plugin, you will see an external monitoring link. Click on it to navigate to the item run.
+2. If you add the plugin, you'll see an external monitoring link. Click on it to navigate to the item run.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" alt-text="Screenshot to view Apache Airflow DAGs with external link.":::
 
 3. Xcom Integration: Trigger the DAG to view task outputs in the Xcom tab.
