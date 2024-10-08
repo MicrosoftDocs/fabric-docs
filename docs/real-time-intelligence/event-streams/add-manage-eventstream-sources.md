@@ -28,7 +28,7 @@ Eventstream not only allows you to stream data from Microsoft sources, but also 
 
 In this article, you learn about the event sources that you can add to an eventstream with enhanced capabilities that are in preview.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 
 ## Prerequisites

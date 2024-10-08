@@ -15,7 +15,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add Fabric workspace item event source to an eventstream.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 [!INCLUDE [consume-fabric-events-regions](../../real-time-hub/includes/consume-fabric-events-regions.md)]
 

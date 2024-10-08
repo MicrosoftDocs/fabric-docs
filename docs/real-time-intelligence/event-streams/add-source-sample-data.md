@@ -25,7 +25,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

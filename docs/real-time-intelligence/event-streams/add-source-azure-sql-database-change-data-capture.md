@@ -5,19 +5,15 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 05/23/2024
+ms.date: 11/19/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Azure SQL Database CDC source to an eventstream (preview)
+# Add Azure SQL Database CDC source to an eventstream
 
 This article shows you how to add an Azure SQL Database Change Data Capture (CDC) source to an eventstream.
 
 The Azure SQL Database CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
-
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 

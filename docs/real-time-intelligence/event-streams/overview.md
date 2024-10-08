@@ -17,7 +17,7 @@ The event streams feature in the Microsoft Fabric **Real-Time Intelligence** exp
 ## Bring events into Fabric
 The event streams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an eventstream. 
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 # [Enhanced capabilities](#tab/enhancedcapabilities)
 

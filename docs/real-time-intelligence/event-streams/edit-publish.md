@@ -15,7 +15,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to edit and publish a Microsoft Fabric eventstream.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 ## Edit mode and Live view
 

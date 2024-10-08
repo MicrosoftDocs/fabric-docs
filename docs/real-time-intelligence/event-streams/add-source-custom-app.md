@@ -26,7 +26,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)] 
+ 
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
