@@ -45,4 +45,4 @@ Workspace monitoring supports items from the following Fabric workloads:
 
 * [Microsoft Fabric licenses](../enterprise/licenses.md)
 
-* [About tenant settings](about-tenant-settings.md)
+* [About tenant settings](../adminabout-tenant-settings.md)

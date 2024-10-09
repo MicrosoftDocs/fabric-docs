@@ -37,4 +37,4 @@ Follow these steps to enable monitoring in your workspace:
 
 * [Microsoft Fabric licenses](../enterprise/licenses.md)
 
-* [About tenant settings](about-tenant-settings.md)
+* [About tenant settings](../admin/about-tenant-settings.md)
