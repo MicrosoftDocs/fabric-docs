@@ -65,7 +65,7 @@ items:
   items:
   - name: Fabric and OneLake data security
     href: ./security/fabric-onelake-security.md
-  - name: OneLake Data Access Control Model
+  - name: OneLake data access control model
     href: ./security/data-access-control-model.md
   - name: Get started with securing data in OneLake
     items:
