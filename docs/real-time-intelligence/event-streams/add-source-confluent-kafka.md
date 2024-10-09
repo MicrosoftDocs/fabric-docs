@@ -46,6 +46,9 @@ After you complete these steps, the Confluent Cloud Kafka source is available fo
 
 :::image type="content" source="./media/add-source-confluent-kafka/live-view.png" alt-text="Screenshot that shows Confluent Kafka source in Live view." lightbox="./media/add-source-confluent-kafka/live-view.png":::
 
+## Limitations
+
+* Confluent Kafka with JSON and Avro formats, using schema registry, is not currently supported.
 
 ## Related content
 
