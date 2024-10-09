@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 03/10/2024
+ms.date: 11/19/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -160,6 +160,11 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 The Real-Time Intelligence experience contains operations for [Event streams](#event-streams) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Event Operations | Data ingress, advanced filtering, and egress charges | Multiple | Real-Time Intelligence - Event Operations         | Background |
+| Event Listener   | Uptime charge for event listeners                    | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
+
 #### Event streams
 
 You can find the consumption rates for Event streams in [Monitor capacity consumption for Microsoft Fabric event streams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
@@ -195,9 +200,6 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job scheduled run | Synapse batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job pipeline run  | Synapse batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Synapse Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
-
-
-
 
 ## Related content
 
