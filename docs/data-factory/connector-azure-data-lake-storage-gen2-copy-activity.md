@@ -21,6 +21,7 @@ Azure Data Lake Storage Gen2 supports the following file formats. Refer to each 
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
+- [Iceberg format](format-iceberg.md)
 - [JSON format](format-json.md)
 - [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
