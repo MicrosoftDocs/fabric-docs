@@ -43,11 +43,11 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Web activity settings
 
-1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
    :::image type="content" source="media/webhook-activity/choose-web-connection-and-configure.png" alt-text="Screenshot showing the WebHook activity settings tab highlighting the tab, and where to choose a new connection.":::
 
-1. When you choose **+ New** to create a new connection, you see the connection creation dialog where you can provide the base URL and credentials to connect.
+1. When you create a new connection, you see the connection creation dialog where you can provide the base URL and credentials to connect.
 
    :::image type="content" source="media/webhook-activity/create-new-connection.png" alt-text="Screenshot showing the new connection dialog for the WebHook activity.":::
 
