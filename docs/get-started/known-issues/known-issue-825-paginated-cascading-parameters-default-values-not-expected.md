@@ -4,7 +4,7 @@ description: A known issue is posted where Paginated report cascading parameters
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/04/2024
+ms.date: 10/09/2024
 ms.custom: known-issue-825
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-825
 
 You can configure paginated report parameters as cascading parameters with default values. The default values of the cascading parameter's children aren't getting set as expected when the parent parameter changes.
 
-**Status:** Open
+**Status:** Fixed: October 9, 2024
 
 **Product Experience:** Power BI
 
