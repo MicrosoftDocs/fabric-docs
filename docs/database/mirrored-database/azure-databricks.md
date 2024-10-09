@@ -15,7 +15,9 @@ Many organizations today register their data in Unity Catalog within Azure Datab
 
 For a tutorial on configuring your Azure Databricks Workspace for mirroring the Unity Catalog into Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md).
 
-[Mirrored databases in Fabric](overview.md) allow users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. You can enjoy an easy-to-use product designed to simplify your analytics needs and built for openness and collaboration between Microsoft Fabric and Azure Databricks,
+[Mirrored databases in Fabric](overview.md) allow users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. You can enjoy an easy-to-use product designed to simplify your analytics needs and built for openness and collaboration between Microsoft Fabric and Azure Databricks.
+
+When you use Fabric to read data that is registered in Unity Catalog, it is important to understand that there is no data movement or data replication. Only the Azure Databricks catalog structure is mirrored to Fabric and the underlying catalog data is accessed through shortcuts. Hence any changes in data are reflected immediately in Fabric.
 
 ## What analytics experiences are built in
 
