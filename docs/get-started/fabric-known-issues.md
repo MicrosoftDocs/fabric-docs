@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/03/2024
+ms.date: 10/09/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](known-issues/known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
 |  872  | Data Warehouse | [Data warehouses don't show button friendly names](known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 |
 |  865  | Power BI | [Configure workspace storage to use ADLS Gen2 storage account doesn't work](known-issues/known-issue-865-configure-workspace-storage-adls-gen2-not-work.md) | October 3, 2024 |
 |  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 |
@@ -31,15 +32,12 @@ Select the **Title** to view more information about that specific known issue.
 |  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](known-issues/known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 |
-|  850  | Power BI | [PostgreSQL data source connections additions or updates fail](known-issues/known-issue-850-postgresql-connections-additions-updates-fail.md) | September 23, 2024 |
 |  842  | Data Warehouse | [Data warehouse exports using deployment pipelines or git fail](known-issues/known-issue-842-warehouse-exports-pipelines-fail.md) | September 23, 2024 |
 |  846  | OneLake | [OneLake BCDR write transactions aren't categorized correctly for billing](known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) | September 17, 2024 |
-|  839  | Power BI | [Dynamics 365 Business Central connector causes refresh failures](known-issues/known-issue-839-dynamics-365-business-central-connector-causes-failures.md) | September 17, 2024 |
 |  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 |
 |  836  | Power BI | [Copilot in DAX query view returns DAX query with syntax error](known-issues/known-issue-836-copilot-dax-query-view-returns-dax-query-error.md) | September 13, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](known-issues/known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
 |  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 |
-|  825  | Power BI | [Paginated report cascading parameters with default values aren't set as expected](known-issues/known-issue-825-paginated-cascading-parameters-default-values-not-expected.md) | September 4, 2024 |
 |  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 |
 |  822  | Data Warehouse | [SQL queries fail intermittently](known-issues/known-issue-822-sql-queries-fail-intermittently.md) | August 28, 2024 |
 |  821  | Data Warehouse | [Schema refresh for a data warehouse's semantic model fails](known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md) | August 28, 2024 |
@@ -56,7 +54,6 @@ Select the **Title** to view more information about that specific known issue.
 |  797  | Data Engineering | [Localization blocks operations in a lakehouse](known-issues/known-issue-797-localization-blocks-operations-lakehouse.md) | July 31, 2024 |
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
 |  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
-|  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
 |  770  | Data Warehouse | [Data warehouse connection or query execution fails](known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md) | July 3, 2024 |
 |  769  | Data Factory | [Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines](known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
@@ -95,6 +92,10 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  850  | Power BI | [PostgreSQL data source connections additions or updates fail](known-issues/known-issue-850-postgresql-connections-additions-updates-fail.md) | September 23, 2024 | Fixed: October 9, 2024 |
+|  839  | Power BI | [Dynamics 365 Business Central connector causes refresh failures](known-issues/known-issue-839-dynamics-365-business-central-connector-causes-failures.md) | September 17, 2024 | Fixed: October 9, 2024 |
+|  825  | Power BI | [Paginated report cascading parameters with default values aren't set as expected](known-issues/known-issue-825-paginated-cascading-parameters-default-values-not-expected.md) | September 4, 2024 | Fixed: October 9, 2024 |
+|  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 | Fixed: October 9, 2024 |
 |  708  | Data Warehouse | [SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 | Fixed: October 3, 2024 |
 |  840  | Power BI | [Excel enterprise data types feature experiences issues](known-issues/known-issue-840-excel-enterprise-data-types-feature-experiences-issues.md) | September 17, 2024 | Fixed: September 26, 2024 |
 |  657  | OneLake | [Cross-region internal shortcuts don't work with SQL analytics endpoints](known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md) | March 28, 2024 | Fixed: September 25, 2024 |
@@ -109,13 +110,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  814  | Power BI | [Scorecard dropdown slicers aren't visible when filtering](known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md) | August 19, 2024 | Fixed: August 28, 2024 |
 |  784  | Data Activator | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 | Fixed: August 28, 2024 |
 |  722  | Data Warehouse | [Delta tables don't appear in SQL Analytics Endpoint Object Explorer](known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md) | May 16, 2024 | Fixed: August 28, 2024 |
-|  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 | Fixed: August 23, 2024 |
-|  740  | Real-Time Intelligence | [Eventstreams paused for more than two hours don't show data](known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md) | June 11, 2024 | Fixed: August 23, 2024 |
-|  736  | Real-Time Intelligence | [Previous Eventstream UX loads instead of new UX](known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md) | June 6, 2024 | Fixed: August 23, 2024 |
-|  734  | Real-Time Intelligence | [Custom endpoint or Reflex destination on derived stream keeps loading](known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md) | June 6, 2024 | Fixed: August 23, 2024 |
-|  733  | Real-Time Intelligence | [Sample data doesn't flow after destination later added into eventstream](known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md) | June 6, 2024 | Fixed: August 23, 2024 |
-|  730  | Real-Time Intelligence | [Real-Time hub **Set alert** doesn't work for derived streams](known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md) | May 29, 2024 | Fixed: August 23, 2024 |
-|  729  | Real-Time Intelligence | [Opening a reflex for a stream in Real-Time hub doesn't work](known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md) | May 29, 2024 | Fixed: August 23, 2024 |
 
 ## Related content
 
