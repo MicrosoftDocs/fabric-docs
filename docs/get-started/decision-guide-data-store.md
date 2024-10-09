@@ -20,7 +20,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 
 ## Data store properties
 
-This table compares data stores such as warehouse, lakehouse, Power BI datamart, and eventhouse based on data volume, type, developer persona, skill set, operations. and other capabilities.
+This table compares data stores such as warehouse, lakehouse, Power BI datamart, and Eventhouse based on data volume, type, developer persona, skill set, operations. and other capabilities.
 
 | | **Warehouse** | **Lakehouse** | **Power BI Datamart**  | **Eventhouse** |
 |---|:---:|:---:|:---:|:---:|
