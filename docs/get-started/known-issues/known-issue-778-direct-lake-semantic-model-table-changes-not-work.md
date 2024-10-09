@@ -4,7 +4,7 @@ description: A known issue is posted where Direct Lake semantic model table chan
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/16/2024
+ms.date: 10/09/2024
 ms.custom: known-issue-778
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-778
 
 When editing a semantic model in Direct Lake mode, you can add or remove tables by going to **Edit tables** button in the ribbon. In the **Edit tables** screen, when you select **Confirm**, your changes aren't saved. You need to open the **Edit tables** screen and select **Confirm** again for the changes to get applied.
 
-**Status:** Open
+**Status:** Fixed: October 9, 2024
 
 **Product Experience:** Power BI
 
