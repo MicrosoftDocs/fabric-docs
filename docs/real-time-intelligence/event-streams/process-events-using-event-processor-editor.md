@@ -264,7 +264,7 @@ In time-streaming scenarios, performing operations on the data contained in temp
 
 The **Manage fields** transformation allows you to add, remove, change data type, or rename fields coming in from an input or another transformation. The side pane settings give you the option of adding a new field by selecting **Add field**, adding multiple fields, or adding all fields at once. 
 
-:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage field operator available in the event processor editor." :::
+:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage fields operator available in the event processor editor." :::
 
 Furthermore, you can add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**. To find them, search on "built-in.")
 
