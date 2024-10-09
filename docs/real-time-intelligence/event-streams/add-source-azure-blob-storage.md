@@ -34,7 +34,7 @@ Fabric event streams supports the following Blob Storage event types:
 
 For more details about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 > [!NOTE]
 > This source is **not supported** in the following regions of your workspace capacity: Germany West Central, South-Central US, West US2, West US3, West India. 
@@ -64,7 +64,7 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
 ## Add Azure Blob Storage events as source
 
-1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

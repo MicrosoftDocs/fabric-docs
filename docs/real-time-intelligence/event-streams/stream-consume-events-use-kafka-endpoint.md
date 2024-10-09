@@ -42,7 +42,7 @@ You can create an eventstream from the **Workspace page** or the **Create hub** 
   
       <img src="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" width="900" alt="Screenshot showing the Eventstream tile on the Create hub page.">
 
-2. Enter a **name** for the new eventstream and select **Enhanced Capabilities (preview)** checkbox, and then select **Create**. 
+2. Enter a **name** for the new eventstream and select **Enhanced capabilities** checkbox, and then select **Create**. 
 
     
    <img src="media/stream-consume-events-using-kafka-endpoint/create-esv2-kafka-endpoint.png" width="500" alt="A screenshot showing select Enhanced Capabilities.">

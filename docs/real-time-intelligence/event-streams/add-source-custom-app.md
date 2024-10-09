@@ -26,7 +26,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)] 
+ 
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -34,7 +34,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
 Follow these steps to add a custom endpoint source:
 
-1. To create a new eventstream, select **Eventstream** from the **Home** screen. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. To create a new eventstream, select **Eventstream** from the **Home** screen. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

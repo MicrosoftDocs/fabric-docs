@@ -15,7 +15,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to edit and publish a Microsoft Fabric eventstream.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 ## Edit mode and Live view
 
@@ -39,7 +39,7 @@ Here's an overview of everything you find in the two different modes:
 
 ## Create a new eventstream
 
-1. Switch your Power BI experience to **Real-Time Intelligence** and select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. Switch your Power BI experience to **Real-Time Intelligence** and select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/edit-publish/new.png)
 

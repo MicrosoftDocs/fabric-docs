@@ -5,17 +5,15 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 09/02/2024
+ms.date: 10/08/2024
 ms.search.form: Source and Destination
 ---
 
-# Add SQL Server on VM  DB (CDC) source to an eventstream (preview) 
+# Add SQL Server on VM  DB (CDC) source to an eventstream
 
 This article shows you how to add a SQL Server on VM DB CDC source to an eventstream. 
 
 The SQL Server on VM DB (CDC) source connector for Fabric event streams allows you to capture a snapshot of the current data in a SQL Server database on VM. The connector then monitors and records any future row-level changes to the data. Once these changes are captured in the event stream, you can process this data in real-time and send it to various destinations for further processing or analysis. 
-
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
@@ -52,7 +50,7 @@ The SQL Server on VM DB (CDC) source connector for Fabric event streams allows
    
 ## Add SQL Server on VM database as a source 
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

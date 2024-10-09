@@ -17,7 +17,7 @@ This article shows you how to create default and derived Microsoft Fabric events
 
 The integration of the Real-Time hub feature within Fabric event streams further enhances these capabilities. This integration lets you create and manage multiple data streams with different processing operations, which can then be displayed in the Real-Time hub.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 ## Concepts
 
