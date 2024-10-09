@@ -384,7 +384,7 @@ This table summarizes the actions you can take in the details section.
 | Data Engineering/Science Settings    | Allow workspace admins to set the size of their spark [pools](../data-engineering/workspace-admin-settings.md#pool) |
 | Workspaces assigned to this capacity | <sup>*</sup>Add or remove workspaces assigned to the capacity |
 
-<sup>*</sup> To assign a workspace to a Fabric capacity or a capacity with an A SKU, you need to have a contributor [workspace role](../get-started/roles-workspaces.md).
+<sup>*</sup> To assign a workspace to a Fabric capacity or a capacity with an A SKU, you need to have a capacity contributor role, and a workspace admin role.
 
 ### Delegated tenant settings
 
