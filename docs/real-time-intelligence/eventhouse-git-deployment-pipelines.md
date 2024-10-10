@@ -22,8 +22,8 @@ In this article, you learn about the configuration options available through Mic
 
 The eventhouse and KQL database are items that contain both metadata and data that are referenced in multiple objects in the workspace. Eventhouse and KQL database contain tables, functions, and materialized views. From a development workflow perspective, the following dependent objects might reference an eventhouse or KQL database:
 
-- [Spark Job Definitions](spark-job-definition.md)
-- [Notebooks](how-to-use-notebook.md)
+- [Spark Job Definitions](../data-engineering/create-spark-job-definition.md)
+- [Notebooks](../data-engineering/how-to-use-notebook.md)
 - Semantic models and Power BI
 
 The git integration applies at the platform and data level for eventhouses and KQL databases.
@@ -152,7 +152,7 @@ The following files are contained in an KQL database folder:
 
     | Database object | Supported commands |
     |--|--|
-    | Table | [Create or merge](/kusto/management/create-merge-table-comman?view=microsoft-fabric&preserve-view=true) |
+    | Table | [Create or merge](/kusto/management/create-merge-table-command?view=microsoft-fabric&preserve-view=true) |
     | Function | [Create or alter](/kusto/management/create-alter-function?view=microsoft-fabric&preserve-view=true) |
     | Table policy update | [Alter](/kusto/management/alter-table-update-policy-command?view=microsoft-fabric&preserve-view=true) |
     | Column encoding policy | [Alter](/kusto/management/alter-encoding-policy?view=microsoft-fabric&preserve-view=true) |
