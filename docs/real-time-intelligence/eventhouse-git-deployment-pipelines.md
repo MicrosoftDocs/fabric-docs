@@ -161,7 +161,7 @@ The following files are contained in an KQL database folder:
 
     The following is an example of a kql script to create a table and its ingestion mapping.
 
-    ```kql
+    ```kusto
     // KQL script
     // Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
 
