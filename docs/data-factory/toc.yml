@@ -939,6 +939,8 @@
       href: pipeline-troubleshoot-guide.md
     - name: Connectors
       items:
+      - name: Connector troubleshooting guide
+        href: connector-troubleshoot-guide.md
       - name: Azure Data Explorer
         href: connector-troubleshoot-azure-data-explorer.md
       - name: Azure Database for PostgreSQL
