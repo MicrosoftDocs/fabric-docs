@@ -87,11 +87,9 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 ### Add a scope for CRUD/jobs
 
-To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and two dedicated Fabric applications to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
+To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and a dedicated Fabric application to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
 
 * Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
-
-* Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
 
 * Under **Authorized client applications**, select **Add a client application**. Add `d2450708-699c-41e3-8077-b0c8341509aa` (Fabric client for workloads application) and select your scope.
 
