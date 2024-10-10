@@ -53,7 +53,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
     "nbf": 1700047232,
     "exp": 1700133932,
     "aio": "E2VgYLjBuv2l+c6cmm/iP/bnL2v+AQA=",
-    "appid": "00000009-0000-0000-c000-000000000000", // or "d2450708-699c-41e3-8077-b0c8341509aa"
+    "appid": "d2450708-699c-41e3-8077-b0c8341509aa"
     "appidacr": "2",
     "idp": "https://sts.windows.net/12345678-77f3-4fcc-bdaa-487b920cb7ee/",
     "idtyp": "app",
@@ -82,7 +82,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
     "amr": [
         "pwd"
     ],
-    "appid": "00000009-0000-0000-c000-000000000000", // or "d2450708-699c-41e3-8077-b0c8341509aa"
+    "appid": "d2450708-699c-41e3-8077-b0c8341509aa"
     "appidacr": "2",
     "ipaddr": "46.117.19.50",
     "name": "john doe",
