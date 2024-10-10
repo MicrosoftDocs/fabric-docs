@@ -62,7 +62,7 @@ Possible custom pool configurations for F64 based on the previous example:
 
 > [!NOTE]
 > To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md)
-
+> The Spark VCores above includes the maximum allowed by the bursting.
 ## Nodes
 
 An Apache Spark pool instance consists of one head node and worker nodes, could start a minimum of one node in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Apache Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Apache Spark Executor service.
