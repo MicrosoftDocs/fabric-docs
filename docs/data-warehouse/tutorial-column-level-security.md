@@ -4,9 +4,7 @@ description: A guide to use column-level security in Fabric data warehousing.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 07/26/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -55,7 +53,7 @@ Before you begin, make sure you have the following:
     ```sql
     SELECT * FROM YourSchema.YourTable;
     ```
-1. Similar results for the user will be filtered with other applications that use Microsoft Entra authentication for database access.
+1. Similar results for the user will be filtered with other applications that use Microsoft Entra authentication for database access. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 ## 4. Monitor and maintain column-level security
 

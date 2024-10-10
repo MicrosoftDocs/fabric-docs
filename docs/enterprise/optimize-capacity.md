@@ -1,12 +1,12 @@
 ---
 title: "Evaluate and optimize your Microsoft Fabric capacity"
 description: "This article explains how to evaluate and optimize the load on your Microsoft Fabric capacities."
-author: peter-myers
-ms.author: v-myerspeter
-ms.reviewer: kesharab, pmahoney, pvenkat, alpowers, seanmirabile, scbradl, gilherau
+author: KesemSharabi
+ms.author: kesharab
+ms.reviewer: v-myerspeter, pmahoney, pvenkat, alpowers, seanmirabile, scbradl, gilherau
 ms.topic: how-to
 ms.custom: fabric-cat, build-2024
-ms.date: 03/23/2024
+ms.date: 07/30/2024
 ---
 
 # Evaluate and optimize your Microsoft Fabric capacity
@@ -31,7 +31,7 @@ Planning the size of a capacity can be a challenge. That's because the required 
 To help you determine the right capacity size, you can provision [trial capacities](../get-started/fabric-trial.md) or [pay-as-you-go F SKUs](buy-subscription.md#azure-skus) to measure the actual capacity size required before purchasing an F SKU reserved instance.
 
 > [!TIP]
-> It's always a good strategy to start small and then gradually increase the size as necessary.
+> It's always a good strategy to start small and then gradually increase the size of your capacity as necessary.
 
 ## Monitor capacities
 

@@ -63,7 +63,7 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
 1. Select **New high concurrency session**.
 
-1. Once the high concurrency session has started, you could now add upto 10 notebooks in the high concurrency session.
+1. Once the high concurrency session has started, you could now add upto 5 notebooks in the high concurrency session.
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png" alt-text="Screenshot showing the option to start a new high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png":::
 

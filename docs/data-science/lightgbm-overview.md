@@ -5,9 +5,10 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: ssalgado
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: jessiwang
+reviewer: JessicaXYWang
 ms.date: 06/25/2024
 ---
 # Overview of LightGBM in SynapseML

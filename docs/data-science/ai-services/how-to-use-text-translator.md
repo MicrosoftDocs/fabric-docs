@@ -1,9 +1,10 @@
 ---
 title: Use Azure AI Translator with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
-ms.reviewer: ssalgado
-ms.author: ruxu
-author: ruixinxu
+ms.author: larryfr
+author: Blackmist
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -146,7 +147,6 @@ display(result.select("text", "translation"))
 
 # [Rest API](#tab/rest)
 
-
 Transliteration is the process of converting a word or phrase from the script (alphabet) of one language to another based on phonetic similarity.
 
 
@@ -203,8 +203,10 @@ display(result.select("text", "script"))
 
 ---
 
-
 ## Supported Languages Retrieval
+
+# [Rest API](#tab/rest)
+
 
 Gets a list of languages supported by the operations of Translator.
 
@@ -219,6 +221,11 @@ response = requests.get(service_url, headers=post_headers)
 printresponse(response)
 ```
 
+# [SynapseML](#tab/synapseml)
+
+No steps for SynapseML in this section.
+
+---
 
 ## Related content
 

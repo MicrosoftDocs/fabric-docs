@@ -1,8 +1,8 @@
 ---
 title: Upload and manage a workload (preview)
 description: How to deploy and manage a workload solution in the Fabric service to improve performance and user engagement.
-author: mberdugo
-ms.author: monaberdugo
+author: KesemSharabi
+ms.author: kesharab
 ms.service: fabric
 ms.topic: how-to
 ms.date: 05/21/2024
@@ -20,6 +20,9 @@ Before you can deploy a workload, you must have the following prerequisites:
 
 * A Fabric account with the *Admin* permissions.
 * The [NuGet package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [QuickStart: Run a workload sample](quickstart-sample.md).
+
+> [!NOTE]
+> When a DevGateway is connected to Fabric backend, the developer workload takes precedence over the workload activated in the tenant. If you try to create an item in a workspace associated with the same capacity as the one registered in the DevGateway configuration, Fabric backend calls your local workload instead of the activated one. 
 
 ## Upload a workload
 

@@ -1,15 +1,16 @@
 ---
-title: "Implement medallion lakehouse architecture in Microsoft Fabric"
-description: "Learn how you can implement a lakehouse in Microsoft Fabric."
-author: peter-myers
-ms.author: v-myerspeter
-ms.reviewer: wiassaf, arali
-ms.topic: conceptual
+title: "Implement medallion lakehouse architecture in Fabric"
+description: Understand medallion lakehouse architecture in Microsoft Fabric and learn how to implement a lakehouse.
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: v-myerspeter, wiassaf, arali
+ms.topic: concept-article
 ms.date: 11/15/2023
 ms.custom:
   - fabric-cat
   - ignite-2023
   - ignite-2023-fabric
+#customer intent: As a data engineer, I want to understand medallion lakehouse architecture and learn how to implement a lakehouse so that I can optimally structure and store my organization's data.
 ---
 
 # Implement medallion lakehouse architecture in Microsoft Fabric
@@ -24,7 +25,7 @@ The [medallion lakehouse architecture](/azure/databricks/lakehouse/medallion), c
 
 Medallion architecture comprises three distinct layers—or zones. Each layer indicates the quality of data stored in the lakehouse, with higher levels representing higher quality. This multi-layered approach helps you to build a single source of truth for enterprise data products.
 
-Importantly, medallion architecture guarantees the ACID set of properties (Atomicity, Consistency, Isolation, and Durability) as data progresses through the layers. Starting with raw data, a series of validations and transformations prepares data that's optimized for efficient analytics. There are three medallion stages: bronze (raw), silver (validated), and gold (enriched).
+Importantly, medallion architecture guarantees the Atomicity, Consistency, Isolation, and Durability (ACID) set of properties as data progresses through the layers. Starting with raw data, a series of validations and transformations prepares data that's optimized for efficient analytics. There are three medallion stages: bronze (raw), silver (validated), and gold (enriched).
 
 For more information, see [What is the medallion lakehouse architecture?](/azure/databricks/lakehouse/medallion).
 
@@ -89,7 +90,7 @@ Medallion architecture consists of three distinct layers (or zones).
 > [!IMPORTANT]
 > Because a Fabric lakehouse represents a single zone, you create one lakehouse for each of the three zones.
 
-:::image type="content" source="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png" alt-text="Diagram of an example of OneLake medallion architecture that shows data sources, prepare and transform with bronze, silver, and gold layers, and analyzing with the SQL analytics endpoint and Power BI." border="false":::
+:::image type="content" source="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png" alt-text="Diagram of OneLake medallion architecture that shows data sources, prepare and transform with three layers, and analysis with SQL and Power BI." border="false":::
 
 In a typical medallion architecture implementation in Fabric, the bronze zone stores the data in the same format as the data source. When the data source is a relational database, Delta tables are a good choice. The silver and gold zones contain Delta tables.
 

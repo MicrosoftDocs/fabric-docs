@@ -1,9 +1,8 @@
 ---
 title: Quick start - Run a sample workload (preview)
 description: Create a Microsoft Fabric workload using a sample workload and the instructions in this quickstart tutorial.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: quickstart  #Don't change
 ms.custom:
 ms.date: 05/21/2024
@@ -21,6 +20,8 @@ Before you begin, ensure that you have the following installed on your system:
 * Access to a Fabric tenant with the workload feature and developer mode enabled. See [Introducing workloads](./workload-environment.md) for more information.
 * [Node.js](https://nodejs.org).
 * [npm](https://www.npmjs.com/).
+* [.NET 6.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer?cid=getdotnetcore).
+* [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer?cid=getdotnetcore).
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/).
 * [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516)
 
@@ -40,7 +41,7 @@ Configure the admin portal as follows:
 
 ### Set up the sample project
 
-1. **Clone the repository**: Clone the repository found here: https://go.microsoft.com/fwlink/?linkid=2272254
+1. **Clone the repository**: Clone the repository found here: [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254)
 
 1. **Install dependencies**: Navigate to the `Frontend` directory in the cloned repository and execute the following command:
 
@@ -66,15 +67,15 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 
 ### Prepare the development environment
 
-1. **Clone the boilerplate**: Clone the boilerplate project found here: https://go.microsoft.com/fwlink/?linkid=2272254
+1. **Clone the boilerplate**: Clone the boilerplate project found here: [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254)
 
 1. **Open the solution**: Open the solution in Visual Studio *2022* to ensure compatibility with net7.
 
 1. **App registration**: Follow the authentication guide to set up Microsoft Entry ID authentication for secure interactions within the architecture.
 
-1. **Update OneLake DFS base URL**: Modify the `OneLakeDFSBaseURL` file in the `src\Constants\` folder to match your environment.
+1. **Update OneLake DFS base URL**: Modify the `EnvironmentConstants.cs` file in the `src/Constants/` folder to match your environment.
 
-1. **Configure workload settings**: Update `workload-dev-mode.json` and `src/appsettings.json` with your specific configuration details:
+1. **Configure workload settings**: Update `src/Config/workload-dev-mode.json` and `src/appsettings.json` with your specific configuration details:
 
     * Copy *workload-dev-mode.json* from src/Config to `C:\` and update the following fields to match your configuration:
 
@@ -85,7 +86,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
       * *ManifestPackageFilePath*: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in the later steps.
       * *WorkloadEndpointURL*: Workload endpoint URL.
 
-   * In the src/appsettings.json file, update the following fields to match your configuration:\
+   * In the src/appsettings.json file, update the following fields to match your configuration:
 
       * *PublisherTenantId*: The ID of the workload publisher tenant.
       * *ClientId*: Client ID (AppID) of the workload Microsoft Entra application.

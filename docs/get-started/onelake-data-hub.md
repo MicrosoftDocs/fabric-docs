@@ -15,6 +15,11 @@ ms.custom:
 
 The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them.
 
+Data items are items that store data, such as lakehouses, warehouses, and semantic models.
+
+> [!NOTE]
+> Dataflows aren't considered data items, and thus they aren't listed in the OneLake data hub and can't be found there.
+
 The data hub provides:
 
 * [A filterable list of all the data items you can access](#find-items-in-the-data-items-list)

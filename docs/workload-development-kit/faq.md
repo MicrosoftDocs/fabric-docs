@@ -3,7 +3,6 @@ title: FAQ for workload certification  (preview)
 description: Learn how to certify and publish a workload with the Microsoft Fabric Workload Development Kit.
 author: KesemSharabi
 ms.author: kesharab
-ms.reviewer: gesaur
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024

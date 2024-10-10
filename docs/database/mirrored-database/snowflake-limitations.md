@@ -1,17 +1,14 @@
 ---
-title: "Limitations for Microsoft Fabric mirrored databases from Snowflake (preview)"
+title: "Limitations for Microsoft Fabric mirrored databases from Snowflake"
 description: Learn about the limitations of mirrored databases from Snowflake in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
-ms.date: 04/24/2024
-ms.service: fabric
+ms.date: 09/30/2024
 ms.topic: conceptual
-ms.custom:
-  - references_regions
 ---
 
-# Limitations in Microsoft Fabric mirrored databases from Snowflake (Preview)
+# Limitations in Microsoft Fabric mirrored databases from Snowflake
 
 Current limitations in the Microsoft Fabric mirrored databases from Snowflake are listed in this page. This page is subject to change.
 
@@ -40,57 +37,10 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 
 ### Fabric regions that support Mirroring
 
-The following are the Fabric regions that support Mirroring for Snowflake:
-
-:::row:::
-   :::column span="":::
-    **Asia Pacific**:
-
-    - Australia East
-    - Australia Southeast
-    - Central India
-    - East Asia
-    - Japan East
-    - Korea Central
-    - Southeast Asia
-    - South India
-   :::column-end:::
-   :::column span="":::
-   **Europe**
-
-    - North Europe
-    - West Europe
-    - France Central
-    - Germany West Central
-    - Norway East
-    - Sweden Central
-    - Switzerland North
-    - Switzerland West
-    - UK South
-    - UK West
-   :::column-end:::
-   :::column span="":::
-    **Americas**:
-
-    - Brazil South
-    - Canada Central
-    - Canada East
-    - East US
-    - East US2
-    - North Central US
-    - West US
-    - West US2
-   :::column-end:::
-   :::column span="":::
-    **Middle East and Africa**:
-
-    - South Africa North
-    - UAE North
-   :::column-end:::
-:::row-end:::
+Mirroring for Snowflake is available [everywhere that Fabric is available](../../admin/region-availability.md), except for **West US 3**.
 
 ## Related content
 
 - [What is Mirroring in Fabric?](overview.md)
-- [Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake.md)
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake-tutorial.md)
+- [Microsoft Fabric mirrored databases from Snowflake](snowflake.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](snowflake-tutorial.md)

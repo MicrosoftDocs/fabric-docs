@@ -3,16 +3,26 @@ title: "Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)
 description: Troubleshooting topics for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: imotiwala
-ms.date: 05/09/2024
-ms.service: fabric
+ms.reviewer: imotiwala, anagha-todalbagi
+ms.date: 09/23/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
 ---
 # Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)
 
-If you're experiencing mirroring problems, perform the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration. 
+## Changes to Fabric capacity or workspace
+
+| Cause    | Result | Recommended resolution     |
+|:--|:--|:--|
+| Fabric capacity paused/deleted | Mirroring will stop | 1. Resume or assign capacity from the Azure portal <br> 2. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**.<br> 3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
+| Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
+| Workspace deleted | Mirroring stops automatically | 1. If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
+| Fabric trial capacity expired |  Mirroring stops automatically | See [Fabric trial capacity expires](../../get-started/fabric-trial.md#the-trial-expires). |
+
+## T-SQL queries for troubleshooting
+
+If you're experiencing mirroring problems, perform the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration.
 
 1. Execute the following query to check if the changes properly flow:
 
@@ -29,7 +39,7 @@ If you're experiencing mirroring problems, perform the following database level 
 1. If there aren't any issues reported, execute the following stored procedure to review the current configuration of the mirrored Azure SQL Database. Confirm it was properly enabled.
 
     ```sql
-    exec sp_help_change_feed;
+    EXEC sp_help_change_feed;
     ```
 
     The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem.

@@ -1,9 +1,10 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a machine fault detection model'
 description: This tutorial shows the data engineering and data science workflow for building a system that predicts mechanical failures.
-ms.reviewer: lagayhar
-ms.author: amjafari
-author: amhjf
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: amjafari
+reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
   - build-2023

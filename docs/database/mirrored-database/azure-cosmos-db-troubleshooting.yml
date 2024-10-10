@@ -6,6 +6,7 @@ metadata:
   ms.author: sidandrews
   ms.reviewer: anithaa
   ms.service: fabric
+  ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 03/17/2024
 title: |
@@ -63,6 +64,7 @@ sections:
           First, follow general troubleshooting steps for Fabric mirrored databases. For more information, see [troubleshooting](troubleshooting.md).
 
           In most cases, the **Monitor replication** option can provide further detail indicating whether data is replicating to Fabric successfully. A common troubleshooting step is to check if the **last refreshed time** is recent. If the time isn't recent, stop and then restart replication as the next step.
+          Note, "last refreshed time" is only updated if the source database has changes since the time noted for replication. If the source database has no updates, deletes or inserts, "last refreshed time" will not be updated. 
       - question: |
           The "monitor replication" pane includes tables with no rows replicated after a significant amount of time. Is replication stuck?
         answer: |
@@ -86,7 +88,7 @@ sections:
       - question: |
           Why am I getting a "JSON text isn't properly formatted. Unexpected character '"' is found at position" error message when running T-SQL queries against my SQL analytics endpoint?
         answer: |
-          Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL endpoint warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+          Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL analytics endpoint or warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
       - question: |
           Why am I getting an "Invalid column name" error in the "monitor replication" pane?
         answer: |

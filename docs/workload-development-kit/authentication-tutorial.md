@@ -1,18 +1,19 @@
 ---
 title: Fabric Workload Development Kit authentication setup (preview)
 description: Learn how to set up the authorization for a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 05/21/2024
+ms.date: 07/14/2024
 ---
 
 # Authentication setup (preview)
 
-In order to be able to work with authentication, you need to set up its three component parts:
+> [!NOTE]  
+> To configure the following authentication settings in the setup guide, a Global Administrator role is required.
 
+In order to be able to work with authentication, you need to set up its three component parts:
 * [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
 * [Front-end sample](./extensibility-front-end.md)
 * [Back-end sample](./extensibility-back-end.md)
@@ -27,13 +28,13 @@ To make sure Azure Storage is provisioned in the tenant:
 
 1. Log into the [Azure portal](https://portal.azure.com)
 1. Go to **Microsoft Entra ID** > **Enterprise applications**
-1. In the filters, choose **application type = all aplications**. The application ID starts with e406a681-f3d4-42a8-90b6-c2b029497af1
+1. In the filters, choose **application type = all applications**. The application ID starts with e406a681-f3d4-42a8-90b6-c2b029497af1
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a tenant admin needs to provision it.
+If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a Global Administrator needs to provision it.
 
-Ask your tenant admin to open **Windows PowerShell** as administrator and run the following script:
+Open **Windows PowerShell** as administrator and run the following script:
   
 ```console
 Install-Module az  
@@ -53,7 +54,7 @@ To work with authentication, you need an application registered in Microsoft Ent
   
    > [!NOTE]
    >
-   >* The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
+   >* The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
    >* You can configure the redirect URI after creating the application from the **Manage** menu under **Authentication**.
 
    :::image type="content" source="./media/authentication-tutorial/register-application.png" alt-text="Screenshot of application registration UI." lightbox="./media/authentication-tutorial/register-application.png":::
@@ -86,16 +87,16 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 ### Add a scope for CRUD/jobs
 
-To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and add *Fabric service application* to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
+To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and a dedicated Fabric application to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
 
 * Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
 
-* Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
+* Under **Authorized client applications**, select **Add a client application**. Add `d2450708-699c-41e3-8077-b0c8341509aa` (Fabric client for workloads application) and select your scope.
 
 ### Add scopes for data plane API
 
 Other scopes need to be registered to represent groups of operations exposed by the data plane API.
-In the backend sample, we provide four examples. You can see them in [Backend/src/Constants/scopes.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Constants/Scopes.cs). The scopes are:
+In the backend sample, we provide four examples. You can see them in [Backend/src/Constants/scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Constants/WorkloadScopes.cs). The scopes are:
 
 * `Item1.Read.All`: Used for reading workload items
 * `Item1.ReadWrite.All`: Used for reading/writing workload items
@@ -104,7 +105,7 @@ In the backend sample, we provide four examples. You can see them in [Backend/sr
 
 Preauthorize `871c010f-5e61-4fb1-83ac-98610a7e9110` (the Fabric client application) for these scopes.
 
-The application IDs of these apps can be found under [*Microsoft Power BI* and *Power BI Service*](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
+The application IDs of these apps can be found under [*Microsoft Power BI* and *Power BI Service*](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
 
 Here's how your *Expose an API* section should look in your application. In this example, the ID URI is `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`:
 
@@ -124,7 +125,7 @@ Under **Token configuration**, select **Add optional claim**. Choose **Access to
 
 ### Add API permissions
 
-Under ***API permissions**, add the desired permissions for your application. For the backend sample, add **Storage user_impersonation** (for OneLake APIs) and **Power BI Workspace.Read.all** (for workload control APIs):
+Under **API permissions**, add the desired permissions for your application. For the backend sample, add **Storage user_impersonation** (for OneLake APIs) and **Power BI Workspace.Read.all** (for workload control APIs):
 
 :::image type="content" source="./media/authentication-tutorial/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-tutorial/add-api-permissions.png":::
 
@@ -136,8 +137,8 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 
 For a streamlined setup of your application in Microsoft Entra Identity, you can opt to use an automated PowerShell script. Follow these steps to configure your application:
 
-1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](/cli/azure/).
-2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You will be prompted to sign in by using the credentials of the user account under which you intend to create the application.
+1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2](/cli/azure/).
+2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You'll be prompted to sign in by using the credentials of the user account under which you intend to create the application.
 3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
 
 Upon successful execution of the script, it will output all necessary details to configure your workload. Additionally, it will provide a direct URL to your application and an administrative consent URL for tenant-wide application authorization.
@@ -173,14 +174,14 @@ This example demonstrates how to use the `CreateDevAADApp.ps1` script with comma
 > [!NOTE]
 > This step is only applicable to the devmode scenario.
 
-After configuring your application, add the following configurations to the `devAADAppConfig` section of the `Frontend/.env.dev` configuration file located in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254):
+After configuring your application, update the following configurations in `.env.dev` configuration file located in the [Frontend folder](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend):
 
-```json
-"devAADAppConfig": {  
-    "DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
-    "DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
-    "DEV_AAD_CONFIG_APPID": "" // your app Id
-}
+```
+"DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
+
+"DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
+
+"DEV_AAD_CONFIG_APPID": "" // your app Id
 ```
 
 :::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a .env.dev file.":::
@@ -206,4 +207,4 @@ You can now do the following tasks:
 * Work with CRUD/Jobs operations.
 * Get an access token for your application on the client side.
 * Use the authentication page in the frontend sample as a playground to call your workload APIs. 
-* See what APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Backend/src/Controllers).
+* See what APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Backend/src/Controllers).

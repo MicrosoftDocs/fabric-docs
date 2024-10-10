@@ -4,7 +4,7 @@ description: A known issue is posted where Python and R visuals don't work in Fa
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/26/2024
+ms.date: 07/18/2024
 ms.custom: known-issue-762
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-762
 
 Free users in an F64 or larger SKU should be able to use Python visuals. However, if you assign your workspace to a Fabric capacity, you can't view Python and R visuals anymore.
 
-**Status:** Open
+**Status:** Fixed: July 18, 2024
 
 **Product Experience:** Power BI
 

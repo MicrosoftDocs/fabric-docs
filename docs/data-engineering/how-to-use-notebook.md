@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: Create and use notebooks
-ms.date: 11/15/2023
+ms.date: 07/25/2024
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -26,6 +26,28 @@ With a Fabric notebook, you can:
 
 This article describes how to use notebooks in data science and data engineering experiences.
 
+## Security context of running notebook
+
+The execution of a notebook can be triggered by three different manners in Fabric with full flexibility to meet different scenarios:
+
+- **Interactive run**: User manually triggers the execution via the different UX entries or calling the REST API. The execution would be running under the current user's security context.
+- **Run as pipeline activity**: The execution is triggered from Fabric Data Factory pipeline. You can find the detail steps in the [Notebook Activity](../data-factory/notebook-activity.md). The execution would be running under the pipeline owner's security context.
+- **Scheduler**: The execution is triggered from a scheduler plan. The execution would be running under the security context of the user who setup/update the scheduler plan.
+
+The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
+
+The first time when a notebook is created, a warning message will be shown to remind you the risk of running the code without reviewing it.
+
+:::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook.":::
+
+Here are some best practices to help you avoid security issues:
+
+- Before you manually run the notebook, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change.
+- Before you add a notebook activity to a pipeline, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you add it into the pipeline.
+- Before you update the scheduler plan, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you update the scheduler plan.
+- Separate the workspace into different stage (dev, test, prod) and control the access of different stage to avoid the security issue. Only add the user who you trust to the prod stage.
+
+
 ## Create notebooks
 
 You can either create a new notebook or import an existing notebook.
@@ -36,7 +58,7 @@ Like other standard Fabric item creation processes, you can easily create a new 
 
 ### Import existing notebooks
 
-You can import one or more existing notebooks from your local computer to a Fabric workspace from the **Data Engineering or the Data Science** homepage. Fabric notebooks recognize the standard Jupyter Notebook .ipynb files, and source files like .py, .scala, and .sql, and create new notebook items accordingly.
+You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook .ipynb files, and source files like .py, .scala, and .sql, and create new notebook items accordingly.
 
 :::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu.":::
 
@@ -98,18 +120,49 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 
 ![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
 
-This built-in folder is a system predefined folder for each notebook instance. It preserves up to **500MB** storage to store the dependencies of the current notebook. These are the key capabilities of notebook resources:
+> [!NOTE]
+> - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
+> - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path **builtin/** will always point to the root notebook’s built-in folder.
+
+### Built-in resources folder
+
+The built-in resources folder is a system predefined folder for each notebook item instance. Here are the key capabilities for the notebook resources.
 
 - You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI.
-- You can use relative paths like `builtin/YourData.txt` for quick exploration. The `mssparkutils.nbResPath` method helps you compose the full path.
+- You can use relative paths like `builtin/YourData.txt` for quick exploration. The `notebookutils.nbResPath` method helps you compose the full path.
 - You can easily move your validated data to a lakehouse via the **Write to lakehouse** option. Fabric has embedded rich code snippets for common file types to help you quickly get started.
-- These resources are also available for use in the [Reference notebook run](author-execute-notebook.md) case via ```mssparkutils.notebook.run()```.
+- These resources are also available for use in the [Reference notebook run](author-execute-notebook.md) case via ```notebookutils.notebook.run()```.
+
+### Environment resources folder
+
+Environment Resources Folder is a shared repository designed to streamline collaboration across multiple notebooks.
+
+- You can find the **Resources** tab inside the environment and have the full operations to manage the resource files here. These files can be shared across multiple notebooks once the notebook is attached to the current environment.
+
+   :::image type="content" source="media\how-to-use-notebook\manage-environment-resources.png" alt-text="Screenshot showing where to manage resources in environment.":::
+
+- In the Notebook page, you can easily find a second root folder under Resources inherited from the attached environment.
+   
+   :::image type="content" source="media\how-to-use-notebook\environment-resources-folder.png" alt-text="Screenshot showing where to open environment resources folder.":::
+
+- You can also operate on the files/folders just same with the Built-in resources folder. 
+- The Environment resource path will be automatically mounted to the notebook cluster, you can use the relative path **/env** to access the environment resources.
+
+### File editor
+
+The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it support Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
+
+- You can access this feature through **'View and edit'** in the file menu. Double-click on file is a faster way.
+
+   :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
+
+- Content change on file editor need to be saved manually by clicking the **Save** button or keyboard shortcut: **Ctrl+S**, file editor doesn't support auto-save.
+- File editor is also affected by [notebook mode](#notebook-mode-switcher). You can only view files but cannot edit them if you are in the notebook mode without editing permission.
 
 > [!NOTE]
->
-> - Currently, Fabric supports uploading certain file types through the UI, including, *.py*, *.whl*, *.jar*, *.txt*, *.json*, *.yml*, *.xml*, *.csv*, *.html*, *.png*, *.jpg*, and *.xlsx* files. You can write to the built-in folder with file types that are not in the list via code, however, Fabric notebooks don't support generating code snippets on unsupported file types.
-> - Each file size needs to be less than 50MB, and the built-in folder allows up to 100 file/folder instances in total.
-> - When using `mssparkutils.notebook.run()`, use the `mssparkutils.nbResPath` command to access the target notebook resource. The relative path “builtin/” will always point to the root notebook’s built-in folder.
+> Here are some limitations for file editor.
+> - File size limit is **1 MB**.
+> - These file types are not supported for viewing and editing: *.xlsx* and *.parquet*.
 
 ## Collaborate in a notebook
 
@@ -172,14 +225,16 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
 > [!NOTE]
 > For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
 
-## Switch notebook mode
+## Notebook mode switcher
 
-Fabric notebooks support two modes that you can easily switch between: **Editing** mode and **Viewing** mode.
+Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients, and they will see the best available notebook mode according to their permission, and they will be able to switch between the mode they have permission to.
 
 :::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes.":::
 
-- **Editing mode**: You can edit and run the cells and collaborate with others on the notebook.
-- **Viewing mode**: You can only view the cell content, output, and comments of the notebook. All the operations that make changes to the notebook are disabled.
+- **Develop mode**: Read, execute, write permission needed.
+- **Run only mode**: Read, execute permission needed.
+- **Edit mode**: Read, write permission needed.
+- **View mode**: Read permission needed.
 
 ## Related content
 

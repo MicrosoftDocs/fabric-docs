@@ -6,14 +6,16 @@ author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: tutorial
 no-loc: [Copilot]
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+# Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB (Preview)
 
-In this tutorial, you configure a Fabric mirrored database from an Azure Cosmos DB for NoSQL account.
+In this tutorial, you configure a Fabric mirrored database from an existing Azure Cosmos DB for NoSQL account.
+
+Mirroring incrementally replicates Azure Cosmos DB data into Fabric OneLake in near real-time, without impacting the performance of transactional workloads or consuming Request Units (RUs).
+You can build Power BI reports directly on the data in OneLake, using DirectLake mode. You can run ad-hoc queries in SQL or Spark, build data models using notebooks and leverage built-in Copilot and advanced AI capabilities in Fabric to analyze the data. 
 
 > [!IMPORTANT]
 > Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
@@ -172,16 +174,18 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 1. Select the query and then select **Save as view**. Give the view a unique name. You can access this view at any time from the Fabric portal.
 
-1. Select the query and then select **Explore this data (preview)**. This action explores the query in Power BI directly using Direct Lake on OneLake mirrored data.
-
-    > [!TIP]
-    > You can also optionally use Copilot or other enhancements to build dashboards and reports without any further data movement.
-
 1. Return back to the mirrored database in the Fabric portal.
 
 1. Select **New visual query**. Use the query editor to build complex queries.
 
     :::image type="content" source="media/azure-cosmos-db-tutorial/query-editor.png" alt-text="Screenshot of the query editor for both text-based and visual queries in Fabric." lightbox="media/azure-cosmos-db-tutorial/query-editor.png":::
+
+## Building BI reports on the SQL queries or views
+   1. Select the query or view and then select **Explore this data (preview)**. This action explores the query in Power BI directly using Direct Lake on OneLake mirrored data.
+   2. Edit the charts as needed and save the report.
+      
+> [!TIP]
+> You can also optionally use Copilot or other enhancements to build dashboards and reports without any further data movement.
 
 ## More examples
 

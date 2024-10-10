@@ -4,7 +4,7 @@ description: A known issue is posted where shortcut data inaccessible if data is
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/25/2024
+ms.date: 07/18/2024
 ms.custom: known-issue-701
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-701
 
 You can create a shortcut in an item in a workspace associated with one capacity. The shortcut points to data in an item in another workspace in second capacity. If the second capacity hosting the data is paused, the data is inaccessible when you access the shortcut in the first capacity.
 
-**Status:** Open
+**Status:** Fixed: July 18, 2024
 
 **Product Experience:** OneLake
 

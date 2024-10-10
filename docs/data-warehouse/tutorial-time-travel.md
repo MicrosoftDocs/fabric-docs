@@ -1,19 +1,17 @@
 ---
-title: Data warehouse tutorial - Time travel in Warehouse (preview)
+title: Data warehouse tutorial - Time travel in Warehouse
 description: Examples on how to use time travel in Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 05/03/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 06/10/2024
 ms.custom:
   - build-2024
 ms.topic: how-to
 ---
-# Tutorial: Time travel using T-SQL at statement level (preview)
+# Tutorial: Time travel using T-SQL at statement level
 
-In this article, learn how to time travel in your warehouse at the statement level using T-SQL. This feature allows you to query data as it appeared in the past, within a retention period.
+In this article, learn how to time travel in your warehouse at the statement level using T-SQL. This feature allows you to query data as it appeared in the past, within a [retention period](time-travel.md#data-retention).
 
 > [!NOTE]
 > Currently, only the Coordinated Universal Time (UTC) time zone is used for time travel.
@@ -24,7 +22,7 @@ In this example, we'll update a row, and show how to easily query the previous v
 
 1. From the **Home** tab of the ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-time-travel/new-sql-query.png" alt-text="Screenshot from the Fabric portal of the New SQL query button.":::
+   :::image type="content" source="media/tutorial-time-travel/home-ribbon-select-new.png" alt-text="Screenshot from the Fabric portal of the New SQL query button." lightbox="media/tutorial-time-travel/home-ribbon-select-new.png":::
 
 1. In the query editor, paste the following code to create the view `Top10CustomerView`. Select **Run** to execute the query.
 

@@ -1,9 +1,8 @@
 ---
 title: Supportability - Best Practices for partners
 description: Guide for partners to support their customers on Fabric.
-author: AtefSawaed
-ms.author: atefsawaed
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
 ms.date: 07/03/2024
@@ -19,7 +18,7 @@ Fabric enables third-party partners to integrate their services into the platfor
 
 ## Request Headers
 
-Fabric exposes two important headers in [requests](https://learn.microsoft.com/rest/api/fabric/workload/workloadapi/item-lifecycle/create-item?tabs=HTTP) made between the customer and Fabric, which are crucial for supportability:
+Fabric exposes two important headers in [requests](/rest/api/fabric/workload/workloadapi/item-lifecycle/create-item?tabs=HTTP) made between the customer and Fabric, which are crucial for supportability:
 
 - **ActivityId**: A globally unique ID that can be used by you, the developer, to correlate the request with your systems when a Fabric user interacts with your workload.
 - **RequestId**: A globally unique ID that helps us (Fabric) to correlate your request with our traces, which will help us investigate the issue and assist you. If you cannot determine the issue on your end using the `ActivityId`, you can provide the `RequestId` to us when reporting an issue. Ensure that you maintain and save the `RequestId` so it can be easily provided later.

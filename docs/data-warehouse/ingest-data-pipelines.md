@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -79,7 +77,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 1. After a few seconds, your pipeline finishes successfully. Navigating back to your warehouse, you can select your table to preview the data and confirm that the copy operation concluded. 
 
-    :::image type="content" source="media/ingest-data-pipelines/table-preview.png" alt-text="Screenshot showing a warehouse with the bing_covid_19 table selected, and a grid showing a preview of the data in the table." lightbox="media/ingest-data-pipelines/table-preview.png":::
+    :::image type="content" source="media/ingest-data-pipelines/table-preview-covid-19.png" alt-text="Screenshot showing a warehouse with the bing_covid_19 table selected, and a grid showing a preview of the data in the table." lightbox="media/ingest-data-pipelines/table-preview-covid-19.png":::
 
 For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], visit:
 

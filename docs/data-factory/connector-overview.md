@@ -45,7 +45,7 @@ The following connectors are currently available for output destinations in Data
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] supports data stores in a data pipeline through the Copy, Lookup, Get Metadata, Delete, Script, and Stored Procedure activities. For a list of all currently supported data connectors, go to [Data pipeline connectors in Microsoft Fabric](pipeline-support.md).
 
 > [!NOTE]
-> Currently, a pipeline on managed VNet and on-premises data access with a gateway aren't supported in Data Factory for Microsoft Fabric.
+> Currently, a pipeline on managed VNet gateway isn't supported in Data Factory for Microsoft Fabric.
 
 ## Related content
 

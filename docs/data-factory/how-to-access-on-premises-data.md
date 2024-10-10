@@ -37,9 +37,9 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
    :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
 
-   Available connection types supported for on-premises connections are:
+   Available connection types supported for on-premises connections include:
 
-   - Active Directory
+   - Entra ID
    - Adobe Analytics
    - Analysis Services
    - Azure Blob Storage
@@ -67,6 +67,8 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
    - Teradata
    - Web
 
+   For a comprehensive list of the connectors supported for on-premises data types, refer to [Data pipeline connectors in Microsoft Fabric](pipeline-support.md).
+
 ## Connect your on-premises data source to a Dataflow Gen2 in Data Factory for Microsoft Fabric
 
 1. Go to your workspace and create a Dataflow Gen2.
@@ -91,7 +93,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
 Now you've created a Dataflow Gen2 to load data from an on-premises data source into a cloud destination.
 
-## Using on-premises data in a pipeline (Preview)
+## Using on-premises data in a pipeline
 
 1. Go to your workspace and create a data pipeline.
 

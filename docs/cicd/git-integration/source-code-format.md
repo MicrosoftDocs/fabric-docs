@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 05/12/2024
+ms.date: 07/23/2024
 ms.custom: build-2023
 #customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
@@ -18,22 +18,35 @@ Items in Microsoft Fabric are stored in a folder. The folder containing the item
 
 ## Directory name
 
-When you save an item in Git, Git integration automatically creates a directory for that item.
+When you save a new item in Git, Git integration automatically creates a directory for that item.
 
-The name of the item directory is `<item name>.<item type>` followed by the item type. If that name isn't available, the name of the item's logicalID (GUID) is used followed by the item type.
+The item directory name is based on the following rules:
 
-:::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of Git directory containing items.":::
+- The pattern for the name is `{display name}.{public facing type}`.
+- If necessary, the following changes to the display name are made:
+  - Invalid characters are replaced with the [HTML number](https://www.ascii-code.com/).
+  - Leading space is replaced with its [HTML number](https://www.ascii-code.com/).
+  - Trailing space or dot is replaced with its [HTML number](https://www.ascii-code.com/).
+- If that folder name isn't available, the name of the item's logicalID (GUID) is used instead of the display name.
 
-* Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
-* If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between workload types.
+For example, if you have the following items in a workspace (note that the first and third items have an invisible leading and trailing space respectively):
+
+:::image type="content" source="./media/source-code-format/item-names.png" alt-text="Screenshot of list of items in a Fabric workspace.":::
+
+The following directories are created in the Git repository:
+
+:::image type="content" source="./media/source-code-format/item-directory-names-git.png" alt-text="Screenshot of names of the Git directories containing the Fabric items.":::
+
+- Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
+- If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between different Fabric experiences. Changing the directory name *doesn't* cause an incoming change in the workspace.
 
 ## Directory content
 
-Each item directory contains the [item definition files](#item-definition-files) and either one or two [automatically generated system files](#automatically-generated-system-files).
+Each item directory contains the [item definition files](#item-definition-files) and [automatically generated system files](#automatically-generated-system-files).
 
 ### Item definition files
 
-Each item's directory has specific required files that define that item.
+Each item's directory has specific, required files that define that item.
 
 The following items are currently supported in Microsoft Fabric:
 
@@ -45,8 +58,6 @@ The following items are currently supported in Microsoft Fabric:
 #### Notebook files
 
 Notebook folders contain a *.py* file:
-
-:::image type="content" source="./media/source-code-format/notebook-directory.png" alt-text="Screenshot of directory tree showing files in the notebook directory.":::
 
 For instructions on using Git integration with notebooks, see [Notebook source control and deployment](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration).
 
@@ -63,8 +74,6 @@ Report folders contain the following files:
 
 - definition.pbir
 - report.json
-
-:::image type="content" source="./media/source-code-format/report-directory.png" alt-text="Screenshot of directory tree showing files in the report directory.":::
 
 For more information about report folders and a complete list of their contents, see [Power BI Desktop project report folder](/power-bi/developer/projects/projects-report).
 

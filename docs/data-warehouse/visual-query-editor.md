@@ -4,9 +4,7 @@ description: Learn how to use the visual query editor for a no-code experience t
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng
-ms.date: 05/12/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 09/20/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -33,7 +31,7 @@ In the ribbon, create a new query using the **New visual query** button, as show
 
 :::image type="content" source="media/visual-query-editor/new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view." lightbox="media/visual-query-editor/new-visual-query.png":::
 
-To create a query, drag and drop tables from the **Object explorer** onto the canvas. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
+To create a query, drag and drop tables from the **Object explorer** onto the canvas. To drag a table, select and hold the table until you see it's picked up from the **Object explorer** before dragging. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
 As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab to indicate that your query is being saved. All workspace users can save their queries in **My queries** folder. However, users in viewer role of the workspace or shared recipients of the warehouse are restricted from moving queries to **Shared queries** folder.
 
@@ -87,8 +85,8 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 - In the visual query editor, you can only run DQL (Data Query Language) or read-only [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) statements. DDL or DML statements are not supported.
 - Only a subset of Power Query operations that support Query folding are currently supported.
 - Visualize Results currently does not support SQL queries with an `ORDER BY` clause.
-- For viewing the SQL script joining two or more tables, only the table with load enabled selected will show the corresponding SQL script.
-- There are certain steps that the View SQL feature does not support in which a banner in the visual query editor will indicate stating "The query is not supported as a warehouse view, since it cannot be fully translated to SQL". For more information, see [Query folding indicators in Power Query](/power-query/step-folding-indicators).
+- When viewing SQL script joining two or more tables, only the table with load enabled selected will show the corresponding SQL script.
+- There are certain steps that the View SQL feature does not support in which a banner in the visual query editor indicates stating "The query is not supported as a warehouse view, since it cannot be fully translated to SQL". For more information, see [Query folding indicators in Power Query](/power-query/step-folding-indicators).
 
 ## Related content
 

@@ -5,9 +5,10 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: ssalgado
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: jessiwang
+reviewer: JessicaXYWang
 ms.date: 06/04/2024
 ms.collection: ce-skilling-ai-copilot
 ---

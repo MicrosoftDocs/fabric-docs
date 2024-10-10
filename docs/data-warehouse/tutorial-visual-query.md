@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -23,7 +21,7 @@ Create and save a query with the visual query builder in the [!INCLUDE [product-
 
 1. From the **Home** tab of the ribbon, select **New visual query**.
 
-   :::image type="content" source="media/tutorial-visual-query/select-new-visual.png" alt-text="Screenshot of the ribbon, showing where to select New visual query.":::
+   :::image type="content" source="media/tutorial-visual-query/new-visual-query.png" alt-text="Screenshot of the ribbon, showing where to select New visual query." lightbox="media/tutorial-visual-query/new-visual-query.png":::
 
 1. Drag the `fact_sale` table from the **Explorer** to the query design pane.
 

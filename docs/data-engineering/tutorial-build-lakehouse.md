@@ -8,12 +8,22 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/01/2024
+  - FY25Q1-Linter 
+ms.date: 07/25/2024
+# Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.
 ---
 
 # Lakehouse tutorial: Create a lakehouse, ingest sample data, and build a report
 
-In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports.
+In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports. In this tutorial, you'll learn to:
+
+> [!div class="checklist"]
+> * Create a lakehouse from the Data Engineering workload
+> * Download and ingest sample customer data
+> * Add tables to the semantic model
+> * Build a report
+
+If you don’t have a Microsoft Fabric, sign up for a free [trial capacity](../get-started/fabric-trial.md).
 
 ## Prerequisites
 
@@ -21,6 +31,8 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 * Before you ingest a CSV file, you must have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
 
 ## Create a lakehouse
+
+In this section, you create a lakehouse from the Data Engineering experience.
 
 1. In [Power BI](https://powerbi.com/), select **Workspaces** from the left-hand menu.
 
@@ -39,6 +51,8 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 1. Select **Create** to create and open the new lakehouse.
 
 ## Ingest sample data
+
+In this section, you ingest sample customer data into the lakehouse.
 
 > [!NOTE]
 > If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
@@ -110,7 +124,9 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 
 ## Build a report
 
-1. Previously all the lakehouse tables and views were automatically added to the semantic model. With recent updates, for new lakehouses, you must manually add your tables to the semantic model. From the lakehouse **Reporting** tab, select **Manage default semantic model** and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
+In this section, you'll build a report from the ingested data.
+
+1. Previously all the lakehouse tables and views were automatically added to the semantic model. With recent updates, for new lakehouses, you must manually add your tables to the semantic model. Open your lakehouse and switch to the **SQL analytics endpoint** view. From the **Reporting** tab, select **Manage default semantic model** and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
 
    :::image type="content" source="media\tutorial-build-lakehouse\select-semantic-model-tables.png" alt-text="Screenshot where you can select the tables to add to the semantic model.":::
 

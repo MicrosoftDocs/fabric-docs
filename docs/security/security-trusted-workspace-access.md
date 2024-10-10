@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/30/2024
+ms.date: 08/01/2024
 ---
 
 # Trusted workspace access
@@ -17,7 +17,7 @@ Fabric workspaces that access a storage account with trusted workspace access ne
 To limit and protect access to firewall-enabled storage accounts from certain Fabric workspaces, you can set up resource instance rule to allow access from specific Fabric workspaces.
 
 > [!NOTE]
-> Trusted workspace access is **generally available**. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+> Trusted workspace access is **generally available**, but can only be used in F SKU capacities. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md). Trusted workspace access is not supported in Trial capacities.
 
 This article shows you how to:
 
@@ -137,15 +137,15 @@ With OneCopy in Fabric, you can access your OneLake shortcuts with trusted acces
 
 * **Spark**: You can use Spark to access data from your OneLake shortcuts. When shortcuts are used in Spark, they appear as folders in OneLake. You just need to reference the folder name to access the data. You can use the OneLake shortcut to storage accounts with trusted workspace access in Spark notebooks.
 
-* **SQL endpoint**: Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL endpoint.  You can open the SQL endpoint and query your data just like any other table.
+* **SQL analytics endpoint**: Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL analytics endpoint.  You can open the SQL analytics endpoint and query your data just like any other table.
 
 * **Pipelines**: Data pipelines can access managed shortcuts to storage accounts with trusted workspace access. Data pipelines can be used to read from or write to storage accounts through OneLake shortcuts.
 
 * **Dataflows v2**: Dataflows Gen2 can be used to access managed shortcuts to storage accounts with trusted workspace access. Dataflows Gen2 can read from or write to storage accounts through OneLake shortcuts.
 
-* **Semantic models and reports**: The default semantic model associated with a Lakehouse SQL endpoint can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL endpoint, select **Reporting**, and choose **Automatically update semantic model**.
+* **Semantic models and reports**: The default semantic model associated with the SQL analytics endpoint of a Lakehouse can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL analytics endpoint item, select **Reporting**, and choose **Automatically update semantic model**.
 
-    You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
+    You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL analytics endpoint, select **Reporting** and choose **New semantic model**.
 
     You can create reports on top of the default semantic models and custom semantic models.
 
@@ -198,12 +198,12 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 ### Restrictions and Considerations
 
-* Trusted workspace access is only supported for workspaces in Fabric capacities (F64 or higher).
+* Trusted workspace access is supported for workspaces in any Fabric F SKU capacity.
 * You can only use trusted workspace access in OneLake shortcuts, data pipelines, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md). 
-* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access will stop working after an hour.
+* If a workspace with a workspace identity is migrated to a non-Fabric capacity, or to a non-F SKU Fabric capacity, trusted workspace access will stop working after an hour.
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
-* Connections to firewall-enabled Storage accounts will have have the status *Offline* in Manage connections and gateways.
+* Connections to firewall-enabled Storage accounts will have the status *Offline* in Manage connections and gateways.
 * If you reuse connections that support trusted workspace access in Fabric items other than shortcuts and pipelines, or in other workspaces, they might not work.
 * Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.

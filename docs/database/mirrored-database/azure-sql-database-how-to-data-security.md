@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
 ms.date: 05/09/2024
-ms.service: fabric
 ms.topic: how-to
 ---
 

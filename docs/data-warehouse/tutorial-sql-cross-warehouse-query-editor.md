@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -39,7 +37,7 @@ In this example, you can see how easily you can run T-SQL queries across the `Wi
 
 1. From the ribbon, select **New SQL query**.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/new-sql-query.png" alt-text="Screenshot from the Fabric portal showing the ribbon, and the New SQL query option boxed in red.":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/home-ribbon-select-new.png" alt-text="Screenshot from the Fabric portal showing the ribbon, and the New SQL query option boxed in red." lightbox="media/tutorial-sql-cross-warehouse-query-editor/home-ribbon-select-new.png":::
 
 1. In the query editor, copy and paste the following T-SQL code.
 

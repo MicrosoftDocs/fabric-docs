@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: jacindaeng
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -48,8 +46,6 @@ The following example queries `sys.dm_exec_sessions` to find all sessions that a
 SELECT * 
 FROM sys.dm_exec_sessions;
 ```
-:::image type="content" source="media/monitor-using-dmv/exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media/monitor-using-dmv/exec-sessions-results.png":::
-
 ### Find the relationship between connections and sessions
 
 The following example joins `sys.dm_exec_connections` and `sys.dm_exec_sessions` to the relationship between the active session in a specific connection.

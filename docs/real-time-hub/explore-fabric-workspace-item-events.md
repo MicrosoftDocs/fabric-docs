@@ -1,48 +1,47 @@
 ---
 title: Explore Fabric workspace item events in Fabric Real-Time hub
 description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub.
-author: ajetasin
-ms.author: ajetasi
+author: mystina
+ms.author: majia
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 09/04/2024
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub (preview)
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
-
+Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items. For instance, when a new artifact is created or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
 ## View Fabric workspace item events detail page
 
-1. In **Real-Time hub**, switch to the **Fabric events** tab. 
-1. Select **Fabric workspace item events** in the list. 
+1. In **Real-Time hub**, select **Fabric events**.
+1. Select **Fabric workspace item events** from the list.
 
-    :::image type="content" source="./media/explore-fabric-workspace-item-events/select-from-list.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events tab.":::
-1. You should see the detail view for Fabric workspace item events. 
+    :::image type="content" source="./media/explore-fabric-workspace-item-events/select-from-list.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events page.":::
+1. You should see the detail view for Fabric workspace item events.
 
     :::image type="content" source="./media/explore-fabric-workspace-item-events/detail-page.png" alt-text="Screenshot that shows the detail page for Fabric workspace item events." lightbox="./media/explore-fabric-workspace-item-events/detail-page.png":::
 
 ## Actions
+
 At the top of the detail page, you see the following two actions.
 
-- **Create eventstream** - lets you create an eventstream based on events from the selected Fabric workspace item. 
+- **Create eventstream** - lets you create an eventstream based on events from the selected Fabric workspace item.
 - **Set alert** - lets you set an alert when an operation is done for a Fabric workspace item, such as a new artifact is created.
 
     :::image type="content" source="./media/explore-fabric-workspace-item-events/actions.png" alt-text="Screenshot that shows actions on the Fabric workspace item events detail page.":::
 
-
 ## See what's using this category
 
-This section shows the artifacts using Fabric workspace item events. Here are the columns and their descriptions shown in the list. 
+This section shows the artifacts using Fabric workspace item events. Here are the columns and their descriptions shown in the list.
 
 | Column | Description |
-| ------ | ------------ | 
+| ------ | ------------ |
 | Name | Name of the artifact that's using Fabric workspace item events. |
 | Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
@@ -86,13 +85,14 @@ The `data` object has the following properties:
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
 | `itemId` | guid | Unique identifier for the item/artifact. | `00000000-0000-0000-0000-000000000000` |
-| `itemKind` | string | The kind of item/artifact. | `Notebook` |
+| `itemKind` | string | The kind of item/artifact. | Item type such as `Notebook, Lakehouse, etc.` Refer to the notes below for item types not supported by workspace item events |
 | `itemName` | string | The item/artifact name. | `Test Notebook` |
 | `workspaceId` | guid | Unique identifier for the workspace. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceName` | string | The name of the workspace. | `Test Workspace` |
 | `principalId` | guid | Unique identifier for the user. | `00000000-0000-0000-0000-000000000000` |
 | `executingPrincipalType` | string | The kind of user. | `User` |
 
+[!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
 
 ## Related content
 

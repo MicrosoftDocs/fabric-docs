@@ -4,9 +4,7 @@ description: How to clone tables in the Warehouse in the Fabric portal.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 09/20/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -24,15 +22,13 @@ When you select the table, and select on more options, you get the **Clone table
 
 :::image type="content" source="media/tutorial-clone-table-portal/clone-table-contextmenu-entrypoint.png" alt-text="Screenshot showing the entry point for clone table context menu.":::
 
-:::image type="content" source="media/tutorial-clone-table-portal/clone-table-tabletools-entrypoint.png" alt-text="Screenshot showing the entry point for clone table in table tools.":::
-
 On clone table pane, you can see the source table schema and name is already populated. The table state as current, creates clone of the source table as of its current state. You can choose destination schema and edit pre-populated destination table name. You can also see the generated T-SQL statement when you expand SQL statement section. When you select the **Clone** button, a clone of the table is generated and you can see it in **Explorer**.
 
 :::image type="content" source="media/tutorial-clone-table-portal/clone-table-current-state.png" alt-text="Screenshot showing the clone table as current state of the source table.":::
 
 ## Clone table as of past point-in-time
 
-Similar to current state, you can also choose the past state of the table within last seven days by selecting the date and time in UTC. This generates a clone of the table from a specific point in time, selectable in the **Date and time of past state** fields.
+Similar to current state, you can also choose the past state of the table within last 30 days by selecting the date and time in UTC. This generates a clone of the table from a specific point in time, selectable in the **Date and time of past state** fields.
 
 :::image type="content" source="media/tutorial-clone-table-portal/clone-table-past-state.png" alt-text="Screenshot showing the clone table as past state of the source table.":::
 

@@ -4,9 +4,7 @@ description: Query insights makes past query execution data and aggregated insig
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: mariyaali
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 09/20/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -54,6 +52,9 @@ There are three system views to provide answers to these questions:
 
 - [queryinsights.exec_requests_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true)
   - Returns information about each completed SQL request/query.
+ 
+- [queryinsights.exec_sessions_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-sessions-history-transact-sql?view=fabric&preserve-view=true)
+  - Returns information about frequently run queries.
 
 - [queryinsights.long_running_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
   - Returns the information about queries by query execution time.
@@ -71,7 +72,7 @@ After your query completes execution, you see its execution data in the `queryin
 
 ## How are similar queries aggregated to generate insights?
 
-Queries are considered the same by the query insights feature if, other than predicate value, two queries have an exact match in the query text. White spaces and new line characters render the queries to be considered different.
+Queries are considered the same by the Query Insights if the queries have the same shape, even if the predicates may be different.
 
 You can utilize the `query hash` column in the views to analyze similar queries and drill down to each execution.
 
@@ -125,5 +126,6 @@ ORDER BY median_total_elapsed_time_ms DESC;
 
 - [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [queryinsights.exec_requests_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.exec_sessions_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-sessions-history-transact-sql?view=fabric&preserve-view=true)
 - [queryinsights.long_running_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
 - [queryinsights.frequently_run_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)

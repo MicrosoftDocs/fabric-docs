@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -13,15 +12,13 @@ no-loc: [Copilot]
 
 # What is Mirroring in Fabric?
 
-As a data replication solution, Mirroring in Fabric is a low-cost and low-latency solution to bring data from various systems together into a single analytics platform. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, and Snowflake.
+As a data replication solution, Mirroring in Fabric is a low-cost and low-latency solution to bring data from various systems together into a single analytics platform. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, and Snowflake.
 
 With the most up-to-date data in a queryable format in OneLake, you can now use all the different services in Fabric, such as running analytics with Spark, executing notebooks, data engineering, visualizing through Power BI Reports, and more.
 
 Mirroring in Fabric allows users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. Built for openness and collaboration between Microsoft, and technology solutions that can read the open-source Delta Lake table format, Mirroring is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake which can be used for all your analytical needs.
 
 The Delta tables can then be used everywhere Fabric, allowing users to accelerate their journey into Fabric.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Why use Mirroring in Fabric?
 
@@ -59,12 +56,13 @@ In addition to the [Microsoft Fabric SQL Query Editor](/fabric/data-warehouse/sq
 
 Power BI administrators can enable or disable Mirroring for the entire organization or for specific security groups, using the setting found in the Power BI admin portal. The Mirroring items then appear in the **Create** options. For more information, see [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md).
 
-Currently, the following external databases are available in preview.
+Currently, the following external databases are available:
 
 | Platform | Near real-time replication | End-to-end tutorial |
 |:--|:--|:--|
-| [Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db.md) | Yes | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](azure-cosmos-db.md) | Yes | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Databricks (preview)](azure-databricks.md) | Yes |[Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure SQL Database (preview)](azure-sql-database.md) | Yes | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes |[Tutorial: Snowflake](snowflake-tutorial.md) |
 
 ## How does the near real time replication of Mirroring work?
