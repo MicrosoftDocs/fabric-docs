@@ -67,6 +67,10 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 
 - 2.6.3
 
+## Support Python version
+
+- 3.8.17
+
 > [!NOTE]
 > Changing the Apache Airflow version within an existing IR is not supported. Instead, the recommended solution is to create a new Airflow IR with the desired version
 
