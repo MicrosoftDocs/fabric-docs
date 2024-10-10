@@ -43,6 +43,8 @@ The following section describes several of the most common organizational struct
 
     A functional structure enables specialization, scalability, and accountability. It also sets clear expectations and provides a direct chain of command.
 
+    :::image type="content" source="./media/domains-best-practices/sample-function-based-organizational-structure.png" alt-text="Diagram showing an example of a function-based organizational structure." border="false":::
+
   * **Product/project structure**
 
     A product/project based structure is suitable for companies that have multiple product lines or projects that require different teams and resources.
@@ -57,11 +59,13 @@ The following section describes several of the most common organizational struct
 
     A process-based structure is suitable for companies that have standardized or repetitive processes that span different products or markets. A process-based structure allows the company to optimize the efficiency, quality, and consistency of each process and use the expertise and skills of the process teams. However, a process-based structure can also create silos, communication gaps, and reduced customer focus among teams.
 
-    :::image type="content" source="./media/domains-best-practices/sample-process-based-organizational-structure.png" alt-text="Diagram illustrating a process-based organizational structure.":::
+    :::image type="content" source="./media/domains-best-practices/sample-process-based-organizational-structure.png" alt-text="Diagram illustrating a process-based organizational structure." border="false":::
 
 * **Geography-based structure**
 
     A geographical structure is suitable for companies that operate in different regions or countries and need to adapt to the local environment, culture, and regulations. A geographical structure allows the company to delegate decision-making authority to the regional managers and tailor their products and services to the customer needs and references.
+
+    :::image type="content" source="./media/domains-best-practices/sample-geography-based-organizational-structure.png" alt-text="Diagram illustrating a geography-based organizational structure." border="false":::
 
 * **Mixed structure**
 
