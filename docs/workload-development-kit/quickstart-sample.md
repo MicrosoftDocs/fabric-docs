@@ -17,8 +17,6 @@ This quick start guide shows you how to create and run a Microsoft Fabric worklo
 
 Before you begin, ensure that you have an environment that's [set up](environment-setup.md) for workload development.
 
-## Step 1: Set up the sample project
-
 1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254) repository.
 
 2. **Install dependencies** - Navigate to the *Frontend* directory in the cloned repository and execute the following command:
@@ -34,6 +32,19 @@ Before you begin, ensure that you have an environment that's [set up](environmen
    ```
 
 4. **Confirm that the server is running** - The server typically runs on port *60006*. Confirm that the server is operational by navigating to `127.0.0.1:60006/manifests` on your browser.
+
+5. Open [Fabric](app.powerbi.com) and go to any workspace.
+
+6. Select **New item** and from the list, select **Sample item**.
+
+
+
+
+
+
+
+
+
 
 ## Step2: Run a sample workload
 
