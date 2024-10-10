@@ -10,7 +10,7 @@ ms.date: 10/09/2024
 
 In this article, you'll learn how to create and customize visuals from query results, using the web UI. These visuals can be further manipulated, and can be pinned in a [dashboard](dashboard-real-time-create.md). The addition or modification of these visuals doesn't require rerunning the query, which can be especially useful for heavy queries.
 
-For a full list of available visuals, see [Visualization](/kusto/query/render-operator?view=microsoft-fabric&preserve-view=true#visualization). For visuals that are only available in the web UI or dashboards, see [Dashboard-specific visuals](dashboard-visuals.md).
+For a full list of available visuals, see [Visualization](/kusto/query/render-operator?view=microsoft-fabric&preserve-view=true#visualization). For visuals that are only available in the web UI or Real-Time Dashboards, see [Dashboard-specific visuals](dashboard-visuals.md).
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
     A pane opens on the right side, with the **Visual Formatting** tab selected.
 
-1. Select the **Visual type** from the dropdown. For a list of available visualizations, see [Visualizations](/kusto/query/render-operator?view=azure-data-explorer&preserve-view=true#visualization). 
+1. Select the **Visual type** from the dropdown. For a list of available visualizations, see [Visualizations](/kusto/query/render-operator?view=microsoft-fabric&preserve-view=true#visualization).
 
     :::image type="content" source="media/add-query-visualization/select-visual-type.png" alt-text="Screenshot of visual type dropdown in Azure Data Explorer web UI.":::
 
@@ -62,20 +62,6 @@ If you've created a visual using the [render operator](/kusto/query/render-opera
 
 > [!IMPORTANT]
 > Notice that the visual formatting pane has changed the visual representation, but has not modified the original query.
-
-## Pin to dashboard
-
-After you have formatted your visual, you can pin this visual to a new or existing dashboard.
-
-1. From the visual formatting pane, select **Pin to dashboard**.
-
-    :::image type="content" source="media/add-query-visualization/pin-to-dashboard.png" alt-text="Screenshot of pin to dashboard tab in Azure Data Explorer web UI.":::
-
-1. The pin to dashboard dialog opens. Enter a **Tile name** for this visual and select a new or existing dashboard.
-
-    :::image type="content" source="media/add-query-visualization/pin-to-dashboard-menu.png" alt-text="Screenshot of dialog for pinning visual to dashboard in Azure Data Explorer web UI.":::
-
-1. Select **Pin**.
 
 ## Related content
 
