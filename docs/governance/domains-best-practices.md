@@ -55,7 +55,7 @@ The following section describes several of the most common organizational struct
 
 * **Process-based structure**
 
-    A process-based structure is suitable for companies that have standardized or repetitive processes that span different products or markets. A process-based structure allows the company to optimize the efficiency, quality, and consistency of each process and leverage the expertise and skills of the process teams. However, a process-based structure can also create silos, communication gaps, and reduced customer focus among teams.
+    A process-based structure is suitable for companies that have standardized or repetitive processes that span different products or markets. A process-based structure allows the company to optimize the efficiency, quality, and consistency of each process and use the expertise and skills of the process teams. However, a process-based structure can also create silos, communication gaps, and reduced customer focus among teams.
 
     :::image type="content" source="./media/domains-best-practices/sample-process-based-organizational-structure.png" alt-text="Diagram illustrating a process-based organizational structure.":::
 
