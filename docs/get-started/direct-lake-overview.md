@@ -203,7 +203,7 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 | Hybrid tables | No  | Yes | Yes |
 | Model table partitions | No – however [partitioning](direct-lake-understand-storage.md#table-partitioning) can be done at the Delta table level | Yes – either automatically created by incremental refresh, or [manually created](/power-bi/connect-data/incremental-refresh-xmla#partitions) by using the XMLA endpoint | No  |
 | User-defined aggregations | No  | Yes | Yes |
-| SQL analytics endpoint object-level security or column-level security | Yes – but queries might produce errors when permission is denied | Yes – but must duplicate permissions with semantic model object-level security | Yes – but queries might produce errors when permission is denied |
+| SQL analytics endpoint object-level security or column-level security | Yes – but queries will fall back to DirectQuery mode and might produce errors when permission is denied | Yes – but must duplicate permissions with semantic model object-level security | Yes – but queries might produce errors when permission is denied |
 | SQL analytics endpoint row-level security (RLS) | Yes – but queries will fall back to DirectQuery mode | Yes – but must duplicate permissions with semantic model RLS | Yes |
 | Semantic model row-level security (RLS) | Yes – but it's strongly recommended to use a [fixed identity](direct-lake-fixed-identity.md) cloud connection | Yes | Yes |
 | Semantic model object-level security (OLS) | Yes | Yes | Yes |
