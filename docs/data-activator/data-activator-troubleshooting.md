@@ -9,71 +9,71 @@ ms.date: 09/10/2024
 #customer intent: As a Fabric user I want to learn to troubleshoot Data Activator errors.
 ---
 
-# Troubleshoot Data Activator Errors
+# Troubleshoot Data Activator errors
 
-If a problem occurs with any of your Data Activator events, objects, or triggers after you have created them, then Data Activator will send you an email alert containing an error code. This article explains the meaning of the error codes that you can receive, and describes the steps you can take to fix the associated problems.
+If a problem occurs with any of your Data Activator events, objects, or triggers after you create them, then Data Activator sends you an email containing an error code. This article explains the meaning of the error codes that you can receive and describes the steps to take to fix the associated problems.
 
 > [!IMPORTANT]
 > Data Activator is currently in preview.
 
 ## Data ingestion error codes
 
-The following error codes represent problems that can occur when Data Activator ingests data from Power BI semantic model and eventstream items.
+The following error codes represent problems that can occur when Data Activator ingests data from Power BI semantic models and eventstream items.
 
 ### PowerBiSourceNotFoundOrInsufficientPermission
 
-This error code means that Data Activator couldn't access the Power BI dataset for your object. This can occur if the dataset has been deleted, or if permissions on the dataset have changed, since you created the alert. To resolve the problem, check if the dataset still exists, and:
+Data Activator can't access the Power BI semantic model for your object. This error occurs if the dataset is deleted or if permissions on the dataset change since you created the alert. To resolve the problem, check if the dataset still exists, and:
 
-* If it still exists, then ensure that you have permission  to access it.
-* If it has been deleted, then your objects and triggers will no longer function. You should delete them, then recreate them as needed on another dataset.
+* If it still exists, ensure that you have permission  to access it.
+* If it's deleted, then your objects and triggers don't function. Delete then recreate them as needed on another semantic model.
 
 ### QueryEvaluationError
 
-This error code means that Data Activator couldn't query the Power BI dataset for your object. This can occur if the structure of the dataset has changed since you created the alert. To resolve the problem, either:
+Data Activator can't query the Power BI semantic model for your object. This error occurs if the structure of the dataset changes after you create the alert. To resolve the problem, either:
 
-* Restore the original structure of your dataset, or
-* Delete your Data Activator object and recreate your trigger against the dataset
+* Restore the original structure of your semantic model, or
+* Delete your Data Activator object and recreate your trigger against the semantic model.
 
 ### EventHubNotFound
 
-This error code means that Data Activator couldn't find the Fabric eventstream for your object. This can occur if the eventstream for your object has been deleted, or if the connection from your eventstream to your Data Activator item has been removed. To resolve the problem, reconnect a Fabric eventstream to your Data Activator object.
+Data Activator can't find the Fabric event stream for your object. This error occurs if the event stream for your object is deleted, or if the connection from your event stream to your Data Activator item is removed. To resolve the problem, reconnect a Fabric event stream to your Data Activator object.
 
 ### EventHubException
 
-This error code means that Data Activator received an exception from eventstreams when importing your data from your eventstream item. To resolve the problem, open your eventstream item and examine the connection to your Data Activator object, to check for errors in the connection or the eventstream.
+Data Activator receives an exception from event streams when importing your data from your event stream item. To resolve the problem, open your event stream item and examine the connection to your Data Activator object and check for errors in the connection or the event stream.
 
 ### UnauthorizedAccess
 
-This error code means that Data Activator was unauthorized to access the eventstream item for your data activator object. This can occur if permissions on the eventstream item have changed since you connected your Eventstreams item to Data Activator. To resolve the problem, make sure that you have permission to access the eventstream item.
+Data Activator isn't authorized to access the event stream item for your Data Activator object. This occurs when permissions on the event stream item change since you connected your Eventstream item to Data Activator. To resolve the problem, make sure that you have permission to access the event stream item.
 
 ### IncorrectDataFormat
 
-This error code means that the eventstream item connected to your Data Activator object contained data in a format that isn't recognized by Data Activator. To resolve the problem, review the data in your eventstream item to ensure that it's in JSON dictionary format, as described in [Get data for Data Activator from eventstreams](data-activator-get-data-eventstreams.md).
+The event stream item connected to your Data Activator object contains data in a format that isn't recognized by Data Activator. To resolve the problem, review the data in your event stream item to ensure that it's in JSON dictionary format, as described in [Get data for Data Activator from event streams](data-activator-get-data-eventstreams.md).
 
 ## Trigger evaluation error codes
 
-The following error codes represent problems that can occur when Data Activator evaluates your trigger condition to see if the condition has been met.
+The following error codes represent problems that can occur when Data Activator evaluates your trigger condition to see if the condition is met.
 
 ### ProcessingLimitsReached
 
-This error code indicates that your trigger exceeded data processing limits for one of two reasons:
+Your trigger exceeds data processing limits for one of two reasons:
 
 * You're sending too many events per second to your Data Activator object, or
 * Your trigger is activating too frequently.
 
-To resolve this problem, either reduce the number of events per second you're sending to your object, or update your trigger condition so that your trigger activates less frequently.
+To resolve this problem, either reduce the number of events per second you're sending to your object or update your trigger condition so that your trigger activates less frequently.
 
 ### WorkspaceCapacityDeallocated
 
-This error code means that the Fabric capacity for your trigger's workspace has been deallocated, so you no longer have Fabric capacity available to process your trigger. To resolve this problem, contact your Fabric capacity administrator to ensure that you have a Fabric capacity assigned to your trigger's workspace.
+The Fabric capacity for your trigger's workspace is deallocated, so you no longer have Fabric capacity available to process your trigger. To resolve this problem, contact your Fabric capacity administrator to ensure that you have a Fabric capacity assigned to your trigger's workspace.
 
 ### DefinitionFailedValidation
 
-This error code means that your trigger definition is invalid. It indicates an internal problem with Data Activator. If you receive this error code, please ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
+This error code means that your trigger definition is invalid. It indicates an internal problem with Data Activator. If you receive this error code, ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
 
 ### MaxDelayReached
 
-The error code means that Data Activator has been unable to receive incoming data for your trigger for the past seven days, and so has stopped evaluating your trigger. It indicates an internal problem with Data Activator. If you receive this error code, ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
+The error code means that Data Activator is unable to receive incoming data for your trigger for the past seven days, and is not evaluating your trigger. It indicates an internal problem with Data Activator. If you receive this error code, ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
 
 ## Alert and Action Error codes
 
@@ -85,16 +85,15 @@ This error code means that Data Activator couldn't locate the recipient of your 
 
 ### RecipientThrottled
 
-This error code means that Data Activator couldn't alert the recipient of your trigger because the recipient has received too many messages from Data Activator. The article [Data Activator limitations](./data-activator-limitations.md) lists the maximum number of messages that you can send from a trigger. To resolve this problem, change the definition of your trigger so that it activates less often.
+This error code means that Data Activator couldn't alert the recipient of your trigger because the recipient receives too many messages from Data Activator. The article [Data Activator limitations](./data-activator-limitations.md) lists the maximum number of messages that you can send from a trigger. To resolve this problem, change the definition of your trigger so that it activates less often.
 
 ### BotBlockedByUser
 
-This error code means that you have a trigger that sends a Teams alert, and the recipient of the alert has blocked the Data
-Activator bot from sending them messages. To resolve this problem, ask the recipient to unblock the bot.
+This error code means that you have a trigger that sends a Teams alert, and the recipient of the alert blocks the Data Activator bot from sending them messages. To resolve this problem, ask the recipient to unblock the bot.
 
 ### TeamsAppBlockedInTenant
 
-This error code means that you have a trigger that sends a Teams alert, and your Teams administrator has blocked the Data Activator app. To resolve this problem, ask your Teams administrator to unblock the Data Activator Teams app.
+This error code means that you have a trigger that sends a Teams alert, and your Teams administrator blocks the Data Activator app. To resolve this problem, ask your Teams administrator to unblock the Data Activator Teams app.
 
 ### OfficeSubscriptionMissing
 
@@ -102,7 +101,7 @@ This error code means that Data Activator couldn't send the alert on your trigge
 
 ### TeamsDisabled
 
-This error code means that you have a trigger that sends a Teams alert, and that the administrator of your Microsoft Entra tenant has blocked the Microsoft Teams service principal (SP). To resolve the problem, contact your Microsoft Entra administrator and request that they unblock the Teams SP.
+This error code means that you have a trigger that sends a Teams alert, and that the administrator of your Microsoft Entra tenant blocks the Microsoft Teams service principal (SP). To resolve the problem, contact your Microsoft Entra administrator and request that they unblock the Teams SP.
 
 ## Related content
 

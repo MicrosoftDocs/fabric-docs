@@ -1,17 +1,19 @@
 ---
-title: AI skill tenant settings
+title: AI skill tenant settings (preview)
 description: Learn how administrators can configure AI skill tenant settings in Fabric.
 author: fbsolo-ms1
-ms.author: franksolomon
+ms.author: amjafari
 ms.reviewer: amhjf
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 08/05/2024
+ms.date: 09/20/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
 # AI skill tenant settings
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 Fabric has a new tenant setting. Users can create and share AI Skill item types.
 

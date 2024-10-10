@@ -22,7 +22,7 @@ In this example, we'll update a row, and show how to easily query the previous v
 
 1. From the **Home** tab of the ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-time-travel/new-sql-query.png" alt-text="Screenshot from the Fabric portal of the New SQL query button.":::
+   :::image type="content" source="media/tutorial-time-travel/home-ribbon-select-new.png" alt-text="Screenshot from the Fabric portal of the New SQL query button." lightbox="media/tutorial-time-travel/home-ribbon-select-new.png":::
 
 1. In the query editor, paste the following code to create the view `Top10CustomerView`. Select **Run** to execute the query.
 

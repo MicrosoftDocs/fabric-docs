@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 08/13/2024
 ---
 
 # Transform data by running a notebook
@@ -45,6 +45,17 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 Select the **Settings** tab, select an existing notebook from the **Notebook** dropdown, and optionally specify any parameters to pass to the notebook.
 
 :::image type="content" source="media/notebook-activity/choose-notebook-and-add-parameters.png" alt-text="Screenshot showing the Notebook settings tab highlighting the tab, where to choose a notebook, and where to add parameters.":::
+
+#### Session tag
+
+In order to minimize the amount of time it takes to execute your notebook job, you could optionally set a session tag. Setting the session tag will instruct Spark to reuse any existing Spark session thereby minimizing the startup time. Any arbitrary string value can be used for the session tag. If no session exists a new one would be created using the tag value.
+
+:::image type="content" source="media/notebook-activity/session-tag-001.png" alt-text="Screenshot showing the Notebook settings tab highlighting the tab, where to add session tag.":::
+
+> [!NOTE]
+> To be able to use the session tag, High concurrency mode for pipeline running multiple notebooks option must be turned on. This option can be found under the High concurrency mode for Spark settings under the Workspace settings
+
+> :::image type="content" source="media/notebook-activity/turn-on-high-concurrency-mode-for-session-tags.png" alt-text="Screenshot showing the Workspace settings tab highlighting the tab, where to enable high concurrency mode for pipelines running multiple notebooks.":::
 
 ## Save and run or schedule the pipeline
 

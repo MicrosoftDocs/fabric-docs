@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: how-to
 ms.custom: video--3yFtlZBpqs
-ms.date: 02/28/2024
+ms.date: 09/23/2024
 ---
 
 # Set up and use private links

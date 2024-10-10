@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2024
+ms.date: 09/26/2024
 ---
 
 # Buy a Microsoft Fabric subscription
@@ -46,7 +46,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 ### Buy an Azure SKU
 
-To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview). If you do not have access to these roles in a subscription, you can ask your Azure subscription administrator to create a custom role with the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
+To buy an Azure SKU, you need to be an owner or a contributor of an Azure subscription. If you do not have access to these roles in a subscription, you can ask your Azure subscription administrator to create a custom role with the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
   * Microsoft.Fabric/capacities/read
   * Microsoft.Fabric/capacities/write
   * Microsoft.Fabric/capacities/suspend/action
@@ -54,11 +54,13 @@ To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subsc
 
 To buy an Azure SKU, follow these steps:
 
-1. In Azure, select the **Microsoft Fabric** service. You can search for *Microsoft Fabric* using the search menu.
+1. Sign in to the [Azure portal](https://portal.azure.com/).
 
-2. Select **Create Fabric Capacity**.
+2. In Azure, select the **Microsoft Fabric** service. You can search for *Microsoft Fabric* using the search menu.
 
-3. In the **Basics** tab, fill in the following fields:
+3. Select **Create Fabric Capacity**.
+
+4. In the **Basics** tab, fill in the following fields:
 
     * *Subscription* - The subscription you want your capacity to be assigned to. All Azure subscriptions are billed together.
 
@@ -72,9 +74,9 @@ To buy an Azure SKU, follow these steps:
 
     * *Fabric capacity administrator* - Select the [admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles) for this capacity.
 
-4. Select **Next: Tags** and if necessary, enter a name and a value for your capacity.
+5. Select **Next: Tags** and if necessary, enter a name and a value for your capacity.
 
-5. Select **Review + create**.
+6. Select **Review + create**.
 
 ## Microsoft 365 SKUs
 

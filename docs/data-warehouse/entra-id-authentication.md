@@ -4,7 +4,7 @@ description: Learn more about Microsoft Entra authentication, an alternative to 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: frnuson, kadejo
-ms.date: 09/17/2024
+ms.date: 10/08/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -57,9 +57,7 @@ There are two means by which a User/SPN can be granted access:
 - **Grant a user/SPN membership to a role**: Any workspace role (Admin, Member, Contributor, or Viewer) is sufficient to connect to warehouse or lakehouse items with a SQL connection string.
     1. In the **Manage access** option in the Workspace, assign the **Contributor** role. For more information, see [Service roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles).
 
-    :::image type="content" source="media/entra-id-authentication/workspace-setting-grant-workspace-contributor.png" alt-text="Screenshot from the Fabric portal showing the Contributor role assigned to a User in the Manage access option in the workspace." lightbox="media/entra-id-authentication/workspace-setting-grant-workspace-contributor.png":::
-
-- **Assign a user/SPN to a specific item**: Grant access to a specific Warehouse or SQL analytics endpoint of a Lakehouse. A Fabric admin can choose from different permission levels. 
+- **Assign a user/SPN to a specific item**: Grant access to a specific Warehouse or SQL analytics endpoint of a Lakehouse. A Fabric admin can choose from different permission levels.
     1. Navigate to the relevant Warehouse or SQL analytics endpoint item.
     1. Select  **More options**, then **Manage Permissions**. Select **Add user**.
     1. Add the User/SPN on the **Grant people access** page.
@@ -80,7 +78,9 @@ Fabric natively supports authentication and authorization for Microsoft Entra us
 
 ## Support for tabular data stream (TDS)
 
-Fabric natively supports the Tabular Data Stream (TDS) protocol, also known as a *SQL connection string*. Fabric is therefore compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
+Fabric uses the Tabular Data Stream (TDS) protocol, the same as SQL Server, when you connect with a connection string.
+
+Fabric is compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
 
 To obtain the connection string, select **More options** on a Fabric warehouse or SQL analytics endpoint item.
 

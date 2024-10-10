@@ -7,14 +7,14 @@ author: YaelSchuster
 ms.topic: concept-article
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 09/15/2024
 ms.search.form: Get started
 #customer intent: I want to learn how to set alerts based on Fabric events from the Real-Time hub.
 ---
 
 # Set alerts based on Fabric events in Real-Time hub
 
-You can create alerts based on Fabric events (Azure Blob Storage events and Fabric Workspace item events) from event streams. The alert can be configured with one of the following actions: 
+You can create alerts based on Fabric events (Azure Blob Storage events and Fabric Workspace item events) from event streams. The alert can be configured with one of the following actions:
 
 - Send an email
 - Send a Teams message
@@ -28,7 +28,7 @@ This user flow shows how a data engineer or data analyst can trigger Fabric data
 
 ## Steps
 
-1. In Real-Time hub, select the **Fabric events** tab.
+1. In Real-Time hub, select the **Fabric events** page.
 1. Select the type of the event you want to explore. You can choose from Fabric Workspace item events or Azure Blob Storage events.
 1. In the detail view, you see detailed schemas of the Fabric events are presented.
 
@@ -43,5 +43,3 @@ This user flow shows how a data engineer or data analyst can trigger Fabric data
 You can run a data pipeline every time there's new data or change in data in your Azure Blob storage.
 
 You can audit or monitor workspace level activity through Fabric events available in the Real-Time hub. You can stream these events to an event stream and send it to a custom application through the event stream.
-
-

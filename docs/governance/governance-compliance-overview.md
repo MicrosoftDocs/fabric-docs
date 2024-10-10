@@ -5,23 +5,24 @@ author: paulinbar
 ms.author: painbar
 ms.topic: overview
 ms.custom:
-ms.date: 03/27/2024
+ms.date: 09/26/2024
 ---
 
 # Governance overview and guidance
 
-Microsoft Fabric governance and compliance provides set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
+Microsoft Fabric governance and compliance provides a set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
 
 This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance regarding taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
-|[Manage your data estate](#manage-your-data-estate)|[Secure, protect, and comply](#secure-protect-and-comply)|[Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use)|[Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act)|
-|:----|:----|:----|:----|
-|[Admin portal](#admin-portal)|[Privacy](#privacy)|[OneLake data hub](#onelake-data-hub)|[Monitoring hub](#monitoring-hub)|
-|[Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust, and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
-|[Domains](#domains)|[Purview Information Protection](#purview-information-protection)*|[Data lineage and impact analysis](#data-lineage-and-impact-analysis)|[Purview hub](#purview-hub)|
-|[Workspaces](#workspaces)|[Securing Fabric items within a workspace](#securing-items-in-a-workspace)|[Purview for governance across the org](#purview-for-governance-across-the-org)*|[Admin monitoring](#admin-monitoring)|
-|[Capacities](#capacities)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
-|[Metadata scanning](#metadata-scanning)|[Auditing](#auditing)|||
+| [Manage your data estate](#manage-your-data-estate) | [Secure, protect, and comply](#secure-protect-and-comply) | [Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use) | [Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act) |
+|:-|:-|:-|:-|
+| [Admin portal](#admin-portal) | [Privacy](#privacy) | [OneLake data hub](#onelake-data-hub) | [Monitoring hub](#monitoring-hub) |
+| [Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings) | [Data security](#data-security) | [Endorsement, trust, and reuse](#endorsement) | [Capacity metrics](#capacity-metrics) |
+| [Domains](#domains) | [Purview Information Protection](#purview-information-protection)* | [Tags](#tags) | [Purview hub](#purview-hub) |
+| [Workspaces](#workspaces) | [Purview Data Loss Prevention](#purview-data-loss-prevention)* | [Data lineage and impact analysis](#data-lineage-and-impact-analysis) | [Admin monitoring](#admin-monitoring) |
+| [Capacities](#capacities) | [Securing Fabric items within a workspace](#securing-items-in-a-workspace) | [Purview for governance across the org](#purview-for-governance-across-the-org)* |  |
+| [Metadata scanning](#metadata-scanning) | [Securing data in Fabric items](#securing-data-in-fabric-items) |  |  |
+|  | [Auditing](#auditing) |  |  |
 
 *Requires additional licensing
 
@@ -41,7 +42,7 @@ For more information about the admin portal, see [What is the admin portal?](../
 
 Tenant, domain, and workspace admins each have settings within their scope that they can configure to control who has access to certain functionalities at different levels. Some tenant-level settings can be delegated to domain and capacity admins.
 
-For more information see [About tenant settings](../admin/about-tenant-settings.md), [Configure domain settings](./domains.md#configure-domain-settings), and [Workspace settings](../get-started/workspaces.md#workspace-settings).
+For more information, see [About tenant settings](../admin/about-tenant-settings.md), [Configure domain settings](./domains.md#configure-domain-settings), and [Workspace settings](../get-started/workspaces.md#workspace-settings).
 
 **Guidance**: Fabric admins should define tenant-wide settings, leaving domain admins to override delegated settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings.
 
@@ -95,6 +96,14 @@ For more information, see [Information Protection in Microsoft Fabric](./informa
 
 **Guidance**: Sensitivity labels from Microsoft Purview Information Protection and their associated label policies should be specified at an organizational level and be valid for the whole organization.
 
+### Purview Data Loss Prevention
+
+Purview DLP policies for Fabric automatically detect sensitive information as it is uploaded into [DLP-supported item types](./data-loss-prevention-overview.md#supported-item-types) in your Fabric tenant, and help you take risk remediation actions so that your organization stays compliant with governmental and industry regulations.
+
+Compliance and security administrators receive audit logs for every DLP detection. The audit logs give them further visibility into business-critical data and its location within the tenant. They can set up alerts that will be automatically generated whenever sensitive information is detected in a DLP-supported item. They can also create customized messages to users to help guide them about how to deal with sensitive data. For example, admins could configure a message that would be sent to the Fabric data owner whenever proprietary information is detected in their data, explaining that this information is internal and shouldn't be shared externally.
+
+For more information, see [Data loss prevention policies in Microsoft Fabric](./data-loss-prevention-overview.md).
+
 ### Securing items in a workspace
 
 Organizational teams can have individual workspaces where different personas collaborate and work on generating content. Access to the items in the workspace is regulated via workspace roles assigned to users by the workspace admin.
@@ -127,7 +136,7 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 
 For more information, see [Discover data items in the OneLake data hub](../get-started/onelake-data-hub.md).
 
- **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the data hub. Carefully defined domains help set the context for teams and makes for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
+ **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the data hub. Carefully defined domains help set the context for teams and make for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
 
 ### Endorsement
 
@@ -136,6 +145,12 @@ Endorsement is a way to make trustworthy, quality data more discoverable. Organi
 For more information, see [Endorsement](./endorsement-overview.md).
 
 **Guidance**: Certification enablement should be delegated to domain admins, and the domain admins should authorize data owners and producers to be able to certify the items they create. The data owners and producers should then always certify their items that have been tested and are ready for use by other teams. This helps separate low-quality, nontrusted items from trusted, ready-to-use assets. It also makes these trusted assets easier to find. In addition, data consumers should be educated about how to find trusted assets, and encouraged to use only certified items in their reports and other downstream processing.
+
+### Tags
+
+Tags are configurable text labels that can be applied to Fabric items to enhance item discoverability and use. Fabric administrators can define a set of tags that data owners can use to categorize their items. Once tags have been applied to items, data consumers can view, search, and filter by the applied tags across the various Fabric experiences.
+
+For more information, see [Tags in Microsoft Fabric](./tags-overview.md).
 
 ### Data lineage and impact analysis
 
