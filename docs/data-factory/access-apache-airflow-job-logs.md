@@ -1,6 +1,6 @@
 ---
-title: Access Apache Airlfow Job Logs
-description: This article explains how to access Apache Airflow Job logs through Apache Airfow Job UI.
+title: Access Apache Airflow Job Logs
+description: This article explains how to access Apache Airflow Job logs through Apache Airflow Job UI.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -35,9 +35,9 @@ To get started, you must complete the following prerequisites:
 
 ### Create and Run the Apache Airflow Job
 
-We will use default Directed Acyclic Graph (DAG), which is automatically created when a new file is added to Dags folder of Fabric managed storage.
+We use default Directed Acyclic Graph (DAG), which is automatically created when a new file is added to Dags folder of Fabric managed storage.
 
-1. Create a new file in Dags folder. A Dag will be intialized consisting of BashOperator that prints "Hello world" in Apache Airflow Job logs.
+1. Create a new file in Dags folder. A Dag is initialized consisting of BashOperator that prints "Hello world" in Apache Airflow Job logs.
 
    :::image type="content" source="media/apache-airflow-jobs/create-new-file.png" lightbox="media/apache-airflow-jobs/create-new-file.png" alt-text="Screenshot to create a new Apache Airflow file.":::
 
@@ -45,7 +45,7 @@ We will use default Directed Acyclic Graph (DAG), which is automatically created
 
    :::image type="content" source="media/apache-airflow-jobs/save-and-run-dag.png" lightbox="media/apache-airflow-jobs/save-and-run-dag.png" alt-text="Screenshot to save and run the Apache Airflow Dag.":::
 
-### Access logs of Airflow Airflow Job
+### Access logs of Apache Airflow Job
 
 1. When the DAG runs, its logs are displayed in the results section. Click on Arrow, to expand the results section.
    :::image type="content" source="media/apache-airflow-jobs/access-result-section.png" lightbox="media/apache-airflow-jobs/access-result-section.png" alt-text="Screenshot to access the results section in Apache Airflow job.":::
