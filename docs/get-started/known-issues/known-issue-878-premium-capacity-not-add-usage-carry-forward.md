@@ -1,6 +1,6 @@
 ---
 title: Known issue - Premium capacity doesn't add excess usage into carry forward
-description: A known issue is posted where premium capacity doesn't add excess usage into carry forward
+description: A known issue is posted where premium capacity doesn't add excess usage into carry forward.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
