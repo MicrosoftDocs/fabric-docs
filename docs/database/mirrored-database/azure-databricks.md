@@ -3,8 +3,8 @@ title: Microsoft Fabric mirrored catalog from Azure Databricks (Preview)
 description: Learn about the mirrored databases from Azure Databricks in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sheppardshep, whhender
-ms.date: 09/19/2024
+ms.reviewer: sheppardshep, whhender, mspreshah
+ms.date: 10/09/2024
 ms.topic: overview
 ms.search.form: Databricks overview
 ---
