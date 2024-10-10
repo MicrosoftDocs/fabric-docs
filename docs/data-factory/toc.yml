@@ -891,6 +891,8 @@
             href: apache-airflow-jobs-supported-apache-airflow-configurations.md
           - name: Migrate from Azure Workflow Orchestration Manager
             href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
+          - name: Access logs 
+            href: access-apache-airflow-job-logs.md
       - name: Tutorials
         items:
           - name: Hello Apache Airflow Job
