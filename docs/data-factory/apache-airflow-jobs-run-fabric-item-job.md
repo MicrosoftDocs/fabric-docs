@@ -34,7 +34,7 @@ To get started, you must complete the following prerequisites:
   :::image type="content" source="media/apache-airflow-jobs/user-consent.png" lightbox="media/apache-airflow-jobs/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
 
 - Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
-:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service prinicpal as a contributor.":::
+:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
 
 - Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
 
