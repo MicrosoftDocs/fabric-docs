@@ -43,13 +43,13 @@ Most common structures in the industry:
 
     However, a product/project based structure can create duplication of functions, competition for resources, and lack of coordination among teams.
 
-    :::image type="content" source="./media/domains-best-practices/sample-product-based-organizational-structure.png." alt-text="Diagram showing an example of a product/project based organizational structure." border="false":::
+    :::image type="content" source="./media/domains-best-practices/sample-product-based-organizational-structure.png" alt-text="Diagram showing an example of a product/project based organizational structure." border="false":::
 
 * Process-based structure
 
     A process-based structure is suitable for companies that have standardized or repetitive processes that span different products or markets. A process-based structure allows the company to optimize the efficiency, quality, and consistency of each process and leverage the expertise and skills of the process teams. However, a process-based structure can also create silos, communication gaps, and reduced customer focus among teams.
 
-    :::image type="content" source="./media/domains-best-practices/sample-process-based-organizational-structure.png." alt-text="Diagram illustrating a process-based organizational structure.":::
+    :::image type="content" source="./media/domains-best-practices/sample-process-based-organizational-structure.png" alt-text="Diagram illustrating a process-based organizational structure.":::
 
 * Geography-based structure
 
