@@ -4,7 +4,7 @@ description: Follow steps to connect SSMS to data warehousing in your Microsoft 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, stwynant, jacinda-eng
-ms.date: 10/08/2024
+ms.date: 10/10/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -43,13 +43,13 @@ To ensure proper access, you need to allow the Power BI service tags for firewal
 
 To retrieve the connection string, follow these steps:
 
-1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select the `...` ellipses for **More options**.
+1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+1. Select the **Copy** button in the **SQL connection string** box to copy the connection string to your clipboard.
 
-   :::image type="content" source="media/connectivity/workspace-warehouse-more-options.png" alt-text="Screenshot of a workspace item for a warehouse. The More options or ellipses button is boxed.":::
+Or, in the **OneLake Data Hub**:
 
+1. Select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select the `...` ellipses for **More options**.
 1. Select **Copy SQL connection string** to copy the connection string to your clipboard.
-
-   :::image type="content" source="media/connectivity/warehouse-copy-sql-connection-string.png" alt-text="Screenshot of the workspace screen with the context menu open.":::
 
 ## Get started with SQL Server Management Studio (SSMS)
 
