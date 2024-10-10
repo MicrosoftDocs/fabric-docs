@@ -91,8 +91,6 @@ To work with Create, Read, Update and Delete APIs for workload items, and perfor
 
 * Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
 
-* Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
-
 * Under **Authorized client applications**, select **Add a client application**. Add `d2450708-699c-41e3-8077-b0c8341509aa` (Fabric client for workloads application) and select your scope.
 
 ### Add scopes for data plane API
