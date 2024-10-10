@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Data Mode
-ms.date: 09/14/2024
+ms.date: 09/24/2024
 ---
 
 # Assign data to objects in Data Activator
