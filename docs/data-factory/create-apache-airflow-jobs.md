@@ -37,7 +37,7 @@ Apache Airflow Job provides a simple and efficient way to create and manage Apac
 
    :::image type="content" source="media/apache-airflow-jobs/more-options.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot shows click on more options.":::
 
-   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot to select Data Workflow.":::
+   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Job.":::
 
 3. Give a suitable name to your project and click on the "Create" button.
 
