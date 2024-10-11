@@ -33,7 +33,7 @@ Once you tested and prototyped the desired GraphQL operation, the API editor can
 > [!IMPORTANT]
 > The generated code uses interactive browser credentials and should be used for testing purposes only. In production, always register an application in Microsoft Entra and use the appropriate `client_id` and scopes. You can find an end-to-end example with sample code at [Connect Applications](connect-apps-api-graphql.md).
 
-To get started, execute a query, click the **Generate code** button and chose the language accordingly:
+To get started, execute a query, select the **Generate code** button and chose the language accordingly:
 
 :::image type="content" source="media/api-graphql-editor/query-editor-codegen.png" alt-text="Screenshot of the API editor screen after opening the generate code option." lightbox="media/api-graphql-editor/query-editor-codegen.png":::
 
