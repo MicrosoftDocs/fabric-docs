@@ -22,7 +22,7 @@ To go to the editor, open the API for GraphQL item in Fabric and select **Query*
 
 :::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears in the lower left corner of the Fabric screen." lightbox="media/api-graphql-editor/query-view-button.png":::
 
-You can type and execute GraphQL queries directly on the **Query** tab. Intellisense capabilities are available with a keyboard shortcut: CTRL + Space (Windows), or Command + Space (macOS). Click **Run** to execute the query and retrieve the data accordingly from the data source.
+You can type and execute GraphQL queries directly on the **Query** tab. Intellisense capabilities are available with a keyboard shortcut: CTRL + Space (Windows), or Command + Space (macOS). Select **Run** to execute the query and retrieve the data accordingly from the data source.
 
 :::image type="content" source="media/api-graphql-editor/query-editor-intellisense.png" alt-text="Screenshot of the API editor screen, which has a Query tab that is divided into Run, Query variables, and Results panes." lightbox="media/api-graphql-editor/query-editor-intellisense.png":::
 
