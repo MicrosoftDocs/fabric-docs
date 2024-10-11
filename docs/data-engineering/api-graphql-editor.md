@@ -22,9 +22,42 @@ To go to the editor, open the API for GraphQL item in Fabric and select **Query*
 
 :::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears in the lower left corner of the Fabric screen." lightbox="media/api-graphql-editor/query-view-button.png":::
 
-You can type code directly on the **Query** tab. Intellisense capabilities are available with a keyboard shortcut: CTRL + Space (Windows), or Command + Space (macOS).
+You can type and execute GraphQL queries directly on the **Query** tab. Intellisense capabilities are available with a keyboard shortcut: CTRL + Space (Windows), or Command + Space (macOS). Click **Run** to execute the query and retrieve the data accordingly from the data source.
 
 :::image type="content" source="media/api-graphql-editor/query-editor-intellisense.png" alt-text="Screenshot of the API editor screen, which has a Query tab that is divided into Run, Query variables, and Results panes." lightbox="media/api-graphql-editor/query-editor-intellisense.png":::
+
+## Generate code
+
+Once you tested and prototyped the desired GraphQL operation, the API editor can generate boilerplate Python or Node.js code based on the query or mutation executed in the editor. You can run the generated code locally for testing purposes and re-use parts of it in the application development process.
+
+> [!IMPORTANT]
+> The generated code uses interactive browser credentials and should be used for testing purposes only. In production, always register an application in Microsoft Entra and use the appropriate `client_id` and scopes. You can find an end-to-end example with sample code at [Connect Applications](connect-apps-api-graphql.md).
+
+To get started, execute a query, click the **Generate code** button and chose the language accordingly:
+
+:::image type="content" source="media/api-graphql-editor/query-editor-codegen.png" alt-text="Screenshot of the API editor screen after opening the generate code option." lightbox="media/api-graphql-editor/query-editor-codegen.png":::
+
+You can then copy the generated code and save it as a file in a local folder. Depending on the language of choice, follow simple steps to test locally:
+
+##### Python
+
+1. Create a virtual environment with the command `python -m venv .venv`
+2. Activate the `venv` using `.venv\Scripts\activate` or `source .venv/bin/activate`
+3. Install the required dependency with the command `pip install azure.identity`
+4. Execute the code with `python <filename.py>`
+
+##### Node.JS
+
+1. In the same folder as the file you saved, create a `package.json` file with the following content:
+```json
+{
+  "type": "module",
+  "dependencies": { 
+  }
+}
+```
+2. Run `npm install --save @azure/identity` or similar command in your package manager of choice to install the latest version of the identity library.
+3. Execute the code with  `node <filename>.js`
 
 ## Development of queries and mutations
 
