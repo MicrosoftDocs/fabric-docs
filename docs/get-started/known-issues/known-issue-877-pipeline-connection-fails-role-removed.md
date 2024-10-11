@@ -26,4 +26,4 @@ To avoid this issue, don't revoke the connection creator role.
 
 ## Next steps
 
-- [About known issues](https://support.fabric.microsoft.com/known-issues) 
+- [About known issues](https://support.fabric.microsoft.com/known-issues)
