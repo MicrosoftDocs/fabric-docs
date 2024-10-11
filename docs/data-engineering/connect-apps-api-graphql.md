@@ -344,7 +344,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
     :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
 
-## Using a Service Principal
+## Use a service principal
 
 While the steps in the previous section are required to provide access to user principals, it's also possible to access the GraphQL API with a service principal:
 
