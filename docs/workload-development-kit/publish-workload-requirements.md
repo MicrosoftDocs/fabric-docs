@@ -4,7 +4,7 @@ description: Learn about the guidelines and requirements for publishing a Micros
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 05/21/2024
+ms.date: 08/21/2024
 ---
 
 # Workload certification (preview)
@@ -17,82 +17,91 @@ Building applications in Fabric is more like creating documents in office than p
 
 Fabric is designed to support the largest Tier 1 projects and data sizes. The Fabric platform provides a common set of services that the workload must not replace with their own proprietary services. Consistent use of the platform services across all the workloads ensures a uniform experience and functionality throughout the system.
 
-[OneLake](../onelake/onelake-overview.md) is the storage platform that brings together all the data in Fabric into a single integrated product. OneLake includes data security management. Infrastructure level security, compliance, and governance are managed by expert administrators on a tenant level.
+This document provides a comprehensive overview of all the different components that you need to take into account to certify a workload. Certification is required to move into Public Preview and GA. The Status of the individual item provides you with an indication what is needed. 
 
-Your workloads must adhere to the following business requirements:
-
-| Category | Description | Domain  | Reference  |
-|---|---|---|---|
-| Significant value | Your offer must provide enough value to justify the investment it takes to learn and use. Your offer should provide significant benefits such as enhanced efficiency, innovative features, or strategic advantages. | Functional<br><br>SaaS submission | [100.8 Significant value](/legal/marketplace/certification-policies#1008-significant-value) |
-| Trial | Provide an easy and fast trial experience. The trial should be available to the customer without waiting time (less than 5 seconds), and give the them a free and easy way to explore the offered workload. | Functional |  [Trials](monetization.md#trials) |
-| Monetization | Partners need to enlist a SaaS offer in the Azure Marketplace. This offer can just be a *contact us* listing to get leads from the platform. We expect partners to also transact over the Marketplace. You can build Bring Your Own License (BYOL) capabilities into your workload. | Functional | [Monetize your workload](monetization.md) |
-
-## Design requirements
-
-To get familiar with the design requirements for your Fabric workload review the [Fabric UX System](https://aka.ms/fabricux). The Fabric UX System provides an overview of the patterns and components that are available in the Fabric UX to accelerate your work. It also includes Fabric UX React and Angular wrapper libraries that integrate with Fluent web components.
-
-Fabric users expect a fast loading UX. Independent of the technical implementation and regional hosting, your workload should load fast within all Fabric regions.
-
-## SaaS submission requirements
-
-Before publishing your Software as a Service (SaaS) offer on the Azure Marketplace, your workload needs to meet these [Commercial marketplace certification policies](/legal/marketplace/certification-policies#100-general):
-
-* [100 General](/legal/marketplace/certification-policies#100-general)
-
-* [1000 Software as a Service (SaaS)](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
-
-The requirements for the workload package metadata and the SaaS submission offer metadata have to be identical to ensure consistency. The applicable domain will state *SaaS submission and workload package metadata* to reflect this necessity.
-
-## Workload package requirements
-
-Metadata such as title, summary, and icon, must be identical in the Workload package manifest and the SaaS offer submission in Partner Center. Add all the assets of the workload such as icons and screenshots under `fe/assests` directory.
-
-Your workload package has to comply with the frontend and [backend](extensibility-back-end.md) manifest requirements.
+| Name | Description | Certification method  | Public Preview | General Availability | Reference  |
+|---|---|---|---|---|---|
+| Value to customers | Your offer must provide enough value to justify the investment it takes to learn and use. Your offer should provide significant benefits such as enhanced efficiency, innovative features, or strategic advantages. | Attestation | Required  | Required  | |
+| Terms and conditions | You need to provide your customers with terms and conditions for the offer you provide on the platform. In the terms and conditions you need to highlight the compliancy aspects of your solution. For example, what happens to data at rest and transit? Where are the services you provide Azure customers available from? | Workload Package | Required  |Required | [Governance overview and guidance](../governance/governance-compliance-overview.md) |
+| Metadata | Metadata such as title, summary, and icon, must be identical in the Workload package manifest and the SaaS offer submission in Partner Center. Add all the assets of the workload such as icons and screenshots under `fe/assests` directory. Your workload package has to comply with the frontend and [backend](extensibility-back-end.md) manifest requirements. | Workload Package | Required |Required | [Manifest](extensibility-back-end.md)
+| Attestation Document | Partners need to provide a page that contains all the information about their workload certification status. This document needs to be linked in the Workload Package and kept up-to-date. You must add the link in the workload metadata manifest under the `supportLink` field in `certification`. The link must also appear in the workload product page in the Workload Hub. | Workload Package | Required | Required | |
+| Trial | Provide an easy and fast trial experience. The trial should be available to the customer without waiting time (less than 5 seconds), and give the them a free and easy way to explore the offered workload. | Attestation | Required | Required |  [Trials](monetization.md#trials) |
+| Marketplace Offer | Partners need to enlist a SaaS offer in the Azure Marketplace. This offer can just be a *contact us* listing to get leads from the platform. We expect partners to also transact over the Marketplace. You can build Bring Your Own License (BYOL) capabilities into your workload. | Workload Package | Required | Required | [Creating a SaaS offer](/partner-center/marketplace-offers/create-new-saas-offer) <br> <br> [Commercial marketplace certification policies](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)  |
+|Documentation | You need to provide documentation for your Workload to customers in an easy and understandable form.  | Workload Package | Required | Required | |
+| Monetization | You can use the Azure Marketplace to monetize your workload. | Attestation | Not Supported | Optional | [Monetize your workload](monetization.md) |
 
 ## Technical requirements
 
 The following table lists technical requirements for your workload offer.
 
-| Category | Description | Domain  | Reference  |
-|---|---|---|---|
-| SaaS in the Azure Marketplace | For your SaaS offer to be listed on the Azure Marketplace, it must be primarily platform on Microsoft Azure. | SaaS submission<br><br>Azure requirements<br><br> Functional | [1000.1 Value proposition and offer requirements](/legal/marketplace/certification-policies#10001-value-proposition-and-offer-requirements) |
-| OneLake | OneLake is where data is stored in Fabric. Workloads need to integrate with it to store data in the standard formats supported by the platform so that other services can take advantage of it. | Functional | [OneLake, the OneDrive for data](../onelake/onelake-overview.md) |
+| Category | Description | Certification method  | Public Preview | General Availability | Reference  |
+|---|---|---|---|---|---|
+| Microsoft Entra Access | Fabric workloads must ensure that Microsoft Entra identities can be granted access to our applications, services, and API endpoints. If your service provides other authentication methods to data that was originally stored in Fabric this needs to be document. </br>  | Attestation | Required | Required | [Authentication](./authentication-concept.md) |
+| OneLake | OneLake is where data is stored in Fabric. Workloads need to integrate with it to store data in the standard formats supported by the platform so that other services can take advantage of it. | Attestation | Required | Required | [OneLake, the OneDrive for data](../onelake/onelake-overview.md) |
+| Microsoft Entra Conditional Access | Enterprise customers require centralized control and management of the identities and credentials used to access their resources and data and, in Microsoft, Microsoft Entra provides that service. Make sure that your service works with even if customers have enabled this functionality. | Attestation | Required | Required | [Conditional access](../security/security-conditional-access.md) |
+| Admin REST API | Admin REST APIs are an integral part of Fabric admin and governance process. These APIs help Fabric admins in discovering workspaces and items, and enforcing governance such as performing access reviews, etc. Basic functionality is supported as part of the Workload Development Kit and doesn't need any work from Partners. | Attestation | Supported | Supported | [Admin REST API](/rest/api/fabric/admin/items) |
+| Customer Facing Monitoring & Diagnostic | Partners are required to store health telemetry for 30 days including activity ID for customer support purposes. | Attestation | Required | Required | |
+| B2B | Fabric sharing strategy is focused on allowing customers to collaborate with their business partners, customers, vendors, subsidiaries etc. This also means users form other tenants can potentially be granted access to items partner are creating.  | Attestation | Optional | Optional | [Guest User Sharing](../security/security-b2b.md) |
+| Business Continuity and disaster recovery | Fabric commits to a seamless service availability to customers. We recognize the importance of planning for unforeseen events in a world of uncertainties. We ask partners providing workloads to customers within Fabric to think about this as well and define Business Continuity and Disaster Recovery (BCDR) plans designed to tackle unplanned disasters and recovery steps. | Attestation | Optional | Optional| [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric) |
+| Performance | Performance is an important requirement for Fabric customers. We recommend our partners to think about this in the context of their workload as well and take measures to test and track performance of their Items.  | Attestation | Optional | Required |  |
+| Presence | To ensure that, you can meet customer expectations in the same way no matter the region or cloud where Fabric is used, partners need to think how they want to align with fabric regions and clouds. Availability in certain restrictions also impacts your Data Residency commitments. | Attestation | Optional | Optional | [Fabric Regions](../admin/region-availability.md) |
+| Public APIs | Fabric Public APIs are the backbone of automation, enabling seamless communication and integration for both customers and ISVs within the Fabric ecosystem. Fabric Public API empowers users to build innovative solutions, enhance scalability, and streamline workflows. | Attestation | Not supported | Not supported | [Documentation](/rest/api/fabric/articles/) |
 
-## Compliance requirements
+## Design/ UX requirements
 
-The following table lists compliance requirements for your workload offer.
+To get familiar with the design requirements for your Fabric workload review the [Fabric UX System](https://aka.ms/fabricux). The Fabric UX System provides an overview of the patterns and components that are available in the Fabric UX to accelerate your work. It also includes Fabric UX React and Angular wrapper libraries that integrate with Fluent web components.
 
-| Category | Description | Domain  | Links  |
-|---|---|---|---|
-| Publisher attestation | The Publisher attestation document is a way for Workload developers to show customers how their app handles security, data, and compliance. In this self-assessment the Workload developer describes the Workload’s security attributes and data-handling practices. The publisher attestation document should be hosted on the partner website. You must add the link in the workload metadata manifest under the `supportLink` field in `certification`. The link must also appear in the workload product page in the Workload Hub. | Compliance | |
-| Terms and conditions | You need to provide your customers with terms and conditions for the offer you provide on the platform. In the terms and conditions you need to highlight the compliancy aspects of your solution. For example, what happens to data at rest and transit? Where are the services you provide Azure customers available from? | Compliance<br><br>SaaS Submission | [Governance overview and guidance](../governance/governance-compliance-overview.md) |
-| ISO 27001:2013 | Your Fabric Workload must comply with ISO 27001:2013. ISO support should be listed in the publisher attestation document.| Compliance<br><br>Security |  |
-| SOC 2 Type 2 | Your Fabric Workload must comply with SOC 2 Type 2. | Compliance<br><br>Security |  |
-| Optional and recommended certifications | If applicable to your customers, align with additional Fabric certifications.   | Compliance<br><br>Security | [Governance overview and guidance](../governance/governance-compliance-overview.md) |
+Fabric users expect a fast loading UX. Independent of the technical implementation and regional hosting, your workload should load fast within all Fabric regions.
 
-## Additional requirements
+| Name | Description | Certification method  | Public Preview | General Availability  | Reference  |
+|---|---|---|---|---|---|
+| Common UX | The workload and all Item types the partner provides as part of it need to comply with the Fabric UX guidelines.  | Attestation | Required | Required | [Fabric UX System](https://aka.ms/fabricux) |
+| Item Creation Experience | Partners need to comply with the Item creation experience according to the Fabric UX System. | Attestation | Required | Required | [Fabric UX System](https://aka.ms/fabricux) |
+| Monitoring hub | Long running operations need to integrate with Fabric Monitoring Hub.   | Attestation | Required | Required | [Monitoring Hub](./monitoring-hub.md) |
+| Trial Experience | Partners are required to provide a Trial Experience for users as outlined in the design guidelines.  | Attestation | Optional | Required | [Fabric Templates](https://aka.ms/fabrictemplates) |
+| Monetization Experience | Partners that want to monetize their solution in fabric need to follow the patterns that have been defined in the Fabric Templates. Monetization can happen through Azure Marketplace or you can use your existing methods. In any case you need to follow the design guidelines defined in the Fabric templates. | Attestation | Optional | Required | [Fabric Templates](https://aka.ms/fabrictemplates) |
+| Accessibility | Partners need to comply with the Fabric UX design guidelines for Accessibility. | Attestation | Optional | Required | [Fabric UX System](https://aka.ms/fabricux) |
+| World Readiness | English has to be the default language. Content can be localized if you decide to do it. In this case add the supported languages to your certification page. | Workload Package | Optional | Required |  |
+| Jobs to be done | To be listed in different create experiences within Fabric, you need to onboard to the Jobs to Be done definition for your Item types.  | Workload Package | Optional | Required | |
+| Item Settings | Partners need to implement the item settings as part of the Ribbon.  | Attestation | Required | Required | [Fabric UX System](https://aka.ms/fabricux) |
+| Samples | Partners can use samples that are creating preconfigured items of their type to help customers get started more easily. | Attestation | Optional | Optional | |
+| Custom Item actions | Partners can implement custom actions as part of their item editor. | Attestation | Optional | Optional | |
+| Workspace settings | Workspace settings provide a way that workloads can be configured on a workspace level.  | Attestation | Not supported | Not supported | [Workspace](../get-started/workspaces.md) |
+| Global Search | Searching for items in Fabric is supported through the top search bar.   | Attestation | Not supported | Not supported | [Fabric Search](../get-started/fabric-search.md) |
 
-The following table lists additional requirements for your workload offer.
+## Security & Compliance requirements
 
-| Category | Description | Domain  | Reference |
-|---|---|---|---|
-| Engineering contact | The engineering contact email domain must match the email domain of the publisher who reaches our team with the workload package |  SaaS submission | [Publish your workload](publish-workload-flow.md#publish-your-workload) > step 4. |
-| Title accuracy | Your workload must have an accurate and descriptive title, and the seller’s name. If the offer is promoted on another website both titles should match. | SaaS submission<br><br>Workload package metadata | [100.1.1 Title](/legal/marketplace/certification-policies#10011-title)  |
-| Concise summary | The summary appears in the Azure commercial marketplace search results and must be limited to 100 characters. The summary has to convey the essence of the SaaS offer. | SaaS submission<br><br>Workload package metadata | [100.1.2 Summary](/legal/marketplace/certification-policies#10012-summary) |
-| Comprehensive description | The description should comprehensively detail any limitations, conditions, or exceptions to the functionality, features, and deliverables. It must articulate the value proposition and requirements clearly and distinctly represent the product. For non-English content, the description must start or end with the phrase, *This application is available in \<list of languages>.* | SaaS submission<br><br> Workload package metadata | [100.1.3 Description](/legal/marketplace/certification-policies#10013-description) |
-| Marketplace visibility | Each SaaS offer must feature at least one public plan, such as *Contact Me*, *BYOL*, or *Get It Now (Transact)*. Private plans aren't permitted without an accompanying public plan to ensure active marketplace engagement. | SaaS submission | [100.1.5 Active and visible presence](/legal/marketplace/certification-policies#10015-active-and-visible-presence) |
-| Graphic elements | Graphic elements must be current, and related to your offer.<li>**Logo** - Appear on the offer listing page and must be uploaded as a `.png` file between 216-350 pixels square</li><li>**Images** - Must be 1280x720 pixel `.png` files.</li><li>**Videos** - Must be hosted on YouTube or Vimeo. No short URLs, *human readable* redirects might be used.</li> | SaaS submission | [100.3 Graphic elements](/legal/marketplace/certification-policies#1003-graphic-elements) |
-| Pricing model compliance | The pricing for the SaaS offer must align with the [plans and pricing for commercial marketplace offers](/azure/marketplace/plans-pricing), ensuring transparency and consistency for customers. | SaaS submission |  [100.4 Acquisition, pricing, and terms](/legal/marketplace/certification-policies#1004-acquisition-pricing-and-terms) |
-| Essential offer details | Include relevant offer information such as terms and conditions, privacy policy, supporting documentation and *Learn more* links | SaaS submission<br><br>Workload package metadata<br><br>Legal and privacy compliance | [100.5 Offer information](/legal/marketplace/certification-policies#1005-offer-information)<br><br>[100.6 Personal information](/legal/marketplace/certification-policies#1006-personal-information) |
-| Inappropriate content | Customers expect offers to be free of inappropriate, harmful, or offensive content. | SaaS submission<br><br>Workload package metadata<br><br>Legal and privacy compliance| [100.10 Inappropriate content](/legal/marketplace/certification-policies#10010-inappropriate-content) |
-| Security | Customers want to be confident that offers are safe and secure. Your offer must not jeopardize or compromise users, Azure services, related services, or systems security. If your offer collects credit card information, or uses a third-party payment processor that collects credit card information, the payment processing must meet the current PCI Data Security Standard (PCI DSS). | SaaS submission<br><br>Security compliance | [100.11 Security](/legal/marketplace/certification-policies#10011-security) |
-| Microsoft Entra seamless single sign-on | Your offer must support [Microsoft Entra seamless single sign-on](/entra/identity/hybrid/connect/how-to-connect-sso) for marketplace activation and independent transactions.| [1000.3 Authentication options](/legal/marketplace/certification-policies#10003-authentication-options) |
-| Fulfillment APIs integration | Your offer must be integrated with the SaaS Fulfillment APIs. | SaaS Submission | [1000.4 SaaS Fulfillment and Metering APIs](/legal/marketplace/certification-policies#10004-saas-fulfillment-and-metering-apis) |
-| Advertising | Fabric Workload must not include advertising. | | |
+| Category | Description | Certification method | Public Preview | General Availability  | References  |
+|---|---|---|---|---|---|
+| Security general | Microsoft customers entrust Fabric with their most sensitive data. As partners implementing workloads can have access to this data, they also have a responsibility to protect that data. To that end we request workloads to go through a security assessment, a security review and attest that they did it. discovered in the process. <br><br> *Extra requirements:* <br>  | Attestation | Optional | Required | [Secure, protect, and comply](../governance/governance-compliance-overview.md#secure-protect-and-comply) |
+| | Before calling any JS functions exposed by Fabric, ISV must first obtain user Microsoft Entra ID token from the Fabric host. | Attestation | Required | Required | |
+| Privacy | Microsoft customers entrust Fabric  with their most sensitive data. As such, partners the build workloads also have a responsibility to protect that data when they access it. To that end we request that every workload goes through a privacy assessment and a privacy review. <br><br> *Extra requirements:* <br>  | Attestation | Optional | Required | [Secure, protect, and comply](../governance/governance-compliance-overview.md#secure-protect-and-comply) |
+||ISV may use only essential HTTP-only cookies.  ISV may use them only after positively authenticating the user. | Attestation | Required | Required | [Cookie compliance - Commerce](/dynamics365/commerce/cookie-compliance) |
+| Data Residency | Fabric is making an Enterprise Promise around data  not leaving the geography of the tenant not only for stored data but also for data in transit. As a workload you're showing up in Fabric directly and users need to be aware what your commitments to Data Residency are. In the attestation you need to define what our commitments are to the Data Residency of customer data.  | Attestation | Optional | Required | [Data residency in Azure](https://azure.microsoft.com/explore/global-infrastructure/data-residency/) |
+| Compliance attestation | Within the Attestation Document you can show customers how your app handles security, data, and compliance. In this self-assessment the Workload developer describes the Workload’s security attributes and data-handling practices. The publisher attestation document should be hosted on the partner website.  If applicable to your customers, align with more Fabric certifications. | Attestation | Optional | Optional | [Governance overview and guidance](../governance/governance-compliance-overview.md) |
+
+## Support
+
+
+| Category | Description | Certification method | Public Preview | General Availability  | References  |
+|---|---|---|---|---|---|
+| Live site | As the partner workloads are  becoming an integral part of Fabric our support teams need to be aware how you want to be contacted in case customers are reaching out to us directly. For this you need to provide the contact details as part of the certification process to us. | Attestation | Optional | Required |  |
+| Supportability | Partners are responsible to define and document their support parameters (SLA. contact methods, ...). This information needs to be linked from the Workload page and should always be accessible to customers. In addition the Marketplace criteria, need to be taken into account for the listing of the SAAS offer. | Attestation | Optional | Required | [Marketplace listing guidelines](https://learn.microsoft.com/partner-center/marketplace-offers/marketplace-criteria-content-validation) |
+| Service Health & Availability | Partners need to host their a website that shows their service health and availability to customers. This information can be included in the Supportability page. | Attestation | Optional | Required |  |
+
+## Fabric features
+
+| Category | Description | Certification method  | Public Preview | General Availability | Reference  |
+|---|---|---|---|---|---|
+| Application lifecycle management (ALM) | Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. | Attestation | Not Supported | Not Supported | [ALM in Fabric](../cicd/cicd-overview.md) |
+| Private Links | In Fabric, you can configure and use an endpoint that allows your organization to access Fabric privately. | Attestation | Not Supported | Not supported | [Private Links](../security/security-private-links-use.md) |
+| Data Hub | The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them. If you're implementing a Data Item, you'll show up in the Data Hub as well. | Attestation | Not Supported | Not supported |[OneLake data hub](../get-started/onelake-data-hub.md) |
+| Data linage | In modern business intelligence (BI) projects, understanding the flow of data from the data source to its destination can be a challenge. The challenge is even bigger if you built advanced analytical projects spanning multiple data sources, data items, and dependencies. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. | Attestation | Not Supported | Not supported | [Linage in Fabric](../governance/lineage.md) |
+| Sensitivity Labels (MIP) | Sensitivity labels from Microsoft Purview Information Protection on items can guard your sensitive content against unauthorized data access and leakage. They're a key component in helping your organization meet its governance and compliance requirements. Labeling your data correctly with sensitivity labels ensures that only authorized people can access your data. <br><br> *Extra requirements:* <br>  | Attestation | Not Supported | Not supported | [Sensitivity Labels](../get-started/apply-sensitivity-labels.md) |
+|| For partners that are using Export functionality within their Item they need to follow the Guidelines that have been provided.  | Attestation | Required | Required | |
 
 ## Related content
 
 * [Microsoft Fabric Workload Development Kit](development-kit-overview.md)
 
 * [Commercial marketplace certification policies](/legal/marketplace/certification-policies)
-

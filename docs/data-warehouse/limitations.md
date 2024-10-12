@@ -4,11 +4,10 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo
-ms.date: 08/01/2024
+ms.date: 08/21/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
-  - references_regions
   - ignite-2023
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
@@ -22,7 +21,6 @@ This article details the current limitations in [!INCLUDE [product-name](../incl
 
 Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. More functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-fabric-roadmap?ft=All).
 
-- At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations.
 - Data warehousing is not supported for *multiple* geographies at this time.
 - Currently, parquet files that are no longer needed are not removed from storage by garbage collection.
 
@@ -67,4 +65,6 @@ For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visi
 
 ## Related content
 
+- [T-SQL surface area](tsql-surface-area.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
+

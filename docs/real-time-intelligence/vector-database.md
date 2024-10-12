@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: concept-article
-ms.date: 08/11/2024
+ms.date: 08/22/2024
 ms.search.form: Eventhouse
 ---
 # Vector databases
@@ -44,51 +44,40 @@ The general workflow for using a vector database is as follows:
 
 At the core of Vector Similarity Search is the ability to store, index, and query vector data. Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration, making it an excellent choice for storing and searching vectors. 
 
-The following components of the Eventhouse architecture enable its use as a vector database:
+The following components of the enable the use of Eventhouse a vector database:
 
-* The [dynamic](/azure/data-explorer/kusto/query/scalar-data-types/dynamic) data type, which can store unstructured data such as arrays and property bags. Thus data type is recommended for storing vector values. You can further augment the vector value by storing metadata related to the original object as separate columns in your table.  
-* The [encoding](/azure/data-explorer/kusto/management/encoding-policy) type [`Vector16`](/azure/data-explorer/kusto/management/alter-encoding-policy#encoding-policy-types) designed for storing vectors of floating-point numbers in 16-bits precision, which uses the `Bfloat16` instead of the default 64 bits. This encoding is recommended for storing ML vector embeddings as it reduces storage requirements by a factor of four and accelerates vector processing functions such as [series_dot_product()](/azure/data-explorer/kusto/query/series-dot-product-function) and [series_cosine_similarity()](/azure/data-explorer/kusto/query/series-cosine-similarity-function) by orders of magnitude.
-* The [series_cosine_similarity](/azure/data-explorer/kusto/query/series-cosine-similarity-function) function, which can perform vector similarity searches on top of the vectors stored in Eventhouse.
+* The [dynamic](/kusto/query/scalar-data-types/dynamic?view=microsoft-fabric&preserve-view=true) data type, which can store unstructured data such as arrays and property bags. Thus data type is recommended for storing vector values. You can further augment the vector value by storing metadata related to the original object as separate columns in your table.  
+* The [encoding](/kusto/management/encoding-policy?view=microsoft-fabric&preserve-view=true) type [`Vector16`](/kusto/management/alter-encoding-policy#encoding-policy-types?view=microsoft-fabric&preserve-view=true) designed for storing vectors of floating-point numbers in 16-bits precision, which uses the `Bfloat16` instead of the default 64 bits. This encoding is recommended for storing ML vector embeddings as it reduces storage requirements by a factor of four and accelerates vector processing functions such as [series_dot_product()](/kusto/query/series-dot-product-function?view=microsoft-fabric&preserve-view=true) and [series_cosine_similarity()](/kusto/query/series-cosine-similarity-function?view=microsoft-fabric&preserve-view=true) by orders of magnitude.
+* The [series_cosine_similarity](/kusto/query/series-cosine-similarity-function?view=microsoft-fabric&preserve-view=true) function, which can perform vector similarity searches on top of the vectors stored in Eventhouse.
 
 ## Optimize for scale
 
-To optimize the cosine similarity search, you can split the vectors table to many extents that are evenly distributed among all cluster nodes. You can see the effects of partitioning on query time in the following example. This example uses multiple tables containing up to 1M embedding vectors testing the cosine similarity performance on clusters with 1, 2, 4, 8 & 20 nodes.
-The following chart compares search performance (in seconds) before and after partitioning:
+For more information on optimizing vector similarity search, read the [blog](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/optimizing-vector-similarity-search-on-azure-data-explorer/ba-p/4033082).
 
+To maximize performance and the resulting search times, follow the following steps:
 
-:::image type="content" source="media/vector-database/duration-search.png" alt-text="Graph showing the duration of semantic search in sections as a function of cluster nodes.":::
+1. Set the encoding of the embeddings column to Vector16, the 16-bit encoding of the vectors coefficients (instead of the default 64-bit).
+1. Store the embedding vectors table on all cluster nodes with at least one shard per processor, which is done by the following steps:
+    1. Limit the number of embedding vectors per shard by altering the *ShardEngineMaxRowCount* of the [sharding policy](/kusto/management/sharding-policy?view=microsoft-fabric&preserve-view=true). The sharding policy balances data on all nodes with multiple extents per node so the search can use all available processors.
+    1. Change the *RowCountUpperBoundForMerge* of the [merging policy](/kusto/management/merge-policy?view=microsoft-fabric&preserve-view=true). The merge policy is needed to suppress merging extents after ingestion.
 
-Even on the smallest cluster, the search speed improves by more than a factor of four. In general, the speed is inversely proportional to the number of nodes. The number of embedding vectors that are needed for common LLM (Large Language Model) scenarios (for example, Retrieval Augmented Generation) rarely exceeds 100 K, so by having eight nodes searching can be done in 1 sec.
+### Example optimization steps
 
-### Create a partitioning policy to optimize for scale
+In the following example, a static vector table is defined for storing 1M vectors. The embedding policy is defined as Vector16, and the sharding and merging policies are set to optimize the table for vector similarity search. For this let's assume the cluster has 20 nodes each has 16 processors. The table’s shards should contain at most 1000000/(20*16)=3125 rows. 
 
-To set the partitioning policy for the embedding table, use the [`.alter-merge policy partitioning` command](/azure/data-explorer/kusto/management/alter-merge-table-partitioning-policy-command) as follows:
+1. The following KQL commands are run one by one to create the empty table and set the required policies and encoding:
 
-~~~kusto
-.alter-merge table TABLENAME policy partitioning  
-``` 
-{ 
-  "PartitionKeys": [ 
-    { 
-      "ColumnName": "vector_id_str", 
-      "Kind": "Hash", 
-      "Properties": { 
-        "Function": "XxHash64", 
-        "MaxPartitionCount": 2048,      //  set it to max value create smaller partitions thus more balanced spread among all cluster nodes 
-        "Seed": 1, 
-        "PartitionAssignmentMode": "Uniform" 
-      } 
-    } 
-  ], 
-  "EffectiveDateTime": "2000-01-01"     //  set it to old date in order to apply partitioning on existing data 
-} 
-``` 
-~~~
-
-> [!NOTE]
-> You may notice that the cluster has 2 nodes, but the tables are stored on a single node. This is the baseline before applying the partitioning policy.
-
-The partitioning process requires a string key with high cardinality, so the unique `vector_id` was projected and converted to a `string` datatype. The best practice is to create an empty table, modify its partition policy then ingest the data. In that case there's no need to define the old `EffectiveDateTime` as in the previous command. It takes some time after data ingestion until the policy is applied.
+    ```kusto
+    .create table embedding_vectors(vector_id:long, vector:dynamic)                                  //  This is a sample selection of columns, you can add more columns
+    
+    .alter column embedding_vectors.vector policy encoding type = 'Vector16'                         // Store the coefficients in 16 bits instead of 64 bits accelerating calculation of dot product, suppress redundant indexing
+    
+    .alter-merge table embedding_vectors policy sharding '{ "ShardEngineMaxRowCount" : 3125 }'       // Balanced data on all nodes and, multiple extents per node so the search can use all processors 
+    
+    .alter-merge table embedding_vectors policy merge '{ "RowCountUpperBoundForMerge" : 3125 }'      // Suppress merging extents after ingestion
+    ```
+  
+1. Ingest the data to the table created and defined in the previous step.
 
 ## Next step
 

@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 08/17/2024
+ms.date: 08/28/2024
 ---
 
 # Tenant settings index
@@ -188,7 +188,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 | Setting name | Description |
 |------|-------|
 |[Service principals can access read-only admin APIs](/power-bi/enterprise/read-only-apis-service-principal-authentication)|Web apps registered in Microsoft Entra ID can use service principals, rather than user credentials, to authenticate to read-only admin APIs.<br><br>To allow an app to use a service principal as an authentication method, the service principal must be added to an allowed security group. Service principals included in allowed security groups will have read-only access to all the information available through admin APIs, which can include users' names and emails, and detailed metadata about semantic models and reports.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2110545)|
-|[Service principals can access admin APIs used for updates](./metadata-scanning-enable-read-only-apis.md)|Web apps registered in Microsoft Entra ID can use service principals, rather than user credentials, to authenticate to admin APIs used for updates.<br><br>To allow an app to use a service principal as an authentication method, add the service principal to an allowed security group. Service principals in allowed security groups have full access to the information available through admin APIs, including users' names and emails, and detailed metadata about items.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2263376)|
 |[Enhance admin APIs responses with detailed metadata](service-admin-portal-admin-api-settings.md#enhance-admin-apis-responses-with-detailed-metadata)|Users and service principals allowed to call Power BI admin APIs may get detailed metadata about Power BI items. For example, responses from GetScanResult APIs will contain the names of semantic model tables and columns.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2153790)<br><br>Note: For this setting to apply to service principals, make sure the tenant setting allowing service principals to use read-only admin APIs is enabled.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2110545)|
 |[Enhance admin APIs responses with DAX and mashup expressions](service-admin-portal-admin-api-settings.md#enhance-admin-apis-responses-with-dax-and-mashup-expressions)|Users and service principals eligible to call Power BI admin APIs will get detailed metadata about queries and expressions comprising Power BI items. For example, responses from GetScanResult API will contain DAX and mashup expressions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2153889)<br><br>Note: For this setting to apply to service principals, make sure the tenant setting allowing service principals to use read-only admin APIs is enabled.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2110545)|
 

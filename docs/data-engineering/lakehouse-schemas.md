@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.date: 06/28/2024
+ms.date: 08/22/2024
 ms.search.form: Lakehouse schemas
 ---
 

@@ -4,7 +4,7 @@ description: A known issue is posted where the previous Eventstream UX loads ins
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/06/2024
+ms.date: 08/23/2024
 ms.custom: known-issue-736
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-736
 
 The previous GA Eventstream UX might load immediately after creating a new eventstream with the enhanced capability preview toggle enabled. To access the new Eventstream UX homepage with the enhanced capabilities, refresh the page two to three times before starting an eventstream configuration. This issue occurs intermittently.
 
-**Status:** Open
+**Status:** Fixed: August 23, 2024
 
 **Product Experience:** Real-Time Intelligence
 
