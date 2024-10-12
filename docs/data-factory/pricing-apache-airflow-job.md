@@ -10,7 +10,7 @@ ms.date: 11/15/2023
 
 # Data workflows pricing for Data Factory in Microsoft Fabric
 
-Data workflows allows you to build and schedule Apache Airflow DAGs in Microsoft Fabric. For more details refer [What are Data Workflows]([What are Data Workflows? - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/data-factory/data-workflows-concepts)).
+Data workflows allows you to build and schedule Apache Airflow Directed Acyclic Graphs (also referred to as DAGs) in Microsoft Fabric. For more details refer [What are Data Workflows]([What are Data Workflows? - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/data-factory/data-workflows-concepts)).
 
 
 
@@ -25,15 +25,15 @@ The table below describes the CU consumption based on the size used for data wor
 
 |Data workflow  size (Base)  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
 |---------|---------|---------|---------|
-|Small     | DataWorkflow Small | 5 CUs per hour         | Per Dataflow workflow item |
-|Large     | DataWorkflow Large | 10 CUs per hour        | Per Dataflow workflow item |
+|Small     | DataWorkflow Small | 5 CUs         | Per Dataflow workflow item |
+|Large     | DataWorkflow Large | 10 CUs        | Per Dataflow workflow item |
 
 Since data workflows support auto-scaling for better performance and scalability, you can add additional nodes to your data workflows. Each additional node will be charged based on the table below.
 
 | Data workflow additional node (Extra) | Consumption Meters | Fabric CU consumption rate | Consumption reporting granularity |
 | ------------------------------------- | ------------------ | -------------------------- | --------------------------------- |
-| Small                                 | DataWorkflow Small | 0.6 CUs per hour           | Per Dataflow workflow item        |
-| Large                                 | DataWorkflow Large | 1.3 CUs per hour           | Per Dataflow workflow item        |
+| Small                                 | DataWorkflow Small | 0.6 CUs                    | Per Dataflow workflow item        |
+| Large                                 | DataWorkflow Large | 1.3 CUs                    | Per Dataflow workflow item        |
 
 ## Changes to Microsoft Fabric workload consumption rate
 
