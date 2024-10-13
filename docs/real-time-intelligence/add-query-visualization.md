@@ -30,7 +30,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
 1. In the results grid, select **+ Add visual**.
 
-    :::image type="content" source="media/add-query-visualization/add-visual.png" alt-text="Screenshot of query results with add visual button highlighted in a red box." lightbox"media/add-query-visualization/add-visual.png":::
+    :::image type="content" source="media/add-query-visualization/add-visual.png" alt-text="Screenshot of query results with add visual button highlighted in a red box." lightbox="media/add-query-visualization/add-visual.png":::
 
     A pane opens on the right side, with the **Visual Formatting** tab selected.
 
