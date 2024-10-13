@@ -30,7 +30,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
 1. In the results grid, select **+ Add visual**.
 
-    :::image type="content" source="media/add-query-visualization/add-visual.png" alt-text="Screenshot of query results with add visual button highlighted in a red box.":::
+    :::image type="content" source="media/add-query-visualization/add-visual.png" alt-text="Screenshot of query results with add visual button highlighted in a red box." lightbox"media/add-query-visualization/add-visual.png":::
 
     A pane opens on the right side, with the **Visual Formatting** tab selected.
 
@@ -46,7 +46,7 @@ There are two ways to use the visual formatting pane to change an existing visua
 
 ### Visual created with UI
 
-If you've added a visual through the UI, you can change this visual by selecting the **Edit visual** tab in the results grid.
+If you've added a visual through the UI, you can change this visual by selecting the **Visual** tab in the results grid.
 
 :::image type="content" source="media/add-query-visualization/edit-visual.png" alt-text="Screenshot of edit visual tab in the results grid in Azure Data Explorer web UI.":::
 
