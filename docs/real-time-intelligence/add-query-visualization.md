@@ -36,7 +36,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
 1. Select the **Visual type** from the dropdown. For a list of available visualizations, see [Visualizations](/kusto/query/render-operator?view=microsoft-fabric&preserve-view=true#visualization).
 
-    :::image type="content" source="media/add-query-visualization/select-visual-type.png" alt-text="Screenshot of visual type dropdown in Azure Data Explorer web UI.":::
+    :::image type="content" source="media/add-query-visualization/select-visual-type.png" alt-text="Screenshot of visual type dropdown.":::
 
 [!INCLUDE [customize-visuals](~/../kusto-repo/data-explorer/includes/cross-repo/customize-visuals.md)]
 
@@ -48,13 +48,13 @@ There are two ways to use the visual formatting pane to change an existing visua
 
 If you've added a visual through the UI, you can change this visual by selecting the **Visual** tab in the results grid.
 
-:::image type="content" source="media/add-query-visualization/edit-visual.png" alt-text="Screenshot of edit visual tab in the results grid in Azure Data Explorer web UI.":::
+:::image type="content" source="media/add-query-visualization/edit-visual.png" alt-text="Screenshot of edit visual tab in the results grid.":::
 
 ### Visual created in query
 
 If you've created a visual using the [render operator](/kusto/query/render-operator?view=azure-data-explorer&preserve-view=true), you can edit the visual by selecting **Visual** in the results grid.
 
-:::image type="content" source="media/add-query-visualization/change-rendered-visual.png" alt-text="Screenshot of rendered visual as a bar chart that has been changed to a column chart in the visual formatting pane in Azure Data Explorer web UI." lightbox="media/add-query-visualization/change-rendered-visual.png":::
+:::image type="content" source="media/add-query-visualization/change-rendered-visual.png" alt-text="Screenshot of rendered visual as a bar chart that has been changed to a column chart in the visual formatting pane." lightbox="media/add-query-visualization/change-rendered-visual.png":::
 
 > [!IMPORTANT]
 > Notice that the visual formatting pane has changed the visual representation, but has not modified the original query.
