@@ -2,7 +2,8 @@
 title: Add a query visualization in Real-Time Intelligence
 description: Learn how to add a query visualization in the Real-Time Intelligence web UI.
 ms.reviewer: mibar
-ms.author: andykop
+ms.author: yaschust
+author: yaelschuster
 ms.topic: how-to
 ms.date: 10/09/2024
 ---
@@ -37,7 +38,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
     :::image type="content" source="media/add-query-visualization/select-visual-type.png" alt-text="Screenshot of visual type dropdown in Azure Data Explorer web UI.":::
 
-[!INCLUDE [customize-visuals](~/../dataexplorer-repo/data-explorer/includes/cross-repo/customize-visuals.md)]
+[!INCLUDE [customize-visuals](~/../kusto-repo/data-explorer/includes/cross-repo/customize-visuals.md)]
 
 ## Change an existing visualization
 
