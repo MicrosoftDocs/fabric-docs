@@ -21,15 +21,10 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
 1. [Run a query](create-query-set.md) in the web UI. For example, you can use the following query:
 
-<!-- update link to navigate to an RTI sample -->
-
-    > [!div class="nextstepaction"]
-    > <a href="https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAAwsuyS/KdS1LzSsp5qpRKM9ILUpVCC5JLElVsLVVUPd29At2DFYHyhSX5uYmFmVWpYJYGi6JuYnpqQFF+QWpRSWVmgpJlQpgM0IqC1IBD28nVFIAAAA=" target="_blank">Run the query</a>
-
     ```kusto
-    StormEvents
-    | where State == 'KANSAS'
-    | summarize sum(DamageProperty) by EventType
+    Bikestream
+    | summarize countEmptyDocks=sum(No_Empty_Docks) by Street
+    | top 5 by countEmptyDocks
     ```
 
 1. In the results grid, select **+ Add visual**.
@@ -42,7 +37,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
     :::image type="content" source="media/add-query-visualization/select-visual-type.png" alt-text="Screenshot of visual type dropdown in Azure Data Explorer web UI.":::
 
-[!INCLUDE [customize-visuals](includes/customize-visuals.md)]
+[!INCLUDE [customize-visuals](~/../data-explorer/includes/cross-repo/customize-visuals.md)]
 
 ## Change an existing visualization
 
