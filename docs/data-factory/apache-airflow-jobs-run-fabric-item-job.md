@@ -50,23 +50,23 @@ To call Microsoft Fabric APIs, an app must obtain an access token from the Micro
 This section provides the raw HTTP requests involved for an app to get access on behalf of a user using a popular flow called the [OAuth 2.0 authorization code grant flow](/entra/identity-platform/v2-oauth2-auth-code-flow).
 
 You must complete the following steps to obtain the refresh token, that would be later used in Apache Airflow connection:
-1. Request authorization.
-2. Request an access token and refresh token.
+1. [Request authorization.](#step-1-request-authorization)
+2. [Request an access token and refresh token.](#step-2-request-an-access-token)
 
 Before proceeding with the steps in this article:
-1. Save the following values from the app registration you created initially:
-   - Client ID: A unique identifier of your application assigned by the Microsoft identity platform.
-   - Client Secret: A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile and single page applications.
-   - Redirect URI/URL: Endpoints at which your app receives responses from the Microsoft Identity platform. In these steps, you receive authorization code at registered redirect URI.
+Save the following values from the app registration you created initially:
+   - **Client ID**: A unique identifier of your application assigned by the Microsoft identity platform.
+   - **Client Secret**: A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile and single page applications.
+   - **Redirect URI/URL**: Endpoints at which your app receives responses from the Microsoft Identity platform. In these steps, you receive authorization code at registered redirect URI.
 
 ### Step 1: Request authorization
 
 #### Authorization endpoint
 The first step in the authorization code flow is for the user to authorize the app to act on their behalf. Through '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests.
 The plugin requires the following scopes for authentication:
--  itemType.Execute.All (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
--  itemType.Read.All (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
--  offline_access: This is a standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
+-  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
+-  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
+-  **offline_access**: This is a standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only
 
