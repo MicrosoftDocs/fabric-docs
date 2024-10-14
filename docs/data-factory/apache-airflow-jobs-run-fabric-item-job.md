@@ -63,8 +63,8 @@ Before proceeding with the steps in this article:
 #### Authorization endpoint
 The first step in the authorization code flow is for the user to authorize the app to act on their behalf. Through '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests.
 The plugin requires the following scopes for authentication:
--  itemType.Execute.All (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '<itemtype>' that the user has access to.
--  itemType.Read.All (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '<itemType>' that the user has access to.
+-  itemType.Execute.All (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
+-  itemType.Read.All (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
 -  offline_access: This is a standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only
@@ -84,7 +84,7 @@ To know more about parameters, refer to [Request authorization code](/entra/iden
 #### User consent Experience
 After the app sends the authorization request, the user is asked to enter their credentials to authenticate with Microsoft. The Microsoft identity platform v2.0 endpoint ensures that the user has consented to the permissions indicated in the scope query parameter. The following screenshot is an example of the consent dialog box presented for a Microsoft account user.
 
-
+:::image type="content" source="media/apache-airflow-jobs/user-consent-fabric-plugin.png" lightbox="media/apache-airflow-jobs/user-consent-fabric-plugin.png" alt-text="Screenshot to show user consent experience while authenticating with Microsoft fabric.":::
 
 #### Authorization response
 If the user consents to the permissions requested by the app, the Microsoft identity platform sends an authorization code to the app's redirect URI. Here's an example of a successful response to the previous request. Because the response_mode parameter in the request was set to query, the response is returned in the query string of the redirect URL. Copy the 'code' value from the response to use in the next step.
@@ -135,27 +135,41 @@ Content-type: application/json
 }
 ```
 
-## Create an Airflow connection for Microsoft Fabric
+## Set up Apache Airflow connection
 
-1. Navigate to "View Airflow connections" to see all configured connections.
+Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs.
+
+1. Navigate to "View Airflow connections" to add a new Apace Airflow connection.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
-2. Add a new connection, using the `Generic` connection type. Configure it with:
+2. Add a new connection and fill the following details:
 
    - <strong>Connection ID:</strong> Name of the Connection ID.
    - <strong>Connection Type:</strong> Generic
-   - <strong>Login:</strong> The Client ID of your service principal.
-   - <strong>Password:</strong> The refresh token fetched using Microsoft OAuth 2.0.
-   - <strong>Extra:</strong> {"tenantId": The Tenant ID of your service principal.}
+   - <strong>Login:</strong> The Application (client) ID assigned to your app.
+   - <strong>Password:</strong> The refresh token fetched using in previous step.
+   - <strong>Extra:</strong> {
+      "tenantId": The {tenant} value in the path of the request can be used to control who can sign into the application,
+      "clientSecret": The client secret of the app registration, // NOTE: Only required for web apps,
+      "scopes": (Space seperated string) The scopes required for the app to access the Microsoft Fabric APIs. For example: "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access"
+   }
+   :::image type="content" source="media/apache-airflow-jobs/fabric-plugin-connection.png" lightbox="media/apache-airflow-jobs/fabric-plugin-connection.png" alt-text="Screenshot to set Apache Airflow connection for Microsoft Fabric.":::
 
 3. Select Save.
 
-## Create a DAG to trigger Microsoft Fabric job items
+## Create a DAG to trigger Microsoft Fabric items
 
-Create a new DAG file in the 'dags' folder in Fabric managed storage with the following code. Update `workspace_id` and `item_id` with the appropriate values for your scenario:
+Create a new DAG file in the 'dags' folder in Fabric managed storage with the following code. Replace the following placeholders:
+- `fabric_conn_id`: The connection ID you created in the previous step.
+- `workspace_id`: The workspace ID where the item is located.
+- `item_id`: The item ID of the item you want to run. For example, a Notebook ID or a Pipeline ID.
+- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook" and for pipeline use "Pipeline".
+- `wait_for_termination`: If set to True, the operator waits for the item run to complete before proceeding to the next task.
+- `deferrable`: If set to True, the operator can free up resources while waiting for the item run to complete.
 
 ```python
  from airflow import DAG
+ from datetime import datetime
  from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
 
  with DAG(
@@ -165,24 +179,24 @@ Create a new DAG file in the 'dags' folder in Fabric managed storage with the fo
      catchup=False,
  ) as dag:
 
-     run_pipeline = FabricRunItemOperator(
-         task_id="run_fabric_pipeline",
+      run_fabric_item = FabricRunItemOperator(
+         task_id="run_fabric_item",
+         fabric_conn_id="fabric_conn",
          workspace_id="<workspace_id>",
          item_id="<item_id>",
-         fabric_conn_id="fabric_conn_id",
-         job_type="Pipeline",
+         job_type="<job_type>",
          wait_for_termination=True,
          deferrable=True,
      )
 
-     run_pipeline
+     run_fabric_item
 ```
 
 ## Create a plugin file for the custom operator
 
 If you want to include an external monitoring link for Microsoft Fabric item runs, create a plugin file as follows:
 
-Create a new file in the `plugins` folder with the following content:
+Create a new file in the `plugins` folder with the following code:
 
 ```python
    from airflow.plugins_manager import AirflowPlugin
