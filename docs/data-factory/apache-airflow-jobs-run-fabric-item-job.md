@@ -10,8 +10,8 @@ ms.date: 04/15/2023
 
 # Tutorial: Run a Microsoft Fabric Item Job in Apache Airflow DAGs
 
-> [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+<!-- > [!NOTE]
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines. -->
 
 In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as Fabric Notebooks and Pipelines.
 
@@ -36,14 +36,104 @@ To get started, you must complete the following prerequisites:
 - Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
 :::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
 
-- Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
-
 - Enable the Triggerers in data workflows to allow the usage of deferrable operators.
    :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggerers.":::
 
 ## Apache Airflow plugin
 
-To trigger an on-demand Microsoft Fabric item run, this tutorial uses the [apache-airflow-microsoft-fabric-plugin](https://pypi.org/project/apache-airflow-microsoft-fabric-plugin/) which is pre-installed in the Apache Airflow job requirements.
+To trigger an on-demand Microsoft Fabric item run, this tutorial uses the [apache-airflow-microsoft-fabric-plugin](https://pypi.org/project/apache-airflow-microsoft-fabric-plugin/) which is pre-installed in the Apache Airflow job requirements. 
+
+## Authentication
+
+To call Microsoft Fabric APIs, an app must obtain an access token from the Microsoft identity platform. This access token includes information about whether the app is authorized to access Microsoft Fabric items on behalf of signed-in user or with its own identity. 
+This section provides the raw HTTP requests involved for an app to get access on behalf of a user using a popular flow called the [OAuth 2.0 authorization code grant flow](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-auth-code-flow).
+
+You must complete the following steps to obtain the refresh token, that would be later used in Apache Airflow connection:
+1. Request authorization.
+2. Request an access token and refresh token.
+
+Before proceeding with the steps in this article:
+1. Save the following values from the app registration you created initially:
+   - Client ID: A unique identifier of your application assigned by the Microsoft identity platform.
+   - Client Secret: A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile and single page applications.
+   - Redirect URI/URL: Endpoints at which your app receives responses from the Microsoft Identity platform. In these steps, you receive authorization code at registered redirect URI.
+
+### Step 1: Request authorization
+
+#### Authorization endpoint
+The first step in the authorization code flow is for the user to authorize the app to act on their behalf. Through '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests.
+The plugin requires the following scopes for authentication:
+-  itemType.Execute.All (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '<itemtype>' that the user has access to.
+-  itemType.Read.All (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '<itemType>' that the user has access to.
+-  offline_access: This is a standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
+```http
+// Line breaks for legibility only
+
+https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&response_type=code
+&redirect_uri=http://localhost
+&response_mode=query
+&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%20offline_access%20openid%20profile //TODO: Check if all scopes are required
+&state=12345
+&code_challenge=YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl
+&code_challenge_method=S256
+```
+To know more about parameters, refer to [Request authorization code](/entra/identity-platform/v2-oauth2-auth-code-flow#request-an-authorization-code).
+
+#### User consent Experience
+After the app sends the authorization request, the user is asked to enter their credentials to authenticate with Microsoft. The Microsoft identity platform v2.0 endpoint ensures that the user has consented to the permissions indicated in the scope query parameter. The following screenshot is an example of the consent dialog box presented for a Microsoft account user.
+
+
+
+#### Authorization response
+If the user consents to the permissions requested by the app, the Microsoft identity platform sends an authorization code to the app's redirect URI. Here's an example of a successful response to the previous request. Because the response_mode parameter in the request was set to query, the response is returned in the query string of the redirect URL. Copy the 'code' value from the response to use in the next step.
+
+```http
+HTTP/1.1 200 OK
+
+https://localhost/myapp/?
+code=M0ab92efe-b6fd-df08-87dc-2c6500a7f84d
+&state=12345
+&session_state=fe1540c3-a69a-469a-9fa3-8a2470936421#
+```
+
+### Step 2: Request an access token
+The app uses the authorization code received in the previous step to request an access token by sending a POST request to the /token endpoint.
+```http
+// Line breaks for legibility only
+
+POST /{tenant}/oauth2/v2.0/token HTTP/1.1
+Host: https://login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded
+
+client_id=11112222-bbbb-3333-cccc-4444dddd5555
+&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
+&code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
+&redirect_uri=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%20offline_access%20openid%20profile
+&grant_type=authorization_code
+&code_verifier=ThisIsntRandomButItNeedsToBe43CharactersLong 
+&client_secret=applicationSecret   // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
+```
+
+To know more about parameters, refer to [Request an access token](/entra/identity-platform/v2-oauth2-auth-code-flow#request-an-access-token).
+
+#### Access token response
+The access token contains a list of the permissions that the access token is good for in the scope parameter. The response is similar to the following sample. Copy the 'refresh_token' value from the response to use in the Apache Airflow connection.
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+    "token_type": "Bearer",
+    "scope": "Mail.Read User.Read",
+    "expires_in": 3736,
+    "ext_expires_in": 3736,
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...",
+    "refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4..."
+}
+```
 
 ## Create an Airflow connection for Microsoft Fabric
 
@@ -62,7 +152,7 @@ To trigger an on-demand Microsoft Fabric item run, this tutorial uses the [apach
 
 ## Create a DAG to trigger Microsoft Fabric job items
 
-Create a new DAG file in the 'dags' folder in Fabric managed storage with the following content. Update `workspace_id` and `item_id` with the appropriate values for your scenario:
+Create a new DAG file in the 'dags' folder in Fabric managed storage with the following code. Update `workspace_id` and `item_id` with the appropriate values for your scenario:
 
 ```python
  from airflow import DAG
