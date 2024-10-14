@@ -10,7 +10,7 @@ ms.date: 11/15/2023
 
 # Apache Airflow job pricing for Data Factory in Microsoft Fabric
 
-Apache Airflow jobs allows you to build and schedule Apache Airflow Directed Acyclic Graphs (also referred to as DAGs) in Microsoft Fabric. For more details refer [What are Apache Airflow job](./apache-airflow-jobs-concepts).
+Apache Airflow jobs allows you to build and schedule Apache Airflow Directed Acyclic Graphs (also referred to as DAGs) in Microsoft Fabric. For more details refer [What are Apache Airflow job](../data-factory/apache-airflow-jobs-concepts).
 
 
 
