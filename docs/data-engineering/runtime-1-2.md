@@ -7,10 +7,10 @@ author: ekote
 ms.topic: overview
 ms.custom:
   - ignite-2023
-ms.date: 06/06/2023
+ms.date: 10/14/2024
 ---
 
-# Runtime 1.2 (GA)
+# Fabric Runtime 1.2 (GA)
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.2 components and versions.
 
@@ -23,6 +23,9 @@ The major components of Runtime 1.2 include:
 - Python: 3.10
 - Delta Lake: 2.4.0
 - R: 4.2.2
+
+> [!TIP]
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version.":::
 
