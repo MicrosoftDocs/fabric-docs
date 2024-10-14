@@ -153,7 +153,7 @@ If you already have a warehouse as a destination and try to disable staging, a w
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
 
-### Vacuuming Your Lakehouse data destination
+### Vacuuming your Lakehouse data destination
 
 When using Lakehouse as a destination for Dataflow Gen2 in Microsoft Fabric, it's crucial to perform regular maintenance to ensure optimal performance and efficient storage management. One essential maintenance task is vacuuming your data destination. This process helps to remove old files that are no longer referenced by the Delta table log, thereby optimizing storage costs and maintaining the integrity of your data.
 
