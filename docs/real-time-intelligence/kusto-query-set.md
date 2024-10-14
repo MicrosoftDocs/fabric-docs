@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 09/23/2024
+ms.date: 10/15/2024
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
@@ -33,14 +33,12 @@ Select the tab that corresponds with your desired database type.
 ## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the connection pane on the left-hand side of the query page, under **Database**, select **V** to expand the database connections menu.
+1. In the connection pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the database connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
 1. Under **Connect source**, select **OneLake data hub**.
-1. In the **OneLake data hub** window that appears, select a KQL database, and then select **Select**.
-
-    :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the OneLake data hub window showing a selected KQL database.":::
+1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**.
 
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
