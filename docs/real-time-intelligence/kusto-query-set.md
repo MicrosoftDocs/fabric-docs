@@ -100,18 +100,18 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 
 * **Rename a tab**: Select the **pencil icon** next to the tab name.
 * **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different databases.
-* **Change the existing database connection**: Under **Database**, select the existing database connection to open the data hub.
+* **Change the existing database connection**: Under **Explorer**, select the existing database connection to open the data hub.
 
 ## Copy query
 
-You might want to copy or share the queries you create.
+You might want to copy and share the queries you create.
 
 1. At the top of the query window, select the **Home** tab.
 1. In the query pane, select **Copy query**.
 
     :::image type="content" source="media/kusto-query-set/copy-query-results.png" alt-text="Screenshot of the Manage tab of the KQL Queryset showing the dropdown of the copy query or query results option.":::
 
-    The following table outlines the many options for how to share a query.
+    The following table outlines the many options for how to copy a query.
 
     > [!IMPORTANT]
     > The user who is receiving the query link must have viewing permissions to the underlying data to execute the query and view results.
@@ -124,7 +124,7 @@ You might want to copy or share the queries you create.
     |Link, query and results to clipboard|Copy a link that can be used to run the query, the text of the query, and the results of the query.|
     |Copy results|Copy the results of the query.|
 
-1. Select the desired sharing action from the above table.
+1. Select the desired action from the above table.
 1. Paste this information to edit or share it, for example in Microsoft Word, Microsoft Teams or Outlook.
 
 ## Export query data as CSV
@@ -137,7 +137,7 @@ This is a one-time method to export a CSV file containing the query results.
 
     :::image type="content" source="media/kusto-query-set/export-csv.png" alt-text="Screenshot of the Home tab of the KQL Queryset showing the highlighted option to export results to CSV.":::
 
-1. In the query pane, select **Export results to CSV**.
+1. In the query pane, select **Export to CSV**.
 1. Save the CSV file locally.
 
 ## Delete KQL queryset
