@@ -10,27 +10,27 @@ ms.date: 11/15/2023
 
 # Apache Airflow job pricing for Data Factory in Microsoft Fabric
 
-Apache Airflow jobs allows you to build and schedule Apache Airflow Directed Acyclic Graphs (also referred to as DAGs) in Microsoft Fabric. For more details refer [What are Apache Airflow job](../data-factory/apache-airflow-jobs-concepts).
+Apache Airflow jobs allows you to build and schedule Apache Airflow Directed Acyclic Graphs (also referred to as DAGs) in Microsoft Fabric. For more details, refer [What are Apache Airflow job](../data-factory/apache-airflow-jobs-concepts).
 
 
 
 ## Dataflow workflows pricing model
 
-Apache Airflow job are charged based on pool uptime. There are two types of pools available: Starter and Custom.
+Apache Airflow job is charged based on pool uptime. Each Apache Airflow job will have it's own isolated pool which are not shared across Apache Airflow jobs. There are two types of pools available: Starter and Custom.
 
 - The **Starter pool** provides zero-latency startup and automatically shuts down after 20 minutes of inactivity to optimize costs.
 - The **Custom pool** offers higher flexibility with always-running pools, which are required for production scenarios where the Airflow scheduler needs to be running 24/7.
 
-The table below describes the CU consumption based on the size used for Apache Airflow job. By default, we use Large in both “Starter” and “Custom” pools. Small can be selected using the Custom pool. Each data workflow consists of an Apache Airflow cluster containing 3 nodes.
+The table below describes the CU consumption based on the size used for Apache Airflow job. By default, we use Large in both "Starter" and “Custom” pools. Small can be selected using the Custom pool. Each Apache Airflow job consists of an Apache Airflow cluster containing three nodes (unless you configure auto-scale or add extra nodes).
 
 |Apache Airflow job  size (Base)  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
 |---------|---------|---------|---------|
 |Small     | DataWorkflow Small | 5 CUs         | Per Apache Airflow job item |
 |Large     | DataWorkflow Large | 10 CUs        | Per Apache Airflow job item |
 
-Since Apache Airflow job support auto-scaling for better performance and scalability, you can add additional nodes to your data workflows. Each additional node will be charged based on the table below.
+Since Apache Airflow job support autoscaling for better performance and scalability, you can add additional nodes to your data workflows. Each extra node will be charged based on the table below.
 
-| Apache Airflow job additional node (Extra) | Consumption Meters | Fabric CU consumption rate | Consumption reporting granularity |
+| Apache Airflow job extra node (Extra) | Consumption Meters | Fabric CU consumption rate | Consumption reporting granularity |
 | ------------------------------------------ | ------------------ | -------------------------- | --------------------------------- |
 | Small                                      | DataWorkflow Small | 0.6 CUs                    | Per Apache Airflow job item       |
 | Large                                      | DataWorkflow Large | 1.3 CUs                    | Per Apache Airflow job item       |
@@ -45,7 +45,7 @@ The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provid
 
 The following table can be utilized as a template to compute estimated costs using Fabric Metrics app for a Data workflow:
 
-|Metric  |Data workflow size  |Additional nodes  |
+|Metric  |Data workflow size  | Extra nodes  |
 |---------|---------|---------|
 |Total CUs     | DataWorkflow Small CU seconds or DataWorkflow Large (Base) | DataWorkflow Small Extra Node or DataWorkflow Large Extra Node CU seconds (Extra) |
 |Effective CU-hours billed      | Base / (60*60)  CU-hour | Extra / (60*60)  CU-hour |
