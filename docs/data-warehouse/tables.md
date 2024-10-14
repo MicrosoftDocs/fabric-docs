@@ -134,6 +134,7 @@ The following list shows some of the table features that aren't currently suppor
 - Triggers
 - Unique indexes
 - User-defined types
+- External tables
 
 > [!IMPORTANT]
 > There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
