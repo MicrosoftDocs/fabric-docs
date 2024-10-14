@@ -15,7 +15,7 @@ ms.custom:
 
 This article outlines how to use the copy activity in data pipeline to copy data from MariaDB for Pipeline.
 
-This connector supports MariaDB for Pipeline version 10.x, 11.x.
+This connector supports MariaDB version 10.x, 11.x.
 
 ## Supported configuration
 
@@ -41,7 +41,7 @@ The following properties are **required**:
 - **Connection**:  Select an MariaDB for Pipeline connection from the connection list. If no connection exists, then create a new MariaDB for Pipeline connection by selecting **New**.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
-      - **Table**: Specify the name of the table in the MariaDB for Pipeline to read data. Select the table from the drop-down list.
+      - **Table**: Specify the name of the table in the MariaDB to read data. Select the table from the drop-down list.
 
     - If you select **Query**:
       - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
@@ -70,7 +70,7 @@ The following tables contain more information about the copy activity in MariaDB
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|\<your MariaDB for Pipeline connection> |Yes|connection|
 |**Use query** |The way to read data from MariaDB for Pipeline. Apply **Table** to read data from the specified table or apply **Query** to read data using SQL queries.|• **Table** <br>• **Query** |Yes |/|
-| **Table** | Name of the table in the MariaDB for Pipeline. | < table name > | No | tableName |
+| **Table** | Name of the table in the MariaDB. | < table name > | No | tableName |
 | **Query** | Use the custom SQL query to read data. For example: `SELECT * FROM MyTable`. | < SQL queries > | No | query |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
