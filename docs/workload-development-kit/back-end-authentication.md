@@ -153,4 +153,4 @@ Authorization is achieved by invoking the [ValidatePermissions](https://github.c
 
 ## Long-running operations - refresh Token
 
-If your workloads include long running operations, for example, as part of the [JobScheduler](./monitoring-hub.md) you might run into a situation where the Token lifetime isn't sufficient. For more information about how to authenticate long running process, [Long-running OBO processes](https://learn.microsoft.com/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#long-running-obo-processes).
+If your workloads include long running operations, for example, as part of [JobScheduler](./monitoring-hub.md) you might run into a situation where the Token lifetime isn't sufficient. For more information about how to authenticate long running process, [Long-running OBO processes](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#long-running-obo-processes).
