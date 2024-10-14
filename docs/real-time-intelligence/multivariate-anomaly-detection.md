@@ -45,10 +45,10 @@ In this step, you enable the python plugin in your Eventhouse. This step is requ
 
 ## Part 3- Create a Spark environment
 
-In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model using the Spark engine. For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md). 
+In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model using the Spark engine. For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md).
 
 1. In the experience switcher, choose **Data Engineering**. If you're already in the Data Engineering experience, browse to **Home**.
-1. From **Recommended items to create**, Select **Environments, and enter the name *MVAD_ENV* for the environment.
+1. From **Recommended items to create**, Select **Environments**, and enter the name *MVAD_ENV* for the environment.
 
     :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of creating an environment in Data Engineering.":::
 
