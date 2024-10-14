@@ -46,7 +46,7 @@ To trigger an on-demand Microsoft Fabric item run, this tutorial uses the [apach
 ## Authentication
 
 To call Microsoft Fabric APIs, an app must obtain an access token from the Microsoft identity platform. This access token includes information about whether the app is authorized to access Microsoft Fabric items on behalf of signed-in user or with its own identity. 
-This section provides the raw HTTP requests involved for an app to get access on behalf of a user using a popular flow called the [OAuth 2.0 authorization code grant flow](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-auth-code-flow).
+This section provides the raw HTTP requests involved for an app to get access on behalf of a user using a popular flow called the [OAuth 2.0 authorization code grant flow](/entra/identity-platform/v2-oauth2-auth-code-flow).
 
 You must complete the following steps to obtain the refresh token, that would be later used in Apache Airflow connection:
 1. Request authorization.
