@@ -64,7 +64,7 @@ Now, use instructions from the [Configure and create an eventstream](#configure-
 
 1. On the **Add source** page, select **Fabric Workspace item events**.
 
-    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png" alt-text="Screenshot that shows the Get events page with Fabric workspace item events selected.":::
+    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png" alt-text="Screenshot that shows the Get events page with Fabric workspace item events selected." lightbox="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png":::
 1. On the **Connect** page, for **Event types**, select the event types that you want to monitor.
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-event-types.png" alt-text="Screenshot that shows the selection of Fabric event types on the Connect page." lightbox="./media/create-streams-fabric-workspace-item-events/select-event-types.png":::
