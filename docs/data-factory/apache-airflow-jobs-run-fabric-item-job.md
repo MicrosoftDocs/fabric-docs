@@ -1,6 +1,6 @@
 ---
-title: Run a Microsoft Fabric item job in Apache Airflow DAGs.
-description: Learn to trigger Microsoft Fabric job item in Apache Airflow DAGs.
+title: Run a Microsoft Fabric item in Apache Airflow DAGs.
+description: Learn to trigger Microsoft Fabric item in Apache Airflow DAGs.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -8,10 +8,11 @@ ms.topic: tutorial
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Run a Microsoft Fabric Item Job in Apache Airflow DAGs
+# Tutorial: Run a Microsoft Fabric Item in Apache Airflow DAGs
 
-<!-- > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines. -->
+> [!NOTE]
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+ <!-- is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines. --> -->
 
 In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as Fabric Notebooks and Pipelines.
 

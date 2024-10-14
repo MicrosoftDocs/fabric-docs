@@ -911,7 +911,7 @@
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: apache-airflow-jobs-dbt-fabric.md
-          - name: Run a Fabric Item Job
+          - name: Run a Microsoft Fabric Item
             href: apache-airflow-jobs-run-fabric-item-job.md
   - name: Best practices
     items:
