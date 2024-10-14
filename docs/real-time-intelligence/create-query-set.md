@@ -30,7 +30,7 @@ The KQL Queryset exists within the context of a workspace. A new KQL queryset is
 
     :::image type="content" source="media/kusto-query-set/new-queryset-box.png" alt-text="Screenshot of adding a new KQL queryset in the New tem box.":::
 
-1. In the New KQL Queryset box, enter a unique name. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
+1. In the **New KQL Queryset** window, enter a unique name. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
     > [!NOTE]
     > You can create multiple KQL Querysets in a single workspace.
