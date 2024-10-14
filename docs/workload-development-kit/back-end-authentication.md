@@ -53,7 +53,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
     "nbf": 1700047232,
     "exp": 1700133932,
     "aio": "E2VgYLjBuv2l+c6cmm/iP/bnL2v+AQA=",
-    "appid": "00000009-0000-0000-c000-000000000000", // or "d2450708-699c-41e3-8077-b0c8341509aa"
+    "appid": "d2450708-699c-41e3-8077-b0c8341509aa"
     "appidacr": "2",
     "idp": "https://sts.windows.net/12345678-77f3-4fcc-bdaa-487b920cb7ee/",
     "idtyp": "app",
@@ -82,7 +82,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
     "amr": [
         "pwd"
     ],
-    "appid": "00000009-0000-0000-c000-000000000000", // or "d2450708-699c-41e3-8077-b0c8341509aa"
+    "appid": "d2450708-699c-41e3-8077-b0c8341509aa"
     "appidacr": "2",
     "ipaddr": "46.117.19.50",
     "name": "john doe",
@@ -152,5 +152,7 @@ The [AuthenticateControlPlaneCall](https://github.com/microsoft/Microsoft-Fabric
 Authorization is achieved by invoking the [ValidatePermissions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs#L37) method. This method calls the `resolvePermissions` API in the Fabric workload-control endpoint for the relevant Fabric item and verifies that the user has the necessary permissions for the operation.
 
 ## Long-running operations - refresh Token
+
+Authorization is achieved by invoking the [ValidatePermissions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs#L37) method. This method calls the `resolvePermissions` API in the Fabric workload-control endpoint for the relevant Fabric item and verifies that the user has the necessary permissions for the operation.
 
 If your workloads include long running operations, for example, as part of [JobScheduler](./monitoring-hub.md) you might run into a situation where the Token lifetime isn't sufficient. For more information about how to authenticate long running process, [Long-running OBO processes](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#long-running-obo-processes).
