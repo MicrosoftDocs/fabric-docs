@@ -79,11 +79,11 @@ Subdomains can follow the same logic of the parent domain, or they can have thei
 
 After creating the structures of the domains and subdomains, the next step is to assign workspaces to each domain or subdomain. There are different ways to assign workspaces to domains, depending on the naming convention and criteria used to create the domains and subdomains. Some possible methods are:
 
-* **By workspace name**: This method is useful for organizations that follow a consistent and clear naming pattern for their workspaces and have names that reflect or relate to the relevant domain or subdomain. For example, if the domain is *Finance* and the subdomain is *Accounting*, then a workspace named *Finance-Accounting-Report* would be assigned to this subdomain.
+* **By workspace name**: This method is useful for organizations that follow a consistent and clear naming pattern for their workspaces and have names that reflect or relate to the relevant domain or subdomain. For example, if the domain is *Finance* and the subdomain is *Accounting*, then a workspace named *Finance-Accounting-Report* would be assigned to that *Accounting* subdomain.
 
-* **By workspace owner**: This method is applicable for organizations that have a clear and stable ownership structure for their workspaces and have owners that correspond to the domains or subdomains. For example, if the domain is *Product* and the subdomain is *Fabric*, then a workspace owned by *Product Manager-Fabric* would be assigned to this subdomain.
+* **By workspace owner**: This method is applicable for organizations that have a clear and stable ownership structure for their workspaces and have owners that correspond to the domains or subdomains. For example, if the domain is *Product* and the subdomain is *Fabric*, then a workspace owned by *Product Manager-Fabric* would be assigned to that *Fabric* subdomain.
 
-* **By capacity**: This method is suitable for organizations that have adopted the data mesh architecture with capacities, and have capacities that match the domains or subdomains. For example, if the domain is *Marketing* and the subdomain is *Analytics*, then a workspace assigned to the capacity *Marketing-Analytics* would be assigned to this subdomain.
+* **By capacity**: This method is suitable for organizations that have adopted the data mesh architecture with capacities, and have capacities that match the domains or subdomains. For example, if the domain is *Marketing* and the subdomain is *Analytics*, then a workspace assigned to the capacity *Marketing-Analytics* would be assigned to that *Analytics* subdomain.
 
 ## Related content
 
