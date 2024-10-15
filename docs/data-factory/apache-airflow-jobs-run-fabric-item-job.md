@@ -149,11 +149,14 @@ Apache Airflow connection is used to store the credentials required to authentic
    - <strong>Connection Type:</strong> Generic
    - <strong>Login:</strong> The Application (client) ID assigned to your app.
    - <strong>Password:</strong> The refresh token fetched using in previous step.
-   - <strong>Extra:</strong> {
-      "tenantId": The {tenant} value in the path of the request can be used to control who can sign into the application,
-      "clientSecret": The client secret of the app registration, // NOTE: Only required for web apps,
-      "scopes": (Space seperated string) The scopes required for the app to access the Microsoft Fabric APIs. For example: "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access"
+   - <strong>Extra:</strong> This 
+   ```json
+   {
+      "tenantId": "The {tenant} value in the path of the request can be used to control who can sign into the application",
+      "clientSecret": "The client secret of the app registration", // NOTE: Only required for web apps,
+      "scopes": "(Space seperated string) The scopes required for the app to access the Microsoft Fabric APIs." // For example: "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access"
    }
+   ```
    :::image type="content" source="media/apache-airflow-jobs/fabric-plugin-connection.png" lightbox="media/apache-airflow-jobs/fabric-plugin-connection.png" alt-text="Screenshot to set Apache Airflow connection for Microsoft Fabric.":::
 
 3. Select Save.
