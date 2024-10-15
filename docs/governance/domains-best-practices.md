@@ -4,7 +4,7 @@ description: Discover best practices to consider when creating domains for your 
 author: paulinbar
 ms.author: painbar
 ms.topic: best-practice
-ms.date: 10/10/2024
+ms.date: 10/15/2024
 ---
 
 # Best practices for planning and creating domains
