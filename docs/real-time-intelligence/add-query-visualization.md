@@ -1,17 +1,17 @@
 ---
 title: Add a query visualization in Real-Time Intelligence
-description: Learn how to add a query visualization in the Real-Time Intelligence web UI.
+description: Learn how to add a query visualization in Real-Time Intelligence.
 ms.reviewer: mibar
 ms.author: yaschust
 author: yaelschuster
 ms.topic: how-to
 ms.date: 10/09/2024
 ---
-# Add and modify a query visualization in the web UI
+# Add and modify a query visualization
 
-In this article, you'll learn how to create and customize visuals from query results, using the web UI. These visuals can be further manipulated, and can be pinned in a [dashboard](dashboard-real-time-create.md). The addition or modification of these visuals doesn't require rerunning the query, which can be especially useful for heavy queries.
+In this article, you'll learn how to create and customize visuals from query results. These visuals can be further manipulated, and can be pinned in a [dashboard](dashboard-real-time-create.md). The addition or modification of these visuals doesn't require rerunning the query, which can be especially useful for heavy queries.
 
-For a full list of available visuals, see [Visualization](/kusto/query/render-operator?view=microsoft-fabric&preserve-view=true#visualization). For visuals that are only available in the web UI or Real-Time Dashboards, see [Dashboard-specific visuals](dashboard-visuals.md).
+For a full list of available visuals, see [Visualization](/kusto/query/render-operator?view=microsoft-fabric&preserve-view=true#visualization). For visuals that are only available in Real-Time Dashboards, see [Dashboard-specific visuals](dashboard-visuals.md).
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
 ## Add a visual to a query
 
-1. [Run a query](create-query-set.md) in the web UI. For example, you can use the following query:
+1. [Run a query](create-query-set.md). For example, you can use the following query:
 
     ```kusto
     Bikestream
