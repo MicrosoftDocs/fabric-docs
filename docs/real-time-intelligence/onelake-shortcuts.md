@@ -8,22 +8,26 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/03/2024
+ms.date: 10/15/2024
 ---
 
 # Create OneLake shortcuts in a KQL database
 
-OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses, KQL databases, and other items. Shortcuts are embedded references within OneLake that point to other files' store locations without moving the original data. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source.
+OneLake is a single, unified, logical data lake for Microsoft Fabric to store lakehouses, warehouses, KQL databases, and other items. Shortcuts are embedded references within OneLake that point to other files' store locations without moving the original data. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source.
 
 In this article, you learn how to create a OneLake shortcut in a KQL database that points to internal Fabric or external sources. This kind of shortcut is later accessed for query in KQL querysets by using the [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context). Shortcuts created in a KQL database can't be renamed, and only one shortcut can be created at a time.
 
 In addition to creating shortcuts from a KQL database, shortcuts can also be created from other Fabric items. These shortcuts also point to data stored in internal Fabric or external sources, but have different limitations and are accessed differently. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 > [!NOTE]
-> Use OneLake shortcuts when you want to infrequently run queries on historical data without partitioning or indexing the data.
-> If you want to run queries frequently and accelerate performance, import the data directly into your KQL database.
+> To accelerate queries over OneLake shortcuts, see [Accelerate queries over OneLake shortcuts](query-acceleration.md).
 
 Select the tab that corresponds to the shortcut you'd like to create:
+
+## Prerequisites
+
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* Role of **Admin**, **Contributor**, or **Member** [in the workspace](../get-started/roles-workspaces.md). 
 
 ## [OneLake shortcut](#tab/onelake-shortcut)
 
@@ -124,3 +128,4 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context)
+* [Accelerate queries over OneLake shortcuts](query-acceleration.md)
