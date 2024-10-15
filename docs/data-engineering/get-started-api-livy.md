@@ -50,7 +50,10 @@ There are a number of Scope permissions required to execute Livy jobs, below is 
 
 :::image type="content" source="media/livy-API/Entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Entra admin center" lightbox="media/livy-API/Entra-app-API-permissions.png" :::
 
-You could choose to be more granular than this list above by removing Item.ReadWrite.All and replacing with more granular Scope permisions:
+> [!NOTE]
+> During public preview we will be adding a few additional granular scopes, and if you use this approach, when we add these additional scopes your Livy app will break.  Please check this list as it will be updated with the additional scopes.
+
+Some customers may want a more granular permissions than this list above.  You could remove Item.ReadWrite.All and replacing with these more granular Scope permisions:  
 
 * Code.AccessAzureDataExplorer.All
 * Code.AccessAzureDataLake.All
