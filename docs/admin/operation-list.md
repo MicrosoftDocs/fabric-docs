@@ -195,7 +195,7 @@ The following operations are available in the audit logs.
 | Delete MetricSet Metric   Endpoint | DeleteMetricSetMetric | Delete metric in a metricset endpoint |
 | Delete Model Version | DeleteModelVersion | Triggered when a Machine Learning Model version is removed   |
 | Delete Notebook Resource | DeleteNotebookResource | Update resources in notebook.  |
-| Delete Scorecard Hierarchy | DeleteScorecardHierarchy | Triggered when a [scorecard hierarchy](/create-reports/service-metrics-get-started-hierarchies) is deleted. That is, the hierarchy's metadata is deleted, not the values of the goals in it. |
+| Delete Scorecard Hierarchy | DeleteScorecardHierarchy | Triggered when a [scorecard hierarchy](/power-bi/create-reports/service-metrics-get-started-hierarchies) is deleted. That is, the hierarchy's metadata is deleted, not the values of the goals in it. |
 | Delete Scorecard View | DeleteScorecardView | Triggered when a scorecard view ([list](/power-bi/create-reports/service-metrics-view-hierarchies#scorecard-list-view), [heatmap](/power-bi/create-reports/service-metrics-view-hierarchies#heatmap-view) and compact) is deleted. |
 | Delete Semantic Metric   Endpoint | DeleteSemanticMetric | Delete standalone semantic metric endpoint |
 | Delete Service Principal Profile As Admin | DeleteServicePrincipalProfileAsAdmin |   |
