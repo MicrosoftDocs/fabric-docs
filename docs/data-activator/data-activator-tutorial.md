@@ -6,6 +6,7 @@ ms.author: mihart
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter
 ms.date: 09/24/2024
+ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Data Activator using a tutorial and sample data.
 ---
 
