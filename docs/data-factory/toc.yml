@@ -591,6 +591,12 @@
         href: connector-teradata-database-overview.md
       - name: Set up your connection
         href: connector-teradata-database.md
+    - name: Vertica
+      items:
+      - name: Vertica - Overview
+        href: connector-vertica-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-vertica-copy-activity.md        
     - name: Web API/Web page
       items:
       - name: Web API/Web page - Overview
