@@ -37,9 +37,13 @@ Follow these steps to run the sample workload.
 
 4. **Confirm that the server is running** - The server typically runs on port *60006*. Confirm that the server is operational by navigating to `127.0.0.1:60006/manifests` on your browser.
 
-5. Open [Fabric](app.powerbi.com) and go to any workspace.
+## Step 2: Confirm that the workload is running
 
-6. Select **New item** and from the list, select **Sample item**.
+Follow these steps to confirm that the workload is running.
+
+1. Open [Fabric](app.powerbi.com) and go to any workspace.
+
+2. Select **New item** and from the list, select **Sample item**.
 
 ## Step 2: Configure the backend
 
@@ -54,11 +58,7 @@ Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so th
 
 
 
-## Step2: Run a sample workload
 
-Once the local server is running and *Developer Mode* is enabled, the new sample workload appears in the menu.
-
-1. **Access the sample workload**:  To start the *Create* experience, navigate to the sample workload home page.
 
 ## Step 3: Prepare the development environment
 
