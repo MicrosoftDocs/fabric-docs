@@ -4,7 +4,7 @@ description: A known issue is posted where Report pages not showing in org app i
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/30/2024
+ms.date: 10/15/2024
 ms.custom: known-issue-867
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-867
 
 Org apps have a report pages navigation setting. If the setting is enabled and you have a report with pages, you might run into any issues. The navigation doesn't appear to work and you don't see the report pages pane in the consumer experience for org apps.
 
-**Status:** Open
+**Status:** Fixed: October 15, 2024
 
 **Product Experience:** Power BI
 

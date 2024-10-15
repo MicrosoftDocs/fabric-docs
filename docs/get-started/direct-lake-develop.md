@@ -4,7 +4,7 @@ description: "Learn about how to develop Direct Lake semantic models."
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 09/16/2024
+ms.date: 10/03/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -153,6 +153,13 @@ Model write operations with the XMLA endpoint support:
 - Source and version control, continuous integration and continuous deployment (CI/CD) with Azure DevOps and GitHub. For more information, see [Content lifecycle management](/power-bi/guidance/powerbi-implementation-planning-content-lifecycle-management-overview).
 - Automation tasks like semantic model refresh, and applying changes to Direct Lake semantic models by using PowerShell and the REST APIs.
 
+When changing a semantic model using XMLA, you must update the *ChangedProperties* and *PBI_RemovedChildren* collection for the changed object to include any modified or removed properties. If you don't perform that update, Power BI modeling tools might overwrite any changes the next time the schema is synchronized.
+
+The supported models for changing a semantic model using XMLA are the following:
+* Table/Column rename (*ChangeProperty* = name)
+* Remove table (add table to *PBI_RemovedChildren* annotation in the query expression)
+
+
 > [!IMPORTANT]
 > Direct Lake tables created by using XMLA applications will initially be in an unprocessed state until the application sends a refresh command. Queries that involve unprocessed tables will always fall back to DirectQuery mode. So, when you create a new semantic model, be sure to refresh the model to process its tables.
 
@@ -165,6 +172,7 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 - The `compatibilityLevel` property of the database object is 1604 (or higher).
 - The mode property of Direct Lake partitions is set to `directLake`.
 - Direct Lake partitions use shared expressions to define data sources. The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-overview.md#directquery-fallback) mode for any reason).
+
 
 ## Post-publication tasks
 
