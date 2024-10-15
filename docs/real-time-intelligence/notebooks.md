@@ -43,7 +43,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     # The database with data to be read.
     database = "DocsDatabase"
     # The access credentials.
-    accessToken = mssparkutils.credentials.getToken(kustoUri)
+    accessToken = mssparkutils.credentials.getToken('kusto')
     kustoDf  = spark.read\
         .format("com.microsoft.kusto.spark.synapse.datasource")\
         .option("accessToken", accessToken)\
@@ -65,7 +65,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     # The table to write the data 
     table    = ""
     # The access credentials for the write
-    accessToken = mssparkutils.credentials.getToken(kustoUri)
+    accessToken = mssparkutils.credentials.getToken('kusto')
     
     # Generate a range of 5 rows with Id's 5 to 9
     data = spark.range(5,10) 
