@@ -133,6 +133,8 @@ This dialog appears when you run all the code cells by clicking the **Run all** 
 - The **Recent Run** feature isn't yet supported in T-SQL notebook. You need to use the current data warehouse monitoring feature to check the execution history of the T-SQL notebook. See [Monitor Data Warehouse](../data-warehouse/monitoring-overview.md) article for more details.
 - The monitor URL inside the pipeline execution isn't yet supported in the T-SQL notebook.
 - The snapshot feature isn't yet supported in the T-SQL notebook.
+- Git and Deployment pipline support isn't yet supported in the T-SQL notebook.
+
 
 ## Related content
 
