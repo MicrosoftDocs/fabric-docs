@@ -149,7 +149,7 @@ Apache Airflow connection is used to store the credentials required to authentic
    - <strong>Connection Type:</strong> Generic
    - <strong>Login:</strong> The Application (client) ID assigned to your app.
    - <strong>Password:</strong> The refresh token fetched using in previous step.
-   - <strong>Extra:</strong> This 
+   - <strong>Extra:</strong> The JSON object with the following properties:
    ```json
    {
       "tenantId": "The {tenant} value in the path of the request can be used to control who can sign into the application",
