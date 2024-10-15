@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 09/15/2024
+ms.date: 10/15/2024
 ---
 
 ### General Git integration limitations
@@ -34,6 +34,7 @@ Some GitHub Enterprise settings aren't supported. For example:
 
 - IP allowlist
 - Private networking
+- [Custom domains](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
 ### Workspace limitations
 
