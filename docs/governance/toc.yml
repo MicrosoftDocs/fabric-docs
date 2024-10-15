@@ -50,6 +50,12 @@ items:
       href: sensitivity-label-audit-schema.md
     - name: Troubleshoot sensitivity labels
       href: service-security-sensitivity-label-troubleshooting.md
+  - name: Protection policies
+    items:
+    - name: Protection polices overview
+      href: protection-policies-overview.md
+    - name: Create and manage protection policies
+      href: protection-policies-create.md
   - name: Microsoft Defender for Cloud Apps with Power BI
     href: service-security-using-defender-for-cloud-apps-controls.md
 - name: Data loss prevention policies
