@@ -10,7 +10,7 @@ ms.search.form: KQL Queryset
 ---
 # Create a KQL queryset
 
-In this article, you learn how to create a new KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from a KQL database.
+In this article, you learn how to create a new KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from different data sources including Eventhouse, KQL database and more.
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ The KQL Queryset exists within the context of a workspace. A new KQL queryset is
 
 1. Select **Create**.
 1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset.
-1. Select **Connect**.
+1. Select **Connect**. Alternatively, close the**OneLake data hub** window and use the **+Add data source** menu to connect to a different data source.
 
 ## Open an existing KQL queryset
 
