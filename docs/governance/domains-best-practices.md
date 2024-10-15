@@ -7,7 +7,7 @@ ms.topic: best-practice
 ms.date: 10/15/2024
 ---
 
-# Best practices for planning and creating domains
+# Best practices for planning and creating domains in Microsoft Fabric
 
 Domains in Fabric help to organize business data according to the needs and goals of the organization and to facilitate consumption.
 
