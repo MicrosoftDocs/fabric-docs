@@ -17,6 +17,10 @@ This quick start guide shows you how to create and run a Microsoft Fabric worklo
 
 Before you begin, ensure that you have an environment that's [set up](environment-setup.md) for workload development.
 
+## Step 1: Run the sample
+
+Follow these steps to run the sample workload.
+
 1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254) repository.
 
 2. **Install dependencies** - Navigate to the *Frontend* directory in the cloned repository and execute the following command:
@@ -37,6 +41,10 @@ Before you begin, ensure that you have an environment that's [set up](environmen
 
 6. Select **New item** and from the list, select **Sample item**.
 
+## Step 2: Configure the backend
+
+Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so that you can use the sample's dialog.
+
 
 
 
@@ -54,13 +62,18 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 
 ## Step 3: Prepare the development environment
 
-1. **Clone the boilerplate**: Clone the boilerplate project found here: [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254)
+
 
 1. **Open the solution**: Open the solution in Visual Studio *2022* to ensure compatibility with net7.
 
+
+
 1. **App registration**: Follow the authentication guide to set up Microsoft Entry ID authentication for secure interactions within the architecture.
 
-1. **Update OneLake DFS base URL**: Modify the `EnvironmentConstants.cs` file in the `src/Constants/` folder to match your environment.
+
+
+
+1. **Update OneLake DFS base URL**: Modify the `EnvironmentConstants.cs` file in the `Backend/src/Constants/` folder to match your environment.
 
 1. **Configure workload settings**: Update `src/Config/workload-dev-mode.json` and `src/appsettings.json` with your specific configuration details:
 
