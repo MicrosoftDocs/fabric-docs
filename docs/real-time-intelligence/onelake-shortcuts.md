@@ -24,11 +24,6 @@ In addition to creating shortcuts from a KQL database, shortcuts can also be cre
 
 Select the tab that corresponds to the shortcut you'd like to create:
 
-## Prerequisites
-
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Role of **Admin**, **Contributor**, or **Member** [in the workspace](../get-started/roles-workspaces.md). 
-
 ## [OneLake shortcut](#tab/onelake-shortcut)
 
 [!INCLUDE [onelake-shortcut-prerequisites](includes/onelake-shortcut-prerequisites.md)]
