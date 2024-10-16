@@ -19,7 +19,7 @@ Receiving accurate alerts and timely alerts is a consideration when creating rul
 ## Late arrival tolerance 
 
 Late arrival tolerance refers to how long the system waits for an event to arrive and see the event. This ensures that “late” events and events that arrive out of order will have the opportunity to make it into the set of data that rule evaluation happens over. If a data point falls outside of the time allowed, the system does not take it into consideration. Any events that arrive after that tolerance will not be factored in. 
-
+If a data point fall outside of the time allowed, that data point will not be considered when the rule is evaluated.
 Overall, the consideration is, is it more important to get the “late” data points and have the rule evaluated on that data, or is it more important to get alerts on potentially incomplete data evaluated sooner?  
 
 A blue dot on a black background
