@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:  
 ms.search.form: product-reflex
 ms.date: 10/2/2024
-#customer intent: As a Fabric user I want to understand the factors that contribute to arrival of actions.
+#customer intent: As a Fabric user who is working with rules, I want to understand the factors that help to determine when actions are included and excluded from rule reporting.
 ---
 
 # What is Latency in Data Activator
