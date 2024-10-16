@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
-ms.date: 10/02/2024
+ms.date: 10/16/2024
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -133,6 +133,7 @@ The following are the Fabric regions that support Mirroring for Azure SQL Databa
     - Brazil South
     - Canada Central
     - Canada East
+    - Central US
     - East US
     - East US2
     - North Central US
