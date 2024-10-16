@@ -61,7 +61,7 @@ Using the data above, let’s say a user goes with Data Activator's default late
 However, if the user sets a delay tolerance of at least 5 min, the value 40 will also now be considered and the avg temp will be calculated as 30.  
 
 > [!NOTE]
-> This setting is not applicable for Power BI rules. Power BI rules are evaluated any time new data arrives in Data Activator. 
+> You currently cannot override the default late arrival tolerance. This setting is also not applicable for Power BI rules. Power BI rules are evaluated any time new data arrives in Data Activator. 
 
 ## Latency 
 
