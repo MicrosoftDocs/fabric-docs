@@ -10,13 +10,13 @@ ms.date: 10/12/2024
 #customer intent: As a Fabric user who is working with rules, I want to understand the factors that help to determine when actions are included and excluded from rule reporting.
 ---
 
-# What is ncy in Data Activator
+# What is latency in Data Activator
 
 Receiving accurate and timely information is an important consideration when creating rules. Data Activator uses algorithms to adjust the tradeoff between the amount of data included and the speed of delivery. This article reviews the algorithms and settings that determine the balance between inclusion and speed. Should Data Activator allow for more data to arrive and be included or should Data Activator ensure that recipients receive their alerts on time.  
 
-##  arrival tolerance 
+##  Late arrival tolerance 
 
- arrival tolerance refers to how long Data Activator waits for an event to arrive and be acknowledged. Tolerance ensures that late events and events that arrive out of order have an opportunity to be included in the rule evaluation. If a data point falls outside of the late arrival tolerance, Data Activator doesn't take it into consideration. Any events that arrive after that tolerance aren't factored in. 
+Late arrival tolerance refers to how long Data Activator waits for an event to arrive and be acknowledged. Tolerance ensures that late events and events that arrive out of order have an opportunity to be included in the rule evaluation. If an event falls outside of the late arrival tolerance, Data Activator doesn't take it into consideration. Any events that arrive after that tolerance aren't factored in. 
 
 Overall, the consideration is whether it's more important to:
 
