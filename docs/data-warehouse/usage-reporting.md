@@ -109,7 +109,7 @@ SELECT * FROM Nyctaxi;
 
 For demonstration purposes, assume the billing metric accumulates 100 CU seconds.
 
-The cost of this query is *CU seconds times the price per CU*. Assume in this example that the price per CU is \\$0.18/hour. There are 3600 seconds in an hour. So, the cost of this query would be (100 x 0.18)/3600 = \\$0.005.
+The cost of this query is *CU seconds times the price per CU*. Assume in this example that the price per CU is $0.18/hour. There are 3600 seconds in an hour. So, the cost of this query would be (100 x 0.18)/3600 = $0.005.
 
 The numbers used in this example are for demonstration purposes only and not actual billing metrics.
 
