@@ -77,7 +77,7 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-s
 1. Choose entities.
 1. Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
-For more information, see [Create reports on data warehousing in Microsoft Fabric](create-reports.md).
+For more information, see [Create reports in [!INCLUDE [product-name](../includes/product-name.md)]](create-reports.md).
 
 ## Connect using OLE DB
 
