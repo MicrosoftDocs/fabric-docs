@@ -10,7 +10,7 @@ ms.search.form: Source and Destination
 ms.custom: references_regions
 ---
 
-# Add Amazon MSK Kafka source to an eventstream (preview)  
+# Add Amazon MSK Kafka source to an eventstream
 This article shows you how to add an Amazon MSK Kafka source to an eventstream.  
 
 Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, scaling, and management. By integrating Amazon MSK Kafka as a source within your eventstream, you can seamlessly bring the real-time events from your MSK Kafka and process it before routing them to multiple destinations within Fabric.  
