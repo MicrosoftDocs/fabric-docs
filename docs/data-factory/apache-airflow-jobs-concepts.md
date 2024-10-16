@@ -44,7 +44,6 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - Australia East
 - Australia Southeast
 - Brazil South
-- Brazil South (duplicate)
 - Canada East
 - East Asia
 - East US
@@ -56,12 +55,17 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - Qatar Central
 - South Africa North
 - South Central US
+- South India
 - Southeast Asia
+- Sweden Central
+- Switzerland West
 - UK South
-- UK South (duplicate)
+- UK West
 - West Central US
 - West Europe
 - West US
+- West US 2
+- West US 3
 
 ## Supported Apache Airflow versions
 
