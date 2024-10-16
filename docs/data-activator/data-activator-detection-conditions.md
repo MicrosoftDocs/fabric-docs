@@ -6,6 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 10/08/2024
+ms.search.form: Data Activator Detection Condition
 ---
 
 # Detection settings in Data Activator
