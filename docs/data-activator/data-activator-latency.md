@@ -12,7 +12,7 @@ ms.date: 10/2/2024
 
 # What is Latency in Data Activator
 
-<add content here>
+Receiving accurate alerts and timely alerts is a consideration when creating rules. Data Activator has some settings that allows you to adjust the tradeoff between allowing for more data to arrive and how soon alert receivers will receive their alerts.
 
 ## Performance 
 
