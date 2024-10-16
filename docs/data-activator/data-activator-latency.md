@@ -1,5 +1,5 @@
 ---
-title: Latency in Data Activator rules
+title: Latency and accuracy considerations in Data Activator rules
 description: An overview of Data Activator latency considerations and performance when building Data Activator rules.
 author: mihart
 ms.author: mihart
