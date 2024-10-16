@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.search.form: Data Activator Data Mode
+ms.search.form: Data Activator Object Creation
 ms.date: 09/24/2024
 ---
 
