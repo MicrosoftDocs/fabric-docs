@@ -56,7 +56,7 @@ Temp 
 
 40  
 
-Using the data above, let’s say a user goes with DA’s default delay tolerance settings and wants to calculate the average of the temp values ingested. Temp values 20 and 30 will be considered and the average temp will be calculated as 25.  
+Using the data above, let’s say a user goes with Data Activator's default late arrival tolerance settings and wants to calculate the average of the temperature values ingested. Temperature values 20 and 30 will be considered and the average temperature will be calculated as 25.  
 
 However, if the user sets a delay tolerance of at least 5 min, the value 40 will also now be considered and the avg temp will be calculated as 30.  
 
