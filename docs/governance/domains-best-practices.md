@@ -45,7 +45,7 @@ The following section describes several of the most common organizational struct
 
     :::image type="content" source="./media/domains-best-practices/sample-function-based-organizational-structure.png" alt-text="Diagram showing an example of a function-based organizational structure." border="false":::
 
-  * **Product/project structure**
+* **Product/project structure**
 
     A product/project based structure is suitable for companies that have multiple product lines or projects that require different teams and resources.
 
