@@ -73,7 +73,7 @@ Data Activator queries Power BI for new data every hour. This means that events 
 
 The delay introduced by Data Activators backend can take up to 10 min to process all the data. 
 
-## Rules built on Eventstreams 
+### Rules built on Eventstreams 
 
 There are a few different components that can make up latency for rules built on Eventstreams: late arrival tolerance, a delay that may be introduced by Data Activator’s backend, and if aggregation is used in the rule definition. 
 
