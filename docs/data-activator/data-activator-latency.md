@@ -32,7 +32,7 @@ For example, in Figure 1, data points are measured in 15-minute increments. The 
 
 Note that the system will not be able to factor in delays from the user’s data. For example, the user can have IoT sensors that are offline for 1 hour, once they go back online, Data Activator can receive the data, but the data was delayed for 1 hour from that offline state, which has happened outside of the system. 
 
-## Signal timestamp  
+## Example of late arrival tolerance
 
 Ingestion timestamp  
 
