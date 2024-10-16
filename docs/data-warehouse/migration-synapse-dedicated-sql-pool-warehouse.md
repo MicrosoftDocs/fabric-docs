@@ -376,7 +376,7 @@ A SQL Database Project can:
 
 For the data migration, you'll then use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse. 
 
-Adding to the Azure Data Studio supportability to Fabric, the Microsoft Fabric CAT team has provided a set of PowerShell scripts to handle the extraction, creation, and deployment of schema (DDL) and database code (DML) via a SQL Database Project. For a walkthrough of using the SQL Database project with our helpful PowerShell scripts, see [microsoft/fabric-migration on GitHub.com](https://github.com/microsoft/fabric-migration/tree/main/data-warehouse#deploy_and_create_migration_scripts_from_sourceps1---deploy-as-sql-package). 
+Adding to the Azure Data Studio supportability of Microsoft Fabric, the Microsoft Fabric CAT team has provided a set of PowerShell scripts to handle the extraction, creation, and deployment of schema (DDL) and database code (DML) via a SQL Database Project. For a walkthrough of using the SQL Database project with our helpful PowerShell scripts, see [microsoft/fabric-migration on GitHub.com](https://github.com/microsoft/fabric-migration/tree/main/data-warehouse#deploy_and_create_migration_scripts_from_sourceps1---deploy-as-sql-package). 
 
 For more information on SQL Database Projects, see [Getting started with the SQL Database Projects extension](/azure-data-studio/extensions/sql-database-project-extension-getting-started?view=fabric&preserve-view=true) and [Build and Publish a project](/azure-data-studio/extensions/sql-database-project-extension-build?view=fabric&preserve-view=true).
 

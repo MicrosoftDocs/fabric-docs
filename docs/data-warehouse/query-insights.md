@@ -20,7 +20,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], the query insights fe
 The query insights feature provides a central location for historic query data and actionable insights for 30 days, helping you to make informed decisions to enhance the performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)]. When a SQL query runs in [!INCLUDE [product-name](../includes/product-name.md)], the query insights feature collect and consolidates its execution data, providing you with valuable information. You can view complete query text for Admin, Member, and Contributor roles.
 
 - **Historical Query Data:** The query insights feature stores historical data about query executions, enabling you to track performance changes over time. System queries aren't stored in query insights.
-- **Aggregated Insights:** The query insights feature aggregates query execution data into insights that are more actionable, such as identifying long-running queries or most active users. These aggregations are based on the query shape and is explained further in [How are similar queries aggregated to generate insights?](#how-are-similar-queries-aggregated-to-generate-insights).
+- **Aggregated Insights:** The query insights feature aggregates query execution data into insights that are more actionable, such as identifying long-running queries or most active users. These aggregations are based on the query shape. For more information, see [How are similar queries aggregated to generate insights?](#how-are-similar-queries-aggregated-to-generate-insights)
 
 ## Before you begin
 
