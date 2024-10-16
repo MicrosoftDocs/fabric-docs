@@ -58,7 +58,7 @@ Temp 
 
 Using the data above, let’s say a user goes with Data Activator's default late arrival tolerance settings and wants to calculate the average of the temperature values ingested. Temperature values 20 and 30 will be considered and the average temperature will be calculated as 25.  
 
-However, if the user sets a delay tolerance of at least 5 min, the value 40 will also now be considered and the avg temp will be calculated as 30.  
+However, if the late arrival tolerance is at least 5 min, the value 40 will also now be considered and the average temperature will be calculated as 30.  
 
 > [!NOTE]
 > You currently cannot override the default late arrival tolerance. This setting is also not applicable for Power BI rules. Power BI rules are evaluated any time new data arrives in Data Activator. 
