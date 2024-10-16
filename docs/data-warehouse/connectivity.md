@@ -77,7 +77,7 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-s
 1. Choose entities.
 1. Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
-For more information, see [Create reports in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](create-reports.md).
+For more information, see [Create reports in [!INCLUDE [product-name](../includes/product-name.md)]](create-reports.md).
 
 ## Connect using OLE DB
 
@@ -85,11 +85,11 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
 
 ## Connect using ODBC
 
-Microsoft [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 or higher versions are supported.
+[!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 or higher versions are supported.
 
 ## Connect using JDBC
 
-Microsoft [!INCLUDE [product-name](../includes/product-name.md)] also supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using a Java database connectivity (JDBC) driver.
+[!INCLUDE [product-name](../includes/product-name.md)] also supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using a Java database connectivity (JDBC) driver.
 
 When establishing connectivity via JDBC, check for the following dependencies:
 
@@ -132,7 +132,7 @@ When establishing connectivity via JDBC, check for the following dependencies:
 
 The `dbt` adapter is a data transformation framework that uses software engineering best practices like testing and version control to reduce code, automate dependency management, and ship more reliable data—all with SQL.
 
-The `dbt` data platform-specific adapter plugins allow users to connect to the data store of choice. To connect to Synapse Data Warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)] from `dbt` use `dbt-fabric` adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
+The `dbt` data platform-specific adapter plugins allow users to connect to the data store of choice. To connect to Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)] from `dbt` use `dbt-fabric` adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
 
 Both adapters support Microsoft Entra ID (formerly Azure Active Directory) authentication and allow developers to use `az cli authentication`. However, SQL authentication is not supported for `dbt-fabric`
 
@@ -142,7 +142,7 @@ For more information, see the [Microsoft Fabric Synapse Data Warehouse dbt adapt
 
 ## Connectivity by other means
 
-Any non-Microsoft tool can also use the SQL connection string via ODBC or OLE DB drivers to connect to a Microsoft [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], using Microsoft Entra ID (formerly Azure Active Directory) authentication. For more information and sample connection strings, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
+Any non-Microsoft tool can also use the SQL connection string via ODBC or OLE DB drivers to connect to a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], using Microsoft Entra ID (formerly Azure Active Directory) authentication. For more information and sample connection strings, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
 
 ### Custom applications
 
