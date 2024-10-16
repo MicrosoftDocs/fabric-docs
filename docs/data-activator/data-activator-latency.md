@@ -64,7 +64,7 @@ However, if the late arrival tolerance is at least 5 min, the value 40 will also
 > You currently cannot override the default late arrival tolerance. This setting is also not applicable for Power BI rules. Power BI rules are evaluated any time new data arrives in Data Activator. 
 
 ## Latency 
-
+Depending on the source a rule is built on, there are some considerations you may want to take into account to better understand any latency on receiving alerts from rules.
 ### Rules built on Power BI visuals 
 
 There are two parts that make up latency for rules built on Power BI visuals: the frequency of querying Power BI visuals that’s built in the system, and a delay that may be introduced by Data Activator’s backend. 
