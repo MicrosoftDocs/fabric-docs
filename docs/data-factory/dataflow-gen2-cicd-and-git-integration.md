@@ -42,7 +42,7 @@ To create a dataflow gen2 with CI/CD and Git support, follow these steps:
 - To commit the dataflow to the Git repository, click on the source control icon in the top right corner.
 - Select all the changes you want to commit and click on commit.
 
-You now have a dataflow Gen2 with CI/CD and Git support. Suggested is to follow the best practices for working with CI/CD and Git integration in Fabric by follow the tutorial [here](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
+You now have a dataflow Gen2 with CI/CD and Git support. Suggested is to follow the best practices for working with CI/CD and Git integration in Fabric by following the tutorial [here](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
 
 Current limitations for CI/CD and Git integration support:
 
