@@ -133,6 +133,7 @@ The following are the Fabric regions that support Mirroring for Azure SQL Databa
     - Brazil South
     - Canada Central
     - Canada East
+    - CEntral US
     - East US
     - East US2
     - North Central US
