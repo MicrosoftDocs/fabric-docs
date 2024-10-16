@@ -1,6 +1,6 @@
 ---
-title: Add Amazon Managed Streaming for Apache Kafka to an eventstream
-description: Learn how to add Amazon Managed Streaming for Apache Kafka (MSK) source to an eventstream.
+title: Add Amazon MSK Kafka source to an eventstream
+description: Provides information on adding an Amazon Managed Streaming for Apache Kafka (MSK) source to an eventstream.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
@@ -8,9 +8,10 @@ ms.topic: how-to
 ms.date: 09/27/2024
 ms.search.form: Source and Destination
 ms.custom: references_regions
+#Customer intent: I want to learn how to bring events from an Amazon Managed Streaming for Apache Kafka source into Microsoft Fabric. 
 ---
 
-# Add Amazon MSK Kafka source to an eventstream (preview)  
+# Add Amazon MSK Kafka source to an eventstream
 This article shows you how to add an Amazon MSK Kafka source to an eventstream.  
 
 Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, scaling, and management. By integrating Amazon MSK Kafka as a source within your eventstream, you can seamlessly bring the real-time events from your MSK Kafka and process it before routing them to multiple destinations within Fabric.  

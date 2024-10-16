@@ -1,6 +1,6 @@
 ---
 title: Add Confluent Kafka source to an eventstream
-description: Learn how to add Confluent Kafka source to an eventstream.
+description: Provides information on adding a Confluent Kafka source to an eventstream in Microsoft Fabric along with limitations. 
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
@@ -9,9 +9,10 @@ ms.custom:
   - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
+#Customer intent: I want to learn how to bring events from a Confluent Kafka source into Microsoft Fabric. 
 ---
 
-# Add Confluent Kafka source to an eventstream (preview)
+# Add Confluent Kafka source to an eventstream
 This article shows you how to add Confluent Kafka source to an eventstream. 
 
 Confluent Cloud Kafka is a streaming platform offering powerful data streaming and processing functionalities using Apache Kafka. By integrating Confluent Cloud Kafka as a source within your eventstream, you can seamlessly process real-time data streams before routing them to multiple destinations within Fabric. 
@@ -31,7 +32,7 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 ## Add Confluent Cloud Kafka as a source 
 
-1. Create an eventstream with selecting the preview toggle.
+1. Create an eventstream.
 1. Select **Add external source**.
 
 ## Configure and connect to Confluent Kafka
