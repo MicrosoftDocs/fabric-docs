@@ -15,8 +15,8 @@ ms.custom: fabric-cat
 
 This article describes a query technique to summarize [fact table](dimensional-modeling-fact-tables.md) data by using ranges of fact or [dimension table](dimensional-modeling-dimension-tables.md) attributes. For example, you might need to determine sales quantities by sale price. However, instead of grouping by each sale price, you want to group by range bands of price, like:
 
-- $0.00 to $999.99
-- $1,000.00 to $4,999.99
+- \\$0.00 to \\$999.99
+- \\$1,000.00 to \\$4,999.99
 - and others…
 
 > [!TIP]
@@ -52,9 +52,9 @@ Here are some example range bands.
 
 | **Series** | **RangeLabel** | **LowerBound** | **UpperBound** |
 |---|---|---|---|
-| Price | $0.00 to $999.99 | 0 | 1,000 |
-| Price | $1,000.00 to $4,999.99 | 1,000 | 5,000 |
-| Price | $5,000.00 or above | 5,000 | 9,999,999 |
+| Price | \\$0.00 to \\$999.99 | 0 | 1,000 |
+| Price | \\$1,000.00 to \\$4,999.99 | 1,000 | 5,000 |
+| Price | \\$5,000.00 or above | 5,000 | 9,999,999 |
 | Age | 0 to 19 years | 0 | 20 |
 | Age | 20 to 39 years | 20 | 40 |
 | Age | 40 to 59 years | 40 | 60 |
