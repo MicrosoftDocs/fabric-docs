@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 08/01/2024
+ms.date: 10/15/2024
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 
 
@@ -13,13 +13,13 @@ ms.date: 08/01/2024
 
 # Protection policies in Microsoft Fabric (preview)
 
-Microsoft Purview protection access control policies (protection policies) enable organizations to control access to items in Fabric using protected sensitivity labels from Microsoft Purview information protection.
+Microsoft Purview protection access control policies (protection policies) enable organizations to control access to items in Fabric using sensitivity labels from Microsoft Purview information protection.
 
 The target audience for this article is security and compliance admins, Fabric admins and users, and anyone else who wants to learn about how protection policies control access to items in Fabric. If you want to see how to create a protection policy for Fabric, see [Create and manage protection policies for Fabric (preview)](./protection-policies-create.md).
 
 ## How do protection policies for Fabric work?
 
-Each protection policy for Fabric is associated with a protected sensitivity label. It controls access to an item that has the associated label by allowing users and groups specified in the policy to retain permissions they have on the item while blocking access for everyone else. The policy can:
+Each protection policy for Fabric is associated with a sensitivity label. The policy controls access to an item that has the associated label by allowing users and groups specified in the policy to retain permissions they have on the item, while blocking access for everyone else. The policy can:
 
 * Allow specified users and groups to retain *read* permission on labeled items if they have it. Any other permissions they have on the item will be removed.
 
@@ -47,7 +47,7 @@ Protection policies for Fabric are generally configured by an organization's Pur
 
 *  Microsoft 365 E3/E5 license as required for sensitivity labels from Microsoft Purview Information Protection. For more information, see [Microsoft Purview Information Protection: Sensitivity labeling](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#microsoft-purview-information-protection-sensitivity-labeling).
 
-* At least one protected sensitivity label from Microsoft Purview information protection, correctly configured for use in Fabric, must exist in the tenant. This is necessary because you need a correctly configured protected sensitivity label to create the protection policy. "Correctly configured for Fabric" means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access**. For information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels).
+* At least one "correctly configured" sensitivity label from Microsoft Purview information protection must exist in the tenant. "Correctly configured" in the context of protection policies for Fabric means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access** (for information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels)). Only such "correctly configured" sensitivity labels can be used to create the protection policies for Fabric.
 
 * For protection policies to be enforced in Fabric, the Fabric tenant setting **Allow users to apply sensitivity labels for content** must be enabled. This setting is required for all sensitivity label related policy enforcement in Fabric, so if sensitivity labels are already being used in Fabric, this setting will already be on. For more information about enabling sensitivity labels in Fabric, see [Enable sensitivity labels](/power-bi/enterprise/service-security-enable-data-sensitivity-labels#enable-sensitivity-labels).
 
