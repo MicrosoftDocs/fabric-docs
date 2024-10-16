@@ -4,7 +4,7 @@ description: Follow steps to connect SSMS to data warehousing in your Microsoft 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, stwynant, jacinda-eng
-ms.date: 09/03/2024
+ms.date: 10/10/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -43,13 +43,13 @@ To ensure proper access, you need to allow the Power BI service tags for firewal
 
 To retrieve the connection string, follow these steps:
 
-1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select the `...` ellipses for **More options**.
+1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+1. Select the **Copy** button in the **SQL connection string** box to copy the connection string to your clipboard.
 
-   :::image type="content" source="media/connectivity/workspace-warehouse-more-options.png" alt-text="Screenshot of a workspace item for a warehouse. The More options or ellipses button is boxed.":::
+Or, in the **OneLake Data Hub**:
 
+1. Select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select the `...` ellipses for **More options**.
 1. Select **Copy SQL connection string** to copy the connection string to your clipboard.
-
-   :::image type="content" source="media/connectivity/warehouse-copy-sql-connection-string.png" alt-text="Screenshot of the workspace screen with the context menu open.":::
 
 ## Get started with SQL Server Management Studio (SSMS)
 
@@ -161,7 +161,7 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 
 - SQL Authentication is not supported.
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
-- If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, contact support.
+- If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Microsoft Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, contact support.
 - If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "SHUTDOWN is in progress. Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
 - If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
 - If you receive the error code 18456: "Execution failed against SQL server, please contact SQL server team if you need further support.", refer to [Known issue - Data warehouse connection or query execution fails](../get-started/known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md).
@@ -171,3 +171,5 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
+- [Add Fabric URLs to your allowlist](../security/fabric-allow-list-urls.md)
+- [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/en-us/download/details.aspx?id=56519)
