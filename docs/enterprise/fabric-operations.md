@@ -89,7 +89,7 @@ You can find the consumption rates for Pipelines in [Data pipelines pricing for 
 
 ### Data Warehouse
 
-One Synapse Data Warehouse core (unit of compute for Data Warehouse) is equivalent to two Fabric Capacity Units (CUs).
+One Fabric Data Warehouse core (unit of compute for Data Warehouse) is equivalent to two Fabric Capacity Units (CUs).
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |

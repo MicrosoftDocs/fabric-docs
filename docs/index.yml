@@ -408,7 +408,7 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Data Warehouse
+    - title: Fabric Data Warehouse
 
       imageSrc: ./media/synapse-data-warehouse-icon.png
       links:

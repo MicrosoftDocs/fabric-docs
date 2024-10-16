@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot the Warehouse
-description: Troubleshoot common issues in using Warehouse in Microsoft Fabric.
+description: Troubleshoot common issues in the Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul
@@ -17,7 +17,7 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This article provides guidance in troubleshooting common issues in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. 
+This article provides guidance in troubleshooting common issues in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Transient connection errors
 

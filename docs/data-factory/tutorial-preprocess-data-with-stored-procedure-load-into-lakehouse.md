@@ -14,7 +14,7 @@ ms.search.form: Pipeline Tutorials
 
 # Preprocess data with a stored procedure before loading into Lakehouse
 
-In this tutorial, we show you how to use a pipeline Script activity to run a stored procedure to create a table and preprocess the data in a Synapse Data Warehouse. After that, we load the preprocessed table into Lakehouse.
+In this tutorial, we show you how to use a pipeline Script activity to run a stored procedure to create a table and preprocess the data in a Azure Synapse Data Warehouse. After that, we load the preprocessed table into Lakehouse.
 
 ## Prerequisites
 

@@ -420,7 +420,7 @@ The dbt framework generates DDL and DML (SQL scripts) on the fly with each execu
 
 The dbt framework is code-first approach. The data must be migrated by using options listed in this document, such as [CETAS](#migration-of-data-with-cetas) or [COPY/Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity).
 
-The dbt adapter for Microsoft Fabric Synapse Data Warehouse allows the existing dbt projects that were targeting different platforms such as Synapse dedicated SQL pools, Snowflake, Databricks, Google Big Query, or Amazon Redshift to be migrated to a Fabric Warehouse with a simple configuration change.
+The dbt adapter for Microsoft Fabric Data Warehouse allows the existing dbt projects that were targeting different platforms such as Synapse dedicated SQL pools, Snowflake, Databricks, Google Big Query, or Amazon Redshift to be migrated to a Fabric Warehouse with a simple configuration change.
 
 To get started with a dbt project targeting Fabric Warehouse, see [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md). This document also lists an option to move between different warehouses/platforms.
 
@@ -436,6 +436,6 @@ Several factors to note so that you can design your process for maximum performa
 ## Related content
 
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
