@@ -74,6 +74,8 @@ items:
   items:
   - name: Domains
     href: domains.md
+  - name: Domain design - best practices
+    href: domains-best-practices.md
   - name: Audit schema for domains
     href: domains-audit-schema.md
 - name: Tags
