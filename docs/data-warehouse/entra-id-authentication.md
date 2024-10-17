@@ -44,7 +44,7 @@ Microsoft Entra authentication for use with a Warehouse or Lakehouse SQL analyti
 
 A Fabric admin in your tenant must permit SPN access to Fabric APIs, necessary for the SPN to interface for SQL connection strings to Fabric Warehouse or SQL analytics endpoint items.
 
-This setting is located in the Developer settings section and ios labeled **Service principals can use Fabric APIs**. Make sure it is **Enabled**.
+This setting is located in the Developer settings section and is labeled **Service principals can use Fabric APIs**. Make sure it is **Enabled**.
 
 :::image type="content" source="media/entra-id-authentication/developer-settings-service-principals-fabric-apis.png" alt-text="Screenshot from the Fabric portal of the Developer Settings page in Tenant Settings.":::
 
