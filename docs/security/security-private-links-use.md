@@ -312,7 +312,10 @@ The following video shows how to connect a mobile device to Fabric, using privat
 More questions? [Ask the Fabric Community](https://community.fabric.microsoft.com/).
 
 ## Disable Private Link
-In case you want to disable private link setting, please ensure all the private endpoints you created and the corresponding private DNS zone are deleted before disabling private link setting. If your VNet has private endpoint set up but the private link is disabled, connections from this VNet may fail.
+
+If you want to disable the Private Link setting, make sure that all the private endpoints you created and the corresponding private DNS zone are deleted before disabling the setting. If your VNet has private endpoints set up but Private Link is disabled, connections from this VNet may fail.
+
+If you're going to disable the Private Link setting, it is recommended to do so during non-business hours. It may take up to 15 minutes of downtime for some scenarios to reflect the change. 
 
 ## Related content
 
