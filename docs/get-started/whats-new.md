@@ -94,6 +94,7 @@ The following table lists the features of Microsoft Fabric that have recently tr
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|**Mirroring for Azure SQL Database GA**|With Azure SQL Database mirroring in Fabric, you can easily [bring your database into OneLake in Microsoft Fabric](../database/mirrored-database/azure-sql-database.md).|
 |September 2024|**Mirroring for Snowflake**|With Mirroring for Snowflake in Fabric, you can easily [bring your Snowflake data into OneLake in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/announcing-the-general-availability-of-mirroring-for-snowflake-in-microsoft-fabric?ft=All). For more information, see [Mirroring Snowflake](../database/mirrored-database/snowflake.md).|
 |September 2024|**Copilot for Data Factory**|[Copilot for Data Factory](https://blog.fabric.microsoft.com/blog/announcing-the-general-availability-of-copilot-for-data-factory-in-microsoft-fabric?ft=All) is now generally available and included in the Dataflow Gen2 experience. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md).|
 |September 2024|**Fast Copy in Dataflow Gen2**|The [Fast Copy feature](../data-factory/dataflows-gen2-fast-copy.md) is now generally available. For more information, read [Announcing the General Availability of Fast Copy in Dataflows Gen2](https://blog.fabric.microsoft.com/blog/announcing-the-general-availability-of-fast-copy-in-dataflows-gen2?ft=All).|
@@ -295,6 +296,7 @@ This section summarizes recent improvements and features for [Fabric Data Wareho
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|November 2024|**Mirroring for Azure SQL Database GA**|With Azure SQL Database mirroring in Fabric, you can easily [bring your database into OneLake in Microsoft Fabric](../database/mirrored-database/azure-sql-database.md).|
 |October 2024|**Nested Common Table Expressions (CTEs) (preview)**|Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* CTEs. While CTEs are generally available in Microsoft Fabric, [nested common table expressions (CTE) in Fabric data warehousing (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true) are currently a preview feature. |
 |September 2024|**Mirroring for Snowflake GA**|With Mirroring for Snowflake in Fabric, you can easily [bring your Snowflake data into OneLake in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/announcing-the-general-availability-of-mirroring-for-snowflake-in-microsoft-fabric?ft=All). For more information, see [Mirroring Snowflake](../database/mirrored-database/snowflake.md).|
 |September 2024|**Copilot for Data Warehouse**|[Copilot for Data Warehouse (preview)](../data-warehouse/copilot.md) is [now updated and available as a preview feature](https://blog.fabric.microsoft.com/blog/copilot-for-data-warehouse-public-preview-update?ft=All), offering [the Copilot chat pane](../data-warehouse/copilot-chat-pane.md), [quick actions](../data-warehouse/copilot-quick-action.md), and [code completions](../data-warehouse/copilot-code-completion.md). |
