@@ -14,7 +14,7 @@ Apache Airflow jobs allow you to build and schedule Apache Airflow Directed Acyc
 
 
 
-## Dataflow workflows pricing model
+## Apache Airflow job pricing model
 
 Apache Airflow job is charged based on pool uptime. Each Apache Airflow job has it's own isolated pool which are not shared across Apache Airflow jobs. There are two types of pools available: Starter and Custom.
 
@@ -43,9 +43,9 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It's used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Metrics app is the most accurate way to estimate the costs of Apache Airflow job.  
 
-The following table can be utilized as a template to compute estimated costs using Fabric Metrics app for a Data workflow:
+The following table can be utilized as a template to compute estimated costs using Fabric Metrics app for a Apache Airflow job:
 
-|Metric  |Data workflow size  | Extra nodes  |
+|Metric  |Apache Airflow job size  | Extra nodes  |
 |---------|---------|---------|
 |Total CUs     | DataWorkflow Small CU seconds or DataWorkflow Large (Base) | DataWorkflow Small Extra Node or DataWorkflow Large Extra Node CU seconds (Extra) |
 |Effective CU-hours billed      | Base / (60*60)  CU-hour | Extra / (60*60)  CU-hour |
