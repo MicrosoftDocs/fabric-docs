@@ -74,7 +74,7 @@ Complete the following steps to create a new Copy job:
 
 - Monitor button isn't available yet to see the aggregated read/written row counts per table and database in Copy job life-cycle.
 - Configure Copy button isn't available yet for advanced settings including incremental copy without full load, override or upsert data in destination.
-- Incremental copy mode can't work with Fabric Lake House as source.
+- Incremental copy mode can't work with Fabric Lakehouse as source.
 - Row deletion can't be captured from source store.
 
 ## Related content
