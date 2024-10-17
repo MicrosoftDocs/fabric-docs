@@ -11,11 +11,11 @@ ms.custom:
 ms.search.form: Warehouse billing and utilization
 ---
 
-# Billing and utilization reporting in Synapse Data Warehouse
+# Billing and utilization reporting in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-The article explains compute usage reporting of the Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)], which includes read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
+The article explains compute usage reporting of the Fabric Data Warehouse, which includes read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
@@ -27,11 +27,13 @@ In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capa
 
 Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times.
 
-## Capacity in Fabric Synapse Data Warehouse
+<a id="capacity-in-fabric-synapse-data-warehouse"></a>
 
-In the capacity-based SaaS model, Fabric data warehousing aims to make the most of the purchased capacity and provide visibility into usage.
+## Capacity in Fabric Data Warehouse
 
-CUs consumed by data warehousing include read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
+In the capacity-based SaaS model, Fabric Data Warehouse aims to make the most of the purchased capacity and provide visibility into usage.
+
+CUs consumed by Fabric Data Warehouse include read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 
 In simple terms, 1 Fabric capacity unit = 0.5 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] vCores. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 32 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] vCores.
 
@@ -124,13 +126,13 @@ Consider the following usage reporting nuances:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
+> [How to: Observe Fabric Data Warehouse utilization trends](how-to-observe-utilization.md)
 
 ## Related content
 
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [Workload management](workload-management.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)

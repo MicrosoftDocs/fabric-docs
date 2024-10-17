@@ -29,7 +29,7 @@ Row-level security is applied to [shared warehouse or lakehouse](share-warehouse
 
 ## Predicate-based row-level security
 
-Row-level security in Fabric Synapse Data Warehouse supports predicate-based security. Filter predicates silently filter the rows available to read operations.
+Row-level security in Fabric Data Warehouse supports predicate-based security. Filter predicates silently filter the rows available to read operations.
 
 Access to row-level data in a table is restricted by a security predicate defined as an inline table-valued function. The function is then invoked and enforced by a security policy. For filter predicates, the application is unaware of rows that are filtered from the result set. If all rows are filtered, then a null set will be returned.
 

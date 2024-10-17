@@ -29,6 +29,11 @@
         "source_path_from_root": "/docs/data-warehouse/user-audit-logs.md",
         "redirect_url": "/fabric/admin/operation-list",
         "redirect_document_id": true
-      }      
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/troubleshoot-synapse-data-warehouse.md",
+        "redirect_url": "/fabric/data-warehouse/troubleshoot-fabric-data-warehouse",
+        "redirect_document_id": true
+      }
     ]
 }
