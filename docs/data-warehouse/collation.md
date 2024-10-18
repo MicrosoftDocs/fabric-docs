@@ -18,13 +18,19 @@ Currently, the only method available for creating a case-insensitive data wareho
 > [!IMPORTANT]
 > Once a warehouse is created, the collation setting cannot be changed. Carefully consider your needs before initiating the creation process.
 
-## Prerequisites
+## Option 1: Use the Try it function in the following document
+https://learn.microsoft.com/en-us/rest/api/fabric/warehouse/items/create-warehouse?tabs=HTTP
+
+
+## Option 2: Use other REST API client
+
+### Prerequisites
 
 - A Fabric workspace with an active capacity or trial capacity.
 - Download and install [Visual Studio Code](https://code.visualstudio.com/download) to download and install the application.
 - Install the [REST Client - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 
-## API endpoint
+### API endpoint
 
 To create a warehouse with REST API, use the API endpoint: `POST https://api.fabric.microsoft.com/v1/workspaces/<workspace-id>/items`
 
@@ -41,7 +47,7 @@ Here's a sample JSON request body for creating a warehouse:
 }
 ```
 
-## Use Visual Studio Code to invoke the REST API
+### Use Visual Studio Code to invoke the REST API
 
 You can easily create a new warehouse with case-insensitive collation using [Visual Studio Code (VS Code)](https://code.visualstudio.com/) and the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension. Follow these steps:
 
