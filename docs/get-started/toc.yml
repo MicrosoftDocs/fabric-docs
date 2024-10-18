@@ -169,6 +169,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Data warehouse not accessible when using OneLake URLs with friendly names
+      href: known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md
     - name: Data warehouse tables aren't accessible or updatable
       href: known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md
     - name: Semantic model refresh fails due to circular dependency in calendar table
