@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/17/2024
+ms.date: 10/18/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 |
 |  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 |
 |  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 |
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
