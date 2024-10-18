@@ -38,7 +38,7 @@ The following properties are supported for MariaDB under the **Source** tab of a
 
 The following properties are **required**:
 
-- **Connection**:  Select an MariaDB for Pipeline connection from the connection list. If no connection exists, then create a new MariaDB for Pipeline connection by selecting **New**.
+- **Connection**:  Select a MariaDB for Pipeline connection from the connection list. If no connection exists, then create a new MariaDB for Pipeline connection by selecting **New**.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
       - **Table**: Specify the name of the table in the MariaDB to read data. Select the table from the drop-down list.
