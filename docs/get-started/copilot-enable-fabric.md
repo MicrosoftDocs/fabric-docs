@@ -1,8 +1,8 @@
 ---
 title: Enable Copilot in Fabric
 description: Learn how to enable Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations.
-author: maggiesMSFT
-ms.author: maggies
+author: snehagunda
+ms.author: sngun
 ms.reviewer: shlindsay
 ms.custom:
   - ignite-2023
