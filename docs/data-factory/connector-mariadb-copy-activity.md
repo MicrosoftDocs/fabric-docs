@@ -1,6 +1,6 @@
 ---
-title: Configure MariaDB for Pipeline in copy activity
-description: This article explains how to copy data using MariaDB for Pipeline.
+title: Configure MariaDB in copy activity
+description: This article explains how to copy data using MariaDB.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
 ---
 
-# Configure MariaDB for Pipeline in copy activity
+# Configure MariaDB in copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from MariaDB.
 
@@ -32,9 +32,9 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Source
 
-The following properties are supported for MariaDB for Pipeline under the **Source** tab of a copy activity.
+The following properties are supported for MariaDB under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-mariadb-for-pipeline/mariadb-for-pipeline-source.png" alt-text="Screenshot showing source tab.":::
+:::image type="content" source="./media/connector-mariadb/mariadb-source.png" alt-text="Screenshot showing source tab.":::
 
 The following properties are **required**:
 
@@ -46,7 +46,7 @@ The following properties are **required**:
     - If you select **Query**:
       - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
 
-        :::image type="content" source="./media/connector-mariadb-for-pipeline/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
+        :::image type="content" source="./media/connector-mariadb/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
 
 Under **Advanced**, you can specify the following fields:
 
@@ -62,7 +62,7 @@ For **Settings** tab configuration, go to [Configure your other settings under s
 
 ## Table summary
 
-The following tables contain more information about the copy activity in MariaDB for Pipeline.
+The following tables contain more information about the copy activity in MariaDB.
 
 ### Source information
 
@@ -76,4 +76,4 @@ The following tables contain more information about the copy activity in MariaDB
 
 ## Related content
 
-- [MariaDB for Pipeline overview](connector-mariadb-for-pipeline-overview.md)
+- [MariaDB overview](connector-mariadb-overview.md)
