@@ -4,7 +4,7 @@ description: A known issue is posted where you might see unexpected changes in f
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/30/2024
+ms.date: 10/17/2024
 ms.custom: known-issue-862
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-862
 
 You see that fonts or themes look different in Power BI service reports. You didn't modify the report's fonts or themes. Although the theme has an error, the report still applies the theme to the report. In a later release, the report might not apply the errored theme.
 
-**Status:** Open
+**Status:** Fixed: October 17, 2024
 
 **Product Experience:** Power BI
 

@@ -1,6 +1,6 @@
 ---
 title: Run a Microsoft Fabric item job in Apache Airflow DAGs.
-description: Learn to trigger Microsoft Fabric job item's run in Apache Airflow DAGs.
+description: Learn to trigger Microsoft Fabric job item in Apache Airflow DAGs.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -13,7 +13,7 @@ ms.date: 04/15/2023
 > [!NOTE]
 > Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This tutorial provides a detailed guide on integrating Microsoft Fabric items, such as Data Factory Pipelines and Notebooks, within Apache Airflow DAGs. It walks you through how to set up and execute Microsoft Fabric jobs by using Fabric managed storage in Apache Airflow Job and the Apache Airflow plugin, applying the power of both platforms to create robust, scalable data workflows.
+In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as Fabric Notebooks and Pipelines.
 
 ## Prerequisites
 
@@ -33,17 +33,17 @@ To get started, you must complete the following prerequisites:
 - Tenant level admin account must enable the setting 'Allow user consent for apps'. Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
   :::image type="content" source="media/apache-airflow-jobs/user-consent.png" lightbox="media/apache-airflow-jobs/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
 
+- Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
+:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
+
 - Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
 
 - Enable the Triggerers in data workflows to allow the usage of deferrable operators.
+   :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggerers.":::
 
-## Add Apache Airflow requirement
+## Apache Airflow plugin
 
-Create the requirements.txt file in the dags folder with the following content:
-
-```plaintext
-apache-airflow-microsoft-fabric-plugin
-```
+To trigger an on-demand Microsoft Fabric item run, this tutorial uses the [apache-airflow-microsoft-fabric-plugin](https://pypi.org/project/apache-airflow-microsoft-fabric-plugin/) which is pre-installed in the Apache Airflow job requirements.
 
 ## Create an Airflow connection for Microsoft Fabric
 
@@ -92,7 +92,7 @@ Create a new DAG file in the 'dags' folder in Fabric managed storage with the fo
 
 If you want to include an external monitoring link for Microsoft Fabric item runs, create a plugin file as follows:
 
-Create a new file in the plugins folder with the following content:
+Create a new file in the `plugins` folder with the following content:
 
 ```python
    from airflow.plugins_manager import AirflowPlugin
@@ -101,22 +101,29 @@ Create a new file in the plugins folder with the following content:
    from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemLink
 
    class AirflowFabricPlugin(AirflowPlugin):
-       """
-       Microsoft Fabric plugin.
-       """
+      """
+      Microsoft Fabric plugin.
+      """
 
-       name = "fabric_plugin"
-       operator_extra_links = [FabricRunItemLink()]
-       hooks = [
-           FabricHook,
-       ]
+      name = "fabric_plugin"
+      operator_extra_links = [FabricRunItemLink()]
+      hooks = [
+          FabricHook,
+      ]
 ```
 
 ## Monitor your DAG
 
+### In Apache Airflow Job UI
+
+1. When you open your DAG file in Fabric Managed Storage, "Results" appears at the bottom. Click on the arrow to view the results of the DAG run.
+   :::image type="content" source="media/apache-airflow-jobs/monitor-in-fabric-ui.png" lightbox="media/apache-airflow-jobs/monitor-in-fabric-ui.png" alt-text="Screenshot to view Apache Airflow DAG in Apache Airflow job itself.":::
+
+### In Apache Airflow UI
+
 1. Go to the Airflow UI and select the DAG you created.
 
-2. If you add the plugin, you see an external monitoring link. Clicking it navigates you to the item run.
+2. If you add the plugin, you'll see an external monitoring link. Click on it to navigate to the item run.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" alt-text="Screenshot to view Apache Airflow DAGs with external link.":::
 
 3. Xcom Integration: Trigger the DAG to view task outputs in the Xcom tab.
