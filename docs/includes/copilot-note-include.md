@@ -1,8 +1,8 @@
 ---
 title: Include file for the Copilot note
 description: Include file for the note detailing Copilot.
-author: maggiesMSFT
-ms.author: maggies
+author: snehagunda
+ms.author: sngun
 ms.topic: include
 ms.date: 01/17/2024
 no-loc: [Copilot]
