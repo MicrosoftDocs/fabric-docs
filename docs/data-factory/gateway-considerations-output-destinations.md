@@ -11,13 +11,7 @@ ms.date: 11/15/2023
 
 # On-premises data gateway considerations for data destinations in Dataflow Gen2
 
-This article tries to list the limitations and considerations when using the Data Gateway with data destinations scenarios in Dataflow Gen2.
-
-## Evaluation time outs
-
-Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour.
-
-Learn more about this limitation from the article on the [Troubleshoot the on-premises data gateway article](/data-integration/gateway/service-gateway-tshoot#limitations-and-considerations).
+This article lists the limitations and considerations when using the Data Gateway with data destinations scenarios in Dataflow Gen2.
 
 ## Network issues with port 1433
 
