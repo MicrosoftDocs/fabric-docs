@@ -31,7 +31,10 @@ With Dataflow Gen2, you can:
 - Generate a new query that may include sample data or a reference to an existing query.
 
 With Data pipelines, you can:
-- Troubleshoot data pipeline issues with the error explaination capability with troubleshooting guidance.
+
+- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot will understand the intent and generate the necessary data pipeline activities.
+- **Error message assistant**: troubleshoot data pipeline issues with clear error explanation capability and actionable troubleshooting guidance.
+- **Summarize Pipeline**: Explain your complex pipeline with the summary of content and relations of activities within the Pipeline.
 
 ## Get started
 
