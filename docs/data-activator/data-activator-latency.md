@@ -15,19 +15,19 @@ ms.date: 10/12/2024
 Activator runs rules against real-time data. Results are near instantaneous, but there are factors that can introduce latency. In most cases, that latency is imperceptible but in other cases that latency can be up to 10 minutes. Receiving accurate and timely information is an important consideration when creating and receiving rules. This article reviews the processes and settings that determine the balance between inclusion of events and the structure of a rule, and how quickly an activator is sent. For example, should Activator allow for more data to arrive and be included or should Activator ensure that recipients receive their alerts at a set time? And, how does the way a rule is structured impact the speed at which an activation is sent to recipients? 
 
 There are three important factors that impact rule activation latency: 
-- the user setting for late arrival tolerance
-- a delay, up to one minute, that might be introduced by Activator’s backend processing
-- aggregations on the rule
+- The user setting for late arrival tolerance.
+- A delay, up to one minute, that might be introduced by Activator’s backend processing.
+- Aggregations on the rule.
 
-### Late arrival tolerance
+## Late arrival tolerance
 
 Late arrival tolerance is set in the Activator rule **Definition** screen, and applied to the event [Arrival time](#background-time-concepts). To learn how to set late arrival tolerance, see [Late arrival tolerance setting](#late-arrival-tolerance-setting).
 
-### Backend processing latency
+## Backend processing latency
 
 Rules might need processing before the rule activates. For example, if the rule is a comparison to a previous set of events, it takes backend processing to retrieve the previous data, make the comparison, and compute the result. Another example is if the rule is running against 10 million rows of data, latency is introduced by the backend processing of that data. 
 
-### Aggregation latency
+## Aggregation latency
 
 If an aggregation is used in the rule definition, then the rule only activates when it completes the specified time windows. For example, let’s say a rule is built to average the data over four hours. If an event that meets the rule conditions is ingested at 12 pm, the rule triggers at 4 pm. The latency is a result of the aggregation settings. Even when a rule includes a simple aggregation, such as *average*, Activator can't send an activation until Activator runs the aggregation across the incoming event data.
 
@@ -46,16 +46,16 @@ For additional resources on this subject, see Tyler Akidau's blog posts [Streami
 
 Late arrival tolerance is a user setting. Late arrival tolerance refers to how long Activator waits for an event to arrive and be acknowledged and processed. The default is two minutes. Late arrival tolerance contributes to latency. Rules that are created with a late arrival tolerance have a latency that is at least the amount of time that the late arrival tolerance is set to. When creating a rule, decide whether to use the default tolerance or change it. Tolerance ensures that late events and events that arrive out of order have an opportunity to be included in the rule evaluation. If an event falls outside of the late arrival tolerance, Activator doesn't take it into consideration. Any events with an *Arrival time* after that tolerance aren't factored in. 
 
-:::image type="content" source="media/data-activator-get-started/data-activator-latency-settings.png" alt-text="Screenshot of the Conditions pane scrolled to the Advanced settings options.":::
+:::image type="content" source="media/data-activator-latency/data-activator-latency-settings.png" alt-text="Screenshot of the Conditions pane scrolled to the Advanced settings options.":::
 
 Overall, the consideration is whether it's more important to:
 
-- wait for the late data points, or 
-- run the rule on potentially incomplete data so that the rule activates sooner  
+- Wait for the late data points, or 
+- run the rule on potentially incomplete data so that the rule activates sooner.  
 
 In this example, data points are measured in 15-minute increments. The first three dots, which are blue, make it in the time window. The fourth dot, which is orange, doesn't. The *Event time* is within the 15-minute interval, but the event isn't ingested by Activator within the 15-minute interval. Data Activator only evaluates the rule over data with an *Arrival time* within the 15-minute window. Unless the user indicates that they want to allow for a late arrival tolerance and wait to see if other data points arrive.  
 
-:::image type="content" source="media/data-activator-get-started/data-activator-dot-chart.png" alt-text="Screenshot of a line chart displaying time intervals.":::
+:::image type="content" source="media/data-activator-latency/data-activator-dot-charts.png" alt-text="Screenshot of a line chart displaying time intervals.":::
 
 Activator can't factor in delays from the user’s data. For example, the user can have IoT sensors that are offline for 1 hour. Once they go back online, Activator can receive the data, but the data was delayed for 1 hour from that offline state, which happens outside of Data Activator. 
 
