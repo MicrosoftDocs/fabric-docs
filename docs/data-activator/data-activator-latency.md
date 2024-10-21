@@ -15,19 +15,19 @@ ms.date: 10/12/2024
 Activator runs rules against real-time data. Results are near instantaneous, but there are factors that can introduce latency. In most cases, that latency is imperceptible but in other cases that latency can be up to 10 minutes. Receiving accurate and timely information is an important consideration when creating and receiving rules. This article reviews the processes and settings that determine the balance between inclusion of events and the structure of a rule, and how quickly an activator is sent. For example, should Activator allow for more data to arrive and be included or should Activator ensure that recipients receive their alerts at a set time? And, how does the way a rule is structured impact the speed at which an activation is sent to recipients? 
 
 There are three important factors that impact rule activation latency: 
-- the user setting for late arrival tolerance
-- a delay, up to one minute, that might be introduced by Activator’s backend processing
-- aggregations on the rule
+- The user setting for late arrival tolerance
+- A delay, up to one minute, that might be introduced by Activator’s backend processing
+- Aggregations on the rule
 
-### Late arrival tolerance
+## Late arrival tolerance
 
 Late arrival tolerance is set in the Activator rule **Definition** screen, and applied to the event [Arrival time](#background-time-concepts). To learn how to set late arrival tolerance, see [Late arrival tolerance setting](#late-arrival-tolerance-setting).
 
-### Backend processing latency
+## Backend processing latency
 
 Rules might need processing before the rule activates. For example, if the rule is a comparison to a previous set of events, it takes backend processing to retrieve the previous data, make the comparison, and compute the result. Another example is if the rule is running against 10 million rows of data, latency is introduced by the backend processing of that data. 
 
-### Aggregation latency
+## Aggregation latency
 
 If an aggregation is used in the rule definition, then the rule only activates when it completes the specified time windows. For example, let’s say a rule is built to average the data over four hours. If an event that meets the rule conditions is ingested at 12 pm, the rule triggers at 4 pm. The latency is a result of the aggregation settings. Even when a rule includes a simple aggregation, such as *average*, Activator can't send an activation until Activator runs the aggregation across the incoming event data.
 
