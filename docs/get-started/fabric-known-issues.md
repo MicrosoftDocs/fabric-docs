@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/15/2024
+ms.date: 10/18/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 |
+|  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 |
+|  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 |
+|  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
 |  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
 |  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](known-issues/known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
@@ -27,7 +31,6 @@ Select the **Title** to view more information about that specific known issue.
 |  865  | Power BI | [Configure workspace storage to use ADLS Gen2 storage account doesn't work](known-issues/known-issue-865-configure-workspace-storage-adls-gen2-not-work.md) | October 3, 2024 |
 |  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 |
 |  866  | Power BI | [Can't add My workspace org app items to the org app](known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md) | September 30, 2024 |
-|  862  | Power BI | [Unexpected changes in fonts or themes in reports](known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md) | September 30, 2024 |
 |  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](known-issues/known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 |
@@ -89,6 +92,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  862  | Power BI | [Unexpected changes in fonts or themes in reports](known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md) | September 30, 2024 | Fixed: October 17, 2024 |
 |  867  | Power BI | [Report pages don't show in Fabric org app items](known-issues/known-issue-867-report-pages-not-show-org-app-items.md) | September 30, 2024 | Fixed: October 15, 2024 |
 |  859  | Power BI | [Dynamic subscriptions don't send emails to recipients](known-issues/known-issue-859-dynamic-subscriptions-not-send-emails-recipients.md) | September 27, 2024 |  Fixed: October 15, 2024 |
 |  858  | Power BI | [Live connection to semantic models created by template apps fails](known-issues/known-issue-858-live-connect-semantic-models-template-apps-fails.md) | September 27, 2024 |  Fixed: October 15, 2024 |

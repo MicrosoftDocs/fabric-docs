@@ -1,8 +1,8 @@
 ---
 title: Copilot for Data Factory overview
 description: "Learn how Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions."
-author: maggiesMSFT
-ms.author: maggies
+author: snehagunda
+ms.author: sngun
 ms.reviewer: alpowers
 ms.topic: conceptual
 ms.date: 06/02/2024
