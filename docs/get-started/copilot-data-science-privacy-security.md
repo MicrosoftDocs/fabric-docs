@@ -1,8 +1,8 @@
 ---
 title: "Privacy, security, and responsible use of Copilot for Data Science"
 description: Learn about privacy, security, and responsible use of Copilot for Data Science in Microsoft Fabric.
-author: maggiesMSFT
-ms.author: maggies
+author: snehagunda
+ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
   - ignite-2023

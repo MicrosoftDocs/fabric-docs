@@ -4,7 +4,7 @@ description: Learn more about Microsoft Entra authentication, an alternative to 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: frnuson, kadejo
-ms.date: 09/17/2024
+ms.date: 10/08/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -44,7 +44,7 @@ Microsoft Entra authentication for use with a Warehouse or Lakehouse SQL analyti
 
 A Fabric admin in your tenant must permit SPN access to Fabric APIs, necessary for the SPN to interface for SQL connection strings to Fabric Warehouse or SQL analytics endpoint items.
 
-This setting is located in the Developer settings section and ios labeled **Service principals can use Fabric APIs**. Make sure it is **Enabled**.
+This setting is located in the Developer settings section and is labeled **Service principals can use Fabric APIs**. Make sure it is **Enabled**.
 
 :::image type="content" source="media/entra-id-authentication/developer-settings-service-principals-fabric-apis.png" alt-text="Screenshot from the Fabric portal of the Developer Settings page in Tenant Settings.":::
 
@@ -78,7 +78,9 @@ Fabric natively supports authentication and authorization for Microsoft Entra us
 
 ## Support for tabular data stream (TDS)
 
-Fabric natively supports the Tabular Data Stream (TDS) protocol, also known as a *SQL connection string*. Fabric is therefore compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
+Fabric uses the Tabular Data Stream (TDS) protocol, the same as SQL Server, when you connect with a connection string.
+
+Fabric is compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
 
 To obtain the connection string, select **More options** on a Fabric warehouse or SQL analytics endpoint item.
 
