@@ -25,6 +25,8 @@ For considerations and limitations with Copilot for Power BI, see [Consideration
 
 - Copilot uses the data in a semantic model that you provide, combined with the prompts you enter, to create visuals. Learn more about [semantic models](/power-bi/connect-data/service-datasets-understand).
 - To answer data questions from the semantic model, Copilot requires that Q&A be enabled in the semantic model's dataset settings. For more information, see [Update your data model to work well with Copilot for Power BI](/power-bi/create-reports/copilot-evaluate-data).
+- To create measure descriptions in a semantic model, Copilot uses the DAX formula and table name of the selected measure. DAX comments and text in double-quotes of the DAX formula are not used. For more information, see [Use Copilot to create measure descriptions](/power-bi/transform-model/desktop-measure-copilot-descriptions).
+- To create DAX queries, explain DAX queries, or explain DAX topics, Copilot uses the semantic model metadata, such as table and column names and properties, with any DAX query selected in the DAX query editor combined with the request you enter, to respond. For more information, see [Use Copilot to create DAX queries](/dax/dax-copilot).
 
 ## Tips for working with Copilot for Power BI
 
