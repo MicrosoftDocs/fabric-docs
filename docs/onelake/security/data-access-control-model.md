@@ -233,6 +233,18 @@ Files/
 ## How OneLake RBAC permissions are evaluated with Fabric permissions
 
 Workspace and Item permissions let you grant "coarse-grain" access to data in OneLake for the given Item. OneLake RBAC permissions enable you to restrict the data access in OneLake only to specific folders.
+The evaluation logic is as follows:
+```
+Request from user1 to read OneLake folder1 in a lakehouse
+GRANT = FALSE
+IF workspace permissions for coarse-grain workspace access
+    GRANT = TRUE
+ELSEIF lakehouse permissions for coarse-grain item access
+    GRANT = TRUE
+ELSEIF OneLake RBAC permissions for fine-grain folder access
+    GRANT = TRUE
+RETURN GRANT
+```
 
 :::image type="content" source=".\media\security-flow.png" alt-text="Diagram showing the order of permissions evaluations with workspace, item, and RBAC.":::
 
