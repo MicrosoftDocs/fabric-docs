@@ -176,7 +176,7 @@ Response 201:
     "type": "MountedDataFactory", 
     "displayName": "Pipeline_mdf", 
     "description": "", 
-    "workspaceId": "<Your WS Id>
+    "workspaceId": "<Your WS Id>"
 } 
 ```
 
