@@ -75,6 +75,15 @@ This error code means that your trigger definition is invalid. It indicates an i
 
 The error code means that Data Activator is unable to receive incoming data for your trigger for the past seven days, and is not evaluating your trigger. It indicates an internal problem with Data Activator. If you receive this error code, ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
 
+## Exceeded capacity error codes
+
+The following error codes represent Activator problems that can occur when your account runs out of Fabric capacity.
+
+### CapacityLimitExceeded
+Your account has exceeded the limit of your Fabric capacity for more than 24 hours. When this happens, throttling policies are applied and Activator pauses rules evaluation, background operations, and activations. To resolve this problem, contact your capacity administrator and ask them to review capacity usage and upgrade as needed. Once your capacity issue is resolved, make sure to reactivate your rules.
+
+Learn more with [Understand your Fabric capacity throttling](https://go.microsoft.com/fwlink/?linkid=2293008). 
+
 ## Alert and Action Error codes
 
 The following error codes represent problems that can occur when Data Activator attempts to send an alert, or to start a Power Automate flow, after a trigger condition is met.
