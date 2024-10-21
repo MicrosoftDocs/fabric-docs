@@ -19,13 +19,13 @@ For an overview of how protection policies for Fabric work, see [Protection poli
 
 ## Prerequisites
 
-To create a protection policy, the follow requirements must be met:
+To create a protection policy, the following requirements must be met:
 
 * You must have a Microsoft 365 E3/E5 license as required for sensitivity labels from Microsoft Purview Information Protection. For more information, see [Microsoft Purview Information Protection: Sensitivity labeling](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#microsoft-purview-information-protection-sensitivity-labeling).
 
 * You must have at least the [Information Protection Admin](/defender-office-365/scc-permissions#role-groups-in-microsoft-defender-for-office-365-and-microsoft-purview) role to create protection policies in the Microsoft Purview portal. The Information Protection Admin role is assigned by default under the Compliance Administrator role group.
 
-* <a name="label-prerequisites"></a>At least one protected sensitivity label from Microsoft Purview information protection, correctly configured for use in Fabric, must exist in the tenant. This is necessary because you need a correctly configured protected sensitivity label to create the protection policy. "Correctly configured for Fabric" means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access**. For information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels).
+* <a name="label-prerequisites"></a>At least one protected sensitivity label from Microsoft Purview Information Protection, correctly configured for use in Fabric, must exist in the tenant. This is necessary because you need a correctly configured protected sensitivity label to create the protection policy. "Correctly configured for Fabric" means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access**. For information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels).
 
 ## Create a protection policy for Fabric
 
@@ -42,13 +42,13 @@ To create a protection policy, the follow requirements must be met:
 
     :::image type="content" source="./media/protection-policies-create/provide-name-description.png" alt-text="Screenshot of name and description page in protection policy configuration.":::
 
-1. On the **Choose the sensitivity label used to detect sensitive items** page, select **+ Add sensitivity label** and choose the sensitivity label you want to associate with the policy. The label must be a protected label and correctly configured. See [the prerequistes for details](#label-prerequisites). You can select only one label per policy.
+1. On the **Choose the sensitivity label used to detect sensitive items** page, select **+ Add sensitivity label** and choose the sensitivity label you want to associate with the policy. The label must be a protected label and correctly configured. See [the prerequisites for details](#label-prerequisites). You can select only one label per policy.
 
     :::image type="content" source="./media/protection-policies-create/choose-sensitivity-label.png" alt-text="Screenshot of choose sensitivity label page in protection policy configuration.":::
 
     After you've chosen the label, select **Add** and then **Next**.
 
-1. On the **Choose data sources to apply the policy** page, select **Microsoft Fabric**. If you see mulitple data sources listed, be sure to select only Fabric. The policy will apply to [supported item types](./protection-policies-overview.md#supported-item-types) in all workspaces. When done, select **Next**.
+1. On the **Choose data sources to apply the policy** page, select **Microsoft Fabric**. If you see multiple data sources listed, be sure to select only Fabric. The policy will apply to [supported item types](./protection-policies-overview.md#supported-item-types) in all workspaces. When done, select **Next**.
 
     :::image type="content" source="./media/protection-policies-create/choose-data-sources.png" alt-text="Screenshot of choose data source page in protection policy configuration.":::
 
@@ -56,10 +56,10 @@ To create a protection policy, the follow requirements must be met:
 
     You have two options:
 
-    * **Allow users to retain read access** - Any users or groups added under this control setting will retain read permissions to resources with the selected sensitivity label if they already have it. Any other permissons they have on the item will be removed.
+    * **Allow users to retain read access** - Any users or groups added under this control setting will retain read permissions to resources with the selected sensitivity label if they already have it. Any other permissions they have on the item will be removed.
     * **Allow users to retain full control** - Any users or groups added under this control setting will retain full control of the labeled item if they already have it, or any other permissions they might have.
 
-    You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to. ***[Need to be clear about which kind of groups we are referring to]***.
+    You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to.
 
     :::image type="content" source="./media/protection-policies-create/define-access-control.png" alt-text="Screenshot of define access controls page in protection policy configuration.":::
 
@@ -75,7 +75,7 @@ To create a protection policy, the follow requirements must be met:
   
     :::image type="content" source="./media/protection-policies-create/review-policy-settings.png" alt-text="Screenshot of review and finish page in protection policy configuration.":::
 
-1. You'll be informed that your new protection policy has been created and that it can take up to thirty minutes for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
+1. You'll be informed that your new protection policy has been created and that it can take up to 30 minutes for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
 
     :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice.":::
 
@@ -95,7 +95,7 @@ To edit or delete a protection policy:
 
     :::image type="content" source="./media/protection-policies-create/manage-policy.png" alt-text="Screenshot of protection policy management edit and delete options..":::
 
-    If you are editing the policy, continue cycling through the configuration pages as in [Step 3 of the policy creation flow](#define-name).
+    If you're editing the policy, continue cycling through the configuration pages as in [Step 3 of the policy creation flow](#define-name).
 
 ## Related content
 
