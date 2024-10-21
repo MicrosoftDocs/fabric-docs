@@ -47,7 +47,7 @@ Check the source and full release notes at [Delta Lake 2.2.0](https://github.com
 
 ## Default-level packages for Java/Scala
 
-For a list of all the default level packages for Java, Scala, Python and their respective versions see the [release notes](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric/spark3.3).
+For a list of all the default level packages for Java, Scala, Python and their respective versions see the [release notes](https://github.com/microsoft/synapse-spark-runtime/tree/9ba4059c0d9433bf2b6e25cd70fe60c6e0acd51c/Fabric/Runtime%201.1%20(Spark%203.3)).
 
 ## Migration between different Apache Spark versions
 
