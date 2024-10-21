@@ -63,8 +63,8 @@ Here's another example.
 
 The user creates a rule that calculates the average temperature in minute intervals. The late arrival tolerance is set to **Default**. **Default** is two minutes. Temperature values 20 and 30 are included and the average temperature is 25. However, the late arriving event for the 40-degree temperature isn't included until the next rule activation occurs.  
 
-|------|-------|-------|
 |  Event time  | Arrival time  | Temperature  |
+|------|-------|-------|
 |09:00  |09:02  |20  |
 |09:01 | 09:03  | 30 |  
 |09:02  |   09:07 | 40 | 
