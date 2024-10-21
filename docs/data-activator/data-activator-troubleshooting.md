@@ -62,7 +62,7 @@ Your trigger exceeds data processing limits for one of two reasons:
 * You're sending too many events per second to your Data Activator object, or
 * Your trigger is activating too frequently.
 
-To resolve this problem, either reduce the number of events per second you're sending to your object or update your trigger condition so that your trigger activates less frequently.
+There are two ways to resolve this problem. Try reducing the number of events per second that you're sending to your object. Or, update your rule to activate less frequently. 
 
 ### WorkspaceCapacityDeallocated
 
