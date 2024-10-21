@@ -15,9 +15,9 @@ ms.date: 10/12/2024
 Activator runs rules against real-time data. Results are near instantaneous, but there are factors that can introduce latency. In most cases, that latency is imperceptible but in other cases that latency can be up to 10 minutes. Receiving accurate and timely information is an important consideration when creating and receiving rules. This article reviews the processes and settings that determine the balance between inclusion of events and the structure of a rule, and how quickly an activator is sent. For example, should Activator allow for more data to arrive and be included or should Activator ensure that recipients receive their alerts at a set time? And, how does the way a rule is structured impact the speed at which an activation is sent to recipients? 
 
 There are three important factors that impact rule activation latency: 
-- The user setting for late arrival tolerance
-- A delay, up to one minute, that might be introduced by Activator’s backend processing
-- Aggregations on the rule
+- The user setting for late arrival tolerance.
+- A delay, up to one minute, that might be introduced by Activator’s backend processing.
+- Aggregations on the rule.
 
 ## Late arrival tolerance
 
@@ -50,8 +50,8 @@ Late arrival tolerance is a user setting. Late arrival tolerance refers to how l
 
 Overall, the consideration is whether it's more important to:
 
-- wait for the late data points, or 
-- run the rule on potentially incomplete data so that the rule activates sooner  
+- Wait for the late data points, or 
+- run the rule on potentially incomplete data so that the rule activates sooner.  
 
 In this example, data points are measured in 15-minute increments. The first three dots, which are blue, make it in the time window. The fourth dot, which is orange, doesn't. The *Event time* is within the 15-minute interval, but the event isn't ingested by Activator within the 15-minute interval. Data Activator only evaluates the rule over data with an *Arrival time* within the 15-minute window. Unless the user indicates that they want to allow for a late arrival tolerance and wait to see if other data points arrive.  
 
