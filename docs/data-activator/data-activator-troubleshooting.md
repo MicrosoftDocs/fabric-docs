@@ -24,8 +24,9 @@ The following error codes represent problems that can occur when Data Activator 
 
 Data Activator can't access the Power BI semantic model for your object. This error occurs if the dataset is deleted or if permissions on the dataset change since you created the alert. To resolve the problem, check if the dataset still exists, and:
 
-* If it still exists, ensure that you have permission  to access it.
-* If it's deleted, then your objects and triggers don't function. Delete then recreate them as needed on another semantic model.
+* If the dataset exists, ensure that you have permission to access it.
+
+* If the dataset is deleted, then your objects and triggers don't function. Delete then recreate them as needed on another semantic model.
 
 ### QueryEvaluationError
 
