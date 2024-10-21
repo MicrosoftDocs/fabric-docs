@@ -46,7 +46,7 @@ For additional resources on this subject, see Tyler Akidau's blog posts [Streami
 
 Late arrival tolerance is a user setting. Late arrival tolerance refers to how long Activator waits for an event to arrive and be acknowledged and processed. The default is two minutes. Late arrival tolerance contributes to latency. Rules that are created with a late arrival tolerance have a latency that is at least the amount of time that the late arrival tolerance is set to. When creating a rule, decide whether to use the default tolerance or change it. Tolerance ensures that late events and events that arrive out of order have an opportunity to be included in the rule evaluation. If an event falls outside of the late arrival tolerance, Activator doesn't take it into consideration. Any events with an *Arrival time* after that tolerance aren't factored in. 
 
-:::image type="content" source="media/data-activator-get-started/data-activator-latency-settings.png" alt-text="Screenshot of the Conditions pane scrolled to the Advanced settings options.":::
+:::image type="content" source="media/data-activator-latency/data-activator-latency-settings.png" alt-text="Screenshot of the Conditions pane scrolled to the Advanced settings options.":::
 
 Overall, the consideration is whether it's more important to:
 
@@ -55,7 +55,7 @@ Overall, the consideration is whether it's more important to:
 
 In this example, data points are measured in 15-minute increments. The first three dots, which are blue, make it in the time window. The fourth dot, which is orange, doesn't. The *Event time* is within the 15-minute interval, but the event isn't ingested by Activator within the 15-minute interval. Data Activator only evaluates the rule over data with an *Arrival time* within the 15-minute window. Unless the user indicates that they want to allow for a late arrival tolerance and wait to see if other data points arrive.  
 
-:::image type="content" source="media/data-activator-get-started/data-activator-dot-charts.png" alt-text="Screenshot of a line chart displaying time intervals.":::
+:::image type="content" source="media/data-activator-latency/data-activator-dot-charts.png" alt-text="Screenshot of a line chart displaying time intervals.":::
 
 Activator can't factor in delays from the user’s data. For example, the user can have IoT sensors that are offline for 1 hour. Once they go back online, Activator can receive the data, but the data was delayed for 1 hour from that offline state, which happens outside of Data Activator. 
 
