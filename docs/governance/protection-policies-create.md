@@ -25,7 +25,7 @@ To create a protection policy, the following requirements must be met:
 
 * You must have at least the [Information Protection Admin](/defender-office-365/scc-permissions#role-groups-in-microsoft-defender-for-office-365-and-microsoft-purview) role to create protection policies in the Microsoft Purview portal. The Information Protection Admin role is assigned by default under the Compliance Administrator role group.
 
-* <a name="label-prerequisites"></a>At least one protected sensitivity label from Microsoft Purview Information Protection, correctly configured for use in Fabric, must exist in the tenant. This is necessary because you need a correctly configured protected sensitivity label to create the protection policy. "Correctly configured for Fabric" means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access**. For information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels).
+* <a name="label-prerequisites"></a>* At least one "appropriately configured" sensitivity label from Microsoft Purview Information Protection must exist in the tenant. "Appropriately configured" in the context of protection policies for Fabric means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access** (for information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels)). Only such "appropriately configured" sensitivity labels can be used to create the protection policies for Fabric.
 
 ## Create a protection policy for Fabric
 
@@ -42,7 +42,7 @@ To create a protection policy, the following requirements must be met:
 
     :::image type="content" source="./media/protection-policies-create/provide-name-description.png" alt-text="Screenshot of name and description page in protection policy configuration.":::
 
-1. On the **Choose the sensitivity label used to detect sensitive items** page, select **+ Add sensitivity label** and choose the sensitivity label you want to associate with the policy. The label must be a protected label and correctly configured. See [the prerequisites for details](#label-prerequisites). You can select only one label per policy.
+1. On the **Choose the sensitivity label used to detect sensitive items** page, select **+ Add sensitivity label** and choose the sensitivity label you want to associate with the policy. The label must be a label that applies encryption and is correctly configured. See [the prerequisites for details](#label-prerequisites). You can select only one label per policy.
 
     :::image type="content" source="./media/protection-policies-create/choose-sensitivity-label.png" alt-text="Screenshot of choose sensitivity label page in protection policy configuration.":::
 
