@@ -1,11 +1,11 @@
 items:
-- name: Data Activator documentation
+- name: Activator documentation
   href: index.yml
 - name: Introduction
   items:
-  - name: What is Data Activator?
+  - name: What is Activator?
     href: data-activator-introduction.md
-  - name: Get started with Data Activator
+  - name: Get started with Activator
     href: data-activator-get-started.md    
 - name: Get data
   items:
@@ -30,13 +30,15 @@ items:
   - name: Create alerts from a KQL Queryset
     href: data-activator-alert-queryset.md
   - name: Use custom actions to trigger Power Automate flows
-    href: data-activator-trigger-power-automate-flows.md         
-  - name: Data Activator limitations
+    href: data-activator-trigger-power-automate-flows.md
+  - name: Activator rule latency
+    href: data-activator-latency.md         
+  - name: Activator limitations
     href: data-activator-limitations.md
   - name: Troubleshoot errors
     href: data-activator-troubleshooting.md
 - name: Tutorial
   items:
-  - name: Data Activator tutorial using sample data
+  - name: Activator tutorial using sample data
     href: data-activator-tutorial.md
         
