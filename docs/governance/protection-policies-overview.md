@@ -51,7 +51,7 @@ Protection policies for Fabric are generally configured by an organization's Pur
 
 * For protection policies to be enforced in Fabric, the Fabric tenant setting **Allow users to apply sensitivity labels for content** must be enabled. This setting is required for all sensitivity label related policy enforcement in Fabric, so if sensitivity labels are already being used in Fabric, this setting will already be on. For more information about enabling sensitivity labels in Fabric, see [Enable sensitivity labels](/power-bi/enterprise/service-security-enable-data-sensitivity-labels#enable-sensitivity-labels).
 
-* Microsoft Fabric subscription ***[Who needs the Fabric subscription? Is this the most accurate way to describe this? Awaiting clarification from PMs]***
+* Microsoft Fabric subscription
 
 ## Supported item types
 

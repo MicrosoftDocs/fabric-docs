@@ -29,7 +29,7 @@ To create a protection policy, the following requirements must be met:
 
 ## Create a protection policy for Fabric
 
-1. Open the **Protection policies (preview)** page in the Purview portal.
+1. Open the **Protection policies (preview)** page in the Microsoft Purview portal.
 
     https://purview.microsoft.com/informationprotection/protectionpolicy.
 
@@ -37,7 +37,7 @@ To create a protection policy, the following requirements must be met:
 
     :::image type="content" source="./media/protection-policies-create/select-new-protection-policy.png" alt-text="Screenshot of the Protection policies page, with the + New protection policy button highlighted.":::
 
-<a name="define-name"></a>
+     <a name="define-name"></a>
 1. On the **Name and describe your protection policy** page, provide a name and description for the policy. When done, select **Next**.
 
     :::image type="content" source="./media/protection-policies-create/provide-name-description.png" alt-text="Screenshot of name and description page in protection policy configuration.":::
@@ -71,7 +71,7 @@ To create a protection policy, the following requirements must be met:
      
     :::image type="content" source="./media/protection-policies-create/turn-on-policy.png" alt-text="Screenshot of mode page in protection policy configuration.":::
 
-1. On the **Review your policy settings** page, review the policy settings. When you're satisfied, select **Submit**., and then **Done**.
+1. On the **Review your policy settings** page, review the policy settings. When you're satisfied, select **Submit**, and then **Done**.
   
     :::image type="content" source="./media/protection-policies-create/review-policy-settings.png" alt-text="Screenshot of review and finish page in protection policy configuration.":::
 
@@ -87,13 +87,13 @@ Your new policy now appears in the list of protection policies. Select it to con
 
 To edit or delete a protection policy:
 
-1. Open the **Protection policies (preview)** page in the Purview portal.
+1. Open the **Protection policies (preview)** page in the Microsoft Purview portal.
 
     https://purview.microsoft.com/informationprotection/protectionpolicy.
 
 1. Select the policy you wish to edit or delete, and then select Edit policy or Delete policy either on the ribbon or in the details pane.
 
-    :::image type="content" source="./media/protection-policies-create/manage-policy.png" alt-text="Screenshot of protection policy management edit and delete options..":::
+    :::image type="content" source="./media/protection-policies-create/manage-policy.png" alt-text="Screenshot of protection policy management edit and delete options.":::
 
     If you're editing the policy, continue cycling through the configuration pages as in [Step 3 of the policy creation flow](#define-name).
 
