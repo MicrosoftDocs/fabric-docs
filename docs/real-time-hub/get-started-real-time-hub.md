@@ -4,9 +4,7 @@ description: This article shows how to get started with Fabric Real-Time hub.
 author: mystina
 ms.author: majia
 ms.topic: quickstart
-ms.custom:
-  - build-2024
-ms.date: 08/25/2024
+ms.date: 10/21/2024
 ---
 
 # Get started with Fabric Real-Time hub (preview)

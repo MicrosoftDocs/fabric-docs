@@ -4,9 +4,7 @@ description: This article describes what Real-Time hub in Microsoft Fabric is an
 author: mystina
 ms.author: majia
 ms.topic: overview
-ms.custom:
-  - build-2024
-ms.date: 08/25/2024
+ms.date: 10/21/2024
 ---
 
 # Introduction to Fabric Real-Time hub (preview)
