@@ -106,7 +106,7 @@ This error code means that you have a trigger that sends a Teams alert, and your
 
 ### OfficeSubscriptionMissing
 
-This error code means that Data Activator couldn't send the alert on your trigger because you don't have a Microsoft Office subscription. To resolve the problem, you'll need to get a Microsoft Office subscription.
+This error code means that Data Activator couldn't send the alert on your trigger because you don't have a Microsoft Office subscription. To resolve the problem, get a Microsoft Office subscription.
 
 ### TeamsDisabled
 
