@@ -51,6 +51,7 @@ For troubleshooting, see:
 ## Table level
 
 - A table cannot be mirrored with the following attributes:
+    - A table does **not have a defined primary key**  
     - A table using a primary key defined and used as nonclustered primary key cannot be mirrored.  
     - A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**, **datetime2(7)**, **datetimeoffset(7)**, **time(7)** where `7` is seven digits of precision. Delta lake supports only six digits of precision.
     - Clustered columnstore indexes are not currently supported.
