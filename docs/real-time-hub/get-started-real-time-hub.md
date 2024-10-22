@@ -78,7 +78,7 @@ You can connect to these resources and create eventstreams that show up on the *
 ## Fabric events page
 The **Fabric events page** shows you the list of system events generated in **Fabric** that you can access. You can **create eventstreams** for events from your Fabric workspaces. You can also set up an alert to send notifications via email, Teams etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Fabric workspace item events.
 
-- [Fabric Workspace Item](eventscreate-streams-fabric-workspace-item-events.md) 
+- [Fabric Workspace Item](create-streams-fabric-workspace-item-events.md) 
 - [Explore Fabric events in Real-Time hub](explore-fabric-events.md).
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
 
