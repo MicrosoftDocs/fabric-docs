@@ -4,7 +4,7 @@ description: A known issue is posted where live connection to semantic models cr
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/27/2024
+ms.date: 10/15/2024
 ms.custom: known-issue-858
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-858
 
 You can create a semantic model using a template app. When you try to connect to the semantic model using live connection mode, the connection fails and you see an error.
 
-**Status:** Open
+**Status:** Fixed: October 15, 2024
 
 **Product Experience:** Power BI
 

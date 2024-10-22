@@ -138,6 +138,8 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 >[!NOTE]
 >The term *Semantic model* replaces the term *dataset*. You may still see the old term in the UI until it is completely replaced.
 
+> We currently don't bill for R/Py visuals in Power BI.
+
 | Operation | Description | Item | Azure billing meter | Type |
 |--|--|--|--|--|
 | Artificial intelligence (AI) | AI function evaluation  | AI | Power BI Capacity Usage CU | Background |

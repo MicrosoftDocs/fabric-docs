@@ -46,7 +46,7 @@
         "globalMetadata": {
             "breadcrumb_path": "/fabric/breadcrumb/toc.json",
             "uhfHeaderId": "MSDocsHeader-Fabric",
-            "show_latex": true,            
+            "show_latex": false,
             "feedback_system": "Standard",
             "feedback_help_link_url": "https://community.fabric.microsoft.com/powerbi",
             "feedback_help_link_type": "ask-the-community",
@@ -143,8 +143,8 @@
                 "onelake/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "real-time-hub/**/*.md": "https://community.fabric.microsoft.com/t5/Eventstream/bd-p/da_eventstream",
                 "real-time-hub/**/*.yml": "community.fabric.microsoft.com/t5/Eventstream/bd-p/da_eventstream",
-                "real-time-intelligence/**/*.md": "https://community.fabric.microsoft.com/synapse",
-                "real-time-intelligence/**/*.yml": "https://community.fabric.microsoft.com/synapse",
+                "real-time-intelligence/**/*.md": "https://community.fabric.microsoft.com/t5/Real-Time-Intelligence-forums/ct-p/dataactivator",
+                "real-time-intelligence/**/*.yml": "https://community.fabric.microsoft.com/t5/Real-Time-Intelligence-forums/ct-p/dataactivator",
                 "security/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "security/**/*.yml": "https://community.fabric.microsoft.com/powerbi"
             },

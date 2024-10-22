@@ -77,7 +77,7 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-s
 1. Choose entities.
 1. Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
-For more information, see [Create reports in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](create-reports.md).
+For more information, see [Create reports in [!INCLUDE [product-name](../includes/product-name.md)]](create-reports.md).
 
 ## Connect using OLE DB
 
@@ -85,11 +85,11 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
 
 ## Connect using ODBC
 
-Microsoft [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 or higher versions are supported.
+[!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 or higher versions are supported.
 
 ## Connect using JDBC
 
-Microsoft [!INCLUDE [product-name](../includes/product-name.md)] also supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using a Java database connectivity (JDBC) driver.
+[!INCLUDE [product-name](../includes/product-name.md)] also supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using a Java database connectivity (JDBC) driver.
 
 When establishing connectivity via JDBC, check for the following dependencies:
 
@@ -132,7 +132,7 @@ When establishing connectivity via JDBC, check for the following dependencies:
 
 The `dbt` adapter is a data transformation framework that uses software engineering best practices like testing and version control to reduce code, automate dependency management, and ship more reliable data—all with SQL.
 
-The `dbt` data platform-specific adapter plugins allow users to connect to the data store of choice. To connect to Synapse Data Warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)] from `dbt` use `dbt-fabric` adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
+The `dbt` data platform-specific adapter plugins allow users to connect to the data store of choice. To connect to Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)] from `dbt` use `dbt-fabric` adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
 
 Both adapters support Microsoft Entra ID (formerly Azure Active Directory) authentication and allow developers to use `az cli authentication`. However, SQL authentication is not supported for `dbt-fabric`
 
@@ -142,7 +142,7 @@ For more information, see the [Microsoft Fabric Synapse Data Warehouse dbt adapt
 
 ## Connectivity by other means
 
-Any non-Microsoft tool can also use the SQL connection string via ODBC or OLE DB drivers to connect to a Microsoft [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], using Microsoft Entra ID (formerly Azure Active Directory) authentication. For more information and sample connection strings, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
+Any non-Microsoft tool can also use the SQL connection string via ODBC or OLE DB drivers to connect to a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], using Microsoft Entra ID (formerly Azure Active Directory) authentication. For more information and sample connection strings, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
 
 ### Custom applications
 
@@ -163,7 +163,6 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
 - If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Microsoft Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, contact support.
 - If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "SHUTDOWN is in progress. Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
-- If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
 - If you receive the error code 18456: "Execution failed against SQL server, please contact SQL server team if you need further support.", refer to [Known issue - Data warehouse connection or query execution fails](../get-started/known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md).
 - Linked server connections from SQL Server are not supported.
 

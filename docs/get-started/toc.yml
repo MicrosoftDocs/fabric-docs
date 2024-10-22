@@ -169,6 +169,14 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Data warehouse not accessible when using OneLake URLs with friendly names
+      href: known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md
+    - name: Data warehouse tables aren't accessible or updatable
+      href: known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md
+    - name: Semantic model refresh fails due to circular dependency in calendar table
+      href: known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md
+    - name: Spark jobs might fail due to Runtime 1.3 updates for GA
+      href: known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md
     - name: Premium capacity doesn't add excess usage into carry forward
       href: known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md
     - name: Data pipeline connection fails after connection creator role is removed
