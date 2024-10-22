@@ -15,7 +15,7 @@ Data preview provides you with a snapshot of your event data in your stream. You
 
 ## From All data streams page
 
-You can preview data in a stream whose parent is an eventstream using one of the following options on the **All data stream** page or the **My data streams** page.
+You can preview data in a stream whose parent is an eventstream using one of the following options on the **All data streams** page or the **My data streams** page.
 
 - Move the mouse over the stream and select the eye button.
 - Move the mouse over the stream in the list, select ... (ellipsis), and then select **Preview data**.

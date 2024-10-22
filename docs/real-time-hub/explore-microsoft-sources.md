@@ -21,7 +21,7 @@ When you navigate to Real-Time hub in Fabric, you see the following three tabs i
 
 ## Microsoft sources page
 
-:::image type="content" source="./media/explore-microsoft-sources/real-time-hub-microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub.":::
+:::image type="content" source="./media/explore-microsoft-sources/real-time-hub-microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub." lightbox="./media/explore-microsoft-sources/real-time-hub-microsoft-sources-menu.png":::
 
 ### Columns
 
@@ -33,7 +33,7 @@ When you navigate to Real-Time hub in Fabric, you see the following three tabs i
 | Resource group | Name of the Azure resource group that has the Azure resource. |
 | Region | Region name of Azure resource. |
 
-:::image type="content" source="./media/explore-microsoft-sources/columns.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub with columns highlighted.":::
+:::image type="content" source="./media/explore-microsoft-sources/columns.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub with columns highlighted." lightbox="./media/explore-microsoft-sources/columns.png":::
 
 ### Filters
 
@@ -46,7 +46,7 @@ The following filters are available at the top for you to narrow down easily to 
 | Resource group | You can filter on the desired Azure resource group name. |
 | Region | You can filter on the desired region name. |
 
-:::image type="content" source="./media/explore-microsoft-sources/filters.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub with filters highlighted.":::
+:::image type="content" source="./media/explore-microsoft-sources/filters.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub with filters highlighted." lightbox="./media/explore-microsoft-sources/filters.png":::
 
 ### Search
 
