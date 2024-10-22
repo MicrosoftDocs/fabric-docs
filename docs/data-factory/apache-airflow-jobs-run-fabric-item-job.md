@@ -1,6 +1,6 @@
 ---
-title: Run a Microsoft Fabric item in Apache Airflow DAGs.
-description: Learn to trigger Microsoft Fabric item in Apache Airflow DAGs.
+title: Run a Fabric data pipeline and notebook using Apache Airflow DAG.
+description: Learn to run Microsoft Fabric data pipelines and notebooks using Apache Airflow DAG.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -8,13 +8,12 @@ ms.topic: tutorial
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Run a Microsoft Fabric Item in Apache Airflow DAGs
+# Tutorial: Run a Fabric data pipeline and notebook using Apache Airflow DAGs
 
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
- <!-- is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines. -->
 
-In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as Fabric Notebooks and Pipelines.
+In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric items such as data pipelines and notebooks.
 
 ## Prerequisites
 
@@ -31,8 +30,18 @@ To get started, you must complete the following prerequisites:
 
 - [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
 
-- Tenant level admin account must enable the setting 'Allow user consent for apps'. Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
-  :::image type="content" source="media/apache-airflow-jobs/user-consent.png" lightbox="media/apache-airflow-jobs/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
+- Tenant level admin account must enable the setting 'Allow user consent for apps'. To configure user consent settings through the Microsoft Entra admin center:
+
+   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
+
+   2. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **User consent settings**.
+
+   3. Under User consent for applications, select which consent setting you want to configure for all users.
+
+   4. Select Save to save your settings. 
+      :::image type="content" source="media/apache-airflow-jobs/user-consent.png" lightbox="media/apache-airflow-jobs/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
+
+   For more information, Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
 
 - Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
 :::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
@@ -69,13 +78,15 @@ The plugin requires the following scopes for authentication:
 -  **offline_access**: This is a standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only
+// This request uses Item.Execute.All and Item.Read.All scopes. You can update them as per your requirements.
+
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=code
 &redirect_uri=http://localhost
 &response_mode=query
-&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%20offline_access 
+&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%2FItem.Read.All%20offline_access 
 &state=12345
 &code_challenge=YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl
 &code_challenge_method=S256
@@ -100,18 +111,20 @@ code=M0ab92efe-b6fd-df08-87dc-2c6500a7f84d
 ```
 
 ### Step 2: Request an access token
-The app uses the authorization code received in the previous step to request an access token by sending a POST request to the /token endpoint.
+The app uses the authorization code received in the previous step to request an access token by sending a POST request to the `/token` endpoint. Make sure your scope and redirect_uri match the values you used in the previous step.
+
 ```http
 // Line breaks for legibility only
+// This request uses Item.Execute.All and Item.Read.All scopes. You can update them as per your requirements.
 
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1
 Host: https://login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
 client_id=11112222-bbbb-3333-cccc-4444dddd5555
-&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
+&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%2FItem.Read.All%20offline_access
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
-&redirect_uri=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%20offline_access%20openid%20profile
+&redirect_uri=http://localhost
 &grant_type=authorization_code
 &code_verifier=ThisIsntRandomButItNeedsToBe43CharactersLong 
 &client_secret=applicationSecret   // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
@@ -148,16 +161,22 @@ Apache Airflow connection is used to store the credentials required to authentic
    - <strong>Connection ID:</strong> Name of the Connection ID.
    - <strong>Connection Type:</strong> Generic
    - <strong>Login:</strong> The Application (client) ID assigned to your app.
-   - <strong>Password:</strong> The refresh token fetched using in previous step.
-   - <strong>Extra:</strong> The JSON object with the following properties:
-   ```json
-   {
-      "tenantId": "The {tenant} value in the path of the request can be used to control who can sign into the application",
-      "clientSecret": "The client secret of the app registration", // NOTE: Only required for web apps,
-      "scopes": "(Space seperated string) The scopes required for the app to access the Microsoft Fabric APIs." // For example: "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access"
-   }
-   ```
-   :::image type="content" source="media/apache-airflow-jobs/fabric-plugin-connection.png" lightbox="media/apache-airflow-jobs/fabric-plugin-connection.png" alt-text="Screenshot to set Apache Airflow connection for Microsoft Fabric.":::
+   - <strong>Password:</strong> The refresh token fetched in previous step.
+   - <strong>Extra:</strong> This field contains the following parameters:
+      - **tenantId**: (Required) The {tenant} value in the path of the request can be used to control who can sign into the application.
+      - **clientSecret**: (Optional, only required for web apps) The client secret of the app registration.
+      - **scopes**: (Required) Space seperated string of scopes required for the app to access the Microsoft Fabric APIs." // For example: "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access"
+
+      Copy the following json object format, update the values and paste it in the Extra field.
+      ```json
+      {
+         "tenantId": "11112222-bbbb-3333-cccc-4444dddd5555",
+         "scopes": "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access",
+         "clientSecret": "client-secret", // NOTE: Only required for web apps
+      }
+      ```
+       
+      :::image type="content" source="media/apache-airflow-jobs/fabric-plugin-connection.png" lightbox="media/apache-airflow-jobs/fabric-plugin-connection.png" alt-text="Screenshot to set Apache Airflow connection for Microsoft Fabric."::: 
 
 3. Select Save.
 
