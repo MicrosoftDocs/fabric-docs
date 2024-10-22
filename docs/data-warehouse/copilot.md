@@ -53,7 +53,10 @@ Here are some tips for maximizing productivity with Copilot.
 - Avoid ambiguous or overly complex language in your prompts. Simplify the question while maintaining its clarity. This editing ensures Copilot can effectively translate it into a meaningful T-SQL query that retrieves the desired data from the associated tables and views.
 - Currently, natural language to SQL supports English language to T-SQL.
 - The following example prompts are clear, specific, and tailored to the properties of your schema and data warehouse, making it easier for Copilot to generate accurate T-SQL queries:
-    - `Show me all properties that sold last year`
+    ```text
+    Show me all properties that sold last year
+    ```
+    
     - `Count all the products, group by each category`
     - `Show all agents who sell properties in California`
     - `Show agents who have listed more than two properties for sale`
