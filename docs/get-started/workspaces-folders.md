@@ -1,5 +1,5 @@
 ---
-title: Create folders in workspaces (preview)
+title: Create folders in workspaces
 description: "Learn how to create a folder inside a workspace to enable users to efficiently organize and manage items in the workspace."
 author: maggiesMSFT
 ms.author: maggies
@@ -11,7 +11,7 @@ ms.date: 03/25/2024
 #customer intent: As a user, I want to learn how to create folders in workspaces so that I can efficiently organize and manage items in the workspace.
 ---
 
-# Create folders in workspaces (preview)
+# Create folders in workspaces
 
 This article explains what folders in workspaces are and how to use them in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. Folders are organizational units inside a workspace that enable users to efficiently organize and manage artifacts in the workspace. For more information about workspaces, see the [Workspaces](workspaces.md) article.
 
@@ -142,8 +142,7 @@ Currently folders inherit the permissions of the workspace where they're located
 ## Considerations and limitations
 
 - Currently dataflow gen2, streaming semantic model, and streaming dataflow can't be created in folders. 
-- If you trigger item creation from the home page, create hub and industry solution, items are created at the root level of workspaces.
-- In a workspace page, `Filter` and `Filter by keywords` only apply to items at the current level.
+- If you trigger item creation from the home page, create hub, and industry solution, items are created at the root level of workspaces.
 - Git doesn't support workspace folders yet.
 - If folders **is enabled** in the Power BI service but **not enabled** in Power BI Desktop, republishing a report that is in a nested folder will replace the report in the nested folder.
 - If Power BI Desktop folders **is enabled** in Power BI Desktop, but **not enabled** in the Service and you publish to a nested folder, the report will be published to the general workspace.
