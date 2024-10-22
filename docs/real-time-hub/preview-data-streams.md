@@ -4,9 +4,7 @@ description: This article shows how to preview streams in Fabric Real-Time hub.
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/04/2024
+ms.date: 10/21/2024
 ---
 
 # Preview streams in Fabric Real-Time hub (preview)
@@ -17,7 +15,7 @@ Data preview provides you with a snapshot of your event data in your stream. You
 
 ## From All data streams page
 
-You can preview data in a stream whose parent is an eventstream using one of the following options on the Real-Time hub **All data stream** page.
+You can preview data in a stream whose parent is an eventstream using one of the following options on the **All data streams** page or the **My data streams** page.
 
 - Move the mouse over the stream and select the eye button.
 - Move the mouse over the stream in the list, select ... (ellipsis), and then select **Preview data**.

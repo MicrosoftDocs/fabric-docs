@@ -45,13 +45,13 @@ The following filters are available at the top for you to narrow down easily to 
 | Item | You can filter on the desired parent artifact name. For a stream, it's the name of the eventstream. For a KQL table, it's the name of the KQL database. |
 | Location | You can filter on the desired workspace name. |
 
-:::image type="content" source="media/explore-all-data-streams/real-time-hub-all-data-streams-filters.png" alt-text="Screenshot that highlights the Real Time hub All data streams page filters."  lightbox="media/explore-all-data-streams/real-time-hub-all-data-streams-filters.png":::
+:::image type="content" source="media/explore-all-data-streams/hub-all-data-streams-filters.png" alt-text="Screenshot that highlights the Real Time hub All data streams page filters." lightbox="media/explore-all-data-streams/hub-all-data-streams-filters.png":::
 
 ### Search
 
 You can also search your streams/events using the search bar by typing in the name of stream.
 
-:::image type="content" source="./media/explore-all-data-streams/real-time-hub-all-data-streams-search.png" alt-text="Screenshot that shows the search box on the Real-Time hub All data streams page." lightbox="./media/explore-all-data-streams/real-time-hub-all-data-streams-search.png":::
+:::image type="content" source="./media/explore-all-data-streams/hub-all-data-streams-search.png" alt-text="Screenshot that shows the search box on the Real-Time hub All data streams page." lightbox="./media/explore-all-data-streams/hub-all-data-streams-search.png":::
 
 ### Actions
 
@@ -59,20 +59,23 @@ Here are the actions available on streams from eventstreams from the **All data 
 
 | Action | Description |
 | ------ | ----------- |
-| Preview this data | Preview the data in the stream or derived stream. For more information, see [Preview data streams](preview-data-streams.md). |
+| Preview data | Preview the data in the stream or derived stream. For more information, see [Preview data streams](preview-data-streams.md). |
 | Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. |
 | Endorse | Endorse parent eventstream of the stream. For more information, see [Endorse data streams](endorse-data-streams.md). |
 
-:::image type="content" source="./media/explore-all-data-streams/real-time-hub-all-data-streams-actions.png" alt-text="Screenshot that shows the actions available on streams in the Real-Time hub All data streams page." lightbox="./media/explore-all-data-streams/real-time-hub-all-data-streams-actions.png":::
+:::image type="content" source="./media/get-started-real-time-hub/data-streams-actions.png" alt-text="Screenshot that shows the actions available on a stream." lightbox="./media/get-started-real-time-hub/data-streams-actions.png":::
 
 Here are the actions available on a KQL table from the **All data streams** page.
 
 | Action | Description |
 | ------ | ----------- |
+| Explore data | Explore data in the KQL table. |
+| Create real-time dashboard (Preview) |[Create a real-time dashboard](../real-time-intelligence/dashboard-real-time-create.md) based on data in the KQL table. |
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
 
-:::image type="content" source="./media/explore-all-data-streams/real-time-hub-kql-table-actions.png" alt-text="Screenshot that shows the actions available on KQL tables in the Real-Time hub All data streams page." lightbox="./media/explore-all-data-streams/real-time-hub-kql-table-actions.png":::
+:::image type="content" source="./media/get-started-real-time-hub/kql-table-actions.png" alt-text="Screenshot that shows the actions available on a KQL table stream." lightbox="./media/get-started-real-time-hub/kql-table-actions.png":::
+
 
 ## Related content
 

@@ -77,14 +77,16 @@ items:
     href: preview-data-streams.md
   - name: Endorse data streams
     href: endorse-data-streams.md
-  - name: Explore All data streams
+  - name: Explore all data streams
     href: explore-all-data-streams.md
-  - name: Explore My streams
+  - name: Explore my data streams
     href: explore-my-data-streams.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md    
   - name: Explore Azure events
     items:
+    - name: Azure events page
+      href: explore-azure-events.md    
     - name: Explore Azure Blob Storage events
       href: explore-azure-blob-storage-events.md
   - name: Explore Fabric events
