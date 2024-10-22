@@ -45,7 +45,7 @@ For more information about available event types, see [Azure Blob Storage as Eve
 
 You can create streams for Azure Blob Storage events in Real-Time hub using one of the ways:
 
-- [Using the **Add source** experience](#launch-add-source-experience)
+- [Using the **Add source** experience](#data-sources-page)
 - [Using the **Fabric events** page](#fabric-events-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]

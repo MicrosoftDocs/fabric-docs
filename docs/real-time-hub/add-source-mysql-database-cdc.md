@@ -42,7 +42,7 @@ You must enable binary logging for MySQL replication. The binary logs record tra
 ## Get events from Azure MySQL Database (CDC)
 You can get events from an Azure MySQL Database CDC into Real-Time hub in one of the ways:
 
-- [Using the **Add source** experience](#launch-add-source-experience)
+- [Using the **Add source** experience](#data-sources-page)
 - [Using the **Microsoft sources** page](#microsoft-sources-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
