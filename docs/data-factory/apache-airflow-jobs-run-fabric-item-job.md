@@ -62,11 +62,10 @@ You must complete the following steps to obtain the refresh token, that would be
 1. [Request authorization.](#step-1-request-authorization)
 2. [Request an access token and refresh token.](#step-2-request-an-access-token)
 
-Before proceeding with the steps in this article:
-Save the following values from the app registration you created initially:
-   - **Client ID**: A unique identifier of your application assigned by the Microsoft identity platform.
-   - **Client Secret**: A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile and single page applications.
-   - **Redirect URI/URL**: Endpoints at which your app receives responses from the Microsoft Identity platform. In these steps, you receive authorization code at registered redirect URI.
+Before proceeding with the steps in this article, Save the following values from the app registration you created initially:
+- **Client ID**: A unique identifier of your application assigned by the Microsoft identity platform.
+- **Client Secret**: A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile and single page applications.
+- **Redirect URI/URL**: Endpoints at which your app receives responses from the Microsoft Identity platform. In these steps, you receive authorization code at registered redirect URI.
 
 ### Step 1: Request authorization
 
@@ -165,7 +164,7 @@ Apache Airflow connection is used to store the credentials required to authentic
    - <strong>Extra:</strong> This field contains the following parameters:
       - **tenantId**: (Required) The {tenant} value in the path of the request can be used to control who can sign into the application.
       - **clientSecret**: (Optional, only required for web apps) The client secret of the app registration.
-      - **scopes**: (Required) Space seperated string of scopes required for the app to access the Microsoft Fabric APIs." // For example: "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access"
+      - **scopes**: (Required) Space seperated string of scopes required for the app to access the Microsoft Fabric APIs.
 
       Copy the following json object format, update the values and paste it in the Extra field.
       ```json
