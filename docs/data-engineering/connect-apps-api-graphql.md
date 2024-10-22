@@ -45,10 +45,10 @@ In the following steps, we showcase how to configure support for a ReactJS appli
    * **Supported account types** - Select the accounts you want your app to support.
 
    * (Optional) **Redirect URI** - Enter a URI if needed.
-
+**GraphQL.Execute.All** or **Item.Execute.All**
 1. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
 1. From the *Manage* list, select **API permissions**, then **Add permission**. 
-1. Add the **PowerBI Service**, select **Delegated permissions**, and select **GraphQL.Execute.All** or **Item.Execute.All**, and **Datamart.ReadWrite.All** permissions. Make sure Admin consent isn't required.
+1. Add the **PowerBI Service**, select **Delegated permissions**, and select , and **Datamart.ReadWrite.All** permissions. Make sure Admin consent isn't required.
 1. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
 1. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. In case the application receives an error related to cross-origin requests, add the **Mobile and desktop applications** platform in the previous step with the same redirect URI.
 1. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
@@ -348,7 +348,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 While the steps in the previous section are required to provide access to user principals, it's also possible to access the GraphQL API with a service principal:
 
-1. Follow the steps in the previous section to create a second Microsot Entra app. In the new app, add a client secret under **Certificates and Secrets**, for more information see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
+1. Follow the steps in the previous section to create a second Microsoft Entra app. In the new app, add a client secret under **Certificates and Secrets**, for more information see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
 2. In the Tenant Admin portal, go to **Tenant Settings**. Under **Developer Settings** enable **Service Principals can use Fabric APIs**. With this setting enabled, the application will be visible in the Fabric Portal for role or permissions assignment. You can find more information on [Identity support](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting).
 3. The service principal will need access to both the GraphQL API and the data source. In the Fabric Portal, add the application as a workspace member with a contributor role where both the GraphQL API and data source items are located.
 
@@ -359,7 +359,7 @@ Once your API is configured to be accessed by a Service Principal, you can test 
 ```nodejs
 const { ClientSecretCredential } = require('@azure/identity');
 
-// Define your Azure AD credentials
+// Define your Microsoft Entra ID credentials
 const tenantId = "<YOUR_TENANT_ID>";
 const clientId = "<YOUR_CLIENT_ID>";
 const clientSecret = "<YOUR_CLIENT_SECRET>"; // Service principal secret value
@@ -381,7 +381,7 @@ async function getToken() {
 }
 ```
 
-After installing the dependencies (`@azure/identity`) with your Node.JS package manager of choice, modifying the file with the required information, saving and executing it (`node <filename.js>`), you'll be able retrieve a token from Entra.
+After installing the dependencies (`@azure/identity`) with your Node.JS package manager of choice, modifying the file with the required information, saving and executing it (`node <filename.js>`), you'll be able retrieve a token from Microsoft Entra.
 
 The token can then be used to invoke your GraphQL API using PowerShell by replacing the appropriate details with the **token** you just retrieved, the **GraphQL query** you want to execute, and the **GraphQL API Endpoint**:
 
@@ -421,7 +421,7 @@ For local testing purposes, the Node.JS code can be slightly modified with an ad
 const { ClientSecretCredential } = require('@azure/identity');
 const axios = require('axios');
 
-// Azure AD credentials
+// Microsoft Entra ID credentials
 const tenantId = "<YOUR_TENANT_ID>";
 const clientId = "<YOUR_CLIENT_ID>";
 const clientSecret = "<YOUR_CLIENT_SECRET>"; // Service principal secret value
