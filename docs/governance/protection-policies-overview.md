@@ -17,6 +17,9 @@ Microsoft Purview protection access control policies (protection policies) enabl
 
 The target audience for this article is security and compliance admins, Fabric admins and users, and anyone else who wants to learn about how protection policies control access to items in Fabric. If you want to see how to create a protection policy for Fabric, see [Create and manage protection policies for Fabric (preview)](./protection-policies-create.md).
 
+> [!NOTE]
+> Microsoft Purview protection policies for Fabric are currently being rolled out and may not be immediately available in all tenants.
+
 ## How do protection policies for Fabric work?
 
 Each protection policy for Fabric is associated with a sensitivity label. The policy controls access to an item that has the associated label by allowing users and groups specified in the policy to retain permissions they have on the item, while blocking access for everyone else. The policy can:
