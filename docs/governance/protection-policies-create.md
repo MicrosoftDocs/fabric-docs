@@ -17,6 +17,9 @@ This article describes how to create, edit, and delete Microsoft Purview protect
 
 For an overview of how protection policies for Fabric work, see [Protection policies in Fabric (preview)](./protection-policies-overview.md).
 
+> [!NOTE]
+> Microsoft Purview protection policies for Fabric are currently being rolled out and may not be immediately available in all tenants.
+
 ## Prerequisites
 
 To create a protection policy, the following requirements must be met:
