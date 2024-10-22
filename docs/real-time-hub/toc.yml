@@ -83,12 +83,14 @@ items:
     href: explore-my-data-streams.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md    
+  - name: Explore Azure events
+    items:
+    - name: Explore Azure Blob Storage events
+      href: explore-azure-blob-storage-events.md
   - name: Explore Fabric events
     items:
     - name: Fabric events page
       href: explore-fabric-events.md    
-    - name: Explore Azure Blob Storage events
-      href: explore-azure-blob-storage-events.md
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
 - name: Consume events and data streams
