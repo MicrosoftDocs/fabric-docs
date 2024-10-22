@@ -24,7 +24,7 @@ Fabric events have the following columns:
 
 | Column | Description |
 | ------ | ----------- |
-| Name | Name of event type group. Only **Fabric workspace item events** are supported.|
+| Name | Name of event type group. Currently, only **Fabric workspace item events** are supported.|
 | Description | Description of event type group. |
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-columns.png" alt-text="Screenshot that shows the selection of columns on the Fabric events page." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-columns.png":::
@@ -35,13 +35,12 @@ Here are the actions available on each event type group. When you move the mouse
 
 | Action | Description |
 | ------ | ----------- |
-| Create eventstream | This action creates an eventstream on the selected event type group with all Event types selected. For more information, see [Get Azure Blob Storage events into Real-Time hub](get-azure-blob-storage-events.md). |
-| Set alert | This action sets an alert on the selected event type group. For more information, see [Set alerts on Azure Blob Storage accounts](set-alerts-azure-blob-storage-events.md). |
+| Create eventstream | This action creates an eventstream on the selected event type group with all Event types selected. For more information, see [Get Fabric workspace item events](create-streams-fabric-workspace-item-events.md). |
+| Set alert | This action sets an alert on the selected event type group. For more information, see [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md). |
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-actions.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page with actions highlighted." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-actions.png":::
 
 ## Related content
-
-- [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)
 - [Get Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
+- [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
