@@ -92,23 +92,6 @@ You can get events from an Azure event hub into Real-Time hub in one of the ways
 2. You should see the stream on the **All data streams** page or **My data streams** page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 
-## Connect using an existing connection
-
-1. 
-1. On the **Connect** page, select **Go to resource** to navigate to the Azure Event Hubs namespace. Take a note of the access key name and its value.
-
-    :::image type="content" source="./media/add-source-azure-event-hubs/go-to-azure-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-event-hubs/go-to-azure-resource.png":::     
-
-## Get access key to the Event Hubs namespace
-
-1. Navigate to your Azure Event Hubs namespace page in the Azure portal.
-1. On the **Event Hubs namespace** page, select **Shared access policies** on the left navigation menu.
-1. Select the **access key** from the list. Note down the access key name.
-1. Select the copy button next to the **Primary key**.
-
-    :::image type="content" source="./media/add-source-azure-event-hubs/event-hubs-access-key-value.png" alt-text="Screenshot that shows the access key for an Azure Event Hubs namespace." lightbox="./media/add-source-azure-event-hubs/event-hubs-access-key-value.png":::      
-
-
 ## Related content
 
 To learn about consuming data streams, see the following articles:
