@@ -7,7 +7,7 @@ ms.topic: include
 ms.date: 10/21/2024
 ---
 
-## Launch Connect data source experience
+## Data sources page
 
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
 1. Select **Real-Time** on the left navigation bar.
