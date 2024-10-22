@@ -182,7 +182,7 @@ After you publish a Direct Lake semantic model, you should complete some setup t
 
 The following model features aren't supported by Direct Lake semantic models:
 
-- Calculated tables that reference tables or columns in Direct Lake storage mode
+- Calculated tables referencing tables or columns in Direct Lake storage mode
 - Calculated columns referencing tables or columns in Direct Lake storage mode
 - Hybrid tables
 - User-defined aggregations
