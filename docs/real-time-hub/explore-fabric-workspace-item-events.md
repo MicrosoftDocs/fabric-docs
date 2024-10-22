@@ -4,9 +4,7 @@ description: This article shows how to explore Fabric workspace item events in F
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/04/2024
+ms.date: 10/21/2024
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub (preview)
@@ -46,6 +44,9 @@ This section shows the artifacts using Fabric workspace item events. Here are th
 | Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
 | Source | Name of the workspace that is source of the events. |
+
+:::image type="content" source="./media/explore-fabric-workspace-item-events/see-what-is-using.png" alt-text="Screenshot that shows the See what's using this category section on the Fabric workspace item events detail page.":::
+
 
 ## Fabric workspace item events profile
 
