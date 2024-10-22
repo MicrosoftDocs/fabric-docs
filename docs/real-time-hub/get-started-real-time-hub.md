@@ -57,7 +57,11 @@ It allows for easy connectivity to external data streams including Kafka connect
 There are three ways you can get to the **Data sources** page:
 
 - By selecting **+ Connect data source** on the **All data streams** or **My data streams** pages.
+
+    :::image type="content" source="media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Connect to data source button." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
 - By selecting **+ Data sources** under **Connect to** category on the left navigation menu.
+
+    :::image type="content" source="media/get-started-real-time-hub/connect-to-data-sources-page.png" alt-text="Screenshot that shows the Data sources page under Connect to category." lightbox="./media/get-started-real-time-hub/connect-to-data-sources-page.png":::
 
 Then, follow the prompts to complete the flow. Here's a full list of built-in sources inside Get events.
 
@@ -82,6 +86,8 @@ The **Fabric events page** shows you the list of system events generated in **Fa
 - [Explore Fabric events in Real-Time hub](explore-fabric-events.md).
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
 
+:::image type="content" source="./media/get-started-real-time-hub/fabric-events-page.png" alt-text="Screenshot that shows the Fabric events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/fabric-events-page.png":::
+
 ## Azure events page
 The **Azure events page** shows you the list of system events generated in **Azure** that you can access. You can **create eventstreams** for events from your Azure blob storage. You can also set up an alert to send notifications via email, Teams etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events.
 
@@ -90,5 +96,7 @@ See following articles to learn how to **setup alerts** on Fabric events:
 - [Azure Blob Storage events](get-azure-blob-storage-events.md)
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md).
 - [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
+
+:::image type="content" source="./media/get-started-real-time-hub/azure-events-page.png" alt-text="Screenshot that shows the Azure events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/azure-events-page.png":::
 
 
