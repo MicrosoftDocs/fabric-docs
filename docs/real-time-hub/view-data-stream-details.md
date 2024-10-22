@@ -4,9 +4,7 @@ description: This article shows how to view details of for streams in Fabric Rea
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/05/2024
+ms.date: 10/21/2024
 ---
 
 # View details of data streams in Fabric Real-Time hub (preview)
@@ -101,8 +99,11 @@ On the top of the KQL table details page, you can take the following actions on 
 
 | Action | Description |
 | ------ | ----------- |
+| Explore data | Explore data in the KQL table. |
+| Create real-time dashboard (Preview)** |[Create a real-time dashboard](../real-time-intelligence/dashboard-real-time-create.md) based on data in the KQL table. |
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
+
 
 :::image type="content" source="./media/view-data-stream-details/kql-table-actions.png" alt-text="Screenshot that shows the actions available for a KQL table in the detail view page.":::
 
