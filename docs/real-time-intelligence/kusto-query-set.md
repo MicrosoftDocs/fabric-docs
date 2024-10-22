@@ -26,7 +26,7 @@ The KQL Queryset uses the Kusto Query Language for creating queries, and also su
 
 ## Select a database
 
-Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with a KQL database or a database from an Azure Data Explorer cluster.
+Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with multiple data sources of different types, for example KQL database and Azure Data Explorer cluster.
 
 Select the tab that corresponds with your desired database type.
 
