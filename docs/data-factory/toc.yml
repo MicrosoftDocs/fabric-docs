@@ -941,14 +941,20 @@
       items:
       - name: Connector troubleshooting guide
         href: connector-troubleshoot-guide.md
-      - name: Azure BlobWindows Storage
-        href: connector-troubleshoot-azure-blob-windows-storage.md
-      - name: Azure Cosmos Db
+      - name: Azure Blob Storage
+        href: connector-troubleshoot-azure-blob-storage.md
+      - name: Azure Cosmos DB
         href: connector-troubleshoot-azure-cosmos-db.md
+      - name: DB2
+        href: connector-troubleshoot-db2.md
       - name: Azure Data Explorer
         href: connector-troubleshoot-azure-data-explorer.md
+      - name: Azure Data Lake Storage
+        href: connector-troubleshoot-azure-data-lake-storage.md
       - name: Azure Database for PostgreSQL
         href: connector-troubleshoot-azure-database-for-postgresql.md
+      - name: Azure Files
+        href: connector-troubleshoot-azure-files.md
       - name: Azure Table Storage
         href: connector-troubleshoot-azure-table-storage.md
       - name: Format
