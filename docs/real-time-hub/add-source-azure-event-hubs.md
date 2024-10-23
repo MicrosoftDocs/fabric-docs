@@ -47,9 +47,6 @@ You can get events from an Azure event hub into Real-Time hub in one of the ways
 
     :::image type="content" source="./media/add-source-azure-event-hubs/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show event hubs and the connect button for an event hub." lightbox="./media/add-source-azure-event-hubs/microsoft-sources-connect-button.png":::
 
-    To configure connection information, use steps from the [Connect to an event hub](#connect-to-an-event-hub) section. 
-
-
 ## Connect to an Azure event hub
 
 1. To create a connection to an event hub, on the **Connect** page, select **New connection**.
