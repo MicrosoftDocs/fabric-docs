@@ -4,9 +4,7 @@ description: This article describes how to add Amazon Managed Streaming for Apac
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - references_regions
-ms.date: 09/15/2024
+ms.date: 10/23/2024
 ---
 
 # Add Amazon Managed Streaming for Apache Kafka (MSK) as source in Real-Time hub (preview)
@@ -22,7 +20,6 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
 - An Amazon MSK Kafka cluster in active status. 
 - Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
-
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 

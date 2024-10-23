@@ -4,9 +4,7 @@ description: This article describes how to add SQL Server on Virtual Machine (VM
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - references_regions
-ms.date: 09/10/2024
+ms.date: 10/23/2024
 ---
 
 # Add SQL Server on VM DB (CDC) as source in Real-Time hub (preview)
@@ -45,9 +43,16 @@ The SQL Server on VM DB (CDC) source connector for Fabric event streams allows
 
 ## Get events from SQL Server on VM DB (CDC)
 
-You can get events from an SQL Server on VM DB (CDC) into Real-Time hub [Using the **Add source** experience](#data-sources-page).
+You can get events from an SQL Server on VM DB (CDC) into Real-Time hub using the [**Data sources**](#data-sources-page) page.
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
+4. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **Azure SQL MI DB (CDC)** tile. 
+
+    :::image type="content" source="./media/add-source-sql-server-on-vm-db-cdc/select-sql-server-on-vm-db-cdc.png" alt-text="Screenshot that shows the selection of SQL Server on VM DB (CDC) as the source type in the Data sources page." lightbox="./media/add-source-sql-server-on-vm-db-cdc/select-sql-server-on-vm-db-cdc.png" :::
+   
+    Use instructions from the [Add SQL Server on VM DB CDC as a source](#add-sql-server-on-vm-db-cdc-as-a-source) section.  
+
 
 ## Add SQL Server on VM DB CDC as a source
 
@@ -55,7 +60,7 @@ You can get events from an SQL Server on VM DB (CDC) into Real-Time hub [Using t
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected SQL Server on VM DB (CDC) as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected SQL Server on VM DB (CDC) as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
 1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
