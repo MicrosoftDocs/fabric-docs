@@ -67,7 +67,7 @@ Data Activator supports the following tile types in Real-Time Dashboards:
 Additionally, for Data Activator to support a tile:
 
 * The data in the tile must not be static.
-* The data in the tile must be based on a KQL query.
+* The data in the tile must be based on a Kusto Query Language (KQL) query.
 * The tile must have at most one time range.
 * The tile must be filtered by a predefined time range. Using a custom time range isn't supported.
 * The tile must not contain time series data (for example, data created using the *make-series* KQL operator)
@@ -80,15 +80,15 @@ Each recipient of an email notification must have an internal email address. The
 
 ## System limits on processing rules
 
-Data Activator allows you to alert others in your organization or kick off workflows when specific conditions defined on time series data are met. Based on how the condition for a rule has been defined, the system might need to evaluate the rule over an amount of stored data to run your rule. For the system to continue to function well for all users, there is a limit to the total amount of data that can be processed. This helps Data Activator retain the resources it needs to process data and rules successfully.
+Data Activator allows you to alert others in your organization or kick off workflows when specific conditions defined on time series data are met. Based on the defined rule condition, the system might need to evaluate the rule over an amount of stored data to run your rule. For the system to continue to function well for all users, there is a limit to the total amount of data that can be processed. This helps Data Activator retain the resources it needs to process data and rules successfully.
 
 ### Limits on Power BI rules built on timestamped data
 
-When creating a rule on a Power BI visual, Activator looks at the underlying data in Power BI’s semantic model. The following limits are on rules that have been built on visuals where the underlying data includes timestamps.
+When creating a rule on a Power BI visual, Activator looks at the underlying data in Power BI’s semantic model. The following limits are on rules built on visuals where the underlying data includes timestamps.
 
 #### Data volume
 
-Volume-based limits differ based on a few different factors. One factor is whether the rule is built on an event or attribute and conditions are defined only based on the current received event (stateless). Another is whether the rule requires historical data as well (stateful). Rules exceeding the following limits may be stopped by Data Activator.
+Volume-based limits differ based on a few different factors. One factor is whether the rule is built on an event or attribute and conditions are defined only based on the current received event (stateless). Another is whether the rule requires historical data as well (stateful). Data Activator may stop rules that exceed the following limits.
 |Rule that:  |Maximum number of rows added per hour  | 
 |---------|---------|
 |Does not preserve the state of an object ID (rules built on events)     |6,000         |
@@ -104,7 +104,7 @@ When creating a rule on a Power BI visual without timestamps and KQL queries, th
 
 #### Data volume
 
-Volume-based limits differ based on whether the rule has been built on an event or attribute and conditions are defined only based on the current received event (stateless) or whether the trigger requires historical data as well (stateful). Rules exceeding these limits may be stopped by Activator.
+Volume-based limits differ based on a few different factors. One factor is whether the rule is built on an event or attribute and conditions are defined only based on the current received event (stateless). Another is whether the rule requires historical data as well (stateful). Data Activator may stop rules that exceed the following limits.
 |Rule that:  |Maximum number of rows  | 
 |---------|---------|
 |Does not preserve the state of an object ID (rules built on events)     |6,000         |
@@ -141,7 +141,7 @@ Rules exceeding these limits may be stopped by Data Activator.
 
 #### Impact on rule
 
-Rules may be prevented from being updated in the Data Activator definition pane if the rule impact becomes too high, based on the data volume being processed by the rule. In particular, the lookback period and number of distinct, active object instances both contribute to the impact on the rule.
+Data Activator may prevent rules from being updated in the definition pane if the rule impact becomes too high, based on the data volume being processed by the rule. In particular, the lookback period and number of distinct, active object instances both contribute to the impact on the rule.
 
 #### Number of distinct, active object IDs
 
