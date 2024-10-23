@@ -88,7 +88,7 @@ When creating a rule on a Power BI visual, Activator looks at the underlying dat
 
 #### Data volume
 
-Volume-based limits differ based on whether the rule has been built on an event or attribute and conditions are defined only based on the current received event (stateless) or whether the trigger requires historical data as well (stateful). Rules exceeding these limits may be stopped by Data Activator.
+Volume-based limits differ based on a few different factors. One factor is whether the rule is built on an event or attribute and conditions are defined only based on the current received event (stateless). Another is whether the rule requires historical data as well (stateful). Rules exceeding the following limits may be stopped by Data Activator.
 |Rule that:  |Maximum number of rows added per hour  | 
 |---------|---------|
 |Does not preserve the state of an object ID (rules built on events)     |6,000         |
