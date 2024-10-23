@@ -73,10 +73,10 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
     :::image type="content" source="./media/get-azure-blob-storage-events/connect-settings.png" alt-text="Screenshot that shows the Connect settings for an Azure Blob Storage account.":::
 1. On the **Review + connect** page, review settings, and select **Connect**.
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/get-azure-blob-storage-events/review-create-page.png":::
-1. When the wizard succeeds in creating a stream, on the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you. To close the wizard, select **Finish** at the bottom of the page.
+    :::image type="content" source="./media/get-azure-blob-storage-events/review-create-page.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/get-azure-blob-storage-events/review-create-page.png":::
+1. When the wizard succeeds in creating a stream, on the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you. To close the wizard, select **Finish** at the bottom of the page.
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open the eventstream." lightbox="./media/get-azure-blob-storage-events/review-create-success.png":::
+    :::image type="content" source="./media/get-azure-blob-storage-events/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open the eventstream." lightbox="./media/get-azure-blob-storage-events/review-create-success.png":::
 
 ## View data stream details
 Select **My data streams** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
