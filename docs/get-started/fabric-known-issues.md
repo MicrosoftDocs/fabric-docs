@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/18/2024
+ms.date: 10/23/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  895  | OneLake | [Dataverse shortcut creation and read fails when organization is moved](known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md) | October 23, 2024 |
+|  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
 |  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 |
 |  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 |
 |  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 |
@@ -109,9 +111,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  782  | Data Engineering | [Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse](known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md) | July 18, 2024 | Fixed: September 23, 2024 |
 |  753  | Data Factory | [Pipeline Web activity through on-premises data gateway doesn't support SPN authentication](known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md) | June 11, 2024 | Fixed: September 23, 2024 |
 |  752  | OneLake | [Cross region shortcuts don't show data](known-issues/known-issue-752-cross-region-shortcuts-not-show-data.md) | June 11, 2024 | Fixed: September 23, 2024 |
-|  815  | Data Factory | [Dataflows automatically create tables from queries on Fabric destinations](known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md) | August 19, 2024 | Fixed: September 4, 2024 |
-|  781  | Data Factory | [Pipeline copy to Oracle using on-premises data gateway errors](known-issues/known-issue-781-pipeline-copy-oracle-data-gateway-errors.md) | August 6, 2024 |  Fixed: September 4, 2024 |
-|  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 | Fixed: September 4, 2024 |
 
 ## Related content
 
