@@ -53,7 +53,7 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 ## Get events from Azure SQL Managed Instance (CDC)
 You can get events from an Azure SQL Managed Instance CDC into Real-Time hub in one of the ways:
 
-- [Using the **Add source** experience](#launch-add-source-experience)
+- [Using the **Add source** experience](#data-sources-page)
 - [Using the **Microsoft sources** page](#microsoft-sources-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
