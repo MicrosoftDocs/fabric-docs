@@ -130,9 +130,9 @@ You can get events from an Azure Database for PostgreSQL CDC into Real-Time hub 
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected PostgreSQL Database CDC as a source. To close the wizard, select **Finish** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create success page." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
-1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page.  
+1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page.  
 
-    :::image type="content" source="./media/add-source-postgresql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/verify-data-stream.png":::
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub My data streams page with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/verify-data-stream.png":::
 
 ## Related content
 

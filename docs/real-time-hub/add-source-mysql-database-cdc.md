@@ -4,10 +4,7 @@ description: This article describes how to add MySQL Database Change Data Captur
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - build-2024
-  - references_regions
-ms.date: 09/10/2024
+ms.date: 10/23/2024
 ---
 
 # Add MySQL Database CDC as source in Real-Time hub (preview)
@@ -25,7 +22,7 @@ The Azure MySQL Database Change Data Capture (CDC) connector allows you to captu
 
 ### Set up MySQL database 
 
-The Azure MySQL database connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For step-by-step instructions, see [Set up MySQL DB](../real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
+The Azure MySQL database connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For step-by-step instructions, see [Set up MySQL Database (DB)](../real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
 
 ### Enable the binlog
 
@@ -42,12 +39,16 @@ You must enable binary logging for MySQL replication. The binary logs record tra
 ## Get events from Azure MySQL Database (CDC)
 You can get events from an Azure MySQL Database CDC into Real-Time hub in one of the ways:
 
-- [Using the **Add source** experience](#data-sources-page)
+- [Using the **Data sources** page](#data-sources-page)
 - [Using the **Microsoft sources** page](#microsoft-sources-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section.
+4. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **MySQL DB (CDC)** tile. 
+
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png" alt-text="Screenshot that shows the selection of MySQL DB (CDC) on the Data sources page." lightbox="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png":::
+
+    Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section.
 
 ## Microsoft sources page
 
@@ -64,12 +65,6 @@ Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-
 
 ## Add Azure MySQL Database CDC as a source
 
-1. On the **Select a data source** screen, select **MySQL DB (CDC)**.
-
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png" alt-text="Screenshot that shows the Select a data source page with Azure MySQL DB (CDC) selected." lightbox="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png":::
-1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `mysqlserver.mysql.database.azure.com`.
-
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/go-to-resource.png":::     
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Add source wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/new-connection-link.png":::
@@ -101,12 +96,22 @@ Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-
     
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review and create page with all the required fields specified." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-page.png"::: 
 
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `mysqlserver.mysql.database.azure.com`.
+
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/go-to-resource.png":::     
+
+
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure MySQL DB CDC as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
+1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure MySQL DB CDC as a source. To close the wizard, select **Finish** or **X*** in the top-right corner of the page.
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create page after successful creation of the source." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-success.png":::
-1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page.  For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page. 
+
+     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub My data streams page with the stream based on MySQL Database CDC source." lightbox="./media/add-source-azure-mysql-database-cdc/verify-data-stream.png":::
+
+
+    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
 
