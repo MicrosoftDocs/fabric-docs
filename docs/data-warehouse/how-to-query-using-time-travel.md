@@ -9,7 +9,7 @@ ms.custom:
 ms.topic: how-to
 ms.date: 06/10/2024
 ---
-# How to: Query using time travel at the statement level (preview)
+# How to: Query using time travel at the statement level 
 
 In Microsoft Fabric, the capability to [time travel](time-travel.md) unlocks the ability to query the prior versions of data without the need to generate multiple data copies, saving on storage costs. This article describes how to query warehouse tables using time travel at the statement level, using the T-SQL [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and the [FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) syntax. This feature is currently in preview.
 
@@ -118,7 +118,13 @@ FROM [Timetravel].[dbo].[Top10CustomersView]
 OPTION (FOR TIMESTAMP AS OF '2024-05-01T21:55:27.513'); 
 ```
 
-However, you cannot query past data from tables in a view from before the view was created.
+- The historical data from tables in a view can only be queried beginning from the time the view was created.
+
+- After a view is altered, it can only be queried after the point-in-time (PIT) it was altered.
+
+- If the underlying table of a view is altered without changing the view, the view returns the results as of the point-in-time (PIT) being queried.
+
+- When the underlying table of a view is dropped and recreated without modifying the view, the view returns results from point-in-time (PIT) the table was recreated.
 
 ## Limitations
 
