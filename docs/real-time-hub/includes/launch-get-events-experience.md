@@ -4,15 +4,14 @@ description: Include file with instructions to launch the "Add source experience
 author: spelluru
 ms.author: spelluru
 ms.topic: include
-ms.custom:
-  - build-2024
-ms.date: 09/05/2024
+ms.date: 10/21/2024
 ---
 
-## Launch Add source experience
+## Data sources page
 
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
-1. Select **Real-Time hub** on the left navigation bar.
-1. On the **Real-Time hub** page, select **+ Add source** in the top-right corner of the page.
+1. Select **Real-Time** on the left navigation bar.
+1. On the **Real-Time hub** page, select **+ Data sources** under **Connect to** on the left navigation menu. You can also get to the **Data sources** page from **All data streams** or **My data streams** pages by selecting the **+ Connect data source** button in the top-right corner.    
+    
+    :::image type="content" source="./media/launch-get-events-experience/select-real-time-hub.png" alt-text="Screenshot that shows how to launch Connect to data source experience." lightbox="./media/launch-get-events-experience/select-real-time-hub.png":::
 
-    :::image type="content" source="./media/launch-get-events-experience/select-real-time-hub.png" alt-text="Screenshot that shows how to launch Real-Time hub In Microsoft Fabric." lightbox="./media/launch-get-events-experience/select-real-time-hub.png":::
