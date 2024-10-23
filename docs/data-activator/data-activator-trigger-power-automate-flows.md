@@ -31,7 +31,7 @@ A custom action defines how to call a specific external system from a rule using
 
 ### Name your action and add input fields
 
-To create a custom action, select **Custom action** from the Home tab or select **New custom action** in the Action type drop down. 
+To create a custom action, select **Custom action** from the Home tab or select **New custom action** in the Action type drop down from your rule definition pane. 
 
 Then, give your action a name such as *Add a To Do task* and define the input fields (such as _Task name_).
 
