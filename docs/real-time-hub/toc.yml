@@ -59,6 +59,8 @@ items:
       href: add-source-google-cloud-pub-sub.md
     - name: Amazon Kinesis Data Streams 
       href: add-source-amazon-kinesis-data-streams.md
+    - name: Amazon Managed Streaming for Kafka
+      href: add-source-amazon-managed-streaming-for-kafka.md
     - name: Confluent Cloud Kafka
       href: add-source-confluent-kafka.md
   - name: Fabric events
