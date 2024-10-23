@@ -22,7 +22,7 @@ This article provides suggestions to troubleshoot common problems with the DB2 c
 
 - **Cause**: If the error message contains the string `SQLSTATE=51002 SQLCODE=-805`, a required package is missing for the user.
 
-- **Reccomendation**: By default, the service will try to create the package under the collection named as the user you used to connect to the DB2. Specify the package collection property to indicate under where you want the service to create the needed packages when querying the database. If you can't determine the package collection name, try to set _packageCollection_= `NULLID`.
+- **Recommendation**: By default, the service will try to create the package under the collection named as the user you used to connect to the DB2. Specify the package collection property to indicate under where you want the service to create the needed packages when querying the database. If you can't determine the package collection name, try to set _packageCollection_= `NULLID`.
 
 ## Related content
 

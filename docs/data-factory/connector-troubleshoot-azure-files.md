@@ -22,7 +22,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Cause**: A problem with the Azure Files storage operation.
 
-- **Reccomendation**: Check the error details, and refer to [Azure Files help](/rest/api/storageservices/file-service-error-codes). For further help, contact the Azure Files team.
+- **Recommendation**: Check the error details, and refer to [Azure Files help](/rest/api/storageservices/file-service-error-codes). For further help, contact the Azure Files team.
 
 ## Related content
 
