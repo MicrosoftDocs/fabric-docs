@@ -33,7 +33,7 @@ You can get events from an Azure SQL Database CDC into Real-Time hub in one of t
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-4. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Event Hubs** tile. 
+4. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure SQL DB (CDC)** tile. 
 
     :::image type="content" source="./media/add-source-azure-sql-database-cdc/select-azure-sql-database-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL Database (CDC) as the source type in the Data sources page." lightbox="./media/add-source-azure-sql-database-cdc/select-azure-sql-database-cdc.png":::
     
