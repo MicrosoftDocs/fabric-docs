@@ -20,7 +20,7 @@ With Dataflow Gen2 (CI/CD preview), you can now:
 - Use the Deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces.
 - Leverage the Fabric CRUDL API to manage dataflows Gen2.
 - Use the Fabric settings and scheduler to refresh and edit settings for dataflows Gen2.
-- Create your Gen2 dataflow directly into a folder in your workspace.
+- Create your Gen2 dataflow directly into a workspace folder.
 
 ## Prerequisites
 
@@ -62,22 +62,47 @@ To create a dataflow gen2 with CI/CD and Git support, follow these steps:
 
 You now have a dataflow Gen2 with CI/CD and Git support. Suggested is to follow the best practices for working with CI/CD and Git integration in Fabric by following the tutorial [here](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
 
-Current limitations for CI/CD and Git integration support:
-
-- By default the staging artifacts are visible in the workspace. This will be hidden in the future but for now make sure they are not synced to the GIT repository as it may cause issues along the way for updating the workspace from git changes.
-
 ## Refresh a dataflow gen2 or schedule a refresh
 
-To refresh a dataflow gen2, follow these steps:
+
+### Refresh now
 
 - In the fabric workspace, click on the more options icon next to the dataflow you want to refresh.
-- Click on schedule
-- On the schedule page, you can set the refresh frequency and the start time.
+- Click on **refresh now**.
+
+:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-refresh-now.png" alt-text="Refresh dataflow Gen2 now":::
+
+### Schedule a refresh
+
+If your dataflow needs to be refreshed on a regular interval you can schedule the refresh using the fabric scheduler
+
+- In the fabric workspace, click on the more options icon next to the dataflow you want to refresh.
+- Click on **Schedule**.
+
+:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-schedule-refresh.png" alt-text="Schedule dataflow Gen2 refresh":::
+
+- On the schedule page, you can set the refresh frequency and the start time and end time, after which you can apply changes.
+
+:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/settings-schedule-refresh.png" alt-text="Settings screen schedule dataflow Gen2 refresh":::
+
 - To start the refresh now, click on the refresh button.
+
+## Refresh history and settings
+
+
+
+
+## Settings dataflow gen2 with CI/CD
+
+
 
 ## Use the Fabric CRUDL API to manage dataflows Gen2
 
 With CICD and Git integration support, we also introduced the Fabric CRUDL API to manage dataflows Gen2. You can use the API to create, read, update, delete, and list dataflows Gen2. The API is available in the Fabric API reference.
-Todays limitations for the public rest API's:
 
-- "Get Item" and "List Item Access Details" does not return the correct information if you filter on a specific type of item. When you do not specify the type it will return the new Dataflow Gen2 with CI/CD and GIT support. 
+## Limitations and known issues
+
+- By default the staging artifacts are visible in the workspace. This will be hidden in the future but for now make sure they are not synced to the GIT repository as it may cause issues along the way for updating the workspace from git changes.
+- "Get Item" and "List Item Access Details" API's does not return the correct information if you filter on a specific type of item. When you do not specify the type it will return the new Dataflow Gen2 with CI/CD and GIT support. Filtering for "dataflow"  type will result in only non-cicd dataflows.
+- Orchestrating a refresh of a dataflow gen2 with CI/CD and Git support is not possible in fabric data pipelines.
+- Workspace view does not show if a refresh is ongoing for the dataflow. 
