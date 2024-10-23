@@ -943,6 +943,8 @@
         href: connector-troubleshoot-guide.md
       - name: Azure BlobWindows Storage
         href: connector-troubleshoot-azure-blob-windows-storage.md
+      - name: Azure Cosmos Db
+        href: connector-troubleshoot-azure-cosmos-db.md
       - name: Azure Data Explorer
         href: connector-troubleshoot-azure-data-explorer.md
       - name: Azure Database for PostgreSQL
