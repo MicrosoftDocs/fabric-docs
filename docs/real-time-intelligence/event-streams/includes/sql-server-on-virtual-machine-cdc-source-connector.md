@@ -7,9 +7,6 @@ ms.topic: include
 ms.date: 09/02/2024
 ---
 
-1. On the **Select a data source** screen, select **SQL Server on VM DB (CDC)** as the data source.
-
-    :::image type="content" source="media/sql-server-on-virtual-machine-cdc-source-connector/select-external-source.png" alt-text="Screenshot that shows the selection of SQL Server on VM DB (CDC) connector." lightbox="media/sql-server-on-virtual-machine-cdc-source-connector/select-external-source.png":::
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="media/sql-server-on-virtual-machine-cdc-source-connector/new-connection.png" alt-text="Screenshot that shows the selection of New connection link on the Connect page." lightbox="media/sql-server-on-virtual-machine-cdc-source-connector/new-connection.png":::    
@@ -35,7 +32,7 @@ ms.date: 09/02/2024
 1. Select **Next**.
 
     :::image type="content" source="media/sql-server-on-virtual-machine-cdc-source-connector/select-tables.png" alt-text="Screenshot that shows selection of All tables option." lightbox="media/sql-server-on-virtual-machine-cdc-source-connector/select-tables.png"::: 
-1. On the **Review and create** screen, review the summary, and then select **Add**.
+1. On the **Review + create** screen, review the summary, and then select **Connect**.
 
     :::image type="content" source="media/sql-server-on-virtual-machine-cdc-source-connector/review-add.png" alt-text="Screenshot that shows the selection of the Add button." lightbox="media/sql-server-on-virtual-machine-cdc-source-connector/review-add.png"::: 
 
