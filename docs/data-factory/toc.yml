@@ -941,6 +941,8 @@
       items:
       - name: Connector troubleshooting guide
         href: connector-troubleshoot-guide.md
+      - name: Azure BlobWindows Storage
+        href: connector-troubleshoot-azure-blob-windows-storage.md
       - name: Azure Data Explorer
         href: connector-troubleshoot-azure-data-explorer.md
       - name: Azure Database for PostgreSQL
