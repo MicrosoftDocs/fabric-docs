@@ -49,8 +49,8 @@ You can get events from an SQL Server on VM DB (CDC) into Real-Time hub using th
 
 4. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **Azure SQL MI DB (CDC)** tile. 
 
-    :::image type="content" source="./media/add-source-sql-server-on-vm-db-cdc/select-sql-server-on-vm-db-cdc.png" alt-text="Screenshot that shows the selection of SQL Server on VM DB (CDC) as the source type in the Data sources page." lightbox="./media/add-source-azure-sql-managed-instance-cdc/select-sql-server-on-vm-db-cdc.png":::
-    
+    :::image type="content" source="./media/add-source-sql-server-on-vm-db-cdc/select-sql-server-on-vm-db-cdc.png" alt-text="Screenshot that shows the selection of SQL Server on VM DB (CDC) as the source type in the Data sources page." lightbox="./media/add-source-sql-server-on-vm-db-cdc/select-sql-server-on-vm-db-cdc.png" :::
+   
     Use instructions from the [Add SQL Server on VM DB CDC as a source](#add-sql-server-on-vm-db-cdc-as-a-source) section.  
 
 
