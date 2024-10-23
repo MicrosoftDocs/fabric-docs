@@ -45,7 +45,7 @@ Here are the supported Fabric workspace events:
 You can create streams for Fabric workspace item events in Real-Time hub using one of the ways:
 
 - [Using the **Data sources** page](#data-sources-page)
-- [Using the **Fabric events** page](#azure-events-page)
+- [Using the **Fabric events** page](#fabric-events-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
