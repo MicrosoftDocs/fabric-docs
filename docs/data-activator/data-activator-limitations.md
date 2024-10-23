@@ -97,7 +97,7 @@ Volume-based limits differ based on a few different factors. One factor is wheth
 
 #### Impact on rule
 
-If a rule reaches the maximum number of rows added per hour, you may not be able to edit the definition of the rule. The limits are is based on the data volume in the Power BI report and how the rule is defined. In particular, both the lookback period and number of distinct, active object instances contribute to the impact on a rule.
+If a rule reaches the maximum number of rows added per hour, you may not be able to edit the definition of the rule. The limits are based on the data volume in the Power BI report and how the rule is defined. In particular, both the lookback period and number of distinct, active object instances contribute to the impact on a rule.
 
 ### Limits on Power BI rules without timestamps and KQL query rules
 
@@ -130,7 +130,7 @@ Rules built on Eventstreams that do not preserve state are limited to 1,000 even
 
 #### Rules that preserve state
 
-|Number of distinct, active object ID's  |Data volume per object ID (events per second per object ID)  | Total data volume (number of events per second) |
+|Number of distinct, active object IDs  |Data volume per object ID (events per second per object ID)  | Total data volume (number of events per second) |
 |---------|---------|---------|
 |1          |≤300      |300      |
 |<10        |≤30       |300      |
