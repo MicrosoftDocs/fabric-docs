@@ -42,7 +42,7 @@ Data activator supports the following Power BI visual types:
 * Donut
 * Gauge
 * Card
-* KPI
+* Key performance indicator (KPI)
 
 Data Activator also supports the following map visuals. Data Activator only supports map visuals that use the *Location* field to specify the location of objects on the map. Data Activator doesn't support visuals that use *Latitude* and *Longitude* fields.
 
@@ -80,7 +80,7 @@ Each recipient of an email notification must have an internal email address. The
 
 ## System limits on processing rules
 
-Data Activator allows you to alert others in your organization or kick off workflows when specific conditions defined on time series data are met. Based on the defined rule condition, the system might need to evaluate the rule over an amount of stored data to run your rule. For the system to continue to function well for all users, there is a limit to the total amount of data that can be processed. This helps Data Activator retain the resources it needs to process data and rules successfully.
+Data Activator allows you to alert others in your organization or kick off workflows when specific conditions defined on time series data are met. Based on the defined rule condition, the system might need to evaluate the rule over an amount of stored data to run your rule. For the system to continue to function well for all users, there is a limit to the total amount of data that can be processed. System limits help Data Activator retain the resources it needs to process data and rules successfully.
 
 ### Limits on Power BI rules built on timestamped data
 
@@ -88,7 +88,7 @@ When creating a rule on a Power BI visual, Activator looks at the underlying dat
 
 #### Data volume
 
-Volume-based limits differ based on a few different factors. One factor is whether the rule is built on an event or attribute and conditions are defined only based on the current received event (stateless). Another is whether the rule requires historical data as well (stateful). Data Activator may stop rules that exceed the following limits.
+Volume-based limits differ based on a few different factors. One factor is whether the rule is built on an event or attribute and conditions are defined on the current received event (stateless). Another is whether the rule requires historical data as well (stateful). Data Activator may stop rules that exceed the following limits.
 |Rule that:  |Maximum number of rows added per hour  | 
 |---------|---------|
 |Does not preserve the state of an object ID (rules built on events)     |6,000         |
@@ -96,7 +96,7 @@ Volume-based limits differ based on a few different factors. One factor is wheth
 
 #### Impact on rule
 
-If a rule reaches the maximum number of rows added per hour, you may not be able to edit the definition of the rule. This is based on the data volume in the Power BI report and how the rule is defined. In particular, both the lookback period and number of distinct, active object instances contribute to the impact on a rule.
+If a rule reaches the maximum number of rows added per hour, you may not be able to edit the definition of the rule. The limits are is based on the data volume in the Power BI report and how the rule is defined. In particular, both the lookback period and number of distinct, active object instances contribute to the impact on a rule.
 
 ### Limits on Power BI rules without timestamps and KQL query rules
 
@@ -104,7 +104,7 @@ When creating a rule on a Power BI visual without timestamps and KQL queries, th
 
 #### Data volume
 
-Volume-based limits differ based on a few different factors. One factor is whether the rule is built on an event or attribute and conditions are defined only based on the current received event (stateless). Another is whether the rule requires historical data as well (stateful). Data Activator may stop rules that exceed the following limits.
+Volume-based limits differ based on a few different factors. One factor is whether the rule is built on an event or attribute and conditions are defined on the current received event (stateless). Another is whether the rule requires historical data as well (stateful). Data Activator may stop rules that exceed the following limits.
 |Rule that:  |Maximum number of rows  | 
 |---------|---------|
 |Does not preserve the state of an object ID (rules built on events)     |6,000         |
@@ -112,7 +112,7 @@ Volume-based limits differ based on a few different factors. One factor is wheth
 
 #### Impact on rule
 
-If a rule reaches the maximum number of rows added per hour, you may not be able to edit the definition of the rule. This is based on the data volume in the Power BI report and how the rule is defined. In particular, both the lookback period and number of distinct, active object instances contribute to the impact on a rule.
+If a rule reaches the maximum number of rows added per hour, you may not be able to edit the definition of the rule. This limits are based on the data volume in the Power BI report and how the rule is defined. In particular, both the lookback period and number of distinct, active object instances contribute to the impact on a rule.
 
 ### Limits on other data sources (Eventstreams, Azure Storage Events etc.)
 
@@ -120,7 +120,7 @@ When creating a rule on other data sources, the following limits apply.
 
 #### Data volume
 
-Volume-based limits differ based on whether the rule behavior is defined only based on the current received event (i.e. stateless) or whether it requires historical data as well (i.e. stateful).
+Volume-based limits differ based on whether the rule behavior is defined on the current received event (stateless) or whether it requires historical data as well (stateful).
 
 #### Rules that do not preserve state
 
@@ -137,7 +137,7 @@ Rules built on Eventstreams that do not preserve state are limited to 1,000 even
 |≤100       |≤10       |1,000    |
 |>100       |≤1        |1,000    |
 
-Rules exceeding these limits may be stopped by Data Activator.
+Data Activator may stop rules that exceed these limits.
 
 #### Impact on rule
 
@@ -145,11 +145,11 @@ Data Activator may prevent rules from being updated in the definition pane if th
 
 #### Number of distinct, active object IDs
 
-Attribute rules defined on an object have limits imposed on the number of distinct instances of the object that are being actively tracked by Data Activator. This limit is 100,000 distinct, active object IDs.
+Attribute rules defined on an object have limits imposed on the number of distinct instances of the object that are actively tracked by Data Activator. This limit is 100,000 distinct, active object IDs.
 
 ## Maximum number of rule actions
 
-Data Activator imposes the following limits on the number of actions that may occur in a given time period. If an action exceeds the limit, Data Activator may throttle or cancel the action. In addition to the following limits, if a rule requests actions that exceed a limit of 1,000 per second, the rule may be stopped by Data Activator.
+Data Activator imposes the following limits on the number of actions that may occur in a given time period. If an action exceeds the limit, Data Activator may throttle or cancel the action. In addition to the following limits, if a rule requests actions that exceed a limit of 1,000 per second, Data Activator may stop the rule.
 
 |Rule action  |Scope  |Limit  |
 |---------|---------|---------|
