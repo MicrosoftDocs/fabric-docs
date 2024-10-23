@@ -20,7 +20,7 @@ With a commitment to excellence, we approach new preview runtime releases carefu
 > [!TIP]
 > Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
-The following table lists the runtime name, and release dates for supported Azure Synapse Runtime releases.
+The following table lists the runtime name, and release dates for supported Azure Synapse runtime releases.
 
 | Runtime name                                               | Release stage | End of Support date |
 |-----------------------------------------------------------|---------------|---------------------|

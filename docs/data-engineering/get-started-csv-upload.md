@@ -24,9 +24,9 @@ In this tutorial you learn to:
 
 ## Create a Lakehouse and get a CSV file ready
 
-1. In Microsoft Fabric, select **Synapse Data Engineering**.
-1. Make sure that you're in your desired workspace, or select or create one.
-1. In the **Home** page, select **Lakehouse**.
+1. Sign into the Microsoft Fabric portal. Select **Develop** from the switcher in the bottom-left corner.
+1. Make sure that you're in your desired workspace. Open your existing workspace or create a new one.
+1. From the workspace, select **New item** page, and select **Lakehouse**.
 
    :::image type="content" source="media\get-started-csv-upload\new-lakehouse-inline.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-csv-upload\new-lakehouse.png":::
 
