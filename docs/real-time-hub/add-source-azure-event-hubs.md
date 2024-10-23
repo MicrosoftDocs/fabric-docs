@@ -34,23 +34,23 @@ You can get events from an Azure event hub into Real-Time hub in one of the ways
 
     :::image type="content" source="./media/add-source-azure-event-hubs/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Add source wizard." lightbox="./media/add-source-azure-event-hubs/select-azure-event-hubs.png":::
     
-    Now, follow instructions from the [Connect to an event hub](#connect-to-an-event-hub) section.
+    Now, follow instructions from the [Connect to an Azure event hub](#connect-to-an-azure-event-hub) section.
 
 ## Microsoft sources page
 
-1. In Real-Time hub, select **Microsoft sources** on the left navigation menu.
-1. For **Source** at the top, select **Azure Event Hubs** from the drop-down list.
+1. In Real-Time hub, select **Microsoft sources** on the left navigation menu. You can use the search box to the type your resource name or use filters (Source, Subscription, Resource group, Region) to search for your resource. 
+1. For **Source** at the top, select **Azure Event Hubs** from the drop-down list. 
 1. For **Subscription**, select an **Azure subscription** that has the resource group with your event hub.
 1. For **Resource group**, select a **resource group** that has your event hub.
 1. For **Region**, select a location where your event hub is located.
-1. Now, move the mouse over the name of the event hub that you want to connect to Real-Time hub in the list of event hubs, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button.
+1. Now, move the mouse over the name of the event hub that you want to connect to Real-Time hub in the list of event hubs, and select the **Connect** button, or select **... (ellipsis)**, and then select **Connect data source**.
 
     :::image type="content" source="./media/add-source-azure-event-hubs/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show event hubs and the connect button for an event hub." lightbox="./media/add-source-azure-event-hubs/microsoft-sources-connect-button.png":::
 
     To configure connection information, use steps from the [Connect to an event hub](#connect-to-an-event-hub) section. 
 
 
-## Connect to an event hub
+## Connect to an Azure event hub
 
 1. To create a connection to an event hub, on the **Connect** page, select **New connection**.
 
@@ -88,8 +88,9 @@ You can get events from an Azure event hub into Real-Time hub in one of the ways
 1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected event hub as a source. To close the wizard, select **Finish** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-azure-event-hubs/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-event-hubs/review-create-success.png":::
-2. You should see the stream on the **All data streams** page or **My data streams** page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+2. You should see the stream on the **All data streams** and **My data streams** pages. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
+    :::image type="content" source="./media/add-source-azure-event-hubs/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-event-hubs/verify-data-stream.png":::
 
 ## Related content
 
