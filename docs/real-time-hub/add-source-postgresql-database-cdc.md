@@ -70,7 +70,7 @@ You can get events from an Azure Database for PostgreSQL CDC into Real-Time hub 
 
 4. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure DB for PostgreSQL (CDC)** tile. 
 
-    :::image type="content" source="./media/add-source-azure-sql-database-cdc/select-postgresql-cdc.png" alt-text="Screenshot that shows the selection of Azure Database (DB) for PostgreSQL (CDC) as the source type in the Data sources page." lightbox="./media/add-source-azure-sql-database-cdc/select-postgresql-cdc.png":::
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/select-postgresql-cdc.png" alt-text="Screenshot that shows the selection of Azure Database (DB) for PostgreSQL (CDC) as the source type in the Data sources page." lightbox="./media/add-source-azure-sql-database-cdc/select-postgresql-cdc.png":::
 
     Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. 
 
