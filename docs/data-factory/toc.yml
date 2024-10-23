@@ -961,6 +961,8 @@
         items:
         - name: Delimited text
           href: connector-troubleshoot-delimited-text.md
+        - name: ORC
+          href: connector-troubleshoot-orc.md
         - name: XML
           href: connector-troubleshoot-xml.md
       - name: Rest
