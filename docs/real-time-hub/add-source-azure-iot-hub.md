@@ -49,9 +49,6 @@ You can get events from an Azure IoT hub into Real-Time hub in one of the ways:
 
 ## Connect to an Azure iot hub
 
-1. On the **Select a data source** page, select **Azure IoT Hub**.
-
-    :::image type="content" source="./media/add-source-azure-iot-hub/select-azure-iot-hub.png" alt-text="Screenshot that shows the selection of Azure IoT Hub as the source type in the Add source wizard." lightbox="./media/add-source-azure-iot-hub/select-azure-iot-hub.png":::
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-iot-hub/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/add-source-azure-iot-hub/new-connection-button.png":::   
