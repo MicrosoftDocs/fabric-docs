@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: overview
 ms.custom:  
 ms.search.form: product-reflex
-ms.date: 10/12/2024
+ms.date: 10/22/2024
 #customer intent: As a Fabric user who is working with rules, I want to understand the factors that help to determine when actions are included and excluded from rule reporting.
 ---
 
@@ -76,4 +76,4 @@ The user creates a rule that calculates the average temperature in minute interv
 
 Built-in latency differs by service. Latency for eventstreams is different than latency for Power BI visuals. There are two parts that make up latency for rules built on Power BI visuals: the frequency of querying Power BI visuals that’s built in the system, and a delay that Activator's backend might introduce. 
 
-Activator queries Power BI for new data every hour. This means that events that meet the rule condition trigger an activation at a maximum of one hour after the event occurs. Power BI rules are evaluated anytime new data arrives in Data Activator. For more information, see [Power BI](data-activator-get-data-power-bi.md). 
+Power BI rules are evaluated any time new data arrives in Activator. Activator ingests new data from Power BI every hour. This means that events that meet the rule condition trigger an activation at a maximum of one hour after the event occurs. For more information, see [Power BI](data-activator-get-data-power-bi.md). 
