@@ -76,6 +76,9 @@ Use the following steps to complete your notebook deployment using the deploymen
 
 1. Select **Deploy** to deploy your notebooks across the Development, Test, and Production stages.
 
+    > [!NOTE]
+    > Known issue: Frozen cell status in the notebook will be lost during deployment. We are currently working on related tasks.
+
     :::image type="content" source="media\notebook-source-control-deployment\select-items-and-deploy.png" alt-text="Screenshot of select items and deploy." lightbox="media\notebook-source-control-deployment\select-items-and-deploy.png":::
 
     :::image type="content" source="media\notebook-source-control-deployment\deploy-contents-pop-up.png" alt-text="Screenshot of deploy contents pop-up.png." lightbox="media\notebook-source-control-deployment\deploy-contents-pop-up.png":::
