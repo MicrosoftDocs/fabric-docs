@@ -32,6 +32,14 @@ This article provides suggestions to troubleshoot common problems with the ORC f
   | When the error message contains the string "BufferOverflowException", the cause might be a transient error. | Retry the operation. If the problem persists, contact support. |
   | When the error message contains the string "java.lang.ClassCastException:org.apache.hadoop.hive.serde2.io.HiveCharWritable can't be cast to org.apache.hadoop.io.Text", the cause might be a type conversion issue inside Java Runtime. Usually, it means that the source data can't be handled well in Java Runtime. | This is a data issue. Try to use a string instead of char or varchar in ORC format data. |
 
+## Error code: OrcDateTimeExceedLimit
+
+- **Message**: `The Ticks value '%ticks;' for the datetime column must be between valid datetime ticks range -621355968000000000 and 2534022144000000000.`
+
+- **Cause**: If the datetime value is '0001-01-01 00:00:00', it could be caused by the differences between the [Julian calendar and the Gregorian calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar#Difference_between_Julian_and_proleptic_Gregorian_calendar_dates).
+
+- **Recommendation**:  Check the ticks value and avoid using the datetime value '0001-01-01 00:00:00'.
+
 ## Related content
 
 For more troubleshooting help, try these resources:
