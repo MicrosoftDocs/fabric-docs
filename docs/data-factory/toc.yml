@@ -955,6 +955,8 @@
         href: connector-troubleshoot-azure-database-for-postgresql.md
       - name: Azure Files
         href: connector-troubleshoot-azure-files.md
+      - name: Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server
+        href: connector-troubleshoot-synapse-sql.md
       - name: Azure Table Storage
         href: connector-troubleshoot-azure-table-storage.md
       - name: Format
