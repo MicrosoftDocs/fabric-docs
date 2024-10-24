@@ -25,19 +25,19 @@ To activate custom actions from your rules, first define a custom action by crea
 
 ## Create a custom action
 
-A custom action is a reusable action template that you can use in multiple rules within an activator items. Creating a custom action requires familiarity with Power Automate. However, once you create a custom action, other Data Activator users can use the action in any rule, without requiring any knowledge of Power Automate.
+A custom action is a reusable action template that you can use in multiple rules within an activator item. Creating a custom action requires familiarity with Power Automate. However, once you create a custom action, other Data Activator users can use the action in any rule, without requiring any knowledge of Power Automate.
 
 A custom action defines how to call a specific external system from a rule using a flow. It defines a set of *input fields* to pass from your rules to the flow, so that the flow can call the external system. For example, suppose you want to define a custom action that adds a task to [Microsoft To Do](https://to-do.office.com/tasks/). The input fields for such an action might be *Task name*. This custom action would link to a flow that uses a Microsoft To Do connector to create the task on your behalf.
 
 ### Name your action and add input fields
 
-To create a custom action, select **Custom action** from the Home tab or select **New custom action** in the Action type drop down from your rule definition pane. 
+To create a custom action, select **Custom action** from the Home tab or select **New custom action** in the Action type drop-down from your rule definition pane. 
 
 Then, give your action a name such as *Add a To Do task* and define the input fields (such as _Task name_).
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-condition-05.png" alt-text="Screenshot of creating a Data Activator new custom action.":::
 
-The next step is to define your flow in Power Automate. Select **Copy** to copy the connection string, then choose **Open flow builder****.** Data Activator takes you to Power Automate so that you can define the flow.
+The next step is to define your flow in Power Automate. Select **Copy** to copy the connection string, then choose **Open flow builder**. Data Activator takes you to Power Automate so that you can define the flow.
 
 ### Define your flow
 
