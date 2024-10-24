@@ -46,7 +46,7 @@ The following errors are general to the copy activity and could occur with any c
 
 - **Cause**: The self-hosted IR can't find Java Runtime. Java Runtime is required for reading particular sources.
 
-- **Recommendation**:  Check your integration runtime environment, see [Use Self-hosted Integration Runtime](./format-parquet.md#using-self-hosted-integration-runtime).
+- **Recommendation**:  Check your Data Factory runtime environment, see [Use Self-hosted Integration Runtime](./format-parquet.md#using-self-hosted-integration-runtime).
 
 
 #### Error code: 20002
@@ -55,15 +55,15 @@ The following errors are general to the copy activity and could occur with any c
 
 - **Cause**: If the error message contains "Can't create JVM: JNI return code [-6][JNI call failed: Invalid arguments.]," the possible cause is that JVM can't be created because some illegal (global) arguments are set.
 
-- **Recommendation**: Sign in to the machine that hosts *each node* of your self-hosted integration runtime. Check to ensure that the system variable is set correctly, as follows: `_JAVA_OPTIONS "-Xms256m -Xmx16g" with memory bigger than 8G`. Restart all the integration runtime nodes, and then rerun the pipeline.
+- **Recommendation**: Sign in to the machine that hosts *each node* of your self-hosted integration runtime. Check to ensure that the system variable is set correctly, as follows: `_JAVA_OPTIONS "-Xms256m -Xmx16g" with memory bigger than 8G`. Restart all the Data Factory runtime nodes, and then rerun the pipeline.
 
 #### Error code: 20020
 
-- **Message**: `Wildcard in path is not supported in sink dataset. Fix the path: '%setting;'.`
+- **Message**: `Wildcard in path is not supported in destination data. Fix the path: '%setting;'.`
 
-- **Cause**: The sink dataset doesn't support wildcard values.
+- **Cause**: The destination data doesn't support wildcard values.
 
-- **Recommendation**:  Check the sink dataset, and rewrite the path without using a wildcard value.
+- **Recommendation**:  Check the destination data, and rewrite the path without using a wildcard value.
 
 
 ### FIPS issue
@@ -76,7 +76,7 @@ The following errors are general to the copy activity and could occur with any c
 
     Alternatively, if you only want to bypass FIPS and make the activity runs succeed, take the following steps:
 
-    1. Open the folder where Self-hosted IR is installed. The path is usually *C:\Program Files\Microsoft Integration Runtime \<IR version>\Shared*.
+    1. Open the folder where Self-hosted IR is installed. The path is usually *C:\Program Files\Microsoft Data Factory runtime \<IR version>\Shared*.
 
     2. Open the *diawp.exe.config* file and then, at the end of the `<runtime>` section, add `<enforceFIPSPolicy enabled="false"/>`, as shown here:
 
@@ -120,19 +120,19 @@ The following errors are general to the copy activity and could occur with any c
 
 - **Message**: `Managed identity credential is not supported in this version ('%version;') of Self Hosted Integration Runtime.`
 
-- **Recommendation**: Check the supported version and upgrade the integration runtime to a higher version.
+- **Recommendation**: Check the supported version and upgrade the Data Factory runtime to a higher version.
 
 #### Error code: 20551
 
-- **Message**: `The format settings are missing in dataset %dataSetName;.`
+- **Message**: `The format settings are missing in data %dataName;.`
 
-- **Cause**: The dataset type is Binary, which isn't supported.
+- **Cause**: The data type is Binary, which isn't supported.
 
-- **Recommendation**: Use the DelimitedText, Json, Avro, Orc, or Parquet dataset instead.
+- **Recommendation**: Use the DelimitedText, Json, Avro, Orc, or Parquet data instead.
 
-- **Cause**: For the file storage, the format settings are missing in the dataset.
+- **Cause**: For the file storage, the format settings are missing in the data.
 
-- **Recommendation**: Deselect the "Binary copy" in the dataset, and set correct format settings.
+- **Recommendation**: Deselect the "Binary copy" in the data, and set correct format settings.
 
 #### Error code: 20552
 
@@ -144,13 +144,13 @@ The following errors are general to the copy activity and could occur with any c
 
 - **Message**: `Failed to retrieve source file ('%name;') metadata to validate data consistency.`
 
-- **Cause**: There's a transient issue on the sink data store, or retrieving metadata from the sink data store isn't allowed.
+- **Cause**: There's a transient issue on the destination data store, or retrieving metadata from the destination data store isn't allowed.
 
 #### Error code: 20703
 
-- **Message**: `Failed to retrieve sink file ('%name;') metadata to validate data consistency.`
+- **Message**: `Failed to retrieve destination file ('%name;') metadata to validate data consistency.`
 
-- **Cause**: There's a transient issue on the sink data store, or retrieving metadata from the sink data store isn't allowed.
+- **Cause**: There's a transient issue on the destination data store, or retrieving metadata from the destination data store isn't allowed.
 
 #### Error code: 20704
 
@@ -164,7 +164,7 @@ The following errors are general to the copy activity and could occur with any c
 
 - **Message**: `'validateDataConsistency' is not supported in this version ('%version;') of Self Hosted Integration Runtime.`
 
-- **Recommendation**: Check the supported integration runtime version and upgrade it to a higher version, or remove the 'validateDataConsistency' property from copy activities.
+- **Recommendation**: Check the supported Data Factory runtime version and upgrade it to a higher version, or remove the 'validateDataConsistency' property from copy activities.
 
 #### Error code: 20741
 
@@ -204,7 +204,7 @@ The following errors are general to the copy activity and could occur with any c
 
 #### Error code: 20747
 
-- **Message**: `Skip invalid file name is not supported for '%connectorName;' sink.`
+- **Message**: `Skip invalid file name is not supported for '%connectorName;' destination.`
 
 - **Recommendation**: Remove 'invalidFileName' of the skipErrorFile setting in the copy activity payload.
 
@@ -248,7 +248,7 @@ The following errors are general to the copy activity and could occur with any c
 
 - **Message**: `Failed to connect to your instance of Azure Database for PostgreSQL flexible server. '%'`
  
-- **Cause**: Exact cause depends on the text returned in `'%'`. If it's **The operation has timed out**, it can be because the instance of PostgreSQL is stopped or because the network connectivity method configured for your instance doesn't allow connections from the Integration Runtime selected. User or password provided is incorrect. If it's **28P01: password authentication failed for user &lt;youruser&gt;**, it means that the user provided doesn't exist in the instance or that the password is incorrect. If it's **28000: no pg_hba.conf entry for host "*###.###.###.###*", user "&lt;youruser&gt;", database "&lt;yourdatabase&gt;", no encryption**, it means that the encryption method selected isn't compatible with the configuration of the server.
+- **Cause**: Exact cause depends on the text returned in `'%'`. If it's **The operation has timed out**, it can be because the instance of PostgreSQL is stopped or because the network connectivity method configured for your instance doesn't allow connections from the Data Factory runtime selected. User or password provided is incorrect. If it's **28P01: password authentication failed for user &lt;youruser&gt;**, it means that the user provided doesn't exist in the instance or that the password is incorrect. If it's **28000: no pg_hba.conf entry for host "*###.###.###.###*", user "&lt;youruser&gt;", database "&lt;yourdatabase&gt;", no encryption**, it means that the encryption method selected isn't compatible with the configuration of the server.
 
 - **Recommendation**: Confirm that the user provided exists in your instance of PostgreSQL and that the password corresponds to the one currently assigned to that user. Make sure that the encryption method selected is accepted by your instance of PostgreSQL, based on its current configuration. If the network connectivity method of your instance is configured for Private access (virtual network integration), use a Self-Hosted Integration Runtime (IR) to connect to it. If it's configured for Public access (allowed IP addresses), it's recommended to use an Azure IR with managed virtual network and deploy a managed private endpoint to connect to your instance. When it's configured for Public access (allowed IP addresses) a less recommended alternative consists in creating firewall rules in your instance to allow traffic originating on the IP addresses used by the Azure IR you're using.
 

@@ -52,9 +52,9 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 - **Message**: `Column %column; does not exist in Parquet file.`
 
-- **Cause**: The source schema is a mismatch with the sink schema.
+- **Cause**: The source schema is a mismatch with the destination schema.
 
-- **Recommendation**:  Check the mappings in the activity. Make sure that the source column can be mapped to the correct sink column.
+- **Recommendation**:  Check the mappings in the activity. Make sure that the source column can be mapped to the correct destination column.
 
 ## Error code: ParquetInvalidDataFormat
 
@@ -66,19 +66,19 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 ## Error code: ParquetDataCountNotMatchColumnCount
 
-- **Message**: `The data count in a row '%sourceColumnCount;' does not match the column count '%sinkColumnCount;' in given schema.`
+- **Message**: `The data count in a row '%sourceColumnCount;' does not match the column count '%destinationColumnCount;' in given schema.`
 
-- **Cause**:  A mismatch between the source column count and the sink column count.
+- **Cause**:  A mismatch between the source column count and the destination column count.
 
-- **Recommendation**:  Double-check to ensure that the source column count is same as the sink column count in 'mapping'.
+- **Recommendation**:  Double-check to ensure that the source column count is same as the destination column count in 'mapping'.
 
 ## Error code: ParquetDataTypeNotMatchColumnType
 
 - **Message**: `The data type %srcType; is not match given column type %dstType; at column '%columnIndex;'.`
 
-- **Cause**: The data from the source can't be converted to the type that's defined in the sink.
+- **Cause**: The data from the source can't be converted to the type that's defined in the destination.
 
-- **Recommendation**:  Specify a correct type in mapping.sink.
+- **Recommendation**:  Specify a correct type in mapping.destination.
 
 ## Error code: ParquetBridgeInvalidData
 
@@ -135,7 +135,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 - **Resolution**: 
 
     Double-check to see whether:
-    - There are white spaces in the sink column name.
+    - There are white spaces in the destination column name.
     - The first row with white spaces is used as the column name.
     - The type OriginalType is supported. Try to avoid using these special characters: `,;{}()\n\t=`. 
 
@@ -153,7 +153,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 - **Cause**: The column name contains invalid characters.
 
-- **Resolution**: Add or modify the column mapping to make the sink column name valid.
+- **Resolution**: Add or modify the column mapping to make the destination column name valid.
 
 ## The file created by the copy data activity extracts a table that contains a varbinary (max) column
 

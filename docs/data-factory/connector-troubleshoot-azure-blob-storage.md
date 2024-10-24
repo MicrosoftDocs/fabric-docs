@@ -26,11 +26,11 @@ This article provides suggestions to troubleshoot common problems with the Azure
 - 
 -## Invalid property during copy activity
 
-- **Message**: `Copy activity \<Activity Name> has an invalid "source" property. The source type is not compatible with the dataset \<Dataset Name> and its linked service \<Linked Service Name>. Please verify your input against.`
+- **Message**: `Copy activity \<Activity Name> has an invalid "source" property. The source type is not compatible with the data \<data Name> and its connection \<connection Name>. Please verify your input against.`
 
-- **Cause**: The type defined in the dataset is inconsistent with the source or sink type that's defined in the copy activity.
+- **Cause**: The type defined in the data is inconsistent with the source or destination type that's defined in the copy activity.
 
-- **Resolution**: Edit the dataset or pipeline JSON definition to make the types consistent, and then rerun the deployment.
+- **Resolution**: Edit the data or pipeline JSON definition to make the types consistent, and then rerun the deployment.
 
 ## Error code: FIPSModeIsNotSupport
 
@@ -48,13 +48,13 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 ## Error code: AzureStorageOperationFailedConcurrentWrite
 
-- **Message**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
+- **Message**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your Data Factory configuration.`
 
 - **Cause**: You have multiple concurrent copy activity runs or applications writing to the same file.
 
 ## Error code: AzureAppendBlobConcurrentWriteConflict
 
-- **Message**: `Detected concurrent write to the same append blob file, it's possible because you have multiple concurrent copy activities runs or applications writing to the same file '%name;'. Please check your ADF configuration and retry.`
+- **Message**: `Detected concurrent write to the same append blob file, it's possible because you have multiple concurrent copy activities runs or applications writing to the same file '%name;'. Please check your Data Factory configuration and retry.`
 
 - **Cause**: Multiple concurrent writing requests occur, which causes conflicts on file content.
 

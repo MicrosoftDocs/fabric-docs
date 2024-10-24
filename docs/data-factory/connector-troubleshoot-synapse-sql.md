@@ -18,7 +18,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 ## Error code: SqlFailedToConnect
 
-- **Message**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
+- **Message**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the connection configuration is correct, and make sure the SQL Database firewall allows the Data Factory runtime to access.`
 - **Causes and recommendations**: Different causes may lead to this error. Check below list for possible cause analysis and related recommendation.
 
     | Cause analysis                                               | Recommendation                                               |
@@ -41,9 +41,9 @@ This article provides suggestions to troubleshoot common problems with the Azure
     | Cause analysis                                               | Recommendation                                               |
     | :----------------------------------------------------------- | :----------------------------------------------------------- |
     | If the error message contains the string "SqlException", SQL Database throws an error indicating some specific operation failed. | If the SQL error is not clear, try to alter the database to the latest compatibility level '150'. It can throw the latest version SQL errors. For more information, see the [documentation](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat). <br/> For more information about troubleshooting SQL issues, search by SQL error code in [Database engine errors](/sql/relational-databases/errors-events/database-engine-events-and-errors). For further help, contact Azure SQL support. |
-    | If the error message contains the string "PdwManagedToNativeInteropException", it's usually caused by a mismatch between the source and sink column sizes. | Check the size of both the source and sink columns. For further help, contact Azure SQL support. |
+    | If the error message contains the string "PdwManagedToNativeInteropException", it's usually caused by a mismatch between the source and destination column sizes. | Check the size of both the source and destination columns. For further help, contact Azure SQL support. |
     | If the error message contains the string "InvalidOperationException", it's usually caused by invalid input data. | To identify which row has encountered the problem, enable the fault tolerance feature on the copy activity, which can redirect problematic rows to the storage for further investigation. For more information, see [Fault tolerance of copy activity](./copy-activity-fault-tolerance.md). |
-    | If the error message contains "Execution Timeout Expired", it's usually caused by query timeout. | Configure **Query timeout** in the source and **Write batch timeout** in the sink to increase timeout. |
+    | If the error message contains "Execution Timeout Expired", it's usually caused by query timeout. | Configure **Query timeout** in the source and **Write batch timeout** in the destination to increase timeout. |
     | If the error message contains `Cannot find the object "dbo.Contoso" because it does not exist or you do not have permissions.` when you copy data from hybrid into an on-premises SQL Server table, it's caused by the current SQL account doesn't have sufficient permissions to execute requests issued by .NET SqlBulkCopy.WriteToServer or your table or database does not exist. | Switch to a more privileged SQL account or check if your table or database exists. |
 
 ## Error code: SqlUnauthorizedAccess
@@ -60,15 +60,15 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Cause**: The problem could be a SQL database transient failure.
 
-- **Recommendation**:  Retry the operation to update the linked service connection string with a larger connection timeout value.
+- **Recommendation**:  Retry the operation to update the connection connection string with a larger connection timeout value.
 
 ## Error code: SqlAutoCreateTableTypeMapFailed
 
-- **Message**: `Type '%dataType;' in source side cannot be mapped to a type that supported by sink side(column name:'%columnName;') in autocreate table.`
+- **Message**: `Type '%dataType;' in source side cannot be mapped to a type that supported by destination side(column name:'%columnName;') in autocreate table.`
 
 - **Cause**: The autocreation table can't meet the source requirement.
 
-- **Recommendation**:  Update the column type in *mappings*, or manually create the sink table in the target server.
+- **Recommendation**:  Update the column type in *mappings*, or manually create the destination table in the target server.
 
 ## Error code: SqlDataTypeNotSupported
 
@@ -78,9 +78,9 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Recommendation**:  Cast the type to the string in the source SQL query or, in the copy activity column mapping, change the column type to *String*.
 
-- **Cause**: If the issue occurs on the SQL sink and the error is related to SqlDateTime overflow, the data value exceeds the allowed range in the sink table.
+- **Cause**: If the issue occurs on the SQL destination and the error is related to SqlDateTime overflow, the data value exceeds the allowed range in the destination table.
 
-- **Recommendation**:  Update the corresponding column type to the *datetime2* type in the sink table.
+- **Recommendation**:  Update the corresponding column type to the *datetime2* type in the destination table.
 
 ## Error code: SqlInvalidDbStoredProcedure
 
@@ -107,7 +107,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Cause**: The column can't be found because the configuration might be incorrect.
 
-- **Recommendation**:  Verify the column in the query, *structure* in the dataset, and *mappings* in the activity.
+- **Recommendation**:  Verify the column in the query, *structure* in the data, and *mappings* in the activity.
 
 ## Error code: SqlBatchWriteTimeout
 
@@ -121,9 +121,9 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Message**: `SQL transaction commits failed.`
 
-- **Cause**: If exception details constantly indicate a transaction timeout, the network latency between the integration runtime and the database is greater than the default threshold of 30 seconds.
+- **Cause**: If exception details constantly indicate a transaction timeout, the network latency between the Data Factory runtime and the database is greater than the default threshold of 30 seconds.
 
-- **Recommendation**:  Update the SQL-linked service connection string with a *connection timeout* value that's equal to or greater than 120 and rerun the activity.
+- **Recommendation**:  Update the SQL-connection connection string with a *connection timeout* value that's equal to or greater than 120 and rerun the activity.
 
 - **Cause**: If the exception details intermittently indicate that the SQL connection is broken, it might be a transient network failure or a SQL database side issue.
 
@@ -135,7 +135,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Cause**: SQL Bulk Copy failed because it received an invalid column length from the bulk copy program (bcp) utility client.
 
-- **Recommendation**:  To identify which row has encountered the problem, enable the fault tolerance feature on the copy activity. This can redirect problematic rows to the storage for further investigation. For more information, see [Fault tolerance of copy activity](./copy-activity-fault-tolerance.md).
+- **Recommendation**:  To identify which row has encountered the problem, enable the fault tolerance feature on the copy activity. This can redirect problematic rows to the storage for further investigation. For more information, see [Fault tolerance of copy activity](/azure/data-factory/copy-activity-fault-tolerance).
 
 ## Error code: SqlConnectionIsClosed
 
@@ -147,11 +147,11 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 ## Error code: SqlServerInvalidLinkedServiceCredentialMissing
 
-- **Message**: `The SQL Server linked service is invalid with its credential being missing.`
+- **Message**: `The SQL Server connection is invalid with its credential being missing.`
 
-- **Cause**: The linked service was not configured properly.
+- **Cause**: The connection was not configured properly.
 
-- **Recommendation**: Validate and fix the SQL server linked service.
+- **Recommendation**: Validate and fix the SQL server connection.
 
 ## Error code: SqlParallelFailedToDetectPartitionColumn
 
@@ -175,7 +175,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Cause**: No physical partitions are created for the table. Check your database.
 
-- **Recommendation**: Reference [Partitioning tables in dedicated SQL pool](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-partition.md) to solve this issue.
+- **Recommendation**: Reference [Partitioning tables in dedicated SQL pool](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-partition) to solve this issue.
 
 ## Error message: Conversion failed when converting from a character string to uniqueidentifier
 
@@ -188,7 +188,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Cause**: Azure Synapse Analytics PolyBase can't convert an empty string to a GUID.
 
-- **Resolution**: In the copy activity sink, under PolyBase settings, set the **use type default** option to *false*.
+- **Resolution**: In the copy activity destination, under PolyBase settings, set the **use type default** option to *false*.
 
 ## Error message: Expected data type: DECIMAL(x,x), Offending value
 
@@ -202,7 +202,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Cause**: Azure Synapse Analytics PolyBase can't insert an empty string (null value) into a decimal column.
 
-- **Resolution**: In the copy activity sink, under PolyBase settings, set the **use type default** option to false.
+- **Resolution**: In the copy activity destination, under PolyBase settings, set the **use type default** option to false.
 
 ## Error message: Java exception message: HdfsBridge::CreateRecordReader
 
@@ -261,7 +261,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Resolution**: To resolve the issue, try the following:
 
-    1. To troubleshoot which rows have the issue, apply SQL sink [fault tolerance](./copy-activity-fault-tolerance.md), especially `redirectIncompatibleRowSettings`.
+    1. To troubleshoot which rows have the issue, apply SQL destination [fault tolerance](/azure/data-factory/copy-activity-fault-tolerance), especially `redirectIncompatibleRowSettings`.
 
         > [!NOTE]  
         > Fault tolerance might require additional execution time, which could lead to higher costs.
@@ -274,7 +274,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Message**: `User does not have permission to perform this action.`
 
-- **Recommendation**: Make sure the user configured in the Azure Synapse Analytics connector must have 'CONTROL' permission on the target database while using PolyBase to load data. For more detailed information, refer to this [document](./connector-azure-sql-data-warehouse.md#required-database-permission).
+- **Recommendation**: Make sure the user configured in the Azure Synapse Analytics connector must have 'CONTROL' permission on the target database while using PolyBase to load data. For more detailed information, refer to this [document](/azure/data-factory/connector-azure-sql-data-warehouse#required-database-permission).
 
 ## Error code: Msg 105208
 
