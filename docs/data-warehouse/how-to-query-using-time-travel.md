@@ -1,5 +1,5 @@
 ---
-title: "How to: Query using time travel at the statement level (preview)"
+title: "How to: Query using time travel at the statement level"
 description: Learn from samples and examples of querying a warehouse using time travel at the statement level.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -7,7 +7,7 @@ ms.reviewer: ajagadish # Microsoft alias
 ms.custom:
   - build-2024
 ms.topic: how-to
-ms.date: 06/10/2024
+ms.date: 10/23/2024
 ---
 # How to: Query using time travel at the statement level 
 
@@ -119,12 +119,9 @@ OPTION (FOR TIMESTAMP AS OF '2024-05-01T21:55:27.513');
 ```
 
 - The historical data from tables in a view can only be queried beginning from the time the view was created.
-
-- After a view is altered, it can only be queried after the point-in-time (PIT) it was altered.
-
-- If the underlying table of a view is altered without changing the view, the view returns the results as of the point-in-time (PIT) being queried.
-
-- When the underlying table of a view is dropped and recreated without modifying the view, the view returns results from point-in-time (PIT) the table was recreated.
+- After a view is altered, it can only be queried after the point-in-time it was altered.
+- If the underlying table of a view is altered without changing the view, the view returns the results as of the point-in-time being queried, as expected.
+- When the underlying table of a view is dropped and recreated without modifying the view, the view returns results from point-in-time the table was recreated.
 
 ## Limitations
 
