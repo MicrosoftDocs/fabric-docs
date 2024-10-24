@@ -99,7 +99,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Recommendation**:
 
-    1. Check your Azure storage account network settings to see whether the public network access is disabled. If disabled, use a managed virtual network Data Factory runtime  and create a private endpoint  to access. For more information, see [Managed virtual network](managed-virtual-network-private-endpoint.md) and [Build a copy pipeline using managed VNet and private endpoints](tutorial-copy-data-portal-private.md).
+    1. Check your Azure storage account network settings to see whether the public network access is disabled. If disabled, use a managed virtual network Data Factory runtime  and create a private endpoint  to access. For more information, see [Managed virtual network](managed-virtual-network-private-endpoint.md) and [Build a copy pipeline using managed virtual network and private endpoints](tutorial-copy-data-portal-private.md).
 
     1. If you have enabled selected virtual networks and IP addresses in your Azure storage account network setting:
 
