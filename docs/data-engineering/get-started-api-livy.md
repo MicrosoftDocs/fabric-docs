@@ -16,7 +16,7 @@ ms.date: 08/23/2024
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Getting started with Livy API for Fabric Data Engineering by creating a Lakehouse, authenticating with an Entra app token, and submit either batch or session jobs from a remote client to Fabric Spark compute.  You'll need to discover the Livy API endpoint, submit jobs, and monitor the results.
+Get started with Livy API for Fabric Data Engineering by creating a Lakehouse, authenticating with an Entra app token, and then submit either batch or session jobs from a remote client to Fabric Spark compute.  You'll also need to discover the Livy API endpoint, submit jobs, and monitor the results.
 
 ## Prerequisites
 
@@ -93,11 +93,10 @@ For each Fabric workspace, a default starter pool is provisioned, the execution 
 
 ## Submit a Livy API jobs
 
-> [!div class="nextstepaction"]
-> [Submit Session jobs using the Livy API](get-started-api-livy-session.md)
+Now that you've completed the setup of the Livy API you can choose to submit either batch or session jobs.
 
-> [!div class="nextstepaction"]
-> [Submit Batch jobs using the Livy API](get-started-api-livy-batch.md)
+* [Submit Session jobs using the Livy API](get-started-api-livy-session.md)
+* [Submit Batch jobs using the Livy API](get-started-api-livy-batch.md)
 
 ## How to monitor the request history
 
@@ -105,10 +104,13 @@ You can use the Monitoring Hub to see your prior Livy API submissions, and debug
 
 :::image type="content" source="media\Livy-API\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub":::
 
-## Next steps
+## Related content
 
 * [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Get Started with Admin settings for your Fabric Capacity](capacity-settings-overview.md)
 * [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
 * [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app)
+* [Entra permission and consent overview](/entra/identity-platform/permissions-consent-overview)
+* [Fabric REST API Scopes](/rest/api/fabric/articles/scopes)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
+* [Apache Spark application detail](spark-detail-monitoring.md)
