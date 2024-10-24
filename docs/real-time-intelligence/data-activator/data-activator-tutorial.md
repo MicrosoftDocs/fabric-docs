@@ -137,8 +137,10 @@ Once you finish with the rules you created as part of the tutorial, be sure to s
 :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for data activator tutorial.":::
 
 ## Related content
+
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
 
 You can also learn more about Microsoft Fabric:
+
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)

@@ -16,7 +16,7 @@ This article describes the range of detection settings available to you when you
 > [!IMPORTANT]
 > Data Activator is currently in preview.
 
-Our example uses the **Package delivery events** event stream. From this event stream we already created an object named **Temperature** and a rule **Too hot for medicine**. 
+Our example uses the **Package delivery events** event stream. From this event stream we already created an object named **Temperature** and a rule **Too hot for medicine**.
 
 ## Detection setting options
 
@@ -30,11 +30,11 @@ A summarization is made up of an aggregation (average, minimum, sum, etc.), wind
 
 If the **Summarization** section is not shown in your **Definition** pane, select **Add summarization** to open it.
 
-When you create a summarization, you specify a time window for your rule.  The time window ranges from ten seconds to 24 hours. A summarization takes all of the values of the rule properties during each time window and converts them into a single summary value for the time window. In this example, our rule summarization is the **Average** aggregation for the attribute **Temperature**. 
+When you create a summarization, you specify a time window for your rule.  The time window ranges from ten seconds to 24 hours. A summarization takes all of the values of the rule properties during each time window and converts them into a single summary value for the time window. In this example, our rule summarization is the **Average** aggregation for the attribute **Temperature**.
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-summarizations.png" alt-text="Screenshot showing the Monitor section of the Definition pane with the Temperature attribute selected.":::
 
-The summarization also includes a step size. The step size ranges from ten seconds to 24 hours. 
+The summarization also includes a step size. The step size ranges from ten seconds to 24 hours.
 
 |Summary type  |Description  |
 |---------|---------|
@@ -49,13 +49,13 @@ In a filter, you specify a comparison operation for the selected attribute. The 
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using a data activator filter.":::
 
-Use filters on any type of attribute. However, you typically use filters with text values, so that you can create a condition on a subset of your data. For example, you might set a filter of “City=Redmond” on some package-tracking events, to set a condition on only events on packages in Redmond. You can also set a filter on numerical data. In our example, we filtered for temperatures greater than 60. 
+Use filters on any type of attribute. However, you typically use filters with text values, so that you can create a condition on a subset of your data. For example, you might set a filter of “City=Redmond” on some package-tracking events, to set a condition on only events on packages in Redmond. You can also set a filter on numerical data. In our example, we filtered for temperatures greater than 60.
 
 You can specify up to three filters.
 
 ## Conditions
 
-The third detection setting is **Condition**. Use **Condition** to tell Data Activator when to activate the rule. 
+The third detection setting is **Condition**. Use **Condition** to tell Data Activator when to activate the rule.
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of using data activator condition types.":::
 
@@ -67,7 +67,7 @@ Condition types fall into the following categories:
 |**Becomes** conditions     |**Becomes** conditions activate only when the condition becomes true, after being false.  example, "Becomes greater than 10" activates when the value of the property changes from a value of five (less than 10) to a value of 11 (greater than 10). It only activates when the condition goes from being false to true. |
 |**Enters, Exits Range** conditions     |The Enters range condition activates when a property value enters a defined value range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. The exits range condition is similar, except that it activates when the property value goes outside of the range. |
 |**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from specified boundaries.   |
-Text states such as **Contains**, **Ends**, **Begins**  | These conditions activate when text meets the selected condition. 
+Text states such as **Contains**, **Ends**, **Begins**  | These conditions activate when text meets the selected condition.
 
 After you specify a condition type, you specify an occurrence.
 

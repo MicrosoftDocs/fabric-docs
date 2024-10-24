@@ -53,10 +53,9 @@ To assign an event stream to multiple objects, for each object follow the proced
 ## Related content
 
 * [Get started with Data Activator](data-activator-get-started.md)
-
 * [Get data for Data Activator from event streams](data-activator-get-data-eventstreams.md)
-
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
+
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)

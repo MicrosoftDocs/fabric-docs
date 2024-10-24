@@ -150,12 +150,12 @@ landingContent:
        - linkListType: overview
          links:
           - text: What is Data Activator?
-            url: ../data-activator/data-activator-introduction.md
+            url: data-activator/data-activator-introduction.md
        - linkListType: how-to-guide
          links:
           - text: Get data from Real-Time Dashboard
-            url: ../data-activator/data-activator-get-data-real-time-dashboard.md
+            url: data-activator/data-activator-get-data-real-time-dashboard.md
           - text: Get data from Power BI
-            url: ../data-activator/data-activator-get-data-power-bi.md
+            url: data-activator/data-activator-get-data-power-bi.md
           - text: Get data from Eventstreams
-            url: ../data-activator/data-activator-get-data-eventstreams.md
+            url: data-activator/data-activator-get-data-eventstreams.md
