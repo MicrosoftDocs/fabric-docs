@@ -54,7 +54,7 @@ Before you use the other REST APIs, you need to have the bearer token.
 
 ### Option 1: Using MSAL.Net
 
-Refer to the [Get Token section of the Fabric API quickstart](../get-started/fabric-api-quickstart.md#get-token) as an example of how to obtain the MSAL authorization token.
+Refer to the [Get Token section of the Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token) as an example of how to obtain the MSAL authorization token.
 
 Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: _Workspace.ReadWrite.All_, _Item.ReadWrite.All_. For more information about token acquisition with MSAL.Net to, see [Token Acquisition - Microsoft Authentication Library for .NET](/entra/msal/dotnet/acquiring-tokens/overview).
 
