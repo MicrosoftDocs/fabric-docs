@@ -1,12 +1,13 @@
 ---
 title: Set alerts on streams in Real-Time hub
 description: This article describes how to set alerts on streams in Real-Time hub.
-author: ajetasin
-ms.author: ajetasi
+author: mystina
+ms.author: majia
 ms.topic: how-to
 ms.custom:
   - build-2024
 ms.date: 05/21/2024
+ms.search.form: Data Activator Eventstream Onramp
 ---
 
 # Set alerts on streams in Real-Time hub (preview)
@@ -24,14 +25,13 @@ This article describes how to set alerts on streams in Real-Time hub.
 
     :::image type="content" source="./media/set-alerts-data-streams/set-alert-button.png" alt-text="Screenshot that shows the selection of the Set alert button on the data stream detail page." lightbox="./media/set-alerts-data-streams/set-alert-button.png":::
     
-
 ## Set alert
 
 On the **Set alert** page, follow these steps:
 
-1. Confirm that **Source** set to the name of your eventstream. 
+1. Confirm that **Source** set to the name of your eventstream.
 1. For **Condition**, select one of the following options:
-    1. To monitor each event with no condition, select **On each event**. 
+    1. To monitor each event with no condition, select **On each event**.
     1. To monitor events that satisfy a condition, select **On each event when**, select a field, select a condition, and a value. 
 
         :::image type="content" source="./media/set-alerts-data-streams/event-condition.png" alt-text="Screenshot that shows the condition for an alert." lightbox="./media/set-alerts-data-streams/event-condition.png":::

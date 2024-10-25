@@ -5,6 +5,8 @@ items:
   href: cicd-overview.md
 - name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
+- name: CI/CD workflow options in Fabric
+  href: manage-deployment.md
 - name: Deployment pipelines
   items:
   - name: New deployment pipelines interface
@@ -25,7 +27,7 @@ items:
     href: deployment-pipelines/deployment-history.md
   - name: Create deployment rules
     href: deployment-pipelines/create-rules.md
-  - name: Automate deployment pipelines for Power BI items
+  - name: Automate deployment pipelines for Power BI items only
     href: deployment-pipelines/pipeline-automation.md
   - name: Automate deployment pipelines for Fabric
     href: deployment-pipelines/pipeline-automation-fabric.md

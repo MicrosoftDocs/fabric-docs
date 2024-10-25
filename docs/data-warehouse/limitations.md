@@ -4,7 +4,7 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo
-ms.date: 08/21/2024
+ms.date: 09/26/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -19,7 +19,7 @@ This article details the current limitations in [!INCLUDE [product-name](../incl
 
 ## Limitations
 
-Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. More functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-fabric-roadmap?ft=All).
+Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. More functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
 
 - Data warehousing is not supported for *multiple* geographies at this time.
 - Currently, parquet files that are no longer needed are not removed from storage by garbage collection.
@@ -45,7 +45,10 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 - Data should be in Delta Parquet format to be autodiscovered in the [!INCLUDE [fabricse](includes/fabric-se.md)]. [Delta Lake is an open-source storage framework](https://delta.io/) that enables building Lakehouse architecture.
 
-- Tables with renamed columns aren't supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. 
+- Tables with renamed columns aren't supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
+
+- [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) by name is supported, but Delta column mapping by ID is not supported. For more information, see [Delta Lake features and Fabric experiences](../get-started/delta-lake-interoperability.md#delta-lake-features-and-fabric-experiences).
+    - [Delta column mapping in the SQL analytics endpoint](https://blog.fabric.microsoft.com/blog/fabric-september-2024-monthly-update?ft=All#post-14247-_Toc177485830) is currently in preview.
 
 - Delta tables created outside of the `/tables` folder aren't available in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 

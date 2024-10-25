@@ -6,7 +6,7 @@ ms.author: makromer
 ms.topic: concept-article
 ms.custom:
   - build-2024
-ms.date: 05/06/2024
+ms.date: 09/16/2024
 ---
 
 # Data pipelines storage event triggers in Data Factory (Preview)
@@ -84,5 +84,5 @@ You might notice the use of a _?_ after the _pipeline()_ object reference, which
 
 ## Related content
 
-- [Create a Reflex trigger](../data-activator/data-activator-get-started.md#create-a-reflex-item)
+- [Create a Reflex trigger](../data-activator/data-activator-get-started.md#create-a-data-activator-reflex-item)
 - [Microsoft Fabric event streams](../real-time-analytics/event-streams/overview.md)

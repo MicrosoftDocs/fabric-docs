@@ -4,6 +4,7 @@ description: Understand some of the calculations that the Microsoft Fabric Capac
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
+show_latex: true
 ms.custom:
 ms.date: 12/31/2023
 ---

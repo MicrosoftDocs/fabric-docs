@@ -94,6 +94,12 @@ For supported data types and more information, see [data types](data-types.md#au
 
 For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
 
+## Data Compaction
+
+Data compaction consolidates smaller Parquet files into fewer, larger files, which optimizes read operations. This process also helps in efficiently managing deleted rows by eliminating them from immutable Parquet files. The data compaction process involves re-writing tables or segments of tables into new Parquet files that are optimized for performance. For more information, see [Blog: Automatic Data Compaction for Fabric Warehouse](https://blog.fabric.microsoft.com/blog/announcing-automatic-data-compaction-for-fabric-warehouse/).
+
+The data compaction process is seamlessly integrated into the warehouse. As queries are executed, the system identifies tables that could benefit from compaction and performs necessary evaluations. There is no manual way to trigger data compaction.
+
 ## Related content
 
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

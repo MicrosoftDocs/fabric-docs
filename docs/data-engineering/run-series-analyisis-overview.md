@@ -13,6 +13,9 @@ ms.search.form: run_series_analysis
 
 # What is Apache Spark run series analysis?  
 
+> [!NOTE]
+> The Apache Spark run series feature supports only Spark versions 3.4 and above.
+
 The Apache Spark run series automatically categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs from the same notebook or Spark job definition.
 
 The run series feature illustrates the duration trend and data input or output  trend for each Spark application instance. It automatically scans the run series, detects anomalies, and provides detailed views for individual Spark applications.

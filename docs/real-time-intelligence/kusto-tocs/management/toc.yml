@@ -54,13 +54,14 @@ items:
     href: /kusto/management/databases?view=microsoft-fabric&preserve-view=true
     items:
     - name: .show databases command
+      displayName: .show databases command, .show cluster databases command
       href: /kusto/management/show-databases?view=microsoft-fabric&preserve-view=true
     - name: .show database command
       href: /kusto/management/show-database?view=microsoft-fabric&preserve-view=true
-    - name: .show cluster databases command
-      href: /kusto/management/show-cluster-database?view=microsoft-fabric&preserve-view=true
     - name: .alter database prettyname command
-      href: /kusto/management/alter-database?view=microsoft-fabric&preserve-view=true
+      href: /kusto/management/alter-database-prettyname?view=microsoft-fabric&preserve-view=true
+    - name: .drop database prettyname command
+      href: /kusto/management/drop-database-prettyname?view=microsoft-fabric&preserve-view=true
     - name: .show database schema command
       displayName: .show databases schema
       href: /kusto/management/show-schema-database?view=microsoft-fabric&preserve-view=true
@@ -619,11 +620,11 @@ items:
   - name: Access control
     items:
     - name: Access control overview
-      href: /kusto/management/../access-control/index?view=microsoft-fabric&preserve-view=true
-    - name: Kusto role-based Access Control
-      href: /kusto/management/../access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true
+      href: /kusto/access-control/index?view=microsoft-fabric&preserve-view=true
+    - name: Role-based access control
+      href: /kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true
     - name: Microsoft Entra App registration
-      href: /kusto/management/../access-control/provision-entra-id-app?view=microsoft-fabric&preserve-view=true
+      href: /kusto/access-control/provision-entra-id-app?view=microsoft-fabric&preserve-view=true
   - name: Manage database roles
     href: /kusto/management/manage-database-security-roles?view=microsoft-fabric&preserve-view=true
     displayName: .show principal, principal access, security roles, roles, rbac
@@ -649,9 +650,9 @@ items:
 - name: Data ingestion
   items:
   - name: Data formats supported for ingestion
-    href: /kusto/management/../ingestion-supported-formats?view=microsoft-fabric&preserve-view=true
+    href: /kusto/ingestion-supported-formats?view=microsoft-fabric&preserve-view=true
   - name: Ingestion properties
-    href: /kusto/management/../ingestion-properties?view=microsoft-fabric&preserve-view=true
+    href: /kusto/ingestion-properties?view=microsoft-fabric&preserve-view=true
   - name: Ingest from storage
     displayName: .ingest into, pull data, pulling ingestion
     href: /kusto/management/data-ingestion/ingest-from-storage?view=microsoft-fabric&preserve-view=true
@@ -682,6 +683,9 @@ items:
   - name: .show streamingingestion failures command
     displayName: .show streaming ingestion failures
     href: /kusto/management/streaming-ingestion-failures?view=microsoft-fabric&preserve-view=true
+  - name: Data operations
+    displayName: .show data operation command
+    href: /kusto/management/show-data-operations?view=microsoft-fabric&preserve-view=true
 - name: Data export
   href: /kusto/management/data-export/index?view=microsoft-fabric&preserve-view=true
   items:
