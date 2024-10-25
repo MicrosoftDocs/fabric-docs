@@ -21,7 +21,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 1. Select **Real-Time** on the left navigation bar.
 1. Select **+ Connect data source** in the top-right corner of the page. 
 
-    :::image type="content" source="media/tutorial/get-events.png" alt-text="Screenshot of Real-time hub with get events highlighted." lightbox="media/tutorial/get-events.png":::
+    :::image type="content" source="media/tutorial/connect-data-source.png" alt-text="Screenshot of Real-time hub with get events highlighted." lightbox="media/tutorial/connect-data-source.png":::
 1. On the **Data sources** page, select **Sample scenarios** category, and then select **Connect** on the **Bicycle rentals** tile.
 
     :::image type="content" source="media/tutorial/select-sample-source.png" alt-text="Screenshot of Data sources page with the Bicycle rentals scenario selected." lightbox="media/tutorial/select-sample-source.png":::    
@@ -82,7 +82,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
     A new tile is created entitled *Eventhouse*.
 1. Select the pencil icon on the *Eventhouse* tile.
 
-    :::image type="content" source="media/tutorial/pencil-on-event-house.png" alt-text="Screenshot showing the pencil icon selected on Eventhouse tile." source="media/tutorial/pencil-on-event-house.png":::    
+    :::image type="content" source="media/tutorial/pencil-on-event-house.png" alt-text="Screenshot showing the pencil icon selected on Eventhouse tile." lightbox="media/tutorial/pencil-on-event-house.png":::    
 1. Enter the following information in the **Eventhouse** pane:
 
     :::image type="content" source="media/tutorial/kql-database-details.png" alt-text="Screenshot showing the Eventhouse destination pane in Real-Time Intelligence.":::
@@ -100,7 +100,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 1. Select **Save**.
 1. From the menu ribbon, select **Publish**.
 
-    :::image type="content" source="media/tutorial/publish-button.png" alt-text="Screenshot showing the Publish button on the ribbon.":::
+    :::image type="content" source="media/tutorial/publish-button.png" alt-text="Screenshot showing the Publish button on the ribbon." lightbox="media/tutorial/publish-button.png":::
 
     The eventstream is now set up to transform events and send them to a KQL database.
 
