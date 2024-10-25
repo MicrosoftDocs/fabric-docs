@@ -86,9 +86,9 @@ else:
 
 if "access_token" in result:
     access_token = result['access_token']
-    api_base_url_mist='https://api.fabric.microsoft.com/v1/'
-    livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
-    headers = {"Authorization": "Bearer " + access_token}    
+    api_base_url_mist='https://msitapi.fabric.microsoft.com/v1/'
+    livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"    
+    headers = {"Authorization": "Bearer " + access_token}   
 ```
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose who you login as.
@@ -238,7 +238,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and fianlly a Session Livy API.
 
-## Next steps
+## Related content
 
 * [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md)

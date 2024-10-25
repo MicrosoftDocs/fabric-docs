@@ -230,7 +230,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Entra app token, Livy API endpoint URL, authentication against your Lakehouse, a Spark payload in your Lakehouse, and fianlly a batch Livy API session.
 
-## Next steps
+## Related content
 
 * [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Submit session jobs using the Livy API](get-started-api-livy-session.md)
