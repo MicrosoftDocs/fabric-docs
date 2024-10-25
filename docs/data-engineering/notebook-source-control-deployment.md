@@ -63,6 +63,7 @@ You can also use Deployment pipeline to deploy your notebook code across differe
 > - Start from October, Fabric notebook supports auto-binding feature that will bind the default lakehouse and attached environment within the same workspace when deploying to next stage. The change will have impacts to existing notebooks in deployment pipeline.
 >   - The default lakehouse and attached environment (when all dependent items are in the same workspace) will be replaced by newly generated items in target workspace, the notebook metadata change will be highlighted in the diff view in next round of deployment.
 >   - You can set deployment rules for default lakehouse to override the auto-binded lakehouse.
+>   - Known issue: Frozen cell status in the notebook will be lost during deployment. We are currently working on related tasks.
 
 Use the following steps to complete your notebook deployment using the deployment pipeline.
 
@@ -75,9 +76,6 @@ Use the following steps to complete your notebook deployment using the deploymen
     :::image type="content" source="media\notebook-source-control-deployment\compare-stages.png" alt-text="Screenshot of notebook in deployment pipeline." lightbox="media\notebook-source-control-deployment\compare-stages.png":::
 
 1. Select **Deploy** to deploy your notebooks across the Development, Test, and Production stages.
-
-    > [!NOTE]
-    > Known issue: Frozen cell status in the notebook will be lost during deployment. We are currently working on related tasks.
 
     :::image type="content" source="media\notebook-source-control-deployment\select-items-and-deploy.png" alt-text="Screenshot of select items and deploy." lightbox="media\notebook-source-control-deployment\select-items-and-deploy.png":::
 
