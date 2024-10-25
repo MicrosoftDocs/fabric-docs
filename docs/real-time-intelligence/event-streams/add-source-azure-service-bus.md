@@ -27,10 +27,8 @@ Before you start, you must complete the following prerequisites:
 
 
 ### Create an eventstream
-
 [!INCLUDE [create-eventstream](./includes/create-eventstream.md)]
-[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
-    
+
 ## Configure Azure Service Bus connector
 [!INCLUDE [azure-service-bus-connector](./includes/azure-service-bus-source-connector.md)]
 
@@ -43,21 +41,4 @@ After you complete these steps, the Azure event hub is available for visualizati
 :::image type="content" source="./media/add-source-azure-service-bus/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
 ## Related content
-
-To learn how to add other sources to an eventstream, see the following articles: 
-
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
-- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Confluent Kafka](add-source-confluent-kafka.md)
-- [Custom endpoint](add-source-custom-app.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
-- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [Sample data](add-source-sample-data.md)
-- [Azure Blob Storage events](add-source-azure-blob-storage.md)
-- [Fabric workspace events](add-source-fabric-workspace.md)
-
-
+For a list of all sources Microsoft Fabric event streams support, see [Add and manage an event source](add-manage-eventstream-sources.md).
