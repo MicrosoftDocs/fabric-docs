@@ -97,6 +97,13 @@ Data Activator imposes the following limits on the number of actions that may oc
 |custom action |Power Automate flow executions/rule/hour      |10000      |
 |Fabric item |Activations/user/minute| 50   |
 
+## Maximum number of Data Activator items
+
+Your organization may have up to 250 Data Activator items per region. You will get an error message if you try to create more than this number of items. To resolve the error, either:
+
+* Use an existing Data Activator item instead of creating a new item, or
+* Delete some of your existing Data Activator items.
+
 ## Related content
 
 * [Get started with Data Activator](data-activator-get-started.md)
