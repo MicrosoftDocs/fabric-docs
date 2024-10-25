@@ -4,7 +4,7 @@ description: A known issue is posted where Semantic model refresh fails due to c
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/17/2024
+ms.date: 10/25/2024
 ms.custom: known-issue-887
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-887
 
 You can have a calendar table in your semantic model. Even if you made no changes, the semantic model refresh now fails with a circular dependency error.
 
-**Status:** Open
+**Status:** Fixed: October 25, 2024
 
 **Product Experience:** Power BI
 
