@@ -150,8 +150,6 @@ With the setup of the linked services completed, you can import the template and
 
 1. Double click on the data flow activity in the pipeline open the mapping dataflow to configure your source and sink. First, select the SAP CDC source transfer, and select the **Source options** tab. Provide the detail properties of your source object in **ODP context**, **ODP name** and **Key columns** (as a JSON array). Then select a **Run mode**. For details on these properties, refer to [Azure Data Factory documentation for SAP change data capture capabilities](/azure/data-factory/sap-change-data-capture-introduction-architecture).
 
-   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/configure-sap-source-options.png" lightbox="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/configure-sap-source-options.png" alt-text="Screenshot showing where to configure the Source options for the SAP CDC source transfer.":::
-
 1. Select the sink transformation of the data flow, and then select the **Settings** tab, and enter the **Table name** for the Lakehouse table in your Fabric workspace. Select the radio button **Custom expression** of the **Key columns** property and enter the key columns of your source as a JSON array.
 
    :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/fabric-sink-settings.png" lightbox="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/fabric-sink-settings.png" alt-text="Screenshot showing the Settings for the Fabric OneLake sink.":::
