@@ -47,6 +47,6 @@ Alternatively, if you just want to learn how to use Data Activator using sample 
 
 ## Related content
 
-- [Enable Data Activator](../admin/data-activator-switch.md)
+- [Enable Data Activator](../../admin/data-activator-switch.md)
 - [What is Data Activator?](data-activator-introduction.md)
-- [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

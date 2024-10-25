@@ -569,11 +569,6 @@
       "source_path_from_root": "/docs/data-activator/index.yml",
       "redirect_url": "/fabric/real-time-intelligence/data-activator/index",
       "redirect_document_id": true
-    },
-    {
-      "source_path_from_root": "/docs/data-activator/toc.yml",
-      "redirect_url": "/fabric/real-time-intelligence/data-activator/toc",
-      "redirect_document_id": true
     }
   ]
 }

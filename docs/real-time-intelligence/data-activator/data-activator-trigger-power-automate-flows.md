@@ -47,7 +47,7 @@ The flow is prepopulated with an action for Data Activator.
 > You must paste the connection string from the previous step into this action, as shown in the following screenshot. Select **When a Data Activator rule activates** and paste the connection string as shown in the following screenshot. Once you do so, add further steps to your flow as needed, and save the flow.
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-06.png" alt-text="Screenshot of defining a flow for data activator.":::
 
-To access your custom input fields in the flow, on the field you want to customize input click on **fx**. 
+To access your custom input fields in the flow, on the field you want to customize input click on **fx**.
 
 Replace NAME\_OF\_INPUT\_FIELD with the name of your input field and click **Add**. You can browse and select additional properties in the **Dynamic content** tab.
 
@@ -57,7 +57,7 @@ triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
 
 ### Complete your custom action
 
-After you save your flow, return to Data Activator. Upon successful saving of the flow, you see a confirmation box in Data Activator. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a trigger](#call-your-custom-action-from-a-trigger). 
+After you save your flow, return to Data Activator. Upon successful saving of the flow, you see a confirmation box in Data Activator. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a trigger](#call-your-custom-action-from-a-trigger).
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-07.png" alt-text="Screenshot of custom action completion for data activator.":::
 
@@ -81,4 +81,4 @@ When your rule activates, it calls your flow, sending it the values of the input
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

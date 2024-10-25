@@ -40,4 +40,4 @@ Once you enter all of the required information, select **Save** to save the Data
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

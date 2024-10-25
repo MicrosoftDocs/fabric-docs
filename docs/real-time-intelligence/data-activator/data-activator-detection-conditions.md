@@ -11,7 +11,7 @@ ms.search.form: Data Activator Detection Condition
 
 # Detection settings in Data Activator
 
-This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Data Activator and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you are interested in tracking. 
+This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Data Activator and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you are interested in tracking.
 
 > [!IMPORTANT]
 > Data Activator is currently in preview.
@@ -45,7 +45,7 @@ Total  | Computes the total value of the property or column during that time win
 
 ## Filters
 
-In a filter, you specify a comparison operation for the selected attribute. The filter retains only those events that meet the comparison condition. All other events are removed from consideration for the rule. To open the filter section, select **Add filter** from the **Definition** pane. You may have to scroll up to see the Filter and **Operation** field. 
+In a filter, you specify a comparison operation for the selected attribute. The filter retains only those events that meet the comparison condition. All other events are removed from consideration for the rule. To open the filter section, select **Add filter** from the **Definition** pane. You may have to scroll up to see the Filter and **Operation** field.
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using a data activator filter.":::
 
@@ -87,4 +87,4 @@ The occurrence indicates how long, or how many times, the condition must be true
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

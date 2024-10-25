@@ -83,7 +83,7 @@ The following error codes represent Activator problems that can occur when your 
 ### CapacityLimitExceeded
 Your account exceeded the limit of your Fabric capacity for more than 24 hours. When you exceed your capacity, throttling policies are applied and Activator pauses rules evaluation, background operations, and activations. To resolve this problem, contact your capacity administrator and ask them to review capacity usage and upgrade as needed. Once your capacity issue is resolved, make sure to reactivate your rules.
 
-Learn more with [Understand your Fabric capacity throttling](https://go.microsoft.com/fwlink/?linkid=2293008). 
+Learn more with [Understand your Fabric capacity throttling](https://go.microsoft.com/fwlink/?linkid=2293008).
 
 ## Alert and Action Error codes
 
@@ -95,7 +95,7 @@ This error code means that Data Activator couldn't locate the recipient of your 
 
 ### RecipientThrottled
 
-This error code means that Data Activator couldn't alert the recipient of your trigger because the recipient receives too many messages from Data Activator. The article [Data Activator limitations](./data-activator-limitations.md) lists the maximum number of messages that you can send from a trigger. To resolve this problem, change the definition of your trigger so that it activates less often.
+This error code means that Data Activator couldn't alert the recipient of your trigger because the recipient receives too many messages from Data Activator. The article [Data Activator limitations](data-activator-limitations.md) lists the maximum number of messages that you can send from a trigger. To resolve this problem, change the definition of your trigger so that it activates less often.
 
 ### BotBlockedByUser
 
@@ -125,4 +125,4 @@ This error code means that you have a trigger that sends a Teams alert, and that
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
