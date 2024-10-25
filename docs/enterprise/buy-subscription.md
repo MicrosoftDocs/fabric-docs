@@ -78,7 +78,26 @@ To buy an Azure SKU, follow these steps:
 
 6. Select **Review + create**.
 
-## Microsoft 365 SKUs
+### Fabric Quotas
+This section explains how to request a quota increase for Microsoft Fabric.
+
+##### Create quota increase request
+To request an increase to your quota, follow these steps:
+1.	Go to the New support request page in the Azure portal by following the steps to [Open a support request](https://learn.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+2.	On the Problem description tab of the New support request page, choose Service and subscription limits (quotas) for the Issue type, and your subscription from the drop-down. For Quota type, type in Fabric and choose the appropriate product: Microsoft Fabric.
+3.	Select Next: Solutions >> to go to the Additional details tab.
+4.	On the Additional details tab, under Problem details, select Enter details to enter additional information.
+
+Selecting Enter details displays the Quota details window that allows you to add additional information. 
+Specify your new limits on the Quota details window, and then use Save and continue to apply your new limits and navigate back to the New support request page.
+
+#### Submit your request
+The final step is to fill in the remaining details of your quota request. Then select Next: Review + create>>, and after reviewing the request details, select Create to submit the request.
+
+#### Additional Information
+[Azure subscription and service limits, quotas, and constraints](../../../azure/azure-resource-manager/management/azure-subscription-service-limits.md)
+
+### Microsoft 365 SKUs
 
 Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it's [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. Power BI EM SKUs don't support Microsoft Fabric.
 
