@@ -24,7 +24,7 @@ If you're using external data sharing, table discovery in the SQL analytics endp
 
 ## Solutions and workarounds
 
-There's no workaround for the SQL analytics endpoint table discovery not working. As a workaround for the blob API failures, use a [DFS alternative for the same activity](/rest/api/storageservices/datalakestoragegen2/path?view=rest-storageservices-datalakestoragegen2-2019-12-12).
+There's no workaround for the SQL analytics endpoint table discovery not working. As a workaround for the blob API failures, use a [DFS alternative for the same activity](/rest/api/storageservices/datalakestoragegen2/path).
 
 ## Next steps
 
