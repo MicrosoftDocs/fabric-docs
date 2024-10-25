@@ -212,11 +212,11 @@ Dataverse shortcuts use a delegated authorization model. In this model, the shor
 
 ## Caching
 
-Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
+Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  The retention period for cached files can be set from 1-28 days.  Each time the file is accessed, the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than the selected retention period, it is purged from the cache. Individual files greater than 1GB in size are not cached.
 > [!NOTE]
 > Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
 
-To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and select **Save**.
+To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and select the **Retention Period**.
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-cache-settings.png" alt-text="Screenshot of workspace settings panel with OneLake tab selected." lightbox="media\onelake-shortcuts\shortcut-cache-settings.png":::
 
