@@ -14,7 +14,7 @@ ms.search.form: run_series_analysis
 # What is Apache Spark run series analysis?  
 
 > [!NOTE]
-> The Apache Spark run series feature supports only Spark versions 3.4 and above. Currently Spark version 3.3 and running application is not supported.
+> The Apache Spark run series feature supports only Spark versions 3.4 and above.
 
 The Apache Spark run series automatically categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs from the same notebook or Spark job definition.
 
@@ -29,6 +29,10 @@ The run series analysis feature offers the following key capabilities:
 - **Outlier detection and analysis:** Detect and analyze outliers in the run series to identify potential causes.
 
 - **Detailed run instance view:** Select a specific run instance to get detailed information on it's time distribution. These details be used to identify opportunities for performance enhancement, and the corresponding Spark configurations.
+
+
+> [!NOTE]
+> Apache Spark recurring job trend and anomaly analysis feature currently doesn't support Spark 3.3 and running applications.
 
 ## When to use run series analysis?
 
