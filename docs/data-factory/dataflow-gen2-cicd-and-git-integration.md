@@ -105,4 +105,5 @@ With CICD and Git integration support, we also introduced the Fabric CRUDL API t
 - By default the staging artifacts are visible in the workspace. This will be hidden in the future but for now make sure they are not synced to the GIT repository as it may cause issues along the way for updating the workspace from git changes.
 - "Get Item" and "List Item Access Details" API's does not return the correct information if you filter on a specific type of item. When you do not specify the type it will return the new Dataflow Gen2 with CI/CD and GIT support. Filtering for "dataflow"  type will result in only non-cicd dataflows.
 - Orchestrating a refresh of a dataflow gen2 with CI/CD and Git support is not possible in fabric data pipelines.
-- Workspace view does not show if a refresh is ongoing for the dataflow. 
+- Workspace view does not show if a refresh is ongoing for the dataflow.
+- The dataflow Gen2 with CI/CD and Git support does not support take ownership feature in the fabric workspace. This means that the dataflow can only be edited by the creator of the dataflow. If you want to work together on a dataflow, you can use branches in the Git repository and create a pull request to merge the changes. learn more [here](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
