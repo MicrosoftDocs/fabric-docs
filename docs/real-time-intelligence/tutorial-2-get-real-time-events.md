@@ -55,7 +55,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
     1. In **Operation name**, enter **TutorialTransform**. 
     1. Select **Add all fields**
     
-    :::image type="content" source="media/tutorial/add-all-fields.png" alt-text="Screenshot with the Add all fields button selected." lightbox="media/tutorial/add-all-fields.png":::                     
+        :::image type="content" source="media/tutorial/add-all-fields.png" alt-text="Screenshot with the Add all fields button selected." lightbox="media/tutorial/add-all-fields.png":::                     
     1. Select **+ Add field**.
     1. From the **Field** dropdown, select **Built-in Date Time Function** > **SYSTEM.Timestamp()**
 
@@ -63,12 +63,12 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
     1. In **Name**, enter **Timestamp**.
     1. Select **Add**.
 
-    :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the eventstream manage fields tile in Real-Time Intelligence.":::
-1. Confirm that **Timestamp** is added to the field list, and select **Save**.
+        :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the eventstream manage fields tile in Real-Time Intelligence.":::
+    1. Confirm that **Timestamp** is added to the field list, and select **Save**.
 
-    :::image type="content" source="media/tutorial/save-manage-fields-settings.png" alt-text="Screenshot showing the Manage fields window with Save button highlighted.":::    
+        :::image type="content" source="media/tutorial/save-manage-fields-settings.png" alt-text="Screenshot showing the Manage fields window with Save button highlighted.":::    
 
-    The **TutorialTransform** tile now displays but with an error, because the destination isn't configured yet. 
+        The **TutorialTransform** tile now displays but with an error, because the destination isn't configured yet. 
 
 ## Create a destination
 
