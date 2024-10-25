@@ -9,7 +9,7 @@ ms.date: 10/24/2024
 
 # REST API capabilities for data pipelines in Fabric Data Factory (Preview)
 
-Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their data pipelines efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations -- including pipeline CRUD (Create, Read, Update, and Delete), scheduling, and monitoring -- making it easier for users to manage their data integration processes.
+Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their data pipelines efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations, including pipeline CRUD (Create, Read, Update, and Delete), scheduling, and monitoring. This makes it easier for users to manage their data integration processes.
 
 ## Mounting APIs
 
@@ -20,13 +20,13 @@ The Mounting Public APIs are now available. These APIs allow you to seamlessly i
 The APIs for pipelines in Fabric Data Factory can be used in various scenarios:
 
 - **Automated deployment**: Automate the deployment of data pipelines across different environments (development, testing, production) using CI/CD practices.
-- **Monitoring and alerts**: Set up automated monitoring and alerting systems to track the status of data pipelines and receive notifications in case of failures or performance issues.
+- **Monitoring and alerts**: Set up automated monitoring and alerting systems to track the status of data pipelines and receive notifications if failures or performance issues occur.
 - **Data integration**: Integrate data from multiple sources, such as databases, data lakes, and cloud services, into a unified data pipeline for processing and analysis.
 - **Error handling**: Implement custom error handling and retry mechanisms to ensure data pipelines run smoothly and recover from failures.
 
 ## Understanding APIs
 
-To effectively use the APIs for pipelines in Fabric Data Factory, it is essential to understand the key concepts and components:
+To effectively use the APIs for pipelines in Fabric Data Factory, it's essential to understand the key concepts and components:
 
 - **Endpoints**: The API endpoints provide access to various pipeline operations, such as creating, updating, and deleting pipelines.
 - **Authentication**: Secure access to the APIs using authentication mechanisms like OAuth or API keys.
@@ -50,7 +50,7 @@ The following examples show how to to create, update, and manage pipelines using
 
 ## Obtain an authorization token
 
-Before you use the other REST APIs, you’ll need to have the bearer token.
+Before you use the other REST APIs, you need to have the bearer token.
 
 ### Option 1: Using MSAL.Net
 
@@ -58,7 +58,7 @@ Refer to the [Get Token section of the Fabric API quickstart](/get-started/fabri
 
 Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: _Workspace.ReadWrite.All_, _Item.ReadWrite.All_. For more information about token acquisition with MSAL.Net to, see [Token Acquisition - Microsoft Authentication Library for .NET](/entra/msal/dotnet/acquiring-tokens/overview).
 
-Copy the _Application ID_ (also called the _ClientId_)  you copied earlier and use it for _ClientId_ variable in the examples below.
+Copy the _Application ID_ (also called the _ClientId_)  you copied earlier and use it for _ClientId_ variable in the following examples.
 
 ### Option 2: Using the Fabric Portal
 
@@ -67,7 +67,8 @@ Sign in into the Fabric Portal for the Tenant you want to test on, and press F12
 ```azurecli
 powerBIAccessToken
 ```
-Copy the token and use it for the _ClientId_ variable in the examples below.
+
+Copy the token and use it for the _ClientId_ variable in the following examples.
 
 ## Create a pipeline
 
@@ -455,10 +456,10 @@ Cancel a pipeline’s job instance.
 
 ## Current limitations
 
-- Platform Limitation: Service Principal authentication is not supported at the moment.
+- Platform Limitation: Service Principal authentication isn't supported at the moment.
 - JOB Limitation: Run APIs are invokable, but the actual run never succeeds (just like run/refresh from UI).
-- Non-PowerBI Fabric Items: The workspace must be on a support Fabric capacity.
-- Creating an item: use either creationPayload or definition, but do not use both at the same time.
+- Non-Power BI Fabric Items: The workspace must be on a support Fabric capacity.
+- Creating an item: use either creationPayload or definition, but don't use both at the same time.
 
 ## Related content
 
