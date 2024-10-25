@@ -64,6 +64,7 @@ You now have a dataflow Gen2 with CI/CD and Git support. Suggested is to follow 
 
 ## Refresh a dataflow gen2 or schedule a refresh
 
+You can refresh a dataflow Gen2 with CI/CD and Git support in two ways - manually or by scheduling a refresh. Below are the steps to refresh a dataflow Gen2 with CI/CD and Git support.
 
 ### Refresh now
 
@@ -89,12 +90,11 @@ If your dataflow needs to be refreshed on a regular interval you can schedule th
 
 ## Refresh history and settings
 
-
-
+To view the refresh history of the dataflow, you can either click on the refresh history tab in the dropdown menu or go into the monitor hub and select the dataflow you want to view the refresh history of.
 
 ## Settings dataflow gen2 with CI/CD
 
-
+Accessing the settings of the new dataflow Gen2 with CI/CD and Git support is similar to any other Fabric item. You can access the settings by clicking on the more options icon next to the dataflow and selecting settings.
 
 ## Use the Fabric CRUDL API to manage dataflows Gen2
 
