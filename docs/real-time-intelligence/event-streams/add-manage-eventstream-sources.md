@@ -16,7 +16,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add and manage an event source in an eventstream
 
-Once you have created an eventstream, you can connect it to various data sources and destinations. 
+Once you created an eventstream, you can connect it to various data sources and destinations. 
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -63,7 +63,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Supported sources
 
-The following sources are supported by Fabric event streams. Use links in the table to navigate to articles that provide more details about adding specific sources.
+Fabric event streams support the following sources. Use links in the table to navigate to articles that provide more details about adding specific sources.
 
 [!INCLUDE [supported-sources](./includes/supported-sources-standard.md)]
 

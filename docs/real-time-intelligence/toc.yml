@@ -66,6 +66,8 @@ items:
         href: event-streams/add-manage-eventstream-sources.md
       - name: Azure Event Hubs
         href: event-streams/add-source-azure-event-hubs.md
+      - name: Azure Service Bus
+        href: event-streams/add-source-azure-service-bus.md
       - name: Azure IoT Hub
         href: event-streams/add-source-azure-iot-hub.md
       - name: Custom endpoint
