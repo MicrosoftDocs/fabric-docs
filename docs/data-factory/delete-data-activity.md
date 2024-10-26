@@ -43,7 +43,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Choose a data source
 
-Select the **Source** tab, and select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+Select the **Source** tab, and select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
 :::image type="content" source="media/delete-data-activity/choose-delete-data-source-and-configure.png" alt-text="Screenshot showing the Delete data activity Source tab highlighted, and highlighting where to create a new connection.":::
 

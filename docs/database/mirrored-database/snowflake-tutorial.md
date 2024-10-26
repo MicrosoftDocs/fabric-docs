@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Configure a Microsoft Fabric mirrored database from Snowflake (Preview)"
+title: "Tutorial: Configure a Microsoft Fabric mirrored database from Snowflake"
 description: Learn how to configure a mirrored database from Snowflake in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,7 +8,7 @@ ms.date: 04/24/2024
 ms.topic: tutorial
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake (Preview)
+# Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake
 
 In this tutorial, you'll configure a Fabric mirrored database from Snowflake.
 
@@ -20,7 +20,6 @@ In this example, you will learn how to configure a secure connection to your Sno
 ## Prerequisites
 
 - Create or use an existing Snowflake warehouse. You can connect to any version of Snowflake instance in any cloud, including Microsoft Azure.
-  - During the current preview, we recommend using a copy of one of your existing databases, or any existing test or development database that you can recover quickly from a backup.
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
 - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md).
   - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
@@ -29,6 +28,7 @@ In this example, you will learn how to configure a secure connection to your Sno
   - `SELECT table`
   - `SHOW tables`
   - `DESCRIBE tables`
+- The user needs to have at least one role assigned that allows access to the Snowflake database.
 
 ## Create a mirrored database
 
@@ -104,5 +104,5 @@ For more information and details on the replication states, see [Monitor Fabric 
 
 ## Related content
 
-- [Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake.md)
+- [Microsoft Fabric mirrored databases from Snowflake](snowflake.md)
 - [What is Mirroring in Fabric?](overview.md)

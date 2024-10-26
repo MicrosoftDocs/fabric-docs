@@ -4,7 +4,7 @@ description: Learn more about securing the SQL analytics endpoint and Warehouse 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 04/24/2024
+ms.date: 09/25/2024
 ms.topic: overview
 ms.custom:
   - build-2023
@@ -42,7 +42,7 @@ For details on the specific Warehouse capabilities provided through workspace ro
 
 ### Item permissions
 
-In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual Warehouses. The user will receive the assigned permission on that single Warehouse. The primary purpose for these permissions is to enable sharing for downstream consumption of the Warehouse.
+In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual Warehouses. The user will receive the assigned permission on that single warehouse. The primary purpose for these permissions is to enable sharing for downstream consumption of the Warehouse.
 
 For details on the specific permissions provided for warehouses, see [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md).
 
@@ -93,12 +93,19 @@ When evaluating the permissions to assign to a user, consider the following guid
 
 - Only team members who are currently collaborating on the solution should be assigned to Workspace roles (Admin, Member, Contributor), as this provides them access to all Items within the workspace.
 - If they primarily require read only access, assign them to the Viewer role and grant read access on specific objects through T-SQL.  For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).
-- If they are higher privileged users, assign them to Admin, Member or Contributor roles. The appropriate role is dependent on the other actions that they will need to perform.  
+- If they are higher privileged users, assign them to Admin, Member, or Contributor roles. The appropriate role is dependent on the other actions that they need to perform.  
 - Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects.
-- You can manage permissions on Microsoft Entra ID (formerly Azure Active Directory) groups, as well, rather than adding each specific member.
+- You can manage permissions on Microsoft Entra ID (formerly Azure Active Directory) groups, as well, rather than adding each specific member. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
+
+### User audit logs
+
+To track user activity in warehouse and SQL analytics endpoint for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. You can use user audit logs to identify who is taking what action on your Fabric items.
+
+For more information on how to access user audit logs, see [Track user activities in Microsoft Fabric](../admin/track-user-activities.md) and [Operations list](../admin/operation-list.md).
 
 ## Related content
 
 - [Connectivity](connectivity.md)
 - [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md)
 - [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
+- [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)

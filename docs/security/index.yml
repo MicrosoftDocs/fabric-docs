@@ -64,7 +64,7 @@ landingContent:
             url: /azure/data-factory/concepts-integration-runtime  
           - text: Azure Data Factory managed virtual network
             url: /azure/data-factory/managed-virtual-network-private-endpoint
-          - text: Lakehouse SQL endpoints
+          - text: Lakehouse SQL analytics endpoints
             url: ../data-engineering/lakehouse-sql-analytics-endpoint.md
           - text: Direct lake
             url: ../get-started/direct-lake-overview.md                       

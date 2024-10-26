@@ -4,7 +4,7 @@ description: Troubleshoot common issues in using Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul
-ms.date: 04/24/2024
+ms.date: 07/26/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -71,3 +71,4 @@ A SELECT statement could have completed successfully in the backend and fails wh
 - [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Limitations in Microsoft Fabric](limitations.md)
+- [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)

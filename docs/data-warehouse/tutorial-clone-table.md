@@ -4,7 +4,7 @@ description: In this tutorial step, learn how to clone a table using T-SQL in a 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish, prlangad
-ms.date: 05/03/2024
+ms.date: 07/18/2024
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
@@ -25,7 +25,7 @@ This tutorial guides you through creating a [table clone](clone-table.md) in [!I
 
 1. In the Fabric portal, from the ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-clone-table/home-ribbon-select-new.png" alt-text="Screenshot of the Home screen ribbon, showing where to select New SQL query.":::
+   :::image type="content" source="media/tutorial-clone-table/home-ribbon-select-new.png" alt-text="Screenshot of the Home screen ribbon, showing where to select New SQL query." lightbox="media/tutorial-clone-table/home-ribbon-select-new.png":::
 
 1. To create a table clone as of **current point in time**, in the query editor, paste the following code to create clones of the `dbo.dimension_city` and `dbo.fact_sale` tables.
 
@@ -77,7 +77,7 @@ This tutorial guides you through creating a [table clone](clone-table.md) in [!I
 
 1. From the ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-clone-table/home-ribbon-select-new.png" alt-text="Screenshot of the Home screen ribbon, showing where to select New SQL query.":::
+   :::image type="content" source="media/tutorial-clone-table/home-ribbon-select-new.png" alt-text="Screenshot of the Home screen ribbon, showing where to select New SQL query." lightbox="media/tutorial-clone-table/home-ribbon-select-new.png":::
 
 1. Create a new schema within the `WideWorldImporter` warehouse named `dbo1`. Copy, paste, and run the following T-SQL code which creates table clones as of current point in time of `dbo.dimension_city` and `dbo.fact_sale` tables across schemas within the same data warehouse.
 
@@ -100,7 +100,7 @@ This tutorial guides you through creating a [table clone](clone-table.md) in [!I
 
 1. Load the data preview to validate the data loaded successfully by selecting on the `dimension_city1` table under `dbo1` schema in the **Explorer**.
 
-   :::image type="content" source="media/tutorial-clone-table/explorer-select-table-schema.png" alt-text="Screenshot of the Explorer, showing where to find and select the clone created in dbo1 schema." lightbox="media/tutorial-clone-table/explorer-select-table-schema.png":::
+   :::image type="content" source="media/tutorial-clone-table/explorer-select-table.png" alt-text="Screenshot of the Explorer, showing where to find and select the clone created in dbo1 schema." lightbox="media/tutorial-clone-table/explorer-select-table.png":::
 
 1. To create a table clone as of a **previous point in time**, in the query editor, paste the following code to create clones of the `dbo.dimension_city` and `dbo.fact_sale` tables in the `dbo1` schema. Input the Coordinated Universal Time (UTC) for the point in timestamp at which the table is required to be cloned.
 
@@ -120,11 +120,11 @@ This tutorial guides you through creating a [table clone](clone-table.md) in [!I
 
 1. Load the data preview to validate the data loaded successfully by selecting on the `fact_sale2` table under `dbo1` schema in the **Explorer**.
 
-   :::image type="content" source="media/tutorial-clone-table/explorer-cross-schema-clone-table-point-in-time.png" alt-text="Screenshot from the Fabric portal explorer showing all the new cloned tables created, including dbo1.fact_sale2." lightbox="media/tutorial-clone-table/explorer-cross-schema-clone-table-point-in-time.png":::
+   :::image type="content" source="media/tutorial-clone-table/explorer-select-cloned-table-point-in-time.png" alt-text="Screenshot from the Fabric portal explorer showing all the new cloned tables created, including dbo1.fact_sale2." lightbox="media/tutorial-clone-table/explorer-select-cloned-table-point-in-time.png":::
 
 1. Rename the query for reference later. Right-click on **SQL query 3** in the **Explorer** and select **Rename**.
 
-   :::image type="content" source="media/tutorial-clone-table/right-click-rename.png" alt-text="Screenshot of the Explorer pane, showing where to right-click on the query and select Rename.":::
+   :::image type="content" source="media/tutorial-clone-table/right-click-rename-query-3.png" alt-text="Screenshot of the Explorer pane, showing where to right-click on the query and select Rename.":::
 
 1. Type `Clone Table in another schema` to change the name of the query.
 

@@ -37,7 +37,7 @@ items:
     - name: Default label policy
       href: service-security-sensitivity-label-default-label-policy.md
     - name: Mandatory label policy
-      href: service-security-sensitivity-label-mandatory-label-policy.md
+      href: mandatory-label-policy.md
     - name: Sensitivity label support for paginated reports
       href: service-security-sensitivity-label-paginated-reports.md
     - name: Programmatic labeling
@@ -46,22 +46,50 @@ items:
       href: service-security-sensitivity-label-downstream-inheritance.md
     - name: Inheritance from data sources
       href: service-security-sensitivity-label-inheritance-from-data-sources.md
+    - name: Audit schema for sensitivity labels
+      href: sensitivity-label-audit-schema.md
     - name: Troubleshoot sensitivity labels
       href: service-security-sensitivity-label-troubleshooting.md
+  - name: Protection policies
+    items:
+    - name: Protection polices overview
+      href: protection-policies-overview.md
+    - name: Create and manage protection policies
+      href: protection-policies-create.md
   - name: Microsoft Defender for Cloud Apps with Power BI
     href: service-security-using-defender-for-cloud-apps-controls.md
+- name: Data loss prevention policies
+  items:
+  - name: Overview
+    href: data-loss-prevention-overview.md
+  - name: Configure a DLP policy for Fabric
+    href: data-loss-prevention-configure.md
+  - name: Respond to a DLP policy violation
+    href: data-loss-prevention-respond.md
+  - name: Monitor DLP policy violations
+    href: data-loss-prevention-monitor.md
 - name: Endorsement
   href: endorsement-overview.md
-- name: Lineage
-  href: lineage.md
-- name: Impact analysis
-  href: impact-analysis.md
 - name: Domains
   items:
   - name: Domains
     href: domains.md
+  - name: Domain design - best practices
+    href: domains-best-practices.md
   - name: Audit schema for domains
     href: domains-audit-schema.md
+- name: Tags
+  items:
+  - name: Overview
+    href: tags-overview.md
+  - name: Create and manage a set of tags
+    href: tags-define.md
+  - name: Apply tags to items
+    href: tags-apply.md
+- name: Lineage
+  href: lineage.md
+- name: Impact analysis
+  href: impact-analysis.md
 - name: External data sharing
   items:
   - name: Overview

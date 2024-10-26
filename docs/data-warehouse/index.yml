@@ -66,6 +66,8 @@ landingContent:
             url: security.md
           - text: Connectivity
             url: connectivity.md    
+          - text: Microsoft Entra ID authentication
+            url: entra-id-authentication.md
           - text: Workspace roles
             url: workspace-roles.md
           - text: SQL granular permissions
@@ -76,8 +78,6 @@ landingContent:
             url: column-level-security.md
           - text: Share your Warehouse
             url: share-warehouse-manage-permissions.md            
-          - text: User audit logs
-            url: user-audit-logs.md
   # Card 
   - title: Ingest data
     linkLists:
@@ -178,8 +178,10 @@ landingContent:
     linkLists:
       - linkListType: architecture
         links:
-          - text: Performance guidelines
+          - text: Warehouse performance
             url: guidelines-warehouse-performance.md
+          - text: SQL analytics endpoint performance
+            url: sql-analytics-endpoint-performance.md
           - text: Security
             url: security.md
           - text: Ingest Data

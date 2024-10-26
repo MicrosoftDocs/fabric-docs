@@ -15,7 +15,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 08/15/2024
+  ms.date: 10/26/2024
 # highlightedContent section (optional)
 # Maximum of 8 items 
 highlightedContent:
@@ -71,10 +71,10 @@ productDirectory:
       summary: Solve complex data ingestion, transformation, and orchestration scenarios.
       url: data-factory/index.yml
     # Card
-    - title: Data Activator
-      imageSrc: ./media/data-activator-icon.png
-      summary: Alert users or trigger workflows when patterns and conditions are detected. 
-      url: data-activator/index.yml
+    - title: OneLake
+      imageSrc: ./media/onelake-icon.png
+      summary: Store all your organization's data in OneLake, a single, unified, logical data lake.
+      url: onelake/index.yml
     # Card
     - title: Industry Solutions
       imageSrc: ./media/industry-solutions-icon.svg 
@@ -147,10 +147,13 @@ conceptualContent:
           links:
           - url: get-started/decision-guide-data-store.md
             itemType: quickstart
-            text: Data store
+            text: Choose a data store
           - url: get-started/decision-guide-pipeline-dataflow-spark.md
-            itemType: quickstart
-            text: Data Ingestion and transformation
+            itemType: concept
+            text: Copy Activity, Dataflow, or Spark Guide
+          - url: get-started/decision-guide-lakehouse-warehouse.md
+            itemType: concept
+            text: Warehouse Vs Lakehouse
           footerLink:
             url: get-started/index.yml
             text: See more

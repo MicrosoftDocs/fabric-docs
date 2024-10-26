@@ -94,7 +94,7 @@ One Synapse Data Warehouse core (unit of compute for Data Warehouse) is equivale
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
 | Warehouse Query    | Compute charge for all user generated and system generated T-SQL statements within a Warehouse     | Warehouse | Data Warehouse Capacity Usage CU      | Background |
-| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within a SQL Endpoint  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint of a Lakehouse  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
 
 ### Fabric API for GraphQL
 
@@ -137,6 +137,9 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 >[!NOTE]
 >The term *Semantic model* replaces the term *dataset*. You may still see the old term in the UI until it is completely replaced.
+>
+>
+> We currently don't bill for R/Py visuals in Power BI.
 
 | Operation | Description | Item | Azure billing meter | Type |
 |--|--|--|--|--|

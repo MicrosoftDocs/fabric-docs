@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/18/2024
+ms.date: 07/28/2024
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -123,11 +123,11 @@ To understand the considerations and limitations of various lifecycle management
 
 #### Maximum commit size exceeded
 
-**Description of problem**: When trying to commit items to GitHub, I get an error saying that I exceeded maximum commit size.
+**Description of problem**: When trying to commit items to Git, I get an error saying that I exceeded maximum commit size.
 
   :::image type="content" source="./media/troubleshoot-cicd/maximum-commit-size.png" alt-text="Screenshot or error message that says Maximum commit size exceeded.":::
 
-**Cause**: The number of non-text files you can commit at once is limited. In general, there's a file limit per minute and per hour. If your commit contains a large number of non-text files, the commit might fail. For more information see <a href="https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits" target="_blank">secondary rate limits</a>.  
+**Cause**: The total size of files to commit is limited to 50 MB.  
 **Solution**: If you're trying to commit several items at once, consider committing them in smaller batches. If your commit contains one item with many files, contact <a href="https://support.fabric.microsoft.com/" target="_blank">support</a>.
 
 ### Update issues
@@ -241,7 +241,7 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 * The workspace isn't assigned to any other pipeline
 
-* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-license)
+* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity)
 
 Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
 
@@ -377,7 +377,7 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 #### Deployment failure: Large number of paginated reports fails
 
 **Description of problem**: A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity.  
-**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-license), or use selective deployment.
+**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity), or use selective deployment.
 
 ### Dataflows
 
@@ -409,11 +409,11 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 
 #### Who can deploy content between stages?
 
-Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-license).
+Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity).
 
 * **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#per-user-licenses) user who's a member or admin in the source workspace.
 
-* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#capacity-license) user who's a member or admin of both workspaces in the source and target deployment stages.
+* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#capacity) user who's a member or admin of both workspaces in the source and target deployment stages.
 
 * **Overwriting a semantic model** - Deployment overwrites each semantic model that is included in the target stage, even if the semantic model wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target semantic model owners only.
 
@@ -452,7 +452,7 @@ When a previously successful deployment fails due to broken links, a warning is 
 
 To deploy successfully, fix or remove the broken rules, and redeploy.
 
-#### Deployment problem: I configured rules, but it did't deploy
+#### Deployment problem: I configured rules, but it didn't deploy
 
 **Cause**: Deployment rules aren't applied immediately after they're configured.
 

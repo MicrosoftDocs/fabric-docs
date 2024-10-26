@@ -37,7 +37,7 @@ sections:
         answer: |
           All workspaces must be assigned to a Fabric license. However, you can use different capacity types for different workspaces.
 
-          For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
+          For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity).
 
           >[!NOTE]
           >
