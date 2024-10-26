@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 10/26/2024
 ms.search.form: Event Streams Overview
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -22,31 +22,9 @@ Before you start, you must complete the following prerequisite:
 - Get access to a **premium workspace** with **Contributor** or above permissions.
 
 
-
 ## Create an eventstream
 
-You can create an eventstream on the **Workspace** page, the **Real-Time Intelligence experience Homepage**, or the **Create hub** page. Here are the steps:
-
-1. Change your Fabric experience to **Real-Time Intelligence**.
-1. Follow one of these steps to start creating an eventstreams:
-
-   - On the **Real-Time Intelligence** homepage, select the **Eventstream** tile:
-
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream tile on the homepage.":::
-
-   - On the **Workspace** page, select **New** and then **Eventstream**:
-
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing where to find the eventstream option in the New menu on the Workspace page." :::
-
-   - On the **Create hub** page, select the **Eventstream** tile:
-
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the Eventstream tile on the Create hub page." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
-1. Enter a **name** for the new eventstream and select **Enhanced capabilities** checkbox, and then select **Create**. 
-
-    :::image type="content" source="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" alt-text="Screenshot showing the New eventstream dialog box." lightbox="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" :::
-1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream. 
-
-   :::image type="content" source="./media/create-manage-an-eventstream-enhanced/editor.png" alt-text="Screenshot showing the editor." lightbox="./media/create-manage-an-eventstream-enhanced/editor.png" :::
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
 ## Next step
 - [Add sources to the eventstream](./add-manage-eventstream-sources.md)
