@@ -9,7 +9,7 @@ ms.custom:
   - fabric-cat
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 11/11/2024
 ---
 
 # Migrate data and pipelines from Azure Synapse Analytics to Microsoft Fabric

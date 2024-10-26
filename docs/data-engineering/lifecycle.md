@@ -5,6 +5,7 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
+ms.date: 11/11/2024
 ---
 
 # Lifecycle of Apache Spark runtimes in Fabric

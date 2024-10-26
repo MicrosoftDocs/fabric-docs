@@ -7,7 +7,7 @@ author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 06/07/2024
+ms.date: 11/11/2024
 ---
 
 # Configure high concurrency mode for Fabric notebooks

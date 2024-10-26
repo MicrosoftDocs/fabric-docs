@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/13/2024
+ms.date: 11/11/2024
 ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 ---
 
@@ -44,7 +44,7 @@ Use the following steps to create a lakehouse:
 
 1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 
-1. Switch to the **Develop** experience.
+1. Switch to the **Data Engineering** experience.
 
 1. Navigate to your desired workspace or create a new one if needed.
 
