@@ -34,33 +34,11 @@ In this tutorial, you:
   - [Git](https://www.git-scm.com/)
 
 ## Create an eventstream in Microsoft Fabric
-
-1. Change your Fabric experience to **Real-Time Intelligence**.
-1. Follow one of these steps to start creating an eventstream:
-
-   - On the **Real-Time Intelligence** home page, select the **Eventstream** tile.
-
-     :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot that shows the eventstream tile on the Real-Time Intelligence home page.":::
-
-   - On the **Workspace** page, select **New** > **Eventstream**.
-  
-     :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot that shows selections for creating a new event stream on the Workspace page.":::
-
-   - On the **Create hub** page, select the **Eventstream** tile.
-  
-     :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot that shows the eventstream tile on the page for creating a hub in Real-Time Analytics.":::
-
-2. Enter a **name** for the new eventstream and select **Enhanced capabilities** checkbox, and then select **Create**. 
-
-   :::image type="content" source="media/stream-consume-events-using-kafka-endpoint/create-esv2-kafka-endpoint.png" alt-text="Screenshot that shows the Enhanced Capabilities checkbox in the dialog for creating a new eventstream.":::
-
-1. Creation of the new eventstream in your workspace can take a few seconds. You're then directed to the home page, where you can start with adding sources to the eventstream.
-
-   :::image type="content" source="./media/create-manage-an-eventstream-enhanced/editor.png" alt-text="Screenshot that shows the home page of the editor.":::
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
 ## Retrieve the Kafka endpoint from an added custom endpoint source
 
-To get a Kafka topic endpoint, simply add a custom endpoint source to your eventstream. The Kafka connection endpoint is then readily available and exposed within the custom endpoint source.
+To get a Kafka topic endpoint, add a custom endpoint source to your eventstream. The Kafka connection endpoint is then readily available and exposed within the custom endpoint source.
 
 To add a custom endpoint source to your eventstream:
 
@@ -89,7 +67,7 @@ To add a custom endpoint source to your eventstream:
    - `sasl.mechanism=PLAIN`
    - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
 
-   `{YOUR.BOOTSTRAP.SERVER}` is the **Bootstrap server** value on the **Keys** page. `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** value or the **Connection string-secondary key** value.  Choose one to use.
+   `{YOUR.BOOTSTRAP.SERVER}` is the **Bootstrap server** value on the **Keys** page. `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** value or the **Connection string-secondary key** value. Choose one to use.
 
    :::image type="content" source="media/stream-consume-events-using-kafka-endpoint/kafka-keys-sample-code.png" alt-text="Screenshot that shows Kafka keys and sample code.":::
 
@@ -138,7 +116,7 @@ Here's one application based on the Azure Event Hubs SDK written in Java by foll
 
 You can add a custom endpoint destination to get the Kafka connection endpoint details for consuming events from your eventstream. After you add the destination, you can get the information from the destination's **Details** pane in the live view.
 
-From the **Basic** page, you can get the **Consumer group** value. You'll need this value to configure the Kafka consumer application later.
+From the **Basic** page, you can get the **Consumer group** value. You need this value to configure the Kafka consumer application later.
 
 From the **Keys** page, you can get the important Kafka endpoint information:
 
@@ -187,4 +165,4 @@ By default, Kafka consumers read from the end of the stream rather than the begi
 
 ## Conclusion
 
-Congratulations! You learned how to use the Kafka endpoint exposed from your eventstream to stream and consume the events within your eventstream. If you already have an application that's sending or consuming from a Kafka topic, you can use the same application to send or consume the events within your eventstream without any code changes. Just change the connection's configuration information.
+Congratulations. You learned how to use the Kafka endpoint exposed from your eventstream to stream and consume the events within your eventstream. If you already have an application that's sending or consuming from a Kafka topic, you can use the same application to send or consume the events within your eventstream without any code changes. Just change the connection's configuration information.
