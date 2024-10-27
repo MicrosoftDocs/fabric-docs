@@ -49,4 +49,4 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 
 ## Related content
-For a list of all sources Microsoft Fabric event streams support, see [Add and manage an event source](add-manage-eventstream-sources.md).
+For a list of all supported sources, see [Add and manage an event source](add-manage-eventstream-sources.md).

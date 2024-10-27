@@ -44,4 +44,4 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ## Related content
 
-For a list of sources supported, see [Add an event source in an eventstream](add-manage-eventstream-sources.md)
+For a list of supported sources, see [Add an event source in an eventstream](add-manage-eventstream-sources.md)
