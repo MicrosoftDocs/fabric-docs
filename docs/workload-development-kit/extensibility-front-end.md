@@ -144,7 +144,7 @@ The Sample Workload UI is hosted in a Fabric sandboxed `iframe` that we can see 
 
 > [!NOTE]
 > The sandboxed iframe allows the following attributes: allow-same-origin, allow-scripts.
-> For more information on the meaning of sandbox and different attributes, refer to [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox)
+> For more information on the meaning of sandbox and different attributes, refer to [MDN web docs](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#sandbox)
 
 ## Step 3: Dive into the code
 
