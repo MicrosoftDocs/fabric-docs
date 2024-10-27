@@ -31,20 +31,21 @@ Before you start, you must complete the following prerequisites:
 ## Launch Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-1. On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.
+On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Get events wizard." lightbox="./media/add-source-azure-event-hubs-enhanced/select-azure-event-hubs.png":::
+:::image type="content" source="./media/add-source-azure-event-hubs-enhanced/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Get events wizard." lightbox="./media/add-source-azure-event-hubs-enhanced/select-azure-event-hubs.png":::
 
 ## Configure Azure Event Hubs connector
 [!INCLUDE [azure-event-hubs-connector](./includes/azure-event-hubs-source-connector.md)]
 
-You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** in the bottom pane, which shows you preview of the data in the event hub. To implement this newly added Azure event hub, select **Publish** on the ribbon. 
+## View updated eventstream
 
-:::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
-    
-After you complete these steps, the Azure event hub is available for visualization in the **Live view**. Select the **Event hub** tile in the diagram to see the page similar to the following one.
+1. You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** in the bottom pane, which shows you preview of the data in the event hub. To implement this newly added Azure event hub, select **Publish** on the ribbon. 
 
-:::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
+    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
+1. After you complete these steps, the Azure event hub is available for visualization in the **Live view**. Select the **Event hub** tile in the diagram to see the page similar to the following one.
+
+    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
 ## Related content
 
