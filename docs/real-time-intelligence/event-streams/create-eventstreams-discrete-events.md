@@ -5,9 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 10/26/2024
 ms.search.form: Source and Destination
 ---
 
@@ -48,31 +46,32 @@ In Fabric event streams, you can add a discrete event source into an eventstream
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - A Fabric workspace for connecting to Fabric Workspace Item events, or access to an Azure Blob Storage account for connecting to Azure Blob Storage events.
 
+
+### Create an eventstream
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
+
 ### Connect discrete events
 
 To connect discrete events to an eventstream, take the following steps:
 
-1. Under **Real-Time Intelligence**, select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
+1. On the next screen, select **Use external source**.
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
+   ![A screenshot of selecting Use external source.](media/external-sources/add-external-source.png)
+1. On the **Select a data source** page, select **View all sources**. 
 
-1. On the next screen, select **Add external source**.
-
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
-
+   ![A screenshot of selecting View all sources on the Select a data source window.](media/external-sources/view-all-sources.png)
 1. On the **Select a data source** screen, select the type of discrete events you want to add to your eventstream, either **Azure Blob Storage events** or **Fabric Workspace Item events**.
 
    ![A screenshot of selecting Azure Blob Storage Events.](media/create-eventstreams-discrete-events/select-external-events.png)
-
 1. Add the event source and publish the eventstream by following the instructions in one of the following articles:
 
    - For Azure Blob Storage events, see [Add Azure Blob Storage events](add-source-azure-blob-storage.md).
    - For Fabric Workspace Item events, see [Add Fabric workspace item events](add-source-fabric-workspace.md).
 
-Once completed, the eventstream starts capturing discrete events as they occur. In **Real-Time hub**, you can find the events under **Fabric events**. In the right pane, you can set an alert to take further action.
+Once completed, the eventstream starts capturing discrete events as they occur. In **Real-Time hub**, you can find the events under **Fabric events** or **Azure events**. In the right pane, you can set alerts to take further action. For more information, see the following articles in Real-Time hub documentation:
 
-![A screenshot of the Real-Time hub Fabric events tab and the Set alert pane.](media/create-eventstreams-discrete-events/set-alert.png)
-
+- [Set alerts on Azure Blob Storage events in Real-Time hub](../../real-time-hub/set-alerts-azure-blob-storage-events.md)
+- [Set alerts on Fabric workspace item events in Real-Time hub](../../real-time-hub/set-alerts-fabric-workspace-item-events.md)
 
 [!INCLUDE [known-issues-discrete-events](./includes/known-issues-discrete-events.md)]
 
