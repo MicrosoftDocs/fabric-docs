@@ -29,7 +29,7 @@ Before you start, you must complete the following prerequisites:
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure Service Bus** tile.
 
-:::image type="content" source="./media/add-source-azure-service-bus/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Service Bus as the source type in the Get events wizard." lightbox="./media/add-source-azure-service-bus/select-azure-service-bus.png":::
+:::image type="content" source="./media/add-source-azure-service-bus/select-azure-service-bus.png" alt-text="Screenshot that shows the selection of Azure Service Bus as the source type in the Get events wizard." lightbox="./media/add-source-azure-service-bus/select-azure-service-bus.png":::
 
 
 ## Configure Azure Service Bus connector
