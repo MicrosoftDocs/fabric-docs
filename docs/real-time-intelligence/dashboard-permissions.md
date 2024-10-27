@@ -5,7 +5,7 @@ ms.reviewer: yaschust
 ms.author: yaschust 
 author: yaelschuster 
 ms.topic: how-to
-ms.date: 08/12/2024
+ms.date: 11/19/2024
 ---
 # Real-Time Dashboard permissions
 

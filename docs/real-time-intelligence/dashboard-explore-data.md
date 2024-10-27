@@ -7,7 +7,7 @@ ms.author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/23/2024
+ms.date: 11/19/2024
 ---
 # Explore data in Real-Time Dashboard tiles
 
