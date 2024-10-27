@@ -250,6 +250,7 @@ Whenever a domain is created, edited, or deleted, that activity is recorded in t
 ## Related content
 
 * [Domain management tenant settings](../admin/service-admin-portal-domain-management-settings.md)
+* [Domain design - best practices](./domains-best-practices.md)
 * [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
 * [Audit schema for domains](./domains-audit-schema.md)
 * [Admin role in workspaces](../get-started/roles-workspaces.md)

@@ -27,13 +27,13 @@ CI/CD is a practice that automates software delivery, and it resolves a few prom
 
 ## Understanding CI/CD, Git, and deployment pipelines
 
-CI/CD consists of continuous integration, and continuous development.
+CI/CD consists of continuous integration, and continuous deployment.
 
 ### Continuous integration (CI)
 
 Developers frequently commit to a Git-managed main branch, triggering automated tests and builds for integration. Git tracks changes to enable automatic fetching and testing of new commits.
 
-### Continuous development (CD)
+### Continuous deployment (CD)
 
 Focuses on deploying verified changes to production developments through structured deployment stages within deployment pipelines.
 

@@ -95,6 +95,6 @@ The same information regarding completed, failed, and canceled queries from Quer
 
 ## Related content
 
-- [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
+- [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](query-activity.md)

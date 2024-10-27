@@ -26,7 +26,7 @@ With Mirroring in Fabric, you don't need to piece together different services fr
 
 ## What analytics experiences are built in?
 
-Mirrored databases are an item in **Fabric Synapse Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
+Mirrored databases are an item in **Fabric Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
 
 :::image type="content" source="media/azure-sql-database/fabric-mirroring-sql-database.svg" alt-text="Diagram of Fabric Database Mirroring for Azure SQL Database.":::
 

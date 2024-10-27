@@ -38,8 +38,8 @@ The following table lists the features of Microsoft Fabric that are currently in
 |:-- |:-- |
 |**Azure Data Factory item**|You can now [bring your existing Azure Data Factory (ADF) to your Fabric workspace](https://blog.fabric.microsoft.com/blog/fabric-september-2024-monthly-update?ft=All#post-14247-_Toc177485885). This new preview capability allows you to connect to your existing Azure Data Factory from your Fabric workspace. Select "Create Azure Data Factory" inside of your Fabric Data Factory workspace, and you can manage your Azure data factories directly from the Fabric workspace.|
 |**Capacity pools preview**|[Capacity administrators can now create custom pools (preview)](https://blog.fabric.microsoft.com/blog/introducing-capacity-pools-for-data-engineering-and-data-science-in-microsoft-fabric?ft=All) based on their workload requirements, providing granular control over compute resources. [Custom pools for Data Engineering and Data Science](../data-engineering/capacity-settings-management.md#capacity-pools-for-data-engineering-and-data-science-in-microsoft-fabric-public-preview) can be set as Spark Pool options within Workspace Spark Settings and environment items. |
-|**Code-First AutoML preview**|In Synapse Data Science, the [new AutoML feature](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update?ft=Monthly-update:category#post-7976-_Toc162004174) enables [automation of your machine learning workflow](../data-science/how-to-use-automated-machine-learning-fabric.md). [AutoML, or Automated Machine Learning](../data-science/automated-machine-learning-fabric.md), is a set of techniques and tools that can automatically train and optimize machine learning models for any given data and task type.|
-|**Code-First Hyperparameter Tuning preview**|In Synapse Data Science, [FLAML is now integrated for hyperparameter tuning](../data-science/hyperparameter-tuning-fabric.md), currently a preview feature. Fabric's `flaml.tune` feature streamlines this process, offering a cost-effective and efficient approach to [hyperparameter tuning](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update/#post-7976-_Toc162004175). |
+|**Code-First AutoML preview**|In Fabric Data Science, the [new AutoML feature](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update?ft=Monthly-update:category#post-7976-_Toc162004174) enables [automation of your machine learning workflow](../data-science/how-to-use-automated-machine-learning-fabric.md). [AutoML, or Automated Machine Learning](../data-science/automated-machine-learning-fabric.md), is a set of techniques and tools that can automatically train and optimize machine learning models for any given data and task type.|
+|**Code-First Hyperparameter Tuning preview**|In Fabric Data Science, [FLAML is now integrated for hyperparameter tuning](../data-science/hyperparameter-tuning-fabric.md), currently a preview feature. Fabric's `flaml.tune` feature streamlines this process, offering a cost-effective and efficient approach to [hyperparameter tuning](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update/#post-7976-_Toc162004175). |
 |**Copilot in Fabric is available worldwide**|[Copilot in Fabric is now available](https://blog.fabric.microsoft.com/blog/copilot-in-fabric-preview-is-available-worldwide) to all customers, including [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Data Factory](copilot-fabric-data-factory.md), [Data Science & Data Engineering](copilot-notebooks-overview.md), and [Real-Time Intelligence](copilot-real-time-intelligence.md). Read more in our [Overview on Copilot in Fabric](copilot-fabric-overview.md). |
 |**Data Activator preview**|We're thrilled to announce that [Data Activator is now in preview](https://blog.fabric.microsoft.com/blog/announcing-the-data-activator-public-preview) and is [enabled for all existing Microsoft Fabric users](../data-activator/data-activator-introduction.md).|
 |**Apache Airflow job in Data Factory preview**|[Apache Airflow job (preview) in Data Factory](https://blog.fabric.microsoft.com/blog/microsoft-fabric-may-2024-update/#post-11444-_Toc167109092), powered by Apache Airflow, offer seamless authoring, scheduling, and monitoring experience for Python-based data processes defined as Directed Acyclic Graphs (DAGs). For more information, see [Quickstart: Create a Data workflow](../data-factory/create-apache-airflow-jobs.md).|
@@ -52,7 +52,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 |**High concurrency mode for Notebooks in Pipelines (preview)**|[High concurrency mode for Notebooks in Pipelines](https://blog.fabric.microsoft.com/blog/introducing-high-concurrency-mode-for-notebooks-in-pipelines-for-fabric-spark?ft=All) enables users to share Spark sessions across multiple notebooks within a pipeline. With [high concurrency mode](../data-engineering/high-concurrency-overview.md), users can trigger pipeline jobs, and these jobs are automatically packed into existing high concurrency sessions. |
 |**Introducing external data sharing (preview)**|[External Data Sharing (preview)](https://blog.fabric.microsoft.com/blog/introducing-external-data-sharing-a-new-way-to-collaborate-across-fabric-tenants) is a new feature that makes it possible for Fabric users to share data from within their Fabric tenant with users in another Fabric tenant.|
 |**Fabric gateway enables OneLake shortcuts to on-premises data**|[Connect to on-premises data sources with a Fabric on-premises data gateway](https://blog.fabric.microsoft.com/blog/bring-your-on-premises-data-to-onelake) on a machine in your environment, with networking visibility of your S3 compatible or Google Cloud Storage data source. Then, you create your shortcut and select that gateway. For more information, see [Create shortcuts to on-premises data](../onelake/create-on-premises-shortcut.md).|
-|**Fabric Spark connector for Fabric Synapse Data Warehouse in Spark runtime (preview)**|The [Fabric Spark connector for Synapse Data Warehouse (preview)](../data-engineering/spark-data-warehouse-connector.md) enables a Spark developer or a data scientist to access and work on data from a warehouse or SQL analytics endpoint of the lakehouse (either from within the same workspace or from across workspaces) with a simplified Spark API. |
+|**Fabric Spark connector for Fabric Data Warehouse in Spark runtime (preview)**|The [Fabric Spark connector for Data Warehouse (preview)](../data-engineering/spark-data-warehouse-connector.md) enables a Spark developer or a data scientist to access and work on data from a warehouse or SQL analytics endpoint of the lakehouse (either from within the same workspace or from across workspaces) with a simplified Spark API. |
 |**Fabric Spark Diagnostic Emitter (preview)**|The [Fabric Apache Spark Diagnostic Emitter](https://blog.fabric.microsoft.com/blog/fabric-september-2024-monthly-update?ft=All#post-14247-_Toc177485841) (preview) allows Apache Spark users to collect logs, event logs, and metrics from their Spark applications and send them to various destinations, including [Azure Event Hubs](../data-engineering/azure-fabric-diagnostic-emitters-azure-event-hub.md), [Azure Storage](../data-engineering/azure-fabric-diagnostic-emitters-azure-storage.md), and [Azure Log Analytics](../data-engineering/azure-fabric-diagnostic-emitters-log-analytics.md).|
 |**Fabric workload dev kit (preview)**|The [Microsoft Fabric workload development kit](https://blog.fabric.microsoft.com/blog/microsoft-fabric-may-2024-update/#post-11444-_Toc167109037) extends to additional workloads and offers a robust developer toolkit for designing, developing, and interoperating with [Microsoft Fabric using frontend SDKs and backend REST APIs](https://aka.ms/Fabricdeveloperdocumentation).|
 |**Folder in Workspace preview**|As an organizational unit in the workspace, [folder](https://blog.fabric.microsoft.com/blog/announcing-folder-in-workspace-in-public-preview) addresses this pain point by providing a hierarchical structure for organizing and managing your items. For more information, see [Create folders in workspaces (preview)](workspaces-folders.md).|
@@ -203,7 +203,9 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 |July 2024|**Fabric Data Pipelines – Advanced Scheduling Techniques (Part 2: Run a Pipeline on a Specific Day)**|This blog provides a tutorial on the ability to [schedule a Pipeline on a specific day of the month](https://blog.fabric.microsoft.com/blog/fabric-data-pipelines-advanced-scheduling-techniques-part-2-run-a-pipeline-on-a-specific-day?ft=All), including both the start of the month along with the last day of the month. |
 |June 2024|**A Data Factory Pipeline Navigator mind map**|The [ultimate Data Factory Pipeline Mind Map](https://blog.fabric.microsoft.com/blog/mind-map-the-data-factory-pipeline-navigator-to-a-successful-poc) helps you navigate Data Factory pipelines on your Data Factory journey to build a successful Data Integration project. |
 
-## Synapse Data Engineering in Microsoft Fabric
+<a id="synapse-data-engineering-in-microsoft-fabric"></a>
+
+## Fabric Data Engineering
 
 This section summarizes recent new features and capabilities of the [Data Engineering workload in Microsoft Fabric](../data-engineering/index.yml).
 
@@ -232,15 +234,17 @@ This section summarizes recent new features and capabilities of the [Data Engine
 |August 2024|**Lifecycle of Apache Spark runtimes in Fabric**|The [Lifecycle of Apache Spark runtimes](../data-engineering/lifecycle.md) document details the release cadence and versioning for the Azure-integrated platform based on Azure Spark. For more information, see the [Fabric runtime lifecycle blog post](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2024-update?ft=All#post-13355-_Toc943484796).|
 |July 2024|**MSSparkUtils API**|The `mssparkutils.runtime.context` is a new API that provides context information of the current live session, including the notebook name, default lakehouse, workspace info, if it's a pipeline run, etc. For more information, see [Microsoft Spark Utilities (MSSparkUtils) for Fabric](../data-engineering/microsoft-spark-utilities.md#runtime-utilities).|
 |July 2024|**Environment Resources folder**|The new [Environment Resources Folder](https://blog.fabric.microsoft.com/blog/microsoft-fabric-july-2024-update/#post-12969-_Toc172214886) is a shared repository designed to streamline collaboration across multiple notebooks. |
-|June 2024|**Fabric Spark connector for Fabric Synapse Data Warehouse in Spark runtime (preview)**|The [Fabric Spark connector for Synapse Data Warehouse (preview)](../data-engineering/spark-data-warehouse-connector.md) enables a Spark developer or a data scientist to access and work on data from a warehouse or SQL analytics endpoint of the lakehouse (either from within the same workspace or from across workspaces) with a simplified Spark API. |
+|June 2024|**Fabric Spark connector for Fabric Data Warehouse in Spark runtime (preview)**|The [Fabric Spark connector for Fabric Data Warehouse (preview)](../data-engineering/spark-data-warehouse-connector.md) enables a Spark developer or a data scientist to access and work on data from a warehouse or SQL analytics endpoint of the lakehouse (either from within the same workspace or from across workspaces) with a simplified Spark API. |
 |June 2024|**External data sharing public API preview**|[REST APIs for OneLake external data sharing](https://aka.ms/edsapidocs) are now available in preview. Users can now scale their data sharing use cases by automating the creation of shares with the public API. |
 |June 2024|**Capacity pools preview**|[Capacity administrators can now create custom pools (preview)](https://blog.fabric.microsoft.com/blog/introducing-capacity-pools-for-data-engineering-and-data-science-in-microsoft-fabric?ft=All) based on their workload requirements, providing granular control over compute resources. [Custom pools for Data Engineering and Data Science](../data-engineering/capacity-settings-management.md#capacity-pools-for-data-engineering-and-data-science-in-microsoft-fabric-public-preview) can be set as Spark Pool options within Workspace Spark Settings and environment items. |
 |June 2024|**Native Execution Engine for Apache Spark**| The [Native Execution Engine for Apache Spark on Fabric Data Engineering and Data Science](https://blog.fabric.microsoft.com/blog/public-preview-of-native-execution-engine-for-apache-spark-on-fabric-data-engineering-and-data-science) for Fabric Runtime 1.2 is now in preview. For more information, see [Native execution engine for Fabric Spark](../data-engineering/native-execution-engine-overview.md).|
 |June 2024|**OneLake data access roles API**|Following the release of OneLake data access roles in preview, [new APIs are available for managing data access roles](https://blog.fabric.microsoft.com/blog/onelake-data-access-roles-apis-announcement). These APIs can be used to [programmatically manage granular data access for your lakehouses](/rest/api/fabric/core/onelake-data-access-security).|
 
-For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md#synapse-data-engineering-in-microsoft-fabric).
+For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md#fabric-data-engineering).
 
-#### Synapse Data Engineering samples and guidance
+<a id="synapse-data-engineering-samples-and-guidance"></a>
+
+#### Fabric Data Engineering samples and guidance
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
@@ -250,7 +254,9 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 |June 2024|**Demystifying Data Ingestion in Fabric: Fundamental Components for Ingesting Data into a Fabric Lakehouse using Fabric Data Pipelines**|Learn about a [batch data Ingestion framework](https://blog.fabric.microsoft.com/blog/demystifying-data-ingestion-in-fabric-fundamental-components-for-ingesting-data-into-a-fabric-lakehouse-using-fabric-data-pipelines) based on experience working with different customers while building a lakehouse in Fabric.|
 |June 2024|**Boost performance and save costs with Fast Copy in Dataflows Gen2**|Learn how [the Fast Copy feature helps to enhance the performance and cost-efficiency of your Dataflows Gen2](https://blog.fabric.microsoft.com/blog/boost-performance-and-save-costs-with-fast-copy-in-dataflows-gen2). |
 
-## Synapse Data Science in Microsoft Fabric
+<a id="synapse-data-science-in-microsoft-fabric"></a>
+
+## Fabric Data Science
 
 This section summarizes recent improvements and features for [Data Science in Microsoft Fabric](../data-science/data-science-overview.md).
 
@@ -269,9 +275,11 @@ This section summarizes recent improvements and features for [Data Science in Mi
 |June 2024|**Capacity pools preview**|[Capacity administrators can now create custom pools (preview)](https://blog.fabric.microsoft.com/blog/introducing-capacity-pools-for-data-engineering-and-data-science-in-microsoft-fabric?ft=All) based on their workload requirements, providing granular control over compute resources. [Custom pools for Data Engineering and Data Science](../data-engineering/capacity-settings-management.md#capacity-pools-for-data-engineering-and-data-science-in-microsoft-fabric-public-preview) can be set as Spark Pool options within Workspace Spark Settings and environment items. |
 |June 2024|**Native Execution Engine for Apache Spark**| The [Native Execution Engine for Apache Spark on Fabric Data Engineering and Data Science](https://blog.fabric.microsoft.com/blog/public-preview-of-native-execution-engine-for-apache-spark-on-fabric-data-engineering-and-data-science) for Fabric Runtime 1.2 is now in preview. For more information, see [Native execution engine for Fabric Spark](../data-engineering/native-execution-engine-overview.md).|
 
-For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md#synapse-data-science-in-microsoft-fabric).
+For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md#fabric-data-science).
 
-#### Synapse Data Science samples and guidance
+<a id="synapse-data-science-samples-and-guidance"></a>
+
+#### Fabric Data Science samples and guidance
 
 |**Month** | **Feature** | **Learn more**|
 |:-- |:-- | :-- |
@@ -279,9 +287,11 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 |September 2024|**Harness Microsoft Fabric AI Skill to Unlock Context-Rich Insights from Your Data**|This post will demonstrate how you can [extend the capabilities of Fabric AI Skill in Microsoft Fabric notebooks](https://blog.fabric.microsoft.com/blog/harness-microsoft-fabric-ai-skill-to-unlock-context-rich-insights-from-your-data?ft=All) to deliver richer and more comprehensive responses using additional Large Language Model (LLM) queries. |
 |June 2024|**Building Custom AI Applications with Microsoft Fabric: Implementing Retrieval Augmented Generation for Enhanced Language Models**| This guide walks you through [implementing a RAG (Retrieval Augmented Generation) system in Microsoft Fabric using Azure OpenAI and Azure AI Search](https://blog.fabric.microsoft.com/blog/building-custom-ai-applications-with-microsoft-fabric-implementing-retrieval-augmented-generation-for-enhanced-language-models). |
 
-## Synapse Data Warehouse in Microsoft Fabric
+<a id="synapse-data-warehouse-in-microsoft-fabric"></a>
 
-This section summarizes recent improvements and features for [Synapse Data Warehouse in Microsoft Fabric](../data-warehouse/data-warehousing.md).
+## Fabric Data Warehouse
+
+This section summarizes recent improvements and features for [Fabric Data Warehouse](../data-warehouse/data-warehousing.md).
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
@@ -308,14 +318,16 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 |June 2024|**Restore in place portal experience**|You can now [create user-created restore points in your warehouse via the Fabric portal](../data-warehouse/restore-in-place-portal.md). For more information, see [Restore in-place of a warehouse in Microsoft Fabric](../data-warehouse/restore-in-place.md).|
 |June 2024|**Fabric Spark connector for Fabric Data Warehouse in Spark runtime (preview)**|The [Fabric Spark connector for Fabric Data Warehouse (preview)](../data-engineering/spark-data-warehouse-connector.md) enables a Spark developer or a data scientist to access and work on data from Fabric DW and SQL analytics endpoint of the lakehouse (either from within the same workspace or from across workspaces) with a simplified Spark API. |
 
-For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md#synapse-data-warehouse).
+For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md#fabric-data-warehouse).
 
-#### Synapse Data Warehouse samples and guidance
+<a id="synapse-data-warehouse-samples-and-guidance"></a>
+
+#### Fabric Data Warehouse samples and guidance
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
 |August 2024|**Mirroring SQL Server database to Fabric**|While SQL Server isn't currently supported for Fabric mirrored databases, learn how to [extend Fabric mirroring to an on-premises SQL Server database as a source, using a combination of SQL Server Transactional replication and Fabric Mirroring](https://blog.fabric.microsoft.com/blog/mirroring-sql-server-database-to-fabric?ft=All).|
-|July 2024|**Microsoft Entra authentication for Fabric Synapse Data Warehouse**|For sample connection strings and more information on using Microsoft Entra as an alternative to SQL Authentication, see [Microsoft Entra authentication as an alternative to SQL authentication](../data-warehouse/entra-id-authentication.md).|
+|July 2024|**Microsoft Entra authentication for Fabric Data Warehouse**|For sample connection strings and more information on using Microsoft Entra as an alternative to SQL Authentication, see [Microsoft Entra authentication as an alternative to SQL authentication](../data-warehouse/entra-id-authentication.md).|
 |June 2024|**Mastering Enterprise T-SQL ETL/ELT: A Guide with Data Warehouse and Fabric Pipelines**|Learn about [foundational elements of an enterprise-scale ETL/ELT framework](https://blog.fabric.microsoft.com/blog/mastering-enterprise-t-sql-etl-elt-a-guide-with-data-warehouse-and-fabric-pipelines) using Fabric Pipelines and a Data Warehouse for performing our transformations in T-SQL. Additionally, we will examine a dynamic SQL script designed to incrementally process tables throughout your enterprise.|
 
 ## Real-Time Intelligence in Microsoft Fabric
