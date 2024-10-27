@@ -280,7 +280,9 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](capacity-settings.md#delete-a-capacity).
 
-Ongoing operations are stopped or canceled and scheduled operations are canceled.
+When you delete a Power BI Premium, Trial or Fabric Capacity, non Power BI items in workspaces assigned to the capacity are soft-deleted. These Fabric items can still be seen in Onelake Data Hub and workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity, the deleted items are restored. Soft-deleted items are permanently deleted after seven days. This seven-day period is separate from the [workspace retention policy](portal-workspaces.md#workspace-retention).
+
+When you delete a capacity, ongoing operations are stopped or canceled and scheduled operations are canceled.
 
 # [Power BI Premium](#tab/power-bi-premium)
 
