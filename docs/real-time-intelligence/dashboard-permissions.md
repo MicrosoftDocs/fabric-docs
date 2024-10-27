@@ -1,5 +1,5 @@
 ---
-title: Real-Time Dashboard permission segregation
+title: Real-Time Dashboard permission segregation (preview)
 description: Learn how to share Real-Time Dashboards without giving access to the underlying data source.
 ms.reviewer: yaschust 
 ms.author: yaschust 
@@ -7,11 +7,13 @@ author: yaelschuster
 ms.topic: how-to
 ms.date: 11/19/2024
 ---
-# Real-Time Dashboard permissions
+# Real-Time Dashboard permissions (preview)
 
 Real-Time Dashboards are powerful tools for visualizing and analyzing data from various sources. For more information on Real-Time Dashboards, see [Create a Real-Time Dashboard (preview)](dashboard-real-time-create.md).
 
 In this article, you learn how to grant permissions and control access to data sources when sharing your real-time dashboards with other users.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 There are two types of permissions:
 
