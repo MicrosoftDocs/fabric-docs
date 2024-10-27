@@ -361,7 +361,7 @@ productDirectory:
     # Card
     - title: Real-Time Intelligence
 
-      imageSrc: ./media/synapse-real-time-intelligence-icon.png
+      imageSrc: ./media/fabric-real-time-intelligence-icon.png
       links:
         - url: real-time-intelligence/overview.md
           text: What is Real-Time Intelligence?
@@ -376,9 +376,9 @@ productDirectory:
 
 
     # Card
-    - title: Synapse Data Engineering
+    - title: Fabric Data Engineering
 
-      imageSrc: ./media/synapse-data-engineering-icon.png
+      imageSrc: ./media/fabric-data-engineering-icon.png
       links:
         - url: data-engineering/data-engineering-overview.md
           text: What is Data Engineering?
@@ -392,9 +392,9 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Data Science
+    - title: Fabric Data Science
 
-      imageSrc: ./media/synapse-data-science-icon.png
+      imageSrc: ./media/fabric-data-science-icon.png
       links:
         - url: data-science/data-science-overview.md
           text: What is Data science?
@@ -410,7 +410,7 @@ productDirectory:
     # Card
     - title: Fabric Data Warehouse
 
-      imageSrc: ./media/synapse-data-warehouse-icon.png
+      imageSrc: ./media/fabric-data-warehouse-icon.png
       links:
         - url: data-warehouse/data-warehousing.md
           text: What is Data Warehousing?

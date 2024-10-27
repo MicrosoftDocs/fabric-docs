@@ -12,7 +12,7 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# Migrate Hive Metastore metadata from Azure Synapse to Fabric
+# Migrate Hive Metastore metadata from Azure Synapse Analytics to Fabric
 
 The initial step in the Hive Metastore (HMS) migration involves determining the databases, tables, and partitions you want to transfer. It's not necessary to migrate everything; you can select specific databases. When identifying databases for migration, make sure to verify if there are managed or external Spark tables.
 

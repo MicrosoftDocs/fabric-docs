@@ -12,7 +12,7 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# Migrate Notebooks from Azure Synapse to Fabric
+# Migrate notebooks from Azure Synapse Analytics to Fabric
 
 Azure Synapse and Fabric support notebooks. Migrating a notebook from Azure Synapse to Fabric can be done in two different ways:
 
@@ -45,7 +45,7 @@ To import the exported notebook in Fabric:
 1.	**Navigate to Data Engineering homepage**: Once inside your Fabric workspace, go to Data Engineering homepage.
 1.	**Import notebook**: 
     * Select **Import notebook.** You can import one or more existing notebooks from your local computer to a Fabric workspace.
-    * Browse for the .ipynb notebook files that you downloaded from Azure Synapse.
+    * Browse for the .ipynb notebook files that you downloaded from Azure Synapse Analytics.
     * Select the notebook files and click **Upload.**
 1.	**Open and use the Notebook**: Once the import is completed, you can open and use the notebook in your Fabric workspace.
 

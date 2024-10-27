@@ -189,18 +189,15 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | ----------------------- | --------------------------------------------------------------- | -------------------- | ------------------- | ---------- |
 | Lakehouse operations    | Users preview table in the Lakehouse explorer                   | Lakehouse            | Spark Memory Optimized Capacity Usage CU          | Background |
 | Lakehouse table load    | Users load delta table in the Lakehouse explorer                | Lakehouse            | Spark Memory Optimized Capacity Usage CU          | Background |
-| Notebook run            | Synapse Notebook runs manually by users                         | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
-| Notebook HC run         | Synapse Notebook runs under the high concurrency Spark session  | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
-| Notebook scheduled run  | Synapse Notebook runs triggered by notebook scheduled events    | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
-| Notebook pipeline run   | Synapse Notebook runs triggered by pipeline                     | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU         | Background |
-| Notebook VS Code run    | Synapse Notebook runs in VS Code.                               | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
+| Notebook run            | Notebook run manually by users                         | Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
+| Notebook HC run         | Notebook run under the high concurrency Spark session  | Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
+| Notebook scheduled run  | Notebook run triggered by notebook scheduled events    | Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
+| Notebook pipeline run   | Notebook run triggered by pipeline                     | Notebook     | Spark Memory Optimized Capacity Usage CU         | Background |
+| Notebook VS Code run    | Notebook runs in VS Code.                               | Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job run           | Spark batch job runs initiated by user submission               | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
-| Spark job scheduled run | Synapse batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
-| Spark job pipeline run  | Synapse batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
-| Spark job VS Code run   | Synapse Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
-
-
-
+| Spark job scheduled run | Batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Spark job pipeline run  | Batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Spark job VS Code run   | Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 
 ## Related content
 
