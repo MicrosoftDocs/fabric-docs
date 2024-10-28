@@ -130,6 +130,8 @@ Under **API permissions**, add the desired permissions for your application. For
 
 :::image type="content" source="./media/authentication-tutorial/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-tutorial/add-api-permissions.png":::
 
+To learn more about API permissions, see https://learn.microsoft.com/en-us/entra/identity-platform/howto-update-permissions?pivots=portal
+
 ### Make sure your application is set to work with auth token v1
 
 Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null or "1".
