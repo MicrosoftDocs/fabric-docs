@@ -4,7 +4,7 @@ description: A known issue is posted where PostgreSQL data source connections ad
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/23/2024
+ms.date: 10/09/2024
 ms.custom: known-issue-850
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-850
 
 You can use PostgreSQL as a connection. When you add or update the data source using the PostgreSQL connection, you might receive an error.
 
-**Status:** Open
+**Status:** Fixed: October 9, 2024
 
 **Product Experience:** Power BI
 

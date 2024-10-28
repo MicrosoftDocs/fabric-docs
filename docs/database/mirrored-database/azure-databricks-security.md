@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: sheppardshep, whhender
 ms.date: 09/19/2024
 ms.topic: overview
-ms.search.form: Fabric Mirroring
+ms.search.form: Databricks security overview
 ---
 
 # Secure Fabric mirrored databases from Azure Databricks

@@ -4,7 +4,7 @@ description: A known issue is posted where dynamic subscriptions don't send emai
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/27/2024
+ms.date: 10/15/2024
 ms.custom: known-issue-859
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-859
 
 You can set up a dynamic subscription on a PBIX report to send emails to a list of recipients. Due to a recent regression, the subscription doesn't send an email to the recipients.
 
-**Status:** Open
+**Status:** Fixed: October 15, 2024
 
 **Product Experience:** Power BI
 

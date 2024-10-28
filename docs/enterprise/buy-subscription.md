@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/26/2024
+ms.date: 10/27/2024
 ---
 
 # Buy a Microsoft Fabric subscription
@@ -54,11 +54,13 @@ To buy an Azure SKU, you need to be an owner or a contributor of an Azure subscr
 
 To buy an Azure SKU, follow these steps:
 
-1. In Azure, select the **Microsoft Fabric** service. You can search for *Microsoft Fabric* using the search menu.
+1. Sign in to the [Azure portal](https://portal.azure.com/).
 
-2. Select **Create Fabric Capacity**.
+2. In Azure, select the **Microsoft Fabric** service. You can search for *Microsoft Fabric* using the search menu.
 
-3. In the **Basics** tab, fill in the following fields:
+3. Select **Create Fabric Capacity**.
+
+4. In the **Basics** tab, fill in the following fields:
 
     * *Subscription* - The subscription you want your capacity to be assigned to. All Azure subscriptions are billed together.
 
@@ -71,10 +73,12 @@ To buy an Azure SKU, follow these steps:
     * *Size* - Select your capacity size. Capacities come in different stock keeping units (SKUs) and we measure them by capacity units (CUs). You can view a detailed list of Microsoft Fabric capacities in [Capacities and SKUs](licenses.md#capacity).
 
     * *Fabric capacity administrator* - Select the [admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles) for this capacity.
+        * The capacity administrator must belong to the tenant where the capacity is provisioned.
+        * Business to business (B2B) users can't be capacity administrators.
 
-4. Select **Next: Tags** and if necessary, enter a name and a value for your capacity.
+5. Select **Next: Tags** and if necessary, enter a name and a value for your capacity.
 
-5. Select **Review + create**.
+6. Select **Review + create**.
 
 ## Microsoft 365 SKUs
 
