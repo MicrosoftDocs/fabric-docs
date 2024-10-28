@@ -4,7 +4,7 @@ description: This article describes how to use the Semantic model refresh activi
 author: n0elleli
 ms.author: noelleli
 ms.topic: how-to
-ms.date: 03/13/2024
+ms.date: 10/16/2024
 ---
 
 # Use the Semantic model refresh activity to refresh a Power BI Dataset (Preview)
@@ -68,6 +68,13 @@ To use a Semantic model refresh activity in a pipeline, complete the following s
    > By default, when you run the semantic model refresh activity, the behavior of the refresh type from the pipeline activity is set to "full".
 
    :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-wait-on-completion.png" alt-text="Screenshot showing where to provide additional details after selecting the connection for the activity.":::
+
+## Choose tables and partitions to refresh
+
+Optionally, you can optimize your semantic model refresh by choosing just the tables and the partitions in those tables that you wish to refresh as opposed to a full model refresh. You will find the settings to choose optional table and partition refresh under settings. Each of these properties supports parameterization using the pipeline expression builder.
+
+:::image type="content" source="media/semantic-model-refresh-activity/semantic-model-tables.png" alt-text="Screenshot showing the option to refresh specific tables.":::
+:::image type="content" source="media/semantic-model-refresh-activity/semantic-model-partitions.png" alt-text="Screenshot showing the option to refresh specific partitions.":::
 
 ## Save and run or schedule the pipeline
 

@@ -109,5 +109,5 @@ The complete script can be copied from the following code block:
 ## Related content
 
 - [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Limitations of the SQL analytics endpoint](limitations.md#limitations-of-the-sql-analytics-endpoint)

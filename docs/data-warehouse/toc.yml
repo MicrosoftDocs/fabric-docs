@@ -325,7 +325,7 @@ items:
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse
-    href: troubleshoot-synapse-data-warehouse.md
+    href: troubleshoot-fabric-data-warehouse.md
   - name: Limitations
     href: limitations.md      
   - name: Change ownership of Warehouse

@@ -1,6 +1,6 @@
 ---
 title: Migrate data and pipelines from Azure Synapse to Fabric
-description: Learn about your different options for migrating data and pipelines from Azure Synapse to Microsoft Fabric.
+description: Learn about your different options for migrating data and pipelines from Azure Synapse Analytics to Microsoft Fabric.
 ms.reviewer: sngun
 ms.author: aimurg
 author: murggu
@@ -9,10 +9,10 @@ ms.custom:
   - fabric-cat
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 11/11/2024
 ---
 
-# Migrate data and pipelines from Azure Synapse to Microsoft Fabric
+# Migrate data and pipelines from Azure Synapse Analytics to Microsoft Fabric
 
 The first step in data and pipeline migration is to identify the data that you want to make available in OneLake, and the pipelines you intend to move.
 
@@ -40,7 +40,7 @@ To move the existing data to OneLake, you have several options:
 
 * **mssparkutils fastcp**: The [mssparkutils](microsoft-spark-utilities.md) library provides a fastcp API that enables you to copy data between from ADLS Gen2 to OneLake.
 * **AzCopy**: You can use [AzCopy](/azure//storage/common/storage-use-azcopy-v10/) command-line utility to copy data from ADLS Gen2 to OneLake.
-* **Azure Data Factory, Azure Synapse, and Data Factory in Fabric**: Use [copy activity](../data-factory/copy-data-activity.md) to copy data to the lakehouse.
+* **Azure Data Factory, Azure Synapse Analytics, and Data Factory in Fabric**: Use [copy activity](../data-factory/copy-data-activity.md) to copy data to the lakehouse.
 * **Use shortcuts**: You can enable ADLS Gen2 historical data in OneLake using [shortcuts](../onelake/create-adls-shortcut.md). No data copy needed.
 * **Azure Storage Explorer**: You can move files from ADLS Gen2 location to OneLake using Azure Storage Explorer. See [how integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
 

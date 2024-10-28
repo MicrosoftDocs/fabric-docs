@@ -1,10 +1,10 @@
 ### YamlMime:Landing
 
 title: Data warehousing documentation in Microsoft Fabric  # < 60 chars
-summary: Learn more about Synapse Data Warehouse in Microsoft Fabric # < 160 chars
+summary: Learn more about Fabric Data Warehouse # < 160 chars
 
 metadata:
-  title: Synapse Data Warehouse in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Fabric Data Warehouse # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Data warehousing in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-warehouse
@@ -139,7 +139,7 @@ landingContent:
           - text: Caching
             url: caching.md
           - text: Troubleshoot
-            url: troubleshoot-synapse-data-warehouse.md
+            url: troubleshoot-fabric-data-warehouse.md
   # Card 
   - title: Monitor
     linkLists:
