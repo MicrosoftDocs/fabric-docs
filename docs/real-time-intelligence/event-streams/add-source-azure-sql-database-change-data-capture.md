@@ -52,7 +52,7 @@ Note that you must not enable mirroring in your Azure SQL database.
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure SQL DB (CDC)** tile.
 
-:::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL DB CDC as the source type in the Get events wizard." lightbox="./media/add-source-azure-event-hubs-enhanced/select-azure-sql-db-cdc.png":::
+:::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL DB CDC as the source type in the Get events wizard." lightbox="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png":::
 
 
 ## Configure and connect to Azure SQL Database CDC
