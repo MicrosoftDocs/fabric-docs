@@ -10,7 +10,9 @@ ms.date: 10/15/2024
 ---
 # Accelerate queries over OneLake shortcuts (preview)
 
-OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. Query acceleration allows specifying a policy on top of external delta tables that defines the number of days to cache data for high-performance queries. Query acceleration is supported in Eventhouse over delta tables from [OneLake shortcuts](onelake-shortcuts.md), Azure Data Lake Store Gen1, or Azure blob storage external tables.
+OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. Query acceleration allows specifying a policy on top of external delta tables that defines the number of days to cache data for high-performance queries. 
+
+Query acceleration is supported in Eventhouse over delta tables from [OneLake shortcuts](onelake-shortcuts.md), Azure Data Lake Store Gen1, or Azure blob storage external tables.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -31,9 +33,8 @@ This article explains how to use the query acceleration policy to accelerate que
 Query acceleration can be enabled during shortcut creation, or on existing shortcuts. To enable query acceleration on a new shortcut, follow these steps:
 
 [!INCLUDE [one-lake-shortcut](includes/one-lake-shortcut.md)]
-
-1. Toggle the **Accelerate** button to **On**. 
-1. Select **Create**.
+5. Toggle the **Accelerate** button to **On**. 
+6. Select **Create**.
 
 ## Enable query acceleration on an existing shortcut
 
