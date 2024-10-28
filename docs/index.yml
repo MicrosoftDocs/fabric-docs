@@ -82,22 +82,22 @@ productDirectory:
       url: /industry/industry-data-solutions-fabric
     # Card
     - title: Real-Time Intelligence
-      imageSrc: ./media/synapse-real-time-intelligence-icon.png
+      imageSrc: ./media/fabric-real-time-intelligence-icon.png
       summary: Discover insights from your streaming data. Ingest, index, and partition any data source or format, then query the data and create visualizations.
       url: real-time-intelligence/index.yml
     # Card
-    - title: Synapse Data Engineering
-      imageSrc: ./media/synapse-data-engineering-icon.png
+    - title: Fabric Data Engineering
+      imageSrc: ./media/fabric-data-engineering-icon.png
       summary: Build, transform, and share your data estate using lakehouses, notebooks, and Spark environments.
       url: data-engineering/index.yml
     # Card
-    - title: Synapse Data Science
-      imageSrc: ./media/synapse-data-science-icon.png
+    - title: Fabric Data Science
+      imageSrc: ./media/fabric-data-science-icon.png
       summary: Unlock powerful insights using AI and machine learning technology.
       url: data-science/index.yml
     # Card
-    - title: Synapse Data Warehouse
-      imageSrc: ./media/synapse-data-warehouse-icon.png
+    - title: Fabric Data Warehouse
+      imageSrc: ./media/fabric-data-warehouse-icon.png
       summary: Analyze data in a secure SQL warehouse for greater scale and performance in an open data format.
       url: data-warehouse/index.yml
 
