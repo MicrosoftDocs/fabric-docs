@@ -18,7 +18,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 ## Error message: The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.
 
-- **Symptoms**: Copy activity fails with the following error: 
+- **Symptoms**: Copy activity fails with the following error:
 
     `Message: ErrorCode = UserErrorFailedFileOperation, Error Message = The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.`
 
@@ -77,6 +77,20 @@ This article provides suggestions to troubleshoot common problems with the Azure
     - Place your Self-hosted IR machine and target Azure Data Lake Storage Gen2 account in the same region, if possible. This can help avoid a random timeout error and produce better performance.
 
     - Check whether there's a special network setting, such as ExpressRoute, and ensure that the network has enough bandwidth. We suggest that you lower the Self-hosted IR concurrent jobs setting when the overall bandwidth is low. Doing so can help avoid network resource competition across multiple concurrent jobs.
+    
+    - If the file size is moderate or small, use a smaller block size for nonbinary copy to mitigate such a timeout error. For more information, see [Blob Storage Put Block](/rest/api/storageservices/put-block).
+
+      To specify the custom block size, edit the property in your JSON file editor as shown here:
+    
+      ```
+      "sink": {
+          "type": "DelimitedTextSink",
+          "storeSettings": {
+              "type": "AzureBlobFSWriteSettings",
+              "blockSizeInMB": 8
+          }
+      }
+      ```
 
 ## The copy activity is not able to pick files from Azure Data Lake Storage Gen2
 
