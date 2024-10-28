@@ -35,7 +35,7 @@ Query acceleration can be enabled during shortcut creation, or on existing short
 [!INCLUDE [one-lake-shortcut](includes/one-lake-shortcut.md)]
 5. Toggle the **Accelerate** button to **On**. 
 
-         :::image type="content" source="../media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="../media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
+    :::image type="content" source="../media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="../media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
 
 6. Select **Create**.
 
