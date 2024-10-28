@@ -12,7 +12,9 @@ zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Create an eventstream in Microsoft Fabric
-This article describes how to create a Fabric eventstream. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+This article describes how to create a Fabric eventstream. The enhanced capabilities are enabled by default now, so use the content in the **Enhanced Capabilities** tab to create an eventstream.
+
+If you have eventstreams that were created using standard capabilities, those eventstreams will continue to work. You can still edit and publish them as usual. We recommend that you create a new eventstream to replace standard eventstreams so that you can take advantage of additional capabilities and benefits of enhanced eventstreams.
 
 ::: zone pivot="enhanced-capabilities"  
 

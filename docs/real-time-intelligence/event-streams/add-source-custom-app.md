@@ -5,12 +5,11 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 10/27/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
+
 ---
 
 # Add a custom endpoint or custom app source to an eventstream
@@ -25,49 +24,41 @@ This article shows you how to add a custom endpoint source or a custom app sourc
 
 ## Prerequisites
 
-Before you start, you must get access to the Fabric premium workspace with Contributor or higher permissions.
+- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located. 
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add custom endpoint data as a source
+1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**.    Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.   
 
-1. To create a new eventstream, select **Eventstream** from the **Home** screen. Make sure the **Enhanced capabilities** option is enabled.
-
-    ![Screenshot of the dialog for creating a new eventstream.](media/external-sources/new-eventstream.png)
-
-1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**.
-
-   ![Screenshot of the option to use a custom endpoint.](media/external-sources/use-custom-endpoint.png)
-
-   Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.
-
-   ![Screenshot of selecting a custom endpoint as a source for an existing eventstream.](media\add-source-custom-app-enhanced\add-custom-app.png)
-
+   ![Screenshot of the option to use a custom endpoint.](media\add-source-custom-app-enhanced\select-custom-endpoint.png)
 1. In the **Custom endpoint** dialog, enter a name for the custom source under **Source name**, and then select **Add**.
 
    ![Screenshot of the dialog for adding a custom endpoint.](media\add-source-custom-app-enhanced\add.png)
-
 1. After you create the custom endpoint source, it's added to your eventstream on the canvas in edit mode. To implement the newly added data from the custom app source, select **Publish**.
 
    ![Screenshot that shows the eventstream in edit mode, with the Publish button highlighted.](media\add-source-custom-app-enhanced\edit-mode.png)
 
-## Get endpoint details on the Details pane to send events
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+## Get endpoint details on the Details pane
 
 After you create a custom endpoint source, its data is available for visualization in the live view.
 
 ![Screenshot that shows the eventstream in the live view.](media\add-source-custom-app-enhanced\live-view.png)
 
-The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
+The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basic** and **SAS Key Authentication**. These pages offer the endpoint details with the corresponding protocol for connecting. 
 
 **Basic** shows the name, type, and status of your custom endpoint.
 
-:::image type="content" source="media\add-source-custom-app-enhanced\details-event-basic.png" alt-text="Screenshot that shows basic information on the Details pane of the eventstream live view.":::
+:::image type="content" source="media\add-source-custom-app-enhanced\details-event-basic.png" alt-text="Screenshot that shows basic information on the Details pane of the eventstream live view." lightbox="media\add-source-custom-app-enhanced\details-event-basic.png":::
 
-**Keys** provides information about connection keys. **Sample code** provides the sample code, with the corresponding keys embedded, that you can use to stream the events to your eventstream. The information on these pages varies by protocol.
+**SAS Key Authentication** page provides information about connection keys and also a link to the **sample code**, with the corresponding keys embedded, that you can use to stream the events to your eventstream. The information on the Keys page varies by protocol.
 
 ### Event hub
 
-The **Keys** page on the **Event Hub** tab contains information related to an event hub's connection string. The information includes **Event hub name**, **Shared access key name**, **Primary key**, and **Connection string-primary key**.
+The **SAS Key Authentication** page on the **Event Hub** tab contains information related to an event hub's connection string. The information includes **Event hub name**, **Shared access key name**, **Primary key**, **Secondary key**, **Connection string-primary key**, **Connection string-secondary key**.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-event-keys.png" alt-text="Screenshot that shows key information on the Details pane of the eventstream.":::
 
@@ -77,50 +68,39 @@ The following example shows what the connection string looks like in event hub f
 
 > *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxx*
 
-The **Sample code** page on the **Event Hub** tab offers ready-to-use code that includes the required information about connection keys in the event hub. Simply copy and paste it into your application for use.
+If you select the **Show sample code** button, you see the ready-to-use **Java** code that includes the required information about connection keys in the event hub. Copy and paste it into your application for use.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-event-sample.png" alt-text="Screenshot that shows sample code on the Details pane of the eventstream live view.":::
 
-<a name="kafka-enhanced-capabilities"></a>
-
-### Kafka
-
-The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use the **Keys** and **Sample code** information for the Kafka protocol format to connect to your eventstream and stream the events.
-
-:::image type="content" source="media\add-source-custom-app-enhanced\details-kafka-keys.png" alt-text="Screenshot that shows Kafka keys on the Details pane of the eventstream live view.":::
-
-The **Sample code** page on the **Kafka** tab provides ready-made code, including the necessary connection keys in Kafka format. Simply copy it for your use.
-
-:::image type="content" source="media\add-source-custom-app-enhanced\details-kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream live view.":::
-
-### AMQP
+### Advanced Message Queuing Protocol (AMQP)
 
 The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between various platforms and languages. You can use this format to connect to your eventstream by using the AMQP protocol.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-amqp-keys.png" alt-text="Screenshot that shows AMQP keys on the Details pane of the eventstream live view.":::
 
-The **Sample code** page on the **AMQP** tab provides ready-to-use code with connection key information in AMQP format.
+When you select **Show sample code** button, you see the ready-to-use Java code with connection key information in AMQP format.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-amqp-sample-code.png" alt-text="Screenshot that shows AMQP sample code on the Details pane of the eventstream live view.":::
 
-You can choose the protocol format that suits your application needs and preferences, and then copy and paste the connection string into your application. You can also refer to or copy the sample code on the **Sample code** page, which shows how to send or receive events by using various protocols.
+<a name="kafka-enhanced-capabilities"></a>
+
+### Kafka
+
+The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use the **SAS Key Authentication** information for the Kafka protocol format to connect to your eventstream and stream the events.
+
+:::image type="content" source="media\add-source-custom-app-enhanced\details-kafka-keys.png" alt-text="Screenshot that shows Kafka keys on the Details pane of the eventstream live view.":::
+
+When you select the **Show sample code** button, you see the ready-to-use Java code, including the necessary connection keys in Kafka format. Copy it for your use.
+
+:::image type="content" source="media\add-source-custom-app-enhanced\details-kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream live view.":::
+
+> [!NOTE]
+> - You can choose the protocol format that suits your application needs and preferences, and then copy and paste the connection string into your application. You can also refer to or copy the **sample code**, which shows how to send or receive events by using various protocols. 
+- To exit out of the sample code view, select **Hide sample code**. 
+
 
 ## Related content
-
-To learn how to add other sources to an eventstream, see the following articles:
-
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Blob Storage events](add-source-azure-blob-storage.md)
-- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
-- [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [Confluent Kafka](add-source-confluent-kafka.md)
-- [Fabric workspace event](add-source-fabric-workspace.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
-- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [Sample data](add-source-sample-data.md)
+For a list of supported sources, see [Add an event source in an eventstream](add-manage-eventstream-sources.md)
 
 ::: zone-end
 
