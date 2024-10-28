@@ -20,6 +20,9 @@ During deployment, Microsoft Fabric copies the content from the source stage to 
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
+> [!IMPORTANT]
+> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
+
 There are two main parts of the deployment pipelines process:
 
 * [Define the deployment pipeline structure](#define-the-deployment-pipeline-structure)

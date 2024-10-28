@@ -51,7 +51,8 @@ You can easily create a new warehouse with case-insensitive collation using [Vis
      POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceID>/items HTTP/1.1
      Content-Type: application/json
      Authorization: Bearer <bearer token>
-    { 
+
+   { 
       "type": "Warehouse", 
       "displayName": "<Warehouse name here>", 
       "description": "<Warehouse description here>", 

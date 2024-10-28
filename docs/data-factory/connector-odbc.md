@@ -4,7 +4,7 @@ description: This article provides information about how to create an Odbc data 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 09/13/2024
+ms.date: 10/28/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -22,8 +22,8 @@ The Odbc connector supports the following authentication types for copy and Data
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Anonymous| n/a | √ |
-|Basic (Username/Password)| n/a | √ |
+|Anonymous| √ | √ |
+|Basic (Username/Password)| √ | √ |
 |Windows| n/a | √ |
 
 ## Set up your connection in Dataflow Gen2
