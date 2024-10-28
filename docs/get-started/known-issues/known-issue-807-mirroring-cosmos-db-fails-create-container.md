@@ -4,7 +4,7 @@ description: A known issue is posted where mirroring for Azure Cosmos DB fails w
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/14/2024
+ms.date: 10/15/2024
 ms.custom: known-issue-807
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-807
 
 You might experience issues with mirroring for existing or newly created mirrored Azure Cosmos DB. Mirroring fails if you create a new container.
 
-**Status:** Open
+**Status:** Fixed: October 15, 2024
 
 **Product Experience:** Data Warehouse
 

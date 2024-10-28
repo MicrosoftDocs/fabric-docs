@@ -81,7 +81,7 @@ Read the full version of the release notes for [Delta Lake 2.4](https://github.c
 
 ## Default level packages for Java, Scala, Python libraries
 
-For a list of all the default level packages for Java, Scala, Python and their respective versions see the [release notes](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric/spark3.4).
+For a list of all the default level packages for Java, Scala, Python and their respective versions see the [release notes](https://github.com/microsoft/synapse-spark-runtime/tree/9ba4059c0d9433bf2b6e25cd70fe60c6e0acd51c/Fabric/Runtime%201.2%20(Spark%203.4)).
 
 ## Related content
 

@@ -6,15 +6,15 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: concept-article
+ms.topic: overview
 ms.date: 07/09/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
-# Introduction to Git integration
+# What is Microsoft Fabric Git integration?
 
-This article explains to developers how to integrate Git version control with the Fabric Application lifecycle management (ALM) tool.
+This article explains to developers how to integrate Git version control with the Microsoft Fabric Application lifecycle management (ALM) tool.
 
 > [!NOTE]
 > Some of the items for Git integration are in preview. For more information, see the list of [supported items](#supported-items).
