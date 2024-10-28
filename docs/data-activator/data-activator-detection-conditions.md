@@ -68,6 +68,7 @@ Condition types fall into the following categories:
 |**Enters, Exits Range** conditions     |The Enters range condition activates when a property value enters a defined value range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. The exits range condition is similar, except that it activates when the property value goes outside of the range. |
 |**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from specified boundaries.   |
 Text states such as **Contains**, **Ends**, **Begins**  | These conditions activate when text meets the selected condition. 
+|**Heartbeat** conditions  | "No presence of data" conditions activate when data does not arrive in Activator. Time elapsed is the time that you want the rule to monitor if new data has not arrived.
 
 After you specify a condition type, you specify an occurrence.
 
