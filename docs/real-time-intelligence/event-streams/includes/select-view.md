@@ -1,6 +1,6 @@
 ---
 title: Select enhanced or standard view
-description: This include file has a note asking user to select enhanced capabilities vs. standard capabilities. 
+description: The include file has a note asking user to select enhanced capabilities vs. standard capabilities. 
 ms.author: spelluru
 author: spelluru
 ms.topic: include
@@ -8,4 +8,5 @@ ms.date: 05/21/2024
 ---
 
 > [!NOTE]
-> If you want to use enhanced capabilities that are in preview, select **Enhanced capabilities** at the top. Otherwise, select **Standard capabilities**. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](../overview.md).
+> Enhanced capabilities are enabled by default when you create eventstreams now. If you have eventstreams that were created using standard capabilities, those eventstreams will continue to work. You can still edit and publish them as usual. We recommend that you create a new eventstream to replace standard eventstreams so that you can take advantage of additional capabilities and benefits of enhanced eventstreams.
+
