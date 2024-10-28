@@ -17,9 +17,6 @@ ms.search.form: Deployment pipelines operations
 
 # Assign a workspace to a Microsoft Fabric deployment pipeline
 
-> [!IMPORTANT]
-> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
-
 Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is important for organizations that already have workspaces that are used as different environments of a managed release. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 
 For more information about assigning workspaces and the implications regarding capacities and permissions, see [The deployment pipelines process](./understand-the-deployment-process.md#assign-a-workspace-to-an-empty-stage).
@@ -28,6 +25,9 @@ For more information about assigning workspaces and the implications regarding c
 >[!NOTE]
 >This article describes how to assign and unassign a workspace to a deployment pipeline stage in the Fabric service. You can also perform these functions programmatically, using the [Assign Workspace](/rest/api/fabric/pipelines/assign-workspace) and [Unassign Workspace](/rest/api/fabric/pipelines/unassign-workspace) Fabric REST APIs.
 -->
+
+> [!IMPORTANT]
+> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
 
 ## Assign a workspace to any vacant pipeline stage
 
