@@ -65,20 +65,6 @@ If the exchange fails for MFA reasons, notify your front-end along with the clai
 
 Fabric front-end offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with the authentication JavaScript API, make sure you go over the [authentication JavaScript API](./authentication-javascript-api.md) documentation.
 
-### API
-
-`acquireAccessToken(params: AcquireAccessTokenParams): Promise<AccessToken>;`  
-`export interface AcquireAccessTokenParams {`  
-`    additionalScopesToConsent?: string[];`  
-`    claimsForConditionalAccessPolicy?: string;`  
-`}`
-
-The API returns an AccessToken object that contains the token itself and an expiry date for the token.
-
-To call the API in the Front-end sample, create a sample item and scroll down and select **Navigate to Authentication page**, from there you can select **Get access Token** and you'll receive a token back.
-
-:::image type="content" source="./media/authentication-concept/javascript-api-authentication-get-token.png" alt-text="Screenshot showing getting token for JavaScript API authentication.":::
-
 ### Consents  
 
 To understand why consents are required, review [User and admin consent in Microsoft Entra ID](/entra/identity/enterprise-apps/user-admin-consent-overview).  
