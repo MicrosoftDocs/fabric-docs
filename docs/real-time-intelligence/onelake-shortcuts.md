@@ -33,9 +33,10 @@ Select the tab that corresponds to the shortcut you'd like to create:
 
 [!INCLUDE [one-lake-shortcut](includes/one-lake-shortcut.md)]
 
-    1. To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**. For more information, see [Accelerate queries over OneLake shortcuts](query-acceleration.md). 
+> [!NOTE]
+> To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**. For more information, see [Accelerate queries over OneLake shortcuts](query-acceleration.md). 
 
-1. Select **Create**.
+5. Select **Create**.
 
 > [!NOTE]
 > You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create additional shortcuts.
