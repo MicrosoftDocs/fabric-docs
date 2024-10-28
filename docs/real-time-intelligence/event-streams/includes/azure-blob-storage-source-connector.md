@@ -15,7 +15,7 @@ ms.date: 10/28/2024
    ![A screenshot of the Connect screen.](media/azure-blob-storage-source-connector/connect.png)
 1. On the **Review + connect** screen, review the summary, and then select **Connect** to complete the configuration for Azure Blob Storage events.
 
-   ![A screenshot of the Add screen.](media/azure-blob-storage-source-connector/connect-source.png)
+   ![A screenshot of the Review + connect screen.](media/azure-blob-storage-source-connector/connect-source.png)
 1. Then, on the next page, select **Add** to add the source to the eventstream. 
 
     ![A screenshot of the Add screen.](media/azure-blob-storage-source-connector/add.png)
