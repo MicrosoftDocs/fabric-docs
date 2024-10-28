@@ -46,7 +46,7 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
   This status indicates that the events are linked to Fabric events in the Real-Time hub and awaiting further action. Actions include creating alerts with Data Activator that execute Fabric job items like Pipeline or Notebook in the **Fabric events** tab in Real-Time hub.
 
-  ![A screenshot showing unstreamed Azure Blob Storage events with the button to Stream events.](media/add-source-azure-blob-storage/unstreamed.png)
+  [![A screenshot showing unstreamed Azure Blob Storage events with the button to Stream events.](media/add-source-azure-blob-storage/unstreamed.png)](media/add-source-azure-blob-storage/unstreamed.png#lightbox)
 
 - **Streamed events.** These events are converted to continuous events, enabling real-time transformation and routing to various destinations in Fabric for further analysis. In an eventstream, selecting the **Stream events** button on an unstreamed Azure Blob Storage source converts the events into continuous events. The eventstream is then assigned a default stream, letting you add operations and route it to other destinations in Fabric.
 
@@ -116,7 +116,7 @@ After you link Azure Blob Storage events to Fabric events in Real-Time hub, you 
 
    You can also view the data stream on the **My data streams** tab of **Real-Time hub** for verification.
 
-    :::image type="content" source="media/add-source-azure-blob-storage/hub.png" alt-text="A screenshot of the eventstream listed under Data streams in the Real-Time hub.":::
+    :::image type="content" source="media/add-source-azure-blob-storage/hub.png" lightbox="media/add-source-azure-blob-storage/hub.png" alt-text="A screenshot of the eventstream listed under Data streams in the Real-Time hub.":::
 
 [!INCLUDE [known-issues-discrete-events](./includes/known-issues-discrete-events.md)]
 
