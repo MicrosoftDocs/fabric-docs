@@ -33,4 +33,4 @@ ms.date: 10/28/2024
    > **Set a different Server ID for each reader**. Every MySQL database client for reading binlog should have a unique id, called Server ID. MySQL Server uses this ID to maintain the network connection and the binlog position. Different jobs sharing the same Server ID can result in reading from the wrong binlog position. Therefore, it's recommended to set a different Server ID for each reader.
 1. On the **Review + connect** page, after reviewing the summary for Azure MySQL DB CDC source, select **Add** to complete the configuration.
 
-      :::image type="content" source="media/mysql-database-cdc-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page with the Add button selected." lightbox="media/mysql-database-cdc-source-connector/review-button.png":::
+      :::image type="content" source="media/mysql-database-cdc-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page with the Add button selected." lightbox="media/mysql-database-cdc-source-connector/review-connect.png":::
