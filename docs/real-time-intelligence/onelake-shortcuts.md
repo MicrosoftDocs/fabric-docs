@@ -28,27 +28,12 @@ Select the tab that corresponds to the shortcut you'd like to create:
 
 [!INCLUDE [onelake-shortcut-prerequisites](includes/onelake-shortcut-prerequisites.md)]
 
->[!NOTE]
->The following flow shows how to create a shortcut that points to data in a Lakehouse in Fabric. Similarly, you can create shortcuts that point to Data Warehouses or other KQL databases. 
+> [!NOTE]
+> The following flow shows how to create a shortcut that points to data in a Lakehouse in Fabric. Similarly, you can create shortcuts that point to Data Warehouses or other KQL databases. 
 
-1. Browse to an existing KQL database.
-1. Select **New** > **OneLake shortcut**.
+[!INCLUDE [one-lake-shortcut](includes/one-lake-shortcut.md)]
 
-    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
-
-## Select a source
-
-1. Under **Internal sources**, select **Microsoft OneLake**.
-
-    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled OneLake is highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/new-shortcut-expanded.png":::
-
-1. Select the data source you want to connect to, and then select **Next**.
-
-    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/data-source.png":::
-
-1. Expand **Tables**, and select a specific table to connect to.
-
-    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
+    To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**. For more information, see [Accelerate queries over OneLake shortcuts](query-acceleration.md). 
 
 1. Select **Create**.
 
