@@ -62,7 +62,9 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Develop** and then your workspace.
 1. Select **Import** > **Notebook** >  **From this computer** > **Upload** then choose the NYC GreenTaxi notebook you downloaded in a previous step.
+
     :::image type="content" source="media/spark-connector/upload-notebook.png" alt-text="Screenshot of Import status window. The button titled Upload is highlighted.":::
+   
 1. Once the import is complete, open the notebook from your workspace.
 
 ## 4- Get data
