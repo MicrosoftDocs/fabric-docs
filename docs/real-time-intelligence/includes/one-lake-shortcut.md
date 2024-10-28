@@ -23,6 +23,8 @@ ms.date: 10/28/2024
 
 1. Expand **Tables**, and select a specific table to connect to.
 
-    :::image type="content" source="../media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="../media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
+    :::image type="content" source="../media/onelake-shortcuts/onelake-shortcut/select-table.png" alt-text="Screenshot of new shortcot where tables are expanded and one table is selected." lightbox="../media/onelake-shortcuts/onelake-shortcut/select-table.png":::
 
 1. Select **Next**.
+
+     :::image type="content" source="../media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="../media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
