@@ -73,8 +73,6 @@ Here's an example of a consent popup for our app "my workload app" and its depen
 
 :::image type="content" source="./media/authentication-concept/environment-setup-consent-popup.png" alt-text="Screenshot of the consent popup.":::
 
-We'll see how to work with consents when we talk about AcquireAccessTokenParams.
-
 ### Another way to grant consents in the home tenant (optional)
 
 Refer to the [JavaScript API documentation](./authentication-javascript-api.md#another-way-to-grant-consents-in-the-home-tenant-optional) for more information on how to grant consents in the home tenant of the application using the following url (insert your tenant ID and the client ID):  
