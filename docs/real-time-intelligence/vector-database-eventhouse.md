@@ -5,14 +5,14 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 09/16/2024
+ms.date: 10/13/2024
 ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database
 
 In this tutorial, you learn how to use an Eventhouse as a vector database to store and query vector data in Real-Time Intelligence. For general information about vector databases, see [Vector databases](vector-database.md)
 
-The given scenario involves the use of semantic searches on Wikipedia pages to find pages with common themes. You use an available sample dataset, which includes vectors for tens of thousands of Wikipedia pages. These pages have already been embedded with an OpenAI model to produce vectors for each page. The vectors, along with some pertinent metadata related to the page, are then stored in an Eventhouse. You can use this dataset to find pages that are similar to each other, or to find pages that are similar to some theme you want to find. For example, say you want to look up "famous female scientists of the 19th century," you encode this phrase using the same OpenAI model, and then run a vector similarity search over the stored Wikipedia page data to find the pages with the highest semantic similarity.
+The given scenario involves the use of semantic searches on Wikipedia pages to find pages with common themes. You use an available sample dataset, which includes vectors for tens of thousands of Wikipedia pages. These pages were embedded with an OpenAI model to produce vectors for each page. The vectors, along with some pertinent metadata related to the page, are then stored in an Eventhouse. You can use this dataset to find pages that are similar to each other, or to find pages that are similar to some theme you want to find. For example, say you want to look up "famous female scientists of the 19th century." You encode this phrase using the same OpenAI model, and then run a vector similarity search over the stored Wikipedia page data to find the pages with the highest semantic similarity.
 
 Specifically, in this tutorial you will:
 
@@ -67,9 +67,9 @@ The following steps are used to import the embedded Wikipedia data and write it 
 ### Import notebook
 
 1. Download the sample notebook from the [GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/vector-database-eventhouse-notebook.ipynb).
-1. Browse to your Fabric environment. In the experience switcher, choose **Data Engineering**.
-1. Select **Import notebook** > **Upload**, and choose the upload you downloaded in a previous step. :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
-1. Open the imported notebook item.
+1. Browse to your Fabric environment. In the experience switcher, choose **Develop** and then your workspace.
+1. Select **Import** > **Notebook** >  **From this computer** > **Upload** then choose the notebook you downloaded in a previous step.
+1. Once the import is complete, open the imported notebook from your workspace.
 
 ### Write data to the Eventhouse
 
