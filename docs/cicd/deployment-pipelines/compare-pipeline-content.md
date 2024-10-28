@@ -20,6 +20,9 @@ Before you deploy content to a different stage, it can be helpful to see the dif
 
 Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there's more than one item in a workspace with the same name and type, then the items are paired if their paths are the same. If the path isn't the same, the items aren't paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item overrides its paired item metadata, including its name, if it was changed. For more information on pairing, see [pairing items](./understand-the-deployment-process.md#autobinding).
 
+> [!IMPORTANT]
+> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
+
 ## Compare stages
 
 ### [New deployment pipeline UI](#tab/new)
