@@ -43,14 +43,19 @@ Query acceleration can be enabled during shortcut creation, or on existing short
 
 1. Browse to the shortcut you want to accelerate.
 1. In the menu bar, select **Manage** > **Data policies**.
-1. In the data policy pane, toggle the **Accelerate** button to **On**.
+1. In the data policy pane, toggle the **Query acceleration** button to **On**.
 
 ## Set caching period
 
-You can also set the number of days to cached data for high performance queries. The default value is 36500 days. To set this policy using commands, see [query acceleration policy](https://aka.ms/query-acceleration).
+Data is accelerated for a certain period of time, defined in days from the `modificationTime` in the delta log. The default caching period is 36500 days. To set this policy using commands, see [query acceleration policy](https://aka.ms/query-acceleration). To set the caching period in the UI, follow these steps:
 
 1. Browse to the shortcut you want to accelerate.
 1. In the menu bar, select **Manage** > **Data policies**.
 1. In the data policy pane, enter the number of days for which data will be cached.
 
-:::image type="content" source="media/query-acceleration/data-policy-query-acceleration.png" alt-text="Screenshot of the data policy for query acceleration.":::
+    :::image type="content" source="media/query-acceleration/data-policy-query-acceleration.png" alt-text="Screenshot of the data policy for query acceleration.":::
+
+## Related content
+
+* [OneLake shortcuts](onelake-shortcuts.md)
+* [Query acceleration policy](https://aka.ms/query-acceleration)
