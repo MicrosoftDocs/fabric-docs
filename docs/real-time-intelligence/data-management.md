@@ -16,7 +16,7 @@ ms.search.form: Manage data in a KQL Database
 
 # Data management
 
-Synapse Real-Time Intelligence offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that isn't necessarily data in the database tables, or requests to modify the service state.
+Real-Time Intelligence offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that isn't necessarily data in the database tables, or requests to modify the service state.
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
 

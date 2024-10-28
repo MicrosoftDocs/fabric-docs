@@ -4,7 +4,7 @@ description: A known issue is posted where Dynamics 365 Business Central connect
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/17/2024
+ms.date: 10/09/2024
 ms.custom: known-issue-839
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-839
 
 You can use a Dynamics 365 Business Central connector in your semantic model or dataflow. You might experience a failure when refreshing the semantic model or dataflow.
 
-**Status:** Open
+**Status:** Fixed: October 9, 2024
 
 **Product Experience:** Power BI
 

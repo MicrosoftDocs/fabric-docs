@@ -25,7 +25,7 @@ This article provides information about the official collection of icons for Mic
 
 ## Terms
 
-Microsoft permits the use of these icons in architectural diagrams, training materials, or documentation. You can copy, distribute, and display the icons only for the permitted use unless granted explicit permission by Microsoft. Microsoft reserves all other rights. Fabric icons are also available as a [npm package](https://www.npmjs.com/package/@fabric-msft/svg-icons) for use in Microsoft Fabric platform extension development. To use these icons, import the package into your project, then use individual SVG files as an image source or as an SVG. You can also directly download the icons from the following GitHub repository:
+Microsoft permits the use of these icons in architectural diagrams, training materials, or documentation. You can copy, distribute, and display the icons only for the permitted use unless granted explicit permission by Microsoft. Microsoft reserves all other rights. Fabric icons are also available as a [npm package](https://www.npmjs.com/package/@fabric-msft/svg-icons) for use in Microsoft Fabric platform extension development. To use these icons, import the package into your project, then use individual SVG files as an image source or as an SVG. You can also directly download the icons from the following GitHub repository. Select the following button to open the repo, select **...** from the right hand corner and select **Download**:
 
 > [!div class="button"]
 > [Download icons from GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/Icons.zip)
