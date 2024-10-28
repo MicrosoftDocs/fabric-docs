@@ -36,6 +36,8 @@ Select the tab that corresponds to the shortcut you'd like to create:
 > [!NOTE]
 > To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**. For more information, see [Accelerate queries over OneLake shortcuts](query-acceleration.md). 
 
+:::image type="content" source="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
+
 5. Select **Create**.
 
 > [!NOTE]
