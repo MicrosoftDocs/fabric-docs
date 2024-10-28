@@ -33,7 +33,7 @@ Select the tab that corresponds to the shortcut you'd like to create:
 
 [!INCLUDE [one-lake-shortcut](includes/one-lake-shortcut.md)]
 
-    To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**. For more information, see [Accelerate queries over OneLake shortcuts](query-acceleration.md). 
+    1. To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**. For more information, see [Accelerate queries over OneLake shortcuts](query-acceleration.md). 
 
 1. Select **Create**.
 
