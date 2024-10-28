@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 09/16/2024
+ms.date: 10/08/2024
 ---
 
 # Data Factory limitations overview
@@ -35,10 +35,10 @@ The following table describes the resource limitations for pipelines in Data Fac
 
 | Pipeline Resource | Default limit | Maximum limit |
 |---|---|---|
-| Total number of entities, such as pipelines, activities, triggers within a workspace | 5,000 | 5,000 |
-| Concurrent pipeline runs per data factory that's shared among all pipelines in workspace  | 10,000 | 10,000 |
-| External activities  like stored procedure, Web, Web Hook, and others | 3,000 | 3,000 |
-| Pipeline activities execute on integration runtime, including Lookup, GetMetadata, and Delete | 1,000 | 1,000 |
+| Total number of pipelines within a workspace | 5,000 | 5,000 |
+| Concurrent pipeline runs per workspace that's shared among all pipelines in workspace  | 10,000 | 10,000 |
+| External activities like stored procedure, Web, Web Hook, and others | 3,000 | 3,000 |
+| Pipeline activities execution for Lookup, GetMetadata, and Delete | 1,000 | 1,000 |
 | Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on | 200 | 200 |
 | Maximum activities per pipeline, which includes inner activities for containers | 80 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
@@ -52,9 +52,6 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Bytes per payload for each activity run | 896 KB | 896 KB |
 | Intelligent throughput optimization per copy activity run | Auto | 256 |
 | Concurrent intelligent throughput optimization per workspace | 400 | 400 |
-| Write API calls | 1,200/h | 1,200/h |
-| Read API calls | 12,500/h | 12,500/h |
-| Maximum time of data flow debug session | 8 hrs | 8 hrs |
 | Meta Data Entity Size limit in a factory | 2 GB | 2 GB |
 
 ## Data Factory Dataflow Gen2 limitations

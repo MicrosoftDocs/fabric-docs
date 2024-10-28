@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
   - build-2024
 ms.date: 09/15/2024
-ms.search.form: Get started
+ms.search.form: Data Activator Real Time Hub Onramp
 #customer intent: I want to learn how to set alerts based on Fabric events from the Real-Time hub.
 ---
 

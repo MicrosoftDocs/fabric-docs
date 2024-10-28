@@ -24,8 +24,9 @@ The following error codes represent problems that can occur when Data Activator 
 
 Data Activator can't access the Power BI semantic model for your object. This error occurs if the dataset is deleted or if permissions on the dataset change since you created the alert. To resolve the problem, check if the dataset still exists, and:
 
-* If it still exists, ensure that you have permission  to access it.
-* If it's deleted, then your objects and triggers don't function. Delete then recreate them as needed on another semantic model.
+* If the dataset exists, ensure that you have permission to access it.
+
+* If the dataset is deleted, then your objects and triggers don't function. Delete then recreate them as needed on another semantic model.
 
 ### QueryEvaluationError
 
@@ -61,7 +62,7 @@ Your trigger exceeds data processing limits for one of two reasons:
 * You're sending too many events per second to your Data Activator object, or
 * Your trigger is activating too frequently.
 
-To resolve this problem, either reduce the number of events per second you're sending to your object or update your trigger condition so that your trigger activates less frequently.
+There are two ways to resolve this problem. Try reducing the number of events per second that you're sending to your object. Or, update your rule to activate less frequently.
 
 ### WorkspaceCapacityDeallocated
 
@@ -74,6 +75,15 @@ This error code means that your trigger definition is invalid. It indicates an i
 ### MaxDelayReached
 
 The error code means that Data Activator is unable to receive incoming data for your trigger for the past seven days, and is not evaluating your trigger. It indicates an internal problem with Data Activator. If you receive this error code, ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
+
+## Exceeded capacity error codes
+
+The following error codes represent Activator problems that can occur when your account runs out of Fabric capacity.
+
+### CapacityLimitExceeded
+Your account exceeded the limit of your Fabric capacity for more than 24 hours. When you exceed your capacity, throttling policies are applied and Activator pauses rules evaluation, background operations, and activations. To resolve this problem, contact your capacity administrator and ask them to review capacity usage and upgrade as needed. Once your capacity issue is resolved, make sure to reactivate your rules.
+
+Learn more with [Understand your Fabric capacity throttling](https://go.microsoft.com/fwlink/?linkid=2293008). 
 
 ## Alert and Action Error codes
 
@@ -97,7 +107,7 @@ This error code means that you have a trigger that sends a Teams alert, and your
 
 ### OfficeSubscriptionMissing
 
-This error code means that Data Activator couldn't send the alert on your trigger because you don't have a Microsoft Office subscription. To resolve the problem, you'll need to get a Microsoft Office subscription.
+This error code means that Data Activator couldn't send the alert on your trigger because you don't have a Microsoft Office subscription. To resolve the problem, get a Microsoft Office subscription.
 
 ### TeamsDisabled
 

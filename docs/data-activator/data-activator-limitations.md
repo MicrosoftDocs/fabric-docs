@@ -76,7 +76,7 @@ For more information, see [Limitations on charts with a time axis](data-activato
 
 ## Allowed recipients of email notifications
 
-Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email notifications to be sent to either external email addresses or guest email addresses. In addition, the email domain of any email notification recipient must match the email domain of the notification owner. 
+Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email notifications to be sent to either external email addresses or guest email addresses. 
 
 ## Maximum data for rule processing limits
 
@@ -86,15 +86,23 @@ Data Activator has a limit on the number of events that are processed in a rule 
 
 Data Activator imposes the following limits on the number of actions that may occur in a given time period. If an action exceeds the limit, Data Activator may throttle or cancel the action.
 
-|Trigger action  |Scope  |Limit  |
+|Rule action  |Scope  |Limit  |
 |---------|---------|---------|
-|Email     |Messages/reflex item/hour         |500        |
-|Email     |Messages/trigger/recipient/hour   |30         |
-|Teams     |Messages/reflex item/hour         |500        |
-|Teams     |Messages/trigger/recipient/hour   |30         |
+|Email     |Messages/activator item/hour         |500        |
+|Email     |Messages/rule/recipient/hour   |30         |
+|Teams     |Messages/activator item/hour         |500        |
+|Teams     |Messages/rule/recipient/hour   |30         |
 |Teams     |Messages/recipient/hour           |100        |
 |Teams     |Messages/Teams tenant/second      |50         |
-|PA        |Flow executions/trigger/hour      |10000      |
+|custom action |Power Automate flow executions/rule/hour      |10000      |
+|Fabric item |Activations/user/minute| 50   |
+
+## Maximum number of Data Activator items
+
+Your organization may have up to 250 Data Activator items per region. You will get an error message if you try to create more than this number of items. To resolve the error, either:
+
+* Use an existing Data Activator item instead of creating a new item, or
+* Delete some of your existing Data Activator items.
 
 ## Related content
 

@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: Create and use notebooks
-ms.date: 07/25/2024
+ms.date: 11/11/2024
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -64,7 +64,7 @@ You can import one or more existing notebooks from your local computer using the
 
 ## Export a notebook
 
-You can export your notebook to other standard formats. Synapse notebook can be exported into:
+You can export your notebook to other standard formats. Notebooks can be exported into the following formats:
 
 - The standard notebook file (.ipynb) that is used for Jupyter notebooks.
 - An HTML file (.html) that can be opened from a browser directly.  

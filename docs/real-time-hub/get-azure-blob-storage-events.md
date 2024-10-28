@@ -65,7 +65,7 @@ Now, use instructions from the [Configure and create an eventstream](#configure-
 
 1. On the **Add source** page, select **Azure Blob Storage events**.
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/select-azure-blob-storage-events.png" alt-text="Screenshot that shows the Get events page with Azure Blob Storage events selected.":::
+    :::image type="content" source="./media/get-azure-blob-storage-events/select-azure-blob-storage-events.png" alt-text="Screenshot that shows the Get events page with Azure Blob Storage events selected." lightbox="./media/get-azure-blob-storage-events/select-azure-blob-storage-events.png":::
 1. On the **Connect** page, select the **Azure subscription** that has the storage account.
 1. Select the **Azure Blob Storage account** that you want to receive events for.
 1. In the **Stream details** section, enter a **name for the eventstream** that the Wizard is going to create, and select the **workspace** where you want to save the eventstream.

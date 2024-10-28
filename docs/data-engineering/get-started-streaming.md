@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/13/2024
+ms.date: 11/11/2024
 ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 ---
 
@@ -42,11 +42,13 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
 
 Use the following steps to create a lakehouse:
 
-1. In Microsoft Fabric, select **Synapse Data Engineering**.
+1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
+
+1. Switch to the **Data Engineering** experience.
 
 1. Navigate to your desired workspace or create a new one if needed.
 
-1. To create a lakehouse, select the **Lakehouse** icon under the **New** section in the main pane.
+1. To create a lakehouse, select **New item** from the workspace and select **Lakehouse**.
 
    :::image type="content" source="media\get-started-streaming\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog":::
 
