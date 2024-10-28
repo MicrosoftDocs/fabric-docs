@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/21/2024
+ms.date: 10/13/2024
 ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database
 
-Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-Time Intelligence and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+Notebooks are both readable documents containing data analysis descriptions and results and executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-Time Intelligence and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 Specifically, you learn how to:
 
@@ -37,7 +37,7 @@ Specifically, you learn how to:
 
 3. In the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
 
-    The KQL database has now been created within the context of the selected workspace.
+    The KQL database is created within the context of the selected workspace.
 
 4. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
@@ -60,17 +60,12 @@ We've created a sample notebook that takes you through all the necessary steps f
 
 The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Spark notebook to load and query data in your KQL database.
 
-1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
-1. Select **Import notebook**.
-
-    :::image type="content" source="media/jupyter-notebook/import-notebook.png" alt-text="Screenshot of item options in Data Engineering. The item titled Import notebook is highlighted.":::
-
-1. In the **Import status** window, select **Upload**.
+1. Open the experience switcher on the bottom of the navigation pane and select **Develop** and then your workspace.
+1. Select **Import** > **Notebook** >  **From this computer** > **Upload** then choose the NYC GreenTaxi notebook you downloaded in a previous step.
 
     :::image type="content" source="media/spark-connector/upload-notebook.png" alt-text="Screenshot of Import status window. The button titled Upload is highlighted.":::
-
-1. Select the NYC GreenTaxi notebook you downloaded in a previous step.
-1. Once the import is complete, return to your workspace to open this notebook.
+   
+1. Once the import is complete, open the notebook from your workspace.
 
 ## 4- Get data
 
@@ -93,7 +88,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 
 1. Run the cell.
 
-1. Run the next cell to write data to your database. It may take a few minutes for this step to complete.
+1. Run the next cell to write data to your database. It can take a few minutes for this step to complete.
 
     :::image type="content" source="media/spark-connector/code-cell-3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell-3.png":::
 
