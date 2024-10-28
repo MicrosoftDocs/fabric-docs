@@ -108,6 +108,10 @@ notebookutils.fs.cp('source file or directory', 'destination file or directory',
 
 This method offers a more efficient approach to copying or moving files, particularly when dealing with large data volumes. For enhanced performance on Fabric, it is advisable to utilize `fastcp` as a substitute for the traditional `cp` method.
 
+> [!NOTE]
+> ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
+
+
 ```python
 notebookutils.fs.fastcp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
 ```
