@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/08/2024
+ms.date: 10/28/2024
 ms.search.form: Source and Destination
 ---
 
@@ -27,9 +27,7 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
   If you have Azure Database for PostgreSQL, follow the steps in the next section to enable CDC. For detailed information, see [Logical replication and logical decoding - Azure Database for PostgreSQL - Flexible Server](/azure/postgresql/flexible-server/concepts-logical).
 
   For other PostgreSQL databases, see [Debezium connector for PostgreSQL :: Debezium Documentation](https://debezium.io/documentation/reference/stable/connectors/postgresql.html#setting-up-postgresql).
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Enable CDC in your Azure Database for PostgreSQL
 
@@ -54,27 +52,27 @@ To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow 
    ALTER ROLE <admin_user_or_table_owner_user> WITH REPLICATION;
    ```
 
-## Add Azure Database for PostgreSQL CDC as a source
+## Launch Select a data source wizard
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
+On the **Select a data source** page, search for and select **Connect** on the **Azure DB for PostgreSQL (CDC)** tile.
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
-
-1. On the next screen, select **Add external source**.
-
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
+:::image type="content" source="./media/add-source-postgresql-database-cdc-connector/select-postgresql-cdc.png" alt-text="Screenshot that shows the selection of Azure DB for PostgreSQL (CDC) as the source type in the Get events wizard." lightbox="./media/add-source-postgresql-database-cdc-connector/select-postgresql-cdc.png":::
 
 ## Configure and connect to Azure Database for PostgreSQL CDC
 
 [!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-source-connector.md)]
 
-You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
-:::image type="content" source="media/add-source-postgresql-database-cdc-connector/edit-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Edit view." lightbox="media/add-source-postgresql-database-cdc-connector/edit-view.png":::
+## View updated eventstream
 
-To implement this newly added PostgreSQL DB CDC source, select **Publish**. After you complete these steps, your PostgreSQL DB CDC source is available for visualization in the **Live view**.
+1. You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.
 
-![A screenshot of streaming PostgreSQL DB CDC source in Live view.](media/add-source-postgresql-database-cdc-connector/live-view.png)
+    :::image type="content" source="media/add-source-postgresql-database-cdc-connector/edit-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Edit view." lightbox="media/add-source-postgresql-database-cdc-connector/edit-view.png":::
+1. To implement this newly added PostgreSQL DB CDC source, select **Publish**. After you complete these steps, your PostgreSQL DB CDC source is available for visualization in the **Live view**.
+
+    :::image type="content" source="media/add-source-postgresql-database-cdc-connector/live-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Live view." lightbox="media/add-source-postgresql-database-cdc-connector/live-view.png":::
 
 ## Related content
 
@@ -83,6 +81,7 @@ Other connectors:
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
 - [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
+- [Azure Service Bus](add-source-azure-service-bus.md)
 - [Azure IoT Hub](add-source-azure-iot-hub.md)
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [Confluent Kafka](add-source-confluent-kafka.md)
