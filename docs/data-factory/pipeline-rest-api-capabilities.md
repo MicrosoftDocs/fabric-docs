@@ -60,7 +60,7 @@ Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the f
 
 Copy the _Application ID_ (also called the _ClientId_)  you copied earlier and use it for _ClientId_ variable in the following examples.
 
-### Option 2: Using the Fabric Portal
+### Option 2: Using the Fabric portal
 
 Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
 
@@ -93,7 +93,7 @@ Create a pipeline in a specified workspace.
 {
   "displayName": "My pipeline",
   "description": "My pipeline description",
-  "type": "Pipeline"
+  "type": "pipeline"
 }
 ```
 
@@ -102,14 +102,14 @@ Create a pipeline in a specified workspace.
 ```rest
 {
     "id": "<artifactId>",
-    "type": "Pipeline",
+    "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<workspaceId>"
 }
 ```
 
-## Create a Pipeline with definition
+## Create a pipeline with definition
 
 Create a pipeline with a base64 definition in a specified workspace.
 
@@ -133,7 +133,7 @@ Create a pipeline with a base64 definition in a specified workspace.
   "displayName": " My pipeline",
   "description": "My pipeline description",
 
-  "type": "Pipeline",
+  "type": "pipeline",
   "definition": { 
     "parts": [ 
       { 
@@ -151,7 +151,7 @@ Create a pipeline with a base64 definition in a specified workspace.
 ```rest
 {
     "id": "<Your artifactId>",
-    "type": "Pipeline",
+    "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
@@ -194,7 +194,7 @@ Create a Mounted Data Factory using mounting APIs.
 {
     "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
     "type": "MountedDataFactory", 
-    "displayName": "Pipeline_mdf", 
+    "displayName": "pipeline_mdf", 
     "description": "", 
     "workspaceId": "<Your workspaceId>”
 }
@@ -221,14 +221,14 @@ Returns properties of specified pipeline.
 ```rest
 {
     "id": "<Your artifactId>",
-    "type": "Pipeline",
+    "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
 }
 ```
 
-## Get Pipeline with definition
+## Get pipeline with definition
 
 Returns the pipeline item definition.
 
@@ -265,7 +265,7 @@ Returns the pipeline item definition.
 }
 ```
 
-## Update Pipeline
+## Update pipeline
 
 Updates the properties of the pipeline.
 
@@ -288,7 +288,7 @@ Updates the properties of the pipeline.
 {
   "displayName": "My pipeline updated",
   "description": "My pipeline description updated",
-  "type": "Pipeline"
+  "type": "pipeline"
 }
 ```
 
@@ -297,14 +297,14 @@ Updates the properties of the pipeline.
 ```rest
 {
     "id": "<Your artifactId>",
-    "type": "Pipeline",
+    "type": "pipeline",
     "displayName": "My pipeline updated",
     "description": "My pipeline description updated",
     "workspaceId": "<Your workspaceId>"
 }
 ```
 
-## Update Pipeline with definition
+## Update pipeline with definition
 
 Updates the pipeline item definition.
 
@@ -326,7 +326,7 @@ Updates the pipeline item definition.
 ```rest
 {
   "displayName": " My pipeline ",
-  "type": "Pipeline",
+  "type": "pipeline",
   "definition": {
     "parts": [ 
       { 
@@ -367,7 +367,7 @@ Deletes the specified pipeline.
 200 OK
 ```
 
-## Run on demand Pipeline job
+## Run on demand pipeline job
 
 Runs on-demand pipeline job instance.
 
@@ -388,7 +388,7 @@ Runs on-demand pipeline job instance.
 ```rest
 {
     "executionData": {
-        "PipelineName": "Pipeline",
+        "pipelineName": "pipeline",
         "OwnerUserPrincipalName": "<user@domain.com>",
         "OwnerUserObjectId": "<Your ObjectId>"
     }
@@ -401,7 +401,7 @@ Runs on-demand pipeline job instance.
 202 Accepted
 ```
 
-## Get Pipeline job instance
+## Get pipeline job instance
 
 Gets singular pipeline’s job instance.
 
@@ -433,7 +433,7 @@ Gets singular pipeline’s job instance.
 }
 ```
 
-## Cancel Pipeline job instance
+## Cancel pipeline job instance
 
 Cancel a pipeline’s job instance.
 
