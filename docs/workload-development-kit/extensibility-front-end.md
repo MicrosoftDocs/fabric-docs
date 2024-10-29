@@ -14,7 +14,7 @@ ms.date: 05/21/2024
 This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric development kit's framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
 The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our workload client SDK, a standard npm package, to enable its functionality.
-The ISV hosts and runs it inside an `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
+The ISV hosts and runs it inside a sandboxed `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
 The SDK provides all the necessary interfaces, APIs, and bootstrap functions required to transform a regular web app into a Micro Frontend web app that operates seamlessly within the Fabric portal.
 
 The SDK provides a sample UI with the following features:
@@ -138,9 +138,13 @@ For example:
 * Select *Save* on the Ribbon to call the `dialog.open()` API, which opens a dialog where a user provides a name and saves the item in Fabric (this dialog is further explored in the [CRUD section](#crud-operations)).
 * *Get Theme Settings* button shows a list of Fabric's theme configurations (via the `theme.get()` API).
 
-The Sample Workload UI is hosted in a Fabric `iframe` that we can see when we examine the page's DOM:
+The Sample Workload UI is hosted in a Fabric sandboxed `iframe` that we can see when we examine the page's DOM:
 
 :::image type="content" source="./media/extensibility-front-end/iframe-dom.png" alt-text="Screenshot of the iFrame embedding image.":::
+
+> [!NOTE]
+> The sandboxed iframe allows the following attributes: allow-same-origin, allow-scripts.
+> For more information on the meaning of sandbox and different attributes, refer to [MDN web docs](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#sandbox)
 
 ## Step 3: Dive into the code
 

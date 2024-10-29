@@ -177,6 +177,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: External data sharing OneLake shortcuts don't show in SQL analytics endpoint
+      href: known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md
+    - name: OneLake Shared Access Signature (SAS) can't read cross-region shortcuts
+      href: known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md
+    - name: Pipeline fails when getting a token to connect to Kusto
+      href: known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md
     - name: Dataverse shortcut creation and read fails when organization is moved
       href: known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md
     - name: Can't connect to semantic model from Excel or use Analyze in Excel
