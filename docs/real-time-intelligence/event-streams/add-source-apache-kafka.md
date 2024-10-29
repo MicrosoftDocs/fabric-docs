@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 09/27/2024
+ms.date: 10/28/2024
 ms.search.form: Source and Destination
 ms.custom: references_regions
 ---
@@ -42,6 +42,7 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
 
 [!INCLUDE [apache-kafka-connector](./includes/apache-kafka-source-connector.md)]
 
+## View updated eventstream
 You can see the Apache Kafka source added to your eventstream in **Edit mode**.  
 
 :::image type="content" source="./media/add-source-apache-kafka/edit-view.png" alt-text="Screenshot that shows Apache Kafka source in Edit view." lightbox="./media/add-source-apache-kafka/edit-view.png":::

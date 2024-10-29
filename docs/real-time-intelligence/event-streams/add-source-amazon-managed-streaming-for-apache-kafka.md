@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 09/27/2024
+ms.date: 10/28/2024
 ms.search.form: Source and Destination
 ms.custom: references_regions
 #Customer intent: I want to learn how to bring events from an Amazon Managed Streaming for Apache Kafka source into Microsoft Fabric. 
@@ -38,6 +38,7 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 
 [!INCLUDE [amazon-managed-streaming-for-kafka-connector](./includes/amazon-managed-streaming-for-kafka-source-connector.md)]
 
+## View updated eventstream
 You can see the Amazon MSK Kafka source added to your eventstream in **Edit mode**.  
 
 :::image type="content" source="./media/add-source-amazon-msk-kafka/edit-view.png" alt-text="Screenshot that shows Amazon MSK Kafka source in Edit view." lightbox="./media/add-source-apache-kafka/edit-view.png":::

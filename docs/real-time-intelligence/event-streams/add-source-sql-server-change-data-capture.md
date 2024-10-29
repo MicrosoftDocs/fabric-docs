@@ -62,6 +62,7 @@ The SQL Server on VM DB (CDC) source connector for Fabric event streams allows
 
 [!INCLUDE [sql-server-on-virtual-machine-cdc-source-connector](./includes/sql-server-on-virtual-machine-cdc-source-connector.md)]
 
+## View updated eventstream
 You can see the SQL Server on VM DB CDC source added to your eventstream in **Edit** mode.
 
 :::image type="content" source="media/add-source-sql-server-change-data-capture/edit-mode.png" alt-text="A screenshot of the added SQL Server on VM DB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-sql-server-change-data-capture/edit-mode.png":::

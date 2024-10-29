@@ -69,6 +69,7 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
 [!INCLUDE [azure-sql-managed-instance-cdc-source-connector](./includes/azure-sql-managed-instance-cdc-source-connector.md)]
 
+## View updated eventstream
 You can see the Azure SQL MI DB (CDC) source added to your eventstream in **Edit** mode.
 
 :::image type="content" source="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png" alt-text="A screenshot of the added Azure SQL MI DB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png":::
