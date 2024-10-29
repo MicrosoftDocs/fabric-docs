@@ -13,9 +13,6 @@ ms.date: 10/03/2024
 
 # Create an API for GraphQL in Fabric and add data
 
-> [!NOTE]
-> Microsoft Fabric API for GraphQL is in preview.
-
 Get started with the Fabric API for GraphQL by creating an API, then linking a data source to expose the data you chose through the API. Fabric builds the GraphQL schema automatically based on your data, and applications are ready to connect in minutes.
 
 ## Prerequisites
