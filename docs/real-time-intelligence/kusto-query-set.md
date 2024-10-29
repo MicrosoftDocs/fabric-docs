@@ -105,7 +105,7 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 
 On the right side of the command bar, there is a menu with additional actions to manage the multiple tabs in your queryset.
 
-:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multple tabs menu for managing multiple tabs in the KQL Queryset.":::
+:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset.":::
 
 ## Copy query
 

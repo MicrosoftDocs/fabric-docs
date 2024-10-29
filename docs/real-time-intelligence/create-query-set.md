@@ -21,14 +21,14 @@ In this article, you learn how to create a new KQL queryset. The KQL Queryset is
 
 The KQL Queryset exists within the context of a workspace. A new KQL queryset is always associated with the workspace you're using when you create it.
 
-1. Go to to the desired workspace.
+1. Go to the desired workspace.
 1. Select **+New item**.
 
     :::image type="content" source="media/kusto-query-set/new-queryset.png" alt-text="Screenshot of adding a new KQL queryset from workspace homepage.":::
 
     Select **KQL Queryset**. Use the search bar to filter by item type.
 
-    :::image type="content" source="media/kusto-query-set/new-queryset-box.png" alt-text="Screenshot of adding a new KQL queryset in the New tem box.":::
+    :::image type="content" source="media/kusto-query-set/new-queryset-box.png" alt-text="Screenshot of adding a new KQL queryset in the New item box.":::
 
 1. In the **New KQL Queryset** window, enter a unique name. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
