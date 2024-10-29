@@ -26,11 +26,11 @@ With Dataflow Gen2 (CI/CD preview), you can now:
 
 To get started, you must complete the following prerequisites:
 
-- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
+- Have a Microsoft Fabric tenant account with an active subscription. Create an account for free.
 - Make sure you have a Microsoft Fabric enabled workspace.
-- Git integration is enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
+- Make sure Git integration is enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
 
-## Create a Dataflow gen2 with CI/CD and Git support
+## Create a Dataflow Gen2 with CI/CD and Git support
 
 To create a Dataflow Gen2 with CI/CD and Git support, follow these steps:
 
@@ -48,7 +48,7 @@ To create a Dataflow Gen2 with CI/CD and Git support, follow these steps:
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/save-dataflow-gen2.png" alt-text="Screenshot of Power Query editor with the Save and run button emphasized.":::
 
-1. After publishing, note that the dataflow has a status of uncommitted.
+1. After publishing, the dataflow has a status of uncommitted.
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-uncommited-git.png" alt-text="Screenshot of the saved Dataflow Gen2 with the status shown as uncommitted.":::
 
