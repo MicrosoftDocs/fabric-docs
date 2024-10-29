@@ -98,10 +98,10 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 
 :::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
 
-* **Rename a tab**: Select the **pencil icon** next to the tab name.
 * **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different databases.
-* **Change the existing database connection**: Under **Explorer**, select the existing database connection to open the data hub.
+* **Rename a tab**: Select the **pencil icon** next to the tab name.
 * **Change tab positions**: Change tab positions using drag and drop gestures.
+* **Change the existing database connection**: Under **Explorer**, select the existing database connection to open the data hub.
 
 On the right side of the command bar, there is a menu with additional actions to manage the multiple tabs in your queryset.
 
@@ -118,9 +118,6 @@ You might want to copy and share the queries you create.
 
     The following table outlines the many options for how to copy a query.
 
-    > [!IMPORTANT]
-    > The user who is receiving the query link must have viewing permissions to the underlying data to execute the query and view results.
-
     |Action|Description|
     |--|--|
     |Copy query | Copy the query text.|
@@ -131,6 +128,9 @@ You might want to copy and share the queries you create.
 
 1. Select the desired action from the above table.
 1. Paste this information to edit or share it, for example in Microsoft Word, Microsoft Teams or Outlook.
+
+    > [!IMPORTANT]
+    > The user who is receiving the query link must have viewing permissions to the underlying data to execute the query and view results.
 
 ## Export query data as CSV
 
