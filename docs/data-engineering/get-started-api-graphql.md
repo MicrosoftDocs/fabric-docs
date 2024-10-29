@@ -50,7 +50,17 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
 
    :::image type="content" source="media/get-started-api-graphql/add-data.png" alt-text="Screenshot of the Select data source option.":::
 
-1. The OneLake data hub appears; choose the data source you want to connect to. For the following example, we choose a AdventureWorks SQL analytics endpoint linked to a mirrored database. Select **Filter** to see only specific types of Fabric data sources, or search by a specific keyword. When you're ready, select **Connect**.
+2. Next select the connectivity option for your API:
+
+   :::image type="content" source="media/get-started-api-graphql/get-data-connectivity.png" alt-text="Screenshot of the Chose connectivity option.":::
+
+   Here you can define how API clients can access the API to execute GraphQL requests based on two distinct options: 
+   * **Single sign-on (SSO)**: use client credentials to connect to data sources, which means the authenticated API user must have access to the underlying data source. For example, if you're exposing Lakehouse data to your API clients the authenticated user needs to have access to both the API and the Lakehouse. The user should be a workspace member with a *contributor role* where both the API and data source items are located. For more information, see [Give users access to workspaces](../get-started/give-access-workspaces.md).
+   * **Saved credentials**: use saved credentials to connect to data sources, which means the authenticated API user doesn't require direct access to the data source. A saved credential is shared to access the data between the API and underlying tables in the data source. For example, if you're exposing Lakehouse data to your API clients the authenticated user just need to have direct access to the API and not the Lakehouse. A saved credential is used to connect the API to the data source and is shared by all authenticated API users. This option is required if you're exposing an Azure data source such as an Azure SQL database via GraphQL. After selecting OK, you'll be prompted to create a new saved credential after choosing a data source in the next step if there isn't a saved credential for it already in place.
+
+   Once selected these options are enforced for all data sources subsequently added to the API. It's not possible to mix single-sign on and saved credentials in the same API. Furthermore, while you can use User Principal Names (UPNs) or Service Principal Names (SPNs) defined in Microsoft Entra to connect to your API, service principals only support single-sign on currently. User principals can leverage either SSO or saved credentials, depending on your security requirements.
+
+3. The OneLake data hub appears; choose the data source you want to connect to. For the following example, we choose a AdventureWorks SQL analytics endpoint linked to a mirrored database. Select **Filter** to see only specific types of Fabric data sources, or search by a specific keyword. When you're ready, select **Connect**.
 
    :::image type="content" source="media/get-started-api-graphql/data-hub-choose-connect.png" alt-text="Screenshot of the OneLake data hub, showing available data source options for a workspace." lightbox="media/get-started-api-graphql/data-hub-choose-connect.png":::
 
