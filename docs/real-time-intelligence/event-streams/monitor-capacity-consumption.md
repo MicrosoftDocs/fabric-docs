@@ -23,7 +23,7 @@ The event streams usage is defined by four operation types, which are described 
 | Eventstream Processor Per Hour | Computing resources consumed by the processor | Per hour | Starts at **0.778** CU hour and autoscale <sup>**[Note 2](#Note-2)**</sup> per throughput |
 | Eventstream Connectors Per vCore Hour | Computing resources consumed by the connectors | Per hour | **0.611** CU hour vCore <sup>**[Note 3](#Note-3)**</sup> |
 
-* <a id="Note-1"></a>**Note 1**. 'Eventstream Per Hour' is charged only when it's active (that is, has events flowing in or out). If there's no traffic flowing in or out for the past two hours (idle state), no charges apply.
+* <a id="Note-1"></a>**Note 1**. **Eventstream Per Hour** is charged only when it's active (that is, has events flowing in or out). If there's no traffic flowing in or out for the past two hours, no charges apply.
 * <a id="Note-2"></a>**Note 2: Eventstream Processor Per Hour**. The CU consumption rate of the Eventstream processor is correlated to the throughput of event traffic, the complexity of the event processing logic, and the partition count of input data:
    * With "Low" set in "Event throughput setting", the processor CU consumption rate starts at 1/3 base-rate (0.778 CU hour) and autoscale within 2/3 base-rate (1.555 CU hour), 1 base-rate (2.333 CU hour), 2 base-rates, and 4 base-rates.
    * With "Medium" set in "Event throughput setting", the processor CU consumption rate starts at 1 base-rate and autoscale within multiple possible base-rates.
