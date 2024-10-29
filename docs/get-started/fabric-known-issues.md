@@ -20,11 +20,13 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |
+|  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 |
+|  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 |
 |  895  | OneLake | [Dataverse shortcut creation and read fails when organization is moved](known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md) | October 23, 2024 |
 |  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
 |  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 |
 |  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 |
-|  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 |
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
 |  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
@@ -94,6 +96,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 | Fixed: October 25, 2024 |
 |  862  | Power BI | [Unexpected changes in fonts or themes in reports](known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md) | September 30, 2024 | Fixed: October 17, 2024 |
 |  867  | Power BI | [Report pages don't show in Fabric org app items](known-issues/known-issue-867-report-pages-not-show-org-app-items.md) | September 30, 2024 | Fixed: October 15, 2024 |
 |  859  | Power BI | [Dynamic subscriptions don't send emails to recipients](known-issues/known-issue-859-dynamic-subscriptions-not-send-emails-recipients.md) | September 27, 2024 |  Fixed: October 15, 2024 |
