@@ -31,7 +31,7 @@ For more information about supported data sources for managed private endpoints 
 
 ## Supported item types
 
-* Fabric Spark workloads: This includes notebooks, lakehouses, and Spark job definitions. For more information, see []().
+* Fabric Spark workloads: This includes notebooks, lakehouses, and Spark job definitions. For more information, see [Create and use managed private endpoints](https://go.microsoft.com/fwlink/?linkid=2295703).
 
 * Eventstream: For more information, see [Connect to Azure resources securely using managed private endpoints (Preview)](../real-time-intelligence/event-streams/set-up-private-endpoint.md).
 
@@ -72,7 +72,7 @@ For more information about supported data sources for managed private endpoints 
 
 * **Limitations for specific workloads**:
 
-    * Spark:
+    * Spark: See see [Create and use managed private endpoints](https://go.microsoft.com/fwlink/?linkid=2295703).
 
     * Eventstream: [Connect to Azure resources securely using managed private endpoints (Preview)](../real-time-intelligence/event-streams/set-up-private-endpoint.md).
 
