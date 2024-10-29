@@ -276,7 +276,9 @@ items:
         href: ../database/mirrored-database/snowflake-how-to-data-security.md
       - name: Limitations 
         displayName: Limitations in mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-limitations.md        
+        href: ../database/mirrored-database/snowflake-limitations.md
+  - name: Mirroring REST API
+    href: ../database/mirrored-database/mirrored-database-rest-api.md 
   - name: Troubleshoot Mirroring
     href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance

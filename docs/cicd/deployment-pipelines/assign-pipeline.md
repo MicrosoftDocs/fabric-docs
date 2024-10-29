@@ -26,6 +26,9 @@ For more information about assigning workspaces and the implications regarding c
 >This article describes how to assign and unassign a workspace to a deployment pipeline stage in the Fabric service. You can also perform these functions programmatically, using the [Assign Workspace](/rest/api/fabric/pipelines/assign-workspace) and [Unassign Workspace](/rest/api/fabric/pipelines/unassign-workspace) Fabric REST APIs.
 -->
 
+> [!IMPORTANT]
+> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
+
 ## Assign a workspace to any vacant pipeline stage
 
 To assign a workspace to a pipeline, the pipeline stage you want to assign the workspace to has to be vacant. If you want to assign a workspace to a pipeline stage that already has another workspace assigned to it, [unassign](#unassign-a-workspace-from-a-pipeline-stage) the current workspace from that stage and then assign the new workspace.

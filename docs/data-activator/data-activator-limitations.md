@@ -67,7 +67,7 @@ Data Activator supports the following tile types in Real-Time Dashboards:
 Additionally, for Data Activator to support a tile:
 
 * The data in the tile must not be static.
-* The data in the tile must be based on a KQL query.
+* The data in the tile must be based on a Kusto Query Language (KQL) query.
 * The tile must have at most one time range.
 * The tile must be filtered by a predefined time range. Using a custom time range isn't supported.
 * The tile must not contain time series data (for example, data created using the *make-series* KQL operator)
@@ -76,7 +76,7 @@ For more information, see [Limitations on charts with a time axis](data-activato
 
 ## Allowed recipients of email notifications
 
-Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email notifications to be sent to either external email addresses or guest email addresses. 
+Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email notifications to be sent to either external email addresses or guest email addresses.
 
 ## Maximum data for rule processing limits
 
