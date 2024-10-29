@@ -72,7 +72,7 @@ For more information about supported data sources for managed private endpoints 
 
 * **Limitations for specific workloads**:
 
-    * Spark: See see [Create and use managed private endpoints](https://go.microsoft.com/fwlink/?linkid=2295703).
+    * Spark: See [Create and use managed private endpoints](https://go.microsoft.com/fwlink/?linkid=2295703).
 
     * Eventstream: [Connect to Azure resources securely using managed private endpoints (Preview)](../real-time-intelligence/event-streams/set-up-private-endpoint.md).
 
