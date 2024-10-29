@@ -1,6 +1,6 @@
 ---
 title: Dataflow Gen2 with CICD and Git integration
-description: Describes how to use Dataflow Gen2 with CICD and Git integration in Fabric data factory.
+description: Describes how to use Dataflow Gen2 with CICD and Git integration in Fabric Data Factory.
 ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
@@ -10,100 +10,100 @@ ms.date: 10/07/2024
 
 # Dataflow Gen2 with CICD and Git integration support (Preview)
 
-Dataflow Gen2 now supports CICD and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that is connected to your fabric workspace. Additionally, you can use the Deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. Also, you can use the Fabric CRUDL API to manage dataflows Gen2. This article goes deeper into how to use Dataflow Gen2 with CICD and Git integration in Fabric data factory.
+Dataflow Gen2 now supports CICD and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that's connected to your fabric workspace. Additionally, you can use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. Also, you can use the Fabric CRUDL API to manage Dataflow Gen2. This article goes deeper into how to use Dataflow Gen2 with CICD and Git integration in Fabric Data Factory.
 
 ## New features
 
 With Dataflow Gen2 (CI/CD preview), you can now:
 
-- Enjoy git integration support for dataflows Gen2.
-- Use the Deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces.
-- Leverage the Fabric CRUDL API to manage dataflows Gen2.
-- Use the Fabric settings and scheduler to refresh and edit settings for dataflows Gen2.
-- Create your Gen2 dataflow directly into a workspace folder.
+- Enjoy Git integration support for Dataflow Gen2.
+- Use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces.
+- Leverage the Fabric CRUDL API to manage Dataflow Gen2.
+- Use the Fabric settings and scheduler to refresh and edit settings for Dataflow Gen2.
+- Create your Dataflow Gen2 directly into a workspace folder.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. Create an account for free.
-- Make sure you have a Microsoft Fabric enabled Workspace.
-- Git integration is enabled for your workspace. Learn more about enabling Git integration [here](/fabric/cicd/git-integration/git-get-started).
+- Make sure you have a Microsoft Fabric enabled workspace.
+- Git integration is enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
 
-## Create a dataflow gen2 with CI/CD and Git support
+## Create a Dataflow gen2 with CI/CD and Git support
 
-To create a dataflow gen2 with CI/CD and Git support, follow these steps:
+To create a Dataflow Gen2 with CI/CD and Git support, follow these steps:
 
-- In the fabric workspace, click on create new item and select Dataflow Gen2.
+1. In the Fabric workspace, select **Create new item** and then select **Dataflow Gen2**.
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item.png" alt-text="Create new dataflow Gen2 item":::
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item.png" alt-text="Screenshot of the New item window with the Dataflow Gen2 item emphasized.":::
 
-- Give your dataflow a name and enable the GIT integration and click on create.
+1. Give your dataflow a name and enable the GIT integration. The select **Create**.
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item-set-name.png" alt-text="Set dataflow Gen2 name":::
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item-set-name.png" alt-text="Screenshot of the New Dataflow Gen2 window with the dataflow name set and Git integration emphasized and selected.":::
 
-- The dataflow will be created and you will be redirected to the dataflow authoring canvas.
-- You can now start creating your dataflow.
-- When you are done, click on save and run.
+   The dataflow is created and you're redirected to the dataflow authoring canvas. You can now start creating your dataflow.
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/save-dataflow-gen2.png" alt-text="Save dataflow Gen2":::
+1. When you're done, select **Save and run**.
 
-- After publishing, you will notice that the dataflow has the status of uncommitted.
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/save-dataflow-gen2.png" alt-text="Screenshot of Power Query editor with the Save and run button emphasized.":::
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-uncommited-git.png" alt-text="Dataflow Gen2 uncommitted":::
+1. After publishing, note that the dataflow has a status of uncommitted.
 
-- To commit the dataflow to the Git repository, click on the source control icon in the top right corner.
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-uncommited-git.png" alt-text="Screenshot of the saved Dataflow Gen2 with the status shown as uncommitted.":::
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/source-control-button.png" alt-text="Source control button":::
+1. To commit the dataflow to the Git repository, select the source control icon in the top right corner.
 
-- Select all the changes you want to commit and click on commit.
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/source-control-button.png" alt-text="Screenshot of the Source control button.":::
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/commit-changes-to-git.png" alt-text="Commit changes":::
+1. Select all the changes you want to commit and then select **Commit**.
 
-You now have a dataflow Gen2 with CI/CD and Git support. Suggested is to follow the best practices for working with CI/CD and Git integration in Fabric by following the tutorial [here](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/commit-changes-to-git.png" alt-text="Screenshot of the Source control window with the dataflow selected and Commit button emphasized.":::
 
-## Refresh a dataflow gen2 or schedule a refresh
+You now have a Dataflow Gen2 with CI/CD and Git support. We suggest you follow the best practices for working with CI/CD and Git integration in Fabric described in the [Scenario 2 - Develop using another workspace](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace) tutorial.
 
-You can refresh a dataflow Gen2 with CI/CD and Git support in two ways - manually or by scheduling a refresh. Below are the steps to refresh a dataflow Gen2 with CI/CD and Git support.
+## Refresh a Dataflow Gen2 or schedule a refresh
+
+You can refresh a Dataflow Gen2 with CI/CD and Git support in two ways&mdash;manually or by scheduling a refresh. The following sections describe how to refresh a Dataflow Gen2 with CI/CD and Git support.
 
 ### Refresh now
 
-- In the fabric workspace, click on the more options icon next to the dataflow you want to refresh.
-- Click on **refresh now**.
+1. In the fabric workspace, select the more options ellipsis icon next to the dataflow you want to refresh.
+1. Select **refresh now**.
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-refresh-now.png" alt-text="Refresh dataflow Gen2 now":::
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-refresh-now.png" alt-text="Screenshot of the more options drop-down menu with the Refresh now options emphasized.":::
 
 ### Schedule a refresh
 
-If your dataflow needs to be refreshed on a regular interval you can schedule the refresh using the fabric scheduler
+If your dataflow needs to be refreshed on a regular interval, you can schedule the refresh using the Fabric scheduler.
 
-- In the fabric workspace, click on the more options icon next to the dataflow you want to refresh.
-- Click on **Schedule**.
+1. In the Fabric workspace, select the more options ellipsis icon next to the dataflow you want to refresh.
+1. Select **Schedule**.
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-schedule-refresh.png" alt-text="Schedule dataflow Gen2 refresh":::
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-schedule-refresh.png" alt-text="Screenshot of the more options dropdown menu with the Schedule option emphasized.":::
 
-- On the schedule page, you can set the refresh frequency and the start time and end time, after which you can apply changes.
+1. On the schedule page, you can set the refresh frequency and the start time and end time, after which you can apply changes.
 
-:::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/settings-schedule-refresh.png" alt-text="Settings screen schedule dataflow Gen2 refresh":::
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/settings-schedule-refresh.png" alt-text="Screenshot of the dataflow's settings screen with the Schedule tab selected and the Refresh button emphasized.":::
 
-- To start the refresh now, click on the refresh button.
+1. To start the refresh now, select the **Refresh** button.
 
 ## Refresh history and settings
 
-To view the refresh history of the dataflow, you can either click on the refresh history tab in the dropdown menu or go into the monitor hub and select the dataflow you want to view the refresh history of.
+To view the refresh history of the dataflow, you can either select the refresh history tab in the dropdown menu or go into the monitor hub and select the dataflow you want to view the refresh history of.
 
-## Settings dataflow gen2 with CI/CD
+## Settings for Dataflow Gen2 with CI/CD
 
-Accessing the settings of the new dataflow Gen2 with CI/CD and Git support is similar to any other Fabric item. You can access the settings by clicking on the more options icon next to the dataflow and selecting settings.
+Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is similar to any other Fabric item. You can access the settings by selecting the more options ellipsis icon next to the dataflow and selecting the settings.
 
-## Use the Fabric CRUDL API to manage dataflows Gen2
+## Use the Fabric CRUDL API to manage Dataflows Gen2
 
-With CICD and Git integration support, we also introduced the Fabric CRUDL API to manage dataflows Gen2. You can use the API to create, read, update, delete, and list dataflows Gen2. The API is available in the Fabric API reference.
+With CICD and Git integration support, we also introduced the Fabric CRUDL API to manage Dataflow Gen2. You can use the API to create, read, update, delete, and list Dataflow Gen2 dataflows. The API is available in the Fabric API reference.
 
 ## Limitations and known issues
 
-- By default the staging artifacts are visible in the workspace. This will be hidden in the future but for now make sure they are not synced to the GIT repository as it may cause issues along the way for updating the workspace from git changes.
-- "Get Item" and "List Item Access Details" API's does not return the correct information if you filter on a specific type of item. When you do not specify the type it will return the new Dataflow Gen2 with CI/CD and GIT support. Filtering for "dataflow"  type will result in only non-cicd dataflows.
-- Orchestrating a refresh of a dataflow gen2 with CI/CD and Git support is not possible in fabric data pipelines.
-- Workspace view does not show if a refresh is ongoing for the dataflow.
-- The dataflow Gen2 with CI/CD and Git support does not support take ownership feature in the fabric workspace. This means that the dataflow can only be edited by the creator of the dataflow. If you want to work together on a dataflow, you can use branches in the Git repository and create a pull request to merge the changes. learn more [here](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
+- By default, the staging artifacts are visible in the workspace. The staging artifacts will be hidden in the future, but for now make sure they aren't synced to the GIT repository as it may cause issues along the way when updating the workspace from Git changes.
+- "Get Item" and "List Item Access Details" API's don't return the correct information if you filter on a specific type of item. When you don't specify the type, it returns the new Dataflow Gen2 with CI/CD and Git support. Filtering for the "dataflow" type results in only non-CI/CD dataflows.
+- Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric pipelines.
+- Workspace view doesn't show if a refresh is ongoing for the dataflow.
+- Dataflow Gen2 with CI/CD and Git support doesn't support the take ownership feature in the Fabric workspace. Therefore, the dataflow can only be edited by the creator of the dataflow. If you want to work together on a dataflow, you can use branches in the Git repository and create a pull request to merge the changes. For more information, go to [Scenario 2 - Develop using another workspace](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
