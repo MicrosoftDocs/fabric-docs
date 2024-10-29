@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/08/2024
+ms.date: 10/28/2024
 ms.search.form: Source and Destination
 ---
 
@@ -24,25 +24,23 @@ The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fab
 
 ## Add Azure Cosmos DB (CDC) as a source
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
+On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.
 
-1. On the next screen, select **Add external source**.
-
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
+:::image type="content" source="./media/add-source-azure-cosmos-db-change-data-capture/select-azure-cosmos-db.png" alt-text="Screenshot that shows the selection of Azure Cosmos DB (CDC) as the source type in the Select a data source wizard." lightbox="./media/add-source-azure-cosmos-db-change-data-capture/select-azure-cosmos-db.png":::
 
 ## Configure and connect to Azure Cosmos DB (CDC)
 
 [!INCLUDE [azure-cosmos-db-connector](./includes/azure-cosmos-db-cdc-source-connector.md)]
 
-You see the Azure Cosmos DB (CDC) source added to your eventstream in **Edit mode**.
+## View updated eventstream
+1. You see the Azure Cosmos DB (CDC) source added to your eventstream in **Edit mode**. Select **Publish** to publish the changes and begin streaming Azure Cosmos DB CDC data to the eventstream.
 
-   ![A screenshot of the added Azure Cosmos DB CDC source in Edit mode with the Publish button highlighted.](media/add-source-azure-cosmos-db-change-data-capture/edit-mode.png)
+    :::image type="content" source="media/add-source-azure-cosmos-db-change-data-capture/edit-mode.png" alt-text="A screenshot of the added Azure Cosmos DB CDC source in Edit mode with the Publish button highlighted.":::
+1. You see the eventstream in Live mode. Select **Edit** on the ribbon to get back to the Edit mode to update the eventstream. 
 
-Select **Publish** to publish the changes and begin streaming Azure Cosmos DB CDC data to the eventstream.
-
-   ![A screenshot of the published eventstream with Azure Cosmos DB source in Live View.](media/add-source-azure-cosmos-db-change-data-capture/live-view.png)
+    :::image type="content" source="media/add-source-azure-cosmos-db-change-data-capture/live-view.png" alt-text="A screenshot of the published eventstream with Azure Cosmos DB source in Live View.":::
 
 ## Related content
 
