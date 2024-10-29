@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 10/21/2024
 ---
 
-# Set alerts on Fabric workspace item events in Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
-
+# Set alerts on Fabric workspace item events in Real-Time hub
 This article describes how to set alerts on Fabric workspace item events in Real-Time hub.
+
+> [!NOTE]
+> This feature is currently in preview.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 10/21/2024
 ---
 
-# Endorse streams in Fabric Real-Time hub (preview)
+# Endorse streams in Fabric Real-Time hub
 
 Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. It can be difficult to identify trustworthy and authoritative items. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](../get-started/endorsement-promote-certify.md).
 
@@ -16,7 +16,7 @@ You can endorse a stream from one of the following pages:
 - Real-Time hub **All data streams** page
 - Stream details page of a stream
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Endorse streams
 

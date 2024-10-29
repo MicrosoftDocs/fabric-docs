@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 10/21/2024
 ---
 
-# Explore My streams in Fabric Real-Time hub (preview)
+# Explore My streams in Fabric Real-Time hub
 
-When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub (preview)](explore-data-streams.md). This article covers the **My streams** page, which allows you to view only the data streams that you brought into Fabric.
+When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub](explore-data-streams.md). This article covers the **My streams** page, which allows you to view only the data streams that you brought into Fabric.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 :::image type="content" source="media/explore-my-data-streams/hub-my-streams-menu.png" alt-text="Screenshot that shows the Real-Time hub My streams page."  lightbox="./media/explore-my-data-streams/hub-my-streams-menu.png" :::
 

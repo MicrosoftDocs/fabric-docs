@@ -7,13 +7,13 @@ ms.topic: quickstart
 ms.date: 10/21/2024
 ---
 
-# Get started with Fabric Real-Time hub (preview)
+# Get started with Fabric Real-Time hub
 
 Real-Time hub is the single estate for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manages it. For detailed overview, see [Real-Time hub overview](real-time-hub-overview.md).
 
 This article provides guidance on getting started with Fabric Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Navigate to Real-Time hub
 

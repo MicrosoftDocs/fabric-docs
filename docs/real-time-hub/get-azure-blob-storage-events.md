@@ -7,11 +7,12 @@ ms.topic: how-to
 ms.date: 10/23/2024
 ---
 
-# Get Azure Blob Storage events into Real-Time hub (preview)
+# Get Azure Blob Storage events into Real-Time hub 
 
 This article describes how to get Azure Blob Storage events into Fabric Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+> [!NOTE]
+> This feature is currently in preview.
 
 An event is the smallest amount of information that fully describes that something happened in a system. Azure Blob Storage events are triggered when a client creates, replaces, deletes a blob, etc. By using the Real-Time hub, you can convert these events into continuous data streams and transform them before routing them to various destinations in Fabric.
 

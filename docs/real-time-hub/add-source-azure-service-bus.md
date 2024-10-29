@@ -9,10 +9,10 @@ ms.custom:
 ms.date: 09/10/2024
 ---
 
-# Get events from Azure Service Bus into Real-Time hub (preview)
+# Get events from Azure Service Bus into Real-Time hub
 This article describes how to get events from an Azure Service Bus queue or a topic's subscription into Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites
 

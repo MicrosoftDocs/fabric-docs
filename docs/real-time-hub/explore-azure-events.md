@@ -7,9 +7,9 @@ ms.topic: how-to
 ms.date: 10/22/2024
 ---
 
-# Explore Azure events in Fabric Real-Time hub (preview)
+# Explore Azure events in Fabric Real-Time hub
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 This article describes columns on the **Azure events** page and actions available for each event. 
 
 :::image type="content" source="./media/explore-azure-events/azure-events-page.png" alt-text="Screenshot that shows the Real-Time hub Azure events page." lightbox="./media/explore-azure-events/azure-events-page.png":::

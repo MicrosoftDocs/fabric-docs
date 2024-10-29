@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 10/23/2024
 ---
 
-# Add Azure SQL Managed Instance (MI) database (DB) CDC as source in Real-Time hub (preview)
+# Add Azure SQL Managed Instance (MI) database (DB) CDC as source in Real-Time hub
 
 This article describes how to add Azure SQL Managed Instance CDC as an event source in Fabric Real-Time hub.
 
 The Azure SQL Managed Instance CDC source connector allows you to capture a snapshot of the current data in a SQL Managed Instance database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites 
 

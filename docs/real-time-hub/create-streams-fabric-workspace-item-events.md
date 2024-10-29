@@ -9,11 +9,12 @@ ms.custom:
 ms.date: 09/04/2024
 ---
 
-# Get Fabric workspace item events in Real-Time hub (preview)
+# Get Fabric workspace item events in Real-Time hub
 
 This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+> [!NOTE]
+> This feature is currently in preview.
 
 Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
 
