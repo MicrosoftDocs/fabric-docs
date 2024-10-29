@@ -39,6 +39,8 @@ items:
     items:
     - name: Azure Event Hubs
       href: add-source-azure-event-hubs.md
+    - name: Azure Service Bus
+      href: add-source-azure-service-bus.md
     - name: Azure IoT Hub
       href: add-source-azure-iot-hub.md
     - name: Azure SQL Database Change Data Capture
