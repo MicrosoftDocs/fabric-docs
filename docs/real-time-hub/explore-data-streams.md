@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 10/21/2024
 ---
 
-# Explore streams in Fabric Real-Time hub (preview)
+# Explore streams in Fabric Real-Time hub
 
 When you navigate to Real-Time hub in Fabric, you can view all the data streams that are present in Fabric. There are four pages in the hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Expore streams using menus
 

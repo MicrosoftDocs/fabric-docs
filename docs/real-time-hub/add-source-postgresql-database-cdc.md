@@ -10,13 +10,13 @@ ms.custom:
 ms.date: 09/04/2024
 ---
 
-# Add PostgreSQL Database CDC as source in Real-Time hub (preview)
+# Add PostgreSQL Database CDC as source in Real-Time hub
 
 This article describes how to add PostgreSQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub.
 
 The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a PostgreSQL database. The connector then monitors and records any future row-level changes to this data. 
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites
 

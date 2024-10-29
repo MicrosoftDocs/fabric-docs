@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 10/21/2024
 ---
 
-# Get events from sample data sources into Real-Time hub (preview)
+# Get events from sample data sources into Real-Time hub
 
 This article describes how to get events from sample data sources into Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites
 

@@ -8,10 +8,10 @@ ms.date: 10/21/2024
 ms.search.form: Data Activator Eventstreams Onramp
 ---
 
-# Set alerts on streams in Real-Time hub (preview)
+# Set alerts on streams in Real-Time hub
 This article describes how to set alerts on streams in Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Launch Set alert page
 

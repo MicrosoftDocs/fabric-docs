@@ -9,11 +9,11 @@ ms.custom:
 ms.date: 09/10/2024
 ---
 
-# Get events from Azure Event Hubs into Real-Time hub (preview)
+# Get events from Azure Event Hubs into Real-Time hub
 
 This article describes how to get events from an Azure event hub into Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites
 

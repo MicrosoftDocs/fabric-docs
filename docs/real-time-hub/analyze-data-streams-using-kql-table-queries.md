@@ -9,12 +9,12 @@ ms.custom:
 ms.date: 09/04/2024
 ---
 
-# Analyze data streams in Real-Time hub (preview)
+# Analyze data streams in Real-Time hub
 There are two types of data streams in Real-Time hub: **Stream** and **Table**. This article shows how to analyze streams and tables in Real-Time hub.
 
 :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/stream-types.png" alt-text="Screenshot that shows the types of streams available in Real-Time hub.":::
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Analyze streams
 To analyze a stream whose parent is an eventstream, do the following steps:
