@@ -52,11 +52,11 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Microsoft Fabric notebooks
+          - text: Create and use notebooks
             url: how-to-use-notebook.md
       - linkListType: how-to-guide
         links:
-          - text: Build and manage notebooks
+          - text: Develop and run notebooks
             url: author-execute-notebook.md
           - text: Explore lakehouse data with a notebook
             url: lakehouse-notebook-explore.md
