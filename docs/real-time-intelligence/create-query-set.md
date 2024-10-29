@@ -10,7 +10,7 @@ ms.search.form: KQL Queryset
 ---
 # Create a KQL queryset
 
-In this article, you learn how to create a new KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database and more.
+In this article, you learn how to create a new KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database, and more.
 
 ## Prerequisites
 
