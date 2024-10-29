@@ -88,7 +88,7 @@ The following examples use data that is publicly available at [https://kustosamp
 1. Write or copy a query in the top pane of the KQL Queryset.
 1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
 
-    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query completed successfully, and time used to compute the query results.
+    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query completed successfully, and the time used to compute the query results.
 
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
 
@@ -105,7 +105,7 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 
 On the right side of the command bar, there is a menu with additional actions to manage the multiple tabs in your queryset.
 
-:::image type="content" source="media/kusto-query-set/multiple-tabs-menu.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
+:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
 
 ## Copy query
 
