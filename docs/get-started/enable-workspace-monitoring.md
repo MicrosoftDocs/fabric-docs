@@ -31,8 +31,6 @@ Follow these steps to enable monitoring in your workspace:
 
 3. Select **+Eventhouse** and wait for the database to be created.
 
-
-
 ## Related content
 
 * [Microsoft Fabric licenses](../enterprise/licenses.md)
