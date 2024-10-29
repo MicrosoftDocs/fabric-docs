@@ -81,15 +81,15 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
     1. Select **Next**.
 
         :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/connect-page-filled.png" alt-text="Screenshot that shows the filled Add source wizard Connect page." lightbox="./media/add-source-azure-cosmos-db-cdc/connect-page-filled.png":::         
-1. On the **Review and create** screen, review the summary, and then select **Create source**.
+1. On the **Review + connect** screen, review the summary, and then select **Create source**.
 
-      :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/review-create-page.png" alt-text="Screenshot that shows the filled Add source wizard Review and create page." lightbox="./media/add-source-azure-cosmos-db-cdc/review-create-page.png":::         
+      :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/review-create-page.png" alt-text="Screenshot that shows the filled Add source wizard Review + connect page." lightbox="./media/add-source-azure-cosmos-db-cdc/review-create-page.png":::         
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure Cosmos DB CDC as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure Cosmos DB CDC as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
 
-    :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create page after successful creation of the source." lightbox="./media/add-source-azure-cosmos-db-cdc/review-create-success.png":::
+    :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/review-create-success.png" alt-text="Screenshot that shows the Review + connect page after successful creation of the source." lightbox="./media/add-source-azure-cosmos-db-cdc/review-create-success.png":::
 1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-cosmos-db-cdc/verify-data-stream.png":::

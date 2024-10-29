@@ -61,9 +61,9 @@ On the **Set alert** page, follow these steps:
         
             :::image type="content" source="./media/set-alerts-azure-blob-storage-events/add-filter.png" alt-text="Screenshot that shows a sample filter for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/add-filter.png":::        
         1. Select **Next**.
-    1. On the **Review and create** page, review the settings, and select **Create source**.
+    1. On the **Review + connect** page, review the settings, and select **Create source**.
     
-        :::image type="content" source="./media/set-alerts-azure-blob-storage-events/review-create.png" alt-text="Screenshot that shows the Add source wizard Review and create page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/review-create.png":::                
+        :::image type="content" source="./media/set-alerts-azure-blob-storage-events/review-create.png" alt-text="Screenshot that shows the Add source wizard Review + connect page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/review-create.png":::                
 1. For **Condition**, confirm that **On each event** is selected.
 1. For **Action**, select one of the following options:
     1. To receive an email when the event occurs and the condition is met, select **Send me an email**.

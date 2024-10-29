@@ -21,7 +21,7 @@ In Real-Time hub, when you create streams to get events from the [supported sour
 
 - **Add source** experience:
 
-    At the end of creating this stream, on the **Review and create** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
+    At the end of creating this stream, on the **Review + connect** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
 -*All data streams* page:
 
     Move the mouse over a stream whose parent is an eventstream, and select the **Open** link, on select **... (ellipsis)**, and then select **Open eventstream**.
