@@ -112,42 +112,16 @@ provide help when you use the product or service.
 
 -->
 
-## Next step -or- Related content
-
-> [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
-
--or-
+## Related content
 
 * [Related article title](link.md)
 * [Related article title](link.md)
 * [Related article title](link.md)
 
-<!-- Optional: Next step or Related content - H2
-
-Consider adding one of these H2 sections (not both):
-
-A "Next step" section that uses 1 link in a blue box 
-to point to a next, consecutive article in a sequence.
-
--or- 
-
-A "Related content" section that lists links to 
-1 to 3 articles the user might find helpful.
-
--->
-
-<!--
-
-Remove all comments except the customer intent
-before you sign off or merge to the main branch.
-
--->
 
 
-# Get started with Git integration (preview)
+# Create a variable library item (preview)
 
-Create a variable library item
 Add variables and types
 Add values
 Add new value set
@@ -157,3 +131,16 @@ Reference in Data pipeline
 One time setup of default value set for each stage
 
 dynamic/static content?
+
+## Add or delete a variable
+
+## Edit the value of a variable
+
+## Get help
+
+<!-- Optional: Links to help information - H2
+
+In an H2 section, list resources and support services that 
+provide help when you use the product or service.
+
+-->
