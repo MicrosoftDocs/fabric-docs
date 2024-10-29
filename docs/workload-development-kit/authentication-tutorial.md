@@ -130,7 +130,7 @@ Under **API permissions**, add the desired permissions for your application. For
 
 :::image type="content" source="./media/authentication-tutorial/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-tutorial/add-api-permissions.png":::
 
-To learn more about API permissions, see [Update an app's requested permissions in Microsoft Entra ID](https://learn.microsoft.com/entra/identity-platform/howto-update-permissions).
+To learn more about API permissions, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions).
 
 ### Make sure your application is set to work with auth token v1
 
