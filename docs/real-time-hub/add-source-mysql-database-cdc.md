@@ -92,9 +92,9 @@ You can get events from an Azure MySQL Database CDC into Real-Time hub in one of
         
         :::image type="content" source="./media/add-source-azure-mysql-database-cdc/connection-page-filled.png" alt-text="Screenshot that shows the Connect page with all the required fields specified." lightbox="./media/add-source-azure-mysql-database-cdc/connection-page-filled.png"::: 
 1. Now, select **Next** at the bottom of the page.
-1. On the **Review and create**, review settings, and select **Create source**.
+1. On the **Review + connect**, review settings, and select **Create source**.
     
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review and create page with all the required fields specified." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-page.png"::: 
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review + connect page with all the required fields specified." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-page.png"::: 
 
 1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `mysqlserver.mysql.database.azure.com`.
 
@@ -103,9 +103,9 @@ You can get events from an Azure MySQL Database CDC into Real-Time hub in one of
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure MySQL DB CDC as a source. To close the wizard, select **Finish** or **X*** in the top-right corner of the page.
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure MySQL DB CDC as a source. To close the wizard, select **Finish** or **X*** in the top-right corner of the page.
 
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create page after successful creation of the source." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-success.png":::
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review + connect page after successful creation of the source." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-success.png":::
 1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page. 
 
      :::image type="content" source="./media/add-source-azure-mysql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub My data streams page with the stream based on MySQL Database CDC source." lightbox="./media/add-source-azure-mysql-database-cdc/verify-data-stream.png":::

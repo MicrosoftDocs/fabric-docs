@@ -56,9 +56,9 @@ On the **Set alert** page, follow these steps:
 
         :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/set-filter.png" alt-text="Screenshot that shows setting of a filter in the Add source wizard for Fabric workspace item events." lightbox="./media/set-alerts-fabric-workspace-item-events/set-filter.png":::        
     1. Select **Next**.
-    1. On the **Review and create** page, review the settings, and select **Save**.
+    1. On the **Review + connect** page, review the settings, and select **Save**.
     
-        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/review-create-page.png" alt-text="Screenshot that shows the Add source wizard Review and create page for Fabric workspace item events.":::        
+        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/review-create-page.png" alt-text="Screenshot that shows the Add source wizard Review + connect page for Fabric workspace item events.":::        
 1. For **Condition**, confirm that **On each event** is selected.
 1. For **Action**, select one of the following options:
     1. To receive an email when the event occurs and the condition is met, select **Send me an email**.

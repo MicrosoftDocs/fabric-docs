@@ -122,14 +122,14 @@ You can get events from an Azure Database for PostgreSQL CDC into Real-Time hub 
         :::image type="content" source="media/add-source-postgresql-database-cdc/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/add-source-postgresql-database-cdc/connect-page-filled.png":::
 1. On the **Review + connect** page, review the summary, and then select **Connect**.
 
-    :::image type="content" source="media/add-source-postgresql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review and create page filled for the Azure PostgreSQL database connector." lightbox="media/add-source-postgresql-database-cdc/review-create-page.png":::
+    :::image type="content" source="media/add-source-postgresql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review + connect page filled for the Azure PostgreSQL database connector." lightbox="media/add-source-postgresql-database-cdc/review-create-page.png":::
 
 
 ## View data stream details
 
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected PostgreSQL Database CDC as a source. To close the wizard, select **Finish** at the bottom of the page.
 
-    :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create success page." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review + connect success page." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
 1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page.  
 
     :::image type="content" source="./media/add-source-postgresql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub My data streams page with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/verify-data-stream.png":::

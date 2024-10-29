@@ -78,13 +78,13 @@ You can get events from an Azure IoT hub into Real-Time hub in one of the ways:
     :::image type="content" source="./media/add-source-azure-iot-hub/connection-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure IoT Hub connector." lightbox="./media/add-source-azure-iot-hub/connection-page-2.png":::        
 1. On the **Review + connect** page, review settings, and select **Connect**.
 
-    :::image type="content" source="./media/add-source-azure-iot-hub/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure IoT Hub connector." lightbox="./media/add-source-azure-iot-hub/review-create-page.png":::        
+    :::image type="content" source="./media/add-source-azure-iot-hub/review-create-page.png" alt-text="Screenshot that shows the Review + connect page for Azure IoT Hub connector." lightbox="./media/add-source-azure-iot-hub/review-create-page.png":::        
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream with the selected Azure IoT hub as a source. To close the wizard, select **Finish** at the bottom of the page.
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream with the selected Azure IoT hub as a source. To close the wizard, select **Finish** at the bottom of the page.
 
-    :::image type="content" source="./media/add-source-azure-iot-hub/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-iot-hub/review-create-success.png":::
+    :::image type="content" source="./media/add-source-azure-iot-hub/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-iot-hub/review-create-success.png":::
 2. You should see the stream on the **All data streams** and **My data streams** pages. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
     :::image type="content" source="./media/add-source-azure-iot-hub/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-iot-hub/verify-data-stream.png":::

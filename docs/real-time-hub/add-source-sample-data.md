@@ -35,13 +35,13 @@ This article describes how to get events from sample data sources into Real-Time
 1. Select **Next**. 
 1. On the **Review + connect** page, review the summary, and then select **Create source**.
 
-    :::image type="content" source="./media/add-source-sample-data/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/add-source-sample-data/review-create-page.png":::                
+    :::image type="content" source="./media/add-source-sample-data/review-create-page.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/add-source-sample-data/review-create-page.png":::                
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected sample data source. To close the wizard, select **Finish** at the bottom of the page. 
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected sample data source. To close the wizard, select **Finish** at the bottom of the page. 
 
-    :::image type="content" source="./media/add-source-sample-data/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open eventstream and close the wizard." lightbox="./media/add-source-sample-data/review-create-success.png":::                
+    :::image type="content" source="./media/add-source-sample-data/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open eventstream and close the wizard." lightbox="./media/add-source-sample-data/review-create-success.png":::                
 1. Confirm that you see the newly created data stream on the **My data streams** page. 
 
 ## Related content
