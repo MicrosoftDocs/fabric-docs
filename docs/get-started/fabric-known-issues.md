@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/28/2024
+ms.date: 10/30/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  911  | Power BI | [Can't edit paginated reports in Report Builder when opened from service](known-issues/known-issue-911-not-edit-reports-report-builder-opened-service.md) | October 30, 2024 |
 |  903  | Data Warehouse | [Data warehouse data preview might fail if multiple data warehouse items](known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md) | October 28, 2024 |
 |  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |
 |  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 |
