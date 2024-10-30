@@ -44,7 +44,7 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
 - **Unstreamed events.** These events are represented in their raw format as discrete events. If Azure Blob Storage events aren't streamed in an eventstream, they're not directly connected to the eventstream, and the default stream isn't created.
 
-  This status indicates that the events are linked to Fabric events in the Real-Time hub and awaiting further action. Actions include creating alerts with Data Activator that execute Fabric job items like Pipeline or Notebook in the **Fabric events** tab in Real-Time hub.
+  This status indicates that the events are linked to Fabric events in the Real-Time hub and awaiting further action. Actions include creating alerts with Datan Activator that execute Fabric job items like Pipeline or Notebook in the **Fabric events** tab in Real-Time hub.
 
   [![A screenshot showing unstreamed Azure Blob Storage events with the button to Stream events.](media/add-source-azure-blob-storage/unstreamed.png)](media/add-source-azure-blob-storage/unstreamed.png#lightbox)
 

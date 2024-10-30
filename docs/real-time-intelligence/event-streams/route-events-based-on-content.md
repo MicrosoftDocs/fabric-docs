@@ -45,7 +45,7 @@ The supported destinations are:
 
 - **KQL Database**: This destination enables you to ingest your real-time event data into KQL Database, where you can use the powerful Kusto Query Language (KQL) to query and analyze the data. With the data in KQL Database, you can gain deeper insights into your event data and create rich reports and dashboards.
 
-- **Activator**: This destination lets you directly connect your real-time event data to a Activator. Activator is a type of intelligent agent that contains all the information necessary to connect to data, monitor conditions, and act. When the data reaches certain thresholds or matches other patterns, Activator automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
+- **Activator**: This destination lets you directly connect your real-time event data to an Activator. Activator is a type of intelligent agent that contains all the information necessary to connect to data, monitor conditions, and act. When the data reaches certain thresholds or matches other patterns, Activator automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
 - **Custom endpoint (former custom app):** With this destination, you can easily route your real-time events to a custom application. This destination lets you connect your own applications to the eventstream and consume the event data in real time. It's useful when you want to egress real-time data to an external system outside Microsoft Fabric.
 

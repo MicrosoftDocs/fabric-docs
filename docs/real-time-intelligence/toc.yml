@@ -212,7 +212,7 @@ items:
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
       - name: Telegraf
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
-  - name: Get data in Data Activator
+  - name: Get data in Datan Activator
     items:
     - name: Get data from Power BI
       href: ../data-activator/data-activator-get-data-power-bi.md
@@ -344,16 +344,16 @@ items:
       href: power-bi-data-connector.md
 - name: Respond to data
   items:
-  - name: What is Data Activator?
+  - name: What is Datan Activator?
     displayName: trigger, data activator, reflex
     href: ../data-activator/data-activator-introduction.md
-  - name: Get started with Data Activator
+  - name: Get started with Datan Activator
     displayName: trigger, data activator, reflex
     href: ../data-activator/data-activator-get-started.md
-  - name: Data Activator tutorial using sample data
+  - name: Datan Activator tutorial using sample data
     displayName: reflex, trigger
     href: ../data-activator/data-activator-tutorial.md
-  - name: Get data in Data Activator
+  - name: Get data in Datan Activator
     items:
     - name: Get data from Power BI
       href: ../data-activator/data-activator-get-data-power-bi.md
@@ -373,7 +373,7 @@ items:
       href: ../data-activator/data-activator-detection-conditions.md
     - name: Use custom actions to trigger Power Automate flows
       href: ../data-activator/data-activator-trigger-power-automate-flows.md
-    - name: Data Activator limitations
+    - name: Datan Activator limitations
       href: ../data-activator/data-activator-limitations.md
     - name: Troubleshoot errors
       displayName: data activator, trigger, reflex, faq

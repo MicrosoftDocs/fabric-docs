@@ -1,5 +1,5 @@
 ---
-title: Add a Activator destination to an eventstream
+title: Add an Activator destination to an eventstream
 description: Learn how to add Activator destination to a Fabric eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -11,7 +11,7 @@ zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-group
 zone_pivot_groups: event-streams-standard-enhanced
 ---
 
-# Add a Activator destination to an eventstream
+# Add an Activator destination to an eventstream
 
 This article shows you how to add Activator destination to an eventstream.
 
@@ -23,13 +23,13 @@ This article shows you how to add Activator destination to an eventstream.
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
-- If you already have a Activator you want to use, access to the **premium workspace** where your Activator is located with **Contributor** or higher permissions.
+- If you already have an Activator you want to use, access to the **premium workspace** where your Activator is located with **Contributor** or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add Activator as a destination
 
-To add a Activator destination to a default stream or derived stream, follow these steps.
+To add an Activator destination to a default stream or derived stream, follow these steps.
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon and select **Activator** from the dropdown list.
 
@@ -75,9 +75,9 @@ Before you start, you must complete the following prerequisites:
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
-## Add a Activator as a destination
+## Add an Activator as a destination
 
-To add a Activator from your workspace as an eventstream's destination, do the following steps:
+To add an Activator from your workspace as an eventstream's destination, do the following steps:
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Activator**. The **Activator** destination configuration screen appears.
 
@@ -87,7 +87,7 @@ To add a Activator from your workspace as an eventstream's destination, do the f
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-activatorconfiguration.png" alt-text="Screenshot showing the activator configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-activatorconfiguration.png" :::
 
-1. After you select on the Add button, you can see a Activator destination on the canvas that is linked to your eventstream.
+1. After you select on the Add button, you can see an Activator destination on the canvas that is linked to your eventstream.
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-add-activator.png" alt-text="Screenshot showing the new activator destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-add-activator.png" :::
 
