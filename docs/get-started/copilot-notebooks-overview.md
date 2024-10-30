@@ -97,7 +97,7 @@ Copilot has two key intended uses:
   - One, you can ask Copilot to examine and analyze data in your notebook (for example, by first loading a DataFrame and then asking Copilot about data inside the DataFrame).
   - Two, you can ask Copilot to generate a range of suggestions about your data analysis process, such as what predictive models might be relevant, code to perform different types of data analysis, and documentation for a completed notebook.
 
-Keep in mind that code generation with fast-moving or recently released libraries may include inaccuracies or fabrications.
+Keep in mind that code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
 
 ## Related content
 
