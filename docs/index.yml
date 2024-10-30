@@ -76,10 +76,10 @@ productDirectory:
       summary: Store all your organization's data in OneLake, a single, unified, logical data lake.
       url: onelake/index.yml
     # Card
-    - title: Industry Solutions
-      imageSrc: ./media/industry-solutions-icon.svg 
-      summary: Manage data, analyze, and make decisions with Industry-specific solutions such as retail, sustainability, healthcare, and manufacturing.
-      url: /industry/industry-data-solutions-fabric
+    - title: Databases
+      imageSrc: ./media/databases-icon.svg 
+      summary: Create operational SQL databases seamlessly for transactional workloads.
+      url: database/index.yml
     # Card
     - title: Real-Time Intelligence
       imageSrc: ./media/fabric-real-time-intelligence-icon.png
