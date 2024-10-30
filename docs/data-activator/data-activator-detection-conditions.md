@@ -1,7 +1,7 @@
 ---
 title: Detection conditions in Data Activator
 description: Understand how detection settings in Data Activator rules operate and learn how to configure them effectively.
-author: mihartF
+author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
