@@ -13,12 +13,12 @@ zone_pivot_groups: event-streams-standard-enhanced
 1. Change your Fabric experience to **Real-Time Intelligence**.
 
     :::image type="content" source="../media/create-manage-an-eventstream/switch-to-real-time-intelligence-workload.png" alt-text="Screenshot showing the switcher to switch to the Real-Time intelligence workload.":::
-1. Follow one of these steps to start creating an eventstreams:
+1. Follow one of these steps to start creating an eventstream:
 
    - On the **Real-Time Intelligence** homepage, in the **Recommended items to create** section, select the **Eventstream** tile:
 
        :::image type="content" source="../media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream tile on the homepage.":::
-   - On the **Workspace** page, select **New item** and then **Eventstream**:
+   - Select **My workspace** on the left navigation bar. On the **My Workspace** page, select **New item** and then **Eventstream**:
 
        :::image type="content" source="../media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing where to find the eventstream option in the New menu on the Workspace page." lightbox="../media/create-manage-an-eventstream/eventstream-creation-workspace.png":::
 1. Enter a **name** for the new eventstream, and then select **Create**. 
