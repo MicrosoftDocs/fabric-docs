@@ -110,8 +110,8 @@ items:
         href: event-streams/add-destination-kql-database.md
       - name: Lakehouse
         href: event-streams/add-destination-lakehouse.md
-      - name: Reflex
-        href: event-streams/add-destination-reflex.md
+      - name: Activator
+        href: event-streams/add-destination-activator.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app.md
     - name: Process events using event processor
