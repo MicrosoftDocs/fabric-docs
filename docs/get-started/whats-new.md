@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 10/07/2024
+ms.date: 10/31/2024
 ms.topic: whats-new
 ms.custom:
   - build-2024
