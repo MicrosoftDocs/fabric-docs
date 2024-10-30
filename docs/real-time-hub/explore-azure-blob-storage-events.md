@@ -4,22 +4,21 @@ description: This article shows how to explore Azure blob storage events in Fabr
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/11/2024
+ms.date: 10/21/2024
 ---
 
-# Explore Azure blob storage events in Fabric Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Explore Azure blob storage events in Fabric Real-Time hub
 
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
+
+> [!NOTE]
+> This feature is currently in preview.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
 ## View Azure blob storage events detail page
 
-1. In **Real-Time hub**, select **Fabric events**.
+1. In **Real-Time hub**, select **Azure events** on the left navigation menu.
 1. Select **Azure blob storage events** in the list.
 
     :::image type="content" source="./media/explore-azure-blob-storage-events/select-from-list.png" alt-text="Screenshot that shows the selection of Azure blob storage events in the Fabric events page." :::
@@ -90,8 +89,8 @@ The `data` object has the following properties:
 | Property | Type | Description | Example | 
 | -------- | ---- | ----------- | ------- |
 | `api` | string | The operation that triggered the event. | `CreateFile` |
-| `clientRequestId` | string | A client-provided request ID for the storage API operation. This ID can be used to correlate to Azure Storage diagnostic logs using the "client-request-id" field in the logs, and can be provided in client requests using the "x-ms-client-request-id" header. See [Log Format](/rest/api/storageservices/storage-analytics-log-format). | `00000000-0000-0000-0000-000000000000 ` |
-| `requestId` | string | Service-generated request ID for the storage API operation. Can be used to correlate to Azure Storage diagnostic logs using the "request-id-header" field in the logs and is returned from initiating API call in the 'x-ms-request-id' header. See [Log Format](/rest/api/storageservices/storage-analytics-log-format). | `00000000-0000-0000-0000-000000000000` |
+| `clientRequestId` | string | A client-provided request ID for the storage API operation. This ID can be used to correlate to Azure Storage diagnostic logs using the `client-request-id` field in the logs, and can be provided in client requests using the `x-ms-client-request-id` header. See [Log Format](/rest/api/storageservices/storage-analytics-log-format). | `00000000-0000-0000-0000-000000000000 ` |
+| `requestId` | string | Service-generated request ID for the storage API operation. Can be used to correlate to Azure Storage diagnostic logs using the `request-id-header` field in the logs and is returned from initiating API call in the `x-ms-request-id` header. See [Log Format](/rest/api/storageservices/storage-analytics-log-format). | `00000000-0000-0000-0000-000000000000` |
 | `eTag` | string | The value that you can use to run operations conditionally. | `\"0x8D4BCC2E4835CD0\"` |
 | `contentType` | string | The content type specified for the blob. | `text/plain` |
 | `contentLength` | integer | The size of the blob in bytes. | `0` |

@@ -4,16 +4,14 @@ description: This article shows how to explore the data streams you brought into
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 08/25/2024
+ms.date: 10/21/2024
 ---
 
-# Explore My streams in Fabric Real-Time hub (preview)
+# Explore My streams in Fabric Real-Time hub
 
-When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub (preview)](explore-data-streams.md). This article covers the **My streams** page, which allows you to view only the data streams that you brought into Fabric.
+When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub](explore-data-streams.md). This article covers the **My streams** page, which allows you to view only the data streams that you brought into Fabric.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 :::image type="content" source="media/explore-my-data-streams/hub-my-streams-menu.png" alt-text="Screenshot that shows the Real-Time hub My streams page."  lightbox="./media/explore-my-data-streams/hub-my-streams-menu.png" :::
 
@@ -27,7 +25,7 @@ The **My streams** page has the following columns:
 | ------ | ----------- |
 | Name | Name of the stream or KQL table. |
 | Item | Name of the parent artifact. For a stream, it's the name of the eventstream. For a KQL table, it's the name of the KQL database. |
-| Location | Name of workspace where the parent artifact is located. |
+| Workspace | Name of workspace where the parent artifact is located. |
 | Endorsement | Endorsement status of the parent artifact. |
 | Sensitivity | Sensitivity status of the parent artifact. |
 

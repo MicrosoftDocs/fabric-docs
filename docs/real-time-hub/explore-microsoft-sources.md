@@ -4,16 +4,14 @@ description: This article shows how to explore Microsoft sources in Fabric Real-
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/04/2024
+ms.date: 10/22/2024
 ---
 
-# Explore Microsoft sources in Fabric Real-Time hub (preview)
+# Explore Microsoft sources in Fabric Real-Time hub
 
 When you navigate to Real-Time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Microsoft sources** page.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 | Tab | Description |
 | --- | ----------- |
@@ -23,7 +21,7 @@ When you navigate to Real-Time hub in Fabric, you see the following three tabs i
 
 ## Microsoft sources page
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub.":::
+:::image type="content" source="./media/explore-microsoft-sources/real-time-hub-microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub." lightbox="./media/explore-microsoft-sources/real-time-hub-microsoft-sources-menu.png":::
 
 ### Columns
 
@@ -35,7 +33,7 @@ When you navigate to Real-Time hub in Fabric, you see the following three tabs i
 | Resource group | Name of the Azure resource group that has the Azure resource. |
 | Region | Region name of Azure resource. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-columns.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub with columns highlighted.":::
+:::image type="content" source="./media/explore-microsoft-sources/columns.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub with columns highlighted." lightbox="./media/explore-microsoft-sources/columns.png":::
 
 ### Filters
 
@@ -48,13 +46,13 @@ The following filters are available at the top for you to narrow down easily to 
 | Resource group | You can filter on the desired Azure resource group name. |
 | Region | You can filter on the desired region name. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-filters.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub with filters highlighted.":::
+:::image type="content" source="./media/explore-microsoft-sources/filters.png" alt-text="Screenshot that shows the Microsoft sources page of the Real-Time hub with filters highlighted." lightbox="./media/explore-microsoft-sources/filters.png":::
 
 ### Search
 
 You can also search your Microsoft resource using the search bar by typing in the name of the source.
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-search.png" alt-text="Screenshot that shows the search box on the Real-Time hub Microsoft sources page." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-search.png":::
+:::image type="content" source="./media/explore-microsoft-sources/search.png" alt-text="Screenshot that shows the search box on the Real-Time hub Microsoft sources page." lightbox="./media/explore-microsoft-sources/search.png":::
 
 ### Actions
 
@@ -62,9 +60,9 @@ Here are the actions available on resources in the **Microsoft sources** page. W
 
 | Action | Description |
 | ------ | ----------- |
-| Connect | Connect Fabric to your Microsoft resource. |
+| Connect data source | Connect Fabric to your Microsoft resource. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png" alt-text="Screenshot that shows the actions available for resources on the Real-Time hub Microsoft sources page." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png":::
+:::image type="content" source="./media/explore-microsoft-sources/actions.png" alt-text="Screenshot that shows the actions available for resources on the Real-Time hub Microsoft sources page." lightbox="./media/explore-microsoft-sources/actions.png":::
 
 For more information, see [Microsoft sources](supported-sources.md#microsoft-sources).
 

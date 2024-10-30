@@ -9,10 +9,10 @@ ms.custom:
 ms.date: 09/15/2024
 ---
 
-# Add Apache Kafka as source in Real-Time hub (preview)
+# Add Apache Kafka as source in Real-Time hub
 This article describes how to add Apache Kafka as an event source in Fabric Real-Time hub. 
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites 
 
@@ -28,7 +28,7 @@ This article describes how to add Apache Kafka as an event source in Fabric Real
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Apache Kafka source. To close the wizard, select **Close** at the bottom of the page. 
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Apache Kafka source. To close the wizard, select **Close** at the bottom of the page. 
 1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you.
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).

@@ -4,22 +4,19 @@ description: This article describes how to get events from Google Cloud Pub/Sub 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - build-2024
-  - references_regions
-ms.date: 09/02/2024
+ms.date: 10/23/2024
 ---
 
-# Get events from Google Cloud Pub/Sub into Real-Time hub (preview)
+# Get events from Google Cloud Pub/Sub into Real-Time hub
 
 This article describes how to add Google Cloud Pub/Sub as an event source in Fabric Real-Time hub. Google Pub/Sub is a messaging service that enables you to publish and subscribe to streams of events.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites
 
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
-- A Google Cloud account with the Pub/Sub service enabled. Make sure you’ve selected a role with the required permissions.
+- A Google Cloud account with the Pub/Sub service enabled. Make sure you select a role with the required permissions.
 
 ### Get connection information from Google Cloud Pub/Sub
 
@@ -61,7 +58,7 @@ Get the following information from Google Cloud:
 
 ## Add Google Cloud Pub/Sub as a source
 
-1. On the **Select a data source** screen, select **Google Cloud Pub/Sub**.
+1. On the **Data sources** page, select **Google Cloud Pub/Sub**.
 
     :::image type="content" source="./media/add-source-google-cloud-pub-sub/select-google-cloud-pub-sub.png" alt-text="Screenshot that shows the Select a data source page with Google Cloud Pub/Sub selected.":::
 1. On the **Connect** page, select **New connection**.
@@ -81,12 +78,12 @@ Get the following information from Google Cloud:
     - **Source name** - Give a name this source.
     - **Topic name** - It can be any string.
 1. Select **Next** at the bottom of the page.
-1. On the **Review and create** page, review the summary, and select **Create source**.
+1. On the **Review + connect** page, review the summary, and select **Create source**.
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Google Cloud Pub/Sub as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
-1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Google Cloud Pub/Sub as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
+1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
 

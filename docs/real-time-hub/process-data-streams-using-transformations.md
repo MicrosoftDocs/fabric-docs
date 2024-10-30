@@ -9,11 +9,11 @@ ms.custom:
 ms.date: 09/10/2024
 ---
 
-# Process data streams in Fabric event streams  (preview)
+# Process data streams in Fabric event streams 
 
 The Add source experience, Microsoft sources page, and Fabric events page in Real-Time hub allow you to create streams for the supported sources. After you create these streams, you can process them, analyze them, and set alerts on them. This article explains how to process data streams using transformations supported in Fabric event streams.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Open eventstream
 
@@ -21,7 +21,7 @@ In Real-Time hub, when you create streams to get events from the [supported sour
 
 - **Add source** experience:
 
-    At the end of creating this stream, on the **Review and create** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
+    At the end of creating this stream, on the **Review + connect** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
 -*All data streams* page:
 
     Move the mouse over a stream whose parent is an eventstream, and select the **Open** link, on select **... (ellipsis)**, and then select **Open eventstream**.

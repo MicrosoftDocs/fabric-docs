@@ -4,15 +4,13 @@ description: This article describes what Real-Time hub in Microsoft Fabric is an
 author: mystina
 ms.author: majia
 ms.topic: overview
-ms.custom:
-  - build-2024
-ms.date: 08/25/2024
+ms.date: 10/21/2024
 ---
 
-# Introduction to Fabric Real-Time hub (preview)
+# Introduction to Fabric Real-Time hub
 Real-Time hub is the single place for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with the hub. There are no extra steps needed to set up or manage it. It also provides abundant connectors for simplified data ingestion into Fabric. This article explains these features in detail.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Single place for data-in-motion across your organization
 

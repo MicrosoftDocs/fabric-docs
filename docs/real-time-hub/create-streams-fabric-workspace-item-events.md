@@ -9,11 +9,12 @@ ms.custom:
 ms.date: 09/04/2024
 ---
 
-# Get Fabric workspace item events in Real-Time hub (preview)
+# Get Fabric workspace item events in Real-Time hub
 
 This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+> [!NOTE]
+> This feature is currently in preview.
 
 Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
 
@@ -44,17 +45,21 @@ Here are the supported Fabric workspace events:
 
 You can create streams for Fabric workspace item events in Real-Time hub using one of the ways:
 
-- [Using the **Add source** experience](#launch-add-source-experience)
+- [Using the **Data sources** page](#data-sources-page)
 - [Using the **Fabric events** page](#fabric-events-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section.
+4. On the **Data sources** page, select **Fabric events** category at the top, and then select **Connect** on the **Fabric Workspace Item events** tile. 
+
+    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png" alt-text="Screenshot that shows the selection of Fabric Workspace Item events as the source type in the Data sources page." lightbox="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png":::
+
+    Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section.
 
 ## Fabric events page
 
-1. In Real-Time hub, select **Fabric events**.
-1. Move the mouse over **Fabric workspace item events**, and select the **Create Eventstream** link or select ... (ellipsis) and then select **Create Eventstream**.
+1. In Real-Time hub, select **Fabric events** on the left navigation menu.
+1. Move the mouse over **Workspace events**, and select the **+** (plus) link, or select **... (ellipsis)** and then select **Create Eventstream**.
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/fabric-events-menu.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page.":::
 
@@ -77,19 +82,20 @@ Now, use instructions from the [Configure and create an eventstream](#configure-
 1. Then, select **Next** at the bottom of the page.
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/connect-page-filled.png" alt-text="Screenshot that shows the Connect page with all the fields filled." lightbox="./media/create-streams-fabric-workspace-item-events/connect-page-filled.png":::
-1. On the **Review and create** page, review settings, and select **Create source**.
+1. On the **Review + connect** page, review settings, and select **Create source**.
 
-    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/create-streams-fabric-workspace-item-events/review-create-page.png":::
-1. When the wizard succeeds in creating a stream, you see a link to **open the eventstream** and **close** the wizard.
+    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/review-create-page.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/create-streams-fabric-workspace-item-events/review-create-page.png":::
+1. When the wizard succeeds in creating a stream, on the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you. To close the wizard, select **Finish** at the bottom of the page.
 
-    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open the eventstream." lightbox="./media/create-streams-fabric-workspace-item-events/review-create-success.png":::
+    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open the eventstream." lightbox="./media/create-streams-fabric-workspace-item-events/review-create-success.png":::
 
 ## View stream from the All data streams page
+Select **My data streams** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
 
-1. In **Real-Time hub**, select **All data streams**.
-1. Confirm that you see the stream you created.
+:::image type="content" source="./media/create-streams-fabric-workspace-item-events/verify-data-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/create-streams-fabric-workspace-item-events/verify-data-stream.png":::
 
-    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/verify-data-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/create-streams-fabric-workspace-item-events/verify-data-stream.png":::
+For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
 
 ## Related content
 
