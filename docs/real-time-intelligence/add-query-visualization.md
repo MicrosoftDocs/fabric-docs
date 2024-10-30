@@ -5,7 +5,7 @@ ms.reviewer: mibar
 ms.author: yaschust
 author: yaelschuster
 ms.topic: how-to
-ms.date: 10/09/2024
+ms.date: 10/30/2024
 ---
 # Add and modify a query visualization
 
