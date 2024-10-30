@@ -62,7 +62,7 @@ Copy the _Application ID_ (also called the _ClientId_)  you copied earlier and u
 
 ### Option 2: Using the Fabric portal
 
-Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
+Sign in to the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
 
 ```azurecli
 powerBIAccessToken
