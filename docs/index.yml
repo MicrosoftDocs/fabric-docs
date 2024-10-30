@@ -77,7 +77,7 @@ productDirectory:
       url: onelake/index.yml
     # Card
     - title: Databases
-      imageSrc: ./media/databases-icon.svg 
+      imageSrc: ./media/databases-icon.png 
       summary: Create operational SQL databases seamlessly for transactional workloads.
       url: database/index.yml
     # Card
