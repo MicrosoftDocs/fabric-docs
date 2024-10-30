@@ -103,8 +103,6 @@ items:
       href: explore-fabric-events.md    
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
-    - name: Events in Fabric - Billing 
-      href: events-in-fabric-operations.md
 - name: Consume events and data streams
   items:
   - name: Consume data streams

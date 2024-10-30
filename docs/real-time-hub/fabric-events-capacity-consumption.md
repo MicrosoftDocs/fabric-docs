@@ -1,7 +1,7 @@
 ---
 title: Fabric events capacity consumption
 description: Learn how to monitor capacity consumption for Fabric events.
-author: geguirgu
+author: george-guirguis
 ms.author: geguirgu
 ms.topic: how-to 
 ms.date: 11/18/2024
@@ -19,7 +19,7 @@ When you use a Fabric capacity, your usage charges appear in the Azure portal un
 
 
 ## Operation types
-Fabric events usage is defined by two operation types, which are described in the following table <sup>**[Note 1](#Note-1)**</sup>. The table provides information about Fabric events operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
+Fabric events usage is defined by two operation types, which are described in the following table <sup>**[Note 1](#Note-1)**</sup>. The table provides information about Fabric events operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
  
 
 | Operation in Capacity Metrics App | Description | Operation unit of measure | Fabric consumption rate |
@@ -47,7 +47,7 @@ In the app, the event operations show the metadata of the publisher for the publ
 
 #### Representation of nonartifacts
 In some cases, the publisher or the consumer can be nonartifacts. For example, for workspace events, the publisher is the workspace. In these cases, the publish operations shows:
--  **Item kind** in the format of "Fabric Events-"<event category>; for workspace item events, the **Item kind** is "Fabric Events-WorkspaceItemEvents".
+-  **Item kind** in the format of `Fabric Events-"<event category>`, and for workspace item events, the **Item kind** is `Fabric Events-WorkspaceItemEvents`.
 -  The values for the **Workspace**, **Item name**, and the **Consumer Identity** is "Fabric Events Publisher".
 
 
