@@ -149,7 +149,7 @@ landingContent:
     linkLists:
        - linkListType: overview
          links:
-          - text: What is Datan Activator?
+          - text: What is Data Activator?
             url: ../data-activator/data-activator-introduction.md
        - linkListType: how-to-guide
          links:
