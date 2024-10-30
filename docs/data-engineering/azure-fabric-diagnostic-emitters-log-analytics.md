@@ -32,7 +32,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
 #### Option 1: Configure with Log Analytics Workspace ID and Key
 
 1. Create a Fabric Environment Artifact in Fabric
-2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375), which already containing the required properties.  
+2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://sparklighter.blob.core.windows.net/package/FabricSparkMonitorConfiguration/log_analytics_spark_properties_option_1.yml), which already containing the required properties.  
 
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: Log Analytics workspace ID.
    - `<LOG_ANALYTICS_WORKSPACE_KEY>`: Log Analytics key. To find this, in the Azure portal, go to **Azure Log Analytics workspace** > **Agents** > **Primary key**.
@@ -46,7 +46,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
-   Alternatively, to apply the same configuration as Azure Synapse, use the following properties:
+   Alternatively, to apply the same configuration as Azure Synapse, use the following properties, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://sparklighter.blob.core.windows.net/package/FabricSparkMonitorConfiguration/log_analytics_spark_properties_option_1_synapse.yml).
 
    ```properties
    spark.synapse.logAnalytics.enabled: "true"
@@ -61,7 +61,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
 
 > [!NOTE]
 >
-> Known issue: Unable to start a session using Option 1 provisionally.
+> **Known issue**: Unable to start a session using Option 1 provisionally.
 > Currently, storing secrets in Key Vault prevents Spark sessions from starting. Please prioritize configuring it using the method outlined in Option 1.
 > 
 > You need to grant read secret permission to the users who will submit Apache Spark applications. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
@@ -75,7 +75,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    - **Value**: Enter the `<LOG_ANALYTICS_WORKSPACE_KEY>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
 4. Create a Fabric Environment Artifact in Fabric
-5. Add the following **Spark properties** with the corresponding values to the environment artifact, or Select **Add from .yml** on the ribbon in the Environment artifact to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which includes following Spark properties.
+5. Add the following **Spark properties** with the corresponding values to the environment artifact, or Select **Add from .yml** on the ribbon in the Environment artifact to download the [sample yaml file](https://sparklighter.blob.core.windows.net/package/FabricSparkMonitorConfiguration/log_analytics_spark_properties_option_2.yml) which includes following Spark properties.
 
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: The Log Analytics workspace ID.
    - `<AZURE_KEY_VAULT_NAME>`: The key vault name that you configured.
@@ -92,7 +92,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
-   Alternatively, to apply the same configuration as Azure Synapse, use the following properties:
+   Alternatively, to apply the same configuration as Azure Synapse, use the following properties, or select Add from .yml in the ribbon to download the [sample yaml file](https://sparklighter.blob.core.windows.net/package/FabricSparkMonitorConfiguration/log_analytics_spark_properties_option_2_synapse.yml).
 
    ```properties
    spark.synapse.logAnalytics.enabled: "true"
