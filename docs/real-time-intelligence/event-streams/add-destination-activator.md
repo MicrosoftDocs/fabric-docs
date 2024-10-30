@@ -85,7 +85,7 @@ To add an Activator from your workspace as an eventstream's destination, do the 
 
    **Activator**: Select an existing Activator or create a new one to receive data.
 
-   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-activatorconfiguration.png" alt-text="Screenshot showing the activator configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-activatorconfiguration.png" :::
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-activator-configuration.png" alt-text="Screenshot showing the activator configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-activator-configuration.png" :::
 
 1. After you select on the Add button, you can see an Activator destination on the canvas that is linked to your eventstream.
 
