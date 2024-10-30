@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - copilot-learning-hub
-ms.date: 06/02/2024
+ms.date: 10/30/2024
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -37,7 +37,15 @@ First select the Copilot icon in the notebooks ribbon. The Copilot chat panel op
 
 :::image type="content" source="media/copilot-notebooks-overview/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot ribbon." lightbox="media/copilot-notebooks-overview/copilot-ribbon-button.png":::
 
-Run the cell at the top of the notebook. After the cell successfully executes, you can use Copilot. You must rerun the cell at the top of the notebook each time your session in the notebook closes.
+Run the cell at the top of the notebook, with this code:
+
+```
+#Run this cell to install the required packages for Copilot
+%pip install https://aka.ms/chat-magics-0.0.0-py3-none-any.whl
+%load_ext chat_magics
+```
+
+After the cell successfully executes, you can use Copilot. You must rerun the cell at the top of the notebook each time your session in the notebook closes.
 
 :::image type="content" source="media/copilot-notebooks-overview/copilot-cell-executed-successfully.png" alt-text="Screenshot showing successful cell execution." lightbox="media/copilot-notebooks-overview/copilot-cell-executed-successfully.png":::
 
