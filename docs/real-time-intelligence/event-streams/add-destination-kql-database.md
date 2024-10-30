@@ -122,7 +122,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Custom app destination](add-destination-custom-app.md)
 - [Derived stream destination](add-destination-derived-stream.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
-- [Reflex destination](add-destination-reflex.md)
+- [Activator destination](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 
@@ -215,7 +215,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
-- [Reflex destination](add-destination-reflex.md)
+- [Activator destination](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end

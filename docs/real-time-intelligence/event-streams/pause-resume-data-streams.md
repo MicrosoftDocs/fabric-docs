@@ -48,7 +48,7 @@ Here is a detailed table of the nodes that support pause and resume functionalit
 | Lakehouse                     | Destination           | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
 | KQL Database (Direct Ingestion) | Destination           | NO                    |                               |
 | KQL Database (Event processing before ingestion) | Destination           | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Reflex                        | Destination           | NO                    |                               |
+| Activator                        | Destination           | NO                    |                               |
 
 Below is a description of the available resume options:
 
