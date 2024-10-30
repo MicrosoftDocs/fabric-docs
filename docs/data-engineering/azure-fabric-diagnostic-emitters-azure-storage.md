@@ -43,7 +43,7 @@ To collect diagnostic logs and metrics, you can use an existing Azure Storage ac
 
 > [!NOTE]
 >
-> **Known issue**: Unable to start a session using Option 1 provisionally.
+> **Known issue**: Unable to start a session using Option 2 provisionally.
 > Currently, storing secrets in Key Vault prevents Spark sessions from starting. Please prioritize configuring it using the method outlined in Option 1.
 > 
 > Ensure that users who submit Apache Spark applications are granted read secret permissions. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
