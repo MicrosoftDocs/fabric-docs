@@ -67,7 +67,7 @@ Data Activator supports the following tile types in Real-Time Dashboards:
 Additionally, for Data Activator to support a tile:
 
 * The data in the tile must not be static.
-* The data in the tile must be based on a Kusto Query Language (KQL) query.
+* The data in the tile must be based on a KQL query.
 * The tile must have at most one time range.
 * The tile must be filtered by a predefined time range. Using a custom time range isn't supported.
 * The tile must not contain time series data (for example, data created using the *make-series* KQL operator)
@@ -109,4 +109,4 @@ Your organization may have up to 250 Data Activator items per region. You will g
 * [Get started with Data Activator](data-activator-get-started.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

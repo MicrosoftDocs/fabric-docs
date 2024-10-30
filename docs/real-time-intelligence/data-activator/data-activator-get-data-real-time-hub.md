@@ -34,7 +34,7 @@ A wizard appears enabling you to add new events using the recommended connectors
 
 When you choose a connector, a new eventstream is created to manage the connection and transformation of the new events.
 
-For more information about connecting to data with Real-Time Hub, see the [Real-Time Hub](../real-time-hub/real-time-hub-overview.md) article.
+For more information about connecting to data with Real-Time Hub, see the [Real-Time Hub](../../real-time-hub/real-time-hub-overview.md) article.
 
 ## Related content
 
@@ -43,4 +43,4 @@ For more information about connecting to data with Real-Time Hub, see the [Real-
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

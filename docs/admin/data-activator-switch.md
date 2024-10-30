@@ -12,7 +12,7 @@ ms.date: 09/22/2024
 
 # Enable Data Activator
 
-[Data Activator](../data-activator/data-activator-get-started.md) is preview Microsoft Fabric feature. To enable this feature for your organization, use the Data Activator admin switch.
+[Data Activator](../real-time-intelligence/data-activator/data-activator-get-started.md) is preview Microsoft Fabric feature. To enable this feature for your organization, use the Data Activator admin switch.
 
 You can enable Data Activator for:
 
