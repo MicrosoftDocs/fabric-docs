@@ -4,18 +4,16 @@ description: This article describes how to add Azure SQL Managed Instance Change
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - references_regions
-ms.date: 09/10/2024
+ms.date: 10/23/2024
 ---
 
-# Add Azure SQL Managed Instance (MI) database (DB) CDC as source in Real-Time hub (preview)
+# Add Azure SQL Managed Instance (MI) database (DB) CDC as source in Real-Time hub
 
 This article describes how to add Azure SQL Managed Instance CDC as an event source in Fabric Real-Time hub.
 
 The Azure SQL Managed Instance CDC source connector allows you to capture a snapshot of the current data in a SQL Managed Instance database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites 
 
@@ -51,14 +49,18 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
     After the query executes successfully, you enabled CDC in your Azure SQL managed instance.
 
 ## Get events from Azure SQL Managed Instance (CDC)
-You can get events from an Azure SQL Managed Instance CDC into Real-Time hub in one of the ways:
+You can get events from an Azure SQL Managed Instance (MI) Database (DB) CDC into Real-Time hub in one of the ways:
 
-- [Using the **Add source** experience](#launch-add-source-experience)
+- [Using the **Data sources** page](#data-sources-page)
 - [Using the **Microsoft sources** page](#microsoft-sources-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-Use instructions from the [Add Azure SQL Managed Instance CDC as a source](#add-azure-sql-managed-instance-cdc-as-a-source) section. 
+4. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **Azure SQL MI DB (CDC)** tile. 
+
+    :::image type="content" source="./media/add-source-azure-sql-managed-instance-cdc/select-azure-sql-managed-instance-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL Managed Instance CDC as the source type in the Data sources page." lightbox="./media/add-source-azure-sql-managed-instance-cdc/select-azure-sql-managed-instance-cdc.png":::
+    
+    Use instructions from the [Add Azure SQL Managed Instance CDC as a source](#add-azure-sql-managed-instance-cdc-as-a-source) section. 
 
 ## Microsoft sources page
 
@@ -69,6 +71,8 @@ Use instructions from the [Add Azure SQL Managed Instance CDC as a source](#add-
 1. For **Region**, select a location where your database is located. 
 1. Now, move the mouse over the name of the Azure SQL Managed Instance DB CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button. 
 
+    :::image type="content" source="./media/add-source-azure-sql-managed-instance-cdc/microsoft-sources-page.png" alt-text="Screenshot that shows the Microsoft Sources page." lightbox="./media/add-source-azure-sql-managed-instance-cdc/microsoft-sources-page.png":::     
+
     To configure connection information, use steps from the [Add Azure SQL Managed Instance CDC as a source](#add-azure-sql-managed-instance-cdc-as-a-source) section. Skip the first step of selecting Azure SQL MI DB CDC as a source type in the Add source wizard.
 
 ## Add Azure SQL Managed Instance CDC as a source
@@ -77,8 +81,8 @@ Use instructions from the [Add Azure SQL Managed Instance CDC as a source](#add-
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure SQL MI DB CDC as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
-1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure SQL MI DB CDC as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
+2. You should see the stream on the **All data streams** and **My data streams** pages. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
 To learn about consuming data streams, see the following articles:

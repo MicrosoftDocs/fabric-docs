@@ -9,5 +9,3 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-> [!NOTE]
-> Real-Time hub is currently in preview. 
