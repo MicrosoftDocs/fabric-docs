@@ -38,7 +38,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 
     :::image type="content" source="media/add-query-visualization/select-visual-type.png" alt-text="Screenshot of visual type dropdown.":::
 
-[!INCLUDE [customize-visuals](~/../kusto-repo/data-explorer/includes/customize-visuals-rti.md)]
+[!INCLUDE [customize-visuals](../includes/customize-visuals.md)]
 
 ## Change an existing visualization
 
