@@ -118,10 +118,10 @@ FROM [Timetravel].[dbo].[Top10CustomersView]
 OPTION (FOR TIMESTAMP AS OF '2024-05-01T21:55:27.513'); 
 ```
 
-- The historical data from tables in a view can only be queried beginning from the time the view was created.
-- After a view is altered, it can only be queried after the point-in-time it was altered.
-- If the underlying table of a view is altered without changing the view, the view returns the results as of the point-in-time being queried, as expected.
-- When the underlying table of a view is dropped and recreated without modifying the view, the view returns results from point-in-time the table was recreated.
+- The historical data from tables in a view can only be queried for time travel beginning from the time the view was created.
+- After a view is altered, time travel queries are only valid after it was altered.
+- If an underlying table of a view is altered without changing the view, time travel queries on the view can return the data from before the table change, as expected.
+- When the underlying table of a view is dropped and recreated without modifying the view, data for time travel queries is only available from the time after the table was recreated.
 
 ## Limitations
 
