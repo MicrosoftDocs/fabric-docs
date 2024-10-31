@@ -32,7 +32,7 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
    An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Back-end authentication and authorization overview](back-end-authentication.md) to learn more about this token).
 
-   For this communication to work, the user using this communication must give consent to the Entra application.
+   For this communication to work, the user using this communication must give consent to the Microsoft Entra application.
 
 * From workload back-end to Fabric back-end
 
