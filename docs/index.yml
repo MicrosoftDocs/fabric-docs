@@ -153,7 +153,7 @@ conceptualContent:
             text: Copy Activity, Dataflow, or Spark Guide
           - url: get-started/decision-guide-lakehouse-warehouse.md
             itemType: concept
-            text: Warehouse Vs Lakehouse
+            text: Warehouse and Lakehouse
           footerLink:
             url: get-started/index.yml
             text: See more
@@ -207,7 +207,7 @@ conceptualContent:
           links:
           - url: real-time-intelligence/eventhouse.md
             itemType: concept
-            text: Store data in an eventhouse
+            text: Store data in an Eventhouse
           - url: data-engineering/lakehouse-overview.md
             itemType: concept
             text: Store data in a lakehouse
