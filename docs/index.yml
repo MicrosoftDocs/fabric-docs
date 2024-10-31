@@ -231,7 +231,7 @@ conceptualContent:
             text: Transform data in a warehouse
           - url: get-started/copilot-notebooks-overview.md
             itemType: overview
-            text: Transform data with copilot for notebooks
+            text: Transform data with Copilot for notebooks
           footerLink:
             url: real-time-intelligence/event-streams/overview.md
             text: See more
@@ -252,7 +252,7 @@ conceptualContent:
             text: Use AutoML and tune visualizations
           - url: /power-bi/create-reports/copilot-create-report-service
             itemType: how-to-guide
-            text: Create reports with copilot
+            text: Create reports with Copilot
           footerLink:
             url: real-time-intelligence/create-powerbi-report.md
             text: See more
@@ -275,11 +275,11 @@ conceptualContent:
             url: data-science/machine-learning-model.md
             text: See more
         # Card
-        - title: Use AI capabilities and get insights with copilot
+        - title: Use AI capabilities and get insights with Copilot
           links:
           - url: get-started/copilot-fabric-overview.md
             itemType: concept
-            text: Overview of copilot in Fabric
+            text: Overview of Copilot in Fabric
           - url: get-started/copilot-privacy-security.md
             itemType: concept
             text: Copilot privacy, security, and responsible use
