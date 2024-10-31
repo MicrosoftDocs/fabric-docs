@@ -195,7 +195,7 @@ conceptualContent:
             text: Get data using shortcuts
           - url: real-time-intelligence/event-streams/add-source-azure-event-hubs.md
             itemType: how-to-guide
-            text: Get data with event streams
+            text: Get data with eventstreams
           - url: real-time-hub/add-source-azure-event-hubs.md
             itemType: how-to-guide
             text: Get data with Real-Time hub          
@@ -240,7 +240,7 @@ conceptualContent:
             text: Transform data with Copilot for notebooks
           - url: real-time-intelligence/event-streams/process-events-using-event-processor-editor.md
             itemType: overview
-            text: Transform data with event streams
+            text: Transform data with eventstreams
           footerLink:
             url: real-time-intelligence/event-streams/overview.md
             text: See more
