@@ -190,9 +190,6 @@ conceptualContent:
           - url: real-time-intelligence/get-data-local-file.md
             itemType: how-to-guide
             text: Get data into KQL database
-          - url: onelake/create-onelake-shortcut.md
-            itemType: tutorial
-            text: Get data using shortcuts
           - url: real-time-intelligence/event-streams/add-source-azure-event-hubs.md
             itemType: how-to-guide
             text: Get data with eventstreams
@@ -200,7 +197,7 @@ conceptualContent:
             itemType: how-to-guide
             text: Get data with Real-Time hub          
           footerLink:
-            url: data-activator/data-activator-get-data-power-bi.md
+            url: onelake/create-onelake-shortcut.md
             text: See more
         # Card
         - title: Store data
