@@ -351,6 +351,9 @@ While the steps in the previous section are required to provide access to user p
 2. Make sure Tenant Administrators enabled the usage of Service Principals in Fabric. In the Tenant Admin portal, go to **Tenant Settings**. Under **Developer Settings** enable **Service Principals can use Fabric APIs**. With this setting enabled, the application will be visible in the Fabric Portal for role or permissions assignment. You can find more information on [Identity support](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting).
 3. The service principal will need access to both the GraphQL API and the data source. In the Fabric Portal, add the application as a workspace member with a contributor role where both the GraphQL API and data source items are located.
 
+> [!IMPORTANT]
+> When defining the connectivity option for your API, make sure the API is configured to use single sign-on (SSO). Currently Service Principals do not support saved credentials. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
+
 Since a Service Principal requires either a certificate or a client secret, it is not supported by the Microsoft Authentication Library (MSAL) in single page applications (SPAs) like the React app we built in the last step. You can leverage a backend service properly secured with well defined authorization logic depending on your requirements and use cases.
 
 Once your API is configured to be accessed by a Service Principal, you can test it locally using a simple Node.JS application in your local machine:
