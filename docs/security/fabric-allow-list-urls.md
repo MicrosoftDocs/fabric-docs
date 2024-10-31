@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 05/28/2024
+ms.date: 10/08/2024
 ---
 
 # Add Fabric URLs to your allowlist
@@ -101,8 +101,10 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |:---------|:---------|:---------|
 |**Required**: Datamart SQL |datamart.fabric.microsoft.com|TCP 1433|
 |**Required**: Datamart SQL |datamart.pbidedicated.microsoft.com|TCP 1433|
+|**Required**: Datamart SQL |*.pbidedicated.microsoft.com|TCP 1433|
 |**Required**: Fabric DW SQL |datawarehouse.fabric.microsoft.com|TCP 1433|
-|**Required**: Fabric SQL |datawarehouse.pbidedicated.microsoft.com|TCP 1433|
+|**Required**: Fabric DW SQL |datawarehouse.pbidedicated.microsoft.com|TCP 1433|
+|**Required**: Fabric DW SQL |*.pbidedicated.microsoft.com|TCP 1433|
 
 ## Data Science
 

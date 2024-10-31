@@ -1,8 +1,8 @@
 ---
 title: Overview of Copilot in Fabric
 description: Learn about Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
-author: maggiesMSFT
-ms.author: maggies
+author: snehagunda
+ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
   - ignite-2023

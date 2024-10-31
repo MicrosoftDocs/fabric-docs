@@ -9,7 +9,7 @@ items:
     href: monetization.md  
   - name: Publish your workload
     href: publish-workload-flow.md
-  - name: Workload certification
+  - name: Publishing requirements
     href: publish-workload-requirements.md    
 - name: Get started
   items:
@@ -37,10 +37,12 @@ items:
     href: monitoring-hub.md
   - name: Working with customer data
     href: fabric-data-plane.md
+  - name: The workload backend manifests
+    href: backend-manifest.md
+  - name: The workload frontend manifests
+    href: frontend-manifests.md
 - name: Tutorials
   items:
-  - name: The workload manifest
-    href: backend-manifest.md
   - name: Add and manage more workloads
     href: more-workloads-add.md
   - name: Upload and manage a workload
@@ -53,6 +55,8 @@ items:
     href: extensibility-front-end.md
   - name: Back-end implementation guide
     href: extensibility-back-end.md
+  - name: Communication guide
+    href: workload-communication.md
   - name: Azure web app deployment
     href: azure-web-app-deployment-tutorial.md
   - name: Working in cloud mode

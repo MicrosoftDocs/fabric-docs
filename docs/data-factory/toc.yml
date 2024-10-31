@@ -17,6 +17,8 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Pricing Apache Airflow job
+        href: pricing-apache-airflow-job.md
       - name: Cost estimation from Azure Data Factory to Fabric
         href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
       - name: Pricing examples
@@ -41,6 +43,8 @@
             href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
           - name: Load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
             href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
+          - name: Load 2 GB of Parquet data to a Lakehouse table through Virtual Network Data Gateway
+            href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md
     - name: Keyboard shortcuts
       href: keyboard-shortcuts.md
   - name: Get started
@@ -327,6 +331,10 @@
           href: format-excel.md
         - name: Configure in Dataflow Gen2
           href: connector-excel-dataflows.md
+      - name: Iceberg
+        items:
+        - name: Configure in Data pipeline
+          href: format-iceberg.md      
       - name: JSON
         items:
         - name: Configure in Data pipeline
@@ -415,6 +423,12 @@
         href: connector-lakehouse.md
       - name: Configure in a data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
+    - name: MariaDB
+      items:
+      - name: MariaDB - Overview
+        href: connector-mariadb-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-mariadb-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Microsoft 365 - Overview
@@ -585,6 +599,12 @@
         href: connector-teradata-database-overview.md
       - name: Set up your connection
         href: connector-teradata-database.md
+    - name: Vertica
+      items:
+      - name: Vertica - Overview
+        href: connector-vertica-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-vertica-copy-activity.md        
     - name: Web API/Web page
       items:
       - name: Web API/Web page - Overview
@@ -893,6 +913,8 @@
             href: apache-airflow-jobs-supported-apache-airflow-configurations.md
           - name: Migrate from Azure Workflow Orchestration Manager
             href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
+          - name: Access logs 
+            href: access-apache-airflow-job-logs.md
       - name: Tutorials
         items:
           - name: Hello Apache Airflow Job

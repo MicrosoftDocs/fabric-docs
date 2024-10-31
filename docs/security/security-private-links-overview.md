@@ -18,7 +18,7 @@ To learn more about Azure Private Link, see [What is Azure Private Link](/azure/
 
 Enabling private endpoints has an impact on many items, so you should review this entire article before enabling private endpoints.
 
-## What is a private endpoint
+## What is a private endpoint?
 
 Private endpoint guarantees that traffic going *into* your organization's Fabric items (such as uploading a file into OneLake, for example) always follows your organization's configured private link network path. You can configure Fabric to deny all requests that don't come from the configured network path.
 
@@ -102,18 +102,18 @@ ML Model, Experiment, and AI skill supports private link.
 
 * If your organization is using Azure Private Link in Fabric, modern usage metrics reports will contain partial data (only Report Open events). A current limitation when transferring client information over private links prevents Fabric from capturing Report Page Views and performance data over private links. If your organization had enabled the **Azure Private Link** and **Block Public Internet Access** tenant settings in Fabric, the refresh for the dataset fails and the usage metrics report doesn't show any data.
 
-### Event house
+### Eventhouse
 
-Event house supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an event house.
+Eventhouse supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an Eventhouse.
 
 Limitations:
 
 * Ingesting data from OneLake isn't supported.
-* Creating a shortcut to an event house isn't possible.
-* Connecting to an event house in a data pipeline isn't possible.
+* Creating a shortcut to an Eventhouse isn't possible.
+* Connecting to an Eventhouse in a data pipeline isn't possible.
 * Ingesting data using queued ingestion isn't supported.
 * Data connectors relying on queued ingestion aren't supported.
-* Querying an event house using T-SQL isn't possible.
+* Querying an Eventhouse using T-SQL isn't possible.
 
 ### Healthcare data solutions (preview)
 
@@ -153,7 +153,9 @@ There are several considerations to keep in mind while working with private endp
 
 * **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. [Learn more about this scenario](/data-integration/gateway/service-gateway-install#private-link-consideration). VNet data gateways will work. For more information, see [these considerations](/data-integration/gateway/service-gateway-install#private-link-consideration).
 
-* **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway doesn't work properly when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links. A potential workaround is to disable the **Azure Private Link** tenant setting, configure the gateway in a remote region (a region other than the recommended region), then re-enable Azure Private Link. After Private Link is re-enabled, the gateway in the remote region won't use private links. However, we don't provide support for this scenario.
+* **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway is not supported when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links.
+
+* Private Links will not work with VNet Data Gateway download diagnostics.
 
 * Private links resource REST APIs don't support tags.
 
