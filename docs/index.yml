@@ -193,6 +193,12 @@ conceptualContent:
           - url: onelake/create-onelake-shortcut.md
             itemType: tutorial
             text: Get data using shortcuts
+          - url: real-time-intelligence/event-streams/add-source-azure-event-hubs.md
+            itemType: how-to-guide
+            text: Get data with event streams
+          - url: real-time-hub/add-source-azure-event-hubs.md
+            itemType: how-to-guide
+            text: Get data with Real-Time hub          
           footerLink:
             url: data-activator/data-activator-get-data-power-bi.md
             text: See more
@@ -232,6 +238,9 @@ conceptualContent:
           - url: get-started/copilot-notebooks-overview.md
             itemType: overview
             text: Transform data with Copilot for notebooks
+          - url: real-time-intelligence/event-streams/process-events-using-event-processor-editor.md
+            itemType: overview
+            text: Transform data with event streams
           footerLink:
             url: real-time-intelligence/event-streams/overview.md
             text: See more
