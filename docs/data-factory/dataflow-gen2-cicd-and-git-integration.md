@@ -26,7 +26,7 @@ With Dataflow Gen2 (CI/CD preview), you can now:
 
 To get started, you must complete the following prerequisites:
 
-- Have a Microsoft Fabric tenant account with an active subscription. Create an account for free.
+- Have a Microsoft Fabric tenant account with an active subscription. Create an account for [free](/fabric/get-started/fabric-trial).
 - Make sure you have a Microsoft Fabric enabled workspace.
 - Make sure Git integration is enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
 
@@ -52,7 +52,7 @@ To create a Dataflow Gen2 with CI/CD and Git support, follow these steps:
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-uncommited-git.png" alt-text="Screenshot of the saved Dataflow Gen2 with the status shown as uncommitted.":::
 
-1. To commit the dataflow to the Git repository, select the source control icon in the top right corner.
+1. To commit the dataflow to the Git repository, select the source control icon in the top right corner of the workspace view.
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/source-control-button.png" alt-text="Screenshot of the Source control button.":::
 
@@ -96,7 +96,7 @@ To view the refresh history of the dataflow, you can either select the refresh h
 
 Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is similar to any other Fabric item. You can access the settings by selecting the more options ellipsis icon next to the dataflow and selecting the settings.
 
-## Use the Fabric CRUDL API to manage Dataflows Gen2
+## Use the Fabric CRUDL API to manage Dataflow Gen2
 
 With CICD and Git integration support, we also introduced the Fabric CRUDL API to manage Dataflow Gen2. You can use the API to create, read, update, delete, and list Dataflow Gen2 dataflows. The API is available in the Fabric API reference.
 
