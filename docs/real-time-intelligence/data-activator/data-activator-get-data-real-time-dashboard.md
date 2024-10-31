@@ -20,8 +20,8 @@ Use Data Activator to trigger notifications when conditions are met on data in a
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [Real-Time Dashboard](../real-time-intelligence/dashboard-real-time-create.md) with at least one tile displaying data
+* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
+* A [Real-Time Dashboard](../../real-time-intelligence/dashboard-real-time-create.md) with at least one tile displaying data
 
 ## Create a Data Activator trigger using **Set alert**
 
@@ -34,7 +34,7 @@ Use Data Activator to trigger notifications when conditions are met on data in a
 
 ## Define the Data Activator alert conditions
 
-In the **Set alert** pane, define your rule conditions. Rule conditions include deciding which field to monitor and setting the threshold. Select whether to receive your notification in email or in Microsoft Teams. Set the location to save this Data Activator rule and select **Create**. 
+In the **Set alert** pane, define your rule conditions. Rule conditions include deciding which field to monitor and setting the threshold. Select whether to receive your notification in email or in Microsoft Teams. Set the location to save this Data Activator rule and select **Create**.
 
 :::image type="content" source="media/data-activator-get-data/data-activator-get-data-07.png" alt-text="Screenshot of create an alert window in Data Activator.":::
 
@@ -45,7 +45,7 @@ When your trigger is ready, you receive a notification with a link to your trigg
 * Add other recipients to your alert.
 * Define a more complex alert condition than is possible in the *Set alert* pane.
 
-For information on how to edit triggerss in Data Activator, see [Create triggers in design mode](data-activator-create-triggers-design-mode.md) .
+For information on how to edit triggerss in Data Activator, see [Create triggers in design mode](data-activator-create-triggers-design-mode.md).
 
 ## Limitations on charts with a time axis
 
@@ -86,7 +86,7 @@ The most common reason that a measure value can change over time is that the mos
         | summarize count() by bin(YourTimeColumn, 1h)
         | render timechart
         ```
-    
+
 1. **Use a card or KPI visual to track the value for the current date** since the limitation described here only applies to charts with a time axis. For example, create a KPI visual that displays "sales so far for today." Data Activator reads and triggers to changes in this value throughout the day.
 
 ## Related content
@@ -94,4 +94,4 @@ The most common reason that a measure value can change over time is that the mos
 * [Create Data Activator rules in design mode](data-activator-create-triggers-design-mode.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

@@ -14,7 +14,7 @@ ms.search.form: Data Activator KQL Queryset Onramp
 This article explains how to create Data Activator alerts from a KQL Queryset. For more information, see [What is Data Activator](data-activator-introduction.md).
 You can use Data Activator on a KQL Queryset to trigger notifications in two modes: when a scheduled KQL query returns results, or when a scheduled KQL query result that contains a visualization meets a defined set of conditions. You can send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Sample scenarios
 
@@ -27,9 +27,9 @@ Here are some ways you can use Data Activator alerts with KQL queries:
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](../real-time-intelligence/create-database.md) with data
-* A [KQL Queryset](../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../real-time-intelligence/kusto-query-set.md).
+* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
+* A [KQL database](../../real-time-intelligence/create-database.md) with data
+* A [KQL Queryset](../../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md).
 
 The following steps show you how to create an alert on a query that creates a visualization, or on a query that doesn't create a visualization.
 
@@ -46,7 +46,7 @@ Choose the tab that corresponds to your desired workflow.
 1. Run a query that returns a visualization.
 1. Once the query returns results, select **Set Alert** on the top ribbon.
 
-    For example, the following query is based on the sample *Bicycles* data from the [Real-Time Intelligence tutorial](../real-time-intelligence/tutorial-introduction.md).
+    For example, the following query is based on the sample *Bicycles* data from the [Real-Time Intelligence tutorial](../../real-time-intelligence/tutorial-introduction.md).
 
     ```kusto
     TutorialTable
@@ -146,6 +146,6 @@ TableForReflex
 
 ## Related content
 
-* [Query data in a KQL queryset](../real-time-intelligence/kusto-query-set.md)
+* [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md)
 * [Get started with Data Activator](data-activator-get-started.md)
 * [KQL quick reference guide](/kusto/query/kql-quick-reference)

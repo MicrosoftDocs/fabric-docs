@@ -27,7 +27,7 @@ In this tutorial, you use sample data included with Data Activator. You use the 
 
 ## Prerequisites
 
-* Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../get-started/workspaces.md) article. If yo don't have Fabric, you're prompted to start a trial. 
+* Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../get-started/workspaces.md) article. If yo don't have Fabric, you're prompted to start a trial.
 
 ## Create a sample Data Activator reflex
 
@@ -45,7 +45,7 @@ Start by opening a workspace that has a Fabric capacity.
 
 In this step, we explore the event stream data this sample is built on.
 
-The new reflex has an **Explorer** section. Scroll down and select the **Package delivery events** stream. 
+The new reflex has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
 
 These events show the real-time status of packages that are in the process of being delivered.
 
@@ -67,13 +67,13 @@ The Explorer pane displays objects, like event streams, for this reflex. **Deliv
 
 1. Select the **Temperature** rule called **Too hot for medicine**. Scroll through the **Definition** pane to see how the rule works.
 
-1. In the **Monitor** section, select **Temperature**. The temperature values come from the  *Temperature* column in the **Delivery events** table. (You can see the **Temperature** column in an earlier screenshot.
+1. In the **Monitor** section, select **Temperature**. The temperature values come from the  *Temperature* column in the **Delivery events** table. You can see the **Temperature** column in an earlier screenshot.
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-monitor.png" alt-text="Screenshot showing the Monitor section of the Definition pane.":::
 
-1. Scroll down to **Condition**. Our rule is monitoring temperatures that **become greater than** **50**. 
+1. Scroll down to **Condition**. Our rule is monitoring temperatures that **become greater than** **50**.
 
-1. Scroll further down to **Scope**. Our rule applies only to packages containing medicine. In the **Delivery events** table, the rule looks at the column named **SpecialCare**. In the **SpecialCare** column, some of the packages have a value of **Medicine**. 
+1. Scroll further down to **Scope**. Our rule applies only to packages containing medicine. In the **Delivery events** table, the rule looks at the column named **SpecialCare**. In the **SpecialCare** column, some of the packages have a value of **Medicine**.
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-scope.png" alt-text="Screenshot showing the Scope section of the Definition pane.":::
 
@@ -89,7 +89,7 @@ Now you're familiar with the events and objects used to create a rule. The next 
 
 1. Select **Too hot for medicine**.
 
-1. Optionally, send a test message by selecting **Test**. First check that you're the **Recipient**. Make sure that you receive the message and that it looks the way you expect. 
+1. Optionally, send a test message by selecting **Test**. First check that you're the **Recipient**. Make sure that you receive the message and that it looks the way you expect.
 
 1. Select **Start**. This causes the rule to become active. You receive a Teams message whenever a medicine package is too hot. The rule should trigger several times every hour.
 
@@ -137,8 +137,10 @@ Once you finish with the rules you created as part of the tutorial, be sure to s
 :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for data activator tutorial.":::
 
 ## Related content
+
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
 
 You can also learn more about Microsoft Fabric:
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

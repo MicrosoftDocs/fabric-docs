@@ -213,11 +213,11 @@ items:
   - name: Get data in Data Activator
     items:
     - name: Get data from Power BI
-      href: ../data-activator/data-activator-get-data-power-bi.md
+      href: data-activator/data-activator-get-data-power-bi.md
     - name: Create alerts from a Real-Time Dashboard
-      href: ../data-activator/data-activator-get-data-real-time-dashboard.md
+      href: data-activator/data-activator-get-data-real-time-dashboard.md
     - name: Get data from Eventstreams
-      href: ../data-activator/data-activator-get-data-eventstreams.md
+      href: data-activator/data-activator-get-data-eventstreams.md
 - name: Store data
   items:
   - name: Eventhouse
@@ -290,7 +290,7 @@ items:
       displayName: Query sample data
       href: sample-gallery.md
     - name: Create alerts from a KQL Queryset
-      href: ../data-activator/data-activator-alert-queryset.md
+      href: data-activator/data-activator-alert-queryset.md
   - name: Vector database
     items:
     - name: Eventhouse as a vector database overview
@@ -333,7 +333,7 @@ items:
       href: dashboard-visuals.md
     - name: Create alerts from a Real-Time Dashboard
       displayName: trigger, data activator, reflex
-      href: ../data-activator/data-activator-get-data-real-time-dashboard.md
+      href: ./data-activator/data-activator-get-data-real-time-dashboard.md
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
@@ -344,37 +344,37 @@ items:
   items:
   - name: What is Data Activator?
     displayName: trigger, data activator, reflex
-    href: ../data-activator/data-activator-introduction.md
+    href: data-activator/data-activator-introduction.md
   - name: Get started with Data Activator
     displayName: trigger, data activator, reflex
-    href: ../data-activator/data-activator-get-started.md
+    href: data-activator/data-activator-get-started.md
   - name: Data Activator tutorial using sample data
     displayName: reflex, trigger
-    href: ../data-activator/data-activator-tutorial.md
+    href: data-activator/data-activator-tutorial.md
   - name: Get data in Data Activator
     items:
     - name: Get data from Power BI
-      href: ../data-activator/data-activator-get-data-power-bi.md
+      href: data-activator/data-activator-get-data-power-bi.md
     - name: Create alerts from a Real-Time Dashboard
       displayName: alert, trigger, data activator, reflex
-      href: ../data-activator/data-activator-get-data-real-time-dashboard.md
+      href: data-activator/data-activator-get-data-real-time-dashboard.md
     - name: Get data from Eventstreams
-      href: ../data-activator/data-activator-get-data-eventstreams.md
+      href: data-activator/data-activator-get-data-eventstreams.md
   - name: Create objects and alerts
     items:
     - name: Assign data to objects in Data Mode
-      href: ../data-activator/data-activator-assign-data-objects.md
+      href: data-activator/data-activator-assign-data-objects.md
     - name: Create alerts in design mode
       displayName: alert, trigger, data activator, reflex
-      href: ../data-activator/data-activator-create-triggers-design-mode.md
+      href: data-activator/data-activator-create-triggers-design-mode.md
     - name: Detection conditions
-      href: ../data-activator/data-activator-detection-conditions.md
+      href: data-activator/data-activator-detection-conditions.md
     - name: Use custom actions to trigger Power Automate flows
-      href: ../data-activator/data-activator-trigger-power-automate-flows.md
+      href: data-activator/data-activator-trigger-power-automate-flows.md
     - name: Data Activator limitations
-      href: ../data-activator/data-activator-limitations.md
+      href: data-activator/data-activator-limitations.md
     - name: Troubleshoot errors
       displayName: data activator, trigger, reflex, faq
-      href: ../data-activator/data-activator-troubleshooting.md
+      href: data-activator/data-activator-troubleshooting.md
 - name: KQL reference
   href: kusto-tocs/query/toc.yml

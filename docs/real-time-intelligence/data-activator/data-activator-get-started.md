@@ -40,13 +40,13 @@ A reflex holds all the information necessary to connect to data, monitor for con
 
 Once you create a reflex, populate it with data. Learn how to get data into your reflex from these two articles:
 
-- [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md) 
-- [Get data for Data Activator from event streams](data-activator-get-data-eventstreams.md) 
+- [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
+- [Get data for Data Activator from event streams](data-activator-get-data-eventstreams.md)
 
 Alternatively, if you just want to learn how to use Data Activator using sample data, try the [Data Activator tutorial using sample data](data-activator-tutorial.md).
 
 ## Related content
 
-* [Enable Data Activator](../admin/data-activator-switch.md)
-* [What is Data Activator?](data-activator-introduction.md)
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+- [Enable Data Activator](../../admin/data-activator-switch.md)
+- [What is Data Activator?](data-activator-introduction.md)
+- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

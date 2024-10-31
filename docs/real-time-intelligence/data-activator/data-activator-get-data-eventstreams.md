@@ -39,7 +39,7 @@ In this example, *PackageID* is the unique ID.
 
 To connect your event stream item to data activator:
 
-1. Open Data Activator and select an event stream item. 
+1. Open Data Activator and select an event stream item.
 2. Open your event stream item
 3. Add a destination to your event stream item, of type *Reflex*
 
@@ -58,4 +58,4 @@ Once you connect your event stream item to Data Activator, the next step is to a
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

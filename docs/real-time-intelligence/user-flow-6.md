@@ -21,7 +21,7 @@ This capability enables users to easily set alerts on a [Real-Time Dashboard](da
 1. Set the alert conditions and create an alert.
 1. Optionally, further modify the conditions and actions in Data Activator.
 
-For more information, see [Create Data Activator alerts from a Real-Time Dashboard](../data-activator/data-activator-get-data-real-time-dashboard.md).
+For more information, see [Create Data Activator alerts from a Real-Time Dashboard](data-activator/data-activator-get-data-real-time-dashboard.md).
 
 ## Steps - KQL Queryset
 
@@ -31,7 +31,7 @@ For more information, see [Create Data Activator alerts from a Real-Time Dashboa
 1. Set the alert conditions and create an alert.
 1. Optionally, further modify the alert in Data Activator.
 
-For more information, see [Create Data Activator alerts from a KQL Queryset](../data-activator/data-activator-alert-queryset.md).
+For more information, see [Create Data Activator alerts from a KQL Queryset](data-activator/data-activator-alert-queryset.md).
 
 ## Potential use cases
 
