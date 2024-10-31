@@ -37,10 +37,12 @@ items:
     href: monitoring-hub.md
   - name: Working with customer data
     href: fabric-data-plane.md
+  - name: The workload backend manifests
+    href: backend-manifest.md
+  - name: The workload frontend manifests
+    href: frontend-manifests.md
 - name: Tutorials
   items:
-  - name: The workload manifest
-    href: backend-manifest.md
   - name: Add and manage more workloads
     href: more-workloads-add.md
   - name: Upload and manage a workload
