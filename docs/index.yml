@@ -190,6 +190,9 @@ conceptualContent:
           - url: real-time-intelligence/get-data-local-file.md
             itemType: how-to-guide
             text: Get data into KQL database
+          - url: onelake/create-onelake-shortcut.md
+            itemType: tutorial
+            text: Get data using shortcuts
           footerLink:
             url: data-activator/data-activator-get-data-power-bi.md
             text: See more
@@ -198,16 +201,16 @@ conceptualContent:
           links:
           - url: real-time-intelligence/eventhouse.md
             itemType: concept
-            text: Eventhouse
+            text: Store data in an eventhouse
+          - url: data-engineering/lakehouse-overview.md
+            itemType: concept
+            text: Store data in a lakehouse
           - url: /power-bi/connect-data/service-datasets-understand
             itemType: concept
             text: Semantic models
           - url: /power-bi/transform-model/datamarts/datamarts-overview
             itemType: concept
             text: Datamarts
-          - url: data-engineering/lakehouse-overview.md
-            itemType: concept
-            text: Lakehouse
           footerLink:
             url: data-warehouse/data-warehousing.md
             text: See more
@@ -216,19 +219,19 @@ conceptualContent:
           links:
           - url: data-engineering/tutorial-lakehouse-data-preparation.md
             itemType: tutorial
-            text: Transform data in the lakehouse
+            text: Transform data in a lakehouse
           - url: real-time-intelligence/kusto-query-set.md
             itemType: how-to-guide
             text: Transform data in a KQL queryset
           - url: data-science/tutorial-data-science-explore-notebook.md
             itemType: tutorial
-            text: Transform data with Data Wrangler
+            text: Transform data in a notebook using Data Wrangler
           - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
-            text: Transform data in the warehouse
+            text: Transform data in a warehouse
           - url: get-started/copilot-notebooks-overview.md
             itemType: overview
-            text: transform data with copilot for notebooks
+            text: Transform data with Copilot for notebooks
           footerLink:
             url: real-time-intelligence/event-streams/overview.md
             text: See more
@@ -237,10 +240,10 @@ conceptualContent:
           links:
           - url: /power-bi/paginated-reports/paginated-reports-report-builder-power-bi
             itemType: overview
-            text: Paginated reports
+            text: Visualize with paginated reports
           - url: real-time-intelligence/dashboard-real-time-create.md
             itemType: how-to-guide
-            text: Real-time dashboards
+            text: Visualize using real-time dashboards
           - url: data-engineering/notebook-visualization.md
             itemType: how-to-guide
             text: Notebook visualization
@@ -249,7 +252,7 @@ conceptualContent:
             text: Use AutoML and tune visualizations
           - url: /power-bi/create-reports/copilot-create-report-service
             itemType: how-to-guide
-            text: Create reports with copilot
+            text: Create reports with Copilot
           footerLink:
             url: real-time-intelligence/create-powerbi-report.md
             text: See more
@@ -272,11 +275,11 @@ conceptualContent:
             url: data-science/machine-learning-model.md
             text: See more
         # Card
-        - title: Use AI capabilities and get insights with copilot
+        - title: Use AI capabilities and get insights with Copilot
           links:
           - url: get-started/copilot-fabric-overview.md
             itemType: concept
-            text: Overview of copilot in Fabric
+            text: Overview of Copilot in Fabric
           - url: get-started/copilot-privacy-security.md
             itemType: concept
             text: Copilot privacy, security, and responsible use
