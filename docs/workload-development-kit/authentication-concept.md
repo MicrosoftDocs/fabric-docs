@@ -91,7 +91,7 @@ If the exchange fails for MFA reasons, notify your front-end along with the clai
 
 For examples, see: [Error response example](/entra/identity-platform/v2-oauth2-on-behalf-of-flow#error-response-example).
    
-To learn more about error propagation from the workload backend to the workload frontned, see [Workload communication guide](./workload-communication.md).
+To learn more about error propagation from the workload backend to the workload frontend, see [Workload communication guide](./workload-communication.md).
 > [!NOTE]
 > The token you receive when acquiring a token in the front-end is not related to additionalScopesToConsent you pass. This means that once the user consents, you can use any token you received from `workloadClient.auth.acquireAccessToken` for your OBO flow.
 ## Related content
