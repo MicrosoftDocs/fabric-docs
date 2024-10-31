@@ -169,15 +169,6 @@ The following files are contained in an KQL database folder:
     .create-or-alter table SampleTable ingestion csv mapping 'SampleTable_mapping' "[{'Properties':{'Ordinal':'0'},'column':'UsageDate','datatype':''},{'Properties':{'Ordinal':'1'},'column':'PublisherType','datatype':''}]"
     ```
 
-## Eventhouse and KQL database git integration capabilities
-
-The following capabilities are available:
-
-- Serialization of the Lakehouse object metadata to a git JSON representation.
-- Apply changes directly or use pull request to control changes to upstream or downstream workspaces and branches.
-- Renaming lakehouses are tracked in git. Updating a renamed lakehouse also renames the default semantic data model and SQL Analytics endpoint.
-- No action is applied to tables, folders and shortcuts, metadata, and data of those items is always preserved.
-
 ## Related content
 
 - [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
