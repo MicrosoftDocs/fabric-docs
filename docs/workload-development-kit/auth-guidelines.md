@@ -5,7 +5,7 @@ Before we get familiar with guidelines on how to work with authentication when b
 
  
 
-### data plane and control plane APIs 
+### Data plane and control plane APIs 
 
 Data plane APIs are APIs that the workload backend exposes, and the workload frontend can call them directly. 
 
