@@ -347,7 +347,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 While the steps in the previous section are required to provide access to user principals, it's also possible to access the GraphQL API with a service principal:
 
-1. Follow the steps in the previous section to create a second Microsoft Entra app with similar permissions. In the new app, add a client secret under **Certificates and Secrets**, for more information see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
+1. Follow the steps in the previous section to create a second Microsoft Entra app with similar permissions (**Item.Execute.All** scope for the **PowerBI Service**). In the new app, add a client secret under **Certificates and Secrets**, for more information see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
 2. Make sure Tenant Administrators enabled the usage of Service Principals in Fabric. In the Tenant Admin portal, go to **Tenant Settings**. Under **Developer Settings** enable **Service Principals can use Fabric APIs**. With this setting enabled, the application will be visible in the Fabric Portal for role or permissions assignment. You can find more information on [Identity support](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting).
 3. The service principal will need access to both the GraphQL API and the data source. In the Fabric Portal, add the application as a workspace member with a contributor role where both the GraphQL API and data source items are located.
 
