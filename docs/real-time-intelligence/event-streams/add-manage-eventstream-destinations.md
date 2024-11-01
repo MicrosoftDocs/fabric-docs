@@ -28,7 +28,7 @@ To add a destination to an eventstream, you need the following prerequisites:
 
 ## Supported destinations
 
-Fabric event streams supports the following destinations. Use links in the table to navigate to articles about how to add specific destinations.
+Fabric event streams support the following destinations. Use links in the table to navigate to articles about how to add specific destinations.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
