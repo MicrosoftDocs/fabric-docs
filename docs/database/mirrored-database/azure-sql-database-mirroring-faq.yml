@@ -1,7 +1,7 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric (Preview)"
-  description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric (Preview).
+  title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric"
+  description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
   ms.reviewer: imotiwala, roblescarlos
@@ -9,7 +9,7 @@ metadata:
   ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 10/11/2024
-title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric (Preview)"
+title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
 
@@ -167,4 +167,4 @@ additionalContent: |
 
   - [What is Mirroring in Fabric?](overview.md)
   - [Azure SQL Database Mirroring in Microsoft Fabric](azure-sql-database.md)
-  - [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md).
+  - [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md).
