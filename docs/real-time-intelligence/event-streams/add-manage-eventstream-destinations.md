@@ -24,11 +24,11 @@ After you create an eventstream in Microsoft Fabric, you can route the data to d
 To add a destination to an eventstream, you need the following prerequisites:
 
 - Access to the Fabric **premium workspace** where the eventstream is located with **Contributor** or higher permissions.
-- For an Eventhouse, Lakehouse, or Activator destination, access to the **premium workspace** where the destination is located with **Contributor** or higher permissions.
+- For an Eventhouse, Lakehouse, or Fabric Activator destination, access to the **premium workspace** where the destination is located with **Contributor** or higher permissions.
 
 ## Supported destinations
 
-Fabric event streams supports the following destinations. Use links in the table to navigate to articles about how to add specific destinations.
+Fabric event streams support the following destinations. Use links in the table to navigate to articles about how to add specific destinations.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 

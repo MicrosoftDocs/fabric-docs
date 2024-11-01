@@ -54,8 +54,8 @@ You can also access this stream in Real-Time hub.
 To learn how to add other destinations to an eventstream, see the following articles: 
 
 - [Route events to destinations ](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [Eventhouse destination](add-destination-kql-database.md)
-- [Lakehouse destination](add-destination-lakehouse.md)
-- [Activator destination](add-destination-activator.md)
+- [Custom app](add-destination-custom-app.md)
+- [Eventhouse](add-destination-kql-database.md)
+- [Lakehouse](add-destination-lakehouse.md)
+- [Fabric Activator](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)

@@ -118,7 +118,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Derived stream](add-destination-derived-stream.md)
 - [KQL Database](add-destination-kql-database.md)
 - [Lakehouse](add-destination-lakehouse.md)
-- [Activator](add-destination-activator.md)
+- [Fabric Activator](add-destination-activator.md)
 
 ::: zone-end
 
@@ -206,6 +206,6 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 - [Eventhouse](add-destination-kql-database.md)
 - [Lakehouse](add-destination-lakehouse.md)
-- [Activator](add-destination-activator.md)
+- [Fabric Activator](add-destination-activator.md)
 
 ::: zone-end
