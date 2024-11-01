@@ -13,7 +13,7 @@ ms.date: 04/15/2023
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric items such as data pipelines and notebooks.
+In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as data pipelines and notebooks.
 
 ## Prerequisites
 
@@ -64,7 +64,7 @@ You must complete the following steps to obtain the refresh token, that would be
 
 Before proceeding with the steps in this article, Save the following values from the app registration you created initially:
 - **Client ID**: A unique identifier of your application assigned by the Microsoft identity platform.
-- **Client Secret**: (Optional) A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile and single page applications.
+- **Client Secret**: (Optional) A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile, and single page applications.
 - **Tenant ID**: A unique identifier for your tenant in the Microsoft identity platform.
 - **Redirect URI/URL**: Endpoints at which your app receives responses from the Microsoft Identity platform. In these steps, you receive authorization code at registered redirect URI.
 
@@ -76,7 +76,7 @@ The first step in the authorization code flow is for the user to authorize the a
 The plugin requires the following scopes for authentication:
 -  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
 -  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
--  **offline_access**: This is a standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
+-  **offline_access**: Standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only
 // This request uses Item.Execute.All, Item.Read.All and offline_access scopes. You can update them as per your requirements.
@@ -100,7 +100,7 @@ After the app sends the authorization request, the user is asked to enter their 
 :::image type="content" source="media/apache-airflow-jobs/user-consent-fabric-plugin.png" lightbox="media/apache-airflow-jobs/user-consent-fabric-plugin.png" alt-text="Screenshot to show user consent experience while authenticating with Microsoft fabric.":::
 
 #### Authorization response
-If the user consents to the permissions requested by the app, the Microsoft identity platform sends an authorization code to the app's redirect URI. Here's an example of a successful response to the previous request. Because the response_mode parameter in the request was set to query, the response is returned in the query string of the redirect URL. Copy the 'code' value from the response to use in the next step.
+If the user consents to the permissions requested by the app, the Microsoft identity platform sends an authorization code to the app's redirect URI. Here's an example of a successful response to the previous request. Because the response_mode parameter in the request was set to query, the response is returned in the query string of the redirect URL. For the next step, copy the 'code' value from the response.
 
 ```http
 HTTP/1.1 200 OK
@@ -166,7 +166,7 @@ Apache Airflow connection is used to store the credentials required to authentic
    - <strong>Extra:</strong> This field contains the following parameters:
       - **tenantId**: (Required) The {tenant} value in the path of the request can be used to control who can sign into the application.
       - **clientSecret**: (Optional, only required for web apps) The client secret of the app registration.
-      - **scopes**: (Required) Space seperated string of scopes required for the app to access the Microsoft Fabric APIs.
+      - **scopes**: (Required) Space separated string of scopes required for the app to access the Microsoft Fabric APIs.
 
       Copy the following json object format, update the values and paste it in the Extra field.
       ```json
@@ -181,7 +181,7 @@ Apache Airflow connection is used to store the credentials required to authentic
 
 3. Select Save.
 
-## Create a DAG to trigger Microsoft Fabric items
+## Create a DAG to trigger Microsoft Fabric item run
 
 Create a new DAG file in the 'dags' folder in Fabric managed storage with the following code. Replace the following placeholders:
 - `fabric_conn_id`: The connection ID you created in the previous step.
@@ -251,7 +251,7 @@ Create a new file in the `plugins` folder with the following code:
 
 1. Go to the Airflow UI and select the DAG you created.
 
-2. If you add the plugin, you'll see an external monitoring link. Click on it to navigate to the item run.
+2. If you add the plugin, you see an external monitoring link. Click on it to navigate to the item run.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" alt-text="Screenshot to view Apache Airflow DAGs with external link.":::
 
 3. Xcom Integration: Trigger the DAG to view task outputs in the Xcom tab.
