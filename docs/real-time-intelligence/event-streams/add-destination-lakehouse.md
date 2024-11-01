@@ -79,10 +79,10 @@ Once you complete these steps, the lakehouse destination is available for visual
 To learn how to add other destinations to an eventstream, see the following articles:
 
 - [Route events to destinations](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [Derived stream destination](add-destination-derived-stream.md)
-- [Eventhouse destination](add-destination-kql-database.md)
-- [Activator destination](add-destination-activator.md)
+- [Custom app](add-destination-custom-app.md)
+- [Derived stream](add-destination-derived-stream.md)
+- [Eventhouse](add-destination-kql-database.md)
+- [Fabric Activator](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end
@@ -149,9 +149,9 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 To learn how to add other destinations to an eventstream, see the following articles:
 
 - [Route events to destinations](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [KQL Database destination](add-destination-kql-database.md)
-- [Activator destination](add-destination-activator.md)
+- [Custom app](add-destination-custom-app.md)
+- [KQL Database](add-destination-kql-database.md)
+- [Fabric Activator](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end 
