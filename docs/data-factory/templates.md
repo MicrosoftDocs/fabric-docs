@@ -15,7 +15,7 @@ ms.search.form: Pipeline Template
 
 # Templates for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-Templates are pre-defined pipelines that allow you to get started quickly with Data Factory. These templates help to reduce development time by providing an easy way to create pipelines for common data integration scenarios.  
+Templates are predefined pipelines that allow you to get started quickly with Data Factory. These templates help to reduce development time by providing an easy way to create pipelines for common data integration scenarios.  
 
 :::image type="content" source="media/templates/templates-list.png" lightbox="media/templates/templates-list.png" alt-text="Screenshot showing the templates browser in [!INCLUDE [product-name](../includes/product-name.md)].":::
 
@@ -34,12 +34,12 @@ There are two ways to access the Pipeline template gallery. You can either start
 
    :::image type="content" source="media/templates/new-data-pipeline.png" alt-text="Screenshot showing the new data pipeline button.":::
 
-2. Set a name for your new pipeline and select **Create**.The pipeline editor window opens.
+2. Set a name for your new pipeline and select **Create**. The pipeline editor window opens.
 3. Select **Templates**.
 
    :::image type="content" source="media/templates/choose-template-to-start.png" alt-text="Screenshot showing the pipeline editor window with the Template button highlighted.":::
 
-4. The template browser appears.  Select the **Copy data from ADLS Gen2 to Lakehouse Table** template, and then select **Next**.
+4. The template browser appears. Select the **Copy data from ADLS Gen2 to Lakehouse Table** template, and then select **Next**.
 
    :::image type="content" source="media/templates/templates-list-with-template-selected.png" lightbox="media/templates/templates-list-with-template-selected.png" alt-text="Screenshot showing the pipeline templates browser and the Copy data from ADLS Gen2 to Lakehouse Table template selected.":::
 
@@ -86,7 +86,7 @@ You can save a pipeline as a template by selecting the **Export** button on the 
 
    :::image type="content" source="media/templates/export-pipeline-as-template.png" lightbox="media/templates/export-pipeline-as-template.png" alt-text="Screenshot showing the Export button on the Home Tab.":::
 
-A pop-up will appear. To continue, click **Export**. A .zip file with the name of your pipeline will saved. 
+A pop-up appears. To continue, click **Export**. A .zip file with the name of your pipeline will be saved. 
 
 ### Import your solution as a template
 
@@ -95,9 +95,9 @@ You can import your own pipelines two different ways.
 #### Import from the **Home** tab
 You can import a pipeline with the **Import** button on the **Home** tab. 
 
-   :::image type="content" source="media/templates/import-template-from-home-tab.png" lightbox="mmedia/templates/import-template-from-home-tab.png" alt-text="Screenshot showing the Import button on the Home Tab.":::
+   :::image type="content" source="media/templates/import-template-from-home-tab.png" lightbox="media/templates/import-template-from-home-tab.png" alt-text="Screenshot showing the Import button on the Home Tab.":::
 
-This will pop up a file browser. Select your pipeline .zip file and click **Open**. Your template will be imported and a preview will open. 
+This pops up a file browser. Select your pipeline .zip file and click **Open**. Your template will be imported and a preview of the pipeline will show. 
 
 Select your connections and click **Use this template** to finish importing your pipeline. 
 
@@ -109,7 +109,7 @@ From the Pipeline template gallery, click **Import template**.
 
    :::image type="content" source="media/templates/import-from-template-gallery.png" lightbox="media/templates/import-from-template-gallery.png" alt-text="Screenshot showing the Import template button from the Pipeline template gallery.":::
 
-This will open a file browser and allow you to select your pipeline .zip file. Select your file and click **Open**. Your template will be imported and a preview will open. Once you've selected your connections and click **Use this template** to finish importing your pipeline. 
+This opens a file browser and allow you to select your pipeline .zip file. Select your file and click **Open**. Your template will be imported and a preview will open. Once you've selected your connections and click **Use this template** to finish importing your pipeline. 
 
    
 ## Related content
