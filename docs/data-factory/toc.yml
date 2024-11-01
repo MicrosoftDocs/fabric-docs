@@ -903,6 +903,8 @@
         items:
           - name: Hello World
             href: apache-airflow-jobs-hello-world.md
+          - name: Run Fabric data pipelines and notebooks
+            href: apache-airflow-jobs-run-fabric-item-job.md
           - name: Run ADF pipeline
             href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
           - name: Run Azure Databricks job
@@ -911,8 +913,6 @@
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: apache-airflow-jobs-dbt-fabric.md
-          - name: Run Fabric data pipelines and notebooks
-            href: apache-airflow-jobs-run-fabric-item-job.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases

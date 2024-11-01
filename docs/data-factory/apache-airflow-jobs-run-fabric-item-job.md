@@ -22,7 +22,7 @@ To get started, you must complete the following prerequisites:
 - Enable Apache Airflow Job in your Tenant.
 
   > [!NOTE]
-  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
+  > Since Apache Airflow job is in preview, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it. Additionally, make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](docs/data-factory/apache-airflow-jobs-concepts.md).
 
   1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
   2. Select Apply.
@@ -64,26 +64,28 @@ You must complete the following steps to obtain the refresh token, that would be
 
 Before proceeding with the steps in this article, Save the following values from the app registration you created initially:
 - **Client ID**: A unique identifier of your application assigned by the Microsoft identity platform.
-- **Client Secret**: A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile and single page applications.
+- **Client Secret**: (Optional) A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile and single page applications.
+- **Tenant ID**: A unique identifier for your tenant in the Microsoft identity platform.
 - **Redirect URI/URL**: Endpoints at which your app receives responses from the Microsoft Identity platform. In these steps, you receive authorization code at registered redirect URI.
 
 ### Step 1: Request authorization
 
 #### Authorization endpoint
-The first step in the authorization code flow is for the user to authorize the app to act on their behalf. Through '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests.
+The first step in the authorization code flow is for the user to authorize the app to act on their behalf. By sending the 'GET' request to '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests. Replace the placeholders with your values and paste the following URL in your browser. 
+
 The plugin requires the following scopes for authentication:
 -  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
 -  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
 -  **offline_access**: This is a standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only
-// This request uses Item.Execute.All and Item.Read.All scopes. You can update them as per your requirements.
+// This request uses Item.Execute.All, Item.Read.All and offline_access scopes. You can update them as per your requirements.
 
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+client_id={client_id}
 &response_type=code
-&redirect_uri=http://localhost
+&redirect_uri={redirect_uri}
 &response_mode=query
 &scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%2FItem.Read.All%20offline_access 
 &state=12345
@@ -110,23 +112,23 @@ code=M0ab92efe-b6fd-df08-87dc-2c6500a7f84d
 ```
 
 ### Step 2: Request an access token
-The app uses the authorization code received in the previous step to request an access token by sending a POST request to the `/token` endpoint. Make sure your scope and redirect_uri match the values you used in the previous step.
+The app uses the authorization code received in the previous step to request an access token by sending a POST request to the `/token` endpoint. Make sure your scope and redirect_uri match the values you used in the previous step.  You can paste the following request in a tool like Postman or Insomnia to send the request.
 
 ```http
 // Line breaks for legibility only
-// This request uses Item.Execute.All and Item.Read.All scopes. You can update them as per your requirements.
+// This request uses Item.Execute.All, Item.Read.All and offline_access scopes. You can update them as per your requirements.
 
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1
 Host: https://login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=11112222-bbbb-3333-cccc-4444dddd5555
+client_id={client_id}
 &scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%2FItem.Read.All%20offline_access
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
-&redirect_uri=http://localhost
+&redirect_uri={redirect_uri}
 &grant_type=authorization_code
-&code_verifier=ThisIsntRandomButItNeedsToBe43CharactersLong 
-&client_secret=applicationSecret   // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
+&code_verifier=WuiPvLwjYU6ehi--Gv5P58u7NOd4dJgE8BSQzZ-7nT3xq4OrVp2cxADyUvYJqkH2sfLhPjuqUCbbbk4x11cfzLCKADIE8mht3vwyGoSL7DnMhC4SFAunOx_mJ99hVeKh
+&client_secret={client_secret}   // NOTE: (Optional) Only required for web apps.
 ```
 
 To know more about parameters, refer to [Request an access token](/entra/identity-platform/v2-oauth2-auth-code-flow#request-an-access-token).
@@ -169,9 +171,9 @@ Apache Airflow connection is used to store the credentials required to authentic
       Copy the following json object format, update the values and paste it in the Extra field.
       ```json
       {
-         "tenantId": "11112222-bbbb-3333-cccc-4444dddd5555",
+         "tenantId": "{tenant}",
          "scopes": "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access",
-         "clientSecret": "client-secret", // NOTE: Only required for web apps
+         "clientSecret": "{client-secret}", // (Optional) NOTE: Only required for web apps
       }
       ```
        
