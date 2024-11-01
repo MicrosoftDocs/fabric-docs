@@ -38,7 +38,7 @@ For troubleshooting, see:
 - [Row-level security](/sql/relational-databases/security/row-level-security) is not currently supported for Azure SQL Database configured for mirroring to Fabric OneLake.  <!--    - Row-level security settings are not currently propagated and reflected from the source SQL database into Fabric.   -->
 - [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql), for example granting permissions to certain columns, are not currently propagated from the source SQL database into Fabric.
 - [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking) settings are not currently propagated from the source SQL database into Fabric.
-- To successfully configure Mirroring for Azure SQL Database, the principal used to connect to the source Azure SQL Database needs to be granted **CONTROL** or **db_owner** permissions.
+- To successfully configure Mirroring for Azure SQL Database, the principal used to connect to the source Azure SQL Database needs to be granted a lower level permission termed **ALTER ANY EXTERNAL MIRROR** or higher level permission like **CONTROL** or **db_owner** permissions.
 
 ## Network and connectivity security
 
@@ -64,7 +64,6 @@ For troubleshooting, see:
 - The following table-level data definition language (DDL) operations aren't allowed on source tables when enabled for Fabric SQL Database mirroring.  
     - Switch/Split/Merge partition
     - Alter primary key  
-    - Truncate table
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
 
 ## Column level
