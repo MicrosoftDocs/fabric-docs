@@ -52,11 +52,10 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Recursive queries
 - Result Set Caching
 - Schema and table names can't contain `/` or `\`
-- `SELECT` - `FOR`
+- `SELECT` - `FOR XML`
 - `SET ROWCOUNT`
 - `SET TRANSACTION ISOLATION LEVEL`
 - `sp_showspaceused`
-- Spatial geometry/geography functions
 - Temporary tables
 - Triggers
 
