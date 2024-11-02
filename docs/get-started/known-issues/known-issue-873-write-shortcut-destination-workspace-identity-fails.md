@@ -4,7 +4,7 @@ description: A known issue is posted when you write to shortcut destination usin
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/30/2024
+ms.date: 10/31/2024
 ms.custom: known-issue-873
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-873
 
 You can create a OneLake Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Fabric lakehouse. You can set the authentication method to use a workspace identity. In the scenario where you use a workspace identity, writing to the shortcut destination fails. Reading successfully works.
 
-**Status:** Open
+**Status:** Fixed: October 31, 2024
 
 **Product Experience:** OneLake
 

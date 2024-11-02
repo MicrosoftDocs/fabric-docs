@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/28/2024
+ms.date: 10/31/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
+|  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
+|  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 |
+|  911  | Power BI | [Can't edit paginated reports in Report Builder when opened from service](known-issues/known-issue-911-not-edit-reports-report-builder-opened-service.md) | October 30, 2024 |
 |  903  | Data Warehouse | [Data warehouse data preview might fail if multiple data warehouse items](known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md) | October 28, 2024 |
 |  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |
 |  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 |
@@ -34,7 +38,6 @@ Select the **Title** to view more information about that specific known issue.
 |  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](known-issues/known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
 |  872  | Data Warehouse | [Data warehouses don't show button friendly names](known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 |
 |  865  | Power BI | [Configure workspace storage to use ADLS Gen2 storage account doesn't work](known-issues/known-issue-865-configure-workspace-storage-adls-gen2-not-work.md) | October 3, 2024 |
-|  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 |
 |  866  | Power BI | [Can't add My workspace org app items to the org app](known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md) | September 30, 2024 |
 |  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
@@ -97,6 +100,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 | Fixed: October 31, 2024 |
 |  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 | Fixed: October 25, 2024 |
 |  862  | Power BI | [Unexpected changes in fonts or themes in reports](known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md) | September 30, 2024 | Fixed: October 17, 2024 |
 |  867  | Power BI | [Report pages don't show in Fabric org app items](known-issues/known-issue-867-report-pages-not-show-org-app-items.md) | September 30, 2024 | Fixed: October 15, 2024 |
