@@ -3,8 +3,8 @@ title: T-SQL surface area
 description: T-SQL surface area of the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo
-ms.date: 09/25/2024
+ms.reviewer: cynotebo, jovanpop
+ms.date: 11/01/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
