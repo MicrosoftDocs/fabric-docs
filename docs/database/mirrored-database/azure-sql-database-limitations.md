@@ -1,5 +1,5 @@
 ---
-title: "Limitations and behaviors for Fabric mirrored databases from Azure SQL Database (Preview)"
+title: "Limitations and behaviors for Fabric mirrored databases from Azure SQL Database"
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -10,14 +10,14 @@ ms.custom:
   - references_regions
   - build-2024
 ---
-# Limitations and behaviors in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
+# Limitations and behaviors in Microsoft Fabric mirrored databases from Azure SQL Database
 
 Current limitations in the [Microsoft Fabric mirrored databases](overview.md) from Azure SQL Database are listed in this page. This page is subject to change.
 
 For troubleshooting, see:
 
 - [Troubleshoot Fabric mirrored databases](troubleshooting.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md)
 
 ## Active transactions, workloads, and replicator engine behaviors
 
@@ -151,7 +151,7 @@ The following are the Fabric regions that support Mirroring for Azure SQL Databa
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-tutorial.md)
 
 ## Related content
 

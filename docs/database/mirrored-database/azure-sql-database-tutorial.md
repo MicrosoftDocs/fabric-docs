@@ -1,14 +1,14 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)"
+title: "Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database"
 description: Learn how to configure a mirrored database from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, im-microsoft 
-ms.date: 09/03/2024
+ms.date: 10/17/2024
 ms.topic: tutorial
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
+# Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database
 
 [Mirroring in Fabric](overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure SQL Database, which creates a read-only, continuously replicated copy of your Azure SQL Database data in OneLake.
 
@@ -18,9 +18,9 @@ ms.topic: tutorial
     - The source Azure SQL Database can be either a single database or a database in an elastic pool.
     - If you don't have an Azure SQL Database, [create a new single database](/azure/azure-sql/database/single-database-create-quickstart?view=azuresql-db&preserve-view=true&tabs=azure-portal). Use the [Azure SQL Database free offer](/azure/azure-sql/database/free-offer?view=azuresql-db&preserve-view=true) if you haven't already.
     - Review the [tier and purchasing model requirements for Azure SQL Database](azure-sql-database.md#tier-and-purchasing-model-support).
-    - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
-- [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
-    - The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated.
+    - If you want to mirror a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
+<!-- - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md). -->
+- The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated.
 - Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
     - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
 - Networking requirements for Fabric to access your Azure SQL Database:
@@ -83,7 +83,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
-1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Database (preview)**. Enter the name of your Azure SQL database to be mirrored, then select **Create**.
+1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Database**. Enter the name of your Azure SQL database to be mirrored, then select **Create**.
 
 ## Connect to your Azure SQL Database
 
@@ -133,5 +133,5 @@ For more information and details on the replication states, see [Monitor Fabric 
 
 ## Related content
 
-- [Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database.md)
+- [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md)
 - [What is Mirroring in Fabric?](overview.md)
