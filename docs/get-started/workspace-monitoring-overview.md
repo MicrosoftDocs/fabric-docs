@@ -11,7 +11,7 @@ ms.date: 09/02/2024
 
 # What is workspace monitoring?
 
-Workspace monitoring, also known as *Monitoring* is a Microsoft Fabric database that collects and organizes logs and metrics from a range of Fabric items in your workspace. Workspace monitoring lets workspace users access and analyze logs and metrics related to Fabric items in the workspace. You can query the database to gain insights into the usage and performance of your workspace.
+Workspace monitoring is a Microsoft Fabric database that collects and organizes logs and metrics from a range of Fabric items in your workspace. Workspace monitoring lets workspace users access and analyze logs and metrics related to Fabric items in the workspace. You can query the database to gain insights into the usage and performance of your workspace.
 
 ## Monitoring
 
@@ -33,7 +33,7 @@ Workspace monitoring supports items from the following Fabric workloads:
 
 ## Considerations and limitations
 
-* You can only enable either platform monitoring or log analytics in a workspace. You can't enable both at the same time. To enable platform monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling platform monitoring.
+* You can only enable either workspace monitoring or log analytics in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
 
 * To delete a workspace that has monitoring enabled, you must first delete the monitoring database. Deleting the monitoring database has to be done by a workspace admin.
 
