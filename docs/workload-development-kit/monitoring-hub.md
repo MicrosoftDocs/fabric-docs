@@ -19,52 +19,58 @@ To enable job support, the item must specify the types of jobs it supports. Add 
 
 | Property | Description | Possible Values |
 | --- | --- | --- |
-| *Enabled* | Used to enable/disable the job scheduler| true/false 
-| *JobHistoryCount* | Sets the maximum job records count per item. Once the limit is reached, old job instances are deleted. | Integer value |
-| *JobDeadletterHours* | A job is marked as a dead letter by the Fabric platform if it hasn't started executing for N hours. | Integer value |
 | *OnDemandJobDeduplicateOptions* |Sets the deduplication option for on-demand item jobs. | - *None*: Don't deduplicate the job. <br> - *PerArtifact*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
 | *ScheduledJobDeduplicateOptions* | Sets the deduplication option for on-demand item jobs. |- *None*: Don't deduplicate the job. <br> - *PerArtifact*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
-| *JobStatusPullingInterval* | If specified, Fabric pulls the job status and properties from the workload at the specified interval in minutes. | This value should be greater than 0 and less than 6. If not specified, the time interval changes with the job runs.
-|*ArtifactJobTypes*| A list of job types with the specified properties. | - *Name*: The name of the job type, which is fully customizable by the ISV. <br> - *EnabledForUser*: true/false to enable/disable the job type. <br> - *MaxConsecutiveFailuresCount* (optional): Disable scheduled jobs if there are N consecutive failed scheduled jobs.
+|*ItemJobTypes*| A list of job types with the specified properties. | - *Name*: The name of the job type, which is fully customizable by the ISV.
+### Step 2: Implement Jobs Workload APIs
 
-For an example of how the `JobScheduler` property is defined in our sample item definition, see the WorkloadManifest.xml that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, under the *manifest* folder. 
+To integrate with Jobs, the workload must implement the Jobs APIs as defined in the [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json).
 
-### Step 2: Implement `IFabricItemsJobsHandler`
+There are three primary APIs related to Jobs:
 
-Our SDK provides an abstract class that your workloads need to implement in order to support jobs. Currently, this class has three methods you need to implement:
+---
 
-* **OnRunFabricItemJobAsync**
+#### **1. Start Job Instance**
+**Endpoint:** `POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}`
 
-   This method is called whenever a job should be executed. The workload receives all the necessary information to start running the job, including operation context (tenant, capacity, workspace, and item IDs), item and job type, job instance ID (a unique identifier for the current job), and job properties that include a payload sent from the UI.
+This API is called to initiate the execution of a job. 
 
-* **OnCancelFabricItemJobInstanceAsync**
+- **Response:** The API should return a `202 Accepted` status, indicating that the job has been successfully scheduled by the system.
 
-   This method is called whenever a job should be canceled. The workload receives the same properties as OnRunFabricItemJobAsync, except for the jobProperties, which are irrelevant in this case.
+---
 
-* **OnGetFabricItemJobInstanceStatusAsync**
+#### **2. Cancel Job Instance**
+**Endpoint:** `POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}/cancel`
 
-   Fabric uses a polling mechanism to sync job status in our platform. The polling intervals are defined in the item definition as shown in [Step 1](#step-1---define-the-jobscheduler-property-inside-the-item-manifest). This method is invoked every N minutes while the job is still in progress to check its status. When the job is done, either successfully or with an error, Fabric stops polling its status. The workload receives the same properties as OnRunFabricItemJobAsync, except for the jobProperties, which are irrelevant in this case.
+This API is called to cancel an ongoing job instance.
 
-All job handlers return a `FabricItemJobResult`, with the most important property being `JobInstanceStatus`.
+---
 
-The following job statuses are supported:
+#### **3. Get Job Instance State**
+**Endpoint:** `GET /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}`
 
-```csharp
-[DataContract]
-public enum FabricItemJobStatus
-{
-    NotStarted,
-    InProgress,
-    Completed,
-    Failed,
-    Cancelled,
-    NotFound
-}
-```
+Microsoft Fabric uses a polling mechanism to track job instance status. This API is called every minute while the job instance is in progress to check its status. Polling stops once the job is completed, whether successfully or due to failure.
 
-Once your workload implements `IFabricItemsJobsHandler`, register this class in program.cs, for example: `services.AddSingleton<IFabricItemsJobsHandler, FabricItemsJobsHandler>();`.
+- **Response:** The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job has failed.
 
-For an example of how to implement this class, see FabricItemsJobsHandler.cs that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo.
+   **Supported Job Statuses:**
+   - `NotStarted`
+   - `InProgress`
+   - `Completed`
+   - `Failed`
+   - `Cancelled`
+
+   **Important:** Even if the job has failed, this API should still return a `200 OK` status with a `Failed` job status.
+
+---
+
+### Additional Information
+
+**Job Deadletter Count:**
+A job is marked as a "dead letter" by the Fabric platform if it hasn't started within 2 hours.
+
+### Example Implementation
+For an example implementation of these APIs, refer to `JobsControllerImpl.cs` in the [Microsoft Fabric Workload Development Sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample).
 
 ## Frontend
 
