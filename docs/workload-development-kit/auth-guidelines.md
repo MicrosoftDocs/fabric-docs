@@ -131,7 +131,7 @@ if (url.pathname?.startsWith(redirectUriPath)) {
     window.close(); 
 } 
 ```
-The workload frontend can extract the error code from the url and handle it accordingly, please note that in both scenarios (error & success) the workload **must always close the window**. 
+The workload frontend can extract the error code from the url and handle it accordingly, please note that in both scenarios (error & success) the workload **must always close the window immediately, with no latency**. 
 
  
 
