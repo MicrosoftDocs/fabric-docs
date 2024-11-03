@@ -45,8 +45,6 @@ Workspace monitoring supports items from the following Fabric workloads:
 
 * You can't configure ingestion to filter for specific log type or category such as *error* or *workload type*.
 
-
-
 ## Related content
 
 * [Enable monitoring in your workspace](enable-workspace- monitoring.md)
