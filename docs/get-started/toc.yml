@@ -171,6 +171,16 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: SQL analytics endpoint tables lose statistics
+      href: known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md
+    - name: SQL analytics endpoint tables lose permissions
+      href: known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md
+    - name: INFO.VIEW.MEASURES() in calculated table might cause errors
+      href: known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md
+    - name: Can't edit paginated reports in Report Builder when opened from service
+      href: known-issues/known-issue-911-not-edit-reports-report-builder-opened-service.md
+    - name: Data warehouse data preview might fail if multiple data warehouse items
+      href: known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md
     - name: External data sharing OneLake shortcuts don't show in SQL analytics endpoint
       href: known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md
     - name: OneLake Shared Access Signature (SAS) can't read cross-region shortcuts
