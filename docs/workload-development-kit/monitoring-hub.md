@@ -26,7 +26,7 @@ To enable job support, the item must specify the types of jobs it supports. Add 
 
 To integrate with Jobs, the workload must implement the Jobs APIs as defined in the [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json).
 
-There are three primary APIs related to Jobs:
+There are three APIs related to Jobs:
 
 ---
 
@@ -39,19 +39,10 @@ This API is called to initiate the execution of a job.
 
 ---
 
-#### **2. Cancel Job Instance**
-**Endpoint:** `POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}/cancel`
-
-This API is called to cancel an ongoing job instance.
-
-- **Response:** The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job has failed.
-
----
-
-#### **3. Get Job Instance State**
+#### **2. Get Job Instance State**
 **Endpoint:** `GET /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}`
 
-Microsoft Fabric uses a polling mechanism to track job instance status. This API is called every minute while the job instance is in progress to check its status. Polling stops once the job is completed, whether successfully or due to failure.
+Fabric uses a polling mechanism to track job instance status. This API is called every minute while the job instance is in progress to check its status. Polling stops once the job is completed, whether successfully or due to failure.
 
 - **Response:** The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job has failed.
 
@@ -63,6 +54,16 @@ Microsoft Fabric uses a polling mechanism to track job instance status. This API
    - `Cancelled`
 
    **Important:** Even if the job has failed, this API should still return a `200 OK` status with a `Failed` job status.
+
+---
+
+
+#### **3. Cancel Job Instance**
+**Endpoint:** `POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}/cancel`
+
+This API is called to cancel an ongoing job instance.
+
+- **Response:** The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job has failed.
 
 ---
 
@@ -88,7 +89,7 @@ After integrating jobs into your items in the backend, users can start running j
 * Entry Points:
    * Context menu -> Schedule
    
-    :::image type="content" source="./media/monitoring-hub/fabric-scheduler-menu.png" alt-text="Screenshot showing the Schedule option in the Fabric scheduler menu.":::
+   :::image type="content" source="./media/monitoring-hub/fabric-scheduler-menu.png" alt-text="Screenshot showing the Schedule option in the Fabric scheduler menu.":::
 
     *  Using `workloadClient.itemSettings.open`, where the selected settings ID is 'Schedule'.
 
