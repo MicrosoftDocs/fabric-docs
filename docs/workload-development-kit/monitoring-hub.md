@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 ---
 # Onboard to the Fabric monitoring hub (preview)
 
-The monitoring hub is the centralized monitoring center designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Monitoring hub](../admin/monitoring-hub.md).
+The monitoring hub is the centralized monitoring center designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Monitoring hub](https://learn.microsoft.com/en-us/fabric/admin/monitoring-hub).
 
 ## Backend
 
