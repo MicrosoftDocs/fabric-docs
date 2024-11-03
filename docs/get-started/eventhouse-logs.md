@@ -17,13 +17,13 @@ This article includes information about all the Eventhouse logs, according to th
 
 # [Command](#tab/command)
 
+## Command logs
+
 Use the command logs to:
 
 * Analyze command performance and trends.
 * Identify commands that consume a large amount of system resources.
 * Identify the users and applications that run the highest number of commands.
-
-## Command logs
 
 This table lists the command logs.
 
@@ -32,13 +32,12 @@ This table lists the command logs.
 | ArtifactId | string | The identifier of the Fabric Eventhouse item. |
 | ArtifactKind | string | The type of Fabric item. Valid values: `Eventhouse`. |
 | ArtifactName | string | The name of the Fabric Eventhouse item. |
-| CacheColdHitsBytes | long | The amount of cold storage data that was available for the   command in cold cache due to   data prefetching. |
-| CacheColdMissesBytes | long | The amount of cold storage data that was not available for   the command in cold   cache. |
-| CacheHotHitsBytes | long | The amount of data that was available for the command in the hot cache.  The amount of data stored in hot   cache is defined by the database or table caching policy. |
-| CacheHotMissesBytes | long | The amount of data that was not available for the command   in hot cache. |
+| CacheColdHitsBytes | long | The amount of cold storage data that was available for the command in cold cache due to data prefetching. |
+| CacheColdMissesBytes | long | The amount of cold storage data that was not available for the command in cold cache. |
+| CacheHotHitsBytes | long | The amount of data that was available for the command in the hot cache. The amount of data stored in hot cache is defined by the database or table caching policy. |
+| CacheHotMissesBytes | long | The amount of data that was not available for the command in hot cache. |
 | CommandText | string | The text of the command. |
-| ComponentFault | string | In the event of a command error, the component where the   fault occurred. |
-|  |  | Valid values:  Server or Client |
+| ComponentFault | string | In the event of a command error, the component where the fault occurred. Valid values: `Server` or `Client`. |
 | CorrelationId | string | The correlation identifier of the command. |
 | CpuTimeMs | long | Total CPU in millisecond (ms) used by the command. |
 | CustomerTenantId | string | The customer tenant identifier. |
@@ -49,17 +48,17 @@ This table lists the command logs.
 | ExtentsMaxScannedTime | datetime | The maximum data scan time. |
 | ExtentsMinScannedTime | datetime | The minimum data scan time. |
 | FailureReason | string | The reason the command failed. |
-| Identity | dynamic | The identity of the user or application that ran the   command. |
+| Identity | dynamic | The identity of the user or application that ran the command. |
 | MemoryPeakBytes | long | The peak memory consumption of the command. |
 | OperationEndTime | datetime | The time (UTC) the operation ended. |
 | OperationId | string | The unique command log identifier. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
-| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values:  `EventhouseCommandyLogs`. |
+| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values: `EventhouseCommandyLogs`. |
 | PremiumCapacityId | string | The Fabric capacity identifier. |
 | PremiumCapacityName | string | The Fabric capacity name. |
-| Region | string | The region where the Fabric KQL   Database is located. |
-| ScannedExtentsCount | long | The number of extents scanned by the command. A high   number might indicate the cause of a command latency issue. |
-| ScannedRowsCount | long | The number of rows scanned by the command. A high number   might indicate the cause of a command latency issue. |
+| Region | string | The region where the Fabric KQL Database is located. |
+| ScannedExtentsCount | long | The number of extents scanned by the command. A high number might indicate the cause of a command latency issue. |
+| ScannedRowsCount | long | The number of rows scanned by the command. A high number might indicate the cause of a command latency issue. |
 | SourceApplication | string | The name of the source application that ran the command. |
 | Status | string | The completion status of the command. |
 | Timestamp | datetime | The time (UTC) the event was generated. |
@@ -68,41 +67,43 @@ This table lists the command logs.
 | WorkspaceId | string | The identifier of the workspace. |
 | WorkspaceName | string | The name of the workspace. |
 
-## Command log sample queries
+### Command log sample queries
 
 ```kusto
-//Failed command count per command type in past 1 day  
-let Duration =timespan(1d);  
+//Failed command count per command type in past 1 day
+let Duration =timespan(1d);
 EventhouseCommandLogs 
 |where Timestamp > ago (Duration) 
 | where Status == "Failed" 
 |summarize FailureCount=count() by EventhouseCommandType 
  
 //Failed command count per command type in past 10 minutes 
-let Duration =timespan(10m);  
+let Duration =timespan(10m);
 EventhouseCommandLogs 
 |where Timestamp > ago (Duration) 
 | where Status == "Failed" 
 |project-reorder Timestamp, EventhouseCommandType, CommandText, Status 
 
 //Top X Users by Command CPU Sec in the past 1d 
-let Duration =timespan(1d);  
-let Topcount=10;  
-EventhouseCommandLogs  
-| where Timestamp  > ago (Duration)  
-|extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId  
-|extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User")  
+let Duration =timespan(1d);
+let Topcount=10;
+EventhouseCommandLogs
+| where Timestamp > ago (Duration)
+|extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId
+|extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User")
 | summarize CpuTimeMs=sum(CpuTimeMs) by User 
 
 //Top X Commands by CPU Sec in the past 1d 
-let Duration =timespan(1d);  
-let Topcount=10;  
-EventhouseCommandLogs  
-| where Timestamp  > ago (Duration)  
+let Duration =timespan(1d);
+let Topcount=10;
+EventhouseCommandLogs
+| where Timestamp > ago (Duration)
 | summarize CpuTimeMs=sum(CpuTimeMs) by EventhouseCommandType 
 ```
 
 # [Data operations](#tab/data-operations)
+
+## Data operation logs
 
 Use the data operations logs to:
 
@@ -123,39 +124,39 @@ This table lists the data operation logs.
 | ArtifactId | string | The identifier of the Fabric Eventhouse item. |
 | ArtifactKind | string | The type of the Fabric item. Valid values: `Eventhouse`. |
 | ArtifactName | string | The name of the Fabric Eventhouse item. |
-| CorrelationId | string | The correlation identifier of the data   operation. |
-| CpuTimeMs | long | The total CPU time (ms) used by the data   operation. |
+| CorrelationId | string | The correlation identifier of the data operation. |
+| CpuTimeMs | long | The total CPU time (ms) used by the data operation. |
 | CustomerTenantId | string | The customer tenant identifier. |
 | DataOperationKind | string | The type of data operation activity. |
 | DatabaseId | string | The database unique identifier. |
 | DatabaseName | string | The name of the database. |
 | DurationMs | long | The duration of the data operation (ms). |
-| EventhouseDataOperationProperties | dynamic | (optional) Additional properties for specific data   operation types. |
-| ExtentSizeInBytes | long | The total size of extents ingested on this   operation. |
+| EventhouseDataOperationProperties | dynamic | (optional) Additional properties for specific data operation types. |
+| ExtentSizeInBytes | long | The total size of extents ingested on this operation. |
 | OperationId | string | The unique data operation log identifier. |
 | OriginalSizeInBytes | long | The original size of data ingested. |
 | PremiumCapacityId | string | The Fabric capacity identifier. |
 | PremiumCapacityName | string | The Fabric capacity name. |
-| Region | string | The region where the Fabric KQL   Database is located. |
-| TableName | string | The name of the destination table used by the data   operation. |
+| Region | string | The region where the Fabric KQL Database is located. |
+| TableName | string | The name of the destination table used by the data operation. |
 | Timestamp | datetime | The time (UTC) the event was generated. |
-| TotalExtentsCount | long | The total number of extents ingested by the data   operation. |
+| TotalExtentsCount | long | The total number of extents ingested by the data operation. |
 | TotalRowsCount | long | The number of rows ingested by the data operation. |
 | WorkspaceId | string | The identifier of the workspace. |
 | WorkspaceName | string | The name of the workspace. |
 
-## Data operation sample queries
+### Data operation sample queries
 
 ```kusto
 //Eventhouse Data Operations by Size past xx days 
-let Duration =timespan(1d);  
+let Duration =timespan(1d);
 EventhouseDataOperationLogs 
 | where Timestamp > ago (Duration) 
 |extend OperationKindName=case (DataOperationKind =="RowStoreSeal", "Streaming Ingestion (Seal)", DataOperationKind=="BatchIngest", "Batch Ingestion", DataOperationKind=="UpdatePolicy", "Update Policy", 
 DataOperationKind =="MaterializedView", "Materialized View" ,"Other") 
-| summarize Size=sum(OriginalSizeInBytes) by  OperationKindName 
+| summarize Size=sum(OriginalSizeInBytes) by OperationKindName 
 |extend Size = format_bytes(Size) 
-|project  OperationKindName, Size 
+|project OperationKindName, Size 
 
 //Eventhouse Activity CPU Minutes per data operation for past xx days 
 let Duration =timespan(1d); 
@@ -170,13 +171,15 @@ DataOperationKind =="MaterializedView", "Materialized View" ,"Other")
 let Duration =timespan(30d); 
 EventhouseDataOperationLogs 
 | where Timestamp > ago (Duration) 
-|where  DataOperationKind=="UpdatePolicy" 
+|where DataOperationKind=="UpdatePolicy" 
 |extend SourceTable=['EventhouseDataOperationProperties']['SourceTable'] 
-|extend  SourceTable=tostring(todynamic(tostring(EventhouseDataOperationProperties)).SourceTable) 
+|extend SourceTable=tostring(todynamic(tostring(EventhouseDataOperationProperties)).SourceTable) 
 | summarize Size=format_bytes( sum(OriginalSizeInBytes)) by  OperationName,DatabaseName, TableName, SourceTable 
 ```
 
 # [GraphQL](#tab/graphql)
+
+## GraphQL logs
 
 A log event for each query run by the Fabric API for GraphQL on its connected data sources, is stored in two tables: *GraphQLMetrics* and *GraphQLLog*.
 
@@ -190,56 +193,56 @@ Use query logs to:
 
 This table lists the GraphQL logs.
 
-| Column Name  | Type   | Description  |
+| Column Name | Type | Description |
 |---|---|---|
-| Timestamp  | datetime  | The timestamp (UTC) of when the log entry was generated when the record was created by the data source.  |
-| ItemId  | string  | Unique ID of the resource logging the data.  |
-| ItemKind  | string  | Type of artifact logging the operation.  |
-| ItemName  | string  | The name of the Fabric artifact logging this operation.  |
-| WorkspaceId  | string  | Unique identifier of the Fabric workspace that contains the artifact being operated on  |
-| WorkspaceName  | string  | Name of the Fabric workspace containing the artifact.  |
-| CapacityId  | string  | Unique identifier of the capacity hosting the artifact being operated on.  |
-| CustomerTenantId  | string  | Customer Tenant ID, where the operation was performed.   |
-| PlatformMonitoringTableName  | string  | The name of the table to records belongs to (or the certified event type of the record). Format is \<WorkloadName\> + [OperationType>]+ \<TelemetryType\>   |
-| Region  | string  | The region of the resource emitting the event; for example, East US or France South.   |
-| MetricName  | string  | Metric name (e.g. Memory, Commit Size)  |
-| MetricTimeGrain  | string  | Time grain of the metric (ISO 8601 Duration).  |
-| MetricUnitName  | string  | Unit of the metric.  |
-| MetricSumValue  | long  | The aggregated sum value of a metric during a single   minute.  |
-| DatasourceTypes  | dynamic  | Array of DataSource types that are used by the model.  |
-| ResultCode  | string  | Error Code of the failed activities, used to extend usage   to reliability.  |
-| Status  | string  | Status of the operation. Query executed successfully/successfully with errors/failed.  |
+| Timestamp | datetime | The timestamp (UTC) of when the log entry was generated when the record was created by the data source. |
+| ItemId | string | Unique ID of the resource logging the data. |
+| ItemKind | string | Type of artifact logging the operation. |
+| ItemName | string | The name of the Fabric artifact logging this operation. |
+| WorkspaceId | string | Unique identifier of the Fabric workspace that contains the artifact being operated on |
+| WorkspaceName | string | Name of the Fabric workspace containing the artifact. |
+| CapacityId | string | Unique identifier of the capacity hosting the artifact being operated on. |
+| CustomerTenantId | string | Customer Tenant ID, where the operation was performed. |
+| PlatformMonitoringTableName | string | The name of the table to records belongs to (or the certified event type of the record). Format is \<WorkloadName\> + [OperationType>]+ \<TelemetryType\> |
+| Region | string | The region of the resource emitting the event; for example, East US or France South. |
+|--|--|--|
+| MetricTimeGrain | string | Time grain of the metric (ISO 8601 Duration). |
+| MetricUnitName | string | Unit of the metric. |
+| MetricSumValue | long | The aggregated sum value of a metric during a single minute. |
+| DatasourceTypes | dynamic | Array of DataSource types that are used by the model. |
+| ResultCode | string | Error Code of the failed activities, used to extend usage to reliability. |
+| Status | string | Status of the operation. Query executed successfully/successfully with errors/failed. |
 
-## GraphQL log attributes
+### GraphQL log attributes
 
 This table describes the GraphQLLogs attributes. For more information on the events and a drill-down into the `ExecutionMetrics` event, see [Events and schema](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure#events-and-schema).
 
-| Column Name  | Type   | Description  |
-|---|---|---|
-| Timestamp  | datetime  | The timestamp (UTC) of when the log entry was generated when the record was created by the data source.  |
-| OperationName  | string  | The name of the operation.  |
-| ItemId  | string  | Unique ID of the resource logging the data.  |
-| ItemKind  | string  | Type of artifact logging the operation.  |
-| ItemName  | string  | The name of the Fabric artifact logging this operation.  |
-| WorkspaceId  | string  | Unique identifier of the Fabric workspace that contains the artifact being operated on.  |
-| WorkspaceName  | string  | Name of the Fabric workspace containing the artifact.  |
-| CapacityId  | string  | Unique identifier of the capacity hosting the artifact being operated on.  |
-| CorrelationId  | string  | Root Activity ID.  |
-| OperationId  | string  |  Unique identifier for the operation being logged.   |
-| Identity  | dynamic  | User and claim details. The user associated with the operation that is being reported.  |
-| CustomerTenantId  | string  | Customer Tenant ID, where the operation was performed.   |
-| DurationMs  | long  | Elapsed CPU time that has passed while all required operations have been processed. Unit is in milliseconds.   |
-| Status  | string  | Status of the operation. Query executed successfully/successfully with errors/failed.   |
-| Level  | string  | Metadata required by platform monitoring team.  |
-| Region  | string  | The region of the resource emitting the event; for example, East US or France South.   |
-| PlatformMonitoringTableName  | string  | The name of the table to records belongs to (or the certified event type of the record). Format is \<WorkloadName\> + [OperationType>]+ \<TelemetryType\>   |
-| QueryText  | string  | The text of the query.   |
-| GraphQLOverheadDurationMs  | long  | The GraphQL overhead in ms for a dataplane request.  |
-| ProcessedBytes  | long  |  Processed data volume in byte.  |
-| TransportProtocol  | string  | Transport protocol for a request.  |
-| QueryResultMessage  | string  | This dimension is used to give additional context to the result of a query operation.  |
+| Column Name | Type | Description |
+|--|--|--|
+| Timestamp | datetime | The timestamp (UTC) of when the log entry was generated when the record was created by the data source. |
+| OperationName | string | The name of the operation. |
+| ItemId | string | Unique ID of the resource logging the data. |
+| ItemKind | string | Type of artifact logging the operation. |
+| ItemName | string | The name of the Fabric artifact logging this operation. |
+| WorkspaceId | string | Unique identifier of the Fabric workspace that contains the artifact being operated on. |
+| WorkspaceName | string | Name of the Fabric workspace containing the artifact. |
+| CapacityId | string | Unique identifier of the capacity hosting the artifact being operated on. |
+| CorrelationId | string | Root Activity ID. |
+| OperationId | string | Unique identifier for the operation being logged. |
+| Identity | dynamic | User and claim details. The user associated with the operation that is being reported. |
+| CustomerTenantId | string | Customer Tenant ID, where the operation was performed. |
+| DurationMs | long | Elapsed CPU time that has passed while all required operations have been processed. Unit is in milliseconds. |
+| Status | string | Status of the operation. Query executed successfully/successfully with errors/failed. |
+| Level | string | Metadata required by platform monitoring team. |
+| Region | string | The region of the resource emitting the event; for example, East US or France South. |
+| PlatformMonitoringTableName | string | The name of the table to records belongs to (or the certified event type of the record). Format is \<WorkloadName\> + [OperationType>]+ \<TelemetryType\> |
+| QueryText | string | The text of the query. |
+| GraphQLOverheadDurationMs | long | The GraphQL overhead in ms for a dataplane request. |
+| ProcessedBytes | long | Processed data volume in byte. |
+| TransportProtocol | string | Transport protocol for a request. |
+| QueryResultMessage | string | This dimension is used to give additional context to the result of a query operation. |
 
-## GraphQL log sample queries
+### GraphQL log sample queries
 
 ```kusto
 // QUERY FOR GRAPHQL API HEALTH INDEX: 
@@ -249,7 +252,7 @@ let _graphQLId = 'e99a9999-9d9b-9b9f-a999-ab99ce999acf';
 let _startTime = datetime(2024-09-21T02:49:54Z); 
 let totalCount = toscalar( 
     GraphQLMetrics 
-    | where ItemId == _graphQLId  
+    | where ItemId == _graphQLId
     | where Timestamp > ago(_endTime - _startTime) 
     | where MetricName == "Request Latency" 
     | summarize Count=count() by MetricName 
@@ -262,14 +265,14 @@ let resultString = tostring(result);
 // Success Count. 
 let successCount = toscalar( 
     GraphQLMetrics 
-    | where ItemId == _graphQLId  
+    | where ItemId == _graphQLId
     | where Timestamp > ago(_endTime - _startTime) 
     | summarize Count = countif(Status == "Success") 
 ); 
 // Failure Count. 
 let failureCount = toscalar( 
     GraphQLMetrics 
-    | where ItemId == _graphQLId  
+    | where ItemId == _graphQLId
     | where Timestamp > ago(_endTime - _startTime) 
     | summarize Count = countif(Status == "Failure") 
 ); 
@@ -319,7 +322,7 @@ let _graphQLId = 'e99a9999-9d9b-9b9f-a999-ab99ce999acf';
 let _startTime = datetime(2024-09-21T02:49:54Z); 
 let avgLatency = round(toscalar(GraphQLMetrics 
 | where Timestamp > ago(_endTime - _startTime) 
-| where ItemId == _graphQLId  
+| where ItemId == _graphQLId
 | where MetricName == "GraphQL Overhead Latency" 
 | summarize AVG_LATENCY=avg(MetricSumValue)), 2); 
 print strcat(tostring(avgLatency), ' ms'); 
@@ -379,6 +382,8 @@ range IntervalStart from _startTime to _endTime step interval
 
 # [Ingestion results](#tab/ingestion-results)
 
+## Ingestion result logs
+
 Provide information about successful and failed ingestion operations, and are supported for queued ingestions. Use to:
 
 * Monitor the number of successful ingestions.
@@ -387,46 +392,48 @@ Provide information about successful and failed ingestion operations, and are su
 
 This table lists the Ingestion result logs.
 
-| Column Name  | Type   | Description  |
-|---|---|---|
-| ArtifactId  | string  | The identifier of the Fabric Eventhouse item.  |
-| ArtifactKind  | string  | The type of Fabric item.   Valid values: Eventhouse.  |
-| ArtifactName  | string  | The name of the Fabric Eventhouse item.  |
-| CorrelationId  | string  | The correlation identifier of the ingestion operation.   |
-| CustomerTenantId  | string  | The customer tenant identifier.  |
-| DatabaseId  | string  | The database unique identifier.  |
-| DatabaseName  | string  | The name of the database.  |
-| IngestionErrorDetails  | string  | The ingestion error details.  |
-| IngestionFailureStatus  | string  | The status failure.    Permanent or RetryAttemptsExceeded indicates that the operation exceeded the maximum retries or maximum time limit following a recurring transient error.  |
-| IngestionOperationId  | string  | The identifier for the ingest operation.  |
-| IngestionResultDetails  | dynamic  | A detailed description of the failure and error message.  |
-| IngestionSourceId  | string  | The identifier for the ingested source.  |
-| IngestionSourcePath  | string  | The path of the ingestion data sources or the Azure blob storage URI.  |
-| IsIngestionOriginatesFromUpdatePolicy  | boolean  | Indicates whether the failure originated from an update policy.  |
-| OperationEndTime  | datetime  | The time (UTC) the operation ended.  |
-| OperationId  | string  | The unique ingestion results log identifier.  |
-| OperationStartTime  | datetime  | The time (UTC) the operation started.  |
-| PlatformMonitoringTableName  | string  | The name of the platform monitoring table. Valid values:  EventhouseIngestionResults  |
-| PremiumCapacityId  | string  | The Fabric capacity identifier.  |
-| PremiumCapacityName  | string  | The Fabric capacity name.  |
-| Region  | string  | The region where the Fabric KQL Database is located.  |
-| Status  | string  | The completion status of the ingestion.  |
-| TableName  | string  | The name of the destination table used by the ingestion.  |
-| Timestamp  | datetime  | The time (UTC) the event was generated..  |
-| WorkspaceId  | string  | The identifier of the workspace.  |
-| WorkspaceName  | string   | The name of the workspace.  |
+| Column Name | Type | Description |
+|--|--|--|
+| ArtifactId | string | The identifier of the Fabric Eventhouse item. |
+| ArtifactKind | string | The type of Fabric item. Valid values: Eventhouse. |
+| ArtifactName | string | The name of the Fabric Eventhouse item. |
+| CorrelationId | string | The correlation identifier of the ingestion operation. |
+| CustomerTenantId | string | The customer tenant identifier. |
+| DatabaseId | string | The database unique identifier. |
+| DatabaseName | string | The name of the database. |
+| IngestionErrorDetails | string | The ingestion error details. |
+| IngestionFailureStatus | string | The status failure. Permanent or RetryAttemptsExceeded indicates that the operation exceeded the maximum retries or maximum time limit following a recurring transient error. |
+| IngestionOperationId | string | The identifier for the ingest operation. |
+| IngestionResultDetails | dynamic | A detailed description of the failure and error message. |
+| IngestionSourceId | string | The identifier for the ingested source. |
+| IngestionSourcePath | string | The path of the ingestion data sources or the Azure blob storage URI. |
+| IsIngestionOriginatesFromUpdatePolicy | boolean | Indicates whether the failure originated from an update policy. |
+| OperationEndTime | datetime | The time (UTC) the operation ended. |
+| OperationId | string | The unique ingestion results log identifier. |
+| OperationStartTime | datetime | The time (UTC) the operation started. |
+| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values:  EventhouseIngestionResults |
+| PremiumCapacityId | string | The Fabric capacity identifier. |
+| PremiumCapacityName | string | The Fabric capacity name. |
+| Region | string | The region where the Fabric KQL Database is located. |
+| Status | string | The completion status of the ingestion. |
+| TableName | string | The name of the destination table used by the ingestion. |
+| Timestamp | datetime | The time (UTC) the event was generated.. |
+| WorkspaceId | string | The identifier of the workspace. |
+| WorkspaceName | string | The name of the workspace. |
 
-## Ingestion results sample queries
+### Ingestion results sample queries
 
 ```kusto
-//Ingestions by Ingestion Result status  
+//Ingestions by Ingestion Result status
 let Duration =timespan(30); 
 EventhouseIngestionResultsLogs 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 | summarize count() by Status 
 ```
 
 # [Metric](#tab/metric)
+
+## Metric logs
 
 A list of metrics that allow you to monitor the following aspects of an Eventhouse: 
 
@@ -445,26 +452,26 @@ You can use the Metric logs to:
 
 This table lists the metric logs.
 
-| Column Name  | Type   | Description  |
-|---|---|---|
-| ArtifactId  | string  | The identifier of the Fabric Eventhouse item  |
-| ArtifactKind  | string  | The type of the Fabric item.   Valid values: Eventhouse.  |
-| ArtifactName  | string  | The name of the Fabric Eventhouse item.  |
-| CustomerTenantId  | string  | The customer tenant identifier.  |
-| MetricCount  | long  | The metric count value.  |
-| MetricMaxValue  | long  | The metric maximum value.  |
-| MetricMinValue  | long  | The metric minimum value.  |
-| MetricName  | string  | The metric name.  |
-| MetricSpecificDimensions  | dynamic  | The specific dimensions of each metric, as described in the Metric Specific Column of the Metrics table. Where relevant, dimension descriptions are provided as part of the metric description.  |
-| MetricSumValue  | long  | The metric sum value.  |
-| PlatformMonitoringTableName  | string  | The name of the platform monitoring table. Valid values:  EventhouseQueryLogs  |
-| PremiumCapacityId  | string  | The Fabric capacity identifier.  |
-| Region  | string  | The region where the Fabric KQL Database is located.  |
-| Timestamp  | datetime  | The time (UTC) the event was generated.  |
-| WorkspaceId  | string  | The identifier of the workspace.  |
-| WorkspaceName  | string  | The name of the workspace.  |
+| Column Name | Type | Description |
+|--|--|--|
+| ArtifactId | string | The identifier of the Fabric Eventhouse item |
+| ArtifactKind | string | The type of the Fabric item. Valid values: Eventhouse. |
+| ArtifactName | string | The name of the Fabric Eventhouse item. |
+| CustomerTenantId | string | The customer tenant identifier. |
+| MetricCount | long | The metric count value. |
+| MetricMaxValue | long | The metric maximum value. |
+| MetricMinValue | long | The metric minimum value. |
+| MetricName | string | The metric name. |
+| MetricSpecificDimensions | dynamic | The specific dimensions of each metric, as described in the Metric Specific Column of the [Metrics table](#metrics-table). Where relevant, dimension descriptions are provided as part of the metric description. |
+| MetricSumValue | long | The metric sum value. |
+| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values:  EventhouseQueryLogs |
+| PremiumCapacityId | string | The Fabric capacity identifier. |
+| Region | string | The region where the Fabric KQL Database is located. |
+| Timestamp | datetime | The time (UTC) the event was generated. |
+| WorkspaceId | string | The identifier of the workspace. |
+| WorkspaceName | string | The name of the workspace. |
 
-## Metrics table
+### Metrics table
 
 This table contains a list of all the Eventhouse metrics being reported, and the specific dimensions being reported for each metric.
 
@@ -498,23 +505,23 @@ This table contains a list of all the Eventhouse metrics being reported, and the
 | StreamingIngestion | StreamingIngestDuration | Milliseconds | Avg, Max, Min | The total duration of all streaming ingestion requests. | None |
 
 <sup>1</sup>Dimension descriptions 
-- IngestionResultDetails: Success for successful ingestion or the failure category for failures. For a complete list of possible failure categories see Ingestion error codes. 
-- FailureKind: Whether the failure is permanent or transient. The value is None for a successful ingestion. 
+- `IngestionResultDetails` - Success for successful ingestion or the failure category for failures. For a complete list of possible failure categories see Ingestion error codes. 
+- `FailureKind` - Whether the failure is permanent or transient. The value is None for a successful ingestion. 
 
-- ViaUpdatePolicy: True if the ingestion was triggered by an Update Policy. 
+- `ViaUpdatePolicy` - True if the ingestion was triggered by an Update Policy. 
  
 Considerations
 - Event Hubs and IoT Hub ingestion events are pre-aggregated into one blob, and then treated as a single ingestion source and appear as a single ingestion result after pre-aggregation. 
 
 - Transient failures are automatically retried a limited number of times. Each transient failure is reported as a transient ingestion result, which means a single ingestion may generate multiple ingestion results.
 
-## Metric sample queries
+### Metric sample queries
 
 ```kusto
 //Ingestion volume over time in the past 30 days 
-let Duration =timespan(30);  
+let Duration =timespan(30);
 EventhouseMetrics 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 | where MetricName == "IngestionVolumeInBytes" 
 |summarize IngestionVolumeInGb=round(sum(MetricSumValue)/1024/1024,2) by bin(Timestamp, 1d) 
 |render linechart 
@@ -522,42 +529,44 @@ EventhouseMetrics
 //Top 5 most ingested tables 
 let Duration =timespan(30d); 
 EventhouseMetrics 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 | where MetricName == "IngestionVolumeInBytes" 
 |extend Table=tostring(todynamic(tostring(MetricSpecificDimensions)).Table) , Database=tostring(todynamic(tostring(MetricSpecificDimensions)).DatabaseName) 
-|where Table !contains "$"  //Remove MVs 
-|summarize IngestionVolumeInGb=round(sum(MetricSumValue)/1024/1024,2) by  Table 
+|where Table !contains "$" //Remove MVs 
+|summarize IngestionVolumeInGb=round(sum(MetricSumValue)/1024/1024,2) by Table 
 |top 5 by IngestionVolumeInGb 
 |render barchart 
 
 //Ingestion Result count over time in the past 30 days 
 let Duration =timespan(30); 
 EventhouseMetrics 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 |where MetricName =="IngestionResult" 
 |extend Table=tostring(todynamic(tostring(MetricSpecificDimensions)).Table) , Database=tostring(todynamic(tostring(MetricSpecificDimensions)).DatabaseName) 
 |extend Result=tostring(todynamic(tostring(MetricSpecificDimensions)).IngestionResultDetails), FailureKind=tostring(todynamic(tostring(MetricSpecificDimensions)).FailureKind) 
 |summarize Results=count() by Result 
 |order by Results desc 
-|render barchart  
+|render barchart
 
 //Ingestion Result FailureKind count over time in the past 30 days 
 let Duration =timespan(30); 
 EventhouseMetrics 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 |where MetricName =="IngestionResult" 
-|extend  FailureKind=tostring(todynamic(tostring(MetricSpecificDimensions)).FailureKind) 
+|extend FailureKind=tostring(todynamic(tostring(MetricSpecificDimensions)).FailureKind) 
 |where FailureKind !="None" 
 |summarize Failures=count() by FailureKind 
 ```
 
 # [Query](#tab/uery)
 
+## Query logs
+
 A log event for each query run on an Eventhouse KQL database, is stored in the *EventhouseQueryLogs* table.
 
 Use query logs to:
 
-* Analyze query performance and trends  
+* Analyze query performance and trends
 * Troubleshoot slow queries
 * Identify heavy queries consuming large amount of system resources
 * Identify the users/applications running the highest number of queries
@@ -567,19 +576,14 @@ This table lists the query logs.
 | Column Name | Type | Description |
 |--|--|--|
 | ArtifactId | string | The identifier of the Fabric Eventhouse item. |
-| ArtifactKind | string | The type of Fabric item. |
-|  |  | Valid values: Eventhouse. |
+| ArtifactKind | string | The type of Fabric item. Valid values: `Eventhouse`. |
 | ArtifactName | string | The name of the Fabric Eventhouse item. |
-| CacheColdHitsBytes | long | The amount of cold storage data that was available for the   query in cold cache due to data prefetching. |
-| CacheColdMissesBytes | long | The amount of cold storage data that was not available for   the query in cold cache. |
-| CacheHotHitsBytes | long | The amount of data that was available for the query in hot   cache. |
-|  |  |  |
-|  |  | Note: The amount of data stored in hot   cache is defined by the database or table caching policy. |
-| CacheHotMissesBytes | long | The amount of data that was not available for the query in   hot cache. |
-| ComponentFault | string | In the event of a query error, the component where the   fault occurred. |
-|  |  | Valid values:  Server or Client |
-|  |  | For example: If the query result set   is too large, the value is Client. If an internal error occurred, the value   is Server. |
-| CorrelationId | string | The correlation identifier of the query. The value can   include components of other items participating in the query, such as the   semantic model of the report running the query. |
+| CacheColdHitsBytes | long | The amount of cold storage data that was available for the query in cold cache due to data prefetching. |
+| CacheColdMissesBytes | long | The amount of cold storage data that was not available for the query in cold cache. |
+| CacheHotHitsBytes | long | The amount of data that was available for the query in hot cache. The amount of data stored in hot cache is defined by the database or table caching policy. |
+| CacheHotMissesBytes | long | The amount of data that was not available for the query in hot cache. |
+| ComponentFault | string | In the event of a query error, the component where the fault occurred. Valid values: `Server` and `Client`. If the query result set is too large, the value is `Client`. If an internal error occurred, the value is `Server`. |
+| CorrelationId | string | The correlation identifier of the query. The value can include components of other items participating in the query, such as the semantic model of the report running the query. |
 | CpuTimeMs | long | The total CPU time (ms) used by the query. |
 | CustomerTenantId | string | The customer tenant identifier. |
 | DatabaseId | string | The database unique identifier. |
@@ -588,21 +592,21 @@ This table lists the query logs.
 | ExtentsMaxScannedTime | datetime | The maximum data scan time. |
 | ExtentsMinScannedTime | datetime | The minimum data scan time. |
 | FailureReason | string | The reason the query failed. |
-| Identity | dynamic | The identity of the user or application that ran the   query. |
+| Identity | dynamic | The identity of the user or application that ran the query. |
 | MemoryPeakBytes | long | The peak memory consumption of the query. |
 | OperationEndTime | datetime | The time (UTC) the operation ended. |
 | OperationId | string | The unique query log identifier. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
-| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values:   EventhouseQueryLogs |
+| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values: `EventhouseQueryLogs`. |
 | PremiumCapacityId | string | The Fabric capacity identifier. |
 | PremiumCapacityName | string | The Fabric capacity name. |
 | QueryText | string | The text of the query. |
-| Region | string | The region where the Fabric KQL   Database is located. |
+| Region | string | The region where the Fabric KQL Database is located. |
 | ResultTableCount | int | The number of tables used by the query. |
-| ResultTableStatistics | string | The detailed statistics of the tables used by the   query. |
-| ScannedExtentsCount | long | The number of extents scanned by the query. A high number   might indicate the cause of a query latency issue. |
-| ScannedRowsCount | long | The number of rows scanned by the query. A high number   might indicate the cause of a query latency issue. |
-| SourceApplication | string | The name of the source application that ran the   query. |
+| ResultTableStatistics | string | The detailed statistics of the tables used by the query. |
+| ScannedExtentsCount | long | The number of extents scanned by the query. A high number might indicate the cause of a query latency issue. |
+| ScannedRowsCount | long | The number of rows scanned by the query. A high number might indicate the cause of a query latency issue. |
+| SourceApplication | string | The name of the source application that ran the query. |
 | Status | string | The completion status of the query. |
 | Timestamp | datetime | The time (UTC) the event was generated. |
 | TotalExtentsCount | long | The total number of extents in the result set. |
@@ -610,7 +614,7 @@ This table lists the query logs.
 | WorkspaceId | string | The identifier of the workspace. |
 | WorkspaceName | string | The name of the workspace. |
 
-## Query sample queries
+### Query sample queries
 
 ```kusto
 //List of KQL databases monitored in Workspace 
@@ -619,29 +623,29 @@ EventhouseQueryLogs
 |order by DatabaseName asc 
 
 //Query count over time for all workspace databases in past 30 days- Linechart 
-let Duration =timespan(30);  
+let Duration =timespan(30);
 EventhouseQueryLogs 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 |summarize count() by bin(Timestamp, 1d) 
 |render linechart 
 
 //Succeeded vs Failed Queries over time in past 30 days Linechart 
-let Duration =timespan(30);  
+let Duration =timespan(30);
 EventhouseQueryLogs 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 | where Status in("Failed","Throttled") 
-|summarize Count=count() by Status, bin(Timestamp, 1d)  
+|summarize Count=count() by Status, bin(Timestamp, 1d)
 |render linechart 
 
 //Query count for list of databases for past 30 days 
-let Duration =timespan(30);  
-let DatabaseList =  
+let Duration =timespan(30);
+let DatabaseList =
 EventhouseQueryLogs 
 |distinct DatabaseName 
-|summarize make_list(DatabaseName) ;  
+|summarize make_list(DatabaseName) ;
 EventhouseQueryLogs 
-| where Timestamp  > ago (Duration) 
-| where DatabaseName  in~ (DatabaseList) 
+| where Timestamp > ago (Duration) 
+| where DatabaseName in~ (DatabaseList) 
 |summarize QueryCount=count() by DatabaseName 
 |order by QueryCount desc 
 
@@ -649,7 +653,7 @@ EventhouseQueryLogs
 let Duration =timespan(30); 
 let Topcount=10; 
 EventhouseQueryLogs 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 |extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId 
 |extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User") 
 |summarize QueryCount=count() by User, PrincipalUserType 
@@ -660,18 +664,18 @@ let Duration =timespan(30);
 let Topcount=10; 
 let _DatabaseName = dynamic(['Database1', 'Database2']); //list your database names 
 EventhouseQueryLogs 
-| where Timestamp  > ago (Duration) 
-| where isempty(['_DatabaseName']) or DatabaseName  in (['_DatabaseName']) 
+| where Timestamp > ago (Duration) 
+| where isempty(['_DatabaseName']) or DatabaseName in (['_DatabaseName']) 
 |extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId 
 |extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User") 
 |summarize QueryCount=count() by User, PrincipalUserType 
 |top Topcount by QueryCount 
 
 //Top X Users by CPU Time in selected databases in past 30 days 
-let Duration =timespan(30);  
+let Duration =timespan(30);
 let Topcount=10; 
 EventhouseQueryLogs 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 |extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId 
 |extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User") 
 | extend CpuTimeMs=totimespan(CpuTimeMs*10000) 
@@ -679,12 +683,12 @@ EventhouseQueryLogs
 |top Topcount by CPUTimeMs 
 
 //Show me top X queries of selected User by CPU-Sec 
-let Duration =timespan(30);  
+let Duration =timespan(30);
 let Topcount=50; 
 let _DatabaseName = dynamic(['DB1', 'DB2']); //list your database names 
 EventhouseQueryLogs 
-| where Timestamp  > ago (Duration) 
-//| where isempty(['_DatabaseName']) or DatabaseName  in (['_DatabaseName']) 
+| where Timestamp > ago (Duration) 
+//| where isempty(['_DatabaseName']) or DatabaseName in (['_DatabaseName']) 
 |extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId 
 |extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User") 
 | extend CpuTimeMs=totimespan(CpuTimeMs*10000) 
@@ -692,20 +696,22 @@ EventhouseQueryLogs
 |project User, CpuTimeMs, Status, FailureReason, QueryText 
 
 //Top X Applications by used CPU time in past 30 days- piechart 
-let Duration =timespan(30);  
+let Duration =timespan(30);
 let Topcount=10; 
 EventhouseQueryLogs 
-| where Timestamp  > ago (Duration) 
+| where Timestamp > ago (Duration) 
 
 //Logic to extract Application Name 
-|extend Application = case (SourceApplication =="PowerBI", "PowerBI", SourceApplication =="Kusto Web Explorer","Kusto Web Explorer", SourceApplication =="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.QuickQuery"  , "Quick Query" ,  
-SourceApplication =="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.QuerySet", "KQL QuerySet", SourceApplication=="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.Dashboards", "RT Dashboard", SourceApplication =="Unknown" and CorrelationId startswith "KD2RunQuery", "Data Activator/SDK",  "Unknown") 
+|extend Application = case (SourceApplication =="PowerBI", "PowerBI", SourceApplication =="Kusto Web Explorer","Kusto Web Explorer", SourceApplication =="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.QuickQuery", "Quick Query" ,
+SourceApplication =="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.QuerySet", "KQL QuerySet", SourceApplication=="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.Dashboards", "RT Dashboard", SourceApplication =="Unknown" and CorrelationId startswith "KD2RunQuery", "Data Activator/SDK", "Unknown") 
 |summarize CPUTimeMs=sum(CpuTimeMs) by Application 
 |top Topcount by CPUTimeMs 
 |render piechart 
 ```
 
 # [Semantic model](#tab/semantic-model)
+
+## Semantic model logs
 
 Analysis Services engine process events such as the start of a batch or transaction. For example, execute query and process partition. Typically used to monitor the performance, health and usage of Power BI's data engine. Contains information from the entire tenant.
 
@@ -716,56 +722,54 @@ Use semantic model logs to:
 * Analyze semantic model refresh duration, overlaps, and processing steps.
 * Analyze custom operations sent using the Premium XMLA endpoint.
 
-## Semantic model logs
-
 This table lists the semantic model logs. For more information on the events and drill-down into the `ExecutionMetrics` event, see [Events and schema](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure#events-and-schema).
 
-| Column Name  | Type   | Description  |
-|---|---|---|
-| ApplicationContext  | dynamic  | Property bag of unique identifiers providing details about the application executing the request. for example, report ID.  |
-| ApplicationName  | string  | Contains the name of the client application that created the connection to the server. This column is populated with the values passed by the application rather than the displayed name of the program.  |
-| DatasetMode  | string  | The mode of the semantic model. Import, DirectQuery, or Composite.  |
-| EventText  | string  | Contains verbose information associated with the operation, for example, DAX Query.  |
-| OperationDetailName  | string  | More details about the operation  |
-| ProgressCounter  | long  | Progress counter  |
-| ReplicaId  | string  | Replica identifier that will let you identify the replica when Query Scale Out (QSO) is enabled. Read-write replica always has ReplicaId='AAA' and read-only replicas have ReplicaId starting 'AAB' onwards. For non-QSO enabled semantic models the ReplicaId is always 'AAA'  |
-| StatusCode  | int  | Status code of the operation. It covers success and failure.  |
-| User  | string  | The user associated with the running operation. Used when an end-user identity must be impersonated on the server.  |
-| XmlaObjectPath  | string  | Object path. A comma-separated list of parents, starting with the object's parent.  |
-| XmlaProperties  | string  | Properties of the XMLA request  |
-| XmlaRequestId  | string  | Unique Identifier of request.  |
-| XmlaSessionId  | string  |    |
-| Timestamp  | datetime  | The timestamp (UTC) of when the log was generated.  |
-| ArtifactId  | string  | Unique identifier of the resource logging the data.  |
-| ArtifactKind  | string  | Type of artifact logging the operation, for example, semantic model.  |
-| CorrelationId  | string  | The ID for correlated events. Can be used to identify correlated events between multiple tables.  |
-| CustomerTenantId  | string  | Fabric tenant identifier  |
-| Level  | string  | Contains the severity level of the operation being logged. Success, Informational, Warning, or Error.  |
-| Category  | string  | Category of the events, like Audit/Security/Request.  |
-| OperationId  | string  |    |
-| PremiumCapacityId  | string  | Unique identifier of the capacity hosting the artifact being operated on.  |
-| TableName  | string  | Contains the table name for monitoring database where the event is surfaced.  |
-| WorkspaceId  | string  | Unique identifier of the workspace containing the item being operated on.  |
-| OperationName  | string  | The operation associated with the log record.  |
-| ArtifactName  | string  | The name of the Power BI artifact logging this operation.  |
-| WorkspaceName  | string  | Name of the Fabric workspace containing the item.  |
-| PremiumCapacityName  | string  | Contains the name of Fabric capacity.  |
-| Identity  | dynamic  | Information about user and claims.  |
-| DurationMs  | long  | Amount of time (in milliseconds) taken by the operation.  |
-| Status  | string  | Status of the operation.  |
-| CallerIpAddress  | string  |    |
-| Region  | string  | Contains the Fabric region   |
-| CpuTimeMs  | long  | Amount of CPU time (in milliseconds) used by the event.  |
-| ExecutingUser  | string  | The user running the operation.  |
+| Column Name | Type | Description |
+|--|--|--|
+| ApplicationContext | dynamic | Property bag of unique identifiers providing details about the application executing the request. for example, report ID. |
+| ApplicationName | string | Contains the name of the client application that created the connection to the server. This column is populated with the values passed by the application rather than the displayed name of the program. |
+| DatasetMode | string | The mode of the semantic model. Import, DirectQuery, or Composite. |
+| EventText | string | Contains verbose information associated with the operation, for example, DAX Query. |
+| OperationDetailName | string | More details about the operation |
+| ProgressCounter | long | Progress counter |
+| ReplicaId | string | Replica identifier that will let you identify the replica when Query Scale Out (QSO) is enabled. Read-write replica always has ReplicaId='AAA' and read-only replicas have ReplicaId starting 'AAB' onwards. For non-QSO enabled semantic models the ReplicaId is always 'AAA' |
+| StatusCode | int | Status code of the operation. It covers success and failure. |
+| User | string | The user associated with the running operation. Used when an end-user identity must be impersonated on the server. |
+| XmlaObjectPath | string | Object path. A comma-separated list of parents, starting with the object's parent. |
+| XmlaProperties | string | Properties of the XMLA request |
+| XmlaRequestId | string | Unique Identifier of request. |
+| XmlaSessionId | string |  |
+| Timestamp | datetime | The timestamp (UTC) of when the log was generated. |
+| ArtifactId | string | Unique identifier of the resource logging the data. |
+| ArtifactKind | string | Type of artifact logging the operation, for example, semantic model. |
+| CorrelationId | string | The ID for correlated events. Can be used to identify correlated events between multiple tables. |
+| CustomerTenantId | string | Fabric tenant identifier |
+| Level | string | Contains the severity level of the operation being logged. Success, Informational, Warning, or Error. |
+| Category | string | Category of the events, like Audit/Security/Request. |
+| OperationId | string |  |
+| PremiumCapacityId | string | Unique identifier of the capacity hosting the artifact being operated on. |
+| TableName | string | Contains the table name for monitoring database where the event is surfaced. |
+| WorkspaceId | string | Unique identifier of the workspace containing the item being operated on. |
+| OperationName | string | The operation associated with the log record. |
+| ArtifactName | string | The name of the Power BI artifact logging this operation. |
+| WorkspaceName | string | Name of the Fabric workspace containing the item. |
+| PremiumCapacityName | string | Contains the name of Fabric capacity. |
+| Identity | dynamic | Information about user and claims. |
+| DurationMs | long | Amount of time (in milliseconds) taken by the operation. |
+| Status | string | Status of the operation. |
+| CallerIpAddress | string |  |
+| Region | string | Contains the Fabric region. |
+| CpuTimeMs | long | Amount of CPU time (in milliseconds) used by the event. |
+| ExecutingUser | string | The user running the operation. |
 
-## Sample queries
+### Semantic model sample queries
 
 ```kusto
 // log count per day for last 30d 
 SemanticModelLogs 
 | where Timestamp > ago(30d) 
 | summarize count() by format_datetime(Timestamp, 'yyyy-MM-dd') 
-  
+
 // average query duration by day for last 30d 
 SemanticModelLogs 
 | where Timestamp > ago(30d) 
@@ -777,7 +781,7 @@ SemanticModelLogs
 | where Timestamp >= ago(3d) and Timestamp <= now() 
 | where OperationName == 'QueryEnd' 
 | summarize percentiles(DurationMs, 0.5, 0.9) by bin(Timestamp, 1h) 
-  
+
 // refresh durations by workspace and semantic model for last 30d 
 SemanticModelLogs 
 | where Timestamp > ago(30d) 
@@ -787,9 +791,9 @@ SemanticModelLogs
 | project WorkspaceName, DatasetName = ArtifactName, DurationMs 
 
 // query count, distinctUsers, avgCPU, avgDuration by workspace for last 30d 
-SemanticModelLogs   
+SemanticModelLogs 
 | where Timestamp > ago(30d) 
-| where OperationName == "QueryEnd"  
+| where OperationName == "QueryEnd"
 | summarize QueryCount=count() 
     , Users = dcount(User) 
     //, AvgCPU = avg(CpuMs) //CPU time is not an available metric 
@@ -803,4 +807,4 @@ by WorkspaceId
 
 * [What is workspace monitoring?](workspace-monitoring-overview.md)
 
-* [Enable monitoring in your workspace](enable-workspace- monitoring.md)
+* [Enable monitoring in your workspace](enable-workspace-monitoring.md)

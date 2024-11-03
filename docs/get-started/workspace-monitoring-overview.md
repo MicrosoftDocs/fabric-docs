@@ -47,6 +47,6 @@ Workspace monitoring supports items from the following Fabric workloads:
 
 ## Related content
 
-* [Enable monitoring in your workspace](enable-workspace- monitoring.md)
+* [Enable monitoring in your workspace](enable-workspace-monitoring.md)
 
 * [Eventhouse logs](eventhouse-logs.md)
