@@ -4,14 +4,14 @@ description: Understand what is workspace monitoring in Microsoft Fabric and how
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 09/02/2024
+ms.date: 11/03/2024
 
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
 # What is workspace monitoring?
 
-Workspace monitoring is a Microsoft Fabric database that collects and organizes logs and metrics from a range of Fabric items in your workspace. Workspace monitoring lets workspace users access and analyze logs and metrics related to Fabric items in the workspace. You can query the database to gain insights into the usage and performance of your workspace.
+Workspace monitoring is a Microsoft Fabric database that collects and organizes logs and metrics from a range of Fabric items in your workspace. Workspace monitoring lets workspace users access and analyze [logs](eventhouse-logs.md) and metrics related to Fabric items in the workspace. You can query the database to gain insights into the usage and performance of your workspace.
 
 ## Monitoring
 
@@ -33,16 +33,22 @@ Workspace monitoring supports items from the following Fabric workloads:
 
 ## Considerations and limitations
 
-* You can only enable either workspace monitoring or log analytics in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
+* You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
 
-* To delete a workspace that has monitoring enabled, you must first delete the monitoring database. Deleting the monitoring database has to be done by a workspace admin.
+* The workspace monitoring [Eventhouse](eventhouse-logs.md) is a read-only item.
+    * To delete the database, use the workspace settings.
+    * To share the database, grant users a workspace *member* or *admin* [role](roles-workspaces.md).
 
 * The retention period for monitoring data is 30 days.
 
 * All monitoring operations, including ingestion and querying, are charged based on existing consumption rates for Eventstream and the Eventhouse workload.
 
+* You can't configure ingestion to filter for specific log type or category such as *error* or *workload type*.
+
+
+
 ## Related content
 
-* [Microsoft Fabric licenses](../enterprise/licenses.md)
+* [Enable monitoring in your workspace](enable-workspace- monitoring.md)
 
-* [About tenant settings](../adminabout-tenant-settings.md)
+* [Eventhouse logs](eventhouse-logs.md)

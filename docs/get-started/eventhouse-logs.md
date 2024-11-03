@@ -801,6 +801,6 @@ by WorkspaceId
 
 ## Related content
 
-* [Microsoft Fabric licenses](../enterprise/licenses.md)
+* [What is workspace monitoring?](workspace-monitoring-overview.md)
 
-* [About tenant settings](../admin/about-tenant-settings.md)
+* [Enable monitoring in your workspace](enable-workspace- monitoring.md)

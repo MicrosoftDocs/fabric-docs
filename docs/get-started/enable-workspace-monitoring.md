@@ -33,6 +33,6 @@ Follow these steps to enable monitoring in your workspace:
 
 ## Related content
 
-* [Microsoft Fabric licenses](../enterprise/licenses.md)
+* [What is workspace monitoring?](workspace-monitoring-overview.md)
 
-* [About tenant settings](../admin/about-tenant-settings.md)
+* [Eventhouse logs](eventhouse-logs.md)

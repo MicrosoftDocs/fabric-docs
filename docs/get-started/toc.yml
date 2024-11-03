@@ -67,6 +67,8 @@ items:
         href: workspace-monitoring-overview.md
       - name: Enable monitoring in your workspace
         href: enable-workspace-monitoring.md
+      - name: Eventhouse logs
+        href: eventhouse-logs.md        
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Copilot in Fabric
