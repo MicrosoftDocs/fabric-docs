@@ -46,8 +46,34 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
    Refer to [Authentication tutorial](./authentication-tutorial.md) to set up your environment to work with authentication.
 
+## Authentication JavaScript API
+
+Fabric front-end offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with the authentication JavaScript API, make sure you go over the [authentication JavaScript API](./authentication-javascript-api.md) documentation.
+
+### Consents  
+
+To understand why consents are required, review [User and admin consent in Microsoft Entra ID](/entra/identity/enterprise-apps/user-admin-consent-overview).  
+
+### How do consents work in Fabric workloads?
+
+To grant a consent for a specific application, Fabric FE creates an [MSAL](https://www.npmjs.com/package/@azure/msal-browser) instance configured with the workload's application ID and asks for a token for the provided scope (additionalScopesToConsent - see [AcquireAccessTokenParams](./authentication-javascript-api.md#acquireaccesstokenparams)). 
+
+When asking for a token with the workload application for a specific scope, Microsoft Entra ID displays a popup consent in case it's missing, and then redirect the popup window to the **redirect URI** configured in the application.
+
+Typically the redirect URI is in the same domain as the page that requested the token so the page can access the popup and close it.
+
+In our case, it's not in the same domain since Fabric is requesting the token and the redirect URI of the workload isn't in the Fabric domain, so when the consent dialog opens, it needs to be closed manually after redirect - we don't use the code returned in the redirectUri, and hence we just autoclose it (when Microsoft Entra ID redirects the popup to the redirect URI, it closes).  
+
+You can see the code/configuration of the redirect Uri in the file *index.ts*. This file can be found in the [Microsoft-Fabric-workload-development-sample](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), under the front-end folder.
+
+Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [the authentication set up](./authentication-tutorial.md):  
+
+:::image type="content" source="./media/authentication-concept/environment-setup-consent-popup.png" alt-text="Screenshot of the consent popup.":::
+
+
 ## Related content
 
 * [Back-end authentication and authorization overview](./back-end-authentication.md)
 * [Authentication JavaScript API](./authentication-javascript-api.md)
 * [Authentication setup](./authentication-tutorial.md)
+* [Workload authentication guidelines & deep dive](./auth-guidelines.md)
