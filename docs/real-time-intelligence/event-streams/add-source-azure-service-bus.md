@@ -9,7 +9,7 @@ ms.search.form: Source and Destination
 ms.custom: reference_regions
 ---
 
-# Add Azure Service Bus source to an eventstream
+# Add Azure Service Bus source to an eventstream (preview)
 This article shows you how to add an Azure Service Bus source to an eventstream.  
 
 Azure Service Bus is a fully managed enterprise message broker with message queues and publish-subscribe topics. Microsoft Fabric event streams allow you to connect to Azure Service Bus, where messages in the Service Bus can be fetched into Fabric eventstream and routed to various destinations within Fabric. 

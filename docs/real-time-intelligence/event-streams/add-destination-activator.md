@@ -9,7 +9,7 @@ ms.date: 10/30/2024
 ms.search.form: Source and Destination
 ---
 
-# Add a Fabric Activator destination to an eventstream
+# Add a Fabric Activator destination to an eventstream (preview)
 
 This article shows you how to add Activator destination to an eventstream.
 

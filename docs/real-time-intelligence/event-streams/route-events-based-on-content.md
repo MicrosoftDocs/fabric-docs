@@ -11,7 +11,7 @@ ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---
 
-# Route data streams based on content in Fabric event streams (preview)
+# Route data streams based on content in Fabric event streams
 
 This article shows you how to route events based on content in Microsoft Fabric event streams.
 
