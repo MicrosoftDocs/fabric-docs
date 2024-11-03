@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: how-to #Don't change
-ms.date: 10/20/2024
+ms.date: 11/03/2024
 
 #customer intent: As a security admin or Fabric admin, I want to learn how to create protection policies for Microsoft Fabric. 
 
@@ -63,6 +63,9 @@ To create a protection policy, the following requirements must be met:
     * **Allow users to retain full control** - Any users or groups added under this control setting will retain full control of the labeled item if they already have it, or any other permissions they might have.
 
     You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to.
+
+    > [!NOTE]
+    > Service principals can't be added to the sets of users these controls apply too. This means that service principals are blocked from accessing items protected by protection policies.
 
     :::image type="content" source="./media/protection-policies-create/define-access-control.png" alt-text="Screenshot of define access controls page in protection policy configuration.":::
 
