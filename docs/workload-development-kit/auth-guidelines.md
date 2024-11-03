@@ -1,7 +1,16 @@
+---
+title: Overview of Fabric Workload authentication guidelines & deep dive 
+description: This article describes important concepts and guidelines when working with authentication in Fabric workloads
+author: ramizsha
+ms.author: rashahoc
+ms.topic: best-practice
+ms.date: 03/11/2024
+#customer intent: As a developer, I want to understand what are the best practices when working with authentication to grant users the optimal experience.
+---
 
 # Workload authentication guidelines & deep dive 
 
-Before we get familiar with guidelines on how to work with authentication when building workloads, please make sure you went over [Authentication overview](https://learn.microsoft.com/en-us/fabric/workload-development-kit/authentication-concept) & [Authentication setup](https://learn.microsoft.com/en-us/fabric/workload-development-kit/authentication-tutorial). 
+Before we get familiar with guidelines on how to work with authentication when building workloads, please make sure you went over [Authentication overview](./authentication-concept.md) & [Authentication setup](./authentication-tutorial.md). 
 
 Let's go over some concepts before we talk about Working with tokens & consents:
 
@@ -70,7 +79,7 @@ Let's say the workload backend has a data plane API that gets the workspaces of 
 * The workload frontend asks for a token using the JavaScript API. 
 * The workload frontend calls the workload backend API to get the workspaces of the user and attaches the token in the request. 
 * The workload backend validates the token and tries to exchange it for the required scope (let's say `https://analysis.windows.net/powerbi/api/Workspace.Read.All`). 
-* The workload fails to exchange the token for the specified resource because the user did not consent for the application to access this resource (see [AADSTS error codes](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes#aadsts-error-codes)) 
+* The workload fails to exchange the token for the specified resource because the user did not consent for the application to access this resource (see [AADSTS error codes](/entra/identity-platform/reference-error-codes#aadsts-error-codes)) 
 * The workload backend propagates the error to the workload frontend specifying that it needs a consent for that resource, and the workload frontend will call acquireAccessToken javascript API and provide additionalScopesToConsent:   
 
 `workloadClient.auth.acquireAccessToken({ 
@@ -94,7 +103,7 @@ After that the workload frontend can retry the operation.  
 Let's say that the workload backend needs to access OneLake on create item API (call from Fabric to the workload):  
 * The workload frontend calls the create item JavaScript API. 
 * The workload backend will receive a call from Fabric and will extract the delegated token and validate it. 
-* The workload will try to exchange the token for `https://storage.azure.com/user_impersonation` but fails because the tenant administrator of the user configured MFA needed to access Storage (see [AADSTS error codes](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes#aadsts-error-codes)). 
+* The workload will try to exchange the token for `https://storage.azure.com/user_impersonation` but fails because the tenant administrator of the user configured MFA needed to access Storage (see [AADSTS error codes](/entra/identity-platform/reference-error-codes#aadsts-error-codes)). 
 * The workload will propagate the error alongside the claims returned in the error from Entra Id to the client using error propagation described [here](./workload-communication.md)
 * The workload frontend will call acquireAccessToken JavaScript API and provide "claims" as claimsForConditionalAccessPolicy where "claims" are the claims propagated from the workload backend:   
 `workloadClient.auth.acquireAccessToken({claimsForConditionalAccessPolicy: claims})`. 
@@ -104,39 +113,24 @@ After that the workload can retry the operation.
 ## Handling errors when requesting consents 
 Sometimes the user will be unable to grant a consent because of various errors. 
 When requesting consents, the response will be returned to the redirect URI, in our example, this is the code that handles the response (you can find it in index.ts file):   
-
- const redirectUriPath = '/close'; 
-
+```
+const redirectUriPath = '/close'; 
 const url = new URL(window.location.href); 
-
 if (url.pathname?.startsWith(redirectUriPath)) { 
-
     // Handle errors, Please refer to https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes 
-
     if (url?.hash?.includes("error")) { 
-
         // Handle missing service principal error 
-
         if (url.hash.includes("AADSTS650052")) { 
-
             printFormattedAADErrorMessage(url?.hash); 
-
         // handle user declined the consent error 
-
         } else  if (url.hash.includes("AADSTS65004")) { 
-
             printFormattedAADErrorMessage(url?.hash); 
-
         } 
-
     } 
-
     // Always close the window  
-
     window.close(); 
-
 } 
-
+```
 The workload frontend can extract the error code from the url and handle it accordingly, please note that in both scenarios (error & success) the workload should always close the window. 
 
  
