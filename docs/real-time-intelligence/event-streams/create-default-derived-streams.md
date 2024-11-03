@@ -5,9 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -37,17 +35,16 @@ Once you create a new eventstream, you can add a source to the eventstream and t
 
 ## Create a derived stream
 
-1. To create a new derived stream, add an operation such as **Aggregate** to the eventstream. Then select the **Stream** option.
+1. To create a new derived stream, add an operation such as **Filter** to the eventstream. Then select the **Stream** option.
 
-   ![A screenshot of creating a derived stream.](media/create-default-derived-streams/derived-stream.png)
-
+    :::image type="content" source="media/create-default-derived-streams/derived-stream.png" alt-text="A screenshot of creating a derived stream." lightbox="media/create-default-derived-streams/derived-stream.png":::
 1. Give a name to the new stream and select **Publish** to commit the changes.
 
-   ![A screenshot of publishing a derived stream.](media/create-default-derived-streams/publish-stream.png)
+    :::image type="content" source="media/create-default-derived-streams/publish-stream.png" alt-text="A screenshot of publishing a derived stream." lightbox="media/create-default-derived-streams/publish-stream.png":::
 
    Once completed, you can access both your default and derived streams in Real-Time hub for further use, such as previewing the stream or adding destinations to flow the stream to.
 
-   ![A screenshot of accessing a derived stream in Real-Time hub.](media/create-default-derived-streams/access-stream.png)
+    :::image type="content" source="media/create-default-derived-streams/access-stream.png" alt-text="A screenshot of accessing a derived stream in Real-Time hub." lightbox="media/create-default-derived-streams/access-stream.png":::
 
 ## Related content
 
