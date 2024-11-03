@@ -26,7 +26,7 @@ Before you start, you must complete the following prerequisites:
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.

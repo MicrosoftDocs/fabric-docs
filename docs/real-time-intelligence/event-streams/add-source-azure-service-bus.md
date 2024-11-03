@@ -24,7 +24,7 @@ Before you start, you must complete the following prerequisites:
 - You need to have appropriate permission to get access keys for the Service Bus namespace. The Service Bus namespace must be publicly accessible and not behind a firewall or secured in a virtual network. 
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure Service Bus** tile.

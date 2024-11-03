@@ -27,7 +27,7 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 ## Configure and connect to Confluent Kafka
