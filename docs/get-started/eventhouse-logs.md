@@ -200,7 +200,7 @@ This table lists the GraphQL logs.
 | WorkspaceName  | string  | Name of the Fabric workspace containing the artifact.  |
 | CapacityId  | string  | Unique identifier of the capacity hosting the artifact being operated on.  |
 | CustomerTenantId  | string  | Customer Tenant ID, where the operation was performed.   |
-| PlatformMonitoringTableName  | string  | The name of the table to records belongs to (or the certified event type of the record). Format is <WorkloadName> + [OperationType>]+ <TelemetryType>   |
+| PlatformMonitoringTableName  | string  | The name of the table to records belongs to (or the certified event type of the record). Format is \<WorkloadName\> + [OperationType>]+ \<TelemetryType\>   |
 | Region  | string  | The region of the resource emitting the event; for example, East US or France South.   |
 | MetricName  | string  | Metric name (e.g. Memory, Commit Size)  |
 | MetricTimeGrain  | string  | Time grain of the metric (ISO 8601 Duration).  |
@@ -232,7 +232,7 @@ This table describes the GraphQLLogs attributes. For more information on the eve
 | Status  | string  | Status of the operation. Query executed successfully/successfully with errors/failed.   |
 | Level  | string  | Metadata required by platform monitoring team.  |
 | Region  | string  | The region of the resource emitting the event; for example, East US or France South.   |
-| PlatformMonitoringTableName  | string  | The name of the table to records belongs to (or the certified event type of the record). Format is <WorkloadName> + [OperationType>]+ <TelemetryType>   |
+| PlatformMonitoringTableName  | string  | The name of the table to records belongs to (or the certified event type of the record). Format is \<WorkloadName\> + [OperationType>]+ \<TelemetryType\>   |
 | QueryText  | string  | The text of the query.   |
 | GraphQLOverheadDurationMs  | long  | The GraphQL overhead in ms for a dataplane request.  |
 | ProcessedBytes  | long  |  Processed data volume in byte.  |
