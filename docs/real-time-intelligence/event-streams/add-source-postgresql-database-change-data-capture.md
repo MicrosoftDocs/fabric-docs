@@ -52,7 +52,7 @@ To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow 
    ALTER ROLE <admin_user_or_table_owner_user> WITH REPLICATION;
    ```
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure DB for PostgreSQL (CDC)** tile.

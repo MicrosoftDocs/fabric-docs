@@ -9,7 +9,7 @@ ms.date: 10/26/2024
 ms.search.form: Source and Destination
 ---
 
-# Edit and publish a Microsoft Fabric eventstream (preview)
+# Edit and publish a Microsoft Fabric eventstream
 
 This article shows you how to edit and publish a Microsoft Fabric eventstream.
 

@@ -47,7 +47,7 @@ Note that you must not enable mirroring in your Azure SQL database.
     GO
     ```
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure SQL DB (CDC)** tile.

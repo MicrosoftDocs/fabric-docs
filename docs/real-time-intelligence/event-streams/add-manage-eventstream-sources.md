@@ -26,7 +26,7 @@ Once you create an eventstream, you can connect it to various data sources and d
 
 Eventstream not only allows you to stream data from Microsoft sources, but also supports ingestion from third-party platforms like Google Cloud and Amazon Kinesis with new messaging connectors. This expanded capability offers seamless integration of external data streams into Fabric, providing greater flexibility and enabling you to gain real-time insights from multiple sources.
 
-In this article, you learn about the event sources that you can add to an eventstream with enhanced capabilities that are in preview.
+In this article, you learn about the event sources that you can add to an eventstream.
 
 
 
