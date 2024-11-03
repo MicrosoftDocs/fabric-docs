@@ -23,7 +23,7 @@ This article explains how to use the query acceleration policy to accelerate que
 > 
 > * Accelerated external tables add to the storage COGS and to the SSD storage consumption your Eventhouse, similar to regular tables in your KQL database. You can control the amount of data to cache by defining the *Hot* property in the [query acceleration policy](https://aka.ms/query-acceleration). Indexing and ingestion activity also contributes to compute resources use.
 
-## When would you use query acceleration over OneLake shortcuts?
+## When should I use query acceleration over OneLake shortcuts?
 
 Query acceleration caches data as it lands in OneLake, providing performance comparable to ingesting data in Eventhouse. By using this feature, you can accelerate data landing in OneLake, including existing data and any new updates, and expect similar performance. This eliminates the need to manage ingestion pipelines, maintain duplicate copies of data, while ensuring that data remains in sync without additional effort.
 
