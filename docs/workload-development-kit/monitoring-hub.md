@@ -44,6 +44,8 @@ This API is called to initiate the execution of a job.
 
 This API is called to cancel an ongoing job instance.
 
+- **Response:** The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job has failed.
+
 ---
 
 #### **3. Get Job Instance State**
