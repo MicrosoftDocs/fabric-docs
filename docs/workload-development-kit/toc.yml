@@ -33,8 +33,6 @@ items:
     href: item-lifecycle.md
   - name: User permissions
     href: user-permissions.md    
-  - name: Monitoring hub
-    href: monitoring-hub.md
   - name: Working with customer data
     href: fabric-data-plane.md
   - name: The workload backend manifests
@@ -61,6 +59,8 @@ items:
     href: azure-web-app-deployment-tutorial.md
   - name: Working in cloud mode
     href: workload-cloud-setup.md
+  - name: Onboard to the Monitoring hub
+    href: monitoring-hub.md
 - name: Reference
   items:
    - name: Frequently asked questions
