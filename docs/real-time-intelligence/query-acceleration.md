@@ -1,20 +1,20 @@
 ---
-title: Accelerate queries over OneLake shortcuts (preview)
+title: Query acceleration over OneLake shortcuts (preview)
 description: Learn how to use the query acceleration policy over OneLake shortcuts to improve query performance and reduce latency for external delta tables.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 10/15/2024
+ms.date: 11/03/2024
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
-# Accelerate queries over OneLake shortcuts (preview)
+# Query acceleration over OneLake shortcuts (preview)
 
 OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. Query acceleration allows specifying a policy on top of external delta tables that defines the number of days to cache data for high-performance queries. 
 
-Query acceleration is supported in Eventhouse over delta tables from [OneLake shortcuts](onelake-shortcuts.md), Azure Data Lake Store Gen1, or Azure blob storage external tables.
-
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
+Query acceleration is supported in Eventhouse over delta tables from [OneLake shortcuts](onelake-shortcuts.md), Azure Data Lake Store Gen1, Amazon S3, Google Cloud Services, Azure blob storage external tables, and all destinations supported by OneLake shortcuts.
 
 This article explains how to use the query acceleration policy to accelerate queries over OneLake shortcuts in the Microsoft Fabric UI. To set this policy using commands, see [query acceleration policy](https://aka.ms/query-acceleration).
 
@@ -22,6 +22,10 @@ This article explains how to use the query acceleration policy to accelerate que
 > * If you have compliance considerations that require you to store data in a specific region, make sure your Eventhouse capacity is in the same region as your external table or shortcut data.
 > 
 > * Accelerated external tables add to the storage COGS and to the SSD storage consumption your Eventhouse, similar to regular tables in your KQL database. You can control the amount of data to cache by defining the *Hot* property in the [query acceleration policy](https://aka.ms/query-acceleration). Indexing and ingestion activity also contributes to compute resources use.
+
+## When would you use query acceleration over OneLake shortcuts?
+
+Query acceleration caches data as it lands in OneLake, providing performance comparable to ingesting data in Eventhouse. By using this feature, you can accelerate data landing in OneLake, including existing data and any new updates, and expect similar performance. This eliminates the need to manage ingestion pipelines, maintain duplicate copies of data, while ensuring that data remains in sync without additional effort.
 
 ## Prerequisites
 
@@ -47,7 +51,9 @@ Query acceleration can be enabled during shortcut creation, or on existing short
 
 ## Set caching period
 
-Data is accelerated for a certain period of time, defined in days from the `modificationTime` in the delta log. The default caching period is 36500 days. To set this policy using commands, see [query acceleration policy](https://aka.ms/query-acceleration). To set the caching period in the UI, follow these steps:
+Query acceleration is applied to data within a specific time period, defined as a timespan in days, starting from the `modificationTime` in the [delta log](https://github.com/delta-io/delta/blob/master/PROTOCOL.md#add-file-and-remove-file). 
+
+The default caching period is that of the database in which the OneLake shortcut has been created. To set this policy using commands, see [query acceleration policy](https://aka.ms/query-acceleration). To set the caching period in the UI, follow these steps:
 
 1. Browse to the shortcut you want to accelerate.
 1. In the menu bar, select **Manage** > **Data policies**.
