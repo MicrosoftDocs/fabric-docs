@@ -1,11 +1,10 @@
 ---
-title: Real-Time Intelligence Activator - basic concepts
-description: "Definitions and descriptions of concepts used by Real-Time Intelligence Activator. These include: eventstreams, rules, events, objects, activators, and more."
+title: Fabric Activator basic concepts
+description: '"Definitions and descriptions of concepts used by Real-Time Intelligence Activator. These include: eventstreams, rules, events, objects, activators, and more."'
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.date: 10/22/2024
-#customer intent: As a person creating activators and as someone consuming activators I want to understand how activators are created and how they work. 
+ms.date: 11/04/2024
 ---
 
 # Activator basic concepts
