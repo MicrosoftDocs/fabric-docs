@@ -57,7 +57,7 @@ Use the keyword search text box to search for specific activities according to t
 
 Use the **Filter** button to filter the monitor hub table results. You can use a combination of any of the options listed below. Once you selected the options you want to filter for, select **Apply**. The monitor hub remembers your filter selection. If you leave the monitor hub, you'll see your selection when you next go to the hub.
 
-Each time the table is refreshed, the recent 100 jobs are loaded in order, according to the filter option. By clicking load more you can load 50 more jobs.
+Each time the table is refreshed, the recent 100 jobs are loaded in order, according to the filter option. By selecting *load more* you can load 50 more jobs.
 
 * **Status** - Select the type of status you want the table to display. When no status is selected, item activities for all statuses are displayed.
 
