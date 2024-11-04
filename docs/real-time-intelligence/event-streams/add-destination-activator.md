@@ -1,6 +1,6 @@
 ---
 title: Add a Fabric Activator destination to an eventstream
-description: Learn how to add Activator destination to a Fabric eventstream.
+description: Learn how to add Activator destination to a Fabric eventstream. This feature is currently in preview.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
