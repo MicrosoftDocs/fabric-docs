@@ -140,8 +140,6 @@ items:
       items:
       - name: Connect to Azure resources using private endpoints
         href: event-streams/set-up-private-endpoint.md
-      - name: Entra ID authentication in Custom Endpoint
-        href: event-streams/entra-id-auth.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
