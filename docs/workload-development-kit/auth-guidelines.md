@@ -37,6 +37,7 @@ In this tab, you will need to add all the scopes your workload will need to exch
 A mandatory scope to add is "Fabric.Extend" under power bi service - note that requests to Fabric may fail without this scope.
 
 ## Working with tokens & consents 
+When working with data plane APIs, the workload frontend will need to acquire a token to use it for calls to its backend.
 Here's how the workload frontend should use the [JavaScript API](./authentication-javascript-api.md) and [OBO flows](/entra/identity-platform/v2-oauth2-on-behalf-of-flow) to acquire tokens for the workload / external services and work with consents: 
 
 ### Step 1: Acquiring a token 
