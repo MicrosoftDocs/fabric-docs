@@ -193,7 +193,7 @@ When the workload team registers the action for detailed information, Fabric exp
 
 Currently, key value pairs in plain text or hyperlink is supported.
 
-* For an example of handling the job actions, see index.worker.ts that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, and search for actions starting with 'item.job'.
+* For an example of handling the job actions, see index.worker.ts that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.job'.
 
 ### Recent runs
 
@@ -235,7 +235,7 @@ As part of our UI workload sample, we added a section in the item ribbon dedicat
 
 :::image type="content" source="./media/monitoring-hub/artifact-tab.png" alt-text="Screenshot showing the item tab in the Fabric UI.":::
 
-For an example of how this ribbon was implemented, see ItemTabToolbar.tsx, that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo. 
+For an example of how this ribbon was implemented, see ItemTabToolbar.tsx, that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample). 
 
 ## Related links
 
