@@ -4,7 +4,7 @@ description: Include file with instructions to navigate to Fabric Real-Time hub.
 author: spelluru
 ms.author: spelluru
 ms.topic: include
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/). 

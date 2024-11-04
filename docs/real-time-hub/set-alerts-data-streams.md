@@ -4,8 +4,8 @@ description: This article describes how to set alerts on streams in Real-Time hu
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.date: 10/21/2024
-ms.search.form: Data Activator Eventstreams Onramp
+ms.date: 11/18/2024
+ms.search.form: Fabric Activator Eventstreams Onramp
 ---
 
 # Set alerts on streams in Real-Time hub
@@ -40,7 +40,7 @@ On the **Set alert** page, follow these steps:
     1. To run a Fabric item, select **Run a Fabric item**. 
 1. In the **Save location** section, do these steps: 
     1. For **Workspace**, select the workspace where you want to save the alert. 
-    1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert. 
+    1. For **Item**, select an existing Activator item or create a new Activator item for this alert. 
     
         :::image type="content" source="./media/set-alerts-data-streams/save-location.png" alt-text="Screenshot that shows the location details of an alert." lightbox="./media/set-alerts-data-streams/save-location.png":::
 

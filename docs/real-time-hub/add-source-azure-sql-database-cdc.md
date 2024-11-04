@@ -4,7 +4,7 @@ description: This article describes how to add an Azure SQL Database Change Data
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 # Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub

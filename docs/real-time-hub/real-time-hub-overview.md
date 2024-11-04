@@ -4,7 +4,7 @@ description: This article describes what Real-Time hub in Microsoft Fabric is an
 author: mystina
 ms.author: majia
 ms.topic: overview
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 # Introduction to Fabric Real-Time hub
@@ -28,11 +28,11 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 | ------ | ------- |
 | Streaming data from other clouds | <ul><li>Google Cloud Pub/Sub</li><li>Amazon Kinesis Data Streams</li> |
 | Kafka Clusters | <ul><li>Confluent Cloud Kafka</li><li>Apache Kafka</li><li>Amazon Managed Streaming for Apache Kafka</li></ul> |
-| Database Change Data Capture (CDC) feeds | <ul><li>Azure SQL Database CDC</li><li>PostgreSQL Database CDC</li><li>Azure Cosmos DB CDC</li><li>MySQL Database CDC</li><li>Azure SQL Managed Instance CDC</li><li>SQL Server on VM DB CDC</li></ul> |
-| Microsoft streaming sources | <ul><li>Azure Event Hubs</li><li>IoT hubs</li></ul> |
+| Database Change Data Capture (CDC) feeds | <ul><li>Azure SQL Database CDC</li><li>PostgreSQL Database CDC</li><li>MySQL Database CDC</li><li>Azure Cosmos DB CDC</li><li>Azure SQL Managed Instance CDC</li><li>SQL Server on virtual machine (VM) DB CDC</li></ul> |
+| Microsoft streaming sources | <ul><li>Azure Event Hubs</li><li>Azure Service Bus</li><li>Azure IoT Hub</li></ul> |
 | Fabric events | <ul><li>Azure storage account events</li><li>Fabric workspace item events <br/>(automatically generated)</li></ul> |
 
-A unified *Get Events* experience makes it effortless to connect these sources to components in Real-Time hub like eventstream, KQL database, and Data Activator.  
+The Real-Time hub makes it effortless to connect these sources to components in Real-Time hub like eventstream, KQL database, and Data Activator.  
 
 ## Data integrations
 

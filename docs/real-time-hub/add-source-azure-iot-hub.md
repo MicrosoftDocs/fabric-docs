@@ -4,9 +4,7 @@ description: This article describes how to add an Azure IoT hub as an event sour
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/10/2024
+ms.date: 11/18/2024
 ---
 
 # Add Azure IoT Hub as source in Real-Time hub

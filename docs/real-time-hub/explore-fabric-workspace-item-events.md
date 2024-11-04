@@ -4,13 +4,13 @@ description: This article shows how to explore Fabric workspace item events in F
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub
 
 
-Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items. For instance, when a new artifact is created or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
+Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items. For instance, when a new artifact is created or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Fabric Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
 > [!NOTE]
 > This feature is currently in preview.
@@ -43,7 +43,7 @@ This section shows the artifacts using Fabric workspace item events. Here are th
 | Column | Description |
 | ------ | ------------ |
 | Name | Name of the artifact that's using Fabric workspace item events. |
-| Type | Artifact type – Reflex or Eventstream |
+| Type | Artifact type – Activator or Eventstream |
 | Workspace | Workspace where the artifact lives. |
 | Source | Name of the workspace that is source of the events. |
 
@@ -88,7 +88,7 @@ The `data` object has the following properties:
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
 | `itemId` | guid | Unique identifier for the item/artifact. | `00000000-0000-0000-0000-000000000000` |
-| `itemKind` | string | The kind of item/artifact. | Item type such as `Notebook, Lakehouse, etc.` Refer to the notes below for item types not supported by workspace item events |
+| `itemKind` | string | The kind of item/artifact. | Item type such as `Notebook, Lakehouse, etc.` See the next section for a list of item types not supported by workspace item events |
 | `itemName` | string | The item/artifact name. | `Test Notebook` |
 | `workspaceId` | guid | Unique identifier for the workspace. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceName` | string | The name of the workspace. | `Test Workspace` |

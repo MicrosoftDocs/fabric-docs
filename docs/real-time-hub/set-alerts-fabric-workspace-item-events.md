@@ -4,7 +4,7 @@ description: This article describes how to set alerts on Fabric workspace item e
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 # Set alerts on Fabric workspace item events in Real-Time hub
@@ -21,7 +21,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - Events you want to monitor.
 - Conditions you want to look for in the events.
-- Action you want Data Activator to take.
+- Action you want Fabric Activator to take.
 
 ### From the events list
 
@@ -66,7 +66,7 @@ On the **Set alert** page, follow these steps:
     1. To run a Fabric item, select **Run a Fabric item**.
 1. In the **Save location** section, do these steps:
     1. For **Workspace**, select the workspace where you want to save the alert.
-    1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert.
+    1. For **Item**, select an existing Activator item or create a new Activator item for this alert. 
 1. Select **Create** at the bottom of the page to create the alert.
 
     :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/create-alert.png" alt-text="Screenshot that shows the Set alert page with all fields selected.":::        

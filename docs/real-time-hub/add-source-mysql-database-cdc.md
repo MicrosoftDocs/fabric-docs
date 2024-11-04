@@ -4,7 +4,7 @@ description: This article describes how to add MySQL Database Change Data Captur
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 11/18/2024
 ---
 
 # Add MySQL Database CDC as source in Real-Time hub
@@ -61,7 +61,7 @@ You can get events from an Azure MySQL Database CDC into Real-Time hub in one of
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show Azure MySQL CDC and the connect button." lightbox="./media/add-source-azure-mysql-database-cdc/microsoft-sources-connect-button.png":::
 
-    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section. Skip the first step of selecting Azure MySQL DB CDC as a source type in the Add source wizard.
+    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section. 
 
 ## Add Azure MySQL Database CDC as a source
 

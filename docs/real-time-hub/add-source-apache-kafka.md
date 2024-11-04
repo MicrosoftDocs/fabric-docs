@@ -6,12 +6,11 @@ ms.author: anboisve
 ms.topic: how-to
 ms.custom:
   - references_regions
-ms.date: 09/15/2024
+ms.date: 11/18/2024
 ---
 
-# Add Apache Kafka as source in Real-Time hub
+# Add Apache Kafka as source in Real-Time hub (preview)
 This article describes how to add Apache Kafka as an event source in Fabric Real-Time hub. 
-
 
 
 ## Prerequisites 

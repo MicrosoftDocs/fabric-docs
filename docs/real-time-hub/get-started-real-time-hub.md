@@ -4,7 +4,7 @@ description: This article shows how to get started with Fabric Real-Time hub.
 author: mystina
 ms.author: majia
 ms.topic: quickstart
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 # Get started with Fabric Real-Time hub
@@ -50,9 +50,9 @@ The actions available for streams or KQL tables are same as the ones mentioned i
 
 ## Data sources page
 
-You can connect to data from both inside and outside of Fabric in a mere few steps within Fabric Real-Time hub. Whether data is coming from new or existing sources, streams, or available events, the Add source experience allows you to connect to a wide range of event sources directly from Real-Time hub.
+You can connect to data from both inside and outside of Fabric in a mere few steps within Fabric Real-Time hub. Whether data is coming from new or existing sources, streams, or available events, the Connect data source experience allows you to connect to a wide range of event sources directly from Real-Time hub.
 
-It allows for easy connectivity to external data streams including Kafka connectors powered by Kafka Connect and Debezium connectors for fetching the Change Data Capture (CDC) streams. Connectivity to notification sources and discrete events is also included within Get events, this enables access to notification events from Azure and other clouds solutions including Amazon Web Services and Google Cloud Platform.  
+It allows for easy connectivity to external data streams including Kafka connectors powered by Kafka Connect and Debezium connectors for fetching the Change Data Capture (CDC) streams. Connectivity to notification sources and discrete events is also included, which enables access to notification events from Azure and other clouds solutions including Amazon Web Services and Google Cloud Platform.  
 
 There are two ways you can get to the **Data sources** page:
 
@@ -63,11 +63,11 @@ There are two ways you can get to the **Data sources** page:
 
     :::image type="content" source="media/get-started-real-time-hub/connect-to-data-sources-page.png" alt-text="Screenshot that shows the Data sources page under Connect to category." lightbox="./media/get-started-real-time-hub/connect-to-data-sources-page.png":::
 
-Then, follow the prompts to complete the flow. Here's a full list of built-in sources inside Get events.
+Then, follow the prompts to complete the flow. Here's a full list of built-in sources.
 
 [!INCLUDE [supported-sources](./includes/supported-sources.md)]
 
-You can connect to these services and create eventstreams that show up on the **All data streams** page. Select a link for a source in the list to learn how to create an event stream for that source.
+You can connect to these services and create eventstreams that show up on **My data streams** and **All data streams** pages. Select a link for a source in the list to learn how to create an event stream for that source.
 
 ## Microsoft sources page
 
@@ -75,7 +75,7 @@ You can connect to these services and create eventstreams that show up on the **
 
 [!INCLUDE [microsoft-sources](./includes/microsoft-sources.md)]
 
-You can connect to these resources and create eventstreams that show up on the **All data streams** page. Select a link for a source in the list to learn how to create an event stream for that source.
+You can connect to these resources and create eventstreams that show up on **My data streams** and **All data streams** pages. Select a link for a source in the list to learn how to create an event stream for that source.
 
 :::image type="content" source="./media/get-started-real-time-hub/microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page in Real-Time hub." lightbox="./media/get-started-real-time-hub/microsoft-sources-menu.png":::
 

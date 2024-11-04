@@ -1,12 +1,10 @@
 ---
 title: Process data streams in Real-Time hub
-description: This article describes how to process data streams in Real-Time hub. Process using transformations in eventstreams, add KQL destination to send it to a KQL table and analyze it, and set alerts.
+description: This article describes how to process data streams in Real-Time hub. Process using transformations in eventstreams, add Eventhouse destination to send it to a KQL table and analyze it, and set alerts.
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/10/2024
+ms.date: 11/18/2024
 ---
 
 # Process data streams in Fabric event streams 
@@ -22,12 +20,14 @@ In Real-Time hub, when you create streams to get events from the [supported sour
 - **Add source** experience:
 
     At the end of creating this stream, on the **Review + connect** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
--*All data streams* page:
+  
+- **All data streams** page:
 
     Move the mouse over a stream whose parent is an eventstream, and select the **Open** link, on select **... (ellipsis)**, and then select **Open eventstream**.
-- **Detail page**:
 
-    From the **All data streams** page select a stream whose parent is an eventstream to see the stream details. From the ribbon select **Open eventstream**.  
+- **Detail** page:
+
+    From the **All data streams** page select a stream whose parent is an eventstream to see the stream details. From the ribbon, select **Open eventstream**.  
 
 ## Add transformations to the stream
 

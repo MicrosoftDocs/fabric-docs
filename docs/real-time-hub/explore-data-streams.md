@@ -4,7 +4,7 @@ description: This article shows how to explore data streams in Fabric Real-Time 
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 # Explore streams in Fabric Real-Time hub

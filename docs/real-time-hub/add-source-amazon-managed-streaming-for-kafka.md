@@ -4,7 +4,7 @@ description: This article describes how to add Amazon Managed Streaming for Apac
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 11/18/2024
 ---
 
 # Add Amazon Managed Streaming for Apache Kafka (MSK) as source in Real-Time hub
