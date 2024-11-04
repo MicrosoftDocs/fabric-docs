@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 10/08/2024
+ms.date: 10/31/2024
 ms.search.form: Data Activator Detection Condition
 ---
 
