@@ -4,12 +4,10 @@ description: This article describes how to get events from an Azure Service Bus 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/10/2024
+ms.date: 11/18/2024
 ---
 
-# Get events from Azure Service Bus into Real-Time hub
+# Get events from Azure Service Bus into Real-Time hub (preview)
 This article describes how to get events from an Azure Service Bus queue or a topic's subscription into Real-Time hub.
 
 

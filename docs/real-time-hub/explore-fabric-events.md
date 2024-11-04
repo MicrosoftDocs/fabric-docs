@@ -4,9 +4,7 @@ description: This article shows how to explore Fabric events in Fabric Real-Time
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/04/2024
+ms.date: 11/18/2024
 ---
 
 # Explore Fabric events in Fabric Real-Time hub

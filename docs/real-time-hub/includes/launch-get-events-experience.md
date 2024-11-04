@@ -1,10 +1,10 @@
 ---
-title: Launch Add source experiences
+title: Launch the Connect data source wizard
 description: Include file with instructions to launch the "Add source experience" in Fabric Real-Time hub.
 author: spelluru
 ms.author: spelluru
 ms.topic: include
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 ## Data sources page

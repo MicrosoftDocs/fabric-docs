@@ -4,10 +4,10 @@ description: This article describes how to get Azure Blob Storage events as an e
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 11/18/2024
 ---
 
-# Get Azure Blob Storage events into Real-Time hub 
+# Get Azure Blob Storage events into Real-Time hub (preview)
 
 This article describes how to get Azure Blob Storage events into Fabric Real-Time hub.
 
@@ -62,7 +62,7 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
 
     :::image type="content" source="./media/get-azure-blob-storage-events/fabric-events-menu.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page.":::
     
-    Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section, but skip the first step of using the **Add source** page.
+    Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section.
 
 ## Configure and create an eventstream
 

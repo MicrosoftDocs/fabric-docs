@@ -5,9 +5,8 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - build-2024
   - references_regions
-ms.date: 09/04/2024
+ms.date: 11/18/2024
 ---
 
 # Add PostgreSQL Database CDC as source in Real-Time hub
@@ -78,14 +77,14 @@ You can get events from an Azure Database for PostgreSQL CDC into Real-Time hub 
 
 1. In Real-Time hub, select **Microsoft sources**.
 1. In the **Source** drop-down list, select **PostgreSQL (CDC)**. 
-1. For **Subscription**, select an **Azure subscription** that has the resource group with your Azure MySQL Database account. 
+1. For **Subscription**, select an **Azure subscription** that has the resource group with your PostgreSQL Database account. 
 1. For **Resource group**, select a **resource group** that has the database.
 1. For **Region**, select a location where your database is located.
 1. Now, move the mouse over the name of the PostgreSQL Database CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button.
 
-    :::image type="content" source="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show Azure MySQL CDC and the connect button." lightbox="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png":::
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show Azure PostgreSQL CDC and the connect button." lightbox="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png":::
 
-    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. Skip the first step of selecting Azure MySQL DB CDC as a source type in the Data sources page.
+    To configure connection information, use steps from the [Add Azure Database for PostgreSQL CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. 
 
 ## Add Azure Database for PostgreSQL CDC as a source
 

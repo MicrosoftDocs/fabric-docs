@@ -4,7 +4,7 @@ description: This article describes how to get events from sample data sources.
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 # Get events from sample data sources into Real-Time hub

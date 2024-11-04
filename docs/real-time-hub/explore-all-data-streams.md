@@ -4,14 +4,12 @@ description: This article shows how to explore All data streams in Fabric Real-T
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/16/2024
+ms.date: 11/18/2024
 ---
 
 # Explore All data streams in Fabric Real-Time hub
 
-When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub](explore-data-streams.md). This article covers the Real-Time hub **All data streams** page which allows you to see all data streams that you can access that are actively running in Fabric. Data streams include Fabric eventstreams and KQL tables.
+When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub](explore-data-streams.md). This article covers the Real-Time hub **All data streams** page which allows you to see all data streams that you can access that are actively running in Fabric. Data streams include Fabric eventstreams and Kusto Query Language (KQL) tables.
 
 
 
@@ -28,7 +26,7 @@ The **All data streams** page has the following columns:
 | Name | Name of the stream or KQL table. |
 | Item | Name of the parent artifact. For a stream, it's the name of the eventstream. For a KQL table, it's the name of the KQL database. |
 | Owner | Name of owner of the parent artifact. |
-| Location | Name of workspace where the parent artifact is located. |
+| Workspace | Name of workspace where the parent artifact is located. |
 | Endorsement | Endorsement status of the parent artifact. |
 | Sensitivity | Sensitivity status of the parent artifact. |
 
@@ -43,7 +41,7 @@ The following filters are available at the top for you to narrow down easily to 
 | Stream type | You can filter on the stream type. Either stream or table. |
 | Owner | You can filter on the name of the owner of the parent artifact. For a stream, it's the owner of the parent eventstream. For a KQL table, it's owner of the parent KQL database. |
 | Item | You can filter on the desired parent artifact name. For a stream, it's the name of the eventstream. For a KQL table, it's the name of the KQL database. |
-| Location | You can filter on the desired workspace name. |
+| Workspace | You can filter on the desired workspace name. |
 
 :::image type="content" source="media/explore-all-data-streams/hub-all-data-streams-filters.png" alt-text="Screenshot that highlights the Real Time hub All data streams page filters." lightbox="media/explore-all-data-streams/hub-all-data-streams-filters.png":::
 

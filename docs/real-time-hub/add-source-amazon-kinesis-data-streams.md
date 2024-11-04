@@ -4,7 +4,7 @@ description: This article describes how to add Amazon Kinesis Data Streams as an
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 11/18/2024
 ---
 
 # Add Amazon Kinesis Data Streams as source in Real-Time hub

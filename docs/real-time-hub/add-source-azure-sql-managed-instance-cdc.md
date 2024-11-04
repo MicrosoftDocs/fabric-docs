@@ -4,7 +4,7 @@ description: This article describes how to add Azure SQL Managed Instance Change
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 11/18/2024
 ---
 
 # Add Azure SQL Managed Instance (MI) database (DB) CDC as source in Real-Time hub
@@ -73,7 +73,7 @@ You can get events from an Azure SQL Managed Instance (MI) Database (DB) CDC int
 
     :::image type="content" source="./media/add-source-azure-sql-managed-instance-cdc/microsoft-sources-page.png" alt-text="Screenshot that shows the Microsoft Sources page." lightbox="./media/add-source-azure-sql-managed-instance-cdc/microsoft-sources-page.png":::     
 
-    To configure connection information, use steps from the [Add Azure SQL Managed Instance CDC as a source](#add-azure-sql-managed-instance-cdc-as-a-source) section. Skip the first step of selecting Azure SQL MI DB CDC as a source type in the Add source wizard.
+    To configure connection information, use steps from the [Add Azure SQL Managed Instance CDC as a source](#add-azure-sql-managed-instance-cdc-as-a-source) section. 
 
 ## Add Azure SQL Managed Instance CDC as a source
 

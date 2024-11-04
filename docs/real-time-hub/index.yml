@@ -14,7 +14,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: spelluru
   ms.author: spelluru
-  ms.date: 05/21/2024
+  ms.date: 11/18/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -71,6 +71,8 @@ landingContent:
         links:
           - text: Azure Event Hubs
             url: add-source-azure-event-hubs.md
+          - text: Azure Service Bus
+            url: add-source-azure-service-bus.md
           - text: Azure IoT Hub
             url: add-source-azure-iot-hub.md
           - text: Azure SQL Database Change Data Capture (CDC)
@@ -81,6 +83,12 @@ landingContent:
             url: add-source-mysql-database-cdc.md
           - text: Azure Cosmos DB CDC
             url: add-source-azure-cosmos-db-cdc.md
+          - text: Azure SQL Managed Instance DB CDC
+            url: add-source-azure-sql-managed-instance-cdc.md
+          - text: SQL Server on VM DB (CDC)
+            url: add-source-sql-server-on-vm-db-cdc.md
+          - text: Azure Data Explorer
+            url: add-source-azure-data-explorer.md
 
   # Card 
   - title: Create streams for external sources
@@ -91,8 +99,12 @@ landingContent:
             url: add-source-google-cloud-pub-sub.md
           - text: Amazon Kinesis Data Streams
             url: add-source-amazon-kinesis-data-streams.md
+          - text: Apache Kafka
+            url: add-source-apache-kafka.md
           - text: Confluent Cloud Kafka
             url: add-source-confluent-kafka.md
+          - text: Amazon Managed Streaming for Kafka
+            url: add-source-amazon-managed-streaming-for-kafka.md
 
   # Card 
   - title: Create streams for Fabric events

@@ -4,7 +4,7 @@ description: This article shows how to explore Azure blob storage events in Fabr
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 11/18/2024
 ---
 
 # Explore Azure blob storage events in Fabric Real-Time hub
@@ -42,7 +42,7 @@ This section shows artifacts using Azure Blob Storage events. Here are the colum
 | Column | Description |
 | ------ | ------------ |
 | Name | Name of the artifact that's using Azure Blob Storage events. |
-| Type | Artifact type – Reflex or Eventstream |
+| Type | Artifact type – Activator or Eventstream |
 | Workspace | Workspace where the artifact lives. |
 | Source | Name of the source (Azure Blob Storage account). |
 
@@ -101,7 +101,7 @@ The `data` object has the following properties:
 | `url` | string | The path to the blob. <p>If the client uses a Blob REST API, then the url has this structure: `<storage-account-name>.blob.core.windows.net\<container-name>\<file-name>`. If the client uses a Data Lake Storage REST API, then the url has this structure: `<storage-account-name>.dfs.core.windows.net/<file-system-name>/<file-name>`.  | `https://myaccount.blob.core.windows.net/container01/file.txt` |
 | `recursive` | string | True to run the operation on all child directories; otherwise False. <p>Appears only for events triggered on blob storage accounts that have a hierarchical namespace. </p> | `true` |
 | `sequencer` | string | An opaque string value representing the logical sequence of events for any particular blob name. Users can use standard string comparison to understand the relative sequence of two events on the same blob name. | `00000000000004420000000000028963` | 
-| `identity` | string | A string value representing the identity associated with the event. For SFTP, the value is the local user name. | `localuser` | 
+| `identity` | string | A string value representing the identity associated with the event. For Secure File Transfer Protocol (SFTP), the value is the local user name. | `localuser` | 
 | `storageDiagnostics` | object | Diagnostic data occasionally included by the Azure Storage service. When present, event consumers should ignore it. | `{{Storage diagnostic object}}` |
 
 

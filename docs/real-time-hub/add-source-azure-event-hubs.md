@@ -4,9 +4,7 @@ description: This article describes how to get events from an Azure event hub in
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/10/2024
+ms.date: 11/18/2024
 ---
 
 # Get events from Azure Event Hubs into Real-Time hub
@@ -25,16 +23,10 @@ This article describes how to get events from an Azure event hub into Real-Time 
 
 You can get events from an Azure event hub into Real-Time hub in one of the ways:
 
-- [Using the **Data sources** page](#data-sources-page)
 - [Using the **Microsoft sources** page](#microsoft-sources-page)
+- [Using the **Data sources** page](#data-sources-page)
 
-[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-4. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Event Hubs** tile. 
-
-    :::image type="content" source="./media/add-source-azure-event-hubs/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Data sources page." lightbox="./media/add-source-azure-event-hubs/select-azure-event-hubs.png":::
-    
-    Now, follow instructions from the [Connect to an Azure event hub](#connect-to-an-azure-event-hub) section.
 
 ## Microsoft sources page
 
@@ -47,13 +39,44 @@ You can get events from an Azure event hub into Real-Time hub in one of the ways
 
     :::image type="content" source="./media/add-source-azure-event-hubs/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show event hubs and the connect button for an event hub." lightbox="./media/add-source-azure-event-hubs/microsoft-sources-connect-button.png":::
 
-## Connect to an Azure event hub
+### Configure connection settings and credentials
 
+On the **Connect** page, in the **Configure connection settings** section, follow these steps:
+
+1. Select an event hub from your Event Hubs namespace. 
+
+   :::image type="content" source="./media/add-source-azure-event-hubs/select-event-hub-from-list.png" alt-text="Screenshot that shows the Connect page with an event hub selected from the drop-down list." lightbox="./media/add-source-azure-event-hubs/select-event-hub-from-list.png":::
+   
+1. Select an access key for the Event Hubs namespace or the event hub. 
+    
+   :::image type="content" source="./media/add-source-azure-event-hubs/select-access-key-from-list.png" alt-text="Screenshot that shows the Connect page with an access key selected from the drop-down list." lightbox="./media/add-source-azure-event-hubs/select-access-key-from-list.png":::
+   
+1. If there's an existing connection to the event hub, it shows in the drop-down list for **Connection**. Select it. If not, select **New connection** to create a connection to the event hub. 
+    
+   :::image type="content" source="./media/add-source-azure-event-hubs/new-connection-button-2.png" alt-text="Screenshot that shows the Connect page with the New connection link selected." lightbox="./media/add-source-azure-event-hubs/new-connection-button-2.png":::       
+
+   If there's an existing connection to your Azure event hub, you select that existing connection, and then move on to the [Configure and connect to the Azure event hub resource](#configure-and-connect-to-the-azure-event-hub) section.
+       
+1. In the popup window, all the fields (Event Hubs namespace, Event hub, Connection name, Authentication kind, Shared access key name, and Shared access key value) should be automatically filled. You might want to update the connection name. For example: `mynamespace-myehub-connection`. Select **Connect** at the bottom of the window. You see the connection in the **Connection** drop-down list. The next time you launch the Connection wizard for the same event hub, you see this connection in the drop-down list. 
+
+   :::image type="content" source="./media/add-source-azure-event-hubs/connection-in-list.png" alt-text="Screenshot that shows the Connect page with the connection you created." lightbox="./media/add-source-azure-event-hubs/connection-in-list.png":::        
+    
+   Skip the **Data sources page** section, and continue to the [Configure and connect to the Azure event hub resource](#configure-and-connect-to-the-azure-event-hub) section.
+
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
+4. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Event Hubs** tile. 
+
+    :::image type="content" source="./media/add-source-azure-event-hubs/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Data sources page." lightbox="./media/add-source-azure-event-hubs/select-azure-event-hubs.png":::
+    
+    Now, follow instructions from the [Connect to an Azure event hub](#configure-and-connect-to-the-azure-event-hub) section.
+
+### Configure connection settings and credentials
 1. To create a connection to an event hub, on the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-event-hubs/new-connection-button.png" alt-text="Screenshot that shows the Connect page with the New connection link highlighted." lightbox="./media/add-source-azure-event-hubs/new-connection-button.png":::     
 
-    If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the step to configure the **data format**.
+    If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the [Configure and connect to the Azure event hub resource](#configure-and-connect-to-the-azure-event-hub) section.    
 
     :::image type="content" source="./media/add-source-azure-event-hubs/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/add-source-azure-event-hubs/existing-connection.png":::    
 1. In the **Connection settings** section, do these steps:
@@ -69,6 +92,11 @@ You can get events from an Azure event hub into Real-Time hub in one of the ways
     1. Select **Connect** at the bottom of the page.
         
         :::image type="content" source="./media/add-source-azure-event-hubs/connect-page-1.png" alt-text="Screenshot that shows the Connect page one for Azure Event Hubs connector." lightbox="./media/add-source-azure-event-hubs/connect-page-1.png":::
+
+        Now, continue to [Configure and connect to the Azure event hub resource](#configure-and-connect-to-the-azure-event-hub).        
+
+## Configure and connect to the Azure event hub
+
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub.
 1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure event hub. 
 1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create.

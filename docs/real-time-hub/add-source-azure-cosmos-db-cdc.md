@@ -5,9 +5,8 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - build-2024
   - references_regions
-ms.date: 09/10/2024
+ms.date: 11/18/2024
 ---
 
 # Add Azure Cosmos DB CDC as source in Real-Time hub
@@ -46,12 +45,6 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
 
 ## Add Azure Cosmos DB CDC as a source
 
-1. On the **Select a data source** screen, select **Azure Cosmos DB (CDC)**.
-
-    :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/select-azure-cosmos-db-cdc.png" alt-text="Screenshot that shows the Select a data source page with Azure Cosmos DB (CDC) selected.":::
-1. Select **Go to resource** link if you want to navigate to the Azure Cosmos DB account in the Azure portal.
-
-    :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with **Go to resource** link highlighted." lightbox="./media/add-source-azure-cosmos-db-cdc/go-to-resource.png":::
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png" alt-text="Screenshot that shows the Add source wizard Connect page. with the **New connection** link highlighted." lightbox="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png":::

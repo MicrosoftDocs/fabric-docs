@@ -55,12 +55,16 @@ items:
       href: add-source-azure-sql-managed-instance-cdc.md
     - name: SQL Server on Virtual Machine Database CDC
       href: add-source-sql-server-on-vm-db-cdc.md
+    - name: Azure Data Explorer
+      href: add-source-azure-data-explorer.md
   - name: External sources 
     items:
     - name: Google Cloud Pub/Sub
       href: add-source-google-cloud-pub-sub.md
     - name: Amazon Kinesis Data Streams 
       href: add-source-amazon-kinesis-data-streams.md
+    - name: Apache Kafka
+      href: add-source-apache-kafka.md
     - name: Amazon Managed Streaming for Kafka
       href: add-source-amazon-managed-streaming-for-kafka.md
     - name: Confluent Cloud Kafka
