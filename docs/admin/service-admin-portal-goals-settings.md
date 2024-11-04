@@ -9,11 +9,11 @@ ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 11/04/2024
 LocalizationGroup: Administration
 ---
 
-# Metrics tenant settings 
+# Metrics Hub tenant settings 
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
@@ -22,6 +22,23 @@ These settings are configured in the tenant settings section of the Admin portal
 Users in the organization can create and use metrics in Power BI.
 
 To learn more, see [Get started with metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
+
+## Metric sets setting (preview)
+
+To turn on the Metrics hub for your organization, the Power BI or Fabric tenant admin should turn on the tenant admin setting for Metrics in your organization. After you turn on the setting, the new Metric set area within the metrics hub visible. The Metric set setting is disabled by default. Turning on this setting shows the new metric hub UI (metric sets) in the classic metric hub experience, allowing users to create, browse, and consume metrics and metric sets.
+
+To turn on the Metrics set setting:
+
+:::image type="content" source="media/service-admin-portal-goals-settings/metric-admin-setting.png" alt-text="Screenshot of how to get to the Metric sets settings." lightbox="media/service-admin-portal-goals-settings/metric-admin-setting.png":::
+
+1. Make sure you are in Fabric tenant settings and use the Search feature to find the metric set settings.
+1. Toggle the **Users can discover and use metrics** switch to on.
+1. Specify who can access metric sets in Power BI. 
+1. Select Apply to save your changes.
+
+## Copilot summaries
+
+If Copilot tenant settings are on, Copilot summaries of metrics are available. For more information about Copilot tenant settings, read [Copilot tenant settings](service-admin-portal-copilot.md).
 
 ## Related content
 
