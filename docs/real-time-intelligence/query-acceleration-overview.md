@@ -4,7 +4,7 @@ description: Overview on learning how to use the query acceleration policy over 
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 11/03/2024
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
