@@ -46,7 +46,7 @@ Once you select a property or event stream, you see a preview of the values for 
 
 ### Step 2: Make a new rule
 
-To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
+To create a new rule, from the ribbon, select **New trigger**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger.":::
 
@@ -107,7 +107,7 @@ To create a property, select the stream added to the object that you're interest
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-10.png" alt-text="Screenshot of creating a property for an alert.":::
 
-Once you define a property, you can reference it from one or more rules, using the **Monitor** section. Here we reference the *Temperature* property *Too hot for medicine* rule.
+Once you define a property, you can reference it from one or more rules. Here we reference the *Temperature* property *Maximum temp last hour* rule.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert.":::
 
