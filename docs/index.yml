@@ -190,10 +190,10 @@ conceptualContent:
           - url: real-time-intelligence/get-data-local-file.md
             itemType: how-to-guide
             text: Get data into KQL database
-          - url: real-time-intelligence/event-streams/add-source-azure-event-hubs.md
+          - url: real-time-intelligence/event-streams/add-manage-eventstream-sources.md
             itemType: how-to-guide
             text: Get data with eventstreams
-          - url: real-time-hub/add-source-azure-event-hubs.md
+          - url: real-time-hub/supported-sources.md
             itemType: how-to-guide
             text: Get data with Real-Time hub          
           footerLink:
