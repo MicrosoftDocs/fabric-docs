@@ -17,7 +17,7 @@ This article explains how to enable [monitoring](workspace-monitoring-overview.m
 
 * A Power BI Premium or a Fabric capacity.
 
-* The *Workspace admins can turn on monitoring for their workspaces* [tenant setting](../admin/about-tenant-settings.md) is enabled. To enable the setting, you need to be a Fabric administrator. If you're not a Fabric administrator, ask the Fabric administrator in your organization to enable the setting.
+* The [Workspace admins can turn on monitoring for their workspaces](../admin/service-admin-portal-audit-usage.md#workspace-admins-can-turn-on-monitoring-for-their-workspaces) tenant setting is enabled. To enable the setting, you need to be a Fabric administrator. If you're not a Fabric administrator, ask the Fabric administrator in your organization to enable the setting.
 
 * You have the **admin** role in the workspace.
 
