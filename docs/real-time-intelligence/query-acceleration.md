@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 11/04/2024
+ms.date: 11/19/2024
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
 # Query acceleration over OneLake shortcuts (preview)
