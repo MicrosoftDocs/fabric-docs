@@ -29,7 +29,7 @@ To turn on the Metrics hub for your organization, the Power BI or Fabric tenant 
 
 To turn on the Metrics set setting:
 
-:::image type="content" source="media/service-admin-portal-goals-settings/metric-admin-setting.png" alt-text="Screenshot of how to get to the Metric sets settings.":::
+:::image type="content" source="media/service-admin-portal-goals-settings/metric-admin-setting.png" alt-text="Screenshot of how to get to the Metric sets settings." lightbox="media/service-admin-portal-goals-settings/metric-admin-setting.png":::
 
 1. Make sure you are in Fabric tenant settings and use the Search feature to find the metric set settings.
 1. Toggle the **Users can discover and use metrics** switch to on.
