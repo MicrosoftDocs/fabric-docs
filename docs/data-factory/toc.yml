@@ -423,6 +423,12 @@
         href: connector-lakehouse.md
       - name: Configure in a data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
+    - name: MariaDB
+      items:
+      - name: MariaDB - Overview
+        href: connector-mariadb-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-mariadb-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Microsoft 365 - Overview
