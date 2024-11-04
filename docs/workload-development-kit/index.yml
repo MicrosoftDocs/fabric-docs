@@ -54,8 +54,8 @@ landingContent:
           url: extensibility-back-end.md
         - text: Azure web app deployment tutorial
           url: azure-web-app-deployment-tutorial.md  
-        - name: Onboard to the Monitoring hub
-          href: monitoring-hub.md
+        - text: Onboard to the Monitoring hub
+          url: monitoring-hub.md
 
   # Card 
   - title: Concepts
