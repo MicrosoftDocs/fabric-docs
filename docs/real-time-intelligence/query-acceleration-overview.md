@@ -10,11 +10,13 @@ ms.date: 11/03/2024
 ---
 # Query acceleration over OneLake shortcuts - overview (preview)
 
-OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. Query acceleration allows specifying a policy on top of external delta tables that defines the number of days to cache data for high-performance queries. 
+OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. 
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+Query acceleration allows specifying a policy on top of external delta tables that defines the number of days to cache data for high-performance queries. 
 
 Query acceleration is supported in Eventhouse over delta tables from [OneLake shortcuts](onelake-shortcuts.md), Azure Data Lake Store Gen1, Amazon S3, Google Cloud Services, Azure blob storage external tables, and all destinations supported by OneLake shortcuts.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 > [!NOTE]
 > * If you have compliance considerations that require you to store data in a specific region, make sure your Eventhouse capacity is in the same region as your external table or shortcut data.
@@ -23,7 +25,9 @@ Query acceleration is supported in Eventhouse over delta tables from [OneLake sh
 
 ## When should I use query acceleration over OneLake shortcuts?
 
-Query acceleration caches data as it lands in OneLake, providing performance comparable to ingesting data in Eventhouse. By using this feature, you can accelerate data landing in OneLake, including existing data and any new updates, and expect similar performance. This eliminates the need to manage ingestion pipelines, maintain duplicate copies of data, while ensuring that data remains in sync without additional effort. The following scenarios are ideal for using query acceleration over OneLake shortcuts:
+Query acceleration caches data as it lands in OneLake, providing performance comparable to ingesting data in Eventhouse. By using this feature, you can accelerate data landing in OneLake, including existing data and any new updates, and expect similar performance. This eliminates the need to manage ingestion pipelines, maintain duplicate copies of data, while ensuring that data remains in sync without additional effort. 
+
+The following scenarios are ideal for using query acceleration over OneLake shortcuts:
 
 * **Query data in OneLake with high performace**: When you have existing workloads that are uploading data and managing it in storage (optionally in a different cloud or region), and you would like to query some or all of the data with high performance. 
 * **Combine historical data with real-time streams**:  When you want to seamlessly combine data landing in OneLake directly with real-time streams coming into Eventhouse without compromising on query speeds.  
@@ -42,7 +46,7 @@ The intial process of query acceleration is dependent on the size of the externa
 * The number of columns in the external table can't exceed 900.
 * Query performance over accelerated external delta tables which have partitions may not be optimal during preview.
 * The feature assumes delta tables with static advanced features, for example column mapping doesn't change, partitions don't change, and so on. To change advanced features, first disable the policy, and once the change is made, re-enable the policy.
-* Schema changes on the delta table must also be followed with the respective `. alter` external delta table schema, which might result in acceleration starting from scratch if there was breaking schema change.
+* Schema changes on the delta table must also be followed with the respective `.alter` external delta table schema, which might result in acceleration starting from scratch if there was breaking schema change.
 * Index-based pruning isn't supported for partitions.
 * Parquet files with a compressed size higher than 6 GB won't be cached.
 
