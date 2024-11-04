@@ -123,16 +123,16 @@ You are able to resize columns and sort the columns (ascending/descending) from 
 
 :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apirequest-timerange.png"" alt-text="Screenshot of API Request page showing time range for the list of requests.":::
 
-- View a list of recent API requests as well as past requests listed with Request ID. 
-- View the type of the operation (Query or Mutation). 
-- View the transport protocol used by the request (HTTP). 
-- View the time of request. 
-- Sort the list of requests by ascending/descending time. 
-- View duration of request. 
-- Sort the list of requests by ascending/descending duration. 
-- View response size. 
-- View the Status (Success or Failure). 
-- View the details of the request, including specific response/warning/error messages. 
+- View a list of recent API requests as well as past requests listed with Request ID.
+- View the type of the operation (Query or Mutation).
+- View the transport protocol used by the request (HTTP).
+- View the time of request.
+- Sort the list of requests by ascending/descending time.
+- View duration of request.
+- Sort the list of requests by ascending/descending duration.
+- View response size.
+- View the Status (Success or Failure).
+- View the details of the request, including specific response/warning/error messages.
 - Filter and search for specific strings or sentences.  
 
 ## Related content
