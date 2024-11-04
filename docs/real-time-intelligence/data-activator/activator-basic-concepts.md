@@ -33,9 +33,9 @@ To see your workspaces, select **Workspaces** from your left navigation pane.
 
 [Learn more about workspaces.](end-user-workspaces.md)
 
-## Activators
+## Activator and activator
 
-An activator holds all the information necessary to connect to data, monitor for conditions, and act. You typically create an activator for each business process or area you monitor.
+*Activator *is the name of the Fabric product. An *activator *is the thing that you create by using Activator. An activator holds all the information necessary to connect to data, monitor for conditions, and act. You typically create an activator for each business process or area you monitor.
 
 Once you create an activator, populate it with data. Learn how to get data into your reflex from PBI and eventstreams and ???.
 
