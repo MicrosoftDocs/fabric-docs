@@ -4,15 +4,15 @@ description: This article describes the available REST APIs for Fabric mirroring
 author: xuyangit1
 ms.author: xuyan
 ms.topic: conceptual
-ms.date: 10/25/2024
+ms.date: 11/01/2024
 ---
 
 # Microsoft Fabric mirroring public REST API
 
-The public APIs for Fabric mirroring consist of two categories: (1) [CRUD operations for Fabric mirroring artifact](/rest/api/fabric/mirroreddatabase/items) and (2) [Start/stop and monitoring operations](/rest/api/fabric/mirroreddatabase/mirroring). The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/).
+The public APIs for Fabric mirroring consist of two categories: (1) [CRUD operations for Fabric mirrored database item](/rest/api/fabric/mirroreddatabase/items) and (2) [Start/stop and monitoring operations](/rest/api/fabric/mirroreddatabase/mirroring). The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/).
 
 > [!NOTE]
-> Support for **Mirroring Azure Databricks** is not included.
+> These REST APIs don't apply to mirrored database from Azure Databricks.
 
 ## Create mirrored database
 
@@ -75,7 +75,7 @@ The payload property in above body is Base64 encoded. You can use [Base64 Encode
         "source": {
             "type": "AzureSqlDatabase",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
             }
         },
         "target": {

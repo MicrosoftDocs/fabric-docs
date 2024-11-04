@@ -11,7 +11,7 @@ ms.search.form: Data Activator Detection Condition
 
 # Detection settings in Data Activator
 
-This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Data Activator and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking.
+This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Data Activator and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking. 
 
 > [!IMPORTANT]
 > Data Activator is currently in preview.
