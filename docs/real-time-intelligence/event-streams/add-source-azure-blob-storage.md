@@ -1,6 +1,6 @@
 ---
 title: Add Azure Blob Storage event source to an eventstream
-description: Learn how to add Azure Blob Storage event source to an eventstream.
+description: Learn how to add Azure Blob Storage event source to an eventstream. This feature is currently in preview. 
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
