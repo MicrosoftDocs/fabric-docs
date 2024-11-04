@@ -32,7 +32,7 @@ For data plane APIs, this tab can be used as a means to manage granular permissi
 Ideally you should add a set of scopes for each API the workload backend exposes and validate that the token received includes those scopes when those APIs are called from the client.  
 For example: If your workload exposes 2 APIs to the client "ReadData" & "WriteData", the workload can expose 2 data plane scopes "data.read" & "data.write", and in "ReadData" API the workload will validate that "data.read" scope is included in the token before continuing with the flow - the same applies to "WriteData". 
 
-### API permissons tab on the workload’s application
+### API permissons tab on the workload’s application in Entra Id
 In this tab, you will need to add all the scopes your workload will need to exchange a token for.   
 A mandatory scope to add is "Fabric.Extend" under power bi service - note that requests to Fabric may fail without this scope.
 
