@@ -55,7 +55,7 @@ Configurations for creating new items in the product, specifying options for use
     - **icon** (object): Path to the icon used in the card.
     - **onClick** (object): Action triggered when the card is clicked.
     - **availableIn** (array): Locations where the card is available.
-    - **itemType** (string): Type of item linked to the create card.
+    - **itemType** (string): Type of item linked to the created card.
 
 ### Workspace Settings and Product Details
 
