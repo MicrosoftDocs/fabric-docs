@@ -129,6 +129,9 @@ Defines additional configurations related to job types and scheduling.
 - **itemJobTypes** (array): Categories for job types associated with the item. You can select up to two categories per item. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
 
 
+
+
+
 > [!NOTE]
 > When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
 >
