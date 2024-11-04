@@ -7,7 +7,7 @@ ms.service: fabric
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 04/29/2024
+ms.date: 11/04/2024
 ---
 
 # Audit and usage tenant settings
@@ -24,7 +24,13 @@ To learn more, see [Monitor usage metrics in the workspaces](/power-bi/collabora
 
 Per-user data is enabled for usage metrics by default. Content creator account information, such as user name and email address, is included in the metrics report. If you don't wish to gather this information for all users, you can disable the feature for specified security groups or for an entire organization. Account information for the excluded users then shows in the report as *Unnamed*.
 
-To learn more, see [Exclude user information from usage metrics reports](/power-bi/collaborate-share/service-modern-usage-metrics#exclude-user-information-from-usage-metrics-reports).
+## Show user data in the fabric Capacity Metrics app and reports
+
+This setting is affects the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) and is enabled by default.
+
+* **Enabled** -  The app shows user emails.
+
+* **Disabled** - The app doesn't show user emails.
 
 ## Azure Log Analytics connections for workspace administrators
 
