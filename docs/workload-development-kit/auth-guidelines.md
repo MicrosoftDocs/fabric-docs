@@ -23,7 +23,7 @@ Let's go over some concepts before we talk about Working with tokens & consents:
   For control plane APIs – the workload must follow the contracts defined in the workload backend and implement those APIs. 
 
 
-### Expose an API tab on the workload’s application in Entra Id (TODO: Add screenshot of the tab)
+### Expose an API tab on the workload’s application in Entra Id
 In this tab, you will need to add scopes for control plane APIs and scopes for data plane APIs: 
 * The scopes added for control plane APIs should preauthorize "Fabric Client for Workloads" application with application Id "d2450708-699c-41e3-8077-b0c8341509aa", those scopes will be included in the token that's received when Fabric calls the workload backend. 
 You need to add at least one for control plane API for the flow to work. 
@@ -32,7 +32,7 @@ For data plane APIs, this tab can be used as a means to manage granular permissi
 Ideally you should add a set of scopes for each API the workload backend exposes and validate that the token received includes those scopes when those APIs are called from the client.  
 For example: If your workload exposes 2 APIs to the client "ReadData" & "WriteData", the workload can expose 2 data plane scopes "data.read" & "data.write", and in "ReadData" API the workload will validate that "data.read" scope is included in the token before continuing with the flow - the same applies to "WriteData". 
 
-### API permissons tab on the workload’s application (TODO: Add screenshot of the tab)
+### API permissons tab on the workload’s application
 In this tab, you will need to add all the scopes your workload will need to exchange a token for.   
 A mandatory scope to add is "Fabric.Extend" under power bi service - note that requests to Fabric may fail without this scope.
 
