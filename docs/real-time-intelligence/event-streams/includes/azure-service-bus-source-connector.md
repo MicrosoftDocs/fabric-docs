@@ -4,7 +4,7 @@ description: The include files has the common content for configuring an Azure S
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ---
 
 

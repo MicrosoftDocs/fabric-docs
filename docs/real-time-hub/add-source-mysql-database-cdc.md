@@ -17,7 +17,7 @@ The Azure MySQL Database Change Data Capture (CDC) connector allows you to captu
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Created an instance of **Azure Database for MySQL – Flexible Server**.
 
 ### Set up MySQL database 

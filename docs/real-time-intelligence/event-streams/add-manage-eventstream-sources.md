@@ -5,10 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -33,7 +30,7 @@ In this article, you learn about the event sources that you can add to an events
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** for your workspace with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Prerequisites specific to each source that are documented in the following source-specific articles.
 
 ## Supported sources
@@ -58,7 +55,7 @@ Fabric event streams with enhanced capabilities support the following sources. E
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - To add an Azure Event Hubs or Azure IoT Hub as eventstream source, you need to have appropriate permission to access its policy keys. They must be publicly accessible and not behind a firewall or secured in a virtual network.
 
 ## Supported sources

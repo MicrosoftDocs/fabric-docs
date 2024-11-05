@@ -4,9 +4,7 @@ description: This include file has the common content for configuring an Azure S
 ms.author: zhenxilin
 author: alexlzx 
 ms.topic: include
-ms.custom:
-  - build-2024
-ms.date: 05/23/2024
+ms.date: 11/18/2024
 ---
 
 1. On the **Connect** page, select **New connection**.

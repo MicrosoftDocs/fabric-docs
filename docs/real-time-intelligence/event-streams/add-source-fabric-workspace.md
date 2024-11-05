@@ -5,9 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 06/06/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -39,7 +37,7 @@ Fabric event streams support the following Fabric workspace events:
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Fabric workspace with events you want to track.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 

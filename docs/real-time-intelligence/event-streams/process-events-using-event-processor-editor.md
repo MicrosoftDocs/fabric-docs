@@ -23,7 +23,7 @@ The event processor editor is a no-code experience that allows you to drag and d
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 
 
 
@@ -111,8 +111,8 @@ The event processor in Lakehouse and KQL Database (Event processing before inges
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse or KQL Database is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Get access to a workspace with Contributor or above permissions where your lakehouse or KQL Database is located.
 
 ## Design the event processing with the editor
 

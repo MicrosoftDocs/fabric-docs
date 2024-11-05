@@ -4,7 +4,7 @@ description: This include files has steps for launching the new Eventstream dial
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.date: 10/25/2024
+ms.date: 11/18/2024
 ---
 
 

@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 10/30/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -15,8 +15,8 @@ This article shows you how to add Activator destination to an eventstream.
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
-- If you already have an Activator you want to use, access to the **premium workspace** where your Activator is located with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- If you already have an Activator you want to use, access to the workspace where your Activator is located with Contributor or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

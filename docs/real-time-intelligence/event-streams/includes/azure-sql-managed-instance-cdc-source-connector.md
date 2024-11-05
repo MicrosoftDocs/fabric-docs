@@ -4,7 +4,7 @@ description: Provides the common content for configuring a SQL Server on a Virtu
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.date: 10/23/2024
+ms.date: 11/18/2024
 ---
 
 1. On the **Connect** page, select **New connection**.

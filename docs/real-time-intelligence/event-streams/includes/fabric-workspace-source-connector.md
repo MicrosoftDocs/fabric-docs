@@ -4,9 +4,7 @@ description: This include files has the common content for configuring Fabric Wo
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ---
 
 1. On the **Connect** screen, first select  **Event type(s)** of interest that you want to capture in the eventstream. By default, all supported events are captured.

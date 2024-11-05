@@ -36,7 +36,7 @@ Here are the supported Fabric workspace events:
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - A Fabric workspace with events you want to track.
 
 ## Create streams for Fabric workspace item events

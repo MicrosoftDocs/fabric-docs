@@ -4,7 +4,7 @@ description: The include files has the common content for configuring an Azure E
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.date: 10/27/2024
+ms.date: 11/18/2024
 ---
 
 1. On the **Connect** page, select **New connection**.

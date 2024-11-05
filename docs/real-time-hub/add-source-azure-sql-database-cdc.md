@@ -15,7 +15,7 @@ This article describes how to get events from Azure SQL Database Change Data Cap
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL server with an Azure SQL database.
 - Membership in the **sysadmin** fixed server role for the SQL Server, and **db_owner** role on the database.
 - CDC enabled on your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).

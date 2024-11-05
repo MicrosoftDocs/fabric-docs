@@ -37,7 +37,7 @@ For more information about available event types, see [Azure Blob Storage as Eve
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - An Azure Blob Storage account of kind **StorageV2** (general purpose v2), Block Blob Storage, or Blob Storage. General purpose v1 storage accounts aren't supported.
 
 ## Create streams for Azure Blob Storage events
