@@ -79,7 +79,7 @@ OBO failures because of conditional access policies return a string called "clai
 
 Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
 
-**To learn more about this additionalScopesToConsent and claimsForConditionalAccessPolicy and see examples of usage, see [Workload authentication guidelines & deep dive](./auth-guidelines.md).**
+**To learn more about this additionalScopesToConsent and claimsForConditionalAccessPolicy and see examples of usage, see [Workload authentication guidelines & deep dive](./authentication-guidelines.md).**
 
 ### promptFullConsent
 When passed as true, a full consent of the static dependencies will pop for the user regardless whether it provided a consent previosuly or not.
