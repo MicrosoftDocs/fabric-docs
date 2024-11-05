@@ -54,7 +54,7 @@ To create a new rule, from the ribbon, select **New rule**. Give it a new name b
 
 Next, choose the type of condition that you want to detect. You can use conditions that check:
 
-- when a numeric value goes over or below a threshold (for example, Temperature is greater than 30),
+- when a numeric value goes over or below a threshold (for example, temperature is greater than 30),
 - when a logical true/false value changes (for example, HasFault becomes True), or 
 - when a string value changes (for example, Status changes from InCompliance).
 
@@ -68,7 +68,7 @@ If you navigate to the **Analytics** tab, there are two charts. The first shows 
 
 ### Step 4: Define the action to take
 
-Finally, use the Act section to choose what to do when the condition is detected.
+Finally, use the **Action** section to choose what to do when the condition is detected.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
 
@@ -82,7 +82,7 @@ You can also select **Edit action** to see an editor with a preview of the messa
 
 After you create a rule, test it by selecting **Send me a test alert**. Selecting this button finds a past event for which the rule activation is *true* and sends you an alert so that you can see what the alert looks like for that event.  
 
-* The test alert always goes to you, regardless of the recipient field in the **Act** card
+* The test alert always goes to you, regardless of the recipient field in the **Action** card
 * The **Send me a test alert** option is only enabled if you have at least one past event for which the trigger condition is true.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing an alert.":::
