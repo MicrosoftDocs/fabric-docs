@@ -33,21 +33,21 @@ To see your workspaces, select **Workspaces** from your left navigation pane.
 
 *Activator *is the name of the Fabric product. An *activator *is the thing that you create by using Activator. An activator holds all the information necessary to connect to data, monitor for conditions, and act. You typically create an activator for each business process or area you monitor.
 
-Once you create an activator, populate it with data. Learn how to get data into your reflex from [Power BI](data-activator-get-data-power-bi.md), [eventstreams](data-activator-get-data-eventstreams.md), and [Real-Time Hub](data-activator-get-data-real-time-hub.md).
+Once you create an activator, populate it with data. Learn how to get data into your activator from [Power BI](data-activator-get-data-power-bi.md), [eventstreams](data-activator-get-data-eventstreams.md), and [Real-Time Hub](data-activator-get-data-real-time-hub.md).
 
 ## Events and eventstreams
 
 Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields you’re monitoring. Eventstreams vary in frequency. IoT sensors might have events many times per second. While packages being scanned in and out of shipping locations might have sporadic streams.
 
-The event streams feature in the Microsoft Fabric Real-Time Intelligence experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the Eventstream item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. Activator takes actions on patterns or conditions that are detected in Eventstream data. For example, Activator monitors Eventstream items and detects when an "event" hits certain thresholds such as "delivery time more than 10 hours."  It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
+An *eventstream* is an instance of the Eventstream item in Fabric. The eventstreams feature in the Microsoft Fabric Real-Time Intelligence experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). Activator takes actions on patterns or conditions that are detected in eventstream data. For example, Activator monitors eventstream items and detects when an "event" hits certain thresholds such as "delivery time more than 10 hours." It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
 Data being observed from Power BI is also treated as an eventstream. In this case, events are observations made of the data on a regular schedule that typically matches the refresh frequency of your Power BI semantic model (previously known as a dataset). These observations might only happen once a day, or even once a week – it’s just a slowly changing eventstream.
 
 ## Objects
 
-The business objects that you want to monitor could be physical objects like freezers, vehicles, packages, and users. The business object can also be less tangible concepts like advertising campaigns, accounts, and user sessions. In your activator, you model the object by connecting one or more eventstreams, choosing a column for the object ID, and specifying the fields you want to make properties of the object.
+The business objects that you want to monitor could be physical objects like freezers, vehicles, packages, and users. The business object can also be a less tangible concept like advertising campaigns, accounts, and user sessions. In your activator, you model the object by connecting one or more eventstreams, choosing a column for the object ID, and specifying the fields you want to make properties of the object.
 
-The term *object instance* refers to a specific freezer/vehicle/package etc. where object is typically used for the definition or class of object. We use population to refer to all of the object instances.
+The term *object instance* refers to a specific freezer/vehicle/package etc., where object is typically used for the definition or class of object. We use population to refer to all of the object instances.
 
 ## Rules
 
@@ -59,7 +59,7 @@ When a rule’s conditions are met, and an action is initiated, then the rule is
 
 ## Properties
 
-Properties are useful when you want to reuse logic across multiple rules. You might define a property on a Freezer object that smooths out the temperature readings over a one-hour period. You could then use that smoothed value in many other rules.
+Properties are useful when you want to reuse logic across multiple rules. You might define a property on a freezer object that smooths out the temperature readings over a one-hour period. You can then use that smoothed value in many other rules.
 
 ### Lookback period 
 
