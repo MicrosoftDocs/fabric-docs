@@ -56,7 +56,7 @@ If you're experiencing mirroring problems, perform the following database level 
 
 The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled, and must be the primary identity. For more information, see [Create an Azure SQL Database server with a user-assigned managed identity](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=azure-portal).
 
-After enablement, if SAMI is disabled or removed, the mirroring of Azure SQL Database to Fabric OneLake will fail.
+After enablement, if SAMI setting status is either turned Off or initially turned On, then turned Off and then turned back On again, the mirroring of Azure SQL Database to Fabric OneLake will fail.
 
 The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following: `SELECT * FROM sys.dm_server_managed_identities;`
 
