@@ -1,6 +1,6 @@
 ---
-title: Dataflow Gen2 with CICD and Git integration
-description: Describes how to use Dataflow Gen2 with CICD and Git integration in Fabric Data Factory.
+title: Dataflow Gen2 with CI/CD and Git integration
+description: Describes how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
 ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
@@ -8,9 +8,9 @@ ms.topic: how-to
 ms.date: 10/07/2024
 ---
 
-# Dataflow Gen2 with CICD and Git integration support (Preview)
+# Dataflow Gen2 with CI/CD and Git integration support (Preview)
 
-Dataflow Gen2 now supports CICD and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that's connected to your fabric workspace. Additionally, you can use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. Also, you can use the Fabric CRUDL API to manage Dataflow Gen2. This article goes deeper into how to use Dataflow Gen2 with CICD and Git integration in Fabric Data Factory.
+Dataflow Gen2 now supports Continuous Integration/Continuous Deployment (CI/CD) and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that's connected to your fabric workspace. Additionally, you can use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. Also, you can use the Fabric Create, Read, Update, Delete, and List (CRUDL) API to manage Dataflow Gen2. This article goes deeper into how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
 
 ## New features
 
@@ -38,7 +38,7 @@ To create a Dataflow Gen2 with CI/CD and Git support, follow these steps:
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item.png" alt-text="Screenshot of the New item window with the Dataflow Gen2 item emphasized.":::
 
-1. Give your dataflow a name and enable the GIT integration. The select **Create**.
+1. Give your dataflow a name and enable the Git integration. Then select **Create**.
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item-set-name.png" alt-text="Screenshot of the New Dataflow Gen2 window with the dataflow name set and Git integration emphasized and selected.":::
 
@@ -98,7 +98,7 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 
 ## Use the Fabric CRUDL API to manage Dataflow Gen2
 
-With CICD and Git integration support, we also introduced the Fabric CRUDL API to manage Dataflow Gen2. You can use the API to create, read, update, delete, and list Dataflow Gen2 dataflows. The API is available in the Fabric API reference.
+With CI/CD and Git integration support, we also introduced the Fabric CRUDL API to manage Dataflow Gen2. You can use the API to create, read, update, delete, and list Dataflow Gen2 dataflows. The API is available in the Fabric API reference.
 
 ## Limitations and known issues
 
