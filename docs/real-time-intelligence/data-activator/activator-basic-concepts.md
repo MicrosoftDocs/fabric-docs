@@ -17,13 +17,13 @@ There are many objects and concepts that make up Activator, too many to cover in
 
 ## Activator creation workflow
 
-A typical Activator workflow involves many of these concepts. One common workflow starts with creating a new empty activator in a workspace and using ***Get events*** to connect to an eventstream. From that eventstream you create objects and properties. Then you build a rule based on those objects and properties. For example: email me if the temperature of the package becomes greater than 60 degrees. To create a rule on that object, the designer sets conditions, parameters, and aggregations that tell Activator when to trigger and what actions to take when triggered. For example: send an email, create a Fabric item, start a Power Automate action. Another common workflow is to start from the Eventstream itself. From there you add an Activator destination, and create the new activator from there. Once the activator is created, open that activator and create the objects and properties. 
+A typical Activator workflow involves many of these concepts. One common workflow starts with creating a new empty activator in a workspace and using ***Get events*** to connect to an eventstream. From that eventstream, you create objects and properties. Then you build a rule based on those objects and properties. For example: email me if the temperature of the package becomes greater than 60 degrees. To create a rule on that object, the designer sets conditions, parameters, and aggregations that tell Activator when to trigger and what actions to take when triggered. For example: send an email, create a Fabric item, or start a Power Automate action. Another common workflow is to start from the eventstream itself. From the eventstream you add an Activator destination and create the new activator. Once the activator is created, open that activator and create the objects and properties. 
 
 ![A basic Real-Time Intelligence Activator workflow chart.](media/end-user-basic-concepts/activator-workflow.png)  
 
 ## Workspaces
 
-As with all Fabric workloads, you can begin using Fabric Activator by creating an item in a Fabric workspace. Fabric Activator’s items are called *activators.* Workspaces are places to collaborate with colleagues on specific content. Workspaces hold collections of dashboards, reports, eventstreams, activators, and more. When a workspace owner gives you access to a workspace, they also give you view or edit permissions to the content in that workspace. This includes giving you access to view or edit the activator rules in that workspace.
+As with all Fabric workloads, you can begin using Fabric Activator by creating an item in a Fabric workspace. Fabric Activator’s items are called *activators.* Workspaces are places to collaborate with colleagues on specific content. Workspaces hold collections of dashboards, reports, eventstreams, activators, and more. When a workspace owner gives you access to a workspace, they also give you view or edit permissions to the content in that workspace. This access includes giving you permissions to view or edit the activator rules in that workspace.
 
 Everyone also has a **My workspace**. **My workspace** is your personal sandbox where you create content for yourself.
 
@@ -46,10 +46,6 @@ Once you create an activator, populate it with data. Learn how to get data into 
 Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields you’re monitoring. Eventstreams vary in frequency from many times per second for IoT sensors, to more sporadic streams such as packages being scanned in and out of shipping locations.
 
 Data being observed from Power BI is also treated as an eventstream. In this case, events are observations made of the data on a regular schedule that typically matches the refresh frequency of your Power BI semantic model (previously known as a dataset). These observations might only happen once a day, or even once a week – it’s just a slowly changing event stream.
-@MI77 MI77 3 days ago
-I think "event stream" with a space makes it clear it's separate from the Eventstream item type.
-
-@mihart	Reply...
 
 ## Objects
 
@@ -73,11 +69,11 @@ Properties are useful when you want to reuse logic across multiple rules. You mi
 
 Activator needs to track historical data to ensure that correct actions can be computed. The amount of historical data to be queried is called the lookback period. This lookback period depends on how a rule is defined as well as the data volume (events per second) of the data that is needed to evaluate the rule. 
 
-For example, let’s say a pharmaceutical logistics operation is transporting medicine packages in a cold chain. The goal is to get an alert when a medicine package becomes too warm. Say the rule definition evaluates the average temperature over a three-hour period for each individual package, with the rule condition being that the average temperature becomes greater than 8°C. Here, the lookback period would be six hours, as Activator needs to inspect six hours’ worth of historical data to decide whether the rule condition holds. 
+For example, let’s say a pharmaceutical logistics operation is transporting medicine packages in a cold chain. The goal is to get an alert when a medicine package becomes too warm. Say the rule definition evaluates the average temperature over a three-hour period for each individual package, with the rule condition being that the average temperature becomes greater than 8°C. Here, the lookback period would be six hours. Activator needs to inspect six hours’ worth of historical data to decide whether the rule condition holds. 
 
 ### Distinct, active object IDs 
 
-Rules built on attributes are used to monitor how an attribute on an object ID changes over time. In the pharmaceutical logistics operation example, each individual package is represented by a unique ID, with the data source providing periodic readings of the temperature of each package. Some limits are defined in terms of the number of distinct object IDs (in the case of the example, the number of packages) being tracked by Activator within the lookback period. Activator will track active object IDs, which are object IDs that have had an event on them within the stored period.
+Rules built on attributes are used to monitor how an attribute on an object ID changes over time. In the pharmaceutical logistics example, each individual package is represented by a unique ID, with the data source providing periodic readings of the temperature of each package. Some limits are defined in terms of the number of distinct object IDs (in the case of the example, the number of packages) being tracked by Activator within the lookback period. Activator tracks active object IDs. An active object IDs is an object where events are arriving within the stored period. For example, a toll station that has cars passing through.
 
 ## Related content
 
