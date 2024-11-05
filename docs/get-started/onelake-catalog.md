@@ -1,26 +1,47 @@
 ---
-title: Discover Fabric content in the OneLake data hub
-description: Learn how you can find, explore, and use the Fabric items in your organization.
+title: Discover and explore Fabric items in the OneLake catalog
+description: Learn how to discover and explore your organization's Fabric items in the OneLake catalog.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: conceptual
-ms.date: 01/25/2024
-ms.custom:
-  - build-2023
-  - ignite-2023-fabric
+ms.date: 11/05/2024
+ms.custom: ignite-2023-fabric
 ---
 
-# Discover data items in the OneLake data hub
+# Discover and explore Fabric items in the OneLake catalog
+
+OneLake catalog Explore is a centralized place that helps you find, explore, and use the Fabric items you need.
+
+
+
+What do I see in OneLake catalog Explore?
+Items list: You see all the items you have access to.
+Filters: Provide various ways of shortening the list to help you discover the relevant items.
+
+Item filters
+All items
+My items
+Endorsed items
+Favorited itemsst
+Workspace filter
+
+
+Item details
+Overview
+Lineage [What is the difference between lineage tab and workspace lineage view.] Do all items have the lineage tab? What does it mean when the lineage tab is greyed out?
+Monitor
+
+Action bar
 
 The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them.
 
-Data items are items that store data, such as lakehouses, warehouses, and semantic models.
 
-> [!NOTE]
-> Dataflows aren't considered data items, and thus they aren't listed in the OneLake data hub and can't be found there.
 
-The data hub provides:
+in your organization that you have access to item types in Fabric. This includes the most popular insight item types (preview): dashboards and reports, as well as the full range of configuration, solution, and process item types. All in one place. 
+
+
+OneLake catalog Explore provides:
 
 * [A filterable list of all the data items you can access](#find-items-in-the-data-items-list)
 * [A gallery of recommended data items](#find-recommended-items)
@@ -28,30 +49,21 @@ The data hub provides:
 * [A way to display only the data items of a selected domain](#display-only-data-items-belonging-to-a-particular-domain)
 * [An options menu of things you can do with the data item](#open-an-items-options-menu)
 
-This article explains what you see on the data hub and describes how to use it.
+This article explains what you see in OneLake catalog Explore and describes how to use it.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-general.png" alt-text="Screenshot of the OneLake data hub." lightbox="./media/onelake-data-hub/onelake-data-hub-general.png":::
 
-## Open the data hub
+## Open the OneLake catalog Explore
 
-To open the data hub, select the OneLake data hub icon in the navigation pane.
+To open the data hub, select the OneLake icon in the Fabric navigation pane.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-open.png" alt-text="Screenshot showing how to open the OneLake data hub.":::
 
-## Find items in the data items list
+## Find items in the items list
 
-The data items list displays all the data items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list. If you select the name of an item, you'll get to the item's details page. If you hover over an item, you'll see three dots that open the [options menu](#open-an-items-options-menu) when you select them.
+The items list displays all the Fabric items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list. If you select the name of an item, you'll get see the item's details. If you hover over an item, you'll see three dots that open the [options menu](#open-an-items-options-menu) when you select them.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="./media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
-
-The list has four tabs to narrow down the list of items.
-
-|Tab  |Description  |
-|:-------------------------|:----------------------------------------------------|
-| **All data**                  | Data items that you're allowed to find.  |
-| **My data**              | Data items that you own.      |
-| **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
-| **Favorites** | Data items that you've marked as favorites. |
 
 The columns of the list are described below.
 
@@ -65,7 +77,18 @@ The columns of the list are described below.
 | **Endorsement**  | [Endorsement](../governance/endorsement-overview.md) status. |
 | **Sensitivity**  | Sensitivity, if set. Select the info icon to view the sensitivity label description. |
 
-## Find items by workspace
+### Item filters
+
+Item filters help you narrow down the list of items.
+
+|Tab  |Description  |
+|:-------------------------|:----------------------------------------------------|
+| **All Items**                  | Items that you're allowed to find.  |
+| **My items**              | Items that you own.      |
+| **Endorsed items** | Endorsed items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
+| **Favorites** | Items that you've marked as favorites. |
+
+### Find items by workspace
 
 Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading to the side of the items list. The items you're allowed to see in that workspace will be displayed in the items list.
 
@@ -74,9 +97,36 @@ Related items are often grouped together in a workspace. To find items by worksp
 > [!NOTE]
 >Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
 
-## Find recommended items
 
-Use the tiles across the top of the data hub to find and explore recommended data items. Recommended data items are data items that have been [certified or promoted](../governance/endorsement-overview.md) by someone in your organization or have recently been refreshed or accessed.  Each tile contains information about the item and an [options menu](#open-an-items-options-menu) for doing things with the item. When you select a recommended tile, you are taken to the item's details page.
+## Filter to find items
+
+### All items by item classification
+
+Fabric items are classified into buckets based on what they are for. For example, items that contain data, such as lakehouses and semantic models, are bucketed under Data items, while reports and dashboards are bucketed under Insights. Use the item type bucket selector to select the item type bucket of interest.
+
+|Tab  |Description  |
+|:-------------------------|:----------------------------------------------------|
+| **All data**                  | Data items that you're allowed to find.  |
+| **My data**              | Data items that you own.      |
+| **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
+| **Favorites** | Data items that you've marked as favorites. |
+
+### Find items by tag
+
+Use the tags selector to display items tagged with the tags you select. 
+
+> [!NOTE]
+> The tag selector is only visible if tags are enabled in your organization.
+
+
+### Find items by workspace
+
+Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading to the side of the items list. The items you're allowed to see in that workspace will be displayed in the items list.
+
+:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-explorer-pane.png" alt-text="Screenshot of the OneLake data hub Explorer pane.":::
+
+> [!NOTE]
+>Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
 
 ## Display only data items belonging to a particular domain
 
