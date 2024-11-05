@@ -15,7 +15,7 @@ The Microsoft Fabric REST APIs enable you to automate Fabric procedures and proc
 
 In Fabric, an **item** represents a set of capabilities within a specific experience. For example, Eventstream is an item under the Real-time Intelligence experience. Each item in Fabric is defined by an **item definition**—an object that outlines the structure, format, and key components that make up the item.
 
-This article offers a comprehensive guide on using the Microsoft Fabric REST APIs to create and manage Eventstream items within your Fabric workspace. You’ll find detailed specifications for each Eventstream API operation, along with instructions for setting up and configuring your API calls.
+This article offers a comprehensive guide on using the Microsoft Fabric REST APIs to create and manage Eventstream items within your Fabric workspace. You find detailed specifications for each Eventstream API operation, along with instructions for setting up and configuring your API calls.
 
 For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](https://learn.microsoft.com/rest/api/fabric/articles/using-fabric-apis)
 
@@ -61,7 +61,7 @@ The Eventstream item definition follows a graph-like structure and consists of t
 
 | **Field** | **Description** |
 | --------  | ---------------- |
-| [Sources](#define-a-source-in-the-api-body) | Data sources that can be ingested into Eventstream for processing. This includes Azure streaming sources, third-party streaming sources, database CDC (change data capture), Azure Blob Storage events, and Fabric system events. |
+| [Sources](#define-a-source-in-the-api-body) | Data sources that can be ingested into Eventstream for processing. Supported data sources include Azure streaming sources, third-party streaming sources, database CDC (change data capture), Azure Blob Storage events, and Fabric system events. |
 | [Destinations](#define-a-destination-in-the-api-body) | Endpoints within Fabric where processed data can be routed to, including Lakehouse, Eventhouse, Reflex, and others. |
 | [Operators](#define-an-operator-in-the-api-body) | Event processors that handle real-time data streams, such as Filter, Aggregate, Group By, and Join. |
 | [Streams](#define-a-stream-in-the-api-body) | Data streams available for subscription and analysis in the Real-time Hub. There are two types of streams: default streams and derived streams. |
