@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Rule Creation
-ms.date: 11/1/2024
+ms.date: 11/4/2024
 ---
 
 # Create Data Activator rules
@@ -46,7 +46,7 @@ Once you select a property or event stream, you see a preview of the values for 
 
 ### Step 2: Make a new rule
 
-To create a new rule, from the ribbon, select **New trigger**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
+To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger.":::
 
@@ -70,7 +70,7 @@ If you navigate to the **Analytics** tab, there are two charts. The first shows 
 
 Finally, use the Act section to choose what to do when the condition is detected.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
 
 Different action types have different parameters. Some of those parameters are: the email address you want to send to, the workflow you want to start, subject line, or additional information.
 
