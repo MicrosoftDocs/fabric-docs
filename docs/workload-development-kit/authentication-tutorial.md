@@ -189,4 +189,4 @@ After configuring your application, update the following configurations in `.env
 
 :::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a `.env.dev` file.":::
 
-To understand how to work with authentication in workloads, see [Workload authentication guidelines & deep dive](./auth-guidelines.md).
+To understand how to work with authentication in workloads, see [Workload authentication guidelines & deep dive](./authentication-guidelines.md).
