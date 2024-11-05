@@ -6,15 +6,16 @@ ms.author: anboisve
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 09/10/2024
 ---
 
 # Get Azure Blob Storage events into Real-Time hub (preview)
-This article describes how to get Azure Blob Storage events into Fabric Real-Time hub. 
+
+This article describes how to get Azure Blob Storage events into Fabric Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-An event is the smallest amount of information that fully describes something has happened in a system. Azure Blob Storage events are triggered when a client creates, replaces, deletes a blob, etc. By using the Real-Time hub, you can convert these events into continuous data streams and transform them before routing them to various destinations in Fabric. 
+An event is the smallest amount of information that fully describes that something happened in a system. Azure Blob Storage events are triggered when a client creates, replaces, deletes a blob, etc. By using the Real-Time hub, you can convert these events into continuous data streams and transform them before routing them to various destinations in Fabric.
 
 The following Blob Storage event types are supported:
 
@@ -35,57 +36,58 @@ For more information about available event types, see [Azure Blob Storage as Eve
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
-## Prerequisites 
+## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
-- An Azure Blob Storage account of kind **StorageV2** (general purpose v2), Block Blob Storage, or Blob Storage. General purpose v1 storage accounts aren't supported. 
+- Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
+- An Azure Blob Storage account of kind **StorageV2** (general purpose v2), Block Blob Storage, or Blob Storage. General purpose v1 storage accounts aren't supported.
 
 ## Create streams for Azure Blob Storage events
+
 You can create streams for Azure Blob Storage events in Real-Time hub using one of the ways:
 
-- [Using the **Get events** experience](#launch-get-events-experience)
-- [Using the **Fabric events** tab](#fabric-events-tab)
-
+- [Using the **Add source** experience](#launch-add-source-experience)
+- [Using the **Fabric events** page](#fabric-events-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section.
 
-## Fabric events tab
+## Fabric events page
 
-1. In Real-Time hub, switch to the **Fabric events** tab. 
-1. Move the mouse over **Azure Blob Storage**, and select the **Create stream** link or select ... (ellipsis) and then select **Create stream**. 
+1. In Real-Time hub, select **Fabric events**.
+1. Move the mouse over **Azure Blob Storage**, and select the **Create Eventstream** link or select ... (ellipsis) and then select **Create Eventstream**.
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub.":::
+    :::image type="content" source="./media/get-azure-blob-storage-events/fabric-events-menu.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page.":::
     
-    Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section, but skip the first step of using the **Get events** page. 
+    Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section, but skip the first step of using the **Add source** page.
 
 ## Configure and create an eventstream
 
-1. On the **Get events** page, select **Azure Blob Storage events**.
+1. On the **Add source** page, select **Azure Blob Storage events**.
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/select-azure-blob-storage-events.png" alt-text="Screenshot that shows the Get events page with Azure Blob Storage events selected.":::
-1. On the **Connect** page, select the **Azure subscription** that has the storage account
-1. Select the **Azure Blob Storage account** that you want to receive events for. 
+    :::image type="content" source="./media/get-azure-blob-storage-events/select-azure-blob-storage-events.png" alt-text="Screenshot that shows the Get events page with Azure Blob Storage events selected." lightbox="./media/get-azure-blob-storage-events/select-azure-blob-storage-events.png":::
+1. On the **Connect** page, select the **Azure subscription** that has the storage account.
+1. Select the **Azure Blob Storage account** that you want to receive events for.
 1. In the **Stream details** section, enter a **name for the eventstream** that the Wizard is going to create, and select the **workspace** where you want to save the eventstream.
 1. Then, select **Next** at the bottom of the page.
 
     :::image type="content" source="./media/get-azure-blob-storage-events/connect-settings.png" alt-text="Screenshot that shows the Connect settings for an Azure Blob Storage account.":::
-1. On the **Review and create** page, review settings, and select **Create source**. 
+1. On the **Review and create** page, review settings, and select **Create source**.
 
     :::image type="content" source="./media/get-azure-blob-storage-events/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/get-azure-blob-storage-events/review-create-page.png":::
 1. When the wizard succeeds in creating a stream, you see a link to **open the eventstream** and **close** the wizard.
 
     :::image type="content" source="./media/get-azure-blob-storage-events/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open the eventstream." lightbox="./media/get-azure-blob-storage-events/review-create-success.png":::
 
-## View stream on the Data streams tab
+## View stream from the All data streams page
 
-1. In **Real-Time hub**, switch to the **Data streams** tab. 
-1. Confirm that you see the stream you created. 
+1. In **Real-Time hub**, select **All data streams**.
+1. Confirm that you see the stream you created.
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab with the generated stream." lightbox="./media/get-azure-blob-storage-events/verify-data-stream.png":::
+    :::image type="content" source="./media/get-azure-blob-storage-events/verify-data-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/get-azure-blob-storage-events/verify-data-stream.png":::
 
 ## Related content
+
 To learn about consuming data streams, see the following articles:
 
 - [Process data streams](process-data-streams-using-transformations.md)

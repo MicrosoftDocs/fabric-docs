@@ -65,7 +65,7 @@ items:
   items:
   - name: Fabric and OneLake data security
     href: ./security/fabric-onelake-security.md
-  - name: OneLake Data Access Control Model
+  - name: OneLake data access control model
     href: ./security/data-access-control-model.md
   - name: Get started with securing data in OneLake
     items:
@@ -83,6 +83,12 @@ items:
       href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
     - name: For common data architectures
       href: ./security/how-to-common-data-architectures.md
+  - name: Authorize with a OneLake shared access signature (SAS)
+    items:
+    - name: What is OneLake SAS?
+      href: onelake-shared-access-signature-overview.md
+    - name: Create a OneLake SAS
+      href: how-to-create-a-onelake-shared-access-signature.md
   - name: Plan for disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
@@ -103,3 +109,5 @@ items:
   items: 
   - name: OneLake shortcuts REST API
     href: /rest/api/fabric/core/onelake-shortcuts
+  - name: OneLake data access roles REST API
+    href: /rest/api/fabric/core/onelake-data-access-security

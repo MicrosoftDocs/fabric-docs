@@ -208,7 +208,7 @@ from pyspark.sql.types import *
 
 **Cast the sales data from string to integer**
 
-Use regular expressions to separate the numeric portion of the string from the dollar sign (for example, in the string "\$300,000", split "$" and "300,000"), and then cast the numeric portion as an integer.
+Use regular expressions to separate the numeric portion of the string from the dollar sign (for example, in the string `$300,000`, split `$` and `300,000`), and then cast the numeric portion as an integer.
 
 **Next, filter the data to only include instances that meet all of these conditions:**
 

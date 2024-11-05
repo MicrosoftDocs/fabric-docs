@@ -108,6 +108,10 @@ notebookutils.fs.cp('source file or directory', 'destination file or directory',
 
 This method offers a more efficient approach to copying or moving files, particularly when dealing with large data volumes. For enhanced performance on Fabric, it is advisable to utilize `fastcp` as a substitute for the traditional `cp` method.
 
+> [!NOTE]
+> ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
+
+
 ```python
 notebookutils.fs.fastcp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
 ```
@@ -315,6 +319,9 @@ This method exits a notebook with a value. You can run nesting function calls in
 ```python
 notebookutils.notebook.exit("value string")
 ```
+
+> [!NOTE]
+> The *exit()* function will overwrite the current cell output, to avoid losing the output of other code statements, please call ```notebookutils.notebook.exit()``` in a separate cell.
 
 For example:
 
@@ -546,12 +553,12 @@ notebookutils.fs.mount(
 
 ### How to mount a lakehouse
 
-Sample code for mounting a lakehouse to */test*:
+Sample code for mounting a lakehouse to */<mount_name>*:
 
 ```python
 notebookutils.fs.mount( 
- "abfss://<workspace_id>@msit-onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
- "/test"
+ "abfss://<workspace_name>@onelake.dfs.fabric.microsoft.com/<lakehouse_name>.Lakehouse", 
+ "/<mount_name>"
 )
 ```
 

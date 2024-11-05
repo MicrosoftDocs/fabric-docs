@@ -4,7 +4,7 @@ description: A known issue is posted where mirroring for Azure Cosmos DB fails.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/06/2024
+ms.date: 10/15/2024
 ms.custom: known-issue-796
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-796
 
 You might experience issues with mirroring on a mirrored Azure Cosmos DB. The mirroring fails, and the **Monitor replication page** shows an exception.
 
-**Status:** Open
+**Status:** Fixed: October 15, 2024
 
 **Product Experience:** Data Warehouse
 

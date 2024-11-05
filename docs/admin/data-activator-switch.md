@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/07/2023
+ms.date: 09/22/2024
 ---
 
 # Enable Data Activator
@@ -24,13 +24,7 @@ In both cases, you can use security groups to provide access to a specified list
 
 ## Prerequisites
 
-To enable Data Activator, you need to have one of the following admin roles:
-
-* [Microsoft 365 Global admin](microsoft-fabric-admin.md#microsoft-365-admin-roles)
-
-* [Power Platform admin](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
-
-* [Fabric admin](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
+To enable Data Activator, you need to have the *Fabric administrator* role.
 
 ## Enable for your tenant
 
@@ -64,7 +58,7 @@ Consider the Data Activator setting a recommendation for the entire organization
 
 Follow these steps to enable Data Activator for a specific capacity.
 
-1. Navigate to the [capacity settings](service-admin-portal-capacity-settings.md) in the admin portal.
+1. Navigate to the [capacity settings](capacity-settings.md) in the admin portal.
 
 2. Select the capacity you want to enable Data Activator for.
 

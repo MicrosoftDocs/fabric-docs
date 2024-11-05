@@ -1,8 +1,8 @@
 ---
 title: Copilot for Data Factory overview
 description: "Learn how Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions."
-author: maggiesMSFT
-ms.author: maggies
+author: snehagunda
+ms.author: sngun
 ms.reviewer: alpowers
 ms.topic: conceptual
 ms.date: 06/02/2024
@@ -29,6 +29,9 @@ With Dataflow Gen2, you can:
 - Generate new transformation steps for an existing query.
 - Provide a summary of the query and the applied steps.
 - Generate a new query that may include sample data or a reference to an existing query.
+
+With Data pipelines, you can:
+- Troubleshoot data pipeline issues with the error explaination capability with troubleshooting guidance.
 
 ## Get started
 

@@ -29,18 +29,19 @@ To achieve interoperability, all the Fabric experiences align on the Delta Lake 
 
 The following matrix shows key Delta Lake features and their support on each Fabric capability.
 
-|Fabric capability|Name-based column mappings|Deletion vectors|V-order writing|Table optimization and maintenance|Write partitions|Read partitions|Delta reader/writer version and default table features|
-|---------|---------|---------|---------|---------|---------|---------|---------|
-|Data warehouse Delta Lake export|No|Yes|Yes|Yes|No|Yes|Reader: 3<br/>Writer: 7<br/>Deletion Vectors|
-SQL analytics endpoint|No|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
-Fabric Spark runtime 1.2|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
-Fabric Spark runtime 1.1|Yes|No|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
-Dataflows|Yes|Yes|Yes|No|Yes|Yes|Reader: 1<br/>Writer: 2<br/>|
-Data pipelines|No|No|Yes|No|Yes, overwrite only|Yes|Reader: 1<br/>Writer: 2|
-Power BI direct lake semantic models|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
-Export Power BI semantic models into OneLake|Yes|N/A (not applicable)|Yes|No|Yes|N/A (not applicable)|Reader: 2<br/>Writer: 5|
-KQL databases|Yes|Yes|No|No<sup>*</sup>|Yes|Yes|Reader: 1<br/>Writer: 1|
-Eventstreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1<br/>Writer: 2|
+|Fabric capability|Name-based column mappings|Deletion vectors|V-order writing|Table optimization and maintenance|Write partitions|Read partitions|Liquid Clustering|TIMESTAMP_NTZ|Delta reader/writer version and default table features|
+|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|
+|Data warehouse Delta Lake export|No|Yes|Yes|Yes|No|Yes|No|No|Reader: 3<br/>Writer: 7<br/>Deletion Vectors|
+SQL analytics endpoint|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|Yes|No|N/A (not applicable)|
+Fabric Spark Runtime 1.3|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
+Fabric Spark Runtime 1.2|Yes|Yes|Yes|Yes|Yes|Yes|Yes, read only|Yes|Reader: 1<br/>Writer: 2|
+Fabric Spark Runtime 1.1|Yes|No|Yes|Yes|Yes|Yes|Yes, read only|No|Reader: 1<br/>Writer: 2|
+Dataflows|Yes|Yes|Yes|No|Yes|Yes|Yes, read only|No|Reader: 1<br/>Writer: 2<br/>|
+Data pipelines|No|No|Yes|No|Yes, overwrite only|Yes|Yes, read only|No|Reader: 1<br/>Writer: 2|
+Power BI direct lake semantic models|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|Yes|No|N/A (not applicable)|
+Export Power BI semantic models into OneLake|Yes|N/A (not applicable)|Yes|No|Yes|N/A (not applicable)|No|No|Reader: 2<br/>Writer: 5|
+KQL databases|Yes|Yes|No|No<sup>*</sup>|Yes|Yes|No|No|Reader: 1<br/>Writer: 1|
+Eventstreams|No|No|No|No|Yes|N/A (not applicable)|No|No|Reader: 1<br/>Writer: 2|
 
 <sup>*</sup> KQL databases provide certain table maintenance capabilities such as [retention](../real-time-intelligence/data-policies.md). Data is removed at the end of the retention period from OneLake. For more information, see [One Logical copy](../real-time-intelligence/one-logical-copy.md).
 
@@ -53,12 +54,11 @@ Eventstreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1<br/>Writer: 2|
 
 Currently, Fabric doesn't support these Delta Lake features:
 
-* Column mapping using IDs
 * Delta Lake 3.x Uniform
-* Delta Lake 3.x Liquid clustering
-* TIMESTAMP_NTZ data type
 * Identity columns writing (proprietary Databricks feature)
 * Delta Live Tables (proprietary Databricks feature)
+* RLE (Run Length Encoding) enabled on the checkpoint file
+
 
 ## Related content
 

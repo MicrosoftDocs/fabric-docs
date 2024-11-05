@@ -46,15 +46,13 @@ Direct Lake provides the most performant query and reporting experience. Direct 
 
 - In Import mode, the performance is better because the data is readily available in memory, without having to query the data from the source for each query execution. However, the Power BI engine must first copy the data into the memory, at data refresh time. Any changes to the underlying data source are picked up during the next data refresh.
 
-- Direct Lake mode eliminates the Import requirement by consuming the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur. Direct Lake combines the advantages of DirectQuery and Import mode while avoiding their disadvantages. Direct Lake mode is the ideal choice for analyzing very large datasets and datasets with frequent updates at the source. Direct Lake will [automatically fallback to DirectQuery](/fabric/get-started/direct-lake-overview#fallback) using the SQL analytics endpoint of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] when Direct Lake exceeds limits for the SKU, or uses features not supported, allowing report users to continue uninterrupted. 
+- Direct Lake mode eliminates the Import requirement to copy the data by consuming the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur. Direct Lake combines the advantages of DirectQuery and Import mode while avoiding their disadvantages. Direct Lake mode is the ideal choice for analyzing very large datasets and datasets with frequent updates at the source. Direct Lake will [automatically fallback to DirectQuery](/fabric/get-started/direct-lake-overview#fallback) using the SQL analytics endpoint of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] when Direct Lake exceeds limits for the SKU, or uses features not supported, allowing report users to continue uninterrupted. 
 
 Direct Lake mode is the storage mode for default Power BI semantic models, and new Power BI semantic models created in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)]. Using Power BI Desktop, you can also create Power BI semantic models using the SQL analytics endpoint of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source for semantic models in import or DirectQuery storage mode. 
 
 ## Understand what's in the default Power BI semantic model
 
 When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md) or [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md), a default Power BI semantic model is created. The default semantic model is represented with the *(default)* suffix. You can use **Manage default semantic model** to choose tables to add.
-
-The default semantic model is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse or Warehouse. You can also query the default semantic model via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
 ### Sync the default Power BI semantic model
 
@@ -107,7 +105,7 @@ Scripting requires Power BI write permissions on the Power BI semantic model. Wi
 
 ## Create a new Power BI semantic model in Direct Lake storage mode
 
-You can also create additional Power BI semantic models in Direct Lake mode based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data. These **new Power BI semantic models** can be edited in the workspace using [Open data model](/power-bi/transform-model/service-edit-data-models) and can be used with other features such as write DAX queries and semantic model row-level security. 
+You can also create additional Power BI semantic models in Direct Lake mode using [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data. These **new Power BI semantic models** can be edited in the workspace using [Open data model](/power-bi/transform-model/service-edit-data-models) and can be used with other features such as write DAX queries and semantic model row-level security. 
 
 The **New Power BI semantic model** button creates a new blank semantic model separate from the default semantic model. 
 
@@ -125,11 +123,11 @@ To create a Power BI semantic model in Direct Lake mode, follow these steps:
 
 Power BI reports can be created in the workspace by selecting **New report** from web modeling, or in Power BI Desktop by live connecting to this new semantic model.
 
-To learn more on how to edit data models in the Power BI service, see [Edit Data Models](/power-bi/transform-model/service-edit-data-models). 
+To learn more on how to [connect to semantic models in the Power BI service from Power BI Desktop](/power-bi/connect-data/desktop-report-lifecycle-datasets)
 
 ## Create a new Power BI semantic model in import or DirectQuery storage mode
 
-Having your data in Microsoft Fabric means you can create Power BI semantic models in any storage mode -- Direct Lake, import, or DirectQuery. You can create additional Power BI semantic models in import or DirectQuery mode based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data using the of SQL endpoint.
+Having your data in Microsoft Fabric means you can create Power BI semantic models in any storage mode -- Direct Lake, import, or DirectQuery. You can create additional Power BI semantic models in import or DirectQuery mode using [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
 
 To create a Power BI semantic model in import or DirectQuery mode, follow these steps:
 

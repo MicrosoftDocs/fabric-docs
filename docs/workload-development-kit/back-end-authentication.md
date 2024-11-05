@@ -1,9 +1,8 @@
 ---
 title: Fabric Workload Development Kit backend authentication (preview)
 description: Learn about building the backend authentication of a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
@@ -23,8 +22,8 @@ The authorization header uses a specific token format:
 
 This format includes two distinct tokens:
 
-* `subjectToken`: This is a delegated token representing the user on whose behalf the operation is being performed.
-* `appToken`: This is a token specific to the Fabric application.
+* `subjectToken`: A delegated token representing the user on whose behalf the operation is being performed.
+* `appToken`: A token specific to the Fabric application.
 
 The rationale behind using a dual-token header is threefold:
 
@@ -38,9 +37,9 @@ The rationale behind using a dual-token header is threefold:
 
 The main authentication checks performed for the SubjectAndAppToken are:
 
-* **Validation and parsing of the authorization header value**: This is done in the [FetchSubjectAndAppTokenTokenFromHeader](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. The token must start with the "SubjectAndAppToken1.0" prefix and include two tokens - `subjectToken` and `appToken`.
+* **Validation and parsing of the authorization header value** is done in the [AuthenticateControlPlaneCall](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L53) method. The token must start with the "SubjectAndAppToken1.0" prefix and include two tokens - `subjectToken` and `appToken`.
 
-* **Entra token properties validation**: Both `subjectToken` and `appToken` are validated for common Microsoft Entra token properties in the [ValidateAadTokenCommon](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. These properties include token signature, token lifetime, token audience (workload app audience), and token version (1.0) and issuer.
+* **Entra token properties validation**: Both `subjectToken` and `appToken` are validated for common Microsoft Entra token properties in the [ValidateAadTokenCommon](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L252) method. These properties include token signature, token lifetime, token audience (workload app audience), and token version (1.0) and issuer.
 
 * **appToken properties validation**: The `appToken` shouldn't have an `scp` claim but should have an `idtyp` claim with *app* as the value. We also check that `tid` claim in the workload publisher tenant ID.
 
@@ -54,7 +53,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
     "nbf": 1700047232,
     "exp": 1700133932,
     "aio": "E2VgYLjBuv2l+c6cmm/iP/bnL2v+AQA=",
-    "appid": "00000009-0000-0000-c000-000000000000",
+    "appid": "d2450708-699c-41e3-8077-b0c8341509aa"
     "appidacr": "2",
     "idp": "https://sts.windows.net/12345678-77f3-4fcc-bdaa-487b920cb7ee/",
     "idtyp": "app",
@@ -83,7 +82,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
     "amr": [
         "pwd"
     ],
-    "appid": "00000009-0000-0000-c000-000000000000",
+    "appid": "d2450708-699c-41e3-8077-b0c8341509aa"
     "appidacr": "2",
     "ipaddr": "46.117.19.50",
     "name": "john doe",
@@ -99,14 +98,14 @@ The main authentication checks performed for the SubjectAndAppToken are:
     }
     ```
 
-See [IAuthenticationService](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/IAuthenticationService.cs).
+See [IAuthenticationService](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/IAuthenticationService.cs).
 
 > [!NOTE]
 > All the validations in our sample code are for version 1.0 tokens.
 
 ### Authorization
 
-Once it's been confirmed that the request originates from the Fabric service (via the `appToken`), it's understood that Fabric has already verified that the user has the necessary permissions to perform the action, based on Fabric's permissions metadata.
+Once confirmed that the request originates from the Fabric service (via the `appToken`), Fabric verified that the user has the necessary permissions to perform the action, based on Fabric's permissions metadata.
 
 ## Authentication and authorization of requests from workload to Fabric
 
@@ -116,19 +115,19 @@ Workload control APIs are special Fabric APIs that support workloads with their 
 
 `SubjectAndAppToken1.0 subjectToken="delegated token", appToken="S2S token"`
 
-When coming from the workload, the included tokens are:
+Calls coming from the workload, included following tokens:
 
-* `subjectToken`: This is a user-delegated token (obtained through the OBO flow) representing the user on whose behalf the operation is being performed. Fabric verifies that the user has the required permissions to perform the needed action.
+* `subjectToken`: A user-delegated token (obtained through the OBO flow) representing the user on whose behalf the operation is being performed. Fabric verifies that the user has the required permissions to perform the needed action.
 
-* `appToken`: This is a token specific to the workload application. Fabric checks that this is token is from the Entra app of the workload that the relevant Fabric item belongs to and that is on the workload publisher's tenant.
+* `appToken`: A token specific to the workload application. Fabric checks that this token is from the Microsoft Entra app of the workload that the relevant Fabric item belongs to and that is on the workload publisher's tenant.
 
-See the `ValidatePermissions` method in [AuthorizationHandler](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs).
+See the `ValidatePermissions` method in [AuthorizationHandler](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs#L37).
 
 ### Public APIs
 
-For calling public Fabric APIs, the workload should acquire a standard Microsoft Entra OBO token with the relevant API scopes and pass it as a bearer token in the request's authorization header.
+To call public Fabric APIs, the workload should acquire a standard Microsoft Entra OBO token with the relevant API scopes and pass it as a bearer token in the request's authorization header.
 
-See [FabricExtensionController](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Controllers/FabricExtensionController.cs).
+See [FabricExtensionController](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Controllers/FabricExtensionController.cs).
 
 ## Authentication and authorization of requests from workload FE to workload BE
 
@@ -138,18 +137,22 @@ The authorization header in a request sent from the workload FE to the workload 
 
 ### Authentication
 
-The [ValidateDelegatedAADToken](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L50) method in the workload BE is responsible for validating the token. The primary checks performed are:
+The [AuthenticateControlPlaneCall](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L53) method in the workload BE is responsible for validating the token. The primary checks performed are:
 
 * **Token lifetime**: Ensures the token is within its valid usage period.
 
 * **Signature**: Verifies the authenticity of the token.
 
-* **Audience**: Checks that the token's audience matches the workload Entra app.
+* **Audience**: Checks that the token's audience matches the workload Microsoft Entra app.
 
 * **Issuer**: Validates the issuer of the token.
 
 * **Allowed scopes**: Validates the scopes that the token is permitted to access.
 
-### Authorization
+Authorization is achieved by invoking the [ValidatePermissions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs#L37) method. This method calls the `resolvePermissions` API in the Fabric workload-control endpoint for the relevant Fabric item and verifies that the user has the necessary permissions for the operation.
 
-Authorization is achieved by invoking the [ValidatePermissions](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs#L37) method. This method calls the `resolvePermissions` API in the Fabric workload-control endpoint for the relevant Fabric item and verifies that the user has the necessary permissions for the operation.
+## Long-running operations - refresh Token
+
+Authorization is achieved by invoking the [ValidatePermissions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs#L37) method. This method calls the `resolvePermissions` API in the Fabric workload-control endpoint for the relevant Fabric item and verifies that the user has the necessary permissions for the operation.
+
+If your workloads include long running operations, for example, as part of [JobScheduler](./monitoring-hub.md) you might run into a situation where the Token lifetime isn't sufficient. For more information about how to authenticate long running process, [Long-running OBO processes](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#long-running-obo-processes).

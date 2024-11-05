@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Fabric mirrored databases from Snowflake (Preview)"
+title: "Microsoft Fabric mirrored databases from Snowflake"
 description: Learn about the mirrored databases from Snowflake in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -10,11 +10,11 @@ ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
 
-# Mirroring Snowflake (Preview)
+# Mirroring Snowflake
 
 [Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Snowflake warehouse data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Snowflake data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
-For a tutorial on configuring your Snowflake database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake-tutorial.md).
+For a tutorial on configuring your Snowflake database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](snowflake-tutorial.md).
 
 ## Why use Mirroring in Fabric?
 
@@ -79,10 +79,10 @@ For more information of Snowflake specific cloud query costs, see [Snowflake doc
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](snowflake-tutorial.md)
 
 ## Related content
 
-- [How to: Secure data Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake-how-to-data-security.md)
+- [How to: Secure data Microsoft Fabric mirrored databases from Snowflake](snowflake-how-to-data-security.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](/fabric/data-warehouse/model-default-power-bi-dataset)
 - [Monitor Fabric mirrored database replication](monitor.md)

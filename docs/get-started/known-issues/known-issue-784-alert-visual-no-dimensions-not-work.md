@@ -4,7 +4,7 @@ description: A known issue is posted where a Data Activator alert created from v
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/18/2024
+ms.date: 08/28/2024
 ms.custom: known-issue-784
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-784
 
 You can create an alert by selecting the **Set alert** button on a Power BI report visual. If you create the alert on a visual with no dimensions, such as a card, the alert creation doesn't work.
 
-**Status:** Open
+**Status:** Fixed: August 28, 2024
 
 **Product Experience:** Data Activator
 

@@ -4,7 +4,7 @@ description: A known issue is posted where opening a reflex for a stream in Real
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/29/2024
+ms.date: 08/23/2024
 ms.custom: known-issue-729
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-729
 
 In Real-Time hub, if you have a stream in the first tab, you can select the stream to view more details of that stream. If you chose the option to **Set alert** or **Add destination > Reflex** on a parent eventstream, then that Reflex item shows up in stream details page. If you try to open that Reflex item, it doesn't work.
 
-**Status:** Open
+**Status:** Fixed: August 23, 2024
 
 **Product Experience:** Real-Time Intelligence
 

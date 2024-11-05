@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: how-to
 ms.custom: video--3yFtlZBpqs
-ms.date: 02/28/2024
+ms.date: 09/23/2024
 ---
 
 # Set up and use private links
@@ -102,7 +102,7 @@ This step is used to support Azure Private Endpoint association with your Fabric
 
 The following procedure creates a virtual network with a resource subnet, an Azure Bastion subnet, and an Azure Bastion host.
 
-The number of IP addresses your subnet will need is the number of capacities on your tenant plus five. For example, if you're creating a subnet for a tenant with seven capacities, you'll need twelve IP addresses.
+The number of IP addresses your subnet will need is the number of capacities you created on your tenant plus fifteen. For example, if you're creating a subnet for a tenant with seven capacities, you'll need twenty-two IP addresses.
 
 1. In the Azure portal, search for and select **Virtual networks**.
 
@@ -312,7 +312,10 @@ The following video shows how to connect a mobile device to Fabric, using privat
 More questions? [Ask the Fabric Community](https://community.fabric.microsoft.com/).
 
 ## Disable Private Link
-In case you want to disable private link setting, please ensure all the private endpoints you created and the corresponding private DNS zone are deleted before disabling private link setting. If your VNet has private endpoint set up but the private link is disabled, connections from this VNet may fail.
+
+If you want to disable the Private Link setting, make sure that all the private endpoints you created and the corresponding private DNS zone are deleted before disabling the setting. If your VNet has private endpoints set up but Private Link is disabled, connections from this VNet may fail.
+
+If you're going to disable the Private Link setting, it is recommended to do so during non-business hours. It may take up to 15 minutes of downtime for some scenarios to reflect the change. 
 
 ## Related content
 

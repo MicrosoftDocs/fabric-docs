@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom:
-ms.date: 06/19/2024
+ms.date: 09/22/2024
 ---
 
 # Track user activities in Microsoft Fabric
@@ -14,7 +14,7 @@ Knowing who is taking what action on which item in Microsoft Fabric, can be crit
 
 ## Prerequisites
 
-You must either be a global administrator or assigned the Audit Logs role in Exchange Online to access the audit log. By default, the Compliance Management and Organization Management role groups have roles assigned on the **Admin roles** page in the Exchange admin center. For more information about the roles that can view audit logs, see [Requirements to search the audit log](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance#before-you-search-the-audit-log).
+You must be assigned the Audit Logs role in Exchange Online to access the audit log. By default, the Compliance Management and Organization Management role groups have roles assigned on the **Admin roles** page in the Exchange admin center. For more information about the roles that can view audit logs, see [Requirements to search the audit log](/purview/audit-search#before-you-search-the-audit-log).
 
 ## Access
 
@@ -42,4 +42,4 @@ When capacity ID and capacity name aren't available in the audit logs, you can v
 
 ## Related content
 
-[Operation list](operation-list.md)
+* [Operation list](operation-list.md)
