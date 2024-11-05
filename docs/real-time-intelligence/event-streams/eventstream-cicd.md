@@ -34,16 +34,11 @@ Go to the Workspace settings, select Git integration, and choose a git repositor
 ## Commit Eventstream changes to git
 
 
-## Update Eventstream items from Git
-
 
 ## Update Eventstream items from Git
 
 
 ## Deploy Eventstream items from one stage to another
-
-
-
 
 
 ## Related content

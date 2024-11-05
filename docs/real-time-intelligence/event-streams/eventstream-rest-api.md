@@ -11,46 +11,74 @@ ms.search.form: Eventstream REST API
 
 # Eventstream REST API
 
-This article provides a detailed specification for the Eventstream REST API and guides you on how to use Microsoft Fabric REST APIs to create and manage Eventstream items within a Fabric workspace.
+The Microsoft Fabric REST APIs enable you to automate Fabric procedures and processes, helping your organization complete tasks more efficiently and accurately. By automating these workflows, you can reduce errors, improve productivity, and achieve cost savings across your operations.
 
-For more information on Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](/fabric-rest-apis-docs/blob/live/docs-ref-conceptual/using-fabric-apis.md)
+In Fabric, an **item** represents a set of capabilities within a specific experience. For example, Eventstream is an item under the Real-time Intelligence experience. Each item in Fabric is defined by an **item definition**—an object that outlines the structure, format, and key components that make up the item.
 
-Currently, Eventstream supports the following operations for creating and managing Eventstream items using REST API:
+This article offers a comprehensive guide on using the Microsoft Fabric REST APIs to create and manage Eventstream items within your Fabric workspace. You’ll find detailed specifications for each Eventstream API operation, along with instructions for setting up and configuring your API calls.
 
-| API | Description |
+For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](https://learn.microsoft.com/rest/api/fabric/articles/using-fabric-apis)
+
+## Supported Eventstream APIs
+
+Currently, Eventstream supports the following definition based APIs:
+
+| APIs | Description |
 | ----------- | ---------------------- |
-| Create Eventstream with Definition | Use to get an Eventstream item definition with detailed information about its topology including source, destinations, operators, and streams |
-| Get Eventstream Definition | Use to get an Eventstream item definition with detailed information about its topology including source, destinations, operators, and streams |
-| Update Eventstream Definition | Use to update or edit an Eventstream item definition including source, destinations, operators, and streams |
+| [Create Eventstream item with definition](#create-eventstream-item-with-definition) | Use to get an Eventstream item definition with detailed information about its topology including source, destinations, operators, and streams |
+| [Get Eventstream item definition](#get-eventstream-item-definition) | Use to get an Eventstream item definition with detailed information about its topology including source, destinations, operators, and streams |
+| [Update Eventstream item definition](#update-eventstream-item-definition) | Use to update or edit an Eventstream item definition including source, destinations, operators, and streams |
 
-## Eventstream item definition
+To manage your Eventstream items using CRUD operations, visit [Fabric REST APIs - Eventstream](https://learn.microsoft.com/rest/api/fabric/eventstream/items). These APIs support the following operations:
 
-In Fabric, an item represents a set of capabilities within a specific experience. For example, Eventstream is an item within the Real-time Intelligence experience. Users can create, edit, and delete items, with each item type offering different capabilities.
+* Create Eventstream
+* Delete Eventstream
+* Get Eventstream
+* List Eventstreams
+* Update Eventstream
+
+## Authentication
+
+To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabric service, then use that token in the authorization header of the API call. There are two options to acquire Microsoft Entra token.
+
+### Option 1: Get token using MSAL.NET
+
+Follow the [Fabric API quickstart](https://learn.microsoft.com/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
+
+### Option 2: Get token using the Fabric Portal
+
+Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
+
+```
+powerBIAccessToken
+```
+
+Copy the token and paste it into your application.
+
+## Define an Eventstream Item in the API Body
 
 The Eventstream item definition follows a graph-like structure and consists of the following components:
 
-```json
+| **Field** | **Description** |
+| --------  | ---------------- |
+| [Sources](#define-a-source-in-the-api-body) | Data sources that can be ingested into Eventstream for processing. This includes Azure streaming sources, third-party streaming sources, database CDC (change data capture), Azure Blob Storage events, and Fabric system events. |
+| [Destinations](#define-a-destination-in-the-api-body) | Endpoints within Fabric where processed data can be routed to, including Lakehouse, Eventhouse, Reflex, and others. |
+| [Operators](#define-an-operator-in-the-api-body) | Event processors that handle real-time data streams, such as Filter, Aggregate, Group By, and Join. |
+| [Streams](#define-a-stream-in-the-api-body) | Data streams available for subscription and analysis in the Real-time Hub. There are two types of streams: default streams and derived streams. |
 
-{
-    "sources": "List of object (required) - Data sources that can be ingested into Eventstream for processing. This includes Azure streaming sources, third-party streaming sources, database CDC (change data capture), Azure Blob Storage events, and Fabric system events.",
-    "operators": "List of object (required) - Event processors that handle real-time data streams, such as Filter, Aggregate, Group By, and Join.",
-    "destinations": "List of object (required) - Endpoints within Fabric where processed data can be routed to, including Lakehouse, Eventhouse, Reflex, and others.",
-    "streams": "List of object (required) - Data streams available for subscription and analysis in the Real-time Hub. There are two types of streams: default streams and derived streams."
-}
+To create and manage an Eventstream item using API, you need to structure the API body and specify the values for each field. Then use [Base64 Encode and Decode](https://www.base64encode.org/) to encode your payload in the API call.
 
-```
-
-To create and manage an Eventstream item using API, you need to structure the API body and specify the values for each field. Then use [Base64 Encode and Decode](https://www.base64encode.org/) to encode your payload in the API call. Here's an example of Eventstream API body with base64 decoded:
+Here's an example of Eventstream API body with base64 decoded:
 
 ```json
 {
   "sources": [
     {
-      "id": "1c2f8876-0616-4936-b44a-c96f153c5a09",
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "name": "AzureEventHub",
       "type": "AzureEventHub",
       "properties": {
-        "dataConnectionId": "7b8187ad-4d58-4dc9-a953-4f6ac3636bef",
+        "dataConnectionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "consumerGroupName": "$Default",
         "inputSerialization": {
           "type": "Json",
@@ -63,15 +91,15 @@ To create and manage an Eventstream item using API, you need to structure the AP
   ],
   "destinations": [
     {
-      "id": "d843812d-c7b4-4bec-ae8c-74a553d07c66",
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "name": "kql",
       "type": "Eventhouse",
       "properties": {
         "dataIngestionMode": "ProcessedIngestion",
-        "workspaceId": "0a47cd64-0aaf-488b-8038-4816153bd14b",
-        "itemId": "5726a793-ccf2-4dd9-ac84-ec8f74aa22a2",
-        "databaseName": "alex-eh2",
-        "tableName": "table1016",
+        "workspaceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "itemId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "databaseName": "mydatabase",
+        "tableName": "mytable",
         "inputSerialization": {
           "type": "Json",
           "properties": {
@@ -112,7 +140,7 @@ To create and manage an Eventstream item using API, you need to structure the AP
       },
       "inputSchemas": [
         {
-          "name": "alex-oct-stream",
+          "name": "eventstream-1",
           "schema": {
             "columns": [
               {
@@ -155,7 +183,178 @@ To create and manage an Eventstream item using API, you need to structure the AP
 }
 ```
 
-### Source
+## Create Eventstream item with Definition
+
+* **Request**
+
+    ```http
+    POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
+    ```
+
+* **Example of payload content decoded from Base64**
+
+    ```json
+    {
+      "sources": [
+        {
+          "name": "AzureEventHub",
+          "type": "AzureEventHub",
+          "properties": {
+            "dataConnectionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "consumerGroupName": "$Default",
+            "inputSerialization": {
+              "type": "Json",
+              "properties": {
+                "encoding": "UTF8"
+              }
+            }
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "name": "kql",
+          "type": "Eventhouse",
+          "properties": {
+            "dataIngestionMode": "ProcessedIngestion",
+            "workspaceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "itemId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "databaseName": "myeventhouse",
+            "tableName": "mytable",
+            "inputSerialization": {
+              "type": "Json",
+              "properties": {
+                "encoding": "UTF8"
+              }
+            }
+          },
+          "inputNodes": []
+        }
+      ],
+      "streams": [],
+      "operators": [],
+      "compatibilityLevel": "1.0"
+    }
+    
+    ```
+
+* **Response**
+
+    ```json
+    {
+       "202": {
+          "headers": {
+                "Location": "https://api.fabric.microsoft.com/v1/operations/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "x-ms-operation-id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "Retry-After": 30
+          }
+       }
+    }
+    
+    ```
+
+## Get Eventstream item definition
+
+* **Request**
+
+    ```http
+    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventstreams/{eventstreamId}/getDefinition
+    ```
+
+* **Response**
+
+    ```JSON
+    {
+     "definition": {
+      "parts": [
+       {
+        "path": "eventstream.json",
+        "payload": "ew0KICAic291cmNlcyI6IFsNCiAgICB7DQogICAgICAiaWQiOiAiMWMyZjg4NzYtMDYxNi00OTM2LWI0NGEtYzk2ZjE1M2M1YTA5IiwNCiAgICAgICJuYW1lIjogIkF6dXJlRXZlbnRIdWIiLA0KICAgICAgInR5cGUiOiAiQXp1cmVFdmVudEh1YiIsDQogICAgICAicHJvcGVydGllcyI6IHsNCiAgICAgICAgImRhdGFDb25uZWN0aW9uSWQiOiAiN2I4MTg3YWQtNGQ1OC00ZGM5LWE5NTMtNGY2YWMzNjM2YmVmIiwNCiAgICAgICAgImNvbnN1bWVyR3JvdXBOYW1lIjogIiREZWZhdWx0IiwNCiAgICAgICAgImlucHV0U2VyaWFsaXphdGlvbiI6IHsNCiAgICAgICAgICAidHlwZSI6ICJKc29uIiwNCiAgICAgICAgICAicHJvcGVydGllcyI6IHsNCiAgICAgICAgICAgICJlbmNvZGluZyI6ICJVVEY4Ig0KICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgICAgfQ0KICAgIH0NCiAgXSwNCiAgImRlc3RpbmF0aW9ucyI6IFsNCiAgICB7DQogICAgICAiaWQiOiAiZDg0MzgxMmQtYzdiNC00YmVjLWFlOGMtNzRhNTUzZDA3YzY2IiwNCiAgICAgICJuYW1lIjogImtxbCIsDQogICAgICAidHlwZSI6ICJFdmVudGhvdXNlIiwNCiAgICAgICJwcm9wZXJ0aWVzIjogew0KICAgICAgICAiZGF0YUluZ2VzdGlvbk1vZGUiOiAiUHJvY2Vzc2VkSW5nZXN0aW9uIiwNCiAgICAgICAgIndvcmtzcGFjZUlkIjogIjBhNDdjZDY0LTBhYWYtNDg4Yi04MDM4LTQ4MTYxNTNiZDE0YiIsDQogICAgICAgICJpdGVtSWQiOiAiNTcyNmE3OTMtY2NmMi00ZGQ5LWFjODQtZWM4Zjc0YWEyMmEyIiwNCiAgICAgICAgImRhdGFiYXNlTmFtZSI6ICJhbGV4LWVoMiIsDQogICAgICAgICJ0YWJsZU5hbWUiOiAidGFibGUxMDE2IiwNCiAgICAgICAgImlucHV0U2VyaWFsaXphdGlvbiI6IHsNCiAgICAgICAgICAidHlwZSI6ICJKc29uIiwNCiAgICAgICAgICAicHJvcGVydGllcyI6IHsNCiAgICAgICAgICAgICJlbmNvZGluZyI6ICJVVEY4Ig0KICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgICAgfSwNCiAgICAgICJpbnB1dE5vZGVzIjogW10NCiAgICB9DQogIF0sDQogICJzdHJlYW1zIjogW10sDQogICJvcGVyYXRvcnMiOiBbXSwNCiAgImNvbXBhdGliaWxpdHlMZXZlbCI6ICIxLjAiDQp9",
+        "payloadType": "InlineBase64"
+       },
+       {
+        "path": ".platform",
+        "payload": "ewogICIkc2NoZW1hIjogImh0dHBzOi8vZGV2ZWxvcGVyLm1pY3Jvc29mdC5jb20vanNvbi1zY2hlbWFzL2ZhYnJpYy9naXRJbnRlZ3JhdGlvbi9wbGF0Zm9ybVByb3BlcnRpZXMvMi4wLjAvc2NoZW1hLmpzb24iLAogICJtZXRhZGF0YSI6IHsKICAgICJ0eXBlIjogIkV2ZW50c3RyZWFtIiwKICAgICJkaXNwbGF5TmFtZSI6ICJhbGV4LWVzMSIKICB9LAogICJjb25maWciOiB7CiAgICAidmVyc2lvbiI6ICIyLjAiLAogICAgImxvZ2ljYWxJZCI6ICIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiCiAgfQp9",
+        "payloadType": "InlineBase64"
+       }
+      ]
+     }
+    }
+    ```
+
+## Update Eventstream item definition
+
+* **Request**
+
+    ```http
+    POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
+    ```
+
+* **Example of payload content decoded from Base64**
+
+    ```json
+    {
+      "sources": [
+        {
+          "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "name": "AzureEventHub",
+          "type": "AzureEventHub",
+          "properties": {
+            "dataConnectionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "consumerGroupName": "$Default",
+            "inputSerialization": {
+              "type": "Json",
+              "properties": {
+                "encoding": "UTF8"
+              }
+            }
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "name": "kql",
+          "type": "Eventhouse",
+          "properties": {
+            "dataIngestionMode": "ProcessedIngestion",
+            "workspaceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "itemId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "databaseName": "myeventhouse",
+            "tableName": "mytable",
+            "inputSerialization": {
+              "type": "Json",
+              "properties": {
+                "encoding": "UTF8"
+              }
+            }
+          },
+          "inputNodes": []
+        }
+      ],
+      "streams": [],
+      "operators": [],
+      "compatibilityLevel": "1.0"
+    }
+    
+    ```
+
+* **Response**
+
+    ```json
+    {
+       "202": {
+          "headers": {
+                "Location": "https://api.fabric.microsoft.com/v1/operations/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "x-ms-operation-id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "Retry-After": 30
+          }
+       }
+    }
+    
+    ```
+
+## Define a source in the API body
 
 To define an Eventstream source in the API body, make sure each field and property is specified correctly according to the table.
 
@@ -174,11 +373,11 @@ Example of Eventstream source in API body:
 {
   "sources": [
     {
-      "id": "1c2f8876-0616-4936-b44a-c96f153c5a09",
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "name": "AzureEventHub",
       "type": "AzureEventHub",
       "properties": {
-        "dataConnectionId": "7b8187ad-4d58-4dc9-a953-4f6ac3636bef",
+        "dataConnectionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "consumerGroupName": "$Default",
         "inputSerialization": {
           "type": "Json",
@@ -192,7 +391,7 @@ Example of Eventstream source in API body:
 }
 ```
 
-### Destination
+## Define a destination in the API body
 
 To define an Eventstream destination in the API body, make sure each field and property is specified correctly according to the table.
 
@@ -212,15 +411,15 @@ Example of Eventstream source in API body:
 {
   "destinations": [
     {
-      "id": "d843812d-c7b4-4bec-ae8c-74a553d07c66",
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "name": "kql",
       "type": "Eventhouse",
       "properties": {
         "dataIngestionMode": "ProcessedIngestion",
-        "workspaceId": "0a47cd64-0aaf-488b-8038-4816153bd14b",
-        "itemId": "5726a793-ccf2-4dd9-ac84-ec8f74aa22a2",
-        "databaseName": "alex-eh2",
-        "tableName": "table1016",
+        "workspaceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "itemId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "databaseName": "myeventhouse",
+        "tableName": "mytable",
         "inputSerialization": {
           "type": "Json",
           "properties": {
@@ -238,7 +437,7 @@ Example of Eventstream source in API body:
 }
 ```
 
-### Operator
+## Define an operator in the API body
 
 To define an Eventstream operator in the API body, make sure each field and property is specified correctly according to the table.
 
@@ -258,7 +457,7 @@ Example of Eventstream operator in API body:
 {
   "inputSchemas": [
         {
-          "name": "alex-oct-stream",
+          "name": "eventstream-1",
           "schema": {
             "columns": [
               {
@@ -298,7 +497,7 @@ Example of Eventstream operator in API body:
 }
 ```
 
-### Stream
+## Define a stream in the API body
 
 To define a stream in the API body, make sure each field and property is specified correctly according to the table.
 
@@ -318,7 +517,7 @@ Example of stream in API body:
 {
   "streams": [
     {
-      "id": "e6236b9f-e921-4cb4-9e38-a61186ea381e",
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "name": "stream-1",
       "type": "DefaultStream",
       "properties": {},
@@ -332,198 +531,7 @@ Example of stream in API body:
 }
 ```
 
-## Authentication
-
-To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabric service, then use that token in the authorization header of the API call. There are two options to acquire Microsoft Entra token.
-
-### Option 1: Get token using MSAL.NET
-
-Follow the [Fabric API quickstart](/docs-ref-conceptual/get-started/fabric-API-quickstart.md) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
-
-### Option 2: Get token using the Fabric Portal
-
-Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
-
-```
-powerBIAccessToken
-```
-
-Copy the token and paste it into your application.
-
-## Create Eventstream item with Definition
-
-### Request
-
-```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
-```
-
-### Example of payload content decoded from Base64
-
-```json
-{
-  "sources": [
-    {
-      "name": "AzureEventHub",
-      "type": "AzureEventHub",
-      "properties": {
-        "dataConnectionId": "7b8187ad-4d58-4dc9-a953-4f6ac3636bef",
-        "consumerGroupName": "$Default",
-        "inputSerialization": {
-          "type": "Json",
-          "properties": {
-            "encoding": "UTF8"
-          }
-        }
-      }
-    }
-  ],
-  "destinations": [
-    {
-      "name": "kql",
-      "type": "Eventhouse",
-      "properties": {
-        "dataIngestionMode": "ProcessedIngestion",
-        "workspaceId": "0a47cd64-0aaf-488b-8038-4816153bd14b",
-        "itemId": "5726a793-ccf2-4dd9-ac84-ec8f74aa22a2",
-        "databaseName": "alex-eh2",
-        "tableName": "table1016",
-        "inputSerialization": {
-          "type": "Json",
-          "properties": {
-            "encoding": "UTF8"
-          }
-        }
-      },
-      "inputNodes": []
-    }
-  ],
-  "streams": [],
-  "operators": [],
-  "compatibilityLevel": "1.0"
-}
-
-```
-
-### Response
-
-```json
-{
-   "202": {
-      "headers": {
-            "Location": "https://api.fabric.microsoft.com/v1/operations/0acd697c-1550-43cd-b998-91bfbfbd47c6",
-            "x-ms-operation-id": "0acd697c-1550-43cd-b998-91bfbfbd47c6",
-            "Retry-After": 30
-      }
-   }
-}
-
-```
-
-## Get Eventstream definition
-
-### Request
-
-```http
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventstreams/{eventstreamId}/getDefinition
-```
-
-### Response
-
-```JSON
-{
- "definition": {
-  "parts": [
-   {
-    "path": "eventstream.json",
-    "payload": "ew0KICAic291cmNlcyI6IFsNCiAgICB7DQogICAgICAiaWQiOiAiMWMyZjg4NzYtMDYxNi00OTM2LWI0NGEtYzk2ZjE1M2M1YTA5IiwNCiAgICAgICJuYW1lIjogIkF6dXJlRXZlbnRIdWIiLA0KICAgICAgInR5cGUiOiAiQXp1cmVFdmVudEh1YiIsDQogICAgICAicHJvcGVydGllcyI6IHsNCiAgICAgICAgImRhdGFDb25uZWN0aW9uSWQiOiAiN2I4MTg3YWQtNGQ1OC00ZGM5LWE5NTMtNGY2YWMzNjM2YmVmIiwNCiAgICAgICAgImNvbnN1bWVyR3JvdXBOYW1lIjogIiREZWZhdWx0IiwNCiAgICAgICAgImlucHV0U2VyaWFsaXphdGlvbiI6IHsNCiAgICAgICAgICAidHlwZSI6ICJKc29uIiwNCiAgICAgICAgICAicHJvcGVydGllcyI6IHsNCiAgICAgICAgICAgICJlbmNvZGluZyI6ICJVVEY4Ig0KICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgICAgfQ0KICAgIH0NCiAgXSwNCiAgImRlc3RpbmF0aW9ucyI6IFsNCiAgICB7DQogICAgICAiaWQiOiAiZDg0MzgxMmQtYzdiNC00YmVjLWFlOGMtNzRhNTUzZDA3YzY2IiwNCiAgICAgICJuYW1lIjogImtxbCIsDQogICAgICAidHlwZSI6ICJFdmVudGhvdXNlIiwNCiAgICAgICJwcm9wZXJ0aWVzIjogew0KICAgICAgICAiZGF0YUluZ2VzdGlvbk1vZGUiOiAiUHJvY2Vzc2VkSW5nZXN0aW9uIiwNCiAgICAgICAgIndvcmtzcGFjZUlkIjogIjBhNDdjZDY0LTBhYWYtNDg4Yi04MDM4LTQ4MTYxNTNiZDE0YiIsDQogICAgICAgICJpdGVtSWQiOiAiNTcyNmE3OTMtY2NmMi00ZGQ5LWFjODQtZWM4Zjc0YWEyMmEyIiwNCiAgICAgICAgImRhdGFiYXNlTmFtZSI6ICJhbGV4LWVoMiIsDQogICAgICAgICJ0YWJsZU5hbWUiOiAidGFibGUxMDE2IiwNCiAgICAgICAgImlucHV0U2VyaWFsaXphdGlvbiI6IHsNCiAgICAgICAgICAidHlwZSI6ICJKc29uIiwNCiAgICAgICAgICAicHJvcGVydGllcyI6IHsNCiAgICAgICAgICAgICJlbmNvZGluZyI6ICJVVEY4Ig0KICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgICAgfSwNCiAgICAgICJpbnB1dE5vZGVzIjogW10NCiAgICB9DQogIF0sDQogICJzdHJlYW1zIjogW10sDQogICJvcGVyYXRvcnMiOiBbXSwNCiAgImNvbXBhdGliaWxpdHlMZXZlbCI6ICIxLjAiDQp9",
-    "payloadType": "InlineBase64"
-   },
-   {
-    "path": ".platform",
-    "payload": "ewogICIkc2NoZW1hIjogImh0dHBzOi8vZGV2ZWxvcGVyLm1pY3Jvc29mdC5jb20vanNvbi1zY2hlbWFzL2ZhYnJpYy9naXRJbnRlZ3JhdGlvbi9wbGF0Zm9ybVByb3BlcnRpZXMvMi4wLjAvc2NoZW1hLmpzb24iLAogICJtZXRhZGF0YSI6IHsKICAgICJ0eXBlIjogIkV2ZW50c3RyZWFtIiwKICAgICJkaXNwbGF5TmFtZSI6ICJhbGV4LWVzMSIKICB9LAogICJjb25maWciOiB7CiAgICAidmVyc2lvbiI6ICIyLjAiLAogICAgImxvZ2ljYWxJZCI6ICIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiCiAgfQp9",
-    "payloadType": "InlineBase64"
-   }
-  ]
- }
-}
-```
-
-
-## Update Eventstream definition
-
-### Request
-
-```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
-```
-
-### Example of payload content decoded from Base64
-
-```json
-{
-  "sources": [
-    {
-      "id": "1c2f8876-0616-4936-b44a-c96f153c5a09",
-      "name": "AzureEventHub",
-      "type": "AzureEventHub",
-      "properties": {
-        "dataConnectionId": "7b8187ad-4d58-4dc9-a953-4f6ac3636bef",
-        "consumerGroupName": "$Default",
-        "inputSerialization": {
-          "type": "Json",
-          "properties": {
-            "encoding": "UTF8"
-          }
-        }
-      }
-    }
-  ],
-  "destinations": [
-    {
-      "id": "7f9c8876-0616-4936-b44a-c96f153c9bv0",
-      "name": "kql",
-      "type": "Eventhouse",
-      "properties": {
-        "dataIngestionMode": "ProcessedIngestion",
-        "workspaceId": "0a47cd64-0aaf-488b-8038-4816153bd14b",
-        "itemId": "5726a793-ccf2-4dd9-ac84-ec8f74aa22a2",
-        "databaseName": "alex-eh2",
-        "tableName": "table1016",
-        "inputSerialization": {
-          "type": "Json",
-          "properties": {
-            "encoding": "UTF8"
-          }
-        }
-      },
-      "inputNodes": []
-    }
-  ],
-  "streams": [],
-  "operators": [],
-  "compatibilityLevel": "1.0"
-}
-
-```
-
-### Response
-
-```json
-{
-   "202": {
-      "headers": {
-            "Location": "https://api.fabric.microsoft.com/v1/operations/0acd697c-1550-43cd-b998-91bfbfbd47c6",
-            "x-ms-operation-id": "0acd697c-1550-43cd-b998-91bfbfbd47c6",
-            "Retry-After": 30
-      }
-   }
-}
-
-```
-
-
 ## Related content
 
-- [Eventstream definition](/rest/api/fabric/articles/item-management/definitions/eventstream-definition.md)
-- [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis.md)
+* [Eventstream definition](https://learn.microsoft.com/rest/api/fabric/articles/item-management/definitions/eventstream-definition)
+* [Using the Microsoft Fabric REST APIs](https://learn.microsoft.com/rest/api/fabric/articles/using-fabric-apis)
