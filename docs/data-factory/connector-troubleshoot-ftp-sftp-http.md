@@ -1,20 +1,20 @@
 ---
 title: Troubleshoot the FTP, SFTP and HTTP connectors
 titleSuffix: Azure Data Factory & Azure Synapse
-description: Learn how to troubleshoot issues with the FTP, SFTP and HTTP connectors in Azure Data Factory and Azure Synapse Analytics. 
+description: Learn how to troubleshoot issues with the FTP, SFTP and HTTP connectors in Fabric Data Factory and Azure Synapse Analytics. 
 author: jianleishen
 ms.subservice: data-movement
 ms.topic: troubleshooting
-ms.date: 01/05/2024
+ms.date: 11/05/2024
 ms.author: jianleishen
 ms.custom: has-adal-ref, synapse
 ---
 
-# Troubleshoot the FTP, SFTP and HTTP connectors in Azure Data Factory and Azure Synapse
+# Troubleshoot the FTP, SFTP and HTTP connectors in Fabric Data Factory and Azure Synapse
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-This article provides suggestions to troubleshoot common problems with the FTP, SFTP and HTTP connectors in Azure Data Factory and Azure Synapse.
+This article provides suggestions to troubleshoot common problems with the FTP, SFTP and HTTP connectors in Data Factory and Azure Synapse.
 
 ## FTP
 
@@ -22,7 +22,7 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 
 - **Message**: `Failed to connect to FTP server. Please make sure the provided server information is correct, and try again.`
 
-- **Cause**: An incorrect linked service type might be used for the FTP server, such as using the Secure FTP (SFTP) linked service to connect to an FTP server.
+- **Cause**: An incorrect Connection type might be used for the FTP server, such as using the Secure FTP (SFTP) connection type to connect to an FTP server.
 
 - **Recommendation**:  Check the port of the target server. FTP uses port 21.
 
@@ -62,11 +62,11 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 
 - **Recommendation**:  
 
-    If the private key content is from your key vault, the original key file can work if you upload it directly to the SFTP linked service.
+    If the private key content is from your key vault, the original key file can work if you upload it directly to the SFTP Connection.
 
     For more information, see [Copy data from and to the SFTP server by using data factory or Synapse pipelines](./connector-sftp.md#use-ssh-public-key-authentication). The private key content is base64 encoded SSH private key content.
 
-    Encode *entire* original private key file with base64 encoding, and store the encoded string in your key vault. The original private key file is the one that can work on the SFTP linked service if you select **Upload** from the file.
+    Encode *entire* original private key file with base64 encoding, and store the encoded string in your key vault. The original private key file is the one that can work on the SFTP connection type if you select **Upload** from the file.
 
     Here are some samples you can use to generate the string:
 
@@ -122,7 +122,7 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 
 - **Message**: `Failed to connect to SFTP server '%server;'.`
 
-- **Cause**: If the error message contains the string "Socket read operation has timed out after 30,000 milliseconds", one possible cause is that an incorrect linked service type is used for the SFTP server. For example, you might be using the FTP linked service to connect to the SFTP server.
+- **Cause**: If the error message contains the string "Socket read operation has timed out after 30,000 milliseconds", one possible cause is that an incorrect Connection type is used for the SFTP server. For example, you might be using the FTP Connection type to connect to the SFTP server.
 
 - **Recommendation**:  Check the port of the target server. By default, SFTP uses port 22.
 
@@ -134,8 +134,8 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 
     If you want to promote the low throughput, contact your SFTP administrator to increase the concurrent connection count limit, or you can do one of the following:
 
-    * If you're using Self-hosted IR, add the Self-hosted IR machine's IP to the allowlist.
-    * If you're using Azure IR, add [Azure Integration Runtime IP addresses](./azure-integration-runtime-ip-addresses.md). If you don't want to add a range of IPs to the SFTP server allowlist, use Self-hosted IR instead.
+    * If you're using On-Premises Data Gateway (OPDG), add the OPDG machine's IP to the allowlist.
+    * If you're using Azure IR, add [Azure Integration Runtime IP addresses](./azure-integration-runtime-ip-addresses.md). If you don't want to add a range of IPs to the SFTP server allowlist, use OPDG instead.
 
 
 ### Error code: SftpPermissionDenied
@@ -156,26 +156,14 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 
 - **Cause**: The specified authentication type is not allowed or not sufficient to complete the authentication in your SFTP server.
 
-- **Recommendation**: Apply the following options to use the correct authentication type:
-    - If your server requires a password, use "Basic".
-    - If your server requires a private key, use "SSH public key authentication".
-    - If your server requires both "password" and "private key", use "Multiple factor authentication".
+- **Recommendation**: Currently only Basic authentication type is supported
+   
 
-- **Cause**: Your SFTP server requires "keyboard-interactive" for authentication, but you provided "password".
+### Unable to connect to SFTP due to key exchange algorithms provided by SFTP are not supported in Data Factory
 
-- **Recommendation**: 
+- **Symptoms**: You are unable to connect to SFTP via data factory and meet the following error message: `Failed to negotiate key exchange algorithm.`
 
-    "keyboard-interactive" is a special authentication method, which is different from "password". It means that when logging into a server, you must enter the password manually, and you cannot use the previously saved password. But Azure Data Factory (ADF) is a scheduled data transfer service, and there is no pop-up input box allowing you to provide the password at the runtime. <br/> 
-    
-    As a compromise, an option is provided to simulate the input in the background instead of your real manual input, which is equivalent to changing the "keyboard-interactive" to "password". If you can accept this security concern, follow the steps below to enable it:<br/> 
-    1. On the ADF portal, hover on the SFTP linked service, and open its payload by selecting the code button.
-    1. Add `"allowKeyboardInteractiveAuth": true` in the "typeProperties" section.
-
-### Unable to connect to SFTP due to key exchange algorithms provided by SFTP are not supported in ADF
-
-- **Symptoms**: You are unable to connect to SFTP via ADF and meet the following error message: `Failed to negotiate key exchange algorithm.`
-
-- **Cause**: The key exchange algorithms provided by the SFTP server are not supported in ADF. The key exchange algorithms supported by ADF are:
+- **Cause**: The key exchange algorithms provided by the SFTP server are not supported in data factory. The key exchange algorithms supported by data factory are:
     - curve25519-sha256
     - curve25519-sha256@libssh.org
     - ecdh-sha2-nistp256
@@ -192,9 +180,9 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 
 ### Error Code: SftpInvalidHostKeyFingerprint
 
-- **Message**: `Host key finger-print validation failed. Expected fingerprint is '<value in linked service>', real finger-print is '<server real value>'`
+- **Message**: `Host key finger-print validation failed. Expected fingerprint is '<value in connection type>', real finger-print is '<server real value>'`
 
-- **Cause**: Azure Data Factory now supports more secure host key algorithms in SFTP connector. For the newly added algorithms, it requires to get the corresponding fingerprint in the SFTP server.
+- **Cause**: Data Factory now supports more secure host key algorithms in SFTP connector. For the newly added algorithms, it requires to get the corresponding fingerprint in the SFTP server.
 
     The newly supported algorithms are:
     
@@ -227,7 +215,7 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 
 - **Message**: `Http source doesn't support HTTP Status Code '%code;'.`
 
-- **Cause**: This error happens when Azure Data Factory requests HTTP source but gets unexpected status code.
+- **Cause**: This error happens when Data Factory requests HTTP source but gets unexpected status code.
 
 - **Recommendation**: For more information about HTTP status code, see this [document](/troubleshoot/developer/webapps/iis/www-administration-management/http-status-code).
 
