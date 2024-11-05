@@ -46,7 +46,7 @@ Once you select a property or event stream, you see a preview of the values for 
 
 ### Step 2: Make a new rule
 
-To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor ** section of the rule is prepopulated with the data that you selected in Step 1.
+To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger.":::
 
@@ -60,11 +60,11 @@ Next, choose the type of condition that you want to detect. You can use conditio
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-04.png" alt-text="Screenshot of choosing the alert condition.":::
 
-The charts in the Live feed tab updates to show a sample of the events that meet the conditions that you set.
+The charts in the Definition tab updates to show a sample of the events that meet the conditions that you set.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts.":::
 
-If you navigate to the **Analytics **tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that Data Activator is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
+If you navigate to the **Analytics** tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that Data Activator is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
 
 ### Step 4: Define the action to take
 
@@ -103,11 +103,11 @@ When you delete a rule (or object), it can take up to five minutes for any back-
 
 Sometimes, you need to reuse rule logic across multiple rules. Create a property to define a reusable condition or measure, then reference that property from multiple rules.
 
-To create a property, select the stream added to the object that you're interested in and select **New Property** from the ribbon. Then define your property logic. Here, we define a property called *Maximum Temp last hour* on a package object.
+To create a property, select the stream added to the object that you're interested in and select **New Property** from the ribbon and then select the property you'd like to use in the rule logic.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-10.png" alt-text="Screenshot of creating a property for an alert.":::
 
-Once you define a property, you can reference it from one or more rules, using the **Monitor** section. Here we reference the property we made earlier in the *Package too warm* rule.
+Once you define a property, you can reference it from one or more rules, using the **Monitor** section. Here we reference the *Temperature* property *Too hot for medicine* rule.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert.":::
 

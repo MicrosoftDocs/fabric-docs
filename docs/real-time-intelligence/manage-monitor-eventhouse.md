@@ -69,7 +69,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
         * **Running**: The eventhouse is running optimally.
-        * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later.
+        * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later. If you have enabled security features, try connecting to your environment using a VPN connection.
         * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute [capacity reached its limits](../enterprise/throttling.md). Try again later or contact your capacity admin to [increase the capacity](../enterprise/scale-capacity.md).
         * **Suspended capacity**: The capacity used for this eventhouse was suspended. Contact your capacity admin to [reverse the suspension](../enterprise/pause-resume.md).
         * **Unknown**: For unknown reasons, the eventhouse is unavailable.
