@@ -25,7 +25,7 @@ Let's go over some concepts before we talk about Working with tokens & consents:
 
 ## Expose an API tab on the workload’s application in Microsoft Entra ID
 In this tab, you need to add scopes for control plane APIs and scopes for data plane APIs: 
-* The scopes added for control plane APIs should preauthorize "Fabric Client for Workloads" application with application ID "d2450708-699c-41e3-8077-b0c8341509aa", those scopes are included in the token that the workload backend receive when Fabric calls it.
+* The scopes added for control plane APIs should preauthorize "Fabric Client for Workloads" application with application ID "d2450708-699c-41e3-8077-b0c8341509aa", those scopes are included in the token that the workload backend receives when Fabric calls it.
 You need to add at least one for control plane API for the flow to work. 
 * The scopes added for data plane APIs should preauthorize "Microsoft Power BI" with application ID "871c010f-5e61-4fb1-83ac-98610a7e9110" and are included in the token that the acquireAccessToken JavaScript API returns. 
 For data plane APIs, this tab can be used as a means to manage granular permissions per API that your workload exposes.  
@@ -69,9 +69,9 @@ Let's take a look at a workload that needs to access 3 Fabric APIs:
 
 * Create a warehouse: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/warehouses` 
 
-* Write to Lakehouse file : `PUT https://onelake.dfs.fabric.microsoft.com/{filePath}?resource=file` 
+* Write to Lakehouse file: `PUT https://onelake.dfs.fabric.microsoft.com/{filePath}?resource=file` 
 
-To be able to work with those APIs, the workload backend needs to exchange tokens for the following scopes - : 
+To be able to work with those APIs, the workload backend needs to exchange tokens for the following scopes: 
 * For List Workspaces: `https://analysis.windows.net/powerbi/api/Workspace.Read.All` or `https://analysis.windows.net/powerbi/api/Workspace.ReadWrite.All`. 
 * For creating a warehouse: `https://analysis.windows.net/powerbi/api/Warehouse.ReadWrite.All` or `https://analysis.windows.net/powerbi/api/Item.ReadWrite.All`. 
 * For writing to a Lakehouse file: `https://storage.azure.com/user_impersonation`  
@@ -88,11 +88,11 @@ Let's assume that the workload backend has a data plane API that gets the worksp
 * The workload frontend calls the workload backend API to get the workspaces of the user and attaches the token in the request. 
 * The workload backend validates the token and tries to exchange it for the required scope (let's say `https://analysis.windows.net/powerbi/api/Workspace.Read.All`). 
 * The workload fails to exchange the token for the specified resource because the user didn't consent for the application to access this resource (see [AADSTS error codes](/entra/identity-platform/reference-error-codes#aadsts-error-codes)) 
-* The workload backend propagates the error to the workload frontend specifying that it needs a consent for that resource, and the workload frontend calls acquireAccessToken JavaScript API and provide additionalScopesToConsent:   
+* The workload backend propagates the error to the workload frontend specifying that it needs consent for that resource, and the workload frontend calls acquireAccessToken JavaScript API and provide additionalScopesToConsent:   
 
 `workloadClient.auth.acquireAccessToken({additionalScopesToConsent: ["https://analysis.windows.net/powerbi/api/Workspace.Read.All"]})` 
 
-* Alternatively, the workload can decide to ask for a consent for all of its static dependencies that are configured on its application so it calls the JavaScript API and provide promptFullConsent:   
+* Alternatively, the workload can decide to ask for consent for all of its static dependencies that are configured on its application so it calls the JavaScript API and provide promptFullConsent:   
 
 `workloadClient.auth.acquireAccessToken({promptFullConsent: true})`.  
 
