@@ -76,7 +76,7 @@ For more information, see [Limitations on charts with a time axis](data-activato
 
 ## Allowed recipients of email notifications
 
-Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email notifications to be sent to either external email addresses or guest email addresses. 
+Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email notifications to be sent to either external email addresses or guest email addresses.
 
 ## Maximum data for rule processing limits
 
@@ -109,4 +109,4 @@ Your organization may have up to 250 Data Activator items per region. You will g
 * [Get started with Data Activator](data-activator-get-started.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
