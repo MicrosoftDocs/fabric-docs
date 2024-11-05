@@ -28,11 +28,11 @@ Any user with a [role in a workspace](../get-started/roles-workspaces.md) can ac
 
 ## Open lineage view
 
-To access linege view, browse to your KQL database and select **Lineage**.
+To access lineage view, browse to your KQL database and select **Lineage**.
 
 ## What do you see in lineage view?
 
-When you open lineage view on an item, you'll see the connections between all the items in the KQL database.
+When you open lineage view on an item, you see the connections between all the items in the KQL database.
 
 <!-- Image of Lineage view -->
 
@@ -49,7 +49,7 @@ You can highlight an item's lineage to view its relationships with other items i
 
 ## What scenarios can you use lineage for?
 
-This section explore various scenarios where you can use lineage in KQL database:
+This section explores various scenarios where you can use lineage in KQL database:
 
 ### Proactively manage dependencies
 
@@ -61,7 +61,7 @@ Lineage allows you to trace the relationships between materialized views and the
 
 ### Interact with elements and act
 
-You can click on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, additional options are available, such as querying the table, creating a Power BI report based on the table, and more
+You can select on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, more options are available, such as querying the table, creating a Power BI report based on the table, and more
 
 ### Track record ingestion
 
