@@ -24,7 +24,7 @@ To learn more, see [Monitor usage metrics in the workspaces](/power-bi/collabora
 
 Per-user data is enabled for usage metrics by default. Content creator account information, such as user name and email address, is included in the metrics report. If you don't wish to gather this information for all users, you can disable the feature for specified security groups or for an entire organization. Account information for the excluded users then shows in the report as *Unnamed*.
 
-## Show user data in the fabric Capacity Metrics app and reports
+## Show user data in the Fabric Capacity Metrics app and reports
 
 This setting is affects the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) and is enabled by default.
 
