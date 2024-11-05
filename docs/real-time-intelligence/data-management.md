@@ -18,6 +18,8 @@ ms.search.form: Manage data in a KQL Database
 
 Real-Time Intelligence offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that isn't necessarily data in the database tables, or requests to modify the service state.
 
+Use [lineage in KQL database](database-lineage-overview.md) to simplify database management, optimize your data structures, and make it easier to track dependencies and take actions quickly.
+
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
 
 [!INCLUDE [managed-identity](includes/managed-identity.md)]
@@ -61,5 +63,6 @@ For more information, see [Create stored functions](create-functions.md)
 ## Related content
 
 * [Create a database](create-database.md)
+* [Lineage in KQL database](database-lineage-overview.md)
 * [Get data from Azure storage](get-data-azure-storage.md)
 * [Query data in a KQL queryset](kusto-query-set.md)

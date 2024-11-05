@@ -244,6 +244,8 @@ items:
       - name: Data management overview
         displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
         href: data-management.md
+      - name: Lineage view in KQL database
+        href: database-lineage-overview.md
       - name: Change data policies
         href: data-policies.md
       - name: Create a table update policy
