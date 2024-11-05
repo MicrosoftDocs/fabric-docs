@@ -15,7 +15,7 @@ This article describes how to get events from an Azure IoT hub into Real-Time hu
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - [Create an Azure IoT hub](/azure/iot-hub/iot-hub-create-through-portal) if you don't have one. 
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 

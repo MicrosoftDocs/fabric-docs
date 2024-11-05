@@ -15,7 +15,7 @@ This article describes how to get events from sample data sources into Real-Time
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 

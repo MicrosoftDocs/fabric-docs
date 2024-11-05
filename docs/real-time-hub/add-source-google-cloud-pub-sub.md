@@ -15,7 +15,7 @@ This article describes how to add Google Cloud Pub/Sub as an event source in Fab
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Google Cloud account with the Pub/Sub service enabled. Make sure you select a role with the required permissions.
 
 ### Get connection information from Google Cloud Pub/Sub

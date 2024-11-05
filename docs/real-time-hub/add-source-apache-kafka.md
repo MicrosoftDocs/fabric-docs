@@ -15,7 +15,7 @@ This article describes how to add Apache Kafka as an event source in Fabric Real
 
 ## Prerequisites 
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - An Apache Kafka cluster running. 
 - Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 

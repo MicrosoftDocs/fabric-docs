@@ -14,7 +14,7 @@ This article describes how to get events from an Azure Service Bus queue or a to
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Create an Azure Service Bus namespace, and [create a queue](/azure/service-bus-messaging/service-bus-quickstart-portal) and a [topic with a subscription](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal) if you don't have one.
 - You need to have appropriate permission to get access keys for the Service Bus namespace. The namespace must be publicly accessible and not behind a firewall or secured in a virtual network.
 

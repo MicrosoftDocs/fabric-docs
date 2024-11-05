@@ -15,7 +15,7 @@ This article describes how to add Confluent Cloud Kafka as an event source in Fa
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Confluent Cloud Kafka cluster and an API Key.
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]

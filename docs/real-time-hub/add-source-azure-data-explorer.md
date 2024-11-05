@@ -12,7 +12,7 @@ This article describes how to create a database shortcut for an Azure Data Explo
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - You need to have a **contributor** role or higher to the Azure Data Explorer cluster.  
 
 ## Launch Create Database Shortcut experience 
