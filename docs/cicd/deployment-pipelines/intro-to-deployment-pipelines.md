@@ -9,7 +9,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/28/2024
+ms.date: 11/05/2024
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -39,14 +39,19 @@ You can learn how to use the deployment pipelines tool by following these links.
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
-* Dataflows Gen1
+* [Dataflows](/power-bi/transform-model/dataflows/dataflows-create) *(preview)*
 * [Datamarts](/power-bi/transform-model/datamarts/datamarts-overview) *(preview)*
+* [EventHouse](../../real-time-intelligence/eventhouse.md) *(preview)*
+* [EventStream](../../real-time-intelligence/event-streams/overview.md) *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
+* Organizational apps
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) *(preview)*
+* [Reflex](../../real-time-intelligence/event-streams/add-destination-reflex?pivots=enhanced-capabilities) *(preview)*
 * Reports (based on supported semantic models) *(preview)*
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
 * [Semantic models](/power-bi/connect-data/service-datasets-understand) (that originate from .pbix files and aren't PUSH datasets) *(preview)*
+* SQL DB
 * [Warehouses](../../data-warehouse/data-warehousing.md) *(preview)*
 
 ## Pipeline structure
