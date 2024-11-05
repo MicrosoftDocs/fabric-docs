@@ -22,7 +22,7 @@ This article shows you how to add an Azure IoT Hub source to an eventstream.
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
@@ -63,7 +63,7 @@ For a list of supported sources, see [Add an event source in an eventstream](add
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]

@@ -21,7 +21,7 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 ## Prerequisites 
 
-- Access to the Fabric premium workspace with Contributor or above permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Confluent Cloud Kafka cluster and an API Key. 
 - Your Confluent Cloud Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 

@@ -19,7 +19,7 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Registered user access in the PostgreSQL database.
 - Your PostgreSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - CDC enabled in the PostgreSQL database and tables.

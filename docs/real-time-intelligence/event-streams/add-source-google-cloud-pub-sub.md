@@ -19,7 +19,7 @@ Google Pub/Sub is a messaging service that enables you to publish and subscribe 
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Google Cloud account with the Pub/Sub service enabled and a role with the required permissions.
 - Your Google Cloud Pub/Sub source must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 

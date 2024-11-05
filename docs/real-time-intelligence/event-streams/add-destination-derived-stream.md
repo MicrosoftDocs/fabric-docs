@@ -17,7 +17,7 @@ You can create a derived stream after doing operations like filtering and aggreg
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 
 ## Add a derived stream as a destination
 

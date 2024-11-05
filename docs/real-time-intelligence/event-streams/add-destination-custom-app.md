@@ -25,7 +25,7 @@ This article shows you how to add a custom endpoint destination or a custom app 
 
 ## Prerequisites
 
-Before you start, you must get access to a premium workspace with Contributor or higher permissions where your eventstream is located.
+Before you start, you must get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions where your eventstream is located. 
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -126,7 +126,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 ## Prerequisites
 
-Before you start, you must get access to a premium workspace with Contributor or higher permissions where your eventstream is located.
+Before you start, you must get access to the eventstream's workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

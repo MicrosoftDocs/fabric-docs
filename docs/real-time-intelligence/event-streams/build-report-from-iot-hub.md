@@ -21,7 +21,7 @@ If you have IoT devices that are connected to your Azure IoT Hub, you can ingest
 
 Before you begin, make sure you have:
 
-- Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
+- Access to a workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
 - An Azure IoT hub with event data and the necessary permission to access the policy keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
 ## Create a KQL database and an eventstream

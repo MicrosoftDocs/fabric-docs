@@ -21,7 +21,7 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
 
 ## Prerequisites 
 
-- Access to the Fabric **premium workspace** with **Contributor** or above permissions.
+- Access to the Fabric workspace with Contributor or above permissions.
 - An Apache Kafka cluster running. 
 - Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 

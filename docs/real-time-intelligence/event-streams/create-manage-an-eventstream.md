@@ -21,7 +21,7 @@ If you have eventstreams that were created using standard capabilities, those ev
 ## Prerequisites
 Before you start, you must complete the following prerequisite:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions.
+- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 
 ## Create an eventstream
@@ -46,7 +46,7 @@ The event streams feature in Microsoft Fabric gives you a centralized place in t
 
 Before you start, you must complete the following prerequisite:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions.
+- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 ## Create an eventstream
 

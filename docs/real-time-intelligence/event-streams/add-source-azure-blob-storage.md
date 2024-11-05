@@ -54,7 +54,7 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Access to an Azure Blob Storage **StorageV2 (general purpose v2)**, **BlockBlobStorage**, or **BlobStorage** account. The **Storage (general purpose v1)** storage type doesn't support integration with Fabric event streams.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 

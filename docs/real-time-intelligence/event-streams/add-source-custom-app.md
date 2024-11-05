@@ -24,7 +24,7 @@ This article shows you how to add a custom endpoint source or a custom app sourc
 
 ## Prerequisites
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
@@ -108,7 +108,7 @@ For a list of supported sources, see [Add an event source in an eventstream](add
 
 ## Prerequisites
 
-Before you start, you must get access to a premium workspace with Contributor or higher permissions where your eventstream is located.
+Before you start, you must get access to a workspace with Contributor or higher permissions where your eventstream is located.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

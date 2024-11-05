@@ -24,7 +24,7 @@ In an eventstream, there are two types of monitoring experiences: **Data insight
 
 Before you start, you must have:
 
-- Access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located.
+- Access to a workspace with Viewer or above permissions where your Eventstream item is located.
 - An Azure event hub source or lakehouse destination added to your eventstream.
 
 ## Data insights

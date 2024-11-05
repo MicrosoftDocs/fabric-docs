@@ -25,7 +25,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Get access to a premium workspace with Contributor or higher permissions where your eventstream is located.
+- Get access to a workspace with Contributor or higher permissions where your eventstream is located.
 - Get a Windows machine and install the following components:
   - [Java Development Kit (JDK) 1.7+](/azure/developer/java/fundamentals/java-support-on-azure)
   - A Maven binary archive ([download](https://maven.apache.org/download.cgi) and [install](https://maven.apache.org/install.html))
