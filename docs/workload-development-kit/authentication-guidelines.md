@@ -4,35 +4,35 @@ description: This article describes important concepts and guidelines when worki
 author: ramizsha
 ms.author: rashahoc
 ms.topic: best-practice
-ms.date: 03/11/2024
+ms.date: 11/03/2024
 #customer intent: As a developer, I want to understand what are the best practices when working with authentication to grant users the optimal experience.
 ---
 
 # Workload authentication guidelines & deep dive 
 
-Before we get familiar with guidelines on how to work with authentication when building workloads, please make sure you went over [Authentication overview](./authentication-concept.md) & [Authentication setup](./authentication-tutorial.md). 
+Before we get familiar with guidelines on how to work with authentication when building workloads, make sure you went over [Authentication overview](./authentication-concept.md) and [Authentication setup](./authentication-tutorial.md). 
 
 Let's go over some concepts before we talk about Working with tokens & consents:
 
-### Data plane and control plane APIs 
+## Data plane and control plane APIs 
 
 * Data plane APIs are APIs that the workload backend exposes, and the workload frontend can call them directly.   
-  For data plane APIs - the workload backend can decide on what APIs to expose.
+  For data plane APIs, the workload backend can decide on what APIs to expose.
 * Control plane APIs are APIs that go through Fabric, it starts with the workload frontend calling a JS API and it ends with Fabric calling the workload backend.  
   An example of such an API is create item.  
   For control plane APIs – the workload must follow the contracts defined in the workload backend and implement those APIs. 
 
 
-### Expose an API tab on the workload’s application in Entra Id
-In this tab, you will need to add scopes for control plane APIs and scopes for data plane APIs: 
-* The scopes added for control plane APIs should preauthorize "Fabric Client for Workloads" application with application Id "d2450708-699c-41e3-8077-b0c8341509aa", those scopes will be included in the token that's received when Fabric calls the workload backend. 
+## Expose an API tab on the workload’s application in Entra Id
+In this tab, you need to add scopes for control plane APIs and scopes for data plane APIs: 
+* The scopes added for control plane APIs should preauthorize "Fabric Client for Workloads" application with application Id "d2450708-699c-41e3-8077-b0c8341509aa", those scopes are included in the token that the workload backend recieves when Fabric calls it.
 You need to add at least one for control plane API for the flow to work. 
-* The scopes added for data plane APIs should preauthorize "Microsoft Power BI" with application Id "871c010f-5e61-4fb1-83ac-98610a7e9110" and will be included in the token that's returned in the acquireAccessToken javascript API. 
+* The scopes added for data plane APIs should preauthorize "Microsoft Power BI" with application Id "871c010f-5e61-4fb1-83ac-98610a7e9110" and are included in the token that the acquireAccessToken javascript API returns. 
 For data plane APIs, this tab can be used as a means to manage granular permissions per API that your workload exposes.  
 Ideally you should add a set of scopes for each API the workload backend exposes and validate that the token received includes those scopes when those APIs are called from the client.  
 For example: If your workload exposes 2 APIs to the client "ReadData" & "WriteData", the workload can expose 2 data plane scopes "data.read" & "data.write", and in "ReadData" API the workload will validate that "data.read" scope is included in the token before continuing with the flow - the same applies to "WriteData". 
 
-### API permissons tab on the workload’s application in Entra Id
+## API permissons tab on the workload’s application in Entra Id
 In this tab, you will need to add all the scopes your workload will need to exchange a token for.   
 A mandatory scope to add is "Fabric.Extend" under power bi service - note that requests to Fabric may fail without this scope.
 
@@ -42,8 +42,8 @@ Here's how the workload frontend should use the [JavaScript API](./authenticatio
 
 ### Step 1: Acquiring a token 
 The workload will start with asking for a token using the JavaScript API without providing any parameters, this may result in 2 scenarios: 
-1. The user will see a consent window of all the static dependencies (What's ) the workload has configured, this will happen if the user is not a part of the home tenant of the application and they did not grant consent to Microsoft graph for this application before. 
-2. The user will not see a consent window, this will happen if the user has already consented at least once to Microsoft graph for this application or if the user is a part of the application's home tenant. 
+* The user will see a consent window of all the static dependencies (What's ) the workload has configured, this will happen if the user is not a part of the home tenant of the application and they did not grant consent to Microsoft graph for this application before. 
+* The user will not see a consent window, this will happen if the user has already consented at least once to Microsoft graph for this application or if the user is a part of the application's home tenant. 
 In both scenarios the workload should not care whether the user gave full consent for all of the dependencies or not (and cannot know at this point). 
 The token received will have the workload backend audience and can be used to directly call the workload backend from the workload frontend. 
 ### Step 2: Trying to access external services 
@@ -61,18 +61,19 @@ For control plane APIs failures, please see [Workload communication guide](./wor
 
 Let's assume we are building a workload that needs to access 3 Fabric APIs: 
 
-1. List Workspaces: `GET https://api.fabric.microsoft.com/v1/workspaces` 
+* List Workspaces: `GET https://api.fabric.microsoft.com/v1/workspaces` 
 
-2. Create a warehouse: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/warehouses` 
+* Create a warehouse: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/warehouses` 
 
-3. Write to Lakehouse file : `PUT https://onelake.dfs.fabric.microsoft.com/{filePath}?resource=file` 
+* Write to Lakehouse file : `PUT https://onelake.dfs.fabric.microsoft.com/{filePath}?resource=file` 
 
 To be able to work with those APIs we will need to exchange tokens for the following scopes - : 
-1. For List Workspaces we need `https://analysis.windows.net/powerbi/api/Workspace.Read.All` or `https://analysis.windows.net/powerbi/api/Workspace.ReadWrite.All`. 
-2. For creating a warehouse we need `https://analysis.windows.net/powerbi/api/Warehouse.ReadWrite.All` or `https://analysis.windows.net/powerbi/api/Item.ReadWrite.All`. 
-3. To be able to write to a Lakehouse file, we need `https://storage.azure.com/user_impersonation`  
+* For List Workspaces we need `https://analysis.windows.net/powerbi/api/Workspace.Read.All` or `https://analysis.windows.net/powerbi/api/Workspace.ReadWrite.All`. 
+* For creating a warehouse we need `https://analysis.windows.net/powerbi/api/Warehouse.ReadWrite.All` or `https://analysis.windows.net/powerbi/api/Item.ReadWrite.All`. 
+* To be able to write to a Lakehouse file, we need `https://storage.azure.com/user_impersonation`  
 
-Note: You can find scopes needed for each Fabric API [here](/rest/api/fabric/articles/using-fabric-apis)  
+>[!NOTE]
+>You can find scopes needed for each Fabric API [here](/rest/api/fabric/articles/using-fabric-apis)  
 
 So to start, we will add the required permissions to our application under API permissions. 
 Let’s take a look at examples of different scenarios that the workload may encounter: 
@@ -85,9 +86,7 @@ Let's assume that the workload backend has a data plane API that gets the worksp
 * The workload fails to exchange the token for the specified resource because the user did not consent for the application to access this resource (see [AADSTS error codes](/entra/identity-platform/reference-error-codes#aadsts-error-codes)) 
 * The workload backend propagates the error to the workload frontend specifying that it needs a consent for that resource, and the workload frontend will call acquireAccessToken javascript API and provide additionalScopesToConsent:   
 
-`workloadClient.auth.acquireAccessToken({ 
-
-        additionalScopesToConsent: ["https://analysis.windows.net/powerbi/api/Workspace.Read.All"]})` 
+`workloadClient.auth.acquireAccessToken({additionalScopesToConsent: ["https://analysis.windows.net/powerbi/api/Workspace.Read.All"]})` 
 
 * Alternatively, the workload can decide to ask for a consent for all of its static dependencies that are configured on its application regardless whether the user has already granted consent to some of them or not, so it calls the javascript API and provide promptFullConsent:   
 
@@ -96,7 +95,9 @@ Let's assume that the workload backend has a data plane API that gets the worksp
 
 After that the workload frontend can retry the operation.   
 
-**Note**: If the token exchange still fails on a consent error it means that the user did not grant consent, the workload will need to handle such scenarios e.g. notify the user that this API requires consent and will not work without it. 
+>[!NOTE]
+> If the token exchange still fails on a consent error it means that the user did not grant consent, the workload will need to handle such scenarios
+> for example notify the user that this API requires consent and will not work without it. 
 
 
 #### Example 2 
@@ -118,7 +119,7 @@ When requesting consents, the response will be returned to the redirect URI, in 
 const redirectUriPath = '/close'; 
 const url = new URL(window.location.href); 
 if (url.pathname?.startsWith(redirectUriPath)) { 
-    // Handle errors, Please refer to https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes 
+    // Handle errors, Please refer to https://learn.microsoft.com/entra/identity-platform/reference-error-codes 
     if (url?.hash?.includes("error")) { 
         // Handle missing service principal error 
         if (url.hash.includes("AADSTS650052")) { 
