@@ -62,7 +62,7 @@ Next, choose the type of condition that you want to detect. You can use conditio
 
 The charts in the Definition tab updates to show a sample of the events that meet the conditions that you set.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts." lightbox="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png":::
 
 If you navigate to the **Analytics** tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that Data Activator is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
 
@@ -109,7 +109,7 @@ To create a property, select the stream added to the object that you're interest
 
 Once you define a property, you can reference it from one or more rules. Here we reference the *Temperature* property *Maximum temp last hour* rule.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert."  lightbox="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png":::
 
 ## Related content
 

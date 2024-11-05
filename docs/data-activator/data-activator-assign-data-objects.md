@@ -29,7 +29,7 @@ The example shown is based on the sample *Packages* data that comes with Data Ac
 
 When you create an object, you see the events that were received organized by the unique values from the ID column.
 
-:::image type="content" source="media/data-activator-assign-data-objects/activator-assign-data-objects-02.png" alt-text="Screenshot of event received by data activator.":::
+:::image type="content" source="media/data-activator-assign-data-objects/activator-assign-data-objects-02.png" alt-text="Screenshot of event received by data activator." lightbox="media/data-activator-assign-data-objects/activator-assign-data-objects-02.png":::
 
 By default the events for five random instances for the previous 24 hours are displayed in the chart. You can change this using the population selector and time selectors at the top of the card.
 
