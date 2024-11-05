@@ -61,8 +61,8 @@ items:
     href: ../cicd/git-integration/git-get-started.md
   - name: Workspace identity
     href: ../security/workspace-identity.md
-- name: Discover data in the OneLake data hub
-  href: onelake-data-hub.md
+- name: OneLake catalog - discover, explore, and secure Fabric items
+  href: ../governance/onelake-catalog-overview.md
 - name: Copilot in Fabric
   items:
   - name: Copilot in Fabric overview
