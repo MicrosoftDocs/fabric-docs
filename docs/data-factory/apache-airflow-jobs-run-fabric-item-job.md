@@ -97,7 +97,7 @@ To know more about parameters, refer to [Request authorization code](/entra/iden
 #### User consent Experience
 After the app sends the authorization request, the user is asked to enter their credentials to authenticate with Microsoft. The Microsoft identity platform v2.0 endpoint ensures that the user has consented to the permissions indicated in the scope query parameter. The following screenshot is an example of the consent dialog box presented for a Microsoft account user.
 
-:::image type="content" source="media/apache-airflow-jobs/user-consent-fabric-plugin.png" lightbox="media/apache-airflow-jobs/user-consent-fabric-plugin.png" alt-text="Screenshot to show user consent experience while authenticating with Microsoft fabric.":::
+:::image type="content" source="media/apache-airflow-jobs/user-consent-fabric-plugin.png" lightbox="media/apache-airflow-jobs/user-consent-fabric-plugin.png" alt-text="Screenshot to show user consent experience while authenticating with Microsoft Fabric.":::
 
 #### Authorization response
 If the user consents to the permissions requested by the app, the Microsoft identity platform sends an authorization code to the app's redirect URI. Here's an example of a successful response to the previous request. Because the response_mode parameter in the request was set to query, the response is returned in the query string of the redirect URL. For the next step, copy the 'code' value from the response.
@@ -106,7 +106,7 @@ If the user consents to the permissions requested by the app, the Microsoft iden
 HTTP/1.1 200 OK
 
 https://localhost/myapp/?
-code=M0ab92efe-b6fd-df08-87dc-2c6500a7f84d
+code=M0ab92efe-b6fd-df08-87dc-2c6500a7f84d...
 &state=12345
 &session_state=fe1540c3-a69a-469a-9fa3-8a2470936421#
 ```
