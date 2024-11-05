@@ -17,7 +17,7 @@ There are many objects and concepts that make up Activator, too many to cover in
 
 ## Activator creation workflow
 
-A typical Activator workflow involves many of these concepts. One common workflow starts with creating a new empty activator in a workspace and using ***Get events*** to connect to an eventstream. From that eventstream, you create objects and properties. Then you build a rule based on those objects and properties. For example: email me if the temperature of the package becomes greater than 60 degrees. To create a rule on that object, the designer sets conditions, parameters, and aggregations that tell Activator when to trigger and what actions to take when triggered. For example: send an email, create a Fabric item, or start a Power Automate action. Another common workflow is to start from the eventstream itself. From the eventstream you add an Activator destination and create the new activator. Once the activator is created, open that activator and create the objects and properties. 
+A typical Activator workflow involves many of these concepts. One common workflow starts with creating a new empty activator in a workspace and using ***Get events*** to connect to an eventstream. From that eventstream, you create objects and properties. Then you build a rule based on those objects and properties. For example: email me if the temperature of the package becomes greater than 60 degrees. To create a rule on that object, the designer sets conditions, parameters, and aggregations that tell Activator when to trigger and what actions to take when triggered. For example: send an email, create a Fabric item, or start a Power Automate action. Another common workflow is to start from the eventstream itself. From the eventstream, you add an Activator destination and create the new activator. Once the activator is created, open that activator and create the objects and properties. 
 
 ## Workspaces
 
@@ -37,7 +37,7 @@ Once you create an activator, populate it with data. Learn how to get data into 
 
 ## Events and eventstreams
 
-Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields you’re monitoring. Eventstreams vary in frequency from many times per second for IoT sensors, to more sporadic streams such as packages being scanned in and out of shipping locations.
+Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields you’re monitoring. Eventstreams vary in frequency. IoT sensors might have events many times per second. While packages being scanned in and out of shipping locations might have sporadic streams.
 
 The event streams feature in the Microsoft Fabric Real-Time Intelligence experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the Eventstream item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. Activator takes actions on patterns or conditions that are detected in Eventstream data. For example, Activator monitors Eventstream items and detects when an "event" hits certain thresholds such as "delivery time more than 10 hours."  It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
@@ -63,13 +63,13 @@ Properties are useful when you want to reuse logic across multiple rules. You mi
 
 ### Lookback period 
 
-Activator needs to track historical data to ensure that correct actions can be computed. The amount of historical data to be queried is called the lookback period. This lookback period depends on how a rule is defined as well as the data volume (events per second) of the data that is needed to evaluate the rule. 
+Activator needs to track historical data to ensure that correct actions can be computed. The amount of historical data to be queried is called the lookback period. This lookback period depends on how a rule is defined and the data volume (events per second) of the data that is needed to evaluate the rule. 
 
 For example, a pharmaceutical logistics operation is transporting medicine packages in a cold chain. The goal is to get an alert when a medicine package becomes too warm. Say the rule definition evaluates the average temperature over a three-hour period for each individual package. And the rule condition is that the average temperature becomes greater than 8°C. Here, the lookback period is six hours. Activator needs to inspect six hours’ worth of historical data to decide whether the rule condition holds. 
 
-### Distinct, active object IDs 
+### Distinct, active object IDs
 
-Rules built on attributes are used to monitor how an attribute on an object ID changes over time. In the pharmaceutical logistics example, each individual package is represented by a unique ID, with the data source providing periodic readings of the temperature of each package. Some limits are defined in terms of the number of distinct object IDs (the number of packages) being tracked by Activator within the lookback period. Activator tracks active object IDs. An active object IDs is an object where events are arriving within the stored period. For example, a toll station that has cars passing through.
+Rules built on attributes are used to monitor how an attribute on an object ID changes over time. In the pharmaceutical logistics example, each individual package is represented by a unique ID. The data source provides periodic readings of the temperature of each package. Some limits are defined in terms of the number of distinct object IDs (the number of packages) being tracked by Activator within the lookback period. Activator tracks active object IDs. An active object ID is an object where events are arriving within the stored period. For example, a toll station that has cars passing through.
 
 ## Related content
 
