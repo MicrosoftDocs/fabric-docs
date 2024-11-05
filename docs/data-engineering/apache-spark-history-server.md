@@ -4,7 +4,7 @@ description: Use the extended Apache Spark history server to debug and diagnose 
 author: jejiang
 ms.author: jejiang
 ms.topic: overview
-ms.date: 04/30/2023
+ms.date: 09/11/2024
 ms.custom:
   - template-howto
   - build-2023
