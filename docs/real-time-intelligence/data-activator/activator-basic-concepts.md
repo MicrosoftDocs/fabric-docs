@@ -19,7 +19,7 @@ There are many objects and concepts that make up Activator, too many to cover in
 
 A typical Activator workflow involves many of these concepts. One common workflow starts with creating a new empty activator in a workspace and using ***Get events*** to connect to an eventstream. From that eventstream you create objects and properties. Then you build a rule based on those objects and properties. For example: email me if the temperature of the package becomes greater than 60 degrees. To create a rule on that object, the designer sets conditions, parameters, and aggregations that tell Activator when to trigger and what actions to take when triggered. For example: send an email, create a Fabric item, start a Power Automate action. Another common workflow is to start from the Eventstream itself. From there you add an Activator destination, and create the new activator from there. Once the activator is created, open that activator and create the objects and properties. 
 
-![A basic Real-Time Intelligence Activator workflow chart.](media/end-user-basic-concepts/activator--workflow.png)  
+![A basic Real-Time Intelligence Activator workflow chart.](media/end-user-basic-concepts/activator-workflow.png)  
 
 ## Workspaces
 
@@ -31,7 +31,7 @@ To see your workspaces, select **Workspaces** from your left navigation pane.
 
 :::image type="content" source="media/end-user-basic-concepts/power-bi-workspaces.png" alt-text="Screenshot of Power BI with Workspaces selected.":::
 
-[Learn more about workspaces.](end-user-workspaces.md)
+[Learn more about workspaces.](/power-bi/consumer/end-user-workspaces.md)
 
 ## Activator and activator
 
