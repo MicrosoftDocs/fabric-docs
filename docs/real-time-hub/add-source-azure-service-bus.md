@@ -52,7 +52,7 @@ You can get events from an Azure Service Bus into Real-Time hub in one of the wa
 
     If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the step to configure the **data format**.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/add-source-azure-event-hubs/existing-connection.png":::    
+    :::image type="content" source="./media/add-source-azure-service-bus/use-existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure Service Bus." lightbox="./media/add-source-azure-service-bus/use-existing-connection.png":::    
 1. In the **Connection settings** section, for **Host Name**, enter the host name for your Service Bus namespace. You can get the host name for the namespace from the **Overview** page of your Service Bus namespace in the Azure portal. It's in the form of `myservicebusnamespace.servicebus.windows.net`. 
 
     :::image type="content" source="./media/add-source-azure-service-bus/enter-host-name.png" alt-text="Screenshot that shows the connection settings with Service Bus namespace.":::
