@@ -121,9 +121,9 @@ To view the data insights for a streaming connector source:
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
-To view the runtime logs for Azure event hub source, Azure iot hub source, lakehouse destination and KQL database destination ('Event processing before ingestion' mode):
+To view the runtime logs for Azure event hub source, Azure iot hub source, streaming connector source, lakehouse destination and KQL database destination ('Event processing before ingestion' mode):
 
-1. Select the Azure event hub source, lakehouse destination or KQL database destination in the main editor canvas.
+1. Select the Azure event hub source, streaming connector source, lakehouse destination or KQL database destination in the main editor canvas.
 
 2. In the lower pane, select the **Runtime logs** tab.
 

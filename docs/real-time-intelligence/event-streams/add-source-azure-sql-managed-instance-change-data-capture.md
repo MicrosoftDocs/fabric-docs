@@ -57,11 +57,11 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
 ## Add Azure SQL Managed Instance CDC as a source
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 
-1. On the next screen, select **Add external source**.
+2. On the next screen, select **Add external source**.
 
    ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
 

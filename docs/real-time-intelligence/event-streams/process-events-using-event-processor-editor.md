@@ -92,6 +92,7 @@ Here are the destination types that support to add operators before ingestion:
 - Lakehouse 
 - KQL Database (Event processing before ingestion) 
 - Derived stream 
+- Activator
 
 > [!NOTE]
 > For destinations that don't support pre-ingestion operator addition, you can first add a derived stream as the output of your operator. Then, append your intended destination to this derived stream. 
