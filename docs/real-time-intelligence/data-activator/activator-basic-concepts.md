@@ -27,7 +27,7 @@ Everyone also has a **My workspace**. **My workspace** is your personal sandbox 
 
 To see your workspaces, select **Workspaces** from your left navigation pane.
 
-[Learn more about workspaces.](/power-bi/consumer/end-user-workspaces.md)
+[Learn more about workspaces.](/power-bi/consumer/end-user-workspaces)
 
 ## Activator and activator
 
