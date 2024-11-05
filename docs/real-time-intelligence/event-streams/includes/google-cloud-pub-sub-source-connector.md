@@ -4,9 +4,7 @@ description: The include file has the common content for configuring Google Clou
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ---
 
 1. On the **Connect** screen, under **Connection**, select **New connection**.

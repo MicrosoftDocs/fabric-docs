@@ -4,7 +4,7 @@ description: Include file that provides the common content for configuring an Az
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.date: 10/28/2024
+ms.date: 11/18/2024
 ---
 
 1. On the **Connect** screen, under **Connection**, select **New connection** to create a cloud connection linking to your Azure Cosmos DB database.

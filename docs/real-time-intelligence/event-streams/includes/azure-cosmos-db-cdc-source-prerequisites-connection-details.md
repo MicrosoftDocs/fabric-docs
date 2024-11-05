@@ -4,7 +4,7 @@ description: This include file has the prerequisites for adding an Azure Cosmos 
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.date: 06/18/2024
+ms.date: 11/18/2024
 ---
 
 ## Prerequisites

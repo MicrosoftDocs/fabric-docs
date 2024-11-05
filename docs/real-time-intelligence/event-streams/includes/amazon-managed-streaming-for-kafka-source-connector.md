@@ -4,7 +4,7 @@ description: This file has the common content for configuring Amazon Managed str
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.date: 10/23/2024
+ms.date: 11/18/2024
 ---
 
 1. On the **Data sources** page, select **Amazon MSK Kafka**. 
