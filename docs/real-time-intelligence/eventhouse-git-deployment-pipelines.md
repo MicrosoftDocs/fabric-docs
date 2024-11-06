@@ -48,10 +48,6 @@ The following eventhouse and KQL database information is serialized and tracked 
 
 Data-level integration is achieved through the use of a KQL script to create or modify database objects schemas, properties, and policies. However, it is important to note that not all commands supported in a KQL script are compatible with Microsoft Fabric ALM.
 
-- **Eventhouse**
-
-    Not supported
-
 - **KQL database**
 
     The following database objects are supported in the KQL script:
