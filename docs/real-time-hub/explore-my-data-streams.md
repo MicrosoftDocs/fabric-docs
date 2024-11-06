@@ -7,17 +7,17 @@ ms.topic: how-to
 ms.date: 11/18/2024
 ---
 
-# Explore My streams in Fabric Real-Time hub
+# Explore My data streams in Fabric Real-Time hub
 
-When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub](explore-data-streams.md). This article covers the **My streams** page, which allows you to view only the data streams that you brought into Fabric.
+When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub](explore-data-streams.md). This article covers the **My data streams** page, which allows you to view only the data streams that you brought into Fabric.
 
-:::image type="content" source="media/explore-my-data-streams/hub-my-streams-menu.png" alt-text="Screenshot that shows the Real-Time hub My streams page." lightbox="./media/explore-my-data-streams/hub-my-streams-menu.png" :::
+:::image type="content" source="media/explore-my-data-streams/hub-my-streams-menu.png" alt-text="Screenshot that shows the Real-Time hub My data streams page." lightbox="./media/explore-my-data-streams/hub-my-streams-menu.png" :::
 
-## My streams page
+## My data streams page
 
 ### Columns
 
-The **My streams** page has the following columns:
+The **My data streams** page has the following columns:
 
 | Column | Description |
 | ------ | ----------- |
@@ -27,7 +27,7 @@ The **My streams** page has the following columns:
 | Endorsement | Endorsement status of the parent artifact. |
 | Sensitivity | Sensitivity status of the parent artifact. |
 
-:::image type="content" source="media/explore-my-data-streams/hub-my-streams-menu-columns.png" alt-text="Screenshot that highlights the Real-Time hub My streams page column names." lightbox="media/explore-my-data-streams/hub-my-streams-menu-columns.png":::
+:::image type="content" source="media/explore-my-data-streams/hub-my-streams-menu-columns.png" alt-text="Screenshot that highlights the Real-Time hub My data streams page column names." lightbox="media/explore-my-data-streams/hub-my-streams-menu-columns.png":::
 
 ### Filters
 
@@ -49,7 +49,7 @@ You can also search your streams/events using the search bar by typing in the na
 
 ### Actions
 
-Here are the actions available on streams from eventstreams in the **My streams** page. Move the mouse over the data stream, select **... (ellipsis)** to see the actions.
+Here are the actions available on streams from eventstreams in the **My data streams** page. Move the mouse over the data stream, select **... (ellipsis)** to see the actions.
 
 | Action | Description |
 | ------ | ----------- |
@@ -59,7 +59,7 @@ Here are the actions available on streams from eventstreams in the **My streams*
 
 :::image type="content" source="./media/explore-my-data-streams/real-time-hub-my-data-streams-actions.png" alt-text="Screenshot that shows the actions available on streams in the Real-Time hub All data streams page." lightbox="./media/explore-my-data-streams/real-time-hub-my-data-streams-actions.png":::
 
-Here are the actions available on a KQL table in the My streams page.
+Here are the actions available on a KQL table in the My data streams page.
 
 | Action | Description |
 | ------ | ----------- |
