@@ -30,7 +30,7 @@ To access the view, browse to your desired KQL database and select **Entity diag
 
 ## What do you see in entity diagram view?
 
-When you open entity diagram view, you see the connections between all the items in the KQL database.
+When you open entity diagram view, you see the dependencies between all the items in the KQL database.
 
 <!-- Image of Lineage view -->
 
@@ -46,7 +46,7 @@ The entity diagram view displays the following information:
 
 You can select an item to view its relationships with other items in the database. The entity diagram highlights all the items related to that item, and dims the rest.
 
-### View ingestion details
+**View ingestion details**
 
 You can also view the ingestion details of each table and materialized view. To view ingestion details, on the right side of the ribbon, select **Show details** and under **Ingestion**, select the desired time range. The information is added to the relevant entity's card.
 
