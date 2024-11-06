@@ -42,7 +42,7 @@ Microsoft Fabric is built on a Software as a Service (SaaS) foundation. It unifi
 
 :::image type="content" source="media\microsoft-fabric-overview\fabric-architecture.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric." lightbox="media\microsoft-fabric-overview\fabric-architecture.png":::
 
-Fabric integrates workloads like Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Industry solutions, Databases and Power BI into a shared SaaS foundation. Each of these experiences is tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. The AI-integrated Fabric stack accelerates the data journey and offers the following advantages:
+Fabric integrates workloads like Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Industry solutions, Databases, and Power BI into a shared SaaS foundation. Each of these experiences is tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. The AI-integrated Fabric stack accelerates the data journey and offers the following advantages:
 
 * Extensive integrated analytics
 * Familiar and easy-to-learn shared experiences
@@ -60,7 +60,7 @@ Fabric offers a comprehensive set of analytics experiences designed to work toge
 
 - **Power BI** - Power BI lets you easily connect to your data sources, visualize, and discover what's important, and share that with anyone or everyone you want. This integrated experience allows business owners to access all data in Fabric quickly and intuitively and to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
-- **Databases** - Databases in Microsoft Fabric are a developer-friendly transactional databases such as Azure SQL Database, that allow you to easily create your operational database in Fabric. Using the mirroring capability, you can bring data from various systems together into OneLake. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, Snowflake, and Fabric SQL database. For more information, see [SQL database in Microsoft Fabric](../database/sql/overview.md) and [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- **Databases** - Databases in Microsoft Fabric are a developer-friendly transactional database such as Azure SQL Database, that allows you to easily create your operational database in Fabric. Using the mirroring capability, you can bring data from various systems together into OneLake. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, Snowflake, and Fabric SQL database. For more information, see [SQL database in Microsoft Fabric](../database/sql/overview.md) and [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
 
 - **Data Factory** - Data Factory provides a modern data integration experience to ingest, prepare, and transform data from a rich set of data sources. It incorporates the simplicity of Power Query, and you can use more than 200 native connectors to connect to data sources on-premises and in the cloud. For more information, see [What is Data Factory in Microsoft Fabric?](../data-factory/data-factory-overview.md)
 
