@@ -20,7 +20,7 @@ In this part of the tutorial, you learn how to set an alert on your event stream
 
 ## Set an alert on the event stream
 
-1. From the left navigation bar, select **Real-Time hub**.
+1. From the left navigation bar, select **Real-Time**.
 1. Select the event stream you created in the previous tutorial named *TutorialEventstream*.
     The event stream details page opens.
     
@@ -40,7 +40,7 @@ In this part of the tutorial, you learn how to set an alert on your event stream
     | **Save location** | | 
     | Workspace | The workspace in which you created resources|
     | Item | Create a new item |
-    | New item name | Tutorial-Reflex |
+    | New item name | Tutorial |
 
     :::image type="content" source="media/tutorial/alert-logic.png" alt-text="Screenshot of Set alert pane in Real-Time Intelligence.":::
 
@@ -52,7 +52,7 @@ In this part of the tutorial, you learn how to set an alert on your event stream
 
 For more information about tasks performed in this tutorial, see:
 
-* [What is Data Activator?](data-activator/data-activator-introduction.md)
+* [What is Activator?](data-activator/data-activator-introduction.md)
 * [Set alerts on streams in Real-Time hub](../real-time-hub/set-alerts-data-streams.md)
 
 ## Next step
