@@ -46,7 +46,7 @@ The following eventhouse and KQL database information is serialized and tracked 
 
 ### Data-level integration
 
-Data-level integration is achieved through the use of a KQL script to create or modify database objects schemas, properties, and policies. However, it is important to note that not all commands supported in a KQL script are compatible with Microsoft Fabric ALM.
+Data-level integration is achieved through the use of a KQL script to create or modify database objects schemas, properties, and policies. However, it's important to note that not all commands supported in a KQL script are compatible with Microsoft Fabric ALM.
 
 - **KQL database**
 
@@ -56,7 +56,7 @@ Data-level integration is achieved through the use of a KQL script to create or 
     - Function
     - Table policy update
     - Column encoding policy
-    - Meterialized view
+    - Materialized view
     - Table ingestion mapping
 
     For information about supported commands, see the **DatabaseSchema.kql** file description under [KQL database files](#kql-database-files).
@@ -93,7 +93,7 @@ The following files are contained in an eventhouse folder:
 
 - **EventhouseProperties.json**
 
-    The file allows you to configue platform-level settings for the eventhouse item.
+    The file allows you to configure platform-level settings for the eventhouse item.
 
 ### KQL database files
 
@@ -120,7 +120,7 @@ The following files are contained in an KQL database folder:
 
 - **DatabaseProperties.json**
 
-    The file uses the following schema to configue platform-level settings for the KQL database item:
+    The file uses the following schema to configure platform-level settings for the KQL database item:
 
     ```json
     {
@@ -142,7 +142,7 @@ The following files are contained in an KQL database folder:
 
 - **DatabaseSchema.kql**
 
-    The file is a [KQL script](/azure/data-explorer/database-script) that configures the data-level settings for the KQL database. It's automtically generated when the KQL database is synced to git. The file is executed when syncing to your Fabric Workspace.
+    The file is a [KQL script](/azure/data-explorer/database-script) that configures the data-level settings for the KQL database. It's automatically generated when the KQL database is synced to git. The file is executed when syncing to your Fabric Workspace.
 
     You can make changes to this script by adding or modifying the following supported commands:
 
