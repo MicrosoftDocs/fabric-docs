@@ -42,6 +42,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Dataflows Gen1
 * [Datamarts](/power-bi/transform-model/datamarts/datamarts-overview) *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) *(preview)*
 * Reports (based on supported semantic models) *(preview)*
