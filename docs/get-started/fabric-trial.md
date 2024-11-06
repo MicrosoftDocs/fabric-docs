@@ -11,7 +11,7 @@ ms.date: 09/23/2024
 
 # Microsoft Fabric trial capacity
 
-Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fabric trial capacity. Your use of the Microsoft Fabric trial capacity includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days.
+Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fabric trial capacity. Your use of the Microsoft Fabric trial capacity includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days unless cancelled sooner.
 
 > [!NOTE]
 > If you're ready to purchase Fabric, visit the [Purchase Fabric page.](../enterprise/buy-subscription.md)
@@ -119,32 +119,52 @@ If you're the capacity or Fabric administrator, from the upper right corner of F
 
 ## End a Fabric trial
 
-End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial. Individual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data and continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. 
+End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity and Fabric admins can cancel the trial of a Fabric capacity. Individual users don't have this ability. 
+
+One reason to cancel a trial capacity is when the capacity administrator of a trial capacity leaves the company. Since Microsoft limits the number of trial capacities available per tenant, you might want to remove the unmanaged trial to make room to sign up for a new trial.
+
+When you cancel a free Fabric capacity trial, and don't move the workspaces and their contents to a new capacity that supports Fabric:
+
+- Microsoft can't extend the Fabric capacity trial, and you might not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. 
+- All licenses return to their original versions. You no longer have the equivalent of a PPU license. The license mode of any workspaces assigned to that trial capacity change to Power BI Pro. 
+- The trial capacity, with all of its workspaces and their contents, is deleted. 
+- You can't create workspaces that support Fabric capabilities.
+- You can't share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
+- You can't create any other analytics solutions using these Fabric items.
+
+If you want to retain your data and continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. Or, migrate your workspaces to a capacity that you already own that supports Fabric items.
 
 For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
 
 ### The trial expires 
 
-A standard Fabric capacity trial lasts 60 days. If you don't upgrade to a paid Fabric capacity before the end of the trial period, non-Power BI Fabric items are removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states). You have seven days after the expiration date to save your non-Power BI Fabric items by assigning the workspaces to an active capacity.
+A standard Fabric capacity trial lasts 60 days. If you don't upgrade to a paid Fabric capacity before the end of the trial period, non-Power BI Fabric items are removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states). You have seven days after the expiration date to save your non-Power BI Fabric items by assigning the workspaces to capacity that supports Fabric.
 
 To retain your Fabric items, before your trial ends, [purchase Fabric](https://aka.ms/fabricibiza).
 
 ### Cancel your Fabric capacity trial - non admins
 
-Only the capacity administrator can cancel the Fabric capacity trial. 
+Only the capacity or Fabric administrator can cancel the Fabric capacity trial. 
 
-### Cancel the Fabric trial - Capacity admins
+### Cancel the Fabric trial - Capacity and Fabric admins
 
-To cancel your free Fabric trial capacity, open your Account Manager and select **Cancel trial**. Once canceled, Microsoft can't extend the Fabric capacity trial, and you may not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. You can also [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. If you have workspaces with Fabric items, assign those workspaces to the new trial or purchased capacity within seven days.
+Capacity admins and Fabric admins can cancel a trial capacity. The user who starts a trial automatically becomes the capacity administrator. The Fabric administrator has full access to all Fabric management tasks. Any Fabric items (non-Power BI items) in those workspaces become unusable and are eventually deleted
+
+#### Cancel a trial using your Account manager
+
+As a capacity admin, you can cancel your free Fabric trial capacity from your Account manager. This cancels the trial for yourself and anyone else you've invited to the trial. 
+
+Open your Account Manager and select **Cancel trial**. 
 
 :::image type="content" source="media/fabric-trial/cancel-trial.png" alt-text="Screenshot of the Cancel trial button in Account manager.":::
 
-When you cancel a free Fabric capacity trial, the trial capacity, with all of its workspaces and their contents, is deleted. In addition, you can't:
-	
-- Create workspaces that support Fabric capabilities.
-- Share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
-- Create analytics solutions using these Fabric items.
+### Cancel the Fabric trial using the Admin portal
 
+As a capacity or Fabric administrator, you can use the Admin portal to cancel a trial of a Fabric capacity. 
+
+Select **Settings** > **Admin portal** > **Capacity settings**. Then choose the **Trials** tab. Select the cog icon for the trial capacity that you want to delete. 
+
+:::image type="content" source="media/fabric-trial/fabric-delete-trial.png" alt-text="Screenshot of the Trial tab in the Admin portal.":::
 
 ## Considerations and limitations
 
