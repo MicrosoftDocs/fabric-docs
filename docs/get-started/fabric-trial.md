@@ -89,7 +89,7 @@ Congratulations. You now have a Fabric trial capacity that includes a Power BI i
 
 ## Other ways to start a Microsoft Fabric trial
 
-In some situations, your Fabric administrator [enables Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric capacity trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you receive a prompt to start a trial of a Fabric capacity. If you agree, your trial starts and your **My workspace** is upgraded to a trial capacity workspace. You're the Capacity administrator and can add workspaces to the trial capacity. 
+In some situations, your Fabric administrator enables Microsoft Fabric for the tenant but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric capacity trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you receive a prompt to start a trial of a Fabric capacity. If you agree, your trial starts and your **My workspace** is upgraded to a trial capacity workspace. You're the Capacity administrator and can add workspaces to the trial capacity. 
 
 ## Share trial capacities
 
@@ -112,14 +112,6 @@ If you are the Capacity administrator, assign the trial capacity to multiple wor
     :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
 For more information, see [Use Workspace settings](workspaces.md#license-mode).  
-
-If the Fabric tenant switch is enabled, users in that tenant can view, consume, and add Fabric content. If the Fabric tenant switch is disabled, users in that tenant can only view and consume Fabric content. For more information, see [Fabric tenant setting](#look-up-the-fabric-tenant-switch-setting).
-
-## Look up the Fabric tenant switch setting
-
-If you're a Capacity administrator or a tenant admin, you can view, verify, or change the Fabric switch. If you need help, [contact the Capacity administrator directly](#look-up-the-trial-capacity-administrator).
-
-:::image type="content" source="media/fabric-trial/fabric-tenant-setting.png" alt-text="Screenshot of the Admin portal with Tenant settings outlined in red and an arrow pointing to the word Enabled.":::
 
 ## Look up the trial Capacity administrator
 
