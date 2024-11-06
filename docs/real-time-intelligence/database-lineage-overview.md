@@ -1,6 +1,6 @@
 ---
-title: Lineage in KQL database
-description: Learn how to view the lineage of KQL database items in Real-Time Intelligence.
+title: View the entity diagram in KQL database (preview)
+description: Learn how to access the entity diagram in KQL database to view the relationship between items in Real-Time Intelligence.
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
@@ -11,32 +11,30 @@ ms.date: 11/04/2024
 ms.search.form: KQL Database
 #Customer intent: .
 ---
-# Lineage in KQL database
+# View the entity diagram in KQL database (preview)
 
-In Real-Time Intelligence, you can view the lineage of KQL database items. The lineage view allows you to visually explore relationships between database entities to help you understand the data flow from the source to the destination, providing a clear graph representation. By using lineage, you can efficiently manage your database and gain a deeper understanding of how these entities interact. This visual representation of entities simplifies database management and helps you optimize your data structures, making it easier to track dependencies and take actions quickly.
+In Real-Time Intelligence, you can view the lineage and relationship of KQL database items. The view allows you to visually explore relationships between database entities and help you understand the data flow from the source to the destination, providing a clear graph representation. By using the entity diagram, you can efficiently manage your database and gain a deeper understanding of how these entities interact. This visual representation of entities simplifies database management and helps you optimize your data structures, making it easier to track dependencies and take actions quickly.
 
-For more information about lineage in Fabric, see [Lineage](../governance/lineage.md).
+For information about workspace lineage in Fabric, see [Lineage](../governance/lineage.md).
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with view permissions
 
-## Permissions
+## Open entity diagram view
 
-Any user with a [role in a workspace](../get-started/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
+To access the view, browse to your desired KQL database and select **Entity diagram**.
 
-## Open lineage view
+## What do you see in entity diagram view?
 
-To access lineage view, browse to your KQL database and select **Lineage**.
-
-## What do you see in lineage view?
-
-When you open lineage view on an item, you see the connections between all the items in the KQL database.
+When you open entity diagram view, you see the connections between all the items in the KQL database.
 
 <!-- Image of Lineage view -->
 
-Lineage view displays the following information:
+The entity diagram view displays the following information:
 
 * Tables
 * Update policies
@@ -44,12 +42,17 @@ Lineage view displays the following information:
 * Materialized views
 * Functions
 * Continuous exports
+* [Cross-database entities](/kusto/query/cross-cluster-or-database-queries?view=microsoft-fabric&preserve-view=true)
 
-You can highlight an item's lineage to view its relationships with other items in the database. Lineage highlights all the items related to that item, and dims the rest.
+You can select an item to view its relationships with other items in the database. The entity diagram highlights all the items related to that item, and dims the rest.
 
-## What scenarios can you use lineage for?
+### View ingestion details
 
-This section explores various scenarios where you can use lineage in KQL database:
+You can also view the ingestion details of each table and materialized view. To view ingestion details, on the right side of the ribbon, select **Show details** and under **Ingestion**, select the desired time range. The information is added to the relevant entity's card.
+
+## What scenarios can you use entity diagrams for?
+
+This section explores various scenarios where you can use the entity diagram view in KQL database:
 
 ### Proactively manage dependencies
 
@@ -57,16 +60,16 @@ Managing dependencies between entities like tables and functions becomes straigh
 
 ### Trace relationships between materialized views and source tables
 
-Lineage allows you to trace the relationships between materialized views and their underlying source tables. This makes it simple to identify original data sources, enabling you to track and troubleshoot data flow more effectively.
+Entity diagrams allows you to trace the relationships between materialized views and their underlying source tables. This makes it simple to identify original data sources, enabling you to track and troubleshoot data flow more effectively.
 
 ### Interact with elements and act
 
-You can select on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, more options are available, such as querying the table, creating a Power BI report based on the table, and more
+You can select on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, more options are available, such as querying the table, creating a Power BI report based on the table, and more.
 
 ### Track record ingestion
 
-Lineage enables you to track how many records were ingested into each table and materialized view. This clear view of data flows helps you stay on top of ingestion size and volume, ensuring your database processes data correctly.
+Entity diagrams enable you to track how many records were ingested into each table and materialized view. This clear view of data flows helps you stay on top of ingestion size and volume, ensuring your database processes data correctly.
 
 ## Related content
 
-* [Lineage](../governance/lineage.md)
+* [Workspace lineage](../governance/lineage.md)
