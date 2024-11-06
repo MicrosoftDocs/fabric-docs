@@ -1,5 +1,5 @@
 ---
-title: Query acceleration over OneLake shortcuts - overview (preview)
+title: Query acceleration for OneLake shortcuts - overview (preview)
 description: Overview on learning how to use the query acceleration policy over OneLake shortcuts to improve query performance and reduce latency for external delta tables.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 11/19/2024
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
-# Query acceleration over OneLake shortcuts - overview (preview)
+# Query acceleration for OneLake shortcuts - overview (preview)
 
 OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. 
 
@@ -23,7 +23,7 @@ Query acceleration is supported in Eventhouse over delta tables from [OneLake sh
 >
 > * Accelerated external tables add to the storage COGS and to the SSD storage consumption your Eventhouse, similar to regular tables in your KQL database. You can control the amount of data to cache by defining the *Hot* property in the [query acceleration policy](https://go.microsoft.com/fwlink/?linkid=2296196). Indexing and ingestion activity also contributes to compute resources use.
 
-## When should I use query acceleration over OneLake shortcuts?
+## When should I use query acceleration for OneLake shortcuts?
 
 Query acceleration caches data as it lands in OneLake, providing performance comparable to ingesting data in Eventhouse. By using this feature, you can accelerate data landing in OneLake, including existing data and any new updates, and expect similar performance. This eliminates the need to manage ingestion pipelines, maintain duplicate copies of data, while ensuring that data remains in sync without additional effort. 
 
@@ -36,6 +36,7 @@ The following scenarios are ideal for using query acceleration over OneLake shor
 ## Behavior of accelerated external delta tables
 
 The accelerated OneLake shortcuts behave like [external tables](/kusto/query/schema-entities/external-tables?view=microsoft-fabric&preserve-view=true), with the same limitations and capabilities.
+Specifically, features like materialized view and update policies aren't supported.
 
 ## Monitor acceleration behavior
 
