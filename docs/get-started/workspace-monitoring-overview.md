@@ -27,9 +27,25 @@ Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhous
 
 Workspace monitoring supports items from the following Fabric workloads:
 
+* Real-time intelligence
+
+* Data engineering (GraphQL)
+
 * Power BI
 
-* Real-time intelligence
+## Operation logs
+
+After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following operation logs:
+
+* Real-Time Intelligence
+    * [Command operations](../real-time-intelligence/command-operations.md)
+    * [Data operation](../real-time-intelligence/data-operations.md)
+    * [Ingestion operations](../real-time-intelligence/ingestion-operations.md)
+    * [Metric operations](../real-time-intelligence/metric-operations.md)
+    * [Query operations](../real-time-intelligence/query-operations.md)
+
+* Data engineering (GraphQL)
+    * [GraphQL operations](../data-engineering/graphql-operations.md)
 
 ## Considerations and limitations
 

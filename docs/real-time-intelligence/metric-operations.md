@@ -1,0 +1,105 @@
+---
+title: Metric operation logs
+description: View a set of metric operation logs that you can query in your Fabric workspace monitoring database.
+author: KesemSharabi
+ms.author: kesharab
+ms.topic: reference
+ms.date: 11/06/2024
+
+---
+
+# Metric operations
+
+Metric operation logs are part of the Eventhouse logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the usage and performance of your workspace.
+
+## Metric operation logs
+
+A list of metrics that allow you to monitor the following aspects of an Eventhouse:
+
+* Ingestions
+* Materialized Views
+* Continuous Exports
+
+You can use the Metric logs to:
+
+* Analyze ingestion performance and trends
+* Monitor batch vs streaming ingestions
+* Troubleshoot ingestion failures
+* Deep dive into ingestion flows
+* Materialized views monitoring and health
+* Continuous exports monitoring
+
+This table lists the metric logs.
+
+| Column Name | Type | Description |
+|--|--|--|
+| ArtifactId | string | The identifier of the Fabric Eventhouse item |
+| ArtifactKind | string | The type of the Fabric item. Valid values: Eventhouse. |
+| ArtifactName | string | The name of the Fabric Eventhouse item. |
+| CustomerTenantId | string | The customer tenant identifier. |
+| MetricCount | long | The metric count value. |
+| MetricMaxValue | long | The metric maximum value. |
+| MetricMinValue | long | The metric minimum value. |
+| MetricName | string | The metric name. |
+| MetricSpecificDimensions | dynamic | The specific dimensions of each metric, as described in the Metric Specific Column of the [Metrics table](#metrics-table). Where relevant, dimension descriptions are provided as part of the metric description. |
+| MetricSumValue | long | The metric sum value. |
+| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values:  EventhouseQueryLogs |
+| PremiumCapacityId | string | The Fabric capacity identifier. |
+| Region | string | The region where the Fabric KQL Database is located. |
+| Timestamp | datetime | The time (UTC) the event was generated. |
+| WorkspaceId | string | The identifier of the workspace. |
+| WorkspaceName | string | The name of the workspace. |
+
+### Metrics table
+
+This table contains a list of all the Eventhouse metrics being reported, and the specific dimensions being reported for each metric.
+
+| Metric Type | MetricName | Unit | Aggregation | Description | Metric Specific Dimensions |
+|--|--|--|--|--|--|
+| Ingestion | BatchBlobCount | Count | Avg, Max, Min | The number of data sources ingested in a completed batch. | Database, Table |
+| Ingestion | BatchDurationSec | Seconds | Avg, Max, Min | The duration of the batching phase within the ingestion flow. | Database, Table |
+| Ingestion | BatchSizeBytes | Bytes | Avg, Max, Min | The expected uncompressed data size in an aggregated ingestion batch. | Database, Table |
+| Ingestion | BatchesProcessed | Count | Sum, Max, Min | The number of completed ingestion batches. | Database, Table,Batching Type |
+| Ingestion | BlobsDropped | Count | Sum, Max, Min | The number of blobs permanently dropped by a component, with each failure reason recorded in the `IngestionResult` metric. | Database, Table, ComponentType, ComponentName |
+| Ingestion | BlobsProcessed | Count | Sum, Max, Min | The number of blobs processed by a component. | Database, Table, ComponentType, ComponentName |
+| Ingestion | BlobsReceived | Count | Sum, Max, Min | The number of blobs received from an input stream by a component. | Database, ComponentType, ComponentName |
+| Export | ContinuousExportRecordsCount | Count | Sum | The number of exported records in all continuous export jobs. | Database, ContinuousExportName |
+| Export | ContinuousExportMaxLateness | Count | Max | The lateness (minutes) reported by the continuous export jobs in the KQL Database. |  |
+| Export | ContinousExportPendingCount | Count | Max | The number of pending continuous export jobs that are ready to run but are waiting in a queue, possibly due to insufficient capacity. |  |
+| Export | ContinuousExportResult | The Failure/Success result of each continuous export run. | ContinuousExportName | The result of each continuous export run, indicating either failure or success. | ContinuousExportName |
+| Ingestion | DiscoveryLatencyInSeconds | Seconds | Avg | The time from when data is enqueued until it is discovered by data connections. This time isn't included in the *Stage latency* or *Ingestion latency* metrics. Discovery latency may increase in the following situations:<li>When cross-region data connections are used.</li><li>In Event Hubs data connections, if the number of Event Hubs partitions is insufficient for the data egress volume.</li> | ComponentType, ComponentName |
+| Ingestion | EventsDropped | Count | Sum, Max, Min | The number of events dropped by data connections. | ComponentType, ComponentName |
+| Ingestion | EventsProcessed | Count | Sum, Max, Min | The number of events processed by data connections. | ComponentType, ComponentName |
+| Ingestion | EventsReceived | Count | Sum, Max, Min | The number of events received by data connections from an input stream. | ComponentType, ComponentName |
+| Ingestion | IngestionLatencyInSeconds | Seconds | Avg, Max, Min | The time taken from when data is received in the cluster until it is ready for query. The time depends on the ingestion type, such as Streaming Ingestion or Queued Ingestion. | IngestionKind |
+| Ingestion | IngestionResult | Count | Sum | The total number of sources that were either successfully ingested or failed to be ingested.<sup>1</sup> | Database, Table, IngestionResultDetails, FailureKind, ViaUpdatePolicy |
+| Ingestion | IngestionVolumeInBytes | Count | Max, Sum | The total size of data ingested to the KQL Database (Bytes) before compression. | Database, Table |
+| Materialized View | MaterializedViewAgeSeconds | Seconds | Avg | The age of the view (minutes) is defined by the current time minus the last ingestion time processed by the view. A lower value indicates a healthier view. | Database, MaterializedViewName |
+| Materialized View | MaterializedViewHealth | 1, 0 | Avg | A value of 1 indicates the view is considered healthy; otherwise, the value is 0. | Database, MaterializedViewName |
+| Materialized View | MaterializedViewResult | 1 | Avg | The metric value is always 1. `Result` indicates the result of the last materialization cycle. For possible values, see `MaterializedViewResult`. | Database, MaterializedViewName, Result |
+| Ingestion | QueueLength | Count | Avg | The number of pending messages in a component's input queue. The batching component processes one message per blob, while the ingestion component handles one message per batch. A batch consists of a single ingest command that includes one or more blobs. | ComponentType |
+| Ingestion | QueueOldestMessage | Seconds | Avg | The time (seconds) from when the oldest message in a component's input queue was inserted. | ComponentType |
+| Ingestion | ReceivedDataSizeBytes | Bytes | Avg, Sum | The size of the data received by data connections from an input stream. | ComponentType, ComponentName |
+| StreamingIngestion | StreamingIngestDataRate | Bytes | Count, Avg, Max, Min, Sum | The total volume of data ingested by streaming ingestion. | Database, Table |
+| StreamingIngestion | StreamingIngestDuration | Milliseconds | Avg, Max, Min | The total duration of all streaming ingestion requests. | None |
+
+<sup>1</sup>Dimension descriptions 
+- `IngestionResultDetails` - Success for successful ingestion or the failure category for failures. For a complete list of possible failure categories see Ingestion error codes. 
+- `FailureKind` - Whether the failure is permanent or transient. The value is None for a successful ingestion. 
+
+- `ViaUpdatePolicy` - True if the ingestion was triggered by an Update Policy. 
+ 
+Considerations
+- Event Hubs and IoT Hub ingestion events are pre-aggregated into one blob, and then treated as a single ingestion source and appear as a single ingestion result after pre-aggregation. 
+
+- Transient failures are automatically retried a limited number of times. Each transient failure is reported as a transient ingestion result, which means a single ingestion may generate multiple ingestion results.
+
+## Sample queries
+
+You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
+
+## Related content
+
+* [Enable monitoring in your workspace](enable-workspace-monitoring.md)
+
+* [Eventhouse logs](eventhouse-logs.md)
