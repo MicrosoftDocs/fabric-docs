@@ -1,6 +1,6 @@
 ---
-title: View the entity diagram in KQL database (preview)
-description: Learn how to access the entity diagram in KQL database to view the relationship between items in Real-Time Intelligence.
+title: View an entity diagram in KQL database (preview)
+description: Learn how to access an entity diagram in KQL database to view the relationship between items in Real-Time Intelligence.
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
@@ -11,7 +11,7 @@ ms.date: 11/04/2024
 ms.search.form: KQL Database
 #Customer intent: Learn how to use the entity diagram in KQL database to manage and optimize database relationships and dependencies.
 ---
-# View the entity diagram in KQL database (preview)
+# View an entity diagram in KQL database (preview)
 
 In Real-Time Intelligence, you can view the lineage and relationship of KQL database items. The view allows you to visually explore relationships between database entities and help you understand the data flow from the source to the destination, providing a clear graph representation. By using the entity diagram, you can efficiently manage your database and gain a deeper understanding of how these entities interact. This visual representation of entities simplifies database management and helps you optimize your data structures, making it easier to track dependencies and take actions quickly.
 
