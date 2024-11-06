@@ -4,7 +4,7 @@ description: Understand what is workspace monitoring in Microsoft Fabric and how
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 11/03/2024
+ms.date: 11/06/2024
 
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
@@ -37,9 +37,13 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 * Data engineering (GraphQL)
     * [GraphQL operations](../data-engineering/graphql-operations.md)
 
-## 
+## Sample queries
+
+Workload monitoring sample queries are available from the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
 
 ## Considerations and limitations
+
+* The capacity the workspace is hosted on must be in the same region as the tenant.
 
 * You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
 
@@ -52,6 +56,8 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 * All monitoring operations, including ingestion and querying, are charged based on existing consumption rates for Eventstream and the Eventhouse workload.
 
 * You can't configure ingestion to filter for specific log type or category such as *error* or *workload type*.
+
+* User data operation logs aren't available even though the table is available in the monitoring database.
 
 ## Related content
 
