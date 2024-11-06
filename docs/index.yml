@@ -83,7 +83,7 @@ productDirectory:
     # Card
     - title: Real-Time Intelligence
       imageSrc: ./media/fabric-real-time-intelligence-icon.png
-      summary: Discover insights from your streaming data. Ingest, index, and partition any data source or format, then query the data and create visualizations.
+      summary: Discover insights from your streaming data. Quickly ingest, index, and partition any data source or format, query the data, create visualizations, and take actions on changes in your data.
       url: real-time-intelligence/index.yml
     # Card
     - title: Fabric Data Engineering
