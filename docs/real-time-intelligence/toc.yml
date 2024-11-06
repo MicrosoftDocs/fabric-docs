@@ -382,5 +382,19 @@ items:
     items:
     - name: Activator tutorial using sample data
       href: data-activator/data-activator-tutorial.md
+- name: Workspace monitoring
+  items:
+    - name: Eventhouse workspace monitoring
+      href: workspace-monitoring-eventhouse.md
+    - name: Command operations
+      href: command-operations.md  
+    - name: Data operations
+      href: data-operations.md
+    - name: Ingestion operations
+      href: ingestion-operations.md
+    - name: Metric operations
+      href: metric-operations.md
+    - name: Query operations
+      href: query-operations.md                                
 - name: KQL reference
   href: kusto-tocs/query/toc.yml
