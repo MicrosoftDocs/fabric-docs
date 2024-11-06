@@ -48,7 +48,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Organizational apps
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) *(preview)*
-* [Reflex](../../real-time-intelligence/event-streams/add-destination-reflex?pivots=enhanced-capabilities) *(preview)*
+* [Reflex](../../real-time-intelligence/event-streams/add-destination-reflex.md) *(preview)*
 * Reports (based on supported semantic models) *(preview)*
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
 * [Semantic models](/power-bi/connect-data/service-datasets-understand) (that originate from .pbix files and aren't PUSH datasets) *(preview)*
