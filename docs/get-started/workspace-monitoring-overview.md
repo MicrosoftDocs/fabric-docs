@@ -37,6 +37,10 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 * Data engineering (GraphQL)
     * [GraphQL operations](../data-engineering/graphql-operations.md)
 
+## Sample queries
+
+Workload monitoring sample queries are available from the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
+
 ## Considerations and limitations
 
 * The capacity the workspace is hosted on must be in the same region as the tenant.
