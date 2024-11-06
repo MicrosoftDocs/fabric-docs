@@ -25,14 +25,14 @@ Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhous
 
 ## Operation logs
 
-After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following operation logs:
+After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following logs:
 
-* Real-Time Intelligence
-    * [Command operations](../real-time-intelligence/command-operations.md)
-    * [Data operation](../real-time-intelligence/data-operations.md)
-    * [Ingestion operations](../real-time-intelligence/ingestion-operations.md)
-    * [Metric operations](../real-time-intelligence/metric-operations.md)
-    * [Query operations](../real-time-intelligence/query-operations.md)
+* Eventhouse monitoring in Real-Time Intelligence
+    * [Metrics](../real-time-intelligence/monitor-logs-metrics.md)
+    * [Command logs](../real-time-intelligence/monitor-logs-command.md)
+    * [Data operation logs](../real-time-intelligence/onitor-logs-data-operation.md)
+    * [Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)
+    * [Query logs](../real-time-intelligence/monitor-logs-query.md)
 
 * Data engineering (GraphQL)
     * [GraphQL operations](../data-engineering/graphql-operations.md)
