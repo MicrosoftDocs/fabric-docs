@@ -264,6 +264,12 @@ items:
         href: event-house-onelake-availability.md
       - name: Create OneLake shortcuts in a KQL database
         href: onelake-shortcuts.md
+      - name: Query acceleration over OneLake shortcuts
+        items: 
+        - name: Accelerate queries over OneLake shortcuts - overview
+          href: query-acceleration-overview.md
+        - name: Accelerate queries over OneLake shortcuts
+          href: query-acceleration.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
