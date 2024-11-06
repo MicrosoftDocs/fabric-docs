@@ -16,11 +16,7 @@ items:
   - name: Set up item certification
     href: ../admin/endorsement-setup.md?toc=/fabric/governance/TOC.json&bc=/fabric/governance/breadcrumb/toc.json
 - name: OneLake catalog
-  items:
-  - name: Overview
-    href: onelake-catalog-overview.md
-  - name: Find and explore items
-    href: onelake-catalog-explore.md
+  href: onelake-catalog.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview and Fabric
