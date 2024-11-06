@@ -23,16 +23,6 @@ Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhous
 
 * **Access** - Access the monitoring database from the workspace. You can build and save query sets and dashboards to simplify data exploration.
 
-## Supported Fabric items
-
-Workspace monitoring supports items from the following Fabric workloads:
-
-* Real-time intelligence
-
-* Data engineering (GraphQL)
-
-* Power BI
-
 ## Operation logs
 
 After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following operation logs:
@@ -46,6 +36,8 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 
 * Data engineering (GraphQL)
     * [GraphQL operations](../data-engineering/graphql-operations.md)
+
+## 
 
 ## Considerations and limitations
 
