@@ -52,11 +52,13 @@ Before you migrate, consider the following key points:
 - A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 - Users must have Admin permissions on both the source cluster and the target Fabric workspace to initiate the migration process
 
-## Migration process
+## Migration steps
 
-The migration process involves the following steps:
+The migration process is performed using Fabric REST API endpoints. The process involves the following steps:
 
-- **Run assessment checks**: Validate the limitations applicable to your source cluster. This indicates which operations are automatically performed and where manual intervention is needed.
+1. 
+
+
 - **Perform the actual migration**: Initiate the migration process using the Fabric migration endpoint. The process creates a new eventhouse and migrate all databases from the source cluster to the eventhouse.
 
 ## Related content
