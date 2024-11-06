@@ -34,13 +34,19 @@ Workload Control API calls are made directly from the workload to Fabric, and do
 
 ## Lakehouse integration
 
-The workload development kit architecture integrates seamlessly with Lakehouse, allowing operations such as saving, reading, and fetching data. The interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication.
+The workload development kit architecture integrates seamlessly with Lakehouse, allowing operations such as saving, reading, and fetching data. The interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication. For more details, see [working with customer data](./fabric-data-plane.md)
 
 ## Authentication and security
 
 Microsoft Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
-[The development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, authentication guidelines, and getting started, see the respective sections in [Authentication overview](authentication-concept.md).
+[The development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, authentication guidelines and getting started, refer to the following authentication documents:
+
+* [Workload authentication - Setup guide](./authentication-tutorial.md)
+
+* [Workload authentication - Architecture overview ](./authentication-concept.md)
+
+* [Workload authentication - Implementation guide](back-end-authentication.md)
 
 :::image type="content" source="./media/extensibility-back-end/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
 
@@ -49,7 +55,7 @@ The frontend establishes communication with the Fabric frontend portal via an iF
 For interactions between the backend development box and the Fabric backend, the Azure Relay serves as a conduit. Additionally, the backend development box seamlessly integrates with Lakehouse.
 The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the backend development box.
 
-The authentication for all communication within these components is ensured through Microsoft Entra. Entra provides a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
+The authentication for all communication within these components is ensured through Microsoft Entra. Microsoft Entra provides a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
 
 ## Prerequisites
 
@@ -146,14 +152,14 @@ To set up the workload sample project on your local machine, follow these steps:
      * ManifestPackageFilePath: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in later steps.
      * WorkloadEndpointURL: Workload Endpoint URL.
    * In the Packages/manifest/WorkloadManifest.xml file, update the following fields to match your configuration:
-     * \<AppId>: Client ID (Application ID) of the workload Entra application.
+     * \<AppId>: Client ID (Application ID) of the workload Microsoft Entra application.
      * \<RedirectUri>: Redirect URIs. This can be found in your app registration that you created under 'Authentication' section.
-     * \<ResourceId>: Audience for the incoming Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section.
+     * \<ResourceId>: Audience for the incoming Microsoft Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section.
    * In the src/appsettings.json file, update the following fields to match your configuration:
      * PublisherTenantId: The ID of the workload publisher tenant.
-     * ClientId: Client ID (Application ID) of the workload Entra application.
-     * ClientSecret: The secret for the workload Entra application.
-     * Audience: Audience for the incoming Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section. This is also referred to as the Application ID URI.
+     * ClientId: Client ID (Application ID) of the workload Microsoft Entra application.
+     * ClientSecret: The secret for the workload Microsoft Entra application.
+     * Audience: Audience for the incoming Microsoft Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section. This is also referred to as the Application ID URI.
 
 1. Generate a manifest package.
    To generate a manifest package file, build Fabric_Extension_BE_Boilerplate. This runs a three step process to generate the manifest package file:

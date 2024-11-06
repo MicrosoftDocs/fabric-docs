@@ -29,6 +29,11 @@ Follow these steps to publish your workload:
 
 6. Select **Publish**.
 
+> [!NOTE]
+> If you plan to publish to your own tenant, ensure you first deactivate the workload from the admin portal.  
+> Refer to the [deactivation instructions](manage-workload.md) for detailed steps.
+
+
 ## Related content
 
 * [Authentication setup](authentication-tutorial.md)
