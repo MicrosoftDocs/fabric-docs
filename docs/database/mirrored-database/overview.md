@@ -4,7 +4,7 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo
-ms.date: 04/24/2024
+ms.date: 10/10/2024
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -12,7 +12,7 @@ no-loc: [Copilot]
 
 # What is Mirroring in Fabric?
 
-As a data replication solution, Mirroring in Fabric is a low-cost and low-latency solution to bring data from various systems together into a single analytics platform. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, and Snowflake.
+As a data replication solution, Mirroring in Fabric is a low-cost and low-latency solution to bring data from various systems together into a single analytics platform. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, Snowflake, and Fabric SQL database.
 
 With the most up-to-date data in a queryable format in OneLake, you can now use all the different services in Fabric, such as running analytics with Spark, executing notebooks, data engineering, visualizing through Power BI Reports, and more.
 
@@ -48,13 +48,15 @@ Mirroring creates three items in your Fabric workspace:
 - A [SQL analytics endpoint](../../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md)
 - A [Default semantic model](../../data-warehouse/semantic-models.md)
 
-In addition to the [Microsoft Fabric SQL Query Editor](/fabric/data-warehouse/sql-query-editor), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [Azure Data Studio](/sql/azure-data-studio/what-is-azure-data-studio), and even GitHub Copilot.
+In addition to the [Microsoft Fabric SQL Query Editor](/fabric/data-warehouse/sql-query-editor), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
 [Sharing](#sharing) enables ease of access control and management, to make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 
 ### How do I enable Mirroring in my tenant?
 
 Power BI administrators can enable or disable Mirroring for the entire organization or for specific security groups, using the setting found in the Power BI admin portal. The Mirroring items then appear in the **Create** options. For more information, see [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md).
+
+For [Fabric SQL database](../sql/overview.md), mirroring is configured automatically and instantly initialized with no extra steps required. 
 
 Currently, the following external databases are available:
 
@@ -64,6 +66,7 @@ Currently, the following external databases are available:
 | [Microsoft Fabric mirrored databases from Azure Databricks (preview)](azure-databricks.md) | Yes |[Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes |[Tutorial: Snowflake](snowflake-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Fabic SQL database](../sql/overview.md) | Automatically configured |
 
 ## How does the near real time replication of Mirroring work?
 
@@ -83,7 +86,7 @@ By sharing, users grant other users or a group of users access to a mirrored dat
 
 Access the Sharing dialog with the **Share** button next to the mirrored database name in the **Workspace** view. Shared mirrored databases can be found through **OneLake Data hub** or the **Shared with Me** section in Microsoft Fabric.
 
-For more information, see [Share your warehouse and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md).
+For more information, see [Share your data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md).
 
 ## Cross-database queries
 
@@ -112,6 +115,10 @@ Microsoft Fabric provides various data engineering capabilities to ensure that y
 Microsoft Fabric offers Fabric Data Science to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
 
 Microsoft Fabric users can access [Data Science workloads](../../data-science/data-science-overview.md). From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
+
+## SQL database in Fabric
+
+You can also create a [SQL database in Microsoft Fabric](../sql/overview.md), directly creating and managing the database inside the Fabric portal. Based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), SQL database in Fabric is automatically mirrored for analytics purposes and allows you to easily create your operational database in Fabric. SQL database is the home in Fabric for OLTP workloads, and can integrate with Fabric's [source control integration](../sql/source-control.md).
 
 ## Related content
 

@@ -47,7 +47,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 #### Use a login and mapped database user
 
-1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/azure-data-studio/download-azure-data-studio). Connect to the `master` database.
+1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true). Connect to the `master` database.
 1. Create a server login and assign the appropriate permissions.
     - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
@@ -63,7 +63,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
     ```
 
-1. Connect to the Azure SQL database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [Azure Data Studio](/azure-data-studio/download-azure-data-studio).
+1. Connect to the Azure SQL Database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Create a database user connected to the login:
 
     ```sql
@@ -83,7 +83,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
-1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Database**. Enter the name of your Azure SQL database to be mirrored, then select **Create**.
+1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Database**. Enter the name of your Azure SQL Database to be mirrored, then select **Create**.
 
 ## Connect to your Azure SQL Database
 
