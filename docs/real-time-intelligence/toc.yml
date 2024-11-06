@@ -363,9 +363,9 @@ items:
     - name: Create triggers
       href: data-activator/data-activator-create-triggers-design-mode.md       
     - name: Trigger Fabric items
-      href: data-activator-trigger-fabric-items.md       
+      href: data-activator/data-activator-trigger-fabric-items.md       
     - name: Detection conditions
-      href: data-activator-detection-conditions.md            
+      href: data-activator/data-activator-detection-conditions.md            
     - name: Create alerts from a Real-Time Dashboard
       href: data-activator/data-activator-get-data-real-time-dashboard.md  
     - name: Create alerts from a KQL Queryset
