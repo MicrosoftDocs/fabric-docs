@@ -28,7 +28,7 @@ For information about workspace lineage in Fabric, see [Lineage](../governance/l
 
 To access the view, browse to your desired KQL database and select **Entity diagram**.
 
-## What do you see in entity diagram view?
+## What do you see in an entity diagram view?
 
 When you open entity diagram view, you see the dependencies between all the items in the KQL database.
 
@@ -50,7 +50,7 @@ You can select an item to view its relationships with other items in the databas
 
 You can also view the ingestion details of each table and materialized view. To view ingestion details, on the right side of the ribbon, select **Show details** and under **Ingestion**, select the desired time range. The information is added to the relevant entity's card.
 
-## What scenarios can you use entity diagrams for?
+## What scenarios can you use an entity diagrams for?
 
 This section explores various scenarios where you can use the entity diagram view in KQL database:
 
@@ -60,7 +60,7 @@ Managing dependencies between entities like tables and functions becomes straigh
 
 ### Trace relationships between materialized views and source tables
 
-Entity diagrams allows you to trace the relationships between materialized views and their underlying source tables. This makes it simple to identify original data sources, enabling you to track and troubleshoot data flow more effectively.
+Entity diagrams allow you to trace the relationships between materialized views and their underlying source tables. This makes it simple to identify original data sources, enabling you to track and troubleshoot data flow more effectively.
 
 ### Interact with elements and act
 
