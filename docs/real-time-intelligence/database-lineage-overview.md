@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2024
 ms.date: 11/04/2024
 ms.search.form: KQL Database
-#Customer intent: .
+#Customer intent: Learn how to use the entity diagram in KQL database to manage and optimize database relationships and dependencies.
 ---
 # View the entity diagram in KQL database (preview)
 
