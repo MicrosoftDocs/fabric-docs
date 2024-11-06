@@ -1,18 +1,17 @@
 ---
 title: Find content from Microsoft Fabric Home
-description: Open reports, apps, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content.
+description: Open reports, workloads, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content.
 author: mihart
 ms.author: mihart
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 07/27/2024
+ms.date: 11/04/2024
+#customer intent: As a Fabric user, I know how to find my content from Home.
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
 
-This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product workload has its own Home, and there are similarities that they all share. Those similarities are described in this article. For detailed information about **Home** for a particular product workload, such as Data Factory Home, visit the relevant page for that product workload. 
+This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product workload has its own Home, and there are similarities that they all share. Those similarities are described in this article. For detailed information about **Home** for a particular product workload, such as Real-Time Intelligence Home, visit the relevant page for that product workload. 
 
 ## Overview of Home 
 
@@ -23,7 +22,7 @@ On Home, you see items that you create and that you have permission to use. Thes
 
 In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you create at least one new workspace, been granted access to a workspace, or you add an item to **My workspace**, you might find it more convenient to navigate directly to a workspace. One way to navigate to a workspace is by using the nav pane and workspace selector.
 
-:::image type="content" source="media/fabric-home/workspace.png" alt-text="Screenshot showing sample Home for the Data Engineering workload.":::
+:::image type="content" source="media/fabric-home/workspaces.png" alt-text="Screenshot showing sample Home for the Data Engineering workload.":::
 
 To open **Home**, select it from the top of your left navigation pane. 
 
@@ -36,7 +35,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 > [!NOTE]
 > **Power BI Home** is different from the other product workloads. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
 
-:::image type="content" source="media/fabric-home/fabric-home-data-factory-steps.png" alt-text="Screenshot of Home with sections of the canvas numbered." lightbox="media/fabric-home/fabric-home-data-engineering-workspaces.png":::
+:::image type="content" source="media/fabric-home/fabric-home-data-factory-step.png" alt-text="Screenshot of Home with sections of the canvas numbered." lightbox="media/fabric-home/fabric-home-data-engineering-workspaces.png":::
 
 1. The left navigation pane (nav pane) for your product workload links you to different views of your items and to creator resources. You can [remove icons from the left nav](#remove-icons-from-the-nav-pane) to suit your workflow.
 1. The selector for switching product workloads.
@@ -54,20 +53,20 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 ### Use the navigation pane
 
-:::image type="content" source="media/fabric-home/fabric-nav-pane.png" alt-text="Screenshot of the nav pane for Data factory.":::
+:::image type="content" source="media/fabric-home/fabric-nav-panes.png" alt-text="Screenshot of the nav pane for Data factory.":::
 
-Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. Notice that **My workspace** is the active workspace. The options in your nav pane depend on the product workload you select. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
+Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. The options in your nav pane depend on the product workload you select. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
 
 In the bottom section of the nav pane is where you find and open your workspaces. Use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open. Below the workspace selector is the name of the currently open workspace.  
     - By default, you see the **Workspaces** selector and **My workspace**.  
     - When you open a workspace, its name replaces **My workspace**.  
     - Whenever you create a new item, it's added to the open workspace.  
 
-The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product workload nav pane includes **Home**, **Browse**, **OneLake data hub**, **Create**, and  **Workspaces**.
+The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product workload nav pane includes **Home**, **Browse**, **OneLake**, **Workloads**,**Create**, and  **Workspaces**.
 
 ### Remove icons from the nav pane
 
-You can delete icons from the nav pane for products you don't think you need. You can always add them back later.
+You can delete icons from the nav pane for products and actions you don't think you need. You can always add them back later.
 
 To remove an icon, right-click the icon and select **Unpin**.
 
@@ -85,17 +84,29 @@ Select **More ...**, then select the icon you want to return to the left nav.
 
 There are different ways to find and open your workspaces. If you know the name or owner, you can search. Or you can select the **Workspaces** icon in the nav pane and choose which workspace to open. 
 
-:::image type="content" source="media/fabric-home/fabric-home-workspaces.png" alt-text="Screenshot showing list of workspaces with red outlines around the Search fields and Workspaces icon.":::
+:::image type="content" source="media/fabric-home/fabric-home-workspace.png" alt-text="Screenshot showing list of workspaces with red outlines around the Search fields and Workspaces icon.":::
 
 The workspace opens on your canvas, and the name of the workspace is listed on your nav pane. When you open a workspace, you can view its content. It includes items such as notebooks, pipelines, reports, and lake houses. 
 
 For more information, see [Workspaces](workspaces.md).
 
-### Find and open other product workloads
+### Find and learn about workloads
 
-In the bottom left corner is your workload selector. Select the icon to see all of the available [!INCLUDE [product-name](../includes/product-name.md)] product workloads. Select a workload to open it and make it active.
+**Workloads** refer to the different capabilities available in Fabric. Fabric includes pre-installed workloads that cannot be removed, these include Data Factory, Data Engineering, Real-Time Intelligence, and more. You might also have pre-installed workloads that Microsoft or your organization added. 
 
-:::image type="content" source="media/fabric-home/fabric-home-selector.png" alt-text="Screenshot of the product workload selector expanded.":::
+The Workload hub is a central location where you can view all the workloads available to you. Navigate to your Workload hub by selecting the **Workloads** icon from the left nav. [!INCLUDE [product-name](../includes/product-name.md)] displays a list and description of the available workloads. Select a workload to open it and learn more. 
+
+:::image type="content" source="media/fabric-home/fabric-workloads.png" alt-text="Screenshot of Workloads selected from the left navigation pane.":::
+
+If your organization has given you access to additional workloads, your Workload hub displays additional tabs.
+
+:::image type="content" source="./media/fabric-home/my-workloads-organization.png" alt-text="Screenshot of the My workloads interface." lightbox="./media/fabric-home/my-workloads-organization.png":::
+
+When you select a workload, the landing page for that workload displays. Each workload in Fabric has its own item types associated with it. The landing page has information about these items type as well as details about the workload, learning resources, and samples that you can use to test run the workload. 
+
+:::image type="content" source="media/fabric-home/fabric-home-workload-landing.png" alt-text="Screenshot of the Data Engineering workload detail page." lightbox="media/fabric-home/fabric-home-workload-landing.png":::
+
+For more information about workloads, see [Workloads in Fabric](../workload-development-kit/more-workloads-add.md)
 
 ### Find your content using search, sort, and filter
 
@@ -131,7 +142,7 @@ If the self-help answers don't resolve your issue, scroll to the bottom of the H
 
 Information about your account and license is available from the Account manager. To open your Account manager, select the tiny photo from the upper-right corner of [!INCLUDE [product-name](../includes/product-name.md)]. 
 
-:::image type="content" source="media/fabric-home/fabric-home-me.png" alt-text="Screenshot showing the Account manager expanded.":::
+:::image type="content" source="media/fabric-home/fabric-home-account.png" alt-text="Screenshot showing the Account manager expanded.":::
 
 For more information about licenses and trials, see [Licenses](../enterprise/licenses.md).
 
