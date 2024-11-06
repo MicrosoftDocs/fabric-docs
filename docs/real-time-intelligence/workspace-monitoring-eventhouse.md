@@ -1,6 +1,6 @@
 ---
 title: Eventhouse workspace monitoring overview
-description: Understand what is workspace monitoring in Microsoft Fabric and how it can help you to gain insights into the usage and performance of your workspace.
+description: Understand Eventhouse operations workspace monitoring in Fabric and how it can help you to gain insights into the usage and performance of your workspace.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
@@ -29,7 +29,7 @@ When monitoring your workspace, you can query the following eventhouse operation
 
 ## Additional operations
 
-To see a list of all the operations you can query, see [Eventhouse logs](../get-started/eventhouse-logs.md)
+To see a list of all the operations you can query, see [Operation logs](../get-started/workspace-monitoring-overview.md#operation-logs)
 
 ## Sample queries
 
@@ -37,6 +37,6 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 ## Related content
 
-* [Enable monitoring in your workspace](enable-workspace-monitoring.md)
+* [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
 
-* [Eventhouse logs](eventhouse-logs.md)
+* [Eventhouse workspace monitoring](workspace-monitoring-eventhouse.md)

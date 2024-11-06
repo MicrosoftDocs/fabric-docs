@@ -1,6 +1,6 @@
 ---
 title: GraphQL operation logs
-description: View a set of command operation logs that you can query in your Fabric workspace monitoring database.
+description: View a set of GraphQL operation logs that you can query in your Fabric workspace monitoring database.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: reference
@@ -17,11 +17,11 @@ GraphQL operation logs are part of the [workspace monitoring](../get-started/wor
 A log event for each query run by the Fabric API for GraphQL on its connected data sources, is stored in two tables: *GraphQLMetrics* and *GraphQLLog*.
 
 Use query logs to:
-* Identify when behavior changes and potential degradation in the API took place. 
-* Identify unusual or heavy queries consuming large amounts of resources. 
-* Identify the users/applications running the highest number of queries. 
-* Analyze query performance and trends. 
-* Troubleshoot slow queries. 
+* Identify when behavior changes and potential degradation in the API took place.
+* Identify unusual or heavy queries consuming large amounts of resources.
+* Identify the users/applications running the highest number of queries.
+* Analyze query performance and trends.
+* Troubleshoot slow queries.
 * Troubleshoot why a specific GraphQL query is not working.
 
 This table lists the GraphQL logs.
@@ -81,6 +81,6 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 ## Related content
 
-* [Enable monitoring in your workspace](enable-workspace-monitoring.md)
+* [What is workspace monitoring?](../get-started/workspace-monitoring-overview.md)
 
-* [Eventhouse logs](eventhouse-logs.md)
+* [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)

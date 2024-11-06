@@ -11,7 +11,7 @@ ms.date: 11/03/2024
 
 # What is workspace monitoring?
 
-Workspace monitoring is a Microsoft Fabric database that collects and organizes logs and metrics from a range of Fabric items in your workspace. Workspace monitoring lets workspace users access and analyze [logs](eventhouse-logs.md) and metrics related to Fabric items in the workspace. You can query the database to gain insights into the usage and performance of your workspace.
+Workspace monitoring is a Microsoft Fabric database that collects and organizes logs and metrics from a range of Fabric items in your workspace. Workspace monitoring lets workspace users access and analyze logs and metrics related to Fabric items in the workspace. You can query the database to gain insights into the usage and performance of your workspace.
 
 ## Monitoring
 
@@ -51,7 +51,7 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 
 * You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
 
-* The workspace monitoring [Eventhouse](eventhouse-logs.md) is a read-only item.
+* The workspace monitoring Eventhouse is a read-only item.
     * To delete the database, use the workspace settings.
     * To share the database, grant users a workspace *member* or *admin* [role](roles-workspaces.md).
 
@@ -65,4 +65,4 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 
 * [Enable monitoring in your workspace](enable-workspace-monitoring.md)
 
-* [Eventhouse logs](eventhouse-logs.md)
+* [Enable monitoring in your workspace](enable-workspace-monitoring.md)
