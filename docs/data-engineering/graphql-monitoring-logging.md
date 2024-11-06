@@ -34,7 +34,7 @@ In this section, we walk you through the steps needed to enable Monitoring in yo
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-workspacesetting-eventhouse.png"" alt-text="Screenshot of adding Eventhouse and enabling monitoring for the workspace.":::
 
-1. As the next step, you need to enable Monitoring and/or Logging experience in each GraphQL API in your tenant. Select the GraphQL API(s) for which you would need to enable Metrics and/or Logging options, and then select on Settings:
+1. As the next step, you need to enable Monitoring and/or Logging experience in each GraphQL API in your tenant. Select the GraphQL API for which you would like to enable Metrics and/or Logging options, and then select on Settings:
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-graphqlsettings.png"" alt-text="Screenshot of selecting APIfor GraphQL settings.":::
 
@@ -45,95 +45,93 @@ In this section, we walk you through the steps needed to enable Monitoring in yo
 
 :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-enablemonitoring.png"" alt-text="Screenshot of selecting Monitoring from the API for GraphQL settings.":::
 
-Once you successfully enable the Monitoring option for your Workspace, you will see the options to enable Metrics (API Dashboard) only, Logging (API Requests) only, or both. Since the Metrics and Logs are saved to separate tables in Kusto, it allows you to enable each feature separately depending on your requirements. By default, both options are set to OFF:  
+Once you successfully enable the Monitoring option for your Workspace, you will see the options to enable Metrics (API dashboard) only, Logging (API requests) only, or both. Since the Metrics and Logs are saved to separate tables in Kusto, it allows you to enable each feature separately depending on your requirements. By default, both options are set to OFF:  
 
 :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-enable-metricslogging.png"" alt-text="Screenshot of Metrics and Logging Toggles from the Monitoring setting of API for GraphQL.":::
 
 > [!NOTE]
 > Metrics and Logging data is separately sent to the Kusto Database that is enabled for the Workspace Monitoring which will incur additional costs.  
 
-## API Request Activity
+## API request Activity
 
 Once the steps above are taken, **API request activity** option in the top ribbon from the GraphQL API UI becomes active, and you can access monitoring details by clicking on the **API request activity** tab in the top ribbon.  
 
 :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apirequestactivity.png"" alt-text="Screenshot of API request activity tab from the top ribbon.":::
 
-The **API request activity** consists of two primary views: 
+The **API request activity** consists of two primary views:
 
-1. **API Dashboard (for Metrics)**: This page provides all the counters and graphs from a specific time range that you have specified.
-1. **API Requests (for Logging)**: This page provides a list of API requests that took place in a specific time range that you have specified.
+1. **API dashboard (for Metrics)**: This page provides all the counters and graphs from a specific time range that you have specified.
+1. **API requests (for Logging)**: This page provides a list of API requests that took place in a specific time range that you have specified.
 
 In the following sections, we will describe the functionality of each option.  
 
-## Metrics (API Dashboard)
+## Metrics (API dashboard)
 
-The API Dashboard provides an overview of API activity for you with various metrics and visuals. To access, from the **API request activity** page, select **API dashboard** tab. You are now able to view at a glance the following parameters for a specific time range: 
+The API dashboard provides an overview of API activity for you with various metrics and visuals. To access, from the **API request activity** page, select **API dashboard** tab. You are now able to view at a glance the following parameters for a specific time range:
 
-- Overall GraphQL API Health index that includes: 
-  - API Request/sec 
-  - Success rate 
-  - Health Status 
-- Number of API requests 
-- Latency in bar chart 
-- Number of requests in bar chart illustrating number of success and error 
+* Overall GraphQL API Health index that includes:
+  * API request/sec
+  * Success rate
+  * Health Status
+
+* Number of API requests
+* Latency
+* Number of requests in bar chart illustrating number of success and error
 
 By hovering over the graph, you can see the detailed information for a specific data point in a tooltip.
 
 :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashboard-mainview.png"" alt-text="Screenshot of API dashbaord.":::
 
 **Metrics Key Features:**
-- **Time Range Selection**: You can select different time ranges for the data displayed in the monitoring graphs. Please note that this feature has **30 days retention limit**. 
 
+* **Time Range Selection**: You can select different time ranges for the data displayed in the monitoring graphs. Please note that this feature has **30 days retention limit**.
 
-:::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-timerange.png"" alt-text="Screenshot of API dashbaord showing the time range option.":::
+    :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-timerange.png"" alt-text="Screenshot of API dashbaord showing the time range option.":::
 
-- **Counter**:
-    - **Total Number of API Requests**: You can view the total number of API requests in the selected time range. 
-:::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-apirequests.png"" alt-text="Screenshot of API dashbaord showing the number of API request.":::
-
-- **Visuals**:
-    - Overall GraphQL API Health index based on success rate per API: 
-        1.  Green: 75 -100% of requests are successful (Healthy)
-        2. Yellow: 50 - 74% of requests are successful (Needs Attention)
-        3. Red: Bellow 50% successful requests (Unhealthy) 
+* Overall GraphQL API Health index based on success rate per API:
+  * Green: 75 -100% of requests are successful (Healthy)
+  * Yellow: 50 - 74% of requests are successful (Needs Attention)
+  * Red: Bellow 50% successful requests (Unhealthy)
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-healthindex.png"" alt-text="Screenshot of API dashbaord showing the health index.":::
 
-    - Latency line chart: By hovering your mouse over graphs, you would be able to see the latency and date for each data point.
+* **Total Number of API requests**: You can view the total number of API requests in the selected time range.
+:::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-apirequests.png"" alt-text="Screenshot of API dashbaord showing the number of API request.":::
+
+* Latency line chart: By hovering your mouse over graphs, you would be able to see the latency and date for each data point.
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-latencylinechart.png"" alt-text="Screenshot of API dashbaord showing the latency bar chart.":::
 
-    - Number of requests bar chart, differentiating between success requests and errors: By hovering over graphs, you would be able to see the date and number of success and errors for each data point. 
+* Number of requests bar chart, differentiating between success requests and errors: By hovering over graphs, you would be able to see the date and number of success and errors for each data point.
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-requestbarchart.png"" alt-text="Screenshot of API dashbaord showing number requests bar chart.":::
 
-When you see abnormal behavior on the dashboard that requires your attention, you can further investigate by looking into logs to identify potential issues and find out which requests failed and/or have higher latency and start looking into log details to troubleshoot. To access logging details, select the **API Requests** tab from the **API request activity** page.
+When you see abnormal behavior on the dashboard that requires your attention, you can further investigate by looking into logs to identify potential issues and find out which requests failed and/or have higher latency and start looking into log details to troubleshoot. To access logging details, select the **API requests** tab from the **API request activity** page.
 
-## Logging (API Requests)
+## Logging (API requests)
 
-The API Requests page provides detailed information about all the API requests that happened in a specific time frame.  To access, select the **API Requests** tab from the **API request activity** page. 
+The API requests page provides detailed information about all the API requests that happened in a specific time frame.  To access, select the **API requests** tab from the **API request activity** page.
 
-:::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apirequest-logs.png"" alt-text="Screenshot of API Request page showing the list of requests.":::
-
-You are able to resize columns and sort the columns (ascending/descending) from the report table. 
+:::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apirequest-logs.png"" alt-text="Screenshot of API request page showing the list of requests.":::
 
 **Logging Key Features**:
 
-- Time Range Selection: You can select different time ranges for the data displayed in the requests list (Hour/Day/Week/Month). Please note there is 30 days retention limit. 
+* Time Range Selection: You can select different time ranges for the data displayed in the requests list (Hour/Day/Week/Month). Please note there is **30 days retention limit.**
 
-:::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apirequest-timerange.png"" alt-text="Screenshot of API Request page showing time range for the list of requests.":::
+:::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apirequest-timerange.png"" alt-text="Screenshot of API request page showing time range for the list of requests.":::
 
-- View a list of recent API requests as well as past requests listed with Request ID.
-- View the type of the operation (Query or Mutation).
-- View the transport protocol used by the request (HTTP).
-- View the time of request.
-- Sort the list of requests by ascending/descending time.
-- View duration of request.
-- Sort the list of requests by ascending/descending duration.
-- View response size.
-- View the Status (Success or Failure).
-- View the details of the request, including specific response/warning/error messages.
-- Filter and search for specific strings or sentences.  
+* View a list of recent API requests as well as past requests listed with Request ID.
+* View the type of the operation (Query or Mutation).
+* View the transport protocol used by the request (HTTP).
+* View the time of request.
+* Sort the list of requests by ascending/descending time.
+* View duration of request.
+* Sort the list of requests by ascending/descending duration.
+* View response size.
+* View the Status (Success or Failure).
+* View the details of the request, including specific response/warning/error messages.
+* Filter and search for specific strings or sentences.
+* Resize columns and sort the columns (ascending/descending) from the report table.
 
 ## Related content
 
