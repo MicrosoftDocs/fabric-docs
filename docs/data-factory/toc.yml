@@ -759,6 +759,8 @@
         href: data-in-staging-artifacts.md
       - name: Dataflow Gen2 incremental refresh
         href: dataflow-gen2-incremental-refresh.md
+      - name: Dataflow Gen2 with CICD and Git integration
+        href: dataflow-gen2-cicd-and-git-integration.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
