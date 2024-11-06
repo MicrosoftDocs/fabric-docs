@@ -65,6 +65,10 @@ If you make changes to your Eventstream item in the git repository, you see an *
     :::image type="content" source="./media/eventstream-cicd/name-pipeline.png" alt-text="Screenshot that shows name a pipeline and stage." lightbox="./media/eventstream-cicd/name-pipeline.png":::
 4. After creating a pipeline, you can assign a workspace to each stage.
     :::image type="content" source="./media/eventstream-cicd/assign-a-workspace.png" alt-text="Screenshot that shows how to assign a workspace to each stage." lightbox="./media/eventstream-cicd/assign-a-workspace.png":::
+5. Once you have content in a pipeline stage, you can select the items and **Deploy** it to the next stage, even if the next stage workspace has content. Paired items are overwritten.
+    :::image type="content" source="./media/eventstream-cicd/deploy-to-stage.png" alt-text="Screenshot that shows how to deploy content to different stages." lightbox="./media/eventstream-cicd/assign-a-workspace.png":::
+
+You can review the deployment history to see the last time content was deployed to each stage. Deployment history is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between deployments.
 
 To learn more about deployment pipeline, visit [Get started with deployment pipelines](/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines)
 
