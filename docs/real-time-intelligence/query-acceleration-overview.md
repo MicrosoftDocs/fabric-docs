@@ -29,9 +29,9 @@ Query acceleration caches data as it lands in OneLake, providing performance com
 
 The following scenarios are ideal for using query acceleration over OneLake shortcuts:
 
-* **Query data in OneLake with high performace**: When you have existing workloads that are uploading data and managing it in storage (optionally in a different cloud or region), and you would like to query some or all of the data with high performance. 
+* **Query data in OneLake with high performance**: When you have existing workloads that are uploading data and managing it in storage (optionally in a different cloud or region), and you would like to query some or all of the data with high performance. 
 * **Combine historical data with real-time streams**:  When you want to seamlessly combine data landing in OneLake directly with real-time streams coming into Eventhouse without compromising on query speeds.  
-* **Leverage dimension data managed by other items**: Often high value and small volume data is hosted in SQL servers, Cosmos DB, Snowflake or other systems that can be mirrored into OneLake. Accelerated OneLake shortcuts can make this data easily consumable for joins and enrichment in the Evenhouse query. As dimension data is often significantly smaller than activity data, the additional cost associated with that usage is typically minimal.
+* **Leverage dimension data managed by other items**: Often high value and small volume data is hosted in SQL servers, Cosmos DB, Snowflake or other systems that can be mirrored into OneLake. Accelerated OneLake shortcuts can make this data easily consumable for joins and enrichment in the Eventhouse query. As dimension data is often significantly smaller than activity data, the additional cost associated with that usage is typically minimal.
 
 ## Behavior of accelerated external delta tables
 
@@ -40,7 +40,7 @@ Specifically, features like materialized view and update policies aren't support
 
 ## Monitor acceleration behavior
 
-The intial process of query acceleration is dependent on the size of the external table. To monitor the progress and settings of an accelerated table, use the [.show external table operations query_acceleration statistics](https://go.microsoft.com/fwlink/?linkid=2295988) command in a [KQL queryset](kusto-query-set.md).
+The initial process of query acceleration is dependent on the size of the external table. To monitor the progress and settings of an accelerated table, use the [.show external table operations query_acceleration statistics](https://go.microsoft.com/fwlink/?linkid=2295988) command in a [KQL queryset](kusto-query-set.md).
 
 ## Limitations
 
