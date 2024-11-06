@@ -133,6 +133,6 @@ items:
     href: ../real-time-intelligence/user-flow-2.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Discover streaming sources from Microsoft
     href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-  - name: Set alerts based on Fabric events
+  - name: Set alerts based on Fabric and Azure events
     href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json     
     
