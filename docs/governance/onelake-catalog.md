@@ -108,15 +108,19 @@ Related items are often grouped together in a workspace. To find items by worksp
 
 ## View item details
 
-* Overview
+* Overview tab:
   * Location
   * Last updated
   * Owner
   * Sensitivity label
 
-* Lineage [What is the difference between lineage tab and workspace lineage view.] Do all items have the lineage tab? What does it mean when the lineage tab is greyed out?
+### Lineage tab
 
-* Monitor (Displays the items monitoring hub data, if applicable. This tab appears if the item appears in the monitoring hub. Its monitoring hub entries are dispalyed., it will have if it activity from the mon)
+The lineage tab shows you the upstream and downstream items in the lineage that are one degree away. Metadate about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc.
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-lineage-tab.png" alt-text="Screenshot of the OneLake catalog item view lineage tab.":::
+
+* Monitor tab: (Displays the items monitoring hub data, if applicable. This tab appears if the item appears in the monitoring hub. Its monitoring hub entries are dispalyed., it will have if it activity from the mon)
 
 tem metadata, cross-workspace lineage, and monitoring (if applicable). The view also enables ad-hoc item exploration. For example.
 
