@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Fabric mirrored databases from Azure SQL Database (Preview)"
+title: "Microsoft Fabric mirrored databases from Azure SQL Database"
 description: Learn about the mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -10,11 +10,11 @@ ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
 
-# Mirroring Azure SQL Database (Preview)
+# Mirroring Azure SQL Database
 
 [Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure SQL Database estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure SQL databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
-For a tutorial on configuring your Azure SQL Database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md).
+For a tutorial on configuring your Azure SQL Database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-tutorial.md).
 
 To learn more and watch demos of Mirroring Azure SQL Database in Fabric, watch the following the [Data Exposed episode](/shows/data-exposed/key-mirroring-to-azure-sql-database-in-fabric-benefits-data-exposed).
 
@@ -26,7 +26,7 @@ With Mirroring in Fabric, you don't need to piece together different services fr
 
 ## What analytics experiences are built in?
 
-Mirrored databases are an item in **Fabric Synapse Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
+Mirrored databases are an item in **Fabric Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
 
 :::image type="content" source="media/azure-sql-database/fabric-mirroring-sql-database.svg" alt-text="Diagram of Fabric Database Mirroring for Azure SQL Database.":::
 
@@ -63,11 +63,11 @@ The source Azure SQL Database can be either a single database or a database in a
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-tutorial.md)
 
 ## Related content
 
-- [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-how-to-data-security.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-limitations.md)
+- [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-how-to-data-security.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-limitations.md)
 - [Monitor Fabric mirrored database replication](monitor.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md)

@@ -1,15 +1,15 @@
 ---
-title: "Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)"
+title: "Troubleshoot Fabric mirrored databases from Azure SQL Database"
 description: Troubleshooting topics for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 09/23/2024
+ms.date: 11/05/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
 ---
-# Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)
+# Troubleshoot Fabric mirrored databases from Azure SQL Database
 
 ## Changes to Fabric capacity or workspace
 
@@ -56,7 +56,7 @@ If you're experiencing mirroring problems, perform the following database level 
 
 The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled, and must be the primary identity. For more information, see [Create an Azure SQL Database server with a user-assigned managed identity](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=azure-portal).
 
-After enablement, if SAMI is disabled or removed, the mirroring of Azure SQL Database to Fabric OneLake will fail.
+After enablement, if SAMI setting status is either turned Off or initially enabled, then disabled, and then enabled again, the mirroring of Azure SQL Database to Fabric OneLake will fail.
 
 The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following: `SELECT * FROM sys.dm_server_managed_identities;`
 
@@ -79,4 +79,4 @@ If you remove Azure SQL database SPN permissions or permissions are not set up c
 ## Related content
 
 - [Limitations in Microsoft Fabric](../../data-warehouse/limitations.md)
-- [Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric (Preview)](azure-sql-database-mirroring-faq.yml)
+- [Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric](azure-sql-database-mirroring-faq.yml)

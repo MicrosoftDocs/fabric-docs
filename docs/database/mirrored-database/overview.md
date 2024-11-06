@@ -62,7 +62,7 @@ Currently, the following external databases are available:
 |:--|:--|:--|
 | [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](azure-cosmos-db.md) | Yes | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure Databricks (preview)](azure-databricks.md) | Yes |[Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure SQL Database (preview)](azure-sql-database.md) | Yes | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes |[Tutorial: Snowflake](snowflake-tutorial.md) |
 
 ## How does the near real time replication of Mirroring work?
@@ -109,7 +109,7 @@ Microsoft Fabric provides various data engineering capabilities to ensure that y
 
 ## Data Science with your mirrored database data
 
-Microsoft Fabric offers Synapse Data Science to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
+Microsoft Fabric offers Fabric Data Science to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
 
 Microsoft Fabric users can access [Data Science workloads](../../data-science/data-science-overview.md). From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 

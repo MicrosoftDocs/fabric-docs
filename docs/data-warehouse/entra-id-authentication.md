@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra authentication in Synapse Data Warehouse
+title: Microsoft Entra authentication in Fabric Data Warehouse
 description: Learn more about Microsoft Entra authentication, an alternative to SQL authentication in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf

@@ -7,7 +7,7 @@ author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 06/07/2024
+ms.date: 11/11/2024
 ---
 
 # Configure high concurrency mode for Fabric notebooks
@@ -39,9 +39,9 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png" alt-text="Screenshot showing the navigation to workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png":::
 
-1. Navigate to the **Synapse** section > **Spark Compute** > **High Concurrency**
+1. Navigate to the **Data Engineering/Science** section > **Spark settings** > **High concurrency**
 
-1. In the **High Concurrency** section, you could choose to **enable** or **disable** the setting.
+1. In the **High concurrency** section and enable it **for notebooks**. You could choose to **enable** or **disable** the setting from this pane.
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-high-concurrency-section-selected.png" alt-text="Screenshot showing the high concurrency section in workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-high-concurrency-section-selected.png":::
 

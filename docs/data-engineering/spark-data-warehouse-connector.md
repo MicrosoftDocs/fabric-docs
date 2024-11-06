@@ -1,5 +1,5 @@
 ---
-title: Spark connector for Microsoft Fabric Synapse Data Warehouse
+title: Spark connector for Microsoft Fabric Data Warehouse
 description: Learn how to use a Spark connector to access and work with data from a Microsoft Fabric warehouse and the SQL analytics endpoint of a lakehouse.
 author: ms-arali
 ms.author: arali
@@ -7,9 +7,9 @@ ms.topic: how-to
 ms.date: 09/30/2024
 ---
 
-# Spark connector for Microsoft Fabric Synapse Data Warehouse
+# Spark connector for Microsoft Fabric Data Warehouse
 
-The Spark connector for Synapse Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items). The connector offers the following capabilities:
+The Spark connector for Fabric Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items). The connector offers the following capabilities:
 
 * You can work with data from a warehouse or SQL analytics endpoint in the same workspace or across multiple workspaces.
 * The SQL analytics endpoint of a Lakehouse is automatically discovered based on workspace context.
@@ -99,20 +99,20 @@ df = spark.read.synapsesql("<warehouse/lakehouse name>.<schema name>.<table or v
 
 ### Read data across workspaces
 
-To access and read data from a data warehouse or lakehouse across workspaces, you can specify the workspace ID where your data warehouse or lakehouse exists and then lakehouse or data warehouse item id. This line provides an example of reading data from a table or view in a Spark DataFrame from the data warehouse or lakehouse with the specified workspace ID and lakehouse/data warehouse ID:
+To access and read data from a warehouse or lakehouse across workspaces, you can specify the workspace ID where your warehouse or lakehouse exists, and then lakehouse or warehouse item ID. The following line provides an example of reading data from a table or view in a Spark DataFrame from the warehouse or lakehouse with the specified workspace ID and lakehouse/warehouse ID:
 
 ```python
 # For lakehouse
 df = spark.read.option(Constants.WorkspaceId, "<workspace id>").synapsesql("<lakehouse name>.<schema name>.<table or view name>")
 df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.LakehouseId, "<lakehouse item id>").synapsesql("<lakehouse name>.<schema name>.<table or view name>")
 
-# For data warehouse
+# For warehouse
 df = spark.read.option(Constants.WorkspaceId, "<workspace id>").synapsesql("<warehouse name>.<schema name>.<table or view name>")
-df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.DatawarehouseId, "<data warehouse item id>").synapsesql("<warehouse name>.<schema name>.<table or view name>")
+df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.DatawarehouseId, "<warehouse item id>").synapsesql("<warehouse name>.<schema name>.<table or view name>")
 ```
 
 > [!NOTE]
-> When you're running the notebook, by default the connector looks for the specified data warehouse or lakehouse in the workspace of the lakehouse that's attached to the notebook. To reference a data warehouse or lakehouse from another workspace, specify the workspace ID and lakehouse or data warehouse item ID as above.
+> When you're running the notebook, by default the connector looks for the specified warehouse or lakehouse in the workspace of the lakehouse that's attached to the notebook. To reference a warehouse or lakehouse from another workspace, specify the workspace ID and lakehouse or warehouse item ID as above.
 
 ### Create a lakehouse table based on data from a warehouse
 

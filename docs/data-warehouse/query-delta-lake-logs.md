@@ -43,7 +43,7 @@ The following steps detail how to get the OneLake path from a table in a warehou
 
 You can locate Delta Lake logs via the following methods:
 
-- Delta Lake logs can be queried through [shortcuts](../onelake/access-onelake-shortcuts.md) created in a lakehouse. You can view the files using a [!INCLUDE [product-name](../includes/product-name.md)] Spark Notebook or the [Lakehouse explorer in Synapse Data Engineering](../data-engineering/navigate-lakehouse-explorer.md) in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
+- Delta Lake logs can be queried through [shortcuts](../onelake/access-onelake-shortcuts.md) created in a lakehouse. You can view the files using a [!INCLUDE [product-name](../includes/product-name.md)] Spark Notebook or the [Lakehouse explorer in Fabric Data Engineering](../data-engineering/navigate-lakehouse-explorer.md) in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
 - Delta Lake logs can be found via [Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md), through Spark connections such as the Power BI Direct Lake mode, or using any other service that can read delta tables.
  

@@ -423,6 +423,12 @@
         href: connector-lakehouse.md
       - name: Configure in a data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
+    - name: MariaDB
+      items:
+      - name: MariaDB - Overview
+        href: connector-mariadb-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-mariadb-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Microsoft 365 - Overview
@@ -675,6 +681,8 @@
         href: webhook-activity.md
     - name: Concepts
       items:
+      - name: REST API capabilities
+        href: pipeline-rest-api-capabilities.md
       - name: CI/CD for data pipelines
         href: cicd-pipelines.md
       - name: Monitor data pipeline runs
@@ -911,18 +919,18 @@
             href: access-apache-airflow-job-logs.md
       - name: Tutorials
         items:
-          - name: Hello Apache Airflow Job
+          - name: Hello World
             href: apache-airflow-jobs-hello-world.md
-          - name: Orchestrate ADF pipeline with Apache Airflow Job
+          - name: Run Fabric data pipelines and notebooks
+            href: apache-airflow-jobs-run-fabric-item-job.md
+          - name: Run ADF pipeline
             href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
-          - name: Orchestrate Azure Databricks job with Apache Airflow Job
+          - name: Run Azure Databricks job
             href: apache-airflow-jobs-run-databricks-job.md
-          - name: Power BI Semantic Model Refresh
+          - name: Refresh Power BI Semantic Model
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: apache-airflow-jobs-dbt-fabric.md
-          - name: Run a Fabric Item Job
-            href: apache-airflow-jobs-run-fabric-item-job.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases

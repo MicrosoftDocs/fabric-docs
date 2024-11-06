@@ -3,8 +3,8 @@ title: T-SQL surface area
 description: T-SQL surface area of the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo
-ms.date: 09/25/2024
+ms.reviewer: cynotebo, jovanpop
+ms.date: 11/01/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -18,7 +18,7 @@ ms.search.form: T-SQL Surface area # This article's title should not change. If 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 > [!NOTE]
-> For more information on upcoming feature development for Fabric Synapse Data Warehouse, see the [Synapse Data Warehouse in Microsoft Fabric release plan](/fabric/release-plan/data-warehouse).
+> For more information on upcoming feature development for Fabric Data Warehouse, see the [Fabric Data Warehouse release plan](/fabric/release-plan/data-warehouse).
 
 ## T-SQL surface area
 
@@ -52,11 +52,10 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Recursive queries
 - Result Set Caching
 - Schema and table names can't contain `/` or `\`
-- `SELECT` - `FOR`
+- `SELECT` - `FOR XML`
 - `SET ROWCOUNT`
 - `SET TRANSACTION ISOLATION LEVEL`
 - `sp_showspaceused`
-- Spatial geometry/geography functions
 - Temporary tables
 - Triggers
 

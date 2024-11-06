@@ -1,6 +1,6 @@
 ---
 title: Warehouse settings and context menus
-description: Learn about context menus and settings in Synapse Data Warehouse in Microsoft Fabric.
+description: Learn about context menus and settings in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
@@ -82,7 +82,7 @@ The following table describes the warehouse context menu options:
 
 ## Related content
 
-- [Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
+- [Warehouse in Microsoft Fabric](data-warehousing.md#fabric-data-warehouse)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](default-power-bi-semantic-model.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Admin portal](../admin/admin-center.md)

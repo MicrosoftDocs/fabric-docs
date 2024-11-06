@@ -64,4 +64,4 @@ Use Data Activator to fine tune your trigger and set complex conditions that are
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

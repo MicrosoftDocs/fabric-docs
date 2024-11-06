@@ -51,7 +51,8 @@ In this part of the tutorial, you learn how to set an alert on your event stream
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
-* [What is Data Activator?](../data-activator/data-activator-introduction.md)
+
+* [What is Data Activator?](data-activator/data-activator-introduction.md)
 * [Set alerts on streams in Real-Time hub](../real-time-hub/set-alerts-data-streams.md)
 
 ## Next step
