@@ -136,7 +136,7 @@ The following files are contained in an KQL database folder:
     | Property | Description |
     | ------------- | ------------- |
     | *databaseType* | Valid values: ReadWrite |
-    | *parentEventhouseItemId* | The logical id of the parent eventhouse. This should not be modified. |
+    | *parentEventhouseItemId* | The logical ID of the parent eventhouse. This shouldn't be modified. |
     | *oneLakeCachingPeriod* | Database level setting for the [caching policy](data-policies.md#caching-policy). |
     | *oneLakeStandardStoragePeriod* | Database level setting for the [retention policy](data-policies.md#data-retention-policy). |
 
