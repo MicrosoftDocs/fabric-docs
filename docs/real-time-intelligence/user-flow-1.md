@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: concept-article
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 11/19/2024
 ms.search.form: Get started
 #customer intent: I want to learn how to discover and respond to events in Real-Time Intelligence.
 ---
@@ -18,8 +18,6 @@ Real-Time hub is used to discover and manage your streaming data in Fabric. You 
 This user flow shows how a Data Engineer or Data Analyst can discover events in Real-Time hub and trigger actions on this event data.
 
 :::image type="content" source="media/user-flows/user-flow-1.png" alt-text="Schematic image showing the steps in user flow 1." lightbox="media/user-flows/user-flow-1.png" border="false":::
-
-[!INCLUDE [preview-note](../real-time-hub/includes/preview-note.md)]
 
 ## Steps
 
