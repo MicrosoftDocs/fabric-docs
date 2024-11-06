@@ -1,157 +1,38 @@
 ---
-title: Discover and explore Fabric items in the OneLake catalog
-description: Learn how to discover and explore your organization's Fabric items in the OneLake catalog.
+title: The OneLake catalog
+description: Learn about the OneLake catalog and how it helps you discover, explore, govern, and secure your organization's Fabric content.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: conceptual
 ms.date: 11/05/2024
-ms.custom: ignite-2023-fabric
+ms.custom: ignite-2024-fabric
 ---
 
-# Discover and explore Fabric items in the OneLake catalog
+# The OneLake catalog
 
-OneLake catalog Explore is a centralized place that helps you find, explore, and use the Fabric items you need.
+The OneLake catalog is a central place where data engineers, data scientists, analysts, and decision makers can find, explore, manage, and govern their organization's Fabric content, all within a single contextual interface that doesn't require the user to navigate to a different experience. It supports all Fabric item types, from data items such as lakehouses and semantic models, to insight items such as reports and dashboards, to the various configuration, solution, and process item types.
 
+The catalog's filtering and search capabilities help users easily find the content they need. Other key functionalities include detailed item metadata viewing, cross-workspace item lineage, and real-time activity monitoring.
 
+By integrating experiences and providing detailed views of data subitems, the OneLake catalog enhances data discovery and management, making it more efficient and intuitive. Users can perform ad-hoc data explorations, gain insights, and make data-driven decisions directly within the catalog.
 
-What do I see in OneLake catalog Explore?
-Items list: You see all the items you have access to.
-Filters: Provide various ways of shortening the list to help you discover the relevant items.
+Everything in the OneLake catalog is contextual. You can view and manage any item from within the catalog itself, without needing to navigate out to different experiences, or open an item’s editor.
 
-Item filters
-All items
-My items
-Endorsed items
-Favorited itemsst
-Workspace filter
+## How to use the catalog
 
+First scope the catalog to a specific domain and subdomain, for example, Finance -> EMEA. Then use additional filtering and searching capabilities to drill down to the right content. You can filter the items in the catalog by category; Data (e.g., lakehouses, warehouses), Insights (e.g., reports, dashboards), Processes (e.g., pipelines, notebooks), Solutions (e.g., Health), and Configurations (e.g., Environment). In addition, you can filter by tags, endorsement, specific workspace, and more, to find exactly what you need—quickly and efficiently.
 
-Item details
-Overview
-Lineage [What is the difference between lineage tab and workspace lineage view.] Do all items have the lineage tab? What does it mean when the lineage tab is greyed out?
-Monitor
+Everything in the OneLake catalog is contextual. You can view and manage any item from within the catalog itself, without needing to navigate out to different experiences, or open an item’s editor. This simplifies the navigation and management of your data ecosystem, making your work in Fabric more efficient.
 
-Action bar
+## Exploration
 
-The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them.
+Once you've found the right data, you can perform ad-hoc data explorations on your items from within the OneLake catalog, helping you to gain fresh insights, and take data driven business decisions.
 
+## Item details
 
-
-in your organization that you have access to item types in Fabric. This includes the most popular insight item types (preview): dashboards and reports, as well as the full range of configuration, solution, and process item types. All in one place. 
-
-
-OneLake catalog Explore provides:
-
-* [A filterable list of all the data items you can access](#find-items-in-the-data-items-list)
-* [A gallery of recommended data items](#find-recommended-items)
-* [A way of finding data items by workspace](#find-items-by-workspace)
-* [A way to display only the data items of a selected domain](#display-only-data-items-belonging-to-a-particular-domain)
-* [An options menu of things you can do with the data item](#open-an-items-options-menu)
-
-This article explains what you see in OneLake catalog Explore and describes how to use it.
-
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-general.png" alt-text="Screenshot of the OneLake data hub." lightbox="./media/onelake-data-hub/onelake-data-hub-general.png":::
-
-## Open the OneLake catalog Explore
-
-To open the data hub, select the OneLake icon in the Fabric navigation pane.
-
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-open.png" alt-text="Screenshot showing how to open the OneLake data hub.":::
-
-## Find items in the items list
-
-The items list displays all the Fabric items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list. If you select the name of an item, you'll get see the item's details. If you hover over an item, you'll see three dots that open the [options menu](#open-an-items-options-menu) when you select them.
-
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="./media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
-
-The columns of the list are described below.
-
-|Column  |Description  |
-|:-----------------|:--------|
-| **Name**         | The item name. Select the name to explore item details. |
-| **Type**         | The item type. |
-| **Owner**        | Item owner. |
-| **Refreshed**    | Last refresh time (rounded to hour, day, month, and year. See the details section in item's details for the exact time of the last refresh). |
-| **Location**    | The workspace the item is located in. |
-| **Endorsement**  | [Endorsement](../governance/endorsement-overview.md) status. |
-| **Sensitivity**  | Sensitivity, if set. Select the info icon to view the sensitivity label description. |
-
-### Item filters
-
-Item filters help you narrow down the list of items.
-
-|Tab  |Description  |
-|:-------------------------|:----------------------------------------------------|
-| **All Items**                  | Items that you're allowed to find.  |
-| **My items**              | Items that you own.      |
-| **Endorsed items** | Endorsed items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
-| **Favorites** | Items that you've marked as favorites. |
-
-### Find items by workspace
-
-Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading to the side of the items list. The items you're allowed to see in that workspace will be displayed in the items list.
-
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-explorer-pane.png" alt-text="Screenshot of the OneLake data hub Explorer pane.":::
-
-> [!NOTE]
->Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
-
-
-## Filter to find items
-
-### All items by item classification
-
-Fabric items are classified into buckets based on what they are for. For example, items that contain data, such as lakehouses and semantic models, are bucketed under Data items, while reports and dashboards are bucketed under Insights. Use the item type bucket selector to select the item type bucket of interest.
-
-|Tab  |Description  |
-|:-------------------------|:----------------------------------------------------|
-| **All data**                  | Data items that you're allowed to find.  |
-| **My data**              | Data items that you own.      |
-| **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
-| **Favorites** | Data items that you've marked as favorites. |
-
-### Find items by tag
-
-Use the tags selector to display items tagged with the tags you select. 
-
-> [!NOTE]
-> The tag selector is only visible if tags are enabled in your organization.
-
-
-### Find items by workspace
-
-Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading to the side of the items list. The items you're allowed to see in that workspace will be displayed in the items list.
-
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-explorer-pane.png" alt-text="Screenshot of the OneLake data hub Explorer pane.":::
-
-> [!NOTE]
->Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
-
-## Display only data items belonging to a particular domain
-
-If [domains](../governance/domains.md) have been defined in your organization, you can use the domain selector to select a domain so that only data items belonging to that domain will be displayed. If an image has been associated with the domain, you’ll see that image on the catalog to remind you of the domain you're viewing.
-
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake data hub.":::
-
-For more information about domains, see the [Domains overview](../governance/domains.md)
-
-## Open an item's options menu
-
-Each item shown in the data hub has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
-
-To display the options menu, select **More options (...)** on one of the items shown in the data items list or a recommended item. In the data items list, you need to hover over the item to reveal **More options**.
-
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake data hub." border="false":::
-
-> [!NOTE]
->The Explorer pane may list workspaces that you don't have access to if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the data items list.
-
-## Considerations and limitations
-
-Streaming semantic models are not shown in the OneLake data hub.
+Viewing item metadata, including description, tags, and data tables and views, has never been easier. Click on any item in the OneLake catalog and you’ll see relevant information upfront to help you understand it better. For your data item types, the OneLake catalog lets you directly explore the data schema, providing a granular view into your items’ objects and contents that enables better insight and control over your data assets.
 
 ## Related content
 
-* [Navigate to your items from Microsoft Fabric Home](./fabric-home.md)
-* [Endorsement](../governance/endorsement-overview.md)
+* [Discover and explore Fabric items in the OneLake catalog](./onelake-catalog-explore.md)

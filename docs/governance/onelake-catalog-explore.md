@@ -13,7 +13,47 @@ ms.custom: ignite-2023-fabric
 
 OneLake catalog Explore is a centralized place that helps you find, explore, and use the Fabric items you need.
 
+The OneLake catalog provides
+* filterable list
+* Filters and selectors to help you find the content you need.
+* A way to display only the items of a selected domain / set the catalog scope to a domain.
+* A way of finding items by workspace
+* An options menu of things you can do with the item
+* An in-context item details view that shows you item metadata, cross-workspace lineage, and monitoring (if applicable). The view also enables ad-hoc item exploration. For example..
 
+This article explains what you see in the OneLake catalog and describes how to use it.
+
+## Open the OneLake catalog
+
+To open the OneLake catalog, select the OneLake icon in the Fabric navigation pane.
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-open.png" alt-text="Screenshot showing how to open the OneLake catalog.":::
+
+## Find items in the items list
+
+The items list displays all the Fabric items you have access to. To shorten the list, you can the catalog's filters and selectors. If you select an item, you'll open the item's details view. If you hover over an item, you'll see three dots that open the item's [options menu](#open-an-items-options-menu) when you select them.
+
+The columns of the list are described below.
+
+|Column  |Description  |
+|:-----------------|:--------|
+| **Name**         | The item name. Select the name to explore item details. |
+| **Type**         | The item type. |
+| **Owner**        | Item owner. |
+| **Refreshed**    | Last refresh time (rounded to hour, day, month, and year. See the details section in item's details for the exact time of the last refresh). |
+| **Location**    | The workspace the item is located in. |
+| **Endorsement**  | [Endorsement](../governance/endorsement-overview.md) status. |
+| **Sensitivity**  | Sensitivity, if set. Select the info icon to view the sensitivity label description. |
+
+## Scope the catalog to a particular domain
+
+If domains have been defined in your organization, you can use the domain selector to select a domain so that only items belonging to that domain will be displayed and treated in the catalog. If an image has been associated with the domain, that image will display on catalog to remind you of the domain you're working with.
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
+
+## Find items in the items list
+
+Annotated image
 
 What do I see in OneLake catalog Explore?
 Items list: You see all the items you have access to.
@@ -28,7 +68,9 @@ Workspace filter
 
 
 Item details
-Overview
+Overview 
+Location
+Last refresh
 Lineage [What is the difference between lineage tab and workspace lineage view.] Do all items have the lineage tab? What does it mean when the lineage tab is greyed out?
 Monitor
 
