@@ -108,11 +108,13 @@ Related items are often grouped together in a workspace. To find items by worksp
 
 ## View item details
 
-* Overview tab:
-  * Location
-  * Last updated
-  * Owner
-  * Sensitivity label
+asdf
+
+### Overview tab
+
+The overview tab shows the workspace the item is located in, the last update time, the item owner, and the name of the sensitivity label applied to the item, if any. Data items show tables, if any, for exploration purposes.
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-overview-tab.png" alt-text="Screenshot of the OneLake catalog item view overview tab.":::
 
 ### Lineage tab
 
@@ -120,9 +122,12 @@ The lineage tab shows you the upstream and downstream items in the lineage that 
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-lineage-tab.png" alt-text="Screenshot of the OneLake catalog item view lineage tab.":::
 
-* Monitor tab: (Displays the items monitoring hub data, if applicable. This tab appears if the item appears in the monitoring hub. Its monitoring hub entries are dispalyed., it will have if it activity from the mon)
+### Monitor tab
 
-tem metadata, cross-workspace lineage, and monitoring (if applicable). The view also enables ad-hoc item exploration. For example.
+The monitor tab displays activities for the item. Press **Show** on a record to see the details of that activity. The monitor tab is available for items types supported by the [monitoring hub](../admin/monitoring-hub.md).
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-monitor-tab.png" alt-text="Screenshot of the OneLake catalog item view monitor tab.":::
+
 
 * Action bar provides functionality that takes you out of the OneLake catalog context.
 
