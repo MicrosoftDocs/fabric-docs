@@ -23,9 +23,9 @@ The following are the possible statuses for the replication:
 | **Monitor** | **Status** |
 |:--|:--|
 | Database level | **Running**: Replication is currently running bringing snapshot and change data into OneLake.<br/>**Running with warning**: Replication is running, with transient errors.</br>**Stopping/Stopped**: Replication has stopped.<br/>**Error**: Fatal error in replication that can't be recovered.|
-| Table level | **Running**: Data is replicating.<br/>**Running with warning**: Warning of nonfatal error with replication of the data from the table.</br>**Stopping/Stopped**: Replication has stopped.<br/>**Error**: Fatal error in replication for that table.<br/>**NotSupported**: Replication prevented due to unsupported feature in the table, typically an [unsupported data type](mirorring-limitations.md). |
+| Table level | **Running**: Data is replicating.<br/>**Running with warning**: Warning of nonfatal error with replication of the data from the table.</br>**Stopping/Stopped**: Replication has stopped.<br/>**Error**: Fatal error in replication for that table.<br/>**NotSupported**: Replication prevented due to unsupported feature in the table, typically an [unsupported data type](mirroring-limitations.md). |
 
-The **NotSupported** replication status in the [Replication monitor](mirroring-monitor.md) page contains status information specific to the table.
+The **NotSupported** replication status in the **Replication monitor** page contains status information specific to the table.
 
 :::image type="content" source="media/mirroring-monitor/notsupported-replication-status.png" alt-text="Screenshot from the Fabric SQL database Mirroring Replication monitor showing the NotSupported status and the information icons." lightbox="media/mirroring-monitor/notsupported-replication-status.png":::
 
