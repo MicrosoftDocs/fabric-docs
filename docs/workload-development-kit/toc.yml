@@ -50,7 +50,9 @@ items:
   - name: Publish a workload to Fabric
     href: publish-workload.md
   - name: Set up authentication
-    href: authentication-tutorial.md    
+    href: authentication-tutorial.md
+  - name: Authentication guidelines and deep dive
+    href: authentication-guidelines.md
   - name: Front-end implementation guide
     href: extensibility-front-end.md
   - name: Back-end implementation guide

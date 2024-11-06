@@ -1,5 +1,5 @@
 ---
-title: Overview of Fabric Workload authentication guidelines & deep dive 
+title: Overview of Fabric Workload authentication guidelines and deep dive 
 description: This article describes important concepts and guidelines when working with authentication in Fabric workloads
 author: ramizsha
 ms.author: rashahoc
@@ -8,11 +8,11 @@ ms.date: 11/03/2024
 #customer intent: As a developer, I want to understand what are the best practices when working with authentication to grant users the optimal experience.
 ---
 
-# Workload authentication guidelines & deep dive 
+# Workload authentication guidelines and deep dive 
 
 Before we get familiar with guidelines on how to work with authentication when building workloads, make sure you went over [Authentication overview](./authentication-concept.md) and [Authentication setup](./authentication-tutorial.md). 
 
-Let's go over some concepts before we talk about Working with tokens & consents:
+Let's go over some concepts before we talk about Working with tokens and consents:
 
 ## Data plane and control plane APIs 
 
@@ -31,15 +31,15 @@ You need to add at least one for control plane API for the flow to work.
 For data plane APIs, this tab can be used as a means to manage granular permissions per API that your workload exposes.  
 Ideally you should add a set of scopes for each API the workload backend exposes and validate that the token received includes those scopes when those APIs are called from the client.  
 For example: 
-  * The workload exposes 2 APIs to the client "ReadData" & "WriteData".  
-  * The workload exposes 2 data plane scopes "data.read" & "data.write".  
+  * The workload exposes 2 APIs to the client "ReadData" and "WriteData".  
+  * The workload exposes 2 data plane scopes "data.read" and "data.write".  
   * In "ReadData" API the workload validates that "data.read" scope is included in the token before it continues with the flow, The same applies to "WriteData". 
 
 ## API permissions tab on the workload’s application in Microsoft Entra ID
 In this tab, you need to add all the scopes your workload needs to exchange a token for.   
 A mandatory scope to add is "Fabric.Extend" under Power BI service, requests to Fabric may fail without this scope.
 
-## Working with tokens & consents 
+## Working with tokens and consents 
 When working with data plane APIs, the workload frontend needs to acquire a token to use it for calls to its backend.
 Here's how the workload frontend should use the [JavaScript API](./authentication-javascript-api.md) and [OBO flows](/entra/identity-platform/v2-oauth2-on-behalf-of-flow) to acquire tokens for the workload / external services and work with consents: 
 
@@ -140,7 +140,7 @@ if (url.pathname?.startsWith(redirectUriPath)) {
 The workload frontend can extract the error code from the url and handle it accordingly.  
 
 >[!NOTE]
->In both scenarios (error & success) the workload **must always close the window immediately, with no latency**. 
+>In both scenarios (error and success) the workload **must always close the window immediately, with no latency**. 
 
  
 
