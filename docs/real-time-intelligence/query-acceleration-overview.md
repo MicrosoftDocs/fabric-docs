@@ -21,7 +21,7 @@ Query acceleration is supported in Eventhouse over delta tables from [OneLake sh
 > [!NOTE]
 > * If you have compliance considerations that require you to store data in a specific region, make sure your Eventhouse capacity is in the same region as your external table or shortcut data.
 >
-> * Accelerated external tables add to the storage COGS and to the SSD storage consumption your Eventhouse, similar to regular tables in your KQL database. You can control the amount of data to cache by defining the *Hot* property in the [query acceleration policy](https://aka.ms/query-acceleration). Indexing and ingestion activity also contributes to compute resources use.
+> * Accelerated external tables add to the storage COGS and to the SSD storage consumption your Eventhouse, similar to regular tables in your KQL database. You can control the amount of data to cache by defining the *Hot* property in the [query acceleration policy](https://go.microsoft.com/fwlink/?linkid=2296196). Indexing and ingestion activity also contributes to compute resources use.
 
 ## When should I use query acceleration over OneLake shortcuts?
 
@@ -39,7 +39,7 @@ The accelerated OneLake shortcuts behave like [external tables](/kusto/query/sch
 
 ## Monitor acceleration behavior
 
-The intial process of query acceleration is dependent on the size of the external table. To monitor the progress and settings of an accelerated table, use the [.show external table operations query_acceleration statistics](https://aka.ms/query-acceleration-stats) command in a [KQL queryset](kusto-query-set.md).
+The intial process of query acceleration is dependent on the size of the external table. To monitor the progress and settings of an accelerated table, use the [.show external table operations query_acceleration statistics](https://go.microsoft.com/fwlink/?linkid=2295988) command in a [KQL queryset](kusto-query-set.md).
 
 ## Limitations
 
@@ -60,4 +60,4 @@ Charges related to query acceleration will appear in the Fabric [metrics app](..
 
 * [Query acceleration over OneLake shortcuts (preview)](query-acceleration.md)
 * [OneLake shortcuts](onelake-shortcuts.md)
-* [Query acceleration policy](https://aka.ms/query-acceleration)
+* [Query acceleration policy](https://go.microsoft.com/fwlink/?linkid=2296196)
