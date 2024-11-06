@@ -1,29 +1,27 @@
 ---
-title: Query operation logs
-description: View a set of query operation logs, that you can query in your Fabric workspace monitoring database.
-author: KesemSharabi
-ms.author: kesharab
+title: Query logs
+description: View and analyze the log of queries run on an Eventhouse KQL database within Real-Time Intelligence.
+author: shsagir
+ms.author: shsagir
 ms.topic: reference
 ms.date: 11/06/2024
 
 ---
 
-# Query operations
+# Query logs
 
-Query operation logs are part of the Eventhouse logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the usage and performance of your workspace.
+The query logs table contains the list of queries run on an Eventhouse KQL database, which is part of Real-Time Intelligence. For each query, a log event record is stored in the **EventhouseQueryLogs** table.
 
-## query operation logs
-
-A log event for each query run on an Eventhouse KQL database, is stored in the *EventhouseQueryLogs* table.
+## query logs table
 
 Use query logs to:
 
-* Analyze query performance and trends
-* Troubleshoot slow queries
-* Identify heavy queries consuming large amount of system resources
-* Identify the users/applications running the highest number of queries
+* Analyze query performance and trends.
+* Troubleshoot slow queries.
+* Identify heavy queries consuming large amount of system resources.
+* Identify the users/applications running the highest number of queries.
 
-This table lists the query logs.
+The following table describes the columns stored in the **EventhouseQueryLogs** table:
 
 | Column Name | Type | Description |
 |--|--|--|
@@ -74,4 +72,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 * [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
 
-* [Eventhouse workspace monitoring](workspace-monitoring-eventhouse.md)
+* [Eventhouse monitoring](monitor-eventhouse.md)

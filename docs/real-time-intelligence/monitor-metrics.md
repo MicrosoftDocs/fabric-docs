@@ -1,35 +1,29 @@
 ---
-title: Metric operation logs
-description: View a set of metric operation logs that you can query in your Fabric workspace monitoring database.
-author: KesemSharabi
-ms.author: kesharab
+title: Metrics
+description: View and analyze the metrics of ingestions, materialized views, and continuous exports of an Eventhouse KQL database within Real-Time Intelligence.
+author: shsagir
+ms.author: shsagir
 ms.topic: reference
 ms.date: 11/06/2024
 
 ---
 
-# Metric operations
+# Metrics
 
-Metric operation logs are part of the Eventhouse logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the usage and performance of your workspace.
+The metrics table contains the details of ingestions, materialized views, and continuous exports of an Eventhouse KQL database, which is part of Real-Time Intelligence. For each metric, a log event record is stored in the **EventhouseMetrics** table.
 
 ## Metric operation logs
 
-A list of metrics that allow you to monitor the following aspects of an Eventhouse:
+Use the metrics to:
 
-* Ingestions
-* Materialized Views
-* Continuous Exports
+* Analyze ingestion performance and trends.
+* Monitor batch vs streaming ingestions.
+* Troubleshoot ingestion failures.
+* Deep dive into ingestion flows.
+* Materialized views monitoring and health.
+* Continuous exports monitoring.
 
-You can use the Metric logs to:
-
-* Analyze ingestion performance and trends
-* Monitor batch vs streaming ingestions
-* Troubleshoot ingestion failures
-* Deep dive into ingestion flows
-* Materialized views monitoring and health
-* Continuous exports monitoring
-
-This table lists the metric logs.
+The following table describes the columns stored in the **EventhouseMetrics** table:
 
 | Column Name | Type | Description |
 |--|--|--|
@@ -41,7 +35,7 @@ This table lists the metric logs.
 | MetricMaxValue | long | The metric maximum value. |
 | MetricMinValue | long | The metric minimum value. |
 | MetricName | string | The metric name. |
-| MetricSpecificDimensions | dynamic | The specific dimensions of each metric, as described in the Metric Specific Column of the [Metrics table](#metrics-table). Where relevant, dimension descriptions are provided as part of the metric description. |
+| MetricSpecificDimensions | dynamic | The specific dimensions of each metric, as described in [Metric Specific Dimension Column](#metric-specific-dimension-column). Where relevant, dimension descriptions are provided as part of the metric description. |
 | MetricSumValue | long | The metric sum value. |
 | PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values:  EventhouseQueryLogs |
 | PremiumCapacityId | string | The Fabric capacity identifier. |
@@ -50,9 +44,9 @@ This table lists the metric logs.
 | WorkspaceId | string | The identifier of the workspace. |
 | WorkspaceName | string | The name of the workspace. |
 
-### Metrics table
+### Metric Specific Dimension Column
 
-This table contains a list of all the Eventhouse metrics being reported, and the specific dimensions being reported for each metric.
+The following table contains a list of all the reported Eventhouse metrics, and the specific dimensions reported for each metric.
 
 | Metric Type | MetricName | Unit | Aggregation | Description | Metric Specific Dimensions |
 |--|--|--|--|--|--|
@@ -72,7 +66,7 @@ This table contains a list of all the Eventhouse metrics being reported, and the
 | Ingestion | EventsProcessed | Count | Sum, Max, Min | The number of events processed by data connections. | ComponentType, ComponentName |
 | Ingestion | EventsReceived | Count | Sum, Max, Min | The number of events received by data connections from an input stream. | ComponentType, ComponentName |
 | Ingestion | IngestionLatencyInSeconds | Seconds | Avg, Max, Min | The time taken from when data is received in the cluster until it is ready for query. The time depends on the ingestion type, such as Streaming Ingestion or Queued Ingestion. | IngestionKind |
-| Ingestion | IngestionResult | Count | Sum | The total number of sources that were either successfully ingested or failed to be ingested.<sup>1</sup> | Database, Table, IngestionResultDetails, FailureKind, ViaUpdatePolicy |
+| Ingestion | IngestionResult | Count | Sum | The total number of sources that were either successfully ingested or failed to be ingested. For more information, see [Dimension descriptions](#dimension-descriptions) | Database, Table, IngestionResultDetails, FailureKind, ViaUpdatePolicy |
 | Ingestion | IngestionVolumeInBytes | Count | Max, Sum | The total size of data ingested to the KQL Database (Bytes) before compression. | Database, Table |
 | Materialized View | MaterializedViewAgeSeconds | Seconds | Avg | The age of the view (minutes) is defined by the current time minus the last ingestion time processed by the view. A lower value indicates a healthier view. | Database, MaterializedViewName |
 | Materialized View | MaterializedViewHealth | 1, 0 | Avg | A value of 1 indicates the view is considered healthy; otherwise, the value is 0. | Database, MaterializedViewName |
@@ -83,16 +77,18 @@ This table contains a list of all the Eventhouse metrics being reported, and the
 | StreamingIngestion | StreamingIngestDataRate | Bytes | Count, Avg, Max, Min, Sum | The total volume of data ingested by streaming ingestion. | Database, Table |
 | StreamingIngestion | StreamingIngestDuration | Milliseconds | Avg, Max, Min | The total duration of all streaming ingestion requests. | None |
 
-<sup>1</sup>Dimension descriptions 
-- `IngestionResultDetails` - Success for successful ingestion or the failure category for failures. For a complete list of possible failure categories see Ingestion error codes. 
-- `FailureKind` - Whether the failure is permanent or transient. The value is None for a successful ingestion. 
+#### Dimension descriptions
 
-- `ViaUpdatePolicy` - True if the ingestion was triggered by an Update Policy. 
- 
-Considerations
-- Event Hubs and IoT Hub ingestion events are pre-aggregated into one blob, and then treated as a single ingestion source and appear as a single ingestion result after pre-aggregation. 
+The following list describes the dimensions reported in the `IngestionResult` metric:
 
-- Transient failures are automatically retried a limited number of times. Each transient failure is reported as a transient ingestion result, which means a single ingestion may generate multiple ingestion results.
+* `IngestionResultDetails`: Success for successful ingestion or the failure category for failures. For a complete list of possible failure categories, see [Ingestion error codes](/azure/data-explorer/error-codes).
+* `FailureKind`: Whether the failure is permanent or transient. The value is `None` for a successful ingestion.
+* `ViaUpdatePolicy`: True, if the ingestion was triggered by an [Update Policy](/kusto/management/update-policy?view=microsoft-fabric&preserve-view=true).
+
+> [!NOTE]
+>
+> * Event Hubs and IoT Hub ingestion events are pre-aggregated into one blob and then treated as a single ingestion source. They appear as a single ingestion result after pre-aggregation.
+> * Transient failures are automatically retried a limited number of times. Each transient failure is reported as a transient ingestion result, which means a single ingestion may generate multiple ingestion results.
 
 ## Sample queries
 
@@ -102,4 +98,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 * [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
 
-* [Eventhouse workspace monitoring](workspace-monitoring-eventhouse.md)
+* [Eventhouse monitoring](monitor-eventhouse.md)

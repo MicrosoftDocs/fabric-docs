@@ -1,26 +1,26 @@
 ---
-title: Command operation logs
-description: View a set of command operation logs that you can query in your Fabric workspace monitoring database.
-author: KesemSharabi
-ms.author: kesharab
+title: Command logs
+description: View and analyze the log of commands run on an Eventhouse KQL database within Real-Time Intelligence.
+author: shsagir
+ms.author: shsagir
 ms.topic: reference
 ms.date: 11/06/2024
 
 ---
 
-# Command operations
+# Command logs
 
-Command operation logs are part of the Eventhouse logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the usage and performance of your workspace.
+The command logs table contains the list of commands run on an Eventhouse KQL database, which is part of Real-Time Intelligence. For each command, a log event record is stored in the **EventhouseCommandLogs** table.
 
-## Command operation logs
+## Command logs table
 
-Use the command operation logs to:
+Use the command logs to:
 
 * Analyze command performance and trends.
 * Identify commands that consume a large amount of system resources.
 * Identify the users and applications that run the highest number of commands.
 
-This table lists the command logs.
+The following table describes the columns stored in the **EventhouseCommandLogs** table:
 
 | Column Name | Type | Description |
 |--|--|--|
@@ -70,4 +70,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 * [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
 
-* [Eventhouse workspace monitoring](workspace-monitoring-eventhouse.md)
+* [Eventhouse monitoring](monitor-eventhouse.md)

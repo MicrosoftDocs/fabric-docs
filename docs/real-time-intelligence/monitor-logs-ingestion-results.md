@@ -1,26 +1,28 @@
 ---
-title: Ingestion operation logs
-description: View a set of ingestion operation logs that you can query in your Fabric workspace monitoring database.
-author: KesemSharabi
-ms.author: kesharab
+title: Ingestion results logs
+description: View and analyze the log of the results from data ingestions to an Eventhouse KQL database within Real-Time Intelligence.
+author: shsagir
+ms.author: shsagir
 ms.topic: reference
 ms.date: 11/06/2024
 
 ---
 
-# Ingestion operations
+# Ingestion results logs
 
-Ingestion operation logs are part of the Eventhouse logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the usage and performance of your workspace.
+The ingestion results logs table contains the list of results from data ingestions to an Eventhouse KQL database, which is part of Real-Time Intelligence. For each ingestion result, a log event record is stored in the **EventhouseIngestionResultsLogs** table.
 
-## Ingestion operation logs
+## Ingestion results logs table
 
-Ingestion operations provide information about successful and failed ingestion operations, and are supported for queued ingestions. Use to:
+Ingestion operation results provides details on both successful and failed ingestions and are supported for queued ingestions.
+
+Use the ingestion results logs to:
 
 * Monitor the number of successful ingestions.
 * Monitor the number of failed ingestions.
 * Troubleshoot the cause o failed ingestions.
 
-This table lists the Ingestion result logs.
+The following table describes the columns stored in the **EventhouseIngestionResultsLogs** table:
 
 | Column Name | Type | Description |
 |--|--|--|
@@ -59,4 +61,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 * [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
 
-* [Eventhouse workspace monitoring](workspace-monitoring-eventhouse.md)
+* [Eventhouse monitoring](monitor-eventhouse.md)

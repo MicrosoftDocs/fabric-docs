@@ -302,7 +302,7 @@ items:
     - name: Univariate anomaly detection and forecasting
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
     - name: Multivariate anomaly detection
-      items: 
+      items:
       - name: Multivariate anomaly detection overview
         href: multivariate-anomaly-overview.md
       - name: Multivariate anomaly detection tutorial
@@ -319,7 +319,7 @@ items:
     items:
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
-    - name: Real-Time Dashboard permissions 
+    - name: Real-Time Dashboard permissions
       href: dashboard-permissions.md
     - name: Explore data in Real-Time Dashboard tiles
       href: dashboard-explore-data.md
@@ -347,33 +347,33 @@ items:
   - name: Activator basic concepts
     href: data-activator/activator-basic-concepts.md
   - name: Get started with Activator
-    href: data-activator/data-activator-get-started.md    
+    href: data-activator/data-activator-get-started.md
   - name: Get data
     items:
     - name: Get data from Power BI
-      href: data-activator/data-activator-get-data-power-bi.md  
+      href: data-activator/data-activator-get-data-power-bi.md
     - name: Get data from Eventstreams
-      href: data-activator/data-activator-get-data-eventstreams.md   
+      href: data-activator/data-activator-get-data-eventstreams.md
     - name: Get data from Real-Time Hub
-      href: data-activator/data-activator-get-data-real-time-hub.md             
+      href: data-activator/data-activator-get-data-real-time-hub.md
   - name: Create objects and triggers
     items:
     - name: Assign data to objects
-      href: data-activator/data-activator-assign-data-objects.md    
+      href: data-activator/data-activator-assign-data-objects.md
     - name: Create triggers
-      href: data-activator/data-activator-create-triggers-design-mode.md       
+      href: data-activator/data-activator-create-triggers-design-mode.md
     - name: Trigger Fabric items
-      href: data-activator/data-activator-trigger-fabric-items.md       
+      href: data-activator/data-activator-trigger-fabric-items.md
     - name: Detection conditions
-      href: data-activator/data-activator-detection-conditions.md            
+      href: data-activator/data-activator-detection-conditions.md
     - name: Create alerts from a Real-Time Dashboard
-      href: data-activator/data-activator-get-data-real-time-dashboard.md  
+      href: data-activator/data-activator-get-data-real-time-dashboard.md
     - name: Create alerts from a KQL Queryset
       href: data-activator/data-activator-alert-queryset.md
     - name: Use custom actions to trigger Power Automate flows
       href: data-activator/data-activator-trigger-power-automate-flows.md
     - name: Activator rule latency
-      href: data-activator/data-activator-latency.md         
+      href: data-activator/data-activator-latency.md
     - name: Activator limitations
       href: data-activator/data-activator-limitations.md
     - name: Troubleshoot errors
@@ -382,19 +382,19 @@ items:
     items:
     - name: Activator tutorial using sample data
       href: data-activator/data-activator-tutorial.md
-- name: Workspace monitoring
+- name: Monitor
   items:
-    - name: Eventhouse workspace monitoring
-      href: workspace-monitoring-eventhouse.md
-    - name: Command operations
-      href: command-operations.md  
-    - name: Data operations
-      href: data-operations.md
-    - name: Ingestion operations
-      href: ingestion-operations.md
-    - name: Metric operations
-      href: metric-operations.md
-    - name: Query operations
-      href: query-operations.md                                
+    - name: Eventhouse monitoring
+      href: monitor-eventhouse.md
+    - name: Metrics
+      href: monitor-logs-metrics.md
+    - name: Command logs
+      href: monitor-logs-command.md
+    - name: Data operation logs
+      href: monitor-logs-data-operation.md
+    - name: Ingestion results logs
+      href: monitor-logs-ingestion-results.md
+    - name: Query logs
+      href: monitor-logs-query.md
 - name: KQL reference
   href: kusto-tocs/query/toc.yml
