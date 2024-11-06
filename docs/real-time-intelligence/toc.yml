@@ -344,6 +344,8 @@ items:
   items:
   - name: What is Activator?
     href: data-activator-introduction.md
+  - name: Activator basic concepts
+    href: activator-basic-concepts.md
   - name: Get started with Activator
     href: data-activator-get-started.md    
   - name: Get data
