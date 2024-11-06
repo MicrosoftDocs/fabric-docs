@@ -56,7 +56,7 @@ The following table describes the list columns.
 
 ## Scope the catalog to a particular domain
 
-If domains have been defined in your organization, you can use the domain selector to select a domain so that only items belonging to that domain will be displayed and treated in the catalog. If an image has been associated with the domain, that image will display on catalog to remind you of the domain you're working with.
+If domains have been defined in your organization, you can use the domain selector to select a domain or subdomain so that only items belonging to that domain or subdomain will be displayed and treated in the catalog.
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
 
@@ -66,7 +66,7 @@ Each item shown in the data hub has an options menu that enables you to do thing
 
 To display the options menu, select **More options (...)** on one of the items shown in the data items list or a recommended item. In the data items list, you need to hover over the item to reveal **More options**.
 
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake data hub." border="false":::
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
 
 ## Filter the items list
 
