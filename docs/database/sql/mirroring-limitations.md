@@ -65,12 +65,12 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
    - Upon adding system versioning (converting to Temporal) two existing tables, the existing history table is automatically excluded from mirroring (even if it was mirrored in the past).
    - Upon removing system versioning (splitting temporal data from its history table), the history table is treated as a standalone table and automatically added to mirroring.
 - Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
+- The **NotSupported** replication status in the [Replication monitor](mirroring-monitor.md) page contains status information specific to the table, often caused by an unsupported data type.
 
 ## Column level
 
 - If the source table contains computed columns, these columns are skipped and cannot be mirrored.
-- If the source table contains columns with unsupported data types, these columns cannot be mirrored to Fabric OneLake and are skipped from mirroring. The following data types are
-    **unsupported**:
+- If the source table contains columns with unsupported data types, these columns cannot be mirrored to Fabric OneLake and are skipped from mirroring. The following data types are **unsupported**:
    - **image**
    - **text**/**ntext**
    - **xml**
