@@ -1,5 +1,5 @@
 # **Onboard to multitasking**
-Multitasking allows user to open multiple artifacts at the same time, when opening an artifact, a tab will be pinned to the left navigation bar. By  default, we support opening one item at the same time and a set of lifecycle events which is triggered when the artifact tab is being initialized, deactivated, and destroyed with no work required by any workload.
+Multitasking allows a user to open multiple items at the same time, when opening an item, a tab will be pinned to the left navigation bar. By  default, we support opening one item at the same time and a set of lifecycle events which is triggered when the artifact tab is being initialized, deactivated, and destroyed with no work required by any workload.
 
 
 ## Frontend
@@ -12,7 +12,7 @@ Define the editorTab section inside the item manifest for editing tabs propertie
 ```
 **To enable opening more than one item at the same time:**
 
-- define maxInstanceCount property and assign to number of items you want to be opened at the same time (up to 10 items).
+- define the maxInstanceCount property and assign to number of items you want to be opened at the same time (up to 10 items).
 ```json
     "editorTab": {
       "maxInstanceCount": "10"
@@ -20,7 +20,7 @@ Define the editorTab section inside the item manifest for editing tabs propertie
 ```
 **To customize actions and handlers:**
 
-The workload team decides to implement the tab actions and handlers or part of it, they need to set property in the item Frontend manifest in editorTab section, to listen to these actions in its own code, handle them accordingly, and return the results. If not set any of the actions or part of it, the default actions will be handled automatically.
+The workload developer decides to implement the tab actions and handlers or part of it, they need to set property in the item Frontend manifest in editorTab section, to listen to these actions in its own code, handle them accordingly, and return the results. If not set any of the actions or part of it, the default actions will be handled automatically.
 
 - define tab actions (you can choose to define a part of the actions and not all of them, for undefined actions, default actions are used) properties in the editorTab:
 ```json
@@ -33,7 +33,7 @@ The workload team decides to implement the tab actions and handlers or part of i
       "onDelete": "item.tab.onDelete"
     }
 ```
-When the workload team registers the action, Fabric expects the workload action to return the data in a certain format so that Fabric can read or display that information.
+When the workload developer registers the action, Fabric expects the workload action to return the data in a certain format so that Fabric can read or display that information.
 
 - actions expected results:
 ```typescript
@@ -87,4 +87,46 @@ When the workload team registers the action, Fabric expects the workload action 
    onDelete: Action<never>;
 ```
 
-For an example of handling the tab actions, see index.ui.ts that can be found in the sample [repo↗](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.tab.'
+**An example of handling the tab actions:**
+In this example we listen for all actions related to an "item.tab" and handle each one accordingly:
+```typescript
+workloadClient.action.onAction(async function ({ action, data }) {
+    switch (action) {
+        case 'item.tab.onInit':
+            const { id } = data as ItemTabActionContext;
+            try{
+                const getItemResult = await callItemGet(
+                    id,
+                    workloadClient
+                );
+                const item = convertGetItemResultToWorkloadItem<ItemPayload(getItemResult);
+                return {title: item.displayName};
+            } catch (error) {
+                console.error(
+                    `Error loading the Item (object ID:${id})`,
+                    error
+                );
+                return {};
+            }
+        case 'item.tab.canDeactivate':
+            return { canDeactivate: true };
+        case 'item.tab.onDeactivate':
+            return {};
+        case 'item.tab.canDestroy':
+            return { canDestroy: true };
+        case 'item.tab.onDestroy':
+            return {};
+        case 'item.tab.onDelete':
+            return {};
+        default:
+            throw new Error('Unknown action received');
+    }
+});
+```
+- item.tab.onInit: Fetches item data using id and returns the item’s title.
+- item.tab.canDeactivate: Returns { canDeactivate: true } which allows switching between tabs easily.
+- item.tab.onDeactivate, item.tab.onDestroy, item.tab.onDelete: Returns an empty object for these actions.
+- item.tab.canDestroy: Returns { canDestroy: true }.
+
+
+For a full example of handling the tab actions, see index.ui.ts that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.tab.'
