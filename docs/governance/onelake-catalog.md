@@ -1,12 +1,14 @@
 ---
 title: Discover and explore Fabric items in the OneLake catalog
-description: Learn how to discover and explore your organization's Fabric items in the OneLake catalog.
+description: Learn how to discover, explore, manange, and use your organization's Fabric items in the OneLake catalog.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
-ms.topic: conceptual
+ms.topic: overview
 ms.date: 11/05/2024
 ms.custom: ignite-2023-fabric
+
+#customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the capabilities of the OneLake catelog and how it can help me find, manage, and use the content I need. 
 ---
 
 # Discover and explore Fabric items in the OneLake catalog
@@ -14,12 +16,13 @@ ms.custom: ignite-2023-fabric
 OneLake catalog Explore is a centralized place that helps you find, explore, and use the Fabric items you need.
 
 The OneLake catalog provides
+
 * [A list of all Fabric items you have access to in your organization](#find-items-in-the-items-list).
 * [Filters and selectors to help you find the content you're looking for](#filter-the-items-list).
 * [A way to scoping the catalog to display only items of a particular domain](#scope-the-catalog-to-a-particular-domain).
 * [A way of finding items by workspace](#find-items-by-workspace)
-* [An options menu of things you can do with the item](#)
-* An item details view that enables you to drill down on an item without leaving the catalog.
+* [An options menu for item actions](#open-an-items-options-menu)
+* [An item details view that enables you to drill down on an item without leaving the catalog](#view-item-details).
 
 This article explains what you see in the OneLake catalog and describes how to use it.
 
@@ -57,11 +60,6 @@ If domains have been defined in your organization, you can use the domain select
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
 
-
-
-
-
-
 ## Open an item's options menu
 
 Each item shown in the data hub has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
@@ -69,11 +67,6 @@ Each item shown in the data hub has an options menu that enables you to do thing
 To display the options menu, select **More options (...)** on one of the items shown in the data items list or a recommended item. In the data items list, you need to hover over the item to reveal **More options**.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake data hub." border="false":::
-
-
-
-
-
 
 ## Filter the items list
 
@@ -99,7 +92,7 @@ Fabric items are classified into buckets based on what they are for. For example
 
 ### Find items by tag
 
-Use the tags selector to display items tagged with the tags you select. 
+Use the tags selector to display items tagged with the tags you select.
 
 > [!NOTE]
 > The tag selector is only visible if tags are enabled in your organization.
@@ -114,15 +107,20 @@ Related items are often grouped together in a workspace. To find items by worksp
 >Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
 
 ## View item details
-Overview 
-Location
-Last refresh
-Lineage [What is the difference between lineage tab and workspace lineage view.] Do all items have the lineage tab? What does it mean when the lineage tab is greyed out?
-Monitor
-s you item metadata, cross-workspace lineage, and monitoring (if applicable). The view also enables ad-hoc item exploration. For example..
 
+* Overview
+  * Location
+  * Last updated
+  * Owner
+  * Sensitivity label
 
-Action bar
+* Lineage [What is the difference between lineage tab and workspace lineage view.] Do all items have the lineage tab? What does it mean when the lineage tab is greyed out?
+
+* Monitor (Displays the items monitoring hub data, if applicable. This tab appears if the item appears in the monitoring hub. Its monitoring hub entries are dispalyed., it will have if it activity from the mon)
+
+tem metadata, cross-workspace lineage, and monitoring (if applicable). The view also enables ad-hoc item exploration. For example.
+
+* Action bar provides functionality that takes you out of the OneLake catalog context.
 
 ## Considerations and limitations
 
