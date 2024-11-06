@@ -150,7 +150,7 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 ```
 
 > [!NOTE] 
-> ```notebookutils.fs.append``` and ```notebookutils.fs.put``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
+> ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
 
 ### Delete file or directory
 
