@@ -149,7 +149,8 @@ This method appends the given string to a file, encoded in UTF-8.
 notebookutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
 
-> [!NOTE] ```notebookutils.fs.append``` and ```notebookutils.fs.put``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
+> [!NOTE] 
+> ```notebookutils.fs.append``` and ```notebookutils.fs.put``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
 
 ### Delete file or directory
 
