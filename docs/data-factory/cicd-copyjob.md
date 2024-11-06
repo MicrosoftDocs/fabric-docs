@@ -12,9 +12,9 @@ ms.date: 11/05/2024
 
 To build successful data analytics projects with Copy Job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments. 
 
-In Fabric, there are two features we currently support in collaboration with the Application Lifecycle Management (ALM) team: Git Integration and deployment pipelines. These features allow users to import/export workspace resources with individual updates.
+In Fabric, there are two features we currently support in collaboration with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These features allow users to import/export workspace resources with individual updates.
 
-With Git Integration and Deployment Pipeline supported for Copy Job, users can leverage their own Git repositories in Azure DevOps or GitHub and utilize Fabric’s built-in Deployment Pipelines, enabling seamless CI/CD workflows. This integration marks an important step toward expanding CI/CD capabilities across all Fabric items, empowering users with advanced, reliable development tools for their data projects.
+With Git integration and deployment pipeline supported for Copy Job, users can leverage their own Git repositories in Azure DevOps or GitHub and utilize Fabric’s built-in Deployment Pipelines, enabling seamless CI/CD workflows. This integration marks an important step toward expanding CI/CD capabilities across all Fabric items, empowering users with advanced, reliable development tools for their data projects.
 
 ## Get started with Git integration for Copy Job
 
@@ -39,12 +39,12 @@ To access Git with your Microsoft Fabric workspace, ensure the following prerequ
 
 ### Step 1: Connect to a Git repository
 
-To use Git integration with Data Factory pipelines in Fabric, you first need to connect to a Git repository, as described here.
+To use Git integration with Copy Job in Fabric, you first need to connect to a Git repository, as described here.
 
 1. Sign into Fabric and navigate to the workspace you want to connect to Git.
 1. Select **Workspace settings**.
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in the Fabric UI.":::
+   :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in Fabric UI.":::
 
 1. Select **Git integration**.
 1. Select your Git provider. Currently, Fabric only supports _Azure DevOps_ or _GitHub_. If you use GitHub, you need to select **Add account** to connect your GitHub account. After you sign in, select Connect to allow Fabric to access your GitHub account.
@@ -73,11 +73,11 @@ Once you connect to a Git repository, you need to connect to a workspace, as des
 
 1. After you connect, the Workspace displays information about source control that allows users to view the connected branch, the status of each item in the branch, and the time of the last sync. 
 
-   :::image type="content" source="media/cicd-copy-job/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+   :::image type="content" source="media/cicd-copy-job/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for Copy Job.":::
 
 ### Step 3: Commit changes to Git
 
-After you connect to a Git repository and workspace, you can commit changes to Git, as described here.
+You can now commit changes to Git, as described here.
 
 1. Go to the workspace.
 1. Select the **Source control** icon. This icon shows the number of uncommitted changes.
@@ -88,7 +88,7 @@ After you connect to a Git repository and workspace, you can commit changes to G
 
 After the changes are committed, the items that were committed are removed from the list, and the workspace will point to the new commit that it synced to.
 
-   :::image type="content" source="media/cicd-copy-job/source-control-commit.png" alt-text="Screenshot of the Source control dialog for a Git commit.":::
+   :::image type="content" source="media/cicd-copy-job/source-control-commit.png" alt-text="Screenshot of a committed Copy Job items.":::
 
 
 ## Get started with deployment pipelines for Git
@@ -130,7 +130,7 @@ After creating a pipeline, you need to add content you want to manage to the pip
 1. Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](../cicd/deployment-pipelines/assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [Deploy content to an existing workspace](../cicd/deployment-pipelines/understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 1. You can review the deployment history to see the last time content was deployed to each stage. To examine the differences between the two pipelines before you deploy, see [Compare content in different deployment stages](../cicd/deployment-pipelines/compare-pipeline-content.md).
 
-   :::image type="content" source="media/cicd-copy-job/deployment-pipeline.png" alt-text="Screenshot of the Source control dialog for a Git commit.":::
+   :::image type="content" source="media/cicd-copy-job/deployment-pipeline.png" alt-text="Screenshot of deployment pipeline for Copy Job.":::
 
 
 ## Known limitations
