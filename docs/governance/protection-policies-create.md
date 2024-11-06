@@ -65,7 +65,7 @@ To create a protection policy, the following requirements must be met:
     You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to.
 
     > [!NOTE]
-    > Service principals can't be added to the sets of users these controls apply too. This means that service principals are blocked from accessing items protected by protection policies. See [this note](./protection-policies-overview.md#service-principal-note) 
+    > Service principals can't be added to the sets of users these controls apply to. This means that service principals are blocked from accessing items protected by protection policies. See [this note](./protection-policies-overview.md#service-principal-note) for more information.
 
     :::image type="content" source="./media/protection-policies-create/define-access-control.png" alt-text="Screenshot of define access controls page in protection policy configuration.":::
 
