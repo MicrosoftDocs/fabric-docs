@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 10/20/2024
+ms.date: 11/03/2024
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 
 
@@ -13,12 +13,12 @@ ms.date: 10/20/2024
 
 # Protection policies in Microsoft Fabric (preview)
 
-Microsoft Purview protection access control policies (protection policies) enable organizations to control access to items in Fabric using sensitivity labels from Microsoft Purview Information Protection.
+Microsoft Purview protection access control policies (protection policies) enable organizations to control access to items in Fabric using sensitivity labels.
 
 The target audience for this article is security and compliance admins, Fabric admins and users, and anyone else who wants to learn about how protection policies control access to items in Fabric. If you want to see how to create a protection policy for Fabric, see [Create and manage protection policies for Fabric (preview)](./protection-policies-create.md).
 
 > [!NOTE]
-> Microsoft Purview protection policies for Fabric are currently being rolled out and may not be immediately available in all tenants.
+> Protection policies currently don't support allowing service principals to retain access permissions to Fabric items that are protected by a protection policy. This means that service principals are blocked from accessing any item protected by a protection policy.
 
 ## How do protection policies for Fabric work?
 
@@ -54,14 +54,13 @@ Protection policies for Fabric are generally configured by an organization's Pur
 
 * For protection policies to be enforced in Fabric, the Fabric tenant setting **Allow users to apply sensitivity labels for content** must be enabled. This setting is required for all sensitivity label related policy enforcement in Fabric, so if sensitivity labels are already being used in Fabric, this setting will already be on. For more information about enabling sensitivity labels in Fabric, see [Enable sensitivity labels](/power-bi/enterprise/service-security-enable-data-sensitivity-labels#enable-sensitivity-labels).
 
-* Microsoft Fabric subscription
-
 ## Supported item types
 
 Protection policies are supported for all native Fabric items types, and for Power BI semantic models. All other Power BI item types aren't currently supported.
 
 ## Considerations and limitations
 
+* Protection policies currently don't support allowing service principals to retain access permissions to Fabric items that are protected by a protection policy. This means that service principals are blocked from accessing any item protected by a protection policy.
 * With protection policies for Fabric, there can only be one label per protection policy, and only one protection policy per label. Labels used in protection policies can, however, also be associated with regular sensitivity label policies.
 * Up to 50 protection policies can be created.
 * Up to 100 users and groups can be added to a protection policy.

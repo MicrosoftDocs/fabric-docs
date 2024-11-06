@@ -14,10 +14,6 @@ ms.date: 09/24/2024
 
 There are several different ways to create a Data Activator reflex. This article teaches you how to create a reflex from the left navigation bar (navbar).
 
-An administrator might need to enable Data Activator because it is in Preview. If you can't open Data Activator, ask your administrator to use the Admin portal to turn on the preview.
-
-:::image type="content" source="media/data-activator-get-started/data-activator-get-started-04.png" alt-text="Screenshot of enabling data activator in the admin portal.":::
-
 ## Create a Data Activator reflex item
 
 In Microsoft Fabric, select **Data Activator** from the workload switcher in the bottom left corner.
