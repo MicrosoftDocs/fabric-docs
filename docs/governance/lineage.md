@@ -91,4 +91,4 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 ## Related content
 
 * [Impact analysis](./impact-analysis.md)
-* [Lineage in KQL database](../real-time-intelligence/database-lineage-overview.md)
+* [Entity diagram view in KQL database](../real-time-intelligence/database-lineage-overview.md)
