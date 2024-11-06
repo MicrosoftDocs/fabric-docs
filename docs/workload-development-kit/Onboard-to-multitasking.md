@@ -1,9 +1,9 @@
 ---
 title: Onboarding to multitasking documentation
 description: This document outlines the structure, core functionalities, and examples for multitasking feature.
-author: zainadrawshy
-ms.author: zainadr
-ms.topic: toturial-article
+author: zainadr
+ms.author: zainadrawshy
+ms.topic: tutorial
 ms.custom:
 ms.date: 11/06/2024
 #customer intent: As a developer, I want to understand how to support multitasking feature.
