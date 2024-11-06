@@ -1,5 +1,5 @@
 # **Onboard to multitasking**
-Multitasking allows user to open multiple artifacts at the same time, when opening an artifact, a tab will be pinned to the left navigation bar. by default, we support opening one item at the same time and a set of lifecycle events which is triggered when the artifact tab is being initialized, deactivated, and destroyed with no work required by any workload.
+Multitasking allows user to open multiple artifacts at the same time, when opening an artifact, a tab will be pinned to the left navigation bar. By  default, we support opening one item at the same time and a set of lifecycle events which is triggered when the artifact tab is being initialized, deactivated, and destroyed with no work required by any workload.
 
 
 ## Frontend
@@ -20,9 +20,9 @@ Define the editorTab section inside the item manifest for editing tabs propertie
 ```
 **To customize actions and handlers:**
 
-The workload team decides to implement the tab actions and handlers or part of it, they need to set property in the item Frontend manifest in editorTab section, to listen to these actions in its own code, handle them accordingly, and return the results. If not set any of the actions or part of it, the default actions will be handeled automaticaly.
+The workload team decides to implement the tab actions and handlers or part of it, they need to set property in the item Frontend manifest in editorTab section, to listen to these actions in its own code, handle them accordingly, and return the results. If not set any of the actions or part of it, the default actions will be handled automatically.
 
-- define tab actions (you can choose to define a part of the actions and not all of them, for undefined actions, default actions will be used) properties in the editorTab:
+- define tab actions (you can choose to define a part of the actions and not all of them, for undefined actions, default actions are used) properties in the editorTab:
 ```json
     "editorTab": {
       "onInit": "item.tab.onInit",
@@ -87,4 +87,4 @@ When the workload team registers the action, Fabric expects the workload action 
    onDelete: Action<never>;
 ```
 
-For an example of handling the tab actions, see index.ui.ts that can be found in the sample [repo↗](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.tab'.
+For an example of handling the tab actions, see index.ui.ts that can be found in the sample [repo↗](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.tab.'
