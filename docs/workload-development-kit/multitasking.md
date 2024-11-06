@@ -1,3 +1,10 @@
+---
+title: Onboard to multitasking
+author: zainadr
+ms.author: zainadrawshy
+ms.topic: how-to
+ms.date: 11/06/2024
+---
 # **Onboard to multitasking**
 Multitasking allows a user to open multiple items at the same time, when opening an item, a tab will be pinned to the left navigation bar. By  default, we support opening one item at the same time and a set of lifecycle events which is triggered when the artifact tab is being initialized, deactivated, and destroyed with no work required by any workload.
 
