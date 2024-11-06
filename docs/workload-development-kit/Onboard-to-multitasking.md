@@ -1,3 +1,14 @@
+---
+title: Onboarding to multitasking documentation
+description: This document outlines the structure, core functionalities, and examples for multitasking feature.
+author: zainadrawshy
+ms.author: zainadr
+ms.topic: toturial-article
+ms.custom:
+ms.date: 11/06/2024
+#customer intent: As a developer, I want to understand how to support multitasking feature.
+---
+
 # **Onboard to multitasking**
 Multitasking allows user to open multiple artifacts at the same time, when opening an artifact, a tab will be pinned to the left navigation bar. by default, we support opening one item at the same time and a set of lifecycle events which is triggered when the artifact tab is being initialized, deactivated, and destroyed with no work required by any workload.
 
