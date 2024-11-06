@@ -22,7 +22,7 @@ Fabric platform offers Git integration and Deployment pipelines for different sc
 To access the CI/CD features for Eventstream, you need to meet the following requirements:
 
 * A Fabric capacity to use all supported Fabric items. If you don't have one yet, sign up for a free trial.
-* Git integration must be enabled from the Admin portal: [Users can synchronize workspace items with their Git repositories](admin/git-integration-admin-settings.md).
+* Git integration must be enabled from the Admin portal: [Users can synchronize workspace items with their Git repositories](../../admin/git-integration-admin-settings.md).
 * Access to an existing repository from **Azure DevOps** or **GitHub**.
 * You're an admin of a Fabric workspace.
 
@@ -66,9 +66,9 @@ If you make changes to your Eventstream item in the git repository, you see an *
 4. After creating a pipeline, you can assign a workspace to each stage.
     :::image type="content" source="./media/eventstream-cicd/assign-a-workspace.png" alt-text="Screenshot that shows how to assign a workspace to each stage.":::
 
-To learn more about deployment pipeline, visit [Get started with deployment pipelines](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines?tabs=from-fabric%2Cnew%2Cstage-settings-new)
+To learn more about deployment pipeline, visit [Get started with deployment pipelines](/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines)
 
 ## Related content
 
-- [Get started with Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git)
-- [Choose the best Fabric CI/CD workflow option for you](https://learn.microsoft.com/fabric/cicd/manage-deployment)
+- [Get started with Git integration](/fabric/cicd/git-integration/git-get-started)
+- [Choose the best Fabric CI/CD workflow option for you](/fabric/cicd/manage-deployment)

@@ -17,7 +17,7 @@ In Fabric, an **item** represents a set of capabilities within a specific experi
 
 This article offers a comprehensive guide on using the Microsoft Fabric REST APIs to create and manage Eventstream items within your Fabric workspace. You find detailed specifications for each Eventstream API operation, along with instructions for setting up and configuring your API calls.
 
-For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](https://learn.microsoft.com/rest/api/fabric/articles/using-fabric-apis)
+For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
 
 ## Supported Eventstream APIs
 
@@ -29,7 +29,7 @@ Currently, Eventstream supports the following definition based APIs:
 | [Get Eventstream item definition](#get-eventstream-item-definition) | Use to get an Eventstream item definition with detailed information about its topology including source, destinations, operators, and streams |
 | [Update Eventstream item definition](#update-eventstream-item-definition) | Use to update or edit an Eventstream item definition including source, destinations, operators, and streams |
 
-To manage your Eventstream items using CRUD operations, visit [Fabric REST APIs - Eventstream](https://learn.microsoft.com/rest/api/fabric/eventstream/items). These APIs support the following operations:
+To manage your Eventstream items using CRUD operations, visit [Fabric REST APIs - Eventstream](/rest/api/fabric/eventstream/items). These APIs support the following operations:
 
 * Create Eventstream
 * Delete Eventstream
@@ -43,7 +43,7 @@ To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabr
 
 ### Option 1: Get token using MSAL.NET
 
-Follow the [Fabric API quickstart](https://learn.microsoft.com/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
+Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
 
 ### Option 2: Get token using the Fabric Portal
 
@@ -533,5 +533,4 @@ Example of stream in API body:
 
 ## Related content
 
-* [Eventstream definition](https://learn.microsoft.com/rest/api/fabric/articles/item-management/definitions/eventstream-definition)
-* [Using the Microsoft Fabric REST APIs](https://learn.microsoft.com/rest/api/fabric/articles/using-fabric-apis)
+* [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
