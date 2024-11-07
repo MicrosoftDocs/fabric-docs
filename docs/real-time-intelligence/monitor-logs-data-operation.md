@@ -1,18 +1,18 @@
 ---
 title: Data operation logs
-description: View a set of data operation logs that you can query in your Microsoft Fabric workspace monitoring database.
-author: KesemSharabi
-ms.author: kesharab
+description: View and analyze the log of data operations of an Eventhouse KQL database within Real-Time Intelligence.
+author: shsagir
+ms.author: shsagir
 ms.topic: reference
 ms.date: 11/06/2024
 
 ---
 
-# Data operations
+# Data operation logs
 
-Data operation logs are part of the Eventhouse logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the usage and performance of your workspace.
+The data operation logs table contains the list of data operations of an Eventhouse KQL database, which is part of Real-Time Intelligence. For each data operation, a log event record is stored in the **EventhouseDataOperationsLogs** table.
 
-## Data operation logs
+## Data operation logs table
 
 Use the data operation logs to:
 
@@ -21,12 +21,13 @@ Use the data operation logs to:
 * Identify the data operations applied on specific table.
 
 Data operations include:
+
 * `BatchIngest` - For each batch ingestion data operation.
 * `UpdatePolicy` – For each update policy data operation.
 * `MaterializedView` – For each materialized view update data operation.
-* `RowStoreSeal` – Refers to the data operation that seals an extent of streaming data that's temporarily stored in a rowstore. The RowStoreSeal data operation happens after the streaming data is already available for data queries.
+* `RowStoreSeal` – Refers to the data operation that seals an extent of streaming data that's temporarily stored in a rowstore. The `RowStoreSeal` data operation happens after the streaming data is already available for queries.
 
-This table lists the data operation logs.
+The following table describes the columns stored in the **EventhouseDataOperationsLogs** table:
 
 | Column Name | Type | Description |
 |--|--|--|
@@ -62,4 +63,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 * [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
 
-* [Eventhouse workspace monitoring](workspace-monitoring-eventhouse.md)
+* [Eventhouse monitoring](monitor-eventhouse.md)
