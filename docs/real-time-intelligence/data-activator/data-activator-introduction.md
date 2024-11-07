@@ -46,7 +46,7 @@ The term *object instance* refers to a specific freezer/vehicle/package etc. whe
 
 ### Rules
 
-Rules define the conditions you want to detect on your objects, and the actions that you want to take when those conditions are met. A rulee on a freezer object might detect the freezer being too warm, and send an email to the relevant technician.
+Rules define the conditions you want to detect on your objects, and the actions that you want to take when those conditions are met. A rule on a freezer object might detect the freezer being too warm, and send an email to the relevant technician.
 
 ### Properties
 
