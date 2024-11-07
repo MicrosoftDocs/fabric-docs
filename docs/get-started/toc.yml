@@ -171,6 +171,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Embedded paginated report renders correctly but shows error message
+      href: known-issues/known-issue-919-embedded-report-renders-correctly-shows-error.md
+    - name: More options menu on a visual doesn't open in unsaved reports
+      href: known-issues/known-issue-918-more-options-not-open-unsaved-reports.md
+    - name: Visual doesn't load due to an unexpected error
+      href: known-issues/known-issue-916-visual-not-load-error.md
     - name: SQL analytics endpoint tables lose statistics
       href: known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md
     - name: SQL analytics endpoint tables lose permissions
