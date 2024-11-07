@@ -15,7 +15,7 @@ ms.custom: ignite-2024-fabric
 
 OneLake catalog is a centralized place that helps you find, explore, and use the Fabric items you need. It features an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. The catalog also features selectors and filters to narrow down and focus the list, making it easier to find what you need.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-general-view.png"::: 
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-general-view.png" border="false"::: 
 
 The OneLake catalog provides
 
