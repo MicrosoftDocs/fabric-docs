@@ -4,7 +4,8 @@ description: Learn how to get data from Apache Spark using the Kusto connector f
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/21/2024
+ms.date: 11/19/2024
+ms.subservice: rti-kusto
 #customer intent: I want to learn how to get data from Apache Spark using the Kusto connector for Spark.
 ---
 # Get data from Apache Spark

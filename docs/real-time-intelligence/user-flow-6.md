@@ -5,7 +5,8 @@ ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: concept-article
-ms.date: 09/12/2024
+ms.date: 11/19/2024
+ms.subservice: rti-core
 ms.search.form: Data Activator Kusto Dashboard Onramp
 #customer intent: I want to learn how to set alerts on a Real-Time Dashboard or KQL Queryset.
 ---

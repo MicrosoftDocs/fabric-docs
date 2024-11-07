@@ -8,7 +8,8 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/13/2024
+ms.date: 11/19/2024
+ms.subservice: rti-kusto
 ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database

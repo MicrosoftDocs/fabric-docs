@@ -5,7 +5,8 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 10/13/2024
+ms.date: 11/19/2024
+ms.subservice: rti-kusto
 ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database

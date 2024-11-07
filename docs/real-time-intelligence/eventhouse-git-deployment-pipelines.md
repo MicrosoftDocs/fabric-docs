@@ -7,7 +7,8 @@ author: shsagir
 ms.topic: concept-article
 ms.custom:
   - build-2024
-ms.date: 10/06/2024
+ms.date: 11/19/2024
+ms.subservice: rti-kusto
 ms.search.form: Eventhouse,KQL database, Overview (//TODO Ask Yael about this)
 # customer intent: I want to understand the integration of Eventhouse and KQL database with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
 ---

@@ -5,7 +5,8 @@ ms.reviewer: akshayd
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 09/22/2024
+ms.date: 11/19/2024
+ms.subservice: rti-kusto
 ---
 # Get data from Cribl Stream
 

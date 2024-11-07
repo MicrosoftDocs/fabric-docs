@@ -5,7 +5,8 @@ ms.reviewer: akshayd
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/21/2024
+ms.date: 11/19/2024
+ms.subservice: rti-kusto
 ---
 # Get data with the Apache log4J 2 connector
 
