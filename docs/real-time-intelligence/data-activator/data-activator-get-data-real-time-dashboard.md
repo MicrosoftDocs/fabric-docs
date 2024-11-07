@@ -6,8 +6,7 @@ ms.author: mihart
 ms.topic: how-to
 ms.reviewer: guregini
 ms.custom: FY25Q1-Linter
-ms.subservice: rti-activator
-ms.date: 11/19/2024
+ms.date: 09/15/2024
 ms.search.form: Real-Time Dashboard
 #Customer intent: As a customer, I want to learn how to create Data Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on daa in the dashboard.
 ---

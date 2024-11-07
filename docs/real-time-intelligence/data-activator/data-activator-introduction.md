@@ -6,8 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Fabric Activator Introduction
-ms.subservice: rti-activator
-ms.date: 11/19/2024
+ms.date: 11/05/2024
 #customer intent: As a Fabric user I want to understand what Activator is and learn some of the basic concepts.
 ---
 

@@ -5,8 +5,7 @@ author: yaelschuster
 ms.author: yaschust
 ms.reviewer: guregini
 ms.topic: how-to
-ms.subservice: rti-activator
-ms.date: 11/19/2024
+ms.date: 09/24/2024
 ms.search.form: Data Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Data Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---

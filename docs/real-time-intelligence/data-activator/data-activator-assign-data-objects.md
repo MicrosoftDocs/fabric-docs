@@ -6,8 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Object Creation
-ms.subservice: rti-activator
-ms.date: 11/19/2024
+ms.date: 11/01/2024
 ---
 
 # Assign data to objects in Data Activator

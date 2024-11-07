@@ -6,8 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
-ms.subservice: rti-activator
-ms.date: 11/19/2024
+ms.date: 09/09/2024
 #customer intent: As a Fabric user I want to learn about Data Activator limitations.
 ---
 

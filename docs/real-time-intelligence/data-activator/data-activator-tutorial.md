@@ -5,8 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter
-ms.subservice: rti-activator
-ms.date: 11/19/2024
+ms.date: 09/24/2024
 ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Data Activator using a tutorial and sample data.
 ---
