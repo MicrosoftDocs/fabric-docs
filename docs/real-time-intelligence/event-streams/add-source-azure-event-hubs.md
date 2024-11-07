@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/27/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -21,12 +21,12 @@ This article shows you how to add an Azure Event Hubs source to an eventstream.
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - You need to have appropriate permission to get event hub's access keys. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.
@@ -61,7 +61,7 @@ For a list of supported sources, see [Add an event source in an eventstream](add
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - You need to have appropriate permission to get event hub's access keys. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]

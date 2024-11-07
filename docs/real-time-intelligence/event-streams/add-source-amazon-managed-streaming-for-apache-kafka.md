@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/28/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ms.custom: references_regions
 #Customer intent: I want to learn how to bring events from an Amazon Managed Streaming for Apache Kafka source into Microsoft Fabric. 
@@ -22,7 +22,7 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 
 ## Prerequisites 
 
-- Access to the Fabric **premium workspace** with **Contributor** or above permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - An Amazon MSK Kafka cluster in active status. 
 - Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 
@@ -31,7 +31,7 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 
 ## Add Amazon MSK Kafka as a source  
 
-1. Create an eventstream with **Enhanced capabilities** option enabled. 
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
 1. On the next screen, select **Add external source**.
 
 ## Configure and connect to Amazon MSK Kafka 

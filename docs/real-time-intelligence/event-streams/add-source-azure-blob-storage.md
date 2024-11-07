@@ -1,11 +1,11 @@
 ---
 title: Add Azure Blob Storage event source to an eventstream
-description: Learn how to add Azure Blob Storage event source to an eventstream.
+description: Learn how to add Azure Blob Storage event source to an eventstream. This feature is currently in preview. 
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/28/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -44,7 +44,7 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
 - **Unstreamed events.** These events are represented in their raw format as discrete events. If Azure Blob Storage events aren't streamed in an eventstream, they're not directly connected to the eventstream, and the default stream isn't created.
 
-  This status indicates that the events are linked to Fabric events in the Real-Time hub and awaiting further action. Actions include creating alerts with Data Activator that execute Fabric job items like Pipeline or Notebook in the **Fabric events** tab in Real-Time hub.
+  This status indicates that the events are linked to Fabric events in the Real-Time hub and awaiting further action. Actions include creating alerts with Fabric Activator that execute Fabric job items like Pipeline or Notebook in the **Fabric events** tab in Real-Time hub.
 
   [![A screenshot showing unstreamed Azure Blob Storage events with the button to Stream events.](media/add-source-azure-blob-storage/unstreamed.png)](media/add-source-azure-blob-storage/unstreamed.png#lightbox)
 
@@ -54,7 +54,7 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Access to an Azure Blob Storage **StorageV2 (general purpose v2)**, **BlockBlobStorage**, or **BlobStorage** account. The **Storage (general purpose v1)** storage type doesn't support integration with Fabric event streams.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 

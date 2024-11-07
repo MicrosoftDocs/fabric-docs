@@ -64,7 +64,7 @@ To set up the front end of the sample project, follow these steps:
     * **src** - Workload code:
       * **index.ts** - main initialization file, `bootstrap` the `index.worker` and `index.ui` iFrames - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
-      * **assets** - location for images(`svg`, `jpg`, `png`, etc.), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
+      * **assets** - location for images(`jpg`, `jpeg`, `png`), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.jpg` is set in the manifest as the Product's icon.
       * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc.)
       * **controller** - the Controller that calls the SDK APIs
       * **models** - the contracts and models used by the UI itself and for communication with the boilerplate's backend
@@ -74,7 +74,7 @@ To set up the front end of the sample project, follow these steps:
     * **validation** - 
       * `validateSchema.js` - validation of product and item json files schema. It is configured to run on `npm start`.
 
-1. **Install**. Notice the existing packages under `node_modules`
+1. **Install**
 
     Under the repository folder, go to `Frontend` and run **npm install**  
 
@@ -350,7 +350,7 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 ### Authentication
 
  In the sample workload editor, there's a section that lets you navigate to the authentication section.
- Before you use authentication API, configure an Entra app Microsoft Entra ID.
+ Before you use authentication API, configure a Microsoft Entra app Microsoft Entra ID.
  Additionally, ensure that your env.dev file is configured accurately. For more details refer to:
  [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend)
 

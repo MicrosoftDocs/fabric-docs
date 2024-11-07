@@ -20,8 +20,8 @@ Data preview provides you with a snapshot of your event data in your eventstream
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located.
-- For a KQL database or lakehouse destination, get access to a **premium workspace** with **Viewer** or above permissions where your KQL database or Lakehouse item is located.
+- Get access to a workspace with Viewer or above permissions where your Eventstream item is located.
+- For a KQL database or lakehouse destination, get access to a workspace with Viewer or above permissions where your KQL database or Lakehouse item is located.
 
 ## Preview a source
 
@@ -37,7 +37,7 @@ To preview the source data of an event hub or sample data in the eventstream:
 
 ## Preview a destination
 
-To preview the destination data of a KQL database, Activator or lakehouse in the eventstream:
+To preview the destination data of a KQL database, Fabric Activator or lakehouse in the eventstream:
 
 1. In the main editor canvas, select one of the destination nodes in your eventstream.
 

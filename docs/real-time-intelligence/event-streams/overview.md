@@ -32,7 +32,7 @@ The drag and drop experience gives you an intuitive and easy way to create your 
 
 [!INCLUDE [supported-transformations-enhanced](./includes/supported-transformations-enhanced.md)]
 
-If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations (with derived stream acting as an intermediate bridge for some destinations, like Custom endpoint, Activator). If you didn't, the transformation operations are available only for the Lakehouse and Eventhouse (event processing before ingestion) destinations.
+If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations (with derived stream acting as an intermediate bridge for some destinations, like Custom endpoint, Fabric Activator). If you didn't, the transformation operations are available only for the Lakehouse and Eventhouse (event processing before ingestion) destinations.
 
 ## Route events to destinations
 The Fabric event streams feature supports sending data to the following supported destinations. 
@@ -62,9 +62,9 @@ You can attach multiple destinations in an eventstream to simultaneously receive
 ## Apache Kafka on Fabric event streams 
 The Fabric event streams feature offers an Apache Kafka endpoint on the Eventstream item, enabling users to connect and consume streaming events through the Kafka protocol. If you already have an application that uses the Apache Kafka protocol to send or consume streaming events with specific Kafka topics, you can effortlessly adapt the same application to send or consume the streaming events within your eventstream by simply updating your connection settings to point to the Kafka endpoint provided in your eventstream. 
 
-Fabric event streams feature is powered by Azure Event Hubs, a fully managed cloud-native service. When an eventstream is created, an event hub namespace is automatically provisioned, and an event hub is allocated to the default stream without requiring any provisioning configurations. To learn more about the Kafka-compatible features in Azure Event Hubs service, see [Azure Event Hubs for Apache Kafka](/azure/event-hubs/azure-event-hubs-kafka-overview)
+Fabric event streams feature is powered by Azure Event Hubs, a fully managed cloud-native service. When an eventstream is created, an event hub namespace is automatically provisioned, and an event hub is allocated to the default stream without requiring any provisioning configurations. To learn more about the Kafka-compatible features in Azure Event Hubs service, see [Azure Event Hubs for Apache Kafka](/azure/event-hubs/azure-event-hubs-kafka-overview).
 
-To learn more about how to obtain the Kafka endpoint details for sending events to eventstream, see [Add custom endpoint source to an eventstream](./add-source-custom-app.md); and for consuming events from eventstream, see [Add a custom endpoint destination to an eventstream](./add-destination-custom-app.md)
+To learn more about how to obtain the Kafka endpoint details for sending events to eventstream, see [Add custom endpoint source to an eventstream](./add-source-custom-app.md); and for consuming events from eventstream, see [Add a custom endpoint destination to an eventstream](./add-destination-custom-app.md).
 ## Enhanced capabilities
 There are more features, sources, and destinations available when you enable the **Enhanced capabilities** option while creating an eventstream. Use the **Enhanced capabilities** and **Standard capabilities** tabs to learn about additional sources and destinations supported with the enhanced capabilities. 
 

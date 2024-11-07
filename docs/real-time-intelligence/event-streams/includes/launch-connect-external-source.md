@@ -4,7 +4,7 @@ description: The include files has steps for launching the Connect to source win
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.date: 10/25/2024
+ms.date: 11/18/2024
 ---
 
 If you haven't added any source to your eventstream yet, select **Use external source** tile.  

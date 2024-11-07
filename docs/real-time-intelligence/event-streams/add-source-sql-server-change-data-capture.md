@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/08/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -19,7 +19,7 @@ The SQL Server on VM DB (CDC) source connector for Fabric event streams allows
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running SQL Server on VM database. 
 - Your SQL Server on VM database must be configured to allow public access.  
 - Enable CDC in your SQL Server on VM database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
@@ -50,11 +50,11 @@ The SQL Server on VM DB (CDC) source connector for Fabric event streams allows
    
 ## Add SQL Server on VM database as a source 
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 
-1. On the next screen, select **Add external source**.
+2. On the next screen, select **Add external source**.
 
    ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
 

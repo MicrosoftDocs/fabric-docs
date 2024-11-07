@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Rule Creation
-ms.date: 09/14/2024
+ms.date: 11/4/2024
 ---
 
 # Create Data Activator rules
@@ -46,35 +46,35 @@ Once you select a property or event stream, you see a preview of the values for 
 
 ### Step 2: Make a new rule
 
-To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor ** section of the rule is prepopulated with the data that you selected in Step 1.
+To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger.":::
 
 ### Step 3: Define the condition to detect
 
 Next, choose the type of condition that you want to detect. You can use conditions that check:
 
-- when a numeric value goes over or below a threshold (for example, Temperature is greater than 30),
+- when a numeric value goes over or below a threshold (for example, temperature is greater than 30),
 - when a logical true/false value changes (for example, HasFault becomes True), or 
 - when a string value changes (for example, Status changes from InCompliance).
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-04.png" alt-text="Screenshot of choosing the alert condition.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-04.png" alt-text="Screenshot of choosing the alert condition.":::
 
-The charts in the Live feed tab updates to show a sample of the events that meet the conditions that you set.
+The charts in the Definition tab updates to show a sample of the events that meet the conditions that you set.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts." lightbox="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png":::
 
-If you navigate to the **Analytics **tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that Data Activator is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
+If you navigate to the **Analytics** tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that Data Activator is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
 
 ### Step 4: Define the action to take
 
-Finally, use the Act section to choose what to do when the condition is detected.
+Finally, use the **Action** section to choose what to do when the condition is detected.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
 
 Different action types have different parameters. Some of those parameters are: the email address you want to send to, the workflow you want to start, subject line, or additional information.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-07.png" alt-text="Screenshot of sending a message when a condition is detected.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-07.png" alt-text="Screenshot of sending a message when a condition is detected.":::
 
 You can also select **Edit action** to see an editor with a preview of the message that the action sends and options to add more information to the action.
 
@@ -82,16 +82,16 @@ You can also select **Edit action** to see an editor with a preview of the messa
 
 After you create a rule, test it by selecting **Send me a test alert**. Selecting this button finds a past event for which the rule activation is *true* and sends you an alert so that you can see what the alert looks like for that event.  
 
-* The test alert always goes to you, regardless of the recipient field in the **Act** card
+* The test alert always goes to you, regardless of the recipient field in the **Action** card
 * The **Send me a test alert** option is only enabled if you have at least one past event for which the trigger condition is true.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing an alert.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing an alert.":::
 
 ## Start and stop your rule
 
 Rules are created in a *Stopped* state. This means they're not being evaluated as data flows into the system, and don't take any actions as a result. After defining the rule, select **Save and start** to make the rule active. If you're not ready to start your rule, save it and come back later. When you're ready, select **Start** from the toolbar for Data Activator to start running the trigger and taking action.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-09.png" alt-text="Screenshot of starting an alert.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-09.png" alt-text="Screenshot of starting an alert.":::
 
 Once started, you see *Running* in the title area of the rule card. Also, the icon in the Explorer shows that the rule is running. When you start the rule, new activations start running against new ingested data. Your rule doesn't activate on data that has already been ingested. To stop the alert, select **Stop**.
 
@@ -103,13 +103,13 @@ When you delete a rule (or object), it can take up to five minutes for any back-
 
 Sometimes, you need to reuse rule logic across multiple rules. Create a property to define a reusable condition or measure, then reference that property from multiple rules.
 
-To create a property, select the stream added to the object that you're interested in and select **New Property** from the ribbon. Then define your property logic. Here, we define a property called *Maximum Temp last hour* on a package object.
+To create a property, select the stream added to the object that you're interested in and select **New Property** from the ribbon and then select the property you'd like to use in the rule logic.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-10.png" alt-text="Screenshot of creating a property for an alert.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-10.png" alt-text="Screenshot of creating a property for an alert.":::
 
-Once you define a property, you can reference it from one or more rules, using the **Monitor** section. Here we reference the property we made earlier in the *Package too warm* rule.
+Once you define a property, you can reference it from one or more rules. Here we reference the *Temperature* property *Maximum temp last hour* rule.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert.":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert."  lightbox="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png":::
 
 ## Related content
 

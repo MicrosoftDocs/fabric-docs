@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 10/26/2024
+ms.date: 11/18/2024
 ms.search.form: Event Streams Overview
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -21,7 +21,7 @@ If you have eventstreams that were created using standard capabilities, those ev
 ## Prerequisites
 Before you start, you must complete the following prerequisite:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions.
+- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 
 ## Create an eventstream
@@ -46,7 +46,7 @@ The event streams feature in Microsoft Fabric gives you a centralized place in t
 
 Before you start, you must complete the following prerequisite:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions.
+- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 ## Create an eventstream
 

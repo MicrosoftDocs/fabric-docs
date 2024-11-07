@@ -1,11 +1,11 @@
 ---
 title: Add Apache Kafka source to an eventstream
-description: Learn how to add Apache Kafka source to an eventstream.
+description: Learn how to add Apache Kafka source to an eventstream. This feature is currently in preview.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/28/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ms.custom: references_regions
 ---
@@ -21,7 +21,7 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
 
 ## Prerequisites 
 
-- Access to the Fabric **premium workspace** with **Contributor** or above permissions.
+- Access to the Fabric workspace with Contributor or above permissions.
 - An Apache Kafka cluster running. 
 - Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 
@@ -30,7 +30,7 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
 
 ## Add Apache Kafka as a source 
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced capabilities** option is enabled.
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

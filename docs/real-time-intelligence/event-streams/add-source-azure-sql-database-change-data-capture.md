@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/28/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -19,7 +19,7 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL server with an Azure SQL database.
 - Your Azure SQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - Enabled CDC in your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
@@ -47,7 +47,7 @@ Note that you must not enable mirroring in your Azure SQL database.
     GO
     ```
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure SQL DB (CDC)** tile.

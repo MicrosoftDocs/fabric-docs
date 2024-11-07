@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/28/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -22,7 +22,7 @@ You can specify the tables to monitor, and the eventstream records any future ro
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Access to an instance of Azure Database for MySQL - Flexible Server.
 - Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 

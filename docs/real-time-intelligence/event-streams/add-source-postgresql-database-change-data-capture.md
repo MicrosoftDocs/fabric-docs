@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/28/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -19,7 +19,7 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Registered user access in the PostgreSQL database.
 - Your PostgreSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - CDC enabled in the PostgreSQL database and tables.
@@ -52,7 +52,7 @@ To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow 
    ALTER ROLE <admin_user_or_table_owner_user> WITH REPLICATION;
    ```
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure DB for PostgreSQL (CDC)** tile.

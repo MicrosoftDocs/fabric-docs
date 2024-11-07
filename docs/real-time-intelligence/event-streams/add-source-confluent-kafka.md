@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/28/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 #Customer intent: I want to learn how to bring events from a Confluent Kafka source into Microsoft Fabric. 
 ---
@@ -21,13 +21,13 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 ## Prerequisites 
 
-- Access to the Fabric premium workspace with Contributor or above permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Confluent Cloud Kafka cluster and an API Key. 
 - Your Confluent Cloud Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
-## Launch Select a data source wizard
+## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 ## Configure and connect to Confluent Kafka
@@ -44,7 +44,8 @@ After you complete these steps, the Confluent Cloud Kafka source is available fo
 
 ## Limitations
 
-* Confluent Kafka with JSON and Avro formats, using schema registry, is not currently supported.
+* Confluent Kafka with JSON and Avro formats, using schema registry, is currently not supported.
+* Decoding data from Confluent Kafka using the Confluent Schema Registry is currently not supported. 
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
