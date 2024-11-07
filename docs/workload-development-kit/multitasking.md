@@ -10,26 +10,27 @@ Multitasking allows a user to open multiple items at the same time, when opening
 
 
 ## Frontend
-**To change default properties for multitasking:**
+### Change default properties for multitasking
+
 Define the editorTab section inside the item manifest for editing tabs properties:
 ```json
     "editorTab": {
 
     }
 ```
-**To enable opening more than one item at the same time:**
+### Enable opening more than one item at the same time
 
-- define the maxInstanceCount property and assign to number of items you want to be opened at the same time (up to 10 items).
+Define the maxInstanceCount property and assign to number of items you want to be opened at the same time (up to 10 items):
 ```json
     "editorTab": {
       "maxInstanceCount": "10"
     }
 ```
-**To customize actions and handlers:**
+### Customize actions and handlers
 
 The workload developer decides to implement the tab actions and handlers or part of it, they need to set property in the item Frontend manifest in editorTab section, to listen to these actions in its own code, handle them accordingly, and return the results. If not set any of the actions or part of it, the default actions will be handled automatically.
 
-- define tab actions (you can choose to define a part of the actions and not all of them, for undefined actions, default actions are used) properties in the editorTab:
+Define tab actions properties in the editorTab. You can choose to define a part of the actions and not all of them, for undefined actions, default actions are used.
 ```json
     "editorTab": {
       "onInit": "item.tab.onInit",
@@ -40,9 +41,8 @@ The workload developer decides to implement the tab actions and handlers or part
       "onDelete": "item.tab.onDelete"
     }
 ```
-When the workload developer registers the action, Fabric expects the workload action to return the data in a certain format so that Fabric can read or display that information.
+When the workload developer registers the action, Fabric expects the workload action to return the data in a certain format so that Fabric can read or display that information:
 
-- actions expected results:
 ```typescript
   /* OnInit event is triggered when the artifact is opened for the first time.
    This event contains the id of the tab being initialized. Based on this tab
@@ -94,8 +94,9 @@ When the workload developer registers the action, Fabric expects the workload ac
    onDelete: Action<never>;
 ```
 
-**An example of handling the tab actions:**
-In this example we listen for all actions related to an "item.tab" and handle each one accordingly:
+## Example of handling the tab actions
+
+In this example we listen for all actions related to an item.tab and handle each one accordingly:
 ```typescript
 workloadClient.action.onAction(async function ({ action, data }) {
     switch (action) {
@@ -136,4 +137,5 @@ workloadClient.action.onAction(async function ({ action, data }) {
 - item.tab.canDestroy: Returns { canDestroy: true }.
 
 
-For a full example of handling the tab actions, see index.ui.ts that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.tab.'
+## Next steps
+For a full example of handling the tab actions, see index.ui.ts in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.tab.'
