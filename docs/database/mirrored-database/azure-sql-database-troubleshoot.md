@@ -4,7 +4,7 @@ description: Troubleshooting topics for mirrored databases from Azure SQL Databa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 11/05/2024
+ms.date: 11/07/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -19,6 +19,7 @@ ms.custom:
 | Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Workspace deleted | Mirroring stops automatically | 1. If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
 | Fabric trial capacity expired |  Mirroring stops automatically | See [Fabric trial capacity expires](../../get-started/fabric-trial.md#the-trial-expires). |
+| Fabric capacity exceeded | You can't see the mirrored database details. | Wait for the capacity to free up or resize your capacity. Mirroring will continue once capacity is back. |
 
 ## T-SQL queries for troubleshooting
 
