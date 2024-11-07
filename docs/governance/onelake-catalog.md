@@ -64,13 +64,13 @@ If domains have been defined in your organization, you can use the domain select
 
 ## Filter the items list
 
-You can use the filters in the filter pane and the item type and tag selectors at the top of the items list to narrow down the items list so it displays just the types of items you are interested in. You can then select items to explore them in more detail.
+You can use the filters in the filter pane and the item type and tag selectors at the top of the items list to narrow down the items list so it displays just the types of items you're interested in. You can then select items to explore them in more detail.
 
-The filters pane contains a several predefined filters, and also enables you to filter by workspace.
+The filters pane contains several predefined filters, and also enables you to filter by workspace.
 
-## Filter items by pre-defined filters
+## Filter items by predefined filters
 
-The filters pane contains a several predefined filters. They are described in the the following table.
+The filters pane contains several predefined filters. They're described in the following table.
 
 |Filter  |Description  |
 |:-------------------------|:----------------------------------------------------|
