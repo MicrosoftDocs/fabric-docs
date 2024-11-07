@@ -61,6 +61,10 @@ items:
     href: workload-cloud-setup.md
   - name: Onboard to the Monitoring hub
     href: monitoring-hub.md
+  - name: How-To
+    items:
+    - name: Onboard to Multitasking
+      href: multitasking.md
 - name: Reference
   items:
    - name: Frequently asked questions
