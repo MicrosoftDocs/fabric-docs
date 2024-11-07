@@ -15,7 +15,7 @@ Fabric external data sharing is a feature that enables Fabric users to share dat
 
 :::image type="content" source="./media/external-data-sharing-overview/external-data-share-illustration.png" alt-text="Illustration of a cross-tenant OneLake data share." border="false":::
 
-This external data sharing feature for Fabric OneLake data isn't related to the mechanism that exists for sharing Power BI semantic models with Entra B2B guest users.
+This external data sharing feature for Fabric OneLake data isn't related to the mechanism that exists for sharing Power BI semantic models with Microsoft Entra B2B guest users.
 
 ## How does external data sharing work
 
@@ -56,11 +56,11 @@ With this understanding in mind, be aware of the following:
 
 * **Sharing schemas**: Sharing an entire schema doesn't work: Lakehouse supports database schemas, but if you share one, it won't work.
 
-* **External data shares in non-home regions**: External data shares can only be accepted in a capacity that is located in the same region as the tenant. For example, if a tenant is in East US and has two capacities, one in East US and one in West US, users will not be able to accept shares in Lakehouses that use the West US capacity.
+* **External data shares in non-home regions**: External data shares can only be accepted in a capacity that is located in the same region as the tenant. For example, if a tenant is in East US and has two capacities, one in East US and one in West US, users won't be able to accept shares in Lakehouses that use the West US capacity.
 
 ## Related content
 
 * [Create an external data share](./external-data-sharing-create.md)
 * [Accept an external data share](./external-data-sharing-accept.md)
 * [Manage external data shares](./external-data-sharing-manage.md)
-* [Fabric admins: Set up external data sharing on your tenant](./external-data-sharing-enable.md)
+* [Set up external data sharing on your tenant (Fabric admins)](./external-data-sharing-enable.md)
