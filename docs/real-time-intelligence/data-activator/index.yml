@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Data Activator documentation
-summary: Learn about Data Activator, and how to create events and triggers for your data.
+title: Activator documentation
+summary: Learn about Activator, and how to create events and triggers for your data.
 
 metadata:
-  title: Data Activator documentation
-  description: Browse the Data Activator documentation.
+  title: Activator documentation
+  description: Browse the Activator documentation.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: enterprise
   ms.custom:
@@ -22,11 +22,11 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Data Activator?
+          - text: What is Activator?
             url: data-activator-introduction.md
       - linkListType: get-started
         links:
-          - text: Get started with Data Activator
+          - text: Get started with Activator
             url: data-activator-get-started.md
 
   - title: Get Data
@@ -61,14 +61,14 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: Data Activator tutorial using sample data
+          - text: Activator tutorial using sample data
             url: data-activator-tutorial.md
 
   - title: Troubleshoot
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Data Activator limitations
+          - text: Activator limitations
             url: data-activator-limitations.md
           - text: Troubleshoot errors
             url: data-activator-troubleshooting.md                   

@@ -1,20 +1,20 @@
 ---
-title: Create Data Activator alerts in design mode
-description: Learn how to create alerts in design mode for Data Activator, take action on your data, and automate workflows.
+title: Create Activator alerts in design mode
+description: Learn how to create alerts in design mode for Fabric Activator, take action on your data, and automate workflows.
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.search.form: Data Activator Rule Creation
+ms.search.form: Activator Rule Creation
 ms.date: 09/14/2024
 ---
 
-# Create Data Activator rules
+# Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
 
 Once you bring data into a reflex or [assign data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create rules to act on your data. There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
 
 > [!IMPORTANT]
-> Data Activator is currently in preview.
+> Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
 
 ## Why create rules on events?
 
@@ -36,11 +36,11 @@ For example, you can monitor the temperature on a package and whether it stays w
 
 ## Define a rule condition and action
 
-Use **Rules** to specify the values you want to monitor in your events, the conditions you want to detect, and the actions you want Data Activator to take.
+Use **Rules** to specify the values you want to monitor in your events, the conditions you want to detect, and the actions you want [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to take.
 
 ### Step 1: Select your data
 
-In the Data Activator Explorer, select the property or event stream to monitor in your rule. See [create Properties](#create-properties) later in this article for information on properties.
+In the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] Explorer, select the property or event stream to monitor in your rule. See [Create properties](#create-properties) later in this article for information on properties.
 
 Once you select a property or event stream, you see a preview of the values for a sample of the instances of the object.
 
@@ -64,7 +64,7 @@ The charts in the Definition tab updates to show a sample of the events that mee
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts.":::
 
-If you navigate to the **Analytics** tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that Data Activator is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
+If you navigate to the **Analytics** tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that [!INCLUDE [fabric-activator](../includes/fabric-activator.md) is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
 
 ### Step 4: Define the action to take
 
@@ -89,7 +89,7 @@ After you create a rule, test it by selecting **Send me a test alert**. Selectin
 
 ## Start and stop your rule
 
-Rules are created in a *Stopped* state. This means they're not being evaluated as data flows into the system, and don't take any actions as a result. After defining the rule, select **Save and start** to make the rule active. If you're not ready to start your rule, save it and come back later. When you're ready, select **Start** from the toolbar for Data Activator to start running the trigger and taking action.
+Rules are created in a *Stopped* state. This means they're not being evaluated as data flows into the system, and don't take any actions as a result. After defining the rule, select **Save and start** to make the rule active. If you're not ready to start your rule, save it and come back later. When you're ready, select **Start** from the toolbar for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to start running the trigger and taking action.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-09.png" alt-text="Screenshot of starting an alert.":::
 
@@ -113,8 +113,8 @@ Once you define a property, you can reference it from one or more rules, using t
 
 ## Related content
 
-- [Get started with Data Activator](data-activator-get-started.md)
-- [Data Activator tutorial using sample data](data-activator-tutorial.md)
+- [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
+- [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 

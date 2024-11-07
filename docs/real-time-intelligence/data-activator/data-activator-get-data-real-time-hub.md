@@ -1,20 +1,20 @@
 ---
-title: Get data for Data Activator from Real-Time Hub
-description: Learn how to get data from Real-Time Hub and use it in Data Activator to enhance your application's functionality.
+title: Get data for Activator from Real-Time Hub
+description: Learn how to get data from Real-Time Hub and use it in Activator to enhance your application's functionality.
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 09/16/2024
-#customer intent: As a Fabric user I want to learn to get data for Data Activator from Real-Time Hub.
+#customer intent: As a Fabric user I want to learn to get data for Activator from Real-Time Hub.
 ---
 
-# Get data for Data Activator from Real-Time Hub
+# Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Real-Time Hub
 
-You can get data for use in Data Activator from many sources. This article describes how to get data from Real-Time Hub. 
+You can get data for use in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from many sources. This article describes how to get data from Real-Time Hub. 
 
 > [!IMPORTANT]
-> Data Activator is currently in preview.
+> [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ You can get data for use in Data Activator from many sources. This article descr
 * You can connect to Real-Time Hub events from an empty reflex item.
 * You can connect to Real-Time Hub events from a reflex item that already has events flowing into it.
 
-### Browse Real-Time Hub from Data Activator
+### Browse Real-Time Hub from [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
 To browse Real-Time Hub items from a reflex, select **Get data** from the toolbar as shown in the following image.
 
@@ -38,7 +38,7 @@ For more information about connecting to data with Real-Time Hub, see the [Real-
 
 ## Related content
 
-* [Data Activator tutorial using sample data](data-activator-tutorial.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
 * [Trigger Fabric items](data-activator-trigger-fabric-items.md)
 
 You can also learn more about Microsoft Fabric:

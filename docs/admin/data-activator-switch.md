@@ -1,6 +1,6 @@
 ---
-title: Enable Data Activator
-description: Learn how to enable Data Activator in Microsoft Fabric.
+title: Enable Activator
+description: Learn how to enable Activator in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
@@ -10,42 +10,42 @@ ms.custom:
 ms.date: 09/22/2024
 ---
 
-# Enable Data Activator
+# Enable Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-[Data Activator](../real-time-intelligence/data-activator/data-activator-get-started.md) is preview Microsoft Fabric feature. To enable this feature for your organization, use the Data Activator admin switch.
+[[!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](../real-time-intelligence/data-activator/data-activator-get-started.md) is a preview Microsoft Fabric feature. To enable this feature for your organization, use the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] admin switch.
 
-You can enable Data Activator for:
+You can enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for:
 
-* **Your tenant** - Use this option to enable Data Activator for everyone in the tenant.
+* **Your tenant** - Use this option to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for everyone in the tenant.
 
-* **A specific capacity** - Use this option if you want to enable Data Activator for users in a specific capacity.
+* **A specific capacity** - Use this option if you want to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for users in a specific capacity.
 
 In both cases, you can use security groups to provide access to a specified list of users.
 
 ## Prerequisites
 
-To enable Data Activator, you need to have the *Fabric administrator* role.
+To enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], you need to have the *Fabric administrator* role.
 
 ## Enable for your tenant
 
-When you enable Data Activator using the tenant setting, users can use Data Activator in that [tenant](../enterprise/licenses.md#tenant). Depending on the configuration you select, Data Activator becomes available for everyone in the tenant, or to a selected group of users.
+When you enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] using the tenant setting, users can use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] in that [tenant](../enterprise/licenses.md#tenant). Depending on the configuration you select, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] becomes available for everyone in the tenant, or to a selected group of users.
 
 >[!Note]
->You, or other admins, can override the the Data Activator setting at the [capacity level](#enable-for-a-capacity).
+>You, or other admins, can override the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] setting at the [capacity level](#enable-for-a-capacity).
 
-In your tenant, you can enable Data Activator for:
+In your tenant, you can enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for:
 
-* **The entire organization** - In most cases your organization has one tenant, so selecting this option enables Data Activator for the entire organization. In organizations that have several tenants, if you want to enable Data Activator for the entire organization, you need to enable it in each tenant.
+* **The entire organization** - In most cases your organization has one tenant, so selecting this option enables [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for the entire organization. In organizations that have several tenants, if you want to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for the entire organization, you need to enable it in each tenant.
 
-* **Specific security groups** - Use this option to enable Data Activator for specific users. You can either specify the security groups that Data Activator will be enabled for, or the security groups that Data Activator won't be available for.
+* **Specific security groups** - Use this option to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for specific users. You can either specify the security groups that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] will be enabled for, or the security groups that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] won't be available for.
 
-Follow these steps to enable Data Activator for your tenant.
+Follow these steps to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for your tenant.
 
-1. Navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric*, expand **Data Activator (preview)**.
+1. Navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric*, expand **[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] (preview)**.
 
-2. Enable the **Data Activator (preview)** switch.
+2. Enable the **[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] (preview)** switch.
 
-3. (Optional) Use the **Specific security groups** option to enable Data Activator for specific users. You can also use the **Except specific security groups** option, to enable Data Activator for the tenant, and exclude specific users.
+3. (Optional) Use the **Specific security groups** option to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for specific users. You can also use the **Except specific security groups** option, to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for the tenant, and exclude specific users.
 
 4. Select **Apply**.
 
@@ -54,27 +54,27 @@ Follow these steps to enable Data Activator for your tenant.
 
 ### Enable for a capacity
 
-Consider the Data Activator setting a recommendation for the entire organization. Capacity admins can override this setting, depending on their needs. For example, because Data Activator is in preview, your organization decided not to enable it. However, your organization also has a group of highly advanced developers who want to experiment with Data Activator. In such cases, Data Activator can be enabled at the capacity level.
+Consider the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] setting a recommendation for the entire organization. Capacity admins can override this setting, depending on their needs. For example, because [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is in preview, your organization decided not to enable it. However, your organization also has a group of highly advanced developers who want to experiment with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. In such cases, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] can be enabled at the capacity level.
 
-Follow these steps to enable Data Activator for a specific capacity.
+Follow these steps to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for a specific capacity.
 
 1. Navigate to the [capacity settings](capacity-settings.md) in the admin portal.
 
-2. Select the capacity you want to enable Data Activator for.
+2. Select the capacity you want to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for.
 
 3. Select the **Delegate tenant settings** tab.
 
-4. Expand the *Data Activator (Preview)* setting.
+4. Expand the *[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] (Preview)* setting.
 
-5. Check the **Override tenant admin selection** checkbox and verify that the **Data Activator (preview)** setting is enabled.
+5. Check the **Override tenant admin selection** checkbox and verify that the **[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] (preview)** setting is enabled.
 
-6. (Optional) Use the **Specific security groups** option to enable Data Activator for specific users. You can also use the **Except specific security groups** option, to enable Data Activator for the capacity, and exclude specific users.
+6. (Optional) Use the **Specific security groups** option to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for specific users. You can also use the **Except specific security groups** option, to enable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for the capacity, and exclude specific users.
 
 7. Select **Apply**.
 
-## Can I disable Data Activator?
+## Can I disable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?
 
-To disable Data Activator, you can turn off the *Data Activator (Preview)* admin switch. If you disable Data Activator for a specific capacity while it's available in your organization, your selection will only affect that capacity.
+To disable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], you can turn off the *[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] (Preview)* admin switch. If you disable [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for a specific capacity while it's available in your organization, your selection will only affect that capacity.
 
 ## Related content
 

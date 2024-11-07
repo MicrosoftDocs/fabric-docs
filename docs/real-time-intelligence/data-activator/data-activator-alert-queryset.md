@@ -1,24 +1,23 @@
 ---
-title: Create Data Activator alerts from a KQL Queryset
-description: Learn how to create a Data Activator alert from the results of a KQL query in a KQL Queryset in Real-Time Intelligence.
+title: Create Activator alerts from a KQL Queryset
+description: Learn how to create an Activator alert from the results of a KQL query in a KQL Queryset in Real-Time Intelligence.
 author: yaelschuster
 ms.author: yaschust
 ms.reviewer: guregini
 ms.topic: how-to
 ms.date: 09/24/2024
-ms.search.form: Data Activator KQL Queryset Onramp
-# CustomerIntent: As a customer, I want to learn how to create Data Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
+ms.search.form: Activator KQL Queryset Onramp
+# CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
-# Create Data Activator alerts from a KQL Queryset (preview)
+# Create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset (preview)
 
-This article explains how to create Data Activator alerts from a KQL Queryset. For more information, see [What is Data Activator](data-activator-introduction.md).
-You can use Data Activator on a KQL Queryset to trigger notifications in two modes: when a scheduled KQL query returns results, or when a scheduled KQL query result that contains a visualization meets a defined set of conditions. You can send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
+This article explains how to create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset. For more information, see [What is Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-introduction.md). You can use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] on a KQL Queryset to trigger notifications in two modes: when a scheduled KQL query returns results, or when a scheduled KQL query result that contains a visualization meets a defined set of conditions. You can send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Sample scenarios
 
-Here are some ways you can use Data Activator alerts with KQL queries:
+Here are some ways you can use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts with KQL queries:
 
 * Suppose you have a KQL database and are storing application logs.
     * You receive an alert when any records from the last 5 minutes contain the string `authorization error` in the table’s *message* column.
@@ -43,7 +42,7 @@ Choose the tab that corresponds to your desired workflow.
 ## Set alert on a KQL Queryset
 
 > [!IMPORTANT]
-> [Timechart](/kusto/query/visualization-timechart?view=microsoft-fabric&preserve-view=true) visualizations are not supported in this scenario. They are supported in [Create Data Activator alerts from a Real-Time Dashboard](data-activator-get-data-real-time-dashboard.md).
+> [Timechart](/kusto/query/visualization-timechart?view=microsoft-fabric&preserve-view=true) visualizations are not supported in this scenario. They are supported in [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a Real-Time Dashboard](data-activator-get-data-real-time-dashboard.md).
 
 1. Browse to your KQL Queryset.
 1. Run a query that returns a visualization.
@@ -69,18 +68,18 @@ Choose the tab that corresponds to your desired workflow.
     * In the **When** dropdown, set the value to be evaluated.
     * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](data-activator-detection-conditions.md#conditions).
     * In the **Value** field, set the value to compare against.
-1. In **Action**, specify whether you want your alert via email or Microsoft Teams. In the side pane, you can configure notifications that are sent to yourself. To send notifications to a different user, see [Optional: Edit your trigger in Data Activator](#optional-edit-your-trigger-in-data-activator).
-1. In **Save location**, specify where to save your Data Activator alert. Choose an existing workspace, and save either in an existing Reflex item or a new one.
-1. Select **Create** to create your Data Activator trigger.
+1. In **Action**, specify whether you want your alert via email or Microsoft Teams. In the side pane, you can configure notifications that are sent to yourself. To send notifications to a different user, see [Optional: Edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](#optional-edit-your-trigger-in-activator).
+1. In **Save location**, specify where to save your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert. Choose an existing workspace, and save either in an existing Reflex item or a new one.
+1. Select **Create** to create your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] trigger.
 
-:::image type="content" source="media/data-activator-alert-queryset/conditions-with-visualization.png" alt-text="Screenshot of the set alert pane in the KQL queryset for creating a Data Activator alert.":::
+:::image type="content" source="media/data-activator-alert-queryset/conditions-with-visualization.png" alt-text="Screenshot of the set alert pane in the KQL queryset for creating an Activator alert.":::
 
 ## [Without visualization](#tab/no-visualization)
 
 ## Set alert on a KQL Queryset
 
 1. Browse to your KQL Queryset.
-1. Run a query. Data Activator checks the results of this query according to the time frequency set in a later step, and sends an alert for each record returned in the result set. For example, if a scheduled query returns five records, Data Activator sends five alerts.
+1. Run a query. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] checks the results of this query according to the time frequency set in a later step, and sends an alert for each record returned in the result set. For example, if a scheduled query returns five records, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] sends five alerts.
 1. Once the query completes running, select **Set Alert** on the top ribbon.
 
 ### Example 1 - Single result when count is greater than threshold
@@ -97,7 +96,7 @@ SampleTable
 
 ### Example 2 - Create a single result with an array of several values
 
-In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. In order to get a single alert for all neighborhoods for which the number is above the threshold, the query is built to return a single record (meaning, a single alert). This is done using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true) To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your trigger in Data Activator](#optional-edit-your-trigger-in-data-activator).
+In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. In order to get a single alert for all neighborhoods for which the number is above the threshold, the query is built to return a single record (meaning, a single alert). This is done using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true) To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](#optional-edit-your-trigger-in-activator).
 
 ```kusto
 TableForReflex
@@ -113,29 +112,29 @@ Next, define your alert conditions. In the **Set Alert** pane that appears, take
 
 1. Set a time frequency for how often the query is run. The default is 5 minutes.
     The only condition available in this scenario is **On each event**, meaning that when any record is returned, the condition is met.
-1. In **Action**, specify whether you want your alert via email or Microsoft Teams. In the side pane, you can configure notifications that are sent to yourself. To send notifications to a different user, see [Optional: Edit your trigger in Data Activator](#optional-edit-your-trigger-in-data-activator).
-1. In **Save location**, specify where to save your Data Activator alert. Choose an existing workspace, and save either in an existing Reflex item or a new one.
-1. Select **Create** to create your Data Activator trigger.
+1. In **Action**, specify whether you want your alert via email or Microsoft Teams. In the side pane, you can configure notifications that are sent to yourself. To send notifications to a different user, see [Optional: Edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](#optional-edit-your-trigger-in-activator).
+1. In **Save location**, specify where to save your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert. Choose an existing workspace, and save either in an existing Reflex item or a new one.
+1. Select **Create** to create your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] trigger.
 
 :::image type="content" source="media/data-activator-alert-queryset/conditions-without-visualization.png" alt-text="Screenshot of conditions being set on a query that doesn't include a visualization.":::
 
 ---
 
-## Optional: Edit your trigger in Data Activator
+## Optional: Edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-When your Reflex item is saved, the side pane will display a link to your item. Select the link to further edit in Data Activator. This step can be useful if you want to do one of the following:
+When your Reflex item is saved, the side pane will display a link to your item. Select the link to further edit in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. This step can be useful if you want to do one of the following:
 
 * Add other recipients to your alert.
 * Change the content of the alert to reflect the specific data that triggered the alert.
 * Define a more complex alert condition than is possible in the Set alert pane.
 
-For information on how to edit triggers in Data Activator, see [Create triggers in design mode](data-activator-create-triggers-design-mode.md).
+For information on how to edit triggers in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create triggers in design mode](data-activator-create-triggers-design-mode.md).
 
-In the Reflex item itself, you can also view the history of the query results and the history of the trigger activations. For more information, see [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md).
+In the Reflex item itself, you can also view the history of the query results and the history of the trigger activations. For more information, see [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] triggers in design mode](data-activator-create-triggers-design-mode.md).
 
 <!-- ## Limitations on query result set that returns a time chart with a time axis
 
-If you have a result set with a chart that has a time axis, Data Activator will read the measure value exactly once for each point on the time axis. For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
+If you have a result set with a chart that has a time axis, Activator will read the measure value exactly once for each point on the time axis. For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
 
 To work around this limitation, you can add a line to the query so that the end time of the time filter ends at 'one bin before,' and the last bin does not change. 
 
@@ -150,5 +149,5 @@ TableForReflex
 ## Related content
 
 * [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md)
-* [Get started with Data Activator](data-activator-get-started.md)
+* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
 * [KQL quick reference guide](/kusto/query/kql-quick-reference)

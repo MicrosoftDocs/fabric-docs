@@ -1,28 +1,28 @@
 ---
-title: Detection conditions in Data Activator
-description: Understand how detection settings in Data Activator rules operate and learn how to configure them effectively.
+title: Detection conditions in Activator
+description: Understand how detection settings in Activator rules operate and learn how to configure them effectively.
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 10/31/2024
-ms.search.form: Data Activator Detection Condition
+ms.search.form: Activator Detection Condition
 ---
 
-# Detection settings in Data Activator
+# Detection settings in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Data Activator and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking. 
+This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking. 
 
 > [!IMPORTANT]
-> Data Activator is currently in preview.
+> [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
 
 Our example uses the **Package delivery events** event stream. From this event stream, we already created an object named **Temperature** and a rule **Too hot for medicine**. 
 
 ## Detection setting options
 
-Detection settings are managed in the **Definition** pane which opens on the right side of Data Activator. Select a rule from the **Explorer** or select **New rule** to open the **Definition** pane. Here you set the detection settings using **Summarization**, **Filter**, and **Condition**.
+Detection settings are managed in the **Definition** pane which opens on the right side of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Select a rule from the **Explorer** or select **New rule** to open the **Definition** pane. Here you set the detection settings using **Summarization**, **Filter**, and **Condition**.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definition pane in Data Activator."lightbox="media/data-activator-detection-conditions/data-activator-pane.png":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definition pane in Activator."lightbox="media/data-activator-detection-conditions/data-activator-pane.png":::
 
 **Summarization**
 
@@ -47,7 +47,7 @@ Total  | Computes the total value of the property or column during that time win
 
 In a filter, you specify a comparison operation for the selected attribute. The filter retains only those events that meet the comparison condition. All other events are removed from consideration for the rule. To open the filter section, select **Add filter** from the **Definition** pane. You may have to scroll up to see the Filter and **Operation** field.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using a data activator filter.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using an activator filter.":::
 
 Use filters on any type of attribute. However, you typically use filters with text values, so that you can create a condition on a subset of your data. For example, you might set a filter of “City=Redmond” on some package-tracking events, to set a condition on only events on packages in Redmond. You can also set a filter on numerical data. In our example, we filtered for temperatures greater than 60.
 
@@ -55,9 +55,9 @@ You can specify up to three filters.
 
 ## Conditions
 
-The third detection setting is **Condition**. Use **Condition** to tell Data Activator when to activate the rule.
+The third detection setting is **Condition**. Use **Condition** to tell [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] when to activate the rule.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of using data activator condition types.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of using activator condition types.":::
 
 Condition types fall into the following categories:
 
@@ -68,7 +68,7 @@ Condition types fall into the following categories:
 |**Enters, Exits Range** conditions     |The Enters range condition activates when a property value enters a defined value range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. The exits range condition is similar, except that it activates when the property value goes outside of the range. |
 |**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from specified boundaries.   |
 Text states such as **Contains**, **Ends**, **Begins**  | These conditions activate when text meets the selected condition. 
-|**Heartbeat** conditions  | "No presence of data" conditions activate when data doesn't arrive in Activator. Time elapsed is the time that you want the rule to monitor if new data doesn't arrive.
+|**Heartbeat** conditions | "No presence of data" conditions activate when data doesn't arrive in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Time elapsed is the time that you want the rule to monitor if new data doesn't arrive.
 
 After you specify a condition type, you specify an occurrence.
 
@@ -82,9 +82,9 @@ The occurrence indicates how long, or how many times, the condition must be true
 
 ## Related content
 
-* [Get started with Data Activator](data-activator-get-started.md)
-* [Create Data Activator rules in design mode](data-activator-create-triggers-design-mode.md)
-* [Data Activator tutorial using sample data](data-activator-tutorial.md)
+* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
+* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](data-activator-create-triggers-design-mode.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 
