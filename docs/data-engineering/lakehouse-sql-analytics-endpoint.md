@@ -32,7 +32,7 @@ We offer the ability to retry SQL analytics endpoint provisioning directly withi
 
 ## SQL analytics endpoint read-only mode
 
-The SQL analytics endpoint operates in read-only mode over lakehouse Delta tables. You can only read data from Delta tables using the SQL analytics endpoint. They can save functions, views, and set SQL object-level security.
+The SQL analytics endpoint operates in read-only mode over lakehouse Delta tables. You can only read data from Delta tables using the SQL analytics endpoint.  While you can only perform read operations on Delta tables through the SQL analtyics endpoint, you have the flexibility to create functions, define views, and implement SQL object-level security to manage access and structure your data effectively.
 
 > [!NOTE]
 > External Delta tables created with Spark code won't be visible to the SQL analytics endpoint. Use shortcuts in Table space to make external Delta tables visible to the SQL analytics endpoint.
