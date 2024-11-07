@@ -40,10 +40,22 @@ Currently, you can use the Copy job for cloud data transfer or copying data from
 
 The product team is exploring further connector support, so [stay tuned for updates](../get-started/whats-new.md).
 
+## Copy behavior
+
 You can choose from the following data delivery styles.
 
 - **Full copy mode**: Each copy job run copies all data from the source to the destination at once.  
 - **Incremental copy mode**: The initial job run copies all data, and subsequent job runs only copies changes since the last run. The changed data is appended to your destination store.
+
+You can also choose how data is written to your destination store.
+
+By default, Copy Job appends data to your destination, so that you will not miss any change history. But, you can also adjust the write behavior to upsert or overwrite.  
+- When copy data to storage store: New rows from the tables or files are copied to new files in the destination. If a file with the same name already exists on target store, it will be overwritten.
+- When copy data to database: New rows from the tables or files are appended to destination tables. You can change the write behavior to upsert (for SQL DB or SQL Server) or overwrite (for Fabric Lakehouse tables).
+
+## Incremental column
+
+In incremental copy mode, you will need to select an incremental column for each table to identify changes. Copy Job uses this column as a watermark, comparing its value with the same from last run in order to copy the new or updated data only. The incremental column has to be a timestamp or an increasing INT.
 
 ## Region availability
 
