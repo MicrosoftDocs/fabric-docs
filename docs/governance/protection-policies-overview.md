@@ -21,7 +21,7 @@ The target audience for this article is security and compliance admins, Fabric a
 > [!NOTE]
 > Adding service principals to protection policies is not currently supported via the Microsoft Purview Portal. To enable service principals to access items protected by a protection policy, you can add them to the policy via a PowerShell cmdlet. Open a support ticket to get access to the cmdlet.
 >
-> Note that if you don't add service principals to the allowed list of users, service principals that currently have access to data will be denied access, potentially causing your application to break. For example, service principals are often used for authentication in Azure SQL databases. Unless service principals are added to the policies that control access to such databases, critical access to those databases could be lost.
+> Note that if you don't add service principals to the allowed list of users, service principals that currently have access to data will be denied access, potentially causing your application to break. For example, service principals might be used for application authentication to access semantic models.
 
 ## How do protection policies for Fabric work?
 
@@ -65,7 +65,7 @@ Protection policies are supported for all native Fabric items types, and for Pow
 
 * Adding service principals to protection policies is not currently supported via the Microsoft Purview Portal. To enable service principals to access items protected by a protection policy, you can add them to the policy via a PowerShell cmdlet. Open a support ticket to get access to the cmdlet.
 
-   Note that if you don't add service principals to the allowed list of users, service principals that currently have access to data will be denied access, potentially causing your application to break. For example, service principals are often used for authentication in Azure SQL databases. Unless service principals are added to the policies that control access to such databases, critical access to those databases could be lost.
+   Note that if you don't add service principals to the allowed list of users, service principals that currently have access to data will be denied access, potentially causing your application to break. For example, service principals might be used for application authentication to access semantic models. 
 
 * With protection policies for Fabric, there can only be one label per protection policy, and only one protection policy per label. Labels used in protection policies can, however, also be associated with regular sensitivity label policies.
 

@@ -26,7 +26,7 @@ Microsoft Fabric Runtime 1.3 is the latest GA runtime version and incorporates t
 - R: 4.4.1
 
 > [!TIP]
-> For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric/Runtime%201.3%20(Spark%203.5)).
+> Fabric Runtime 1.3 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without additional costs. To enable the native execution engine across all jobs and notebooks in your environment, navigate to your environment settings, select Spark compute, go to the Acceleration tab, and check Enable native execution engine. After saving and publishing, this setting is applied across the environment, so all new jobs and notebooks automatically inherit and benefit from the enhanced performance capabilities.
 
 Use the following instructions to integrate runtime 1.3 into your workspace and use its new features:
 
@@ -54,6 +54,10 @@ You can check the full list and detailed changes here: [https://spark.apache.org
 Delta Lake 3.2 marks a collective commitment to making Delta Lake interoperable across formats, easier to work with, and more performant. Delta Spark 3.2 is built on top of [Apache Spark™ 3.5](https://spark.apache.org/releases/spark-release-3-5-0.html). The Delta Spark maven artifact has been renamed from **delta-core** to **delta-spark**.
 
 You can check the full list and detailed changes here: [https://docs.delta.io/3.2.0/index.html](https://docs.delta.io/3.2.0/index.html).
+
+
+> [!TIP]
+> For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric/Runtime%201.3%20(Spark%203.5)).
 
 
 ## Related content
