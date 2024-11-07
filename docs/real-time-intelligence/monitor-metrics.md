@@ -56,7 +56,7 @@ The following table contains a list of all the reported Eventhouse metrics, and 
 | Ingestion | BatchBlobCount | Count | Avg, Max, Min | The number of data sources ingested in a completed batch. | Database, Table |
 | Ingestion | BatchDurationSec | Seconds | Avg, Max, Min | The duration of the batching phase within the ingestion flow. | Database, Table |
 | Ingestion | BatchSizeBytes | Bytes | Avg, Max, Min | The expected uncompressed data size in an aggregated ingestion batch. | Database, Table |
-| Ingestion | BatchesProcessed | Count | Sum, Max, Min | The number of completed ingestion batches. | Database, Table,Batching Type |
+| Ingestion | BatchesProcessed | Count | Sum, Max, Min | The number of completed ingestion batches. | Database, Table, Batching Type |
 | Ingestion | BlobsDropped | Count | Sum, Max, Min | The number of blobs permanently dropped by a component, with each failure reason recorded in the `IngestionResult` metric. | Database, Table, ComponentType, ComponentName |
 | Ingestion | BlobsProcessed | Count | Sum, Max, Min | The number of blobs processed by a component. | Database, Table, ComponentType, ComponentName |
 | Ingestion | BlobsReceived | Count | Sum, Max, Min | The number of blobs received from an input stream by a component. | Database, ComponentType, ComponentName |
