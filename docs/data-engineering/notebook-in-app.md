@@ -12,7 +12,7 @@ ms.search.form: Create and use notebooks
 ms.date: 07/25/2024
 ---
 
-# How to integrate notebooks with org app
+# How to integrate notebooks with Org app
 
 This article shows you how to integrate notebooks into an app. This new integration is designed to enhance your productivity by using Notebook as a rich content carrier and streamline your workflow by providing a seamless experience within [Org app](/power-bi/consumer/org-app-items/org-app-items), making it easier than ever to interact with data insights.  
 
