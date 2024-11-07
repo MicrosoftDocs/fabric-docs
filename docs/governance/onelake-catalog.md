@@ -101,10 +101,12 @@ Use the tags selector to display items tagged with the tags you select.
 
 Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading to the side of the items list. The items you're allowed to see in that workspace will be displayed in the items list.
 
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-explorer-pane.png" alt-text="Screenshot of the OneLake data hub Explorer pane.":::
-
 > [!NOTE]
 >Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
+
+The following image shows the Sales Org workspace selected in the Workspaces section. Because the item classification selector is set to Data types, just semantic models are shown (no other type of data items are present in this workspace). The semantic model Contoso FY21 goals is selected, and its details are shown in the item details view. To explore the details Of other items in the list, just select them. The item details view stays open until you dismiss it.
+
+:::image type="content" source="./media/onelake-catalog/onelake-data-catalog-workspace-filter.png" alt-text="Screenshot of the OneLake catalog's workspaces filter.":::
 
 ## View item details
 
@@ -137,5 +139,5 @@ Streaming semantic models are not shown in the OneLake data hub.
 
 ## Related content
 
-* [Navigate to your items from Microsoft Fabric Home](./fabric-home.md)
+* [Global search](../get-started/fabric-search.md)
 * [Endorsement](../governance/endorsement-overview.md)
