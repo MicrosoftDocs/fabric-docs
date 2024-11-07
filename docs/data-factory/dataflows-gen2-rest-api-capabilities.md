@@ -45,4 +45,379 @@ The primary online reference documentation for Microsoft Fabric REST APIs can be
 
 ## Get started with public APIs for Dataflows Gen2
 
+### Obtain an authorization token
 
+You need to have the bearer token for all REST API calls.
+
+#### Option 1: Using MSAL.Net
+
+Refer to the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token) for an example of how to request the bearer token with MSAL.NET.
+
+Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: Workspace.ReadWrite.All, Item.ReadWrite.All. For more information about token acquisition with MSAL.Net to, see [Token Acquisition with MSAL.NET](/entra/msal/dotnet/acquiring-tokens/overview).
+
+Paste the Application Id (Client Id) you copied earlier and use it for the ClientId variable.
+
+#### Option 2: Using the Fabric portal
+
+Sign in into the Fabric portal for the tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
+
+```powerBIAccessToken```
+
+Copy the token returned and use it for the ClientId variable.
+
+### Create a Dataflow Gen2
+
+Create a dataflow in a specified workspace.
+
+**Sample request**:
+
+**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```json
+{
+  "displayName": "My dataflow",
+  "description": "My dataflow description",
+  "type": "Dataflow"
+}
+```
+
+**Sample response**:
+
+```json
+{
+    "id": "<artifactId>",
+    "type": "Dataflow",
+    "displayName": "My dataflow",
+    "description": "My dataflow description",
+    "workspaceId": "<workspaceId>"
+}
+```
+
+### Create a Dataflow Gen2 with definition
+
+Create a dataflow with a base64 definition in a specified workspace.
+
+**Sample request**
+
+**URI**: POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```json
+{
+  "displayName": " My dataflow",
+  "description": "My dataflow description",
+
+  "type": "Dataflow",
+  "definition": { 
+    "parts": [ 
+      { 
+        "path": "dataflow-content.json", 
+        "payload": "<Your base64 encoded dataflow definition>",
+        "payloadType": "InlineBase64" 
+      } 
+    ] 
+  }
+}
+
+**Sample response**:
+
+```json
+{
+    "id": "<artifactId>",
+    "type": "Dataflow",
+    "displayName": "My dataflow",
+    "description": "My dataflow description",
+    "workspaceId": "<workspaceId>"
+}
+```
+
+### Get Dataflow Gen2
+
+Returns properties of specified dataflow.
+
+**Sample request**:
+
+**URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>"
+}
+```
+
+**Sample response**:
+
+```json
+{
+    "id": "<artifactId>",
+    "type": "Dataflow",
+    "displayName": "My dataflow",
+    "description": "My dataflow description",
+    "workspaceId": "<workspaceId>"
+}
+```
+
+### Get Dataflow Gen2 with definition
+
+Returns the dataflow item definition.
+
+**Sample request**:
+
+**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/getDefinition```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>"
+}
+```
+
+**Sample response**:
+
+```json
+{
+    "definition": {
+        "parts": [
+            {
+                "path": "dataflow-content.json",
+                "payload": "<Your base64 encoded dataflow definition>",
+                "payloadType": "InlineBase64"
+            },
+            {
+                "path": ".platform",
+                "payload": "<Your base64 encoded platform definition>",
+                "payloadType": "InlineBase64"
+            }
+        ]
+    }
+}
+```
+
+### Update Dataflow Gen2
+
+Updates the properties of the dataflow.
+
+**Sample request**:
+
+**URI**: ```PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```json
+{
+  "displayName": "My dataflow updated",
+  "description": "My dataflow description updated",
+  "type": "Dataflow"
+}
+```
+
+**Sample response**:
+
+```json
+{
+    "id": "<artifactId>",
+    "type": "Dataflow",
+    "displayName": "My dataflow updated",
+    "description": "My dataflow description updated",
+    "workspaceId": "<workspaceId>"
+}
+```
+
+### Update Dataflow Gen3 with definition
+
+Updates the dataflow item definition.
+
+**Sample request**:
+
+**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/updateDefinition```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```json
+{
+  "displayName": " My dataflow",
+  "type": "Dataflow",
+  "definition": {
+    "parts": [ 
+      { 
+        "path": "dataflow-content.json", 
+        "payload": " <Your base64 encoded dataflow definition>", 
+        "payloadType": "InlineBase64" 
+      }
+    ]
+  }
+}
+```
+
+**Sample response**:
+
+```200 OK```
+
+### Delete Dataflow Gen2
+
+Deletes the specified dataflow.
+
+**Sample request**:
+
+**URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>"
+}
+```
+
+**Sample response**:
+
+```200 OK```
+
+### Run on demand Dataflow Gen2 job
+
+Runs on-demand dataflow job instance.
+
+**Sample request**:
+
+**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances?jobType=Refresh```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>"
+}
+```
+
+**Payload**:
+
+```json
+{
+    "executionData": {
+        "PipelineName": "Dataflow",
+        "OwnerUserPrincipalName": "<name@email.com>",
+        "OwnerUserObjectId": "<ObjectId>"
+    }
+}
+```
+
+**Sample response**:
+
+202 Accepted
+
+### Get Dataflow Gen2 job instance
+
+Gets singular dataflow’s job instance.
+
+**Sample request**:
+
+**URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances/{jobInstanceId}```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>"
+}
+```
+
+**Sample response**:
+
+```json
+{
+  "id": "<id>",
+  "itemId": "<itemId?",
+  "jobType": "Refresh",
+  "invokeType": "Manual",
+  "status": "Completed",
+  "rootActivityId": "<rootActivityId>",
+  "startTimeUtc": "YYYY-MM-DDTHH:mm:ss.xxxxxx",
+  "endTimeUtc": "YYYY-MM-DDTHH:mm:ss.xxxxxx",
+  "failureReason": null
+}
+```
+
+### Cancel Dataflow job instance
+
+Cancel a dataflow’s job instance
+
+**Sample request**:
+
+**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances/{jobInstanceId}/cancel```
+
+**Headers**:
+
+```json
+{
+  "Authorization": "<bearer-token>"
+}
+```
+
+**Sample response**:
+
+```console
+Location: https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/items/<itemId>/jobs/instances/<jobInstanceId>
+Retry-After: 60
+```
+
+## Current limitations
+
+- **Service Principal authentication** is not supported at the moment.
+- **Get item** and **List item access details** doesn't return the correct information if you filter on dataflow item type.
+- When you do not specify the type it will return the **Dataflow Gen2 (CI/CD, preview)** - the new Dataflow Gen2 with CI/CD and GIT support.
+- **Run APIs** can be invoked, but the actual runs do not succeed.
+
+## Related content
+
+### Documentation
+
+- [Fabric data pipeline public REST API](pipeline-rest-api.md)
+- [Microsoft Fabric REST API](/rest/api/fabric/articles/)
+- [SPN support in Data Factory](service-principals.md)
+
+### Tutorials
+
+- [CRUD Items APIs in Fabric](../core/items.md)
+- [Job Scheduler APIs in Fabric](/rest/api/fabric/core/job-scheduler)
