@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/30/2024
+ms.date: 10/31/2024
 ms.search.form: Eventstream REST API
 ---
 
@@ -75,7 +75,7 @@ Here's an example of Eventstream API body with base64 decoded:
   "sources": [
     {
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
-      "name": "AzureEventHub",
+      "name": "AzureEventHubSource",
       "type": "AzureEventHub",
       "properties":
       {
@@ -95,7 +95,7 @@ Here's an example of Eventstream API body with base64 decoded:
   "destinations": [
     {
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
-      "name": "kql",
+      "name": "EventhouseDestination",
       "type": "Eventhouse",
       "properties":
       {
@@ -119,7 +119,7 @@ Here's an example of Eventstream API body with base64 decoded:
   "streams": [],
   "operators": [
     {
-      "name": "Filter",
+      "name": "FilterName",
       "type": "Filter",
       "inputNodes": [{"name": "eventstream-1"}],
       "properties":
@@ -169,7 +169,7 @@ Example of Eventstream source in API body:
   "sources": [
     {
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
-      "name": "AzureEventHub",
+      "name": "AzureEventHubSource",
       "type": "AzureEventHub",
       "properties":
       {
@@ -210,7 +210,7 @@ Example of Eventstream source in API body:
   "destinations": [
     {
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
-      "name": "kql",
+      "name": "EventhouseDestination",
       "type": "Eventhouse",
       "properties":
       {
@@ -326,7 +326,7 @@ Example of stream in API body:
     {
       "sources": [
         {
-          "name": "AzureEventHub",
+          "name": "AzureEventHubSource",
           "type": "AzureEventHub",
           "properties":
           {
@@ -345,7 +345,7 @@ Example of stream in API body:
       ],
       "destinations": [
         {
-          "name": "kql",
+          "name": "EventhouseDestination",
           "type": "Eventhouse",
           "properties":
           {
@@ -432,7 +432,7 @@ Example of stream in API body:
       "sources": [
         {
           "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
-          "name": "AzureEventHub",
+          "name": "AzureEventHubSource",
           "type": "AzureEventHub",
           "properties":
           {
@@ -452,7 +452,7 @@ Example of stream in API body:
       "destinations": [
         {
           "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
-          "name": "kql",
+          "name": "EventhouseDestination",
           "type": "Eventhouse",
           "properties":
           {
