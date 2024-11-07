@@ -63,6 +63,7 @@ The following items are currently supported:
 * Semantic models (except push datasets, live connections to Analysis Services, model v1) *(preview)*
 * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
+* [SQL database](../../database/sql/source-control.md) *(preview)*
 * [Warehouses](../../data-warehouse/data-warehousing.md) *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
