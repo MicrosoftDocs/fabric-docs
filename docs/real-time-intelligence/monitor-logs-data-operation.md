@@ -31,28 +31,31 @@ The following table describes the columns stored in the **EventhouseDataOperatio
 
 | Column Name | Type | Description |
 |--|--|--|
-| ArtifactId | string | The identifier of the Fabric Eventhouse item. |
-| ArtifactKind | string | The type of the Fabric item. Valid values: `Eventhouse`. |
-| ArtifactName | string | The name of the Fabric Eventhouse item. |
+| CapacityId | string | The Fabric capacity identifier. |
 | CorrelationId | string | The correlation identifier of the data operation. |
 | CpuTimeMs | long | The total CPU time (ms) used by the data operation. |
 | CustomerTenantId | string | The customer tenant identifier. |
-| DataOperationKind | string | The type of data operation activity. |
 | DatabaseId | string | The database unique identifier. |
 | DatabaseName | string | The name of the database. |
+| DataOperationKind | string | The type of data operation activity. |
 | DurationMs | long | The duration of the data operation (ms). |
 | EventhouseDataOperationProperties | dynamic | (optional) Additional properties for specific data operation types. |
 | ExtentSizeInBytes | long | The total size of extents ingested on this operation. |
+| Identity | dynamic | Not applicable. |
+| ItemId | string | The identifier of the Fabric Eventhouse item. |
+| ItemKind | string | The type of the Fabric item. Valid values: `Eventhouse`. |
+| ItemName | string | The name of the Fabric Eventhouse item. |
+| Level | string | Not applicable. |
 | OperationId | string | The unique data operation log identifier. |
 | OriginalSizeInBytes | long | The original size of data ingested. |
-| PremiumCapacityId | string | The Fabric capacity identifier. |
-| PremiumCapacityName | string | The Fabric capacity name. |
 | Region | string | The region where the Fabric KQL Database is located. |
+| Status | string | Not applicable. |
 | TableName | string | The name of the destination table used by the data operation. |
 | Timestamp | datetime | The time (UTC) the event was generated. |
 | TotalExtentsCount | long | The total number of extents ingested by the data operation. |
 | TotalRowsCount | long | The number of rows ingested by the data operation. |
 | WorkspaceId | string | The identifier of the workspace. |
+| WorkspaceMonitoringTableName | string | The name of the workspace monitoring table. Valid values: `EventhouseDataOperationsLogs`. |
 | WorkspaceName | string | The name of the workspace. |
 
 ## Sample queries
