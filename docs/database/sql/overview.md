@@ -1,5 +1,5 @@
 ---
-title: "SQL database Overview"
+title: "SQL database Overview (Preview)"
 description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,11 +8,13 @@ ms.date: 10/07/2024
 ms.topic: overview
 ms.search.form: product-databases
 ---
-# SQL database in Microsoft Fabric
+# SQL database in Microsoft Fabric (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allow you to easily create your operational database in Fabric. A SQL database in Fabric uses the SQL Database Engine as Azure SQL Database.
+
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 To get started, see the tutorial to [Create a SQL database in the Fabric portal](create.md).
 
