@@ -10,7 +10,6 @@ ms.custom:
   - ignite-2023
 ms.date: 11/19/2024
 ms.search.form: product-kusto
-ms.subservice: rti-kusto
 ---
 # Access an existing KQL database
 
