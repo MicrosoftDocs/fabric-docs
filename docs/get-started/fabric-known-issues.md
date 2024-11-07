@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 11/05/2024
+ms.date: 11/07/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  919  | Power BI | [Embedded paginated report renders correctly but shows error message](known-issues/known-issue-919-embedded-report-renders-correctly-shows-error.md) | November 7, 2024 |
+|  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](known-issues/known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |
+|  916  | Power BI | [Visual doesn't load due to an unexpected error](known-issues/known-issue-916-visual-not-load-error.md) | November 7, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 |
@@ -51,7 +54,6 @@ Select the **Title** to view more information about that specific known issue.
 |  818  | Data Warehouse | [Edit tables for a data warehouse's semantic model doesn't work](known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md) | August 23, 2024 |
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
-|  811  | Data Engineering | [Fabric Runtime 1.3 causes invalid libraries](known-issues/known-issue-811-fabric-runtime-invalid-libraries.md) | August 16, 2024 |
 |  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 |
 |  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 |
 |  808  | Power BI | [Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser](known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md) | August 14, 2024 |
@@ -75,7 +77,6 @@ Select the **Title** to view more information about that specific known issue.
 |  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 |
 |  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 |
-|  658  | Data Engineering | [PySpark import statements fail for .jar files installed through environment](known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md) | March 28, 2024 |
 |  647  | Data Engineering | [Library management updates with public python libraries time-out](known-issues/known-issue-647-library-management-updates-public-python-libraries-time-out.md) | March 14, 2024 |
 |  641  | Power BI | [Visuals using the Denodo connector might show connection errors](known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md) | March 5, 2024 |
 |  640  | Power BI | [Microsoft Defender detects OpenSSL vulnerabilities in Power BI Desktop](known-issues/known-issue-640-microsoft-defender-detects-openssl-vulnerabilities-desktop.md) | March 5, 2024 |
@@ -96,6 +97,8 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  811  | Data Engineering | [Fabric Runtime 1.3 causes invalid libraries](known-issues/known-issue-811-fabric-runtime-invalid-libraries.md) | August 16, 2024 |  Fixed: November 7, 2024 |
+|  658  | Data Engineering | [PySpark import statements fail for .jar files installed through environment](known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md) | March 28, 2024 | Fixed: November 7, 2024 |
 |  911  | Power BI | [Can't edit paginated reports in Report Builder when opened from service](known-issues/known-issue-911-not-edit-reports-report-builder-opened-service.md) | October 30, 2024 | Fixed: November 5, 2024 |
 |  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 | Fixed: November 5, 2024 |
 |  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 | Fixed: November 5, 2024 |
