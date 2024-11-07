@@ -106,9 +106,11 @@ Use the tags selector to display items tagged with the tags you select.
 
 ## View item details
 
-The items details view enables you to drill down and explore items.
+The items details view enables you to drill down and explore items. Select an item in the items list display its details.
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-item-details-view.png" alt-text="Screenshot of the OneLake catalog item details view.":::
+
+The item details view has a number of tabs that to help you explore your selected item. The tabs are described in the following sections.
 
 ### Overview tab
 
