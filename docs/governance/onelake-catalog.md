@@ -20,11 +20,10 @@ OneLake catalog is a centralized place that helps you find, explore, and use the
 The OneLake catalog provides
 
 * [A list of all Fabric items you have access to in your organization](#find-items-in-the-items-list).
+* [An item details view that enables you to drill down on an item without leaving the catalog](#view-item-details).
 * [Filters and selectors to help you find the content you're looking for](#filter-the-items-list).
 * [A way to scoping the catalog to display only items of a particular domain](#scope-the-catalog-to-a-particular-domain).
-* [A way of finding items by workspace](#find-items-by-workspace)
 * [An options menu for item actions](#open-an-items-options-menu)
-* [An item details view that enables you to drill down on an item without leaving the catalog](#view-item-details).
 
 This article explains what you see in the OneLake catalog and describes how to use it.
 
@@ -64,11 +63,11 @@ If domains have been defined in your organization, you can use the domain select
 
 ## Filter the items list
 
-You can use the filters in the filter pane and the item type and tag selectors at the top of the items list to narrow down the items list so it displays just the types of items you're interested in. You can then select items to explore them in more detail.
+You can use the filters in the filter pane and the [item type](#find-items-by-item-type-classification) and [tag selectors](#find-items-by-tag) at the top of the items list to narrow down the items list so it displays just the types of items you're interested in. You can then select items to explore them in more detail.
 
-The filters pane contains several predefined filters, and also enables you to filter by workspace.
+The filters pane contains several [predefined filters](#filter-items-by-predefined-filters), and also enables you to [filter by workspace](#filter-items-by-workspace).
 
-## Filter items by predefined filters
+### Filter items by predefined filters
 
 The filters pane contains several predefined filters. They're described in the following table.
 
@@ -79,7 +78,7 @@ The filters pane contains several predefined filters. They're described in the f
 | **Endorsed items** | Endorsed items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
 | **Favorites** | Items that you marked as favorites. |
 
-## Filter items by workspace
+### Filter items by workspace
 
 Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane.. The items you're allowed to see in that workspace will be displayed in the items list.
 
