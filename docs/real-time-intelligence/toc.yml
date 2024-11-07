@@ -68,6 +68,8 @@ items:
         href: event-streams/add-manage-eventstream-sources.md
       - name: Azure Event Hubs
         href: event-streams/add-source-azure-event-hubs.md
+      - name: Azure Service Bus
+        href: event-streams/add-source-azure-service-bus.md
       - name: Azure IoT Hub
         href: event-streams/add-source-azure-iot-hub.md
       - name: Custom endpoint
@@ -110,8 +112,8 @@ items:
         href: event-streams/add-destination-kql-database.md
       - name: Lakehouse
         href: event-streams/add-destination-lakehouse.md
-      - name: Reflex
-        href: event-streams/add-destination-reflex.md
+      - name: Activator
+        href: event-streams/add-destination-activator.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app.md
     - name: Process events using event processor
@@ -130,7 +132,13 @@ items:
       href: event-streams/monitor.md
     - name: Integrate with other Fabric items
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
-    - name: Network security
+    - name: Develop
+      items:
+      - name: CI/CD
+        href: event-streams/eventstream-cicd.md
+      - name: REST API
+        href: event-streams/eventstream-rest-api.md
+    - name: Security
       items:
       - name: Connect to Azure resources using private endpoints
         href: event-streams/set-up-private-endpoint.md
