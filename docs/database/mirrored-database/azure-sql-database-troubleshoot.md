@@ -17,9 +17,9 @@ ms.custom:
 |:--|:--|:--|
 | Fabric capacity paused/deleted | Mirroring will stop | 1. Resume or assign capacity from the Azure portal <br> 2. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**.<br> 3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Workspace deleted | Mirroring stops automatically | 1. If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
+| Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
 | Fabric trial capacity expired |  Mirroring stops automatically | See [Fabric trial capacity expires](../../get-started/fabric-trial.md#the-trial-expires). |
-| Fabric capacity exceeded | You can't see the mirrored database details. | Wait for the capacity to free up or resize your capacity. Mirroring will continue once capacity is back. |
+| Fabric capacity exceeded | Mirroring will stop | You can't see the mirrored database details. Wait until the overload state is over or update your capacity. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling#actions-you-can-take-to-recover-from-overload-situations). Mirroring will continue once the capacity is recovered. |
 
 ## T-SQL queries for troubleshooting
 
