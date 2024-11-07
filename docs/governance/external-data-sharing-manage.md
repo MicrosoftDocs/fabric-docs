@@ -4,12 +4,12 @@ description: "This article describes how to manage external data shares."
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 04/16/2024
+ms.date: 11/07/2024
 
 #customer intent: As a data owner, I want to manage the external data shares on an item.
 ---
 
-# Manage external data shares (preview)
+# Manage external data shares
 
 This article explains what you see on the external data share manage permissions tab, and shows how to revoke external data shares.
 
@@ -19,7 +19,7 @@ This article explains what you see on the external data share manage permissions
 
 ## View an item's external data shares
 
-To view and manage existing external data shares, navigate to the shared lakehouse or KQL database in the workspace or in the OneLake data hub, open the options menu, and select **Manage permissions**.
+To view and manage existing external data shares, navigate to the shared lakehouse in the workspace or in the OneLake data hub, open the options menu, and select **Manage permissions**.
 
 :::image type="content" source="./media/external-data-sharing-manage/manage-permissions-option.png" alt-text="Screenshot showing the manage permissions option.":::
 
