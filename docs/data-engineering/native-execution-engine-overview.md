@@ -11,7 +11,7 @@ ms.date: 5/13/2024
 
 # Native execution engine for Fabric Spark
 
-The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with Runtime 1.2 (Spark 3.4) and Runtime 1.3 (Spark 3.5), and works with both Parquet and Delta formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
+The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with **[Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md)**, and works with both Parquet and Delta formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
 
 The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
@@ -36,7 +36,7 @@ For information on the operators and functions supported by the native execution
 To use the full capabilities of the native execution engine during the preview phase, specific configurations are necessary. The following procedures show how to activate this feature for notebooks, Spark job definitions, and entire environments.
 
 > [!IMPORTANT]
-> The native execution engine supports the latest GA runtime version, which is [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md) and the older version - [Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md). 
+> The native execution engine supports the latest GA runtime version, which is [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md). With the release of the native execution engine in Runtime 1.3, support for the previous version—[Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md)—has been discontinued. We encourage all customers to upgrade to the latest Runtime 1.3. Note that if you are using the Native Execution Engine on Runtime 1.2, native acceleration will soon be disabled.
 
 
 ### Enable at the environment level
@@ -47,16 +47,19 @@ To ensure uniform performance enhancement, enable the native execution engine ac
 
 1. Go to **Spark compute**.
 
-1. Go to **Acceleration** Tab.
+1. Go to **Acceleration** Tab. 
  
 1. Check the box labeled **Enable native execution engine.**
 
 1. **Save and Publish** the changes.
 
-   :::image type="content" source="media\native\enable-environment.png" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enablement.png":::
+   :::image type="content" source="media\native\enablement.png" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enablement.png":::
 
 When enabled at the environment level, all subsequent jobs and notebooks inherit the setting. This inheritance ensures that any new sessions or resources created in the environment automatically benefit from the enhanced execution capabilities.
 
+
+> [!IMPORTANT]
+> The Acceleration Tab feature rollout is in progress.
 
 #### Enable for a notebook or Spark job definition
 
@@ -169,7 +172,7 @@ Alternatively, you can execute the `df.explain()` command in your notebook to vi
 
 ### Fallback mechanism
 
-In some instances, the native execution engine might not be able to execute a query due to reasons such as unsupported features. In these cases, the operation falls back to the traditional Spark engine. This fallback mechanism ensures that there's no interruption to your workflow.
+In some instances, the native execution engine might not be able to execute a query due to reasons such as unsupported features. In these cases, the operation falls back to the traditional Spark engine. This **automatic** fallback mechanism ensures that there's no interruption to your workflow.
 
 :::image type="content" source="media\native\fallback.jpg" alt-text="Screenshot showing the fallback mechanism." lightbox="media\native\fallback.jpg":::
 
