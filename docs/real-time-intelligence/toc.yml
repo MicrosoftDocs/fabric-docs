@@ -130,7 +130,13 @@ items:
       href: event-streams/monitor.md
     - name: Integrate with other Fabric items
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
-    - name: Network security
+    - name: Develop
+      items:
+      - name: CI/CD
+        href: event-streams/eventstream-cicd.md
+      - name: REST API
+        href: event-streams/eventstream-rest-api.md
+    - name: Security
       items:
       - name: Connect to Azure resources using private endpoints
         href: event-streams/set-up-private-endpoint.md
