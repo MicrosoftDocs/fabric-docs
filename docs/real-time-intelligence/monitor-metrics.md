@@ -27,21 +27,24 @@ The following table describes the columns stored in the **EventhouseMetrics** ta
 
 | Column Name | Type | Description |
 |--|--|--|
-| ArtifactId | string | The identifier of the Fabric Eventhouse item |
-| ArtifactKind | string | The type of the Fabric item. Valid values: Eventhouse. |
-| ArtifactName | string | The name of the Fabric Eventhouse item. |
+| CapacityId | string | The Fabric capacity identifier. |
 | CustomerTenantId | string | The customer tenant identifier. |
+| DurationMs | long | Not applicable. |
+| ItemId | string | The identifier of the Fabric Eventhouse item |
+| ItemKind | string | The type of the Fabric item. Valid values: Eventhouse. |
+| ItemName | string | The name of the Fabric Eventhouse item. |
+| Level | string | Not applicable. |
 | MetricCount | long | The metric count value. |
 | MetricMaxValue | long | The metric maximum value. |
 | MetricMinValue | long | The metric minimum value. |
 | MetricName | string | The metric name. |
 | MetricSpecificDimensions | dynamic | The specific dimensions of each metric, as described in [Metric Specific Dimension Column](#metric-specific-dimension-column). Where relevant, dimension descriptions are provided as part of the metric description. |
 | MetricSumValue | long | The metric sum value. |
-| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values:  EventhouseQueryLogs |
-| PremiumCapacityId | string | The Fabric capacity identifier. |
+| OperationName | string | The name of the operation performed. |
 | Region | string | The region where the Fabric KQL Database is located. |
 | Timestamp | datetime | The time (UTC) the event was generated. |
 | WorkspaceId | string | The identifier of the workspace. |
+| WorkspaceMonitoringTableName | string | The name of the workspace monitoring table. Valid values:  EventhouseQueryLogs |
 | WorkspaceName | string | The name of the workspace. |
 
 ### Metric Specific Dimension Column
