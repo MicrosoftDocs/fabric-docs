@@ -45,13 +45,13 @@ When the workload developer registers the action, Fabric expects the workload ac
 
 ```typescript
   /* OnInit event is triggered when the artifact is opened for the first time.
-   This event contains the id of the tab being initialized. Based on this tab
+   This event contains the ID of the tab being initialized. Based on this tab
    id, the handler needs to be able to return the displayName or metaData.*/
 
    onInit: Action<never>;
 
    /*CanDeactivate event is triggered when navigating away from the tab.
-   This event contains the id of the tab being deactivated. The
+   This event contains the ID of the tab being deactivated. The
    CanDeactivate handler should return a Boolean value indicating whether the
    given artifact tab can be deactivated. For an ideal multi-tasking
    experience, the handler should always return True.*/
@@ -59,7 +59,7 @@ When the workload developer registers the action, Fabric expects the workload ac
    canDeactivate: Action<never>;
 
    /*OnDeactivate event is triggered immediately after CanDeactivate return
-   True. This event contains the id of the tab being deactivated. The
+   True. This event contains the ID of the tab being deactivated. The
    OnDeactivate handler should cache unsaved artifact changes and UI state.
    The next time the user navigates back to the artifact, the artifact needs
    to be able to recover its data and UI state. Only when this handler returns
@@ -68,7 +68,7 @@ When the workload developer registers the action, Fabric expects the workload ac
    onDeactivate: Action<never>;
 
    /*CanDestroy event is triggered after the close button is clicked,
-    before the artifact tab is closed.The event contains the id of the tab
+    before the artifact tab is closed.The event contains the ID of the tab
     being destroyed and also an **allowInteraction** parameter.
     CanDeactivate handler should return a Boolean value indicating whether
     the given artifact tab can be destroyed.
@@ -82,13 +82,13 @@ When the workload developer registers the action, Fabric expects the workload ac
    canDestroy: Action<never>;
 
    /*OnDestroy event is triggered when the tab is closed. The event contains the
-   id of the tab being destroyed. The OnDestroy handler gives the artifact the
+   ID of the tab being destroyed. The OnDestroy handler gives the artifact the
    opportunity to do some cleanup work.*/
 
    onDestroy: Action<never>;
 
    /*OnDelete event is triggered when the artifact which has been opened is
-   deleted.The event contains the id of the artifact being deleted.
+   deleted.The event contains the ID of the artifact being deleted.
    just to tell the extension the current artifact is deleted.*/
 
    onDelete: Action<never>;
@@ -131,7 +131,7 @@ workloadClient.action.onAction(async function ({ action, data }) {
     }
 });
 ```
-- item.tab.onInit: Fetches item data using id and returns the item’s title.
+- item.tab.onInit: Fetches item data using ID and returns the item’s title.
 - item.tab.canDeactivate: Returns { canDeactivate: true } which allows switching between tabs easily.
 - item.tab.onDeactivate, item.tab.onDestroy, item.tab.onDelete: Returns an empty object for these actions.
 - item.tab.canDestroy: Returns { canDestroy: true }.
