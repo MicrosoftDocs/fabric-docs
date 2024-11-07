@@ -419,5 +419,5 @@ Retry-After: 60
 
 ### Tutorials
 
-- [CRUD Items APIs in Fabric](../core/items.md)
+- [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
 - [Job Scheduler APIs in Fabric](/rest/api/fabric/core/job-scheduler)
