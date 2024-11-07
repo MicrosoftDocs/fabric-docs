@@ -13,7 +13,7 @@ ms.search.form: Warehouse roles and permissions # This article's title should no
 ---
 # Share your data and manage permissions
 
-**Applies to:** [!INCLUDE[fabric-dw-mirroreddb](includes/applies-to-version/fabric-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE[fabric-dw-mirroreddb](includes/applies-to-version/fabric-dw-mirroreddb.md)]
 
 Sharing is a convenient way to provide users read access to your data for downstream consumption. Sharing allows downstream users in your organization to consume a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using T-SQL, Spark, or Power BI. You can customize the level of permissions that the shared recipient is granted to provide the appropriate level of access.
 
@@ -34,7 +34,7 @@ The following animated gif reviews the steps to select a warehouse to share, sel
 
     :::image type="content" source="media/share-warehouse-manage-permissions/share-warehouse-data-hub.png" alt-text="Screenshot showing how to share a warehouse in the OneLake data hub page." lightbox="media/share-warehouse-manage-permissions/share-warehouse-data-hub.png":::
 
-1. You're prompted with options to select who you would like to share the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with, what permissions to grant them, and whether they'll be notified by email. 
+1. You're prompted with options to select who you would like to share the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with, what permissions to grant them, and whether they'll be notified by email.
 
 1. Fill out all required fields, select **Grant access**.
 

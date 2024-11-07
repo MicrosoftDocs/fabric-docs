@@ -81,6 +81,8 @@ items:
     items:
     - name: Privacy, security, and responsible use
       href: copilot-privacy-security.md
+    - name: Responsible use in SQL database
+      href: copilot-database-privacy-security.md
     - name: Responsible use in Data Factory
       href: copilot-data-factory-privacy-security.md
     - name: Responsible use in Data Science

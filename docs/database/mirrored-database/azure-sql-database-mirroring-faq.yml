@@ -88,7 +88,7 @@ sections:
            The table is no longer replicated and its data is deleted from OneLake.
 
       - question: |
-          If I delete the Mirror, does it affect the source Azure SQL database? 
+          If I delete the Mirror, does it affect the source Azure SQL Database? 
         answer: 
           No, we just remove the streaming tables.
 
@@ -98,7 +98,7 @@ sections:
           No, each Azure SQL Database can only be mirrored once. You just need a single copy of the data in Fabric OneLake, which you can share with others.
 
       - question: |
-          Can I mirror only specific tables from my Azure SQL database? 
+          Can I mirror only specific tables from my Azure SQL Database? 
         answer: 
           Yes, specific tables can be selected during Mirroring configuration.
 
@@ -154,7 +154,7 @@ sections:
       - question: |
           How to stop/disable Mirroring from your Azure SQL Database?  
         answer: |
-          If you're unable to Stop mirroring your Azure SQL Database from the Fabric portal, or unable to delete your mirrored Azure SQL database item from Fabric, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`
+          If you're unable to Stop mirroring your Azure SQL Database from the Fabric portal, or unable to delete your mirrored Azure SQL Database item from Fabric, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`
 
       - question: | 
           What if I stop or pause my Fabric capacity?

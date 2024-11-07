@@ -198,6 +198,8 @@ items:
     href: configure-high-concurrency-session-notebooks-in-pipelines.md
   - name: Notebook visualization
     href: notebook-visualization.md
+  - name: Notebook in app
+    href: notebook-in-app.md  
   - name: Explore data in lakehouse
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse

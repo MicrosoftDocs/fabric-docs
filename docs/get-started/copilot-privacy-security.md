@@ -10,7 +10,7 @@ ms.custom:
   - build-2024
   - copilot-learning-hub
 ms.topic: conceptual
-ms.date: 07/15/2024
+ms.date: 10/17/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -26,7 +26,7 @@ This article provides answers to common questions related to business data secur
 
 - Copilot features use [Azure OpenAI Service](/azure/ai-services/openai/overview), which is fully controlled by Microsoft. Your data isn't used to train models and isn't available to other customers.
 - You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your tenant's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
-- Copilot does not store your data for abuse monitoring. To enhance privacy and trust, we’ve updated our approach to abuse monitoring: previously, we retained data from Copilot in Fabric, containing prompt inputs and outputs, for up to 30 days to check for abuse or misuse. Following customer feedback, we’ve eliminated this 30-day retention. Now, we no longer store prompt related data, demonstrating our unwavering commitment to your privacy and security.
+- Copilot does not store your data for abuse monitoring. To enhance privacy and trust, we've updated our approach to abuse monitoring: previously, we retained data from Copilot in Fabric, containing prompt inputs and outputs, for up to 30 days to check for abuse or misuse. Following customer feedback, we've eliminated this 30-day retention. Now, we no longer store prompt related data, demonstrating our unwavering commitment to your privacy and security.
 
 ### Check Copilot outputs before you use them
 
@@ -129,8 +129,9 @@ Before you use Copilot, keep in mind the limitations of Copilot:
 Privacy, security, and responsible use for:
 
 - [Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
-- [Copilot for data science (preview)](copilot-data-science-privacy-security.md)
+- [Copilot for Data Science (preview)](copilot-data-science-privacy-security.md)
 - [Copilot for Data Warehouse (preview)](copilot-data-warehouse-privacy-security.md)
+- [Copilot for SQL Databases (preview)](copilot-database-privacy-security.md)
 - [Copilot for Power BI](copilot-power-bi-privacy-security.md)
 - [Copilot for Real-Time Intelligence (preview)](copilot-real-time-intelligence-privacy-security.md)
 
