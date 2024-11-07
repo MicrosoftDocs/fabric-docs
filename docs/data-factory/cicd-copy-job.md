@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 11/05/2024
 ---
 
-# CI/CD for Copy job (preview) in Data Factory in Microsoft Fabric
+# CI/CD for Copy Job (preview) in Data Factory in Microsoft Fabric
 
 To build successful data analytics projects with Copy Job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments. 
 
@@ -16,7 +16,7 @@ In Fabric, there are two features we currently support in collaboration with the
 
 With Git integration and deployment pipeline supported for Copy Job, users can leverage their own Git repositories in Azure DevOps or GitHub and utilize Fabric’s built-in Deployment Pipelines, enabling seamless CI/CD workflows. This integration marks an important step toward expanding CI/CD capabilities across all Fabric items, empowering users with advanced, reliable development tools for their data projects.
 
-## Get started with Git integration for Copy job
+## Get started with Git integration for Copy Job
 
 Take the following steps to set up Git integration for your Copy Job in Data Factory:
 
