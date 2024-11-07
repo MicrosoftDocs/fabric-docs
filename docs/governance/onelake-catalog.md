@@ -1,19 +1,21 @@
 ---
 title: Discover and explore Fabric items in the OneLake catalog
-description: Learn how to discover, explore, manange, and use your organization's Fabric items in the OneLake catalog.
+description: Learn how to discover, explore, manage, and use your organization's Fabric items in the OneLake catalog.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 11/05/2024
-ms.custom: ignite-2023-fabric
+ms.date: 11/07/2024
+ms.custom: ignite-2024-fabric
 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the capabilities of the OneLake catelog and how it can help me find, manage, and use the content I need. 
 ---
 
 # Discover and explore Fabric items in the OneLake catalog
 
-OneLake catalog Explore is a centralized place that helps you find, explore, and use the Fabric items you need.
+OneLake catalog is a centralized place that helps you find, explore, and use the Fabric items you need. It features an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. The catalog also features selectors and filters to narrow down and focus the list, making it easier to find what you need.
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-general-view.png"::: 
 
 The OneLake catalog provides
 
@@ -46,7 +48,7 @@ The following table describes the list columns.
 
 |Column  |Description  |
 |:-----------------|:--------|
-| **Name**         | The item name. Select the name to explore item details. |
+| **Name**         | The item name. To explore item details, select the name. |
 | **Type**         | The item type. |
 | **Owner**        | Item owner. |
 | **Refreshed**    | Last refresh time (rounded to hour, day, month, and year. See the details section in item's details for the exact time of the last refresh). |
@@ -56,7 +58,7 @@ The following table describes the list columns.
 
 ## Scope the catalog to a particular domain
 
-If domains have been defined in your organization, you can use the domain selector to select a domain or subdomain so that only items belonging to that domain or subdomain will be displayed and treated in the catalog.
+If domains have been defined in your organization, you can use the domain selector to select a domain or subdomain. Only items belonging to the selected domain or subdomain will be displayed and treated in the catalog.
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
 
@@ -77,7 +79,7 @@ Item filters help you narrow down the list of items.
 | **All Items**                  | Items that you're allowed to find.  |
 | **My items**              | Items that you own.      |
 | **Endorsed items** | Endorsed items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
-| **Favorites** | Items that you've marked as favorites. |
+| **Favorites** | Items that you marked as favorites. |
 
 ### All items by item classification
 
@@ -101,16 +103,18 @@ Use the tags selector to display items tagged with the tags you select.
 
 Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading to the side of the items list. The items you're allowed to see in that workspace will be displayed in the items list.
 
+:::image type="content" source="./media/onelake-catalog/onelake-data-catalog-workspace-filter.png" alt-text="Screenshot of the OneLake catalog's workspaces filter.":::
+
+The preceding image shows the *Sales Org* workspace selected in the Workspaces section. Because the item classification selector is set to *Data types*, only semantic models are shown (as no other type of data items are present in this workspace). The semantic model *Contoso FY21 goals* is selected, and its details are shown in the item details view. To explore the details of other items in the list, just select them. The item details view stays open until you dismiss it. This makes it easy to browse the details of items one after another, without losing your list context.
+
 > [!NOTE]
 >Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
 
-The following image shows the Sales Org workspace selected in the Workspaces section. Because the item classification selector is set to Data types, just semantic models are shown (no other type of data items are present in this workspace). The semantic model Contoso FY21 goals is selected, and its details are shown in the item details view. To explore the details Of other items in the list, just select them. The item details view stays open until you dismiss it.
-
-:::image type="content" source="./media/onelake-catalog/onelake-data-catalog-workspace-filter.png" alt-text="Screenshot of the OneLake catalog's workspaces filter.":::
-
 ## View item details
 
-asdf
+The items details view enables you to drill down and explore items.
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-item-details-view.png" alt-text="Screenshot of the OneLake catalog item details view.":::
 
 ### Overview tab
 
@@ -120,7 +124,7 @@ The overview tab shows the workspace the item is located in, the last update tim
 
 ### Lineage tab
 
-The lineage tab shows you the upstream and downstream items in the lineage that are one degree away. Metadate about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc.
+The lineage tab shows you the upstream and downstream items in the lineage that are one step away. Metadata about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc.
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-lineage-tab.png" alt-text="Screenshot of the OneLake catalog item view lineage tab.":::
 
@@ -135,7 +139,7 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 ## Considerations and limitations
 
-Streaming semantic models are not shown in the OneLake data hub.
+Streaming semantic models aren't shown in the OneLake data hub.
 
 ## Related content
 
