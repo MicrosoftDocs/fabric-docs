@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 11/05/2024
 ---
 
-# CI/CD for Copy job (Preview) in Data Factory in Microsoft Fabric
+# CI/CD for Copy job (preview) in Data Factory in Microsoft Fabric
 
 To build successful data analytics projects with Copy Job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments. 
 
