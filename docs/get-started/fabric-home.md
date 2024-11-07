@@ -3,9 +3,9 @@ title: Find content from Microsoft Fabric Home
 description: Open reports, workloads, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content.
 author: mihart
 ms.author: mihart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
-ms.date: 11/04/2024
+ms.date: 11/06/2024
 #customer intent: As a Fabric user, I know how to find my content from Home.
 ---
 
@@ -24,7 +24,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refer
 
 :::image type="content" source="media/fabric-home/workspaces.png" alt-text="Screenshot showing sample Home for the Data Engineering workload.":::
 
-To open **Home**, select it from the top of your left navigation pane. 
+To open **Home**, select it from the top of your navigation pane (nav pane). 
 
 :::image type="content" source="media/fabric-home/fabric-home-icon.png" alt-text="Screenshot showing the Home icon.":::
 
@@ -35,9 +35,9 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 > [!NOTE]
 > **Power BI Home** is different from the other product workloads. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
 
-:::image type="content" source="media/fabric-home/fabric-home-data-factory-step.png" alt-text="Screenshot of Home with sections of the canvas numbered." lightbox="media/fabric-home/fabric-home-data-engineering-workspaces.png":::
+:::image type="content" source="media/fabric-home/fabric-home-data-factory-step.png" alt-text="Screenshot of Home with sections of the canvas numbered." lightbox="media/fabric-home/fabric-home-data-factory-step.png":::
 
-1. The left navigation pane (nav pane) for your product workload links you to different views of your items and to creator resources. You can [remove icons from the left nav](#remove-icons-from-the-nav-pane) to suit your workflow.
+1. The left navigation pane (nav pane) for your product workload links you to different views of your items and to creator resources. You can [remove icons from the nav pane](#remove-icons-from-the-nav-pane) to suit your workflow.
 1. The selector for switching product workloads.
 1. Options for creating new items. 
 1. The top menu bar for orienting yourself in Fabric, finding items, help, and sending feedback to Microsoft. The Account manager control is a critical icon for looking up your account information and managing your Fabric trial.
@@ -55,14 +55,14 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 :::image type="content" source="media/fabric-home/fabric-nav-panes.png" alt-text="Screenshot of the nav pane for Data factory.":::
 
-Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. The options in your nav pane depend on the product workload you select. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
+Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data Factory nav pane. The options in your nav pane depend on the product workload you select. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
 
 In the bottom section of the nav pane is where you find and open your workspaces. Use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open. Below the workspace selector is the name of the currently open workspace.  
     - By default, you see the **Workspaces** selector and **My workspace**.  
     - When you open a workspace, its name replaces **My workspace**.  
     - Whenever you create a new item, it's added to the open workspace.  
 
-The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product workload nav pane includes **Home**, **Browse**, **OneLake**, **Workloads**,**Create**, and  **Workspaces**.
+The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product workload nav pane includes **Home**, **Browse**, **OneLake**, **Create**, and  **Workspaces**.
 
 ### Remove icons from the nav pane
 
@@ -74,9 +74,9 @@ To remove an icon, right-click the icon and select **Unpin**.
 
 You can add an icon back if you decide you need it.
 
-Select **More ...**, then select the icon you want to return to the left nav.
+Select **More ...**, then select the icon you want to return to the nav pane.
 
-:::image type="content" source="media/fabric-home/more-menu-add-icon.png" alt-text="Screenshot showing how to add an item back to the left nav.":::
+:::image type="content" source="media/fabric-home/more-menu-add-icon.png" alt-text="Screenshot showing how to add an item back to the nav pane.":::
 
 ### Find and open workspaces
 
@@ -90,13 +90,13 @@ The workspace opens on your canvas, and the name of the workspace is listed on y
 
 For more information, see [Workspaces](workspaces.md).
 
-### Find and learn about workloads
+### Find and learn about other workloads
 
-**Workloads** refer to the different capabilities available in Fabric. Fabric includes pre-installed workloads that cannot be removed, these include Data Factory, Data Engineering, Real-Time Intelligence, and more. You might also have pre-installed workloads that Microsoft or your organization added. 
+**Workloads** refer to the different capabilities available in [!INCLUDE [product-name](../includes/product-name.md)]. [!INCLUDE [product-name](../includes/product-name.md)] includes pre-installed workloads that cannot be removed, including Data Factory, Data Engineering, Real-Time Intelligence, and more. You might also have pre-installed workloads that Microsoft or your organization added. 
 
-The Workload hub is a central location where you can view all the workloads available to you. Navigate to your Workload hub by selecting the **Workloads** icon from the left nav. [!INCLUDE [product-name](../includes/product-name.md)] displays a list and description of the available workloads. Select a workload to open it and learn more. 
+The Workload hub is a central location where you can view all the workloads available to you. Navigate to your Workload hub by selecting the **Workloads** from the nav pane. [!INCLUDE [product-name](../includes/product-name.md)] displays a list and description of the available workloads. Select a workload to open it and learn more. 
 
-:::image type="content" source="media/fabric-home/fabric-workloads.png" alt-text="Screenshot of Workloads selected from the left navigation pane.":::
+:::image type="content" source="media/fabric-home/fabric-workloads.png" alt-text="Screenshot of Workloads selected from the nav pane.":::
 
 If your organization has given you access to additional workloads, your Workload hub displays additional tabs.
 

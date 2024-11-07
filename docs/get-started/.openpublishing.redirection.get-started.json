@@ -71,6 +71,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/onelake-data-hub.md",
+            "redirect_url": "/fabric/governance/onelake-catalog",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-fabric-enable.md",
             "redirect_url": "/fabric/get-started/copilot-fabric-overview",
             "redirect_document_id": true

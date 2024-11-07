@@ -91,6 +91,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/add-destination-reflex.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-activator",
+      "redirect_document_id": false
+    },    
+    {
       "source_path_from_root": "/docs/real-time-analytics/event-streams/add-manage-eventstream-destinations.md",
       "redirect_url": "/fabric/real-time-intelligence/event-streams/add-manage-eventstream-destinations",
       "redirect_document_id": false
