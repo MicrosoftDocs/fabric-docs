@@ -387,7 +387,7 @@ items:
     - name: Eventhouse monitoring
       href: monitor-eventhouse.md
     - name: Metrics
-      href: monitor-logs-metrics.md
+      href: monitor-metrics.md
     - name: Command logs
       href: monitor-logs-command.md
     - name: Data operation logs

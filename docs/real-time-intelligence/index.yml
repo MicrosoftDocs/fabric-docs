@@ -174,7 +174,7 @@ landingContent:
         - linkListType: reference
           links:
             - text: Metrics
-              url: monitor-logs-metrics.md
+              url: monitor-metrics.md
             - text: Command logs
               url: monitor-logs-command.md
             - text: Data operation logs

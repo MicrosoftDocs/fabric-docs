@@ -16,7 +16,7 @@ Eventhouse monitoring in Fabric offers comprehensive insights into the usage and
 
 When monitoring your eventhouse, you can query the following tables:
 
-* [Metrics](monitor-logs-metrics.md)
+* [Metrics](monitor-metrics.md)
 
 * [Command logs](monitor-logs-command.md)
 * [Data operation logs](monitor-logs-data-operation.md)

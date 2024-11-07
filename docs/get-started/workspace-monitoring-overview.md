@@ -28,9 +28,9 @@ Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhous
 After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following logs:
 
 * Eventhouse monitoring in Real-Time Intelligence
-    * [Metrics](../real-time-intelligence/monitor-logs-metrics.md)
+    * [Metrics](../real-time-intelligence/monitor-metrics.md)
     * [Command logs](../real-time-intelligence/monitor-logs-command.md)
-    * [Data operation logs](../real-time-intelligence/onitor-logs-data-operation.md)
+    * [Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)
     * [Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)
     * [Query logs](../real-time-intelligence/monitor-logs-query.md)
 
