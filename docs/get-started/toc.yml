@@ -67,7 +67,7 @@ items:
         href: workspace-monitoring-overview.md
       - name: Enable monitoring in your workspace
         href: enable-workspace-monitoring.md      
-- name: Discover data in the OneLake catalog
+- name: Find Fabric items with the OneLake catalog
   href: ../governance/onelake-catalog.md
 - name: Copilot in Fabric
   items:
