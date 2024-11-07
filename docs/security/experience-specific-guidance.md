@@ -240,7 +240,7 @@ In newly created workspace C2.W2:
 
 ### Mirrored database
 
-Mirrored databases from the primary region remain unavailable to customers and the settings won't be replicated to the secondary region. To recover it in the event of a regional failure, you'll need to recreate your mirrored database in another workspace from a different region.
+Mirrored databases from the primary region remain unavailable to customers and the settings aren't replicated to the secondary region. To recover it in the event of a regional failure, you need to recreate your mirrored database in another workspace from a different region.
 
 ## Data Factory
 
