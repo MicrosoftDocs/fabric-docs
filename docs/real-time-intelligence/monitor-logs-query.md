@@ -25,13 +25,11 @@ The following table describes the columns stored in the **EventhouseQueryLogs** 
 
 | Column Name | Type | Description |
 |--|--|--|
-| ArtifactId | string | The identifier of the Fabric Eventhouse item. |
-| ArtifactKind | string | The type of Fabric item. Valid values: `Eventhouse`. |
-| ArtifactName | string | The name of the Fabric Eventhouse item. |
 | CacheColdHitsBytes | long | The amount of cold storage data that was available for the query in cold cache due to data prefetching. |
 | CacheColdMissesBytes | long | The amount of cold storage data that was not available for the query in cold cache. |
 | CacheHotHitsBytes | long | The amount of data that was available for the query in hot cache. The amount of data stored in hot cache is defined by the database or table caching policy. |
 | CacheHotMissesBytes | long | The amount of data that was not available for the query in hot cache. |
+| CapacityId | string | The Fabric capacity identifier. |
 | ComponentFault | string | In the event of a query error, the component where the fault occurred. Valid values: `Server` and `Client`. If the query result set is too large, the value is `Client`. If an internal error occurred, the value is `Server`. |
 | CorrelationId | string | The correlation identifier of the query. The value can include components of other items participating in the query, such as the semantic model of the report running the query. |
 | CpuTimeMs | long | The total CPU time (ms) used by the query. |
@@ -43,13 +41,14 @@ The following table describes the columns stored in the **EventhouseQueryLogs** 
 | ExtentsMinScannedTime | datetime | The minimum data scan time. |
 | FailureReason | string | The reason the query failed. |
 | Identity | dynamic | The identity of the user or application that ran the query. |
+| ItemId | string | The identifier of the Fabric Eventhouse item. |
+| ItemKind | string | The type of Fabric item. Valid values: `Eventhouse`. |
+| ItemName | string | The name of the Fabric Eventhouse item. |
+| Level | string | Not applicable. |
 | MemoryPeakBytes | long | The peak memory consumption of the query. |
 | OperationEndTime | datetime | The time (UTC) the operation ended. |
 | OperationId | string | The unique query log identifier. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
-| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values: `EventhouseQueryLogs`. |
-| PremiumCapacityId | string | The Fabric capacity identifier. |
-| PremiumCapacityName | string | The Fabric capacity name. |
 | QueryText | string | The text of the query. |
 | Region | string | The region where the Fabric KQL Database is located. |
 | ResultTableCount | int | The number of tables used by the query. |
@@ -62,6 +61,7 @@ The following table describes the columns stored in the **EventhouseQueryLogs** 
 | TotalExtentsCount | long | The total number of extents in the result set. |
 | TotalRowsCount | long | The total number of rows in the result set. |
 | WorkspaceId | string | The identifier of the workspace. |
+| WorkspaceMonitoringTableName | string | The name of the workspace monitoring table. Valid values: `EventhouseQueryLogs`. |
 | WorkspaceName | string | The name of the workspace. |
 
 ## Sample queries
