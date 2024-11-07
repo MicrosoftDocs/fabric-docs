@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
-ms.date: 10/22/2024
+ms.date: 11/03/2024
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -38,7 +38,7 @@ For troubleshooting, see:
 - [Row-level security](/sql/relational-databases/security/row-level-security) is not currently supported for Azure SQL Database configured for mirroring to Fabric OneLake.  <!--    - Row-level security settings are not currently propagated and reflected from the source SQL database into Fabric.   -->
 - [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql), for example granting permissions to certain columns, are not currently propagated from the source SQL database into Fabric.
 - [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking) settings are not currently propagated from the source SQL database into Fabric.
-- To successfully configure Mirroring for Azure SQL Database, the principal used to connect to the source Azure SQL Database needs to be granted **CONTROL** or **db_owner** permissions.
+- To successfully configure Mirroring for Azure SQL Database, the principal used to connect to the source Azure SQL Database must be granted the permission **ALTER ANY EXTERNAL MIRROR**. This is included in higher level permission like **CONTROL** permission or the **db_owner** role.
 
 ## Network and connectivity security
 
@@ -61,10 +61,9 @@ For troubleshooting, see:
     - In-memory tables
     - Graph  
     - External tables  
-- The following table-level data definition language (DDL) operations aren't allowed on source tables when enabled for Fabric SQL Database mirroring.  
+- The following table-level data definition language (DDL) operations aren't allowed on SQL database source tables when enabled for mirroring.  
     - Switch/Split/Merge partition
-    - Alter primary key  
-    - Truncate table
+    - Alter primary key
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
 
 ## Column level

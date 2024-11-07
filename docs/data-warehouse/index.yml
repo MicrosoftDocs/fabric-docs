@@ -76,7 +76,7 @@ landingContent:
             url: row-level-security.md
           - text: Column-level security
             url: column-level-security.md
-          - text: Share your Warehouse
+          - text: Share your data
             url: share-warehouse-manage-permissions.md            
   # Card 
   - title: Ingest data

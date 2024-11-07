@@ -8,6 +8,8 @@ items:
     href: overview.md
   - name: Compare with Azure solutions
     href: real-time-intelligence-compare.md
+  - name: Git and deployment pipelines
+    href: eventhouse-git-deployment-pipelines.md
   - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
@@ -264,6 +266,12 @@ items:
         href: event-house-onelake-availability.md
       - name: Create OneLake shortcuts in a KQL database
         href: onelake-shortcuts.md
+      - name: Query acceleration over OneLake shortcuts
+        items: 
+        - name: Accelerate queries over OneLake shortcuts - overview
+          href: query-acceleration-overview.md
+        - name: Accelerate queries over OneLake shortcuts
+          href: query-acceleration.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md

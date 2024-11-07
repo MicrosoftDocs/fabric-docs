@@ -52,6 +52,10 @@ Copilot for Real-Time Intelligence is an advanced AI tool designed to help you e
 
 For more information, see [Copilot for Real-Time Intelligence overview](copilot-real-time-analytics.md).
 
+## Copilot for SQL database
+
+Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline your OLTP database tasks. Key features of Copilot for SQL database include Natural Language to SQL, code completion, quick actions, and document-based Q&A. For more information, see [Copilot for SQL database](../database/sql/copilot.md).
+
 ## Create your own AI solution accelerators
 
 ### Build your own copilots 
