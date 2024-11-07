@@ -17,12 +17,12 @@ GraphQL operation logs are part of the [workspace monitoring](../get-started/wor
 A log event for each query run by the Fabric API for GraphQL on its connected data sources, is stored in two tables: *GraphQLMetrics* and *GraphQLLog*.
 
 Use query logs to:
-* Identify when behavior changes and potential degradation in the API took place.
-* Identify unusual or heavy queries consuming large amounts of resources.
-* Identify the users/applications running the highest number of queries.
+* Identify behavior changes and potential API degradation.
+* Detect unusual or resource-heavy queries.
+* Identify users and applications with the highest number of queries
 * Analyze query performance and trends.
 * Troubleshoot slow queries.
-* Troubleshoot why a specific GraphQL query is not working.
+* Diagnose issues with specific GraphQL queries.
 
 This table lists the GraphQL logs.
 
@@ -38,7 +38,6 @@ This table lists the GraphQL logs.
 | CustomerTenantId | string | Customer Tenant ID, where the operation was performed. |
 | PlatformMonitoringTableName | string | The name of the table to records belongs to (or the certified event type of the record). Format is \<WorkloadName\> + [OperationType>]+ \<TelemetryType\> |
 | Region | string | The region of the resource emitting the event; for example, East US or France South. |
-|--|--|--|
 | MetricTimeGrain | string | Time grain of the metric (ISO 8601 Duration). |
 | MetricUnitName | string | Unit of the metric. |
 | MetricSumValue | long | The aggregated sum value of a metric during a single minute. |
