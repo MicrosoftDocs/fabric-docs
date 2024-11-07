@@ -182,13 +182,13 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 1. Select the file that you need to copy into the lakehouse.
 
-   :::image type="content" source="./media/security-trusted-workspace-access/file-selection.png" alt-text="Screenshot showing file selection.png" lightbox="./media/security-trusted-workspace-access/file-selection.png":::
+   :::image type="content" source="./media/security-trusted-workspace-access/file-selection.png" alt-text="Screenshot showing file selection." lightbox="./media/security-trusted-workspace-access/file-selection.png":::
 
     When done, select **Next**.
 
 1. On the **Review + save** screen, select **Start data transfer immediately**. When done, select **Save + Run**.
 
-   :::image type="content" source="./media/security-trusted-workspace-access/review-save.png" alt-text="Screenshot showing the review-and-save-screen.png" lightbox="./media/security-trusted-workspace-access/review-save.png":::
+   :::image type="content" source="./media/security-trusted-workspace-access/review-save.png" alt-text="Screenshot showing the review and save screen." lightbox="./media/security-trusted-workspace-access/review-save.png":::
 
 1. When the pipeline status changes from *Queued* to *Succeeded*, go to the lakehouse and verify that the data tables were created.
 

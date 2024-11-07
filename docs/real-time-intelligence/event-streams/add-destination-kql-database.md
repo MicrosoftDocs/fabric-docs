@@ -47,7 +47,7 @@ Direct ingestion mode ingests your event data directly into the Eventhouse witho
 
 1. Select **Save**.
 
-   ![A screenshot of the Eventhouse configuration screen.](media/add-destination-kql-database/eventhouse-direct-ingestion.png)
+   :::image type="content" border="true" source="media/add-destination-kql-database/eventhouse-direct-ingestion.png" alt-text="A screenshot of the Eventhouse configuration screen.":::
 
 1. Connect the new Eventhouse destination card to the output of your eventstream if not already connected, and then select **Publish**.
 
@@ -61,7 +61,7 @@ Direct ingestion mode ingests your event data directly into the Eventhouse witho
 
 1. Provide a **Data connection name** or keep the name provided, and then select **Next**. It can take a few minutes to pull data from the eventstream.
 
-   ![A screenshot of the Get data screen for the KQL Database destination, with the Next button highlighted.](media/add-destination-kql-database/select-table.png)
+   :::image type="content" border="true" source="media/add-destination-kql-database/select-table.png" alt-text="A screenshot of the Get data screen for the KQL Database destination, with the Next button highlighted.":::
 
 1. On the **Inspect the data** screen, you can:
 
@@ -102,7 +102,7 @@ The event processing before ingestion mode processes your event data before inge
 
 1. On the **KQL Database** screen, **Event processing before ingestion** should already be selected. Complete the rest of the information about your KQL database, and then select **Save**.
 
-   ![A screenshot of the KQL Database configuration screen for Event processing before ingestion.](media/add-destination-kql-database/eventhouse-event-processing.png)
+   :::image type="content" border="true" source="media/add-destination-kql-database/eventhouse-event-processing.png" alt-text="A screenshot of the KQL Database configuration screen for Event processing before ingestion.":::
 
 1. To implement the newly added KQL Database destination, select **Publish**.
 

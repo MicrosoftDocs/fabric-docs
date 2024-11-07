@@ -31,7 +31,7 @@ The integration of the Real-Time hub feature within Fabric event streams further
 
 Once you create a new eventstream, you can add a source to the eventstream and the default stream is automatically generated. The following example shows that the default stream **es-5-stream** is automatically generated when you add a bike sample data source to the Fabric event streams item.
 
-![A screenshot of an automatically generated default stream.](media/create-default-derived-streams/default-stream.png)
+:::image type="content" border="true" source="media/create-default-derived-streams/default-stream.png" alt-text="A screenshot of an automatically generated default stream.":::
 
 ## Create a derived stream
 

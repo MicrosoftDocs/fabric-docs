@@ -127,7 +127,7 @@ After you connect to a Git repository and workspace, you can commit changes to G
 
    :::image type="content" source="media/cicd-data-pipelines/source-control-button.png" alt-text="Screenshot of the Source control button in the Fabric workspace UI.":::
 
-1. Select the **Changes** tab from the **Source control** panel. A list appears with all the items you changed, and an icon indicating the status: **New** ![New icon](media/cicd-data-pipelines/new-icon.png), **Modified** ![Modified icon](media/cicd-data-pipelines/modified-icon.png), **Conflict** ![Conflict icon](media/cicd-data-pipelines/conflict-icon.png), or **Deleted** ![Deleted icon](media/cicd-data-pipelines/deleted-icon.png).
+1. Select the **Changes** tab from the **Source control** panel. A list appears with all the items you changed, and an icon indicating the status: **New** :::image type="content" border="true" source="media/cicd-data-pipelines/new-icon.png" alt-text="New icon":::, **Modified** :::image type="content" border="true" source="media/cicd-data-pipelines/modified-icon.png" alt-text="Modified icon":::, **Conflict** :::image type="content" border="true" source="media/cicd-data-pipelines/conflict-icon.png" alt-text="Conflict icon":::, or **Deleted** :::image type="content" border="true" source="media/cicd-data-pipelines/deleted-icon.png" alt-text="Deleted icon":::.
 1. Select the items you want to commit. To select all items, check the top box.
 1. _(Optional)_ Add a commit comment in the box.
 1. Select **Commit**.
@@ -162,7 +162,7 @@ Before you get started, be sure to set up the following prerequisites:
 
 1. From the **Workspaces** flyout, select **Deployment pipelines**.
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-deployment-pipelines.png" alt-text="Screenshot showing the Workspaces flyout with the Deployment pipelines button in the Fabric UI. ":::
+   :::image type="content" source="media/cicd-data-pipelines/workspace-deployment-pipelines.png" alt-text="Screenshot showing the Workspaces flyout with the Deployment pipelines button in the Fabric UI.":::
 
 1. Select **Create pipeline** or **+ New pipeline**.
 

@@ -29,7 +29,7 @@ The data loss prevention side pane lists the name of the item and all the DLP po
 
 Each DLP policy issue is shown on a card. The card shows you the policy tip, indicates what kind of sensitive data was detected, and offers actions you can take if you believe the data was falsely identified.
 
-![Screenshot of DLP policies side pane.](./media/data-loss-prevention-respond/purview-dlp-override-pane.png)
+:::image type="content" border="true" source="./media/data-loss-prevention-respond/purview-dlp-override-pane.png" alt-text="Screenshot of DLP policies side pane.":::
 
 ## Take action on the violation
 

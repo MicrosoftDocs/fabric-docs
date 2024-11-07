@@ -53,17 +53,17 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
     After the query executes successfully, you enabled CDC in your Azure SQL managed instance. 
 
-   ![A screenshot of showing cdc has enabled.](media/add-source-azure-sql-managed-instance-change-data-capture/enable-cdc.png)
+   :::image type="content" border="true" source="media/add-source-azure-sql-managed-instance-change-data-capture/enable-cdc.png" alt-text="A screenshot of showing cdc has enabled.":::
 
 ## Add Azure SQL Managed Instance CDC as a source
 
 1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
+   :::image type="content" border="true" source="media/external-sources/new-eventstream.png" alt-text="A screenshot of creating a new eventstream.":::
 
 2. On the next screen, select **Add external source**.
 
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
+   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
 
 ## Configure and connect to Azure SQL Managed Instance CDC
 

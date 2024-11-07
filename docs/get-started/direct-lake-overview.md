@@ -56,16 +56,16 @@ The diagram depicts the following user actions, processes, and features.
 
 | Item | Description |
 | --- | --- |
-| ![Item 1.](../media/legend-number/legend-number-01-fabric.svg) | OneLake is a data lake that stores analytics data in Parquet format. This file format is [optimized](direct-lake-understand-storage.md#optimize) for storing data for Direct Lake semantic models. |
-| ![Item 2.](../media/legend-number/legend-number-02-fabric.svg) | A Fabric lakehouse or Fabric warehouse exists in a workspace that's on Fabric capacity. The lakehouse has a SQL analytics endpoint, which provides a SQL-based experience for querying. Tables (or views) provide a means to query the Delta tables in OneLake by using Transact-SQL (T-SQL). |
-| ![Item 3.](../media/legend-number/legend-number-03-fabric.svg) | A Direct Lake semantic model exists in a Fabric workspace. It connects to tables or views in either the lakehouse or warehouse. |
-| ![Item 4.](../media/legend-number/legend-number-04-fabric.svg) | A user opens a Power BI report. |
-| ![Item 5.](../media/legend-number/legend-number-05-fabric.svg) | The Power BI report sends Data Analysis Expressions (DAX) queries to the Direct Lake semantic model. |
-| ![Item 6.](../media/legend-number/legend-number-06-fabric.svg) | When possible (and necessary), the semantic model loads columns into memory directly from the Parquet files stored in OneLake. Queries achieve in-memory performance, which is very fast. |
-| ![Item 7.](../media/legend-number/legend-number-07-fabric.svg) | The semantic model returns query results. |
-| ![Item 8.](../media/legend-number/legend-number-08-fabric.svg) | The Power BI report renders the visuals. |
-| ![Item 9.](../media/legend-number/legend-number-09-fabric.svg) | In certain circumstances, such as when the semantic model exceeds the [guardrails](#fabric-capacity-guardrails-and-limitations) of the capacity, semantic model queries automatically fall back to DirectQuery mode. In this mode, queries are sent to the SQL analytics endpoint of the lakehouse or warehouse. |
-| ![Item 10.](../media/legend-number/legend-number-10-fabric.svg) | DirectQuery queries sent to the SQL analytics endpoint in turn query the Delta tables in OneLake. For this reason, query performance might be slower than in-memory queries. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-01-fabric.svg" alt-text="Item 1."::: | OneLake is a data lake that stores analytics data in Parquet format. This file format is [optimized](direct-lake-understand-storage.md#optimize) for storing data for Direct Lake semantic models. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-02-fabric.svg" alt-text="Item 2."::: | A Fabric lakehouse or Fabric warehouse exists in a workspace that's on Fabric capacity. The lakehouse has a SQL analytics endpoint, which provides a SQL-based experience for querying. Tables (or views) provide a means to query the Delta tables in OneLake by using Transact-SQL (T-SQL). |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-03-fabric.svg" alt-text="Item 3."::: | A Direct Lake semantic model exists in a Fabric workspace. It connects to tables or views in either the lakehouse or warehouse. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-04-fabric.svg" alt-text="Item 4."::: | A user opens a Power BI report. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-05-fabric.svg" alt-text="Item 5."::: | The Power BI report sends Data Analysis Expressions (DAX) queries to the Direct Lake semantic model. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-06-fabric.svg" alt-text="Item 6."::: | When possible (and necessary), the semantic model loads columns into memory directly from the Parquet files stored in OneLake. Queries achieve in-memory performance, which is very fast. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-07-fabric.svg" alt-text="Item 7."::: | The semantic model returns query results. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-08-fabric.svg" alt-text="Item 8."::: | The Power BI report renders the visuals. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-09-fabric.svg" alt-text="Item 9."::: | In certain circumstances, such as when the semantic model exceeds the [guardrails](#fabric-capacity-guardrails-and-limitations) of the capacity, semantic model queries automatically fall back to DirectQuery mode. In this mode, queries are sent to the SQL analytics endpoint of the lakehouse or warehouse. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-10-fabric.svg" alt-text="Item 10."::: | DirectQuery queries sent to the SQL analytics endpoint in turn query the Delta tables in OneLake. For this reason, query performance might be slower than in-memory queries. |
 
 The following sections describe Direct Lake concepts and features, including column loading, framing, automatic updates, and DirectQuery fallback.
 
@@ -101,13 +101,13 @@ The diagram depicts the following processes and features.
 
 | Item | Description |
 | --- | --- |
-| ![Item 1.](../media/legend-number/legend-number-01-fabric.svg) | A semantic model exists in a Fabric workspace. |
-| ![Item 2.](../media/legend-number/legend-number-02-fabric.svg) | Framing operations take place periodically, and they set the baseline for all future [transcoding](#column-loading-transcoding) events. Framing operations can happen automatically, manually, on schedule, or programmatically. |
-| ![Item 3.](../media/legend-number/legend-number-03-fabric.svg) | OneLake stores metadata and Parquet files, which are represented as Delta tables. |
-| ![Item 4.](../media/legend-number/legend-number-04-fabric.svg) | The last framing operation includes Parquet files related to the Delta tables, and specifically the Parquet files that were added before the _last_ framing operation. |
-| ![Item 5.](../media/legend-number/legend-number-05-fabric.svg) | A later framing operation includes Parquet files added after the _last_ framing operation. |
-| ![Item 6.](../media/legend-number/legend-number-06-fabric.svg) | Resident columns in the Direct Lake semantic model might be evicted from memory, and the point in time of the refresh becomes the new baseline for all future transcoding events. |
-| ![Item 7.](../media/legend-number/legend-number-07-fabric.svg) | Subsequent data modifications, represented by new Parquet files, aren't visible until the next framing operation occurs. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-01-fabric.svg" alt-text="Item 1."::: | A semantic model exists in a Fabric workspace. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-02-fabric.svg" alt-text="Item 2."::: | Framing operations take place periodically, and they set the baseline for all future [transcoding](#column-loading-transcoding) events. Framing operations can happen automatically, manually, on schedule, or programmatically. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-03-fabric.svg" alt-text="Item 3."::: | OneLake stores metadata and Parquet files, which are represented as Delta tables. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-04-fabric.svg" alt-text="Item 4."::: | The last framing operation includes Parquet files related to the Delta tables, and specifically the Parquet files that were added before the _last_ framing operation. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-05-fabric.svg" alt-text="Item 5."::: | A later framing operation includes Parquet files added after the _last_ framing operation. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-06-fabric.svg" alt-text="Item 6."::: | Resident columns in the Direct Lake semantic model might be evicted from memory, and the point in time of the refresh becomes the new baseline for all future transcoding events. |
+| :::image type="content" border="true" source="../media/legend-number/legend-number-07-fabric.svg" alt-text="Item 7."::: | Subsequent data modifications, represented by new Parquet files, aren't visible until the next framing operation occurs. |
 
 It's not always desirable to have data representing the latest state of any Delta table when a transcoding operation takes place. Consider that framing can help you provide consistent query results in environments where data in Delta tables is transient. Data can be transient for several reasons, such as when long-running extract, transform, and load (ETL) processes occur.
 

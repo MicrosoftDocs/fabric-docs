@@ -52,7 +52,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
    1. Select an existing **Delta table**, or create a new one to receive data.
    1. Select the **Input data format** that is sent to your lakehouse. The supported data formats are JSON, Avro, and CSV (with header).
 
-   ![A screenshot of the top part of the Lakehouse configuration screen.](media/add-destination-lakehouse/lakehouse-screen.png)
+   :::image type="content" border="true" source="media/add-destination-lakehouse/lakehouse-screen.png" alt-text="A screenshot of the top part of the Lakehouse configuration screen.":::
 
 1. Select **Advanced**.
 
@@ -62,7 +62,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
 
    - **Maximum duration** is the maximum duration that the lakehouse takes to ingest a single file. The minimum is 1 minute and maximum is 2 hours. The longer the duration, the more rows are ingested in a file.
 
-   ![A screenshot of the Advanced section of the Lakehouse configuration screen.](media/add-destination-lakehouse/advanced-screen.png)
+   :::image type="content" border="true" source="media/add-destination-lakehouse/advanced-screen.png" alt-text="A screenshot of the Advanced section of the Lakehouse configuration screen.":::
 
 1. Select **Save**.
 

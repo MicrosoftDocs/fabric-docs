@@ -203,7 +203,7 @@ Entry Points:
 
 * **Context menu** > **Recent runs**
 
-    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the options menu. ":::
+    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the options menu.":::
 
 * Using `workloadClient.itemRecentRuns.open`.
 
