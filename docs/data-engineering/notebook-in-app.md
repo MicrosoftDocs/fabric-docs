@@ -1,5 +1,5 @@
 ---
-title: How to integrate notebooks with org app
+title: How to integrate notebooks with Org app
 description: Learn how to create an org app, integrate notebooks, and preview contents in the app.
 ms.reviewer: snehagunda
 ms.author: jingzh
