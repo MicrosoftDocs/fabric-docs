@@ -29,8 +29,8 @@ To access Git with your Microsoft Fabric workspace, ensure the following prerequ
   - [Users can create Fabric items](../admin/fabric-switch.md)
   - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
   - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories-preview)
-- Either an Azure DevOps or GitHub account.
-  - For an Azure DevOps account:
+- Either an Azure DevOps organization or GitHub account.
+  - For an Azure DevOps organization:
     - An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
     - Access to an existing repository
   - For a GitHub account:
@@ -88,7 +88,7 @@ You can now commit changes to Git, as described here.
 
 After the changes are committed, the items that were committed are removed from the list, and the workspace will point to the new commit that it synced to.
 
-   :::image type="content" source="media/cicd-copy-job/source-control-commit.png" alt-text="Screenshot of a committed Copy Job items.":::
+   :::image type="content" source="media/cicd-copy-job/source-control-commit.png" alt-text="Screenshot of a committed Copy Job item.":::
 
 
 ## Get started with deployment pipelines for Git
