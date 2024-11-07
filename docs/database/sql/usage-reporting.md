@@ -13,6 +13,8 @@ The article explains compute usage reporting of the SQL database in Microsoft Fa
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
 
+During the current preview, there's no cost for SQL database in Fabric.
+
 ## Capacity
 
 In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric concepts and licenses](../../enterprise/licenses.md).
