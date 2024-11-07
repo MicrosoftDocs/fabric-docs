@@ -4,12 +4,12 @@ description: "This article describes the external data sharing feature in Micros
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.date: 05/05/2024
+ms.date: 11/07/2024
 
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
 ---
 
-# External data sharing in Microsoft Fabric (preview)
+# External data sharing in Microsoft Fabric
 
 Fabric external data sharing is a feature that enables Fabric users to share data from their tenant with users in another Fabric tenant. The data is shared *in-place* from [OneLake](../onelake/onelake-overview.md) storage locations in the sharer's tenant, meaning that no data is actually copied to the other tenant. Rather, this cross-tenant sharing creates a [OneLake shortcut](../onelake/onelake-shortcuts.md) in the other tenant that points back to the original data in the sharer's tenant. Data that is shared across tenant boundaries is exposed to users in the other tenant as read-only, and can be consumed by any OneLake compatible Fabric workload in that tenant.
 
@@ -30,10 +30,7 @@ External data share links don't work for users who are in the tenant where the e
 
 ## Supported Fabric item types
 
-External data sharing is currently supported for data residing in tables or files within:
-
-* [Lakehouses](../data-engineering/lakehouse-overview.md)
-* [KQL databases](../real-time-analytics/create-database.md)
+External data sharing is currently supported only for lakehouses and mirrored databases.
 
 ## Revoking external data shares
 
@@ -56,6 +53,10 @@ With this understanding in mind, be aware of the following:
 ## Considerations and limitations
 
 * **Shortcuts:** Shortcuts contained in folders that are shared via external data sharing won't resolve in the consumer tenant.
+
+* **Sharing schemas**: Sharing an entire schema doesn't work: Lakehouse supports database schemas, but if you share one, it won't work.
+
+* **External data shares in non-home regions**: External data shares can only be accepted in a capacity that is located in the same region as the tenant. For example, if a tenant is in East US and has two capacities, one in East US and one in West US, users will not be able to accept shares in Lakehouses that use the West US capacity.
 
 ## Related content
 
