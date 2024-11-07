@@ -77,12 +77,15 @@ Here's an example of Eventstream API body with base64 decoded:
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "AzureEventHub",
       "type": "AzureEventHub",
-      "properties": {
+      "properties":
+      {
         "dataConnectionId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
         "consumerGroupName": "$Default",
-        "inputSerialization": {
+        "inputSerialization":
+        {
           "type": "Json",
-          "properties": {
+          "properties":
+          {
             "encoding": "UTF8"
           }
         }
@@ -94,15 +97,18 @@ Here's an example of Eventstream API body with base64 decoded:
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "kql",
       "type": "Eventhouse",
-      "properties": {
+      "properties":
+      {
         "dataIngestionMode": "ProcessedIngestion",
         "workspaceId": "bbbb1111-cc22-3333-44dd-555555eeeeee",
         "itemId": "cccc2222-dd33-4444-55ee-666666ffffff",
         "databaseName": "mydatabase",
         "tableName": "mytable",
-        "inputSerialization": {
+        "inputSerialization":
+        {
           "type": "Json",
-          "properties": {
+          "properties":
+          {
             "encoding": "UTF8"
           }
         }
@@ -115,70 +121,30 @@ Here's an example of Eventstream API body with base64 decoded:
     {
       "name": "Filter",
       "type": "Filter",
-      "inputNodes": [
-        {
-          "name": "eventstream-1"
-        }
-      ],
-      "properties": {
+      "inputNodes": [{"name": "eventstream-1"}],
+      "properties":
+      {
         "conditions": [
           {
-            "column": {
+            "column":
+            {
               "expressionType": "ColumnReference",
               "node": null,
               "columnName": "BikepointID",
               "columnPathSegments": []
             },
             "operatorType": "NotEquals",
-            "value": {
+            "value":
+            {
               "expressionType": "Literal",
               "dataType": "Nvarchar(max)",
               "value": "0"
             }
           }
         ]
-      },
-      "inputSchemas": [
-        {
-          "name": "eventstream-1",
-          "schema": {
-            "columns": [
-              {
-                "name": "BikepointID",
-                "type": "Nvarchar(max)",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "Street",
-                "type": "Nvarchar(max)",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "Latitude",
-                "type": "Float",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "Longitude",
-                "type": "Float",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "No_Bikes",
-                "type": "BigInt",
-                "fields": null,
-                "items": null
-              }
-            ]
-          }
-        }
-      ]
+      }
     }
-   ],
+  ],
   "compatibilityLevel": "1.0"
 }
 ```
@@ -205,12 +171,15 @@ Example of Eventstream source in API body:
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "AzureEventHub",
       "type": "AzureEventHub",
-      "properties": {
+      "properties":
+      {
         "dataConnectionId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
         "consumerGroupName": "$Default",
-        "inputSerialization": {
+        "inputSerialization":
+        {
           "type": "Json",
-          "properties": {
+          "properties":
+          {
             "encoding": "UTF8"
           }
         }
@@ -243,24 +212,23 @@ Example of Eventstream source in API body:
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "kql",
       "type": "Eventhouse",
-      "properties": {
+      "properties":
+      {
         "dataIngestionMode": "ProcessedIngestion",
         "workspaceId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
         "itemId": "cccc2222-dd33-4444-55ee-666666ffffff",
         "databaseName": "myeventhouse",
         "tableName": "mytable",
-        "inputSerialization": {
+        "inputSerialization":
+        {
           "type": "Json",
-          "properties": {
+          "properties":
+          {
             "encoding": "UTF8"
           }
         }
       },
-      "inputNodes": [
-         {
-            "name": "eventstream-1"
-         }
-      ]
+      "inputNodes": [{"name": "eventstream-1"}]
     }
   ]
 }
@@ -284,33 +252,32 @@ Example of Eventstream operator in API body:
 
 ```json
 {
-"operators": [
-        {
-            "name": "FilterName",
-            "type": "Filter",
-            "inputNodes": [],
-            "properties": {
-                "conditions": [
-                    {
-                        "column": {
-                            "node": "nodeName",
-                            "columnName": "columnName",
-                            "columnPath": [
-                                "path",
-                                "to",
-                                "column"
-                            ]
-                        },
-                        "operator": "Equals",
-                        "value": {
-                            "dataType": "nvarchar(max)",
-                            "value": "stringValue"
-                        }
-                    }
-                ]
+  "operators": [
+    {
+      "name": "FilterName",
+      "type": "Filter",
+      "inputNodes": [],
+      "properties":
+      {
+        "conditions": [
+          {
+            "column":
+            {
+              "node": "nodeName",
+              "columnName": "columnName",
+              "columnPath": ["path","to","column"]
+            },
+            "operator": "Equals",
+            "value":
+            {
+              "dataType": "nvarchar(max)",
+              "value": "stringValue"
             }
-        },
-    ]
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
@@ -337,14 +304,11 @@ Example of stream in API body:
       "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "stream-1",
       "type": "DefaultStream",
-      "properties": {},
-      "inputNodes": [
-        {
-          "name": "bike"
-        }
-      ]
+      "properties":
+      {},
+      "inputNodes": [{"name": "bike"}]
     }
-  ],
+  ]
 }
 ```
 
@@ -364,12 +328,15 @@ Example of stream in API body:
         {
           "name": "AzureEventHub",
           "type": "AzureEventHub",
-          "properties": {
+          "properties":
+          {
             "dataConnectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
             "consumerGroupName": "$Default",
-            "inputSerialization": {
+            "inputSerialization":
+            {
               "type": "Json",
-              "properties": {
+              "properties":
+              {
                 "encoding": "UTF8"
               }
             }
@@ -380,15 +347,18 @@ Example of stream in API body:
         {
           "name": "kql",
           "type": "Eventhouse",
-          "properties": {
+          "properties":
+          {
             "dataIngestionMode": "ProcessedIngestion",
             "workspaceId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
             "itemId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
             "databaseName": "myeventhouse",
             "tableName": "mytable",
-            "inputSerialization": {
+            "inputSerialization":
+            {
               "type": "Json",
-              "properties": {
+              "properties":
+              {
                 "encoding": "UTF8"
               }
             }
@@ -464,12 +434,15 @@ Example of stream in API body:
           "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
           "name": "AzureEventHub",
           "type": "AzureEventHub",
-          "properties": {
+          "properties":
+          {
             "dataConnectionId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
             "consumerGroupName": "$Default",
-            "inputSerialization": {
+            "inputSerialization":
+            {
               "type": "Json",
-              "properties": {
+              "properties":
+              {
                 "encoding": "UTF8"
               }
             }
@@ -481,15 +454,18 @@ Example of stream in API body:
           "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
           "name": "kql",
           "type": "Eventhouse",
-          "properties": {
+          "properties":
+          {
             "dataIngestionMode": "ProcessedIngestion",
             "workspaceId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
             "itemId": "cccccccc-2222-3333-4444-dddddddddddd",
             "databaseName": "myeventhouse",
             "tableName": "mytable",
-            "inputSerialization": {
+            "inputSerialization":
+            {
               "type": "Json",
-              "properties": {
+              "properties":
+              {
                 "encoding": "UTF8"
               }
             }
@@ -516,7 +492,6 @@ Example of stream in API body:
           }
        }
     }
-    
     ```
 
 ## Related content
