@@ -10,7 +10,7 @@ ms.date: 11/06/2024
 
 # Eventhouse monitoring
 
-Eventhouse monitoring in Fabric offers comprehensive insights into the usage and performance of your eventhouse by collecting end-to-end metrics and logs for all aspects of an Eventhouse. It is part of [workspace monitoring](../get-started/workspace-monitoring-overview.md) that allows you to monitor Fabric items in your workspace. Eventhouse monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse, which you can use to optimize your eventhouse and improve the user experience.
+Eventhouse monitoring in Fabric offers comprehensive insights into the usage and performance of your eventhouse by collecting end-to-end metrics and logs for all aspects of an Eventhouse. It's part of [workspace monitoring](../get-started/workspace-monitoring-overview.md) that allows you to monitor Fabric items in your workspace. Eventhouse monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse, which you can use to optimize your eventhouse and improve the user experience.
 
 ## Eventhouse monitoring tables
 

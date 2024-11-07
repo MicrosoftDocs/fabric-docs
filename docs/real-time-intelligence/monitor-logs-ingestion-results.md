@@ -14,7 +14,7 @@ The ingestion results logs table contains the list of results from data ingestio
 
 ## Ingestion results logs table
 
-Ingestion operation results provides details on both successful and failed ingestions and are supported for queued ingestions.
+Ingestion operation results provide details on both successful and failed ingestions and are supported for queued ingestions.
 
 Use the ingestion results logs to:
 
@@ -47,12 +47,12 @@ The following table describes the columns stored in the **EventhouseIngestionRes
 | OperationEndTime | datetime | The time (UTC) the operation ended. |
 | OperationId | string | The unique ingestion results log identifier. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
-| Region | string | The region where the Fabric KQL Database is located. |
+| Region | string | The region where the Fabric KQL database is located. |
 | ResultCode | string | The result code of the ingestion operation. |
 | ShouldRetry | boolean | Indicates whether the operation should be retried. |
 | Status | string | The completion status of the ingestion. |
 | TableName | string | The name of the destination table used by the ingestion. |
-| Timestamp | datetime | The time (UTC) the event was generated.. |
+| Timestamp | datetime | The time (UTC) the event was generated. |
 | WorkspaceId | string | The identifier of the workspace. |
 | WorkspaceMonitoringTableName | string | The name of the workspace monitoring table. Valid values:  EventhouseIngestionResults |
 | WorkspaceName | string | The name of the workspace. |

@@ -48,7 +48,7 @@ The following table describes the columns stored in the **EventhouseDataOperatio
 | Level | string | Not applicable. |
 | OperationId | string | The unique data operation log identifier. |
 | OriginalSizeInBytes | long | The original size of data ingested. |
-| Region | string | The region where the Fabric KQL Database is located. |
+| Region | string | The region where the Fabric KQL database is located. |
 | Status | string | Not applicable. |
 | TableName | string | The name of the destination table used by the data operation. |
 | Timestamp | datetime | The time (UTC) the event was generated. |

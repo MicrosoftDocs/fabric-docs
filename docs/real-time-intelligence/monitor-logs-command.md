@@ -25,9 +25,9 @@ The following table describes the columns stored in the **EventhouseCommandLogs*
 | Column Name | Type | Description |
 |--|--|--|
 | CacheColdHitsBytes | long | The amount of cold storage data that was available for the command in cold cache due to data prefetching. |
-| CacheColdMissesBytes | long | The amount of cold storage data that was not available for the command in cold cache. |
+| CacheColdMissesBytes | long | The amount of cold storage data that wasn't available for the command in cold cache. |
 | CacheHotHitsBytes | long | The amount of data that was available for the command in the hot cache. The amount of data stored in hot cache is defined by the database or table caching policy. |
-| CacheHotMissesBytes | long | The amount of data that was not available for the command in hot cache. |
+| CacheHotMissesBytes | long | The amount of data that wasn't available for the command in hot cache. |
 | CapacityId | string | The Fabric capacity identifier. |
 | CommandText | string | The text of the command. |
 | ComponentFault | string | In the event of a command error, the component where the fault occurred. Valid values: `Server` or `Client`. |
@@ -51,7 +51,7 @@ The following table describes the columns stored in the **EventhouseCommandLogs*
 | OperationId | string | The unique command log identifier. |
 | OperationName | string | The name of the operation performed. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
-| Region | string | The region where the Fabric KQL Database is located. |
+| Region | string | The region where the Fabric KQL database is located. |
 | ScannedExtentsCount | long | The number of extents scanned by the command. A high number might indicate the cause of a command latency issue. |
 | ScannedRowsCount | long | The number of rows scanned by the command. A high number might indicate the cause of a command latency issue. |
 | SourceApplication | string | The name of the source application that ran the command. |

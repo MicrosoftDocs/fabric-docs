@@ -26,9 +26,9 @@ The following table describes the columns stored in the **EventhouseQueryLogs** 
 | Column Name | Type | Description |
 |--|--|--|
 | CacheColdHitsBytes | long | The amount of cold storage data that was available for the query in cold cache due to data prefetching. |
-| CacheColdMissesBytes | long | The amount of cold storage data that was not available for the query in cold cache. |
+| CacheColdMissesBytes | long | The amount of cold storage data that wasn't available for the query in cold cache. |
 | CacheHotHitsBytes | long | The amount of data that was available for the query in hot cache. The amount of data stored in hot cache is defined by the database or table caching policy. |
-| CacheHotMissesBytes | long | The amount of data that was not available for the query in hot cache. |
+| CacheHotMissesBytes | long | The amount of data that wasn't available for the query in hot cache. |
 | CapacityId | string | The Fabric capacity identifier. |
 | ComponentFault | string | In the event of a query error, the component where the fault occurred. Valid values: `Server` and `Client`. If the query result set is too large, the value is `Client`. If an internal error occurred, the value is `Server`. |
 | CorrelationId | string | The correlation identifier of the query. The value can include components of other items participating in the query, such as the semantic model of the report running the query. |
@@ -50,7 +50,7 @@ The following table describes the columns stored in the **EventhouseQueryLogs** 
 | OperationId | string | The unique query log identifier. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
 | QueryText | string | The text of the query. |
-| Region | string | The region where the Fabric KQL Database is located. |
+| Region | string | The region where the Fabric KQL database is located. |
 | ResultTableCount | int | The number of tables used by the query. |
 | ResultTableStatistics | string | The detailed statistics of the tables used by the query. |
 | ScannedExtentsCount | long | The number of extents scanned by the query. A high number might indicate the cause of a query latency issue. |

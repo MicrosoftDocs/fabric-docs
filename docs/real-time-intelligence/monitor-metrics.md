@@ -41,7 +41,7 @@ The following table describes the columns stored in the **EventhouseMetrics** ta
 | MetricSpecificDimensions | dynamic | The specific dimensions of each metric, as described in [Metric Specific Dimension Column](#metric-specific-dimension-column). Where relevant, dimension descriptions are provided as part of the metric description. |
 | MetricSumValue | long | The metric sum value. |
 | OperationName | string | The name of the operation performed. |
-| Region | string | The region where the Fabric KQL Database is located. |
+| Region | string | The region where the Fabric KQL database is located. |
 | Timestamp | datetime | The time (UTC) the event was generated. |
 | WorkspaceId | string | The identifier of the workspace. |
 | WorkspaceMonitoringTableName | string | The name of the workspace monitoring table. Valid values:  EventhouseQueryLogs |
@@ -64,13 +64,13 @@ The following table contains a list of all the reported Eventhouse metrics, and 
 | Export | ContinuousExportMaxLateness | Count | Max | The lateness (minutes) reported by the continuous export jobs in the KQL Database. |  |
 | Export | ContinousExportPendingCount | Count | Max | The number of pending continuous export jobs that are ready to run but are waiting in a queue, possibly due to insufficient capacity. |  |
 | Export | ContinuousExportResult | The Failure/Success result of each continuous export run. | ContinuousExportName | The result of each continuous export run, indicating either failure or success. | ContinuousExportName |
-| Ingestion | DiscoveryLatencyInSeconds | Seconds | Avg | The time from when data is enqueued until it is discovered by data connections. This time isn't included in the *Stage latency* or *Ingestion latency* metrics. Discovery latency may increase in the following situations:<li>When cross-region data connections are used.</li><li>In Event Hubs data connections, if the number of Event Hubs partitions is insufficient for the data egress volume.</li> | ComponentType, ComponentName |
+| Ingestion | DiscoveryLatencyInSeconds | Seconds | Avg | The time from when data is enqueued until it's discovered by data connections. This time isn't included in the *Stage latency* or *Ingestion latency* metrics. Discovery latency might increase in the following situations:<li>When cross-region data connections are used.</li><li>In Event Hubs data connections, if the number of Event Hubs partitions is insufficient for the data egress volume.</li> | ComponentType, ComponentName |
 | Ingestion | EventsDropped | Count | Sum, Max, Min | The number of events dropped by data connections. | ComponentType, ComponentName |
 | Ingestion | EventsProcessed | Count | Sum, Max, Min | The number of events processed by data connections. | ComponentType, ComponentName |
 | Ingestion | EventsReceived | Count | Sum, Max, Min | The number of events received by data connections from an input stream. | ComponentType, ComponentName |
-| Ingestion | IngestionLatencyInSeconds | Seconds | Avg, Max, Min | The time taken from when data is received in the cluster until it is ready for query. The time depends on the ingestion type, such as Streaming Ingestion or Queued Ingestion. | IngestionKind |
+| Ingestion | IngestionLatencyInSeconds | Seconds | Avg, Max, Min | The time taken from when data is received in the cluster until it's ready for query. The time depends on the ingestion type, such as Streaming Ingestion or Queued Ingestion. | IngestionKind |
 | Ingestion | IngestionResult | Count | Sum | The total number of sources that were either successfully ingested or failed to be ingested. For more information, see [Dimension descriptions](#dimension-descriptions) | Database, Table, IngestionResultDetails, FailureKind, ViaUpdatePolicy |
-| Ingestion | IngestionVolumeInBytes | Count | Max, Sum | The total size of data ingested to the KQL Database (Bytes) before compression. | Database, Table |
+| Ingestion | IngestionVolumeInBytes | Count | Max, Sum | The total size of data ingested to the KQL database (Bytes) before compression. | Database, Table |
 | Materialized View | MaterializedViewAgeSeconds | Seconds | Avg | The age of the view (minutes) is defined by the current time minus the last ingestion time processed by the view. A lower value indicates a healthier view. | Database, MaterializedViewName |
 | Materialized View | MaterializedViewHealth | 1, 0 | Avg | A value of 1 indicates the view is considered healthy; otherwise, the value is 0. | Database, MaterializedViewName |
 | Materialized View | MaterializedViewResult | 1 | Avg | The metric value is always 1. `Result` indicates the result of the last materialization cycle. For possible values, see `MaterializedViewResult`. | Database, MaterializedViewName, Result |
