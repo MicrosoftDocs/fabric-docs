@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/31/2024
+ms.date: 11/05/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -23,14 +23,12 @@ Select the **Title** to view more information about that specific known issue.
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 |
-|  911  | Power BI | [Can't edit paginated reports in Report Builder when opened from service](known-issues/known-issue-911-not-edit-reports-report-builder-opened-service.md) | October 30, 2024 |
 |  903  | Data Warehouse | [Data warehouse data preview might fail if multiple data warehouse items](known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md) | October 28, 2024 |
 |  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |
 |  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 |
 |  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 |
 |  895  | OneLake | [Dataverse shortcut creation and read fails when organization is moved](known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md) | October 23, 2024 |
 |  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
-|  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 |
 |  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 |
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
 |  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 |
@@ -47,7 +45,6 @@ Select the **Title** to view more information about that specific known issue.
 |  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 |
 |  836  | Power BI | [Copilot in DAX query view returns DAX query with syntax error](known-issues/known-issue-836-copilot-dax-query-view-returns-dax-query-error.md) | September 13, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](known-issues/known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
-|  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 |
 |  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 |
 |  822  | Data Warehouse | [SQL queries fail intermittently](known-issues/known-issue-822-sql-queries-fail-intermittently.md) | August 28, 2024 |
 |  821  | Data Warehouse | [Schema refresh for a data warehouse's semantic model fails](known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md) | August 28, 2024 |
@@ -85,7 +82,6 @@ Select the **Title** to view more information about that specific known issue.
 |  643  | Data Engineering | [Tables not available to add in Power BI semantic model](known-issues/known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 |
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 |
 |  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 |
-|  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |
 |  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
 |  529  | Data Warehouse | [Data warehouse with more than 20,000 tables fails to load](known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md)  | October 23, 2023 |
@@ -100,6 +96,10 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  911  | Power BI | [Can't edit paginated reports in Report Builder when opened from service](known-issues/known-issue-911-not-edit-reports-report-builder-opened-service.md) | October 30, 2024 | Fixed: November 5, 2024 |
+|  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 | Fixed: November 5, 2024 |
+|  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 | Fixed: November 5, 2024 |
+|  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |  Fixed: November 5, 2024 |
 |  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 | Fixed: October 31, 2024 |
 |  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 | Fixed: October 25, 2024 |
 |  862  | Power BI | [Unexpected changes in fonts or themes in reports](known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md) | September 30, 2024 | Fixed: October 17, 2024 |
