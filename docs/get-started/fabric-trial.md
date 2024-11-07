@@ -131,7 +131,7 @@ When you cancel a free Fabric capacity trial, and don't move the workspaces and 
 
 - Microsoft can't extend the Fabric capacity trial, and you might not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. 
 - All licenses return to their original versions. You no longer have the equivalent of a PPU license. The license mode of any workspaces assigned to that trial capacity changes to Power BI Pro. 
-- All Fabric items in the workspaces becomes unusable and are eventually deleted. Your Power BI items are unaffected and still available when the workspace license mode returns to Power BI Pro.  
+- All Fabric items in the workspaces become unusable and are eventually deleted. Your Power BI items are unaffected and still available when the workspace license mode returns to Power BI Pro.  
 - You can't create workspaces that support Fabric capabilities.
 - You can't share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - You can't create any other analytics solutions using these Fabric items.
