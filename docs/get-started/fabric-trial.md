@@ -1,12 +1,12 @@
 ---
 title: Fabric trial capacity
-description: Understand how the Fabric trial works.
+description: Understand how the Fabric trial works. This includes starting a trial, ending a trial, and sharing a trial.
 author: mihart
 ms.reviewer: mihirwagle
 ms.author: mihart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.collection: ce-skilling-ai-copilot
-ms.date: 09/23/2024
+ms.date: 11/05/2024
 ---
 
 # Microsoft Fabric trial capacity
@@ -130,8 +130,8 @@ One reason to cancel a trial capacity is when the capacity administrator of a tr
 When you cancel a free Fabric capacity trial, and don't move the workspaces and their contents to a new capacity that supports Fabric:
 
 - Microsoft can't extend the Fabric capacity trial, and you might not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. 
-- All licenses return to their original versions. You no longer have the equivalent of a PPU license. The license mode of any workspaces assigned to that trial capacity change to Power BI Pro. 
-- The trial capacity, with all of its workspaces and their contents, is deleted. 
+- All licenses return to their original versions. You no longer have the equivalent of a PPU license. The license mode of any workspaces assigned to that trial capacity changes to Power BI Pro. 
+- All Fabric items in the workspaces becomes unusable and are eventually deleted. Your Power BI items are unaffected and still available when the workspace license mode returns to Power BI Pro.  
 - You can't create workspaces that support Fabric capabilities.
 - You can't share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - You can't create any other analytics solutions using these Fabric items.
@@ -152,11 +152,11 @@ Only the capacity or Fabric administrator can cancel the Fabric capacity trial.
 
 ### Cancel the Fabric trial - Capacity and Fabric admins
 
-Capacity admins and Fabric admins can cancel a trial capacity. The user who starts a trial automatically becomes the capacity administrator. The Fabric administrator has full access to all Fabric management tasks. Any Fabric items (non-Power BI items) in those workspaces become unusable and are eventually deleted
+Capacity admins and Fabric admins can cancel a trial capacity. The user who starts a trial automatically becomes the capacity administrator. The Fabric administrator has full access to all Fabric management tasks. All Fabric items (non-Power BI items) in those workspaces become unusable and are eventually deleted
 
 #### Cancel a trial using your Account manager
 
-As a capacity admin, you can cancel your free Fabric trial capacity from your Account manager. Canceling the trial this way ends the trial for yourself and anyone else you invited to the trial. 
+As a Capacity admin, you can cancel your free Fabric trial capacity from your Account manager. Canceling the trial this way ends the trial for yourself and anyone else you invited to the trial. 
 
 Open your Account Manager and select **Cancel trial**. 
 
@@ -164,7 +164,7 @@ Open your Account Manager and select **Cancel trial**.
 
 ### Cancel the Fabric trial using the Admin portal
 
-As a capacity or Fabric administrator, you can use the Admin portal to cancel a trial of a Fabric capacity. 
+As a Capacity or Fabric administrator, you can use the Admin portal to cancel a trial of a Fabric capacity. 
 
 Select **Settings** > **Admin portal** > **Capacity settings**. Then choose the **Trials** tab. Select the cog icon for the trial capacity that you want to delete. 
 
