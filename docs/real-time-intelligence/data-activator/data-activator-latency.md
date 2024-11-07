@@ -4,9 +4,9 @@ description: An overview of Data Activator latency considerations and performanc
 author: mihart
 ms.author: mihart
 ms.topic: overview
-ms.custom:  
 ms.search.form: product-reflex
-ms.date: 10/22/2024
+ms.subservice: rti-activator
+ms.date: 11/19/2024
 #customer intent: As a Fabric user who is working with rules, I want to understand the factors that help to determine when actions are included and excluded from rule reporting.
 ---
 

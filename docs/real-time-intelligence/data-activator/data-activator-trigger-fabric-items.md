@@ -5,7 +5,8 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 09/18/2024
+ms.subservice: rti-activator
+ms.date: 11/19/2024
 ---
 
 # Activate Fabric items

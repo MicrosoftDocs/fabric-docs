@@ -5,7 +5,8 @@ author: mihart
 ms.author: mihart
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
-ms.date: 09/15/2024
+ms.subservice: rti-activator
+ms.date: 11/19/2024
 ms.search.form: Data Activator PBI Onramp
 #customer intent: As a Power BI user I want to learn how to get data for Data Activator in Power BI.
 ---

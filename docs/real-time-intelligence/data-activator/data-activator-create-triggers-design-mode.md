@@ -6,7 +6,8 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Rule Creation
-ms.date: 11/4/2024
+ms.subservice: rti-activator
+ms.date: 11/19/2024
 ---
 
 # Create Data Activator rules

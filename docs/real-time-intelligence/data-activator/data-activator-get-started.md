@@ -6,7 +6,8 @@ ms.author: mihart
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Getting Started
-ms.date: 09/24/2024
+ms.subservice: rti-activator
+ms.date: 11/19/2024
 #customer intent: As a Fabric user I want to get started with Data Activator.
 ---
 

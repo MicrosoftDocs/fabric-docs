@@ -5,7 +5,8 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 09/16/2024
+ms.subservice: rti-activator
+ms.date: 11/19/2024
 #customer intent: As a Fabric user I want to learn to get data for Data Activator from Real-Time Hub.
 ---
 

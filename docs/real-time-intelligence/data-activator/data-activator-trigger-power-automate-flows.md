@@ -6,7 +6,8 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Custom Actions
-ms.date: 09/18/2024
+ms.subservice: rti-activator
+ms.date: 11/19/2024
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.
 ---
 
