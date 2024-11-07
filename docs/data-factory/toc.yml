@@ -743,6 +743,8 @@
     items:
     - name: Concepts
       items:
+      - name: REST API capabilities
+        href: dataflow-gen2-rest-api-capabilities.md
       - name: Data source management
         href: data-source-management.md
       - name: Dataflow Gen2 destinations and managed settings
