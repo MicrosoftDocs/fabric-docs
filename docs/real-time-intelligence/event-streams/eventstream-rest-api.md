@@ -74,11 +74,11 @@ Here's an example of Eventstream API body with base64 decoded:
 {
   "sources": [
     {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "AzureEventHub",
       "type": "AzureEventHub",
       "properties": {
-        "dataConnectionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "dataConnectionId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
         "consumerGroupName": "$Default",
         "inputSerialization": {
           "type": "Json",
@@ -91,13 +91,13 @@ Here's an example of Eventstream API body with base64 decoded:
   ],
   "destinations": [
     {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "kql",
       "type": "Eventhouse",
       "properties": {
         "dataIngestionMode": "ProcessedIngestion",
-        "workspaceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "itemId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "workspaceId": "bbbb1111-cc22-3333-44dd-555555eeeeee",
+        "itemId": "cccc2222-dd33-4444-55ee-666666ffffff",
         "databaseName": "mydatabase",
         "tableName": "mytable",
         "inputSerialization": {
@@ -202,11 +202,11 @@ Example of Eventstream source in API body:
 {
   "sources": [
     {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "AzureEventHub",
       "type": "AzureEventHub",
       "properties": {
-        "dataConnectionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "dataConnectionId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
         "consumerGroupName": "$Default",
         "inputSerialization": {
           "type": "Json",
@@ -240,13 +240,13 @@ Example of Eventstream source in API body:
 {
   "destinations": [
     {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "kql",
       "type": "Eventhouse",
       "properties": {
         "dataIngestionMode": "ProcessedIngestion",
-        "workspaceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "itemId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "workspaceId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
+        "itemId": "cccc2222-dd33-4444-55ee-666666ffffff",
         "databaseName": "myeventhouse",
         "tableName": "mytable",
         "inputSerialization": {
@@ -334,7 +334,7 @@ Example of stream in API body:
 {
   "streams": [
     {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
       "name": "stream-1",
       "type": "DefaultStream",
       "properties": {},
@@ -365,7 +365,7 @@ Example of stream in API body:
           "name": "AzureEventHub",
           "type": "AzureEventHub",
           "properties": {
-            "dataConnectionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "dataConnectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
             "consumerGroupName": "$Default",
             "inputSerialization": {
               "type": "Json",
@@ -382,8 +382,8 @@ Example of stream in API body:
           "type": "Eventhouse",
           "properties": {
             "dataIngestionMode": "ProcessedIngestion",
-            "workspaceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "itemId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "workspaceId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+            "itemId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
             "databaseName": "myeventhouse",
             "tableName": "mytable",
             "inputSerialization": {
@@ -409,8 +409,8 @@ Example of stream in API body:
     {
        "202": {
           "headers": {
-                "Location": "https://api.fabric.microsoft.com/v1/operations/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                "x-ms-operation-id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "Location": "https://api.fabric.microsoft.com/v1/operations/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                "x-ms-operation-id": "bbbbbbbb-1111-2222-3333-cccccccccccc",
                 "Retry-After": 30
           }
        }
@@ -461,11 +461,11 @@ Example of stream in API body:
     {
       "sources": [
         {
-          "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
           "name": "AzureEventHub",
           "type": "AzureEventHub",
           "properties": {
-            "dataConnectionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "dataConnectionId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
             "consumerGroupName": "$Default",
             "inputSerialization": {
               "type": "Json",
@@ -478,13 +478,13 @@ Example of stream in API body:
       ],
       "destinations": [
         {
-          "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
           "name": "kql",
           "type": "Eventhouse",
           "properties": {
             "dataIngestionMode": "ProcessedIngestion",
-            "workspaceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "itemId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "workspaceId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
+            "itemId": "cccccccc-2222-3333-4444-dddddddddddd",
             "databaseName": "myeventhouse",
             "tableName": "mytable",
             "inputSerialization": {
@@ -510,8 +510,8 @@ Example of stream in API body:
     {
        "202": {
           "headers": {
-                "Location": "https://api.fabric.microsoft.com/v1/operations/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                "x-ms-operation-id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "Location": "https://api.fabric.microsoft.com/v1/operations/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                "x-ms-operation-id": "bbbbbbbb-1111-2222-3333-cccccccccccc",
                 "Retry-After": 30
           }
        }
