@@ -61,7 +61,13 @@ items:
     href: ../cicd/git-integration/git-get-started.md
   - name: Workspace identity
     href: ../security/workspace-identity.md
-- name: Find Fabric items with the OneLake catalog
+  - name: Workspace monitoring
+    items:
+      - name: What is workspace monitoring?
+        href: workspace-monitoring-overview.md
+      - name: Enable monitoring in your workspace
+        href: enable-workspace-monitoring.md      
+- name: Discover data in the OneLake catalog
   href: ../governance/onelake-catalog.md
 - name: Copilot in Fabric
   items:
