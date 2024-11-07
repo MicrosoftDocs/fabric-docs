@@ -62,46 +62,26 @@ If domains have been defined in your organization, you can use the domain select
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
 
-## Open an item's options menu
-
-Each item in the items list has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
-
-To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
-
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
-
 ## Filter the items list
 
-Item filters help you narrow down the list of items.
+You can use the filters in the filter pane and the item type and tag selectors at the top of the items list to narrow down the items list so it displays just the types of items you are interested in. You can then select items to explore them in more detail.
 
-|Tab  |Description  |
+The filters pane contains a several predefined filters, and also enables you to filter by workspace.
+
+## Filter items by pre-defined filters
+
+The filters pane contains a several predefined filters. They are described in the the following table.
+
+|Filter  |Description  |
 |:-------------------------|:----------------------------------------------------|
 | **All Items**                  | Items that you're allowed to find.  |
 | **My items**              | Items that you own.      |
 | **Endorsed items** | Endorsed items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
 | **Favorites** | Items that you marked as favorites. |
 
-### All items by item classification
+## Filter items by workspace
 
-Fabric items are classified into buckets based on what they are for. For example, items that contain data, such as lakehouses and semantic models, are bucketed under Data items, while reports and dashboards are bucketed under Insights. Use the item type bucket selector to select the item type bucket of interest.
-
-|Tab  |Description  |
-|:-------------------------|:----------------------------------------------------|
-| **All data**                  | Data items that you're allowed to find.  |
-| **My data**              | Data items that you own.      |
-| **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
-| **Favorites** | Data items that you've marked as favorites. |
-
-### Find items by tag
-
-Use the tags selector to display items tagged with the tags you select.
-
-> [!NOTE]
-> The tag selector is only visible if tags are enabled in your organization.
-
-## Find items by workspace
-
-Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading to the side of the items list. The items you're allowed to see in that workspace will be displayed in the items list.
+Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane.. The items you're allowed to see in that workspace will be displayed in the items list.
 
 :::image type="content" source="./media/onelake-catalog/onelake-data-catalog-workspace-filter.png" alt-text="Screenshot of the OneLake catalog's workspaces filter.":::
 
@@ -109,6 +89,21 @@ The preceding image shows the *Sales Org* workspace selected in the Workspaces s
 
 > [!NOTE]
 >Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
+
+### Find items by item type classification
+
+Fabric items are classified into buckets based on what they are for. For example, items that contain data, such as lakehouses and semantic models, are bucketed under Data items, while reports and dashboards are bucketed under Insights. Use the item type bucket selector to select the item type bucket of interest.
+
+:::image type="content" source="./media/onelake-catalog/onelake-data-catalog-item-type-selector.png" alt-text="Screenshot of the OneLake catalog's item type selector.":::
+
+### Find items by tag
+
+Use the tags selector to display items tagged with the tags you select.
+
+:::image type="content" source="./media/onelake-catalog/onelake-data-catalog-tags-selector.png" alt-text="Screenshot of the OneLake catalog's tags selector.":::
+
+> [!NOTE]
+> The tag selector is only visible if tags are enabled in your organization.
 
 ## View item details
 
@@ -134,8 +129,13 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-monitor-tab.png" alt-text="Screenshot of the OneLake catalog item view monitor tab.":::
 
+## Open an item's options menu
 
-* Action bar provides functionality that takes you out of the OneLake catalog context.
+Each item in the items list has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
+
+To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
 
 ## Considerations and limitations
 
