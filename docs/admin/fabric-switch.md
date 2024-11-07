@@ -90,4 +90,4 @@ Users that don't have Microsoft Fabric enabled, can:
 ## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
-* [Enable [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-switch.md)
+* [Enable [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]](data-activator-switch.md)

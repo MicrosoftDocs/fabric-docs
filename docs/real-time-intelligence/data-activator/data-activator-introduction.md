@@ -1,8 +1,6 @@
 ---
 title: Introduction to Activator
 description: Learn about Activator, a powerful tool for automating actions based on changing data in Microsoft Fabric.
-title: Introduction to Activator
-description: Learn about Activator, a powerful tool for automating actions based on changing data in Microsoft Fabric.
 author: mihart
 ms.author: mihart
 ms.topic: concept-article

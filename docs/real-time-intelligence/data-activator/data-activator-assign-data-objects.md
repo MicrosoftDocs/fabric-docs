@@ -9,9 +9,9 @@ ms.search.form: Activator Object Creation
 ms.date: 11/01/2024
 ---
 
-# Assign data to objects in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+# Assign data to objects in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-Once you [get data](data-activator-get-data-power-bi.md) into [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], the next step is to assign your events to objects. You assign events to objects if there's a business object that you want to track. For example: packages, households, stores, etc. Create objects if you want to monitor object IDs and their state over time.
+Once you [get data](data-activator-get-data-power-bi.md) into Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], the next step is to assign your events to objects. You assign events to objects if there's a business object that you want to track. For example: packages, households, stores, etc. Create objects if you want to monitor object IDs and their state over time.
 
 > [!IMPORTANT]
 > [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.

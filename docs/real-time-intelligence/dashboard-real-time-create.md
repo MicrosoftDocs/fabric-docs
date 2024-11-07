@@ -257,4 +257,4 @@ You can update an existing dashboard, or restore a previous version, as follows:
 * [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
 * [Real-Time Dashboard-specific visuals](dashboard-visuals.md)
 * [Apply conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
-* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a Real-Time Dashboard](data-activator/data-activator-get-data-real-time-dashboard.md)
+* [Create [!INCLUDE [fabric-activator](includes/fabric-activator.md)] alerts from a Real-Time Dashboard](data-activator/data-activator-get-data-real-time-dashboard.md)
