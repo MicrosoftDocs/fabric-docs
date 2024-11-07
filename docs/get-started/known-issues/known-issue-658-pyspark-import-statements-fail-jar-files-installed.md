@@ -4,7 +4,7 @@ description: A known issue is posted where PySpark import statements fail for .j
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/27/2024
+ms.date: 11/07/2024
 ms.custom: known-issue-658
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-658
 
 You can upload a custom library file with a .jar format into a Fabric environment. Although uploading and publishing of the environment succeeds, the import command fails in the PySpark session.
 
-**Status:** Open
+**Status:** Fixed: November 7, 2024
 
 **Product Experience:** Data Engineering
 
