@@ -24,13 +24,11 @@ The following table describes the columns stored in the **EventhouseCommandLogs*
 
 | Column Name | Type | Description |
 |--|--|--|
-| ArtifactId | string | The identifier of the Fabric Eventhouse item. |
-| ArtifactKind | string | The type of Fabric item. Valid values: `Eventhouse`. |
-| ArtifactName | string | The name of the Fabric Eventhouse item. |
 | CacheColdHitsBytes | long | The amount of cold storage data that was available for the command in cold cache due to data prefetching. |
 | CacheColdMissesBytes | long | The amount of cold storage data that was not available for the command in cold cache. |
 | CacheHotHitsBytes | long | The amount of data that was available for the command in the hot cache. The amount of data stored in hot cache is defined by the database or table caching policy. |
 | CacheHotMissesBytes | long | The amount of data that was not available for the command in hot cache. |
+| CapacityId | string | The Fabric capacity identifier. |
 | CommandText | string | The text of the command. |
 | ComponentFault | string | In the event of a command error, the component where the fault occurred. Valid values: `Server` or `Client`. |
 | CorrelationId | string | The correlation identifier of the command. |
@@ -44,13 +42,15 @@ The following table describes the columns stored in the **EventhouseCommandLogs*
 | ExtentsMinScannedTime | datetime | The minimum data scan time. |
 | FailureReason | string | The reason the command failed. |
 | Identity | dynamic | The identity of the user or application that ran the command. |
+| ItemId | string | The identifier of the Fabric Eventhouse item. |
+| ItemKind | string | The type of Fabric item. Valid values: `Eventhouse`. |
+| ItemName | string | The name of the Fabric Eventhouse item. |
+| Level | string | Not applicable. |
 | MemoryPeakBytes | long | The peak memory consumption of the command. |
 | OperationEndTime | datetime | The time (UTC) the operation ended. |
 | OperationId | string | The unique command log identifier. |
+| OperationName | string | The name of the operation performed. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
-| PlatformMonitoringTableName | string | The name of the platform monitoring table. Valid values: `EventhouseCommandyLogs`. |
-| PremiumCapacityId | string | The Fabric capacity identifier. |
-| PremiumCapacityName | string | The Fabric capacity name. |
 | Region | string | The region where the Fabric KQL Database is located. |
 | ScannedExtentsCount | long | The number of extents scanned by the command. A high number might indicate the cause of a command latency issue. |
 | ScannedRowsCount | long | The number of rows scanned by the command. A high number might indicate the cause of a command latency issue. |
@@ -60,6 +60,7 @@ The following table describes the columns stored in the **EventhouseCommandLogs*
 | TotalExtentsCount | long | The total number of extents in the result set. |
 | TotalRowsCount | long | The total number of rows in the result set. |
 | WorkspaceId | string | The identifier of the workspace. |
+| WorkspaceMonitoringTableName | string | The name of the workspace monitoring table. Valid values: `EventhouseCommandyLogs`. |
 | WorkspaceName | string | The name of the workspace. |
 
 ## Sample queries
