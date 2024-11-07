@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 11/05/2024
 ---
 
-# CI/CD for Copy Job (preview) in Data Factory in Microsoft Fabric
+# CI/CD for Copy job (preview) in Data Factory in Microsoft Fabric
 
-To build successful data analytics projects with Copy Job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments. 
+To build successful data analytics projects with Copy job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments. 
 
 In Fabric, there are two features we currently support in collaboration with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These features allow users to import/export workspace resources with individual updates.
 
-With Git integration and deployment pipeline supported for Copy Job, users can leverage their own Git repositories in Azure DevOps or GitHub and utilize Fabric’s built-in Deployment Pipelines, enabling seamless CI/CD workflows. This integration marks an important step toward expanding CI/CD capabilities across all Fabric items, empowering users with advanced, reliable development tools for their data projects.
+With Git integration and deployment pipeline supported for Copy job, users can leverage their own Git repositories in Azure DevOps or GitHub and utilize Fabric’s built-in Deployment Pipelines, enabling seamless CI/CD workflows. This integration marks an important step toward expanding CI/CD capabilities across all Fabric items, empowering users with advanced, reliable development tools for their data projects.
 
-## Get started with Git integration for Copy Job
+## Get started with Git integration for Copy job
 
-Take the following steps to set up Git integration for your Copy Job in Data Factory:
+Take the following steps to set up Git integration for your Copy job in Data Factory:
 
 ### Prerequisites for Git integration
 
@@ -39,7 +39,7 @@ To access Git with your Microsoft Fabric workspace, ensure the following prerequ
 
 ### Step 1: Connect to a Git repository
 
-To use Git integration with Copy Job in Fabric, you first need to connect to a Git repository, as described here.
+To use Git integration with Copy job in Fabric, you first need to connect to a Git repository, as described here.
 
 1. Sign into Fabric and navigate to the workspace you want to connect to Git.
 1. Select **Workspace settings**.
@@ -73,7 +73,7 @@ Once you connect to a Git repository, you need to connect to a workspace, as des
 
 1. After you connect, the Workspace displays information about source control that allows users to view the connected branch, the status of each item in the branch, and the time of the last sync. 
 
-   :::image type="content" source="media/cicd-copy-job/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for Copy Job.":::
+   :::image type="content" source="media/cicd-copy-job/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for Copy job.":::
 
 ### Step 3: Commit changes to Git
 
@@ -88,7 +88,7 @@ You can now commit changes to Git, as described here.
 
 After the changes are committed, the items that were committed are removed from the list, and the workspace will point to the new commit that it synced to.
 
-   :::image type="content" source="media/cicd-copy-job/source-control-commit.png" alt-text="Screenshot of a committed Copy Job item.":::
+   :::image type="content" source="media/cicd-copy-job/source-control-commit.png" alt-text="Screenshot of a committed Copy job item.":::
 
 
 ## Get started with deployment pipelines for Git
@@ -130,12 +130,12 @@ After creating a pipeline, you need to add content you want to manage to the pip
 1. Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](../cicd/deployment-pipelines/assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [Deploy content to an existing workspace](../cicd/deployment-pipelines/understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 1. You can review the deployment history to see the last time content was deployed to each stage. To examine the differences between the two pipelines before you deploy, see [Compare content in different deployment stages](../cicd/deployment-pipelines/compare-pipeline-content.md).
 
-   :::image type="content" source="media/cicd-copy-job/deployment-pipeline.png" alt-text="Screenshot of deployment pipeline for Copy Job.":::
+   :::image type="content" source="media/cicd-copy-job/deployment-pipeline.png" alt-text="Screenshot of deployment pipeline for Copy job.":::
 
 
 ## Known limitations
 
-The following known limitations apply to CI/CD for Copy Job in Data Factory in Microsoft Fabric:
+The following known limitations apply to CI/CD for Copy job in Data Factory in Microsoft Fabric:
 
 - **Workspace variables**: CI/CD doesn't currently support workspace variables.
 - **Git Integration limited support**: Currently, Fabric only supports Git integration with Azure DevOps and GitHub. Azure DevOps Git integration is recommended as GitHub Git integration has more limitations.
