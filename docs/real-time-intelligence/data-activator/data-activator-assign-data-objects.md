@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Object Creation
-ms.date: 10/16/2024
+ms.date: 11/01/2024
 ---
 
 # Assign data to objects in Data Activator
@@ -25,11 +25,11 @@ To create an object, pick the event stream that you wish to add to the object. T
 
 The example shown is based on the sample *Packages* data that comes with Data Activator. Since this data is monitoring packages, we choose *Package* as our object name. We choose *Package ID* as our key column because it uniquely identifies packages.
 
-:::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-01.png" alt-text="Screenshot of Assign your data window.":::
+:::image type="content" source="media/data-activator-assign-data-objects/activator-assign-data-objects-01.png" alt-text="Screenshot of Assign your data window.":::
 
 When you create an object, you see the events that were received organized by the unique values from the ID column.
 
-:::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-02.png" alt-text="Screenshot of event received by data activator.":::
+:::image type="content" source="media/data-activator-assign-data-objects/activator-assign-data-objects-02.png" alt-text="Screenshot of event received by data activator." lightbox="media/data-activator-assign-data-objects/activator-assign-data-objects-02.png":::
 
 By default the events for five random instances for the previous 24 hours are displayed in the chart. You can change this using the population selector and time selectors at the top of the card.
 
@@ -42,7 +42,7 @@ Assign data using the **New object**  option in the ribbon. The process is the s
 > [!NOTE]
 > When assigning to an existing object, it is essential that you choose a key column that references the same object IDs that you used when creating the object in the first place. Otherwise, you get unexpected results from your properties and rules.
 
-:::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-03.png" alt-text="Screenshot of assigning data in Data Activator.":::
+:::image type="content" source="media/data-activator-assign-data-objects/activator-assign-data-objects-03.png" alt-text="Screenshot of assigning data in Data Activator.":::
 
 ## Assign data to multiple objects
 
