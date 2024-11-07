@@ -19,7 +19,7 @@ This article explains what you see on the external data share manage permissions
 
 ## View an item's external data shares
 
-To view and manage existing external data shares, navigate to the shared lakehouse in the workspace or in the OneLake data hub, open the options menu, and select **Manage permissions**.
+To view and manage existing external data shares, navigate to the shared lakehouse in the workspace or in the OneLake catalog, open the options menu, and select **Manage permissions**.
 
 :::image type="content" source="./media/external-data-sharing-manage/manage-permissions-option.png" alt-text="Screenshot showing the manage permissions option.":::
 
