@@ -6,7 +6,6 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.date: 11/19/2024
-ms.subservice: rti-kusto
 ms.search.form: Notebooks
 --- 
 # Use Fabric notebooks with data from a KQL database

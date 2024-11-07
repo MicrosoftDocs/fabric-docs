@@ -10,7 +10,6 @@ ms.custom:
   - ignite-2023
 ms.date: 11/19/2024
 ms.search.form: Create a table
-ms.subservice: rti-kusto
 ---
 # Create an empty table
 

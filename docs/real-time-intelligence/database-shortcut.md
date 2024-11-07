@@ -8,7 +8,6 @@ ms.topic: how-to
 ms.custom:
   - ignite-2023
 ms.date: 11/19/2024
-ms.subservice: rti-kusto
 ms.search.form: KQL Database
 #Customer intent: To create a database shortcut in Real-Time Intelligence.
 ---

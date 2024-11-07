@@ -6,7 +6,6 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
 ms.date: 11/19/2024
-ms.subservice: rti-kusto
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
 # Query acceleration for OneLake shortcuts - overview (preview)

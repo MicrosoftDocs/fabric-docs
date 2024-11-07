@@ -6,7 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.date: 11/19/2024
-ms.subservice: rti-kusto
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---

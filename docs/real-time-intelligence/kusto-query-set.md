@@ -11,7 +11,6 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
 ms.date: 11/19/2024
-ms.subservice: rti-kusto
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset

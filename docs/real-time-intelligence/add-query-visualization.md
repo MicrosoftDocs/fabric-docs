@@ -6,7 +6,6 @@ ms.author: yaschust
 author: yaelschuster
 ms.topic: how-to
 ms.date: 11/19/2024
-ms.subservice: rti-kusto
 ---
 # Add and modify a query visualization
 

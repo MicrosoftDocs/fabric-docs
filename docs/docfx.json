@@ -83,6 +83,8 @@
                 "onelake/**/*.yml": "onelake",
                 "real-time-hub/**/*.md": "rti-hub",
                 "real-time-hub/**/*.yml": "rti-hub",
+                "real-time-intelligence/**/*.md": "rti-kusto",
+                "real-time-intelligence/**/*.yml": "rti-kusto",
                 "real-time-intelligence/event-streams/**/*.md": "rti-eventstream",
                 "real-time-intelligence/event-streams/**/*.yml": "rti-eventstream",
                 "real-time-intelligence/data-activator/**/*.md": "rti-activator",

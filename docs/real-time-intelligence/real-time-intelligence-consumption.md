@@ -10,7 +10,6 @@ ms.custom:
   - ignite-2023-fabric
   - build-2024
 ms.date: 11/19/2024
-ms.subservice: rti-kusto
 ms.search.form: Eventhouse,KQL Database, Overview
 ---
 # Eventhouse and KQL Database consumption

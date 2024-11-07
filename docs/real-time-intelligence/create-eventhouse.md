@@ -7,7 +7,6 @@ author: YaelSchuster
 ms.topic: how-to
 ms.date: 11/19/2024
 ms.search.form: Eventhouse
-ms.subservice: rti-kusto
 #customer intent: As a user, I want to learn how to create an eventhouse for data storage in Real-Time Analytics so that I can effectively manage my data.
 ---
 # Create an eventhouse

@@ -10,7 +10,6 @@ ms.custom:
   - ignite-2023
 ms.date: 11/11/2024
 ms.search.form: KQL Database
-ms.subservice: rti-kusto
 ---
 # Create a KQL database
 

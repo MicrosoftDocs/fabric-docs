@@ -6,7 +6,6 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: concept-article
 ms.date: 11/19/2024
-ms.subservice: rti-kusto
 ---
 # Schema optimization best practices
 
