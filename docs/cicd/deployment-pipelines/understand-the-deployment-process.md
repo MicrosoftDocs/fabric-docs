@@ -20,6 +20,9 @@ During deployment, Microsoft Fabric copies the content from the source stage to 
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
+> [!IMPORTANT]
+> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
+
 There are two main parts of the deployment pipelines process:
 
 * [Define the deployment pipeline structure](#define-the-deployment-pipeline-structure)
@@ -471,9 +474,12 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
-* Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together and auto binding is engaged on the DirectQuery data source.
+* If autobinding is engaged then:
 
-* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
+  * Native query and DirectQuery together isn't supported.
+  * The datasource connection must be the first step in the mashup expression.
+
+* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will still be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
 
 ### Dataflow limitations
 

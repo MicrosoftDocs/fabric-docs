@@ -14,7 +14,7 @@ ms.date: 07/14/2024
 > To configure the following authentication settings in the setup guide, a Global Administrator role is required.
 
 In order to be able to work with authentication, you need to set up its three component parts:
-* [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
+* [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication)
 * [Front-end sample](./extensibility-front-end.md)
 * [Back-end sample](./extensibility-back-end.md)
 
@@ -22,7 +22,7 @@ To work with authentication in Fabric, follow this guide.
 
 ## Azure storage service provisioning
 
-This sample demonstrates how to store and read data from and to lakehouses. This requires generating tokens for the Azure Storage service in OBO flows. To generate tokens, users need to consent to the application using Azure Storage. In order to consent, Azure Storage needs to be provisioned in the tenant.
+The sample demonstrates how to store and read data from and to lakehouses. It requires generating tokens for the Azure Storage service in OBO flows. To generate tokens, users need to consent to the application using Azure Storage. In order to consent, Azure Storage needs to be provisioned in the tenant.
 
 To make sure Azure Storage is provisioned in the tenant:
 
@@ -32,7 +32,7 @@ To make sure Azure Storage is provisioned in the tenant:
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a Global Administrator needs to provision it.
+If you see the Azure Storage application, this means was already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a Global Administrator needs to configure it.
 
 Open **Windows PowerShell** as administrator and run the following script:
   
@@ -56,6 +56,7 @@ To work with authentication, you need an application registered in Microsoft Ent
    >
    >* The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
    >* You can configure the redirect URI after creating the application from the **Manage** menu under **Authentication**.
+   >* The Redirect URL must return an HTML page that just calls to JS “windows.close()”.
 
    :::image type="content" source="./media/authentication-tutorial/register-application.png" alt-text="Screenshot of application registration UI." lightbox="./media/authentication-tutorial/register-application.png":::
 
@@ -65,7 +66,7 @@ To work with authentication, you need an application registered in Microsoft Ent
 
    Where:
 
-   * The workload name is exactly as it's specified in the manifest.
+   * The workload name is exactly as specified in the manifest.
    * The ID URI doesn't end with a slash.
    * At the end of the *ID URI* there can be an optional subpath consisting of a string of English lower or upper case letters, numbers, and dashes, up to 36 characters.
 
@@ -87,7 +88,7 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 ### Add a scope for CRUD/jobs
 
-To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and a dedicated Fabric application to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
+To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope). In addition, add two dedicated Fabric applications to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
 
 * Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
 
@@ -129,19 +130,21 @@ Under **API permissions**, add the desired permissions for your application. For
 
 :::image type="content" source="./media/authentication-tutorial/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-tutorial/add-api-permissions.png":::
 
+To learn more about API permissions, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions).
+
 ### Make sure your application is set to work with auth token v1
 
 Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null or "1".
 
 ## Configure your application in Microsoft Entra Identity automatically by using a script
 
-For a streamlined setup of your application in Microsoft Entra Identity, you can opt to use an automated PowerShell script. Follow these steps to configure your application:
+For a streamlined setup of your application in Microsoft Entra Identity, you can opt to use an automated PowerShell script. To configure your application, follow these steps:
 
 1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2](/cli/azure/).
-2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You'll be prompted to sign in by using the credentials of the user account under which you intend to create the application.
+2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You're prompted to sign in by using the credentials of the user account under which you intend to create the application.
 3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
 
-Upon successful execution of the script, it will output all necessary details to configure your workload. Additionally, it will provide a direct URL to your application and an administrative consent URL for tenant-wide application authorization.
+Upon successful execution of the script, it outputs all necessary details to configure your workload. Additionally, it provides a direct URL to your application and an administrative consent URL for tenant-wide application authorization.
 
 ### Example of usage
 
@@ -159,10 +162,10 @@ This example demonstrates how to use the `CreateDevAADApp.ps1` script with comma
 
    * `PublisherTenantId`: The tenant ID of the publisher  
    * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
-   * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Entra app.  
-   * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id-manually) in the Entra app.  
+   * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Microsoft Entra app.  
+   * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id-manually) in the Microsoft Entra app.  
 
-1. Configure your *workloadManifest.xml*. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
+1. Configure your *workloadManifest.xml*. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri`, and `ResourceId` (ID URI) under **AADApps**.
 ```
 <AADApp>
     <AppId>YourApplicationId</AppId>
@@ -184,7 +187,7 @@ After configuring your application, update the following configurations in `.env
 "DEV_AAD_CONFIG_APPID": "" // your app Id
 ```
 
-:::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a .env.dev file.":::
+:::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a `.env.dev` file.":::
 
 ## Ask for a token and consent the application
 
@@ -196,7 +199,7 @@ After configuring your application, update the following configurations in `.env
 
    :::image type="content" source="./media/authentication-tutorial/configured-authentication-section.png" alt-text="Screenshot showing the configured authentication section." lightbox="./media/authentication-tutorial/configured-authentication-section.png":::
 
-1. Check **Request initial consent** and select **Get access token**. This should trigger a consent for your application:
+1. Check **Request initial consent** and select **Get access token** which triggers consent for your application:
 
    :::image type="content" source="./media/authentication-tutorial/initial-consent.png" alt-text="Screenshot showing permissions request dialog for initial consent.":::
 
@@ -206,5 +209,5 @@ You can now do the following tasks:
 
 * Work with CRUD/Jobs operations.
 * Get an access token for your application on the client side.
-* Use the authentication page in the frontend sample as a playground to call your workload APIs. 
+* To call your workload APIs, use the authentication page in the frontend sample as a playground.
 * See what APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Backend/src/Controllers).

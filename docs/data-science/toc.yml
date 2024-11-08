@@ -160,9 +160,7 @@ items:
   - name: Fabric autologging
     href: mlflow-autologging.md
 - name: Model scoring
-  items:   
-    - name: Direct Lake mode and PBI reporting
-      href: ../get-started/lakehouse-power-bi-reporting.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  items:
     - name: Score models with PREDICT
       href: model-scoring-predict.md
 - name: Secure and manage ML items

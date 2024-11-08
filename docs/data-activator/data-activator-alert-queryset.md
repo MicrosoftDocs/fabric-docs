@@ -6,7 +6,7 @@ ms.author: yaschust
 ms.reviewer: guregini
 ms.topic: how-to
 ms.date: 09/24/2024
-ms.search.form: KQL Queryset
+ms.search.form: Data Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Data Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
 # Create Data Activator alerts from a KQL Queryset (preview)
@@ -30,6 +30,9 @@ Here are some ways you can use Data Activator alerts with KQL queries:
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](../real-time-intelligence/create-database.md) with data
 * A [KQL Queryset](../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../real-time-intelligence/kusto-query-set.md).
+
+> [!IMPORTANT]
+> Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../real-time-intelligence/kusto-query-set.md#select-a-database), creating an alert is not supported. 
 
 The following steps show you how to create an alert on a query that creates a visualization, or on a query that doesn't create a visualization.
 

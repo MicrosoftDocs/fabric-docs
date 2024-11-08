@@ -21,13 +21,23 @@ This article shows examples of how to use Azure OpenAI in Fabric using [OpenAI P
 
 ## Prerequisites
 
-# [Python SDK](#tab/python)
+# [Python SDK <1.0.0](#tab/python0)
 
 [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) isn't installed in default runtime, you need to first install it.
 
 
 ``` Python
 %pip install openai==0.28.1
+```
+
+# [Python SDK >=1.0.0](#tab/python1)
+
+[OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) isn't installed in default runtime, you need to first install it. 
+Change the environment to Runtime version 1.3 or higher.
+
+
+``` Python
+%pip install -U openai
 ```
 
 # [SynapseML](#tab/synapseml)
@@ -41,7 +51,7 @@ from synapse.ml.services.openai import *
 
 ## Chat
 
-# [Python SDK](#tab/python)
+# [Python SDK <1.0.0](#tab/python0)
 
 ChatGPT and GPT-4 are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
@@ -94,6 +104,35 @@ for chunk in response:
 ### Output
 
 ``` json 
+    assistant: Orange who?
+```
+
+# [Python SDK >=1.0.0](#tab/python1)
+
+ChatGPT and GPT-4 are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+
+
+```Python
+import openai
+
+response = openai.chat.completions.create(
+    model='gpt-4-32k', # model could be one of {gpt-35-turbo-16k, gpt-4 or gpt-4-32k}
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Knock knock."},
+        {"role": "assistant", "content": "Who's there?"},
+        {"role": "user", "content": "Orange."},
+    ],
+    temperature=0,
+)
+
+print(f"{response.choices[0].message.role}: {response.choices[0].message.content}")
+```
+
+
+### Output
+
+``` json
     assistant: Orange who?
 ```
 
@@ -155,7 +194,7 @@ display(
 
 ## Embeddings
 
-# [Python SDK](#tab/python)
+# [Python SDK <1.0.0](#tab/python0)
 
 An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
 
@@ -198,6 +237,9 @@ print(embeddings)
       }
     }
 ```
+# [Python SDK >=1.0.0](#tab/python1)
+
+openai.Embedding is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
 
 # [SynapseML](#tab/synapseml)
 

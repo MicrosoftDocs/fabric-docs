@@ -44,8 +44,8 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - Australia East
 - Australia Southeast
 - Brazil South
-- Brazil South (duplicate)
 - Canada East
+- Canada Central
 - East Asia
 - East US
 - East US 2 EUAP
@@ -53,19 +53,27 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - Japan East
 - Japan West
 - North Europe
-- Qatar Central
 - South Africa North
 - South Central US
+- South India
 - Southeast Asia
+- Sweden Central
+- Switzerland West
 - UK South
-- UK South (duplicate)
+- UK West
 - West Central US
 - West Europe
 - West US
+- West US 2
+- West US 3
 
 ## Supported Apache Airflow versions
 
 - 2.6.3
+
+## Support Python version
+
+- 3.8.17
 
 > [!NOTE]
 > Changing the Apache Airflow version within an existing IR is not supported. Instead, the recommended solution is to create a new Airflow IR with the desired version
