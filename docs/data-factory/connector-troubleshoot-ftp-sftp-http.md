@@ -123,15 +123,14 @@ Encode *entire* original private key file with base64 encoding, and store the en
 
 - **Recommendation**:  Check the port of the target server. By default, SFTP uses port 22.
 
-- **Cause**: If the error message contains the string "Server response does not contain SSH protocol identification", one possible cause is that the SFTP server throttled the connection. Multiple connections are created to download from the SFTP server in parallel, and sometimes it will encounter SFTP server throttling. Ordinarily, different servers return different errors when they encounter throttling.
+- **Cause**: If the error message contains the string "Server response does not contain SSH protocol identification", one possible cause is that the SFTP server throttled the connection. Multiple connections are created to download from the SFTP server in parallel, and sometimes it encounters SFTP server throttling. Ordinarily, different servers return different errors when they encounter throttling.
 
 - **Recommendation**:  
 
     Specify the maximum number of concurrent connections of the SFTP dataset as 1 and rerun the copy activity. If the activity succeeds, you can be sure that throttling is the cause.
 
-    If you want to promote the low throughput, contact your SFTP administrator to increase the concurrent connection count limit, or you can do one of the following:
-
-    * If you're using On-Premises Data Gateway (OPDG), add the OPDG machine's IP to the allowlist.
+    If you want to promote the low throughput, contact your SFTP administrator to increase the concurrent connection count limit, or 
+   * If you're using On-Premises Data Gateway (OPDG), add the OPDG machine's IP to the allowlist.
 
 ### Error code: SftpPermissionDenied
 
@@ -170,8 +169,6 @@ Encode *entire* original private key file with base64 encoding, and store the en
     - diffie-hellman-group14-sha256
     - diffie-hellman-group14-sha1
     - diffie-hellman-group1-sha1
-
-    The latest version to support above key exchange algorithms on SHIR is version 5.19.
 
 ### Error Code: SftpInvalidHostKeyFingerprint
 
