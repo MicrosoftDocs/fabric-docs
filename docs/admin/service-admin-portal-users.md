@@ -17,9 +17,7 @@ LocalizationGroup: Administration
 
 You manage Power BI users, groups, and admins in the Microsoft 365 admin center. The **Users** tab in the Fabric admin portal provides a link to that admin center.
 
-![Screenshot of the Microsoft 365 admin center link.](media/service-admin-portal-users/powerbi-admin-manage-users.png)
-
-For information about managing users in the Microsoft 365 admin center, see the [admin center documentation](/microsoft-365/admin/add-users/add-users).
+For information about managing users in the Microsoft 365 admin center, see the manage users docuomentation in the [Microsoft 365 admin center help](/microsoft-365/admin/).
 
 ## Related content
 
