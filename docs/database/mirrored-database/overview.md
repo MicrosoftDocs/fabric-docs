@@ -4,7 +4,7 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo
-ms.date: 04/24/2024
+ms.date: 11/08/2024
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -51,10 +51,6 @@ Mirroring creates three items in your Fabric workspace:
 In addition to the [Microsoft Fabric SQL Query Editor](/fabric/data-warehouse/sql-query-editor), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [Azure Data Studio](/sql/azure-data-studio/what-is-azure-data-studio), and even GitHub Copilot.
 
 [Sharing](#sharing) enables ease of access control and management, to make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
-
-### How do I enable Mirroring in my tenant?
-
-Power BI administrators can enable or disable Mirroring for the entire organization or for specific security groups, using the setting found in the Power BI admin portal. The Mirroring items then appear in the **Create** options. For more information, see [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md).
 
 Currently, the following external databases are available:
 
