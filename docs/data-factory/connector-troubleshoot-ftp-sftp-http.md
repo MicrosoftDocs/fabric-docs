@@ -211,4 +211,10 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 - **Cause**: This error happens when Data Factory requests HTTP source but gets unexpected status code.
 
 - **Recommendation**: For more information about HTTP status code, see this [document](/troubleshoot/developer/webapps/iis/www-administration-management/http-status-code).
+  
+## Related content
 
+For more troubleshooting help, try these resources:
+- [Data Factory blog](https://blog.fabric.microsoft.com/en-us/blog/category/data-factory)
+- [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Data Factory feature requests](https://ideas.fabric.microsoft.com/)
