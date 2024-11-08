@@ -26,8 +26,8 @@ Data activator supports the following Power BI visual types:
 * Stacked column
 * Clustered column
 * Stacked bar
-* 100% stacked column
-* 100% stacked bar
+* Stacked 100% column
+* Stacked 100% bar
 * Clustered bar
 * Ribbon chart
 * Line
@@ -96,7 +96,7 @@ Data Activator imposes the following limits on the number of actions that may oc
 
 ## Maximum number of Data Activator items
 
-Your organization may have up to 250 Data Activator items per region. You will get an error message if you try to create more than this number of items. To resolve the error, either:
+Your organization may have up to 250 Data Activator items per region. If you try to create more than this number of items, you receive an error message . To resolve the error, either:
 
 * Use an existing Data Activator item instead of creating a new item, or
 * Delete some of your existing Data Activator items.
