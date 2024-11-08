@@ -19,16 +19,16 @@ This article provides suggestions to troubleshoot common problems with the Azure
 ## Error code: SqlFailedToConnect
 
 - **Message**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the connection configuration is correct, and make sure the SQL Database firewall allows the Data Factory runtime to access.`
-- **Causes and recommendations**: Different causes may lead to this error. Check below list for possible cause analysis and related recommendation.
+- **Causes and recommendations**: Different causes can lead to this error. Check below list for possible cause analysis and related recommendation.
 
     | Cause analysis                                               | Recommendation                                               |
     | :----------------------------------------------------------- | :----------------------------------------------------------- |
     | For Azure SQL, if the error message contains the string "SqlErrorNumber=47073", it means that public network access is denied in the connectivity setting. | On the Azure SQL firewall, set the **Deny public network access** option to *No*. For more information, see [Azure SQL connectivity settings](/azure/azure-sql/database/connectivity-settings#deny-public-network-access). |
     | For Azure SQL, if the error message contains an SQL error code such as "SqlErrorNumber=[errorcode]", see the Azure SQL troubleshooting guide. | For a recommendation, see [Troubleshoot connectivity issues and other errors with Azure SQL Database and Azure SQL Managed Instance](/azure/azure-sql/database/troubleshoot-common-errors-issues). |
     | Check to see whether port 1433 is in the firewall allowlist. | For more information, see [Ports used by SQL Server](/sql/sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access#ports-used-by-). |
-    | If the error message contains the string "SqlException", SQL Database the error indicates that some specific operation failed. | For more information, search by SQL error code in [Database engine errors](/sql/relational-databases/errors-events/database-engine-events-and-errors). For further help, contact Azure SQL support. |
+    | If the error message contains the string "SqlException," SQL Database the error indicates that some specific operation failed. | For more information, search by SQL error code in [Database engine errors](/sql/relational-databases/errors-events/database-engine-events-and-errors). For further help, contact Azure SQL support. |
     | If this is a transient issue (for example, an instable network connection), add retry in the activity policy to mitigate. | For more information, see [Pipelines and activities](/azure/data-factory/concepts-pipelines-activities#activity-policy). |
-    | If the error message contains the string "Client with IP address '...' is not allowed to access the server", and you're trying to connect to Azure SQL Database, the error is usually caused by an Azure SQL Database firewall issue. | In the Azure SQL Server firewall configuration, enable the **Allow Azure services and resources to access this server** option. For more information, see [Azure SQL Database and Azure Synapse IP firewall rules](/azure/azure-sql/database/firewall-configure). |
+    | If the error message contains the string "Client with IP address '...' isn't allowed to access the server," and you're trying to connect to Azure SQL Database, the error is usually caused by an Azure SQL Database firewall issue. | In the Azure SQL Server firewall configuration, enable the **Allowed Azure services and resources to access this server** option. For more information, see [Azure SQL Database and Azure Synapse IP firewall rules](/azure/azure-sql/database/firewall-configure). |
     |If the error message contains `Login failed for user '<token-identified principal>'`, this error is usually caused by not granting enough permission to your service principal or system-assigned managed identity or user-assigned managed identity (depends on which authentication type you choose) in your database. |Grant enough permission to your service principal or system-assigned managed identity or user-assigned managed identity in your database.  <br/><br/> **For Azure SQL Database**:<br/>&nbsp;&nbsp;&nbsp;&nbsp;- If you use service principal authentication, follow [Service principal authentication](connector-azure-sql-database.md#service-principal-authentication).<br/>&nbsp;&nbsp;&nbsp;&nbsp;- **For Azure Synapse Analytics**:<br/>&nbsp;&nbsp;&nbsp;&nbsp;- If you use service principal authentication, follow [Service principal authentication](/azure/data-factory/connector-azure-sql-data-warehouse#service-principal-authentication).<br/>&nbsp;&nbsp;&nbsp;&nbsp;- **For Azure SQL Managed Instance**: <br/>&nbsp;&nbsp;&nbsp;&nbsp;- If you use service principal authentication, follow [Service principal authentication](/azure/data-factory/connector-azure-sql-managed-instance#service-principal-authentication).<br/>&nbsp;&nbsp;&nbsp;- If you use system-assigned managed identity authentication, follow [System-assigned managed identity authentication](/azure/data-factory/connector-azure-sql-managed-instance#managed-identity).<br/>&nbsp;&nbsp;&nbsp;- If you use user-assigned managed identity authentication, follow [User-assigned managed identity authentication](/azure/data-factory/connector-azure-sql-managed-instance#user-assigned-managed-identity-authentication).|
     | If you meet the error message that contains `The server was not found or was not accessible` when using Azure SQL Managed Instance, this error is usually caused by not enabling the Azure SQL Managed Instance public endpoint.| Refer to [Configure public endpoint in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure) to enable the Azure SQL Managed Instance public endpoint. |
 
@@ -36,31 +36,31 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Message**: `A database operation failed. Please search error to get more details.`
 
-- **Causes and recommendations**: Different causes may lead to this error. Check below list for possible cause analysis and related recommendation.
+- **Causes and recommendations**: Different causes can lead to this error. Check below list for possible cause analysis and related recommendation.
 
     | Cause analysis                                               | Recommendation                                               |
     | :----------------------------------------------------------- | :----------------------------------------------------------- |
-    | If the error message contains the string "SqlException", SQL Database throws an error indicating some specific operation failed. | If the SQL error is not clear, try to alter the database to the latest compatibility level '150'. It can throw the latest version SQL errors. For more information, see the [documentation](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat). <br/> For more information about troubleshooting SQL issues, search by SQL error code in [Database engine errors](/sql/relational-databases/errors-events/database-engine-events-and-errors). For further help, contact Azure SQL support. |
-    | If the error message contains the string "PdwManagedToNativeInteropException", it's usually caused by a mismatch between the source and destination column sizes. | Check the size of both the source and destination columns. For further help, contact Azure SQL support. |
-    | If the error message contains the string "InvalidOperationException", it's usually caused by invalid input data. | To identify which row has encountered the problem, enable the fault tolerance feature on the copy activity, which can redirect problematic rows to the storage for further investigation. For more information, see [Fault tolerance of copy activity](/azure/data-factory/copy-activity-fault-tolerance). |
-    | If the error message contains "Execution Timeout Expired", it's usually caused by query timeout. | Configure **Query timeout** in the source and **Write batch timeout** in the destination to increase timeout. |
-    | If the error message contains `Cannot find the object "dbo.Contoso" because it does not exist or you do not have permissions.` when you copy data from hybrid into an on-premises SQL Server table, it's caused by the current SQL account doesn't have sufficient permissions to execute requests issued by .NET SqlBulkCopy.WriteToServer or your table or database does not exist. | Switch to a more privileged SQL account or check if your table or database exists. |
+    | If the error message contains the string "SqlException," SQL Database throws an error indicating some specific operation failed. | If the SQL error isn't clear, try to alter the database to the latest compatibility level '150'. It can throw the latest version SQL errors. For more information, see the [documentation](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat). <br/> For more information about troubleshooting SQL issues, search by SQL error code in [Database engine errors](/sql/relational-databases/errors-events/database-engine-events-and-errors). For further help, contact Azure SQL support. |
+    | If the error message contains the string "PdwManagedToNativeInteropException," it's usually caused by a mismatch between the source and destination column sizes. | Check the size of both the source and destination columns. For further help, contact Azure SQL support. |
+    | If the error message contains the string "InvalidOperationException," it's usually caused by invalid input data. | To identify which row has encountered the problem, enable the fault tolerance feature on the copy activity, which can redirect problematic rows to the storage for further investigation. For more information, see [Fault tolerance of copy activity](/azure/data-factory/copy-activity-fault-tolerance). |
+    | If the error message contains "Execution Timeout Expired," it's usually caused by query timeout. | Configure **Query timeout** in the source and **Write batch timeout** in the destination to increase timeout. |
+    | If the error message contains `Cannot find the object "dbo.Contoso" because it does not exist or you do not have permissions.` when you copy data from hybrid into an on-premises SQL Server table, it's caused by the current SQL account doesn't have sufficient permissions to execute requests issued by .NET SqlBulkCopy.WriteToServer or your table or database doesn't exist. | Switch to a more privileged SQL account or check if your table or database exists. |
 
 ## Error code: SqlUnauthorizedAccess
 
 - **Message**: `Cannot connect to '%connectorName;'. Detail Message: '%message;'`
 
-- **Cause**: The credentials are incorrect or the login account can't access the SQL database.
+- **Cause**: The credentials are incorrect or the sign-in account can't access the SQL database.
 
-- **Recommendation**:  Check to ensure that the login account has sufficient permissions to access the SQL database.
+- **Recommendation**:  Check to ensure that the sign-in account has sufficient permissions to access the SQL database.
 
 ## Error code: SqlOpenConnectionTimeout
 
 - **Message**: `Open connection to database timeout after '%timeoutValue;' seconds.`
 
-- **Cause**: The problem could be a SQL database transient failure.
+- **Cause**: The problem could be a transient failure from the SQL database.
 
-- **Recommendation**:  Retry the operation to update the connection connection string with a larger connection timeout value.
+- **Recommendation**:  Retry the operation to update the connection string with a larger connection timeout value.
 
 ## Error code: SqlAutoCreateTableTypeMapFailed
 
@@ -86,7 +86,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Message**: `The specified Stored Procedure is not valid. It could be caused by that the stored procedure doesn't return any data. Invalid Stored Procedure script: '%scriptName;'.`
 
-- **Causes and recommendations**: Different causes may lead to this error. Check below list for possible cause analysis and related recommendation.
+- **Causes and recommendations**: Different causes can lead to this error. Check below list for possible cause analysis and related recommendation.
 
   | Cause analysis                                               | Recommendation                                             |
   | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -113,7 +113,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Message**: `Timeouts in SQL write operation.`
 
-- **Cause**: The problem could be caused by a SQL database transient failure.
+- **Cause**: The problem could be caused by a transient failure from the SQL database.
 
 - **Recommendation**:  Retry the operation. If the problem persists, contact Azure SQL support.
 
@@ -125,7 +125,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Recommendation**:  Update the SQL-connection connection string with a *connection timeout* value that's equal to or greater than 120 and rerun the activity.
 
-- **Cause**: If the exception details intermittently indicate that the SQL connection is broken, it might be a transient network failure or a SQL database side issue.
+- **Cause**: If the exception details intermittently indicate that the SQL connection is broken, it might be a transient network failure or an issue with the SQL database.
 
 - **Recommendation**:  Retry the activity and review the SQL database side metrics.
 
@@ -149,7 +149,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Message**: `The SQL Server connection is invalid with its credential being missing.`
 
-- **Cause**: The connection was not configured properly.
+- **Cause**: The connection wasn't configured properly.
 
 - **Recommendation**: Validate and fix the SQL server connection.
 
@@ -157,7 +157,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Message**: `Failed to detect the partition column with command '%command;', %message;.`
 
-- **Cause**: There is no primary key or unique key in the table.
+- **Cause**: There's no primary key or unique key in the table.
 
 - **Recommendation**: Check the table to make sure that a primary key or a unique index is created.
 
@@ -235,7 +235,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
     - Reduce column width to less than 1 MB.
     - Or use a bulk insert approach by disabling PolyBase.
 
-## Error message: The condition specified using HTTP conditional header(s) is not met
+## Error message: The condition specified using HTTP conditional header(s) isn't met
 
 - **Symptoms**: You use SQL query to pull data from Azure Synapse Analytics and receive the following error:
 
@@ -279,8 +279,8 @@ This article provides suggestions to troubleshoot common problems with the Azure
 ## Error code: Msg 105208
 
 - **Symptoms**: Error code: `Error code: Msg 105208, Level 16, State 1, Line 1 COPY statement failed with the following error when validating value of option 'FROM': '105200;COPY statement failed because the value for option 'FROM' is invalid.'`
-- **Cause**: Currently, ingesting data using the COPY command into an Azure Storage account that is using the new DNS partitioning feature results in an error. DNS partition feature enables customers to create up to 5000 storage accounts per subscription.  
-- **Resolutions**: Provision a storage account in a subscription that does not use the new [Azure Storage DNS partition feature](https://techcommunity.microsoft.com/t5/azure-storage-blog/public-preview-create-additional-5000-azure-storage-accounts/ba-p/3465466) (currently in Public Preview).
+- **Cause**: Currently, ingesting data using the COPY command into an Azure Storage account that is using the new DNS partitioning feature results in an error. DNS partition feature enables customers to create up to 5,000 storage accounts per subscription.  
+- **Resolutions**: Provision a storage account in a subscription that doesn't use the new [Azure Storage DNS partition feature](https://techcommunity.microsoft.com/t5/azure-storage-blog/public-preview-create-additional-5000-azure-storage-accounts/ba-p/3465466) (currently in Public Preview).
 
 ## Error code: SqlDeniedPublicAccess
 

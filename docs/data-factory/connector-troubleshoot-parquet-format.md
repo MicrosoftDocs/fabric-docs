@@ -28,7 +28,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 - **Message**: `Unsupported Parquet type. PrimitiveType: %primitiveType; OriginalType: %originalType;.`
 
-- **Cause**: The Parquet format is not supported in Azure Data Factory and Synapse pipelines.
+- **Cause**: The Parquet format isn't supported in Azure Data Factory and Synapse pipelines.
 
 - **Recommendation**:  Double-check the source data by going to [Supported file formats and compression codecs by copy activity](/azure/data-factory/supported-file-formats-and-compression-codecs).
 
@@ -94,7 +94,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 - **Cause**: This scenario isn't supported.
 
-- **Recommendation**:  'ParquetInterpretFor' should not be 'sparkSql'.
+- **Recommendation**:  'ParquetInterpretFor' shouldn't be 'sparkSql'.
 
 ## Error code: ParquetUnsupportFileLevelCompressionOption
 
@@ -110,7 +110,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 - **Cause**: A Java Virtual Machine (JVM) can't be created because some illegal (global) arguments are set.
 
-- **Recommendation**:  Log in to the machine that hosts *each node* of your self-hosted IR. Check to ensure that the system variable is set correctly, as follows: `_JAVA_OPTIONS "-Xms256m -Xmx16g" with memory bigger than 8 G`. Restart all the IR nodes, and then rerun the pipeline.
+- **Recommendation**:  Sign-in to the machine that hosts *each node* of your self-hosted IR. Check to ensure that the system variable is set correctly, as follows: `_JAVA_OPTIONS "-Xms256m -Xmx16g" with memory bigger than 8 G`. Restart all the IR nodes, and then rerun the pipeline.
 
 ## Arithmetic overflow
 
@@ -128,7 +128,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
     The issue could be caused by white spaces or unsupported special characters (such as,;{}()\n\t=) in the column name, because Parquet doesn't support such a format. 
 
-    For example, a column name such as *contoso(test)* will parse the type in brackets from [code](https://github.com/apache/parquet-mr/blob/master/parquet-column/src/main/java/org/apache/parquet/schema/MessageTypeParser.java) `Tokenizer st = new Tokenizer(schemaString, " ;{}()\n\t");`. The error is thrown because there is no such "test" type.
+    For example, a column name such as *contoso(test)* parses the type in brackets from [code](https://github.com/apache/parquet-mr/blob/master/parquet-column/src/main/java/org/apache/parquet/schema/MessageTypeParser.java) `Tokenizer st = new Tokenizer(schemaString, " ;{}()\n\t");`. The error is thrown because there's no such "test" type.
 
     To check supported types, go to the GitHub [apache/parquet-mr site](https://github.com/apache/parquet-mr/blob/master/parquet-column/src/main/java/org/apache/parquet/schema/OriginalType.java).
 
@@ -161,7 +161,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 - **Cause**: This issue is caused by the Parquet-mr library bug of reading large column. 
 
-- **Resolution**: Try to generate smaller files (size < 1G) with a limitation of 1000 rows per file.
+- **Resolution**: Try to generate smaller files (size < 1G) with a limitation of 1,000 rows per file.
 
 ## Related content
 
