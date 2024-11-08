@@ -22,7 +22,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - Events you want to monitor.
 - Conditions you want to look for in the events.
-- Action you want Fabric Activator to take.
+- Action you want Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] to take.
 
 ### From the events list
 
@@ -71,7 +71,7 @@ On the **Set alert** page, follow these steps:
     1. To run a Fabric item, select **Run a Fabric item**.
 1. In the **Save location** section, do these steps:
     1. For **Workspace**, select the workspace where you want to save the alert.
-    1. For **Item**, select an existing Activator item or create a new Activator item for this alert. 
+    1. For **Item**, select an existing [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item or create a new [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item for this alert. 
 1. Select **Create** at the bottom of the page to create the alert.
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert.png" alt-text="Screenshot that shows the Set alert page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert.png":::                

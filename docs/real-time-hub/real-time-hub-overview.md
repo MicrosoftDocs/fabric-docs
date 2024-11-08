@@ -33,7 +33,7 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 | Fabric events | Fabric workspace item events (automatically generated) |
 | Azure events | Azure storage account events |
 
-The Real-Time hub makes it effortless to connect these sources to components in Real-Time hub like eventstream, KQL database, and Data Activator.  
+The Real-Time hub makes it effortless to connect these sources to components in Real-Time hub like eventstream, KQL database, and Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)].  
 
 ## Data integrations
 

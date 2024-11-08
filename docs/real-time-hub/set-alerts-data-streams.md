@@ -40,7 +40,7 @@ On the **Set alert** page, follow these steps:
     1. To run a Fabric item, select **Run a Fabric item**. 
 1. In the **Save location** section, do these steps: 
     1. For **Workspace**, select the workspace where you want to save the alert. 
-    1. For **Item**, select an existing Activator item or create a new Activator item for this alert. 
+    1. For **Item**, select an existing Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item or create a new [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item for this alert. 
     
         :::image type="content" source="./media/set-alerts-data-streams/save-location.png" alt-text="Screenshot that shows the location details of an alert." lightbox="./media/set-alerts-data-streams/save-location.png":::
 
