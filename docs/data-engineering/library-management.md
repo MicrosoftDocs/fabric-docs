@@ -60,10 +60,12 @@ Since `%pip install` generating different dependency trees from time to time, wh
 | **R custom (.tar.gz)** | Supported as custom library| Supported |
 | **Jar** | Supported as custom library | Supported |
 
+<a id="in-line-installation"></a>
 ## Inline installation
 
 Inline commands support managing libraries in each notebook sessions.
 
+<a id="python-in-line-installation"></a>
 ### Python inline installation
 
 The system restarts the Python interpreter to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend that you put all the commands for adding, deleting, or updating Python packages **at the beginning of your notebook**.
