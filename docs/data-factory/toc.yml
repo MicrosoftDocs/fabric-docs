@@ -939,8 +939,6 @@
       href: pipeline-troubleshoot-guide.md
     - name: Connectors
       items:
-      - name: Connector troubleshooting guide
-        href: connector-troubleshoot-guide.md
       - name: Azure Blob Storage
         href: connector-troubleshoot-azure-blob-storage.md
       - name: Azure Cosmos DB
