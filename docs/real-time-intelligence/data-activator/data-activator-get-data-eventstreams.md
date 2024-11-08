@@ -50,7 +50,7 @@ To connect your event stream item to [!INCLUDE [fabric-activator](../includes/fa
   
     :::image type="content" source="media/data-activator-get-data/data-activator-get-data-05.png" alt-text="Screenshot of reflex eventstream item showing data flow.":::
 
-Once you connect your event stream item to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], the next step is to assign your data to some objects. To assign your data, follow the steps described in the [Assign data to objects in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-assign-data-objects.md) article.
+Once you connect your event stream item to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], the next step is to assign your data to some objects. To assign your data, follow the steps described in the [Assign data to objects in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-assign-data-objects.md) article.
 
 ## Related content
 

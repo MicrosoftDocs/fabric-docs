@@ -22,7 +22,7 @@ Our example uses the **Package delivery events** event stream. From this event s
 
 Detection settings are managed in the **Definition** pane which opens on the right side of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Select a rule from the **Explorer** or select **New rule** to open the **Definition** pane. Here you set the detection settings using **Summarization**, **Filter**, and **Condition**.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definition pane in Activator."lightbox="media/data-activator-detection-conditions/data-activator-pane.png":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definition pane in activator."lightbox="media/data-activator-detection-conditions/data-activator-pane.png":::
 
 **Summarization**
 

@@ -12,7 +12,7 @@ ms.search.form: Real-Time Dashboard
 ---
 # Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard
 
-You can create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from many different data sources in Microsoft Fabric. This article explains how to create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard. For more information, see [What is Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](data-activator-introduction.md)
+You can create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from many different data sources in Microsoft Fabric. This article explains how to create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard. For more information, see [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](data-activator-introduction.md)
 
 ## Alert when conditions are met in a Real-Time Dashboard
 

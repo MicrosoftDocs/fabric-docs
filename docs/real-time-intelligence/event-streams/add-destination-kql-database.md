@@ -213,7 +213,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
-- [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] destination](add-destination-activator.md)
+- [Activator destination](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end

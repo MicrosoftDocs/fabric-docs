@@ -41,7 +41,7 @@ Assign data using the **New object**  option in the ribbon. The process is the s
 > [!NOTE]
 > When assigning to an existing object, it is essential that you choose a key column that references the same object IDs that you used when creating the object in the first place. Otherwise, you get unexpected results from your properties and rules.
 
-:::image type="content" source="media/data-activator-assign-data-objects/activator-assign-data-objects-03.png" alt-text="Screenshot of assigning data in Activator.":::
+:::image type="content" source="media/data-activator-assign-data-objects/activator-assign-data-objects-03.png" alt-text="Screenshot of assigning data in activator.":::
 
 ## Assign data to multiple objects
 

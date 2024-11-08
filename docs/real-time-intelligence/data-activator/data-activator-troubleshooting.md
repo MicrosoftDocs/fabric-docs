@@ -95,7 +95,7 @@ This error code means that [!INCLUDE [fabric-activator](../includes/fabric-activ
 
 ### RecipientThrottled
 
-This error code means that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] couldn't alert the recipient of your trigger because the recipient receives too many messages from [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. The article [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations](data-activator-limitations.md) lists the maximum number of messages that you can send from a trigger. To resolve this problem, change the definition of your trigger so that it activates less often.
+This error code means that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] couldn't alert the recipient of your trigger because the recipient receives too many messages from [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. The article [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations](data-activator-limitations.md) lists the maximum number of messages that you can send from a trigger. To resolve this problem, change the definition of your trigger so that it activates less often.
 
 ### BotBlockedByUser
 

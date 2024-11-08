@@ -5,18 +5,18 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.search.form: Data Activator Introduction
-ms.date: 09/10/2024
+ms.search.form: Activator Introduction
+ms.date: 11/05/2024
 #customer intent: As a Fabric user I want to understand what Activator is and learn some of the basic concepts.
 ---
 
 # What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?
 
 Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data.
-It monitors data in Power BI reports and Eventstreams items, for when the data hits certain thresholds or matches other patterns.
+It monitors data in Power BI reports and eventstreams, for when the data hits certain thresholds or matches other patterns.
 It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
-[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] allows customers to build a digital nervous system that acts across all their data, at scale and in a timely manner. Business users can describe business conditions in a no-code experience to launch actions such as email, Teams notifications, Power Automate flows, and call into third party action systems. Business users can self-serve their needs and reduce their reliance on internal IT and developer teams, either of which is often costly and hinders agility. Customer organizations don’t need a developer team to manage and maintain custom in-house monitoring or alerting solutions.
+[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] allows customers to build a digital nervous system that acts across all their data, at scale, and in a timely manner. Business users can describe business conditions in a no-code experience to launch actions such as email, Teams notifications, Power Automate flows, and call into third party action systems. Business users can self-serve their needs and reduce their reliance on internal IT and developer teams, either of which is often costly and hinders agility. Customer organizations don’t need a developer team to manage and maintain custom in-house monitoring or alerting solutions.
 
 Some common use cases are:
 

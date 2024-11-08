@@ -39,7 +39,7 @@ Once you create an activator, populate it with data. Learn how to get data into 
 
 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields you’re monitoring. Eventstreams vary in frequency. IoT sensors might have events many times per second. While packages being scanned in and out of shipping locations might have sporadic streams.
 
-An *eventstream* is an instance of the Eventstream item in Fabric. The eventstreams feature in the Microsoft Fabric Real-Time Intelligence experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] takes actions on patterns or conditions that are detected in eventstream data. For example, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)][!INCLUDE [fabric-activator](../includes/fabric-activator.md)]monitors eventstream items and detects when an "event" hits certain thresholds such as "delivery time more than 10 hours." It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
+An *eventstream* is an instance of the Eventstream item in Fabric. The eventstreams feature in the Microsoft Fabric Real-Time Intelligence experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] takes actions on patterns or conditions that are detected in eventstream data. For example, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] monitors eventstream items and detects when an "event" hits certain thresholds such as "delivery time more than 10 hours." It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
 Data being observed from Power BI is also treated as an eventstream. In this case, events are observations made of the data on a regular schedule that typically matches the refresh frequency of your Power BI semantic model (previously known as a dataset). These observations might only happen once a day, or even once a week – it’s just a slowly changing eventstream.
 
@@ -65,7 +65,7 @@ Properties are useful when you want to reuse logic across multiple rules. You mi
 
 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] needs to track historical data to ensure that correct actions can be computed. The amount of historical data to be queried is called the lookback period. This lookback period depends on how a rule is defined and the data volume (events per second) of the data that is needed to evaluate the rule. 
 
-For example, a pharmaceutical logistics operation is transporting medicine packages in a cold chain. The goal is to get an alert when a medicine package becomes too warm. Say the rule definition evaluates the average temperature over a three-hour period for each individual package. And the rule condition is that the average temperature becomes greater than 8°C. Here, the lookback period is six hours. A[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] needs to inspect six hours’ worth of historical data to decide whether the rule condition holds. 
+For example, a pharmaceutical logistics operation is transporting medicine packages in a cold chain. The goal is to get an alert when a medicine package becomes too warm. Say the rule definition evaluates the average temperature over a three-hour period for each individual package. And the rule condition is that the average temperature becomes greater than 8°C. Here, the lookback period is six hours. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] needs to inspect six hours’ worth of historical data to decide whether the rule condition holds. 
 
 ### Distinct, active object IDs
 
@@ -74,4 +74,4 @@ Rules built on attributes are used to monitor how an attribute on an object ID c
 ## Related content
 
 - [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
-- [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]Activator](data-activator-introduction.md)
+- [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-introduction.md)
