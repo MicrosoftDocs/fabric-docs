@@ -12,7 +12,11 @@ ms.search.form: Data Activator KQL Queryset Onramp
 # Create Activator alerts from a KQL Queryset
 
 This article explains how to create Data Activator alerts from a KQL Queryset. For more information, see [What is Data Activator](data-activator-introduction.md).
-You can use Data Activator on a KQL Queryset to trigger notifications in two modes: when a scheduled KQL query returns results, or when a scheduled KQL query result that contains a visualization meets a defined set of conditions. You can send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
+You can use Data Activator on a KQL Queryset to trigger notifications in two modes: 
+- when a scheduled KQL query returns results
+- when a scheduled KQL query returns results that contains a visualization meets a defined set of conditions. 
+
+Send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
 
 ## Sample scenarios
 
@@ -20,7 +24,7 @@ Here are some ways you can use Data Activator alerts with KQL queries:
 
 * Suppose you have a KQL database and are storing application logs.
     * You receive an alert when any records from the last 5 minutes contain the string `authorization error` in the table’s *message* column.
-* In a different scenario, you have streaming data for available bicycles in different neighborhoods. A KQL query is created to render a piechart for the number of available bicycles per neighborhood.
+* In a different scenario, you have streaming data for available bicycles in different neighborhoods. A KQL query is created to render a pie chart for the number of available bicycles per neighborhood.
     * You receive an alert when the number of available bicycles in any neighborhood falls below an acceptable number.
 
 ## Prerequisites
@@ -121,7 +125,7 @@ Next, define your alert conditions. In the **Set Alert** pane that appears, take
 
 ## Optional: Edit your trigger in Data Activator
 
-When your Reflex item is saved, the side pane will display a link to your item. Select the link to further edit in Data Activator. This step can be useful if you want to do one of the following:
+When your Reflex item is saved, the side pane displays a link to your item. Select the link to further edit in Data Activator. This step can be useful if you want to do one of the following actions:
 
 * Add other recipients to your alert.
 * Change the content of the alert to reflect the specific data that triggered the alert.
@@ -133,7 +137,7 @@ In the Reflex item itself, you can also view the history of the query results an
 
 <!-- ## Limitations on query result set that returns a time chart with a time axis
 
-If you have a result set with a chart that has a time axis, Data Activator will read the measure value exactly once for each point on the time axis. For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
+If you have a result set with a chart that has a time axis, Data Activator reads the measure value exactly once for each point on the time axis. For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
 
 To work around this limitation, you can add a line to the query so that the end time of the time filter ends at 'one bin before,' and the last bin does not change. 
 
