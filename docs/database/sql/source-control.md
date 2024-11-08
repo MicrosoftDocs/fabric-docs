@@ -16,8 +16,8 @@ In this tutorial, you learn how to work with your [SQL database in Fabric](overv
 
 A SQL database in Microsoft Fabric has source control integration, or "git integration", allowing SQL users to track the definitions of their database objects over time. This integration enables a team to:
 
-- commit the database to source control, which automatically converts the live database into code in the configured source control repository (such as Azure DevOps).
-- update database objects from the contents of source control, which validates the code in the source control repository before applying a differential change to the database.
+- Commit the database to source control, which automatically converts the live database into code in the configured source control repository (such as Azure DevOps).
+- Update database objects from the contents of source control, which validates the code in the source control repository before applying a differential change to the database.
 
 :::image type="content" source="media/source-control/git.png" alt-text="Diagram of the simple commit and update cycle between the live database and source control.":::
 
@@ -29,7 +29,7 @@ If you're unfamiliar with git, here are a few recommended resources:
 
 This article presents a series of useful scenarios that can be used individually or in combination to manage your development process with SQL database in Fabric:
 
-- [Convert the Fabric SQL database into code in source control](#convert-the-fabric-sql-database-into-code-in-source-control)
+- [Convert the Fabric SQL database into code in source control](#add-the-fabric-sql-database-to-source-control)
 - [Update the Fabric SQL database from source control](#update-the-fabric-sql-database-from-source-control)
 - [Create a branch workspace](#create-a-branch-workspace)
 - [Merge changes from one branch into another](#merge-changes-from-one-branch-into-another)
@@ -49,7 +49,7 @@ This repository connection applies at the workspace level, such that a single br
 
 For steps to connect your workspace to a source control repository, see [Get started with Git integration](../../cicd/git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo). Your workspace can be connected to an Azure DevOps or GitHub remote repository.
 
-## Convert the Fabric SQL database into code in source control
+## Add the Fabric SQL database to source control
 
 In this scenario, you'll commit database objects to source control. You might be developing an application where you're creating objects directly in a test database and track that database in source control just like your application code. As a result, you have access to the history of the definitions of your database objects and can use Git concepts like branching and merging to further customize your development process.
 
@@ -95,7 +95,7 @@ In this scenario, you'll be creating database objects as code in the SQL project
 
 In this scenario, you'll set up a new development environment in Fabric by having Fabric create a duplicate set of resources based on the source control definition. The duplicate database will include the database objects that we have checked into source control. This scenario is targeted towards developers that are continuing their application development lifecycle in Fabric and are utilizing the source control integration from Fabric.
 
-1. Complete the scenario [convert the Fabric SQL database into code in source control](#convert-the-fabric-sql-database-into-code-in-source-control).
+1. Complete the scenario [convert the Fabric SQL database into code in source control](#add-the-fabric-sql-database-to-source-control).
     - You should have a branch in a source control repository with both a SQL project and the Fabric object metadata.
 1. In the Fabric workspace, open the **source control** panel. From the Branches tab of the **Source control** menu, select **Branch out to new workspace**.
 1. Specify the names of the branch and workspace that will be created. The branch will be created in the source control repository and is populated with the committed contents of the branch associated with the workspace you are branching from. The workspace will be created in Fabric.
