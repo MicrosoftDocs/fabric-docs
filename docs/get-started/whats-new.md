@@ -307,7 +307,7 @@ This section summarizes recent improvements and features for Microsoft Fabric Da
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
-|November 2024|**Fabric SQL database (Preview)**|SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allow you to easily create your operational database in Fabric. A [SQL database in Fabric uses the SQL Database Engine as Azure SQL Database](../database/sql/feature-comparison-sql-database-fabric.md). Review a [Decision Guide for SQL databases](../database/sql/decision-guide.md). |
+|November 2024|**Fabric SQL database (Preview)**|SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allow you to easily create your operational database in Fabric. A [SQL database in Fabric uses the SQL Database Engine as Azure SQL Database](../database/sql/feature-comparison-sql-database-fabric.md). Review a [Decision Guide for SQL databases](../database/sql/decision-guide.md). For more on this announcement, read the [SQL database in Fabric announcement blog](https://aka.ms/announcingsqlfabric). |
 
 #### Fabric Database samples and guidance
 
