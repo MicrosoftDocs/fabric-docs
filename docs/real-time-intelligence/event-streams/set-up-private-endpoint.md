@@ -85,6 +85,10 @@ Once added, Eventstream starts pulling data from your Azure event hub over the p
 
 By following these steps, you have a fully operational Eventstream running over a secure private network, using the managed private endpoint to ensure secure data streaming.
 
+## Limitations
+
+* The Data Preview feature may be unavailable in certain sections when connected through a managed private endpoint; however, data will still flow correctly to the destination.
+
 ## Related content
 - [Network security in Fabric](/fabric/security/security-overview)
 - [About Managed Private Endpoints](/fabric/security/security-managed-private-endpoints-overview)
