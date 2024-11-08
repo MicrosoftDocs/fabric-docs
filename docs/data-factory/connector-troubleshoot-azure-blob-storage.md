@@ -64,7 +64,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Cause**: This error happens when copying data with Azure Blob Storage account public access.
 
-- **Recommendation**: For more information about connection errors in the public endpoint, see [Connection error in public endpoint](security-and-access-control-troubleshoot-guide.md#connection-error-in-public-endpoint).
+- **Recommendation**: For more information about connection errors in the public endpoint, see [Connection error in public endpoint](/azure/data-factory/security-and-access-control-troubleshoot-guide#connection-error-in-public-endpoint).
 
 ## Related content
 
