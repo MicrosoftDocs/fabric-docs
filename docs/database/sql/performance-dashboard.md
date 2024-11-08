@@ -118,7 +118,7 @@ Along with the Query ID and the Query text, metric, and execution count, tabs in
 - **High read queries**
     - Initially sorted by Total logical reads descending.
 
-      :::image type="content" source="media/performance-dashboard/queries-high-read.png" alt-text="Screenshot from the Fabric portal of the Queries page, with the High read queries tab selected." lightbox="media/performance-dashboard/queries-high-read.png":::
+   :::image type="content" source="media/performance-dashboard/queries-high-read.png" alt-text="Screenshot from the Fabric portal of the Queries page, with the High read queries tab selected." lightbox="media/performance-dashboard/queries-high-read.png":::
 
 ## Related content
 

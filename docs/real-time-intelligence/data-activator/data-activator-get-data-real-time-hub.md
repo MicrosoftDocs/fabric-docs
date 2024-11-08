@@ -5,16 +5,13 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 09/16/2024
+ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to get data for Activator from Real-Time Hub.
 ---
 
 # Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Real-Time Hub
 
 You can get data for use in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from many sources. This article describes how to get data from Real-Time Hub. 
-
-> [!IMPORTANT]
-> [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
 
 ## Prerequisites
 

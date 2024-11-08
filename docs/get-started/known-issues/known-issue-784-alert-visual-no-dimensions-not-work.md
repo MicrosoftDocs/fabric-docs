@@ -18,7 +18,7 @@ You can create an alert by selecting the **Set alert** button on a Power BI repo
 
 ## Symptoms
 
-When trying to set the alert on a visual with no dimensions, you receive an error in the trigger chart. The error message is similar to: `[!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] is preparing your data. In most cases, you should see your data in a few minutes. Otherwise, please contact support.`.
+When trying to set the alert on a visual with no dimensions, you receive an error in the trigger chart. The error message is similar to: `Activator is preparing your data. In most cases, you should see your data in a few minutes. Otherwise, please contact support.`.
 
 ## Solutions and workarounds
 

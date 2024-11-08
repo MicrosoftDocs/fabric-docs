@@ -21,7 +21,7 @@ sections:
         answer:
           You can connect to SQL database in Fabric in the same ways you connect to Azure SQL Database. For more information, see [Connect to SQL database in Fabric](connect.md).
 
-  - name: SQL database in Fabric data in OneLake
+  - name: About SQL database data in OneLake
     questions:
 
       - question: |
@@ -110,7 +110,15 @@ sections:
           Is SQL database in Fabric billed with Fabric capacity or with Azure capacity?
         answer: 
           Billing for SQL database in Fabric is structured according to the [Fabric Capacity Model](../../enterprise/licenses.md).
-          
+         
+  - name: Troubleshooting
+    questions:
+      - question: |
+          I tried to create a database but got the error message "SQL database failed to create." What should I do?
+        answer:
+          Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, users who try to create a new SQL database will receive an error message "SQL database failed to create."
+ 
+
 
 additionalContent: |
 

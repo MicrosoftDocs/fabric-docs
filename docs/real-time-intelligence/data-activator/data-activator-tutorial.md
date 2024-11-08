@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter
-ms.date: 09/24/2024
+ms.date: 11/08/2024
 ms.search.form: Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
 ---
@@ -22,8 +22,6 @@ In this tutorial, you use sample data included with Fabric [!INCLUDE [fabric-act
 > * Create an object
 > * Create a rule
 
-> [!IMPORTANT]
-> [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
 ## Prerequisites
 
 * Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../get-started/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
