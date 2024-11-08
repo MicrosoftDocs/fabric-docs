@@ -57,5 +57,5 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Custom app](add-destination-custom-app.md)
 - [Eventhouse](add-destination-kql-database.md)
 - [Lakehouse](add-destination-lakehouse.md)
-- [Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]](add-destination-activator.md)
+- [Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)

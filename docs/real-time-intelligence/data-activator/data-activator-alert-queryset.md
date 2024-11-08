@@ -120,7 +120,7 @@ Next, define your alert conditions. In the **Set Alert** pane that appears, take
 
 ---
 
-## Optional: Edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+## Optional: Edit your trigger in Activator
 
 When your Reflex item is saved, the side pane will display a link to your item. Select the link to further edit in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. This step can be useful if you want to do one of the following:
 

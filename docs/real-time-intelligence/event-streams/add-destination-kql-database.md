@@ -120,7 +120,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Custom app](add-destination-custom-app.md)
 - [Derived stream](add-destination-derived-stream.md)
 - [Lakehouse](add-destination-lakehouse.md)
-- [Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]](add-destination-activator.md)
+- [Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 
@@ -213,7 +213,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
-- [[!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] destination](add-destination-activator.md)
+- [[!INCLUDE [fabric-activator](includes/fabric-activator.md)] destination](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end

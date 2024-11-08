@@ -64,7 +64,7 @@ The charts in the Definition tab updates to show a sample of the events that mee
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts." lightbox="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png":::
 
-If you navigate to the **Analytics** tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that [!INCLUDE [fabric-activator](../includes/fabric-activator.md) is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
+If you navigate to the **Analytics** tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
 
 ### Step 4: Define the action to take
 

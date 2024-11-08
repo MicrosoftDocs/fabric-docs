@@ -48,7 +48,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Lakehouse                     | Destination           | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
 | KQL Database (Direct Ingestion) | Destination           | NO                    |                               |
 | KQL Database (Event processing before ingestion) | Destination           | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]                        | Destination           | NO                    |                               |
+| Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]                        | Destination           | NO                    |                               |
 
 Below is a description of the available resume options:
 
