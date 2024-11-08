@@ -12,7 +12,6 @@ ms.custom: has-adal-ref, synapse
 
 # Troubleshoot the MongoDB connector in Azure Data Factory and Azure Synapse
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 This article provides suggestions to troubleshoot common problems with the MongoDB connector in Azure Data Factory and Azure Synapse.
 
@@ -25,10 +24,9 @@ This article provides suggestions to troubleshoot common problems with the Mongo
 
 - **Cause**: When you copy data from Azure Cosmos DB MongoAPI or MongoDB with the universally unique identifier (UUID) field, there are two ways to represent the UUID in Binary JSON (BSON): UuidStardard and UuidLegacy. By default, UuidLegacy is used to read data. You will receive an error if your UUID data in MongoDB is UuidStandard.
 
-- **Resolution**: In the MongoDB connection string, add the *uuidRepresentation=standard* option. For more information, see [MongoDB connection string](connector-mongodb.md#linked-service-properties).
+- **Resolution**: In the MongoDB connection string, add the *uuidRepresentation=standard* option.
 
 ## Related content
 
 For more troubleshooting help, try this resource:
-
 - [Connector troubleshooting guide](connector-troubleshoot-guide.md)
