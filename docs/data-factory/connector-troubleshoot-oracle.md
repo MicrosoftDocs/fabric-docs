@@ -25,11 +25,3 @@ This article provides suggestions to troubleshoot common problems with the Oracl
     To see whether the value in Oracle is in the supported range of dates, run `select dump(<column name>)`. 
 
     To learn the byte sequence in the result, see [How are dates stored in Oracle?](https://stackoverflow.com/questions/13568193/how-are-dates-stored-in-oracle).
-
-## Related content
-
-For more troubleshooting help, try these resources:
-
-- [Connector troubleshooting guide](connector-troubleshoot-guide.md)
-- [Azure videos](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
-- [X information about Data Factory](https://x.com/hashtag/DataFactory)
