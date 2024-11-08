@@ -5,16 +5,13 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 10/31/2024
+ms.date: 11/08/2024
 ms.search.form: Data Activator Detection Condition
 ---
 
 # Detection settings in Data Activator
 
 This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Data Activator and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking. 
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 Our example uses the **Package delivery events** event stream. From this event stream, we already created an object named **Temperature** and a rule **Too hot for medicine**. 
 

@@ -6,16 +6,13 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
-ms.date: 09/09/2024
+ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn about Data Activator limitations.
 ---
 
 # Data Activator limitations
 
 Data Activator is subject to the following general and specific limitations. Before you began your work with Data Activator, review and consider these limitations.
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 ## General limitations
 
@@ -29,8 +26,8 @@ Data activator supports the following Power BI visual types:
 * Stacked column
 * Clustered column
 * Stacked bar
-* 100% stacked column
-* 100% stacked bar
+* Stacked 100% column
+* Stacked 100% bar
 * Clustered bar
 * Ribbon chart
 * Line
@@ -99,7 +96,7 @@ Data Activator imposes the following limits on the number of actions that may oc
 
 ## Maximum number of Data Activator items
 
-Your organization may have up to 250 Data Activator items per region. You will get an error message if you try to create more than this number of items. To resolve the error, either:
+Your organization may have up to 250 Data Activator items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
 
 * Use an existing Data Activator item instead of creating a new item, or
 * Delete some of your existing Data Activator items.

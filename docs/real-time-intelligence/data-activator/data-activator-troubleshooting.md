@@ -5,16 +5,13 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 09/10/2024
+ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to troubleshoot Data Activator errors.
 ---
 
 # Troubleshoot Data Activator errors
 
 If a problem occurs with any of your Data Activator events, objects, or triggers after you create them, then Data Activator sends you an email containing an error code. This article explains the meaning of the error codes that you can receive and describes the steps to take to fix the associated problems.
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 ## Data ingestion error codes
 
