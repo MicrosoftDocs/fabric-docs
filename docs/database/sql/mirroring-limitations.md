@@ -89,7 +89,7 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
 
 ## SQL analytics endpoint limitations
 
-- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience. See [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
+- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience. See [SQL analytics endpoint limitations of the warehouse](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 
 ## Related content
 

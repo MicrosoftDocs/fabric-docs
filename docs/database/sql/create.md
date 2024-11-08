@@ -4,7 +4,7 @@ description: Learn how to create a SQL database in Microsoft Fabric in the Fabri
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
-ms.date: 11/06/2024
+ms.date: 11/07/2024
 ms.topic: how-to
 ms.search.form: product-databases
 ---
@@ -31,6 +31,10 @@ In this tutorial, you'll create a new [SQL database in Fabric](overview.md).
    - **Sample data** option lets you import a sample data into your **Empty** database.
    - **T-SQL** option gives you a web-editor that can be used to write T-SQL to create database object like schema, tables, views, and more. For users who are looking for code snippets to create objects, they can look for available samples in **Templates** drop down list at the top of the menu.
    - **Connection strings** option shows the SQL database connection string that is required when you want to [connect](connect.md) using [SQL Server Management Studio](https://aka.ms/ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), or other external tools.
+1. Consider adding your new database to source control. For more information, see [SQL database source control integration in Microsoft Fabric](source-control.md#add-the-fabric-sql-database-to-source-control).
+
+> [!NOTE]
+> You can also [deploy a SQL database in Fabric with the REST API](deploy-rest-api.md).
 
 ## Next step
 

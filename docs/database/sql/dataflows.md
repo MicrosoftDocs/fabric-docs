@@ -1,13 +1,13 @@
 ---
-title: "SQL database in Dataflow Gen2 in Microsoft Fabric"
-description: Learn how to use Dataflow Gen2 with a SQL Database in Microsoft Fabric.
+title: "Load data with Dataflow Gen2 into SQL database"
+description: Learn how to load data into a SQL database with Dataflow Gen2 in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to
 ---
-# SQL database with Dataflow Gen2 in Microsoft Fabric
+# Load data with Dataflow Gen2 into SQL database in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 

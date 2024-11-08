@@ -23,7 +23,7 @@ You can connect to and query your [SQL database in Fabric](overview.md) in all t
 
 ## Query editor in the Fabric portal
 
-You can connect to the SQL database using the [web-based editor in the Fabric portal](/fabric/data-warehouse/sql-query-editor).
+You can connect to the SQL database using the [web-based editor in the Fabric portal](query-editor.md).
 
 The web-based editor for SQL database in Fabric provides a foundational object explorer and query execution interface. The integrated **Explorer** menu lists all database objects.
 
@@ -41,7 +41,7 @@ To find the SQL connection string for your **Fabric SQL database**:
 
 To find the SQL connection string for the **SQL analytics endpoint** of your Fabric SQL database:
 
-- Go to the settings of your SQL database item, then select **SQL endpoint**. 
+- Go to the settings of your SQL database item, then select **SQL endpoint**.
 - Or, select the `...` menu, then select **Copy SQL connection string**.
 
 ## Open in button to connect
