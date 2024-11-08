@@ -955,6 +955,14 @@
         href: connector-troubleshoot-azure-database-for-postgresql.md
       - name: Azure Table Storage
         href: connector-troubleshoot-azure-table-storage.md
+      - name: MongoDB
+        href: connector-troubleshoot-mongodb.md
+      - name: Oracle
+        href: connector-troubleshoot-oracle.md
+      - name: Snowflake
+        href: connector-troubleshoot-snowflake.md
+      - name: FTP-SFTP-HTTP
+        href: connector-troubleshoot-ftp-sftp-http.md
       - name: Format
         items:
         - name: Delimited text
