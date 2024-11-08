@@ -12,7 +12,6 @@ ms.custom: has-adal-ref, synapse
 
 # Troubleshoot the Snowflake connector in Data Factory and Azure Synapse
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 This article provides suggestions to troubleshoot common problems with the Snowflake connector in Data Factory and Azure Synapse. 
 
@@ -26,8 +25,7 @@ This article provides suggestions to troubleshoot common problems with the Snowf
 
 - **Recommendation**:  
 
-    - If you configure a [on-premises data gateway](how-to-access-on-premises-data.md) to connect to Snowflake, make sure to add your self-hosted integration runtime IPs to the allowed list in Snowflake. 
-    - If you use an Azure Integration Runtime and the access is restricted to IPs approved in the firewall rules, you can add [Azure Integration Runtime IPs](azure-integration-runtime-ip-addresses.md) to the allowed list in Snowflake.
+    - If you configure a [on-premises data gateway](how-to-access-on-premises-data.md) to connect to Snowflake, make sure to add your on-premises data gateway(OPDG) IPs to the allowed list in Snowflake. 
 
 ## Error code: SnowflakeFailToAccess
 
