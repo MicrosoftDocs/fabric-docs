@@ -94,7 +94,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 ## The copy activity is not able to pick files from Azure Data Lake Storage Gen2
 
-- **Symptoms**: The copy activity is not able to pick files from Azure Data Lake Storage Gen2 when the file name is "Asset_Metadata". The issue only occurs in the Parquet type data. Other types of datas with the same file name work correctly.
+- **Symptoms**: The copy activity is not able to pick files from Azure Data Lake Storage Gen2 when the file name is "Asset_Metadata". The issue only occurs in the Parquet type data. Other types of data with the same file name work correctly.
 
 - **Cause**: For the backward compatibility, `_metadata` is treated as a reserved substring in the file name. 
 
@@ -129,6 +129,6 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 For more troubleshooting help, try these resources:
 
-- [Data Factory blog](https://blog.fabric.microsoft.com/en-us/blog/category/data-factory)
+- [Data Factory blog](https://blog.fabric.microsoft.com/blog/category/data-factory)
 - [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)
