@@ -25,3 +25,10 @@ This article provides suggestions to troubleshoot common problems with the Mongo
 - **Cause**: When you copy data from Azure Cosmos DB MongoAPI or MongoDB with the universally unique identifier (UUID) field, there are two ways to represent the UUID in Binary JSON (BSON): UuidStardard and UuidLegacy. By default, UuidLegacy is used to read data. You will receive an error if your UUID data in MongoDB is UuidStandard.
 
 - **Resolution**: In the MongoDB connection string, add the *uuidRepresentation=standard* option.
+
+ ## Related content
+
+For more troubleshooting help, try these resources:
+- [Data Factory blog](https://blog.fabric.microsoft.com/en-us/blog/category/data-factory)
+- [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Data Factory feature requests](https://ideas.fabric.microsoft.com/)
