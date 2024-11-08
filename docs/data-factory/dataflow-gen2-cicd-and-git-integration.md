@@ -28,7 +28,7 @@ To get started, you must complete the following prerequisites:
 
 - Have a Microsoft Fabric tenant account with an active subscription. Create an account for [free](/fabric/get-started/fabric-trial).
 - Make sure you have a Microsoft Fabric enabled workspace.
-- Make sure Git integration is enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
+- To enjoy Git integration, make sure it is enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
 
 ## Create a Dataflow Gen2 with CI/CD and Git support
 
@@ -106,4 +106,8 @@ With CI/CD and Git integration support, we also introduced the Fabric CRUDL API 
 - "Get Item" and "List Item Access Details" API's don't return the correct information if you filter on a specific type of item. When you don't specify the type, it returns the new Dataflow Gen2 with CI/CD and Git support. Filtering for the "dataflow" type results in only non-CI/CD dataflows.
 - Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric pipelines.
 - Workspace view doesn't show if a refresh is ongoing for the dataflow.
+- You are not able to export the Dataflow.json from the workspace menu. Workarounds that allow you to export the Dataflow are
+  - Use the Fabric Public API to get the Dataflow.json.
+  - Use the export power query template feature to export the dataflow definition.
+  - Use the onelake explorer to the workspace to get the dataflow definition.
 - Dataflow Gen2 with CI/CD and Git support doesn't support the take ownership feature in the Fabric workspace. Therefore, the dataflow can only be edited by the creator of the dataflow. If you want to work together on a dataflow, you can use branches in the Git repository and create a pull request to merge the changes. For more information, go to [Scenario 2 - Develop using another workspace](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
