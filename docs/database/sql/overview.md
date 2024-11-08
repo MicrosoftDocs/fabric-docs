@@ -1,18 +1,20 @@
 ---
-title: "SQL database Overview"
+title: "SQL database Overview (Preview)"
 description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 10/07/2024
+ms.date: 11/07/2024
 ms.topic: overview
 ms.search.form: product-databases
 ---
-# SQL database in Microsoft Fabric
+# SQL database in Microsoft Fabric (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allow you to easily create your operational database in Fabric. A SQL database in Fabric uses the SQL Database Engine as Azure SQL Database.
+
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 To get started, see the tutorial to [Create a SQL database in the Fabric portal](create.md).
 
@@ -58,28 +60,27 @@ By sharing your SQL database, you can grant other users or a group of users acce
 
 Access the Sharing dialog with the **Share** button next to the database name in the **Workspace** view. Shared databases can be found through **OneLake** **Data Hub** or the **Shared with Me** section in Microsoft Fabric.
 
-For more information, see [Share your data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md).
+For more information, see [Share data and manage access to your SQL database in Microsoft Fabric](share-data.md).
 
 ## Connect
 
-Like other Microsoft Fabric item types, SQL databases rely on [Microsoft Entra authentication](/entra/identity/authentication/overview-authentication).
+Like other Microsoft Fabric item types, SQL databases rely on [Microsoft Entra authentication](/entra/identity/authentication/overview-authentication). For options to connect, review [Connect to your SQL database in Microsoft Fabric](connect.md).
 
 To successfully authenticate to a SQL database, a Microsoft Entra user, a [service principal](/entra/identity-platform/app-objects-and-service-principals), or their [group](/entra/fundamentals/concept-learn-about-groups), must have the Read item permission for the database in Fabric.
 For more information, see [Authentication in SQL database in Microsoft Fabric](authentication.md).
 
 - For information on how to grant a Microsoft Entra identity access to a Fabric workspace or a specific database, see [Fabric access controls](authorization.md#fabric-access-controls).
-- For information specific to authentication for SQL analytics endpoints of SQL databases, see [Microsoft Entra authentication as an alternative to SQL authentication](../../data-warehouse/entra-id-authentication.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json).
 
 ## Cross-database queries
 
-With the data from your SQL database automatically stored in the OneLake, you can write cross-database queries, joining data from other SQL databases, mirrored databases, warehouses, and the SQL analytics endpoints of Lakehouses in a single T-SQL query. For more information, see [Write a cross-database query](../../data-warehouse/query-warehouse.md#write-a-cross-database-query).
+With the data from your SQL database automatically stored in the OneLake, you can write cross-database queries, joining data from other SQL databases, mirrored databases, warehouses, and the SQL analytics endpoint in a single T-SQL query. All this is currently possible with queries on the SQL analytics endpoint of the SQL database, or lakehouse.
 
-For example, you can reference a table from other items in Fabric using three-part naming. In the following example, use the three-part name to refer to `ContosoSalesTable` in the warehouse `ContosoWarehouse` from the SQL database named `Affiliation`. From other databases or warehouses, the first part of the standard SQL three-part naming convention is the name of the database or warehouse item.
+For example, you can reference a table from other items in Fabric using three-part naming. In the following example, use the three-part name to refer to `ContosoSalesTable` in the warehouse `ContosoWarehouse` from the fictional `SalesLT.Affiliation` table in a SQL database. From other databases or warehouses, the first part of the standard SQL three-part naming convention is the name of the database or warehouse item.
 
 ```sql
 SELECT * 
 FROM ContosoWarehouse.dbo.ContosoSalesTable AS Contoso
-INNER JOIN Affiliation
+INNER JOIN AdventureWorksLT.SalesLT.Affiliation AS Affiliation
 ON Affiliation.AffiliationId = Contoso.RecordTypeID;
 ```
 

@@ -4,16 +4,15 @@ description: This article describes how to set alerts on Azure Blob Storage even
 author: mystina
 ms.author: majia
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 09/05/2024
+ms.date: 11/18/2024
 ---
 
-# Set alerts on Azure Blob Storage events in Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Set alerts on Azure Blob Storage events in Real-Time hub 
 
 This article describes how to set alerts on Azure Blob Storage events in Real-Time hub.
+
+> [!NOTE]
+> This feature is currently in preview.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
@@ -23,16 +22,16 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - Events you want to monitor.
 - Conditions you want to look for in the events.
-- Action you want Data Activator to take.
+- Action you want Fabric Activator to take.
 
 ### From the events list
 
-1. In Real-Time hub, select **Fabric events**.
+1. In Real-Time hub, select **Azure events** under **Subscribe to** category.
 1. Move the mouse over **Azure blob storage events**, and do one of the following steps:
     - Select the **Alert** button
     - Select **ellipsis (...)**, and select **Set alert**.
     
-    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert-from-list.png" alt-text="Screenshot that shows the Fabric events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert-from-list.png":::
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert-from-list.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert-from-list.png":::
 
 ### From the event detail page
 
@@ -62,9 +61,9 @@ On the **Set alert** page, follow these steps:
         
             :::image type="content" source="./media/set-alerts-azure-blob-storage-events/add-filter.png" alt-text="Screenshot that shows a sample filter for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/add-filter.png":::        
         1. Select **Next**.
-    1. On the **Review and create** page, review the settings, and select **Create source**.
+    1. On the **Review + connect** page, review the settings, and select **Create source**.
     
-        :::image type="content" source="./media/set-alerts-azure-blob-storage-events/review-create.png" alt-text="Screenshot that shows the Add source wizard Review and create page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/review-create.png":::                
+        :::image type="content" source="./media/set-alerts-azure-blob-storage-events/review-create.png" alt-text="Screenshot that shows the Add source wizard Review + connect page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/review-create.png":::                
 1. For **Condition**, confirm that **On each event** is selected.
 1. For **Action**, select one of the following options:
     1. To receive an email when the event occurs and the condition is met, select **Send me an email**.
@@ -72,7 +71,7 @@ On the **Set alert** page, follow these steps:
     1. To run a Fabric item, select **Run a Fabric item**.
 1. In the **Save location** section, do these steps:
     1. For **Workspace**, select the workspace where you want to save the alert.
-    1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert.
+    1. For **Item**, select an existing Activator item or create a new Activator item for this alert. 
 1. Select **Create** at the bottom of the page to create the alert.
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert.png" alt-text="Screenshot that shows the Set alert page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert.png":::                
