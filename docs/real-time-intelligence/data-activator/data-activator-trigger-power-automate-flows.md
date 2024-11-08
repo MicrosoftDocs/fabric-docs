@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Custom Actions
-ms.date: 09/18/2024
+ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.
 ---
 
@@ -19,9 +19,6 @@ You can activate external systems with a Data Activator rule by defining custom 
 * Calling line-of-business apps.
 
 To activate custom actions from your rules, first define a custom action by creating a Power Automate flow. Then, call your custom action from your rule.
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 ## Create a custom action
 

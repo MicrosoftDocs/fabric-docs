@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 09/15/2024
+ms.date: 11/08/2024
 #customer-intent: '#customer intent: As a Fabric user I want to learn how to use Data Activator to get data from eventstreams.'
 ---
 
@@ -14,9 +14,6 @@ ms.date: 09/15/2024
 You can get data for use in Data Activator from many sources. This article describes how to get data from event streams.
 
 If you have real-time streaming data in Fabric event streams, connect it to Data Activator. This article explains how.
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 ## Prerequisites
 

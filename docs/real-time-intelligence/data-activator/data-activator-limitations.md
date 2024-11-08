@@ -6,16 +6,13 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
-ms.date: 09/09/2024
+ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn about Data Activator limitations.
 ---
 
 # Data Activator limitations
 
 Data Activator is subject to the following general and specific limitations. Before you began your work with Data Activator, review and consider these limitations.
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 ## General limitations
 
