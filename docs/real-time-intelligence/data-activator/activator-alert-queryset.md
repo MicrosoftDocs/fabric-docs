@@ -1,6 +1,6 @@
 ---
-title: Create Data Activator alerts from a KQL Queryset
-description: Learn how to create a Data Activator alert from the results of a KQL query in a KQL Queryset in Real-Time Intelligence.
+title: Create Fabric Activator alerts from a KQL Queryset
+description: Learn how to create a Fabric Activator alert from the results of a KQL query in a KQL Queryset in Real-Time Intelligence.
 author: yaelschuster
 ms.author: yaschust
 ms.reviewer: guregini
@@ -9,7 +9,7 @@ ms.date: 11/08/2024
 ms.search.form: Data Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Data Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
-# Create Data Activator alerts from a KQL Queryset
+# Create Activator alerts from a KQL Queryset
 
 This article explains how to create Data Activator alerts from a KQL Queryset. For more information, see [What is Data Activator](data-activator-introduction.md).
 You can use Data Activator on a KQL Queryset to trigger notifications in two modes: when a scheduled KQL query returns results, or when a scheduled KQL query result that contains a visualization meets a defined set of conditions. You can send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
@@ -30,7 +30,7 @@ Here are some ways you can use Data Activator alerts with KQL queries:
 * A [KQL Queryset](../../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md).
 
 > [!IMPORTANT]
-> Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../real-time-intelligence/kusto-query-set.md#select-a-database), creating an alert is not supported. 
+> Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-database), creating an alert is not supported. 
 
 The following steps show you how to create an alert on a query that creates a visualization, or on a query that doesn't create a visualization.
 
