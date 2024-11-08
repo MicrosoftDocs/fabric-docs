@@ -80,7 +80,7 @@ Azure Cosmos DB calculates RUs, see [Request units in Azure Cosmos DB](/azure/co
 
 - **Cause**: There are two ways to represent the UUID in Binary JSON (BSON): UuidStardard and UuidLegacy. By default, UuidLegacy is used to read data. You will receive an error if your UUID data in MongoDB is UuidStandard.
 
-- **Resolution**: In the MongoDB connection string, add the *uuidRepresentation=standard* option. For more information, see [MongoDB connection string](connector-mongodb.md#linked-service-properties).
+- **Resolution**: In the MongoDB connection string, add the *uuidRepresentation=standard* option. For more information, see [MongoDB connection string](/azure/data-factory/connector-mongodb#linked-service-properties).
 
 ## Error code: CosmosDbSqlApiOperationFailed
 
