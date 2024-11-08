@@ -5,7 +5,7 @@ description: Learn how to configure a mirrored database from Azure Cosmos DB in 
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 04/24/2024
+ms.date: 11/08/2024
 ms.topic: tutorial
 no-loc: [Copilot]
 ---
@@ -26,8 +26,7 @@ You can build Power BI reports directly on the data in OneLake, using DirectLake
   - If you don't have an Azure subscription, [Try Azure Cosmos DB for NoSQL free](https://cosmos.azure.com/try/).
   - If you have an existing Azure subscription, [create a new Azure Cosmos DB for NoSQL account](/azure/cosmos-db/nosql/quickstart-portal).
 - An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../get-started/fabric-trial.md). Mirroring might not be available in some Fabric regions. For more information, see [supported regions.](azure-cosmos-db-limitations.md#supported-regions)
-- Enable Mirroring in your Fabric tenant or workspace. If the feature isn't already enabled, [enable mirroring in your Fabric tenant](enable-mirroring.md).
-    - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
+
 > [!TIP]
 > During the public preview, it's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
 
