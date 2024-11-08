@@ -6,15 +6,12 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Activator Rule Creation
-ms.date: 11/4/2024
+ms.date: 11/08/2024
 ---
 
 # Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
 
-Once you bring data into a reflex or [assign data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-activator), you can create rules to act on your data. There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
-
-> [!IMPORTANT]
-> Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
+Once you bring data into a reflex or [assign data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create rules to act on your data. There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
 
 ## Why create rules on events?
 

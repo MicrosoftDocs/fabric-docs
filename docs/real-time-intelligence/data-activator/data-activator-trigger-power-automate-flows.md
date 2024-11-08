@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Activator Custom Actions
-ms.date: 09/18/2024
+ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.
 ---
 
@@ -20,8 +20,6 @@ You can activate external systems with a Fabric [!INCLUDE [fabric-activator](../
 
 To activate custom actions from your rules, first define a custom action by creating a Power Automate flow. Then, call your custom action from your rule.
 
-> [!IMPORTANT]
-> [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
 ## Create a custom action
 
 A custom action is a reusable action template that you can use in multiple rules within an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. Creating a custom action requires familiarity with Power Automate. However, once you create a custom action, other [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] users can use the action in any rule, without requiring any knowledge of Power Automate.

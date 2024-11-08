@@ -6,15 +6,13 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Activator Object Creation
-ms.date: 11/01/2024
+ms.date: 11/08/2024
 ---
 
 # Assign data to objects in Activator
 
-Once you [get data](data-activator-get-data-power-bi.md) into Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], the next step is to assign your events to objects. You assign events to objects if there's a business object that you want to track. For example: packages, households, stores, etc. Create objects if you want to monitor object IDs and their state over time.
+Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects if there's a business object that you want to track. For example: packages, households, stores, etc. Create objects if you want to monitor object IDs and their state over time.  
 
-> [!IMPORTANT]
-> [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
 > [!NOTE]
 > If you started from Power BI, then [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] automatically creates an object for you (if needed) and assigns your Power BI data to it. You can skip this section unless you wish to combine your Power BI data with other events coming from event streams.
 

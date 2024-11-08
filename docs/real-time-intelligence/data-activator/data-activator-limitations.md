@@ -6,16 +6,14 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
-ms.date: 09/09/2024
+ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn about Activator limitations.
 ---
 
 # [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations
 
-Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject to the following general and specific limitations. Before you began your work with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], review and consider these limitations.
-
-> [!IMPORTANT]
-> [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is currently in preview.
+Data Activator is subject to the following general and specific limitations. Before you began your work with Data Activator, review and consider these limitations.
+Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject to the following general and specific limitations.
 
 ## General limitations
 
@@ -29,8 +27,8 @@ Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject
 * Stacked column
 * Clustered column
 * Stacked bar
-* 100% stacked column
-* 100% stacked bar
+* Stacked 100% column
+* Stacked 100% bar
 * Clustered bar
 * Ribbon chart
 * Line
@@ -99,7 +97,7 @@ Each recipient of an email notification must have an internal email address. The
 
 ## Maximum number of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items
 
-Your organization may have up to 250 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. You will get an error message if you try to create more than this number of items. To resolve the error, either:
+Your organization may have up to 250 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
 
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
