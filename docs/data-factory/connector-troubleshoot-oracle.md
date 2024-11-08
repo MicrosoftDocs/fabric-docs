@@ -12,8 +12,6 @@ ms.custom: has-adal-ref, synapse
 
 # Troubleshoot the Oracle connector in Azure Data Factory and Azure Synapse
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
-
 This article provides suggestions to troubleshoot common problems with the Oracle connector in Azure Data Factory and Azure Synapse.
 
 ## Error code: ArgumentOutOfRangeException
