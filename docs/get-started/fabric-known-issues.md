@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 11/07/2024
+ms.date: 11/08/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  923  | Power BI | [Tenant migrations paused through January 2025](known-issues/known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  919  | Power BI | [Embedded paginated report renders correctly but shows error message](known-issues/known-issue-919-embedded-report-renders-correctly-shows-error.md) | November 7, 2024 |
 |  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](known-issues/known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |
 |  916  | Power BI | [Visual doesn't load due to an unexpected error](known-issues/known-issue-916-visual-not-load-error.md) | November 7, 2024 |
@@ -39,14 +40,12 @@ Select the **Title** to view more information about that specific known issue.
 |  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](known-issues/known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
 |  872  | Data Warehouse | [Data warehouses don't show button friendly names](known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 |
 |  865  | Power BI | [Configure workspace storage to use ADLS Gen2 storage account doesn't work](known-issues/known-issue-865-configure-workspace-storage-adls-gen2-not-work.md) | October 3, 2024 |
-|  866  | Power BI | [Can't add My workspace org app items to the org app](known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md) | September 30, 2024 |
 |  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](known-issues/known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 |
 |  842  | Data Warehouse | [Data warehouse exports using deployment pipelines or git fail](known-issues/known-issue-842-warehouse-exports-pipelines-fail.md) | September 23, 2024 |
 |  846  | OneLake | [OneLake BCDR write transactions aren't categorized correctly for billing](known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) | September 17, 2024 |
 |  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 |
-|  836  | Power BI | [Copilot in DAX query view returns DAX query with syntax error](known-issues/known-issue-836-copilot-dax-query-view-returns-dax-query-error.md) | September 13, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](known-issues/known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
 |  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 |
 |  822  | Data Warehouse | [SQL queries fail intermittently](known-issues/known-issue-822-sql-queries-fail-intermittently.md) | August 28, 2024 |
@@ -74,9 +73,7 @@ Select the **Title** to view more information about that specific known issue.
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
 |  716  | Data Warehouse | [Response times when composing SQL queries slower than expected](known-issues/known-issue-716-response-times-composing-sql-queries-slower.md) | May 13, 2024 |
-|  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 |
-|  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 |
 |  647  | Data Engineering | [Library management updates with public python libraries time-out](known-issues/known-issue-647-library-management-updates-public-python-libraries-time-out.md) | March 14, 2024 |
 |  641  | Power BI | [Visuals using the Denodo connector might show connection errors](known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md) | March 5, 2024 |
 |  640  | Power BI | [Microsoft Defender detects OpenSSL vulnerabilities in Power BI Desktop](known-issues/known-issue-640-microsoft-defender-detects-openssl-vulnerabilities-desktop.md) | March 5, 2024 |
@@ -97,6 +94,10 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  866  | Power BI | [Can't add My workspace org app items to the org app](known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md) | September 30, 2024 | Fixed: November 8, 2024 |
+|  836  | Power BI | [Copilot in DAX query view returns DAX query with syntax error](known-issues/known-issue-836-copilot-dax-query-view-returns-dax-query-error.md) | September 13, 2024 |  Fixed: November 8, 2024 |
+|  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |  Fixed: November 8, 2024 |
+|  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 | Fixed: November 8, 2024 |
 |  811  | Data Engineering | [Fabric Runtime 1.3 causes invalid libraries](known-issues/known-issue-811-fabric-runtime-invalid-libraries.md) | August 16, 2024 |  Fixed: November 7, 2024 |
 |  658  | Data Engineering | [PySpark import statements fail for .jar files installed through environment](known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md) | March 28, 2024 | Fixed: November 7, 2024 |
 |  911  | Power BI | [Can't edit paginated reports in Report Builder when opened from service](known-issues/known-issue-911-not-edit-reports-report-builder-opened-service.md) | October 30, 2024 | Fixed: November 5, 2024 |
