@@ -5,16 +5,13 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 09/16/2024
+ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to get data for Data Activator from Real-Time Hub.
 ---
 
 # Get data for Data Activator from Real-Time Hub
 
 You can get data for use in Data Activator from many sources. This article describes how to get data from Real-Time Hub. 
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 ## Prerequisites
 
