@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter
-ms.date: 09/24/2024
+ms.date: 11/08/2024
 ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Data Activator using a tutorial and sample data.
 ---
@@ -21,9 +21,6 @@ In this tutorial, you use sample data included with Data Activator. You use the 
 > * Start the rule
 > * Create an object
 > * Create a rule
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 ## Prerequisites
 

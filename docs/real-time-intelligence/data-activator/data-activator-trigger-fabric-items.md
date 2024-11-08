@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 09/18/2024
+ms.date: 11/08/2024
 ---
 
 # Activate Fabric items
@@ -15,9 +15,6 @@ Fabric data pipelines and notebooks can be used to load or transform data in Mic
 * Start data pipelines when new files are loaded to Azure storage accounts, to load files into OneLake. You can learn more about [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
 
 * Start Fabric notebooks when issues with data quality are found using Power BI reports. You can learn more about [getting data from Power BI](data-activator-get-data-power-bi.md).
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 ## Activate a Fabric item
 
