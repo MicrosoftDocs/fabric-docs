@@ -30,7 +30,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 - **Cause**: The Parquet format is not supported in Azure Data Factory and Synapse pipelines.
 
-- **Recommendation**:  Double-check the source data by going to [Supported file formats and compression codecs by copy activity](./supported-file-formats-and-compression-codecs.md).
+- **Recommendation**:  Double-check the source data by going to [Supported file formats and compression codecs by copy activity](/azure/data-factory/supported-file-formats-and-compression-codecs).
 
 ## Error code: ParquetMissedDecimalPrecisionScale
 
@@ -62,7 +62,7 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 
 - **Cause**: The data can't be converted into the type that's specified in mappings.source.
 
-- **Recommendation**:  Double-check the source data or specify the correct data type for this column in the copy activity column mapping. For more information, see [Supported file formats and compression codecs by the copy activity](./supported-file-formats-and-compression-codecs.md).
+- **Recommendation**:  Double-check the source data or specify the correct data type for this column in the copy activity column mapping. For more information, see [Supported file formats and compression codecs by the copy activity](/azure/data-factory/supported-file-formats-and-compression-codecs).
 
 ## Error code: ParquetDataCountNotMatchColumnCount
 

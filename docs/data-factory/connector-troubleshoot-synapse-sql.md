@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2024
-ms.date: 10/23/2024ss
+ms.date: 10/23/2024
 ---
 
 # Troubleshoot the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Data Factory in Microsoft Fabric
@@ -42,7 +42,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
     | :----------------------------------------------------------- | :----------------------------------------------------------- |
     | If the error message contains the string "SqlException", SQL Database throws an error indicating some specific operation failed. | If the SQL error is not clear, try to alter the database to the latest compatibility level '150'. It can throw the latest version SQL errors. For more information, see the [documentation](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat). <br/> For more information about troubleshooting SQL issues, search by SQL error code in [Database engine errors](/sql/relational-databases/errors-events/database-engine-events-and-errors). For further help, contact Azure SQL support. |
     | If the error message contains the string "PdwManagedToNativeInteropException", it's usually caused by a mismatch between the source and destination column sizes. | Check the size of both the source and destination columns. For further help, contact Azure SQL support. |
-    | If the error message contains the string "InvalidOperationException", it's usually caused by invalid input data. | To identify which row has encountered the problem, enable the fault tolerance feature on the copy activity, which can redirect problematic rows to the storage for further investigation. For more information, see [Fault tolerance of copy activity](./copy-activity-fault-tolerance.md). |
+    | If the error message contains the string "InvalidOperationException", it's usually caused by invalid input data. | To identify which row has encountered the problem, enable the fault tolerance feature on the copy activity, which can redirect problematic rows to the storage for further investigation. For more information, see [Fault tolerance of copy activity](/azure/data-factory/copy-activity-fault-tolerance). |
     | If the error message contains "Execution Timeout Expired", it's usually caused by query timeout. | Configure **Query timeout** in the source and **Write batch timeout** in the destination to increase timeout. |
     | If the error message contains `Cannot find the object "dbo.Contoso" because it does not exist or you do not have permissions.` when you copy data from hybrid into an on-premises SQL Server table, it's caused by the current SQL account doesn't have sufficient permissions to execute requests issued by .NET SqlBulkCopy.WriteToServer or your table or database does not exist. | Switch to a more privileged SQL account or check if your table or database exists. |
 
@@ -290,7 +290,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Recommendation**:
 
-    1. If you insist on disabling public network access, use managed virtual network integration runtime and create private endpoint. For more information, see [Azure Data Factory managed virtual network](managed-virtual-network-private-endpoint.md).
+    1. If you insist on disabling public network access, use managed virtual network integration runtime and create private endpoint. For more information, see [Azure Data Factory managed virtual network](/azure/data-factory/managed-virtual-network-private-endpoint).
     
     2. Otherwise, enable public network access by setting **Public network access** option to **Selected networks** on Azure SQL Database **Networking** setting page.
 

@@ -123,7 +123,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
          For more information about the Azure storage account firewalls settings, see [Configure Azure Storage firewalls and virtual networks](/azure/storage/common/storage-network-security).
 
-    1. If you use service principal or managed identity authentication, grant service principal or managed identity appropriate permissions to do copy. For source, at least the **Storage Blob Data Reader** role. For destination, at least the **Storage Blob Data Contributor** role. For more information, see [Copy and transform data in Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md#service-principal-authentication).
+    1. If you use service principal or managed identity authentication, grant service principal or managed identity appropriate permissions to do copy. For source, at least the **Storage Blob Data Reader** role. For destination, at least the **Storage Blob Data Contributor** role. For more information, see [Copy and transform data in Azure Data Lake Storage Gen2](/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication).
 
 ## Related content
 
