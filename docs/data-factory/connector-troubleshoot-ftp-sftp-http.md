@@ -60,29 +60,30 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 
 - **Recommendation**:  
 
-    If the private key content is from your key vault, the original key file can work if you upload it directly to the SFTP Connection.
- The private key content is base64 encoded SSH private key content.
+  If the private key content is from your key vault, the original key file can work if you upload it directly to the SFTP Connection.
+  
+  The private key content is base64 encoded SSH private key content.
 
-Encode *entire* original private key file with base64 encoding, and store the encoded string in your key vault. The original private key file is the one that can work on the SFTP connection type if you select **Upload** from the file.
+  Encode *entire* original private key file with base64 encoding, and store the encoded string in your key vault. The original private key file is the one that can work on the SFTP connection type if you select **Upload** from the file.
 
-    Here are some samples you can use to generate the string:
+  Here are some samples you can use to generate the string:
 
-    - Use C# code:
+  - Use C# code:
 
-        ```
-        byte[] keyContentBytes = File.ReadAllBytes(Private Key Path);
-        string keyContent = Convert.ToBase64String(keyContentBytes, Base64FormattingOptions.None);
-        ```
+    ```csharp
+    byte[] keyContentBytes = File.ReadAllBytes(Private Key Path);
+    string keyContent = Convert.ToBase64String(keyContentBytes, Base64FormattingOptions.None);
+    ```
 
     - Use Python code：
 
-        ```
-        import base64
-        rfd = open(r'{Private Key Path}', 'rb')
-        keyContent = rfd.read()
-        rfd.close()
-        print base64.b64encode(Key Content)
-        ```
+    ```python
+    import base64
+    rfd = open(r'{Private Key Path}', 'rb')
+    keyContent = rfd.read()
+    rfd.close()
+    print base64.b64encode(Key Content)
+    ```
 
     - Use a third-party base64 conversion tool. We recommend the [Encode to Base64 format](https://www.base64encode.org/) tool.
 
@@ -211,14 +212,3 @@ Encode *entire* original private key file with base64 encoding, and store the en
 
 - **Recommendation**: For more information about HTTP status code, see this [document](/troubleshoot/developer/webapps/iis/www-administration-management/http-status-code).
 
-## Related content
-
-For more troubleshooting help, try these resources:
-
-- [Connector troubleshooting guide](connector-troubleshoot-guide.md)
-- [Data Factory blog](https://techcommunity.microsoft.com/t5/azure-data-factory-blog/bg-p/AzureDataFactoryBlog)
-- [Data Factory feature requests](/answers/topics/azure-data-factory.html)
-- [Azure videos](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
-- [Microsoft Q&A page](/answers/topics/azure-data-factory.html)
-- [Stack Overflow forum for Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
-- [X information about Data Factory](https://x.com/hashtag/DataFactory)
