@@ -977,6 +977,8 @@
         href: connector-troubleshoot-synapse-sql.md
       - name: Azure Table Storage
         href: connector-troubleshoot-azure-table-storage.md
+      - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
+        href: connector-troubleshoot-dynamics-dataverse.md
       - name: MongoDB
         href: connector-troubleshoot-mongodb.md
       - name: Oracle
