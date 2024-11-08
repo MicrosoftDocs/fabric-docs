@@ -12,7 +12,8 @@ ms.collection: ce-skilling-ai-copilot
 ---
 # Copilot for Data Factory overview
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+> [!IMPORTANT]
+> Copilot for Data Factory is generally available now, but its new data pipeline skills are still in [preview](preview.md).
 
 Copilot in Fabric enhances productivity, unlocks profound insights, and facilitates the creation of custom AI experiences tailored to your data. As a component of the Copilot in Fabric experience, Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows).  Essentially, Copilot in Data Factory operates like a subject-matter expert (SME) collaborating with you to design your dataflows.
 
