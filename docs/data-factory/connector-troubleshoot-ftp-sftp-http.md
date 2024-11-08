@@ -12,8 +12,6 @@ ms.custom: has-adal-ref, synapse
 
 # Troubleshoot the FTP, SFTP and HTTP connectors in Fabric Data Factory and Azure Synapse
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
-
 This article provides suggestions to troubleshoot common problems with the FTP, SFTP and HTTP connectors in Data Factory and Azure Synapse.
 
 ## FTP
@@ -63,10 +61,9 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 - **Recommendation**:  
 
     If the private key content is from your key vault, the original key file can work if you upload it directly to the SFTP Connection.
+ The private key content is base64 encoded SSH private key content.
 
-    For more information, see [Copy data from and to the SFTP server by using data factory or Synapse pipelines](./connector-sftp.md#use-ssh-public-key-authentication). The private key content is base64 encoded SSH private key content.
-
-    Encode *entire* original private key file with base64 encoding, and store the encoded string in your key vault. The original private key file is the one that can work on the SFTP connection type if you select **Upload** from the file.
+Encode *entire* original private key file with base64 encoding, and store the encoded string in your key vault. The original private key file is the one that can work on the SFTP connection type if you select **Upload** from the file.
 
     Here are some samples you can use to generate the string:
 
@@ -135,8 +132,6 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
     If you want to promote the low throughput, contact your SFTP administrator to increase the concurrent connection count limit, or you can do one of the following:
 
     * If you're using On-Premises Data Gateway (OPDG), add the OPDG machine's IP to the allowlist.
-    * If you're using Azure IR, add [Azure Integration Runtime IP addresses](./azure-integration-runtime-ip-addresses.md). If you don't want to add a range of IPs to the SFTP server allowlist, use OPDG instead.
-
 
 ### Error code: SftpPermissionDenied
 
