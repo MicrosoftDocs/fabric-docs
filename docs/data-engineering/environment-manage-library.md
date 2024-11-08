@@ -15,6 +15,8 @@ Microsoft Fabric environments provide flexible configurations for running your S
 > [!NOTE]
 > Modifying the version of a specific package could potentially break other packages that depend on it. For instance, downgrading `azure-storage-blob` might cause problems with `Pandas` and various other libraries that rely on `Pandas`, including `mssparkutils`, `fsspec_wrapper`, and `notebookutils`.
 > You can view the list of preinstalled packages and their versions for each runtime [here](runtime.md).
+> Check more options and best practices of using libraries in Microsoft Fabric: [Manage Apache Spark libraries in Microsoft Fabric](library-management.md)
+>
 
 ## Public libraries
 
