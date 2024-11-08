@@ -82,7 +82,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Custom app](add-destination-custom-app.md)
 - [Derived stream](add-destination-derived-stream.md)
 - [Eventhouse](add-destination-kql-database.md)
-- [Fabric Activator](add-destination-activator.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end
@@ -151,7 +151,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app](add-destination-custom-app.md)
 - [KQL Database](add-destination-kql-database.md)
-- [Fabric Activator](add-destination-activator.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end 

@@ -9,23 +9,22 @@ ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
-# Add a Fabric Activator destination to an eventstream (preview)
+# Add a Fabric activator destination to an eventstream (preview)
 
-This article shows you how to add Activator destination to an eventstream.
+This article shows you how to add an activator destination to an eventstream.
 
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- If you already have an Activator you want to use, access to the workspace where your Activator is located with Contributor or higher permissions.
+- If you already have an activator you want to use, access to the workspace where your activator is located with Contributor or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
-## Add Activator as a destination
+## Add activator as a destination
 
-To add an Activator destination to a default stream or derived stream, follow these steps.
+To add an activator destination to a default stream or derived stream, follow these steps.
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon and select **Activator** from the dropdown list.
-
    ![A screenshot of the Add destination dropdown list with Activator highlighted.](media/add-destination-activator-enhanced/add-destination.png)
 
     You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the drop-down list. 
@@ -35,11 +34,11 @@ To add an Activator destination to a default stream or derived stream, follow th
 
    ![A screenshot of the Activator screen.](media/add-destination-activator-enhanced/activator-screen.png)
 1. Select **Save**.
-1. To implement the newly added Activator destination, select **Publish**.
+1. To implement the newly added activator destination, select **Publish**.
 
    ![A screenshot of the stream and Activator destination in Edit mode with the Publish button highlighted.](media/add-destination-activator-enhanced/edit-mode.png)
 
-    Once you complete these steps, the Activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
+    Once you complete these steps, the activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
 
     ![A screenshot of the Activator destination available for visualization in Live view.](media/add-destination-activator-enhanced/live-view.png)
 

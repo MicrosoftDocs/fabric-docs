@@ -120,7 +120,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Custom app](add-destination-custom-app.md)
 - [Derived stream](add-destination-derived-stream.md)
 - [Lakehouse](add-destination-lakehouse.md)
-- [Fabric Activator](add-destination-activator.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 

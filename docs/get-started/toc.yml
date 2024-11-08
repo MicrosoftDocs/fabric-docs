@@ -305,7 +305,7 @@ items:
       href: known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md
     - name: Spark operations fail
       href: known-issues/known-issue-790-spark-operations-fail.md
-    - name: Data Activator alert created from visual with no dimensions doesn't work
+    - name: Activator alert created from visual with no dimensions doesn't work
       href: known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md
     - name: Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse
       href: known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md
