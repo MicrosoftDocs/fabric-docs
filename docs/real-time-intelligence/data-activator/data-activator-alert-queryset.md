@@ -95,7 +95,7 @@ SampleTable
 
 ### Example 2 - Create a single result with an array of several values
 
-In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. In order to get a single alert for all neighborhoods for which the number is above the threshold, the query is built to return a single record (meaning, a single alert). This is done using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true) To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your trigger in Data Activator](#optional-edit-your-trigger-in-data-activator).
+In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. In order to get a single alert for all neighborhoods for which the number is above the threshold, the query is built to return a single record (meaning, a single alert). Build the query using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true) To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your trigger in Data Activator](#optional-edit-your-trigger-in-data-activator).
 
 ```kusto
 TableForReflex
@@ -121,7 +121,7 @@ Next, define your alert conditions. In the **Set Alert** pane that appears, take
 
 ## Optional: Edit your trigger in Data Activator
 
-When your Reflex item is saved, the side pane will display a link to your item. Select the link to further edit in Data Activator. This step can be useful if you want to do one of the following:
+When your Reflex item is saved, the side pane displays a link to your item. Select the link to further edit in Data Activator. This step can be useful if you want to do one of the following actions:
 
 * Add other recipients to your alert.
 * Change the content of the alert to reflect the specific data that triggered the alert.
@@ -133,7 +133,7 @@ In the Reflex item itself, you can also view the history of the query results an
 
 <!-- ## Limitations on query result set that returns a time chart with a time axis
 
-If you have a result set with a chart that has a time axis, Data Activator will read the measure value exactly once for each point on the time axis. For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
+If you have a result set with a chart that has a time axis, Data Activator reads the measure value exactly once for each point on the time axis. For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
 
 To work around this limitation, you can add a line to the query so that the end time of the time filter ends at 'one bin before,' and the last bin does not change. 
 
