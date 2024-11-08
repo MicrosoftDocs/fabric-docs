@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
-ms.date: 09/15/2024
+ms.date: 11/08/2024
 ms.search.form: Data Activator PBI Onramp
 #customer intent: As a Power BI user I want to learn how to get data for Data Activator in Power BI.
 ---
@@ -13,9 +13,6 @@ ms.search.form: Data Activator PBI Onramp
  # Get data for Data Activator from Power BI
 
 You can get data for use in Data Activator from many sources. This article describes how to set alerts from data in Power BI reports.
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 You can use Data Activator to set alerts when conditions are met in data in a Power BI report. For example, if you have a report displaying daily sales per store, you can set an alert that will notify you if daily sales for any store fall beneath a threshold you set. You can send notifications to yourself or to others in your organization. This section explains how to define and create alerts.
 
