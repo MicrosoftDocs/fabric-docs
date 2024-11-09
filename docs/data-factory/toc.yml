@@ -983,6 +983,8 @@
         href: connector-troubleshoot-mongodb.md
       - name: Oracle
         href: connector-troubleshoot-oracle.md
+      - name: Parquet
+        href: connector-troubleshoot-parquet-format.md
       - name: Snowflake
         href: connector-troubleshoot-snowflake.md
       - name: FTP-SFTP-HTTP
