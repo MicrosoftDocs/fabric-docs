@@ -959,16 +959,32 @@
       href: pipeline-troubleshoot-guide.md
     - name: Connectors
       items:
+      - name: Azure Blob Storage
+        href: connector-troubleshoot-azure-blob-storage.md
+      - name: Azure Cosmos DB
+        href: connector-troubleshoot-azure-cosmos-db.md
+      - name: DB2
+        href: connector-troubleshoot-db2.md
       - name: Azure Data Explorer
         href: connector-troubleshoot-azure-data-explorer.md
+      - name: Azure Data Lake Storage
+        href: connector-troubleshoot-azure-data-lake-storage.md
       - name: Azure Database for PostgreSQL
         href: connector-troubleshoot-azure-database-for-postgresql.md
+      - name: Azure Files
+        href: connector-troubleshoot-azure-files.md
+      - name: Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server
+        href: connector-troubleshoot-synapse-sql.md
       - name: Azure Table Storage
         href: connector-troubleshoot-azure-table-storage.md
+      - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
+        href: connector-troubleshoot-dynamics-dataverse.md
       - name: MongoDB
         href: connector-troubleshoot-mongodb.md
       - name: Oracle
         href: connector-troubleshoot-oracle.md
+      - name: Parquet
+        href: connector-troubleshoot-parquet-format.md
       - name: Snowflake
         href: connector-troubleshoot-snowflake.md
       - name: FTP-SFTP-HTTP
@@ -977,6 +993,8 @@
         items:
         - name: Delimited text
           href: connector-troubleshoot-delimited-text.md
+        - name: ORC
+          href: connector-troubleshoot-orc-format.md
         - name: XML
           href: connector-troubleshoot-xml.md
       - name: Rest
