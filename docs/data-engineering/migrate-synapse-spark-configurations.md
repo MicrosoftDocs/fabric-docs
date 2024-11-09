@@ -32,7 +32,8 @@ Within an environment, you can set Spark properties and those configurations are
     * Go to **Manage** area and select on **Apache Spark pools.**
     * Find the Apache Spark pool, select **Apache Spark configuration** and locate the Spark configuration name for the pool.
 1.	**Get Spark configurations**: You can either obtain those properties by selecting **View configurations** or exporting configuration (.txt/.conf/.json format) from **Configurations + libraries** > **Apache Spark configurations**.
-1.	Once you have Spark configurations, **add custom Spark properties to your Environment** in [Fabric](https://app.fabric.microsoft.com):
+1.	Once you have Spark configurations, **add custom Spark properties to your Environment** in [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-migrate-synapse-spark-configurations
+):
     * Within the Environment, go to **Spark Compute** > **Spark properties**.
     * Add Spark configurations. You can either add each manually or import from .yml.
 1.	Click on **Save** and **Publish** changes.
