@@ -34,18 +34,23 @@ In this example, *PackageID* is the unique ID.
 
 ### Connect your event stream item to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-To connect your event stream item to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]:
+You can connect your event stream item to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] in one of two ways:
 
-1. Open [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] and select an event stream item.
-2. Open your event stream item
-3. Add a destination to your event stream item, of type *Reflex*
+#### Start from the event stream item
+1. Open your event stream item
+2. Add a destination to your event stream item, of type *Activator*
 
-   :::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text=" A Screenshot of reflex event stream item showing data flow.":::
+   :::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text=" A Screenshot of an event stream item showing data flow.":::
   
-* In the side panel, select an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item, or make a new one, then select **Add**.
-* Open your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. See the data flowing from your event stream item in the data pane.
+3. In the side panel, select an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item, or make a new one, then select **Add**.
+4. Open your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. See the data flowing from your event stream item in the data pane.
   
-    :::image type="content" source="media/data-activator-get-data/data-activator-get-data-05.png" alt-text="Screenshot of reflex eventstream item showing data flow.":::
+    :::image type="content" source="media/data-activator-get-data/data-activator-get-data-05.png" alt-text="Screenshot of eventstream item showing data flow.":::
+
+#### Start from the activator item
+1. Open your activator item
+2. Select *Get data* from the Home tab of the ribbon
+3. Use the *Connect data source* dialog to search or browse to your event stream. 
 
 Once you connect your event stream item to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], the next step is to assign your data to some objects. To assign your data, follow the steps described in the [Assign data to objects in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-assign-data-objects.md) article.
 
