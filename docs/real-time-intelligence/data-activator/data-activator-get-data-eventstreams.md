@@ -40,7 +40,7 @@ You can connect your event stream item to [!INCLUDE [fabric-activator](../includ
 1. Open your event stream item
 2. Add a destination to your event stream item, of type *Activator*
 
-   :::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text=" A Screenshot of an event stream item showing data flow.":::
+   :::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text="A screenshot of an event stream item showing data flow.":::
   
 3. In the side panel, select an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item, or make a new one, then select **Add**.
 4. Open your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. See the data flowing from your event stream item in the data pane.
