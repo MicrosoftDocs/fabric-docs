@@ -377,7 +377,7 @@ items:
     - name: Assign data to objects
       href: data-activator/activator-assign-data-objects.md
     - name: Create triggers
-      href: data-activator/activator-create-triggers-design-mode.md
+      href: data-activator/activator-create-activators.md
     - name: Trigger Fabric items
       href: data-activator/activator-trigger-fabric-items.md
     - name: Detection conditions
