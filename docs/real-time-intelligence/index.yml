@@ -122,21 +122,21 @@ landingContent:
         - linkListType: overview
           links:
           - text: What is Activator?
-            url: data-activator/data-activator-introduction.md
+            url: data-activator/activator-introduction.md
         - linkListType: how-to-guide
           links:
           - text: Get data from Power BI
-            url: data-activator/data-activator-get-data-power-bi.md
+            url: data-activator/activator-get-data-power-bi.md
           - text: Get data from Eventstreams
-            url: data-activator/data-activator-get-data-eventstreams.md
+            url: data-activator/activator-get-data-eventstreams.md
         - linkListType: how-to-guide
           links:
           - text: Activate Fabric items
-            url: data-activator/data-activator-trigger-fabric-items.md
+            url: data-activator/activator-trigger-fabric-items.md
           - text: Alert on a Real-Time Dashboard
-            url: data-activator/data-activator-get-data-real-time-dashboard.md
+            url: data-activator/activator-get-data-real-time-dashboard.md
           - text: Alert on a KQL Queryset
-            url: data-activator/data-activator-alert-queryset.md
+            url: data-activator/activator-alert-queryset.md
 
   # Card
   - title: Analyze and model data

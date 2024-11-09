@@ -18,7 +18,7 @@ Fabric data pipelines and notebooks can be used to load or transform data in Mic
 
 ## Activate a Fabric item
 
-Start by selecting an existing rule or [creating a rule](activator-create-triggers-design-mode.md).
+Start by selecting an existing rule or [creating a rule](activator-create-activators.md).
 
 In the rule definition pane on the right side of the screen, find **Action** section to define the action when chosen condition is met. Select **Fabric item** as the action type and select a specific item from the [OneLake Data Hub](/fabric/get-started/onelake-data-hub) pop-up window.
 

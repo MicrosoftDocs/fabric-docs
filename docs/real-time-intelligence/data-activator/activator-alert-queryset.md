@@ -131,9 +131,9 @@ When your Reflex item is saved, the side pane displays a link to your item. Sele
 * Change the content of the alert to reflect the specific data that triggered the alert.
 * Define a more complex alert condition than is possible in the Set alert pane.
 
-For information on how to edit triggers in Data Activator, see [Create triggers in design mode](activator-create-triggers-design-mode.md).
+For information on how to edit triggers in Data Activator, see [Create triggers in design mode](activator-create-activators.md).
 
-In the Reflex item itself, you can also view the history of the query results and the history of the trigger activations. For more information, see [Create Data Activator triggers in design mode](activator-create-triggers-design-mode.md).
+In the Reflex item itself, you can also view the history of the query results and the history of the trigger activations. For more information, see [Create Data Activator triggers in design mode](activator-create-activators.md).
 
 <!-- ## Limitations on query result set that returns a time chart with a time axis
 

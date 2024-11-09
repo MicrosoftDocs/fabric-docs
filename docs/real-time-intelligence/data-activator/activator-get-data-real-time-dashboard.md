@@ -45,7 +45,7 @@ When your trigger is ready, you receive a notification with a link to your trigg
 * Add other recipients to your alert.
 * Define a more complex alert condition than is possible in the *Set alert* pane.
 
-For information on how to edit triggers in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create triggers in design mode](activator-create-triggers-design-mode.md).
+For information on how to edit triggers in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create activators in design mode](activator-create-activators.md).
 
 ## Limitations on charts with a time axis
 
@@ -91,7 +91,7 @@ The most common reason that a measure value can change over time is that the mos
 
 ## Related content
 
-* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-triggers-design-mode.md)
+* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 * [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

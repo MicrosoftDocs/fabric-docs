@@ -73,7 +73,7 @@ When your rule activates, it calls your flow, sending it the values of the input
 ## Related content
 
 * [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
-* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] triggers in design mode](activator-create-triggers-design-mode.md)
+* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] triggers in design mode](activator-create-activators.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
