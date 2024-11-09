@@ -18,7 +18,7 @@ Eventstream is a streaming platform that allows you to ingest, transform, and ro
 
 ## Prerequisites
 
-* Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL Database are located.
+* Access to a workspace with Contributor or above permissions where your Eventstream and KQL Database are located.
 * A KQL Database created in your workspace.
 
 ## Create an eventstream and add sample bike data

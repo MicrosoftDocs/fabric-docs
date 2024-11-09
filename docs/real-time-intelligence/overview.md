@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: overview
 ms.custom:
   - build-2024
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.search.form: Overview
 ---
 # What is Real-Time Intelligence?
@@ -59,7 +59,7 @@ support of business and engineering processes.
 
 :::image type="content" source="media/overview/overview-schematic.png" alt-text="Diagram of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border="none":::
 
--   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data is not only available but also accessible to all, promoting quick decision-making and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
+-   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data isn't only available but also accessible to all, promoting quick decision-making, and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
 
 - Once you select a stream from your organization or connected to
 outside or internal sources, you can use the data consumption tools
@@ -72,11 +72,11 @@ interactions that simplify the process of understanding data, making
 it accessible to anyone who wants to make decision based on data in
 motion using visual tools, Natural Language and Copilot.
 
--   These insights can be turned into actions with Data Activator, as
-    you set up Reflex alerts from various parts of Fabric to react to
+-   These insights can be turned into actions with Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)], as
+    you set up alerts from various parts of Fabric to react to
     data patterns or conditions in real-time.
 
-##  How do you interact with the components of Real-Time Intelligence?
+##  How do I interact with the components of Real-Time Intelligence?
 
 ### Discover streaming data
 
@@ -152,8 +152,8 @@ certain conditions or logic is met, an action is then taken, such as
 alerting users, executing Fabric job items like a pipeline, or kicking
 off Power Automate workflows. The logic can be either a simply defined
 threshold, a pattern such as events happening repeatedly over a time
-period, or the results of complex logic defined by a KQL query. Data
-Activator turns your event-driven insights into actionable business
+period, or the results of complex logic defined by a KQL query.
+[!INCLUDE [fabric-activator](includes/fabric-activator.md)] turns your event-driven insights into actionable business
 advantages.
 
 ## Integrate with other Fabric experiences
@@ -174,4 +174,5 @@ ways:
 - [End-to-end tutorial](tutorial-introduction.md)
 - [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)
 - [What is Event streams](event-streams/overview.md)
+- [What is [!INCLUDE [fabric-activator](includes/fabric-activator.md)]?](data-activator/data-activator-introduction.md)
 - [User flows](user-flow-1.md)

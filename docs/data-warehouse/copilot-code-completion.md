@@ -1,6 +1,6 @@
 ---
-title: "How to: Use Copilot code completion for Synapse Data Warehouse"
-description: Learn more about Microsoft Copilot code completion for Synapse Data Warehouse in Microsoft Fabric, to provide intelligent autocomplete-style code suggestions.
+title: "How to: Use Copilot code completion for Fabric Data Warehouse"
+description: Learn more about Microsoft Copilot code completion for Fabric Data Warehouse, to provide intelligent autocomplete-style code suggestions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, jacinda-eng
@@ -12,7 +12,7 @@ ms.custom:
   - build-2024-dataai
   - build-2024-fabric
 ---
-# How to: Use Copilot code completion for Synapse Data Warehouse
+# How to: Use Copilot code completion for Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -57,7 +57,7 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 
 ## Related content
 
-- [Microsoft Copilot for Synapse Data Warehouse](copilot.md)
-- [How to: Use the Copilot chat pane for Synapse Data Warehouse](copilot-chat-pane.md)
-- [How to: Use Copilot quick actions for Synapse Data Warehouse](copilot-quick-action.md)
+- [Microsoft Copilot for Fabric Data Warehouse](copilot.md)
+- [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
+- [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md)

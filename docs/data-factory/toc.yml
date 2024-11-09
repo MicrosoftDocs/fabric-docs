@@ -681,6 +681,8 @@
         href: webhook-activity.md
     - name: Concepts
       items:
+      - name: REST API capabilities
+        href: pipeline-rest-api-capabilities.md
       - name: CI/CD for data pipelines
         href: cicd-pipelines.md
       - name: Monitor data pipeline runs
@@ -741,6 +743,8 @@
     items:
     - name: Concepts
       items:
+      - name: REST API capabilities
+        href: dataflows-gen2-rest-api-capabilities.md
       - name: Data source management
         href: data-source-management.md
       - name: Dataflow Gen2 destinations and managed settings
@@ -757,6 +761,8 @@
         href: data-in-staging-artifacts.md
       - name: Dataflow Gen2 incremental refresh
         href: dataflow-gen2-incremental-refresh.md
+      - name: Dataflow Gen2 with CICD and Git integration
+        href: dataflow-gen2-cicd-and-git-integration.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow

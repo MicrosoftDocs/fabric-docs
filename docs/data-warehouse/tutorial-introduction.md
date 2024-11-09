@@ -76,4 +76,4 @@ While the WWI dimensional model contains multiple [fact tables](dimensional-mode
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a [!INCLUDE [product-name](../includes/product-name.md)] workspace](tutorial-create-workspace.md)
+> [Tutorial: Create a Microsoft Fabric workspace](tutorial-create-workspace.md)

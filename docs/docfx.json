@@ -175,6 +175,9 @@
                 ],
                 "data-activator/**/*.md": [
                     "fabric-dataactivator-docs"
+                ],
+                "databases/**/*.md": [
+                    "ppac-fabric-databases"
                 ]
             }
         },

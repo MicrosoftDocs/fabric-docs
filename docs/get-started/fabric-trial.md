@@ -1,17 +1,17 @@
 ---
 title: Fabric trial capacity
-description: Understand how the Fabric trial works.
+description: Understand how the Fabric trial works. This includes starting a trial, ending a trial, and sharing a trial.
 author: mihart
 ms.reviewer: mihirwagle
 ms.author: mihart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.collection: ce-skilling-ai-copilot
-ms.date: 09/23/2024
+ms.date: 11/05/2024
 ---
 
 # Microsoft Fabric trial capacity
 
-Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fabric trial capacity. Your use of the Microsoft Fabric trial capacity includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days.
+Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fabric trial capacity. Your use of the Microsoft Fabric trial capacity includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days unless canceled sooner.
 
 > [!NOTE]
 > If you're ready to purchase Fabric, visit the [Purchase Fabric page.](../enterprise/buy-subscription.md)
@@ -39,11 +39,11 @@ When you start a trial of a Fabric capacity, your trial [capacity](../enterprise
 
 ## About the trial license
 
-Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
+Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays the nontrial licenses. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
 
 ## Use your trial
 
-To begin using your trial of a Fabric capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
+To begin using your trial of a Fabric capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
 
 ## Existing Power BI users
 
@@ -57,7 +57,14 @@ You may already have a license and not realize it. For example, some versions of
 
 ## Start the Fabric capacity trial
 
-Follow these steps to start your Fabric capacity trial.
+You can start a trial several different ways. The first two methods make you the Capacity administrator of the trial capacity.  
+- Sign up for a trial capacity. You manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Or, by assigning workspaces to the trial capacity, which automatically adds coworkers (with roles in those workspaces) to the trial capacity.
+- Attempt to use a Fabric feature. If your organization enabled self-service, attempting to use a Fabric feature launches a Fabric trial.
+- Join a trial started by a coworker by adding your workspace to that existing trial capacity. This action only is possible if the owner gives you, or gives the entire organization, **Contributor permissions** to the trial.
+
+For more information, see {Sharing trial capacities](#sharing-trial-capacities).
+
+Follow these steps to start your Fabric capacity trial and become the Capacity administrator of that trial.
 
 1. Open the [Fabric homepage](https://app.fabric.microsoft.com/home) and select the Account manager.
 
@@ -82,32 +89,29 @@ Congratulations. You now have a Fabric trial capacity that includes a Power BI i
 
 ## Other ways to start a Microsoft Fabric trial
 
-In some situations, your Fabric administrator [enables Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric capacity trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you receive a prompt to start a trial of a Fabric capacity. If you agree, your trial starts and your **My workspace** is upgraded to a trial capacity workspace. You're the Capacity administrator and can add workspaces to the trial capacity. 
+In some situations, your Fabric administrator enables Microsoft Fabric for the tenant but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric capacity trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you receive a prompt to start a trial of a Fabric capacity. If you agree, your trial starts and your **My workspace** is upgraded to a trial capacity workspace. You're the Capacity administrator and can add workspaces to the trial capacity. 
 
 ## Share trial capacities
 
-Each standard Fabric trial includes 64 capacity units. The person who starts the trial becomes the Capacity administrator for only that trial capacity. And that Capacity administrator can share the trial by assigning workspaces to that specific trial capacity.  
+Each standard trial of a Fabric capacity includes 64 capacity units. The person who starts the trial becomes the Capacity administrator for that trial capacity. Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their own trial capacity. Hundreds of customers can use each trial capacity. But, Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. To help others in your organization try out Fabric, share your trial capacity. There are several ways to share.  
 
-Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their trial capacity. Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. ​So sharing workspaces in trial capacities is essential to allow your colleagues to participate in the Fabric capacity trial. Hundreds of customers can use each Fabric trial capacity.
+### Share using Contributor permissions
 
-The Capacity administrator can assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces is now also participating in the Fabric capacity trial. 
+Enabling the **Contributor permissions** setting allows other users to assign their workspaces to your trial capacity. If you're the Capacity or Fabric administrator, enable this setting from the Admin portal. 
+1. From the top right section of the Fabric menubar, select the cog icon to open **Settings**.
+2. Select **Admin portal** > **Trial**. **Enabled for the entire organization** is set by default.
 
-If you're the Capacity administrator, assign workspaces to the trial capacity two different ways. 
+Enabling **Contributor permissions** means that any user with an Admin role in a workspace can assign that workspace to the trial capacity and access Fabric features. Apply these permissions to the entire organization or apply them to only specific users or groups. 
 
-- [Use the Admin center **Capacity settings**](../admin/capacity-settings.md?tabs=trial#capacity-settings). All users with access to those workspaces are now able to use that trial capacity. The Fabric administrator can edit **Capacity settings** as well.
-    :::image type="content" source="media/fabric-trial/fabric-admin-portal.png" alt-text="Screenshot of the Admin center showing Capacity settings selected.":::
+### Share by assigning workspaces
 
-- [Use Workspace settings](workspaces.md#license-mode).  
+If you're the Capacity administrator, assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces is now also participating in the Fabric capacity trial. 
+1. Open **Workspaces** and select the name of a Premium workspace.
+2. Select the ellipses(...) and choose **Workspace settings** > **Premium** > **Trial**.
 
     :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
-If the Fabric tenant switch is enabled, users in that tenant can view, consume, and add Fabric content. If the Fabric tenant switch is disabled, users in that tenant can only view and consume Fabric content. For more information, see [Fabric tenant setting](#look-up-the-fabric-tenant-switch-setting).
-
-## Look up the Fabric tenant switch setting
-
-If you're a Capacity administrator or a tenant admin, you can view, verify, or change the Fabric switch. If you need help, [contact the Capacity administrator directly](#look-up-the-trial-capacity-administrator).
-
-:::image type="content" source="media/fabric-trial/fabric-tenant-setting.png" alt-text="Screenshot of the Admin portal with Tenant settings outlined in red and an arrow pointing to the word Enabled.":::
+For more information, see [Use Workspace settings](workspaces.md#license-mode).  
 
 ## Look up the trial Capacity administrator
 
@@ -119,32 +123,52 @@ If you're the capacity or Fabric administrator, from the upper right corner of F
 
 ## End a Fabric trial
 
-End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial. Individual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data and continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. 
+End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity and Fabric admins can cancel the trial of a Fabric capacity. Individual users don't have this ability. 
+
+One reason to cancel a trial capacity is when the capacity administrator of a trial capacity leaves the company. Since Microsoft limits the number of trial capacities available per tenant, you might want to remove the unmanaged trial to make room to sign up for a new trial.
+
+When you cancel a free Fabric capacity trial, and don't move the workspaces and their contents to a new capacity that supports Fabric:
+
+- Microsoft can't extend the Fabric capacity trial, and you might not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. 
+- All licenses return to their original versions. You no longer have the equivalent of a PPU license. The license mode of any workspaces assigned to that trial capacity changes to Power BI Pro. 
+- All Fabric items in the workspaces become unusable and are eventually deleted. Your Power BI items are unaffected and still available when the workspace license mode returns to Power BI Pro.  
+- You can't create workspaces that support Fabric capabilities.
+- You can't share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
+- You can't create any other analytics solutions using these Fabric items.
+
+If you want to retain your data and continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. Or, migrate your workspaces to a capacity that you already own that supports Fabric items.
 
 For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
 
 ### The trial expires 
 
-A standard Fabric capacity trial lasts 60 days. If you don't upgrade to a paid Fabric capacity before the end of the trial period, non-Power BI Fabric items are removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states). You have seven days after the expiration date to save your non-Power BI Fabric items by assigning the workspaces to an active capacity.
+A standard Fabric capacity trial lasts 60 days. If you don't upgrade to a paid Fabric capacity before the end of the trial period, non-Power BI Fabric items are removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states). You have seven days after the expiration date to save your non-Power BI Fabric items by assigning the workspaces to capacity that supports Fabric.
 
 To retain your Fabric items, before your trial ends, [purchase Fabric](https://aka.ms/fabricibiza).
 
 ### Cancel your Fabric capacity trial - non admins
 
-Only the capacity administrator can cancel the Fabric capacity trial. 
+Only the capacity or Fabric administrator can cancel the Fabric capacity trial. 
 
-### Cancel the Fabric trial - Capacity admins
+### Cancel the Fabric trial - Capacity and Fabric admins
 
-To cancel your free Fabric trial capacity, open your Account Manager and select **Cancel trial**. Once canceled, Microsoft can't extend the Fabric capacity trial, and you may not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. You can also [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. If you have workspaces with Fabric items, assign those workspaces to the new trial or purchased capacity within seven days.
+Capacity admins and Fabric admins can cancel a trial capacity. The user who starts a trial automatically becomes the capacity administrator. The Fabric administrator has full access to all Fabric management tasks. All Fabric items (non-Power BI items) in those workspaces become unusable and are eventually deleted
+
+#### Cancel a trial using your Account manager
+
+As a Capacity admin, you can cancel your free Fabric trial capacity from your Account manager. Canceling the trial this way ends the trial for yourself and anyone else you invited to the trial. 
+
+Open your Account Manager and select **Cancel trial**. 
 
 :::image type="content" source="media/fabric-trial/cancel-trial.png" alt-text="Screenshot of the Cancel trial button in Account manager.":::
 
-When you cancel a free Fabric capacity trial, the trial capacity, with all of its workspaces and their contents, is deleted. In addition, you can't:
-	
-- Create workspaces that support Fabric capabilities.
-- Share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
-- Create analytics solutions using these Fabric items.
+### Cancel the Fabric trial using the Admin portal
 
+As a Capacity or Fabric administrator, you can use the Admin portal to cancel a trial of a Fabric capacity. 
+
+Select **Settings** > **Admin portal** > **Capacity settings**. Then choose the **Trials** tab. Select the cog icon for the trial capacity that you want to delete. 
+
+:::image type="content" source="media/fabric-trial/fabric-delete-trial.png" alt-text="Screenshot of the Trial tab in the Admin portal.":::
 
 ## Considerations and limitations
 
