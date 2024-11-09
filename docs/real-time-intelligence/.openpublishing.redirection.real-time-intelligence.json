@@ -588,7 +588,7 @@
     {
       "source_path_from_root": "/docs/real-time-activator/data-activator/data-activator-introduction.md",
       "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-introduction",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/data-activator/data-activator-latency.md",
