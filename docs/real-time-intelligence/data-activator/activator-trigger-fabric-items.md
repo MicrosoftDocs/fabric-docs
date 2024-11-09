@@ -14,17 +14,17 @@ Fabric data pipelines and notebooks can be used to load or transform data in Mic
 
 * Start data pipelines when new files are loaded to Azure storage accounts, to load files into OneLake. You can learn more about [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
 
-* Start Fabric notebooks when issues with data quality are found using Power BI reports. You can learn more about [getting data from Power BI](data-activator-get-data-power-bi.md).
+* Start Fabric notebooks when issues with data quality are found using Power BI reports. You can learn more about [getting data from Power BI](activator-get-data-power-bi.md).
 
 ## Activate a Fabric item
 
-Start by selecting an existing rule or [creating a rule](data-activator-create-triggers-design-mode.md).
+Start by selecting an existing rule or [creating a rule](activator-create-triggers-design-mode.md).
 
 In the rule definition pane on the right side of the screen, find **Action** section to define the action when chosen condition is met. Select **Fabric item** as the action type and select a specific item from the [OneLake Data Hub](/fabric/get-started/onelake-data-hub) pop-up window.
 
-:::image type="content" source="media/data-activator-trigger-fabric-items/data-activator-fabric-item.png" alt-text="Screenshot showing Fabric item selected from the Type dropdown.":::
+:::image type="content" source="media/activator-trigger-fabric-items/data-activator-fabric-item.png" alt-text="Screenshot showing Fabric item selected from the Type dropdown.":::
 
-![Screenshot showing Activator Action card with a notebook being selected.](media/data-activator-trigger-fabric-items/data-activator-fabric-item-select-item.png)
+![Screenshot showing Activator Action card with a notebook being selected.](media/activator-trigger-fabric-items/data-activator-fabric-item-select-item.png)
 
 ## Test, start, or stop an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule
 
@@ -32,8 +32,8 @@ Once you enter all of the required information, select **Save** to save the [!IN
 
 ## Related content
 
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
+* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 

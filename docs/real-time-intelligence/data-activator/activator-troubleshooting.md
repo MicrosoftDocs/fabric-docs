@@ -46,7 +46,7 @@ The following error codes represent problems that can occur when [!INCLUDE [fabr
 
 ### IncorrectDataFormat
 
-The event stream item connected to your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] object contains data in a format that isn't recognized by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. To resolve the problem, review the data in your event stream item to ensure that it's in JSON dictionary format, as described in [Get data for Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from event streams](data-activator-get-data-eventstreams.md).
+The event stream item connected to your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] object contains data in a format that isn't recognized by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. To resolve the problem, review the data in your event stream item to ensure that it's in JSON dictionary format, as described in [Get data for Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from event streams](activator-get-data-eventstreams.md).
 
 ## Trigger evaluation error codes
 
@@ -92,7 +92,7 @@ This error code means that [!INCLUDE [fabric-activator](../includes/fabric-activ
 
 ### RecipientThrottled
 
-This error code means that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] couldn't alert the recipient of your trigger because the recipient receives too many messages from [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. The article [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations](data-activator-limitations.md) lists the maximum number of messages that you can send from a trigger. To resolve this problem, change the definition of your trigger so that it activates less often.
+This error code means that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] couldn't alert the recipient of your trigger because the recipient receives too many messages from [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. The article [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations](activator-limitations.md) lists the maximum number of messages that you can send from a trigger. To resolve this problem, change the definition of your trigger so that it activates less often.
 
 ### BotBlockedByUser
 
@@ -112,13 +112,13 @@ This error code means that you have a trigger that sends a Teams alert, and that
 
 ## Related content
 
-* [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](data-activator-introduction.md)
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
-* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Power BI](data-activator-get-data-power-bi.md)
-* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](data-activator-get-data-eventstreams.md)
-* [Assign data to objects in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-assign-data-objects.md)
-* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] triggers in design mode](data-activator-create-triggers-design-mode.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
+* [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](activator-introduction.md)
+* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
+* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Power BI](activator-get-data-power-bi.md)
+* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](activator-get-data-eventstreams.md)
+* [Assign data to objects in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-assign-data-objects.md)
+* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] triggers in design mode](activator-create-triggers-design-mode.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 

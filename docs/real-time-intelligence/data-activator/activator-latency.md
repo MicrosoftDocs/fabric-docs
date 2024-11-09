@@ -48,7 +48,7 @@ For additional resources on this subject, see Tyler Akidau's blog posts [Streami
 
 Late arrival tolerance is a user setting. Late arrival tolerance refers to how long [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] waits for an event to arrive and be acknowledged and processed. The default is two minutes. Late arrival tolerance contributes to latency. Rules that are created with a late arrival tolerance have a latency that is at least the amount of time that the late arrival tolerance is set to. When creating a rule, decide whether to use the default tolerance or change it. Tolerance ensures that late events and events that arrive out of order have an opportunity to be included in the rule evaluation. If an event falls outside of the late arrival tolerance, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] doesn't take it into consideration. Any events with an *Arrival time* after that tolerance aren't factored in.
 
-:::image type="content" source="media/data-activator-latency/data-activator-latency-settings.png" alt-text="Screenshot of the Conditions pane scrolled to the Advanced settings options.":::
+:::image type="content" source="media/activator-latency/data-activator-latency-settings.png" alt-text="Screenshot of the Conditions pane scrolled to the Advanced settings options.":::
 
 Overall, the consideration is whether it's more important to:
 
@@ -57,7 +57,7 @@ Overall, the consideration is whether it's more important to:
 
 In this example, data points are measured in 15-minute increments. The first three dots, which are blue, make it in the time window. The fourth dot, which is orange, doesn't. The *Event time* is within the 15-minute interval, but the event isn't ingested by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] within the 15-minute interval. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] only evaluates the rule over data with an *Arrival time* within the 15-minute window. Unless the user indicates that they want to allow for a late arrival tolerance and wait to see if other data points arrive. 
 
-:::image type="content" source="media/data-activator-latency/data-activator-dot-charts.png" alt-text="Screenshot of a line chart displaying time intervals.":::
+:::image type="content" source="media/activator-latency/data-activator-dot-charts.png" alt-text="Screenshot of a line chart displaying time intervals.":::
 
 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] can't factor in delays from the user’s data. For example, the user can have IoT sensors that are offline for 1 hour. Once they go back online, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] can receive the data, but the data was delayed for 1 hour from that offline state, which happens outside of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
 
@@ -78,4 +78,4 @@ The user creates a rule that calculates the average temperature in minute interv
 
 Built-in latency differs by service. Latency for eventstreams is different than latency for Power BI visuals. There are two parts that make up latency for rules built on Power BI visuals: the frequency of querying Power BI visuals that’s built in the system, and a delay that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]'s backend might introduce.
 
-Power BI rules are evaluated any time new data arrives in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] ingests new data from Power BI every hour. This means that events that meet the rule condition trigger an activation at a maximum of one hour after the event occurs. For more information, see [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Power BI](data-activator-get-data-power-bi.md).
+Power BI rules are evaluated any time new data arrives in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] ingests new data from Power BI every hour. This means that events that meet the rule condition trigger an activation at a maximum of one hour after the event occurs. For more information, see [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Power BI](activator-get-data-power-bi.md).

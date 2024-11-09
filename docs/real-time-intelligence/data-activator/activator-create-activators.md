@@ -11,7 +11,7 @@ ms.date: 11/08/2024
 
 # Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
 
-Once you bring data into a reflex or [assign data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-activator), you can create rules to act on your data. There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
+Once you bring data into a reflex or [assign data to objects](activator-assign-data-objects.md#assign-data-to-objects-in-activator), you can create rules to act on your data. There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
 
 ## Why create rules on events?
 
@@ -45,7 +45,7 @@ Once you select a property or event stream, you see a preview of the values for 
 
 To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger.":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger.":::
 
 ### Step 3: Define the condition to detect
 
@@ -55,11 +55,11 @@ Next, choose the type of condition that you want to detect. You can use conditio
 - when a logical true/false value changes (for example, HasFault becomes True), or 
 - when a string value changes (for example, Status changes from InCompliance).
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-04.png" alt-text="Screenshot of choosing the alert condition.":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-04.png" alt-text="Screenshot of choosing the alert condition.":::
 
 The charts in the Definition tab updates to show a sample of the events that meet the conditions that you set.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts." lightbox="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts." lightbox="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-05.png":::
 
 If you navigate to the **Analytics** tab, there are two charts. The first shows the total number of times the rule fired, for all object IDs that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is tracking. Use this chart to understand the volume of notifications that fired over all object IDs. The second chart shows the total number of times the trigger activated, for the five object IDs. Use this chart to better understand if there were particular object IDs that contribute the most to all the activations that fire.
 
@@ -67,11 +67,11 @@ If you navigate to the **Analytics** tab, there are two charts. The first shows 
 
 Finally, use the **Action** section to choose what to do when the condition is detected.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
 
 Different action types have different parameters. Some of those parameters are: the email address you want to send to, the workflow you want to start, subject line, or additional information.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-07.png" alt-text="Screenshot of sending a message when a condition is detected.":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-07.png" alt-text="Screenshot of sending a message when a condition is detected.":::
 
 You can also select **Edit action** to see an editor with a preview of the message that the action sends and options to add more information to the action.
 
@@ -82,13 +82,13 @@ After you create a rule, test it by selecting **Send me a test alert**. Selectin
 * The test alert always goes to you, regardless of the recipient field in the **Action** card
 * The **Send me a test alert** option is only enabled if you have at least one past event for which the trigger condition is true.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing an alert.":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing an alert.":::
 
 ## Start and stop your rule
 
 Rules are created in a *Stopped* state. This means they're not being evaluated as data flows into the system, and don't take any actions as a result. After defining the rule, select **Save and start** to make the rule active. If you're not ready to start your rule, save it and come back later. When you're ready, select **Start** from the toolbar for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to start running the trigger and taking action.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-09.png" alt-text="Screenshot of starting an alert.":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-09.png" alt-text="Screenshot of starting an alert.":::
 
 Once started, you see *Running* in the title area of the rule card. Also, the icon in the Explorer shows that the rule is running. When you start the rule, new activations start running against new ingested data. Your rule doesn't activate on data that has already been ingested. To stop the alert, select **Stop**.
 
@@ -102,16 +102,16 @@ Sometimes, you need to reuse rule logic across multiple rules. Create a property
 
 To create a property, select the stream added to the object that you're interested in and select **New Property** from the ribbon and then select the property you'd like to use in the rule logic.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-10.png" alt-text="Screenshot of creating a property for an alert.":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-10.png" alt-text="Screenshot of creating a property for an alert.":::
 
 Once you define a property, you can reference it from one or more rules. Here we reference the *Temperature* property *Maximum temp last hour* rule.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert."  lightbox="media/data-activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png":::
+:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert."  lightbox="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-11.png":::
 
 ## Related content
 
-- [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
-- [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
+- [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
+- [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 

@@ -23,53 +23,53 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Activator?
-            url: data-activator-introduction.md
+            url: activator-introduction.md
       - linkListType: get-started
         links:
           - text: Get started with Activator
-            url: data-activator-get-started.md
+            url: activator-get-started.md
 
   - title: Get Data
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Get data from Power BI
-            url: data-activator-get-data-power-bi.md
+            url: activator-get-data-power-bi.md
           - text: Get data from Eventstreams
-            url: data-activator-get-data-eventstreams.md
+            url: activator-get-data-eventstreams.md
           - text: Get data from Real-Time Hub
-            url: data-activator-get-data-real-time-hub.md                    
+            url: activator-get-data-real-time-hub.md                    
 
   - title: Create objects and triggers
     linkLists:
       - linkListType: concept
         links:
           - text: Creating triggers
-            url: data-activator-create-triggers-design-mode.md
+            url: activator-create-activators.md
           - text: Detection conditions
-            url: data-activator-detection-conditions.md          
+            url: activator-detection-conditions.md          
       - linkListType: how-to-guide
         links:
           - text: Assign data to objects
-            url: data-activator-assign-data-objects.md
+            url: activator-assign-data-objects.md
           - text: Trigger Fabric items
-            url: data-activator-trigger-fabric-items.md
+            url: activator-trigger-fabric-items.md
           - text: Use custom actions to trigger Power Automate flows
-            url: data-activator-trigger-power-automate-flows.md
+            url: activator-trigger-power-automate-flows.md
 
   - title: Tutorial
     linkLists:
       - linkListType: tutorial
         links:
           - text: Activator tutorial using sample data
-            url: data-activator-tutorial.md
+            url: activator-tutorial.md
 
   - title: Troubleshoot
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Activator limitations
-            url: data-activator-limitations.md
+            url: activator-limitations.md
           - text: Troubleshoot errors
-            url: data-activator-troubleshooting.md                   
+            url: activator-troubleshooting.md                   
             

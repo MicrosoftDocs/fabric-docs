@@ -32,11 +32,11 @@ Start by opening a workspace that has a Fabric capacity.
 
 1. From the Fabric homepage, select a workspace with a Fabric capacity and select **Create** > **Reflex**.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-create.png" alt-text="Screenshot showing the left navigation pane with Create selected.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-create.png" alt-text="Screenshot showing the left navigation pane with Create selected.":::
 
 1. Select the sample to create a reflex that is prepopulated with sample events and objects.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-sample.png" alt-text="Screenshot showing the option to add data or use the sample data.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-sample.png" alt-text="Screenshot showing the option to add data or use the sample data.":::
 
 ## Explore the data
 
@@ -56,23 +56,23 @@ The Explorer pane displays objects, like event streams, for this reflex. **Deliv
 
 1. In the Explorer pane, select the object called **Delivery events**. You can create rules about objects that use data from the **Package delivery events** event stream. For example, a rule that checks packages for temperature.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-temperature.png" alt-text="Screenshot showing Delivery events table and the temperature column.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-temperature.png" alt-text="Screenshot showing Delivery events table and the temperature column.":::
 
 1. Notice that the **Events by object ID** section is organized by **Package ID**. **Package ID** is the column ID that uniquely identifies each package. We use this unique ID to assign the Package events to Package objects.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-unique-id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen."Lightbox="media/data-activator-tutorial/data-activator-unique-id.png":::
+    :::image type="content" source="media/activator-tutorial/data-activator-unique-id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen."Lightbox="media/activator-tutorial/data-activator-unique-id.png":::
 
 1. Select the **Temperature** rule called **Too hot for medicine**. Scroll through the **Definition** pane to see how the rule works.
 
 1. In the **Monitor** section, select **Temperature**. The temperature values come from the  *Temperature* column in the **Delivery events** table. You can see the **Temperature** column in an earlier screenshot.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-monitor.png" alt-text="Screenshot showing the Monitor section of the Definition pane.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-monitor.png" alt-text="Screenshot showing the Monitor section of the Definition pane.":::
 
 1. Scroll down to **Condition**. Our rule is monitoring temperatures that **become greater than** **50**.
 
 1. Scroll further down to **Scope**. Our rule applies only to packages containing medicine. In the **Delivery events** table, the rule looks at the column named **SpecialCare**. In the **SpecialCare** column, some of the packages have a value of **Medicine**.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-scope.png" alt-text="Screenshot showing the Scope section of the Definition pane.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-scope.png" alt-text="Screenshot showing the Scope section of the Definition pane.":::
 
 1. Lastly, scroll down to **Action**. Our rule sends a Teams message if the condition is met.
 
@@ -109,15 +109,15 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
 1. Select your new **HoursInTransit** property. From the ribbon, select **New rule**. From the header, select the pencil icon to edit the name of the rule. Name it *Average transit time above target*. Your **Package2** object looks like this.
 
-:::image type="content" source="media/data-activator-tutorial/data-activator-new-rule.png" alt-text="Average transit time explorer view for activator tutorial.":::
+:::image type="content" source="media/activator-tutorial/data-activator-new-rule.png" alt-text="Average transit time explorer view for activator tutorial.":::
 
 1. In the **Definition** pane, select **HoursInTransit**. Then select **Show options** > **Add summarization** > **Average**. Set an aggregation **Window size** of 1 hour and a **Step size** of 1 hour. The Monitor chart updates to reflect the summarization, and your rule looks like this.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-average-chart.png" alt-text="Average transit time chart for activator tutorial.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-average-chart.png" alt-text="Average transit time chart for activator tutorial.":::
 
 1. In the **Condition** step, detect when the average transit time becomes greater than 25. Set the rule to alert you every time the condition is met. After you complete this step, the Condition chart updates, and the rule looks like this.
 
-    :::image type="content" source="media/data-activator-tutorial/data-activator-conditions.png" alt-text="Average transit time trigger detection chart for activator tutorial.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-conditions.png" alt-text="Average transit time trigger detection chart for activator tutorial.":::
 
 1. Specify an action for your rule. You can choose to send a Teams message or Email. Customize your action according to how you would like it to appear.
 
@@ -125,18 +125,18 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
 1. Start your rule by selecting **Save and start**.
 
-You created your first object and rule. As next steps, you might try setting up some other rules on the *Package2* object. When you're ready to try using [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] on your own data, follow the steps in the [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-data-eventstreams.md) article.
+You created your first object and rule. As next steps, you might try setting up some other rules on the *Package2* object. When you're ready to try using [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] on your own data, follow the steps in the [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-data-eventstreams.md) article.
 
 ## Clean up resources
 
 Once you finish with the rules you created as part of the tutorial, be sure to stop them. If you don't stop the rules, you will continue to receive the rule notifications. You also might incur charges for background processing. Select each rule in turn and select the **Stop** button from the ribbon.
 
-:::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for activator tutorial.":::
+:::image type="content" source="media/activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for activator tutorial.":::
 
 ## Related content
 
-* [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](data-activator-introduction.md)
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
+* [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](activator-introduction.md)
+* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
 
 You can also learn more about Microsoft Fabric:
 
