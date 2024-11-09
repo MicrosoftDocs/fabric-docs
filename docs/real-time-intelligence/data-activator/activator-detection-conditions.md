@@ -19,7 +19,7 @@ Our example uses the **Package delivery events** event stream. From this event s
 
 Detection settings are managed in the **Definition** pane which opens on the right side of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Select a rule from the **Explorer** or select **New rule** to open the **Definition** pane. Here you set the detection settings using **Summarization**, **Filter**, and **Condition**.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definition pane in activator."lightbox="media/data-activator-detection-conditions/data-activator-pane.png":::
+:::image type="content" source="media/activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definition pane in activator."lightbox="media/activator-detection-conditions/data-activator-pane.png":::
 
 **Summarization**
 
@@ -29,7 +29,7 @@ If the **Summarization** section isn't shown in your **Definition** pane, select
 
 When you create a summarization, you specify a time window for your rule. The time window ranges from 10 seconds to 24 hours. A summarization takes all of the values of the rule properties during each time window and converts them into a single summary value for the time window. In this example, our rule summarization is the **Average** aggregation for the attribute **Temperature**. 
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-summarizations.png" alt-text="Screenshot showing the Monitor section of the Definition pane with the Temperature attribute selected.":::
+:::image type="content" source="media/activator-detection-conditions/data-activator-summarizations.png" alt-text="Screenshot showing the Monitor section of the Definition pane with the Temperature attribute selected.":::
 
 The summarization also includes a step size. The step size ranges from 10 seconds to 24 hours. 
 
@@ -44,7 +44,7 @@ Total  | Computes the total value of the property or column during that time win
 
 In a filter, you specify a comparison operation for the selected attribute. The filter retains only those events that meet the comparison condition. All other events are removed from consideration for the rule. To open the filter section, select **Add filter** from the **Definition** pane. You may have to scroll up to see the Filter and **Operation** field.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using an activator filter.":::
+:::image type="content" source="media/activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using an activator filter.":::
 
 Use filters on any type of attribute. However, you typically use filters with text values, so that you can create a condition on a subset of your data. For example, you might set a filter of “City=Redmond” on some package-tracking events, to set a condition on only events on packages in Redmond. You can also set a filter on numerical data. In our example, we filtered for temperatures greater than 60.
 
@@ -54,7 +54,7 @@ You can specify up to three filters.
 
 The third detection setting is **Condition**. Use **Condition** to tell [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] when to activate the rule.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of using activator condition types.":::
+:::image type="content" source="media/activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of using activator condition types.":::
 
 Condition types fall into the following categories:
 
@@ -79,9 +79,9 @@ The occurrence indicates how long, or how many times, the condition must be true
 
 ## Related content
 
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
-* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](data-activator-create-triggers-design-mode.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
+* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
+* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 

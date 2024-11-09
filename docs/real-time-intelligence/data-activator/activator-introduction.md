@@ -55,9 +55,9 @@ Properties are useful when you want to reuse logic across multiple activators. Y
 ## Related content
 
 * [Basic concepts for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-basic-concepts.md)
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
-* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](data-activator-get-data-eventstreams.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
+* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
+* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](activator-get-data-eventstreams.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 

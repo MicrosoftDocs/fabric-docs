@@ -174,5 +174,5 @@ ways:
 - [End-to-end tutorial](tutorial-introduction.md)
 - [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)
 - [What is Event streams](event-streams/overview.md)
-- [What is [!INCLUDE [fabric-activator](includes/fabric-activator.md)]?](data-activator/data-activator-introduction.md)
+- [What is [!INCLUDE [fabric-activator](includes/fabric-activator.md)]?](data-activator/activator-introduction.md)
 - [User flows](user-flow-1.md)

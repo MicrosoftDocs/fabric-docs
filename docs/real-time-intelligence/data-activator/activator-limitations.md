@@ -70,7 +70,7 @@ Additionally, for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 * The tile must be filtered by a predefined time range. Using a custom time range isn't supported.
 * The tile must not contain time series data (for example, data created using the *make-series* KQL operator)
 
-For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
+For more information, see [Limitations on charts with a time axis](activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
 
 ## Allowed recipients of email notifications
 
@@ -104,7 +104,7 @@ Your organization may have up to 250 [!INCLUDE [fabric-activator](../includes/fa
 
 ## Related content
 
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
-* [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-detection-conditions.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
+* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
+* [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 * [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)

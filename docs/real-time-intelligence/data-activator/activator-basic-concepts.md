@@ -33,7 +33,7 @@ To see your workspaces, select **Workspaces** from your left navigation pane.
 
 *[!INCLUDE [fabric-activator](../includes/fabric-activator.md)]* is the name of the Fabric product. An *activator* is the thing that you create by using Activator. An activator holds all the information necessary to connect to data, monitor for conditions, and act. You typically create an activator for each business process or area you monitor.
 
-Once you create an activator, populate it with data. Learn how to get data into your activator from [Power BI](data-activator-get-data-power-bi.md), [eventstreams](data-activator-get-data-eventstreams.md), and [Real-Time Hub](data-activator-get-data-real-time-hub.md).
+Once you create an activator, populate it with data. Learn how to get data into your activator from [Power BI](activator-get-data-power-bi.md), [eventstreams](activator-get-data-eventstreams.md), and [Real-Time Hub](activator-get-data-real-time-hub.md).
 
 ## Events and eventstreams
 
@@ -73,5 +73,5 @@ Rules built on attributes are used to monitor how an attribute on an object ID c
 
 ## Related content
 
-- [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-get-started.md)
-- [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-introduction.md)
+- [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
+- [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-introduction.md)

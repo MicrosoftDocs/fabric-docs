@@ -23,11 +23,11 @@ You can get data for use in Fabric [!INCLUDE [fabric-activator](../includes/fabr
 
 To browse Real-Time Hub items from a reflex, select **Get data** from the toolbar as shown in the following image.
 
-:::image type="content" source="media/data-activator-get-data-real-time-hub/data-activator-real-time-hub-01.png" alt-text="Screenshot of get data from Real-Time Hub.":::
+:::image type="content" source="media/activator-get-data-real-time-hub/data-activator-real-time-hub-01.png" alt-text="Screenshot of get data from Real-Time Hub.":::
 
 A wizard appears enabling you to add new events using the recommended connectors. You can also browse to existing streams and events in the Real-Time Hub in the table displayed at the bottom of the dialog.
 
-:::image type="content" source="media/data-activator-get-data-real-time-hub/data-activator-real-time-hub-02.png" alt-text="Screenshot of get data sources from Real-Time Hub." lightbox="media/data-activator-get-data-real-time-hub/data-activator-real-time-hub-02.png":::
+:::image type="content" source="media/activator-get-data-real-time-hub/data-activator-real-time-hub-02.png" alt-text="Screenshot of get data sources from Real-Time Hub." lightbox="media/activator-get-data-real-time-hub/data-activator-real-time-hub-02.png":::
 
 When you choose a connector, a new eventstream is created to manage the connection and transformation of the new events.
 
@@ -35,8 +35,8 @@ For more information about connecting to data with Real-Time Hub, see the [Real-
 
 ## Related content
 
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
-* [Trigger Fabric items](data-activator-trigger-fabric-items.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
+* [Trigger Fabric items](activator-trigger-fabric-items.md)
 
 You can also learn more about Microsoft Fabric:
 

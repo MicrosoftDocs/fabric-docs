@@ -12,7 +12,7 @@ ms.search.form: Real-Time Dashboard
 ---
 # Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard
 
-You can create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from many different data sources in Microsoft Fabric. This article explains how to create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard. For more information, see [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](data-activator-introduction.md)
+You can create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from many different data sources in Microsoft Fabric. This article explains how to create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard. For more information, see [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](activator-introduction.md)
 
 ## Alert when conditions are met in a Real-Time Dashboard
 
@@ -30,13 +30,13 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 1. Choose a tile on the Real-Time Dashboard for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to monitor.
 1. Select the **More menu (...)** at the top-right of the tile, and choose **Set Alert**. You can also use the *Set Alert* button in the Real-Time Dashboard menu bar.
 
-:::image type="content" source="media/data-activator-get-data/data-activator-get-data-06.png" alt-text="Screenshot showing how to add an Activator rule from a tile.":::
+:::image type="content" source="media/activator-get-data/data-activator-get-data-06.png" alt-text="Screenshot showing how to add an Activator rule from a tile.":::
 
 ## Define the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert conditions
 
 In the **Set alert** pane, define your rule conditions. Rule conditions include deciding which field to monitor and setting the threshold. Select whether to receive your notification in email or in Microsoft Teams. Set the location to save this [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule and select **Create**.
 
-:::image type="content" source="media/data-activator-get-data/data-activator-get-data-07.png" alt-text="Screenshot of create an alert window in Activator.":::
+:::image type="content" source="media/activator-get-data/data-activator-get-data-07.png" alt-text="Screenshot of create an alert window in Activator.":::
 
 ## Optional: Edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
@@ -45,7 +45,7 @@ When your trigger is ready, you receive a notification with a link to your trigg
 * Add other recipients to your alert.
 * Define a more complex alert condition than is possible in the *Set alert* pane.
 
-For information on how to edit triggers in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create triggers in design mode](data-activator-create-triggers-design-mode.md).
+For information on how to edit triggers in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create activators in design mode](activator-create-activators.md).
 
 ## Limitations on charts with a time axis
 
@@ -91,7 +91,7 @@ The most common reason that a measure value can change over time is that the mos
 
 ## Related content
 
-* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](data-activator-create-triggers-design-mode.md)
-* [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](data-activator-detection-conditions.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](data-activator-tutorial.md)
+* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
+* [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
+* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 * [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
