@@ -11,7 +11,7 @@ ms.search.form: Data Activator KQL Queryset Onramp
 ---
 # Create Activator alerts from a KQL Queryset in Real-Time Intelligence
 
-This article explains how to create Data Activator alerts from a KQL Queryset. For more information, see [What is Data Activator](data-activator-introduction.md).
+This article explains how to create Data Activator alerts from a KQL Queryset. For more information, see [What is Data Activator](activator-introduction.md).
 You can use Data Activator on a KQL Queryset to trigger notifications in two modes: 
 - when a scheduled KQL query returns results
 - when a scheduled KQL query returns results that contains a visualization meets a defined set of conditions. 
@@ -45,7 +45,7 @@ Choose the tab that corresponds to your desired workflow.
 ## Set alert on a KQL Queryset
 
 > [!IMPORTANT]
-> [Timechart](/kusto/query/visualization-timechart?view=microsoft-fabric&preserve-view=true) visualizations are not supported in this scenario. They are supported in [Create Data Activator alerts from a Real-Time Dashboard](data-activator-get-data-real-time-dashboard.md).
+> [Timechart](/kusto/query/visualization-timechart?view=microsoft-fabric&preserve-view=true) visualizations are not supported in this scenario. They are supported in [Create Data Activator alerts from a Real-Time Dashboard](activator-get-data-real-time-dashboard.md).
 
 1. Browse to your KQL Queryset.
 1. Run a query that returns a visualization.
@@ -69,13 +69,13 @@ Choose the tab that corresponds to your desired workflow.
     * If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
     * If your visualization includes dimensions, you can select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups
     * In the **When** dropdown, set the value to be evaluated.
-    * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](data-activator-detection-conditions.md#conditions).
+    * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](activator-detection-conditions.md#conditions).
     * In the **Value** field, set the value to compare against.
 1. In **Action**, specify whether you want your alert via email or Microsoft Teams. In the side pane, you can configure notifications that are sent to yourself. To send notifications to a different user, see [Optional: Edit your trigger in Data Activator](#optional-edit-your-trigger-in-data-activator).
 1. In **Save location**, specify where to save your Data Activator alert. Choose an existing workspace, and save either in an existing Reflex item or a new one.
 1. Select **Create** to create your Data Activator trigger.
 
-:::image type="content" source="media/data-activator-alert-queryset/conditions-with-visualization.png" alt-text="Screenshot of the set alert pane in the KQL queryset for creating a Data Activator alert.":::
+:::image type="content" source="media/activator-alert-queryset/conditions-with-visualization.png" alt-text="Screenshot of the set alert pane in the KQL queryset for creating a Data Activator alert.":::
 
 ## [Without visualization](#tab/no-visualization)
 
@@ -119,7 +119,7 @@ Next, define your alert conditions. In the **Set Alert** pane that appears, take
 1. In **Save location**, specify where to save your Data Activator alert. Choose an existing workspace, and save either in an existing Reflex item or a new one.
 1. Select **Create** to create your Data Activator trigger.
 
-:::image type="content" source="media/data-activator-alert-queryset/conditions-without-visualization.png" alt-text="Screenshot of conditions being set on a query that doesn't include a visualization.":::
+:::image type="content" source="media/activator-alert-queryset/conditions-without-visualization.png" alt-text="Screenshot of conditions being set on a query that doesn't include a visualization.":::
 
 ---
 
@@ -131,9 +131,9 @@ When your Reflex item is saved, the side pane displays a link to your item. Sele
 * Change the content of the alert to reflect the specific data that triggered the alert.
 * Define a more complex alert condition than is possible in the Set alert pane.
 
-For information on how to edit triggers in Data Activator, see [Create triggers in design mode](data-activator-create-triggers-design-mode.md).
+For information on how to edit triggers in Data Activator, see [Create triggers in design mode](activator-create-triggers-design-mode.md).
 
-In the Reflex item itself, you can also view the history of the query results and the history of the trigger activations. For more information, see [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md).
+In the Reflex item itself, you can also view the history of the query results and the history of the trigger activations. For more information, see [Create Data Activator triggers in design mode](activator-create-triggers-design-mode.md).
 
 <!-- ## Limitations on query result set that returns a time chart with a time axis
 
@@ -152,5 +152,5 @@ TableForReflex
 ## Related content
 
 * [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md)
-* [Get started with Data Activator](data-activator-get-started.md)
+* [Get started with Data Activator](activator-get-started.md)
 * [KQL quick reference guide](/kusto/query/kql-quick-reference)
