@@ -60,8 +60,6 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 - If you add a foreign key constraint between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you won't be able to make any further schema changes (for example, adding the new columns). If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key constraint that might prevent updates on the table. 
 
-- The [!INCLUDE [fabric-se](includes/fabric-se.md)] does not support [lakehouse schemas](../data-engineering/lakehouse-schemas.md).
-
 - For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
 
 ## Known issues

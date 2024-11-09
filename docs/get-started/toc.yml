@@ -179,6 +179,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Tenant migrations paused through January 2025
+      href: known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
     - name: Embedded paginated report renders correctly but shows error message
       href: known-issues/known-issue-919-embedded-report-renders-correctly-shows-error.md
     - name: More options menu on a visual doesn't open in unsaved reports

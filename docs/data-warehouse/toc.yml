@@ -190,8 +190,6 @@ items:
     href: ../database/mirrored-database/overview.md
   - name: How to
     items:
-    - name: Enable Mirroring in your tenant
-      href: ../database/mirrored-database/enable-mirroring.md
     - name: Monitor mirrored databases
       displayName: Monitor mirroring
       href: ../database/mirrored-database/monitor.md
