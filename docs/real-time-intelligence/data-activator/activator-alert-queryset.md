@@ -9,7 +9,7 @@ ms.date: 11/08/2024
 ms.search.form: Data Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Data Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
-# Create Activator alerts from a KQL Queryset
+# Create Activator alerts from a KQL Queryset in Real-Time Intelligence
 
 This article explains how to create Data Activator alerts from a KQL Queryset. For more information, see [What is Data Activator](data-activator-introduction.md).
 You can use Data Activator on a KQL Queryset to trigger notifications in two modes: 
