@@ -1,23 +1,19 @@
 ---
 title: Azure Event Hubs connector for Fabric event streams
-description: This include files has the common content for configuring an Azure Event Hubs connector for Fabric event streams and Real-Time hub. 
+description: The include files has the common content for configuring an Azure Event Hubs connector for Fabric event streams and Real-Time hub. 
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ---
 
-1. On the **Select a data source** page, select **Azure Event Hubs**. 
-
-    :::image type="content" source="./media/azure-event-hubs-source-connector/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Get events wizard." lightbox="./media/azure-event-hubs-source-connector/select-azure-event-hubs.png":::
-1. If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the step to configure **Data format** in the following steps.
-
-    :::image type="content" source="./media/azure-event-hubs-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/azure-event-hubs-source-connector/existing-connection.png":::    
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/azure-event-hubs-source-connector/new-connection-button.png":::     
+
+    If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the step to configure **Data format** in the following steps.
+
+    :::image type="content" source="./media/azure-event-hubs-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/azure-event-hubs-source-connector/existing-connection.png":::    
 1. In the **Connection settings** section, do these steps:
     1. Enter the name of the Event Hubs namespace.
     1. Enter the name of the event hub.
@@ -41,6 +37,9 @@ ms.date: 05/21/2024
             :::image type="content" source="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png" alt-text="Screenshot that shows the access key for an Azure Event Hubs namespace." lightbox="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png":::            
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub. 
 1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure event hub. You can select from JSON, Avro, and CSV (with header) data formats.  
+1. In the **Stream details** pane to the right, select **Pencil** icon next to the source name, and enter a name for the source. This step is optional. 
+
+    :::image type="content" source="./media/azure-event-hubs-source-connector/source-name.png" alt-text="Screenshot that shows the source name in the Stream details section." lightbox="./media/azure-event-hubs-source-connector/source-name.png":::
 1. Select **Next** at the bottom of the page. 
    
     :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-2.png":::        

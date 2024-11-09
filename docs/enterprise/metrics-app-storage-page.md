@@ -85,7 +85,7 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
   | Experience          | Fabric item |
   |---------------------|-------------|
-  | Data Activator      | Reflex      |
+  | Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]      | Reflex      |
   | Lakehouse           | Lakehouse   |
   | Real-Time Intelligence | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
 

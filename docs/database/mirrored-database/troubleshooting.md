@@ -26,7 +26,7 @@ Review the troubleshooting section of frequently asked questions for each data s
 
 Review limitations documentation for each data source:
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)

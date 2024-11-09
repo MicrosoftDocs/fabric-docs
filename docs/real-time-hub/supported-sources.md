@@ -4,15 +4,13 @@ description: This article describes supported sources such as Azure Event Hubs a
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ---
 
-# Supported sources for Fabric Real-Time hub (preview)
+# Supported sources for Fabric Real-Time hub
 This article provides a list of sources that Real-Time hub supports. The Real-Time hub enables you to get events from these sources and create data streams in Fabric. 
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Microsoft sources
 
