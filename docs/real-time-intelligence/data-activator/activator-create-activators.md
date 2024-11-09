@@ -67,7 +67,7 @@ If you navigate to the **Analytics** tab, there are two charts. The first shows 
 
 Finally, use the **Action** section to choose what to do when the condition is detected.
 
-:::image type="content" source="media/activator-create-triggers-design-mode/activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
+:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
 
 Different action types have different parameters. Some of those parameters are: the email address you want to send to, the workflow you want to start, subject line, or additional information.
 
