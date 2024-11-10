@@ -1,51 +1,56 @@
 ---
-title: Data warehouse tutorial - build a report from the OneLake data hub
-description: In this tutorial step, learn how to build a report from the OneLake data hub with the data you ingested into your warehouse in the last step.
+title: "Data warehouse tutorial: Build a Power BI report from OneLake data hub in Microsoft Fabric"
+description: "In this tutorial, you will build a report from OneLake data hub with the data ingested into the warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 11/10/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Build a report from the OneLake data hub
+# Tutorial: Build a Power BI report from OneLake data hub in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Learn how to build a report with the data you ingested into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in the last step.
+In this tutorial, you will build a report from OneLake data hub with the data ingested into the warehouse.
+
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse in Microsoft Fabric](tutorial-ingest-data.md)
 
 ## Build a report
 
-1. Select the **OneLake data hub** in the navigation menu.
+In this task, you will build a report from OneLake data hub.
 
-   :::image type="content" source="media/tutorial-build-report/build-report-onelake-data-hub.png" alt-text="Screenshot of the navigation menu, showing where to select OneLake data hub.":::
+1. In the Fabric portal, in the navigation pane, select **OneLake data hub**.
 
-1. From the item list, select `WideWorldImporters` with the type of **Semantic model (default)**.
+   :::image type="content" source="media/tutorial-build-report-onelake-data-hub/navigation-pane-onelake-data-hub.png" alt-text="Screenshot of the navigation pane, highlighting OneLake data hub." border="false":::
 
-   > [!NOTE]
-   > Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
+1. In the OneLake data hub landing page, to limit the list of items to your data, select the **My data** filter option.
 
-1. In the **Visualize this data** section, select **Create a report** > **Auto-create**. A report is generated from the `dimension_customer` table that was loaded in the previous section.
+   :::image type="content" source="media/tutorial-build-report-onelake-data-hub/filter-my-data.png" alt-text="Screenshot of the OneLake data hub landing page, highlighting the My data filter option." border="false":::
 
-   :::image type="content" source="media/tutorial-build-report/visualize-create-report.png" alt-text="Screenshot of the Visualize this data section, showing where to select Auto-create from the Create a report menu.":::
+1. From the item list, select  the item named `Wide World Importers` that is of type **Semantic model (default)**.
 
-1. A report similar to the following image is generated.
+    _Every warehouse has a corresponding [default semantic model](semantic-models.md#understand-whats-in-the-default-power-bi-semantic-model). It presents a [star schema model](dimensional-modeling-overview.md#star-schema-design) of the warehouse tables, providing you with a quick way to report on data in the warehouse._
 
-   :::image type="content" source="media/tutorial-build-report/quick-summary-report-example.png" alt-text="Screenshot of a Quick summary page that shows four different bar charts as an example of an auto-created report." lightbox="media/tutorial-build-report/quick-summary-report-example.png":::
+1. In the semantic model landing page, in the **Discover business insights** section, open the dropdown, and then select **Auto-create a report**.
 
-1. From the ribbon, select **Save**.
+   :::image type="content" source="media/tutorial-build-report-onelake-data-hub/auto-create-report.png" alt-text="Screenshot of the Discover business insights section, highlighting the Auto-create a report option." border="false":::
 
-1. Enter `Customer Quick Summary` in the name box. In the **Save your report** dialogue, select **Save**.
+1. Review the report that was automatically generated.
 
-   :::image type="content" source="media/tutorial-build-report/save-report-dialog.png" alt-text="Screenshot of the Save your report dialog with the report name Customer Quick Summary entered.":::
+1. On the ribbon, select **File** > **Save**.
 
-1. Your tutorial is complete!
-    - Review [Security for data warehousing in Microsoft Fabric](security.md).
-    - Learn more about [Workspace roles in Fabric data warehousing](workspace-roles.md).
-    - Consider [Microsoft Purview](../governance/microsoft-purview-fabric.md), included by default in every tenant to meet important compliance and governance needs.
+1. In the **Save your report** window, in the **Enter a name for your report** box, enter `Customer Quick Summary`.
+
+1. Select **Save**.
 
 ## Next step
 
