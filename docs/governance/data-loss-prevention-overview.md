@@ -98,7 +98,7 @@ You define a DLP policy in the data loss prevention section of the Microsoft Pur
 * Restrict access. When a semantic model violates a policy configured with a restrict access action, access to the semantic model will be restricted, either to the data owners or to members of the organization, depending on how the policy is configured. All other users will lose access to the semantic model.
 
     > [!NOTE]
-    > Restrict access is currently not supported for lakehouses.
+    > Restrict access is currently enforced on semantic models only. When a violation of a policy that has the restrict access action is detected in a lakehouse, the policy is triggered, but access to the lakehouse is not blocked. Rather, the violation is treated just like a regular violation, with a policy tip and an alert.
 
 When a semantic model or lakehouse is evaluated by DLP policies, if it matches the conditions specified in a DLP policy, the actions specified in the policy occur. DLP policies are initiated by the following actions:
 
