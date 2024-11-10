@@ -4,7 +4,7 @@ description: Learn about migrating from Azure Synapse Data Explorer to Microsoft
 author: shsagir
 ms.author: shsagir
 ms.reviewer: sharmaanshul
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 10/30/2024
 #customer intent: As a data engineer, I want to understand the migration process from Azure Synapse Data Explorer to Fabric Eventhouse so that I can effectively transition my workloads.
 ---
@@ -22,6 +22,12 @@ The migration process can take a few minutes. During this period, the source clu
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
+## Prerequisites
+
+- The source cluster must be in a running state and resource locks are removed.
+- A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+- Users must have Admin permissions on both the source cluster and the target Fabric workspace to initiate the migration process
+
 ## Key considerations
 
 The feature is in preview and doesn't have a user interface. The migration is performed using the Fabric migration endpoint.
@@ -31,12 +37,14 @@ Before you migrate, consider the following key points:
 **Migration scope**
 
 - The migration is performed on the entire cluster; single database migration isn't supported.
-- The migration is irreversible; once migrated, the source cluster can't be restored.
+- Once migrated, the process is irreversible, and the source cluster can't be restored.
 - The migration process creates a new eventhouse and can't be performed into an existing eventhouse.
+- Users from other tenants who had access to data in the cluster will lose access to the data in Eventhouse.
 
 **Identity and connections**
 
-- System-assigned managed identities can't be used or migrated.
+- System-assigned managed identities can't be migrated.
+- Cluster RBAC roles are migrated and augmented with Eventhouse roles.
 - Data connections, such as Event Hubs, IoT Hub, and Event Grid, aren't migrated.
 - Data export operations, such as mirroring, aren't migrated.
 
@@ -45,21 +53,17 @@ Before you migrate, consider the following key points:
 - Follower and leader clusters can't be migrated.
 - The cluster and the eventhouse must be in the same region, meaning that the target Fabric workspace must have the same capacity region as the source cluster.
 - Cross-region migration isn't supported.
-
-## Prerequisites
-
-- The source cluster must be in a running state
-- A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-- Users must have Admin permissions on both the source cluster and the target Fabric workspace to initiate the migration process
+- Database pretty names, customer-managed keys, VNet injected clusters, Private Endpoint enabled clusters, Managed Private Endpoint clusters, and firewall rules aren't migrated.
+- When the sandbox is migrated, Python is enabled in the eventhouse.
 
 ## Migration steps
 
 The migration process is performed using Fabric REST API endpoints. The process involves the following steps:
 
-1. 
+1. Use the [Validate migration to Eventhouse](/rest/api/fabric/eventhouse/migrations/validate-eventhouse-migration-from-azure) endpoint to check whether the Azure Synapse Analytics Data Explorer cluster can be migrated to an eventhouse.
+1. Use the [Create Eventhouse](/rest/api/fabric/eventhouse/items/create-eventhouse#eventhousecreationpayload) with the `migrationSourceClusterUrl` payload to create an eventhouse with the migration source cluster URL. The process creates a new eventhouse and migrate all databases from the source cluster to the eventhouse.
 
-
-- **Perform the actual migration**: Initiate the migration process using the Fabric migration endpoint. The process creates a new eventhouse and migrate all databases from the source cluster to the eventhouse.
+//TODO: @anshulsharma - Do we have any post-migration steps?
 
 ## Related content
 
