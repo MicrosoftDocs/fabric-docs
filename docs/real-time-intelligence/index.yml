@@ -7,14 +7,14 @@ metadata:
   title: Real-Time Intelligence in Microsoft Fabric documentation
   description: Learn about Real-Time Intelligence, an end-to-end solution for event-driven scenarios, streaming data, and data logs.
   ms.service: fabric  #Required; use either service or product per approved list.
-  ms.subservice: real-time-intelligence
+  ms.subservice: rti-core
   ms.custom:
     - build-2024
   ms.topic: landing-page
   ms.collection: collection
   author: YaelSchuster
   ms.author: yaschust
-  ms.date: 05/21/2024
+  ms.date: 11/19/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:

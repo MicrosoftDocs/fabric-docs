@@ -8,6 +8,7 @@ ms.topic: concept-article
 ms.custom:
   - build-2024
 ms.date: 11/19/2024
+ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to explore my data visually with Real-Time Dashboards in Real-Time Intelligence.
 ---
