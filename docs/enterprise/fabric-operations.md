@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 11/19/2024
+ms.date: 11/10/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -174,6 +174,8 @@ You can find the consumption rates for Event streams in [Monitor capacity consum
 | Eventstream Processor Per Hour  | ASA Processing                            | Event Stream | eventstreams Processor Capacity Usage CU    | Background |
 
 #### Fabric events
+
+You can find the consumption rates for Fabric events in [Microsoft Fabric and Azure events capacity consumption](../real-time-hub/fabric-events-capacity-consumption.md).
 
 | Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
 | ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
