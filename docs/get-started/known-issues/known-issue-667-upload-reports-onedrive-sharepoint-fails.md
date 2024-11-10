@@ -4,7 +4,7 @@ description: A known issue is posted where uploading reports from OneDrive or Sh
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/01/2024
+ms.date: 11/08/2024
 ms.custom: known-issue-667
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-667
 
 Uploading a report from OneDrive or SharePoint fails when you use the file picker in the workspace view. The error happens when your language locale is set to something other than English. The file picker opens, but then shows an error message.
 
-**Status:** Open
+**Status:** Fixed: November 8, 2024
 
 **Product Experience:** Power BI
 

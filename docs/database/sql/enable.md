@@ -73,6 +73,8 @@ To disable SQL database, you can disable the **SQL database (preview)** admin sw
 
 If you disable SQL database for a specific capacity while it's available in your organization, your selection will only affect that capacity.
 
+When SQL database not enabled in tenant settings, users who try to create a new SQL database will receive the error message "SQL database failed to create."
+
 ## Considerations
 
 In some cases, users that don't have permissions to create databases will still be able to view SQL database items and icons.

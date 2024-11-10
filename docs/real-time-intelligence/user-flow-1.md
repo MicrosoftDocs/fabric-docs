@@ -27,7 +27,7 @@ This user flow shows how a Data Engineer or Data Analyst can discover events in 
 
     For detailed steps and information, see [Explore data streams](../real-time-hub/explore-data-streams.md).
 1. View the details of the selected stream. You can see the stream information, related items, and profile of incoming and outgoing messages. For more information, see [View data stream details](../real-time-hub/view-data-stream-details.md).
-1. Set an alert on the stream. Define the desired property, condition, and action to take. For detailed steps and information, see [Set alerts on streams](../real-time-hub/set-alerts-data-streams.md). Save this alert as a reflex item in Data Activator.
+1. Set an alert on the stream. Define the desired property, condition, and action to take. For detailed steps and information, see [Set alerts on streams](../real-time-hub/set-alerts-data-streams.md). Save this alert as a reflex item in Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)].
 
 ## Potential use cases
 

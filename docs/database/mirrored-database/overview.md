@@ -4,7 +4,7 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo
-ms.date: 10/10/2024
+ms.date: 11/08/2024
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]

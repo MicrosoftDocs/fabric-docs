@@ -1,6 +1,6 @@
 ---
-title: SQL database tutorial - Query the database and review autonomous features
-description: In this tutorial step, learn how to query the database and review autonomous features.
+title: SQL database tutorial - Query the database and review Copilot features
+description: In this tutorial step, learn how to query the database and review Copilot features.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: bwoody
@@ -8,8 +8,7 @@ ms.date: 10/28/2024
 ms.topic: tutorial
 ms.collection: ce-skilling-ai-copilot
 ---
-
-# Query the database and review autonomous features
+# Query the database and review Copilot features
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 

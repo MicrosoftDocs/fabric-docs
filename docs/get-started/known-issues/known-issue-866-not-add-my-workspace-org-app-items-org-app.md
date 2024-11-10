@@ -4,7 +4,7 @@ description: A known issue is posted where you can't add My workspace org app it
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/30/2024
+ms.date: 11/08/2024
 ms.custom: known-issue-866
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-866
 
 You can create org app items in **My workspace**, but can't add them to the org app.
 
-**Status:** Open
+**Status:** Fixed: November 8, 2024
 
 **Product Experience:** Power BI
 

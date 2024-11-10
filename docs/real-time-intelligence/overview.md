@@ -73,7 +73,7 @@ interactions that simplify the process of understanding data, making
 it accessible to anyone who wants to make decision based on data in
 motion using visual tools, Natural Language and Copilot.
 
--   These insights can be turned into actions with Fabric Activator, as
+-   These insights can be turned into actions with Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)], as
     you set up alerts from various parts of Fabric to react to
     data patterns or conditions in real-time.
 
@@ -154,7 +154,7 @@ alerting users, executing Fabric job items like a pipeline, or kicking
 off Power Automate workflows. The logic can be either a simply defined
 threshold, a pattern such as events happening repeatedly over a time
 period, or the results of complex logic defined by a KQL query.
-Activator turns your event-driven insights into actionable business
+[!INCLUDE [fabric-activator](includes/fabric-activator.md)] turns your event-driven insights into actionable business
 advantages.
 
 ## Integrate with other Fabric experiences
@@ -175,5 +175,5 @@ ways:
 - [End-to-end tutorial](tutorial-introduction.md)
 - [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)
 - [What is Event streams](event-streams/overview.md)
-- [What is Activator?](data-activator/data-activator-introduction.md)
+- [What is [!INCLUDE [fabric-activator](includes/fabric-activator.md)]?](data-activator/activator-introduction.md)
 - [User flows](user-flow-1.md)
