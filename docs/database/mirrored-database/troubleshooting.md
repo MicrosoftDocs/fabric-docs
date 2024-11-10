@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
-ms.date: 08/05/2024
+ms.date: 11/08/2024
 ms.topic: troubleshooting
 ms.search.form: Fabric Mirroring
 ---
@@ -38,10 +38,6 @@ When you select **Stop replication**, OneLake files remain as is, but incrementa
 ## Troubleshoot
 
 This section contains general Mirroring troubleshooting steps.
-
-#### Why am I getting "trial capacity" or "internal server" errors when I try to create a mirrored database"?
-
-You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
 
 #### I can't connect to a source database
 
@@ -88,4 +84,3 @@ These common error messages have explanations and mitigations:
 
 - [What is Mirroring in Fabric?](overview.md)
 - [Monitor Fabric mirrored database replication](monitor.md)
-- [Enable Mirroring](enable-mirroring.md)

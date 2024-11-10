@@ -8,7 +8,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 10/20/2024
+ms.date: 11/07/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -26,6 +26,9 @@ Copilot capabilities in Microsoft Fabric are enabled by default in the Fabric ad
 Copilot in Microsoft Fabric is rolling out in stages with the goal that all customers with a paid Fabric capacity (F64 or higher) have access to Copilot. It becomes available to you automatically as a new setting in the Fabric admin portal when it's rolled out to your tenant. When charging begins for the Copilot in Fabric experiences, you can count Copilot usage against your existing Fabric capacity.
 
 See the article [Overview of Copilot in Fabric](copilot-fabric-overview.md) for answers to your questions about how it works in the different workloads, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
+
+> [!IMPORTANT]
+> When scaling from a smaller capacity to F64 or above, allow up to 24 hours for Copilot for Power BI up to be enabled.
 
 ## Related content
 

@@ -13,7 +13,7 @@ ms.search.form: Data preview # This article's title should not change. If so, co
 ---
 # View data in the Data preview in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
 
 The **Data preview** is one of the three switcher modes along with the Query editor and Model view within Fabric Data Warehouse that provides an easy interface to view the data within your tables or views to preview sample data (top 1,000 rows).
 

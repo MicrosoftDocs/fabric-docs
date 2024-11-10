@@ -13,7 +13,7 @@ ms.date: 09/16/2024
 
 ## Introduction
 
-A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon file events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blog storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including event streams and Reflex triggers. Inside of the Fabric Data Factory pipeline design canvas, there's a Trigger button to create a Reflex trigger for your pipeline, or you can create the trigger directly from the Data Activator experience.
+A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon file events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blog storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including event streams and Reflex triggers. Inside of the Fabric Data Factory pipeline design canvas, there's a Trigger button to create a Reflex trigger for your pipeline, or you can create the trigger directly from the Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] experience.
 
 > [!NOTE]
 > Storage event triggers are currently in public preview.
@@ -84,5 +84,5 @@ You might notice the use of a _?_ after the _pipeline()_ object reference, which
 
 ## Related content
 
-- [Create a Reflex trigger](../real-time-intelligence/data-activator/data-activator-get-started.md#create-a-data-activator-reflex-item)
+- [Create a Reflex trigger](../real-time-intelligence/data-activator/activator-get-started.md#create-an-activator-reflex-item)
 - [Microsoft Fabric event streams](../real-time-analytics/event-streams/overview.md)

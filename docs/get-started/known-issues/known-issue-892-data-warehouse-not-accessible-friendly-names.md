@@ -4,7 +4,7 @@ description: A known issue is posted where a data warehouse isn't accessible whe
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/18/2024
+ms.date: 11/05/2024
 ms.custom: known-issue-892
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-892
 
 You can try to access files and folders within a data warehouse through an API, Azure Storage Explorer, or another client tool. Due to this issue, the access fails if you try to connect using a friendly name in the OneLake URL. A friendly name contains the name of the data warehouse rather than the data warehouse globally unique identifier (GUID). Examples of URLs that contain friendly names are `https://onelake.dfs.fabric.microsoft.com//.datawarehouse//` and `abfs[s]://@onelake.dfs.fabric.microsoft.com/.datawarehouse//`.
 
-**Status:** Open
+**Status:** Fixed: November 5, 2024
 
 **Product Experience:** OneLake
 

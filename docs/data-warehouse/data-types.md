@@ -4,7 +4,7 @@ description: Learn about the T-SQL data types supported the SQL analytics endpoi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 09/18/2024
+ms.date: 09/24/2024
 ms.topic: conceptual
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
@@ -15,6 +15,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the most commonly used T-SQL data types.
 
 - For more information on table creation, see [Tables](tables.md).
+- The supported data types of Warehouse are different from the [supported data types of SQL Database in Fabric](../database/sql/limitations.md#column-level).
 - For syntax, see [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true)
 
 ## Data types in Warehouse

@@ -4,7 +4,7 @@ description: A known issue is posted where Fabric Runtime 1.3 causes invalid lib
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/16/2024
+ms.date: 11/07/2024
 ms.custom: known-issue-811
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-811
 
 Fabric Runtime 1.3 incorporates Apache Spark 3.5. Spark 3.5 released a major update on August 15, 2024, which causes custom libraries installed in your Fabric environments to become invalid. Starting notebook and Spark job definition sessions fail when using an invalid environment.
 
-**Status:** Open
+**Status:** Fixed: November 7, 2024
 
 **Product Experience:** Data Engineering
 

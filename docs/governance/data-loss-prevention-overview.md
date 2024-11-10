@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: concept-article #Don't change
-ms.date: 09/26/2024
+ms.date: 11/07/2024
 
 #customer intent: As a Fabric administrator, security or compliance admin, or data owner, I want to understand how Microsoft Purview data loss prevention policies work in Microsoft Fabric.
 
@@ -95,6 +95,10 @@ You define a DLP policy in the data loss prevention section of the Microsoft Pur
 
 * User notification via policy tips.
 * Alerts. Alerts can be sent by email to administrators and users. Additionally, administrators can monitor and manage alerts on the **Alerts** tab in the compliance portal.
+* Restrict access. When a semantic model violates a policy configured with a restrict access action, access to the semantic model will be restricted, either to the data owners or to members of the organization, depending on how the policy is configured. All other users will lose access to the semantic model.
+
+    > [!NOTE]
+    > Restrict access is currently not supported for lakehouses.
 
 When a semantic model or lakehouse is evaluated by DLP policies, if it matches the conditions specified in a DLP policy, the actions specified in the policy occur. DLP policies are initiated by the following actions:
 

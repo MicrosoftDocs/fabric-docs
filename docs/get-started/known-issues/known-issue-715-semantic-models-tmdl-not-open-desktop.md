@@ -4,7 +4,7 @@ description: A known issue is posted where Semantic models created with TMDL won
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting
-ms.date: 05/06/2024
+ms.date: 11/08/2024
 ms.custom: known-issue-715
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-715
 
 If you create a semantic model with Tabular Model Definition Language (TMDL), you can edit it on the web. If you try to open that semantic model in Power BI Desktop, the semantic model doesn't open. Power BI Desktop can't open the semantic model for editing because it doesn’t recognize the keyword **cultureInfo** due to a TMDL language update.
 
-**Status:** Open
+**Status:** Fixed: November 8, 2024
 
 **Product Experience:** Power BI
 

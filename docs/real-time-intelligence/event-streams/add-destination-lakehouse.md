@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -13,7 +13,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add a lakehouse destination to an eventstream
 
-This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric eventstreams. For optimized streaming performance and real-time querying, consider streaming data to an eventhouse with [add Eventhouse destination to an eventstream](add-destination-kql-database.md) and then enable [Eventhouse OneLake Availability](../event-house-onelake-availability.md).
+This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric eventstreams. For optimized streaming performance and real-time querying, consider streaming data to an Eventhouse with [add Eventhouse destination to an eventstream](add-destination-kql-database.md) and then enable [Eventhouse OneLake Availability](../event-house-onelake-availability.md).
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -29,8 +29,8 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
-- Access to the **premium workspace** where your lakehouse is located with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to the workspace where your lakehouse is located with Contributor or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -79,10 +79,10 @@ Once you complete these steps, the lakehouse destination is available for visual
 To learn how to add other destinations to an eventstream, see the following articles:
 
 - [Route events to destinations](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [Derived stream destination](add-destination-derived-stream.md)
-- [Eventhouse destination](add-destination-kql-database.md)
-- [Reflex destination](add-destination-reflex.md)
+- [Custom app](add-destination-custom-app.md)
+- [Derived stream](add-destination-derived-stream.md)
+- [Eventhouse](add-destination-kql-database.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end
@@ -94,8 +94,8 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Get access to a workspace with Contributor or above permissions where your lakehouse is located.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -149,9 +149,9 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 To learn how to add other destinations to an eventstream, see the following articles:
 
 - [Route events to destinations](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [KQL Database destination](add-destination-kql-database.md)
-- [Reflex destination](add-destination-reflex.md)
+- [Custom app](add-destination-custom-app.md)
+- [KQL Database](add-destination-kql-database.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end 

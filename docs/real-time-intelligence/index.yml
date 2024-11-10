@@ -18,7 +18,7 @@ metadata:
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
-  # Card 
+  # Card
   - title: About Real-Time Intelligence
     linkLists:
       - linkListType: overview
@@ -26,14 +26,14 @@ landingContent:
           - text: What is Real-Time Intelligence?
             url: overview.md
       - linkListType: get-started
-        links: 
+        links:
           - text: Compare with other Azure solutions
             url: real-time-intelligence-compare.md
           - text: Real-Time Intelligence tutorial
             url: tutorial-introduction.md
-    
 
-  # Card 
+
+  # Card
   - title: Real-Time hub
     linkLists:
       - linkListType: overview
@@ -47,7 +47,7 @@ landingContent:
           - text: Set alerts on streams
             url: ../real-time-hub/set-alerts-data-streams.md
 
-    # Card 
+    # Card
   - title: Visualize data
     linkLists:
       - linkListType: how-to-guide
@@ -63,7 +63,7 @@ landingContent:
           - text: Visualize data in a Power BI report
             url: create-powerbi-report.md
 
-  # Card 
+  # Card
   - title: Get data
     linkLists:
       - linkListType: overview
@@ -76,24 +76,24 @@ landingContent:
             url:  event-streams/create-manage-an-eventstream.md
           - text: Create event streams for discrete events
             url: event-streams/create-eventstreams-discrete-events.md
-          - text: Route data streams based on content           
+          - text: Route data streams based on content
             url: event-streams/route-events-based-on-content.md
           - text: Monitor event streams
             url: event-streams/monitor.md
       - linkListType: how-to-guide
-        links: 
-        - text: Get data from Real-Time hub 
+        links:
+        - text: Get data from Real-Time hub
           url: get-data-real-time-hub.md
         - text: Get data from OneLake
           url: get-data-onelake.md
         - text: Get data from Azure storage
           url: get-data-azure-storage.md
-        - text: Get data from Eventstream 
+        - text: Get data from Eventstream
           url: get-data-eventstream.md
         - text: Get data from Amazon S3
           url: get-data-amazon-s3.md
 
-# Card 
+# Card
   - title: Store data
     linkLists:
       - linkListType: how-to-guide
@@ -101,7 +101,7 @@ landingContent:
           - text: Eventhouse overview
             url: eventhouse.md
           - text: Create an eventhouse
-            url: create-eventhouse.md 
+            url: create-eventhouse.md
           - text: Manage and monitor an eventhouse
             url: manage-monitor-eventhouse.md
 
@@ -116,46 +116,70 @@ landingContent:
           - text: Create a shortcut to access data in OneLake
             url: onelake-shortcuts.md
 
+  # Card
+  - title: Act on data
+    linkLists:
+        - linkListType: overview
+          links:
+          - text: What is Activator?
+            url: data-activator/activator-introduction.md
+        - linkListType: how-to-guide
+          links:
+          - text: Get data from Power BI
+            url: data-activator/activator-get-data-power-bi.md
+          - text: Get data from Eventstreams
+            url: data-activator/activator-get-data-eventstreams.md
+        - linkListType: how-to-guide
+          links:
+          - text: Activate Fabric items
+            url: data-activator/activator-trigger-fabric-items.md
+          - text: Alert on a Real-Time Dashboard
+            url: data-activator/activator-get-data-real-time-dashboard.md
+          - text: Alert on a KQL Queryset
+            url: data-activator/activator-alert-queryset.md
 
-  # Card 
+  # Card
   - title: Analyze and model data
     linkLists:
-       - linkListType: how-to-guide
-         links: 
+        - linkListType: how-to-guide
+          links:
           - text: Query data in a KQL queryset
             url:  kusto-query-set.md
           - text: Customize results in the KQL Queryset results grid
             url: customize-results.md
           - text: Use example queries
             url: query-table.md
-       - linkListType: overview
-         links:          
-           - text: Kusto Query Language (KQL) overview
-             url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
-       - linkListType: learn
-         links:
+        - linkListType: overview
+          links:
+            - text: Kusto Query Language (KQL) overview
+              url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
+        - linkListType: learn
+          links:
           - text: "Training module: Write your first query with Kusto Query Language"
             url: /training/modules/write-first-query-kusto-query-language/
-       - linkListType: how-to-guide
-         links:
+        - linkListType: how-to-guide
+          links:
           - text: Use Fabric notebooks with data from a KQL database
             url: notebooks.md
           - text: Use a notebook with Apache Spark to query a KQL database
             url: spark-connector.md
-      
 
-  # Card 
-  - title: Respond to data
+  # Card
+  - title: Monitor Eventhouse metrics and logs
     linkLists:
-       - linkListType: overview
-         links:
-          - text: What is Data Activator?
-            url: data-activator/data-activator-introduction.md
-       - linkListType: how-to-guide
-         links:
-          - text: Get data from Real-Time Dashboard
-            url: data-activator/data-activator-get-data-real-time-dashboard.md
-          - text: Get data from Power BI
-            url: data-activator/data-activator-get-data-power-bi.md
-          - text: Get data from Eventstreams
-            url: data-activator/data-activator-get-data-eventstreams.md
+        - linkListType: overview
+          links:
+          - text: Eventhouse monitoring
+            url: monitor-eventhouse.md
+        - linkListType: reference
+          links:
+            - text: Metrics
+              url: monitor-metrics.md
+            - text: Command logs
+              url: monitor-logs-command.md
+            - text: Data operation logs
+              url: monitor-logs-data-operation.md
+            - text: Ingestion results logs
+              url: monitor-logs-ingestion-results.md
+            - text: Query logs
+              url: monitor-logs-query.md
