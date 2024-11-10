@@ -4,7 +4,7 @@ description: Troubleshooting topics for mirrored databases from Azure SQL Databa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 09/23/2024
+ms.date: 11/07/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -17,8 +17,9 @@ ms.custom:
 |:--|:--|:--|
 | Fabric capacity paused/deleted | Mirroring will stop | 1. Resume or assign capacity from the Azure portal <br> 2. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**.<br> 3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Workspace deleted | Mirroring stops automatically | 1. If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
+| Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
 | Fabric trial capacity expired |  Mirroring stops automatically | See [Fabric trial capacity expires](../../get-started/fabric-trial.md#the-trial-expires). |
+| Fabric capacity exceeded | Mirroring will pause | Wait until the overload state is over or update your capacity. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations). Mirroring will continue once the capacity is recovered. |
 
 ## T-SQL queries for troubleshooting
 
@@ -56,7 +57,7 @@ If you're experiencing mirroring problems, perform the following database level 
 
 The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled, and must be the primary identity. For more information, see [Create an Azure SQL Database server with a user-assigned managed identity](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=azure-portal).
 
-After enablement, if SAMI is disabled or removed, the mirroring of Azure SQL Database to Fabric OneLake will fail.
+After enablement, if SAMI setting status is either turned Off or initially enabled, then disabled, and then enabled again, the mirroring of Azure SQL Database to Fabric OneLake will fail.
 
 The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following: `SELECT * FROM sys.dm_server_managed_identities;`
 

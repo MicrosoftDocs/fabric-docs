@@ -55,7 +55,7 @@ Configurations for creating new items in the product, specifying options for use
     - **icon** (object): Path to the icon used in the card.
     - **onClick** (object): Action triggered when the card is clicked.
     - **availableIn** (array): Locations where the card is available.
-    - **itemType** (string): Type of item linked to the create card.
+    - **itemType** (string): Type of item linked to the created card.
 
 ### Workspace Settings and Product Details
 
@@ -127,3 +127,8 @@ Defines additional configurations related to job types and scheduling.
     - **useRecentRunsComponent** (boolean): Whether to use fabric shared recent runs component.
 
 - **itemJobTypes** (array): Categories for job types associated with the item. You can select up to two categories per item. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
+
+> [!NOTE]
+> When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
+>
+> This step is only necessary for local development and is not required for cloud mode.
