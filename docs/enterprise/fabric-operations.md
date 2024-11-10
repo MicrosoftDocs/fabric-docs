@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 03/10/2024
+ms.date: 11/10/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -110,26 +110,26 @@ One Lake compute operations represent the transactions performed on One Lake ite
 
 | Operation                                  | Description                                | Item       | Azure Billing Meter                             | Type       |
 | ------------------------------------------ | ------------------------------------------ | ---------- | ----------------------------------------------- | ---------- |
-| OneLake Read via Redirect                  | OneLake Read via Redirect                   | (Multiple) | OneLake Read Operations  Capacity Usage CU                         | Background |
-| OneLake Read via Proxy                     | OneLake Read via Proxy                      | (Multiple) | OneLake Read Operations via API Capacity Usage CU                 | Background |
-| OneLake Write via Redirect                 | OneLake Write via Redirect                  | (Multiple) | OneLake Write Operations  Capacity Usage CU                        | Background |
-| OneLake Write via Proxy                    | OneLake Write via Proxy                     | (Multiple) | OneLake Write Operations via API Capacity Usage CU              | Background |
-| OneLake Iterative Write via Redirect       | OneLake Iterative Write via Redirect        | (Multiple) | OneLake Iterative Write Operations              | Background |
-| OneLake Iterative Read via Redirect        | OneLake Iterative Read via Redirect         | (Multiple) | OneLake Iterative Read Operations Capacity Usage CU              | Background |
-| OneLake Other Operations                   | OneLake Other Operations                    | (Multiple) | OneLake Other Operations Capacity Usage CU                       | Background |
-| OneLake Other Operations via Redirect      | OneLake Other Operations via Redirect       | (Multiple) | OneLake Other Operations via API Capacity Usage CU             | Background |
-| OneLake Iterative Write via Proxy          | OneLake Iterative Write via Proxy           | (Multiple) | OneLake Iterative Write Operations via API Capacity Usage CU    | Background |
-| OneLake Iterative Read via Proxy           | OneLake Iterative Read via Proxy            | (Multiple) | OneLake Iterative Read Operations via API Capacity Usage CU      | Background |
-| OneLake BCDR Read via Proxy                | OneLake BCDR Read via Proxy                 | (Multiple) | OneLake BCDR Read Operations via API Capacity Usage CU        | Background |
-| OneLake BCDR Write via Proxy               | OneLake BCDR Write via Proxy                | (Multiple) | OneLake BCDR Write Operations via API Capacity Usage CU        | Background |
-| OneLake BCDR Read via Redirect             | OneLake BCDR Read via Redirect              | (Multiple) | OneLake BCDR Read Operations Capacity Usage CU             | Background |
-| OneLake BCDR Write via Redirect            | OneLake BCDR Write via Redirect             | (Multiple) | OneLake BCDR Write Operations Capacity Usage CU               | Background |
-| OneLake BCDR Iterative Read via Proxy      | OneLake BCDR Iterative Read via Proxy       | (Multiple) | OneLake BCDR Iterative Read Operations via API Capacity Usage CU | Background |
-| OneLake BCDR Iterative Read via Redirect   | OneLake BCDR Iterative Read via Redirect    | (Multiple) | OneLake BCDR Iterative Read Operations Capacity Usage CU     | Background |
-| OneLake BCDR Iterative Write via Proxy     | OneLake BCDR Iterative Write via Proxy      | (Multiple) | OneLake BCDR Iterative Write Operations via API Capacity Usage CU | Background |
-| OneLake BCDR Iterative Write via Redirect  | OneLake BCDR Iterative Write via Redirect   | (Multiple) | OneLake BCDR Iterative Write Operations Capacity Usage CU    | Background |
-| OneLake BCDR Other Operations              | OneLake BCDR Other Operations               | (Multiple) | OneLake BCDR Other Operations Capacity Usage CU       | Background |
-| OneLake BCDR Other Operations Via Redirect | OneLake BCDR Other Operations Via Redirect  | (Multiple) | OneLake BCDR Other Operations via API Capacity Usage CU    | Background |
+| OneLake Read via Redirect                  | OneLake Read via Redirect                   | Multiple | OneLake Read Operations  Capacity Usage CU                         | Background |
+| OneLake Read via Proxy                     | OneLake Read via Proxy                      | Multiple | OneLake Read Operations via API Capacity Usage CU                 | Background |
+| OneLake Write via Redirect                 | OneLake Write via Redirect                  | Multiple | OneLake Write Operations  Capacity Usage CU                        | Background |
+| OneLake Write via Proxy                    | OneLake Write via Proxy                     | Multiple | OneLake Write Operations via API Capacity Usage CU              | Background |
+| OneLake Iterative Write via Redirect       | OneLake Iterative Write via Redirect        | Multiple | OneLake Iterative Write Operations              | Background |
+| OneLake Iterative Read via Redirect        | OneLake Iterative Read via Redirect         | Multiple | OneLake Iterative Read Operations Capacity Usage CU              | Background |
+| OneLake Other Operations                   | OneLake Other Operations                    | Multiple | OneLake Other Operations Capacity Usage CU                       | Background |
+| OneLake Other Operations via Redirect      | OneLake Other Operations via Redirect       | Multiple | OneLake Other Operations via API Capacity Usage CU             | Background |
+| OneLake Iterative Write via Proxy          | OneLake Iterative Write via Proxy           | Multiple | OneLake Iterative Write Operations via API Capacity Usage CU    | Background |
+| OneLake Iterative Read via Proxy           | OneLake Iterative Read via Proxy            | Multiple | OneLake Iterative Read Operations via API Capacity Usage CU      | Background |
+| OneLake BCDR Read via Proxy                | OneLake BCDR Read via Proxy                 | Multiple | OneLake BCDR Read Operations via API Capacity Usage CU        | Background |
+| OneLake BCDR Write via Proxy               | OneLake BCDR Write via Proxy                | Multiple | OneLake BCDR Write Operations via API Capacity Usage CU        | Background |
+| OneLake BCDR Read via Redirect             | OneLake BCDR Read via Redirect              | Multiple | OneLake BCDR Read Operations Capacity Usage CU             | Background |
+| OneLake BCDR Write via Redirect            | OneLake BCDR Write via Redirect             | Multiple | OneLake BCDR Write Operations Capacity Usage CU               | Background |
+| OneLake BCDR Iterative Read via Proxy      | OneLake BCDR Iterative Read via Proxy       | Multiple | OneLake BCDR Iterative Read Operations via API Capacity Usage CU | Background |
+| OneLake BCDR Iterative Read via Redirect   | OneLake BCDR Iterative Read via Redirect    | Multiple | OneLake BCDR Iterative Read Operations Capacity Usage CU     | Background |
+| OneLake BCDR Iterative Write via Proxy     | OneLake BCDR Iterative Write via Proxy      | Multiple | OneLake BCDR Iterative Write Operations via API Capacity Usage CU | Background |
+| OneLake BCDR Iterative Write via Redirect  | OneLake BCDR Iterative Write via Redirect   | Multiple | OneLake BCDR Iterative Write Operations Capacity Usage CU    | Background |
+| OneLake BCDR Other Operations              | OneLake BCDR Other Operations               | Multiple | OneLake BCDR Other Operations Capacity Usage CU       | Background |
+| OneLake BCDR Other Operations Via Redirect | OneLake BCDR Other Operations Via Redirect  | Multiple | OneLake BCDR Other Operations via API Capacity Usage CU    | Background |
 
 ### Power BI
 
@@ -161,7 +161,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Event streams](#event-streams) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Event streams](#event-streams), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Event streams
 
@@ -172,6 +172,15 @@ You can find the consumption rates for Event streams in [Monitor capacity consum
 | Eventstream Per Hour            | Ingestion or processing for Event Stream  | Event Stream | eventstream Capacity Usage CU               | Background |
 | Eventstream Data Traffic per GB | Data Ingress and Egress                   | Event Stream | eventstream Data Traffic per GB Capacity Usage CU | Background |
 | Eventstream Processor Per Hour  | ASA Processing                            | Event Stream | eventstreams Processor Capacity Usage CU    | Background |
+
+#### Fabric events
+
+You can find the consumption rates for Fabric events in [Microsoft Fabric and Azure events capacity consumption](../real-time-hub/fabric-events-capacity-consumption.md).
+
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
+| Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
 
 #### KQL Database and KQL Queryset
 
