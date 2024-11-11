@@ -80,14 +80,14 @@ The filters pane contains several [predefined filters](#filter-items-by-predefin
 
 ### Filter items by predefined filters
 
-The filters pane contains several predefined filters. They're described in the following table.
+The filters pane contains several predefined filters. These filters operate across workspaces as long as **All workspaces** is selected as the workspaces filter. They're described in the following table.
 
 |Filter  |Description  |
 |:-------------------------|:----------------------------------------------------|
 | **All Items**                  | Items that you're allowed to find.  |
 | **My items**              | Items that you own.      |
 | **Endorsed items** | Endorsed items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
-| **Favorites** | Items that you marked as favorites. |
+| **Favorites** | Items that you have marked as favorites. |
 
 ### Filter items by workspace
 
