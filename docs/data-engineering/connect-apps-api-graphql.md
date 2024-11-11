@@ -45,13 +45,13 @@ In the following steps, we showcase how to configure support for a ReactJS appli
    * **Supported account types** - Select the accounts you want your app to support.
 
    * (Optional) **Redirect URI** - Enter a URI if needed.
-**GraphQL.Execute.All** or **Item.Execute.All**
+
 1. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
 1. From the *Manage* list, select **API permissions**, then **Add permission**. 
-1. Add the **PowerBI Service**, select **Delegated permissions**, and select , and **Datamart.ReadWrite.All** permissions. Make sure Admin consent isn't required.
-1. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
-1. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. In case the application receives an error related to cross-origin requests, add the **Mobile and desktop applications** platform in the previous step with the same redirect URI.
-1. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
+2. Add the **PowerBI Service**, select **Delegated permissions**, and select **Item.Execute.All** permissions. Make sure Admin consent isn't required.
+3. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
+4. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. In case the application receives an error related to cross-origin requests, add the **Mobile and desktop applications** platform in the previous step with the same redirect URI.
+5. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
 
 ## Set up a sample GraphQL API for application access
 
@@ -159,7 +159,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
      * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
      */
     export const loginRequest = {
-        scopes: ["https://analysis.windows.net/powerbi/api/Item.Execute.All","https://analysis.windows.net/powerbi/api/Datamart.ReadWrite.All"]
+        scopes: ["https://analysis.windows.net/powerbi/api/Item.Execute.All"]
     };
     
     /**
@@ -171,20 +171,19 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     };
    ```
 
-   As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/Item.Execute.All` and 
-   `https://analysis.windows.net/powerbi/api/Datamart.ReadWrite.All`.
+   As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/Item.Execute.All`.
 
    > [!IMPORTANT]
    > Scopes might change during Microsoft Fabric API for GraphQL preview.
 
-1. Replace the following values with the values from the Microsoft Entra admin center.
+2. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Microsoft Entra application.
     - `authority` - This is composed of two parts:
         - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](/entra/identity-platform/authentication-national-cloud#azure-ad-authentication-endpoints).
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
     - `graphQLEndpoint` - The Fabric API for GraphQL endpoint. Replace `Enter_the_GraphQL_Endpoint_Here` with the GraphQL API endpoint recorded earlier.
-2. Save the file.
-3. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
+3. Save the file.
+4. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
 
    ```javascript
     import React, { useState } from 'react';
@@ -297,9 +296,9 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     }
    ```
 
-4. Save the file.
+5. Save the file.
 
-5. Finally, under the *src/components* folder, open the *ProfileData.jsx* file and replace the contents of the file with the following code snippet:
+6. Finally, under the *src/components* folder, open the *ProfileData.jsx* file and replace the contents of the file with the following code snippet:
 
    ```javascript
     import React from "react";
@@ -333,14 +332,14 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     )};
    ```
 
-6. Save all the file changes.
-7. In your terminal application of choice, go the root folder of the React project and execute the command `npm start` to test the application locally.
-8. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
-9. After signing in, click on the button **Query Fabric API for GraphQL Data**.
+7. Save all the file changes.
+8. In your terminal application of choice, go the root folder of the React project and execute the command `npm start` to test the application locally.
+9. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
+10. After signing in, click on the button **Query Fabric API for GraphQL Data**.
 
    :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in.":::
 
-10. A successful authenticated request to the GraphQL API in Fabric returns the data from GraphQL query to the Lakehouse in our React client application:
+11. A successful authenticated request to the GraphQL API in Fabric returns the data from GraphQL query to the Lakehouse in our React client application:
 
     :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
 
@@ -348,9 +347,12 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 While the steps in the previous section are required to provide access to user principals, it's also possible to access the GraphQL API with a service principal:
 
-1. Follow the steps in the previous section to create a second Microsoft Entra app. In the new app, add a client secret under **Certificates and Secrets**, for more information see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
-2. In the Tenant Admin portal, go to **Tenant Settings**. Under **Developer Settings** enable **Service Principals can use Fabric APIs**. With this setting enabled, the application will be visible in the Fabric Portal for role or permissions assignment. You can find more information on [Identity support](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting).
+1. Follow the steps in the previous section to create a second Microsoft Entra app with similar permissions (**Item.Execute.All** scope for the **PowerBI Service**). In the new app, add a client secret under **Certificates and Secrets**, for more information see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
+2. Make sure Tenant Administrators enabled the usage of Service Principals in Fabric. In the Tenant Admin portal, go to **Tenant Settings**. Under **Developer Settings** enable **Service Principals can use Fabric APIs**. With this setting enabled, the application will be visible in the Fabric Portal for role or permissions assignment. You can find more information on [Identity support](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting).
 3. The service principal will need access to both the GraphQL API and the data source. In the Fabric Portal, add the application as a workspace member with a contributor role where both the GraphQL API and data source items are located.
+
+> [!IMPORTANT]
+> When defining the connectivity option for your API, make sure the API is configured to use single sign-on (SSO). Currently Service Principals do not support saved credentials. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
 
 Since a Service Principal requires either a certificate or a client secret, it is not supported by the Microsoft Authentication Library (MSAL) in single page applications (SPAs) like the React app we built in the last step. You can leverage a backend service properly secured with well defined authorization logic depending on your requirements and use cases.
 
