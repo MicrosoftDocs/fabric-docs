@@ -117,7 +117,7 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
 1. In the **Condition** step, detect when the average transit time becomes greater than 25. Set the rule to alert you every time the condition is met. After you complete this step, the Condition chart updates, and the rule looks like this.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-conditions.png" alt-text="Average transit time rule detection chart for activator tutorial.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-conditions.png" alt-text="Screenshot showing average transit time rule detection chart for activator tutorial.":::
 
 1. Specify an action for your rule. You can choose to send a Teams message or Email. Customize your action according to how you would like it to appear.
 

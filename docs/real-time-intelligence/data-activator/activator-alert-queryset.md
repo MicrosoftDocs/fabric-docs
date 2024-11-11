@@ -14,7 +14,7 @@ ms.search.form: Activator KQL Queryset Onramp
 This article explains how to create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset. For more information, see [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-introduction.md).
 You can use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] on a KQL Queryset to trigger notifications in two modes: 
 - when a scheduled KQL query returns results
-- when a scheduled KQL query returns results that contains a visualization meets a defined set of conditions. 
+- when a scheduled KQL query returns results that contain a visualization meets a defined set of conditions. 
 
 Send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
 

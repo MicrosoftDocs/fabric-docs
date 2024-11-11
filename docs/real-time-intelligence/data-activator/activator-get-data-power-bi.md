@@ -52,7 +52,7 @@ When your rule is ready, Power BI notifies you and gives you the option to open 
 
 :::image type="content" source="media/activator-get-data/data-activator-get-data-03.png" alt-text="Screenshot of rule successfully created.":::
 
-Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to fine tune your rule and set complex conditions that are more granular than is possible in Power BI. Another reason to use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is if you want to trigger a Power Automate flow when your rule is activated. Refer to [Create ruless in design mode](activator-create-activators.md) for information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
+Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to fine tune your rule and set complex conditions that are more granular than is possible in Power BI. Another reason to use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is if you want to trigger a Power Automate flow when your rule is activated. Refer to [Create rules in design mode](activator-create-activators.md) for information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
 
 ## Related content
 
