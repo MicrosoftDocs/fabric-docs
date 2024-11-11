@@ -187,6 +187,8 @@ Direct Lake semantic models present some considerations and limitations.
 - In the Fabric portal, the _Direct Lake_ tab in the refresh history lists only Direct Lake-related refresh failures. Successful refresh (framing) operations aren't listed.
 - Your Fabric SKU determines the maximum available memory per Direct Lake semantic model for the capacity. When the limit is exceeded, queries to the semantic model might be slower due to excessive paging in and out of the model data.
 - Creating a Direct Lake semantic model in a workspace that is in a different region of the data source workspace is not supported. For example, if the Lakehouse is in West Central US, then you can only create semantic models from this Lakehouse in the same region. A workaround is to create a Lakehouse in the other region's workspace and shortcut to the tables before creating the semantic model. To find what region you are in, see [find your Fabric home region](/fabric/admin/find-fabric-home-region).
+- You can create and view a custom Direct Lake semantic model using a Service Principal identity, but the default Direct Lake semantic model does not support Service Principals. Make sure service principal authentication is enabled for Fabric REST APIs in your tenant and grant the service principal Contributor or higher permissions to the workspace of your Direct Lake semantic model.
+- Direct Lake does not support service principal profiles for authentication.
 
 ## Comparison to other storage modes
 
