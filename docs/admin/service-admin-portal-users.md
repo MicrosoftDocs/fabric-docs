@@ -19,7 +19,7 @@ Go to the Fabric admin portal to access this feature. For information about how 
 
 You manage Power BI users, groups, and admins in the [Microsoft 365 admin center](https://admin.microsoft.com/). The **Users** tab in the Fabric admin portal provides a link to the admin center.
 
-![Screenshot of the Microsoft 365 admin center link.](media/service-admin-portal-users/powerbi-admin-manage-users.png)
+:::image type="content" border="true" source="media/service-admin-portal-users/powerbi-admin-manage-users.png" alt-text="Screenshot of the Microsoft 365 admin center link.":::
 
 ## Related content
 
