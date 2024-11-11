@@ -38,6 +38,8 @@ items:
       href: protected-sensitivity-labels.md
     - name: Default label policy
       href: service-security-sensitivity-label-default-label-policy.md
+    - name: Domain-level default sensitivity labels
+      href: domain-default-sensitivity-label.md
     - name: Mandatory label policy
       href: mandatory-label-policy.md
     - name: Sensitivity label support for paginated reports
