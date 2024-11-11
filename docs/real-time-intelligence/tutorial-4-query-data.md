@@ -20,19 +20,6 @@ ms.search.form: Get started
 
 In this part of the tutorial, you learn how to query your streaming data in a [KQL queryset](create-query-set.md). You create a KQL queryset, write a KQL query, and visualize the data in a time chart.
 
-## Create a KQL queryset
-
-1. From the navigation bar, select the KQL database you created in a previous step, named *Tutorial*.
-1. Verify that the data is flowing into the database by viewing the **Size** tile in the database details page. The values in this tile should be greater than zero. If the values in the **Size** tile are zero, select **Refresh** from the menu ribbon.
-1. From the menu ribbon, select **New related item** and choose **KQL Queryset**.
-
-    :::image type="content" source="media/tutorial/new-queryset.png" alt-text="Screenshot of Tutorial database showing adding a new related item that is a KQL queryset.":::
-
-1. Enter the name for the KQL Queryset: *TutorialQueryset* and select **Create**.
-1. Select the *Tutorial* database as the data source for the KQL queryset, then select **Connect**.
-1. Select **Create**.
-    A new KQL queryset is created and opens in the KQL Queryset editor. It's connected to the *Tutorial* database as a data source, and is pre-populated with several general queries.
-
 ## Write a KQL query
 
 The name of the table you created in a previous step is *TutorialTable*. Use this (case-sensitive) name as the data source for your query.
