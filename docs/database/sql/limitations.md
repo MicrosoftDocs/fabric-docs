@@ -74,7 +74,7 @@ The following column level data definition language (DDL) operations aren't supp
 For more limitations in specific areas, see:
 
 - [Share your SQL database and manage permissions limitations](share-sql-manage-permission.md#limitations).
-- [Limitations in SQL database in Microsoft Fabric (preview)](limitations.md)
+- [Limitations and behaviors for Fabric SQL database mirroring (preview)](mirroring-limitations.md)
 - [Limitations of Copilot for SQL database](copilot.md#limitations-of-copilot-for-sql-database)
 - [Limitations in Authentication in SQL database in Microsoft Fabric](authentication.md#limitations)
 
