@@ -152,6 +152,8 @@ The lineage tab shows you the upstream and downstream items in the lineage that 
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-lineage-tab.png" alt-text="Screenshot of the OneLake catalog item view lineage tab.":::
 
+For more information about lineage, see [Lineage in Fabric](./lineage.md).
+
 ### Monitor tab
 
 The monitor tab displays activities for the item. Press **Show** on a record to see the details of that activity. The monitor tab is available for items types supported by the [monitoring hub](../admin/monitoring-hub.md).
