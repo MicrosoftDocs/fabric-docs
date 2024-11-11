@@ -15,7 +15,10 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 If you want to get to the tenant settings in the Fabric portal, see [How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
+<!--WARNING! DO NOT EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
+
 ## [Microsoft Fabric](fabric-switch.md)
+
 
 | Setting name | Description |
 |------|-------|
