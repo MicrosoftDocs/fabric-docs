@@ -102,7 +102,7 @@ SampleTable
 In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. In order to get a single alert for all neighborhoods for which the number is above the threshold, the query is built to return a single record (meaning, a single alert). This is done using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true) To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](#optional-edit-your-rule-in-activator).
 
 ```kusto
-TableForActivator
+TableForReflex
 | where ingestion_time() > ago (5min)
 | summarize NeighborhoodCount = count() by Neighbourhood
 | where NeighborhoodCount > threshold
@@ -142,7 +142,7 @@ If you have a result set with a chart that has a time axis, Activator reads the 
 To work around this limitation, you can add a line to the query so that the end time of the time filter ends at 'one bin before,' and the last bin does not change. 
 
 ```kusto
-TableForActivator
+TableForReflex
 | extend ingestionTime = ingestion_time()
 | where ingestionTime between (startTime..bin(endTime, 10min))
 | summarize count = count() by  bin(ingestionTime, 10min)

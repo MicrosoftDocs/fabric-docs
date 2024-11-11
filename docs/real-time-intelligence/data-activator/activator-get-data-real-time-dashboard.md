@@ -81,7 +81,7 @@ The most common reason that a measure value can change over time is that the mos
       * Add a time filter where the time range ends at 'one bin before' the current time. So, the last bin sampled by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is already "closed" and doesn't change.
 
         ```kusto 
-        TableForActivator
+        TableForReflex
         | where YourTimeColumn between (ago(5h)..bin(now(), 1h))
         | summarize count() by bin(YourTimeColumn, 1h)
         | render timechart
