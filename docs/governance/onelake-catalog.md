@@ -148,7 +148,7 @@ Data items such as semantic models and lakehouses show tables, if any, for explo
 
 ### Lineage tab
 
-The lineage tab shows you the upstream and downstream items in the lineage that are one step away. Metadata about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc.
+The lineage tab shows you the upstream and downstream items in the item's lineage. Metadata about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc. Lineage can be displayed in either a list view (shown in the image that follows) or in a graphical view.
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-lineage-tab.png" alt-text="Screenshot of the OneLake catalog item view lineage tab.":::
 
