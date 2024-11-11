@@ -6,14 +6,14 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 11/08/2024
-ms.search.form: Data Activator Detection Condition
+ms.search.form: Activator Detection Condition
 ---
 
 # Detection settings in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
 This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking. 
 
-Our example uses the **Package delivery events** event stream. From this event stream, we already created an object named **Temperature** and a rule **Too hot for medicine**. 
+Our example uses the **Package delivery events** eventstream. From this eventstream, we already created an object named **Temperature** and a rule **Too hot for medicine**. 
 
 ## Detection setting options
 
