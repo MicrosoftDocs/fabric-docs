@@ -98,7 +98,7 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 
 ## Use the Fabric CRUDL API to manage Dataflow Gen2
 
-With CI/CD and Git integration support, we also introduced the Fabric CRUDL API to manage Dataflow Gen2. You can use the API to create, read, update, delete, and list Dataflow Gen2 dataflows. The API is available in the Fabric API reference.
+With CI/CD and Git integration support, we also introduced the Fabric CRUDL API to manage Dataflow Gen2. You can use the API to create, read, update, delete, and list Dataflow Gen2 dataflows. The API is available in the Fabric API reference. To learn more about the Fabric CRUDL API, go to [Fabric API reference](/fabric/data-factory/dataflows-gen2-rest-api-capabilities).
 
 ## Limitations and known issues
 
