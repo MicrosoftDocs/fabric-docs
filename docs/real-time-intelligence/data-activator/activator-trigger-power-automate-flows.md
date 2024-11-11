@@ -54,11 +54,11 @@ triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
 
 ### Complete your custom action
 
-After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Upon successful saving of the flow, you see a confirmation box in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a trigger](#call-your-custom-action-from-a-trigger).
+After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Upon successful saving of the flow, you see a confirmation box in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a rule](#call-your-custom-action-from-a-trigger).
 
 :::image type="content" source="media/activator-detection-conditions/data-activator-detection-conditions-07.png" alt-text="Screenshot of custom action completion for activator.":::
 
-## Call your custom action from a trigger
+## Call your custom action from a rule
 
 Once you create a custom action, it's available for use by all rules and users who have access to the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item which you defined the custom action. To call your custom action, from a rule, select action **Type** from the definition pane, and select your custom action from the list:
 
@@ -73,7 +73,7 @@ When your rule activates, it calls your flow, sending it the values of the input
 ## Related content
 
 * [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
-* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] triggers in design mode](activator-create-activators.md)
+* [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:

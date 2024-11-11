@@ -40,7 +40,7 @@ Data being observed from Power BI is also treated as an eventstream. In this cas
 
 ### Objects
 
-The business objects that you want to monitor could be physical objects like freezers, vehicles, packages, and users. The business object can also be less tangible concepts like advertising campaigns, accounts, and user sessions. In your reflex item, you model the object by connecting one or more eventstreams, choosing a column foxr the object ID, and specifying the fields you want to make properties of the object.
+The business objects that you want to monitor could be physical objects like freezers, vehicles, packages, and users. The business object can also be less tangible concepts like advertising campaigns, accounts, and user sessions. In your activator, you model the object by connecting one or more eventstreams, choosing a column foxr the object ID, and specifying the fields you want to make properties of the object.
 
 The term *object instance* refers to a specific freezer/vehicle/package etc. where *object* is typically used for the definition or class of object. We use *population* to refer to all of the object instances.
 

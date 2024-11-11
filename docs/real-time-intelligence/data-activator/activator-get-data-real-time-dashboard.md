@@ -23,7 +23,7 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [Real-Time Dashboard](../../real-time-intelligence/dashboard-real-time-create.md) with at least one tile displaying data
 
-## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] trigger using **Set alert**
+## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule using **Set alert**
 
 1. Open a Real-Time Dashboard.
 1. Toggle from **viewing** to **editing** mode in the toolbar.
@@ -38,14 +38,14 @@ In the **Set alert** pane, define your rule conditions. Rule conditions include 
 
 :::image type="content" source="media/activator-get-data/data-activator-get-data-07.png" alt-text="Screenshot of create an alert window in Activator.":::
 
-## Optional: Edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+## Optional: Edit your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-When your trigger is ready, you receive a notification with a link to your trigger. Select the link to edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Editing your trigger is useful if you want to do one of the following refinements:
+When your rule is ready, you receive a notification with a link to your rule. Select the link to edit your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Editing your rule is useful if you want to do one of the following refinements:
 
 * Add other recipients to your alert.
 * Define a more complex alert condition than is possible in the *Set alert* pane.
 
-For information on how to edit triggers in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create activators in design mode](activator-create-activators.md).
+For information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create activators in design mode](activator-create-activators.md).
 
 ## Limitations on charts with a time axis
 
@@ -81,7 +81,7 @@ The most common reason that a measure value can change over time is that the mos
       * Add a time filter where the time range ends at 'one bin before' the current time. So, the last bin sampled by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is already "closed" and doesn't change.
 
         ```kusto 
-        TableForReflex
+        TableForActivator
         | where YourTimeColumn between (ago(5h)..bin(now(), 1h))
         | summarize count() by bin(YourTimeColumn, 1h)
         | render timechart

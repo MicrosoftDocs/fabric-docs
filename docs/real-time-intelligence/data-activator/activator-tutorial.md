@@ -1,6 +1,6 @@
 ---
 title: Activator tutorial using sample data
-description: Learn how Activator works using sample data. Activator is a powerful tool for working with data and creating triggers based on specific conditions.
+description: Learn how Activator works using sample data. Activator is a powerful tool for working with data and creating rules based on specific conditions.
 author: mihart
 ms.author: mihart
 ms.topic: tutorial
@@ -15,7 +15,7 @@ ms.search.form: Activator Sample Tutorial
 In this tutorial, you use sample data included with Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. You use the sample data to complete these tasks:  
 
 > [!div class="checklist"]
-> * Review a sample reflex
+> * Review a sample activator
 > * Explore the data
 > * Explore a rule
 > * Start the rule
@@ -26,23 +26,23 @@ In this tutorial, you use sample data included with Fabric [!INCLUDE [fabric-act
 
 * Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../get-started/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
 
-## Create a sample [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] reflex
+## Create a sample [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] activator
 
 Start by opening a workspace that has a Fabric capacity.
 
-1. From the Fabric homepage, select a workspace with a Fabric capacity and select **Create** > **Reflex**.
+1. From the Fabric homepage, select a workspace with a Fabric capacity and select **Create** > **Activator**.
 
     :::image type="content" source="media/activator-tutorial/data-activator-create.png" alt-text="Screenshot showing the left navigation pane with Create selected.":::
 
-1. Select the sample to create a reflex that is prepopulated with sample events and objects.
+1. Select the sample to create an activator that is prepopulated with sample events and objects.
 
     :::image type="content" source="media/activator-tutorial/data-activator-sample.png" alt-text="Screenshot showing the option to add data or use the sample data.":::
 
 ## Explore the data
 
-In this step, we explore the event stream data this sample is built on.
+In this step, we explore the eventstream data this sample is built on.
 
-The new reflex has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
+The new activator has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
 
 These events show the real-time status of packages that are in the process of being delivered.
 
@@ -52,9 +52,9 @@ Look at the incoming events and hover over the event data in the live table. Eac
 
 Use a rule to specify the event values you want to monitor, the conditions you want to detect, and the actions you want [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to take.
 
-The Explorer pane displays objects, like event streams, for this reflex. **Delivery events** is one of the objects.
+The Explorer pane displays objects, like eventstreams, for this activator. **Delivery events** is one of the objects.
 
-1. In the Explorer pane, select the object called **Delivery events**. You can create rules about objects that use data from the **Package delivery events** event stream. For example, a rule that checks packages for temperature.
+1. In the Explorer pane, select the object called **Delivery events**. You can create rules about objects that use data from the **Package delivery events** eventstream. For example, a rule that checks packages for temperature.
 
     :::image type="content" source="media/activator-tutorial/data-activator-temperature.png" alt-text="Screenshot showing Delivery events table and the temperature column.":::
 
@@ -76,7 +76,7 @@ The Explorer pane displays objects, like event streams, for this reflex. **Deliv
 
 1. Lastly, scroll down to **Action**. Our rule sends a Teams message if the condition is met.
 
-We created an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. The rule is running against the **Package delivery events** event stream. The rule looks for packages that have medicine and checks to see if the temperature has become greater than 50 degrees. When the temperature becomes greater than 50 degrees, a Teams message is sent.
+We created an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature has become greater than 50 degrees. When the temperature becomes greater than 50 degrees, a Teams message is sent.
 
 Look at the other rules to learn how they work.
 
@@ -117,7 +117,7 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
 1. In the **Condition** step, detect when the average transit time becomes greater than 25. Set the rule to alert you every time the condition is met. After you complete this step, the Condition chart updates, and the rule looks like this.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-conditions.png" alt-text="Average transit time trigger detection chart for activator tutorial.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-conditions.png" alt-text="Average transit time rule detection chart for activator tutorial.":::
 
 1. Specify an action for your rule. You can choose to send a Teams message or Email. Customize your action according to how you would like it to appear.
 
@@ -131,7 +131,7 @@ You created your first object and rule. As next steps, you might try setting up 
 
 Once you finish with the rules you created as part of the tutorial, be sure to stop them. If you don't stop the rules, you will continue to receive the rule notifications. You also might incur charges for background processing. Select each rule in turn and select the **Stop** button from the ribbon.
 
-:::image type="content" source="media/activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for activator tutorial.":::
+:::image type="content" source="media/activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the rule stop button for activator tutorial.":::
 
 ## Related content
 

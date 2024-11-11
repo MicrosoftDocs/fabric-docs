@@ -12,8 +12,8 @@ ms.date: 11/08/2024
 
 # [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations
 
-Data Activator is subject to the following general and specific limitations. Before you began your work with Data Activator, review and consider these limitations.
-Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject to the following general and specific limitations.
+Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject to the following general and specific limitations. Before you began your work with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], review and consider these limitations.
+[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject to the following general and specific limitations.
 
 ## General limitations
 
@@ -78,9 +78,9 @@ Each recipient of an email notification must have an internal email address. The
 
 ## Maximum data for rule processing limits
 
-[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] has a limit on the number of events that are processed in a rule based on the type of data being used in the rule. If your rule exceeds the maximum, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] stops your rule. For event streams, the maximum is 1,000 events per second.
+[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] has a limit on the number of events that are processed in a rule based on the type of data being used in the rule. If your rule exceeds the maximum, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] stops your rule. For eventstreams, the maximum is 1,000 events per second.
 
-## Maximum number of trigger actions
+## Maximum number of actions
 
 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] imposes the following limits on the number of actions that may occur in a given time period. If an action exceeds the limit, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] may throttle or cancel the action.
 
