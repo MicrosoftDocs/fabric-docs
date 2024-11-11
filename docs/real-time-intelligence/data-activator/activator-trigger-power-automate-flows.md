@@ -54,7 +54,7 @@ triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
 
 ### Complete your custom action
 
-After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Upon successful saving of the flow, you see a confirmation box in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a rule](#call-your-custom-action-from-a-trigger).
+After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Upon successful saving of the flow, you see a confirmation box in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a rule](#call-your-custom-action-from-a-rule).
 
 :::image type="content" source="media/activator-detection-conditions/data-activator-detection-conditions-07.png" alt-text="Screenshot of custom action completion for activator.":::
 
