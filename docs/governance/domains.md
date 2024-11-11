@@ -225,11 +225,11 @@ Some tenant-level settings can potentially be overridden at the domain level. To
 
 #### Domain-level default sensitivity label
 
-If the [domain-level default sensitivity label feature](./domain-level-default-sensitivity-label.md) is enabled in your organization, you can specify a sensitivity label that will be applied by default to items in workspaces that are assigned to the domain.
+If the [domain-level default sensitivity label feature](./domain-default-sensitivity-label.md) is enabled in your organization, you can specify a sensitivity label that will be applied by default to items in workspaces that are assigned to the domain.
 
 To specify a default sensitivity label for your domain, you must be a Fabric admin or a domain admin of the domain.
 
-Expand **Delegated Settings** and choose **Information protection**. You'll see the option **Set a default label for this domain**. Select the drop down menu and select the desired sensitivity label. The label will be applied to items in workspaces associated with the domain according to the logic described in [Domain-level default sensitivity labels in Microsoft Fabric](./domain-level-default-sensitivity-label.md).  
+Expand **Delegated Settings** and choose **Information protection**. You'll see the option **Set a default label for this domain**. Select the drop down menu and select the desired sensitivity label. The label will be applied to items in workspaces associated with the domain according to the logic described in [Domain-level default sensitivity labels in Microsoft Fabric](./domain-default-sensitivity-label.md).  
 
 #### Certification settings
 

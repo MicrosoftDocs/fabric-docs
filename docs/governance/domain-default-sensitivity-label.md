@@ -5,13 +5,11 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: conceptual #Don't change
-ms.date: [11/11/2024]
+ms.date: 11/11/2024
 
 #customer intent: As a Fabric administrator, security and compliance officer, Fabric domain administrator, or domain contributor, I want to understand what domain-level senistivity labels are and how they work.
 
 ---
-
-Domain admins can set a default sensitivity label for their domains. The label they set will override your organization's default labels in Microsoft Purview, as long as it has a higher priority than the existing default labels set for your tenant. A domain's default label will automatically apply to new Fabric items created within the domain. Reports, semantic models, dataflows, dashboards, scorecards, and some additional item types aren't currently supported.
 
 # Domain-level default sensitivity labels in Microsoft Fabric
 
