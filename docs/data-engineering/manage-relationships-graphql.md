@@ -13,6 +13,9 @@ ms.date: 05/21/2024
 
 # Manage relationships in Fabric API for GraphQL
 
+> [!NOTE]
+> Microsoft Fabric API for GraphQL is in preview.
+
 One of the most powerful features in GraphQL is the ability to establish relationships across types, including support for one-to-one (1:1), one-to-many (1:N), and many-to-many (M:N) relationships.
 
 ## Create a new one-to-one (1:1) relationship
