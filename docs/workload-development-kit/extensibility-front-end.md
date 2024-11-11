@@ -98,7 +98,7 @@ To set up the front end of the sample project, follow these steps:
    Modifying source files triggers a reload of contents in Fabric through `webpack`, if it's already connected.
    However, typically, you would still need to refresh the page.
 
-   If you change files under the 'Frontend/Package' folder , you should "npm start" again.
+   If you change files under the 'Frontend/Package' folder, you should "npm start" again.
 
 1. **Run**
    In Fabric, enable the Fabric Developer mode setting, to allow Fabric to access your localhost server.
@@ -352,7 +352,7 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
  In the sample workload editor, there's a section that lets you navigate to the authentication section.
  Before you use authentication API, configure a Microsoft Entra app Microsoft Entra ID.
  Additionally, ensure that your env.dev file is configured accurately. For more details refer to:
- [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend)
+ [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest)
 
 ## Step 4: Debug
 
