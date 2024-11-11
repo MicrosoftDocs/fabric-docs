@@ -35,7 +35,7 @@ To open the OneLake catalog, select the OneLake icon in the Fabric navigation pa
 
 ## Find items in the items list
 
-The items list displays all the Fabric items you have access to. [Discoverable items](/power-bi/collaborate-share/service-discovery) that you don't have access to are also listed, so you can request access to them.
+The items list displays all the Fabric items you have access to. See [NOTE](#onelake-catalog-dlp-note) for exceptions.
 
 * To shorten the list, you can the catalog's filters and selectors.
 
@@ -54,6 +54,13 @@ The following table describes the list columns.
 | **Location**    | The workspace the item is located in. |
 | **Endorsement**  | [Endorsement](../governance/endorsement-overview.md) status. |
 | **Sensitivity**  | Sensitivity, if set. Select the info icon to view the sensitivity label description. |
+
+<a name="onelake-catalog-dlp-note"></a>
+
+> [!NOTE]
+> The catalog also lists the following items even if you don't have access to them. This is to enable you to request access.
+> * Semantic models that have been configured as [discoverable](/power-bi/collaborate-share/service-discovery).
+> * Power BI reports whose associated semantic model has violated a [data loss prevention policy that restricts access](data-loss-prevention-overview.md).
 
 ## Scope the catalog to a particular domain
 
@@ -89,9 +96,9 @@ The preceding image shows the *Sales Org* workspace selected in the Workspaces s
 > [!NOTE]
 >Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example) or that have been configured as [discoverable](/power-bi/collaborate-share/service-discovery). If you select such a workspace, only the items you have access to and any discoverable items will be displayed in the items list.
 
-### Find items by item type classification
+### Find items by item type category
 
-Fabric items are classified into buckets based on what they are for. For example, items that contain data, such as lakehouses and semantic models, are bucketed under Data items, while reports and dashboards are bucketed under Insights. Use the item type bucket selector to select the item type bucket of interest.
+Fabric items are categorized into buckets based on what they are for and where they fit into the task flow. For example, items that contain data, such as lakehouses and semantic models, are categorized as *Data types*, while reports and dashboards are categorized as *Insight types*. Use the item type category selector to select the item type category you're interested in.
 
 :::image type="content" source="./media/onelake-catalog/onelake-data-catalog-item-type-selector.png" alt-text="Screenshot of the OneLake catalog's item type selector.":::
 
