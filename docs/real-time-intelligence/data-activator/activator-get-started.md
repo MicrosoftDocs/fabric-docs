@@ -14,7 +14,7 @@ ms.date: 09/24/2024
 
 There are several different ways to create a Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] activator. This article teaches you how to create an activator from the left navigation bar (navbar).
 
-## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item
+## Create an Activator item
 
 In Microsoft Fabric, select **[!INCLUDE [fabric-activator](../includes/fabric-activator.md)]** from the workload switcher in the bottom left corner.
 
