@@ -13,6 +13,9 @@ ms.date: 05/21/2024
 
 # Fabric API for GraphQL schema view and Schema explorer
 
+> [!NOTE]
+> Microsoft Fabric API for GraphQL is in preview.
+
 The GraphQL schema, which is based on the GraphQL Schema Definition Language (SDL), defines the format of the data exposed in the API. It's an abstraction layer that provides flexibility to consumers while hiding backend implementation details. The schema is based on a collection of object types that contain fields.
 
 ## Schema view
