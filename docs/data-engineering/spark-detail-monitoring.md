@@ -131,7 +131,7 @@ In the Item snapshots screen, you can:
 
 > [!NOTE]
 >
->The item snapshots feature doesn't support running notebook and high concurrency session.
+> The Notebook snapshots feature currently doesn't support notebooks that are in a running state or in a high-concurrency Spark session.
 
 ## Diagnostics
 
