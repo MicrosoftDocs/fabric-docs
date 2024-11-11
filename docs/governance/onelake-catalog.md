@@ -70,7 +70,7 @@ If domains have been defined in your organization, you can use the domain select
 
 ## Filter the items list
 
-You can use the filters in the filter pane and the [item type](#find-items-by-item-type-classification) and [tag selectors](#find-items-by-tag) at the top of the items list to narrow down the items list so it displays just the types of items you're interested in. You can then select items to explore them in more detail.
+You can use the filters in the filter pane and the [item type](#find-items-by-item-type-category) and [tag selectors](#find-items-by-tag) at the top of the items list to narrow down the items list so it displays just the types of items you're interested in. You can then select items to explore them in more detail.
 
 The filters pane contains several [predefined filters](#filter-items-by-predefined-filters), and also enables you to [filter by workspace](#filter-items-by-workspace).
 
