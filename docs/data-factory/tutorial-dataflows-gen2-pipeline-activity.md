@@ -26,8 +26,6 @@ To start, you first need to create a lakehouse. A lakehouse is a data lake that 
 
 1. Switch to the **Data Engineering** experience.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/experience-switcher-data-engineering.png" alt-text="Screenshot of the Data Engineering experience.":::
-
 1. Go to your Fabric enabled workspace.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace emphasized.":::
@@ -46,8 +44,6 @@ Now you've created a lakehouse and you can now set up the dataflow.
 A dataflow is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
 
 1. Switch to the **Data Factory** experience.
-
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/select-data-factory.png" alt-text="Screenshot of the Data Factory experience.":::
 
 1. Go to your Fabric enabled workspace.
 
