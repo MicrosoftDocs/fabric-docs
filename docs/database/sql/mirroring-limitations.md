@@ -93,4 +93,4 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
 
 ## Related content
 
-- [Mirroring Fabric SQL database (preview)](mirroring-overview.md)
+- [Limitations in SQL database in Microsoft Fabric (preview)](limitations.md)
