@@ -131,9 +131,9 @@ When your activator is saved, the side pane displays a link to your item. Select
 * Change the content of the alert to reflect the specific data that triggered the alert.
 * Define a more complex alert condition than is possible in the Set alert pane.
 
-For information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create rules in design mode](activator-create-activators.md).
+For information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules](activator-create-activators.md).
 
-In the activator item itself, you can also view the history of the query results and the history of the rule activations. For more information, see [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md).
+In the activator itself, you can also view the history of the query results and the history of the rule activations. For more information, see [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules](activator-create-activators.md).
 
 <!-- ## Limitations on query result set that returns a time chart with a time axis
 
