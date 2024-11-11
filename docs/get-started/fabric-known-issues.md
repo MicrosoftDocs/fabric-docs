@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 11/08/2024
+ms.date: 11/11/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -48,9 +48,7 @@ Select the **Title** to view more information about that specific known issue.
 |  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](known-issues/known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
 |  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 |
-|  822  | Data Warehouse | [SQL queries fail intermittently](known-issues/known-issue-822-sql-queries-fail-intermittently.md) | August 28, 2024 |
 |  821  | Data Warehouse | [Schema refresh for a data warehouse's semantic model fails](known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md) | August 28, 2024 |
-|  818  | Data Warehouse | [Edit tables for a data warehouse's semantic model doesn't work](known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md) | August 23, 2024 |
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
 |  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 |
@@ -61,7 +59,6 @@ Select the **Title** to view more information about that specific known issue.
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
 |  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
-|  770  | Data Warehouse | [Data warehouse connection or query execution fails](known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md) | July 3, 2024 |
 |  769  | Data Factory | [Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines](known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
 |  767  | Data Warehouse | [SQL analytics endpoint table sync fails when table contains linked functions](known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md) | July 2, 2024 |
 |  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
@@ -80,9 +77,7 @@ Select the **Title** to view more information about that specific known issue.
 |  643  | Data Engineering | [Tables not available to add in Power BI semantic model](known-issues/known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 |
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 |
 |  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 |
-|  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
-|  529  | Data Warehouse | [Data warehouse with more than 20,000 tables fails to load](known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md)  | October 23, 2023 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 |
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
 |  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
@@ -94,6 +89,11 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  822  | Data Warehouse | [SQL queries fail intermittently](known-issues/known-issue-822-sql-queries-fail-intermittently.md) | August 28, 2024 | Fixed: November 11, 2024 |
+|  818  | Data Warehouse | [Edit tables for a data warehouse's semantic model doesn't work](known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md) | August 23, 2024 |  Fixed: November 11, 2024 |
+|  770  | Data Warehouse | [Data warehouse connection or query execution fails](known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md) | July 3, 2024 |  Fixed: November 11, 2024 |
+|  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |  Fixed: November 11, 2024 |
+|  529  | Data Warehouse | [Data warehouse with more than 20,000 tables fails to load](known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md)  | October 23, 2023 |  Fixed: November 11, 2024 |
 |  866  | Power BI | [Can't add My workspace org app items to the org app](known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md) | September 30, 2024 | Fixed: November 8, 2024 |
 |  836  | Power BI | [Copilot in DAX query view returns DAX query with syntax error](known-issues/known-issue-836-copilot-dax-query-view-returns-dax-query-error.md) | September 13, 2024 |  Fixed: November 8, 2024 |
 |  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |  Fixed: November 8, 2024 |
@@ -118,11 +118,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 | Fixed: October 9, 2024 |
 |  708  | Data Warehouse | [SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 | Fixed: October 3, 2024 |
 |  840  | Power BI | [Excel enterprise data types feature experiences issues](known-issues/known-issue-840-excel-enterprise-data-types-feature-experiences-issues.md) | September 17, 2024 | Fixed: September 26, 2024 |
-|  657  | OneLake | [Cross-region internal shortcuts don't work with SQL analytics endpoints](known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md) | March 28, 2024 | Fixed: September 25, 2024 |
-|  801  | Power BI | [Custom visuals don't render in Desktop](known-issues/known-issue-801-custom-visuals-not-render.md) | August 1, 2024 | Fixed: September 23, 2024 |
-|  782  | Data Engineering | [Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse](known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md) | July 18, 2024 | Fixed: September 23, 2024 |
-|  753  | Data Factory | [Pipeline Web activity through on-premises data gateway doesn't support SPN authentication](known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md) | June 11, 2024 | Fixed: September 23, 2024 |
-|  752  | OneLake | [Cross region shortcuts don't show data](known-issues/known-issue-752-cross-region-shortcuts-not-show-data.md) | June 11, 2024 | Fixed: September 23, 2024 |
 
 ## Related content
 
