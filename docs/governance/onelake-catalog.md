@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 11/07/2024
+ms.date: 11/11/2024
 ms.custom: ignite-2024-fabric
 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the capabilities of the OneLake catelog and how it can help me find, manage, and use the content I need. 
@@ -35,7 +35,7 @@ To open the OneLake catalog, select the OneLake icon in the Fabric navigation pa
 
 ## Find items in the items list
 
-The items list displays all the Fabric items you have access to.
+The items list displays all the Fabric items you have access to. [Discoverable items](/power-bi/collaborate-share/service-discovery) that you don't have access to are also listed, so you can request access to them.
 
 * To shorten the list, you can the catalog's filters and selectors.
 
@@ -87,7 +87,7 @@ Related items are often grouped together in a workspace. To find items by worksp
 The preceding image shows the *Sales Org* workspace selected in the Workspaces section. Because the item classification selector is set to *Data types*, only semantic models are shown (as no other type of data items are present in this workspace). The semantic model *Contoso FY21 goals* is selected, and its details are shown in the item details view. To explore the details of other items in the list, just select them. The item details view stays open until you dismiss it. This makes it easy to browse the details of items one after another, without losing your list context.
 
 > [!NOTE]
->Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the items list.
+>Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example) or that have been configured as [discoverable](/power-bi/collaborate-share/service-discovery). If you select such a workspace, only the items you have access to and any discoverable items will be displayed in the items list.
 
 ### Find items by item type classification
 
@@ -103,6 +103,14 @@ Use the tags selector to display items tagged with the tags you select.
 
 > [!NOTE]
 > The tag selector is only visible if tags are enabled in your organization.
+
+## Open an item's options menu
+
+Each item in the items list has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
+
+To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
+
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
 
 ## View item details
 
@@ -130,17 +138,9 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-monitor-tab.png" alt-text="Screenshot of the OneLake catalog item view monitor tab.":::
 
-## Open an item's options menu
-
-Each item in the items list has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
-
-To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
-
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
-
 ## Considerations and limitations
 
-Streaming semantic models aren't shown in the OneLake data hub.
+Streaming semantic models aren't shown in the OneLake catalog.
 
 ## Related content
 
