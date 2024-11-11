@@ -31,7 +31,7 @@ This article explains what you see in the OneLake catalog and describes how to u
 
 To open the OneLake catalog, select the OneLake icon in the Fabric navigation pane.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-open.png" alt-text="Screenshot showing how to open the OneLake catalog.":::
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-open.png":::
 
 ## Find items in the items list
 
@@ -144,19 +144,21 @@ The overview tab shows the following information:
 
 Data items such as semantic models and lakehouses show tables, if any, for exploration purposes. Column level details are included under each table.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-overview-tab.png" alt-text="Screenshot of the OneLake catalog item view overview tab.":::
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-overview-tab.png" alt-text="Screenshot of the OneLake catalog item view overview tab." lightbox="./media/onelake-catalog/onelake-catalog-overview-tab.png":::
 
 ### Lineage tab
 
-The lineage tab shows you the upstream and downstream items in the lineage that are one step away. Metadata about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc.
+The lineage tab shows you the upstream and downstream items in the item's lineage. Metadata about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc. Lineage can be displayed in either a list view (shown in the image that follows) or in a graphical view.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-lineage-tab.png" alt-text="Screenshot of the OneLake catalog item view lineage tab.":::
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-lineage-tab.png" alt-text="Screenshot of the OneLake catalog item view lineage tab." lightbox="./media/onelake-catalog/onelake-catalog-lineage-tab.png":::
+
+For more information about lineage, see [Lineage in Fabric](./lineage.md).
 
 ### Monitor tab
 
 The monitor tab displays activities for the item. Press **Show** on a record to see the details of that activity. The monitor tab is available for items types supported by the [monitoring hub](../admin/monitoring-hub.md).
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-monitor-tab.png" alt-text="Screenshot of the OneLake catalog item view monitor tab.":::
+:::image type="content" source="./media/onelake-catalog/onelake-catalog-monitor-tab.png" alt-text="Screenshot of the OneLake catalog item view monitor tab." lightbox="./media/onelake-catalog/onelake-catalog-monitor-tab.png":::
 
 ## Considerations and limitations
 
