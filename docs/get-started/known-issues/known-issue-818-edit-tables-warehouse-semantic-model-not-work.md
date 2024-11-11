@@ -4,7 +4,7 @@ description: A known issue is posted where editing tables for a data warehouse's
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/23/2024
+ms.date: 11/11/2024
 ms.custom: known-issue-818
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-818
 
 You can edit tables in your semantic model that is built on a data warehouse. When trying to access the screen to edit tables, you might see odd behaviors.
 
-**Status:** Open
+**Status:** Fixed: November 11, 2024
 
 **Product Experience:** Data Warehouse
 
