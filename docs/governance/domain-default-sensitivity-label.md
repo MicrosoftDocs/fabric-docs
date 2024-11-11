@@ -40,5 +40,5 @@ Reports, semantic models, dataflows, dashboards, scorecards, and some additional
 
 ## Related content
 
-*-[Fabric domains](./domains.md)
+* [Fabric domains](./domains.md)
 * [Sensitivity labels in Fabric and Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview)
