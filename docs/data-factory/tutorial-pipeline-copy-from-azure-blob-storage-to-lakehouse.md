@@ -34,8 +34,6 @@ To get started, you must complete the following prerequisites:
 
 1. Switch to **Data factory** on the app.powerbi.com page.  
 
-   :::image type="content" source="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/switch-data-factory.png" alt-text="Screenshot of menu in which Data factory option appears.":::
-
 2. Create a new workspace for this demo.  
 
    :::image type="content" source="media/create-first-pipeline/create-new-workspace.png" alt-text="Screenshot of Workspace screen." lightbox="media/create-first-pipeline/create-new-workspace.png":::
