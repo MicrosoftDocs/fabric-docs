@@ -64,9 +64,13 @@ The following table describes the list columns.
 
 ## Scope the catalog to a particular domain
 
-If domains have been defined in your organization, you can use the domain selector to select a domain or subdomain. Only items belonging to the selected domain or subdomain will be displayed and treated in the catalog.
+If domains have been defined in your organization, you can use the domain selector to select a domain or subdomain. Only items and belonging to the selected domain or subdomain will be displayed and treated in the catalog. Likewise, only workspaces associated with the selected domain or subdomain will appear in the list of workspaces.
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
+
+Your domain or subdomain selection persists for subsequent sessions.
+
+For more information about domains, see [Fabric domains](./domains.md).
 
 ## Filter the items list
 
@@ -125,11 +129,20 @@ The items details view enables you to drill down and explore items. Select an it
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-item-details-view.png" alt-text="Screenshot of the OneLake catalog item details view.":::
 
+Tap **Open** to open the item's editor.
+
 The item details view has a number of tabs that to help you explore your selected item. The tabs are described in the following sections.
 
 ### Overview tab
 
-The overview tab shows the workspace the item is located in, the last update time, the item owner, and the name of the sensitivity label applied to the item, if any. Data items show tables, if any, for exploration purposes.
+The overview tab shows the following information:
+
+* **Location**: The workspace the item is located in. Selecting the workspace navigates to the workspace.
+* **Data updated**: Last update time.
+* **Owner**: The item owner. Selecting the owner opens an email to them.
+* **Sensitivity label**: The name of the sensitivity label applied to the item, if any.
+
+Data items such as semantic models and lakehouses show tables, if any, for exploration purposes. Column level details are included under each table.
 
 :::image type="content" source="./media/onelake-catalog/onelake-catalog-overview-tab.png" alt-text="Screenshot of the OneLake catalog item view overview tab.":::
 
