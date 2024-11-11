@@ -106,6 +106,7 @@ With CI/CD and Git integration support, we also introduced the Fabric CRUDL API 
 - "Get Item" and "List Item Access Details" API's don't return the correct information if you filter on a specific type of item. When you don't specify the type, it returns the new Dataflow Gen2 with CI/CD and Git support. Filtering for the "dataflow" type results in only non-CI/CD dataflows.
 - Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric pipelines.
 - Workspace view doesn't show if a refresh is ongoing for the dataflow.
+- VNET Gateways are not supported yet for Dataflow Gen2 with CI/CD and Git support.
 - You are not able to export the Dataflow.json from the workspace menu. Workarounds that allow you to export the Dataflow are
   - Use the Fabric Public API to get the Dataflow.json.
   - Use the export power query template feature to export the dataflow definition.
