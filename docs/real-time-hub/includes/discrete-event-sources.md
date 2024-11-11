@@ -4,10 +4,9 @@ description: Include file with a list of discrete event sources supported by Fab
 author: spelluru
 ms.author: spelluru
 ms.topic: include
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ---
 
-- [Azure Blob Storage events](../get-azure-blob-storage-events.md)
-- [Fabric Workspace Item events](../create-streams-fabric-workspace-item-events.md)
+| Source | Source | 
+| ------ | ------ |
+| [Azure Blob Storage events (preview)](../get-azure-blob-storage-events.md) | [Fabric Workspace Item events (preview)](../create-streams-fabric-workspace-item-events.md) |

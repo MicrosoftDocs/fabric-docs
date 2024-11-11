@@ -3,6 +3,9 @@ items:
   tocHref: /fabric/
   topicHref: /fabric/index
   items:
+  - name: Database
+    tocHref: /fabric/database/
+    topicHref: /fabric/database/index
   - name: Data Engineering
     tocHref: /fabric/data-engineering/
     topicHref: /fabric/data-engineering/index

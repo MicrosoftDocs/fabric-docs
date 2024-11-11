@@ -5,11 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -23,12 +19,12 @@ After you create an eventstream in Microsoft Fabric, you can route the data to d
 
 To add a destination to an eventstream, you need the following prerequisites:
 
-- Access to the Fabric **premium workspace** where the eventstream is located with **Contributor** or higher permissions.
-- For an Eventhouse, Lakehouse, or Reflex destination, access to the **premium workspace** where the destination is located with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+- For an Eventhouse, Lakehouse, or Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] destination, access to the workspace where the destination is located with **Contributor** or higher permissions.
 
 ## Supported destinations
 
-Fabric event streams supports the following destinations. Use links in the table to navigate to articles about how to add specific destinations.
+Fabric event streams support the following destinations. Use links in the table to navigate to articles about how to add specific destinations.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 

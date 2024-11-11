@@ -22,7 +22,7 @@ In Microsoft Cost Management, your cost analysis and invoice show multiple meter
 | Compute Pool Capacity Usage CU                                    | Represents the available capacity.                                                           | GA |
 | Data Movement Capacity Usage CU                                   | Represents the Pipelines Data Movement usage on your capacity                                                           | GA |
 | Data Orchestration Capacity Usage CU                              | Represents the Pipelines Data Orchestration usage on your capacity                                                      | GA |
-| Data Warehouse Capacity Usage CU                                  | Represents the Synapse Data Warehouse usage on your capacity                                                            | GA |
+| Data Warehouse Capacity Usage CU                                  | Represents the Fabric Data Warehouse usage on your capacity                                                            | GA |
 | Dataflows High Scale Compute Capacity Usage CU                    | Represents the Dataflows High Scale Compute used for staging items on your capacity                                     | GA |
 | Dataflows Standard Compute Capacity Usage CU                      | Represents the Dataflows Standard Compute usage on your capacity                                                        | GA |
 | eventstream Capacity Usage CU                                     | Represents the ingestion or processing usage for Event Streams on your capacity                                         | GA |
@@ -54,7 +54,7 @@ The total usage from all meters adds up to the cost of the provisioned Fabric ca
 
 ## Comparing your Azure bill with your usage
 
-Use the [Microsoft Fabric Capacity Metrics](metrics-app-compute-page.md) to correlate your Azure bill with usage analytics generated from your organization’s usage of Fabric.
+Use the [Microsoft Fabric Capacity Metrics](metrics-app-compute-page.md) to correlate your Azure bill with usage analytics generated from your organization's usage of Fabric.
 
 The default view in the app shows trends in consumption by workload over the past 14 days.
 

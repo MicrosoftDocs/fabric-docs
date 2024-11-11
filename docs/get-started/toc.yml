@@ -61,8 +61,14 @@ items:
     href: ../cicd/git-integration/git-get-started.md
   - name: Workspace identity
     href: ../security/workspace-identity.md
-- name: Discover data in the OneLake data hub
-  href: onelake-data-hub.md
+  - name: Workspace monitoring
+    items:
+      - name: What is workspace monitoring?
+        href: workspace-monitoring-overview.md
+      - name: Enable monitoring in your workspace
+        href: enable-workspace-monitoring.md      
+- name: Find Fabric items with the OneLake catalog
+  href: ../governance/onelake-catalog.md
 - name: Copilot in Fabric
   items:
   - name: Copilot in Fabric overview
@@ -75,6 +81,8 @@ items:
     items:
     - name: Privacy, security, and responsible use
       href: copilot-privacy-security.md
+    - name: Responsible use in SQL database
+      href: copilot-database-privacy-security.md
     - name: Responsible use in Data Factory
       href: copilot-data-factory-privacy-security.md
     - name: Responsible use in Data Science
@@ -299,7 +307,7 @@ items:
       href: known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md
     - name: Spark operations fail
       href: known-issues/known-issue-790-spark-operations-fail.md
-    - name: Data Activator alert created from visual with no dimensions doesn't work
+    - name: Activator alert created from visual with no dimensions doesn't work
       href: known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md
     - name: Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse
       href: known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md

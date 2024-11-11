@@ -90,4 +90,3 @@ Users that don't have Microsoft Fabric enabled, can:
 ## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
-* [Enable Data Activator](data-activator-switch.md)
