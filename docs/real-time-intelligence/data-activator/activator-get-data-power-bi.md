@@ -12,7 +12,7 @@ ms.search.form: Activator PBI Onramp
 
  # Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Power BI
 
-You can get data for use in Data Activator from many sources. This article describes how to set alerts from data in Power BI reports.
+You can get data for use in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from many sources. This article describes how to set alerts from data in Power BI reports.
 
 You can use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to set alerts when conditions are met in data in a Power BI report. For example, if you have a report displaying daily sales per store, you can set an alert to notify you if daily sales for any store fall beneath a threshold you set. You can send notifications to yourself or to others in your organization. This section explains how to define and create alerts.
 
@@ -23,9 +23,9 @@ Before you begin:
 * You need a Power BI report that is published online to a workspace.
 * The report must contain live data.
 
-## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] trigger for a Power BI report visual
+## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule for a Power BI report visual
 
-Open a report and select a visual to monitor. Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] trigger that sets conditions for sending a notification. The notification can be sent in email or in Microsoft Teams.
+Open a report and select a visual to monitor. Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule that sets conditions for sending a notification. The notification can be sent in email or in Microsoft Teams.
 
 1. Open your Power BI report.
 2. Choose a visual on the report for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to monitor.
@@ -46,13 +46,13 @@ The following image shows an example of how to set an alert from a visual that d
 
     :::image type="content" source="media/activator-get-data/data-activator-get-data-02.png" alt-text="Screenshot of create an alert window showing daily sales rule.":::
 
-### Optional: edit your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+### Optional: edit your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-When your trigger is ready, Power BI notifies you and gives you the option to open your trigger in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for further editing.
+When your rule is ready, Power BI notifies you and gives you the option to open your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] for further editing.
 
 :::image type="content" source="media/activator-get-data/data-activator-get-data-03.png" alt-text="Screenshot of rule successfully created.":::
 
-Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to fine tune your trigger and set complex conditions that are more granular than is possible in Power BI. Another reason to use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is if you want to trigger a Power Automate flow when your trigger is activated. Refer to [Create triggers in design mode](activator-create-activators.md) for information on how to edit triggers in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
+Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to fine tune your rule and set complex conditions that are more granular than is possible in Power BI. Another reason to use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is if you want to trigger a Power Automate flow when your rule is activated. Refer to [Create rules in design mode](activator-create-activators.md) for information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
 
 ## Related content
 
