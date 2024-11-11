@@ -27,7 +27,7 @@ In the rule definition pane on the right side of the screen, find **Action** sec
 
 :::image type="content" source="media/data-activator-trigger-fabric-items/data-activator-fabric-item.png" alt-text="Screenshot showing Fabric item selected from the Type dropdown.":::
 
-:::image type="content" border="true" source="media/data-activator-trigger-fabric-items/data-activator-fabric-item-select-item.png" alt-text="Screenshot showing Data Activator Action card with a notebook being selected.":::
+![Screenshot showing Data Activator Action card with a notebook being selected.](media/data-activator-trigger-fabric-items/data-activator-fabric-item-select-item.png)
 
 ## Test, start, or stop a Data Activator rule
 
