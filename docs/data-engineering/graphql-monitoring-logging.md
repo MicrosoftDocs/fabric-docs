@@ -17,7 +17,7 @@ After an API for GraphQL is deployed in Fabric, you may want to understand how t
 
 ## Prerequisites
 
-* Before you start using monitoring and logging capabilities, you must have an API for GraphQL in Fabric. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
+* Before you start using monitoring and logging capabilities, you must have an API for GraphQL in Fabric. For more information, see [**Create an API for GraphQL in Fabric and add data**](get-started-api-graphql.md).
 
 ## Enabling Workspace Monitoring
 
@@ -88,6 +88,14 @@ By hovering over the graph, you can see the detailed information for a specific 
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-timerange.png"" alt-text="Screenshot of API dashbaord showing the time range option.":::
 
+* **API Request/sec**: You can view the number of API requests made each second in the selected time range.  
+
+    :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-apipersec.png"" alt-text="Screenshot of API dashbaord showing the number of API request per second.":::
+
+* **Success rate**: You can view the success rate which is the number of successful requests over the total number of requests in the selected time range.
+
+    :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-successrate.png"" alt-text="Screenshot of API dashbaord showing the success rate.":::
+
 * Overall GraphQL API Health index based on success rate per API:
   * Green: 75 -100% of requests are successful (Healthy)
   * Yellow: 50 - 74% of requests are successful (Needs Attention)
@@ -98,11 +106,11 @@ By hovering over the graph, you can see the detailed information for a specific 
 * **Total Number of API requests**: You can view the total number of API requests in the selected time range.
 :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-apirequests.png"" alt-text="Screenshot of API dashbaord showing the number of API request.":::
 
-* Latency line chart: By hovering your mouse over graphs, you would be able to see the latency and date for each data point.
+* **Latency** line chart: By hovering your mouse over graphs, you would be able to see the latency and date for each data point.
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-latencylinechart.png"" alt-text="Screenshot of API dashbaord showing the latency bar chart.":::
 
-* Number of requests bar chart, differentiating between success requests and errors: By hovering over graphs, you would be able to see the date and number of success and errors for each data point.
+* **Number of requests** bar chart, differentiating between success requests and errors: By hovering over graphs, you would be able to see the date and number of success and errors for each data point.
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apidashbaord-requestbarchart.png"" alt-text="Screenshot of API dashbaord showing number requests bar chart.":::
 
