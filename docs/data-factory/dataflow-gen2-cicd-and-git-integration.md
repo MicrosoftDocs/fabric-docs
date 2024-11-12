@@ -97,8 +97,8 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 
 ## Limitations and known issues
 
-- The staging artifacts are in some experiences visible. The staging artifacts will be hidden in all experiences in the future.
-- Some experiences will mention support for rest APIs, but these are not yet available.
+- The staging artifacts are in some experiences visible like the ALM UI. The staging artifacts will be hidden in all experiences in the future.
+- Some experiences will mention support for rest APIs, but these are not yet available. All dataflow Gen2 with CI/CD and Git support will support the Fabric Public API in the future.
 - Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric pipelines.
 - Workspace view doesn't show if a refresh is ongoing for the dataflow.
 - Creating VNET Gateway connections are not supported in the Dataflow authoring experience yet for Dataflow Gen2 with CI/CD and Git support. You can use vnet gateway conenctions by creating them in the manage connections UI and then use them within the dataflow.
