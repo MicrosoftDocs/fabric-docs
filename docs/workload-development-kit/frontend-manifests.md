@@ -130,7 +130,9 @@ Define configuration options for item settings.
 
 Defines your item categories for integrating with Fabric [Task Flow Framework.](../get-started/task-flow-overview.md).
 
-- **itemJobTypes** (array): Categories for the item in the task flow panel. You can define up to two categories per item. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
+- **itemJobTypes** (array): Specifies the categories assigned to an item within the task flow framework. Each item can have up to two categories. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
+If no category is specified, "others" is used as the default.
+
 
 > [!NOTE]
 > When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
