@@ -1,14 +1,55 @@
 ---
-title: Fabric Workload Development Kit authentication setup (preview)
-description: Learn how to set up the authorization for a customized Fabric workload.
+title: Fabric Workload Development Kit authentication setup
+description: Learn how to set up authentication for a Microsoft Fabric customized workload.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 07/14/2024
+
+#customer intent: As an Independent Software Vendor (ISV) or a developer, I want to learn how to set up the authorization for a customized Fabric workload.
 ---
 
-# Authentication setup (preview)
+# Authentication setup
+
+## Prerequisites
+
+* At least a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role.
+
+## Configure a Microsoft Entra ID application
+
+For your workload to work in Fabric, you need to set up a [Microsoft Entra ID](/entra/fundamentals/whatis) application. This application is used to authenticate your workload against Azure.
+
+Follow these steps to create your application:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+2. Browse to **Identity > Applications > App registrations** and select **New registration**.
+
+3. Enter a display Name for your application.
+
+4. In the *Supported account types* section, select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)**.
+
+5. Select **Register**.
+
+6. Once your app is registered, go to the *manage* section and select **Expose an API**.
+
+To work with authentication in Fabric, you need to set up a Microsoft Entra ID application. This application is used to authenticate users and authorize access to your workload. To create an application, follow these steps:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 > [!NOTE]  
 > To configure the following authentication settings in the setup guide, a Global Administrator role is required.
