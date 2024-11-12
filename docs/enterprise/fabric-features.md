@@ -28,6 +28,8 @@ The following table lists Fabric features according to SKU type. The table lists
 | [Bring your own key for Power BI](/power-bi/enterprise/service-encryption-byok)                          | &#x2705;      | &#x2705; |
 | [Private links](../security/security-private-links-overview.md)                                          | &#x2705;      | &#x2705; |
 | View Power BI items without a per user license                                                           | F64 or higher | &#x2705; |
+| Power BI Report Server                                                                                   | F64 or higher | &#x2705; |
+
 
 ## Related content
 
