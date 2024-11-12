@@ -117,7 +117,7 @@ Configurations for job-related actions associated with the item job instance.
 
 ### Item Settings
 
-Define configuration options for item settings.
+Configurations options for item settings.
 
 - **itemSettings** (object): Extra settings for the item.
   - **schedule** (object): Contains scheduling information.
