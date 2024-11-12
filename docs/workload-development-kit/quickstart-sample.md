@@ -68,7 +68,7 @@ Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so th
 
 
 
-1. **App registration**: Follow the authentication guide to set up Microsoft Entry ID authentication for secure interactions within the architecture.
+1. **App registration**: Follow the [authentication guide](./authentication-tutorial.md) to set up Microsoft Entra ID authentication for secure interactions within the architecture.
 
 
 

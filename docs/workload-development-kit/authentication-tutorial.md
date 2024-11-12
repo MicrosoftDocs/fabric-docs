@@ -130,6 +130,8 @@ Under **API permissions**, add the desired permissions for your application. For
 
 :::image type="content" source="./media/authentication-tutorial/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-tutorial/add-api-permissions.png":::
 
+To learn more about API permissions, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions).
+
 ### Make sure your application is set to work with auth token v1
 
 Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null or "1".
@@ -171,7 +173,7 @@ This example demonstrates how to use the `CreateDevAADApp.ps1` script with comma
     <ResourceId>YourResourceId</ResourceId>
 </AADApp>
 ```
-## Configure the workload local manifest and acquire a token for your application (frontend)
+## Configure the workload local manifest
 > [!NOTE]
 > This step is only applicable to the devmode scenario.
 
@@ -187,25 +189,4 @@ After configuring your application, update the following configurations in `.env
 
 :::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a `.env.dev` file.":::
 
-## Ask for a token and consent the application
-
-> [!NOTE]
-> This step is necessary in order for CRUD/Jobs to work.
-  
-1. Run the frontend sample and create a sample item.
-1. Scroll down and select *Navigate to authentication page*.
-
-   :::image type="content" source="./media/authentication-tutorial/configured-authentication-section.png" alt-text="Screenshot showing the configured authentication section." lightbox="./media/authentication-tutorial/configured-authentication-section.png":::
-
-1. Check **Request initial consent** and select **Get access token** which triggers consent for your application:
-
-   :::image type="content" source="./media/authentication-tutorial/initial-consent.png" alt-text="Screenshot showing permissions request dialog for initial consent.":::
-
-This consent includes the dependencies you added previously under [Add API Permissions](#add-api-permissions).
-
-You can now do the following tasks:
-
-* Work with CRUD/Jobs operations.
-* Get an access token for your application on the client side.
-* To call your workload APIs, use the authentication page in the frontend sample as a playground.
-* See what APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Backend/src/Controllers).
+To understand how to work with authentication in workloads, see [Workload authentication guidelines & deep dive](./authentication-guidelines.md).

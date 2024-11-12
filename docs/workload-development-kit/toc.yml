@@ -33,14 +33,14 @@ items:
     href: item-lifecycle.md
   - name: User permissions
     href: user-permissions.md    
-  - name: Monitoring hub
-    href: monitoring-hub.md
   - name: Working with customer data
     href: fabric-data-plane.md
+  - name: The workload backend manifests
+    href: backend-manifest.md
+  - name: The workload frontend manifests
+    href: frontend-manifests.md
 - name: Tutorials
   items:
-  - name: The workload manifest
-    href: backend-manifest.md
   - name: Add and manage more workloads
     href: more-workloads-add.md
   - name: Upload and manage a workload
@@ -48,7 +48,9 @@ items:
   - name: Publish a workload to Fabric
     href: publish-workload.md
   - name: Set up authentication
-    href: authentication-tutorial.md    
+    href: authentication-tutorial.md
+  - name: Authentication guidelines and deep dive
+    href: authentication-guidelines.md
   - name: Front-end implementation guide
     href: extensibility-front-end.md
   - name: Back-end implementation guide
@@ -59,6 +61,12 @@ items:
     href: azure-web-app-deployment-tutorial.md
   - name: Working in cloud mode
     href: workload-cloud-setup.md
+  - name: Onboard to the Monitoring hub
+    href: monitoring-hub.md
+  - name: How-To
+    items:
+    - name: Onboard to Multitasking
+      href: multitasking.md
 - name: Reference
   items:
    - name: Frequently asked questions

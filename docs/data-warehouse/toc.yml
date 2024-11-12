@@ -190,8 +190,6 @@ items:
     href: ../database/mirrored-database/overview.md
   - name: How to
     items:
-    - name: Enable Mirroring in your tenant
-      href: ../database/mirrored-database/enable-mirroring.md
     - name: Monitor mirrored databases
       displayName: Monitor mirroring
       href: ../database/mirrored-database/monitor.md
@@ -276,7 +274,9 @@ items:
         href: ../database/mirrored-database/snowflake-how-to-data-security.md
       - name: Limitations 
         displayName: Limitations in mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-limitations.md        
+        href: ../database/mirrored-database/snowflake-limitations.md
+  - name: Mirroring REST API
+    href: ../database/mirrored-database/mirrored-database-rest-api.md 
   - name: Troubleshoot Mirroring
     href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance

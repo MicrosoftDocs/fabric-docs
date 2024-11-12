@@ -31,6 +31,10 @@ The following table lists the runtime name, and release dates for supported Azur
 
 :::image type="content" source="media\runtime\lifecycle-runtimes.png" alt-text="Diagram showing lifecycle of a runtime in Fabric." lightbox="media\runtime\lifecycle-runtimes.png":::
 
+> [!div class="nextstepaction"]
+> [Watch the Fabric Espresso Video from Product Engineering Group about Lifecycle of Apache Spark Runtimes in Fabric](https://youtu.be/1nlqp5Dv6ko?si=gsVeQVKzTTS15X8R)
+
+
 The diagram outlines the lifecycle of a runtime version from its experimental public preview to its deprecation and removal.
 
 | Stage                                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Typical Lifecycle                        |

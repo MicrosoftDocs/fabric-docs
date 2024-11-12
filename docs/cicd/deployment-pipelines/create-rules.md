@@ -1,16 +1,17 @@
 ---
-title: Create deployment rules for Fabric's Application lifecycle management (ALM)
+title: Create deployment rules for Fabric's ALM
 description: Learn how to create rules to simplify deploying content with Fabric's Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: how-to
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 10/27/2024
 ms.search.form: Deployment rules
+#customer intent: As a developer, I want to learn how to create deployment rules in Fabric's Application lifecycle management (ALM) tool so that I can simplify deploying content between stages in my deployment pipeline.
 ---
 
 # Create deployment rules
@@ -148,22 +149,25 @@ This section lists the limitations for the deployment rules.
 
 * When you unassign and reassign a workspace to [reestablish connections](../troubleshoot-cicd.md#lost-connections-after-deployment), rules for that workspace are lost. To use these rules again, reconfigure them.
 
-* Data source rules for dataflows that have other dataflows as sources, aren't supported.
-
-* Data source rules for common data model (CDM) folders in a dataflow, aren't supported.
-
-* Data source rules for semantic models that use dataflows as their source, aren't supported.
-
 * If the data source or parameter defined in a rule is changed or removed from the item it points to in the source stage, the rule isn't valid anymore, and deployment fails.
 
 * After you deploy a paginated report with a data source rule, you can't open the report using [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi).
 
 * Deployment rules only take effect the next time you deploy to that stage. However, if you create rules and then compare the stages before you deploy, the comparison is done based on the rules that were created even though they didn't take effect yet.
 
-* Creating data source rules on a semantic model that uses Native query and DirectQuery together isn't supported.
+* The following scenarios aren't supported:
 
->[!NOTE]
->Parameter rules aren't supported for paginated reports.
+  * Data source rules for dataflows that have other dataflows as sources.
+
+  * Data source rules for common data model (CDM) folders in a dataflow.
+
+  * Data source rules for semantic models that use dataflows as their source.
+
+  * Creating data source rules on a semantic model that uses Native query and DirectQuery together.
+
+  * Parameter rules aren't supported for paginated reports.
+
+  * Adding data source rules for semantic models and dataflows on data sources which are parametrized.
 
 ## Related content
 
