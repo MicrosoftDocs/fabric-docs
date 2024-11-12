@@ -176,7 +176,7 @@ items:
     - name: Notebook failure inside Visual Studio Code for the Web
       href: known-issues/known-issue-926-notebook-failure-visual-studio-code-web.md
     - name: The default environment's resources folder doesn't work in notebooks
-      href: known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md)
+      href: known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
     - name: Tenant migrations paused through January 2025
       href: known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
     - name: Embedded paginated report renders correctly but shows error message
