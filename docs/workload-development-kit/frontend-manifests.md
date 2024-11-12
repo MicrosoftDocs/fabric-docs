@@ -126,7 +126,7 @@ Define configuration options for item settings.
   - **recentRun** (object): Configuration for recent job runs.
     - **useRecentRunsComponent** (boolean): Whether to use fabric shared recent runs component.
 
-### Item Task Flow 
+### Item Task Flow Categories
 
 Defines your item categories for integrating with Fabric [Task Flow Framework.](../get-started/task-flow-overview.md).
 
