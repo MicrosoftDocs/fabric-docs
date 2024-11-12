@@ -17,7 +17,7 @@ Get started with the Fabric API for GraphQL by creating an API, then linking a d
 
 ## Prerequisites
 
-- Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for API for GraphQL (Preview)
+- Enable the "Users can create Fabric items" [Tenant Admin Setting](/fabric/admin/about-tenant-settings).
 
 ## Creating an API for GraphQL
 
