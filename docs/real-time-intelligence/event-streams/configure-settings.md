@@ -14,11 +14,11 @@ This article describes how to configure sensitivity label, endorsement, retentio
 
 When you open an existing eventstream, you see the **Settings** button on the toolbar.
 
-:::image type="content" source="./media/configure-settings/settings-button-existing-event-stream.png" alt-text="Screenshot that shows the Settings button on an Eventstream page. " lightbox="./media/configure-settings/settings-button-existing-event-stream.png":::
+:::image type="content" source="./media/configure-settings/settings-button-existing-event-stream.png" alt-text="Screenshot that shows the Settings button on an Eventstream page." lightbox="./media/configure-settings/settings-button-existing-event-stream.png":::
 
 You can also launch the **Settings** page from a workspace by selecting **...(ellipsis)** next to the eventstream in the list of artifacts, and then selecting **Settings**.
 
-:::image type="content" source="./media/configure-settings/workspace-settings-button.png" alt-text="Screenshot that shows the Settings button on the workspace page. " lightbox="./media/configure-settings/workspace-settings-button.png":::
+:::image type="content" source="./media/configure-settings/workspace-settings-button.png" alt-text="Screenshot that shows the Settings button on the workspace page." lightbox="./media/configure-settings/workspace-settings-button.png":::
 
 ## Retention setting
 For the **retention** setting, you can specify the duration for which the incoming data needs to be retained. The default retention period is one day. Events are automatically removed when the retention period expires. If you set the retention period to one day (24 hours), the event becomes unavailable exactly 24 hours after it's accepted. You can't explicitly delete events. The maximum value for this setting is 90 days. To learn more about usage billing and reporting, see [Monitor capacity consumption for event streams](monitor-capacity-consumption.md).

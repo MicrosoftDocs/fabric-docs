@@ -499,7 +499,7 @@ The following table applies to Azure Batch.
     
        1. In the HTTPS tab, select both **Capture HTTPS CONNECTs** and **Decrypt HTTPS traffic**.
     
-          :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/fiddler-options.png" alt-text="Fiddler options":::
+          :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/fiddler-options.png" alt-text="Fiddler options.":::
     
     1. If your application uses TLS/SSL certificates, add the Fiddler certificate to your device.
     

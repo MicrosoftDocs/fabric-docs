@@ -45,7 +45,7 @@ For a many-to-many (M:N) relationship, such as between **Books** and **Authors**
 
 The **New relationship** dialog shows you another set of pickers when you choose **Many-to-many** as the cardinality. In the example of **Books** and **Authors**, you would select a linking type such as **BooksAuthors**, and fields such as **BookId** and **AuthorId** as the linking from and to fields.
 
-![Screenshot of the New relationship dialog for a many-to-many relationship.](media/manage-relationships-graphql/many-to-many-linking.png)
+:::image type="content" border="true" source="media/manage-relationships-graphql/many-to-many-linking.png" alt-text="Screenshot of the New relationship dialog for a many-to-many relationship.":::
 
 ## Considerations for many-to-many relationships
 

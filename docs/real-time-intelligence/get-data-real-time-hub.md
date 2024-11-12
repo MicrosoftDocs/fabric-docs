@@ -74,7 +74,7 @@ The **Inspect** tab opens with a preview of the data.
 
 To complete the ingestion process, select **Finish**.
 
-:::image type="content" source="media/get-data-real-time-hub/inspect-data.png" alt-text="Screenshot of the inspect tab. " lightbox="media/get-data-real-time-hub/inspect-data.png":::
+:::image type="content" source="media/get-data-real-time-hub/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-real-time-hub/inspect-data.png":::
 
 Optionally:
 

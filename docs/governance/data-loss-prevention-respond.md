@@ -31,7 +31,7 @@ Each DLP policy issue is shown on a card. The card shows you the policy tip, ind
 
 Violations of policies configured with the restrict access action are indicated in red and indicate who access is restricted to.  
 
-![Screenshot of DLP policies side pane.](./media/data-loss-prevention-respond/purview-dlp-override-pane.png)
+:::image type="content" border="true" source="./media/data-loss-prevention-respond/purview-dlp-override-pane.png" alt-text="Screenshot of DLP policies side pane.":::
 
 ## Take action on the violation
 

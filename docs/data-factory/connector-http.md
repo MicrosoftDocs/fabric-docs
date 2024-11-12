@@ -32,9 +32,9 @@ The HTTP connector isn't currently supported in Dataflow Gen2.
 
 To create a connection in a data pipeline:
 
-1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
+1. From the page header in the Data Factory service, select **Settings** :::image type="content" border="true" source="./media/connector-common/settings.png" alt-text="Settings gear icon"::: > **Manage connections and gateways**.
 
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway":::
+   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
 2. Select **New** at the top of the ribbon to add a new data source.
 
@@ -48,7 +48,7 @@ To create a connection in a data pipeline:
 
 ### Step 1: Specify the new connection name, type, and URL
 
-   :::image type="content" source="media/connector-http/connection-details.png" alt-text="Screenshot showing how to set a new connection":::
+   :::image type="content" source="media/connector-http/connection-details.png" alt-text="Screenshot showing how to set a new connection.":::
 
 In the **New connection** pane, choose **Cloud**, and then specify the following fields:
 

@@ -56,13 +56,13 @@ To connect discrete events to an eventstream, take the following steps:
 
 1. On the next screen, select **Use external source**.
 
-   ![A screenshot of selecting Use external source.](media/external-sources/add-external-source.png)
+   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Use external source.":::
 1. On the **Select a data source** page, select **View all sources**. 
 
-   ![A screenshot of selecting View all sources on the Select a data source window.](media/external-sources/view-all-sources.png)
+   :::image type="content" border="true" source="media/external-sources/view-all-sources.png" alt-text="A screenshot of selecting View all sources on the Select a data source window.":::
 1. On the **Select a data source** screen, select the type of discrete events you want to add to your eventstream, either **Azure Blob Storage events** or **Fabric Workspace Item events**.
 
-   ![A screenshot of selecting Azure Blob Storage Events.](media/create-eventstreams-discrete-events/select-external-events.png)
+   :::image type="content" border="true" source="media/create-eventstreams-discrete-events/select-external-events.png" alt-text="A screenshot of selecting Azure Blob Storage Events.":::
 1. Add the event source and publish the eventstream by following the instructions in one of the following articles:
 
    - For Azure Blob Storage events, see [Add Azure Blob Storage events](add-source-azure-blob-storage.md).

@@ -12,7 +12,7 @@ ms.date: 11/18/2024
     :::image type="content" source="./media/fabric-workspace-source-connector/select-event-types.png" alt-text="Screenshot that shows the Connect page for Fabric Workspace item events.":::
 1. In the next step, select the right **Event source**. You can choose between streaming all workspace item events in a tenant by selecting the source option as **Across this tenant** or restrict to specific workspace by choosing **By workspace** option. To select a **workspace** for which you want to stream workspace item events, you must be a workspace admin, member, or contributor of that workspace. To receive workspace item events across the tenant, you need to be a Fabric tenant admin
 
-   ![A screenshot of the Connect screen.](media/fabric-workspace-source-connector/connect.png)
+   :::image type="content" border="true" source="media/fabric-workspace-source-connector/connect.png" alt-text="A screenshot of the Connect screen.":::
 1. In the **Stream details** pane to the right, select the **Pencil** button to change the **Source name**. This step is optional. 
 
     :::image type="content" source="./media/fabric-workspace-source-connector/edit-source-name.png" alt-text="Screenshot that shows the Pencil button for the Source name." lightbox="./media/fabric-workspace-source-connector/edit-source-name.png":::   

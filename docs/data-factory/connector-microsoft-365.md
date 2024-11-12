@@ -31,9 +31,9 @@ The Microsoft 365 connector isn't currently supported in Dataflow Gen2.
 
 To create a connection in a data pipeline:
 
-1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
+1. From the page header in Data Integration service, select **Settings** :::image type="content" border="true" source="./media/connector-common/settings.png" alt-text="Settings gear icon"::: > **Manage connections and gateways**.
 
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway":::
+   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
 2. Select **New** at the top of the ribbon to add a new data source.
 
@@ -60,11 +60,11 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 [Service Principal](#service-principal-authentication)
 
-:::image type="content" source="media/connector-microsoft-365/authentication-method.png" alt-text="Screenshot showing that authentication method of Microsoft 365":::
+:::image type="content" source="media/connector-microsoft-365/authentication-method.png" alt-text="Screenshot showing that authentication method of Microsoft 365.":::
 
 #### Service Principal authentication
 
-:::image type="content" source="media/connector-microsoft-365/service-pricipal-authentication.png" alt-text="Screenshot showing that Service Principal authentication method of Microsoft 365":::
+:::image type="content" source="media/connector-microsoft-365/service-pricipal-authentication.png" alt-text="Screenshot showing that Service Principal authentication method of Microsoft 365.":::
 
 - **Tenant Id**: Your service principal tenant ID. Specify the tenant information under which your Microsoft Entra web application resides.
 - **Service principal ID**: Specify the application's client ID.
