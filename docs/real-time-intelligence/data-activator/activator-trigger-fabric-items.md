@@ -24,7 +24,7 @@ In the rule definition pane on the right side of the screen, find **Action** sec
 
 :::image type="content" source="media/activator-trigger-fabric-items/data-activator-fabric-item.png" alt-text="Screenshot showing Fabric item selected from the Type dropdown.":::
 
-![Screenshot showing Activator Action card with a notebook being selected.](media/activator-trigger-fabric-items/data-activator-fabric-item-select-item.png)
+:::image type="content" border="true" source="media/activator-trigger-fabric-items/data-activator-fabric-item-select-item.png" alt-text="Screenshot showing Activator Action card with a notebook being selected.":::
 
 ## Test, start, or stop an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule
 
