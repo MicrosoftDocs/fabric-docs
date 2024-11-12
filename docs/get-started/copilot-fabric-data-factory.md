@@ -13,7 +13,7 @@ ms.collection: ce-skilling-ai-copilot
 # Copilot for Data Factory overview
 
 > [!IMPORTANT]
-> Copilot for Data Factory is generally available now, but its new data pipeline skills are still in [preview](preview.md).
+> Copilot for Data Factory is generally available now, but its new Data pipeline capabilities are still in [preview](preview.md).
 
 Copilot in Fabric enhances productivity, unlocks profound insights, and facilitates the creation of custom AI experiences tailored to your data. As a component of the Copilot in Fabric experience, Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows).  Essentially, Copilot in Data Factory operates like a subject-matter expert (SME) collaborating with you to design your dataflows.
 
@@ -33,13 +33,13 @@ With Dataflow Gen2, you can:
 
 With Data pipelines, you can:
 
-- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot will understand the intent and generate the necessary data pipeline activities.
-- **Error message assistant**: troubleshoot data pipeline issues with clear error explanation capability and actionable troubleshooting guidance.
+- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot will understand the intent and generate the necessary Data pipeline activities.
+- **Error message assistant**: troubleshoot Data pipeline issues with clear error explanation capability and actionable troubleshooting guidance.
 - **Summarize Pipeline**: Explain your complex pipeline with the summary of content and relations of activities within the Pipeline.
 
 ## Get started
 
-Data Factory Copilot is available in both Dataflow Gen2, and data pipelines.
+Data Factory Copilot is available in both Dataflow Gen2, and Data pipelines.
 
 ### Get started with Copilot for Dataflow Gen2
 
@@ -94,16 +94,16 @@ Use the following steps to get started with Copilot for Dataflow Gen2:
 
     :::image type="content" source="media/copilot-fabric-data-factory/copilot-create-new-query.png" alt-text="Screenshot showing a new query being created." lightbox="media/copilot-fabric-data-factory/copilot-create-new-query.png":::
 
-### Get started with Copilot for data pipelines
+### Get started with Copilot for Data pipelines
 
-You can use Copilot to generate, summarize, or even troubleshoot your data pipelines.
+You can use Copilot to generate, summarize, or even troubleshoot your Data pipelines.
 
-#### Generate a data pipeline with Copilot
+#### Generate a Data pipeline with Copilot
 
 Use these steps to generate a new pipeline with Copilot for Data Factory:
 
-1. Create a new [data pipeline](../data-factory/tutorial-end-to-end-pipeline.md).
-1. On the **Home** tab of the data pipeline editor, select the **Copilot** button.
+1. Create a new [Data pipeline](../data-factory/tutorial-end-to-end-pipeline.md).
+1. On the **Home** tab of the Data pipeline editor, select the **Copilot** button.
 
    :::image type="content" source="media/copilot-fabric-data-factory/copilot-button.png" alt-text="Screenshot of the Copilot button on the Data Factory pipeline home tab.":::
 
@@ -121,15 +121,15 @@ Use these steps to generate a new pipeline with Copilot for Data Factory:
 
    :::image type="content" source="media/copilot-fabric-data-factory/pipeline-summary.png" alt-text="Screenshot showing the Copilot window with the pipeline completed and summarized.":::
 
-1. If you are already familiar with data pipelines, you can complete everything with one prompt command, too.
+1. If you are already familiar with Data pipelines, you can complete everything with one prompt command, too.
 
    :::image type="content" source="media/copilot-fabric-data-factory/single-prompt-pipeline.png" alt-text="Screenshot showing how to create a pipeline with a single prompt.":::
 
-#### Summarize a data pipeline with Copilot
+#### Summarize a Data pipeline with Copilot
 
 Use these steps to summarize a pipeline with Copilot for Data Factory:
 
-1. Open an existing data pipeline.
+1. Open an existing Data pipeline.
 1. On the **Home** tab of the pipeline editor window, select the **Copilot** button.
 
    :::image type="content" source="media/copilot-fabric-data-factory/copilot-button.png" alt-text="Screenshot of the Copilot button on the Data Factory pipeline home tab.":::
@@ -148,15 +148,15 @@ Copilot empowers you to troubleshoot any pipeline with error messages. You can e
 
 1. Go to Fabric Monitor page and select filters to show pipelines with failures, as shown below:
 
-   :::image type="content" source="media/copilot-fabric-data-factory/pipeline-failures.png" alt-text="Screenshot showing the Fabric Monitor page, filtered for data pipelines with failures.":::
+   :::image type="content" source="media/copilot-fabric-data-factory/pipeline-failures.png" alt-text="Screenshot showing the Fabric Monitor page, filtered for Data pipelines with failures.":::
 
 1. Select the Copilot icon beside the failed pipeline.
 
-   :::image type="content" source="media/copilot-fabric-data-factory/monitor-copilot-icon.png" alt-text="Screenshot of the Copilot icon beside a failed data pipeline run.":::
+   :::image type="content" source="media/copilot-fabric-data-factory/monitor-copilot-icon.png" alt-text="Screenshot of the Copilot icon beside a failed Data pipeline run.":::
 
 1. Copilot provides a clear error message summary and actionable recommendations to fix it. In the recommendations, troubleshooting links are provided for you to efficiently investigate further.
 
-   :::image type="content" source="media/copilot-fabric-data-factory/troubleshooting-recommendations.png" alt-text="Screenshot showing the Copilot recommendations for troubleshooting a failed data pipeline.":::
+   :::image type="content" source="media/copilot-fabric-data-factory/troubleshooting-recommendations.png" alt-text="Screenshot showing the Copilot recommendations for troubleshooting a failed Data pipeline.":::
 
 ## Limitations of Copilot for Data Factory
 
