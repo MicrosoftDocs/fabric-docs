@@ -18,7 +18,6 @@ With Dataflow Gen2 (CI/CD preview), you can now:
 
 - Enjoy Git integration support for Dataflow Gen2.
 - Use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces.
-- Leverage the Fabric CRUDL API to manage Dataflow Gen2.
 - Use the Fabric settings and scheduler to refresh and edit settings for Dataflow Gen2.
 - Create your Dataflow Gen2 directly into a workspace folder.
 
@@ -96,14 +95,9 @@ To view the refresh history of the dataflow, you can either select the refresh h
 
 Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is similar to any other Fabric item. You can access the settings by selecting the more options ellipsis icon next to the dataflow and selecting the settings.
 
-## Use the Fabric CRUDL API to manage Dataflow Gen2
-
-With CI/CD and Git integration support, we also introduced the Fabric CRUDL API to manage Dataflow Gen2. You can use the API to create, read, update, delete, and list Dataflow Gen2 dataflows. The API is available in the Fabric API reference. To learn more about the Fabric CRUDL API, go to [Fabric API reference](/fabric/data-factory/dataflows-gen2-rest-api-capabilities).
-
 ## Limitations and known issues
 
 - By default, the staging artifacts are visible in the workspace. The staging artifacts will be hidden in the future, but for now make sure they aren't synced to the GIT repository as it may cause issues along the way when updating the workspace from Git changes.
-- "Get Item" and "List Item Access Details" API's don't return the correct information if you filter on a specific type of item. When you don't specify the type, it returns the new Dataflow Gen2 with CI/CD and Git support. Filtering for the "dataflow" type results in only non-CI/CD dataflows.
 - Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric pipelines.
 - Workspace view doesn't show if a refresh is ongoing for the dataflow.
 - Creating VNET Gateway connections are not supported in the Dataflow authoring experience yet for Dataflow Gen2 with CI/CD and Git support. You can use vnet gateway conenctions by creating them in the manage connections UI and then use them within the dataflow.
