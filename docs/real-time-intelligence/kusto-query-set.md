@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 10/29/2024
+ms.date: 11/12/2024
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
@@ -24,18 +24,18 @@ The KQL Queryset uses the Kusto Query Language for creating queries, and also su
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data, or an Azure Data Explorer [cluster and database](/azure/data-explorer/create-cluster-and-database) with [AllDatabaseAdmin](/azure/data-explorer/manage-cluster-permissions#cluster-level-permissions) permissions.
 
-## Select a database
+## Select a data source
 
-Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with multiple data sources of different types, including a KQL database or a database from an Azure Data Explorer cluster.
+Queries run in the context of a data source. You can change the associated data source at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with multiple data sources of different types, including a KQL database or a data source from an Azure Data Explorer cluster.
 
-Select the tab that corresponds with your desired database type.
+Select the tab that corresponds with your desired data source type.
 
 ## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the connection pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the database connections menu.
+1. In the connection pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the data source connections menu.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
 1. Under **Connect source**, select **OneLake data hub**.
 1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the**OneLake data hub** window and use the **+Add data source** menu to connect to a different data source.
@@ -43,9 +43,9 @@ Select the tab that corresponds with your desired database type.
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the connection pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the database connections menu.
+1. In the connection pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the data source connections menu.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
 1. Under **Connect source**, select **Azure Data Explorer**.
 1. Under **Connection URI**, enter the cluster URI.
@@ -54,16 +54,18 @@ Select the tab that corresponds with your desired database type.
 
     :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
 
-1. Under **Database**, select the dropdown menu to expand the list of databases in your cluster, and then select a database.
+1. Under **Database**, select the dropdown menu to expand the list of data sources in your cluster, and then select a data source.
 1. Select **Connect**.
 
 ----
 
- A list of tables associated with this database appears below the database name in the connection pane.
+ A list of tables associated with this data source appears below the data source name in the connection pane.
 
-## Interact with databases using the connection pane
+## Interact with data sources using the connection pane
 
-The connection pane allows you to browse and switch between the databases connected to the queryset. In the connection pane, under **Database**, select **V** to expand the database connections menu. Select the database you want to explore. The connection pane shows a breakdown of the following items that are included in the selected database:
+<!-- screenshot of connection pane -->
+
+The connection pane allows you to browse and switch between the data sources connected to the queryset. In the connection pane, under **Database**, select **V** to expand the data source connections menu. Select the data source you want to explore. The connection pane shows a breakdown of the following items that are included in the selected data source:
 
 * **Tables**
 * **Materialized View**
@@ -81,7 +83,7 @@ Different actions are available for different types of items.
 
 ## Write a query
 
-Now that you're connected to your data source, you can run queries on this data. The KQL Queryset uses the Kusto Query Language (KQL) to query data from any of the databases you have access to. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+Now that you're connected to your data source, you can run queries on this data. The KQL Queryset uses the Kusto Query Language (KQL) to query data from any of the data sources you have access to. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
 The following examples use data that is publicly available at [https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv](https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv).
 
@@ -98,10 +100,10 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 
 :::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
 
-* **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different databases.
+* **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different data sources.
 * **Rename a tab**: Select the **pencil icon** next to the tab name.
 * **Change tab positions**: Change tab positions using drag and drop gestures.
-* **Change the existing database connection**: Under **Explorer**, select the existing database connection to open the data hub.
+* **Change the existing database connection**: Under **Explorer**, select the existing data source connection to open the data hub.
 
 On the right side of the command bar, there is a menu with additional actions to manage the multiple tabs in your queryset.
 
