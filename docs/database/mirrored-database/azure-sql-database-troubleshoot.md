@@ -1,5 +1,5 @@
 ---
-title: "Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)"
+title: "Troubleshoot Fabric mirrored databases from Azure SQL Database"
 description: Troubleshooting topics for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -9,7 +9,11 @@ ms.topic: troubleshooting
 ms.custom:
   - references_regions
 ---
-# Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)
+# Troubleshoot Fabric mirrored databases from Azure SQL Database
+
+This article covers troubleshooting steps troubleshooting for mirroring Azure SQL Database.
+
+For troubleshooting the automatically configured mirroring for Fabric SQL database, see [Troubleshoot mirroring from Fabric SQL database](../sql/mirroring-troubleshooting.md).
 
 ## Changes to Fabric capacity or workspace
 
@@ -69,9 +73,9 @@ User Assigned Managed Identity (UAMI) is not supported. If you add a UAMI, it be
 
 Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item.
 
-If you accidentally remove the SPN permission, Mirroring Azure SQL database will not function as expected. No new data can be mirrored from the source database.
+If you accidentally remove the SPN permission, Mirroring Azure SQL Database will not function as expected. No new data can be mirrored from the source database.
 
-If you remove Azure SQL database SPN permissions or permissions are not set up correctly, use the following steps.
+If you remove Azure SQL Database SPN permissions or permissions are not set up correctly, use the following steps.
 
 1. Add the SPN as a user by selecting the `...` ellipses option on the mirrored database item.
 1. Select the **Manage Permissions** option.
@@ -80,4 +84,4 @@ If you remove Azure SQL database SPN permissions or permissions are not set up c
 ## Related content
 
 - [Limitations in Microsoft Fabric](../../data-warehouse/limitations.md)
-- [Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric (Preview)](azure-sql-database-mirroring-faq.yml)
+- [Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric](azure-sql-database-mirroring-faq.yml)
