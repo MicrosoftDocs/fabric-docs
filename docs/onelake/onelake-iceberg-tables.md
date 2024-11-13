@@ -21,7 +21,7 @@ While this article includes guidance for writing Iceberg tables from Snowflake t
 
 ## Create a table shortcut to an Iceberg table
 
-If you already have Iceberg tables that are written to a storage location supported by [OneLake shortcuts](./onelake-shortcuts.md#types-of-shortcuts), follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
+If you've already written your Iceberg table to a storage location supported by [OneLake shortcuts](./onelake-shortcuts.md#types-of-shortcuts), follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
 
 1.	**Locate your Iceberg table.** Find where your Iceberg table is stored. This could be in any of the external storage locations supported by OneLake shortcuts, such as Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
 
@@ -65,7 +65,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\snowflake-region.png" alt-text="Screenshot showing Snowflake account region.":::
 
-    If these regions are different, you'll need to use a different Fabric capacity in the same region as your Snowflake account.
+    If these regions are different, you need to use a different Fabric capacity in the same region as your Snowflake account.
 
 1.	Open the menu for the Files area of your lakehouse, select Properties, and copy the URL (the HTTPS path) of that folder.
 
@@ -93,7 +93,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
     );
     ```
 
-    With the this sample, any tables created using this external volume are stored in the Fabric lakehouse, within the `Files/icebergtables` folder.
+    In this sample, any tables created using this external volume are stored in the Fabric lakehouse, within the `Files/icebergtables` folder.
 
 1.	Now that your external volume is created, run the following command to retrieve the consent URL and name of the application that Snowflake uses to write to OneLake. This application is used by any other external volume in your Snowflake account.
     
@@ -159,7 +159,7 @@ If you don't see the metadata folder, or if you don't see files with the extensi
 
 ### Check the conversion log
 
-When an Iceberg table is virtually converted to Delta Lake format, a folder named `_delta_log/` can be found inside the shortcut folder. This is where the Delta Lake format's metadata (the Delta log) is available after successful conversion.
+When an Iceberg table is virtualized as a Delta Lake table, a folder named `_delta_log/` can be found inside the shortcut folder. This is where the Delta Lake format's metadata (the Delta log) is available after successful conversion.
 
 This folder also includes the `latest_conversion_log.txt` file, which contains the latest attempted conversion's success or failure details.
 
@@ -235,7 +235,7 @@ The following are temporary limitations to keep in mind when using this feature:
     **Workaround:**
     If you're using the Lakehouse table preview UI and see this issue, you can resolve this error by switching to the SQL Endpoint view (top right corner, select Lakehouse view, switch to SQL Endpoint) and previewing the table from there. If you then switch back to the Lakehouse view, the table preview should display properly.
     
-    If you're running a Spark notebook or job and encounter this issue, you can resolve this error by setting the `spark.sql.parquet.enableVectorizedReader` Spark configuration to `false`. Here is an example PySpark command to run in a Spark notebook:
+    If you're running a Spark notebook or job and encounter this issue, you can resolve this error by setting the `spark.sql.parquet.enableVectorizedReader` Spark configuration to `false`. Here's an example PySpark command to run in a Spark notebook:
     
     ```
     spark.conf.set("spark.sql.parquet.enableVectorizedReader","false")
@@ -261,7 +261,7 @@ The following are temporary limitations to keep in mind when using this feature:
 
 * **Iceberg table folders must contain only one set of metadata files**
 
-    If you drop and recreate an Iceberg table in Snowflake, the metadata files aren't cleaned up. This is by design to support the `UNDROP` feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
+    If you drop and recreate an Iceberg table in Snowflake, the metadata files aren't cleaned up. This behavior is in support of the `UNDROP` feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
 
     Currently, conversion is attempted in this scenario, which can result in old table contents and schema information being shown in the virtualized Delta Lake table.
 
@@ -320,7 +320,7 @@ The following are temporary limitations to keep in mind when using this feature:
 
     We have a temporary limitation on the use of this feature with shortcuts that point to OneLake locations:  the target location of the shortcut must be in the same region as the shortcut itself.
 
-    We are working on an improvement to remove this requirement.
+    We're working on an improvement to remove this requirement.
 
     **Workaround:**
 
