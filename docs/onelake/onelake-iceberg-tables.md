@@ -26,7 +26,7 @@ If you already have Iceberg tables written to a storage location supported by [O
 1.	**Locate your Iceberg table.** Find where your Iceberg tables are stored. This could be in any of the external storage locations supported by OneLake shortcuts including Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
 
     > [!NOTE]
-    > If you are using Snowflake and are not sure where your Iceberg table is stored, you can run the following statement to see the storage location of your Iceberg table.
+    > If you're using Snowflake and are not sure where your Iceberg table is stored, you can run the following statement to see the storage location of your Iceberg table.
     > 
     > `SELECT SYSTEM$GET_ICEBERG_TABLE_INFORMATION('<table_name>');`
     > 
@@ -39,7 +39,7 @@ If you already have Iceberg tables written to a storage location supported by [O
 1.	In your Fabric lakehouse, create a new shortcut in the Tables area of a *non-schema-enabled* lakehouse.
 
     > [!NOTE]
-    > If you see schemas such as `dbo` under the Tables folder of your lakehouse, then the lakehouse is schema-enabled and is not yet compatible with this feature. This is a temporary limitation.
+    > If you see schemas such as `dbo` under the Tables folder of your lakehouse, then the lakehouse is schema-enabled and isn't yet compatible with this feature. This is a temporary limitation.
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\new-shortcut.png" alt-text="Screenshot showing shortcut creation menu item under Tables.":::
 
@@ -61,7 +61,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\snowflake-region.png" alt-text="Screenshot showing Snowflake account region.":::
 
-    If these regions are different, you will need to use a different Fabric capacity in the same region as your Snowflake account.
+    If these regions are different, you'll need to use a different Fabric capacity in the same region as your Snowflake account.
 
 1.	Right-click on the Files area of your lakehouse, select Properties, and copy the URL (the HTTPS path) of that folder.
 
@@ -97,7 +97,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
     DESC EXTERNAL VOLUME onelake_exvol;
     ```
 
-    The output of the above command will return the `AZURE_CONSENT_URL` and `AZURE_MULTI_TENANT_APP_NAME` properties. Take note of both values. The Azure multi-tenant app name will look like `<name>_<number>`, but you only need to capture the `<name>` portion.
+    The output of the above command will return the `AZURE_CONSENT_URL` and `AZURE_MULTI_TENANT_APP_NAME` properties. Take note of both values. The Azure multitenant app name will look like `<name>_<number>`, but you only need to capture the `<name>` portion.
 
 1.	Open the consent URL from the previous step in a new browser tab. If you would like to proceed, consent to the required application permissions, if prompted.
 
@@ -106,7 +106,6 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 1.	Back in Snowflake, use your new external volume to create an Iceberg table.
     
     ```sql
-    // Example statement to create an Iceberg table
     CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.Inventory (
         InventoryId int,
         ItemName STRING,
@@ -122,7 +121,6 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 1.  Add some data to your Iceberg table.
 
     ```sql
-    // Example statement to write data to an Iceberg table
     INSERT INTO MYDATABASE.PUBLIC.Inventory
     VALUES
     (123456,'Amatriciana','2024-01-02 03:04:05.060000000+00:00');
@@ -154,7 +152,7 @@ Open your Iceberg folder in your preferred storage explorer tool, and check the 
         |-- snap-1730313479898000000-913546ba-bb04-4c8e-81be-342b0cbc5b50.avro
 ```
 
-If you do not see the metadata folder, or if you do not see files with the extensions shown in the above example, then you might not have a properly generated Iceberg table.
+If you don't see the metadata folder, or if you don't see files with the extensions shown in the above example, then you might not have a properly generated Iceberg table.
 
 ### Check the conversion log
 
@@ -175,26 +173,26 @@ Tables/
         |-- <data files>
     |-- metadata/
         |-- <metadata files>
-    |-- _delta_log/   <-- Virtual folder. This not exist in the original location.
+    |-- _delta_log/   <-- Virtual folder. This doesn't exist in the original location.
         |-- 00000000000000000000.json
-        |-- latest_conversion_log.txt   <-- Conversion log.
+        |-- latest_conversion_log.txt   <-- Conversion log with latest success/failure details.
 ```
 
-Open the conversion log file to see the latest conversion time or failure details. If you don't see a conversion log file, this means that [conversion was not attempted](#if-conversion-was-not-attempted).
+Open the conversion log file to see the latest conversion time or failure details. If you don't see a conversion log file, this means that [conversion wasn't attempted](#if-conversion-wasnt-attempted).
 
-### If conversion was not attempted
+### If conversion wasn't attempted
 
-If you don't see a conversion log file, then the conversion was not attempted. This could be for one of a few reasons:
+If you don't see a conversion log file, then the conversion wasn't attempted. This could be for one of a few reasons:
 
-* **The shortcut was not created in the right place.**
+* **The shortcut wasn't created in the right place.**
     
-    In order for a shortcut to an Iceberg table to get converted to the Delta Lake format, the shortcut must be placed directly under the Tables folder of a non-schema-enabled lakehouse. You should not place the shortcut in the Files section or under another folder if you want the table to be automatically virtualized as a Delta Lake table.
+    In order for a shortcut to an Iceberg table to get converted to the Delta Lake format, the shortcut must be placed directly under the Tables folder of a non-schema-enabled lakehouse. You shouldn't place the shortcut in the Files section or under another folder if you want the table to be automatically virtualized as a Delta Lake table.
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-placement.png" alt-text="Screenshot showing the correct placement of a shortcut in the Tables folder.":::
 
 * **The shortcut's target path is not the Iceberg folder path.**
     
-    When creating the shortcut, the path in the target storage location may only be the Iceberg table folder. This is the folder that *contains* the `metadata` and `data` folders.
+    When you create the shortcut, the folder path you select in the target storage location must only be the Iceberg table folder. This is the folder that *contains* the `metadata` and `data` folders.
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-target.png" alt-text="Screenshot showing the contents of a shortcut target path during shortcut creation.":::
 
@@ -215,30 +213,32 @@ The following are temporary limitations to keep in mind when using this feature:
   | `decimal(P, S)` | `decimal(P, S)` | See **Type width issue** below. |
   | `boolean` | `boolean` | |
   | `date` | `date` | |
-  | `timestamp` | `timestamp_ntz` | The `timestamp` Iceberg data type does not contain time zone information. The `timestamp_ntz` Delta Lake type is not fully supported across Fabric workloads. We recommend the use of timestamps with time zones included. |
-  | `timestamptz` | `timestamp` | |
+  | `timestamp` | `timestamp_ntz` | The `timestamp` Iceberg data type doesn't contain time zone information. The `timestamp_ntz` Delta Lake type isn't fully supported across Fabric workloads. We recommend the use of timestamps with time zones included. |
+  | `timestamptz` | `timestamp` | In Snowflake, to use this type, specify `timestamp_ltz` as the column type during Iceberg table creation. [More info on Iceberg data types supported in Snowflake can be found here.](https://docs.snowflake.com/en/user-guide/tables-iceberg-data-types) |
   | `string` | `string` | |
   | `binary` | `binary` | |
 
     
 * **Type width issue**
     
-    If your Iceberg table is written by Snowflake and the table contains column types that have a maximum width that is larger than what `INT32` can contain, such as `INT64`, `double`, or `Decimal` with precision >= 10, then the resulting virtual Delta Lake table may not be consumable by all Fabric engines. You may see errors such as:
+    If your Iceberg table is written by Snowflake and the table contains column types `INT64`, `double`, or `Decimal` with precision >= 10, then the resulting virtual Delta Lake table may not be consumable by all Fabric engines. You may see errors such as:
      
     ```
     Parquet column cannot be converted in file ... Column: [ColumnA], Expected: decimal(18,4), Found: INT32.
     ```
+
+    We're working on a fix for this issue.
      
     **Workaround:**
-    If you are using the Lakehouse table preview UI and see this issue, you can resolve this by switching to the SQL Endpoint view (top right corner, click Lakehouse view, switch to SQL Endpoint) and previewing the table from there. If you then switch back to the Lakehouse view, the table preview should display properly.
+    If you're using the Lakehouse table preview UI and see this issue, you can resolve this by switching to the SQL Endpoint view (top right corner, click Lakehouse view, switch to SQL Endpoint) and previewing the table from there. If you then switch back to the Lakehouse view, the table preview should display properly.
     
-    If you are running a Spark notebook or job and encounter this error, you can resolve this by setting the `spark.sql.parquet.enableVectorizedReader` Spark configuration to `false`. Below is an example PySpark command to run in a Spark notebook:
+    If you're running a Spark notebook or job and encounter this error, you can resolve this by setting the `spark.sql.parquet.enableVectorizedReader` Spark configuration to `false`. Below is an example PySpark command to run in a Spark notebook:
     
     ```
     spark.conf.set("spark.sql.parquet.enableVectorizedReader","false")
     ```
 
-* **Iceberg table metadata storage is not portable**
+* **Iceberg table metadata storage isn't portable**
 
     The metadata files of an Iceberg table refer to each other using absolute path references. Because of this, if you copy or move an Iceberg table's folder contents to another location without rewriting the Iceberg metadata files, the table will become unreadable by Iceberg readers, including this OneLake feature.
 
@@ -249,6 +249,8 @@ The following are temporary limitations to keep in mind when using this feature:
 * **Iceberg tables must be deeper than root level**
     
     The Iceberg table folder in storage must be located in a directory deeper than bucket or container level. Iceberg tables stored directly in the root directory of a bucket or container may not be virtualized to the Delta Lake format.
+
+    We're working on an improvement to remove this requirement.
    
     **Workaround:**
     
@@ -256,11 +258,11 @@ The following are temporary limitations to keep in mind when using this feature:
 
 * **Iceberg table folders must contain only one set of metadata files**
 
-    If you drop and recreate an Iceberg table in Snowflake, the metadata files are not cleaned up. This is by design to support the UNDROP feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we cannot convert the table until you remove the old table’s metadata files.
+    If you drop and recreate an Iceberg table in Snowflake, the metadata files are not cleaned up. This is by design to support the UNDROP feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
 
-    Currently, there is an issue that causes us to attempt conversion even in this scenario, which can result in old table contents and schema being shown.
+    Currently, there is an issue in which conversion is attempted in this scenario, which can result in old table contents and schema information being shown in the virtualized Delta Lake table.
 
-    We are working on a fix in which conversion will fail if more than one set of metadata files are found in the Iceberg table’s metadata folder.
+    We're working on a fix in which conversion will fail if more than one set of metadata files are found in the Iceberg table’s metadata folder.
 
     **Workaround:**
 
@@ -270,9 +272,9 @@ The following are temporary limitations to keep in mind when using this feature:
 
 * **Metadata changes not immediately reflected**
 
-    If you make metadata changes to your Iceberg table, such as adding a column, deleting a column, renaming a column, or changing a column type, the table may not be re-converted until a data change is made, such as adding a row of data.
+    If you make metadata changes to your Iceberg table, such as adding a column, deleting a column, renaming a column, or changing a column type, the table may not be reconverted until a data change is made, such as adding a row of data.
 
-    We are working on a fix that will pick up the correct latest metadata file that includes the latest metadata change.
+    We're working on a fix that will pick up the correct latest metadata file that includes the latest metadata change.
 
     **Workaround:**
 
@@ -280,7 +282,7 @@ The following are temporary limitations to keep in mind when using this feature:
 
 * **Schema-enabled workspaces not yet supported**
 
-    If you create an Iceberg shortcut in a schema-enabled lakehouse, conversion will not occur for that shortcut.
+    If you create an Iceberg shortcut in a schema-enabled lakehouse, conversion will not occur for that shortcut. We're working on support for this.
 
     **Workaround:**
 
@@ -288,7 +290,7 @@ The following are temporary limitations to keep in mind when using this feature:
 
 * **Region availability limitation**
 
-    The feature is not yet available in the following regions:
+    The feature isn't yet available in the following regions:
 
     * Qatar Central
     * Norway West
@@ -297,6 +299,15 @@ The following are temporary limitations to keep in mind when using this feature:
 
     Workspaces attached to Fabric capacities in other regions can use this feature. [See the full list of regions where Microsoft Fabric is available.](../admin/region-availability.md)
 
+* **Private links not supported**
+
+    This feature isn't currently supported for tenants or workspaces that have private links enabled. We're working on adding support for this.
+
+* **Table size limitation**
+
+    We have a temporary limitation on the size of the Iceberg table supported by this feature. The maximum supported number of Parquet data files is about 5,000 data files, or roughly 1 billion rows, whichever limit is encountered first.
+
+    We're working on an improvement to remove this limit.
 
 ## Related content
 
