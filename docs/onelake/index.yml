@@ -41,7 +41,7 @@ landingContent:
             url: create-lakehouse-onelake.md
           - text: OneLake file explorer
             url: onelake-file-explorer.md
-          - text: Using Iceberg tables in OneLake
+          - text: Use Iceberg tables in OneLake
             url: onelake-iceberg-tables.md
 
   # Card 
