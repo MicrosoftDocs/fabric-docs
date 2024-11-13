@@ -23,14 +23,14 @@ While this article includes guidance for writing Iceberg tables from Snowflake t
 
 If you've already written your Iceberg table to a storage location supported by [OneLake shortcuts](./onelake-shortcuts.md#types-of-shortcuts), follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
 
-1.	**Locate your Iceberg table.** Find where your Iceberg table is stored. This could be in any of the external storage locations supported by OneLake shortcuts, such as Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
+1.	**Locate your Iceberg table.** Find where your Iceberg table is stored, which could be in Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service. This location will be the target of your shortcut.
 
     > [!NOTE]
     > If you're using Snowflake and aren't sure where your Iceberg table is stored, you can run the following statement to see the storage location of your Iceberg table.
     > 
     > `SELECT SYSTEM$GET_ICEBERG_TABLE_INFORMATION('<table_name>');`
     > 
-    > This returns a path to the metadata file for this table, which should tell you which storage account contains the Iceberg table. For example, this is the relevant info to find the Iceberg table:
+    > Running this statement returns a path to the metadata file for the Iceberg table. This path tells you which storage account contains the Iceberg table. For example, here's the relevant info to find the path of an Iceberg table stored in Azure Data Lake Storage:
     > 
     > `{"metadataLocation":"azure://<storage_account_path>/<path_within_storage>/<table_name>/metadata/00001-389700a2-977f-47a2-9f5f-7fd80a0d41b2.metadata.json","status":"success"}`
     
@@ -39,7 +39,7 @@ If you've already written your Iceberg table to a storage location supported by 
 1.	In your Fabric lakehouse, create a new shortcut in the Tables area of a *non-schema-enabled* lakehouse.
 
     > [!NOTE]
-    > If you see schemas such as `dbo` under the Tables folder of your lakehouse, then the lakehouse is schema-enabled and isn't yet compatible with this feature. This is a temporary limitation.
+    > If you see schemas such as `dbo` under the Tables folder of your lakehouse, then the lakehouse is schema-enabled and isn't yet compatible with this feature.
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\new-shortcut.png" alt-text="Screenshot showing shortcut creation menu item under Tables.":::
 
@@ -129,7 +129,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
     (123456,'Amatriciana');
     ```
     
-1.	Finally, in the Tables area of the same lakehouse, [you can create a OneLake shortcut to your Iceberg table](#create-a-table-shortcut-to-an-iceberg-table). This ensures your Iceberg table appears as a Delta Lake table for consumption across Fabric.
+1.	Finally, in the Tables area of the same lakehouse, [you can create a OneLake shortcut to your Iceberg table](#create-a-table-shortcut-to-an-iceberg-table). Through that shortcut, your Iceberg table appears as a Delta Lake table for consumption across Fabric workloads.
 
 ## Troubleshooting
 
@@ -159,7 +159,7 @@ If you don't see the metadata folder, or if you don't see files with the extensi
 
 ### Check the conversion log
 
-When an Iceberg table is virtualized as a Delta Lake table, a folder named `_delta_log/` can be found inside the shortcut folder. This is where the Delta Lake format's metadata (the Delta log) is available after successful conversion.
+When an Iceberg table is virtualized as a Delta Lake table, a folder named `_delta_log/` can be found inside the shortcut folder. This folder contains the Delta Lake format's metadata (the Delta log) after successful conversion.
 
 This folder also includes the `latest_conversion_log.txt` file, which contains the latest attempted conversion's success or failure details.
 
@@ -176,16 +176,16 @@ Tables/
         |-- <data files>
     |-- metadata/
         |-- <metadata files>
-    |-- _delta_log/   <-- Virtual folder. This doesn't exist in the original location.
+    |-- _delta_log/   <-- Virtual folder. This folder doesn't exist in the original location.
         |-- 00000000000000000000.json
         |-- latest_conversion_log.txt   <-- Conversion log with latest success/failure details.
 ```
 
-Open the conversion log file to see the latest conversion time or failure details. If you don't see a conversion log file, this means that [conversion wasn't attempted](#if-conversion-wasnt-attempted).
+Open the conversion log file to see the latest conversion time or failure details. If you don't see a conversion log file, [conversion wasn't attempted](#if-conversion-wasnt-attempted).
 
 ### If conversion wasn't attempted
 
-If you don't see a conversion log file, then the conversion wasn't attempted. This could be for one of a few reasons:
+If you don't see a conversion log file, then the conversion wasn't attempted. Here are two common reasons why conversion isn't attempted:
 
 * **The shortcut wasn't created in the right place.**
     
@@ -201,7 +201,7 @@ If you don't see a conversion log file, then the conversion wasn't attempted. Th
 
 ## Limitations and considerations
 
-The following are temporary limitations to keep in mind when using this feature: 
+Keep in mind the following temporary limitations when you use this feature: 
 
 * **Supported data types**
   
@@ -324,7 +324,7 @@ The following are temporary limitations to keep in mind when using this feature:
 
     **Workaround:**
 
-    If you have a OneLake shortcut to an Iceberg table that is written to another lakehouse in OneLake, be sure that the other lakehouse is associated with a capacity in the same region. 
+    If you have a OneLake shortcut to an Iceberg table that you've written to another lakehouse in OneLake, be sure that the other lakehouse is associated with a capacity in the same region. 
 
 ## Related content
 
