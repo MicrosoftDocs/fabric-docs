@@ -21,7 +21,7 @@ While this article includes guidance for writing Iceberg tables from Snowflake t
 
 ## Create a table shortcut to an Iceberg table
 
-If you already have Iceberg tables written to a storage location supported by [OneLake shortcuts](./onelake-shortcuts#types-of-shortcuts), such as an Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service,  follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
+If you already have Iceberg tables written to a storage location supported by [OneLake shortcuts](./onelake-shortcuts.md#types-of-shortcuts), such as an Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service,  follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
 
 1.	**Locate your Iceberg table.** Find where your Iceberg tables are stored. This could be in any of the external storage locations supported by OneLake shortcuts including Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
 
@@ -279,7 +279,7 @@ The following are temporary limitations to keep in mind when using this feature:
     
     **Workaround:**
 
-    Workspaces attached to Fabric capacities in other regions can use this feature. [See the full list of regions where Microsoft Fabric is available.](../admin/region-availability)
+    Workspaces attached to Fabric capacities in other regions can use this feature. [See the full list of regions where Microsoft Fabric is available.](../admin/region-availability.md)
 
 
 ## Related content
