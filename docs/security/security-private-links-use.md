@@ -263,7 +263,7 @@ The next step is to access Fabric privately, from the virtual machine you create
 
 1. Enter `nslookup <tenant-object-id-without-hyphens>-api.privatelink.analysis.windows.net`.
 
-1. You receive a response similar to the following message and can see that the private IP address is returned. You can see that the Onelake endpoint and Warehouse endpoint also return private IPs.
+1. You receive a response similar to the following message and can see that the private IP address is returned. You can see that the OneLake endpoint and Warehouse endpoint also return private IPs.
 
     :::image type="content" source="./media/security-private-links-use/nslookup-powershell.png" alt-text="Screenshot showing IP addresses returned in PowerShell." lightbox="./media/security-private-links-use/nslookup-powershell.png":::
 
