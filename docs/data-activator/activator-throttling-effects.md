@@ -77,7 +77,7 @@ When your capacity is throttled and your users experience the above experiences,
 
 - Upgrade the SKU of the Fabric capacity.
 
-- Pause/resume the throttled capacity. This will effectively collect the payment for the spike and resume from the clean slate.
+- Pause/resume the throttled capacity. This effectively collects the payment for the spike and resumes from the clean slate.
 
 - Configure capacity Autoscale
 
