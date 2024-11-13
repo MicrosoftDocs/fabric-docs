@@ -28,7 +28,7 @@ The first stage of capacity overload occurs when the overload lasts between 10 a
 
 - Loading and displaying of data-aware graphs is delayed by 20 seconds.
 
-  :::image type="content" source="media/activator-throttling-effects/activator-throttling-delay.png" alt-text="Screenshot that shows the delays Activator introduces in order to prioritize backend processing.":::
+:::image type="content" source="media/activator-throttling-effects/activator-throttling-delay.png" alt-text="Screenshot that shows the delays Activator introduces in order to prioritize backend processing.":::
   
 - Auto-refreshing of graphs is disabled. The user can restart auto-refresh by toggling the **Live auto-refresh** on or by manually reloading the browser page.
 
@@ -38,13 +38,17 @@ The first stage of capacity overload occurs when the overload lasts between 10 a
 
 - Running of interactive queries is delayed and a banner informs the user that capacity is exceeded.
 
-:::image type="content" source="media/activator-throttling-effects/activator-throttling-banner.png" alt-text="Screenshot shows the banner that displays when capacity is exceeded.":::
+
+
+    :::image type="content" source="media/activator-throttling-effects/activator-throttling-banner.png" alt-text="Screenshot shows the banner that displays when capacity is exceeded.":::
 
 ### Overloads lasting between 60 minutes and up to 24 hours
 
 The second stage of capacity overload occurs when the overload lasts between 60 minutes and 24 hours. During this stage, Activator takes a few more steps to prioritize background processing over interactive UI usage and minimize business impact on the customer. All interactive UI operations are rejected. The rejections include not displaying data-aware graphs or data-aware dropdowns. Also, Activator doesn't send test alerts.
 
-:::image type="content" source="media/activator-throttling-effects/activator-throttling-exceeded.png" alt-text="Screenshot shows the banner that tells customers that interactive queries are not available.":::
+
+
+:::image type="content" source="media/activator-throttling-effects/media/activator-throttling-effects/activator-throttling-exceeded.png" alt-text="Screenshot shows the banner that tells customers that interactive queries are not available.":::
 
 ### Overloads lasting over 24 hours
 
@@ -56,7 +60,7 @@ The third stage of capacity overload occurs when the overload lasts longer than 
   
 - Banners inform users about the exceeded capacity and rejected interactive and background operations:
 
-:::image type="content" source="media/activator-throttling-effects/activator-throttling-capacity-paused.png" alt-text="Screenshot shows a sample email sent to a customer explaining the results of exceeding capacity.":::
+    :::image type="content" source="media/activator-throttling-effects/activator-throttling-capacity-paused.png" alt-text="Screenshot shows a sample email sent to a customer explaining the results of exceeding capacity.":::
 
 ## Recover from overload situations
 
