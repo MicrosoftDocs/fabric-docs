@@ -23,7 +23,7 @@ While this article includes guidance for writing Iceberg tables from Snowflake t
 
 If you've already written your Iceberg table to a storage location supported by [OneLake shortcuts](./onelake-shortcuts.md#types-of-shortcuts), follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
 
-1.	**Locate your Iceberg table.** Find where your Iceberg table is stored, which could be in Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service. This location will be the target of your shortcut.
+1.	**Locate your Iceberg table.** Find where your Iceberg table is stored, which could be in Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
 
     > [!NOTE]
     > If you're using Snowflake and aren't sure where your Iceberg table is stored, you can run the following statement to see the storage location of your Iceberg table.
@@ -195,7 +195,7 @@ If you don't see a conversion log file, then the conversion wasn't attempted. He
 
 * **The shortcut's target path is not the Iceberg folder path.**
     
-    When you create the shortcut, the folder path you select in the target storage location must only be the Iceberg table folder. This is the folder that *contains* the `metadata` and `data` folders.
+    When you create the shortcut, the folder path you select in the target storage location must only be the Iceberg table folder. This folder *contains* the `metadata` and `data` folders.
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-target.png" alt-text="Screenshot showing the contents of a shortcut target path during shortcut creation.":::
 
@@ -324,7 +324,7 @@ Keep in mind the following temporary limitations when you use this feature:
 
     **Workaround:**
 
-    If you have a OneLake shortcut to an Iceberg table that you've written to another lakehouse in OneLake, be sure that the other lakehouse is associated with a capacity in the same region. 
+    If you have a OneLake shortcut to an Iceberg table in another lakehouse, be sure that the other lakehouse is associated with a capacity in the same region. 
 
 ## Related content
 
