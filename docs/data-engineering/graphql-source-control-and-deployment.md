@@ -20,13 +20,13 @@ Learn how Git integration and deployment pipelines work with API for GraphQL in 
 
 ## Overview
 
-Fabric provides powerful tools for CI/CD (Continuous Integration and Continuous Deployment) and development lifecycle management with two main components: [**Git Integration**](C:\GitHubRepo\fabric-docs-pr\docs\cicd\git-integration\git-get-started.md) (CI) and [**Deployment Pipelines**](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines?tabs=from-fabric%2Cnew%2Cstage-settings-new) (CD). Workspaces act as central components for both Git synchronization and deployment stages.
+Fabric provides powerful tools for CI/CD (Continuous Integration and Continuous Deployment) and development lifecycle management with two main components: [**Git Integration**](..\cicd\git-integration\git-get-started.md) (CI) and [**Deployment Pipelines**](..\cicd\deployment-pipelines\get-started-with-deployment-pipelines.md) (CD). Workspaces act as central components for both Git synchronization and deployment stages.
 
-**Git Integration (Continuous Integration)**: allows you to synchronize items in a Workspace (such as code, configurations, or APIs) with repositories in [**version control systems**](https://learn.microsoft.com/fabric/cicd/git-integration/intro-to-git-integration?tabs=azure-devops#supported-git-providers). Changes to items in a Workspace can be version-controlled and tracked through Git.
+**Git Integration (Continuous Integration)**: allows you to synchronize items in a Workspace (such as code, configurations, or APIs) with repositories in [**version control systems**](..\cicd\git-integration\intro-to-git-integration.md). Changes to items in a Workspace can be version-controlled and tracked through Git.
 
 **Deployment Pipelines (Continuous Deployment)**: enable the creation of stages (for example, Development, Test, Production) with linked Workspaces. Items supported in each stage are automatically replicated to subsequent stages, and changes in a Workspace trigger deployment in a release pipeline. Developers can configure the pipeline to ensure that changes are tested and deployed efficiently across environments.  
 
-Fabric provides you with different options for building CI/CD processes, based on common scenarios. Please see [**CI/CD workflow options in Fabric**](https://learn.microsoft.com/fabric/cicd/manage-deployment).  
+Fabric provides you with different options for building CI/CD processes, based on common scenarios. Please see [**CI/CD workflow options in Fabric**](..\cicd\manage-deployment.md).  
 
 > [!NOTE]
 > During deployment only metadata is being copied, and data isn't copied.  
@@ -35,7 +35,7 @@ Items from Workspace are stored in the associated Git repository as Infrastructu
 
 ## Data Source Authentication Methods
 
-In this section, you learn about data source authentication methods for connecting data sources to your API for GraphQL and understand how that may impact autobinding between the API for GraphQL and its connected data sources in development pipelines. You can learn more about autobinding in [**The Deployment Pipeline Process**](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/understand-the-deployment-process?tabs=new#autobinding).  
+In this section, you learn about data source authentication methods for connecting data sources to your API for GraphQL and understand how that may impact autobinding between the API for GraphQL and its connected data sources in development pipelines. You can learn more about autobinding in [**The Deployment Pipeline Process**](..\cicd\deployment-pipelines\understand-the-deployment-process.md).  
 
 There are two options available to connect data sources to your API for GraphQL:
 
@@ -46,7 +46,7 @@ There are two options available to connect data sources to your API for GraphQL:
 
     The first option, **Single sign-on (SSO)**, enables connections to data sources within Fabric. In this case, when you connect a data source to GraphQL using Single sign-on method in the original Workspace (for example, Dev stage), the data source and GraphQL item will be deployed to the target Workspace (for example, Test stage) in the pipeline, and GraphQL in the target Workspace will be automatically connected to the deployed local data source in the target Workspace. (see the diagram below)
 
-    The second option, **Saved Credential**, enables connections to external data sources outside Fabric and data sources within Fabric. However, [**autobinding**](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/understand-the-deployment-process?tabs=new#autobinding) isn't supported for the Saved Credential approach. This means that if you connect a data source to GarphQL using Saved Credential in the original Workspace (Dev stage), the data source will be deployed to the target Workspace (Test stage) in the pipeline. However, the GraphQL item in the target Workspace will remain connected to the data source in the original Workspace (Dev stage) through the Saved Credentials, rather than autobinding to a local data source in the target Workspace. (**see the diagram below**)
+    The second option, **Saved Credential**, enables connections to external data sources outside Fabric and data sources within Fabric. However, [**autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) isn't supported for the Saved Credential approach. This means that if you connect a data source to GarphQL using Saved Credential in the original Workspace (Dev stage), the data source will be deployed to the target Workspace (Test stage) in the pipeline. However, the GraphQL item in the target Workspace will remain connected to the data source in the original Workspace (Dev stage) through the Saved Credentials, rather than autobinding to a local data source in the target Workspace. (**see the diagram below**)
 
     Additionally, if the **Saved Credential** method is used to connect to data sources, developers must have access to the Saved Credential information in order to successfully deploy GraphQL item.  
 
@@ -57,11 +57,11 @@ There are two options available to connect data sources to your API for GraphQL:
 
 ## API for GraphQL Git Integration
 
-Fabric API for GraphQL offers Git integration for source control. With Git integration, you can back up and version your API for GraphQL, revert to previous stages as needed, collaborate or work alone using [**Git branches**](https://learn.microsoft.com/fabric/cicd/git-integration/manage-branches?tabs=azure-devops), and manage your API for GraphQL lifecycle entirely within Fabric.
+Fabric API for GraphQL offers Git integration for source control. With Git integration, you can back up and version your API for GraphQL, revert to previous stages as needed, collaborate or work alone using [**Git branches**](..\cicd\git-integration\manage-branches.md), and manage your API for GraphQL lifecycle entirely within Fabric.
 
 **Set up a Connection:**
 
-From your workspace settings, you can easily set up a connection to your repo to commit and sync changes. To set up the connection see [**Get started with Git integration**](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started). Once connected, your items, including API for GraphQL, appear in the **Source control** panel.
+From your workspace settings, you can easily set up a connection to your repo to commit and sync changes. To set up the connection see [**Get started with Git integration**](..\cicd\git-integration\git-get-started.md). Once connected, your items, including API for GraphQL, appear in the **Source control** panel.
 
 :::image type="content" source="media\graphql-source-control-and-deployment\graphql-source-control-workspaceview.png" alt-text="Screenshot of workspace and source control status.":::
 
@@ -81,7 +81,7 @@ When you commit the API for GraphQL item to the Git repo, the API for GraphQL de
 
 Use the following steps to complete your API for GraphQL deployment using the deployment pipeline.
 
-1. Create a new deployment pipeline or open an existing deployment pipeline. For more information, see [**Get started with deployment pipelines**](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines).
+1. Create a new deployment pipeline or open an existing deployment pipeline. For more information, see [**Get started with deployment pipelines**](..\cicd\deployment-pipelines\get-started-with-deployment-pipelines.md).
 
 2. Assign workspaces to different stages according to your deployment goals.
 
@@ -99,11 +99,11 @@ The next message pops up confirming the items that you're about to deploy. Selec
 
 ## Current Limitations
 
-1. Fabric CI/CD doesn't support [**autobinding**](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/understand-the-deployment-process?tabs=new#autobinding) for the child artifact. That means that if the API for GraphQL connects to SQL Analytics Endpoint as a child of a data source in original Workspace (for example, in Dev stage), the lineage doesn't carry over to the target Workspace (for example, Test stage), and the deployed API for GraphQL in the target Workspace (e.g Test stage) still remains connected to the SQL Analytics Endpoint in the original Workspace (Dev stage).
+1. Fabric CI/CD doesn't support [**autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) for the child artifact. That means that if the API for GraphQL connects to SQL Analytics Endpoint as a child of a data source in original Workspace (for example, in Dev stage), the lineage doesn't carry over to the target Workspace (for example, Test stage), and the deployed API for GraphQL in the target Workspace (e.g Test stage) still remains connected to the SQL Analytics Endpoint in the original Workspace (Dev stage).
 
 2. Deploying API for GraphQL by using a Service Principal isn't supported.  
 
-3. [**Autobinding**](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/understand-the-deployment-process?tabs=new#autobinding) isn't supported when the **Saved Credential** approach is used for data source connections. For more information, please check out the **Data Source Authentication Methods** section described above.
+3. [**Autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) isn't supported when the **Saved Credential** approach is used for data source connections. For more information, please check out the **Data Source Authentication Methods** section described above.
 
 ## Related content
 
@@ -111,8 +111,8 @@ The next message pops up confirming the items that you're about to deploy. Selec
 
 * [API for GraphQL in Fabric](get-started-api-graphql.md)
 
-* [Git Integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git)
+* [Git Integration](..\cicd\git-integration\git-get-started.md)
 
-* [Deployment Pipelines](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/intro-to-deployment-pipelines?tabs=new)
+* [Deployment Pipelines](..\cicd\deployment-pipelines\intro-to-deployment-pipelines.md)
 
-* [CI/CD Workflow Options in Fabric](https://learn.microsoft.com/fabric/cicd/manage-deployment)
+* [CI/CD Workflow Options in Fabric](..\cicd\manage-deployment.md)
