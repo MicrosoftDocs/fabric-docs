@@ -37,18 +37,14 @@ The first stage of capacity overload occurs when the overload lasts between 10 a
 - Sending of test alerts is delayed by 20 seconds.
 
 - Running of interactive queries is delayed and a banner informs the user that capacity is exceeded.
-
-
-
-    :::image type="content" source="media/activator-throttling-effects/activator-throttling-banner.png" alt-text="Screenshot shows the banner that displays when capacity is exceeded.":::
-
+  
+  :::image type="content" source="media/activator-throttling-effects/activator-throttling-banners.png" alt-text="Screenshot shows the banner that displays when capacity is exceeded.":::
+  
 ### Overloads lasting between 60 minutes and up to 24 hours
 
 The second stage of capacity overload occurs when the overload lasts between 60 minutes and 24 hours. During this stage, Activator takes a few more steps to prioritize background processing over interactive UI usage and minimize business impact on the customer. All interactive UI operations are rejected. The rejections include not displaying data-aware graphs or data-aware dropdowns. Also, Activator doesn't send test alerts.
 
-
-
-:::image type="content" source="media/activator-throttling-effects/media/activator-throttling-effects/activator-throttling-exceeded.png" alt-text="Screenshot shows the banner that tells customers that interactive queries are not available.":::
+:::image type="content" source="media/activator-throttling-effects/activator-throttling-exceeds.png" alt-text="Screenshot shows the banner that tells customers that interactive queries are not available.":::
 
 ### Overloads lasting over 24 hours
 
@@ -56,12 +52,12 @@ The third stage of capacity overload occurs when the overload lasts longer than 
 
 - System notifications are sent to inform item owners that Activator is pausing rule evaluations.
 
-    :::image type="content" source="media/activator-throttling-effects/activator-throttling-email.png" alt-text="Screenshot shows a sample email sent to a customer explaining the stage three throttling.":::
+  :::image type="content" source="media/activator-throttling-effects/activator-throttling-emails.png" alt-text="Screenshot shows a sample email sent to a customer explaining the stage three throttling.":::
   
 - Banners inform users about the exceeded capacity and rejected interactive and background operations:
 
-    :::image type="content" source="media/activator-throttling-effects/activator-throttling-capacity-paused.png" alt-text="Screenshot shows a sample email sent to a customer explaining the results of exceeding capacity.":::
-
+  :::image type="content" source="media/activator-throttling-effects/activator-throttling-capacity-paused.png" alt-text="Screenshot shows a sample email sent to a customer explaining the results of exceeding capacity.":::
+  
 ## Recover from overload situations
 
 You have the option to simply wait for Activator to recover on its own. Don't issue new rule requests while you are waiting. But if the overload situation continues, there are several actions that the Fabric Capacity administrator can take to recover from capacity overload. 
