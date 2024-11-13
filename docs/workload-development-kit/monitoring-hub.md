@@ -22,6 +22,7 @@ To enable job support, the item must specify the types of jobs it supports. Add 
 | *OnDemandJobDeduplicateOptions* |Sets the deduplication option for on-demand item jobs. | - *None*: Don't deduplicate the job. <br> - *PerArtifact*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
 | *ScheduledJobDeduplicateOptions* | Sets the deduplication option for on-demand item jobs. |- *None*: Don't deduplicate the job. <br> - *PerArtifact*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
 |*ItemJobTypes*| A list of job types with the specified properties. | - *Name*: The name of the job type, which is fully customizable by the ISV.
+
 ### Step 2: Implement Jobs Workload APIs
 
 To integrate with Jobs, the workload must implement the Jobs APIs as defined in the [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json).
@@ -31,15 +32,17 @@ There are three APIs related to Jobs:
 ---
 
 #### **1. Start Job Instance**
+
 **Endpoint:** `POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}`
 
-This API is called to initiate the execution of a job. 
+This API is called to initiate the execution of a job.
 
 - **Response:** The API should return a `202 Accepted` status, indicating that the job has been successfully scheduled by the system.
 
 ---
 
 #### **2. Get Job Instance State**
+
 **Endpoint:** `GET /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}`
 
 Fabric uses a polling mechanism to track job instance status. This API is called every minute while the job instance is in progress to check its status. Polling stops once the job is completed, whether successfully or due to failure.
@@ -47,18 +50,18 @@ Fabric uses a polling mechanism to track job instance status. This API is called
 - **Response:** The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job has failed.
 
    **Supported Job Statuses:**
-   - `NotStarted`
-   - `InProgress`
-   - `Completed`
-   - `Failed`
-   - `Cancelled`
+  - `NotStarted`
+  - `InProgress`
+  - `Completed`
+  - `Failed`
+  - `Cancelled`
 
    **Important:** Even if the job has failed, this API should still return a `200 OK` status with a `Failed` job status.
 
 ---
 
-
 #### **3. Cancel Job Instance**
+
 **Endpoint:** `POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}/cancel`
 
 This API is called to cancel an ongoing job instance.
@@ -73,6 +76,7 @@ This API is called to cancel an ongoing job instance.
 A job is marked as a "dead letter" by the Fabric platform if it hasn't started within 2 hours.
 
 ### Example Implementation
+
 For an example implementation of these APIs, refer to `JobsControllerImpl.cs` in the [Microsoft Fabric Workload Development Sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample).
 
 ## Frontend
@@ -81,19 +85,19 @@ For an example implementation of these APIs, refer to `JobsControllerImpl.cs` in
 
 After integrating jobs into your items in the backend, users can start running jobs. There are two ways to run jobs in Fabric:
 
-* **Unattended Scheduled Job:** Defined by the user to run at regular intervals using shared Fabric scheduler experience. 
-* **On-demand using Workload UI with Extension Client SDK:**
+- **Unattended Scheduled Job:** Defined by the user to run at regular intervals using shared Fabric scheduler experience.
+- **On-demand using Workload UI with Extension Client SDK:**
 
 #### Fabric scheduler experience from the UI
 
-* Entry Points:
-   * Context menu -> Schedule
-   
+- Entry Points:
+  - Context menu -> Schedule
+
     :::image type="content" source="./media/monitoring-hub/fabric-scheduler-menu.png" alt-text="Screenshot showing the Schedule option in the Fabric scheduler menu.":::
 
-    *  Using `workloadClient.itemSettings.open`, where the selected settings ID is 'Schedule'.
+  - Using `workloadClient.itemSettings.open`, where the selected settings ID is 'Schedule'.
 
-* Layout
+- Layout
 
     :::image type="content" source="./media/monitoring-hub/fabric-scheduler-set.png" alt-text="Screenshot showing Fabric scheduler settings.":::
 
@@ -124,22 +128,22 @@ Add a new 'schedule' entry to the item settings property in the frontend manifes
 }
 ```
 
-* `itemJobType`: item job type defined in item job definition XML file.
-* `refreshType`: Specifies the display of the refresh button. There are three types: use "Refresh" and "Run" to enable refresh button and display name, set "None" to disable the refresh button.
+- `itemJobType`: item job type defined in item job definition XML file.
+- `refreshType`: Specifies the display of the refresh button. There are three types: use "Refresh" and "Run" to enable refresh button and display name, set "None" to disable the refresh button.
 
 #### Jobs JavaScript APIs
 
 In addition to unattended scheduled jobs, a workload can run a job on demand or even start a scheduled job on demand. We provide a set of APIs as part of our extension client:
 
-* **Scheduled jobs APIs:**
-    * `getItemScheduledJobs(objectId: string): Promise<ItemSchedule>`
-    * `createItemScheduledJobs(createItemScheduledJobs: CreateItemScheduleParams): Promise<ItemSchedule>`
-    * `updateItemScheduledJobs(updateItemScheduleParams: UpdateItemScheduleParams): Promise<ItemSchedule>`
+- **Scheduled jobs APIs:**
+  - `getItemScheduledJobs(objectId: string): Promise<ItemSchedule>`
+  - `createItemScheduledJobs(createItemScheduledJobs: CreateItemScheduleParams): Promise<ItemSchedule>`
+  - `updateItemScheduledJobs(updateItemScheduleParams: UpdateItemScheduleParams): Promise<ItemSchedule>`
 
-* **Specific job instance APIs:**
-    * `runItemJob(jobParams: RunItemJobParams): Promise<ItemJobInstance>`
-    * `cancelItemJob(jobParams: CancelItemJobParams): Promise<CancelItemJobResult>`
-    * `getItemJobHistory(getHistoryParams: GetItemJobHistoryParams): Promise<ItemJobHistory>`
+- **Specific job instance APIs:**
+  - `runItemJob(jobParams: RunItemJobParams): Promise<ItemJobInstance>`
+  - `cancelItemJob(jobParams: CancelItemJobParams): Promise<CancelItemJobResult>`
+  - `getItemJobHistory(getHistoryParams: GetItemJobHistoryParams): Promise<ItemJobHistory>`
 
 > [!NOTE]
 > `getItemJobHistory` returns the job with the status currently stored in Fabric. As we currently rely solely on polling, be aware that the status might not be the most up-to-date. If you require your UI to reflect the most accurate status as soon as possible, we recommend obtaining the status directly from your backend.
@@ -193,7 +197,7 @@ When the workload team registers the action for detailed information, Fabric exp
 
 Currently, key value pairs in plain text or hyperlink is supported.
 
-* For an example of handling the job actions, see index.worker.ts that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.job'.
+- For an example of handling the job actions, see index.worker.ts that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), and search for actions starting with 'item.job'.
 
 ### Recent runs
 
@@ -201,11 +205,11 @@ In addition to viewing jobs in the monitoring hub, Fabric also offers a shared u
 
 Entry Points:
 
-* **Context menu** > **Recent runs**
+- **Context menu** > **Recent runs**
 
     :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the options menu. ":::
 
-* Using `workloadClient.itemRecentRuns.open`.
+- Using `workloadClient.itemRecentRuns.open`.
 
 **Onboarding**
 
@@ -235,8 +239,8 @@ As part of our UI workload sample, we added a section in the item ribbon dedicat
 
 :::image type="content" source="./media/monitoring-hub/artifact-tab.png" alt-text="Screenshot showing the item tab in the Fabric UI.":::
 
-For an example of how this ribbon was implemented, see ItemTabToolbar.tsx, that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample). 
+For an example of how this ribbon was implemented, see ItemTabToolbar.tsx, that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample).
 
 ## Related links
 
-* [Use the Monitoring hub](../admin/monitoring-hub.md)
+- [Use the Monitoring hub](../admin/monitoring-hub.md)

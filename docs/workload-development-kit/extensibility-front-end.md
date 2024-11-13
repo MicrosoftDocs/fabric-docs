@@ -14,15 +14,17 @@ ms.date: 05/21/2024
 This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric development kit's framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
 The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our workload client SDK, a standard npm package, to enable its functionality.
+
 The ISV hosts and runs it inside a sandboxed `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
+
 The SDK provides all the necessary interfaces, APIs, and bootstrap functions required to transform a regular web app into a Micro Frontend web app that operates seamlessly within the Fabric portal.
 
 The SDK provides a sample UI with the following features:
 
-* Showcases the usage of most of the available SDK calls
-* Demonstrates an example of the Fluent UI-based extensible **Ribbon** that matches the look and feel of Fabric
-* Allows easy customization
-* Allows you to observe changes in Fabric in real time, while in Fabric Development Mode
+* Showcases the usage of most of the available SDK calls.
+* Demonstrates an example of the Fluent UI-based extensible **Ribbon** that matches the look and feel of Fabric.
+* Allows easy customization.
+* Allows you to observe changes in Fabric in real time, while in Fabric Development Mode.
 
 ## Prerequisites
 
@@ -91,18 +93,25 @@ To set up the front end of the sample project, follow these steps:
    This command starts a **local** Node.js server (using `webpack`), that Microsoft Fabric connects to when in Development Mode.
 
    Refer to the localhost server notes for port details that appear after it starts.
+
    The current port is `60006`.
+
    After the localhost server starts, opening the URL: `127.0.0.1:60006/manifests` fetches the aggregated manifest created from the 'Frontend/Package' folder.
+
    Open it to verify that the server is up and running.
 
    Modifying source files triggers a reload of contents in Fabric through `webpack`, if it's already connected.
+
    However, typically, you would still need to refresh the page.
 
    If you change files under the 'Frontend/Package' folder , you should "npm start" again.
 
 1. **Run**
+
    In Fabric, enable the Fabric Developer mode setting, to allow Fabric to access your localhost server.
+
    Go to **Developer Settings** --> **Fabric Developer Mode** and refresh the page.
+
    This setting is persisted in the current browser.
 
    :::image type="content" source="./media/extensibility-front-end/developer-mode.png" alt-text="Screenshot of a product switcher example in developer mode.":::
@@ -115,7 +124,7 @@ To run a typical *Hello World* test scenario:
 
    :::image type="content" source="./media/extensibility-front-end/product-switcher.png" alt-text="Screenshot of the Product Switcher Example Image.":::
 
-1. Select the **Sample Workload** and navigate the user to the Sample workload Home page. The upper section presents the *Create* Experience:
+1. Select the **Sample Workload** and go the user to the Sample workload Home page. The upper section presents the *Create* Experience:
 
    :::image type="content" source="./media/extensibility-front-end/create-card.png" alt-text="Screenshot of the Create Card image on the sample extension home page.":::
 
@@ -135,7 +144,9 @@ Most of the available SDK functionality is either wired to the button actions, o
 For example:
 
 * The *Execute Action* calls the `action.execute()` API with an action named *sample.Action*. The action's functionality is to show a notification.
+
 * Select *Save* on the Ribbon to call the `dialog.open()` API, which opens a dialog where a user provides a name and saves the item in Fabric (this dialog is further explored in the [CRUD section](#crud-operations)).
+
 * *Get Theme Settings* button shows a list of Fabric's theme configurations (via the `theme.get()` API).
 
 The Sample Workload UI is hosted in a Fabric sandboxed `iframe` that we can see when we examine the page's DOM:
@@ -163,7 +174,9 @@ if (url.pathname?.startsWith(redirectUriPath)) {
 Every Fabric Workload app needs to support being loaded in two modes:
 
 * **UI mode**: Am app in UI mode is loaded in visible iFrames and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
+
 * **Worker mode**: An app in worker mode runs in an invisible iFrame, which is primarily used to receive commands sent from the outside world and respond to them.
+
 `@ms-fabric/workload-client` provides a `bootstrap()` method to simplify the initialization steps. The bootstrap() method internally detects whether the current app is loaded in UI mode or worker mode, and then calls the appropriate initialization method (initializeUI or initializeWorker). After the initialization is complete, bootstrap() notifies Fabric micro-frontend framework of the initialization success or failure.
 
 ```javascript
@@ -178,7 +191,9 @@ bootstrap({
 ### index.worker
 
 This is the main `onAction` registration. It handles events sent from the Fabric host, which are themselves triggered by executed *actions*.
+
 These actions can be sent either by the workload itself to Fabric, and then called-back into the `onAction` handler, or they can be initiated by the Fabric host. For example, when clicking on *Create Sample Item - Frontend Only*, Fabric triggers the action 'open.createSampleWorkloadFrontendOnly', and the onAction handler initiates the opening of the workload main UI page, as seen in the following code.
+
 The current workspace `objectId` is passed into the frontend-only experience as well.
 
 ```javascript
@@ -213,19 +228,20 @@ The following diagram describes how an action is invoked and handled:
 ### index.ui
 
 The `initialize()` function renders the React DOM where the `App` function is embedded. To invoke the API calls, pass the `workloadClient` SDK handle, which is used throughout the code.
+
 The `FluentProvider` class ensures style consistency across the various FluentUI controls.
 
- ```react
- ReactDOM.render(
-        <FluentProvider theme={fabricLightTheme}>
-            <App
-                history={history}
-                workloadClient={workloadClient}
-            />
-        </FluentProvider>,
-        document.querySelector("#root")
-    );
- ```
+```react
+ReactDOM.render(
+      <FluentProvider theme={fabricLightTheme}>
+           <App
+               history={history}
+               workloadClient={workloadClient}
+           />
+       </FluentProvider>,
+       document.querySelector("#root")
+   );
+```
 
 ### Development flow
 
@@ -295,9 +311,11 @@ An example with `notification.open()` API:
 ### CRUD operations
 
 While a frontend-only development scenario is easily supported, the full end-to-end developer experience requires saving, reading, and editing existing workload items.
+
 The [Back-end implementation guide](extensibility-back-end.md) describes in detail how to set up and use the backend side.
 
 Once the backend is up and running, and the `Org.WorkloadSample.SampleWorkloadItem` type is **registered in Fabric**, you can perform CRUD operations on this type.
+
 The following operations are exposed via [ItemCrud API](/javascript/api/@ms-fabric/workload-client/itemcrudapi).
 
 #### CREATE
@@ -313,16 +331,18 @@ A sample call to `create`, as implemented when saving the workload item for the 
 ```
 
 Our sample implementation stores the created item inside the `artifactItem`.
+
 The item is created under the *currently selected workspace*. Therefore the workspace must be assigned to the capacity that is configured by the backend configuration, as detailed in the backend docs.
+
 Any attempt to create an item under a noncompatible workspace fails.
 
 * The `onCreateFabricItem` callback in the backend blocks the *CREATE* call - a failure there causes the operation to fail and no item is created in Fabric. See backend's debugging/TSG documentation.
 
-* Currently, a saved item doesn't automatically appear in the workspace. A page refresh is needed.
+* Currently, a saved item doesn't automatically appear in the workspace. Refresh the page to view a saved item in the workspace.
 
 #### GET
 
-When you select an existing Sample Workload item in the workspace view, Fabric navigates to the route that is defined in the Frontend manifest, under `artifacts`-->`editor`-->`path`:
+When you select an existing Sample Workload item in the workspace view, Fabric goes to the route that is defined in the Frontend manifest, under `artifacts`-->`editor`-->`path`:
 
 ```json
 "artifacts": [
@@ -345,18 +365,20 @@ Updated an existing item with `itemCrud.updateItem`. The Workload payload itself
 #### DELETE
 
 Call the *delete* operation either from Fabric's Workspace view (as a general action available for all items), or via an explicit call from the Workload to `itemCrud.deleteItem`.
+
 Both calls go through the Workload backend's `onDeleteItem` callback.
 
 ### Authentication
 
- In the sample workload editor, there's a section that lets you navigate to the authentication section.
- Before you use authentication API, configure a Microsoft Entra app Microsoft Entra ID.
- Additionally, ensure that your env.dev file is configured accurately. For more details refer to:
- [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend)
+In the sample workload editor, there's a section that lets you go to the authentication section.
+
+Before you use authentication API, configure a Microsoft Entra app Microsoft Entra ID.
+
+Additionally, ensure that your env.dev file is configured accurately. For more information, see [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend).
 
 ## Step 4: Debug
 
-To see the Worker and UI iFrames, open the **Source** tab of the browser's DevTools (<kbd>F12</kbd>).
+To see the Worker and UI iFrames, open the **Source** tab of the browser's DevTools (select F12).
 
 :::image type="content" source="./media/extensibility-front-end/debugging.png" alt-text="Screenshot of debugging files in VS Code.":::
 
@@ -365,12 +387,15 @@ You can place a breakpoint both in the Worker iFrame and see the main `switch` o
 ## Fluent UI controls
 
 UX Workloads use Fluent UI controls for visual consistency with Fabric and ease of development. The Sample Workload provides examples of how to use the most common controls.
-More information can be found [on the Fluent UI page](https://develop.fluentui.dev/get-started/develop).
 
-## Frontend Manifest customization
+For more information, see [Fluent UI](https://develop.fluentui.dev/get-started/develop).
+
+## Frontend manifest customization
 
 The frontend manifest describes the frontend aspects of the workload - product appearance, names, visual assets, available actions, and more. It's the main point of contact between Fabric and the workload.
+
 For our sample workload, the manifest is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [in the frontend manifest files](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/Package).
+
 Changes to the manifest's entries, the wiring of different actions and updating of visual assets are seen in real time after a page refresh.
 
 ## Client SDK - supported APIs
@@ -410,5 +435,4 @@ The following APIs are supported:
 ## Related content
 
 * [Development kit overview](development-kit-overview.md)
-
 * [Backend configuration guide](extensibility-back-end.md)

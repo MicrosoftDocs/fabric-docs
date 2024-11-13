@@ -24,9 +24,10 @@ The backend stores both data and metadata. It utilizes CRUD operations to create
 
 ## Azure Relay and DevGateway
 
-*Azure Relay* enables communication between the local development environment and the Fabric backend while operating in development mode. 
+*Azure Relay* enables communication between the local development environment and the Fabric backend while operating in development mode.
 In developer mode, the workload operates on the developer's machine.
 The `DevGateway.exe` utility has two roles:
+
 * Handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity, making the workload accessible in all workspaces assigned to that capacity. The utility handles the deregistration when stopped.
 * Channels (along with Azure relay) workload API calls from Fabric to the workload.
 
@@ -44,7 +45,7 @@ Microsoft Entra ID is used for secure authentication, ensuring that all interact
 
 * [Workload authentication - Setup guide](./authentication-tutorial.md)
 
-* [Workload authentication - Architecture overview ](./authentication-concept.md)
+* [Workload authentication - Architecture overview](./authentication-concept.md)
 
 * [Workload authentication - Implementation guide](back-end-authentication.md)
 
@@ -134,7 +135,7 @@ To configure the NuGet Package Manager, specify the path in the 'Package Sources
 </Project>
 ```
 
-## Getting Started
+## Get started
 
 To set up the workload sample project on your local machine, follow these steps:
 
@@ -144,7 +145,7 @@ To set up the workload sample project on your local machine, follow these steps:
   
 1. Update the OneLake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md).
 
-1. Setup Workload Configuration
+1. Setup workload configuration
 
    * Copy workload-dev-mode.json from src/Config to `C:\`
    * In the workload-dev-mode.json file, update the following fields to match your configuration:
@@ -164,7 +165,7 @@ To set up the workload sample project on your local machine, follow these steps:
 1. Generate a manifest package.
    To generate a manifest package file, build Fabric_Extension_BE_Boilerplate. This runs a three step process to generate the manifest package file:
 
-   1. Trigger `ManifestValidator.ps1` on `WorkloadManifest.xml` in *Packages\manifest\* and trigger `ItemManifestValidator.ps1` on all items XMLs (e.g., `Item1.xml`) in *Packages\manifest\*. If the validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\*.
+   1. Trigger `ManifestValidator.ps1` on `WorkloadManifest.xml` in *Packages\manifest\* and trigger `ItemManifestValidator.ps1` on all items XMLs (e.g., `Item1.xml`) in*Packages\manifest\*. If the validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\*.
    1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in Visual Studio to see the error file.
    1. After successful validation, pack the `WorkloadManifest.xml` and `Item1.xml` files into ManifestPackage.1.0.0.nupkg. The resulting package is in **src\bin\Debug**.
 
@@ -191,7 +192,7 @@ To set up the workload sample project on your local machine, follow these steps:
 
     :::image type="content" source="./media/extensibility-back-end/boilerplate.png" alt-text="Screenshot of UI for startup project in Visual Studio.":::
 
-## Working with the Boilerplate
+## Work with the boilerplate
 
 ### Code generation
 
@@ -226,7 +227,7 @@ This is an example of the *CreateItem* method:
 public System.Threading.Tasks.Task CreateItem(System.Guid workspaceId, string itemType, System.Guid itemId, [Microsoft.AspNetCore.Mvc.FromBody] CreateItemRequest createItemRequest)
 {
 
-	return _implementation.CreateItemAsync(workspaceId, itemType, itemId, createItemRequest);
+ return _implementation.CreateItemAsync(workspaceId, itemType, itemId, createItemRequest);
 }
 ```
 
@@ -248,39 +249,39 @@ For example, this code is the implementation of *CreateItem* API:
 /// <inheritdoc/>
 public async Task CreateItemAsync(Guid workspaceId, string itemType, Guid itemId, CreateItemRequest createItemRequest)
 {
-	var authorizationContext = await _authenticationService.AuthenticateControlPlaneCall(_httpContextAccessor.HttpContext);
-	var item = _itemFactory.CreateItem(itemType, authorizationContext);
-	await item.Create(workspaceId, itemId, createItemRequest);
+ var authorizationContext = await _authenticationService.AuthenticateControlPlaneCall(_httpContextAccessor.HttpContext);
+ var item = _itemFactory.CreateItem(itemType, authorizationContext);
+ await item.Create(workspaceId, itemId, createItemRequest);
 }
 ```
 
-## Handling item payload
+## Handle item payload
 
 Several API methods accept various types of "payload" as part of the request body, or return them as part of the response. For example, *CreateItemRequest* has *creationPayload* property.
 
 ```json
 "CreateItemRequest": {
-	"description": "Create item request content.",
-	"type": "object",
-	"additionalProperties": false,
-	"required": [ "displayName" ],
-	"properties": {
-	"displayName": {
-		"description": "The item display name.",
-		"type": "string",
-		"readOnly": false
-	},
-	"description": {
-		"description": "The item description.",
-		"type": "string",
-		"readOnly": false
-	},
-	"creationPayload": {
-		"description": "Creation payload specific to the workload and item type, passed by the item editor or as Fabric Automation API parameter.",
-		"$ref": "#/definitions/CreateItemPayload",
-		"readOnly": false
-	}
-	}
+ "description": "Create item request content.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [ "displayName" ],
+ "properties": {
+ "displayName": {
+  "description": "The item display name.",
+  "type": "string",
+  "readOnly": false
+ },
+ "description": {
+  "description": "The item description.",
+  "type": "string",
+  "readOnly": false
+ },
+ "creationPayload": {
+  "description": "Creation payload specific to the workload and item type, passed by the item editor or as Fabric Automation API parameter.",
+  "$ref": "#/definitions/CreateItemPayload",
+  "readOnly": false
+ }
+ }
 }
 ```
 
@@ -288,11 +289,12 @@ The types for these "payload" properties are defined in the Swagger specificatio
 
 ```json
 "CreateItemPayload": {
-	"description": "Creation payload specific to the workload and item type.",
-	"type": "object",
-	"additionalProperties": true
+ "description": "Creation payload specific to the workload and item type.",
+ "type": "object",
+ "additionalProperties": true
 }
 ```
+
 The generated C# contract classes are defined as partial and have a dictionary with properties.
 
 ```csharp
@@ -302,14 +304,14 @@ The generated C# contract classes are defined as partial and have a dictionary w
 [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))")]
 public partial class CreateItemPayload
 {
-	private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+ private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
-	[Newtonsoft.Json.JsonExtensionData]
-	public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-	{
-		get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-		set { _additionalProperties = value; }
-	}
+ [Newtonsoft.Json.JsonExtensionData]
+ public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+ {
+  get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+  set { _additionalProperties = value; }
+ }
 }
 ```
 
@@ -346,7 +348,7 @@ namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
 
         [Newtonsoft.Json.JsonProperty("item2Metadata", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Item2Metadata Item2Metadata { get; init; }
-    }	
+    } 
 }
 ```
 
@@ -358,25 +360,25 @@ For example, this code shows how the Boilerplate sample Item1 implementation han
 ```csharp
 protected override void SetDefinition(CreateItemPayload payload)
 {
-	if (payload == null)
-	{
-		Logger.LogInformation("No payload is provided for {0}, objectId={1}", ItemType, ItemObjectId);
-		_metadata = Item1Metadata.Default.Clone();
-		return;
-	}
+ if (payload == null)
+ {
+  Logger.LogInformation("No payload is provided for {0}, objectId={1}", ItemType, ItemObjectId);
+  _metadata = Item1Metadata.Default.Clone();
+  return;
+ }
 
-	if (payload.Item1Metadata == null)
-	{
-		throw new InvalidItemPayloadException(ItemType, ItemObjectId);
-	}
+ if (payload.Item1Metadata == null)
+ {
+  throw new InvalidItemPayloadException(ItemType, ItemObjectId);
+ }
 
-	if (payload.Item1Metadata.Lakehouse == null)
-	{
-		throw new InvalidItemPayloadException(ItemType, ItemObjectId)
-			.WithDetail(ErrorCodes.ItemPayload.MissingLakehouseReference, "Missing Lakehouse reference");
-	}
+ if (payload.Item1Metadata.Lakehouse == null)
+ {
+  throw new InvalidItemPayloadException(ItemType, ItemObjectId)
+   .WithDetail(ErrorCodes.ItemPayload.MissingLakehouseReference, "Missing Lakehouse reference");
+ }
 
-	_metadata = payload.Item1Metadata.Clone();
+ _metadata = payload.Item1Metadata.Clone();
 }
 ```
 
@@ -388,7 +390,7 @@ protected override void SetDefinition(CreateItemPayload payload)
 
 **Error**:
 
-Microsoft.Identity.Client.MsalServiceException: A configuration issue is preventing authentication. Check the error message from the server for details. You can modify the configuration in the application registration portal. See `https://aka.ms/msal-net-invalid-client` for details. 
+Microsoft.Identity.Client.MsalServiceException: A configuration issue is preventing authentication. Check the error message from the server for details. You can modify the configuration in the application registration portal. See `https://aka.ms/msal-net-invalid-client` for details.
 
 Original exception: AADSTS7000215: Invalid client secret provided. Ensure the secret being sent in the request is the client secret value, not the client secret ID, for a secret added to app 'app_guid'.
 
