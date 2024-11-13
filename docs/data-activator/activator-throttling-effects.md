@@ -34,7 +34,7 @@ When a capacity overload lasts between 10 and 60 minutes:
   
 - The auto-refresh on charts is automatically disabled. The user can restart auto-refresh by toggling the "Live auto-refresh" toggle back on or by manually reloading the page.
 
-- Data-aware dropdown lists (e.g. the population or time range selectors) load time is delayed by 20 seconds
+- Data-aware dropdown lists (such as time range selectors) load time is delayed by 20 seconds
 
 - Test alerts are sent with a 20 seconds delay
 
