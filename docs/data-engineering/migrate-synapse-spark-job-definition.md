@@ -37,7 +37,7 @@ To export a Spark job definition from Azure Synapse:
 
 To create a new Spark job definition (SJD) based on the exported SJD information in Fabric:
 
-1.	**Access Fabric workspace**: Sign-in into [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-migrate-synapse-notebook-job-definition) and access your workspace.
+1.	**Access Fabric workspace**: Sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-migrate-synapse-notebook-job-definition) and access your workspace.
 1.	**Create a new Spark job definition in Fabric**:
     * In Fabric, go to **Data Engineering homepage**.
     * Select **Spark Job Definition.**
