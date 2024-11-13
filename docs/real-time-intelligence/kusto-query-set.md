@@ -61,26 +61,6 @@ Select the tab that corresponds with your desired data source type.
 
  A list of tables associated with this data source appears below the data source name in the connection pane.
 
-## Interact with data sources using the connection pane
-
-<!-- screenshot of connection pane -->
-
-The connection pane allows you to browse and switch between the data sources connected to the queryset. In the connection pane, under **Database**, select **V** to expand the data source connections menu. Select the data source you want to explore. The connection pane shows a breakdown of the following items that are included in the selected data source:
-
-* **Tables**
-* **Materialized View**
-* **Shortcuts**
-* **Functions**
-
-In the connection pane, you can explore what items are included in each section. To open the action menu, hover over the item and select the **More menu** [...]. The menu gives options to:
-
-* **Refresh data**
-* **View data profile**
-* **Insert** to create a script and paste it in to the query editor
-* **Delete**
-
-Different actions are available for different types of items.
-
 ## Write a query
 
 Now that you're connected to your data source, you can run queries on this data. The KQL Queryset uses the Kusto Query Language (KQL) to query data from any of the data sources you have access to. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
@@ -108,6 +88,49 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 On the right side of the command bar, there is a menu with additional actions to manage the multiple tabs in your queryset.
 
 :::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset.":::
+
+## Interact with data sources using the connection pane
+
+<!-- screenshot of connection pane -->
+<!-- is connection pane capital C?? -->
+
+The connection pane allows you to browse and switch between the data sources connected to the queryset tab that you are in.  At the top of the connection pane, under **Explorer**, select **V** to expand the data source connections menu. Select the data source you want to use. If you haven't previously edited the tab name, the tab name automatically becomes the name of the data source.
+
+The connection pane has two sections. The upper section lists all the items in the data source, and the lower section shows all available data sources in the queryset.
+
+### Item list
+
+In the upper section you can see all the items that are included in the data source you are using. To expand the list, select **V** next to the item name. To view the columns in each table, expand again.
+
+* Tables
+* Materialized View
+* Shortcuts
+* Functions
+
+To open the action menu, hover over an item in the epxanded list and select the **More actions** menu [...]. The menu gives options to:
+
+* Refresh database
+* View data profile
+* Insert: to create and copy a script
+* Get data: to add a new data source
+* Create a dashboard
+* Delete table
+
+Different actions are available for different item types.
+
+### Available data sources
+
+The lower section of the connection pane shows all the available data sources that are, or previously have been connected to the queryset.
+<!-- check for accuracy, "are connected / have previously been connected to / other data sources within the same cluster...."???-->
+
+To open the action menu, hover over the data source name and select the **More actions** menu [...]. The menu gives options to:
+
+* Refresh database
+* Use this database: switch to use this data source in the current tab
+* Query in a new tab: open this data source in a new tab in the queryset
+* Remove source: 
+* Remove database: 
+
 
 ## Copy query
 
