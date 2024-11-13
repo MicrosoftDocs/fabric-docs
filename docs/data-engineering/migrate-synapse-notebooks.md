@@ -1,6 +1,6 @@
 ---
 title: Migrate Azure Synapse notebooks to Fabric
-description: Learn about your diifferent options for migrating your Azure Synapse Spark notebooks to Microsoft Fabric.
+description: Learn about your different options for migrating your Azure Synapse Spark notebooks to Microsoft Fabric.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
