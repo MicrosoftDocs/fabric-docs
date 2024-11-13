@@ -11,7 +11,7 @@ ms.date: 11/13/2024
 
 # Use Iceberg tables with OneLake
 
-In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables and use them with the wide variety of Fabric workloads. This is possible using a feature called **metadata virtualization**, which makes those Iceberg tables look like Delta Lake tables from the point of view of the shortcut. When a table shortcut is created to an Iceberg table folder, OneLake automatically generates Delta Lake metadata (the Delta log) for that table and makes the metadata available virtually through the shortcut.
+In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables, enabling their use across the wide variety of Fabric workloads. This functionality is made possible through a feature called **metadata virtualization**, which allows Iceberg tables to be interpreted as Delta Lake tables from the shortcut's perspective. When you create a shortcut to an Iceberg table folder, OneLake automatically generates the corresponding Delta Lake metadata (the Delta log) for that table, making the Delta Lake metadata accessible through the shortcut.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -21,7 +21,7 @@ While this article includes guidance for writing Iceberg tables from Snowflake t
 
 ## Create a table shortcut to an Iceberg table
 
-If you've already written your Iceberg table to a storage location supported by [OneLake shortcuts](./onelake-shortcuts.md#types-of-shortcuts), follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
+If you already have an Iceberg table in a storage location supported by [OneLake shortcuts](./onelake-shortcuts.md#types-of-shortcuts), follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
 
 1.	**Locate your Iceberg table.** Find where your Iceberg table is stored, which could be in Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
 
