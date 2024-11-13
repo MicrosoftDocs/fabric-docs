@@ -3,14 +3,14 @@
 # For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
 # For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
 
-title:       # Add a title for the browser tab
-description: # Add a meaningful description for search results
+title: Activator throttling
+description: This article explains how Fabric capacity throttling impacts Activator background operations and shows up in the UI.
 author:      galir # GitHub alias
-ms.author:   gali.reznick # Microsoft alias
-ms.service:  # Add the ms.service or ms.prod value
-# ms.prod:   # To use ms.prod, uncomment it and delete ms.service
-ms.topic:    # Add the ms.topic value
+ms.author: 'mihart '
+ms.service: fabric
+ms.topic: concept-article
 ms.date:     11/12/2024
+ms.subservice: rti-activator
 ---
 
 # Understanding how Fabric capacity throttling impacts Activator
