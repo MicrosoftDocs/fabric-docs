@@ -34,6 +34,31 @@ Follow these steps to create your application:
 
 6. Once your app is registered, go to the *manage* section and select **Expose an API**.
 
+7. Next to *Application ID URI*, select **Add**.
+
+8. In the *Edit application ID URI* pane, add a URI for your application using this format: `api://localdevinstance/<tenant ID><workload><subpath>`.
+
+   * **Workload** - The name of the workload as specified in the manifest.
+   * **Tenant ID** - The tenant ID of the user used in Fabric to run the sample.
+   * The ID URI doesn't end with a slash.
+   * At the end of the *ID URI* there can be an optional subpath consisting of a string of English lower or upper case letters, numbers, and dashes, up to 36 characters.
+
+   > [!TIP]
+   > For help finding the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
+
+   For example, if the publisher's tenant ID is *853d9f4f-c71b-4420-b6ec-60e503458946*, and the workload's name is *Fabric.WorkloadSample* then:
+
+   * The following URIs *are* valid
+
+      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
+      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/abc`
+
+   * The following URIs *aren't* valid
+
+      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/`
+      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/a`
+      * Any ID URI that doesn't start with `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
+
 To work with authentication in Fabric, you need to set up a Microsoft Entra ID application. This application is used to authenticate users and authorize access to your workload. To create an application, follow these steps:
 
 
