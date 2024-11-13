@@ -26,7 +26,7 @@ If you already have Iceberg tables written to a storage location supported by [O
 1.	**Locate your Iceberg table.** Find where your Iceberg tables are stored. This could be in any of the external storage locations supported by OneLake shortcuts including Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
 
     > [!NOTE]
-    > If you're using Snowflake and are not sure where your Iceberg table is stored, you can run the following statement to see the storage location of your Iceberg table.
+    > If you're using Snowflake and aren't sure where your Iceberg table is stored, you can run the following statement to see the storage location of your Iceberg table.
     > 
     > `SELECT SYSTEM$GET_ICEBERG_TABLE_INFORMATION('<table_name>');`
     > 
@@ -63,11 +63,11 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
     If these regions are different, you'll need to use a different Fabric capacity in the same region as your Snowflake account.
 
-1.	Right-click on the Files area of your lakehouse, select Properties, and copy the URL (the HTTPS path) of that folder.
+1.	Open the menu for the Files area of your lakehouse, select Properties, and copy the URL (the HTTPS path) of that folder.
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\files-properties.png" alt-text="Screenshot showing Properties menu item.":::
 
-1.  Identify your Fabric tenant ID. Click your user profile in the top-right corner of the Fabric UI, and hover over the info bubble next to your **Tenant Name**. Copy the **Tenant ID**.
+1.  Identify your Fabric tenant ID. Select your user profile in the top-right corner of the Fabric UI, and hover over the info bubble next to your **Tenant Name**. Copy the **Tenant ID**.
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\tenant-id.png" alt-text="Screenshot showing tenant ID.":::
 
@@ -101,15 +101,14 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
 1.	Open the consent URL from the previous step in a new browser tab. If you would like to proceed, consent to the required application permissions, if prompted.
 
-1.	Back in Fabric, open your workspace and click **Manage access**, then **Add people or groups**. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the **Contributor** role.
+1.	Back in Fabric, open your workspace and select **Manage access**, then **Add people or groups**. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the **Contributor** role.
 
 1.	Back in Snowflake, use your new external volume to create an Iceberg table.
     
     ```sql
     CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.Inventory (
         InventoryId int,
-        ItemName STRING,
-        AddedTimestamp timestamptz
+        ItemName STRING
     )
     EXTERNAL_VOLUME = 'onelake_exvol'
     CATALOG = 'SNOWFLAKE'
@@ -123,7 +122,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
     ```sql
     INSERT INTO MYDATABASE.PUBLIC.Inventory
     VALUES
-    (123456,'Amatriciana','2024-01-02 03:04:05.060000000+00:00');
+    (123456,'Amatriciana');
     ```
     
 1.	Finally, in the Tables area of the same lakehouse, [you can create a OneLake shortcut to your Iceberg table](#create-a-table-shortcut-to-an-iceberg-table). This will ensure your Iceberg table appears as a Delta Lake table for consumption across Fabric.
@@ -160,7 +159,7 @@ When an Iceberg table is virtually converted to Delta Lake format, a folder name
 
 This folder will also include the `latest_conversion_log.txt` file, which contains the latest attempted conversion's success or failure details.
 
-To see the contents of this file after creating your shortcut, right-click the Iceberg table shortcut under Tables area of your lakehouse and click **View files**.
+To see the contents of this file after creating your shortcut, open the menu for the Iceberg table shortcut under Tables area of your lakehouse and select **View files**.
 
 :::image type="content" source="media\onelake-iceberg-table-shortcut\view-files.png" alt-text="Screenshot View files menu item.":::
 
@@ -230,7 +229,7 @@ The following are temporary limitations to keep in mind when using this feature:
     We're working on a fix for this issue.
      
     **Workaround:**
-    If you're using the Lakehouse table preview UI and see this issue, you can resolve this by switching to the SQL Endpoint view (top right corner, click Lakehouse view, switch to SQL Endpoint) and previewing the table from there. If you then switch back to the Lakehouse view, the table preview should display properly.
+    If you're using the Lakehouse table preview UI and see this issue, you can resolve this by switching to the SQL Endpoint view (top right corner, select Lakehouse view, switch to SQL Endpoint) and previewing the table from there. If you then switch back to the Lakehouse view, the table preview should display properly.
     
     If you're running a Spark notebook or job and encounter this error, you can resolve this by setting the `spark.sql.parquet.enableVectorizedReader` Spark configuration to `false`. Below is an example PySpark command to run in a Spark notebook:
     
@@ -258,9 +257,9 @@ The following are temporary limitations to keep in mind when using this feature:
 
 * **Iceberg table folders must contain only one set of metadata files**
 
-    If you drop and recreate an Iceberg table in Snowflake, the metadata files are not cleaned up. This is by design to support the UNDROP feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
+    If you drop and recreate an Iceberg table in Snowflake, the metadata files aren't cleaned up. This is by design to support the `UNDROP` feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
 
-    Currently, there is an issue in which conversion is attempted in this scenario, which can result in old table contents and schema information being shown in the virtualized Delta Lake table.
+    Currently, conversion is attempted in this scenario, which can result in old table contents and schema information being shown in the virtualized Delta Lake table.
 
     We're working on a fix in which conversion will fail if more than one set of metadata files are found in the Iceberg table’s metadata folder.
 
@@ -282,7 +281,7 @@ The following are temporary limitations to keep in mind when using this feature:
 
 * **Schema-enabled workspaces not yet supported**
 
-    If you create an Iceberg shortcut in a schema-enabled lakehouse, conversion will not occur for that shortcut. We're working on support for this.
+    If you create an Iceberg shortcut in a schema-enabled lakehouse, conversion won't occur for that shortcut. We're working on support for this.
 
     **Workaround:**
 
