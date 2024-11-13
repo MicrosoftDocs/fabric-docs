@@ -28,7 +28,7 @@ The first stage of capacity overload occurs when the overload lasts between 10 a
 
 - Loading and displaying of data-aware graphs is delayed by 20 seconds.
 
-   :::image type="content" source="media/activator-throttling-effects/activator-throttling-delay.png" alt-text="Screenshot that shows the delays Activator introduces in order to prioritize backend processing.":::
+  :::image type="content" source="media/activator-throttling-effects/activator-throttling-delay.png" alt-text="Screenshot that shows the delays Activator introduces in order to prioritize backend processing.":::
   
 - Auto-refreshing of graphs is disabled. The user can restart auto-refresh by toggling the **Live auto-refresh** on or by manually reloading the browser page.
 
