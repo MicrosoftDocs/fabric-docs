@@ -15,7 +15,7 @@ In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables and
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-:::image type="content" source="media\onelake-iceberg-table-shortcut\iceberg-shortcut-diagram.png" alt-text="Screenshot showing shortcut creation menu item under Tables.":::
+:::image type="content" source="media\onelake-iceberg-table-shortcut\iceberg-shortcut-diagram.png" alt-text="Diagram illustrating Delta Lake metadata virtualization.":::
 
 While this article includes guidance for writing Iceberg tables from Snowflake to OneLake, this feature is intended to work with any Iceberg tables with Parquet data files.
 
@@ -76,22 +76,26 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
     > [!NOTE]
     > Snowflake requires the URL scheme to be `azure://`, so be sure to change `https://` to `azure://`.
 
-        CREATE OR REPLACE EXTERNAL VOLUME onelake_exvol
-        STORAGE_LOCATIONS =
+    ```sql
+    CREATE OR REPLACE EXTERNAL VOLUME onelake_exvol
+    STORAGE_LOCATIONS =
+    (
         (
-            (
-                NAME = 'onelake_exvol'
-                STORAGE_PROVIDER = 'AZURE'
-                STORAGE_BASE_URL = 'azure://<path_to_Files>/icebergtables'
-                AZURE_TENANT_ID = '<Tenant_ID>'
-            )
-        );
+            NAME = 'onelake_exvol'
+            STORAGE_PROVIDER = 'AZURE'
+            STORAGE_BASE_URL = 'azure://<path_to_Files>/icebergtables'
+            AZURE_TENANT_ID = '<Tenant_ID>'
+        )
+    );
+    ```
 
     With the above sample, any tables created using this external volume will be stored in the Fabric lakehouse, within the `Files/icebergtables` folder.
 
 1.	Now that your external volume is created, run the command below to retrieve the consent URL and name of the application that Snowflake will use to write to OneLake. This application is used by any other external volume in your Snowflake account.
     
-        DESC EXTERNAL VOLUME onelake_exvol;
+    ```sql
+    DESC EXTERNAL VOLUME onelake_exvol;
+    ```
 
     The output of the above command will return the `AZURE_CONSENT_URL` and `AZURE_MULTI_TENANT_APP_NAME` properties. Take note of both values. The Azure multi-tenant app name will look like `<name>_<number>`, but you only need to capture the `<name>` portion.
 
@@ -101,24 +105,28 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
 1.	Back in Snowflake, use your new external volume to create an Iceberg table.
     
-        // Example statement to create an Iceberg table
-        CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.Inventory (
-            InventoryId int,
-            ItemName STRING,
-            AddedTimestamp timestamptz
-        )
-        EXTERNAL_VOLUME = 'onelake_exvol'
-        CATALOG = 'SNOWFLAKE'
-        BASE_LOCATION = 'Inventory/';
-    
+    ```sql
+    // Example statement to create an Iceberg table
+    CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.Inventory (
+        InventoryId int,
+        ItemName STRING,
+        AddedTimestamp timestamptz
+    )
+    EXTERNAL_VOLUME = 'onelake_exvol'
+    CATALOG = 'SNOWFLAKE'
+    BASE_LOCATION = 'Inventory/';
+    ```
+
     With the above statement, a new Iceberg table folder named Inventory will be created within the folder path defined in the external volume.
 
 1.  Add some data to your Iceberg table.
 
-        // Example statement to write data to an Iceberg table
-        INSERT INTO MYDATABASE.PUBLIC.Inventory
-        VALUES
-        (123456,'Amatriciana','2024-01-02 03:04:05.060000000+00:00');
+    ```sql
+    // Example statement to write data to an Iceberg table
+    INSERT INTO MYDATABASE.PUBLIC.Inventory
+    VALUES
+    (123456,'Amatriciana','2024-01-02 03:04:05.060000000+00:00');
+    ```
     
 1.	Finally, in the Tables area of the same lakehouse, [you can create a OneLake shortcut to your Iceberg table](#create-a-table-shortcut-to-an-iceberg-table). This will ensure your Iceberg table appears as a Delta Lake table for consumption across Fabric.
 
@@ -130,19 +138,21 @@ The following tips can help make sure your Iceberg tables are compatible with th
 
 Open your Iceberg folder in your preferred storage explorer tool, and check the directory listing of your Iceberg folder in its original location. You should see a folder structure like the following.
 
-    ../
-    |-- MyIcebergTable123/
-        |-- data/
-            |-- snow_A5WYPKGO_2o_APgwTeNOAxg_0_1_002.parquet
-            |-- snow_A5WYPKGO_2o_AAIBON_h9Rc_0_1_003.parquet
-        |-- metadata/
-            |-- 00000-1bdf7d4c-dc90-488e-9dd9-2e44de30a465.metadata.json
-            |-- 00001-08bf3227-b5d2-40e2-a8c7-2934ea97e6da.metadata.json
-            |-- 00002-0f6303de-382e-4ebc-b9ed-6195bd0fb0e7.metadata.json
-            |-- 1730313479898000000-Kws8nlgCX2QxoDHYHm4uMQ.avro
-            |-- 1730313479898000000-OdsKRrRogW_PVK9njHIqAA.avro
-            |-- snap-1730313479898000000-9029d7a2-b3cc-46af-96c1-ac92356e93e9.avro
-            |-- snap-1730313479898000000-913546ba-bb04-4c8e-81be-342b0cbc5b50.avro
+```
+../
+|-- MyIcebergTable123/
+    |-- data/
+        |-- snow_A5WYPKGO_2o_APgwTeNOAxg_0_1_002.parquet
+        |-- snow_A5WYPKGO_2o_AAIBON_h9Rc_0_1_003.parquet
+    |-- metadata/
+        |-- 00000-1bdf7d4c-dc90-488e-9dd9-2e44de30a465.metadata.json
+        |-- 00001-08bf3227-b5d2-40e2-a8c7-2934ea97e6da.metadata.json
+        |-- 00002-0f6303de-382e-4ebc-b9ed-6195bd0fb0e7.metadata.json
+        |-- 1730313479898000000-Kws8nlgCX2QxoDHYHm4uMQ.avro
+        |-- 1730313479898000000-OdsKRrRogW_PVK9njHIqAA.avro
+        |-- snap-1730313479898000000-9029d7a2-b3cc-46af-96c1-ac92356e93e9.avro
+        |-- snap-1730313479898000000-913546ba-bb04-4c8e-81be-342b0cbc5b50.avro
+```
 
 If you do not see the metadata folder, or if you do not see files with the extensions shown in the above example, then you might not have a properly generated Iceberg table.
 
@@ -158,15 +168,17 @@ To see the contents of this file after creating your shortcut, right-click the I
 
 You should see a structure like the following:
 
-    Tables/
-    |-- MyIcebergTable123/
-        |-- data/
-            |-- <data files>
-        |-- metadata/
-            |-- <metadata files>
-        |-- _delta_log/   <-- Virtual folder. This not exist in the original location.
-            |-- 00000000000000000000.json
-            |-- latest_conversion_log.txt   <-- Conversion log.
+```
+Tables/
+|-- MyIcebergTable123/
+    |-- data/
+        |-- <data files>
+    |-- metadata/
+        |-- <metadata files>
+    |-- _delta_log/   <-- Virtual folder. This not exist in the original location.
+        |-- 00000000000000000000.json
+        |-- latest_conversion_log.txt   <-- Conversion log.
+```
 
 Open the conversion log file to see the latest conversion time or failure details. If you don't see a conversion log file, this means that [conversion was not attempted](#if-conversion-was-not-attempted).
 
@@ -213,14 +225,18 @@ The following are temporary limitations to keep in mind when using this feature:
     
     If your Iceberg table is written by Snowflake and the table contains column types that have a maximum width that is larger than what `INT32` can contain, such as `INT64`, `double`, or `Decimal` with precision >= 10, then the resulting virtual Delta Lake table may not be consumable by all Fabric engines. You may see errors such as:
      
-         Parquet column cannot be converted in file ... Column: [ColumnA], Expected: decimal(18,4), Found: INT32.
+    ```
+    Parquet column cannot be converted in file ... Column: [ColumnA], Expected: decimal(18,4), Found: INT32.
+    ```
      
     **Workaround:**
     If you are using the Lakehouse table preview UI and see this issue, you can resolve this by switching to the SQL Endpoint view (top right corner, click Lakehouse view, switch to SQL Endpoint) and previewing the table from there. If you then switch back to the Lakehouse view, the table preview should display properly.
     
     If you are running a Spark notebook or job and encounter this error, you can resolve this by setting the `spark.sql.parquet.enableVectorizedReader` Spark configuration to `false`. Below is an example PySpark command to run in a Spark notebook:
     
-        spark.conf.set("spark.sql.parquet.enableVectorizedReader","false")
+    ```
+    spark.conf.set("spark.sql.parquet.enableVectorizedReader","false")
+    ```
 
 * **Iceberg table metadata storage is not portable**
 
