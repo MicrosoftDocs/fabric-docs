@@ -44,7 +44,7 @@ When a capacity overload lasts between 10 and 60 minutes:
 
 The delays introduced in this scenario are meant to prevent further overload and prioritize background processing over interactive UI usage to minimize business impact on the customer. The business logic keeps running, while UI operations are delayed.
 
-### For capacity overloads lasting between 60 minutes and up to 24 hours
+### Overloads lasting between 60 minutes and up to 24 hours
 
 - All interactive UI operations are rejected:
   - Rejecting showing data-aware graphs
@@ -56,7 +56,7 @@ The delays introduced in this scenario are meant to prevent further overload and
     ![activator-throttling-exceeded](media/activator-throttling-effects/activator-throttling-exceeded.png)
 
 
-### Capacity overloads lasting over 24 hours
+### Overloads lasting over 24 hours
 
 The system starts rejecting background operations.
 
@@ -69,7 +69,7 @@ The system starts rejecting background operations.
     ![activator-throttling-capacity-paused](media/activator-throttling-effects/activator-throttling-capacity-paused.png)
 
 
-## Actions you can take to recover from overload situations
+## Recover from overload situations
 
 When your capacity is throttled and your users experience the above experiences, the users need to work with the Fabric capacity owner to consider and implement one of the available remediation strategies:
 
