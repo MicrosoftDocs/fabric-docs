@@ -91,7 +91,7 @@ items:
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
   - name: Enable service principal authentication
-    href: metadata-scanning-enable-read-only-apis.md
+    href: enable-service-principal-admin-apis.md
   - name: Configure Multi-Geo support
     href: service-admin-premium-multi-geo.md
 - name: Fabric tenant settings

@@ -31,7 +31,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "docs/admin/metadata-scanning-enable-read-only-apis.md",
+            "source_path_from_root": "/docs/admin/metadata-scanning-enable-read-only-apis.md",
             "redirect_url": "/fabric/admin/enable-service-principal-admin-apis",
             "redirect_document_id": false
         }                     
