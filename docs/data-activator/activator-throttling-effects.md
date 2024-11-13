@@ -6,7 +6,7 @@
 title: Activator throttling
 description: This article explains how Fabric capacity throttling impacts Activator background operations and shows up in the UI.
 author:      galir # GitHub alias
-ms.author: 'mihart '
+ms.author: 'mihart'
 ms.service: fabric
 ms.topic: concept-article
 ms.date:     11/12/2024
@@ -26,63 +26,52 @@ Activator distinguishes between three stages of capacity overload and throttling
 
 ### Overloads lasting between 10 and 60 minutes
 
-When a capacity overload lasts between 10 and 60 minutes:
+The first stage of capacity overload occurs when the overload lasts between 10 and 60 minutes. During this stage, Activator introduces several delays to prevent further overload and ensure that background processing continues to operate at peak performance. These steps are taken to prioritize background processing over interactive UI usage and minimize business impact on the customer. The business logic keeps running, while UI operations are delayed.
 
-- Activator takes an additional 20 second to load data-aware graphs in the UI.
+- Loading and displaying of data-aware graphs is delayed by 20 seconds.
 
-    ![activator-throttling-delay](media/activator-throttling-effects/activator-throttling-delay.png)
+    :::image type="content" source="media/activator-throttling-effects/activator-throttling-delay.png" alt-text="Screenshot that shows the delays Activator introduces to prioritize backend processing.":::
   
-- The auto-refresh on charts is automatically disabled. The user can restart auto-refresh by toggling the "Live auto-refresh" toggle back on or by manually reloading the page.
+- Auto-refreshing of graphs is disabled. The user can restart auto-refresh by toggling the **Live auto-refresh** on or by manually reloading the browser page.
 
-- Data-aware dropdown lists (such as time range selectors) load time is delayed by 20 seconds
+- Loading of data-aware dropdown lists (such as time range selectors) is delayed by 20 seconds.
 
-- Test alerts are sent with a 20 seconds delay
+- Sending of test alerts is delayed by 20 seconds.
 
-- A banner informs the user that capacity is exceeded and the interactive queries are delayed
+- Running of interactive queries is delayed and a banner informs the user that capacity is exceeded.
 
-    ![activator-throttling-banner](media/activator-throttling-effects/activator-throttling-banner.png)
-
-The delays introduced in this scenario are meant to prevent further overload and prioritize background processing over interactive UI usage to minimize business impact on the customer. The business logic keeps running, while UI operations are delayed.
+    :::image type="content" source="media/activator-throttling-effects/activator-throttling-banner.png)" alt-text="Screenshot shows the banner that displays when capacity is exceeded.":::
 
 ### Overloads lasting between 60 minutes and up to 24 hours
 
-- All interactive UI operations are rejected:
-  - Rejecting showing data-aware graphs
-  - Rejecting showing data-aware dropdown
-  - Rejecting sending test alert
+The second stage of capacity overload occurs when the overload lasts between 60 minutes and 24 hours. During this stage, Activator takes a few more steps to prioritize background processing over interactive UI usage and minimize business impact on the customer. All interactive UI operations are rejected. The rejections include not displaying data-aware graphs or data-aware dropdowns. Also, Activator doesn't send test alerts.
 
-- A banner informs the user about rejected interactive queries
-
-    ![activator-throttling-exceeded](media/activator-throttling-effects/activator-throttling-exceeded.png)
-
+:::image type="content" source="media/activator-throttling-effects/activator-throttling-exceeded.png)" alt-text="Screenshot shows the banner that tells customers that interactive queries are not available.":::
 
 ### Overloads lasting over 24 hours
 
-The system starts rejecting background operations.
+The third stage of capacity overload occurs when the overload lasts longer than 24 hours. During this stage, Activator starts rejecting background operations. The custome is notified by email and Activator banners. 
 
-- System notifications are sent to the artifact owner about each rule pausing evaluations.
+- System notifications are sent to inform item owners that Activator is pausing rule evaluations.
 
-    ![activator-throttling-email](media/activator-throttling-effects/activator-throttling-email.png)
+    :::image type="content" source="media/activator-throttling-effects/activator-throttling-email.png)" alt-text="Screenshot shows a sample email sent to a customer explaining the stage three throttling.":::
   
 - Banners inform users about the exceeded capacity and rejected interactive and background operations:
 
-    ![activator-throttling-capacity-paused](media/activator-throttling-effects/activator-throttling-capacity-paused.png)
-
+:::image type="content" source="media/activator-throttling-effects/activator-throttling-capacity-paused.png)" alt-text="Screenshot shows a sample email sent to a customer explaining the results of exceeding capacity.":::
 
 ## Recover from overload situations
 
-When your capacity is throttled and your users experience the above experiences, the users need to work with the Fabric capacity owner to consider and implement one of the available remediation strategies:
-
-- Wait until the overload state is over before issuing new requests.
+You have the option to simply wait for Activator to recover on its own. Don't issue new rule requests while you are waiting. But if the overload situation continues, there are several actions that the Fabric Capacity administrator can take to recover from capacity overload. 
 
 - Upgrade the SKU of the Fabric capacity.
 
-- Pause/resume the throttled capacity. Pausing effectively collects the payment for the spike and resumes from the clean slate.
+- Pause/resume the throttled capacity. Pausing effectively collects the payment for the spike and resumes from a clean slate.
 
-- Configure capacity Autoscale
+- Configure capacity Autoscale.
 
 - Move lower priority or overconsuming workspaces out of the capacity.
 
 - If Activator rule executions are causing the overload, consider stopping the rules and adjusting the conditions.
 
-[More on Fabric capacity management](/fabric/enterprise/throttling).
+For more information, see [Fabric capacity management](/fabric/enterprise/throttling).
