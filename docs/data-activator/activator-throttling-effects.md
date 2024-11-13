@@ -1,16 +1,14 @@
 ---
-# Required metadata
-# For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
-# For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
-
-title: Activator throttling
+title: "Activator throttling"
 description: This article explains how Fabric capacity throttling impacts Activator background operations and shows up in the UI.
-author:      galir # GitHub alias
-ms.author: 'mihart'
+author: mihart
+ms.author: mihart
+ms.reviewer: 'galir'
 ms.service: fabric
-ms.topic: concept-article
-ms.date:     11/12/2024
 ms.subservice: rti-activator
+ms.topic: concept-article
+ms.date: 11/12/2024
+ms.custom: ""
 ---
 
 # Understanding how Fabric capacity throttling impacts Activator
@@ -30,7 +28,7 @@ The first stage of capacity overload occurs when the overload lasts between 10 a
 
 - Loading and displaying of data-aware graphs is delayed by 20 seconds.
 
-    :::image type="content" source="media/activator-throttling-effects/activator-throttling-delay.png" alt-text="Screenshot that shows the delays Activator introduces to prioritize backend processing.":::
+   :::image type="content" source="media/activator-throttling-effects/activator-throttling-delay.png" alt-text="Screenshot that shows the delays Activator introduces in order to prioritize backend processing.":::
   
 - Auto-refreshing of graphs is disabled. The user can restart auto-refresh by toggling the **Live auto-refresh** on or by manually reloading the browser page.
 
@@ -40,7 +38,7 @@ The first stage of capacity overload occurs when the overload lasts between 10 a
 
 - Running of interactive queries is delayed and a banner informs the user that capacity is exceeded.
 
-    :::image type="content" source="media/activator-throttling-effects/activator-throttling-banner.png)" alt-text="Screenshot shows the banner that displays when capacity is exceeded.":::
+:::image type="content" source="media/activator-throttling-effects/activator-throttling-banner.png)" alt-text="Screenshot shows the banner that displays when capacity is exceeded.":::
 
 ### Overloads lasting between 60 minutes and up to 24 hours
 
