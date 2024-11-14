@@ -585,6 +585,12 @@
         href: connector-snowflake.md
       - name: Configure in a data pipeline Copy activity
         href: connector-snowflake-copy-activity.md
+    - name: SQL database
+      items:
+      - name: SQL database - Overview
+        href: connector-sql-database-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-sql-database-copy-activity.md        
     - name: SQL Server database
       items:
       - name: SQL Server database - Overview
