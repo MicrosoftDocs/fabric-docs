@@ -57,7 +57,7 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-sql-database/query-timeout.png" alt-text="Screenshot showing Query timeout settings.":::
 
-- **Isolation level**: Specifies the transaction locking behavior for the SQL source. The allowed values are: **None**, **ReadCommitted**, **ReadUncommitted**, **RepeatableRead**, **Serializable**, or **Snapshot**. If not specified, **None** isolation level is used. Refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel) for more details.
+- **Isolation level**: Specifies the transaction locking behavior for the SQL source. The allowed values are: **ReadCommitted**, **ReadUncommitted**, **RepeatableRead**, **Serializable**, or **Snapshot**. Refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel) for more details.
 
     :::image type="content" source="./media/connector-sql-database/isolation-level.png" alt-text="Screenshot showing Isolation level settings.":::
 
@@ -83,7 +83,7 @@ The following properties are supported for SQL database under the **Destination*
 
 The following properties are **required**:
 
-- **Connection**: Select a SQL database connection from the connection list. If no connection exists, then create a new SQL database connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your SQL database, add a parameter and specify the SQL database object ID as the parameter value. To get your SQL database object ID, open your SQL database in your workspace, and the ID is after `/sqldatabases/` in your URL.
+- **Connection**: Select an SQL database connection from the connection list. If no connection exists, then create a new SQL database connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your SQL database, add a parameter and specify the SQL database object ID as the parameter value. To get your SQL database object ID, open your SQL database in your workspace, and the ID is after `/sqldatabases/` in your URL.
 
     :::image type="content" source="./media/connector-sql-database/sql-database-object-id.png" alt-text="Screenshot showing the SQL database object ID.":::
 
@@ -118,15 +118,9 @@ Under **Advanced**, you can specify the following fields:
 
     - **Key columns**: Specify the column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used.
 
-  - **Stored procedure**: Use the stored procedure that defines how to apply source data into a target table. This stored procedure is *invoked per batch*.
-    - **Stored procedure name**: Select the stored procedure or specify the stored procedure name manually when checking the **Edit** box to read data from the source table.
-    - **Stored procedure parameters**: Specify values for stored procedure parameters. Allowed values are name or value pairs. The names and casing of parameters must match the names and casing of the stored procedure parameters.
-
-      :::image type="content" source="./media/connector-sql-database/stored-procedure.png" alt-text="Screenshot showing stored procedure settings." lightbox="./media/connector-sql-database/stored-procedure.png":::
+  - **Stored procedure name**: Select the stored procedure from the drop-down list.
 
 - **Bulk insert table lock**: Choose **Yes** or **No**. Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients. For more information, go to [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql)
-
-- **Table option**: Specifies whether to [automatically create the destination table](/azure/data-factory/copy-activity-overview#auto-create-sink-tables) if the table doesn't exist based on the source schema. Choose **None** or **Auto create table**. Auto table creation isn't supported when destination specifies a stored procedure.
 
 - **Pre-copy script**: Specify a script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the preloaded data.
 
@@ -169,7 +163,7 @@ The following tables contain more information about the copy activity in SQL dat
 | **Stored procedure name** | Name of the stored procedure. | < your stored procedure name > | No |sqlReaderStoredProcedureName |
 |  |  |  |  |  |
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
-|**Isolation level** |Specifies the transaction locking behavior for the SQL source.|• None<br>• ReadCommitted<br>• ReadUncommitted<br>• RepeatableRead<br>• Serializable<br>• Snapshot|No |isolationLevel|
+|**Isolation level** |Specifies the transaction locking behavior for the SQL source.|• ReadCommitted<br>• ReadUncommitted<br>• RepeatableRead<br>• Serializable<br>• Snapshot|No |isolationLevel|
 |**Partition option** |The data partitioning options used to load data from SQL database. |• None<br>• Physical partitions of table<br>• Dynamic range |No |partitionOption:<br>• PhysicalPartitionsOfTable<br>• DynamicRange|
 |**Additional columns** |Add more data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
 
@@ -178,8 +172,8 @@ The following tables contain more information about the copy activity in SQL dat
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the destination data store.|\<your connection >|Yes|connection|
-|**Table option**|Your destination data table. Select from **Use existing** or **Auto create table**.| \<name of your destination table\> | Yes |schema <br> table|
-|**Write behavior** |Defines the write behavior when the source is files from a file-based data store.|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>• sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureParameters|
+|**Table option**|Your destination data table. Select from **Use existing** or **Auto create table**.| • Use existing<br>• Auto create table | Yes |schema <br> table|
+|**Write behavior** |Defines the write behavior when the source is files from a file-based data store.|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>• sqlWriterStoredProcedureName|
 |**Bulk insert table lock** |Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients.|Yes or No |No |sqlWriterUseTableLock:<br>true or false|
 |**Pre-copy script**|A script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the preloaded data.| \<pre-copy script><br>(string)|No |preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is "00:30:00" (30 minutes).|timespan |No |writeBatchTimeout|

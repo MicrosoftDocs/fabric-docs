@@ -15,10 +15,6 @@ ms.custom:
 
 This SQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
-
-To learn about how to connect to SQL database in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-sql-database.md#set-up-your-connection-in-dataflow-gen2).
-
 ## Support in data pipelines
 
 The SQL database connector supports the following capabilities in data pipelines:
