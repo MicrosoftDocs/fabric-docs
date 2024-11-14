@@ -98,7 +98,7 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 ## Limitations and known issues
 
 - The staging artifacts are in some experiences visible like the ALM UI. The staging artifacts will be hidden in all experiences in the future.
-- When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifact becomes visible in the workspace and are save to be deleted.
+- When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifacts become visible in the workspace and are safe to be deleted by the user.
 - Some experiences mention support for REST APIs, but these APIs aren't yet available. All Dataflow Gen2 with CI/CD and Git support will support the Fabric Public API in the future.
 - Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric pipelines.
 - Workspace view doesn't show if a refresh is ongoing for the dataflow.
