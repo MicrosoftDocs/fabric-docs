@@ -120,17 +120,15 @@ Different actions are available for different item types.
 
 ### Available data sources
 
-The lower section of the connection pane shows all the available data sources that are, or previously have been connected to the queryset.
-<!-- check for accuracy, "are connected / have previously been connected to / other data sources within the same cluster...."???-->
+The lower section of the connection pane shows all the available data sources that have been added to the queryset.
 
 To open the action menu, hover over the data source name and select the **More actions** menu [...]. The menu gives options to:
 
 * Refresh database
 * Use this database: switch to use this data source in the current tab
 * Query in a new tab: open this data source in a new tab in the queryset
-* Remove source: 
-* Remove database: 
-
+* Remove source: removes all the databases in that data source
+* Remove database: removes the selected database only
 
 ## Copy query
 
