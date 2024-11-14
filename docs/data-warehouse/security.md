@@ -44,7 +44,7 @@ For details on the specific Warehouse capabilities provided through workspace ro
 
 In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual Warehouses. The user will receive the assigned permission on that single warehouse. The primary purpose for these permissions is to enable sharing for downstream consumption of the Warehouse.
 
-For details on the specific permissions provided for warehouses, see [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md).
+For details on the specific permissions provided for warehouses, see [Share your data and manage permissions](share-warehouse-manage-permissions.md).
 
 ### Granular security
 
@@ -85,7 +85,7 @@ For details on dynamic data masking, see [Dynamic data masking in Fabric data wa
 
 Sharing is a convenient way to provide users read access to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] for downstream consumption. Sharing allows downstream users in your organization to consume a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using SQL, Spark, or Power BI. You can customize the level of permissions that the shared recipient is granted to provide the appropriate level of access.
 
-For more information on sharing, see [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md).
+For more information on sharing, see [Share your data and manage permissions](share-warehouse-manage-permissions.md).
 
 ## Guidance on user access
 
@@ -107,5 +107,5 @@ For more information on how to access user audit logs, see [Track user activitie
 
 - [Connectivity](connectivity.md)
 - [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md)
-- [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
+- [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
 - [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)

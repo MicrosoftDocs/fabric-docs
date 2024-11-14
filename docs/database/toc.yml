@@ -1,0 +1,165 @@
+items:
+- name: Fabric Databases documentation
+  href: index.yml
+- name: SQL database in Fabric 
+  expanded: true
+  items:
+  - name: Overview
+    href: sql/overview.md
+  - name: Frequently asked questions
+    href: sql/faq.yml
+  - name: Feature comparison
+    href: sql/feature-comparison-sql-database-fabric.md
+  - name: "Decision guide: Which SQL database?"
+    href: sql/decision-guide.md
+  - name: "Decision guide: Choose a data store"
+    href: ../get-started/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: Copilot
+    items:
+    - name: FAQ
+      displayName: Frequently asked questions for Copilot in SQL database
+      href: ./sql/copilot-faq.yml
+    - name: Copilot in SQL database 
+      href: sql/copilot.md
+    - name: Chat pane
+      href: ./sql/copilot-chat-pane.md
+    - name: Code completion
+      href: sql/copilot-code-completion.md
+    - name: Quick actions
+      href: sql/copilot-quick-actions.md
+  - name: Get started
+    items: 
+    - name: Connect to your SQL database
+      href: sql/connect.md
+    - name: 1. Enable SQL database in Fabric
+      href: sql/enable.md
+    - name: 2. Create a SQL database
+      href: sql/create.md
+    - name: 3. Load AdventureWorks sample Data
+      href: sql/load-adventureworks-sample-data.md
+    - name: 4. Create a table
+      href: sql/create-table.md
+    - name: 5. Query the database
+      href: sql/query.md
+    - name: 6. Query the SQL analytics endpoint
+      href: sql/query-sql-analytics-endpoint.md
+    - name: 7. Create GraphQL API in your database
+      href: sql/graphql-api.md
+    - name: 8. Create reports
+      href: sql/create-reports.md
+    - name: 9. Share data
+      href: sql/share-data.md
+  - name: Tutorial
+    items: 
+    - name: SQL database in Fabric tutorial introduction
+      href: sql/tutorial-introduction.md
+    - name: 1. Create a workspace
+      href: sql/tutorial-create-workspace.md
+    - name: 2. Create a SQL database
+      href: sql/tutorial-create-database.md
+    - name: 3. Load sample data using T-SQL and pipelines
+      href: sql/tutorial-ingest-data.md
+    - name: 4. Query the database and use Copilot
+      href: sql/tutorial-query-database.md
+    - name: 5. Query the SQL analytics endpoint
+      href: sql/tutorial-use-analytics-endpoint.md
+    - name: 6. Create and share visualizations
+      href: sql/tutorial-create-visualizations.md
+    - name: 7. Perform data analysis using notebooks
+      href: sql/tutorial-perform-data-analysis.md
+    - name: 8. Create an application with DevOps and GraphQL API
+      href: sql/tutorial-create-application.md
+    - name: 9. Clean up resources
+      href: sql/tutorial-clean-up.md
+  - name: Data recovery
+    items:
+    - name: Backups
+      href: sql/backup.md
+    - name: Restore
+      href: sql/restore.md
+  - name: Develop
+    items:
+    - name: SQL Query editor
+      href: ./sql/query-editor.md
+    - name: Source control
+      href: sql/source-control.md
+    - name: Deployment pipelines
+      href: sql/deployment-pipelines.md
+    - name: SqlPackage
+      href: sql/sqlpackage.md
+    - name: Deploy via REST API
+      href: sql/deploy-rest-api.md
+  - name: Load data into a SQL database
+    items:
+    - name: Load data with data pipelines
+      href: sql/load-data-pipelines.md
+    - name: Load data with Fabric Dataflow Gen2
+      href: sql/dataflows.md
+  - name: Mirroring to OneLake
+    items:
+    - name: Mirroring to OneLake Overview
+      displayName: Mirroring to OneLake
+      href: sql/mirroring-overview.md
+    - name: Limitations
+      displayName: Limitations of Mirroring SQL database to OneLake
+      href: sql/mirroring-limitations.md
+    - name: Monitor
+      displayName: Monitor Fabric SQL database mirroring replication
+      href: sql/mirroring-monitor.md
+    - name: FAQ
+      displayName: Mirroring SQL database frequently asked questions
+      href: sql/mirroring-faq.yml
+    - name: Troubleshooting
+      displayName: Troubleshoot Fabric SQL database mirroring
+      href: sql/mirroring-troubleshooting.md
+    - name: Secure and share
+      displayName: Secure and share mirroring for SQL database data
+      href: sql/mirroring-secure.md
+  - name: Monitor
+    items:
+    - name: Monitor
+      href: ./sql/monitor.md
+    - name: Performance Dashboard
+      href: sql/performance-dashboard.md
+    - name: Capacity usage reporting
+      href: ./sql/usage-reporting.md
+  - name: Secure and share
+    items:
+    - name: Authentication in SQL database
+      href: sql/authentication.md
+    - name: Access control in SQL database
+      href: sql/authorization.md
+    - name: Share your SQL database and manage item permissions
+      href: sql/share-sql-manage-permission.md
+    - name: Configure granular access control for a SQL database
+      href: sql/configure-sql-access-controls.md     
+  - name: Troubleshoot
+    items: 
+    - name: Limitations
+      href: sql/limitations.md
+  - name: Reference
+    items: 
+    - name: T-SQL Reference for Fabric
+      href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
+- name: Resources
+  items: 
+  - name: Contribute to Fabric docs
+    href: /contribute/
+  - name: Help
+    items:
+    - name: Microsoft Q & A >>
+      href: /answers/
+    - name: Submit feedback >>
+      href: https://feedback.azure.com/    
+  - name: Ideas
+    href: https://ideas.fabric.microsoft.com/
+  - name: Community
+    href: https://community.fabric.microsoft.com/
+  - name: Service updates
+    href: https://azure.microsoft.com/updates/    
+  - name: Azure Status
+    href: https://azure.status.microsoft/
+  - name: Learn
+    items:
+    - name: Microsoft Learn training >>
+      href: /training/

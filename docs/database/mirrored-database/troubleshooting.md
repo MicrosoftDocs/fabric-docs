@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
-ms.date: 08/05/2024
+ms.date: 11/08/2024
 ms.topic: troubleshooting
 ms.search.form: Fabric Mirroring
 ---
@@ -23,6 +23,7 @@ Review the troubleshooting section of frequently asked questions for each data s
 - [Troubleshoot Mirroring Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
 - [FAQ about Mirroring Azure Databricks](azure-databricks-faq.yml)
+- [Troubleshoot mirroring from Fabric SQL database (preview)](../sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database (preview)](../sql/mirroring-faq.yml)
 
 Review limitations documentation for each data source:
 
@@ -30,6 +31,7 @@ Review limitations documentation for each data source:
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
+- [Limitations in mirroring from Fabric SQL database](../sql/mirroring-limitations.md)
 
 ## Stop replication
 
@@ -38,10 +40,6 @@ When you select **Stop replication**, OneLake files remain as is, but incrementa
 ## Troubleshoot
 
 This section contains general Mirroring troubleshooting steps.
-
-#### Why am I getting "trial capacity" or "internal server" errors when I try to create a mirrored database"?
-
-You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
 
 #### I can't connect to a source database
 
@@ -88,4 +86,3 @@ These common error messages have explanations and mitigations:
 
 - [What is Mirroring in Fabric?](overview.md)
 - [Monitor Fabric mirrored database replication](monitor.md)
-- [Enable Mirroring](enable-mirroring.md)

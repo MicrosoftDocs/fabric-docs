@@ -4,12 +4,16 @@ description: Troubleshooting topics for mirrored databases from Azure SQL Databa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 11/05/2024
+ms.date: 11/07/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
 ---
 # Troubleshoot Fabric mirrored databases from Azure SQL Database
+
+This article covers troubleshooting steps troubleshooting for mirroring Azure SQL Database.
+
+For troubleshooting the automatically configured mirroring for Fabric SQL database, see [Troubleshoot mirroring from Fabric SQL database](../sql/mirroring-troubleshooting.md).
 
 ## Changes to Fabric capacity or workspace
 
@@ -17,8 +21,9 @@ ms.custom:
 |:--|:--|:--|
 | Fabric capacity paused/deleted | Mirroring will stop | 1. Resume or assign capacity from the Azure portal <br> 2. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**.<br> 3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Workspace deleted | Mirroring stops automatically | 1. If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
+| Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
 | Fabric trial capacity expired |  Mirroring stops automatically | See [Fabric trial capacity expires](../../get-started/fabric-trial.md#the-trial-expires). |
+| Fabric capacity exceeded | Mirroring will pause | Wait until the overload state is over or update your capacity. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations). Mirroring will continue once the capacity is recovered. |
 
 ## T-SQL queries for troubleshooting
 
@@ -68,9 +73,9 @@ User Assigned Managed Identity (UAMI) is not supported. If you add a UAMI, it be
 
 Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item.
 
-If you accidentally remove the SPN permission, Mirroring Azure SQL database will not function as expected. No new data can be mirrored from the source database.
+If you accidentally remove the SPN permission, Mirroring Azure SQL Database will not function as expected. No new data can be mirrored from the source database.
 
-If you remove Azure SQL database SPN permissions or permissions are not set up correctly, use the following steps.
+If you remove Azure SQL Database SPN permissions or permissions are not set up correctly, use the following steps.
 
 1. Add the SPN as a user by selecting the `...` ellipses option on the mirrored database item.
 1. Select the **Manage Permissions** option.

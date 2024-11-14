@@ -65,7 +65,7 @@ You can perform the following actions in the SQL analytics endpoint:
 - Join and query data in other mirrored databases, Warehouses, and Lakehouses in the same workspace.
 - You can visualize and build BI reports with a single-click based on SQL queries or views. 
 
-In addition to the [Microsoft Fabric SQL Query Editor](../../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling. These tools include Visual Studio Code, [Azure Data Studio](/sql/azure-data-studio/what-is-azure-data-studio), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), and even GitHub Copilot. You can supercharge analysis and insights generation from the tool of your choice.
+In addition to the [Microsoft Fabric SQL Query Editor](../../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling. These tools include [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), and even GitHub Copilot. You can supercharge analysis and insights generation from the tool of your choice.
 
 ### Semantic model
 

@@ -3,7 +3,7 @@ title: Create reports in the Power BI
 description: Follow steps to create reports in the Power BI Desktop and Power BI service in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade
+ms.reviewer: salilkanadey
 ms.date: 04/24/2024
 ms.topic: how-to
 ms.custom:
@@ -13,7 +13,7 @@ ms.search.form: Reporting
 ---
 # Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
 
 This article describes three different scenarios you can follow to create reports in the Power BI service.
 

@@ -5,7 +5,7 @@ ms.reviewer: akshayd
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 11/19/2024
 ---
 # Get data with Fluent Bit
 
