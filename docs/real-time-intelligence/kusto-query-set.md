@@ -98,7 +98,7 @@ The connection pane allows you to browse and switch between the data sources con
 
 The connection pane has two sections. The upper section lists all the items in the data source, and the lower section shows all available data sources in the queryset.
 
-### Item list
+### Items in the data source
 
 In the upper section you can see all the items that are included in the data source you are using. To expand the list, select **V** next to the item name. To view the columns in each table, expand again.
 
