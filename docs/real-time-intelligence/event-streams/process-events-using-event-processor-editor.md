@@ -239,6 +239,7 @@ Use the **Aggregate** transformation to calculate an aggregation (**Sum**, **Min
 - **Name**: Define a name for this aggregation function.
 - **Partition by**: Select a column to group the aggregation.
 - **Aggregate values within the last**: Specify a time window for aggregation (default is 5 seconds).
+
 :::image type="content" source="./media/event-processor-editor/aggregate-operator.png" alt-text="Screenshot showing the aggregate operator configuration and test result.":::
 
 ### Expand
