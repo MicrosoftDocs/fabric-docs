@@ -80,6 +80,18 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
 
 Your API for GraphQL is now ready to accept connections and requests. You can use the API editor to test and prototype GraphQL queries and the Schema explorer to verify the data types and fields exposed in the API.
 
+## Permissions summary
+
+The table below summarizes the different supported permutations and minimum required permissions for clients accessing the GraphQL API:
+
+|API Caller        | Data source connectivity | Required GraphQL API permissions|Required Data Source permissions|Entra app scope|
+|------------------|--------------------------|---------------------------------|-------------------------------|-----------------|
+|User Principal (UPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the UPN at the data source|*Item.Execute.All*|
+|Service Principal (SPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the SPN at the data source|*Item.Execute.All*|
+|User Principal (UPN)|Saved credentials| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the saved credential (connection) at the data source|*Item.Execute.All*|
+|Service Principal (SPN)|Saved credentials| Currently not supported|Currently not supported|Currently not supported|
+
+
 ## Related content
 
 - [Fabric API for GraphQL editor](api-graphql-editor.md)
