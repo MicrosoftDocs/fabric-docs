@@ -36,6 +36,63 @@ The following table types are not supported:
 - Streaming tables
 - Views, Materialized views
 
+### Supported regions
+
+Here's a list of regions that support mirroring for Azure Databricks Catalog:
+
+:::row:::
+   :::column span="":::
+    **Asia Pacific**:
+
+    - Australia East
+    - Australia Southeast
+    - Central India
+    - East Asia
+    - Japan East
+    - Japan West
+    - Korea Central
+    - Southeast Asia
+    - South India
+   :::column-end:::
+   :::column span="":::
+   **Europe**
+
+    - North Europe
+    - West Europe
+    - France Central
+    - Germany North
+    - Germany West Central
+    - Norway East
+    - Norway West
+    - Sweden Central
+    - Switzerland North
+    - Switzerland West
+    - Poland Central
+    - Italy North
+    - UK South
+    - UK West
+   :::column-end:::
+   :::column span="":::
+    **Americas**:
+
+    - Brazil South
+    - Canada Central
+    - Canada East
+    - Central US
+    - East US
+    - East US2
+    - North Central US
+    - West US
+   :::column-end:::
+   :::column span="":::
+    **Middle East and Africa**:
+
+    - South Africa North
+    - South Africa West
+    - UAE North
+   :::column-end:::
+:::row-end:::
+
 ## Related content
 
 - [Mirroring Azure Databricks (Preview) Tutorial](azure-databricks-tutorial.md)
