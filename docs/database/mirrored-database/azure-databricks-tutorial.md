@@ -17,7 +17,7 @@ ms.topic: overview
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
 - You must have the `EXTERNAL USE SCHEMA` privilege on the schema in Unity Catalog that contains the tables that will be accessed from Fabric. For more information, see [Control external access to data in Unity Catalog](/azure/databricks/data-governance/unity-catalog/access-open-api).
 
-- Turn on [tenant settings](/fabric/admin/tenant-settings-index) at the tenant or capacity level for this feature.
+- Turn on the [tenant setting](/fabric/admin/tenant-settings-index) "Mirrored Azure Databricks Catalog (Preview)" at the tenant or capacity level for this feature.
 
 - You need to use Fabric's permissions model to set access controls for catalogs, schemas, and tables in Fabric.
 - Azure Databricks workspaces shouldn't be behind a private endpoint.
@@ -81,4 +81,5 @@ In addition to the default Power BI semantic model, you have the option of updat
 - [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
 - [Review the FAQ](azure-databricks-faq.yml)
+
 - [Mirroring Azure Databricks Unity Catalog (Preview)](azure-databricks.md)
