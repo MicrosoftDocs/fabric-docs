@@ -33,7 +33,7 @@ Select the tab that corresponds with your desired data source type.
 ## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the connection pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the data source connections menu.
+1. In the pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the data source connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
@@ -43,7 +43,7 @@ Select the tab that corresponds with your desired data source type.
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the connection pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the data source connections menu.
+1. In the pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the data source connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
@@ -59,7 +59,7 @@ Select the tab that corresponds with your desired data source type.
 
 ----
 
- A list of tables associated with this data source appears below the data source name in the connection pane.
+ A list of tables associated with this data source appears below the data source name.
 
 ## Write a query
 
@@ -89,14 +89,13 @@ On the right side of the command bar, there is a menu with additional actions to
 
 :::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset.":::
 
-## Interact with data sources using the connection pane
+## Interact with data sources
 
-<!-- screenshot of connection pane -->
-<!-- is connection pane capital C?? -->
+<!-- screenshot of data source Explorer -->
 
-The connection pane allows you to browse and switch between the data sources connected to the queryset tab that you are in.  At the top of the connection pane, under **Explorer**, select **V** to expand the data source connections menu. Select the data source you want to use. If you haven't previously edited the tab name, the tab name automatically becomes the name of the data source.
+The data source explorer allows you to browse and switch between the data sources connected to the queryset tab that you are in.  At the top of the data source explorer, under **Explorer**, select **V** to expand the data source connections menu. Select the data source you want to use. If you haven't previously edited the tab name, the tab name automatically becomes the name of the data source.
 
-The connection pane has two sections. The upper section lists all the items in the data source, and the lower section shows all available data sources in the queryset.
+The data source explorer has two sections. The upper section lists all the items in the data source, and the lower section shows all available data sources in the queryset.
 
 ### Items in the data source
 
@@ -120,7 +119,7 @@ Different actions are available for different item types.
 
 ### Available data sources
 
-The lower section of the connection pane shows all the available data sources that have been added to the queryset.
+The lower section of the data source explore shows all the available data sources that have been added to the queryset.
 
 To open the action menu, hover over the data source name and select the **More actions** menu [...]. The menu gives options to:
 
