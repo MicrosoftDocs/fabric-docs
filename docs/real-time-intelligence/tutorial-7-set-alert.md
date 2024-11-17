@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 6 - Set an alert on your event stream
+title: Real-Time Intelligence tutorial part 7 - Set an alert on your event stream
 description: Learn how to set an alert on your event stream in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -12,10 +12,10 @@ ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to set an alert on my Event stream in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 6: Set an alert on your event stream
+# Real-Time Intelligence tutorial part 7: Set an alert on your event stream
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Create a Power BI report](tutorial-5-power-bi-report.md).
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 6: Create a Power BI report](tutorial-6-power-bi-report.md).
 
 In this part of the tutorial, you learn how to set an alert on your event stream to receive a notification in Teams when the number of bikes falls below a certain threshold.
 
@@ -59,4 +59,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)
+> [Tutorial part 8: Clean up resources](tutorial-8-clean-up-resources.md)
