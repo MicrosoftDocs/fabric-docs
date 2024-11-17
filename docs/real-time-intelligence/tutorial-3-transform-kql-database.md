@@ -13,7 +13,7 @@ ms.search.form: Get started
 # Real-Time Intelligence tutorial part 3: Transform data in a KQL database
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 1: Create resources](tutorial-1-resources.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
 
 In this part of the tutorial, you learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence. 
 
@@ -105,4 +105,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> 
+> [Real-Time Intelligence tutorial part 4: Query streaming data in a KQL queryset](tutorial-4-query-data.md)

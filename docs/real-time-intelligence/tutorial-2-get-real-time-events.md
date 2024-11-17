@@ -83,7 +83,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 
         The **TutorialTransform** tile now displays but with an error, because the destination isn't configured yet. 
 
-### Create a destination
+### Create a destination for the timestamp transformation
 
 1. Hover over the right edge of the **TutorialTransform** tile and select the green plus icon.
 
@@ -116,8 +116,6 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 1. Ensure that the box **Activate ingestion after adding the data** is checked.
 1. Select **Save**.
 
-    
-
 ## Transform events - add "Group by"
 
 1. From the **Transform events** dropdown, select **Group by**. A new tile is created entitled **Groupby**.
@@ -143,7 +141,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 
 1. Select **Save**.
 
-### Create a destination
+### Create a destination for the GroupBy transformation
 
 1. Hover over the right edge of the **GroupBy** tile and select the green plus icon.
 1. Select **Destinations** > **Eventhouse**.
@@ -181,4 +179,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md)
+> [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md)

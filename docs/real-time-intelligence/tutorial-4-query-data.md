@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 3 - Query streaming data in a KQL queryset
+title: Real-Time Intelligence tutorial part 4 - Query streaming data in a KQL queryset
 description: Learn how to query your streaming data in a KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -13,10 +13,10 @@ ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started
 #customer intent: I want to learn how to query my streaming data in a KQL queryset in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 3: Query streaming data in a KQL queryset
+# Real-Time Intelligence tutorial part 4: Query streaming data in a KQL queryset
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md).
 
 In this part of the tutorial, you learn how to query your streaming data in a [KQL queryset](create-query-set.md). You create a KQL queryset, write a KQL query, and visualize the data in a time chart.
 
@@ -60,4 +60,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 4: Create a Real-Time dashboard](tutorial-4-create-dashboard.md)
+> [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md)
