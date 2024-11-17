@@ -78,14 +78,14 @@ In this step, you apply an update policy to the target table to transform the da
 
 In this step, you verify that the transformation was successful by comparing the output from the source and target tables.
 
-1. Copy/paste the following query into the query editor to view the first 10 records in the source table. Run the query.
+1. Copy/paste the following query into the query editor to view 10 arbitrary records in the source table. Run the query.
 
     ```kusto
     TutorialTable
     | take 10
     ``` 
 
-1. Copy/paste the following query into the query editor to view the first 10 records in the target table. Run the query.
+1. Copy/paste the following query into the query editor to view 10 arbitrary records in the target table. Run the query.
 
     ```kusto
     BikesDataTransformed
@@ -99,6 +99,7 @@ Notice that the BikepointID column in the target table no longer contains the pr
 For more information about tasks performed in this tutorial, see:
 
 * [Update policy](/kusto/management/update-policy?view=microsoft-fabric&preserve-view=true)
+* [Parse operator](/kusto/query/parse-operator?view=microsoft-fabric&preserve-view=true)
 * [Stored functions](/kusto/query/schema-entities/stored-functions?view=microsoft-fabric&preserve-view=true)
 * [.create function command](/kusto/management/create-function?view=microsoft-fabric&preserve-view=true)
 

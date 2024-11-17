@@ -21,7 +21,7 @@ items:
     - name: 3- Transform data in your KQL database
       href: tutorial-3-transform-kql-database.md
     - name: 4- Query data in your KQL queryset
-      href: tutorial-3-query-data.md
+      href: tutorial-4-query-data.md
     - name: 5 Create a Real-Time dashboard
       href: tutorial-5-create-dashboard.md
     - name: 6- Create a Power BI report

@@ -22,7 +22,7 @@ In this part of the tutorial, you learn how to query your streaming data in a [K
 
 ## Write a KQL query
 
-The name of the table you created in a previous step is *TutorialTable*. Use this (case-sensitive) name as the data source for your query.
+The name of the table you created from the update policy in a previous step is *BikesDataTransformed*. Use this (case-sensitive) name as the data source for your query.
 
 > [!TIP]
 > If you have a sufficient subscription, you can use the Copilot feature to help you write queries. Copilot provides queries based on data in your table and natural language prompts. For more information, see [Copilot for Real-Time Intelligence (preview)](../get-started/copilot-real-time-analytics.md)
@@ -30,7 +30,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 1. In the query editor, delete the pre-populated queries and enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
-    TutorialTable
+    BikesDataTransformed
     | take 10
     ```
 
@@ -39,7 +39,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 1. To see the data in a more visual way, use the **render** operator. Run the following query:
 
     ```kusto
-    TutorialTable
+    BikesDataTransformed
     | where Neighbourhood == "Chelsea"
     | project Timestamp, No_Bikes
     | render timechart
@@ -49,6 +49,30 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 
     :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence." lightbox="media/tutorial/empty-docks-timechart.png":::
 
+## Create a materialized view
+
+In this step, you create a materialized view, which returns an up-to-date result of the aggregation query (always fresh). Querying a materialized view is more performant than running the aggregation directly over the source table.
+
+1. Copy/paste and run the following command to create a materialized view that shows the most recent number of empty docks at each bike station:
+
+    ``` kusto
+    .create materialized-view LatestEmptyDocksCount_MV on table BikesDataTransformed
+    {
+        BikesDataTransformed
+        | summarize arg_max(Timestamp,No_Bikes) by BikepointID
+    }
+    ```
+
+1. Copy/paste and run the following query to see the data in the materialized view visualized as a column chart:
+
+    ```kusto
+    LatestEmptyDocksCount_MV
+    | sort by BikepointID
+    | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
+    ``` 
+
+You will use this query in the next step to create a Real-Time dashboard.
+
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
@@ -56,6 +80,8 @@ For more information about tasks performed in this tutorial, see:
 * [Create a KQL queryset](create-query-set.md)
 * [Write a query](kusto-query-set.md#write-a-query)
 * [render operator](/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer?context=/fabric/context/context&pivots=fabric)
+* [Materialized views overview](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric&preserve-view=true)
+* [Create materialized views](materialized-view.md)
 
 ## Next step
 
