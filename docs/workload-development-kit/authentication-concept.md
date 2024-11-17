@@ -54,9 +54,6 @@ Fabric front-end offers a JavaScript API for Fabric workloads to acquire a token
 
 To understand why consents are required, review [User and admin consent in Microsoft Entra ID](/entra/identity/enterprise-apps/user-admin-consent-overview).  
 
-> [!NOTE]
-> Consents are required for CRUD/Jobs to work and to acquire tokens across tenants.
-
 ### How do consents work in Fabric workloads?
 
 To grant a consent for a specific application, Fabric FE creates an [MSAL](https://www.npmjs.com/package/@azure/msal-browser) instance configured with the workload's application ID and asks for a token for the provided scope (additionalScopesToConsent - see [AcquireAccessTokenParams](./authentication-javascript-api.md#acquireaccesstokenparams)). 
@@ -73,29 +70,10 @@ Here's an example of a consent popup for our app "my workload app" and its depen
 
 :::image type="content" source="./media/authentication-concept/environment-setup-consent-popup.png" alt-text="Screenshot of the consent popup.":::
 
-### Another way to grant consents in the home tenant (optional)
 
-Refer to the [JavaScript API documentation](./authentication-javascript-api.md#another-way-to-grant-consents-in-the-home-tenant-optional) for more information on how to grant consents in the home tenant of the application using the following url (insert your tenant ID and the client ID):  
-
-`https://login.microsoftonline.com/{tenantId}/adminconsent?client_id={clientId}`
-
-## How to work with tokens
-
-Your front-end should ask for a token `workloadClient.auth.acquireAccessToken({});`. You can use this token to authenticate with your back-end.
-
-If you wish to access some resource, send your token to the back-end and try to exchange it using an OBO flow for that resource. You can also use the token received from control APIs (CRUD/Jobs) and try to exchange it for that resource.
-
-If the exchange fails for consent reasons, notify your front-end and call `workloadClient.auth.acquireAccessToken({additionalScopesToConsent:[resource]});` and try the process again.
-
-If the exchange fails for MFA reasons, notify your front-end along with the claim received when trying to exchange and call `workloadClient.auth.acquireAccessToken({claimsForConditionalAccessPolicy:claims});`.
-
-For examples, see: [Error response example](/entra/identity-platform/v2-oauth2-on-behalf-of-flow#error-response-example).
-   
-To learn more about error propagation from the workload backend to the workload frontend, see [Workload communication guide](./workload-communication.md).
-> [!NOTE]
-> The token you receive when acquiring a token in the front-end is not related to additionalScopesToConsent you pass. This means that once the user consents, you can use any token you received from `workloadClient.auth.acquireAccessToken` for your OBO flow.
 ## Related content
 
 * [Back-end authentication and authorization overview](./back-end-authentication.md)
 * [Authentication JavaScript API](./authentication-javascript-api.md)
 * [Authentication setup](./authentication-tutorial.md)
+* [Workload authentication guidelines & deep dive](./authentication-guidelines.md)

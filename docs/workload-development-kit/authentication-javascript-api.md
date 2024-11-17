@@ -18,7 +18,8 @@ The Fabric front end offers a JavaScript API for Fabric workloads to acquire a t
 acquireAccessToken(params: AcquireAccessTokenParams): Promise<AccessToken>;  
 export interface AcquireAccessTokenParams {
     additionalScopesToConsent?: string[];  
-    claimsForConditionalAccessPolicy?: string;  
+    claimsForConditionalAccessPolicy?: string;
+    promptFullConsent?: boolean;
 }
 ```
 
@@ -51,8 +52,6 @@ Here's an example of a consent popup for our app "my workload app" and its depen
 
 :::image type="content" source="./media/authentication-api/permissions-requested-dialog.png" alt-text="Screenshot of Permissions required dialog.":::
 
-We'll see how to work with consents when we talk about [AcquireAccessTokenParams](#acquireaccesstokenparams).
-
 ### Another way to grant consents in the home tenant (optional)
 
 To get a consent in the home tenant of the application, you can ask your tenant admin to grant a consent for the whole tenant using a URL in the following format (insert your own tenant ID and the client ID):
@@ -61,32 +60,16 @@ To get a consent in the home tenant of the application, you can ask your tenant 
 
 ## AcquireAccessTokenParams
 
-When calling the acquireAccessToken JS API, we can provide two parameters:  
+When calling the acquireAccessToken JS API, we can provide three parameters:  
 
 * *additionalScopesToConsent*: Other scopes to ask for a consent for, for example reconsent scenarios.
 * *claimsForConditionalAccessPolicy*: Claims returned from Microsoft Entra ID when OBO flows fail, for example OBO requires multifactor authentication.
+* *promptFullConsent*: Prompts a full consent window of the static dependencies of the workloads application.
 
-Let's review these two parameters and see what to provide when calling acquireAccessToken.
 
 ### additionalScopesToConsent
-
-Here's what to provide in *additionalScopesToConsent* when calling `acquireAccessToken` in the following scenarios:
-
-**Scenario 1**: Acquiring a token to call the back-end workload: *AdditionalScopesToConsent* is null.
-
-When you want to acquire a token to call your back-end workload, call `acquireAccessToken` without providing any *additionalScopesToConsent*.
-
-* If the user is in the home tenant of the application, the workload can acquire a token without granting any consent.
-
-* If the user is in another tenant, they need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
-
-**Scenario 2**: Crud/Jobs JS API fail: *AdditionalScopesToConsent* is default.
-
-If these operations fail, the workload must ask for a token with ['.default'] as *additionalScopesToConsent*. This triggers a consent for the dependencies of the application (the configured API Permissions in our APP. See the [authentication setup](./authentication-tutorial.md) for more info).
-
-**Scenario 3**. OBO flow for a specific scope fails with consent required error: *AdditionalScopesToConsent* is 'https://analysis.windows.net/powerbi/api/Workspace.Read.All`
-
-If the OBO flow in the workload back-end fails with a consent required error for a specific scope or scopes, the workload back-end must inform the front-end to call `acquireAccessToken` API with those scopes.
+If The workload frontend is asking for a token to use for calls to the workload backend, this parameter should be null.
+Workload backend can fail to perform OBO on the token received because of a consent missing error, in that case the workload backend will need to propagate the error to the workload frontend and provide this paramter.
 
 ### claimsForConditionalAccessPolicy
 
@@ -95,3 +78,9 @@ This parameter is used when facing OBO failures in the workload BE because of so
 OBO failures because of conditional access policies return a string called "claims." This string should be sent to the workload FE where the FE should ask for a token and pass the claim as claimsForConditionalAccessPolicy. For more information, see [Handling multi-factor auth (MFA), conditional access, and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
 
 Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
+
+**To learn more about this additionalScopesToConsent and claimsForConditionalAccessPolicy and see examples of usage, see [Workload authentication guidelines & deep dive](./authentication-guidelines.md).**
+
+### promptFullConsent
+When passed as true, a full consent of the static dependencies will pop for the user regardless whether it provided a consent previously or not.
+An example usage for this paramter is to add a button to the UX where the user can use it to grant full consent to the workload.

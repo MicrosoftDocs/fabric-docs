@@ -17,9 +17,6 @@ This article describes how to create, edit, and delete Microsoft Purview protect
 
 For an overview of how protection policies for Fabric work, see [Protection policies in Fabric (preview)](./protection-policies-overview.md).
 
-> [!NOTE]
-> Microsoft Purview protection policies for Fabric are currently being rolled out and may not be immediately available in all tenants.
-
 ## Prerequisites
 
 To create a protection policy, the following requirements must be met:
@@ -65,7 +62,7 @@ To create a protection policy, the following requirements must be met:
     You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to.
 
     > [!NOTE]
-    > Service principals can't be added to the sets of users these controls apply too. This means that service principals are blocked from accessing items protected by protection policies.
+    > Service principals can't be added to the sets of users these controls apply to. This means that service principals are blocked from accessing items protected by protection policies. See [this note](./protection-policies-overview.md#service-principal-note) for more information.
 
     :::image type="content" source="./media/protection-policies-create/define-access-control.png" alt-text="Screenshot of define access controls page in protection policy configuration.":::
 

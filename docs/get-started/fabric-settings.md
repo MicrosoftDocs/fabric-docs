@@ -52,7 +52,7 @@ The governance and insights section provides links to help admins and users with
 
 | Link| Description|
 |:-----------|:--------------|
-|Admin portal | Opens the Fabric admin portal where admins perform various management tasks and configure Fabric tenant settings. For more information, see [What is the admin portal?](../admin/admin-center.md)|
+|Admin portal | Opens the Fabric admin portal where admins perform various management tasks and configure Fabric tenant settings. For more information about the admin portal, see [What is the admin portal?](../admin/admin-center.md). To learn how to open the admin portal, see [How to get to the admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal).|
 |[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Currently available to Fabric admins only. Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and has links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. |
 
 ## Related content
