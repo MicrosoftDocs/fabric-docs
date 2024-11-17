@@ -115,7 +115,7 @@ To run a typical *Hello World* test scenario:
 
 1. Go to create hub from the icon on the left navigation pane (sometimes the icon is located in the show more elipses):
 
-   :::image type="content" source="./media/extensibility-front-end/create-hub-icon-indicator.png" alt-text="alt-text="Screenshot of Create Hub icon in left navigation pane.":::
+   :::image type="content" source="./media/extensibility-front-end/create-hub-icon-indicator.png" alt-text="Screenshot of the Create Hub icon in the left navigation pane.":::
 
 1. Click on see all:
 
