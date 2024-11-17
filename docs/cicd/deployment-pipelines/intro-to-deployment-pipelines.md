@@ -43,7 +43,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Datamarts *(preview)*
 * EventHouse *(preview)*
 * EventStream *(preview)*
-* GraphQL
+* GraphQL *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Organizational apps
