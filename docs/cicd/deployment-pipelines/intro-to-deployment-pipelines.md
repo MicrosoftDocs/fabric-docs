@@ -38,6 +38,7 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
+* Dashboards
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
 * Dataflows gen2 *(preview)*
 * Datamarts *(preview)*
