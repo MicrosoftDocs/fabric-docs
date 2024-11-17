@@ -7,7 +7,8 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 11/19/2024
+ms.subservice: rti-core
 ms.search.form: Get started//
 ---
 # Real-Time Intelligence tutorial: Introduction

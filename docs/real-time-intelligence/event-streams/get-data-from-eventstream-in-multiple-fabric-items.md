@@ -20,8 +20,8 @@ Event streams can route the event data to various destinations, including the Fa
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located.
-- For a KQL database or Lakehouse item, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database or Lakehouse item is located.
+- Get access to a workspace with Contributor or above permissions where your Eventstream item is located.
+- For a KQL database or Lakehouse item, get access to a workspace with Contributor or above permissions where your KQL database or Lakehouse item is located.
 
 ## Get data from Eventstream in a KQL database
 

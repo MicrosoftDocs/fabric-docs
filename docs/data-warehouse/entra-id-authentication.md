@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra authentication in Synapse Data Warehouse
+title: Microsoft Entra authentication in Fabric Data Warehouse
 description: Learn more about Microsoft Entra authentication, an alternative to SQL authentication in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: frnuson, kadejo
-ms.date: 10/08/2024
+ms.reviewer: frnuson, kadejo, jaszymas
+ms.date: 10/16/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -12,7 +12,7 @@ ms.search.form: Warehouse roles and permissions # This article's title should no
 ---
 # Microsoft Entra authentication as an alternative to SQL authentication
 
-**Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article covers technical methods that users and customers can employ to transition from SQL authentication to [Microsoft Entra authentication](/entra/identity/authentication/overview-authentication) within Microsoft Fabric. Microsoft Entra authentication is an alternative to usernames and passwords via SQL authentication for signing in to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse or the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Microsoft Entra authentication is advisable and vital for creating a secure data platform.
 
@@ -24,7 +24,7 @@ One of Microsoft Fabric's core principles is secure by design. Microsoft Entra i
 
 Microsoft Entra plays a crucial role in Microsoft Fabric's security for several reasons:
 
-- Authentication: Verify users and service principals using Microsoft Entra ID, which grants access tokens for operations within Fabric.
+- Authentication: Verify users and [service principals](/entra/identity-platform/app-objects-and-service-principals) using Microsoft Entra ID, which grants access tokens for operations within Fabric.
 - Secure access: Connect securely to cloud apps from any device or network, safeguarding requests made to Fabric.
 - Conditional access: Admins can set policies that assess user login context, control access, or enforce extra verification steps.
 - Integration: Microsoft Entra ID seamlessly works with all Microsoft SaaS offerings, including Fabric, allowing easy access across devices and networks.
@@ -42,7 +42,7 @@ Microsoft Entra authentication for use with a Warehouse or Lakehouse SQL analyti
 
 ### Tenant setting
 
-A Fabric admin in your tenant must permit SPN access to Fabric APIs, necessary for the SPN to interface for SQL connection strings to Fabric Warehouse or SQL analytics endpoint items.
+A Fabric admin in your tenant must permit service principal names (SPN) access to Fabric APIs, necessary for the SPN to interface for SQL connection strings to Fabric warehouse or SQL analytics endpoint items.
 
 This setting is located in the Developer settings section and is labeled **Service principals can use Fabric APIs**. Make sure it is **Enabled**.
 
@@ -50,7 +50,7 @@ This setting is located in the Developer settings section and is labeled **Servi
 
 ### Workspace setting
 
-A Fabric admin in your workspace must grant access for a User/SPN to access Fabric items.
+A Fabric admin in your workspace must grant access for a user or SPN to access Fabric items.
 
 There are two means by which a User/SPN can be granted access:
 
@@ -59,13 +59,13 @@ There are two means by which a User/SPN can be granted access:
 
 - **Assign a user/SPN to a specific item**: Grant access to a specific Warehouse or SQL analytics endpoint of a Lakehouse. A Fabric admin can choose from different permission levels.
     1. Navigate to the relevant Warehouse or SQL analytics endpoint item.
-    1. Select  **More options**, then **Manage Permissions**. Select **Add user**.
+    1. Select **More options**, then **Manage Permissions**. Select **Add user**.
     1. Add the User/SPN on the **Grant people access** page.
     1. Assign the necessary permissions to a User/SPN. Choose no **Additional permissions** to grant connect permissions only.
 
     :::image type="content" source="media/entra-id-authentication/manage-permissions-grant-people-access.png" alt-text="Screenshot from the Fabric portal of the Grant people access page." lightbox="media/entra-id-authentication/manage-permissions-grant-people-access.png":::
 
-You can alter the default permissions given to the User/SPN by the system. Use the T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) commands to alter permissions as required, or [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric&preserve-view=true) to add membership to roles.
+You can alter the default permissions given to the User or SPN by the system. Use the T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) commands to alter permissions as required, or [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric&preserve-view=true) to add membership to roles.
 
 Currently, SPNs don't have the capability as user accounts for detailed permission configuration with `GRANT`/`DENY`.
 
@@ -80,11 +80,7 @@ Fabric natively supports authentication and authorization for Microsoft Entra us
 
 Fabric uses the Tabular Data Stream (TDS) protocol, the same as SQL Server, when you connect with a connection string.
 
-Fabric is compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
-
-To obtain the connection string, select **More options** on a Fabric warehouse or SQL analytics endpoint item.
-
-:::image type="content" source="media/entra-id-authentication/copy-sql-connection-string.png" alt-text="Screenshot from the Fabric portal of the More options context menu. The Copy SQL connection string option is highlighted.":::
+Fabric is compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity and finding the SQL connection string, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
 
 A sample SQL connection string looks like: `<guid_unique_your_item>.datawarehouse.fabric.microsoft.com`.
 

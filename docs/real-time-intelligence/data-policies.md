@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 04/21/2024
+ms.date: 11/19/2024
 ms.search.form: product-kusto
 ---
 
