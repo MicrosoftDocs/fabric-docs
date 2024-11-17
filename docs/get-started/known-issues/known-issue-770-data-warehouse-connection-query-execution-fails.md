@@ -4,7 +4,7 @@ description: A known issue is posted where a data warehouse connection or query 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/03/2024
+ms.date: 11/11/2024
 ms.custom: known-issue-770
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-770
 
 You might receive an error when working with your data warehouse. The failure occurs when trying to connect to your data warehouse or trying to execute a query in the data warehouse.
 
-**Status:** Open
+**Status:** Fixed: November 11, 2024
 
 **Product Experience:** Data Warehouse
 

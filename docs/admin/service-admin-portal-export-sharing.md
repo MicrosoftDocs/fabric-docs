@@ -15,7 +15,7 @@ LocalizationGroup: Administration
 
 The export and sharing settings allow the Fabric administrator the flexibility to determine and allow Power BI content to export to formats within their organization's security and compliance guidelines. These settings also allow you to keep unauthorized export formats from being exported by users.
 
-Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the [Admin portal](./admin-center.md#how-to-get-to-the-admin-portal). For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## External data sharing (preview)
 

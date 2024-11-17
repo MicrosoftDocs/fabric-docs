@@ -28,7 +28,7 @@ In the rule definition pane on the right side of the screen, find **Action** sec
 
 ## Test, start, or stop an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule
 
-Once you enter all of the required information, select **Save** to save the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. To test the trigger, select **Test action**. To start the trigger, select **Start** from the top menu bar and to stop the rule, select **Stop.** **Stop** only appears while a rule is active.  
+Once you enter all of the required information, select **Save** to save the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. To test the rule, select **Test action**. To start the rule, select **Start** from the top menu bar and to stop the rule, select **Stop.** **Stop** only appears while a rule is active.  
 
 ## Related content
 
