@@ -93,7 +93,7 @@ On the right side of the command bar, there's a menu with more actions to manage
 
 <!-- screenshot of data source Explorer -->
 
-The data source explorer allows you to browse and switch between the data sources connected to the queryset tab that you are in. At the top of the data source explorer, under **Explorer**, select **V** to expand the data source connections menu. Select the data source you want to use. If the tab name hasn't been edited previously, it automatically becasue the name of the data source.
+The data source explorer allows you to browse and switch between the data sources connected to the queryset tab that you are in. At the top of the data source explorer, under **Explorer**, select **V** to expand the data source connections menu. Select the data source you want to use. If the tab name hasn't been edited previously, it automatically gets named the name of the data source.
 
 The data source explorer has two sections. The upper section lists all the items in the data source, and the lower section shows all available data sources in the queryset.
 
