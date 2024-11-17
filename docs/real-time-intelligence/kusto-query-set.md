@@ -85,7 +85,7 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 * **Change tab positions**: Change tab positions using drag and drop gestures.
 * **Change the existing database connection**: Under **Explorer**, select the existing data source connection to open the data hub.
 
-On the right side of the command bar, there is a menu with additional actions to manage the multiple tabs in your queryset.
+On the right side of the command bar, there's a menu with more actions to manage the multiple tabs in your queryset.
 
 :::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset.":::
 
@@ -93,13 +93,13 @@ On the right side of the command bar, there is a menu with additional actions to
 
 <!-- screenshot of data source Explorer -->
 
-The data source explorer allows you to browse and switch between the data sources connected to the queryset tab that you are in.  At the top of the data source explorer, under **Explorer**, select **V** to expand the data source connections menu. Select the data source you want to use. If you haven't previously edited the tab name, the tab name automatically becomes the name of the data source.
+The data source explorer allows you to browse and switch between the data sources connected to the queryset tab that you are in. At the top of the data source explorer, under **Explorer**, select **V** to expand the data source connections menu. Select the data source you want to use. If the tab name hasn't been edited previously, it automatically becasue the name of the data source.
 
 The data source explorer has two sections. The upper section lists all the items in the data source, and the lower section shows all available data sources in the queryset.
 
 ### Items in the data source
 
-In the upper section you can see all the items that are included in the data source you are using. To expand the list, select **V** next to the item name. To view the columns in each table, expand again.
+In the upper section, you can see all the items that are included in the data source you're using. To expand the list, select **V** next to the item name. To view the columns in each table, expand again.
 
 * Tables
 * Materialized View
@@ -119,7 +119,7 @@ Different actions are available for different item types.
 
 ### Available data sources
 
-The lower section of the data source explore shows all the available data sources that have been added to the queryset.
+The lower section of the data source explorer shows all the available data sources that have been added to the queryset.
 
 To open the action menu, hover over the data source name and select the **More actions** menu [...]. The menu gives options to:
 
@@ -148,7 +148,7 @@ You might want to copy and share the queries you create.
     |Link, query and results to clipboard|Copy a link that can be used to run the query, the text of the query, and the results of the query.|
     |Copy results|Copy the results of the query.|
 
-1. Select the desired action from the above table.
+1. Select the desired action from the list in table.
 1. Paste this information to edit or share it, for example in Microsoft Word, Microsoft Teams or Outlook.
 
     > [!IMPORTANT]
