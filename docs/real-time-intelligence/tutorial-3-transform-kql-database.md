@@ -54,10 +54,10 @@ In this step, you create a stored function that holds the transformation logic t
 
 ## Apply update policy
 
-In this step, you apply an update policy to the target table to transform the data. The update policy uses the stored function ParseBikePointID() to parse the BikepointID column.
+In this step, you apply an update policy to the target table to transform the data. The update policy uses the stored function *ParseBikePointID()* to parse the *BikepointID* column.
 
 1. From the menu ribbon, select **Database**.
-1. Select **+New** > **Table update policy**.
+1. Select **+ New** > **Table update policy**.
 
 1. Edit the policy so that it matches the following code, or copy/paste the following command into the query editor.
 
@@ -76,7 +76,7 @@ In this step, you apply an update policy to the target table to transform the da
 
 ## Verify transformation
 
-In this step, you verify that the transformation was successful by querying the source and target tables.
+In this step, you verify that the transformation was successful by comparing the output from the source and target tables.
 
 1. Copy/paste the following query into the query editor to view the first 10 records in the source table. Run the query.
 
