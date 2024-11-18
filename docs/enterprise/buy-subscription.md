@@ -44,6 +44,8 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 * [Azure Monitor Metrics](/azure/azure-monitor/essentials/data-platform-metrics).
 
+* [Microsoft Fabric Metrics app](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app).  
+
 ### Buy an Azure SKU
 
 To buy an Azure SKU, you need to be an owner or a contributor of an Azure subscription. If you do not have access to these roles in a subscription, you can ask your Azure subscription administrator to create a custom role with the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
