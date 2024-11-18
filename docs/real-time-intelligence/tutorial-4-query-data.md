@@ -27,7 +27,7 @@ The name of the table you created from the update policy in a previous step is *
 > [!TIP]
 > If you have a sufficient subscription, you can use the Copilot feature to help you write queries. Copilot provides queries based on data in your table and natural language prompts. For more information, see [Copilot for Real-Time Intelligence (preview)](../get-started/copilot-real-time-analytics.md)
 
-1. In the query editor, delete the pre-populated queries and enter the following query. Then press **Shift + Enter** to run the query.
+1. In the query editor, enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
     BikesDataTransformed
@@ -69,7 +69,7 @@ In this step, you create a materialized view, which returns an up-to-date result
     LatestEmptyDocksCount_MV
     | sort by BikepointID
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
-    ``` 
+    ```
 
 You will use this query in the next step to create a Real-Time dashboard.
 

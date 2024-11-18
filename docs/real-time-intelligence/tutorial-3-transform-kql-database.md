@@ -15,7 +15,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
 
-In this part of the tutorial, you learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence. 
+In this part of the tutorial, you learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence. Update policies are automation mechanisms triggered when new data is written to a table. They eliminate the need for special orchestration by running a query to transform the ingested data and save the result to a destination table. Multiple update policies can be defined on a single table, allowing for different transformations and saving data to multiple tables simultaneously. The target tables can have a different schema, retention policy, and other policies from the source table.
 
 ## Create target table
 
@@ -24,7 +24,7 @@ In this step, you create target table with same schema as the source table. The 
 1. Browse to the KQL database you created in a previous step, named *Tutorial*.
 1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
 1. Copy/paste the following command to create a new table called **BikesDataTransformed** based on the existing table **TutorialTable**.
-    
+
     ```kusto
     .create table BikesDataTransformed based-on TutorialTable
     ```
