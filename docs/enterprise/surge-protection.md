@@ -13,4 +13,5 @@ ms.topic:    # Add the ms.topic value
 ms.date:     11/18/2024
 ---
 
-Surge Protection
+# Surge Protection
+
