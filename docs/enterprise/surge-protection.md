@@ -12,32 +12,49 @@ ms.topic: conceptual
 ms.date:     11/18/2024
 ---
 
-# Surge Protection
+# Surge Protection (preview)
 
-Surge Protection helps limit overuse of your capacity by limiting the total amount of compute background jobs consume. This helps protect interactive jobs and helps the capacity recover faster if there is a period of throttling or rejections. You configure Surge Protection for each capacity. Surge Protection helps prevent throttling and rejections but is not a substitute for capacity optimization, scaling up, and scaling out.   
-  
-How to configure surge Protection
+Surge Protection helps limit overuse of your capacity by limiting the total amount of compute background jobs consume. This helps protect interactive jobs and helps the capacity recover faster if there is a period of throttling or rejections. You configure Surge Protection for each capacity. Surge Protection helps prevent throttling and rejections but is not a substitute for capacity optimization, scaling up, and scaling out. 
+
+### Prerequisites
+
+1. You need to be a Fabric Capacity Administrator
+
+### Enabling surge protection
 
 1. Open the Fabric Admin Portal
 
-1. Navigate to Capacities
+1. Navigate to Capacity settings
 
 1. Select a capacity 
 
 1. Expand Surge Protection
 
-1. Enable Surge Protection
+1. Check the box to enable Surge Protection
 
-1. Set a Background 
+1. Set a Background Rejection threshold
 
-How to know if Surge Protection is active
+1. Set a Background Recovery threshold
+
+1. Press Apply
+
+### How monitor surge protection
 
 1. Open the Capacity Metrics app
 
-1. Go to the System Events table
+1. On the Compute page, select System events 
 
-1. Find Throttling Events
+1. The System events table shows row when surge protection became active and when the capacity returned to a not overloaded state
 
-Considerations and Limitations
+System events for Surge Protection
+
+When Surge Protection 
+
+ 
+
+### Considerations and Limitations
 
 When Surge Protection is active, background jobs are rejected. This means there will still be broad impact across your capacity even when Surge Protection is enabled. By using Surge Protection, you're tuning your capacity to stay within a range of usage that you feel best balances compute needs within the capacity.  While Surge Protection is helpful, note that to fully protect critical solutions, it is recommended to isolate those in a correctly sized capacity. 
+
+### Related content
+
