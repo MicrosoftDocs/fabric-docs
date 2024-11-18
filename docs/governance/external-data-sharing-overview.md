@@ -28,7 +28,7 @@ External data share links don't work for users who are in the tenant where the e
 > [!NOTE]
 > Cross-tenant data access is enabled via a dedicated Fabric-to-Fabric authentication mechanism and does not require [Entra B2B guest user access](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
-# Supported Fabric item types
+## Supported Fabric item types
 
 The Fabric item types that can be used in external data sharing are listed below.
 
