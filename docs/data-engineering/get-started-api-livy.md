@@ -16,7 +16,7 @@ ms.date: 08/23/2024
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Get started with Livy API for Fabric Data Engineering by creating a Lakehouse, authenticating with an Entra app token, and then submit either batch or session jobs from a remote client to Fabric Spark compute.  You'll also need to discover the Livy API endpoint, submit jobs, and monitor the results.
+Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; authenticating with an Entra app token; submit either batch or session jobs from a remote client to Fabric Spark compute.  You'll also discover the Livy API endpoint; submit jobs; and monitor the results.
 
 ## Prerequisites
 
@@ -30,13 +30,13 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse, a
 
 ## Choosing a REST API client
 
-You can use various programming languages or GUI clients to interact with REST API endpoints. In this article we will leverage [Visual Studio Code](https://code.visualstudio.com/). Visual Studio Code will also need to be configured with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
+You can use various programming languages or GUI clients to interact with REST API endpoints. In this article, we'll use [Visual Studio Code](https://code.visualstudio.com/). Visual Studio Code needs to be configured with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
 
 ## How to authorize the Livy API requests
 
 To work with Fabric APIs including the Livy API, you first need to create an Entra application and obtain a token. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 
-There are a number of Scope permissions required to execute Livy jobs, below is an example of simple Spark code + storage access + SQL:
+There are many Entra scope permissions required to execute Livy jobs.  This is an example of simple Spark code + storage access + SQL:
 
 * Code.AccessAzureDataExplorer.All
 * Code.AccessAzureDataLake.All
@@ -51,9 +51,9 @@ There are a number of Scope permissions required to execute Livy jobs, below is 
 :::image type="content" source="media/livy-API/Entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Entra admin center" lightbox="media/livy-API/Entra-app-API-permissions.png" :::
 
 > [!NOTE]
-> During public preview we will be adding a few additional granular scopes, and if you use this approach, when we add these additional scopes your Livy app will break.  Please check this list as it will be updated with the additional scopes.
+> During public preview we will be adding a few additional granular scopes, and if you use this approach, when we add these additional scopes your Livy app will break. Please check this list as it will be updated with the additional scopes.
 
-Some customers may want a more granular permissions than this list above.  You could remove Item.ReadWrite.All and replacing with these more granular Scope permisions:  
+Some customers want more granular permissions than the prior list. You could remove Item.ReadWrite.All and replacing with these more granular scope permisions:  
 
 * Code.AccessAzureDataExplorer.All
 * Code.AccessAzureDataLake.All
@@ -69,7 +69,7 @@ Some customers may want a more granular permissions than this list above.  You c
 * MLExperiment.ReadWrite.All
 * Dataset.ReadWrite.All
 
-After you've regisitered your application, you will need both the Application (client) ID and the Directory (tenant) ID.
+After you've registered your application, you'll need both the Application (client) ID and the Directory (tenant) ID.
 
 :::image type="content" source="media/livy-API/Entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center":::
 
@@ -77,7 +77,7 @@ The authenticated user calling the Livy API needs to be a workspace member where
 
 ## How to discover the Fabric Livy API endpoint
 
-A Lakehouse artifact is required to access the Livy endpoint.  Once the Lakehouse has been created, the Livy API endpoint can be located within the settings panel by adding the string <?experience=power-bi&lhLivyEndpoint=1> to the end of your browser URL sring when opening your Lakehouse.
+A Lakehouse artifact is required to access the Livy endpoint. Once the Lakehouse is created, the Livy API endpoint can be located within the settings panel by adding the string <?experience=power-bi&lhLivyEndpoint=1> to the end of your browser URL when opening your Lakehouse.
 
 :::image type="content" source="media/livy-API/Livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-API/Livy-endpoint.png":::
 
@@ -85,11 +85,11 @@ The endpoint of the Livy API would follow this pattern:
 
 https://api.fabric.microsoft.com/v1/workspaces/<ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/
 
-The URL will be appended with either \<sessions> or \<batches> depending on what you choose.
+The URL is appended with either \<sessions> or \<batches> depending on what you choose.
 
 ## Download the Livy API swagger files
 
-The full swagger files for the Livy API are available below.
+The full swagger files for the Livy API are available here.
 
 :::code language="yaml" source="Livy-api-swagger\swagger.yaml" range="1-5":::
 :::code language="json" source="Livy-api-swagger\swagger.json" range="1-7":::

@@ -34,9 +34,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ## Configure Visual Studio code for your Livy API Session
 
-1. Add the sting <?experience=power-bi&lhLivyEndpoint=1> to the end of your browser URL sring when opening your Lakehouse.
+1. Add the sting <?experience=power-bi&lhLivyEndpoint=1> to the end of your browser URL when opening your Lakehouse.
 
-1. Click on **Lakehouse Settings** in your Fabric Lakehouse.
+1. Select **Lakehouse Settings** in your Fabric Lakehouse.
 
     :::image type="content" source="media/livy-API/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-API/Lakehouse-settings.png" :::
 
@@ -44,7 +44,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/livy-endpoint.png" :::
 
-1. Copy the Session job connection string (first red box in the image above) to your code.
+1. Copy the Session job connection string (first red box in the image) to your code.
 
 1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
 
@@ -91,11 +91,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         headers = {"Authorization": "Bearer " + access_token}   
     ```
 
-1. Run the notebook cell, a popup should appear in your browser allowing you to choose who you login as.
+1. Run the notebook cell, a popup should appear in your browser allowing you to choose who you sign-in as.
 
     :::image type="content" source="media/Livy-API/Entra-logon-user.png" alt-text="Screenshot showing logon screen to Entra app" lightbox="media/Livy-API/Entra-logon-user.png" :::
 
-1. After you choose who to login as, you'll also be asked to approve the Entra app registration API permissions.
+1. After you choose who to sign-in as, you'll also be asked to approve the Entra app registration API permissions.
 
     :::image type="content" source="media/Livy-API/Entra-logon.png" alt-text="Screenshot showing Entra app API permissions" lightbox="media/Livy-API/Entra-logon.png" :::
 
@@ -119,15 +119,15 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     print(get_session_response.json())
     ```
 
-1. Run the notebook cell, you should one line printed as the Livy session is created.
+1. Run the notebook cell, you should see one line printed as the Livy session is created.
 
     :::image type="content" source="media\Livy-API\Livy-API-session-start.png" alt-text="Screenshot showing the results of the first notebook cell execution" lightbox="media\Livy-API\Livy-API-session-start.png" :::
 
-1. You can verify that the Livy session has been created by using the [View your jobs in the Monitoring hub](#View your jobs in the Monitoring hub) below.
+1. You can verify that the Livy session is created by using the [View your jobs in the Monitoring hub](#View your jobs in the Monitoring hub).
 
 ### Submit a spark.sql statement using the Livy API Spark session
 
-1. Add another notebook cell below and insert this code.
+1. Add another notebook cell and insert this code.
 
     ```python
     # call get session API
@@ -169,7 +169,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ### Submit a second spark.sql statement using the Livy API Spark session
 
-1. Add another notebook cell below and insert this code.
+1. Add another notebook cell and insert this code.
 
     ```python
     # call get session API
@@ -212,7 +212,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ### Close the Livy session with a third statement
 
-1. Add another notebook cell below and insert this code.
+1. Add another notebook cell and insert this code.
 
     ```python
     # call get session API with a delete session statement
@@ -236,11 +236,11 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
     :::image type="content" source="media\Livy-API\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub":::
 
-1. In this Livy API session case, you can see your previous sessions submissions, run details, Spark versions and configuration.  Notice the stopped status on the top right.
+1. In this Livy API session case, you can see your previous sessions submissions, run details, Spark versions, and configuration.  Notice the stopped status on the top right.
 
     :::image type="content" source="media\Livy-API\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub":::
 
-To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and fianlly a Session Livy API.
+To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
 
 ## Related content
 

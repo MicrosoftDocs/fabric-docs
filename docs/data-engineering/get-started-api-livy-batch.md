@@ -32,11 +32,11 @@ Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
 
 The Livy API defines a unified endpoint for operations. Replace the placeholders {Entra_TenantID},  {Entra_ClientID},  {Fabric_WorkspaceID}, and {Fabric_LakehouseID} with your appropriate values when you follow the examples in this article.
 
-## Configure Visual Studio code for your Livy API Batch
+## Configure Visual Studio Code for your Livy API Batch
 
-1. Add the sting <?experience=power-bi&lhLivyEndpoint=1> to the end of your browser URL sring when opening your Lakehouse.
+1. Add the sting <?experience=power-bi&lhLivyEndpoint=1> to the end of your browser URL when opening your Lakehouse.
 
-1. Click on **Lakehouse Settings** in your Fabric Lakehouse.
+1. Select **Lakehouse Settings** in your Fabric Lakehouse.
 
     :::image type="content" source="media/livy-API/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-API/Lakehouse-settings.png" :::
 
@@ -44,7 +44,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/livy-endpoint.png" :::
 
-1. Copy the Batch job connection string (second red box in the image above) to your code.
+1. Copy the Batch job connection string (second red box in the image) to your code.
 
 1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
 
@@ -143,11 +143,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
       headers = {"Authorization": "Bearer " + access_token}
    ```
 
-1. Run the notebook cell, a popup should appear in your browser allowing you to choose who you login as.
+1. Run the notebook cell, a popup should appear in your browser allowing you to choose who you sign-in as.
 
     :::image type="content" source="media/Livy-API/Entra-logon-user.png" alt-text="Screenshot showing logon screen to Entra app" lightbox="media/Livy-API/Entra-logon-user.png" :::
 
-1. After you choose who to login as, you'll also be asked to approve the Entra app registration API permissions.
+1. After you choose who to sign-in as, you'll also be asked to approve the Entra app registration API permissions.
 
     :::image type="content" source="media/Livy-API/Entra-logon.png" alt-text="Screenshot showing Entra app API permissions" lightbox="media/Livy-API/Entra-logon.png" :::
 
@@ -159,7 +159,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/Livy-API/Livy-session-entra-token.png" alt-text="Screen shot showing the Entra token returned after running cell and logging in" lightbox= "media/Livy-API/Livy-session-entra-token.png":::
 
-1. Add another notebook cell below and insert this code.
+1. Add another notebook cell and insert this code.
 
    ```python
    # call get batch API
@@ -174,13 +174,13 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
       print(get_batch_response.text)
    ```
 
-1. Run the nobook cell, you should see two lines printed as the Livy batch job is created.
+1. Run the notebook cell, you should see two lines printed as the Livy batch job is created.
 
     :::image type="content" source="media\Livy-API\Livy-batch.png" alt-text="Screenshot showing the results of the batch session creation" lightbox="media\Livy-API\Livy-batch.png" ::::::
 
 ## Submit a spark.sql statement using the Livy API batch session
 
-1. Add another notebook cell below and insert this code.
+1. Add another notebook cell and insert this code.
 
    ```python
    # submit payload to existing batch session
@@ -210,7 +210,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
    print(get_batch_response.json())
    ```
 
-1. Run the notebook cell, you shoudl see several lines printed as the Livy Batch job is created and run.
+1. Run the notebook cell, you should see several lines printed as the Livy Batch job is created and run.
 
     :::image type="content" source="media\Livy-API\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job has been sucessfully submitted" lightbox="media\Livy-API\Livy-batch-job-submission.png" :::
 
@@ -228,7 +228,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
     :::image type="content" source="media\Livy-API\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub" lightbox="media\Livy-API\Livy-batch-job-submission.png":::
 
-1. In this Livy API session case, you can see your previous batch submission, run details, Spark versions and configuration.  Notice the stopped status on the top right.
+1. In this Livy API session case, you can see your previous batch submission, run details, Spark versions, and configuration.  Notice the stopped status on the top right.
 
     :::image type="content" source="media\Livy-API\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub":::
 
