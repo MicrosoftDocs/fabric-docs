@@ -58,13 +58,13 @@ The following items are currently supported:
 * Dataflows gen2 *(preview)*
 * EventHouse *(preview)*
 * EventStream *(preview)*
-* GraphQL
+* GraphQL *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
 * Reflex *(preview)*
-* Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
-* Semantic models (except push datasets, live connections to Analysis Services, model v1) *(preview)*
+* [Reports](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
+* [Semantic models](./source-code-format.md#semantic-model-files) (except push datasets, live connections to Analysis Services, model v1) *(preview)*
 * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
 * SQL DB *(preview)*
