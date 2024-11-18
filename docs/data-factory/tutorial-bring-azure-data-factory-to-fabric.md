@@ -24,12 +24,12 @@ To get started, you must complete the following prerequisites:
 
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
+- Enable the preview on your Microsoft Fabric tenant from the Fabric admin portal. Enable the Azure Data Factory preview using admin portal or reach out to your Fabric admin.
+
 ## Bring your Azure Data Factory to Fabric
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 2. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
-
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 3. Navigate to your Microsoft Fabric workspace. 
 4. In the homepage, select **Azure Data Factory**.
 

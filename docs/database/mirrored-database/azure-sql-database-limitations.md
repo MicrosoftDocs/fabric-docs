@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
-ms.date: 07/25/2024
+ms.date: 10/22/2024
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -32,7 +32,7 @@ For troubleshooting, see:
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables. 
- 
+
 ## Permissions in the source database
 
 - [Row-level security](/sql/relational-databases/security/row-level-security) is not currently supported for Azure SQL Database configured for mirroring to Fabric OneLake.  <!--    - Row-level security settings are not currently propagated and reflected from the source SQL database into Fabric.   -->
@@ -50,10 +50,10 @@ For troubleshooting, see:
 
 ## Table level
 
-- A table cannot be mirrored with the following attributes:
-    - A table using a primary key defined and used as nonclustered primary key cannot be mirrored.  
-    - A table cannot be mirrored if the primary key is one of the data types: **hierarchyid**, **sql_variant**, **timestamp**.
-    - Clustered columnstore indexes are not currently supported.
+- A table that does not have a defined primary key cannot be mirrored.
+    - A table using a primary key defined as nonclustered primary key cannot be mirrored.  
+- A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**, **datetime2(7)**, **datetimeoffset(7)**, **time(7)** where `7` is seven digits of precision. Delta lake supports only six digits of precision.
+- Clustered columnstore indexes are not currently supported.
 - If one or more columns in the table is of type Large Binary Object (LOB) with a size > 1 MB, the column data is truncated to size of 1 MB in Fabric OneLake.
 - Source tables that have any of the following features in use cannot be mirrored.
     - Temporal history tables and ledger history tables  
@@ -81,7 +81,7 @@ For troubleshooting, see:
     - **geometry**
     - **geography**
 - Column names for a SQL table cannot contain spaces nor the following characters: `space` `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
- 
+
 ## Warehouse limitations
 
 - Source schema hierarchy is not replicated to the mirrored database. Instead, source schema is flattened, and schema name is encoded into the mirrored database table name.  
@@ -133,6 +133,7 @@ The following are the Fabric regions that support Mirroring for Azure SQL Databa
     - Brazil South
     - Canada Central
     - Canada East
+    - Central US
     - East US
     - East US2
     - North Central US

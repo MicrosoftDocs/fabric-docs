@@ -87,11 +87,6 @@ Here's a list of regions that support mirroring for Azure Cosmos DB:
    :::column-end:::
 :::row-end:::
 
-## Enable mirroring
-
-- Your organization admin must enable the mirroring feature to see the mirroring option in your Fabric workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md).
-- Mirroring is disabled by default if you have your Fabric capacity set to any mode other than **trial**.
-
 ## Account and database limitations
 
 - You can enable mirroring only if the Azure Cosmos DB account is configured with either 7-day or 30-day continuous backup.

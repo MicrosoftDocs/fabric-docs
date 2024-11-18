@@ -4,7 +4,7 @@ description: Learn how to change the owner of a Fabric Warehouse via API call.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
-ms.date: 07/26/2024
+ms.date: 09/13/2024
 ms.topic: how-to
 ---
 
@@ -56,7 +56,7 @@ Before you begin, you need:
     ```
 1. Run the following command:
     ```powershell
-    $url = '/groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
+    $url = 'groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
     ```
 1. Run the following command:
     ```powershell
@@ -81,7 +81,7 @@ $warehouseid = 'warehouseID'
 Connect-PowerBIServiceAccount
 
 #Invoke warehouse takeover
-$url = '/groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
+$url = 'groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
 Invoke-PowerBIRestMethod -Url $url -Method Post -Body ""
 ```
 

@@ -41,11 +41,16 @@ pandas_df = spark_df.toPandas()
 ```
 
 ## Reading and writing various file formats
+> [!NOTE]
+> Modifying the version of a specific package could potentially break other packages that depend on it. For instance, downgrading `azure-storage-blob` might cause problems with `Pandas` and various other libraries that rely on `Pandas`, including `mssparkutils`, `fsspec_wrapper`, and `notebookutils`.
+> You can view the list of preinstalled packages and their versions for each runtime [here](../data-engineering/runtime.md).
 
 These code samples describe the Pandas operations to read and write various file formats.
 
 > [!NOTE]
 > You must replace the file paths in these code samples. Pandas supports both relative paths, as shown here, and full ABFS paths. Paths of either type can be retrieved and copied from the interface according to the previous step.
+
+
 
 ### Read data from a CSV file
 
@@ -95,7 +100,8 @@ df.to_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet")
 import pandas as pd 
  
 # Read an Excel file from your Lakehouse into a Pandas DataFrame
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
+# Replace LAKEHOUSE_PATH and FILENAME with your own values. Also need to add correct filepath after Files/ if file is placed in different folders
+# if using default lakehouse that attached to the notebook use the code to replace below: df = pandas.read_excel("/lakehouse/default/Files/FILENAME.xlsx") 
 df = pandas.read_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
 display(df) 
 ```

@@ -14,7 +14,7 @@ ms.date: 05/21/2024
 This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric development kit's framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
 The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our workload client SDK, a standard npm package, to enable its functionality.
-The ISV hosts and runs it inside an `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
+The ISV hosts and runs it inside a sandboxed `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
 The SDK provides all the necessary interfaces, APIs, and bootstrap functions required to transform a regular web app into a Micro Frontend web app that operates seamlessly within the Fabric portal.
 
 The SDK provides a sample UI with the following features:
@@ -64,7 +64,7 @@ To set up the front end of the sample project, follow these steps:
     * **src** - Workload code:
       * **index.ts** - main initialization file, `bootstrap` the `index.worker` and `index.ui` iFrames - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
-      * **assets** - location for images(`svg`, `jpg`, `png`, etc.), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
+      * **assets** - location for images(`jpg`, `jpeg`, `png`), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.jpg` is set in the manifest as the Product's icon.
       * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc.)
       * **controller** - the Controller that calls the SDK APIs
       * **models** - the contracts and models used by the UI itself and for communication with the boilerplate's backend
@@ -74,7 +74,7 @@ To set up the front end of the sample project, follow these steps:
     * **validation** - 
       * `validateSchema.js` - validation of product and item json files schema. It is configured to run on `npm start`.
 
-1. **Install**. Notice the existing packages under `node_modules`
+1. **Install**
 
     Under the repository folder, go to `Frontend` and run **npm install**  
 
@@ -98,7 +98,7 @@ To set up the front end of the sample project, follow these steps:
    Modifying source files triggers a reload of contents in Fabric through `webpack`, if it's already connected.
    However, typically, you would still need to refresh the page.
 
-   If you change files under the 'Frontend/Package' folder , you should "npm start" again.
+   If you change files under the 'Frontend/Package' folder, you should "npm start" again.
 
 1. **Run**
    In Fabric, enable the Fabric Developer mode setting, to allow Fabric to access your localhost server.
@@ -138,9 +138,13 @@ For example:
 * Select *Save* on the Ribbon to call the `dialog.open()` API, which opens a dialog where a user provides a name and saves the item in Fabric (this dialog is further explored in the [CRUD section](#crud-operations)).
 * *Get Theme Settings* button shows a list of Fabric's theme configurations (via the `theme.get()` API).
 
-The Sample Workload UI is hosted in a Fabric `iframe` that we can see when we examine the page's DOM:
+The Sample Workload UI is hosted in a Fabric sandboxed `iframe` that we can see when we examine the page's DOM:
 
 :::image type="content" source="./media/extensibility-front-end/iframe-dom.png" alt-text="Screenshot of the iFrame embedding image.":::
+
+> [!NOTE]
+> The sandboxed iframe allows the following attributes: allow-same-origin, allow-scripts.
+> For more information on the meaning of sandbox and different attributes, refer to [MDN web docs](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#sandbox)
 
 ## Step 3: Dive into the code
 
@@ -294,7 +298,7 @@ While a frontend-only development scenario is easily supported, the full end-to-
 The [Back-end implementation guide](extensibility-back-end.md) describes in detail how to set up and use the backend side.
 
 Once the backend is up and running, and the `Org.WorkloadSample.SampleWorkloadItem` type is **registered in Fabric**, you can perform CRUD operations on this type.
-The following operations are exposed via [ItemCrud API](/javascript/api/@ms-fabric/workload-client/artifactcrudapi).
+The following operations are exposed via [ItemCrud API](/javascript/api/@ms-fabric/workload-client/itemcrudapi).
 
 #### CREATE
 
@@ -346,9 +350,9 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 ### Authentication
 
  In the sample workload editor, there's a section that lets you navigate to the authentication section.
- Before you use authentication API, configure an Entra app Microsoft Entra ID.
+ Before you use authentication API, configure a Microsoft Entra app Microsoft Entra ID.
  Additionally, ensure that your env.dev file is configured accurately. For more details refer to:
- [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend)
+ [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest)
 
 ## Step 4: Debug
 

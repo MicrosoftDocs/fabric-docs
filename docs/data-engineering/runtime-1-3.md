@@ -12,35 +12,33 @@ ms.date: 3/13/2024
 no-loc: [Copilot]
 ---
 
-# Fabric Runtime 1.3 (Public Preview)
+# Fabric Runtime 1.3 (GA)
 
 Fabric runtime offers a seamless integration with Azure. It provides a sophisticated environment for both data engineering and data science projects that use Apache Spark. This article provides an overview of the essential features and components of Fabric Runtime 1.3, the newest runtime for big data computations.
 
-Fabric Runtime 1.3, incorporates the following components and upgrades designed to enhance your data processing capabilities:
+Microsoft Fabric Runtime 1.3 is the latest GA runtime version and incorporates the following components and upgrades designed to enhance your data processing capabilities:
 - Apache Spark 3.5
 - Operating System: Mariner 2.0
 - Java: 11
 - Scala: 2.12.17
 - Python: 3.11
-- Delta Lake: 3.1
-- R: 4.3.3
+- Delta Lake: 3.2
+- R: 4.4.1
 
-> [!NOTE]
-> Fabric Runtime 1.3 is currently in a public preview stage. Integrations with VSCode and Low Shuffle Merge is not supported in the public preview release.
+> [!TIP]
+> Fabric Runtime 1.3 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without additional costs. To enable the native execution engine across all jobs and notebooks in your environment, navigate to your environment settings, select Spark compute, go to the Acceleration tab, and check Enable native execution engine. After saving and publishing, this setting is applied across the environment, so all new jobs and notebooks automatically inherit and benefit from the enhanced performance capabilities.
 
 Use the following instructions to integrate runtime 1.3 into your workspace and use its new features:
 
 1. Navigate to the **Workspace settings** tab within your Fabric workspace.
 2. Go to **Data Engineering/Science** tab and select **Spark Settings**.
 3. Select the **Environment** tab.
-4. Under the **Runtime Versions** dropdown, select **1.3 Public Preview (Spark 3.5, Delta 3.1)** and save your changes. This action sets 1.3 as the default runtime for your workspace.
+4. Under the **Runtime Versions** expand the dropdown. 
+5. Select **1.3 (Spark 3.5, Delta 3.2)** and save your changes. This action sets 1.3 as the default runtime for your workspace.
 
 :::image type="content" source="media\mrs\runtime13.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\mrs\runtime13.png":::
 
-You can now start working with the newest improvements and functionalities introduced in Fabric runtime 1.3 (Spark 3.5 and Delta Lake 3.1).
-
-> [!TIP]
-> For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime).
+You can now start working with the newest improvements and functionalities introduced in Fabric runtime 1.3 (Spark 3.5 and Delta Lake 3.2).
 
 ## Key highlights
 
@@ -53,12 +51,14 @@ You can check the full list and detailed changes here: [https://spark.apache.org
 
 ### Delta Spark
 
-Delta Lake 3.1 marks a collective commitment to making Delta Lake interoperable across formats, easier to work with, and more performant. Delta Spark 3.1.0 is built on top of [Apache Spark™ 3.5](https://spark.apache.org/releases/spark-release-3-5-0.html). The Delta Spark maven artifact has been renamed from **delta-core** to **delta-spark**.
+Delta Lake 3.2 marks a collective commitment to making Delta Lake interoperable across formats, easier to work with, and more performant. Delta Spark 3.2 is built on top of [Apache Spark™ 3.5](https://spark.apache.org/releases/spark-release-3-5-0.html). The Delta Spark maven artifact has been renamed from **delta-core** to **delta-spark**.
 
-You can check the full list and detailed changes here: [https://docs.delta.io/3.1.0/index.html](https://docs.delta.io/3.1.0/index.html).
+You can check the full list and detailed changes here: [https://docs.delta.io/3.2.0/index.html](https://docs.delta.io/3.2.0/index.html).
 
-> [!NOTE]
-> Share your feedback on Fabric Runtime in the [Ideas platform](https://ideas.fabric.microsoft.com/). Be sure to mention the version and release stage you're referring to. We value community feedback and prioritize improvements based on votes, making sure we meet user needs.
+
+> [!TIP]
+> For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric/Runtime%201.3%20(Spark%203.5)).
+
 
 ## Related content
 
