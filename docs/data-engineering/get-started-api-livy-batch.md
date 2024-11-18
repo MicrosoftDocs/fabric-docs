@@ -124,11 +124,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
    result = None
 
-   # If no cached tokens or user interaction needed, acquire tokens interactively
-   if not result:
-      result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Lakehouse.ReadWrite.All"])
-      #This works
-      #result = app.acquire_token_interactive(scopes=["User.Read"])
+    # If no cached tokens or user interaction needed, acquire tokens interactively
+    if not result:
+        result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item.ReadWrite.All", 
+                                                   "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
+                                                   "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
 
    # Print the access token (you can use it to call APIs)
    if "access_token" in result:
