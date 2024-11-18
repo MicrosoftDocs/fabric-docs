@@ -25,7 +25,7 @@ Let's go over some concepts before we talk about Working with tokens and consent
 
 ## Expose an API tab on the workload’s application in Microsoft Entra ID
 In this tab, you need to add scopes for control plane APIs and scopes for data plane APIs: 
-* The scopes added for control plane APIs should preauthorize "Fabric Client for Workloads" application with application ID "d2450708-699c-41e3-8077-b0c8341509aa", those scopes are included in the token that the workload backend receives when Fabric calls it.
+* The scopes added for control plane APIs should preauthorize "Fabric Client for Workloads" application with application ID "00001111-aaaa-2222-bbbb-3333cccc4444", those scopes are included in the token that the workload backend receives when Fabric calls it.
 You need to add at least one for control plane API for the flow to work. 
 * The scopes added for data plane APIs should preauthorize "Microsoft Power BI" with application ID "871c010f-5e61-4fb1-83ac-98610a7e9110" and are included in the token that the acquireAccessToken JavaScript API returns. 
 For data plane APIs, this tab can be used as a means to manage granular permissions per API that your workload exposes.  

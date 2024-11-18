@@ -47,20 +47,20 @@ The main authentication checks performed for the SubjectAndAppToken are:
 
     ```json
     {
-    "aud": "api://localdevinstance/12345678-77f3-4fcc-bdaa-487b920cb7ee/Fabric.WorkloadSample/123",
+    "aud": "api://localdevinstance/00001111-aaaa-2222-bbbb-3333cccc4444/Fabric.WorkloadSample/123",
     "iss": "https://sts.windows.net/12345678-77f3-4fcc-bdaa-487b920cb7ee/",
     "iat": 1700047232,
     "nbf": 1700047232,
     "exp": 1700133932,
     "aio": "E2VgYLjBuv2l+c6cmm/iP/bnL2v+AQA=",
-    "appid": "d2450708-699c-41e3-8077-b0c8341509aa"
+    "appid": "11112222-bbbb-3333-cccc-4444dddd5555"
     "appidacr": "2",
     "idp": "https://sts.windows.net/12345678-77f3-4fcc-bdaa-487b920cb7ee/",
     "idtyp": "app",
-    "oid": "87654321-727a-403d-b7d4-8e4a48865158",
+    "oid": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
     "rh": "0.ACgAGX-u-vN3zE-9qkh7kgy37hQbaU7-v2xFr59O_foS7VLZAAA.",
-    "sub": "87654321-727a-403d-b7d4-8e4a48865158",
-    "tid": "12345678-77f3-4fcc-bdaa-487b920cb7ee",
+    "sub": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+    "tid": "bbbbcccc-1111-dddd-2222-eeee3333ffff",
     "uti": "5bgMXs3uMUSAHCruRjACAA",
     "ver": "1.0"
     }
@@ -72,7 +72,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
 
     ```json
     {
-    "aud": "api://localdevinstance/12345678-77f3-4fcc-bdaa-487b920cb7ee/Fabric.WorkloadSample/123",
+    "aud": "api://localdevinstance/00001111-aaaa-2222-bbbb-3333cccc4444/Fabric.WorkloadSample/123",
     "iss": "https://sts.windows.net/12345678-77f3-4fcc-bdaa-487b920cb7ee/",
     "iat": 1700050446,
     "nbf": 1700050446,
@@ -82,15 +82,15 @@ The main authentication checks performed for the SubjectAndAppToken are:
     "amr": [
         "pwd"
     ],
-    "appid": "d2450708-699c-41e3-8077-b0c8341509aa"
+    "appid": "11112222-bbbb-3333-cccc-4444dddd5555"
     "appidacr": "2",
     "ipaddr": "46.117.19.50",
     "name": "john doe",
-    "oid": "abacabac-f91e-41db-b997-699f17146275",
+    "oid": "bbbbbbbb-1111-2222-3333-cccccccccccc",
     "rh": "0.ASgAGX-u-vN3zE-9qkh7kgy37hQbaU7-v2xFr59O_foS7VLZANQ.",
     "scp": "FabricWorkloadControl",
     "sub": "X0Wl85UA-uOmdkQz5MoT-hEgYZXDq9FYdS8g2bFUaZA",
-    "tid": "12345678-77f3-4fcc-bdaa-487b920cb7ee",
+    "tid": "bbbbcccc-1111-dddd-2222-eeee3333ffff",
     "unique_name": "user1@constso.com",
     "upn": "user1@constso.com",
     "uti": "_llZwmJoSUiHv-kw6tfDAA",
