@@ -29,6 +29,11 @@
         "source_path_from_root": "/docs/data-warehouse/user-audit-logs.md",
         "redirect_url": "/fabric/admin/operation-list",
         "redirect_document_id": true
-      }      
+      },
+      {
+        "source_path_from_root": "/docs/database/mirrored-database/enable-mirroring.md",
+        "redirect_url": "/fabric/database/mirrored-database/overview",
+        "redirect_document_id": true
+      }
     ]
 }

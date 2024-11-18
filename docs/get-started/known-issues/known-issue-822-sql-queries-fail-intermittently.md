@@ -4,7 +4,7 @@ description: A known issue is posted where SQL queries fail intermittently.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/28/2024
+ms.date: 11/11/2024
 ms.custom: known-issue-822
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-822
 
 You can run SQL queries against a data warehouse. If you have a long running session (typically more than one hour), the query intermittently fails.
 
-**Status:** Open
+**Status:** Fixed: November 11, 2024
 
 **Product Experience:** Data Warehouse
 

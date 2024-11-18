@@ -90,21 +90,7 @@ To set up the sample project frontend:
 
    After the localhost server starts, go to URL `127.0.0.1:60006/manifests` to open the aggregated manifest that's created in the *Frontend/Package* folder.
 
-   Open the manifest file to verify that the server is up and running.
-
-   Modifying source files triggers a reload of contents in Fabric through `webpack` if it's already connected.
-
-   Usually, you still need to refresh the page.
-
    If you change files inside the *Frontend/Package* folder, run `npm start` again.
-
-1. Run the localhost server.
-
-   To run the server, first enable Fabric developer mode so that Fabric can access your localhost server:
-
-   1. Go to **Developer Settings**.
-   1. Under **Fabric Developer mode**, select **On**.
-   1. Refresh the page.
 
    This setting is persisted in the current browser.
 
@@ -361,13 +347,13 @@ You can call the `delete` operation either in the Fabric workspace view as a gen
 
 Both types of calls go through the workload backend's `onDeleteItem` callback.
 
-## Authentication
+## View authentication activity
 
 In the sample workload editor, you can view authentication activity.
 
 Before you use the authentication API, configure your app to authenticate by using Microsoft Entra ID.
 
-Also ensure that your *env.dev* file is configured correctly. For more information, see [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend).
+Also ensure that your *env.dev* file is configured correctly. For more information, see [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest).
 
 ## Debug
 
