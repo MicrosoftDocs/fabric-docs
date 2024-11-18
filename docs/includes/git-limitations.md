@@ -19,7 +19,7 @@ ms.date: 11/18/2024
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
 - The tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) if the workspace and Git repo are in two different geographical regions.
-- For authentication to work when [conditional access](/appcenter/general/configuring-aad-conditional-access) is set for Azure DevOps in your organization, **Power BI** should have the same [conditions set](/fabric/security/security-conditional-access).
+- If your organization has set up [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
 - The commit size is limited to 125 MB.
 
 #### [GitHub limitations](#tab/github)
