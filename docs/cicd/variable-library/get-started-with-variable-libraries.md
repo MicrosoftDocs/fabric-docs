@@ -9,46 +9,11 @@ ms.subservice: cicd
 ms.topic: get-started
 ms.date: 08/15/2024
 ms.search.form: variable library
+#customer intent: As a developer, I want to learn how to use the Microsoft Fabric variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle.
 
 ---
 
----
-title: [Follow SEO guidance at 
-https://review.learn.microsoft.com/en-us/help/platform/seo-meta-title]
-description: "[Article description]."
-author: [your GitHub alias]
-ms.author: [your Microsoft alias or a team alias]
-ms.service: [the approved service name]
-ms.topic: get-started #Don't change
-ms.date: [mm/dd/yyyy]
-
-#customer intent: As a <role>, I want <what> so that <why>.
-
----
-
-<!-- --------------------------------------
-
-- Use this template with pattern instructions for:
-
-Get Started
-
-- Before you sign off or merge:
-
-Remove all comments except the customer intent.
-
-- Feedback:
-
-https://aka.ms/patterns-feedback
-
--->
-
-# Get started with [product or service]
-
-<!-- Required: Article headline - H1
-
-Identify the product or service the article covers.
-
--->
+# Get started with variable libraries
 
 [Introduce and explain the purpose of the article.]
 
@@ -63,13 +28,9 @@ the article covers.
 
 ## Prerequisites
 
-<!--Optional: Prerequisites - H2
+To create variable library items in Fabric, you need:
 
-If this section is needed, make Prerequisites your first H2 
-in the article. Use clear and unambiguous language and use
-an unordered list format. 
-
--->
+* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 
 ## [Table of stages]
 
