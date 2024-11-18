@@ -147,6 +147,10 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/Livy-API/Entra-logon-user.png" alt-text="Screenshot showing logon screen to Entra app" lightbox="media/Livy-API/Entra-logon-user.png" :::
 
+1. After you choose who to login as, you'll also be asked to approve the Entra app registration API permissions.
+
+    :::image type="content" source="media/Livy-API/Entra-logon.png" alt-text="Screenshot showing Entra app API permissions" lightbox="media/Livy-API/Entra-logon.png" :::
+
 1. Close the browser window after completing authentication.
 
     :::image type="content" source="media\Livy-API\Entra-authentication-complete.png" alt-text="Screenshot showing authentication complete" lightbox="media\Livy-API\Entra-authentication-complete.png" :::
