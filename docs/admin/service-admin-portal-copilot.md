@@ -31,7 +31,7 @@ Enabled by default:
 
 Not enabled by default:
 
-- Capacities can be designated as Fabric Copilot capacities.  Copilot capacities allow the consolidation of users' copilot usage and billing on a single capacity. This setting allows Fabric administrators to designate specific groups, or the entire organization as able to designate capacities that they themselves administer as Fabric Copilot capacities. Capacity administgrators will still need to designate which users can use which capacity as a Fabric Copilot Capacity.
+- Capacities can be designated as Fabric Copilot capacities.  Copilot capacities allow the consolidation of users' copilot usage and billing on a single capacity. This setting allows Fabric administrators to designate specific groups, or the entire organization as able to designate capacities that they themselves administer as Fabric Copilot capacities. Capacity administrators will still need to designate which users can use which capacity as a Fabric Copilot Capacity. Note that these administrators can see the names of items associated with users's Copilot activity in the Fabric capacity metrics application.
 
     :::image type="content" source="media/service-admin-portal-copilot/fabric-copilot-capacity-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Capacity setting in the admin portal.":::
 
