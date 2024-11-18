@@ -111,7 +111,7 @@ To set up the front end of the sample project, follow these steps:
 
 To run a typical *Hello World* test scenario:
 
-1. Start the local server (follow the [Get started](./environment-setup) section to have both the FE and BE workload sample running) make sure to enable *Dev Mode*. 
+1. Start the local server (follow the [Get started](./environment-setup.md) section to have both the FE and BE workload sample running) make sure to enable *Dev Mode*. 
 
 1. Go to create hub from the icon on the left navigation pane (sometimes the icon is located in the show more elipses):
 
