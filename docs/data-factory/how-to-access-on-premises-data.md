@@ -93,7 +93,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
 Now you've created a Dataflow Gen2 to load data from an on-premises data source into a cloud destination.
 
-## Using on-premises data in a pipeline (Preview)
+## Using on-premises data in a pipeline
 
 1. Go to your workspace and create a data pipeline.
 

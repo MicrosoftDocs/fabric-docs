@@ -38,6 +38,7 @@ Fast copy is currently supported for the following Dataflow Gen2 connectors:
 - On premise SQL Server
 - Warehouse
 - Oracle
+- Snowflake
 
 The copy activity only supports a few transformations when connecting to a file source:
 

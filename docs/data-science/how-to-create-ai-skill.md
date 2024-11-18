@@ -4,11 +4,11 @@ description: Learn how to create an AI skill.
 author: fbsolo-ms1
 ms.author: amjafari
 ms.reviewer: franksolomon
-reviewer: avangrootel
+reviewer: midesa
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 08/05/2024
+ms.date: 09/21/2024
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create an AI skill that relies on generative AI, that my colleagues and I can use to have conversations about our data.
@@ -85,23 +85,48 @@ To switch to another lakehouse or warehouse, select the arrows near the top of t
 
 :::image type="content" source="./media/how-to-create-ai-skill/change-datasource.png" alt-text="Screenshot showing selection of another data source." lightbox="./media/how-to-create-ai-skill/change-datasource.png":::
 
-## Provide examples
+## Configuring the AI skill
 
-In Fabric, you can configure the AI skill so that the AI answers your questions as you would expect. One technique is to provide examples to the AI. In generative AI, this technique is referred to as *few shot learning*. Here, you give the AI access to query or question pairs. The next time you ask a question, the AI finds the most relevant questions in the set of questions that you provided. These questions, together with the corresponding SQL query you provided, give background to the AI as it generates the SQL.
+The AI skill offers several configuration options that allow creators to customize its behavior to better suit their needs. These configurations provide flexibility in how the AI skill processes and presents data, enabling more control over the outcomes.
 
-If you find that the AI doesn't generate the right queries, you can provide more examples.
 
-To provide examples, you can select the edit button under **Example SQL queries** on the right side, as shown in this screenshot:
+### Provide example queries
+
+You can enhance the accuracy of the AI skill's responses by providing it with example SQL queries. This technique, known as **Few Shot Learning** in generative AI, allows you to guide the AI skill in generating answers that align with your expectations.
+
+When you provide the AI with sample query/question pairs, it uses these examples as a reference when answering future questions. The AI will browse through the provided examples to find the most relevant queries that match the new question. This helps the AI incorporate business-specific logic and respond to common queries that end users frequently ask.
+
+If you notice that the AI is not generating the desired SQL queries, you can improve its performance by supplying additional examples.
+
+> [!TIP]
+> Providing a diverse set of example queries will enhance the AI skill's ability to generate accurate and relevant SQL queries.
+
+To add examples, click the edit button under "Example SQL Queries" on the right-hand side, as illustrated in the screenshot below:
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples.png":::
 
-## Provide instructions
+> [!NOTE]
+> The AI skill will only refer to queries that contain valid SQL and match the schema of the selected tables. Queries that have not completed validation will not be used by the AI skill. Make sure that all example queries are valid and correctly aligned with the schema to ensure they are utilized effectively.
+
+### Provide instructions
 
 You can also steer the AI with instructions. You can provide these instructions in the **Notes for model** text box. Here, you can write instructions in English. The AI uses those instructions when it generates SQL.
 
 If you find that the AI consistently misinterprets certain words or acronyms, you can provide definitions of terms in this section, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png" alt-text="Screenshot showing where you can edit the instructions you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png":::
+
+### Customize SQL query variations
+
+The **SQL Query Variations** setting controls the variability in the number of SQL queries the AI skill generates before determining the final query. By adjusting this setting, creators can influence how many different SQL queries the AI skill will evaluate before arriving at the final query.
+
+If you want the AI skill to explore more possible query paths before choosing the most appropriate one, increase the SQL Query Variations setting. This can be particularly useful in complex scenarios where multiple potential query structures might yield the desired result.
+
+### Show executed SQL query
+
+The **Show executed SQL query** setting allows creators to debug the results produced by the AI skill. When enabled, this setting provides visibility into the final SQL query generated by the AI skill that was used to produce the final output.
+
+You can enable this setting if you need to verify or troubleshoot the SQL queries generated by the AI skill. This is particularly valuable for understanding how the AI skill constructs queries and ensuring they align with the expected logic and structure.
 
 ## Related content
 

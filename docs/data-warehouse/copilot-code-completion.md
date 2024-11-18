@@ -3,8 +3,8 @@ title: "How to: Use Copilot code completion for Synapse Data Warehouse"
 description: Learn more about Microsoft Copilot code completion for Synapse Data Warehouse in Microsoft Fabric, to provide intelligent autocomplete-style code suggestions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade
-ms.date: 08/01/2024
+ms.reviewer: salilkanade, jacinda-eng
+ms.date: 09/26/2024
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
@@ -34,6 +34,12 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 - **Generate suggestions from comments**: You can guide Copilot using comments that describe your code logic and purpose, using natural language. Leave the comment (using `--`) at the beginning of the query and Copilot will generate the corresponding query.
 
 ## Get started
+
+1. Verify the **Show Copilot completions** setting in enabled in your warehouse settings.
+   - You can also check the setting's status through the status bar at the bottom of the query editor. 
+      :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar." lightbox="media/copilot-code-completion/copilot-setting-status-bar.jpg":::
+   - If not enabled, then in your warehouse **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
+      :::image type="content" source="media/copilot-code-completion/copilot-setting.png" alt-text="Screenshot of the Copilot in-line completions setting in the setting pane." lightbox="media/copilot-code-completion/copilot-setting.png":::
 
 1. Start writing your query in the SQL query editor within the warehouse. As you type, Copilot will provide real-time code suggestions and completions of your query by presenting a dimmed ghost text.
 

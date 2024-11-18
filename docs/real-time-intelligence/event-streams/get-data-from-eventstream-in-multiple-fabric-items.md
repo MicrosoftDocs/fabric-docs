@@ -25,7 +25,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Get data from Eventstream in a KQL database
 
-To get data from Eventstream into a KQL table inside a KQL database, Select **Get data** on the ribbon of your KQL database
+To get data from Eventstream into a KQL table inside a KQL database, Select **Get data** on the ribbon of your KQL database.
 
 :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database.png" alt-text="Screenshot showing the get data options." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database.png" :::
 

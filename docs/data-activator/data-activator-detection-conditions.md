@@ -1,98 +1,89 @@
 ---
 title: Detection conditions in Data Activator
-description: Understand how detection conditions in triggers and properties operate in Data Activator.
-author: davidiseminger
-ms.author: davidi
-ms.topic: conceptual
-ms.custom: 
-ms.date: 11/16/2023
+description: Understand how detection settings in Data Activator rules operate and learn how to configure them effectively.
+author: mihart
+ms.author: mihart
+ms.topic: concept-article
+ms.custom: FY25Q1-Linter
+ms.date: 10/08/2024
+ms.search.form: Data Activator Detection Condition
 ---
 
-# Detection conditions in Data Activator
+# Detection settings in Data Activator
+
+This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Data Activator and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking. 
 
 > [!IMPORTANT]
 > Data Activator is currently in preview.
 
-This article describes the range of detection conditions available to you when you create a trigger.
+Our example uses the **Package delivery events** event stream. From this event stream, we already created an object named **Temperature** and a rule **Too hot for medicine**. 
 
-## Summaries over time
+## Detection setting options
 
-Summaries are available in **select** cards in properties and triggers, using the “Add” button. 
+Detection settings are managed in the **Definition** pane which opens on the right side of Data Activator. Select a rule from the **Explorer** or select **New rule** to open the **Definition** pane. Here you set the detection settings using **Summarization**, **Filter**, and **Condition**.
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-01.png" alt-text="Screenshot of adding data activator summary.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definition pane in Data Activator."lightbox="media/data-activator-detection-conditions/data-activator-pane.png":::
 
+**Summarization**
 
-When you create a summary, you specify a **time window** which can be between 1 minute and 24 hours long. A summary takes all of the values of the property/column during each time window and converts them into a single summary value for the time window.
+A summarization is made up of an aggregation (average, minimum, sum, etc.), window size, and step size for the attribute used in the rule. In this example, we use the **Temperature** object as our attribute. The **Temperature** object comes from our *Package delivery events* stream.
 
+If the **Summarization** section isn't shown in your **Definition** pane, select **Add summarization** to open it.
+
+When you create a summarization, you specify a time window for your rule. The time window ranges from 10 seconds to 24 hours. A summarization takes all of the values of the rule properties during each time window and converts them into a single summary value for the time window. In this example, our rule summarization is the **Average** aggregation for the attribute **Temperature**. 
+
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-summarizations.png" alt-text="Screenshot showing the Monitor section of the Definition pane with the Temperature attribute selected.":::
+
+The summarization also includes a step size. The step size ranges from 10 seconds to 24 hours. 
 
 |Summary type  |Description  |
 |---------|---------|
-|Average over time      |Computes the average value of the property/column over the time window|
-|Count     |Computes the number of events containing the property/column over the time window|
-|Minimum/Maximum over time     |Computes the minimum/maximum value of the property/column during the time window|
-
+|Average over time      |Computes the average value of the property or column over the time window|
+|Count     |Computes the number of events containing the property or column over the time window|
+|Minimum/Maximum over time     |Computes the minimum/maximum value of the property or column during the time window|
+Total  | Computes the total value of the property or column during that time window. 
 
 ## Filters
 
-Filters are available in **select** and **detect** cards using the **Add** button. In a filter, you specify a comparison condition on a property. The filter retains only those events that meet the comparison condition. All other events are removed from consideration for the trigger.
+In a filter, you specify a comparison operation for the selected attribute. The filter retains only those events that meet the comparison condition. All other events are removed from consideration for the rule. To open the filter section, select **Add filter** from the **Definition** pane. You may have to scroll up to see the Filter and **Operation** field. 
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-02.png" alt-text="Screenshot of using a data activator filter.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using a data activator filter.":::
 
-You can use filters on any type of property, but typically you'll use filters with text values, so that you can create a condition on a subset of your data. For example, you might set a filter of “City=’Redmond’” on some package-tracking events, to set a condition on only events on packages in Redmond.
+Use filters on any type of attribute. However, you typically use filters with text values, so that you can create a condition on a subset of your data. For example, you might set a filter of “City=Redmond” on some package-tracking events, to set a condition on only events on packages in Redmond. You can also set a filter on numerical data. In our example, we filtered for temperatures greater than 60. 
 
-You can specify up to three filters on a card.
+You can specify up to three filters.
 
 ## Conditions
 
-You specify a condition in the **detect** card.
+The third detection setting is **Condition**. Use **Condition** to tell Data Activator when to activate the rule. 
 
-### Condition types
-
-The condition type specifies what type of condition should cause the trigger to activate:
-
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-03.png" alt-text="Screenshot of using data activator condition types.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of using data activator condition types.":::
 
 Condition types fall into the following categories:
 
-
 |Condition type  |Description  |
 |---------|---------|
-|**Is** conditions     |**Is** conditions activate for each event for which the condition is true. |
-|**Becomes** conditions     |**Becomes** conditions activate only when the condition becomes true, after having previously been false. For example, “Becomes greater than 10” will activate if the value of the property changes from a value of 5 (less than 10) to a value of 11 (greater than 10). It will only activate again when the condition goes from being false to true. |
-|**Enters/Exits Range** conditions     |The Enters range condition specifies a range of values, and activates at the point when a property value enters the range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. <p>The exits range condition is similar, except that it activates when the property value goes outside of the range. |
-|**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from condition activation boundaries.   |
+|**Is** conditions     |**Is** conditions activate for each event where the condition is true. |
+|**Becomes** conditions     |**Becomes** conditions activate only when the condition becomes true, after being false.  For example, "Becomes greater than 10" activates when the value of the property changes from a value of five (less than 10) to a value of 11 (greater than 10). It only activates when the condition goes from being false to true. |
+|**Enters, Exits Range** conditions     |The Enters range condition activates when a property value enters a defined value range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. The exits range condition is similar, except that it activates when the property value goes outside of the range. |
+|**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from specified boundaries.   |
+Text states such as **Contains**, **Ends**, **Begins**  | These conditions activate when text meets the selected condition. 
+|**Heartbeat** conditions  | "No presence of data" conditions activate when data doesn't arrive in Activator. Time elapsed is the time that you want the rule to monitor if new data doesn't arrive.
 
+After you specify a condition type, you specify an occurrence.
 
-
-### Condition timers
-
-After you specify a condition type, you can specify a condition timer.
-
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-04.png" alt-text="Screenshot of using data activator condition timers.":::
-
-
-The condition timer indicates how long, or how many times, the condition must be true before the trigger fires.
-
-
+The occurrence indicates how long, or how many times, the condition must be true before the rule activates.
 
 |Timer  |Description  |
 |---------|---------|
-|Each time |Activate the trigger each time the condition is true |
-|Number of times |Count how many times the condition is true, and activate the trigger only when it has been true this many times |
-|Stays |Activate the trigger if the condition is continuously true for this amount of time |
-
-
-
+|Every time |Activate the rule each time the condition is true. |
+|Number of times |Count how many times the condition is true, and activate the rule only when it becomes true the specified number of times. |
+|Stays |Activate the rule if the condition is continuously true for the specified amount of time. |
 
 ## Related content
 
-* [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
-* [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
-* [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md)
-* [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
-* [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
-* [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
+* [Create Data Activator rules in design mode](data-activator-create-triggers-design-mode.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:

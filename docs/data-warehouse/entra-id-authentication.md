@@ -4,7 +4,7 @@ description: Learn more about Microsoft Entra authentication, an alternative to 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: frnuson, kadejo
-ms.date: 07/26/2024
+ms.date: 10/08/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -44,7 +44,7 @@ Microsoft Entra authentication for use with a Warehouse or Lakehouse SQL analyti
 
 A Fabric admin in your tenant must permit SPN access to Fabric APIs, necessary for the SPN to interface for SQL connection strings to Fabric Warehouse or SQL analytics endpoint items.
 
-This setting is located in the Developer settings section and ios labeled **Service principals can use Fabric APIs**. Make sure it is **Enabled**.
+This setting is located in the Developer settings section and is labeled **Service principals can use Fabric APIs**. Make sure it is **Enabled**.
 
 :::image type="content" source="media/entra-id-authentication/developer-settings-service-principals-fabric-apis.png" alt-text="Screenshot from the Fabric portal of the Developer Settings page in Tenant Settings.":::
 
@@ -54,12 +54,10 @@ A Fabric admin in your workspace must grant access for a User/SPN to access Fabr
 
 There are two means by which a User/SPN can be granted access:
 
-- **Grant a user/SPN membership to the Workspace Contributor role**: The Workspace Contributor role allows the User/SPN identity to access all Fabric items via SQL connection strings. 
+- **Grant a user/SPN membership to a role**: Any workspace role (Admin, Member, Contributor, or Viewer) is sufficient to connect to warehouse or lakehouse items with a SQL connection string.
     1. In the **Manage access** option in the Workspace, assign the **Contributor** role. For more information, see [Service roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles).
 
-    :::image type="content" source="media/entra-id-authentication/workspace-setting-grant-workspace-contributor.png" alt-text="Screenshot from the Fabric portal showing the Contributor role assigned to a User in the Manage access option in the workspace." lightbox="media/entra-id-authentication/workspace-setting-grant-workspace-contributor.png":::
-
-- **Assign a user/SPN to a specific item**: Grant access to a specific Warehouse or SQL analytics endpoint. A Fabric admin can choose from different permission levels. 
+- **Assign a user/SPN to a specific item**: Grant access to a specific Warehouse or SQL analytics endpoint of a Lakehouse. A Fabric admin can choose from different permission levels.
     1. Navigate to the relevant Warehouse or SQL analytics endpoint item.
     1. Select  **More options**, then **Manage Permissions**. Select **Add user**.
     1. Add the User/SPN on the **Grant people access** page.
@@ -80,7 +78,9 @@ Fabric natively supports authentication and authorization for Microsoft Entra us
 
 ## Support for tabular data stream (TDS)
 
-Fabric natively supports the Tabular Data Stream (TDS) protocol, also known as a *SQL connection string*. Fabric is therefore compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
+Fabric uses the Tabular Data Stream (TDS) protocol, the same as SQL Server, when you connect with a connection string.
+
+Fabric is compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
 
 To obtain the connection string, select **More options** on a Fabric warehouse or SQL analytics endpoint item.
 
@@ -88,13 +88,13 @@ To obtain the connection string, select **More options** on a Fabric warehouse o
 
 A sample SQL connection string looks like: `<guid_unique_your_item>.datawarehouse.fabric.microsoft.com`.
 
-Applications and client tools can set the `Authentication` connection property in the connection string to choose a Microsoft Entra authentication mode. The following table details the different Entra authentication modes, including support for [Microsoft Entra multifactor authentication (MFA)](/entra/identity/authentication/tutorial-enable-azure-mfa).
+Applications and client tools can set the `Authentication` connection property in the connection string to choose a Microsoft Entra authentication mode. The following table details the different Microsoft Entra authentication modes, including support for [Microsoft Entra multifactor authentication (MFA)](/entra/identity/authentication/tutorial-enable-azure-mfa).
 
 | **Authentication mode**|  **Scenarios** |**Comments** |
 |:--|:--|:--|
 | Microsoft Entra Interactive | Utilized by applications or tools in situations where user authentication can occur interactively, or when it is acceptable to have manual intervention for credential verification. | [Activate MFA](/entra/identity/authentication/tutorial-enable-azure-mfa) and [Microsoft Entra Conditional Access policies](/entra/identity/conditional-access/concept-conditional-access-policies) to enforce organizational rules. |
-| Microsoft Entra Service Principal | Used by apps for secure authentication without human intervention, most suited for application integration. | Advisable to enable [Microsoft Entra Conditional Access policies](/entra/identity/conditional-access/concept-conditional-access-policies). |
-| Microsoft Entra Password | When applications can't use SPN-based authentication due to incompatibility, or require a generic username and password for many users, or if other methods are infeasible. | MFA must be off, and no conditional access policies can be set. It is recommended to validate with customer's security team before opting this solution. |
+| Microsoft Entra Service Principal | Used by apps for secure authentication without human intervention, most suited for application integration. | Advisable to enable [Microsoft Entra Conditional Access policies](/entra/identity/conditional-access/workload-identity). |
+| Microsoft Entra Password | When applications can't use SPN-based authentication due to incompatibility, or require a generic username and password for many users, or if other methods are infeasible. | MFA must be off, and no conditional access policies can be set. We recommend validating with the customer's security team before opting for this solution. |
 
 :::image type="content" source="media/entra-id-authentication/mode-flow-chart.png" alt-text="Flowchart showing Microsoft Entra authentication modes and decision points.":::
 
@@ -104,7 +104,7 @@ While most of the SQL drivers initially came with support for Microsoft Entra au
 
 However, sometimes it's necessary to adjust additional settings such as enabling certain ports or firewalls to facilitate Microsoft Entra authentication on the host machine.
 
-Applications and tools must upgrade drivers to versions that support Entra authentication and add an authentication mode keyword in their SQL connection string, like `ActiveDirectoryInteractive`, `ActiveDirectoryServicePrincipal`, or `ActiveDirectoryPassword`.
+Applications and tools must upgrade drivers to versions that support Microsoft Entra authentication and add an authentication mode keyword in their SQL connection string, like `ActiveDirectoryInteractive`, `ActiveDirectoryServicePrincipal`, or `ActiveDirectoryPassword`.
 
 Fabric is compatible with Microsoft's native drivers, including OLE DB, `Microsoft.Data.SqlClient`, and generic drivers such ODBC and JDBC. The transition for applications to work with Fabric can be managed through reconfiguration to use Microsoft Entra ID-based authentication.
 

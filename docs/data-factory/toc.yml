@@ -17,6 +17,10 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Pricing Apache Airflow job
+        href: pricing-apache-airflow-job.md
+      - name: Cost estimation from Azure Data Factory to Fabric
+        href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
       - name: Pricing examples
         items:
         - name: Data pipelines
@@ -39,6 +43,8 @@
             href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
           - name: Load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
             href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
+          - name: Load 2 GB of Parquet data to a Lakehouse table through Virtual Network Data Gateway
+            href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md
     - name: Keyboard shortcuts
       href: keyboard-shortcuts.md
   - name: Get started
@@ -47,8 +53,8 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Create a Data workflow
-      href: create-data-workflows.md
+    - name: Create an Apache Airflow Job
+      href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
     - name: Decide - Copy activity, dataflow, or Spark?
@@ -57,6 +63,8 @@
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
+    - name: Bring Azure Data Factory to Fabric
+      href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
     items:
     - name: Activity Continuity between ADF and Data Factory in Fabric
@@ -323,6 +331,10 @@
           href: format-excel.md
         - name: Configure in Dataflow Gen2
           href: connector-excel-dataflows.md
+      - name: Iceberg
+        items:
+        - name: Configure in Data pipeline
+          href: format-iceberg.md      
       - name: JSON
         items:
         - name: Configure in Data pipeline
@@ -411,6 +423,12 @@
         href: connector-lakehouse.md
       - name: Configure in a data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
+    - name: MariaDB
+      items:
+      - name: MariaDB - Overview
+        href: connector-mariadb-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-mariadb-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Microsoft 365 - Overview
@@ -581,6 +599,12 @@
         href: connector-teradata-database-overview.md
       - name: Set up your connection
         href: connector-teradata-database.md
+    - name: Vertica
+      items:
+      - name: Vertica - Overview
+        href: connector-vertica-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-vertica-copy-activity.md        
     - name: Web API/Web page
       items:
       - name: Web API/Web page - Overview
@@ -657,6 +681,8 @@
         href: webhook-activity.md
     - name: Concepts
       items:
+      - name: CI/CD for data pipelines
+        href: cicd-pipelines.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Parameterization
@@ -687,6 +713,8 @@
         href: modern-get-data-experience-pipeline.md
       - name: Data type mapping
         href: data-type-mapping.md
+      - name: Use AI to turn sketches into pipelines
+        href: image-to-pipeline-with-ai.md        
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
@@ -727,22 +755,38 @@
         href: dataflow-gen2-refresh.md
       - name: Data in Dataflow Gen2 staging
         href: data-in-staging-artifacts.md
+      - name: Dataflow Gen2 incremental refresh
+        href: dataflow-gen2-incremental-refresh.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
+      - name: How to handle schema drift
+        href: how-to-handle-schema-drift.md
     - name: Tutorials
       items:
       - name: Use a dataflow in a pipeline
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+      - name: Slowly changing dimension type 1
+        href: slowly-changing-dimension-type-one.md
       - name: Slowly changing dimension type 2 
         href: slowly-changing-dimension-type-two.md        
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
+  - name: Copy job
+    items:
+    - name: What is the Copy job in Data Factory?
+      href: what-is-copy-job.md
+    - name: How to create a Copy job
+      href: create-copy-job.md
+    - name: How to monitor a Copy job
+      href: monitor-copy-job.md
+    - name: CI/CD for Copy job
+      href: cicd-copy-job.md
   - name: Data gateway
     items:
     - name: On-premises data gateways docs
@@ -849,46 +893,58 @@
           href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
         - name: Download diagnostics logs
           href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json 
-  - name: Data workflows
+  - name: Apache Airflow Job
     items:
       - name: Concepts
-        href: data-workflows-concepts.md
+        href: apache-airflow-jobs-concepts.md
       - name: How-to
         items:
           - name: Synchronize your code from an existing Git repo
-            href: data-workflows-sync-git-repo.md
-          - name: Data workflows workspace settings
-            href: data-workflows-workspace-settings.md
+            href: apache-airflow-jobs-sync-git-repo.md
+          - name: Apache Airflow Job workspace settings
+            href: apache-airflow-jobs-workspace-settings.md
           - name: Install a private package
-            href: data-workflows-install-private-package.md
+            href: apache-airflow-jobs-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
-            href: data-workflows-enable-azure-key-vault.md
+            href: apache-airflow-jobs-enable-azure-key-vault.md
           - name: Set up SMTP Server
-            href: data-workflows-set-smtp-server.md
+            href: apache-airflow-jobs-set-smtp-server.md
           - name: Add a Kubernetes secret
-            href: data-workflows-access-private-container-registry.md
+            href: apache-airflow-jobs-access-private-container-registry.md
           - name: Apache Airflow configurations
-            href: data-workflows-supported-apache-airflow-configurations.md
+            href: apache-airflow-jobs-supported-apache-airflow-configurations.md
           - name: Migrate from Azure Workflow Orchestration Manager
-            href: data-workflows-migrate-azure-workflow-orchestration-manager.md
+            href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
+          - name: Access logs 
+            href: access-apache-airflow-job-logs.md
       - name: Tutorials
         items:
-          - name: Hello Data workflows
-            href: data-workflows-hello-world.md
-          - name: Orchestrate ADF pipeline with Data workflows
-            href: data-workflows-run-azure-data-factory-pipeline.md
-          - name: Orchestrate Azure Databricks job with Data workflows
-            href: data-workflows-run-databricks-job.md
-          - name: Power BI Semantic Model Refresh
-            href: data-workflows-power-bi-semantic-model-refresh.md
+          - name: Hello World
+            href: apache-airflow-jobs-hello-world.md
+          - name: Run Fabric data pipelines and notebooks
+            href: apache-airflow-jobs-run-fabric-item-job.md
+          - name: Run ADF pipeline
+            href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
+          - name: Run Azure Databricks job
+            href: apache-airflow-jobs-run-databricks-job.md
+          - name: Refresh Power BI Semantic Model
+            href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
-            href: data-workflows-dbt-fabric.md
-          - name: Run a Fabric Item Job
-            href: data-workflows-run-fabric-item-job.md
+            href: apache-airflow-jobs-dbt-fabric.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
-      href: copy-performance-sql-databases.md          
+      href: copy-performance-sql-databases.md    
+  - name: Extensibility
+    items:
+      - name: Connector certification
+        items:
+        - name: Data Factory connector certification
+          href: connector-certification.md
+        - name: Connector certification submission
+          href: certification-submission.md
+        - name: Provide connector documentation
+          href: providing-user-documentation.md   
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions

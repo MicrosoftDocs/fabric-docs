@@ -18,18 +18,22 @@ Apache Spark typically releases minor versions every 6 to 9 months. The Microsof
 With a commitment to excellence, we approach new preview runtime releases carefully, targeting an experimental preview in ~3 months but ultimately establishing timelines on a case-by-case basis. This involves evaluating critical components of each Spark version, including Java, Scala, Python, R, and Delta Lake. After thorough assessment, we create a detailed timeline outlining the runtime's availability and progression through various stages. Overall, Our goal is to establish a standard lifecycle path for Microsoft Fabric runtimes for Apache Spark.
 
 > [!TIP]
-> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.2](./runtime-1-2.md).
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
 The following table lists the runtime name, and release dates for supported Azure Synapse Runtime releases.
 
-| Runtime name                                               | Release stage  | End of Support date |
-|-----------------------------------------------------------| ----------------|---------------------------------------------|
-| [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) |  Public Preview | N/A                                         |
-| [Runtime 1.2 based on Apache Spark 3.4](./runtime-1-2.md) |  GA             | March 31, 2026                              |
-| [Runtime 1.1 based on Apache Spark 3.3](./runtime-1-1.md) |  EOSA             | March 31, 2025                              |
+| Runtime name                                               | Release stage | End of Support date |
+|-----------------------------------------------------------|---------------|---------------------|
+| [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | GA            | September 30, 2026  |
+| [Runtime 1.2 based on Apache Spark 3.4](./runtime-1-2.md) | GA            | March 31, 2026      |
+| [Runtime 1.1 based on Apache Spark 3.3](./runtime-1-1.md) | EOSA          | March 31, 2025      |
 
 
 :::image type="content" source="media\runtime\lifecycle-runtimes.png" alt-text="Diagram showing lifecycle of a runtime in Fabric." lightbox="media\runtime\lifecycle-runtimes.png":::
+
+> [!div class="nextstepaction"]
+> [Watch the Fabric Espresso Video from Product Engineering Group about Lifecycle of Apache Spark Runtimes in Fabric](https://youtu.be/1nlqp5Dv6ko?si=gsVeQVKzTTS15X8R)
+
 
 The diagram outlines the lifecycle of a runtime version from its experimental public preview to its deprecation and removal.
 
@@ -50,12 +54,12 @@ _* The expected duration of runtime in each stage. These timelines are provided 
 ## Versioning
 
 Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The
-runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, Runtime 1.1 and Runtime 1.2, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
+runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
 
 ## Related content
 
 - Read
   about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
-- [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.1)](./runtime-1-3.md)
+- [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
 - [Runtime 1.1 (Spark 3.3, Java 8, Python 3.10, Delta Lake 2.2)](./runtime-1-1.md)

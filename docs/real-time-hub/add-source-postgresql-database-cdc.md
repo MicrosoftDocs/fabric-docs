@@ -7,17 +7,18 @@ ms.topic: how-to
 ms.custom:
   - build-2024
   - references_regions
-ms.date: 05/21/2024
+ms.date: 09/04/2024
 ---
 
 # Add PostgreSQL Database CDC as source in Real-Time hub (preview)
-This article describes how to add PostgreSQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
+
+This article describes how to add PostgreSQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub.
 
 The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a PostgreSQL database. The connector then monitors and records any future row-level changes to this data. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Prerequisites 
+## Prerequisites
 
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
 - Registered user access in the PostgreSQL database.
@@ -62,18 +63,18 @@ To enable CDC in your Azure Database for PostgreSQL, follow these steps based on
 
 Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. 
 
-## Microsoft sources tab
+## Microsoft sources page
 
-1. In Real-Time hub, switch to the **Microsoft sources** tab. 
+1. In Real-Time hub, select **Microsoft sources**.
 1. In the **Source** drop-down list, select **PostgreSQL (CDC)**. 
 1. For **Subscription**, select an **Azure subscription** that has the resource group with your Azure MySQL Database account. 
 1. For **Resource group**, select a **resource group** that has the database.
-1. For **Region**, select a location where your database is located. 
-1. Now, move the mouse over the name of the PostgreSQL Database CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button. 
+1. For **Region**, select a location where your database is located.
+1. Now, move the mouse over the name of the PostgreSQL Database CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button.
 
-    :::image type="content" source="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources tab with filters to show Azure MySQL CDC and the connect button." lightbox="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png":::
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show Azure MySQL CDC and the connect button." lightbox="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png":::
 
-    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. Skip the first step of selecting Azure MySQL DB CDC as a source type in the Get events wizard. 
+    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. Skip the first step of selecting Azure MySQL DB CDC as a source type in the Add source wizard.
 
 ## Add Azure Database for PostgreSQL CDC as a source
 
@@ -93,8 +94,8 @@ Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-d
 
         :::image type="content" source="media/add-source-postgresql-database-cdc/connection-settings.png" alt-text="Screenshot that shows the Connection settings section for the Azure PostgreSQL database connector.":::
 1. Scroll down, and in the **Connection credentials** section, follow these steps.
-    1. For **Connection name**, enter a name for the connection. 
-    1. For **Authentication kind**, select **Basic**. 
+    1. For **Connection name**, enter a name for the connection.
+    1. For **Authentication kind**, select **Basic**.
     
         > [!NOTE]
         > Currently, Fabric event streams supports only **Basic** authentication.
@@ -106,7 +107,7 @@ Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-d
     1. For **table**, Enter a table name.
     1. For **Port**, enter the port number or leave the default value: 5432. 
     1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected PostgreSQL Database CDC as a source.
-    1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 
+    1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **All data streams** page when the wizard finishes. 
     1. Select **Next** at the bottom of the page.
 
         :::image type="content" source="media/add-source-postgresql-database-cdc/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/add-source-postgresql-database-cdc/connect-page-filled.png":::
@@ -116,15 +117,15 @@ Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-d
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected PostgreSQL Database CDC as a source. To close the wizard, select **Close** at the bottom of the page. 
+1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected PostgreSQL Database CDC as a source. To close the wizard, select **Close** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create success page." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
-1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you as shown in the following image.
+1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page.  
 
-    :::image type="content" source="./media/add-source-postgresql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/verify-data-stream.png":::
-
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/verify-data-stream.png":::
 
 ## Related content
+
 To learn about consuming data streams, see the following articles:
 
 - [Process data streams](process-data-streams-using-transformations.md)

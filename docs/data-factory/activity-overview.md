@@ -5,7 +5,7 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview
-ms.date: 03/19/2024
+ms.date: 09/16/2024
 ms.search.form: Pipeline Activity Overview
 ---
 
@@ -104,4 +104,4 @@ The general settings will always include **Name** and **Description** fields for
 
 ## Related content
 
-- [Create your first pipeline](create-first-pipeline-with-sample-data.md)
+- [Create your first pipeline](create-first-pipeline-with-sample-data.md) 
