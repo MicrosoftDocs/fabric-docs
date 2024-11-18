@@ -17,7 +17,9 @@ ms.collection: ce-skilling-ai-copilot
 
 # Copilot tenant settings
 
-Fabric has a new tenant setting group, **Copilot and Azure OpenAI Service**, with following two settings:
+Fabric has a tenant setting group, **Copilot and Azure OpenAI Service**, with the following settings:
+
+Enabled by default:
 
 - Admins can turn on Copilot for specific security groups, or for their entire organization. Users in those groups can use a preview of Copilot and other features powered by Azure OpenAI.
 
@@ -27,7 +29,11 @@ Fabric has a new tenant setting group, **Copilot and Azure OpenAI Service**, wit
 
     :::image type="content" source="media/service-admin-portal-copilot/copilot-data-sent-azure-ai-outside-sg.png" alt-text="Screenshot of Copilot setting for sending data outside your tenant's geographic region, compliance boundary, or national cloud instance." lightbox="media/service-admin-portal-copilot/copilot-data-sent-azure-ai-outside-security-group.png":::
 
-The **Tenant settings** for Fabric Copilot are enabled by default.
+Not enabled by default:
+
+- Capacities can be designated as Fabric Copilot capacities.  Copilot capacities allow the consolidation of users' copilot usage and billing on a single capacity. This setting allows Fabric administrators to designate specific groups, or the entire organization as able to designate capacities that they themselves administer as Fabric Copilot capacities. Capacity administgrators will still need to designate which users can use which capacity as a Fabric Copilot Capacity.
+
+    :::image type="content" source="media/service-admin-portal-copilot/fabric-copilot-capacity-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Capacity setting in the admin portal.":::
 
 ## Related content
 
