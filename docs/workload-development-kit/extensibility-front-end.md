@@ -55,7 +55,7 @@ To set up the front end of the sample project, follow these steps:
 
 1. **Verify** that `Node.js` and `npm` are installed and that the `npm` version is at least **9** (If not, install **latest** `Node.js` and `npm`)
 
-1. **Clone** the repository: Clone the repository found here: [Microsoft Fabric workload development sample](https://go.microsoft.com/fwlink/?)linkid=2272254 
+1. **Clone** the repository: Clone the repository found here: [Microsoft Fabric workload development sample](https://go.microsoft.com/fwlink/?linkid=2272254)
 
     <a name="package-structure"></a>
     This is the package directory layout, with a description of the essential components and resources:
@@ -111,7 +111,7 @@ To set up the front end of the sample project, follow these steps:
 
 To run a typical *Hello World* test scenario:
 
-1. Start the local server (follow the [Get started](https://learn.microsoft.com/en-us/fabric/workload-development-kit/environment-setup) section to have both the FE and BE workload sample running) make sure to enable *Dev Mode*. 
+1. Start the local server (follow the [Get started](./environment-setup) section to have both the FE and BE workload sample running) make sure to enable *Dev Mode*. 
 
 1. Go to create hub from the icon on the left navigation pane (sometimes the icon is located in the show more elipses):
 
