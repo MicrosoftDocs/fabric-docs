@@ -14,6 +14,7 @@ ms.date: 07/14/2024
 > To configure the following authentication settings in the setup guide, a Global Administrator role is required.
 
 In order to be able to work with authentication, you need to set up its three component parts:
+
 * [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication)
 * [Front-end sample](./extensibility-front-end.md)
 * [Back-end sample](./extensibility-back-end.md)
@@ -26,8 +27,8 @@ The sample demonstrates how to store and read data from and to lakehouses. It re
 
 To make sure Azure Storage is provisioned in the tenant:
 
-1. Log into the [Azure portal](https://portal.azure.com)
-1. Go to **Microsoft Entra ID** > **Enterprise applications**
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Go to **Microsoft Entra ID** > **Enterprise applications**.
 1. In the filters, choose **application type = all applications**. The application ID starts with e406a681-f3d4-42a8-90b6-c2b029497af1
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
@@ -43,7 +44,7 @@ Connect-AzureAD
 New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
 ```
 
-## Configure your application in Microsoft Entra ID manually 
+## Configure your application in Microsoft Entra ID manually
 
 To work with authentication, you need an application registered in Microsoft Entra ID. If you don't have an application registered, follow [this guide](/entra/identity-platform/quickstart-register-app#register-an-application) to create a new application.
 
@@ -154,26 +155,29 @@ To create an application named "myWorkloadApp" with the workload name "Org.Mywor
 powershell .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.Myworkload" -tenantId "cb1f79ad-7930-43c0-8d84-c1bf8d15c8c7"
 ```
 
-This example demonstrates how to use the `CreateDevAADApp.ps1` script with command-line arguments to automate the application setup process. The provided tenant ID is an example and should be replaced with your actual tenant ID.
+This example demonstrates how to use the *CreateDevAADApp.ps1* script with command-line arguments to automate the application setup process. The provided tenant ID is an example only. Replace the example with your actual tenant ID.
 
-## Configuring your workload (Backend)
+## Configure your workload (backend)
 
-1. In the Backend sample, go to `src/appsettings.json` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure the settings:
+1. In the backend sample, go to the *src/appsettings.json* file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure the settings:
 
    * `PublisherTenantId`: The tenant ID of the publisher  
    * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
    * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Microsoft Entra app.  
    * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id-manually) in the Microsoft Entra app.  
 
-1. Configure your *workloadManifest.xml*. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri`, and `ResourceId` (ID URI) under **AADApps**.
-```
+1. Configure the *workloadManifest.xml* file. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri`, and `ResourceId` (ID URI) under **AADApps**.
+
+```xml
 <AADApp>
     <AppId>YourApplicationId</AppId>
     <RedirectUri>YourRedirectUri</RedirectUri>
     <ResourceId>YourResourceId</ResourceId>
 </AADApp>
 ```
+
 ## Configure the workload local manifest
+>
 > [!NOTE]
 > This step is only applicable to the devmode scenario.
 

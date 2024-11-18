@@ -1,5 +1,5 @@
 ---
-title: Workload Development Kit frontend (preview)
+title: Extend the Microsoft Fabric frontend (preview)
 description: Learn how to edit files in the developer sample repository to build the frontend of a customized Microsoft Fabric workload. Learn about the Microsoft Fabric Workload Development Kit and how to use it by following a detailed example.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to build the frontend of a customized Microsoft Fabric workload and how to use the Microsoft Fabric Workload Development Kit so that I can create customized user experiences.
 ---
 
-# Microsoft Fabric Workload Development Kit frontend (preview)
+# Extend the Microsoft Fabric frontend (preview)
 
 You can use the Microsoft Fabric Workload Development Kit to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with independent software vendor (ISV) capabilities. For example, you can use the item editor to create a native, consistent user experience by embedding an ISV's frontend in the context of a Fabric workspace item.
 

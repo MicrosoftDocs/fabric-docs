@@ -1,6 +1,6 @@
 ---
-title: Overview of the workload cloud setup steps for the Fabric Workload Development Kit
-description: This article describes the prerequisites and steps to use a cloud environment with the Workload Development Kit.
+title: Workload cloud setup steps
+description: Learn the prerequisites and steps to use a cloud environment with the Microsoft Fabric Workload Development Kit.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
@@ -8,16 +8,16 @@ ms.custom:
 ms.date: 08/12/2024
 ---
 
-# Working in cloud mode (preview)
+# Work in cloud mode (preview)
 
-In this section, we cover the requirements for deploying a workload that operates on a remote server with internet access. The deployment is composed of two main parts:
+In this article, learn the requirements for deploying a workload that operates on a remote server with internet access in Microsoft Fabric. The deployment has two main parts:
 
-- **Workload client code**: The frontend part embedded as an iFrame within the Azure Service Fabric UI.
-- **Workload backend**: The server-side component that processes your workload.
+- **Workload client code**: Frontend code embedded as an iFrame in the Microsoft Fabric UI.
+- **Workload backend**: The backend, server-side component that processes your workload.
 
-Deploy both components as cloud services. You can host them on separate servers if needed.
+Deploy both components as cloud services. You can host the two components on separate servers if needed.
 
-To be able to work with your workload in cloud mode, you must configure your app information and domains correctly.
+To work with your workload in cloud mode, you must configure your app information and domains correctly.
 
 ## Microsoft Entra ID app resourceId format
 
@@ -27,7 +27,7 @@ The Microsoft Entra ID app `resourceId` value should be in the following format:
 https://<ISV's tenant verified domain>/<workload frontend server>/<workload backend server>/<workload id>/<optional string>
 ```
 
-- **ISV's tenant verified domain**: An exact match of the verified domain in the publisher's tenant without any prefixes or subdomains. [Learn how to add a custom domain to Microsoft Entra](/entra/fundamentals/add-custom-domain).
+- **ISV's tenant verified domain**: An exact match of the verified domain in the publisher's tenant without any prefixes or subdomains. Learn how to[add a custom domain to Microsoft Entra](/entra/fundamentals/add-custom-domain).
 - **Workload frontend server**: The frontend server name as it appears in the frontend URL (the extra segment in the frontend URL on top of the verified domain).
 - **Workload backend server**: The backend server name as it appears in the backend URL (the extra segment in the backend URL on top of the verified domain).
 - **Workload ID**: The workload ID as it appears in the workload manifest.
@@ -79,29 +79,29 @@ Here's an example:
 
 ## Configure your application in Microsoft Entra ID
 
-When configuring your application in Microsoft Entra Id, ensure the following applies:
+To configure your application in Microsoft Entra:
 
-1. The Redirect URL should point to your frontend URL appended with `/close`, for exmaple, `feserver.datafactory.contoso.com/close`.
+1. The Redirect URL should point to your frontend URL appended with `/close`. For example, `feserver.datafactory.contoso.com/close`.
 1. The application ID URI should match the verified domain of your application.
 
 > [!NOTE]
-> All other application configurations in Microsoft Entra ID are the same as in dev mode.
+> All other application configurations in Microsoft Entra ID are the same as in developer mode.
 
 ## Configure your workload (backend)
 
-1. In the back-end sample, go to *src/appsettings.json* and configure the following settings:
+1. In the backend sample, go to *src/appsettings.json* and configure the following settings:
 
    - For **PublisherTenantId**, select the tenant ID of the publisher.
-   - For **ClientId**, enter your application ID (found in Microsoft Entra ID under Overview).
-   - For **ClientSecret**, enter the secret created earlier when you configured the Microsoft Entra ID app.
-   - For **Audience**, enter the ID URI you configured earlier in the Microsoft Entra ID app.
+   - For **ClientId**, enter your application ID (found in the Microsoft Entra ID overview).
+   - For **ClientSecret**, enter the secret you created when you configured the Microsoft Entra ID app.
+   - For **Audience**, enter the ID URI you configured in the Microsoft Entra ID app.
 
-Next, configure *WorkloadManifest.xml* file:
+Next, configure the *WorkloadManifest.xml* file:
 
 1. Go to *src/Packages/manifest/WorkloadManifest.xml*.
 1. Under `AADApp`, set `AppId`, `redirectUri`, and `ResourceId` (the ID URI).
 
-Note the requirements specified in [XSD file](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Packages/manifest/WorkloadDefinition.xsd) and the following [backend manifest overview](backend-manifest.md).
+Note the requirements specified in [XSD file](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Packages/manifest/WorkloadDefinition.xsd) and the [backend manifest overview](backend-manifest.md).
 
 ## Configure your frontend app
 

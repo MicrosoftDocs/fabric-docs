@@ -13,7 +13,7 @@ ms.date: 05/21/2024
 
 To create and deploy the boilerplate Azure web app, you need to create and deploy the backend and frontend web apps. This tutorial provides instructions for creating and deploying the boilerplate backend and frontend web apps.
 
-Make sure you go over the [workload cloud setup tutorial](workload-cloud-setup.md) before you deploy your back-end and front-end web apps.
+Make sure you go over the [workload cloud setup tutorial](workload-cloud-setup.md) before you deploy your backend and frontend web apps.
 
 ## Create and deploy the boilerplate back-end web app
 
@@ -41,9 +41,9 @@ For general instructions, see [Get started with Azure App Service](/azure/app-se
 ### Update CORS
 
 1. In your web app's Azure page, Go to **API** > **CORS**.
-1. Under **Allowed Origins**, add your front-end web app URL.
+1. Under **Allowed Origins**, add your frontend web app URL.
 
-## Create and deploy the boilerplate front-end web app
+## Create and deploy the boilerplate frontend web app
 
 To create an Azure web app in the Azure portal:
 
@@ -62,9 +62,9 @@ For general instructions, see [Quickstart for Node.js in Azure App Service](/azu
 
 For more information on mapping custom domains, see [Custom domain mapping in Azure](/azure/app-service/app-service-web-tutorial-custom-domain?tabs=root%2Cazurecli).
 
-### Publish your front-end boilerplate web app part 2
+### Publish your frontend boilerplate web app part 2
 
-1. Build your front-end boilerplate by running `npm run build:test`.
+1. Build your frontend boilerplate by running `npm run build:test`.
 1. Go to the *Microsoft-Fabric-developer-sample\Frontend\tools\dist* folder.
 1. Select all files and the asset folder under `dist`, and create a .zip file of the selected files.
 1. Open PowerShell.
