@@ -4,18 +4,18 @@ description: "This article describes the external data sharing feature in Micros
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.date: 05/05/2024
+ms.date: 11/19/2024
 
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
 ---
 
-# External data sharing in Microsoft Fabric (preview)
+# External data sharing in Microsoft Fabric
 
 Fabric external data sharing is a feature that enables Fabric users to share data from their tenant with users in another Fabric tenant. The data is shared *in-place* from [OneLake](../onelake/onelake-overview.md) storage locations in the sharer's tenant, meaning that no data is actually copied to the other tenant. Rather, this cross-tenant sharing creates a [OneLake shortcut](../onelake/onelake-shortcuts.md) in the other tenant that points back to the original data in the sharer's tenant. Data that is shared across tenant boundaries is exposed to users in the other tenant as read-only, and can be consumed by any OneLake compatible Fabric workload in that tenant.
 
 :::image type="content" source="./media/external-data-sharing-overview/external-data-share-illustration.png" alt-text="Illustration of a cross-tenant OneLake data share." border="false":::
 
-This external data sharing feature for Fabric OneLake data isn't related to the mechanism that exists for sharing Power BI semantic models with Entra B2B guest users.
+This external data sharing feature for Fabric OneLake data isn't related to the mechanism that exists for sharing Power BI semantic models with Microsoft Entra B2B guest users.
 
 ## How does external data sharing work
 
@@ -28,12 +28,13 @@ External data share links don't work for users who are in the tenant where the e
 > [!NOTE]
 > Cross-tenant data access is enabled via a dedicated Fabric-to-Fabric authentication mechanism and does not require [Entra B2B guest user access](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
-## Supported Fabric item types
+# Supported Fabric item types
 
-External data sharing is currently supported for data residing in tables or files within:
+The Fabric item types that can be used in external data sharing are listed below.
 
-* [Lakehouses](../data-engineering/lakehouse-overview.md)
-* [KQL databases](../real-time-analytics/create-database.md)
+* **Creating an external data share (provider tenant)**: External data shares can be created only for data residing in tables or files in lakehouses and mirrored databases.
+
+* **Accepting an external data share (consuming tenant)**: Only lakehouses can be chosen as the location of the external data share shortcut when accepting an external data share.
 
 ## Revoking external data shares
 
@@ -57,9 +58,13 @@ With this understanding in mind, be aware of the following:
 
 * **Shortcuts:** Shortcuts contained in folders that are shared via external data sharing won't resolve in the consumer tenant.
 
+* **Sharing schemas**: Sharing an entire schema doesn't work: Lakehouse supports database schemas, but if you share one, it won't work.
+
+* **External data shares in non-home regions**: External data shares can only be accepted in a capacity that is located in the same region as the tenant. For example, if a tenant is in East US and has two capacities, one in East US and one in West US, users won't be able to accept shares in Lakehouses that use the West US capacity.
+
 ## Related content
 
 * [Create an external data share](./external-data-sharing-create.md)
 * [Accept an external data share](./external-data-sharing-accept.md)
 * [Manage external data shares](./external-data-sharing-manage.md)
-* [Fabric admins: Set up external data sharing on your tenant](./external-data-sharing-enable.md)
+* [Set up external data sharing on your tenant (Fabric admins)](./external-data-sharing-enable.md)
