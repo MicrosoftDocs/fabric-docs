@@ -14,7 +14,7 @@ ms.date:     11/18/2024
 
 # Surge Protection (preview)
 
-Surge Protection helps limit overuse of your capacity by limiting the total amount of compute background jobs consume. This helps protect interactive jobs and helps the capacity recover faster if there is a period of throttling or rejections. You configure Surge Protection for each capacity. Surge Protection helps prevent throttling and rejections but is not a substitute for capacity optimization, scaling up, and scaling out. 
+Surge Protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs. This helps protect interactive jobs and helps the capacity recover faster if there is a period of throttling or rejections. You configure Surge Protection for each capacity. Surge Protection helps prevent throttling and rejections but is not a substitute for capacity optimization, scaling up, and scaling out. 
 
 ### Prerequisites
 
@@ -48,17 +48,20 @@ Surge Protection helps limit overuse of your capacity by limiting the total amou
 
 ### System events for Surge Protection
 
-When Surge Protection is active capacity state events are generated. These are displayed in the System events table in the Fabric Capacity metrics app. 
+When Surge Protection is active, capacity state events are generated. These are displayed in the System events table in the Fabric Capacity metrics app. Below are the state events relevant to surge protection. A complete list of capacity state events is available in [Understanding the Microsoft Fabric Capacity Metrics app compute page. ](/fabric/enterprise/metrics-app-compute-page)
 
 |Capacity State|Capacity state change reason|When shown|
 | -------- | -------- | -------- |
 |Active|NotOverloaded|The capacity is in an active state. The capacity has not exceeded any built-in limits for interactive delay, interactive rejection, and background rejection. The surge protection background rejection threshold has not been exceeded.|
 |Overloaded|SurgeProtectionActive|The capacity is overloaded. The surge protection background rejection threshold has been exceeded. The capacity is rejecting background requests.|
+|Overloaded|InteractiveDelay|The capacity is overloaded. The capacity exceeded the built-in interactive delay limit. Interactive requests are being throttled. Surge protection is not active or has not been enabled for the capacity. |
 |Overloaded|InteractiveDelayAndSurgeProtectionActive|The capacity is overloaded. The capacity exceeded the built-in interactive delay limit. Interactive requests are being throttled. The capacity also exceeded the surge protection background rejection threshold. The capacity is rejecting background requests.|
+|Overloaded|InteractiveRejected|The capacity is overloaded. The capacity exceeded the built-in interactive rejection limit. Interactive requests are being rejected. Surge protection is not active or has not been enabled for the capacity. |
 |Overloaded|InteractiveRejectedAndSurgeProtectionActive|The capacity is overloaded. The capacity exceeded the built-in interactive rejection limit. Interactive requests are being rejected. The capacity also exceeded the surge protection background rejection threshold. The capacity is rejecting background requests.|
 |Overloaded|AllRejected|The capacity is overloaded. The capacity exceeded the built-in background rejection limit. The capacity is rejecting interactive and background requests.|
 
-A complete list of capacity state events is available in Understanding the Microsoft Fabric Capacity Metrics app compute page. [https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-compute-page#system-events](/fabric/enterprise/metrics-app-compute-page)
+> [!NOTE]
+> Even when surge protection is enabled, it is still possible for the capacity to experience interactive delays, interactive rejections, or all rejections when the capacity reaches the built-in capacity limits. 
 
 ### Per operation status messages for Surge protection
 
@@ -67,6 +70,10 @@ When surge protection is active, background requests are rejected. In Fabric cap
 ### Considerations and Limitations
 
 When Surge Protection is active, background jobs are rejected. This means there will still be broad impact across your capacity even when Surge Protection is enabled. By using Surge Protection, you're tuning your capacity to stay within a range of usage that you feel best balances compute needs within the capacity.  While Surge Protection is helpful, note that to fully protect critical solutions, it is recommended to isolate those in a correctly sized capacity. 
+
+Surge protection does not guarantee that interactive requests will not be delayed or rejected. As a capacity admin, you'll need to use the capacity metrics app to review data in the throttling charts and then adjust the surge protection background rejection threshold as needed.
+
+Some requests initiated from Fabric UI are billed as background request or depend on background requests to complete. These requests will still be rejected when surge protection is active.  
 
 ### Related content
 
