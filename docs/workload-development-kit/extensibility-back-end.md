@@ -73,7 +73,8 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 
 * `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It's an essential property for projects intended to produce NuGet packages during the build process.
 
-The generated NuGet package for Debug mode is located in the `src\bin\Debug` directory after the build process.
+The generated NuGet package for debug mode is located in the `src\bin\Debug` directory after the build process.
+
 When working in cloud mode, you can switch Visual Studio build configuration to **Release** and build your package. The generated package is located in the `src\bin\Release` directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md)
 
 ### Dependencies
@@ -88,7 +89,7 @@ When working in cloud mode, you can switch Visual Studio build configuration to 
 To configure the NuGet Package Manager, specify the path in the 'Package Sources' section before the build process.
 
 ```javascript
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -137,10 +138,10 @@ To configure the NuGet Package Manager, specify the path in the 'Package Sources
 
 ## Get started
 
-To set up the workload sample project on your local machine, follow these steps:
+To set up the workload sample project on your local machine:
 
 1. Clone the repository: `git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample.git`
-1. Open the solution in **Visual Studio 2022**.
+1. In Visual Studio 2022, open the solution.
 1. Set up an app registration by following instructions on the Authentication [guide](authentication-tutorial.md). Ensure that both your Frontend and Backend projects have the necessary setup described in the guide. Microsoft Entra is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
   
 1. Update the OneLake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md).
@@ -173,7 +174,7 @@ To set up the workload sample project on your local machine, follow these steps:
 
 1. *Program.cs* is the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host.
 1. Build to ensure your project can access the required dependencies for compilation and execution.
-1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
+1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/download/details.aspx?id=105993)
 1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in the *DevGateway* folder. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
 
    :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of Microsoft sign in page.":::
@@ -243,7 +244,7 @@ C# contract classes used by the APIs.
 
 The next step after generating code is implementing the *IItemLifecycleController* and *IJobsController* interfaces. In the Boilerplate sample, *ItemLifecycleControllerImpl* and *JobsControllerImpl* implement these interfaces.
 
-For example, this code is the implementation of *CreateItem* API:
+For example, this code is the implementation of the CreateItem API:
 
 ```csharp
 /// <inheritdoc/>
@@ -255,7 +256,7 @@ public async Task CreateItemAsync(Guid workspaceId, string itemType, Guid itemId
 }
 ```
 
-## Handle item payload
+## Handle an item payload
 
 Several API methods accept various types of "payload" as part of the request body, or return them as part of the response. For example, *CreateItemRequest* has *creationPayload* property.
 
@@ -295,7 +296,9 @@ The types for these "payload" properties are defined in the Swagger specificatio
 }
 ```
 
-The generated C# contract classes are defined as partial and have a dictionary with properties.
+The generated C# contract classes are defined as partial. They have a dictionary with properties defined.
+
+Here's an example:
 
 ```csharp
 /// <summary>
@@ -315,9 +318,11 @@ public partial class CreateItemPayload
 }
 ```
 
-The code can use this dictionary for reading and returning properties. However, a better approach is to define specific properties with corresponding types and names. This can be easily achieved because of the 'partial' declaration on the generated classes.
+The code can use this dictionary to read and return properties. However, a better approach is to define specific properties by using corresponding types and names. You can use the 'partial' declaration on the generated classes to efficiently define properties.
 
-For example, *CreateItemPayload.cs* file contains a complementary definition for *CreateItemPayload* class, which adds *Item1Metadata* property.
+For example, the *CreateItemPayload.cs* file contains a complementary definition for the *CreateItemPayload* class.
+
+In this example, the definition adds the *Item1Metadata* property:
 
 ```csharp
 namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
@@ -334,9 +339,9 @@ namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
 }
 ```
 
-However, if the workload supports multiple item types, *CreateItemPayload* class needs to be able to handle different types of creation payload, one per item type. There are two ways to do this. The simpler way, used by the Boilerplate sample, is to define multiple optional properties, each representing the creation payload for a different item type. Every request then has just one of these properties sets, according to the item type being created. Alternatively, you could implement polymorphic serialization, but it isn't demonstrated in the sample because it doesn't provide any significant benefits.
+However, if the workload supports multiple item types, *CreateItemPayload* class needs to be able to handle different types of creation payload, one per item type. There are two ways to do this. The simpler way, used by the Boilerplate sample, is to define multiple optional properties, each representing the creation payload for a different item type. Every request then has just one of these properties sets, according to the item type being created. Alternatively, you can implement polymorphic serialization, but this option isn't demonstrated in the sample because the option doesn't provide any significant benefits.
 
-For example, for supporting two item types this class definition would need to be extended as follows:
+For example, to support two item types, the class definition must be extended like in the following example:
 
 ```csharp
 namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
@@ -353,9 +358,9 @@ namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
 ```
 
 > [!NOTE]
-> The "payload" sent to the workload is generated by the client. It could be the item editor iFrame or Fabric Automation REST API. The client is responsible for sending the correct payload and matching the item type. The workload is responsible for verification. Fabric treats this payload as an opaque object and only transfers it from the client to the workload. Similarly, for a payload returned by the workload to the client, it is workload's and client's responsibility to handle the payload correctly.
+> The payload that's sent to the workload is generated by the client. It could be the item editor iFrame or Fabric Automation REST API. The client is responsible for sending the correct payload and matching the item type. The workload is responsible for verification. Fabric treats this payload as an opaque object and only transfers it from the client to the workload. Similarly, for a payload returned by the workload to the client, it is responsibility of the workload and the client to handle the payload correctly.
 
-For example, this code shows how the Boilerplate sample Item1 implementation handles that:
+For example, this code shows how the boilerplate sample item1 implementation handles the payload:
 
 ```csharp
 protected override void SetDefinition(CreateItemPayload payload)
@@ -382,11 +387,15 @@ protected override void SetDefinition(CreateItemPayload payload)
 }
 ```
 
-## Troubleshooting and Debugging
+## Troubleshoot and debug
 
-### Known Issues and Solutions
+The next sections describe how to troubleshoot and debug your deployment.
 
-#### Missing Client Secret
+### Known issues and resolutions
+
+Get information about known issues and ways to resolve them.
+
+#### Missing client secret
 
 **Error**:
 
@@ -421,7 +430,7 @@ Creating a new file failed for filePath: 'workspace-id'/'lakehouse-id'/Files/dat
 
 **Resolution**: Make sure you're working with the OneLake DFS URL that fits your environment. For example, if you work with PPE environment, change EnvironmentConstants.OneLakeDFSBaseUrl in Constants.cs to the appropriate URL.
 
-### Debugging
+### Debug
 
 When troubleshooting various operations, you can set breakpoints in the code to analyze and debug the behavior. Follow these steps for effective debugging:
 
@@ -455,11 +464,11 @@ We welcome contributions to this project. If you find any issues or want to add 
 
 1. Fork the repository.
 1. Create a new branch for your feature or bug fix.
-1. Make your changes and commit them.
+1. Make your changes, and then commit them.
 1. Push your changes to your forked repository.
-1. Create a pull request with a clear description of your changes.
+1. Create a pull request that has a clear description of your changes.
 
 ## Related content
 
-* [Workload development kit overview](development-kit-overview.md)
-* [Workload development kit front end](extensibility-front-end.md)
+* [Microsoft Fabric Workload Development Kit overview](development-kit-overview.md)
+* [Microsoft Fabric Workload Development Kit frontend](extensibility-front-end.md)
