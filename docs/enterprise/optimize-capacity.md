@@ -67,7 +67,7 @@ You can also consider moving Power BI workspaces to shared capacity, provided th
 
 ### Configure surge protection
 
-Surge Protection helps limit overuse of your capacity by limiting the total amount of compute background jobs consume. This helps protect interactive jobs and helps the capacity recover faster if there is a period of throttling or rejections. You configure Surge Protection for each capacity. Surge Protection helps prevent throttling and rejections but is not a substitute for capacity optimization, scaling up, and scaling out. 
+Surge protection helps limit overuse of your capacity by limiting the total amount of compute background jobs consume. This reduces total compute so interactive delays or rejections are less likely. It also helps the capacity recover faster if there's a period of throttling or rejections. You configure surge protection for each capacity. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. 
 
 When surge protection is active, background jobs are rejected. This means there's impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a range of usage that best balances compute needs within the capacity.  To fully protect critical solutions its recommended to isolate them in a correctly sized capacity. 
 
