@@ -17,7 +17,17 @@ This article shows you how to add Fabric OneLake event source to an eventstream.
 
 OneLake events allow you to subscribe to changes in files and folders in OneLake, and then react to those changes in real-time. With Fabric event streams, you can capture these OneLake events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of OneLake events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your OneLake.
 
-[!INCLUDE [fabric-onelake-event-types](../../real-time-hub/includes/fabric-onelake-event-types.md)]
+## Event types
+Here are the supported OneLake events:
+
+| Event type name | Description |
+| --------------- | ----------- |
+| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or replaced in OneLake. |
+| Microsoft. Fabric.OneLake.FileDeleted | Raised when a file is deleted in OneLake. |
+| Microsoft. Fabric.OneLake.FileRenamed | Raised when a file is renamed in OneLake. | 
+| Microsoft.Fabric.OneLake.FolderCreated | Raised created when a folder is created in OneLake. | 
+| Microsoft. Fabric.OneLake.FolderDeleted | Raised when a folder is deleted in OneLake. | 
+| Microsoft. Fabric.OneLake.FolderRenamed | Raised when a folder is renamed in OneLake. | 
 
 ## Prerequisites
 

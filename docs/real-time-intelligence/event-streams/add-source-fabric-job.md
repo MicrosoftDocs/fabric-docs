@@ -19,7 +19,14 @@ Job events allow you to subscribe to changes produced when Fabric runs a job. Fo
 
 With Fabric event streams, you can capture these Job events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Job events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Job.
 
-[!INCLUDE [fabric-Job-event-types](../../real-time-hub/includes/fabric-Job-event-types.md)]
+## Event types
+
+| Event type name | Description |
+| --------------- | ----------- |
+| Microsoft.Fabric.ItemJobCreated | Raised when the Fabric platform creates or triggers a job, manually or scheduled. |
+| Microsoft.Fabric.ItemJobStatusChanged | Raised when the job status changes to another non-terminal state. <p>This event isn't raised if the workload doesn't push when the status changes. The job status might change from created to completed soon. 
+| Microsoft.Fabric.ItemJobSucceeded | Raised when the job completes. |     
+| Microsoft.Fabric.ItemJobFailed | Raised when the job fails, including job getting stuck or canceled. |
 
 ## Prerequisites
 
