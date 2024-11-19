@@ -188,6 +188,6 @@ Assign a severity level that will be shown in alerts generated from this policy.
 ## Related content
 
 * [Create and Deploy data loss prevention policies](/purview/dlp-create-deploy-policy)
-* [Data loss prevention policies in Fabric](./data-loss-prevention-overview.md)
+* [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started)
 * [Respond to a DLP policy violation](./data-loss-prevention-respond.md)
 * [Monitor DLP policy violations](./data-loss-prevention-monitor.md)
