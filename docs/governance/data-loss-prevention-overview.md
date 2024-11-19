@@ -14,11 +14,11 @@ ms.date: 11/19/2024
 
 # Data loss prevention policies in Fabric
 
-To help organizations detect and protect their sensitive data, and to reduce the risks that result from oversharing, Fabric and Power BI support [Microsoft Purview Data Loss Prevention (DLP) polices](/microsoft-365/compliance/dlp-learn-about-dlp). DLP policies can alert data owners and security administrators to the presence of sensitive information in supported Fabric and Power BI data items, and can even block access to such items when sensitive information is detected.
+To help organizations detect and protect their sensitive data, and to reduce the risks that result from oversharing, Fabric and Power BI support Microsoft Purview Data Loss Prevention (DLP) polices. DLP policies can alert data owners and security administrators to the presence of sensitive information in supported Fabric and Power BI data items, and can even block access to such items when sensitive information is detected.
 
-For more information about DLP policies for Fabric and Power BI, see [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started).
+* For more information about DLP policies for Fabric and Power BI, see [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started).
 
-For more information about Microsoft Purview Data Loss Prevention (DLP) polices, see [Microsoft Purview Data Loss Prevention (DLP) polices](/microsoft-365/compliance/dlp-learn-about-dlp).
+* For more information about Microsoft Purview Data Loss Prevention (DLP) polices, see [Microsoft Purview Data Loss Prevention (DLP) polices](/microsoft-365/compliance/dlp-learn-about-dlp).
 
 ## Related content
 
