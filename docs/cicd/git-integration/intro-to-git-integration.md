@@ -58,7 +58,6 @@ The following items are currently supported:
 * Dataflows gen2 *(preview)*
 * EventHouse *(preview)*
 * EventStream *(preview)*
-* GraphQL *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
