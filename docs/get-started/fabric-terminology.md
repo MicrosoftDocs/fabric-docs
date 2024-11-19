@@ -77,7 +77,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Real-Time Intelligence
 
-- **Activator:** Activator is a no-code, low-code tool that allows you to create alerts, triggers, and actions on your data. Activator is used to create alerts on your data streams. For more information, see [Activator](../real-time-intelligence/activator-introduction.md).
+- **Activator:** Activator is a no-code, low-code tool that allows you to create alerts, triggers, and actions on your data. Activator is used to create alerts on your data streams. For more information, see [Activator](../real-time-intelligence/data-activator/activator-introduction.md).
 
 - **Eventhouse:** Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration. They're designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. A single workspace can hold multiple Eventhouses, an eventhouse can hold multiple KQL databases, and each database can hold multiple tables. For more information, see [Eventhouse overview](../real-time-intelligence/eventhouse.md).
 
