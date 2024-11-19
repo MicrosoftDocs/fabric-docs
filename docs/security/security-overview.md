@@ -55,7 +55,7 @@ To understand more about authentication in Fabric, see [Microsoft Fabric securit
 
 #### Private Links
 
-Private links enable secure connectivity to Fabric by restricting access to your Fabric tenant from an Azure virtual network (VNet), and blocking all public access. This ensures that only network traffic from that VNet is allowed to access Fabric features such as [Notebooks](../data-engineering/how-to-use-notebook.md), [Lakehouses](../data-engineering/lakehouse-overview.md), and [data warehouses](../data-warehouse/data-warehousing.md), in your tenant.
+Private links enable secure connectivity to Fabric by restricting access to your Fabric tenant from an Azure virtual network (VNet), and blocking all public access. This ensures that only network traffic from that VNet is allowed to access Fabric features such as [Notebooks](../data-engineering/how-to-use-notebook.md), [Lakehouses](../data-engineering/lakehouse-overview.md), [data warehouses](../data-warehouse/data-warehousing.md), and [databases](../database/index.yml) in your tenant.
 
 To configure Private Links in Fabric, see [Set up and use private links](../security/security-private-links-use.md).
 

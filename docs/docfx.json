@@ -81,10 +81,14 @@
                 "governance/**/*.yml": "governance",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
-                "real-time-hub/**/*.md": "real-time-hub",
-                "real-time-hub/**/*.yml": "real-time-hub",
-                "real-time-intelligence/**/*.md": "real-time-intelligence",
-                "real-time-intelligence/**/*.yml": "real-time-intelligence",
+                "real-time-hub/**/*.md": "rti-hub",
+                "real-time-hub/**/*.yml": "rti-hub",
+                "real-time-intelligence/**/*.md": "rti-kusto",
+                "real-time-intelligence/**/*.yml": "rti-kusto",
+                "real-time-intelligence/event-streams/**/*.md": "rti-eventstream",
+                "real-time-intelligence/event-streams/**/*.yml": "rti-eventstream",
+                "real-time-intelligence/data-activator/**/*.md": "rti-activator",
+                "real-time-intelligence/data-activator/**/*.yml": "rti-activator",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security",
                 "workload-development-kit/**/*.md": "workload-development-kit",
@@ -175,6 +179,9 @@
                 ],
                 "data-activator/**/*.md": [
                     "fabric-dataactivator-docs"
+                ],
+                "databases/**/*.md": [
+                    "ppac-fabric-databases"
                 ]
             }
         },

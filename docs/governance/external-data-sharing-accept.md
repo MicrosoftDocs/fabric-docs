@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-ms.date: 04/18/2024
+ms.date: 11/07/2024
 ---
 
 # Accept an external data share
@@ -14,7 +14,7 @@ When someone invites you to share OneLake data from their organization, you rece
 
 ## Prerequisites
 
-To be able to accept and use an external data share, you need standard Fabric write and reshare permissions on the lakehouse or KQL database item where you want to create the shortcut to the shared data. That item must have at least one folder or table.
+To be able to accept and use an external data share, you need standard Fabric write and reshare permissions on the lakehouse item where you want to create the shortcut to the shared data. That item must have at least one folder or table.
 
 ## Accept a share
 

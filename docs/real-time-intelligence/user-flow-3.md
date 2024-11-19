@@ -7,7 +7,8 @@ author: YaelSchuster
 ms.topic: concept-article
 ms.custom:
   - build-2024
-ms.date: 09/15/2024
+ms.date: 11/19/2024
+ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to discover streaming sources in Real-Time Intelligence.
 ---
@@ -19,8 +20,6 @@ The Real-Time hub is used to discover and manage your streaming data in Fabric. 
 This user flow shows how an analyst can easily discover and use streaming data from Microsoft and Azure sources in the Real-Time hub.
 
 :::image type="content" source="media/user-flows/user-flow-3.png" alt-text="Schematic image showing the steps in user flow 3." lightbox="media/user-flows/user-flow-3.png" border="false":::
-
-[!INCLUDE [preview-note](../real-time-hub/includes/preview-note.md)]
 
 ## Steps
 

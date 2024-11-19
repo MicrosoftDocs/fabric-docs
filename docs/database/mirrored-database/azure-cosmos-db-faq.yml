@@ -208,9 +208,9 @@ sections:
         answer: |
           Mirror each Azure Cosmos DB database independently. Then, add one of the SQL analytics endpoints to the other as a mirrored database item. Next, use a SQL `JOIN` query to perform queries across containers in distinct Azure Cosmos DB databases. 
       - question: |
-          How do I join Azure Cosmos DB mirrored data with Azure SQL database or Snowflake data?
+          How do I join Azure Cosmos DB mirrored data with Azure SQL Database or Snowflake data?
         answer: |
-          Mirror the Azure Cosmos DB database. Then, mirror either the Azure SQL database or Snowflake data. Then, add one of the SQL analytics endpoints to the other as a mirrored database item. Now, use a SQL `JOIN` query to perform queries across multiple data services.
+          Mirror the Azure Cosmos DB database. Then, mirror either the Azure SQL Database or Snowflake data. Then, add one of the SQL analytics endpoints to the other as a mirrored database item. Now, use a SQL `JOIN` query to perform queries across multiple data services.
   - name: Replication actions
     questions:
       - question: |

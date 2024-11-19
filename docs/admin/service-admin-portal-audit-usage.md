@@ -32,6 +32,10 @@ Power BI integration with [Azure Log Analytics](/power-bi/transform-model/log-an
 
 When the switch is on, administrators and Premium workspace owners can [configure **Azure Log Analytics for Power BI**](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure).
 
+## Workspace admins can turn on monitoring for their workspaces
+
+Enable [workspace monitoring](../get-started/workspace-monitoring-overview.md), a feature that allows workspace admins to monitor their workspace.
+
 ## Microsoft can store query text to aid in support investigation
 
 When this setting is enabled, Microsoft can store the query text generated when users use Fabric items such as reports and dashboards. This data is sometimes necessary for debugging and resolving complex issues related to the performance and functionality of Fabric Items such as semantic models. The setting is enabled by default.

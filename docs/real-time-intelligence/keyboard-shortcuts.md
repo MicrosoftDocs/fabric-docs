@@ -5,7 +5,7 @@ ms.reviewer: mibar
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: reference
-ms.date: 04/21/2024
+ms.date: 11/19/2024
 ms.search.form: KQL Queryset
 ---
 
