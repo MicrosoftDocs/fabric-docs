@@ -53,7 +53,17 @@ This section shows the artifacts using OneLake events. Here are the columns and 
 
 :::image type="content" source="./media/explore-fabric-onelake-events/profile.png" alt-text="Screenshot that shows the Profile section of the OneLake events detail page.":::
 
-[!INCLUDE [fabric-onelake-event-types](./includes/fabric-onelake-event-types.md)]
+### Event types
+Here are the supported OneLake events:
+
+| Event type name | Description |
+| --------------- | ----------- |
+| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or replaced in OneLake. |
+| Microsoft. Fabric.OneLake.FileDeleted | Raised when a file is deleted in OneLake. |
+| Microsoft. Fabric.OneLake.FileRenamed | Raised when a file is renamed in OneLake. | 
+| Microsoft.Fabric.OneLake.FolderCreated | Raised created when a folder is created in OneLake. | 
+| Microsoft. Fabric.OneLake.FolderDeleted | Raised when a folder is deleted in OneLake. | 
+| Microsoft. Fabric.OneLake.FolderRenamed | Raised when a folder is renamed in OneLake. | 
 
 ### Schemas
 An event has the following top-level data:
