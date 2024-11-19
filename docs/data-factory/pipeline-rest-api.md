@@ -14,6 +14,9 @@ ms.date: 09/16/2024
 
 In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs will be released later. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
 
+## Mounting Public APIs
+The Mounting Public APIs are now available. These APIs allow you to seamlessly integrate and access various public data sources within your data pipelines.
+
 ## Obtain an authorization token
 
 ### Option 1: Using MSAL.Net
@@ -88,7 +91,7 @@ Take the properties object and surround them in braces - **{ }** - so the REST I
 
 [REST API - Items - Create item](/rest/api/fabric/core/items/create-item )
 
-Example:
+Example 1 - CreateDataPipeline:
 
 ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
 
@@ -132,6 +135,48 @@ Response 201:
     "displayName": "Pipeline_1", 
     "description": "", 
     "workspaceId": "<Your WS Id>" 
+} 
+```
+
+Example 2 – Create MountedDataFactory 
+
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
+
+Body: 
+
+Payload:
+
+```json
+{"DataFactoryResourceId":"/subscriptions/<ADF subscription Id>/resourceGroups/<ADF resource group name>/providers/Microsoft.DataFactory/factories/<ADF datafactory name>"} 
+```
+
+Encoded JSON:
+
+```json
+{ 
+  "displayName": "pipeline_mdf", 
+  "type": " MountedDataFactory ", 
+  "definition": { 
+    "parts": [ 
+      { 
+        "path": "mountedDataFactory-content.json", 
+        "payload": <base64 encoded value>, 
+        "payloadType": "InlineBase64" 
+      } 
+    ] 
+  } 
+}  
+```
+
+Response 201:
+
+```json
+{ 
+    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
+    "type": "MountedDataFactory", 
+    "displayName": "Pipeline_mdf", 
+    "description": "", 
+    "workspaceId": "<Your WS Id>"
 } 
 ```
 

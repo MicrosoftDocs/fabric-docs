@@ -4,7 +4,7 @@ description: A known issue is posted where configuring the workspace storage to 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/03/2024
+ms.date: 11/12/2024
 ms.custom: known-issue-865
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-865
 
 You might experience issues when trying to configure your workspace storage to use an Azure Data Lake Storage (ADLS) Gen2 storage account. You can't connect successfully and receive errors.
 
-**Status:** Open
+**Status:** Fixed: November 12, 2024
 
 **Product Experience:** Power BI
 

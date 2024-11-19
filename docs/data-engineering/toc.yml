@@ -284,3 +284,5 @@ items:
      href: connect-apps-api-graphql.md
    - name: Query multiple data sources
      href: multiple-data-sources-graphql.md
+   - name: Monitoring GraphQL operations
+     href: graphql-operations.md

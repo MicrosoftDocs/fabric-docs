@@ -5,6 +5,6 @@ groups:
   prompt: Choose the capabilities of event streams
   pivots:
   - id: enhanced-capabilities
-    title: Enhanced capabilities (preview)
+    title: Enhanced capabilities
   - id: standard-capabilities
     title: Standard capabilities

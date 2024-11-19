@@ -31,7 +31,7 @@ Before you begin, ensure that you have the following installed on your system:
 
 Configure the admin portal as follows:
 
-1. Log into [Fabric](https://app.fabric.microsoft.com/signin) with an *Admin* account.
+1. Log into [Fabric](https://app.fabric.microsoft.com/?pbi_source=workload-development-kit-quickstart-sample) with an *Admin* account.
 
 1. From **Settings**, go to the **Admin portal**.
 
@@ -66,8 +66,6 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 1. **Access the sample workload**:  To start the *Create* experience, navigate to the sample workload home page.
 
 ### Prepare the development environment
-
-1. **Clone the boilerplate**: Clone the boilerplate project found here: [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254)
 
 1. **Open the solution**: Open the solution in Visual Studio *2022* to ensure compatibility with net7.
 

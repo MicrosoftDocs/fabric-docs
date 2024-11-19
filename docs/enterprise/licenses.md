@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 08/18/2024
+ms.date: 11/17/2024
 ---
 
 # Microsoft Fabric concepts and licenses
@@ -113,7 +113,7 @@ This table lists the main differences between the capabilities of per-user licen
 | Share non-Power BI Fabric items | &#x2705; | &#x2705; |&#x2705; |
 | View Power BI items in Pro workspaces or Fabric Capacity workspaces (where the Fabric Capacity SKU is less than a F64) | &#x274C; | &#x2705; |&#x2705; |
 | Users signing in with their own account can view Power BI items in Power BI Premium Per Capacity or Fabric Capacity workspaces (where the Fabric capacity SKU is greater than or equal to a F64) | &#x2705; | &#x2705; |&#x2705; |
-| Anyone can view Power BI items in Power BI Premium Per Capacity or Fabric Capacity workspaces when they're embedded using the [embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) solution | &#x2705; | &#x2705; |&#x2705; |
+| Anyone can view Power BI items in Power BI Premium Per Capacity or Fabric Capacity workspaces when they're embedded using the [embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) solution which doesn’t require an end user license | &#x2705; | &#x2705; |&#x2705; |
 
 ## Related content
 
