@@ -13,7 +13,7 @@ ms.date: 04/15/2023
 # Tutorial: Refresh Power BI Semantic Model with Apache Airflow Job
 
 > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 In today's data-driven world, maintaining up-to-date and accurate data models is crucial for informed business decisions. As data evolves, it's essential to refresh these models regularly to ensure that reports and dashboards reflect the most current information. Manual refreshes can be time-consuming and prone to errors, which is where Apache Airflow's orchestration, scheduling, and monitoring capabilities come into play. By leveraging Airflow, organizations can automate the refresh process of Power BI semantic models, ensuring timely and accurate data updates with minimal manual intervention.
 

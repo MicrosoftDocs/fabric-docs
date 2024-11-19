@@ -88,10 +88,10 @@ ON Affiliation.AffiliationId = Contoso.RecordTypeID;
 
 Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and high-quality. From [Fabric Data Engineering](../../data-engineering/data-engineering-overview.md), you can:
 
-- Create and manage your data as Spark using a SQL database in Fabric
-- Design pipelines to copy data into your SQL database in Fabric
-- Use Spark job definitions to submit batch/streaming job to Spark cluster
-- Use notebooks to write code for data ingestion, preparation, and transformation
+- Create and manage your data as Spark using a SQL database in Fabric.
+- Design pipelines to copy data into your SQL database in Fabric.
+- Use Spark job definitions to submit batch/streaming job to Spark cluster.
+- Use notebooks to write code for data preparation and transformation.
 
 ## Data Science with your SQL database in Fabric
 

@@ -71,8 +71,6 @@ Finally, use the **Action** section to choose what to do when the condition is d
 
 Different action types have different parameters. Some of those parameters are: the email address you want to send to, the workflow you want to start, subject line, or additional information.
 
-:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-07.png" alt-text="Screenshot of sending a message when a condition is detected.":::
-
 You can also select **Edit action** to see an editor with a preview of the message that the action sends and options to add more information to the action.
 
 ## Test your rule
@@ -81,8 +79,6 @@ After you create a rule, test it by selecting **Send me a test alert**. Selectin
 
 * The test alert always goes to you, regardless of the recipient field in the **Action** card
 * The **Send me a test alert** option is only enabled if you have at least one past event for which the rule condition is true.
-
-:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing an alert.":::
 
 ## Start and stop your rule
 
