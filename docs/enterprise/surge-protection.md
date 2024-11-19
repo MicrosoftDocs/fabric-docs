@@ -76,7 +76,7 @@ When surge protection is active, capacity state events are generated. These are 
 > [!NOTE]
 > When the capacity reaches its compute limit, it'll experience interactive delays, interactive rejections, or all rejections even when surge protection is enabled.
 
-### Per operation status messages for Surge protection
+### Per operation status messages for surge protection
 
 When surge protection is active, background requests are rejected. In Fabric capacity metrics app, these requests will appear with status Rejected or RejectedSurgeProtection. These status messages appear in the Fabric capacity metrics app timepoint page.  See [Understand the metrics app timepoint page](/fabric/enterprise/metrics-app-timepoint-page).
 
