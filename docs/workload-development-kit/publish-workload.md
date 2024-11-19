@@ -19,7 +19,7 @@ After you [upload your workload](manage-workload.md) to Microsoft Fabric, you ca
 
 1. Go to **Settings** > **Admin portal**.
 
-1 Select **Workloads**.
+1. Select **Workloads**.
 
 1. On the **Public Sample Workload** pane, select the **Publish** tab.
 

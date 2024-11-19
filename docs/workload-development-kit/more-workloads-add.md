@@ -14,7 +14,7 @@ The workload hub is a central location where you can view all the workloads that
 
 :::image type="content" source="./media/more-workloads-add/workload-hub.png" alt-text="Screenshot of the workload hub." lightbox="./media/more-workloads-add/workload-hub.png":::
 
-You can use all the workloads that are listed on the **My Workloads** tab and apply them in your analytical projects. You can generat items by using the workloads and performing various operations on them.
+You can use all the workloads that are listed on the **My Workloads** tab and apply them in your analytical projects. You can generate items by using the workloads and performing various operations on them.
 
 Workloads expand functionality in Fabric. Users with the relevant permissions can add workloads and make them available either to the entire tenant or to a specific capacity.
 
@@ -42,7 +42,7 @@ To add a workload:
 
    :::image type="content" source="./media/more-workloads-add/assign-select.png" alt-text="Screenshot of Assign workload to capacity." lightbox="./media/more-workloads-add/assign-select.png":::
 
-1. In **Add workload to capacities**, select one or more capacity to assign the workload to, and then select **Add Workload**.
+1. In **Add workload to capacities**, select one or more capacities to assign the workload to, and then select **Add Workload**.
 
 > [!NOTE]
 > Now the workload is available on all workspaces that the selected capacity is assigned to. Only workspaces that have this capacity assigned can create this workload item.

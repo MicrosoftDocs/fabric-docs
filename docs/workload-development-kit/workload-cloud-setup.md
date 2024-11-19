@@ -10,9 +10,11 @@ ms.date: 08/12/2024
 
 # Work in cloud mode (preview)
 
-In this article, learn the requirements for deploying a workload that operates on a remote server with internet access in Microsoft Fabric. The deployment has two main parts:
+In this article, learn the requirements for deploying a workload that operates on a remote server with internet access in Microsoft Fabric.
 
-- **Workload client code**: Frontend code embedded as an iFrame in the Microsoft Fabric UI.
+The deployment has two main parts:
+
+- **Workload client code**: Frontend code that's embedded as an iFrame in the Microsoft Fabric UI.
 - **Workload backend**: The backend, server-side component that processes your workload.
 
 Deploy both components as cloud services. You can host the two components on separate servers if needed.

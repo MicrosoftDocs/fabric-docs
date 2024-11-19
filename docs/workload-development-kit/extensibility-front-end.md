@@ -38,7 +38,7 @@ The SDK provides a sample UX workload project. The sample:
 
    The UX workload frontend manifest is a JSON resource that the ISV provides. The file contains essential information about the workload, including the URL of the workload web app and various UI details like the display name of the ISV item and associated icons. The ISV can use the manifest file to customize what happens when users interact with items in the Fabric portal.
 
-In this package, the [frontend manifest files](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/Package) are located in the *package* folder. The manifest file contains a detailed description of the workload manifest and its components..
+In this package, the [frontend manifest files](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/Package) are located in the *package* folder. The manifest file contains a detailed description of the workload manifest and its components.
 
 ## Enable the workload development feature in Fabric
 
@@ -144,7 +144,7 @@ The following sections describe the code elements and relevant considerations.
 
 ### bootstrap()
 
-Before bootstrapping, check the path to see if you need to close the window. This step is required if you use the [authentication](#authentication) API.
+Before bootstrapping, check the path to see if you need to close the window. This step is required if you use the [authentication](#view-authentication-activity) API.
 
 ```javascript
 const redirectUriPath = '/close';

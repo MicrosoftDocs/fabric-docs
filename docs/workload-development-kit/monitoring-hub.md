@@ -40,7 +40,7 @@ Three Fabric APIs are related to jobs:
 
 This API is called to initiate the execution of a job.
 
-- **Response**: The API should return a `202 Accepted` status, indicating that the job has been successfully scheduled by the system.
+- **Response**: The API should return a `202 Accepted` status, indicating that the job was successfully scheduled by the system.
 
 ---
 
@@ -70,7 +70,7 @@ Fabric uses a polling mechanism to track job instance status. This API is called
 
 Call this API to cancel an ongoing job instance.
 
-- **Response**: The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job has failed.
+- **Response**: The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job failed.
 
 ---
 
@@ -164,7 +164,7 @@ When the data is ready, the item jobs automatically show up in the monitoring hu
 
 #### Enable your item in the monitoring hub filter pane
 
-To add your item to the filter pane, define a new property in the item frontend manifest: set `supportedInMonitoringHub` to `true'.
+To add your item to the filter pane, define a new property in the item frontend manifest: set `supportedInMonitoringHub` to `true`.
 
 #### Integrate with job quick actions
 
@@ -207,7 +207,7 @@ When the workload team registers the action for detailed information, Fabric exp
 
 Currently, key/value pairs in plain text or hyperlink are supported.
 
-- For an example of handling the job actions, see *index.worker.ts* in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample). In the file, search for actions that begin with with `item.job`.
+- For an example of handling the job actions, see *index.worker.ts* in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample). In the file, search for actions that begin with `item.job`.
 
 ### Recent runs
 

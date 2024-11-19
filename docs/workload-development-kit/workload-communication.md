@@ -1,6 +1,6 @@
 ---
 title: Fabric workload communication (preview)
-description: Learn how to create communication between the backend and the frontend for a Microsoft Fabric extension.
+description: Learn how to create communication between the backend and the frontend of a Microsoft Fabric extension.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
@@ -11,11 +11,11 @@ ms.date: 05/21/2024
 
 # Workload communication (preview)
 
-This article describes how the communication between a Microsoft Fabric [frontend](./extensibility-front-end.md) and [backend](./extensibility-back-end.md) works and key considerations.
+This article describes how the communication between a Microsoft Fabric [frontend](./extensibility-front-end.md) and [backend](./extensibility-back-end.md) works. It covers key considerations for admins and users.
 
 ## Frontend-to-backend communication
 
-Authentication between your frontend and the backend happens over a secure and authenticated channel. To have a token available in your backend that you can use to communicate with other services, you can use the Fabric frontend to pass the communication to the backend.
+Authentication between your frontend and the backend happens over a secure and authenticated channel. To have a token available in your backend for communication with other services, you can use the Fabric frontend to pass the communication to the backend.
 
 ## Error handling
 

@@ -162,7 +162,7 @@ To set up the workload sample project on your local machine:
       * **PublisherTenantId**: The ID of the workload publisher tenant.
       * **ClientId**: The client ID (Application ID) of the workload Microsoft Entra application.
       * **ClientSecret**: The secret for the workload Microsoft Entra application.
-      * **Audience**: The audience for the incoming Microsoft Entra tokens. You can find this information in the app registration that you created, under **Expose an API**. This is also called *Application ID URI*.
+      * **Audience**: The audience for the incoming Microsoft Entra tokens. You can find this information in the app registration that you created, under **Expose an API**. This setting is also called the *application ID URI*.
 
 1. Generate a manifest package.
 
@@ -413,7 +413,7 @@ Get information about known issues and ways to resolve them.
 
 **Error**:
 
-**Microsoft.Identity.Client.MsalUiRequiredException: AADSTS65001**: The user or administrator didn't consent to use the application with ID \<example ID\>. Send an interactive authorization request for this user and resource.
+**Microsoft.Identity.Client.MsalUiRequiredException: AADSTS65001**: The user or administrator didn't consent to use the application with ID `<example ID>`. Send an interactive authorization request for this user and resource.
 
 **Resolution**:
 

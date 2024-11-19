@@ -44,7 +44,7 @@ To upload a workload to Microsoft Fabric:
 
    :::image type="content" source="./media/manage-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the NuGet package.":::
 
-1. Select workload.
+1. Select the workload.
 1. Select the uploaded version.
 
    :::image type="content" source="./media/manage-workload/select-version.png" alt-text="Screenshot showing how to select the workload.":::

@@ -63,7 +63,7 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 1. Change the application ID URI for your application. Go to **Manage** > **Expose an API**, and edit the value for **Application ID URI** for your app:
 
-   For the developor mode scenario, the application ID URI should start with `api://localdevinstance/<Workload publisher's tenant ID in lowercase (the tenant ID of the user used in Fabric to run the sample)>/<Name of your workload>` and an optional subpath at the end that starts with `/` (see the examples later in this section).
+   For the developer mode scenario, the application ID URI should start with `api://localdevinstance/<Workload publisher's tenant ID in lowercase (the tenant ID of the user used in Fabric to run the sample)>/<Name of your workload>` and an optional subpath at the end that starts with `/` (see the examples later in this section).
 
    Application ID URI parameters:
 
@@ -182,18 +182,18 @@ This example demonstrates how to use the *CreateDevAADApp.ps1* script with comma
 ```
 
 ## Configure the workload local manifest
->
+
 > [!NOTE]
 > This step applies only in the developer mode scenario.
 
 After you configure your application, update the following configurations in the *.env.dev* configuration file that's located in the [Frontend folder](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend):
 
 ```xml
-"DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
+"DEV_AAD_CONFIG_AUDIENCE": // The ID URI configured in your application for developer scenario
 
 "DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
 
-"DEV_AAD_CONFIG_APPID": "" // your app Id
+"DEV_AAD_CONFIG_APPID":  // your app Id
 ```
 
 :::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of an .env.dev file.":::
