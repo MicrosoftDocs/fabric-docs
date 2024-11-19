@@ -55,7 +55,7 @@ To set up the front end of the sample project, follow these steps:
 
 1. **Verify** that `Node.js` and `npm` are installed and that the `npm` version is at least **9** (If not, install **latest** `Node.js` and `npm`)
 
-1. **Clone** the repository: Clone the repository found here: https://go.microsoft.com/fwlink/?linkid=2272254 
+1. **Clone** the repository: Clone the repository found here: [Microsoft Fabric workload development sample](https://go.microsoft.com/fwlink/?linkid=2272254)
 
     <a name="package-structure"></a>
     This is the package directory layout, with a description of the essential components and resources:
@@ -111,17 +111,23 @@ To set up the front end of the sample project, follow these steps:
 
 To run a typical *Hello World* test scenario:
 
-1. Start the local server and enable *Dev Mode*. The menu at the left bottom corner should show the new Sample Workload:
+1. Start the local server (follow the [Get started](./environment-setup.md) section to have both the FE and BE workload sample running) make sure to enable *Dev Mode*. 
 
-   :::image type="content" source="./media/extensibility-front-end/product-switcher.png" alt-text="Screenshot of the Product Switcher Example Image.":::
+1. Go to create hub from the icon on the left navigation pane (sometimes the icon is located in the show more ellipses):
 
-1. Select the **Sample Workload** and navigate the user to the Sample workload Home page. The upper section presents the *Create* Experience:
+   :::image type="content" source="./media/extensibility-front-end/create-hub-icon-indicator.png" alt-text="Screenshot of the Create Hub icon in the left navigation pane.":::
 
-   :::image type="content" source="./media/extensibility-front-end/create-card.png" alt-text="Screenshot of the Create Card image on the sample extension home page.":::
+1. Click on see all:
 
-1. Select the *Sample Workload* card to open the Sample Workload's UI within Fabric:
+   :::image type="content" source="./media/extensibility-front-end/create-hub-see-all.png" alt-text="Screenshot of the Create hub see all button.":::
 
-   :::image type="content" source="./media/extensibility-front-end/sample-editor.png" alt-text="Screenshot of the[Main Sample UI image interface.":::
+1. Select the *Sample Item (preview)* card under the *Sample Workload (preview)* section to open the Sample Workload's create item editor and create an Item:
+
+   :::image type="content" source="./media/extensibility-front-end/create-hub-sample-workload.png" alt-text="Screenshot of the Sample Item card.":::
+
+   The new opened item should look like this:
+
+   :::image type="content" source="./media/extensibility-front-end/sample-editor.png" alt-text="Screenshot of the Main Sample UI image interface.":::
 
 Explore the various controls to see Fabric's WorkloadClient API (SDK) capabilities:
 
@@ -191,7 +197,7 @@ The current workspace `objectId` is passed into the frontend-only experience as 
             case 'open.createSampleWorkloadFrontendOnly':
                 const { workspaceObjectId: workspaceObjectId1 } = data as ItemCreateContext;
                 return workloadClient.page.open({
-                    extensionName: 'Org.WorkloadSample',
+                    workloadName: 'Org.WorkloadSample',
                     route: {
                         path: `/sample-workload-frontend-only/${workspaceObjectId1}`,
                     },
@@ -307,7 +313,7 @@ A sample call to `create`, as implemented when saving the workload item for the 
 ```javascript
  const params: CreateItemParams = {
         workspaceObjectId,
-        payload: { artifactType, displayName, description, workloadPayload: JSON.stringify(workloadPayload), payloadContentType: "InlineJson", }
+        payload: { itemType, displayName, description, workloadPayload: JSON.stringify(workloadPayload), payloadContentType: "InlineJson", }
     };
  const result: CreateItemResult = await workloadClient.ItemCrud.createItem(params);
 ```
@@ -322,14 +328,14 @@ Any attempt to create an item under a noncompatible workspace fails.
 
 #### GET
 
-When you select an existing Sample Workload item in the workspace view, Fabric navigates to the route that is defined in the Frontend manifest, under `artifacts`-->`editor`-->`path`:
+When you select an existing Sample Workload item in the workspace view, Fabric navigates to the route that is defined in the Frontend manifest, under `items`-->`editor`-->`path`:
 
 ```json
-"artifacts": [
+"items": [
   {
    "name": "Org.WorkloadSample.SampleWorkloadItem",
    "editor": {
-    "extension": "Org.WorkloadSample",
+    "workload": "Org.WorkloadSample",
     "path": "/sample-workload-editor"
    },
 ```
