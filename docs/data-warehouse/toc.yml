@@ -297,7 +297,8 @@ items:
     items:
       - name: Open mirroring overview
         href: ../database/mirrored-database/open-mirroring.md
-      - name: Open mirroring tutorial
+      - name: Tutorial
+        displayName: Open mirroring tutorial
         href: ../database/mirrored-database/open-mirroring-tutorial.md
       - name: Open mirroring landing zone
         displayName: Open mirroring landing zone requirements and format

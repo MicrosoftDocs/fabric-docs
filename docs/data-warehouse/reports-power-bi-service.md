@@ -35,13 +35,15 @@ Using the default semantic model and action menu in the workspace: In the [!INCL
 
 Select **Create report** to open the report editing canvas to a new report on the semantic model. When you save your new report, it's saved in the workspace that contains the semantic model as long as you have write permissions on that workspace. If you don't have write permissions, or if you're a free user and the semantic model resides in a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace, the new report is saved in your **My workspace**.
 
-## Use Data hub
+<a id="use-data-hub"></a>
 
-Use the default Power BI semantic model and semantic model details page in the **Data hub**. In the workspace list, select the default semantic model's name to get to the **Semantic model** details page, where you can find details about the semantic model and see related reports. You can also create a report directly from this page. To learn more about creating a report in this fashion, see [Dataset details](/power-bi/connect-data/service-dataset-details-page).
+## Use the OneLake catalog
 
-In the **Data hub**, you see warehouse and their associated default semantic models. Select the warehouse to navigate to the warehouse details page. You can see the warehouse metadata, supported actions, lineage and impact analysis, along with related reports created from that warehouse. Default semantic models derived from a warehouse behave the same as any semantic model.
+Use the default Power BI semantic model and semantic model details page in the [OneLake catalog](../governance/onelake-catalog.md). In the workspace list, select the default semantic model's name to get to the **Semantic model** details page, where you can find details about the semantic model and see related reports. You can also create a report directly from this page. To learn more about creating a report in this fashion, see [Dataset details](/power-bi/connect-data/service-dataset-details-page).
 
-To find the warehouse, you begin with the **Data hub**. The following image shows the **Data hub** in the Power BI service:
+In the **OneLake catalog**, you see warehouse and their associated default semantic models. Select the warehouse to navigate to the warehouse details page. You can see the warehouse metadata, supported actions, lineage and impact analysis, along with related reports created from that warehouse. Default semantic models derived from a warehouse behave the same as any semantic model.
+
+To find the warehouse, you begin with the **OneLake catalog**. The following image shows the **OneLake catalog** in the Power BI service:
 
 1. Select a warehouse to view its warehouse details page.
 
@@ -49,11 +51,9 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 
 1. Select **Open** to open the warehouse.
 
-   :::image type="content" source="media/reports-power-bi-service/data-hub-power-bi-service.png" alt-text="Screenshot of the Power BI Data hub." lightbox="media/reports-power-bi-service/data-hub-power-bi-service.png":::
-
 ## Create reports in the Power BI Desktop
 
-The Data hub integration in Power BI Desktop lets you connect to the Warehouse or SQL analytics endpoint of Lakehouse in easy steps.
+The OneLake catalog integration in Power BI Desktop lets you connect to the Warehouse or SQL analytics endpoint of Lakehouse in easy steps.
 
 1. Use **Data hub** menu in the ribbon to get list of all items.
 1. Select the warehouse that you would like to connect

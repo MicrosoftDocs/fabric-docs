@@ -4,7 +4,7 @@ description: Learn about the open mirrored databases partner ecosystem in Micros
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur
-ms.date: 11/18/2024
+ms.date: 11/19/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -12,7 +12,7 @@ no-loc: [Copilot]
 
 # Open mirroring (preview) partner ecosystem
 
-[Open mirroring](open-mirroring.md) is designed to be extensible, customizable, and open. It's a powerful feature that extends Mirroring in Fabric based on open Delta Lake table format. This capability enables any data providers to write change data directly into a mirrored database item in Microsoft Fabric.
+[Open mirroring in Microsoft Fabric (Preview)](open-mirroring.md) is designed to be extensible, customizable, and open. It's a powerful feature that extends Mirroring in Fabric based on open Delta Lake table format. This capability enables any data providers to write change data directly into a mirrored database item in Microsoft Fabric.
 
 The following are the open mirroring partners who have already built solutions to integrate with Microsoft Fabric.
 

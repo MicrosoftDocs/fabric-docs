@@ -4,7 +4,7 @@ description: Learn how to configure an open mirrored database in Microsoft Fabri
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur
-ms.date: 11/18/2024
+ms.date: 11/19/2024
 ms.topic: tutorial
 ---
 
@@ -17,7 +17,7 @@ In this tutorial, you configure an Open mirrored database in Fabric. This exampl
 ## Prerequisites
 
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
-    - The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated.
+    - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
 - During the current preview, the ability to create an open mirrored database via the Fabric portal is not available in all Fabric capacity regions.
 
 ## Create a mirrored database
@@ -30,13 +30,13 @@ In this section, we provide a brief overview of how to create a new open mirrore
 1. Select **Create**.
 1. Once an Open mirrored database is created via the user interface, the mirroring process is ready. Review the **Home** page for the new mirrored database item. Locate the **Landing zone** URL is in the details section of the mirrored database home page.
 
-:::image type="content" source="media/open-mirroring-tutorial/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item.":::
+:::image type="content" source="media/open-mirroring-tutorial/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item." lightbox="media/open-mirroring-tutorial/landing-zone-url.png":::
 
 ## Write change data into the landing zone
 
 Your application can now write initial load and incremental change data into the landing zone.
 
-- Follow the [Connecting to Microsoft OneLake guide](../../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake.
+- Follow the [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake.
 - Review the [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md) specifications.
 
 ## Start mirroring process
@@ -56,9 +56,9 @@ Your application can now write initial load and incremental change data into the
 
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
-For more information and details on the replication states, see [Monitor Fabric Mirror replication](monitor.md).
+For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
 
 ## Related content
 
-- [Connecting to Microsoft OneLake guide](../../onelake/onelake-access-api.md)
+- [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md)
 - [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md)
