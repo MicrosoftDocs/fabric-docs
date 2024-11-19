@@ -34,8 +34,6 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ## Configure Visual Studio code for your Livy API Session
 
-1. Add the sting <?experience=power-bi&lhLivyEndpoint=1> to the end of your browser URL when opening your Lakehouse.
-
 1. Select **Lakehouse Settings** in your Fabric Lakehouse.
 
     :::image type="content" source="media/livy-API/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-API/Lakehouse-settings.png" :::
@@ -52,7 +50,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ## Create a Livy API Spark session
 
-1. Create a notebook item in Visual Studio Code of type \.ipynb and insert this code.
+1. Create a `.ipynb` notebook in Visual Studio Code and insert the following code.
 
     ```python
     from msal import PublicClientApplication
@@ -86,7 +84,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     if "access_token" in result:
         access_token = result['access_token']
-        api_base_url_mist='https://msitapi.fabric.microsoft.com/v1/'
+        api_base_url_mist='https://api.fabric.microsoft.com/v1'
         livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
         headers = {"Authorization": "Bearer " + access_token}
     ```
