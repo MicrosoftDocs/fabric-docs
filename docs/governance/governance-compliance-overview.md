@@ -112,7 +112,7 @@ Organizational teams can have individual workspaces where different personas col
 
 ### Securing data in Fabric items
 
-Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, Synapse Data Warehouses in Fabric, Direct Lake, and KQL Database.
+Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, warehouses, Direct Lake, and KQL Database.
 
 **Guidance**: Individual teams are expected to apply these additional controls at the item and data level.
 
@@ -168,7 +168,7 @@ The data governance capabilities offered on Fabric via Purview's [live view](/pu
 
 #### Data curation
 
-Data curation in your organization involves gathering metadata information, lineage information, and others from all sources that your organization uses. These could be on-premises, third-party clouds, third-party products and services, or CRM systems to name a few. This extraction process is also referred to as scanning in Purview. All information is retrieved using built-in scanners in Purview that scan your organization’s data estate to collect this information. In Purview this is executed by Data Map.
+Data curation in your organization involves gathering metadata information, lineage information, and others from all sources that your organization uses. These could be on-premises, third-party clouds, third-party products and services, or CRM systems to name a few. This extraction process is also referred to as scanning in Purview. All information is retrieved using built-in scanners in Purview that scan your organization's data estate to collect this information. In Purview this is executed by Data Map.
 
 #### Data Map
 

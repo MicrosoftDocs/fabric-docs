@@ -19,13 +19,13 @@ items:
       href: ../real-time-intelligence/tutorial-1-resources.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
     - name: 2- Get data in the Real-Time hub
       href: ../real-time-intelligence/tutorial-2-get-real-time-events.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-    - name: 3- Query streaming data in a KQL queryset
+    - name: 3- Query streaming data in a KQL Queryset
       href: ../real-time-intelligence/tutorial-3-query-data.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-    - name: 4- Create a Real-Time dashboard
+    - name: 4- Create a Real-Time Dashboard
       href: ../real-time-intelligence/tutorial-4-create-dashboard.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
     - name: 5- Create a Power BI report
       href: ../real-time-intelligence/tutorial-5-power-bi-report.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-    - name: 6- Set an alert on your event stream
+    - name: 6- Set an alert on your eventstream
       href: ../real-time-intelligence/tutorial-6-set-alert.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
     - name: 7- Clean up resources
       href: ../real-time-intelligence/tutorial-7-clean-up-resources.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json  
@@ -39,9 +39,11 @@ items:
     items:
     - name: Azure Event Hubs
       href: add-source-azure-event-hubs.md
+    - name: Azure Service Bus
+      href: add-source-azure-service-bus.md
     - name: Azure IoT Hub
       href: add-source-azure-iot-hub.md
-    - name: Azure SQL Database Change Data Capture
+    - name: Azure SQL Database Change Data Capture (CDC)
       href: add-source-azure-sql-database-cdc.md
     - name: PostgreSQL Database Change Data Capture
       href: add-source-postgresql-database-cdc.md
@@ -51,22 +53,32 @@ items:
       href: add-source-azure-cosmos-db-cdc.md
     - name: Azure SQL Managed Instance Change Data Capture
       href: add-source-azure-sql-managed-instance-cdc.md
-    - name: SQL Server on VM Database Change Data Capture
+    - name: SQL Server on Virtual Machine Database CDC
       href: add-source-sql-server-on-vm-db-cdc.md
+    - name: Azure Data Explorer
+      href: add-source-azure-data-explorer.md
   - name: External sources 
     items:
     - name: Google Cloud Pub/Sub
       href: add-source-google-cloud-pub-sub.md
     - name: Amazon Kinesis Data Streams 
       href: add-source-amazon-kinesis-data-streams.md
+    - name: Apache Kafka
+      href: add-source-apache-kafka.md
+    - name: Amazon Managed Streaming for Kafka
+      href: add-source-amazon-managed-streaming-for-kafka.md
     - name: Confluent Cloud Kafka
       href: add-source-confluent-kafka.md
   - name: Fabric events
     items:    
-    - name: Get Azure Blob Storage events and create streams
-      href: get-azure-blob-storage-events.md      
     - name: Create streams for Fabric workspace item events
       href: create-streams-fabric-workspace-item-events.md
+  - name: Azure events
+    items:    
+    - name: Get Azure Blob Storage events and create streams
+      href: get-azure-blob-storage-events.md      
+  - name: Microsoft Fabric events capacity consumption
+    href: fabric-events-capacity-consumption.md
 - name: Discover and manage data streams and events
   items:
   - name: Explore data streams
@@ -77,18 +89,22 @@ items:
     href: preview-data-streams.md
   - name: Endorse data streams
     href: endorse-data-streams.md
-  - name: Explore All data streams
+  - name: Explore all data streams
     href: explore-all-data-streams.md
-  - name: Explore My streams
+  - name: Explore my data streams
     href: explore-my-data-streams.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md    
+  - name: Explore Azure events
+    items:
+    - name: Azure events page
+      href: explore-azure-events.md    
+    - name: Explore Azure Blob Storage events
+      href: explore-azure-blob-storage-events.md
   - name: Explore Fabric events
     items:
     - name: Fabric events page
       href: explore-fabric-events.md    
-    - name: Explore Azure Blob Storage events
-      href: explore-azure-blob-storage-events.md
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
 - name: Consume events and data streams
@@ -103,10 +119,12 @@ items:
       href: set-alerts-data-streams.md
   - name: Consume Fabric events
     items:
-    - name: Set alerts on Azure Blob Storage events
-      href: set-alerts-azure-blob-storage-events.md
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md
+  - name: Consume Azure events
+    items:
+    - name: Set alerts on Azure Blob Storage events
+      href: set-alerts-azure-blob-storage-events.md
 - name: User flows
   items:
   - name: Discover and respond to events
@@ -115,6 +133,6 @@ items:
     href: ../real-time-intelligence/user-flow-2.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Discover streaming sources from Microsoft
     href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-  - name: Set alerts based on Fabric events
+  - name: Set alerts based on Fabric and Azure events
     href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json     
     

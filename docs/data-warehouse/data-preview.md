@@ -13,9 +13,9 @@ ms.search.form: Data preview # This article's title should not change. If so, co
 ---
 # View data in the Data preview in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
 
-The **Data preview** is one of the three switcher modes along with the Query editor and Model view within Synapse Data Warehouse in Microsoft Fabric that provides an easy interface to view the data within your tables or views to preview sample data (top 1,000 rows).
+The **Data preview** is one of the three switcher modes along with the Query editor and Model view within Fabric Data Warehouse that provides an easy interface to view the data within your tables or views to preview sample data (top 1,000 rows).
 
 - You can also [query the data](query-warehouse.md) in your warehouse with multiple tools with a [SQL connection string](connectivity.md).
 - You can use the [SQL query editor](sql-query-editor.md) to write T-SQL queries from the [!INCLUDE [product-name](../includes/product-name.md)] portal.
