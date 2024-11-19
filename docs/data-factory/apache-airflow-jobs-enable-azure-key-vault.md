@@ -49,9 +49,9 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
   - **AZURE_TENANT_ID** = \<Tenant Id\>
   - **AZURE_CLIENT_SECRET** = \<Client Secret of SPN\>
 
-- With these settings you can use variables and connections inside your Airflow DAGs. The names of the connections and variables need to follow `AIRFLOW__SECRETS__BACKEND_KWARGS`, as defined previously. For example if the variable name is `sample_var`, then you should store it as `airflow-variables-sample-var`. For more information, see [Azure Key Vault as secret back end](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/secrets-backends/azure-key-vault.html).
+- With these settings you can use variables and connections inside your Airflow DAGs. The names of the connections and variables need to follow `AIRFLOW__SECRETS__BACKEND_KWARGS`, as defined previously. For example if the variable name is `sample_var`, then you should store it as `airflow-variables-sample-var`. For more information, see [Azure Key Vault as secret backend](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/secrets-backends/azure-key-vault.html).
 
-## Sample DAG using Key Vault as the back end
+## Sample DAG using Key Vault as the backend
 
 1. Create the new Python file `adf.py` with the following contents:
 
