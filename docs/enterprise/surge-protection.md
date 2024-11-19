@@ -26,7 +26,7 @@ You need to be a Fabric Capacity Administrator.
 
 1. Navigate to Capacity settings.
 
-1. Select a capacity 
+1. Select a capacity.
 
 1. Expand Surge Protection
 
