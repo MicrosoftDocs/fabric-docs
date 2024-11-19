@@ -87,13 +87,6 @@ https://api.fabric.microsoft.com/v1/workspaces/<ws_id>/lakehouses/<lakehouse_id>
 
 The URL is appended with either \<sessions> or \<batches> depending on what you choose.
 
-## Download the Livy API swagger files
-
-The full swagger files for the Livy API are available here.
-
-:::code language="yaml" source="Livy-api-swagger\swagger.yaml" range="1-5":::
-:::code language="json" source="Livy-api-swagger\swagger.json" range="1-7":::
-
 ## Integration with Fabric Environments
 
 For each Fabric workspace, a default starter pool is provisioned, the execution of all the spark code use this starter pool by default. You can use Fabric Environments to customize the Livy API Spark jobs.
