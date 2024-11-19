@@ -41,23 +41,23 @@ The pages of the insights report provide visuals that help lead you to actionabl
 
 # [Overview](#tab/overview)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/overview.gif" alt-text="Screenshot showing the overview page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/overview.gif" alt-text="Screenshot showing the overview page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/overview.gif":::
 
 # [Sensitivity labels](#tab/sensitivity-labels)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/sensitivity-labels.gif" alt-text="Screenshot showing the sensitivity label page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/sensitivity-labels.gif" alt-text="Screenshot showing the sensitivity label page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/sensitivity-labels.gif":::
 
 # [Endorsement](#tab/endorsement)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/endorsement.gif" alt-text="Screenshot showing the endorsement page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/endorsement.gif" alt-text="Screenshot showing the endorsement page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/endorsement.gif":::
 
 # [Domains](#tab/domains)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/domains.gif" alt-text="Screenshot showing the domains page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/domains.gif" alt-text="Screenshot showing the domains page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/domains.gif":::
 
 # [Items explorer](#tab/items-explorer)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/items-explorer.gif" alt-text="Screenshot showing the items-explorer page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/items-explorer.gif" alt-text="Screenshot showing the items-explorer page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/items-explorer.gif":::
 
 ---
 
