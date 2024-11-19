@@ -50,9 +50,9 @@ Surge Protection helps limit overuse of your capacity by limiting the amount of 
 
 Capacity admins set a Background Rejection threshold and a Background Recovery threshold when they enable surge protection. 
 
-The **Background Rejection threshold** limits the value 24-hour background % is allowed to reach. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background jobs. When surge protection is not enabled, the 24-hour background % is allowed to reach 100% before the capacity rejects new background jobs.
+The **Background Rejection threshold** determines when surge protection becomes active. The threshold applies to the 24-hour background % for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background jobs. When surge protection is not enabled, the 24-hour background % is allowed to reach 100% before the capacity rejects new background jobs.
 
-The **Background Recovery threshold** allows the capacity admin to control when the capacity starts to accept new background jobs after surge protection became active. When surge protection is active and the 24-hour background % drops below the background recovery threshold, surge protection stops being active. The capacity starts to accept new background requests. 
+The **Background Recovery threshold** determines when surge protection stops rejecting background jobs and the capacity returns to the Active NotOverloaded state. This happens when the 24-hour background % drops below the background recovery threshold. The capacity starts to accept new background requests. 
 
 > [!NOTE]
 > Capacity admins can see the 24-hour background % in the Capacity metrics app compute page under Throttling on the Background Throttling chart.  
@@ -74,7 +74,7 @@ When Surge Protection is active, capacity state events are generated. These are 
 
 ### Per operation status messages for Surge protection
 
-When surge protection is active, background requests are rejected. In Fabric capacity metrics app, these requests will appear with status Rejected or RejectedSurgeProtection. These status messages appear in the Fabric capacity metrics app timepoint page.  See Understand the metrics app timepoint page [https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-timepoint-page](/fabric/enterprise/metrics-app-timepoint-page).
+When surge protection is active, background requests are rejected. In Fabric capacity metrics app, these requests will appear with status Rejected or RejectedSurgeProtection. These status messages appear in the Fabric capacity metrics app timepoint page.  See [Understand the metrics app timepoint page](/fabric/enterprise/metrics-app-timepoint-page).
 
 ### Considerations and Limitations
 
@@ -84,9 +84,13 @@ Surge protection does not guarantee that interactive requests will not be delaye
 
 Some requests initiated from Fabric UI are billed as background request or depend on background requests to complete. These requests will still be rejected when surge protection is active.  
 
+Surge Protection rejecSurge Protection does not stop in progress jobs. 
+
+Background Rejection threshold is not an upper limit on 24-hours Background percentage. This is because in progress jobs may report usage 
+
 ### Related content
 
-[Understanding the Microsoft Fabric Capacity Metrics app compute page. https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-compute-page#system-events](Understanding the Microsoft Fabric Capacity Metrics app compute page. https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-compute-page#system-events)
+- [Understanding the Microsoft Fabric Capacity Metrics app compute page. ](/fabric/enterprise/metrics-app-compute-page)
 
-[Understand the metrics app timepoint page https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-timepoint-page.](Understand the metrics app timepoint page https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-timepoint-page.)
+- [Understand the metrics app timepoint page ](/fabric/enterprise/metrics-app-timepoint-page.)
 
