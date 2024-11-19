@@ -67,6 +67,8 @@ items:
     items:
     - name: Onboard to Multitasking
       href: multitasking.md
+    - name: Localize your workload
+      href: localization.md
 - name: Reference
   items:
    - name: Frequently asked questions
