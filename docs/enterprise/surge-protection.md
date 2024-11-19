@@ -63,7 +63,7 @@ Capacity admins set a _background rejection threshold_ and a _background recover
 
 ### System events for Surge Protection
 
-When Surge Protection is active, capacity state events are generated. These are displayed in the System events table in the Fabric Capacity metrics app. Below are the state events relevant to surge protection. A complete list of capacity state events is available in [Understanding the Microsoft Fabric Capacity Metrics app compute page. ](/fabric/enterprise/metrics-app-compute-page)
+When surge protection is active, capacity state events are generated. These are displayed in the _System events_ table in the _Fabric Capacity metrics app_. Below are the state events relevant to surge protection. A complete list of capacity state events is available in [Understanding the Microsoft Fabric Capacity Metrics app compute page](/fabric/enterprise/metrics-app-compute-page)
 
 |Capacity State|Capacity state change reason|When shown|
 | -------- | -------- | -------- |
