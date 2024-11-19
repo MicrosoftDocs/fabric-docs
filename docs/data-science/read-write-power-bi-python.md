@@ -170,10 +170,10 @@ To read data from semantic models:
     df_dax.head()
     ``````
 
-1. You can add measures to data retrieved from external sources. This approach combines three tasks
-   - it resolves column names to Power BI dimensions
-   - it defines group by columns
-   - it filters the measure
+1. You can add measures to data retrieved from external sources. This approach combines three tasks:
+   - It resolves column names to Power BI dimensions
+   - It defines group by columns
+   - It filters the measure
    Any column names that can't be resolved within the given semantic model are ignored (visit the supported [DAX syntax](/dax/dax-syntax-reference) resource for more information).
 
     ```python
