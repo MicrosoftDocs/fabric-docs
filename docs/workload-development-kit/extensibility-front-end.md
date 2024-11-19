@@ -113,7 +113,7 @@ To run a typical *Hello World* test scenario:
 
 1. Start the local server (follow the [Get started](./environment-setup.md) section to have both the FE and BE workload sample running) make sure to enable *Dev Mode*. 
 
-1. Go to create hub from the icon on the left navigation pane (sometimes the icon is located in the show more elipses):
+1. Go to create hub from the icon on the left navigation pane (sometimes the icon is located in the show more ellipses):
 
    :::image type="content" source="./media/extensibility-front-end/create-hub-icon-indicator.png" alt-text="Screenshot of the Create Hub icon in the left navigation pane.":::
 
