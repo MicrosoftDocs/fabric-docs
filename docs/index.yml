@@ -79,7 +79,7 @@ productDirectory:
     - title: Databases
       imageSrc: ./media/databases-icon.svg 
       summary: Create operational SQL databases seamlessly for transactional workloads.
-      url: data-warehouse/index.yml
+      url: database/index.yml
     # Card
     - title: Real-Time Intelligence
       imageSrc: ./media/fabric-real-time-intelligence-icon.png
