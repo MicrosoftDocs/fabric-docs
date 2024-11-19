@@ -389,6 +389,9 @@ items:
       displayName: capacity, usage, consumption, billing
     - name: Troubleshoot errors
       href: data-activator/activator-troubleshooting.md
+    - name: Activator throttling
+      href: data-activator/activator-throttling-effects.md
+      displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
   - name: Tutorial
     items:
     - name: Activator tutorial using sample data
