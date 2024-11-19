@@ -16,9 +16,9 @@ The following image shows an example of a localized workload in the Workload Hub
 :::image type="content" source="./media/localization/workload-hub-in-spanish.png" alt-text="Sample Product localized to Spanish.":::``
 
 For a Fabric Workload, it involves two aspects -
-1. Translating text within the iframe, independently of the Fabric shell, using [the Fabric Portal language](#access-the-language-of-the-fabric-portal).
-1. Enabling the translation of key words that are used in the Fabric shell such as the workload name, item names, workload descriptions and more. These strings are currently found directly in the manifest files (product.json and item.json).
-    1. For a description of all the strings that are localized, see [Localization Targets](#localization-targets).
+* Translating text within the iframe, independently of the Fabric shell, using [the Fabric Portal language](#access-the-language-of-the-fabric-portal).
+* Enabling the translation of key words that are used in the Fabric shell such as the workload name, item names, workload descriptions and more. These strings are currently found directly in the manifest files (product.json and item.json).
+    * For a description of all the strings that are localized, see [Localization Targets](#localization-targets).
 
 ## Supported Languages
 Fabric currently supports the following 44 languages:
@@ -147,11 +147,11 @@ Whereas the translation.json file for Spanish could contain:
 
 ## Default behavior
 
-1. As previously stated, the only required language for a localized workload is English.
-1. If a workload is localized, **all** of the localization targets must be provided as keys in the `translations.json` file for English.
-1. Other provided languages aren't required to translate all keys. Any keys that are left untranslated default to the English translation provided. For example, if your workload name should always be in English, you don't need to provide a translation in any other language.
-1. We currently support both localized and unlocalized workloads. If there are any image files *directly* in the assets folder, the assumption is that the workload is unlocalized.
-1. In order for a workload to be treated as localized, it must have only two subdirectories in the assets folder, one named "images" and the other named "locales". There must not be any other files in the assets folder.
+* As previously stated, the only required language for a localized workload is English.
+* If a workload is localized, **all** of the localization targets must be provided as keys in the `translations.json` file for English.
+* Other provided languages aren't required to translate all keys. Any keys that are left untranslated default to the English translation provided. For example, if your workload name should always be in English, you don't need to provide a translation in any other language.
+* We currently support both localized and unlocalized workloads. If there are any image files *directly* in the assets folder, the assumption is that the workload is unlocalized.
+* In order for a workload to be treated as localized, it must have only two subdirectories in the assets folder, one named "images" and the other named "locales". There must not be any other files in the assets folder.
 
 ## Localization Targets
 
