@@ -67,8 +67,6 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 
 ### Prepare the development environment
 
-1. **Clone the boilerplate**: Clone the boilerplate project found here: [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254)
-
 1. **Open the solution**: Open the solution in Visual Studio *2022* to ensure compatibility with net7.
 
 1. **App registration**: Follow the [authentication guide](./authentication-tutorial.md) to set up Microsoft Entra ID authentication for secure interactions within the architecture.

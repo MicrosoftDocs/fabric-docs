@@ -47,6 +47,12 @@ When you schedule a data pipeline run, you can choose the frequency that your pi
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab.":::
 
+> [!TIP]
+> when scheduling a data pipeline, the interface requires specifying both a start and an end date. This design ensures that all scheduled pipelines have a defined execution period.  Currently, there's no built-in option to set a schedule without an end date.
+> To maintain an ongoing schedule, you can set the end date far into the future, such as several years ahead. for example **2099-01-01** This approach effectively keeps the pipeline running indefinitely, allowing you to manage or adjust the schedule as needed over time.
+
+
+
 On the Schedule configuration page, you can specify a schedule frequency, start and end dates and times, and time zone.
 
 :::image type="content" source="media/pipeline-runs/configure-schedule.png" alt-text="Screenshot of the Schedule configuration screen." lightbox="media/pipeline-runs/configure-schedule.png":::
