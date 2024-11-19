@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-ms.date: 11/07/2024
+ms.date: 11/19/2024
 ---
 
 # Accept an external data share
