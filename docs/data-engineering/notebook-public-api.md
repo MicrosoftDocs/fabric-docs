@@ -61,21 +61,21 @@ The Fabric Rest API defines a unified endpoint for operations. Replace the place
 
 ### Create a notebook with a definition
 
-Create a notebook item with an existing .ipynb file:
+Create a notebook item with an existing .ipynb file and other type of source files.
 
 **Request**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items
-
+ 
 {
     "displayName":"Notebook1",
     "type":"Notebook",
     "definition" : {
-        "format": "ipynb",
+        "format": "ipynb", // Use "fabricGitSource" for source file format.
         "parts": [
             {
-                "path": "artifact.content.ipynb",
+                "path": "notebook-content.ipynb", // fabric source file format, .py, .scala, .sql files are supported.
                 "payload": "eyJuYmZvcm1hdCI6NCwibmJmb3JtYXRfbWlub3IiOjUsImNlbGxzIjpbeyJjZWxsX3R5cGUiOiJjb2RlIiwic291cmNlIjpbIiMgV2VsY29tZSB0byB5b3VyIG5ldyBub3RlYm9va1xuIyBUeXBlIGhlcmUgaW4gdGhlIGNlbGwgZWRpdG9yIHRvIGFkZCBjb2RlIVxuIl0sImV4ZWN1dGlvbl9jb3VudCI6bnVsbCwib3V0cHV0cyI6W10sIm1ldGFkYXRhIjp7fX1dLCJtZXRhZGF0YSI6eyJsYW5ndWFnZV9pbmZvIjp7Im5hbWUiOiJweXRob24ifX19",
                 "payloadType": "InlineBase64"
             }

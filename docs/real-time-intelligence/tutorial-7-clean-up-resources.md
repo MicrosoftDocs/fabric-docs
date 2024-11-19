@@ -7,7 +7,8 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 11/19/2024
+ms.subservice: rti-core
 ms.search.form: Get started
 ---
 # Real-Time Intelligence tutorial part 7: Clean up resources
@@ -17,7 +18,7 @@ ms.search.form: Get started
 
 ## Clean up resources
 
-Once you finish the tutorial, you might want to delete all resources you created. You can delete the event stream, eventhouse, KQL queryset, Real-Time dashboard, and Power BI report items individually, or you can delete the entire workspace.
+Once you finish the tutorial, you might want to delete all resources you created. You can delete the event stream, eventhouse, KQL queryset, Real-Time dashboard, Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)], and Power BI report items individually, or you can delete the entire workspace.
 
 1. Browse to the workspace in which you created the tutorial.
 1. From the menu ribbon, select **Workspace settings**.

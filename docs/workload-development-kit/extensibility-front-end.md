@@ -52,7 +52,7 @@ To set up the sample project frontend:
 
 1. Verify that Node.js and npm are installed. The npm installation must be version 9 or later. Otherwise, install the latest versions of Node.js and npm.
 
-1. Clone the [repository](https://go.microsoft.com/fwlink/?linkid=2272254).
+1. Clone the [Microsoft Fabric workload development sample repository](https://go.microsoft.com/fwlink/?linkid=2272254).
 
     <a name="package-structure"></a>
     The following list describes the package directory layout, components, and resources:
@@ -100,17 +100,23 @@ To set up the sample project frontend:
 
 To run a "hello world" test scenario:
 
-1. Start the local server and enable developer mode. The menu at the left bottom corner should show the new sample workload.
+1. Start the local server (follow the steps in [Get started](./environment-setup.md) to run both the frontend and backend workload samples) and ensure that developer mode is enabled.
 
-   :::image type="content" source="./media/extensibility-front-end/product-switcher.png" alt-text="Screenshot that shows an example of the product switcher.":::
+1. On the workspace menu, select the **Create hub** icon (sometimes the icon is located in the **Show more** ellipses).
 
-1. Select **Sample Workload** and go to the sample workload home pane. The upper section presents the *Create* experience.
+   :::image type="content" source="./media/extensibility-front-end/create-hub-icon-indicator.png" alt-text="Screenshot of the Create Hub icon on the left navigation pane.":::
 
-   :::image type="content" source="./media/extensibility-front-end/create-card.png" alt-text="Screenshot that shows creating a new sample item on the Sample Extension home pane.":::
+1. Select **See all**.
 
-1. Select the *Sample Workload* card to open the sample workload's UI in Fabric.
+   :::image type="content" source="./media/extensibility-front-end/create-hub-see-all.png" alt-text="Screenshot of the Create hub see all button.":::
 
-   :::image type="content" source="./media/extensibility-front-end/sample-editor.png" alt-text="Screenshot of the main sample UI image interface.":::
+1. Under **Sample Workload (preview)**, select the **Sample Item (preview)** card to create an item.
+
+   :::image type="content" source="./media/extensibility-front-end/create-hub-sample-workload.png" alt-text="Screenshot of the Sample Item card.":::
+
+The new item looks similar to this example:
+
+:::image type="content" source="./media/extensibility-front-end/sample-editor.png" alt-text="Screenshot of the Main Sample UI image interface.":::
 
 Explore the various controls to see the Fabric WorkloadClient API (the workload SDK) capabilities:
 
@@ -189,7 +195,7 @@ The sequence is shown in the following code example:
             case 'open.createSampleWorkloadFrontendOnly':
                 const { workspaceObjectId: workspaceObjectId1 } = data as ItemCreateContext;
                 return workloadClient.page.open({
-                    extensionName: 'Org.WorkloadSample',
+                    workloadName: 'Org.WorkloadSample',
                     route: {
                         path: `/sample-workload-frontend-only/${workspaceObjectId1}`,
                     },
@@ -232,66 +238,66 @@ The following examples use the notification.open() API:
 
 * State:
 
-   ```javascript
-      const [apiNotificationTitle, setNotificationTitle] = useState<string>('');
-      const [apiNotificationMessage, setNotificationMessage] = useState<string>('');
-   ```
+  ```javascript
+     const [apiNotificationTitle, setNotificationTitle] = useState<string>('');
+     const [apiNotificationMessage, setNotificationMessage] = useState<string>('');
+  ```
 
 * UI:
 
-   These examples configure specific UI elements:
+  These examples configure specific UI elements:
 
   * Title:
   
-     ```javascript
-     <Field label="Title" validationMessage={notificationValidationMessage} orientation="horizontal" className="field">
-         <Input size="small" placeholder="Notification Title" onChange={e => setNotificationTitle(e.target.value)} />
-       </Field>
+    ```javascript
+    <Field label="Title" validationMessage={notificationValidationMessage} orientation="horizontal" className="field">
+        <Input size="small" placeholder="Notification Title" onChange={e => setNotificationTitle(e.target.value)} />
+      </Field>
     ```
 
   * Send button:
 
-     ```javascript
-      <Button icon={<AlertOn24Regular />} appearance="primary" onClick={() => onCallNotification()} > Send Notification </Button>
-     ```
+    ```javascript
+     <Button icon={<AlertOn24Regular />} appearance="primary" onClick={() => onCallNotification()} > Send Notification </Button>
+    ```
 
   * Handler:
 
-     ```javascript
-      function onCallNotification() {
-       ... elided for brevity
-        callNotificationOpen(apiNotificationTitle, apiNotificationMessage, undefined, undefined, workloadClient, setNotificationId);
-      };
-     ```
+    ```javascript
+     function onCallNotification() {
+      ... elided for brevity
+       callNotificationOpen(apiNotificationTitle, apiNotificationMessage, undefined, undefined, workloadClient, setNotificationId);
+     };
+    ```
 
 * Controller:
 
-     ```javascript
-       export async function callNotificationOpen(
-         title: string,
-         message: string,
-         type: NotificationType = NotificationType.Success,
-         duration: NotificationToastDuration = NotificationToastDuration.Medium,
-         workloadClient: WorkloadClientAPI,
-         setNotificationId?: Dispatch<SetStateAction<string>>) {
+  ```javascript
+    export async function callNotificationOpen(
+      title: string,
+      message: string,
+      type: NotificationType = NotificationType.Success,
+      duration: NotificationToastDuration = NotificationToastDuration.Medium,
+      workloadClient: WorkloadClientAPI,
+      setNotificationId?: Dispatch<SetStateAction<string>>) {
 
-         const result = await workloadClient.notification.open({
-             notificationType: type,
-             title,
-             duration,
-             message
-         });
-         if (type == NotificationType.Success && setNotificationId) {
-             setNotificationId(result?.notificationId);
-         }
-     }
-     ```
+      const result = await workloadClient.notification.open({
+          notificationType: type,
+          title,
+          duration,
+          message
+      });
+      if (type == NotificationType.Success && setNotificationId) {
+          setNotificationId(result?.notificationId);
+      }
+  }
+  ```
 
 ### CRUD operations
 
 While a frontend-only development scenario is easily supported, the full end-to-end developer experience requires saving, reading, and editing existing workload items.
 
-The [backend implementation guide](extensibility-back-end.md) describes in detail how to set up and use the backend side.
+The [backend implementation guide](extensibility-back-end.md) describes in detail how to set up and use the backend.
 
 When the backend is up and running and the `Org.WorkloadSample.SampleWorkloadItem` type is registered in Fabric, you can perform CRUD operations on this type.
 
@@ -304,7 +310,7 @@ To make a sample call to `create`, use the following example that shows saving t
 ```javascript
  const params: CreateItemParams = {
         workspaceObjectId,
-        payload: { artifactType, displayName, description, workloadPayload: JSON.stringify(workloadPayload), payloadContentType: "InlineJson", }
+        payload: { itemType, displayName, description, workloadPayload: JSON.stringify(workloadPayload), payloadContentType: "InlineJson", }
     };
  const result: CreateItemResult = await workloadClient.ItemCrud.createItem(params);
 ```
@@ -324,11 +330,11 @@ An attempt to create an item under a noncompatible workspace fails:
 When you select an existing sample workload item in the workspace view, Fabric goes to the route that is defined in the frontend manifest in `artifacts`  > `editor` > `path`:
 
 ```json
-"artifacts": [
+"items": [
   {
    "name": "Org.WorkloadSample.SampleWorkloadItem",
    "editor": {
-    "extension": "Org.WorkloadSample",
+    "workload": "Org.WorkloadSample",
     "path": "/sample-workload-editor"
    },
 ```
@@ -359,7 +365,7 @@ Also ensure that your *env.dev* file is configured correctly. For more informati
 
 To see the worker and UI iframe elements, in the browser, select F12 to open the browser developer tools. Select the **Sources** tab.
 
-:::image type="content" source="./media/extensibility-front-end/debugging.png" alt-text="Screenshot of debugging files in VS Code.":::
+:::image type="content" source="./media/extensibility-front-end/debugging.png" alt-text="Screenshot of debugging files in Visual Studio Code.":::
 
 You can place a breakpoint in the worker iframe element and see the main `switch` on the incoming action. You can also debug the UI iframe element. For example, you can debug the code inside `SampleWorkloadEditor`.
 

@@ -8,9 +8,13 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
+<<<<<<< HEAD
 # Set up the Fabric monitoring hub (preview)
 
 The monitoring hub in the Microsoft Fabric Workload Development Kit is the centralized monitoring center. The monitoring hub is designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Use the monitoring hub](../admin/monitoring-hub.md).
+=======
+The monitor hub is the centralized monitoring center designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Use the Monitor hub](../admin/monitoring-hub.md).
+>>>>>>> fc9e032b33f6cf1284b4fd32b486916d7db319fb
 
 ## Backend
 
@@ -22,9 +26,16 @@ The following table provides an overview of the supported `JobScheduler` definit
 
 | Property | Description | Possible values |
 | --- | --- | --- |
+<<<<<<< HEAD
 | `OnDemandJobDeduplicateOptions` |Sets the deduplication option for on-demand item jobs. | - `None`: Don't deduplicate the job. <br> - `PerArtifact`: Ensure that there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
 | `ScheduledJobDeduplicateOptions` | Sets the deduplication option for on-demand item jobs. |- `None`: Don't deduplicate the job. <br> - `PerArtifact`: Ensure there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
 | `ItemJobTypes`| A list of job types with the specified properties. | - `Name`: The name of the job type, which is fully customizable by the independent software vendor (ISV).
+=======
+| *OnDemandJobDeduplicateOptions* |Sets the deduplication option for on-demand item jobs. | - *None*: Don't deduplicate the job. <br> - *PerItem*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
+| *ScheduledJobDeduplicateOptions* | Sets the deduplication option for on-demand item jobs. |- *None*: Don't deduplicate the job. <br> - *PerItem*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
+|*ItemJobTypes*| A list of job types with the specified properties. | - *Name*: The name of the job type, which is fully customizable by the ISV.
+### Step 2: Implement Jobs Workload APIs
+>>>>>>> fc9e032b33f6cf1284b4fd32b486916d7db319fb
 
 ### Implement job workload APIs
 
@@ -251,10 +262,14 @@ Example:
 
 As part of our UI workload sample, we added a section that's dedicated to jobs to the item ribbon.
 
-:::image type="content" source="./media/monitoring-hub/artifact-tab.png" alt-text="Screenshot showing the item tab in the Fabric UI.":::
+:::image type="content" source="./media/monitoring-hub/jobs-tab.png" alt-text="Screenshot showing the item tab in the Fabric UI.":::
 
 For an example of how this ribbon was implemented, see *ItemTabToolbar.tsx* in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample).
 
 ## Related content
 
+<<<<<<< HEAD
 - [Use the Monitoring hub](../admin/monitoring-hub.md)
+=======
+* [Use the Monitor hub](../admin/monitoring-hub.md)
+>>>>>>> fc9e032b33f6cf1284b4fd32b486916d7db319fb

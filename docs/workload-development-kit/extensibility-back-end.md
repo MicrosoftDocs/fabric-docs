@@ -11,7 +11,7 @@ ms.date: 05/21/2024
 
 # Implement the Microsoft Fabric backend (preview)
 
-This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services and for integration with the lakehouse platform in Azure. This article helps you set up the environment and configure the necessary components to get started. The article outlines key components and their roles in the architecture.
+This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) is a starting point for building applications that require integration with various services and for integration with lakehouse architecture. This article helps you set up the environment and configure the necessary components to get started. The article outlines key components and their roles in the architecture.
 
 ## Frontend
 
