@@ -131,7 +131,7 @@ Having your data in Microsoft Fabric means you can create Power BI semantic mode
 
 To create a Power BI semantic model in import or DirectQuery mode, follow these steps:
 
-1. Open Power BI Desktop, sign in, and click on **OneLake data hub**.
+1. Open Power BI Desktop, sign in, and select **OneLake**.
 
 1. Choose the SQL analytics endpoint of the lakehouse or warehouse.
 
