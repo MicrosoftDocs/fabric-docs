@@ -126,7 +126,7 @@ fabric.evaluate_measure(dataset, measure=["Average Selling Area Size", "Total St
 
 ## Use Power BI XMLA connector
 
-The default semantic model client is backed by Power BI's REST APIs. If there are any issues running queries with this client, it's possible to switch the back end to Power BI's XMLA interface using `use_xmla=True`. The SemPy parameters remain the same for measure calculation with XMLA.
+The default semantic model client is backed by Power BI's REST APIs. If there are any issues running queries with this client, it's possible to switch the backend to Power BI's XMLA interface using `use_xmla=True`. The SemPy parameters remain the same for measure calculation with XMLA.
 
 ```python
 fabric.evaluate_measure(dataset, \

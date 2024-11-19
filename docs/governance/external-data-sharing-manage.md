@@ -4,7 +4,7 @@ description: "This article describes how to manage external data shares."
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 11/07/2024
+ms.date: 11/19/2024
 
 #customer intent: As a data owner, I want to manage the external data shares on an item.
 ---

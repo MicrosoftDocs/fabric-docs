@@ -42,7 +42,7 @@ If you don't use your Spark pool for 2 minutes after your session expires, your 
 
 You can even create single node Spark pools, by setting the minimum number of nodes to one, so the driver and executor run in a single node that comes with restorable HA and is suited for small workloads.
 
-The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Apache Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 128.
+The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Apache Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 384 Spark VCores (64 * 2 * 3X Burst Multiplier). You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 384.
 
 Spark pools are billed like starter pools; you don't pay for the custom Spark pools that you have created unless you have an active Spark session created for running a notebook or Spark job definition. You're only billed for the duration of your job runs. You aren't billed for stages like the cluster creation and deallocation after the job is complete.
 
@@ -78,6 +78,10 @@ A Spark pool can be defined with node sizes that range from a small compute node
 | Large | 16 | 128 GB |
 | X-Large | 32 | 256 GB |
 | XX-Large | 64 | 512 GB |
+
+
+> [!NOTE]
+>  Node sizes X-Large and XX-Large are only allowed for non-trial Fabric SKUs. 
 
 ## Autoscale
 

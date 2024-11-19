@@ -30,9 +30,7 @@ The following animated gif reviews the steps to select a warehouse to share, sel
 
 ## Share a warehouse
 
-1. You can share your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from the **OneLake data hub** or Warehouse item by choosing **Share** from quick action, as highlighted in the following image.
-
-    :::image type="content" source="media/share-warehouse-manage-permissions/share-warehouse-data-hub.png" alt-text="Screenshot showing how to share a warehouse in the OneLake data hub page." lightbox="media/share-warehouse-manage-permissions/share-warehouse-data-hub.png":::
+1. You can share your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from the **OneLake** or Warehouse item by choosing **Share** from quick action, as highlighted in the following image.
 
 1. You're prompted with options to select who you would like to share the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with, what permissions to grant them, and whether they'll be notified by email.
 

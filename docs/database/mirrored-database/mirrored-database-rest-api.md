@@ -4,7 +4,7 @@ description: This article describes the available REST APIs for Fabric mirroring
 author: xuyangit1
 ms.author: xuyan
 ms.topic: conceptual
-ms.date: 11/01/2024
+ms.date: 11/18/2024
 ---
 
 # Microsoft Fabric mirroring public REST API
@@ -12,7 +12,7 @@ ms.date: 11/01/2024
 The public APIs for Fabric mirroring consist of two categories: (1) [CRUD operations for Fabric mirrored database item](/rest/api/fabric/mirroreddatabase/items) and (2) [Start/stop and monitoring operations](/rest/api/fabric/mirroreddatabase/mirroring). The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/).
 
 > [!NOTE]
-> These REST APIs don't apply to mirrored database from Azure Databricks.
+> These REST APIs don't apply to mirrored database from Azure Databricks or mirrored Azure SQL Managed Instance.
 
 ## Create mirrored database
 
@@ -42,7 +42,7 @@ Body:
 }
 ```
 
-The payload property in above body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode. The original JSON definition examples for different types of sources are as below:
+The payload property in previous json body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode. The original JSON definition examples for different types of sources follow:
 
 ### JSON definition example of Snowflake
 
@@ -90,7 +90,7 @@ The payload property in above body is Base64 encoded. You can use [Base64 Encode
 ```
 
 > [!NOTE]
-> For Azure SQL Database, you will need to [enable system assigned managed identity](/fabric/database/mirrored-database/azure-sql-database-tutorial#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) and grant it **Read,Write** permission to the mirrored database artifact before starting mirroring.
+> For Azure SQL Database, you will need to [enable system assigned managed identity](/fabric/database/mirrored-database/azure-sql-database-tutorial#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) and grant it **Read,Write** permission to the mirrored database item before starting mirroring.
 
 
 ### JSON definition example of Azure Cosmos DB
@@ -117,7 +117,8 @@ The payload property in above body is Base64 encoded. You can use [Base64 Encode
 ```
 
 ### JSON definition example of Snowflake with specified tables to replicate
-Above examples apply to the scenario that automatically replicates all the tables in the specified database. If you want to specify the tables to replicate, you can specify the `mountedTables` property as below.
+
+The previous examples apply to the scenario that automatically replicates all the tables in the specified database. If you want to specify the tables to replicate, you can specify the `mountedTables` property, as in the following example.
 
 ```json
 {
@@ -160,6 +161,26 @@ Response 201:
     "description": "A mirrored database description", 
     "workspaceId": "<your workspace ID>" 
 } 
+```
+
+
+### JSON definition example of open mirroring
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "GenericMirror",
+            "typeProperties": {}
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "format": "Delta"
+            }
+        }
+    }
+}
 ```
 
 ## Delete mirrored database
@@ -396,7 +417,7 @@ The .NET SDK that supports Fabric mirroring is available at [Microsoft Fabric .N
 
 ## Known limitations
 
-- Service Principal/Managed identity are currently not supported.
+- Service Principal/Managed identity is currently not supported.
 
 ## Related content
 
