@@ -30,7 +30,7 @@ In this tutorial, you learn how to:
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a premium workspace with Contributor or higher permissions where your eventstream and KQL database are located.
+- Get access to a workspace with Contributor or higher permissions where your eventstream and KQL database are located.
 - Download and install the latest [long-term support (LTS) version of Node.js](https://nodejs.org).
 - Download and install [Visual Studio Code](https://code.visualstudio.com) (recommended) or any other integrated development environment (IDE).
 

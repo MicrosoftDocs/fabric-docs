@@ -17,7 +17,7 @@ ms.search.form: delta lake interoperability
 
 In Microsoft Fabric, the Delta Lake table format is the standard for analytics. [Delta Lake](https://docs.delta.io/latest/delta-intro.html) is an open-source storage layer that brings ACID (Atomicity, Consistency, Isolation, Durability) transactions to big data and analytics workloads.
 
-All Fabric experiences generate and consume Delta Lake tables, driving interoperability and a unified product experience. Delta Lake tables produced by one compute engine, such as Synapse Data warehouse or Synapse Spark, can be consumed by any other engine, such as Power BI. When you ingest data into Fabric, Fabric stores it as Delta tables by default. You can easily integrate external data containing Delta Lake tables by using OneLake shortcuts.
+All Fabric experiences generate and consume Delta Lake tables, driving interoperability and a unified product experience. Delta Lake tables produced by one compute engine, such as Fabric Data Warehouse or Synapse Spark, can be consumed by any other engine, such as Power BI. When you ingest data into Fabric, Fabric stores it as Delta tables by default. You can easily integrate external data containing Delta Lake tables by using OneLake shortcuts.
 
 ## Delta Lake features and Fabric experiences
 
