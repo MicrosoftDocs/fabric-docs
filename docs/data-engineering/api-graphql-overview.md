@@ -19,7 +19,7 @@ Microsoft Fabric API for GraphQL is a data access layer that enables quick and e
 
 Exposing data sources to a GraphQL item in Microsoft Fabric is quick and easy. Select the data source you would like to expose and then indicate which objects within that data source you want to present through the API. Optionally, define any relationships between the fields that you choose. After you complete these steps, your API endpoint is ready to accept queries.
 
-## Supported data sources (preview)
+## Supported data sources
 
 Currently, the following supported data sources can be exposed through the Fabric API for GraphQL:
 
