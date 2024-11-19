@@ -44,7 +44,7 @@ You need to be a Fabric Capacity Administrator.
 
 1. On the **Compute** page, select **System events**.
 
-1. The System events table shows row when surge protection became active and when the capacity returned to a not overloaded state
+1. The System events table shows when surge protection became active and when the capacity returned to a not overloaded state.
 
 ### Surge Protection thresholds
 
