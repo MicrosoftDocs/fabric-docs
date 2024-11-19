@@ -21,7 +21,7 @@ Before you create the solution, ensure the following prerequisites are set up in
 
 1. A Microsoft **Fabric enabled workspace**.
 2. An **Azure OpenAI** account with an API key and a deployed gpt-4o model.
-3. [Create an **Azure Blob Storage** account.](https://learn.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal)
+3. [Create an **Azure Blob Storage** account.](/azure/storage/common/storage-account-create?tabs=azure-portal)
 4. Apache Airflow dag diagram.
 5. [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 6. Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
@@ -31,7 +31,7 @@ Before you create the solution, ensure the following prerequisites are set up in
 
 ### Step 1: Upload the sketch to Azure Blob Storage
 
-Before you can analyze the sketch, you need to upload it to Azure Blob Storage. [Create a container](https://learn.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) in Azure Blob Storage called `airflow-dag-images` and upload the image there.
+Before you can analyze the sketch, you need to upload it to Azure Blob Storage. [Create a container](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) in Azure Blob Storage called `airflow-dag-images` and upload the image there.
 :::image type="content" source="media/apache-airflow-jobs/airflow-dag-diagram.png" lightbox="media/apache-airflow-jobs/airflow-dag-diagram.png" alt-text="Screenshot represents DAG diagram of Apache Airflow.":::
 
 ### Step 2: Set up an Airflow Connection for Azure Blob Storage
