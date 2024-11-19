@@ -1,10 +1,10 @@
 ---
-title: GraphQL Monitoring Dashboard and Logging (Preview) 
+title: GraphQL monitoring dashboard and logging (Preview) 
 description: Learn about GraphQL Monitoring dashboard and Logging and how it is being used, which enable developers to monitor API activities and troubleshoot errors and inefficiencies. 
 author: HHPHTTP
 ms.author: hhosseinpour
 ms.topic: how-to 
-ms.date: 11/01/2024
+ms.date: 11/19/2024
 
 ---
 
@@ -13,55 +13,55 @@ ms.date: 11/01/2024
 > [!NOTE]
 > Monitoring Dashboard and Logging feature for Fabric API for GraphQL is in **preview**.
 
-After an API for GraphQL is deployed in Fabric, you may want to understand how the API is being used by clients and troubleshoot errors in case there are any problems with the API. Fabric GraphQL Monitoring Dashboard (Preview) allows you to visualize, monitor, and troubleshoot your GraphQL API request activity in Fabric. This document guides you through the steps to enable monitoring capability and effectively use the dashboard various components.  
+After deploying an API for GraphQL in Fabric, you may want to understand how the API is being used by clients and troubleshoot errors in case there are any problems with the API. Use the Fabric GraphQL monitoring dashboard to visualize, monitor, and troubleshoot your GraphQL API request activity. This feature is currently in preview. This article explains how to enable monitoring and use the dashboard's components effectively.
 
 ## Prerequisites
 
-* Before you start using monitoring and logging capabilities, you must have an API for GraphQL in Fabric. For more information, see [**Create an API for GraphQL in Fabric and add data**](get-started-api-graphql.md).
+* Before you start using the monitoring and logging capabilities, you must have an API for GraphQL in Fabric. For more information, see [**Create an API for GraphQL in Fabric and add data**](get-started-api-graphql.md).
 
-## Enabling Workspace Monitoring
+## Enabling workspace monitoring
 
-In this section, we walk you through the steps needed to enable Monitoring in your Workspace.
+In this section, we walk you through the steps needed to enable monitoring in your workspace.
 
 > [!NOTE]
 > Workspace activity monitoring is disabled by default to avoid incurring charges against your capacity.
 
-1. As the first step, you need to ensure that the Platform Monitoring capability is enabled for your Workspace, which allows the creation of a read-only Kusto Database that collects logs from different workloads. To enable monitoring capabilitiy, go to your Workspace Settings:
+1. As the first step, you need to ensure that the platform monitoring capability is enabled for your workspace, which allows you to create a read-only Kusto database that collects logs from different workloads. To enable monitoring, go to your **Workspace settings**:
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-workspace.png" alt-text="Screenshot on selecting the workspace settings.":::
 
-1. From the Workspace Setting window, you need to select Monitoring from the left menu and then add a monitoring Eventhouse. This action would enable a Kusto Database to store data collected in logs. Keep in mind that the data retention is **limited to 30 days**.
+1. From the **Workspace Setting** window, select **Monitoring** from the left menu and then add a monitoring **Eventhouse**. This action creates a Kusto Database to store the log data. This database has a 30-day retention period.
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-workspacesetting-eventhouse.png" alt-text="Screenshot of adding Eventhouse and enabling monitoring for the workspace.":::
 
-1. As the next step, you need to enable Monitoring and/or Logging experience in each GraphQL API in your tenant. Select the GraphQL API for which you would like to enable Metrics and/or Logging options, and then select on Settings:
+1. Next, enable monitoring and/or logging experience for each API for GraphQL in your tenant. To do so, open your GraphQL API and then select on **Settings**:
 
     :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-graphqlsettings.png" alt-text="Screenshot of selecting APIfor GraphQL settings.":::
 
-1. From the API Settings window, select the Monitoring option on the list on the left:
+1. From the API settings window, select the **Monitoring (preview)** option from the left-hand menu:
 
 > [!NOTE]
-> If Monitoring has not been already enabled from the Workspace settings, you will see a note guiding you to go to the Workspace settings and enable monitoring for your Workspace.
+> If monitoring has not been already enabled, you will see a note guiding you to go to the workspace settings to enable it.
 
 :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-enablemonitoring.png" alt-text="Screenshot of selecting Monitoring from the API for GraphQL settings.":::
 
-Once you successfully enable the Monitoring option for your Workspace, you see the options to enable Metrics (API dashboard) only, Logging (API requests) only, or both. Since the Metrics and Logs are saved to separate tables in Kusto, it allows you to enable each feature separately depending on your requirements. By default, both options are set to OFF:  
+1. After you enable monitoring for the workspace, you will see the options to enable **Metrics** (supported for API dashboard only), **Logging** (supported for API requests only), or both. The metrics and logs are saved to separate tables in Kusto, and you can enable each feature separately depending on your requirement. By default, both options are turned off:  
 
-:::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-enable-metricslogging.png" alt-text="Screenshot of Metrics and Logging Toggles from the Monitoring setting of API for GraphQL.":::
+   :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-enable-metricslogging.png" alt-text="Screenshot of Metrics and Logging Toggles from the Monitoring setting of API for GraphQL.":::
 
 > [!NOTE]
-> Metrics and Logging data is separately sent to the Kusto Database that is enabled for the Workspace Monitoring which will incur additional costs.  
+> Metrics and logging data is separately sent to the Kusto database associated with the workspace and it incurs additional costs.  
 
-## API request Activity
+## API request activity
 
-Once these steps are taken, **API request activity** option in the top ribbon from the GraphQL API becomes active, and you can access monitoring details by clicking on the **API request activity** tab in the top ribbon.  
+Once monitoring is enabled, the **API request activity** option in the top ribbon from the GraphQL API becomes active. Select it to access monitoring details.
 
 :::image type="content" source="media\graphql-monitoring-logging\graphql-monitoring-apirequestactivity.png" alt-text="Screenshot of API request activity tab from the top ribbon.":::
 
 The **API request activity** consists of two primary views:
 
-1. **API dashboard (for Metrics)**: This page provides all the counters and graphs from a specific time range that you specified.
-1. **API requests (for Logging)**: This page provides a list of API requests that took place in a specific time range that you specified.
+1. **API dashboard (for Metrics)**: This page displays all counters and graphs for the specified time range.
+1. **API requests (for Logging)**: This page lists API requests within the specified time range.
 
 In the following sections, we describe the functionality of each option.  
 

@@ -89,7 +89,7 @@ landingContent:
             url: multiple-data-sources-graphql.md 
           - text: Monitoring dashboard and logging (Preview) 
             url: graphql-monitoring-logging.md
-          - text: Source Control and Deployment (Preview) 
+          - text: Source control and deployment (preview)
             url: graphql-source-control-and-deployment.md      
   # Card 
   - title: Delta Lake
