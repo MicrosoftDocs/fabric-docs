@@ -58,7 +58,7 @@ This section walks you through the following steps:
 Create a file `requirements.txt` in the `dags` folder. Add the following packages as Apache Airflow requirements.
 
 - [astronomer-cosmos](https://www.astronomer.io/cosmos/): This package is used to run your dbt core projects as Apache Airflow dags and Task groups.
-- [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Synapse Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
+- [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
 
   ```bash
      astronomer-cosmos==1.0.3

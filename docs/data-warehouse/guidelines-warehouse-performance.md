@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
 ---
-# Synapse Data Warehouse in Microsoft Fabric performance guidelines
+# Fabric Data Warehouse performance guidelines
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -104,7 +104,7 @@ The data compaction process is seamlessly integrated into the warehouse. As quer
 
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Limitations](limitations.md)
-- [Troubleshoot the Warehouse](troubleshoot-synapse-data-warehouse.md)
+- [Troubleshoot the Warehouse](troubleshoot-fabric-data-warehouse.md)
 - [Data types](data-types.md)
 - [T-SQL surface area](tsql-surface-area.md)
 - [Tables in data warehouse](tables.md)

@@ -7,7 +7,7 @@ manager: kfollis
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 09/26/2024
+ms.date: 11/07/2024
 
 #customer intent: As an owner of a Fabric lakehouse or Power BI semantic model, I want to understand how to deal with DLP policy violations on those items.
 
@@ -28,6 +28,8 @@ This article describes the information you see on the side pane and the actions 
 The data loss prevention side pane lists the name of the item and all the DLP policy issues detected by a content scan of that item. You can select the item's name if you want to view the item's details.
 
 Each DLP policy issue is shown on a card. The card shows you the policy tip, indicates what kind of sensitive data was detected, and offers actions you can take if you believe the data was falsely identified.
+
+Violations of policies configured with the restrict access action are indicated in red and indicate who access is restricted to.  
 
 ![Screenshot of DLP policies side pane.](./media/data-loss-prevention-respond/purview-dlp-override-pane.png)
 
