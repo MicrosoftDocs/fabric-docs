@@ -1,12 +1,12 @@
 ---
-title: The Microsoft Purview hub in Microsoft Fabric
-description: This article describes how to use the Microsoft Purview hub in Microsoft Fabric to monitor and govern your Microsoft Fabric instance.
+title: The Microsoft Purview hub in Microsoft Fabric - data owners
+description: This article describes how data owners can use the Microsoft Purview hub in Microsoft Fabric to monitor and govern the data they own in Microsoft Fabric.
 ms.reviewer: antonfr
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 11/05/2023
+ms.date: 11/19/2024
 ---
 
 # The Microsoft Purview hub for data owners (preview)

@@ -1,5 +1,5 @@
 ---
-title: The Microsoft Purview hub in Microsoft Fabric
+title: The Microsoft Purview hub in Microsoft Fabric - Fabric administrators
 description: This article describes how to use the Microsoft Purview hub in Microsoft Fabric to monitor and govern your Microsoft Fabric instance.
 ms.reviewer: antonfr
 ms.author: painbar
