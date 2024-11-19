@@ -4,7 +4,7 @@ description: Understand what is workspace monitoring in Microsoft Fabric and how
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 11/06/2024
+ms.date: 11/19/2024
 
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
@@ -52,8 +52,6 @@ Workload monitoring sample queries are available from the [fabric-samples](https
     * To share the database, grant users a workspace *member* or *admin* [role](roles-workspaces.md).
 
 * The retention period for monitoring data is 30 days.
-
-* All monitoring operations, including ingestion and querying, are charged based on existing consumption rates for Eventstream and the Eventhouse workload.
 
 * You can't configure ingestion to filter for specific log type or category such as *error* or *workload type*.
 
