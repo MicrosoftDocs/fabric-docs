@@ -69,7 +69,9 @@ You can also consider moving Power BI workspaces to shared capacity, provided th
 
 The experiences and items in Fabric work differently, so you don't necessarily optimize them in the same way. This section lists Fabric items according to experience, and actions you can take to optimize them.
 
-### Synapse Data Warehouse
+<a id="synapse-data-warehouse">
+
+### Fabric Data Warehouse
 
 Data warehouse uses a serverless architecture and its nodes are automatically managed by the service. Capacity usage is calculated based on active per-query capacity unit seconds rather than the amount of time the frontend and backend nodes are provisioned.
 
@@ -87,7 +89,9 @@ Here are some points to consider to help minimize compute.
   - The [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=sql-server-ver16&preserve-view=true) dynamic management view (DMV) provides information about all actively executing queries, but it doesn't store any historical information. The [Fabric Toolbox](https://aka.ms/FabricToolbox) provides a query that uses this DMV and makes the query result user friendly by joining to other views to provide details like the query text.
   - [Query insights](../data-warehouse/query-insights.md), which is a feature of Fabric data warehousing, provides a holistic view of historical query activity on the SQL analytics endpoint. Specifically, the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view provides information about each complete SQL request. It presents all the relevant details for each query execution that can be correlated with the operation IDs found in the capacity metrics app. The most important columns for monitoring capacity usage are: **distributed_statement_id**, **command (query text)**, **start_time**, and **end_time**.
 
-### Synapse Data Engineering and Synapse Data Science
+<a id="synapse-data-engineering-and-synapse-data-science"></a>
+
+### Fabric Data Engineering and Fabric Data Science
 
 The Data Engineering and Data Science experiences use Spark compute to process, analyze, and store data in a Fabric lakehouse. Spark compute is set up and measured in terms of vCores. However, Fabric uses CUs as a measure of compute consumed by various items, including Spark notebooks, Spark job definitions, and lakehouse jobs.
 

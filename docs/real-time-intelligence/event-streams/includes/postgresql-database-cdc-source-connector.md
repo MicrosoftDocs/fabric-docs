@@ -9,9 +9,6 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-1. On the **Select a data source** screen, select **Azure DB for PostgreSQL (CDC)**.
-
-    :::image type="content" source="media/postgresql-database-cdc-source-connector/select-external-source.png" alt-text="A screenshot of selecting PostgreSQL DB (CDC).":::
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="media/postgresql-database-cdc-source-connector/new-connection-link.png" alt-text="Screenshot that shows the Connect page for an Azure PostgreSQL database with New connection link highlighted.":::
@@ -37,6 +34,6 @@ ms.date: 05/21/2024
     1. Select **Next** at the bottom of the page.
 
         :::image type="content" source="media/postgresql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/postgresql-database-cdc-source-connector/connect-page-filled.png":::
-1. On the **Review and create** screen, review the summary, and then select **Add**.
+1. On the **Review + connect** page, review the summary, and then select **Add**.
 
     :::image type="content" source="media/postgresql-database-cdc-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page filled for the Azure PostgreSQL database connector." lightbox="media/postgresql-database-cdc-source-connector/review-create-page.png":::

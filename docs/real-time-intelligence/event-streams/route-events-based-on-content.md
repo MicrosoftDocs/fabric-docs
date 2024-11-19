@@ -11,13 +11,13 @@ ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---
 
-# Route data streams based on content in Fabric event streams (preview)
+# Route data streams based on content in Fabric event streams
 
 This article shows you how to route events based on content in Microsoft Fabric event streams.
 
 You can now use the no-code editor in the Fabric event streams main canvas to create complex stream processing logic without writing any code. This feature lets you tailor, transform, and manage your data streams more easily. After setting your stream processing operations, you can smoothly send your data streams to different destinations according to the specific schema and stream data.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 ## Supported operations
 
@@ -45,7 +45,7 @@ The supported destinations are:
 
 - **KQL Database**: This destination enables you to ingest your real-time event data into KQL Database, where you can use the powerful Kusto Query Language (KQL) to query and analyze the data. With the data in KQL Database, you can gain deeper insights into your event data and create rich reports and dashboards.
 
-- **Reflex**: This destination lets you directly connect your real-time event data to a Reflex. Reflex is a type of intelligent agent that contains all the information necessary to connect to data, monitor conditions, and act. When the data reaches certain thresholds or matches other patterns, Reflex automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
+- **Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]**: This destination lets you directly connect your real-time event data to a Fabric Activator. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is a type of intelligent agent that contains all the information necessary to connect to data, monitor conditions, and act. When the data reaches certain thresholds or matches other patterns, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
 - **Custom endpoint (former custom app):** With this destination, you can easily route your real-time events to a custom application. This destination lets you connect your own applications to the eventstream and consume the event data in real time. It's useful when you want to egress real-time data to an external system outside Microsoft Fabric.
 

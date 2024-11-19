@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
 
 Before you start, you must have:
 
-- Access to a **premium workspace** with **Contributor** or above permissions where your Eventstream and Lakehouse items are located.
+- Access to a workspace with Contributor or above permissions where your Eventstream and Lakehouse items are located.
 - An Azure event hub with event data and appropriate permission available to access the policy keys. The event hub must be publicly accessible and not be behind a firewall or secured in a virtual network. To create an event hub, see [Quickstart: Create an event hub using Azure portal](/azure/event-hubs/event-hubs-create).
 
 ## Create a lakehouse and an eventstream

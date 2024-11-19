@@ -28,7 +28,7 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Only a few items are currently supported, but the list of [supported items](#supported-items) is growing.
 
-* Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you’re familiar with basic Git concepts.  
+* Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you're familiar with basic Git concepts.  
 
 * Read more about the [Git integration process](./git-integration-process.md).
 
@@ -59,6 +59,7 @@ The following items are currently supported:
 * EventHouse *(preview)*
 * EventStream *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
 * Reflex *(preview)*
@@ -66,10 +67,10 @@ The following items are currently supported:
 * [Semantic models](./source-code-format.md#semantic-model-files) (except push datasets, live connections to Analysis Services, model v1) *(preview)*
 * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
-* SQL DB *(preview)*
-* [Warehouses](../../data-warehouse/source-control.md) *(preview)*
+* [SQL database](../../database/sql/source-control.md) *(preview)*
+* [Warehouses](../../data-warehouse/data-warehousing.md) *(preview)*
 
-If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control panel but you can't commit or update them.
+If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
 
 ## Considerations and limitations
 
