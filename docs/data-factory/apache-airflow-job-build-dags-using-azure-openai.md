@@ -22,12 +22,12 @@ Before you create the solution, ensure the following prerequisites are set up in
 1. A Microsoft **Fabric enabled workspace**.
 2. An **Azure OpenAI** account with an API key and a deployed gpt-4o model.
 3. [Create an **Azure Blob Storage** account.](/azure/storage/common/storage-account-create?tabs=azure-portal)
-4. Apache Airflow dag diagram.
-5. [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
-6. Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
+4. [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
+5. Apache Airflow dag diagram or just save the given image to your local machine and upload it to Azure Blob Storage.
+<!-- 5. Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
    ```bash
-    Pillow
-   ```
+Pillow
+   ``` -->
 
 ### Step 1: Upload the sketch to Azure Blob Storage
 
