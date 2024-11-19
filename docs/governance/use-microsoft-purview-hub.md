@@ -9,23 +9,11 @@ ms.custom: build-2023
 ms.date: 11/19/2024
 ---
 
-# The Microsoft Purview hub - admin view (preview)
+# The Microsoft Purview hub for administrators (preview)
 
-Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to more advanced capabilities in the Microsoft Purview governance and compliance portals such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
-
-The Purview hub has a view for Fabric administrators and a view for Fabric data owners. This document describes the Fabric administrators' view.
+Microsoft Purview hub for administrators is a centralized place in Fabric that helps Fabric administrators manage and govern their organization's Fabric data estate. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to more advanced capabilities in the Microsoft Purview governance and compliance portals such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
-
-The administrator's view provides administrators insights about their organization's entire Fabric data estate, and links to capabilities in the Microsoft Purview portal to help them further analyze and manage governance of their organization's Fabric data.
-
-| Page                   | Description                                                                    |
-|:-----------------------|:-------------------------------------------------------------------------------|
-| **Overview page**      | High level insights over your tenants.                                         |
-| **Sensitivity labels** | Report over label coverage and look into the confidential data in the tenant.  |
-| **Endorsements**       | Follow up after endorsed items (Promoted, Certified and Master data) and see where the items are with most access that may need your attention.|
-| **Items explorer**     | Monitor all your items in the tenant using granular filtering.                 |
-| **Take a tour**        | Use the build-in help to learn how to use Purview hub’s reports in best manner.|
 
 ## Requirements
 
@@ -41,21 +29,35 @@ If this is the first time insights are being generated, it might take some time 
 
 ## Get insights about the Microsoft Fabric data in your tenant
 
+The pages of the insights report provide visuals that help lead you to actionable insights about how to improve the governance and security posture of your organization's data estate.
+
+| Page                   | Description                                                                    |
+|:-----------------------|:-------------------------------------------------------------------------------|
+| **Overview page**      | High level insights over your tenants.                                         |
+| **Sensitivity labels** | Report over label coverage and look into the confidential data in the tenant.  |
+| **Endorsements**       | Follow up after endorsed items (Promoted, Certified and Master data) and see where the items are with most access that may need your attention.|
+| **Items explorer**     | Monitor all your items in the tenant using granular filtering.                 |
+| **Take a tour**        | Use the build-in help to learn how to use Purview hub’s reports in best manner.|
+
+# [Overview](#tab/overview)
+
+:::image type="content" source="./media/use-microsoft-purview-hub/overview.gif" alt-text="Screenshot showing the overview page of the Purview hub report.":::
+
 # [Sensitivity labels](#tab/sensitivity-labels)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-admin-sensitivity-label-page.png" alt-text="Screenshot showing the sensitivity label page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/sensitivity-labels.gif" alt-text="Screenshot showing the sensitivity label page of the Purview hub report.":::
 
 # [Endorsement](#tab/endorsement)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-admin-endorsement-page.png" alt-text="Screenshot showing the endorsement page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/endorsement.gif" alt-text="Screenshot showing the endorsement page of the Purview hub report.":::
 
 # [Domains](#tab/domains)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-admin-domains-page.png" alt-text="Screenshot showing the domains page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/domains.gif" alt-text="Screenshot showing the domains page of the Purview hub report.":::
 
 # [Items explorer](#tab/items-explorer)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-admin-items-explorer-page.png" alt-text="Screenshot showing the items-explorer page of the Purview hub report.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/items-explorer.gif" alt-text="Screenshot showing the items-explorer page of the Purview hub report.":::
 
 ---
 
