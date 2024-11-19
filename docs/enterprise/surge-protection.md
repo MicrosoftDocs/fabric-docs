@@ -40,7 +40,7 @@ You need to be a Fabric Capacity Administrator.
 
 ### How monitor surge protection
 
-1. Open the Capacity Metrics app
+1. Open the Microsoft Fabric Capacity Metrics app
 
 1. On the Compute page, select System events 
 
