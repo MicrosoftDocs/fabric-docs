@@ -18,7 +18,7 @@ Surge Protection helps limit overuse of your capacity by limiting the amount of 
 
 ### Prerequisites
 
-1. You need to be a Fabric Capacity Administrator
+You need to be a Fabric Capacity Administrator.
 
 ### Enabling surge protection
 
