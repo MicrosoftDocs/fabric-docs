@@ -59,7 +59,7 @@ Capacity admins set a _background rejection threshold_ and a _background recover
 
 
 > [!NOTE]
-> Capacity admins can see the 24-hour background % in the Capacity metrics app compute page under Throttling on the Background Throttling chart.  
+> Capacity admins can see the 24-hour background percent in the _Capacity metrics app_ compute page under _Throttling_ on the _Background Throttling_ chart.  
 
 ### System events for Surge Protection
 
