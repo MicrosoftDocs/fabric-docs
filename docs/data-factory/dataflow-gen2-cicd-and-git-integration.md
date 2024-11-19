@@ -10,13 +10,13 @@ ms.date: 10/07/2024
 
 # Dataflow Gen2 with CI/CD and Git integration support (Preview)
 
-Dataflow Gen2 now supports Continuous Integration/Continuous Deployment (CI/CD) and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that's connected to your fabric workspace. Additionally, you can use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. Also, you can use the Fabric Create, Read, Update, Delete, and List (CRUDL) API to manage Dataflow Gen2. This article goes deeper into how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
+Dataflow Gen2 now supports Continuous Integration/Continuous Deployment (CI/CD) and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that's connected to your fabric workspace. Additionally, you can use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. This article goes deeper into how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
 
 ## New features
 
 With Dataflow Gen2 (CI/CD preview), you can now:
 
-- Enjoy Git integration support for Dataflow Gen2.
+- Use Git integration support for Dataflow Gen2.
 - Use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces.
 - Use the Fabric settings and scheduler to refresh and edit settings for Dataflow Gen2.
 - Create your Dataflow Gen2 directly into a workspace folder.
@@ -27,7 +27,7 @@ To get started, you must complete the following prerequisites:
 
 - Have a Microsoft Fabric tenant account with an active subscription. Create an account for [free](/fabric/get-started/fabric-trial).
 - Make sure you have a Microsoft Fabric enabled workspace.
-- To enjoy Git integration, make sure it is enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
+- To enjoy Git integration, make sure it's enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
 
 ## Create a Dataflow Gen2 with CI/CD and Git support
 
@@ -47,7 +47,7 @@ To create a Dataflow Gen2 with CI/CD and Git support, follow these steps:
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/save-dataflow-gen2.png" alt-text="Screenshot of Power Query editor with the Save and run button emphasized.":::
 
-1. After publishing, the dataflow has a status of uncommitted.
+1. After you publish, the dataflow has a status of uncommitted.
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/dataflow-gen2-uncommited-git.png" alt-text="Screenshot of the saved Dataflow Gen2 with the status shown as uncommitted.":::
 
@@ -98,12 +98,14 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 ## Limitations and known issues
 
 - The staging artifacts are in some experiences visible like the ALM UI. The staging artifacts will be hidden in all experiences in the future.
-- Some experiences will mention support for rest APIs, but these are not yet available. All dataflow Gen2 with CI/CD and Git support will support the Fabric Public API in the future.
+- When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifacts become visible in the workspace and are safe to be deleted by the user.
+- Some experiences mention support for REST APIs, but these APIs aren't yet available. All Dataflow Gen2 with CI/CD and Git support will support the Fabric Public API in the future.
 - Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric pipelines.
 - Workspace view doesn't show if a refresh is ongoing for the dataflow.
-- Creating VNET Gateway connections are not supported in the Dataflow authoring experience yet for Dataflow Gen2 with CI/CD and Git support. You can use vnet gateway conenctions by creating them in the manage connections UI and then use them within the dataflow.
-- You are not able to export the Dataflow.json from the workspace menu. Workarounds that allow you to export the Dataflow are
+- Copilot for Dataflow Gen2 with CI/CD and Git support isn't yet available.
+- VNet Gateway connections aren't supported in the dataflow authoring experience yet.
+- You can't export the Dataflow.json from the workspace menu. Workarounds that allow you to export the Dataflow are:
   - Use the Fabric Public API to get the Dataflow.json.
   - Use the export power query template feature to export the dataflow definition.
-  - Use the onelake explorer to the workspace to get the dataflow definition.
-- Dataflow Gen2 with CI/CD and Git support doesn't support the take ownership feature in the Fabric workspace. Therefore, the dataflow can only be edited by the creator of the dataflow. If you want to work together on a dataflow, you can use branches in the Git repository and create a pull request to merge the changes. For more information, go to [Scenario 2 - Develop using another workspace](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
+  - Use the OneLake explorer to the workspace to get the dataflow definition.
+- Dataflow Gen2 with CI/CD and Git support doesn't support the take ownership feature in the Fabric workspace. Therefore, only the creator of the dataflow can edit the dataflow. If you want to work together on a dataflow, you can use branches in the Git repository and create a pull request to merge the changes. For more information, go to [Scenario 2 - Develop using another workspace](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).

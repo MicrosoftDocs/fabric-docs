@@ -34,7 +34,7 @@ Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored
 
 ## Copilot for Data Factory
 
-Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks.
+Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md)
 
 ## Copilot for Data Warehouse
 

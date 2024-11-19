@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 ---
 # Onboard to the Fabric monitoring hub (preview)
 
-The monitoring hub is the centralized monitoring center designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Use the Monitoring hub](../admin/monitoring-hub.md).
+The monitor hub is the centralized monitoring center designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Use the Monitor hub](../admin/monitoring-hub.md).
 
 ## Backend
 
@@ -19,8 +19,8 @@ To enable job support, the item must specify the types of jobs it supports. Add 
 
 | Property | Description | Possible Values |
 | --- | --- | --- |
-| *OnDemandJobDeduplicateOptions* |Sets the deduplication option for on-demand item jobs. | - *None*: Don't deduplicate the job. <br> - *PerArtifact*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
-| *ScheduledJobDeduplicateOptions* | Sets the deduplication option for on-demand item jobs. |- *None*: Don't deduplicate the job. <br> - *PerArtifact*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
+| *OnDemandJobDeduplicateOptions* |Sets the deduplication option for on-demand item jobs. | - *None*: Don't deduplicate the job. <br> - *PerItem*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
+| *ScheduledJobDeduplicateOptions* | Sets the deduplication option for on-demand item jobs. |- *None*: Don't deduplicate the job. <br> - *PerItem*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
 |*ItemJobTypes*| A list of job types with the specified properties. | - *Name*: The name of the job type, which is fully customizable by the ISV.
 ### Step 2: Implement Jobs Workload APIs
 
@@ -233,10 +233,10 @@ Add a new `recentRun` entry to the item settings property in the frontend manife
 
 As part of our UI workload sample, we added a section in the item ribbon dedicated to jobs.
 
-:::image type="content" source="./media/monitoring-hub/artifact-tab.png" alt-text="Screenshot showing the item tab in the Fabric UI.":::
+:::image type="content" source="./media/monitoring-hub/jobs-tab.png" alt-text="Screenshot showing the item tab in the Fabric UI.":::
 
 For an example of how this ribbon was implemented, see ItemTabToolbar.tsx, that can be found in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample). 
 
 ## Related links
 
-* [Use the Monitoring hub](../admin/monitoring-hub.md)
+* [Use the Monitor hub](../admin/monitoring-hub.md)

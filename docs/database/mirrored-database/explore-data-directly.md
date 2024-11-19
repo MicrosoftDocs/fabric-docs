@@ -17,6 +17,7 @@ You can access mirrored database table data in Delta format files. This tutorial
     - [Tutorial: Create a mirrored database from Azure Cosmos DB](azure-cosmos-db-tutorial.md)
     - [Tutorial: Create a mirrored database from Azure Databricks](azure-databricks-tutorial.md)
     - [Tutorial: Create a mirrored database from Azure SQL Database](azure-sql-database-tutorial.md)
+    - [Tutorial: Create a mirrored database from Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md)
     - [Tutorial: Create a mirrored database from Snowflake](snowflake-tutorial.md)
 
 ## Access OneLake files

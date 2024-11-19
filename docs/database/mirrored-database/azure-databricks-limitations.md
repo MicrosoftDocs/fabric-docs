@@ -3,9 +3,10 @@ title: Limitations in Microsoft Fabric mirrored databases from Azure Databricks 
 description: Learn about limitations for Azure Databricks mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sheppardshep, whhender
-ms.date: 09/20/2024
+ms.reviewer: sheppardshep, whhender, preshah
+ms.date: 11/19/2024
 ms.topic: overview
+ms.custom: references_regions
 ---
 
 # Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)
@@ -35,6 +36,63 @@ The following table types are not supported:
 - Delta sharing tables
 - Streaming tables
 - Views, Materialized views
+
+### Supported regions
+
+Here's a list of regions that support mirroring for Azure Databricks Catalog:
+
+:::row:::
+   :::column span="":::
+    **Asia Pacific**:
+
+    - Australia East
+    - Australia Southeast
+    - Central India
+    - East Asia
+    - Japan East
+    - Japan West
+    - Korea Central
+    - Southeast Asia
+    - South India
+   :::column-end:::
+   :::column span="":::
+   **Europe**
+
+    - North Europe
+    - West Europe
+    - France Central
+    - Germany North
+    - Germany West Central
+    - Norway East
+    - Norway West
+    - Sweden Central
+    - Switzerland North
+    - Switzerland West
+    - Poland Central
+    - Italy North
+    - UK South
+    - UK West
+   :::column-end:::
+   :::column span="":::
+    **Americas**:
+
+    - Brazil South
+    - Canada Central
+    - Canada East
+    - Central US
+    - East US
+    - East US2
+    - North Central US
+    - West US
+   :::column-end:::
+   :::column span="":::
+    **Middle East and Africa**:
+
+    - South Africa North
+    - South Africa West
+    - UAE North
+   :::column-end:::
+:::row-end:::
 
 ## Related content
 
