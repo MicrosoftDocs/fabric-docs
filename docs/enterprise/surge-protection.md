@@ -88,7 +88,7 @@ Surge protection does not guarantee that interactive requests will not be delaye
 
 Some requests initiated from Fabric UI are billed as background request or depend on background requests to complete. These requests are rejected when surge protection is active.  
 
-Surge Protection rejecSurge Protection does not stop in progress jobs. 
+Surge protection does not stop in progress jobs. 
 
 Background Rejection threshold is not an upper limit on 24-hours Background percentage. This is because in progress jobs may report usage 
 
