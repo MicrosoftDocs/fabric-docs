@@ -5,7 +5,7 @@ ms.reviewer: yaschust
 ms.author: v-andykop
 author: AndyKop
 ms.topic: how-to
-ms.date: 06/30/2024
+ms.date: 11/19/2024
 ---
 # Get data with the NLog sink
 
