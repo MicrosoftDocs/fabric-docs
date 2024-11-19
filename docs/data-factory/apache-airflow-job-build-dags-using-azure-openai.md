@@ -10,9 +10,9 @@ ms.date: 11/18/2024
 
 # Use Azure OpenAI to turn whiteboard sketches into Apache Airflow DAGs
 
-Apache Airflow Jobs in Microsoft Fabric provides cloud-native experience for data engineers and data scientists, with features such as instant runtime provisioning, cloud-based authoring, dynamic auto-scaling, intelligent auto-pause, and enhanced security. It is a fully managed service that enables you to create, schedule, and monitor Apache Airflow workflows in the cloud without worrying about underlying infrastructure.
+Apache Airflow Jobs in Microsoft Fabric provides cloud-native experience for data engineers and data scientists, with features such as instant runtime provisioning, cloud-based authoring, dynamic autoscaling, intelligent autopause, and enhanced security. It's a fully managed service that enables you to create, schedule, and monitor Apache Airflow workflows in the cloud without worrying about underlying infrastructure.
 
-Now, with the `gpt-4o` AI model in Azure, we're pushing the limits of what you can do with Apache Airflow Jobs and making it possible for you to create Apache Airflow DAGs from just your whiteboard sketch idea. This feature is particularly useful for data engineers and data scientists who want to quickly prototype and visualize their data workflows.
+Now, with the `gpt-4o` AI model in Azure, we're pushing the limits of what you can do with Apache Airflow Jobs and making it possible for you to create Apache Airflow DAGs from just your whiteboard sketch idea. This feature is useful for data engineers and data scientists who want to quickly prototype and visualize their data workflows.
 
 In this article, you create an end to end workflow that downloads the sketch stored in Azure Blob Storage, use `gpt-4o` to turn it into Apache Airflow DAG and load it into Apache Airflow Jobs for execution. 
 
@@ -26,7 +26,7 @@ Before you create the solution, ensure the following prerequisites are set up in
 5. [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 6. Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
    ```bash
-        Pillow
+    Pillow
    ```
 
 ### Step 1: Upload the sketch to Azure Blob Storage
@@ -39,10 +39,10 @@ Before you can analyze the sketch, you need to upload it to Azure Blob Storage. 
 To retrieve the access key and connection string:
 1. Go to the Azure portal and navigate to your Azure Blob Storage account.
 2. Under **Security + Networking**, select **Access keys**.
-3. You will find the access keys and the complete connection string. Copy these values and paste them in the Apache Airflow connection.
+3. You find the access keys and the complete connection string. Copy these values and paste them in the Apache Airflow connection.
    :::image type="content" source="media/apache-airflow-jobs/blob-storage.png" lightbox="media/apache-airflow-jobs/blob-storage.png" alt-text="Screenshot represents how to get connection string and key of Azure Blob Storage.":::
 
-In the workflow, we are using the `WasbHook` to download the sketch from Azure Blob Storage. To enable it you need to set up a connection in Airflow:
+In the workflow, we are using the `WasbHook` to download the sketch from Azure Blob Storage. To enable it, you need to set up a connection in Airflow:
 1. Open Apache Airflow Job, Click on `View Connections` -> `+` -> Select Connection Type as `Azure Blob Storage`.
 2. Fill in the following details:
     * Connection Id: Set it to `wasb_conn_id` (ensure it matches the code).
@@ -76,7 +76,7 @@ With all prerequisites complete, you are ready to set up the Azure OpenAI DAG Ge
 Now, follow the steps below to implement this workflow:
 
 1. Create a file named openapi_dag_generator.py in the dags directory of your Apache Airflow project.
-2. Add the following code to the file, Replace `container_name` and `blob_name` with the actual values. Save the file.:
+2. Add the following code to the file, Replace `container_name` and `blob_name` with the actual values and save the file.
 
 ```python
 import io
@@ -259,22 +259,22 @@ OpenAI_Dag_Generator()
 1. Click on `Monitor Airflow`.
 2. Navigate to the DAGs tab and locate the `OpenAI_Dag_Generator` DAG. Click on it.
 3. Click on the play button and Select `Trigger DAG w/ config`.
-   :::image type="content" source="media/apache-airflow-jobs/trigger_dag.png" lightbox="media/apache-airflow-jobs/trigger_dag.png" alt-text="Screenshot shows how to triger dag using config.":::
-4. You'll be presented with a form showing DAG parameters. We've provided a default system prompt, seed, temperature, top_p, and max_tokens. You can modify these values as needed.
+   :::image type="content" source="media/apache-airflow-jobs/trigger_dag.png" lightbox="media/apache-airflow-jobs/trigger_dag.png" alt-text="Screenshot shows how to trigger dag using config.":::
+4. You are presented with a form showing DAG parameters. We've provided a default system prompt, seed, temperature, top_p, and max_tokens. You can modify these values as needed.
     :::image type="content" source="media/apache-airflow-jobs/dag-parameters.png" lightbox="media/apache-airflow-jobs/dag-parameters.png" alt-text="Screenshot represents DAG parameters.":::
 5. Click on `Trigger` button to start.
 6. After the successful DAG execution, you would see a new DAG generated by the filename `openai_dag.py` in the dags directory in Apache Airflow UI itself.
 
 ### Step 5: Get Ready to execute the newly generated DAG.
 1. Open the Apache Airflow Job UI.
-2. The newly generated DAG will be visible in the DAGs list with the name `openai_dag`.
+2. The newly generated DAG is saved in the DAGs list with the name `openai_dag`.
 3. Open the DAG file to view the code, and configure the connections required by the operators.
 4. Once the connections are set, you can trigger the DAG to execute the workflow.
 
 :::image type="content" source="media/apache-airflow-jobs/openai-resultant-dag.png" lightbox="media/apache-airflow-jobs/openai-resultant-dag.png" alt-text="Screenshot represents Resultant dag from Open AI.":::
 
 ## Conclusion
-Explore additional use cases by modifying the system prompt or input sketch. This solution demonstrates the seamless integration of Azure OpenAI and Apache Airflow Jobs to quickly convert ideas into functional workflows. By automating the DAG creation process, you can save significant time and focus on higher-value tasks.
+Explore more use cases by modifying the system prompt or input sketch. This solution demonstrates the seamless integration of Azure OpenAI and Apache Airflow Jobs to quickly convert ideas into functional workflows. By automating the DAG creation process, you can save significant time and focus on higher-value tasks.
 
 ## Related Content
 
