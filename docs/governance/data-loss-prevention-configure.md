@@ -89,7 +89,7 @@ Before you get started with DLP for Fabric and Power BI, you should confirm your
  
 ## Conditions
 
-In the condition section, you define the conditions under which the policy will apply to [supported item types](./data-loss-prevention-overview.md#supported-item-types). Conditions are created in groups. Groups make it possible to construct complex conditions.
+In the condition section, you define the conditions under which the policy will apply to [supported item types](/purview/dlp-powerbi-get-started#supported-item-types). Conditions are created in groups. Groups make it possible to construct complex conditions.
 
 1. Open the conditions section. Choose **Add condition** if you want to create a simple or complex condition, or **Add group** if you want to start creating a complex condition.
 
@@ -188,6 +188,6 @@ Assign a severity level that will be shown in alerts generated from this policy.
 ## Related content
 
 * [Create and Deploy data loss prevention policies](/purview/dlp-create-deploy-policy)
-* [Data loss prevention policies in Fabric](./data-loss-prevention-overview.md)
+* [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started)
 * [Respond to a DLP policy violation](./data-loss-prevention-respond.md)
 * [Monitor DLP policy violations](./data-loss-prevention-monitor.md)
