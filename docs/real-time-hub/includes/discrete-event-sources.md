@@ -10,3 +10,5 @@ ms.date: 11/18/2024
 | Source | Source | 
 | ------ | ------ |
 | [Azure Blob Storage events (preview)](../get-azure-blob-storage-events.md) | [Fabric Workspace Item events (preview)](../create-streams-fabric-workspace-item-events.md) |
+| [Fabric OneLake events (preview)](../create-streams-fabric-onelake-events.md) | [Fabric Job events (preview)](../create-streams-fabric-job-events.md) |
+
