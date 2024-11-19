@@ -36,7 +36,7 @@ You need to be a Fabric Capacity Administrator.
 
 1. Set a Background Recovery threshold.
 
-1. Press Apply
+1. Select **Apply**.
 
 ### How monitor surge protection
 
