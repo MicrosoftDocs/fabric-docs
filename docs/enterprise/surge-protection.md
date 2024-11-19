@@ -74,7 +74,7 @@ When surge protection is active, capacity state events are generated. These are 
 |Overloaded|AllRejected||
 
 > [!NOTE]
-> Even when surge protection is enabled, it is still possible for the capacity to experience interactive delays, interactive rejections, or all rejections when the capacity reaches the built-in capacity limits. 
+> When the capacity reaches its compute limit, it'll experience interactive delays, interactive rejections, or all rejections even when surge protection is enabled.
 
 ### Per operation status messages for Surge protection
 
