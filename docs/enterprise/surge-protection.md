@@ -34,7 +34,7 @@ You need to be a Fabric Capacity Administrator.
 
 1. Set a Background Rejection threshold.
 
-1. Set a Background Recovery threshold
+1. Set a Background Recovery threshold.
 
 1. Press Apply
 
