@@ -53,7 +53,7 @@ The third stage of capacity overload occurs when the overload lasts longer than 
 
   :::image type="content" source="media/activator-throttling-effects/activator-throttling-emails.png" alt-text="Screenshot shows a sample email sent to a customer explaining the stage three throttling.":::
   
-- Banners inform users about the exceeded capacity and rejected interactive and background operations:
+- Banners inform users about the exceeded capacity and rejected interactive and background operations.
 
 
 ## Recover from overload situations
