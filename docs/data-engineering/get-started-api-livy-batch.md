@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
-ms.date: 10/01/2024
+ms.date: 11/19/2024
 ---
 
 # Use the Livy API to submit and execute Livy batch jobs
@@ -50,7 +50,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ## Create a Spark payload and upload to your Lakehouse
 
-1. Create a `.ipynb` notebook in Visual Studio Code and insert the following code.
+1. Create a `.ipynb` notebook in Visual Studio Code and insert the following code
 
    ```python
    import sys
@@ -101,7 +101,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ## Create a Livy API Spark batch session
 
-1. Create a notebook item in Visual Studio Code of type \.ipynb and insert this code.
+1. Create a \.ipynb\ notebook in Visual Studio Code and insert the following code.
 
    ```python
 

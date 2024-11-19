@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 10/01/2024
+ms.date: 11/19/2024
 ---
 
 # Use the Livy API to submit and execute session jobs

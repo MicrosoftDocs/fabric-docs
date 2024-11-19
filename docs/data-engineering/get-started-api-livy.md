@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
-ms.date: 08/23/2024
+ms.date: 11/19/2024
 ---
 
 # Use the Livy API to submit and execute Spark jobs

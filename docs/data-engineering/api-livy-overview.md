@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: overview
 ms.search.form: Livy API Overview for Data Engineering
-ms.date: 08/23/2024
+ms.date: 11/19/2024
 ---
 
 # What is the Livy API for Data Engineering?
