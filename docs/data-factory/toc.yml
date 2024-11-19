@@ -927,6 +927,8 @@
             href: apache-airflow-jobs-hello-world.md
           - name: Run Fabric data pipelines and notebooks
             href: apache-airflow-jobs-run-fabric-item-job.md
+          - name: Use AI to build DAGs from an image
+            href: apache-airflow-job-build-dags-using-azure-openai.md
           - name: Run ADF pipeline
             href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
           - name: Run Azure Databricks job
