@@ -1,30 +1,23 @@
 ---
 title: The Microsoft Purview hub in Microsoft Fabric - Fabric administrators
-description: This article describes how to use the Microsoft Purview hub in Microsoft Fabric to monitor and govern your Microsoft Fabric instance.
+description: This article describes how Fabric administrators can use the Microsoft Purview hub in Microsoft Fabric to monitor and govern their organization's data estate.
 ms.reviewer: antonfr
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 11/05/2023
+ms.date: 11/19/2024
 ---
 
-# The Microsoft Purview hub in Microsoft Fabric (preview)
+# The Microsoft Purview hub - admin view (preview)
 
 Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to more advanced capabilities in the Microsoft Purview governance and compliance portals such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
 
-> [!NOTE]
-> In this document, *Fabric administrators* refers to users who have the [Fabric administrator role](../admin/roles.md) or higher.
-
-The Purview hub has a view for Fabric administrators and a view for other (non-admin) Fabric users.
-
-* Fabric administrators see insights concerning their organization's entire Fabric data estate. They also see links to capabilities in the Microsoft Purview governance and compliance portals to help them further analyze and manage governance of their organization's Fabric data.
-
-* Other users see insights about their own Fabric content and links to capabilities in the Microsoft Purview governance portal that help them further explore their data.
-
-When you open the hub, the appropriate view opens. In the sections below, select the appropriate tab to see the information that is relevant to you. The following image shows the view for Fabric administrators.
+The Purview hub has a view for Fabric administrators and a view for Fabric data owners. This document describes the Fabric administrators' view.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
+
+The administrator's view provides administrators insights about their organization's entire Fabric data estate, and links to capabilities in the Microsoft Purview portal to help them further analyze and manage governance of their organization's Fabric data.
 
 | Page                   | Description                                                                    |
 |:-----------------------|:-------------------------------------------------------------------------------|
@@ -34,6 +27,9 @@ When you open the hub, the appropriate view opens. In the sections below, select
 | **Items explorer**     | Monitor all your items in the tenant using granular filtering.                 |
 | **Take a tour**        | Use the build-in help to learn how to use Purview hub’s reports in best manner.|
 
+## Requirements
+
+Access to the admin view of the Purview hub requires the [Fabric administrator role](../admin/roles.md) or higher.
 
 ## Access the hub
 
@@ -41,12 +37,7 @@ To access the hub, open the Fabric settings pane and choose **Microsoft Purview 
 
 :::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
-When you select the Microsoft Purview hub option, the hub opens to the view that is appropriate for you, and insights are generated. If this is the first time insights are being generated, it might take some time for them to appear.
-
->[!NOTE]
-> If you're not a Fabric administrator and you don't own or haven't created any content, the hub won't contain any insights.
->
-> For some users, the hub won't open at all when they select the **Microsoft Purview hub** option. See [Considerations and limitations for more detail about this exceptions](#considerations-and-limitations).
+If this is the first time insights are being generated, it might take some time for them to appear.
 
 ## Get insights about the Microsoft Fabric data in your tenant
 
@@ -68,11 +59,6 @@ When you select the Microsoft Purview hub option, the hub opens to the view that
 
 ---
 
-> [!NOTE]
-> * The full Purview hub report and its associated dataset are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
-> * The first time the report and dataset are generated, it may take some time for them to to appear.
-> * Fabric admins can create new reports based on the dataset, but they can't edit the report or dataset directly.
-
 ## Access Purview capabilities
 
 The tiles at the top of the Purview hub provide access to Purview's advanced governance and compliance capabilities.
@@ -88,9 +74,9 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 
 ## Considerations and limitations
 
-The following users can't access the Purview hub:
-* Free users (a Power BI Pro or Premium Per User (PPU) license is required)
-* Guest users
+* The full Purview hub report and its associated dataset are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
+* The first time the report and dataset are generated, it may take some time for them to to appear.
+* Fabric admins can create new reports based on the dataset, but they can't edit the report or dataset directly.
 
 ## Related content
 
