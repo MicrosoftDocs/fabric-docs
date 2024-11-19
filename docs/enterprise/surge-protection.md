@@ -22,7 +22,7 @@ You need to be a Fabric Capacity Administrator.
 
 ### Enabling surge protection
 
-1. Open the Fabric Admin Portal
+1. Open the Fabric Admin Portal.
 
 1. Navigate to Capacity settings
 
