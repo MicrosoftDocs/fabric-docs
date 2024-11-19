@@ -73,7 +73,7 @@ sections:
           See [Monitor Fabric Mirror replication](monitor.md).
 
       - question: |
-          Can Azure SQL Database Mirroring be accessed through the Power BI Gateway or behind a firewall? 
+          Can Azure SQL Database mirroring be accessed through the Power BI Gateway or behind a firewall? 
         answer: 
           Currently, access through the Power BI Gateway or behind a firewall is unsupported.
 
@@ -166,5 +166,5 @@ additionalContent: |
   ## Related content
 
   - [What is Mirroring in Fabric?](overview.md)
-  - [Azure SQL Database Mirroring in Microsoft Fabric](azure-sql-database.md)
+  - [Azure SQL Database mirroring in Microsoft Fabric](azure-sql-database.md)
   - [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md).

@@ -56,8 +56,6 @@ Now, use the SQL analytics endpoint to create a query across two mirrored databa
 
 1. In the menu, select **+ Warehouses**. Select the SQL analytics endpoint item for the other mirrored database.
 
-    :::image type="content" source="media/azure-cosmos-db-how-to-join-multiple/multiple-endpoints.png" alt-text="Screenshot of the OneLake data hub with multiple mirrored database endpoints.":::
-
 1. Open the context menu for the table and select **New SQL Query**. Write an example query that combines both databases.
 
     :::image type="content" source="media/azure-cosmos-db-how-to-join-multiple/multiple-databases.png" alt-text="Screenshot of the query editor with multiple mirrored databases available.":::
