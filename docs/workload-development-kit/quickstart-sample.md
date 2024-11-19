@@ -31,7 +31,7 @@ Before you begin, ensure that you have the following installed on your system:
 
 Configure the admin portal as follows:
 
-1. Log into [Fabric](https://app.fabric.microsoft.com/signin) with an *Admin* account.
+1. Log into [Fabric](https://app.fabric.microsoft.com/?pbi_source=workload-development-kit-quickstart-sample) with an *Admin* account.
 
 1. From **Settings**, go to the **Admin portal**.
 

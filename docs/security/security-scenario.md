@@ -47,7 +47,7 @@ Here's what happens when a user signs in to Fabric.
 
 | **Item** | **Description** |
 | --- | --- |
-| ![Item 1.](../media/legend-number/legend-number-01-fabric.svg) | The user opens a browser (or a client application) and signs in to the [Fabric portal](https://app.fabric.microsoft.com/). |
+| ![Item 1.](../media/legend-number/legend-number-01-fabric.svg) | The user opens a browser (or a client application) and signs in to the [Fabric portal](https://app.fabric.microsoft.com/?pbi_source=learn-security-security-scenario). |
 | ![Item 2.](../media/legend-number/legend-number-02-fabric.svg) | The user is immediately redirected to Microsoft Entra ID, and they're required to authenticate. Authentication verifies that it's the correct person signing in. |
 | ![Item 3.](../media/legend-number/legend-number-03-fabric.svg) | After authentication succeeds, the web front end receives the user's request and delivers the front-end (HTML and CSS) content from the nearest location. It also routes the request to the metadata platform and backend capacity platform. |
 | ![Item 4.](../media/legend-number/legend-number-04-fabric.svg) | The metadata platform, which resides in your tenant's [home region](../admin/find-fabric-home-region.md), stores your tenant's metadata, such as workspaces and access controls. This platform ensures that the user is authorized to access the relevant workspaces and Fabric items. |
