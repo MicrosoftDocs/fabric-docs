@@ -220,14 +220,6 @@ items:
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
       - name: Telegraf
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
-  - name: Get data in Activator
-    items:
-    - name: Get data from Power BI
-      href: data-activator/activator-get-data-power-bi.md
-    - name: Create alerts from a Real-Time Dashboard
-      href: data-activator/activator-get-data-real-time-dashboard.md
-    - name: Get data from Eventstreams
-      href: data-activator/activator-get-data-eventstreams.md
 - name: Store data
   items:
   - name: Eventhouse
