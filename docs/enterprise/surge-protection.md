@@ -30,7 +30,7 @@ You need to be a Fabric Capacity Administrator.
 
 1. Expand Surge Protection.
 
-1. Check the box to enable Surge Protection
+1. Select Enable Surge Protection
 
 1. Set a Background Rejection threshold
 
