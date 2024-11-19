@@ -1,38 +1,36 @@
 ---
 title: Publish a workload to Microsoft (preview)
-description: Learn how to publish a workload you created to the Microsoft Fabric portal so that it can be used by others.
+description: Learn how to publish your workload to the Microsoft Fabric portal so that other users can use the workload.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 09/29/2024
-# customer intent: As an ISV I want to publish my workload to Microsoft Fabric.
+# customer intent: As an independent software vendor (ISV), I want to know how to publish my workload to Microsoft Fabric.
 ---
 
 # Publish a workload to Fabric (preview)
 
-Once your workload is [uploaded](manage-workload.md) to Fabric, you can publish it.
+After you [upload your workload](manage-workload.md) to Microsoft Fabric, you can publish it.
 
-## How to publish my workload
+## Publish your workload
 
-Follow these steps to publish your workload:
+1. Sign in to Fabric.
 
-1. Log into Fabric and go to *Settings* (&#9881;) > **Admin portal**.
+1. Go to **Settings** > **Admin portal**.
 
-2. Select **Workloads**.
+1 Select **Workloads**.
 
-3. In the *Public Sample Workload* pane, select the **Publish** tab.
+1. On the **Public Sample Workload** pane, select the **Publish** tab.
 
-4. From the **Select Version** dropdown list, select the version of the workload you want to publish.
+1. In the **Select Version** dropdown list, select the version of the workload to publish.
 
-5. In the **Publish to** field, select the tenants you want to publish the workload to.
+1. For **Publish to**, select the tenants to publish the workload to.
 
-6. Select **Publish**.
+1. Select **Publish**.
 
 > [!NOTE]
-> If you plan to publish to your own tenant, ensure you first deactivate the workload from the admin portal.  
-> Refer to the [deactivation instructions](manage-workload.md) for detailed steps.
-
+> If you plan to publish to your own tenant, ensure that you first deactivate the workload in the Microsoft Fabric admin portal. For more information, see the steps to [deactivate a workload](manage-workload.md).
 
 ## Related content
 

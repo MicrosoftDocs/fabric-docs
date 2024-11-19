@@ -21,7 +21,7 @@ For more information, see [Microsoft Fabric Workload Development Kit frontend](e
 
 ## Backend
 
-The backend stores both data and metadata. It uses CRUD operations to create workload items and metadata, and it executes jobs to populate data in storage. Communication between the frontend and backend is established through public APIs.
+The backend stores both data and metadata. It uses Create, Read, Update, and Delete (CRUD) operations to create workload items and metadata, and it executes jobs to populate data in storage. Communication between the frontend and backend is established through public APIs.
 
 ## Azure Relay and DevGateway
 
