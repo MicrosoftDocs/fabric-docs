@@ -24,14 +24,10 @@ Before you create the solution, ensure the following prerequisites are set up in
 3. [Create an **Azure Blob Storage** account.](https://learn.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal)
 4. Apache Airflow dag diagram.
 5. [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
-6. Ensure the following required Python packages are installed in your Apache Airflow Job environment:
-```bash
-    azure-storage-blob
-    openai
-    apache-airflow-providers-microsoft-azure
-    Pillow
-    requests
-```
+6. Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
+   ```bash
+        Pillow
+   ```
 
 ### Step 1: Upload the sketch to Azure Blob Storage
 
@@ -56,15 +52,20 @@ In the workflow, we are using the `WasbHook` to download the sketch from Azure B
 
 ### Step 2: Store Azure OpenAI API Key and Endpoint in Airflow Variables
 
-To securely store the Azure OpenAI API key and endpoint, create two Airflow variables:
-* `openai_api_key`: Your Azure OpenAI API key.
-* `openai_endpoint`: The endpoint of the deployed gpt-4o model.
+To connect to the Azure OpenAI API, store the API key and endpoint as Airflow variables:
 
-To create the variables, navigate to the Airflow UI, click **Admin**, and then click **Variables**. Add the two variables with the respective values.
+1. Open the **Airflow UI**.
+2. Navigate to **Admin** > **Variables**. 
+3. Click **+** to create new variables.
+4. Add the following variables with their respective values:
+   - **`openai_api_key`**: Enter your Azure OpenAI API key.
+   - **`openai_api_endpoint`**: Enter the endpoint URL for your deployed `gpt-4o` model.
 
-### Step 3: Create an Airflow DAG to Generate DAGs from Sketches
+### Step 3: Create an Apache Airflow DAG to generate dags from sketches
 
-#### How the Azure OpenAI DAG Generator works
+With all prerequisites complete, you are ready to set up the Azure OpenAI DAG Generator workflow.
+
+#### How the Azure OpenAI DAG Generator works?
 1. Download the sketch from Azure Blob Storage: The image is encoded in base64 format and sent to Azure OpenAI.
 2. Generate DAG Code using Azure OpenAI: The workflow uses the `gpt-4o` model to generate the DAG code from the sketch and given system prompt.
 3. Azure OpenAI interprets the input image and system prompt, generating python code that represents an Apache Airflow DAG. The response includes this code as part of the API output.
@@ -72,7 +73,10 @@ To create the variables, navigate to the Airflow UI, click **Admin**, and then c
 
 #### Code for Azure OpenAI DAG Generator
 
-The following code demonstrates the implementation of this workflow. Copy the code into a Python file and save it in the dags directory of your Apache Airflow Jobs:
+Now, follow the steps below to implement this workflow:
+
+1. Create a file named openapi_dag_generator.py in the dags directory of your Apache Airflow project.
+2. Add the following code to the file, Replace `container_name` and `blob_name` with the actual values. Save the file.:
 
 ```python
 import io
@@ -88,8 +92,6 @@ from airflow.decorators import dag, task
 from airflow.models.baseoperator import chain
 from airflow.providers.microsoft.azure.hooks.wasb import WasbHook
 
-
-OPENAI_CONN_ID = "openai_dag_generator"
 
 @dag(
     start_date=datetime(2023, 11, 1),
@@ -153,8 +155,8 @@ def OpenAI_Dag_Generator():
         :return: Dictionary containing the generated DAG code as a string.
         """
         
-        azureAI_api_key = Variable.get("api_key")
-        azureAI_endpoint = Variable.get("api_endpoint")
+        azureAI_api_key = Variable.get("openai_api_key")
+        azureAI_endpoint = Variable.get("openai_api_endpoint")
 
         image = image_from_blob["encoded_image"]
         
@@ -242,10 +244,9 @@ def OpenAI_Dag_Generator():
         save_dag(
             generate_dag_code_from_openai(
                 fetch_image_from_blob(
-                    blob_name="taskgroups.jpg",
-                    container_name="airflow-dag-diagram"
+                    blob_name="airflow-dag-diagram.png",
+                    container_name="airflow-dag-images"
                 ),
-                OPENAI_CONN_ID,
                 "{{ params.system_prompt }}"
             )
         )
@@ -254,9 +255,22 @@ def OpenAI_Dag_Generator():
 OpenAI_Dag_Generator()
 ```
 
-### Step 4: Trigger the DAG
+### Step 4: Trigger the DAG from Apache Airflow UI.
+1. Click on `Monitor Airflow`.
+2. Navigate to the DAGs tab and locate the `OpenAI_Dag_Generator` DAG. Click on it.
+3. Click on the play button and Select `Trigger DAG w/ config`.
+   :::image type="content" source="media/apache-airflow-jobs/trigger_dag.png" lightbox="media/apache-airflow-jobs/trigger_dag.png" alt-text="Screenshot shows how to triger dag using config.":::
+4. You'll be presented with a form showing DAG parameters. We've provided a default system prompt, seed, temperature, top_p, and max_tokens. You can modify these values as needed.
+    :::image type="content" source="media/apache-airflow-jobs/dag-parameters.png" lightbox="media/apache-airflow-jobs/dag-parameters.png" alt-text="Screenshot represents DAG parameters.":::
+5. Click on `Trigger` button to start.
+6. After the successful DAG execution, you would see a new DAG generated by the filename `openai_dag.py` in the dags directory in Apache Airflow UI itself.
 
-You would see a new DAG generated by the filename 'openai_dag.py' in the dags directory. Configure the connections for the DAG. This DAG is ready for execution in Apache Airflow Job.
+### Step 5: Get Ready to execute the newly generated DAG.
+1. Open the Apache Airflow Job UI.
+2. The newly generated DAG will be visible in the DAGs list with the name `openai_dag`.
+3. Open the DAG file to view the code, and configure the connections required by the operators.
+4. Once the connections are set, you can trigger the DAG to execute the workflow.
+
 :::image type="content" source="media/apache-airflow-jobs/openai-resultant-dag.png" lightbox="media/apache-airflow-jobs/openai-resultant-dag.png" alt-text="Screenshot represents Resultant dag from Open AI.":::
 
 ## Conclusion
