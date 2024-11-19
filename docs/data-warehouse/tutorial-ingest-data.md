@@ -47,7 +47,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
    :::image type="content" source="media/tutorial-ingest-data/general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name.":::
 
-1. On the **Source** page, select the **Connection** dropdown. Select **More** to see all of the data sources you can choose from, including data sources in your local OneLake data hub.
+1. On the **Source** page, select the **Connection** dropdown. Select **More** to see all of the data sources you can choose from, including data sources in your OneLake.
 
 1. Select **New** to create a new connection.
 

@@ -42,7 +42,7 @@ As you work on your SQL query, the queries are automatically saved every few sec
 
 ## Multitask between tabs for data preview, querying, and modeling
 
-The data preview, querying, and modeling experience opens up as individual tabs that you can multitask between in the editor. If you are writing a query, you can switch between seeing a preview of the data and viewing the relationships between tables that you're writing the query for. To view or close all tabs, click on the icon on the right of all tabs. 
+The data preview, querying, and modeling experience opens up as individual tabs that you can multitask between in the editor. If you are writing a query, you can switch between seeing a preview of the data and viewing the relationships between tables that you're writing the query for. To view or close all tabs, select the icon on the right of all tabs.
 
 :::image type="content" source="media/sql-query-editor/multitask-tabs.png" alt-text="Screenshot showing where to show the tabs for data preview, querying, and modeling." lightbox="media/sql-query-editor/multitask-tabs.png":::
 

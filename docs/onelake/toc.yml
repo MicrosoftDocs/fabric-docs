@@ -33,6 +33,8 @@ items:
     href: create-gcs-shortcut.md
   - name: Create shortcuts to on-premises data
     href: create-on-premises-shortcut.md
+  - name: Create shortcuts to an Iceberg table
+    href: onelake-iceberg-tables.md
   - name: Shortcut security
     href: onelake-shortcut-security.md
   - name: Access OneLake shortcuts in an Apache Spark notebook

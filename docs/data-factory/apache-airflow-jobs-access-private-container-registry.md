@@ -13,7 +13,7 @@ ms.date: 03/25/2024
 # Add a Kubernetes secret in Apache Airflow job
 
 > [!NOTE]
-> Apache Airflow Job is powered by Apache Airflow.</br>[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex jobs. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 A Kubernetes secret is an object designed to securely store sensitive information, such as passwords, tokens, or keys. By utilizing secrets, you avoid embedding confidential data directly in your application code.
 
