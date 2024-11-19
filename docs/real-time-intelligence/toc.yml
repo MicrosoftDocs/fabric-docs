@@ -384,6 +384,9 @@ items:
       href: data-activator/activator-latency.md
     - name: Activator limitations
       href: data-activator/activator-limitations.md
+    - name: Capacity usage
+      href: data-activator/activator-capacity-usage.md
+      displayName: capacity, usage, consumption, billing
     - name: Troubleshoot errors
       href: data-activator/activator-troubleshooting.md
   - name: Tutorial
