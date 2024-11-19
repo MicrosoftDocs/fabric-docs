@@ -10,9 +10,11 @@ ms.date: 05/21/2024
 
 # Set up the Fabric monitoring hub (preview)
 
-The monitoring hub in the Microsoft Fabric Workload Development Kit is the centralized monitoring center. The monitoring hub is designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Use the monitoring hub](../admin/monitoring-hub.md).
+The monitoring hub in the Microsoft Fabric Workload Development Kit is the centralized monitoring center. The monitoring hub is designed for Fabric users to track item background jobs. For more information, see [Use the monitoring hub](../admin/monitoring-hub.md).
 
 ## Backend
+
+This section describes how to set up a backend implementation for the monitoring hub.
 
 ### Define the `JobScheduler` property in the item manifest
 
@@ -82,7 +84,7 @@ A job is marked as a "dead letter" by the Fabric platform if it doesn't start wi
 
 ### Example implementation
 
-For an example implementation of these APIs, refer to `JobsControllerImpl.cs` in the [Microsoft Fabric Workload Development Sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample).
+For an example implementation of these APIs, see *JobsControllerImpl.cs* in the [samples repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample).
 
 ## Frontend
 
@@ -164,7 +166,7 @@ When the data is ready, the item jobs automatically show up in the monitoring hu
 
 #### Enable your item in the monitoring hub filter pane
 
-To add your item to the filter pane, define a new property in the item frontend manifest: set `supportedInMonitoringHub` to `true`.
+To add your item to the filter pane, define a new property in the item frontend manifest and set `supportedInMonitoringHub` to `true`.
 
 #### Integrate with job quick actions
 
@@ -257,4 +259,4 @@ For an example of how this ribbon was implemented, see *ItemTabToolbar.tsx* in t
 
 ## Related content
 
-- [Use the Monitoring hub](../admin/monitoring-hub.md)
+- [Use the monitoring hub](../admin/monitoring-hub.md)

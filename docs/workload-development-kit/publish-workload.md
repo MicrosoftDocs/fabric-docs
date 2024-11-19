@@ -1,6 +1,6 @@
 ---
-title: Publish a workload to Microsoft (preview)
-description: Learn how to publish your workload to the Microsoft Fabric portal so that other users can use the workload.
+title: Publish a workload (preview)
+description: Learn how to publish your workload in the Microsoft Fabric portal so that other users can use the workload.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
@@ -9,7 +9,7 @@ ms.date: 09/29/2024
 # customer intent: As an independent software vendor (ISV), I want to know how to publish my workload to Microsoft Fabric.
 ---
 
-# Publish a workload to Fabric (preview)
+# Publish a workload (preview)
 
 After you [upload your workload](manage-workload.md) to Microsoft Fabric, you can publish it.
 
@@ -34,6 +34,6 @@ After you [upload your workload](manage-workload.md) to Microsoft Fabric, you ca
 
 ## Related content
 
-* [Authentication setup](authentication-tutorial.md)
+* [Set up authentication for your workload app](authentication-tutorial.md)
 
-* [Publishing guidelines and requirements](./publish-workload-requirements.md)
+* [Workload publishing guidelines and requirements](./publish-workload-requirements.md)

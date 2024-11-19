@@ -1,6 +1,6 @@
 ---
-title: Workload cloud setup steps
-description: Learn the prerequisites and steps to use a cloud environment with the Microsoft Fabric Workload Development Kit.
+title: Set up workload cloud mode
+description: Learn the prerequisites and steps to use a cloud environment with Microsoft Fabric Workload Development Kit.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 08/12/2024
 ---
 
-# Work in cloud mode (preview)
+# Set up workload cloud mode (preview)
 
 In this article, learn the requirements for deploying a workload that operates on a remote server with internet access in Microsoft Fabric.
 
@@ -52,9 +52,9 @@ https://<ISV's tenant verified domain>/<workload frontend server>/<workload back
 - Backend domain: `https://beserver.datafactory.contoso.com`
 - Redirect URI: `https://feserver.datafactory.contoso.com/close`
 
-## Configure the workload's endpoints
+## Configure the workload's end points
 
-To configure the workload's endpoints:
+To configure the workload end points:
 
 1. Add the workload's backend URL to the `CloudServiceConfiguration` section in the manifest and name it `Workload`.
 
@@ -83,7 +83,7 @@ Here's an example:
 
 To configure your application in Microsoft Entra:
 
-1. The Redirect URL should point to your frontend URL appended with `/close`. For example, `feserver.datafactory.contoso.com/close`.
+1. The redirect URL should point to your frontend URL appended with `/close`. For example, `feserver.datafactory.contoso.com/close`.
 1. The application ID URI should match the verified domain of your application.
 
 > [!NOTE]
@@ -91,19 +91,17 @@ To configure your application in Microsoft Entra:
 
 ## Configure your workload (backend)
 
-1. In the backend sample, go to *src/appsettings.json* and configure the following settings:
+1. In the backend sample, open *src/appsettings.json* and configure the following settings:
 
    - For **PublisherTenantId**, select the tenant ID of the publisher.
    - For **ClientId**, enter your application ID (found in the Microsoft Entra ID overview).
    - For **ClientSecret**, enter the secret you created when you configured the Microsoft Entra ID app.
    - For **Audience**, enter the ID URI you configured in the Microsoft Entra ID app.
 
-Next, configure the *WorkloadManifest.xml* file:
-
-1. Go to *src/Packages/manifest/WorkloadManifest.xml*.
+1. Open *src/Packages/manifest/WorkloadManifest.xml*.
 1. Under `AADApp`, set `AppId`, `redirectUri`, and `ResourceId` (the ID URI).
 
-Note the requirements specified in [XSD file](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Packages/manifest/WorkloadDefinition.xsd) and the [backend manifest overview](backend-manifest.md).
+Note the requirements that are specified in [XSD file](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Packages/manifest/WorkloadDefinition.xsd) and the [backend manifest overview](backend-manifest.md).
 
 ## Configure your frontend app
 
@@ -111,7 +109,7 @@ In the *.env.test* file, set `WORKLOAD_BE_URL` to your workload backend URL (for
 
 Here's an example:
 
-```xml
+```
 WORKLOAD_NAME=Fabric.WorkloadSample
 WORKLOAD_BE_URL=beserver.datafactory.contoso.com
 ```

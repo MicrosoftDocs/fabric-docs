@@ -10,7 +10,7 @@ ms.date: 05/21/2024
 #customer intent: As an independent software vendor (ISV), I want know how to upload my Microsoft Fabric extension workload to integrate my app into the Fabric framework.
 ---
 
-# Manage a workload in Fabric (preview)
+# Upload and manage a workload (preview)
 
 This article describes how to upload and manage a workload to Microsoft Fabric. Workloads enhance the usability of your service within a familiar workspace, eliminating the need to leave the Fabric environment. Fabric workloads increase user engagement and improve your application’s discoverability in the Fabric marketplace. The Fabric workspace includes various components, known as Fabric items, which handle storage, analysis, and presentation of your data.
 
@@ -32,7 +32,7 @@ To upload a workload to Microsoft Fabric:
 
    :::image type="content" source="./media/manage-workload/sign-in.png" alt-text="Screenshot of Microsoft Fabric sign-in page.":::
 
-1. In **Settings**, go to the **Admin portal**.
+1. In **Settings**, go to **Admin portal**.
 
    :::image type="content" source="./media/manage-workload/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Microsoft Fabric admin portal.":::
 
@@ -40,7 +40,7 @@ To upload a workload to Microsoft Fabric:
 
    :::image type="content" source="./media/manage-workload/upload-workload.png" alt-text="Screenshot showing how to upload a workload.":::
 
-1. Go to the NuGet package you want to upload, and then select **Open**.
+1. Go to the NuGet package you want to upload and select **Open**.
 
    :::image type="content" source="./media/manage-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the NuGet package.":::
 
@@ -64,7 +64,7 @@ After a workload is added, you can update, delete, or deactivate the workload.
 To change to a different active version of a workload:
 
 1. In the **Admin portal**, on the **Workloads** pane, select a workload to activate.
-1. On the *Add* tab, select **Edit**.
+1. On the **Add** tab, select **Edit**.
 
    :::image type="content" source="./media/manage-workload/edit-workload.png" alt-text="Screenshot showing how to update a workload.":::
 
@@ -76,7 +76,7 @@ To change to a different active version of a workload:
 
    :::image type="content" source="./media/manage-workload/confirm-change.png" alt-text="Screenshot showing how to confirm the change.":::
 
-The new version number is now listed, and the **Status** is **Active in tenant**.
+The new version number is now listed, and **Status** is **Active in tenant**.
 
 ### Delete a workload
 
@@ -94,7 +94,7 @@ You can't delete the active version of a workload. To delete an active version o
 To deactivate a workload:
 
 1. In the **Admin portal**, on the **Workloads** pane, select the workload to deactivate.
-1. On the *Add* tab, select **Deactivate**.
+1. On the **Add** tab, select **Deactivate**.
 
    :::image type="content" source="./media/manage-workload/deactivate.png" alt-text="Screenshot showing how to deactivate a workload.":::
 
