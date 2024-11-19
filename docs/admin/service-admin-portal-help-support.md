@@ -32,7 +32,7 @@ Admins can specify internal URLs to override the destination of links on the Pow
 * **Get help**. To take users to an internal help desk from the help menu, instead of to [Microsoft Fabric In-Producy Support](https://go.microsoft.com/fwlink/?linkid=2297819), set a custom URL for **Help Desk**.
 
 > [!NOTE]
-> The [Fabric In-product Support center](https://app.powerbi.com/admin-portal/supportCenter?experience=power-bi) and the option to open support cases to Microsoft ([Get Microsoft Help](https://go.microsoft.com/fwlink/?linkid=2297819)) will always be available for Admins
+> The [Fabric In-product Support center](https://app.powerbi.com/admin-portal/supportCenter?experience=power-bi) and the option to open support cases to Microsoft ([Get Microsoft Help](https://go.microsoft.com/fwlink/?linkid=2297819)) will always be available for Admins.
 
 ## Receive email notifications for service outages or incidents
 
