@@ -47,7 +47,7 @@ The second stage of capacity overload occurs when the overload lasts between 60 
 
 ### Overloads lasting over 24 hours
 
-The third stage of capacity overload occurs when the overload lasts longer than 24 hours. During this stage, Activator starts rejecting background operations. The custome is notified by email and Activator banners. 
+The third stage of capacity overload occurs when the overload lasts longer than 24 hours. During this stage, Activator starts rejecting background operations. The customer is notified by email and Activator banners. 
 
 - System notifications are sent to inform item owners that Activator is pausing rule evaluations.
 
