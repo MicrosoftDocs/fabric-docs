@@ -28,7 +28,7 @@ With Mirroring in Fabric, you don't need to piece together different services fr
 
 Mirrored databases are an item in **Fabric Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
 
-:::image type="content" source="media/azure-sql-database/fabric-mirroring-sql-database.svg" alt-text="Diagram of Fabric Database Mirroring for Azure SQL Database.":::
+:::image type="content" source="media/azure-sql-database/fabric-mirroring-sql-database.svg" alt-text="Diagram of Fabric database mirroring for Azure SQL Database.":::
 
 Mirroring creates three items in your Fabric workspace:
 

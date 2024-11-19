@@ -4,7 +4,7 @@ description: In this tutorial step, learn how to analyze Fabric data with a T-SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 09/20/2024
+ms.date: 11/19/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -15,7 +15,7 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In this tutorial, learn about how you can use analyze data using [T-SQL notebook](#option-1-create-a-t-sql-notebook-on-the-warehouse) or using a notebook with a [Lakehouse shortcut](#option-2-create-a-lakehouse-shortcut-and-analyze-data-with-an-notebook).
+In this tutorial, learn about how you can use analyze data using [T-SQL notebook](#option-1-create-a-t-sql-notebook-on-the-warehouse) or using a notebook with a [Lakehouse shortcut](#option-2-create-a-lakehouse-shortcut-and-analyze-data-with-a-notebook).
 
 ## Option 1: Create a T-SQL notebook on the warehouse
 
@@ -23,7 +23,7 @@ To get started, create a T-SQL notebook in one of the following two ways:
 
 1. Create a T-SQL notebook from the Microsoft Fabric Warehouse homepage. Navigate to the **Data Warehouse** workload, and choose **Notebook**.
 
-1. Select **+ Warehouses** and add the `WideWorldImporters` warehouse. Select the `WideWorldImporters` warehouse from **OneLake data hub** dialog box.
+1. Select **+ Warehouses** and add the `WideWorldImporters` warehouse. Select the `WideWorldImporters` warehouse from **OneLake** dialog box.
 
    :::image type="content" source="media/tutorial-analyze-data-notebook/add-warehouses-button.png" alt-text="Screenshot from the Fabric portal of the Add Warehouses button underneath Warehouses in the All sources area of the Explorer." lightbox="media/tutorial-analyze-data-notebook/add-warehouses-button.png":::
 
@@ -42,7 +42,7 @@ To get started, create a T-SQL notebook in one of the following two ways:
    :::image type="content" source="media/tutorial-analyze-data-notebook/tsql-notebook-top-100-results.png" alt-text="Screenshot from the Fabric portal of the SELECT TOP 100 results." lightbox="media/tutorial-analyze-data-notebook/tsql-notebook-top-100-results.png":::
 
 
-## Option 2: Create a lakehouse shortcut and analyze data with an notebook
+## Option 2: Create a lakehouse shortcut and analyze data with a notebook
 
 First, we create a new lakehouse. To create a new lakehouse in your [!INCLUDE [product-name](../includes/product-name.md)] workspace:
 
