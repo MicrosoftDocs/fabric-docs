@@ -24,7 +24,7 @@ You need to be a Fabric Capacity Administrator.
 
 1. Open the Fabric Admin Portal.
 
-1. Navigate to Capacity settings
+1. Navigate to Capacity settings.
 
 1. Select a capacity 
 
