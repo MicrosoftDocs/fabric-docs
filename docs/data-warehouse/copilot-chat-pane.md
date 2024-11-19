@@ -1,6 +1,6 @@
 ---
-title: "How to: Use the Copilot chat pane for Synapse Data Warehouse"
-description: Learn more about Microsoft Copilot chat pane for Synapse Data Warehouse in Microsoft Fabric, to ask questions specific to your warehouse.
+title: "How to: Use the Copilot chat pane for Fabric Data Warehouse"
+description: Learn more about Microsoft Copilot chat pane for Fabric Data Warehouse, to ask questions specific to your warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
@@ -12,7 +12,7 @@ ms.custom:
   - build-2024-dataai
   - build-2024-fabric
 ---
-# How to: Use the Copilot chat pane for Synapse Data Warehouse
+# How to: Use the Copilot chat pane for Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -72,7 +72,7 @@ You can ask Copilot questions about the warehouse normally and it should respond
 
 ## Related content
 
-- [Microsoft Copilot for Synapse Data Warehouse](copilot.md)
-- [How to: Use Copilot code completion for Synapse Data Warehouse](copilot-code-completion.md)
-- [How to: Use Copilot quick actions for Synapse Data Warehouse](copilot-quick-action.md)
+- [Microsoft Copilot for Fabric Data Warehouse](copilot.md)
+- [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
+- [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md)

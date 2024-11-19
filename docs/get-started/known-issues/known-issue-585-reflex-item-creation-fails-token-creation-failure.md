@@ -14,7 +14,7 @@ You can create a reflex trigger from a Power BI report.  The creation can fail b
 
 **Status:** Fixed: February 27, 2024
 
-**Product Experience:** Data Activator
+**Product Experience:** Fabric [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)]
 
 ## Symptoms
 

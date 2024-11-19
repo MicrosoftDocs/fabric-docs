@@ -1,27 +1,28 @@
 ---
-title: Add Amazon Managed Streaming for Apache Kafka to an eventstream
-description: Learn how to add Amazon Managed Streaming for Apache Kafka (MSK) source to an eventstream.
+title: Add Amazon MSK Kafka source to an eventstream
+description: Provides information on adding an Amazon Managed Streaming for Apache Kafka (MSK) source to an eventstream.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 09/27/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ms.custom: references_regions
+#Customer intent: I want to learn how to bring events from an Amazon Managed Streaming for Apache Kafka source into Microsoft Fabric. 
 ---
 
-# Add Amazon MSK Kafka source to an eventstream (preview)  
+# Add Amazon MSK Kafka source to an eventstream
 This article shows you how to add an Amazon MSK Kafka source to an eventstream.  
 
 Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, scaling, and management. By integrating Amazon MSK Kafka as a source within your eventstream, you can seamlessly bring the real-time events from your MSK Kafka and process it before routing them to multiple destinations within Fabric.  
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites 
 
-- Access to the Fabric **premium workspace** with **Contributor** or above permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - An Amazon MSK Kafka cluster in active status. 
 - Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 
@@ -30,13 +31,14 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 
 ## Add Amazon MSK Kafka as a source  
 
-1. Create an eventstream with **Enhanced Capabilities (preview)** option enabled. 
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
 1. On the next screen, select **Add external source**.
 
 ## Configure and connect to Amazon MSK Kafka 
 
 [!INCLUDE [amazon-managed-streaming-for-kafka-connector](./includes/amazon-managed-streaming-for-kafka-source-connector.md)]
 
+## View updated eventstream
 You can see the Amazon MSK Kafka source added to your eventstream in **Edit mode**.  
 
 :::image type="content" source="./media/add-source-amazon-msk-kafka/edit-view.png" alt-text="Screenshot that shows Amazon MSK Kafka source in Edit view." lightbox="./media/add-source-apache-kafka/edit-view.png":::

@@ -307,7 +307,7 @@ When someone shares a lakehouse, they can also grant access to the SQL analytics
 Learn more about data sharing permissions model:
 
 - [How lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
-- [Share your warehouse and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
+- [Share your data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
 
 ## Shortcuts
 
