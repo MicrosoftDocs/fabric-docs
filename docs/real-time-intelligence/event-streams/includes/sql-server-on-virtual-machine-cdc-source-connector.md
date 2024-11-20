@@ -20,7 +20,7 @@ ms.date: 10/23/2024
     - For **Authentication kind**, select **Basic**.
     
         > [!NOTE]
-        > Currently, Fabric eventstreams support only **Basic** authentication.
+        > Currently, Fabric eventstreams supports only **Basic** authentication.
     - Enter **Username** and **Password** for the SQL Server on VM.
 
         > [!NOTE]
