@@ -2,10 +2,11 @@
 title: Sources supported by Fabric event streams (enhanced)
 description: The include file has the list of sources supported by Fabric event streams with enhanced capabilities.
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 05/21/2024
 ---
 

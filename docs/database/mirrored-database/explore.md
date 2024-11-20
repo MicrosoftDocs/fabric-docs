@@ -1,10 +1,10 @@
 ---
-title: "Explore data in your mirrored database using Microsoft Fabric"
+title: "Explore Data in Your Mirrored Database Using Microsoft Fabric"
 description: Learn how to explore data in your mirrored databases using Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, anithaa
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.topic: conceptual
 ---
 # Explore data in your mirrored database using Microsoft Fabric
@@ -21,7 +21,7 @@ To access the SQL analytics endpoint, select the corresponding item in the works
 
 The **Data preview** is one of the three switcher modes along with the Query editor and Model view within the SQL analytics endpoint that provides an easy interface to view the data within your tables or views to preview sample data (top 1,000 rows).
 
-For more information, see [View data in the Data preview](../../data-warehouse/data-preview.md).
+For more information, see [View data in the Data preview in Microsoft Fabric](../../data-warehouse/data-preview.md).
 
 ## Use Visual Queries to analyze data
 
@@ -41,7 +41,7 @@ Notebooks are a powerful code item for you to develop Apache Spark jobs and mach
 
 For a step-by-step guide, see [Explore data in your mirrored database with notebooks](explore-onelake-shortcut.md).
 
-For more information, see [Shortcut data in a lakehouse](../../data-engineering/lakehouse-shortcuts.md) and see [Explore data in lakehouse](../../data-engineering/lakehouse-notebook-explore.md).
+For more information, see [Create shortcuts in lakehouse](../../data-engineering/lakehouse-shortcuts.md) and see [Explore the data in your lakehouse with a notebook](../../data-engineering/lakehouse-notebook-explore.md).
 
 ## Access delta files directly
 
@@ -65,11 +65,11 @@ Create a report directly from the semantic model (default) in three different wa
 - **Data** pane in the navigation bar
 - Semantic model (default) in the workspace
 
-For more information, see [Create reports in the Power BI](../../data-warehouse/reports-power-bi-service.md).
+For more information, see [Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop](../../data-warehouse/reports-power-bi-service.md).
 
 ## Related content
 
 - [What is Mirroring in Fabric?](overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
-- [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake](../../get-started/direct-lake-overview.md)
+- [What is the SQL analytics endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
+- [Direct Lake overview](../../get-started/direct-lake-overview.md)

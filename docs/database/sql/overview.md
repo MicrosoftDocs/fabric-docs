@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 11/07/2024
 ms.topic: overview
+ms.custom:
+  - ignite-2024
 ms.search.form: product-databases
 ---
 # SQL database in Microsoft Fabric (Preview)

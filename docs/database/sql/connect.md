@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 10/17/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.search.form: product-databases
 ---
 # Connect to your SQL database in Microsoft Fabric

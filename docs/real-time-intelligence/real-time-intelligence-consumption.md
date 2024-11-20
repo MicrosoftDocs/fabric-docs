@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
+  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: Eventhouse,KQL Database, Overview
 ---

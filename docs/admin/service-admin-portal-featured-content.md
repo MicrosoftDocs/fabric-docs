@@ -23,7 +23,7 @@ As a Fabric admin, you can monitor this featured content and remove it from the 
 
 In the [admin portal](admin-center.md), select **Featured content**.
 
-![Screenshot of manage featured content page in the Fabric admin portal.](media/service-admin-portal-featured-content/powerbi-admin-portal-manage-featured-content.png)
+:::image type="content" border="true" source="media/service-admin-portal-featured-content/powerbi-admin-portal-manage-featured-content.png" alt-text="Screenshot of manage featured content page in the Fabric admin portal.":::
 
 Here you see a list of all featured items along with their relevant metadata. If something looks suspicious, or you want to clean up the **Featured** section, you can delete featured items as needed.
 

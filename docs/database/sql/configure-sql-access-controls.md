@@ -6,6 +6,8 @@ ms.author: jaszymas
 ms.reviewer: wiassaf # Microsoft alias
 ms.date: 10/11/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ---
 
 # Configure granular access control for a SQL database

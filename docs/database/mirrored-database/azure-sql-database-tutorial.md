@@ -1,11 +1,13 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database"
+title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Database"
 description: Learn how to configure a mirrored database from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: roblescarlos, im-microsoft 
+ms.reviewer: roblescarlos, im-microsoft
 ms.date: 11/08/2024
 ms.topic: tutorial
+ms.custom:
+  - ignite-2024
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database
@@ -22,7 +24,7 @@ ms.topic: tutorial
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
     - If you want to mirror a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
 <!-- - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md). -->
-- The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated.
+- The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
 - Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
     - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
 - Networking requirements for Fabric to access your Azure SQL Database:
@@ -36,8 +38,6 @@ The System Assigned Managed Identity (SAMI) of your Azure SQL logical server mus
 1. To configure or verify that the SAMI is enabled, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
 1. Under **System assigned managed identity**, select **Status** to **On**.
 1. The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following T-SQL query: `SELECT * FROM sys.dm_server_managed_identities;`
-
-    <!-- :::image type="content" source="media/image2.png" alt-text="Screenshot of turning on the system assigned managed identity."::: -->
 
 ### Database principal for Fabric
 
@@ -126,12 +126,12 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
 
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
-For more information and details on the replication states, see [Monitor Fabric Mirror replication](monitor.md).
+For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
 
 > [!IMPORTANT]
 > If there are no updates in the source tables, the replicator engine will start to back off with an exponentially increasing duration, up to an hour. The replicator engine will automatically resume regular polling after updated data is detected.
 
 ## Related content
 
-- [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md)
+- [Mirroring Azure SQL Database](azure-sql-database.md)
 - [What is Mirroring in Fabric?](overview.md)

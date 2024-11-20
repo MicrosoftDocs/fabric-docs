@@ -30,7 +30,7 @@ The output of SQL statement appears in the rendered table view by default.
 
 ### Rich dataframe table view
 
-![Animated GIF of rich dataframe preview.](media\notebook-visualization\rich-dataframe-preview.gif)
+:::image type="content" border="true" source="media\notebook-visualization\rich-dataframe-preview.gif" alt-text="Animated GIF of rich dataframe preview.":::
 
 1. **Table** view is rendered by default when using _display()_ command.
 1. You can profile your dataframe by clicking on **Inspect** button. It provides the summarized data distribution and showing statistics of each column. 
@@ -40,7 +40,7 @@ The output of SQL statement appears in the rendered table view by default.
 
 ### Rich dataframe chart view
 
-![Animated GIF of chart view.](media\notebook-visualization\chart-view.gif)
+:::image type="content" border="true" source="media\notebook-visualization\chart-view.gif" alt-text="Animated GIF of chart view.":::
 
 1. Once you have a rendered table view, switch to the **Chart** view.
 
@@ -66,7 +66,7 @@ The output of SQL statement appears in the rendered table view by default.
 
 Use _display(df, summary = true)_ to check the statistics summary of a given Apache Spark DataFrame. The summary includes the column name, column type, unique values, and missing values for each column. You can also select a specific column to see its minimum value, maximum value, mean value, and standard deviation.
 
-![Animated GIF of summary view.](media\notebook-visualization\summary-view.gif)
+:::image type="content" border="true" source="media\notebook-visualization\summary-view.gif" alt-text="Animated GIF of summary view.":::
 
 ## displayHTML() option
 

@@ -5,6 +5,8 @@ author: mihart
 ms.reviewer: mihirwagle
 ms.author: mihart
 ms.topic: concept-article
+ms.custom:
+  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ms.date: 11/05/2024
 ---

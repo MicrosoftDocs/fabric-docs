@@ -4,12 +4,14 @@ description: This article describes how to process data streams in Real-Time hub
 author: mystina
 ms.author: majia
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
-# Process data streams in Fabric event streams 
+# Process data streams in Fabric eventstreams 
 
-The Connect data source experience, Microsoft sources page, Fabric events page, and Azure events page in Real-Time hub allow you to create streams for the supported sources. After you create these streams, you can process them, analyze them, and set alerts on them. This article explains how to process data streams using transformations supported in Fabric event streams.
+The Connect data source experience, Microsoft sources page, Fabric events page, and Azure events page in Real-Time hub allow you to create streams for the supported sources. After you create these streams, you can process them, analyze them, and set alerts on them. This article explains how to process data streams using transformations supported in Fabric eventstreams.
 
 
 
@@ -37,4 +39,4 @@ After you open the eventstream in an editor, you can add transformations such as
 
 ## Related content
 
-After you process data in the stream, you can send the output data to [destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md)  supported by Fabric event streams.
+After you process data in the stream, you can send the output data to [destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md)  supported by Fabric eventstreams.
