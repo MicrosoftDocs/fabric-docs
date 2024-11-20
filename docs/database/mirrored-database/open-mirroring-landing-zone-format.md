@@ -4,7 +4,7 @@ description: Review the requirements for files in the landing for open mirroring
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur
-ms.date: 11/18/2024
+ms.date: 11/19/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -17,7 +17,7 @@ This article details the landing zone and table/column operation requirements fo
 
 Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet format (uncompressed, Snappy, GZIP, ZSTD).
 
-:::image type="content" source="media/open-mirroring/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item.":::
+:::image type="content" source="media/open-mirroring-landing-zone-format/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item." lightbox="media/open-mirroring-landing-zone-format/landing-zone-url.png":::
 
 ## Landing zone
 

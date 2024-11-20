@@ -1,5 +1,5 @@
 ---
-title: Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)
+title: "Limitations in Microsoft Fabric Mirrored Databases From Azure Databricks (Preview)"
 description: Learn about limitations for Azure Databricks mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -96,7 +96,7 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
 
 ## Related content
 
-- [Mirroring Azure Databricks (Preview) Tutorial](azure-databricks-tutorial.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md)
 - [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md)
 - [Review the FAQ](azure-databricks-faq.yml)
 - [Mirroring Azure Databricks Unity Catalog (Preview)](azure-databricks.md)

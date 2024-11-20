@@ -36,7 +36,7 @@ The following animated gif reviews the steps to select a warehouse to share, sel
 
 1. Fill out all required fields, select **Grant access**.
 
-1. When the shared recipient receives the email, they can select **Open** and navigate to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] Data Hub page.
+1. When the shared recipient receives the email, they can select **Open** and navigate to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] OneLake catalog page.
 
    :::image type="content" source="media/share-warehouse-manage-permissions/recipient-open-shared-warehouse.png" alt-text="Screenshot showing the shared user's email notification of a shared warehouse." lightbox="media/share-warehouse-manage-permissions/recipient-open-shared-warehouse.png":::
 
@@ -73,7 +73,7 @@ For example, in the following screenshot, a user with **ReadAll** permissions ca
 
 ### Build permissions
 
-With **Build** permissions, the shared recipient can create reports on top of the default semantic model that is connected to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can create Power BI reports from the Data Hub or also do the same using Power BI Desktop.
+With **Build** permissions, the shared recipient can create reports on top of the default semantic model that is connected to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can create Power BI reports from the OneLake catalog or also do the same using Power BI Desktop.
 
 ## Manage permissions
 
