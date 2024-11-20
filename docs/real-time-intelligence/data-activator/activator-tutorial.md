@@ -44,7 +44,7 @@ In this step, we explore the eventstream data this sample is built on.
 
 The new activator has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
 
-    :::image type="content" source="media/activator-tutorial/activator-eventstream.png" alt-text="Screenshot of Activator with the Package delivery events stream selected." lightbox="media/activator-tutorial/activator-eventstream.png":::
+:::image type="content" source="media/activator-tutorial/activator-eventstream.png" alt-text="Screenshot of Activator with the Package delivery events stream selected." lightbox="media/activator-tutorial/activator-eventstream.png":::
 
 These events show the real-time status of packages that are in the process of being delivered.
 
