@@ -1,6 +1,6 @@
 ---
 title: Preview data in an Eventstream item
-description: This article describes how to preview the data in an Eventstream item with the Microsoft Fabric event streams feature.
+description: This article describes how to preview the data in an Eventstream item with the Microsoft Fabric eventstreams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu

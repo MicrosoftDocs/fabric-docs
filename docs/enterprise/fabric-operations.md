@@ -161,17 +161,17 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Event streams](#event-streams), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [eventstreams](#event-streams), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
-#### Event streams
+#### Eventstreams
 
-You can find the consumption rates for Event streams in [Monitor capacity consumption for Microsoft Fabric event streams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
+You can find the consumption rates for eventstreams in [Monitor capacity consumption for Microsoft Fabric eventstreams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
 | Operation                       | Description                               | Item         | Azure billing meter        | Type       |
 | ------------------------------- | ----------------------------------------- | ------------ | -------------------------- | ---------- |
-| Eventstream Per Hour            | Ingestion or processing for Event Stream  | Event Stream | eventstream Capacity Usage CU               | Background |
-| Eventstream Data Traffic per GB | Data Ingress and Egress                   | Event Stream | eventstream Data Traffic per GB Capacity Usage CU | Background |
-| Eventstream Processor Per Hour  | ASA Processing                            | Event Stream | eventstreams Processor Capacity Usage CU    | Background |
+| Eventstream Per Hour            | Ingestion or processing for Eventstream  | Eventstream | eventstream Capacity Usage CU               | Background |
+| Eventstream Data Traffic per GB | Data Ingress and Egress                   | Eventstream | eventstream Data Traffic per GB Capacity Usage CU | Background |
+| Eventstream Processor Per Hour  | ASA Processing                            | Eventstream | eventstreams Processor Capacity Usage CU    | Background |
 
 #### Fabric events
 

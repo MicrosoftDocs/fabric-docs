@@ -68,17 +68,17 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What's Event streams?
+          - text: What's eventstreams?
             url: event-streams/overview.md
       - linkListType: how-to-guide
         links:
-          - text: Create and manage event streams
+          - text: Create and manage eventstreams
             url:  event-streams/create-manage-an-eventstream.md
-          - text: Create event streams for discrete events
+          - text: Create eventstreams for discrete events
             url: event-streams/create-eventstreams-discrete-events.md
           - text: Route data streams based on content
             url: event-streams/route-events-based-on-content.md
-          - text: Monitor event streams
+          - text: Monitor eventstreams
             url: event-streams/monitor.md
       - linkListType: how-to-guide
         links:

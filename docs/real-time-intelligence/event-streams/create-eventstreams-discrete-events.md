@@ -13,7 +13,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to create Microsoft Fabric eventstreams for discrete events.
 
-When you develop applications for real-time analytics, you commonly encounter two types of events: discrete events and continuous events or streams. Microsoft Fabric event streams can ingest and process both discrete and continuous events.
+When you develop applications for real-time analytics, you commonly encounter two types of events: discrete events and continuous events or streams. Microsoft Fabric eventstreams can ingest and process both discrete and continuous events.
 
 
 
@@ -30,7 +30,7 @@ To build an efficient and scalable eventstream in Fabric, it's important to unde
 
 ## Supported discrete events
 
-Fabric event streams enable you to build event-driven solutions for capturing system state changes or events in your Fabric data source. Fabric event streams support the following types of discrete events:
+Fabric eventstreams enable you to build event-driven solutions for capturing system state changes or events in your Fabric data source. Fabric eventstreams support the following types of discrete events:
 
 |Discrete events|Description|
 |----|---------|
@@ -39,7 +39,7 @@ Fabric event streams enable you to build event-driven solutions for capturing sy
 
 ## Connect discrete events to eventstreams
 
-In Fabric event streams, you can add a discrete event source into an eventstream and route those events to Real-Time hub. Then you can either transform these events in Fabric event streams or subscribe to them in Real-Time hub. In Real-Time hub, further actions include using Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] or creating alerts that execute Fabric job items, like Pipeline and Notebook.
+In Fabric eventstreams, you can add a discrete event source into an eventstream and route those events to Real-Time hub. Then you can either transform these events in Fabric eventstreams or subscribe to them in Real-Time hub. In Real-Time hub, further actions include using Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] or creating alerts that execute Fabric job items, like Pipeline and Notebook.
 
 ### Prerequisite
 

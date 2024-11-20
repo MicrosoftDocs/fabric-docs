@@ -1,12 +1,12 @@
 ---
 title: Create an eventstream in Microsoft Fabric
-description: This article describes how to create an eventstream item with Microsoft Fabric event streams feature.
+description: This article describes how to create an eventstream item with Microsoft Fabric eventstreams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.date: 11/18/2024
-ms.search.form: Event Streams Overview
+ms.search.form: Eventstreams Overview
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
 ---
@@ -36,10 +36,10 @@ Before you start, you must complete the following prerequisite:
 
 ::: zone pivot="standard-capabilities"
 
-The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
+The eventstreams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
 
 > [!IMPORTANT]
-> Use this tab if you are using Fabric event streams without enhanced capabilities. If you are using enhanced capabilities, use the **Enhanced Capabilities** tab. 
+> Use this tab if you are using Fabric eventstreams without enhanced capabilities. If you are using enhanced capabilities, use the **Enhanced Capabilities** tab. 
 
 
 ## Prerequisites
@@ -76,7 +76,7 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Intelli
 
 ## Main editor for eventstreams
 
-The Microsoft Fabric event streams feature provides a main editor, which is a canvas that allows you to connect to event data sources and destinations with a few clicks. Each tile (node) in the canvas represents a source, a destination, or the eventstream itself. From there, you can preview the event data, monitor the data insights with metrics, and check logs for each of these tiles (nodes).
+The Microsoft Fabric eventstreams feature provides a main editor, which is a canvas that allows you to connect to event data sources and destinations with a few clicks. Each tile (node) in the canvas represents a source, a destination, or the eventstream itself. From there, you can preview the event data, monitor the data insights with metrics, and check logs for each of these tiles (nodes).
 
 The following screenshot shows an eventstream with its source and destination configured.
 

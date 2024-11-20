@@ -6,7 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: tutorial
 ms.date: 11/18/2024
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a report to monitor the health my devices.
 ---
 
