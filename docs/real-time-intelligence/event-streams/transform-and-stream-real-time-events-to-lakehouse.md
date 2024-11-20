@@ -1,6 +1,6 @@
 ---
 title: Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
-description: Learn how to use event streams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehouse.
+description: Learn how to use eventstreams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehouse.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -9,12 +9,12 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 11/15/2023
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 ---
 
 # Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
 
-This tutorial shows you how to use the Microsoft Fabric event streams feature to ingest, filter, and transform real-time events and send them in Delta Lake format from your Azure event hub to a lakehouse. You also learn how to build a Power BI report to visualize business insights in your events data.
+This tutorial shows you how to use the Microsoft Fabric eventstreams feature to ingest, filter, and transform real-time events and send them in Delta Lake format from your Azure event hub to a lakehouse. You also learn how to build a Power BI report to visualize business insights in your events data.
 
 In this tutorial, you learn how to:
 
@@ -189,9 +189,9 @@ To verify the event data in your new lakehouse, open the **citypwrdata** lakehou
 
 ## Related content
 
-In this tutorial, you learned how to ingest, filter, and transform real-time events and send them from your Azure event hub to a lakehouse in Delta Lake format. You also learned how to use the lakehouse to build Power BI reports to visualize the business insights in your events data. If you're interested in discovering more advanced features for working with the Fabric event streams feature, you may find the following resources helpful.
+In this tutorial, you learned how to ingest, filter, and transform real-time events and send them from your Azure event hub to a lakehouse in Delta Lake format. You also learned how to use the lakehouse to build Power BI reports to visualize the business insights in your events data. If you're interested in discovering more advanced features for working with the Fabric eventstreams feature, you may find the following resources helpful.
 
-- [Introduction to Microsoft Fabric event streams](./overview.md)
+- [Introduction to Microsoft Fabric eventstreams](./overview.md)
 - [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

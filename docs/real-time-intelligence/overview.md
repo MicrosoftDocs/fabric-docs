@@ -92,27 +92,27 @@ Real-Time hub events is a catalog of data in motion, and contains:
     for example: Azure Event Hubs, Azure IoT Hub, Azure SQL DB Change
     Data Capture (CDC), Azure Cosmos DB CDC, PostgreSQL DB CDC.
 
--   **Fabric events**: Event-driven capabilities support real-time notifications and data processing. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via Event streams. 
+-   **Fabric events**: Event-driven capabilities support real-time notifications and data processing. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via eventstreams. 
 
 This data is all presented in a readily consumable format and is
 available to all Fabric workloads.
 
 ### Connect to streaming data
 
-Event streams are the Fabric platform way to capture, transform, and
+Eventstreams are the Fabric platform way to capture, transform, and
 route high volumes of real-time events to various destinations with a
-no-code experience. Event streams support multiple data sources and data
+no-code experience. Eventstreams support multiple data sources and data
 destinations, including a wide range of connectors to external sources,
 for example: Apache Kafka clusters, database change data capture feeds,
 AWS streaming sources (Kinesis), and Google (GCP Pub/Sub).
 
 ### Process data streams
 
-By using the event processing capabilities in Event streams, you can do
+By using the event processing capabilities in Eventstreams, you can do
 filtering, data cleansing, transformation, windowed aggregations, and
 dupe detection, to land the data in the shape you want. You can also use
 the content-based routing capabilities to send data to different
-destinations based on filters. Another feature, derived event streams,
+destinations based on filters. Another feature, derived eventstreams,
 lets you construct new streams as a result of transformations and/or
 aggregations that can be shared to consumers in Real-Time hub.
 
@@ -159,7 +159,7 @@ advantages.
 
 ## Integrate with other Fabric experiences
 
-- [Route events from event streams to Fabric item destinations](event-streams/route-events-based-on-content.md)
+- [Route events from eventstreams to Fabric item destinations](event-streams/route-events-based-on-content.md)
 - [Emit events from Fabric items into Real-Time hub](../real-time-hub/explore-fabric-workspace-item-events.md)
 - Access data in OneLake from Real-Time Intelligence in several
 ways:
@@ -174,6 +174,6 @@ ways:
 
 - [End-to-end tutorial](tutorial-introduction.md)
 - [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)
-- [What is Event streams](event-streams/overview.md)
+- [What is Fabric eventstreams](event-streams/overview.md)
 - [What is [!INCLUDE [fabric-activator](includes/fabric-activator.md)]?](data-activator/activator-introduction.md)
 - [User flows](user-flow-1.md)

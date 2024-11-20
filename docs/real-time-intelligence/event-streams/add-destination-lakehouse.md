@@ -1,6 +1,6 @@
 ---
 title: Add a lakehouse destination to an eventstream
-description: Learn how to add a lakehouse destination to an eventstream in Microsoft Fabric event streams.
+description: Learn how to add a lakehouse destination to an eventstream in Microsoft Fabric eventstreams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -56,7 +56,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
 
 1. Select **Advanced**.
 
-1. Two ingestion modes are available for a lakehouse destination. Based on your scenario, configure these modes to optimize how Fabric event streams writes to the lakehouse.
+1. Two ingestion modes are available for a lakehouse destination. Based on your scenario, configure these modes to optimize how Fabric eventstreams writes to the lakehouse.
 
    - **Minimum rows** is the minimum number of rows that the lakehouse ingests in a single file. The minimum is 1 row, and the maximum is 2 million rows per file. The smaller the minimum number of rows, the more files the lakehouse creates during ingestion.
 
@@ -123,7 +123,7 @@ If you have a lakehouse created in your workspace, follow these steps to add the
    1. **Event processing**: You can use the event processing editor to specify how the data should be processed before sending it to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md). When you're done with the editor, select **Done** to return to the **Lakehouse** destination configuration screen.
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
-1. Two ingestion modes are available for a lakehouse destination. Select one of these modes to optimize how the Fabric event streams feature writes to the lakehouse based on your scenario.
+1. Two ingestion modes are available for a lakehouse destination. Select one of these modes to optimize how the Fabric eventstreams feature writes to the lakehouse based on your scenario.
     1. **Rows per file** – The minimum number of rows that Lakehouse ingests in a single file. The smaller the minimum number of rows, the more files Lakehouse creates during ingestion. Minimum is 1 row. Maximum is 2M rows per file.
     1. **Duration** – The maximum duration that Lakehouse would take to ingest a single file. The longer the duration, more rows are ingested in a file. Minimum is 1 minute and maximum is 2 hours.  
       

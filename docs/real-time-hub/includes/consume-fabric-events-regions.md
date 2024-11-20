@@ -1,6 +1,6 @@
 ---
 title: Include file with unsupported regions for consuming Fabric events
-description: This include file has a note that lists the unsupported regions for consuming Fabric and Azure events via Fabric event streams. 
+description: This include file has a note that lists the unsupported regions for consuming Fabric and Azure events via Fabric eventstreams. 
 author: spelluru
 ms.author: spelluru
 ms.topic: include
