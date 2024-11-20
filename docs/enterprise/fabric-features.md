@@ -27,7 +27,9 @@ The following table lists Fabric features according to SKU type. The table lists
 | [Pause and resume your capacity](pause-resume.md)                                                        | &#x2705;      | &#x274C; |
 | [On-demand resizing](scale-capacity.md)                                                                  | &#x2705;      | &#x274C; |
 | View Power BI items without a per user license                                                           | F64 or higher | &#x2705; |
+
 \*Not supported in Fabric Trial capacity.
+
 ## Related content
 
 * [Microsoft Fabric concepts and licenses](licenses.md)
