@@ -17,6 +17,8 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 
 This article details the current limitations in [!INCLUDE [product-name](../includes/product-name.md)].
 
+These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL Database in Fabric, see [Limitations in SQL Database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
+
 ## Limitations
 
 Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. More functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
@@ -32,7 +34,7 @@ For more limitations in specific areas, see:
 - [Semantic models](semantic-models.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
 - [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
-- [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
+- [Share your data and manage permissions](share-warehouse-manage-permissions.md#limitations)
 - [Limitations in source control](source-control.md#limitations-in-source-control)
 - [Statistics](statistics.md#limitations)
 - [Tables](tables.md#limitations)

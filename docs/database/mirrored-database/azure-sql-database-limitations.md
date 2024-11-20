@@ -1,29 +1,23 @@
 ---
-title: "Limitations and behaviors for Fabric mirrored databases from Azure SQL Database (Preview)"
+title: "Limitations and behaviors for Fabric mirrored databases from Azure SQL Database"
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
-ms.date: 10/22/2024
+ms.date: 11/14/2024
 ms.topic: conceptual
 ms.custom:
   - references_regions
   - build-2024
 ---
-# Limitations and behaviors in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
+# Limitations in Microsoft Fabric mirrored databases from Azure SQL Database
 
 Current limitations in the [Microsoft Fabric mirrored databases](overview.md) from Azure SQL Database are listed in this page. This page is subject to change.
 
 For troubleshooting, see:
 
 - [Troubleshoot Fabric mirrored databases](troubleshooting.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md)
-
-## Active transactions, workloads, and replicator engine behaviors
-
-- Active transactions continue to hold the transaction log truncation until the transaction commits and the mirrored Azure SQL Database catches up, or the transaction aborts. Long-running transactions might result in the transaction log filling up more than usual. The source database transaction log should be monitored so that the transaction log does not fill. For more information, see [Transaction log grows due to long-running transactions and CDC](/troubleshoot/sql/database-engine/replication/monitor-long-running-transactions-and-log-growth).
-- Each user workload varies. During initial snapshot, there might be more resource usage on the source database, for both CPU and IOPS (input/output operations per second, to read the pages). Table updates/delete operations can lead to increased log generation. Learn more on how to [monitor resources for your Azure SQL Database](/azure/azure-sql/database/monitor-tune-overview?view=azuresql-db&preserve-view=true#azure-sql-database-and-azure-sql-managed-instance-resource-monitoring).
-- The replicator engine monitors each table for changes independently. If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there is a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md)
 
 ## Database level limitations
 
@@ -31,14 +25,14 @@ For troubleshooting, see:
 - Azure SQL Database cannot be mirrored if the database has: enabled Change Data Capture (CDC), Azure Synapse Link for SQL, or the database is already mirrored in another Fabric workspace.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
-  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables. 
+  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
 
 ## Permissions in the source database
 
-- [Row-level security](/sql/relational-databases/security/row-level-security) is not currently supported for Azure SQL Database configured for mirroring to Fabric OneLake.  <!--    - Row-level security settings are not currently propagated and reflected from the source SQL database into Fabric.   -->
-- [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql), for example granting permissions to certain columns, are not currently propagated from the source SQL database into Fabric.
-- [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking) settings are not currently propagated from the source SQL database into Fabric.
-- To successfully configure Mirroring for Azure SQL Database, the principal used to connect to the source Azure SQL Database needs to be granted **CONTROL** or **db_owner** permissions.
+- [Row-level security](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true) is supported, but permissions are currently not propagated to the replicated data in Fabric OneLake.
+- [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql?view=fabric&preserve-view=true), for example granting permissions to certain columns, are currently not propagated to the replicated data in Fabric OneLake.
+- [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking?view=fabric&preserve-view=true) settings are currently not propagated to the replicated data in Fabric OneLake.
+- To successfully configure Mirroring for Azure SQL Database, the principal used to connect to the source Azure SQL Database must be granted the permission **ALTER ANY EXTERNAL MIRROR**, which is included in higher level permission like **CONTROL** permission or the **db_owner** role.
 
 ## Network and connectivity security
 
@@ -52,35 +46,39 @@ For troubleshooting, see:
 
 - A table that does not have a defined primary key cannot be mirrored.
     - A table using a primary key defined as nonclustered primary key cannot be mirrored.  
-- A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**, **datetime2(7)**, **datetimeoffset(7)**, **time(7)** where `7` is seven digits of precision. Delta lake supports only six digits of precision.
+- A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**.
+- Delta lake supports only six digits of precision.
+   - Columns of SQL type **datetime2**, with precision of 7 fractional second digits, do not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss happens if columns of this type are mirrored and seventh decimal second digit will be trimmed.
+   - A table cannot be mirrored if the primary key is one of these data types: **datetime2(7)**, **datetimeoffset(7)**, **time(7)**, where `7` is seven digits of precision.
+   - The **datetimeoffset(7)** data type does not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss (loss of time zone and seventh time decimal) occurs if columns of this type are mirrored.
 - Clustered columnstore indexes are not currently supported.
 - If one or more columns in the table is of type Large Binary Object (LOB) with a size > 1 MB, the column data is truncated to size of 1 MB in Fabric OneLake.
 - Source tables that have any of the following features in use cannot be mirrored.
     - Temporal history tables and ledger history tables  
-    - Always Encrypted  
+    - Always Encrypted
     - In-memory tables
     - Graph  
     - External tables  
-- The following table-level data definition language (DDL) operations aren't allowed on source tables when enabled for Fabric SQL Database mirroring.  
+- The following table-level data definition language (DDL) operations aren't allowed on SQL database source tables when enabled for mirroring.  
     - Switch/Split/Merge partition
-    - Alter primary key  
-    - Truncate table
+    - Alter primary key
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
+- Currently, a table cannot be mirrored if it has the **json** or **vector** data type.
+    - Currently, you cannot ALTER a column to the **vector** or **json** data type when a table is mirrored.
 
 ## Column level
 
 - If the source table contains computed columns, these columns cannot be mirrored to Fabric OneLake.  
-- If the source table contains columns with unsupported data types, these columns cannot be mirrored to Fabric OneLake. The following data types are unsupported.
+- If the source table contains columns with one of these data types, these columns cannot be mirrored to Fabric OneLake. The following data types are unsupported for mirroring:
     - **image**
     - **text**/**ntext**
     - **xml** 
-    - **json**
     - **rowversion**/**timestamp**
     - **sql_variant**
     - User Defined Types (UDT)
     - **geometry**
     - **geography**
-- Column names for a SQL table cannot contain spaces nor the following characters: `space` `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
+- Column names for a SQL table cannot contain spaces nor the following characters: `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
 
 ## Warehouse limitations
 
@@ -151,7 +149,7 @@ The following are the Fabric regions that support Mirroring for Azure SQL Databa
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-tutorial.md)
 
 ## Related content
 

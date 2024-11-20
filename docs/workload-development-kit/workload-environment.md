@@ -35,7 +35,7 @@ The backend is the powerhouse for data processing and metadata storage. It emplo
 The workloads can run in two environments: local and cloud. In local (devmode), the workload runs on the developer's machine, with API calls managed by the DevGateway utility. This utility also handles workload registration with Fabric. In cloud mode, the workload runs on the partner services, with API calls made directly to an HTTPS endpoint.
 
 ## Development environment
-- **Dev mode workload package**: When building the back end solution in Visual Studio, use the Debug build configuration to create a BE NuGet package, which can be loaded in to the Fabric tenant using the DevGateway application.
+- **Dev mode workload package**: When building the backend solution in Visual Studio, use the Debug build configuration to create a BE NuGet package, which can be loaded in to the Fabric tenant using the DevGateway application.
 
 :::image type="content" source="./media/workload-environment/developer-mode-diagram.png" alt-text="Diagram of the developer mode architecture." lightbox="./media/workload-environment/developer-mode-diagram.png":::
 

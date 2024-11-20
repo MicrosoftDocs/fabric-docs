@@ -1,6 +1,6 @@
 ---
 title: Microsoft Fabric terminology
-description: Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, and Synapse Data Science.
+description: Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
 ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
@@ -15,13 +15,13 @@ ms.date: 12/14/2023
 
 # Microsoft Fabric terminology
 
-Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Real-Time Intelligence, Data Factory, and Power BI.
+Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, Fabric Data Science, Real-Time Intelligence, Data Factory, and Power BI.
 
 ## General terms
 
 - **Capacity:** Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/licenses.md#capacity)
 
-- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Real-Time Intelligence, Data Factory, and Power BI.
+- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Fabric Data Warehouse, Fabric Data Engineering, Fabric Data Science, Real-Time Intelligence, Data Factory, and Power BI.
 
 - **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
@@ -29,7 +29,9 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that uses capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 
-## Synapse Data Engineering
+<a id="synapse-data-engineering"></a>
+
+## Fabric Data Engineering
 
 - **Lakehouse:** A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The lakehouse item is hosted within a unique workspace folder in [Microsoft OneLake](../onelake/onelake-overview.md). It contains files in various formats (structured and unstructured) organized in folders and subfolders. For more information, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
 
@@ -53,7 +55,9 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Trigger:** An automation capability in Data Factory that initiates pipelines based on specific conditions, such as schedules or data availability.
 
-## Synapse Data Science
+<a id="synapse-data-science"></a>
+
+## Fabric Data Science
 
 - **Data Wrangler:** Data Wrangler is a notebook-based tool that provides users with an immersive experience to conduct exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics and a set of common data-cleansing operations, all available with a few selected icons. Each operation generates code that can be saved back to the notebook as a reusable script.
 
@@ -63,19 +67,29 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Run:** A run corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
-## Synapse data warehouse
+<a id="synapse-data-warehouse"></a>
+
+## Fabric Data Warehouse
 
 - **SQL analytics endpoint:** Each Lakehouse has a SQL analytics endpoint that allows a user to query delta table data with TSQL over TDS. For more information, see [SQL analytics endpoint](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
 
-- **Synapse Data Warehouse:** The Synapse Data Warehouse functions as a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse Data Warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
+- **Fabric Data Warehouse:** The Fabric Data Warehouse functions as a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Fabric Data Warehouse](../data-warehouse/data-warehousing.md#fabric-data-warehouse).
 
 ## Real-Time Intelligence
 
-- **KQL database:** The KQL database holds data in a format that you can execute KQL queries against. For more information, see [Query a KQL database](../real-time-intelligence/create-database.md).
+- **Activator:** Activator is a no-code, low-code tool that allows you to create alerts, triggers, and actions on your data. Activator is used to create alerts on your data streams. For more information, see [Activator](../real-time-intelligence/data-activator/activator-introduction.md).
+
+- **Eventhouse:** Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration. They're designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. A single workspace can hold multiple Eventhouses, an eventhouse can hold multiple KQL databases, and each database can hold multiple tables. For more information, see [Eventhouse overview](../real-time-intelligence/eventhouse.md).
+
+- **Eventstream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../real-time-intelligence/event-streams/overview.md).
+
+- **KQL Database:** The KQL Database holds data in a format that you can execute KQL queries against. KQL databases are items under an Eventhouse. For more information, see [KQL database](../real-time-intelligence/create-database.md).
 
 - **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-intelligence/kusto-query-set.md)
 
-- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../real-time-intelligence/event-streams/overview.md).
+## Real-Time hub
+
+- **Real-Time hub:** Real-Time hub is the single place for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with the hub. For more information, see [Real-Time hub overview](../real-time-hub/real-time-hub-overview.md).
 
 ## OneLake
 

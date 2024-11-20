@@ -15,7 +15,7 @@ ms.date: 11/15/2023
 
 This article provides suggestions to troubleshoot common problems with the REST connector in Data Factory in Microsoft Fabric.
 
-## Error code: RestSinkCallFailed
+## Error code: RestdestinationCallFailed
 
 - **Message**: `Rest Endpoint responded with Failure from server. Check the error from server:%message;`
 
@@ -31,7 +31,7 @@ This article provides suggestions to troubleshoot common problems with the REST 
 
 - **Recommendation**: Check the HTTP status code or the request URL or the response payload in the error message and fix the remote server issue.
 
-## Error code: RestSinkUNSupportedCompressionType
+## Error code: RestdestinationUNSupportedCompressionType
 
 - **Message**: `User Configured CompressionType is Not Supported By Data Factory：%message;`
 

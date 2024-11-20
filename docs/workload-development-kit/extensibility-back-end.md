@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to build the backend of a customized Fabric workload so that I can create customized user experiences.
 ---
 
-# Back-end implementation guide (preview)
+# Backend implementation guide (preview)
 
 This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services, as well as integration with the Lakehouse platform. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and their roles in the architecture.
 

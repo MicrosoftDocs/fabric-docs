@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/03/2024
+ms.date: 11/19/2024
 ---
 
 # Eventhouse OneLake Availability
