@@ -32,7 +32,7 @@ Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
 
 The Livy API defines a unified endpoint for operations. Replace the placeholders {Entra_TenantID}, {Entra_ClientID}, {Fabric_WorkspaceID}, and {Fabric_LakehouseID} with your appropriate values when you follow the examples in this article.
 
-## Configure Visual Studio code for your Livy API Session
+## Configure Visual Studio Code for your Livy API Session
 
 1. Select **Lakehouse Settings** in your Fabric Lakehouse.
 
@@ -46,11 +46,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
 
-    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
+    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
 
 ## Create a Livy API Spark session
 
-1. Create a `.ipynb` notebook in Visual Studio Code and insert the following code.
+1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
     ```python
     from msal import PublicClientApplication
@@ -93,9 +93,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
 
-1. After you choose the identity to sign-in with, you'll also be asked to approve the Entra app registration API permissions.
+1. After you choose the identity to sign-in with, you'll also be asked to approve the Microsoft Entra app registration API permissions.
 
-    :::image type="content" source="media/livy-api/entra-logon.png" alt-text="Screenshot showing Entra app API permissions." lightbox="media/livy-api/entra-logon.png" :::
+    :::image type="content" source="media/livy-api/entra-logon.png" alt-text="Screenshot showing Microsoft Entra app API permissions." lightbox="media/livy-api/entra-logon.png" :::
 
 1. Close the browser window after completing authentication.
 
@@ -103,7 +103,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. In Visual Studio Code you should see the Entra token returned.
 
-    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
+    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
 
 1. Add another notebook cell below and insert this code.
 
@@ -238,7 +238,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
     :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." :::
 
-To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
+To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Microsoft Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
 
 ## Related content
 
