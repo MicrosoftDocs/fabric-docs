@@ -8,7 +8,7 @@ ms.date: 11/19/2024
 
 ---
 
-# GraphQL Monitoring Dashboard and Logging (Preview)
+# GraphQL monitoring dashboard and logging (Preview)
 
 > [!NOTE]
 > Monitoring Dashboard and Logging feature for Fabric API for GraphQL is in **preview**.
