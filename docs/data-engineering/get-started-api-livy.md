@@ -16,7 +16,7 @@ ms.date: 11/19/2024
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; authenticating with an Microsoft Entra app token; submit either batch or session jobs from a remote client to Fabric Spark compute.  You'll also discover the Livy API endpoint; submit jobs; and monitor the results.
+Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; authenticating with a Microsoft Entra app token; submit either batch or session jobs from a remote client to Fabric Spark compute. You'll also discover the Livy API endpoint; submit jobs; and monitor the results.
 
 ## Prerequisites
 
@@ -34,9 +34,9 @@ You can use various programming languages or GUI clients to interact with REST A
 
 ## How to authorize the Livy API requests
 
-To work with Fabric APIs including the Livy API, you first need to create an Microsoft Entra application and obtain a token. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and obtain a token. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 
-There are many Microsoft Entra scope permissions required to execute Livy jobs.  This is an example of simple Spark code + storage access + SQL:
+There are many Microsoft Entra scope permissions required to execute Livy jobs. This is an example of simple Spark code + storage access + SQL:
 
 * Code.AccessAzureDataExplorer.All
 * Code.AccessAzureDataLake.All
@@ -53,7 +53,7 @@ There are many Microsoft Entra scope permissions required to execute Livy jobs. 
 > [!NOTE]
 > During public preview we will be adding a few additional granular scopes, and if you use this approach, when we add these additional scopes your Livy app will break. Please check this list as it will be updated with the additional scopes.
 
-Some customers want more granular permissions than the prior list. You could remove Item.ReadWrite.All and replacing with these more granular scope permissions:  
+Some customers want more granular permissions than the prior list. You could remove Item.ReadWrite.All and replacing with these more granular scope permissions:
 
 * Code.AccessAzureDataExplorer.All
 * Code.AccessAzureDataLake.All

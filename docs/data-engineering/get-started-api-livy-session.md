@@ -101,11 +101,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media\livy-api\entra-authentication-complete.png" alt-text="Screenshot showing authentication complete." lightbox="media\livy-api\entra-authentication-complete.png" :::
 
-1. In Visual Studio Code you should see the Entra token returned.
+1. In Visual Studio Code, you should see the Entra token returned.
 
     :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
 
-1. Add another notebook cell below and insert this code.
+1. Add another notebook cell and insert this code.
 
     ```python
     create_livy_session = requests.post(livy_base_url, headers=headers, json={})

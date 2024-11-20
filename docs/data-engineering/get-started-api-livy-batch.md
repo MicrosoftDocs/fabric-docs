@@ -85,7 +85,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
    df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
    ```
 
-1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse. It needs to be uploaded to your Lakehouse, and you need the ABFS path of the payload to reference in your Livy API batch job.
+1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You'll need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code.
 
     :::image type="content" source="media\livy-api\Livy-batch-payload.png" alt-text="Screenshot showing the Python payload cell." lightbox="media\livy-api\Livy-batch-payload.png" :::
 
@@ -97,7 +97,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media\livy-api\Livy-batch-ABFS-path.png" alt-text="Screenshot showing payload ABFS path in the Properties of the file in the Lakehouse." lightbox="media\livy-api\Livy-batch-ABFS-path.png" :::
 
-1. Copy this ABFS path to your Notebook cell below in step x
+1. Copy this ABFS path to your Notebook cell in step 1.
 
 ## Create a Livy API Spark batch session
 
