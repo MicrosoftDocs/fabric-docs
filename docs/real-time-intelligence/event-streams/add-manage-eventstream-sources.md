@@ -37,7 +37,7 @@ In this article, you learn about the event sources that you can add to an events
 
 ## Supported sources
 
-Fabric event streams with enhanced capabilities support the following sources. Each article provides details and instructions for adding specific sources.
+Fabric eventstreams with enhanced capabilities support the following sources. Each article provides details and instructions for adding specific sources.
 
 [!INCLUDE [supported-sources](./includes/supported-sources-enhanced.md)]
 
@@ -62,7 +62,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Supported sources
 
-Fabric event streams support the following sources. Use links in the table to navigate to articles that provide more details about adding specific sources.
+Fabric eventstreams support the following sources. Use links in the table to navigate to articles that provide more details about adding specific sources.
 
 [!INCLUDE [supported-sources](./includes/supported-sources-standard.md)]
 

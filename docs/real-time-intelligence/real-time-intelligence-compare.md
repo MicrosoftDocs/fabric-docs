@@ -74,7 +74,7 @@ This article outlines key considerations for determining the most suitable imple
 
 | Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| **Driving business actions from insights** | Requires Azure Logic Apps or Power Automate or Azure Functions, Azure Monitor alerts. | Natively available in Fabric using Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items with out-of-the-box integration with Power BI Semantic Models, Event stream, and KQL queries. |
+| **Driving business actions from insights** | Requires Azure Logic Apps or Power Automate or Azure Functions, Azure Monitor alerts. | Natively available in Fabric using Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items with out-of-the-box integration with Power BI semantic models, Eventstream, and KQL queries. |
 | **Reactive system events** | Not available | Built-in events published through Real-Time hub; Use [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items to automate data processes, such as pipelines and notebooks. |
 | **Real-time Semantic Models** | Not available or code-first solution using Logic Apps or Azure Functions | Not available |
 | **Built-in AI** | Not available | Not available |
@@ -84,7 +84,7 @@ This article outlines key considerations for determining the most suitable imple
 
 | Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| **Unified catalog of data streams** | Not available | Real-time hub:<br />1. Data streams created by the users<br />2. Existing streams from Microsoft sources<br />3. Fabric system event streams |
+| **Unified catalog of data streams** | Not available | Real-time hub:<br />1. Data streams created by the users<br />2. Existing streams from Microsoft sources<br />3. Fabric system eventstreams |
 | **Discovery of Microsoft data streams** | Not available | Real-time Intelligence hub discovers data streams in your Azure tenant. |
 | **Capture and act on events from Azure Storage** | Requires deploying Azure Event Grid to act on events occurring in Azure Storage. | Azure Blob Storage event-based triggers available. |
 | **Capture and act on events from Fabric** | Not applicable | Natively available in Fabric |

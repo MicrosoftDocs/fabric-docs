@@ -12,7 +12,7 @@ ms.search.form: Monitor Fabric events capacity consumption
 
 # Microsoft Fabric and Azure events capacity consumption
 
-Fabric and Azure events capability is available through Fabric Real-Time hub or Fabric event streams. It enables you to listen and react to alerts and notifications in real-time. You can trigger downstream actions and send events to various destinations to automate workflows. This article contains information on how Fabric and Azure events usage is billed and reported. 
+Fabric and Azure events capability is available through Fabric Real-Time hub or Fabric eventstreams. It enables you to listen and react to alerts and notifications in real-time. You can trigger downstream actions and send events to various destinations to automate workflows. This article contains information on how Fabric and Azure events usage is billed and reported. 
 
 > [!NOTE]
 > In this article, Fabric events refer to both events generated within Fabric and also Azure events. 

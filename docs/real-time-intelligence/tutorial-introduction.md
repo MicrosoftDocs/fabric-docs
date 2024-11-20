@@ -31,12 +31,12 @@ Specifically, in this tutorial, you learn how to:
 > * Set up your environment
 > * Get data in the Real-Time hub
 > * Transform events
-> * Publish an event stream
+> * Publish an eventstream
 > * Create a KQL query
 > * Create a Real-Time dashboard
 > * Explore data visually in the Real-Time dashboard
 > * Create a Power BI report from a KQL query
-> * Set an alert on the event stream
+> * Set an alert on the eventstream
 
 ## Prerequisites
 

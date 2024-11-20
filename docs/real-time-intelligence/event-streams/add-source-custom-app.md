@@ -17,7 +17,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 If you want to connect your own application with an eventstream, you can add a custom endpoint or a custom app as a source. Then you can send real-time events to the eventstream from your own application with the connection endpoint exposed on the custom endpoint or custom app. Also, with the Apache Kafka protocol available as an option for custom endpoints or custom apps, you can send real-time events by using the Apache Kafka protocol.
 
-This article shows you how to add a custom endpoint source or a custom app source to an eventstream in Microsoft Fabric event streams.
+This article shows you how to add a custom endpoint source or a custom app source to an eventstream in Microsoft Fabric eventstreams.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 

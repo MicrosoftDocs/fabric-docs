@@ -76,4 +76,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 6: Set an alert on your event stream](tutorial-6-set-alert.md)
+> [Tutorial part 6: Set an alert on your eventstream](tutorial-6-set-alert.md)

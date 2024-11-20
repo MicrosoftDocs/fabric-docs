@@ -69,7 +69,7 @@ Then, follow the prompts to complete the flow. Here's a full list of built-in so
 
 [!INCLUDE [supported-sources](./includes/supported-sources.md)]
 
-You can connect to these services and create eventstreams that show up on **My data streams** and **All data streams** pages. Select a link for a source in the list to learn how to create an event stream for that source.
+You can connect to these services and create eventstreams that show up on **My data streams** and **All data streams** pages. Select a link for a source in the list to learn how to create an eventstream for that source.
 
 ## Microsoft sources page
 
@@ -77,7 +77,7 @@ You can connect to these services and create eventstreams that show up on **My d
 
 [!INCLUDE [microsoft-sources](./includes/microsoft-sources.md)]
 
-You can connect to these resources and create eventstreams that show up on **My data streams** and **All data streams** pages. Select a link for a source in the list to learn how to create an event stream for that source.
+You can connect to these resources and create eventstreams that show up on **My data streams** and **All data streams** pages. Select a link for a source in the list to learn how to create an eventstream for that source.
 
 :::image type="content" source="./media/get-started-real-time-hub/microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page in Real-Time hub." lightbox="./media/get-started-real-time-hub/microsoft-sources-menu.png":::
 

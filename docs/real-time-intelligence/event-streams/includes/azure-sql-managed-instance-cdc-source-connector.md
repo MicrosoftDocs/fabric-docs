@@ -1,6 +1,6 @@
 ---
-title: SQL Server on Virtual Machine (VM) - database (DB) CDC connector for Fabric event streams
-description: Provides the common content for configuring a SQL Server on a Virtual Machine - database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub.
+title: SQL Server on Virtual Machine (VM) - database (DB) CDC connector for Fabric eventstreams
+description: Provides the common content for configuring a SQL Server on a Virtual Machine - database Change Data Capture (CDC) connector for Fabric eventstreams and Real-Time hub. 
 ms.author: xujiang1
 author: xujxu
 ms.topic: include
@@ -24,7 +24,7 @@ ms.date: 11/18/2024
     - For **Authentication kind**, select **Basic**.
     
         > [!NOTE]
-        > Currently, Fabric event streams supports only **Basic** authentication.
+        > Currently, Fabric eventstreams supports only **Basic** authentication.
     - Enter **Username** and **Password** for the SQL Server on VM.
 
 1. Select **Connect** at the bottom of the page.
