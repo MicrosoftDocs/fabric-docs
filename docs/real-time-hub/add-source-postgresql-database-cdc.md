@@ -6,6 +6,7 @@ ms.author: anboisve
 ms.topic: how-to
 ms.custom:
   - references_regions
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 

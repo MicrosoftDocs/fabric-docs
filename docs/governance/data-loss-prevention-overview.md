@@ -5,11 +5,11 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
+ms.custom:
+  - ignite-2024
 ms.topic: concept-article #Don't change
 ms.date: 11/19/2024
-
 #customer intent: As a Fabric administrator, security or compliance admin, or Fabric or Power BI data owner, I want to know where I can find information about Microsoft Purview Data Loss Prevention (DLP) policies for Fabric and Power BI.
-
 ---
 
 # Data loss prevention policies in Fabric

@@ -9,6 +9,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ---
 
 # Data warehouse tutorial introduction

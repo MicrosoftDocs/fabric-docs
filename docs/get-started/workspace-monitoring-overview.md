@@ -4,8 +4,9 @@ description: Understand what is workspace monitoring in Microsoft Fabric and how
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.custom:
+  - ignite-2024
 ms.date: 11/19/2024
-
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 

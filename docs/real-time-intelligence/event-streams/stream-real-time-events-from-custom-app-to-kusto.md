@@ -8,6 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 11/15/2023
 ms.search.form: Event Streams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric event streams, and then build reports for business users.

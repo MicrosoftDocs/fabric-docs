@@ -7,7 +7,7 @@ author: alexlzx
 ms.topic: how-to
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
-ms.custom: references_regions
+ms.custom: references_regions, ignite-2024
 ---
 
 # Add Apache Kafka source to an eventstream (preview)

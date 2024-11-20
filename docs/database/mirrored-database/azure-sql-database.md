@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: roblescarlos
 ms.date: 06/20/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---

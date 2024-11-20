@@ -4,6 +4,8 @@ description: This article shows how to get started with Fabric Real-Time hub.
 author: mystina
 ms.author: majia
 ms.topic: quickstart
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -98,5 +100,3 @@ See following articles to learn how to **setup alerts** on Fabric events:
 - [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
 
 :::image type="content" source="./media/get-started-real-time-hub/azure-events-page.png" alt-text="Screenshot that shows the Azure events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/azure-events-page.png":::
-
-

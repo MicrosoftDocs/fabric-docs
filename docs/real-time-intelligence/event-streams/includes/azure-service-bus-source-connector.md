@@ -1,9 +1,11 @@
 ---
 title: Azure Service Bus connector for Fabric event streams
-description: The include files has the common content for configuring an Azure Service Bus connector for Fabric event streams and Real-Time hub. 
+description: The include files has the common content for configuring an Azure Service Bus connector for Fabric event streams and Real-Time hub.
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -44,4 +46,3 @@ ms.date: 11/18/2024
 1. On the **Review + connect** page, review settings, and select **Add** or **Connect**. 
 
     :::image type="content" source="./media/azure-service-bus-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page of the Connect data source wizard." lightbox="./media/azure-service-bus-source-connector/stream-details.png":::        
-

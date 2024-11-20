@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
 ms.date: 11/12/2024
 ms.topic: troubleshooting
+ms.custom:
+  - ignite-2024
 ms.search.form: Fabric Mirroring
 ---
 

@@ -4,6 +4,8 @@ description: This article describes how to add an Azure SQL Database Change Data
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 

@@ -5,6 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
+  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ms.date: 11/11/2024
 ---

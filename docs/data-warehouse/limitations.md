@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations of Microsoft Fabric Data Warehouse
@@ -70,4 +71,3 @@ For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visi
 
 - [T-SQL surface area](tsql-surface-area.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
-

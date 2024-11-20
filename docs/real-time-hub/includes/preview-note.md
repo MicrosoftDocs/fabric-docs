@@ -4,6 +4,7 @@ description: Include file for Real-Time hub content stating that the feature is 
 author: spelluru
 ms.author: spelluru
 ms.topic: include
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
-

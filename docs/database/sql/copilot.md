@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: yoleichen, sukkaur
 ms.date: 11/04/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ---
 # Copilot for SQL database in Microsoft Fabric (preview)
 

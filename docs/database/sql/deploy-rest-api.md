@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ---
 # Create a SQL database in Microsoft Fabric via REST API
 

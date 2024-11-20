@@ -10,6 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
 ---
 

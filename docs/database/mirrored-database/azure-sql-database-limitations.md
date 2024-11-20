@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - references_regions
   - build-2024
+  - ignite-2024
 ---
 # Limitations in Microsoft Fabric mirrored databases from Azure SQL Database
 

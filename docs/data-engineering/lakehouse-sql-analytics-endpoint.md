@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.date: 10/16/2024
 ms.search.form: Lakehouse SQL Analytics Endpoint
 ---

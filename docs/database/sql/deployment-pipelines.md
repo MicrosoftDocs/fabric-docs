@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: antho, drskwier
 ms.date: 11/07/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.search.form:
 ---
 # Get started with deployment pipelines integration with SQL database in Microsoft Fabric
