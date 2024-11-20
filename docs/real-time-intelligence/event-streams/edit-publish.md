@@ -1,5 +1,5 @@
 ---
-title: Edit and publish Microsoft Fabric eventstreams
+title: Edit and publish Microsoft Fabric event streams
 description: Learn how to edit and publish an eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -19,7 +19,7 @@ This article shows you how to edit and publish a Microsoft Fabric eventstream.
 
 ## Edit mode and Live view
 
-Fabric eventstreams offer two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
+Fabric event streams offer two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
 
 Here's an overview of everything you find in the two different modes:
 
@@ -41,7 +41,7 @@ Here's an overview of everything you find in the two different modes:
 
 [!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-1. On the next screen, select **Add external source** to stream your data to Fabric eventstreams.
+1. On the next screen, select **Add external source** to stream your data to Fabric event streams.
 
    ![A screenshot of selecting Add external source.](media/edit-publish/build.png)
 1. Select **Connect** on the **Azure Event Hubs** tile.
@@ -90,6 +90,6 @@ The following steps show how you can add event processing operations and a desti
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric eventstreams](overview.md)
+- [New capabilities in Microsoft Fabric event streams](overview.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
 - [Route data streams based on content](route-events-based-on-content.md)

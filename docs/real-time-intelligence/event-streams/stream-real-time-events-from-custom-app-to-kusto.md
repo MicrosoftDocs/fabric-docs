@@ -11,12 +11,12 @@ ms.custom:
   - ignite-2024
 ms.date: 11/15/2023
 ms.search.form: Eventstreams Tutorials
-#CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric eventstreams, and then build reports for business users.
+#CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric event streams, and then build reports for business users.
 ---
 
 # Stream real-time events from a custom app to a Microsoft Fabric KQL database
 
-In this tutorial, you learn how to use the Microsoft Fabric eventstreams feature to stream real-time events from your custom application into a KQL database. You also discover how to create a near-real-time Power BI report to effectively monitor your business data.
+In this tutorial, you learn how to use the Microsoft Fabric event streams feature to stream real-time events from your custom application into a KQL database. You also discover how to create a near-real-time Power BI report to effectively monitor your business data.
 
 In this tutorial, you learn how to:
 
@@ -258,9 +258,9 @@ After the data is ingested into your KQL database, you can analyze it according 
 
 In this tutorial, you learned how to stream real-time events from your own application to a KQL database. Then you used the KQL query semantic model to create a near-real-time Power BI report, which enables you to visualize business insights from your event data.
 
-If you want to discover more advanced functionalities for working with Fabric eventstreams, you might find the following resources helpful:
+If you want to discover more advanced functionalities for working with Fabric event streams, you might find the following resources helpful:
 
-- [Introduction to Microsoft Fabric eventstreams](./overview.md)
+- [Introduction to Microsoft Fabric event streams](./overview.md)
 - [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

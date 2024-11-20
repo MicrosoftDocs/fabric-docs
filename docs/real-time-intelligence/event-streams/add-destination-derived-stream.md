@@ -13,9 +13,9 @@ ms.search.form: Source and Destination
 
 # Add a derived stream destination to an eventstream
 
-This article shows you how to add a derived stream destination to an eventstream in Microsoft Fabric eventstreams.
+This article shows you how to add a derived stream destination to an eventstream in Microsoft Fabric event streams.
 
-You can create a derived stream after doing operations like filtering and aggregating an eventstream. The derived stream is then ready for further consumption or analysis through the Real-Time hub. For more information about derived streams, see [Create default and derived Fabric eventstreams](create-default-derived-streams.md).
+You can create a derived stream after doing operations like filtering and aggregating an eventstream. The derived stream is then ready for further consumption or analysis through the Real-Time hub. For more information about derived streams, see [Create default and derived Fabric event streams](create-default-derived-streams.md).
 
 ## Prerequisites
 

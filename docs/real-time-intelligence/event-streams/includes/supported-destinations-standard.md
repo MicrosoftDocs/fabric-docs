@@ -1,6 +1,6 @@
 ---
-title: Destinations supported by Fabric eventstreams
-description: This include file has the list of destinations supported by Fabric eventstreams. 
+title: Destinations supported by Fabric event streams
+description: This include file has the list of destinations supported by Fabric event streams. 
 ms.author: xujiang1
 author: xujxu
 ms.topic: include
