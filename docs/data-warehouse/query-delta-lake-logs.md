@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Delta Lake logs in Warehouse in Microsoft Fabric

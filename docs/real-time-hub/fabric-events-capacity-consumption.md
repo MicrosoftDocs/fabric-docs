@@ -3,7 +3,9 @@ title: Fabric and Azure events capacity consumption
 description: Learn how to monitor capacity consumption for Fabric events.
 author: george-guirguis
 ms.author: geguirgu
-ms.topic: how-to 
+ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Monitor Fabric events capacity consumption
 ---

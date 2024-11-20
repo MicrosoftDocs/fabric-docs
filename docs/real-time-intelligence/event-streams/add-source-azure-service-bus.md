@@ -1,13 +1,13 @@
 ---
 title: Add Azure Service Bus source to an eventstream
-description: Learn how to add an Azure Service Bus source to an eventstream. This feature is currently in preview. 
+description: Learn how to add an Azure Service Bus source to an eventstream. This feature is currently in preview.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
-ms.custom: reference_regions
+ms.custom: reference_regions, ignite-2024
 ---
 
 # Add Azure Service Bus source to an eventstream (preview)

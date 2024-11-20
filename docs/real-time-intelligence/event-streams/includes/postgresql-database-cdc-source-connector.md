@@ -2,10 +2,11 @@
 title: PostgreSQL CDC connector for Fabric eventstreams
 description: This include file has the common content for configuring a PostgreSQL Change Data Capture (CDC) connector for Fabric eventstreams and Real-Time hub. 
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 05/21/2024
 ---
 

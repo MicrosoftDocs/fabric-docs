@@ -6,6 +6,7 @@ ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ms.date: 12/18/2023
 ---
 

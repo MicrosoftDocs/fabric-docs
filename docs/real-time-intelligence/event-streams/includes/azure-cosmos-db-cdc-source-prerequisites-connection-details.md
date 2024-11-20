@@ -2,8 +2,10 @@
 title: Azure Cosmos DB CDC - prerequisites and connection details
 description: This include file has the prerequisites for adding an Azure Cosmos DB Change Data Capture (CDC) source and information on getting connection details.
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 

@@ -9,6 +9,7 @@ ms.topic: whats-new
 ms.custom:
   - ignite-2023
   - build-2024
+  - ignite-2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---

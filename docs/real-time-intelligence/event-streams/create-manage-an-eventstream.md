@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Eventstreams Overview
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json

@@ -1,10 +1,12 @@
 ---
 title: Eventstream REST API
-description: Learn how to call APIs to create and manage an Eventstream item in Fabric workspace. 
+description: Learn how to call APIs to create and manage an Eventstream item in Fabric workspace.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 10/30/2024
 ms.search.form: Eventstream REST API
 ---

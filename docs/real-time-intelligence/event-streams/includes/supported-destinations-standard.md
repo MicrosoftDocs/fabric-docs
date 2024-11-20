@@ -2,10 +2,11 @@
 title: Destinations supported by Fabric eventstreams
 description: This include file has the list of destinations supported by Fabric eventstreams. 
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 05/21/2024
 ---
 

@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: amapatil # Microsoft alias
 ms.date: 10/31/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ---
 # Billing and utilization reporting for SQL database in Microsoft Fabric
 

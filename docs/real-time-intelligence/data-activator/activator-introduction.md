@@ -4,7 +4,7 @@ description: Learn about Activator, a powerful tool for automating actions based
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter
+ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: Activator Introduction
 ms.date: 11/05/2024
 #customer intent: As a Fabric user I want to understand what Activator is and learn some of the basic concepts.

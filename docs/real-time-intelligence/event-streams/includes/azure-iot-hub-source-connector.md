@@ -2,8 +2,10 @@
 title: Azure IoT Hub connector for Fabric eventstreams
 description: The include files has the common content for configuring an Azure IoT Hub connector for Fabric eventstreams and Real-Time hub. 
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -43,4 +45,3 @@ ms.date: 11/18/2024
 1. On the **Review and create** page, review settings, and select **Add**. 
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/review-create-page.png":::        
-

@@ -3,9 +3,11 @@ title: "Restore a database from a backup"
 description: Learn how to restore a database from a backup to a point-in-time in SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: strrodic 
+ms.reviewer: strrodic
 ms.date: 11/07/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ---
 # Restore from a backup in SQL database in Microsoft Fabric
 

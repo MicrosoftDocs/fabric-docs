@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -100,5 +102,3 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [Custom endpoint](add-source-custom-app.md)
 
 ::: zone-end
-
-
