@@ -36,7 +36,7 @@ Workload Control API calls are made directly from the workload to Fabric. The Az
 
 ## Lakehouse integration
 
-The workload development kit architecture integrates seamlessly with a lakehouse architecture for operations like saving, reading, and fetching data. The interaction is facilitated through Azure Relay and the Fabric SDK to help ensure secure and authenticated communication. For more information, see [working with customer data](./fabric-data-plane.md)
+The workload development kit architecture integrates seamlessly with a lakehouse architecture for operations like saving, reading, and fetching data. The interaction is facilitated through Azure Relay and the Fabric SDK to help ensure secure and authenticated communication. For more information, see [working with customer data](./fabric-data-plane.md).
 
 ## Authentication and security
 
@@ -76,7 +76,7 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 
 The generated NuGet package for debug mode is located in the *src\bin\Debug* directory after the build process.
 
-When you work in cloud mode, you can change the Visual Studio build configuration to **Release** and build your package. The generated package is located in the `src\bin\Release` directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md)
+When you work in cloud mode, you can change the Visual Studio build configuration to **Release** and build your package. The generated package is located in the `src\bin\Release` directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md).
 
 ### Dependencies
 
