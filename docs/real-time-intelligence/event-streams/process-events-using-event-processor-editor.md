@@ -233,7 +233,7 @@ The event processor provides six operators, which you can use to transform your 
 
 Use the **Aggregate** transformation to calculate an aggregation (**Sum**, **Minimum**, **Maximum**, or **Average**) every time a new event occurs over a period of time. This operation also allows for the renaming of these calculated columns, and filtering or slicing the aggregation based on other dimensions in your data. You can have one or more aggregations in the same transformation.
 - **Operator name**: Specify the name of the aggregation operation.
-- **Add aggregate funtion**: Add one or more aggregations in aggregate operation.
+- **Add aggregate function**: Add one or more aggregations in aggregate operation.
 - **Type**: Choose an aggregation type: **Sum**, **Minimum**, **Maximum**, or **Average**.
 - **Field**: Select the column to process.
 - **Name**: Define a name for this aggregation function.
