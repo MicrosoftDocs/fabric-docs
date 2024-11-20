@@ -32,7 +32,7 @@ Here are the supported OneLake events:
 ## Prerequisites
 
 - Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
-- [Create an eventstream](create-manage-an-eventstream.md) if you don't already have an eventstream, 
+- [Create an eventstream](create-manage-an-eventstream.md) if you don't already have an eventstream. 
 
 
 ## Add Fabric OneLake events as source
