@@ -16,7 +16,7 @@ This article is aimed at developers who are looking to build a workload using th
 
 To start developing workloads, you need to be granted permissions in the Fabric service. You might need to contact other people in your organization to get the necessary permissions.
 
-### Ensure You Have Admin Access on the Workspace You Plan to Work With
+### Ensure you have admin access on the workspace you plan to work with
 
 To begin development and connect your local machine to a Fabric [workspace](../enterprise/licenses.md#workspace), you can either create a new workspace or ask to be added as an admin on an existing one. Developers must have admin permissions on the workspace to register their workload.
 
