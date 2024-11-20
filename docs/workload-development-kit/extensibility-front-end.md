@@ -322,7 +322,7 @@ Our sample implementation stores the created item inside the `artifactItem`.
 The item is created under the *currently selected workspace*. Therefore the workspace must be assigned to the capacity that is configured by the backend configuration, as detailed in the backend docs.
 Any attempt to create an item under a noncompatible workspace fails.
 
-* The `onCreateFabricItem` callback in the backend blocks the *CREATE* call - a failure there causes the operation to fail and no item is created in Fabric. See backend's debugging/TSG documentation.
+* The `onCreateFabricItem` callback in the backend blocks the *CREATE* call - a failure there causes the operation to fail and no item is created in Fabric.
 
 * Currently, a saved item doesn't automatically appear in the workspace. A page refresh is needed.
 
