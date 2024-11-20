@@ -51,7 +51,7 @@ If you don't have your own eventstream, Microsoft supplies a sample eventstream 
 3. In the right pane, select an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item, or make a new one, then select **Save**.
 4. Open your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. See the data flowing from your eventstream item in the data pane.
   
-    :::image type="content" source="media/activator-get-data/activator-stream.png" alt-text="Screenshot of eventstream item showing data flow.":::
+    :::image type="content" source="media/activator-get-data-eventstreams/activator-stream.png" alt-text="Screenshot of eventstream item showing data flow.":::
 
 #### Start from the activator item
 
