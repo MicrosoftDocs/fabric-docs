@@ -181,7 +181,7 @@ bootstrap({
 
 `index.worker` is the main `onAction` registration. It handles events that the Fabric host sends, which are triggered by executed *actions*.
 
-The actions can be sent either by the workload to Fabric and then called back into the `onAction` handler, or they can be initiated by the Fabric host. For example, when you select *Create Sample Item - Frontend Only*, Fabric triggers the action 'open.createSampleWorkloadFrontendOnly' and the `onAction` handler initiates opening the workload main UI page. The current workspace `objectId` value also is passed into the frontend-only experience.
+The actions can be sent by the workload to Fabric and then called back into the `onAction` handler, or they can be initiated by the Fabric host. For example, when you select **Create Sample Item - Frontend Only**, Fabric triggers the action `open.createSampleWorkloadFrontendOnly`, and the `onAction` handler initiates opening the workload main UI page. The current workspace `objectId` value also is passed into the frontend-only experience.
 
 The sequence is shown in the following code example:
 
