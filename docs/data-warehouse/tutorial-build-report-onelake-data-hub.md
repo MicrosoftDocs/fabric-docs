@@ -1,17 +1,17 @@
 ---
-title: Data warehouse tutorial - build a report from the OneLake
+title: Data warehouse tutorial - build a report from OneLake
 description: In this tutorial step, learn how to build a report from the OneLake with the data you ingested into your warehouse in the last step.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Build a report from the OneLake
+# Tutorial: Build a report from OneLake
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

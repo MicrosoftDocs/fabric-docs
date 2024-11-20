@@ -80,7 +80,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
     >[!NOTE]
     >You can copy it to any other path and set up the command line argument "-DevMode:LocalConfigFilePath" in your project to specify the path.
 
-      * *CapacityGuid*: Your capacity ID can be found within the Fabric portal under the Capacity Settings of the admin portal.
+      * *WorkspaceGuid*: Your Workspace ID. Find it in the browser URL when selecting a workspace in Fabric, for example, `https://app.fabric.microsoft.com/groups/{WorkspaceID}/`.
       * *ManifestPackageFilePath*: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in the later steps.
       * *WorkloadEndpointURL*: Workload endpoint URL.
 
@@ -105,7 +105,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
 
-1. **Run the DevGateway**: Execute 'Microsoft.Fabric.Workload.DevGateway.exe' and authenticate as a capacity admin.
+1. **Run the DevGateway**: Execute 'Microsoft.Fabric.Workload.DevGateway.exe' and sign in with a user that has capacity admin privileges for the capacity linked to the workspace specified in the WorkspaceGuid field of workload-dev-mode.json.
 
 1. **Start the Project**: Set the 'Boilerplate' project as the startup project in Visual Studio and run it.
 

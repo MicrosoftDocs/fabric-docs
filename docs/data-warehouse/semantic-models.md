@@ -25,7 +25,7 @@ Visualizations and analysis in **Power BI reports** can now be built in the web 
 **Power BI semantic models** represent a source of data ready for reporting, visualization, discovery, and consumption. Power BI semantic models provide:
 
 - The ability to expand warehousing constructs to include hierarchies, descriptions, relationships. This allows deeper semantic understanding of a domain.
-- The ability to catalog, search, and find Power BI semantic model information in the Data Hub.
+- The ability to catalog, search, and find Power BI semantic model information in the OneLake catalog.
 - The ability to set bespoke permissions for workload isolation and security.
 - The ability to create measures, standardized metrics for repeatable analysis.
 - The ability to create Power BI reports for visual analysis.
