@@ -1,9 +1,9 @@
 ---
-title: "Troubleshoot Fabric Mirrored Databases from Azure SQL Managed Instance (Preview)"
+title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Managed Instance (Preview)"
 description: Troubleshooting for mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: lazartimotic, jingwang, nzagorac 
+ms.reviewer: lazartimotic, jingwang, nzagorac
 ms.date: 11/19/2024
 ms.topic: troubleshooting
 ---

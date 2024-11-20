@@ -233,10 +233,21 @@ The event processor provides six operators, which you can use to transform your 
 ### Aggregate
 
 Use the **Aggregate** transformation to calculate an aggregation (**Sum**, **Minimum**, **Maximum**, or **Average**) every time a new event occurs over a period of time. This operation also allows for the renaming of these calculated columns, and filtering or slicing the aggregation based on other dimensions in your data. You can have one or more aggregations in the same transformation.
+- **Operator name**: Specify the name of the aggregation operation.
+- **Add aggregate function**: Add one or more aggregations in aggregate operation.
+- **Type**: Choose an aggregation type: **Sum**, **Minimum**, **Maximum**, or **Average**.
+- **Field**: Select the column to process.
+- **Name**: Define a name for this aggregation function.
+- **Partition by**: Select a column to group the aggregation.
+- **Aggregate values within the last**: Specify a time window for aggregation (default is 5 seconds).
+
+:::image type="content" source="./media/event-processor-editor/aggregate-operator.png" alt-text="Screenshot showing the aggregate operator configuration and test result.":::
 
 ### Expand
 
-Use the **Expand** array transformation to create a new row for each value within an array.
+Use the **Expand** array transformation to create a new row for each value within an array. You can choose **create row for missing/empty array** , or **don't create row for missing/empty array**.
+
+:::image type="content" source="./media/event-processor-editor/array.png" alt-text="Screenshot showing expand operator's configuration and test result.":::
 
 ### Filter
 
