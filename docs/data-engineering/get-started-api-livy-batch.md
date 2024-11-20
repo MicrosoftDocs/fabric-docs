@@ -101,7 +101,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ## Create a Livy API Spark batch session
 
-1. Create a `.ipynb` notebook in Visual Studio Code and insert the following code.
+1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
    ```python
 
