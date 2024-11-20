@@ -412,5 +412,15 @@ items:
       href: monitor-logs-ingestion-results.md
     - name: Query logs
       href: monitor-logs-query.md
+- name: Migrate
+  items:
+  - name: From Azure Synapse Data Explorer
+    href: migrate-synapse-data-explorer.md
+  - name: API endpoints
+    items:
+    - name: Validate migration
+      href: migrate-validate-synapse-data-explorer.md
+    - name: Migrate to Eventhouse
+      href: migrate-to-eventhouse.md
 - name: KQL reference
   href: kusto-tocs/query/toc.yml
