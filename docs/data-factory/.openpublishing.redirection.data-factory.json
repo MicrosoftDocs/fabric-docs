@@ -267,7 +267,7 @@
       },
       {
         "source_path_from_root": "/docs/data-factory/certification-submission.md",
-        "redirect_url": "/docs/data-factory/connector-certification.md",
+        "redirect_url": "/fabric/data-factory/connector-certification",
         "redirect_document_id": false
       }
     ]

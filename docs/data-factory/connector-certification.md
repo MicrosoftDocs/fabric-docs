@@ -51,7 +51,7 @@ To ensure the best experience for our customers, we only consider connectors tha
 
 * **The developer must provide an estimate for current and future usage**. 
 
-* **The connector must be already made available to customers directly to fulfill a user need or business scenario**. This criteria can be fulfilled using a Private Preview program by distributing the completed connector directly to end users and organizations. We suggest that developers of connectors to use a [self-distribution mechanism](/power-query/install-sdk#self-distribution) and run internal testing of their own connectors to iterate over their connectors under a controlled group. Each user or organization should be able to provide feedback and validation that there's a business need for the connector and that the connector is working successfully to fulfill their business requirements.
+* **The connector must be already made available to customers directly to fulfill a user need or business scenario**. This criteria can be fulfilled using a preview program by distributing the completed connector directly to end users and organizations. We suggest that developers of connectors to use a [self-distribution mechanism](/power-query/install-sdk#self-distribution) and run internal testing of their own connectors to iterate over their connectors under a controlled group. Each user or organization should be able to provide feedback and validation that there's a business need for the connector and that the connector is working successfully to fulfill their business requirements.
 
 * **The connector must be working successfully at an anticipated level of usage by customers**.
 
