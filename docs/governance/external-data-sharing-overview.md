@@ -4,7 +4,7 @@ description: "This article describes the external data sharing feature in Micros
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.date: 11/07/2024
+ms.date: 11/19/2024
 
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
 ---
@@ -30,7 +30,11 @@ External data share links don't work for users who are in the tenant where the e
 
 ## Supported Fabric item types
 
-External data sharing is currently supported only for lakehouses and mirrored databases.
+The Fabric item types that can be used in external data sharing are listed below.
+
+* **Creating an external data share (provider tenant)**: External data shares can be created only for data residing in tables or files in lakehouses and mirrored databases.
+
+* **Accepting an external data share (consuming tenant)**: Only lakehouses can be chosen as the location of the external data share shortcut when accepting an external data share.
 
 ## Revoking external data shares
 

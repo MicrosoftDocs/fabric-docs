@@ -4,7 +4,7 @@ description: "Details on the limitations of mirroring for SQL database in Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
-ms.date: 11/14/2024
+ms.date: 11/15/2024
 ms.topic: conceptual
 ---
 # Limitations for Fabric SQL database mirroring (preview)
@@ -19,11 +19,13 @@ For troubleshooting, see:
 
 For general limitations for SQL database in Microsoft Fabric, see [Limitations in SQL database in Microsoft Fabric (preview)](limitations.md).
 
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Database level limitations
 
 - Mirroring for SQL database in Fabric cannot be disabled currently.
 - Mirroring for SQL database can only mirror to the workspace in which the Fabric SQL database resides.
-- The maximum number of tables that can be mirrored from one database is 500. You can have more tables but any tables created beyond 500 are skipped from mirroring.
+- The maximum number of tables that can be mirrored from one database is 1000. You can have more tables but any tables created beyond 1000 are skipped from mirroring.
 
 ### Security features
 

@@ -4,7 +4,7 @@ description: This article compares the database engine features of Azure SQL Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 11/05/2024
+ms.date: 11/19/2024
 ms.topic: conceptual
 ---
 # Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)
@@ -39,7 +39,8 @@ The following table lists the major features of SQL Server and provides informat
 | [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | Yes, from OneLake sources |
 | [Certificates and asymmetric keys](/sql/relational-databases/security/sql-server-certificates-and-asymmetric-keys) | Yes | Yes |
 | [Change data capture - CDC](/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Yes, for S3 tier and above. Basic, S0, S1, S2 aren't supported. | No  |
-| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, SQL_Latin1_General_CP1_CI_AS. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated.| By default, SQL_Latin1_General_CP1_CI_ASC and can't be updated.|
+| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, SQL_Latin1_General_CP1_CI_AS. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, SQL_Latin1_General_CP1_CI_ASC and can't be updated. Collations on individual columns are supported.|
+| [Column encryption](/sql/relational-databases/security/encryption/encrypt-a-column-of-data) | Yes | Yes |
 | [Columnstore indexes, clustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes, but the table cannot be mirrored to OneLake. |
 | [Columnstore indexes, nonclustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes |
 | [Credentials](/sql/relational-databases/security/authentication-access/credentials-database-engine) | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=azuresqldb-current&preserve-view=true). | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=fabric&preserve-view=true).|

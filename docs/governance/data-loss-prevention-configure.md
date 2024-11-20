@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 09/26/2024
+ms.date: 11/19/2024
 
 #customer intent: As a Purview compliance administrator, I want to learn how to configure DLP policies for Fabric so that my organization can detect leakage of sensitive data from Fabric items.
 
@@ -89,7 +89,7 @@ Before you get started with DLP for Fabric and Power BI, you should confirm your
  
 ## Conditions
 
-In the condition section, you define the conditions under which the policy will apply to [supported item types](./data-loss-prevention-overview.md#supported-item-types). Conditions are created in groups. Groups make it possible to construct complex conditions.
+In the condition section, you define the conditions under which the policy will apply to [supported item types](/purview/dlp-powerbi-get-started#supported-item-types). Conditions are created in groups. Groups make it possible to construct complex conditions.
 
 1. Open the conditions section. Choose **Add condition** if you want to create a simple or complex condition, or **Add group** if you want to start creating a complex condition.
 
@@ -133,9 +133,12 @@ In the condition section, you define the conditions under which the policy will 
  
 ## Actions
 
-Protection actions are unavailable for Fabric and Power BI DLP policies.
+If you want the policy to restrict access to items that trigger the policy, expand the **Restrict access or encrypt the content in Microsoft 365 locations** section and select **Block users from receiving email, or accessing shared SharePoint, OneDrive, and Teams files, and Power BI items.**. Then choose whether to block everyone or only people in your organization.
 
-:::image type="content" source="./media/data-loss-prevention-configure/purview-dlp-actions-section.png" alt-text="Screenshot of DLP policy actions section.":::
+When you enable the restrict access action, [user overrides](#user-overrides) are automatically allowed.
+
+> [!NOTE]
+> The restrict access action is enforced on semantic models only.
 
 ## User notifications
 
@@ -185,6 +188,6 @@ Assign a severity level that will be shown in alerts generated from this policy.
 ## Related content
 
 * [Create and Deploy data loss prevention policies](/purview/dlp-create-deploy-policy)
-* [Data loss prevention policies in Fabric](./data-loss-prevention-overview.md)
+* [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started)
 * [Respond to a DLP policy violation](./data-loss-prevention-respond.md)
 * [Monitor DLP policy violations](./data-loss-prevention-monitor.md)
