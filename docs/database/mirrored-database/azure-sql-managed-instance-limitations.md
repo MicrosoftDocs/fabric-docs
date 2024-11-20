@@ -1,9 +1,9 @@
 ---
-title: "Limitations in Mirrored Databases from Azure SQL Managed Instance (Preview)"
+title: "Limitations in Mirrored Databases From Azure SQL Managed Instance (Preview)"
 description: A detailed list of limitations for mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: lazartimotic, jingwang, nzagorac 
+ms.reviewer: lazartimotic, jingwang, nzagorac
 ms.date: 11/19/2024
 ms.topic: conceptual
 ms.custom:

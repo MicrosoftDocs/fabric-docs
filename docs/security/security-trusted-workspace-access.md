@@ -59,9 +59,9 @@ Here's an example of a resource instance rule that can be created through ARM te
 ```json
 "resourceAccessRules": [
 
-       { "tenantId": " df96360b-9e69-4951-92da-f418a97a85eb",
+       { "tenantId": " aaaabbbb-0000-cccc-1111-dddd2222eeee",
 
-          "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabric/providers/Microsoft.Fabric/workspaces/b2788a72-eef5-4258-a609-9b1c3e454624"
+          "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabric/providers/Microsoft.Fabric/workspaces/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e"
        }
 ]
 ```
@@ -213,6 +213,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
 * If your organization has an Entra Conditional access policy for workload identities that includes all service principals, then trusted workspace access won't work. In such instances, you need to exclude specific Fabric workspace identities from the Conditional access policy for workload identities.
 * Trusted workspace access is not supported if a service principal is used to create shortcut.
+* Trusted workspace access isn't compatible with cross-tenant requests.
 
 ### Troubleshooting issues with trusted workspace access
 

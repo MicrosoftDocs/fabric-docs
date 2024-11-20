@@ -1,14 +1,15 @@
 ---
-title: Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.topic: overview
+ms.collection:
+  - ce-skilling-ai-copilot
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
-ms.collection: ce-skilling-ai-copilot
 ---
 
 # Mirroring Azure Cosmos DB (Preview)
@@ -18,7 +19,7 @@ Your Azure Cosmos DB data is continuously replicated directly into Fabric OneLak
 
 Data in OneLake is stored in the open-source delta format and automatically made available to all analytical engines on Fabric. 
 
-You can leverage built-in Power BI capabilities to access data in OneLake in DirectLake mode. With Copilot enhancements in Fabric, you can use the power of generative AI to get key insights on your business data. 
+You can use built-in Power BI capabilities to access data in OneLake in DirectLake mode. With Copilot enhancements in Fabric, you can use the power of generative AI to get key insights on your business data. 
 In addition to Power BI, you can use T-SQL to run complex aggregate queries or use Spark for data exploration. You can seamlessly access the data in notebooks and use data science to build machine learning models.
 
 > [!IMPORTANT]
@@ -63,9 +64,9 @@ You can perform the following actions in the SQL analytics endpoint:
 - Explore Delta Lake tables using T-SQL. Each table is mapped to a container from your Azure Cosmos DB database.
 - Create no-code queries and views and explore them visually without writing a line of code.
 - Join and query data in other mirrored databases, Warehouses, and Lakehouses in the same workspace.
-- You can visualize and build BI reports with a single-click based on SQL queries or views. 
+- You can easily visualize and build BI reports based on SQL queries or views. 
 
-In addition to the [Microsoft Fabric SQL Query Editor](../../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling. These tools include [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), and even GitHub Copilot. You can supercharge analysis and insights generation from the tool of your choice.
+In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling. These tools include [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and even GitHub Copilot. You can supercharge analysis and insights generation from the tool of your choice.
 
 ### Semantic model
 
