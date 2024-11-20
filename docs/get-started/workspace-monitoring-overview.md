@@ -4,12 +4,12 @@ description: Understand what is workspace monitoring in Microsoft Fabric and how
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 11/19/2024
+ms.date: 11/20/2024
 
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
-# What is workspace monitoring?
+# What is workspace monitoring (preview)?
 
 Workspace monitoring is a Microsoft Fabric database that collects and organizes logs and metrics from a range of Fabric items in your workspace. Workspace monitoring lets workspace users access and analyze logs and metrics related to Fabric items in the workspace. You can query the database to gain insights into the usage and performance of your workspace.
 
@@ -28,20 +28,23 @@ Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhous
 After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following logs:
 
 * Eventhouse monitoring in Real-Time Intelligence
-    * [Metrics](../real-time-intelligence/monitor-metrics.md)
     * [Command logs](../real-time-intelligence/monitor-logs-command.md)
     * [Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)
     * [Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)
+    * [Metrics](../real-time-intelligence/monitor-metrics.md)
     * [Query logs](../real-time-intelligence/monitor-logs-query.md)
+    * [Semantic models](/power-bi/enterprise/semantic-model-operations)
 
 * Data engineering (GraphQL)
     * [GraphQL operations](../data-engineering/graphql-operations.md)
 
 ## Sample queries
 
-Workload monitoring sample queries are available from the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
+Workload monitoring sample queries are available from [workspace-monitoring](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring) in the Fabric samples GitHub repository.
 
 ## Considerations and limitations
+
+* Workspace monitoring isn't available in all Azure regions.
 
 * The capacity the workspace is hosted on must be in the same region as the tenant.
 
@@ -58,7 +61,5 @@ Workload monitoring sample queries are available from the [fabric-samples](https
 * User data operation logs aren't available even though the table is available in the monitoring database.
 
 ## Related content
-
-* [Enable monitoring in your workspace](enable-workspace-monitoring.md)
 
 * [Enable monitoring in your workspace](enable-workspace-monitoring.md)
