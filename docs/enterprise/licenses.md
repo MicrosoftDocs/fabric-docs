@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/17/2024
+ms.date: 11/20/2024
 ---
 
 # Microsoft Fabric concepts and licenses
@@ -96,7 +96,7 @@ Per-user licenses allow users to work in Microsoft Fabric. There are three types
 
     SKUs smaller than F64 require a Power BI Pro or Premium Per User license for each user consuming Power BI content. Content in workspaces on F64 or larger Fabric capacities is available for users with a Free license if they have viewer role on the workspace.
 
-* **Premium per-user (PPU)** - PPU licenses allow organizations to access Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of purchasing a Power BI Premium capacity. PPU can be more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses a shared capacity across the organization, which provides the computing power for the Power BI operations. PPU licenses provide partial access to Microsoft Fabric. If you're using a PPU license, the only items that you can access in Fabric are the Power BI items.
+* **Premium per-user (PPU)** - PPU licenses allow organizations to access Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of purchasing a Power BI Premium capacity. PPU can be more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses a shared capacity across the organization, which provides the computing power for the Power BI operations. When you have a Fabric capacity, PPU licenses provide partial access to Microsoft Fabric. If you're using a PPU license, the only items that you can access in Fabric are the Power BI items.
 
 This table lists the main differences between the capabilities of per-user licenses.  
 
