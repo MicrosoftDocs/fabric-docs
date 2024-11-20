@@ -36,9 +36,12 @@ Here are the supported OneLake events:
 
 
 ## Add Fabric OneLake events as source
-1. Select **Eventstream** to create a new eventstream. 
-1. On the next screen, select **Add external source**.
 
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
+
+On the **Select a data source** page, search for and select **Connect** on the **OneLake events** tile.
+
+:::image type="content" source="./media/add-source-fabric-onelake/select-fabric-onelake-events.png" alt-text="Screenshot that shows the selection of Fabric OneLake events as the source type in the Select a data source window.":::
 
 ## Configure and connect to Fabric OneLake events
 

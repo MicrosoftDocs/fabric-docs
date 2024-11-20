@@ -34,9 +34,14 @@ With Fabric event streams, you can capture these Job events, transform them, and
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't already have an eventstream, 
 
 
-## Add Fabric job events as source
-1. Select **Eventstream** to create a new eventstream. 
-1. On the next screen, select **Add external source**.
+## Add Fabric Job events as source
+
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
+
+On the **Select a data source** page, search for and select **Connect** on the **Job events** tile.
+
+:::image type="content" source="./media/add-source-fabric-job/select-fabric-job-events.png" alt-text="Screenshot that shows the selection of Fabric Job events as the source type in the Select a data source window.":::
+
 
 
 ## Configure and connect to Fabric job events
