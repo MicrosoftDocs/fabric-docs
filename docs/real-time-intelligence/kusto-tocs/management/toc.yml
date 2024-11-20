@@ -76,6 +76,8 @@ items:
     items:
     - name: Tables management
       href: /kusto/management/tables?view=microsoft-fabric&preserve-view=true
+    - name: Delete data
+      href: /kusto/concepts/delete-data?view=azure-data-explorer&preserve-view=true
     - name: .alter-merge table command
       href: /kusto/management/alter-merge-table-command?view=microsoft-fabric&preserve-view=true
     - name: .alter table command

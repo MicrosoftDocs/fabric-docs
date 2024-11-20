@@ -1,11 +1,10 @@
 ---
-title: |
-  How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric (Preview)
+title: "How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric (Preview)"
 description: Join multiple Azure Cosmos DB databases together using mirrored databases in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 11/08/2024
+ms.date: 11/19/2024
 ms.topic: how-to
 ---
 
@@ -86,4 +85,4 @@ Now, use the SQL analytics endpoint to create a query across two mirrored databa
 
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml)
-- [Limitations: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)

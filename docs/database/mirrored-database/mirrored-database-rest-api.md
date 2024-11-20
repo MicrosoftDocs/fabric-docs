@@ -1,10 +1,10 @@
 ---
-title: Fabric mirroring public REST API
+title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
+ms.date: 11/19/2024
 ms.topic: conceptual
-ms.date: 11/18/2024
 ---
 
 # Microsoft Fabric mirroring public REST API
@@ -18,7 +18,7 @@ The public APIs for Fabric mirroring consist of two categories: (1) [CRUD operat
 
 [REST API - Items - Create mirrored database](/rest/api/fabric/mirroreddatabase/items/create-mirrored-database)
 
-Before you create mirrored database, the corresponding data source connection is needed. If you don't have a connection yet refer to [create new connection](/fabric/data-factory/data-source-management) and use that connection ID in following definition.
+Before you create mirrored database, the corresponding data source connection is needed. If you don't have a connection yet refer to [create new connection](../../data-factory/data-source-management.md) and use that connection ID in following definition.
 
 Example:
 
