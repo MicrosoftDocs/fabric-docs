@@ -112,19 +112,18 @@ Under **Advanced**, you can specify the following fields:
 
   - **Upsert**: Choose this option use upsert write behavior to load data into SQL server.
   
-    - **Use TempDB**: Specify whether to use a global temporary table or physical table as the interim table for upsert. By default, the service uses global temporary table as the interim table and this checkbox is selected.
-    <br>If you write large amount of data into SQL database, uncheck this and specify a schema name under which Data Factory will create a staging table to load upstream data and auto clean up upon completion. Make sure the user has create table permission in the database and alter permission on the schema. If not specified, a global temp table is used as staging.
+    - **Use TempDB**: Specify whether to use a global temporary table or physical table as the interim table for upsert. By default, the service uses global temporary table as the interim table and this property is selected.
 
       :::image type="content" source="./media/connector-sql-server/use-tempdb.png" alt-text="Screenshot showing select Use TempDB.":::
 
-    - **Select user DB schema**: When the **Use TempDB** isn't selected, specify a schema name under which Data Factory will create a staging table to load upstream data and automatically clean them up upon completion. Make sure you have create table permission in the database and alter permission on the schema.
+    - **Select user DB schema**: When the **Use TempDB** isn't selected, specify the interim schema for creating an interim table if a physical table is used.
 
       >[!Note]
       > You must have the permission for creating and deleting tables. By default, an interim table will share the same schema as a destination table.
 
       :::image type="content" source="./media/connector-sql-server/not-use-tempdb.png" alt-text="Screenshot showing not select Use TempDB.":::
 
-    - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination.
+    - **Key columns**: Specify the column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used.
 
   - **Stored procedure**: Use the stored procedure that defines how to apply source data into a target table. This stored procedure is *invoked per batch*. For operations that run only once and have nothing to do with source data, for example, delete or truncate, use **Pre-copy script** property. 
     - **Stored procedure name**: Select the stored procedure or specify the stored procedure name manually when checking the **Edit** to read data from the source table.
@@ -138,7 +137,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Bulk insert table lock**: Choose **Yes** or **No** (default). Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients. You can specify this property when you select **Insert** or **Upsert** as your write behavior. For more information, go to [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql)
 
-- **Pre-copy script**: Specify a script for the copy activity to execute before writing data into a destination table in each run. You can use this property to clean up the preloaded data.
+- **Pre-copy script**: Specify a script for copy activity to execute before writing data into a destination table in each run. You can use this property to clean up the pre-loaded data.
 
 - **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan. If no value is specified, the timeout defaults to "02:00:00".
 

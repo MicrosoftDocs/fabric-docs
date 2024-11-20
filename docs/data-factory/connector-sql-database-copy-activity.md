@@ -102,17 +102,18 @@ Under **Advanced**, you can specify the following fields:
   - **Upsert**: Choose this option if your source data has both inserts and updates.
 
     - **Use TempDB**: Specify whether to use a global temporary table or physical table as the interim table for upsert. By default, the service uses global temporary table as the interim table and this checkbox is selected.
+    <br>If you write large amount of data into SQL database, uncheck this and specify a schema name under which Data Factory will create a staging table to load upstream data and auto clean up upon completion. Make sure the user has create table permission in the database and alter permission on the schema. If not specified, a global temp table is used as staging.
 
       :::image type="content" source="./media/connector-sql-database/use-tempdb.png" alt-text="Screenshot showing select Use TempDB.":::
 
-    - **Select user DB schema**: When the **Use TempDB** checkbox isn't selected, specify the interim schema for creating an interim table if a physical table is used.
+    - **Select user DB schema**: When the **Use TempDB** isn't selected, specify a schema name under which Data Factory will create a staging table to load upstream data and automatically clean them up upon completion. Make sure you have create table permission in the database and alter permission on the schema.
 
       >[!Note]
       > You must have the permission for creating and deleting tables. By default, an interim table will share the same schema as a destination table.
 
       :::image type="content" source="./media/connector-sql-database/not-use-tempdb.png" alt-text="Screenshot showing not select Use TempDB.":::
 
-    - **Key columns**: Specify the column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used.
+    - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination.
 
   - **Stored procedure name**: Select the stored procedure from the drop-down list.
 
