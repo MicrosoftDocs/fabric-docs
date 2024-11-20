@@ -306,17 +306,17 @@ Use the delta table to create a semantic model.
 
 To create the report shown at the beginning of this section, use these visualizations and data:
 
-1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false" alt-text="Screenshot showing a stacked barchart icon."::: Stacked bar chart with:
+1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png"::: Stacked bar chart with:
     1. Y-axis: **carrier_name**
     1. X-axis: **flight**. Select **Count** for the aggregation
     1. Legend: **origin_name**
-1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false" alt-text="Screenshot showing a stacked barchart icon."::: Stacked bar chart with:
+1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png"::: Stacked bar chart with:
     1. Y-axis: **dest_name**
     1. X-axis: **flight**. Select **Count** for the aggregation
     1. Legend: **origin_name**
-1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false" alt-text="Screenshot showing a slicer icon."::: Slicer with:
+1. :::image type="icon" source="media/r-flight-delay/slicer.png"::: Slicer with:
     1. Field: **_pred_class**
-1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false" alt-text="Screenshot showing a slicer icon."::: Slicer with:
+1. :::image type="icon" source="media/r-flight-delay/slicer.png"::: Slicer with:
     1. Field: **_pred_late**
 
 ## Related content

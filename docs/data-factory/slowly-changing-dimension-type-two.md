@@ -131,7 +131,7 @@ Once the merge completes, be sure to expand the newly created column by only sel
 
 Filter this column to only keep null values, which represent the values that don't exist in the Dimension table today. The result yields a single record for Adrian King in the Northwest region.
 
-:::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png" alt-text="Screenshot for the result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Adrian King in the Northwest region.":::
+:::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png" alt-text="Screenshot showing the result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Adrian King in the Northwest region.":::
 
 Remove the Count column and rename this query to be called **CompareStoM**.
 
@@ -191,14 +191,14 @@ The result now conforms to the schema expected by the Dimension table.
 
 Using the original Dimension query (Dimension), perform a new **Merge queries as new** operation and select the Source table query as the right table. Select the Hash columns from both tables and select Left anti as the join kind.
 
-:::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png" alt-text="Screenshot of Merge dialog with thh Dimension and Source tables using the hash columns as column pairs and the left anti join kind being selected as the join kind.":::
+:::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png" alt-text="Screenshot of Merge dialog with the Dimension and Source tables using the hash columns as column pairs and the left anti join kind being selected as the join kind.":::
 
 The output is a table with records that are no longer used in the Source table. Make sure to expand the newly created column with table values and only expand the Hash column and then later delete it. 
 Rename the query to be **RecordsToUpdate**.
 
 You now need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
 
-:::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png" alt-text="Screenshot of the Replace dialog where the value to find is equals to TRUE and the replace with is FALSE.":::
+:::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png" alt-text="Screenshot of the Replace dialog where the value to find is equal to TRUE and the replace with is FALSE.":::
 
 You can right select the EndDate field and select the **Replace values...** as well. Input a value of 12/31/1999 or any date of your choice as you'll replace this value later on.
 

@@ -72,7 +72,7 @@ As a Fabric workspace admin, you can select an Environment as workspace default 
 
 You can also create a new one through the **Environment** dropdown.
 
-:::image type="content" source="media/workspace-admin-settings/env-dropdown-ws-inline.png" alt-text="Environment creation through attachment dropdown in WS setting." lightbox="media/workspace-admin-settings/env-dropdown-ws.png":::
+:::image type="content" source="media/workspace-admin-settings/env-dropdown-ws-inline.png" alt-text="Screenshot of environment creation through attachment dropdown in WS setting." lightbox="media/workspace-admin-settings/env-dropdown-ws.png":::
 
 If you disable the option to have a default environment, you have the option to select the Fabric runtime version from the available runtime versions listed in the dropdown selection. 
 

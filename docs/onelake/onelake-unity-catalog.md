@@ -29,7 +29,7 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 
 1. Create a Cloud storage connection used by your Unity Catalog tables. See how to set up a [ADLS Gen2 connection](../data-factory/connector-azure-data-lake-storage-gen2.md).
 
-2. Once you create the connection, obtain the connection ID by selecting **Settings** :::image type="content" border="true" source="../data-factory/media/connector-common/settings.png" alt-text="Settings gear icon"::: > **Manage connections and gateways** > **Connections** > **Settings**.
+2. Once you create the connection, obtain the connection ID by selecting **Settings** :::image type="icon" source="../data-factory/media/connector-common/settings.png"::: > **Manage connections and gateways** > **Connections** > **Settings**.
 
 :::image type="content" source="media\onelake-unity-catalog\adlsgen2-connection.png" alt-text="Screenshot showing ADLS Gen2 connection ID.":::
 
