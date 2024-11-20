@@ -40,7 +40,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Navigate to the **Livy endpoint** section.
 
-    :::image type="content" source="media/livy-api/livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/livy-endpoint.png" :::
+    :::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png" :::
 
 1. Copy the Session job connection string (first red box in the image) to your code.
 

@@ -79,7 +79,7 @@ The authenticated user calling the Livy API needs to be a workspace member where
 
 A Lakehouse artifact is required to access the Livy endpoint. Once the Lakehouse is created, the Livy API endpoint can be located within the settings panel.
 
-:::image type="content" source="media/livy-api/livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-api/livy-endpoint.png":::
+:::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png":::
 
 The endpoint of the Livy API would follow this pattern:
 
