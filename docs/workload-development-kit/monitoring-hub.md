@@ -121,7 +121,7 @@ Users have two options to run jobs in Fabric:
 
 **Step 1: Add a schedule context menu item**
 
-To show the **Schedule** button in the item context menu, add a new entry into the 'contextMenuItems' property in the item frontend manifest:
+To show the **Schedule** button in the item context menu, add a new entry into the `contextMenuItems` property in the item frontend manifest:
 
 ```json
 {
