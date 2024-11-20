@@ -36,7 +36,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Select **Lakehouse Settings** in your Fabric Lakehouse.
 
-    :::image type="content" source="media/livy-API/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-API/Lakehouse-settings.png" :::
+    :::image type="content" source="media/livy-api/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings.png" :::
 
 1. Navigate to the **Livy endpoint** section.
 
@@ -46,7 +46,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
 
-    :::image type="content" source="media/livy-API/Entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center." lightbox="media/livy-API/Entra-app-overview.png" :::
+    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Entra admin center." lightbox="media/livy-api/entra-app-overview.png" :::
 
 ## Create a Spark payload and upload to your Lakehouse
 
@@ -87,15 +87,15 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse. It needs to be uploaded to your Lakehouse, and you need the ABFS path of the payload to reference in your Livy API batch job.
 
-    :::image type="content" source="media\Livy-API\Livy-batch-payload.png" alt-text="Screenshot showing the Python payload cell." lightbox="media\Livy-API\Livy-batch-payload.png" :::
+    :::image type="content" source="media\livy-api\Livy-batch-payload.png" alt-text="Screenshot showing the Python payload cell." lightbox="media\livy-api\Livy-batch-payload.png" :::
 
 1. Upload the Python payload to the files section of your Lakehouse. > Get data > Upload files > click in the Files/ input box.
 
-    :::image type="content" source="media\Livy-API\Livy-batch-payload-in-lakehouse-files.png" alt-text="Screenshot showing payload in Files section of the Lakehouse." lightbox="media\Livy-API\Livy-batch-payload-in-lakehouse-files.png" :::
+    :::image type="content" source="media\livy-api\Livy-batch-payload-in-lakehouse-files.png" alt-text="Screenshot showing payload in Files section of the Lakehouse." lightbox="media\livy-api\Livy-batch-payload-in-lakehouse-files.png" :::
 
 1. After the file is in the Files section of your Lakehouse, click on the three dots to the right of your payload filename and select Properties.
 
-    :::image type="content" source="media\Livy-API\Livy-batch-ABFS-path.png" alt-text="Screenshot showing payload ABFS path in the Properties of the file in the Lakehouse." lightbox="media\Livy-API\Livy-batch-ABFS-path.png" :::
+    :::image type="content" source="media\livy-api\Livy-batch-ABFS-path.png" alt-text="Screenshot showing payload ABFS path in the Properties of the file in the Lakehouse." lightbox="media\livy-api\Livy-batch-ABFS-path.png" :::
 
 1. Copy this ABFS path to your Notebook cell below in step x
 
@@ -143,19 +143,19 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
 
-    :::image type="content" source="media/Livy-API/Entra-logon-user.png" alt-text="Screenshot showing logon screen to Entra app." lightbox="media/Livy-API/Entra-logon-user.png" :::
+    :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
 
 1. After you choose the identity to sign-in with, you'll also be asked to approve the Entra app registration API permissions.
 
-    :::image type="content" source="media/Livy-API/Entra-logon.png" alt-text="Screenshot showing Entra app API permissions." lightbox="media/Livy-API/Entra-logon.png" :::
+    :::image type="content" source="media/livy-api/entra-logon.png" alt-text="Screenshot showing Entra app API permissions." lightbox="media/livy-api/entra-logon.png" :::
 
 1. Close the browser window after completing authentication.
 
-    :::image type="content" source="media\Livy-API\Entra-authentication-complete.png" alt-text="Screenshot showing authentication complete." lightbox="media\Livy-API\Entra-authentication-complete.png" :::
+    :::image type="content" source="media\livy-api\entra-authentication-complete.png" alt-text="Screenshot showing authentication complete." lightbox="media\livy-api\entra-authentication-complete.png" :::
 
 1. In Visual Studio Code you should see the Entra token returned.
 
-    :::image type="content" source="media/Livy-API/Livy-session-entra-token.png" alt-text="Screen shot showing the Entra token returned after running cell and logging in." lightbox= "media/Livy-API/Livy-session-entra-token.png":::
+    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screen shot showing the Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
 
 1. Add another notebook cell and insert this code.
 
@@ -174,7 +174,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Run the notebook cell, you should see two lines printed as the Livy batch job is created.
 
-    :::image type="content" source="media\Livy-API\Livy-batch.png" alt-text="Screenshot showing the results of the batch session creation." lightbox="media\Livy-API\Livy-batch.png" :::
+    :::image type="content" source="media\livy-api\Livy-batch.png" alt-text="Screenshot showing the results of the batch session creation." lightbox="media\livy-api\Livy-batch.png" :::
 
 ## Submit a spark.sql statement using the Livy API batch session
 
@@ -210,7 +210,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Run the notebook cell, you should see several lines printed as the Livy Batch job is created and run.
 
-    :::image type="content" source="media\Livy-API\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job has been sucessfully submitted." lightbox="media\Livy-API\Livy-batch-job-submission.png" :::
+    :::image type="content" source="media\livy-api\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job has been sucessfully submitted." lightbox="media\livy-api\Livy-batch-job-submission.png" :::
 
 1. Navigate back to your Lakehouse to see the changes.
 
@@ -220,15 +220,15 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 1. When the batch job is completed state, you can view the session status by navigating to Monitor.
 
-    :::image type="content" source="media\Livy-API\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." lightbox="media\Livy-API\Livy-batch-job-submission.png":::
+    :::image type="content" source="media\livy-api\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." lightbox="media\livy-api\Livy-batch-job-submission.png":::
 
 1. Select and open most recent activity name.
 
-    :::image type="content" source="media\Livy-API\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." lightbox="media\Livy-API\Livy-batch-job-submission.png":::
+    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." lightbox="media\livy-api\Livy-batch-job-submission.png":::
 
 1. In this Livy API session case, you can see your previous batch submission, run details, Spark versions, and configuration. Notice the stopped status on the top right.
 
-    :::image type="content" source="media\Livy-API\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub.":::
+    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub.":::
 
 To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Entra app token, Livy API endpoint URL, authentication against your Lakehouse, a Spark payload in your Lakehouse, and fianlly a batch Livy API session.
 
