@@ -66,7 +66,7 @@ To set up the sample project frontend:
       * **controller**: The controller calls the SDK APIs.
       * **models**: The contracts and models that are used by the UI and for communication with the boilerplate's backend.
     * **tools**: Elements that you can use to create settings and configurations.
-      * `webpack.config.js`: Use this file to configure the local Node.js server.
+      * **webpack.config.js**: Use this file to configure the local Node.js server.
       * A web configuration and manifest reader/processor.
     * **validation**: The sample uses `validateSchema.js` to validate product and item JSON file schemas. It's configured to run on `npm start`.
 
@@ -82,9 +82,9 @@ To set up the sample project frontend:
    <repository folder>\Frontend> npm start
    ```
 
-   This command starts a *local* Node.js server (by using `webpack`) that Microsoft Fabric connects to when it's in developer mode.
+   This command starts a *local* Node.js server (by using *webpack*) that Microsoft Fabric connects to when it's in developer mode.
 
-   For information about port details that appear after the server starts, see the localhost server notes.
+   For information about port details that appear after the server starts, see the local host server notes.
 
    The current port is `60006`.
 

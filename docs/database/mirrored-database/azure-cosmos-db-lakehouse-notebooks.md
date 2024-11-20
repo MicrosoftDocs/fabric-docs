@@ -1,11 +1,10 @@
 ---
-title: |
-  How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)
+title: "How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)"
 description: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview).
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.topic: how-to
 ---
 
@@ -64,7 +63,7 @@ Use Lakehouse to further extend the number of tools you can use to analyze your 
     display(df)
     ```
 
-    :::image type="content" source="media/azure-cosmos-db-tutorial/lakehouse-notebook.png" alt-text="Screenshot of a Lakehouse notebook with data pre-loaded from the mirrored database." lightbox="media/azure-cosmos-db-tutorial/lakehouse-notebook.png":::
+    :::image type="content" source="media/azure-cosmos-db-lakehouse-notebooks/lakehouse-notebook.png" alt-text="Screenshot of a Lakehouse notebook with data pre-loaded from the mirrored database." lightbox="media/azure-cosmos-db-lakehouse-notebooks/lakehouse-notebook.png":::
 
     > [!NOTE]
     > This example assumes the name of your table. Use your own table when writing your Spark query.
@@ -116,4 +115,4 @@ Finally, you can use Spark and Python code to write data back to your source Azu
 
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml)
-- [Limitations: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
