@@ -48,14 +48,14 @@ In this scenario, the new item owner can fix connections by going into the item 
 
 1. Within the KQL Queryset item, in the Explorer pane on the left, add another connection or select an existing one.
 
-   :::image type="content" source="media/image1.png" alt-text="Screenshot showing how to add another connection or select an existing one in a KQL Queryset item.":::
+   :::image type="content" source="./media/item-ownership-take-over/image1.png" alt-text="Screenshot showing how to add another connection or select an existing one in a KQL Queryset item.":::
 
 #### Kusto Dashboard
 
 1. Go to "New data source" on the Item home page.
 1. Click "Add+" to add new data sources.
 
-   :::image type="content" source="media/image2.png" alt-text="Screenshot showing how to add a new data source in a Kusto Dashboard.":::
+   :::image type="content" source="./media/item-ownership-take-over/image2.png" alt-text="Screenshot showing how to add a new data source in a Kusto Dashboard.":::
 
 1. In the new or existing tile, select the appropriate data source.<br>
 
@@ -64,14 +64,14 @@ In this scenario, the new item owner can fix connections by going into the item 
 1. Within the Pipeline item, click on the activity created.
 1. Replace the connection in Source and/or Destination with the appropriate connection.
 
-   :::image type="content" source="media/image3.png" alt-text="Screenshot showing how to add the appropriate connection in a pipeline.":::
+   :::image type="content" source="./media/item-ownership-take-over/image3.png" alt-text="Screenshot showing how to add the appropriate connection in a pipeline.":::
 
 #### User data functions
 
 1. Go to "Manage Connections" within the item.
 1. Click on "Add data connection" to add a new connection and use that in the data function.
 
-   :::image type="content" source="media/image4.png" alt-text="Screenshot showing how to add a new connection in a user data function.":::
+   :::image type="content" source="./media/item-ownership-take-over/image4.png" alt-text="Screenshot showing how to add a new connection in a user data function.":::
 
 ## Limitations
 
