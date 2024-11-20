@@ -4,6 +4,8 @@ description: This article describes how to use the Semantic model refresh activi
 author: n0elleli
 ms.author: noelleli
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 10/16/2024
 ---
 

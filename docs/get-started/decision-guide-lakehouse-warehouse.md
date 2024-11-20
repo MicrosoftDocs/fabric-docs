@@ -5,6 +5,8 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.date: 08/20/2024
 ms.topic: product-comparison  #Don't change in the template.
+ms.custom:
+  - ignite-2024
 ---
 # Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse
 

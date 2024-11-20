@@ -7,6 +7,7 @@ author: xujxu
 ms.topic: concept-article
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---
@@ -53,7 +54,7 @@ The supported destinations are:
 
 The following example shows how three distinct Fabric eventstream destinations can serve separate functions for a single data stream source. One KQL database is designated for storing raw data, a second KQL database is for retaining filtered data streams, and the Lakehouse is used for storing aggregated values.
 
-![A screenshot of routing events based on content.](media/route-events-based-on-content/route-events.png)
+:::image type="content" border="true" source="media/route-events-based-on-content/route-events.png" alt-text="A screenshot of routing events based on content.":::
 
 To transform and route your data stream based on content, follow the steps at [Edit and publish an eventstream](edit-publish.md) and start designing stream processing logics for your data stream.
 

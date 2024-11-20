@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: salilkanade
 ms.date: 06/02/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ---
 # Privacy, security, and responsible use of Copilot for Data Warehouse (preview)

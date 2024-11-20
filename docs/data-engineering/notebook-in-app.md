@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: Create and use notebooks
 ms.date: 07/25/2024
 ---
@@ -25,7 +26,7 @@ You can now easily embed the Fabric Notebook in the Org app. With rich content l
 
 The operations applied to the embedded Notebook in Org app by consumers won't be saved, after refreshing the page, all the settings will be reset to default view.
 
-![Animated GIF of notebook in app.](media/notebook-in-app/notebook-in-app.gif)
+:::image type="content" border="true" source="media/notebook-in-app/notebook-in-app.gif" alt-text="Animated GIF of notebook in app.":::
 
 1. Create an **Org app** in the workspace new item panel with your APP name.
 

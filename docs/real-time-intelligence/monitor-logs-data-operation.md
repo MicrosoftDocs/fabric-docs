@@ -4,8 +4,9 @@ description: View and analyze the log of data operations of an Eventhouse KQL da
 author: shsagir
 ms.author: shsagir
 ms.topic: reference
+ms.custom:
+  - ignite-2024
 ms.date: 11/06/2024
-
 ---
 
 # Data operation logs

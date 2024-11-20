@@ -4,7 +4,7 @@ description: Understand how to use custom actions to trigger Power Automate flow
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter
+ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: Activator Custom Actions
 ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.

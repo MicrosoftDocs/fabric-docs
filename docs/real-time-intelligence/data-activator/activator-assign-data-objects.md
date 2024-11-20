@@ -4,7 +4,7 @@ description: Learn how to assign data to objects in Activator and improve your d
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter
+ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: Activator Object Creation
 ms.date: 11/08/2024
 ---

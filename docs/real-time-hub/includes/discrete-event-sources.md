@@ -4,6 +4,8 @@ description: Include file with a list of discrete event sources supported by Fab
 author: spelluru
 ms.author: spelluru
 ms.topic: include
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
