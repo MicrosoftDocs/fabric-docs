@@ -82,7 +82,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
     >[!NOTE]
     >You can copy it to any other path and set up the command line argument "-DevMode:LocalConfigFilePath" in your project to specify the path.
 
-      * *WorkspaceGuid*: Your Workspace ID. Find it in the browser URL when selecting a workspace in Fabric, e.g., https://app.fabric.microsoft.com/groups/{WorkspaceID}/.
+      * *WorkspaceGuid*: Your Workspace ID. Find it in the browser URL when selecting a workspace in Fabric, for example, `https://app.fabric.microsoft.com/groups/{WorkspaceID}/`.
       * *ManifestPackageFilePath*: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in the later steps.
       * *WorkloadEndpointURL*: Workload endpoint URL.
 
