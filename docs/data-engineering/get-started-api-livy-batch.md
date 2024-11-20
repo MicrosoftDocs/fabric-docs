@@ -101,7 +101,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ## Create a Livy API Spark batch session
 
-1. Create a \.ipynb\ notebook in Visual Studio Code and insert the following code.
+1. Create a `.ipynb` notebook in Visual Studio Code and insert the following code.
 
    ```python
 
@@ -143,7 +143,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
 
-    :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
+    :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Microsoft Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
 
 1. After you choose the identity to sign-in with, you'll also be asked to approve the Microsoft Entra app registration API permissions.
 
