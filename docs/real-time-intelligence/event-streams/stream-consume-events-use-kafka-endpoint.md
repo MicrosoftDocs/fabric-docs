@@ -13,7 +13,7 @@ ms.search.form: Eventstreams Tutorials
 
 # Tutorial: Stream and consume events to and from Real-Time Intelligence by using an Apache Kafka endpoint in an eventstream
 
-In this tutorial, you learn how to use the Apache Kafka endpoint provided by a custom endpoint source in the enhanced capabilities of Microsoft Fabric eventstreams to stream events to Real-Time Intelligence. (A custom endpoint is called a *custom app* in the standard capabilities of Fabric eventstreams.) You also learn how to consume these streaming events by using the Apache Kafka endpoint from an eventstream's custom endpoint destination.
+In this tutorial, you learn how to use the Apache Kafka endpoint provided by a custom endpoint source in the enhanced capabilities of Microsoft Fabric event streams to stream events to Real-Time Intelligence. (A custom endpoint is called a *custom app* in the standard capabilities of Fabric event streams.) You also learn how to consume these streaming events by using the Apache Kafka endpoint from an eventstream's custom endpoint destination.
 
 In this tutorial, you:
 

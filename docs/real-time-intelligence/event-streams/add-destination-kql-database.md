@@ -1,6 +1,6 @@
 ---
 title: Add an Eventhouse destination to an eventstream
-description: Learn how to add an Eventhouse destination to an eventstream in Microsoft Fabric eventstreams.
+description: Learn how to add an Eventhouse destination to an eventstream in Microsoft Fabric event streams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -15,7 +15,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add an Eventhouse destination to an eventstream
 
-This article shows you how to add an Eventhouse as a destination to an eventstream in Microsoft Fabric eventstreams.
+This article shows you how to add an Eventhouse as a destination to an eventstream in Microsoft Fabric event streams.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 

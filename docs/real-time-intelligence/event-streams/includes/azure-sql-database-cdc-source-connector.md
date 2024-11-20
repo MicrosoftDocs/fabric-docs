@@ -1,6 +1,6 @@
 ---
-title: Azure SQL Database CDC connector for Fabric eventstreams
-description: This include file has the common content for configuring an Azure SQL Database Change Data Capture (CDC) connector for Fabric eventstreams and Real-Time hub. 
+title: Azure SQL Database CDC connector for Fabric event streams
+description: This include file has the common content for configuring an Azure SQL Database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: include
@@ -23,7 +23,7 @@ ms.date: 11/18/2024
    - For **Authentication kind**, select **Basic**.
 
      > [!NOTE]
-     > Currently, Fabric eventstreams supports only **Basic** authentication.
+     > Currently, Fabric event streams supports only **Basic** authentication.
    - Enter **Username** and **Password** for the database.
 1. Select **Connect**.
 

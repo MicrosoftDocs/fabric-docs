@@ -1,6 +1,6 @@
 ---
 title: Manage an eventstream in Microsoft Fabric
-description: This article describes how to manage an eventstream item with Microsoft Fabric eventstreams feature.
+description: This article describes how to manage an eventstream item with Microsoft Fabric event streams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
