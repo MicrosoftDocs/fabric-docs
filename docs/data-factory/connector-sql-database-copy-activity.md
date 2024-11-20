@@ -37,10 +37,8 @@ The following properties are supported for SQL database under the **Source** tab
 
 The following properties are **required**:
 
-- **Connection**: Select an SQL database connection from the connection list. If no connection exists, then create a new SQL database connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your SQL database, add a parameter and specify the SQL database object ID as the parameter value. To get your SQL database object ID, open your SQL database in your workspace, and the ID is after `/sqldatabases/` in your URL.
+- **Connection**: Select an existing **SQL database** from the workspace. If no connection exists, then create a new SQL database connection.
 
-    :::image type="content" source="./media/connector-sql-database/sql-database-object-id.png" alt-text="Screenshot showing the SQL database object ID.":::
- 
 - **Use query**: You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting:
 
   - **Table**: Specify the name of the SQL database to read data. Choose an existing table from the drop-down list or select **Enter manually** to enter the schema and table name.
@@ -53,7 +51,7 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120. If a parameter is set for this property, allowed values are timespan, such as 120.
+- **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).
 
     :::image type="content" source="./media/connector-sql-database/query-timeout.png" alt-text="Screenshot showing Query timeout settings.":::
 
@@ -84,10 +82,7 @@ The following properties are supported for SQL database under the **Destination*
 
 The following properties are **required**:
 
-- **Connection**: Select an SQL database connection from the connection list. If no connection exists, then create a new SQL database connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your SQL database, add a parameter and specify the SQL database object ID as the parameter value. To get your SQL database object ID, open your SQL database in your workspace, and the ID is after `/sqldatabases/` in your URL.
-
-    :::image type="content" source="./media/connector-sql-database/sql-database-object-id.png" alt-text="Screenshot showing the SQL database object ID.":::
-
+- **Connection**: Select an existing **SQL database** from the workspace. If no connection exists, then create a new SQL database connection.
 - **Table option**: Select from **Use existing** or **Auto create table**.
 
   - If you select **Use existing**:
@@ -123,7 +118,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Bulk insert table lock**: Choose **Yes** or **No**. Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients. For more information, go to [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql)
 
-- **Pre-copy script**: Specify a script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the preloaded data.
+- **Pre-copy script**: Specify a script for the copy activity to execute before writing data into a destination table in each run. You can use this property to clean up the preloaded data.
 
 - **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is "00:30:00" (30 minutes).
 
@@ -156,7 +151,7 @@ You are suggested to enable parallel copy with data partitioning especially when
 | Scenario                                                     | Suggested settings                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Full load from large table, with physical partitions.        | **Partition option**: Physical partitions of table. <br><br/>During execution, the service automatically detects the physical partitions, and copies data by partitions. <br><br/>To check if your table has physical partition or not, you can refer to [this query](#sample-query-to-check-physical-partition). |
-| Full load from large table, without physical partitions, while with an integer or datetime column for data partitioning. | **Partition options**: Dynamic range partition.<br>**Partition column** (optional): Specify the column used to partition data. If not specified, the primary key column is used.<br/>**Partition upper bound** and **partition lower bound** (optional): Specify if you want to determine the partition stride. This is not for filtering the rows in table, all rows in the table will be partitioned and copied. If not specified, copy activity auto detects the values and it can take long time depending on MIN and MAX values. It is recommended to provide upper bound and lower bound. <br><br>For example, if your partition column "ID" has values range from 1 to 100, and you set the lower bound as 20 and the upper bound as 80, with parallel copy as 4, the service retrieves data by 4 partitions - IDs in range <=20, [21, 50], [51, 80], and >=81, respectively. |
+| Full load from large table, without physical partitions, while with an integer or datetime column for data partitioning. | **Partition options**: Dynamic range partition.<br>**Partition column** (optional): Specify the column used to partition data. If not specified, the index or primary key column is used.<br/>**Partition upper bound** and **partition lower bound** (optional): Specify if you want to determine the partition stride. This is not for filtering the rows in table, all rows in the table will be partitioned and copied. If not specified, copy activity auto detects the values and it can take long time depending on MIN and MAX values. It is recommended to provide upper bound and lower bound. <br><br>For example, if your partition column "ID" has values range from 1 to 100, and you set the lower bound as 20 and the upper bound as 80, with parallel copy as 4, the service retrieves data by 4 partitions - IDs in range <=20, [21, 50], [51, 80], and >=81, respectively. |
 | Load a large amount of data by using a custom query, without physical partitions, while with an integer or date/datetime column for data partitioning. | **Partition options**: Dynamic range partition.<br>**Query**: `SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition AND <your_additional_where_clause>`.<br>**Partition column**: Specify the column used to partition data.<br>**Partition upper bound** and **partition lower bound** (optional): Specify if you want to determine the partition stride. This is not for filtering the rows in table, all rows in the query result will be partitioned and copied. If not specified, copy activity auto detect the value.<br><br>For example, if your partition column "ID" has values range from 1 to 100, and you set the lower bound as 20 and the upper bound as 80, with parallel copy as 4, the service retrieves data by 4 partitions- IDs in range <=20, [21, 50], [51, 80], and >=81, respectively. <br><br>Here are more sample queries for different scenarios:<br> •  Query the whole table: <br>`SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition`<br> • Query from a table with column selection and additional where-clause filters: <br>`SELECT <column_list> FROM <TableName> WHERE ?DfDynamicRangePartitionCondition AND <your_additional_where_clause>`<br> • Query with subqueries: <br>`SELECT <column_list> FROM (<your_sub_query>) AS T WHERE ?DfDynamicRangePartitionCondition AND <your_additional_where_clause>`<br> • Query with partition in subquery: <br>`SELECT <column_list> FROM (SELECT <your_sub_query_column_list> FROM <TableName> WHERE ?DfDynamicRangePartitionCondition) AS T`
 |
 
@@ -202,7 +197,7 @@ The following tables contain more information about the copy activity in SQL dat
 | *For **Stored procedure*** |  |  |  |  |
 | **Stored procedure name** | Name of the stored procedure. | < your stored procedure name > | No |sqlReaderStoredProcedureName |
 |  |  |  |  |  |
-|**Query timeout (minutes)** |The timeout for query command execution, default is 120. |timespan |No |queryTimeout|
+|**Query timeout (minutes)** |The timeout for query command execution, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).|timespan |No |queryTimeout|
 |**Isolation level** |Specifies the transaction locking behavior for the SQL source.|• Read committed<br>• Read uncommitted<br>• Repeatable read<br>• Serializable<br>• Snapshot|No |isolationLevel:<br>• ReadCommitted<br>• ReadUncommitted<br>• RepeatableRead<br>• Serializable<br>• Snapshot|
 |**Partition option** |The data partitioning options used to load data from SQL database. |• None<br>• Physical partitions of table<br>• Dynamic range |No |partitionOption:<br>• PhysicalPartitionsOfTable<br>• DynamicRange|
 | *For **Dynamic range*** |  |  |  |  |
@@ -219,13 +214,12 @@ The following tables contain more information about the copy activity in SQL dat
 |**Connection** |Your connection to the destination data store.|\<your connection >|Yes|connection|
 |**Table option**|Your destination data table. Select from **Use existing** or **Auto create table**.| • Use existing<br>• Auto create table | Yes |schema <br> table|
 |**Write behavior** |Defines the write behavior when the source is files from a file-based data store.|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>• sqlWriterStoredProcedureName|
+|**Bulk insert table lock** | Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients.|Yes or No (default) |No |sqlWriterUseTableLock:<br>true or false (default)|
 | *For **Upsert*** |  |  |  |  |
 | **Use TempDB** | Whether to use a global temporary table or physical table as the interim table for upsert. |selected (default) or unselected  |No |useTempDB:<br>true (default) or false |
 | **Key columns** | The column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used. | < your key column> |No |keys|
 | *For **Stored procedure*** |  |  |  |  |
 | **Stored procedure name** | This property is the name of the stored procedure that reads data from the source table. The last SQL statement must be a SELECT statement in the stored procedure.|< stored procedure name > |No |sqlWriterStoredProcedureName|
-|  |  |  |  |  |
-|**Bulk insert table lock** | Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients.|Yes or No (default) |No |sqlWriterUseTableLock:<br>true or false (default)|
 |  |  |  |  |  |
 |**Pre-copy script**|A script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the preloaded data.| \<pre-copy script><br>(string)|No |preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is "00:30:00" (30 minutes).|timespan |No |writeBatchTimeout|
