@@ -87,10 +87,8 @@ landingContent:
             url: connect-apps-api-graphql.md
           - text: Query multiple data sources
             url: multiple-data-sources-graphql.md 
-          - text: Monitoring dashboard and logging (Preview) 
-            url: graphql-monitoring-logging.md
-          - text: Source control and deployment (preview)
-            url: graphql-source-control-and-deployment.md      
+          - text: Monitoring dashboard and logging (preview) 
+            url: graphql-monitoring-logging.md      
   # Card 
   - title: Delta Lake
     linkLists:

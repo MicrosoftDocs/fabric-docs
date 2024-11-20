@@ -289,5 +289,3 @@ items:
      href: graphql-operations.md
    - name: Monitoring dashboard and logging (preview)
      href: graphql-monitoring-logging.md
-   - name: Source control and deployment (preview)
-     href: graphql-source-control-and-deployment.md
