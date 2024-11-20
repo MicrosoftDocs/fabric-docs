@@ -4,7 +4,7 @@ description: Query insights makes past query execution data and aggregated insig
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: mariyaali
-ms.date: 09/20/2024
+ms.date: 11/20/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -35,6 +35,8 @@ The query insights feature addresses several questions and concerns related to q
 - What is the historical performance of our queries?
 - Are there any long-running queries that need attention?
 - Can we identify the queries causing performance bottlenecks?
+- Was cache utilized for my queries?
+- Which queries are consuming the most CPU?
 
 **Query Optimization and Tuning**
 
@@ -100,6 +102,30 @@ The following query uses `queryinsights.exec_requests_history` and the built-in 
 SELECT * FROM queryinsights.exec_requests_history 
 WHERE start_time >= DATEADD(MINUTE, -30, GETUTCDATE())
 AND login_name = USER_NAME();
+```
+
+### Identify top CPU consuming queries by CPU time
+The following query returns the top 100 queries by allocated CPU time.
+
+```sql
+SELECT TOP 100 distributed_statement_id, query_hash, allocated_cpu_time_ms, label, command
+FROM queryinsights.exec_requests_history
+ORDER BY allocated_cpu_time_ms DESC;
+```
+
+### Identify which queries are scanning most data from remote rather than cache
+
+You can determine if the large data scanning during query execution is slowing down your query and make decisions to tweak your query code accordingly. This analysis allows you to compare different query executions and identify if the variance in the amount of data scanned is the reason for performance changes.
+
+Furthermore, you can assess the use of cache by examining the sum of `data_scanned_memory_mb` and `data_scanned_disk_mb`, and comparing it to the `data_scanned_remote_storage_mb` for past executions.
+
+> [!NOTE]
+> The data scanned values might not account the data moved during the intermediate stages of query execution. In some cases, the size of the data moved and CPU required to process may be larger than the data scanned value indicates. 
+
+```sql
+SELECT distributed_statement_id, query_hash, data_scanned_remote_storage_mb, data_scanned_memory_mb, data_scanned_disk_mb, label, command
+FROM queryinsights.exec_requests_history
+ORDER BY data_scanned_remote_storage_mb DESC;
 ```
 
 ### Identify the most frequently run queries using a substring in the query text
