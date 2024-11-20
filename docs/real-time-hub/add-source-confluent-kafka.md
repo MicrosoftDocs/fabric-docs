@@ -5,20 +5,19 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - references_regions
-ms.date: 09/02/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
-# Add Confluent Cloud Kafka as source in Real-Time hub (preview)
+# Add Confluent Cloud Kafka as source in Real-Time hub
 
 This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Confluent Cloud Kafka cluster and an API Key.
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
@@ -60,11 +59,11 @@ This article describes how to add Confluent Cloud Kafka as an event source in Fa
 
         :::image type="content" source="./media/add-source-confluent-kafka/stream-details.png" alt-text="Screenshot that shows the right pane with Stream details section of the Confluent connection settings page. ":::                
 1. Select **Next**.
-1. On the **Review and create** screen, review the summary, and then select **Create source**.
+1. On the **Review + connect** page, review the summary, and then select **Connect**.
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page.
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page.
 1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page.
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).

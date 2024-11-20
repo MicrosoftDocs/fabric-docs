@@ -1,19 +1,19 @@
 ---
-title: Microsoft Fabric event streams capacity consumption
-description: Learn how to monitor capacity consumption for Microsoft Fabric event streams.
+title: Microsoft Fabric eventstreams capacity consumption
+description: Learn how to monitor capacity consumption for Microsoft Fabric eventstreams.
 author: xujxu
 ms.author: xujiang1
 ms.topic: how-to 
 ms.date: 10/29/2024
-ms.search.form: Monitor event streams capacity consumption
+ms.search.form: Monitor eventstreams capacity consumption
 ---
 
-# Microsoft Fabric event streams capacity consumption
+# Microsoft Fabric eventstreams capacity consumption
 
-This article contains information on how Microsoft Fabric event streams usage is billed and reported. 
+This article contains information on how Microsoft Fabric eventstreams usage is billed and reported. 
 
 ## Operation types
-The event streams usage is defined by four operation types, which are described in the following table. The table provides information about event streams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
+The eventstreams usage is defined by four operation types, which are described in the following table. The table provides information about eventstreams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
  
 
 | Operation in Capacity Metrics App | Description | Operation unit of measure | Fabric consumption rate |
@@ -33,7 +33,7 @@ The event streams usage is defined by four operation types, which are described 
    * Connector CU consumption is designed to correlate with throughput. When throughput increases, the number of vCores increases (autoscale), resulting in higher CU consumption. Currently, connector autoscaling is unavailable, so only one vCore is used per connector source.
 
 ## Storage billing
-Events retention in Fabric event streams is billed separately from your Fabric or Power BI premium capacity units.  
+Events retention in Fabric eventstreams is billed separately from your Fabric or Power BI premium capacity units.  
 
 * **OneLake Standard Storage** is standard storage that's used to persist and store all data. When you set the **retention setting** for more than 1 day (that is, 24 hours), you're charged as per OneLake Standard storage. See details of OneLake storage/month price on the [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) page. 
 
@@ -44,7 +44,7 @@ The [Microsoft Fabric Capacity Metric app](../../enterprise/metrics-app.md) 
 ## Important considerations
 Here are a few important points to consider:
 
-- We recommend that you use the Microsoft Fabric event streams feature with at least four capacity units (SKU: F4).
+- We recommend that you use the Microsoft Fabric eventstreams feature with at least four capacity units (SKU: F4).
 - You're charged only when your eventstream is ingesting or processing data. Any eventstream that doesn't have data for more than 2 hours isn't charged.  
 
 ## Changes to Microsoft Fabric workload consumption rate 

@@ -26,7 +26,7 @@ Select an alert to start drilling down to its details and to see management opti
 
 ## Related content
 
-* [Data loss prevention policies in Fabric](./data-loss-prevention-overview.md)
+* [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started)
 * [Configure a DLP policy for Fabric](./data-loss-prevention-configure.md).
 * [Respond to DLP policy violation in Fabric](./data-loss-prevention-respond.md).
 * [Learn about data loss prevention](/purview/dlp-learn-about-dlp)

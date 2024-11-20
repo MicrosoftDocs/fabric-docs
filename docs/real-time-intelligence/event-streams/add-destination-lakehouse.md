@@ -1,11 +1,13 @@
 ---
 title: Add a lakehouse destination to an eventstream
-description: Learn how to add a lakehouse destination to an eventstream in Microsoft Fabric event streams.
+description: Learn how to add a lakehouse destination to an eventstream in Microsoft Fabric eventstreams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -13,7 +15,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add a lakehouse destination to an eventstream
 
-This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric eventstreams. For optimized streaming performance and real-time querying, consider streaming data to an eventhouse with [add Eventhouse destination to an eventstream](add-destination-kql-database.md) and then enable [Eventhouse OneLake Availability](../event-house-onelake-availability.md).
+This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric eventstreams. For optimized streaming performance and real-time querying, consider streaming data to an Eventhouse with [add Eventhouse destination to an eventstream](add-destination-kql-database.md) and then enable [Eventhouse OneLake Availability](../event-house-onelake-availability.md).
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -29,8 +31,8 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
-- Access to the **premium workspace** where your lakehouse is located with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to the workspace where your lakehouse is located with Contributor or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -56,7 +58,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
 
 1. Select **Advanced**.
 
-1. Two ingestion modes are available for a lakehouse destination. Based on your scenario, configure these modes to optimize how Fabric event streams writes to the lakehouse.
+1. Two ingestion modes are available for a lakehouse destination. Based on your scenario, configure these modes to optimize how Fabric eventstreams writes to the lakehouse.
 
    - **Minimum rows** is the minimum number of rows that the lakehouse ingests in a single file. The minimum is 1 row, and the maximum is 2 million rows per file. The smaller the minimum number of rows, the more files the lakehouse creates during ingestion.
 
@@ -79,10 +81,10 @@ Once you complete these steps, the lakehouse destination is available for visual
 To learn how to add other destinations to an eventstream, see the following articles:
 
 - [Route events to destinations](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [Derived stream destination](add-destination-derived-stream.md)
-- [Eventhouse destination](add-destination-kql-database.md)
-- [Reflex destination](add-destination-reflex.md)
+- [Custom app](add-destination-custom-app.md)
+- [Derived stream](add-destination-derived-stream.md)
+- [Eventhouse](add-destination-kql-database.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end
@@ -94,8 +96,8 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Get access to a workspace with Contributor or above permissions where your lakehouse is located.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -123,7 +125,7 @@ If you have a lakehouse created in your workspace, follow these steps to add the
    1. **Event processing**: You can use the event processing editor to specify how the data should be processed before sending it to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md). When you're done with the editor, select **Done** to return to the **Lakehouse** destination configuration screen.
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
-1. Two ingestion modes are available for a lakehouse destination. Select one of these modes to optimize how the Fabric event streams feature writes to the lakehouse based on your scenario.
+1. Two ingestion modes are available for a lakehouse destination. Select one of these modes to optimize how the Fabric eventstreams feature writes to the lakehouse based on your scenario.
     1. **Rows per file** – The minimum number of rows that Lakehouse ingests in a single file. The smaller the minimum number of rows, the more files Lakehouse creates during ingestion. Minimum is 1 row. Maximum is 2M rows per file.
     1. **Duration** – The maximum duration that Lakehouse would take to ingest a single file. The longer the duration, more rows are ingested in a file. Minimum is 1 minute and maximum is 2 hours.  
       
@@ -149,9 +151,9 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 To learn how to add other destinations to an eventstream, see the following articles:
 
 - [Route events to destinations](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [KQL Database destination](add-destination-kql-database.md)
-- [Reflex destination](add-destination-reflex.md)
+- [Custom app](add-destination-custom-app.md)
+- [KQL Database](add-destination-kql-database.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end 

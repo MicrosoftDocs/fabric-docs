@@ -61,8 +61,10 @@ items:
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
     href: lakehouse-shortcuts.md
-  - name: Stream data to a lakehouse
+  - name: Optimize streaming data ingestion
     href: lakehouse-streaming-data.md
+  - name: Get streaming data into lakehouse with eventstreams 
+    href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
@@ -283,3 +285,5 @@ items:
      href: connect-apps-api-graphql.md
    - name: Query multiple data sources
      href: multiple-data-sources-graphql.md
+   - name: Monitoring GraphQL operations
+     href: graphql-operations.md

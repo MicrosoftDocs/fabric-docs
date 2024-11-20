@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.reviewer: v-myerspeter, sergeig, vparasuraman
 ms.date: 01/14/2024
 ms.topic: conceptual
-ms.custom: fabric-cat
+ms.custom: fabric-cat, ignite-2024
 ---
 
 # Microsoft Fabric security fundamentals
@@ -17,7 +17,7 @@ The article is primarily targeted at Fabric administrators, who are responsible 
 
 ## Fabric platform
 
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence (BI). The Fabric platform comprises a series of services and infrastructure components that support the common functionality for all [Fabric experiences](../get-started/microsoft-fabric-overview.md#components-of-microsoft-fabric). Collectively, they offer a comprehensive set of analytics experiences designed to work together seamlessly. Experiences include [Lakehouse](../data-engineering/lakehouse-overview.md), [Data Factory](../data-factory/data-factory-overview.md), [Synapse Data Engineering](../data-engineering/data-engineering-overview.md), [Synapse Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/fundamentals/power-bi-overview), and others.
+[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence (BI). The Fabric platform comprises a series of services and infrastructure components that support the common functionality for all [Fabric experiences](../get-started/microsoft-fabric-overview.md#components-of-microsoft-fabric). Collectively, they offer a comprehensive set of analytics experiences designed to work together seamlessly. Experiences include [Lakehouse](../data-engineering/lakehouse-overview.md), [Data Factory](../data-factory/data-factory-overview.md), [Fabric Data Engineering](../data-engineering/data-engineering-overview.md), [Fabric Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/fundamentals/power-bi-overview), and others.
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you benefit from a highly integrated, end-to-end, and easy-to-use product that's designed to simplify your analytics needs. Fabric was designed from the outset to protect sensitive assets.
 

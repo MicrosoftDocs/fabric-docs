@@ -1,13 +1,13 @@
 ---
 title: Add an Eventhouse destination to an eventstream
-description: Learn how to add an Eventhouse destination to an eventstream in Microsoft Fabric event streams.
+description: Learn how to add an Eventhouse destination to an eventstream in Microsoft Fabric eventstreams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -15,7 +15,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add an Eventhouse destination to an eventstream
 
-This article shows you how to add an Eventhouse as a destination to an eventstream in Microsoft Fabric event streams.
+This article shows you how to add an Eventhouse as a destination to an eventstream in Microsoft Fabric eventstreams.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -23,8 +23,8 @@ This article shows you how to add an Eventhouse as a destination to an eventstre
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
-- Access to an Eventhouse created in a Fabric **premium workspace** where you have **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to an Eventhouse created in a Fabric workspace where you have Contributor or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -119,10 +119,10 @@ Once you complete these steps, the eventstream with KQL Database destination is 
 
 To learn how to add other destinations to an eventstream, see the following articles:
 
-- [Custom app destination](add-destination-custom-app.md)
-- [Derived stream destination](add-destination-derived-stream.md)
-- [Lakehouse destination](add-destination-lakehouse.md)
-- [Reflex destination](add-destination-reflex.md)
+- [Custom app](add-destination-custom-app.md)
+- [Derived stream](add-destination-derived-stream.md)
+- [Lakehouse](add-destination-lakehouse.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 
@@ -135,8 +135,8 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- Access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to the workspace with Contributor or above permissions where your KQL database is located.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -215,7 +215,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
-- [Reflex destination](add-destination-reflex.md)
+- [Activator destination](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end

@@ -1,13 +1,15 @@
 ---
-title: Amazon Managed streaming for Kafka connector for Fabric event streams
-description: This file has the common content for configuring Amazon Managed streaming for Kafka connector for Fabric event streams and Real-Time hub. 
+title: Amazon Managed streaming for Kafka connector for Fabric eventstreams
+description: This file has the common content for configuring Amazon Managed streaming for Kafka connector for Fabric eventstreams and Real-Time hub. 
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
-ms.date: 09/13/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
-1. On the **Select a data source** page, select **Amazon MSK Kafka**. 
+1. On the **Data sources** page, select **Amazon MSK Kafka**. 
 
     :::image type="content" source="./media/amazon-msk-kafka-source-connector/select-amazon-msk-kafka.png" alt-text="Screenshot that shows the selection of Amazon MSK Kafka as the source type in the Get events wizard.":::
 1. On the **Connect** page, select **New connection**.
@@ -32,4 +34,4 @@ ms.date: 09/13/2024
     1. For **Security protocol**, the default value is **SASL_SSL**. The default **SASL mechanism** is **SCRAM-SHA-512** and cannot be changed. 
     
         :::image type="content" source="./media/amazon-msk-kafka-source-connector/configure-amazon-msk-kafka-source.png" alt-text="Screenshot that shows the first page of the Amazon MSK Kafka connection settings." lightbox="./media/amazon-msk-kafka-source-connector/configure-amazon-msk-kafka-source.png":::      
-1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
+1. Select **Next**. On the **Review + connect** screen, review the summary, and then select **Connect**.

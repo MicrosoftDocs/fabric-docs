@@ -5,23 +5,23 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 09/02/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Azure SQL Managed Instance CDC source to an eventstream (preview) 
+# Add Azure SQL Managed Instance CDC source to an eventstream
 
 This article shows you how to add an Azure SQL Managed Instance Change Data Capture (CDC) source to an eventstream. 
 
-The Azure SQL Managed Instance CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a SQL Managed Instance database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
-
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+The Azure SQL Managed Instance CDC source connector for Microsoft Fabric eventstreams allows you to capture a snapshot of the current data in a SQL Managed Instance database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL Managed Instance database. 
 - Your Azure SQL Managed Instance must enable public endpoint and not be behind a firewall or secured in a virtual network. 
 - CDC enabled in your Azure SQL Managed Instance by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
@@ -59,11 +59,11 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
 ## Add Azure SQL Managed Instance CDC as a source
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 
-1. On the next screen, select **Add external source**.
+2. On the next screen, select **Add external source**.
 
    ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
 
@@ -71,6 +71,7 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
 [!INCLUDE [azure-sql-managed-instance-cdc-source-connector](./includes/azure-sql-managed-instance-cdc-source-connector.md)]
 
+## View updated eventstream
 You can see the Azure SQL MI DB (CDC) source added to your eventstream in **Edit** mode.
 
 :::image type="content" source="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png" alt-text="A screenshot of the added Azure SQL MI DB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png":::

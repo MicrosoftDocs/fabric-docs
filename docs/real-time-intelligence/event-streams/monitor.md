@@ -10,13 +10,14 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
+  - ignite-2024
 ms.date: 08/07/2024
 ms.search.form: Data Preview and Insights
 ---
 
 # Monitoring status and performance of an eventstream
 
-The Microsoft Fabric event streams feature allows you to easily monitor streaming event data, ingestion status, and ingestion performance. This article explains how to monitor the eventstream status, check logs, errors, and data insights with metrics.
+The Microsoft Fabric eventstreams feature allows you to easily monitor streaming event data, ingestion status, and ingestion performance. This article explains how to monitor the eventstream status, check logs, errors, and data insights with metrics.
 
 In an eventstream, there are two types of monitoring experiences: **Data insights** and **Runtime logs**. You see one or both views, depending on the source or destination you select.
 
@@ -24,7 +25,7 @@ In an eventstream, there are two types of monitoring experiences: **Data insight
 
 Before you start, you must have:
 
-- Access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located.
+- Access to a workspace with Viewer or above permissions where your Eventstream item is located.
 - An Azure event hub source or lakehouse destination added to your eventstream.
 
 ## Data insights
@@ -121,9 +122,9 @@ To view the data insights for a streaming connector source:
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
-To view the runtime logs for Azure event hub source, Azure iot hub source, lakehouse destination and KQL database destination ('Event processing before ingestion' mode):
+To view the runtime logs for Azure event hub source, Azure iot hub source, streaming connector source, lakehouse destination and KQL database destination ('Event processing before ingestion' mode):
 
-1. Select the Azure event hub source, lakehouse destination or KQL database destination in the main editor canvas.
+1. Select the Azure event hub source, streaming connector source, lakehouse destination or KQL database destination in the main editor canvas.
 
 2. In the lower pane, select the **Runtime logs** tab.
 

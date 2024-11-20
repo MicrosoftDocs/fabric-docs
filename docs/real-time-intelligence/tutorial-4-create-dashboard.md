@@ -7,7 +7,9 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/19/2024
+ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
 ---
@@ -80,7 +82,7 @@ Since you've selected **Open dashboard after creation**, the new Real-Time dashb
 1. Select **Group by** > *Street*.
 1. Select **Apply**.
 
-    Notice that the query elements are updated to include the green **count() by Street** aggregation. The resulting table changed to show the total count of bike locations by street.
+    Notice that the query elements are updated to include the **count() by Street** aggregation. The resulting table changed to show the total count of bike locations by street.
 1. Close the **Explore** pane and select **Save** from the menu ribbon to save the changes.
 
 ## Related content

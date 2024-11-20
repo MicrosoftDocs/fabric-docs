@@ -6,20 +6,20 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 04/22/2024
+  - ignite-2024
+ms.date: 10/26/2024
 ms.search.form: Source and Destination
 ---
 
-# Edit and publish a Microsoft Fabric eventstream (preview)
+# Edit and publish a Microsoft Fabric eventstream
 
 This article shows you how to edit and publish a Microsoft Fabric eventstream.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 ## Edit mode and Live view
 
-Fabric event streams offer two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
+Fabric eventstreams offer two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
 
 Here's an overview of everything you find in the two different modes:
 
@@ -39,22 +39,29 @@ Here's an overview of everything you find in the two different modes:
 
 ## Create a new eventstream
 
-1. Switch your Power BI experience to **Real-Time Intelligence** and select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-   ![A screenshot of creating a new eventstream.](media/edit-publish/new.png)
-
-1. On the next screen, select **Add external source** to stream your data to Fabric event streams.
+1. On the next screen, select **Add external source** to stream your data to Fabric eventstreams.
 
    ![A screenshot of selecting Add external source.](media/edit-publish/build.png)
+1. Select **Connect** on the **Azure Event Hubs** tile.
 
-1. Select **Azure Event Hub** as your data source and input the necessary event hub details to link it with your Fabric eventstreams.
+   :::image type="content" source="media/edit-publish/select-azure-event-hubs.png" alt-text="Screenshot that shows the Select a data source page with Azure Event Hubs selected."::: 
+1. On the **Connect data source** page, select **New connection**.
 
-   ![A screenshot of connecting to Event Hub.](media/edit-publish/connect.png)
+   :::image type="content" source="media/edit-publish/new-connection-link.png" alt-text="Screenshot that shows the Connect data source page with the New connection link selected." lightbox="media/edit-publish/new-connection-link.png":::     
+1. In the popup window, in the **Connection settings** section, specify the name of the Event Hubs namespace and the event hub in it. 
 
-1. When you're done, select **Add** to finish the setup and add the Azure Event Hubs source to your Fabric eventstream.
+   :::image type="content" source="media/edit-publish/connection-settings.png" alt-text="Screenshot that shows the connection settings for an event hub." lightbox="media/edit-publish/connection-settings.png":::     
+1. In the **Connection credentials** section, specify the access key name and its value, and then select **Connect**.
+
+    :::image type="content" source="media/edit-publish/connection-credentials.png" alt-text="Screenshot that shows the connection credentials for an event hub." lightbox="media/edit-publish/connection-credentials.png":::     
+1. Now, on the **Connect** page, specify the **consumer group**, and select the **data format** you want to use, and then select **Next**.
+
+    :::image type="content" source="media/edit-publish/configure-azure-event-hubs-resource.png" alt-text="Screenshot that shows the Connect page with the additional configuration for the event hub." lightbox="media/edit-publish/configure-azure-event-hubs-resource.png":::         
+1. On the **Review + connect** page, review settings, and select **Add**. 
 
    ![A screenshot of the Summary for a new eventstream.](media/edit-publish/summary.png)
-
 1. You're now in the eventstream **Edit mode**. Select **Refresh** to preview your Azure Event Hubs data.
 
    ![A screenshot of selecting Refresh to preview the Event Hub data.](media/edit-publish/refresh.png)
@@ -83,6 +90,6 @@ The following steps show how you can add event processing operations and a desti
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric event streams](overview.md)
+- [New capabilities in Microsoft Fabric eventstreams](overview.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
 - [Route data streams based on content](route-events-based-on-content.md)

@@ -6,8 +6,8 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -21,31 +21,24 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 ::: zone pivot="enhanced-capabilities"  
 
+
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
-
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
 ## Add sample data as a source
 
 Follow these steps to add a sample data source:
 
-1. To create a new eventstream, select **Eventstream** from the **Home** screen. Make sure the **Enhanced Capabilities (preview)** option is enabled.
-
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
-
 1. To add sample data source, on the get-started page, select **Use sample data**.
 
-   ![A screenshot of selecting Use sample data.](media/external-sources/use-sample-data.png)
+   ![A screenshot of selecting Use sample data.](media\add-source-sample-data-enhanced\select-sample-data.png)
 
    Or, if you already have a published eventstream and want to add sample data as a source, switch to **Edit** mode. Then select **Add source** in the ribbon, and select **Sample data**.
 
    ![A screenshot of selecting Sample data to add to an existing eventstream.](media\add-source-sample-data-enhanced\add-sample-data.png)
-
 1. On the **TridentStreaming_SampleData** screen, enter a **Source name**, select the source data you want under **Sample data**, and then select **Add**.
 
    - **Bicycles**: Sample bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighborhood, and Latitude.
@@ -53,32 +46,19 @@ Follow these steps to add a sample data source:
    - **Stock Market**: Sample data of a stock exchange with preset schema columns such as time, symbol, price, and volume.
 
    ![A screenshot showing the choices on the Sample data screen.](media\add-source-sample-data-enhanced\sample-sources.png)
-
 1. After you create the sample data source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added sample data, select **Publish**.
 
-   ![A screenshot showing the eventstream in Edit mode, with the Publish button highlighted.](media\add-source-sample-data-enhanced\edit-mode.png)
+    :::image type="content" source="media\add-source-sample-data-enhanced\edit-mode.png" alt-text="A screenshot showing the eventstream in Edit mode, with the Publish button highlighted.":::
+1. Once publishing succeeds, the sample data is available for visualization in **Live view**.
 
-Once you complete these steps, the sample data is available for visualization in **Live view**.
+    :::image type="content" source="media\add-source-sample-data-enhanced\live-view.png" alt-text="A screenshot showing the eventstream in Live view." lightbox="media\add-source-sample-data-enhanced\live-view.png":::
 
-![A screenshot showing the eventstream in Live view.](media\add-source-sample-data-enhanced\live-view.png)
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 
 ## Related content 
-
-To learn how to add other sources to an eventstream, see the following articles:
-
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
-- [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [Confluent Kafka](add-source-confluent-kafka.md)
-- [Custom endpoint](add-source-custom-app.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
-- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [Azure Blob Storage events](add-source-azure-blob-storage.md)
-- [Fabric workspace event](add-source-fabric-workspace.md) 
-
+For a list of supported sources, see [Add an event source in an eventstream](add-manage-eventstream-sources.md)
 
 ::: zone-end
 
@@ -90,7 +70,7 @@ To learn how to add other sources to an eventstream, see the following articles:
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

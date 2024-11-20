@@ -5,6 +5,8 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.date: 08/20/2024
 ms.topic: product-comparison  #Don't change in the template.
+ms.custom:
+  - ignite-2024
 ---
 # Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse
 
@@ -41,7 +43,7 @@ Microsoft Fabric offers two enterprise-scale, open standard format workloads for
 
 Perform a detailed evaluation of the service to confirm that it meets your needs.
 
-The **Warehouse** item in Fabric Synapse Data Warehouse is an enterprise scale data warehouse with open standard format.​
+The **Warehouse** item in Fabric Data Warehouse is an enterprise scale data warehouse with open standard format.​
 
 - No knobs performance with minimal set-up and deployment, no configuration of compute or storage needed. ​
 - Simple and intuitive warehouse experiences for both beginner and experienced data professionals (no/pro code)​.
@@ -52,7 +54,7 @@ The **Warehouse** item in Fabric Synapse Data Warehouse is an enterprise scale d
 - Enterprise-ready platform with end-to-end performance and usage visibility, with built-in governance and security​.
 - Flexibility to build data warehouse or data mesh based on organizational needs and choice of no-code, low-code, or T-SQL for transformations​.
 
-The **Lakehouse** item in Fabric Synapse Data Engineering
+The **Lakehouse** item in Fabric Data Engineering is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location.
 
 - Store, manage, and analyze structured and unstructured data in a single location to gain insights and make decisions faster and efficiently.​
 - Flexible and scalable solution that allows organizations to handle large volumes of data of all types and sizes.​

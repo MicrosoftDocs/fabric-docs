@@ -1,6 +1,6 @@
 ---
 title: Preview data in an Eventstream item
-description: This article describes how to preview the data in an Eventstream item with the Microsoft Fabric event streams feature.
+description: This article describes how to preview the data in an Eventstream item with the Microsoft Fabric eventstreams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 11/15/2023
 ms.search.form: Data Preview and Insights
 ---
@@ -20,8 +21,8 @@ Data preview provides you with a snapshot of your event data in your eventstream
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located.
-- For a KQL database or lakehouse destination, get access to a **premium workspace** with **Viewer** or above permissions where your KQL database or Lakehouse item is located.
+- Get access to a workspace with Viewer or above permissions where your Eventstream item is located.
+- For a KQL database or lakehouse destination, get access to a workspace with Viewer or above permissions where your KQL database or Lakehouse item is located.
 
 ## Preview a source
 
@@ -37,7 +38,7 @@ To preview the source data of an event hub or sample data in the eventstream:
 
 ## Preview a destination
 
-To preview the destination data of a KQL database, Reflex or lakehouse in the eventstream:
+To preview the destination data of a KQL database, Fabric activator or lakehouse in the eventstream:
 
 1. In the main editor canvas, select one of the destination nodes in your eventstream.
 

@@ -9,7 +9,8 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 05/13/2024
+  - ignite-2024
+ms.date: 10/16/2024
 ms.search.form: Lakehouse SQL Analytics Endpoint
 ---
 
@@ -17,7 +18,7 @@ ms.search.form: Lakehouse SQL Analytics Endpoint
 
 Microsoft Fabric provides a SQL-based experience for lakehouse Delta tables. This SQL-based experience is called the SQL analytics endpoint. You can analyze data in Delta tables using T-SQL language, save functions, generate views, and apply SQL security. To access SQL analytics endpoint, you select a corresponding item in the workspace view or switch to SQL analytics endpoint mode in Lakehouse explorer.
 
-Creating a lakehouse creates a SQL analytics endpoint, which points to the lakehouse Delta table storage. Once you create a Delta table in the lakehouse, it's available for querying using the SQL analytics endpoint. To learn more, see [Data Warehouse documentation: SQL analytics endpoint](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
+Creating a lakehouse creates a SQL analytics endpoint, which points to the lakehouse Delta table storage. Once you create a Delta table in the lakehouse, it's available for querying using the SQL analytics endpoint. Both [warehouse documentation](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) and [SQL database](../database/sql/overview.md) in Microsoft Fabric automatically provision a SQL analytics endpoint when created.
 
 :::image type="content" source="media\sql-endpoint\main-screen.png" alt-text="Lakehouse SQL analytics endpoint main screen" lightbox="media\sql-endpoint\main-screen.png":::
 
@@ -48,3 +49,4 @@ You can set object-level security for accessing data using SQL analytics endpoin
 - [Get started with the SQL analytics endpoint of the Lakehouse in Microsoft Fabric](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse)
 - [Workspace roles and permissions](workspace-roles-lakehouse.md)
 - [Security for data warehousing in Microsoft Fabric](../data-warehouse/security.md)
+- [Share your SQL database and manage permissions](../database/sql/share-sql-manage-permission.md)

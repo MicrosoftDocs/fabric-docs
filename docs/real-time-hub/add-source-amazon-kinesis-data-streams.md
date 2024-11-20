@@ -5,20 +5,19 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - references_regions
-ms.date: 09/02/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
-# Add Amazon Kinesis Data Streams as source in Real-Time hub (preview)
+# Add Amazon Kinesis Data Streams as source in Real-Time hub
 
 This article describes how to add Amazon Kinesis Data Streams as an event source in Fabric Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Prerequisites
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - An Amazon Web Services (AWS) account with the Kinesis Data Streams service enabled.
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
@@ -52,12 +51,12 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
     1. Enter a **name for the eventstream** to be created for you.
     1. Name of the **stream** for Real-Time hub is automatically generated for you. 
 1. Select **Next**.
-1. On the **Review and create** screen, review the summary, and then select **Create source**.
+1. On the **Review + create** screen, review the summary, and then select **Connect**.
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page.
-1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page.
+1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
 
