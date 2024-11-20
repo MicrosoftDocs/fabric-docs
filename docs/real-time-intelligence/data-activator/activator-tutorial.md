@@ -24,13 +24,13 @@ In this tutorial, you use sample data included with Fabric [!INCLUDE [fabric-act
 
 ## Prerequisites
 
-* Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../get-started/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
+Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../get-started/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
 
 ## Create a sample activator
 
 Start by opening Fabric in your browser.
 
-1. From the nav pane, select **Create** > **Activator**.
+1. From the nav pane, select **Create** > **Activator**. If you don't see **Create**, select the ellipses(...) to display more options.
 
     :::image type="content" source="media/activator-tutorial/activator-create.png" alt-text="Screenshot showing the left navigation pane with Create selected.":::
 
@@ -44,7 +44,7 @@ In this step, we explore the eventstream data this sample is built on.
 
 The new activator has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
 
-:::image type="content" source="media/activator-tutorial/activator-eventstream.png" alt-text="Screenshot of Activator with the Package delivery events stream selected." lightbox="media/activator-tutorial/activator-eventstream.png":::
+    :::image type="content" source="media/activator-tutorial/activator-eventstream.png" alt-text="Screenshot of Activator with the Package delivery events stream selected." lightbox="media/activator-tutorial/activator-eventstream.png":::
 
 These events show the real-time status of packages that are in the process of being delivered.
 
@@ -78,7 +78,7 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
 1. Lastly, scroll down to **Action**. Our rule sends a Teams message if the condition is met.
 
-We created an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature has become greater than 50 degrees. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
+We created an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature has become greater than 20 degrees Celsius. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
 
 Look at the other rules to learn how they work.
 
@@ -96,7 +96,7 @@ Now you're familiar with the events and objects used to create a rule. The next 
 
 ## Create an object
 
-Now it's time to create an object of your own. In this section, delete the *Package* object. Then, recreate it to track the status of packages in transit where the hours in delivery become greater than 100.
+Now it's time to create an object of your own. In this section, delete the *Package* object. Then, recreate it to track the status of packages in transit where the hours in delivery become greater than 25.
 
 1. Select and delete the **Package** object.
 1. Select the **Package delivery events** stream.
@@ -111,23 +111,23 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
 1. Select your new **HoursInTransit** property. From the ribbon, select **New rule**. From the header, select the pencil icon to edit the name of the rule. Name it *Average transit time above target*. Your **Package2** object looks like this.
 
-:::image type="content" source="media/activator-tutorial/data-activator-new-rule.png" alt-text="Average transit time explorer view for activator tutorial.":::
+    :::image type="content" source="media/activator-tutorial/data-activator-new-rule.png" alt-text="Average transit time explorer view for activator tutorial.":::
 
-1. nSelect **Edit details** to open the **Definition** pane. 
+2. Select **Edit details** to open the **Definition** pane. 
 
-1. In the **Definition** pane, select **HoursInTransit**. Then select **Add summarization** > **Average**. Set an aggregation **Window size** of five minutes and a **Step size** of five minutes. The Monitor chart updates to reflect the summarization, and your rule Monitor chart looks like this.
+3. In the **Definition** pane, select **HoursInTransit**. Then select **Add summarization** > **Average**. Set an aggregation **Window size** of five minutes and a **Step size** of five minutes. The Monitor chart updates to reflect the summarization, and your rule Monitor chart looks like this.
 
     :::image type="content" source="media/activator-tutorial/activator-window.png" alt-text="Average transit time chart for activator tutorial.":::
 
-1. In the **Condition** step, detect when the average transit time becomes greater than 25. Set the rule to alert you every time the condition is met. After you complete this step, the Condition chart updates, and the rule looks like this.
+4. In the **Condition** step, detect when the average transit time becomes greater than 25. Set the rule to alert you every time the condition is met. After you complete this step, the Condition chart updates, and the rule looks like this.
 
     :::image type="content" source="media/activator-tutorial/activator-conditions.png" alt-text="Screenshot showing average transit time rule detection chart for activator tutorial.":::
 
-1. Specify an action for your rule. You can choose to send a Teams message or Email. Customize your action according to how you would like it to appear.
+5. Specify an action for your rule. You can choose to send a Teams message or Email. Customize your action according to how you would like it to appear.
 
-1. Test your rule by selecting the **Send me a test action** button. Make sure you get an alert. If using email, it might take a minute or two to arrive.
+6. Test your rule by selecting the **Send me a test action** button. Make sure you get an alert. If using email, it might take a minute or two to arrive.
 
-1. Start your rule by selecting **Save and start**.
+7. Start your rule by selecting **Save and start**.
 
 You created your first object and rule. As next steps, you might try setting up some other rules on the *Package2* object. When you're ready to try using [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] on your own data, follow the steps in the [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-data-eventstreams.md) article.
 
