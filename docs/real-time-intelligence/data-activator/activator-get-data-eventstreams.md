@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 11/08/2024
+ms.date: 11/19/2024
 #customer-intent: '#customer intent: As a Fabric user I want to learn how to use Activator to get data from eventstreams.'
 ---
 
@@ -13,7 +13,7 @@ ms.date: 11/08/2024
 
 You can get data for use in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from many sources. This article describes how to get data from eventstreams.
 
-If you have real-time streaming data in Fabric event streams, connect it to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. This article explains how.
+If you have real-time streaming data in Fabric eventstreams, connect it to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. This article explains how.
 
 ## Prerequisites
 
@@ -37,18 +37,25 @@ In this example, *PackageID* is the unique ID.
 You can connect your eventstream item to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] in one of two ways:
 
 #### Start from the eventstream item
-1. Open your eventstream item
-2. Add a destination to your eventstream item, of type *Activator*
 
-   :::image type="content" source="media/activator-get-data/data-activator-get-data-04.png" alt-text="A screenshot of an eventstream item showing data flow.":::
+If you don't have your own eventstream, Microsoft supplies a sample eventstream named **Bicycles**.
+
+1. To open the sample, select **Create** from the nav pane.
+1. Scroll down to Real-Time intelligence and select **Eventstream.** 
+1. Name the eventsteam and select **Use sample data**.
+1. Name the source and select **Add**.
+1. Add a destination to your eventstream item, of type *Activator*
+
+   :::image type="content" source="media/activator-get-data-eventstreams/activator-destination.png" alt-text="A screenshot of an eventstream dropdown for selecting a destination.":::
   
-3. In the side panel, select an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item, or make a new one, then select **Add**.
+3. In the right pane, select an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item, or make a new one, then select **Save**.
 4. Open your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. See the data flowing from your eventstream item in the data pane.
   
-    :::image type="content" source="media/activator-get-data/data-activator-get-data-05.png" alt-text="Screenshot of eventstream item showing data flow.":::
+    :::image type="content" source="media/activator-get-data/activator-stream.png" alt-text="Screenshot of eventstream item showing data flow.":::
 
 #### Start from the activator item
-1. Open your activator item
+
+1. Open your activator item. One way to open your activator is to select **Real-Time** from the nav pane and choose an eventstream from the list. 
 2. Select *Get data* from the Home tab of the ribbon
 3. Use the *Connect data source* dialog to search or browse to your eventstream. 
 

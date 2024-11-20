@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter
-ms.date: 11/08/2024
+ms.date: 11/19/2024
 ms.search.form: Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
 ---
@@ -26,23 +26,25 @@ In this tutorial, you use sample data included with Fabric [!INCLUDE [fabric-act
 
 * Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../get-started/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
 
-## Create a sample [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] activator
+## Create a sample activator
 
-Start by opening a workspace that has a Fabric capacity.
+Start by opening Fabric in your browser.
 
-1. From the Fabric homepage, select a workspace with a Fabric capacity and select **Create** > **Activator**.
+1. From the nav pane, select **Create** > **Activator**.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-create.png" alt-text="Screenshot showing the left navigation pane with Create selected.":::
+    :::image type="content" source="media/activator-tutorial/activator-create.png" alt-text="Screenshot showing the left navigation pane with Create selected.":::
 
-1. Select the sample to create an activator that is prepopulated with sample events and objects.
+1. Select **Try sample** to create an activator that is prepopulated with sample events and objects.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-sample.png" alt-text="Screenshot showing the option to add data or use the sample data.":::
+    :::image type="content" source="media/activator-tutorial/activator-sample.png" alt-text="Screenshot showing the option to add data or use the sample data.":::
 
 ## Explore the data
 
 In this step, we explore the eventstream data this sample is built on.
 
 The new activator has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
+
+:::image type="content" source="media/activator-tutorial/activator-eventstream.png" alt-text="Screenshot of Activator with the Package delivery events stream selected." lightbox="media/activator-tutorial/activator-eventstream.png":::
 
 These events show the real-time status of packages that are in the process of being delivered.
 
@@ -52,15 +54,15 @@ Look at the incoming events and hover over the event data in the live table. Eac
 
 Use a rule to specify the event values you want to monitor, the conditions you want to detect, and the actions you want [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to take.
 
-The Explorer pane displays objects, like eventstreams, for this activator. **Delivery events** is one of the objects.
+The Explorer pane displays objects, like eventstreams, for this activator. **Delivery events** is one of the objects created from the **Package delivery events** eventstream.
 
 1. In the Explorer pane, select the object called **Delivery events**. You can create rules about objects that use data from the **Package delivery events** eventstream. For example, a rule that checks packages for temperature.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-temperature.png" alt-text="Screenshot showing Delivery events table and the temperature column.":::
+    :::image type="content" source="media/activator-tutorial/activator-temperature.png" alt-text="Screenshot showing Delivery events table and the temperature column.":::
 
 1. Notice that the **Events by object ID** section is organized by **Package ID**. **Package ID** is the column ID that uniquely identifies each package. We use this unique ID to assign the Package events to Package objects.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-unique-id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen."Lightbox="media/activator-tutorial/data-activator-unique-id.png":::
+    :::image type="content" source="media/activator-tutorial/data-activator-unique-id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen."lightbox="media/activator-tutorial/data-activator-unique-id.png":::
 
 1. Select the **Temperature** rule called **Too hot for medicine**. Scroll through the **Definition** pane to see how the rule works.
 
@@ -68,15 +70,15 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
     :::image type="content" source="media/activator-tutorial/data-activator-monitor.png" alt-text="Screenshot showing the Monitor section of the Definition pane.":::
 
-1. Scroll down to **Condition**. Our rule is monitoring temperatures that **become greater than** **50**.
+1. Scroll down to **Condition**. Our rule is monitoring temperatures that **become greater than** **20** degrees Celsius.
 
-1. Scroll further down to **Scope**. Our rule applies only to packages containing medicine. In the **Delivery events** table, the rule looks at the column named **SpecialCare**. In the **SpecialCare** column, some of the packages have a value of **Medicine**.
+1. Scroll further down to **Property filter**. Our rule applies only to packages containing medicine. In the **Delivery events** table, the rule looks at the column named **Special care contents**. In the **Special care contents** column, some of the packages have a value of **Medicine**.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-scope.png" alt-text="Screenshot showing the Scope section of the Definition pane.":::
+    :::image type="content" source="media/activator-tutorial/activator-filter.png" alt-text="Screenshot showing the Property filter section of the Definition pane.":::
 
 1. Lastly, scroll down to **Action**. Our rule sends a Teams message if the condition is met.
 
-We created an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature has become greater than 50 degrees. When the temperature becomes greater than 50 degrees, a Teams message is sent.
+We created an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature has become greater than 50 degrees. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
 
 Look at the other rules to learn how they work.
 
@@ -86,7 +88,7 @@ Now you're familiar with the events and objects used to create a rule. The next 
 
 1. Select **Too hot for medicine**.
 
-1. Optionally, send a test message by selecting **Test**. First check that you're the **Recipient**. Make sure that you receive the message and that it looks the way you expect.
+1. Optionally, send a test message by selecting **Send me a test action**. First check that you're the **Recipient**. Make sure that you receive the message and that it looks the way you expect.
 
 1. Select **Start**. This causes the rule to become active. You receive a Teams message whenever a medicine package is too hot. The rule should trigger several times every hour.
 
@@ -111,17 +113,19 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
 :::image type="content" source="media/activator-tutorial/data-activator-new-rule.png" alt-text="Average transit time explorer view for activator tutorial.":::
 
-1. In the **Definition** pane, select **HoursInTransit**. Then select **Show options** > **Add summarization** > **Average**. Set an aggregation **Window size** of 1 hour and a **Step size** of 1 hour. The Monitor chart updates to reflect the summarization, and your rule looks like this.
+1. nSelect **Edit details** to open the **Definition** pane. 
 
-    :::image type="content" source="media/activator-tutorial/data-activator-average-chart.png" alt-text="Average transit time chart for activator tutorial.":::
+1. In the **Definition** pane, select **HoursInTransit**. Then select **Add summarization** > **Average**. Set an aggregation **Window size** of five minutes and a **Step size** of five minutes. The Monitor chart updates to reflect the summarization, and your rule Monitor chart looks like this.
+
+    :::image type="content" source="media/activator-tutorial/activator-window.png" alt-text="Average transit time chart for activator tutorial.":::
 
 1. In the **Condition** step, detect when the average transit time becomes greater than 25. Set the rule to alert you every time the condition is met. After you complete this step, the Condition chart updates, and the rule looks like this.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-conditions.png" alt-text="Screenshot showing average transit time rule detection chart for activator tutorial.":::
+    :::image type="content" source="media/activator-tutorial/activator-conditions.png" alt-text="Screenshot showing average transit time rule detection chart for activator tutorial.":::
 
 1. Specify an action for your rule. You can choose to send a Teams message or Email. Customize your action according to how you would like it to appear.
 
-1. Test your rule by selecting the **Test action** button. Make sure you get an alert. If using email, it might take a minute or two to arrive.
+1. Test your rule by selecting the **Send me a test action** button. Make sure you get an alert. If using email, it might take a minute or two to arrive.
 
 1. Start your rule by selecting **Save and start**.
 
@@ -130,8 +134,6 @@ You created your first object and rule. As next steps, you might try setting up 
 ## Clean up resources
 
 Once you finish with the rules you created as part of the tutorial, be sure to stop them. If you don't stop the rules, you will continue to receive the rule notifications. You also might incur charges for background processing. Select each rule in turn and select the **Stop** button from the ribbon.
-
-:::image type="content" source="media/activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the rule stop button for activator tutorial.":::
 
 ## Related content
 
