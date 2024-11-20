@@ -6,6 +6,8 @@ metadata:
   ms.author: wiassaf
   ms.reviewer: yoleichen
   ms.topic: faq
+  ms.custom:
+    - ignite-2024
   ms.date: 10/17/2024
 title: "Frequently asked questions for Copilot in SQL database in Microsoft Fabric (preview)"
 summary: |

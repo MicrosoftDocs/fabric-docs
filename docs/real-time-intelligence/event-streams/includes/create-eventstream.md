@@ -2,8 +2,10 @@
 title: Launch creation of eventstream
 description: This include files has steps for launching the new Eventstream dialog box.
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -17,4 +19,3 @@ ms.date: 11/18/2024
 1. In the **New Eventstream** window, enter a **name** for the eventstream, and then select **Create**.
 
     :::image type="content" source="./media/select-event-streams-item-type/new-event-stream.png" alt-text="Screenshot that shows the New Eventstream window.":::
-

@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -94,7 +96,7 @@ If you have an Azure event hub created with streaming data, follow these steps t
 1. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
    > [!NOTE]
-   > The event streams feature supports the ingestion of events from Azure Event Hubs in JSON, Avro, and CSV (with header) data formats.
+   > The eventstreams feature supports the ingestion of events from Azure Event Hubs in JSON, Avro, and CSV (with header) data formats.
 
 1. Select a **Consumer group** that can read the event data from your Azure event hub and then select **Add**.
 

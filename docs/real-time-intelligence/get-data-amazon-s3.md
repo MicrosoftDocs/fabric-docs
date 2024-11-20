@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: Get data in a KQL Database
 ---

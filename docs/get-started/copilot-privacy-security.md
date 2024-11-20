@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023-fabric
   - build-2024
   - copilot-learning-hub
+  - ignite-2024
 ms.topic: conceptual
 ms.date: 10/17/2024
 no-loc: [Copilot]
