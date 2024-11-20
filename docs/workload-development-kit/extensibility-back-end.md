@@ -149,7 +149,7 @@ To set up the workload sample project on your local machine:
 
 1. Set up the workload configuration.
 
-   1. Copy *workload-dev-mode.json* from *src/Config* to *C:\*.
+   1. Copy *workload-dev-mode.json* from *src/Config* to *C:*.
    1. In the *workload-dev-mode.json* file, update the following fields to match your configuration:
       * **WorkspaceGuid**: Your workspace ID. You can find this value in the browser URL when you select a workspace in Fabric. For example, `https://app.powerbi.com/groups/<WorkspaceID>/`.
       * **ManifestPackageFilePath**: The location of the manifest package. When you build the solution, it saves the manifest package in *src\bin\Debug*. More information about the manifest package is provided later in the article.
@@ -168,7 +168,7 @@ To set up the workload sample project on your local machine:
 
    To generate a manifest package file, build *Fabric_Extension_BE_Boilerplate*. The build is a three-step process that generates the manifest package file. It runs these steps:
 
-   1. Triggers *ManifestValidator.ps1* on *WorkloadManifest.xml* in *Packages\manifest\* and trigger *ItemManifestValidator.ps1* on all items XMLs (for example, *Item1.xml*) in *Packages\manifest\*. If validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\*.
+   1. Triggers *ManifestValidator.ps1* on *WorkloadManifest.xml* in *Packages\manifest\/* and trigger *ItemManifestValidator.ps1* on all items XMLs (for example, *Item1.xml*) in *Packages\manifest\/*. If validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\/*.
    1. If an error file exists, the build fails with the error *Validation errors with either manifests or default values*. To see the error file in Visual Studio, double-click the error in the validation results.
    1. After successful validation, package the *WorkloadManifest.xml* and *Item1.xml* files into *ManifestPackage.1.0.0.nupkg*. The resulting package is in *src\bin\Debug*.
 
