@@ -55,9 +55,8 @@ If you don't have your own eventstream, Microsoft supplies a sample eventstream 
 
 #### Start from the activator item
 
-1. Open your activator item. One way to open your activator is to select **Real-Time** from the nav pane and choose an eventstream from the list. 
-2. Select *Get data* from the Home tab of the ribbon
-3. Use the *Connect data source* dialog to search or browse to your eventstream. 
+1. Open your activator item. One way to open your activator is to select **Real-Time** from the nav pane and choose an eventstream from the list.
+2. Select the **Set alert** tile.
 
 Once you connect your eventstream item to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], the next step is to assign your data to some objects. To assign your data, follow the steps described in the [Assign data to objects in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-assign-data-objects.md) article.
 
