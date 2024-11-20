@@ -78,7 +78,7 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
 1. Lastly, scroll down to **Action**. Our rule sends a Teams message if the condition is met.
 
-We created an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature has become greater than 20 degrees Celsius. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
+We created an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature is now greater than 20 degrees Celsius. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
 
 Look at the other rules to learn how they work.
 
@@ -133,7 +133,7 @@ You created your first object and rule. As next steps, you might try setting up 
 
 ## Clean up resources
 
-Once you finish with the rules you created as part of the tutorial, be sure to stop them. If you don't stop the rules, you will continue to receive the rule notifications. You also might incur charges for background processing. Select each rule in turn and select the **Stop** button from the ribbon.
+Once you finish with the rules you created as part of the tutorial, be sure to stop them. If you don't stop the rules, you continue to receive the rule notifications. You also might incur charges for background processing. Select each rule in turn and select the **Stop** button from the ribbon.
 
 ## Related content
 
