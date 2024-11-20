@@ -20,8 +20,8 @@ Make sure that you review the [workload cloud setup tutorial](workload-cloud-set
 1. In the [Azure portal](https://ms.portal.azure.com/#home), create a [web app resource](https://ms.portal.azure.com/#create/Microsoft.WebSite).
 1. Enter or select the relevant information:
 
-   - For **Publish**, select *Code*.
-   - For **Runtime stack**, select *.NET 7 (STS)* and *Windows*.
+   - For **Publish**, select **Code**.
+   - For **Runtime stack**, select **.NET 7 (STS)** and **Windows**.
 
 For general instructions, see [Get started with Azure App Service](/azure/app-service/getting-started?pivots=stack-net).
 
@@ -35,7 +35,7 @@ For general instructions, see [Get started with Azure App Service](/azure/app-se
 1. Right-click the boilerplate project and select **Publish**.
 1. For the target, select **Azure**.
 1. Sign in with a user who has access to the Azure web app you created.
-1. Use the UI to locate the relevant subscription and resource group, then follow the instructions to publish.
+1. Use the UI to locate the relevant subscription and resource group, and then follow the instructions to publish.
 
 ### Update CORS
 
@@ -47,8 +47,8 @@ For general instructions, see [Get started with Azure App Service](/azure/app-se
 1. In the [Azure portal](https://ms.portal.azure.com/#home), create a [web app resource](https://ms.portal.azure.com/#create/Microsoft.WebSite).
 1. Enter or select the relevant information:
 
-   - For **Publish**, select *Code*.
-   - For **Runtime stack**, select *Node 18 LTS* and *Windows*.
+   - For **Publish**, select **Code**.
+   - For **Runtime stack**, select **Node 18 LTS** and **Windows**.
 
 For general instructions, see [Quickstart for Node.js in Azure App Service](/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-azure-portal).
 
