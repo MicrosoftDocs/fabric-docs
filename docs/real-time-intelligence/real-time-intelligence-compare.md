@@ -73,7 +73,7 @@ This article outlines key considerations for determining the most suitable imple
 
 | Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| **Driving business actions from insights** | Requires Azure Logic Apps or Power Automate or Azure Functions, Azure Monitor alerts. | Natively available in Fabric using Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items with out-of-the-box integration with Power BI semantic models, eventstreams, and KQL queries. |
+| **Driving business actions from insights** | Requires Azure Logic Apps or Power Automate or Azure Functions, Azure Monitor alerts. | Natively available in Fabric using Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items with out-of-the-box integration with Power BI semantic models, Eventstream, and KQL queries. |
 | **Reactive system events** | Not available | Built-in events published through Real-Time hub; Use [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items to automate data processes, such as pipelines and notebooks. |
 | **Real-time Semantic Models** | Not available or code-first solution using Logic Apps or Azure Functions | Not available |
 | **Built-in AI** | Not available | Not available |
