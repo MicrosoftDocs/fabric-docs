@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 11/14/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ---
 # Mirroring Fabric SQL database in Microsoft Fabric (preview)
 

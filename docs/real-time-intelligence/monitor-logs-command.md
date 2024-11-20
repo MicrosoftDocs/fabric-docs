@@ -4,8 +4,9 @@ description: View and analyze the log of commands run on an Eventhouse KQL datab
 author: shsagir
 ms.author: shsagir
 ms.topic: reference
+ms.custom:
+  - ignite-2024
 ms.date: 11/06/2024
-
 ---
 
 # Command logs

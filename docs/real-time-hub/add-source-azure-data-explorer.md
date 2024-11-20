@@ -1,9 +1,11 @@
 ---
 title: Create database shortcut for Azure Data Explorer database
-description: This article describes how to create a database shortcut for an Azure Data Explorer database. 
+description: This article describes how to create a database shortcut for an Azure Data Explorer database.
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 

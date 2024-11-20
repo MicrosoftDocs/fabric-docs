@@ -1,17 +1,19 @@
 ---
-title: Create default and derived Fabric eventstreams
-description: Learn how to create default and derived Microsoft Fabric eventstreams.
+title: Create default and derived Fabric event streams
+description: Learn how to create default and derived Microsoft Fabric event streams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
 # Create default and derived eventstreams
 
-This article shows you how to create default and derived Microsoft Fabric eventstreams. A data stream is a dynamic and continuous flow of data that offers a range of capabilities for immediate action and analysis. With a data stream, you can set up real-time alerting, feed into different types of data stores, and enable a publish/subscribe model that multiple customers can subscribe to.
+This article shows you how to create default and derived Microsoft Fabric event streams. A data stream is a dynamic and continuous flow of data that offers a range of capabilities for immediate action and analysis. With a data stream, you can set up real-time alerting, feed into different types of data stores, and enable a publish/subscribe model that multiple customers can subscribe to.
 
 The integration of the Real-Time hub feature within Fabric event streams further enhances these capabilities. This integration lets you create and manage multiple data streams with different processing operations, which can then be displayed in the Real-Time hub.
 

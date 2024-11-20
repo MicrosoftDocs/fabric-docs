@@ -1,19 +1,21 @@
 ---
 title: Microsoft Fabric event streams overview
-description: Learn about event streams and its capability of capturing, transforming, and routing real-time events to various destinations in Microsoft Fabric.
+description: Learn about eventstreams and its capability of capturing, transforming, and routing real-time events to various destinations in Microsoft Fabric.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: overview
+ms.custom:
+  - ignite-2024
 ms.date: 10/26/2024
-ms.search.form: Event Streams Overview
+ms.search.form: Eventstreams Overview
 ---
 
 # Microsoft Fabric event streams - overview
-The event streams feature in the Microsoft Fabric **Real-Time Intelligence** experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the **Eventstream** item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. Additionally, with Apache Kafka endpoints available on the Eventstream item, you can send or consume real-time events using the Kafka protocol.
+The eventstreams feature in the Microsoft Fabric **Real-Time Intelligence** experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the **Eventstream** item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. Additionally, with Apache Kafka endpoints available on the Eventstream item, you can send or consume real-time events using the Kafka protocol.
 
 ## Bring events into Fabric
-The event streams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an eventstream. 
+The eventstreams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an eventstream. 
 
 
 

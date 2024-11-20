@@ -4,6 +4,8 @@ description: This article describes how to add an Azure SQL Database Change Data
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -71,7 +73,7 @@ You can get events from an Azure SQL Database CDC into Real-Time hub in one of t
     1. For **Authentication kind**, select **Basic**.
     
         > [!NOTE]
-        > Currently, Fabric event streams supports only **Basic** authentication.
+        > Currently, Fabric eventstreams supports only **Basic** authentication.
     1. Enter **Username** and **Password** for the database.
     1. Select **Connect**.
 

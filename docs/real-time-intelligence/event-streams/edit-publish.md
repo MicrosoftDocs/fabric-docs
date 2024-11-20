@@ -1,10 +1,12 @@
 ---
-title: Edit and publish Microsoft Fabric eventstreams
+title: Edit and publish Microsoft Fabric event streams
 description: Learn how to edit and publish an eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 10/26/2024
 ms.search.form: Source and Destination
 ---

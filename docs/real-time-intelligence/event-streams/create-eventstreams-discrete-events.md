@@ -1,17 +1,19 @@
 ---
 title: Create eventstreams for discrete events
-description: Learn how to create Fabric eventstreams for discrete events.
+description: Learn how to create Fabric event streams for discrete events.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
 # Create eventstreams for discrete events (preview)
 
-This article shows you how to create Microsoft Fabric eventstreams for discrete events.
+This article shows you how to create Microsoft Fabric event streams for discrete events.
 
 When you develop applications for real-time analytics, you commonly encounter two types of events: discrete events and continuous events or streams. Microsoft Fabric event streams can ingest and process both discrete and continuous events.
 

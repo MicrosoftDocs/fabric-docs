@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -13,7 +15,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add a lakehouse destination to an eventstream
 
-This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric eventstreams. For optimized streaming performance and real-time querying, consider streaming data to an Eventhouse with [add Eventhouse destination to an eventstream](add-destination-kql-database.md) and then enable [Eventhouse OneLake Availability](../event-house-onelake-availability.md).
+This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric event streams. For optimized streaming performance and real-time querying, consider streaming data to an Eventhouse with [add Eventhouse destination to an eventstream](add-destination-kql-database.md) and then enable [Eventhouse OneLake Availability](../event-house-onelake-availability.md).
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 

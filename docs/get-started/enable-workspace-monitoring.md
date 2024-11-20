@@ -4,8 +4,9 @@ description: Enable workspace monitoring in Microsoft Fabric and create an Event
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 09/02/2024
-
 #customer intent: As a workspace admin I want to enable the workspace monitoring feature in my workspace
 ---
 
