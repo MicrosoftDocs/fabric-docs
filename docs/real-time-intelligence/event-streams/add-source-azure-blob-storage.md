@@ -48,11 +48,11 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
   This status indicates that the events are linked to Fabric events in the Real-Time hub and awaiting further action. Actions include creating alerts with Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] that execute Fabric job items like Pipeline or Notebook in the **Fabric events** tab in Real-Time hub.
 
-  [![A screenshot showing unstreamed Azure Blob Storage events with the button to Stream events.](media/add-source-azure-blob-storage/unstreamed.png)](media/add-source-azure-blob-storage/unstreamed.png#lightbox)
+  :::image type="content" border="true" source="media/add-source-azure-blob-storage/unstreamed.png" lightbox="media/add-source-azure-blob-storage/unstreamed.png" alt-text="A screenshot showing unstreamed Azure Blob Storage events with the button to Stream events.":::
 
 - **Streamed events.** These events are converted to continuous events, enabling real-time transformation and routing to various destinations in Fabric for further analysis. In an eventstream, selecting the **Stream events** button on an unstreamed Azure Blob Storage source converts the events into continuous events. The eventstream is then assigned a default stream, letting you add operations and route it to other destinations in Fabric.
 
-  ![A screenshot showing streamed Azure Blob Storage events in an eventstream.](media/add-source-azure-blob-storage/streamed.png)
+  :::image type="content" border="true" source="media/add-source-azure-blob-storage/streamed.png" alt-text="A screenshot showing streamed Azure Blob Storage events in an eventstream.":::
 
 ## Prerequisites
 
@@ -94,27 +94,27 @@ After you link Azure Blob Storage events to Fabric events in Real-Time hub, you 
 
 1. After you add an Azure Blob Storage event source in **Edit mode**, select **Stream events** in the source to convert the Blob Storage events into a data stream.
 
-   ![A screenshot of the unstreamed event source in Edit mode with Stream events highlighted.](media/add-source-azure-blob-storage/unstreamed.png)
+   :::image type="content" border="true" source="media/add-source-azure-blob-storage/unstreamed.png" alt-text="A screenshot of the unstreamed event source in Edit mode with Stream events highlighted.":::
 
 1. Respond **Yes** to the popup that asks if you want to stream the Blob Storage events into the eventstream.
 
-   ![A screenshot of the confirmation popup for streaming events.](media/add-source-azure-blob-storage/popup.png)
+   :::image type="content" border="true" source="media/add-source-azure-blob-storage/popup.png" alt-text="A screenshot of the confirmation popup for streaming events.":::
 
 1. In the editor, a default stream is created within the eventstream node, indicating that the Blob Storage events are converted into a stream as the default stream.
 
-   ![A screenshot of the eventstream in Edit Mode showing the default stream.](media/add-source-azure-blob-storage/default-stream.png)
+   :::image type="content" border="true" source="media/add-source-azure-blob-storage/default-stream.png" alt-text="A screenshot of the eventstream in Edit Mode showing the default stream.":::
 
 1. Then you need to publish the eventstream and make sure there's at least one event being triggered from your Azure Blob Storage in order to proceed with transformation or routing.
 
-   ![A screenshot of the published eventstream in Live View.](media/add-source-azure-blob-storage/published.png)
+   :::image type="content" border="true" source="media/add-source-azure-blob-storage/published.png" alt-text="A screenshot of the published eventstream in Live View.":::
 
 1. Once events are flowing into the eventstream, enter **Edit mode** and add operations to transform the streamed Blob Storage events. The following example shows that the Blob Storage events are aggregated and routed to a KQL database.
 
-   ![A screenshot of the transformed eventstream in Edit Mode.](media/add-source-azure-blob-storage/transform.png)
+   :::image type="content" border="true" source="media/add-source-azure-blob-storage/transform.png" alt-text="A screenshot of the transformed eventstream in Edit Mode.":::
 
 1. Once the changes are published, the streamed Azure Blob Storage events are transformed and routed to the designated destination in Fabric.
 
-   ![A screenshot of the transformed eventstream in Live Mode showing the default stream.](media/add-source-azure-blob-storage/live.png)
+   :::image type="content" border="true" source="media/add-source-azure-blob-storage/live.png" alt-text="A screenshot of the transformed eventstream in Live Mode showing the default stream.":::
 
    You can also view the data stream on the **My data streams** tab of **Real-Time hub** for verification.
 

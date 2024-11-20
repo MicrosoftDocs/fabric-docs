@@ -34,18 +34,18 @@ Follow these steps to add a sample data source:
 
 1. To add sample data source, on the get-started page, select **Use sample data**.
 
-   ![A screenshot of selecting Use sample data.](media\add-source-sample-data-enhanced\select-sample-data.png)
+   :::image type="content" border="true" source="media\add-source-sample-data-enhanced\select-sample-data.png" alt-text="A screenshot of selecting Use sample data.":::
 
    Or, if you already have a published eventstream and want to add sample data as a source, switch to **Edit** mode. Then select **Add source** in the ribbon, and select **Sample data**.
 
-   ![A screenshot of selecting Sample data to add to an existing eventstream.](media\add-source-sample-data-enhanced\add-sample-data.png)
+   :::image type="content" border="true" source="media\add-source-sample-data-enhanced\add-sample-data.png" alt-text="A screenshot of selecting Sample data to add to an existing eventstream.":::
 1. On the **TridentStreaming_SampleData** screen, enter a **Source name**, select the source data you want under **Sample data**, and then select **Add**.
 
    - **Bicycles**: Sample bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighborhood, and Latitude.
    - **Yellow Taxi**: Sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, and total fee.
    - **Stock Market**: Sample data of a stock exchange with preset schema columns such as time, symbol, price, and volume.
 
-   ![A screenshot showing the choices on the Sample data screen.](media\add-source-sample-data-enhanced\sample-sources.png)
+   :::image type="content" border="true" source="media\add-source-sample-data-enhanced\sample-sources.png" alt-text="A screenshot showing the choices on the Sample data screen.":::
 1. After you create the sample data source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added sample data, select **Publish**.
 
     :::image type="content" source="media\add-source-sample-data-enhanced\edit-mode.png" alt-text="A screenshot showing the eventstream in Edit mode, with the Publish button highlighted.":::
