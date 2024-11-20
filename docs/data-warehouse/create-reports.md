@@ -11,6 +11,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
+  - ignite-2024
 ms.search.form: Reporting # This article's title should not change. If so, contact engineering.
 ---
 # Create reports on data warehousing in Microsoft Fabric

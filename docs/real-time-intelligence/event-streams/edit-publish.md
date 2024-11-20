@@ -1,10 +1,12 @@
 ---
-title: Edit and publish Microsoft Fabric eventstreams
+title: Edit and publish Microsoft Fabric event streams
 description: Learn how to edit and publish an eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 10/26/2024
 ms.search.form: Source and Destination
 ---
@@ -41,7 +43,7 @@ Here's an overview of everything you find in the two different modes:
 
 1. On the next screen, select **Add external source** to stream your data to Fabric event streams.
 
-   ![A screenshot of selecting Add external source.](media/edit-publish/build.png)
+   :::image type="content" border="true" source="media/edit-publish/build.png" alt-text="A screenshot of selecting Add external source.":::
 1. Select **Connect** on the **Azure Event Hubs** tile.
 
    :::image type="content" source="media/edit-publish/select-azure-event-hubs.png" alt-text="Screenshot that shows the Select a data source page with Azure Event Hubs selected."::: 
@@ -59,10 +61,10 @@ Here's an overview of everything you find in the two different modes:
     :::image type="content" source="media/edit-publish/configure-azure-event-hubs-resource.png" alt-text="Screenshot that shows the Connect page with the additional configuration for the event hub." lightbox="media/edit-publish/configure-azure-event-hubs-resource.png":::         
 1. On the **Review + connect** page, review settings, and select **Add**. 
 
-   ![A screenshot of the Summary for a new eventstream.](media/edit-publish/summary.png)
+   :::image type="content" border="true" source="media/edit-publish/summary.png" alt-text="A screenshot of the Summary for a new eventstream.":::
 1. You're now in the eventstream **Edit mode**. Select **Refresh** to preview your Azure Event Hubs data.
 
-   ![A screenshot of selecting Refresh to preview the Event Hub data.](media/edit-publish/refresh.png)
+   :::image type="content" border="true" source="media/edit-publish/refresh.png" alt-text="A screenshot of selecting Refresh to preview the Event Hub data.":::
 
 ## Publish your eventstream
 
@@ -72,19 +74,19 @@ The following steps show how you can add event processing operations and a desti
 
 1. You can expand the dropdown menu on the editor and choose a **Destination** or **Operation** to add to your eventstream.
 
-   ![A screenshot of choosing a destination or operation.](media/edit-publish/destination.png)
+   :::image type="content" border="true" source="media/edit-publish/destination.png" alt-text="A screenshot of choosing a destination or operation.":::
 
 1. The **Publish** button is disabled if there are any authoring errors. For example, you must add a destination for a **Filter** operation before you can publish it.
 
-   ![A screenshot showing an Authoring error that prevents publishing.](media/edit-publish/error.png)
+   :::image type="content" border="true" source="media/edit-publish/error.png" alt-text="A screenshot showing an Authoring error that prevents publishing.":::
 
 1. After you configure a Lakehouse destination, select **Publish** to commit your changes.
 
-   ![A screenshot of publishing the eventstream.](media/edit-publish/publish.png)
+   :::image type="content" border="true" source="media/edit-publish/publish.png" alt-text="A screenshot of publishing the eventstream.":::
 
    This action switches your eventstream from **Edit** mode to **Live** view, initiating real-time data processing.
 
-   ![A screenshot of seeing real-time data from the new eventstream.](media/edit-publish/preview.png)
+   :::image type="content" border="true" source="media/edit-publish/preview.png" alt-text="A screenshot of seeing real-time data from the new eventstream.":::
 
 ## Related content
 

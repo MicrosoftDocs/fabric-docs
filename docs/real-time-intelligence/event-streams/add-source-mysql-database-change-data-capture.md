@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -74,7 +76,7 @@ You must enable binary logging for MySQL replication. The binary logs record tra
 
    - For [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds), set the number of seconds the service waits before the binary log file is purged. Set the value to match the needs of your environment, for example *86400*.
 
-   ![A screenshot of the binlog settings for replication under Server parameters.](media/add-source-mysql-database-change-data-capture/binlog.png)
+   :::image type="content" border="true" source="media/add-source-mysql-database-change-data-capture/binlog.png" alt-text="A screenshot of the binlog settings for replication under Server parameters.":::
 
 ## Add Azure MySQL DB (CDC) as a source
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]

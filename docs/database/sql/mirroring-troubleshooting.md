@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 10/15/2024
 ms.topic: troubleshooting
+ms.custom:
+  - ignite-2024
 ---
 # Troubleshoot mirroring from Fabric SQL database (preview)
 

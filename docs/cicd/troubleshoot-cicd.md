@@ -211,8 +211,7 @@ If the following conditions aren't met, you can't see the deployment pipelines b
 
 Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
 
-> [!div class="mx-imgBorder"]
-> ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/production-tag.png" alt-text="A screenshot of the production tag in a production pipeline workspace.":::
 
 ### Lost connections after deployment
 
@@ -446,7 +445,7 @@ If your deployment was previously successful, and is suddenly failing with broke
 
 Your deployment rules are missing values. This might have happened if your semantic model changed.
 
-![A screenshot of the invalid rules error displayed when a deployment fails due to broken links.](media/troubleshoot-cicd/broken-rule.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/broken-rule.png" alt-text="A screenshot of the invalid rules error displayed when a deployment fails due to broken links.":::
 
 When a previously successful deployment fails due to broken links, a warning is displayed. You can select **Configure rules** to navigate to the deployment rules pane, where the failed semantic model is marked. When you select the semantic model, the broken rules are marked.
 
@@ -462,8 +461,7 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 **Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
 
->[!div class="mx-imgBorder"]
->![A screenshot showing deployment pipelines deployment rules greyed out.](media/troubleshoot-cicd/rules-greyed-out.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/rules-greyed-out.png" alt-text="A screenshot showing deployment pipelines deployment rules greyed out.":::
 
 If one of the rule options is greyed out, it could be because of the following reasons:
 

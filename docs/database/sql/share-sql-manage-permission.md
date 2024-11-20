@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: sukkaur, jaszymas # Microsoft alias
 ms.date: 10/11/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ---
 # Share your SQL database and manage permissions
 
