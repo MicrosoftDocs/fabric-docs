@@ -122,7 +122,7 @@ If you want to replicate selective tables instead of all the tables in the speci
 }
 ```
 > [!NOTE]
-> For Azure SQL Managed Instance, you will need to [enable system assigned managed identity](/fabric/database/mirrored-database/azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance) and grant it **Read,Write** permission to the mirrored database item before starting mirroring.
+> For Azure SQL Managed Instance, you will need to [enable system assigned managed identity](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance) and grant it **Read,Write** permission to the mirrored database item before starting mirroring.
 
 ### JSON definition example of Azure Cosmos DB
 
@@ -447,7 +447,7 @@ The .NET SDK that supports Fabric mirroring is available at [Microsoft Fabric .N
 
 ## Known limitations
 
-Currently Service Principal/Managed Identity authentication is not supported if your [tenant home region](../../admin/find-fabric-home-region) is in North Central US or East US. You can use it in other regions.
+Currently Service Principal/Managed Identity authentication is not supported if your [tenant home region](../../admin/find-fabric-home-region.md) is in North Central US or East US. You can use it in other regions.
 
 ## Related content
 
