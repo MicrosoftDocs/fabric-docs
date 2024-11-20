@@ -25,6 +25,7 @@ The backend stores both data and metadata. It uses Create, Read, Update, and Del
 
 ## Azure Relay and DevGateway
 
+
 Azure Relay enables communication between the local development environment and the Fabric backend in developer mode. In developer mode, the workload operates on the developer's machine.
 
 The DevGateway utility has two roles:
@@ -144,14 +145,13 @@ To set up the workload sample project on your local machine:
 1. Clone the repository: Run `git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample.git`.
 1. In Visual Studio 2022, open the solution.
 1. Set up an app registration by following instructions in the [authentication tutorial](authentication-tutorial.md). Ensure that both your frontend and backend projects have the necessary setup that's described in the article. Microsoft Entra is used for secure authentication to help ensure that all interactions within the architecture are authorized and secure.
-  
-1. Update the Microsoft OneLake DFS base URL. Depending on your Fabric environment, you might be able to update the value for `OneLakeDFSBaseURL` in the *src\Constants* folder. The default is `onelake.dfs.fabric.microsoft.com`, but you can update the URL to reflect your environment. For more information about DFS paths, the [OneLake documentation](../onelake/onelake-access-api.md).
+  1. Update the Microsoft OneLake DFS base URL. Depending on your Fabric environment, you might be able to update the value for `OneLakeDFSBaseURL` in the *src\Constants* folder. The default is `onelake.dfs.fabric.microsoft.com`, but you can update the URL to reflect your environment. For more information about DFS paths, see the [OneLake documentation](../onelake/onelake-access-api.md).
 
 1. Set up the workload configuration.
 
    1. Copy *workload-dev-mode.json* from *src/Config* to *C:\*.
    1. In the *workload-dev-mode.json* file, update the following fields to match your configuration:
-      * **CapacityGuid**: Your capacity ID. You can find this value in the Microsoft Fabric admin portal under **Capacity Settings**.
+      * **WorkspaceGuid**: Your workspace ID. You can find this value in the browser URL when you select a workspace in Fabric. For example, `https://app.powerbi.com/groups/<WorkspaceID>/`.
       * **ManifestPackageFilePath**: The location of the manifest package. When you build the solution, it saves the manifest package in *src\bin\Debug*. More information about the manifest package is provided later in the article.
       * **WorkloadEndpointURL**: The workload endpoint URL.
    1. In the *Packages/manifest/WorkloadManifest.xml* file, update the following fields to match your configuration:
@@ -177,7 +177,7 @@ To set up the workload sample project on your local machine:
 1. *Program.cs* is the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host.
 1. Build the project to ensure that the project can access the required dependencies for compilation and execution.
 1. Download the DevGateway from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=105993).
-1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application that's located in the *DevGateway* folder. Sign in with a user that has *capacity admin privileges* to the capacity you defined in *workload-dev-mode.json* (`CapacityGuid`). When the workload is initialized, an authentication prompt appears.
+1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application that's located in the *DevGateway* folder. Sign in with a user that has *capacity admin privileges* to the capacity linked to the workspace specified in the WorkspaceGuid field in *workload-dev-mode.json*.
 
    :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of the Microsoft sign in page.":::
 

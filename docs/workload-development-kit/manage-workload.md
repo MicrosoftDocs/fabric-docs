@@ -22,7 +22,7 @@ To deploy a workload, you must have the following prerequisites:
 * The [NuGet package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [QuickStart: Run a workload sample](quickstart-sample.md).
 
 > [!NOTE]
-> When DevGateway is connected to the Fabric backend, the developer workload takes precedence over the workload that's activated in the tenant. If you try to create an item in a workspace that's associated with a capacity that is the same capacity registered in the DevGateway configuration, the Fabric backend calls your local workload instead of the activated workload.
+> When DevGateway is connected to the Fabric backend, the developer workload takes precedence over the workload that's activated in the tenant. If you try to create an item in a workspace that's registered in the DevGateway configuration,, the Fabric backend calls your local workload instead of the activated workload.
 
 ## Upload a workload
 
