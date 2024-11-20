@@ -213,7 +213,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
 * If your organization has an Entra Conditional access policy for workload identities that includes all service principals, then trusted workspace access won't work. In such instances, you need to exclude specific Fabric workspace identities from the Conditional access policy for workload identities.
 * Trusted workspace access is not supported if a service principal is used to create shortcut.
-* Trusted workspace access isn't compatible with cross tenant requests.
+* Trusted workspace access isn't compatible with cross-tenant requests.
 
 ### Troubleshooting issues with trusted workspace access
 
