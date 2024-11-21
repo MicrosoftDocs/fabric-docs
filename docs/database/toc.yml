@@ -123,8 +123,10 @@ items:
       href: sql/performance-dashboard.md
     - name: Capacity usage reporting
       href: ./sql/usage-reporting.md
-  - name: Secure and share
+  - name: Secure
     items:
+    - name: Overview 
+      href: sql/security-overview.md
     - name: Authentication in SQL database
       href: sql/authentication.md
     - name: Access control in SQL database
@@ -133,6 +135,8 @@ items:
       href: sql/share-sql-manage-permission.md
     - name: Configure granular access control for a SQL database
       href: sql/configure-sql-access-controls.md     
+    - name: Protect sensitive data with Microsoft Purview protection policies
+      href: sql/protect-databases-with-protection-policies.md  
   - name: Troubleshoot
     items: 
     - name: Limitations
