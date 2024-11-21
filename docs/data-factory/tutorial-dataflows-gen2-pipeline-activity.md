@@ -26,8 +26,6 @@ To start, you first need to create a lakehouse. A lakehouse is a data lake that 
 
 1. Switch to the **Data Engineering** experience.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/experience-switcher-data-engineering.png" alt-text="Screenshot of the Data Engineering experience.":::
-
 1. Go to your Fabric enabled workspace.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace emphasized.":::
@@ -47,8 +45,6 @@ A dataflow is a reusable data transformation that can be used in a pipeline. In 
 
 1. Switch to the **Data Factory** experience.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/select-data-factory.png" alt-text="Screenshot of the Data Factory experience.":::
-
 1. Go to your Fabric enabled workspace.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace.":::
@@ -65,7 +61,7 @@ A dataflow is a reusable data transformation that can be used in a pipeline. In 
 
     1. From **Choose data source**, search for **OData**, and then select the OData connector.
 
-       :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/get-odata.png" alt-text="Screenshot of the Get data menu with OData emphasized":::
+       :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/get-odata.png" alt-text="Screenshot of the Get data menu with OData emphasized.":::
 
     1. Enter the **URL** of the OData source. For this tutorial, use the [OData sample service](https://services.odata.org/V4/Northwind/Northwind.svc/).
     1. Select **Next**.

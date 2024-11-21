@@ -1,13 +1,13 @@
 ---
 title: Add Apache Kafka source to an eventstream
-description: Learn how to add Apache Kafka source to an eventstream.
+description: Learn how to add Apache Kafka source to an eventstream. This feature is currently in preview.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 09/27/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
-ms.custom: references_regions
+ms.custom: references_regions, ignite-2024
 ---
 
 # Add Apache Kafka source to an eventstream (preview)
@@ -15,13 +15,13 @@ This article shows you how to add Apache Kafka source to an eventstream.
 
 Apache Kafka is an open-source, distributed platform for building scalable, real-time data systems. By integrating Apache Kafka as a source within your eventstream, you can seamlessly bring real-time events from your Apache Kafka and process them before routing to multiple destinations within Fabric.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites 
 
-- Access to the Fabric **premium workspace** with **Contributor** or above permissions.
+- Access to the Fabric workspace with Contributor or above permissions.
 - An Apache Kafka cluster running. 
 - Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 
@@ -30,18 +30,19 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
 
 ## Add Apache Kafka as a source 
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
+   :::image type="content" border="true" source="media/external-sources/new-eventstream.png" alt-text="A screenshot of creating a new eventstream.":::
 
 2. On the next screen, select **Add external source**.
 
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
+   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
 
 ## Configure and connect to Apache Kafka
 
 [!INCLUDE [apache-kafka-connector](./includes/apache-kafka-source-connector.md)]
 
+## View updated eventstream
 You can see the Apache Kafka source added to your eventstream in **Edit mode**.  
 
 :::image type="content" source="./media/add-source-apache-kafka/edit-view.png" alt-text="Screenshot that shows Apache Kafka source in Edit view." lightbox="./media/add-source-apache-kafka/edit-view.png":::

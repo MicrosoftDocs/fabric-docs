@@ -5,6 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
+  - ignite-2024
 ms.date: 09/05/2024
 ---
 
@@ -77,13 +78,17 @@ This guide provides code samples to help you get started in your own notebooks t
 
 1. Once the data source administrator of the SQL server has approved the new private endpoint connection request, you should be able to use the newly created Managed Private Endpoint.
 
-### Connect to the Data Source from Notebooks
+### Connect to the data source from notebooks
 
-1. In the Microsoft Fabric workspace, use the experience switcher on the left-hand side of your home page to switch to the Synapse Data Engineering experience.
+1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
+
+1. Use the experience switcher on the left-hand side of your home page to switch the **Develop** experience.
 
     :::image type="content" source="./media/security-managed-private-endpoints-create/enter-data-engineering-experience.png" alt-text="Screenshot showing how to get into the data engineering experience in Fabric.":::
 
-1. Select **Create** and create a new notebook.
+1. Navigate to your desired workspace or create a new one if needed.
+
+1. To create a notebook, select **New item** from the workspace and choose **Notebook**.
 
 1. Now, in the notebook, by specifying the name of the SQL database and its connection properties, you can connect through the managed private endpoint connection that's been set up to read the tables in the database and write them to your lakehouse in Microsoft Fabric.
 
@@ -133,7 +138,7 @@ Ensure resource ID format is followed as shown in the following table.
 | Azure Databricks | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Databricks/workspaces/{workspace-name}|
 | Azure Database for MariaDB | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforMariaDB/servers/{server-name}|
 | Azure Database for MySQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforMySQL/servers/{server-name}|
-| Azure Database for PostgreSQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforPostgreSQL/servers/{server-name}|
+| Azure Database for PostgreSQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{server-name}|
 | Azure Cosmos DB for MongoDB | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{account-name}|
 | Azure Cosmos DB for NoSQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{account-name}
 | Azure Monitor Private Link Scopes | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Insights/privateLinkScopes/{scope-name}|

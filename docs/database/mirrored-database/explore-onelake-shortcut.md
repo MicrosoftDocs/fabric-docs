@@ -1,10 +1,10 @@
 ---
-title: "Explore data in your mirrored database with notebooks"
+title: "Explore Data in Your Mirrored Database With Notebooks"
 description: Learn how to access your mirrored database from Lakehouse and Spark queries in Notebooks.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, anithaa
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.topic: how-to
 ---
 # Explore data in your mirrored database with notebooks
@@ -16,10 +16,11 @@ Notebooks are a powerful code item for you to develop Apache Spark jobs and mach
 ## Prerequisites
 
 - Complete the tutorial to create a mirrored database from your source database.
-    - [Tutorial: Create a mirrored database from Azure Cosmos DB](azure-cosmos-db-tutorial.md)
-    - [Tutorial: Create a mirrored database from Azure Databricks](azure-databricks-tutorial.md)
-    - [Tutorial: Create a mirrored database from Azure SQL Database](azure-sql-database-tutorial.md)
-    - [Tutorial: Create a mirrored database from Snowflake](snowflake-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB (Preview)](azure-cosmos-db-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](snowflake-tutorial.md)
 
 
 ## Create a shortcut
@@ -51,5 +52,5 @@ You first need to create a shortcut from your mirrored tables into the Lakehouse
 ## Related content
 
 - [Explore data in your mirrored database using Microsoft Fabric](explore.md)
-- [What are shortcuts in lakehouse?](../../data-engineering/lakehouse-shortcuts.md)
+- [Create shortcuts in lakehouse](../../data-engineering/lakehouse-shortcuts.md)
 - [Explore the data in your lakehouse with a notebook](../../data-engineering/lakehouse-notebook-explore.md)

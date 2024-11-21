@@ -6,6 +6,7 @@ ms.author: kesharab
 ms.reviewer: ''
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ms.topic: how-to
 ms.date: 08/14/2024
 LocalizationGroup: Premium
@@ -135,4 +136,4 @@ Large-storage format semantic models shouldn't be moved from the region where th
 
 * [Multi-Geo support for Power BI Embedded](/power-bi/developer/embedded/embedded-multi-geo)
 
-* [Moving data around](/portal-workspaces#moving-data-around)
+* [Moving data around](portal-workspaces.md#moving-data-around)

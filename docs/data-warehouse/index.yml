@@ -1,18 +1,20 @@
 ### YamlMime:Landing
 
 title: Data warehousing documentation in Microsoft Fabric  # < 60 chars
-summary: Learn more about Synapse Data Warehouse in Microsoft Fabric # < 160 chars
+summary: Learn more about Fabric Data Warehouse # < 160 chars
 
 metadata:
-  title: Synapse Data Warehouse in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Fabric Data Warehouse # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Data warehousing in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-warehouse
+  ms.custom:
+    - ignite-2024
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 04/17/2024
+  ms.date: 11/18/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -76,7 +78,7 @@ landingContent:
             url: row-level-security.md
           - text: Column-level security
             url: column-level-security.md
-          - text: Share your Warehouse
+          - text: Share your data
             url: share-warehouse-manage-permissions.md            
   # Card 
   - title: Ingest data
@@ -92,15 +94,23 @@ landingContent:
           - text: Ingest data using Copy
             url: ingest-data-copy.md
       - linkListType: concept
-        links:            
-          - text: Database Mirroring in Fabric 
+        links:
+          - text: Mirroring 
+            url: ../database/mirrored-database/overview.md
+          - text: Database Mirroring in Fabric
             url: ../database/mirrored-database/overview.md
           - text: Mirroring Azure SQL Database
             url: ../database/mirrored-database/azure-sql-database.md
+          - text: Mirroring Azure SQL Managed Instance
+            url: ../database/mirrored-database/azure-sql-managed-instance.md
           - text: Mirroring Azure Cosmos DB
             url: ../database/mirrored-database/azure-cosmos-db.md
+          - text: Mirroring Databricks
+            url: ../database/mirrored-database/azure-databricks.md
           - text: Mirroring Snowflake
             url: ../database/mirrored-database/snowflake.md
+          - text: Open mirroring 
+            url: ../database/mirrored-database/open-mirroring.md
   # Card 
   - title: Design and Develop
     linkLists:
@@ -139,7 +149,7 @@ landingContent:
           - text: Caching
             url: caching.md
           - text: Troubleshoot
-            url: troubleshoot-synapse-data-warehouse.md
+            url: troubleshoot-fabric-data-warehouse.md
   # Card 
   - title: Monitor
     linkLists:

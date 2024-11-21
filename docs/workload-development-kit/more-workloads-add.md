@@ -1,6 +1,6 @@
 ---
-title: Adding a Microsoft Fabric workload (preview)
-description: Learn how to add, remove, and use a workload from the workload hub.
+title: Add a Microsoft Fabric workload (preview)
+description: Learn how to add, remove, and use a workload in the Microsoft Fabric workload hub.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
@@ -8,73 +8,81 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Workload hub (preview)
+# Add a workload in the workload hub (preview)
 
-The workload hub is a central location where you can view all the workloads available in Fabric. Each workload in Fabric has its own item type associated with it. The item types can be created in Fabric workspaces. To access the workload hub, navigate to the workload from the left navigation menu.
+The workload hub is a central location where you can view all the workloads that are available in Microsoft Fabric. Each workload in Fabric has an item type that it's associated with. You can create item types in Fabric workspaces. To access the workload hub, on the workload menu, go to the workload.
 
-:::image type="content" source="./media/more-workloads-add/workload-hub.png" alt-text="Screenshot of the Workload Hub." lightbox="./media/more-workloads-add/workload-hub.png":::
+:::image type="content" source="./media/more-workloads-add/workload-hub.png" alt-text="Screenshot of the workload hub." lightbox="./media/more-workloads-add/workload-hub.png":::
 
-All the workloads available under the **My Workloads** tab can be used to and applied in your analytical projects. You can start generating items and performing various operations on them.
+You can use all the workloads that are listed on the **My Workloads** tab and apply them in your analytical projects. You can generate items by using the workloads, and then perform various operations on them.
 
-More workloads allow for more functionality in Fabric. Users with the right permissions can add workloads and make them available either to the entire tenant or to a specific capacity.
+Workloads expand functionality in Fabric. Users with the relevant permissions can add workloads and make them available either to the entire tenant or to a specific capacity.
 
-In the **More workloads** section, workloads published by Microsoft & Partners can be added, not all users can add workloads. Admins can control who can add workloads in the organization.
+In the **More workloads** section, workloads that are published by Microsoft and by Microsoft Partners appear. Not all users can add workloads. Admins can control who can add workloads in an organization.
 
-:::image type="content" source="./media/more-workloads-add/workload-hub-more.png" alt-text="Screenshot of the More workloads page." lightbox="./media/more-workloads-add/workload-hub-more.png":::
+:::image type="content" source="./media/more-workloads-add/workload-hub-more.png" alt-text="Screenshot of the More workloads pane." lightbox="./media/more-workloads-add/workload-hub-more.png":::
 
-Each workload includes additional information describing workload capabilities and other information including:
+Each workload has descriptive information about workload capabilities, support, and documentation, including:
 
-* **Item Type**: A list of items this workload can create.
-* **Compatible with**: which items are integrated with by the workload.
-* **Publisher support**: Documentation, Certification page & Help links provided by the workload publisher.
-* Videos and screenshots material provided by the publisher.
+* A list of items the workload can create (under **Item types**).
+* A list of architectures, platforms, or features that are integrated with the workload (under **Compatible with**).
+* The documentation, certification, and help links that are provided by the workload publisher (under **Publisher support**).
+* Associated videos and screenshot that the publisher provides.
 
-## Adding and removing workloads
+## Add and remove workloads
 
-Users can add workloads if they meet the following criteria:
+A user can add workloads if the user meets the following criteria:
 
-* They have permission to add a workload by Fabric admin
-* They're a capacity admin or have permission to assign capacities to workspaces
+* They have permissions from a Fabric admin to add a workload.
+* They're a capacity admin or have permission to assign capacities to workspaces.
 
-To add a workload, follow these steps:
+To add a workload:
 
-1. Select add workload.
+1. Select **Add Workload**.
 
    :::image type="content" source="./media/more-workloads-add/assign-select.png" alt-text="Screenshot of Assign workload to capacity." lightbox="./media/more-workloads-add/assign-select.png":::
 
-1. Choose a capacity to assign the workload and add workload.
+1. In **Add workload to capacities**, select one or more capacities to assign the workload to, and then select **Add Workload**.
 
 > [!NOTE]
->Now the workload is available on all workspaces the chosen capacity is assigned to. Only workspaces that are assigned with this capacity can create this workload items.
+> Now the workload is available on all workspaces that the selected capacity is assigned to. Only workspaces that have this capacity assigned can create this workload item.
 
-Added workloads can be added to more capacities or removed completely. When a workload is added to any of the capacities, a **Manage capacities** option appears.
-To remove a workload first press "Manage capacities," deselect all capacities and press update.
+A workload can be added to more capacities or removed completely. When a workload is added to any of the capacities, a **Manage capacities** option appears.
+
+To remove a workload, first select **Manage capacities**. Clear the checkboxes for all capacities, and then select **Update**.
 
 :::image type="content" source="./media/more-workloads-add/remove.png" alt-text="Screenshot of the Removed workload interface." lightbox="./media/more-workloads-add/remove.png":::
 
-## Using added workloads
+## Use added workloads
 
-Added available workloads are now visible in the **My workloads** section, and all workspace members with the relevant capacities assigned to them can now see the workload under **My workloads**.
-To see only workloads added by the organization, choose the **Added by my organization** filter.
+Workloads that were added appear in the **My workloads** section. All workspace members that have the relevant capacities assigned to them can see the workloads under **My workloads**.
+
+To see only workloads that the organization adds, select the **Added by my organization** filter.
 
 :::image type="content" source="./media/more-workloads-add/my-workloads-organization.png" alt-text="Screenshot of the My workloads interface." lightbox="./media/more-workloads-add/my-workloads-organization.png":::
 
-To see all workspaces where the workload can be used, select the workload and then select **See workspaces**. Then use the dialog to navigate to the workspace and create the new item. **Cognitive Services** listed here as an example.
+To see all workspaces where the workload can be used, select the workload, and then select **See workspaces**. Then use the dialog to go to the workspace and create the new item. **Cognitive Services** is shown in the following screenshot as an example.
 
 :::image type="content" source="./media/more-workloads-add/workspaces.png" alt-text="Screenshot of the Select workspaces interface." lightbox="./media/more-workloads-add/workspaces.png":::
 
-The first time using a workload each user needs to consent to the Microsoft Entra ID application. Tenant admins can consent on behalf of the organization by accessing or creating the workload's item type.
+The first time a user works with a workload, they must consent to use the Microsoft Entra ID application. Tenant admins can consent on behalf of the organization by accessing or creating the workload's item type.
 
-To consent to Microsoft Entra ID application, follow these steps:
+To consent to a Microsoft Entra ID application:
 
-1. Navigate to the workload's item type.
+1. Go to the workload's item type.
 1. Select **Consent**.
-1. Review the permissions requested by the application.
+1. Review the permissions that the application requests.
 1. Grant consent to the application.
 
-Once consent is granted, users can use the workload without needing to consent again.
+After consent is granted, users can use the workload without needing to consent again.
 
-## Adding unverified workloads
-Workload publishers can publish a workload directly to specific tenants **before** publishing it through [Microsoft certification process](../workload-development-kit/publish-workload-requirements.md).
-Fabric admins can choose to allow unverified workloads show up in the workload hub to specific users. In this case, unverified workloads show up in the workload hub. Only users that are part of the security group can use unverified workloads items regardless of who created or added the workloads. 
-Additionally, to be able to add unverified workloads users need to be included in both [tenant settings](../admin/tenant-settings-index.md#additional-workloads-preview): "Capacity admins and contributors can add and remove Partner workloads" and "Users can see and work with unvalidated partner workloads."
+## Add unverified workloads
+
+Workload publishers can publish a workload directly to specific tenants *before* they publish it through the [Microsoft certification process](../workload-development-kit/publish-workload-requirements.md).
+
+Fabric admins can choose to allow unverified workloads to appear in the workload hub to specific users. In this case, unverified workloads show up in the workload hub. Only users who are in a relevant security group can use unverified workload items, regardless of who created or added the workload.
+
+To add an unverified workload, a user must be included in both of the following [tenant settings](../admin/tenant-settings-index.md#additional-workloads):
+
+* "Capacity admins and contributors can add and remove Partner workloads"
+* "Users can see and work with unvalidated partner workloads"

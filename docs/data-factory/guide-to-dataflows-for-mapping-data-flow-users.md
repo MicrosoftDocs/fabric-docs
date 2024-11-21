@@ -17,7 +17,7 @@ Microsoft Fabric’s Data Factory experience provides an intuitive and user-frie
 ## Global search box
 When first starting to author Dataflows, you can also leverage the Global search box (shortcut: **Alt + Q**) found in the middle of the editor to search for connectors, transformations (actions), queries, and more while you learn your way around the Power Query Online interface.
 
-![Screenshot of the Global search box feature.](media/guide-to-dataflows-for-mapping-data-flow-users/global-search-box.png)
+:::image type="content" border="true" source="media/guide-to-dataflows-for-mapping-data-flow-users/global-search-box.png" alt-text="Screenshot of the Global search box feature.":::
 
 >[!NOTE]
 >Learn more about [Global search box](/power-query/search-box).

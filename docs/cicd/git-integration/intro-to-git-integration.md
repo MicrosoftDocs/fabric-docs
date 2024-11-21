@@ -6,8 +6,10 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
+ms.custom:
+  - ignite-2024
 ms.topic: overview
-ms.date: 07/09/2024
+ms.date: 11/17/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -28,7 +30,7 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Only a few items are currently supported, but the list of [supported items](#supported-items) is growing.
 
-* Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you’re familiar with basic Git concepts.  
+* Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you're familiar with basic Git concepts.  
 
 * Read more about the [Git integration process](./git-integration-process.md).
 
@@ -55,16 +57,22 @@ The following Git providers are supported:
 The following items are currently supported:
 
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
+* Dataflows gen2 *(preview)*
+* EventHouse *(preview)*
+* EventStream *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) *(preview)*
-* Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
-* Semantic models (except push datasets, live connections to Analysis Services, model v1) *(preview)*
+* [Paginated reports](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
+* Reflex *(preview)*
+* [Reports](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
+* [Semantic models](./source-code-format.md#semantic-model-files) (except push datasets, live connections to Analysis Services, model v1) *(preview)*
 * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
+* [SQL database](../../database/sql/source-control.md) *(preview)*
 * [Warehouses](../../data-warehouse/data-warehousing.md) *(preview)*
 
-If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control panel but you can't commit or update them.
+If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
 
 ## Considerations and limitations
 

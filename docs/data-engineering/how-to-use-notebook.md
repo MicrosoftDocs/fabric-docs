@@ -8,8 +8,9 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: Create and use notebooks
-ms.date: 07/25/2024
+ms.date: 11/11/2024
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -64,7 +65,7 @@ You can import one or more existing notebooks from your local computer using the
 
 ## Export a notebook
 
-You can export your notebook to other standard formats. Synapse notebook can be exported into:
+You can export your notebook to other standard formats. Notebooks can be exported into the following formats:
 
 - The standard notebook file (.ipynb) that is used for Jupyter notebooks.
 - An HTML file (.html) that can be opened from a browser directly.  
@@ -118,7 +119,7 @@ You can easily copy a path with a different format from the select file or folde
 
 The notebook resource explorer provides a Unix-like file system to help you manage your folders and files. It offers a writeable file system space where you can store small-sized files, such as code modules, semantic models, and images. You can easily access them with code in the notebook as if you were working with your local file system.
 
-![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
+:::image type="content" border="true" source="media/how-to-use-notebook/notebook-resources-operations.gif" alt-text="Animated GIF of notebook resources.":::
 
 > [!NOTE]
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
@@ -150,7 +151,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 ### File editor
 
-The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it support Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
+The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it supports Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
 
 - You can access this feature through **'View and edit'** in the file menu. Double-click on file is a faster way.
 
@@ -220,7 +221,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
 
-![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
+:::image type="content" border="true" source="media/how-to-use-notebook/tagging-others-in-a-comment.gif" alt-text="Animated GIF of tagging others in a comment.":::
 
 > [!NOTE]
 > For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.

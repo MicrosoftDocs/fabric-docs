@@ -35,17 +35,16 @@ The backend is the powerhouse for data processing and metadata storage. It emplo
 The workloads can run in two environments: local and cloud. In local (devmode), the workload runs on the developer's machine, with API calls managed by the DevGateway utility. This utility also handles workload registration with Fabric. In cloud mode, the workload runs on the partner services, with API calls made directly to an HTTPS endpoint.
 
 ## Development environment
-
-> [!NOTE] 
-> For each dev mode, a different package is created when building the BE solution in Visual Studio.
-
-- **Dev mode workload package**: When building the backend solution in Visual Studio, use the Debug parameter to create a BE NuGet package, which can be loaded in to the Fabric tenant using the DevGateway application.
+- **Dev mode workload package**: When building the backend solution in Visual Studio, use the Debug build configuration to create a BE NuGet package, which can be loaded in to the Fabric tenant using the DevGateway application.
 
 :::image type="content" source="./media/workload-environment/developer-mode-diagram.png" alt-text="Diagram of the developer mode architecture." lightbox="./media/workload-environment/developer-mode-diagram.png":::
 
-- **Cloud mode workload package**: When building the BE solution in Visual Studio, use the Release parameter to create a standalone workload package (BE and FE). This package can be uploaded to tenant directly.
+- **Cloud mode workload package**: When building the BE solution in Visual Studio, use the Release build configuration to create a standalone workload package (BE and FE). This package can be uploaded to tenant directly.
 
 :::image type="content" source="./media/workload-environment/cloud-mode-diagram.png" alt-text="Diagram of the cloud mode architecture." lightbox="./media/workload-environment/cloud-mode-diagram.png":::
+
+- For more details on Debug and Release build configurations, see [change the build configuration](/visualstudio/debugger/how-to-set-debug-and-release-configurations#change-the-build-configuration)
+
 
 ### Workload NuGet package structure
 
@@ -66,13 +65,12 @@ The frontend section contains .json files detailing the product and items for th
 
 ##### Key components
 - `Product.json` - The main manifest for your product's frontend, which must be named precisely for Fabric's verification.
-- `assets` folder - Stores all .svg icons `icon1.svg`, `icon2.svg`, `...` used by the frontend.
+- `Item1.json`, `Item2.json`, `...` - Manifests for individual items with flexible naming, following the JSON format. Each json corresponds to a backend manifest (e.g., Item1.json to Item1.xml).
+- `assets` folder - Stores all icons `icon1.jpg`, `icon2.png`, `...` used by the frontend.
 
 #### Mandatory structure compliance
 
-The structure, including specific subfolder names ('BE', 'FE', 'assets'), is mandatory and enforced by Fabric for all upload scenarios, including test and development packages. The structure is specified in the `.nuspec` files found in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) under the `./src/Packages/manifest/ManifestPackage` directory.
-
-During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode).
+The structure, including specific subfolder names ('BE', 'FE', 'assets'), is mandatory and enforced by Fabric for all upload scenarios, including test and development packages. The structure is specified in the `.nuspec` files found in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) under the `Backend/src/Packages/manifest` directory.
 
 ### Limits
 The following limits apply to all types of NuGet packages, both in development mode and cloud mode:
@@ -86,11 +84,11 @@ The following limits apply to all types of NuGet packages, both in development m
 - Filenames for items must be unique. Duplicate filenames result in an upload error. 
 - Filenames must contain alphanumeric (English) characters or hyphens only and cannot exceed a length of 32 characters. Using other characters or exceeding this length result in an upload error.
 - The total package size must not exceed 20 MB.
-- Please refer to [the workload manifest definition](./backend-manifest.md) for manifest specific limitations.
+- Please refer to [the workload manifest](./backend-manifest.md) for manifest specific limitations.
 
 ### Local development mode (devmode)
 
-The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within the context of a specific capacity. This ensures the workload's availability across all workspaces assigned to that capacity. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information, see [Back-end implementation guide](extensibility-back-end.md).
+The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within the context of a specific workspace. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information, see [Back-end implementation guide](extensibility-back-end.md).
 
 #### DevMode BE schema
 
@@ -103,20 +101,6 @@ The workload backend (BE) operates within the partner's services. Workload API c
 #### CloudMode BE schema
 
 :::image type="content" source="./media/workload-environment/cloud-mode-back-end-schema-diagram.png" alt-text="Diagram of the cloud mode BE schema architecture." lightbox="./media/workload-environment/cloud-mode-back-end-schema-diagram.png":::
-
-### Lakehouse Integration
-
-Our architecture is designed to integrate flawlessly with Lakehouse, enabling operations such as saving, reading, and fetching data. This interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication.
-
-### Authentication and security
-
-We use Microsoft Entra ID (formerly Azure Active Directory) for robust and secure authentication, ensuring that all interactions within the architecture are authorized and secure. For a complete introduction to the workload authentication as displayed in the diagram above, refer to the authentication documents:
-
-* [Workload authentication - Setup guide](./authentication-tutorial.md)
-
-* [Workload authentication - Architecture overview ](./authentication-concept.md)
-
-* [Workload authentication - Implementation guide](back-end-authentication.md)
 
 ## Related content
 

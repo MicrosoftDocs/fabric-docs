@@ -61,8 +61,14 @@ items:
     href: ../cicd/git-integration/git-get-started.md
   - name: Workspace identity
     href: ../security/workspace-identity.md
-- name: Discover data in the OneLake data hub
-  href: onelake-data-hub.md
+  - name: Workspace monitoring
+    items:
+      - name: What is workspace monitoring?
+        href: workspace-monitoring-overview.md
+      - name: Enable monitoring in your workspace
+        href: enable-workspace-monitoring.md      
+- name: Find Fabric items with the OneLake catalog
+  href: ../governance/onelake-catalog.md
 - name: Copilot in Fabric
   items:
   - name: Copilot in Fabric overview
@@ -75,6 +81,8 @@ items:
     items:
     - name: Privacy, security, and responsible use
       href: copilot-privacy-security.md
+    - name: Responsible use in SQL database
+      href: copilot-database-privacy-security.md
     - name: Responsible use in Data Factory
       href: copilot-data-factory-privacy-security.md
     - name: Responsible use in Data Science
@@ -171,6 +179,24 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Line chart value-axis zoom sliders don't work with markers enabled
+      href: known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md
+    - name: External data sharing doesn't work in a different region capacity lakehouse
+      href: known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
+    - name: PowerPoint add-in and Refresh Report API refresh date appears incorrect
+      href: known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md
+    - name: Notebook failure inside Visual Studio Code for the Web
+      href: known-issues/known-issue-926-notebook-failure-visual-studio-code-web.md
+    - name: The default environment's resources folder doesn't work in notebooks
+      href: known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
+    - name: Tenant migrations paused through January 2025
+      href: known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
+    - name: Embedded paginated report renders correctly but shows error message
+      href: known-issues/known-issue-919-embedded-report-renders-correctly-shows-error.md
+    - name: More options menu on a visual doesn't open in unsaved reports
+      href: known-issues/known-issue-918-more-options-not-open-unsaved-reports.md
+    - name: Visual doesn't load due to an unexpected error
+      href: known-issues/known-issue-916-visual-not-load-error.md
     - name: SQL analytics endpoint tables lose statistics
       href: known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md
     - name: SQL analytics endpoint tables lose permissions
@@ -291,7 +317,7 @@ items:
       href: known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md
     - name: Spark operations fail
       href: known-issues/known-issue-790-spark-operations-fail.md
-    - name: Data Activator alert created from visual with no dimensions doesn't work
+    - name: Activator alert created from visual with no dimensions doesn't work
       href: known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md
     - name: Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse
       href: known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md

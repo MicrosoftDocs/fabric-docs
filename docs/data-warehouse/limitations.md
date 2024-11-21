@@ -1,6 +1,6 @@
 ---
-title: Limitations
-description: This article contains a list of current limitations in Microsoft Fabric.
+title: Limitations of Fabric Data Warehouse
+description: This article contains a list of current limitations in Microsoft Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo
@@ -9,13 +9,16 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
-# Limitations in Microsoft Fabric
+# Limitations of Microsoft Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article details the current limitations in [!INCLUDE [product-name](../includes/product-name.md)].
+
+These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL Database in Fabric, see [Limitations in SQL Database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
 
 ## Limitations
 
@@ -32,7 +35,7 @@ For more limitations in specific areas, see:
 - [Semantic models](semantic-models.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
 - [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
-- [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
+- [Share your data and manage permissions](share-warehouse-manage-permissions.md#limitations)
 - [Limitations in source control](source-control.md#limitations-in-source-control)
 - [Statistics](statistics.md#limitations)
 - [Tables](tables.md#limitations)
@@ -58,8 +61,6 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 - If you add a foreign key constraint between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you won't be able to make any further schema changes (for example, adding the new columns). If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key constraint that might prevent updates on the table. 
 
-- The [!INCLUDE [fabric-se](includes/fabric-se.md)] does not support [lakehouse schemas](../data-engineering/lakehouse-schemas.md).
-
 - For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
 
 ## Known issues
@@ -70,4 +71,3 @@ For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visi
 
 - [T-SQL surface area](tsql-surface-area.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
-
