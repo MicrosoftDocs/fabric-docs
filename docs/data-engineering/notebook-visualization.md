@@ -27,6 +27,8 @@ You can use the _display_ function on dataframes that created in PySpark and Sca
 
 You can specify the row count of the dataframe being rendered, the default value is **1000**, Notebook _display_ output widget supports to view and profile **10000** rows of a dataframe at most.
 
+  :::image type="content" source="media\notebook-visualization\specify-range.png" alt-text="Screenshot of an example of specifying range." lightbox="media\notebook-visualization\specify-range.png":::
+
 You can use the filter function on the global toolbar to filter the data that mapping with your customized rule efficiently, the condition will be applied to the specified column, and the filter result will reflect on both table view and chart view.
 
   :::image type="content" source="media\notebook-visualization\customize-columns.png" alt-text="Screenshot of an example of customizing columns." lightbox="media\notebook-visualization\customize-columns.png":::
@@ -53,7 +55,7 @@ The improved chart view is available on _display()_ command, it provide as more 
 
 1. You can get a list of chart recommandations based on the target dataframe when creating new charts. You can choose to edit a recommanded chart or build your own chart from scratch.
 
-    :::image type="content" source="media\notebook-visualization\suggested-charts.png" alt-text="Screenshot of an example of suggested charts." lightbox="media\notebook-visualization\suggested-charts.png":::
+    :::image type="content" source="media\notebook-visualization\suggested-charts.gif alt-text="Screenshot of an example of suggested charts." lightbox="media\notebook-visualization\suggested-charts.gif":::
 
 1. You can now customize your visualization by specifying the following settings, note that the setting options may change according to the selected chart type:
 
