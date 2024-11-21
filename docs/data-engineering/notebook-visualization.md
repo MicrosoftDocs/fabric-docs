@@ -121,7 +121,7 @@ The improved chart view is available on _display()_ command, it provide as more 
    | Series group | Use this configuration to determine the groups for the aggregation. |
    | Aggregation | Use this method to aggregate data in your visualization. |
   
-    the configurations will be auto-saved in the Notebook output content.
+    The configurations will be auto-saved in the Notebook output content.
    > [!NOTE]
    > By default the _display(df)_ function will only take the first 1000 rows of the data to render the charts. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole dataframe. A Spark job will be triggered when the chart setting changes. Please note that it may take several minutes to complete the calculation and render the chart.
 
