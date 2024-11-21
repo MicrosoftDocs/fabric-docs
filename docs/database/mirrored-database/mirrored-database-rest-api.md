@@ -46,7 +46,7 @@ The payload property in previous JSON body is Base64 encoded. You can use [Base6
 
 - [JSON definition example of Snowflake](#json-definition-example-of-snowflake)
 - [JSON definition example of Azure SQL Database](#json-definition-example-of-azure-sql-database)
-- [JSON definition example of Azure SQL Managed Instance](#json-definition-example-of-azure-sql-database-managed-instance)
+- [JSON definition example of Azure SQL Managed Instance](#json-definition-example-of-azure-sql-managed-instance)
 - [JSON definition example of Azure Cosmos DB](#json-definition-example-of-azure-cosmos-db)
 - [JSON definition example of open mirroring](#json-definition-example-of-open-mirroring)
 
