@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/17/2024
+ms.date: 11/21/2024
 ---
 
 # Microsoft Fabric concepts and licenses
@@ -96,7 +96,7 @@ Per-user licenses allow users to work in Microsoft Fabric. There are three types
 
     SKUs smaller than F64 require a Power BI Pro or Premium Per User license for each user consuming Power BI content. Content in workspaces on F64 or larger Fabric capacities is available for users with a Free license if they have viewer role on the workspace.
 
-* **Premium per-user (PPU)** - PPU licenses allow organizations to access Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of purchasing a Power BI Premium capacity. PPU can be more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses a shared capacity across the organization, which provides the computing power for the Power BI operations. PPU licenses provide partial access to Microsoft Fabric. If you're using a PPU license, the only items that you can access in Fabric are the Power BI items.
+* **Premium per-user (PPU)** - PPU licenses allow organizations to access Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of purchasing a Power BI Premium capacity. PPU can be more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses a shared capacity across the organization, which provides the computing power for the Power BI operations.
 
 This table lists the main differences between the capabilities of per-user licenses.  
 
@@ -112,8 +112,8 @@ This table lists the main differences between the capabilities of per-user licen
 | Create non-Power BI Fabric items in Power BI Premium capacity workspaces | &#x2705; | &#x2705; |&#x2705; |
 | Share non-Power BI Fabric items | &#x2705; | &#x2705; |&#x2705; |
 | View Power BI items in Pro workspaces or Fabric Capacity workspaces (where the Fabric Capacity SKU is less than a F64) | &#x274C; | &#x2705; |&#x2705; |
-| Users signing in with their own account can view Power BI items in Power BI Premium Per Capacity or Fabric Capacity workspaces (where the Fabric capacity SKU is greater than or equal to a F64) | &#x2705; | &#x2705; |&#x2705; |
-| Anyone can view Power BI items in Power BI Premium Per Capacity or Fabric Capacity workspaces when they're embedded using the [embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) solution which doesn’t require an end user license | &#x2705; | &#x2705; |&#x2705; |
+| Users signing in with an Entra user account and a workspace viewer role on a Power BI Premium Per Capacity or a Fabric Capacity with an F64 or higher SKU, can view the content of that workspace | &#x2705; | &#x2705; |&#x2705; |
+| When using [embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers), where the host application is authenticating with the service and managing its own user authentication without using Entra accounts, content in workspaces on Power BI Premium Capacity or Fabric capacity can be displayed by the application | &#x2705; | &#x2705; |&#x2705; |
 
 ## Related content
 
