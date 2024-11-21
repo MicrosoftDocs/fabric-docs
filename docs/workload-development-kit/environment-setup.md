@@ -48,7 +48,7 @@ Download and install these tools before you start developing your workload.
 
 * [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - The default package manager for Node.js, which is used to manage and share the packages that you use in your project.
 
-* [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. Used to run the server-side JavaScript code.
+* [Node.js](https://nodejs.org/en/download) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. Used to run the server-side JavaScript code.
 
 * [Webpack](https://webpack.js.org/guides/installation/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
 
