@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ---
 # Share data and manage access to your SQL database in Microsoft Fabric
 
@@ -38,6 +40,11 @@ Fabric makes it easy to share items via the share button in the workspace. Fabri
 
 The users now have access to read and write every table within the database. They won't have rights on any other Fabric items in the workspace unless they have also been granted. Instead of the broad roles, consider that users could be granted rights on individual tables to follow the principle of least privilege.
 
+> [!NOTE]
+> Microsoft Purview protection policies can augment effective permission for database users. If your organization uses Microsoft Purview with Microsoft Fabric, see [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md).
+
 ## Related content
 
 - [Share your SQL database and manage permissions](share-sql-manage-permission.md)
+- [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md)
+

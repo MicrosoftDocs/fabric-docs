@@ -3,9 +3,9 @@ title: Known issue - Real-Time hub **Set alert** doesn't work for derived stream
 description: A known issue is posted where Real-Time hub **Set alert** doesn't work for derived streams.
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting  
+ms.topic: troubleshooting
 ms.date: 08/23/2024
-ms.custom: known-issue-730
+ms.custom: known-issue-730, ignite-2024
 ---
 
 # Known issue - Real-Time hub **Set alert** doesn't work for derived streams

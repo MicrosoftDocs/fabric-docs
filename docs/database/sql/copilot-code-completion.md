@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: yoleichen, sukkaur
 ms.date: 11/01/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ---
 # How to: Use the Copilot Code Completion for SQL database in Fabric

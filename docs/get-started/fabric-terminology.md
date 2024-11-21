@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - build-2024
+  - ignite-2024
 ms.search.form: product-trident
 ms.date: 12/14/2023
 ---
@@ -81,7 +82,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Eventhouse:** Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration. They're designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. A single workspace can hold multiple Eventhouses, an eventhouse can hold multiple KQL databases, and each database can hold multiple tables. For more information, see [Eventhouse overview](../real-time-intelligence/eventhouse.md).
 
-- **Eventstream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../real-time-intelligence/event-streams/overview.md).
+- **Eventstream:** The Microsoft Fabric eventstreams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An eventstream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric eventstreams](../real-time-intelligence/event-streams/overview.md).
 
 - **KQL Database:** The KQL Database holds data in a format that you can execute KQL queries against. KQL databases are items under an Eventhouse. For more information, see [KQL database](../real-time-intelligence/create-database.md).
 

@@ -2,10 +2,11 @@
 title: Sources supported by Fabric event streams (enhanced)
 description: The include file has the list of sources supported by Fabric event streams with enhanced capabilities.
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 05/21/2024
 ---
 
@@ -30,4 +31,3 @@ ms.date: 05/21/2024
 | [Apache Kafka (preview)](../add-source-apache-kafka.md) | Apache Kafka is an open-source, distributed platform for building scalable, real-time data systems. By integrating Apache Kafka as a source within your eventstream, you can seamlessly bring real-time events from your Apache Kafka and process them before routing to multiple destinations within Fabric. |
 | [Azure Blob Storage events (preview)](../add-source-azure-blob-storage.md) | Azure Blob Storage events are triggered when a client creates, replaces, or deletes a blob. The connector allows you to link Blob Storage events to Fabric events in Real-Time hub. You can convert these events into continuous data streams and transform them before routing them to various destinations in Fabric.|
 | [Fabric Workspace Item events (preview)](../add-source-fabric-workspace.md) | Fabric Workspace Item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item. With Fabric event streams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. |
-

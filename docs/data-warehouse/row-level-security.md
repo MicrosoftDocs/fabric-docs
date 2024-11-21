@@ -8,6 +8,7 @@ ms.date: 08/01/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 # Row-level security in Fabric data warehousing
 
@@ -180,4 +181,3 @@ GO
 - [Share your data and manage permissions](share-warehouse-manage-permissions.md)
 - [Column-level security in Fabric data warehousing](column-level-security.md)
 - [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
-

@@ -7,6 +7,7 @@ author: YaelSchuster
 ms.topic: concept-article
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Activator Real Time Hub Onramp
@@ -15,7 +16,7 @@ ms.search.form: Activator Real Time Hub Onramp
 
 # Set alerts based on Fabric events in Real-Time hub
 
-You can create alerts based on Fabric events (Azure Blob Storage events and Fabric Workspace item events) from event streams. The alert can be configured with one of the following actions:
+You can create alerts based on Fabric events (Azure Blob Storage events and Fabric Workspace item events) from eventstreams. The alert can be configured with one of the following actions:
 
 - Send an email
 - Send a Teams message
@@ -43,4 +44,4 @@ This user flow shows how a data engineer or data analyst can trigger Fabric data
 
 You can run a data pipeline every time there's new data or change in data in your Azure Blob storage.
 
-You can audit or monitor workspace level activity through Fabric events available in the Real-Time hub. You can stream these events to an event stream and send it to a custom application through the event stream.
+You can audit or monitor workspace level activity through Fabric events available in the Real-Time hub. You can stream these events to an eventstream and send it to a custom application through the eventstream.

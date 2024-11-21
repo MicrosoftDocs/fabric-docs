@@ -8,6 +8,7 @@ ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse

@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: v-myerspeter, pmahoney, pvenkat, alpowers, seanmirabile, scbradl, gilherau
 ms.topic: how-to
-ms.custom: fabric-cat, build-2024
+ms.custom: fabric-cat, build-2024, ignite-2024
 ms.date: 07/30/2024
 ---
 

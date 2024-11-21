@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 11/11/2024
 ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 ---
@@ -50,7 +51,7 @@ Use the following steps to create a lakehouse:
 
 1. To create a lakehouse, select **New item** from the workspace and select **Lakehouse**.
 
-   :::image type="content" source="media\get-started-streaming\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog":::
+   :::image type="content" source="media\get-started-streaming\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog.":::
 
 1. Enter name of your lakehouse and select **Create**.
 
@@ -62,7 +63,7 @@ Use the following steps to create a Spark Job Definition:
 
 1. Under "Data Engineering", select **Spark Job Definition**.
 
-   :::image type="content" source="media\get-started-streaming\new-sjd.png" alt-text="Screenshot showing new Spark Job Definition dialog":::
+   :::image type="content" source="media\get-started-streaming\new-sjd.png" alt-text="Screenshot showing new Spark Job Definition dialog.":::
 
 1. Enter name of your Spark Job Definition and select **Create**.
 
@@ -76,11 +77,11 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. From the top menu, select the **Setting** icon.
 
-   :::image type="content" source="media\get-started-streaming\sjd-settings.png" alt-text="Screenshot showing Spark Job Definition settings icon":::
+   :::image type="content" source="media\get-started-streaming\sjd-settings.png" alt-text="Screenshot showing Spark Job Definition settings icon.":::
 
 1. Open the **Optimization** tab and set **Retry Policy** trigger **On**.
 
-   :::image type="content" source="media\get-started-streaming\sjd-retry-on.png" alt-text="Screenshot showing Spark Job Definition optimization tab":::
+   :::image type="content" source="media\get-started-streaming\sjd-retry-on.png" alt-text="Screenshot showing Spark Job Definition optimization tab.":::
 
 1. Define maximum retry attempts or check **Allow unlimited attempts**.
 
@@ -93,7 +94,7 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. From the top menu, select the **Run** icon.
 
-   :::image type="content" source="media\get-started-streaming\sjd-run.png" alt-text="Screenshot showing Spark Job Definition run icon":::
+   :::image type="content" source="media\get-started-streaming\sjd-run.png" alt-text="Screenshot showing Spark Job Definition run icon.":::
 
 1. Verify if the **Spark Job definition** was submitted successfully and running.
 

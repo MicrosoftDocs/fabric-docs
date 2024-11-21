@@ -1,13 +1,13 @@
 ---
 title: Troubleshoot the Snowflake connector
 titleSuffix: Fabric Data Factory & Azure Synapse
-description: Learn how to troubleshoot issues with the Snowflake connector in Fabric Data Factory and Azure Synapse Analytics. 
+description: Learn how to troubleshoot issues with the Snowflake connector in Fabric Data Factory and Azure Synapse Analytics.
 author: jianleishen
 ms.subservice: data-movement
 ms.topic: troubleshooting
 ms.date: 11/08/2024
 ms.author: jianleishen
-ms.custom: has-adal-ref, synapse
+ms.custom: has-adal-ref, synapse, ignite-2024
 ---
 
 # Troubleshoot the Snowflake connector in Data Factory and Azure Synapse
@@ -48,4 +48,3 @@ For more troubleshooting help, try these resources:
 - [Data Factory blog](https://blog.fabric.microsoft.com/blog/category/data-factory)
 - [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
 - [Data Factory feature requests](https://ideas.fabric.microsoft.com/)
-

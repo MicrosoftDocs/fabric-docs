@@ -8,6 +8,7 @@ ms.date: 11/19/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
+  - ignite-2024
 ---
 # Troubleshoot Fabric mirrored databases from Azure SQL Database
 
