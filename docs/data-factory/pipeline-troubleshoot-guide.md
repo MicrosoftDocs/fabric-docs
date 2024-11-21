@@ -490,39 +490,39 @@ The following table applies to Azure Batch.
 - **Recommendation**: Use Fiddler/Netmon/Wireshark to validate the request.
 
     **Using Fiddler**
-    
+
     To use **Fiddler** to create an HTTP session of the monitored web application:
-    
+
     1. Download, install, and open [Fiddler](https://www.telerik.com/download/fiddler).
-    
+
     1. If your web application uses HTTPS, go to **Tools** > **Fiddler Options** > **HTTPS**.
-    
+
        1. In the HTTPS tab, select both **Capture HTTPS CONNECTs** and **Decrypt HTTPS traffic**.
-    
-          :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/fiddler-options.png" alt-text="Fiddler options":::
-    
+
+          :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/fiddler-options.png" alt-text="Screenshot of Fiddler options" :::
+
     1. If your application uses TLS/SSL certificates, add the Fiddler certificate to your device.
-    
+
        Go to: **Tools** > **Fiddler Options** > **HTTPS** > **Actions** > **Export Root Certificate to Desktop**.
-    
+
     1. Turn off capturing by going to **File** > **Capture Traffic**. Or press **F12**.
-    
+
     1. Clear your browser's cache so that all cached items are removed and must be downloaded again.
-    
+
     1. Create a request:
-    
+
     1. Select the **Composer** tab.
-    
+
        1. Set the HTTP method and URL.
-     
+
        1. If needed, add headers and a request body.
-    
+
        1. Select **Execute**.
-    
+
     1. Turn on traffic capturing again, and complete the problematic transaction on your page.
-    
+
     1. Go to: **File** > **Save** > **All Sessions**.
-    
+
     For more information, see [Getting started with Fiddler](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler).
 
 ### Error Code: 2113

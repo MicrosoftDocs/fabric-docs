@@ -9,9 +9,9 @@ ms.date: 05/21/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
-# Quick start: Run a workload sample (preview)
+# Quickstart: Run a workload sample
 
-This quick start guide shows you how to create and run a Microsoft Fabric workload using a sample workload.
+This quick start guide shows you how to create and run a Microsoft Fabric workload using a sample workload. To run this quickstat successfully, you need to use a [Fabric administrator](/entra/identity/role-based-access-control/permissions-reference#fabric-administrator) account when logging into Microsoft Fabric and Azure.
 
 ## Prerequisites
 
@@ -45,7 +45,18 @@ Follow these steps to confirm that the workload is running.
 
 2. Select **New item** and from the list, select **Sample item**.
 
-## Step 2: Configure the backend
+## Step 3: Register an Azure Entra ID application
+
+Use the *CreateDevAADApp.ps1* script to register an Azure Entra ID application.
+
+1. Download the [CreateDevAADApp.ps1](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1) script.
+
+2. Open the Microsoft Azure Command Prompt (CLI) and sign in with user of the account you're using to the application.
+
+    ```azurecli
+   az login
+   ```
+3. Run the *CreateDevAADApp.ps1* script using the credentials of the user account under which you intend to create the application.
 
 Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so that you can use the sample's dialog.
 
@@ -61,7 +72,6 @@ Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so th
 
 
 ## Step 3: Prepare the development environment
-
 
 
 1. **Open the solution**: Open the solution in Visual Studio *2022* to ensure compatibility with net7.
@@ -82,7 +92,7 @@ Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so th
     >[!NOTE]
     >You can copy it to any other path and set up the command line argument "-DevMode:LocalConfigFilePath" in your project to specify the path.
 
-      * *CapacityGuid*: Your capacity ID can be found within the Fabric portal under the Capacity Settings of the admin portal.
+      * *WorkspaceGuid*: Your Workspace ID. Find it in the browser URL when selecting a workspace in Fabric, for example, `https://app.fabric.microsoft.com/groups/{WorkspaceID}/`.
       * *ManifestPackageFilePath*: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in the later steps.
       * *WorkloadEndpointURL*: Workload endpoint URL.
 
@@ -107,7 +117,7 @@ Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so th
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
 
-1. **Run the DevGateway**: Execute 'Microsoft.Fabric.Workload.DevGateway.exe' and authenticate as a capacity admin.
+1. **Run the DevGateway**: Execute 'Microsoft.Fabric.Workload.DevGateway.exe' and sign in with a user that has capacity admin privileges for the capacity linked to the workspace specified in the WorkspaceGuid field of workload-dev-mode.json.
 
 1. **Start the Project**: Set the 'Boilerplate' project as the startup project in Visual Studio and run it.
 

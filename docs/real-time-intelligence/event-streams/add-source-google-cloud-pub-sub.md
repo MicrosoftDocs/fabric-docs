@@ -6,39 +6,33 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Google Cloud Pub/Sub source to an eventstream (preview)
+# Add Google Cloud Pub/Sub source to an eventstream
 
 This article shows you how to add a Google Cloud Pub/Sub source to an eventstream. 
 
 Google Pub/Sub is a messaging service that enables you to publish and subscribe to streams of events. You can add Google Pub/Sub as a source to your eventstream to capture, transform, and route real-time events to various destinations in Fabric.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
-
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Google Cloud account with the Pub/Sub service enabled and a role with the required permissions.
 - Your Google Cloud Pub/Sub source must be publicly accessible and not be behind a firewall or secured in a virtual network.
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Add Google Cloud Pub/Sub as a source
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
+:::image type="content" source="media/add-source-google-cloud-pub-sub/select-google-cloud-pub-sub.png" alt-text="Screenshot that shows the selection of Google Cloud Pub/Sub as the source type in the Select a data source wizard." lightbox="media/add-source-google-cloud-pub-sub/select-google-cloud-pub-sub.png":::
 
-1. On the next screen, select **Add external source**.
-
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
 
 ## Configure and connect to Google Cloud Pub/Sub
 
@@ -49,11 +43,11 @@ Google Pub/Sub is a messaging service that enables you to publish and subscribe 
 
 You can see the Google Cloud Pub/Sub source added to your eventstream in **Edit mode**.
 
-   ![A screenshot of the added Google Cloud Pub/Sub source in Edit mode with the Publish button highlighted.](media/add-source-google-cloud-pub-sub/edit-mode.png)
+   :::image type="content" border="true" source="media/add-source-google-cloud-pub-sub/edit-mode.png" alt-text="A screenshot of the added Google Cloud Pub/Sub source in Edit mode with the Publish button highlighted.":::
 
 Select **Publish** to publish the changes and begin streaming data from Google Cloud Pub/Sub to the eventstream.
 
-   ![A screenshot of the published eventstream with Google Cloud Pub/Sub source in Live View.](media/add-source-google-cloud-pub-sub/live-view.png)
+   :::image type="content" border="true" source="media/add-source-google-cloud-pub-sub/live-view.png" alt-text="A screenshot of the published eventstream with Google Cloud Pub/Sub source in Live View.":::
 
 ## Related content
 

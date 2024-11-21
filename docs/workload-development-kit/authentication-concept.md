@@ -22,23 +22,23 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 <!--:::image type="content" source="./media/authentication-concept/authentication-diagram.png" alt-text="Screenshot showing the Workload Development Kit authentication flow.":::
 -->
 
-* From workload front-end to workload back-end
+* From workload frontend to workload backend
 
    An example of such communication is any data plane API. This communication is done with a Subject token (Delegated token).
 
-   For information on how to acquire a token in the workload FE, read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Back-end authentication and authorization overview](back-end-authentication.md).
+   For information on how to acquire a token in the workload FE, read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Backend authentication and authorization overview](back-end-authentication.md).
 
-* From Fabric back-end to workload back-end
+* From Fabric backend to workload backend
 
-   An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Back-end authentication and authorization overview](back-end-authentication.md) to learn more about this token).
+   An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Backend authentication and authorization overview](back-end-authentication.md) to learn more about this token).
 
    For this communication to work, the user using this communication must give consent to the Microsoft Entra application.
 
-* From workload back-end to Fabric back-end
+* From workload backend to Fabric backend
 
    This is done with a SubjectAndApp token for workload control APIs (for example, ResolveItemPermissions), or with a Subject token (for other Fabric APIs).
 
-* From workload back-end to external services
+* From workload backend to external services
 
    An example of such communication is writing to a Lakehouse file. This is done with Subject token or an App token, depending on the API.
 
@@ -73,7 +73,7 @@ Here's an example of a consent popup for our app "my workload app" and its depen
 
 ## Related content
 
-* [Back-end authentication and authorization overview](./back-end-authentication.md)
+* [Backend authentication and authorization overview](./back-end-authentication.md)
 * [Authentication JavaScript API](./authentication-javascript-api.md)
 * [Authentication setup](./authentication-tutorial.md)
 * [Workload authentication guidelines & deep dive](./authentication-guidelines.md)

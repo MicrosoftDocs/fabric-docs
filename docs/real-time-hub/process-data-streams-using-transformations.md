@@ -1,19 +1,19 @@
 ---
 title: Process data streams in Real-Time hub
-description: This article describes how to process data streams in Real-Time hub. Process using transformations in eventstreams, add KQL destination to send it to a KQL table and analyze it, and set alerts.
+description: This article describes how to process data streams in Real-Time hub. Process using transformations in eventstreams, add Eventhouse destination to send it to a KQL table and analyze it, and set alerts.
 author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 09/10/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
-# Process data streams in Fabric event streams  (preview)
+# Process data streams in Fabric eventstreams 
 
-The Add source experience, Microsoft sources page, and Fabric events page in Real-Time hub allow you to create streams for the supported sources. After you create these streams, you can process them, analyze them, and set alerts on them. This article explains how to process data streams using transformations supported in Fabric event streams.
+The Connect data source experience, Microsoft sources page, Fabric events page, and Azure events page in Real-Time hub allow you to create streams for the supported sources. After you create these streams, you can process them, analyze them, and set alerts on them. This article explains how to process data streams using transformations supported in Fabric eventstreams.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Open eventstream
 
@@ -21,13 +21,15 @@ In Real-Time hub, when you create streams to get events from the [supported sour
 
 - **Add source** experience:
 
-    At the end of creating this stream, on the **Review and create** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
--*All data streams* page:
+    At the end of creating this stream, on the **Review + connect** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
+  
+- **All data streams** page:
 
     Move the mouse over a stream whose parent is an eventstream, and select the **Open** link, on select **... (ellipsis)**, and then select **Open eventstream**.
-- **Detail page**:
 
-    From the **All data streams** page select a stream whose parent is an eventstream to see the stream details. From the ribbon select **Open eventstream**.  
+- **Detail** page:
+
+    From the **All data streams** page select a stream whose parent is an eventstream to see the stream details. From the ribbon, select **Open eventstream**.  
 
 ## Add transformations to the stream
 
@@ -37,4 +39,4 @@ After you open the eventstream in an editor, you can add transformations such as
 
 ## Related content
 
-After you process data in the stream, you can send the output data to [destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md)  supported by Fabric event streams.
+After you process data in the stream, you can send the output data to [destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md)  supported by Fabric eventstreams.

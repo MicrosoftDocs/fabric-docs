@@ -30,7 +30,7 @@ Requests to Copilot consume Fabric Capacity Units. This table defines how many c
 ## Monitor the usage  
 The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for Copilot operations under the name "Copilot in Fabric." Additionally, Copilot users are able to view a summary of their billing charges for Copilot usage under the invoicing item "Copilot in Fabric."
 
-![Screenshot of Fabric Capacity Metrics.](./media/copilot-consumption/capacity-metrics-app.png)
+:::image type="content" border="true" source="./media/copilot-consumption/capacity-metrics-app.png" alt-text="Screenshot of Fabric Capacity Metrics.":::
 
 
 ## Capacity utilization type 

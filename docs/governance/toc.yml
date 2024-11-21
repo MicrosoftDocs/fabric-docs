@@ -15,6 +15,8 @@ items:
   items:
   - name: Set up item certification
     href: ../admin/endorsement-setup.md?toc=/fabric/governance/TOC.json&bc=/fabric/governance/breadcrumb/toc.json
+- name: OneLake catalog
+  href: onelake-catalog.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview and Fabric
@@ -36,6 +38,8 @@ items:
       href: protected-sensitivity-labels.md
     - name: Default label policy
       href: service-security-sensitivity-label-default-label-policy.md
+    - name: Domain-level default sensitivity labels
+      href: domain-default-sensitivity-label.md
     - name: Mandatory label policy
       href: mandatory-label-policy.md
     - name: Sensitivity label support for paginated reports

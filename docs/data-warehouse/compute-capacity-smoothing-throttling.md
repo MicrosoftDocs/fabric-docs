@@ -1,6 +1,6 @@
 ---
-title: Smoothing and throttling in Fabric Data Warehousing
-description: Learn about smoothing and throttling principles applicable for data warehousing in Microsoft Fabric.
+title: Smoothing and throttling
+description: Learn about smoothing and throttling principles applicable for Microsoft Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
@@ -8,9 +8,10 @@ ms.date: 10/07/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 
-# Smoothing and throttling in Fabric Data Warehousing
+# Smoothing and throttling in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -57,7 +58,7 @@ Review [actions you can take to recover from overload situations](../enterprise/
 
 Capacity administrators can view overload information and drilldown further via [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
-For a walkthrough of the app, visit [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md).
+For a walkthrough of the app, visit [How to: Observe Fabric Data Warehouse utilization trends](how-to-observe-utilization.md).
 
 Use the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to view a visual history of any overutilization of capacity, including carry forward, cumulative, and burndown of utilization. For more information, refer to [Throttling in Microsoft Fabric](../enterprise/throttling.md) and [Overages in the Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md#overages).
 
@@ -66,14 +67,14 @@ Use the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to
 ## Next step
 
 > [!div class="nextstepaction"]
-> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
+> [How to: Observe Fabric Data Warehouse utilization trends](how-to-observe-utilization.md)
 
 ## Related content
 
 - [Throttling in Microsoft Fabric](../enterprise/throttling.md)
-- [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
+- [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
 - [Burstable capacity in Fabric data warehousing](burstable-capacity.md)

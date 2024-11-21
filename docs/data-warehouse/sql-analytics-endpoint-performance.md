@@ -11,6 +11,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # SQL analytics endpoint performance considerations
@@ -111,5 +112,5 @@ The complete script can be copied from the following code block:
 ## Related content
 
 - [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Limitations of the SQL analytics endpoint](limitations.md#limitations-of-the-sql-analytics-endpoint)
