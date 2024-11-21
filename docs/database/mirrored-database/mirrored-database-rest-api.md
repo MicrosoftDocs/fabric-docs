@@ -56,7 +56,7 @@ If you want to replicate selective tables instead of all the tables in the speci
 > To mirror data from Azure SQL Database or Azure SQL Managed Instance, you need to also do the following before start mirroring:
 >
 > 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) or [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance).
-> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permission.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal.
+> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permission.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternativley, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/core/workspaces/add-workspace-role-assignment).
 
 ### JSON definition example of Snowflake
 
