@@ -88,7 +88,7 @@ landingContent:
           - text: Query multiple data sources
             url: multiple-data-sources-graphql.md 
           - text: Monitoring dashboard and logging (preview) 
-            url: graphql-monitoring-logging.md      
+            url: graphql-monitor-log.md      
   # Card 
   - title: Delta Lake
     linkLists:

@@ -288,4 +288,4 @@ items:
    - name: Monitoring GraphQL operations
      href: graphql-operations.md
    - name: Monitoring dashboard and logging (preview)
-     href: graphql-monitoring-logging.md
+     href: graphql-monitor-log.md
