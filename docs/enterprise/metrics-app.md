@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - build-2024
-ms.date: 09/12/2024
+ms.date: 11/04/2024
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
@@ -31,6 +31,8 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cap
 ## Considerations and limitations
 
 When using the Microsoft Fabric Capacity Metrics app, consider the following considerations and limitations:
+
+* To hide user emails in the app, disable the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting in the Admin portal.
 
 * Billable items and operations consume CU units from your capacity and are paid for by your organization. Non-billable items and operations reflect preview features that don't count towards your capacity limit, and aren't paid for. They provide an indication of possible future impact on your capacity. When preview features become generally available, your organization starts paying for them and their impact on your capacity is taking into account.
 

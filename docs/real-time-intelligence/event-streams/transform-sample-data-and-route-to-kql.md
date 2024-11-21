@@ -8,8 +8,9 @@ ms.topic: tutorial
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.date: 11/17/2023
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 ---
 
 # Tutorial: Explore and transform sample bike-sharing data with Eventstream for KQL Database integration
@@ -18,7 +19,7 @@ Eventstream is a streaming platform that allows you to ingest, transform, and ro
 
 ## Prerequisites
 
-* Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL Database are located.
+* Access to a workspace with Contributor or above permissions where your Eventstream and KQL Database are located.
 * A KQL Database created in your workspace.
 
 ## Create an eventstream and add sample bike data

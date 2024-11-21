@@ -59,7 +59,7 @@ To get started, you must complete the following prerequisites:
 
 Select the **Settings** tab to see the advanced settings for the activity.
 
-:::image type="content" source="media/azure-hdinsight-activity/settings.png" alt-text="Screenshot showing the Settings tab of the Azure HDInsight activity properties in the pipeline editor window. ":::
+:::image type="content" source="media/azure-hdinsight-activity/settings.png" alt-text="Screenshot showing the Settings tab of the Azure HDInsight activity properties in the pipeline editor window. .":::
 
 All advanced cluster properties and dynamic expressions supported in the [Azure Data Factory and Synapse Analytics HDInsight linked service](/azure/data-factory/compute-linked-services#azure-hdinsight-linked-service) are now also supported in the Azure HDInsight activity for Data Factory in Microsoft Fabric, under the **Advanced** section in the UI. These properties all support easy-to-use custom parameterized expressions with dynamic content.
 

@@ -1,5 +1,5 @@
 ---
-title: Fabric Workload Development Kit backend authentication (preview)
+title: Fabric Workload Development Kit backend authentication
 description: Learn about building the backend authentication of a customized Fabric workload.
 author: KesemSharabi
 ms.author: kesharab
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Backend authentication and authorization overview (preview)
+# Backend authentication and authorization overview
 
 The Fabric developer workload sample has the following authentication flows on the backend side.
 

@@ -4,7 +4,7 @@ description: A known issue is posted where library management updates with publi
 author: mihart
 ms.author: mihart
 ms.topic: troubleshooting  
-ms.date: 05/23/2024
+ms.date: 11/19/2024
 ms.custom: known-issue-647
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-647
 
 If you update your environment with python libraries from the conda channel or provide an env.yml file with libraries from conda channel, the environment publish hangs and eventually times out.
 
-**Status:** Open
+**Status:** Fixed: November 19, 2024
 
 **Product Experience:** Data Engineering
 

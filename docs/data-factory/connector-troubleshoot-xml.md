@@ -8,6 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 11/15/2023
 ---
 
@@ -15,7 +16,7 @@ ms.date: 11/15/2023
 
 This article provides suggestions to troubleshoot common problems with the XML format connector in Data Factory in Microsoft Fabric.
 
-## Error code: XmlSinkNotSupported
+## Error code: XmldestinationNotSupported
 
 - **Message**: `Write data in XML format is not supported yet, choose a different format!`
 

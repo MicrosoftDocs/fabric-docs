@@ -1,10 +1,10 @@
 ---
-title: "Tutorial: Configure a Microsoft Fabric mirrored database from Snowflake"
+title: "Tutorial: Configure a Microsoft Fabric Mirrored Database From Snowflake"
 description: Learn how to configure a mirrored database from Snowflake in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.topic: tutorial
 ---
 
@@ -64,10 +64,10 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 1. The **Configure mirroring** screen allows you to mirror all data in the database, by default.
 
     - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Configure mirroring - All data."::: -->
+    <!--  -->
 
     - Optionally, choose only certain objects to mirror. Disable the **Mirror all data** option, then select individual tables from your database.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Configure mirroring - Selective."::: -->
+    <!--  -->
 
     For this tutorial, we select the **Mirror all data** option.
 
@@ -76,7 +76,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
     :::image type="content" source="media/snowflake-tutorial/mirrored-snowflake-is-running.png" alt-text="Screenshot from the Fabric portal showing that mirrored snowflake is running. The Monitor mirroring button is visible.":::
 
 1. Wait for 2-5 minutes. Then, select **Monitor replication** to see the status.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Monitoring Mirroring."::: -->
+    <!--  -->
 
 1. After a few minutes, the status should change to *Running*,  which means the tables are being synchronized.
 
@@ -84,7 +84,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 
 1. When they have finished the initial copying of the tables, a date appears in the **Last refresh** column.
 
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Mirroring Status."::: -->
+    <!--  -->
 
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
@@ -95,12 +95,12 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
-For more information and details on the replication states, see [Monitor Fabric Mirror replication](monitor.md).
+For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
 
 > [!IMPORTANT]
 > If there are no updates in the source tables, the replicator engine will start to back off with an exponentially increasing duration, up to an hour. The replicator engine will automatically resume regular polling after updated data is detected.
 
 ## Related content
 
-- [Microsoft Fabric mirrored databases from Snowflake](snowflake.md)
+- [Mirroring Snowflake](snowflake.md)
 - [What is Mirroring in Fabric?](overview.md)

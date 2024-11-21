@@ -15,7 +15,7 @@ ms.date: 03/25/2024
 # Install a Private Package as a requirement in Apache Airflow job
 
 > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 A python package is a way to organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called **init**.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. In the context of Apache Airflow Job, you can develop you private packages to add custom Apache Airflow operators, hooks, sensors, plugins etc.
 
