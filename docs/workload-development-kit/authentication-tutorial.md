@@ -74,18 +74,19 @@ To authenticate a workload, the workload application must be registered in Micro
    > [!TIP]
    > Get help finding [your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
 
-   For example, if the publisher's tenant ID is `853d9f4f-c71b-4420-b6ec-60e503458946` and the workload name is `Fabric.WorkloadSample`, then:
+   For example, if the publisher's tenant ID is `aaaabbbb-0000-cccc-1111-dddd2222eeee` and the workload name is `Fabric.WorkloadSample`, then:
+
 
    * The following URIs *are* valid:
 
-      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
-      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/abc`
+     * `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample`
+     * `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample/abc`
 
    * The following URIs *aren't* valid:
 
-      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/`
-      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/a`
-      * Any ID URI that doesn't start with `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
+     * `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample/af/`
+     * `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample/af/a`
+     * Any ID URI that doesn't start with `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample`
 
 ### Add a scope for CRUD APIs and jobs
 
@@ -114,7 +115,7 @@ Preauthorize `871c010f-5e61-4fb1-83ac-98610a7e9110` (the Fabric client applicati
 
 You can find the application IDs of these apps under **Microsoft Power BI** and **Power BI Service** in [Application IDs of commonly used Microsoft applications](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
 
-Here's how the **Expose an API** section should look in your application. In this example, the ID URI is `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`.
+Here's how the **Expose an API** section should look in your application. In this example, the ID URI is `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample`.
 
 :::image type="content" source="./media/authentication-tutorial/expose-api-section.png" alt-text="Screenshot showing how your Expose an API section should look." lightbox="./media/authentication-tutorial/expose-api-section.png":::
 
@@ -157,7 +158,7 @@ When the script runs successfully, it returns all the details that are required 
 To create an application named myWorkloadApp with the workload name Org.Myworkload for the specified tenant, run the following command in PowerShell:
 
 ```powershell
-powershell .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.Myworkload" -tenantId "cb1f79ad-7930-43c0-8d84-c1bf8d15c8c7"
+powershell .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.Myworkload" -tenantId "bbbbcccc-1111-dddd-2222-eeee3333ffff"
 ```
 
 This example demonstrates how to use the *CreateDevAADApp.ps1* script with command-line arguments to automate the application setup process. The provided tenant ID is an example only. Replace the example tenant ID with your actual tenant ID.
