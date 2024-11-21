@@ -66,10 +66,14 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses
 ### Sample request
 
 ```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses/validateMigrationFromAzure
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses
 
 {
-  "clusterUrl": "https://<PoolName>.<WorkspaceName>.kusto.azuresynapse.net"
+  "displayName": "NewEventhouse",
+  "description": "Eventhouse migrated from Azure Synapse Data Explorer pool.",
+  "creationPayload": {
+    "migrationSourceClusterUrl": "https://{AzurePoolName}.{WorkspaceName}.kusto.azuresynapse.net"
+  }  
 }
 ```
 
