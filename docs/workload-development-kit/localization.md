@@ -13,14 +13,14 @@ Localization is the process of adapting a product to serve different markets be 
 
 The following image shows an example of a localized workload in the Workload Hub.
 
-:::image type="content" source="./media/localization/workload-hub-in-spanish.png" alt-text="Sample Product localized to Spanish.":::``
+:::image type="content" source="./media/localization/workload-hub-in-spanish.png" alt-text="Screenshot of a sample Product localized to Spanish." lightbox="./media/localization/workload-hub-in-spanish.png":::
 
 For a Fabric Workload, it involves two aspects -
 * Translating text within the iframe, independently of the Fabric shell, using [the Fabric Portal language](#access-the-language-of-the-fabric-portal).
 * Enabling the translation of key words that are used in the Fabric shell such as the workload name, item names, workload descriptions and more. These strings are currently found directly in the manifest files (product.json and item.json).
     * For a description of all the strings that are localized, see [Localization Targets](#localization-targets).
 
-## Supported Languages
+## Supported languages
 Fabric currently supports the following 44 languages:
 
 **Language Code** | **Language**
@@ -153,7 +153,7 @@ Whereas the translation.json file for Spanish could contain:
 * We currently support both localized and unlocalized workloads. If there are any image files *directly* in the assets folder, the assumption is that the workload is unlocalized.
 * In order for a workload to be treated as localized, it must have only two subdirectories in the assets folder, one named "images" and the other named "locales". There must not be any other files in the assets folder.
 
-## Localization Targets
+## Localization targets
 
 All of the following properties are localized: `'displayName', 'fullDisplayName', 'displayNamePlural', 'description', 'introduction', 'title', 'tooltip', 'slogan'`.
 In of the product and item manifest files, they correspond to the following attributes:
