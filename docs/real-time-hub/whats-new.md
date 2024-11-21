@@ -18,7 +18,6 @@ Fabric Real-Time hub receives improvements on an ongoing basis. To stay up to da
 - **Rich sample scenarios**: For users who are new to Fabric Real-Time Intelligence, we provide three streaming data samples for you to get started.
 - **Streams and KQL tables with read (or higher) permission**: Users can discover streams and Kusto Query Language (KQL) tables that they have read (or higher) access to within Real-Time Hub, which allows them to discover more data streams shared with them.
 - **Real-time Dashboards (preview)**: Users can now quickly and automatically create real-time dashboards by selecting **Create Real-Time dashboards** on KQL tables. This Co-Pilot assisted feature can take users input to generate the most common real-time dashboards within seconds.
-- **Job events & OneLake events**: You can now build event-driven applications, trigger Notebooks and workflows, send emails, or send a message on Teams when OneLake files/tables are created, deleted, or renamed (**OneLake events**) and Jobs are started or completed (**Job Events**).
 
     For more information, see [Accelerating Insights with Fabric Real-Time Hub (generally available)](https://blog.fabric.microsoft.com/blog/accelerating-insights-with-fabric-real-time-hub-now-generally-available).
 
