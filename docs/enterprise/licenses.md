@@ -112,7 +112,7 @@ This table lists the main differences between the capabilities of per-user licen
 | Create non-Power BI Fabric items in Power BI Premium capacity workspaces | &#x2705; | &#x2705; |&#x2705; |
 | Share non-Power BI Fabric items | &#x2705; | &#x2705; |&#x2705; |
 | View Power BI items in Pro workspaces or Fabric Capacity workspaces (where the Fabric Capacity SKU is less than a F64) | &#x274C; | &#x2705; |&#x2705; |
-| Users signing in with an Entra user account and a workspace viewer role on a Power BI Premium Per Capacity or a Fabric Capacity with an F64 or higher SKU, can view that workspace's content | &#x2705; | &#x2705; |&#x2705; |
+| Users signing in with an Entra user account and a workspace viewer role on a Power BI Premium Per Capacity or a Fabric Capacity with an F64 or higher SKU, can view the content of that workspace | &#x2705; | &#x2705; |&#x2705; |
 | When using [embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers), where the host application is authenticating with the service and managing its own user authentication without using Entra accounts, content in workspaces on Power BI Premium Capacity or Fabric capacity can be displayed by the application | &#x2705; | &#x2705; |&#x2705; |
 
 ## Related content
