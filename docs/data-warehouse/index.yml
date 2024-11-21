@@ -112,7 +112,7 @@ landingContent:
           - text: Open mirroring 
             url: ../database/mirrored-database/open-mirroring.md
           - text: Share and secure mirrored databases
-            url: ../database/mirrored-database/secure-and-manage-permissions.md
+            url: ../database/mirrored-database/share-and-manage-permissions.md
   # Card 
   - title: Design and Develop
     linkLists:
