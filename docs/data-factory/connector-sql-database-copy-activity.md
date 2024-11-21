@@ -218,7 +218,7 @@ The following tables contain more information about the copy activity in SQL dat
 |**Bulk insert table lock** | Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients.|Yes or No (default) |No |sqlWriterUseTableLock:<br>true or false (default)|
 | *For **Upsert*** |  |  |  |  |
 | **Use TempDB** | Whether to use a global temporary table or physical table as the interim table for upsert. |selected (default) or unselected  |No |useTempDB:<br>true (default) or false |
-| **Key columns** | The column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used. | < your key column> |No |keys|
+| **Key columns** | Choose which column is used to determine if a row from the source matches a row from the destination. | < your key column> |No |keys|
 | *For **Stored procedure*** |  |  |  |  |
 | **Stored procedure name** | This property is the name of the stored procedure that reads data from the source table. The last SQL statement must be a SELECT statement in the stored procedure.|< stored procedure name > |No |sqlWriterStoredProcedureName|
 |  |  |  |  |  |
