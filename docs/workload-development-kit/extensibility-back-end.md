@@ -175,9 +175,9 @@ To set up the workload sample project on your local machine:
    Copy the *ManifestPackage.1.0.0.nupkg* file to the path that's defined in the *workload-dev-mode.json* configuration file.
 
 1. *Program.cs* is the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host.
-1. Build the project to ensure that the project can access the required dependencies for compilation and execution.
-1. Download the DevGateway from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=105993).
-1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application that's located in the *DevGateway* folder. Sign in with a user that has *capacity admin privileges* to the capacity linked to the workspace specified in the WorkspaceGuid field in *workload-dev-mode.json*.
+1. Build to ensure your project can access the required dependencies for compilation and execution.
+1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
+1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application and sign in with a user that has **workspace admin privileges** for the workspace specified in the `WorkspaceGuid` field of workload-dev-mode.json.
 
    :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of the Microsoft sign in page.":::
 
