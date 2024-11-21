@@ -48,6 +48,8 @@ Download and install these tools before you start developing your workload.
 
 * [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer) - You'll use ASP.NET Core to build your workload.
 
+* [Azure CLI on Windows](/cli/azure/install-azure-cli-windows?tabs=azure-cli) - You'll use the [Azure Command-Line Interface (CLI)](/cli/azure/what-is-azure-cli) to run scripts that connect to Azure and run admin commands.
+
 * [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - Sends API calls directly from the workload to Fabric.
 
 * [Git](https://git-scm.com/downloads) - A distributed version control system that we use to manage and track project changes.
