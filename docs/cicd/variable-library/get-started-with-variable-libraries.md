@@ -60,7 +60,7 @@ An empty variable library appears. You can now add variables to it.
 
 To add a variable to the library:
 
-1. Select **+ Add variable**
+1. Select **+ New variable**
 1. Enter a name (make sure it follows the [naming conventions](./understand-variable-library.md#name-of-a-variable-in-the-variable-library))
 1. Select a type from the drop-down list
 1. Enter default value set of the defined type
@@ -71,9 +71,29 @@ To add a variable to the library:
 
 ## Edit a variable
 
+The following operations can be performed from the top menu bar:
+
+:::image type="content" source="./media/get-started-with-variable-libraries/menu-bar.png" alt-text="Screenshot of a menu bar found on the top of the screen. It has four buttons, Save, New variable, Delete variable, and Add value set.":::
+
 * To delete a variable, select one or more variables and select **Delete variable**.
-* To edit the name, type, or value set of a variable, change the value and select Save. 
-* To add another alternative value set, select Add value set. 
+* To edit the name, type, or value set of a variable, change the value and select **Save**.
+* To add another alternative value set, select **Add value set**.
+
+Selecting **Save** after editing any variable in the variable library triggers an error validation check to make sure all the variable names and values are valid. Any errors must be fixed before the changes are saved.
+
+## Edit a value set
+
+To edit a value set, select the three dots next to the name of the value set.
+
+:::image type="content" source="./media/get-started-with-variable-libraries/edit-value-set.png" alt-text="Screenshot of the edit value set options. There are three options, set as active, Rename, and Delete.":::
+
+You have the following options:
+
+* Set as active value set
+* Rename the value set
+* Delete the value set
+
+Select **Save**.
 
 ## Related content
 

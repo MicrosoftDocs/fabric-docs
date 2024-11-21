@@ -96,5 +96,5 @@ The following items support the variable library:
 
 ## Related content
 
-- [End to end lifecycle management tutorial](./cicd-tutorial.md)
+- [End to end lifecycle management tutorial](../cicd-tutorial.md)
 - [Learn to use the variable library](./get-started-with-variable-libraries.md)
