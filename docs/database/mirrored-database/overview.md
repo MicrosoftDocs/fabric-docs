@@ -80,7 +80,7 @@ The following are core tenets of Mirroring:
 - Enabling Mirroring in Fabric is simple and intuitive, without having the need to create complex ETL pipelines, allocate other compute resources, and manage data movement.
 
 - Mirroring in Fabric is a fully managed service, so you don't have to worry about hosting, maintaining, or managing replication of the mirrored connection.
- 
+
 ## How does metadata mirroring work?
 
 Mirroring not only enables data replication but can also be achieved through shortcuts or metadata mirroring rather than full data replication, allowing data to be available without physically moving or duplicating it. Mirroring in this context refers to replicating only metadata—such as catalog names, schemas, and tables—rather than the actual data itself. This approach enables Fabric to make data from different sources accessible without duplicating it, simplifying data management and minimizing storage needs. 
@@ -99,9 +99,7 @@ Sharing enables ease of access control and management, while security controls l
 
 By sharing, users grant other users or a group of users access to a mirrored database without giving access to the workspace and the rest of its items. When someone shares a mirrored database, they also grant access to the SQL analytics endpoint and associated default semantic model.
 
-Access the Sharing dialog with the **Share** button next to the mirrored database name in the **Workspace** view. Shared mirrored databases can be found through the **OneLake** or the **Shared with Me** section in Microsoft Fabric.
-
-For more information, see [Share your data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md).
+For more information, see [Share your mirrored database and manage permissions](share-and-manage-permission.md).
 
 ## Cross-database queries
 
