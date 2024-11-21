@@ -30,31 +30,27 @@ the article covers.
 
 To create variable library items in Fabric, you need:
 
+* A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
+* In addition, the following [tenant switches](../../admin/about-tenant-settings.md) must be enabled from the Admin portal:
+  * [Users can create Fabric items](../../admin/fabric-switch.md)
 
-## [Table of stages]
+  These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your [organization's settings](../../admin/delegate-settings.md).
 
-<!-- Optional: Table of stages - H2
+## Create a variable library item
 
-In an H2 section, if the process for getting started is long
-or complex, list the stages in a table. For each stage in the
-table, include a link to an article that describes how to
-complete that stage.
+You can create a variable library item from the Fabric home page or from inside your workspace.
 
-Use either a table or one or more stage sections, as described 
-in the next section. 
+### [From home page](#tab/home-page)
 
--->
+1. From the side navigation bar, select **Create** (If it’s not there, select the three dots -> create)
+1. In the Data Factory section, select variable library
+1. Name the new variable library. Make sure the name conforms to the required [naming conventions](./understand-variable-library.md#naming-conventions).
 
-## [Stages]
+### [From workspace](#tab/workspace)
 
-<!-- Optional: Stages - H2
 
-In one or more H2 sections, describe the stages to
-get started with the product, service, or feature.
-
--->
-
+---
 ## [Who or what information]
 
 <!-- Optional: Links to use information - H2

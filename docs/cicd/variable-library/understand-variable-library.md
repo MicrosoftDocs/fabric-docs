@@ -90,7 +90,6 @@ The following items support the variable library:
 - Data pipeline
 - Notebook
 
-
 ## Related content
 
 - [End to end lifecycle management tutorial](./cicd-tutorial.md)
