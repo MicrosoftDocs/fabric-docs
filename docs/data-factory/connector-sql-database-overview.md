@@ -24,7 +24,5 @@ The SQL database connector supports the following capabilities in data pipelines
 | **Copy activity (Source/Destination)** | None <br> On-premises | User Auth |
 | **Lookup activity** | None <br> On-premises | User Auth |
 | **GetMetadata activity** | None <br> On-premises | User Auth |
-| **Script activity** | None <br> On-premises | User Auth |
-| **Stored procedure activity** | None <br> On-premises | User Auth |
 
 To learn about the copy activity configuration for SQL database in data pipelines, go to [Configure SQL database in a copy activity](connector-sql-database-copy-activity.md).
