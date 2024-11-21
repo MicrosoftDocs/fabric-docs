@@ -19,7 +19,7 @@ This article describes important concepts and features of the variable library i
 
 ## Variable library structure
 
-A variable library item contains a list of variables and their default values. It can also contain additional value sets holding alternative values.
+A variable library item contains a list of variables and their default values. It can also contain other value sets holding alternative values.
 
 Each variable is defined as follows:
 
@@ -27,7 +27,7 @@ Each variable is defined as follows:
 - Note (optional)
 - Type
 - Default value set
-- Alternative value sets’ value – A pointer to the default value unless was changed to be a static/fixed value.
+- Alternative value sets value – A pointer to the default value, unless it was changed to be a static/fixed value.
 
 ### Naming conventions
 
@@ -41,6 +41,8 @@ The name of Variable library item itself must follow these conventions:
 - Can include letters, numbers, underscores, hyphens, and spaces.
 - Doesn't exceed 256 characters in length.
 
+The variable library name is *not* case sensitive.
+
 #### Name of a variable in the variable library
 
 The name of a variable inside the variable library must follow these conventions:
@@ -51,25 +53,23 @@ The name of a variable inside the variable library must follow these conventions
 - Can include letters, numbers, underscores, and hyphens.
 - Doesn't exceed 256 characters in length.
 
-Neither the item or variable name is case sensitive.
+The variable name is *not* case sensitive.
 
 ### Variable types
 
 The variables in the variable library can be any of the following basic types:
 
 - String: (default) Any char. Can be null or empty.
-- Boolean: Gets ‘false’ or ‘true’.
+- Boolean: Gets *true* or *false*.
 - DateTime: The date and time are represented using ISO 8601 standard, yyyy-MM-ddTHH:mm:ssZ, where:
-  - yyyy is the four-digit year, MM is the two-digit month, dd is the two-digit day
-  - T separates the date and the time
-  - HH is the two-digit hour in 24-hour format, mm is the two-digit minute, ss is the two-digit second
-  - Z indicates that the time is in Coordinated Universal Time (UTC)
-  - For example, 2024-10-14T04:53:54Z.
+  - *yyyy* is the four-digit year, *MM* is the two-digit month, *dd* is the two-digit day
+  - *T* separates the date and the time
+  - *HH* is the two-digit hour in 24-hour format, mm is the two-digit minute, ss is the two-digit second
+  - *Z* indicates that the time is in Coordinated Universal Time (UTC)
+  For example, 2024-10-14T04:53:54Z.
 - Double: A number with decimal points.
 - Integer: A whole number that can be positive, negative, or zero
 - Array: An array of type string in this format [value1, value2, …]. Can be empty or null.
-- [Not in PrPr] Item reference: Refers to a different item. The variable value is the item’s path. The referenced item can be in this workspace or in a different workspace.
-- [Not in PrPr] Connection reference: Refers to an external connection through DMTS. The variable value is the connection id in DMTS.
 
 ## Permissions
 
@@ -79,12 +79,11 @@ Permissions are aligned with the fabric permission model:
 
 - Workspace permissions
 - Viewer permissions: Someone with viewer permissions can Add/Edit/Delete, but not save their changes. Viewer can also see available variables for reference on a consumer item with all their details and referred variables values.
-- Contributor/Member/Admin permissions: In general - CRUD permissions. Details as documented *An external link was removed to protect your privacy.*.
-- [Not in PrPr] Shared permissions: Permissions can be shared with the users, either via a link or granted directly.
+- Contributor/Member/Admin permissions: In general, CRUD permissions. See [workspace roles](../../get-started/roles-workspaces.md) for more information.
 
 ### Variable permissions
 
-There is no permission management in an item level or a variable level. Permission for each variable is the same as that for the entire item.
+There's no permission management in an item level or a variable level. Permission for each variable is the same as the permissions for the entire item.
 
 ## Supported items
 
