@@ -1,5 +1,5 @@
 ---
-title: Create and deploy the boilerplate Azure web app (preview)
+title: Create and deploy the boilerplate Azure web app
 description: Learn about how to create and build the boilerplate Azure web app as a Microsoft Fabric sample.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to build the backend of a customized Azure Fabric workload so that I can create customized user experiences.
 ---
 
-# Create and deploy the boilerplate Azure web app (preview)
+# Create and deploy the boilerplate Azure web app
 
 To create and deploy the boilerplate Azure web app, you need to create and deploy the backend and frontend web apps. This tutorial provides instructions for creating and deploying the boilerplate backend and frontend web apps.
 

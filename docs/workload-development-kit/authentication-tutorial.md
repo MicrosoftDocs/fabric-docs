@@ -1,5 +1,5 @@
 ---
-title: Authentication setup (preview)
+title: Authentication setup
 description: Learn how to set up the authentication for a customized Microsoft Fabric workload.
 author: KesemSharabi
 ms.author: kesharab
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 07/14/2024
 ---
 
-# Authentication setup (preview)
+# Authentication setup
 
 In this article, learn how to work with authentication in Microsoft Fabric.
 
