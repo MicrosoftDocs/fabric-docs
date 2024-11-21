@@ -6,6 +6,8 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
+ms.custom:
+  - ignite-2024
 ms.topic: overview
 ms.date: 11/17/2024
 ms.search.form: Git integration supported items, Introduction to Git integration

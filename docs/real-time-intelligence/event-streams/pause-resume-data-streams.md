@@ -7,6 +7,7 @@ author: wenyang
 ms.topic: how-to
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 08/07/2024
 ms.search.form: Pause and Resume
 ---

@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ---
 # Query your SQL database in Fabric
 

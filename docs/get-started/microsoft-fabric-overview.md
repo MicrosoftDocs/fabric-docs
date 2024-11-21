@@ -13,6 +13,7 @@ ms.custom:
   - ignite-2023-fabric
   - build 2024
   - build-2024
+  - ignite-2024
 ms.search.form: product-trident
 ms.date: 11/19/2024
 ---

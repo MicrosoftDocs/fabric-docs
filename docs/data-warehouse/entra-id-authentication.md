@@ -8,6 +8,7 @@ ms.date: 10/16/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
+  - ignite-2024
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Microsoft Entra authentication as an alternative to SQL authentication

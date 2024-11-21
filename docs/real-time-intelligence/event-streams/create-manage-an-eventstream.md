@@ -5,8 +5,10 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
-ms.search.form: Event Streams Overview
+ms.search.form: Eventstreams Overview
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
 ---
@@ -36,7 +38,7 @@ Before you start, you must complete the following prerequisite:
 
 ::: zone pivot="standard-capabilities"
 
-The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
+The eventstreams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
 
 > [!IMPORTANT]
 > Use this tab if you are using Fabric event streams without enhanced capabilities. If you are using enhanced capabilities, use the **Enhanced Capabilities** tab. 
