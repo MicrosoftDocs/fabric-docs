@@ -9,7 +9,8 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/28/2024
+  - ignite-2024
+ms.date: 11/05/2024
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -38,18 +39,24 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
+* Dashboards
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
-* Dataflows Gen1
-* [Datamarts](/power-bi/transform-model/datamarts/datamarts-overview) *(preview)*
+* Dataflows gen2 *(preview)*
+* Datamarts *(preview)*
+* EventHouse *(preview)*
+* EventStream *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) *(preview)*
-* Reports (based on supported semantic models) *(preview)*
-* [Semantic models](/power-bi/connect-data/service-datasets-understand) (that originate from .pbix files and aren't PUSH datasets) *(preview)*
+* Organizational apps *(preview)*
+* Paginated reports
+* Power BI Dataflows
+* Reflex *(preview)*
+* Reports (based on supported semantic models)
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
-* [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
-* [Warehouses](../../data-warehouse/data-warehousing.md) *(preview)*
+* Semantic models (that originate from .pbix files and aren't PUSH datasets)
+* SQL database *(preview)*
+* [Warehouses](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
 
 ## Pipeline structure
 

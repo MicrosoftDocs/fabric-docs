@@ -8,8 +8,9 @@ ms.topic: tutorial
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.date: 11/17/2023
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 ---
 
 # Tutorial: Explore and transform sample bike-sharing data with Eventstream for KQL Database integration

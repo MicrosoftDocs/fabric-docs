@@ -4,8 +4,10 @@ description: This article compares the database engine features of Azure SQL Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 11/05/2024
+ms.date: 11/19/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ---
 # Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)
 
@@ -39,12 +41,13 @@ The following table lists the major features of SQL Server and provides informat
 | [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | Yes, from OneLake sources |
 | [Certificates and asymmetric keys](/sql/relational-databases/security/sql-server-certificates-and-asymmetric-keys) | Yes | Yes |
 | [Change data capture - CDC](/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Yes, for S3 tier and above. Basic, S0, S1, S2 aren't supported. | No  |
-| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, SQL_Latin1_General_CP1_CI_AS. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated.| By default, SQL_Latin1_General_CP1_CI_ASC and can't be updated.|
+| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, SQL_Latin1_General_CP1_CI_AS. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, SQL_Latin1_General_CP1_CI_ASC and can't be updated. Collations on individual columns are supported.|
+| [Column encryption](/sql/relational-databases/security/encryption/encrypt-a-column-of-data) | Yes | Yes |
 | [Columnstore indexes, clustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes, but the table cannot be mirrored to OneLake. |
 | [Columnstore indexes, nonclustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes |
 | [Credentials](/sql/relational-databases/security/authentication-access/credentials-database-engine) | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=azuresqldb-current&preserve-view=true). | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=fabric&preserve-view=true).|
 | [Cross-database/three-part name queries](/sql/relational-databases/linked-servers/linked-servers-database-engine) | No, see [Elastic queries](/azure/azure-sql/database/elastic-query-overview) | Yes, you can do cross-database three-part name queries via the SQL analytics endpoint.  |
-| [Data classification and labeling](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, via [Database discovery and classification](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, with [database labeling with Microsoft Purview Information Protection sensitivity labels](../../governance/protected-sensitivity-labels.md) |
+| [Data classification and labeling](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, via [Database discovery and classification](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, with [database labeling with Microsoft Purview Information Protection sensitivity labels](protect-databases-with-protection-policies.md) |
 | [Database mirroring to Fabric OneLake](../mirrored-database/overview.md) | Yes, manually enabled | Yes, automatically enabled for all eligible tables |
 | [Database-level roles](/sql/relational-databases/security/authentication-access/database-level-roles) | Yes | Yes. In addition to Transact-SQL support, Fabric supports managing [database-level roles in Fabric portal](configure-sql-access-controls.md#manage-sql-database-level-roles-from-fabric-portal).|
 | [DBCC statements](/sql/t-sql/database-console-commands/dbcc-transact-sql) | Most, see individual statements | Most, see individual statements |

@@ -4,6 +4,8 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.custom:
+  - ignite-2024
 ms.date: 08/18/2024
 ---
 

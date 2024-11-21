@@ -4,7 +4,7 @@ description: Learn about the limitations of using Activator in your applications
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter
+ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: product-reflex
 ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn about Activator limitations.

@@ -1,19 +1,20 @@
 ---
-title: "Troubleshoot Fabric mirrored databases from Azure SQL Database"
+title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Database"
 description: Troubleshooting topics for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 11/07/2024
+ms.date: 11/19/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
+  - ignite-2024
 ---
 # Troubleshoot Fabric mirrored databases from Azure SQL Database
 
 This article covers troubleshooting steps troubleshooting for mirroring Azure SQL Database.
 
-For troubleshooting the automatically configured mirroring for Fabric SQL database, see [Troubleshoot mirroring from Fabric SQL database](../sql/mirroring-troubleshooting.md).
+For troubleshooting the automatically configured mirroring for Fabric SQL database, see [Troubleshoot mirroring from Fabric SQL database (preview)](../sql/mirroring-troubleshooting.md).
 
 ## Changes to Fabric capacity or workspace
 
@@ -83,5 +84,5 @@ If you remove Azure SQL Database SPN permissions or permissions are not set up c
 
 ## Related content
 
-- [Limitations in Microsoft Fabric](../../data-warehouse/limitations.md)
+- [Limitations of Microsoft Fabric Data Warehouse](../../data-warehouse/limitations.md)
 - [Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric](azure-sql-database-mirroring-faq.yml)

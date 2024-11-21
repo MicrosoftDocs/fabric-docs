@@ -6,6 +6,8 @@ ms.author: jaszymas
 ms.reviewer: wiassaf # Microsoft alias
 ms.date: 10/11/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ---
 
 # Configure granular access control for a SQL database
@@ -75,7 +77,7 @@ To view the list of role members and to add or remove role members:
 To configure access for a user or an application using Transact SQL:
 
 1. Share the database with the user/application, or with Microsoft Entra group the user/application belongs too. Sharing the database ensures the user/application has the Read item permission for the database in Fabric, which is required to connect to the database. For more information, see [Share your SQL database and manage permissions](share-sql-manage-permission.md).
-1. Create a user object for the user, the application, or their group in the database, using [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true) and the `FROM EXTERNAL PROVIDER` clause. For more information, see [Create database users for Microsoft Entra identities](authentication.md#create-database-users-for-microsoft-entra-identities).
+1. Create a user object for the user, the application, or their group in the database, using [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true). For more information, see [Create database users for Microsoft Entra identities](authentication.md#create-database-users-for-microsoft-entra-identities).
 1. Configure the desired access controls:
     1. Define custom (user-defined) [database-level roles](/sql/relational-databases/security/authentication-access/database-level-roles?view=fabric&preserve-view=true). To manage definitions of custom roles, use [CREATE ROLE](/sql/t-sql/statements/create-role-transact-sql?view=fabric&preserve-view=true), [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric&preserve-view=true), and [DROP ROLE](/sql/t-sql/statements/drop-role-transact-sql).
     1. Add the user object to custom or built-in (fixed) roles with the `ADD MEMBER` and `DROP MEMBER` options of the [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric&preserve-view=true) statement.

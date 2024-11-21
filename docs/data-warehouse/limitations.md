@@ -1,6 +1,6 @@
 ---
-title: Limitations
-description: This article contains a list of current limitations in Microsoft Fabric.
+title: Limitations of Fabric Data Warehouse
+description: This article contains a list of current limitations in Microsoft Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo
@@ -9,9 +9,10 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
-# Limitations in Microsoft Fabric
+# Limitations of Microsoft Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -70,4 +71,3 @@ For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visi
 
 - [T-SQL surface area](tsql-surface-area.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
-

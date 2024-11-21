@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
+  - ignite-2024
 ms.date: 11/10/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -150,7 +151,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 | Semantic model on-demand refresh | A background semantic model refresh initiated by the user, using the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Semantic model scheduled refresh | A scheduled background semantic model refresh, performed by the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Full report email subscription | A PDF or PowerPoint copy of an entire Power BI report, attached to an [email subscription](/power-bi/collaborate-share/end-user-subscribe)  | Report | Power BI Capacity Usage CU | Background |
-| Interactive query | Queries initiated by an on-demand data request from a user. For example, loading a model when opening a report, or user interaction with a report | Semantic model | Power BI Capacity Usage CU | Interactive |
+| Interactive query | Queries initiated by an on-demand data request. For example, loading a model when opening a report, user interaction with a report , or querying a dataset before rendering.| Semantic model | Power BI Capacity Usage CU | Interactive |
 | PublicApiExport | A Power BI report exported with the [export report to file](/power-bi/developer/embedded/export-to) REST API | Report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report exported with the [export paginated report to file](/power-bi/developer/embedded/export-paginated-report) REST API  | Paginated report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report viewed in Power BI service   | Paginated report | Power BI Capacity Usage CU | Interactive |
@@ -161,17 +162,17 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Event streams](#event-streams), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [eventstreams](#eventstreams), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
-#### Event streams
+#### Eventstreams
 
-You can find the consumption rates for Event streams in [Monitor capacity consumption for Microsoft Fabric event streams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
+You can find the consumption rates for eventstreams in [Monitor capacity consumption for Microsoft Fabric eventstreams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
 | Operation                       | Description                               | Item         | Azure billing meter        | Type       |
 | ------------------------------- | ----------------------------------------- | ------------ | -------------------------- | ---------- |
-| Eventstream Per Hour            | Ingestion or processing for Event Stream  | Event Stream | eventstream Capacity Usage CU               | Background |
-| Eventstream Data Traffic per GB | Data Ingress and Egress                   | Event Stream | eventstream Data Traffic per GB Capacity Usage CU | Background |
-| Eventstream Processor Per Hour  | ASA Processing                            | Event Stream | eventstreams Processor Capacity Usage CU    | Background |
+| Eventstream Per Hour            | Ingestion or processing for Eventstream  | Eventstream | eventstream Capacity Usage CU               | Background |
+| Eventstream Data Traffic per GB | Data Ingress and Egress                   | Eventstream | eventstream Data Traffic per GB Capacity Usage CU | Background |
+| Eventstream Processor Per Hour  | ASA Processing                            | Eventstream | eventstreams Processor Capacity Usage CU    | Background |
 
 #### Fabric events
 

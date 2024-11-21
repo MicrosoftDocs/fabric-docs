@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Warehouse settings and context menus
@@ -78,7 +79,7 @@ The following table describes the warehouse context menu options:
 | **Query activity** | Access the query activity view to monitor your running and completed queries in this warehouse. |
 | **View workspace lineage** | This option shows the end-to-end lineage of all items in this workspace from the data sources to the warehouse, the default Power BI semantic model, and other semantic models (if any) that were built on top of the warehouse, all the way to deports, dashboards, and apps. |
 | **View item lineage** | This option shows the end-to-end lineage of the specific warehouse selected from the data sources to the warehouse, the default Power BI semantic model, and other semantic models (if any) that were built on top of the specific warehouse, all the way to deports, dashboards, and apps. |
-| **View details** | Opens up warehouse details in Data hub. |
+| **View details** | Opens up warehouse details in OneLake catalog. |
 
 ## Related content
 

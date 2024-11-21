@@ -7,6 +7,7 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Get started
@@ -75,4 +76,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 6: Set an alert on your event stream](tutorial-6-set-alert.md)
+> [Tutorial part 6: Set an alert on your eventstream](tutorial-6-set-alert.md)

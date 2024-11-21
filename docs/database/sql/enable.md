@@ -4,8 +4,10 @@ description: Learn how to enable the SQL database feature in your Fabric tenant 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
-ms.date: 10/07/2024
+ms.date: 11/19/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.search.form: product-databases
 ---
 # Enable SQL database in Fabric using Admin Portal tenant settings
@@ -73,7 +75,7 @@ To disable SQL database, you can disable the **SQL database (preview)** admin sw
 
 If you disable SQL database for a specific capacity while it's available in your organization, your selection will only affect that capacity.
 
-When SQL database not enabled in tenant settings, users who try to create a new SQL database will receive the error message "SQL database failed to create."
+When SQL database not enabled in tenant settings, users who try to create a new SQL database will receive the error message "SQL database failed to create." The tenant admin switch is ignored for trial capacities. To disable and disallow SQL database in Microsoft Fabric, also disable trial capacities in your tenant by turning off the ["Users can try Microsoft Fabric paid features" from the Fabric Admin portal](../../admin/service-admin-portal-help-support.md).
 
 ## Considerations
 

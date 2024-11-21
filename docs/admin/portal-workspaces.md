@@ -28,7 +28,7 @@ The following table describes the columns of the list of workspaces.
 | --------- | --------- |
 | **Name** | The name given to the workspace. |
 | **Description** | The information that is given in the description field of the workspace settings. |
-| **Type** | The type of workspace. There are two types of workspaces:<br>![Screenshot of app workspace icon.](./media/portal-workspaces/app-workspace-icon.png) **Workspace** (also known as "app workspace")<br>![Screenshot of personal workspace icon in the list of workspaces table explanation.](./media/portal-workspaces/personal-workspace-icon.png) **Personal Group** ("My workspaces")|
+| **Type** | The type of workspace. There are two types of workspaces:<br>:::image type="icon" border="false" source="./media/portal-workspaces/app-workspace-icon.png"::: **Workspace** (also known as "app workspace")<br>:::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: **Personal Group** ("My workspaces")|
 | **State** | The state lets you know if the workspace is available for use. There are five states, **Active**, **Orphaned**, **Deleted**, **Removing**, and **Not found**. For more information, see [Workspace states](#workspace-states). |
 | **Capacity name** | Name given to the workspace's capacity. |
 | **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](/power-bi/enterprise/service-admin-premium-manage). |
@@ -141,7 +141,7 @@ To gain access to a particular My workspace
 > [!NOTE]
 > Once access is obtained, the ribbon and the More options (...) menu will show **Remove Access** for the same My workspace. If you do not remove access by selecting one of these options, access will automatically be revoked for the admin after 24-hours. The My workspace owner's access remains intact.
 
-Once you have access, the My workspace will show up in the list of workspaces accessible from the navigation pane. The icon ![Screenshot of personal workspace icon in the list of workspaces table explanation.](./media/portal-workspaces/personal-workspace-icon.png) indicates that it's a My workspace.
+Once you have access, the My workspace will show up in the list of workspaces accessible from the navigation pane. The icon :::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: indicates that it's a My workspace.
 
 Once you go inside the My workspace, you can perform any actions as if it's your own My workspace. You can view and make any changes to the contents, including sharing or unsharing. But you can't grant anyone else access to the My workspace.  
 

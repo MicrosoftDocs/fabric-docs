@@ -78,7 +78,7 @@ In some cases, at some time points the number of tasks might exceed the capacity
 
 Select the color icon to select or unselect the corresponding content in all graph.
 
- :::image type="content" source="media\spark-detail-monitoring\graph-select-chart.png" alt-text="Screenshot showing the graph select chart" lightbox="media\spark-detail-monitoring\graph-select-chart.png":::
+ :::image type="content" source="media\spark-detail-monitoring\graph-select-chart.png" alt-text="Screenshot showing the graph select chart." lightbox="media\spark-detail-monitoring\graph-select-chart.png":::
 
 ## Summary panel
 

@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ---
 # Load data with Dataflow Gen2 into SQL database in Microsoft Fabric
 
@@ -28,7 +30,7 @@ Fabric Dataflow Gen2 supports many configurations and options, including schedul
 1. Open your workspace. Select **+ New Item**.
 1. Select **Data Flow Gen 2** from the menu.
 1. Once the new Data Flow opens, select **Get Data**. You can also select the down arrow on **Get data** and then **More**.
-1. Pick your Fabric SQL database from the **OneLake data hub** list. It will be the source of this Data Flow.
+1. Pick your Fabric SQL database from the **OneLake** list. It will be the source of this Data Flow.
 1. Pick a table by checking the box next to it.
 1. Select **Create**.
 1. You now have most of your data flow configured. There are many different configurations you can do from here to get the movement of data setup to meet your needs.

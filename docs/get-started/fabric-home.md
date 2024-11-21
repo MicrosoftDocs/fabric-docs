@@ -5,6 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom:
+  - ignite-2024
 ms.date: 11/06/2024
 #customer intent: As a Fabric user, I know how to find my content from Home.
 ---

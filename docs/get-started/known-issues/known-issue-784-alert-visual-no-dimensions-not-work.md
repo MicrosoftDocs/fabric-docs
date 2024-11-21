@@ -3,9 +3,9 @@ title: Known issue - Activator alert created from visual with no dimensions does
 description: A known issue is posted where an Activator alert created from visual with no dimensions doesn't work.
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting  
+ms.topic: troubleshooting
 ms.date: 08/28/2024
-ms.custom: known-issue-784
+ms.custom: known-issue-784, ignite-2024
 ---
 
 # Known issue - [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] alert created from visual with no dimensions doesn't work

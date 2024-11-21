@@ -7,6 +7,7 @@ author: YaelSchuster
 ms.topic: concept-article
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Get started
@@ -35,4 +36,3 @@ The following animated image shows how one might explore data visually in a Real
 ## Potential use cases
 
 A NYC taxi fleet analyst is exploring the rides data to learn in which boroughs and in what time of the day it's more cost effective to have taxi drivers available for rides.
-

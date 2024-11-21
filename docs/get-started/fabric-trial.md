@@ -5,6 +5,8 @@ author: mihart
 ms.reviewer: mihirwagle
 ms.author: mihart
 ms.topic: concept-article
+ms.custom:
+  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ms.date: 11/05/2024
 ---
@@ -51,7 +53,7 @@ If you're an existing Power BI user, you can skip to [Start the Fabric trial](#s
 
 ## Users who are new to Power BI
 
-The Fabric trial requires a per-user Power BI license. Navigate to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
+The Fabric trial requires a per-user Power BI license. Navigate to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
 
 You may already have a license and not realize it. For example, some versions of Microsoft 365 include a Fabric (Free) or Power BI Pro license. Open Fabric (app.fabric.microsoft.com) and select your Account manager to see if you already have a license, and which license it is. Read on to see how to open your Account manager. 
 
@@ -66,7 +68,7 @@ For more information, see {Sharing trial capacities](#sharing-trial-capacities).
 
 Follow these steps to start your Fabric capacity trial and become the Capacity administrator of that trial.
 
-1. Open the [Fabric homepage](https://app.fabric.microsoft.com/home) and select the Account manager.
+1. Open the [Fabric homepage](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial) and select the Account manager.
 
     :::image type="content" source="media/fabric-trial/fabric-home-page.png" alt-text="Screenshot of the Microsoft Fabric homepage with the Account manager outlined in red.":::
 

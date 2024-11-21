@@ -1,11 +1,13 @@
 ---
-title: "Troubleshoot Fabric mirrored databases"
+title: "Troubleshoot Fabric Mirrored Databases"
 description: Troubleshooting scenarios, workarounds, and links for mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
-ms.date: 11/08/2024
+ms.date: 11/19/2024
 ms.topic: troubleshooting
+ms.custom:
+  - ignite-2024
 ms.search.form: Fabric Mirroring
 ---
 
@@ -20,6 +22,7 @@ Scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases.
 Review the troubleshooting section of frequently asked questions for each data source:
 
 - [Troubleshoot Mirroring Azure SQL Database](azure-sql-database-troubleshoot.md) and [FAQ about Mirroring Azure SQL Database](azure-sql-database-mirroring-faq.yml)
+- [Troubleshoot Mirroring Azure SQL Managed Instance](azure-sql-managed-instance-troubleshoot.md) and [FAQ about Mirroring Azure SQL Managed Instance](azure-sql-managed-instance-faq.yml)
 - [Troubleshoot Mirroring Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
 - [FAQ about Mirroring Azure Databricks](azure-databricks-faq.yml)
@@ -28,6 +31,7 @@ Review the troubleshooting section of frequently asked questions for each data s
 Review limitations documentation for each data source:
 
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
@@ -72,7 +76,7 @@ In the **Monitoring** page, the date shown is the last time data was successfull
 
 Changing the source database is not supported. Create a new mirrored database.
 
-## Limits error messages 
+## Limits error messages
 
 These common error messages have explanations and mitigations:
 

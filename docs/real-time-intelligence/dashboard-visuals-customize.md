@@ -7,6 +7,7 @@ ms.reviewer: gabil
 ms.topic: how-to
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 11/19/2024
 ---
 
@@ -85,7 +86,7 @@ For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown 
 
     The image renders in the tile's preview.
 
-    :::image type="content" source="media/customize-dashboard-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text. ":::
+    :::image type="content" source="media/customize-dashboard-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text.":::
 
 1. In the top menu, select **Apply changes** to save the tile.
 

@@ -6,7 +6,9 @@ ms.author: jaszymas
 ms.reviewer: wiassaf
 ms.date: 10/11/2024
 ms.topic: conceptual
-ms.search.form: 
+ms.custom:
+  - ignite-2024
+ms.search.form:
 ---
 # Authorization in SQL database in Microsoft Fabric
 
@@ -22,8 +24,12 @@ You can configure access for your SQL database at two levels:
 The access controls at these two different levels work together.
 
 - To [connect](connect.md) to a database, a user must have at least the [Read permission in Fabric](#item-permissions) for the Fabric database item.
-- You can grant access to specific capabilities in using Fabric access controls, SQL access controls, or both. A permission to connect to the database can only be granted with Fabric roles or permissions.
+- You can grant access to specific capabilities or data using Fabric access controls, SQL access controls, or both. A permission to connect to the database can only be granted with Fabric roles or permissions.
 - Denying access (with the [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) Transact-SQL statement) in the database always takes priority.
+
+> [!NOTE]
+> Microsoft Purview protection policies can augment effective permission for database users. If your organization uses Microsoft Purview with Microsoft Fabric, see [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md).
+
 
 ## Fabric access controls
 
@@ -88,3 +94,5 @@ For more information, see [Configure granular access control for a SQL database]
 - [Share your SQL database and manage permissions](share-sql-manage-permission.md)
 - [Configure granular access control for a SQL database](configure-sql-access-controls.md)
 - [Permission model in Microsoft Fabric](../../security/permission-model.md)
+- [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md)
+

@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -25,25 +27,27 @@ This article shows you how to add an activator destination to an eventstream.
 To add an activator destination to a default stream or derived stream, follow these steps.
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon and select **Activator** from the dropdown list.
-   ![A screenshot of the Add destination dropdown list with Activator highlighted.](media/add-destination-activator-enhanced/add-destination.png)
+
+   :::image type="content" border="true" source="./media/add-destination-activator-enhanced/add-destination.png" alt-text="A screenshot of the Add destination dropdown list with Activator highlighted.":::
 
     You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the drop-down list. 
 
-    :::image type="content" source="media/add-destination-activator-enhanced/add-destination-canvas.png" alt-text="Screenshot that shows the canvas for an eventstream with New destination, Activator menu selected.":::
+   :::image type="content" source="media/add-destination-activator-enhanced/add-destination-canvas.png" alt-text="Screenshot that shows the canvas for an eventstream with New destination, Activator menu selected.":::
+
 1. On the **Activator** screen, enter a **Destination name**, select a **Workspace**, and select an existing **Activator** or select **Create new** to create a new one.
 
-   ![A screenshot of the Activator screen.](media/add-destination-activator-enhanced/activator-screen.png)
+   :::image type="content" border="true" source="media/add-destination-activator-enhanced/activator-screen.png" alt-text="A screenshot of the Activator screen.":::
+
 1. Select **Save**.
 1. To implement the newly added activator destination, select **Publish**.
 
-   ![A screenshot of the stream and Activator destination in Edit mode with the Publish button highlighted.](media/add-destination-activator-enhanced/edit-mode.png)
+   :::image type="content" border="true" source="media/add-destination-activator-enhanced/edit-mode.png" alt-text="A screenshot of the stream and Activator destination in Edit mode with the Publish button highlighted.":::
 
-    Once you complete these steps, the activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
+   Once you complete these steps, the activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
 
-    ![A screenshot of the Activator destination available for visualization in Live view.](media/add-destination-activator-enhanced/live-view.png)
+   :::image type="content" border="true" source="media/add-destination-activator-enhanced/live-view.png" alt-text="A screenshot of the Activator destination available for visualization in Live view.":::
 
-
-## Related content 
+## Related content
 
 To learn how to add other destinations to an eventstream, see the following articles: 
 
@@ -53,5 +57,3 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Eventhouse destination](add-destination-kql-database.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
-
-

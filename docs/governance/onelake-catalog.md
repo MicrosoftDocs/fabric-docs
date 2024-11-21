@@ -6,9 +6,8 @@ ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
 ms.date: 11/11/2024
-ms.custom: ignite-2024-fabric
-
-#customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the capabilities of the OneLake catelog and how it can help me find, manage, and use the content I need. 
+ms.custom: ignite-2024-fabric, ignite-2024
+#customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the capabilities of the OneLake catelog and how it can help me find, manage, and use the content I need.
 ---
 
 # Discover and explore Fabric items in the OneLake catalog

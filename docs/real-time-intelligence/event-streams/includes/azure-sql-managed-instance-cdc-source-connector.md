@@ -2,8 +2,10 @@
 title: SQL Server on Virtual Machine (VM) - database (DB) CDC connector for Fabric event streams
 description: Provides the common content for configuring a SQL Server on a Virtual Machine - database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -33,5 +35,3 @@ ms.date: 11/18/2024
 1. On the **Review + connect** page, review the summary, and then select **Connect**.
 
     :::image type="content" source="media/azure-sql-managed-instance-cdc-source-connector/review-add.png" alt-text="Screenshot that shows the selection of the Add button." lightbox="media/azure-sql-managed-instance-cdc-source-connector/review-add.png"::: 
-
-

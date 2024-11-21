@@ -11,6 +11,7 @@ ms.custom:
   - build-2024
   - build-2024-dataai
   - build-2024-fabric
+  - ignite-2024
 ---
 # How to: Use the Copilot chat pane for Fabric Data Warehouse
 
