@@ -27,7 +27,7 @@ To create a protection policy, the following requirements must be met:
 
 * <a name="label-prerequisites"></a>At least one "appropriately configured" sensitivity label from Microsoft Purview Information Protection must exist in the tenant. "Appropriately configured" in the context of protection policies for Fabric means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access** (for information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels)). Only such "appropriately configured" sensitivity labels can be used to create the protection policies for Fabric.
 
-* If service principals need access to items protected by the protection policy you're configuring, they must be part of an Azure security group that is then included in the policy. Service principals can't be added to the policy directly in the Microsoft Purview portal.
+* If service principals need to access items protected by the protection policy you're configuring, add them to an Azure security group that you'll include in the policy. Service principals can't be added to the policy directly in the Microsoft Purview portal.
 
    If you don't add service principals to the allowed list of users, service principals that currently have access to data will be denied access, potentially causing your application to break. For example, service principals might be used for application authentication to access semantic models.
  
