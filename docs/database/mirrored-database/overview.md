@@ -99,7 +99,7 @@ Sharing enables ease of access control and management, while security controls l
 
 By sharing, users grant other users or a group of users access to a mirrored database without giving access to the workspace and the rest of its items. When someone shares a mirrored database, they also grant access to the SQL analytics endpoint and associated default semantic model.
 
-For more information, see [Share your mirrored database and manage permissions](share-and-manage-permission.md).
+For more information, see [Share your mirrored database and manage permissions](share-and-manage-permissions.md).
 
 ## Cross-database queries
 
