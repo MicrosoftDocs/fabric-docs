@@ -3,6 +3,8 @@ title: What's new in Real-Time hub
 description: Learn what is new with Fabric Real-Time hub, such as the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
 ms.topic: overview
 ms.date: 11/18/2024
+author: spelluru
+ms.author: spelluru
 ---
 
 # What's new in Fabric Real-Time hub?
