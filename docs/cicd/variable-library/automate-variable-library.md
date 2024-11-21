@@ -9,7 +9,7 @@ ms.date: 08/12/2024
 #customer intent: As a developer, I want to learn how to automate variable libraries in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs, so that I can manage my content lifecycle.
 ---
 
-# Automate variable libraries by using APIs and Azure DevOps
+# Automate variable libraries by using APIs and Azure DevOps (preview)
 
 The Microsoft Fabric [variable library item](variable-library-overview.md) enables .
 

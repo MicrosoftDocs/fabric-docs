@@ -13,7 +13,7 @@ ms.search.form: Introduction to Deployment pipelines, Manage access in Deploymen
 #customer intent: As a developer, I want to learn how to use the variable library item in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can manage my content lifecycle.
 ---
 
-# Understanding variable libraries in Microsoft Fabric
+# Understanding variable libraries in Microsoft Fabric (preview)
 
 This article describes important concepts and features of the variable library in the Fabric Application lifecycle management (ALM) tool.
 
@@ -29,27 +29,31 @@ Each variable is defined as follows:
 - Default value set
 - Alternative value sets’ value – A pointer to the default value unless was changed to be a static/fixed value.
 
-#### Naming conventions
+### Naming conventions
 
-The name of Variable library and its variables must follow these conventions:
+#### Variable library name
 
-- A Variable library name:
-  - Isn't empty.
-  - Doesn't have leading or trailing spaces.
-  - Starts with a letter.
-  - Can include letters, numbers, underscores, hyphens, and spaces.
-  - Doesn't exceed 256 characters in length.
+The name of Variable library item itself must follow these conventions:
 
-- The name of a variable in the library:
-  - Isn't empty.
-  - Doesn't have leading or trailing spaces.
-  - Starts with a letter or an underscore.
-  - Can include letters, numbers, underscores, and hyphens.
-  - Doesn't exceed 256 characters in length.
+- Isn't empty.
+- Doesn't have leading or trailing spaces.
+- Starts with a letter.
+- Can include letters, numbers, underscores, hyphens, and spaces.
+- Doesn't exceed 256 characters in length.
+
+#### Name of a variable in the variable library
+
+The name of a variable inside the variable library must follow these conventions:
+
+- Isn't empty.
+- Doesn't have leading or trailing spaces.
+- Starts with a letter or an underscore.
+- Can include letters, numbers, underscores, and hyphens.
+- Doesn't exceed 256 characters in length.
 
 Neither the item or variable name is case sensitive.
 
-#### Variable types
+### Variable types
 
 The variables in the variable library can be any of the following basic types:
 
@@ -67,9 +71,9 @@ The variables in the variable library can be any of the following basic types:
 - [Not in PrPr] Item reference: Refers to a different item. The variable value is the item’s path. The referenced item can be in this workspace or in a different workspace.
 - [Not in PrPr] Connection reference: Refers to an external connection through DMTS. The variable value is the connection id in DMTS.
 
-### Permissions
+## Permissions
 
-#### Variable library item permissions
+### Variable library item permissions
 
 Permissions are aligned with the fabric permission model:
 
@@ -78,11 +82,11 @@ Permissions are aligned with the fabric permission model:
 - Contributor/Member/Admin permissions: In general - CRUD permissions. Details as documented *An external link was removed to protect your privacy.*.
 - [Not in PrPr] Shared permissions: Permissions can be shared with the users, either via a link or granted directly.
 
-#### Variable permissions
+### Variable permissions
 
 There is no permission management in an item level or a variable level. Permission for each variable is the same as that for the entire item.
 
-### Supported items
+## Supported items
 
 The following items support the variable library:
 

@@ -13,18 +13,9 @@ ms.search.form: variable library
 
 ---
 
-# Get started with variable libraries
+# Get started with variable libraries (preview)
 
-[Introduce and explain the purpose of the article.]
-
-<!-- Required: Introductory paragraphs (no heading)
-
-Write a brief introduction that can help the user
-determine whether the article is relevant for them
-and to describe what aspects of a product or service
-the article covers.
-
--->
+The Microsoft Fabric variable library is a tool that allows you to customize and share item configurations in a workspace. This article explains how to create a variable library item and add variables to it.
 
 ## Prerequisites
 
@@ -44,60 +35,48 @@ You can create a variable library item from the Fabric home page or from inside 
 ### [From home page](#tab/home-page)
 
 1. From the side navigation bar, select **Create** (If it’s not there, select the three dots -> create)
-1. In the Data Factory section, select variable library
-1. Name the new variable library. Make sure the name conforms to the required [naming conventions](./understand-variable-library.md#naming-conventions).
+1. In the **Data Factory** section, select **Variable library**
+
+   :::image type="content" source="./media/get-started-with-variable-libraries/create-from-home.png" alt-text="Screenshot of UI for creating a variable library item from the Fabric home page.":::
+
+1. Name the new variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./understand-variable-library.md#variable-library-name).
 
 ### [From workspace](#tab/workspace)
 
+1. Select **+ New item**
+1. Scroll down to the **Develop data** section, and select **Variable library**
+
+   :::image type="content" source="./media/get-started-with-variable-libraries/create-from-workspace.png" alt-text="Screenshot of UI for creating a variable library item from an existing workspace.":::
+
+1. Name the new variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./understand-variable-library.md#variable-library-name).
 
 ---
-## [Who or what information]
 
-<!-- Optional: Links to use information - H2
+An empty variable library appears. You can now add variables to it.
 
-In an H2 section, describe who the product or service is for,
-or what it's used for.
+:::image type="content" source="./media/get-started-with-variable-libraries/empty-variable-library.png" alt-text="Screenshot of an empty variable library. It says there are no variables, and there's a green button that says New variable.":::
 
--->
+## Add a variable
 
-## Get help
+To add a variable to the library:
 
-<!-- Optional: Links to help information - H2
+1. Select **+ Add variable**
+1. Enter a name (make sure it follows the [naming conventions](./understand-variable-library.md#name-of-a-variable-in-the-variable-library))
+1. Select a type from the drop-down list
+1. Enter default value set of the defined type
+1. Add one or more alternative value sets (optional)
+1. Add a note explaining what the variable is for or how it’s used (optional)
 
-In an H2 section, list resources and support services that 
-provide help when you use the product or service.
+:::image type="content" source="./media/get-started-with-variable-libraries/add-variable.png" alt-text="Screenshot of a variable library. On top, there's a button that says add variable.":::
 
--->
+## Edit a variable
+
+* To delete a variable, select one or more variables and select **Delete variable**.
+* To edit the name, type, or value set of a variable, change the value and select Save. 
+* To add another alternative value set, select Add value set. 
 
 ## Related content
 
 * [Related article title](link.md)
 * [Related article title](link.md)
 * [Related article title](link.md)
-
-
-
-# Create a variable library item (preview)
-
-Add variables and types
-Add values
-Add new value set
-Manage variables and value sets
-Reference in Data pipeline
-
-One time setup of default value set for each stage
-
-dynamic/static content?
-
-## Add or delete a variable
-
-## Edit the value of a variable
-
-## Get help
-
-<!-- Optional: Links to help information - H2
-
-In an H2 section, list resources and support services that 
-provide help when you use the product or service.
-
--->
