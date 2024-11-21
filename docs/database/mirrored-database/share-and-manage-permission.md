@@ -34,13 +34,11 @@ By default, sharing a mirrored database grants users Read permission to the mirr
 > [!NOTE]
 > When mirroring data from Azure SQL Database or Azure SQL Managed Instance, its System Assigned Managed Identity need to have "Read and write" permission to the mirrored database. If you create the mirrored database from the Fabric portal, the permission is granted automatically. If you use API to create the mirrored database, make sure you grant the permission following above instruction. You can search the recipient by specifying the name of your Azure SQL server or Azure SQL Managed Instance.
 
-:::image type="content" source="media/overview/grant-access.png" alt-text="Diagram that shows how to share and grant user access to mirrored database." lightbox="media/overview/grant-access.png":::
-
 ## Manage permissions
 
 To review the permissions granted to a mirrored database, its SQL analytics endpoint, or its default semantic model, navigate to one of these items in the workspace and select the **Manage permissions** quick action.
 
-If you have the **Share** permission for a mirrored database, you can also use the **Manage permissions** page to grant or revoke permissions. For existing recipients, you can click the ellipsis (**...**) at the end of the each row to add or remove specific permission. 
+If you have the **Share** permission for a mirrored database, you can also use the **Manage permissions** page to grant or revoke permissions. For existing recipients, you can click the ellipsis (**...**) at the end of each row to add or remove specific permission. 
 
 ## Related content
 
