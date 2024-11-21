@@ -51,11 +51,11 @@ The output of SQL statement will adopt the same output widget with _display()_ b
 
 The improved chart view is available on _display()_ command, it provide as more intuitive and powerful experience for visualizing your data by leveraging the _display()_ command.
 
-1. Now you can add up to **5** charts in one display() output widget by clicking **add new chart**, allowing you to create multiple charts based on different columns, and compare charts easily.
+1. Now you can add up to **5** charts in one display() output widget by clicking **New chart**, allowing you to create multiple charts based on different columns, and compare charts easily.
 
 1. You can get a list of chart recommandations based on the target dataframe when creating new charts. You can choose to edit a recommanded chart or build your own chart from scratch.
 
-    :::image type="content" source="media\notebook-visualization\suggested-charts.gif alt-text="Screenshot of an example of suggested charts." lightbox="media\notebook-visualization\suggested-charts.gif":::
+    ![Animated GIF of chart view.](media\notebook-visualization\suggested-charts.gif)
 
 1. You can now customize your visualization by specifying the following settings, note that the setting options may change according to the selected chart type:
 
