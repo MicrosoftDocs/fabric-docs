@@ -4,7 +4,7 @@ description: Learn about authentication in SQL database in Fabric.
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: wiassaf
-ms.date: 10/16/2024
+ms.date: 11/20/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
@@ -35,28 +35,87 @@ Applications and tools must upgrade drivers to versions that support Microsoft E
 
 ## Create database users for Microsoft Entra identities
 
-If you plan to [configure SQL access controls with Transact-SQL](configure-sql-access-controls.md#configure-sql-controls-with-transact-sql), you first need to create [database users](/sql/relational-databases/security/contained-database-users-making-your-database-portable) corresponding to your Microsoft Entra users, service principals, or their groups.
+If you plan to [configure SQL access controls with Transact-SQL](configure-sql-access-controls.md#configure-sql-controls-with-transact-sql), you first need to create [database users](/sql/relational-databases/security/contained-database-users-making-your-database-portable) corresponding to your Microsoft Entra identities - users, service principals, or their groups - with [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true).
 
-Creating database users isn't required if you use [Fabric access controls](authorization.md#fabric-access-controls) ([workspace roles](authorization.md#workspace-roles) or [item permissions](authorization.md#item-permissions)).
+Creating database users isn't required if you use [Fabric access controls](authorization.md#fabric-access-controls) ([workspace roles](authorization.md#workspace-roles) or [item permissions](authorization.md#item-permissions)). You don't need to create users when you [manage SQL database-level roles from Fabric portal](configure-sql-access-controls.md#manage-sql-database-level-roles-from-fabric-portal) either - the portal automatically creates users when needed.
 
-For more information about database user management, see:
+### Create database users when connected as a Microsoft Entra user
 
-- [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true) ([WITH EXTERNAL PROVIDER](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true#microsoft_entra_principal)), [ALTER USER (Transact-SQL)](/sql/t-sql/statements/alter-user-transact-sql?view=fabric&preserve-view=true), and [DROP USER (Transact-SQL)](/sql/t-sql/statements/drop-user-transact-sql?view=fabric&preserve-view=true)
-- [Create a database user](/sql/relational-databases/security/authentication-access/create-a-database-user)
-- [Microsoft Entra logins and users with nonunique display names (preview)](/azure/azure-sql/database/authentication-microsoft-entra-create-users-with-nonunique-names?view=fabricsql&preserve-view=true)
+When you're connected to your database as a Microsoft Entra user, you should use `CREATE USER` with the [FROM EXTERNAL PROVIDER](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true#from-external-provider-) clause to create users for Microsoft Entra principals. `FROM EXTERNAL PROVIDER` validates the specified principal name with Microsoft Entra, retrieves the principal identifier (user's or group's object ID, application ID, or client ID), and stores the identifier as user's security identifier (SID) in SQL metadata. You must be a member of the [Directory Readers role](/entra/identity/role-based-access-control/permissions-reference#directory-readers) in Microsoft Entra when using the `FROM EXTERNAL PROVIDER` clause. The following sample T-SQL scripts use `FROM EXTERNAL PROVIDER` to create a user based on a Microsoft Entra user, a service principal in Microsoft Entra, or a group in Microsoft Entra.
 
-## Private links
+```sql  
+-- Create a user for a Microsoft Entra user
+CREATE USER [alice@contoso.com] FROM EXTERNAL PROVIDER;
+-- Create a user for a service principal in Microsoft Entra
+CREATE USER [HRApp] FROM EXTERNAL PROVIDER;
+-- Create a user for a group in Microsoft Entra
+CREATE USER [HR] FROM EXTERNAL PROVIDER; 
+```
 
-To configure [private links](../../security/security-private-links-overview.md) in Fabric, see [Set up and use private links](../../security/security-private-links-use.md).
+### Create database users when connected as a Microsoft Entra service principal
+
+When an application is connected to a database with a service principal, the application must issue `CREATE USER` with the [SID](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true#sid--sid) and [TYPE](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true#type---e--x-) clauses to create users for Microsoft Entra principals. The specified principal name isn't validated in Microsoft Entra. It's a responsibility of the application (application developer) to provide a valid name and a valid SID and a user object type.
+
+If the specified principal is a user or a group in Microsoft Entra, the SID must be an object ID of that user or group in Microsoft Entra. If the specified principal is a service principal in Microsoft Entra, the SID must be an application ID (client ID) of the service principal in Microsoft Entra. Object IDs and application IDs (client IDs) obtained from Microsoft Entra must be converted to **binary(16)**.
+
+The value of the `TYPE` argument must be:
+
+- `E` - if the specified Microsoft Entra principal is a user or a service principal.
+- `X` - if the specified Microsoft Entra principal is a group.
+
+The following T-SQL example script creates a database user for the Microsoft Entra user, named `bob@contoso.com`, setting the SID of the new user to the object ID of the Microsoft Entra user. The unique identifier of the user's object ID is converted and then concatenated into a `CREATE USER` statement. Replace `<unique identifier sid>` with the user's object ID in Microsoft Entra.
+
+```sql
+DECLARE @principal_name SYSNAME = 'bob@contoso.com';
+DECLARE @objectId UNIQUEIDENTIFIER = '<unique identifier sid>'; -- user's object ID in Microsoft Entra
+
+-- Convert the guid to the right type
+DECLARE @castObjectId NVARCHAR(MAX) = CONVERT(VARCHAR(MAX), CONVERT (VARBINARY(16), @objectId), 1);
+
+-- Construct command: CREATE USER [@principal_name] WITH SID = @castObjectId, TYPE = E;
+DECLARE @cmd NVARCHAR(MAX) = N'CREATE USER [' + @principal_name + '] WITH SID = ' + @castObjectId + ', TYPE = E;'
+EXEC (@cmd);
+```
+
+The following example creates a database user for the Microsoft Entra service principal, named `HRApp`, setting the SID of the new user to the client ID of the service principal in Microsoft Entra.
+
+```sql
+DECLARE @principal_name SYSNAME = 'HRApp';
+DECLARE @clientId UNIQUEIDENTIFIER = '<unique identifier sid>'; -- principal's client ID in Microsoft Entra
+
+-- Convert the guid to the right type
+DECLARE @castClientId NVARCHAR(MAX) = CONVERT(VARCHAR(MAX), CONVERT (VARBINARY(16), @clientId), 1);
+
+-- Construct command: CREATE USER [@principal_name] WITH SID = @castClientId, TYPE = E;
+DECLARE @cmd NVARCHAR(MAX) = N'CREATE USER [' + @principal_name + '] WITH SID = ' + @castClientId + ', TYPE = E;'
+EXEC (@cmd);
+```
+
+The following example creates a database user for the Microsoft Entra group, named `HR`, setting the SID of the new user to the object ID of the group.
+
+```sql
+DECLARE @group_name SYSNAME = 'HR';
+DECLARE @objectId UNIQUEIDENTIFIER = '<unique identifier sid>'; -- principal's object ID in Microsoft Entra
+
+-- Convert the guid to the right type
+DECLARE @castObjectId NVARCHAR(MAX) = CONVERT(VARCHAR(MAX), CONVERT (VARBINARY(16), @objectId), 1);
+
+-- Construct command: CREATE USER [@groupName] WITH SID = @castObjectId, TYPE = X;
+DECLARE @cmd NVARCHAR(MAX) = N'CREATE USER [' + @principal_name + '] WITH SID = ' + @castObjectId + ', TYPE = X;'
+EXEC (@cmd);
+```
 
 ## Limitations
 
 - Microsoft Entra ID is the only identity provider SQL database in Fabric supports. Specifically, SQL authentication isn't supported.
 - Logins (server principals) aren't supported.
-- Only Microsoft Entra users can create database user objects (with [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true)) corresponding to Microsoft Entra identities - Microsoft Entra service principals can't.
 
 ## Related content
 
+- [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql?view=fabric&preserve-view=true)
+- [ALTER USER (Transact-SQL)](/sql/t-sql/statements/alter-user-transact-sql?view=fabric&preserve-view=true)
+- [DROP USER (Transact-SQL)](/sql/t-sql/statements/drop-user-transact-sql?view=fabric&preserve-view=true)
+- [Create a database user](/sql/relational-databases/security/authentication-access/create-a-database-user?view=fabric&preserve-view=true)
+- [Microsoft Entra logins and users with nonunique display names (preview)](/azure/azure-sql/database/authentication-microsoft-entra-create-users-with-nonunique-names?view=fabricsql&preserve-view=true)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
-- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
