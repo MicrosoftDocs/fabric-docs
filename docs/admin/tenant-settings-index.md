@@ -4,8 +4,7 @@ description: Index to Fabric tenant settings.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.custom:
-			   
+ms.custom:   
 ms.collection: ce-skilling-ai-copilot
 ms.date: 11/21/2024
 ---
@@ -23,11 +22,9 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 | Setting name | Description |
 |------|-------|
-																																																																																																																																																																																																																																																																																																										   
 |[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users’ ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
 |Users can create and use ADF Mount items (preview)|Users can connect and test existing ADF pipelines in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2250738)|
 |[Users can create Healthcare Cohort items (preview)](/industry/healthcare/healthcare-data-solutions/discover-and-build-cohorts-overview)|Users can explore and create healthcare cohorts using natural language from the multi-modal healthcare data estate provided by the Healthcare solutions item. The data may contain Protected Health Information (PHI). Collaborators with workspace access can view, build on, and modify the healthcare cohort items within that workspace.<br><br>By turning this setting on, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2257737).|
-																																																																														  
 |[Retail data solutions (preview)](/industry/retail/retail-data-solutions/overview-retail-data-solutions)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://go.microsoft.com/fwlink/?linkid=2263806)|
 |[Users can create and use data workflows (preview)](../data-factory/create-apache-airflow-jobs.md)|Data workflows are powered by Apache Airflow and offer an integrated Apache Airflow runtime environment, enabling users to author, execute, and schedule Python DAGs. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://aka.ms/fabricairflowintrodoc)|
 |[API for GraphQL (preview)](../data-engineering/api-graphql-overview.md)|Select the admins who can view and change this setting, including any security group selections you've made.|
@@ -35,7 +32,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Users can create Real-Time Dashboards (preview)](../real-time-intelligence/index.yml)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 |[SQL Database (preview)​](../database/sql/overview.md)|Users can create SQL Databases​.  [Learn More](https://aka.ms/fabricsqldb)|
 |Project Alpine Lakes (preview)​|Users can create Project Alpine Lakes items to build comprehensive digital twins of real world environments and processes, to enable big-picture data analysis and drive operational efficiency.|
-																																																																																																																										
 |[Users can discover and create org apps (preview)](/power-bi/consumer/org-app-items/org-app-items)​|Turn on this setting to let users create org apps as items. Users with access will be able to view them. By turning on this setting, you agree to the  [Preview Terms](https://aka.ms/orgapps_previewterms).<br><br>If turned off, any org app items created will be hidden until this setting is turned on again. The prior version of workspace apps will still be available.  [Learn More](https://aka.ms/orgapps_learnmore)|
 |[Product Feedback](../get-started/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
 |Copy Job (preview)|Users can simply move data from any sources into any destinations without creating a pipeline or dataflow. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272307)|
@@ -275,13 +271,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 | Setting name | Description |
 |------|-------|
 |[Users can edit data models in the Power BI service (preview)](/power-bi/transform-model/service-edit-data-models#enabling-data-model-editing-in-the-admin-portal)|Turn on this setting to allow users to edit data models in the service. This setting doesn't apply to DirectLake semantic models or editing a semantic model through an API or XMLA endpoint.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2227332)|
-
-																						  
-
-							  
-				
-																																																									 
-																																																																																							
 
 ## [Scale-out settings](service-admin-portal-scale-out.md)
 
