@@ -105,7 +105,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
 
-1. **Run the DevGateway**: Execute 'Microsoft.Fabric.Workload.DevGateway.exe' and sign in with a user that has capacity admin privileges for the capacity linked to the workspace specified in the WorkspaceGuid field of workload-dev-mode.json.
+1. **Run the DevGateway**: Execute 'Microsoft.Fabric.Workload.DevGateway.exe' and sign in with a user that has workspace admin privileges for the workspace specified in the `WorkspaceGuid` field of workload-dev-mode.json.
 
 1. **Start the Project**: Set the 'Boilerplate' project as the startup project in Visual Studio and run it.
 

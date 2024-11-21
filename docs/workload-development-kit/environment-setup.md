@@ -16,9 +16,9 @@ This article is aimed at developers who are looking to build a workload using th
 
 To start developing workloads, you need to be granted permissions in the Fabric service. You might need to contact other people in your organization to get the necessary permissions.
 
-### Become an admin on the capacity associated with your workspace
+### Ensure you have admin access on the workspace you plan to work with
 
-To begin development and connect your local machine to a Fabric [capacity](../enterprise/licenses.md#capacity), you need to be an admin on the capacity associated with the workspace you're using for development. Only developers with admin permissions on the capacity linked to the workspace can register their workload on that workspace. If you're not an admin on the capacity linked to the workspace you want to use for development, ask someone in your organization who's an admin on the capacity to add you as an admin. To add admins to a capacity, follow the instructions in [Add and remove admins](../admin/capacity-settings.md#add-and-remove-admins).
+To begin development and connect your local machine to a Fabric [workspace](../enterprise/licenses.md#workspace), you can either create a new workspace or ask to be added as an admin on an existing one. Developers must have admin permissions on the workspace to register their workload.
 
 ### Enable the development tenant setting
 
@@ -48,7 +48,7 @@ Download and install these tools before you start developing your workload.
 
 * [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - The default package manager for Node.js, which is used to manage and share the packages that you use in your project.
 
-* [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. Used to run the server-side JavaScript code.
+* [Node.js](https://nodejs.org/en/download) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. Used to run the server-side JavaScript code.
 
 * [Webpack](https://webpack.js.org/guides/installation/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
 
