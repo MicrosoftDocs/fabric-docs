@@ -44,8 +44,8 @@ The output of SQL statement will adopt the same output widget with _display()_ b
 
 ### New rich dataframe chart view
 
-> [!INOTE]
-> Currently, the feature is in preview.
+ > [!NOTE]
+ > Currently, the feature is in preview.
 
 The improved chart view is available on _display()_ command, it provide as more intuitive and powerful experience for visualizing your data by leveraging the _display()_ command.
 
