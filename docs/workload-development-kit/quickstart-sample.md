@@ -1,5 +1,5 @@
 ---
-title: Quick start - Run a sample workload (preview)
+title: Quick start - Run a sample workload
 description: Create a Microsoft Fabric workload using a sample workload and the instructions in this quickstart tutorial.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
-# Quick start: Run a workload sample (preview)
+# Quick start: Run a workload sample
 
 This quick start guide shows you how to create and run a Microsoft Fabric workload using a sample workload.
 
@@ -37,7 +37,7 @@ Configure the admin portal as follows:
 
    :::image type="content" source="./media/quickstart-sample/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Fabric Admin portal.":::
 
-1. In the **Additional workloads (preview)** section, enable the **Capacity admins and contributors can add and remove additional workloads** tenant setting. You can enable it for the entire organization or specific groups.
+1. In the **Additional workloads** section, enable the **Capacity admins and contributors can add and remove additional workloads** tenant setting. You can enable it for the entire organization or specific groups.
 
 ### Set up the sample project
 
@@ -57,7 +57,7 @@ Configure the admin portal as follows:
 
    The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the *.env.dev* configuration file in the front-end folder.
 
-1. **Enable frontend developer mode**: In the tenant settings in the admin portal, under the **Additional workloads (preview)** section, and activate the **Capacity admins can develop additional workloads.** tenant setting. This setting allows connections to your local server and persists across browser sessions.
+1. **Enable frontend developer mode**: In the tenant settings in the admin portal, under the **Additional workloads** section, and activate the **Capacity admins can develop additional workloads.** tenant setting. This setting allows connections to your local server and persists across browser sessions.
 
 ### Run a sample workload
 
