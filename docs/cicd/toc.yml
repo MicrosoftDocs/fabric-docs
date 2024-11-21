@@ -55,6 +55,16 @@ items:
       href: git-integration/license-change.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
+- name: Variable libraries
+  items:
+  - name: Introduction to variable libraries
+    href: variable-library/variable-library-overview.md
+  - name: Understanding variable libraries
+    href: variable-library/understand-variable-library.md
+  - name: Get started with variable
+    href: variable-library/get-started-with-variable-libraries.md
+  - name: Automate
+    href: variable-library/automate-variable-library.md
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
 - name: Frequently asked questions
