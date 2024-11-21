@@ -55,7 +55,7 @@ The improved chart view is available on _display()_ command, it provide as more 
 
 1. You can get a list of chart recommandations based on the target dataframe when creating new charts. You can choose to edit a recommanded chart or build your own chart from scratch.
 
-    ![Animated GIF of chart view.](media\notebook-visualization\suggested-charts.gif)
+    ![Animated GIF of suggested charts.](media\notebook-visualization\suggested-charts.gif)
 
 1. You can now customize your visualization by specifying the following settings, note that the setting options may change according to the selected chart type:
 
