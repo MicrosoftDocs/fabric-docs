@@ -1,5 +1,5 @@
 ---
-title: Upload and manage a workload (preview)
+title: Upload and manage a workload
 description: Learn how to deploy and manage a workload solution in Microsoft Fabric to improve performance and user engagement.
 author: KesemSharabi
 ms.author: kesharab
@@ -10,7 +10,7 @@ ms.date: 05/21/2024
 #customer intent: As an independent software vendor (ISV), I want know how to upload my Microsoft Fabric extension workload to integrate my app into the Fabric framework.
 ---
 
-# Upload and manage a workload (preview)
+# Upload and manage a workload
 
 This article describes how to upload and manage a workload to Microsoft Fabric. Workloads enhance the usability of your service within a familiar workspace, eliminating the need to leave the Fabric environment. Fabric workloads increase user engagement and improve your application’s discoverability in the Fabric marketplace. The Fabric workspace includes various components, known as Fabric items, which handle storage, analysis, and presentation of your data.
 

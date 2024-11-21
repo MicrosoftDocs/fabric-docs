@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 08/12/2024
 ---
 
-# Set up workload cloud mode (preview)
+# Set up workload cloud mode
 
 In this article, learn the requirements for deploying a workload that operates on a remote server with internet access in Microsoft Fabric.
 
