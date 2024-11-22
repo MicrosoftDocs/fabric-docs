@@ -55,7 +55,7 @@ To view data insights for an eventstream:
 
 :::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
 
-### Data insights in Azure event hub source,  Azure iot hub source, lakehouse destination and KQL database destination nodes
+### Data insights in Azure event hub, Azure iot hub, lakehouse, KQL database and Activator nodes
 
 The following metrics are available on the **Data insights** tab for Azure event hub source, Azure iot hub source, lakehouse destination, and KQL database destination ('Event processing before ingestion' mode) nodes:
 
@@ -86,6 +86,7 @@ To view the data insights for an Azure event hub source, Azure iot hub source, l
 
 The streaming connector source nodes include the following sources:
 - Azure SQL Database Change Data Capture (CDC)
+- Azure Service Bus
 - PostgreSQL Database CDC
 - MySQL Database CDC
 - Azure Cosmos DB CDC
