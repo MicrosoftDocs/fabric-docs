@@ -159,8 +159,8 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 | --- | --- | --- |
 | [Azure CLI](/sql/azdata/install/deploy-install-azdata) | Yes | No |
 | [Azure PowerShell](/powershell/azure/) | Yes | No |
-| [BACPAC file (export)](/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | Yes, see [Azure SQL Database export](/azure/azure-sql/database/database-export?view=azuresql-db&preserve-view=true) | Yes, see [Azure SQL Database export](/azure/azure-sql/database/database-export?view=azuresql-db&preserve-view=true)   |
-| [BACPAC file (import)](/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | Yes, see [Azure SQL Database import](/azure/azure-sql/database/database-import?view=azuresql-db&preserve-view=true) | Yes, see [Azure SQL Database import](/azure/azure-sql/database/database-import?view=azuresql-db&preserve-view=true) |
+| [Portability, export (`.bacpac`)](/sql/tools/sqlpackage/sqlpackage#portability) | Yes, see [Azure SQL Database export](/azure/azure-sql/database/database-export?view=azuresql-db&preserve-view=true) | Yes, see [SqlPackage for SQL database in Microsoft Fabric](sqlpackage.md#export-a-database-with-sqlpackage)   |
+| [Portability, import (`.bacpac`)](/sql/tools/sqlpackage/sqlpackage#portability) | Yes, see [Azure SQL Database import](/azure/azure-sql/database/database-import?view=azuresql-db&preserve-view=true) | Yes, see [SqlPackage for SQL database in Microsoft Fabric](sqlpackage.md#import-a-database-with-sqlpackage) |
 | [BCP](/sql/tools/bcp-utility) | Yes | Yes |
 | [BICEP](/azure/azure-resource-manager/bicep/overview) | Yes | No |
 | [Database watcher](/azure/azure-sql/database-watcher-overview) | Yes | Not currently |
