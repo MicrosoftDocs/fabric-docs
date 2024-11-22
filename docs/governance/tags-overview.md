@@ -5,11 +5,11 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
+ms.custom:
+  - ignite-2024
 ms.topic: conceptual #Don't change
 ms.date: 08/06/2024
-
 #customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
-
 ---
 
 # Tags in Microsoft Fabric (preview)

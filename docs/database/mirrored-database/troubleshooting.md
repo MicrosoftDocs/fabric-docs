@@ -1,11 +1,13 @@
 ---
-title: "Troubleshoot Fabric mirrored databases"
+title: "Troubleshoot Fabric Mirrored Databases"
 description: Troubleshooting scenarios, workarounds, and links for mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
-ms.date: 11/12/2024
+ms.date: 11/19/2024
 ms.topic: troubleshooting
+ms.custom:
+  - ignite-2024
 ms.search.form: Fabric Mirroring
 ---
 
@@ -74,7 +76,7 @@ In the **Monitoring** page, the date shown is the last time data was successfull
 
 Changing the source database is not supported. Create a new mirrored database.
 
-## Limits error messages 
+## Limits error messages
 
 These common error messages have explanations and mitigations:
 

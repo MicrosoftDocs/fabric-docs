@@ -7,6 +7,7 @@ author: YaelSchuster
 ms.topic: concept-article
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Get started
@@ -39,4 +40,3 @@ This flow is useful for a variety of scenarios across all industries. Here are j
 * **Finance and Insurance:** A financial analyst uses real-time data for fraud detection. They also use the data to improve operational efficiency.
 * **Energy and Utilities:** An energy company uses real-time data to monitor station data, and detect energy leakage. They also use the data for failure monitoring and predictive maintenance.
 * **Logistics:** A logistics company uses real-time data to monitor the location of their vehicles and optimize routes. They also use the data for warehouse management and inventory tracking.
-

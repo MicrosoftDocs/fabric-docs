@@ -1,13 +1,13 @@
 ---
 title: Troubleshoot the MongoDB connector
 titleSuffix: Fabric Data Factory & Azure Synapse
-description: Learn how to troubleshoot issues with the MongoDB connector in Fabric Data Factory and Azure Synapse Analytics. 
+description: Learn how to troubleshoot issues with the MongoDB connector in Fabric Data Factory and Azure Synapse Analytics.
 author: jianleishen
 ms.subservice: data-movement
 ms.topic: troubleshooting
 ms.date: 11/06/2024
 ms.author: jianleishen
-ms.custom: has-adal-ref, synapse
+ms.custom: has-adal-ref, synapse, ignite-2024
 ---
 
 # Troubleshoot the MongoDB connector in Azure Data Factory and Azure Synapse

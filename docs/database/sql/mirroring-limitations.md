@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 11/15/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ---
 # Limitations for Fabric SQL database mirroring (preview)
 
@@ -32,7 +34,7 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
 - [Row-level security](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true) is supported for Fabric SQL database, but permissions are currently not propagated to the replicated data in Fabric OneLake.
 - [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql?view=fabric&preserve-view=true), for example granting permissions to certain columns, are currently not propagated to the replicated data in Fabric OneLake.
 - [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking?view=fabric&preserve-view=true) settings are currently not propagated to the replicated data in Fabric OneLake.
-- Microsoft Purview Information Protection/sensitivity labels are not cascaded and mirrored to Fabric OneLake.
+- Microsoft Purview Information Protection/sensitivity labels are not cascaded and mirrored to Fabric OneLake. For more information, see [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md).
 
 ## Table level
 

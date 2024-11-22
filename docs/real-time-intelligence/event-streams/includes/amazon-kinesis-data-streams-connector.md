@@ -11,13 +11,13 @@ ms.date: 05/21/2024
 
 1. On the **Select a data source** screen, select **Kinesis Data Streams**.
 
-   ![A screenshot of selecting Kinesis Data Streams.](media/amazon-kinesis-data-streams-connector/select-external-source.png)
+   :::image type="content" border="true" source="media/amazon-kinesis-data-streams-connector/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
 1. On the **Connect** screen, to create a connection, select **New connection**.
 
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector/new-connection-link.png" alt-text="Screenshot that shows the Connect page with the New connection highlighted.":::
 1. In the **Connection settings** section, for **Data Stream name**, enter the data stream name from Amazon Kinesis.
 
-    ![A screenshot of the Amazon Kinesis data stream screen.](media/amazon-kinesis-data-streams-connector/data-stream-name.png)
+    :::image type="content" border="true" source="media/amazon-kinesis-data-streams-connector/data-stream-name.png" alt-text="A screenshot of the Amazon Kinesis data stream screen.":::
 1. In the **Connection credentials** section, do these steps.
     1. For **Connection name**, enter a name for this cloud connection.
     1. For **Authentication kind**, confirm that **Kinesis key** is selected. 

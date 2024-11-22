@@ -61,7 +61,7 @@ A dataflow is a reusable data transformation that can be used in a pipeline. In 
 
     1. From **Choose data source**, search for **OData**, and then select the OData connector.
 
-       :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/get-odata.png" alt-text="Screenshot of the Get data menu with OData emphasized":::
+       :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/get-odata.png" alt-text="Screenshot of the Get data menu with OData emphasized.":::
 
     1. Enter the **URL** of the OData source. For this tutorial, use the [OData sample service](https://services.odata.org/V4/Northwind/Northwind.svc/).
     1. Select **Next**.

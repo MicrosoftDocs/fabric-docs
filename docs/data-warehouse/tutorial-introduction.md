@@ -9,6 +9,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ---
 
 # Data warehouse tutorial introduction
@@ -44,7 +45,7 @@ In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabri
 1. [Analyze data](tutorial-analyze-data-notebook.md) with a notebook.
 1. [Create and execute cross-warehouse queries](tutorial-sql-cross-warehouse-query-editor.md) with SQL query editor.
 1. [Create Power BI reports](tutorial-power-bi-report.md) using DirectLake mode to analyze the data in place.
-1. [Build a report](tutorial-build-report-onelake-data-hub.md) from the OneLake **Data Hub**.
+1. [Build a report](tutorial-build-report-onelake-data-hub.md) from OneLake.
 1. [Clean up resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
 ## Data warehouse end-to-end architecture

@@ -1,17 +1,19 @@
 ---
 title: Create eventstreams for discrete events
-description: Learn how to create Fabric eventstreams for discrete events.
+description: Learn how to create Fabric event streams for discrete events.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
 # Create eventstreams for discrete events (preview)
 
-This article shows you how to create Microsoft Fabric eventstreams for discrete events.
+This article shows you how to create Microsoft Fabric event streams for discrete events.
 
 When you develop applications for real-time analytics, you commonly encounter two types of events: discrete events and continuous events or streams. Microsoft Fabric event streams can ingest and process both discrete and continuous events.
 
@@ -56,13 +58,13 @@ To connect discrete events to an eventstream, take the following steps:
 
 1. On the next screen, select **Use external source**.
 
-   ![A screenshot of selecting Use external source.](media/external-sources/add-external-source.png)
+   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Use external source.":::
 1. On the **Select a data source** page, select **View all sources**. 
 
-   ![A screenshot of selecting View all sources on the Select a data source window.](media/external-sources/view-all-sources.png)
+   :::image type="content" border="true" source="media/external-sources/view-all-sources.png" alt-text="A screenshot of selecting View all sources on the Select a data source window.":::
 1. On the **Select a data source** screen, select the type of discrete events you want to add to your eventstream, either **Azure Blob Storage events** or **Fabric Workspace Item events**.
 
-   ![A screenshot of selecting Azure Blob Storage Events.](media/create-eventstreams-discrete-events/select-external-events.png)
+   :::image type="content" border="true" source="media/create-eventstreams-discrete-events/select-external-events.png" alt-text="A screenshot of selecting Azure Blob Storage Events.":::
 1. Add the event source and publish the eventstream by following the instructions in one of the following articles:
 
    - For Azure Blob Storage events, see [Add Azure Blob Storage events](add-source-azure-blob-storage.md).

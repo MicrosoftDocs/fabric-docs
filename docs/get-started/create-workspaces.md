@@ -45,7 +45,7 @@ Contact list is a place where you can put the names of people as contacts for in
 
 By default, the first workspace admin who created the workspace is the contact. You can add other users or groups according to your needs. Enter the name in the input box directly, it helps you to automatically search and match users or groups in your org.
 
-![Screenshot of Contact list.](media/create-workspaces/fabric-contact-list.png)
+:::image type="content" border="true" source="media/create-workspaces/fabric-contact-list.png" alt-text="Screenshot of Contact list.":::
 
 ### License mode
 
@@ -79,15 +79,15 @@ Quickly access your favorite workspaces by pinning them to the top of the worksp
 
 1. Open the workspace flyout from the nav pane and hover over the workspace you want to pin. Select the **Pin to top** icon.
 
-    ![Screenshot of pin workspace.](media/create-workspaces/pin-workspace.png)
+    :::image type="content" border="true" source="media/create-workspaces/pin-workspace.png" alt-text="Screenshot of pin workspace.":::
 
 1. The workspace is added in the **Pinned** list.
 
-    ![Screenshot of pinned list.](media/create-workspaces/pinned-list.png)
+    :::image type="content" border="true" source="media/create-workspaces/pinned-list.png" alt-text="Screenshot of pinned list.":::
 
 1. To unpin a workspace, select the unpin button. The workspace is unpinned.
 
-    ![Screenshot of unpin workspace.](media/create-workspaces/unpin-workspace.png)
+    :::image type="content" border="true" source="media/create-workspaces/unpin-workspace.png" alt-text="Screenshot of unpin workspace.":::
 
 ## Related content
 

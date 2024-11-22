@@ -9,7 +9,7 @@ ms.date: 11/19/2024
 #customer-intent: '#customer intent: As a Fabric user I want to learn how to use Activator to get data from eventstreams.'
 ---
 
-# Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from event streams
+# Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams
 
 You can get data for use in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from many sources. This article describes how to get data from eventstreams.
 
