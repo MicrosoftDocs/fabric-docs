@@ -49,7 +49,7 @@ The output of SQL statement will adopt the same output widget with _display()_ b
  > [!NOTE]
  > Currently, the feature is in preview.
 
-The improved chart view is available on display() command. It provides a more intuitive and powerful experience for visualizing your data by leveraging the display() command.
+The improved chart view is available on _display()_ command. It provides a more intuitive and powerful experience for visualizing your data by leveraging the _display()_ command.
 
 1. Now you can add up to **5** charts in one display() output widget by clicking **New chart**, allowing you to create multiple charts based on different columns, and compare charts easily.
 
