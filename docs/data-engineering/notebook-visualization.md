@@ -49,11 +49,11 @@ The output of SQL statement will adopt the same output widget with _display()_ b
  > [!NOTE]
  > Currently, the feature is in preview.
 
-The improved chart view is available on _display()_ command, it provide as more intuitive and powerful experience for visualizing your data by leveraging the _display()_ command.
+The improved chart view is available on display() command. It provides a more intuitive and powerful experience for visualizing your data by leveraging the display() command.
 
 1. Now you can add up to **5** charts in one display() output widget by clicking **New chart**, allowing you to create multiple charts based on different columns, and compare charts easily.
 
-1. You can get a list of chart recommandations based on the target dataframe when creating new charts. You can choose to edit a recommanded chart or build your own chart from scratch.
+1. You can get a list of chart recommendations based on the target dataframe when creating new charts. You can choose to edit a recommended chart or build your own chart from scratch.
 
     ![Animated GIF of suggested charts.](media\notebook-visualization\suggested-charts.gif)
 
@@ -77,7 +77,7 @@ The improved chart view is available on _display()_ command, it provide as more 
 
    |Category |**Advanced settings** | **Description** |
    |---|---|---|
-   |Color |Theme | Define the theme colour set of the chart. |
+   |Color |Theme | Define the theme color set of the chart. |
    |X-axis |Label| Specify a label to the X-asis. |
    |X-axis |Scale| Specify the scale function of the X-axis. |
    |X-axis |Range| Specify the value range X-axis. |
