@@ -3,8 +3,8 @@ title: "Features comparison: Azure SQL Database and SQL database (preview)"
 description: This article compares the database engine features of Azure SQL Database and SQL database in Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 11/19/2024
+ms.reviewer: nzagorac, antho, sukkaur, drskwier
+ms.date: 11/22/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
@@ -159,8 +159,8 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 | --- | --- | --- |
 | [Azure CLI](/sql/azdata/install/deploy-install-azdata) | Yes | No |
 | [Azure PowerShell](/powershell/azure/) | Yes | No |
-| [Portability, export (`.bacpac`)](/sql/tools/sqlpackage/sqlpackage#portability) | Yes, see [Azure SQL Database export](/azure/azure-sql/database/database-export?view=azuresql-db&preserve-view=true) | Yes, see [SqlPackage for SQL database in Microsoft Fabric](sqlpackage.md#export-a-database-with-sqlpackage)   |
-| [Portability, import (`.bacpac`)](/sql/tools/sqlpackage/sqlpackage#portability) | Yes, see [Azure SQL Database import](/azure/azure-sql/database/database-import?view=azuresql-db&preserve-view=true) | Yes, see [SqlPackage for SQL database in Microsoft Fabric](sqlpackage.md#import-a-database-with-sqlpackage) |
+| [.bacpac export](/sql/tools/sqlpackage/sqlpackage#portability) | Yes, see [Azure SQL Database export](/azure/azure-sql/database/database-export?view=azuresql-db&preserve-view=true) | Yes, see [SqlPackage for SQL database in Microsoft Fabric](sqlpackage.md#export-a-database-with-sqlpackage)   |
+| [.bacpac import](/sql/tools/sqlpackage/sqlpackage#portability) | Yes, see [Azure SQL Database import](/azure/azure-sql/database/database-import?view=azuresql-db&preserve-view=true) | Yes, see [SqlPackage for SQL database in Microsoft Fabric](sqlpackage.md#import-a-database-with-sqlpackage) |
 | [BCP](/sql/tools/bcp-utility) | Yes | Yes |
 | [BICEP](/azure/azure-resource-manager/bicep/overview) | Yes | No |
 | [Database watcher](/azure/azure-sql/database-watcher-overview) | Yes | Not currently |
