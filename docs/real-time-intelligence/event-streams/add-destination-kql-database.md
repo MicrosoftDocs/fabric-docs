@@ -100,7 +100,7 @@ The event processing before ingestion mode processes your event data before inge
 
 1. In **Edit mode** for your eventstream, hover over an operator or derived stream, select **+**, and then select **KQL Database**.
 
-   :::image type="content" source="media/add-destination-kql-database/select-eventhouse.png" alt-text="A screenshot of selecting the + symbol for the operator output and selecting KQL Database." lightbox="media/add-destination-kql-database/select-eventhouse.png":::
+   :::image type="content" source="media/add-destination-kql-database/select-kql.png" alt-text="A screenshot of selecting the + symbol for the operator output and selecting KQL Database." lightbox="media/add-destination-kql-database/select-kql.png":::
 
 1. On the **KQL Database** screen, **Event processing before ingestion** should already be selected. Complete the rest of the information about your KQL database, and then select **Save**.
 

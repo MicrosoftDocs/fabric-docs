@@ -68,7 +68,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | KQL Database (Event processing before ingestion)          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Custom App                                                | Destination   | NO                        |                                             |
 | KQL Database (Direct Ingestion)                           | Destination   | NO                        |                                             |
-| Activator                                                 | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
+| Fabric Activator                                          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
 | Derived stream                                            | Destination   | NO                        |                                             |
 
 ::: zone-end

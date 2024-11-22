@@ -55,9 +55,9 @@ To view data insights for an eventstream:
 
 :::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
 
-### Data insights in Azure event hub, Azure iot hub, lakehouse, KQL database and Activator nodes
+### Data insights in Azure event hub, Azure iot hub, lakehouse, KQL database and Fabric activator nodes
 
-The following metrics are available on the **Data insights** tab for Azure event hub, Azure iot hub, lakehouse, KQL database ('Event processing before ingestion' mode) and Activator nodes:
+The following metrics are available on the **Data insights** tab for Azure event hub, Azure iot hub, lakehouse, KQL database ('Event processing before ingestion' mode) and Fabric activator nodes:
 
 | Metric | Unit | Description |
 |--|--|--|
@@ -70,13 +70,13 @@ The following metrics are available on the **Data insights** tab for Azure event
 | **deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
 | **Watermark delay** | Second | Maximum watermark delay across all partitions of all outputs for this source or destination. It is computed as the wall clock time minus the largest watermark. |
 
-To view the data insights for an Azure event hub, Azure iot hub, lakehouse, KQL database ('Event processing before ingestion' mode) and Activator:
+To view the data insights for an Azure event hub, Azure iot hub, lakehouse, KQL database ('Event processing before ingestion' mode) and Fabric activator:
 
-1. Select the Azure event hub, Azure iot hub, lakehouse, KQL database or Activator node in the main editor canvas
+1. Select the Azure event hub, Azure iot hub, lakehouse, KQL database or Fabric activator node in the main editor canvas
 
 2. In the lower pane, select the **Data insights** tab.
 
-3. If there's data inside the Azure event hub, Azure iot hub, lakehouse, KQL database or Activator, the metrics chart appears on the **Data insights** tab.
+3. If there's data inside the Azure event hub, Azure iot hub, lakehouse, KQL database or Fabric activator, the metrics chart appears on the **Data insights** tab.
 
 4. On the right side of the tab, select the checkboxes next to the metrics you want to display.
 
@@ -123,13 +123,13 @@ To view the data insights for a streaming connector source:
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
-To view the runtime logs for Azure event hub, Azure iot hub, lakehouse, KQL database ('Event processing before ingestion' mode), Activator or streaming connector source:
+To view the runtime logs for Azure event hub, Azure iot hub, streaming connector source, lakehouse, KQL database ('Event processing before ingestion' mode) or Fabric activator:
 
 1. Select the node in the main editor canvas.
 
 2. In the lower pane, select the **Runtime logs** tab.
 
-3. If there's data inside the Azure event hub, Azure iot hub, lakehouse, KQL database, Activator or streaming connector source, the logs appear on the **Runtime logs** tab.
+3. If there's data inside the Azure event hub, Azure iot hub, streaming connector source, lakehouse, KQL database or Fabric activator, the logs appear on the **Runtime logs** tab.
 
 4. Search the logs with the **Filter by keyword** option, or filter the list by changing the severity or type.
 
