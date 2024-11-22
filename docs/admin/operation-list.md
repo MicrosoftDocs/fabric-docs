@@ -259,7 +259,7 @@ The following operations are available in the audit logs.
 | Download Notebook Resource | DownloadNotebookResource | Delete resources in notebook.  |
 | Download Spark App Log | DownloadSparkAppLog |   |
 | Downloaded Power BI report | DownloadReport |   |
-| Downloaded Exported Power BI artifact file | ExportArtifactDownload | Export of Power BI artifact file is complete  |
+| Downloaded Exported Power BI artifact file | ExportArtifactDownload | An export of the .pptx or .pdf file is complete |
 | Drop Lakehouse File | DropLakehouseFile |  |
 | Drop Lakehouse Folder | DropLakehouseFolder |  |
 | Drop Lakehouse Table | DropLakehouseTable |  |
