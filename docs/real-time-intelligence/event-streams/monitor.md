@@ -57,7 +57,7 @@ To view data insights for an eventstream:
 
 ### Data insights in Azure event hub, Azure iot hub, lakehouse, KQL database and Activator nodes
 
-The following metrics are available on the **Data insights** tab for Azure event hub source, Azure iot hub source, lakehouse destination, and KQL database destination ('Event processing before ingestion' mode) nodes:
+The following metrics are available on the **Data insights** tab for Azure event hub, Azure iot hub, lakehouse, KQL database ('Event processing before ingestion' mode) and Activator nodes:
 
 | Metric | Unit | Description |
 |--|--|--|
@@ -70,13 +70,13 @@ The following metrics are available on the **Data insights** tab for Azure event
 | **deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
 | **Watermark delay** | Second | Maximum watermark delay across all partitions of all outputs for this source or destination. It is computed as the wall clock time minus the largest watermark. |
 
-To view the data insights for an Azure event hub source, Azure iot hub source, lakehouse destination or KQL database destination ('Event processing before ingestion' mode):
+To view the data insights for an Azure event hub, Azure iot hub, lakehouse, KQL database ('Event processing before ingestion' mode) and Activator:
 
-1. Select the Azure event hub source node, Azure iot hub source, lakehouse destination node or KQL database destination node in the main editor canvas
+1. Select the Azure event hub, Azure iot hub, lakehouse, KQL database or Activator node in the main editor canvas
 
 2. In the lower pane, select the **Data insights** tab.
 
-3. If there's data inside the Azure event hub source, lakehouse destination or KQL database destination, the metrics chart appears on the **Data insights** tab.
+3. If there's data inside the Azure event hub, Azure iot hub, lakehouse, KQL database or Activator, the metrics chart appears on the **Data insights** tab.
 
 4. On the right side of the tab, select the checkboxes next to the metrics you want to display.
 
@@ -123,13 +123,13 @@ To view the data insights for a streaming connector source:
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
-To view the runtime logs for Azure event hub source, Azure iot hub source, streaming connector source, lakehouse destination and KQL database destination ('Event processing before ingestion' mode):
+To view the runtime logs for Azure event hub, Azure iot hub, lakehouse, KQL database ('Event processing before ingestion' mode), Activator or streaming connector source:
 
-1. Select the Azure event hub source, streaming connector source, lakehouse destination or KQL database destination in the main editor canvas.
+1. Select the node in the main editor canvas.
 
 2. In the lower pane, select the **Runtime logs** tab.
 
-3. If there's data inside the Azure event hub source, lakehouse destination or KQL database destination, the logs appear on the **Runtime logs** tab.
+3. If there's data inside the Azure event hub, Azure iot hub, lakehouse, KQL database, Activator or streaming connector source, the logs appear on the **Runtime logs** tab.
 
 4. Search the logs with the **Filter by keyword** option, or filter the list by changing the severity or type.
 
