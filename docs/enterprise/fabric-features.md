@@ -21,7 +21,7 @@ The following table lists Fabric features according to SKU type. The table lists
 | [AI Skills](../data-science/concept-ai-skill.md)                                         | &#x2705;      | &#x274C; |
 | [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)             | &#x2705;      | &#x274C; |
 | [Copilot](../get-started/copilot-fabric-overview.md)<sup>1</sup>                         | F64 or higher | &#x2705; |
-| [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)  | F64 of higher | &#x274C; |
+| [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)  | &#x2705;      | &#x274C; |
 | [On-demand resizing](scale-capacity.md)                                                  | &#x2705;      | &#x274C; |
 | [Pause and resume your capacity](pause-resume.md)                                        | &#x2705;      | &#x274C; |
 | [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                    | &#x274C;      | &#x2705; |
