@@ -29,7 +29,7 @@ For more information, see [What is the medallion lakehouse architecture?](/azure
 
 Real-Time Intelligence allows you to build a meallion lakehouse architecture by processing the data as it arrives. This enables you to build your Bronze, Silver, and Gold layer while mainting the real-time aspect of your data.
 
-![Real-Time Intelligence Medallion Architecture](/media/medallian-architecture/Archetecture.png)
+![Real-Time Intelligence Medallion Architecture](media/medallian-architecture/Archetecture.png)
 
 **Bronze Layer** 
 - Contains the raw records that can land in either Eventstream or a table in Eventhouse.
