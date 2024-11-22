@@ -5,6 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: overview
 ms.custom:
+  - ignite-2024
 ms.date: 09/26/2024
 ---
 
@@ -98,7 +99,7 @@ For more information, see [Information Protection in Microsoft Fabric](./informa
 
 ### Purview Data Loss Prevention
 
-Purview DLP policies for Fabric automatically detect sensitive information as it is uploaded into [DLP-supported item types](./data-loss-prevention-overview.md#supported-item-types) in your Fabric tenant, and help you take risk remediation actions so that your organization stays compliant with governmental and industry regulations.
+Purview DLP policies for Fabric automatically detect sensitive information as it is uploaded into [DLP-supported item types](/purview/dlp-powerbi-get-started#supported-item-types) in your Fabric tenant, and help you take risk remediation actions so that your organization stays compliant with governmental and industry regulations.
 
 Compliance and security administrators receive audit logs for every DLP detection. The audit logs give them further visibility into business-critical data and its location within the tenant. They can set up alerts that will be automatically generated whenever sensitive information is detected in a DLP-supported item. They can also create customized messages to users to help guide them about how to deal with sensitive data. For example, admins could configure a message that would be sent to the Fabric data owner whenever proprietary information is detected in their data, explaining that this information is internal and shouldn't be shared externally.
 
@@ -112,7 +113,7 @@ Organizational teams can have individual workspaces where different personas col
 
 ### Securing data in Fabric items
 
-Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, Synapse Data Warehouses in Fabric, Direct Lake, and KQL Database.
+Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, warehouses, Direct Lake, and KQL Database.
 
 **Guidance**: Individual teams are expected to apply these additional controls at the item and data level.
 
@@ -168,7 +169,7 @@ The data governance capabilities offered on Fabric via Purview's [live view](/pu
 
 #### Data curation
 
-Data curation in your organization involves gathering metadata information, lineage information, and others from all sources that your organization uses. These could be on-premises, third-party clouds, third-party products and services, or CRM systems to name a few. This extraction process is also referred to as scanning in Purview. All information is retrieved using built-in scanners in Purview that scan your organization’s data estate to collect this information. In Purview this is executed by Data Map.
+Data curation in your organization involves gathering metadata information, lineage information, and others from all sources that your organization uses. These could be on-premises, third-party clouds, third-party products and services, or CRM systems to name a few. This extraction process is also referred to as scanning in Purview. All information is retrieved using built-in scanners in Purview that scan your organization's data estate to collect this information. In Purview this is executed by Data Map.
 
 #### Data Map
 

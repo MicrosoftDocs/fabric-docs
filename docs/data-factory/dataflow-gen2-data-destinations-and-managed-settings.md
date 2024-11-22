@@ -5,7 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 09/17/2024
+ms.date: 11/20/2024
 ---
 
 # Dataflow Gen2 data destinations and managed settings
@@ -19,6 +19,7 @@ The following list contains the supported data destinations.
 * Fabric Lakehouse
 * Fabric Warehouse
 * Fabric KQL database
+* Fabric SQL database
 
 ## Entry points
 
@@ -110,20 +111,20 @@ Schema options on publish only apply when the update method is replace. When you
 
 ## Supported data source types per destination
 
-| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output |
-| --- | --- | --- | --- | --- | --- |
-| Action                           | No  | No  | No  | No  | No  |
-| Any                              | No  | No  | No  | No  | No  |
-| Binary                           | No  | No  | No  | No  | No  |
-| Currency                         | Yes | Yes | Yes | Yes | No  |
-| DateTimeZone                     | Yes | Yes | Yes | No  | No  |
-| Duration                         | No  | No  | Yes | No  | No  |
-| Function                         | No  | No  | No  | No  | No  |
-| None                             | No  | No  | No  | No  | No  |
-| Null                             | No  | No  | No  | No  | No  |
-| Time                             | Yes | Yes | No  | No | No |
-| Type                             | No  | No  | No  | No  | No  |
-| Structured (List, Record, Table) | No  | No  | No  | No  | No  |
+| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output | Fabric SQL Database (SQL) Output |
+| --- | --- | --- | --- | --- | --- |--- |
+| Action                           | No  | No  | No  | No  | No  | No  |
+| Any                              | No  | No  | No  | No  | No  | No  |
+| Binary                           | No  | No  | No  | No  | No  | No  |
+| Currency                         | Yes | Yes | Yes | Yes | No  | Yes |
+| DateTimeZone                     | Yes | Yes | Yes | No  | No  | Yes |
+| Duration                         | No  | No  | Yes | No  | No  | No  |
+| Function                         | No  | No  | No  | No  | No  | No  |
+| None                             | No  | No  | No  | No  | No  | No  |
+| Null                             | No  | No  | No  | No  | No  | No  |
+| Time                             | Yes | Yes | No  | No | No   | Yes |
+| Type                             | No  | No  | No  | No  | No  | No  |
+| Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
 
 ## Advanced topics
 
@@ -152,6 +153,34 @@ When staging is disabled, and you choose Warehouse as the output destination, yo
 If you already have a warehouse as a destination and try to disable staging, a warning is displayed. You can either remove the warehouse as the destination or dismiss the staging action.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
+
+### Vacuuming your Lakehouse data destination
+
+When using Lakehouse as a destination for Dataflow Gen2 in Microsoft Fabric, it's crucial to perform regular maintenance to ensure optimal performance and efficient storage management. One essential maintenance task is vacuuming your data destination. This process helps to remove old files that are no longer referenced by the Delta table log, thereby optimizing storage costs and maintaining the integrity of your data.
+
+#### Why vacuuming is important
+
+1. **Storage Optimization**: Over time, Delta tables accumulate old files that are no longer needed. Vacuuming helps to clean up these files, freeing up storage space and reducing costs.
+2. **Performance Improvement**: Removing unnecessary files can enhance query performance by reducing the number of files that need to be scanned during read operations.
+3. **Data Integrity**: Ensuring that only relevant files are retained helps maintain the integrity of your data, preventing potential issues with uncommitted files that could lead to reader failures or table corruption.
+
+#### How to vacuum your data destination
+
+To vacuum your Delta tables in Lakehouse, follow these steps:
+
+1. **Navigate to your Lakehouse**: From your Microsoft Fabric account, go to the desired Lakehouse.
+2. **Access table maintenance**: In the Lakehouse explorer, right-click on the table you want to maintain or use the ellipsis to access the contextual menu.
+3. **Select maintenance options**: Choose the **Maintenance** menu entry and select the **Vacuum** option.
+4. **Run the vacuum command**: Set the retention threshold (default is seven days) and execute the vacuum command by selecting **Run now**.
+
+#### Best practices
+
+- **Retention period**: Set a retention interval of at least seven days to ensure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
+- **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
+
+By incorporating vacuuming into your data maintenance strategy, you can ensure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
+
+For more detailed information on table maintenance in Lakehouse, refer to the [Delta table maintenance documentation](/fabric/data-engineering/lakehouse-table-maintenance).
 
 ### Nullable
 

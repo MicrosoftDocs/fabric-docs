@@ -108,6 +108,10 @@ notebookutils.fs.cp('source file or directory', 'destination file or directory',
 
 This method offers a more efficient approach to copying or moving files, particularly when dealing with large data volumes. For enhanced performance on Fabric, it is advisable to utilize `fastcp` as a substitute for the traditional `cp` method.
 
+> [!NOTE]
+> ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
+
+
 ```python
 notebookutils.fs.fastcp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
 ```
@@ -144,6 +148,10 @@ This method appends the given string to a file, encoded in UTF-8.
 ```python
 notebookutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
+
+> [!NOTE] 
+> - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
+> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 

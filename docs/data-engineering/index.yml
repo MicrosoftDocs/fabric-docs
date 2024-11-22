@@ -52,11 +52,11 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Microsoft Fabric notebooks
+          - text: Create and use notebooks
             url: how-to-use-notebook.md
       - linkListType: how-to-guide
         links:
-          - text: Build and manage notebooks
+          - text: Develop and run notebooks
             url: author-execute-notebook.md
           - text: Explore lakehouse data with a notebook
             url: lakehouse-notebook-explore.md
@@ -192,3 +192,18 @@ landingContent:
             url: environment-manage-resources.md
           - text: Migrate the existing workspace libraries and Spark properties to an environment
             url: environment-workspace-migration.md   
+# Card 
+  - title: Livy API
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the Livy API?
+            url: api-livy-overview.md
+      - linkListType: get-started
+        links:
+          - text: Create and run Spark jobs using the Livy API
+            url: get-started-api-livy.md
+          - text: Submit Livy API session jobs
+            url: get-started-api-livy-session.md
+          - text: Submit Livy API batch jobs
+            url: get-started-api-livy-batch.md

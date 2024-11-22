@@ -5,7 +5,9 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 07/30/2024
+ms.custom:
+  - ignite-2024
+ms.date: 10/31/2024
 ---
 
 # Private links for secure access to Fabric
@@ -63,9 +65,13 @@ Direct calls using OneLake regional endpoints don't work via private link to Fab
 
 ### Warehouse and Lakehouse SQL analytics endpoint
 
-Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by Private Link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via Private link.
+Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via private link.
 
 Visual query in Warehouse doesn't work when the **Block Public Internet Access** tenant setting is enabled.
+
+### SQL database
+
+Accessing a SQL database or the SQL analytics endpoint in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio or Visual Studio Code) to [connect to SQL database](../database/sql/connect.md) via private link. For more information on connecting to a SQL database, see [Authentication in SQL database in Microsoft Fabric](../database/sql/authentication.md).
 
 ### Lakehouse, Notebook, Spark job definition, Environment
 
@@ -153,7 +159,7 @@ There are several considerations to keep in mind while working with private endp
 
 * **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. [Learn more about this scenario](/data-integration/gateway/service-gateway-install#private-link-consideration). VNet data gateways will work. For more information, see [these considerations](/data-integration/gateway/service-gateway-install#private-link-consideration).
 
-* **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway doesn't work properly when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links. A potential workaround is to disable the **Azure Private Link** tenant setting, configure the gateway in a remote region (a region other than the recommended region), then re-enable Azure Private Link. After Private Link is re-enabled, the gateway in the remote region won't use private links. However, we don't provide support for this scenario.
+* **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway is not supported when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links.
 
 * Private Links will not work with VNet Data Gateway download diagnostics.
 

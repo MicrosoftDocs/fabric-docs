@@ -97,7 +97,7 @@ While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a dif
 | Self-Hosted Pipeline Activity         | $215.93   | 107991       | 0.002     | 0.0056               | 604.7496       | 0.18         | $108.85    |
 | Cloud Data Movement                   | $3.25      | 13           | 0.25      | 1.5                  | 19.5           | 0.18         | $3.51          |
 | Cloud External Pipeline Activity      | $0.63   | 2525         | 0.00025   |                      |                |              |               |
-| Cloud Orchestration Activity Run      | $1,68      | 1678         | 1         | 0.0056               | 9.3968         | 0.18         | $1.70      |
+| Cloud Orchestration Activity Run      | $1.68      | 1678         | 1         | 0.0056               | 9.3968         | 0.18         | $1.70      |
 | Cloud Pipeline Activity               | $34.28    | 6855         | 0.005     | 0.0056               | 38.388         | 0.18         | $6.91       |
 | Azure Managed virtual network Data Movement      | 86.75     | 347          | 0.25      | 1.5                  | 520.5          | 0.18         | $93.69         |
 | Azure Managed virtual network External Pipeline Activity| 7160 | 7160         | 1         |                      |                |              |               |

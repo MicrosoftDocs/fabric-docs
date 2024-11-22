@@ -4,7 +4,7 @@ description: A known issue is posted where a data warehouse with more than 20,00
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting
-ms.date: 10/23/2023
+ms.date: 11/11/2024
 ms.custom:
   - known-issue-529
   - ignite-2023
@@ -14,7 +14,7 @@ ms.custom:
 
 A data warehouse or SQL analytics endpoint that has more than 20,000 tables fails to load in the portal.  If connecting through any other client tools, you can load the tables. The issue is only observed while accessing the data warehouse through the portal.
 
-**Status:** Open
+**Status:** Fixed: November 11, 2024
 
 **Product Experience:** Data Warehouse
 

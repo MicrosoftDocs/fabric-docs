@@ -1,11 +1,11 @@
 ---
 title: Include file for Git integration limitations
-description: Include file for the Git integration limitations. This include file is referenced in this repo and also in an article in the Power BI repo.
+description: Include file for the Git integration limitations. This file is referenced in this repo and also in an article in the Power BI repo.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 09/15/2024
+ms.date: 11/18/2024
 ---
 
 ### General Git integration limitations
@@ -19,6 +19,7 @@ ms.date: 09/15/2024
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
 - The tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) if the workspace and Git repo are in two different geographical regions.
+- If your organization set up [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
 - The commit size is limited to 125 MB.
 
 #### [GitHub limitations](#tab/github)
@@ -34,6 +35,7 @@ Some GitHub Enterprise settings aren't supported. For example:
 
 - IP allowlist
 - Private networking
+- [Custom domains](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
 ### Workspace limitations
 
@@ -47,7 +49,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
-- When naming a folder in Git, the logical ID (Guid) is added as a prefix before the type if the item’s display name:
+- Git folder use the logical ID (Guid) as a prefix before the type if the item’s display name:
   - Has more than 256 characters
   - Ends with <kbd>.</kbd> or a space
   - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>

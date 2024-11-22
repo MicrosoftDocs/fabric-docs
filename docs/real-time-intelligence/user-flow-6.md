@@ -5,33 +5,36 @@ ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: concept-article
-ms.date: 09/12/2024
-ms.search.form: Data Activator Kusto Dashboard Onramp
+ms.date: 11/19/2024
+ms.subservice: rti-core
+ms.custom:
+  - ignite-2024
+ms.search.form: Activator Kusto Dashboard Onramp
 #customer intent: I want to learn how to set alerts on a Real-Time Dashboard or KQL Queryset.
 ---
 # Set alert on Real Time Dashboard or KQL Queryset
 
-This capability enables users to easily set alerts on a [Real-Time Dashboard](dashboard-real-time-create.md) or on the result set of a [KQL Queryset](kusto-query-set.md) using the Data Activator no-code side pane to benefit from the capabilities of Data Activator on data from an [Eventhouse](eventhouse.md).
+This capability enables users to easily set alerts on a [Real-Time Dashboard](dashboard-real-time-create.md) or on the result set of a [KQL Queryset](kusto-query-set.md) using the Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)] no-code side pane to benefit from the capabilities of [!INCLUDE [fabric-activator](includes/fabric-activator.md)] on data from an [Eventhouse](eventhouse.md).
 
 ## Steps - Real-Time Dashboard
 
-:::image type="content" source="media/user-flows/user-flow-6-1.png" alt-text="Schematic of user flow starting from Real-Time Dashboard and going to Data Activator.":::
+:::image type="content" source="media/user-flows/user-flow-6-1.png" alt-text="Schematic of user flow starting from Real-Time Dashboard and going to Activator.":::
 
 1. In a Real-Time Dashboard, select the **More menu [...]** on the desired tile and set an alert.
 1. Set the alert conditions and create an alert.
-1. Optionally, further modify the conditions and actions in Data Activator.
+1. Optionally, further modify the conditions and actions in [!INCLUDE [fabric-activator](includes/fabric-activator.md)].
 
-For more information, see [Create Data Activator alerts from a Real-Time Dashboard](../data-activator/data-activator-get-data-real-time-dashboard.md).
+For more information, see [Create alerts from a Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md).
 
 ## Steps - KQL Queryset
 
-:::image type="content" source="media/user-flows/user-flow-6-2.png" alt-text="Schematic of user flow starting from KQL Queryset and going to Data Activator.":::
+:::image type="content" source="media/user-flows/user-flow-6-2.png" alt-text="Schematic of user flow starting from KQL Queryset and going to Activator.":::
 
 1. In a KQL Queryset, create a query. This query can either trigger an alert when a scheduled KQL query returns results, or when conditions are met on data in the query result.
 1. Set the alert conditions and create an alert.
-1. Optionally, further modify the alert in Data Activator.
+1. Optionally, further modify the alert in [!INCLUDE [fabric-activator](includes/fabric-activator.md)].
 
-For more information, see [Create Data Activator alerts from a KQL Queryset](../data-activator/data-activator-alert-queryset.md).
+For more information, see [Create alerts from a KQL Queryset](data-activator/activator-alert-queryset.md).
 
 ## Potential use cases
 

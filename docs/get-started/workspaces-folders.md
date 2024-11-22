@@ -69,7 +69,7 @@ Folder names must follow certain naming conventions:
 
 1. Select multiple items, then select **Move** from the command bar.
 
-    :::image type="content" source="media/workspaces-folders/multi-select-items-move.png" alt-text="Screenshot showing multi-selected items and move button. " lightbox="media/workspaces-folders/multi-select-items-move.png":::
+    :::image type="content" source="media/workspaces-folders/multi-select-items-move.png" alt-text="Screenshot showing multi-selected items and move button." lightbox="media/workspaces-folders/multi-select-items-move.png":::
 
 1. Select a destination where you want to move these items. You can also create a new folder if you need it. 
 

@@ -1,13 +1,13 @@
 ---
 title: Add Fabric workspace item event source to an eventstream
-description: Learn how to add Fabric workspace item event source to an eventstream.
+description: Learn how to add Fabric workspace item event source to an eventstream. This feature is currently in preview.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 06/06/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
@@ -15,7 +15,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add Fabric workspace item event source to an eventstream.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 [!INCLUDE [consume-fabric-events-regions](../../real-time-hub/includes/consume-fabric-events-regions.md)]
 
@@ -25,7 +25,7 @@ Fabric workspace item events are discrete Fabric events that occur when contents
 
 With Fabric event streams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
 
-Fabric event streams supports the following Fabric workspace events:
+Fabric event streams support the following Fabric workspace events:
 
 - Microsoft.Fabric.ItemCreateSucceeded
 - Microsoft.Fabric.ItemCreateFailed
@@ -39,38 +39,40 @@ Fabric event streams supports the following Fabric workspace events:
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Fabric workspace with events you want to track.
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
 ## Add Fabric Workspace Item events as source
 
-1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
+On the **Select a data source** page, search for and select **Connect** on the **Fabric Workspace item events** tile.
 
-1. On the next screen, select **Add external source**.
+:::image type="content" source="./media/add-source-fabric-workspace/select-fabric-workspace-item-events.png" alt-text="Screenshot that shows the selection of Fabric Workspace item events as the source type in the Select a data source window.":::
 
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
 
 ## Configure and connect to Fabric Workspace Item events
-
 [!INCLUDE [fabric-workspace-source-connector](includes/fabric-workspace-source-connector.md)]
 
-Once the connection is created, you can see the Fabric workspace item events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the workspace events.
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
-![A screenshot of the Fabric workspace item events source added to the eventstream.](media/add-source-fabric-workspace/fabric-workspace-item-events-edit.png)
+## View updated eventstream
 
-> [!NOTE]
-> Before proceeding with event transformation or routing, ensure that workspace events have been triggered and successfully sent to the eventstream.
+1. Once the connection is created, you can see the Fabric workspace item events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the workspace events.
 
-If you want to transform the Fabric workspace events, open your eventstream and select **Edit** to enter **Edit mode**. Then you can add operations to transform the Fabric workspace events or route them to a destination such as Lakehouse.
+    :::image type="content" source="media/add-source-fabric-workspace/fabric-workspace-item-events-edit.png" alt-text="A screenshot of the Fabric workspace item events source added to the eventstream." lightbox="media/add-source-fabric-workspace/fabric-workspace-item-events-edit.png":::
 
-![A screenshot of the Fabric workspace item events in Live view, where you can select Edit.](media/add-source-fabric-workspace/fabric-workspace-item-events-live.png)
+    > [!NOTE]
+    > Before proceeding with event transformation or routing, ensure that workspace events have been triggered and successfully sent to the eventstream.
+1. If you want to transform the Fabric workspace events, open your eventstream and select **Edit** to enter **Edit mode**. Then you can add operations to transform the Fabric workspace events or route them to a destination such as Lakehouse.
+
+    :::image type="content" source="media/add-source-fabric-workspace/fabric-workspace-item-events-live.png" alt-text="A screenshot of the Fabric workspace item events in Live view, where you can select Edit.":::
 
 [!INCLUDE [known-issues-discrete-events](./includes/known-issues-discrete-events.md)]
+
+
 
 
 ## Related content
