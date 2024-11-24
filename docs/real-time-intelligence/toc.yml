@@ -419,8 +419,8 @@ items:
   - name: API endpoints
     items:
     - name: Validate migration
-      href: migrate-validate-synapse-data-explorer.md
+      href: migrate-api-validate-synapse-data-explorer.md
     - name: Migrate to Eventhouse
-      href: migrate-to-eventhouse.md
+      href: migrate-api-to-eventhouse.md
 - name: KQL reference
   href: kusto-tocs/query/toc.yml

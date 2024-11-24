@@ -9,7 +9,7 @@ ms.date: 11/19/2024
 ---
 # Validate migration from Azure Synapse Data Explorer to Eventhouse - REST API (preview)
 
-Validates if a source Azure Synapse Data Explorer cluster is suitable for migration to Eventhouse. The endpoint performs multiple checks on the specified URL to determine if the cluster meets the criteria for migration to Fabric. These checks include verifying the existence of the cluster, ensuring it's in the correct region, confirming user authorization, and more.
+Validates if a source Azure Synapse Data Explorer cluster qualifies for migration to Eventhouse. The endpoint invokes a validation flow that performs various checks on the specified cluster URL to determine whether the provided cluster meets the criteria for migration to an eventhouse.
 
 ## Permissions
 
@@ -17,7 +17,7 @@ The caller must have *contributor* or higher workspace role.
 
 ## Required Delegated Scopes
 
-Eventhouse.ReadWrite.All or Item.ReadWrite.All
+Workspace.ReadWrite.All
 
 ## Microsoft Entra supported identities
 
@@ -39,7 +39,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses/va
 
 | Name | In | Required | Type | Description |
 |-|-|-|-|-|
-| workspaceId | path | True | string\n*uuid* | The workspace ID. |
+| workspaceId | path | True | string<br />*uuid* | The workspace ID. |
 
 ## Request Body
 
@@ -65,7 +65,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses/va
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses/validateMigrationFromAzure
 
 {
-  "clusterUrl": "https://<PoolName>.<WorkspaceName>.kusto.azuresynapse.net"
+  "clusterUrl": "https://{PoolName}.{WorkspaceName}.kusto.azuresynapse.net"
 }
 ```
 
@@ -90,8 +90,8 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses/va
   "ValidationType": "Warning",
   "StatusCode": "OK",
   "MessageCode": "ClusterValidForMigrationWithWarnings",
-  "Message": "Cluster 'sourcecluster' is valid for Fabric migration, but has warnings.",
-  "CustomParameters": "{\"PrivateEndpointsWarning\":\"Cluster has Private Endpoints. Private Endpoints are not supported in Fabric.\"}"
+  "Message": "Cluster 'PoolName' is valid for Fabric migration, but has warnings.",
+  "CustomParameters": "{\"WarningExample\":\"Cluster is configured with {FeatureExample}. {FeatureExample} is not supported in Fabric.\"}"
 }
 ```
 
@@ -110,4 +110,4 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses/va
 ## Related content
 
 - [Migrate from Azure Synapse Data Explorer to Eventhouse](migrate-synapse-data-explorer.md)
-- [Migrate to Eventhouse](migrate-to-eventhouse.md)
+- [Migrate to Eventhouse](migrate-api-to-eventhouse.md)

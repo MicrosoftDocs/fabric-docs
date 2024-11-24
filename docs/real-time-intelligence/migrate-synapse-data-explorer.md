@@ -60,8 +60,9 @@ Before you migrate, consider the following key points:
 
 The migration process is performed using Fabric REST API endpoints. The process involves the following steps:
 
-1. Use the [Validate migration to Eventhouse](migrate-validate-synapse-data-explorer.md) endpoint to check whether the Azure Synapse Analytics Data Explorer cluster can be migrated to an eventhouse.
-1. Use the [Migrate to Eventhouse](migrate-to-eventhouse.md) with the `migrationSourceClusterUrl` payload to create an eventhouse with the migration source cluster URL. The process creates a new eventhouse and migrates all databases from the source cluster to the eventhouse.
+1. Get a [Microsoft Fabric Entra token](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
+1. Use the [Validate migration to Eventhouse](migrate-api-validate-synapse-data-explorer.md) endpoint to check whether the Azure Synapse Analytics Data Explorer cluster can be migrated to an eventhouse.
+1. Use the [Migrate to Eventhouse](migrate-api-to-eventhouse.md) with the `migrationSourceClusterUrl` payload to create an eventhouse with the migration source cluster URL. The process creates a new eventhouse and migrates all databases from the source cluster to the eventhouse.
 1. Validate the migration by checking the [eventhouse state](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse) is **Running**, and that the migrated databases appear in the [KQL database list](manage-monitor-eventhouse.md#view-all-databases-in-an-eventhouse).
 
     > [!IMPORTANT]
