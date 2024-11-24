@@ -35,9 +35,9 @@ The summarization also includes a step size. The step size ranges from 10 second
 
 |Summary type  |Description  |
 |---------|---------|
-|Average over time      |Computes the average value of the property or column over the time window|
-|Count     |Computes the number of events containing the property or column over the time window|
-|Minimum/Maximum over time     |Computes the minimum/maximum value of the property or column during the time window|
+|Average over time      |Computes the average value of the property or column over the time window.|
+|Count     |Computes the number of events containing the property or column over the time window.|
+|Minimum/Maximum over time     |Computes the minimum/maximum value of the property or column during the time window.|
 Total  | Computes the total value of the property or column during that time window. 
 
 ## Filters
