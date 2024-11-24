@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Real-Time hub?
     href: real-time-hub-overview.md
+  - name: What's new?
+    href: whats-new.md
 - name: Get started
   items:
   - name: Get started with Real-Time hub

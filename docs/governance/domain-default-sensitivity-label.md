@@ -1,14 +1,14 @@
 ---
-title: Domain-level default sensitivity labels in Microsoft Fabric 
+title: Domain-level default sensitivity labels in Microsoft Fabric
 description: "This article describes the domain-level default sensitivity label feature in Microsoft Fabric and how to enable it."
 author: paulinbar
 ms.author: painbar
 ms.service: fabric
+ms.custom:
+  - ignite-2024
 ms.topic: conceptual #Don't change
 ms.date: 11/11/2024
-
 #customer intent: As a Fabric administrator, security and compliance officer, Fabric domain administrator, or domain contributor, I want to understand what domain-level senistivity labels are and how they work.
-
 ---
 
 # Domain-level default sensitivity labels in Microsoft Fabric

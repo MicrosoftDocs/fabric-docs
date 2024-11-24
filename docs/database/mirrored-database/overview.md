@@ -4,8 +4,10 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
-ms.date: 11/19/2024
+ms.date: 11/20/2024
 ms.topic: overview
+ms.custom:
+  - ignite-2024
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -57,12 +59,6 @@ Fabric offers three different approaches in bringing data into OneLake through m
 - **Metadata mirroring** – Metadata mirroring in Fabric synchronizes metadata (such as catalog names, schemas, and tables) instead of physically moving the data. This approach leverages [shortcuts](../../onelake/onelake-shortcuts.md), ensuring the data remains in its source while still being easily accessible within Fabric.
 - **Open mirroring** – Open mirroring in Fabric is designed to extend mirroring based on open Delta Lake table format. This capability enables any developer to write their application's change data directly into a mirrored database item in Microsoft Fabric, based on the open mirroring approach and public APIs.
 
-## How do I enable Mirroring in my tenant?
-
-Power BI administrators can enable or disable Mirroring for the entire organization or for specific security groups, using the setting found in the Power BI admin portal. The Mirroring items then appear in the **Create** options. For more information, see [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md).
-
-For [SQL database in Microsoft Fabric (Preview)](../sql/overview.md), mirroring is configured automatically and instantly initialized with no extra steps required. 
-
 Currently, the following external databases are available:
 
 | Platform | Near real-time replication | Type of mirroring | End-to-end tutorial |
@@ -72,9 +68,8 @@ Currently, the following external databases are available:
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance (preview)](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
-| [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
-| [Microsoft Fabric mirrored databases from Fabric SQL database](../sql/overview.md) | Yes |  Database mirroring | Automatically configured |
-
+| [Open mirrored databases](open-mirroring.md) (preview) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
+| [Microsoft Fabric mirrored databases from Fabric SQL database](../sql/overview.md) (preview) | Yes | Database mirroring | [Automatically configured](../sql/mirroring-overview.md) |
 
 ## How does the near real time replication of database mirroring work?
 
@@ -85,7 +80,7 @@ The following are core tenets of Mirroring:
 - Enabling Mirroring in Fabric is simple and intuitive, without having the need to create complex ETL pipelines, allocate other compute resources, and manage data movement.
 
 - Mirroring in Fabric is a fully managed service, so you don't have to worry about hosting, maintaining, or managing replication of the mirrored connection.
- 
+
 ## How does metadata mirroring work?
 
 Mirroring not only enables data replication but can also be achieved through shortcuts or metadata mirroring rather than full data replication, allowing data to be available without physically moving or duplicating it. Mirroring in this context refers to replicating only metadata—such as catalog names, schemas, and tables—rather than the actual data itself. This approach enables Fabric to make data from different sources accessible without duplicating it, simplifying data management and minimizing storage needs. 
@@ -104,9 +99,7 @@ Sharing enables ease of access control and management, while security controls l
 
 By sharing, users grant other users or a group of users access to a mirrored database without giving access to the workspace and the rest of its items. When someone shares a mirrored database, they also grant access to the SQL analytics endpoint and associated default semantic model.
 
-Access the Sharing dialog with the **Share** button next to the mirrored database name in the **Workspace** view. Shared mirrored databases can be found through the **OneLake** or the **Shared with Me** section in Microsoft Fabric.
-
-For more information, see [Share your data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md).
+For more information, see [Share your mirrored database and manage permissions](share-and-manage-permissions.md).
 
 ## Cross-database queries
 

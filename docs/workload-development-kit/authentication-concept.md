@@ -1,5 +1,5 @@
 ---
-title: Overview of Fabric Workload Development Kit authentication (preview)
+title: Overview of Fabric Workload Development Kit authentication
 description: This article describes how to use tokens to authenticate and validate for a customized Fabric workload.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to authenticate a customized Fabric workload so that I can create customized user experiences.
 ---
 
-# Authentication overview (preview)
+# Authentication overview
 
 Fabric workloads rely on integration with [Microsoft Entra ID](/entra/fundamentals/whatis) for authentication and authorization.
 

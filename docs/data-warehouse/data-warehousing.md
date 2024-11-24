@@ -12,13 +12,14 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # What is data warehousing in Microsoft Fabric?
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] is a next-generation data warehousing solution within Microsoft Fabric.
+Fabric Data Warehouse is a next-generation data warehousing solution within Microsoft Fabric.
 
 The lake-centric warehouse is built on an enterprise grade distributed processing engine that enables industry leading performance at scale while minimizing the need for configuration and management. Living in the data lake and designed to natively support open data formats, Fabric data warehouse enables seamless collaboration between data engineers and business users without compromising security or governance.
 

@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 05/21/2024
 ms.search.form: Event Processor
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -141,7 +143,7 @@ To design your event processing with the event processor editor:
 
          :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-2.png" alt-text="Screenshot showing where to hover on nodes to insert a node." :::
 
-      2. Finally, you need to reconnect these nodes. Hover on the left edge of the event stream node, and then select and drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to the lakehouse node.
+      2. Finally, you need to reconnect these nodes. Hover on the left edge of the eventstream node, and then select and drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to the lakehouse node.
 
           :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" alt-text="Screenshot showing where to connect the nodes." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" :::
 
@@ -233,10 +235,21 @@ The event processor provides six operators, which you can use to transform your 
 ### Aggregate
 
 Use the **Aggregate** transformation to calculate an aggregation (**Sum**, **Minimum**, **Maximum**, or **Average**) every time a new event occurs over a period of time. This operation also allows for the renaming of these calculated columns, and filtering or slicing the aggregation based on other dimensions in your data. You can have one or more aggregations in the same transformation.
+- **Operator name**: Specify the name of the aggregation operation.
+- **Add aggregate function**: Add one or more aggregations in aggregate operation.
+- **Type**: Choose an aggregation type: **Sum**, **Minimum**, **Maximum**, or **Average**.
+- **Field**: Select the column to process.
+- **Name**: Define a name for this aggregation function.
+- **Partition by**: Select a column to group the aggregation.
+- **Aggregate values within the last**: Specify a time window for aggregation (default is 5 seconds).
+
+:::image type="content" source="./media/event-processor-editor/aggregate-operator.png" alt-text="Screenshot showing the aggregate operator configuration and test result.":::
 
 ### Expand
 
-Use the **Expand** array transformation to create a new row for each value within an array.
+Use the **Expand** array transformation to create a new row for each value within an array. You can choose **create row for missing/empty array** , or **don't create row for missing/empty array**.
+
+:::image type="content" source="./media/event-processor-editor/array.png" alt-text="Screenshot showing expand operator's configuration and test result.":::
 
 ### Filter
 
@@ -301,5 +314,3 @@ As with regular joins, you have options for your join logic:
 ## Related content
 
 - [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).
-
-

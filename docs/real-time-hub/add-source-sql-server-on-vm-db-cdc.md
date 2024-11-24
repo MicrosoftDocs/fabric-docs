@@ -4,6 +4,8 @@ description: This article describes how to add SQL Server on Virtual Machine (VM
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -11,7 +13,7 @@ ms.date: 11/18/2024
 
 This article describes how to add SQL Server on VM DB (CDC) as an event source in Fabric Real-Time hub.
 
-The SQL Server on VM DB (CDC) source connector for Fabric event streams allows you to capture a snapshot of the current data in a SQL Server database on VM. The connector then monitors and records any future row-level changes to the data. Once these changes are captured in the eventstream, you can process this data in real-time and send it to various destinations for further processing or analysis.
+The SQL Server on VM DB (CDC) source connector for Fabric eventstreams allows you to capture a snapshot of the current data in a SQL Server database on VM. The connector then monitors and records any future row-level changes to the data. Once these changes are captured in the eventstream, you can process this data in real-time and send it to various destinations for further processing or analysis.
 
 
 

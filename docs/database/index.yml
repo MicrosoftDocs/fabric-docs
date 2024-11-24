@@ -7,11 +7,13 @@ metadata:
   title: Databases in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Learn about the Databases workload in Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
+  ms.custom:
+    - ignite-2024
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 11/18/2024
+  ms.date: 11/20/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -53,10 +55,14 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
+          - text: Security overview
+            url: sql/security-overview.md
           - text: Authentication
             url: sql/authentication.md
           - text: Authorization
             url: sql/authorization.md
+          - text: Protect sensitive data with Purview
+            url: sql/protect-databases-with-protection-policies.md
           - text: Share your SQL database
             url: sql/share-sql-manage-permission.md
           - text: Secure and share mirrored data

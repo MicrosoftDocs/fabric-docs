@@ -8,6 +8,7 @@ ms.date: 06/05/2024
 ms.topic: concept-article
 ms.custom:
   - ignite-2023
+  - ignite-2024
 #customer intent: As a data engineer, I want to understand how to secure a lakehouse in Fabric for data warehousing so that I can ensure the data is protected and accessible only to authorized users.
 ---
 

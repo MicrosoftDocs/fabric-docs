@@ -8,6 +8,7 @@ ms.date: 08/21/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 # Column-level security in Fabric data warehousing
 

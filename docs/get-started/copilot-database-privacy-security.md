@@ -5,6 +5,8 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen, maghan
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ms.date: 10/17/2024
 ms.collection: ce-skilling-ai-copilot
 ---

@@ -5,6 +5,8 @@ ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 10/07/2024
 ---
 
@@ -100,7 +102,7 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 - The staging artifacts are in some experiences visible like the ALM UI. The staging artifacts will be hidden in all experiences in the future.
 - When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifacts become visible in the workspace and are safe to be deleted by the user.
 - Some experiences mention support for REST APIs, but these APIs aren't yet available. All Dataflow Gen2 with CI/CD and Git support will support the Fabric Public API in the future.
-- Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric pipelines.
+- Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric data pipelines.
 - Workspace view doesn't show if a refresh is ongoing for the dataflow.
 - Copilot for Dataflow Gen2 with CI/CD and Git support isn't yet available.
 - VNet Gateway connections aren't supported in the dataflow authoring experience yet.
@@ -109,3 +111,6 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
   - Use the export power query template feature to export the dataflow definition.
   - Use the OneLake explorer to the workspace to get the dataflow definition.
 - Dataflow Gen2 with CI/CD and Git support doesn't support the take ownership feature in the Fabric workspace. Therefore, only the creator of the dataflow can edit the dataflow. If you want to work together on a dataflow, you can use branches in the Git repository and create a pull request to merge the changes. For more information, go to [Scenario 2 - Develop using another workspace](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
+- When branching out to another workspace, a Dataflow Gen2 refresh might fail with the message that the staging lakehouse couldn't be found. When this happens, create a new Dataflow Gen2 with CI/CD and Git support in the workspace to trigger the creation of the staging lakehouse. After this, all other dataflows in the workspace should start to function again.
+- When you create a new item in your workspace, it might show the item "Dataflow Gen2 (CI/CD, preview)". Ignore this one and follow instructions described in this article. It may take some time until your region shows the checkbox for enabling the CI/CD and Git support.
+- Fast Copy might not be enabled by default in your dataflow. You can enable this using the dataflow settings.

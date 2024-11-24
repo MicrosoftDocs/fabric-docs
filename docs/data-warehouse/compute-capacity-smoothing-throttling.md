@@ -8,6 +8,7 @@ ms.date: 10/07/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 
 # Smoothing and throttling in Fabric Data Warehouse

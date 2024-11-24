@@ -123,7 +123,7 @@ The **Endpoint** column lists domain names and links to external sites, which co
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|Customers can send/read events from Event stream in their custom app |sb://*.servicebus.windows.net|http: 443<br>amqp: 5672/5673<br>kafka: 9093|
+|Customers can send/read events from Eventstream in their custom app |sb://*.servicebus.windows.net|http: 443<br>amqp: 5672/5673<br>kafka: 9093|
 
 ## Related content
 

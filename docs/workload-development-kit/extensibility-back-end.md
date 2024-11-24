@@ -1,56 +1,59 @@
 ---
-title: Fabric workload development kit backend workload (preview)
-description: Learn about building the backend of a customized Fabric workload application using the Fabric extensions.
+title: Implement the Microsoft Fabric backend
+description: Learn how to build the backend of a customized Microsoft Fabric workload by using Fabric extensions. Learn about the Microsoft Fabric Workload Development Kit and how to use it by following a detailed example.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
-#customer intent: As a developer, I want to understand how to build the backend of a customized Fabric workload so that I can create customized user experiences.
+#customer intent: As a developer, I want to understand how to build the backend of a customized Microsoft Fabric workload and use the Microsoft Fabric Workload Development Kit so that I can create customized user experiences.
 ---
 
-# Backend implementation guide (preview)
+# Implement the Microsoft Fabric backend
 
-This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services, as well as integration with the Lakehouse platform. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and their roles in the architecture.
+This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) is a starting point for building applications that require integration with various services and for integration with lakehouse architecture. This article helps you set up the environment and configure the necessary components to get started. The article outlines key components and their roles in the architecture.
 
 ## Frontend
 
-The frontend is where you manage the user experience (UX) and behavior. It communicates with the Fabric frontend portal via an iFrame, facilitating seamless interaction with the user.
-For more information see [Fabric workload development kit frontend guide](extensibility-front-end.md).
+The frontend is where you manage the user experience (UX) and behavior. It communicates with the Fabric frontend portal via an iFrame to facilitate seamless interaction.
+
+For more information, see [Microsoft Fabric Workload Development Kit frontend](extensibility-front-end.md).
 
 ## Backend
 
-The backend stores both data and metadata. It utilizes CRUD operations to create Workload (WL) items along with metadata, and executes jobs to populate data in storage. The communication between the frontend and backend is established through public APIs.
+The backend stores both data and metadata. It uses Create, Read, Update, and Delete (CRUD) operations to create workload items and metadata, and it executes jobs to populate data in storage. Communication between the frontend and backend is established through public APIs.
 
 ## Azure Relay and DevGateway
 
-*Azure Relay* enables communication between the local development environment and the Fabric backend while operating in development mode. 
-In developer mode, the workload operates on the developer's machine.
-The `DevGateway.exe` utility has two roles:
-* Handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity, making the workload accessible in all workspaces assigned to that capacity. The utility handles the deregistration when stopped.
-* Channels (along with Azure relay) workload API calls from Fabric to the workload.
 
-Workload Control API calls are made directly from the workload to Fabric, and don't require the Azure Relay channel.
+Azure Relay enables communication between the local development environment and the Fabric backend in developer mode. In developer mode, the workload operates on the developer's machine.
+
+The DevGateway utility has two roles:
+
+* It handles the workload's side of the Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity. DevGateway makes the workload accessible in all workspaces that are assigned to that capacity. The utility handles deregistration when the channel stops.
+* It works with Azure Relay to channel workload API calls from Fabric to the workload.
+
+Workload Control API calls are made directly from the workload to Fabric. The Azure Relay channel isn't required for the calls.
 
 ## Lakehouse integration
 
-The workload development kit architecture integrates seamlessly with Lakehouse, allowing operations such as saving, reading, and fetching data. The interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication. For more details, see [working with customer data](./fabric-data-plane.md)
+The workload development kit architecture integrates seamlessly with a lakehouse architecture for operations like saving, reading, and fetching data. The interaction is facilitated through Azure Relay and the Fabric SDK to help ensure secure and authenticated communication. For more information, see [working with customer data](./fabric-data-plane.md).
 
 ## Authentication and security
 
 Microsoft Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
-[The development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, authentication guidelines and getting started, refer to the following authentication documents:
+The [development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information about how projects are configured, for authentication guidelines, and to get started, see the following articles:
 
-* [Workload authentication - Setup guide](./authentication-tutorial.md)
+* [Workload authentication setup guide](./authentication-tutorial.md)
 
-* [Workload authentication - Architecture overview ](./authentication-concept.md)
+* [Workload authentication architecture overview](./authentication-concept.md)
 
-* [Workload authentication - Implementation guide](back-end-authentication.md)
+* [Workload authentication implementation guide](back-end-authentication.md)
 
-:::image type="content" source="./media/extensibility-back-end/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
+:::image type="content" source="./media/extensibility-back-end/overview.png" alt-text="Diagram showing how the Fabric SDK integrates with Fabric.":::
 
-The frontend establishes communication with the Fabric frontend portal via an iFrame. The portal, in turn, interacts with the Fabric backend by making calls to its exposed public APIs.
+The frontend establishes communication with the Fabric frontend portal via an iFrame. The portal in turn interacts with the Fabric backend by making calls to its exposed public APIs.
 
 For interactions between the backend development box and the Fabric backend, the Azure Relay serves as a conduit. Additionally, the backend development box seamlessly integrates with Lakehouse.
 The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the backend development box.
@@ -68,26 +71,27 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 
 * `<NuspecFile>Packages\manifest\ManifestPackageDebug.nuspec</NuspecFile>` and `<NuspecFile>Packages\manifest\ManifestPackageRelease.nuspec</NuspecFile>`: These properties specify the path to the NuSpec files used for creating the NuGet package for Debug and Release modes. The NuSpec file contains metadata about the package, such as its ID, version, dependencies, and other relevant information.
 
-* `<GeneratePackageOnBuild>true</GeneratePackageOnBuild>`: When set to true, this property instructs the build process to automatically generate a NuGet package during each build. This property is useful to ensure that the package is always up-to-date with the latest changes in the project.
+* `<GeneratePackageOnBuild>true</GeneratePackageOnBuild>`: When set to `true`, this property instructs the build process to automatically generate a NuGet package during each build. This property is useful to ensure that the package is always up-to-date with the latest changes in the project.
 
-* `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It's an essential property for projects intended to produce NuGet packages during the build process.
+* `<IsPackable>true</IsPackable>`: When set to `true`, this property indicates that the project can be packaged into a NuGet package. Being packable is an essential property for projects that are intended to produce NuGet packages during the build process.
 
-The generated NuGet package for Debug mode is located in the `src\bin\Debug` directory after the build process.
-When working in cloud mode, you can switch Visual Studio build configuration to **Release** and build your package. The generated package is located in the `src\bin\Release` directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md)
+The generated NuGet package for debug mode is located in the *src\bin\Debug* directory after the build process.
+
+When you work in cloud mode, you can change the Visual Studio build configuration to **Release** and build your package. The generated package is located in the `src\bin\Release` directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md).
 
 ### Dependencies
 
-* The backend sample boilerplate depends on the following Azure SDK packages:
+* The backend Boilerplate sample depends on the following Azure SDK packages:
 
   * Azure.Core
   * Azure.Identity
   * Azure.Storage.Files.DataLake
   * The Microsoft Identity package
 
-To configure the NuGet Package Manager, specify the path in the 'Package Sources' section before the build process.
+To configure NuGet Package Manager, specify the path in the **Package Sources** section before you begin the build process.
 
 ```javascript
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -134,76 +138,76 @@ To configure the NuGet Package Manager, specify the path in the 'Package Sources
 </Project>
 ```
 
-## Getting Started
+## Get started
 
-To set up the workload sample project on your local machine, follow these steps:
+To set up the workload sample project on your local machine:
 
-1. Clone the repository: `git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample.git`
-1. Open the solution in **Visual Studio 2022**.
-1. Set up an app registration by following instructions on the Authentication [guide](authentication-tutorial.md). Ensure that both your Frontend and Backend projects have the necessary setup described in the guide. Microsoft Entra is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
-  
-1. Update the OneLake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md).
+1. Clone the repository: Run `git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample.git`.
+1. In Visual Studio 2022, open the solution.
+1. Set up an app registration by following instructions in the [authentication tutorial](authentication-tutorial.md). Ensure that both your frontend and backend projects have the necessary setup that's described in the article. Microsoft Entra is used for secure authentication to help ensure that all interactions within the architecture are authorized and secure.
+  1. Update the Microsoft OneLake DFS base URL. Depending on your Fabric environment, you might be able to update the value for `OneLakeDFSBaseURL` in the *src\Constants* folder. The default is `onelake.dfs.fabric.microsoft.com`, but you can update the URL to reflect your environment. For more information about DFS paths, see the [OneLake documentation](../onelake/onelake-access-api.md).
 
-1. Setup Workload Configuration
+1. Set up the workload configuration.
 
-   * Copy workload-dev-mode.json from src/Config to `C:\`
-   * In the workload-dev-mode.json file, update the following fields to match your configuration:
-     * CapacityGuid: Your Capacity ID. This can be found within the Fabric Portal under the Capacity Settings of the Admin portal.
-     * ManifestPackageFilePath: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in later steps.
-     * WorkloadEndpointURL: Workload Endpoint URL.
-   * In the Packages/manifest/WorkloadManifest.xml file, update the following fields to match your configuration:
-     * \<AppId>: Client ID (Application ID) of the workload Microsoft Entra application.
-     * \<RedirectUri>: Redirect URIs. This can be found in your app registration that you created under 'Authentication' section.
-     * \<ResourceId>: Audience for the incoming Microsoft Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section.
-   * In the src/appsettings.json file, update the following fields to match your configuration:
-     * PublisherTenantId: The ID of the workload publisher tenant.
-     * ClientId: Client ID (Application ID) of the workload Microsoft Entra application.
-     * ClientSecret: The secret for the workload Microsoft Entra application.
-     * Audience: Audience for the incoming Microsoft Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section. This is also referred to as the Application ID URI.
+   1. Copy *workload-dev-mode.json* from *src/Config* to *C:*.
+   1. In the *workload-dev-mode.json* file, update the following fields to match your configuration:
+      * **WorkspaceGuid**: Your workspace ID. You can find this value in the browser URL when you select a workspace in Fabric. For example, `https://app.powerbi.com/groups/<WorkspaceID>/`.
+      * **ManifestPackageFilePath**: The location of the manifest package. When you build the solution, it saves the manifest package in *src\bin\Debug*. More information about the manifest package is provided later in the article.
+      * **WorkloadEndpointURL**: The workload endpoint URL.
+   1. In the *Packages/manifest/WorkloadManifest.xml* file, update the following fields to match your configuration:
+      * **`<AppId>`**: The client ID (Application ID) of the workload Microsoft Entra application.
+      * **`<RedirectUri>`**: The redirect URIs. You can find this value in the app registration that you created, under **Authentication**.
+      * **`<ResourceId>`**: The audience for the incoming Microsoft Entra tokens. You can find this information in the app registration that you created, under **Expose an API**.
+   1. In the *src/appsettings.json* file, update the following fields to match your configuration:
+      * **PublisherTenantId**: The ID of the workload publisher tenant.
+      * **ClientId**: The client ID (Application ID) of the workload Microsoft Entra application.
+      * **ClientSecret**: The secret for the workload Microsoft Entra application.
+      * **Audience**: The audience for the incoming Microsoft Entra tokens. You can find this information in the app registration that you created, under **Expose an API**. This setting is also called the *application ID URI*.
 
 1. Generate a manifest package.
-   To generate a manifest package file, build Fabric_Extension_BE_Boilerplate. This runs a three step process to generate the manifest package file:
 
-   1. Trigger `ManifestValidator.ps1` on `WorkloadManifest.xml` in *Packages\manifest\* and trigger `ItemManifestValidator.ps1` on all items XMLs (e.g., `Item1.xml`) in *Packages\manifest\*. If the validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\*.
-   1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in Visual Studio to see the error file.
-   1. After successful validation, pack the `WorkloadManifest.xml` and `Item1.xml` files into ManifestPackage.1.0.0.nupkg. The resulting package is in **src\bin\Debug**.
+   To generate a manifest package file, build *Fabric_Extension_BE_Boilerplate*. The build is a three-step process that generates the manifest package file. It runs these steps:
 
-   Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
+   1. Triggers *ManifestValidator.ps1* on *WorkloadManifest.xml* in *Packages\manifest\/* and trigger *ItemManifestValidator.ps1* on all items XMLs (for example, *Item1.xml*) in *Packages\manifest\/*. If validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\/*.
+   1. If an error file exists, the build fails with the error *Validation errors with either manifests or default values*. To see the error file in Visual Studio, double-click the error in the validation results.
+   1. After successful validation, package the *WorkloadManifest.xml* and *Item1.xml* files into *ManifestPackage.1.0.0.nupkg*. The resulting package is in *src\bin\Debug*.
+
+   Copy the *ManifestPackage.1.0.0.nupkg* file to the path that's defined in the *workload-dev-mode.json* configuration file.
 
 1. *Program.cs* is the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host.
 1. Build to ensure your project can access the required dependencies for compilation and execution.
 1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
-1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in the *DevGateway* folder. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
+1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application and sign in with a user that has **workspace admin privileges** for the workspace specified in the `WorkspaceGuid` field of workload-dev-mode.json.
 
-   :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of Microsoft sign in page.":::
+   :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of the Microsoft sign in page.":::
 
-   After authentication, external workloads establish communication with the Fabric backend through Azure Relay. This process involves relay registration and communication management, facilitated by a designated Proxy node. Furthermore, the package containing the workload manifest is uploaded and published.
+   After authentication, external workloads establish communication with the Fabric backend through Azure Relay. This process involves relay registration and communication management that's facilitated by a designated proxy node. The package that contains the workload manifest is uploaded and published.
 
-   At this stage, Fabric has knowledge of the workload, encompassing its allocated capacity.
+   At this stage, Fabric detects the workload and incorporates its allocated capacity.
 
-   Monitoring for potential errors can be seen in the console.
+   You can monitor for potential errors in the console.
 
-   If you don't get any errors, then the connection is established, registration is successfully executed, and the workload manifest was systematically uploaded.
+   If no errors are shown, the connection is established, registration is successfully executed, and the workload manifest is systematically uploaded.
 
    :::image type="content" source="./media/extensibility-back-end/devgateway.png" alt-text="Screenshot of connection loading without any errors.":::
 
-1. Change your startup project in Visual Studio to the *Boilerplate* project and select **Run**.
+1. In Visual Studio, change your startup project to the Boilerplate project and select **Run**.
 
     :::image type="content" source="./media/extensibility-back-end/boilerplate.png" alt-text="Screenshot of UI for startup project in Visual Studio.":::
 
-## Working with the Boilerplate
+## Work with the Boilerplate sample project
 
 ### Code generation
 
-We use the workload Boilerplate C# ASP.NET Core sample to explain how to build a workload with REST APIs. Starts with generating server stubs and contract classes based on the Workload API [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json). You can generate them using any of several Swagger code generation tools. Our Boilerplate sample uses [NSwag](https://github.com/RicoSuter/NSwag). The sample contains GenerateServerStub.cmd command line script, which wraps NSwag code generator. The script takes a single parameter, which is a full path to NSwag installation directory. It also expects to find the Swagger definition file (*swagger.json*) and configuration file (*nswag.json*) next to it.
+We use the workload Boilerplate C# ASP.NET Core sample to demonstrate how to build a workload by using REST APIs. The sample starts with generating server stubs and contract classes based on the Workload API [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json). You can generate the code by using any of several Swagger code-generation tools. The Boilerplate sample uses [NSwag](https://github.com/RicoSuter/NSwag). The sample contains the *GenerateServerStub.cmd* command line script, which wraps the NSwag code generator. The script takes a single parameter, which is a full path to NSwag installation directory. It also checks for the Swagger definition file (*swagger.json*) and the configuration file (*nswag.json*) in the folder.
 
-Executing this script produces a C# file *WorkloadAPI_Generated.cs*. The contents of this file can be logically divided into three parts, as follows.
+Executing this script produces a C# file named *WorkloadAPI_Generated.cs*. The contents of this file can be logically divided into three parts as explained in the next sections.
 
 ### ASP.NET Core stub controllers
 
-`ItemLifecycleController` and `JobsController` classes are thin implementations of ASP.NET Core controllers for two subsets of Workload API: item lifecycle management and jobs. These classes plug into ASP.NET Core HTTP pipeline, and serve as the entry points for API methods, defined in the Swagger specification. These classes forward the calls to the "real" implementation, provided by the workload.
+`ItemLifecycleController` and `JobsController` classes are thin implementations of ASP.NET Core controllers for two subsets of the Workload API: item lifecycle management and jobs. These classes plug into the ASP.NET Core HTTP pipeline. They serve as the entrypoints for the API methods that are defined in the Swagger specification. The classes forward the calls to the "real" implementation that's provided by the workload.
 
-This is an example of the *CreateItem* method:
+Here's an example of the `CreateItem` method:
 
 ```csharp
 /// <summary>
@@ -226,74 +230,79 @@ This is an example of the *CreateItem* method:
 public System.Threading.Tasks.Task CreateItem(System.Guid workspaceId, string itemType, System.Guid itemId, [Microsoft.AspNetCore.Mvc.FromBody] CreateItemRequest createItemRequest)
 {
 
-	return _implementation.CreateItemAsync(workspaceId, itemType, itemId, createItemRequest);
+ return _implementation.CreateItemAsync(workspaceId, itemType, itemId, createItemRequest);
 }
 ```
 
 ### Interfaces for workload implementation
 
-*IItemLifecycleController* and *IJobsController* are interfaces for the previously mentioned "real" implementations. They define the same methods, which the controllers implement.
+`IItemLifecycleController` and `IJobsController` are interfaces for the previously mentioned "real" implementations. They define the same methods, which the controllers implement.
 
 ### Definition of contract classes
 
-C# contract classes used by the APIs.
+C# contract classes are classes that the APIs use.
 
 ## Implementation
 
-The next step after generating code is implementing the *IItemLifecycleController* and *IJobsController* interfaces. In the Boilerplate sample, *ItemLifecycleControllerImpl* and *JobsControllerImpl* implement these interfaces.
+The next step after generating code is implementing the `IItemLifecycleController` and `IJobsController` interfaces. In the Boilerplate sample, `ItemLifecycleControllerImpl` and `JobsControllerImpl` implement these interfaces.
 
-For example, this code is the implementation of *CreateItem* API:
+For example, this code is the implementation of the CreateItem API:
 
 ```csharp
 /// <inheritdoc/>
 public async Task CreateItemAsync(Guid workspaceId, string itemType, Guid itemId, CreateItemRequest createItemRequest)
 {
-	var authorizationContext = await _authenticationService.AuthenticateControlPlaneCall(_httpContextAccessor.HttpContext);
-	var item = _itemFactory.CreateItem(itemType, authorizationContext);
-	await item.Create(workspaceId, itemId, createItemRequest);
+ var authorizationContext = await _authenticationService.AuthenticateControlPlaneCall(_httpContextAccessor.HttpContext);
+ var item = _itemFactory.CreateItem(itemType, authorizationContext);
+ await item.Create(workspaceId, itemId, createItemRequest);
 }
 ```
 
-## Handling item payload
+## Handle an item payload
 
-Several API methods accept various types of "payload" as part of the request body, or return them as part of the response. For example, *CreateItemRequest* has *creationPayload* property.
+Several API methods accept various types of "payload" as part of the request body, or they return payloads as part of the response. For example, `CreateItemRequest` has the `creationPayload` property.
 
 ```json
 "CreateItemRequest": {
-	"description": "Create item request content.",
-	"type": "object",
-	"additionalProperties": false,
-	"required": [ "displayName" ],
-	"properties": {
-	"displayName": {
-		"description": "The item display name.",
-		"type": "string",
-		"readOnly": false
-	},
-	"description": {
-		"description": "The item description.",
-		"type": "string",
-		"readOnly": false
-	},
-	"creationPayload": {
-		"description": "Creation payload specific to the workload and item type, passed by the item editor or as Fabric Automation API parameter.",
-		"$ref": "#/definitions/CreateItemPayload",
-		"readOnly": false
-	}
-	}
+ "description": "Create item request content.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [ "displayName" ],
+ "properties": {
+ "displayName": {
+  "description": "The item display name.",
+  "type": "string",
+  "readOnly": false
+ },
+ "description": {
+  "description": "The item description.",
+  "type": "string",
+  "readOnly": false
+ },
+ "creationPayload": {
+  "description": "Creation payload specific to the workload and item type, passed by the item editor or as Fabric Automation API parameter.",
+  "$ref": "#/definitions/CreateItemPayload",
+  "readOnly": false
+ }
+ }
 }
 ```
 
-The types for these "payload" properties are defined in the Swagger specification. There's a dedicated type for every kind of payload. These types don't define any specific properties and allow any property to be included. For example, this is *CreateItemPayload* type:
+The types for these payload properties are defined in the Swagger specification. There's a dedicated type for every kind of payload. These types don't define any specific properties, and they allow any property to be included.
+
+Here's an example of the `CreateItemPayload` type:
 
 ```json
 "CreateItemPayload": {
-	"description": "Creation payload specific to the workload and item type.",
-	"type": "object",
-	"additionalProperties": true
+ "description": "Creation payload specific to the workload and item type.",
+ "type": "object",
+ "additionalProperties": true
 }
 ```
-The generated C# contract classes are defined as partial and have a dictionary with properties.
+
+The generated C# contract classes are defined as `partial`. They have a dictionary with properties defined.
+
+Here's an example:
 
 ```csharp
 /// <summary>
@@ -302,20 +311,22 @@ The generated C# contract classes are defined as partial and have a dictionary w
 [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))")]
 public partial class CreateItemPayload
 {
-	private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+ private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
-	[Newtonsoft.Json.JsonExtensionData]
-	public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-	{
-		get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-		set { _additionalProperties = value; }
-	}
+ [Newtonsoft.Json.JsonExtensionData]
+ public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+ {
+  get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+  set { _additionalProperties = value; }
+ }
 }
 ```
 
-The code can use this dictionary for reading and returning properties. However, a better approach is to define specific properties with corresponding types and names. This can be easily achieved because of the 'partial' declaration on the generated classes.
+The code can use this dictionary to read and return properties. However, a better approach is to define specific properties by using corresponding types and names. You can use the `partial` declaration on the generated classes to efficiently define properties.
 
-For example, *CreateItemPayload.cs* file contains a complementary definition for *CreateItemPayload* class, which adds *Item1Metadata* property.
+For example, the *CreateItemPayload.cs* file contains a complementary definition for the `CreateItemPayload` class.
+
+In this example, the definition adds the `Item1Metadata` property:
 
 ```csharp
 namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
@@ -332,9 +343,9 @@ namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
 }
 ```
 
-However, if the workload supports multiple item types, *CreateItemPayload* class needs to be able to handle different types of creation payload, one per item type. There are two ways to do this. The simpler way, used by the Boilerplate sample, is to define multiple optional properties, each representing the creation payload for a different item type. Every request then has just one of these properties sets, according to the item type being created. Alternatively, you could implement polymorphic serialization, but it isn't demonstrated in the sample because it doesn't provide any significant benefits.
+However, if the workload supports multiple item types, the `CreateItemPayload` class must be able to handle different types of creation payload at one per item type. You have two options. The simpler way, used in the Boilerplate sample, is to define multiple optional properties, each representing the creation payload for a different item type. Every request then has just one of these sets of properties, according to the item type being created. Alternatively, you can implement polymorphic serialization, but this option isn't demonstrated in the sample because the option doesn't provide any significant benefits.
 
-For example, for supporting two item types this class definition would need to be extended as follows:
+For example, to support two item types, the class definition must be extended like in the following example:
 
 ```csharp
 namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
@@ -346,100 +357,113 @@ namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
 
         [Newtonsoft.Json.JsonProperty("item2Metadata", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Item2Metadata Item2Metadata { get; init; }
-    }	
+    } 
 }
 ```
 
 > [!NOTE]
-> The "payload" sent to the workload is generated by the client. It could be the item editor iFrame or Fabric Automation REST API. The client is responsible for sending the correct payload and matching the item type. The workload is responsible for verification. Fabric treats this payload as an opaque object and only transfers it from the client to the workload. Similarly, for a payload returned by the workload to the client, it is workload's and client's responsibility to handle the payload correctly.
+> The payload that's sent to the workload is generated by the client. It can be the item editor iFrame or the Fabric Automation REST API. The client is responsible for sending the correct payload and matching the item type. The workload is responsible for verification. Fabric treats this payload as an opaque object and only transfers it from the client to the workload. Similarly, for a payload that's returned by the workload to the client, it is responsibility of the workload and the client to handle the payload correctly.
 
-For example, this code shows how the Boilerplate sample Item1 implementation handles that:
+For example, this code shows how the Boilerplate sample **item1** implementation handles the payload:
 
 ```csharp
 protected override void SetDefinition(CreateItemPayload payload)
 {
-	if (payload == null)
-	{
-		Logger.LogInformation("No payload is provided for {0}, objectId={1}", ItemType, ItemObjectId);
-		_metadata = Item1Metadata.Default.Clone();
-		return;
-	}
+ if (payload == null)
+ {
+  Logger.LogInformation("No payload is provided for {0}, objectId={1}", ItemType, ItemObjectId);
+  _metadata = Item1Metadata.Default.Clone();
+  return;
+ }
 
-	if (payload.Item1Metadata == null)
-	{
-		throw new InvalidItemPayloadException(ItemType, ItemObjectId);
-	}
+ if (payload.Item1Metadata == null)
+ {
+  throw new InvalidItemPayloadException(ItemType, ItemObjectId);
+ }
 
-	if (payload.Item1Metadata.Lakehouse == null)
-	{
-		throw new InvalidItemPayloadException(ItemType, ItemObjectId)
-			.WithDetail(ErrorCodes.ItemPayload.MissingLakehouseReference, "Missing Lakehouse reference");
-	}
+ if (payload.Item1Metadata.Lakehouse == null)
+ {
+  throw new InvalidItemPayloadException(ItemType, ItemObjectId)
+   .WithDetail(ErrorCodes.ItemPayload.MissingLakehouseReference, "Missing Lakehouse reference");
+ }
 
-	_metadata = payload.Item1Metadata.Clone();
+ _metadata = payload.Item1Metadata.Clone();
 }
 ```
 
-## Troubleshooting and Debugging
+## Troubleshoot and debug
 
-### Known Issues and Solutions
+The next sections describe how to troubleshoot and debug your deployment.
 
-#### Missing Client Secret
+### Known issues and resolutions
+
+Get information about known issues and ways to resolve them.
+
+#### Missing client secret
 
 **Error**:
 
-Microsoft.Identity.Client.MsalServiceException: A configuration issue is preventing authentication. Check the error message from the server for details. You can modify the configuration in the application registration portal. See `https://aka.ms/msal-net-invalid-client` for details. 
+**Microsoft.Identity.Client.MsalServiceException**: A configuration issue is preventing authentication. Check the error message from the server for details. You can modify the configuration in the application registration portal. See `https://aka.ms/msal-net-invalid-client` for details.
 
-Original exception: AADSTS7000215: Invalid client secret provided. Ensure the secret being sent in the request is the client secret value, not the client secret ID, for a secret added to app 'app_guid'.
+**Original exception: AADSTS7000215**: An invalid client secret was provided. Ensure that the secret that is sent in the request is the client secret value and not the client secret ID for a secret added to the app `app_guid` setting.
 
-**Resolution**: Make sure you have the correct client secret in *appsettings.json*.
+**Resolution**: Make sure that you have the correct client secret defined in *appsettings.json*.
 
 #### Error during item creation due to missing admin consent
 
 **Error**:
 
-Microsoft.Identity.Client.MsalUiRequiredException: AADSTS65001: The user or administrator didn't consent to use the application with ID.... Send an interactive authorization request for this user and resource.
+**Microsoft.Identity.Client.MsalUiRequiredException: AADSTS65001**: The user or administrator didn't consent to use the application with ID `<example ID>`. Send an interactive authorization request for this user and resource.
 
 **Resolution**:
-In the item editor, navigate to the bottom and select **Navigate to Authentication Page**.
-Under **Scopes** write *.default* and select **Get Access token**.
-Approve consent in the popped-up dialog.
+
+1. In the item editor, go to the bottom of the pain and select **Navigate to Authentication Page**.
+
+1. Under **Scopes**, enter **.default**, and then select **Get Access token**.
+
+1. In the dialog, approve the revision.
 
 #### Item creation fails due to capacity selection
 
-**Error**: PriorityPlacement: There are no available core services for priority placement only 'name','guid','workload-name'.
+**Error**:
 
-**Resolution**: You might be using a user that only has access to Trial capacity. Make sure you're using a capacity that you have access to.
+**PriorityPlacement**: No core services are available for priority placement. Only `name`, `guid`, and `workload-name` are available.
+
+**Resolution**:
+
+As a user, you might have access only to Trial capacity. Make sure that you use a capacity you have access to.
 
 #### File creation failure with 404 (NotFound) error
 
 **Error**:
 
-Creating a new file failed for filePath: 'workspace-id'/'lakehouse-id'/Files/data.json. Error: Response status code doesn't indicate success: 404 (NotFound).
+**Creating a new file failed for filePath: 'workspace-id'/'lakehouse-id'/Files/data.json**. The response status code doesn't indicate success: **404 (NotFound)**.
 
-**Resolution**: Make sure you're working with the OneLake DFS URL that fits your environment. For example, if you work with PPE environment, change EnvironmentConstants.OneLakeDFSBaseUrl in Constants.cs to the appropriate URL.
+**Resolution**:
 
-### Debugging
+Make sure that you're working with the OneLake DFS URL that fits your environment. For example, if you work with a PPE environment, change `EnvironmentConstants.OneLakeDFSBaseUrl` in *Constants.cs* to the appropriate URL.
 
-When troubleshooting various operations, you can set breakpoints in the code to analyze and debug the behavior. Follow these steps for effective debugging:
+### Debug
+
+When you troubleshoot various operations, you can set breakpoints in the code to analyze and debug the behavior. Follow these steps for effective debugging:
 
 1. Open the code in your development environment.
-1. Navigate to the relevant operation handler function (for example, OnCreateFabricItemAsync for CRUD operations or an endpoint in a controller for Execute operations).
+1. Go to the relevant operation handler function (for example, `OnCreateFabricItemAsync` for CRUD operations or an endpoint in a controller for `execute` operations).
 1. Place breakpoints at specific lines where you want to inspect the code.
 1. Run the application in debug mode.
-1. Trigger the operation from the frontend (FE) that you want to debug.
+1. Trigger the operation from the frontend that you want to debug.
 
-The debugger pause execution at the specified breakpoints, enabling you to examine variables, step through code, and identify issues.
+The debugger pauses execution at the specified breakpoints so that you can examine variables, step through the code, and identify issues.
 
 :::image type="content" source="./media/extensibility-back-end/debugger.png" alt-text="Screenshot of sample program with breakpoints for debugging.":::
 
 ## Workspace
 
-If you are a connecting a backend to the Sample Workload, be aware that your item must belong to a workspace that has is associated to a capacity. By default, the "My Workspace" workspace is not associated to a capacity. Otherwise, you might get this error:
+If you're a connecting a backend to the sample workload project, your item must belong to a workspace that is associated with a capacity. By default, the *My Workspace* workspace isn't associated with a capacity. Otherwise, you might get the error that's shown in the following screenshot:
 
 :::image type="content" source="./media/extensibility-back-end/copy-item.png" alt-text="Screenshot of UI for naming a sample workload item.":::
 
-1. Switch to a named workspace and leave the default *My workspace*:
+1. Switch to a named workspace. Leave the default workspace name **My workspace**.
 
     :::image type="content" source="./media/extensibility-back-end/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
 
@@ -453,11 +477,11 @@ We welcome contributions to this project. If you find any issues or want to add 
 
 1. Fork the repository.
 1. Create a new branch for your feature or bug fix.
-1. Make your changes and commit them.
+1. Make your changes, and then commit them.
 1. Push your changes to your forked repository.
-1. Create a pull request with a clear description of your changes.
+1. Create a pull request that has a clear description of your changes.
 
 ## Related content
 
-* [Workload development kit overview](development-kit-overview.md)
-* [Workload development kit front end](extensibility-front-end.md)
+* [Microsoft Fabric Workload Development Kit overview](development-kit-overview.md)
+* [Microsoft Fabric Workload Development Kit frontend](extensibility-front-end.md)

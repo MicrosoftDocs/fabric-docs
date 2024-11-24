@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 11/19/2024
+ms.date: 11/22/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  945  | Power BI | [Intermittent failures on deployment of Sustainability solution](known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
+|  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
+|  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 |
+|  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](known-issues/known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
 |  927  | Power BI | [PowerPoint add-in and Refresh Report API refresh date appears incorrect](known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md) | November 12, 2024 |
 |  926  | Data Engineering | [Notebook failure inside Visual Studio Code for the Web](known-issues/known-issue-926-notebook-failure-visual-studio-code-web.md) | November 12, 2024 |
@@ -66,7 +70,6 @@ Select the **Title** to view more information about that specific known issue.
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
-|  716  | Data Warehouse | [Response times when composing SQL queries slower than expected](known-issues/known-issue-716-response-times-composing-sql-queries-slower.md) | May 13, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 |
 |  641  | Power BI | [Visuals using the Denodo connector might show connection errors](known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md) | March 5, 2024 |
 |  640  | Power BI | [Microsoft Defender detects OpenSSL vulnerabilities in Power BI Desktop](known-issues/known-issue-640-microsoft-defender-detects-openssl-vulnerabilities-desktop.md) | March 5, 2024 |
@@ -85,6 +88,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  716  | Data Warehouse | [Response times when composing SQL queries slower than expected](known-issues/known-issue-716-response-times-composing-sql-queries-slower.md) | May 13, 2024 | Fixed: November 20, 2024 |
 |  800  | Data Engineering | [Teaching bubble blocks Lakehouse explorer context menu from opening](known-issues/known-issue-800-teaching-bubble-blocks-lakehouse-explorer-context-menu.md) | July 31, 2024 | Fixed: November 19, 2024 |
 |  797  | Data Engineering | [Localization blocks operations in a lakehouse](known-issues/known-issue-797-localization-blocks-operations-lakehouse.md) | July 31, 2024 |  Fixed: November 19, 2024 |
 |  732  | Data Engineering | [Shortcut creation on a lakehouse preview table takes long time](known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md) | May 31, 2024 |  Fixed: November 19, 2024 |
