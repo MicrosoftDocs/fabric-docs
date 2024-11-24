@@ -1,5 +1,5 @@
 ---
-title: Implement the Microsoft Fabric backend (preview)
+title: Implement the Microsoft Fabric backend
 description: Learn how to build the backend of a customized Microsoft Fabric workload by using Fabric extensions. Learn about the Microsoft Fabric Workload Development Kit and how to use it by following a detailed example.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to build the backend of a customized Microsoft Fabric workload and use the Microsoft Fabric Workload Development Kit so that I can create customized user experiences.
 ---
 
-# Implement the Microsoft Fabric backend (preview)
+# Implement the Microsoft Fabric backend
 
 This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) is a starting point for building applications that require integration with various services and for integration with lakehouse architecture. This article helps you set up the environment and configure the necessary components to get started. The article outlines key components and their roles in the architecture.
 
@@ -175,9 +175,9 @@ To set up the workload sample project on your local machine:
    Copy the *ManifestPackage.1.0.0.nupkg* file to the path that's defined in the *workload-dev-mode.json* configuration file.
 
 1. *Program.cs* is the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host.
-1. Build the project to ensure that the project can access the required dependencies for compilation and execution.
-1. Download the DevGateway from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=105993).
-1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application that's located in the *DevGateway* folder. Sign in with a user that has *capacity admin privileges* to the capacity linked to the workspace specified in the WorkspaceGuid field in *workload-dev-mode.json*.
+1. Build to ensure your project can access the required dependencies for compilation and execution.
+1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
+1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application and sign in with a user that has **workspace admin privileges** for the workspace specified in the `WorkspaceGuid` field of workload-dev-mode.json.
 
    :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of the Microsoft sign in page.":::
 

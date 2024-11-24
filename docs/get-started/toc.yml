@@ -179,6 +179,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Intermittent failures on deployment of Sustainability solution
+      href: known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
+    - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work
+      href: known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md
+    - name: New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported
+      href: known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md
     - name: Line chart value-axis zoom sliders don't work with markers enabled
       href: known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md
     - name: External data sharing doesn't work in a different region capacity lakehouse

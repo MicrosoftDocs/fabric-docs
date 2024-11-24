@@ -3,7 +3,7 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 11/19/2024
+ms.date: 11/21/2024
 ms.topic: conceptual
 ---
 
@@ -46,11 +46,17 @@ The payload property in previous JSON body is Base64 encoded. You can use [Base6
 
 - [JSON definition example of Snowflake](#json-definition-example-of-snowflake)
 - [JSON definition example of Azure SQL Database](#json-definition-example-of-azure-sql-database)
-- [JSON definition example of Azure SQL Database Managed Instance](#json-definition-example-of-azure-sql-database-managed-instance)
+- [JSON definition example of Azure SQL Managed Instance](#json-definition-example-of-azure-sql-managed-instance)
 - [JSON definition example of Azure Cosmos DB](#json-definition-example-of-azure-cosmos-db)
 - [JSON definition example of open mirroring](#json-definition-example-of-open-mirroring)
 
 If you want to replicate selective tables instead of all the tables in the specified database, refer to [JSON definition example of replicating specified tables](#json-definition-example-of-replicating-specified-tables).
+
+> [!IMPORTANT]
+> To mirror data from Azure SQL Database or Azure SQL Managed Instance, you need to also do the following before start mirroring:
+>
+> 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) or [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance).
+> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternativley, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
 ### JSON definition example of Snowflake
 
@@ -97,10 +103,7 @@ If you want to replicate selective tables instead of all the tables in the speci
 }
 ```
 
-> [!NOTE]
-> For Azure SQL Database, you will need to [enable system assigned managed identity](/fabric/database/mirrored-database/azure-sql-database-tutorial#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) and grant it **Read,Write** permission to the mirrored database item before starting mirroring.
-
-### JSON definition example of Azure SQL Database Managed Instance
+### JSON definition example of Azure SQL Managed Instance
 
 ```json
 {
@@ -121,8 +124,6 @@ If you want to replicate selective tables instead of all the tables in the speci
     }
 }
 ```
-> [!NOTE]
-> For Azure SQL Managed Instance, you will need to [enable system assigned managed identity](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance) and grant it **Read,Write** permission to the mirrored database item before starting mirroring.
 
 ### JSON definition example of Azure Cosmos DB
 
