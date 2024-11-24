@@ -56,7 +56,12 @@ Use the *CreateDevAADApp.ps1* script to register an Azure Entra ID application.
     ```azurecli
    az login
    ```
-3. Run the *CreateDevAADApp.ps1* script using the credentials of the user account under which you intend to create the application.
+
+3. In CLI, navigate to the folder that has the *CreateDevAADApp.ps1* script, and run it.
+
+    ```azurecli
+   CreateDevAADApp.ps1
+   ```
 
 Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so that you can use the sample's dialog.
 
