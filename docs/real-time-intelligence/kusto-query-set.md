@@ -97,7 +97,7 @@ The data source explorer has two sections. The upper section lists all the items
 
 ### Items in the data source
 
-In the upper section, you can see all the items that are included in the data source you're using 
+In the upper section, you can see all the items that are included in the data source you're using.
 
 * Tables
 * Materialized View
