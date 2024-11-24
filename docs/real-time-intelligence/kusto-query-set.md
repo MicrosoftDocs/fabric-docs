@@ -99,7 +99,7 @@ The data source explorer has two sections. The upper section lists all the items
 
 ### Items in the data source
 
-In the upper section, you can see all the items that are included in the data source you're using. To expand the list, select **V** next to the item name. To view the columns in each table, expand again.
+In the upper section, you can see all the items that are included in the data source you're using. To expand the list, select **>** next to the item. You can show more details by selecting **>** again in the subsequent list level. For example, under **Tables**, select **>** next to a table name to show a list of the columns in that table.
 
 * Tables
 * Materialized View
