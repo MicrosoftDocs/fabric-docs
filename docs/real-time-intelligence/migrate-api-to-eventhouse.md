@@ -72,7 +72,7 @@ Eventhouse item creation payload
 
 | Name | Type | Description |
 |-|-|-|
-| statusCode | | Request accepted, eventhouse provisioning in progress.<br /><br />Headers<br /><br />Location: string - URI address that you can poll using GET requests to see the progress of the migration.<br />x-ms-operation-id: string<br />Retry-After: integer |
+| 202 Accepted | | Request accepted, eventhouse provisioning in progress.<br /><br />Headers<br /><br />Location: string - URI address that you can poll using GET requests to see the progress of the migration.<br />x-ms-operation-id: string<br />Retry-After: integer |
 | Other Status Codes | [Error response](/rest/api/fabric/eventhouse/items/create-eventhouse#errorresponse) | Common error codes:<br /><br />InvalidItemType - Item type is invalid.<br />ItemDisplayNameAlreadyInUse - Item display name is already used.<br />CorruptedPayload - The provided payload is corrupted. |
 
 ## Examples

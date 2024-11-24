@@ -47,13 +47,22 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses/va
 |-|-|-|-|
 | clusterUrl | True | string | The URL of the Azure Synapse Data Explorer cluster to validate for migration. |
 
-## Response schema
+## Response
+
+| Name | Type | Description |
+|-|-|-|
+| 200 OK | [Response details](#response-details) | The specified cluster qualifies for migration. |
+| 401 Unauthorized | [Response details](#response-details) | The user is unauthorized on the source cluster. |
+| 412 PreconditionFailed | [Response details](#response-details) | The cluster failed at least one validation condition and doesn't qualify for migration. |
+| Other Status Codes | [Error response](/rest/api/fabric/eventhouse/items/create-eventhouse#errorresponse) | Common error codes:<br /><br />InvalidItemType - Item type is invalid.<br />ItemDisplayNameAlreadyInUse - Item display name is already used.<br />CorruptedPayload - The provided payload is corrupted. |
+
+## Response details
 
 | Name | Type | Description |
 |-|-|-|
 | validationType | string | The type of validation response. Valid values:<li>**Success**: Indicates that the specified cluster qualifies for migration.</li><li>**Warning**: Indicates that the specified cluster qualifies for migration. However, there are warnings, such as the cluster has a feature in Azure that isn't supported Fabric and won't transition as part of the migration.</li><li>**Error**: Indicates that the specified cluster doesn't qualify for migration.</li> |
 | statusCode | string | The HTTP status code, such as *OK* (200), *Unauthorized* (401), and *PreconditionFailed* (412). |
-| messageCode | string | For errors and warnings, a code that indicates the specific reason for why the cluster doesn't qualify for migration. For example: U*serIsUnauthorizedOnSourceCluster*, *EntityNotFoundException* |
+| messageCode | string | For errors and warnings, a code that indicates the specific reason for why the cluster doesn't qualify for migration. For example: *UserIsUnauthorizedOnSourceCluster*, *EntityNotFoundException* |
 | message | string | The message that provides additional information about the validation result. |
 | CustomParameters | object | For errors and warnings, a JSON object that provides more details with specific custom information about the validation result. |
 
