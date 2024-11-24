@@ -79,35 +79,34 @@ The following examples use data that is publicly available at [https://kustosamp
 
 Within a KQL queryset, you can create multiple tabs. Each tab can be associated with a different KQL database, and lets you save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
 
-:::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
+:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu1.png":::
 
 * **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different data sources.
 * **Rename a tab**: Select the **pencil icon** next to the tab name.
 * **Change tab positions**: Change tab positions using drag and drop gestures.
-* **Change the existing database connection**: Under **Explorer**, select the existing data source connection to open the data hub.
-
-On the right side of the command bar, there's a menu with more actions to manage the multiple tabs in your queryset.
-
-:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset.":::
+* **Change the existing data source connection**: Under **Explorer**, select the existing data source connection to open the data hub and change the data source.
+* **More actions**: On the right side of the command bar, there's a tab menu with more actions to manage the multiple tabs in your queryset.
 
 ## Interact with data sources
-
-<!-- screenshot of data source Explorer -->
 
 The data source explorer allows you to browse and switch between the data sources connected to the queryset tab that you are in. At the top of the data source explorer, under **Explorer**, select **V** to expand the data source connections menu. Select the data source you want to use. If the tab name hasn't been edited previously, it automatically gets named the name of the data source.
 
 The data source explorer has two sections. The upper section lists all the items in the data source, and the lower section shows all available data sources in the queryset.
 
+<!-- screenshot showing data source Explorer sections -->
+
 ### Items in the data source
 
-In the upper section, you can see all the items that are included in the data source you're using. To expand the list, select **V** next to the item name. To view the columns in each table, expand again.
+In the upper section, you can see all the items that are included in the data source you're using 
 
 * Tables
 * Materialized View
 * Shortcuts
 * Functions
 
-To open the action menu, hover over an item in the epxanded list and select the **More actions** menu [...]. The menu gives options to:
+To expand the list, select **>** next to the item. You can show more details by selecting **>** again in the subsequent list level. For example, under **Tables**, select **>** next to a table name to show a list of the columns in that table.
+
+To open the action menu, hover over an item in the expanded list and select the **More actions** menu [...]. The menu gives options to:
 
 * Refresh database
 * View data profile
