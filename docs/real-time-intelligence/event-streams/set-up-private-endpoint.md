@@ -57,7 +57,7 @@ Setting up a private connection in Eventstream is straightforward. Follow these 
 
 * In the Fabric workspace, go to the **Workspace settings** and navigate to the **Network security** section.
 * Select **Create** to add a new private endpoint.
-* For the **Resource identifier**, enter the resource ID of your Azure Event Hubs such as `/subscriptions/aaaaaaaa-bbbb-cccc-dddd-111111111111/resourceGroups/my-resourcegroup/providers/Microsoft.EventHub/namespaces/my-eh-namespace/eventhubs/my-eventhub`.
+* For the **Resource identifier**, enter the resource ID of your Azure Event Hubs such as `/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/my-resourcegroup/providers/Microsoft.EventHub/namespaces/my-eh-namespace/eventhubs/my-eventhub`.
 * For **Target Sub-resource**, select **Azure Event Hub**.
 * Select **Create** to finalize the private endpoint creation.
 
