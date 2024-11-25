@@ -72,7 +72,7 @@ Susan, a professional developer, is new to Microsoft Fabric. They're ready to ge
 
 Susan has spent many years building data warehouses on relational database engines, and is familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a [**Fabric warehouse**](../data-warehouse/data-warehousing.md), which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
 
-Susan creates a new lakehouse and accesses the data warehouse capabilities with the lakehouse SQL analytics endpoint. Using the Fabric portal, creates shortcuts to the external data tables and places them in the `/Tables` folder. Susan now can write T-SQL queries that reference shortcuts to query Delta Lake data in the lakehouse. The shortcuts automatically appear as tables in the SQL analytics endpoint and can be queried with T-SQL using three-part names.
+Susan creates a new data warehouse and access it as it is a SQL server database. Using the Fabric portal, she creates references to other lakehouses and data warehouses using cross-database query technics. Susan now can write T-SQL queries that reference Delta Tables in the lakehouse. She can query data using T-SQL three-part names.
 
 ### Scenario 2
 
