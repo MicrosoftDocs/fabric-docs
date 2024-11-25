@@ -107,6 +107,14 @@ items:
     href: onelake-consumption.md
   - name: OneLake capacity consumption example
     href: OneLake-capacity-consumption.md
+- name: OneLake events
+  items:
+  - name: Explore OneLake events in Fabric Real-Time hub
+  href: ../real-time-hub/explore-fabric-onelake-events
+  - name: Get OneLake events in Fabric
+  href: ../real-time-hub/create-streams-fabric-onelake-events
+  - name: Set alerts on OneLake events
+  href: ../real-time-hub/set-alerts-fabric-onelake-events
 - name: Reference
   items: 
   - name: OneLake shortcuts REST API
