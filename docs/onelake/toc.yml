@@ -110,11 +110,11 @@ items:
 - name: OneLake events
   items:
   - name: Explore OneLake events in Fabric Real-Time hub
-  href: ../real-time-hub/explore-fabric-onelake-events
+  href: ../real-time-hub/explore-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Get OneLake events in Fabric
-  href: ../real-time-hub/create-streams-fabric-onelake-events
+  href: ../real-time-hub/create-streams-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Set alerts on OneLake events
-  href: ../real-time-hub/set-alerts-fabric-onelake-events
+  href: ../real-time-hub/set-alerts-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Reference
   items: 
   - name: OneLake shortcuts REST API
