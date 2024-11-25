@@ -142,7 +142,7 @@ Here are the supported properties in Python notebook **%%configure**:
 
 You can view the compute resources update on notebook status bar, and monitor the CPU and Memory usage of the compute node in real-time.
 
-   :::image type="content" source="media\using-python-experience-on-notebook\compute-resources.png" alt-text="Screenshot showing compute resources update." lightbox="media\using-python-experience-on-notebook\compute-resources.png":::
+   :::image type="content" source="media\using-python-experience-on-notebook\compute-resources-usage.png" alt-text="Screenshot showing compute resources update." lightbox="media\using-python-experience-on-notebook\compute-resources-usage.png":::
 
 ## NotebookUtils
 
