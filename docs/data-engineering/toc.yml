@@ -190,7 +190,7 @@ items:
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
     href: author-execute-notebook.md  
-  - name: Using Python experience on notebook
+  - name: Use Python experience on notebook
     href: using-python-experience-on-notebook.md  
   - name: NotebookUtils
     href: notebook-utilities.md
