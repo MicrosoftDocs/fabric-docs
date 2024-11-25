@@ -123,13 +123,13 @@ To view the data insights for a streaming connector source:
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
-To view the runtime logs for Azure event hub, Azure iot hub, streaming connector source, lakehouse, eventhouse ('Event processing before ingestion' mode), derived stream or Fabric activator:
+To view the runtime logs for Azure event hub, Azure iot hub, streaming connector source, lakehouse, eventhouse ('Event processing before ingestion' mode) or Fabric activator:
 
 1. Select the node in the main editor canvas.
 
 2. In the lower pane, select the **Runtime logs** tab.
 
-3. If there's data inside the Azure event hub, Azure iot hub, streaming connector source, lakehouse, eventhouse, derived stream or Fabric activator, the logs appear on the **Runtime logs** tab.
+3. If there's data inside the Azure event hub, Azure iot hub, streaming connector source, lakehouse, eventhouse or Fabric activator, the logs appear on the **Runtime logs** tab.
 
 4. Search the logs with the **Filter by keyword** option, or filter the list by changing the severity or type.
 

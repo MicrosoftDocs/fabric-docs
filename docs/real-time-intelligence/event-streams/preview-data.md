@@ -38,7 +38,7 @@ To preview the source data of an event hub or sample data in the eventstream:
 
 ## Preview a destination
 
-To preview the destination data of an eventhouse, Lakehouse, Derived stream or Fabric activator in the eventstream:
+To preview the destination data of an eventhouse, lakehouse, derived stream or Fabric activator in the eventstream:
 
 1. In the main editor canvas, select one of the destination nodes in your eventstream.
 
