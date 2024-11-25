@@ -8,9 +8,8 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-  - ignite-2024
 ms.search.form: Create and use notebooks
-ms.date: 11/11/2024
+ms.date: 07/25/2024
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -65,7 +64,7 @@ You can import one or more existing notebooks from your local computer using the
 
 ## Export a notebook
 
-You can export your notebook to other standard formats. Notebooks can be exported into the following formats:
+You can export your notebook to other standard formats. Synapse notebook can be exported into:
 
 - The standard notebook file (.ipynb) that is used for Jupyter notebooks.
 - An HTML file (.html) that can be opened from a browser directly.  
@@ -119,7 +118,7 @@ You can easily copy a path with a different format from the select file or folde
 
 The notebook resource explorer provides a Unix-like file system to help you manage your folders and files. It offers a writeable file system space where you can store small-sized files, such as code modules, semantic models, and images. You can easily access them with code in the notebook as if you were working with your local file system.
 
-:::image type="content" border="true" source="media/how-to-use-notebook/notebook-resources-operations.gif" alt-text="Animated GIF of notebook resources.":::
+![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
 
 > [!NOTE]
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
@@ -151,7 +150,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 ### File editor
 
-The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it supports Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
+The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it support Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
 
 - You can access this feature through **'View and edit'** in the file menu. Double-click on file is a faster way.
 
@@ -221,10 +220,44 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
 
-:::image type="content" border="true" source="media/how-to-use-notebook/tagging-others-in-a-comment.gif" alt-text="Animated GIF of tagging others in a comment.":::
+![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
 
 > [!NOTE]
 > For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
+
+## Version history
+
+> [!NOTE]
+> Currently, the feature is in preview.
+
+Version history allows you to easily version your live notebook changes. It supports history tracking and notebook management with robust built-in version control capabilities, which is especially helpful for collaborative work with multiple contributors on the same notebook.
+
+1. Access version **history** from notebook global toolbar.
+
+   :::image type="content" source="media\how-to-use-notebook\history-access.png" alt-text="Screenshot showing history access.":::
+
+1. Notebook supports two ways of creating checkpoints.
+
+   - Manual checkpoint: You can manually **create new version** to record your development milestones, providing flexibility for managing your notebook versions.
+
+      :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version.":::
+
+   - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned, you can find the modification records from all the contributors in the system checkpoint timeline list.
+      :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list .":::
+
+1. You can click on a checkpoint to open the **diff view**, it will highlight the content differences between the selected checkpoint and the current live version, including the differences of cell content, cell output, and metadata. The version of this checkpoint can be managed individually in **'more options'** menu.
+
+   :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff .":::
+
+1. You can manage the version from the checkpoint drop down menu, if want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
+
+   :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint.":::
+
+> [!INOTE]
+>
+> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint, you need to refresh the page for the restore operation to take effect. Alternatively, a message bar will prompt you to view the changes, you can also open the **View changes** button and select keeping the *Saved version* to finish the restore.
+    :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore.":::
+> - System checkpoints will expire after **1** year.
 
 ## Notebook mode switcher
 
