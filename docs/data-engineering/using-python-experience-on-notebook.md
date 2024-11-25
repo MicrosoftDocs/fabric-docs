@@ -17,7 +17,7 @@ ms.date: 11/25/2024
  > [!NOTE]
  > Currently, the feature is in preview.
 
-The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that doesn't require big data and distributed computing.
+The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
 
 With a Python notebook, you can get:
 
@@ -25,9 +25,9 @@ With a Python notebook, you can get:
 
 1. **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This ensures efficient resource utilization for data exploration projects with smaller data size.
 
-1. **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This enables users easily bring the data to python notebook, just try drag & drop to get the code snippet.  
+1. **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
 
-1. **Mix programming with T-SQL**: Python notebook offers a easy way to interact with Data Warehouse and SQL endpoints in explorer, by leveraging notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
+1. **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL endpoints in explorer, by leveraging notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
 
 1. **Support for Popular Data Analytic libraries**: Python notebooks come with pre-installed libraries such as DuckDB, Polars, and Scikit-learn, providing a comprehensive toolkit for data manipulation, analysis, and machine learning.
 
@@ -43,7 +43,7 @@ With a Python notebook, you can get:
 
 ## How to access Python Notebook
 
-After opening a Fabric Notebook, you can switch to *Python* in the language dropdown menu at **Home** tab and convert the entire notebook set up to Python. 
+After opening a Fabric Notebook, you can switch to *Python* in the language dropdown menu at **Home** tab and convert the entire notebook set-up to Python. 
 
    :::image type="content" source="media\using-python-experience-on-notebook\switch-from-notebook-language-menu.png" alt-text="Screenshot showing switch to Python from notebook language menu." lightbox="media\using-python-experience-on-notebook\switch-from-notebook-language-menu.png":::
 
@@ -69,7 +69,7 @@ You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resourc
 
 You can set a Lakehouse as default Lakehouse, however you can add multiple Lakehouses to the explore and use them in notebook as well.  
 
-If you are not familiar with the grammar of reading the data objects like *delta table*, try drag and drop the file and delta table to the notebook canvas, or use the *Load data* in the object dropdown menu. notebook will automatically insert code snippet into code cell and generating code for reading the target data object.
+If you are not familiar with the grammar of reading the data objects like *delta table*, try drag and drop the file and delta table to the notebook canvas, or use the *Load data* in the object dropdown menu. Notebook will automatically insert code snippet into code cell and generating code for reading the target data object.
 
  > [!NOTE]
  > If you encounter OOM when loading large volume of data, try using DuckDB, Polars or PyArrow dataframe instead of pandas.
@@ -80,7 +80,7 @@ You can find the write Lakehouse operation in **Browse code snippet** -> **Write
 
 ### Warehouse interaction and mix programming with T-SQL
 
-You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu, notebook will automatically generating code snippet for you. You can leverage the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
+You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu, notebook will automatically generate code snippet for you. You can leverage the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
 
    :::image type="content" source="media\using-python-experience-on-notebook\warehouse-shortcuts.png" alt-text="Screenshot showing warehouse table shortcuts." lightbox="media\using-python-experience-on-notebook\warehouse-shortcuts.png":::
 
@@ -93,9 +93,9 @@ The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in res
 
 ## Kernel operations
 
-Python notebook support two built-in kernals right now, they are *Python 3.10* and *Python 3.11*, the default selected kernel is *Python 3.11*, you can easily switch between them.
+Python notebook support two built-in kernels right now, they are *Python 3.10* and *Python 3.11*, the default selected kernel is *Python 3.11*, you can easily switch between them.
 
-You can interrupt, restart or switch kernel on the **Home** tab of the ribbon. Interrupting kernel in Python notebooks is same as cancelling cell in Spark notebook.
+You can interrupt, restart or switch kernel on the **Home** tab of the ribbon. Interrupting kernel in Python notebooks is same as canceling cell in Spark notebook.
 
    :::image type="content" source="media\using-python-experience-on-notebook\kernel-operations.png" alt-text="Screenshot showing kernel operations." lightbox="media\using-python-experience-on-notebook\kernel-operations.png":::
 
@@ -158,7 +158,7 @@ You can use ```notebookutils.help()``` to list available APIs and also get help 
 
 You can use `notebookutils.data` utilities to establish a connection with provided data source and then read and query data using T-SQL statement.
 
-Run the following command to get an overiew of the available methods:
+Run the following command to get an overview of the available methods:
 
 ```python
 notebookutils.data.help()
