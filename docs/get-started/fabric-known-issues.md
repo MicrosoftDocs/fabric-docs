@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 11/20/2024
+ms.date: 11/22/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  945  | Power BI | [Intermittent failures on deployment of Sustainability solution](known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
+|  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
+|  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](known-issues/known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
 |  927  | Power BI | [PowerPoint add-in and Refresh Report API refresh date appears incorrect](known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md) | November 12, 2024 |
