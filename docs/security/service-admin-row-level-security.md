@@ -17,7 +17,7 @@ no-loc: [Copilot]
 
 Row-level security (RLS) with Power BI can be used to restrict data access for given users. Filters restrict data access at the row level, and you can define filters within roles. In the Power BI service, users with access to a workspace have access to semantic models in that workspace. RLS only restricts data access for users with **Viewer** permissions. It doesn't apply to Admins, Members, or Contributors.
 
-You can configure RLS for data models imported into Power BI with Power BI. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services lives connections, you configure row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
+You can configure RLS for data models imported into Power BI with Power BI. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services live connections, you configure row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
 
 [!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-define-roles.md)]
 
