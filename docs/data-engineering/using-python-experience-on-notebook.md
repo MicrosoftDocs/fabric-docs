@@ -93,7 +93,7 @@ The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in res
 
 ## Kernel operations
 
-Python notebook support two built-in kernels right now, they are *Python 3.10* and *Python 3.11*, the default selected kernel is *Python 3.11*, you can easily switch between them.
+Python notebook support two built-in kernels right now, they are *Python 3.10* and *Python 3.11*, the default selected kernel is *Python 3.11*. you can easily switch between them.
 
 You can interrupt, restart, or switch kernel on the **Home** tab of the ribbon. Interrupting kernel in Python notebooks is same as canceling cell in Spark notebook.
 
@@ -107,7 +107,7 @@ There are commands that can lead to kernel died. For example, *quit()*, *exit()*
 
 You can use *%pip* and *%conda* commands for inline installations, the commands support both public libraries and customized libraries.  
 
-For customized libraries, you can upload the lib files to the [**Built-in resources**](#notebook-resources-folder) folder, we support multiple types of libraries like *.whl*, *.jar*, *.dll*, *.py*, etc, just try drag&drop to the file and the code snippet will be generated automatically.
+For customized libraries, you can upload the lib files to the [**Built-in resources**](#notebook-resources-folder) folder. We support multiple types of libraries like *.whl*, *.jar*, *.dll*, *.py*, etc, just try drag&drop to the file and the code snippet is generated automatically.
 
 You may need to restart the kernel to use the updated packages.
 
@@ -146,7 +146,7 @@ You can view the compute resources update on notebook status bar, and monitor th
 
 ## NotebookUtils
 
-Notebook Utilities (NotebookUtils) is a built-in package to help you easily perform common tasks in Fabric Notebook, it is pre-installed on Python runtime. You can use NotebookUtils to work with file systems, to get environment variables, to chain notebooks together, to access external storage, and to work with secrets.  
+Notebook Utilities (NotebookUtils) is a built-in package to help you easily perform common tasks in Fabric Notebook. It is pre-installed on Python runtime. You can use NotebookUtils to work with file systems, to get environment variables, to chain notebooks together, to access external storage, and to work with secrets.  
 
 You can use ```notebookutils.help()``` to list available APIs and also get help with methods, or referencing the doc [NotebookUtils](notebook-utilities.md).
 
@@ -242,13 +242,13 @@ for row in rows:
 
 ## Browse code snippets
 
-You can find useful python code snippets on **Edit** tab-> **Browse code snippet**, new Python samples are now available, you can learn from the Python code snippet to start exploring the notebook.
+You can find useful python code snippets on **Edit** tab-> **Browse code snippet**, new Python samples are now available. You can learn from the Python code snippet to start exploring the notebook.
 
    :::image type="content" source="media\using-python-experience-on-notebook\browse-python-code-snippets.png" alt-text="Screenshot showing where to browse python code snippets." lightbox="media\using-python-experience-on-notebook\browse-python-code-snippets.png":::
 
 ## Semantic link
 
-Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and Synapse Data Science in Microsoft Fabric. It is natively supported on Python notebook. BI engineers and Power BI developers can leverage Semantic link connect and manage semantic model easily. Read the [public document](../data-science/semantic-link-overview.md) to learn more about Semantic link.
+Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and Synapse Data Science in Microsoft Fabric. It is natively supported on Python notebook. BI engineers and Power BI developers can use Semantic link connect and manage semantic model easily. Read the [public document](../data-science/semantic-link-overview.md) to learn more about Semantic link.
 
 ## Visualization
 
