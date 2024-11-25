@@ -1,5 +1,5 @@
 ---
-title: Real-Time Dashboard permission segregation (preview)
+title: Real-Time Dashboard permissions (preview)
 description: Learn how to share Real-Time Dashboards without giving access to the underlying data source.
 ms.reviewer: yaschust
 ms.author: yaschust
