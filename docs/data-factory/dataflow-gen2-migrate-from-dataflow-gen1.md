@@ -5,7 +5,7 @@ author: itsnotaboutthecell
 ms.author: alpowers
 ms.reviewer: dougklopfenstein, mllopis
 ms.topic: conceptual
-ms.date: 11/23/2024
+ms.date: 11/26/2024
 ms.custom: fabric-cat, intro-migration
 ---
 
@@ -22,7 +22,7 @@ This article targets Power BI dataflow creators. It provides them with guidance 
 
 Microsoft Fabric has evolved into an integrated platform for both self-service and IT-managed enterprise data. With exponential growth in data volumes and complexity, Fabric customers demand that their enterprise solutions scale, are secure, easy to manage, and accessible to all users across the largest of organizations.
 
-In recent years, Microsoft has taken great strides to deliver scalable cloud capabilities to [Power BI Premium](/power-bi/enterprise/service-premium-what-is). To that end, Data Factory in Fabric instantly empowers a large ecosystem of data integration developers and data integration solutions that have been built up over decades. It leverages the full set of features and capabilities that go far beyond comparable functionality available in previous generations.
+In recent years, Microsoft has taken great strides to deliver scalable cloud capabilities to [Fabric capacity](../enterprise/licenses.md#capacity). To that end, Data Factory in Fabric instantly empowers a large ecosystem of data integration developers and data integration solutions that have been built up over decades. It leverages the full set of features and capabilities that go far beyond comparable functionality available in previous generations.
 
 Naturally, customers are now asking whether there's an opportunity to consolidate their data integration solutions by hosting them within Fabric. They often ask questions like:
 
@@ -34,9 +34,9 @@ Naturally, customers are now asking whether there's an opportunity to consolidat
 Answers to many of these questions are described in this article.
 
 > [!NOTE]
-> The decision to migrate to Fabric capacities depends on the requirements of each customer. Customers should carefully evaluate the benefits in order to make an informed decision. We expect to see organic migration to Dataflow Gen2 over time, and our intention is that it happens on terms that the customer is comfortable with.
+> The decision to migrate to Fabric capacity depends on the requirements of each customer. Customers should carefully evaluate the benefits in order to make an informed decision. We expect to see organic migration to Dataflow Gen2 over time, and our intention is that it happens on terms that the customer is comfortable with.
 >
-> To be clear, currently there aren't any plans to deprecate Power BI dataflows or Power Platform dataflows. However, there is a priority to focus investment on Dataflow Gen2 for enterprise data ingestion, and so the value provided by Fabric capacities will increase over time. Customers that choose Fabric capacities can expect to benefit from alignment with the [Microsoft Fabric product roadmap](/fabric/release-plan/data-factory).
+> To be clear, currently there aren't any plans to deprecate Power BI dataflows or Power Platform dataflows. However, there is a priority to focus investment on Dataflow Gen2 for enterprise data ingestion, and so the value provided by Fabric capacity will increase over time. Customers that choose Fabric capacity can expect to benefit from alignment with the [Microsoft Fabric product roadmap](/fabric/release-plan/data-factory).
 
 ### Convergence of self-service and enterprise data integration
 
@@ -46,9 +46,9 @@ To support the collaborative and scalable needs of creators, Dataflow Gen2 in Fa
 
 By utilizing a common platform, the workflow is streamlined, which results in enhanced collaboration between the business and IT. Organizations are therefore empowered to scale their data solutions to enterprise levels, ensuring high performance, flexibility, and efficiency in managing vast volumes of data.
 
-### Fabric capacities
+### Fabric capacity
 
-Thanks to its distributed architecture, [Fabric capacities](../enterprise/licenses.md#capacity) are less sensitive to overall load, temporal spikes, and high concurrency than Power BI Premium capacities. By consolidating capacities to larger Fabric capacity SKUs, customers can achieve increased performance and throughput.
+Thanks to its distributed architecture, [Fabric capacity](../enterprise/licenses.md#capacity) is less sensitive to overall load, temporal spikes, and high concurrency. By consolidating capacities to larger Fabric capacity SKUs, customers can achieve increased performance and throughput.
 
 ## Feature comparison
 
@@ -86,7 +86,7 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | **Monitoring and diagnostic logging** |||
 | Enhanced [refresh history](dataflows-gen2-monitor.md), which allows you to evaluate in detail what happened during the refresh of your dataflow | No | Yes |
 | [Monitoring hub](../admin/monitoring-hub.md), which provides monitoring capabilities for Fabric items | No | Yes |
-| [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), which provides monitoring capabilities for Fabric capacities | Yes | Yes |
+| [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), which provides monitoring capabilities for Fabric capacity | Yes | Yes |
 | [Audit log](../admin/track-user-activities.md), which tracks user activities across Fabric and Microsoft 365 | Yes | Yes |
 
 <sup>1</sup> To learn how to create custom functions that call Azure AI API endpoints, see [Tutorial: Extract key phrases from text stored in Power BI](/azure/ai-services/language-service/key-phrase-extraction/tutorials/integrate-power-bi).
