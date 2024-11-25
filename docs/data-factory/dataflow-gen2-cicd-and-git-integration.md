@@ -14,7 +14,8 @@ ms.date: 10/07/2024
 
 Dataflow Gen2 now supports Continuous Integration/Continuous Deployment (CI/CD) and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that's connected to your fabric workspace. Additionally, you can use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. This article goes deeper into how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
 
-[!Note] Important Update: The release of CI/CD and Git integration support has been rescheduled to January due to the discovery of a bug that needs to be addressed first. We apologize for any inconvenience and appreciate your understanding.
+   > [!Note]
+   > The release of CI/CD and Git integration support has been rescheduled to January due to the discovery of a bug that needs to be addressed first. We apologize for any inconvenience and appreciate your understanding.
 
 ## New features
 
