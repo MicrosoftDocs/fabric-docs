@@ -1,6 +1,6 @@
 ---
 title: Fabric Runtime Support in VS Code
-description: Explore How to leverage the Fabric remote runtime to run the  notebook and Spark Job Defintion .
+description: Explore How to leverage the Fabric remote runtime to run the  notebook.
 ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
@@ -10,5 +10,24 @@ ms.date: 11/25/2024
 ms.search.form: VSCodeExtension
 ---
 
-# Fabric runtime support in VS Code extension
-For Fabric runtime 1.1 and 1.2, there are two conda local enviroment 
+## Fabric runtime support in VS Code extension
+
+For Fabric runtime 1.1 and 1.2, there are two local conda environments are created by default.Before you can run the notebook on the target runtime, you need to activate the conda environment. please see the details here:[Choose Fabric Runtime 1.1 or 1.2](author-notebook-with-vs-code.md#run-or-debug-a-notebook-on-remote-spark-compute)
+
+Starting from Fabric runtime 1.3, the local conda environment for runtime 1.3 is not created. Instead, you can directly run the notebook fully on the remote Spark compute.There is a new entry created in the Jupyter kernel list, which is the remote Spark compute. You can select this kernel to run the notebook or Spark Job Definition on the remote Spark compute.
+
+ :::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing fabric runtime kernel.":::
+
+### considerations to choose local conda environment or remote Spark compute
+
+When you run the notebook or Spark Job Definition, you can choose the local conda environment or remote Spark Runtime. Here are some considerations to help you choose:
+
+1. There are scenarios you may want to choose the local conda environment:
+    - You need to work under some disconnected setup without the access to the remote compute.
+    - You like evaluate some python library before uploading them to the remote workspace. you can install the library in the local conda environment and test it.
+
+1. There are scenarios you need to choose the Fabric Runtime kernel:
+    - You need to run the notebook on Runtime 1.3 .
+    - In your code, there is some hard dependency to the remote runtime
+        - MSSparkUtils is a good example. It is a library that is only available in the remote runtime. If you want to use it, you need to run the code on the remote runtime.
+        - NotebookUtils is another example. It is a library that is only available in the remote runtime. If you want to use it, you need to run the code on the remote runtime.
