@@ -14,6 +14,12 @@ ms.date: 09/24/2024
 
 There are several different ways to create a Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] activator. This article teaches you how to create an activator from the left navigation bar (navbar).
 
+If your tenant is using Data Activator (preview) but does not have Fabric enabled, you will no longer be able to create new Activator items. To keep using Data Activator and creating new Activator items, reach out to your admin to enable Fabric for your tenant.
+
+To enable Fabric, go to the admin portal and make sure that users are allowed to create Fabric items.
+
+Please note that if you have delegated settings to other admins, you should also allow capacity admins to enable/disable.
+
 ## Create an Activator item
 
 In Microsoft Fabric, select **[!INCLUDE [fabric-activator](../includes/fabric-activator.md)]** from the workload switcher in the bottom left corner.
