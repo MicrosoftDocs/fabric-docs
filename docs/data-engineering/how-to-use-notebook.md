@@ -253,7 +253,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
    :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint.":::
 
-> [!INOTE]
+> [!NOTE]
 >
 > - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint, you need to refresh the page for the restore operation to take effect. Alternatively, a message bar will prompt you to view the changes, you can also open the **View changes** button and select keeping the *Saved version* to finish the restore.
     :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore.":::
