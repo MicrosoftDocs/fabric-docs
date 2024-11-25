@@ -27,15 +27,15 @@ With a Python notebook, you can get:
 
 1. **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
 
-1. **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL endpoints in explorer, by leveraging notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
+1. **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL endpoints in explorer, by using notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
 
 1. **Support for Popular Data Analytic libraries**: Python notebooks come with pre-installed libraries such as DuckDB, Polars, and Scikit-learn, providing a comprehensive toolkit for data manipulation, analysis, and machine learning.
 
 1. **Advanced intellisense**: Python notebook is adopting Pylance as the intellisense engine, together with other Fabric customized language service, aiming to provide state of art coding experience for notebook developers.
 
-1. **NotebookUtils & Semantic link**: Powerful API toolkits empower you easily leverage Fabric and Power BI capabilities with code-first experience. 
+1. **NotebookUtils & Semantic link**: Powerful API toolkits empower you easily use Fabric and Power BI capabilities with code-first experience. 
 
-1. **Rich Visualization Capabilities**: Except for the popular rich dataframe preview 'Table' function and 'Chart' function, we also support popular visualization libraries like Matplotlib, Seaborn, and Plotly, so does the PowerBIClient, to help users better understanding data patterns and insights. 
+1. **Rich Visualization Capabilities**: Except for the popular rich dataframe preview 'Table' function and 'Chart' function, we also support popular visualization libraries like Matplotlib, Seaborn, and Plotly. The PowerBIClient also supports these libraries to help users better understanding data patterns and insights. 
 
 1. **Common Capabilities for Fabric Notebook**: All the Notebook level features are naturally applicable for Python notebook, such as editing features, auto-save, collaboration, sharing and permission management, Git integration, import/export, etc. 
 
@@ -56,7 +56,7 @@ Python notebook supports multiple job execution ways:
 - **Interactive run**: You can run a Python notebook interactively like a native Jupyter notebook.
 - **Schedule run**: You can use the light-weighted scheduler experience on the notebook settings page to run Python notebook as a batch job.
 - **Pipeline run**: You can orchestrate Python notebooks as notebook activities in [Data pipeline](../data-factory/notebook-activity.md). Snapshot will be generated after the job execution.
-- **Reference run**: You can use `notebookutils.notebook.run()` or `notebookutils.notebook.runMultiple()` to reference run Python notebook(s) in another Python notebook as batch job. Snapshot will be generated after the reference run finished.
+- **Reference run**: You can use `notebookutils.notebook.run()` or `notebookutils.notebook.runMultiple()` to reference run Python notebooks in another Python notebook as batch job. Snapshot will be generated after the reference run finished.
 - **Public API run**: You can schedule your python notebook run with the [notebook run public API](notebook-public-api.md#run-a-notebook-on-demand), make sure the language and kernel properties in notebook metadata of the public API payload are set properly.
 
 You can monitor the Python notebook job run details on the ribbon tab **Run** -> **View all runs**.
@@ -69,7 +69,7 @@ You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resourc
 
 You can set a Lakehouse as default Lakehouse, however you can add multiple Lakehouses to the explore and use them in notebook as well.  
 
-If you are not familiar with the grammar of reading the data objects like *delta table*, try drag and drop the file and delta table to the notebook canvas, or use the *Load data* in the object dropdown menu. Notebook will automatically insert code snippet into code cell and generating code for reading the target data object.
+If you are not familiar with reading the data objects like *delta table*, try drag and drop the file and delta table to the notebook canvas, or use the *Load data* in the object's dropdown menu. Notebook automatically inserts code snippet into code cell and generating code for reading the target data object.
 
  > [!NOTE]
  > If you encounter OOM when loading large volume of data, try using DuckDB, Polars or PyArrow dataframe instead of pandas.
@@ -80,7 +80,7 @@ You can find the write Lakehouse operation in **Browse code snippet** -> **Write
 
 ### Warehouse interaction and mix programming with T-SQL
 
-You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu, notebook will automatically generate code snippet for you. You can use the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
+You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu. Notebook automatically generates code snippet for you. You can use the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
 
    :::image type="content" source="media\using-python-experience-on-notebook\warehouse-shortcuts.png" alt-text="Screenshot showing warehouse table shortcuts." lightbox="media\using-python-experience-on-notebook\warehouse-shortcuts.png":::
 
@@ -89,7 +89,7 @@ You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Note
 
 ### Notebook resources folder
 
-The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in resources folder is natively available on Python Notebook. You can easily interact with the files in built-in resources folder with Python code as if you are working with your local file system, the Environment resource folder is currently not supported.
+The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in resources folder is natively available on Python Notebook. You can easily interact with the files in built-in resources folder using Python code as if you are working with your local file system. Currently, the Environment resource folder is not supported.
 
 ## Kernel operations
 
