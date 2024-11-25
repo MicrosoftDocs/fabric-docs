@@ -69,7 +69,7 @@ You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resourc
 
 You can set a Lakehouse as default Lakehouse, however you can add multiple Lakehouses to the explore and use them in notebook as well.  
 
-If you are not familiar with the grammar of reading the data objects like *delta table*, try drag and drop the file and table to the notebook canvas, or use the *Load data* in the object dropdown menu. notebook will automatically insert code snippet into code cell and generating code for reading the target data object.
+If you are not familiar with the grammar of reading the data objects like *delta table*, try drag and drop the file and delta table to the notebook canvas, or use the *Load data* in the object dropdown menu. notebook will automatically insert code snippet into code cell and generating code for reading the target data object.
 
  > [!NOTE]
  > If you encounter OOM when loading large volume of data, try using DuckDB, Polars or PyArrow dataframe instead of pandas.
@@ -156,7 +156,7 @@ You can use ```notebookutils.help()``` to list available APIs and also get help 
 > - Currently, the feature is in preview.
 > - The API contract may change in the near future.
 
-you can use `notebookutils.data` utilities to establish a connection with provided data source and then read and query data using T-SQL statement.
+You can use `notebookutils.data` utilities to establish a connection with provided data source and then read and query data using T-SQL statement.
 
 Run the following command to get an overiew of the available methods:
 
