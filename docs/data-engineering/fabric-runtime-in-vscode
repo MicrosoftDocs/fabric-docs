@@ -1,0 +1,14 @@
+---
+title: Fabric Runtime Support in VS Code
+description: Explore How to leverage the Fabric remote runtime to run the  notebook and Spark Job Defintion .
+ms.reviewer: sngun
+ms.author: qixwang
+author: qixwang
+ms.topic: how-to
+ms.custom:
+ms.date: 11/25/2024
+ms.search.form: VSCodeExtension
+---
+
+# Fabric runtime support in VS Code extension
+For Fabric runtime 1.1 and 1.2, there are two conda local enviroment 
