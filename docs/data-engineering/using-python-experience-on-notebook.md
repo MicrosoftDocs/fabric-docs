@@ -57,7 +57,7 @@ Python notebook supports multiple job execution ways:
 - **Schedule run**: You can use the light-weighted scheduler experience on the notebook settings page to run Python notebook as a batch job.
 - **Pipeline run**: You can orchestrate Python notebooks as notebook activities in [Data pipeline](../data-factory/notebook-activity.md). Snapshot will be generated after the job execution.
 - **Reference run**: You can use `notebookutils.notebook.run()` or `notebookutils.notebook.runMultiple()` to reference run Python notebook(s) in another Python notebook as batch job. Snapshot will be generated after the reference run finished.
-- **Publish API run**: You can schedule your python notebook run with the [notebook run public API](./notebook-public-api#run-a-notebook-on-demand), make sure the language and kernel properties in notebook metadata of the public API payload are set properly.
+- **Publish API run**: You can schedule your python notebook run with the [notebook run public API](notebook-public-api#run-a-notebook-on-demand), make sure the language and kernel properties in notebook metadata of the public API payload are set properly.
 
 You can monitor the Python notebook job run details on the ribbon tab **Run** -> **View all runs**.
 
@@ -89,7 +89,7 @@ You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Note
 
 ### Notebook resources folder
 
-The [Notebook resources](how-to-use-notebook#notebook-resources) built-in resources folder is natively available on Python Notebook. You can easily interact with the files in built-in resources folder with Python code as if you are working with your local file system, the Environment resource folder is currently not supported.
+The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in resources folder is natively available on Python Notebook. You can easily interact with the files in built-in resources folder with Python code as if you are working with your local file system, the Environment resource folder is currently not supported.
 
 ## Kernel Operations
 
@@ -113,7 +113,7 @@ You may need to restart the kernel to use the updated packages.
 
 ## Session configuration magic command
 
-Similar with personalizing a [Spark session configuration](author-execute-notebook#spark-session-configuration-magic-command) in notebook, you can also use **%%configure** in Python notebook too. Python notebook supports customizing compute node size, mount points and default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend using %%configure command at the beginning of your notebook, or you must restart the notebook session to make the settings take effect.
+Similar with personalizing a [Spark session configuration](author-execute-notebook.md#spark-session-configuration-magic-command) in notebook, you can also use **%%configure** in Python notebook too. Python notebook supports customizing compute node size, mount points and default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend using %%configure command at the beginning of your notebook, or you must restart the notebook session to make the settings take effect.
 
 Here are the supported properties in Python notebook **%%configure**:
 
@@ -241,7 +241,7 @@ You can find useful python code snippets on **Edit** tab-> **Browse code snippet
 
 ## Semantic link
 
-Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and Synapse Data Science in Microsoft Fabric. It is natively supported on Python notebook, BI engineers and Power BI developers can leverage Semantic link connect and manage semantic model easily. Read the [public document](../data-science/semantic-link-overview) to learn more about Semantic link.
+Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and Synapse Data Science in Microsoft Fabric. It is natively supported on Python notebook, BI engineers and Power BI developers can leverage Semantic link connect and manage semantic model easily. Read the [public document](../data-science/semantic-link-overview.md) to learn more about Semantic link.
 
 ## Visualization
 
