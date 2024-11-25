@@ -37,6 +37,16 @@ The following table outlines the description of different node statuses:
 
 For nodes that support pause and resume features, you can easily manage their data flow using the toggle switch. Find the desired node and toggle the switch on or off to activate (i.e., resume) or deactivate (i.e., pause) the data traffic. Nodes that don't currently support pause and resume functionality won't have a toggle switch.
 
+The table below describes the available resume options:
+
+| Resume Option                 | Description                                      |
+|-------------------------------|----------------------------------------------|
+| When streaming was last stopped | Resumes from the point where streaming was last stopped |
+| Now                           | Resumes from the current time                |
+| Custom time                   | Resumes from a customized time |
+
+:::image type="content" source="./media/pause-resume-data-streams/pause-resume-switch-toggle.png" alt-text="Screenshot showing switch toggle on the node and details." lightbox="./media/pause-resume-data-streams/pause-resume-switch-toggle.png" :::
+
 Here's a detailed table of the nodes that support pause and resume functionality along with the available resume options:
 
 ::: zone pivot="enhanced-capabilities"  
@@ -65,9 +75,9 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Fabric Workspace events source                            | Source        | NO                        |                                             |
 | Azure Blob storage                                        | Source        | NO                        |                                             |
 | Lakehouse                                                 | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
-| KQL Database (Event processing before ingestion)          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
+| Eventhouse (Event processing before ingestion)          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Custom App                                                | Destination   | NO                        |                                             |
-| KQL Database (Direct Ingestion)                           | Destination   | NO                        |                                             |
+| Eventhouse (Direct Ingestion)                           | Destination   | NO                        |                                             |
 | Fabric Activator                                          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
 | Derived stream                                            | Destination   | NO                        |                                             |
 
@@ -89,16 +99,6 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]                        | Destination           | YES                     | - When streaming was last stopped<br>- Now<br>- Custom time |
 
 ::: zone-end
-
-Here is a description of the available resume options:
-
-| Resume Option                 | Description                                      |
-|-------------------------------|----------------------------------------------|
-| When streaming was last stopped | Resumes from the point where streaming was last stopped |
-| Now                           | Resumes from the current time                |
-| Custom time                   | Resumes from a customized time |
-
-:::image type="content" source="./media/pause-resume-data-streams/pause-resume-switch-toggle.png" alt-text="Screenshot showing switch toggle on the node and details." lightbox="./media/pause-resume-data-streams/pause-resume-switch-toggle.png" :::
 
 ## Activating or deactivating all nodes
 

@@ -92,7 +92,7 @@ The Edit mode includes a canvas and lower pane where you can:
 Here are the destination types that support to add operators before ingestion: 
 
 - Lakehouse 
-- KQL Database (Event processing before ingestion) 
+- Eventhouse (Event processing before ingestion) 
 - Derived stream 
 - Activator
 
@@ -201,9 +201,9 @@ You can view **Authoring errors** in the bottom panel of the **Event processor e
 - **Level**: Indicates the severity of the Authoring error, there are two levels, **Fatal** and **Information**. Fatal level authoring error means that your event processor has serious problems and can't be saved or run. Information level authoring error means that your event processor has some tips or suggestions that can help you optimize or improve your event processor.
 - **Error**: Indicates the specific information of the authoring error, briefly describing the cause and impact of the authoring error. You can select the **Show details** tab to see details.
 
-Since Eventstream and KQL Database support different data types, the process of data type conversion might generate authoring errors.
+Since Eventstream and Eventhouse support different data types, the process of data type conversion might generate authoring errors.
 
-The following table shows the results of data type conversion from Eventstream to KQL Database. The columns represent the data types supported by Eventstream, and the rows represent the data types supported by KQL Database. The cells indicate the conversion results, which can be one of the following three:
+The following table shows the results of data type conversion from Eventstream to Eventhouse. The columns represent the data types supported by Eventstream, and the rows represent the data types supported by Eventhouse. The cells indicate the conversion results, which can be one of the following three:
 
 ✔️ Indicates successful conversion, no errors, or warnings are generated.
 
