@@ -91,7 +91,7 @@ You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Note
 
 The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in resources folder is natively available on Python Notebook. You can easily interact with the files in built-in resources folder with Python code as if you are working with your local file system, the Environment resource folder is currently not supported.
 
-## Kernel Operations
+## Kernel operations
 
 Python notebook support two built-in kernals right now, they are *Python 3.10* and *Python 3.11*, the default selected kernel is *Python 3.11*, you can easily switch between them.
 
@@ -259,7 +259,7 @@ In addition to drawing charts with libraries, the [built-in visualization](noteb
 > [!NOTE]
 > The chart configurations will be persisted in Python notebook, which means after reruning the code cell, if the target dataframe schema hasn't change, the saved charts are still persisted.
 
-## Code IntelliSense
+## Code intelliSense
 
 Python notebook integrated Pylance to enhance the Python coding experience, Pylance is the default language service support for Python in Visual Studio Code. It provides a lot of easy-to-use functions like keyword highlighting, quick info, code completion, parameter info and syntax error detection. Furthermore, the Pylance has better performance when notebook is long.
 
