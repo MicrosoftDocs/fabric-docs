@@ -25,7 +25,7 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
     This query returns a column chart showing the most recent number of bikes by *BikepointID*.
 
     ```kusto
-    LatestEmptyDocksCount_MV
+    LatestNoBikesCount_MV
     | sort by BikepointID
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```

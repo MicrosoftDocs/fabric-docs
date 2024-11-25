@@ -53,10 +53,10 @@ The name of the table you created from the update policy in a previous step is *
 
 In this step, you create a materialized view, which returns an up-to-date result of the aggregation query (always fresh). Querying a materialized view is more performant than running the aggregation directly over the source table.
 
-1. Copy/paste and run the following command to create a materialized view that shows the most recent number of empty docks at each bike station:
+1. Copy/paste and run the following command to create a materialized view that shows the most recent number of bikes at each bike station:
 
     ``` kusto
-    .create materialized-view LatestEmptyDocksCount_MV on table BikesDataTransformed
+    .create materialized-view LatestNoBikesCount_MV on table BikesDataTransformed
     {
         BikesDataTransformed
         | summarize arg_max(Timestamp,No_Bikes) by BikepointID
@@ -66,7 +66,7 @@ In this step, you create a materialized view, which returns an up-to-date result
 1. Copy/paste and run the following query to see the data in the materialized view visualized as a column chart:
 
     ```kusto
-    LatestEmptyDocksCount_MV
+    LatestNoBikesCount_MV
     | sort by BikepointID
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
