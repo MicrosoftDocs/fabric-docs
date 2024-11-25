@@ -80,7 +80,7 @@ You can find the write Lakehouse operation in **Browse code snippet** -> **Write
 
 ### Warehouse interaction and mix programming with T-SQL
 
-You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu, notebook will automatically generate code snippet for you. You can leverage the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
+You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu, notebook will automatically generate code snippet for you. You can use the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
 
    :::image type="content" source="media\using-python-experience-on-notebook\warehouse-shortcuts.png" alt-text="Screenshot showing warehouse table shortcuts." lightbox="media\using-python-experience-on-notebook\warehouse-shortcuts.png":::
 
@@ -95,13 +95,13 @@ The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in res
 
 Python notebook support two built-in kernels right now, they are *Python 3.10* and *Python 3.11*, the default selected kernel is *Python 3.11*, you can easily switch between them.
 
-You can interrupt, restart or switch kernel on the **Home** tab of the ribbon. Interrupting kernel in Python notebooks is same as canceling cell in Spark notebook.
+You can interrupt, restart, or switch kernel on the **Home** tab of the ribbon. Interrupting kernel in Python notebooks is same as canceling cell in Spark notebook.
 
    :::image type="content" source="media\using-python-experience-on-notebook\kernel-operations.png" alt-text="Screenshot showing kernel operations." lightbox="media\using-python-experience-on-notebook\kernel-operations.png":::
 
-Abnormal kernel exit will cause code execution to be interrupted and losing variables, but it will not stop the notebook session.  
+Abnormal kernel exit causes code execution to be interrupted and losing variables, but it doesn't stop the notebook session.  
 
-There are commands that can lead to kernel died. E.g., *quit()*, *exit()*.
+There are commands that can lead to kernel died. For example, *quit()*, *exit()*.
 
 ## Library management
 
@@ -248,7 +248,7 @@ You can find useful python code snippets on **Edit** tab-> **Browse code snippet
 
 ## Semantic link
 
-Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and Synapse Data Science in Microsoft Fabric. It is natively supported on Python notebook, BI engineers and Power BI developers can leverage Semantic link connect and manage semantic model easily. Read the [public document](../data-science/semantic-link-overview.md) to learn more about Semantic link.
+Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and Synapse Data Science in Microsoft Fabric. It is natively supported on Python notebook. BI engineers and Power BI developers can leverage Semantic link connect and manage semantic model easily. Read the [public document](../data-science/semantic-link-overview.md) to learn more about Semantic link.
 
 ## Visualization
 
@@ -261,13 +261,13 @@ In addition to drawing charts with libraries, the [built-in visualization](noteb
 
 ## Code intelliSense
 
-Python notebook integrated Pylance to enhance the Python coding experience, Pylance is the default language service support for Python in Visual Studio Code. It provides a lot of easy-to-use functions like keyword highlighting, quick info, code completion, parameter info and syntax error detection. Furthermore, the Pylance has better performance when notebook is long.
+Python notebook integrated Pylance to enhance the Python coding experience, Pylance is the default language service support for Python in Visual Studio Code. It provides a lot of easy-to-use functions like keyword highlighting, quick info, code completion, parameter info, and syntax error detection. Furthermore, the Pylance has better performance when notebook is long.
 
 ## Data science capabilities
 
 Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) to learn more data science and AI experience in Fabric. Here we list a few key data science features that are natively supported on Python notebook.
 
-- **Data Wrangler**: Data Wrangler is a notebook-based tool that provides an immersive interface for exploration data analysis. This feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data cleaning operations. It provides data cleaning, data transformation and integration, which accelerates data preparation with Data Wrangler.
+- **Data Wrangler**: Data Wrangler is a notebook-based tool that provides an immersive interface for exploration data analysis. This feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data cleaning operations. It provides data cleaning, data transformation, and integration, which accelerates data preparation with Data Wrangler.
 
 - **MLflow**: A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code.
 
