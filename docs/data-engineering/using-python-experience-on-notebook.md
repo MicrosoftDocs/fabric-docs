@@ -14,8 +14,8 @@ ms.date: 11/25/2024
 
 # Using Python experience on Notebook
 
-> [!INOTE]
-> Currently, the feature is in preview.
+ > [!NOTE]
+ > Currently, the feature is in preview.
 
 The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code, making it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that doesn't require big data and distributed computing.
 
@@ -71,8 +71,8 @@ You can set a Lakehouse as default Lakehouse, however you can add multiple Lakeh
 
 If you are not familiar with the grammar of reading the data objects like *delta table*, try drag and drop the file and table to the notebook canvas, or use the *Load data* in the object dropdown menu. notebook will automatically insert code snippet into code cell and generating code for reading the target data object.
 
-> [!INOTE]
-> If you encounter OOM when loading large volume of data, try using DuckDB, Polars or PyArrow dataframe instead of pandas.
+ > [!NOTE]
+ > If you encounter OOM when loading large volume of data, try using DuckDB, Polars or PyArrow dataframe instead of pandas.
 
 You can find the write Lakehouse operation in **Browse code snippet** -> **Write data to delta table**.
 
@@ -84,7 +84,7 @@ You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Note
 
    :::image type="content" source="media\using-python-experience-on-notebook\warehouse-shortcuts.png" alt-text="Screenshot showing warehouse table shortcuts." lightbox="media\using-python-experience-on-notebook\warehouse-shortcuts.png":::
 
-> [!INOTE]
+> [!NOTE]
 > SQL endpoints are read-only here.
 
 ### Notebook resources folder
@@ -228,7 +228,7 @@ for row in rows:
     print(row)
 ```
 
-> [!INOTE]
+> [!NOTE]
 >
 > - The Data utilities in NotebookUtils is only available on Python notebook for now.
 > - Known limitation: For `connect_to_artifact` API, the returned `conn` object internally initializes a PBI token to authenticate the user when connecting to the data source. However, it does not support token refresh. Currently the PBI token is valid for only one hour, any query exceeding one hour will fail due to token expiration issue.
