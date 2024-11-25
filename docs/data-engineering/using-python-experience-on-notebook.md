@@ -17,7 +17,7 @@ ms.date: 11/25/2024
  > [!NOTE]
  > Currently, the feature is in preview.
 
-The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code, making it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that doesn't require big data and distributed computing.
+The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that doesn't require big data and distributed computing.
 
 With a Python notebook, you can get:
 
@@ -25,7 +25,7 @@ With a Python notebook, you can get:
 
 1. **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This ensures efficient resource utilization for data exploration projects with smaller data size.
 
-1. **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook, enable users easily bring the data to python notebook, just try drag & drop to get the code snippet.  
+1. **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This enables users easily bring the data to python notebook, just try drag & drop to get the code snippet.  
 
 1. **Mix programming with T-SQL**: Python notebook offers a easy way to interact with Data Warehouse and SQL endpoints in explorer, by leveraging notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
 
@@ -80,7 +80,7 @@ You can find the write Lakehouse operation in **Browse code snippet** -> **Write
 
 ### Warehouse interaction and mix programming with T-SQL
 
-You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook, similarly you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu, notebook will automatically generating code snippet for you. You can leverage the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
+You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu, notebook will automatically generating code snippet for you. You can leverage the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
 
    :::image type="content" source="media\using-python-experience-on-notebook\warehouse-shortcuts.png" alt-text="Screenshot showing warehouse table shortcuts." lightbox="media\using-python-experience-on-notebook\warehouse-shortcuts.png":::
 
