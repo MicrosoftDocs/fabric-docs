@@ -19,11 +19,19 @@ In this article, you create an end to end workflow that downloads the sketch sto
 ## Prerequisites
 Before you create the solution, ensure the following prerequisites are set up in Azure and Fabric:
 
-1. A Microsoft **Fabric enabled workspace**.
-2. An **Azure OpenAI** account with an API key and a deployed gpt-4o model.
-3. [Create an **Azure Blob Storage** account.](/azure/storage/common/storage-account-create?tabs=azure-portal)
-4. [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
-5. Apache Airflow dag diagram or just save the given image to your local machine and upload it to Azure Blob Storage.
+- Enable Apache Airflow Job in your Tenant.
+
+  > [!NOTE]
+  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
+
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Job (preview)" section.
+
+  2. Select Apply.
+     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+- [An **Azure OpenAI** account with an API key and a deployed gpt-4o model.](/azure/ai-services/openai/quickstart?tabs=command-line%2Cjavascript-keyless%2Ctypescript-keyless%2Cpython-new&pivots=programming-language-python)
+- [Create an **Azure Blob Storage** account.](/azure/storage/common/storage-account-create?tabs=azure-portal)
+- [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
+- Apache Airflow dag diagram. Save the given image in [step 1](#step-1-upload-the-sketch-to-azure-blob-storage) to your local machine.
 <!-- 5. Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
    ```bash
 Pillow
@@ -31,10 +39,12 @@ Pillow
 
 ### Step 1: Upload the sketch to Azure Blob Storage
 
-Before you can analyze the sketch, you need to upload it to Azure Blob Storage. [Create a container](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) in Azure Blob Storage called `airflow-dag-images` and upload the image there.
+Before you can analyze the sketch, you need to upload it to Azure Blob Storage. This sketch will be used in our AzureOpenAI DAG Generator to create the Apache Airflow DAG out of it.[Create a container](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) in Azure Blob Storage called `airflow-dag-images` and upload the below image there.
 :::image type="content" source="media/apache-airflow-jobs/airflow-dag-diagram.png" lightbox="media/apache-airflow-jobs/airflow-dag-diagram.png" alt-text="Screenshot represents DAG diagram of Apache Airflow.":::
 
 ### Step 2: Set up an Airflow Connection for Azure Blob Storage
+
+In Apache Airflow, accessing external resources requires configuring a connection.To retrieved the sketch stored in Azure Blob Storage container, set up an Azure Blob Storage connection in Airflow. This connection enables Apache Airflow to authenticate and interact with the Azure Blob Storage service, allowing you to securely access and manage the stored files.
 
 To retrieve the access key and connection string:
 1. Go to the Azure portal and navigate to your Azure Blob Storage account.
@@ -52,7 +62,7 @@ In the workflow, we are using the `WasbHook` to download the sketch from Azure B
 
 ### Step 2: Store Azure OpenAI API Key and Endpoint in Airflow Variables
 
-To connect to the Azure OpenAI API, store the API key and endpoint as Airflow variables:
+We will use the `gpt-4o` model deployment in Azure OpenAI to analyze the whiteboard sketch of the pipeline and convert it into an Apache Airflow DAG. To connect to the Azure OpenAI API, store the API key and endpoint as Airflow variables:
 
 1. Open the **Airflow UI**.
 2. Navigate to **Admin** > **Variables**. 
@@ -267,11 +277,12 @@ OpenAI_Dag_Generator()
 
 ### Step 5: Get Ready to execute the newly generated DAG.
 1. Open the Apache Airflow Job UI.
-2. The newly generated DAG is saved in the DAGs list with the name `openai_dag`.
-3. Open the DAG file to view the code, and configure the connections required by the operators.
+2. The newly generated DAG is saved in the DAGs folder as `openai_dag.py`.
+   :::image type="content" source="media/apache-airflow-jobs/new_file_openai_dag.png" lightbox="media/apache-airflow-jobs/new_file_openai_dag.png" alt-text="Screenshot represents new dag generated with openai dag generator.":::
+3. Open the DAG file to review the code. You can edit it as needed and configure the necessary connections for the operators.
 4. Once the connections are set, you can trigger the DAG to execute the workflow.
 
-:::image type="content" source="media/apache-airflow-jobs/openai-resultant-dag.png" lightbox="media/apache-airflow-jobs/openai-resultant-dag.png" alt-text="Screenshot represents Resultant dag from Open AI.":::
+:::image type="content" source="media/apache-airflow-jobs/openai-resultant-dag.png" lightbox="media/apache-airflow-jobs/openai-resultant-dag.png" alt-text="Screenshot represents resultant dag from Open AI.":::
 
 ## Conclusion
 Explore more use cases by modifying the system prompt or input sketch. This solution demonstrates the seamless integration of Azure OpenAI and Apache Airflow Jobs to quickly convert ideas into functional workflows. By automating the DAG creation process, you can save significant time and focus on higher-value tasks.
