@@ -159,6 +159,12 @@ items:
       href: apache-spark-history-server.md  
     - name: Monitor Spark capacity consumption
       href: monitor-spark-capacity-consumption.md
+    - name: Collect Spark logs and metrics with Azure Log Analytics
+      href: azure-fabric-diagnostic-emitters-log-analytics.md
+    - name: Collect Spark logs and metrics with Azure Storage Account
+      href: azure-fabric-diagnostic-emitters-azure-storage.md
+    - name: Collect Spark logs and metrics with Azure Event Hub 
+      href: azure-fabric-diagnostic-emitters-azure-event-hub.md
   - name: Spark Connectors
     items:
     - name: Data warehouse and lakehouse connector
