@@ -120,7 +120,7 @@ Here are the supported properties in Python notebook **%%configure**:
 ```JSON
 %%configure
 {
-    "vCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80], Fabric will allocate matched memory according to the specified vCores.
+    "vCores": 4, // Recommended values: [4, 8, 16, 32, 64], Fabric will allocate matched memory according to the specified vCores.
     "defaultLakehouse": {  
         // Will overwrites the default lakehouse for current session
         "name": "<lakehouse-name>",
@@ -140,6 +140,9 @@ Here are the supported properties in Python notebook **%%configure**:
 }
 ```
 
+You can view the compute resources update on notebook status bar, and monitor the CPU and Memory usage of the compute node in real-time.
+
+   :::image type="content" source="media\using-python-experience-on-notebook\compute-resources.png" alt-text="Screenshot showing compute resources update." lightbox="media\using-python-experience-on-notebook\compute-resources.png":::
 
 ## NotebookUtils
 
@@ -148,6 +151,10 @@ Notebook Utilities (NotebookUtils) is a built-in package to help you easily perf
 You can use ```notebookutils.help()``` to list available APIs and also get help with methods, or referencing the doc [NotebookUtils](notebook-utilities.md).
 
 ### Data utilities
+
+> [!NOTE]
+> - Currently, the feature is in preview.
+> - The API contract may change in the near future.
 
 you can use `notebookutils.data` utilities to establish a connection with provided data source and then read and query data using T-SQL statement.
 
