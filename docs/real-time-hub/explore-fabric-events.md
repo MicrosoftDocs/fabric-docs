@@ -45,5 +45,5 @@ Here are the actions available on each event type group. When you move the mouse
 
 ## Related content
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)
-- [Get Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
-- [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
+- [Explore Fabric OneLake events](explore-fabric-onelake-events.md)
+- [Explore Fabric Job events](explore-fabric-job-events.md)

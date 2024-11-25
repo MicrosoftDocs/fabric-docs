@@ -102,6 +102,10 @@ items:
         href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
       - name: Fabric Workspace Item events
         href: event-streams/add-source-fabric-workspace.md
+      - name: Fabric OneLake events
+        href: event-streams/add-source-fabric-onelake.md
+      - name: Fabric Job events
+        href: event-streams/add-source-fabric-job.md
       - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
     - name: Add destinations to eventstreams
