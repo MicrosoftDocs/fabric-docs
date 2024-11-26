@@ -42,7 +42,7 @@ If you don't have your own eventstream, Microsoft supplies a sample eventstream 
 
 1. To open the sample, select **Create** from the nav pane.
 1. Scroll down to Real-Time intelligence and select **Eventstream.** 
-1. Name the eventsteam and select **Use sample data**.
+1. Name the eventstream and select **Use sample data**.
 1. Name the source and select **Add**.
 1. Add a destination to your eventstream item, of type *Activator*
 
