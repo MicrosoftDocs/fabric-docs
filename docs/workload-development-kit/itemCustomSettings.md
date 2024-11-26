@@ -44,21 +44,21 @@ workloadClient.action.onAction(async function ({ action, data }) {
                 {
                     name: 'customItemSettings',
                     displayName: 'Custom item Settings',
-                    icon: {
-                        name: 'apps_20_regular',
-                    },
                     workloadSettingLocation: {
                         workloadName: sampleWorkloadName,
                         route: 'custom-item-settings',
+                    },
+                    searchTokenMatchesBySection: {
+                        'custom search': [
+                            'key words for search',
+                            'custom item'
+                        ],
                     },
                     workloadIframeHeight: '1000px'
                 },
                 {
                     name: 'customItemSettings2',
                     displayName: 'Custom item Settings2',
-                    icon: {
-                        name: 'apps_20_regular',
-                    },
                     workloadSettingLocation: {
                         workloadName: sampleWorkloadName,
                         route: 'custom-item-settings2',
@@ -75,13 +75,14 @@ workloadClient.action.onAction(async function ({ action, data }) {
 *We are returning an array of defined custom items. each one includes:*
 - **name** (string): Name is something uniquely identifies the setting by a key.
 - **displayName** (string): The displayed string, which should be localized (in the image above we can see the displayed name of the first item - *1*).
-- **icon** (object): icon to be presented on respective setting.
-    - **name** (string): should exist as part of fabric ux-angular lib, otherwise no icon will be shown on the respective setting
 - **workloadSettingLocation** (object):
     - **workloadName** (string): The workload name.
     - **route** (object): When a specific setting tab is clicked from artifact settings, a panel iframe will be loaded into the right side content area to load the specific route owned by workload. (in the image above we can see it in - *2*)
 - **workloadIframeHeight** (string): We can set the iframe height. The iframe height should be sent as a string (in pixels).
-
+- **searchTokenMatchesBySection** (object): An optional object that receives a section name as a key and an array of keywords as the value. The key will be triggered whenever any of the array words are searched.
+Example:
+:::image type="content" source="./media/custom-item-settings/example-search.png" alt-text="Screenshot of a item's custom settings." lightbox="./media/custom-item-settings/example-search.png":::
+In this example, we started to write one of the keyword values (1), and it triggered the section name as a result option (2). Clicking on this option will navigate us to the corresponding custom tab (3).
 ## Iframe route definitiion
 
 In order to load an iframe a component should be defined and then added to the app route:
@@ -128,9 +129,6 @@ workloadClient.action.onAction(async function ({ action, data }) {
                 {
                     name: 'about',
                     displayName: 'About',
-                    icon: {
-                        name: 'apps_20_regular',
-                    },
                     workloadSettingLocation: {
                         workloadName: sampleWorkloadName,
                         route: 'custom-about',
