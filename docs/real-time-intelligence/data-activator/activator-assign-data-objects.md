@@ -18,7 +18,7 @@ Once you [get data](activator-get-data-power-bi.md) into Fabric [!INCLUDE [fabri
 
 ## Assign data to a new object
 
-Open a workspace that has streaming data or open the [Microsoft sample eventstream](activator-tutorial.md). To create an object, pick the eventstream that you wish to add to the object. Then select **New object** from the ribbon. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] prompts you for an Object name and a unique column. The unique column must be a column in your events that uniquely identifies the objects being monitored. In the **Package deivery events** sample, **PackageID** is an unique column. 
+Open a workspace that has streaming data or open the [Microsoft sample eventstream](activator-tutorial.md). To create an object, pick the eventstream that you wish to add to the object. Then select **New object** from the ribbon. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] prompts you for an Object name and a unique column. The unique column must be a column in your events that uniquely identifies the objects being monitored. In the **Package delivery events** sample, **PackageID** is a unique column. 
 
 Optionally, you can use *Assign Properties* to import other columns from your eventstream and convert them into properties on your objects. Refer to [create properties](activator-create-activators.md#create-properties) for more information on properties.
 
@@ -34,7 +34,7 @@ By default the events for five random instances for the previous 24 hours are di
 
 ## Assign data to an existing object
 
-You can assign multiple data streams to a single object. This assignment is useful if data about an object is spread across multiple streams. One example of how this can occur is if you have slowly changing reference data about an object in one eventstream, and fast-moving updates about an object in another eventstream.
+You can assign multiple data streams to a single object. This assignment is useful if data about an object is spread across multiple streams. One reason for assigning to an existing object is if you have slowly changing reference data about an object in one eventstream, and fast-moving updates about an object in another eventstream.
 
 Assign data using the **New object**  option in the ribbon. The process is the same as for assigning data to a new object, except that you assign the events to an existing object.
 
@@ -45,7 +45,7 @@ Assign data using the **New object**  option in the ribbon. The process is the s
 
 ## Assign an event source to multiple objects
 
-You can assign columns from a single event source to multiple objects. This is useful if your event source contains data for more than one entity. The sample *Packages* eventstream used in the [tutorial](activator-tutorial.md) contains values for both a Package ID and a City. It can be useful to create both a *Package* object and a *City* object from the packages stream. Since there are multiple packages in each city, you can create aggregate measures at the city level, such as the number of packages currently in transit for a given city.
+You can assign columns from a single event source to multiple objects. Using multiple objects is useful if your event source contains data for more than one entity. The sample *Packages* eventstream used in the [tutorial](activator-tutorial.md) contains values for both a Package ID and a City. It can be useful to create both a *Package* object and a *City* object from the packages stream. Since there are multiple packages in each city, you can create aggregate measures at the city level, such as the number of packages currently in transit for a given city.
 
 To assign an eventstream to multiple objects, for each object follow the procedures described in the previous two sections.
 
