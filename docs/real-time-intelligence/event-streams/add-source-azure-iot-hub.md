@@ -5,7 +5,9 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -18,58 +20,40 @@ This article shows you how to add an Azure IoT Hub source to an eventstream.
 
 ::: zone pivot="enhanced-capabilities"  
 
+
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+## Launch the Select a data source wizard
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+On the **Select a data source** page, search for and select **Connect** on the **Azure IoT Hub** tile.
 
+:::image type="content" source="./media/add-source-azure-iot-hub-enhanced/select-azure-iot-hub.png" alt-text="Screenshot that shows the selection of Azure IoT Hub as the source type in the Get events wizard." lightbox="./media/add-source-azure-iot-hub-enhanced/select-azure-iot-hub.png":::
 
-## Add Azure IoT Hub as a source 
-Follow these steps to add an Azure IoT hub as your eventstream source: 
-
-1. Create an eventstream with enhanced capabilities. 
-1. If you haven't added any source to your eventstream yet, select **Add external source** on the **Get started** page. 
-
-    :::image type="content" source="./media/add-source-tile-menu/add-external-source-tile.png" alt-text="Screenshot that shows a new eventstream with Add External Source tile selected.":::
-
-    If you're adding an Azure IoT hub as a source to an already published eventstream, switch to **Edit** mode, select **Add source** on the ribbon, and then select **External sources**. 
-
-    :::image type="content" source="./media/add-source-tile-menu/add-source-external-sources-menu.png" alt-text="Screenshot that shows Add External Source menu for a published eventstream.":::
 
 ## Configure Azure IoT Hub connector
 
 [!INCLUDE [azure-iot-hub-connector](./includes/azure-iot-hub-source-connector.md)]
 
-You see that the Azure IoT Hub source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure IoT hub, select **Publish** on the ribbon.
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
-:::image type="content" source="./media/add-source-azure-iot-hub-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
-    
-After you complete these steps, the Azure IoT hub is available for visualization in the **Live view**. Select the **IoT hub** tile in the diagram to see the page similar to the following one.
+## View updated eventstream
 
-:::image type="content" source="./media/add-source-azure-iot-hub-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
+1. You see that the Azure IoT Hub source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure IoT hub, select **Publish** on the ribbon.
+
+    :::image type="content" source="./media/add-source-azure-iot-hub-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
+1. After you complete these steps, the Azure IoT hub is available for visualization in the **Live view**. Select the **IoT hub** tile in the diagram to see the page similar to the following one.
+
+    :::image type="content" source="./media/add-source-azure-iot-hub-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
 ## Related content
 
-To learn how to add other sources to an eventstream, see the following articles: 
-
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
-- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Confluent Kafka](add-source-confluent-kafka.md)
-- [Custom endpoint](add-source-custom-app.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
-- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [Sample data](add-source-sample-data.md)
-- [Azure Blob Storage events](add-source-azure-blob-storage.md)
-- [Fabric workspace event](add-source-fabric-workspace.md)
-
+For a list of supported sources, see [Add an event source in an eventstream](add-manage-eventstream-sources.md)
 
 ::: zone-end
 
@@ -81,7 +65,7 @@ To learn how to add other sources to an eventstream, see the following articles:
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]

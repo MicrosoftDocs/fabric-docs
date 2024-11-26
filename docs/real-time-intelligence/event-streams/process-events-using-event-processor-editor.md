@@ -5,7 +5,9 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/21/2024
 ms.search.form: Event Processor
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -23,9 +25,9 @@ The event processor editor is a no-code experience that allows you to drag and d
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 
 ## Design the event processing with the editor 
 
@@ -90,8 +92,9 @@ The Edit mode includes a canvas and lower pane where you can:
 Here are the destination types that support to add operators before ingestion: 
 
 - Lakehouse 
-- KQL Database (Event processing before ingestion) 
+- Eventhouse (Event processing before ingestion) 
 - Derived stream 
+- Activator
 
 > [!NOTE]
 > For destinations that don't support pre-ingestion operator addition, you can first add a derived stream as the output of your operator. Then, append your intended destination to this derived stream. 
@@ -110,8 +113,8 @@ The event processor in Lakehouse and KQL Database (Event processing before inges
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse or KQL Database is located.
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Get access to a workspace with Contributor or above permissions where your lakehouse or KQL Database is located.
 
 ## Design the event processing with the editor
 
@@ -140,7 +143,7 @@ To design your event processing with the event processor editor:
 
          :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-2.png" alt-text="Screenshot showing where to hover on nodes to insert a node." :::
 
-      2. Finally, you need to reconnect these nodes. Hover on the left edge of the event stream node, and then select and drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to the lakehouse node.
+      2. Finally, you need to reconnect these nodes. Hover on the left edge of the eventstream node, and then select and drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to the lakehouse node.
 
           :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" alt-text="Screenshot showing where to connect the nodes." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" :::
 
@@ -198,9 +201,9 @@ You can view **Authoring errors** in the bottom panel of the **Event processor e
 - **Level**: Indicates the severity of the Authoring error, there are two levels, **Fatal** and **Information**. Fatal level authoring error means that your event processor has serious problems and can't be saved or run. Information level authoring error means that your event processor has some tips or suggestions that can help you optimize or improve your event processor.
 - **Error**: Indicates the specific information of the authoring error, briefly describing the cause and impact of the authoring error. You can select the **Show details** tab to see details.
 
-Since Eventstream and KQL Database support different data types, the process of data type conversion might generate authoring errors.
+Since Eventstream and Eventhouse support different data types, the process of data type conversion might generate authoring errors.
 
-The following table shows the results of data type conversion from Eventstream to KQL Database. The columns represent the data types supported by Eventstream, and the rows represent the data types supported by KQL Database. The cells indicate the conversion results, which can be one of the following three:
+The following table shows the results of data type conversion from Eventstream to Eventhouse. The columns represent the data types supported by Eventstream, and the rows represent the data types supported by Eventhouse. The cells indicate the conversion results, which can be one of the following three:
 
 ✔️ Indicates successful conversion, no errors, or warnings are generated.
 
@@ -232,10 +235,21 @@ The event processor provides six operators, which you can use to transform your 
 ### Aggregate
 
 Use the **Aggregate** transformation to calculate an aggregation (**Sum**, **Minimum**, **Maximum**, or **Average**) every time a new event occurs over a period of time. This operation also allows for the renaming of these calculated columns, and filtering or slicing the aggregation based on other dimensions in your data. You can have one or more aggregations in the same transformation.
+- **Operator name**: Specify the name of the aggregation operation.
+- **Add aggregate function**: Add one or more aggregations in aggregate operation.
+- **Type**: Choose an aggregation type: **Sum**, **Minimum**, **Maximum**, or **Average**.
+- **Field**: Select the column to process.
+- **Name**: Define a name for this aggregation function.
+- **Partition by**: Select a column to group the aggregation.
+- **Aggregate values within the last**: Specify a time window for aggregation (default is 5 seconds).
+
+:::image type="content" source="./media/event-processor-editor/aggregate-operator.png" alt-text="Screenshot showing the aggregate operator configuration and test result.":::
 
 ### Expand
 
-Use the **Expand** array transformation to create a new row for each value within an array.
+Use the **Expand** array transformation to create a new row for each value within an array. You can choose **create row for missing/empty array** , or **don't create row for missing/empty array**.
+
+:::image type="content" source="./media/event-processor-editor/array.png" alt-text="Screenshot showing expand operator's configuration and test result.":::
 
 ### Filter
 
@@ -264,7 +278,7 @@ In time-streaming scenarios, performing operations on the data contained in temp
 
 The **Manage fields** transformation allows you to add, remove, change data type, or rename fields coming in from an input or another transformation. The side pane settings give you the option of adding a new field by selecting **Add field**, adding multiple fields, or adding all fields at once. 
 
-:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage field operator available in the event processor editor." :::
+:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage fields operator available in the event processor editor." :::
 
 Furthermore, you can add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**. To find them, search on "built-in.")
 
@@ -300,5 +314,3 @@ As with regular joins, you have options for your join logic:
 ## Related content
 
 - [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).
-
-

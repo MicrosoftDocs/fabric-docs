@@ -5,7 +5,9 @@ ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
-ms.date: 09/10/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---

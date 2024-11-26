@@ -1,5 +1,5 @@
 ---
-title: Quick start - Run a sample workload (preview)
+title: Quick start - Run a sample workload
 description: Create a Microsoft Fabric workload using a sample workload and the instructions in this quickstart tutorial.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
-# Quick start: Run a workload sample (preview)
+# Quick start: Run a workload sample
 
 This quick start guide shows you how to create and run a Microsoft Fabric workload using a sample workload.
 
@@ -31,13 +31,13 @@ Before you begin, ensure that you have the following installed on your system:
 
 Configure the admin portal as follows:
 
-1. Log into [Fabric](https://app.fabric.microsoft.com/signin) with an *Admin* account.
+1. Log into [Fabric](https://app.fabric.microsoft.com/?pbi_source=workload-development-kit-quickstart-sample) with an *Admin* account.
 
 1. From **Settings**, go to the **Admin portal**.
 
    :::image type="content" source="./media/quickstart-sample/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Fabric Admin portal.":::
 
-1. In the **Additional workloads (preview)** section, enable the **Capacity admins and contributors can add and remove additional workloads** tenant setting. You can enable it for the entire organization or specific groups.
+1. In the **Additional workloads** section, enable the **Capacity admins and contributors can add and remove additional workloads** tenant setting. You can enable it for the entire organization or specific groups.
 
 ### Set up the sample project
 
@@ -57,7 +57,7 @@ Configure the admin portal as follows:
 
    The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the *.env.dev* configuration file in the front-end folder.
 
-1. **Enable frontend developer mode**: In the tenant settings in the admin portal, under the **Additional workloads (preview)** section, and activate the **Capacity admins can develop additional workloads.** tenant setting. This setting allows connections to your local server and persists across browser sessions.
+1. **Enable frontend developer mode**: In the tenant settings in the admin portal, under the **Additional workloads** section, and activate the **Capacity admins can develop additional workloads.** tenant setting. This setting allows connections to your local server and persists across browser sessions.
 
 ### Run a sample workload
 
@@ -66,8 +66,6 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 1. **Access the sample workload**:  To start the *Create* experience, navigate to the sample workload home page.
 
 ### Prepare the development environment
-
-1. **Clone the boilerplate**: Clone the boilerplate project found here: [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254)
 
 1. **Open the solution**: Open the solution in Visual Studio *2022* to ensure compatibility with net7.
 
@@ -82,7 +80,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
     >[!NOTE]
     >You can copy it to any other path and set up the command line argument "-DevMode:LocalConfigFilePath" in your project to specify the path.
 
-      * *CapacityGuid*: Your capacity ID can be found within the Fabric portal under the Capacity Settings of the admin portal.
+      * *WorkspaceGuid*: Your Workspace ID. Find it in the browser URL when selecting a workspace in Fabric, for example, `https://app.fabric.microsoft.com/groups/{WorkspaceID}/`.
       * *ManifestPackageFilePath*: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in the later steps.
       * *WorkloadEndpointURL*: Workload endpoint URL.
 
@@ -107,7 +105,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
 
-1. **Run the DevGateway**: Execute 'Microsoft.Fabric.Workload.DevGateway.exe' and authenticate as a capacity admin.
+1. **Run the DevGateway**: Execute 'Microsoft.Fabric.Workload.DevGateway.exe' and sign in with a user that has workspace admin privileges for the workspace specified in the `WorkspaceGuid` field of workload-dev-mode.json.
 
 1. **Start the Project**: Set the 'Boilerplate' project as the startup project in Visual Studio and run it.
 

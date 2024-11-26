@@ -38,7 +38,7 @@ In some cases, the Power Query connector article might include advanced options,
 
 To create a connection in a data pipeline:
 
-1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon.](./media/connector-common/settings.png) > **Manage connections and gateways**.
+1. From the page header in the Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open the manage gateway resource.":::
 

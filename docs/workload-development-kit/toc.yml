@@ -25,7 +25,7 @@ items:
     items:
     - name: Authentication overview
       href: authentication-concept.md
-    - name: Back-end authentication
+    - name: Backend authentication
       href: back-end-authentication.md
     - name: Authentication JavaScript API
       href: authentication-javascript-api.md         
@@ -41,17 +41,19 @@ items:
     href: frontend-manifests.md
 - name: Tutorials
   items:
-  - name: Add and manage more workloads
+  - name: Add workloads
     href: more-workloads-add.md
   - name: Upload and manage a workload
     href: manage-workload.md
   - name: Publish a workload to Fabric
     href: publish-workload.md
   - name: Set up authentication
-    href: authentication-tutorial.md    
-  - name: Front-end implementation guide
+    href: authentication-tutorial.md
+  - name: Authentication guidelines and deep dive
+    href: authentication-guidelines.md
+  - name: Frontend implementation guide
     href: extensibility-front-end.md
-  - name: Back-end implementation guide
+  - name: Backend implementation guide
     href: extensibility-back-end.md
   - name: Communication guide
     href: workload-communication.md
@@ -59,12 +61,14 @@ items:
     href: azure-web-app-deployment-tutorial.md
   - name: Working in cloud mode
     href: workload-cloud-setup.md
-  - name: Onboard to the Monitoring hub
+  - name: Onboard to the monitoring hub
     href: monitoring-hub.md
   - name: How-To
     items:
     - name: Onboard to Multitasking
       href: multitasking.md
+    - name: Localize your workload
+      href: localization.md
 - name: Reference
   items:
    - name: Frequently asked questions

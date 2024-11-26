@@ -1,5 +1,5 @@
 ---
-title: Copilot for Real-Time Intelligence (preview)
+title: Copilot for Real-Time Intelligence
 description: "Learn how Copilot in Real-Time Intelligence can help you explore your data and extract valuable insights."
 author: yaelschuster
 ms.author: yaschust
@@ -7,15 +7,14 @@ ms.reviewer: mibar
 ms.topic: conceptual
 ms.custom:
   - build-2024
-ms.date: 09/08/2024
+  - ignite-2024
+ms.date: 11/19/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
-# Copilot for Real-Time Intelligence (preview)
+# Copilot for Real-Time Intelligence
 
 Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/en-us/blog/announcing-fabric-copilot-pricing-2/).
 

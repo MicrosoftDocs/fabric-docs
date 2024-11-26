@@ -99,19 +99,19 @@ Fabric notebooks provide code snippets that help you easily write commonly used 
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippet contents align with the code cell language. You can see available snippets by typing **Snippet**. You can also type any keyword to see a list of relevant snippets. For example, if you type **read**, you see the list of snippets to read data from various data sources.
 
-![Animated GIF of code snippets.](media/author-execute-notebook/code-snippet.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/code-snippet.gif" alt-text="Animated GIF of code snippets.":::
 
 ### Drag and drop to insert snippets
 
 Use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here; you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
-![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-snippet.gif" alt-text="Animated GIF of drag and drop to insert snippets.":::
 
 ### Drag and drop to insert images
 
 Use drag and drop to easily insert images from your browser or local computer to a markdown cell.
 
-![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drag-drop-insert-image.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-image.gif" alt-text="Animated GIF of drag and drop to insert images.":::
 
 ### Format text cell with toolbar buttons
 
@@ -139,7 +139,7 @@ Supported undo cell operations:
 
 You can drag from the empty part of a cell and drop it to the desired position.
 
-<!-- ![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif) -->
+<!-- :::image type="content" border="true" source="media/author-execute-notebook/drag-drop-move-cell.gif" alt-text="Animated GIF of drag and drop to move a cell."::: -->
 
 You can also move the selected cell using **Move up** and **Move down** on the ribbon.
 
@@ -155,7 +155,7 @@ You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode)
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide input** to collapse the current cell's input. To expand it again, select **Show input** when the cell is collapsed.
 
-<!-- ![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif) -->
+<!-- :::image type="content" border="true" source="media/author-execute-notebook/collapse-cell-input.gif" alt-text="Animated GIF of collapsing cell input."::: -->
 
 ### Collapse a cell output
 
@@ -172,7 +172,7 @@ Using [OneLake data access roles (preview)](../onelake/security/get-started-data
 
 The lock and freeze cell operations allow you to make cells read-only or stop code cells from being run on an individual basis.
 
-![Animated GIF of lock or freeze a cell.](media/author-execute-notebook/lock-and-freeze-cell.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/lock-and-freeze-cell.gif" alt-text="Animated GIF of lock or freeze a cell.":::
 
 ### Merge and split cells
 
@@ -192,7 +192,7 @@ Selecting Outlines or Table of Contents presents the first markdown header of an
 
 The markdown folding option allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations.
 
-![Animated GIF of markdown folding.](media/author-execute-notebook/markdown-folding.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/markdown-folding.gif" alt-text="Animated GIF of markdown folding.":::
 
 ### Find and replace
 
