@@ -7,7 +7,7 @@ author: luitwieler
 ms.topic: how-to
 ms.custom:
   - ignite-2024
-ms.date: 10/07/2024
+ms.date: 11/26/2024
 ---
 
 # Dataflow Gen2 with CI/CD and Git integration support (Preview)
@@ -15,7 +15,7 @@ ms.date: 10/07/2024
 Dataflow Gen2 now supports Continuous Integration/Continuous Deployment (CI/CD) and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that's connected to your fabric workspace. Additionally, you can use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. This article goes deeper into how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
 
    > [!Note]
-   > The release of CI/CD and Git integration support has been rescheduled to January due to the discovery of a bug that needs to be addressed first. We apologize for any inconvenience and appreciate your understanding.
+   > The release of CI/CD and Git integration support has been rescheduled to January to ensure the quality of the release and ensure that there is no impact to existing operations. We apologize for any inconvenience and appreciate your understanding.
 
 ## New features
 
@@ -102,6 +102,8 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 
 ## Limitations and known issues
 
+While Dataflow Gen2 with CI/CD and Git support offers a powerful set of features for enterprise ready collaboration, this requiered us to rebuild the backend to the fabric architecture. This means that some features are not yet available or have limitations. We are actively working on improving the experience and will update this article as new features are added.
+
 - The staging artifacts are in some experiences visible like the ALM UI. The staging artifacts will be hidden in all experiences in the future.
 - When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifacts become visible in the workspace and are safe to be deleted by the user.
 - Some experiences mention support for REST APIs, but these APIs aren't yet available. All Dataflow Gen2 with CI/CD and Git support will support the Fabric Public API in the future.
@@ -118,3 +120,5 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 - When you create a new item in your workspace, it might show the item "Dataflow Gen2 (CI/CD, preview)". Ignore this one and follow instructions described in this article. It may take some time until your region shows the checkbox for enabling the CI/CD and Git support.
 - Fast Copy might not be enabled by default in your dataflow. You can enable this using the dataflow settings.
 - Connections that use a On-Premises Data Gateway are currently causing issues in the dataflow refresh. We recommend using a different method for getting data from on-premises data sources into fabric.
+
+We are committed to continuously improving Dataflow Gen2 with CI/CD and Git support and appreciate your patience as we work on these enhancements.
