@@ -12,7 +12,7 @@ ms.search.form: Create and use notebooks
 ms.date: 11/25/2024
 ---
 
-# Using Python experience on Notebook
+# Use Python experience on Notebook
 
  > [!NOTE]
  > Currently, the feature is in preview.
