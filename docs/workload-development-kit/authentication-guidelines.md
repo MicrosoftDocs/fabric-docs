@@ -42,7 +42,7 @@ On the **API permissions** tab, you need to add all the scopes that your workloa
 
 ## Working with tokens and consents
 
-When you're working with data plane APIs, the workload frontend needs to acquire a token for calls to its backend.
+When you're working with data plane APIs, the workload frontend needs to acquire a token for calls to the workload backend.
 
 The following sections describe how the workload frontend should use the [JavaScript API](./authentication-javascript-api.md) and [on-behalf-of (OBO) flows](/entra/identity-platform/v2-oauth2-on-behalf-of-flow) to acquire tokens for the workload and external services, and to work with consents.
 
@@ -59,13 +59,13 @@ The received token has the workload backend audience and can be used to directly
 
 ### Step 2: Try to access external services
 
-The workload might need to access services that require authentication. For that, it needs to perform the [OBO flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow) where it exchanges the token that it received from its client or from Fabric to another service. The token exchange might fail because of lack of consent or some Microsoft Entra Conditional Access policy that's configured on the resource that the workload is trying to exchange the token for.
+The workload might need to access services that require authentication. For that access, it needs to perform the [OBO flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow), where it exchanges the token that it received from its client or from Fabric to another service. The token exchange might fail because of lack of consent or some Microsoft Entra Conditional Access policy that's configured on the resource that the workload is trying to exchange the token for.
 
 To solve this problem, it's the workload's responsibility to propagate the error to the client when working with direct calls between the frontend and the backend. It's also the workload's responsibility to propagate the error to the client when working with calls from Fabric by using the error propagation described in [Workload communication](./workload-communication.md).
 
 After the workload propagates the error, it can call the `acquireAccessToken` JavaScript API to solve the consent or Conditional Access policy problem and retry the operation.
 
-For data plane API failures, see [Handling multifactor authentication, Conditional Access, and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-conditional-access-and-incremental-consent). For control plane API failures, see the [Workload communication guide](./workload-communication.md).
+For data plane API failures, see [Handling multifactor authentication, Conditional Access, and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-conditional-access-and-incremental-consent). For control plane API failures, see [Workload communication](./workload-communication.md).
 
 ## Example scenarios
 
@@ -75,7 +75,7 @@ Let's take a look at a workload that needs to access three Fabric APIs:
 
 * Create a warehouse: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/warehouses`
 
-* Write to lakehouse file: `PUT https://onelake.dfs.fabric.microsoft.com/{filePath}?resource=file`
+* Write to a lakehouse file: `PUT https://onelake.dfs.fabric.microsoft.com/{filePath}?resource=file`
 
 To be able to work with those APIs, the workload backend needs to exchange tokens for the following scopes:
 
