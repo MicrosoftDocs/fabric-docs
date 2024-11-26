@@ -19,7 +19,7 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 
 ## Prerequisites
 
-Microsoft.Network resource provider needs to be registered in the Azure subscription 
+A Microsoft.Network resource provider needs to be registered in the Azure subscription 
 
 ## Create a managed private endpoint
 
