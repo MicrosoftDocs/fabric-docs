@@ -35,7 +35,7 @@ The following table outlines the description of different node statuses:
 
 ## Activating or deactivating a node using the switch toggle
 
-For nodes that support pause and resume features, you can easily manage their data flow using the toggle switch. Find the desired node and toggle the switch on or off to activate (i.e., resume) or deactivate (i.e., pause) the data traffic. Nodes that don't currently support pause and resume functionality won't have a toggle switch.
+For nodes that support pause and resume features, you can easily manage their data flow using the toggle switch. Find the desired node and toggle the switch on or off to activate (that is, resume) or deactivate (that is, pause) the data traffic. Nodes that don't currently support pause and resume functionality won't have a toggle switch.
 
 The table below describes the available resume options:
 
