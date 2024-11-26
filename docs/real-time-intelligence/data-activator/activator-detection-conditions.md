@@ -48,7 +48,7 @@ In a filter, you specify a comparison operation for the selected attribute. The 
 
 :::image type="content" source="media/activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using an activator filter.":::
 
-Use filters on any type of attribute. The filters create a condition on a subset of your data. For example, you might set a filter of “City=Redmond” on some package-tracking events, to set a condition on only events on packages in Redmond. You can also set a filter on numerical data. In our example, we filtered for temperatures greater than 60. Any events that don't fit the filter conditions are not included.
+Use filters on any type of attribute. The filters create a condition on a subset of your data. For example, you might set a filter of “City=Redmond” on some package-tracking events, to set a condition on only events on packages in Redmond. You can also set a filter on numerical data. In our example, we filtered for temperatures greater than 60. Any events that don't fit the filter conditions aren't included.
 
 You can specify up to three filters.
 
@@ -63,7 +63,7 @@ Condition types fall into the following categories:
 |Condition type  |Description  |
 |---------|---------|
 |**Is** conditions     |**Is** conditions activate for each event where the condition is true. |
-|**Becomes** conditions     |**Becomes** conditions activate only when the condition becomes true, after being false.  For example, "Becomes greater than 10" activates when the value of the property changes from a value of five (less than 10) to a value of 11 (greater than 10). It only activates when the condition goes from being false to true. |
+|**Becomes** conditions     |**Becomes** conditions activate only when the condition becomes true, after being false. For example, "Becomes greater than 10" activates when the value of the property changes from a value of five (less than 10) to a value of 11 (greater than 10). It only activates when the condition goes from being false to true. |
 |**Enters, Exits Range** conditions     |The Enters range condition activates when a property value enters a defined value range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. The exits range condition is similar, except that it activates when the property value goes outside of the range. |
 |**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from specified boundaries.   |
 Text states such as **Contains**, **Ends**, **Begins**  | These conditions activate when text meets the selected condition. 
