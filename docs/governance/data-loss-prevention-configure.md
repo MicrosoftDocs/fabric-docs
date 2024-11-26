@@ -14,7 +14,7 @@ ms.date: 11/19/2024
 
 # Configure data loss prevention policies for Fabric
 
-Data loss prevention policies for Fabric help organizations protect their sensitive data by detecting upload of sensitive data in supported item types. When a policy violation occurs, data owners can see this indicated, and alerts can be sent to data owners and security admins, and violations can be investigated. For more information, see [Overview of data loss prevention policies for Fabric](./data-loss-prevention-overview.md).
+Data loss prevention policies for Fabric help organizations protect their sensitive data by detecting upload of sensitive data in supported item types. When a policy violation occurs, data owners can see this indicated, and alerts can be sent to data owners and security admins, and violations can be investigated. For more information, see [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started).
 
 This article describes how to configure Purview data loss prevention (DLP) policies for Fabric. The target audience is compliance administrators who are responsible for data loss prevention in their organization.
 
