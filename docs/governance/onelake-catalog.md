@@ -59,7 +59,7 @@ The following table describes the list columns.
 > [!NOTE]
 > The catalog also lists the following items even if you don't have access to them. This is to enable you to request access.
 > * Semantic models that have been configured as [discoverable](/power-bi/collaborate-share/service-discovery).
-> * Power BI reports whose associated semantic model has violated a [data loss prevention policy that restricts access](data-loss-prevention-overview.md).
+> * Power BI reports whose associated semantic model has violated a [data loss prevention policy that restricts access](/purview/dlp-powerbi-get-started#how-do-dlp-policies-for-fabric-work).
 
 ## Scope the catalog to a particular domain
 
