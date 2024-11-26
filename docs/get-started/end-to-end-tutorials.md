@@ -11,7 +11,7 @@ ms.custom:
   - build-2024
   - ignite-2024
 ms.search.form: product-trident
-ms.date: 11/08/2024
+ms.date: 11/25/2024
 ---
 
 # End-to-end tutorials in Microsoft Fabric
@@ -29,6 +29,7 @@ The following table lists tutorials that span multiple Fabric experiences.
 |[Real-Time Intelligence](../real-time-intelligence/tutorial-introduction.md)   | In this tutorial, you use the streaming and query capabilities of Real-Time Intelligence to analyze London bike share data. You learn how to stream and transform the data, run KQL queries, build a Real-Time Dashboard and a Power BI report to gain insights and respond to this real-time data. |
 |[Data warehouse](../data-warehouse/tutorial-introduction.md) |  In this tutorial, you build an end-to-end data warehouse for the fictional Wide World Importers company. You ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
 |[Fabric SQL database](../database/sql/tutorial-introduction.md) | The tutorial provides [a comprehensive guide to utilizing the SQL database in Fabric](../database/sql/overview.md). This tutorial is tailored to help you navigate through the process of database creation, setting up database objects, exploring autonomous features, and combining and visualizing data. Additionally, you'll learn how to create a GraphQL endpoint, which serves as a modern approach to connecting and querying your data efficiently.|
+|[Fabric Activator](../real-time-intelligence/data-activator/activator-tutorial.md) | The tutorial is designed for customers who are new to Fabric Activator. You'll use a sample eventstream to learn your way around Activator. Then you'll create your own object, rule, and activator. |
 
 ## Experience-specific tutorials
 
