@@ -984,9 +984,7 @@
       - name: Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server
         href: connector-troubleshoot-synapse-sql.md
       - name: Azure Table Storage
-        href: connector-troubleshoot-azure-table-storage.md
-      - name: Delimited text
-        href: connector-troubleshoot-delimited-text.md        
+        href: connector-troubleshoot-azure-table-storage.md     
       - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
         href: connector-troubleshoot-dynamics-dataverse.md
       - name: MongoDB
@@ -1003,6 +1001,8 @@
         href: connector-troubleshoot-sharepoint-online-list.md        
       - name: Format
         items:
+        - name: Delimited text
+          href: connector-troubleshoot-delimited-text.md          
         - name: ORC
           href: connector-troubleshoot-orc-format.md
         - name: Parquet
