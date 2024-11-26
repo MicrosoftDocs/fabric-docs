@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 07/16/2024
 ---
 
-# Set up your environment (preview)
+# Set up your environment
 
 This article is aimed at developers who are looking to build a workload using the Microsoft Fabric Workload Development Kit. The article guides you through the process of setting up your development environment so that you can start building your workload.
 

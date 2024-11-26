@@ -1,5 +1,5 @@
 ---
-title: Publish a workload (preview)
+title: Publish a workload
 description: Learn how to publish your workload in the Microsoft Fabric portal so that other users can use the workload.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.date: 09/29/2024
 # customer intent: As an independent software vendor (ISV), I want to know how to publish my workload to Microsoft Fabric.
 ---
 
-# Publish a workload (preview)
+# Publish a workload
 
 After you [upload your workload](manage-workload.md) to Microsoft Fabric, you can publish it.
 

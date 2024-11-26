@@ -20,7 +20,7 @@ This article describes how to monitor and manage DLP policy violations in Micros
 
 Log into the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149), expand the **Data loss prevention** solution, and choose **Alerts**.
 
-:::image type="content" source="./media/data-loss-prevention-overview/alerts-tab.png" alt-text="Screenshot of D L P Alerts tab.":::
+:::image type="content" source="./media/data-loss-prevention-monitor/alerts-tab.png" alt-text="Screenshot of D L P Alerts tab.":::
 
 Select an alert to start drilling down to its details and to see management options.
 

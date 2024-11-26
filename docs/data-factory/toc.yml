@@ -77,6 +77,8 @@
       href: move-dataflow-gen1-to-dataflow-gen2.md
     - name: How to ingest data from ADF to Fabric
       href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
+    - name: Migrate from Dataflow Gen1 to Dataflow Gen2
+      href: dataflow-gen2-migrate-from-dataflow-gen1.md
   - name: Tutorials
     items:
     - name: End-to-end Data Factory tutorial
@@ -761,6 +763,8 @@
         href: dataflow-gen2-incremental-refresh.md
       - name: Dataflow Gen2 with CICD and Git integration
         href: dataflow-gen2-cicd-and-git-integration.md
+      - name: Migrate from Dataflow Gen1 to Dataflow Gen2
+        href: dataflow-gen2-migrate-from-dataflow-gen1.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
@@ -945,8 +949,6 @@
         items:
         - name: Data Factory connector certification
           href: connector-certification.md
-        - name: Connector certification submission
-          href: certification-submission.md
         - name: Provide connector documentation
           href: providing-user-documentation.md   
   - name: FAQ and Troubleshooting

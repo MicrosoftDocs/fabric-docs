@@ -22,7 +22,6 @@ ms.topic: tutorial
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
   - The Fabric capacity needs to be active and running. A paused or deleted capacity impacts Mirroring and no data are replicated.
 - Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [About tenant settings](../../admin/about-tenant-settings.md).
-  - If you don't see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
 - Networking requirements for Fabric to access your Azure SQL Managed Instance:
   - In the current preview, Mirroring requires that your Azure SQL Managed Instance has a [public endpoint](/azure/azure-sql/managed-instance/public-endpoint-configure?view=azuresql-mi&preserve-view=true) which needs to be accessible from Azure Cloud or Power BI service tags. For more information, see [Use Azure SQL Managed Instance securely with public endpoints](/azure/azure-sql/managed-instance/public-endpoint-overview?view=azuresql-mi&preserve-view=true) how to securely run a public endpoint for Azure SQL Managed Instance.
 
