@@ -57,10 +57,17 @@ Use the *CreateDevAADApp.ps1* script to register an Azure Entra ID application.
    az login
    ```
 
-3. In CLI, navigate to the folder that has the *CreateDevAADApp.ps1* script, and run it.
+3. In CLI, navigate to the folder that has the *CreateDevAADApp.ps1* script.
+
+4. Run the script with the following parameters:
+    * `applicationName` - Provide a name for your [Microsoft Entra ID application](/entra/identity/enterprise-apps/what-is-application-management).
+    * `workloadName` - Provide a name for the Microsoft Fabric workload you want to create.
+    * `tenantId` - Your Microsoft Fabric's tenant ID. If you don't know what's your tenant ID, see [Find the Microsoft Entra tenant ID](/partner-center/find-ids-and-domain-names#find-the-microsoft-azure-ad-tenant-id-and-primary-domain-name).
+
+    For example:
 
     ```azurecli
-   CreateDevAADApp.ps1
+   .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.Myworkload" -tenantId "bbbbcccc-1111-dddd-2222-eeee3333ffff"
    ```
 
 Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so that you can use the sample's dialog.
