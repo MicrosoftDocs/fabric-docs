@@ -985,14 +985,14 @@
         href: connector-troubleshoot-synapse-sql.md
       - name: Azure Table Storage
         href: connector-troubleshoot-azure-table-storage.md
+      - name: Delimited text
+        href: connector-troubleshoot-delimited-text.md        
       - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
         href: connector-troubleshoot-dynamics-dataverse.md
       - name: MongoDB
         href: connector-troubleshoot-mongodb.md
       - name: Oracle
         href: connector-troubleshoot-oracle.md
-      - name: Parquet
-        href: connector-troubleshoot-parquet-format.md
       - name: Snowflake
         href: connector-troubleshoot-snowflake.md
       - name: FTP-SFTP-HTTP
@@ -1003,10 +1003,10 @@
         href: connector-troubleshoot-sharepoint-online-list.md        
       - name: Format
         items:
-        - name: Delimited text
-          href: connector-troubleshoot-delimited-text.md
         - name: ORC
           href: connector-troubleshoot-orc-format.md
+        - name: Parquet
+          href: connector-troubleshoot-parquet-format.md          
         - name: XML
           href: connector-troubleshoot-xml.md
     - name: Data Factory limitations

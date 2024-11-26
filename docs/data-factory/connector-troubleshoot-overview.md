@@ -15,37 +15,36 @@ This article describes how to troubleshoot connector issues with Data Factory in
 
 You can refer to the troubleshooting pages for each connector to see problems specific to it with explanations of their causes and recommendations to resolve them.
 
-- [Azure Blob Storage]()
-- [Azure Cosmos DB]()
-- [DB2]()
-- [Azure Data Explorer]()
-- [Azure Data Lake Storage]()
-- [Azure Database for PostgreSQL]()
-- [Azure Files]()
-- [Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server]()
-- [Azure Table Storage]()
-- [Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM]()
-- [MongoDB]()
-- [Oracle]()
-- [Parquet]()
-- [Snowflake]()
-- [FTP-SFTP-HTTP]()
-- [REST]()
-- [Sharepoint Online list]()
+- [Azure Blob Storage](connector-troubleshoot-azure-blog-storage.md)
+- [Azure Cosmos DB](connector-troubleshoot-azure-cosmos-db.md)
+- [DB2](connector-troubleshoot-db2.md)
+- [Azure Data Explorer](connector-troubleshoot-azure-data-explorer.md)
+- [Azure Data Lake Storage](connector-troubleshoot-azure-data-lake-explorer.md)
+- [Azure Database for PostgreSQL](connector-troubleshoot-azure-database-for-postgresql.md)
+- [Azure Files](connector-troubleshoot-azure-files.md)
+- [Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server](connector-troubleshoot-synapse-sql.md)
+- [Azure Table Storage](connector-troubleshoot-azure-table-storage.md)
+- [Delimited text](connector-troubleshoot-delimited-text.md)
+- [Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM](connector-troubleshoot-dynamics-dataverse.md)
+- [MongoDB](connector-troubleshoot-mongodb.md)
+- [Oracle](connector-troubleshoot-oracle.md)
+- [Snowflake](connector-troubleshoot-snowflake.md)
+- [FTP-SFTP-HTTP](connector-troubleshoot-ftp-sftp-http.md)
+- [REST](connector-troubleshoot-rest.md)
+- [Sharepoint Online list](connector-troubleshoot-sharepoint-online-list.md)
+
+Supported file formats also have troubleshooting pages.
+
+- [ORC](connector-troubleshoot-orc-format.md)
+- [Parquet](connector-troubleshoot-parquet-format.md)
+- [XML](connector-troubleshoot-.md)
 
 
-- [Delimited text]()
-- [ORC]()
-- [XML]()
-
-
-- [Data Factory limitations]()
-- [Data Factory known issues]()
-
+The [Data Factory limitations](data-factory-limitations.md) and [Known issues](data-factory-known-issues.md) pages can also be useful to help troubleshoot issues with connectors that aren't resolved by the troubleshooting pages.
 
 ## General copy activity errors
 
-The following errors are general to the copy activity and could occur with any connector.
+The following errors are general to the Copy activity and could occur with any connector.
 
 #### Error code: 20000
 
@@ -85,9 +84,9 @@ The following errors are general to the copy activity and could occur with any c
 
     1. Open the folder where Self-hosted IR is installed. The path is usually *C:\Program Files\Microsoft Integration Runtime \<IR version>\Shared*.
 
-    2. Open the *diawp.exe.config* file and then, at the end of the `<runtime>` section, add `<enforceFIPSPolicy enabled="false"/>`, as shown here:
+    2. Open the *fabricworker.exe.config* file and then, at the end of the `<runtime>` section, add `<enforceFIPSPolicy enabled="false"/>`, as shown here:
 
-        :::image type="content" source="./media/connector-troubleshoot-guide/disable-fips-policy.png" alt-text="Screenshot of a section of the diawp.exe.config file showing FIPS disabled.":::
+        :::image type="content" source="./media/connector-troubleshoot-guide/disable-fips-policy.png" alt-text="Screenshot of a section of the fabricworker.exe.config file showing FIPS disabled.":::
 
     3. Save the file, and then restart the Self-hosted IR machine.
 
@@ -263,9 +262,6 @@ The following errors are general to the copy activity and could occur with any c
 
 For more troubleshooting help, try these resources:
 
-- [Data Factory blog](https://techcommunity.microsoft.com/t5/azure-data-factory-blog/bg-p/AzureDataFactoryBlog)
-- [Data Factory feature requests](/answers/topics/azure-data-factory.html)
-- [Azure videos](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
-- [Microsoft Q&A page](/answers/topics/azure-data-factory.html)
-- [Stack Overflow forum for Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
-- [X information about Data Factory](https://x.com/hashtag/DataFactory)
+- [Data Factory blog](https://blog.fabric.microsoft.com/en-us/blog/category/data-factory)
+- [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)
