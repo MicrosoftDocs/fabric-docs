@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/01/2024
+ms.date: 11/26/2024
 ---
 
 # Trusted workspace access
@@ -31,7 +31,7 @@ This article shows you how to:
 
 ## Configure trusted workspace access in ADLS Gen2
 
-### Resource instance rule
+### Resource instance rule via ARM template
 
 You can configure specific Fabric workspaces to access your storage account based on their workspace identity. You can create a resource instance rule by deploying an ARM template with a resource instance rule. To create a resource instance rule:
 
@@ -48,7 +48,7 @@ You can configure specific Fabric workspaces to access your storage account base
 1. When deployment is complete, you'll be able to go to the resource.
 
 >[!NOTE]
->- Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
+>- Resource instance rules for Fabric workspaces can only be created through ARM templates or PowerShell. Creation through the Azure portal is not supported.
 >- The subscriptionId "00000000-0000-0000-0000-000000000000" must be used for the Fabric workspace resourceId.
 >- You can get the workspace id for a Fabric workspace through its address bar URL.
 
@@ -64,6 +64,18 @@ Here's an example of a resource instance rule that can be created through ARM te
           "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabric/providers/Microsoft.Fabric/workspaces/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e"
        }
 ]
+```
+
+### Resource instance rule via PowerShell script
+
+You can create a resource instance rule through PowerShell, using the following script.
+
+```PowerShell
+$resourceId = "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabric/providers/Microsoft.Fabric/workspaces/<YOUR_WORKSPACE_GUID>"
+$tenantId = "<YOUR_TENANT_ID>"
+$resourceGroupName = "<RESOURCE_GROUP_OF_STORAGE_ACCOUNT>"
+$accountName = "<STORAGE_ACCOUNT_NAME>"
+Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $accountName -TenantId $tenantId -ResourceId $resourceId
 ```
 
 ### Trusted service exception
