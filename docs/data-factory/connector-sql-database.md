@@ -27,15 +27,11 @@ The SQL database connector supports the following authentication types for copy 
 
 To create a connection in a data pipeline:
 
-1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
+1. Selecting **More** at the bottom of the connection list.
 
-2. Select **SQL database** in **New item** and then input an SQL database name to create a new SQL database connector.
+   :::image type="content" source="media/connector-sql-database/more.png" alt-text="Screenshot of selecting more.":::
 
-   :::image type="content" source="media/connector-sql-database/select-sql-database.png" alt-text="Screenshot of selecting sql database in new item.":::
-   :::image type="content" source="media/connector-sql-database/create-sql-database.png" alt-text="Screenshot with new sql database.":::
-
-3. Switch to your data pipeline, select an existing SQL database from **OneLake** by selecting **More** at the bottom of the connection list.
-
+1. Select an existing SQL database under **OneLake** section. When you choose one, will create and connect to your SQL database connection.
    :::image type="content" source="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting sql database in onelake section.":::
 
 ## Related content
