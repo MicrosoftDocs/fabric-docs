@@ -47,11 +47,11 @@ The following errors are general to the Copy activity and could occur with any c
 
 #### Error code: 20000
 
-- **Message**: `Java Runtime Environment cannot be found on the On-premises data gateway (OPDG) machine. It is required for parsing or writing to Parquet/ORC files. Make sure Java Runtime Environment has been installed on the OPDG machine.`
+- **Message**: `Java Runtime Environment cannot be found on the on-premises data gateway (OPDG) machine. It is required for parsing or writing to Parquet/ORC files. Make sure Java Runtime Environment has been installed on the OPDG machine.`
 
 - **Cause**: The gateway can't find Java Runtime. Java Runtime is required for reading particular sources.
 
-- **Recommendation**:  Check your gateway environment. See [Use On-premises data gateway (OPDG)](./format-parquet.md#using-self-hosted-integration-runtime).
+- **Recommendation**:  Check your gateway environment. See [How to access on-premises data gateway (OPDG)](how-to-access-on-premises-data.md).
 
 
 #### Error code: 20002
@@ -60,7 +60,7 @@ The following errors are general to the Copy activity and could occur with any c
 
 - **Cause**: If the error message contains "Can't create JVM: JNI return code [-6][JNI call failed: Invalid arguments.]," the possible cause is that JVM can't be created because some illegal (global) arguments are set.
 
-- **Recommendation**: Sign in to the machine that hosts *each node* of your On-premises data gateway (OPDG). Check to ensure that the system variable is set correctly, as follows: `_JAVA_OPTIONS "-Xms256m -Xmx16g" with memory bigger than 8G`. Restart all the gateway nodes, and then rerun the pipeline.
+- **Recommendation**: Sign in to the machine that hosts *each node* of your on-premises data gateway (OPDG). Check to ensure that the system variable is set correctly, as follows: `_JAVA_OPTIONS "-Xms256m -Xmx16g" with memory bigger than 8G`. Restart all the gateway nodes, and then rerun the pipeline.
 
 #### Error code: 20020
 
@@ -81,7 +81,7 @@ The following errors are general to the Copy activity and could occur with any c
 
     Alternatively, if you only want to bypass FIPS and make the activity runs succeed, take the following steps:
 
-    1. Open the folder where the gateway is installed. The path is usually *"C:\Program Files\On-premises data gateway\FabricIntegrationRuntime\5.0\Shared\"*.
+    1. Open the folder where the gateway is installed. The path is usually *"C:\Program Files\on-premises data gateway\FabricIntegrationRuntime\5.0\Shared\"*.
 
     2. Open the *fabricworker.exe.config* file and then, at the end of the `<runtime>` section, add `<enforceFIPSPolicy enabled="false"/>`, as shown here:
 
@@ -123,7 +123,7 @@ The following errors are general to the Copy activity and could occur with any c
 
 #### Error code: 20523
 
-- **Message**: `Managed identity credential is not supported in this version ('%version;') of On-premises data gateway (ODPG).`
+- **Message**: `Managed identity credential is not supported in this version ('%version;') of on-premises data gateway (ODPG).`
 
 - **Recommendation**: Check the supported version and upgrade the gateway to a higher version.
 
@@ -167,7 +167,7 @@ The following errors are general to the Copy activity and could occur with any c
 
 #### Error code: 20705
 
-- **Message**: `'validateDataConsistency' is not supported in this version ('%version;') of On-premises data gateway (ODPG).`
+- **Message**: `'validateDataConsistency' is not supported in this version ('%version;') of on-premises data gateway (ODPG).`
 
 - **Recommendation**: Check the supported gateway version and upgrade it to a higher version, or remove the 'validateDataConsistency' property from copy activities.
 
@@ -255,7 +255,7 @@ The following errors are general to the Copy activity and could occur with any c
  
 - **Cause**: Exact cause depends on the text returned in `'%'`. If it's **The operation has timed out**, it can be because the instance of PostgreSQL is stopped or because the network connectivity method configured for your instance doesn't allow connections from the gateway selected. User or password provided is incorrect. If it's **28P01: password authentication failed for user &lt;youruser&gt;**, it means that the user provided doesn't exist in the instance or that the password is incorrect. If it's **28000: no pg_hba.conf entry for host "*###.###.###.###*", user "&lt;youruser&gt;", database "&lt;yourdatabase&gt;", no encryption**, it means that the encryption method selected isn't compatible with the configuration of the server.
 
-- **Recommendation**: Confirm that the user provided exists in your instance of PostgreSQL and that the password corresponds to the one currently assigned to that user. Make sure that the encryption method selected is accepted by your instance of PostgreSQL, based on its current configuration. If the network connectivity method of your instance is configured for Private access (virtual network integration), use an On-premises data gateway (OPDG) to connect to it.
+- **Recommendation**: Confirm that the user provided exists in your instance of PostgreSQL and that the password corresponds to the one currently assigned to that user. Make sure that the encryption method selected is accepted by your instance of PostgreSQL, based on its current configuration. If the network connectivity method of your instance is configured for Private access (virtual network integration), use an on-premises data gateway (OPDG) to connect to it.
 
 ## Related content
 
