@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: get-started
-ms.date: 08/15/2024
+ms.date: 11/15/2024
 ms.search.form: variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle.
 
