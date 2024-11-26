@@ -119,6 +119,6 @@ While Dataflow Gen2 with CI/CD and Git support offers a powerful set of features
 - When branching out to another workspace, a Dataflow Gen2 refresh might fail with the message that the staging lakehouse couldn't be found. When this happens, create a new Dataflow Gen2 with CI/CD and Git support in the workspace to trigger the creation of the staging lakehouse. After this, all other dataflows in the workspace should start to function again.
 - When you create a new item in your workspace, it might show the item "Dataflow Gen2 (CI/CD, preview)". Ignore this one and follow instructions described in this article. It may take some time until your region shows the checkbox for enabling the CI/CD and Git support.
 - Fast Copy might not be enabled by default in your dataflow. You can enable this using the dataflow settings.
-- Connections that use a On-Premises Data Gateway are currently causing issues in the dataflow refresh. We recommend using a different method for getting data from on-premises data sources into fabric.
+- Connections that use an On-Premises Data Gateway are currently causing issues in the dataflow refresh. We recommend using a different method for getting data from on-premises data sources into fabric.
 
 We are committed to continuously improving Dataflow Gen2 with CI/CD and Git support and appreciate your patience as we work on these enhancements.
