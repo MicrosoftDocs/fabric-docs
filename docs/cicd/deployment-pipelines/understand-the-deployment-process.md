@@ -439,14 +439,17 @@ The following table lists required permissions for popular deployment pipeline a
 |Add or remove a pipeline user     |Pipeline admin         |
 |Assign a workspace to a stage     |<ul><li>Pipeline admin</li><li>Workspace admin (of the workspace to be assigned)</li></ul>         |
 |Unassign a workspace to a stage     |One of the following roles:<ul><li>Pipeline admin</li><li>Workspace admin (using the [Pipelines - Unassign Workspace](/rest/api/power-bi/pipelines/unassign-workspace) API)</li></ul>         |
-|Deploy to an empty stage     |<ul><li>Pipeline admin</li><li>Source workspace contributor</li></ul>         |
-|Deploy items to the next stage    |<ul><li>Pipeline admin</li><li>Workspace contributor to both the source and target stages</li><li>To deploy datamarts or dataflows, you must be the owner of the deployed item</li><li>If the semantic model tenant admin switch is turned on and you're deploying a semantic model, you need to be the owner of the semantic model</li></ul>         |
+|Deploy to an empty stage (see note)    |<ul><li>Pipeline admin</li><li>Source workspace contributor</li></ul>         |
+|Deploy items to the next stage (see note)   |<ul><li>Pipeline admin</li><li>Workspace contributor to both the source and target stages</li><li>To deploy datamarts or dataflows, you must be the owner of the deployed item</li><li>If the semantic model tenant admin switch is turned on and you're deploying a semantic model, you need to be the owner of the semantic model</li></ul>         |
 |View or set a rule     |<ul><li>Pipeline admin</li><li>Target workspace contributor, member, or admin</li><li>Owner of the item you're setting a rule for</li></ul>         |
 |Manage pipeline settings     |Pipeline admin         |
 |View a pipeline stage     |<ul><li>Pipeline admin</li><li>Workspace reader, contributor, member, or admin. You'll see the items that your workspace permissions grant access to.</li></ul>         |
 |View the list of items in a stage     |Pipeline admin         |
 |Compare two stages     |<ul><li>Pipeline admin</li><li>Workspace contributor, member, or admin for both stages</li></ul>         |
 |View deployment history     |Pipeline admin         |
+
+> [!NOTE]
+> To deploy content in the GCC environment, you need to be a workspace admin in both the source and target workspaces. Deploying as a contributor isn't supported yet.
 
 ## Considerations and limitations
 
