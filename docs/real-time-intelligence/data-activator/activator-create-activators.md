@@ -6,14 +6,14 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Activator Rule Creation
-ms.date: 11/08/2024
+ms.date: 11/26/2024
 ---
 
 # Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
 
-Once you bring data into an activator or [assign data to objects](activator-assign-data-objects.md#assign-data-to-objects-in-activator), you can create rules to act on your data. There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
+Once you bring streaming data into an activator or [assign events to objects](activator-assign-data-objects,md#assign-data-to-objects-in-activator), you can create rules to act on your data. There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
 
-## Why create rules on events?
+## Create rules on events
 
 Creating rules on events allows you to get an activation for every event that comes in on an eventstream. When creating these kinds of rules, you can track the state of something over time. For example:
 
@@ -21,11 +21,11 @@ Creating rules on events allows you to get an activation for every event that co
 
 - You can get an alert every time a new event comes in and the value for a column in that event meets your defined condition.
 
-## Why create rules on events that are added to objects?
+## Create rules on Object events
 
-Creating rules on events that are added to an object is similar to rules created on events. However, you track events for specific object IDs. You get an activation every time a new event comes in on the eventstream that is added to the object. And, you can identify which instance it came in for as well. An added benefit is you can use properties from other eventstreams that are added to that same object in your rule expressivity.
+Objects are created from streaming data. You pick specific columns and one unique column to bundle into an object. Then, instead of creating rules on the arrival of events, you create rules that monitor and report on the arrival of events, separated by their unique IDs. Your rule activates every time a new event comes in on the eventstream object. And, you can identify which instance it came in for as well. An added benefit is you can use properties from other eventstreams that are added to that same object in your rule expressivity.
 
-## Why create rules on properties?
+## Create rules on properties
 
 Creating rules on properties allows you to monitor a property on objects over time. If you want to monitor the state of a property on an object, create a rule on a property.
 
