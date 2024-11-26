@@ -965,6 +965,8 @@
       href: pipeline-troubleshoot-guide.md
     - name: Connectors
       items:
+      - name: Connector troubleshooting overview
+        href: connector-troubleshoot-overview.md
       - name: Azure Blob Storage
         href: connector-troubleshoot-azure-blob-storage.md
       - name: Azure Cosmos DB
@@ -995,6 +997,10 @@
         href: connector-troubleshoot-snowflake.md
       - name: FTP-SFTP-HTTP
         href: connector-troubleshoot-ftp-sftp-http.md
+      - name: REST
+        href: connector-troubleshoot-rest.md
+      - name: Sharepoint Online list
+        href: connector-troubleshoot-sharepoint-online-list.md        
       - name: Format
         items:
         - name: Delimited text
@@ -1003,10 +1009,6 @@
           href: connector-troubleshoot-orc-format.md
         - name: XML
           href: connector-troubleshoot-xml.md
-      - name: Rest
-        href: connector-troubleshoot-rest.md
-      - name: Sharepoint Online list
-        href: connector-troubleshoot-sharepoint-online-list.md
     - name: Data Factory limitations
       href: data-factory-limitations.md
     - name: Data Factory known issues
