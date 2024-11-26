@@ -37,7 +37,9 @@ The following properties are supported for SQL database under the **Source** tab
 
 The following properties are **required**:
 
-- **Connection**: Select an existing **SQL database** from the workspace. If no connection exists, then create a new SQL database connection.
+- **Connection**: Select an existing **SQL database** under the **OneLake** by selecting **More** at the bottom of the connection list. If no connection exists, then create a new SQL database connection.
+
+   :::image type="content" source="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting sql database in onelake section.":::
 
 - **Use query**: You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting:
 
@@ -82,7 +84,10 @@ The following properties are supported for SQL database under the **Destination*
 
 The following properties are **required**:
 
-- **Connection**: Select an existing **SQL database** from the workspace. If no connection exists, then create a new SQL database connection.
+- **Connection**: Select an existing **SQL database** under the **OneLake** by selecting **More** at the bottom of the connection list. If no connection exists, then create a new SQL database connection.
+
+   :::image type="content" source="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting sql database in onelake section.":::
+
 - **Table option**: Select from **Use existing** or **Auto create table**.
 
   - If you select **Use existing**:
