@@ -102,7 +102,7 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 
 ## Limitations and known issues
 
-While Dataflow Gen2 with CI/CD and Git support offers a powerful set of features for enterprise ready collaboration, this requiered us to rebuild the backend to the fabric architecture. This means that some features are not yet available or have limitations. We are actively working on improving the experience and will update this article as new features are added.
+While Dataflow Gen2 with CI/CD and Git support offers a powerful set of features for enterprise ready collaboration, this required us to rebuild the backend to the fabric architecture. This means that some features are not yet available or have limitations. We are actively working on improving the experience and will update this article as new features are added.
 
 - The staging artifacts are in some experiences visible like the ALM UI. The staging artifacts will be hidden in all experiences in the future.
 - When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifacts become visible in the workspace and are safe to be deleted by the user.
@@ -119,6 +119,6 @@ While Dataflow Gen2 with CI/CD and Git support offers a powerful set of features
 - When branching out to another workspace, a Dataflow Gen2 refresh might fail with the message that the staging lakehouse couldn't be found. When this happens, create a new Dataflow Gen2 with CI/CD and Git support in the workspace to trigger the creation of the staging lakehouse. After this, all other dataflows in the workspace should start to function again.
 - When you create a new item in your workspace, it might show the item "Dataflow Gen2 (CI/CD, preview)". Ignore this one and follow instructions described in this article. It may take some time until your region shows the checkbox for enabling the CI/CD and Git support.
 - Fast Copy might not be enabled by default in your dataflow. You can enable this using the dataflow settings.
-- Connections that use an On-Premises Data Gateway are currently causing issues in the dataflow refresh. We recommend using a different method for getting data from on-premises data sources into fabric.
+- Connections that use an on-premises Data Gateway are currently causing issues in the dataflow refresh. We recommend using a different method for getting data from on-premises data sources into fabric.
 
 We are committed to continuously improving Dataflow Gen2 with CI/CD and Git support and appreciate your patience as we work on these enhancements.
