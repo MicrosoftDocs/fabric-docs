@@ -32,7 +32,7 @@ To preview the source data of an event hub or sample data in the eventstream:
 
 1. In the lower pane, select the **Data preview** tab.
 
-1.You see it appear in the tab if there's data inside the source. For example, the following image shows a preview of sample Yellow Taxi data.
+1. You see it appear in the tab if there's data inside the source. For example, the following image shows a preview of sample Yellow Taxi data.
 
    :::image type="content" source="./media/preview-data/preview-data-source.png" alt-text="Screenshot showing a sample Yellow Taxi data preview for a source node." lightbox="./media/preview-data/preview-data-source.png" :::
 
