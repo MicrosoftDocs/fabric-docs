@@ -16,7 +16,7 @@ There are several different ways to create an activator using Fabric [!INCLUDE [
 
 > [!NOTE] 
 > Creating activators requires Microsoft Fabric to be enabled. One way to enable Fabric is by starting a free [Fabric trial](https://www.microsoft.com/microsoft-fabric/getting-started#:~:text=Sign%20in%20to%20app.fabric.microsoft.com%20with%20your%20Power%20BI,manager%20tool%20in%20the%20app%E2%80%94no%20credit%20card%20required.?msockid=0ac54d18fb8866d81ccc5e5bff8868a4).
-> If self-service sign-up for Fabric is disabled, ask your administrator to [enable Fabric for you](../admin/fabric-switch.md). 
+> If self-service sign-up for Fabric is disabled, ask your administrator to [enable Fabric for you](../../admin/fabric-switch.md). 
 >If you have delegated settings to other admins, you should also allow capacity admins to enable/disable.
 
 ## Create an Activator item
