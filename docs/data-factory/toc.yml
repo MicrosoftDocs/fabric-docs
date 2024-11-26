@@ -589,6 +589,8 @@
       items:
       - name: SQL database - Overview
         href: connector-sql-database-overview.md
+      - name: Set up your connection
+        href: connector-sql-database.md
       - name: Configure in a data pipeline Copy activity
         href: connector-sql-database-copy-activity.md        
     - name: SQL Server database

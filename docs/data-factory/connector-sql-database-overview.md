@@ -25,6 +25,6 @@ The SQL database connector supports the following capabilities in data pipelines
 | **Lookup activity** | None <br> On-premises | User Auth |
 | **GetMetadata activity** | None <br> On-premises | User Auth |
 
-To learn about how to connect to SQL Database in data pipelines, go to [Set up your Azure SQL Database connection](connector-sql-database.md.md).
+To learn about how to connect to SQL Database in data pipelines, go to [Set up your Azure SQL Database connection](connector-sql-database.md).
 
 To learn about the copy activity configuration for SQL database in data pipelines, go to [Configure SQL database in a copy activity](connector-sql-database-copy-activity.md).
