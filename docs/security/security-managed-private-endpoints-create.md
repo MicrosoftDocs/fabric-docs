@@ -17,6 +17,10 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 
 * The user can access the data sources using the private endpoint name from the Fabric Spark workloads.
 
+## Prerequisites
+
+Microsoft.Network resource provider needs to be registered in the Azure subscription 
+
 ## Create a managed private endpoint
 
 1. In a Fabric workspace, navigate to the workspace settings, select the **Network security** tab, and then select the **Create** option in the Managed Private Endpoint section.
