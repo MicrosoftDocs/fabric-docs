@@ -119,7 +119,7 @@ Next, define your alert conditions. In the **Set Alert** pane that appears, take
 1. In **Save location**, specify where to save your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert. Choose an existing workspace, and save either in an existing activator or a new one.
 1. Select **Create** to create your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule.
 
-:::image type="content" source="media/activator-alert-queryset/conditions-without-visualization.png" alt-text="Screenshot of conditions being set on a query that doesn't include a visualization.":::
+:::image type="content" source="media/activator-alert-queryset/conditions-without-visualizations.png" alt-text="Screenshot of conditions being set on a query that doesn't include a visualization.":::
 
 ---
 
