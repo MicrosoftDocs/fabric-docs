@@ -22,14 +22,14 @@ Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject
 
 ## Activator item migration from Preview to GA
 
-Activator became Generally Available (GA) in November, 2024. The move to GA impacts the functionality of your Activator items and rules. 
+Activator became Generally Available (GA) in November 2024. The move to GA impacts the functionality of your Activator items and rules. 
 
 > [!IMPORTANT]
 > You need to take action or your Activator items created during the preview will be deleted in March 2025.
 
 If you created a rule or activator while Activator was in preview, those rules and activators will eventually be deleted. The rules and activators created during preview are being phased out according to the following schedule.
 
-- January 2025, the items convert to read-only mode. Rules currently running will continue to run but can't be edited. Recreate these rules in a new Activator item to keep them running and editable.
+- January 2025, the items convert to read-only mode. Rules currently running continue to run but can't be edited. Recreate these rules in a new Activator item to keep them running and editable.
 - March 2025, all Activator items are deleted. Even running rules are deleted.
 
 To ensure no gaps in functionality, create new activator items and recreate your rules.
