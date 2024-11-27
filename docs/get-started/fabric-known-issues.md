@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 11/22/2024
+ms.date: 11/26/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,7 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  945  | Power BI | [Intermittent failures on deployment of Sustainability solution](known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
+|  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
 |  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
@@ -120,10 +120,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  858  | Power BI | [Live connection to semantic models created by template apps fails](known-issues/known-issue-858-live-connect-semantic-models-template-apps-fails.md) | September 27, 2024 |  Fixed: October 15, 2024 |
 |  807  | Data Warehouse | [Mirroring for Azure Cosmos DB fails when you create a new container](known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md) | August 14, 2024 |  Fixed: October 15, 2024 |
 |  796  | Data Warehouse | [Mirroring for Azure Cosmos DB fails](known-issues/known-issue-796-mirroring-cosmos-db-fails.md) | August 6, 2024 |  Fixed: October 15, 2024 |
-|  850  | Power BI | [PostgreSQL data source connections additions or updates fail](known-issues/known-issue-850-postgresql-connections-additions-updates-fail.md) | September 23, 2024 | Fixed: October 9, 2024 |
-|  839  | Power BI | [Dynamics 365 Business Central connector causes refresh failures](known-issues/known-issue-839-dynamics-365-business-central-connector-causes-failures.md) | September 17, 2024 | Fixed: October 9, 2024 |
-|  825  | Power BI | [Paginated report cascading parameters with default values aren't set as expected](known-issues/known-issue-825-paginated-cascading-parameters-default-values-not-expected.md) | September 4, 2024 | Fixed: October 9, 2024 |
-|  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 | Fixed: October 9, 2024 |
 
 ## Related content
 

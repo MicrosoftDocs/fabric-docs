@@ -292,9 +292,9 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 | Setting name | Description |
 |------|-------|
 |[Users can synchronize workspace items with their Git repositories](../cicd/git-integration/intro-to-git-integration.md)|Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories. [Learn More](https://go.microsoft.com/fwlink/?linkid=2240844)|
-|[Users can export items to Git repositories in other geographical locations](git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview)|The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies.|
-|[Users can export workspace items with applied sensitivity labels to Git repositories](git-integration-admin-settings.md#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview)|Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories.|
-|[Users can sync workspace items with GitHub repositories](./git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories-preview)|Users can select GitHub as their Git provider and sync items in their workspaces with GitHub repositories.|
+|[Users can export items to Git repositories in other geographical locations](git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations)|The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies.|
+|[Users can export workspace items with applied sensitivity labels to Git repositories](git-integration-admin-settings.md#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories)|Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories.|
+|[Users can sync workspace items with GitHub repositories](./git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories)|Users can select GitHub as their Git provider and sync items in their workspaces with GitHub repositories.|
 
 ## Copilot and Azure OpenAI Service​
 

@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter, ignite-2024
-ms.search.form: Activator Object Creation
+ms.search.form: Data Activator Object Creation
 ms.date: 11/08/2024
 ---
 
