@@ -70,6 +70,8 @@ Use the *CreateDevAADApp.ps1* script to register an Azure Entra ID application.
    .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.Myworkload" -tenantId "bbbbcccc-1111-dddd-2222-eeee3333ffff"
    ```
 
+5. The script's output is a text file that includes the details you'll need to configure your workload. Save the file for future reference.
+
 Configure the backend to use Create, Read, Update, and Delete (CRUD) APIs, so that you can use the sample's dialog.
 
 
