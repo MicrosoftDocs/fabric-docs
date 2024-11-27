@@ -82,6 +82,33 @@ Since you've selected **Open dashboard after creation**, the new Real-Time dashb
     Notice that the query elements are updated to include the **count() by Street** aggregation. The resulting table changed to show the total count of bike locations by street.
 1. Close the **Explore** pane and select **Save** from the menu ribbon to save the changes.
 
+## Add a map tile
+
+1. Select **New tile**.
+1. In the query editor, enter and run the following query:
+
+    ```kusto
+    TutorialTable
+    | where Timestamp > ago(1h)
+    ```
+
+1. Above the results pane, select **+ Add visual**.
+1. In the **Visual formatting** pane, enter the following information:
+
+    | Field | Value |
+    | --- | --- |
+    | Tile name | *Bike locations Map* |
+    | **Visual type** | *Map* |
+    | **Define location by** | *Latitude and longitude* |
+    | **Latitude column** | *Latitude* |
+    | **Longitude column** | *Longitude* |
+    | **Label column** | *BikepointID* |
+
+1. Select **Apply changes**.
+    You can resize the tiles and zoom in on the map as desired.
+
+:::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of final dashboard with three tiles." lightbox="media/tutorial/final-dashboard.png":::
+
 ## Related content
 
 For more information about tasks performed in this tutorial, see:

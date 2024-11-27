@@ -16,7 +16,7 @@ ms.search.form: Get started
 # Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
+> This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Set up Eventhouse](tutorial-1-resources.md).
 
 In this part of the tutorial, you browse the Real-Time hub, create an eventstream, transform events in two different ways, and create destinations to send the transformed events to a KQL database.
 

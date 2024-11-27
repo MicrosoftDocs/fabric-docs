@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 1- Create resources
+title: Real-Time Intelligence tutorial part 1- Set up Eventhouse
 description: Learn how to create a KQL database and enable data availability in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -14,7 +14,7 @@ ms.subservice: rti-core
 ms.search.form: Get started
 # customer intent: I want to learn how to create a KQL database and enable data availability in Microsoft Fabric.
 ---
-# Real-Time Intelligence tutorial part 1: Create resources
+# Real-Time Intelligence tutorial part 1: Set up Eventhouse
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Introduction to the Real-Time Intelligence tutorial](tutorial-introduction.md).
@@ -40,19 +40,6 @@ In this part of the tutorial, you set up the environment. Specifically, you crea
 1. Uncheck **Apply to existing tables** and select **Turn on**.
 
     :::image type="content" source="media/tutorial/one-lake-availability.png" alt-text="Screenshot showing how to turn on OneLake availability.":::
-
-## Create a KQL queryset
-
-1. From the navigation bar, select the KQL database you created in a previous step, named *Tutorial*.
-1. From the menu ribbon, select **New related item** and choose **KQL Queryset**.
-
-    :::image type="content" source="media/tutorial/new-queryset.png" alt-text="Screenshot of Tutorial database showing adding a new related item that is a KQL queryset.":::
-
-1. Enter the name for the KQL Queryset: *TutorialQueryset* and select **Create**.
-1. Select the *Tutorial* database as the data source for the KQL queryset, then select **Connect**.
-1. Select **Create**.
-    A new KQL queryset is created and opens in the KQL Queryset editor. It's connected to the *Tutorial* database as a data source, and is pre-populated with several general queries.
-
 
 ## Related content
 

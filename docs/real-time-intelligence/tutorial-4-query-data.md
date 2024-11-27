@@ -21,6 +21,18 @@ ms.search.form: Get started
 
 In this part of the tutorial, you learn how to query your streaming data in a [KQL queryset](create-query-set.md). You create a KQL queryset, write a KQL query, and visualize the data in a time chart.
 
+## Create a KQL queryset
+
+1. From the navigation bar, select the KQL database you created in a previous step, named *Tutorial*.
+1. From the menu ribbon, select **New related item** and choose **KQL Queryset**.
+
+    :::image type="content" source="media/tutorial/new-queryset.png" alt-text="Screenshot of Tutorial database showing adding a new related item that is a KQL queryset.":::
+
+1. Enter the name for the KQL Queryset: *TutorialQueryset* and select **Create**.
+1. Select the *Tutorial* database as the data source for the KQL queryset, then select **Connect**.
+1. Select **Create**.
+    A new KQL queryset is created and opens in the KQL Queryset editor. It's connected to the *Tutorial* database as a data source, and is pre-populated with several general queries.
+
 ## Write a KQL query
 
 The name of the table you created from the update policy in a previous step is *BikesDataTransformed*. Use this (case-sensitive) name as the data source for your query.
@@ -28,14 +40,14 @@ The name of the table you created from the update policy in a previous step is *
 > [!TIP]
 > If you have a sufficient subscription, you can use the Copilot feature to help you write queries. Copilot provides queries based on data in your table and natural language prompts. For more information, see [Copilot for Real-Time Intelligence (preview)](../get-started/copilot-real-time-analytics.md)
 
-1. In the query editor, enter the following query. Then press **Shift + Enter** to run the query.
+1. In the query editor of your KQL queryset, enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
     BikesDataTransformed
     | take 10
     ```
 
-    This query returns 10 arbitrary records from the table. What information about the data can you see at a glance? Notice that one of the columns is named *No_Bikes*. This column contains the number of empty docks at a bike station. This is a field you may be concerned with if you're tracking the availability of bikes at a station.
+    This query returns 10 arbitrary records from the table. What information about the data can you see at a glance? Notice that one of the columns is named *No_Bikes*. This column contains the number of bikes at a bike station. This is a field you may be concerned with if you're tracking the availability of bikes at a station.
 
 1. To see the data in a more visual way, use the **render** operator. Run the following query:
 
@@ -48,7 +60,7 @@ The name of the table you created from the update policy in a previous step is *
 
     This query creates a time chart that shows the number of bikes in the Chelsea neighborhood as a time chart.
 
-    :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence." lightbox="media/tutorial/empty-docks-timechart.png":::
+    :::image type="content" source="media/tutorial/bikes-timechart.png" alt-text="Screenshot of bikes timechart in Real-Time Intelligence." lightbox="media/tutorial/bikes-timechart.png":::
 
 ## Create a materialized view
 
@@ -57,7 +69,7 @@ In this step, you create a materialized view, which returns an up-to-date result
 1. Copy/paste and run the following command to create a materialized view that shows the most recent number of bikes at each bike station:
 
     ``` kusto
-    .create materialized-view LatestNoBikesCount_MV on table BikesDataTransformed
+    .create materialized-view LatestNumberOfBikesCount_MV on table BikesDataTransformed
     {
         BikesDataTransformed
         | summarize arg_max(Timestamp,No_Bikes) by BikepointID
@@ -67,7 +79,7 @@ In this step, you create a materialized view, which returns an up-to-date result
 1. Copy/paste and run the following query to see the data in the materialized view visualized as a column chart:
 
     ```kusto
-    LatestNoBikesCount_MV
+    LatestNumberOfBikesCount_MV
     | sort by BikepointID
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
