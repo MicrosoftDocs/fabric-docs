@@ -179,6 +179,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Power BI Copilot can excessively retry in rare error scenarios
+      href: known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md
+    - name: Metrics app timepoint details missing for new P2 capacities
+      href: known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md
     - name: Intermittent failures on deployment of Sustainability solution
       href: known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
     - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work
