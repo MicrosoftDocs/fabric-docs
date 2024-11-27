@@ -149,6 +149,10 @@ Environment Resources Folder is a shared repository designed to streamline colla
 - You can also operate on the files/folders just same with the Built-in resources folder. 
 - The Environment resource path will be automatically mounted to the notebook cluster, you can use the relative path **/env** to access the environment resources.
 
+
+> [!NOTE]
+> Currently, reading/writing environment resource folder in notebook code is not supported in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
+
 ### File editor
 
 The file editor allows you to view and edit files directly within the notebook's resource folder and environment resource folder in notebook. Supported file types include **CSV, TXT, HTML, YML, PY, SQL**, and more. With the file editor, you can easily access and modify files within the notebook, it supports Keyword highlighting and provides necessary language service when opening and editing code files like *.py* and *.sql*.
