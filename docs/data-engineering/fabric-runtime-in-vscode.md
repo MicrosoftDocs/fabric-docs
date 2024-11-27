@@ -10,7 +10,7 @@ ms.date: 11/25/2024
 ms.search.form: VSCodeExtension
 ---
 
-## Fabric runtime support in VS Code extension
+# Fabric runtime support in VS Code extension
 
 For Fabric runtime 1.1 and 1.2, two local conda environments are created by default. Activate the conda environment before running the notebook on the target runtime. To learn more, see [Choose Fabric Runtime 1.1 or 1.2](author-notebook-with-vs-code.md#run-or-debug-a-notebook-on-remote-spark-compute)
 
