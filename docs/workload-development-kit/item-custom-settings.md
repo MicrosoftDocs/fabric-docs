@@ -116,7 +116,7 @@ export function App({ history, workloadClient }: AppProps) {
 ```
 ## Custom about iframe
 
-:::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of a about custom settings." lightbox="./media/custom-item-settings/example-about.png":::
+:::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of About custom settings." lightbox="./media/custom-item-settings/example-about.png":::
 
 If the workload team wants to display a hybrid view (default about settings and the workload custom iframe) on the item settings' About page, they should add another item custom setting.
 In order to add a custom section to the About section, as seen in the image, we should add another item custom setting:

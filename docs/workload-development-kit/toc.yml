@@ -70,7 +70,7 @@ items:
     - name: Localize your workload
       href: localization.md
     - name: Item custom settings
-      href: itemCustomSettings.md
+      href: item-custom-settings.md
 - name: Reference
   items:
    - name: Frequently asked questions
