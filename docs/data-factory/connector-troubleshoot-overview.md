@@ -85,7 +85,7 @@ The following errors are general to the Copy activity and could occur with any c
 
     2. Open the *fabricworker.exe.config* file and then, at the end of the `<runtime>` section, add `<enforceFIPSPolicy enabled="false"/>`, as shown here:
 
-        :::image type="content" source="./media/connector-troubleshoot-guide/disable-fips-policy.png" alt-text="Screenshot of a section of the fabricworker.exe.config file showing FIPS disabled.":::
+        :::image type="content" source="/azure/data-factory/media/connector-troubleshoot-guide/disable-fips-policy.png" alt-text="Screenshot of a section of the fabricworker.exe.config file showing FIPS disabled.":::
 
     3. Save the file, and then restart the gateway machine.
 
@@ -247,7 +247,7 @@ The following errors are general to the Copy activity and could occur with any c
  
 - **Cause**: You provide a wrong or invalid query to fetch the data/schemas.
 
-- **Recommendation**: Verify your query is valid and can return data/schemas. Use [Script activity](transform-data-using-script.md) if you want to execute nonquery scripts and your data store is supported. Alternatively, consider to use stored procedure that returns a dummy result to execute your nonquery scripts.
+- **Recommendation**: Verify your query is valid and can return data/schemas. Use [Script activity](script-activity.md) if you want to execute nonquery scripts and your data store is supported. Alternatively, consider to use stored procedure that returns a dummy result to execute your nonquery scripts.
 
 #### Error code: 11775
 
