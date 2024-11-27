@@ -265,7 +265,7 @@ The source control icon now shows 1 because one item in the Git repo was changed
 
 :::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
-You can update the workspace manually or automatedly:
+You can update the workspace manually or automated:
 
 ### [Manual update workspace](#tab/manual)
 
