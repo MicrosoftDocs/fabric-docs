@@ -5,7 +5,9 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/22/2024
 ms.search.form: Source and Destination
 ---
 
@@ -41,11 +43,11 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 You can see the Google Cloud Pub/Sub source added to your eventstream in **Edit mode**.
 
-   ![A screenshot of the added Google Cloud Pub/Sub source in Edit mode with the Publish button highlighted.](media/add-source-google-cloud-pub-sub/edit-mode.png)
+   :::image type="content" border="true" source="media/add-source-google-cloud-pub-sub/edit-mode.png" alt-text="A screenshot of the added Google Cloud Pub/Sub source in Edit mode with the Publish button highlighted.":::
 
 Select **Publish** to publish the changes and begin streaming data from Google Cloud Pub/Sub to the eventstream.
 
-   ![A screenshot of the published eventstream with Google Cloud Pub/Sub source in Live View.](media/add-source-google-cloud-pub-sub/live-view.png)
+   :::image type="content" border="true" source="media/add-source-google-cloud-pub-sub/live-view.png" alt-text="A screenshot of the published eventstream with Google Cloud Pub/Sub source in Live View.":::
 
 ## Related content
 

@@ -46,11 +46,13 @@ items:
     href: user-flow-6.md
 - name: Get data
   items:
-  - name: Get, process, and route data in Event Streams
+  - name: Get, process, and route data in eventstreams
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: Event streams capacity consumption
+    - name: What's new in Fabric event streams?
+      href: event-streams/whats-new.md
+    - name: Eventstreams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Create eventstreams
       items:
@@ -102,6 +104,10 @@ items:
         href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
       - name: Fabric Workspace Item events
         href: event-streams/add-source-fabric-workspace.md
+      - name: Fabric OneLake events
+        href: event-streams/add-source-fabric-onelake.md
+      - name: Fabric Job events
+        href: event-streams/add-source-fabric-job.md
       - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
     - name: Add destinations to eventstreams
@@ -222,14 +228,6 @@ items:
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
       - name: Telegraf
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
-  - name: Get data in Activator
-    items:
-    - name: Get data from Power BI
-      href: data-activator/activator-get-data-power-bi.md
-    - name: Create alerts from a Real-Time Dashboard
-      href: data-activator/activator-get-data-real-time-dashboard.md
-    - name: Get data from Eventstreams
-      href: data-activator/activator-get-data-eventstreams.md
 - name: Store data
   items:
   - name: Eventhouse
@@ -374,11 +372,11 @@ items:
       href: data-activator/activator-get-data-eventstreams.md
     - name: Get data from Real-Time Hub
       href: data-activator/activator-get-data-real-time-hub.md
-  - name: Create objects and triggers
+  - name: Create objects and rules
     items:
     - name: Assign data to objects
       href: data-activator/activator-assign-data-objects.md
-    - name: Create triggers
+    - name: Create rules
       href: data-activator/activator-create-activators.md
     - name: Trigger Fabric items
       href: data-activator/activator-trigger-fabric-items.md
@@ -394,8 +392,14 @@ items:
       href: data-activator/activator-latency.md
     - name: Activator limitations
       href: data-activator/activator-limitations.md
+    - name: Capacity usage
+      href: data-activator/activator-capacity-usage.md
+      displayName: capacity, usage, consumption, billing
     - name: Troubleshoot errors
       href: data-activator/activator-troubleshooting.md
+    - name: Activator throttling
+      href: data-activator/activator-throttling-effects.md
+      displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
   - name: Tutorial
     items:
     - name: Activator tutorial using sample data

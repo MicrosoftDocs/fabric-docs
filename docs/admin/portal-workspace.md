@@ -40,7 +40,7 @@ In the admin portal, you also control which users have permissions to distribute
 
 Admins can control which users in the organization can use semantic models across workspaces. When this setting is enabled, users still need the required Build permission for a specific semantic model.
 
-:::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use semantic models across workspaces":::
+:::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use semantic models across workspaces.":::
 
 For more information, see [Intro to semantic models across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
 

@@ -3,9 +3,9 @@ title: Known issue - Reflex item creation fails due to a token creation failure
 description: A known issue is posted where creating a reflex item fails due to a token creation failure
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting 
+ms.topic: troubleshooting
 ms.date: 02/27/2024
-ms.custom: known-issue-585
+ms.custom: known-issue-585, ignite-2024
 ---
 
 # Known issue - Reflex item creation fails due to a token creation failure

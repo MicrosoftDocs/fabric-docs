@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: drskwier, antho, sukkaur
 ms.date: 10/07/2024
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.search.form:
 ---
 # SqlPackage for SQL database in Microsoft Fabric

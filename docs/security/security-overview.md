@@ -4,6 +4,8 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.custom:
+  - ignite-2024
 ms.date: 08/18/2024
 ---
 
@@ -21,7 +23,7 @@ Fabric security is:
 
 * **Compliant** – Fabric has data sovereignty out of the box with multi geo capacities. Fabric also supports a wide range of compliance standards.
 
-* **Governable** - Fabric comes with a set of governance tools such [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), [data loss prevention](/purview/dlp-learn-about-dlp) and [purview integration](../governance/use-microsoft-purview-hub.md).  
+* **Governable** - Fabric comes with a set of governance tools such [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), [data loss prevention](/purview/dlp-powerbi-get-started) and [purview integration](../governance/use-microsoft-purview-hub.md).  
 
 * **Configurable** - You can configure Fabric security in accordance with your organizational policies.
 

@@ -4,7 +4,7 @@ description: Learn the meaning of errors in Activator, how to fix them, and trou
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter
+ms.custom: FY25Q1-Linter, ignite-2024
 ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to troubleshoot Activator errors.
 ---

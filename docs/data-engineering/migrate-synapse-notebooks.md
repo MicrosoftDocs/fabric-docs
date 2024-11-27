@@ -9,6 +9,7 @@ ms.custom:
   - fabric-cat
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.date: 11/15/2023
 ---
 
@@ -41,7 +42,7 @@ To export a notebook from Azure Synapse:
 
 To import the exported notebook in Fabric:
 
-1.	**Access Fabric workspace**: Sign-in into [Fabric](https://app.fabric.microsoft.com) and access your workspace.
+1.	**Access Fabric workspace**: Sign-in into [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-migrate-synapse-notebooks) and access your workspace.
 1.	**Navigate to Data Engineering homepage**: Once inside your Fabric workspace, go to Data Engineering homepage.
 1.	**Import notebook**: 
     * Select **Import notebook.** You can import one or more existing notebooks from your local computer to a Fabric workspace.
@@ -72,7 +73,7 @@ The prerequisites include actions you need to consider before starting notebook 
 
 The focus of Step 1 is on exporting the notebooks from Azure Synapse workspace to OneLake in .ipynb format. This process is as follows:
 
-* **1.1) Import migration notebook** to [Fabric](https://app.fabric.microsoft.com) workspace. [This notebook](https://github.com/microsoft/fabric-migration/tree/main/data-engineering/spark-notebooks) exports all notebooks from a given Azure Synapse workspace to an intermediate directory in OneLake. Synapse API is used to export notebooks.
+* **1.1) Import migration notebook** to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-migrate-synapse-notebooks) workspace. [This notebook](https://github.com/microsoft/fabric-migration/tree/main/data-engineering/spark-notebooks) exports all notebooks from a given Azure Synapse workspace to an intermediate directory in OneLake. Synapse API is used to export notebooks.
 * **1.2) Configure the parameters** in the first command to export notebooks to an intermediate storage (OneLake). The following snippet is used to configure the source and destination parameters. Ensure to replace them with your own values.
 
 ```python

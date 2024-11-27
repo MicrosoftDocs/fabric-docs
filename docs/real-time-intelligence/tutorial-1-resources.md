@@ -8,6 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2024
   - ignite-2023
+  - ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Get started

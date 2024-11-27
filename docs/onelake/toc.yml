@@ -33,6 +33,8 @@ items:
     href: create-gcs-shortcut.md
   - name: Create shortcuts to on-premises data
     href: create-on-premises-shortcut.md
+  - name: Create shortcuts to an Iceberg table
+    href: onelake-iceberg-tables.md
   - name: Shortcut security
     href: onelake-shortcut-security.md
   - name: Access OneLake shortcuts in an Apache Spark notebook
@@ -105,6 +107,14 @@ items:
     href: onelake-consumption.md
   - name: OneLake capacity consumption example
     href: OneLake-capacity-consumption.md
+- name: OneLake events
+  items:
+  - name: Explore OneLake events
+    href: ../real-time-hub/explore-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Get OneLake events in Real-Time hub
+    href: ../real-time-hub/create-streams-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Set alerts on OneLake events
+    href: ../real-time-hub/set-alerts-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Reference
   items: 
   - name: OneLake shortcuts REST API

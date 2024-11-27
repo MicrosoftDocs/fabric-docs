@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
 
@@ -46,7 +47,7 @@ To retrieve the connection string, follow these steps:
 1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 1. Select the **Copy** button in the **SQL connection string** box to copy the connection string to your clipboard.
 
-Or, in the **OneLake Data Hub**:
+Or, in **OneLake**:
 
 1. Select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select the `...` ellipses for **More options**.
 1. Select **Copy SQL connection string** to copy the connection string to your clipboard.

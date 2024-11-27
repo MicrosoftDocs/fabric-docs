@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: cynotebo
 ms.date: 09/24/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Data types in Microsoft Fabric

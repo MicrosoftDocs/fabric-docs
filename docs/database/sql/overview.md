@@ -6,13 +6,15 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 11/07/2024
 ms.topic: overview
+ms.custom:
+  - ignite-2024
 ms.search.form: product-databases
 ---
 # SQL database in Microsoft Fabric (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allow you to easily create your operational database in Fabric. A SQL database in Fabric uses the SQL Database Engine as Azure SQL Database.
+SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allow you to easily create your operational database in Fabric. A SQL database in Fabric uses the same SQL Database Engine as Azure SQL Database.
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -88,10 +90,10 @@ ON Affiliation.AffiliationId = Contoso.RecordTypeID;
 
 Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and high-quality. From [Fabric Data Engineering](../../data-engineering/data-engineering-overview.md), you can:
 
-- Create and manage your data as Spark using a SQL database in Fabric
-- Design pipelines to copy data into your SQL database in Fabric
-- Use Spark job definitions to submit batch/streaming job to Spark cluster
-- Use notebooks to write code for data ingestion, preparation, and transformation
+- Create and manage your data as Spark using a SQL database in Fabric.
+- Design pipelines to copy data into your SQL database in Fabric.
+- Use Spark job definitions to submit batch/streaming job to Spark cluster.
+- Use notebooks to write code for data preparation and transformation.
 
 ## Data Science with your SQL database in Fabric
 

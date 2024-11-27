@@ -4,8 +4,10 @@ description: "Details on the limitations of mirroring for SQL database in Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
-ms.date: 11/14/2024
+ms.date: 11/15/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ---
 # Limitations for Fabric SQL database mirroring (preview)
 
@@ -19,18 +21,20 @@ For troubleshooting, see:
 
 For general limitations for SQL database in Microsoft Fabric, see [Limitations in SQL database in Microsoft Fabric (preview)](limitations.md).
 
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Database level limitations
 
 - Mirroring for SQL database in Fabric cannot be disabled currently.
 - Mirroring for SQL database can only mirror to the workspace in which the Fabric SQL database resides.
-- The maximum number of tables that can be mirrored from one database is 500. You can have more tables but any tables created beyond 500 are skipped from mirroring.
+- The maximum number of tables that can be mirrored from one database is 1000. You can have more tables but any tables created beyond 1000 are skipped from mirroring.
 
 ### Security features
 
 - [Row-level security](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true) is supported for Fabric SQL database, but permissions are currently not propagated to the replicated data in Fabric OneLake.
 - [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql?view=fabric&preserve-view=true), for example granting permissions to certain columns, are currently not propagated to the replicated data in Fabric OneLake.
 - [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking?view=fabric&preserve-view=true) settings are currently not propagated to the replicated data in Fabric OneLake.
-- Microsoft Purview Information Protection/sensitivity labels are not cascaded and mirrored to Fabric OneLake.
+- Microsoft Purview Information Protection/sensitivity labels are not cascaded and mirrored to Fabric OneLake. For more information, see [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md).
 
 ## Table level
 

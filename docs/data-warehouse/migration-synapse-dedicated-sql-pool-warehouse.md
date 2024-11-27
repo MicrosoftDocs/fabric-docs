@@ -11,6 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
+  - ignite-2024
 ---
 
 # Migration​: ​Azure Synapse Analytics dedicated SQL pools to Fabric

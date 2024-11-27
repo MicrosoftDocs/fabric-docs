@@ -11,6 +11,7 @@ metadata:
   ms.custom:
     - ignite-2023
     - build-2024
+    - ignite-2024
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
@@ -79,11 +80,11 @@ productDirectory:
     - title: Databases
       imageSrc: ./media/databases-icon.svg 
       summary: Create operational SQL databases seamlessly for transactional workloads.
-      url: data-warehouse/index.yml
+      url: database/index.yml
     # Card
     - title: Real-Time Intelligence
       imageSrc: ./media/fabric-real-time-intelligence-icon.png
-      summary: Discover insights from your streaming data. Quickly ingest, index, and partition any data source or format, query the data, create visualizations, and take actions on changes in your data.
+      summary: Discover insights from your streaming data. Quickly ingest, query, create visualizations, and take actions on changes in your data.
       url: real-time-intelligence/index.yml
     # Card
     - title: Fabric Data Engineering
