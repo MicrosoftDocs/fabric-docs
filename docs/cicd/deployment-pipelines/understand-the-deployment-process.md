@@ -449,7 +449,7 @@ The following table lists required permissions for popular deployment pipeline a
 |View deployment history     |Pipeline admin         |
 
 > [!NOTE]
-> To deploy content in the GCC environment, you need to be a workspace admin in both the source and target workspaces. Deploying as a contributor isn't supported yet.
+> To deploy content in the GCC environment, you need to be at least a member in both the source and target workspace. Deploying as a contributor isn't supported yet.
 
 ## Considerations and limitations
 
