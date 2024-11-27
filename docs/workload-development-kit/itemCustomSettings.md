@@ -54,7 +54,6 @@ workloadClient.action.onAction(async function ({ action, data }) {
                             'custom item'
                         ],
                     },
-                    workloadIframeHeight: '1000px'
                 },
                 {
                     name: 'customItemSettings2',
@@ -63,7 +62,6 @@ workloadClient.action.onAction(async function ({ action, data }) {
                         workloadName: sampleWorkloadName,
                         route: 'custom-item-settings2',
                     },
-                    workloadIframeHeight: '1000px'
                 },
             ];
         }
@@ -78,7 +76,6 @@ workloadClient.action.onAction(async function ({ action, data }) {
 - **workloadSettingLocation** (object):
     - **workloadName** (string): The workload name.
     - **route** (object): When a specific setting tab is clicked from artifact settings, a panel iframe will be loaded into the right side content area to load the specific route owned by workload. (in the image above we can see it in - *2*)
-- **workloadIframeHeight** (string): We can set the iframe height. The iframe height should be sent as a string (in pixels).
 - **searchTokenMatchesBySection** (object): An optional object that receives a section name as a key and an array of keywords as the value. The key will be triggered whenever any of the array words are searched.
 Example:
 :::image type="content" source="./media/custom-item-settings/example-search.png" alt-text="Screenshot of a item's custom settings." lightbox="./media/custom-item-settings/example-search.png":::
@@ -120,6 +117,7 @@ export function App({ history, workloadClient }: AppProps) {
 
 :::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of a about custom settings." lightbox="./media/custom-item-settings/example-about.png":::
 
+If the workload team wants to display a hybrid view (default about settings and the workload custom iframe) on the item settings about page.
 In order to add custom section to the about section as seen in the image, we should add another item custom settings:
 ```typescript
 workloadClient.action.onAction(async function ({ action, data }) {
@@ -146,3 +144,5 @@ workloadClient.action.onAction(async function ({ action, data }) {
 - **name** : must be defined as *about*.
 - **displayName** : must be defined as *About*.
 - **route** : will be needed to add for the about custom component as well that will be loaded to the iframe as seen in the image.
+- **workloadIframeHeight** (string): We can set the iframe height. The iframe height should be sent as a string (in pixels).
+If the height is not sent, the iframe height will be set to a default value '102vh'.
