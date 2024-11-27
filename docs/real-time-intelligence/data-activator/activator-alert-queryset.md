@@ -6,7 +6,7 @@ ms.author: yaschust
 ms.reviewer: guregini
 ms.topic: how-to
 ms.date: 11/08/2024
-ms.search.form: Activator KQL Queryset Onramp
+ms.search.form: Data Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
 # Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset in Real-Time Intelligence
