@@ -127,9 +127,6 @@ Once mirroring is configured, you're directed to the **Mirroring Status** page. 
 
 For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
 
-> [!IMPORTANT]
-> If there are no updates in the source tables, the replicator engine will start to back off with an exponentially increasing duration, up to an hour. The replicator engine will automatically resume regular polling after updated data is detected.
-
 ## Related content
 
 - [Mirroring Azure SQL Database](azure-sql-database.md)
