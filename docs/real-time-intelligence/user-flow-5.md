@@ -10,7 +10,7 @@ ms.custom:
   - ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
-ms.search.form: Activator Real Time Hub Onramp
+ms.search.form: Data Activator Real Time Hub Onramp
 #customer intent: I want to learn how to set alerts based on Fabric events from the Real-Time hub.
 ---
 
