@@ -13,6 +13,12 @@ items:
     href: ../get-started/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Decision guide - choose a data store
     href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Introduction to Copilot for Data Science and Data Engineering for Fabric Data Science
+    href: docs/data-engineering/copilot-notebooks-overview.md
+  - name: Overview of chat-magics in Microsoft Fabric notebooks (preview)
+    href: docs/data-engineering/copilot-notebooks-chat-magics.md
+  - name: Use the Copilot for Data Science and Data Engineering chat panel (preview)
+    href: docs/data-engineering/copilot-notebooks-chat-pane.md
   - name: Decision guide - Warehouse and Lakehouse
     href: ../get-started/decision-guide-lakehouse-warehouse.md
   - name: Upload CSV to delta tables
