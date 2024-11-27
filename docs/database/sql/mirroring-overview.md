@@ -56,7 +56,6 @@ The replicator engine involves the following behaviors:
 - Fabric SQL database is a serverless product and will automatically pause if there is no user activity for a while. Mirroring activity will not prevent database from pausing. If the database goes to pause, any mirroring activity that is still pending, will also be paused. Mirroring resumes where it stopped once the database is resumed.
 - Active transactions continue to hold the transaction log truncation until the transaction commits. Long-running transactions might result in the transaction log capacity utilization more than usual.
 - Each user workload varies. Table updates/delete operations can lead to increased log generation.
-- The replicator engine monitors each table for changes independently. If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there is a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
 - For more information, see [Limitations and behaviors for Fabric SQL database mirroring (preview)](mirroring-limitations.md).
 
 ## Authentication and authorization to SQL database in Fabric
