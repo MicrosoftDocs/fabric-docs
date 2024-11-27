@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: product-reflex
-ms.date: 11/08/2024
+ms.date: 11/28/2024
 #customer intent: As a Fabric user I want to learn about Activator limitations.
 ---
 
@@ -37,6 +37,8 @@ To ensure no gaps in functionality, create new activator items and recreate your
 ### How to check if your item needs to be migrated
 
 If the item shows Data and Design mode tabs in the lower left corner of the item, it needs to be migrated. If the Data and Design tabs are visible, recreate your rules in a new item to get all the newest capabilities.
+
+:::image type="content" source="media/activator-limitations/activator-migration.png" alt-text="Screenshot showing the screen with Data and Design. ":::
 
 ## Supported Power BI visuals
 
