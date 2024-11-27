@@ -16,6 +16,9 @@ You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fab
 * **Read**/**Update** the variable library item *schema*
 * **Read**/**Update** the variable library item *active value-set*
 
+If you're using the APIs as part of your lifecycle management, 
+Permissions for item reference are checked during Git Update and deployment pipeline deployment.
+
 ## Read the variable library item information
 
 * Use the ‘Get item definition’ API call, to view the item’s schema:
@@ -43,6 +46,50 @@ For example:
 ```
 
 The variable library item CRUD APIs support service principle.
+
+## Variable library schema
+
+The variable library item schema is a JSON object that contains two parts:
+
+* **Variables** file – The variables contained in the item, and their properties.
+  * name
+  * type
+  * defaultValue
+  * note (if any)
+* **Value-sets** – A set of values for the variables. A value set consists of:
+  * name
+  * value
+
+```json
+"$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/1.0.0/schema.json",
+{
+  "variables": [
+    {
+      "name": "var1",
+      "type": "string",
+      "defaultValue": "value1",
+      "note": "This is a note"
+    },
+    {
+      "name": "var2",
+      "type": "int",
+      "defaultValue": 1
+    }
+  ],
+}
+```
+
+```json
+"$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/1.0.0/schema.json",
+"valueSetName: "NewVS",
+"overrides": [
+  {
+    "name": "var1",
+    "value": "value1"
+  }
+ ]
+}
+```
 
 ## Considerations and limitations
 
