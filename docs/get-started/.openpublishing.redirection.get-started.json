@@ -203,17 +203,17 @@
         {
             "source_path_from_root": "/docs/get-started/copilot-notebooks-chat-magics.md",
             "redirect_url": "docs/data-warehouse/copilot-notebooks-chat-magics",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/get-started/copilot-notebooks-chat-pane.md",
             "redirect_url": "docs/data-warehouse/copilot-notebooks-chat-pane",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/get-started/copilot-notebooks-overview.md",
             "redirect_url": "docs/data-warehouse/copilot-notebooks-overview",
-            "redirect_document_id": true
+            "redirect_document_id": false
         }
     ]
 }
