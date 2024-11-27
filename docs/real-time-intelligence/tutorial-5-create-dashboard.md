@@ -107,7 +107,9 @@ Since you've selected **Open dashboard after creation**, the new Real-Time dashb
 1. Select **Apply changes**.
     You can resize the tiles and zoom in on the map as desired.
 
-:::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of final dashboard with three tiles." lightbox="media/tutorial/final-dashboard.png":::
+    :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of final dashboard with three tiles." lightbox="media/tutorial/final-dashboard.png":::
+
+1. Save the dashboard by selecting the **Save** icon on the top left corner of the dashboard.
 
 ## Related content
 

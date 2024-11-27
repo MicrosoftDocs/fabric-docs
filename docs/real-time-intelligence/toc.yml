@@ -14,7 +14,7 @@ items:
     items:
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
-    - name: 1- Create resources
+    - name: 1- Set up Eventhouse
       href: tutorial-1-resources.md
     - name: 2- Get data in the Real-Time hub
       href: tutorial-2-get-real-time-events.md
@@ -22,7 +22,7 @@ items:
       href: tutorial-3-transform-kql-database.md
     - name: 4- Query data in your KQL queryset
       href: tutorial-4-query-data.md
-    - name: 5 Create a Real-Time dashboard
+    - name: 5- Create a Real-Time dashboard
       href: tutorial-5-create-dashboard.md
     - name: 6- Create a Power BI report
       href: tutorial-6-power-bi-report.md
