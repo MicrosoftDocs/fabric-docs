@@ -37,7 +37,9 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 
 \*\* The **uniqueidentifier** data type is a T-SQL data type without a matching data type in Delta Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading **uniqueidentifier** columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading **uniqueidentifier** values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a **uniqueidentifier** column don't work as expected.
 
-\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview.
+\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview for the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+> [!NOTE]
+> varchar(max) is not supported in the [!INCLUDE [fabric-dw](includes/fabric-se.md)]
 
 For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric).
 
