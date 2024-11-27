@@ -4,7 +4,7 @@ description: A known issue is posted where a notebook fails inside Visual Studio
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/12/2024
+ms.date: 11/27/2024
 ms.custom: known-issue-926
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-926
 
 You can install the Synapse extension inside Visual Studio Code for the Web (also known as vscode.dev). Due to a recent change from the Jupyter extension, you can't open or run a Fabric notebook inside Visual Studio Code for the Web.
 
-**Status:** Open
+**Status:** Fixed: November 27, 2024
 
 **Product Experience:** Data Engineering
 

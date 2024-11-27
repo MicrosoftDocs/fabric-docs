@@ -21,7 +21,7 @@ This article explains basic Git concepts and the process of integrating Git with
 ## Permissions
 
 - In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview). This restriction doesn't apply to GitHub.
+- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations). This restriction doesn't apply to GitHub.
 - The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
 
 ### Required Git permissions for popular actions
