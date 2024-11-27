@@ -9,7 +9,7 @@ ms.date: 11/27/2024
 ms.search.form: Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
-# Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset in Real-Time Intelligence
+# Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset 
 
 This article explains how to create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset. For more information, see [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-introduction.md).
 You can use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] on a KQL Queryset to trigger notifications in two modes: 
@@ -47,7 +47,8 @@ Choose the tab that corresponds to your desired workflow.
 > [!IMPORTANT]
 > [Timechart](/kusto/query/visualization-timechart?view=microsoft-fabric&preserve-view=true) visualizations are not supported in this scenario. They are supported in [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a Real-Time Dashboard](activator-get-data-real-time-dashboard.md).
 
-1. Browse to your KQL Queryset.
+1. Open the workspace that contains your KQL Queryset.
+1. Browse to your KQL Queryset and select it to open.
 1. Run a query that returns a visualization.
 1. Once the query returns results, select **Set Alert** on the top ribbon.
 
@@ -81,7 +82,8 @@ Choose the tab that corresponds to your desired workflow.
 
 ## Set alert on a KQL Queryset
 
-1. Browse to your KQL Queryset.
+1. Open the workspace that contains your KQL Queryset.
+1. Browse to your KQL Queryset and select it to open.
 1. Run a query. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] checks the results of this query according to the time frequency set in a later step, and sends an alert for each record returned in the result set. For example, if a scheduled query returns five records, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] sends five alerts.
 1. Once the query completes running, select **Set Alert** on the top ribbon.
 
