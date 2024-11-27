@@ -37,7 +37,7 @@ The following properties are supported for SQL database under the **Source** tab
 
 The following properties are **required**:
 
-- **Connection**: Select an existing **SQL database** from **OneLake**, for more information about how to select it, see this [article](connector-sql-database.md). If no connection exists, then create a new SQL database connection.
+- **Connection**: Select an existing **SQL database** from **OneLake**. For more information about how to select it, see this [article](connector-sql-database.md). If no connection exists, then create a new SQL database connection.
 
 - **Use query**: You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting:
 
@@ -82,7 +82,7 @@ The following properties are supported for SQL database under the **Destination*
 
 The following properties are **required**:
 
-- **Connection**: Select an existing **SQL database** from **OneLake**, for more information about how to select it, see this [article](connector-sql-database.md). If no connection exists, then create a new SQL database connection.
+- **Connection**: Select an existing **SQL database** from **OneLake**. For more information about how to select it, see this [article](connector-sql-database.md). If no connection exists, then create a new SQL database connection.
 
 - **Table option**: Select from **Use existing** or **Auto create table**.
 
