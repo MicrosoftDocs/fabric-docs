@@ -13,6 +13,7 @@ ms.date: 11/18/2024
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
 - Workspaces with template apps installed can't be connected to Git.
+- Submodules aren't supported.
 - Sovereign clouds aren't supported.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
