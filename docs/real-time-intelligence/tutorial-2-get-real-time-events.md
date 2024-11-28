@@ -30,9 +30,6 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 1. On the **Data sources** page, select **Sample scenarios** category, and then select **Connect** on the **Bicycle rentals** tile.
 1. On the **Connect** page, for **Source name**, enter **TutorialSource**. 
 1. In the **Stream details** section, select the pencil button, and change the name of the eventstream to **TutorialEventstream**, and then select **Next**. 
-
-    :::image type="content" source="media/tutorial/connect-source.png" alt-text="Screenshot of Connect data source wizard with a source name." lightbox="media/tutorial/connect-source.png":::    
-
 1. On the **Review + connect** page, review settings, and select **Connect**.
 
 ## Transform events - add a timestamp
@@ -62,20 +59,13 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
     1. In **Name**, enter **Timestamp**.
     1. Select **Add**.
     1. Confirm that **Timestamp** is added to the field list, and select **Save**.
-
-        :::image type="content" source="media/tutorial/save-manage-fields-settings.png" alt-text="Screenshot showing the Manage fields window with Save button highlighted.":::    
-
         The **TutorialTransform** tile now displays but with an error, because the destination isn't configured yet. 
 
 ### Create a destination for the timestamp transformation
 
 1. Hover over the right edge of the **TutorialTransform** tile and select the green plus icon.
 1. Select **Destinations** > **Eventhouse**.
-
-    :::image type="content" source="media/tutorial/event-house-selected.png" alt-text="Screenshot showing the Eventhouse destination selected.":::
-
     A new tile is created entitled *Eventhouse*.
-
 1. Select the pencil icon on the *Eventhouse* tile.
 
     :::image type="content" source="media/tutorial/pencil-on-event-house.png" alt-text="Screenshot showing the pencil icon selected on Eventhouse tile." lightbox="media/tutorial/pencil-on-event-house.png":::    
