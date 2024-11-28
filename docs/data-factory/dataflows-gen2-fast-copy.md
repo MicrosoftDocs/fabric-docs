@@ -96,7 +96,7 @@ To implement this, Fast Copy indicators can guide you to split query into two pa
 |**This step is not supported by fast copy**|:::image type="icon" source="media/dataflows-gen2-fast-copy/red-indicator.png" alt-text="Screenshot showing red indicator.":::|The Fast Copy indicator shows that this step doesn't support Fast Copy.|
 |**One or more steps in your query are not supported by fast query**|:::image type="icon" source="media/dataflows-gen2-fast-copy/yellow-indicator.png" alt-text="Screenshot showing yellow indicator.":::|The Fast Copy indicator shows that some steps in this query support Fast Copy, while others don't. To optimize, split the query: yellow steps (potentially supported by Fast Copy) and red steps (not supported).|
 
-### Step by step guidance
+### Step-by-step guidance
 
 After completing your data transformation logic in Dataflow Gen2, the Fast Copy indicator evaluates each step to determine how many steps can leverage Fast Copy for better performance.
 
