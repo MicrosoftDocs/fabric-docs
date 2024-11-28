@@ -125,8 +125,6 @@ Configurations options for item settings.
     - **refreshType** (string): Specifies the item’s refresh capability. Possible values include `"None"`, `"Refresh"`, and `"Run"`.
   - **recentRun** (object): Configuration for recent job runs.
     - **useRecentRunsComponent** (boolean): Whether to use fabric shared recent runs component.
-  - **getItemSettings** (object): Configuration for custom item settings.
-    - **action** (string): name of the corresponding action that will return the list of custom item settings.
 
 ### Item Task Flow Categories
 
