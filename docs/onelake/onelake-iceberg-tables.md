@@ -326,6 +326,25 @@ Keep in mind the following temporary limitations when you use this feature:
 
     If you have a OneLake shortcut to an Iceberg table in another lakehouse, be sure that the other lakehouse is associated with a capacity in the same region. 
 
+ * **Tenant switch allowing external access**
+    
+    We have a temporary limitation that requires the ["Users can access data stored in OneLake with apps external to Fabric"](../admin/tenant-settings-index.md#onelake-settings) tenant setting to be enabled.
+
+    If this tenant setting is disabled, virtualization of Iceberg tables to Delta Lake format will not succeed.
+
+    **Workaround:**
+
+    Have your Fabric tenant administrator enable the ["Users can access data stored in OneLake with apps external to Fabric"](../admin/tenant-settings-index.md#onelake-settings) tenant setting, if possible.
+
+ * **Iceberg tables must be copy-on-write (not merge-on-read)**
+    
+    Currently, Iceberg tables must be *copy-on-write*. This means that they cannot contain delete files or be *merge-on-read*.
+    
+    Snowflake currently produces *copy-on-write* Iceberg tables, but other Iceberg writers may follow a different approach.
+
+    We are working on support for *merge-on-read* Iceberg tables.
+
+
 ## Related content
 
 - Learn more about [Fabric and OneLake security](./security/fabric-onelake-security.md).
