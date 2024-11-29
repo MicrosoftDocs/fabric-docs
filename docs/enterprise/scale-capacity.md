@@ -20,7 +20,10 @@ To scale your capacity, you need:
 
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [capacity admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles)
+* The following Azure role-based access control (Azure RBAC) permissions:
+
+Microsoft.Fabric/capacities/read
+Microsoft.Fabric/capacities/write
 
 ## Scale a capacity
 
