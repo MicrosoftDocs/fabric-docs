@@ -23,11 +23,11 @@ If your capacity is being [throttled](throttling.md), pausing it stops the throt
 
 ## Prerequisites
 
-To pause your capacity, you need:
+To pause or resume your capacity, you need:
 
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) with the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
+* The following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
     * Microsoft.Fabric/capacities/read
     * Microsoft.Fabric/capacities/write
     * microsoft.fabric/capacities/suspend/action
