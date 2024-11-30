@@ -61,8 +61,14 @@ items:
     href: ../cicd/git-integration/git-get-started.md
   - name: Workspace identity
     href: ../security/workspace-identity.md
-- name: Discover data in the OneLake data hub
-  href: onelake-data-hub.md
+  - name: Workspace monitoring
+    items:
+      - name: What is workspace monitoring?
+        href: workspace-monitoring-overview.md
+      - name: Enable monitoring in your workspace
+        href: enable-workspace-monitoring.md      
+- name: Find Fabric items with the OneLake catalog
+  href: ../governance/onelake-catalog.md
 - name: Copilot in Fabric
   items:
   - name: Copilot in Fabric overview
@@ -75,6 +81,8 @@ items:
     items:
     - name: Privacy, security, and responsible use
       href: copilot-privacy-security.md
+    - name: Responsible use in SQL database
+      href: copilot-database-privacy-security.md
     - name: Responsible use in Data Factory
       href: copilot-data-factory-privacy-security.md
     - name: Responsible use in Data Science
@@ -171,6 +179,26 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Power BI Copilot can excessively retry in rare error scenarios
+      href: known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md
+    - name: Metrics app timepoint details missing for new P2 capacities
+      href: known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md
+    - name: Intermittent failures on deployment of Sustainability solution
+      href: known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
+    - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work
+      href: known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md
+    - name: New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported
+      href: known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md
+    - name: Line chart value-axis zoom sliders don't work with markers enabled
+      href: known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md
+    - name: External data sharing doesn't work in a different region capacity lakehouse
+      href: known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
+    - name: PowerPoint add-in and Refresh Report API refresh date appears incorrect
+      href: known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md
+    - name: Notebook failure inside Visual Studio Code for the Web
+      href: known-issues/known-issue-926-notebook-failure-visual-studio-code-web.md
+    - name: The default environment's resources folder doesn't work in notebooks
+      href: known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
     - name: Tenant migrations paused through January 2025
       href: known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
     - name: Embedded paginated report renders correctly but shows error message
@@ -299,7 +327,7 @@ items:
       href: known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md
     - name: Spark operations fail
       href: known-issues/known-issue-790-spark-operations-fail.md
-    - name: Data Activator alert created from visual with no dimensions doesn't work
+    - name: Activator alert created from visual with no dimensions doesn't work
       href: known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md
     - name: Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse
       href: known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md

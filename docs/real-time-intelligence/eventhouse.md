@@ -5,7 +5,9 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: concept-article
-ms.date: 09/16/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview

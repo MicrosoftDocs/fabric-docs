@@ -171,7 +171,7 @@ Use this method to add a new Power BI visual from a *.pbiviz* file.
 
 1. Select **Add visual** > **From a file**.
 
-    ![Screenshot showing the organizational visuals menu in the Power BI admin settings. The add visual option is expanded, and the from a file option is selected.](media/organizational-visuals/add-from-file.png)
+    :::image type="content" border="true" source="media/organizational-visuals/add-from-file.png" alt-text="Screenshot showing the organizational visuals menu in the Power BI admin settings. The add visual option is expanded, and the from a file option is selected.":::
 
 2. Fill in the following fields:
 

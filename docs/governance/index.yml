@@ -6,13 +6,14 @@ summary: Govern, manage, and protect all your data in Fabric.
 metadata:
   title: Microsoft Fabric governance
   description: A landing page for Microsoft Fabric governance documentation
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: governance
+  ms.custom:
+    - ignite-2024
   ms.topic: landing-page # Required
   author: paulinbar
   ms.author: painbar
   ms.date: 02/11/2024
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -97,5 +98,5 @@ landingContent:
       - linkListType: overview
         links:            
           - text: Automate 
-            url: ../data-activator/data-activator-introduction.md 
+            url: ../real-time-intelligence/data-activator/activator-introduction.md 
     

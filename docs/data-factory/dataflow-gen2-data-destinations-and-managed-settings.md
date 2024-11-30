@@ -5,7 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 09/17/2024
+ms.date: 11/20/2024
 ---
 
 # Dataflow Gen2 data destinations and managed settings
@@ -19,6 +19,7 @@ The following list contains the supported data destinations.
 * Fabric Lakehouse
 * Fabric Warehouse
 * Fabric KQL database
+* Fabric SQL database
 
 ## Entry points
 
@@ -110,20 +111,20 @@ Schema options on publish only apply when the update method is replace. When you
 
 ## Supported data source types per destination
 
-| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output |
-| --- | --- | --- | --- | --- | --- |
-| Action                           | No  | No  | No  | No  | No  |
-| Any                              | No  | No  | No  | No  | No  |
-| Binary                           | No  | No  | No  | No  | No  |
-| Currency                         | Yes | Yes | Yes | Yes | No  |
-| DateTimeZone                     | Yes | Yes | Yes | No  | No  |
-| Duration                         | No  | No  | Yes | No  | No  |
-| Function                         | No  | No  | No  | No  | No  |
-| None                             | No  | No  | No  | No  | No  |
-| Null                             | No  | No  | No  | No  | No  |
-| Time                             | Yes | Yes | No  | No | No |
-| Type                             | No  | No  | No  | No  | No  |
-| Structured (List, Record, Table) | No  | No  | No  | No  | No  |
+| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output | Fabric SQL Database (SQL) Output |
+| --- | --- | --- | --- | --- | --- |--- |
+| Action                           | No  | No  | No  | No  | No  | No  |
+| Any                              | No  | No  | No  | No  | No  | No  |
+| Binary                           | No  | No  | No  | No  | No  | No  |
+| Currency                         | Yes | Yes | Yes | Yes | No  | Yes |
+| DateTimeZone                     | Yes | Yes | Yes | No  | No  | Yes |
+| Duration                         | No  | No  | Yes | No  | No  | No  |
+| Function                         | No  | No  | No  | No  | No  | No  |
+| None                             | No  | No  | No  | No  | No  | No  |
+| Null                             | No  | No  | No  | No  | No  | No  |
+| Time                             | Yes | Yes | No  | No | No   | Yes |
+| Type                             | No  | No  | No  | No  | No  | No  |
+| Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
 
 ## Advanced topics
 

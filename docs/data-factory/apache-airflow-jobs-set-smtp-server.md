@@ -13,7 +13,7 @@ ms.date: 03/25/2024
 # Set up SMTP Server in Apache Airflow Job
 
 > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 Apache Airflow includes a powerful feature that allows you to send email notifications and alerts when tasks fail, succeed, or retry. This capability is essential for monitoring your workflows and troubleshooting any issues that may arise.
 

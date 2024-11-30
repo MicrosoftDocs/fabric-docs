@@ -17,7 +17,7 @@ items:
   items:
   - name: Enable Fabric for your organization
     href: fabric-switch.md
-  - name: Enable Data Activator for your organization
+  - name: Enable Activator for your organization
     href: data-activator-switch.md    
   - name: Region availability
     href: region-availability.md

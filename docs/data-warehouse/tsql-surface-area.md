@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Microsoft Fabric
@@ -17,8 +18,10 @@ ms.search.form: T-SQL Surface area # This article's title should not change. If 
 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
+These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL Database in Fabric, see [Limitations in SQL Database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
+
 > [!NOTE]
-> For more information on upcoming feature development for Fabric Synapse Data Warehouse, see the [Synapse Data Warehouse in Microsoft Fabric release plan](/fabric/release-plan/data-warehouse).
+> For more information on upcoming feature development for Fabric Data Warehouse, see the [Fabric Data Warehouse release plan](/fabric/release-plan/data-warehouse).
 
 ## T-SQL surface area
 

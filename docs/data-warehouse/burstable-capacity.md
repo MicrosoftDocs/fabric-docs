@@ -8,10 +8,11 @@ ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 
-# Burstable capacity in Fabric data warehousing
+# Burstable capacity in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -21,7 +22,7 @@ A Fabric capacity is a distinct pool of resources that's size (or SKU) determine
 
 Burstable capacity has a direct correlation to the SKU that has been assigned to the Fabric capacity of the workspace. It also is a function of the workload. A non-demanding workload might never use burstable capacity units. The workload could achieve optimal performance within the baseline capacity that has been purchased. 
 
-To determine if your workload is using burstable capacity, the following formula can be used to calculate the scale factor for your workload: `Capacity Units (CU) / duration / Baseline CU = Scale factor` 
+To determine if your workload is using burstable capacity, the following formula can be used to calculate the scale factor for your workload: `Capacity Units (CU) / duration / Baseline CU = Scale factor`
 
 As an illustration of this formula, if your capacity is an F8, and your workload takes 100 seconds to complete, and it uses 1500 CU, the scale factor would be calculated as follows: `1500 / 100 / 8 = 1.875`
 
