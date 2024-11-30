@@ -45,17 +45,29 @@ The pages of the insights report provide visuals that help lead you to actionabl
 
 # [Sensitivity labels](#tab/sensitivity-labels)
 
+* Improve label coverage: Set the label coverage goal to flag where label coverage is not met. Filter by Domains, Workspaces, Item types or Creators. Select what you wish to explore and, in the table, below you can monitor related items. Use the button to filter on unlabeled items only.
+
+* Monitor your classified data: Use the label filter to select the sensitivity label you wish to explore, then filter by Domains, Workspaces, Item types, or Creator to find all your classified data.
+
 :::image type="content" source="./media/use-microsoft-purview-hub/sensitivity-labels.gif" alt-text="Screenshot showing the sensitivity label page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/sensitivity-labels.gif":::
 
 # [Endorsement](#tab/endorsement)
+
+* Promote items with high visibility: Find items candidates for promotion base on view access. Set view access threshold to flag items with high visibility and no endorsement.
+
+* Monitor your endorsed items: Filter the items by endorsement: Promoted, Certified and Master Data
 
 :::image type="content" source="./media/use-microsoft-purview-hub/endorsement.gif" alt-text="Screenshot showing the endorsement page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/endorsement.gif":::
 
 # [Domains](#tab/domains)
 
+Find workspace that are not associated to any domain with the hierarchy tree below: Select a Domain\ Subdomain\ Workspace to drill through with the items explorer page.
+
 :::image type="content" source="./media/use-microsoft-purview-hub/domains.gif" alt-text="Screenshot showing the domains page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/domains.gif":::
 
 # [Items explorer](#tab/items-explorer)
+
+Use the items explorer's filters to find exactly what items you are looking for in your tenant. You can find what item are located in personal workspaces, which items were created by guest users and much more.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/items-explorer.gif" alt-text="Screenshot showing the items-explorer page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/items-explorer.gif":::
 
