@@ -1,5 +1,5 @@
 ---
-title: Add custom item settings
+title: Add Customized Item Settings
 description: Learn about how you can add your own item settings tabs.
 author: matanSchaumberg
 ms.author: mschaumberg
@@ -12,7 +12,7 @@ Item settings are pieces of information associated with a specific item, includi
 
 ## Item Manifest
 
-The first thing you need to support is having *getItemSettings* defined as an object under *itemSettings* in the item manifest:
+In order to add custom item settings, you first need to include getItemSettings under itemSettings in the frontend item manifest:
 ```json
     "itemSettings": {
       "getItemSettings": {
@@ -36,7 +36,7 @@ The first thing you need to support is having *getItemSettings* defined as an ob
 
 ### Handling the action
 
-In this example, we list two custom tabs:
+In this example, we list two custom tabs in *index.worker.ts* file:
 ```typescript
 workloadClient.action.onAction(async function ({ action, data }) {
     switch (action) {
@@ -73,14 +73,14 @@ workloadClient.action.onAction(async function ({ action, data }) {
 ```
 *We're returning an array of defined custom items. Each one includes:*
 - **name** (string): A unique identifier for the setting.
-- **displayName** (string): The displayed string, which should be localized (we can see the displayed name of the first item - *1*).
+- **displayName** (string): The displayed string, which should be [localized](localization.md) (we can see the displayed name of the first item - *1*).
 - **workloadSettingLocation** (object):
     - **workloadName** (string): The workload name.
-    - **route** (object): When a specific setting tab is clicked from artifact settings, a panel iframe is loaded into the right-side content area to load the specific route owned by the workload (we can see it in - *2*).
+    - **route** (object): When a specific setting tab is clicked from item settings, a panel iframe is loaded into the right-side content area to load the specific route owned by the workload (we can see it in - *2*).
 - **searchTokenMatchesBySection** (object): An optional object that receives a section name as a key and an array of keywords as the value. The key is triggered whenever any of the array words are searched.
 Example:
 :::image type="content" source="./media/custom-item-settings/example-search.png" alt-text="Screenshot of a search tokens example." lightbox="./media/custom-item-settings/example-search.png":::
-In this example, we started to type one of the keyword values (1), and it triggered the section name as a result option (2). Clicking on this option navigates us to the corresponding custom tab (3).
+In this example, we started to type one of the keyword values (1), and it triggered the section name as a result option (2). Clicking on this option navigates us to the corresponding custom tab (3). This field is aligned with and can be used for localization.
 ## Iframe route definition
 
 In order to load an iframe, a component should be defined and then added to the app route:
@@ -90,7 +90,7 @@ In order to load an iframe, a component should be defined and then added to the 
 ```typescript
 export function CustomItemSettings2() {
     return (
-      <div >
+      <div>
         You can have additional tabs for item settings.
       </div>
     );
@@ -114,12 +114,11 @@ export function App({ history, workloadClient }: AppProps) {
     </Router>;
 }
 ```
-## Custom about iframe
+## Customize "About" page
 
 :::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of a about custom settings." lightbox="./media/custom-item-settings/example-about.png":::
 
-If the workload team wants to display a hybrid view (default about settings and the workload custom iframe) on the item settings' About page, they should add another item custom setting.
-In order to add a custom section to the About section, as seen in the image, we should add another item custom setting:
+"Item "About" page supports adding workload specific content using hybrid view (default about settings and the workload custom iframe). To achieve that, you should add another item custom setting.
 ```typescript
 workloadClient.action.onAction(async function ({ action, data }) {
     switch (action) {
