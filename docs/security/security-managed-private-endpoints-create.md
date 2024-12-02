@@ -5,6 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
+  - ignite-2024
 ms.date: 09/05/2024
 ---
 
@@ -15,6 +16,10 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 * The user can also monitor the status and the approval process of the managed private endpoints from the **Network security** section of the workspace settings.
 
 * The user can access the data sources using the private endpoint name from the Fabric Spark workloads.
+
+## Prerequisites
+
+A Microsoft.Network resource provider needs to be registered in the Azure subscription 
 
 ## Create a managed private endpoint
 

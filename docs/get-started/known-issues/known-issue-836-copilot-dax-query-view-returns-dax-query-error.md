@@ -4,7 +4,7 @@ description: A known issue is posted where Copilot in DAX query view returns DAX
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/13/2024
+ms.date: 11/08/2024
 ms.custom: known-issue-836
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-836
 
 You can live connect to a semantic model in Power BI Desktop. When you use Copilot in DAX query view to write a DAX query, the returned DAX query might have a syntax error.
 
-**Status:** Open
+**Status:** Fixed: November 8, 2024
 
 **Product Experience:** Power BI
 

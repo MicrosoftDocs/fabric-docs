@@ -11,11 +11,12 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
+  - ignite-2024
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query the SQL analytics endpoint or Warehouse in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
 
 To get started with this tutorial, check the following prerequisites:
 

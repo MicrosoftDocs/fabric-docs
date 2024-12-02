@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.date: 03/15/2024
-ms.search.form: Event Streams Overview
+ms.search.form: Eventstreams Overview
 ---
 
 # Manage an eventstream in Microsoft Fabric

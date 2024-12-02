@@ -29,8 +29,6 @@ After you complete the steps here, Data Factory will scan all the files in the s
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
 
-   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
-
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
 1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.

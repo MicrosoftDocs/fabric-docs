@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023-fabric
   - build-2024
   - copilot-learning-hub
+  - ignite-2024
 ms.topic: conceptual
 ms.date: 08/19/2024
 no-loc: [Copilot]
@@ -34,7 +35,7 @@ Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored
 
 ## Copilot for Data Factory
 
-Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks.
+Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md)
 
 ## Copilot for Data Warehouse
 
@@ -51,6 +52,10 @@ For more information on the features and how to use Copilot for Power BI, see [O
 Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
 
 For more information, see [Copilot for Real-Time Intelligence overview](copilot-real-time-analytics.md).
+
+## Copilot for SQL database
+
+Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline your OLTP database tasks. Key features of Copilot for SQL database include Natural Language to SQL, code completion, quick actions, and document-based Q&A. For more information, see [Copilot for SQL database](../database/sql/copilot.md).
 
 ## Create your own AI solution accelerators
 

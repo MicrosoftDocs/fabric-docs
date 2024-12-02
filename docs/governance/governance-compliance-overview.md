@@ -5,6 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: overview
 ms.custom:
+  - ignite-2024
 ms.date: 09/26/2024
 ---
 
@@ -98,11 +99,11 @@ For more information, see [Information Protection in Microsoft Fabric](./informa
 
 ### Purview Data Loss Prevention
 
-Purview DLP policies for Fabric automatically detect sensitive information as it is uploaded into [DLP-supported item types](./data-loss-prevention-overview.md#supported-item-types) in your Fabric tenant, and help you take risk remediation actions so that your organization stays compliant with governmental and industry regulations.
+Purview DLP policies for Fabric and Power BI automatically detect sensitive information as it is uploaded into [DLP-supported item types](/purview/dlp-powerbi-get-started#supported-item-types) in your Fabric tenant, and help you take risk remediation actions so that your organization stays compliant with governmental and industry regulations.
 
 Compliance and security administrators receive audit logs for every DLP detection. The audit logs give them further visibility into business-critical data and its location within the tenant. They can set up alerts that will be automatically generated whenever sensitive information is detected in a DLP-supported item. They can also create customized messages to users to help guide them about how to deal with sensitive data. For example, admins could configure a message that would be sent to the Fabric data owner whenever proprietary information is detected in their data, explaining that this information is internal and shouldn't be shared externally.
 
-For more information, see [Data loss prevention policies in Microsoft Fabric](./data-loss-prevention-overview.md).
+For more information, see [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started).
 
 ### Securing items in a workspace
 

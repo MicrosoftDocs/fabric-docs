@@ -5,48 +5,30 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 05/21/2024
-ms.search.form: Event Streams Overview
+ms.custom:
+  - ignite-2024
+ms.date: 11/18/2024
+ms.search.form: Eventstreams Overview
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Create an eventstream in Microsoft Fabric
-This article describes how to create a Fabric eventstream. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+This article describes how to create a Fabric eventstream. The enhanced capabilities are enabled by default now, so use the content in the **Enhanced Capabilities** tab to create an eventstream.
+
+If you have eventstreams that were created using standard capabilities, those eventstreams will continue to work. You can still edit and publish them as usual. We recommend that you create a new eventstream to replace standard eventstreams so that you can take advantage of additional capabilities and benefits of enhanced eventstreams.
 
 ::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites
 Before you start, you must complete the following prerequisite:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions.
+- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Create an eventstream
 
-You can create an eventstream on the **Workspace** page, the **Real-Time Intelligence experience Homepage**, or the **Create hub** page. Here are the steps:
-
-1. Change your Fabric experience to **Real-Time Intelligence**.
-1. Follow one of these steps to start creating an eventstreams:
-
-   - On the **Real-Time Intelligence** homepage, select the **Eventstream** tile:
-
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream tile on the homepage.":::
-
-   - On the **Workspace** page, select **New** and then **Eventstream**:
-
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing where to find the eventstream option in the New menu on the Workspace page." :::
-
-   - On the **Create hub** page, select the **Eventstream** tile:
-
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the Eventstream tile on the Create hub page." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
-1. Enter a **name** for the new eventstream and select **Enhanced Capabilities (preview)** checkbox, and then select **Create**. 
-
-    :::image type="content" source="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" alt-text="Screenshot showing the New eventstream dialog box." lightbox="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" :::
-1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream. 
-
-   :::image type="content" source="./media/create-manage-an-eventstream-enhanced/editor.png" alt-text="Screenshot showing the editor." lightbox="./media/create-manage-an-eventstream-enhanced/editor.png" :::
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
 ## Next step
 - [Add sources to the eventstream](./add-manage-eventstream-sources.md)
@@ -56,7 +38,7 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Intelli
 
 ::: zone pivot="standard-capabilities"
 
-The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
+The eventstreams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
 
 > [!IMPORTANT]
 > Use this tab if you are using Fabric event streams without enhanced capabilities. If you are using enhanced capabilities, use the **Enhanced Capabilities** tab. 
@@ -66,7 +48,7 @@ The event streams feature in Microsoft Fabric gives you a centralized place in t
 
 Before you start, you must complete the following prerequisite:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions.
+- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 ## Create an eventstream
 

@@ -4,6 +4,8 @@ description: Learn how to use a Spark connector to access and work with data fro
 author: ms-arali
 ms.author: arali
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 09/30/2024
 ---
 

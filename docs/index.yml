@@ -11,6 +11,7 @@ metadata:
   ms.custom:
     - ignite-2023
     - build-2024
+    - ignite-2024
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
@@ -76,14 +77,14 @@ productDirectory:
       summary: Store all your organization's data in OneLake, a single, unified, logical data lake.
       url: onelake/index.yml
     # Card
-    - title: Industry Solutions
-      imageSrc: ./media/industry-solutions-icon.svg 
-      summary: Manage data, analyze, and make decisions with Industry-specific solutions such as retail, sustainability, healthcare, and manufacturing.
-      url: /industry/industry-data-solutions-fabric
+    - title: Databases
+      imageSrc: ./media/databases-icon.svg 
+      summary: Create operational SQL databases seamlessly for transactional workloads.
+      url: database/index.yml
     # Card
     - title: Real-Time Intelligence
       imageSrc: ./media/fabric-real-time-intelligence-icon.png
-      summary: Discover insights from your streaming data. Ingest, index, and partition any data source or format, then query the data and create visualizations.
+      summary: Discover insights from your streaming data. Quickly ingest, query, create visualizations, and take actions on changes in your data.
       url: real-time-intelligence/index.yml
     # Card
     - title: Fabric Data Engineering
@@ -416,8 +417,8 @@ conceptualContent:
               url: cicd/partners/partner-integration.md
               text: See more
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
-      summary: Learn about Fabric, access training materials and learning paths, stay updated with the blog, engage in forums, contribute to product ideas, join user groups, and explore the MVP program. # < 160 chars (Optional; Remove if not applicable.)
-      items:
+      summary: Discover Fabric, access training materials, learning paths. Stay updated with the blog, engage in forums, contribute ideas, join user groups, and explore the MVP program. # < 160 chars (Optional; Remove if not applicable.)
+      items: 
         # Card
         - title: Learning
           links:

@@ -7,6 +7,7 @@ author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ms.date: 11/11/2024
 ---
 
@@ -67,7 +68,7 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png" alt-text="Screenshot showing the option to start a new high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png":::
 
-1. Create a new notebook and by navigating to the **Run** menu as mentioned in the above steps, in the drop down menu you will now see the newly created high concurrency session listed.
+1. Create a new notebook and by navigating to the **Run** menu as mentioned in the above steps, in the drop-down menu you will now see the newly created high concurrency session listed.
 
 1. Selecting the existing high concurrency session attaches the second notebook to the session.
 

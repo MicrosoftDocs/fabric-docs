@@ -8,6 +8,7 @@ ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse
@@ -51,7 +52,7 @@ Warehouses can also be added as subject area or domain oriented solutions for sp
 
 If you choose to keep your data in Fabric, it will **always be open** and accessible through APIs, Delta format, and of course T-SQL.
 
-### Query as a service over your delta tables from Lakehouse and other items from OneLake data hub
+### Query as a service over your delta tables from Lakehouse and other items from OneLake
 
 There are use cases where an analyst, data scientist, or data engineer might need to query data within a data lake. In Fabric, this end to end experience is completely SaaSified.
 

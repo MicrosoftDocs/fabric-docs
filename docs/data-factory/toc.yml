@@ -77,6 +77,8 @@
       href: move-dataflow-gen1-to-dataflow-gen2.md
     - name: How to ingest data from ADF to Fabric
       href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
+    - name: Migrate from Dataflow Gen1 to Dataflow Gen2
+      href: dataflow-gen2-migrate-from-dataflow-gen1.md
   - name: Tutorials
     items:
     - name: End-to-end Data Factory tutorial
@@ -759,6 +761,10 @@
         href: data-in-staging-artifacts.md
       - name: Dataflow Gen2 incremental refresh
         href: dataflow-gen2-incremental-refresh.md
+      - name: Dataflow Gen2 with CICD and Git integration
+        href: dataflow-gen2-cicd-and-git-integration.md
+      - name: Migrate from Dataflow Gen1 to Dataflow Gen2
+        href: dataflow-gen2-migrate-from-dataflow-gen1.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
@@ -787,6 +793,8 @@
       href: create-copy-job.md
     - name: How to monitor a Copy job
       href: monitor-copy-job.md
+    - name: CI/CD for Copy job
+      href: cicd-copy-job.md
   - name: Data gateway
     items:
     - name: On-premises data gateways docs
@@ -941,8 +949,6 @@
         items:
         - name: Data Factory connector certification
           href: connector-certification.md
-        - name: Connector certification submission
-          href: certification-submission.md
         - name: Provide connector documentation
           href: providing-user-documentation.md   
   - name: FAQ and Troubleshooting
@@ -959,22 +965,50 @@
       href: pipeline-troubleshoot-guide.md
     - name: Connectors
       items:
+      - name: Connector troubleshooting overview
+        href: connector-troubleshoot-overview.md
+      - name: Azure Blob Storage
+        href: connector-troubleshoot-azure-blob-storage.md
+      - name: Azure Cosmos DB
+        href: connector-troubleshoot-azure-cosmos-db.md
+      - name: DB2
+        href: connector-troubleshoot-db2.md
       - name: Azure Data Explorer
         href: connector-troubleshoot-azure-data-explorer.md
+      - name: Azure Data Lake Storage
+        href: connector-troubleshoot-azure-data-lake-storage.md
       - name: Azure Database for PostgreSQL
         href: connector-troubleshoot-azure-database-for-postgresql.md
+      - name: Azure Files
+        href: connector-troubleshoot-azure-files.md
+      - name: Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server
+        href: connector-troubleshoot-synapse-sql.md
       - name: Azure Table Storage
-        href: connector-troubleshoot-azure-table-storage.md
+        href: connector-troubleshoot-azure-table-storage.md     
+      - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
+        href: connector-troubleshoot-dynamics-dataverse.md
+      - name: MongoDB
+        href: connector-troubleshoot-mongodb.md
+      - name: Oracle
+        href: connector-troubleshoot-oracle.md
+      - name: Snowflake
+        href: connector-troubleshoot-snowflake.md
+      - name: FTP-SFTP-HTTP
+        href: connector-troubleshoot-ftp-sftp-http.md
+      - name: REST
+        href: connector-troubleshoot-rest.md
+      - name: Sharepoint Online list
+        href: connector-troubleshoot-sharepoint-online-list.md        
       - name: Format
         items:
         - name: Delimited text
-          href: connector-troubleshoot-delimited-text.md
+          href: connector-troubleshoot-delimited-text.md          
+        - name: ORC
+          href: connector-troubleshoot-orc-format.md
+        - name: Parquet
+          href: connector-troubleshoot-parquet-format.md          
         - name: XML
           href: connector-troubleshoot-xml.md
-      - name: Rest
-        href: connector-troubleshoot-rest.md
-      - name: Sharepoint Online list
-        href: connector-troubleshoot-sharepoint-online-list.md
     - name: Data Factory limitations
       href: data-factory-limitations.md
     - name: Data Factory known issues

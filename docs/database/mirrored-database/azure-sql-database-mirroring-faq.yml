@@ -7,6 +7,8 @@ metadata:
   ms.reviewer: imotiwala, roblescarlos
   ms.service: fabric
   ms.subservice: data-warehouse
+  ms.custom:
+    - ignite-2024
   ms.topic: faq
   ms.date: 10/11/2024
 title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric"
@@ -73,7 +75,7 @@ sections:
           See [Monitor Fabric Mirror replication](monitor.md).
 
       - question: |
-          Can Azure SQL Database Mirroring be accessed through the Power BI Gateway or behind a firewall? 
+          Can Azure SQL Database mirroring be accessed through the Power BI Gateway or behind a firewall? 
         answer: 
           Currently, access through the Power BI Gateway or behind a firewall is unsupported.
 
@@ -88,7 +90,7 @@ sections:
            The table is no longer replicated and its data is deleted from OneLake.
 
       - question: |
-          If I delete the Mirror, does it affect the source Azure SQL database? 
+          If I delete the Mirror, does it affect the source Azure SQL Database? 
         answer: 
           No, we just remove the streaming tables.
 
@@ -98,7 +100,7 @@ sections:
           No, each Azure SQL Database can only be mirrored once. You just need a single copy of the data in Fabric OneLake, which you can share with others.
 
       - question: |
-          Can I mirror only specific tables from my Azure SQL database? 
+          Can I mirror only specific tables from my Azure SQL Database? 
         answer: 
           Yes, specific tables can be selected during Mirroring configuration.
 
@@ -154,7 +156,7 @@ sections:
       - question: |
           How to stop/disable Mirroring from your Azure SQL Database?  
         answer: |
-          If you're unable to Stop mirroring your Azure SQL Database from the Fabric portal, or unable to delete your mirrored Azure SQL database item from Fabric, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`
+          If you're unable to Stop mirroring your Azure SQL Database from the Fabric portal, or unable to delete your mirrored Azure SQL Database item from Fabric, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`
 
       - question: | 
           What if I stop or pause my Fabric capacity?
@@ -166,5 +168,5 @@ additionalContent: |
   ## Related content
 
   - [What is Mirroring in Fabric?](overview.md)
-  - [Azure SQL Database Mirroring in Microsoft Fabric](azure-sql-database.md)
+  - [Azure SQL Database mirroring in Microsoft Fabric](azure-sql-database.md)
   - [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md).

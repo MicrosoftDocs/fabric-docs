@@ -70,8 +70,8 @@ To access Git with your Microsoft Fabric workspace, ensure the following prerequ
 - Either a [Power BI Premium license](/power-bi/enterprise/service-premium-what-is) or [Fabric capacity](../enterprise/licenses.md#capacity).
 - Enabled the following tenant switches from the admin portal:
   - [Users can create Fabric items](../admin/fabric-switch.md)
-  - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
-  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories-preview)
+  - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories)
+  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories)
 - Either an Azure DevOps or GitHub account.
   - For an Azure DevOps account:
     - An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
@@ -127,7 +127,7 @@ After you connect to a Git repository and workspace, you can commit changes to G
 
    :::image type="content" source="media/cicd-data-pipelines/source-control-button.png" alt-text="Screenshot of the Source control button in the Fabric workspace UI.":::
 
-1. Select the **Changes** tab from the **Source control** panel. A list appears with all the items you changed, and an icon indicating the status: **New** ![New icon](media/cicd-data-pipelines/new-icon.png), **Modified** ![Modified icon](media/cicd-data-pipelines/modified-icon.png), **Conflict** ![Conflict icon](media/cicd-data-pipelines/conflict-icon.png), or **Deleted** ![Deleted icon](media/cicd-data-pipelines/deleted-icon.png).
+1. Select the **Changes** tab from the **Source control** panel. A list appears with all the items you changed, and an icon indicating the status: **New** :::image type="icon" source="media/cicd-data-pipelines/new-icon.png":::, **Modified** :::image type="icon" source="media/cicd-data-pipelines/modified-icon.png" :::, **Conflict** :::image type="icon" source="media/cicd-data-pipelines/conflict-icon.png":::, or **Deleted** :::image type="icon" source="media/cicd-data-pipelines/deleted-icon.png":::.
 1. Select the items you want to commit. To select all items, check the top box.
 1. _(Optional)_ Add a commit comment in the box.
 1. Select **Commit**.
@@ -162,7 +162,7 @@ Before you get started, be sure to set up the following prerequisites:
 
 1. From the **Workspaces** flyout, select **Deployment pipelines**.
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-deployment-pipelines.png" alt-text="Screenshot showing the Workspaces flyout with the Deployment pipelines button in the Fabric UI. ":::
+   :::image type="content" source="media/cicd-data-pipelines/workspace-deployment-pipelines.png" alt-text="Screenshot showing the Workspaces flyout with the Deployment pipelines button in the Fabric UI.":::
 
 1. Select **Create pipeline** or **+ New pipeline**.
 

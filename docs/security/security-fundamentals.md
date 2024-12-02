@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.reviewer: v-myerspeter, sergeig, vparasuraman
 ms.date: 01/14/2024
 ms.topic: conceptual
-ms.custom: fabric-cat
+ms.custom: fabric-cat, ignite-2024
 ---
 
 # Microsoft Fabric security fundamentals

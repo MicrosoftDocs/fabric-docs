@@ -8,6 +8,7 @@ ms.date: 08/22/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ms.search.form: Warehouse billing and utilization
 ---
 
