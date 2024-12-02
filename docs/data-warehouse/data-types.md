@@ -78,7 +78,7 @@ The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric
 | **TIMESTAMP** | **[datetime2](/sql/t-sql/data-types/datetime2-transact-sql?view=fabric&preserve-view=true)** |
 | **CHAR**(n) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(n) with `Latin1_General_100_BIN2_UTF8` collation |
 | **STRING**, **VARCHAR**(n) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(n) with `Latin1_General_100_BIN2_UTF8` collation |
-| **STRING**, **VARCHAR**(MAX) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(MAX) with `Latin1_General_100_BIN2_UTF8` collation |
+| **STRING**, **VARCHAR**(8000) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(8000) with `Latin1_General_100_BIN2_UTF8` collation |
 | **BINARY** | **[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql?view=fabric&preserve-view=true)**(n) |
 | **DECIMAL**, **DEC**, **NUMERIC** | **[decimal](/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=fabric&preserve-view=true)**(p,s) |
 
