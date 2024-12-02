@@ -50,7 +50,7 @@ You can select an item to view its relationships with other items in the databas
 
 You can also view the ingestion details of each table and materialized view. To view ingestion details, on the right side of the ribbon, select **Show details** and under **Ingestion**, select the desired time range. The information is added to the relevant entity's card.
 
-:::image type="content" source="media/database-entity-diagram/entity-diagram-ingestion-details.gif" alt-text="Screenshot of an entity diagram, showing the ingestion details view.":::
+:::image type="content" source="media/database-entity-diagram/entity-diagram-ingestion-details.gif" alt-text="Screenshot of an entity diagram, showing the ingestion details view." lightbox="media/database-entity-diagram/entity-diagram-ingestion-details.gif":::
 
 ## What scenarios can you use an entity diagrams for?
 
