@@ -71,7 +71,7 @@ items:
     href: copilot-notebooks-overview.md
   - name: Chat-magics in notebooks (preview)
     href: copilot-notebooks-chat-magics.md
-  - name: Use the Copilot for Data Science and Data Engineering chat panel (preview)
+  - name: Use the Copilot chat panel (preview)
     href: copilot-notebooks-chat-pane.md
 - name: Lakehouse access control
   items:
