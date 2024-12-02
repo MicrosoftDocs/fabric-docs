@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: product-reflex
-ms.date: 11/28/2024
+ms.date: 12/02/2024
 #customer intent: As a Fabric user I want to learn about Activator limitations.
 ---
 
@@ -102,7 +102,7 @@ Each recipient of an email notification must have an internal email address. The
 
 ## Maximum number of actions
 
-[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] imposes the following limits on the number of actions that may occur in a given time period. If an action exceeds the limit, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] may throttle or cancel the action.
+[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] imposes the following limits on the number of actions that might occur in a given time period. If an action exceeds the limit, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] might throttle or cancel the action.
 
 |Rule action  |Scope  |Limit  |
 |---------|---------|---------|
@@ -117,7 +117,7 @@ Each recipient of an email notification must have an internal email address. The
 
 ## Maximum number of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items
 
-Your organization may have up to 250 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
+Your organization might have up to 250 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
 
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
