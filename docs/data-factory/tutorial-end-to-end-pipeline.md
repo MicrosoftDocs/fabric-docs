@@ -49,7 +49,7 @@ Select **Copy data assistant** to open the copy assistant tool.
 
 1. The **Copy data** dialog is displayed with the first step, **Choose data source**, highlighted. Select **Sample data** from the options at the top of the dialog, and then select **NYC Taxi - Green**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-sample-data-source.png" alt-text="Screenshot showing the selection of the the NYC Taxi - Green data in the copy assistant on the Choose data source tab.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-sample-data-source.png" alt-text="Screenshot showing the selection of the NYC Taxi - Green data in the copy assistant on the Choose data source tab.":::
 
 
 1. The data source preview appears next on the **Connect to data source** page. Review, and then select **Next**.
