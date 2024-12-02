@@ -73,13 +73,13 @@ You can easily create a new warehouse with case-insensitive collation using [Vis
       > [!NOTE]
       > In some scenarios, `copy(powerBIAccessToken)` may fail with the error `uncaught TypeError: copy is not a function` if there is any element id named "copy" in the page. In such cases, manually remove the element id using the following command before using the "copy" function: `document.querySelector('#copy').remove()`.
 
-  - `<Warehouse name here>`: Enter the desired warehouse name.
-  - `<Warehouse description here>`: Enter the desired warehouse description.
+   - `<Warehouse name here>`: Enter the desired warehouse name.
+   - `<Warehouse description here>`: Enter the desired warehouse description.
 
-4. Select the **Send Request** link displayed over your POST command in the VS Code editor.
-5. You should receive a response with the status code **202 Accepted**, along with additional details about your POST request.
-6. Go to the newly created warehouse in the Fabric portal.
-7. Execute the following T-SQL statement in the Query editor to confirm that the collation for your warehouse aligns with what you specified in the JSON above:
+1. Select the **Send Request** link displayed over your POST command in the VS Code editor.
+1. You should receive a response with the status code **202 Accepted**, along with additional details about your POST request.
+1. Go to the newly created warehouse in the Fabric portal.
+1. Execute the following T-SQL statement in the Query editor to confirm that the collation for your warehouse aligns with what you specified in the JSON above:
    ```sql
    SELECT name, collation_name FROM sys.databases;
    ```
