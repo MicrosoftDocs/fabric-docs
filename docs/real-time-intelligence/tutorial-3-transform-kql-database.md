@@ -42,8 +42,8 @@ In this step, you create a stored function that holds the transformation logic t
 1. Edit the function so that it matches the following code, or copy/paste the following command into the query editor.
 
     ```kusto
-    create-or-alter function ParseBikePointID() {
-    BikesData
+    .create-or-alter function ParseBikePointID() {
+    TutorialTable
     | parse BikepointID with * "BikePoints_" BikepointID
     | extend BikesToBeFilled = No_Empty_Docks - No_Bikes
     | extend Action = iff(BikesToBeFilled > 0, tostring(BikesToBeFilled), "NA")
