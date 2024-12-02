@@ -32,7 +32,7 @@ To access the view, browse to your desired KQL database and select **Entity diag
 
 When you open entity diagram view, you see the dependencies between all the items in the KQL database.
 
-<!-- Image of Lineage view -->
+:::image type="content" source="media/database-entity-diagram/entity-diagram-view.png" alt-text="Screenshot showing an entity diagram view in KQL database." lightbox="media/database-entity-diagram/entity-diagram-view.png":::
 
 The entity diagram view displays the following information:
 
