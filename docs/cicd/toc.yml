@@ -59,10 +59,10 @@ items:
   items:
   - name: Introduction to variable libraries
     href: variable-library/variable-library-overview.md
-  - name: Understanding variable libraries
-    href: variable-library/understand-variable-library.md
+  - name: Concepts
+    href: variable-library/variable-library-concepts.md
   - name: Get started with variable
-    href: variable-library/get-started-with-variable-libraries.md
+    href: variable-library/variable-libraries-how-to.md
   - name: Automate
     href: variable-library/automate-variable-library.md
 - name: Lifecycle management best practices

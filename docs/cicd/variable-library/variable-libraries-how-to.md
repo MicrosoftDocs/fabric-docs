@@ -13,7 +13,7 @@ ms.search.form: variable library
 
 ---
 
-# Get started with variable libraries (preview)
+# How to use variable libraries (preview)
 
 The Microsoft Fabric variable library is a tool that allows you to customize and share item configurations in a workspace. This article explains how to create a variable library item and add variables to it.
 
