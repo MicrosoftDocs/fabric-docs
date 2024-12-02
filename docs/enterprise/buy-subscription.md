@@ -79,10 +79,10 @@ To buy an Azure SKU, follow these steps:
 6. Select **Review + create**.
 
 ### Fabric Quotas
-Microsoft Fabric provides limits (quotas) on how many total Fabric CUs you can provision on your subscription depending on your Azure subscription type. The following sections explain (1) how to review your provisioned CU usage in your Azure subscription and (2) how to request a quota increase for Microsoft Fabric.
+Microsoft Fabric provides limits (quotas) on how many total Fabric CUs you can provision on your subscription depending on your Azure subscription type. The following sections explain how to review your provisioned CU usage in your Azure subscription and how to request a quota increase for Microsoft Fabric.
 
-##### Viewing your Fabric CU usage
-To view your provisioned CU usage, you must have an Azure account with the contributor role, or another role that includes *contributor * access. Follow these steps to submit a request for a quota increase.
+##### Viewing your Fabric CU quota usage
+To view your provisioned CU usage, you must have an Azure account with the contributor role, or another role that includes *contributor* access. Follow these steps to view your Fabric quota usage.
 1. Sign in to the [Azure portal](https://portal.azure.com/#home)
 2. Search for *quotas* and select **Quotas**.
 3. On the Overview page, select **Microsoft Fabric**.
@@ -93,13 +93,15 @@ To view your provisioned CU usage, you must have an Azure account with the contr
    * Usage: Select *Show all*.
   
 ##### Requesting a quota increase
-To request a quota increase, you will need to follow steps 1 to 3 from the usage section and will need the same permission levels. Follow these steps to submit a request for a quota increase.
-1. Select New Quota Request.
-2. Select one of these options to increase the quota(s):
+To request a quota increase, you must have an Azure account with the contributor role, or another role that includes *contributor* access. Follow these steps to submit a request for a quota increase.
+1. Sign in to the [Azure portal](https://portal.azure.com/#home)
+2. Search for *quotas* and select **Quotas**.
+3. On the Overview page, select **Microsoft Fabric**.
+4. Select New Quota Request. Select one of these options to increase the quota(s):
     * Enter a new limit
     * Adjust the usage %
-    * You can also [add **Quotas** to your **Favorites** list](../azure-portal/azure-portal-add-remove-sort-favorites.md) so that you   can quickly go back to it.
-3. When you're finished, select **Submit**.
+    * You can also [add **Quotas** to your **Favorites** list](../azure-portal/azure-portal-add-remove-sort-favorites.md) so that you  can quickly go back to it.
+5. When you're finished, select **Submit**.
 
 Your request will be reviewed, and you'll be notified if the request can be fulfilled. This usually happens within a few minutes. If your request isn't fulfilled, you'll need to open a support request so that a support engineer can assist you with the increase.
 
