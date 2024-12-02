@@ -255,7 +255,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
 > [!NOTE]
 >
-> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint, you need to refresh the page for the restore operation to take effect. Alternatively, a message bar will prompt you to view the changes, you can also click the **View changes** button and select keeping the *Saved version* to finish the restore.
+> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar will prompt you to view the changes, you need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
     :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore.":::
 > - System checkpoints will expire after **1** year.
 
