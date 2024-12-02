@@ -30,7 +30,7 @@ Azure Relay enables communication between the local development environment and 
 
 The DevGateway utility has two roles:
 
-* It handles the workload's side of the Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific workspace. The utility handles deregistration when the channel stops.
+* It handles the workload's side of the Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific workspace. The utility handles deregistration when the channel disconnects.
 * It works with Azure Relay to channel workload API calls from Fabric to the workload.
 
 Workload Control API calls are made directly from the workload to Fabric. The Azure Relay channel isn't required for the calls.
