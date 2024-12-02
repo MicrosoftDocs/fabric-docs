@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 12/022024
 ---
 # How to: Create a warehouse with case-insensitive (CI) collation
 
@@ -70,11 +70,8 @@ You can easily create a new warehouse with case-insensitive collation using [Vis
       1. Type the command `copy(powerBIAccessToken)` and press **Enter**. While the console responds undefined, the bearer token will be copied to your clipboard.
       1. Paste it in place of `<bearer token>`.
 
-         
-> [!NOTE]
-> There can be some scenarios that the `copy(powerBIAccessToken)` may fail with the error `uncaught TypeError: copy is not a function` if there is any element id called "copy" in the page. In such cases, you may need to manually remove the id using the following command before using the "copy" function
- 
- `document.querySelector('#copy').remove() `
+      > [!NOTE]
+      > In some scenarios, `copy(powerBIAccessToken)` may fail with the error `uncaught TypeError: copy is not a function` if there is any element id named "copy" in the page. In such cases, manually remove the element id using the following command before using the "copy" function: `document.querySelector('#copy').remove()`.
 
   - `<Warehouse name here>`: Enter the desired warehouse name.
   - `<Warehouse description here>`: Enter the desired warehouse description.
