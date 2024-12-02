@@ -44,6 +44,15 @@ Some GitHub Enterprise settings aren't supported. For example:
 Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.  
 - The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
 
+### Directory name limitations
+
+- The name of the directory that connects to the Git repository has the following naming restrictions:
+
+  - The directory name can't begin or end with a space or tab.
+  - The directory name can't contain any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+
+- The item folder (name of the item) can't contain any of the following characters: <kbd>"</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+
 ### Branch and folder limitations
 
 - Maximum length of branch name is 244 characters.
