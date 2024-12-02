@@ -65,9 +65,9 @@ sections:
           For SQL database in Fabric, the replication of data to OneLake cannot be disabled. 
 
       - question: | 
-          Are system objects such as system views and dynamic management views the same as [Fabric database mirroring](../mirrored-database/overview.md)?
+          Are system objects such as system views and dynamic management views the same as Fabric database mirroring?
         answer: |
-          Yes, with the exception of objects that disable the replication. 
+          Yes, with the exception of objects that disable the replication.
 
   - name: Security
     questions:
