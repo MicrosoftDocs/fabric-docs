@@ -82,7 +82,8 @@ In this step, you set an alert on a KQL query to be notified when the number of 
     | Check | *On each event* |
     | Action | *Send me an email* |
     | Workspace | *Your workspace* |
-    | Item | *KQL alert* |
+    | Item | *Create a new item*
+    | New item name | *KQL alert* |
 
 1. Select **Create**.
 
