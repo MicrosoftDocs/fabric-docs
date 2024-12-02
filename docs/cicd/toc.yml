@@ -57,12 +57,12 @@ items:
     href: git-integration/source-code-format.md
 - name: Variable libraries
   items:
-  - name: Introduction to variable libraries
+  - name: What is a variable library?
     href: variable-library/variable-library-overview.md
   - name: Concepts
     href: variable-library/variable-library-concepts.md
-  - name: Get started with variable
-    href: variable-library/variable-libraries-how-to.md
+  - name: Create and use a variable library
+    href: variable-library/get-started-variable-libraries.md
   - name: Automate
     href: variable-library/automate-variable-library.md
 - name: Lifecycle management best practices
