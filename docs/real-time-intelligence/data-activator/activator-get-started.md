@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: how-to
 ms.custom: FY25Q1-Linter, ignite-2024
-ms.search.form: Activator Getting Started
+ms.search.form: Data Activator Getting Started
 ms.date: 11/26/2024
 #customer intent: As a Fabric user I want to get started with Activator.
 ---

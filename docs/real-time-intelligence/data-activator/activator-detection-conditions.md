@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 11/25/2024
-ms.search.form: Activator Detection Condition
+ms.search.form: Data Activator Detection Condition
 ---
 
 # Detection settings in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
