@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 11/27/2024
+ms.date: 12/02/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  954  | Data Factory | [Create, configure, or delete a mirror fails](known-issues/known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
+|  950  | Power BI | [Incorrect column names after column format or aggregation change](known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md) | December 2, 2024 |
 |  949  | Power BI | [Power BI Copilot can excessively retry in rare error scenarios](known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md) | November 27, 2024 |
 |  948  | Power BI | [Metrics app timepoint details missing for new P2 capacities](known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md) | November 27, 2024 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
@@ -117,11 +119,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 | Fixed: October 31, 2024 |
 |  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 | Fixed: October 25, 2024 |
 |  862  | Power BI | [Unexpected changes in fonts or themes in reports](known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md) | September 30, 2024 | Fixed: October 17, 2024 |
-|  867  | Power BI | [Report pages don't show in Fabric org app items](known-issues/known-issue-867-report-pages-not-show-org-app-items.md) | September 30, 2024 | Fixed: October 15, 2024 |
-|  859  | Power BI | [Dynamic subscriptions don't send emails to recipients](known-issues/known-issue-859-dynamic-subscriptions-not-send-emails-recipients.md) | September 27, 2024 |  Fixed: October 15, 2024 |
-|  858  | Power BI | [Live connection to semantic models created by template apps fails](known-issues/known-issue-858-live-connect-semantic-models-template-apps-fails.md) | September 27, 2024 |  Fixed: October 15, 2024 |
-|  807  | Data Warehouse | [Mirroring for Azure Cosmos DB fails when you create a new container](known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md) | August 14, 2024 |  Fixed: October 15, 2024 |
-|  796  | Data Warehouse | [Mirroring for Azure Cosmos DB fails](known-issues/known-issue-796-mirroring-cosmos-db-fails.md) | August 6, 2024 |  Fixed: October 15, 2024 |
 
 ## Related content
 
