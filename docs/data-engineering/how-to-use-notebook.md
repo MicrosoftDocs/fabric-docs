@@ -58,7 +58,7 @@ Like other standard Fabric item creation processes, you can easily create a new 
 
 ### Import existing notebooks
 
-You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook .ipynb files, and source files like .py, .scala, and .sql, and create new notebook items accordingly.
+You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.scala*, and *.sql*, and create new notebook items accordingly.
 
 :::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu.":::
 
@@ -146,7 +146,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
    :::image type="content" source="media\how-to-use-notebook\environment-resources-folder.png" alt-text="Screenshot showing where to open environment resources folder.":::
 
 - You can also operate on the files/folders just same with the Built-in resources folder. 
-- The Environment resource path will be automatically mounted to the notebook cluster, you can use the relative path **/env** to access the environment resources.
+- The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
 
 ### File editor
 
@@ -168,7 +168,7 @@ The file editor allows you to view and edit files directly within the notebook's
 
 The Fabric notebook is a collaborative item that supports multiple users editing the same notebook.
 
-When you open a notebook, you enter the co-editing mode by default, and every notebook edit is automatically saved. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator, and editing trace. By using the collaboration features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
+When you open a notebook, you enter the coediting mode by default, and every notebook edit is automatically saved. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator, and editing trace. By using the collaboration features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
 
 :::image type="content" source="media\how-to-use-notebook\collaboration.png" alt-text="Screenshot showing a code cell with another user editing.":::
 
@@ -216,7 +216,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Share your insights and **Post** them.
  
-1. An Email notification will be triggered, and user clicks on **Open Comments** link to quickly locate this cell.
+1. An Email notification is triggered, and user clicks on **Open Comments** link to quickly locate this cell.
  
 1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
 
@@ -243,13 +243,13 @@ Version history allows you to easily version your live notebook changes. It supp
       :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version.":::
 
    - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned, you can find the modification records from all the contributors in the system checkpoint timeline list.
-      :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list .":::
+      :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list.":::
 
 1. You can click on a checkpoint to open the **diff view**, it will highlight the content differences between the selected checkpoint and the current live version, including the differences of cell content, cell output, and metadata. The version of this checkpoint can be managed individually in **'more options'** menu.
 
-   :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff .":::
+   :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff.":::
 
-1. You can manage the version from the checkpoint drop down menu, if want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
+1. You can manage the version from the checkpoint drop down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
 
    :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint.":::
 
@@ -261,7 +261,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
 ## Notebook mode switcher
 
-Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients, and they will see the best available notebook mode according to their permission, and they will be able to switch between the mode they have permission to.
+Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode, and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients, and they see the best available notebook mode according to their permission, and they are able to switch between the mode they have permission to.
 
 :::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes.":::
 

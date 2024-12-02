@@ -127,7 +127,7 @@ Select **Undo** or **Redo**, or press **Z** or **Shift+Z** to revoke the most re
 
 Supported undo cell operations:
 
-- Insert or delete cell. You can revoke the delete operations by selecting **Undo** (the text content is kept along with the cell).
+- Insert or delete cell. You can revoke the deleted operations by selecting **Undo** (the text content is kept along with the cell).
 - Reorder cell.
 - Toggle parameter.
 - Convert between code cell and Markdown cell.
@@ -163,7 +163,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table will see an unauthorized error during query execution.
+Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
 > Security only applies during query execution and any notebook cells containing query results can be viewed by users that are not authorized to run queries against the data directly.
@@ -257,7 +257,7 @@ The ```%run``` command also allows you to run Python or SQL files that are store
 ``` %run [-b/--builtin -c/--current] [script_file.py/.sql] [variables ...] ```
 
 For options:
-- **-b/--builtin**: This option indicates that the command will find and run the specified script file from the notebook’s built-in resources.
+- **-b/--builtin**: This option indicates that the command finds and runs the specified script file from the notebook’s built-in resources.
 - **-c/--current**: This option ensures that the command always uses the current notebook’s built-in resources, even if the current notebook is referenced by other notebooks.
 
 Examples:
@@ -622,8 +622,8 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 
 | **Action** | **Notebook shortcuts** |
 |---|---|
-| Move cursor up | Up |
-| Move cursor down | Down |
+| Move up cursor | Up |
+| Move down cursor | Down |
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
 | Comment or Uncomment | Ctrl + / <br/> Comment: Ctrl + K + C <br/> Uncomment: Ctrl + K + U |
