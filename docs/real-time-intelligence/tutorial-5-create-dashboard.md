@@ -13,7 +13,7 @@ ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 4: Create a Real-Time Dashboard
+# Real-Time Intelligence tutorial part 5: Create a Real-Time Dashboard
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Query streaming data in a KQL queryset](tutorial-3-query-data.md).
