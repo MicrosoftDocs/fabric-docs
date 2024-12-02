@@ -69,7 +69,7 @@ items:
   items:
   - name: Copilot for Data Science and Data Engineering
     href: copilot-notebooks-overview.md
-  - name: Overview of chat-magics in Microsoft Fabric notebooks (preview)
+  - name: Chat-magics in notebooks (preview)
     href: copilot-notebooks-chat-magics.md
   - name: Use the Copilot for Data Science and Data Engineering chat panel (preview)
     href: copilot-notebooks-chat-pane.md
