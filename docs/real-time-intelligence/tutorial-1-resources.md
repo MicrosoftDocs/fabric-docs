@@ -9,7 +9,7 @@ ms.custom:
   - build-2024
   - ignite-2023
   - ignite-2024
-ms.date: 11/19/2024
+ms.date: 12/02/2024
 ms.subservice: rti-core
 ms.search.form: Get started
 # customer intent: I want to learn how to create a KQL database and enable data availability in Microsoft Fabric.
@@ -40,6 +40,9 @@ In this part of the tutorial, you set up the environment. Specifically, you crea
 1. Uncheck **Apply to existing tables** and select **Turn on**.
 
     :::image type="content" source="media/tutorial/one-lake-availability.png" alt-text="Screenshot showing how to turn on OneLake availability.":::
+
+> [!NOTE]
+> You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 
 ## Related content
 

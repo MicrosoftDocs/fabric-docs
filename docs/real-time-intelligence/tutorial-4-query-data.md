@@ -62,6 +62,50 @@ The name of the table you created from the update policy in a previous step is *
 
     :::image type="content" source="media/tutorial/bikes-timechart.png" alt-text="Screenshot of bikes timechart in Real-Time Intelligence." lightbox="media/tutorial/bikes-timechart.png":::
 
+## Set an alert on a KQL query
+
+In this step, you set an alert on a KQL query to be notified when the number of bikes at a bike station is less than 20. You use the data transformed using the update policy in a previous step.
+
+1. Copy/paste and run the following query:
+
+    ```kusto
+    BikesDataTransformed
+    | where Action != "NA" and toint(Action) > 20
+    ```
+
+1. From the menu ribbon, select **Set alert**.
+1. In the **Set alert** pane, enter the following information: 
+
+    | Field | Value |
+    | --- | --- |
+    | Run query every | *5 minutes* |
+    | Check | *On each event* |
+    | Action | *Send me an email* |
+    | Workspace | *Your workspace* |
+    | Item | *KQL alert* |
+
+1. Select **Create**.
+
+    You will receive an email alert whenever the query returns a non-null response, meaning the number of bikes at a bike station is greater than 20.
+
+## Query the aggregated bike data
+
+In this step, you query the data that was aggregated in the Eventstream. 
+
+> [!NOTE]
+> TODO: Yael's note: I think we can remove this entire sequence of in Eventstream and this query.
+
+1. Copy/paste and run the following query:
+    
+    ```kusto
+    AggregatedBikesData
+    | Bike
+    | summarize sum(toint(Total_No_Bikes)) by Street
+    | top 5 by sum_Total_No_Bikes desc  
+    ```
+ 
+    This query returns the top 5 streets with the highest number of bikes from the past 5 minutes.
+
 ## Create a materialized view
 
 In this step, you create a materialized view, which returns an up-to-date result of the aggregation query (always fresh). Querying a materialized view is more performant than running the aggregation directly over the source table.

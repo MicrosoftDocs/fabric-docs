@@ -23,10 +23,10 @@ In this step, you create target table with same schema as the source table. The 
 
 1. Browse to the KQL database you created in a previous step, named *Tutorial*.
 1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
-1. Copy/paste the following command to create a new table called **BikesDataTransformed** based on the existing table **TutorialTable**.
+1. Copy/paste the following command to create a new table called **BikesDataTransformed** with a specified schema.
 
     ```kusto
-    .create table BikesDataTransformed based-on TutorialTable
+    .create table BikesDataTransformed (BikepointID: string, Street: string, Neighbourhood: string, Latitude: dynamic, Longitude: dynamic, No_Bikes: long, No_Empty_Docks: long, Timestamp: datetime, BikesToBeFilled: long, Action: string)
     ```
 
 1. Run the command to create the table.
@@ -42,11 +42,12 @@ In this step, you create a stored function that holds the transformation logic t
 1. Edit the function so that it matches the following code, or copy/paste the following command into the query editor.
 
     ```kusto
-    .create-or-alter function ParseBikePointID()
-    {
-        TutorialTable
-        | parse BikepointID with * "BikePoints_" BikepointID
-    }
+    create-or-alter function ParseBikePointID() {
+    BikesData
+    | parse BikepointID with * "BikePoints_" BikepointID
+    | extend BikesToBeFilled = No_Empty_Docks - No_Bikes
+    | extend Action = iff(BikesToBeFilled > 0, tostring(BikesToBeFilled), "NA")
+     }
     ```
 
 1. Run the command to create the function.

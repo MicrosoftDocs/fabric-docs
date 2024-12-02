@@ -94,19 +94,19 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 
     | Field     | Value       |
     | --------- | ----------- |
-    | **Type**  | *Maximum*     |
-    | **Field** | *No_Bikes*  |
-    | **Name**  | *MaxBikes* |
+    | **Type**  | *Count**     |
+    | **Field** | *All rows*  |
+    | **Name**  | *Total_No_Bikes* |
 
 1. Select **Add**.
 1. Enter the following information in the **Group by** pane under **Settings**:
 
-    | Field                     | Value         |
-    | ------------------------- | ------------- |
-    | **Group aggregations by** | *BikepointID* |
-    | **Time window**           | *Tumbling*    |
-    | **Duration**              | *5 minute*    |
-    | **Offset**                | *0 Second*    |
+    | Field                     | Value      |
+    | ------------------------- | ---------- |
+    | **Group aggregations by** | *Street*   |
+    | **Time window**           | *Tumbling* |
+    | **Duration**              | *5 minute* |
+    | **Offset**                | *0 Second* |
 
 1. Select **Save**.
 
