@@ -21,13 +21,13 @@ Before you begin, make sure you're familiar with the concepts in [Authentication
 
   For control plane APIs, the workload must follow the contracts defined in the workload backend and implement those APIs.
 
-## API tab on the workload's application in Microsoft Entra ID
+## API permissions tab on the workload's application in Microsoft Entra ID
 
-On the **API** tab, you need to add scopes for control plane APIs and scopes for data plane APIs:
+On the **API permissions** tab, you need to add scopes for control plane APIs and scopes for data plane APIs:
 
 * The scopes added for control plane APIs should preauthorize the Fabric Client for Workloads application with application ID `d2450708-699c-41e3-8077-b0c8341509aa`. Those scopes are included in the token that the workload backend receives when Fabric calls it.
 
-  You need to add at least one for the control plane API for the flow to work.
+  You need to add at least one scope for the control plane API for the flow to work.
 * The scopes added for data plane APIs should preauthorize Microsoft Power BI with application ID `871c010f-5e61-4fb1-83ac-98610a7e9110`. They're included in the token that the `acquireAccessToken` JavaScript API returns.
 
   For data plane APIs, you can use this tab to manage granular permissions for each API that your workload exposes. Ideally, you should add a set of scopes for each API that the workload backend exposes and validate that the received token includes those scopes when those APIs are called from the client. For example:
@@ -36,9 +36,7 @@ On the **API** tab, you need to add scopes for control plane APIs and scopes for
   * The workload exposes two data plane scopes, `data.read` and `data.write`.  
   * In the `ReadData` API, the workload validates that the `data.read` scope is included in the token before it continues with the flow. The same applies to `WriteData`.
 
-## API permissions tab on the workload's application in Microsoft Entra ID
-
-On the **API permissions** tab, you need to add all the scopes that your workload needs to exchange a token for. A mandatory scope to add is `Fabric.Extend` under the Power BI service. Requests to Fabric might fail without this scope.
+On this tab, you also need to add all the scopes that your workload needs to exchange a token for. A mandatory scope to add is `Fabric.Extend` under the Power BI service. Requests to Fabric might fail without this scope.
 
 ## Working with tokens and consents
 
