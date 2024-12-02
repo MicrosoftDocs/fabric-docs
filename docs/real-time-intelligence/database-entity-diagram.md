@@ -50,6 +50,8 @@ You can select an item to view its relationships with other items in the databas
 
 You can also view the ingestion details of each table and materialized view. To view ingestion details, on the right side of the ribbon, select **Show details** and under **Ingestion**, select the desired time range. The information is added to the relevant entity's card.
 
+:::image type="content" source="media/database-entity-diagram/entity-diagram-ingestion-details.gif" alt-text="Screenshot of an entity diagram, showing the ingestion details view.":::
+
 ## What scenarios can you use an entity diagrams for?
 
 This section explores various scenarios where you can use the entity diagram view in KQL database:
@@ -64,7 +66,9 @@ Entity diagrams allow you to trace the relationships between materialized views 
 
 ### Interact with elements and act
 
-You can select on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, more options are available, such as querying the table, creating a Power BI report based on the table, and more.
+You can select on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, in the **More menu** [**...**], you can select other options, such as querying the table, creating a Power BI report based on the table, and more.
+
+:::image type="content" source="media/database-entity-diagram/entity-diagram-table-more-menu.png" alt-text="Screenshot of an entity diagram table, showing the more menu.":::
 
 ### Track record ingestion
 
