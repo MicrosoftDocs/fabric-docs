@@ -100,7 +100,7 @@ To request a quota increase, you must have an Azure account with the contributor
 4. Select New Quota Request. Select one of these options to increase the quota(s):
     * Enter a new limit
     * Adjust the usage %
-    * You can also [add **Quotas** to your **Favorites** list](/azure-portal/azure-portal-add-remove-sort-favorites.md) so that you  can quickly go back to it.
+    * You can also [add **Quotas** to your **Favorites** list](/azure/azure-portal/azure-portal-add-remove-sort-favorites) so that you  can quickly go back to it.
 5. When you're finished, select **Submit**.
 
 Your request will be reviewed, and you'll be notified if the request can be fulfilled. This usually happens within a few minutes. If your request isn't fulfilled, you'll need to open a support request so that a support engineer can assist you with the increase.
@@ -117,7 +117,7 @@ To request an increase to your quota, follow these steps:
 7.	The final step is to fill in the remaining details of your quota request. Then select Next: Review + create>>, and after reviewing the request details, select Create to submit the request.
 
 #### Additional Information
-[Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits.md)
+[Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits)
 
 ### Microsoft 365 SKUs
 
