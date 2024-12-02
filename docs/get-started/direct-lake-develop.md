@@ -4,7 +4,7 @@ description: "Learn about how to develop Direct Lake semantic models."
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 09/16/2024
+ms.date: 10/03/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -153,6 +153,13 @@ Model write operations with the XMLA endpoint support:
 - Source and version control, continuous integration and continuous deployment (CI/CD) with Azure DevOps and GitHub. For more information, see [Content lifecycle management](/power-bi/guidance/powerbi-implementation-planning-content-lifecycle-management-overview).
 - Automation tasks like semantic model refresh, and applying changes to Direct Lake semantic models by using PowerShell and the REST APIs.
 
+When changing a semantic model using XMLA, you must update the *ChangedProperties* and *PBI_RemovedChildren* collection for the changed object to include any modified or removed properties. If you don't perform that update, Power BI modeling tools might overwrite any changes the next time the schema is synchronized.
+
+The supported models for changing a semantic model using XMLA are the following:
+* Table/Column rename (*ChangeProperty* = name)
+* Remove table (add table to *PBI_RemovedChildren* annotation in the query expression)
+
+
 > [!IMPORTANT]
 > Direct Lake tables created by using XMLA applications will initially be in an unprocessed state until the application sends a refresh command. Queries that involve unprocessed tables will always fall back to DirectQuery mode. So, when you create a new semantic model, be sure to refresh the model to process its tables.
 
@@ -166,6 +173,7 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 - The mode property of Direct Lake partitions is set to `directLake`.
 - Direct Lake partitions use shared expressions to define data sources. The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-overview.md#directquery-fallback) mode for any reason).
 
+
 ## Post-publication tasks
 
 After you publish a Direct Lake semantic model, you should complete some setup tasks. For more information, see [Manage Direct Lake semantic models](direct-lake-manage.md#post-publication-tasks).
@@ -174,11 +182,11 @@ After you publish a Direct Lake semantic model, you should complete some setup t
 
 The following model features aren't supported by Direct Lake semantic models:
 
-- Calculated tables
-- Calculated columns
+- Calculated tables referencing tables or columns in Direct Lake storage mode
+- Calculated columns referencing tables or columns in Direct Lake storage mode
 - Hybrid tables
 - User-defined aggregations
-- Composite models, in that you can't combine Direct Lake storage mode tables with DirectQuery or Dual storage mode tables _in the same model_. However, it's technically possible to use Power BI Desktop to create a live connection to a Direct Lake semantic model and then extend it with new tables (using Import, DirectQuery, or Dual storage mode) or calculations. For more information, see [Build a composite model on a semantic model](/power-bi/transform-model/desktop-composite-models#building-a-composite-model-on-a-semantic-model-or-model).
+- Composite models, in that you can't combine Direct Lake storage mode tables with DirectQuery or Dual storage mode tables _in the same model_. However, you can use Power BI Desktop to create a live connection to a Direct Lake semantic model and then extend it with new measures, and from there you can click the option to **make changes to this model** to add new tables (using Import, DirectQuery, or Dual storage mode). This action creates a DirectQuery connection to the semantic model in Direct Lake mode, so the tables show as DirectQuery storage mode, but this storage mode is not indicating fallback to DirectQuery. Only the connection between this new model and the Direct Lake model is DirectQuery and queries still utilize Direct Lake to get data from OneLake.  For more information, see [Build a composite model on a semantic model](/power-bi/transform-model/desktop-composite-models#building-a-composite-model-on-a-semantic-model-or-model).
 - Columns based on SQL analytics endpoint columns that apply dynamic data masking.
 
 ## Related content

@@ -94,4 +94,4 @@ Learn how to create and save several types of Power BI reports.
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Build a report from the OneLake data hub](tutorial-build-report-onelake-data-hub.md)
+> [Tutorial: Build a report from the OneLake](tutorial-build-report-onelake-data-hub.md)

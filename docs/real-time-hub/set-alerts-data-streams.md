@@ -5,19 +5,20 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/18/2024
+ms.search.form: Data Activator Eventstream Onramp
 ---
 
-# Set alerts on streams in Real-Time hub (preview)
+# Set alerts on streams in Real-Time hub
 This article describes how to set alerts on streams in Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Launch Set alert page
 
 1. Navigate to the Real-Time hub.
-1. Select a data stream whose parent is an eventstream. 
+1. Select a data stream whose parent is an eventstream on the **All data streams** or **My data streams** page.
 
     :::image type="content" source="./media/set-alerts-data-streams/select-data-stream.png" alt-text="Screenshot that shows Real-Time hub with a data stream selected.":::
 1. On the stream detail page, select **Set alert**. 
@@ -41,7 +42,7 @@ On the **Set alert** page, follow these steps:
     1. To run a Fabric item, select **Run a Fabric item**. 
 1. In the **Save location** section, do these steps: 
     1. For **Workspace**, select the workspace where you want to save the alert. 
-    1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert. 
+    1. For **Item**, select an existing Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item or create a new [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item for this alert. 
     
         :::image type="content" source="./media/set-alerts-data-streams/save-location.png" alt-text="Screenshot that shows the location details of an alert." lightbox="./media/set-alerts-data-streams/save-location.png":::
 

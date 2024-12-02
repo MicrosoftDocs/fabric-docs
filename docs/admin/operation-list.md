@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/01/2024
+ms.date: 11/03/2024
 ---
 
 # Operation list
@@ -91,7 +91,7 @@ The following operations are available in the audit logs.
 | Create Cloud Datasource From Kind Path | CreateCloudDatasourceFromKindPath |   |
 | Create Cloud Datasource | CreateCloudDatasource |   |
 | Create Data Sharing | CreateDataSharing | Create a new external data share  |
-| Create Datamart | CreateDatamart |   |
+| Create Datamart | CreateDatamart | Triggered when a new Datamart is created in a Workspace   |
 | Create Dataset By Quick Share | CreateDatasetByQuickShare |   |
 | Create Directory In Git | CreateDirectoryInGit | Create Directory In Git is a git provider activity, which is generated when users create directory in Git.  |
 | Create Environment Resource | CreateEnvironmentResource | Create resources in environment |
@@ -193,10 +193,10 @@ The following operations are available in the audit logs.
 | Delete Managed Private   Endpoint | DeleteManagedPrivateEndpoint | Delete a private endpoint within a managed virtual network for   a workspace |
 | Delete Managed VNet | DeleteManagedVNet | Delete managedvirtual network for a workspace |
 | Delete MetricSet Metric   Endpoint | DeleteMetricSetMetric | Delete metric in a metricset endpoint |
-| Delete Model Version | DeleteModelVersion |   |
+| Delete Model Version | DeleteModelVersion | Triggered when a Machine Learning Model version is removed   |
 | Delete Notebook Resource | DeleteNotebookResource | Update resources in notebook.  |
-| Delete Scorecard Hierarchy | DeleteScorecardHierarchy |   |
-| Delete Scorecard View | DeleteScorecardView |   |
+| Delete Scorecard Hierarchy | DeleteScorecardHierarchy | Triggered when a [scorecard hierarchy](/power-bi/create-reports/service-metrics-get-started-hierarchies) is deleted. That is, the hierarchy's metadata is deleted, not the values of the goals in it. |
+| Delete Scorecard View | DeleteScorecardView | Triggered when a scorecard view ([list](/power-bi/create-reports/service-metrics-view-hierarchies#scorecard-list-view), [heatmap](/power-bi/create-reports/service-metrics-view-hierarchies#heatmap-view) and compact) is deleted. |
 | Delete Semantic Metric   Endpoint | DeleteSemanticMetric | Delete standalone semantic metric endpoint |
 | Delete Service Principal Profile As Admin | DeleteServicePrincipalProfileAsAdmin |   |
 | Delete Service Principal Profile | DeleteServicePrincipalProfile |   |
@@ -259,6 +259,7 @@ The following operations are available in the audit logs.
 | Download Notebook Resource | DownloadNotebookResource | Delete resources in notebook.  |
 | Download Spark App Log | DownloadSparkAppLog |   |
 | Downloaded Power BI report | DownloadReport |   |
+| Downloaded Exported Power BI artifact file | ExportArtifactDownload | An export of the .pptx or .pdf file is complete |
 | Drop Lakehouse File | DropLakehouseFile |  |
 | Drop Lakehouse Folder | DropLakehouseFolder |  |
 | Drop Lakehouse Table | DropLakehouseTable |  |
@@ -437,7 +438,6 @@ The following operations are available in the audit logs.
 | Move items into subfolder | MoveItemsIntoSubfolder |   |
 | No Activity | NoActivity |   |
 | Opt In For P P U Trial | OptInForPPUTrial |   |
-| Optimize Lakehouse Table | OptimizeLakehouseTable |   |
 | Override Sjd Spark Settings | OverrideSjdSparkSettings |   |
 | Patch Gateway Cluster | PatchGatewayCluster |   |
 | Patch Goal Value Categories | PatchGoalValueCategories |   |
@@ -735,7 +735,6 @@ The following operations are available in the audit logs.
 | Upsert Warehouse Parameters | UpsertWarehouseParameters |  |
 | Upsert mounted warehouse parameters | UpsertMountedWarehouseParameters | Generated when mounted warehouse parameters are added or updated |
 | Used Power BI to explore data in an external application | ExploreDataExternally | Someone used Power BI to explore their data in an external application. |
-| Vacuum Lakehouse Table | VacuumLakehouseTable |  |
 | View Datamart | ViewDatamart |  |
 | View Spark App Input Output | ViewSparkAppInputOutput |  |
 | View Spark App Log | ViewSparkAppLog |  |

@@ -4,6 +4,11 @@
             "source_path_from_root": "/docs/governance/service-security-sensitivity-label-mandatory-label-policy.md",
             "redirect_url": "/fabric/governance/mandatory-label-policy",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/governance/data-loss-prevention-overview.md",
+            "redirect_url": "/purview/dlp-powerbi-get-started",
+            "redirect_document_id": false
         }
     ]
 }

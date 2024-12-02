@@ -3,12 +3,13 @@ title: T-SQL surface area
 description: T-SQL surface area of the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo
-ms.date: 09/25/2024
+ms.reviewer: cynotebo, jovanpop
+ms.date: 11/01/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Microsoft Fabric
@@ -17,15 +18,17 @@ ms.search.form: T-SQL Surface area # This article's title should not change. If 
 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
+These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL Database in Fabric, see [Limitations in SQL Database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
+
 > [!NOTE]
-> For more information on upcoming feature development for Fabric Synapse Data Warehouse, see the [Synapse Data Warehouse in Microsoft Fabric release plan](/fabric/release-plan/data-warehouse).
+> For more information on upcoming feature development for Fabric Data Warehouse, see the [Fabric Data Warehouse release plan](/fabric/release-plan/data-warehouse).
 
 ## T-SQL surface area
 
 - Creating, altering, and dropping tables, and insert, update, and delete are only supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - You can create your own T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - For more about CREATE/DROP TABLE support, see [Tables](tables.md).
-- Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* CTEs. While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. <!-- For more information, see [Nested Common Table Expression (CTE) in Fabric data warehousing (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true). -->
+- Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* CTEs. While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. For more information, see [Nested Common Table Expression (CTE) in Fabric data warehousing (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true).
 - For more about data types, see [Data types](data-types.md).
 - TRUNCATE Table is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
@@ -52,11 +55,10 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Recursive queries
 - Result Set Caching
 - Schema and table names can't contain `/` or `\`
-- `SELECT` - `FOR`
+- `SELECT` - `FOR XML`
 - `SET ROWCOUNT`
 - `SET TRANSACTION ISOLATION LEVEL`
 - `sp_showspaceused`
-- Spatial geometry/geography functions
 - Temporary tables
 - Triggers
 

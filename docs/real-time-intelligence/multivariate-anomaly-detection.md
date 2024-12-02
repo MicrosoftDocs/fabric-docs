@@ -5,12 +5,14 @@ ms.reviewer: adieldar
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 08/21/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: KQL Queryset
 ---
 # Multivariate Anomaly Detection
 
-For general information about multivariate anomaly detection in Real-Time Intelligence, see [Multivariate anomaly detection in Microsoft Fabric - overview](multivariate-anomaly-overview.md). In this tutorial you will use sample data to train a multivariate anomaly detection model using the Spark engine in a Python notebook. You will then predict anomalies by applying the trained model to new data using the Eventhouse engine. The first few steps set up your environments, and the following steps train the model and predict anomalies.
+For general information about multivariate anomaly detection in Real-Time Intelligence, see [Multivariate anomaly detection in Microsoft Fabric - overview](multivariate-anomaly-overview.md). In this tutorial, you'll use sample data to train a multivariate anomaly detection model using the Spark engine in a Python notebook. You'll then predict anomalies by applying the trained model to new data using the Eventhouse engine. The first few steps set up your environments, and the following steps train the model and predict anomalies.
 
 ## Prerequisites
 
@@ -45,10 +47,10 @@ In this step, you enable the python plugin in your Eventhouse. This step is requ
 
 ## Part 3- Create a Spark environment
 
-In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model using the Spark engine. For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md). 
+In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model using the Spark engine. For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md).
 
 1. In the experience switcher, choose **Data Engineering**. If you're already in the Data Engineering experience, browse to **Home**.
-1. From **Recommended items to create**, Select **Environments, and enter the name *MVAD_ENV* for the environment.
+1. From **Recommended items to create**, Select **Environments**, and enter the name *MVAD_ENV* for the environment.
 
     :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of creating an environment in Data Engineering.":::
 
@@ -86,13 +88,10 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
 
 ## Part 6- Prepare the notebook
 
-1. In the experience switcher, choose **Data Engineering**.
-1. Under **Recommended items to create**, select **Import notebook**. You may have to scroll to the right to find this option.
+1. In the experience switcher, choose **Develop** and select your workspace.
+1. Select **Import**, **Notebook**, then **From this computer**.
 1. Select **Upload**, and choose the notebook you downloaded in the [prerequisites](#prerequisites).
-
-    :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
-
-1. After the notebook is uploaded, browse to your workspace and open the notebook.
+1. After the notebook is uploaded, you can find and open your notebook from your workspace.
 1. From the top ribbon, select the **Workspace default** dropdown and select the environment you created in the previous step.
 
     :::image type="content" source="media/multivariate-anomaly-detection/select-environment.png" alt-text="Screenshot of selecting the environment in the notebook.":::
@@ -256,7 +255,7 @@ For general information, see [Create a KQL queryset](create-query-set.md).
 
 1. Copy/paste the following prediction query.
     1. Replace the output model URI copied in the end of [step 7](#part-7--run-the-notebook).
-    1. Run the query. It will detect multivariate anomalies on the five stocks, based on the trained model, and render the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
+    1. Run the query. It detects multivariate anomalies on the five stocks, based on the trained model, and renders the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
 
     ```kusto
     let cutoff_date=datetime(2023-01-01);
@@ -276,7 +275,7 @@ For general information, see [Create a KQL queryset](create-query-set.md).
     | render anomalychart with(anomalycolumns=anomaly, title='Stock Price Changest in % with Anomalies')
     ```
 
-The resulting anomaly chart should look like the following image: 
+The resulting anomaly chart should look like the following image:
 
 :::image type="content" source="media/multivariate-anomaly-detection/kql-query-output.png" alt-text="Screenshot of multivariate anomaly output.":::
 

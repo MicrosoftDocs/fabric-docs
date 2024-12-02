@@ -99,19 +99,19 @@ Fabric notebooks provide code snippets that help you easily write commonly used 
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippet contents align with the code cell language. You can see available snippets by typing **Snippet**. You can also type any keyword to see a list of relevant snippets. For example, if you type **read**, you see the list of snippets to read data from various data sources.
 
-![Animated GIF of code snippets.](media/author-execute-notebook/code-snippet.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/code-snippet.gif" alt-text="Animated GIF of code snippets.":::
 
 ### Drag and drop to insert snippets
 
 Use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here; you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
-![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-snippet.gif" alt-text="Animated GIF of drag and drop to insert snippets.":::
 
 ### Drag and drop to insert images
 
 Use drag and drop to easily insert images from your browser or local computer to a markdown cell.
 
-![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drag-drop-insert-image.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-image.gif" alt-text="Animated GIF of drag and drop to insert images.":::
 
 ### Format text cell with toolbar buttons
 
@@ -127,7 +127,7 @@ Select **Undo** or **Redo**, or press **Z** or **Shift+Z** to revoke the most re
 
 Supported undo cell operations:
 
-- Insert or delete cell. You can revoke the delete operations by selecting **Undo** (the text content is kept along with the cell).
+- Insert or delete cell. You can revoke the deleted operations by selecting **Undo** (the text content is kept along with the cell).
 - Reorder cell.
 - Toggle parameter.
 - Convert between code cell and Markdown cell.
@@ -139,7 +139,7 @@ Supported undo cell operations:
 
 You can drag from the empty part of a cell and drop it to the desired position.
 
-<!-- ![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif) -->
+<!-- :::image type="content" border="true" source="media/author-execute-notebook/drag-drop-move-cell.gif" alt-text="Animated GIF of drag and drop to move a cell."::: -->
 
 You can also move the selected cell using **Move up** and **Move down** on the ribbon.
 
@@ -155,7 +155,7 @@ You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode)
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide input** to collapse the current cell's input. To expand it again, select **Show input** when the cell is collapsed.
 
-<!-- ![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif) -->
+<!-- :::image type="content" border="true" source="media/author-execute-notebook/collapse-cell-input.gif" alt-text="Animated GIF of collapsing cell input."::: -->
 
 ### Collapse a cell output
 
@@ -163,7 +163,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table will see an unauthorized error during query execution.
+Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
 > Security only applies during query execution and any notebook cells containing query results can be viewed by users that are not authorized to run queries against the data directly.
@@ -172,7 +172,7 @@ Using [OneLake data access roles (preview)](../onelake/security/get-started-data
 
 The lock and freeze cell operations allow you to make cells read-only or stop code cells from being run on an individual basis.
 
-![Animated GIF of lock or freeze a cell.](media/author-execute-notebook/lock-and-freeze-cell.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/lock-and-freeze-cell.gif" alt-text="Animated GIF of lock or freeze a cell.":::
 
 ### Merge and split cells
 
@@ -192,7 +192,7 @@ Selecting Outlines or Table of Contents presents the first markdown header of an
 
 The markdown folding option allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations.
 
-![Animated GIF of markdown folding.](media/author-execute-notebook/markdown-folding.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/markdown-folding.gif" alt-text="Animated GIF of markdown folding.":::
 
 ### Find and replace
 
@@ -257,7 +257,7 @@ The ```%run``` command also allows you to run Python or SQL files that are store
 ``` %run [-b/--builtin -c/--current] [script_file.py/.sql] [variables ...] ```
 
 For options:
-- **-b/--builtin**: This option indicates that the command will find and run the specified script file from the notebook’s built-in resources.
+- **-b/--builtin**: This option indicates that the command finds and runs the specified script file from the notebook’s built-in resources.
 - **-c/--current**: This option ensures that the command always uses the current notebook’s built-in resources, even if the current notebook is referenced by other notebooks.
 
 Examples:
@@ -278,8 +278,8 @@ Usage example for nested run case:
     - **Notebook2**: Contains *script_file2.py* in its built-in resources
 - Let's use **Notebook1** work as a root notebook with the content: ``` %run Notebook2 ```.
 - Then in the **Notebook2** the usage instruction is:
-    - To run *script_file1.py* in **Notebook1**(the root Notebook) the code would be: ``` %run -b script_file1.py ```
-    - To run *script_file2.py* in **Notebook2**(the current Notebook) the code would be: ``` %run -b -c script_file2.py ```
+    - To run *script_file1.py* in **Notebook1**(the root Notebook), the code would be: ``` %run -b script_file1.py ```
+    - To run *script_file2.py* in **Notebook2**(the current Notebook), the code would be: ``` %run -b -c script_file2.py ```
 
 ### Variable explorer
 
@@ -447,8 +447,8 @@ You can personalize your Spark session with the magic command **%%configure**. F
 %%configure
 {
     // You can get a list of valid parameters to config the session from https://github.com/cloudera/livy#request-body.
-    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g", "472g"]
-    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80]
+    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g"]
+    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64]
     "executorMemory": "28g",
     "executorCores": 4,
     "jars": ["abfs[s]: //<file_system>@<account_name>.dfs.core.windows.net/<path>/myjar.jar", "wasb[s]: //<containername>@<accountname>.blob.core.windows.net/<path>/myjar1.jar"],
@@ -622,8 +622,8 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 
 | **Action** | **Notebook shortcuts** |
 |---|---|
-| Move cursor up | Up |
-| Move cursor down | Down |
+| Move up cursor | Up |
+| Move down cursor | Down |
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
 | Comment or Uncomment | Ctrl + / <br/> Comment: Ctrl + K + C <br/> Uncomment: Ctrl + K + U |

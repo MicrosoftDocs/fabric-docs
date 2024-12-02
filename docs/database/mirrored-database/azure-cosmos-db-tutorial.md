@@ -1,11 +1,10 @@
 ---
-title: |
-  Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
 description: Learn how to configure a mirrored database from Azure Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.topic: tutorial
 no-loc: [Copilot]
 ---
@@ -14,8 +13,8 @@ no-loc: [Copilot]
 
 In this tutorial, you configure a Fabric mirrored database from an existing Azure Cosmos DB for NoSQL account.
 
-Mirroring incrementally replicates Azure Cosmos DB data into Fabric OneLake in near real-time, without impacting the performance of transactional workloads or consuming Request Units (RUs).
-You can build Power BI reports directly on the data in OneLake, using DirectLake mode. You can run ad-hoc queries in SQL or Spark, build data models using notebooks and leverage built-in Copilot and advanced AI capabilities in Fabric to analyze the data. 
+Mirroring incrementally replicates Azure Cosmos DB data into Fabric OneLake in near real-time, without affecting the performance of transactional workloads or consuming Request Units (RUs).
+You can build Power BI reports directly on the data in OneLake, using DirectLake mode. You can run ad hoc queries in SQL or Spark, build data models using notebooks and use built-in Copilot and advanced AI capabilities in Fabric to analyze the data. 
 
 > [!IMPORTANT]
 > Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
@@ -26,8 +25,7 @@ You can build Power BI reports directly on the data in OneLake, using DirectLake
   - If you don't have an Azure subscription, [Try Azure Cosmos DB for NoSQL free](https://cosmos.azure.com/try/).
   - If you have an existing Azure subscription, [create a new Azure Cosmos DB for NoSQL account](/azure/cosmos-db/nosql/quickstart-portal).
 - An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../get-started/fabric-trial.md). Mirroring might not be available in some Fabric regions. For more information, see [supported regions.](azure-cosmos-db-limitations.md#supported-regions)
-- Enable Mirroring in your Fabric tenant or workspace. If the feature isn't already enabled, [enable mirroring in your Fabric tenant](enable-mirroring.md).
-    - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
+
 > [!TIP]
 > During the public preview, it's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
 
@@ -96,7 +94,7 @@ Now that your data is up and running, there are various analytics scenarios avai
 
 1. Once Fabric Mirroring is configured, you're automatically navigated to the **Replication Status** pane.
 
-1. Here, monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric Mirror replication](monitor.md).
+1. Here, monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
 
 ## Query the source database from Fabric
 
@@ -180,9 +178,11 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
     :::image type="content" source="media/azure-cosmos-db-tutorial/query-editor.png" alt-text="Screenshot of the query editor for both text-based and visual queries in Fabric." lightbox="media/azure-cosmos-db-tutorial/query-editor.png":::
 
-## Building BI reports on the SQL queries or views
+<a id="building-bi-reports-on-the-sql-queries-or-views"></a>
+
+## Build BI reports on the SQL queries or views
    1. Select the query or view and then select **Explore this data (preview)**. This action explores the query in Power BI directly using Direct Lake on OneLake mirrored data.
-   2. Edit the charts as needed and save the report.
+   1. Edit the charts as needed and save the report.
       
 > [!TIP]
 > You can also optionally use Copilot or other enhancements to build dashboards and reports without any further data movement.
@@ -191,9 +191,9 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 Learn more about how to access and query mirrored Azure Cosmos DB data in Fabric:
 
-- [How-to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-how-to-query-nested.md)
+- [How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-how-to-query-nested.md)
 - [How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)](azure-cosmos-db-lakehouse-notebooks.md)
-- [How-to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric](azure-cosmos-db-how-to-join-multiple.md)
+- [How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric (Preview)](azure-cosmos-db-how-to-join-multiple.md)
 
 ## Related content
 

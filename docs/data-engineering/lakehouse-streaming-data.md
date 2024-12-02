@@ -18,7 +18,7 @@ Structured Streaming is a scalable and fault-tolerant stream processing engine b
 
 Structured streaming became available in Spark 2.2. Since then, it has been the recommended approach for data streaming. The fundamental principle behind structured stream is to treat a live data stream as a table where new data is always continuously appended, like a new row in a table. There are a few defined built-in streaming file sources such as CSV, JSON, ORC, Parquet and built-in support for messaging services like Kafka and Event Hubs.
 
-This article provides insights into how to optimize the processing and ingestion of events through Spark structure streaming in production environments with high throughput. The suggested approaches include:
+This article provides insights into how to optimize the processing and ingestion of events through Spark structured streaming in production environments with high throughput. The suggested approaches include:
 
 * Data streaming throughput optimization
 * Optimizing write operations in the delta table and
@@ -36,7 +36,7 @@ In Microsoft Fabric, the user can set a retry policy for Spark Job Definition jo
 
 ## Streaming sources
 
-Setting up streaming with Event Hubs require basic configuration, which, includes Event Hubs namespace name, hub name, shared access key name, and the consumer group. A consumer group is a view of an entire event hub. It enables multiple consuming applications to have a separate view of the event stream and to read the stream independently at their own pace and with their offsets.
+Setting up streaming with Event Hubs require basic configuration, which, includes Event Hubs namespace name, hub name, shared access key name, and the consumer group. A consumer group is a view of an entire event hub. It enables multiple consuming applications to have a separate view of the eventstream and to read the stream independently at their own pace and with their offsets.
 
 Partitions are an essential part of being able to handle a high volume of data. A single processor has a limited capacity for handling events per second, while multiple processors can do a better job when executed in parallel. Partitions allow the possibility of processing large volumes of events in parallel.
 
@@ -148,7 +148,7 @@ rawData = df \
 
 In order to minimize the number of operations to improve the time spent ingesting data into Delta lake, batching events is a practical alternative.  
 
-Triggers define how often a streaming query should be executed (triggered) and emit a new data, setting them up defines a periodical processing time interval for microbatches, accumulating data and batching events into few persisting operations, instead of writing into disk all the time.  
+Triggers define how often a streaming query should be executed (triggered) and emit new data. Setting them up defines a periodical processing time interval for microbatches, accumulating data and batching events into few persisting operations, instead of writing into disk all the time.  
 
 The following example shows a streaming query where events are periodically processed in intervals of one minute.  
 

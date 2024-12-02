@@ -7,6 +7,7 @@ author: abnarain
 ms.topic: how-to
 ms.custom:
   - build-2024
+  - ignite-2024
 # ms.custom:
 #   - ignite-2023
 ms.date: 05/24/2024
@@ -15,9 +16,7 @@ ms.date: 05/24/2024
 # Transform data using dbt
 
 > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow.
->
-> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 [dbt(Data Build Tool)](https://www.getdbt.com/product/what-is-dbt) is an open-source command-line interface (CLI) that simplifies data transformation and modeling within data warehouses by managing complex SQL code in a structured, maintainable way. It enables data teams to create reliable, testable transformations at the core of their analytical pipelines.
 
@@ -58,7 +57,7 @@ This section walks you through the following steps:
 Create a file `requirements.txt` in the `dags` folder. Add the following packages as Apache Airflow requirements.
 
 - [astronomer-cosmos](https://www.astronomer.io/cosmos/): This package is used to run your dbt core projects as Apache Airflow dags and Task groups.
-- [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Synapse Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
+- [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
 
   ```bash
      astronomer-cosmos==1.0.3

@@ -1,0 +1,131 @@
+### YamlMime:FAQ
+metadata:
+  title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
+  description: This article answers frequently asked questions about SQL database in Microsoft Fabric (preview).
+  author: WilliamDAssafMSFT
+  ms.author: wiassaf
+  ms.reviewer: nzagorac, antho, sukkaur
+  ms.topic: faq
+  ms.custom:
+    - ignite-2024
+  ms.date: 11/06/2024
+title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
+summary: |
+  **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
+
+  This article answers frequently asked questions about SQL database in Microsoft Fabric.
+
+sections:
+  - name: Connectivity
+    questions:
+      - question: |
+          How do I connect to SQL database in Fabric? 
+        answer:
+          You can connect to SQL database in Fabric in the same ways you connect to Azure SQL Database. For more information, see [Connect to SQL database in Fabric](connect.md).
+
+  - name: About SQL database data in OneLake
+    questions:
+
+      - question: |
+           Is there a staging or landing zone for SQL database data replication into OneLake? If so, is it outside of OneLake? 
+        answer: 
+          For the data replicated into OneLake, a landing zone stores both the snapshot and change data, to improve performance when converting files into delta verti-parquet.
+
+      - question: |
+          How long does it take to replicate inserts/updates/deletes into OneLake? 
+        answer: 
+          Near real-time latency.
+
+      - question: |
+          Do you support replicating of views, transient or external tables into the OneLake?
+        answer: 
+          No. Currently, only replicating regular tables are supported.
+
+      - question: |
+          Can Power BI reports on SQL database in Fabric use direct lake mode?
+        answer: 
+          Yes. In OneLake, the SQL database tables are all v-ordered delta tables.
+
+      - question: |
+          How do I know Fabric is replicating data from SQL database to OneLake? 
+        answer: |
+           Use the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
+           1. Execute the following query to check if the changes properly flow: 
+              ```sql
+              SELECT * FROM sys.dm_change_feed_log_scan_sessions;
+              ```
+           1. If the `sys.dm_change_feed_log_scan_sessions` DMV doesn't show any progress on processing incremental changes, execute the following T-SQL query to check if there are any problems reported:
+              ```sql
+              SELECT * FROM sys.dm_change_feed_errors;
+              ```
+
+      - question: |
+          How to stop/disable replication of data from SQL database in Fabric to OneLake?  
+        answer: |
+          For SQL database in Fabric, the replication of data to OneLake cannot be disabled. 
+
+      - question: | 
+          Are system objects such as system views and dynamic management views the same as [Fabric database mirroring](../mirrored-database/overview.md)?
+        answer: |
+          Yes, with the exception of objects that disable the replication. 
+
+  - name: Security
+    questions:
+      - question: |
+          Is data ever leaving the customers Fabric tenant? 
+        answer: 
+          No. 
+      - question: |
+          Is data staged outside of a customer environment? 
+        answer: 
+          No. Data isn't staged outside of customer environment, it's staged in the customer's OneLake.
+
+  - name: Cost Management 
+    questions:
+      - question: |
+          What are the costs associated with SQL database in Fabric?
+        answer: 
+          During preview, there's no cost for SQL database in Fabric.
+
+  - name: Monitoring
+    questions: 
+      - question: | 
+          How do I monitor the performance of SQL database in Fabric?
+        answer:
+          Use the **Performance Dashboard**, with rich information on most expensive/frequent queries, CPU utilization, and alerts on performance critical states. For more information, see [Performance Dashboard for SQL database in Fabric](performance-dashboard.md).
+
+  - name: Reliability
+    questions:
+      - question: | 
+          Does SQL database in Fabric support availability zones?
+        answer:
+          Yes. For more information, see [Fabric availability zone support](/azure/reliability/reliability-fabric#availability-zone-support).
+
+  - name: Licensing
+    questions:
+      - question: |
+          What are licensing options for SQL database in Fabric? 
+        answer:
+          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
+
+      - question: |
+          Is SQL database in Fabric billed with Fabric capacity or with Azure capacity?
+        answer: 
+          Billing for SQL database in Fabric is structured according to the [Fabric Capacity Model](../../enterprise/licenses.md).
+         
+  - name: Troubleshooting
+    questions:
+      - question: |
+          I tried to create a database but got the error message "SQL database failed to create." What should I do?
+        answer:
+          Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, users who try to create a new SQL database will receive an error message "SQL database failed to create."
+ 
+
+
+additionalContent: |
+
+  ## Related content
+
+  - [SQL database in Fabric](overview.md)
+  - [Performance Dashboard for SQL database in Fabric](performance-dashboard.md)
+  

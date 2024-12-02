@@ -1,15 +1,17 @@
 ---
 title: Google Cloud Pub/Sub connector for Fabric event streams
-description: This include file has the common content for configuring Google Cloud Pub/Sub connector for Fabric event streams and Real-Time hub. 
-ms.author: xujiang1
-author: xujxu 
+description: The include file has the common content for configuring Google Cloud Pub/Sub connector for Fabric event streams and Real-Time hub. 
+ms.author: zhenxilin
+author: alexlzx
 ms.topic: include
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/22/2024
 ---
 
 1. On the **Connect** screen, under **Connection**, select **New connection**.
+
+    :::image type="content" source="media/google-cloud-pub-sub-source-connector/new-connection-link.png" alt-text="Screenshot that shows the Connect page for Google Cloud Pub/Sub." lightbox="media/google-cloud-pub-sub-source-connector/new-connection-link.png":::
 
 1. On the **Connection settings** screen, fill out the required information.
 
@@ -51,7 +53,5 @@ ms.date: 05/21/2024
       >This JSON file can be downloaded only once.
 
 1. Select **Connect** on the **Connection settings** screen.
-
-1. Enter a **Source name** and **Topic name** for the new source, and then select **Next**.
 
 1. Review the summary, and then select **Add**.

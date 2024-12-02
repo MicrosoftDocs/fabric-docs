@@ -9,6 +9,7 @@ ms.date: 09/25/2024
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ---
 
 # Roles in workspaces in Microsoft Fabric
@@ -32,13 +33,15 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | Add members or others with lower permissions.                                                                                                                   | &#x2705; | &#x2705; |             |          |
 | Allow others to reshare items.<sup>1</sup>                                                                                                                      | &#x2705; | &#x2705; |             |          |
 | Create or modify database mirroring items.                                                                                                                      | &#x2705; | &#x2705; |             |          |
-| View and read content of data pipelines, notebooks, Spark job definitions, ML models and experiments, and Event streams.                                        | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| Create or modify warehouse items.                                                                                                                      | &#x2705; | &#x2705; |             |          |
+| Create or modify SQL database items.                                                                                                                      | &#x2705; | &#x2705; |             |          |
+| View and read content of data pipelines, notebooks, Spark job definitions, ML models and experiments, and eventstreams.                                        | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | View and read content of KQL databases, KQL query-sets, and real-time dashboards.                                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Connect to SQL analytics endpoint of Lakehouse or the Warehouse                                                                                                 | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint.                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark.                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
 | Read Lakehouse data through Lakehouse explorer.                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
-| Write or delete data pipelines, notebooks, Spark job definitions, ML models, and experiments, and Event streams.                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
+| Write or delete data pipelines, notebooks, Spark job definitions, ML models, and experiments, and eventstreams.                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
 | Write or delete Eventhouses<sup>3</sup>, KQL Querysets, Real-Time Dashboards, and schema and data of KQL Databases, Lakehouses, data warehouses, and shortcuts. | &#x2705; | &#x2705; | &#x2705;    |          |
 | Execute or cancel execution of notebooks, Spark job definitions, ML models, and experiments.                                                                     | &#x2705; | &#x2705; | &#x2705;    |          |
 | Execute or cancel execution of data pipelines.                                                                                                                  | &#x2705; | &#x2705; | &#x2705;    |          |

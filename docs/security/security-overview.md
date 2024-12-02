@@ -4,6 +4,8 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.custom:
+  - ignite-2024
 ms.date: 08/18/2024
 ---
 
@@ -21,7 +23,7 @@ Fabric security is:
 
 * **Compliant** – Fabric has data sovereignty out of the box with multi geo capacities. Fabric also supports a wide range of compliance standards.
 
-* **Governable** - Fabric comes with a set of governance tools such [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), [data loss prevention](/purview/dlp-learn-about-dlp) and [purview integration](../governance/use-microsoft-purview-hub.md).  
+* **Governable** - Fabric comes with a set of governance tools such [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), [data loss prevention](/purview/dlp-powerbi-get-started) and [purview integration](../governance/use-microsoft-purview-hub.md).  
 
 * **Configurable** - You can configure Fabric security in accordance with your organizational policies.
 
@@ -55,7 +57,7 @@ To understand more about authentication in Fabric, see [Microsoft Fabric securit
 
 #### Private Links
 
-Private links enable secure connectivity to Fabric by restricting access to your Fabric tenant from an Azure virtual network (VNet), and blocking all public access. This ensures that only network traffic from that VNet is allowed to access Fabric features such as [Notebooks](../data-engineering/how-to-use-notebook.md), [Lakehouses](../data-engineering/lakehouse-overview.md), and [data warehouses](../data-warehouse/data-warehousing.md), in your tenant.
+Private links enable secure connectivity to Fabric by restricting access to your Fabric tenant from an Azure virtual network (VNet), and blocking all public access. This ensures that only network traffic from that VNet is allowed to access Fabric features such as [Notebooks](../data-engineering/how-to-use-notebook.md), [Lakehouses](../data-engineering/lakehouse-overview.md), [data warehouses](../data-warehouse/data-warehousing.md), and [databases](../database/index.yml) in your tenant.
 
 To configure Private Links in Fabric, see [Set up and use private links](../security/security-private-links-use.md).
 

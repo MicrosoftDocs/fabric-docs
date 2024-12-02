@@ -7,6 +7,7 @@ author: mberdugo
 ms.topic: overview
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.search.form:
 ms.date: 07/29/2024
 #customer intent: As an ISV, I want to learn about the different pathways to integrate with Microsoft Fabric so that I can leverage the platform's capabilities to build and deploy my solutions.
@@ -41,7 +42,7 @@ The following sections describe some of the ways you can get started with this m
 Real-Time Intelligence streamlines data analysis and visualization, offering a centralized solution for immediate insights and actions on data in motion within an organization. It efficiently manages large volumes of data through robust querying, transformation, and storage capabilities.
 
 - Eventhouses are specifically designed for streaming data, compatible with Real-Time hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Eventhouses support existing Eventhouse APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Eventhouses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
-- Event streams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in eventhouses, and Data Activator. Learn more about [event streams](../../real-time-intelligence/event-streams/overview.md) and [event streams API](#develop-on-fabric).
+- Eventstreams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in eventhouses, and Fabric [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)]. Learn more about [eventstreams](../../real-time-intelligence/event-streams/overview.md) and [eventstreams API](#develop-on-fabric).
 - If you're using Databricks or Jupyter Notebooks, you can utilize the Kusto Python Client Library to work with KQL databases in Fabric. Learn more about [Kusto Python SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
 - You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Eventhouses or KQL Databases.
 - [Database shortcuts in Real-Time Intelligence](../../real-time-intelligence/database-shortcut.md) are embedded references within an eventhouse to a source database. The source database can either be a KQL Database in Real-Time Intelligence or an Azure Data Explorer database. Shortcuts can be used for in place sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#develop-on-fabric).
@@ -91,7 +92,7 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 | Data Warehouse    | - [Warehouse](/rest/api/fabric/warehouse/items)<br> - [Mirrored Warehouse](/rest/api/fabric/mirroredwarehouse/items)|
 | Data Engineering    | - [Lakehouse](/rest/api/fabric/lakehouse/items)<br> - [Spark](/rest/api/fabric/spark/custom-pools)<br> - [Spark Job Definition](/rest/api/fabric/sparkjobdefinition/items)<br> - [Tables](/rest/api/fabric/lakehouse/tables)<br> - [Jobs](/rest/api/fabric/lakehouse/background-jobs)|
 | Data Factory    | - [DataPipeline](/rest/api/fabric/datapipeline/items)<br> |
-| Real-Time Intelligence    | - [Eventhouse](/rest/api/fabric/eventhouse/items)<br> - [KQL Database](/rest/api/fabric/kqldatabase/items)<br> - [KQL Queryset](/rest/api/fabric/kqlqueryset/items)<br> - [Event stream](/rest/api/fabric/eventstream/items)|
+| Real-Time Intelligence    | - [Eventhouse](/rest/api/fabric/eventhouse/items)<br> - [KQL Database](/rest/api/fabric/kqldatabase/items)<br> - [KQL Queryset](/rest/api/fabric/kqlqueryset/items)<br> - [Eventstream](/rest/api/fabric/eventstream/items)|
 | Data Science    | - [Notebook](/rest/api/fabric/notebook/items)<br> - [ML Experiment](/rest/api/fabric/mlexperiment/items)<br> - [ML Model](/rest/api/fabric/mlmodel/items)<br> |
 | OneLake    | - [Shortcut](/rest/api/fabric/core/onelake-shortcuts)<br> - [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2)<br> |
 | Power BI    | - [Report](/rest/api/fabric/report/items)<br> - [Dashboard](/rest/api/fabric/dashboard/items)<br> - [Semantic Model](/rest/api/fabric/semanticmodel/items)<br>|

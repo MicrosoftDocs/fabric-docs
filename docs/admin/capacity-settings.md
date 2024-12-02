@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 09/11/2024
+ms.date: 11/07/2024
 ---
 
 # Manage your Fabric capacity
@@ -278,9 +278,7 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 ### Delete a capacity
 
-When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](capacity-settings.md#delete-a-capacity).
-
-Ongoing operations are stopped or canceled and scheduled operations are canceled.
+When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in Onelake Data Hub and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention policy](portal-workspaces.md#workspace-retention).
 
 # [Power BI Premium](#tab/power-bi-premium)
 
@@ -382,7 +380,9 @@ This table summarizes the actions you can take in the details section.
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |
 | Preferred capacity for My workspace  | Designate the capacity as the default capacity for [My workspaces](../admin/portal-workspaces.md#govern-my-workspaces)         |
 | Data Engineering/Science Settings    | Allow workspace admins to set the size of their spark [pools](../data-engineering/workspace-admin-settings.md#pool) |
-| Workspaces assigned to this capacity | Add or remove workspaces assigned to the capacity |
+| Workspaces assigned to this capacity | <sup>*</sup>Add or remove workspaces assigned to the capacity |
+
+<sup>*</sup> To assign a workspace to a Fabric capacity or a capacity with an A SKU, you need to have a capacity contributor role, and a workspace admin role.
 
 ### Delegated tenant settings
 

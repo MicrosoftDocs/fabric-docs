@@ -12,7 +12,7 @@ ms.date: 04/16/2024
 # What is Apache Airflow Job?
 
 > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 Apache Airflow job is the next generation of Azure Data Factory's Workflow Orchestration Manager.
 It's a simple and efficient way to create and manage [Apache Airflow](https://airflow.apache.org) orchestration jobs, enabling you to run Directed Acyclic Graphs (DAGs) at scale with ease.  It's the part of Fabric's Data Factory that empowers you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources for example, databases, data warehouse, Lakehouse, real-time data, and more.
@@ -44,8 +44,8 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - Australia East
 - Australia Southeast
 - Brazil South
-- Brazil South (duplicate)
 - Canada East
+- Canada Central
 - East Asia
 - East US
 - East US 2 EUAP
@@ -53,19 +53,27 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - Japan East
 - Japan West
 - North Europe
-- Qatar Central
 - South Africa North
 - South Central US
+- South India
 - Southeast Asia
+- Sweden Central
+- Switzerland West
 - UK South
-- UK South (duplicate)
+- UK West
 - West Central US
 - West Europe
 - West US
+- West US 2
+- West US 3
 
 ## Supported Apache Airflow versions
 
 - 2.6.3
+
+## Support Python version
+
+- 3.8.17
 
 > [!NOTE]
 > Changing the Apache Airflow version within an existing IR is not supported. Instead, the recommended solution is to create a new Airflow IR with the desired version
