@@ -130,7 +130,7 @@ The built-in resources folder is a system predefined folder for each notebook it
 
 - You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI.
 - You can use relative paths like `builtin/YourData.txt` for quick exploration. The `notebookutils.nbResPath` method helps you compose the full path.
-- You can easily move your validated data to a lakehouse via the **Write to lakehouse** option. Fabric has embedded rich code snippets for common file types to help you quickly get started.
+- You can easily move your validated data to a lakehouse via the **Write to lakehouse** option. Fabric embeds rich code snippets for common file types to help you quickly get started.
 - These resources are also available for use in the [Reference notebook run](author-execute-notebook.md) case via ```notebookutils.notebook.run()```.
 
 ### Environment resources folder
@@ -145,7 +145,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
    
    :::image type="content" source="media\how-to-use-notebook\environment-resources-folder.png" alt-text="Screenshot showing where to open environment resources folder.":::
 
-- You can also operate on the files/folders just same with the Built-in resources folder. 
+- You can also operate on the files/folders same with the Built-in resources folder. 
 - The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
 
 ### File editor
@@ -242,10 +242,10 @@ Version history allows you to easily version your live notebook changes. It supp
 
       :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version.":::
 
-   - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned, you can find the modification records from all the contributors in the system checkpoint timeline list.
+   - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
       :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list.":::
 
-1. You can click on a checkpoint to open the **diff view**, it will highlight the content differences between the selected checkpoint and the current live version, including the differences of cell content, cell output, and metadata. The version of this checkpoint can be managed individually in **'more options'** menu.
+1. You can click on a checkpoint to open the **diff view**, it highlights the content differences between the selected checkpoint and the current live version, including the differences of cell content, cell output, and metadata. The version of this checkpoint can be managed individually in **'more options'** menu.
 
    :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff.":::
 
@@ -261,7 +261,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
 ## Notebook mode switcher
 
-Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode, and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients, and they see the best available notebook mode according to their permission, and they are able to switch between the mode they have permission to.
+Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode, and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients. They can see the best available notebook mode according to their permission, and they are able to switch between the mode they have permission to.
 
 :::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes.":::
 

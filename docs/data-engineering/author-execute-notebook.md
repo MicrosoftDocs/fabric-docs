@@ -278,8 +278,8 @@ Usage example for nested run case:
     - **Notebook2**: Contains *script_file2.py* in its built-in resources
 - Let's use **Notebook1** work as a root notebook with the content: ``` %run Notebook2 ```.
 - Then in the **Notebook2** the usage instruction is:
-    - To run *script_file1.py* in **Notebook1**(the root Notebook) the code would be: ``` %run -b script_file1.py ```
-    - To run *script_file2.py* in **Notebook2**(the current Notebook) the code would be: ``` %run -b -c script_file2.py ```
+    - To run *script_file1.py* in **Notebook1**(the root Notebook), the code would be: ``` %run -b script_file1.py ```
+    - To run *script_file2.py* in **Notebook2**(the current Notebook), the code would be: ``` %run -b -c script_file2.py ```
 
 ### Variable explorer
 
