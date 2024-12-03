@@ -1,6 +1,6 @@
 ---
 title: The Microsoft Fabric Variable library variable types
-description: Understand how Variable libraries are used and what variable types are allowed.
+description: Understand how to use Variable libraries and what variable types are allowed.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
@@ -10,7 +10,7 @@ ms.topic: concept-article
 ms.custom:
 ms.date: 08/15/2024
 ms.search.form: Introduction to Variable libraries, Variable library types, variable types
-#customer intent: As a developer, I want to learn how to use the Variable library item and which variable types are used, so that I can manage my content lifecycle.
+#customer intent: As a developer, I want to learn how to use the Variable library item and which variable types exist, so that I can manage my content lifecycle.
 ---
 
 # Variable names and types (preview)
@@ -58,9 +58,9 @@ The variables in the Variable library can be any of the following basic types:
 - String: (default) Any char. Can be null or empty.
 - Boolean: Gets *true* or *false*.
 - DateTime: The date and time are represented using ISO 8601 standard, yyyy-MM-ddTHH:mm:ssZ, where:
-  - *yyyy* is the four-digit year, *MM* is the two-digit month, *dd* is the two-digit day
+  - *yyyy-MM-dd* is the four-digit year, followed by the two-digit month, and two-digit day
   - *T* separates the date and the time
-  - *HH* is the two-digit hour in 24-hour format, mm is the two-digit minute, ss is the two-digit second
+  - *HH:mm:ss* is the two-digit hour in 24-hour format, followed by the two-digit minute, and two-digit second
   - *Z* indicates that the time is in Coordinated Universal Time (UTC)
   For example, 2024-10-14T04:53:54Z.
 - Double: A number with decimal points.

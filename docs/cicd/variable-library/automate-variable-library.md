@@ -16,23 +16,23 @@ You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fab
 * **Read**/**Update** the Variable library item *schema*
 * **Read**/**Update** the Variable library item *active value-set*
 
-If you're using the APIs as part of your lifecycle management, פermissions for item reference are checked during Git Update and deployment pipeline deployment.
+If you're using the APIs as part of your lifecycle management, permissions for item reference are checked during Git Update and deployment pipeline deployment.
 
 ## Read the Variable library item information
 
-* Use the ‘Get item definition’ API call, to view the item’s schema:
-  * Variables - name, type, note and default value
+* To view the item's schema, use the *Get item definition* API call. This call returns:
+  * Variables - name, type, note, and default value
   * Value-sets – names and their adjustable variables’ value
 * Use the ‘Get item’ API call to view under the custom property section the active value-set name of this item.
 
 ## Update the Variable library item information
 
-* Use the ‘Update item definition’ API call, to update the item’s schema:
-  * Variables – Add variable/Remove variable/Edit variable (name, type, note and default value)
+* To update the item’s schema, use the *Update item definition* API call which returns:
+  * Variables – Add variable/Remove variable/Edit variable (name, type, note, and default value)
   * value-sets – Add VS/Remove VS/Edit VS name/Edit VS’s variable value
-* Use the custom property of active VS name in the ‘Update item’ API call, to specify the active value-set for this item.
+* Use the custom property of active VS name in the *Update item* API call, to specify the active value-set for this item.
 
-**Including this property is optional, but once included in the call, a value for it is mandatory to prevent you from accidentally removing an active value-set removed without setting a different one to be active.
+**Including this property is optional, but once included in the call, a value is required to prevent you from accidentally removing an active value-set removed without setting a different one to be active.
 
 For example:
 
@@ -92,7 +92,7 @@ The Variable library item schema is a JSON object that contains two parts:
 
 ## Considerations and limitations
 
-* Users can add *up to 1000 variables* and *up to 1000 value-sets*, as long as the total number of cells in the alternative value-sets is under 10,000 cells and the item’s size not bigger than 3MB. This is validated when the user saves changes.
-* The note field can have up to 2048 chars.
-* The value-set description field can have up to 2048 chars.
+* Users can add *up to 1,000 variables* and *up to 1,000 value-sets*, as long as the total number of cells in the alternative value-sets is under 10,000 cells and the item’s size not bigger than 3 MB. This is validated when the user saves changes.
+* The note field can have up to 2,048 chars.
+* The value-set description field can have up to 2,048 chars.
 * Both item name and variable name are *not* case sensitive. Therefore, when consumer item requests a variable’s value resolution, we return the value even if the case doesn't match.
