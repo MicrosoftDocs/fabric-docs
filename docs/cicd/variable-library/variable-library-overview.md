@@ -1,35 +1,39 @@
 ---
-title: Fabric Application lifecycle management variable library
-description: Learn how to use the Fabric Application lifecycle management (ALM) variable library tool to customize your stages.
+title: Fabric Application lifecycle management Variable library
+description: Learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize your stages.
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
 ms.date: 08/15/2024
-#customer intent: As a developer, I want to learn how to use the Fabric Application lifecycle management (ALM) variable library tool to customize my stages so that I can manage my content lifecycle.
+#customer intent: As a developer, I want to learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize my stages so that I can manage my content lifecycle.
 ---
 
-# What is a variable library? (preview)
+# What is a Variable library? (preview)
 
-The Variable Library presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the fabric that contains a list of variables, along with their respective values for each stage of the release pipeline.
+The Microsoft Fabric Variable Library presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the fabric that contains a list of variables, along with their respective values for each stage of the release pipeline.
 
-The variable library:
+The Variable library:
 
 * Is compatible with CI/CD processes, allowing integration with Git and deployment through Deployment pipelines.
 * Supports automation via public APIs.
 
 > [!NOTE]
-> The variable library item is currently in **preview**.
+> The Fabric Variable library item is currently in **preview**.
 
 Variable libraries enable customers to:
 
-* [Customize configurations](#customized-configurations)
-* [Share configurations](#share-configurations) 
+* [Customize configurations](#customize-configurations)
+* [Share configurations](#share-configurations)
 
-## Customized configurations
+## Customize configurations
 
-A variable value can be configured based on the release pipeline stage. The user configures the variable library one time for each stage of the pipeline. The correct value is automatically used based on the pipeline stage. The user can configure values for Data pipeline, Notebook, shortcut for Lakehouse, semantic model etc.
+A variable value can be configured based on the release pipeline stage. The user can configure the Variable library with different sets of value, one for each stage of the release pipeline. Then, after one-time settings of the active value-set for each stage, the correct value is automatically used in the pipeline stage. Some examples include:
+
+* Changing items connection based on the stage
+* Switching to a different cloud data source based on the stage
+* Adjusting data quantity in a query based on the stage
 
 ## Share configurations
 

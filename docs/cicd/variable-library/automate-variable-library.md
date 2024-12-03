@@ -1,32 +1,31 @@
 ---
-title: Automate variable libraries  APIs
-description: Learn how to automate variable libraries in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs.
+title: Automate Variable library  APIs
+description: Learn how to automate Variable libraries in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
 ms.date: 11/12/2024
-#customer intent: As a developer, I want to learn how to automate variable libraries in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs, so that I can manage my content lifecycle.
+#customer intent: As a developer, I want to learn how to automate Variable libraries in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs, so that I can manage my content lifecycle.
 ---
 
-# Automate variable libraries by using APIs and Azure DevOps (preview)
+# Automate Variable libraries by using APIs and Azure DevOps (preview)
 
-You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis) to fully automate teh variable library management. Here are a few examples of what can be done by using the APIs:
+You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis) to fully automate the Variable library management. Here are a few examples of what can be done by using the APIs:
 
-* **Read**/**Update** the variable library item *schema*
-* **Read**/**Update** the variable library item *active value-set*
+* **Read**/**Update** the Variable library item *schema*
+* **Read**/**Update** the Variable library item *active value-set*
 
-If you're using the APIs as part of your lifecycle management, 
-Permissions for item reference are checked during Git Update and deployment pipeline deployment.
+If you're using the APIs as part of your lifecycle management, פermissions for item reference are checked during Git Update and deployment pipeline deployment.
 
-## Read the variable library item information
+## Read the Variable library item information
 
 * Use the ‘Get item definition’ API call, to view the item’s schema:
   * Variables - name, type, note and default value
   * Value-sets – names and their adjustable variables’ value
 * Use the ‘Get item’ API call to view under the custom property section the active value-set name of this item.
 
-## Update the variable library item information
+## Update the Variable library item information
 
 * Use the ‘Update item definition’ API call, to update the item’s schema:
   * Variables – Add variable/Remove variable/Edit variable (name, type, note and default value)
@@ -45,11 +44,11 @@ For example:
 }
 ```
 
-The variable library item CRUD APIs support service principle.
+The Variable library item CRUD APIs support service principle.
 
 ## Variable library schema
 
-The variable library item schema is a JSON object that contains two parts:
+The Variable library item schema is a JSON object that contains two parts:
 
 * **Variables** file – The variables contained in the item, and their properties.
   * name

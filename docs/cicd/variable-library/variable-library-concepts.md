@@ -1,6 +1,6 @@
 ---
-title: The Microsoft Fabric variable library
-description: Understand how variable libraries are used in the Fabric Application lifecycle management (ALM) tool.
+title: The Microsoft Fabric Variable library
+description: Understand how Variable libraries are used in the Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
@@ -10,16 +10,16 @@ ms.topic: concept-article
 ms.custom:
 ms.date: 08/15/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
-#customer intent: As a developer, I want to learn how to use the variable library item in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can manage my content lifecycle.
+#customer intent: As a developer, I want to learn how to use the Variable library item in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can manage my content lifecycle.
 ---
 
-# Understanding variable libraries in Microsoft Fabric (preview)
+# Understanding Variable libraries in Microsoft Fabric (preview)
 
-This article describes important concepts and features of the variable library in the Fabric Application lifecycle management (ALM) tool.
+This article describes important concepts and features of Microsoft Fabric's Variable library in the Fabric Application lifecycle management (ALM) tool.
 
 ## Variable library structure
 
-A variable library item contains a list of variables and their default values. It can also contain other value sets holding alternative values.
+A Variable library item contains a list of variables and their default values. It can also contain other value sets holding alternative values.
 
 Each variable is defined as follows:
 
@@ -41,11 +41,11 @@ The name of Variable library item itself must follow these conventions:
 - Can include letters, numbers, underscores, hyphens, and spaces.
 - Doesn't exceed 256 characters in length.
 
-The variable library name is *not* case sensitive.
+The Variable library name is *not* case sensitive.
 
-#### Name of a variable in the variable library
+#### Name of a variable in the Variable library
 
-The name of a variable inside the variable library must follow these conventions:
+The name of a variable inside the Variable library must follow these conventions:
 
 - Isn't empty.
 - Doesn't have leading or trailing spaces.
@@ -57,7 +57,7 @@ The variable name is *not* case sensitive.
 
 ### Variable types
 
-The variables in the variable library can be any of the following basic types:
+The variables in the Variable library can be any of the following basic types:
 
 - String: (default) Any char. Can be null or empty.
 - Boolean: Gets *true* or *false*.
@@ -87,7 +87,7 @@ There's no permission management in an item level or a variable level. Permissio
 
 ## Supported items
 
-The following items support the variable library:
+The following items support the Variable library:
 
 - Lakehouse
 - Data pipeline
