@@ -10,11 +10,11 @@ ms.date: 08/15/2024
 #customer intent: As a developer, I want to learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize my stages so that I can manage my content lifecycle.
 ---
 
-# What is a Variable library? (preview)
+# What is a Fabric Variable library? (preview)
 
 The Microsoft Fabric Variable Library presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the fabric that contains a list of variables, along with their respective values for each stage of the release pipeline.
 
-The Variable library:
+The Fabric Variable library:
 
 * Is compatible with CI/CD processes, allowing integration with Git and deployment through Deployment pipelines.
 * Supports automation via public APIs.
