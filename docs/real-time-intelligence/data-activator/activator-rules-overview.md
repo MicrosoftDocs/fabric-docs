@@ -9,7 +9,7 @@ ms.search.form: Data Activator Rule Creation
 ms.date: 12/03/2024
 ---
 
-# Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
+# Types of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
 
 Once you bring streaming data into an activator or [assign events to objects](activator-assign-data-objects.md#assign-data-to-objects-in-activator), you can create rules to act on your data. There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
 
