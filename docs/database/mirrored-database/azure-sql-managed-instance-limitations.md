@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 11/19/2024
+ms.date: 12/03/2024
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -20,7 +20,9 @@ For troubleshooting, see:
 
 ## Feature availability
 
-You can configure your Azure SQL Managed Instance for mirroring if it is deployed to any Azure **except**: East US 2; West US 2; Central US; West US. For a complete list of region support, see [Fabric regions that support Mirroring](#fabric-regions-that-support-mirroring).
+You can configure Azure SQL Managed Instance for mirroring if it is deployed to any Azure region, **except** for these regions currently: East US 2; West US 2; Central US; West US. 
+
+The feature availability also depends on Fabric regions. For a complete list of Fabric region support, see [Fabric regions that support Mirroring](#fabric-regions-that-support-mirroring).
 
 ## Database level limitations
 
@@ -154,6 +156,8 @@ The following are the Fabric regions that support Mirroring for Azure SQL Manage
     - UAE North
    :::column-end:::
 :::row-end:::
+
+For overall Fabric region availability, see [Fabric region availability](../../admin/region-availability.md).
 
 ## Next step
 
