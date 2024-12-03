@@ -1,6 +1,6 @@
 ---
-title: The Microsoft Fabric Variable library
-description: Understand how Variable libraries are used in the Fabric Application lifecycle management (ALM) tool.
+title: The Microsoft Fabric Variable library variable types
+description: Understand how Variable libraries are used and what variable types are allowed.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
@@ -9,19 +9,15 @@ ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
 ms.date: 08/15/2024
-ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
-#customer intent: As a developer, I want to learn how to use the Variable library item in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can manage my content lifecycle.
+ms.search.form: Introduction to Variable libraries, Variable library types, variable types
+#customer intent: As a developer, I want to learn how to use the Variable library item and which variable types are used, so that I can manage my content lifecycle.
 ---
 
-# Understanding Variable libraries in Microsoft Fabric (preview)
-
-This article describes important concepts and features of Microsoft Fabric's Variable library in the Fabric Application lifecycle management (ALM) tool.
-
-## Variable library structure
+# Variable names and types (preview)
 
 A Variable library item contains a list of variables and their default values. It can also contain other value sets holding alternative values.
 
-Each variable is defined as follows:
+Each variable is made up of the following properties:
 
 - Name
 - Note (optional)
@@ -29,9 +25,9 @@ Each variable is defined as follows:
 - Default value set
 - Alternative value sets value – A pointer to the default value, unless it was changed to be a static/fixed value.
 
-### Naming conventions
+## Naming conventions
 
-#### Variable library name
+### Variable library name
 
 The name of Variable library item itself must follow these conventions:
 
@@ -43,7 +39,7 @@ The name of Variable library item itself must follow these conventions:
 
 The Variable library name is *not* case sensitive.
 
-#### Name of a variable in the Variable library
+### Name of a variable in the Variable library
 
 The name of a variable inside the Variable library must follow these conventions:
 
@@ -55,7 +51,7 @@ The name of a variable inside the Variable library must follow these conventions
 
 The variable name is *not* case sensitive.
 
-### Variable types
+## Variable types
 
 The variables in the Variable library can be any of the following basic types:
 
@@ -70,30 +66,3 @@ The variables in the Variable library can be any of the following basic types:
 - Double: A number with decimal points.
 - Integer: A whole number that can be positive, negative, or zero
 - Array: An array of type string in this format [value1, value2, …]. Can be empty or null.
-
-## Permissions
-
-### Variable library item permissions
-
-Permissions are aligned with the fabric permission model:
-
-- Workspace permissions
-- Viewer permissions: Someone with viewer permissions can Add/Edit/Delete, but not save their changes. Viewer can also see available variables for reference on a consumer item with all their details and referred variables values.
-- Contributor/Member/Admin permissions: In general, CRUD permissions. See [workspace roles](../../get-started/roles-workspaces.md) for more information.
-
-### Variable permissions
-
-There's no permission management in an item level or a variable level. Permission for each variable is the same as the permissions for the entire item.
-
-## Supported items
-
-The following items support the Variable library:
-
-- Lakehouse
-- Data pipeline
-- Notebook
-
-## Related content
-
-- [End to end lifecycle management tutorial](../cicd-tutorial.md)
-- [Learn to use the variable library](./get-started-variable-libraries.md)

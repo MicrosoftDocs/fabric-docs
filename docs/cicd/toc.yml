@@ -57,14 +57,24 @@ items:
     href: git-integration/source-code-format.md
 - name: Variable libraries
   items:
-  - name: What is a variable library?
+  - name: What is a Variable library?
     href: variable-library/variable-library-overview.md
-  - name: Concepts
-    href: variable-library/variable-library-concepts.md
   - name: Create and use a variable library
     href: variable-library/get-started-variable-libraries.md
-  - name: Automate
-    href: variable-library/automate-variable-library.md
+  - name: Concepts
+    items:
+    - name: Variable names and types
+      href: variable-library/variable-types.md
+    - name: Permissions
+      href: variable-library/variable-library-permissions.md
+    - name: CI/CD and Variable libraries
+      href: variable-library/variable-library-cicd.md
+    - name: REST APIs
+      href: variable-library/automate-variable-library.md
+  - name: "Tutorial: Use Variable libraries in cicd-overview.md"
+    href: variable-library/variable-library-tutorial.md
+  - name: Variable library FAQ and Troubleshooting
+    href: variable-library-faq.yml
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
 - name: Frequently asked questions

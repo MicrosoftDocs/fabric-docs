@@ -39,6 +39,14 @@ A variable value can be configured based on the release pipeline stage. The user
 
 Variable libraries provide a centralized way to manage configurations across the workspace items. For example, Lakehouses in the workspace using the same shortcut can share the same configuration across the workspace.
 
+## Supported items
+
+The following items support the Variable library:
+
+* Lakehouse
+* Data pipeline
+* Notebook
+
 ## Related content
 
 * [Related article title](link.md)
