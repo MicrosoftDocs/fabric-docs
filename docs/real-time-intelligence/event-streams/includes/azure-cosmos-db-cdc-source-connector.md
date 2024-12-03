@@ -18,7 +18,7 @@ ms.date: 11/18/2024
    - **Connection name**: Automatically generated, or you can enter a new name for this connection.
    - **Account key:** Enter the Primary Key for your Azure Cosmos DB account that you copied from the Azure portal.
 
-   ![A screenshot of the Connection settings for the Azure Cosmos DB CDC source.](media/azure-cosmos-db-cdc-source-connector/connect.png)
+   :::image type="content" border="true" source="media/azure-cosmos-db-cdc-source-connector/connect.png" alt-text="A screenshot of the Connection settings for the Azure Cosmos DB CDC source.":::
 1. Select **Connect**.
 
 1. Provide the following information for your Azure Cosmos DB resources, and then select **Next**.

@@ -32,13 +32,13 @@ This article shows you how to add a custom endpoint source or a custom app sourc
 ## Add custom endpoint data as a source
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**.    Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.   
 
-   ![Screenshot of the option to use a custom endpoint.](media\add-source-custom-app-enhanced\select-custom-endpoint.png)
+   :::image type="content" border="true" source="media\add-source-custom-app-enhanced\select-custom-endpoint.png" alt-text="Screenshot of the option to use a custom endpoint.":::
 1. In the **Custom endpoint** dialog, enter a name for the custom source under **Source name**, and then select **Add**.
 
-   ![Screenshot of the dialog for adding a custom endpoint.](media\add-source-custom-app-enhanced\add.png)
+   :::image type="content" border="true" source="media\add-source-custom-app-enhanced\add.png" alt-text="Screenshot of the dialog for adding a custom endpoint.":::
 1. After you create the custom endpoint source, it's added to your eventstream on the canvas in edit mode. To implement the newly added data from the custom app source, select **Publish**.
 
-   ![Screenshot that shows the eventstream in edit mode, with the Publish button highlighted.](media\add-source-custom-app-enhanced\edit-mode.png)
+   :::image type="content" border="true" source="media\add-source-custom-app-enhanced\edit-mode.png" alt-text="Screenshot that shows the eventstream in edit mode, with the Publish button highlighted.":::
 
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
@@ -47,7 +47,7 @@ This article shows you how to add a custom endpoint source or a custom app sourc
 
 After you create a custom endpoint source, its data is available for visualization in the live view.
 
-![Screenshot that shows the eventstream in the live view.](media\add-source-custom-app-enhanced\live-view.png)
+:::image type="content" border="true" source="media\add-source-custom-app-enhanced\live-view.png" alt-text="Screenshot that shows the eventstream in the live view.":::
 
 The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basic** and **SAS Key Authentication**. These pages offer the endpoint details with the corresponding protocol for connecting. 
 

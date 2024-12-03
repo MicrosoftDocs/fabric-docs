@@ -42,7 +42,7 @@ This article describes how to add Confluent Cloud Kafka as an event source in Fa
         1. Paste those values into the **API Key** and **API Key Secret** fields.
         1. Select **Connect**
 
-            :::image type="content" source="./media/add-source-confluent-kafka/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings. ":::        
+            :::image type="content" source="./media/add-source-confluent-kafka/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings.":::        
 1. Scroll to see the **Configure Confluent data source** section on the page. Enter the information to complete the configuration of the Confluent data source.
     1. For **Topic**, enter a topic name from your Confluent Cloud. You can create or manage your topic in the Confluent Cloud Console.
     1. For **Consumer group**, Enter a consumer group of your Confluent Cloud. It provides you with the dedicated consumer group for getting the events from Confluent Cloud cluster.
@@ -51,13 +51,13 @@ This article describes how to add Confluent Cloud Kafka as an event source in Fa
         - **Latest** – the latest available data
         - **None** – don't automatically set the offset.
 
-            :::image type="content" source="./media/add-source-confluent-kafka/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings. ":::        
+            :::image type="content" source="./media/add-source-confluent-kafka/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings.":::        
 1. In the **Stream details** section of the right pane, do these steps:
     1. Select the **workspace** where you want to save the connection.
     1. Enter a **name for the eventstream** to be created for you.
     1. Name of the **stream** for Real-Time hub is automatically generated for you.
 
-        :::image type="content" source="./media/add-source-confluent-kafka/stream-details.png" alt-text="Screenshot that shows the right pane with Stream details section of the Confluent connection settings page. ":::                
+        :::image type="content" source="./media/add-source-confluent-kafka/stream-details.png" alt-text="Screenshot that shows the right pane with Stream details section of the Confluent connection settings page.":::                
 1. Select **Next**.
 1. On the **Review + connect** page, review the summary, and then select **Connect**.
 

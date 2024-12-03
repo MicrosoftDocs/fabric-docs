@@ -14,7 +14,7 @@ ms.date: 11/19/2024
 
 # Configure data loss prevention policies for Fabric
 
-Data loss prevention policies for Fabric help organizations protect their sensitive data by detecting upload of sensitive data in supported item types. When a policy violation occurs, data owners can see this indicated, and alerts can be sent to data owners and security admins, and violations can be investigated. For more information, see [Overview of data loss prevention policies for Fabric](./data-loss-prevention-overview.md).
+Data loss prevention policies for Fabric help organizations protect their sensitive data by detecting upload of sensitive data in supported item types. When a policy violation occurs, data owners can see this indicated, and alerts can be sent to data owners and security admins, and violations can be investigated. For more information, see [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started).
 
 This article describes how to configure Purview data loss prevention (DLP) policies for Fabric. The target audience is compliance administrators who are responsible for data loss prevention in their organization.
 
@@ -105,11 +105,11 @@ In the condition section, you define the conditions under which the policy will 
  
     When you choose either **Sensitive info types** or **Sensitivity labels**, you'll be able to choose the particular sensitivity labels or sensitive info types you want to detect from a list that will appear in a sidebar.
 
-    ![Screenshot of sensitivity-label and sensitive info types choices.](./media/data-loss-prevention-configure/purview-dlp-sensitivity-labels-types.png)
+    :::image type="content" border="true" source="./media/data-loss-prevention-configure/purview-dlp-sensitivity-labels-types.png" alt-text="Screenshot of sensitivity-label and sensitive info types choices.":::
 
     When you select a sensitive info type as a condition, you then need to specify how many instances of that type must be detected in order for the condition to be considered as met. You can specify from 1 to 500 instances. If you want to detect 500 or more unique instances, enter a range of '500' to 'Any'. You also can select the degree of confidence in the matching algorithm. Select the info button next to the confidence level to see the definition of each level.
 
-    ![Screenshot of confidence level setting for sensitive info types.](./media/data-loss-prevention-configure/purview-dlp-confidence-level-settings.png) 
+    :::image type="content" border="true" source="./media/data-loss-prevention-configure/purview-dlp-confidence-level-settings.png" alt-text="Screenshot of confidence level setting for sensitive info types."::: 
 
     You can add additional sensitivity labels or sensitive info types to the group. To the right of the group name, you can specify **Any of these** or **All of these**. This determines whether matches on all or any of the items in the group is required for the condition to hold. If you specified more than one sensitivity label, you'll only be able to choose **Any of these**, since Fabric and Power BI items can’t have more than one label applied.
 

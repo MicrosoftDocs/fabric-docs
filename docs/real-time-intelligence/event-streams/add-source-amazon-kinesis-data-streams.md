@@ -32,11 +32,11 @@ This article shows you how to add Amazon Kinesis Data Streams source to an event
 
 1. Select **Eventstream** to create a new eventstream.
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
+   :::image type="content" border="true" source="media/external-sources/new-eventstream.png" alt-text="A screenshot of creating a new eventstream.":::
 
 2. On the next screen, select **Add external source**.
 
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
+   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
 
 ## Configure and connect to Amazon Kinesis Data Streams
 

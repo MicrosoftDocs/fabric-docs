@@ -3,8 +3,8 @@ title: "Features comparison: Azure SQL Database and SQL database (preview)"
 description: This article compares the database engine features of Azure SQL Database and SQL database in Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 11/19/2024
+ms.reviewer: nzagorac, antho, sukkaur, drskwier
+ms.date: 11/22/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
@@ -38,7 +38,7 @@ The following table lists the major features of SQL Server and provides informat
 | Microsoft Entra authentication | [Yes](/azure/azure-sql/database/authentication-aad-overview) | [Yes](authentication.md) |
 | [BACKUP command](/sql/t-sql/statements/backup-transact-sql) | No, only [system-initiated automatic backups](/azure/azure-sql/database/automated-backups-overview?view=azuresql-db&preserve-view=true) | No, only [system-initiated automatic backups](backup.md) |
 | [Built-in functions](/sql/t-sql/functions/functions) | Most, see individual functions | Most, see individual functions |
-| [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | Yes, from OneLake sources |
+| [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | No|
 | [Certificates and asymmetric keys](/sql/relational-databases/security/sql-server-certificates-and-asymmetric-keys) | Yes | Yes |
 | [Change data capture - CDC](/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Yes, for S3 tier and above. Basic, S0, S1, S2 aren't supported. | No  |
 | [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, SQL_Latin1_General_CP1_CI_AS. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, SQL_Latin1_General_CP1_CI_ASC and can't be updated. Collations on individual columns are supported.|
@@ -47,7 +47,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Columnstore indexes, nonclustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes |
 | [Credentials](/sql/relational-databases/security/authentication-access/credentials-database-engine) | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=azuresqldb-current&preserve-view=true). | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=fabric&preserve-view=true).|
 | [Cross-database/three-part name queries](/sql/relational-databases/linked-servers/linked-servers-database-engine) | No, see [Elastic queries](/azure/azure-sql/database/elastic-query-overview) | Yes, you can do cross-database three-part name queries via the SQL analytics endpoint.  |
-| [Data classification and labeling](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, via [Database discovery and classification](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, with [database labeling with Microsoft Purview Information Protection sensitivity labels](../../governance/protected-sensitivity-labels.md) |
+| [Data classification and labeling](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, via [Database discovery and classification](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, with [database labeling with Microsoft Purview Information Protection sensitivity labels](protect-databases-with-protection-policies.md) |
 | [Database mirroring to Fabric OneLake](../mirrored-database/overview.md) | Yes, manually enabled | Yes, automatically enabled for all eligible tables |
 | [Database-level roles](/sql/relational-databases/security/authentication-access/database-level-roles) | Yes | Yes. In addition to Transact-SQL support, Fabric supports managing [database-level roles in Fabric portal](configure-sql-access-controls.md#manage-sql-database-level-roles-from-fabric-portal).|
 | [DBCC statements](/sql/t-sql/database-console-commands/dbcc-transact-sql) | Most, see individual statements | Most, see individual statements |
@@ -159,8 +159,8 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 | --- | --- | --- |
 | [Azure CLI](/sql/azdata/install/deploy-install-azdata) | Yes | No |
 | [Azure PowerShell](/powershell/azure/) | Yes | No |
-| [BACPAC file (export)](/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | Yes, see [Azure SQL Database export](/azure/azure-sql/database/database-export?view=azuresql-db&preserve-view=true) | Yes, see [Azure SQL Database export](/azure/azure-sql/database/database-export?view=azuresql-db&preserve-view=true)   |
-| [BACPAC file (import)](/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | Yes, see [Azure SQL Database import](/azure/azure-sql/database/database-import?view=azuresql-db&preserve-view=true) | Yes, see [Azure SQL Database import](/azure/azure-sql/database/database-import?view=azuresql-db&preserve-view=true) |
+| [.bacpac export](/sql/tools/sqlpackage/sqlpackage#portability) | Yes, see [Azure SQL Database export](/azure/azure-sql/database/database-export?view=azuresql-db&preserve-view=true) | Yes, see [SqlPackage for SQL database in Microsoft Fabric](sqlpackage.md#export-a-database-with-sqlpackage)   |
+| [.bacpac import](/sql/tools/sqlpackage/sqlpackage#portability) | Yes, see [Azure SQL Database import](/azure/azure-sql/database/database-import?view=azuresql-db&preserve-view=true) | Yes, see [SqlPackage for SQL database in Microsoft Fabric](sqlpackage.md#import-a-database-with-sqlpackage) |
 | [BCP](/sql/tools/bcp-utility) | Yes | Yes |
 | [BICEP](/azure/azure-resource-manager/bicep/overview) | Yes | No |
 | [Database watcher](/azure/azure-sql/database-watcher-overview) | Yes | Not currently |

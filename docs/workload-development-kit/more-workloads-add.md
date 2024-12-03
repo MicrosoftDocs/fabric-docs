@@ -1,5 +1,5 @@
 ---
-title: Add a Microsoft Fabric workload (preview)
+title: Add a Microsoft Fabric workload
 description: Learn how to add, remove, and use a workload in the Microsoft Fabric workload hub.
 author: KesemSharabi
 ms.author: kesharab
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Add a workload in the workload hub (preview)
+# Add a workload in the workload hub
 
 The workload hub is a central location where you can view all the workloads that are available in Microsoft Fabric. Each workload in Fabric has an item type that it's associated with. You can create item types in Fabric workspaces. To access the workload hub, on the workload menu, go to the workload.
 

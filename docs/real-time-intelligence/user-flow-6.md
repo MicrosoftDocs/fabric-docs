@@ -9,7 +9,7 @@ ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.custom:
   - ignite-2024
-ms.search.form: Activator Kusto Dashboard Onramp
+ms.search.form: Data Activator Kusto Dashboard Onramp
 #customer intent: I want to learn how to set alerts on a Real-Time Dashboard or KQL Queryset.
 ---
 # Set alert on Real Time Dashboard or KQL Queryset

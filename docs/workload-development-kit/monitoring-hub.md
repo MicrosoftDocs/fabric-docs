@@ -1,5 +1,5 @@
 ---
-title: Fabric workload monitoring hub (preview)
+title: Fabric workload monitoring hub
 description: Learn how to use the monitoring hub in the Microsoft Fabric Workload Development Kit.
 author: KesemSharabi
 ms.author: kesharab
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Set up the Fabric monitoring hub (preview)
+# Set up the Fabric monitoring hub
 
 The monitoring hub in the Microsoft Fabric Workload Development Kit is the centralized monitoring center. The monitoring hub is designed for Fabric users to track item background jobs. For more information, see [Use the monitoring hub](../admin/monitoring-hub.md).
 
@@ -219,7 +219,7 @@ Entry points:
 
 - **Context menu** > **Recent runs**
 
-    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the options menu. ":::
+    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the options menu.":::
 
 - Using `workloadClient.itemRecentRuns.open`.
 

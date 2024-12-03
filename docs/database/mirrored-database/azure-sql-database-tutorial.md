@@ -26,7 +26,6 @@ ms.custom:
 <!-- - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md). -->
 - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
 - Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
-    - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
 - Networking requirements for Fabric to access your Azure SQL Database:
     - Currently, Mirroring doesn't support Azure SQL Database logical servers behind an Azure Virtual Network or private networking. If you have your Azure SQL logical server behind a private network, you can't enable Azure SQL Database mirroring.
     - You need to update your Azure SQL logical server firewall rules to [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access), and enable the [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) option to connect to your Azure SQL Database logical server.
@@ -127,9 +126,6 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
 For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
-
-> [!IMPORTANT]
-> If there are no updates in the source tables, the replicator engine will start to back off with an exponentially increasing duration, up to an hour. The replicator engine will automatically resume regular polling after updated data is detected.
 
 ## Related content
 
