@@ -111,5 +111,5 @@ Delete the sample eventstream by selecting the ellipses(...) to the right of the
 
 ## Related content
 
-* [Overview of Activator rules](activator-rules-overview.md.md)
+* [Overview of Activator rules](activator-rules-overview.md)
 * [Activator tutorial](activator-tutorial.md)
