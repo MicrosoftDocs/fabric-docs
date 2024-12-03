@@ -102,6 +102,10 @@ items:
         href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
       - name: Fabric Workspace Item events
         href: event-streams/add-source-fabric-workspace.md
+      - name: Fabric OneLake events
+        href: event-streams/add-source-fabric-onelake.md
+      - name: Fabric Job events
+        href: event-streams/add-source-fabric-job.md
       - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
     - name: Add destinations to eventstreams
@@ -350,7 +354,7 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
-- name: Respond to data
+- name: Create alerts and actions
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
@@ -358,7 +362,7 @@ items:
     href: data-activator/activator-basic-concepts.md
   - name: Get started with Activator
     href: data-activator/activator-get-started.md
-  - name: Get data
+  - name: Get data for Activator
     items:
     - name: Get data from Power BI
       href: data-activator/activator-get-data-power-bi.md
@@ -366,7 +370,7 @@ items:
       href: data-activator/activator-get-data-eventstreams.md
     - name: Get data from Real-Time Hub
       href: data-activator/activator-get-data-real-time-hub.md
-  - name: Create objects and rules
+  - name: Create Activator objects and rules
     items:
     - name: Assign data to objects
       href: data-activator/activator-assign-data-objects.md
@@ -386,7 +390,7 @@ items:
       href: data-activator/activator-latency.md
     - name: Activator limitations
       href: data-activator/activator-limitations.md
-    - name: Capacity usage
+    - name: Activator capacity usage
       href: data-activator/activator-capacity-usage.md
       displayName: capacity, usage, consumption, billing
     - name: Troubleshoot errors

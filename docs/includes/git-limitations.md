@@ -13,6 +13,7 @@ ms.date: 11/18/2024
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
 - Workspaces with template apps installed can't be connected to Git.
+- Submodules aren't supported.
 - Sovereign clouds aren't supported.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
@@ -42,6 +43,15 @@ Some GitHub Enterprise settings aren't supported. For example:
 - Only the workspace admin can manage the connections to the [Git Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
 Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.  
 - The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
+
+### Directory name limitations
+
+- The name of the directory that connects to the Git repository has the following naming restrictions:
+
+  - The directory name can't begin or end with a space or tab.
+  - The directory name can't contain any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+
+- The item folder (name of the item) can't contain any of the following characters: <kbd>"</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
 
 ### Branch and folder limitations
 

@@ -124,6 +124,24 @@ landingContent:
             url: tutorial-lakehouse-clean-up.md
 
   # Card 
+  - title: VS Code integration
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Use notebooks from VS Code
+            url: author-notebook-with-vs-code.md
+          - text: Use container image from VS Code
+            url: set-up-vs-code-extension-with-docker-image.md
+          - text: Use notebooks from VS Code with resource
+            url: author-notebook-resource-with-vs-code.md
+          - text: Use Spark job definitions from VS Code
+            url: author-sjd-with-vs-code.md
+          - text: Explore lakehouse from VS Code
+            url: explore-lakehouse-with-vs-code.md
+          - text: Develop notebook from VS Code web experience
+            url: author-notebook-with-vs-code-web.md
+
+  # Card 
   - title: Apache Spark
     linkLists:
       - linkListType: concept
@@ -154,23 +172,7 @@ landingContent:
             url: microsoft-spark-utilities.md
           - text: Configure capacity settings
             url: capacity-settings-management.md
-  # Card 
-  - title: VS Code integration
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Use notebooks from VS Code
-            url: author-notebook-with-vs-code.md
-          - text: Use container image from VS Code
-            url: set-up-vs-code-extension-with-docker-image.md
-          - text: Use notebooks from VS Code with resource
-            url: author-notebook-resource-with-vs-code.md
-          - text: Use Spark job definitions from VS Code
-            url: author-sjd-with-vs-code.md
-          - text: Explore lakehouse from VS Code
-            url: explore-lakehouse-with-vs-code.md
-          - text: Develop notebook from VS Code web experience
-            url: author-notebook-with-vs-code-web.md
+
   # Card 
   - title: Get started with environment
     linkLists:
