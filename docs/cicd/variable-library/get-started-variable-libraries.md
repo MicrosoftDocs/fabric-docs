@@ -61,7 +61,7 @@ An empty Variable library appears. You can now add variables to it.
 To add a variable to the library:
 
 1. Select **+ New variable**
-1. Enter a name (make sure it follows the [naming conventions](./variable-library-types.md#name-of-a-variable-in-the-variable-library))
+1. Enter a name (make sure it follows the [naming conventions](./variable-types.md#name-of-a-variable-in-the-variable-library))
 1. Select a type from the drop-down list
 1. Enter default value set of the defined type
 1. Add one or more alternative value sets (optional)
