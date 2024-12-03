@@ -374,13 +374,13 @@ items:
     items:
     - name: Overview of Activator rules
       href: data-activator/activator-rules-overview.md
-    - name: Create rules
+    - name: Create rules and activations
       href: data-activator/activator-create-activators.md
-    - name: Assign data to objects
+    - name: Assign data to Activator objects
       href: data-activator/activator-assign-data-objects.md
     - name: Trigger Fabric items
       href: data-activator/activator-trigger-fabric-items.md
-    - name: Detection conditions
+    - name: Detection conditions for Activator
       href: data-activator/activator-detection-conditions.md
     - name: Create alerts from a Real-Time Dashboard
       href: data-activator/activator-get-data-real-time-dashboard.md
