@@ -372,10 +372,12 @@ items:
       href: data-activator/activator-get-data-real-time-hub.md
   - name: Create Activator objects and rules
     items:
-    - name: Assign data to objects
-      href: data-activator/activator-assign-data-objects.md
+    - name: Overview of Activator rules
+      href: data-activator/activator-rules-overview.md
     - name: Create rules
       href: data-activator/activator-create-activators.md
+    - name: Assign data to objects
+      href: data-activator/activator-assign-data-objects.md
     - name: Trigger Fabric items
       href: data-activator/activator-trigger-fabric-items.md
     - name: Detection conditions
