@@ -11,7 +11,7 @@ ms.date: 12/03/2024
 #customer intent: As a new Activator user, I want learn how to create a rule so that I can receive notifications about my streaming data or trigger automated workflows.
 ---
 
-## Create a rule in Fabric Activator
+# Create a rule in Fabric Activator
 
 Once you bring streaming data into an activator or [assign events to objects](activator-assign-data-objects.md#assign-data-to-objects-in-activator), you can create rules to act on your data. The activation of those rules can be the sending of a notification, such as an email or Teams message. And the activation of those rules can trigger a workflow, such as starting a Power Automate flow.
 
@@ -111,5 +111,5 @@ Delete the sample eventstream by selecting the ellipses(...) to the right of the
 
 ## Related content
 
-* [Overview of Activator rules](link.md)
-* [Activator tutorial](link.md)
+* [Overview of Activator rules](activator-rules-overview.md.md)
+* [Activator tutorial](activator-tutorial.md)

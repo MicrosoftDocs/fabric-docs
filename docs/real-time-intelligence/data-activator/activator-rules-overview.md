@@ -31,16 +31,8 @@ Creating rules on properties allows you to monitor a property on objects over ti
 
 For example, you can monitor the temperature on a package and whether it stays within a set range over time.
 
-## Related content
-
-- [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
-- [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
-
-You can also learn more about Microsoft Fabric:
-
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
 
 ## Next step -or- Related content
 
 > [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
+> [Next sequential article title](activator-create-activators.md)
