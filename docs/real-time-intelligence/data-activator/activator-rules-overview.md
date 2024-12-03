@@ -32,7 +32,7 @@ Creating rules on properties allows you to monitor a property on objects over ti
 For example, you can monitor the temperature on a package and whether it stays within a set range over time.
 
 
-## Next step -or- Related content
+## Next step
 
 > [!div class="nextstepaction"]
 > [Next sequential article title](activator-create-activators.md)

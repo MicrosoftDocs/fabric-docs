@@ -96,7 +96,7 @@ To create a property, select the stream added to the object that you're interest
 
 :::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-10.png" alt-text="Screenshot of creating a property for an alert.":::
 
-Once you define a property, you can reference it from one or more rules. Here we reference the *Temperature* property *Maximum temp last hour* rule.
+Once you define a property, you can reference it from one or more rules. Here we reference the *Temperature* property *Too hot for medicine*.
 
 :::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert."  lightbox="media/activator-create-activators/activator-create-triggers-design-mode-11.png":::
 
