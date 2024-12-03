@@ -95,6 +95,14 @@ items:
       href: copilot-real-time-intelligence-privacy-security.md
   - name: Copilot for Data Factory
     href: copilot-fabric-data-factory.md
+  - name: Copilot for Data Science and Data Engineering
+    items:
+    - name: Copilot for Data Science and Data Engineering
+      href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+    - name: Overview of Chat-magics in Notebooks (preview)
+      href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+    - name: Use the Copilot chat panel (preview)
+      href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Copilot for Data Warehouse
     href: ../data-warehouse/copilot.md
   - name: Copilot for Real-Time Intelligence
