@@ -20,7 +20,8 @@ For troubleshooting, see:
 
 ## Feature availability
 
-You can configure your Azure SQL Managed Instance for mirroring if it is deployed to any Azure **except**: East US 2; West US 2; Central US; West US. For a complete list of region support, see [Fabric regions that support Mirroring](#fabric-regions-that-support-mirroring).
+You can configure your Azure SQL Managed Instance for mirroring if it is deployed to any Azure region, **except**: East US 2; West US 2; Central US; West US. 
+The feature availability also depends on Fabric regions. For a complete list of Fabric region support, see [Fabric regions that support Mirroring](#fabric-regions-that-support-mirroring).
 
 ## Database level limitations
 
