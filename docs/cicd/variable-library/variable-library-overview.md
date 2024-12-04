@@ -43,7 +43,7 @@ Variable libraries provide a centralized way to manage configurations across the
 
 The following items support the Variable library:
 
-* Lakehouse
+* [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Data pipeline
 * Notebook
 
