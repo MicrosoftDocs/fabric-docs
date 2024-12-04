@@ -40,9 +40,7 @@ For example, to declare columns `C1` and `C2` as a compound unique key for the t
 
 ```json
 {
-
-   "keyColumns": ["C1", "C2"],
-
+   "keyColumns" : ["C1", "C2"]
 }
 ```
 
