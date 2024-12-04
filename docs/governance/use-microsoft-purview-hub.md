@@ -6,7 +6,7 @@ ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 11/19/2024
+ms.date: 12/04/2024
 ---
 
 # The Microsoft Purview hub for administrators (preview)
