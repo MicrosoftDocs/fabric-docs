@@ -9,12 +9,9 @@ ms.custom:
 ms.date: 11/18/2024
 ---
 
-# Explore Azure blob storage events in Fabric Real-Time hub
+# Explore Azure blob storage events in Fabric Real-Time hub (preview)
 
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
-
-> [!NOTE]
-> This feature is currently in preview.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
