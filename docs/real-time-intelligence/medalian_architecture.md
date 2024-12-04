@@ -1,8 +1,8 @@
 ---
 title: "Modern medallion architecture in Fabric Real-Time Intelligence"
 description: Understand medallion architecture in Microsoft Fabric and learn how to implement within Real-Time Intellegence.
-author: Brad Watts
-ms.author: bwatts
+author: Brad Watts, Denise Schlesigner
+ms.author: bwatts, dschlesinger
 ms.reviewer: 
 ms.topic: concept-article
 ms.date: 11/19/2024
@@ -11,19 +11,29 @@ ms.custom:
 
 # Implement medallion lakehouse architecture in Microsoft Fabric Real-Time Intelligence
 
-This article introduces medallion architecture and describes how you can implement this pattern using Microsoft Fabric Real-Time Intelligence. It's targeted at multiple audiences:
+This article introduces the methodology for implementing the medallion architecture using Microsoft Fabric Real-Time Intelligence. The medallion architecture guarantees the Atomicity, Consistency, Isolation, and Durability (ACID) set of properties as data progresses through the layers. Starting with raw data, a series of validations and transformations prepares data that's optimized for efficient analytics. There are three medallion stages: bronze (raw), silver (validated), and gold (enriched). 
+  
+For more information, see [What is the medallion lakehouse architecture?](/azure/databricks/lakehouse/medallion).  
+  
+Microsoft Fabric Real-Time Intelligence possess truly unique features that make the Medallion Architecture easy to build and does not require additional infrastructure as other Data Analytics platforms.
 
-- **Data engineers:** Technical staff who design, build, and maintain infrastructures and systems that enable their organization to collect, store, process, and analyze large volumes of data.
-- **Center of Excellence, IT, and BI team:** The teams that are responsible for overseeing analytics throughout the organization.
-- **Fabric administrators:** The administrators who are responsible for overseeing Fabric in the organization.
+The unique features that make this possible are:  
+   
+**Update Policies**
+ - As data enters the Bronze Layer, you can use ingestion policies to transform and enrich it, adding business value.
+ - These policies facilitate the processing of a continuous stream of data, by simplifying complex streaming concepts like incremental processing, checkpointing, and watermarks.
+ - This abstraction allows you to build streaming applications and pipelines without the need for extra tools.
+ - Microsoft Fabric Real-Time Intelligence's capability to ingest and transform live streaming data enables data engineers and data scientists to handle real-time data from various sources.
+ - For more details, you can refer to [Update Policy](https://learn.microsoft.com/en-us/kusto/management/update-policy?view=microsoft-fabric)
 
-The [medallion lakehouse architecture](/azure/databricks/lakehouse/medallion), commonly known as _medallion architecture_, is a design pattern that's used by organizations to logically organize data in a lakehouse. It's the recommended design approach for Fabric.
-
-Medallion architecture comprises three distinct layers—or zones. Each layer indicates the quality of data stored in the lakehouse, with higher levels representing higher quality. This multi-layered approach helps you to build a single source of truth for enterprise data products.
-
-Importantly, medallion architecture guarantees the Atomicity, Consistency, Isolation, and Durability (ACID) set of properties as data progresses through the layers. Starting with raw data, a series of validations and transformations prepares data that's optimized for efficient analytics. There are three medallion stages: bronze (raw), silver (validated), and gold (enriched).
-
-For more information, see [What is the medallion lakehouse architecture?](/azure/databricks/lakehouse/medallion).
+**Materialized views**
+ - Materialized views remove duplicate values as they arrive. Making deduplicated records immediately available to query.
+ - Materialized views compute aggregate views as data arrives, ensuring performance enhancement, data freshness, and cost reduction.
+ - Removes the need for extra tools to perform data aggregation.
+ - By exposing an aggregation query over a source table or another materialized view, they always provide up-to-date results.
+ - Querying a materialized view is more efficient than running the aggregation directly over the source table, leading to performance improvements.
+ - Additionally, materialized views consume fewer resources, which can lead to cost savings.
+ - For more details, you can refer to [Materialized View](https://learn.microsoft.com/en-us/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric)
 
 ## Real-Time Intelligence Medallion Architecture
 
@@ -33,7 +43,6 @@ Real-Time Intelligence allows you to build a meallion lakehouse architecture by 
 
 **Bronze Layer** 
 - Contains the raw records that can land in either Eventstream or a table in Eventhouse.
-- Mirrors the structure of the source system and can be utilized for Change Data Captu
  
 **Silver Layer** 
 - As data lands in the Bronze Layer it is transformed and enriched to add business value, including deduplication of records
@@ -65,7 +74,7 @@ This is made possible by:
 - [Materialized View](https://learn.microsoft.com/en-us/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric)
 
 **Flexibility**
-In a typical medallion lakehouse architecture, data is consumed only from the Gold Layer, loosing the individual records and preventing high-granular analytics. With Eventhouse you are able to consume data from both the Gold Layer or the Silver Layer, unlocking high-granularity analytics.
+In a typical medallion lakehouse architecture, data is consumed only from the Gold Layer, loosing the individual records and preventing high-granular analytics. With Eventhouse you are able to consume data from both the Gold Layer or the Silver Layer, unlocking high-granularity analytics. The Eventhouse engine is built to handle queries agains billions of records in seconds.
 
 **Built-In Data Management**
 Data at each layer has different requirements for retention and querying. This process is easily implemented via built-in capabilities.
@@ -82,7 +91,7 @@ This layer is optimized for visualization with your aggregate materialized-view 
 With a single click I can pin any query from the Gold or Silver layer into a new or existing Power BI Report or RTI Dashboard.
 
 **OneLake Availability**
-Taking your data from the Silver Layer and expose it as delta parquet in OneLake via [Eventhouse OneLake Availability](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake-availability). RTI wil maintain the data based on your retention policy and you are only charged for a single copy of the data.
+Taking your data from the Silver Layer and expose it as delta parquet in OneLake via [Eventhouse OneLake Availability](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake-availability). Different stakeholders in the organization use different tools, for example Data Scientist use historical data for ML model training. By making the data available in OneLake each stakeholder can effortlessly interact with the data without additional storage cost.
 
 ## Related content
 
