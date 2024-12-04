@@ -51,14 +51,20 @@ Spark pools are billed like starter pools; you don't pay for the custom Spark po
 For example, if you submit a notebook job to a custom Spark pool, you're only charged for the time period when the session is active. The billing for that notebook session stops once the Spark session has stopped or expired. You aren't charged for the time taken to acquire cluster instances from the cloud or for the time taken for initializing the Spark context.
 
 Possible custom pool configurations for F64 based on the previous example:
+> [!NOTE]
+>In Apache Spark, users get two Apache Spark VCores for every capacity unit they reserve as part of their SKU.
+>One Capacity Unit = Two Spark VCores
+>So F64 => 128 Spark Vcores and on which a 3x Burst Multiplier is applied which gives a total of 384 Spark VCores
 
-| Fabric capacity SKU | Capacity units | Spark VCores | Node size | Max number of nodes |
+| Fabric capacity SKU | Capacity units | Max Spark VCores with Burst Factor | Node size | Max number of nodes |
 |--|--|--|--|--|
 | F64 | 64 | 384 | Small | 96 |
 | F64 | 64 | 384 | Medium | 48 |
 | F64 | 64 | 384 | Large | 24 |
 | F64 | 64 | 384 | X-Large | 12 |
 | F64 | 64 | 384 | XX-Large | 6 |
+
+
 
 > [!NOTE]
 > To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md)
