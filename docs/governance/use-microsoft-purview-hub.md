@@ -35,41 +35,33 @@ The pages of the insights report provide visuals that help lead you to actionabl
 |:-----------------------|:-------------------------------------------------------------------------------|
 | **Overview page**      | High level insights over your tenants.                                         |
 | **Sensitivity labels** | Report over label coverage and look into the confidential data in the tenant.  |
-| **Endorsements**       | Follow up after endorsed items (Promoted, Certified and Master data) and see where the items are with most access that may need your attention.|
+| **Endorsements**       | Follow up after endorsed items (Promoted, Certified, and Master data) and see where the items are with most access that might need your attention.|
 | **Items explorer**     | Monitor all your items in the tenant using granular filtering.                 |
 | **Take a tour**        | Use the build-in help to learn how to use Purview hub’s reports in best manner.|
 
 # [Overview](#tab/overview)
 
-:::image type="content" source="./media/use-microsoft-purview-hub/overview.gif" alt-text="Screenshot showing the overview page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/overview.gif":::
+TBD
 
 # [Sensitivity labels](#tab/sensitivity-labels)
 
-* Improve label coverage: Set the label coverage goal to flag where label coverage is not met. Filter by Domains, Workspaces, Item types or Creators. Select what you wish to explore and, in the table, below you can monitor related items. Use the button to filter on unlabeled items only.
+* Improve label coverage: Set the label coverage goal to flag where label coverage isn't met. Filter by Domains, Workspaces, Item types, or Creators. Select what you wish to explore and, in the table, below you can monitor related items. Use the button to filter on unlabeled items only.
 
 * Monitor your classified data: Use the label filter to select the sensitivity label you wish to explore, then filter by Domains, Workspaces, Item types, or Creator to find all your classified data.
-
-:::image type="content" source="./media/use-microsoft-purview-hub/sensitivity-labels.gif" alt-text="Screenshot showing the sensitivity label page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/sensitivity-labels.gif":::
 
 # [Endorsement](#tab/endorsement)
 
 * Promote items with high visibility: Find items candidates for promotion base on view access. Set view access threshold to flag items with high visibility and no endorsement.
 
-* Monitor your endorsed items: Filter the items by endorsement: Promoted, Certified and Master Data
-
-:::image type="content" source="./media/use-microsoft-purview-hub/endorsement.gif" alt-text="Screenshot showing the endorsement page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/endorsement.gif":::
+* Monitor your endorsed items: Filter the items by endorsement: Promoted, Certified, and Master Data
 
 # [Domains](#tab/domains)
 
-Find workspace that are not associated to any domain with the hierarchy tree below: Select a Domain\ Subdomain\ Workspace to drill through with the items explorer page.
-
-:::image type="content" source="./media/use-microsoft-purview-hub/domains.gif" alt-text="Screenshot showing the domains page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/domains.gif":::
+Find workspaces that aren't associated to any domain with the hierarchy tree below: Select a Domain\ Subdomain\ Workspace to drill through with the items explorer page.
 
 # [Items explorer](#tab/items-explorer)
 
-Use the items explorer's filters to find exactly what items you are looking for in your tenant. You can find what item are located in personal workspaces, which items were created by guest users and much more.
-
-:::image type="content" source="./media/use-microsoft-purview-hub/items-explorer.gif" alt-text="Screenshot showing the items-explorer page of the Purview hub report." lightbox="./media/use-microsoft-purview-hub/items-explorer.gif":::
+Use the items explorer's filters to find exactly what items you're looking for in your tenant. You can find what items are located in personal workspaces, which items were created by guest users and much more.
 
 ---
 
@@ -89,7 +81,7 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 ## Considerations and limitations
 
 * The full Purview hub report and its associated dataset are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
-* The first time the report and dataset are generated, it may take some time for them to to appear.
+* The first time the report and dataset are generated, it might take some time for them to appear.
 * Fabric admins can create new reports based on the dataset, but they can't edit the report or dataset directly.
 
 ## Related content
