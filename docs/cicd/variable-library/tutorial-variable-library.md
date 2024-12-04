@@ -29,22 +29,11 @@ In this tutorial, you:
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 
-## Open [Cloud Shell, Azure CLI, or PowerShell]
+## Download the sample data
 
-<!-- Optional: Open a demo environment - H2
+Connect to workspace....
 
-If you want to refer to using Cloud Shell, the
-Azure CLI, or Azure PowerShell, include the instructions as a first step,
-after the "Prerequisites" section if prerequisites are included.
-
-Include information about Cloud Shell only if all commands can 
-run in Cloud Shell.
-
-Use an include file if one is available.
-
---->
-
-## [verb] * [noun]
+## Create a Variable library
 
 [Introduce a task and its role in completing the process.]
 
@@ -59,53 +48,50 @@ the user completes in the process the tutorial describes.
 1. Procedure step
 1. Procedure step
 
-<!-- Required: Steps to complete the tasks - H2
+## Add variables to the library
 
-Use ordered lists to describe how to complete tasks in 
-the process. Be consistent when you describe how to
-use a method or tool to complete the task.
+[Introduce a task and its role in completing the process.]
 
-Code requires specific formatting. Here are a few useful 
-examples of commonly used code blocks. Make sure to 
-use the interactive functionality when possible.
+<!-- Required: Tasks to complete in the process - H2
 
-For the CLI-based or PowerShell-based procedures,
-don't use bullets or numbering.
-
-Here is an example of a code block for Java:
-
-```java
-cluster = Cluster.build(new File("src/site.yaml")).create();
-...
-client = cluster.connect();
-```
-
-Here's a code block for the Azure CLI:
-
-```azurecli-interactive 
-az vm create --resource-group myResourceGroup --name myVM 
---image win2016datacenter --admin-username azureuser 
---admin-password myPassword12
-```
-
-This is a code block for Azure PowerShell:
-
-```azurepowershell-interactive
-New-AzureRmContainerGroup -ResourceGroupName 
-myResourceGroup -Name mycontainer 
--Image mcr.microsoft.com/windows/servercore/iis:nanoserver 
--OsType Windows -IpAddressType Public
-```
--->
-
-## Clean up resources
-
-<!-- Optional: Steps to clean up resources - H2
-
-Provide steps the user takes to clean up resources that
-were created to complete the article.
+In one or more H2 sections, describe tasks that 
+the user completes in the process the tutorial describes.
 
 -->
+
+1. Procedure step
+1. Procedure step
+1. Procedure step
+
+## Add value-sets to the variables
+
+[Introduce a task and its role in completing the process.]
+
+<!-- Required: Tasks to complete in the process - H2
+
+In one or more H2 sections, describe tasks that 
+the user completes in the process the tutorial describes.
+
+-->
+
+1. Procedure step
+1. Procedure step
+1. Procedure step
+
+## Set a default value-set
+
+[Introduce a task and its role in completing the process.]
+
+<!-- Required: Tasks to complete in the process - H2
+
+In one or more H2 sections, describe tasks that 
+the user completes in the process the tutorial describes.
+
+-->
+
+1. Procedure step
+1. Procedure step
+1. Procedure step
 
 ## Related content
 
