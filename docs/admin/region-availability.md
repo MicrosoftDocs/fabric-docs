@@ -13,7 +13,7 @@ ms.date: 12/04/2024
 
 # Fabric region availability
 
-This article lists the region availability of the Microsoft Fabric [F SKUs](../enterprise/licenses.md#capacity), which are available in the [Azure public cloud regions](/explore/global-infrastructure/geographies). Some of the Fabric workloads might not be immediately available in new regions, or regions where data centers become constrained.
+This article lists the region availability of the Microsoft Fabric [F SKUs](../enterprise/licenses.md#capacity), which are available in the [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). Some of the Fabric workloads might not be immediately available in new regions, or regions where data centers become constrained.
 
 For details about purchasing a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
