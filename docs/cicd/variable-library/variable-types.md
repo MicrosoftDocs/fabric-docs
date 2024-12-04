@@ -15,9 +15,9 @@ ms.search.form: Introduction to Variable libraries, Variable library types, vari
 
 # Variable names and types (preview)
 
-A Variable library item contains a list of variables and their default values. It can also contain other value sets holding alternative values.
+A Variable library item in Microsoft Fabric contains a list of variables and their default values. It can also contain other value sets holding alternative values.
 
-Each variable is made up of the following properties:
+Each variable in the Variable library has the following properties:
 
 - Name
 - Note (optional)

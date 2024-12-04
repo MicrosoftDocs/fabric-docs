@@ -17,10 +17,10 @@ The Microsoft Fabric Variable Library presents a unified approach for customers 
 The Fabric Variable library:
 
 * Is compatible with CI/CD processes, allowing integration with Git and deployment through Deployment pipelines.
-* Supports automation via public APIs.
+* Supports automation via Microsoft Fabric public APIs.
 
 > [!NOTE]
-> The Fabric Variable library item is currently in **preview**.
+> The Microsoft Fabric Variable library item is currently in **preview**.
 
 Variable libraries enable customers to:
 

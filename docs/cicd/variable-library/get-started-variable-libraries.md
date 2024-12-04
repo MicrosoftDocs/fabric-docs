@@ -1,6 +1,6 @@
 ---
 title: Get started with Variable libraries
-description: Learn how use Microsoft Fabric Variable libraries to customize and share item configurations in a workspace.
+description: Learn how to use Microsoft Fabric Variable libraries to customize and share item configurations in a workspace.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
@@ -23,7 +23,7 @@ To create Variable library items in Fabric, you need:
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* In addition, the following [tenant switches](../../admin/about-tenant-settings.md) must be enabled from the Admin portal:
+* The following [tenant switches](../../admin/about-tenant-settings.md) must be enabled from the Admin portal:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
 
   These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your [organization's settings](../../admin/delegate-settings.md).
@@ -65,7 +65,7 @@ To add a variable to the library:
 1. Select a type from the drop-down list
 1. Enter default value set of the defined type
 1. Add one or more alternative value sets (optional)
-1. Add a note explaining what the variable is for or how it’s used (optional)
+1. Add a note explaining what the variable is for or how to use it (optional)
 
 :::image type="content" source="./media/get-started-with-variable-libraries/add-variable.png" alt-text="Screenshot of a Variable library. On top, there's a button that says add variable.":::
 

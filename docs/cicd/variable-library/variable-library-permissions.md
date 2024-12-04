@@ -15,13 +15,15 @@ ms.search.form: Introduction to Variable libraries, Manage Variable libraries, V
 
 # Variable library permissions (preview)
 
+The Microsoft Fabric Variable library permissions are aligned with the Fabric workspace model. This article explains who can access Variable libraries and their values.
+
 ## Variable library item permissions
 
 Permissions are aligned with the fabric permission model:
 
 - Workspace permissions
 - Viewer permissions: Someone with viewer permissions can Add/Edit/Delete, but not save their changes. Viewer can also see available variables for reference on a consumer item with all their details and referred variables values.
-- Contributor/Member/Admin permissions: In general, CRUD permissions. See [workspace roles](../../get-started/roles-workspaces.md) for more information.
+- Contributor/Member/Admin permissions: In general, CRUD permissions. For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
 
 ## Variable permissions
 
