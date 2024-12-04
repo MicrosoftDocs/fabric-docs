@@ -9,15 +9,11 @@ ms.custom:
 ms.date: 11/18/2024
 ---
 
-# Explore Fabric events in Fabric Real-Time hub
-
+# Explore Fabric events in Fabric Real-Time hub (preview)
 
 This article describes columns on the **Fabric events** page and actions available for each event. 
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-menu.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-menu.png":::
-
-> [!NOTE]
-> This feature is currently in preview.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
