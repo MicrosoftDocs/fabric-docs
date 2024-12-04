@@ -98,11 +98,11 @@ items:
   - name: Copilot for Data Science and Data Engineering
     items:
     - name: Copilot for Data Science and Data Engineering
-      href: copilot-notebooks-overview.md
-    - name: Overview of Chat-magics in Notebooks
-      href: copilot-notebooks-chat-magics.md
-    - name: Use the Copilot chat panel
-      href: copilot-notebooks-chat-pane.md
+      href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/get-started/toc.json&bc=/fabric/get-started/toc.json
+    - name: Overview of Chat-magics in Notebooks (preview)
+      href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/get-started/toc.json&bc=/fabric/get-started/toc.json
+    - name: Use the Copilot chat panel (preview)
+      href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/get-started/toc.json&bc=/fabric/get-started/toc.json
   - name: Copilot for Data Warehouse
     href: ../data-warehouse/copilot.md
   - name: Copilot for Real-Time Intelligence

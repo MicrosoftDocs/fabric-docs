@@ -1,11 +1,11 @@
 ---
 title:  Fabric decision guide - choose a data store
 description: Review a reference table and scenarios to choose the most suitable data store for your Microsoft Fabric workloads, ensuring optimal performance.
-author: bradleyschacht
-ms.author: scbradl
-ms.reviewer: sngun, wiassaf
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sngun, scbradl
 ms.topic: concept-article
-ms.date: 10/22/2024
+ms.date: 12/04/2024
 ms.custom:
   - FY25Q1-Linter
   - ignite-2024
@@ -23,8 +23,8 @@ Use this information to compare Fabric data stores such as warehouse, lakehouse,
 | | **[Lakehouse](../data-engineering/lakehouse-overview.md)** | **[Warehouse](../data-warehouse/data-warehousing.md)** |  **[Eventhouse](../real-time-intelligence/eventhouse.md)** |
 |---|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Unlimited |
-| **Type of data** |  Unstructured,<br>semi-structured,<br>structured | Structured | Unstructured,<br>semi-structured,<br>structured |
-| **Primary developer persona** | Data engineer, data scientist | Data warehouse developer, data architect, database developer | App developer, data scientist, data engineer |
+| **Type of data** |  Unstructured,<br>semi-structured,<br>structured | Structured,<br>semi-structured (JSON) | Unstructured,<br>semi-structured,<br>structured |
+| **Primary developer persona** | Data engineer, data scientist | Data warehouse developer, data architect, data engineer, database developer | App developer, data scientist, data engineer |
 | **Primary dev skill** | Spark (Scala, PySpark, Spark SQL, R) | SQL | No code, KQL, SQL |
 | **Data organized by** | Folders and files, databases, and tables | Databases, schemas, and tables | Databases, schemas, and tables |
 | **Read operations** | Spark, T-SQL | T-SQL, Spark\* | KQL, T-SQL, Spark |
