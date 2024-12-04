@@ -55,6 +55,15 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
   - Ends with <kbd>.</kbd> or a space
   - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
 
+### Directory name limitations
+
+- The name of the directory that connects to the Git repository has the following naming restrictions:
+
+  - The directory name can't begin or end with a space or tab.
+  - The directory name can't contain any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+
+- The item folder (the folder that contains the item files) can't contain any of the following characters: <kbd>"</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>. If you rename the folder to something that includes one of these characters, Git can't connect or sync with the workspace and an error occurs.
+
 ### Branching out limitations
 
 - Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process#fabric-permissions-needed-for-common-operations).
