@@ -25,7 +25,7 @@ items:
   - name: Microsoft Purview Hub - Admins
     href: use-microsoft-purview-hub.md
   - name: Microsoft Purview Hub - Data owners
-    href: use-microsoft-purview-hub.md
+    href: use-microsoft-purview-hub-data-owners.md
   - name: Information protection
     items:
     - name: Information protection in Microsoft Fabric
