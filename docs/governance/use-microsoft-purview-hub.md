@@ -6,7 +6,7 @@ ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 12/04/2024
+ms.date: 12/05/2024
 ---
 
 # The Microsoft Purview hub for administrators (preview)
@@ -29,47 +29,55 @@ If this is the first time insights are being generated, it might take some time 
 
 ## Get insights about the Microsoft Fabric data in your tenant
 
-The Purview hub report provides visuals that lead you to actionable insights about how to improve the governance and security posture of your organization's data estate. The pages of the report are briefly described in the following table. For help with using the report, select the **Take a tour button** on the overview page, or select the help button you see at the bottom of the navigation pane when you select one of the other pages.
-
-| Page                   | Description                                                                    |
-|:-----------------------|:-------------------------------------------------------------------------------|
-| **Overview page**      | High level insights over your tenants.                                         |
-| **Sensitivity labels** | Report over label coverage and look into the confidential data in the tenant.  |
-| **Endorsements**       | Follow up after endorsed items (Promoted, Certified, and Master data) and see where the items are with most access that might need your attention.|
-| **Items explorer**     | Monitor all your items in the tenant using granular filtering.                 |
-| **Take a tour**        | Use the build-in help to learn how to use Purview hub's reports in best manner.|
+The Purview hub report provides visuals that lead you to actionable insights about how to improve the governance and security posture of your organization's data estate. Select the following tabs fpr brief descriptions of report pages.
 
 # [Overview](#tab/overview)
 
-The overview page provides high-level insights about your tenant's data estate. Select the **Take a tour** button in the navigation pane for an introduction to the main features of the report.
+The overview page provides high-level insights about your tenant's data estate. Select the **Take a tour** button in the navigation pane for a quick introduction to the main features of the report.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-overview.png" alt-text="Screenshot of showing the Overview page of the Purview hub report, calling out the Take a tour button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-overview.png":::
 
 # [Sensitivity labels](#tab/sensitivity-labels)
 
-* Improve label coverage: Set the label coverage goal to flag where label coverage isn't met. Filter by Domains, Workspaces, Item types, or Creators. Select what you wish to explore and, in the table, below you can monitor related items. Use the button to filter on unlabeled items only.
+The sensitivity label page helps you analyze sensitivity label coverage and the distribution of confidential data throughout your tenant. The interactive, interoperable visuals help you:
 
-* Monitor your classified data: Use the label filter to select the sensitivity label you wish to explore, then filter by Domains, Workspaces, Item types, or Creator to find all your classified data.
+* Improve label coverage: You set the label coverage goal to flag where label coverage isn't meeting org targets. You filter by domains, workspaces, item types, or creators. Select what you wish to explore and then, in the table, you can monitor related items. Use the **Only show unlabels items** to filter for unlabeled items only.
+
+* Monitor your classified data: You can use the label filter to select the sensitivity label you wish to explore. You can then filter by domains, workspaces, item types, or creator to find and drill down on your org's sensitive data.
+
+The side pane shows you insights based on your selections in the report.
+
+Select the help button at the bottom of the navigation pane for guidance about using the page.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-sensitivity-labels.png" alt-text="Screenshot of showing the sensitivity labels page of the Purview hub report, calling out the help button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-sensitivity-labels.png":::
 
 # [Endorsement](#tab/endorsement)
 
-* Promote items with high visibility: Find items candidates for promotion base on view access. Set view access threshold to flag items with high visibility and no endorsement.
+The endorsements page helps you monitor endorsed items (promoted, certified, and master data) and see where items with the most access might need your attention. The page helps you:
 
-* Monitor your endorsed items: Filter the items by endorsement: Promoted, Certified, and Master Data
+* Promote items with high visibility: You can find candidates for promotion base on view access. For example, you can set a view-access threshold to flag items with that have high visibility but no endorsement.
+
+* Monitor your endorsed items: You can filter items by their endorsement status: promoted, certified, and master data.
+
+The side pane shows you insights based on your selections in the report.
+
+Select the help button at the bottom of the navigation pane for guidance about using the page.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-endorsements.png" alt-text="Screenshot of showing the endorsements page of the Purview hub report, calling out the help button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-endorsements.png":::
 
 # [Domains](#tab/domains)
 
-Find workspaces that aren't associated to any domain with the hierarchy tree below: Select a Domain\ Subdomain\ Workspace to drill through with the items explorer page.
+The domains page helps you visualize and understand your org's domain structure and the destribution of items within it. For example, you can use the hierarchy tree to find workspaces that aren't accociated with any domain. Select a domain/Subdomain/Workspace to drill through with the items explorer page.
+
+Select the help button at the bottom of the navigation pane for guidance about using the page.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-domains.png" alt-text="Screenshot of showing the domains page of the Purview hub report, calling out the help button button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-domains.png":::
 
 # [Items explorer](#tab/items-explorer)
 
-Use the items explorer's filters to find exactly what items you're looking for in your tenant. You can find what items are located in personal workspaces, which items were created by guest users and much more.
+The items explorer page help you monitor all the items in your tenant using granular filtering. You can use the items explorer's filters to find exactly the items you're looking for. You can see which items are located in personal workspaces, for instance, or which items were created by guest users, and much more.
+
+Select the help button at the bottom of the navigation pane for help using the page.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-items-explorer.png" alt-text="Screenshot of showing the items explorer page of the Purview hub report, calling out the help button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-items-explorer.png":::
 
@@ -90,7 +98,7 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 
 ## Considerations and limitations
 
-* The full Purview hub report and its associated dataset are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
+* The Purview hub report and its associated dataset are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
 * The first time the report and dataset are generated, it might take some time for them to appear.
 * Fabric admins can create new reports based on the dataset, but they can't edit the report or dataset directly.
 
