@@ -14,30 +14,27 @@ summary: |
   of the FAQ as it's displayed.]
 
 sections:
-  - name: # Name of first section.
+  - name: Creating and using a variable library
     questions:
-      - question: # Question. 
-        answer: # Answer.
+      - question: question 1 
+        answer: Answer 1
           
-      - question: # Question.
+      - question: Question 2
         answer: |
           A multiline or formatted answer to the question.
           Use any Markdown formatting you want, provided 
           that you maintain the indent on the lines after 
           the | characters.
 
-  - name: # Name of second section. Omit if you have only 
-          # a few questions. In that case, the first name 
-          # value is ignored and your questions 
-          # become the H2 level.
+  - name: Troubleshooting 
     questions:
-      - question: # Question.
-        answer: # Answer.
+      - question: Question 3
+        answer: Answer3
 
-      - question: # Question.
-        answer: # Answer.
+      - question: Question 4
+        answer: Answer 4
 
 additionalContent: |
     ## Related content
 
-    To learn more, see [article title](link.md).
+    To learn more, see [What is a Variable library](./variable-library-overview).
