@@ -53,7 +53,7 @@ The Purview hub insights report enables data owners to visualize and analyze in 
 
 You access the report by selecting **Open full report** in the Microsoft Purview hub. The report and its associated dataset get generated in your My Workspace, and you can also access the report from there.
 
-:::image type="content" source="./media/use-microsoft-purview-hub-data-owners/microsoft-purview-hub-full-report-user.png" alt-text="Screenshot of the Microsoft Purview hub full report for nonadmin users." lightbox="./media/use-microsoft-purview-hub-data-ownerss/microsoft-purview-hub-full-report-user.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub-data-owners/microsoft-purview-hub-full-report-user.png" alt-text="Screenshot of the Microsoft Purview hub full report for nonadmin users." lightbox="./media/use-microsoft-purview-hub-data-owners/microsoft-purview-hub-full-report-user.png":::
 
 The report contains the following pages:
 
