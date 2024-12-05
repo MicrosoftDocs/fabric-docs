@@ -22,13 +22,13 @@ The Purview hub has a view for Fabric administrators and a view for other (nonad
 
 When you open the hub, the appropriate view opens. In the sections below, select the appropriate tab to see the information that is relevant to you. The following image shows the data owner view.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-data-owner-view.png" alt-text="Screenshot of the Microsoft Purview hub data owner view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-data-owner-view.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub-data-owners/microsoft-purview-hub-general-data-owner-view.png" alt-text="Screenshot of the Microsoft Purview hub data owner view." lightbox="./media/use-microsoft-purview-hub-data-owners/microsoft-purview-hub-general-data-owner-view.png":::
 
 ## Access the hub
 
 To access the hub, open the Fabric settings pane and choose **Microsoft Purview hub**.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
+:::image type="content" source="./media/use-microsoft-purview-hub-data-owners/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
 When you select the Microsoft Purview hub option, the hub opens to the view that is appropriate for you, and insights are generated. If this is the first time insights are being generated, it might take some time for them to appear.
 
@@ -53,7 +53,7 @@ The Purview hub insights report enables data owners to visualize and analyze in 
 
 You access the report by selecting **Open full report** in the Microsoft Purview hub. The report and its associated dataset get generated in your My Workspace, and you can also access the report from there.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-user.png" alt-text="Screenshot of the Microsoft Purview hub full report for nonadmin users." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-user.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub-data-owners/microsoft-purview-hub-full-report-user.png" alt-text="Screenshot of the Microsoft Purview hub full report for nonadmin users." lightbox="./media/use-microsoft-purview-hub-data-ownerss/microsoft-purview-hub-full-report-user.png":::
 
 The report contains the following pages:
 
