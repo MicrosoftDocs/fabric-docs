@@ -209,6 +209,21 @@
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-461-scheduled-refresh-dataset-hangs.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-notebooks-chat-magics.md",
+            "redirect_url": "/fabric/data-engineering/copilot-notebooks-chat-magics",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-notebooks-chat-pane.md",
+            "redirect_url": "/fabric/data-engineering/copilot-notebooks-chat-pane",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-notebooks-overview.md",
+            "redirect_url": "/fabric/data-engineering/copilot-notebooks-overview",
+            "redirect_document_id": true
         }
     ]
 }

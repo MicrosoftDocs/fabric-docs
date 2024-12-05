@@ -71,8 +71,6 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 
 1. **App registration**: Follow the [authentication guide](./authentication-tutorial.md) to set up Microsoft Entra ID authentication for secure interactions within the architecture.
 
-1. **Update OneLake DFS base URL**: Modify the `EnvironmentConstants.cs` file in the `src/Constants/` folder to match your environment.
-
 1. **Configure workload settings**: Update `src/Config/workload-dev-mode.json` and `src/appsettings.json` with your specific configuration details:
 
     * Copy *workload-dev-mode.json* from src/Config to `C:\` and update the following fields to match your configuration:
