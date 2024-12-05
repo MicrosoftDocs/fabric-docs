@@ -29,7 +29,7 @@ If this is the first time insights are being generated, it might take some time 
 
 ## Get insights about the Microsoft Fabric data in your tenant
 
-The Purview hub report provides visuals that lead you to actionable insights about how to improve the governance and security posture of your organization's data estate. Select the following tabs fpr brief descriptions of report pages.
+The Purview hub report provides visuals that lead you to actionable insights about how to improve the governance and security posture of your organization's data estate. Select the following tabs for brief descriptions of report pages.
 
 # [Overview](#tab/overview)
 
