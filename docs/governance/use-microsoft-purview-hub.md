@@ -41,7 +41,7 @@ The overview page provides high-level insights about your tenant's data estate. 
 
 The sensitivity label page helps you analyze sensitivity label coverage and the distribution of confidential data throughout your tenant. The interactive, interoperable visuals help you:
 
-* Improve label coverage: You set the label coverage goal to flag where label coverage isn't meeting org targets. You filter by domains, workspaces, item types, or creators. Select what you wish to explore and then, in the table, you can monitor related items. Use the **Only show unlabels items** to filter for unlabeled items only.
+* Improve label coverage: You can set the label coverage goal to flag where label coverage isn't meeting org targets. You filter by domains, workspaces, item types, or creators. Select what you wish to explore and then, in the table, you can monitor related items. Use the **Only show unlabels items** to filter for unlabeled items only.
 
 * Monitor your classified data: You can use the label filter to select the sensitivity label you wish to explore. You can then filter by domains, workspaces, item types, or creator to find and drill down on your org's sensitive data.
 
@@ -55,7 +55,7 @@ Select the help button at the bottom of the navigation pane for guidance about u
 
 The endorsements page helps you monitor endorsed items (promoted, certified, and master data) and see where items with the most access might need your attention. The page helps you:
 
-* Promote items with high visibility: You can find candidates for promotion base on view access. For example, you can set a view-access threshold to flag items with that have high visibility but no endorsement.
+* Promote items with high visibility: You can find candidates for promotion based on view access. For example, you can set a view-access threshold to flag items with that have high visibility but no endorsement.
 
 * Monitor your endorsed items: You can filter items by their endorsement status: promoted, certified, and master data.
 
@@ -67,7 +67,7 @@ Select the help button at the bottom of the navigation pane for guidance about u
 
 # [Domains](#tab/domains)
 
-The domains page helps you visualize and understand your org's domain structure and the destribution of items within it. For example, you can use the hierarchy tree to find workspaces that aren't accociated with any domain. Select a domain/Subdomain/Workspace to drill through with the items explorer page.
+The domains page helps you visualize and understand your org's domain structure and the destribution of items within it. For example, you can use the hierarchy tree to find workspaces that aren't accociated with any domain. Select a domain/subdomain/workspace to drill through with the items explorer page.
 
 Select the help button at the bottom of the navigation pane for guidance about using the page.
 
@@ -75,7 +75,7 @@ Select the help button at the bottom of the navigation pane for guidance about u
 
 # [Items explorer](#tab/items-explorer)
 
-The items explorer page help you monitor all the items in your tenant using granular filtering. You can use the items explorer's filters to find exactly the items you're looking for. You can see which items are located in personal workspaces, for instance, or which items were created by guest users, and much more.
+The items explorer page helps you monitor all the items in your tenant using granular filtering. You can use the items explorer's filters to find exactly the items you're looking for. You can see which items are located in personal workspaces, for instance, or which items were created by guest users, and much more.
 
 Select the help button at the bottom of the navigation pane for help using the page.
 
