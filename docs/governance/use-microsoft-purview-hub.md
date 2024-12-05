@@ -37,13 +37,13 @@ The Purview hub report provides visuals that lead you to actionable insights abo
 | **Sensitivity labels** | Report over label coverage and look into the confidential data in the tenant.  |
 | **Endorsements**       | Follow up after endorsed items (Promoted, Certified, and Master data) and see where the items are with most access that might need your attention.|
 | **Items explorer**     | Monitor all your items in the tenant using granular filtering.                 |
-| **Take a tour**        | Use the build-in help to learn how to use Purview hub’s reports in best manner.|
+| **Take a tour**        | Use the build-in help to learn how to use Purview hub's reports in best manner.|
 
 # [Overview](#tab/overview)
 
 The overview page provides high-level insights about your tenant's data estate. Select the **Take a tour** button in the navigation pane for an introduction to the main features of the report.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-overview.png" alt-text="Screenshot of showing the Overview page of the Purview hub report, callout the Take a tour button..":::
+:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-overview.png" alt-text="Screenshot of showing the Overview page of the Purview hub report, calling out the Take a tour button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-overview.png":::
 
 # [Sensitivity labels](#tab/sensitivity-labels)
 
@@ -51,19 +51,27 @@ The overview page provides high-level insights about your tenant's data estate. 
 
 * Monitor your classified data: Use the label filter to select the sensitivity label you wish to explore, then filter by Domains, Workspaces, Item types, or Creator to find all your classified data.
 
+:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-sensitivity-labels.png" alt-text="Screenshot of showing the sensitivity labels page of the Purview hub report, calling out the help button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-sensitivity-labels.png":::
+
 # [Endorsement](#tab/endorsement)
 
 * Promote items with high visibility: Find items candidates for promotion base on view access. Set view access threshold to flag items with high visibility and no endorsement.
 
 * Monitor your endorsed items: Filter the items by endorsement: Promoted, Certified, and Master Data
 
+:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-endorsements.png" alt-text="Screenshot of showing the endorsements page of the Purview hub report, calling out the help button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-endorsements.png":::
+
 # [Domains](#tab/domains)
 
 Find workspaces that aren't associated to any domain with the hierarchy tree below: Select a Domain\ Subdomain\ Workspace to drill through with the items explorer page.
 
+:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-domains.png" alt-text="Screenshot of showing the domains page of the Purview hub report, calling out the help button button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-domains.png":::
+
 # [Items explorer](#tab/items-explorer)
 
 Use the items explorer's filters to find exactly what items you're looking for in your tenant. You can find what items are located in personal workspaces, which items were created by guest users and much more.
+
+:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-items-explorer.png" alt-text="Screenshot of showing the items explorer page of the Purview hub report, calling out the help button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-items-explorer.png":::
 
 ---
 
