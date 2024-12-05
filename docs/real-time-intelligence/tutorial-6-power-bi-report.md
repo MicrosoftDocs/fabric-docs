@@ -22,27 +22,18 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 
 ## Build a Power BI report
 
-1. From the navigation bar, select the KQL queryset you created in a previous step, named *TutorialQueryset*.
+1. Browse to the KQL database you created in a previous step, named *Tutorial*.
+1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
 1. Copy and paste the following query into the query editor. The output of this query is used as the semantic model for building the Power BI report. 
 
     ```kusto
-    TutorialTable
+    RawData
     | summarize arg_max(Timestamp, No_Bikes,  No_Empty_Docks, Neighbourhood, Lat=todouble(Latitude), Lon=todouble(Longitude)) by BikepointID
     ```
 
-1. Select **Power BI**. The Power BI report editor opens with the query result available as a data source named **Kusto Query Result**.
+1. Select **Create Power BI report**. The Power BI report editor opens with the query result available as a data source named **Kusto Query Result**.
 
 ### Add visualizations to the report
-
-1. In the report editor, select **Visualizations** > **Map** icon.
-     :::image type="icon" source="media/tutorial/map-icon.png" border="false":::
-1. Drag the following fields from **Data** > **Kusto Query Result** to the **Visualizations** pane.
-    * **Lat** > **Latitude**
-    * **Lon** > **Longitude**
-    * **No_Bikes** > **Bubble size**
-    * **Neighbourhood** > **Add drill-through fields here**
-
-    :::image type="content" source="media/tutorial/report-generated.png" alt-text="Screenshot of Power BI report generation window in Real-Time Intelligence." lightbox="media/tutorial/report-generated.png":::
 
 1. In the report editor, select **Visualizations** > **Stacked column chart** icon.
     :::image type="icon" source="media/tutorial/stacked-column-chart-icon.png" border="false":::
@@ -60,18 +51,11 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 1. Select **Continue**.
 1. Select **Open the file in Power BI to view, edit, and get a shareable link.**
 
-## Interact with the report
-
-When you open the Power BI report, you can add or edit visualizations. You can also interact with the visualizations. For example, selecting one of the *Neighbourhood* columns on one visualization highlights the values of that neighborhood in the other visualizations.
-
-:::image type="content" source="media/tutorial/cross-highlight.gif" alt-text="GIF showing how cross-highlighting works in Power BI report." border="false"  lightbox="media/tutorial/cross-highlight.gif":::
-
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
 
 * [Visualize data in a Power BI report](create-powerbi-report.md)
-* [Cross-filter and cross-highlight visuals](/power-bi/create-reports/power-bi-reports-filters-and-highlighting#cross-filter-and-cross-highlight-visuals)
 
 ## Next step
 

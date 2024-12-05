@@ -15,7 +15,7 @@ ms.search.form: Get started
 # Real-Time Intelligence tutorial part 7: Clean up resources
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 6: Set an alert on your eventstream](tutorial-6-set-alert.md).
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 7: Set an alert on your eventstream](tutorial-7-set-alert.md).
 
 ## Clean up resources
 

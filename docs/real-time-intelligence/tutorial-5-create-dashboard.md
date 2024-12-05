@@ -16,21 +16,21 @@ ms.search.form: Get started
 # Real-Time Intelligence tutorial part 5: Create a Real-Time Dashboard
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Query streaming data in a KQL queryset](tutorial-3-query-data.md).
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Query streaming data](tutorial-3-query-data.md).
 
 In this part of the tutorial, you learn how to create a Real-Time Dashboard in Real-Time Intelligence. You create a Kusto Query Language (KQL) query, create a Real-Time Dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
 
 ## Create a Real-Time Dashboard
 
-1. In your KQL queryset, copy/paste, and run the following query. This query may already have been run from the previous section in this tutorial.
+1. In your KQL queryset, copy/paste, and run the following query. This query might already have been run from the previous section in this tutorial.
     This query returns a column chart showing the most recent number of bikes by *BikepointID*.
 
     ```kusto
-    LatestNoBikesCount_MV
+    AggregatedData
     | sort by BikepointID
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
-    
+
     :::image type="content" source="media/tutorial/bikes-by-bikepoint.png" alt-text="Screenshot of query showing column chart of bikes by bike point ID. ":::
 
 1. Select **Pin to dashboard**.
@@ -59,7 +59,7 @@ Since you've selected **Open dashboard after creation**, the new Real-Time dashb
 1. In the query editor, enter the following query:
 
     ```kusto
-    TutorialTable
+    RawData
     | where Neighbourhood == "Chelsea"
     ```
 
@@ -75,12 +75,17 @@ Since you've selected **Open dashboard after creation**, the new Real-Time dashb
     :::image type="content" source="media/tutorial/add-aggregation.gif" alt-text="GIF of how to visually add and modify the query." border="false":::
 
 1. Select **+ Add** > **Aggregation**.
+1. Select **Operator** > **max** and **Column** > *No_Bikes*.
+1. Under **Display Name**, enter *Max_Bikes*.
 1. Select **+ Add grouping**.
 1. Select **Group by** > *Street*.
 1. Select **Apply**.
-
-    Notice that the query elements are updated to include the **count() by Street** aggregation. The resulting table changed to show the total count of bike locations by street.
-1. Close the **Explore** pane and select **Save** from the menu ribbon to save the changes.
+    
+    :::image type="content" source="media/tutorial/aggregation-tool.png" alt-text="Screenshot of exploration tool showing max number of bikes by street.":::
+    
+    Notice that the query elements are updated to include the **max(No_Bikes) by Street** aggregation. The resulting table changed to show the total count of bike locations by street.
+1. Change the **Visual type** to **Bar chart**.
+1. Select **Pin to dashboard** > **In this dashboard**.
 
 ## Add a map tile
 
@@ -88,7 +93,7 @@ Since you've selected **Open dashboard after creation**, the new Real-Time dashb
 1. In the query editor, enter and run the following query:
 
     ```kusto
-    TutorialTable
+    RawData
     | where Timestamp > ago(1h)
     ```
 

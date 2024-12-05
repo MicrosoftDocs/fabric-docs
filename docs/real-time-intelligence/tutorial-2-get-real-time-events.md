@@ -18,7 +18,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Set up Eventhouse](tutorial-1-resources.md).
 
-In this part of the tutorial, you browse the Real-Time hub, create an eventstream, transform events in two different ways, and create destinations to send the transformed events to a KQL database.
+In this part of the tutorial, you browse the Real-Time hub, create an eventstream, transform events, and create a destination to send the transformed events to a KQL database.
 
 ## Create an eventstream
 
@@ -45,6 +45,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
     :::image type="content" source="media/tutorial/event-stream-edit-button.png" alt-text="Screenshot with the Edit button selected." lightbox="media/tutorial/event-stream-edit-button.png":::
 
 1. In the eventstream authoring canvas, select the down arrow on the **Transform events or add destination** tile, and then select **Manage fields**. The tile is renamed to `ManageFields`.
+1. Hover over the left edge of the **Manage fields** tile. Click and drag the connector to the right side the **TutorialEventstream** tile. You have now connected the eventstream to a new transformation tile.
 1. In the **Manage fields** pane, do the following actions:
     1. In **Operation name**, enter **TutorialTransform**. 
     1. Select **Add all fields**
@@ -79,61 +80,11 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
     | **Workspace**           | Select the workspace in which you created your resources. |
     | **Eventhouse**          | *Tutorial*                                                |
     | **KQL Database**        | *Tutorial*                                                |
-    | **Destination table**   | *Create new* - enter *TutorialTable* as table name        |
+    | **Destination table**   | *Create new* - enter *RawData* as table name        |
     | **Input data format**   | *Json*                                                    |
 
 1. Ensure that the box **Activate ingestion after adding the data** is checked.
 1. Select **Save**.
-
-## Transform events - add "Group by"
-
-1. From the **Transform events** dropdown, select **Group by**. A new tile is created entitled **Groupby**.
-1. Hover over the right edge of the **TutorialEventstream** tile. Click and drag the connector to the left side of the **GroupBy** tile. You have now connected the eventstream to a new transformation tile.
-1. Select the pencil icon on the *GoupBy* tile.
-1. Enter the following information in the **Group by** pane under **Aggregations**:
-
-    | Field     | Value       |
-    | --------- | ----------- |
-    | **Type**  | *Count**     |
-    | **Field** | *All rows*  |
-    | **Name**  | *Total_No_Bikes* |
-
-1. Select **Add**.
-1. Enter the following information in the **Group by** pane under **Settings**:
-
-    | Field                     | Value      |
-    | ------------------------- | ---------- |
-    | **Group aggregations by** | *Street*   |
-    | **Time window**           | *Tumbling* |
-    | **Duration**              | *5 minute* |
-    | **Offset**                | *0 Second* |
-
-1. Select **Save**.
-
-### Create a destination for the GroupBy transformation
-
-1. Hover over the right edge of the **GroupBy** tile and select the green plus icon.
-1. Select **Destinations** > **Eventhouse**.
-    A new tile is created entitled *Eventhouse*.
-
-1. Select the pencil icon on the *Eventhouse* tile.
-1. Enter the following information in the **Eventhouse** pane:
-
-    | Field                   | Value                                                     |
-    | ----------------------- | --------------------------------------------------------- |
-    | **Data ingestion mode** | *Event processing before ingestion*                       |
-    | **Destination name**    | *TutorialDestination2*                                    |
-    | **Workspace**           | Select the workspace in which you created your resources. |
-    | **Eventhouse**          | *Tutorial*                                                |
-    | **KQL Database**        | *Tutorial*                                                |
-    | **Destination table**   | *Create new* - enter *AggregatedBikesData* as table name  |
-    | **Input data format**   | *Json*                                                    |
-
-1. Ensure that the box **Activate ingestion after adding the data** is checked.
-1. Select **Save**.
-
-    :::image type="content" source="media/tutorial/both-destinations.png" alt-text="Screenshot of Eventstream canvas with both destinations shown." lightbox="media/tutorial/both-destinations.png":::
-
 1. From the menu ribbon, select **Publish**.
 
     The eventstream is now set up to transform events and send them to a KQL database.
