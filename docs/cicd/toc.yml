@@ -74,7 +74,7 @@ items:
   - name: "Tutorial: Use Variable libraries in cicd-overview.md"
     href: variable-library/variable-library-tutorial.md
   - name: Variable library FAQ and Troubleshooting
-    href: variable-library-faq.yml
+    href: variable-library/variable-library-faq.yml
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
 - name: Frequently asked questions
