@@ -17,7 +17,7 @@ Microsoft Purview hub for administrators is a centralized place in Fabric that h
 
 ## Requirements
 
-Access to the admin view of the Purview hub requires the [Fabric administrator role](../admin/roles.md) or higher.
+Access to Purview hub for administrators requires the [Fabric administrator role](../admin/roles.md) or higher.
 
 ## Access the hub
 
@@ -29,7 +29,7 @@ If this is the first time insights are being generated, it might take some time 
 
 ## Get insights about the Microsoft Fabric data in your tenant
 
-The pages of the insights report provide visuals that help lead you to actionable insights about how to improve the governance and security posture of your organization's data estate.
+The Purview hub report provides visuals that lead you to actionable insights about how to improve the governance and security posture of your organization's data estate. The pages of the report are briefly described in the following table. For help with using the report, select the **Take a tour button** on the overview page, or select the help button you see at the bottom of the navigation pane when you select one of the other pages.
 
 | Page                   | Description                                                                    |
 |:-----------------------|:-------------------------------------------------------------------------------|
@@ -41,7 +41,9 @@ The pages of the insights report provide visuals that help lead you to actionabl
 
 # [Overview](#tab/overview)
 
-TBD
+The overview page provides high-level insights about your tenant's data estate. Select the **Take a tour** button in the navigation pane for an introduction to the main features of the report.
+
+:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-overview.png" alt-text="Screenshot of showing the Overview page of the Purview hub report, callout the Take a tour button..":::
 
 # [Sensitivity labels](#tab/sensitivity-labels)
 
