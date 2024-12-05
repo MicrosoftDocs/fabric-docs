@@ -64,8 +64,8 @@ Connect to the replicated copy of your SQL database data in OneLake via the SQL 
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
-- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
+<!-- - [Private links in Microsoft Fabric](../../security/security-private-links-overview.md) -->
 
 ## Related content
 
