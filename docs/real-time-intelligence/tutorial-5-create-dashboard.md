@@ -71,9 +71,6 @@ Since you've selected **Open dashboard after creation**, the new Real-Time dashb
 ## Explore the data visually by adding an aggregation
 
 1. On the new **Chelsea bikes** tile, select the **Explore** icon. :::image type="icon" source="media/tutorial/explore-icon.png" border="false":::
-
-    :::image type="content" source="media/tutorial/add-aggregation.gif" alt-text="GIF of how to visually add and modify the query." border="false":::
-
 1. Select **+ Add** > **Aggregation**.
 1. Select **Operator** > **max** and **Column** > *No_Bikes*.
 1. Under **Display Name**, enter *Max_Bikes*.

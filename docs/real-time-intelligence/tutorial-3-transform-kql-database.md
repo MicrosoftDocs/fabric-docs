@@ -44,7 +44,7 @@ In this step, you create a target table that will be used to store the data that
 
 ## Create function with transformation logic
 
-In this step, you create a stored function that holds the transformation logic to be used in the update policy. The function parses the BikepointID column to remove the prefix "BikePoints_".
+In this step, you create a stored function that holds the transformation logic to be used in the update policy. The function parses the *BikepointID* column and adds two new calculated columns.
 
 1. From the menu ribbon, select **Database**.
 1. Select **+New** > **Function**.
@@ -65,7 +65,7 @@ In this step, you create a stored function that holds the transformation logic t
 
 ## Apply update policy
 
-In this step, you apply an update policy to the target table to transform the data. The update policy uses the stored function *ParseBikePointID()* to parse the *BikepointID* column.
+In this step, you apply an update policy to the target table to transform the data. The update policy uses the stored function *TransformRawData()* to parse the *BikepointID* column and adds two new calculated columns.
 
 1. From the menu ribbon, select **Database**.
 1. Select **+ New** > **Table update policy**.
@@ -96,12 +96,12 @@ In this step, you verify that the transformation was successful by comparing the
     ```kusto
     RawData
     | take 10
-    ``` 
+    ```
 
 1. Copy/paste the following query into the query editor to view 10 arbitrary records in the target table. Run the query.
 
     ```kusto
-    BikesDataTransformed
+    TransformedData
     | take 10
     ```
 
