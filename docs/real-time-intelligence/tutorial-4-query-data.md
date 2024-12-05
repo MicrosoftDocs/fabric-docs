@@ -65,6 +65,9 @@ In this step, you create a materialized view, which returns an up-to-date result
 
 You will use this query in the next step to create a Real-Time dashboard.
 
+> [!IMPORTANT]
+> If you have missed any of the steps used to create the tables, update policy, function, or materialized views, use this script to create all required resources: [Tutorial commands script](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/tutorial-commands-script.kql).
+
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
