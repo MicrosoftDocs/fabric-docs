@@ -58,11 +58,11 @@ Possible custom pool configurations for F64 based on the previous example:
 
 | Fabric capacity SKU | Capacity units | Max Spark VCores with Burst Factor | Node size | Max number of nodes |
 |--|--|--|--|--|
-| F64 | 64 | 384 | Small | 96 |
-| F64 | 64 | 384 | Medium | 48 |
-| F64 | 64 | 384 | Large | 24 |
-| F64 | 64 | 384 | X-Large | 12 |
-| F64 | 64 | 384 | XX-Large | 6 |
+| F64 | 64 | 128 | Small | 32 |
+| F64 | 64 | 128 | Medium | 16 |
+| F64 | 64 | 128 | Large | 8 |
+| F64 | 64 | 128 | X-Large | 4 |
+| F64 | 64 | 128 | XX-Large | 2 |
 
 
 
