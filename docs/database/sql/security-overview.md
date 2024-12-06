@@ -4,7 +4,7 @@ description: Learn about security in SQL database in Microsoft Fabric.
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: wiassaf
-ms.date: 11/19/2024
+ms.date: 12/05/2024
 ms.topic: conceptual
 ---
 # Security in SQL database in Microsoft Fabric
@@ -41,11 +41,13 @@ For more information about data governance capabilities of Microsoft Purview for
 - [Protection policies in Microsoft Fabric (preview)](../../governance/protection-policies-overview.md)
 - [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md)
 
+<!-- 
 ## Network security
 
 You can use [private links](../../security/security-private-links-overview.md) to provide secure access for data traffic in Microsoft Fabric, including SQL database. Azure Private Link and Azure Networking private endpoints are used to send data traffic privately using Microsoft's backbone network infrastructure instead of going across the internet.
 
 For more information about private links, see: [Set up and use private links](../../security/security-private-links-use.md).
+-->
 
 ## Encryption
 
