@@ -8,7 +8,7 @@ ms.custom:
   - ignite-2023
   - ignite-2024
 ms.topic: how-to
-ms.date: 08/14/2024
+ms.date: 12/06/2024
 LocalizationGroup: Premium
 ---
 
@@ -99,6 +99,7 @@ Large-storage format semantic models shouldn't be moved from the region where th
 * Confirm that any movement you initiate between regions follows all corporate and government compliance requirements prior to initiating data transfer.
 
 * When you're using Multi-Geo, the following items are stored in the region that isn't your home region:
+    * SQL databases
     * Models (*.ABF* files) for import and DirectQuery semantic models
     * Query cache
     * R images
