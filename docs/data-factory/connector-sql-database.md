@@ -27,14 +27,14 @@ The SQL database connector supports the following authentication types for copy 
 
 To create an SQL database connection in a data pipeline, select an existing SQL database under **OneLake** section. 
 
-:::image type="content" source="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting sql database in onelake section.":::
+:::image type="content" source="media/connector-sql-database/select-sql-database-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting SQL database in OneLake section.":::
 
 You have two ways to browse to this page:
 
 - In copy assistant, browse to this page after selecting **OneLake**.
 - In a data pipeline, browse to this page after selecting **More** at the bottom of the connection list.
 
-     :::image type="content" source="media/connector-sql-database/more.png" alt-text="Screenshot of selecting more.":::
+     :::image type="content" source="media/connector-sql-database/more.png" lightbox="media/connector-sql-database/more.png" alt-text="Screenshot of selecting more.":::
 
 You can select an existing SQL database connection by repeating the above step.
 

@@ -37,7 +37,7 @@ The following properties are supported for SQL database under the **Source** tab
 
 The following properties are **required**:
 
-- **Connection**: Select an existing **SQL database** referring the step in this [article](connector-sql-database.md).
+- **Connection**: Select an existing **SQL database** referring to the step in this [article](connector-sql-database.md).
 
 - **Use query**: You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting:
 
@@ -45,7 +45,7 @@ The following properties are **required**:
 
   - **Query**: Specify the custom SQL query to read data. An example is `select * from MyTable`. Or select the pencil icon to edit in code editor.
 
-    :::image type="content" source="./media/connector-sql-database/query.png" alt-text="Screenshot showing choosing query.":::
+    :::image type="content" source="./media/connector-sql-database/query.png" lightbox="./media/connector-sql-database/query.png" alt-text="Screenshot showing choosing query.":::
 
   - **Stored procedure**: Select the stored procedure from the drop-down list.
 
@@ -53,11 +53,11 @@ Under **Advanced**, you can specify the following fields:
 
 - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).
 
-    :::image type="content" source="./media/connector-sql-database/query-timeout.png" alt-text="Screenshot showing Query timeout settings.":::
+    :::image type="content" source="./media/connector-sql-database/query-timeout.png" lightbox="./media/connector-sql-database/query-timeout.png" alt-text="Screenshot showing Query timeout settings.":::
 
 - **Isolation level**: Specifies the transaction locking behavior for the SQL source. The allowed values are: **Read committed**, **Read uncommitted**, **Repeatable read**, **Serializable**, or **Snapshot**. Refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel) for more details.
 
-    :::image type="content" source="./media/connector-sql-database/isolation-level.png" alt-text="Screenshot showing Isolation level settings.":::
+    :::image type="content" source="./media/connector-sql-database/isolation-level.png" alt-text="Screenshot showing Isolation level settings." lightbox="./media/connector-sql-database/isolation-level.png":::
 
 - **Partition option**: Specify the data partitioning options used to load data from SQL database. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an SQL database is controlled by **Degree of copy parallelism** in copy activity settings tab.
 
@@ -82,7 +82,7 @@ The following properties are supported for SQL database under the **Destination*
 
 The following properties are **required**:
 
-- **Connection**: Select an existing **SQL database** referring the step in this [article](connector-sql-database.md).
+- **Connection**: Select an existing **SQL database** referring to the step in this [article](connector-sql-database.md).
 
 - **Table option**: Select from **Use existing** or **Auto create table**.
 
@@ -96,7 +96,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Write behavior**: Defines the write behavior when the source is files from a file-based data store. You can choose **Insert**, **Upsert** or **Stored procedure**.
 
-    :::image type="content" source="./media/connector-sql-database/writer-behavior.png" alt-text="Screenshot of write behavior tab.":::
+    :::image type="content" source="./media/connector-sql-database/writer-behavior.png" lightbox="./media/connector-sql-database/writer-behavior.png" alt-text="Screenshot of write behavior tab.":::
 
   - **Insert**: Choose this option if your source data has inserts.
 
@@ -105,7 +105,7 @@ Under **Advanced**, you can specify the following fields:
     - **Use TempDB**: Specify whether to use a global temporary table or physical table as the interim table for upsert. By default, the service uses global temporary table as the interim table and this checkbox is selected.
     <br>If you write large amount of data into SQL database, uncheck this and specify a schema name under which Data Factory will create a staging table to load upstream data and auto clean up upon completion. Make sure the user has create table permission in the database and alter permission on the schema. If not specified, a global temp table is used as staging.
 
-      :::image type="content" source="./media/connector-sql-database/use-tempdb.png" alt-text="Screenshot showing select Use TempDB.":::
+      :::image type="content" source="./media/connector-sql-database/use-tempdb.png" lightbox="./media/connector-sql-database/use-tempdb.png" alt-text="Screenshot showing select Use TempDB.":::
 
     - **Select user DB schema**: When the **Use TempDB** isn't selected, specify a schema name under which Data Factory will create a staging table to load upstream data and automatically clean them up upon completion. Make sure you have create table permission in the database and alter permission on the schema.
 
@@ -136,7 +136,7 @@ If you apply SQL database with auto create table as your destination, except the
 
 For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
 
-:::image type="content" source="media/connector-sql-database/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+:::image type="content" source="media/connector-sql-database/configure-mapping-destination-type.png" lightbox="media/connector-sql-database/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
 ### Settings
 
@@ -179,7 +179,7 @@ WHERE s.name='[your schema]' AND t.name = '[your table name]'
 
 If the table has physical partition, you would see "HasPartition" as "yes" like the following.
 
-:::image type="content" source="./media/connector-sql-database/sql-query-result.png" alt-text="Sql query result":::
+:::image type="content" source="./media/connector-sql-database/sql-query-result.png" lightbox="./media/connector-sql-database/sql-query-result.png" alt-text="Screenshot of a SQL query result.":::
 
 ## Table summary
 
