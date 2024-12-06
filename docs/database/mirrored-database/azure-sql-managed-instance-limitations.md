@@ -97,19 +97,19 @@ The feature availability also depends on Fabric regions. For a complete list of 
   - Alter column
   - Rename column (`sp_rename`)
 
-### Mirrored item limitations
+## Mirrored item limitations
 
 - User needs to be a member of the Admin/Member role for the workspace to create SQL Managed Instance mirroring.  
 - Stopping mirroring disables mirroring completely.  
 - Starting mirroring reseeds all the tables, effectively starting from scratch.  
 - If Fabric capacity is stopped and then restarted, mirroring will stop working and needs to be manually restarted. There won't be warnings/error messages indicating that mirroring stopped working.
 
-#### SQL analytics endpoint limitations
+## SQL analytics endpoint limitations
 
 - The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. See [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 - Source schema hierarchy isn't replicated to the mirrored database. Instead, source schema is flattened, and schema name is encoded into the mirrored database table name.  
 
-#### Fabric regions that support Mirroring
+## Supported regions
 
 [!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
 

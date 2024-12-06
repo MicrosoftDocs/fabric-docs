@@ -85,17 +85,17 @@ For troubleshooting, see:
 
 - Source schema hierarchy is not replicated to the mirrored database. Instead, source schema is flattened, and schema name is encoded into the mirrored database table name.  
 
-### Mirrored item limitations
+## Mirrored item limitations
 
 - User needs to be a member of the Admin/Member role for the workspace to create SQL Database mirroring.  
 - Stopping mirroring disables mirroring completely.  
 - Starting mirroring reseeds all the tables, effectively starting from scratch.  
 
-#### SQL analytics endpoint limitations
+## SQL analytics endpoint limitations
 
 - The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience. See [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 
-#### Fabric regions that support Mirroring
+## Supported regions
 
 [!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
 
