@@ -20,7 +20,7 @@ ms.search.form: spark_job_definition
 
 ## Monitor hub
 
-The Monitor hub serves as a centralized portal for browsing Spark activities across items. At a glance, you can view in-progress Spark applications triggered from Notebooks, Spark Job Definitions, and Pipelines. You can also search and filter Spark applications based on different criteria and drill down to view more Spark execution details of a Spark application. Open the Monitor hub in Fabric by selecting **Monitor** from the navigation pane.
+The Monitor hub serves as a centralized portal for browsing Spark activities across items. At a glance, you can view in-progress Spark applications triggered from Notebooks, Spark Job Definitions, and Pipelines. You can also search and filter Spark applications based on different criteria and drill down to view more Spark execution details of a Spark application. From the Fabric portal, select **Monitor** from the navigation pane to open the Monitor hub.
 
 ## Item recent runs
 
