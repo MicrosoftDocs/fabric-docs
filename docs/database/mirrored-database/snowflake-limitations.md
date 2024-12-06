@@ -4,7 +4,7 @@ description: Learn about the limitations of mirrored databases from Snowflake in
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
-ms.date: 11/19/2024
+ms.date: 12/06/2024
 ms.topic: conceptual
 ---
 
@@ -37,7 +37,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 
 ### Fabric regions that support Mirroring
 
-Mirroring for Snowflake is available [everywhere that Fabric is available](../../admin/region-availability.md), except for **West US 3**.
+[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Related content
 

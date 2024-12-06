@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 12/03/2024
+ms.date: 12/06/2024
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -111,53 +111,7 @@ The feature availability also depends on Fabric regions. For a complete list of 
 
 #### Fabric regions that support Mirroring
 
-The following are the Fabric regions that support Mirroring for Azure SQL Managed Instance:
-
-:::row:::
-   :::column span="":::
-    **Asia Pacific**:
-
-    - Australia East
-    - Australia Southeast
-    - Central India
-    - East Asia
-    - Japan East
-    - Korea Central
-    - Southeast Asia
-    - South India
-   :::column-end:::
-   :::column span="":::
-   **Europe**
-
-    - North Europe
-    - West Europe
-    - France Central
-    - Germany West Central
-    - Norway East
-    - Sweden Central
-    - Switzerland North
-    - Switzerland West
-    - UK South
-    - UK West
-   :::column-end:::
-   :::column span="":::
-    **Americas**:
-
-    - Brazil South
-    - Canada Central
-    - Canada East
-    - East US2
-    - West US2
-   :::column-end:::
-   :::column span="":::
-    **Middle East and Africa**:
-
-    - South Africa North
-    - UAE North
-   :::column-end:::
-:::row-end:::
-
-For overall Fabric region availability, see [Fabric region availability](../../admin/region-availability.md).
+[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Next step
 
