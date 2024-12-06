@@ -27,5 +27,5 @@ The IBM Db2 database connector supports the following capabilities in data pipel
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None<br>On-premises | Basic |
-| **Lookup activity** | None<br>On-premises | Basic |
+| **Copy activity (source/-)** | On-premises | Basic |
+| **Lookup activity** | On-premises | Basic |
