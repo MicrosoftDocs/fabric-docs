@@ -120,7 +120,7 @@ sections:
         answer:
           SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
 
-          Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#fabric-regions-that-support-mirroring).
+          Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
 
   - name: Troubleshooting
     questions:
