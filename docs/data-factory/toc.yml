@@ -765,6 +765,8 @@
         href: dataflow-gen2-cicd-and-git-integration.md
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
         href: dataflow-gen2-migrate-from-dataflow-gen1.md
+      - name: Migrate to Dataflow Gen2 scenarios
+        href: dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow

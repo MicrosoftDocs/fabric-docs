@@ -117,6 +117,7 @@ The [Microsoft Fabric release plan](https://aka.ms/fabricreleaseplan) announces 
 
 For more information about this article, check out the following resources:
 
+- [Migration scenarios](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md)
 - [What is Data Factory in Microsoft Fabric?](data-factory-overview.md)
 - [Getting from Dataflow Generation 1 to Dataflow Generation 2](dataflows-gen2-overview.md)
 - Questions? [Try asking the Fabric community](https://community.fabric.microsoft.com/)
