@@ -4,7 +4,7 @@ description: This article compares the database engine features of Azure SQL Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, drskwier
-ms.date: 11/22/2024
+ms.date: 12/05/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
@@ -131,7 +131,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | [VNet](/azure/virtual-network/virtual-networks-overview) | Partial, restricted access using [VNet Endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
-| **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, using [Private links](../../security/security-private-links-overview.md)  |
+| **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview). | [Private links](../../security/security-private-links-overview.md) are not currently available. |
 
 ## Resource limits
 
