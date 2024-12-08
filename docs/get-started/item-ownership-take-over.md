@@ -104,7 +104,3 @@ In this scenario, the new item owner can fix connections by going into the item 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
 * There is no API support for changing ownership of Fabric items that support the take over feature. Any existing API functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses continues to be available.
-
-## Related content
-
-??
