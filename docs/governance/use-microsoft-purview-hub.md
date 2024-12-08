@@ -70,9 +70,9 @@ Select the help button at the bottom of the navigation pane for guidance about u
 # [Domains](#tab/domains)
 
 
-:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-domains.png" alt-text="Screenshot of showing the domains page of the Purview hub report, calling out the help button button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-domains.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/purview-hub-report-domains.png" alt-text="Screenshot of showing the domains page of the Purview hub report, calling out the help button." lightbox="./media/use-microsoft-purview-hub/purview-hub-report-domains.png":::
 
-The domains page helps you visualize and understand your org's data mesh structure and the destribution of items within it. For example, you can use the hierarchy tree to find workspaces that aren't accociated with any domain. Select a domain/subdomain/workspace to drill through with the items explorer page.
+The domains page helps you visualize and understand your org's data mesh structure and the distribution of items within it. For example, you can use the hierarchy tree to find workspaces that aren't associated with any domain. Select a domain/subdomain/workspace to drill through with the items explorer page.
 
 Select the help button at the bottom of the navigation pane for guidance about using the page.
 
@@ -83,7 +83,7 @@ Select the help button at the bottom of the navigation pane for guidance about u
 
 The items explorer page helps you monitor all the items in your tenant using granular filtering. You can use the items explorer's filters to find exactly the items you're looking for. You can see which items are located in personal workspaces, for instance, or which items were created by guest users, and much more.
 
-Select the help button at the bottom of the navigation pane for help using the page.
+Select the help button at the bottom of the navigation pane for help with using the page.
 
 ---
 
