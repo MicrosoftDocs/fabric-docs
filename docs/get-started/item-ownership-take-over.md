@@ -21,7 +21,7 @@ When a user takes over ownership of an item using this procedure, they also beco
 
 To take over ownership of a Fabric item, you must have read and write permissions on the item.
 
-## Steps to take ownership of a Fabric item
+## Take ownership of a Fabric item
 
 To take ownership of a Fabric item:
 
@@ -81,7 +81,7 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    :::image type="content" source="./media/item-ownership-take-over/data-pipeline-replace-connection.png" alt-text="Screenshot showing how to add the appropriate connection in a pipeline.":::
 
-#### User data functions
+### User data functions
 
 1. Open the item and go to **Manage Connections**.
 
