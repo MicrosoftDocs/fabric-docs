@@ -29,7 +29,7 @@ To take ownership of a Fabric item:
 
 1. In the **About** tab, select **Take over**.
 
-1. A message bar indicates whether the take over was successful. , a message bar will indicate that.
+1. A message bar indicates whether the take over was successful.
 
    If the take over fails, due to either parent item ownership failure or child item ownership failure, select **Take over** again.
 
@@ -47,7 +47,7 @@ To take ownership of a Fabric item:
 
 ## Repair connections after Fabric item ownership change
 
-Some connections that use the previous item owner's credentials may stop working if the new item owner does not have access to the connection. In such cases you might see a warning message.
+Some connections that use the previous item owner's credentials might stop working if the new item owner doesn't have access to the connection. In such cases, you might see a warning message.
 
 In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. Shortcuts can be fixed by going into the **Shortcuts**"** tab in item settings and replacing the details of the connection used. The steps for this procedure in common item types are described in the following sections.
 
@@ -63,7 +63,7 @@ In this scenario, the new item owner can fix connections by going into the item 
 
 1. Open the real-time dashboard in edit mode.
 
-1. Choose **New data source** on the on the tool bar.
+1. Choose **New data source** on the tool bar.
  
 1. Select **Add+** to add new data sources.
 
