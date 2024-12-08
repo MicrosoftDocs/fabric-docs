@@ -1,6 +1,6 @@
 ---
 title: Ingest data into OneLake and analyze with Azure Databricks
-description: Learn how to use pipelines to ingest data into OneLake and analyze that data with Azure Databricks.
+description: Learn how to create a pipeline to ingest data into OneLake and analyze that data with Azure Databricks.
 ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
@@ -8,7 +8,8 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/27/2023
+ms.date: 07/25/2024
+#customer intent: As a data engineer, I want to learn how to load data into OneLake and analyze it with Azure Databricks so that I can use my Azure Databricks notebook to read from and write to Delta tables.
 ---
 
 # Ingest data into OneLake and analyze with Azure Databricks
@@ -53,9 +54,9 @@ Before you start, you must have:
 
    :::image type="content" source="media\onelake-open-access-quickstart\onelake-final-pipeline-review.png" alt-text="Screenshot showing how to enter table name.":::
 
-1. When the job is complete, navigate to your lakehouse and view the delta table listed under /Tables.
+1. When the job is complete, navigate to your lakehouse and view the delta table listed under /Tables folder.
 
-1. Copy the Azure Blob Filesystem (ABFS) path to your delta table to by right-clicking the table name in the Explorer view and selecting **Properties**.
+1. Right-click on the created table name, select **Properties**, and copy the Azure Blob Filesystem (ABFS) path.
 
 1. Open your Azure Databricks notebook. Read the Delta table on OneLake.
 
@@ -74,4 +75,4 @@ Before you start, you must have:
 
 ## Related content
 
-- [Transform data with Spark and query with SQL](onelake-onecopy-quickstart.md)
+- [Transform data with Apache Spark and query with SQL](onelake-onecopy-quickstart.md)

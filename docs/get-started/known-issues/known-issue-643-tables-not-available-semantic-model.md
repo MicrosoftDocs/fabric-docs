@@ -24,6 +24,6 @@ When trying to select the tables to include in a semantic model, you don't see a
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

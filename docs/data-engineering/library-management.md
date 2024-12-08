@@ -20,38 +20,35 @@ A library is a collection of prewritten code that developers can import to provi
 - **Public libraries**: Public libraries are sourced from repositories such as PyPI and Conda, which are currently supported.
 - **Custom libraries**: Custom libraries refer to code that you or your organization build. Fabric supports them in the *.whl*, *.jar*, and *.tar.gz* formats. Fabric supports *.tar.gz* only for the R language. For Python custom libraries, use the *.whl* format.
 
-## Library management in workspace setting
-
-> [!IMPORTANT]
-> Library management at the workspace setting is no longer supported. To migrate workspace libraries and Spark properties to a default environment, see [Migrate the workspace libraries and Spark properties](environment-workspace-migration.md).
-
 ## Summary of library management best practices
 
-The following scenarios describe best practices.
+The following scenarios describe best practices when using libraries in Microsoft Fabric.
 
 ### Scenario 1: Admin sets default libraries for the workspace
 
 To set default libraries, you have to be the administrator of the workspace. As admin, you can perform these tasks:
 
 1. [Create a new environment](create-and-use-environment.md#create-an-environment)
-1. [Install the required libraries in the environment](environment-manage-library.md)
-1. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default)
+2. [Install the required libraries in the environment](environment-manage-library.md)
+3. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default)
 
-The notebooks and Spark job definitions in the workspace are attached to the **Workspace settings**. They start sessions with the libraries installed in the workspace's default environment.
+When your notebooks and Spark job definitions are attached to the **Workspace settings**, they start sessions with the libraries installed in the workspace's default environment.
 
 ### Scenario 2: Persist library specifications for one or multiple code items
 
-If you want to persist the library specifications, [install the libraries in an environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-a-notebook-or-a-spark-job-definition).
+If you have common libraries for different code items and don't require frequent update, [install the libraries in an environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-a-notebook-or-a-spark-job-definition) is a good choice.
 
-One benefit of this approach is that it saves effort of running the code that requires common libraries all the time. Once successfully installed in the environment, the libraries are effective in all Spark sessions if the environment is attached.
+It will take some time to make the libraries in environments become effective when publishing. It normally takes 5-15 minutes, depending on the complexity of the libraries. During this process, the system will help to resolve the potential conflicts and download required dependencies.
 
-Another benefit is that the approach supports library configuration granularity lower than the workspace level. One environment can be attached to multiple code artifacts. If you have a subset of notebooks or Spark job definitions in one workspace that require the same libraries, attach them to the same environment. An administrator, member, or contributor of the workspace can create, edit, and attach the environment.
+One benefit of this approach is that the successfully installed libraries are guaranteed to be available when the Spark session is started with environment attached.It saves effort of maintaining common libraries for your projects.
+
+It's highly recommended for pipeline scenarios with its stability.
 
 ### Scenario 3: Inline installation in interactive run
 
-If you're interested in the one-time use, within an interactive notebook, of a library that isn't installed, [inline installation](#inline-installation) is the most convenient option. Inline commands in Fabric allow you to have the library effective in the current notebook Spark session. The library doesn't persist across different sessions.
+If you are using the notebooks to write code interactively, using [inline installation](#inline-installation) to add extra new PyPI/conda libraries or validate your custom libraries for one-time use is the best practice. Inline commands in Fabric allow you to have the library effective in the current notebook Spark session. It allows the quick installation but the installed library doesn't persist across different sessions.
 
-Users who have the permission to run the notebook can install other libraries in the Spark session.
+Since `%pip install` generating different dependency trees from time to time, which might lead to library conflicts, inline commands are turned off by default in the pipeline runs and NOT recommended to be used in your pipelines.
 
 ## Summary of supported library types
 
@@ -60,25 +57,27 @@ Users who have the permission to run the notebook can install other libraries in
 | **Python Public (PyPI & Conda)** | Supported | Supported |
 | **Python Custom (.whl)** | Supported | Supported |
 | **R Public (CRAN)** | Not supported | Supported |
-| **R custom (.tar.gz)** | Supported | Supported |
-| **Jar** | Supported as custom library | Not supported |
-
-> [!IMPORTANT]
-> There are currently limitations on the *.jar* library.
->
-> - For Scala users, the *.jar* file can install successfully in an environment but it isn't effective for your Spark/Scala sessions. The installation overrides the built-in library with a different library. The new *.jar* works in the sessions.
-> - For Python users, all *.jar* files are currently not supported in an environment. They can install successfully in an environment but aren't effective in PySpark sessions.
-> - You can install the *.jar* files at the notebook [session level](#manage-jar-libraries-through-inline-installation) instead.
+| **R custom (.tar.gz)** | Supported as custom library| Supported |
+| **Jar** | Supported as custom library | Supported |
 
 <a id="in-line-installation"></a>
 ## Inline installation
 
-Inline commands support Python libraries and R libraries.
+Inline commands support managing libraries in each notebook sessions.
 
 <a id="python-in-line-installation"></a>
 ### Python inline installation
 
-The Python interpreter restarts to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend that you put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
+The system restarts the Python interpreter to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend that you put all the commands for adding, deleting, or updating Python packages **at the beginning of your notebook**.
+
+The inline commands for managing Python libraries are disabled in notebook pipeline run by default. If you want to enable `%pip install` for pipeline, add "_inlineInstallationEnabled" as bool parameter equals True in the notebook activity parameters.
+
+:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run.":::
+
+> [!NOTE]
+>
+> The `%pip install` may lead to inconsistent results from time to time. It's recommended to install library in an environment and use it in the pipeline.
+> In notebook reference runs, inline commands for managing Python libraries are not supported. To ensure the correctness of execution, it is recommended to remove these inline commands from the referenced notebook.
 
 We recommend `%pip` instead of `!pip`. `!pip` is an IPython built-in shell command, which has the following limitations:
 
@@ -131,13 +130,12 @@ You can use inline commands to enable *altair* on your notebook session without 
 
 #### Manage Python custom libraries through inline installation
 
-You can upload your Python custom libraries to the *File* folder of the lakehouse attached to your notebook. Go to your lakehouse, select the **…** icon on the **File** folder, and upload the custom library.
-
-After your upload, use the following command to install the custom library to your notebook session.
+You can upload your Python custom libraries to the resources folder of your notebook or the attached environment. The resources folders are the built-in file system provided by each notebook and environments. See [Notebook resources](./how-to-use-notebook.md#notebook-resources) for more details.
+After your upload, you can drag-and-drop the custom library to a code cell, the inline command to install the library is automatically generated. Or you can use the following command to install.
 
 ```python
-# install the .whl through pip command
-%pip install /lakehouse/default/Files/wheel_file_name.whl             
+# install the .whl through pip command from the notebook built-in folder
+%pip install "builtin/wheel_file_name.whl"             
 ```
 
 ### R inline installation
@@ -173,16 +171,19 @@ To install an R feed library:
 
 ### Manage Jar libraries through inline installation
 
-The *.jar* files are support at notebook sessions with following command. The following code cell is using Notebook built-in folder as an example.
+The *.jar* files are support at notebook sessions with following command.
 
 ```Scala
 %%configure -f
 {
     "conf": {
-        "spark.jars": "{mssparkutils.nbResPath}/builtin/jar_file_name.jar"
+        "spark.jars": "abfss://<<Lakehouse prefix>>.dfs.fabric.microsoft.com/<<path to JAR file>>/<<JAR file name>>.jar",
     }
-}       
+}        
 ```
+
+The code cell is using Lakehouse's storage as an example. At the notebook explorer, you can copy the full file ABFS path and replace in the code.
+:::image type="content" source="media\environment-lm\library-management-get-ABFS-path.png" alt-text="Screenshot of get the ABFS path.":::
 
 ## Related content
 

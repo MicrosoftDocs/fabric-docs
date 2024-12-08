@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 07/01/2024
 ---
 
 # What is Microsoft Fabric admin?
@@ -84,7 +84,7 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](admin
 * **[PowerShell cmdlets](/powershell/power-bi/overview)**
   * Manage workspaces and other aspects of Microsoft Fabric using scripts
 
-* **[Administrative APIs and SDK](/power-bi/developer/visuals/create-r-based-power-bi-desktop)**
+* **[Administrative APIs and SDK](/rest/api/fabric/articles/using-fabric-apis)**
   * Build custom admin tools.
 
 ## Related content

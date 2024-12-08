@@ -4,15 +4,18 @@ description: This article describes the available REST APIs for pipelines in Dat
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.date: 03/13/2024
+ms.date: 09/16/2024
 ---
 
 # Microsoft Fabric data pipeline public REST API (Preview)
 
 > [!IMPORTANT]
-> The Microsoft Fabric API for Data Factory Create/Read/Update/Delete (CRUD) is currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs will be released later. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
+
+## Mounting Public APIs
+The Mounting Public APIs are now available. These APIs allow you to seamlessly integrate and access various public data sources within your data pipelines.
 
 ## Obtain an authorization token
 
@@ -88,7 +91,7 @@ Take the properties object and surround them in braces - **{ }** - so the REST I
 
 [REST API - Items - Create item](/rest/api/fabric/core/items/create-item )
 
-Example:
+Example 1 - CreateDataPipeline:
 
 ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
 
@@ -132,6 +135,48 @@ Response 201:
     "displayName": "Pipeline_1", 
     "description": "", 
     "workspaceId": "<Your WS Id>" 
+} 
+```
+
+Example 2 – Create MountedDataFactory 
+
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
+
+Body: 
+
+Payload:
+
+```json
+{"DataFactoryResourceId":"/subscriptions/<ADF subscription Id>/resourceGroups/<ADF resource group name>/providers/Microsoft.DataFactory/factories/<ADF datafactory name>"} 
+```
+
+Encoded JSON:
+
+```json
+{ 
+  "displayName": "pipeline_mdf", 
+  "type": " MountedDataFactory ", 
+  "definition": { 
+    "parts": [ 
+      { 
+        "path": "mountedDataFactory-content.json", 
+        "payload": <base64 encoded value>, 
+        "payloadType": "InlineBase64" 
+      } 
+    ] 
+  } 
+}  
+```
+
+Response 201:
+
+```json
+{ 
+    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
+    "type": "MountedDataFactory", 
+    "displayName": "Pipeline_mdf", 
+    "description": "", 
+    "workspaceId": "<Your WS Id>"
 } 
 ```
 
@@ -309,7 +354,7 @@ Body:
 { 
   "executionData": { 
     "parameters": {
-      "param_waitsec": 10" 
+      "param_waitsec": "10" 
     } 
   } 
 }
@@ -326,7 +371,7 @@ Response 202: (No body)
 
 Example:
 
-```GET https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances/<job ID>```dotnetcli
+```GET https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances/<job ID>```
 
 Response 200:
 
@@ -357,7 +402,69 @@ Response 202: (No body)
 > [!NOTE]
 > After cancelling a job you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
 
-## Next steps
+
+## Query activity runs
+
+Example:
+
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<job id>/queryactivityruns```
+
+Body:
+
+```json
+{
+  "filters":[],
+  "orderBy":[{"orderBy":"ActivityRunStart","order":"DESC"}],
+  "lastUpdatedAfter":"2024-05-22T14:02:04.1423888Z",
+  "lastUpdatedBefore":"2024-05-24T13:21:27.738Z"
+}
+```
+
+> [!NOTE]
+> "job id" is the same id created and used in the Job Scheduler Public APIs
+
+Response 200:
+```json
+[
+    {
+        "pipelineName": "ca91f97e-5bdd-4fe1-b39a-1f134f26a701",
+        "pipelineRunId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
+        "activityName": "Wait1",
+        "activityType": "Wait",
+        "activityRunId": "cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a",
+        "linkedServiceName": "",
+        "status": "Succeeded",
+        "activityRunStart": "2024-05-23T13:43:03.6397566Z",
+        "activityRunEnd": "2024-05-23T13:43:31.3906179Z",
+        "durationInMs": 27750,
+        "input": {
+            "waitTimeInSeconds": 27
+        },
+        "output": {},
+        "error": {
+            "errorCode": "",
+            "message": "",
+            "failureType": "",
+            "target": "Wait1",
+            "details": ""
+        },
+        "retryAttempt": null,
+        "iterationHash": "",
+        "userProperties": {},
+        "recoveryStatus": "None",
+        "integrationRuntimeNames": null,
+        "executionDetails": null,
+        "id": "/SUBSCRIPTIONS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/RESOURCEGROUPS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/PROVIDERS/MICROSOFT.TRIDENT/WORKSPACES/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/pipelineruns/bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f/activityruns/cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a"
+    }
+]
+
+```
+
+## Known limitations
+
+- Service Principal Auth (SPN) is currently not supported.
+
+## Related content
 
 - [REST API - Items](/rest/api/fabric/core/items)
 - [Use the Fabric Monitoring hub](/admin/monitoring-hub.md)

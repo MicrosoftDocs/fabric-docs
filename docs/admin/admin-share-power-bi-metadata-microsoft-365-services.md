@@ -4,8 +4,7 @@ description: Learn about sharing Fabric metadata with Microsoft 365 services.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: 'jadelynray'
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - ignite-2023
 ms.topic: conceptual
@@ -61,14 +60,14 @@ The tables below list the data that is shared with Microsoft 365 services.
 
 |Property|What is Shared|Example|
 |---------|---------|---------|---------|
-|TenantID|Microsoft Entra tenant Identifier|762049eb-7a69-4c39-bf19-75a5b7fcce1d|
-|ArtifactID|Identifier for the Content Item (report, app, dashboard, scorecard, etc.)|762049eb-7a69-4c39-bf19-75a5b7fcce1d|
+|TenantID|Microsoft Entra tenant Identifier|aaaabbbb-0000-cccc-1111-dddd2222eeee|
+|ArtifactID|Identifier for the Content Item (report, app, dashboard, scorecard, etc.)|aaaabbbb-0000-cccc-1111-dddd2222eeee|
 |ACL|Access Control List with permissions and Microsoft Entra user, Security Group and Distribution List Identifiers|{"accessType": "grant", "id" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "type" : "read" }|
 |DisplayName|Display name for the report, app, dashboard, scorecard, etc.|Retail Analysis Sample|
 |WorkspaceName|Workspace name as per [Create a workspace](/power-bi/collaborate-share/service-create-the-new-workspaces)|Retail workspace|
 |WorkspaceURL|Workspace URL|https://powerbi-df.analysis-df.windows.net/groups/8b5ac04e-89c1-4fc6-a364-e8411dfd8d17|
 |WorkspaceID|Workspace identifier|8b5ac04e-89c1-4fc6-a364-e8411dfd8d17|
-|URL|Content Item URL for the report, app, dashboard, scorecard, etc.|https://powerbi-df.analysis-df.windows.net/groups/8b5ac04e-89c1-4fc6-a364-e8411dfd8d17/reports/762049eb-7a69-4c39-bf19-75a5b7fcce1d/ReportSection2|
+|URL|Content Item URL for the report, app, dashboard, scorecard, etc.|https://powerbi-df.analysis-df.windows.net/groups/8b5ac04e-89c1-4fc6-a364-e8411dfd8d17/reports/aaaabbbb-0000-cccc-1111-dddd2222eeee/ReportSection2|
 |SharingLinksURL|Sharing Link as per [Share a report using a link](/power-bi/collaborate-share/service-share-dashboards#share-a-report-via-link)|["https://app.powerbi.com/links/xyz123"]|
 |IconURL||cdn.com/report.png|
 |Description|Content description as per [Report settings](/power-bi/create-reports/power-bi-report-settings?tabs=powerbi-desktop)|Sample containing retail sales data|

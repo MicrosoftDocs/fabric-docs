@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a OneLake user, I want to learn how to install and use the OneLake file explorer client app for Windows so that I can seamlessly access and sync my OneLake data with Windows File Explorer.
 ---
 
 # Use OneLake file explorer to access Fabric data
@@ -34,6 +35,8 @@ To install:
    The storage location on your PC for the placeholders and any downloaded content is `\%USERPROFILE%\OneLake - Microsoft\`.
 
 Once you have installed and launched the application, you can now see your OneLake data in Windows File Explorer.
+
+Starting in version 1.0.13, the OneLake file explorer app will now notify you when a new update is available. You’ll receive a Windows notification when a new version becomes available and the OneLake icon will change. Right-click on the OneLake icon in the Windows notification area. Select **Update Available** and follow steps to update.
 
 ## Limitations and considerations
 

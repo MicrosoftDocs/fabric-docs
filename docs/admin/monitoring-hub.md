@@ -1,17 +1,17 @@
 ---
-title: Use the Monitoring hub
-description: Understand the Microsoft Fabric Monitoring hub and the information it provides.
+title: Use the Monitor hub
+description: Understand the Microsoft Fabric monitor hub and the information it provides.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 01/29/2024
+ms.date: 11/04/2024
 ---
 
-# Use the Monitoring hub
+# Use the Monitor hub
 
-The Microsoft Fabric *Monitoring hub* enables users to monitor Microsoft Fabric activities from a central location. Any Fabric user can use the monitoring hub, however, the monitoring hub displays activities only for Fabric items you have permission to view.
+The Microsoft Fabric *Monitor* hub enables users to monitor Microsoft Fabric activities from a central location. Any Fabric user can use the monitor hub, however, the monitor hub displays activities only for Fabric items you have permission to view.
 
-The monitoring hub displays activities for these Fabric items:
+The monitor hub displays activities for these Fabric items:
 
 * Data pipelines
 
@@ -27,13 +27,13 @@ The monitoring hub displays activities for these Fabric items:
 
 * Spark job definitions
 
-## View the monitoring hub display
+## View the monitor hub display
 
-To open the Monitoring hub, Select **Monitoring hub** from the navigation pane. The monitoring hub displays information in a table form. Fabric activities are displayed according to their start time, with the newest activities at the top of the table. Each Fabric item displays a maximum of 100 activities. History is kept for 30 days and can be viewed using the *Historical view* option.
+To open the monitor hub, In Fabric, select **Monitoring** from the navigation pane. The monitor hub displays information in a table form. Fabric activities are displayed according to their start time, with the newest activities at the top of the table. Each Fabric item displays a maximum of 100 activities. History is kept for 30 days and can be viewed using the *Historical view* option.
 
-## Interact with the monitoring hub
+## Interact with the monitor hub
 
-You can use the monitoring hub display options to find the activities you're interested in. This section describes the monitoring hub controls.
+You can use the monitor hub display options to find the activities you're interested in. This section describes the monitor hub controls.
 
 ### Change the display order
 
@@ -49,14 +49,20 @@ Use the **Column options** button to add, remove and rearrange the columns displ
 
 * **Rearrange** - In the *Column options* list, drag columns to your selected position.
 
+### Keyword search
+
+Use the keyword search text box to search for specific activities according to their activity name. The search is performed on the loaded data, not on all the activities in the database.
+
 ### Filter
 
-Use the **Filter** button to filter the monitoring hub table results. You can use a combination of any of the options listed below. Once you selected the options you want to filter for, select **Apply**. The monitoring hub remembers your filter selection. If you leave the monitoring hub, you'll see your selection when you next go to the hub.
+Use the **Filter** button to filter the monitor hub table results. You can use a combination of any of the options listed below. Once you selected the options you want to filter for, select **Apply**. The monitor hub remembers your filter selection. If you leave the monitor hub, you'll see your selection when you next go to the hub.
+
+Each time the table is refreshed, the recent 100 jobs are loaded in order, according to the filter option. By selecting *load more* you can load 50 more jobs.
 
 * **Status** - Select the type of status you want the table to display. When no status is selected, item activities for all statuses are displayed.
 
     >[!NOTE]
-    >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitoring hub might show a simplified version of an item's status. The exact status of an item, can be found in the [details panel](#view-details).
+    >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitor hub might show a simplified version of an item's status. The exact status of an item, can be found in the [details panel](#view-details).
 
 * **Start time** - Select the time period for the table to display. You can select a predetermined period, or use *Customize* to personalize the time period.
 
@@ -68,7 +74,7 @@ Use the **Filter** button to filter the monitoring hub table results. You can us
 
 ### Take action
 
-Providing you have the right permissions for the Fabric item displayed in the monitoring hub table, you might be able to perform certain actions. The actions you can take depend on the type of item you're reviewing. To take action, select *More options* (**...**) next to the activity name, and from the menu, select the action you want to take.
+Providing you have the right permissions for the Fabric item displayed in the monitor hub table, you might be able to perform certain actions. The actions you can take depend on the type of item you're reviewing. To take action, select *More options* (**...**) next to the activity name, and from the menu, select the action you want to take.
 
 #### Historical runs
 

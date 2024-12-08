@@ -4,7 +4,9 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 04/14/2024
+ms.custom:
+  - ignite-2024
+ms.date: 08/18/2024
 ---
 
 # Security in Microsoft Fabric
@@ -21,7 +23,7 @@ Fabric security is:
 
 * **Compliant** – Fabric has data sovereignty out of the box with multi geo capacities. Fabric also supports a wide range of compliance standards.
 
-* **Governable** - Fabric comes with a set of governance tools such [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), [data loss prevention](/purview/dlp-learn-about-dlp) and [purview integration](../governance/use-microsoft-purview-hub.md).  
+* **Governable** - Fabric comes with a set of governance tools such [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), [data loss prevention](/purview/dlp-powerbi-get-started) and [purview integration](../governance/use-microsoft-purview-hub.md).  
 
 * **Configurable** - You can configure Fabric security in accordance with your organizational policies.
 
@@ -55,7 +57,7 @@ To understand more about authentication in Fabric, see [Microsoft Fabric securit
 
 #### Private Links
 
-Private links enable secure connectivity to Fabric by restricting access to your Fabric tenant from an Azure virtual network (VNet), and blocking all public access. This ensures that only network traffic from that VNet is allowed to access Fabric features such as [Notebooks](../data-engineering/how-to-use-notebook.md), [Lakehouses](../data-engineering/lakehouse-overview.md), and [data warehouses](../data-warehouse/data-warehousing.md), in your tenant.
+Private links enable secure connectivity to Fabric by restricting access to your Fabric tenant from an Azure virtual network (VNet), and blocking all public access. This ensures that only network traffic from that VNet is allowed to access Fabric features such as [Notebooks](../data-engineering/how-to-use-notebook.md), [Lakehouses](../data-engineering/lakehouse-overview.md), [data warehouses](../data-warehouse/data-warehousing.md), and [databases](../database/index.yml) in your tenant.
 
 To configure Private Links in Fabric, see [Set up and use private links](../security/security-private-links-use.md).
 
@@ -66,6 +68,9 @@ Fabric has a set of tools that allow you to connect to external data sources and
 #### Trusted workspace access
 
 With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit ADLS gen 2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
+
+> [!NOTE]
+> Fabric workspace identities can only be created in workspaces associated with a Fabric F SKU capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md). 
 
 #### Managed Private Endpoints
 
@@ -91,11 +96,11 @@ You can connect to Fabric using your existing Azure Platform as a Service (PaaS)
 
 #### Azure service tags
 
-Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and REST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL endpoints from SSMS, while blocked from accessing other public internet resources.
+Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and REST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL connection strings from SSMS, while blocked from accessing other public internet resources.
 
 #### IP allowlists
 
-If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as on-premises data sources. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
+If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as on-premises data sources. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](../get-started/direct-lake-overview.md).
 
 You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
 
@@ -123,12 +128,12 @@ Fabric controls data access using [workspaces](../get-started/workspaces.md). In
 
 ### Workspace roles
 
-Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md#fabric-data-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md).
+Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md).
 
-| Role                           | Workspace access                       | OneLake access                                                        |
-|--------------------------------|----------------------------------------|-----------------------------------------------------------------------|
-| Admin, member, and contributor | Can use all the items in the workspace | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| Viewer                         | Can see all the items in the workspace | :::image type="icon" source="../media/no-icon.svg" border="false":::  |
+| Role                           | Workspace access                       | OneLake access |
+|--------------------------------|----------------------------------------|----------------|
+| Admin, member, and contributor | Can use all the items in the workspace | &#x2705;       |
+| Viewer                         | Can see all the items in the workspace | &#x274C;       |
 
 ### Share items
 
@@ -136,11 +141,11 @@ You can [share Fabric items](../get-started/share-items.md) with users in your o
 
 ### Limit access
 
-You can limit viewer access to data using [Row-level security (RLS)](/power-bi/enterprise/service-admin-rls), [Column level security (CLS)](../data-warehouse/column-level-security.md) and [Object level security (OLS)](/power-bi/enterprise/service-admin-ols). With RLS, CLS and OLS, you can create user identities that have access to certain portions of your data, and limit SQL results returning only what the user's identity can access.
+You can limit viewer access to data using [row-level security (RLS)](service-admin-row-level-security.md), [column-level security (CLS)](../data-warehouse/column-level-security.md) and [object-level security (OLS)](service-admin-object-level-security.md). With RLS, CLS and OLS, you can create user identities that have access to certain portions of your data, and limit SQL results returning only what the user's identity can access.
 
 You can also add RLS to a DirectLake dataset. If you define security for both SQL and DAX, DirectLake falls back to DirectQuery for tables that have RLS in SQL. In such cases, DAX, or MDX results are limited to the user's identity.
 
-To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use direct dataset sharing or [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
+To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use direct dataset sharing or [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](../get-started/direct-lake-fixed-identity.md) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
 ## Protect data
 
@@ -156,7 +161,10 @@ Fabric data resiliency ensures that your data is available if there is a disaste
 
 As an [administrator in Fabric](../admin/admin-overview.md), you get to control capabilities for the entire organization. Fabric enables delegation of the admin role to capacities, workspaces, and domains. By delegating admin responsibilities to the right people, you can implement a model that lets several key admins control general Fabric settings across the organization, while other admins who are in charge of settings related to specific areas.
 
-Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption. You can also [view audit logs](../admin/track-user-activities.md) to monitor user activities and investigate unexpected incidents if needed.
+Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption.
+
+## Audit Logs
+To view your audit logs, follow the instructions in [Track user activities in Microsoft Fabric](../admin/track-user-activities.md). You can also refer to the [Operation list](../admin/operation-list.md) to see which activities are available for searching in the audit logs.
 
 ## Capabilities
 

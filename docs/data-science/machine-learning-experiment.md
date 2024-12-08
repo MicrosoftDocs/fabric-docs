@@ -1,9 +1,10 @@
 ---
 title: Machine learning experiment
 description: Learn how to create machine learning experiments, use the MLflow API, manage and compare runs, and save a run as a model.
-ms.reviewer: mopeakande
-ms.author: midesa
-author: midesa
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: midesa
+reviewer: midesa
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -77,6 +78,7 @@ Each run includes the following information:
 - **Hyperparameters**: Hyperparameters saved as key-value pairs. Both keys and values are strings.
 - **Metrics**: Run metrics saved as key-value pairs. The value is numeric.
 - **Output files**: Output files in any format. For example, you can record images, environment, models, and data files.
+- **Tags**: Metadata as key-value pairs to runs.
 
 ### View recent runs
 
@@ -88,6 +90,60 @@ You can also view recent runs for an experiment directly from the workspace list
 
 To compare and evaluate the quality of your machine learning runs, you can compare the parameters, metrics, and metadata between selected runs within an experiment.
 
+### Apply tags to runs
+
+MLflow tagging for experiment runs allows users to add custom metadata in the form of key-value pairs to their runs. These tags help categorize, filter, and search for runs based on specific attributes, making it easier to manage and analyze experiments within the MLflow platform. Users can utilize tags to label runs with information such as model types, parameters, or any relevant identifiers, enhancing the overall organization and traceability of experiments.
+
+This code snippet starts an MLflow run, logs some parameters and metrics, and adds tags to categorize and provide additional context for the run.
+
+```python
+import mlflow
+import mlflow.sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.datasets import fetch_california_housing
+
+# Autologging
+mlflow.autolog()
+
+# Load the California housing dataset
+data = fetch_california_housing(as_frame=True)
+X = data.data
+y = data.target
+
+# Split the data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Start an MLflow run
+with mlflow.start_run() as run:
+
+    # Train the model
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+
+    # Predict and evaluate
+    y_pred = model.predict(X_test)
+    
+    # Add tags
+    mlflow.set_tag("model_type", "Linear Regression")
+    mlflow.set_tag("dataset", "California Housing")
+    mlflow.set_tag("developer", "Bob")
+
+```
+
+Once the tags are applied, you can then view the results directly from the inline MLflow widget or from the run details page.
+
+:::image type="content" source="media/machine-learning-experiment/run-tagging.png" alt-text="Screenshot showing tags applied to a run in the details page." lightbox="media/machine-learning-experiment/run-tagging.png":::
+
+> [!WARNING]
+> **Warning: Limitations on Applying Tags to MLflow Experiment Runs in Fabric**
+>
+> - **Non-Empty Tags**: Tag names or values cannot be empty. If you attempt to apply a tag with an empty name or value, the operation will fail.
+> - **Tag Names**: Tag names can be up to 250 characters in length.
+> - **Tag Values**: Tag values can be up to 5000 characters in length.
+> - **Restricted Tag Names**: Tag names that start with certain prefixes are not supported. Specifically, tag names beginning with `synapseml`, `mlflow`, or `trident` are restricted and will not be accepted.
+
 ### Visually compare runs
 
 You can visually compare and filter runs within an existing experiment. Visual comparison allows you to easily navigate between multiple runs and sort across them.
@@ -98,7 +154,7 @@ To compare runs:
 
 1. Select an existing machine learning experiment that contains multiple runs.
 1. Select the **View** tab and then go to the **Run list** view. Alternatively, you could select the option to **View run list** directly from the **Run details** view.
-1. Customize the columns within the table by expanding the **Customize columns** pane. Here, you can select the properties, metrics, and hyperparameters that you would like to see.
+1. Customize the columns within the table by expanding the **Customize columns** pane. Here, you can select the properties, metrics, tags, and hyperparameters that you would like to see.
 1. Expand the **Filter** pane to narrow your results based on certain selected criteria.
 1. Select multiple runs to compare their results in the metrics comparison pane. From this pane, you can customize the charts by changing the chart title, visualization type, X-axis, Y-axis, and more.
 
@@ -123,6 +179,7 @@ mlflow.search_runs(experiment_ids=["<EXPERIMENT_ID>"])
 > [!TIP]
 > You can search across multiple experiments by providing a list of experiment IDs to the `experiment_ids` parameter. Similarly, providing a list of experiment names to the `experiment_names` parameter will allow MLflow to search across multiple experiments. This can be useful if you want to compare across runs within different experiments.
 
+
 #### Order and limit runs
 
 Use the `max_results` parameter from `search_runs` to limit the number of runs returned. The `order_by` parameter allows you to list the columns to order by and can contain an optional `DESC` or `ASC` value. For instance, the following example returns the last run of an experiment.
@@ -144,6 +201,20 @@ To obtain a visual comparison, you can also switch to the **Run comparison** vie
 Once a run yields the desired result, you can save the run as a model for enhanced model tracking and for model deployment by selecting **Save as a ML model**.
 
 :::image type="content" source="media/machine-learning-experiment/create-model-select-new.png" alt-text="Screenshot showing where to select Create a new model." lightbox="media/machine-learning-experiment/create-model-select-new.png":::
+
+## Monitor ML Experiments (preview)
+
+ML experiments are integrated directly into the Monitoring Hub. This functionality is designed to provide more insight into your Spark applications and the ML experiments they generate, making it easier to manage and debug these processes.
+
+### Track runs from the monitoring hub
+
+Users can track experiment runs directly from the Monitoring Hub, providing a unified view of all their activities. This integration includes filtering options, enabling users to focus on experiments or runs created within the last 30 days or other specified periods.
+
+:::image type="content" source="media/machine-learning-experiment/monitor-hub-list-runs.png" alt-text="Screenshot showing where view runs in the monitoring hub." lightbox="media/machine-learning-experiment/monitor-hub-list-runs.png":::
+
+### Track related ML Experiment runs from your Spark application
+
+ML Experiment are integrated directly into the Monitoring Hub, where you can select a specific Spark application and access Item Snapshots. Here, you’ll find a list of all the experiments and runs generated by that application.
 
 ## Related content
 

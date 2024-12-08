@@ -25,8 +25,8 @@ The Snowflake connector supports the following capabilities in data pipelines.
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Snowflake |
-| **Lookup activity** | None | Snowflake |
-| **Script activity** | None | Snowflake |
+| **Copy activity (source/destination)** | None <br> On-premises | Snowflake |
+| **Lookup activity** | None <br> On-premises | Snowflake |
+| **Script activity** | None <br> On-premises | Snowflake |
 
 To learn about the copy activity configuration for Snowflake in data pipelines, go to [Configure Snowflake in a copy activity](connector-snowflake-copy-activity.md).

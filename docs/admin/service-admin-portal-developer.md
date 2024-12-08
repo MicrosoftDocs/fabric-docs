@@ -4,8 +4,7 @@ description: Learn how to configure developer admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
   - ignite-2023
@@ -18,7 +17,7 @@ LocalizationGroup: Administration
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
-To manage Power BI developer settings, you must be a Global Admin in Office 365, or have been assigned the Fabric administrator role. For more information about the Fabric administrator role, see [Understand Microsoft Fabric admin roles](roles.md).
+To manage Power BI developer settings, you must be a Fabric administrator. For more information about the Fabric administrator role, see [Understand Microsoft Fabric admin roles](roles.md).
 
 >[!NOTE]
 >The developer settings in the Admin portal are different from and not related to the [developer mode](/power-bi/developer/visuals/environment-setup#set-up-power-bi-service-for-developing-a-visual) setting for debugging visuals.
@@ -31,7 +30,7 @@ To learn more, see [What is Power BI embedded analytics?](/power-bi/developer/em
 
 Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) method to build an app that uses non-interactive authentication against Power BI.
 
-## Allow service principals to use Power BI APIs
+## Service principals can use Fabric APIs
 
 Web apps registered in Microsoft Entra ID use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
 

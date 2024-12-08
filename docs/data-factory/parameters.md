@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 11/15/2023
+ai-usage: ai-assisted
 ---
 
 # Parameters for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
@@ -96,7 +97,7 @@ These system variables can be referenced anywhere in the pipeline JSON.
 | @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
 | @pipeline().TriggerName|Name of the trigger that invoked the pipeline |
 | @pipeline().TriggerTime|Time of the trigger run that invoked the pipeline. This is the time at which the trigger **actually** fired to invoke the pipeline run, and it may differ slightly from the trigger's scheduled time.  |
-| @pipeline().GroupId | ID of the group to which pipeline run belongs. |
+| @pipeline().GroupId | ID of the group to which pipeline run belongs. In Microsoft Fabric, a 'group' refers to a collection of related resources that can be managed together. Groups are used to organize and control access to resources, making it easier to manage permissions and monitor activities across multiple pipelines. |
 | @pipeline()?.TriggeredByPipelineName | Name of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
 | @pipeline()?.TriggeredByPipelineRunId | Run ID of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
 

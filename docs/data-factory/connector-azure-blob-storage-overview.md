@@ -25,9 +25,9 @@ The Azure Blob Storage connector supports the following capabilities in data pip
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
-| **Lookup activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
-| **GetMetadata activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
+| **Copy activity (source/destination)** | None <br> On-premises | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
+| **Lookup activity** | None <br> On-premises | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
+| **GetMetadata activity** | None <br> On-premises | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 
 To learn about how to connect to Azure Blob Storage in data pipelines, go to [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline).
 

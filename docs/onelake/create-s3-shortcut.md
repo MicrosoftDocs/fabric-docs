@@ -1,6 +1,6 @@
 ---
 title: Create an Amazon S3 shortcut
-description: Learn how to create an Amazon S3 shortcut.
+description: Learn how to create a OneLake shortcut for Amazon S3 data access inside a Microsoft Fabric lakehouse.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
@@ -9,7 +9,8 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/27/2023
+ms.date: 07/25/2024
+#customer intent: As a data engineer, I want to learn how to create an Amazon S3 shortcut inside a Fabric lakehouse so that I can efficiently access and manage S3 data within the lakehouse environment.
 ---
 
 # Create an Amazon S3 shortcut
@@ -28,7 +29,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 1. Open a lakehouse.
 
-1. Right-click on a directory within the **Lake view** of the lakehouse.
+1. Right-click on the **Tables** directory within the lakehouse.
 
 1. Select **New shortcut**.
 
@@ -36,7 +37,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 [!INCLUDE [amazon-s3-shortcut](../includes/amazon-s3-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
+1. The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane under the **Tables** section.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 

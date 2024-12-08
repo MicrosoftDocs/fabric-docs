@@ -1,0 +1,24 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/security/service-admin-ols.md",
+            "redirect_url": "/fabric/security/service-admin-object-level-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/security/service-admin-rls.md",
+            "redirect_url": "/fabric/security/service-admin-row-level-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/security/az-resiliency.md",
+            "redirect_url": "/azure/reliability/reliability-fabric",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/security/disaster-recovery-guide.md",
+            "redirect_url": "/azure/reliability/reliability-fabric",
+            "redirect_document_id": false
+        }
+    ]
+}

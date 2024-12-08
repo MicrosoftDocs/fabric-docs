@@ -1,12 +1,10 @@
 ---
-title: |
-  How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+title: "How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)"
 description: Query nested Azure Cosmos DB JSON data in a mirrored database within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/17/2024
-ms.service: fabric
+ms.reviewer: anithaa, wiassaf
+ms.date: 11/19/2024
 ms.topic: how-to
 ---
 
@@ -23,7 +21,6 @@ Use the mirrored database in Microsoft Fabric to query nested JSON data sourced 
   - If you don't have an Azure subscription, [Try Azure Cosmos DB for NoSQL free](https://cosmos.azure.com/try/).
   - If you have an existing Azure subscription, [create a new Azure Cosmos DB for NoSQL account](/azure/cosmos-db/nosql/quickstart-portal).
 - An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../get-started/fabric-trial.md).
-- Enable Mirroring in your Fabric tenant or workspace. If the feature isn't already enabled, [enable mirroring in your Fabric tenant](enable-mirroring.md).
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring. For more information, see [account requirements](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
 > [!TIP]
@@ -150,7 +147,7 @@ Now, use the SQL analytics endpoint to create a query that can handle simple nes
 
 1. Switch from **Mirrored Azure Cosmos DB** to **SQL analytics endpoint**.
 
-    :::image type="content" source="media/azure-cosmos-db-how-to-query-nested/switch-experience.png" alt-text="Screenshot of the selector to switch between experiences in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-query-nested/switch-experience.png":::
+    :::image type="content" source="media/azure-cosmos-db-how-to-query-nested/switch-experience.png" alt-text="Screenshot of the selector to switch between items in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-query-nested/switch-experience.png":::
 
 1. Open the context menu for the **test** table and select **New SQL Query**.
 
@@ -342,4 +339,4 @@ Finally, create a T-SQL query that can find data deeply nested in a JSON string.
 
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml)
-- [Limitations: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)

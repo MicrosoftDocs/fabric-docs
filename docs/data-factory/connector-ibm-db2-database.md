@@ -4,7 +4,7 @@ description: This article provides information about how to create an IBM Db2 da
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/06/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -23,7 +23,7 @@ The IBM Db2 database connector supports the following authentication types for c
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Windows| n/a | √ |
-|Basic| n/a | √ |
+|Basic| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 
@@ -35,6 +35,3 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
-
-Data Factory in Microsoft Fabric doesn't currently support IBM Db2 databases in data pipelines.

@@ -4,7 +4,7 @@ description: A known issue is posted where Microsoft Defender detects OpenSSL vu
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/05/2024
+ms.date: 11/27/2024
 ms.custom: known-issue-640
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-640
 
 Microsoft Defender detects OpenSSL 3.0.11.0 vulnerabilities in the December 2023 and above versions of Power BI Desktop. When you check the scan results in Microsoft Defender, you see OpenSSL 3.0.11.0 listed with one weakness against it. The vulnerabilities reported are CVE-2023-5363 and CVE-2023-5678 and are marked as High and Medium. The vulnerability reference Power BI Desktop DLLs from the Simba Spark ODBC drivers. However, the vulnerabilities are due to areas that we don't use in the driver and the message can be ignored.
 
-**Status:** Open
+**Status:** Fixed: November 27, 2024
 
 **Product Experience:** Power BI
 
@@ -33,6 +33,6 @@ You can set Microsoft Defender to exclude these vulnerabilities. The CVE-2023-53
 
 Future Power BI Desktop releases will contain OpenSSL 3.0.13 to fix these issues.
 
-## Next steps
+## Related content
 
 - [About known issues](/power-bi/troubleshoot/known-issues/power-bi-known-issues)

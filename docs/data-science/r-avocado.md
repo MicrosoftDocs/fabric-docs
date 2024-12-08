@@ -1,9 +1,9 @@
 ---
 title: 'Tutorial: Use R to predict avocado prices'
 description: This tutorial shows an end-to-end example of using R to analyze and visualize avocado prices in the United States to predict future prices.
-ms.reviewer: sgilley
-author: ruixinxu
-ms.author: ruxu
+ms.reviewer: None
+author: sdgilley
+ms.author: sgilley
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -197,7 +197,7 @@ conv_houston_ts_arima <- auto.arima(conv_houston_ts,
 checkresiduals(conv_houston_ts_arima)
 ```
 
-![Screenshot that shows a graph of residuals.](./media/r-avocado/residuals.png)
+:::image type="content" border="true" source="./media/r-avocado/residuals.png" alt-text="Screenshot that shows a graph of residuals.":::
 
 Show a graph of forecasts from the Houston ARIMA model:
 

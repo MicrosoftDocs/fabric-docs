@@ -4,7 +4,7 @@ description: This article provides information about how to create an Amazon S3 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 02/22/2024
+ms.date: 06/13/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -21,7 +21,7 @@ The Amazon S3 connector supports the following authentication types for copy and
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Access key| √| n/a|
+|Access Key| √| n/a|
 
 ## Set up your connection in Dataflow Gen2
 
@@ -50,11 +50,11 @@ In the **New connection** pane, specify the following field:
 
 Under **Authentication kind**, select your authentication kind from the drop-down list and complete the related configuration. The Amazon S3 connector supports the following authentication types:
 
-- [Access key](#access-key-authentication)
+- [Access Key](#access-key-authentication)
 
 :::image type="content" source="media/connector-amazon-s3/authentication-kind.png" alt-text="Screenshot showing the authentication kind for Amazon S3.":::
 
-#### Access key authentication
+#### Access Key authentication
 
 - **Access Key Id**: Specify the ID of the secret access key.
 - **Secret Access Key**: Specify the secret access key itself.
@@ -88,7 +88,7 @@ The following table contains properties for the supported authentication type.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---:|:---|:---:|
-|**Access key**||||✓|
+|**Access Key**||||✓|
 |- Access Key Id|Specify the ID of the secret access key.|Yes |||
 |- Secret Access Key|Specify the secret access key itself.|Yes |||
 

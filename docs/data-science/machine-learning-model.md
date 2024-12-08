@@ -1,8 +1,10 @@
 ---
 title: Machine learning model
 description: Learn how to create machine learning models, manage versions within a model, track models, and apply a model.
-author: midesa
-ms.author: midesa
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: midesa
+reviewer: midesa
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -64,6 +66,59 @@ Each model version includes the following information:
 - **Metrics**: Run metrics saved as key-value pairs. The value is numeric.
 - **Model Schema/Signature**: A description of the model inputs and outputs.
 - **Logged files**: Logged files in any format. For example, you can record images, environment, models, and data files.
+- **Tags**: Metadata as key-value pairs to runs.
+
+### Apply tags to machine learning models
+
+MLflow tagging for model versions enables users to attach custom metadata to specific versions of a registered model in the MLflow Model Registry. These tags, stored as key-value pairs, help organize, track, and differentiate between model versions, making it easier to manage model lifecycles. Tags can be used to denote the model's purpose, deployment environment, or any other relevant information, facilitating more efficient model management and decision-making within teams.
+
+This code demonstrates how to train a RandomForestRegressor model using Scikit-learn, log the model and parameters with MLflow, and then register the model in the MLflow Model Registry with custom tags. These tags provide useful metadata, such as project name, department, team, and project quarter, making it easier to manage and track the model version.
+
+```python
+import mlflow.sklearn
+from mlflow.models import infer_signature
+from sklearn.datasets import make_regression
+from sklearn.ensemble import RandomForestRegressor
+
+# Generate synthetic regression data
+X, y = make_regression(n_features=4, n_informative=2, random_state=0, shuffle=False)
+
+# Model parameters
+params = {"n_estimators": 3, "random_state": 42}
+
+# Model tags for MLflow
+model_tags = {
+    "project_name": "grocery-forecasting",
+    "store_dept": "produce",
+    "team": "stores-ml",
+    "project_quarter": "Q3-2023"
+}
+
+# Log MLflow entities
+with mlflow.start_run() as run:
+    # Train the model
+    model = RandomForestRegressor(**params).fit(X, y)
+    
+    # Infer the model signature
+    signature = infer_signature(X, model.predict(X))
+    
+    # Log parameters and the model
+    mlflow.log_params(params)
+    mlflow.sklearn.log_model(model, artifact_path="sklearn-model", signature=signature)
+
+# Register the model with tags
+model_uri = f"runs:/{run.info.run_id}/sklearn-model"
+model_version = mlflow.register_model(model_uri, "RandomForestRegressionModel", tags=model_tags)
+
+# Output model registration details
+print(f"Model Name: {model_version.name}")
+print(f"Model Version: {model_version.version}")
+
+```
+
+After applying the tags, you can view them directly on the model version details page. Additionally, tags can be added, updated, or removed from this page at any time.
+
+:::image type="content" source="media/machine-learning-model/model-version-tagging.png" alt-text="Screenshot showing tags applied to a run in the details page." lightbox="media/machine-learning-model/model-version-tagging.png":::
 
 ### Compare and filter machine learning models
 
@@ -79,7 +134,7 @@ To compare runs, you can:
 
 1. Select an existing machine learning model that contains multiple versions.
 1. Select the **View** tab, and then navigate to the **Model list** view. You can also select the option to **View model list** directly from the details view.
-1. You can customize the columns within the table. Expand the **Customize columns** pane. From there, you can select the properties, metrics, and hyperparameters that you want to see.
+1. You can customize the columns within the table. Expand the **Customize columns** pane. From there, you can select the properties, metrics, tags, and hyperparameters that you want to see.
 1. Lastly, you can select multiple versions, to compare their results, in the metrics comparison pane. From this pane, you can customize the charts with changes to the chart title, visualization type, X-axis, Y-axis, and more.
 
 #### Compare machine learning models using the MLflow API

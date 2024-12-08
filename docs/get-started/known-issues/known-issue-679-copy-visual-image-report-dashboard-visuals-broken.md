@@ -4,7 +4,7 @@ description: A known issue is posted where the Copy visual as image functionalit
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/11/2024
+ms.date: 05/01/2024
 ms.custom: known-issue-679
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-679
 
 The **Copy visual as image** functionality is broken for both report and dashboard visuals. As a result, you can't copy visuals as images or images with captions in Power BI.
 
-**Status:** Open
+**Status:** Fixed: May 1, 2024
 
 **Product Experience:** Power BI
 
@@ -24,6 +24,6 @@ You can try to copy a visual in a report or dashboard by selecting the **Copy vi
 
 Rather than use the **Copy visual as image** option, you can use your operating system screenshot tools to capture screenshots of report and dashboard visuals.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -1,10 +1,10 @@
 ---
 title: Create a Warehouse sample
 description: Learn how to create a sample Warehouse in Microsoft Fabric.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf
-ms.date: 02/21/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad
+ms.date: 04/24/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -21,7 +21,7 @@ This article describes how to get started with sample [!INCLUDE [fabric-dw](incl
 
 ## How to create a new warehouse with sample data
 
-In this section, we walk you through the experience of creating a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with sample data.
+In this section, we walk you through creating a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with sample data.
 
 ### Create a warehouse sample using the Home hub
 
@@ -35,25 +35,25 @@ In this section, we walk you through the experience of creating a new [!INCLUDE 
 
 1. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few seconds to complete.
 
-   :::image type="content" source="media/create-warehouse-sample/loading-sample-data.png" alt-text="Screenshot showing the loading sample data into Warehouse." lightbox="media/create-warehouse-sample/loading-sample-data.png":::
+   :::image type="content" source="media/create-warehouse-sample/loading-sample-data-samplewh.png" alt-text="Screenshot showing the loading sample data into Warehouse." lightbox="media/create-warehouse-sample/loading-sample-data-samplewh.png":::
 
 1. On completion of loading sample data, the warehouse opens with data loaded into tables and views to query.
 
-   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the Warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view.png":::
+   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view-samplewh.png" alt-text="Screenshot showing the Warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view-samplewh.png":::
 
 ### Load sample data into existing warehouse
 
 1. Once you have created your warehouse, you can load sample data into warehouse from **Use sample database** card.
 
-   :::image type="content" source="media/create-warehouse-sample/use-sample-database.png" alt-text="Screenshot showing where to select the Warehouse card in the Create hub." lightbox="media/create-warehouse-sample/use-sample-database.png":::
+   :::image type="content" source="media/create-warehouse-sample/use-sample-database-samplewh.png" alt-text="Screenshot showing where to select the Warehouse card in the Create hub." lightbox="media/create-warehouse-sample/use-sample-database-samplewh.png":::
 
 1. The data loading takes few seconds to complete.
 
-   :::image type="content" source="media/create-warehouse-sample/loading-sample-data.png" alt-text="Screenshot showing the loading sample data into warehouse." lightbox="media/create-warehouse-sample/loading-sample-data.png":::
+   :::image type="content" source="media/create-warehouse-sample/loading-sample-data-samplewh.png" alt-text="Screenshot showing the loading sample data into warehouse." lightbox="media/create-warehouse-sample/loading-sample-data-samplewh.png":::
 
 1. On completion of loading sample data, the warehouse displays data loaded into tables and views to query.
 
-   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view.png":::
+   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view-samplewh.png" alt-text="Screenshot showing the warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view-samplewh.png":::
 
 ### Sample scripts
 

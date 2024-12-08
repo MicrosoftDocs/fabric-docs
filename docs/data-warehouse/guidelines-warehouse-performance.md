@@ -1,17 +1,18 @@
 ---
 title: Warehouse performance guidelines
 description: This article contains a list of performance guidelines for warehouse.
-author: XiaoyuMSFT
-ms.author: xiaoyul
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: xiaoyul
+ms.date: 08/01/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
-# Synapse Data Warehouse in Microsoft Fabric performance guidelines
+# Fabric Data Warehouse performance guidelines
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. In this article, you'll find guidance and important articles to focus on. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
 
@@ -19,13 +20,13 @@ These are guidelines to help you understand performance of your [!INCLUDE [fabri
 
 [Caching with local SSD and memory](caching.md) is automatic. The first 1-3 executions of a query perform noticeably slower than subsequent executions. If you are experiencing cold run performance issues, here are a couple of things you can do that can improve your cold run performance:
 
-- Manually create statistics. Auto-statistics are not currently available. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance.
+- If the first run's performance is crucial, try manually creating statistics. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance. However, if the first run's performance is not critical, you can rely on automatic statistics that will be generated in the first query and will continue to be leveraged in subsequent runs (so long as underlying data does not change significantly).
 
-- If using Power BI, use [Direct Lake](../data-engineering/lakehouse-pbi-reporting.md) mode where possible.
+- If using Power BI, use [Direct Lake](../get-started/lakehouse-power-bi-reporting.md) mode where possible.
  
 ## Metrics for monitoring performance
 
-Currently, the [Monitoring Hub](../admin/monitoring-hub.md) does not include [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you choose the Data Warehouse experience, you will not be able to access the **Monitoring Hub** from the left nav menu.
+Currently, the [Monitoring Hub](../admin/monitoring-hub.md) does not include [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you choose **Data Warehouse**, you will not be able to access the **Monitoring Hub** from the navigation bar.
 
 Fabric administrators will be able to access the **Capacity Utilization and Metrics** report for up-to-date information tracking the utilization of capacity that includes [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
@@ -72,10 +73,9 @@ Consider using [CTAS (Transact-SQL)](/sql/t-sql/statements/create-table-as-selec
 
 If you're using client applications, make sure you're using [!INCLUDE [product-name](../includes/product-name.md)] in a region that's close to your client computer. Client application examples include Power BI Desktop, SQL Server Management Studio, and Azure Data Studio.
 
+## Utilize star schema data design
 
-## Utilize Star Schema data design
-
-A [star schema](/power-bi/guidance/star-schema) organizes data into fact and dimension tables. A star schema design facilitates analytical processing by de-normalizing the data from highly normalized OLTP systems, ingesting transactional data, and enterprise master data into a common, cleansed, and verified data structure that minimizes JOINS at query time, reduces the number of rows read and facilitates aggregations and grouping processing.
+A [star schema](dimensional-modeling-overview.md#star-schema-design) organizes data into [fact tables](dimensional-modeling-fact-tables.md) and [dimension tables](dimensional-modeling-dimension-tables.md). It facilitates analytical processing by denormalizing the data from highly normalized OLTP systems, ingesting transactional data, and enterprise master data into a common, cleansed, and verified data structure that minimizes joins at query time, reduces the number of rows read and facilitates aggregations and grouping processing.
 
 For more [!INCLUDE [fabric-dw](includes/fabric-dw.md)] design guidance, see [Tables in data warehousing](tables.md).
 
@@ -91,11 +91,21 @@ Use integer-based data types if possible. SORT, JOIN, and GROUP BY operations co
 
 For supported data types and more information, see [data types](data-types.md#autogenerated-data-types-in-the-sql-analytics-endpoint).
 
+## SQL analytics endpoint performance
+
+For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+
+## Data Compaction
+
+Data compaction consolidates smaller Parquet files into fewer, larger files, which optimizes read operations. This process also helps in efficiently managing deleted rows by eliminating them from immutable Parquet files. The data compaction process involves re-writing tables or segments of tables into new Parquet files that are optimized for performance. For more information, see [Blog: Automatic Data Compaction for Fabric Warehouse](https://blog.fabric.microsoft.com/blog/announcing-automatic-data-compaction-for-fabric-warehouse/).
+
+The data compaction process is seamlessly integrated into the warehouse. As queries are executed, the system identifies tables that could benefit from compaction and performs necessary evaluations. There is no manual way to trigger data compaction.
+
 ## Related content
 
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Limitations](limitations.md)
-- [Troubleshoot the Warehouse](troubleshoot-synapse-data-warehouse.md)
+- [Troubleshoot the Warehouse](troubleshoot-fabric-data-warehouse.md)
 - [Data types](data-types.md)
 - [T-SQL surface area](tsql-surface-area.md)
 - [Tables in data warehouse](tables.md)

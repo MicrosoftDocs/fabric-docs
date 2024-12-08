@@ -4,7 +4,7 @@ description: A known issue is posted where creating or updating Fabric items is 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 10/23/2023
+ms.date: 06/06/2024
 ms.custom: known-issue-530
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-530
 
 You can't create or update a Fabric or Power BI item because your organization's compute capacity has exceeded its limits. You don't receive an error message when the creation or update is blocked. However, when the compute capacity exceeded its limits, a notification was sent to your company's Fabric admin.
 
-**Status:** Open
+**Status:** Fixed: June 6, 2024
 
 **Product Experience:** Administration & Management
 

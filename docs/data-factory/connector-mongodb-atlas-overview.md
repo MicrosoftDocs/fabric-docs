@@ -25,6 +25,6 @@ The MongoDB Atlas connector supports the following capabilities in data pipeline
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
+| **Copy activity (source/destination)** | None <br> On-premises | Basic |
 
 To learn more about the copy activity configuration for MongoDB Atlas in data pipelines, go to [Configure in a data pipeline copy activity](connector-mongodb-atlas-copy-activity.md).

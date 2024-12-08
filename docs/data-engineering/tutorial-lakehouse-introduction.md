@@ -1,6 +1,6 @@
 ---
 title: "Lakehouse end-to-end scenario: overview and architecture"
-description: This article describes the lakehouse end-to-end scenario including its architecture, the various components involved in its implementation, and the semantic model used.
+description: This article provides an overview of the lakehouse, including its architecture, the components involved in its implementation, and the semantic model.
 ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 5/23/2023
+ms.date: 08/21/2024
 ---
 
 # Lakehouse end-to-end scenario: overview and architecture
@@ -27,7 +27,7 @@ With the flexibility offered by Fabric, you can implement either lakehouse or da
 
 This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). If you don't have a Power BI license, [sign up for a Power BI free license](https://app.fabric.microsoft.com) and then you can start the Fabric trial.
+1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). If you don't have a Power BI license, [sign up for a Power BI free license](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-tutorial-lakehouse-introduction) and then you can start the Fabric trial.
 
 1. Build and implement an end-to-end lakehouse for your organization:
 
@@ -55,7 +55,7 @@ The following image shows the lakehouse end-to-end architecture. The components 
 
 ## Sample dataset
 
-This tutorial uses the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true). For the lakehouse end-to-end scenario, we have generated sufficient data to explore the scale and performance capabilities of the Fabric platform.
+This tutorial uses the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true) which, you will import into the lakehouse in the next tutorial. For the lakehouse end-to-end scenario, we have generated sufficient data to explore the scale and performance capabilities of the Fabric platform.
 
 Wide World Importers (WWI) is a wholesale novelty goods importer and distributor operating from the San Francisco Bay area. As a wholesaler, WWI's customers mostly include companies who resell to individuals. WWI sells to retail customers across the United States including specialty stores, supermarkets, computing stores, tourist attraction shops, and some individuals. WWI also sells to other wholesalers via a network of agents who promote the products on WWI's behalf. To learn more about their company profile and operation, see [Wide World Importers sample databases for Microsoft SQL](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true).
 
@@ -63,7 +63,7 @@ In general, data is brought from transactional systems or line-of-business appli
 
 ## Data model
 
-While the WWI dimensional model contains numerous fact tables, for this tutorial, we use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
+While the WWI dimensional model contains numerous [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md), for this tutorial, we use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
 
 :::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model.":::
 

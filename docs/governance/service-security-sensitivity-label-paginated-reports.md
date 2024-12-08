@@ -4,8 +4,7 @@ description: Learn about using sensitivity labels from Microsoft Purview Informa
 author: paulinbar
 ms.author: painbar
 manager: kfollis
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/01/2024
@@ -22,7 +21,7 @@ Sensitivity labels on paginated reports are included in protection metrics (as p
 ## Considerations and limitations
 
 * [Downstream inheritance](service-security-sensitivity-label-downstream-inheritance.md) isn't supported. The label of an upstream model won't propagate down to its downstream paginated reports. Likewise, the label of a paginated report won't propagate down to the report’s downstream content.
-* [Mandatory labeling](service-security-sensitivity-label-mandatory-label-policy.md) doesn't apply to paginated reports.
+* [Mandatory labeling](mandatory-label-policy.md) doesn't apply to paginated reports.
 
 ## Paginated Report visuals
 

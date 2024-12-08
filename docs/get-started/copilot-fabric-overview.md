@@ -1,33 +1,33 @@
 ---
-title: Overview of Copilot in Fabric and Power BI (preview)
+title: Overview of Copilot in Fabric
 description: Learn about Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
-author: maggiesMSFT
-ms.author: maggies
+author: snehagunda
+ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
+  - copilot-learning-hub
+  - ignite-2024
 ms.topic: conceptual
-ms.date: 02/07/2024
+ms.date: 08/19/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
-# Overview of Copilot in Fabric and Power BI (preview)
+# Overview of Copilot in Fabric
 
 Copilot and other generative AI features in preview bring new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric and Power BI.
 
 ## Enable Copilot
 
-Before your business can start using Copilot capabilities in Microsoft Fabric:
-
-- Your administrator needs to enable the tenant switch before you can start using Copilot. Administrators can read the article [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md) for details. 
-- Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
-- If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md) tenant setting in the Fabric Admin portal.
-- Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
-
-The preview of Copilot in Microsoft Fabric is rolling out in stages with the goal that all customers with a paid Fabric capacity (F64 or higher) or Power BI Premium capacity (P1 or higher) have access to the Copilot preview. It becomes available to you automatically as a new setting in the Fabric admin portal when it's rolled out to your tenant. When charging begins for the Copilot in Fabric experiences, you can count Copilot usage against your existing Fabric or Power BI Premium capacity.
+Before your business can start using Copilot capabilities in Microsoft Fabric, you need to [enable Copilot](copilot-enable-fabric.md).
 
 Read on for answers to your questions about how it works in the different workloads, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. 
+
+> [!NOTE]
+> Copilot is not yet supported for sovereign clouds due to GPU availability.
 
 ## Copilot for Data Science and Data Engineering
 
@@ -35,11 +35,37 @@ Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored
 
 ## Copilot for Data Factory
 
-Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks.
+Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md)
+
+## Copilot for Data Warehouse
+
+Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see [Copilot for Data Warehouse](../data-warehouse/copilot.md).
 
 ## Copilot for Power BI
 
-Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities. See the article [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
+Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities. 
+
+For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
+
+## Copilot for Real-Time Intelligence
+
+Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
+
+For more information, see [Copilot for Real-Time Intelligence overview](copilot-real-time-analytics.md).
+
+## Copilot for SQL database
+
+Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline your OLTP database tasks. Key features of Copilot for SQL database include Natural Language to SQL, code completion, quick actions, and document-based Q&A. For more information, see [Copilot for SQL database](../database/sql/copilot.md).
+
+## Create your own AI solution accelerators
+
+### Build your own copilots 
+
+Using the [client advisor AI accelerator](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator) tool, you can build custom copilot with your enterprise data. The client advisor AI accelerator uses Azure OpenAI Service, Azure AI Search, and Microsoft Fabric to create custom Copilot solutions. This all-in-one custom copilot empowers client advisors to use generative AI across structured and unstructured data optimizing daily tasks and fostering better interactions with clients. To learn more, see the [GitHub repo.](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator)
+
+### Conversational knowledge mining solution accelerator
+
+The conversational knowledge mining solution accelerator is built on top of Microsoft Fabric, Azure OpenAI Service, and Azure AI Speech. It enables customers with large amounts of conversational data to use generative AI to find key phrases alongside the operational metrics. This way, you can discover valuable insights with business impact. To learn more, see the [GitHub repo.](https://github.com/microsoft/Customer-Service-Conversational-Insights-with-Azure-OpenAI-Services)
 
 ## How do I use Copilot responsibly?
 
@@ -49,7 +75,7 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
 
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.  
 
-Before you use Copilot, your admin needs to enable Copilot in Fabric. See the article [Overview of Copilot in Fabric (preview)](copilot-fabric-overview.md) for details. Also, keep in mind the limitations of Copilot:
+Before you use Copilot, your admin needs to enable Copilot in Fabric. See the article [Overview of Copilot in Fabric](copilot-fabric-overview.md) for details. Also, keep in mind the limitations of Copilot:
 
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
 - Reviews of outputs should be done by people who are able to meaningfully evaluate the content's accuracy and appropriateness.
@@ -65,12 +91,12 @@ To access the prebuilt [Azure OpenAI Service](https://azure.microsoft.com/produc
 
 ### Data processing across geographic areas
 
-The prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) and [Copilot in Fabric](copilot-fabric-overview.md) may process your prompts and results (input and output when using Copilot) outside your capacity’s geographic region, depending on where the Azure OpenAI service is hosted. The table below shows the mapping of where data is processed across geographic areas for Copilot in Fabric and Azure OpenAI features.  
+The prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) and [Copilot in Fabric](copilot-fabric-overview.md) may process your prompts and results (input and output when using Copilot) outside your capacity's geographic region, depending on where the Azure OpenAI service is hosted. The table below shows the mapping of where data is processed across geographic areas for Copilot in Fabric and Azure OpenAI features.  
 
 > [!NOTE]
 > The data processed for Copilot interactions can include user prompts, meta prompts, structure of data (schema) and conversation history. No data, such as content in tables is sent to Azure OpenAI for processing unless it is included in the user prompts. 
 
-|Geographic area where your Fabric Capacity is located |Geographic area where Azure OpenAI Service is hosted |Data processing outside your capacity’s geographic region? |Actions required to use Fabric Copilot |
+|Geographic area where your Fabric Capacity is located |Geographic area where Azure OpenAI Service is hosted |Data processing outside your capacity's geographic region? |Actions required to use Fabric Copilot |
 |-|-|-|-|
 |US |US |No |Turn-on Copilot |
 |EU Data Boundary |EU Data Boundary |No |Turn-on Copilot |

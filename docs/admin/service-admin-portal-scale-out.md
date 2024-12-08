@@ -4,8 +4,7 @@ description: Learn how to configure scale-out tenant settings as the Fabric admi
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
   - ignite-2023

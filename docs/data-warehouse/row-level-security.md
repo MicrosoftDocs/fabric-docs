@@ -1,17 +1,18 @@
 ---
 title: Row-level security in Fabric data warehousing
 description: Learn about row-level security in tables in Fabric data warehousing.
-author: SQLStijn-MSFT
-ms.author: stwynant
-ms.reviewer: wiassaf
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: stwynant
+ms.date: 08/01/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+  - ignite-2024
 ---
 # Row-level security in Fabric data warehousing
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Row-level security (RLS) enables you to use group membership or execution context to control access to rows in a database table. For example, you can ensure that workers access only those data rows that are pertinent to their department. Another example is to restrict customers' data access to only the data relevant to their company in a multitenant architecture. The feature is similar to row-level security in [SQL Server](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true).
 
@@ -29,11 +30,13 @@ Row-level security is applied to [shared warehouse or lakehouse](share-warehouse
 
 ## Predicate-based row-level security
 
-Row-level security in Fabric Synapse Data Warehouse supports predicate-based security. Filter predicates silently filter the rows available to read operations.
+Row-level security in Fabric Data Warehouse supports predicate-based security. Filter predicates silently filter the rows available to read operations.
 
 Access to row-level data in a table is restricted by a security predicate defined as an inline table-valued function. The function is then invoked and enforced by a security policy. For filter predicates, the application is unaware of rows that are filtered from the result set. If all rows are filtered, then a null set will be returned.
 
-Filter predicates are applied while reading data from the base table. They affect all get operations: `SELECT`, `DELETE`, and `UPDATE`. The users can't select or delete rows that are filtered. The user can't update rows that are filtered. But it's possible to update rows in such a way that they'll be filtered afterward. 
+Filter predicates are applied while reading data from the base table. They affect all get operations: `SELECT`, `DELETE`, and `UPDATE`. Each table must have its own row-level security defined separately. Users who query tables without a row level security policy will view unfiltered data.
+
+Users can't select or delete rows that are filtered. The user can't update rows that are filtered. But it's possible to update rows in such a way that they'll be filtered afterward. 
 
 Filter predicate and security policies have the following behavior:
 
@@ -83,7 +86,7 @@ It is important to observe that a malicious security policy manager, with suffic
 
 It is possible to cause information leakage by using carefully crafted queries that use errors to exfiltrate data. For example, `SELECT 1/(SALARY-100000) FROM PAYROLL WHERE NAME='John Doe';` would let a malicious user know that John Doe's salary is exactly $100,000. Even though there is a security predicate in place to prevent a malicious user from directly querying other people's salary, the user can determine when the query returns a divide-by-zero exception.
 
-## Example
+## Examples
 
 We can demonstrate row-level security [!INCLUDE [fabricdw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in Microsoft Fabric.
 
@@ -143,14 +146,38 @@ WITH (STATE = ON);
 GO
 ```
 
-## Related content
+To modify a row level security function, you must first drop the security policy. In the following script, we drop the policy `SalesFilter` before issuing an `ALTER FUNCTION` statement on `Security.tvf_securitypredicate`. Then, we recreate the policy `SalesFilter`.
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
-- [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
-- [Column-level security in Fabric data warehousing](column-level-security.md)
-- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
+```sql
+-- Drop policy so we can change the predicate function.
+DROP SECURITY POLICY SalesFilter;
+GO
+
+-- Alter the function for the SalesRep evaluation
+ALTER FUNCTION Security.tvf_securitypredicate(@SalesRep AS nvarchar(50))
+    RETURNS TABLE
+WITH SCHEMABINDING
+AS
+    RETURN SELECT 1 AS tvf_securitypredicate_result
+WHERE @SalesRep = USER_NAME() OR USER_NAME() = 'president@contoso.com';
+GO
+ 
+-- Re-create a Security Policy
+CREATE SECURITY POLICY SalesFilter
+ADD FILTER PREDICATE Security.tvf_securitypredicate(SalesRep)
+ON sales.Orders
+WITH (STATE = ON);
+GO
+```
 
 ## Next step
 
 > [!div class="nextstepaction"]
 > [Implement row-level security in Fabric Data Warehousing](tutorial-row-level-security.md)
+
+## Related content
+
+- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Share your data and manage permissions](share-warehouse-manage-permissions.md)
+- [Column-level security in Fabric data warehousing](column-level-security.md)
+- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)

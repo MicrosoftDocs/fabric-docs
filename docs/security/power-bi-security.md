@@ -1,0 +1,117 @@
+---
+title: Power BI security overview
+description: Learn about security in Power BI and how Power BI protects your data so that you can safely use all the Power BI features.
+author: KesemSharabi
+ms.author: kesharab
+ms.topic: overview
+ms.date: 03/18/2024
+#customer intent: As a Power BI user, I want to understand how security works in Power BI so that I can safely use Power BI.
+---
+
+# Power BI security
+
+Power BI is an online software service (*SaaS*, or Software as a Service) offering as part of Microsoft Fabric that lets you easily and quickly create self-service Business Intelligence dashboards, reports, semantic models, and visualizations. With Power BI, you can connect to many different data sources, combine, and shape data from those connections, then create reports and dashboards that can be shared with others. 
+
+This article outlines Power BI data handling practices when it comes to storing, processing, and transferring customer data. 
+
+## Data at rest 
+
+Power BI uses two primary data storage resource types:
+
+* Azure Storage
+
+* Azure SQL Databases
+
+In most scenarios, Azure Storage is utilized to persist the data of Power BI artifacts, while Azure SQL Databases are used to persist artifact metadata.
+
+All data persisted by Power BI is encrypted by default using Microsoft-managed keys. Customer data stored in Azure SQL Databases is fully encrypted using [Azure SQL's Transparent Data Encryption (TDE)](/azure/sql-database/transparent-data-encryption-azure-sql) technology. Customer data stored in Azure storage is encrypted using [Azure Storage Encryption](/azure/storage/common/storage-service-encryption).
+
+Optionally, organizations can utilize Power BI Premium to use their own keys to encrypt data at rest that is imported into a semantic model. This approach is often described as bring your own key (BYOK). Utilizing BYOK helps ensure that even in case of a service operator error, customer data won't be exposed – something that can't easily be achieved using transparent service-side encryption. See [Bring your own encryption keys for Power BI for more information](/power-bi/enterprise/service-encryption-byok).
+
+Power BI semantic models allow for various data source connection modes that determine whether the data source data is persisted in the service or not.
+
+
+| Semantic Model Mode (Kind) | Data Persisted in Power BI        |
+|----------------------------|-----------------------------------|
+| Import                     | Yes                               |
+| DirectQuery                | No                                |
+| Live Connect               | No                                |
+| DirectLake                 | No (stored in OneLake)            |
+| Composite                  | If contains an Import data source |
+| Streaming                  | If configured to persist          |
+
+Regardless of the semantic model mode utilized, Power BI may temporarily cache any retrieved data to optimize query and report load performance. 
+
+## Data in processing
+
+Data is in processing when it's either actively being used by one or more users as part of an interactive scenario, or when a background process, such as refresh, touches this data. Power BI loads actively processed data into the memory space of one or more service workloads. To facilitate the functionality required by the workload, the processed data in memory isn't encrypted.
+
+## Power BI embedded analytics
+
+Independent Software Vendors (ISVs) and solution providers have two main modes of embedding Power BI artifacts in their web applications and portals: [embed for your organization](/power-bi/developer/embedded/embed-sample-for-your-organization) and [embed for your customers](/power-bi/developer/embedded/embed-sample-for-customers). The artifact is embedded into an IFrame in the application or portal. An IFrame isn't allowed to read or write data from the external web application or portal, and the communication with the IFrame is done by using the Power BI Client SDK using POST messages.
+
+In an [embed for your organization](/power-bi/developer/embedded/embed-sample-for-your-organization) scenario, Microsoft Entra or through customized portals.ITs. All Power BI policies and capabilities described in this paper such as Row Level Security (RLS) and object-level security (OLS) are automatically applied to all users independently of whether they access Power BI through the [Power BI portal](https://app.powerbi.com/) or through customized portals.
+
+In an [embed for your customers](/power-bi/developer/embedded/embed-sample-for-customers) scenario, ISVs typically own Power BI tenants and Power BI items (dashboards, reports, semantic models, and others). It's the responsibility of an ISV back-end service to authenticate its end users and decide which artifacts and which access level is appropriate for that end user. ISV policy decisions are encrypted in an [embed token](/rest/api/power-bi/embedtoken) generated by Power BI and passed to the ISV back-end for further distribution to the end users according to the business logic of the ISV. End users using a browser or other client applications aren't able to automatically append the encrypted embed token to Power BI requests as an *Authorization: EmbedToken* header. Based on this header, Power BI enforces all policies (such as access or RLS) precisely as was specified by the ISV during generation. Power BI Client APIs automatically append the encrypted embed token to Power BI requests as an *Authorization: EmbedToken* header. Based on this header, Power BI enforces all policies (such as access or RLS) precisely as was specified by the ISV during generation.
+
+To enable embedding and automation, and to generate the embed tokens described above, Power BI exposes a rich set of [REST APIs](/rest/api/power-bi/embedtoken). These Power BI REST APIs support both user [delegated](/azure/active-directory/develop/v2-permissions-and-consent) and [service principal](/power-bi/enterprise/service-premium-service-principal) Microsoft Entra methods of authentication and authorization.
+
+Power BI embedded analytics and its REST APIs support all Power BI network isolation capabilities described in this article: For example, [Service Tags](/power-bi/guidance/whitepaper-powerbi-security#service-tags) and [Private Links](/power-bi/guidance/whitepaper-powerbi-security#private-link-integration).
+
+## Paginated reports  
+
+Paginated reports are designed to be printed or shared. They're called paginated because they're formatted to fit well on a page. They display all the data in a table, even if the table spans multiple pages. You can control their report page layout exactly. 
+
+Paginated reports support rich and powerful expressions written in Microsoft Visual Basic .NET. Expressions are widely used throughout Power BI Report Builder paginated reports to retrieve, calculate, display, group, sort, filter, parameterize, and format data. 
+
+Expressions are created by the author of the report with access to the broad range of features of the .NET framework. The processing and execution of paginated reports is performed inside a sandbox. 
+
+Paginated report definitions (.rdl section.Authentication to the Power BI Service section. 
+
+The Microsoft Entra token obtained during the authentication is used to communicate directly from the browser to the Power BI Premium cluster. 
+
+In Power BI Premium, the Power BI service runtime provides an appropriately isolated execution environment for each report render.  
+
+A paginated report can access a wide set of data sources as part of the rendering of the report. The sandbox doesn't communicate directly with any of the data sources but instead communicates with the trusted process to request data, and then the trusted process appends the required credentials to the connection. In this way, the sandbox never has access to any credential or secret. 
+
+In order to support features such as Bing maps, or calls to Azure Functions, the sandbox does have access to the internet.
+
+## Power BI Mobile
+
+Power BI Mobile is a collection of apps designed for the primary mobile platforms: Android, iOS. Security considerations for the Power BI Mobile apps fall into two categories:
+
+* Device communication
+
+* The application and data on the device
+
+For device communication, all Power BI Mobile applications communicate with the Power BI service, and use the same connection and authentication sequences used by browsers, which are described in detail earlier in this white paper. The Power BI mobile applications for iOS and Android bring up a browser session within the application itself.
+
+Power BI Mobile supports certificate-based authentication (CBA) when authenticating with Power BI (sign in to service), SSRS ADFS on-premises (connect to SSRS server) and SSRS App Proxy on either iOs or Android.  
+
+Power BI Mobile apps actively communicate with the Power BI service. Telemetry is used to gather mobile app usage statistics and similar data, which is transmitted to services that are used to monitor usage and activity; no customer data is sent with telemetry.
+
+The Power BI application stores data on the device that facilitates use of the app:
+
+* Microsoft Entra ID and refresh tokens are stored in a secure mechanism on the device, using industry-standard security measures.
+
+* Data and settings (key-value pairs for user configuration) is cached in storage on the device and can be encrypted by the OS. In iOS this is automatically done when the user sets a passcode. In Android this can be configured in the settings. T data and settings (key-value pairs for user configuration) are cached in storage on the device in a sandbox and internal storage that is accessible only to the app.  
+
+* Geolocation is enabled or disabled explicitly by the user. If enabled, geolocation data isn't saved on the device and isn't shared with Microsoft.
+
+* Notifications are enabled or disabled explicitly by the user. If enabled, Android and iOS don't support geographic data residency requirements for notifications.
+
+Data encryption can be enhanced by applying file-level encryption via Microsoft Intune, a software service that provides mobile device and application management. Both platforms for which Power BI Mobile is available support Intune. With Intune enabled and configured, data on the mobile device is encrypted, and the Power BI application itself can't be installed on an SD card. [Learn more about Microsoft Intune](https://www.microsoft.com/cloud-platform/microsoft-intune).
+
+In order to implement SSO, some secured storage values related to the token-based authentication are available for other Microsoft first party apps (such as Microsoft Authenticator) and are managed by the [Microsoft Authentication Library (MSAL)](/azure/active-directory/develop/msal-overview).
+
+Power BI Mobile cached data is deleted when the app is removed, when the user signs out of Power BI Mobile, or when the user fails to sign in (such as after a token expiration event or password change). The data cache includes dashboards and reports previously accessed from the Power BI Mobile app.
+
+Power BI Mobile doesn't access other application folders or files on the device.
+
+The Power BI apps for iOS and Android let you protect your data by configuring extra identification, such as providing Face ID, Touch ID, or a passcode for iOS, and biometric ID (Fingerprint ID) for Android. [Learn more about additional identification](/power-bi/consumer/mobile/mobile-native-secure-access). Users can also configure their app to require identification each time the app is brought to the foreground using Face ID, Touch ID, or passcode.  
+
+## Related content
+
+* [Security in Microsoft Fabric](security-overview.md)
+
+* [Security fundamentals](security-fundamentals.md)

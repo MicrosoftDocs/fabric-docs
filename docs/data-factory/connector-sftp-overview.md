@@ -25,9 +25,9 @@ The SFTP connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
-| **Lookup activity** | None | Basic |
-| **GetMetadata activity** | None | Basic |
-| **Delete activity** | None | Basic |
+| **Copy activity (source/destination)** | None <br> On-premises | Basic |
+| **Lookup activity** | None <br> On-premises | Basic |
+| **GetMetadata activity** | None <br> On-premises | Basic |
+| **Delete activity** | None <br> On-premises | Basic |
 
 To learn about the copy activity configuration for SFTP in data pipelines, go to [Configure SFTP in a copy activity](connector-sftp-copy-activity.md).

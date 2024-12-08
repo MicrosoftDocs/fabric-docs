@@ -1,20 +1,19 @@
 ---
-title: "Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)"
+title: "Tutorial: Validate data using SemPy and Great Expectations (GX)"
 description: Illustrates how to use SemPy together with Great Expectations to perform data validation on Power BI semantic models.
-ms.reviewer: sgilley
-ms.author: taniaarya
-author: taniaarya
+ms.author: mopeakande
+author: msakande
+ms.reviewer: marcozo
+reviewer: eisber
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 11/14/2023
+ms.date: 08/29/2024
 #Customer intent: As a data scientist, I want to validate my data to ensure it meets my expectations.
 ---
 
 # Tutorial: Validate data using SemPy and Great Expectations (GX)
 
 In this tutorial, you learn how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI semantic models.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 This tutorial shows you how to:
 
@@ -50,7 +49,7 @@ In this section, you set up a notebook environment with the necessary modules an
 
 ```python
 # install libraries
-%pip install semantic-link great-expectations great_expectations_experimental great_expectations_zipcode_expectations
+%pip install semantic-link 'great-expectations<1.0' great_expectations_experimental great_expectations_zipcode_expectations
 
 # load %%dax cell magic
 %load_ext sempy
@@ -67,14 +66,14 @@ from great_expectations_zipcode_expectations.expectations import expect_column_v
 
 ## Set up GX Data Context and Data Source
 
-In order to get started with Great Expectations, you first have to set up a GX [Data Context](https://docs.greatexpectations.io/docs/reference/learn/terms/data_context). The context serves as an entry point for GX operations and holds all relevant configurations.
+In order to get started with Great Expectations, you first have to set up a GX [Data Context](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/data_context). The context serves as an entry point for GX operations and holds all relevant configurations.
 
 
 ```python
 context = gx.get_context()
 ```
 
-You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/reference/learn/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample .pbix file](/power-bi/create-reports/sample-retail-analysis).
+You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample .pbix file](/power-bi/create-reports/sample-retail-analysis).
 
 
 ```python
@@ -83,7 +82,7 @@ ds = context.sources.add_fabric_powerbi("Retail Analysis Data Source", dataset="
 
 ## Specify Data Assets
 
-Define [Data Assets](https://docs.greatexpectations.io/docs/reference/learn/terms/data_asset) to specify the subset of data you'd like to work with. The asset can be as simple as full tables, or be as complex as a custom Data Analysis Expressions (DAX) query.
+Define [Data Assets](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/data_asset) to specify the subset of data you'd like to work with. The asset can be as simple as full tables, or be as complex as a custom Data Analysis Expressions (DAX) query.
 
 Here, you'll add multiple assets:
 * Power BI table
@@ -153,7 +152,7 @@ ds.add_powerbi_dax_asset(
 
 ## Expectations
 
-To add specific constraints to the assets, you first have to configure [Expectation Suites](https://docs.greatexpectations.io/docs/reference/learn/terms/expectation_suite). After adding individual [Expectations](https://docs.greatexpectations.io/docs/reference/learn/terms/expectation) to each suite, you can then update the Data Context set up in the beginning with the new suite. For a full list of available expectations, see the [GX Expectation Gallery](https://greatexpectations.io/expectations/).
+To add specific constraints to the assets, you first have to configure [Expectation Suites](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/expectation_suite). After adding individual [Expectations](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/expectation/) to each suite, you can then update the Data Context set up in the beginning with the new suite. For a full list of available expectations, see the [GX Expectation Gallery](https://greatexpectations.io/expectations/).
 
 Start by adding a "Retail Store Suite" with two expectations:
 * a valid zip code
@@ -232,7 +231,7 @@ context.add_or_update_expectation_suite(expectation_suite=suite_dmv)
 
 ## Validation
 
-To actually run the specified expectations against the data, first create a [Checkpoint](https://docs.greatexpectations.io/docs/reference/learn/terms/checkpoint) and add it to the context. For more information on Checkpoint configuration, see [Data Validation workflow](https://docs.greatexpectations.io/docs/oss/guides/validation/validate_data_overview).
+To actually run the specified expectations against the data, first create a [Checkpoint](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/checkpoint/) and add it to the context. For more information on Checkpoint configuration, see [Data Validation workflow](https://docs.greatexpectations.io/docs/0.18/oss/guides/validation/validate_data_overview/).
 
 
 ```python
@@ -358,7 +357,7 @@ From the plot, you can see that April and July were slightly out of range and ca
 
 ## Storing GX configuration
 
-As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/oss/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context)).
+As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/0.18/oss/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context/)).
 
 
 ```python
@@ -387,8 +386,8 @@ For example, in a new notebook, attach the same lakehouse and use `context = gx.
 
 Check out other tutorials for semantic link / SemPy:
 
-- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a sample semantic model (preview)](tutorial-power-bi-dependencies.md)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
-- [Tutorial: Discover relationships in a semantic model, using semantic link (preview)](tutorial-power-bi-relationships.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+- [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link](tutorial-relationships-detection.md)

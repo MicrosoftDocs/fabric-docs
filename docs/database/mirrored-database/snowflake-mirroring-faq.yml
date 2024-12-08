@@ -1,14 +1,15 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)"
-  description: This article answers frequently asked questions about Mirroring Snowflake in Microsoft Fabric (Preview).
+  title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric"
+  description: This article answers frequently asked questions about Mirroring Snowflake in Microsoft Fabric.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
   ms.reviewer: imotiwala, maprycem
   ms.service: fabric
+  ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 03/14/2024
-title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)"
+  ms.date: 09/30/2024
+title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about Mirroring Snowflake in Microsoft Fabric.
 
@@ -34,10 +35,6 @@ sections:
         What should I do to avoid or reduce Snowflake costs?
       answer: 
         Implement Snowflake budgets, use limits on credits, or use dedicated a smaller Snowflake instance based on requirements.
-    - question: |  
-        What are the Fabric compute costs associated with Mirroring?
-      answer:
-        During the current preview, there's no cost for Mirroring or storing mirrored data in Fabric. If you are querying the data, compute will be charged based on the Capacity that you have in Fabric. Cost of the source Snowflake warehouse is separate from Fabric Mirroring.
     - question: |
         How are ingress fees handled?
       answer: 
@@ -76,7 +73,7 @@ sections:
         answer: 
           The data from source tables will be reinitialized. Each time you stop and start, the entire table is fetched again.
       - question: |
-          What happens it deselect a table from Mirroring?
+          What happens if I deselect a table from Mirroring?
         answer: 
           We stop Mirroring that specific table and delete it from OneLake.
       - question: |
@@ -109,6 +106,10 @@ sections:
           What are licensing options for Fabric Mirroring? 
         answer:
           A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
+      - question: |  
+          What are the Fabric compute costs associated with Mirroring?
+        answer:
+          There's no cost for Mirroring or storing mirrored data in Fabric, unless storage exceeds provisioned capacity.
 
 additionalContent: |
 
@@ -116,5 +117,3 @@ additionalContent: |
 
   - [What is Mirroring in Fabric?](overview.md)
   - [Snowflake connector overview](../../data-factory/connector-snowflake-overview.md)
-
-

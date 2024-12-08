@@ -1,12 +1,10 @@
 ---
-title: |
-  How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)
+title: "How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)"
 description: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview).
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/15/2024
-ms.service: fabric
+ms.reviewer: anithaa, wiassaf
+ms.date: 11/19/2024
 ms.topic: how-to
 ---
 
@@ -23,7 +21,6 @@ In this guide, you learn how to Access mirrored Azure Cosmos DB data in Lakehous
   - If you don't have an Azure subscription, [Try Azure Cosmos DB for NoSQL free](https://cosmos.azure.com/try/).
   - If you have an existing Azure subscription, [create a new Azure Cosmos DB for NoSQL account](/azure/cosmos-db/nosql/quickstart-portal).
 - An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../get-started/fabric-trial.md).
-- Enable Mirroring in your Fabric tenant or workspace. If the feature isn't already enabled, [enable mirroring in your Fabric tenant](enable-mirroring.md).
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring. For more information, see [account requirements](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
 > [!TIP]
@@ -66,14 +63,14 @@ Use Lakehouse to further extend the number of tools you can use to analyze your 
     display(df)
     ```
 
-    :::image type="content" source="media/azure-cosmos-db-tutorial/lakehouse-notebook.png" alt-text="Screenshot of a Lakehouse notebook with data pre-loaded from the mirrored database." lightbox="media/azure-cosmos-db-tutorial/lakehouse-notebook.png":::
+    :::image type="content" source="media/azure-cosmos-db-lakehouse-notebooks/lakehouse-notebook.png" alt-text="Screenshot of a Lakehouse notebook with data pre-loaded from the mirrored database." lightbox="media/azure-cosmos-db-lakehouse-notebooks/lakehouse-notebook.png":::
 
     > [!NOTE]
     > This example assumes the name of your table. Use your own table when writing your Spark query.
 
 ## Write back using Spark
 
-Finally, you can use Spark and Python code to write data back to your source Azure Cosmos DB account from notebooks in Fabric. You may want to do this to write back analytical results to Cosmos DB, which can then be using as serving plane for OLTP applications.  
+Finally, you can use Spark and Python code to write data back to your source Azure Cosmos DB account from notebooks in Fabric. You might want to do this to write back analytical results to Cosmos DB, which can then be using as serving plane for OLTP applications.  
 
 1. Create four code cells within your notebook.
 
@@ -118,4 +115,4 @@ Finally, you can use Spark and Python code to write data back to your source Azu
 
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml)
-- [Limitations: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)

@@ -25,9 +25,6 @@ To get started, you must complete the following prerequisites:
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
-
-   :::image type="content" source="media/copy-data-activity/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
-
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
    :::image type="content" source="media/copy-data-activity/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
@@ -119,7 +116,7 @@ After completing the configuration of your data pipeline, run the data pipeline 
 
     :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/schedule.png" alt-text="Screenshot of scheduling the data pipeline.":::
 
-## Next steps
+## Related content
 
 - [Connector overview](connector-overview.md)
 - [How to monitor data pipeline runs](monitor-pipeline-runs.md)

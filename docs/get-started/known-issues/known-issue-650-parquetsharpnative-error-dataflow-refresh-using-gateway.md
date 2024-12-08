@@ -24,6 +24,6 @@ You have a Dataflow Gen2 dataflow that uses the December 2023 (or newer) version
 
 The issue is fixed. Upgrade to the March 2024 version of the on-premises data gateway to stop receiving the error. If you run the on-premises data gateway on a Hyper-V virtual machine with processor compatibility mode turned on, try disabling processor compatibility mode.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

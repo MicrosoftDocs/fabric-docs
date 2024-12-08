@@ -25,10 +25,10 @@ The Azure Synapse analytics connector supports the following capabilities in dat
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | --- |
-| **Copy activity (Source/Destination)** | None | Basic<br>Organizational account<br>Service principal |
-| **Lookup activity** | None | Basic<br>Organizational account<br>Service principal |
-| **GetMetadata activity** | None | Basic<br>Organizational account<br>Service principal |
-| **Script activity** | None | Basic<br>Organizational account<br>Service principal |
-| **Stored procedure activity** | None | Basic<br>Organizational account<br>Service principal |
+| **Copy activity (Source/Destination)** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+| **Lookup activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+| **GetMetadata activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+| **Script activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+| **Stored procedure activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
 
 To learn about the copy activity configuration for Azure Synapse Analytics in data pipelines, go to [Configure Azure Synapse Analytics in a copy activity](connector-azure-synapse-analytics-copy-activity.md).

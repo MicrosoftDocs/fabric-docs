@@ -6,7 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting
 ms.service: powerbi
 ms.subservice: pbi-troubleshooting
-ms.date: 10/18/2023
+ms.date: 06/06/2024
 ms.custom: known-issue-526
 ---
 
@@ -16,7 +16,7 @@ When you call the Dataflow REST API, [**Dataflows - Get Dataflow Data Sources**]
 
 **APPLIES TO:** ✔️ Power BI
 
-**Status:** Open
+**Status:** Fixed: June 6, 2024
 
 **Problem area:** Embedded REST API or PowerShell
 

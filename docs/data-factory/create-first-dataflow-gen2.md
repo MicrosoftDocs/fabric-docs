@@ -31,8 +31,6 @@ In this section, you're creating your first dataflow.
 
 1. Switch to the **Data factory** experience.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
-
 2. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace." lightbox="media/create-first-dataflow-gen2/navigate-to-workspace.png":::

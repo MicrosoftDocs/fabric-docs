@@ -210,6 +210,6 @@ The following tables contain more information about the copy activity in Google 
 |**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
-## Next steps
+## Related content
 
 - [Set up your Google Cloud Storage connection](connector-google-cloud-storage.md)

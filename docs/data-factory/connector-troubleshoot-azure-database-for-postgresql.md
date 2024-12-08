@@ -8,6 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 11/15/2023
 ---
 
@@ -15,13 +16,13 @@ ms.date: 11/15/2023
 
 This article provides suggestions to troubleshoot common problems with the Azure Database for PostgreSQL connector in Data Factory in Microsoft Fabric.
 
-## Error code: AzurePostgreSqlNpgsqlDataTypeNotSupported
+## Error code: 23704 - AzurePostgreSqlNpgsqlDataTypeNotSupported
 
 - **Message**: `The data type of the chosen Partition Column, '%partitionColumn;', is '%dataType;' and this data type is not supported for partitioning.`
 
 - **Recommendation**: Pick a partition column with int, bigint, smallint, serial, bigserial, smallserial, timestamp with or without time zone, time without time zone or date data type.
 
-## Error code: AzurePostgreSqlNpgsqlPartitionColumnNameNotProvided
+## Error code: 23705 - AzurePostgreSqlNpgsqlPartitionColumnNameNotProvided
 
 - **Message**: `Partition column name must be specified.`
 

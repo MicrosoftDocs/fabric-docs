@@ -25,7 +25,7 @@ The REST connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Anonymous|
+| **Copy activity (source/destination)** | None <br> On-premises | Anonymous|
 
 To learn about how to connect to REST data in data pipelines, go to [Set up your REST connection](connector-rest.md#set-up-your-connection-in-a-data-pipeline).
 

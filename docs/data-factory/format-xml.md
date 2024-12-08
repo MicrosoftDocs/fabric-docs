@@ -4,7 +4,7 @@ description: This article explains how to configure XML format in the data pipel
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 06/25/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -22,14 +22,19 @@ XML format is supported for the following activities and connectors as source.
 | Category | Connector/Activity | 
 |---|---|
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md)|
+|  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
+|  | [Azure Files](connector-azure-files-copy-activity.md)|
+|  | File system |
 |  | [FTP](connector-ftp-copy-activity.md) | 
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) | 
 |  | [HTTP](connector-http-copy-activity.md)| 
+|  | [Lakehouse Files](connector-lakehouse-copy-activity.md)|
+|  | [Oracle Cloud Storage](connector-oracle-cloud-storage-copy-activity.md)|
 |  | [SFTP](connector-sftp-copy-activity.md) | 
-| **Supported activity** | [Copy activity](copy-data-activity.md) |
+| **Supported activity** | [Copy activity](copy-data-activity.md) (source/-) |
 |  | [Lookup activity](lookup-activity.md) |
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) | 
@@ -78,14 +83,14 @@ Under **Advanced** settings in the **Source** tab, the following XML format rela
     - **xsd**: Select this to validate the XML schema using XSD.
     - **dtd**: Select this to validate the XML schema using DTD.
     
-    :::image type="content" source="./media/format-xml/validation-mode.png" alt-text="Screenshot showing validation modes. ":::
+    :::image type="content" source="./media/format-xml/validation-mode.png" alt-text="Screenshot showing validation modes.":::
 
 - **Namespaces**: Specify whether to enable namespace when parsing the XML files. It is selected by default.
 - **Namespace prefix pairs**: If the **Namespaces** is enabled, selecting **+ New** and specify the **URL** and **Prefix**. You can add more pairs by selecting **+ New**. <br> Namespace URI to prefix mapping is used to name fields when parsing the XML file.
 If an XML file has namespace and namespace is enabled, by default, the field name is the same as it is in the XML document.
 If there is an item defined for the namespace URI in this map, the field name is `prefix:fieldName`.
 
-    :::image type="content" source="./media/format-xml/namespace-prefix-pairs.png" alt-text="Screenshot showing namespace prefix pairs. ":::
+    :::image type="content" source="./media/format-xml/namespace-prefix-pairs.png" alt-text="Screenshot showing namespace prefix pairs.":::
 
 - **Detect data type**: Specify whether to detect integer, double, and Boolean data types. It is selected by default.
 

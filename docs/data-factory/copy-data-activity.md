@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 08/05/2024
 ---
 
 # How to copy data using copy activity
@@ -48,7 +48,6 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/choose-data-source.png" alt-text="Screenshot of Choose data source screen." lightbox="media/copy-data-activity/choose-data-source.png":::
 
-   :::image type="content" source="media/copy-data-activity/choose-azure-blob-storage-source.png" alt-text="Screenshot showing where to select the correct data source." lightbox="media/copy-data-activity/choose-azure-blob-storage-source.png":::
 
 2. Create a connection to your data source by selecting **Create new connection**.
 
@@ -66,19 +65,18 @@ Follow these steps to set up your copy activity using copy assistant.
 
 ### Configure your destination
 
-1. Select a data source type from the category. You'll use Azure Blob Storage as an example. Select **Azure Blob Storage**, and then select **Next**.
+1. Select a data source type from the category. You'll use Azure Blob Storage as an example. You can either create a new connection that links to a new Azure Blob Storage account by following the steps in the previous section or use an existing connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
 
    :::image type="content" source="media/copy-data-activity/choose-destination.png" alt-text="Screenshot showing how to select Azure Blob Storage." lightbox="media/copy-data-activity/choose-destination.png":::
 
-2. You can either create a new connection that links to a new Azure Blob Storage account by following the steps in the previous section or use an existing connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
-
-   :::image type="content" source="media/copy-data-activity/destination-connection-configuration.png" alt-text="Screenshot showing data connection options." lightbox="media/copy-data-activity/destination-connection-configuration.png":::
-
-3. Configure and map your source data to your destination. Then select **Next** to finish your destination configurations.
+1. Configure and map your source data to your destination. Then select **Next** to finish your destination configurations.
 
    :::image type="content" source="media/copy-data-activity/map-to-destination.png" alt-text="Screenshot of Map to destination screen." lightbox="media/copy-data-activity/map-to-destination.png":::
 
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
+
+   > [!NOTE]
+   > You can only use a single on-premises data gateway within the same Copy activity. If both source and sink are on-premises data sources, they must use the same gateway. To move data between on-premises data sources with different gateways, you must copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
 
 ### Review and create your copy activity
 
@@ -172,24 +170,6 @@ If the connector that you apply supports mapping, you can go to **Mapping** tab 
 
 Besides, you can select **+ New mapping** to add new mapping, select **Clear** to clear all mapping settings, and select **Reset** to reset all mapping **Source** column.
 
-#### Configure your type conversion
-
-Expand **Type conversion settings** to configure your type conversion if needed. 
-
-   :::image type="content" source="media/copy-data-activity/mapping-type-conversion.png" alt-text="Screenshot of mapping type conversion." lightbox="media/copy-data-activity/mapping-type-conversion.png":::
-
-See the following table for the setting details.
-
-|Setting  |Description  |
-|---------|---------|
-|**Allow data truncation** |Allow data truncation when converting source data to destination with different type during copy. For example, from decimal to integer, from DatetimeOffset to Datetime.  |
-|**Treat boolean as number** | Treat boolean as number. For example, treat true as 1. |
-|**DateTime format** |Format string when converting between dates without time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff". |
-|**DateTimeOffset format** | Format string when converting between dates with time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff zzz".|
-|**TimeSpan format**| Format string when converting between time periods and strings. For example, "dd\.hh\:mm\:ss".|
-|**Culture**| Culture information to be used when convert types. For example, "en-us", "fr-fr".|
-
-
 ### Configure your other settings under settings tab
 
 The **Settings** tab contains the settings of performance, staging, and so on.
@@ -198,20 +178,31 @@ The **Settings** tab contains the settings of performance, staging, and so on.
 
 See the following table for the description of each setting.
 
-|Setting  |Description  |
-|---------|---------|
-|**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 2-256 while higher value implies more gains.  |
-|**Degree of copy parallelism** | Specify the degree of parallelism that data loading would use. |
-|**Fault tolerance** |When selecting this option, you can ignore some errors occurred in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |
-|**Enable logging** |When selecting this option, you can log copied files, skipped files and rows|
-|**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for the beneficial scenarios.|
-|**Staging account connection**| When selecting **Enable staging**, specify the connection of an Azure storage data source as an interim staging store. Select **+ New** to create a staging connection if you don't have it.|
+|Setting  |Description  |JSON script property |
+|---------|---------|---------|
+|**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br><br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 2-256 while higher value implies more gains.  | dataIntegrationUnits |
+|**Degree of copy parallelism** | Specify the degree of parallelism that data loading would use. | parallelCopies |
+|**Fault tolerance** |When selecting this option, you can ignore some errors occurred in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp;&nbsp; fileMissing <br>&nbsp;&nbsp; fileForbidden <br> &nbsp;&nbsp; invalidFileName |
+|**Enable logging** |When selecting this option, you can log copied files, skipped files and rows.| / |
+|**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for the beneficial scenarios.| enableStaging |
+| **Data store type** | When enable staging, you can choose **Workspace** and **External** as your data store type.| / |
+| *For **Workspace*** |  |  |
+|**Workspace**| Specify to use built-in staging storage. | / |
+| *For **External*** |  |  |
+| **Staging account connection** |Specify the connection of an [Azure Blob Storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md), which refers to the instance of Storage that you use as an interim staging store. Create a staging connection if you don't have it. | connection (under *`externalReferences`*) |
+| **Storage path** | Specify the path that you want to contain the staged data. If you do not provide a path, the service creates a container to store temporary data. Specify a path only if you use Storage with a shared access signature, or you require temporary data to be in a specific location. | path |
+| **Enable compression** | Specifies whether data should be compressed before it's copied to the destination. This setting reduces the volume of data being transferred. | enableCompression |
+|  |  |  |
+| **Preserve** | Specify whether to preserve metadata/ACLs during data copy. | preserve |
+
+>[!NOTE]
+> If you use staged copy with compression enabled, the service principal authentication for staging blob connection isn't supported.
 
 ### Configure parameters in a copy activity
 
 Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse/KQL Database as an example to see how to use it.
 
-1. In your source or destination, after selecting **Workspace** as data store type and specifing **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
+1. In your source or destination, after selecting **Workspace** as data store type and specifying **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
 1. In the pop-up **Add dynamic content** pane, under **Parameters** tab, select **+**.
 
     :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::

@@ -1,6 +1,6 @@
 ---
 title: Apache Spark runtime in Fabric
-description: Learn about the Apache Spark-based runtimes available in Fabric.
+description: Learn about the Apache Spark-based runtimes available in Fabric, including Fabric optimizations and support.
 ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
@@ -8,6 +8,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 11/15/2023
 ---
 
@@ -21,23 +22,28 @@ Major components of Fabric Runtime:
 
 - **Delta Lake** - an open-source storage layer that brings ACID transactions and other data reliability features to Apache Spark. Integrated within Fabric Runtime, Delta Lake enhances data processing capabilities and ensures data consistency across multiple concurrent operations.
 
+- **[The Native Execution Engine](./native-execution-engine-overview.md)** - is a transformative enhancement for Apache Spark workloads, offering significant performance gains by directly executing Spark queries on lakehouse infrastructure. Integrated seamlessly, it requires no code changes and avoids vendor lock-in, supporting both Parquet and Delta formats across Apache Spark APIs in Runtime 1.3 (Spark 3.5). This engine boosts query speeds up to four times faster than traditional OSS Spark, as shown by the TPC-DS 1TB benchmark, reducing operational costs and improving efficiency across various data tasks—including data ingestion, ETL, analytics, and interactive queries. Built on Meta’s Velox and Intel’s Apache Gluten, it optimizes resource use while handling diverse data processing scenarios.
+
 - **Default-level packages for Java/Scala, Python, and R** - packages that support diverse programming languages and environments. These packages are automatically installed and configured, allowing developers to apply their preferred programming languages for data processing tasks.
 
 - The Microsoft Fabric Runtime is built upon **a robust open-source operating system**, ensuring compatibility with various hardware configurations and system requirements.
 
-Below, you find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for both Runtime 1.1 and Runtime 1.2 within the Microsoft Fabric platform.
+Below, you find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for Apache Spark-based runtimes within the Microsoft Fabric platform.
+
+> [!TIP]
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
 |                       | **[Runtime 1.1](./runtime-1-1.md)** | **[Runtime 1.2](./runtime-1-2.md)** | **[Runtime 1.3](./runtime-1-3.md)** |
-|-----------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| **Apache Spark**      | 3.3.1                               | 3.4.1                               | 3.5.0                               |
-| **Operating System**  | Ubuntu 18.04                        | Mariner 2.0                         | Mariner 2.0                         |
-| **Java**              | 8                                   | 11                                  | 11                                  |
-| **Scala**             | 2.12.15                             | 2.12.17                             | 2.12.17                             |
-| **Python**            | 3.10                                | 3.10                                | 3.10                                |
-| **Delta Lake**        | 2.2.0                               | 2.4.0                               | 3.0.0                               |
-| **R**                 | 4.2.2                               | 4.2.2                               | N/A                                 |
+|-----------------------|-------------------------------------|-------------------------------------|------------------------------------|
+| **Apache Spark**      | 3.3.1                               | 3.4.1                               | 3.5.0                              |
+| **Operating System**  | Ubuntu 18.04                        | Mariner 2.0                         | Mariner 2.0                        |
+| **Java**              | 8                                   | 11                                  | 11                                 |
+| **Scala**             | 2.12.15                             | 2.12.17                             | 2.12.17                            |
+| **Python**            | 3.10                                | 3.10                                | 3.11                               |
+| **Delta Lake**        | 2.2.0                               | 2.4.0                               | 3.2                                |
+| **R**                 | 4.2.2                               | 4.2.2                               | 4.4.1                              |
 
-Visit [Runtime 1.1](./runtime-1-1.md) or [Runtime 1.2](./runtime-1-2.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
+Visit [Runtime 1.1](./runtime-1-1.md), [Runtime 1.2](./runtime-1-2.md) or [Runtime 1.3](./runtime-1-3.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
 
 ## Fabric optimizations
 
@@ -55,7 +61,7 @@ Within the Fabric Runtime for Apache Spark and Delta Lake, there are native writ
 ## Multiple runtimes support
 Fabric supports multiple runtimes, offering users the flexibility to seamlessly switch between them, minimizing the risk of incompatibilities or disruptions.
 
-**By default, all new workspaces use the latest runtime version, which is currently [Runtime 1.2](./runtime-1-2.md).** 
+**By default, all new workspaces use the latest runtime version, which is currently [Runtime 1.3](./runtime-1-3.md).** 
 
 To change the runtime version at the workspace level, go to Workspace Settings > Data Engineering/Science > Spark Compute > Workspace Level Default, and select your desired runtime from the available options.
 
@@ -101,7 +107,7 @@ Additionally, users should verify that all current and future production workloa
 
 ## Delta 2.2 vs Delta 2.4 changes
 
-In the latest [Fabric Runtime, version 1.2](./runtime-1-2.md), the default table format (`spark.sql.sources.default`) is now `delta`. In previous versions of [Fabric Runtime, version 1.1](./runtime-1-1.md) and on all Synapse Runtime for Apache Spark containing Spark 3.3 or below, the default table format was defined as `parquet`. Check [the table with Apache Spark configuration details](./lakehouse-and-delta-tables.md) for  differences between Azure Synapse Analytics and Microsoft Fabric.
+In the latest [Fabric Runtime, version 1.3](./runtime-1-3.md) and [Fabric Runtime, version 1.2](./runtime-1-2.md), the default table format (`spark.sql.sources.default`) is now `delta`. In previous versions of [Fabric Runtime, version 1.1](./runtime-1-1.md) and on all Synapse Runtime for Apache Spark containing Spark 3.3 or below, the default table format was defined as `parquet`. Check [the table with Apache Spark configuration details](./lakehouse-and-delta-tables.md) for  differences between Azure Synapse Analytics and Microsoft Fabric.
 
 All tables created using Spark SQL, PySpark, Scala Spark, and Spark R, whenever the table type is omitted, will create the table as `delta` by default. If scripts explicitly set the table format, that will be respected. The command `USING DELTA` in Spark create table commands becomes redundant. 
 
@@ -116,12 +122,9 @@ Scripts that expect or assume parquet table format should be revised. The follow
 *  `SHOW CREATE TABLE`
 *  `CREATE TABLE LIKE `
 
-## Versioning
-
-Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, Runtime 1.1 and Runtime 1.2, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
 
 ## Related content
 
-- [Runtime 1.3 (Spark 3.5, Java 11, Python 3.10, Delta Lake 3.0)](./runtime-1-3.md)
+- [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
 - [Runtime 1.1 (Spark 3.3, Java 8, Python 3.10, Delta Lake 2.2)](./runtime-1-1.md)

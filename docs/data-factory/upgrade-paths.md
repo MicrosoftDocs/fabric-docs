@@ -20,7 +20,7 @@ Data Factory in Microsoft Fabric brings Power Query and Azure Data Factory toget
 - **Get data and transformation** - Dataflow Gen2 is an evolution of dataflows in Power BI. Dataflow Gen2 is rearchitected to use Fabric compute engines for data processing and transformation. This enables them to ingest and transform data at any scale.
 - **Data orchestration** - Using data pipelines already familiar to users of Azure Data Factory (ADF), Microsoft Fabric enables the same orchestration capabilities offered in ADF. As part of the GA release of Fabric, data pipelines support most of the activities available in ADF.
   
-  Refer to [this list of activities](activity-overview.md) that are a part of data pipelines in Fabric. The SSIS activity will be added to data pipelines by Q2 CY2024.
+  Refer to [this list of activities](activity-overview.md) that are a part of data pipelines in Fabric. 
 - **Enterprise-ready data movement** - Whether it's small data movement or petabyte-scale, Data Factory provides a serverless and intelligent data movement platform that enables you to move data between diverse data sources and data destinations reliably. With support for 170+ connectors, Data Factory in Microsoft Fabric enables you to move data between multiclouds, data sources on-premises, and within virtual networks (VNet). Intelligent throughput optimization enables the data movement platform to automatically detect the size of the compute needed for data movement.
 
 ## Migrate from Azure Data Factory (ADF)
@@ -33,9 +33,10 @@ To enable customers to upgrade to Microsoft Fabric from Azure Data Factory (ADF)
 
   In addition, for customers considering migrating their ADF mapping dataflows to Fabric, you can apply sample code from the Fabric Customer Advisory Team (Fabric CAT) to convert mapping dataflows to Spark code. Find out more at [Mapping dataflows to Microsoft Fabric](https://github.com/sethiaarun/mapping-data-flow-to-spark).
 
+- **Azure Data Factory in Fabric (preview)** - We introduce a new capability that allows you to connect to your existing ADF factories from your Fabric workspace. By clicking “Azure Data Factory” inside of your Fabric Data Factory workspace, you will now be able to fully manage your ADF factories directly from the Fabric workspace UI! You’ll be able to trigger, execute, and monitor your pipelines as you do in ADF but directly inside of Fabric. 
+
 As part of the Data Factory in Microsoft Fabric roadmap, we are working towards the preview of the following by Q2 CY2024:
 
-- **Mounting of ADF in Fabric** - This feature will enable customers to mount their existing ADF in Microsoft Fabric. All ADF pipelines will work as-is, and continue running on Azure, while enabling you to explore Fabric and work out a more comprehensive upgrade plan.
 - **Upgrade from ADF pipelines to Fabric** - We are working with customers and the community to learn how we can best support upgrades of data pipelines from ADF to Fabric. As part of this, we will deliver an upgrade experience that empowers you to test your existing data pipelines in Fabric using mounting and upgrading the data pipelines.
 
 ## Migrate Power BI Dataflow Gen1 to Dataflow Gen2 in Fabric

@@ -1,8 +1,8 @@
 ---
 title: Dataflow Gen2 refresh
 description: Explanation of what a dataflow refresh is, including on-demand and scheduled refresh.
-author: bensack
-ms.author: bensack
+author: Luitwieler
+ms.author: jeluitwi
 ms.service: fabric
 ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 2/1/2024
@@ -51,6 +51,22 @@ To cancel a dataflow refresh, select **Cancel** icon found in workspace list or 
 Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancelation status:
 
 :::image type="content" source="media/concept-dataflow-refresh/canceled-dataflow-refresh-history.png" alt-text="Screenshot showing the dataflows refresh history view for a canceled dataflow refresh.":::
+
+## Refresh limitations
+
+For dataflow refreshes, a couple of limitations are in place:
+
+1. Per dataflow, you're only allowed to have 150 refreshes per 24 hours (rolling window). When you exceed this limit, you receive an error in your refresh history and refreshes resume after you are below the limit.
+2. If your scheduled dataflow refresh fails consecutively, we pause your dataflow refresh schedule and send the owner of the dataflow an email. The following rules apply in this case:
+   - 72 hours (3 days)
+     - 100% failure rate over 72 hours
+     - Minimum of 6 refreshes (2 refreshes a day)
+   - 168 hours (1 week)
+     - 100% failure rate over 168 hours
+     - Minimum of 5 refreshes (1 refresh a day)
+3. A single evaluation of a query has a limit of 8 hours.
+4. Total refresh time of a single refresh of a dataflow is limited to a max of 24 hours.
+5. Per dataflow you can have a maximum of 50 staged queries, or queries with output destination, or combination of both. 
 
 ### Refresh cancelation implications to output data
 

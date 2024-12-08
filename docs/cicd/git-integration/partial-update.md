@@ -4,6 +4,8 @@ description: Learn how to update your workspace manually when there's an interna
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
 ms.date: 06/12/2023
 ms.custom:
@@ -14,8 +16,6 @@ ms.custom:
 # Manual update
 
 When you update items in a workspace or *undo* a commit, there’s always a chance that one or more items will fail. The workspace fails to update if the incoming update from the Git branch causes inconsistencies or other problems in the workspace that are difficult to determine in advance. When an item fails to update, the update process stops. If the item that failed is the first (or only) item that was updating, the workspace remains synced with the original branch. If an item fails after one or more items succeeded in updating, you have a situation where some items are synced and some aren't. In this case, your workspace isn't synced to any Git branch.
-
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 An update can fail for many reasons. Possible reasons include, but not limited to, the following problems:
 

@@ -4,8 +4,7 @@ description: Learn how to configure OneLake tenant settings as the Fabric admini
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
   - ignite-2023

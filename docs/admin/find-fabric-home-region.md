@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 06/25/2024
 ---
 
 # Find your Fabric home region
@@ -16,7 +16,7 @@ To find your Fabric home region, follow these steps:
 
 1. Sign in to Fabric.
 
-1. Open the Help pane and choose **About Microsoft Fabric**.
+1. Open the Help pane and choose the **About** link (the text of the link will vary depending on which workload is selected).
 
     :::image type="content" source="./media/find-fabric-home-region/about-microsoft-fabric.png" alt-text="Screenshot showing how to get to About Microsoft Fabric on the help pane.":::
 

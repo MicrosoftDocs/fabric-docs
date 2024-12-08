@@ -4,8 +4,7 @@ description: Learn about how to receive email notifications when there's a Power
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - ignite-2023
 ms.topic: troubleshooting

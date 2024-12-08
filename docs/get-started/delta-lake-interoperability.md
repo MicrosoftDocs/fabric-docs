@@ -8,6 +8,8 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
+  - ignite-2024
 ms.date: 11/15/2023
 ms.search.form: delta lake interoperability
 ---
@@ -16,7 +18,7 @@ ms.search.form: delta lake interoperability
 
 In Microsoft Fabric, the Delta Lake table format is the standard for analytics. [Delta Lake](https://docs.delta.io/latest/delta-intro.html) is an open-source storage layer that brings ACID (Atomicity, Consistency, Isolation, Durability) transactions to big data and analytics workloads.
 
-All Fabric experiences generate and consume Delta Lake tables, driving interoperability and a unified product experience. Delta Lake tables produced by one compute engine, such as Synapse Data warehouse or Synapse Spark, can be consumed by any other engine, such as Power BI. When you ingest data into Fabric, Fabric stores it as Delta tables by default. You can easily integrate external data containing Delta Lake tables by using OneLake shortcuts.
+All Fabric experiences generate and consume Delta Lake tables, driving interoperability and a unified product experience. Delta Lake tables produced by one compute engine, such as Fabric Data Warehouse or Synapse Spark, can be consumed by any other engine, such as Power BI. When you ingest data into Fabric, Fabric stores it as Delta tables by default. You can easily integrate external data containing Delta Lake tables by using OneLake shortcuts.
 
 ## Delta Lake features and Fabric experiences
 
@@ -28,20 +30,21 @@ To achieve interoperability, all the Fabric experiences align on the Delta Lake 
 
 The following matrix shows key Delta Lake features and their support on each Fabric capability.
 
-|Fabric capability|Name-based column mappings|Deletion vectors|V-order writing|Table optimization and maintenance|Write partitions|Read partitions|Delta reader/writer version and default table features|
-|---------|---------|---------|---------|---------|---------|---------|---------|
-|Data warehouse Delta Lake export|No|Yes|Yes|Yes|No|Yes|Reader: 3<br/>Writer: 7<br/>Deletion Vectors|
-SQL analytics endpoint|No|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
-Fabric Spark runtime 1.2|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
-Fabric Spark runtime 1.1|Yes|No|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
-Dataflows|Yes|Yes|Yes|No|Yes|Yes|Reader: 1<br/>Writer: 2<br/>|
-Data pipelines|No|No|Yes|No|Yes, overwrite only|Yes|Reader: 1<br/>Writer: 2|
-Power BI direct lake semantic models|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
-Export Power BI semantic models into OneLake|Yes|N/A (not applicable)|Yes|No|Yes|N/A (not applicable)|Reader: 2<br/>Writer: 5|
-KQL databases|Yes|Yes|No|No<sup>*</sup>|Yes|Yes|Reader: 1<br/>Writer: 1|
-Eventstreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1<br/>Writer: 2|
+|Fabric capability|Name-based column mappings|Deletion vectors|V-order writing|Table optimization and maintenance|Write partitions|Read partitions|Liquid Clustering|TIMESTAMP_NTZ|Delta reader/writer version and default table features|
+|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|
+|Data warehouse Delta Lake export|No|Yes|Yes|Yes|No|Yes|No|No|Reader: 3<br/>Writer: 7<br/>Deletion Vectors|
+SQL analytics endpoint|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|Yes|No|N/A (not applicable)|
+Fabric Spark Runtime 1.3|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
+Fabric Spark Runtime 1.2|Yes|Yes|Yes|Yes|Yes|Yes|Yes, read only|Yes|Reader: 1<br/>Writer: 2|
+Fabric Spark Runtime 1.1|Yes|No|Yes|Yes|Yes|Yes|Yes, read only|No|Reader: 1<br/>Writer: 2|
+Dataflows|Yes|Yes|Yes|No|Yes|Yes|Yes, read only|No|Reader: 1<br/>Writer: 2<br/>|
+Data pipelines|No|No|Yes|No|Yes, overwrite only|Yes|Yes, read only|No|Reader: 1<br/>Writer: 2|
+Power BI direct lake semantic models|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|Yes|No|N/A (not applicable)|
+Export Power BI semantic models into OneLake|Yes|N/A (not applicable)|Yes|No|Yes|N/A (not applicable)|No|No|Reader: 2<br/>Writer: 5|
+KQL databases|Yes|Yes|No|No<sup>*</sup>|Yes|Yes|No|No|Reader: 1<br/>Writer: 1|
+Eventstreams|No|No|No|No|Yes|N/A (not applicable)|No|No|Reader: 1<br/>Writer: 2|
 
-<sup>*</sup> KQL databases provide certain table maintenance capabilities such as [retention](../real-time-analytics/data-policies.md). Data is removed at the end of the retention period from OneLake. For more information, see [One Logical copy](../real-time-analytics/one-logical-copy.md).
+<sup>*</sup> KQL databases provide certain table maintenance capabilities such as [retention](../real-time-intelligence/data-policies.md). Data is removed at the end of the retention period from OneLake. For more information, see [One Logical copy](../real-time-intelligence/one-logical-copy.md).
 
 > [!NOTE]
 >
@@ -52,16 +55,15 @@ Eventstreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1<br/>Writer: 2|
 
 Currently, Fabric doesn't support these Delta Lake features:
 
-* Column mapping using IDs
 * Delta Lake 3.x Uniform
-* Delta Lake 3.x Liquid clustering
-* TIMESTAMP_NTZ data type
 * Identity columns writing (proprietary Databricks feature)
 * Delta Live Tables (proprietary Databricks feature)
+* RLE (Run Length Encoding) enabled on the checkpoint file
+
 
 ## Related content
 
 * [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 * Learn more about [Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) in Fabric Lakehouse and Synapse Spark.
-* [Learn about Direct Lake in Power BI and Microsoft Fabric](/power-bi/enterprise/directlake-overview).
+* [Learn about Direct Lake in Power BI and Microsoft Fabric](direct-lake-overview.md).
 * Learn more about [querying tables from the Warehouse through its published Delta Lake Logs](../data-warehouse/query-delta-lake-logs.md).

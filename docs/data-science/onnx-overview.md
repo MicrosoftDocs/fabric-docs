@@ -3,9 +3,10 @@ title: ONNX - Inference on Spark
 description: Use SynapseML to build a LightGBM model, convert it to ONNX format, then perform inference.
 ms.topic: how-to
 ms.custom: build-2023
-ms.reviewer: larryfr
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: jessiwang
+reviewer: JessicaXYWang
 ms.date: 06/28/2023
 ---
 # ONNX Inference on Spark
@@ -69,7 +70,7 @@ featurizer = VectorAssembler(inputCols=feature_cols, outputCol="features")
 train_data = featurizer.transform(df)["Bankrupt?", "features"]
 
 model = (
-    LightGBMClassifier(featuresCol="features", labelCol="Bankrupt?")
+    LightGBMClassifier(featuresCol="features", labelCol="Bankrupt?", dataTransferMode="bulk")
     .setEarlyStoppingRound(300)
     .setLambdaL1(0.5)
     .setNumIterations(1000)

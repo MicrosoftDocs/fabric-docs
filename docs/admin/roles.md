@@ -9,14 +9,12 @@ ms.custom:
   - ignite-2023
   - has-azure-ad-ps-ref
   - azure-ad-ref-level-one-done
-ms.date: 11/02/2023
+ms.date: 09/22/2024
 ---
 
 # Understand Microsoft Fabric admin roles
 
 To be a Microsoft Fabric admin for your organization, you must be in one of the following roles:
-
-* Global administrator
 
 * Power Platform administrator
 
@@ -80,14 +78,14 @@ You can also assign users to roles by using PowerShell. Users are managed in Mic
     ```output
     DisplayName   Id                                   Mail              UserPrincipalName
     -----------   --                                   ----              -----------------
-    Casey Jensen  6a2bfca2-98ba-413a-be61-6e4bbb8b8a4c Casey@contoso.com Casey@contoso.com
+    Casey Jensen  00aa00aa-bb11-cc22-dd33-44ee44ee44ee Casey@contoso.com Casey@contoso.com
     ```
 
 1. To add the member to the role, run [New-MgDirectoryRoleMemberByRef](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryrolememberbyref).
 
     ```powershell
     $DirectoryRoleId = "6ebd1a24-c502-446f-94e5-fa2997fd26c3"
-    $UserId = "6a2bfca2-98ba-413a-be61-6e4bbb8b8a4c"
+    $UserId = "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
     New-MgDirectoryRoleMemberByRef -DirectoryRoleId $DirectoryRoleId `
        -OdataId "https://graph.microsoft.com/v1.0/directoryObjects/$UserId"
     ```

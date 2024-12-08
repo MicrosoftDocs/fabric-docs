@@ -4,8 +4,7 @@ description: Learn how to configure Power BI template app admin settings in Fabr
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
   - ignite-2023

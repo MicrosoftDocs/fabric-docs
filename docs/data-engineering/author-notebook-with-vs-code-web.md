@@ -1,5 +1,5 @@
 ---
-title: Create and manage Microsoft Fabric notebooks from VS Code for the Web
+title: Create and manage Fabric notebooks from VS Code for the Web
 description: Learn about the VS Code extension for Synapse under the VS Code web experience, which supports a pro-developer authoring experience.
 ms.reviewer: sngun
 ms.author: qixwang
@@ -12,9 +12,9 @@ ms.date: 11/15/2023
 ms.search.form: VSCodeExtension
 ---
 
-# Create and manage Microsoft Fabric notebooks inside Visual Studio Code for the Web
+# Create and manage Microsoft Fabric notebooks inside Visual Studio Code for the web
 
-Visual Studio Code for the Web provides a free, zero-install Microsoft Visual Studio Code experience running entirely in your browser, allowing you to quickly and safely browse source code repositories and make lightweight code changes. To get started, go to https://vscode.dev in your browser.
+Visual Studio Code for the web offers a free, browser-based experience with no installation required. It enables quick and secure browsing of code repositories and lightweight edits. To get started, visit the [VS Code Dev site](https://vscode.dev).
 
 The Synapse VS Code extension can also be used in the VS Code for the Web experience. The extension supports the CRUD (create, read, update, and delete) notebook experience in Fabric. The changes from the VS Code for the Web experience are applied to the workspace immediately. The extension also supports running notebooks in the VS Code for the web experience.
 
@@ -27,8 +27,7 @@ The Synapse VS Code extension can also be used in the VS Code for the Web experi
 1. Select the **Extensions** icon in the left navigation bar.
 1. Search for **Synapse** and select the **Synapse VS Code - Remotes** extension
 1. click **Install**.
-
-:::image type="content" source="media\vscode\install-vs-code-web.png" alt-text="Screenshot that shows installation of Synapse VS Code extension web.":::
+   :::image type="content" source="media\vscode\install-vs-code-web.png" alt-text="Screenshot that shows installation of Synapse VS Code extension web.":::
 
 ## Open a notebook with the Synapse VS Code extension for the Web
 
@@ -47,13 +46,38 @@ The notebook tree node lists all of the notebook items in the current workspace.
 
 You can also delete any existing file/folder in the notebook file system.
 
-:::image type="content" source="media\vscode\manage-notebook-vs-code-web.png" alt-text="Screenshot of notebook tree node.":::
+:::image type="content" source="media\vscode\manage-notebook-vs-code-web.png" alt-text="Screenshot showing the notebook tree node.":::
 
-## Run notebooks in the VS Code for the Web experience
+## Run and debug notebooks in the VS Code web experience
 
-You can run a notebook in the VS Code for the web experience by selecting the **Run** button in the notebook editor. Before you run the notebook, make sure to select the **Synapse VS Code -Remote** as the kernel. The kernel is selected in the top right corner of the notebook editor.
+You can run a notebook in the VS Code for the web experience by selecting the **Run** button in the notebook editor. Before you run the notebook, make sure to select the **Synapse VS Code -Remote** as the kernel. You can select it at the top right corner of the notebook editor.
 
 :::image type="content" source="media\vscode\select-synapse-kernel.png" alt-text="Screenshot showing how to run notebook in VS Code for the Web.":::
+
+Besides running the notebook, you can also debug the notebook in the VS Code web experience. Before you start the debug session, run the following code in the notebook to enable this feature.
+
+```python
+%%configure -f  
+{  
+    "conf": {  
+        "livy.rsc.repl.session.debug-notebook.enabled": "true"  
+    } 
+} 
+```
+
+> [!NOTE]
+> * It might take 2-5 minutes to finish the configuration. For each livy session, you only need to run this setup once.
+
+After you run this configuration, you can set breakpoints in the notebook editor and run the notebook in debug mode. When the debug session starts, a notification is shown in bottom right corner of the editor to indicate that the debug session is initiated.
+
+:::image type="content" source="media\vscode\debug-notebook-vs-code-notification.png" alt-text="Screenshot showing debug session notification.":::
+
+This debug session runs on the remote compute, requiring network traffic to sync debug information like breakpoint status. During the sync process, you can track the synchronization progress in the notebook editor's status bar.
+
+:::image type="content" source="media\vscode\debug-notebook-vs-code-status-bar.png" alt-text="Screenshot showing debug session status bar.":::
+
+> [!IMPORTANT]
+> Please wait for the synchronization to finish before you continue the debug operation.
 
 ## Related content
 

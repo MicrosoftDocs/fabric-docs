@@ -1,18 +1,19 @@
 ---
-title: How to implement dynamic data masking in Synapse Data Warehouse
-description: Learn how to implement dynamic data masking in Synapse Data Warehouse in Microsoft Fabric.
-author:      SQLStijn-MSFT
-ms.author:   stwynant
-ms.reviewer: wiassaf
-ms.topic:  how-to
+title: How to implement dynamic data masking in Fabric Data Warehouse
+description: Learn how to implement dynamic data masking in Fabric Data Warehouse.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: stwynant
+ms.date: 10/09/2024
+ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+  - ignite-2024
 ---
 
-# How to implement dynamic data masking in Synapse Data Warehouse
+# How to implement dynamic data masking in Fabric Data Warehouse
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Dynamic data masking is a cutting-edge data protection technology that helps organizations safeguard sensitive information within their databases. It allows you to define masking rules for specific columns, ensuring that only authorized users see the original data while concealing it for others. Dynamic data masking provides an additional layer of security by dynamically altering the data presented to users, based on their access permissions.
 
@@ -39,7 +40,7 @@ Before you begin, make sure you have the following:
 ### 2. Configure dynamic data masking
 
 1. Sign into the Fabric portal with your admin account.
-1. In the Fabric workspace, navigate to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse.
+1. In the Fabric workspace, navigate to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 1. Select the **New SQL query** option, and under **Blank**, select **New SQL query**.
 1. In your SQL script, define dynamic data masking rules using the `MASKED WITH FUNCTION` clause. For example:
     

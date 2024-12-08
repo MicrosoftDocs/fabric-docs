@@ -1,5 +1,5 @@
 ---
-title: Create folders in workspaces (preview)
+title: Create folders in workspaces
 description: "Learn how to create a folder inside a workspace to enable users to efficiently organize and manage items in the workspace."
 author: maggiesMSFT
 ms.author: maggies
@@ -11,7 +11,7 @@ ms.date: 03/25/2024
 #customer intent: As a user, I want to learn how to create folders in workspaces so that I can efficiently organize and manage items in the workspace.
 ---
 
-# Create folders in workspaces (preview)
+# Create folders in workspaces
 
 This article explains what folders in workspaces are and how to use them in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. Folders are organizational units inside a workspace that enable users to efficiently organize and manage artifacts in the workspace. For more information about workspaces, see the [Workspaces](workspaces.md) article.
 
@@ -69,7 +69,7 @@ Folder names must follow certain naming conventions:
 
 1. Select multiple items, then select **Move** from the command bar.
 
-    :::image type="content" source="media/workspaces-folders/multi-select-items-move.png" alt-text="Screenshot showing multi-selected items and move button. " lightbox="media/workspaces-folders/multi-select-items-move.png":::
+    :::image type="content" source="media/workspaces-folders/multi-select-items-move.png" alt-text="Screenshot showing multi-selected items and move button." lightbox="media/workspaces-folders/multi-select-items-move.png":::
 
 1. Select a destination where you want to move these items. You can also create a new folder if you need it. 
 
@@ -90,6 +90,18 @@ Folder names must follow certain naming conventions:
     >
     > If you create items from the home page or the **Create** hub, items are created in the root level of the workspace.
 
+## Publish to folder (preview)
+
+You can now publish your Power BI reports to specific folders in your workspace. 
+
+When you publish a report, you can choose the specific workspace and folder for your report, seen below. 
+
+:::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot showing selecting a folder for where a report gets published." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
+
+To publish reports to specific folders in the service, make sure the **Publish dialogs support folder selection** setting is enabled in the Preview features tab in the options menu. 
+
+:::image type="content" source="media/workspaces-folders/publish-folder-dialog.png" alt-text="Screenshot showing selecting publish dialogs support folder selection box." lightbox="media/workspaces-folders/publish-folder-dialog.png":::
+    
 ## Rename a folder
 
 1. Select the context (**...**) menu, then select **Rename**.
@@ -130,9 +142,12 @@ Currently folders inherit the permissions of the workspace where they're located
 ## Considerations and limitations
 
 - Currently dataflow gen2, streaming semantic model, and streaming dataflow can't be created in folders. 
-- If you trigger item creation from the home page, create hub and industry solution, items are created at the root level of workspaces.
-- In a workspace page, `Filter` and `Filter by keywords` only apply to items at the current level.
+- If you trigger item creation from the home page, create hub, and industry solution, items are created at the root level of workspaces.
 - Git doesn't support workspace folders yet.
+- If folders **is enabled** in the Power BI service but **not enabled** in Power BI Desktop, republishing a report that is in a nested folder will replace the report in the nested folder.
+- If Power BI Desktop folders **is enabled** in Power BI Desktop, but **not enabled** in the Service and you publish to a nested folder, the report will be published to the general workspace.
+- When publishing reports to folders, report names must be unique throughout an entire workspace, regardless of its location. Therefore, when publishing a report to a workspace that has another report with the same name in a different folder, the report will publish to the location of the already existing report. If you want to move the report to a new folder location in the workspace you will need to make this change in the Power BI Service.
+- Folders are not supported in [Template App workspaces](/power-bi/connect-data/service-template-apps-overview).
 
 ## Related content
 

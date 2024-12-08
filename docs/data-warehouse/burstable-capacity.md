@@ -1,17 +1,18 @@
 ---
 title: Burstable capacity
 description: Learn more about how burstable capacity is used and limited with SKU guardrails in Fabric data warehousing.
-author: realAngryAnalytics
-ms.author: stevehow
-ms.reviewer: wiassaf
-ms.date: 02/14/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: stevehow
+ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 
-# Burstable capacity in Fabric data warehousing
+# Burstable capacity in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -21,7 +22,7 @@ A Fabric capacity is a distinct pool of resources that's size (or SKU) determine
 
 Burstable capacity has a direct correlation to the SKU that has been assigned to the Fabric capacity of the workspace. It also is a function of the workload. A non-demanding workload might never use burstable capacity units. The workload could achieve optimal performance within the baseline capacity that has been purchased. 
 
-To determine if your workload is using burstable capacity, the following formula can be used to calculate the scale factor for your workload: `Capacity Units (CU) / duration / Baseline CU = Scale factor` 
+To determine if your workload is using burstable capacity, the following formula can be used to calculate the scale factor for your workload: `Capacity Units (CU) / duration / Baseline CU = Scale factor`
 
 As an illustration of this formula, if your capacity is an F8, and your workload takes 100 seconds to complete, and it uses 1500 CU, the scale factor would be calculated as follows: `1500 / 100 / 8 = 1.875`
 
@@ -33,7 +34,7 @@ Smoothing offers relief for customers who create sudden spikes during their peak
 
 ## SKU guardrails
 
-Burstable capacity is finite. There's a limit applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads causing [throttling](compute-capacity-smoothing-throttling.md#throttling).
+Burstable capacity is finite. There's a limit applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads causing [throttling](compute-capacity-smoothing-throttling.md).
 
 The limit (or guardrail) is a scale factor directly correlated to the Fabric Capacity SKU size that is assigned to the workspace.
 
@@ -77,4 +78,4 @@ The burstable scale factor can be achieved independently for ingestion at the sa
 - [Workload management](workload-management.md)
 - [Scale your capacity](../enterprise/scale-capacity.md)
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
-- [Manage capacity settings](../admin/service-admin-portal-capacity-settings.md)
+- [Capacity settings](../admin/capacity-settings.md)

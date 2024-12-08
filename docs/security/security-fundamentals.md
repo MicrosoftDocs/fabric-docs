@@ -1,12 +1,12 @@
 ---
 title: "Microsoft Fabric security fundamentals"
 description: "Learn about Microsoft Fabric security fundamentals and how the main flows in the system work."
-author: peter-myers
-ms.author: v-myerspeter
-ms.reviewer: sergeig, vparasuraman
+author: KesemSharabi
+ms.author: kesharab
+ms.reviewer: v-myerspeter, sergeig, vparasuraman
 ms.date: 01/14/2024
 ms.topic: conceptual
-ms.custom: fabric-cat
+ms.custom: fabric-cat, ignite-2024
 ---
 
 # Microsoft Fabric security fundamentals
@@ -17,7 +17,7 @@ The article is primarily targeted at Fabric administrators, who are responsible 
 
 ## Fabric platform
 
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence (BI). The Fabric platform comprises a series of services and infrastructure components that support the common functionality for all [Fabric experiences](../get-started/microsoft-fabric-overview.md#components-of-microsoft-fabric). Collectively, they offer a comprehensive set of analytics experiences designed to work together seamlessly. Experiences include [Lakehouse](../data-engineering/lakehouse-overview.md), [Data Factory](../data-factory/data-factory-overview.md), [Synapse Data Engineering](../data-engineering/data-engineering-overview.md), [Synapse Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/fundamentals/power-bi-overview), and others.
+[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence (BI). The Fabric platform comprises a series of services and infrastructure components that support the common functionality for all [Fabric experiences](../get-started/microsoft-fabric-overview.md#components-of-microsoft-fabric). Collectively, they offer a comprehensive set of analytics experiences designed to work together seamlessly. Experiences include [Lakehouse](../data-engineering/lakehouse-overview.md), [Data Factory](../data-factory/data-factory-overview.md), [Fabric Data Engineering](../data-engineering/data-engineering-overview.md), [Fabric Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/fundamentals/power-bi-overview), and others.
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you benefit from a highly integrated, end-to-end, and easy-to-use product that's designed to simplify your analytics needs. Fabric was designed from the outset to protect sensitive assets.
 
@@ -35,7 +35,7 @@ The architectural diagram depicts the following concepts.
 
 2. Authentication is handled by Microsoft Entra ID, [previously known as Azure Active Directory](/entra/fundamentals/new-name), which is the cloud-based identity and access management service that authenticates the user or [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) and manages access to Fabric.
 
-3. The web front end receives user requests and facilitates login. It also routes requests and serves front-end content to the user.
+3. The web front end receives user requests and facilitates sign-in. It also routes requests and serves front-end content to the user.
 
 4. The metadata platform stores tenant metadata, which can include customer data. Fabric services query this platform on demand in order to retrieve authorization information and to authorize and validate user requests. It's located in the tenant home region.
 
@@ -79,7 +79,7 @@ While data can be processed in memory in an unencrypted state, it's never persis
 
 ### Data in transit
 
-Data in transit across the public internet between Microsoft services is always encrypted with at least TLS 1.2. Fabric negotiates to TLS 1.3 whenever possible. Traffic between Microsoft services always routes over the [Microsoft global network](/azure/networking/microsoft-global-network).
+Data in transit between Microsoft services is always encrypted with at least TLS 1.2. Fabric negotiates to TLS 1.3 whenever possible. Traffic between Microsoft services always routes over the [Microsoft global network](/azure/networking/microsoft-global-network).
 
 Inbound Fabric communication also enforces TLS 1.2 and negotiates to TLS 1.3, whenever possible. Outbound Fabric communication to customer-owned infrastructure prefers secure protocols but might fall back to older, insecure protocols (including TLS 1.0) when newer protocols aren't supported.
 
@@ -99,11 +99,11 @@ For more information, see [Fabric and OneLake security](../onelake/security/fabr
 
 [Workspaces](../get-started/workspaces.md) represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace by assigning users to [workspace roles](../get-started/roles-workspaces.md).
 
-For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md#fabric-data-security).
+For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md).
 
 ### Item security
 
-Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md#fabric-data-security) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
+Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
 
 ## Compliance resources
 
@@ -120,7 +120,8 @@ The Fabric service follows the Security Development Lifecycle (SDL), which consi
 For more information about Fabric security, see the following resources.
 
 - [Security in Microsoft Fabric](security-overview.md)
-- [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md)
-- [Microsoft Fabric licenses](../enterprise/licenses.md)
-- Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
-- Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
+- [Microsoft Fabric end-to-end security scenario](security-scenario.md)
+- [OneLake security overview](../onelake/security/fabric-onelake-security.md)
+- [Microsoft Fabric concepts and licenses](../enterprise/licenses.md)
+- Questions? Try asking the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
+- Suggestions? [Contribute ideas to improve Microsoft Fabric](https://ideas.fabric.microsoft.com/).

@@ -1,18 +1,18 @@
 ---
 title: Service principal support in Data Factory 
 description: Learn about how to use the service principal authentication type to access your data sources.
-author: ptyx507x
-ms.author: miescobar
+author: nikkiwaghani
+ms.author: nikkiwaghani
 ms.reviewer: dougklo
 ms.topic: conceptual
-ms.date: 1/16/2024
+ms.date: 09/16/2024
 ---
 
 # Service principal support in Data Factory
 
 Azure service principal (SPN) is a security identity that's application based and can be assigned permissions to access your data sources. Service principals are used to safely connect to data, without a user identity. To learn more about service principals, go to [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals).
 
-Within Microsoft Fabric, service principal authentication is supported in datasets, dataflows (both Dataflow Gen1 and Dataflow Gen2), and datamarts.  
+Within Microsoft Fabric, service principal authentication is supported in datasets, dataflows (both Dataflow Gen1 and Dataflow Gen2), and datamarts. You can now authenticate your on-premises and VNET data gateway connections using SPNs.
 
 ## Supported data sources
 
@@ -27,8 +27,7 @@ Currently, the SPN authentication type only supports the following data sources:
 * SharePoint online
 * Web
 
-> [!NOTE]
-> Service principal isn't supported on the on-premises data gateway and virtual network data gateway.  
+> [!NOTE] 
 >
 > Service principal authentication isn't supported for a SQL data source with Direct Query in datasets.
 
@@ -44,7 +43,7 @@ In this example, you can use service principal to connect to Azure Data Lake Sto
 
 ### Connect to your data using service principal in Dataflow Gen2
 
-1. Navigate to [Fabric](https://app.fabric.microsoft.com/).
+1. Navigate to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-factory-service-principals).
 
 2. Create a new Dataflow Gen2 or edit an existing one where you would like to add the data source.  
 

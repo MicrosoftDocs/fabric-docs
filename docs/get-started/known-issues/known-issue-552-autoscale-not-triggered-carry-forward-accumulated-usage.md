@@ -1,12 +1,12 @@
 ---
 title: Known issue - Autoscale not triggered by carry forward accumulated usage
-description: A known issue is posted where carry forward accumulated usage doesn't trigger Autoscale
+description: A known issue is posted where carry forward accumulated usage doesn't trigger Autoscale.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting
 ms.service: powerbi
 ms.subservice: pbi-troubleshooting
-ms.date: 11/23/2023
+ms.date: 05/24/2024
 ms.custom: known-issue-552
 ---
 
@@ -23,7 +23,7 @@ Autoscale is a valuable mechanism to prevent capacity usage exceeding 100% and t
 
 **APPLIES TO:** ✔️ Power BI
 
-**Status:** Open
+**Status:** Fixed: May 2, 2024
 
 **Problem area:** Capacity Management
 
@@ -33,7 +33,7 @@ If you set up a maximum value of Autoscale v-cores, you might see the Autoscale 
 
 ## Solutions and workarounds
 
-If you plan to use Autoscale to avoid possible throttling, enable it before the capacity starts throttling.  Enabling Autoscale ensures that the necessary Autoscale v-cores are activated to avoid overages in the capacity.  Our developers are working on improving this experience. This article will be updated when the fix is released.
+The known issue is fixed, and the Autoscale logic is different. Learn more at [Using Autoscale in Power BI Premium](/power-bi/enterprise/service-premium-auto-scale#when-is-autoscale-triggered).
 
 ## Related content
 

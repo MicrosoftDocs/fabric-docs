@@ -24,6 +24,6 @@ When querying a table through the SQL analytics endpoint, you see old data or ge
 
 You can retry after allowing the SQL analytics endpoint to complete its refresh process.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

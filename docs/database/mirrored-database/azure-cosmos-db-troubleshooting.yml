@@ -6,6 +6,7 @@ metadata:
   ms.author: sidandrews
   ms.reviewer: anithaa
   ms.service: fabric
+  ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 03/17/2024
 title: |
@@ -19,10 +20,6 @@ summary: |
 sections:
   - name: General questions
     questions:
-      - question: |
-          I can't see the option for mirroring in the Fabric portal's "Create" or "Data Warehouse" page. How do I enable mirroring?
-        answer: |
-          Your organization admin must enable the mirroring feature to see the mirroring option in your Fabric workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md).
       - question: |
           Mirroring is failing when loading the databases with an "SQLAPIendpoint" error. How do I resolve this error?
         answer: |
@@ -44,25 +41,18 @@ sections:
 
           If there's an error message when enabling continuous backup for an Azure Cosmos DB account, the account might have limitations blocking the feature. For example, if you previously deleted analytical store for the account, the account can't support continuous backup. In this scenario, the only remaining option is to use a new Azure Cosmos DB account for mirroring.
       - question: |
-          Why am I getting "trial capacity" errors when I select "Create a mirrored Azure Cosmos DB database"?
-        answer: |
-          You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
-      - question: |
-          Why am I getting "internal server error" when I select "Create a mirrored Azure Cosmos DB database"?
-        answer: |
-          You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
-      - question: |
           Why is replication not working and I'm getting "internal server error" when I select "monitor replication"?
         answer: |
           Replication could be working and you're observing a transient error if Azure Cosmos DB is throttling requests from Fabric. Additionally, there might be a limitation of mirroring with Azure Cosmos DB causing this issue. For more information, see [Azure Cosmos DB mirroring limitations](azure-cosmos-db-limitations.md).
           
-          Refresh the experience and determine if the problem is automatically resolved. Also, you can stop and start replication. If none of these options work, [open a support ticket](/power-bi/support/service-support-options).
+          Refresh the Fabric portal and determine if the problem is automatically resolved. Also, you can stop and start replication. If none of these options work, [open a support ticket](/power-bi/support/service-support-options).
       - question: |
           How can I be sure Fabric is replicating data from Azure Cosmos DB?
         answer: |
           First, follow general troubleshooting steps for Fabric mirrored databases. For more information, see [troubleshooting](troubleshooting.md).
 
           In most cases, the **Monitor replication** option can provide further detail indicating whether data is replicating to Fabric successfully. A common troubleshooting step is to check if the **last refreshed time** is recent. If the time isn't recent, stop and then restart replication as the next step.
+          Note, "last refreshed time" is only updated if the source database has changes since the time noted for replication. If the source database has no updates, deletes or inserts, "last refreshed time" will not be updated. 
       - question: |
           The "monitor replication" pane includes tables with no rows replicated after a significant amount of time. Is replication stuck?
         answer: |
@@ -86,7 +76,7 @@ sections:
       - question: |
           Why am I getting a "JSON text isn't properly formatted. Unexpected character '"' is found at position" error message when running T-SQL queries against my SQL analytics endpoint?
         answer: |
-          Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL endpoint warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+          Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL analytics endpoint or warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
       - question: |
           Why am I getting an "Invalid column name" error in the "monitor replication" pane?
         answer: |

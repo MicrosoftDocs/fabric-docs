@@ -6,6 +6,9 @@ metadata:
   ms.author: sidandrews
   ms.reviewer: anithaa
   ms.service: fabric
+  ms.subservice: data-warehouse
+  ms.custom:
+    - ignite-2024
   ms.topic: faq
   ms.date: 03/18/2024
 title: |
@@ -21,7 +24,7 @@ sections:
       - question: |
           How is mirroring different from shortcuts in relation to Azure Cosmos DB?          
         answer: |
-          Mirroring replicates the source database into Fabric OneLake in open-source delta format. You can run analytics on this data from any compute experience in Fabric. Shortcuts don't replicate the data into Fabric OneLake. Instead, shortcuts link to the source data without data movement. Currently, Azure Cosmos DB is only available as a source for mirroring.
+          Mirroring replicates the source database into Fabric OneLake in open-source delta format. You can run analytics on this data from anywhere in Fabric. Shortcuts don't replicate the data into Fabric OneLake. Instead, shortcuts link to the source data without data movement. Currently, Azure Cosmos DB is only available as a source for mirroring.
       - question: |
           Does mirroring affect the performance of the source Azure Cosmos DB database?
         answer: |
@@ -46,11 +49,12 @@ sections:
       - question: |
           What costs are associated with mirroring Azure Cosmos DB?
         answer: |
-          Mirroring is in public preview. There are currently no costs for mirroring or storing mirrored data in Fabric. The compute experience for querying data using SQL, Power BI, or Spark is charged at regular rates. For more information, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric).
+          Mirroring is in preview. There are currently no costs for compute used to replicate data from Azure Cosmos DB to Fabric OneLake. Storage costs for OneLake are also free upto certain limits. For more information, see [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). 
+          The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
           
-          For Azure Cosmos DB, continuous backup is a prerequisite to mirroring. If you enabled any continuous backup tier before mirroring, you don't accrue any extra cost. If you enable continuous backup specifically for mirroring, you're billed the price associated with that feature. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
-
-           If you use data explorer to view the source data from Azure Cosmos DB, you will accrue costs based on Request Units (RU) usage.         
+          For Azure Cosmos DB, continuous backup is a prerequisite to mirroring. If you enabled any continuous backup tier before mirroring, you don't accrue any extra cost. If you enable continuous backup specifically for mirroring, 7-day backup mode is free of cost; if you enable 30-day backup, you're billed the price associated with that feature. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
+          
+          If you use data explorer to view the source data from Azure Cosmos DB, you will accrue costs based on Request Units (RU) usage.         
       - question: |
           How are egress fees handled for mirroring Azure Cosmos DB?
         answer: |
@@ -68,7 +72,7 @@ sections:
         answer: |
           No, mirroring in Fabric isn't related to Azure Synapse Link.
 
-          In Azure Cosmos DB, continuous backup is a prerequisite for mirroring. This prerequisite allows Fabric to mirror your data without impacting your transactional workloads or requiring the analytical store.
+          In Azure Cosmos DB, continuous backup is a prerequisite for mirroring. This prerequisite allows Fabric to mirror your data without impacting your transactional workloads or requiring the analytical store.          
       - question: |
           Does mirroring affect how Azure Synapse Link works with Azure Cosmos DB?
         answer: |
@@ -85,6 +89,7 @@ sections:
           Can I disable analytical store for my Azure Cosmos DB account after using mirroring?
         answer: |
           Mirroring requires Azure Cosmos DB continuous backup as a prerequisite. Azure Cosmos DB accounts with continuous backup enabled can't disable analytical store. Once you disable analytical store on any collections, you cannot enable continuous backup.
+          This is a temporary limitation.
       - question: |
           With mirroring, are you deprecating Azure Synapse Link for Azure Cosmos DB?
         answer: |
@@ -195,19 +200,19 @@ sections:
       - question: |
           What happens if I delete the source Azure Cosmos DB database in Azure, while it is being mirrored?
         answer: |
-          The data explorer experience and replication begin to fail in Fabric. OneLake data remain as-is, until you delete the existing mirrored data.
+          Data Explorer and replication begin to fail in Fabric. OneLake data remain as-is, until you delete the existing mirrored data.
       - question: |
           After Azure Cosmos DB is mirrored, how do I connect the SQL analysis endpoint to client tools or applications?
         answer: |
-          Connecting to the SQL analysis endpoint for mirrored data is similar to using the same endpoint for any other experience in Fabric. For more information, see [connect to data warehousing in Fabric](../../data-warehouse/connectivity.md).
+          Connecting to the SQL analysis endpoint for mirrored data is similar to using the same endpoint for any other item in Fabric. For more information, see [connect to data warehousing in Fabric](../../data-warehouse/connectivity.md).
       - question: |
           How do I join Azure Cosmos DB mirrored data across databases?
         answer: |
           Mirror each Azure Cosmos DB database independently. Then, add one of the SQL analytics endpoints to the other as a mirrored database item. Next, use a SQL `JOIN` query to perform queries across containers in distinct Azure Cosmos DB databases. 
       - question: |
-          How do I join Azure Cosmos DB mirrored data with Azure SQL database or Snowflake data?
+          How do I join Azure Cosmos DB mirrored data with Azure SQL Database or Snowflake data?
         answer: |
-          Mirror the Azure Cosmos DB database. Then, mirror either the Azure SQL database or Snowflake data. Then, add one of the SQL analytics endpoints to the other as a mirrored database item. Now, use a SQL `JOIN` query to perform queries across multiple data services.
+          Mirror the Azure Cosmos DB database. Then, mirror either the Azure SQL Database or Snowflake data. Then, add one of the SQL analytics endpoints to the other as a mirrored database item. Now, use a SQL `JOIN` query to perform queries across multiple data services.
   - name: Replication actions
     questions:
       - question: |

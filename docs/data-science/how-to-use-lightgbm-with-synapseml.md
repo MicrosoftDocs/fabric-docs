@@ -5,15 +5,16 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: mopeakande
-author: JessicaXYWang
-ms.author: jessiwang
-ms.date: 05/08/2023
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: JessicaXYWang
+reviewer: jessiwang
+ms.date: 08/21/2024
 ---
 
 # Use LightGBM models with SynapseML in Microsoft Fabric
 
-The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you'll use LightGBM to build classification, regression, and ranking models.
+The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you use LightGBM to build classification, regression, and ranking models.
 
 LightGBM is an open-source, distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or
 MART) framework. LightGBM is part of Microsoft's
@@ -29,7 +30,7 @@ MART) framework. LightGBM is part of Microsoft's
 
 ## Use `LightGBMClassifier` to train a classification model
 
-In this section, you'll use LightGBM to build a classification model for predicting bankruptcy.
+In this section, you use LightGBM to build a classification model for predicting bankruptcy.
 
 1. Read the dataset.
 
@@ -90,7 +91,7 @@ In this section, you'll use LightGBM to build a classification model for predict
     from synapse.ml.lightgbm import LightGBMClassifier
     
     model = LightGBMClassifier(
-        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True
+        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True, dataTransferMode="bulk"
     )
     ```
 
@@ -146,7 +147,7 @@ In this section, you'll use LightGBM to build a classification model for predict
 
 ## Use `LightGBMRegressor` to train a quantile regression model
 
-In this section, you'll use LightGBM to build a regression model for drug discovery.
+In this section, you use LightGBM to build a regression model for drug discovery.
 
 1. Read the dataset.
 
@@ -176,7 +177,7 @@ In this section, you'll use LightGBM to build a regression model for drug discov
     from synapse.ml.lightgbm import LightGBMRegressor
     
     model = LightGBMRegressor(
-        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31
+        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31, dataTransferMode="bulk"
     ).fit(train)
     ```
 
@@ -202,7 +203,7 @@ In this section, you'll use LightGBM to build a regression model for drug discov
 
 ## Use `LightGBMRanker` to train a ranking model
 
-In this section, you'll use LightGBM to build a ranking model.
+In this section, you use LightGBM to build a ranking model.
 
 1. Read the dataset.
 
@@ -237,6 +238,7 @@ In this section, you'll use LightGBM to build a ranking model.
         numIterations=200,
         evalAt=[1, 3, 5],
         metric="ndcg",
+        dataTransferMode="bulk"
     )
     ```
 

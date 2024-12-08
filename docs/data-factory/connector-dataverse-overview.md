@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 09/25/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -25,7 +25,7 @@ The Dataverse connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Service principal |
-| **Lookup activity** | None | Service principal|
+| **Copy activity (source/destination)** | None <br> On-premises | Organizational account<br> Service principal |
+| **Lookup activity** | None <br> On-premises | Organizational account<br> Service principal|
 
 To learn about the copy activity configuration for Dataverse in data pipelines, go to [Configure Dataverse in a copy activity](connector-dataverse-copy-activity.md).

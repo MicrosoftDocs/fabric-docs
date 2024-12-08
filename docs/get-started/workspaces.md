@@ -1,5 +1,5 @@
 ---
-title: Workspaces
+title: Workspaces in Microsoft Fabric and Power BI
 description: Learn about workspaces, which are collections of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
 author: maggiesMSFT
 ms.author: maggies
@@ -9,12 +9,14 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident, Manage your workspace
-ms.date: 03/26/2024
+#customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
+ms.date: 07/27/2024
+
 ---
 
-# Workspaces
+# Workspaces in Microsoft Fabric and Power BI
 
-*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. This article describes workspaces, how to manage access to them, and what settings are available.
+*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports, and to create task flows. This article describes workspaces, how to manage access to them, and what settings are available.
 
 Ready to get started? Read [Create a workspace](create-workspaces.md).
 
@@ -24,7 +26,9 @@ Ready to get started? Read [Create a workspace](create-workspaces.md).
 
 Here are some useful tips about working with workspaces.
 
+- **Set up a task flow for the workspace** to organize your data project and to help others understand and work on your project. Read more about [task flows](./task-flow-overview.md).
 - **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pin workspaces](create-workspaces.md#pin-workspaces).
+
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](roles-workspaces.md).
 - **Create folders in the workspace**: Organize and manage artifacts in the workspace. Read more about [creating folders in workspaces](workspaces-folders.md).
 - **Navigate to current workspace** from anywhere by selecting the icon on left nav pane. Read more about [current workspace](#current-workspace) in this article.
@@ -34,13 +38,39 @@ Here are some useful tips about working with workspaces.
 
 ## Current workspace
 
-After you select and open to a workspace, this workspace becomes your current workspace. You can quickly navigate to it from anywhere by selecting the workspace icon from left nav pane.
+After you select and open a workspace, this workspace becomes your current workspace. You can quickly navigate to it from anywhere by selecting the workspace icon from left nav pane.
 
-![Screenshot of current workspace in left nav pane.](media/workspaces/current-workspace-icon-left-nav.png)
+:::image type="content" border="true" source="media/workspaces/current-workspace-icon-left-nav.png" alt-text="Screenshot of current workspace in left nav pane.":::
+
+## Workspace layout
+
+A workspace consists of a header, a toolbar, and a view area. There are two views that can appear in the view area: list view and lineage view. You select the view you want to see with controls on the toolbar. The following image shows these main workspace components, with list view selected.
+
+:::image type="content" source="./media/workspaces/workspace-layout.png" alt-text="Screenshot showing the layout of the workspace - header, toolbar, and view area." lightbox="./media/workspaces/workspace-layout.png":::
+
+1. **Header**: The header contains the name and brief description of the workspace, and also links to other functionality. 
+1. **Toolbar**: The toolbar contains controls for adding items to the workspace and uploading files. It also contains a search box, filter, and the list view and lineage view selectors.
+1. **List view and lineage view selectors**: The list view and lineage view selectors enable you to choose which view you want to see in the view area.
+1. **View area**: The view area displays either list view or lineage view.
+
+### List view
+
+List view is divided into the task flow and the items list.
+
+:::image type="content" source="./media/workspaces/workspace-list-view.png" alt-text="Screenshot showing the layout of list view and its controls." lightbox="./media/workspaces/workspace-list-view.png":::
+
+1. **Task flow**: The task flow is where you can create or view a graphical representation of  your data project. The task flow shows the logical flow of the project - it doesn't show the flow of data. Read more about [task flows](./task-flow-overview.md).
+1. **Items list**: The items list is where you see the items and folders in the workspace. If you have tasks in the task flow, you can filter the items list by selecting the tasks.
+1. **Resize bar**: You can resize the task flow and items list by dragging the resize bar up or down.
+1. **Show/Hide task flow**: If you don't want to see the task flow, you can hide it using the hide/show arrows at the side of the separator bar.
+
+### Lineage view
+
+Lineage view shows the flow of data between the items in the workspace. Read more about [lineage view](../governance/lineage.md).
 
 ## Workspace settings
 
-Workspace admins can use workspace settings to manage and update the workspace. The settings include general settings of the workspace, like the basic information of the workspace, contact list, OneDrive, license, Azure connections, storage, and other experiences' specific settings.
+Workspace admins can use workspace settings to manage and update the workspace. The settings include general settings of the workspace, like the basic information of the workspace, contact list, SharePoint, license, Azure connections, storage, and other experiences' specific settings.
 
 To open the workspace settings, you can select the workspace in the nav pane, then select **More options (...)** > **Workspace settings** next to the workspace name.
 
@@ -56,18 +86,18 @@ The Contact list feature allows you to specify which users receive notification 
 
 :::image type="content" source="media/workspaces/contact-list-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
 
-### Microsoft 365 and OneDrive
+### Microsoft 365 and SharePoint
 
-The Workspace OneDrive feature allows you to configure a Microsoft 365 Group whose SharePoint document library is available to workspace users. You create the Group outside of [!INCLUDE [product-name](../includes/product-name.md)] first, with one available method being from OneDrive. Read about creating a [OneDrive shared library](https://support.microsoft.com/office/create-a-new-shared-library-from-onedrive-for-work-or-school-345c8599-05d8-4bf8-9355-2b5cfabe04d0).
+The Workspace SharePoint feature allows you to configure a Microsoft 365 Group whose SharePoint document library is available to workspace users. You create the Group outside of [!INCLUDE [product-name](../includes/product-name.md)] first, with one available method being from SharePoint. Read about creating a [SharePoint shared library](https://support.microsoft.com/office/create-a-new-shared-library-from-onedrive-for-work-or-school-345c8599-05d8-4bf8-9355-2b5cfabe04d0).
 
 > [!NOTE]
-> Creating Microsoft 365 Groups may be restricted in your environment, or the ability to create them from your OneDrive site may be disabled. If this is the case, speak with your IT department.
+> Creating Microsoft 365 Groups may be restricted in your environment, or the ability to create them from your SharePoint site may be disabled. If this is the case, speak with your IT department.
 
 [!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to [give access to the workspace](give-access-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
 
-You can configure OneDrive in workspace settings by typing in the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the OneDrive for the group.
+You can configure SharePoint in workspace settings by typing in the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the SharePoint for the group.
 
-:::image type="content" source="media/workspaces/add-onedrive-info.png" alt-text="Screenshot of adding OneDrive info.":::
+:::image type="content" source="media/workspaces/add-onedrive-info.png" alt-text="Screenshot of adding SharePoint info.":::
 
 ### License mode
 
@@ -129,7 +159,7 @@ Read more about [[!INCLUDE [product-name](../includes/product-name.md)] auditing
 
 Limitations to be aware of:
 
-- Workspaces can contain a maximum of 1,000 semantic models, or 1,000 reports per semantic model.
+- Workspaces can contain a maximum of 1,000 Fabric and Power BI items.
 - Certain special characters aren't supported in workspace names when using an XMLA endpoint. As a workaround, use URL encoding of special characters, for example, for a forward slash **/**, use **%2F**.
 - A user or a [service principal](/power-bi/enterprise/service-premium-service-principal) can be a member of up to 1,000 workspaces.
 

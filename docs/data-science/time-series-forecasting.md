@@ -1,9 +1,10 @@
 ---
 title: Train and evaluate a time series forecasting model
 description: This is an AI sample for training and evaluating a time series forecasting model; we develop a program to forecast time series data that has seasonal cycles.
-ms.reviewer: franksolomon
-ms.author: narsam
-author: narmeens
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: amjafari
+reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -17,12 +18,14 @@ In this notebook, we build a program to forecast time series data that has seaso
 
 ## Prerequisites
 
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
 * Familiarity with [Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md).
 * A lakehouse to store data for this example. For more information, see [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Follow along in a notebook
 
-You can follow along in a notebook one of two ways: 
+You can follow along in a notebook one of two ways:
 
 - Open and run the built-in notebook in the Synapse Data Science experience.
 - Upload your notebook from GitHub to the Synapse Data Science experience.
@@ -205,7 +208,7 @@ from pyspark.sql.types import *
 
 **Cast the sales data from string to integer**
 
-Use regular expressions to separate the numeric portion of the string from the dollar sign (for example, in the string "\$300,000", split "$" and "300,000"), and then cast the numeric portion as an integer.
+Use regular expressions to separate the numeric portion of the string from the dollar sign (for example, in the string `$300,000`, split `$` and `300,000`), and then cast the numeric portion as an integer.
 
 **Next, filter the data to only include instances that meet all of these conditions:**
 

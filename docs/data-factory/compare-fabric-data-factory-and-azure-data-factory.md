@@ -27,10 +27,10 @@ In the modern experience of Data Factory in Fabric, there are some different fea
 |Activities |Activities|We are in progress to make more activities of ADF supported in Data Factory in Fabric. Data Factory in Fabric also has some newly attracted activities like Office 365 Outlook activity. Details are in [Activity overview](activity-overview.md).|
 |Dataset |Not Applicable|Data Factory in Fabric doesn’t have dataset concepts. Connection will be used for connecting each data source and pull data. |
 |Linked Service |Connections |Connections have similar functionality as linked service, but connections in Fabric have more intuitive way to create. |
-|Triggers |Schedules (other triggers are in progress) |Fabric can use the schedule to automatically run pipeline. We are adding more triggers supported by ADF in Microsoft Fabric.  |
+|Triggers |Schedule triggers and file event triggers |Fabric can use the scheduler and Reflex events to automatically run pipelines. File event triggers are supported natively in pipelines in Microsoft Fabric Data Factory.  |
 |Publish |Save, Run |For pipeline in Fabric, you don’t need to publish to save the content. Instead, you can use Save button to save the content directly. When you click Run button, it will save the content before running pipeline. |
 |Autoresolve and Azure Integration runtime |Not Applicable |In Fabric, we don’t have the concept of Integration runtime. |
-|Self-hosted integration runtimes |On-premises Data Gateway(in design) |The capability in Fabric is still in progress of design. |
+|Self-hosted integration runtimes |On-premises Data Gateway |On-premises Data Gateway enables access to on-premises data via the Fabric Data Factory. Details are in [How to access on-premises data sources in Data Factory for Microsoft Fabric](how-to-access-on-premises-data.md). |
 |Azure-SSIS integration runtimes |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design. |
 |MVNet and Private End Point |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design.|
 |Expression language |Expression language |Expression language is similar in ADF and Fabric. |
@@ -71,7 +71,7 @@ With the combined capabilities of the monitoring hub and the items of Data Facto
 
 :::image type="content" source="./media/connector-differences/monitoring-hub.png" alt-text="Screenshot showing the monitoring hub and the items of Data Factory.":::
 
-The pipeline copy monitoring results provides breakdown detail of copy activity. By selecting the run details button (with the **glasses icon** highlighted) to view the run details. Expand the **Duration breakdown**, you can know the time duration of each stage in copy activity.
+The pipeline copy monitoring results provide breakdown detail of the Copy activity. By selecting the run details button (with the **glasses icon** highlighted) to view the run details. Expand the **Duration breakdown**, you can know the time duration of each stage in copy activity.
 
 :::image type="content" source="./media/connector-differences/details-of-copy-activity.png" alt-text="Screenshot showing the pipeline copy monitoring results provides breakdown detail of copy activity.":::
 
