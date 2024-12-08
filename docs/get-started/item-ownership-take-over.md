@@ -5,36 +5,45 @@ ms.reviewer: sakjai
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 11/20/2024
+ms.date: 12/08/2024
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.
 ---
 # Take ownership of Fabric items
 
-The Take Over feature allows users with write permissions on an item (including Admin, Members, Contributors and anyone who receives write permissions through sharing) to take ownership of Fabric items in a workspace, through the item settings UI. 
+When a user leaves the organization, or if their credentials become disabled for some reason, it's possible that any Fabric items they own will stop working correctly. In such cases, anyone with read and write permissions on such an item (such as workspace admins, members, and contributors) can take ownership of the item, using the procedure described in this article.
 
-This feature is useful in a situation where the item stops working due to the original item owner no longer being present in the company or their credentials becoming inactive.
+When a user takes over ownership of an item using this procedure, they also become the owner of any child items the item might have.
 
 > [!NOTE]
-> Power BI items already have functionality to change ownership.
+> This article describes the procedure for taking ownership of Fabric items. Power BI items have their own functionality for changing item ownership.
 
-## Steps to Take ownership of a Fabric item
+## Prerequisites
 
-This feature allows users to set themselves as the owner for an item and its child items. This means all items in the parent child hierarchy will have the same owner.
+To take over ownership of a Fabric item, you must have read and write permissions on the item.
 
-1. Navigate to Item Settings for the Fabric Item. 
-1. In the About tab, click Take over.
-1. If the operation is successful, the message bar will indicate that.
-1. If the operation failed either due to parent item ownership failure or child item ownership failure, you would need to retry Take over. 
+## Steps to take ownership of a Fabric item
 
-   | **States** | **Next step** | **Error message** |
+To take ownership of a Fabric item:
+
+1. Navigate to the item's settings.
+
+1. In the **About** tab, select **Take over**.
+
+1. A message bar indicates whether the take over was successful. , a message bar will indicate that.
+
+   If the take over fails, due to either parent item ownership failure or child item ownership failure, select **Take over** again.
+
+   | **Operation result** | **Error message** | **Next step** |
    |---|---|---|
-   | **Success** | None | Successfully took over the item. |
-   | **Partial Failure** | Retry Take over of parent item | Can't Take over child items. Try again. |
-   | **Complete Failure** | Retry Take over of parent item | Can't Take over [ItemName]. Try again. |
+   | **Success** | Successfully took over the item. | None. |
+   | **Partial Failure** | Can't take over child items. Try again. | Retry take over of parent item. |
+   | **Complete Failure** | Can't Take over \<ItemName\>. Try again. | Retry Take over of parent item. |
 
-**Note1:** Data Pipeline Item requires an additional step of ensuring the Last Modified By user is also updated after taking item ownership. You can make a small update in the Pipeline (e.g. Activity name), to achieve this.<br>
+> [!NOTE]
+> Data Pipeline items require the additional step of ensuring that the **Last Modified By** user is also updated after taking item ownership. You can make a small update in the pipeline (e.g. Activity name), to achieve this.
 
-**Note2:** This feature does not cover ownership change of related items. For instance, if a Data pipeline has Notebook activity, the ownership change of Data Pipeline does not change the ownership of the Notebook. Ownership of related items needs to be changed separately.
+> [!IMPORTANT]
+> The take over feature does not cover ownership change of related items. For instance, if a data pipeline has notebook activity, changing ownership of the data pipeline doesn't change the ownership of the notebook. Ownership of related items needs to be changed separately.
 
 ## Connections after Fabric item ownership change
 
