@@ -21,6 +21,8 @@ In this part of the tutorial, you learn how to use an update policy to transform
 
 In this step, you move the raw data table into a Bronze folder to organize the data in the KQL database.
 
+1. Browse to the KQL database you created in a previous step, named *Tutorial*.
+1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
 1. Copy/paste the following command to alter table to move table into a Bronze folder.
 
     ```kusto
@@ -31,8 +33,6 @@ In this step, you move the raw data table into a Bronze folder to organize the d
 
 In this step, you create a target table that will be used to store the data that is transformed with the update policy.
 
-1. Browse to the KQL database you created in a previous step, named *Tutorial*.
-1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
 1. Copy/paste the following command to create a new table called **TransformedData** with a specified schema.
 
     ```kusto
