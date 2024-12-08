@@ -49,7 +49,7 @@ To take ownership of a Fabric item:
 
 Some connections that use the previous item owner's credentials might stop working if the new item owner doesn't have access to the connection. In such cases, you might see a warning message.
 
-In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. Shortcuts can be fixed by going into the **Shortcuts**"** tab in item settings and replacing the details of the connection used. The steps for this procedure in common item types are described in the following sections.
+In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. Shortcuts can be fixed by going into the **Shortcuts** tab in item settings and replacing the details of the connection used. The steps for this procedure in common item types are described in the following sections.
 
 ### KQL Queryset
 
@@ -77,7 +77,7 @@ In this scenario, the new item owner can fix connections by going into the item 
 
 1. Select the activity created.
 
-1. Replace the connection in source and/or destination with the appropriate connection.
+1. Replace the connection in the source and/or destination with the appropriate connection.
 
    :::image type="content" source="./media/item-ownership-take-over/data-pipeline-replace-connection.png" alt-text="Screenshot showing how to add the appropriate connection in a pipeline.":::
 
@@ -103,4 +103,4 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
-* There is no API support for changing ownership of Fabric items that support the take over feature. Any existing API functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses continues to be available.
+* There is no API support for changing ownership of Fabric items that support the take over feature. This does not impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses, which continues to be available.
