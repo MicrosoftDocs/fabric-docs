@@ -35,7 +35,7 @@ This table lists regions where all Fabric workloads are available.
 | Canada Central    | West Europe         |             |                    | Australia Southeast |
 | Canada East       | France Central      |             |                    | Central India       |
 | Central US        | Germany West Central|             |                    | East Asia           |
-| East US           | Italy North         |             |                    | Japan East\         |
+| East US           | Italy North         |             |                    | Japan East          |
 | East US 2         | Norway East         |             |                    | Korea Central       |
 | North Central US  | Poland Central      |             |                    | Southeast Asia      |
 | South Central US  | Sweden Central      |             |                    | South India         |
@@ -61,38 +61,38 @@ This table lists regions where public preview features are available, according 
 
 | Region | Copilot for Dataflows | Copilot for Exploration | Copilot for Synapse Notebook | Graph QL | Healthcare Solutions | Retail Solutions | Sustainability Solutions |
 |:-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Australia East | &#x274C; |  | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| Australia Southeast | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| Brazil South | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| Canada Central | &#x274C; |  | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| Canada East |  |  | &#x274C; |  | &#x274C; |  |  |
-| Central India | &#x274C; |  | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
+| Australia East | &#x2705; |  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| Australia Southeast | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| Brazil South | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| Canada Central | &#x2705; |  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| Canada East |  |  | &#x2705; |  | &#x2705; |  |  |
+| Central India | &#x2705; |  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | Central US |  |  |  |  |  |  |  |
-| East Asia |  |  | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| East US | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| East US2 | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| France Central | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |  | &#x274C; |
-| Germany West Central | &#x274C; |  | &#x274C; |  | &#x274C; |  | &#x274C; |
+| East Asia |  |  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| East US | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| East US2 | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| France Central | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |  | &#x2705; |
+| Germany West Central | &#x2705; |  | &#x2705; |  | &#x2705; |  | &#x2705; |
 | Italy North |  |  |  |  |  |  |  |
-| Japan East | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |  |
-| Korea Central | &#x274C; |  | &#x274C; |  | &#x274C; |  |  |
-| North Central US | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| North Europe | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| Norway East |  |  |  |  | &#x274C; |  | &#x274C; |
-| Poland Central |  |  |  |  |  |  | &#x274C; |
-| South Africa North |  |  | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
+| Japan East | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |  |
+| Korea Central | &#x2705; |  | &#x2705; |  | &#x2705; |  |  |
+| North Central US | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| North Europe | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| Norway East |  |  |  |  | &#x2705; |  | &#x2705; |
+| Poland Central |  |  |  |  |  |  | &#x2705; |
+| South Africa North |  |  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | South Africa West |  |  |  |  |  |  |  |
-| South Central US | &#x274C; | &#x274C; | &#x274C; | &#x274C; |  | &#x274C; | &#x274C; |
-| Southeast Asia | &#x274C; |  | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| South India | &#x274C; | &#x274C; |  |  |  |  |  |
-| Sweden Central |  |  | &#x274C; |  | &#x274C; |  | &#x274C; |
-| Switzerland North |  |  | &#x274C; | &#x274C; | &#x274C; |  | &#x274C; |
+| South Central US | &#x2705; | &#x2705; | &#x2705; | &#x2705; |  | &#x2705; | &#x2705; |
+| Southeast Asia | &#x2705; |  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| South India | &#x2705; | &#x2705; |  |  |  |  |  |
+| Sweden Central |  |  | &#x2705; |  | &#x2705; |  | &#x2705; |
+| Switzerland North |  |  | &#x2705; | &#x2705; | &#x2705; |  | &#x2705; |
 | Switzerland West |  |  |  |  |  |  |  |
-| UAE North | &#x274C; | &#x274C; | &#x274C; |  | &#x274C; |  | &#x274C; |
-| West Europe | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| West US | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| West US2 | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| West US3 | &#x274C; |  | &#x274C; |  | &#x274C; | &#x274C; | &#x274C; |
+| UAE North | &#x2705; | &#x2705; | &#x2705; |  | &#x2705; |  | &#x2705; |
+| West Europe | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| West US | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| West US2 | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| West US3 | &#x2705; |  | &#x2705; |  | &#x2705; | &#x2705; | &#x2705; |
 
 ## Related content
 
