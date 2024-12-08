@@ -4,7 +4,7 @@ description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 11/07/2024
+ms.date: 12/04/2024
 ms.topic: overview
 ms.custom:
   - ignite-2024
@@ -14,11 +14,15 @@ ms.search.form: product-databases
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allow you to easily create your operational database in Fabric. A SQL database in Fabric uses the same SQL Database Engine as Azure SQL Database.
+SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allows you to easily create your operational database in Fabric. A SQL database in Fabric uses the same SQL Database Engine as Azure SQL Database.
+
+To learn more about SQL database in Fabric, watch a Data Exposed episode introducing on the [SQL database in Microsoft Fabric public preview](/shows/data-exposed/announcing-sql-database-in-microsoft-fabric-public-preview-data-exposed).
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=data-exposed&ep=announcing-sql-database-in-microsoft-fabric-public-preview-data-exposed]
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-To get started, see the tutorial to [Create a SQL database in the Fabric portal](create.md).
+To get started with a full walkthrough, see the tutorial to [Create a SQL database in the Fabric portal](create.md). If you want help with a particular task, visit the [Get started](connect.md) section.
 
 SQL database in Fabric is:
 

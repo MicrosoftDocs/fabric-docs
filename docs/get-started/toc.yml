@@ -98,11 +98,11 @@ items:
   - name: Copilot for Data Science and Data Engineering
     items:
     - name: Copilot for Data Science and Data Engineering
-      href: copilot-notebooks-overview.md
-    - name: Overview of Chat-magics in Notebooks
-      href: copilot-notebooks-chat-magics.md
-    - name: Use the Copilot chat panel
-      href: copilot-notebooks-chat-pane.md
+      href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/get-started/toc.json&bc=/fabric/get-started/toc.json
+    - name: Overview of Chat-magics in Notebooks (preview)
+      href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/get-started/toc.json&bc=/fabric/get-started/toc.json
+    - name: Use the Copilot chat panel (preview)
+      href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/get-started/toc.json&bc=/fabric/get-started/toc.json
   - name: Copilot for Data Warehouse
     href: ../data-warehouse/copilot.md
   - name: Copilot for Real-Time Intelligence
@@ -179,6 +179,18 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Creation failure for Copy job item in empty workspace
+      href: known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
+    - name: Create Gateway public API doesn't work for service principals
+      href: known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md
+    - name: Create, configure, or delete a mirror fails
+      href: known-issues/known-issue-954-create-configure-delete-mirror-fails.md
+    - name: Incorrect column names after column format or aggregation change
+      href: known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md
+    - name: Power BI Copilot can excessively retry in rare error scenarios
+      href: known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md
+    - name: Metrics app timepoint details missing for new P2 capacities
+      href: known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md
     - name: Intermittent failures on deployment of Sustainability solution
       href: known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
     - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work
@@ -497,10 +509,6 @@ items:
       href: known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md
     - name: Dataflow REST API returns more data sources and gateways than expected
       href: known-issues/known-issue-526-dataflow-rest-api-returns-more-data-sources-gateways.md
-    - name: A scheduled refresh of a semantic model intermittently hangs when connected to a dataflow
-      href: known-issues/known-issue-461-scheduled-refresh-dataset-hangs.md   
-    - name: Search strings with Japanese symbols don't return content in search results
-      href: known-issues/known-issue-222-search-strings-japanese-symbols-dont-work.md      
 - name: Resources
   items:
     - name: Icons
