@@ -7,6 +7,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 09/22/2024
 ---
 
@@ -90,4 +91,3 @@ Users that don't have Microsoft Fabric enabled, can:
 ## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
-* [Enable Data Activator](data-activator-switch.md)

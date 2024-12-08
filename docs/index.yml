@@ -11,6 +11,7 @@ metadata:
   ms.custom:
     - ignite-2023
     - build-2024
+    - ignite-2024
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
@@ -76,28 +77,28 @@ productDirectory:
       summary: Store all your organization's data in OneLake, a single, unified, logical data lake.
       url: onelake/index.yml
     # Card
-    - title: Industry Solutions
-      imageSrc: ./media/industry-solutions-icon.svg 
-      summary: Manage data, analyze, and make decisions with Industry-specific solutions such as retail, sustainability, healthcare, and manufacturing.
-      url: /industry/industry-data-solutions-fabric
+    - title: Databases
+      imageSrc: ./media/databases-icon.svg 
+      summary: Create operational SQL databases seamlessly for transactional workloads.
+      url: database/index.yml
     # Card
     - title: Real-Time Intelligence
-      imageSrc: ./media/synapse-real-time-intelligence-icon.png
-      summary: Discover insights from your streaming data. Ingest, index, and partition any data source or format, then query the data and create visualizations.
+      imageSrc: ./media/fabric-real-time-intelligence-icon.png
+      summary: Discover insights from your streaming data. Quickly ingest, query, create visualizations, and take actions on changes in your data.
       url: real-time-intelligence/index.yml
     # Card
-    - title: Synapse Data Engineering
-      imageSrc: ./media/synapse-data-engineering-icon.png
+    - title: Fabric Data Engineering
+      imageSrc: ./media/fabric-data-engineering-icon.png
       summary: Build, transform, and share your data estate using lakehouses, notebooks, and Spark environments.
       url: data-engineering/index.yml
     # Card
-    - title: Synapse Data Science
-      imageSrc: ./media/synapse-data-science-icon.png
+    - title: Fabric Data Science
+      imageSrc: ./media/fabric-data-science-icon.png
       summary: Unlock powerful insights using AI and machine learning technology.
       url: data-science/index.yml
     # Card
-    - title: Synapse Data Warehouse
-      imageSrc: ./media/synapse-data-warehouse-icon.png
+    - title: Fabric Data Warehouse
+      imageSrc: ./media/fabric-data-warehouse-icon.png
       summary: Analyze data in a secure SQL warehouse for greater scale and performance in an open data format.
       url: data-warehouse/index.yml
 
@@ -153,7 +154,7 @@ conceptualContent:
             text: Copy Activity, Dataflow, or Spark Guide
           - url: get-started/decision-guide-lakehouse-warehouse.md
             itemType: concept
-            text: Warehouse Vs Lakehouse
+            text: Warehouse and Lakehouse
           footerLink:
             url: get-started/index.yml
             text: See more
@@ -190,24 +191,30 @@ conceptualContent:
           - url: real-time-intelligence/get-data-local-file.md
             itemType: how-to-guide
             text: Get data into KQL database
+          - url: real-time-intelligence/event-streams/add-manage-eventstream-sources.md
+            itemType: how-to-guide
+            text: Get data with eventstreams
+          - url: real-time-hub/supported-sources.md
+            itemType: how-to-guide
+            text: Get data with Real-Time hub          
           footerLink:
-            url: data-activator/data-activator-get-data-power-bi.md
+            url: onelake/create-onelake-shortcut.md
             text: See more
         # Card
         - title: Store data
           links:
           - url: real-time-intelligence/eventhouse.md
             itemType: concept
-            text: Eventhouse
+            text: Store data in an Eventhouse
+          - url: data-engineering/lakehouse-overview.md
+            itemType: concept
+            text: Store data in a lakehouse
           - url: /power-bi/connect-data/service-datasets-understand
             itemType: concept
             text: Semantic models
           - url: /power-bi/transform-model/datamarts/datamarts-overview
             itemType: concept
             text: Datamarts
-          - url: data-engineering/lakehouse-overview.md
-            itemType: concept
-            text: Lakehouse
           footerLink:
             url: data-warehouse/data-warehousing.md
             text: See more
@@ -216,19 +223,22 @@ conceptualContent:
           links:
           - url: data-engineering/tutorial-lakehouse-data-preparation.md
             itemType: tutorial
-            text: Transform data in the lakehouse
+            text: Transform data in a lakehouse
           - url: real-time-intelligence/kusto-query-set.md
             itemType: how-to-guide
             text: Transform data in a KQL queryset
           - url: data-science/tutorial-data-science-explore-notebook.md
             itemType: tutorial
-            text: Transform data with Data Wrangler
+            text: Transform data in a notebook using Data Wrangler
           - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
-            text: Transform data in the warehouse
+            text: Transform data in a warehouse
           - url: get-started/copilot-notebooks-overview.md
             itemType: overview
-            text: transform data with copilot for notebooks
+            text: Transform data with Copilot for notebooks
+          - url: real-time-intelligence/event-streams/process-events-using-event-processor-editor.md
+            itemType: overview
+            text: Transform data with eventstreams
           footerLink:
             url: real-time-intelligence/event-streams/overview.md
             text: See more
@@ -237,10 +247,10 @@ conceptualContent:
           links:
           - url: /power-bi/paginated-reports/paginated-reports-report-builder-power-bi
             itemType: overview
-            text: Paginated reports
+            text: Visualize with paginated reports
           - url: real-time-intelligence/dashboard-real-time-create.md
             itemType: how-to-guide
-            text: Real-time dashboards
+            text: Visualize using real-time dashboards
           - url: data-engineering/notebook-visualization.md
             itemType: how-to-guide
             text: Notebook visualization
@@ -249,7 +259,7 @@ conceptualContent:
             text: Use AutoML and tune visualizations
           - url: /power-bi/create-reports/copilot-create-report-service
             itemType: how-to-guide
-            text: Create reports with copilot
+            text: Create reports with Copilot
           footerLink:
             url: real-time-intelligence/create-powerbi-report.md
             text: See more
@@ -272,11 +282,11 @@ conceptualContent:
             url: data-science/machine-learning-model.md
             text: See more
         # Card
-        - title: Use AI capabilities and get insights with copilot
+        - title: Use AI capabilities and get insights with Copilot
           links:
           - url: get-started/copilot-fabric-overview.md
             itemType: concept
-            text: Overview of copilot in Fabric
+            text: Overview of Copilot in Fabric
           - url: get-started/copilot-privacy-security.md
             itemType: concept
             text: Copilot privacy, security, and responsible use
@@ -407,8 +417,8 @@ conceptualContent:
               url: cicd/partners/partner-integration.md
               text: See more
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
-      summary: Learn about Fabric, access training materials and learning paths, stay updated with the blog, engage in forums, contribute to product ideas, join user groups, and explore the MVP program. # < 160 chars (Optional; Remove if not applicable.)
-      items:
+      summary: Discover Fabric, access training materials, learning paths. Stay updated with the blog, engage in forums, contribute ideas, join user groups, and explore the MVP program. # < 160 chars (Optional; Remove if not applicable.)
+      items: 
         # Card
         - title: Learning
           links:

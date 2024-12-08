@@ -4,7 +4,7 @@ description: A known issue is posted where the relationships in the default sema
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 01/08/2024
+ms.date: 11/11/2024
 ms.custom: known-issue-592
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-592
 
 You see that some relationships no longer exist in the default semantic model.  Earlier, the structure of the underlying table changed, such as adding or removing a column.  The change leads to the table being recreated in the SQL analytics endpoint, which could potentially disrupt and drop the existing relationships in the default semantic model.
 
-**Status:** Open
+**Status:** Fixed: November 11, 2024
 
 **Product Experience:** Data Warehouse
 

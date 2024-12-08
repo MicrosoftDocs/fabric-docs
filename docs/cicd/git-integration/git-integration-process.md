@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 07/28/2024
+ms.date: 10/29/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -21,7 +21,7 @@ This article explains basic Git concepts and the process of integrating Git with
 ## Permissions
 
 - In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview). This restriction doesn't apply to GitHub.
+- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations). This restriction doesn't apply to GitHub.
 - The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
 
 ### Required Git permissions for popular actions
@@ -199,7 +199,8 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 - **Actions you can take on the current branch**:
 
   - [*Branch out to new workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (any role): Creates a new workspace and new branch based on the last commit of the branch connected to the current workspace. It connects to the new workspace and new branch.
-  - *Check out a new branch* (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
+  - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
+  - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
   :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 

@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 10/15/2024
+ms.date: 11/03/2024
 ---
 
 # Operation list
@@ -259,6 +259,7 @@ The following operations are available in the audit logs.
 | Download Notebook Resource | DownloadNotebookResource | Delete resources in notebook.  |
 | Download Spark App Log | DownloadSparkAppLog |   |
 | Downloaded Power BI report | DownloadReport |   |
+| Downloaded Exported Power BI artifact file | ExportArtifactDownload | An export of the .pptx or .pdf file is complete |
 | Drop Lakehouse File | DropLakehouseFile |  |
 | Drop Lakehouse Folder | DropLakehouseFolder |  |
 | Drop Lakehouse Table | DropLakehouseTable |  |
@@ -437,7 +438,6 @@ The following operations are available in the audit logs.
 | Move items into subfolder | MoveItemsIntoSubfolder |   |
 | No Activity | NoActivity |   |
 | Opt In For P P U Trial | OptInForPPUTrial |   |
-| Optimize Lakehouse Table | OptimizeLakehouseTable |   |
 | Override Sjd Spark Settings | OverrideSjdSparkSettings |   |
 | Patch Gateway Cluster | PatchGatewayCluster |   |
 | Patch Goal Value Categories | PatchGoalValueCategories |   |
@@ -735,7 +735,6 @@ The following operations are available in the audit logs.
 | Upsert Warehouse Parameters | UpsertWarehouseParameters |  |
 | Upsert mounted warehouse parameters | UpsertMountedWarehouseParameters | Generated when mounted warehouse parameters are added or updated |
 | Used Power BI to explore data in an external application | ExploreDataExternally | Someone used Power BI to explore their data in an external application. |
-| Vacuum Lakehouse Table | VacuumLakehouseTable |  |
 | View Datamart | ViewDatamart |  |
 | View Spark App Input Output | ViewSparkAppInputOutput |  |
 | View Spark App Log | ViewSparkAppLog |  |

@@ -4,7 +4,7 @@ description: A known issue is posted where OneLake BCDR write transactions aren'
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/17/2024
+ms.date: 12/5/2024
 ms.custom: known-issue-846
 ---
 
@@ -22,7 +22,7 @@ You see under-billing of write transactions since you're billed at the non-BCDR 
 
 ## Solutions and workarounds
 
-No workarounds at this time. This article will be updated when the fix is released.
+We fixed the issue, and all BCDR operations via Redirect are now correctly labeled as BCDR. Because BCDR Write operations consume more compute units (CUs) compared to non-BCDR Writes, you see BCDR Write operations marked as nonbillable in the Microsoft Fabric Capacity Metrics app until January 2025. In January 2025, OneLake BCDR Write operations via Redirect become billable and start consuming the CUs.
 
 ## Next steps
 
