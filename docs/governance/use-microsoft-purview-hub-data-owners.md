@@ -56,8 +56,8 @@ The report contains the following pages:
 * **Items page**: Insights about the distribution of your Fabric items and their endorsement status.
 
 > [!NOTE]
-> * The full Purview hub report and its associated dataset are generated in your *My Workspace* the first time you open the Purview hub.
-> * The first time you open the Purview hub, it may take a few moments for the report and dataset to be generated.
+> * The full Purview hub report and its associated semantic model are generated in your *My Workspace* the first time you open the Purview hub.
+> * The first time you open the Purview hub, it may take a few moments for the report and semantic model to be generated.
 > * You can create new reports based on the semantic model, and you can also edit the report and/or semantic model directly. However, periodically the report and semantic model are automatically regenerated, and any changes you have made will be lost.
 
 ## Access Purview capabilities

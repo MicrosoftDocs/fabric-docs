@@ -6,7 +6,7 @@ ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 12/05/2024
+ms.date: 12/08/2024
 ---
 
 # The Microsoft Purview hub for administrators (preview)
@@ -102,9 +102,9 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 
 ## Considerations and limitations
 
-* The Purview hub report and its associated dataset are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
-* The first time the report and dataset are generated, it might take some time for them to appear.
-* Fabric admins can create new reports based on the dataset, but they can't edit the report or dataset directly.
+* The Purview hub report and its associated semantic model are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
+* The first time the report and semantic model are generated, it might take some time for them to appear.
+* Fabric admins can create new reports based on the semantic model, but they can't edit the report or semantic model directly.
 
 ## Related content
 
