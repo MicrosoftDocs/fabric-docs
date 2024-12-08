@@ -28,10 +28,10 @@ The UI tenant settings only affect the Power BI service. If you want these setti
 These settings allow you to control the following actions for Power BI visuals in your organization:
 
 * [Allow visuals created using the Power BI SDK](#visuals-from-appsource-or-a-file)
-* [Allow access to certified Power BI visuals only](#certified-power-bi-visuals)
-* [Allow downloads from custom visuals onto your storage device](#export-data-to-file)
-* [Allow custom visuals to store data on the user's local machine](#local-storage)
-* [Obtain Microsoft Entra access token](#appsource-custom-visuals-sso)
+* [Add and use certified Power BI visuals only](#certified-power-bi-visuals)
+* [Allow downloads from custom visuals](#export-data-to-file)
+* [AppSource Custom Visuals SSO](#appsource-custom-visuals-sso)
+* [Allow access to the browser's local storage](#local-storage)
 
 ### Visuals from AppSource or a file
 
