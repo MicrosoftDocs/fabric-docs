@@ -33,11 +33,11 @@ To take ownership of a Fabric item:
 
    If the take over fails, due to either parent item ownership failure or child item ownership failure, select **Take over** again.
 
-   | **Operation result** | **Error message** | **Next step** |
+   | **Operation status** | **Error message** | **Next step** |
    |---|---|---|
    | **Success** | Successfully took over the item. | None. |
    | **Partial Failure** | Can't take over child items. Try again. | Retry take over of parent item. |
-   | **Complete Failure** | Can't Take over \<ItemName\>. Try again. | Retry Take over of parent item. |
+   | **Complete Failure** | Can't rake over \<ItemName\>. Try again. | Retry take over of parent item. |
 
 > [!NOTE]
 > Data Pipeline items require the additional step of ensuring that the **Last Modified By** user is also updated after taking item ownership. You can make a small update in the pipeline (e.g. Activity name), to achieve this.
