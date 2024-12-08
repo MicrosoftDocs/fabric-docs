@@ -1,11 +1,13 @@
 ---
 title: Eventstream REST API
-description: Learn how to call APIs to create and manage an Eventstream item in Fabric workspace. 
+description: Learn how to call APIs to create and manage an Eventstream item in Fabric workspace.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 10/30/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/22/2024
 ms.search.form: Eventstream REST API
 ---
 
@@ -43,11 +45,11 @@ To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabr
 
 ### Option 1: Get token using MSAL.NET
 
-Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
+If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
 
 ### Option 2: Get token using the Fabric Portal
 
-Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
+You can use your Azure AD token to authenticate and test the Fabric APIs. Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
 
 ```
 powerBIAccessToken

@@ -24,7 +24,7 @@ items:
       href: tutorial-4-create-dashboard.md
     - name: 5- Create a Power BI report
       href: tutorial-5-power-bi-report.md
-    - name: 6- Set an alert on your event stream
+    - name: 6- Set an alert on your eventstream
       href: tutorial-6-set-alert.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
@@ -44,11 +44,13 @@ items:
     href: user-flow-6.md
 - name: Get data
   items:
-  - name: Get, process, and route data in Event Streams
+  - name: Get, process, and route data in eventstreams
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: Event streams capacity consumption
+    - name: What's new in Fabric event streams?
+      href: event-streams/whats-new.md
+    - name: Eventstreams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Create eventstreams
       items:
@@ -100,6 +102,10 @@ items:
         href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
       - name: Fabric Workspace Item events
         href: event-streams/add-source-fabric-workspace.md
+      - name: Fabric OneLake events
+        href: event-streams/add-source-fabric-onelake.md
+      - name: Fabric Job events
+        href: event-streams/add-source-fabric-job.md
       - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
     - name: Add destinations to eventstreams
@@ -348,7 +354,7 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
-- name: Respond to data
+- name: Create alerts and actions
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
@@ -356,7 +362,7 @@ items:
     href: data-activator/activator-basic-concepts.md
   - name: Get started with Activator
     href: data-activator/activator-get-started.md
-  - name: Get data
+  - name: Get data for Activator
     items:
     - name: Get data from Power BI
       href: data-activator/activator-get-data-power-bi.md
@@ -364,11 +370,11 @@ items:
       href: data-activator/activator-get-data-eventstreams.md
     - name: Get data from Real-Time Hub
       href: data-activator/activator-get-data-real-time-hub.md
-  - name: Create objects and triggers
+  - name: Create Activator objects and rules
     items:
     - name: Assign data to objects
       href: data-activator/activator-assign-data-objects.md
-    - name: Create triggers
+    - name: Create rules
       href: data-activator/activator-create-activators.md
     - name: Trigger Fabric items
       href: data-activator/activator-trigger-fabric-items.md
@@ -384,7 +390,7 @@ items:
       href: data-activator/activator-latency.md
     - name: Activator limitations
       href: data-activator/activator-limitations.md
-    - name: Capacity usage
+    - name: Activator capacity usage
       href: data-activator/activator-capacity-usage.md
       displayName: capacity, usage, consumption, billing
     - name: Troubleshoot errors

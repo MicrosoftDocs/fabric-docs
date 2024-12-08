@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: yoleichen, sukkaur
 ms.date: 11/04/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ---
 # Copilot for SQL database in Microsoft Fabric (preview)
 
@@ -70,7 +72,7 @@ Here are the current limitations of Copilot for SQL database:
 - Copilot might produce inaccurate results when the intent is to evaluate data. Copilot only has access to the database schema, none of the data inside.
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
 - People who are able to meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
-- Copilot for SQL database in Fabric is not currently available if Private Link is enabled and Public Access is turned off in the tenant setting.
+<!-- - Copilot for SQL database in Fabric is not currently available if Private Link is enabled and Public Access is turned off in the tenant setting. -->
 
 ## Related content
 

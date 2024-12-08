@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
 ms.date: 11/15/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ---
 # Limitations in SQL database in Microsoft Fabric (preview)
 
@@ -40,6 +42,12 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 ### SQL analytics endpoint limitations  
 
 - The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
+
+## Availability
+
+SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+
+Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
 
 ## Limitations
 

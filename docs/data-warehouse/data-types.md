@@ -4,8 +4,10 @@ description: Learn about the T-SQL data types supported the SQL analytics endpoi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 09/24/2024
+ms.date: 12/02/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Data types in Microsoft Fabric
@@ -35,7 +37,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 
 \*\* The **uniqueidentifier** data type is a T-SQL data type without a matching data type in Delta Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading **uniqueidentifier** columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading **uniqueidentifier** values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a **uniqueidentifier** column don't work as expected.
 
-\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview.
+\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview for the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The **varchar(max)** data type is not supported in the [!INCLUDE [fabric-dw](includes/fabric-se.md)].
 
 For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric).
 
@@ -76,7 +78,7 @@ The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric
 | **TIMESTAMP** | **[datetime2](/sql/t-sql/data-types/datetime2-transact-sql?view=fabric&preserve-view=true)** |
 | **CHAR**(n) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(n) with `Latin1_General_100_BIN2_UTF8` collation |
 | **STRING**, **VARCHAR**(n) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(n) with `Latin1_General_100_BIN2_UTF8` collation |
-| **STRING**, **VARCHAR**(MAX) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(MAX) with `Latin1_General_100_BIN2_UTF8` collation |
+| **STRING**, **VARCHAR**(8000) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(8000) with `Latin1_General_100_BIN2_UTF8` collation |
 | **BINARY** | **[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql?view=fabric&preserve-view=true)**(n) |
 | **DECIMAL**, **DEC**, **NUMERIC** | **[decimal](/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=fabric&preserve-view=true)**(p,s) |
 

@@ -11,6 +11,7 @@ ms.custom:
   - build-2024
   - build-2024-dataai
   - build-2024-fabric
+  - ignite-2024
 ---
 # How to: Use the Copilot chat pane for Fabric Data Warehouse
 
@@ -42,7 +43,7 @@ The supported capabilities of interacting through chat include:
 ## Get started
 
 1. In the **Data warehouse** workload, open a warehouse, and open a new SQL query.
-1. To open the Copilot chat pane, select the **Copilot** ribbon in the button.
+1. To open the Copilot chat pane, select the **Copilot** button.
     :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon." lightbox="media/copilot-chat-pane/copilot-button.png":::
 
 1. The chat pane offers helpful starter prompts to get started and familiar with Copilot. Select any option to ask Copilot a question. The **Ask a question** button provides example questions that are tailored specifically to your warehouse.

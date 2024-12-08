@@ -4,9 +4,9 @@ description: Learn how to get data from Power BI for use in Activator, integrate
 author: mihart
 ms.author: mihart
 ms.topic: how-to
-ms.custom: FY25Q1-Linter
+ms.custom: FY25Q1-Linter, ignite-2024
 ms.date: 11/08/2024
-ms.search.form: Activator PBI Onramp
+ms.search.form: Data Activator PBI Onramp
 #customer intent: As a Power BI user I want to learn how to get data for Activator in Power BI.
 ---
 

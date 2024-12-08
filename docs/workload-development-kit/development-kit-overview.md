@@ -1,14 +1,15 @@
 ---
-title: Microsoft Fabric Workload Development Kit overview (preview)
-description: Learn about building a Fabric workload. 
+title: Microsoft Fabric Workload Development Kit overview
+description: Learn about building a Fabric workload.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
+  - ignite-2024
 ms.date: 05/21/2024
 ---
 
-# Microsoft Fabric Workload Development Kit (preview)
+# Microsoft Fabric Workload Development Kit
 
 The Microsoft Fabric Workload Development Kit is a robust set of tools designed to enhance the existing Fabric experience by integrating custom capabilities into Fabric. Using the development kit you can integrate your applications into the Microsoft Fabric framework. The development kit is useful for enterprise-level applications that require comprehensive analytics solutions.
 

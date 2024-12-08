@@ -49,6 +49,8 @@ items:
     href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Develop and run notebooks
     href: ../data-engineering/author-execute-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Use Python experience on notebook
+    href: ../data-engineering/using-python-experience-on-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Format code in notebooks
     href: ../data-engineering/author-notebook-format-code.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Run notebooks in high concurrency mode

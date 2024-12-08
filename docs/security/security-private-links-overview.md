@@ -5,6 +5,8 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ms.date: 10/31/2024
 ---
 
@@ -67,9 +69,11 @@ Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric
 
 Visual query in Warehouse doesn't work when the **Block Public Internet Access** tenant setting is enabled.
 
+<!-- 
 ### SQL database
 
 Accessing a SQL database or the SQL analytics endpoint in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio or Visual Studio Code) to [connect to SQL database](../database/sql/connect.md) via private link. For more information on connecting to a SQL database, see [Authentication in SQL database in Microsoft Fabric](../database/sql/authentication.md).
+-->
 
 ### Lakehouse, Notebook, Spark job definition, Environment
 

@@ -4,8 +4,9 @@ description: View a set of GraphQL operation logs that you can query in your Fab
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: reference
+ms.custom:
+  - ignite-2024
 ms.date: 11/06/2024
-
 ---
 
 # GraphQL operations

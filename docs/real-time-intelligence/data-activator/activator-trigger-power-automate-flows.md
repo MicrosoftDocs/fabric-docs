@@ -4,9 +4,9 @@ description: Understand how to use custom actions to trigger Power Automate flow
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter
-ms.search.form: Activator Custom Actions
-ms.date: 11/08/2024
+ms.custom: FY25Q1-Linter, ignite-2024
+ms.search.form: Data Activator Custom Actions
+ms.date: 11/26/2024
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.
 ---
 
@@ -18,17 +18,17 @@ You can activate external systems with a Fabric [!INCLUDE [fabric-activator](../
 * Creating action items in ticketing systems.
 * Calling line-of-business apps.
 
-To activate custom actions from your rules, first define a custom action by creating a Power Automate flow. Then, call your custom action from your rule.
+To activate custom actions from your rules, first define a custom action by creating a Power Automate flow. Then, call your custom action from your Activator rule.
 
 ## Create a custom action
 
-A custom action is a reusable action template that you can use in multiple rules within an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. Creating a custom action requires familiarity with Power Automate. However, once you create a custom action, other [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] users can use the action in any rule, without requiring any knowledge of Power Automate.
+A custom action is a reusable action that you can use in multiple rules within an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. Creating a custom action requires familiarity with Power Automate. However, once you create a custom action, other [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] users can use the action in any rule, without requiring any knowledge of Power Automate.
 
-A custom action defines how to call a specific external system from a rule using a flow. It defines a set of *input fields* to pass from your rules to the flow, so that the flow can call the external system. For example, suppose you want to define a custom action that adds a task to [Microsoft To Do](https://to-do.office.com/tasks/). The input fields for such an action might be *Task name*. This custom action would link to a flow that uses a Microsoft To Do connector to create the task on your behalf.
+A custom action defines how to call a specific external system from a rule using a flow. It defines a set of *input fields* to pass from your rules to the flow, so that the flow calls the external system. For example, suppose you want to define a custom action that adds a task to [Microsoft To Do](https://to-do.office.com/tasks/). The input field for such an action might be *Task name*. This custom action would link to a flow that uses a Microsoft To Do connector to create the task on your behalf.
 
 ### Name your action and add input fields
 
-To create a custom action, select **Custom action** from the Home tab or select **New custom action** in the Action type drop-down from your rule definition pane. 
+Open Fabric Activator and select a rule to display the **Definition** pane. Scroll down to **Action** > **Type**, and select **New custom action**. 
 
 Then, give your action a name such as *Add a To Do task* and define the input fields (such as _Task name_).
 
@@ -41,16 +41,11 @@ The next step is to define your flow in Power Automate. Select **Copy** to copy 
 The flow is prepopulated with an action for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
 
 > [!IMPORTANT]
-> You must paste the connection string from the previous step into this action, as shown in the following screenshot. Select **When an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule activates** and paste the connection string as shown in the following screenshot. Once you do so, add further steps to your flow as needed, and save the flow.
-:::image type="content" source="media/activator-detection-conditions/data-activator-detection-conditions-06.png" alt-text="Screenshot of defining a flow for activator.":::
+> You must paste the connection string from the previous step into this action, as shown in the following screenshot. Select **When an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule is triggered** and paste the connection string as shown in the following screenshot. Once you do so, add further steps to your flow as needed, and save the flow.
 
-To access your custom input fields in the flow, on the field you want to customize input click on **fx**.
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-power-automate.png" alt-text="Screenshot of defining a flow for activator.":::
 
-Replace NAME\_OF\_INPUT\_FIELD with the name of your input field and click **Add**. You can browse and select additional properties in the **Dynamic content** tab.
-
-```json
-triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
-```
+To learn more about Power Automate, see [Power Automate](/power-automate).
 
 ### Complete your custom action
 
@@ -60,9 +55,9 @@ After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fab
 
 ## Call your custom action from a rule
 
-Once you create a custom action, it's available for use by all rules and users who have access to the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item which you defined the custom action. To call your custom action, from a rule, select action **Type** from the definition pane, and select your custom action from the list:
+Once you create a custom action, it's available for use by all rules and users who have access to that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. To call your custom action, from a rule, select **Action** > **Type** from the **Definition** pane, and select your custom action from the list:
 
-:::image type="content" source="media/activator-detection-conditions/data-activator-detection-conditions-08.png" alt-text="Screenshot of calling a custom action for Activator.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-list.png" alt-text="Screenshot of calling a custom action for Activator.":::
 
 You then see the input fields for your custom action. Fill them out as appropriate for your rule definition:
 

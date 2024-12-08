@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 11/07/2024
 ms.topic: tutorial
+ms.custom:
+  - ignite-2024
 ---
 
 # SQL database in Fabric tutorial introduction
@@ -42,8 +44,6 @@ You'll use sample data along with data and views that you create to Your goal is
 1. [Clean up resources](tutorial-clean-up.md)
 
 ## SQL database in Fabric end-to-end architecture
-
-:::image type="content" source="media/tutorial-introduction/diagram.png" alt-text="Diagram of Microsoft Fabric components and the data flow architecture involved in this tutorial." lightbox="media/tutorial-introduction/diagram.png":::
 
 **Data sources** - Microsoft Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data and build applications that generate and edit data.
 

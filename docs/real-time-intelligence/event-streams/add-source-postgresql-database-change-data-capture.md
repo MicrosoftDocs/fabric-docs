@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -40,7 +42,7 @@ To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow 
    - Set **wal_level** to **logical**.
    - Update the **max_worker_processes** to at least **16**.
 
-   ![A screenshot of enabling CDC for a flexible server deployment.](media/add-source-postgresql-database-cdc-connector/enable-cdc-flexible.png)
+   :::image type="content" border="true" source="media/add-source-postgresql-database-cdc-connector/enable-cdc-flexible.png" alt-text="A screenshot of enabling CDC for a flexible server deployment.":::
 
 1. Save the changes and restart the server.
 

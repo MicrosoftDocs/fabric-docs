@@ -4,6 +4,8 @@ description: This article describes how to get Fabric workspace item events as a
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -11,15 +13,12 @@ ms.date: 11/18/2024
 
 This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
 
-> [!NOTE]
-> This feature is currently in preview.
-
 Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
 
 Fabric workspace item events are discrete Fabric events that occur when contents of your Fabric Workspace is changed. These changes include creating, updating, or deleting of Fabric items except for the item types listed in the following note.
 [!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
 
-With Fabric event streams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
+With Fabric eventstreams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric eventstreams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
 
 Here are the supported Fabric workspace events:
 

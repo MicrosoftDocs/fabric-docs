@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Real-Time hub?
     href: real-time-hub-overview.md
+  - name: What's new?
+    href: whats-new.md
 - name: Get started
   items:
   - name: Get started with Real-Time hub
@@ -73,6 +75,10 @@ items:
     items:    
     - name: Create streams for Fabric workspace item events
       href: create-streams-fabric-workspace-item-events.md
+    - name: Create streams for Fabric OneLake events
+      href: create-streams-fabric-onelake-events.md
+    - name: Create streams for Fabric Job events
+      href: create-streams-fabric-job-events.md
   - name: Azure events
     items:    
     - name: Get Azure Blob Storage events and create streams
@@ -107,6 +113,10 @@ items:
       href: explore-fabric-events.md    
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
+    - name: Explore Fabric OneLake events
+      href: explore-fabric-onelake-events.md
+    - name: Explore Fabric Job events
+      href: explore-fabric-job-events.md
 - name: Consume events and data streams
   items:
   - name: Consume data streams
@@ -121,6 +131,10 @@ items:
     items:
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md
+    - name: Set alerts on Fabric OneLake item events
+      href: set-alerts-fabric-onelake-events.md
+    - name: Set alerts on Fabric Job events
+      href: set-alerts-fabric-job-events.md
   - name: Consume Azure events
     items:
     - name: Set alerts on Azure Blob Storage events

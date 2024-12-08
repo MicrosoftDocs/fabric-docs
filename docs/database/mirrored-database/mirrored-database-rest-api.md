@@ -3,7 +3,7 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 11/19/2024
+ms.date: 11/27/2024
 ms.topic: conceptual
 ---
 
@@ -12,13 +12,13 @@ ms.topic: conceptual
 The public APIs for Fabric mirroring consist of two categories: (1) [CRUD operations for Fabric mirrored database item](/rest/api/fabric/mirroreddatabase/items) and (2) [Start/stop and monitoring operations](/rest/api/fabric/mirroreddatabase/mirroring). The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/).
 
 > [!NOTE]
-> These REST APIs don't apply to mirrored database from Azure Databricks or mirrored Azure SQL Managed Instance.
+> These REST APIs don't apply to mirrored database from Azure Databricks.
 
 ## Create mirrored database
 
 [REST API - Items - Create mirrored database](/rest/api/fabric/mirroreddatabase/items/create-mirrored-database)
 
-Before you create mirrored database, the corresponding data source connection is needed. If you don't have a connection yet refer to [create new connection](../../data-factory/data-source-management.md) and use that connection ID in following definition.
+Before you create mirrored database, the corresponding data source connection is needed. If you don't have a connection yet, refer to [create new connection using portal](../../data-factory/data-source-management.md) and use that connection ID in the following definition. You can also refer to [create new connection REST API](/rest/api/fabric/core/connections/create-connection) to create new connection using Fabric REST APIs.
 
 Example:
 
@@ -42,7 +42,24 @@ Body:
 }
 ```
 
-The payload property in previous json body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode. The original JSON definition examples for different types of sources follow:
+The payload property in previous JSON body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode. The original JSON definition examples for different types of sources follow:
+
+- [JSON definition example of Snowflake](#json-definition-example-of-snowflake)
+- [JSON definition example of Azure SQL Database](#json-definition-example-of-azure-sql-database)
+- [JSON definition example of Azure SQL Managed Instance](#json-definition-example-of-azure-sql-managed-instance)
+- [JSON definition example of Azure Cosmos DB](#json-definition-example-of-azure-cosmos-db)
+- [JSON definition example of open mirroring](#json-definition-example-of-open-mirroring)
+
+If you want to replicate selective tables instead of all the tables in the specified database, refer to [JSON definition example of replicating specified tables](#json-definition-example-of-replicating-specified-tables).
+
+> [!IMPORTANT]
+> To mirror data from Azure SQL Database or Azure SQL Managed Instance, you need to also do the following before start mirroring:
+>
+> 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) or [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance).
+> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternativley, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
+
+> [!NOTE]
+> `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database. If your Fabric capacity region is in North Central US or East US, please do not specify this property as currently this feature is not supported in those regions.
 
 ### JSON definition example of Snowflake
 
@@ -75,7 +92,10 @@ The payload property in previous json body is Base64 encoded. You can use [Base6
         "source": {
             "type": "AzureSqlDatabase",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "landingZone":{
+                    "type":"MountedRelationalDatabase"
+                }
             }
         },
         "target": {
@@ -89,9 +109,30 @@ The payload property in previous json body is Base64 encoded. You can use [Base6
 }
 ```
 
-> [!NOTE]
-> For Azure SQL Database, you will need to [enable system assigned managed identity](/fabric/database/mirrored-database/azure-sql-database-tutorial#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) and grant it **Read,Write** permission to the mirrored database item before starting mirroring.
+### JSON definition example of Azure SQL Managed Instance
 
+```json
+{
+    "properties": {
+        "source": {
+            "type": "AzureSqlMI",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "landingZone":{
+                    "type":"MountedRelationalDatabase"
+                }
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
 
 ### JSON definition example of Azure Cosmos DB
 
@@ -116,7 +157,26 @@ The payload property in previous json body is Base64 encoded. You can use [Base6
 }
 ```
 
-### JSON definition example of Snowflake with specified tables to replicate
+### JSON definition example of open mirroring
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "GenericMirror",
+            "typeProperties": {}
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
+### JSON definition example of replicating specified tables
 
 The previous examples apply to the scenario that automatically replicates all the tables in the specified database. If you want to specify the tables to replicate, you can specify the `mountedTables` property, as in the following example.
 
@@ -161,26 +221,6 @@ Response 201:
     "description": "A mirrored database description", 
     "workspaceId": "<your workspace ID>" 
 } 
-```
-
-
-### JSON definition example of open mirroring
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "GenericMirror",
-            "typeProperties": {}
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "format": "Delta"
-            }
-        }
-    }
-}
 ```
 
 ## Delete mirrored database
@@ -417,7 +457,7 @@ The .NET SDK that supports Fabric mirroring is available at [Microsoft Fabric .N
 
 ## Known limitations
 
-- Service Principal/Managed identity is currently not supported.
+Currently Service Principal/Managed Identity authentication is not supported if your [tenant home region](../../admin/find-fabric-home-region.md) is in North Central US or East US. You can use it in other regions.
 
 ## Related content
 

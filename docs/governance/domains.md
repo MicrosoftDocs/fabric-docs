@@ -7,7 +7,8 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/11/2024
+  - ignite-2024
+ms.date: 11/29/2024
 ---
 
 # Fabric domains
@@ -263,3 +264,4 @@ Whenever a domain is created, edited, or deleted, that activity is recorded in t
 * [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
 * [Audit schema for domains](./domains-audit-schema.md)
 * [Admin role in workspaces](../get-started/roles-workspaces.md)
+* [Blog: Easily implement data mesh architecture with domains in Fabric](https://blog.fabric.microsoft.com/blog/easily-implement-data-mesh-architecture-with-domains-in-fabric/)

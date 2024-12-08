@@ -9,6 +9,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ---
 
 # Tutorial: Create a Microsoft Fabric workspace

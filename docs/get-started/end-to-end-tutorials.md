@@ -9,8 +9,9 @@ ms.custom:
   - build-2023
   - ignite-2023
   - build-2024
+  - ignite-2024
 ms.search.form: product-trident
-ms.date: 11/08/2024
+ms.date: 11/25/2024
 ---
 
 # End-to-end tutorials in Microsoft Fabric
@@ -27,7 +28,8 @@ The following table lists tutorials that span multiple Fabric experiences.
 |[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you explore, clean, and transform a taxicab trip semantic model, and build a machine learning model to predict trip duration at scale on a large semantic model.   |
 |[Real-Time Intelligence](../real-time-intelligence/tutorial-introduction.md)   | In this tutorial, you use the streaming and query capabilities of Real-Time Intelligence to analyze London bike share data. You learn how to stream and transform the data, run KQL queries, build a Real-Time Dashboard and a Power BI report to gain insights and respond to this real-time data. |
 |[Data warehouse](../data-warehouse/tutorial-introduction.md) |  In this tutorial, you build an end-to-end data warehouse for the fictional Wide World Importers company. You ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
-|[Fabric SQL database](../database/sql/tutorial-introduction.md) | The tutorial provides [a comprehensive guide to utilizing the SQL database in Fabric](../database/sql/overview.md). This tutorial is tailored to help you navigate through the process of database creation, setting up database objects, exploring autonomous features, and combining and visualizing data. Additionally, you'll learn how to create a GraphQL endpoint, which serves as a modern approach to connecting and querying your data efficiently.|
+|[Fabric SQL database](../database/sql/tutorial-introduction.md) | The tutorial provides [a comprehensive guide to utilizing the SQL database in Fabric](../database/sql/overview.md). This tutorial is tailored to help you navigate through the process of database creation, setting up database objects, exploring autonomous features, and combining and visualizing data. Additionally, you learn how to create a GraphQL endpoint, which serves as a modern approach to connecting and querying your data efficiently.|
+|[Fabric Activator](../real-time-intelligence/data-activator/activator-tutorial.md) | The tutorial is designed for customers who are new to Fabric Activator. Using a sample eventstream, you learn your way around Activator. Once you're familiar with the terminology and interface, you create your own object, rule, and activator. |
 
 ## Experience-specific tutorials
 
@@ -39,7 +41,7 @@ The following tutorials walk you through scenarios within specific Fabric experi
 | [Data Factory](../data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
 | [Data Science end-to-end AI samples](../data-science/use-ai-samples.md) | In this set of tutorials, learn about the different Data Science experience capabilities and examples of how ML models can address your common business problems. |
 | [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
-| [Application lifecycle management](../cicd/cicd-tutorial.md) | In this tutorial, you learn how to use deployment pipelines together with git integration to collaborate with others in the development, testing and publication of your data and reports. |
+| [Application lifecycle management](../cicd/cicd-tutorial.md) | In this tutorial, you learn how to use deployment pipelines together with git integration to collaborate with others in the development, testing, and publication of your data and reports. |
 
 ## Related content
 

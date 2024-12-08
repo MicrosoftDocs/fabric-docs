@@ -13,6 +13,7 @@ ms.date: 11/18/2024
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
 - Workspaces with template apps installed can't be connected to Git.
+- Submodules aren't supported.
 - Sovereign clouds aren't supported.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
@@ -53,6 +54,15 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
   - Has more than 256 characters
   - Ends with <kbd>.</kbd> or a space
   - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+
+### Directory name limitations
+
+- The name of the directory that connects to the Git repository has the following naming restrictions:
+
+  - The directory name can't begin or end with a space or tab.
+  - The directory name can't contain any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+
+- The item folder (the folder that contains the item files) can't contain any of the following characters: <kbd>"</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>. If you rename the folder to something that includes one of these characters, Git can't connect or sync with the workspace and an error occurs.
 
 ### Branching out limitations
 
