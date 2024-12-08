@@ -45,53 +45,66 @@ To take ownership of a Fabric item:
 > [!IMPORTANT]
 > The take over feature does not cover ownership change of related items. For instance, if a data pipeline has notebook activity, changing ownership of the data pipeline doesn't change the ownership of the notebook. Ownership of related items needs to be changed separately.
 
-## Connections after Fabric item ownership change
+## Repair connections after Fabric item ownership change
 
-Some connections using the previous item owner's credentials may stop working if the new item owner does not have access to the connection. You may see a warning message 
+Some connections that use the previous item owner's credentials may stop working if the new item owner does not have access to the connection. In such cases you might see a warning message.
 
-In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. Shortcuts can be fixed by going into the "Shortcuts" tab in Item settings and replacing the connection used, details. Detailed steps can be found below for connections.
+In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. Shortcuts can be fixed by going into the **Shortcuts**"** tab in item settings and replacing the details of the connection used. The steps for this procedure in common item types are described in the following sections.
 
-### Steps to modify data connections
+### KQL Queryset
 
-#### KQL Queryset
+1. Open the KQL queryset.
 
-1. Within the KQL Queryset item, in the Explorer pane on the left, add another connection or select an existing one.
+1. In the **Explorer** pane, add another connection or select an existing one.
 
-   :::image type="content" source="./media/item-ownership-take-over/image1.png" alt-text="Screenshot showing how to add another connection or select an existing one in a KQL Queryset item.":::
+   :::image type="content" source="./media/item-ownership-take-over/kql-queryset-add-connection.png" alt-text="Screenshot showing how to add another connection or select an existing one in a KQL Queryset item.":::
 
-#### Kusto Dashboard
+### Real-Time Dashboard
 
-1. Go to "New data source" on the Item home page.
-1. Click "Add+" to add new data sources.
+1. Open the real-time dashboard in edit mode.
 
-   :::image type="content" source="./media/item-ownership-take-over/image2.png" alt-text="Screenshot showing how to add a new data source in a Kusto Dashboard.":::
+1. Choose **New data source** on the on the tool bar.
+ 
+1. Select **Add+** to add new data sources.
 
-1. In the new or existing tile, select the appropriate data source.<br>
+   :::image type="content" source="./media/item-ownership-take-over/real-time-dashboard-add-new-data-sources.png" alt-text="Screenshot showing how to add a new data source in a Kusto Dashboard.":::
 
-#### Pipelines
+1. In the new or existing tile, select the appropriate data source.
 
-1. Within the Pipeline item, click on the activity created.
-1. Replace the connection in Source and/or Destination with the appropriate connection.
+### Pipelines
 
-   :::image type="content" source="./media/item-ownership-take-over/image3.png" alt-text="Screenshot showing how to add the appropriate connection in a pipeline.":::
+1. Open the pipeline.
+
+1. Select the activity created.
+
+1. Replace the connection in source and/or destination with the appropriate connection.
+
+   :::image type="content" source="./media/item-ownership-take-over/data-pipeline-replace-connection.png" alt-text="Screenshot showing how to add the appropriate connection in a pipeline.":::
 
 #### User data functions
 
-1. Go to "Manage Connections" within the item.
-1. Click on "Add data connection" to add a new connection and use that in the data function.
+1. Open the item and go to **Manage Connections**.
 
-   :::image type="content" source="./media/item-ownership-take-over/image4.png" alt-text="Screenshot showing how to add a new connection in a user data function.":::
+1. Select **Add data connection** to add a new connection and use that in the data function.
 
-## Limitations
+   :::image type="content" source="./media/item-ownership-take-over/user-function-add-data-connection.png" alt-text="Screenshot showing how to add a new connection in a user data function.":::
+
+## Considerations and limitations
 
 * The following Fabric items don't support ownership change.
 
-  * Mirrored Cosmos DB
+   * Mirrored Cosmos DB
 
   * Mirrored SQL DB
 
   * Mirrored SQL Managed Instance
 
-  * Mirrored Snowflake 
+  * Mirrored Snowflake
 
-* There is no API support for changing ownership of Fabric items that support the Take over feature. This does not impact existing functionality available for items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses.
+   If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
+
+* There is no API support for changing ownership of Fabric items that support the take over feature. Any existing API functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses continues to be available.
+
+## Related content
+
+??
