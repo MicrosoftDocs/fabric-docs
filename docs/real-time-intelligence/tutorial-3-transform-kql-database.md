@@ -33,14 +33,14 @@ In this step, you create a target table that will be used to store the data that
 
 1. Browse to the KQL database you created in a previous step, named *Tutorial*.
 1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
-1. Copy/paste the following command to create a new table called **BikesDataTransformed** with a specified schema.
+1. Copy/paste the following command to create a new table called **TransformedData** with a specified schema.
 
     ```kusto
     .create table TransformedData (BikepointID: int, Street: string, Neighbourhood: string, Latitude: dynamic, Longitude: dynamic, No_Bikes: long, No_Empty_Docks: long, Timestamp: datetime, BikesToBeFilled: long, Action: string) with (folder="Silver")
     ```
 
 1. Run the command to create the table.
-    You should now see another table under the **Tables** node in the object tree called **BikesDataTransformed**.
+    You should now see another table under the **Tables** node in the object tree called **TransformedData**.
 
 ## Create function with transformation logic
 
@@ -61,7 +61,7 @@ In this step, you create a stored function that holds the transformation logic t
     ```
 
 1. Run the command to create the function.
-    You should now see the function **ParseBikePointID** under the **Functions** node in the object tree.
+    You should now see the function **TransformRawData** under the **Functions** node in the object tree.
 
 ## Apply update policy
 

@@ -23,7 +23,7 @@ In this part of the tutorial, you learn how to query your streaming data using K
 
 ## Write a KQL query
 
-The name of the table you created from the update policy in a previous step is *BikesDataTransformed*. Use this (case-sensitive) name as the data source for your query.
+The name of the table you created from the update policy in a previous step is *TransformedData*. Use this (case-sensitive) name as the data source for your query.
 
 > [!TIP]
 > If you have a sufficient subscription, you can use the Copilot feature to help you write queries. Copilot provides queries based on data in your table and natural language prompts. For more information, see [Copilot for Real-Time Intelligence (preview)](../get-started/copilot-real-time-analytics.md)
