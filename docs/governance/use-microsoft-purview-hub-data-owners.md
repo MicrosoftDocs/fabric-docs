@@ -6,21 +6,12 @@ ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 11/19/2024
+ms.date: 12/08/2024
 ---
 
 # The Microsoft Purview hub for data owners (preview)
 
-Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to more advanced capabilities in the Microsoft Purview governance and compliance portals such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
-
-> [!NOTE]
-> In this document, *Fabric administrators* refers to users who have the [Fabric administrator role](../admin/roles.md) or higher.
-
-The Purview hub has a view for Fabric administrators and a view for other (nonadmin) Fabric users.
-* Fabric administrators see insights concerning their organization's entire Fabric data estate. They also see links to capabilities in the Microsoft Purview governance and compliance portals to help them further analyze and manage governance of their organization's Fabric data.
-* Other users see insights about their own Fabric content and links to capabilities in the Microsoft Purview governance portal that help them further explore their data.
-
-When you open the hub, the appropriate view opens. In the sections below, select the appropriate tab to see the information that is relevant to you. The following image shows the data owner view.
+Microsoft Purview hub for data owners is a centralized page in Fabric that helps Fabric data owners manage and govern their data in Fabric. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to further exploration in the Microsoft Purview portal.
 
 :::image type="content" source="./media/use-microsoft-purview-hub-data-owners/microsoft-purview-hub-general-data-owner-view.png" alt-text="Screenshot of the Microsoft Purview hub data owner view." lightbox="./media/use-microsoft-purview-hub-data-owners/microsoft-purview-hub-general-data-owner-view.png":::
 
@@ -30,10 +21,10 @@ To access the hub, open the Fabric settings pane and choose **Microsoft Purview 
 
 :::image type="content" source="./media/use-microsoft-purview-hub-data-owners/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
-When you select the Microsoft Purview hub option, the hub opens to the view that is appropriate for you, and insights are generated. If this is the first time insights are being generated, it might take some time for them to appear.
+The first time you open the Purview hub, it may take a few moments for the report and dataset to be generated.
 
 >[!NOTE]
-> If you're not a Fabric administrator and you don't own or haven't created any content, the hub won't contain any insights.
+> If you don't own or haven't created any content, the hub won't contain any insights.
 >
 > For some users, the hub won't open at all when they select the **Microsoft Purview hub** option. See [Considerations and limitations for more detail about this exceptions](#considerations-and-limitations).
 
@@ -67,7 +58,7 @@ The report contains the following pages:
 > [!NOTE]
 > * The full Purview hub report and its associated dataset are generated in your *My Workspace* the first time you open the Purview hub.
 > * The first time you open the Purview hub, it may take a few moments for the report and dataset to be generated.
-> * You can create new reports based on the dataset, and you can also edit the report and/or dataset directly. However, periodically the report and dataset are automatically regenerated, and any changes you have made will be lost.
+> * You can create new reports based on the semantic model, and you can also edit the report and/or semantic model directly. However, periodically the report and semantic model are automatically regenerated, and any changes you have made will be lost.
 
 ## Access Purview capabilities
 
@@ -77,7 +68,7 @@ The tiles at the top of the Purview hub provide access to Purview documentation 
 * **Data catalog**: Opens a new tab to the Microsoft Purview governance portal.
 
 > [!NOTE]
-> For more information about the Purview capabilites that are available for Fabric users and administrators, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)
+> For more information about the Purview capabilites that are available for Fabric data owners, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)
 
 ## Considerations and limitations
 
