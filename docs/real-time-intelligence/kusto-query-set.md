@@ -44,7 +44,7 @@ Select the tab that corresponds with your desired data source type.
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, select the **Database switcher** to expand the data source connections menu.
+1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu1.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
@@ -79,19 +79,21 @@ The following examples use data that is publicly available at [https://kustosamp
 
 Within a KQL queryset, you can create multiple tabs. Each tab can be associated with a different KQL database, and lets you save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
 
-:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu1.png":::
-
+You can manage your tabs in the following way:
+ 
 * **Change the existing data source connection**: Under **Explorer**, use the database switcher to open the data hub and change the data source.
 * **Rename a tab**: Select the **pencil icon** next to the tab name.
 * **Add a new tab**: Select the plus **+** to the right of the existing tabs in the command bar. Different tabs can be connected to different data sources.
 * **More actions**: On the right side of the command bar, there's a tab menu with more actions to manage the multiple tabs in your queryset.
 * **Change tab positions**: Change the tab positions using drag and drop gestures.
 
+:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu1.png":::
+
 ## Interact with data sources
 
 The data source explorer allows you to switch between the data sources connected to the queryset tab that you are in.
 
-At the top of the data source explorer pane, under **Explorer**, you can use the search bar to search for a specific data base. You can also select the **Database switcher** below the search bar to expand the data source connections menu. Select the data source you want to use. If the tab name hasn't been edited previously, it automatically gets named the name of the data source.
+At the top of the data source explorer pane, under **Explorer** you can use the search bar to search for a specific data base. You can also use the database switcher below the search bar to expand the data source connections menu. Select the data source you want to use. If the tab name hasn't been edited previously, it automatically gets named the name of the data source.
 
 :::image type="content" source="media/kusto-query-set/explorer-pane-switch-db.png" alt-text="Screenshot showing how to switch between data sources using the search bar and Database switcher in the Explorer pane." lightbox="media/kusto-query-set/explorer-pane-switch-db.png":::
 
