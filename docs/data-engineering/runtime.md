@@ -64,7 +64,7 @@ Fabric supports multiple runtimes, offering users the flexibility to seamlessly 
 
 **By default, all new workspaces use the latest runtime version, which is currently [Runtime 1.3](./runtime-1-3.md).**
 
-To change the runtime version at the workspace level, go to Workspace Settings > Data Engineering/Science > Spark settings. On the Environment tab, select your desired runtime version from the available options.
+To change the runtime version at the workspace level, go to Workspace Settings > Data Engineering/Science > Spark settings. On the Environment tab, select your desired runtime version from the available options. Select Save to confirm your selection.
 
 Once you make this change, all system-created items within the workspace, including Lakehouses, SJDs, and Notebooks, will operate using the newly selected workspace-level runtime version starting from the next Spark Session. If you're currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session continue as is. However, starting from the next session or job, the selected runtime version will be applied.
 
