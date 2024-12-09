@@ -283,7 +283,7 @@ items:
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
-- name: Analyze and model data
+- name: Analyze and train data
   items:
   - name: Copilot for Real-Time Intelligence
     displayName: KQL queryset, kusto query language, natural language
@@ -356,7 +356,7 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
-- name: Create alerts and actions
+- name: Track data
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
