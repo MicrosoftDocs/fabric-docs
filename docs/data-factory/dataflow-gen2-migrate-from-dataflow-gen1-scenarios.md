@@ -137,10 +137,19 @@ To help you plan your migration, your first step is to take inventory of your da
   - Access mashup query expressions from the [Dataflow table](/power-apps/developer/data-platform/reference/entities/msdyn_dataflow) within the App Solution [Power Platform Dataflows](https://appsource.microsoft.com/product/dynamics-365/mscrm.cb8898e7-c43c-4a73-adec-cb9eea4a68ca). You can then search the expressions for any dataflow IDs to understand the complete lineage across applications within the tenant. To learn how to install and manage apps within Dynamics 365 that run on Microsoft Dataverse, see [Manage Power Apps](/power-platform/admin/manage-apps).
 - **Dataflows as a source in Excel**
   - While Excel workbooks don't have a REST API to track lineage and dependencies, you can use Visual Basic for Applications (VBA) and the [WorkbookConnection object](/office/vba/api/excel.workbookconnection) to determine whether the connection string contains the text `Provider=Microsoft.Mashup.OleDb.1`, which indicates a Power Query connection. Additionally, you can use the [WorkbookQuery.Formula](/office/vba/api/excel.workbookquery.formula) property to extract Power Query formulas.
+<<<<<<< HEAD
   - After tracking the lineage of your dataflows, we recommend that you update existing dataflow connections in Excel for Fabric items as follows:
     - To access the SQL analytics endpoint of a Fabric lakehouse, warehouse, or SQL database, use the [SQL Server connector](../data-factory/connector-sql-server-database-overview.md), which uses the `Sql.Database` data access function.
     - To access Fabric lakehouse file content, use the [Azure Data Lake Gen2 Storage connector](../data-factory/connector-azure-data-lake-storage-gen2-overview.md), which uses the `AzureStorage.DataLake` data access function.
     - To access a Fabric eventhouse database, use the [Azure Data Explorer connector](../data-factory/connector-azure-data-explorer-overview.md), which uses the `AzureDataExplorer.Contents` data access function.
+=======
+  
+After tracking the lineage of your dataflows, we recommend that you update existing dataflow connections for Fabric items as follows:
+
+- To access the SQL analytics endpoint of a Fabric lakehouse, warehouse, or SQL database, use the [SQL Server connector](../data-factory/connector-sql-server-database-overview.md), which uses the `Sql.Database` data access function.
+- To access Fabric lakehouse file content, use the [Azure Data Lake Gen2 Storage connector](../data-factory/connector-azure-data-lake-storage-gen2-overview.md), which uses the `AzureStorage.DataLake` data access function.
+- To access a Fabric eventhouse database, use the [Azure Data Explorer connector](../data-factory/connector-azure-data-explorer-overview.md), which uses the `AzureDataExplorer.Contents` data access function.
+>>>>>>> 15fe133e8104ee96f0e8cf6e4cc9c1c0b96daa53
 
 ### Power Query templates
 
