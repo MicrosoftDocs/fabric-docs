@@ -76,7 +76,6 @@ In general, we aim to migrate all Spark settings. However, if we identify that t
 
 :::image type="content" source="media\mrs\spark-settings-runtime-change.png" alt-text="Spark Settings Runtime Change.":::
 
-
 ### Consequences of runtime changes on library management
 
 In general, our approach is to migrate all libraries from Runtime A to Runtime B, including both Public and Custom Runtimes. If the Python and R versions remain unchanged, the libraries should function properly. However, for Jars, there's a significant likelihood that they may not work due to alterations in dependencies, and other factors such as changes in Scala, Java, Spark, and the operating system.
