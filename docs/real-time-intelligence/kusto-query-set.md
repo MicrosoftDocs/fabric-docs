@@ -34,21 +34,21 @@ Select the tab that corresponds with your desired data source type.
 ## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the data source connections menu.
+1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, select the **Database switcher** to expand the data source connections menu.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
-1. Under **Connect source**, select **OneLake data hub**.
+1. Select **Add data source**, then select **OneLake data hub**.
 1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the**OneLake data hub** window and use the **+Add data source** menu to connect to a different data source.
 
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the pane on the left-hand side of the query page, under **Explorer**, select **V** to expand the data source connections menu.
+1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, select the **Database switcher** to expand the data source connections menu.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu1.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
-1. Under **Connect source**, select **Azure Data Explorer**.
+1. Select **Add data source**, then select **Azure Data Explorer**.
 1. Under **Connection URI**, enter the cluster URI.
 
     To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
