@@ -1,6 +1,6 @@
 ---
 title: "Modern medallion architecture in Fabric Real-Time Intelligence"
-description: Understand medallion architecture in Microsoft Fabric and learn how to implement within Real-Time Intellegence.
+description: Understand medallion architecture in Microsoft Fabric and learn how to implement within Real-Time Intelligence.
 author: Brad Watts, Denise Schlesigner
 ms.author: bwatts, dschlesinger
 ms.reviewer: 
@@ -15,7 +15,7 @@ This article introduces the methodology for implementing the medallion architect
   
 For more information, see [What is the medallion lakehouse architecture?](/azure/databricks/lakehouse/medallion).  
   
-Microsoft Fabric Real-Time Intelligence possess truly unique features that make the Medallion Architecture easy to build and does not require additional infrastructure as other Data Analytics platforms.
+Microsoft Fabric Real-Time Intelligence possesses truly unique features that make the Medallion Architecture easy to build and does not require additional infrastructure as other Data Analytics platforms.
 
 The unique features that make this possible are:  
    
@@ -37,9 +37,9 @@ The unique features that make this possible are:
 
 ## Real-Time Intelligence Medallion Architecture
 
-Real-Time Intelligence allows you to build a meallion lakehouse architecture by processing the data as it arrives. This enables you to build your Bronze, Silver, and Gold layer while mainting the real-time aspect of your data.
+Real-Time Intelligence allows you to build a medallion lakehouse architecture by processing the data as it arrives. This enables you to build your Bronze, Silver, and Gold layer while maintaining the real-time aspect of your data.
 
-![Real-Time Intelligence Medallion Architecture](media/medallian-architecture/Archetecture.png)
+![Real-Time Intelligence Medallion Architecture](media/medallion-architecture/Architecture.png)
 
 **Bronze Layer** 
 - Contains the raw records that can land in either Eventstream or a table in Eventhouse.
@@ -48,16 +48,16 @@ Real-Time Intelligence allows you to build a meallion lakehouse architecture by 
 - As data lands in the Bronze Layer it is transformed and enriched to add business value, including deduplication of records
 - Data in Eventstream uses the [Event Processing](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/process-events-using-event-processor-editor?pivots=enhanced-capabilities) capabilities, inserting the results into a table in Eventhouse
 - Data in an Eventhouse table is processed immediately using an [Update Policy](https://learn.microsoft.com/en-us/kusto/management/update-policy?view=microsoft-fabric), inserting the results into a table in Eventhouse
-- Deduplication occures via a [Materialized View](https://learn.microsoft.com/en-us/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric) in Eventhouse, maintining the real-time aspect of the solution by processing duplicate records as they arrive.
+- Deduplication occurs via a [Materialized View](https://learn.microsoft.com/en-us/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric) in Eventhouse, maintaining the real-time aspect of the solution by processing duplicate records as they arrive.
 
 **Gold Layer** 
 - Data in the gold layer is optimized for visualization needs while still maintaining the real-time aspect of your data
 - Aggregate views are computed as data arrives via a [Materialized View](https://learn.microsoft.com/en-us/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric)
-- Latest value views are also common via a [Materialized View](https://learn.microsoft.com/en-us/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric) allow quick acces to the latest received value based on your dataset
+- Latest value views are also common via a [Materialized View](https://learn.microsoft.com/en-us/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric) allow quick access to the latest received value based on your dataset
 
 **Visualize and Act**
 - Data can be visualized using many components such as Power BI, RTI Dashboards, or KQL Querysets
-- The performnce capabilities of RTI allow these visuals to pull from both the Gold Layer for aggregated views and unlock high granularity analytics by pulling from the Silver Layer
+- The performance capabilities of RTI allow these visuals to pull from both the Gold Layer for aggregated views and unlock high granularity analytics by pulling from the Silver Layer
 - DataActivator unlocks the ability to act on data at any layer
   - As data arrives in Eventstream
   - High-Granular data in the Silver Layer
@@ -74,7 +74,7 @@ This is made possible by:
 - [Materialized View](https://learn.microsoft.com/en-us/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric)
 
 **Flexibility**
-In a typical medallion lakehouse architecture, data is consumed only from the Gold Layer, loosing the individual records and preventing high-granular analytics. With Eventhouse you are able to consume data from both the Gold Layer or the Silver Layer, unlocking high-granularity analytics. The Eventhouse engine is built to handle queries agains billions of records in seconds.
+In a typical medallion lakehouse architecture, data is consumed only from the Gold Layer, losing the individual records and preventing high-granular analytics. With Eventhouse you are able to consume data from both the Gold Layer or the Silver Layer, unlocking high-granularity analytics. The Eventhouse engine is built to handle queries against billions of records in seconds.
 
 **Built-In Data Management**
 Data at each layer has different requirements for retention and querying. This process is easily implemented via built-in capabilities.
@@ -82,10 +82,10 @@ Data at each layer has different requirements for retention and querying. This p
 You may want to keep this data for Change Capture purposes and the ability to replay the data. If your Bronze Layer is utilizing Eventstream then you can output the data to OneLake before any transformations or enhancements are performed by the event processing. If your Bronze Layer is utilizing an Eventhouse table you can [mirror](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake-availability) the data to OneLake.
 
 - **Silver Layer**
-Typically, at this layer you will have two tables. One for the transfromation and enhancements along wih a materialized-view for deduplications. On the first table you can set the [retention policy](https://learn.microsoft.com/en-us/kusto/management/retention-policy?view=microsoft-fabric) to 0 days meaning the data never shows up in the table but is stilled deduped by the materialized-view. The dedup materialized-view is used for high granular analytics, so setting both the [retention policy](https://learn.microsoft.com/en-us/kusto/management/retention-policy?view=microsoft-fabric) for how long you want to keep the data and the [caching policy](https://learn.microsoft.com/en-us/kusto/management/cache-policy?view=microsoft-fabric) based on your query patterns allows you to optimize your cost. Many time the silver layer is not needed for the length of time the Gold Layer is.
+Typically, at this layer you will have two tables. One for the transformation and enhancements along with a materialized-view for deduplications. On the first table you can set the [retention policy](https://learn.microsoft.com/en-us/kusto/management/retention-policy?view=microsoft-fabric) to 0 days meaning the data never shows up in the table but is still deduped by the materialized-view. The dedup materialized-view is used for high granular analytics, so setting both the [retention policy](https://learn.microsoft.com/en-us/kusto/management/retention-policy?view=microsoft-fabric) for how long you want to keep the data and the [caching policy](https://learn.microsoft.com/en-us/kusto/management/cache-policy?view=microsoft-fabric) based on your query patterns allows you to optimize your cost. Many time the silver layer is not needed for the length of time the Gold Layer is.
 
 - **Gold Layer**
-This layer is optimized for visualization with your aggregate materialized-view and latest value materialized-view. In most scenarios this down-sampled data is kept and queried for a longer period of time than your Silver Layer. By utilizing [retention policy](https://learn.microsoft.com/en-us/kusto/management/retention-policy?view=microsoft-fabric) for how long you want to keep the data and the [caching policy](https://learn.microsoft.com/en-us/kusto/management/cache-policy?view=microsoft-fabric) based on your query patterns, this process is handle nativly.
+This layer is optimized for visualization with your aggregate materialized-view and latest value materialized-view. In most scenarios this down-sampled data is kept and queried for a longer period of time than your Silver Layer. By utilizing [retention policy](https://learn.microsoft.com/en-us/kusto/management/retention-policy?view=microsoft-fabric) for how long you want to keep the data and the [caching policy](https://learn.microsoft.com/en-us/kusto/management/cache-policy?view=microsoft-fabric) based on your query patterns, this process is handled natively.
 
 **Native Visualization Layer**
 With a single click I can pin any query from the Gold or Silver layer into a new or existing Power BI Report or RTI Dashboard.
