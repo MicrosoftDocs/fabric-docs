@@ -179,6 +179,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Eventstream publish fails when column contains empty array and operator is added
+      href: known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md
     - name: Creation failure for Copy job item in empty workspace
       href: known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
     - name: Create Gateway public API doesn't work for service principals

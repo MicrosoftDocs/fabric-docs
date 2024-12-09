@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 12/05/2024
+ms.date: 12/09/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  962  | Real-Time Intelligence | [Eventstream publish fails when column contains empty array and operator is added](known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md) | December 9, 2024 |
 |  957  | Data Factory | [Creation failure for Copy job item in empty workspace](known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 |
 |  955  | Data Factory | [Create Gateway public API doesn't work for service principals](known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md) | December 5, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](known-issues/known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
@@ -51,7 +52,6 @@ Select the **Title** to view more information about that specific known issue.
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
 |  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](known-issues/known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
 |  872  | Data Warehouse | [Data warehouses don't show button friendly names](known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 |
-|  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](known-issues/known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 |
 |  842  | Data Warehouse | [Data warehouse exports using deployment pipelines or git fail](known-issues/known-issue-842-warehouse-exports-pipelines-fail.md) | September 23, 2024 |
@@ -89,6 +89,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 | Fixed: December 9, 2024 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 | Fixed: December 4, 2024 |
 |  926  | Data Engineering | [Notebook failure inside Visual Studio Code for the Web](known-issues/known-issue-926-notebook-failure-visual-studio-code-web.md) | November 12, 2024 | Fixed: November 27, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 | Fixed: November 27, 2024 |
