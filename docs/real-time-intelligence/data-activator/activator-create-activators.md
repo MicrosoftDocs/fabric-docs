@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: how-to
 ms.custom: 
 ms.search.form: Data Activator Rule Creation
-ms.date: 12/03/2024
+ms.date: 12/09/2024
 
 #customer intent: As a new Activator user, I want learn how to create a rule so that I can receive notifications about my streaming data or trigger automated workflows.
 ---
@@ -23,7 +23,7 @@ Once you bring streaming data into an activator or [assign events to objects](ac
 
 Start by opening Fabric in your browser.
 
-From the nav pane, select **Create** > **Activator**. If you don't see **Create**, select the ellipses(...) to display more options.
+From the nav pane, select **Create** > **Activator**. If you don't see **Create**, select the ellipses (...) to display more options.
 
 Select **Try sample** to create an activator that is prepopulated with sample events and objects.
 
