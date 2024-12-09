@@ -587,14 +587,6 @@
         href: connector-snowflake.md
       - name: Configure in a data pipeline Copy activity
         href: connector-snowflake-copy-activity.md
-    - name: SQL database
-      items:
-      - name: SQL database - Overview
-        href: connector-sql-database-overview.md
-      - name: Set up your connection
-        href: connector-sql-database.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-sql-database-copy-activity.md        
     - name: SQL Server database
       items:
       - name: SQL Server database - Overview
@@ -773,6 +765,8 @@
         href: dataflow-gen2-cicd-and-git-integration.md
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
         href: dataflow-gen2-migrate-from-dataflow-gen1.md
+      - name: Migrate to Dataflow Gen2 scenarios
+        href: dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow

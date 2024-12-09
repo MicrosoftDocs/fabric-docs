@@ -41,7 +41,7 @@ To provision Azure Storage, open Windows PowerShell as administrator and run the
 Install-Module az  
 Import-Module az  
 Connect-AzureAD  
-New-AzureADServicePrincipal -AppId 66667777-aaaa-8888-bbbb-9999cccc0000
+New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
 ```
 
 ## Configure your application in Microsoft Entra ID manually
