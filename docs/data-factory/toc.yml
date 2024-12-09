@@ -587,6 +587,14 @@
         href: connector-snowflake.md
       - name: Configure in a data pipeline Copy activity
         href: connector-snowflake-copy-activity.md
+    - name: SQL database
+      items:
+      - name: SQL database - Overview
+        href: connector-sql-database-overview.md
+      - name: Set up your connection
+        href: connector-sql-database.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-sql-database-copy-activity.md        
     - name: SQL Server database
       items:
       - name: SQL Server database - Overview
@@ -931,6 +939,8 @@
             href: apache-airflow-jobs-hello-world.md
           - name: Run Fabric data pipelines and notebooks
             href: apache-airflow-jobs-run-fabric-item-job.md
+          - name: Use AI to build DAGs from an image
+            href: apache-airflow-job-build-dags-using-azure-openai.md
           - name: Run ADF pipeline
             href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
           - name: Run Azure Databricks job

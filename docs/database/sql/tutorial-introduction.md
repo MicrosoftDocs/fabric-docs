@@ -45,8 +45,6 @@ You'll use sample data along with data and views that you create to Your goal is
 
 ## SQL database in Fabric end-to-end architecture
 
-:::image type="content" source="media/tutorial-introduction/diagram.png" alt-text="Diagram of Microsoft Fabric components and the data flow architecture involved in this tutorial." lightbox="media/tutorial-introduction/diagram.png":::
-
 **Data sources** - Microsoft Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data and build applications that generate and edit data.
 
 **Ingestion** - With 200+ native connectors as part of the Microsoft Fabric pipeline and with drag and drop data transformation with dataflow, you can quickly build insights for your organization. Shortcut is a new feature in Microsoft Fabric that provides a way to connect to existing data without having to copy or move it. You can find more details about the Shortcut feature later in this tutorial. For development, you have the Tabular Data Stream (TDS) protocol that can access the database just like a SQL Server instance. You also have GraphQL API to query across not only SQL database in Fabric, but multiple data sources in Microsoft Fabric, in a consistent, safe, and integrated way.

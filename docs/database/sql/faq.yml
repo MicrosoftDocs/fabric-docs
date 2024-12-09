@@ -65,9 +65,9 @@ sections:
           For SQL database in Fabric, the replication of data to OneLake cannot be disabled. 
 
       - question: | 
-          Are system objects such as system views and dynamic management views the same as [Fabric database mirroring](../mirrored-database/overview.md)?
+          Are system objects such as system views and dynamic management views the same as Fabric database mirroring?
         answer: |
-          Yes, with the exception of objects that disable the replication. 
+          Yes, with the exception of objects that disable the replication.
 
   - name: Security
     questions:
@@ -80,7 +80,7 @@ sections:
         answer: 
           No. Data isn't staged outside of customer environment, it's staged in the customer's OneLake.
 
-  - name: Cost Management 
+  - name: Cost management 
     questions:
       - question: |
           What are the costs associated with SQL database in Fabric?
@@ -112,7 +112,16 @@ sections:
           Is SQL database in Fabric billed with Fabric capacity or with Azure capacity?
         answer: 
           Billing for SQL database in Fabric is structured according to the [Fabric Capacity Model](../../enterprise/licenses.md).
-         
+
+  - name: Availability
+    questions: 
+      - question: |
+          Where is SQL database in Fabric available?
+        answer:
+          SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+
+          Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
+
   - name: Troubleshooting
     questions:
       - question: |
@@ -120,6 +129,7 @@ sections:
         answer:
           Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, users who try to create a new SQL database will receive an error message "SQL database failed to create."
  
+
 
 
 additionalContent: |
