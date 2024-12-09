@@ -49,7 +49,7 @@ Next we'll setup our client to make the API calls and set the variables for an e
 ```
 client = fabric.FabricRestClient()
 workspaceId = '<workspaceId>'
-EventhouseName = 'SampleEventhouse'
+EventhouseName = f"{'SampleEventhouse'}_{uuid.uuid4()}"
 DBName=f"{'SampleDB'}_{uuid.uuid4()}"
 ```
 
@@ -121,7 +121,12 @@ header = {'Content-Type':'application/json','Authorization': f'Bearer {token_str
 response = requests.get(url='https://api.fabric.microsoft.com/v1/workspaces', headers=header)
 ```
 
-Here we are not using the Fabric API so we import the "request" module and get an appropriate token to pass to the KQL APIs.
+Notice that we import the "request" module because this is a KQL API and not a direct Fabric API. This adds a few steps in order to authenticate the response but is still easily accomplished.
+
+### Summary
+For this example we utlized the Microsoft Fabric APIs to create an Eventhouse and a KQL DB in an existing Workspace. Then used the KQL APIs to configure the KQL DB.
+
+Next we'll do the same thing exept using just Microsoft Fabric APIs.
 
 ## Option: Microsoft Fabric APIs with Definitions
 
@@ -147,7 +152,7 @@ Next we'll setup our client to make the API calls and set the variables for an e
 ```
 client = fabric.FabricRestClient()
 workspaceId = 'dee24b18-6c23-4ea3-891d-b974bc89a63d'
-EventhouseName = 'SampleEventhouse'
+EventhouseName = f"{'SampleEventhouse'}_{uuid.uuid4()}"
 DBName=f"{'SampleDB'}_{uuid.uuid4()}"
 DBCache="P30D"
 DBStorage="P365D"
@@ -275,7 +280,7 @@ Using the Fabric APIs along with the KQL APIs allow us to interact with both the
 - With the KQL API you are able to execute any command that is available on a Fabric KQL Database or Eventhouse.
 - With the API with Definition you are able to execute a KQL script to configure your database
 
-## Currently Available
+## Useful Links
 **Fabric API Support for Eventhouse**
 
 |Action	| Document Link |
