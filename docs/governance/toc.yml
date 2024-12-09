@@ -12,7 +12,13 @@ items:
   - name: Standards compliance
     href: standards-compliance.md
 - name: OneLake catalog
-  href: onelake-catalog.md
+  items:
+  - name: Overview
+    href: onelake-catalog-overview.md
+  - name: Explore
+    href: onelake-catalog-explore.md
+  - name: Govern
+    href: onelake-catalog-govern.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview and Fabric
