@@ -12,7 +12,7 @@ ms.date: 12/08/2024
 
 When a user leaves the organization, or if their credentials become disabled for some reason, it's possible that any Fabric items they own will stop working correctly. In such cases, anyone with read and write permissions on such an item (such as workspace admins, members, and contributors) can take ownership of the item, using the procedure described in this article.
 
-When a user takes over ownership of an item using this procedure, they also become the owner of any child items the item might have. Youcan't take over ownership of child items directly - only through the parent item.
+When a user takes over ownership of an item using this procedure, they also become the owner of any child items the item might have. You can't take over ownership of child items directly - only through the parent item.
 
 > [!NOTE]
 > This article describes the procedure for taking ownership of Fabric items. Power BI items have their own functionality for changing item ownership.
