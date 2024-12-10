@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.topic: overview
-ms.date: 12/02/2024
+ms.date: 12/09/2024
 ---
 
 # Fabric region availability
@@ -19,20 +19,20 @@ To find out what your Fabric home region is, see [Find your Fabric home region](
 
 For more information about purchasing a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
-| Americas          | Europe              | Middle East | Africa             | Asia Pacific       |
-|:------------------|:--------------------|:------------|:-------------------|:-------------------|
-| Brazil South      | North Europe        | UAE North   | South Africa North | Australia East     |
+| Americas          | Europe              | Middle East | Africa             | Asia Pacific         |
+|:------------------|:--------------------|:------------|:-------------------|:---------------------|
+| Brazil South      | North Europe        | UAE North   | South Africa North | Australia East       |
 | Canada Central    | West Europe         |             |                    | Australia Southeast\*|
-| Canada East       | France Central      |             |                    | Central India      |
-| Central US        | Germany West Central|             |                    | East Asia          |
-| East US           | Italy North         |             |                    | Japan East\*         |
-| East US 2         | Norway East         |             |                    | Korea Central      |
-| North Central US  | Poland Central      |             |                    | Southeast Asia     |
-| South Central US  | Sweden Central      |             |                    | South India        |
-| West US           | Switzerland North   |             |                    |                    |
-| West US 2         | Switzerland West    |             |                    |                    |
-| West US 3\*         | UK South            |             |                    |                    |
-|                   | UK West\*             |             |                    |                    |
+| Canada East       | France Central      |             |                    | Central India        |
+| Central US        | Germany West Central|             |                    | East Asia            |
+| East US           | Italy North\*       |             |                    | Japan East\*         |
+| East US 2         | Norway East         |             |                    | Korea Central        |
+| North Central US  | Poland Central\*    |             |                    | Southeast Asia       |
+| South Central US  | Sweden Central      |             |                    | South India          |
+| West US           | Switzerland North   |             |                    |                      |
+| West US 2         | Switzerland West    |             |                    |                      |
+| West US 3\*       | UK South            |             |                    |                      |
+|                   | UK West\*           |             |                    |                      |
 
 \* Currently, [Fabric SQL database](../database/sql/overview.md) is not available in this region.
 
