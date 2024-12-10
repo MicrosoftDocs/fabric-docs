@@ -1,103 +1,127 @@
 ---
-title: Fabric Workload Development Kit monitoring hub (preview)
-description: Learn about the Fabric Workload Development Kit monitoring hub.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+title: Fabric workload monitoring hub
+description: Learn how to use the monitoring hub in the Microsoft Fabric Workload Development Kit.
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
 ---
-# Onboard to the Fabric monitoring hub (preview)
 
-The monitoring hub is the centralized monitoring center designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Monitoring hub](../admin/monitoring-hub.md).
+# Set up the Fabric monitoring hub
+
+The monitoring hub in the Microsoft Fabric Workload Development Kit is the centralized monitoring center. The monitoring hub is designed for Fabric users to track item background jobs. For more information, see [Use the monitoring hub](../admin/monitoring-hub.md).
 
 ## Backend
 
-### Step 1 - Define the `JobScheduler` property inside the item manifest
+This section describes how to set up a backend implementation for the monitoring hub.
 
-To enable job support, the item must specify the types of jobs it supports. Add the `JobScheduler` property to the item manifest. The `JobScheduler` enables Fabric-managed jobs for your items. The following is an overview of the supported `JobScheduler` definition properties:
+### Define the `JobScheduler` property in the item manifest
 
-| Property | Description | Possible Values |
+To enable job support, the item must specify the types of jobs it supports. Add the `JobScheduler` property to the item manifest file. The `JobScheduler` property enables Fabric-managed jobs for your items.
+
+The following table provides an overview of the supported `JobScheduler` definition properties:
+
+| Property | Description | Possible values |
 | --- | --- | --- |
-| *Enabled* | Used to enable/disable the job scheduler| true/false 
-| *JobHistoryCount* | Sets the maximum job records count per item. Once the limit is reached, old job instances are deleted. | Integer value |
-| *JobDeadletterHours* | A job is marked as a dead letter by the Fabric platform if it hasn't started executing for N hours. | Integer value |
-| *OnDemandJobDeduplicateOptions* |Sets the deduplication option for on-demand item jobs. | - *None*: Don't deduplicate the job. <br> - *PerArtifact*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
-| *ScheduledJobDeduplicateOptions* | Sets the deduplication option for on-demand item jobs. |- *None*: Don't deduplicate the job. <br> - *PerArtifact*: Ensure there's only one active job run for the same item and job type. <br> - *PerUser*: Ensure there's only one active job run for the same user and item.
-| *JobStatusPullingInterval* | If specified, Fabric pulls the job status and properties from the workload at the specified interval in minutes. | This value should be greater than 0 and less than 6. If not specified, the time interval changes with the job runs.
-|*ArtifactJobTypes*| A list of job types with the specified properties. | - *Name*: The name of the job type, which is fully customizable by the ISV. <br> - *EnabledForUser*: true/false to enable/disable the job type. <br> - *MaxConsecutiveFailuresCount* (optional): Disable scheduled jobs if there are N consecutive failed scheduled jobs.
+| `OnDemandJobDeduplicateOptions` |Sets the deduplication option for on-demand item jobs. | - `None`: Don't deduplicate the job. <br> - `PerArtifact`: Ensure that there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
+| `ScheduledJobDeduplicateOptions` | Sets the deduplication option for on-demand item jobs. |- `None`: Don't deduplicate the job. <br> - `PerArtifact`: Ensure there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
+| `ItemJobTypes`| A list of job types with the specified properties. | - `Name`: The name of the job type, which is fully customizable by the independent software vendor (ISV).
 
-For an example of how the `JobScheduler` property is defined in our sample item definition, see the WorkloadManifest.xml that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, under the *manifest* folder. 
+### Implement job workload APIs
 
-### Step 2: Implement `IFabricItemsJobsHandler`
+To integrate with jobs, a workload must implement the Jobs APIs as defined in the [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json).
 
-Our SDK provides an abstract class that your workloads need to implement in order to support jobs. Currently, this class has three methods you need to implement:
+Three Fabric APIs are related to jobs:
 
-* **OnRunFabricItemJobAsync**
+---
 
-   This method is called whenever a job should be executed. The workload receives all the necessary information to start running the job, including operation context (tenant, capacity, workspace, and item IDs), item and job type, job instance ID (a unique identifier for the current job), and job properties that include a payload sent from the UI.
+#### **Start the job instance**
 
-* ***OnCancelFabricItemJobInstanceAsync**
+**Endpoint**: `POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}`
 
-   This method is called whenever a job should be canceled. The workload receives the same properties as OnRunFabricItemJobAsync, except for the jobProperties, which are irrelevant in this case.
+This API is called to initiate the execution of a job.
 
-* **OnGetFabricItemJobInstanceStatusAsync**
+- **Response**: The API should return a `202 Accepted` status, indicating that the job was successfully scheduled by the system.
 
-   Fabric uses a polling mechanism to sync job status in our platform. The polling intervals are defined in the item definition as shown in [Step 1](#step-1---define-the-jobscheduler-property-inside-the-item-manifest). This method is invoked every N minutes while the job is still in progress to check its status. When the job is done, either successfully or with an error, Fabric stops polling its status. The workload receives the same properties as OnRunFabricItemJobAsync, except for the jobProperties, which are irrelevant in this case.
+---
 
-All job handlers return a `FabricItemJobResult`, with the most important property being `JobInstanceStatus`.
+#### **Get the job instance state**
 
-The following job statuses are supported:
+**End point**: `GET /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}`
 
-```csharp
-[DataContract]
-public enum FabricItemJobStatus
-{
-    NotStarted,
-    InProgress,
-    Completed,
-    Failed,
-    Cancelled,
-    NotFound
-}
-```
+Fabric uses a polling mechanism to track job instance status. This API is called every minute while the job instance is in progress to check its status. Polling stops when the job is completed, whether successfully or due to failure.
 
-Once your workload implements `IFabricItemsJobsHandler`, register this class in program.cs, for example: `services.AddSingleton<IFabricItemsJobsHandler, FabricItemsJobsHandler>();`.
+- **Response**: The API should return a `200 OK` status along with the current job instance state. The response should include the job status, start times and end times, and error details if the job failed.
 
-For an example of how to implement this class, see FabricItemsJobsHandler.cs that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo.
+   **Supported job statuses**:
+
+  - `NotStarted`
+  - `InProgress`
+  - `Completed`
+  - `Failed`
+  - `Cancelled`
+
+   **Important**: Even if the job fails, this API should return a `200 OK` status and a `Failed` job status.
+
+---
+
+#### **Cancel a job instance**
+
+**End point**: `POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/jobTypes/{jobType}/instances/{jobInstanceId}/cancel`
+
+Call this API to cancel an ongoing job instance.
+
+- **Response**: The API should return a `200 OK` status along with the current Job Instance State. The response should include the job status, start and end times, and error details if the job failed.
+
+---
+
+### More information
+
+**Job deadletter count**:
+
+A job is marked as a "dead letter" by the Fabric platform if it doesn't start within 2 hours.
+
+### Example implementation
+
+For an example implementation of these APIs, see *JobsControllerImpl.cs* in the [samples repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample).
 
 ## Frontend
 
+This section describes how to set up a frontend implementation for the monitoring hub.
+
 ### Run a job in the Fabric UI
 
-After integrating jobs into your items in the backend, users can start running jobs. There are two ways to run jobs in Fabric:
+After you integrate jobs into your items on the backend, users can start running jobs.
 
-* **Unattended Scheduled Job:** Defined by the user to run at regular intervals using shared Fabric scheduler experience. 
-* **On-demand using Workload UI with Extension Client SDK:**
+Users have two options to run jobs in Fabric:
+
+- An unattended scheduled job. This option is defined by the user to run at regular intervals via a shared Fabric scheduler experience.
+- On-demand by using the workload UI with and the extension client SDK.
 
 #### Fabric scheduler experience from the UI
 
-* Entry Points:
-   * Context menu -> Schedule
-   
+- Entry point options:
+
+  - Use the context menu schedule.
+
     :::image type="content" source="./media/monitoring-hub/fabric-scheduler-menu.png" alt-text="Screenshot showing the Schedule option in the Fabric scheduler menu.":::
 
-    *  Using `extensionClient.artifactSettings.open`, where the selected settings ID is 'Schedule'.
+  - Use `workloadClient.itemSettings.open`, where the selected settings ID is `Schedule`.
 
-* Layout
+- Layout
 
     :::image type="content" source="./media/monitoring-hub/fabric-scheduler-set.png" alt-text="Screenshot showing Fabric scheduler settings.":::
 
-    1. Last success refresh time and next refresh time
-    1. Refresh button
-    1. Artifact schedule settings
+    1. The last successful refresh time and the next refresh time.
+    1. The **Refresh** button.
+    1. The item schedule settings.
 
 **Onboarding**
 
-**Step 1: Add schedule context menu item**
+**Step 1: Add a schedule context menu item**
 
-To show the schedule button in the item context menu, you need to add a new entry into the 'contextMenuItems' property in the item frontend manifest:
+To show the **Schedule** button in the item context menu, add a new entry into the `contextMenuItems` property in the item frontend manifest:
 
 ```json
 {
@@ -105,73 +129,73 @@ To show the schedule button in the item context menu, you need to add a new entr
 }
 ```
 
-**Step 2: Add artifact schedule settings**
+**Step 2: Add item schedule settings**
 
-Add a new 'schedule' entry to the artifact settings property in the frontend manifest.
+Add a new `schedule` entry to the item settings property in the frontend manifest:
 
 ```json
 "schedule": {
-    "artifactJobType": "ScheduledJob",
+    "itemJobType": "ScheduledJob",
     "refreshType": "Refresh"
 }
 ```
 
-* `artifactJobType`: Artifact job type defined in artifact job definition XML file.
-* `refreshType`: Specifies the display of the refresh button. There are three types: use "Refresh" and "Run" to enable refresh button and display name, set "None" to disable the refresh button.
+- `itemJobType`: The item job type that's defined in the item job definition XML file.
+- `refreshType`: Specifies the display of the **Refresh** button. Choose from three options: Use `Refresh` and `Run` to enable the refresh button and display name, or set `None` to disable the **Refresh** button.
 
 #### Jobs JavaScript APIs
 
 In addition to unattended scheduled jobs, a workload can run a job on demand or even start a scheduled job on demand. We provide a set of APIs as part of our extension client:
 
-* **Scheduled jobs APIs:**
-    * `getArtifactScheduledJobs(objectId: string): Promise<ArtifactSchedule>`
-    * `createArtifactScheduledJobs(createArtifactScheduledJobs: CreateArtifactScheduleParams): Promise<ArtifactSchedule>`
-    * `updateArtifactScheduledJobs(updateArtifactScheduleParams: UpdateArtifactScheduleParams): Promise<ArtifactSchedule>`
+- **Scheduled jobs APIs**:
+  - `getItemScheduledJobs(objectId: string): Promise<ItemSchedule>`
+  - `createItemScheduledJobs(createItemScheduledJobs: CreateItemScheduleParams): Promise<ItemSchedule>`
+  - `updateItemScheduledJobs(updateItemScheduleParams: UpdateItemScheduleParams): Promise<ItemSchedule>`
 
-* **Specific job instance APIs:**
-    * `runArtifactJob(jobParams: RunArtifactJobParams): Promise<ArtifactJobInstance>`
-    * `cancelArtifactJob(jobParams: CancelArtifactJobParams): Promise<CancelArtifactJobResult>`
-    * `getArtifactJobHistory(getHistoryParams: GetArtifactJobHistoryParams): Promise<ArtifactJobHistory>`
+- **Specific job instance APIs**:
+  - `runItemJob(jobParams: RunItemJobParams): Promise<ItemJobInstance>`
+  - `cancelItemJob(jobParams: CancelItemJobParams): Promise<CancelItemJobResult>`
+  - `getItemJobHistory(getHistoryParams: GetItemJobHistoryParams): Promise<ItemJobHistory>`
 
 > [!NOTE]
-> `getArtifactJobHistory` returns the job with the status currently stored in Fabric. As we currently rely solely on polling, be aware that the status might not be the most up-to-date. If you require your UI to reflect the most accurate status as soon as possible, we recommend obtaining the status directly from your backend.
+> `getItemJobHistory` returns the job with the status that's currently stored in Fabric. Because Fabric currently relies solely on polling, be aware that the status might not be the most up to date. If you require your UI to reflect the most accurate status as soon as possible, we recommend that you get the status directly from the backend.
 
-### Integration with the monitoring hub
+### Integrate with the monitoring hub
 
-Once the data is ready, the artifact jobs automatically show up in the monitoring hub. The next step is to add your artifact type to the filter pane and configure and implement available actions that a user can take against the jobs.
+When the data is ready, the item jobs automatically show up in the monitoring hub. The next step is to add your item type to the filter pane and configure and implement available actions that a user can take against the jobs.
 
-#### Enable your artifact in the monitoring hub filter pane
+#### Enable your item in the monitoring hub filter pane
 
-To add your artifact to the filter pane, define a new property in the artifact Frontend manifest: '"supportedInMonitoringHub": true'.
+To add your item to the filter pane, define a new property in the item frontend manifest and set `supportedInMonitoringHub` to `true`.
 
 #### Integrate with job quick actions
 
 :::image type="content" source="./media/monitoring-hub/monitoring-hub-quick-actions.png" alt-text="Screenshot showing jobs quick actions buttons in the monitoring hub.":::
 
-There's a set of operations that user can execute against a job, such as cancel, retry, and get details.
+A user can execute a set of operations against a job, including cancel, retry, and get details.
 
-The workload team decides which one they want to enable by setting the `artifactJobConfig` property in the artifact Frontend manifest. If not set, the icons won't be visible.
+The workload team decides which one they want to enable by setting the `itemJobConfig` property in the item frontend manifest. If it's not set, the icon isn't visible.
 
-For example, the config we added to our sample artifact that supports all job actions is shown below.
+For example, the config we added to our sample item that supports all job actions appears later in this section.
 
-When a user selects the canceled icon of the sample artifact job, we'll call the provided action “artifact.job.cancel” with the job related context to the extension "Fabric.WorkloadSample", which is implemented by the workload to actually cancel the job.
+When a user selects the **Cancel** icon of the sample item job, we call the provided action `item.job.cancel`. The job-related context to the extension `Fabric.WorkloadSample` is implemented by the workload to actually cancel the job.
 
 The Fabric platform also expects a response from this action to notify the user with the results.
 
 ```json
-"artifactJobActionConfig": {
+"itemJobActionConfig": {
     "registeredActions": {
         "detail": {
             "extensionName": "Fabric.WorkloadSample",
-                "action": "artifact.job.detail"
+                "action": "item.job.detail"
         },
         "cancel": {
             "extensionName": "Fabric.WorkloadSample",
-                "action": "artifact.job.cancel"
+                "action": "item.job.cancel"
         },
         "retry": {
             "extensionName": "Fabric.WorkloadSample",
-                "action": "artifact.job.retry"
+                "action": "item.job.retry"
         }
     }
 }
@@ -181,29 +205,31 @@ The Fabric platform also expects a response from this action to notify the user 
 
 :::image type="content" source="./media/monitoring-hub/monitoring-hub-job-details-pane.png" alt-text="Screenshot showing the job details pane in the monitoring hub.":::
 
-When the workload team registers the action for detailed information, Fabric expects the workload action to return the data in a certain format so that Fabric can display that information in the side panel.
+When the workload team registers the action for detailed information, Fabric expects the workload action to return the data in a specific format so that Fabric can display that information in the side panel.
 
-Currently, key value pairs in plain text or hyperlink is supported.
+Currently, key/value pairs in plain text or hyperlink are supported.
 
-* For an example of handling the job actions, see index.worker.ts that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, and search for actions starting with 'artifact.job'.
+- For an example of handling the job actions, see *index.worker.ts* in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample). In the file, search for actions that begin with `item.job`.
 
 ### Recent runs
 
-In addition to viewing jobs in the monitoring hub, Fabric also offers a shared user experience to display the recent runs of a specific artifact.
+In addition to displaying job status in the monitoring hub, Fabric offers a shared user experience to display the recent runs of a specific item.
 
-Entry Points:
+Entry points:
 
-* **Context menu** > **Recent runs**
+- **Context menu** > **Recent runs**
 
-    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the options menu. ":::
+    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the options menu.":::
 
-* Using `extensionClient.artifactRecentRuns.open`.
+- Using `workloadClient.itemRecentRuns.open`.
 
 **Onboarding**
 
-**Step 1: Add `recentRuns` Context Menu Item**
+**Step 1: Add `recentRuns` context menu item**
 
-In order to show the recent runs button in the artifact menu, add a new entry into the 'contextMenuItems' property in the artifact frontend manifest, like this:
+To show the **Recent runs** button in the item menu, add a new entry into the `contextMenuItems` property in the item frontend manifest.
+
+Example:
 
 ```json
 {
@@ -211,9 +237,11 @@ In order to show the recent runs button in the artifact menu, add a new entry in
 }
 ```
 
-**Step 2: Add artifact `recentRun` settings**
+**Step 2: Add item `recentRun` settings**
 
-Add a new `recentRun` entry to the artifact settings property in the frontend manifest.
+Add a new `recentRun` entry to the item settings property in the frontend manifest.
+
+Example:
 
 ```json
 "recentRun": {
@@ -221,14 +249,14 @@ Add a new `recentRun` entry to the artifact settings property in the frontend ma
 }
 ```
 
-### Jobs integration in the sample artifact ribbon
+### Jobs integration in the sample item ribbon
 
-As part of our UI workload sample, we added a section in the artifact ribbon dedicated to jobs.
+As part of our UI workload sample, we added a section that's dedicated to jobs to the item ribbon.
 
-:::image type="content" source="./media/monitoring-hub/artifact-tab.png" alt-text="Screenshot showing the artifact tab in the Fabric UI.":::
+:::image type="content" source="./media/monitoring-hub/jobs-tab.png" alt-text="Screenshot showing the Item tab in the Fabric UI.":::
 
-For an example of how this ribbon was implemented, see ArtifactTabToolbar.tsx, that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo. 
+For an example of how this ribbon was implemented, see *ItemTabToolbar.tsx* in the sample [repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample).
 
-## Related links
+## Related content
 
-* [Use the Monitoring hub](../admin/monitoring-hub.md)
+- [Use the monitoring hub](../admin/monitoring-hub.md)

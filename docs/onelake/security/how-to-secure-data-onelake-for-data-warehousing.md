@@ -1,13 +1,15 @@
 ---
 title: How to secure data in OneLake for data warehousing
-description: How to secure OneLake data for use via T-SQL query access.
+description: Learn how to secure OneLake data in a lakehouse to query with data warehousing T-SQL queries.
 author: aamerril
 ms.author: aamerril
 ms.reviewer: eloldag, wiassaf
 ms.date: 06/05/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
+  - ignite-2024
+#customer intent: As a data engineer, I want to understand how to secure a lakehouse in Fabric for data warehousing so that I can ensure the data is protected and accessible only to authorized users.
 ---
 
 # How to secure a lakehouse for Data Warehousing teams
@@ -20,7 +22,7 @@ In this article, we provide an overview of how to configure security for a lakeh
 
 Microsoft Fabric uses a multi-layer security model with different controls available at different levels in order to provide only the minimum needed permissions. For more information on the different security features available in Fabric, see [Data Access Control Model in OneLake](./data-access-control-model.md).
 
-In the Synapse Data Warehouse workload, the warehouse and SQL analytics endpoint items also allow for the defining of native SQL security. SQL security uses the full library of T-SQL security constructs to allow for granular access control of tables, views, rows, and columns within an item. For more information on SQL security, see [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md).
+In the Fabric Data Warehouse workload, the warehouse and SQL analytics endpoint items also allow for the defining of native SQL security. SQL security uses the full library of T-SQL security constructs to allow for granular access control of tables, views, rows, and columns within an item. For more information on SQL security, see [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md).
 
 The SQL permissions that are configured in the warehouse or SQL analytics endpoint only apply to queries that are executed against the warehouse or SQL analytics endpoint. The underlying data lives in OneLake, but access to OneLake data is controlled separately through [OneLake data access roles](./get-started-data-access-roles.md). To ensure users with SQL specific permissions don't see data they don't have SQL access to, don't include those users in a OneLake data access role.
 

@@ -39,7 +39,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Get Metadata settings
 
-Select the **Settings** tab, and then select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details. Then select a table, to choose from the various metadata fields available for the table, including column count, exists, structure, and dynamic content.
+Select the **Settings** tab, and then select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details. Then select a table, to choose from the various metadata fields available for the table, including column count, exists, structure, and dynamic content.
 
 :::image type="content" source="media/get-metadata-activity/get-metadata-activity-settings.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 

@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 11/14/2023
+ms.date: 11/07/2024
 ---
 
 # Experience-specific disaster recovery guidance
@@ -57,7 +57,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 
 1. Create a new notebook in the workspace C2.W2.
 
-1. To recover the tables and files from the original lakehouse, you need to use the ABFS path to access the data (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
+1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
     mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
@@ -237,6 +237,10 @@ In newly created workspace C2.W2:
 
 > [!NOTE]
 > For customers who need cross-regional disaster recovery and fully automated business continuity, we recommend keeping two Fabric Warehouse setups in separate Fabric regions and maintaining code and data parity by doing regular deployments and data ingestion to both sites.
+
+### Mirrored database
+
+Mirrored databases from the primary region remain unavailable to customers and the settings aren't replicated to the secondary region. To recover it in the event of a regional failure, you need to recreate your mirrored database in another workspace from a different region.
 
 ## Data Factory
 

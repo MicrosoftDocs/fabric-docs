@@ -4,11 +4,12 @@ description: Learn more about table constraints support using Warehouse in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: kecona, xiaoyul
-ms.date: 04/24/2024
+ms.date: 08/01/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric
@@ -18,15 +19,15 @@ ms.search.form: Warehouse design and development # This article's title should n
 Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including the primary key, foreign keys, and unique keys.
 
 > [!IMPORTANT]  
-> To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
+> To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE. These cannot be created inline within a CREATE TABLE statement.
 
 ## Table constraints
 
 [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] support these table constraints: 
 
 - PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
-- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED is used.
 - FOREIGN KEY is only supported when NOT ENFORCED is used.
+- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED are both used.
 
 For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
@@ -38,7 +39,7 @@ For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?v
 
 ## Examples
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a primary key: 
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a primary key: 
 
 ```sql 
 CREATE TABLE PrimaryKeyTable (c1 INT NOT NULL, c2 INT);
@@ -46,7 +47,7 @@ CREATE TABLE PrimaryKeyTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE PrimaryKeyTable ADD CONSTRAINT PK_PrimaryKeyTable PRIMARY KEY NONCLUSTERED (c1) NOT ENFORCED;
 ```
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a unique constraint:
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a unique constraint:
 
 ```sql
 CREATE TABLE UniqueConstraintTable (c1 INT NOT NULL, c2 INT);
@@ -54,7 +55,7 @@ CREATE TABLE UniqueConstraintTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE UniqueConstraintTable ADD CONSTRAINT UK_UniqueConstraintTablec1 UNIQUE NONCLUSTERED (c1) NOT ENFORCED;
 ```
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a foreign key:
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a foreign key:
 
 ```sql
 CREATE TABLE ForeignKeyReferenceTable (c1 INT NOT NULL);
@@ -72,6 +73,6 @@ ALTER TABLE ForeignKeyTable ADD CONSTRAINT FK_ForeignKeyTablec1 FOREIGN KEY (c1)
 - [Data types in Microsoft Fabric](data-types.md)
 - [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
 - [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)
-- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](data-warehousing.md#synapse-data-warehouse)
+- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](data-warehousing.md#fabric-data-warehouse)
 - [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md)
 - [Query a warehouse](query-warehouse.md)

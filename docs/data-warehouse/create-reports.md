@@ -1,16 +1,17 @@
 ---
 title: Create reports
-description: Learn about reports in Synapse Data Warehouse in Microsoft Fabric.
+description: Learn about reports in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 04/24/2024
+ms.date: 07/26/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
+  - ignite-2024
 ms.search.form: Reporting # This article's title should not change. If so, contact engineering.
 ---
 # Create reports on data warehousing in Microsoft Fabric
@@ -49,9 +50,9 @@ You can build reports from semantic models with **Power BI Desktop** using a Liv
 
 For a tutorial with Power BI Desktop, see [Get started with Power BI Desktop](/power-bi/fundamentals/desktop-getting-started). For advanced situations where you want to add more data or change the storage mode, see [use composite models in Power BI Desktop](/power-bi/transform-model/desktop-composite-models).
 
-If you're browsing for a specific [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) in OneLake, you can use the integrated **OneLake data hub** in Power BI Desktop to make a connection and build reports:
+If you're browsing for a specific [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#fabric-data-warehouse) in OneLake, you can use the **OneLake** in Power BI Desktop to make a connection and build reports:
 
-1. Open Power BI Desktop and select **Warehouse** under the **OneLake data hub** dropdown list in the ribbon.
+1. Open Power BI Desktop and select **Warehouse** under the **OneLake** dropdown list in the ribbon.
 1. Select the desired warehouse.
     - If you would like to create a live connection to the automatically defined data model, select **Connect**.
     - If you would like to connect directly to the data source and define your own data model, select the dropdown list arrow for the **Connect** button and select **Connect to SQL endpoint**.
@@ -59,14 +60,14 @@ If you're browsing for a specific [[!INCLUDE [fabric-se](includes/fabric-se.md)]
 1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
 1. If you selected **Connect to SQL endpoint**, select the data items you want to include or not include in your semantic model.
 
-Alternatively, if you have the SQL connection string of your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) and would like more advanced options, such as writing a SQL statement to filter out specific data, connect to a warehouse in Power BI Desktop:
+Alternatively, if you have the SQL connection string of your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#fabric-data-warehouse) and would like more advanced options, such as writing a SQL statement to filter out specific data, connect to a warehouse in Power BI Desktop:
 
 1. In the Fabric portal, right-click on the Warehouse or SQL analytics endpoint in your workspace and select **Copy SQL connection string**. Or, navigate to the Warehouse **Settings** in your workspace. Copy the SQL connection string.
 1. Open Power BI Desktop and select **SQL Server** in the ribbon.
 1. Paste the SQL connection string under **Server**.
 1. In the **Navigator** dialog, select the databases and tables you would like to load.
 1. If prompted for authentication, select **Organizational account**.
-1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
+1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 ## Related content
 

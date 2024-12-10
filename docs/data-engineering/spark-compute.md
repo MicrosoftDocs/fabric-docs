@@ -42,7 +42,7 @@ If you don't use your Spark pool for 2 minutes after your session expires, your 
 
 You can even create single node Spark pools, by setting the minimum number of nodes to one, so the driver and executor run in a single node that comes with restorable HA and is suited for small workloads.
 
-The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Apache Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 128.
+The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Apache Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 384 Spark VCores (64 * 2 * 3X Burst Multiplier). You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 384.
 
 Spark pools are billed like starter pools; you don't pay for the custom Spark pools that you have created unless you have an active Spark session created for running a notebook or Spark job definition. You're only billed for the duration of your job runs. You aren't billed for stages like the cluster creation and deallocation after the job is complete.
 
@@ -51,14 +51,20 @@ Spark pools are billed like starter pools; you don't pay for the custom Spark po
 For example, if you submit a notebook job to a custom Spark pool, you're only charged for the time period when the session is active. The billing for that notebook session stops once the Spark session has stopped or expired. You aren't charged for the time taken to acquire cluster instances from the cloud or for the time taken for initializing the Spark context.
 
 Possible custom pool configurations for F64 based on the previous example:
+> [!NOTE]
+>In Apache Spark, users get two Apache Spark VCores for every capacity unit they reserve as part of their SKU.
+>One Capacity Unit = Two Spark VCores
+>So F64 => 128 Spark Vcores and on which a 3x Burst Multiplier is applied which gives a total of 384 Spark VCores
 
-| Fabric capacity SKU | Capacity units | Spark VCores | Node size | Max number of nodes |
+| Fabric capacity SKU | Capacity units | Max Spark VCores with Burst Factor | Node size | Max number of nodes |
 |--|--|--|--|--|
 | F64 | 64 | 384 | Small | 96 |
 | F64 | 64 | 384 | Medium | 48 |
 | F64 | 64 | 384 | Large | 24 |
 | F64 | 64 | 384 | X-Large | 12 |
 | F64 | 64 | 384 | XX-Large | 6 |
+
+
 
 > [!NOTE]
 > To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md)
@@ -69,7 +75,7 @@ An Apache Spark pool instance consists of one head node and worker nodes, could 
 
 ## Node sizes
 
-A Spark pool can be defined with node sizes that range from a small compute node (with 4 vCore and 32 GB of memory) to a large compute node (with 64 vCore and 512 GB of memory per node). Node sizes can be altered after pool creation, although the active session would have to be restarted.
+A Spark pool can be defined with node sizes that range from a small compute node (with 4 vCore and 32 GB of memory) to a double extra large compute node (with 64 vCore and 512 GB of memory per node). Node sizes can be altered after pool creation, although the active session would have to be restarted.
 
 | Size | vCore | Memory |
 |--|--|--|
@@ -78,6 +84,10 @@ A Spark pool can be defined with node sizes that range from a small compute node
 | Large | 16 | 128 GB |
 | X-Large | 32 | 256 GB |
 | XX-Large | 64 | 512 GB |
+
+
+> [!NOTE]
+>  Node sizes X-Large and XX-Large are only allowed for non-trial Fabric SKUs. 
 
 ## Autoscale
 
@@ -90,7 +100,7 @@ Autoscale for Apache Spark pools allows automatic scale up and down of compute r
 
 Dynamic allocation allows the Apache Spark application to request more executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed, and if the Spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations because they're vastly different across different stages of a Spark job execution process. These configurations are also dependent on the volume of data processed, which changes from time to time. You can enable dynamic allocation of executors option as part of the pool configuration, which enables automatic allocation of executors to the Spark application based on the nodes available in the Spark pool.
 
-When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the maximum nodes. You specify maximum nodes to support successful automatic scale scenarios.
+When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the minimum nodes. You specify maximum nodes to support successful automatic scale scenarios.
 
 ## Related content
 

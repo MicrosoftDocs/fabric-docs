@@ -1,6 +1,6 @@
 ---
 title: Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
-description: Learn how to use event streams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehouse.
+description: Learn how to use eventstreams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehouse.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -8,8 +8,9 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 11/15/2023
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 ---
 
 # Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
@@ -32,7 +33,7 @@ In this tutorial, you learn how to:
 
 Before you start, you must have:
 
-- Access to a **premium workspace** with **Contributor** or above permissions where your Eventstream and Lakehouse items are located.
+- Access to a workspace with Contributor or above permissions where your Eventstream and Lakehouse items are located.
 - An Azure event hub with event data and appropriate permission available to access the policy keys. The event hub must be publicly accessible and not be behind a firewall or secured in a virtual network. To create an event hub, see [Quickstart: Create an event hub using Azure portal](/azure/event-hubs/event-hubs-create).
 
 ## Create a lakehouse and an eventstream
@@ -58,7 +59,7 @@ You can create an eventstream and a lakehouse from the **Workspace** page or the
 After you create both your new eventstream and lakehouse successfully, these items appear in your workspace:
 
 - **citypwr-es**: an Eventstream item
-- **citypwrdata**: a Lakehouse item, a semantic model (default) item, and a SQL endpoint item.
+- **citypwrdata**: a Lakehouse item, a semantic model (default) item, and a SQL analytics endpoint item.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/four-items-list.png" alt-text="Screenshot showing the list of four items added to your workspace.":::
 

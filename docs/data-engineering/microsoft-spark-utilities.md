@@ -20,7 +20,7 @@ Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easil
 
 > [!NOTE]
 >
-> - MsSparkUtils has been officially renamed to **NotebookUtils**. The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - MsSparkUtils has been officially renamed to [**NotebookUtils**](notebook-utilities.md). The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
 > - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates will be exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
@@ -145,6 +145,9 @@ This method appends the given string to a file, encoded in UTF-8.
 mssparkutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
 
+> [!NOTE] 
+> When using the ``` mssparkutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```mssparkutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+
 ### Delete file or directory
 
 This method removes a file or directory.
@@ -198,9 +201,9 @@ mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a69
 
 You can open the snapshot link of the reference run in the cell output. The snapshot captures the code run results and allows you to easily debug a reference run.
 
-:::image type="content" source="media\microsoft-spark-utilities\reference-run.png" alt-text="Screenshot of reference run result." lightbox="media\microsoft-spark-utilities\reference-run.png":::
+:::image type="content" source="media\microsoft-spark-utilities\reference-run.png" alt-text="Screenshot showing the reference run result." lightbox="media\microsoft-spark-utilities\reference-run.png":::
 
-:::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot example." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
+:::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot with code run results." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
 
 > [!NOTE]
 >
@@ -625,6 +628,9 @@ With ``` mssparkutils.runtime.context ``` you can get the context information of
 ```python
 mssparkutils.runtime.context
 ```
+
+> [!NOTE]
+> ```mssparkutils.env``` is not officially supported on Fabric, please use ```notebookutils.runtime.context``` as alternative.
 
 ## Known issue 
 

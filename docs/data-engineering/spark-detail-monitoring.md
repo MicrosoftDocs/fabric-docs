@@ -78,7 +78,7 @@ In some cases, at some time points the number of tasks might exceed the capacity
 
 Select the color icon to select or unselect the corresponding content in all graph.
 
- :::image type="content" source="media\spark-detail-monitoring\graph-select-chart.png" alt-text="Screenshot showing the graph select chart" lightbox="media\spark-detail-monitoring\graph-select-chart.png":::
+ :::image type="content" source="media\spark-detail-monitoring\graph-select-chart.png" alt-text="Screenshot showing the graph select chart." lightbox="media\spark-detail-monitoring\graph-select-chart.png":::
 
 ## Summary panel
 
@@ -116,11 +116,11 @@ For the **Data** tab, you can copy the data list on clipboard, download the data
 
 :::image type="content" source="media\spark-detail-monitoring\data.png" alt-text="Screenshot showing the data for spark application." lightbox="media\spark-detail-monitoring\data.png":::
 
-## Related items
+## Item snapshots
 
-The **Related items** tab allows you to browse and view items associated with the Apache Spark application, including Notebooks, Spark job definition, and/or Pipelines. The related items page displays the snapshot of the code and parameter values at the time of execution for Notebooks. It also shows the snapshot of all settings and parameters at the time of submission for Spark job definitions. If the Apache Spark application is associated with a pipeline, the related item page also presents the corresponding pipeline and the Spark activity.
+The **Item snapshots** tab allows you to browse and view items associated with the Apache Spark application, including Notebooks, Spark job definition, and/or Pipelines. The item snapshots page displays the snapshot of the code and parameter values at the time of execution for Notebooks. It also shows the snapshot of all settings and parameters at the time of submission for Spark job definitions. If the Apache Spark application is associated with a pipeline, the related item page also presents the corresponding pipeline and the Spark activity.
 
-In the Related Items screen, you can:
+In the Item snapshots screen, you can:
 
 - Browse and navigate the related items in the hierarchical tree.
 - Click the 'A list of more actions' ellipse icon for each item to take different actions.
@@ -128,6 +128,10 @@ In the Related Items screen, you can:
 - View the Breadcrumb to see the path from the selected item to the root.
 
 :::image type="content" source="media\spark-detail-monitoring\related-items.png" alt-text="Screenshot showing the related items for spark application." lightbox="media\spark-detail-monitoring\related-items.png":::
+
+> [!NOTE]
+>
+> The Notebook snapshots feature currently doesn't support notebooks that are in a running state or in a high-concurrency Spark session.
 
 ## Diagnostics
 

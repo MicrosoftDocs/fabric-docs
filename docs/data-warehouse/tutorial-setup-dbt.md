@@ -4,10 +4,11 @@ description: In this tutorial, learn how to use the dbt adapter for Fabric Data 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: maprycem
-ms.date: 04/24/2024
+ms.date: 09/04/2024
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 
 # Tutorial: Set up dbt for Fabric Data Warehouse
@@ -20,9 +21,9 @@ This tutorial guides you through setting up dbt and deploying your first project
 
 The [dbt](https://www.getdbt.com/product/what-is-dbt/) (Data Build Tool) open-source framework simplifies data transformation and analytics engineering. It focuses on SQL-based transformations within the analytics layer, treating SQL as code. dbt supports version control, modularization, testing, and documentation.
 
-The dbt adapter for Microsoft Fabric can be used to create dbt projects, which can then be deployed to a Fabric Synapse Data Warehouse.
+The dbt adapter for Microsoft Fabric can be used to create dbt projects, which can then be deployed to a Fabric Data Warehouse.
 
-You can also change the target platform for the dbt project by simply changing the adapter, for example; a project built for [Azure Synapse dedicated SQL pool](https://docs.getdbt.com/docs/core/connect-data-platform/azuresynapse-setup) can be upgraded in a few seconds to a [Fabric Synapse Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup).
+You can also change the target platform for the dbt project by simply changing the adapter, for example; a project built for [Azure Synapse dedicated SQL pool](https://docs.getdbt.com/docs/core/connect-data-platform/azuresynapse-setup) can be upgraded in a few seconds to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup).
 
 ## Prerequisites for the dbt adapter for Microsoft Fabric
 
@@ -93,7 +94,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 1. Authenticate yourself to Azure in the Visual Studio Code terminal. 
 
     - Run `az login` in Visual Studio Code terminal if you're using Azure CLI authentication.
-    - For Service Principal or other Microsoft Entra ID (formerly Azure Active Directory) authentication in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
+    - For Service Principal or other Microsoft Entra ID (formerly Azure Active Directory) authentication in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 1. Now you're ready to test the connectivity. To test the connectivity to your warehouse, run `dbt debug` in the Visual Studio Code terminal.
   
@@ -125,7 +126,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 
     :::image type="content" source="media/tutorial-setup-dbt/dbt-test.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt/dbt-test.png":::
 
-You have now deployed a dbt project to Synapse Data Warehouse in Fabric.
+You have now deployed a dbt project to Fabric Data Warehouse.
 
 ## Move between different warehouses
 
@@ -137,6 +138,14 @@ It's simple move the dbt project between different warehouses. A dbt project on 
 
 1. Build the project.
 
+## dbt in Fabric Data Factory
+
+When integrated with Apache Airflow, a popular workflow management system, dbt becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate dbt runs. It ensures regular data updates and maintains a consistent flow of high-quality data for analysis and reporting. This combined approach, using dbt's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+
+[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+
+For more information to operationalize dbt with your warehouse, see [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/apache-airflow-jobs-dbt-fabric.md).
+
 ## Considerations
 
 Important things to consider when using dbt-fabric adapter:
@@ -145,13 +154,18 @@ Important things to consider when using dbt-fabric adapter:
 
 - Fabric supports Microsoft Entra ID (formerly Azure Active Directory) authentication for user principals, user identities, and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
 
-- Review the [T-SQL (Transact-SQL) commands](tsql-surface-area.md#limitations) not supported in Synapse Data Warehouse in Microsoft Fabric.
+- Review the [T-SQL (Transact-SQL) commands](tsql-surface-area.md#limitations) not supported in Fabric Data Warehouse.
 
 - Some T-SQL commands are supported by dbt-fabric adapter using `Create Table as Select` (CTAS), `DROP`, and `CREATE` commands, such as `ALTER TABLE ADD/ALTER/DROP COLUMN`, `MERGE`, `TRUNCATE`, `sp_rename`.
 
 - Review [Unsupported data types](data-types.md#unsupported-data-types) to learn about the supported and unsupported data types.
 
-- You can log issues on the dbt-fabric adapter by visiting [Issues · microsoft/dbt-fabric · GitHub](https://github.com/microsoft/dbt-fabric/issues).
+- You can log issues on the dbt-fabric adapter on GitHub by visiting [Issues · microsoft/dbt-fabric · GitHub](https://github.com/microsoft/dbt-fabric/issues).
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/apache-airflow-jobs-dbt-fabric.md)
 
 ## Related content
 

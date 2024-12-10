@@ -5,7 +5,9 @@ ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
-ms.date: 05/23/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -47,7 +49,7 @@ Minimum consumption sets a minimum available capacity unit (CU) size for an even
 1. From the ribbon, select **Minimum consumption**
 1. In the **Minimum consumption** pane, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this eventhouse, and then select **Done**.
 
-    The following table maps the size to the minimum [capacity units](../admin/service-admin-portal-capacity-settings.md) allotted to the eventhouse:
+    The following table maps the size to the minimum [capacity units](../admin/capacity-settings.md) allotted to the eventhouse:
 
     [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
@@ -67,15 +69,17 @@ The system overview page provides a snapshot of the current state of the eventho
 
     The system overview page displays the following information:
 
-    * **Running state of the eventhouse**: Indicates whether the eventhouse. Possible states are:
-        * **Running**: The eventhouse is running optimally
-        * **Optimize capacity**: The eventhouse is not running optimally and requires more capacity. Contact your capacity admin to increase the capacity.
-        * **Throttling**: The eventhouse is running at maximum capacity. Contact your capacity admin to increase the capacity.
-    * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any additional data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
+    * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
+        * **Running**: The eventhouse is running optimally.
+        * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later. If you have enabled security features, try connecting to your environment using a VPN connection.
+        * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute [capacity reached its limits](../enterprise/throttling.md). Try again later or contact your capacity admin to [increase the capacity](../enterprise/scale-capacity.md).
+        * **Suspended capacity**: The capacity used for this eventhouse was suspended. Contact your capacity admin to [reverse the suspension](../enterprise/pause-resume.md).
+        * **Unknown**: For unknown reasons, the eventhouse is unavailable.
+    * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any more data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
     * **Storage usage by database**: Shows the storage breakdown by database. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
     * **Activity in minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
-        For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used is just 5 minutes.
+        For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used are just 5 minutes.
 
         Likewise, even if 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
@@ -97,7 +101,7 @@ The system overview page provides a snapshot of the current state of the eventho
         * Create, alter, or delete a function
         * Alter a caching policy, retention policy, or table update policy
 
-1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1h), one day (1d), one week (7d), one month (30d).
+1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1 h), one day (1 d), one week (7 d), one month (30 d).
 
 ### View all databases in an eventhouse
 

@@ -65,4 +65,4 @@ Where:
 
 ## Related content
 
-* [Mandatory label policy for Power BI](service-security-sensitivity-label-mandatory-label-policy.md)
+* [Mandatory label policy for Fabric and Power BI](mandatory-label-policy.md)

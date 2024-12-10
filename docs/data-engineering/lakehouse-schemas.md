@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.date: 06/28/2024
+ms.date: 08/22/2024
 ms.search.form: Lakehouse schemas
 ---
 
@@ -49,9 +49,6 @@ To reference multiple Delta tables from other Fabric lakehouse or external stora
 
 ## Access lakehouse schemas for Power BI reporting
 
-> [!NOTE]
-> SQL Analytics Endpoint is disabled until a fix is deployed. SQL Analytics Endpoint, Semantic model, and Power BI reporting won't work until then.
-
 To make your semantic model, just choose the tables that you want to use. Tables can be in different schemas. If tables from different schemas share the same name, you see numbers next to table names when in the model view.
 
 ## Lakehouse schemas in notebook
@@ -81,17 +78,16 @@ Below listed unsupported features/functionalities are for current release of pub
 
 | Unsupported Features/ Functionality | Notes |
 |-|-|
-| SQL Analytics Endpoint | SQL Analytics Endpoint is disabled until a fix is deployed. SQL Analytics Endpoint, Semantic model, and Power BI reporting won't work until then. |
-| Git (CI/CD)	| Git integration isn't supported. Exporting schema enabled lakehouse would export as a nonschema lakehouse. Hence, only non-schema lakehouses are imported.|
+| Shared lakehouse	| Using workspace in the namespace for shared lakehouses won't work, e.g. wokrkspace.sharedlakehouse.schema.table. THe user must have workspace role in order to use workspace in the namaspace. |
 | Non-Delta, Managed table schema	| Getting schema for managed, non-Delta formatted tables (for example, CSV) isn't supported. Expanding these tables in lakehouse explorer doesn't show any schema information in the UX. |
 | External Spark tables	| External Spark table operations (for example, discovery, getting schema, etc.) aren't supported. These tables are unidentified in the UX. |
 | Public API	| Public APIs (List tables, Load table, exposing defaultSchema extended property etc.) aren't supported for schema enabled Lakehouse. Existing public APIs called on a schema enabled Lakehouse results an error. |
 | Table maintenance	| Not supported. |
 | Update table properties	 | Not supported. |
-| Spark 3.5	| Spark 3.5 runtime isn't supported |
 | Workspace name containing special characters	| Workspace with special characters (for example, space, slashes) isn't supported. A user error is shown. |
 | Spark views | Not supported. |
 | Hive specific features | Not supported. |
+| Spark.catalog API | Not supported. Use Spark SQL instead. |
 | `USE <schemaName>` | Doesn't work cross workspaces, but supported within same workspace. |
 | Migration	| Migration of existing non-schema Lakehouses to schema-based Lakehouses isn't supported. |
 

@@ -8,13 +8,14 @@ ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing.
+This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing. For a decision guide on choosing to develop warehouse data, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md).
 
 ## What is a Lakehouse SQL analytics endpoint?
 
@@ -29,11 +30,11 @@ The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in t
 There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. Microsoft Fabric users can't create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in a workspace. A [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created for every Lakehouse. To get a [!INCLUDE [fabric-se](includes/fabric-se.md)], [create a lakehouse](../onelake/create-lakehouse-onelake.md) and a [!INCLUDE [fabric-se](includes/fabric-se.md)] will be automatically created for the Lakehouse.
 
 > [!NOTE]
-> Behind the scenes, the [!INCLUDE [fabric-se](includes/fabric-se.md)] is using the same engine as the [Warehouse](data-warehousing.md#synapse-data-warehouse) to serve high performance, low latency SQL queries.
+> Behind the scenes, the [!INCLUDE [fabric-se](includes/fabric-se.md)] is using the same engine as the [Warehouse](data-warehousing.md#fabric-data-warehouse) to serve high performance, low latency SQL queries.
 
 ### Automatic Metadata Discovery
 
-A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the [!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
+A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the [!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-analytics-endpoint-performance.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
 
 ## Scenarios the Lakehouse enables for data warehousing
 
@@ -51,7 +52,7 @@ Warehouses can also be added as subject area or domain oriented solutions for sp
 
 If you choose to keep your data in Fabric, it will **always be open** and accessible through APIs, Delta format, and of course T-SQL.
 
-### Query as a service over your delta tables from Lakehouse and other items from OneLake data hub
+### Query as a service over your delta tables from Lakehouse and other items from OneLake
 
 There are use cases where an analyst, data scientist, or data engineer might need to query data within a data lake. In Fabric, this end to end experience is completely SaaSified.
 
@@ -62,7 +63,7 @@ Data in a Microsoft Fabric Lakehouse is physically stored in OneLake with the fo
 - The `/Files` folder contains raw and unconsolidated (bronze) files that should be processed by data engineers before they're analyzed. The files might be in various formats such as CSV, Parquet, different types of images, etc.
 - The `/Tables` folder contains refined and consolidated (gold) data that is ready for business analysis. The consolidated data is in Delta Lake format.
 
-A [!INCLUDE [fabric-se](includes/fabric-se.md)] can read data in the `/tables` folder within OneLake. Analysis is as simple as querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse. Together with the Warehouse, you also get cross-database queries and the ability to seamless switch from read-only queries to building additional business logic on top of your OneLake data with Synapse Data Warehouse.
+A [!INCLUDE [fabric-se](includes/fabric-se.md)] can read data in the `/tables` folder within OneLake. Analysis is as simple as querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse. Together with the Warehouse, you also get cross-database queries and the ability to seamless switch from read-only queries to building additional business logic on top of your OneLake data with Fabric Data Warehouse.
 
 ### Data Engineering with Spark, and Serving with SQL
 
@@ -138,6 +139,7 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analyt
 ## Related content
 
 - [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
+- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md)
 - [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
 - [Default Power BI semantic models](semantic-models.md)
 - [Load data into the lakehouse](../data-engineering/load-data-lakehouse.md)

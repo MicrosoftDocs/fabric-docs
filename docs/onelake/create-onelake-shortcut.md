@@ -1,6 +1,6 @@
 ---
 title: Create a OneLake shortcut
-description: Learn how to create OneLake shortcuts.
+description: Learn how to create a OneLake shortcut inside a Fabric lakehouse using a lakehouse, data warehouse, or Kusto Query Language database as the source.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
@@ -10,6 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to learn how to create a OneLake shortcut inside a Fabric lakehouse using different data sources so that I can efficiently access and manage data within the lakehouse.
 ---
 
 # Create a OneLake shortcut

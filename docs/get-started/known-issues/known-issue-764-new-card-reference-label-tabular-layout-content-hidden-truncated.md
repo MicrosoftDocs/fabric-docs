@@ -4,7 +4,7 @@ description: A known issue is posted where Issues with New Card and Reference La
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/26/2024
+ms.date: 08/16/2024
 ms.custom: known-issue-764
 ---
 
@@ -14,7 +14,7 @@ There are two issues in the new card with reference labels using tabular layout.
 
 **Status:** Open
 
-**Product Experience:** Power BI
+**Product Experience:** Fixed: August 16, 2024
 
 ## Symptoms
 

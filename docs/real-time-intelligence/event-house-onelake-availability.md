@@ -8,7 +8,8 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/03/2024
+  - ignite-2024
+ms.date: 11/19/2024
 ---
 
 # Eventhouse OneLake Availability
@@ -26,7 +27,7 @@ The following table describes the behavior of your KQL database and tables when 
 | | Turned on|Turned off|
 |------|---------|--------|
 |**KQL Database**| - Existing tables aren't affected. New tables are made available in OneLake. <br/> - The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. | - Existing tables aren't affected. New tables won't be available in OneLake. |
-|**A table in KQL Database**| - New data is made available in OneLake. <br/> - Existing data isn't backfilled. <br/> - Data can't be deleted, truncated, or purged. <br/> - Table schema can't be altered and the table can't be renamed. | - New data isn't made available in OneLake. <br/> - Data can be deleted, truncated, or purged. <br/> - Table schema can be altered and the table can be renamed. <br/> - Data is soft deleted from OneLake.|
+|**A table in KQL Database**| - New data is made available in OneLake. <br/> - Existing data isn't backfilled. <br/> - Data can't be deleted, truncated, or purged. <br/> - Table schema can't be altered and the table can't be renamed. <br/> - Row Level Security can't be applied to the table. | - New data isn't made available in OneLake. <br/> - Data can be deleted, truncated, or purged. <br/> - Table schema can be altered and the table can be renamed. <br/> - Data is soft deleted from OneLake.|
 
 > [!IMPORTANT]
 > It can take up to a few hours for the data to appear in OneLake. For more information, see [Adaptive behavior](#adaptive-behavior).
@@ -42,14 +43,14 @@ The following table describes the behavior of your KQL database and tables when 
 
 You can turn on **OneLake availability** either on a KQL database or table level.
 
-1. To turn on **OneLake availability**, browse to the details page of your KQL database or table.
-1. Next to **OneLake availability** in the **Database details** pane, select the **Edit** (pencil) icon.
+1. To turn on **OneLake availability**, browse to the **OneLake** section in the details pane of your KQL database or table.
+1. Set **Availability** to **On**.
 
-    :::image type="content" source="media/event-house-onelake-availability/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Intelligence showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/event-house-onelake-availability/onelake-availability.png":::
+    :::image type="content" source="media/event-house-onelake-availability/onelake-availability.png" alt-text="Screenshot of the OneLake section of the Database details pane in Real-Time Intelligence showing the Availability option highlighted." lightbox="media/event-house-onelake-availability/onelake-availability.png":::
 
-1. Turn on the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically.
+1. The database refreshes automatically.
 
-    :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Intelligence in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
+    :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake section details in Real-Time Intelligence in Microsoft Fabric once Availability is set to On. The option to expose data to OneLake is turned on.":::
 
 You turned on **OneLake availability** in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 

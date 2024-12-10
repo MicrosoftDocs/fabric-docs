@@ -5,33 +5,34 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - references_regions
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
-# Add MySQL Database CDC as source in Real-Time hub (preview)
-This article describes how to add MySQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
+# Add MySQL Database CDC as source in Real-Time hub
 
-The Azure MySQL Database Change Data Capture (CDC) connector allows you to capture a snapshot of the current data in an Azure MySQL database. You specify the tables to be monitored and get alerted when any subsequent row-level changes to the tables. Once the changes are captured in a stream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis. 
+This article describes how to add MySQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+The Azure MySQL Database Change Data Capture (CDC) connector allows you to capture a snapshot of the current data in an Azure MySQL database. You specify the tables to be monitored and get alerted when any subsequent row-level changes to the tables. Once the changes are captured in a stream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
-## Prerequisites 
 
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+
+## Prerequisites
+
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Created an instance of **Azure Database for MySQL – Flexible Server**.
 
- ### Set up MySQL database 
+### Set up MySQL database 
 
-The Azure MySQL database connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For step-by-step instructions, see [Set up MySQL DB](../real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
+The Azure MySQL database connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For step-by-step instructions, see [Set up MySQL Database (DB)](../real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
 
-### Enable the binlog 
-You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes. For example, Azure Database for MySQL. 
+### Enable the binlog
 
-1. In the [Azure portal](https://portal.azure.com), navigate to your Azure MySQL database. 
-1. On the left navigation menu, select **Server parameters**. 
-1. Configure your MySQL server with the following properties. 
+You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes. For example, Azure Database for MySQL.
+
+1. In the [Azure portal](https://portal.azure.com), navigate to your Azure MySQL database.
+1. On the left navigation menu, select **Server parameters**.
+1. Configure your MySQL server with the following properties.
     - **binlog_row_image**: Set the value to **full**.  
     - **binlog_expire_logs_seconds**: The number of seconds for automatic binlog file removal. Set the value to match the needs of your environment. For example, **86400**.
     
@@ -40,46 +41,44 @@ You must enable binary logging for MySQL replication. The binary logs record tra
 ## Get events from Azure MySQL Database (CDC)
 You can get events from an Azure MySQL Database CDC into Real-Time hub in one of the ways:
 
-- Using the **Get events** experience
-- Using the **Microsoft sources** tab
+- [Using the **Data sources** page](#data-sources-page)
+- [Using the **Microsoft sources** page](#microsoft-sources-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section. 
+4. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **MySQL DB (CDC)** tile. 
 
-## Microsoft sources tab
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png" alt-text="Screenshot that shows the selection of MySQL DB (CDC) on the Data sources page." lightbox="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png":::
 
-1. In Real-Time hub, switch to the **Microsoft sources** tab. 
-1. In the **Source** drop-down list, select **Azure MySQL DB (CDC)**. 
-1. For **Subscription**, select an **Azure subscription** that has the resource group with your Azure MySQL Database account. 
+    Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section.
+
+## Microsoft sources page
+
+1. In Real-Time hub, select **Microsoft sources**.
+1. In the **Source** drop-down list, select **Azure MySQL DB (CDC)**.
+1. For **Subscription**, select an **Azure subscription** that has the resource group with your Azure MySQL Database account.
 1. For **Resource group**, select a **resource group** that has the database.
-1. For **Region**, select a location where your database is located. 
-1. Now, move the mouse over the name of the Azure MySQL DB CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button. 
+1. For **Region**, select a location where your database is located.
+1. Now, move the mouse over the name of the Azure MySQL DB CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button.
 
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources tab with filters to show Azure MySQL CDC and the connect button." lightbox="./media/add-source-azure-mysql-database-cdc/microsoft-sources-connect-button.png":::
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show Azure MySQL CDC and the connect button." lightbox="./media/add-source-azure-mysql-database-cdc/microsoft-sources-connect-button.png":::
 
-    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section. Skip the first step of selecting Azure MySQL DB CDC as a source type in the Get events wizard. 
+    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section. 
 
 ## Add Azure MySQL Database CDC as a source
 
-1. On the **Select a data source** screen, select **MySQL DB (CDC)**.
-
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png" alt-text="Screenshot that shows the Select a data source page with Azure MySQL DB (CDC) selected." lightbox="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png":::
-1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `mysqlserver.mysql.database.azure.com`. 
-
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/go-to-resource.png":::     
 1. On the **Connect** page, select **New connection**.
 
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/new-connection-link.png"::: 
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Add source wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/new-connection-link.png":::
 1. In the **Connection settings** section, do these steps:
-    1. For **Server**, enter the URI for your Azure MySQL server. 
-    1. For **Database**, enter the name of your database. 
+    1. For **Server**, enter the URI for your Azure MySQL server.
+    1. For **Database**, enter the name of your database.
     
         :::image type="content" source="./media/add-source-azure-mysql-database-cdc/connection-settings.png" alt-text="Screenshot that shows the Connection settings section." ::: 
 1. In the **Connection credentials** section, do these steps:
     1. For **Connection**, select if there's an existing connection to the MySQL database. If not, keep the default value: **Create new connection**.
-    1. For **Authentication kind**, select **Basic**. Currently, only **Basic** authentication is supported. 
-    1. Enter values for **User name** and **Password**. 
+    1. For **Authentication kind**, select **Basic**. Currently, only **Basic** authentication is supported.
+    1. Enter values for **User name** and **Password**.
     1. Specify whether you want to **use an encrypted connection**.
     1. Select **Connect**.
     
@@ -87,26 +86,37 @@ Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-
 1. Back on the **Connect** page, do these steps:
     1. Enter the **table name**.
     1. Enter the **server ID**.
-    1. Enter the **port number** or keep the default value. 
+    1. Enter the **port number** or keep the default value.
 1. In the **Stream details** section to the right, do these steps:
     1. Select **Fabric workspace** where you want to save this connection and the eventstream that the wizard creates.
     1. Enter a **name for the eventstream**.
-    1. The name of the stream in Real-Time hub is automatically created for you. 
+    1. The name of the stream in Real-Time hub is automatically created for you.
         
         :::image type="content" source="./media/add-source-azure-mysql-database-cdc/connection-page-filled.png" alt-text="Screenshot that shows the Connect page with all the required fields specified." lightbox="./media/add-source-azure-mysql-database-cdc/connection-page-filled.png"::: 
-1. Now, select **Next** at the bottom of the page. 
-1. On the **Review and create**, review settings, and select **Create source**.
+1. Now, select **Next** at the bottom of the page.
+1. On the **Review + connect**, review settings, and select **Create source**.
     
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review and create page with all the required fields specified." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-page.png"::: 
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review + connect page with all the required fields specified." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-page.png"::: 
+
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `mysqlserver.mysql.database.azure.com`.
+
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/go-to-resource.png":::     
+
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure MySQL DB CDC as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
+1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure MySQL DB CDC as a source. To close the wizard, select **Finish** or **X*** in the top-right corner of the page.
 
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create page after successful creation of the source." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-success.png":::
-1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review + connect page after successful creation of the source." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-success.png":::
+1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page. 
+
+     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub My data streams page with the stream based on MySQL Database CDC source." lightbox="./media/add-source-azure-mysql-database-cdc/verify-data-stream.png":::
+
+
+    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
+
 To learn about consuming data streams, see the following articles:
 
 - [Process data streams](process-data-streams-using-transformations.md)

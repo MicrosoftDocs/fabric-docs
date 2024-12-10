@@ -1,30 +1,32 @@
 ---
 title: Include file for Git integration limitations
-description: Include file for the Git integration limitations. This include file is referenced in this repo and also in an article in the Power BI repo.
+description: Include file for the Git integration limitations. This file is referenced in this repo and also in an article in the Power BI repo.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 07/04/2024
+ms.date: 11/18/2024
 ---
 
 ### General Git integration limitations
 
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
+- Workspaces with template apps installed can't be connected to Git.
+- Submodules aren't supported.
 - Sovereign clouds aren't supported.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
 - The tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) if the workspace and Git repo are in two different geographical regions.
+- If your organization set up [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
 - The commit size is limited to 125 MB.
 
 #### [GitHub limitations](#tab/github)
 
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-- The number of nontext files per commit is limited. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing nontext files in GitHub, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
-- The commit size is limited to 100 MB per file.
+- The total combined size of files to commit at once is limited to 50 MB. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing files, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
 
 ---
 
@@ -34,6 +36,7 @@ Some GitHub Enterprise settings aren't supported. For example:
 
 - IP allowlist
 - Private networking
+- [Custom domains](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
 ### Workspace limitations
 
@@ -47,10 +50,19 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
-- When naming a folder in Git, the logical ID (Guid) is added as a prefix before the type if the item’s display name:
+- Git folder use the logical ID (Guid) as a prefix before the type if the item’s display name:
   - Has more than 256 characters
   - Ends with <kbd>.</kbd> or a space
   - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+
+### Directory name limitations
+
+- The name of the directory that connects to the Git repository has the following naming restrictions:
+
+  - The directory name can't begin or end with a space or tab.
+  - The directory name can't contain any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+
+- The item folder (the folder that contains the item files) can't contain any of the following characters: <kbd>"</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>. If you rename the folder to something that includes one of these characters, Git can't connect or sync with the workspace and an error occurs.
 
 ### Branching out limitations
 
