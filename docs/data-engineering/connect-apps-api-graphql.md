@@ -30,7 +30,7 @@ To connect an application to an API for GraphQL, you need three important pieces
 
 In the following steps, we showcase how to configure support for a ReactJS application in Microsoft Entra.
 
-1. Register an application using the steps described on [Quickstart: Register an application with the Microsoft identity platform](entra/identity-platform/quickstart-register-app)
+1. Register an application using the steps described on [Quickstart: Register an application with the Microsoft identity platform](entra/identity-platform/quickstart-register-app).
 2. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
 1. Under the *Manage* list, select **API permissions**, then **Add permission**. 
 2. Add the **PowerBI Service**, select **Delegated permissions**, and select **Item.Execute.All** permissions. Make sure admin consent isn't required.
