@@ -91,6 +91,20 @@ The URL is appended with either \<sessions> or \<batches> depending on what you 
 
 For each Fabric workspace, a default starter pool is provisioned, the execution of all the spark code use this starter pool by default. You can use Fabric Environments to customize the Livy API Spark jobs.
 
+## Download the Livy API Swagger files
+
+The full swagger files for the Livy API are available here.
+
+{
+      "path_to_root": "Livy API Swagger",
+      "url": "https://github.com/Azure/azure-functions-durable-extension",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+
+:::code language="yaml" source="Livy-api-swagger\swagger.yaml" highlight="1-5":::
+:::code language="json" source="Livy-api-swagger\swagger.json" highlight="1-7":::
+
 ## Submit a Livy API jobs
 
 Now that you've completed the setup of the Livy API you can choose to submit either batch or session jobs.
