@@ -102,7 +102,7 @@ Once you define a property, you can reference it from one or more rules. Here we
 
 ## Clean up resources
 
-Delete the sample eventstream by selecting the ellipses(...) to the right of the **Package delivery events** eventstream, and selecting **Delete**.
+Delete the sample eventstream by selecting the ellipses (...) to the right of the **Package delivery events** eventstream, and selecting **Delete**.
 
 ## Next step
 
