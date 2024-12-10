@@ -118,7 +118,7 @@ sections:
       - question: |
           Where is SQL database in Fabric available?
         answer:
-          SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](/fabric/admin/region-availability).
+          SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](../../admin/region-availability.md).
 
           Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
 
