@@ -25,11 +25,14 @@ Admins can specify internal URLs to override the destination of links on the Pow
 
 * **Learn**. By default, this help menu link targets a [list of all our Power BI learning paths and modules](/training/browse/?products=power-bi). To direct this link to internal training resources instead, set a custom URL for **Training documentation**.
 
-* **Community**. To take users to an internal forum from the help menu, instead of to the [Power BI Community](https://community.powerbi.com), set a custom URL for **Discussion forum**.
+* **Community**. To take users to an internal forum from the help menu, instead of to the [Fabric and Power BI Community](https://community.fabric.microsoft.com/), set a custom URL for **Discussion forum**.
 
 * **Licensing upgrades**. Users with a Fabric (Free) license can be presented with the opportunity to upgrade to Power BI Pro (Pro) or Power BI Premium Per User (PPU). Users with a Fabric (Free) or Power BI Pro license can be presented with the opportunity to upgrade their account to a Power BI Premium Per User license. If you specify an internal URL for **Licensing requests**, you redirect users to an internal request and purchase flow and prevent self-service purchase. You might want to prevent users from buying licenses, but are okay with letting users start a Power BI Pro or PPU trial or a trial of a Fabric capacity. For this scenario, see [Users can try Microsoft Fabric paid features](#users-can-try-microsoft-fabric-paid-features) to separate the buy and try experiences.
 
-* **Get help**. To take users to an internal help desk from the help menu, instead of to [Microsoft Fabric Support](https://powerbi.microsoft.com/support), set a custom URL for **Help Desk**.
+* **Get help**. To take users to an internal help desk from the help menu, instead of to [Microsoft Fabric In-Producy Support](https://go.microsoft.com/fwlink/?linkid=2297819), set a custom URL for **Help Desk**.
+
+> [!NOTE]
+> The [Fabric In-product Support center](https://app.powerbi.com/admin-portal/supportCenter?experience=power-bi) and the option to open support cases to Microsoft ([Get Microsoft Help](https://go.microsoft.com/fwlink/?linkid=2297819)) will always be available for Admins.
 
 ## Receive email notifications for service outages or incidents
 

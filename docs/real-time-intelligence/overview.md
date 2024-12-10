@@ -7,7 +7,9 @@ author: YaelSchuster
 ms.topic: overview
 ms.custom:
   - build-2024
-ms.date: 04/24/2024
+  - ignite-2024
+ms.date: 11/19/2024
+ms.subservice: rti-core
 ms.search.form: Overview
 ---
 # What is Real-Time Intelligence?
@@ -59,7 +61,7 @@ support of business and engineering processes.
 
 :::image type="content" source="media/overview/overview-schematic.png" alt-text="Diagram of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border="none":::
 
--   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data is not only available but also accessible to all, promoting quick decision-making and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
+-   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data isn't only available but also accessible to all, promoting quick decision-making, and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
 
 - Once you select a stream from your organization or connected to
 outside or internal sources, you can use the data consumption tools
@@ -72,11 +74,11 @@ interactions that simplify the process of understanding data, making
 it accessible to anyone who wants to make decision based on data in
 motion using visual tools, Natural Language and Copilot.
 
--   These insights can be turned into actions with Data Activator, as
-    you set up Reflex alerts from various parts of Fabric to react to
+-   These insights can be turned into actions with Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)], as
+    you set up alerts from various parts of Fabric to react to
     data patterns or conditions in real-time.
 
-##  How do you interact with the components of Real-Time Intelligence?
+##  How do I interact with the components of Real-Time Intelligence?
 
 ### Discover streaming data
 
@@ -91,27 +93,27 @@ Real-Time hub events is a catalog of data in motion, and contains:
     for example: Azure Event Hubs, Azure IoT Hub, Azure SQL DB Change
     Data Capture (CDC), Azure Cosmos DB CDC, PostgreSQL DB CDC.
 
--   **Fabric events**: Event-driven capabilities support real-time notifications and data processing. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via Event streams. 
+-   **Fabric events**: Event-driven capabilities support real-time notifications and data processing. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via eventstreams. 
 
 This data is all presented in a readily consumable format and is
 available to all Fabric workloads.
 
 ### Connect to streaming data
 
-Event streams are the Fabric platform way to capture, transform, and
+Eventstreams are the Fabric platform way to capture, transform, and
 route high volumes of real-time events to various destinations with a
-no-code experience. Event streams support multiple data sources and data
+no-code experience. Eventstreams support multiple data sources and data
 destinations, including a wide range of connectors to external sources,
 for example: Apache Kafka clusters, database change data capture feeds,
 AWS streaming sources (Kinesis), and Google (GCP Pub/Sub).
 
 ### Process data streams
 
-By using the event processing capabilities in Event streams, you can do
+By using the event processing capabilities in Eventstreams, you can do
 filtering, data cleansing, transformation, windowed aggregations, and
 dupe detection, to land the data in the shape you want. You can also use
 the content-based routing capabilities to send data to different
-destinations based on filters. Another feature, derived event streams,
+destinations based on filters. Another feature, derived eventstreams,
 lets you construct new streams as a result of transformations and/or
 aggregations that can be shared to consumers in Real-Time hub.
 
@@ -152,13 +154,13 @@ certain conditions or logic is met, an action is then taken, such as
 alerting users, executing Fabric job items like a pipeline, or kicking
 off Power Automate workflows. The logic can be either a simply defined
 threshold, a pattern such as events happening repeatedly over a time
-period, or the results of complex logic defined by a KQL query. Data
-Activator turns your event-driven insights into actionable business
+period, or the results of complex logic defined by a KQL query.
+[!INCLUDE [fabric-activator](includes/fabric-activator.md)] turns your event-driven insights into actionable business
 advantages.
 
 ## Integrate with other Fabric experiences
 
-- [Route events from event streams to Fabric item destinations](event-streams/route-events-based-on-content.md)
+- [Route events from eventstreams to Fabric item destinations](event-streams/route-events-based-on-content.md)
 - [Emit events from Fabric items into Real-Time hub](../real-time-hub/explore-fabric-workspace-item-events.md)
 - Access data in OneLake from Real-Time Intelligence in several
 ways:
@@ -173,5 +175,6 @@ ways:
 
 - [End-to-end tutorial](tutorial-introduction.md)
 - [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)
-- [What is Event streams](event-streams/overview.md)
+- [What is Fabric eventstreams](event-streams/overview.md)
+- [What is [!INCLUDE [fabric-activator](includes/fabric-activator.md)]?](data-activator/activator-introduction.md)
 - [User flows](user-flow-1.md)

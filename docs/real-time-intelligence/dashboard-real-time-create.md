@@ -1,5 +1,5 @@
 ---
-title: Create a Real-Time Dashboard (preview)
+title: Create a Real-Time Dashboard
 description: Learn how to visualize data with Real-Time Dashboards.
 ms.reviewer: tzgitlin
 author: YaelSchuster
@@ -7,10 +7,11 @@ ms.author: yaschust
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 06/04/2024
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
-# Create a Real-Time Dashboard (preview)
+# Create a Real-Time Dashboard
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance.
 
@@ -122,7 +123,30 @@ Pages are optional containers for tiles. You can use pages to organize tiles int
 
 ## Use parameters
 
-Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles.  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
+Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles. For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
+
+## Tile legend
+
+You can change the position of the legend in your tiles and use the legend to interact with the data.
+
+### Change the legend location
+
+If you have edit rights on a real-time dashboard, you can change the location of the legend in your tile. Toggle to **Edit** mode and select the **Edit tile** pencil icon. In the **Visual formatting** pane, under **Legend**, you can select your location preference.
+
+### Interact with your data
+
+You can use the legend to interact with the data in your tile. You can change what data you view by selecting the specific item in the legend. Use <kbd>Ctrl</kbd> to add or remove items from the selection, hold <kbd>shift</kbd> to select a range. Items not selected are greyed out.
+
+The **Search** button allows you to search and filter items.
+
+Use the **Invert** button to invert your selection.
+
+The **Up** and **Down** arrows navigate through the list in the following ways:
+
+* When one item is selected, the up and down arrows select the previous or next item.
+* When more than one item is selected, the up and down arrows scroll through the list of items, and the data for any selected items you navigate to is highlighted.
+
+:::image type="content" source="media/real-time-dashboard/interactive-legend.png" alt-text="Screenshot showing the buttons to use the legend to interact with your data.":::
 
 ## View query
 
@@ -158,8 +182,9 @@ However, database editors can limit the minimum refresh rate that any viewer can
 ## Share the dashboard
 
 To share the dashboard link:
-    1. Select **Share** and then select **Copy link**
-    1. In the **Dashboard permissions** window, select **Copy link**.
+
+1. Select **Share** and then select **Copy link**
+1. In the **Dashboard permissions** window, select **Copy link**.
 
 ## Export dashboards
 
@@ -233,4 +258,4 @@ You can update an existing dashboard, or restore a previous version, as follows:
 * [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
 * [Real-Time Dashboard-specific visuals](dashboard-visuals.md)
 * [Apply conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
-* [Create Data Activator alerts from a Real-Time Dashboard](../data-activator/data-activator-get-data-real-time-dashboard.md)
+* [Create [!INCLUDE [fabric-activator](includes/fabric-activator.md)] alerts from a Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md)

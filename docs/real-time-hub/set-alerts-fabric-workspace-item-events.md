@@ -1,40 +1,43 @@
 ---
 title: Set alerts on Fabric workspace item events in Real-Time hub
 description: This article describes how to set alerts on Fabric workspace item events in Real-Time hub.
-author: ajetasin
-ms.author: ajetasi
+author: mystina
+ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
 # Set alerts on Fabric workspace item events in Real-Time hub (preview)
-[!INCLUDE [preview-note](./includes/preview-note.md)]
-
 This article describes how to set alerts on Fabric workspace item events in Real-Time hub.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
-## Launch the Set alert page 
+## Launch the Set alert page
 
 Do steps from one of the following sections, which opens a side panel where you can configure the following options:
 
 - Events you want to monitor.
 - Conditions you want to look for in the events.
-- Action you want Data Activator to take. 
+- Action you want Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] to take.
 
 ### From the events list
 
-1. In Real-Time hub, switch to the **Fabric events** tab. 
-1. Move the mouse over **Fabric workspace item events**, and do one of the following steps: 
-    - Select the **Alert** button 
+1. In Real-Time hub, select **Fabric events** under **Subscribe to** category.
+1. Move the mouse over **Fabric workspace item events**, and do one of the following steps:
+    - Select the **Alert** button.
     - Select **ellipsis (...)**, and select **Set alert**.
+
+    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/set-alert-from-list.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-fabric-workspace-item-events/set-alert-from-list.png":::    
 
 ### From the event detail page
 
-1. Select **Fabric workspace item events** from the list see the detail page. 
-1. On the detail page, select **Create alert** button at the top of page. 
+1. Select **Fabric workspace item events** from the list see the detail page.
+1. On the detail page, select **Create alert** button at the top of page.
+
+    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/set-alert-from-detail-page.png" alt-text="Screenshot that shows the Azure blob storage events detail page with Set alert button selected." lightbox="./media/set-alerts-fabric-workspace-item-events/set-alert-from-detail-page.png":::
+
 
 ## Set alert for Fabric workspace item events
 
@@ -50,22 +53,23 @@ On the **Set alert** page, follow these steps:
         :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/select-workspace.png" alt-text="Screenshot that shows the Connect page for Fabric workspace item events with a Fabric workspace selected." lightbox="./media/set-alerts-fabric-workspace-item-events/select-workspace.png":::
     1. In the **Set filters** section, select **+ Filter** to a filter based on a field.
 
-        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/set-filter.png" alt-text="Screenshot that shows setting of a filter in the Get events wizard for Fabric workspace item events." lightbox="./media/set-alerts-fabric-workspace-item-events/set-filter.png":::        
-    1. Select **Next**. 
-    1. On the **Review and create** page, review the settings, and select **Save**. 
+        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/set-filter.png" alt-text="Screenshot that shows setting of a filter in the Add source wizard for Fabric workspace item events." lightbox="./media/set-alerts-fabric-workspace-item-events/set-filter.png":::        
+    1. Select **Next**.
+    1. On the **Review + connect** page, review the settings, and select **Save**.
     
-        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/review-create-page.png" alt-text="Screenshot that shows the Review and create page in the Get events wizard for Fabric workspace item events.":::        
-1. For **Condition**, confirm that **On each event** is selected. 
+        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/review-create-page.png" alt-text="Screenshot that shows the Add source wizard Review + connect page for Fabric workspace item events.":::        
+1. For **Condition**, confirm that **On each event** is selected.
 1. For **Action**, select one of the following options:
-    1. To receive an email when the event occurs and the condition is met, select **Send me an email**. 
+    1. To receive an email when the event occurs and the condition is met, select **Send me an email**.
     1. To receive notification via Teams, select **Message me in Teams**.
-    1. To run a Fabric item, select **Run a Fabric item**. 
-1. In the **Save location** section, do these steps: 
-    1. For **Workspace**, select the workspace where you want to save the alert. 
-    1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert. 
-1. Select **Create** at the bottom of the page to create the alert. 
+    1. To run a Fabric item, select **Run a Fabric item**.
+1. In the **Save location** section, do these steps:
+    1. For **Workspace**, select the workspace where you want to save the alert.
+    1. For **Item**, select an existing [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item or create a new [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item for this alert. 
+1. Select **Create** at the bottom of the page to create the alert.
 
     :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/create-alert.png" alt-text="Screenshot that shows the Set alert page with all fields selected.":::        
+
 ## Related content
 
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)

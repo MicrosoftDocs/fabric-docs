@@ -1,16 +1,17 @@
 ---
 title: Secure and manage OneLake shortcuts
-description: Understand security for OneLake shortcuts
+description: Understand security for OneLake shortcuts and the permissions required for shortcut creation and data access.
 ms.reviewer: trolson
 ms.author: aamerril
 author: aamerril
 ms.search.form: Shortcuts
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 05/09/2024
+#customer intent: As a security engineer, I want to understand security for OneLake shortcuts so that I can secure access to my data using roles and permissions.
 ---
 
 # OneLake shortcut security
@@ -60,7 +61,7 @@ Users in the Viewer role or that had a lakehouse shared with them directly have 
 
 ## Related content
 
-- [What are shortcuts?](./onelake-shortcuts.md)
-- [Create a OneLake shortcut](create-onelake-shortcut.md)
-- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
-- [Data Access Control Model in OneLake.](./security/data-access-control-model.md#shortcuts)
+* [What are shortcuts?](./onelake-shortcuts.md)
+* [Create a OneLake shortcut](create-onelake-shortcut.md)
+* [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
+* [Data Access Control Model in OneLake.](./security/data-access-control-model.md#shortcuts)

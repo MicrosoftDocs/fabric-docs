@@ -15,7 +15,7 @@ ms.search.form: Lakehouse Sharing Permissions
 
 When you share a lakehouse, you grant other users or groups access to a lakehouse without giving access to the workspace and the rest of its items. To see the list of items that others shared with you, select **Browse** in the Fabric navigation bar, and then select **Shared with me**. You can also see lakehouses that others shared with you in your OneLake data hub.
 
-Sharing a lakehouse also grants access to the SQL endpoint and the associated default semantic model.
+Sharing a lakehouse also grants access to the SQL analytics endpoint and the associated default semantic model.
 
 To share a lakehouse, navigate to your workspace, and select the ellipsis (**...**) next to the lakehouse name. From the **More options** menu, select **Share**. Complete the fields in the **Grant people access** screen and select **Grant**.
 
@@ -23,9 +23,9 @@ To edit or remove permissions, see [Managing permissions](#managing-permissions)
 
 ## Sharing and permissions
 
-By default, sharing a lakehouse grants users read permission to the lakehouse, the associated SQL endpoint, and the default semantic model. In addition to these default permissions, you can grant:
+By default, sharing a lakehouse grants users read permission to the lakehouse, the associated SQL analytics endpoint, and the default semantic model. In addition to these default permissions, you can grant:
 
-- ReadData permission on SQL endpoint to access data without SQL policy.
+- ReadData permission on SQL analytics endpoint to access data without SQL policy.
 - ReadAll permission on the lakehouse to access all data using Apache Spark.
 - Build permission on the default semantic model to allow building Power BI reports on top of the semantic model.
 

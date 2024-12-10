@@ -5,7 +5,7 @@ ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 06/17/2024
+ms.date: 11/25/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -23,14 +23,14 @@ Requests to Copilot consume Fabric Capacity Units. This table defines how many c
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-|Copilot in Fabric |The input prompt |Per 1,000 Tokens |400 CU seconds|
-|Copilot in Fabric |The output completion |Per 1,000 Tokens|1,200 CU seconds|
+|Copilot in Fabric |The input prompt |Per 1,000 Tokens |200 CU seconds|
+|Copilot in Fabric |The output completion |Per 1,000 Tokens|600 CU seconds|
 
 
 ## Monitor the usage  
 The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for Copilot operations under the name "Copilot in Fabric." Additionally, Copilot users are able to view a summary of their billing charges for Copilot usage under the invoicing item "Copilot in Fabric."
 
-![Screenshot of Fabric Capacity Metrics.](./media/copilot-consumption/capacity-metrics-app.png)
+:::image type="content" border="true" source="./media/copilot-consumption/capacity-metrics-app.png" alt-text="Screenshot of Fabric Capacity Metrics.":::
 
 
 ## Capacity utilization type 
@@ -39,7 +39,7 @@ Fabric Copilots are classified as "background job" as the capacity utilization t
 
 Fabric is designed to provide lightning-fast performance by allowing operations to access more CU (Capacity Units) resources than are allocated to capacity. Fabric smooths or averages the CU usage of an "interactive job" over a minimum of 5 minutes, "background job" over a 24-hour period. According to the [Fabric throttling policy](../enterprise/throttling.md), the first phase of throttling begins when a capacity consumed all its available CU resources for the next 10 minutes.  
 
-For example, assume each Copilot request has 2,000 input tokens and 500 output tokens. The price for one Copilot request = (2,000 * 400+500 * 1,200)/1,000 = 1,400 CU seconds = 23.33 CU minutes.  
+For example, assume each Copilot request has 2,000 input tokens and 500 output tokens. The price for one Copilot request = (2,000 * 200+500 * 600)/1,000 = 700 CU seconds = 11.66 CU minutes.  
 
 Copilot is a background job, each Copilot request (~24 CU minute job) consume only one CU minute of each hour of a capacity. For a customer on F64 who has 64 * 24 CU Hours (1,536) in a day and each Copilot job consume (24 CU mins / 60 mins) = 0.4 CU Hours. Customers can run over 3.8k requests before they exhaust the capacity, but then everything shuts down.  
 

@@ -94,7 +94,7 @@ To use this feature, create an [Azure Blob storage connection](connector-azure-b
 
 - When you specify **Storage integration** in the source, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**. The **Storage path** under **Staging settings** in **Settings** tab is required.
 
-- When you don't specify **Storage integration** in the source, the staging Azure Blob Storage connection must use shared access signature authentication, as required by the Snowflake COPY command. Make sure you grant proper access permission to Snowflake in the staging Azure Blob Storage. To learn more about this, see this [article](https://docs.snowflake.com/en/user-guide/data-load-azure-config.html#option-2-generating-a-sas-token).
+- When you don't specify **Storage integration** in the source, the staging Azure Blob Storage connection must use shared access signature authentication, as required by the Snowflake COPY command. Make sure you grant proper access permission to Snowflake in the staging Azure Blob Storage. To learn more about this, see this [article](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-2-generating-a-sas-token).
 
 ### Destination
 

@@ -46,7 +46,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Web activity settings
 
-1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
    :::image type="content" source="media/web-activity/choose-web-connection-and-configure.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 
@@ -54,8 +54,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    :::image type="content" source="media/web-activity/create-new-connection.png" alt-text="Screenshot showing the new connection dialog for the Web activity.":::
 
-> [!NOTE]
-> The Connection name can be max 80 characters long.
+   > [!NOTE]
+   > The Connection name can be max 80 characters long.
 
 1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE, and PATCH methods.
 

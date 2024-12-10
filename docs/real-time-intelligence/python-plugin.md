@@ -8,16 +8,14 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/21/2024
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: product-kusto
 ---
 
 # Enable Python plugin
 
 The Python plugin runs a user-defined function (UDF) using a Python script. The Python script gets tabular data as its input, and produces tabular output. For more information on the Python plugin, see [Python plugin](/azure/data-explorer/kusto/query/pythonplugin?context=%2Ffabric%2Fcontext%2Fcontext-rti&pivots=fabric).
-
-> [!IMPORTANT]
-> Enabling the Python plugin consumes more compute resources and may increase cost.
 
 ## Prerequisite
 
@@ -33,7 +31,9 @@ The plugin is disabled by default.
 1. Enable the **Python language extension** by toggling the button to **On**, then select **Done**.
 
     > [!WARNING]
-    > Enabling plugins requires a refresh of the cached data in SSD (disk), which can take up to 1 hour. Enabling a language extension allocated 20 GB of SSD per instance.
+    >
+    > - Enabling the Python plugin consumes additional compute resources, which might lead to increased costs.
+    > - Enabling plugins requires a refresh of the cached data on the SSD disk, which can take up to one hour.
 
     :::image type="content" source="media/python-plugin/enable-python-plugin.png" alt-text="Screenshot of the plugins pane showing the Python language extension. The toggle button is highlighted.":::
 

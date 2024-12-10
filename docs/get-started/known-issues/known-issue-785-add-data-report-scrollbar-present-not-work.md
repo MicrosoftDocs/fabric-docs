@@ -4,7 +4,7 @@ description: A known issue is posted where when you add data to a report when th
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/24/2024
+ms.date: 08/14/2024
 ms.custom: known-issue-785
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-785
 
 When you edit reports in the Power BI service, the data pane sometimes shows a scrollbar. If you attempt to add data to a new or existing visual, the data doesn't get added to the visual. When you select the check box next to the desired data, you see the view scrolled back to the top of the pane, without any data being added. Typically, the issue occurs when you scroll the pane to any position besides at the top.
 
-**Status:** Open
+**Status:** Fixed: August 14, 2024
 
 **Product Experience:** Power BI
 

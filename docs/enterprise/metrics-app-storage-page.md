@@ -8,7 +8,8 @@ ms.custom:
   - build-2023
   - ignite-2023
   - build-2024
-ms.date: 02/21/2024
+  - ignite-2024
+ms.date: 09/12/2024
 ---
 
 # Understand the metrics app storage page
@@ -81,13 +82,15 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 ## Considerations and limitations
 
-The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
+* The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
 
   | Experience          | Fabric item |
   |---------------------|-------------|
-  | Data Activator      | Reflex      |
+  | Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]      | Reflex      |
   | Lakehouse           | Lakehouse   |
   | Real-Time Intelligence | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
+
+* [OneLake soft delete](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) storage is charged at the same rate as regular storage. For more information about OneLake soft delete, see [OneLake Storage](../onelake/onelake-capacity-consumption.md#onelake-storage).
 
 ## Related content
 

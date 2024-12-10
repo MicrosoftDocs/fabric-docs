@@ -1,17 +1,17 @@
 ---
-title: Data warehouse tutorial - build a report from the OneLake data hub
-description: In this tutorial step, learn how to build a report from the OneLake data hub with the data you ingested into your warehouse in the last step.
+title: Data warehouse tutorial - build a report from OneLake
+description: In this tutorial step, learn how to build a report from the OneLake with the data you ingested into your warehouse in the last step.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 11/19/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Build a report from the OneLake data hub
+# Tutorial: Build a report from OneLake
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -19,9 +19,7 @@ Learn how to build a report with the data you ingested into your [!INCLUDE [fabr
 
 ## Build a report
 
-1. Select the **OneLake data hub** in the navigation menu.
-
-   :::image type="content" source="media/tutorial-build-report/build-report-onelake-data-hub.png" alt-text="Screenshot of the navigation menu, showing where to select OneLake data hub.":::
+1. Select **OneLake** in the navigation menu.
 
 1. From the item list, select `WideWorldImporters` with the type of **Semantic model (default)**.
 

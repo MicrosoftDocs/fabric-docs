@@ -1,11 +1,13 @@
 ---
-title: "Troubleshoot Fabric mirrored databases"
+title: "Troubleshoot Fabric Mirrored Databases"
 description: Troubleshooting scenarios, workarounds, and links for mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
-ms.date: 05/09/2024
+ms.date: 11/19/2024
 ms.topic: troubleshooting
+ms.custom:
+  - ignite-2024
 ms.search.form: Fabric Mirroring
 ---
 
@@ -20,28 +22,28 @@ Scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases.
 Review the troubleshooting section of frequently asked questions for each data source:
 
 - [Troubleshoot Mirroring Azure SQL Database](azure-sql-database-troubleshoot.md) and [FAQ about Mirroring Azure SQL Database](azure-sql-database-mirroring-faq.yml)
+- [Troubleshoot Mirroring Azure SQL Managed Instance](azure-sql-managed-instance-troubleshoot.md) and [FAQ about Mirroring Azure SQL Managed Instance](azure-sql-managed-instance-faq.yml)
 - [Troubleshoot Mirroring Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
+- [FAQ about Mirroring Azure Databricks](azure-databricks-faq.yml)
+- [Troubleshoot mirroring from Fabric SQL database (preview)](../sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database (preview)](../sql/mirroring-faq.yml)
 
 Review limitations documentation for each data source:
 
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
+- [Limitations in mirroring from Fabric SQL database](../sql/mirroring-limitations.md)
 
 ## Stop replication
 
-When you select **Stop replication**, OneLake files remain as is, but incremental replication stops. You can restart the replication at any time by selecting **Start replication**.  
-
-You might want to do this when resetting the state of replication, after source database changes, or as a troubleshooting tool.  
+When you select **Stop replication**, OneLake files remain as is, but incremental replication stops. You can restart the replication at any time by selecting **Start replication**. You might want to do stop/start replication when resetting the state of replication, after source database changes, or as a troubleshooting tool.  
 
 ## Troubleshoot
 
 This section contains general Mirroring troubleshooting steps.
-
-#### Why am I getting "trial capacity" or "internal server" errors when I try to create a mirrored database"?
-
-You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
 
 #### I can't connect to a source database
 
@@ -64,7 +66,7 @@ Currently, views are not supported. Only replicating regular tables are supporte
 
 #### Some of the data in my column appears to be truncated
 
-The Fabric warehouse does not support VARCHAR(max) it only currently supports VARCHAR(8000).
+The Fabric warehouse does not support **VARCHAR(max)** it only currently supports **VARCHAR(8000)**.
 
 #### Data doesn't appear to be replicating
 
@@ -74,8 +76,17 @@ In the **Monitoring** page, the date shown is the last time data was successfull
 
 Changing the source database is not supported. Create a new mirrored database.
 
+## Limits error messages
+
+These common error messages have explanations and mitigations:
+
+| **Error message** | **Reason** | **Mitigation** |
+|:--|:--|:--|
+| "The replication is being throttled due to destination space limit." | There's a maximum of 10 TB of storage space in destination per Mirrored database. The replication is being throttled due to destination space limit. | In the source database, drop tables, remove data, or shard. |
+| "The tables count may exceed the limit, there could be some tables missing."| There's a maximum of 500 tables. | In the source database, drop or filter tables. If the new table is the 500th table, no mitigation required. |
+| "The replication is being throttled and expected to continue at YYYY-MM-DDTHH:MM:ss." | There's a maximum of 1 TB of change data captured per Mirrored database per day. | Wait for throttling to end. |
+
 ## Related content
 
 - [What is Mirroring in Fabric?](overview.md)
 - [Monitor Fabric mirrored database replication](monitor.md)
-- [Enable Mirroring](enable-mirroring.md)

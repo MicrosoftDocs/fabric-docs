@@ -9,8 +9,8 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: governance
   ms.topic: landing-page # Required
-  author: paulinbar
-  ms.author: painbar
+  author: KesemSharabi
+  ms.author: kesharab
   ms.date: 12/25/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -50,10 +50,12 @@ landingContent:
           url: authentication-tutorial.md    
         - text: Front-end implementation guide
           url: extensibility-front-end.md
-        - text: Back-end implementation guide
+        - text: Backend implementation guide
           url: extensibility-back-end.md
         - text: Azure web app deployment tutorial
           url: azure-web-app-deployment-tutorial.md  
+        - text: Onboard to the Monitoring hub
+          url: monitoring-hub.md
 
   # Card 
   - title: Concepts
@@ -64,8 +66,6 @@ landingContent:
           url: workload-environment.md
         - text: Item lifecycle
           url: item-lifecycle.md
-        - text: Monitoring hub
-          url: monitoring-hub.md
         - text: Working with customer data
           url: fabric-data-plane.md
 

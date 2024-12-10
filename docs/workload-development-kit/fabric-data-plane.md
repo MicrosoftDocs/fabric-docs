@@ -1,16 +1,15 @@
 ---
-title: Work with customer data in Microsoft Fabric (preview)
+title: Work with customer data in Microsoft Fabric
 description: Learn about how to work with customer data in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
 ms.date: 05/21/2024
 #customer intent:
 ---
 
-# Work with customer data in Fabric (preview)
+# Work with customer data in Fabric
 
 [Microsoft Fabric OneLake](../onelake/index.yml) is a unified, logical data lake for the entire organization, designed to be the single place for all analytics data. It comes automatically with every Microsoft Fabric tenant and is built on top of Azure Data Lake Storage (ADLS) Gen2. OneLake supports any type of file, structured or unstructured, and stores all tabular data in Delta Parquet format. It allows for collaboration across different business groups by providing a single data lake that is governed by default with distributed ownership for collaboration within a tenant's boundaries. Workspaces within a tenant enable different parts of the organization to distribute ownership and access policies, and all data in OneLake can be accessed through data items such as [Lakehouses and Warehouses](../data-warehouse/data-warehousing.md).
 
@@ -34,7 +33,7 @@ Before you can begin using the Fabric REST APIs or other services, such as Azure
 
 The Fabric Workload Development Kit SDK provides a method for acquiring an access token in the workload front end. For example, see [Sample Workload Controller](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/controller/SampleWorkloadController.ts).
 
- This client token must be passed to the workload back end and exchanged by using the on-behalf-of flow for a token with the necessary scopes to access the resources you need, such as OneLake. For example, to access and read from a Lakehouse, a user must authorize the application to make API calls on their behalf by using the Azure Storage `user_impersonation` permission. Then, in the back end, the access token must be obtained with the delegated scope `https://storage.azure.com/user_impersonation` to use Azure Storage.
+ This client token must be passed to the workload backend and exchanged by using the on-behalf-of flow for a token with the necessary scopes to access the resources you need, such as OneLake. For example, to access and read from a Lakehouse, a user must authorize the application to make API calls on their behalf by using the Azure Storage `user_impersonation` permission. Then, in the backend, the access token must be obtained with the delegated scope `https://storage.azure.com/user_impersonation` to use Azure Storage.
 
 If you decide to use SQL to access your customer data, the access token must be obtained with the scope `https://database.windows.net//user_impersonation` to use Azure SQL Database and the Microsoft.Data.SqlClient namespace. The access token must be used as written, with two forward slashes before `user_impersonation`, to be validated by the SQLConnection class.
 For more examples of token authentication, see the Microsoft Fabric Developer kit sample.

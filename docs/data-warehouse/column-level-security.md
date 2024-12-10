@@ -4,10 +4,11 @@ description: Learn about column-level security in tables in Fabric data warehous
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
-ms.date: 04/24/2024
+ms.date: 08/21/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 # Column-level security in Fabric data warehousing
 
@@ -27,9 +28,9 @@ In addition, column-level security is simpler and than designing additional [vie
 
 Implement column-level security with the [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) T-SQL statement. For simplicity of management, assigning permissions to roles is preferred to using individuals.
 
-Column-level security is applied to [shared warehouse or lakehouse](share-warehouse-manage-permissions.md), because the underlying data source hasn't changed.
+Column-level security is applied to [shared warehouse or lakehouse accessed through a SQL analytics endpoint](share-warehouse-manage-permissions.md), because the underlying data source hasn't changed.
 
-Only Microsoft Entra authentication is supported.
+Only Microsoft Entra authentication is supported. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 ## Examples
 
@@ -71,6 +72,6 @@ The SELECT permission was denied on the column 'CreditCard' of the object 'Custo
 ## Related content
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
-- [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
+- [Share your data and manage permissions](share-warehouse-manage-permissions.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
