@@ -82,8 +82,8 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 You can manage your tabs in the following way:
 
 * **Change the existing data source connection**: Under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
-* **Rename a tab**: Select the **pencil icon** next to the tab name.
-* **Add a new tab**: On the right of the existing tabs in the command bar, select the **plus +**. Different tabs can be connected to different data sources.
+* **Rename a tab**: Next to the tab name, select the **pencil icon**.
+* **Add a new tab**: On the right of the existing tabs in the command bar, select the plus **+**. Different tabs can be connected to different data sources.
 * **More actions**: On the right side of the command bar, there's a tab menu with more actions to manage the multiple tabs in your queryset.
 * **Change tab positions**: Use drag and drop gestures.
 
