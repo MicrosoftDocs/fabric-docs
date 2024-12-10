@@ -48,7 +48,7 @@ To create a new data access role:
 1. Open the lakehouse where you want to define the new role.
 1. Select **Manage OneLake data access (preview)** from the ribbon, and confirm that you want to enable data access roles (preview) for the lakehouse.
 
-:::image type="content" source="media\lakehouse-sharing\manage-onelake-data-access.png" alt-text="Screenshot showing the manage onelake data access command in a lakehouse.":::
+   :::image type="content" source="media\lakehouse-sharing\manage-onelake-data-access.png" alt-text="Screenshot showing the manage OneLake data access command in a lakehouse." lightbox="media\lakehouse-sharing\manage-onelake-data-access.png":::
 
 1. Next select **New role** and enter a name for the role.
 1. If you want the role to apply to all folders in the lakehouse, select **All folders**. If you want the role to only apply to selected folders, choose **Selected folders** and select the relevant folders.
