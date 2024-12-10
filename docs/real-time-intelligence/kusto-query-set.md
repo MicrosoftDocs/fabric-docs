@@ -75,20 +75,6 @@ The following examples use data that is publicly available at [https://kustosamp
 
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
 
-## Manage queryset tabs
-
-Within a KQL queryset, you can create multiple tabs. Each tab can be associated with a different KQL database, and lets you save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
-
-You can manage your tabs in the following way:
-
-* **Change the existing data source connection**: Under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
-* **Rename a tab**: Next to the tab name, select the **pencil icon**.
-* **Add a new tab**: On the right of the existing tabs in the command bar, select the plus **+**. Different tabs can be connected to different data sources.
-* **More actions**: On the right side of the command bar, there's a tab menu with more actions to manage the multiple tabs in your queryset.
-* **Change tab positions**: Use drag and drop gestures.
-
-:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu1.png":::
-
 ## Interact with data sources
 
 The data source explorer allows you to switch between the data sources connected to the queryset tab that you are in.
@@ -161,6 +147,20 @@ You might want to copy and share the queries you create.
 
     > [!IMPORTANT]
     > The user who is receiving the query link must have viewing permissions to the underlying data to execute the query and view results.
+
+## Manage queryset tabs
+
+Within a KQL queryset, you can create multiple tabs. Each tab can be associated with a different KQL database, and lets you save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
+
+You can manage your tabs in the following way:
+
+* **Change the existing data source connection**: Under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
+* **Rename a tab**: Next to the tab name, select the **pencil icon**.
+* **Add a new tab**: On the right of the existing tabs in the command bar, select the plus **+**. Different tabs can be connected to different data sources.
+* **More actions**: On the right side of the command bar, there's a tab menu with more actions to manage the multiple tabs in your queryset.
+* **Change tab positions**: Use drag and drop gestures.
+
+:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu1.png":::
 
 ## Export query data as CSV
 

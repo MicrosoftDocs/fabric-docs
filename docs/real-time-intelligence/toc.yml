@@ -292,10 +292,10 @@ items:
     items:
     - name: Create a KQL queryset
       href: create-query-set.md
-    - name: Access the data profile of a table
-      href: data-profile.md
     - name: Query data in a KQL queryset
       href: kusto-query-set.md
+    - name: Access the data profile of a table
+      href: data-profile.md
     - name: Customize results in the KQL Queryset results grid
       href: customize-results.md
     - name: Keyboard shortcuts
