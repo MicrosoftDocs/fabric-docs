@@ -4,7 +4,7 @@ description: A known issue is posted where a visual doesn't load due to an unexp
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/07/2024
+ms.date: 12/10/2024
 ms.custom: known-issue-916
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-916
 
 You might see errors if you have certain combinations of Data Analysis Expressions (DAX) patterns in your semantic model. Your visuals fail to load and you receive an error.
 
-**Status:** Open
+**Status:** Fixed: December 10, 2024
 
 **Product Experience:** Power BI
 
