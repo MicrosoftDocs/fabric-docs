@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 11/24/2024
+ms.date: 12/09/2024
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -19,7 +19,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 ## [Microsoft Fabric](fabric-switch.md)
 
-
 | Setting name | Description |
 |------|-------|
 |[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users’ ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
@@ -31,13 +30,11 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |User data functions (preview)|Select the admins who can view and change this setting, including any security group selections you've made.|
 |[Users can create Real-Time Dashboards (preview)](../real-time-intelligence/index.yml)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 |[SQL Database (preview)​](../database/sql/overview.md)|Users can create SQL Databases​.  [Learn More](https://aka.ms/fabricsqldb)|
-|Project Alpine Lakes (preview)​|Users can create Project Alpine Lakes items to build comprehensive digital twins of real world environments and processes, to enable big-picture data analysis and drive operational efficiency.|
 |[Users can discover and create org apps (preview)​](/power-bi/consumer/org-app-items/org-app-items)|Turn on this setting to let users create org apps as items. Users with access will be able to view them. By turning on this setting, you agree to the  [Preview Terms](https://aka.ms/orgapps_previewterms).<br><br>If turned off, any org app items created will be hidden until this setting is turned on again. The prior version of workspace apps will still be available.  [Learn More](https://aka.ms/orgapps_learnmore)|
 |[Product Feedback](../get-started/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
-|Copy Job (preview)|Users can simply move data from any sources into any destinations without creating a pipeline or dataflow. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272307)|
+|[Copy Job (preview)](../data-factory/what-is-copy-job.md)|Users can simply move data from any sources into any destinations without creating a pipeline or dataflow. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272307)|
 |[Users can create and share AI skill item types (preview)](../data-science/concept-ai-skill.md)|Users can create natural language data question and answer (Q&amp;A) experiences using generative AI and then save them as AI skill items. AI skill items can be shared with others in the organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2276218)|
 |[Users can discover and use metrics (preview)](./service-admin-portal-goals-settings.md#metric-sets-setting-preview)|Turn on this setting to let users in the organization search for, view, and use metrics. They can use metrics to create new items, such as reports, across Fabric. By turning this setting on, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).<br><br>If turned off, any metrics and metric sets created will be hidden until this setting is turned on again. Semantic models underlying metric sets and downstream items created from metrics will always be visible.|
-|Graph Intelligence (preview)|Explore data and build algorithms with Graph​.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2282471)|
 |[Mirrored Azure Databricks Catalog (preview)](../database/mirrored-database/azure-databricks.md)|Turn on this setting to allow users to add Azure Databricks catalogs, schemas, and tables to Fabric workspaces and explore data from Fabric without needing to move data.  [Learn More](https://aka.ms/adbfabricdoc)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
@@ -146,11 +143,10 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Google BigQuery SSO](/power-query/connectors/google-bigquery-aad)|Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, will be sent to Google BigQuery for authentication.|
 |[Microsoft Entra single sign-on for data gateway](service-admin-portal-integration.md#azure-ad-single-sign-on-sso-for-gateway)|Users can use Microsoft Entra single sign-on (SSO) to authenticate to on-premises data gateways and access data sources.<br><br>With this setting on, user access token information, including names and emails, is sent to data sources to authenticate to the  on-premises data gateway service.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2256374)|
 |[Power Platform Solutions Integration (preview)](service-admin-portal-integration.md#power-platform-solutions-integration-preview)|Allow integration with Power Platform solutions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2194433)|
-|[Users can view Power BI files saved in OneDrive and SharePoint (preview)](/power-bi/collaborate-share/service-sharepoint-viewer)|Users in the organization can view Power BI files saved in OneDrive or SharePoint document libraries. The permissions to save and share Power BI files in OneDrive and SharePoint document libraries are controlled by permissions managed in OneDrive and SharePoint. [Learn More](https://go.microsoft.com/fwlink/?linkid=2224280)|
+|[Users can view Power BI files saved in OneDrive and SharePoint (preview)](/power-bi/collaborate-share/service-sharepoint-viewer)|Users in the organization can view Power BI files saved in OneDrive for Business or SharePoint document libraries. The permissions to save and share Power BI files in OneDrive and SharePoint document libraries are controlled by permissions managed in OneDrive and SharePoint. [Learn More](https://go.microsoft.com/fwlink/?linkid=2224280)|
 |[Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop (preview)](service-admin-portal-integration.md#users-can-share-links-to-power-bi-files-stored-in-onedrive-and-sharepoint-through-power-bi-desktop)|Users who have saved Power BI files (.pbix) to OneDrive and SharePoint can share links to those files using Power BI Desktop. [Learn More](https://go.microsoft.com/fwlink/?linkid=2227462)|
 |Enable granular access control for all data connections|Enforce strict access control for all data connection types. When this is turned on, shared items will be disconnected from data sources if they’re edited by users who don’t have permission to use the data connections.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2226159)|
 |[Semantic models can export data to OneLake](/power-bi/enterprise/onelake-integration-overview)|Semantic models configured for OneLake integration can send import tables to OneLake. Once the data is in OneLake, users can include the exported tables in Fabric items, including lakehouses and warehouses.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2252165)|
-																																																																																																																				 
 |[Semantic model owners can choose to automatically update semantic models from files imported from OneDrive or SharePoint](/power-bi/connect-data/refresh-desktop-file-onedrive)|Semantic model owners can choose to allow semantic models to be automatically updated with changes made to the corresponding Power BI files (.pbix) stored in OneDrive or SharePoint. File changes can include new and modified data connections.<br><br>Turn off this setting to prevent automatic updates to semantic models.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2240760)|
 
 ## [Power BI visuals](/power-bi/admin/organizational-visuals)
@@ -175,7 +171,9 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics)|Users in the organization can see usage metrics for dashboards, reports and semantic models that they have appropriate permissions to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2152884)|
 |[Per-user data in usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics#exclude-user-information-from-usage-metrics-reports)|Usage metrics for content creators will expose display names and email addresses of users who are accessing content.|
+|[Show user data in the Fabric Capacity Metrics app and reports](/fabric/enterprise/metrics-app)|With this setting on, active user data, including names and email addresses, are displayed in the Capacity Metrics app and reports.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2281580)|
 |[Azure Log Analytics connections for workspace administrators](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure)|NO DESCRIPTION IN UI|
+|[Workspace admins can turn on monitoring for their workspaces (preview)](/fabric/get-started/enable-workspace-monitoring)|Workspace admins can turn on monitoring for their workspaces. When a workspace admin turns on monitoring, a read-only Eventhouse that includes a KQL database is created. After the Eventhouse and KQL database are added to the workspace, logging is turned on and data is sent to the database.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2245715)|
 |[Microsoft can store query text to aid in support investigations](./query-text-storage.md)|Query text for some items, including semantic models, is securely stored for usage during support investigations. Turn off this setting to stop the service from storing query text.<br><br>Turning off this setting might negatively impact Microsoft's ability to provide support for the Fabric service.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262696)|
 
 ## [Dashboard settings](service-admin-portal-dashboard.md)

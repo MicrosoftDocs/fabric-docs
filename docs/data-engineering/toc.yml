@@ -65,6 +65,14 @@ items:
     href: lakehouse-streaming-data.md
   - name: Get streaming data into lakehouse with eventstreams 
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
+- name: Copilot
+  items:
+  - name: Copilot for Data Science and Data Engineering
+    href: copilot-notebooks-overview.md
+  - name: Chat-magics in notebooks (preview)
+    href: copilot-notebooks-chat-magics.md
+  - name: Use the Copilot chat panel (preview)
+    href: copilot-notebooks-chat-pane.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
