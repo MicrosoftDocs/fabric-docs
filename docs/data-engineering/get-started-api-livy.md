@@ -97,7 +97,7 @@ The full swagger files for the Livy API are available here.
 
 {
       "path_to_root": "Livy API Swagger",
-      "url": "https://github.com/Azure/azure-functions-durable-extension",
+      "url": "https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/Livy-API-swagger",
       "branch": "main",
       "branch_mapping": {}
     },
