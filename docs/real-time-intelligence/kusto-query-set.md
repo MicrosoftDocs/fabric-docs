@@ -34,7 +34,7 @@ Select the tab that corresponds with your desired data source type.
 ## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar,  use the database switcher to expand the data source connections menu.
+1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
@@ -152,7 +152,7 @@ You might want to copy and share the queries you create.
 
 Within a KQL queryset, you can create multiple tabs. Each tab can be associated with a different KQL database, and lets you save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different databases.
 
-You can manage your tabs in the following way:
+You can manage your tabs in the following ways:
 
 * **Change the existing data source connection**: Under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
 * **Rename a tab**: Next to the tab name, select the **pencil icon**.
