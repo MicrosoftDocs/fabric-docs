@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 12/03/2024
+ms.date: 12/09/2024
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -30,13 +30,11 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |User data functions (preview)|Select the admins who can view and change this setting, including any security group selections you've made.|
 |[Users can create Real-Time Dashboards (preview)](../real-time-intelligence/index.yml)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 |[SQL Database (preview)​](../database/sql/overview.md)|Users can create SQL Databases​.  [Learn More](https://aka.ms/fabricsqldb)|
-|Project Alpine Lakes (preview)​|Users can create Project Alpine Lakes items to build comprehensive digital twins of real world environments and processes, to enable big-picture data analysis and drive operational efficiency.|
 |[Users can discover and create org apps (preview)​](/power-bi/consumer/org-app-items/org-app-items)|Turn on this setting to let users create org apps as items. Users with access will be able to view them. By turning on this setting, you agree to the  [Preview Terms](https://aka.ms/orgapps_previewterms).<br><br>If turned off, any org app items created will be hidden until this setting is turned on again. The prior version of workspace apps will still be available.  [Learn More](https://aka.ms/orgapps_learnmore)|
 |[Product Feedback](../get-started/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
 |[Copy Job (preview)](../data-factory/what-is-copy-job.md)|Users can simply move data from any sources into any destinations without creating a pipeline or dataflow. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272307)|
 |[Users can create and share AI skill item types (preview)](../data-science/concept-ai-skill.md)|Users can create natural language data question and answer (Q&amp;A) experiences using generative AI and then save them as AI skill items. AI skill items can be shared with others in the organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2276218)|
 |[Users can discover and use metrics (preview)](./service-admin-portal-goals-settings.md#metric-sets-setting-preview)|Turn on this setting to let users in the organization search for, view, and use metrics. They can use metrics to create new items, such as reports, across Fabric. By turning this setting on, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).<br><br>If turned off, any metrics and metric sets created will be hidden until this setting is turned on again. Semantic models underlying metric sets and downstream items created from metrics will always be visible.|
-|Graph Intelligence (preview)|Explore data and build algorithms with Graph​.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2282471)|
 |[Mirrored Azure Databricks Catalog (preview)](../database/mirrored-database/azure-databricks.md)|Turn on this setting to allow users to add Azure Databricks catalogs, schemas, and tables to Fabric workspaces and explore data from Fabric without needing to move data.  [Learn More](https://aka.ms/adbfabricdoc)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
@@ -173,7 +171,9 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics)|Users in the organization can see usage metrics for dashboards, reports and semantic models that they have appropriate permissions to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2152884)|
 |[Per-user data in usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics#exclude-user-information-from-usage-metrics-reports)|Usage metrics for content creators will expose display names and email addresses of users who are accessing content.|
+|[Show user data in the Fabric Capacity Metrics app and reports](/fabric/enterprise/metrics-app)|With this setting on, active user data, including names and email addresses, are displayed in the Capacity Metrics app and reports.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2281580)|
 |[Azure Log Analytics connections for workspace administrators](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure)|NO DESCRIPTION IN UI|
+|[Workspace admins can turn on monitoring for their workspaces (preview)](/fabric/get-started/enable-workspace-monitoring)|Workspace admins can turn on monitoring for their workspaces. When a workspace admin turns on monitoring, a read-only Eventhouse that includes a KQL database is created. After the Eventhouse and KQL database are added to the workspace, logging is turned on and data is sent to the database.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2245715)|
 |[Microsoft can store query text to aid in support investigations](./query-text-storage.md)|Query text for some items, including semantic models, is securely stored for usage during support investigations. Turn off this setting to stop the service from storing query text.<br><br>Turning off this setting might negatively impact Microsoft's ability to provide support for the Fabric service.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262696)|
 
 ## [Dashboard settings](service-admin-portal-dashboard.md)

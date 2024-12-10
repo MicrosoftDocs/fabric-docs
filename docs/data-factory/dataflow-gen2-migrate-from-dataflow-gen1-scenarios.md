@@ -5,7 +5,7 @@ author: itsnotaboutthecell
 ms.author: alpowers
 ms.reviewer: dougklopfenstein, mllopis
 ms.topic: conceptual
-ms.date: 12/05/2024
+ms.date: 12/08/2024
 ms.custom: fabric-cat, intro-migration
 ---
 
@@ -13,7 +13,7 @@ ms.custom: fabric-cat, intro-migration
 
 This article presents different migration scenarios you can consider when [migrating from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1.md). It also provides you with guidance and execution recommendations. These scenarios might inspire you to determine the right migration approach based on your business requirements and circumstances.
 
-When you migrate your dataflows, it's important to think beyond simply copying existing solutions. Instead, we recommend that you modernize your solutions by taking advantage of the latest innovations and capabilities built in to Dataflow Gen2. That way, your solutions can support the growing demands of the business.
+When you migrate your dataflows, it's important to think beyond simply copying existing solutions. Instead, we recommend modernizing your solutions by taking advantage of the latest innovations and capabilities of Dataflow Gen2. This approach ensures that your solutions can support the growing demands of the business.
 
 For instance, Dataflow Gen2 has a feature named [fast copy](dataflows-gen2-fast-copy.md), which significantly reduces the time required to ingest data for certain transformations and connectors. Dataflow Gen2 also has improved [incremental refresh](dataflow-gen2-incremental-refresh.md), which optimizes data refresh processes by only updating data that's changed. These advancements not only enhance performance and efficiency but also ensure that your solutions scale.
 
@@ -31,16 +31,13 @@ Dataflows offer a versatile platform for creating scalable ETL (Extract, Transfo
 
 Here are three possible migration scenarios that have inspired this article:
 
-- **Personal or team usage**: Small teams or individuals use dataflows to automate data ingestion and preparation tasks, allowing them to focus on data analysis and insights. For instance, a team could use dataflows to extract data from various sources like Microsoft Excel or Microsoft SharePoint. Their dataflows transform source data according to their specific needs, and load it into a semantic models for reporting purposes.
+- **Personal or team usage**: Small teams or individuals use dataflows to automate data ingestion and preparation tasks, allowing them to focus on data analysis and insights. For instance, a team could use dataflows to extract data from various sources like Microsoft Excel or Microsoft SharePoint. Their dataflows transform source data according to their specific needs, and load it into a semantic model for reporting purposes.
 - **Departmental usage**: Departments within an organization use dataflows to manage larger data sources and complex transformations. They might create composable dataflows that promote reusability and consistency across departmental reports, ensuring that all team members work on the same version of data.
 - **Enterprise usage**: At an enterprise level, dataflows are instrumental in ingesting vast amounts of data across multiple departments at scale. They serve as a centralized data preparation layer that feeds into many semantic models, underpinning a broad spectrum of business intelligence and analytics applications. The entire organization benefits from reliable, up-to-date data, enabling informed decision making at all levels.
 
 In each of these scenarios, dataflows help to create robust and scalable ETL/ELT solutions that can grow with the needs of the team, department, or organization. Well-designed dataflows ensure that data management processes remain efficient and effective.
 
 For more information about usage scenarios, see [Microsoft Fabric implementation planning](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-overview).
-
-> [!IMPORTANT]
-> While it's possible to _get data_ by using the dataflow connector, this approach isn't recommended when using Dataflow Gen2. Instead, we recommend that you use the data destination functionality to output all created tables from Dataflow Gen2 to Fabric items or other destinations, whenever possible. That's because the dataflow connector uses an underlying system implementation storage layer (called _DataflowsStagingLakehouse_), and it could change when new functionality or features are added.
 
 ### Migration scenario 1
 
@@ -67,7 +64,10 @@ in
 ```
 
 > [!TIP]
-> If you parameterize the `workspaceId` and `dataflowId` values in the semantic models, you can use the [Datasets - Update Parameter in Group](https://learn.microsoft.com/rest/api/power-bi/datasets/update-parameters-in-group) REST API operation to programmatically update the mashup parameter details.
+> If you parameterize the `workspaceId` and `dataflowId` values in the semantic models, you can use the [Datasets - Update Parameter in Group](/rest/api/power-bi/datasets/update-parameters-in-group) REST API operation to programmatically update the mashup parameter details.
+
+> [!IMPORTANT]
+> While it's possible to _get data_ by using the dataflow connector, this approach isn't recommended when using Dataflow Gen2. Instead, we recommend that you use the data destination functionality to output all created tables from Dataflow Gen2 to Fabric items or other destinations, whenever possible. That's because the dataflow connector uses an underlying system implementation storage layer (called _DataflowsStagingLakehouse_), and it could change when new functionality or features are added.
 
 ### Migration scenario 2
 
@@ -105,7 +105,6 @@ The dataflow creators want to take advantage of the advanced capabilities of Dat
 
 To migrate their solutions, the dataflow creators:
 
-1. Update existing solutions and transition queries by replacing the `PowerPlatform.Dataflows` or `PowerBI.Dataflows` function with the appropriate data access function in Fabric (`Lakehouse.Contents`, `Warehouse.Contents`, `AzureDataExplorer.Contents`, and others).
 1. Grant data access through the SQL compute engine's [granular permissions](../data-warehouse/sql-granular-permissions.md), which provide more selective access to certain users by restricting access to specific tables and schemas, as well as implementing RLS and CLS.
 1. Update existing solutions and transition queries by replacing the `PowerPlatform.Dataflows` or `PowerBI.Dataflows` function with the `Fabric.Warehouse` data access function in Fabric.
 
@@ -114,7 +113,7 @@ Here's an example PowerQuery query that's been updated to retrieve data from the
 ```powerquery-m
 let
   Source = Fabric.Warehouse([]),
-  WorkspaceId = Source{[workspaceId = "0000aaaa-11bb-cccc-dd22-eeeeee333333"]}[Data],
+  WorkspaceId = Source{[workspaceId="0000aaaa-11bb-cccc-dd22-eeeeee333333"]}[Data],
   WarehouseId = WorkspaceId{[warehouseId="1111bbbb-22cc-dddd-ee33-ffffff444444"]}[Data],
   DimCustomerTable = WarehouseId{[Schema="dbo", Item="DimCustomer"]}[Data]
 in
@@ -138,12 +137,10 @@ To help you plan your migration, your first step is to take inventory of your da
   - Access mashup query expressions from the [Dataflow table](/power-apps/developer/data-platform/reference/entities/msdyn_dataflow) within the App Solution [Power Platform Dataflows](https://appsource.microsoft.com/product/dynamics-365/mscrm.cb8898e7-c43c-4a73-adec-cb9eea4a68ca). You can then search the expressions for any dataflow IDs to understand the complete lineage across applications within the tenant. To learn how to install and manage apps within Dynamics 365 that run on Microsoft Dataverse, see [Manage Power Apps](/power-platform/admin/manage-apps).
 - **Dataflows as a source in Excel**
   - While Excel workbooks don't have a REST API to track lineage and dependencies, you can use Visual Basic for Applications (VBA) and the [WorkbookConnection object](/office/vba/api/excel.workbookconnection) to determine whether the connection string contains the text `Provider=Microsoft.Mashup.OleDb.1`, which indicates a Power Query connection. Additionally, you can use the [WorkbookQuery.Formula](/office/vba/api/excel.workbookquery.formula) property to extract Power Query formulas.
-  
-After tracking the lineage of your dataflows, we recommend that you update existing dataflow connections for Fabric items as follows:
-
-  - To access the SQL analytics endpoint of a Fabric lakehouse, warehouse, or SQL database, use the [SQL Server connector](../data-factory/connector-sql-server-database-overview.md), which uses the `Sql.Database` data access function.
-  - To access Fabric lakehouse file content, use the [Azure Data Lake Gen2 Storage connector](../data-factory/connector-azure-data-lake-storage-gen2-overview.md), which uses the `AzureStorage.DataLake` data access function.
-  - To access a Fabric eventhouse database, use the [Azure Data Explorer connector](../data-factory/connector-azure-data-explorer-overview.md), which uses the `AzureDataExplorer.Contents` data access function.
+  - After tracking the lineage of your dataflows, we recommend that you update existing dataflow connections in Excel for Fabric items as follows:
+    - To access the SQL analytics endpoint of a Fabric lakehouse, warehouse, or SQL database, use the [SQL Server connector](../data-factory/connector-sql-server-database-overview.md), which uses the `Sql.Database` data access function.
+    - To access Fabric lakehouse file content, use the [Azure Data Lake Gen2 Storage connector](../data-factory/connector-azure-data-lake-storage-gen2-overview.md), which uses the `AzureStorage.DataLake` data access function.
+    - To access a Fabric eventhouse database, use the [Azure Data Explorer connector](../data-factory/connector-azure-data-explorer-overview.md), which uses the `AzureDataExplorer.Contents` data access function.
 
 ### Power Query templates
 
@@ -155,7 +152,7 @@ Power Query templates have been designed to be compatible with various integrati
 
 For more information about this article, check out the following resources:
 
-- [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-migration-overview.md)
+- [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1.md)
 - [Fabric pricing](https://powerbi.microsoft.com/pricing/)
 - Questions? [Try asking the Fabric community](https://community.fabric.microsoft.com/)
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com)

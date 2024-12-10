@@ -4,7 +4,7 @@ description: A known issue is posted where you can't close organizational app it
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/26/2024
+ms.date: 12/09/2024
 ms.custom: known-issue-861
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-861
 
 The "close" or "x" button doesn't work as expected on organizational app items in the left navigation pane. When you hover over an organizational app item in the left navigation pane, the close button doesn't appear.
 
-**Status:** Open
+**Status:** Fixed: December 9, 2024
 
 **Product Experience:** Power BI
 
