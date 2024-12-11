@@ -11,13 +11,41 @@ ms.date: 05/21/2024
 
 # Quickstart: Run a workload sample
 
-This quick start guide shows you how to create and run a Microsoft Fabric workload using a sample workload. To run this quickstat successfully, you need to use a [Fabric administrator](/entra/identity/role-based-access-control/permissions-reference#fabric-administrator) account when logging into Microsoft Fabric and Azure.
+This quickstart guide shows you how to create and run a Microsoft Fabric workload using a sample workload.
+
+This sample demonstrates storing and reading data from and to lakehouses. To do that, you need to generate tokens for Azure Storage service in [On-Behalf-Of (OBO) flows](/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
 
 ## Prerequisites
 
 Before you begin, ensure that you have an environment that's [set up](environment-setup.md) for workload development.
 
-## Step 1: Run the sample
+????
+This user must be a [Global administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) in the tenant.
+
+## Step 1: Setup Azure storage
+
+You'll need consent to use Azure Storage. In this step you'll check whether Azure Storage is installed in the tenant, and if it isn't you'll install it.
+
+1. Log into the [Azure portal](https://portal.azure.com).
+
+2. Search for **Enterprise applications** and select it from the search results.
+
+3. From the **Application type** filter dropdown list, select **All applications** and then select **Apply**.
+
+4. In the **Application ID starts with** filter search box, enter the following application ID: `e406a681-f3d4-42a8-90b6-c2b029497af1` and then select **Apply**.
+
+    If **Azure Storage** is listed, it's already installed and you can continue to [Step 2](#step-2-confirm-that-the-workload-is-running) .
+
+5. If **Azure Storage** isn't listed, open **PowerShell** as an administrator and run the following commands:
+
+   ```powershell
+   Install-Module az
+   Import-Module az
+   Connect-AzureAD
+   New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
+   ```
+
+## Step 2: Create an Azure Entra ID application
 
 Follow these steps to run the sample workload.
 
@@ -25,15 +53,35 @@ Follow these steps to run the sample workload.
 
 2. Extract the contents of the zip file to a local directory on your machine. A new folder called **Microsoft-Fabric-workload-development-sample-main** is created.
 
-3. Open **PowerShell** and do the following:
+3. Follow these steps to get your tenant IDL
+    1. Log into Fabric with the user you want to use to create the workload.
+    2. Select the **Help & Support** (the question mark **?**) and then select **About**.
+    3. From the **Tenant URL** copy the string of numbers and letters after `https://app.powerbi.com/home?ctid=`. This is your tenant ID.
+
+        For example, if your tenant URL is `https://app.powerbi.com/home?ctid=bbbbcccc-1111-dddd-2222-eeee3333ffff`, your tenant ID is bbbbcccc-1111-dddd-2222-eeee3333ffff.
+
+4. Open **PowerShell** and do the following:
 
     1. Navigate to *Microsoft-Fabric-workload-development-sample-main\Microsoft-Fabric-workload-development-sample-main\Authentication* folder.
 
-    2. Run the following command:
+    2. Run the command below. You'll need to authenticate with the credentials of the user you're using to create the workload.
 
-        ```powershell
-        .\CreateDevAADApp.ps1
-        ```
+    ```powershell
+    .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.WorkloadSample" -tenantId "<your-tenant-id>"
+    ```
+5. Copy the following details from the output of the script:
+
+* **ApplicationIdUri / Audience** - For example, `api://localdevinstance/<your-tenant-id>/Org.WorkloadSample/OyR`
+* **RedirectURI** - `http://localhost:60006/close`
+* **Application Id** - For example, `00001111-aaaa-2222-bbbb-3333cccc4444`
+* **secret** - For example, `aaaaa~0b0b0b0b0b0b0b0b0b.bb~2d2d2d2d2d2d2`
+
+## Frontend
+
+## Backend
+
+
+
     
 5. Login with the user you want to use to create the workload. This user must be a [Global administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) in the tenant.
 
@@ -49,7 +97,7 @@ Follow these steps to run the sample workload.
     For example:
 
     ```powershell
-    .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.Myworkload" -tenantId "bbbbcccc-1111-dddd-2222-eeee3333ffff"
+    .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.WorkloadSample" -tenantId "bbbbcccc-1111-dddd-2222-eeee3333ffff"
     ```
 
 
