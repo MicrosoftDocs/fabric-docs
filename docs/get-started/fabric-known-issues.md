@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 12/10/2024
+ms.date: 12/11/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  966  | Power BI  | [Sync content from Git in workspace fails](known-issues/known-issue-966-sync-content-git-workspace-fails.md) | December 11, 2024 |
 |  968  | Power BI  | [Export data option is disabled for Q&A visual in the service](known-issues/known-issue-968-export-data-option-disabled-qa-visual.md) | December 10, 2024 |
 |  967  | Data Factory | [Pipeline activities don't save if their data warehouse connection is changed](known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md) | December 10, 2024 |
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
@@ -35,7 +36,6 @@ Select the **Title** to view more information about that specific known issue.
 |  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](known-issues/known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
-|  927  | Power BI | [PowerPoint add-in and Refresh Report API refresh date appears incorrect](known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md) | November 12, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
 |  923  | Power BI | [Tenant migrations paused through January 2025](known-issues/known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](known-issues/known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |
@@ -91,6 +91,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  927  | Power BI | [PowerPoint add-in and Refresh Report API refresh date appears incorrect](known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md) | November 12, 2024 | Fixed: December 11, 2024 |
 |  916  | Power BI | [Visual doesn't load due to an unexpected error](known-issues/known-issue-916-visual-not-load-error.md) | November 7, 2024 | Fixed: December 10, 2024 |
 |  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 | Fixed: December 9, 2024 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 | Fixed: December 4, 2024 |
@@ -123,7 +124,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 | Fixed: November 5, 2024 |
 |  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |  Fixed: November 5, 2024 |
 |  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 | Fixed: October 31, 2024 |
-|  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 | Fixed: October 25, 2024 |
 
 ## Related content
 
