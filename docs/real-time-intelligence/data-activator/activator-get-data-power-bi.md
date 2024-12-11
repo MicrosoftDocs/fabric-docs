@@ -34,7 +34,7 @@ Before you begin:
 Start by creating an alert for a dashboard tile or a report visual. This example uses a report visual. 
 
 1. Open your Power BI report in [editing view](/power-bi/create-reports/service-interact-with-a-report-in-editing-view).
-2. Choose a visual on the report to monitor, in the upper right corner of t he visual select the ellipses (...) > **Add alert**.
+2. Choose a visual on the report to monitor, in the upper right corner of the visual select the ellipses (...) > **Add alert**.
 You can also select the bell icon in the visual.
 
     The following image shows an example of how to set an alert from a visual that displays daily sales by store:
