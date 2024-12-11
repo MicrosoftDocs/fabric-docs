@@ -765,6 +765,8 @@
         href: dataflow-gen2-cicd-and-git-integration.md
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
         href: dataflow-gen2-migrate-from-dataflow-gen1.md
+      - name: Migrate to Dataflow Gen2 scenarios
+        href: dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
@@ -931,6 +933,8 @@
             href: apache-airflow-jobs-hello-world.md
           - name: Run Fabric data pipelines and notebooks
             href: apache-airflow-jobs-run-fabric-item-job.md
+          - name: Use AI to build DAGs from an image
+            href: apache-airflow-job-build-dags-using-azure-openai.md
           - name: Run ADF pipeline
             href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
           - name: Run Azure Databricks job

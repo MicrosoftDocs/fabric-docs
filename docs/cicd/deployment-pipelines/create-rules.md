@@ -116,23 +116,14 @@ To create a deployment rule, follow the steps in this section. After you create 
 Data source rules can be defined for the following data sources:
 
 * Azure Analysis Services (AAS)
-
 * Azure Synapse
-
 * SQL Server Analysis Services (SSAS)
-
 * Azure SQL Server
-
 * SQL server
-
 * Odata Feed
-
 * Oracle
-
 * SapHana (import mode only; not direct query mode)
-
 * SharePoint
-
 * Teradata
 
 For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-for-configurations-that-will-change-between-stages).
@@ -158,15 +149,10 @@ This section lists the limitations for the deployment rules.
 * The following scenarios aren't supported:
 
   * Data source rules for dataflows that have other dataflows as sources.
-
   * Data source rules for common data model (CDM) folders in a dataflow.
-
   * Data source rules for semantic models that use dataflows as their source.
-
   * Creating data source rules on a semantic model that uses Native query and DirectQuery together.
-
   * Parameter rules aren't supported for paginated reports.
-
   * Adding data source rules for semantic models and dataflows on data sources which are parametrized.
 
 ## Related content

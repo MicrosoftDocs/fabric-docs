@@ -21,7 +21,84 @@ Before you begin, ensure that you have an environment that's [set up](environmen
 
 Follow these steps to run the sample workload.
 
-1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254) repository.
+1. Navigate to the [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254) repository, select **Code** and then select **Download ZIP**.
+
+2. Extract the contents of the zip file to a local directory on your machine. A new folder called **Microsoft-Fabric-workload-development-sample-main** is created.
+
+3. Open **PowerShell** and do the following:
+
+    1. Navigate to *Microsoft-Fabric-workload-development-sample-main\Microsoft-Fabric-workload-development-sample-main\Authentication* folder.
+
+    2. Run the following command:
+
+        ```powershell
+        .\CreateDevAADApp.ps1
+        ```
+    
+5. Login with the user you want to use to create the workload. This user must be a [Global administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) in the tenant.
+
+    >[!NOTE]
+    >A *Global administrator* is needed to run the sample application. For development purposes, you can use a [Fabric administrator](/entra/identity/role-based-access-control/permissions-reference#fabric-administrator).
+
+6. Enter the following details:
+
+    * `applicationName` - Provide a name for your [Microsoft Entra ID application](/entra/identity/enterprise-apps/what-is-application-management).
+    * `workloadName` - Provide a name for the Microsoft Fabric workload you want to create.
+    * `tenantId` - Your Microsoft Fabric's tenant ID. If you don't know what's your tenant ID, see [Find the Microsoft Entra tenant ID](/partner-center/find-ids-and-domain-names#find-the-microsoft-azure-ad-tenant-id-and-primary-domain-name).
+
+    For example:
+
+    ```powershell
+    .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.Myworkload" -tenantId "bbbbcccc-1111-dddd-2222-eeee3333ffff"
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. 
+1. *Microsoft-Fabric-workload-development-sample-main* folder and navigate to the **Authentication** folder.
+
+4. 
+CreateDevAADApp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 2. **Install dependencies** - Navigate to the *Frontend* directory in the cloned repository and execute the following command:
 
