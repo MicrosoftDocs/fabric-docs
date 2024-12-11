@@ -4,7 +4,7 @@ description: Learn how to create a SQL database in Microsoft Fabric in the Fabri
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
-ms.date: 11/07/2024
+ms.date: 12/11/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -22,6 +22,7 @@ In this tutorial, you'll create a new [SQL database in Fabric](overview.md).
     - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, you'll receive an error message "SQL database failed to create."
 - You must be a member of the Admin or Member roles for the workspace to create a SQL database.
 - You can use an existing workspace or [create a new Fabric workspace](../../get-started/workspaces.md).
+- Currently, Fabric SQL database is not available if you have [Private link](../../security/security-private-links-overview.md) enabled on your Fabric tenant.
 
 ## Create new SQL database in Fabric
 
