@@ -262,7 +262,7 @@
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-workspace-settings.md",
-        "redirect_url": "/fabric/data-factory/data-workflows-workspace-settings",
+        "redirect_url": "/fabric/data-factory/apache-airflow-workspace-settings",
         "redirect_document_id": false
       },
       {
