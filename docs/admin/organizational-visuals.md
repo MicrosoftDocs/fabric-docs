@@ -4,10 +4,9 @@ description: Learn about admin organizational visual capabilities and how to cus
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer:
-
 ms.custom:
 ms.topic: conceptual
-ms.date: 09/09/2024
+ms.date: 12/09/2024
 ---
 
 # Manage Power BI visuals admin settings

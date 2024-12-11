@@ -283,7 +283,7 @@ items:
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
-- name: Analyze and model data
+- name: Analyze and train data
   items:
   - name: Copilot for Real-Time Intelligence
     displayName: KQL queryset, kusto query language, natural language
@@ -356,7 +356,7 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
-- name: Create alerts and actions
+- name: Track data
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
@@ -374,13 +374,15 @@ items:
       href: data-activator/activator-get-data-real-time-hub.md
   - name: Create Activator objects and rules
     items:
-    - name: Assign data to objects
-      href: data-activator/activator-assign-data-objects.md
-    - name: Create rules
+    - name: Overview of Activator rules
+      href: data-activator/activator-rules-overview.md
+    - name: Create rules and activations
       href: data-activator/activator-create-activators.md
+    - name: Assign data to Activator objects
+      href: data-activator/activator-assign-data-objects.md
     - name: Trigger Fabric items
       href: data-activator/activator-trigger-fabric-items.md
-    - name: Detection conditions
+    - name: Detection conditions for Activator
       href: data-activator/activator-detection-conditions.md
     - name: Create alerts from a Real-Time Dashboard
       href: data-activator/activator-get-data-real-time-dashboard.md
