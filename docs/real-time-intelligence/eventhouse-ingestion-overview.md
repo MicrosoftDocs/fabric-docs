@@ -42,15 +42,13 @@ For a full list of connectors, functionality, and use cases, see [Data connector
 
 The following table summarizes the various options to get data in to Eventhouse using the Get data wizard in Real-Time Intelligence. To learn more about each source, go to the documentation linked in the source name.
 
-| Data source | Description | Prerequisites | Key features |
-| --- | --- |
-| [Local file](get-data-local-file.md) | Get data from a local file into a new or existing KQL database. | KQL database with editing permissions. | Simple and quick ingestion from files stored on your local machine. |
-| [Azure storage](get-data-azure-storage.md) | Get data from Azure storage (ADLS Gen2 container, blob container, or individual blobs) into a new or existing KQL database, using your storage connection string. | Microsoft Fabric-enabled capacity, KQL database with editing permissions, storage account. |  Seamless integration with Azure storage services, making it easy to manage and ingest large datasets. |
-| [Amazon S3](get-data-amazon-s3.md) | Get data from pre-assigned URLs for Amazon S3 into a new or existing KQL database. | Microsoft Fabric-enabled capacity, KQL database with editing permissions. | Supports Amazon S3 object storage service, enabling you to leverage existing AWS infrastructure for data ingestion. |
-| [Azure Event Hubs](get-data-event-hub.md) |  There are two main steps to get data from Azure Event Hubs into Real-Time Intelligence. The first step is performed in the Azure portal, where you define the shared access policy on your event hub instance and capture the details needed to later connect via this policy. The second step takes place in Real-Time Intelligence in Fabric, where you connect a KQL database to the event hub and configure the schema for incoming data. | Microsoft Fabric-enabled capacity, KQL database with editing permissions. | Handles big data streaming and event ingestion. |
-| [OneLake](get-data-onelake.md) | Get data from OneLake using the data source URL in Lakehouse. | Microsoft Fabric-enabled capacity, Lakehouse, KQL database with editing permissions. | Allows you to access data in OneLake as a shortcut or load data into Real-Time Intelligence, providing flexibility in data management. |
-| [Eventstream](get-data-eventstream.md) | Get data from an existing eventstream, or create a new Eventstream, into a KQL database by selecting the eventstream as your data source. | Microsoft Fabric-enabled capacity, KQL database with editing permissions, eventstream with a data source. | No-code data ingestion from event streams, simplifying the process of integrating real-time data sources. |
-| [Real-Time hub (preview)](get-data-real-time-hub.md) | Get data from Real-Time hub by selecting a Real-time stream as your data source. | Automatically provisioned with Microsoft Fabric tenant. | Centralized data-in-motion hub with abundant connectors for simplified data ingestion from various sources. |
+* [Get data from Azure storage](get-data-azure-storage.md)
+* [Get data from Amazon S3](get-data-amazon-s3.md)
+* [Get data from Azure Event Hubs](get-data-event-hub.md)
+* [Get data from OneLake](get-data-onelake.md)
+* [Get data from Eventstream](get-data-eventstream.md)
+* [Get data from Real-Time hub](get-data-real-time-hub.md)
+* [Get data from local file](get-data-local-file.md)
 
 ### OneLake
 
