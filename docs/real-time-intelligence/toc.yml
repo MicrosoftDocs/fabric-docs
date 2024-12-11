@@ -162,8 +162,10 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
-  - name: Get data in a KQL Database
+  - name: Get data in an Eventhouse
     items:
+    - name: Eventhouse ingestion overview
+      href: eventhouse-ingestion-overview.md
     - name: Data formats
       href: ingestion-supported-formats.md
     - name: Schema optimization best practices

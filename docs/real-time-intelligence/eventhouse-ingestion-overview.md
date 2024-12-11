@@ -16,11 +16,30 @@ This article outlines the various methods for ingesting data into an Eventhouse 
 
 ## Ingestion methods
 
+
+The following schematic shows possible ingestion architectures and transformations that can be applied to data before or after it lands in Eventhouse:
+
 :::image type="content" source="media/eventhouse-ingestion-overview/schematic-ingestion-methods.png" alt-text="Schematic image showing all possible ingestion methods and their paths to Eventhouse." lightbox="media/eventhouse-ingestion-overview/schematic-ingestion-methods.png":::
 
-## How do I decide where to transform my data?
+### Eventstreams
 
-There are several ways to transform data that will eventually land in Eventhouse.
+The [eventstreams](event-streams/overview.md) experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the Eventstream item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. 
+
+For a list of supported sources, see [Supported sources](event-streams/add-manage-eventstream-sources.md#supported-sources).
+
+### Programmatic connectors
+
+For data in sources that are not supported by Eventstreams, you can use programmatic connectors to ingest data into Eventhouse. Some programmatic connectors support streaming data, while others are blob-based.
+
+For a full list of connectors, functionality, and use cases, see [Data connectors overview](data-connectors/data-connectors.md).
+
+### Get data experience
+
+### OneLake
+
+## Where should transform my data?
+
+There are several ways to transform data that will eventually land in Eventhouse. The best method for you depends on your specific requirements and constraints. Here are some considerations to help you decide:
 
 ### Transform data in Eventstreams
 
