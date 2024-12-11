@@ -740,9 +740,35 @@ With ``` notebookutils.runtime.context ``` you can get the context information o
 notebookutils.runtime.context
 ```
 
+## Session management
+
+### Stop an interactive session
+
+Instead of manually click stop button, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, we provide an API ```notebookutils.session.stop()``` to support stopping the interactive session via code, it's available for Scala and PySpark.
+
+```python
+notebookutils.session.stop()
+```
+
+```notebookutils.session.stop()``` API will stop the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they are available to other sessions in the same pool.
+
+### Restart the Python interpreter
+
+notebookutils.session utility provides a way to restart the Python interpreter.
+
+```python
+notebookutils.session.restartPython()
+```
+
+> [!NOTE]
+> - This command is not stable, probably because it uses Spark reflection to call the method.
+> - If in reference run, it will only restart the Python interpreter in the current notebook. 
+
 ## Known issue 
 
-When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
+- When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
+
+- The Python notebook doesn't support the **stop**, **restartPython** APIs when using notebookutils.session utility for session management.
 
 ## Related content
 
