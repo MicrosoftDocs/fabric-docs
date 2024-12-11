@@ -36,7 +36,7 @@ Select the tab that corresponds with your desired data source type.
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
 1. Select **Add data source**, then select **OneLake data hub**.
 1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
@@ -46,7 +46,7 @@ Select the tab that corresponds with your desired data source type.
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu1.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
 1. Select **Add data source**, then select **Azure Data Explorer**.
 1. Under **Connection URI**, enter the cluster URI.
@@ -160,7 +160,7 @@ You can manage your tabs in the following ways:
 * **More actions**: On the right side of the command bar, there's a tab menu with more actions to manage the multiple tabs in your queryset.
 * **Change tab positions**: Use drag and drop gestures.
 
-:::image type="content" source="media/kusto-query-set/multiple-tabs-menu1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu1.png":::
+:::image type="content" source="media/kusto-query-set/multiple-tabs-menu-1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu-1.png":::
 
 ## Export query data as CSV
 
