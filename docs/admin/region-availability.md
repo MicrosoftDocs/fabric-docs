@@ -67,10 +67,10 @@ This table lists regions where public preview features are available, according 
 | Australia Southeast | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
 | Brazil South | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
 | Canada Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; |&#x2705; |
-| Canada East | <li>Synapse Notebook</li> | &#x274C; | &#x2705; | &#x274C; |
+| Canada East | Synapse Notebook | &#x274C; | &#x2705; | &#x274C; |
 | Central India | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
 | Central US | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| East Asia |<li>Synapse Notebook</li>  | &#x2705; | &#x2705; | &#x2705; |
+| East Asia |Synapse Notebook  | &#x2705; | &#x2705; | &#x2705; |
 | East US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
 | East US2 | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
 | France Central | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x274C; |
@@ -82,13 +82,13 @@ This table lists regions where public preview features are available, according 
 | North Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
 | Norway East | &#x274C; | &#x274C; | &#x2705; | &#x274C; |
 | Poland Central | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-| South Africa North | <li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
+| South Africa North | Synapse Notebook | &#x2705; | &#x2705; | &#x2705; |
 | South Africa West | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
 | South Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x274C; | &#x2705; |
 | Southeast Asia | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
 | South India | <li>Dataflows</li><li>Exploration</li> | &#x274C; | &#x274C; | &#x274C; |
-| Sweden Central | <li>Synapse Notebook</li> | &#x274C; | &#x2705; | &#x274C; |
-| Switzerland North | <li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x274C; |
+| Sweden Central | Synapse Notebook | &#x274C; | &#x2705; | &#x274C; |
+| Switzerland North | Synapse Notebook | &#x2705; | &#x2705; | &#x274C; |
 | Switzerland West | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
 | UAE North | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> |  | &#x2705; |  |
 | West Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
