@@ -1,7 +1,7 @@
 ---
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 12/06/2024
+ms.date: 12/11/2024
 ms.topic: include
 
 ---
@@ -28,9 +28,7 @@ The following are the Fabric regions that support mirroring:
     - West Europe
     - France Central
     - Germany West Central
-    - Italy North
     - Norway East
-    - Poland Central
     - Sweden Central
     - Switzerland North
     - Switzerland West
@@ -43,7 +41,6 @@ The following are the Fabric regions that support mirroring:
     - Brazil South
     - Canada Central
     - Canada East
-    - Central US
     - East US
     - East US2
     - North Central US

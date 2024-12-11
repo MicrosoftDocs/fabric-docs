@@ -179,6 +179,14 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Export data option is disabled for Q&A visual in the service
+      href: known-issues/known-issue-968-export-data-option-disabled-qa-visual.md
+    - name: Pipeline activities don't save if their data warehouse connection is changed
+      href: known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md
+    - name: SQL database creation fails to create child items when item with same name exists
+      href: known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md
+    - name: Eventstream publish fails when column contains empty array and operator is added
+      href: known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md
     - name: Creation failure for Copy job item in empty workspace
       href: known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
     - name: Create Gateway public API doesn't work for service principals
