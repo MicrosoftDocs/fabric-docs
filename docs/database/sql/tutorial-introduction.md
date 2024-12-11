@@ -27,7 +27,7 @@ This tutorial isn't intended to serve as a reference architecture, nor does it c
 As prerequisites to this tutorial, complete the following steps:
 
 1. Sign into your [Power BI online account](https://powerbi.com/), or if you don't have an account yet, sign up for a free trial.
-1. [Enable Microsoft Fabric for your organization](../../admin/fabric-switch.md) in your tenant.
+1. [Enable Microsoft Fabric for your organization](enable.md) in your tenant.
 
 In this tutorial, you take on the role of a database developer, working at the Contoso Group. Your organization wants to evaluate Supply Chain information for the AdventureWorks and Northwind Traders subsidiaries based on past sales and current on-hand components for various products used in manufacturing.
 
