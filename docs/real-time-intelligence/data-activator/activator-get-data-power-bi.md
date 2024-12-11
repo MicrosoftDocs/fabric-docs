@@ -45,7 +45,7 @@ You can also select the bell icon in the visual.
 
     Power BI uses the filters in place at the time that you create your alert. Changing the filters on your visual after creating your alert has no effect on the alert logic. Select **Show applied filters** or the filter icon ![Small screenshot of the filter icon which has three horizontal lines.](media/activator-get-data-power-bi/activator.png) to see the filters on your visual.
 
-4. When you're ready to save your alert, select **Apply.** Selecting **Apply** saves the alert condition in the active report and in an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] Activator item. 
+4. When you're ready to save your alert, select **Apply.** Selecting **Apply** saves the alert condition in the active report and in an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. 
 
     After you create your alert, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] monitors the data in the visual once per hour. You receive an alert within one hour of your alert condition becoming true. 
 
