@@ -9,12 +9,6 @@
         "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
         "redirect_url": "/fabric/get-started/lakehouse-pbi-reporting",
         "redirect_document_id": true
-       },
-       {
-        "path_to_root": "Livy-API-Swagger",
-        "url": "https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/Livy-API-swagger",
-        "branch": "main",
-        "branch_mapping": {}
-      }
+       }
     ]
 }
