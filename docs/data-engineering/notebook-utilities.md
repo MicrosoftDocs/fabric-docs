@@ -234,7 +234,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 > [!IMPORTANT]
 > This feature is in [preview](../get-started/preview.md).
 
-The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
+The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the reference notebook runs share the compute resources.
 
 With `notebookutils.notebook.runMultiple()`, you can:
 
@@ -539,7 +539,7 @@ notebookutils.fs.mount(
 ```
 
 Mount parameters:
-- fileCacheTimeout: Blobs will be cached in the local temp folder for 120 seconds by default. During this time, blobfuse will not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, in order to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
+- fileCacheTimeout: Blobs are cached in the local temp folder for 120 seconds by default. During this time, blobfuse does not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
 - timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
 
 You can use these parameters like this:
@@ -640,7 +640,7 @@ notebookutils.fs.unmount("/test")
 
 ## Lakehouse utilities
 
-`notebookutils.lakehouse` provides utilities specifically tailored for managing Lakehouse items. These utilities empower you to create, get, update, and delete Lakehouse artifacts effortlessly.
+`notebookutils.lakehouse` provides utilities tailored for managing Lakehouse items. These utilities empower you to create, get, update, and delete Lakehouse artifacts effortlessly.
 
 ### Overview of methods
 
@@ -750,7 +750,7 @@ Instead of manually click stop button, sometimes it's more convenient to stop an
 notebookutils.session.stop()
 ```
 
-```notebookutils.session.stop()``` API will stop the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they are available to other sessions in the same pool.
+```notebookutils.session.stop()``` API stops the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they are available to other sessions in the same pool.
 
 ### Restart the Python interpreter
 
