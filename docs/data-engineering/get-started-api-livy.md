@@ -95,8 +95,8 @@ For each Fabric workspace, a default starter pool is provisioned, the execution 
 
 The full swagger files for the Livy API are available here.
 
-:::code language="yaml" source="~/Livy-API-swagger/swagger.yaml" highlight="1-5":::
-:::code language="json" source="~/Livy-API-swagger/swagger.json" highlight="1-7":::
+:::code language="yaml" source="~/../Livy-API-swagger/swagger.yaml" highlight="1-5":::
+:::code language="json" source="~/../Livy-API-swagger/swagger.json" highlight="1-7":::
 
 ## Submit a Livy API jobs
 
