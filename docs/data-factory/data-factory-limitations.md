@@ -67,7 +67,7 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour. Read more about the [gateway considerations when using data destinations](gateway-considerations-output-destinations.md).
 - Currently, column nullability is defaulting to allow nulls in all columns in the destination.
 - You cannot connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflows Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You will need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints.
-- Dataflows Gen2 doesn't support for guest users in the tenant to connect to the lakehouses in the tenant the user is guest in. Use a native user in the tenant to connect to the lakehouse.
+- Dataflows Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest in. Use a native user in the tenant to connect to the data sources and destinations.
 
 The following table indicates the supported data types in specific storage locations.
 
