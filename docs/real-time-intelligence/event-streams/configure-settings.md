@@ -50,7 +50,7 @@ For Azure Event Hubs sources, throughput depends on both the selected throughput
 
 When the partition count is 4 or greater, throughput is based on the selected throughput level.
 
-### Streaming Connector Sources
+### Streaming connector sources
 
 The throughput for streaming connector sources ranges from **5 MB/s to 30 MB/s**. 
 
@@ -68,7 +68,7 @@ The throughput for streaming connector sources ranges from **5 MB/s to 30 MB/s**
 - Apache Kafka
 - Amazon MSK Kafka
 
-### Other Eventstream Sources and Destinations
+### Other eventstream sources and destinations
 The following table shows the throughput upper limit for different nodes. 
 
 | Node                       |  Type        | Throughput Level | Throughput  (up-to)   |
