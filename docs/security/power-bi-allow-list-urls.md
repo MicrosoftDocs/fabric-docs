@@ -50,6 +50,7 @@ For the general use of Power BI, you must be able to connect to the endpoints an
 | **Required:** Fabric DW SQL| One of the following: <li> *.datawarehouse.fabric.microsoft.com</li><li> *.datawarehouse.pbidedicated.windows.net </li><li> *.pbidedicated.windows.net</li> | 1433 |
 | **Required:** Microsoft 365 integration | See the documentation for [Microsoft 365 Common and Office Online URLs](/office365/enterprise/urls-and-ip-address-ranges#microsoft-365-common-and-office-online) | N/A |
 | **Required:** Portal | *.powerbi.com | TCP 443 |
+| **Required:** Power Query Online | *.powerquery.microsoft.com | TCP 443 |
 | **Required:** Manage gateways, connections and data policies (preview) | gatewayadminportal.azure.com | TCP 443 |
 | **Required:** Service telemetry | dc.services.visualstudio.com | TCP 443 |
 | **Optional:** Informational messages | arc.msn.com | TCP 443 |
