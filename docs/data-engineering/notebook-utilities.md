@@ -761,7 +761,7 @@ notebookutils.session.restartPython()
 ```
 
 > [!NOTE]
-> - This command is not stable, probably because it uses Spark reflection to call the method.
+> - In the notebook reference run case, ```restartPython()``` will only restart the Python interpreter of the current notebook that being referenced.
 > - In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
 
 ## Known issue 
