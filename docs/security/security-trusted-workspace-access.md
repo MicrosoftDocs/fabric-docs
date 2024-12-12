@@ -108,7 +108,7 @@ The following sections show you how to use these methods.
 
 * A Fabric workspace associated with a Fabric capacity. See [Workspace identity](./workspace-identity.md).
 * Create a workspace identity associated with the Fabric workspace.
-* The user account or service principal used as the authentication kind in the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope in addition to a Storage Blob Data Reader role at the container scope.
+* The user account or service principal used as the authentication kind in the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope in addition to providing access at folder level within container. Access at folder level can be provided through an RBAC role at container level or through specific folder level access.
 * Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
 
 > [!NOTE]
