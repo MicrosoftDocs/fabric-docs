@@ -62,6 +62,8 @@ landingContent:
             url: lakehouse-notebook-explore.md
           - text: Visualize notebooks
             url: notebook-visualization.md
+          - text: Use Python experience on Notebook
+            url: using-python-experience-on-notebook.md
           - text: Notebooks source control and deployment
             url: notebook-source-control-deployment.md
           - text: Use NotebookUtils in notebook
