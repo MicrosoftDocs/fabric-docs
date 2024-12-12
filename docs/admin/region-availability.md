@@ -44,7 +44,7 @@ This table lists regions where all Fabric workloads are available.
 | West US 3\*       | UK South            |             |                    |                                 |
 |                   | UK West             |             |                    |                                 |
 
-<sup>*</sup>[Fabric SQL database](../database/sql/overview.md) isn't currently available in this region.
+\*[Fabric SQL database](../database/sql/overview.md) isn't currently available in this region.
 
 ### Power BI
 
