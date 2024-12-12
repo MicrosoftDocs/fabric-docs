@@ -49,7 +49,7 @@ SQL database in Fabric is available in regions where Microsoft Fabric is availab
 
 Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#fabric-regions-that-support-mirroring).
 
-Currently, Fabric SQL database is not available if you have [Private link](../../security/security-private-links-overview.md) enabled on your Fabric tenant.
+Currently, Fabric SQL database is not available if you had [Private link](../../security/security-private-links-overview.md) enabled on your Fabric tenant at the start of the preview on November 19.
 
 ## Limitations
 
