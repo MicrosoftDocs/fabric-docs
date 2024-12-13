@@ -4,7 +4,7 @@ description: This article provides information about how to create an SQL databa
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 12/09/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -37,6 +37,10 @@ You have two ways to browse to this page:
      :::image type="content" source="media/connector-sql-database/more.png" lightbox="media/connector-sql-database/more.png" alt-text="Screenshot of selecting more.":::
 
 You can select an existing SQL database connection by repeating the above step.
+
+If you have multiple Fabric SQL database connections in **Manage Connections and Gateways**, it navigates to **Connect to data source** pane. You can select an existing connection or create a new connection from the drop-down list.
+
+:::image type="content" source="media/connector-sql-database/connect-to-data-source.png" lightbox="media/connector-sql-database/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
 
 ## Related content
 
