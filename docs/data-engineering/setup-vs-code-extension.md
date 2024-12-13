@@ -30,9 +30,20 @@ After you have installed the required software, you must update the operating sy
 
 ### Windows
 
-1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed. For example, if you install JDK at this path `C:\Program Files\Java\jdk-1.8`, set the *JAVA_HOME* variable value to that path.
+1. Open the Windows Settings and search for the setting "Edit the system environment variables".
 
-2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory. The *condabin* folder could be in the folder where you installed and in this format `\miniconda3\condsbin`. Open the environment variables and add **%JAVA_HOME%/bin** and **condabin** paths to the **Path** variable.
+2. Under **System variables** look for the variable **JAVA_HOME**. If it does not exist, click the **New** button, enter the variable name **JAVA_HOME** and and add the directory where Java is installed in the variable value field.
+
+   For example, if you install JDK at this path `C:\Program Files\Java\jdk-1.8`, set the *JAVA_HOME* variable value to that path.
+
+4. Under **System variables** look for the variable **Path** and double click that row. Add the following folder paths to the **Path** variable, by clicking the **New** button and adding the folder path:
+    - `%JAVA_HOME%/bin`
+   
+   *For Conda add the following subfolders of the Conda installation. Add the full folder paths for theese subfolders*
+    - `\miniconda3\condsbin`
+    - `\miniconda3\Scripts`
+
+    For example: `C:\Users\john.doe\AppData\Local\miniconda3\condsbin`
 
 ### macOS
 
