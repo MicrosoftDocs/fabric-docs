@@ -43,6 +43,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
 * Dataflows gen2 *(preview)*
 * Datamarts *(preview)*
+* Environment
 * EventHouse *(preview)*
 * EventStream *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
