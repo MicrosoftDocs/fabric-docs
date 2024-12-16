@@ -4,7 +4,7 @@ description: A detailed list of limitations for SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 11/15/2024
+ms.date: 12/11/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
@@ -47,7 +47,9 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 
 SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
 
-Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#fabric-regions-that-support-mirroring).
+Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
+
+Currently, Fabric SQL database is not available if you had [Private link](../../security/security-private-links-overview.md) enabled on your Fabric tenant at the start of the preview on November 19.
 
 ## Limitations
 

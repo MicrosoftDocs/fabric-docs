@@ -2,8 +2,8 @@
 title: Change data policies in Real-Time Intelligence
 description: Learn how to change the retention and caching policies in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023

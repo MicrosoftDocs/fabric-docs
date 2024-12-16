@@ -79,6 +79,8 @@
       href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
     - name: Migrate from Dataflow Gen1 to Dataflow Gen2
       href: dataflow-gen2-migrate-from-dataflow-gen1.md
+    - name: Migrate to Dataflow Gen2 scenarios
+      href: dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md
   - name: Tutorials
     items:
     - name: End-to-end Data Factory tutorial
@@ -553,6 +555,12 @@
         href: connector-sap-hana-overview.md
       - name: Set up your connection
         href: connector-sap-hana.md
+    - name: ServiceNow
+      items:
+      - name: ServiceNow - Overview
+        href: connector-servicenow-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-servicenow-copy-activity.md        
     - name: SFTP
       items:
       - name: SFTP - Overview
@@ -587,6 +595,14 @@
         href: connector-snowflake.md
       - name: Configure in a data pipeline Copy activity
         href: connector-snowflake-copy-activity.md
+    - name: SQL database
+      items:
+      - name: SQL database - Overview
+        href: connector-sql-database-overview.md
+      - name: Set up your connection
+        href: connector-sql-database.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-sql-database-copy-activity.md    
     - name: SQL Server database
       items:
       - name: SQL Server database - Overview
@@ -763,8 +779,6 @@
         href: dataflow-gen2-incremental-refresh.md
       - name: Dataflow Gen2 with CICD and Git integration
         href: dataflow-gen2-cicd-and-git-integration.md
-      - name: Migrate from Dataflow Gen1 to Dataflow Gen2
-        href: dataflow-gen2-migrate-from-dataflow-gen1.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
@@ -1013,8 +1027,8 @@
           href: connector-troubleshoot-xml.md
     - name: Data Factory limitations
       href: data-factory-limitations.md
-    - name: Data Factory known issues
-      href: data-factory-known-issues.md
+    - name: Fabric known issues
+      href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
   - name: Reference
     items:
     - name: CI/CD for data pipelines
