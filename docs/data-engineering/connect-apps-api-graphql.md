@@ -22,7 +22,7 @@ To connect an application to an API for GraphQL, you need three important pieces
 
 * Currently API for GraphQL requires applications to use Microsoft Entra for authentication. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app).
   
-* The authenticated user calling the API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](../get-started/give-access-workspaces.md).
+* The authenticated user calling the API requires Execute permissions to the GraphQL API (Run Queries and Mutations option when adding direct access permissions) and, if using Single sing-on (SSO) as the connectivity option in the API, read or write permissions are required in the data source of choice accordingly. For more information, see [Connect to a data source and build your schema](/get-started-api-graphql.md).
 
 * Before you connect an application, you must have an API for GraphQL in Fabric. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
 
