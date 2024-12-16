@@ -2,8 +2,8 @@
 title: Multivariate anomaly detection
 description: Learn how to perform multivariate anomaly detection in Real-Time Intelligence.
 ms.reviewer: adieldar
-author: YaelSchuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.topic: how-to
 ms.custom:
   - ignite-2024

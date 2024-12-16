@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 12/09/2024
+ms.date: 12/15/2024
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -27,7 +27,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Retail data solutions (preview)](/industry/retail/retail-data-solutions/overview-retail-data-solutions)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://go.microsoft.com/fwlink/?linkid=2263806)|
 |[Users can create and use Apache Airflow jobs (preview)](../data-factory/create-apache-airflow-jobs.md)|Apache Airflow jobs offer an integrated runtime environment, enabling users to author, execute, and schedule Python DAGs. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://aka.ms/fabricairflowintrodoc)|
 |[API for GraphQL (preview)](../data-engineering/api-graphql-overview.md)|Select the admins who can view and change this setting, including any security group selections you've made.|
-|User data functions (preview)|Select the admins who can view and change this setting, including any security group selections you've made.|
 |[Users can create Real-Time Dashboards (preview)](../real-time-intelligence/index.yml)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 |[SQL Database (preview)​](../database/sql/overview.md)|Users can create SQL Databases​.  [Learn More](https://aka.ms/fabricsqldb)|
 |[Users can discover and create org apps (preview)​](/power-bi/consumer/org-app-items/org-app-items)|Turn on this setting to let users create org apps as items. Users with access will be able to view them. By turning on this setting, you agree to the  [Preview Terms](https://aka.ms/orgapps_previewterms).<br><br>If turned off, any org app items created will be hidden until this setting is turned on again. The prior version of workspace apps will still be available.  [Learn More](https://aka.ms/orgapps_learnmore)|
