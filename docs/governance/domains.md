@@ -8,10 +8,14 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2024
-ms.date: 11/29/2024
+ms.date: 12/16/2024
 ---
 
 # Fabric domains
+
+This article introduces key concepts of domains in Fabric, and shows how to set up and manage them. To get started planning domains for your organization, see [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
+
+## Introduction
 
 Today, organizations are facing massive growth in data, and there's an increasing need to be able to organize and manage that data in a logical way that facilitates more targeted and efficient use and governance.
 
