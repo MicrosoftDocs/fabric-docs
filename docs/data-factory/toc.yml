@@ -555,6 +555,12 @@
         href: connector-sap-hana-overview.md
       - name: Set up your connection
         href: connector-sap-hana.md
+    - name: ServiceNow
+      items:
+      - name: ServiceNow - Overview
+        href: connector-servicenow-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-servicenow-copy-activity.md        
     - name: SFTP
       items:
       - name: SFTP - Overview
