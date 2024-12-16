@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
-ms.date: 08/15/2024
+ms.date: 12/16/2024
 #customer intent: As a developer, I want to learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize my stages so that I can manage my content lifecycle.
 ---
 
@@ -43,9 +43,9 @@ Variable libraries provide a centralized way to manage configurations across the
 
 The following items support the Variable library:
 
-* [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Data pipeline
-* Notebook
+<!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
+* Notebook --->
 
 ## Related content
 

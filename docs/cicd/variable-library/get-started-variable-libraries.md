@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: get-started
-ms.date: 11/15/2024
+ms.date: 12/16/2024
 ms.search.form: Variable library, create Variable library, manage Variable libraries, edit Variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle.
 
@@ -67,7 +67,7 @@ To add a variable to the library:
 1. Add one or more alternative value sets (optional)
 1. Add a note explaining what the variable is for or how to use it (optional)
 
-:::image type="content" source="./media/get-started-with-variable-libraries/add-variable.png" alt-text="Screenshot of a Variable library. On top, there's a button that says add variable.":::
+:::image type="content" source="./media/get-started-with-variable-libraries/add-variable.png" alt-text="Screenshot of a Variable library. On top, there's a button that says New variable.":::
 
 ## Edit a variable
 
