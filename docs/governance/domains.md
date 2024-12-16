@@ -13,15 +13,15 @@ ms.date: 12/16/2024
 
 # Fabric domains
 
+This article introduces key concepts of domains in Fabric, and shows how to set up and manage them. To get started planning domains for your organization, see [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
+
+## Introduction
+
 Today, organizations are facing massive growth in data, and there's an increasing need to be able to organize and manage that data in a logical way that facilitates more targeted and efficient use and governance.
 
 To meet this challenge, organizations are shifting from traditional IT centric data architectures, where the data is governed and managed centrally, to more federated models organized according to business needs. This federated data architecture is called *data mesh*. A data mesh is a decentralized data architecture that organizes data by specific business domains, such as marketing, sales, human resources, etc.
 
 Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#domain-settings-delegation), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
-
-This article introduces key concepts of domains in Fabric, and shows how to set up and manage them.
-
-To get started planning domains for your organization, see [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
 
 ## Key concepts
 
