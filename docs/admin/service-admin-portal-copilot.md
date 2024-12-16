@@ -4,12 +4,11 @@ description: Learn how administrators can configure Copilot admin settings in Fa
 author: snehagunda
 ms.author: sngun
 ms.reviewer: 'guptamaya'
-
 ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 02/07/2024
+ms.date: 12/16/2024
 LocalizationGroup: Administration
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -17,17 +16,15 @@ ms.collection: ce-skilling-ai-copilot
 
 # Copilot tenant settings
 
-Fabric has a new tenant setting group, **Copilot and Azure OpenAI Service**, with following two settings:
+Copilot and the Azure OpenAI Service are controlled by settings in the **Copilot and Azure OpenAI Service** tenant settings group.​ The tenant settings for Fabric Copilot are enabled by default.
 
-- Admins can turn on Copilot for specific security groups, or for their entire organization. Users in those groups can use a preview of Copilot and other features powered by Azure OpenAI.
+## Users can use Copilot and other features powered by Azure OpenAI
 
-    :::image type="content" source="media/service-admin-portal-copilot/copilot-open-ai-service.png" alt-text="Screenshot of Copilot setting in the admin portal.":::
+When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot. This setting can be managed at both the tenant and the capacity levels. For more information, see [Overview of Copilot in Fabric](/fabric/get-started/copilot-fabric-overview).
 
-- Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance.
+## Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
 
-    :::image type="content" source="media/service-admin-portal-copilot/copilot-data-sent-azure-ai-outside-sg.png" alt-text="Screenshot of Copilot setting for sending data outside your tenant's geographic region, compliance boundary, or national cloud instance." lightbox="media/service-admin-portal-copilot/copilot-data-sent-azure-ai-outside-security-group.png":::
-
-The **Tenant settings** for Fabric Copilot are enabled by default.
+This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. For more information, see [Available regions](/fabric/get-started/copilot-fabric-overview#available-regions).
 
 ## Related content
 
