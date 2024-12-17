@@ -35,7 +35,7 @@ Real-Time Intelligence has features that facilitate creating the medallion archi
 
 Real-Time Intelligence allows you to build a medallion architecture by processing the data as it arrives. This enables you to build your Bronze, Silver, and Gold layers while maintaining the real-time aspect of your data.
 
-:::image type="content" source="../media/architecture-medallion/architecture-medallion.png" alt-text="Diagram showing the medallion architecture in Real-Time Intelligence.":::
+:::image type="content" source="media/architecture-medallion/architecture-medallion.png" alt-text="Diagram showing the medallion architecture in Real-Time Intelligence.":::
 
 - Bronze layer
 
