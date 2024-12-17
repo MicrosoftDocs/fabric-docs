@@ -10,7 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2024
-ms.date: 11/05/2024
+ms.date: 12/17/2024
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -43,18 +43,16 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
 * Dataflows gen2 *(preview)*
 * Datamarts *(preview)*
-* Environment
-* EventHouse *(preview)*
+* [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
+* [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
 * EventStream *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
-* [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Organizational apps *(preview)*
 * Paginated reports
 * Power BI Dataflows
 * Reflex *(preview)*
 * Reports (based on supported semantic models)
-* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
 * Semantic models (that originate from .pbix files and aren't PUSH datasets)
 * SQL database *(preview)*
 * [Warehouses](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
