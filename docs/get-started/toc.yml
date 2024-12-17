@@ -179,6 +179,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Renamed eventstream fails to open
+      href: known-issues/known-issue-978-renamed-eventstream-fails-open.md
+    - name: Export to Excel using live connection with show items with no data turned on fails
+      href: known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md
+    - name: Export-to-data disabled for a visual with visual calculation
+      href: known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md
     - name: Sync content from Git in workspace fails
       href: known-issues/known-issue-966-sync-content-git-workspace-fails.md
     - name: Export data option is disabled for Q&A visual in the service
