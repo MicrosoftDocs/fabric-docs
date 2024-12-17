@@ -42,7 +42,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Dashboards
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
 * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
-* [Datamarts](/power-bi/transform-model/datamarts/datamarts-get-started.md#datamarts-and-deployment-pipelines) *(preview)*
+* [Datamarts](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
 * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
 * [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md) *(preview)*
 * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another) *(preview)*
