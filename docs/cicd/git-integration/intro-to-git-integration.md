@@ -9,7 +9,7 @@ ms.subservice: cicd
 ms.custom:
   - ignite-2024
 ms.topic: overview
-ms.date: 11/17/2024
+ms.date: 12/17/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -57,11 +57,10 @@ The following Git providers are supported:
 The following items are currently supported:
 
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
-* Dataflows gen2 *(preview)*
-* EventHouse *(preview)*
-* EventStream *(preview)*
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
 * [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
+* [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md) *(preview)*
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
 * Reflex *(preview)*
