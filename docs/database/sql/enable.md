@@ -44,10 +44,9 @@ In your tenant, you can enable SQL database for:
 
 Follow these steps to enable SQL database for your tenant.
 
-1. Navigate to the [tenant settings](../../admin/tenant-settings-index.md) in the admin portal and in **Microsoft Fabric**, expand **SQL database (preview)**.
-**Note**: Make sure [Users can create Fabric items](/fabric/admin/fabric-switch) option is enabled.
+1. Navigate to the [tenant settings](../../admin/tenant-settings-index.md) in the admin portal and in **Microsoft Fabric**, expand **Users can create Fabric items and** **SQL database (preview)**.
+1. Enable the **Users can create Fabric items** and SQL **database (preview)** switches.
 
-1. Enable the **SQL database (preview)** switch.
 1. (Optional) Use the **Specific security groups** option to enable SQL database for specific users.
     - You can select **The entire organization** if you want everyone to create databases.
     - You can select **Specific security groups** to allow selected individuals in a group to create databases.
