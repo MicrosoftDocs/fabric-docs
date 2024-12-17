@@ -63,7 +63,7 @@ sections:
         answer: |
           First, check with your admin to see if they have enabled Copilot.
 
-          Next, when you select a Copilot-enabled URL, you have to initially load the semantic model. When you've completed loading the semantic model, then you see the Copilot button. See the [Create a report with Copilot for the Power BI service](/power-bi/create-reports/copilot-create-report) article.
+          Next, when you select a Copilot-enabled URL, you have to initially load the semantic model. When you've completed loading the semantic model, then you see the Copilot button.
 
       - question: |
           I selected the Copilot button, and it's stuck on Analyzing your semantic model.
