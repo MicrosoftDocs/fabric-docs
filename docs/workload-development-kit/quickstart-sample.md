@@ -33,7 +33,7 @@ You'll need consent to use Azure Storage. In this step you'll check whether Azur
 
 4. In the **Application ID starts with** filter search box, enter the following application ID: `e406a681-f3d4-42a8-90b6-c2b029497af1` and then select **Apply**.
 
-    If **Azure Storage** is listed, it's already installed and you can continue to [Step 2](#step-2-confirm-that-the-workload-is-running) .
+    If **Azure Storage** is listed, it's already installed and you can continue to [Step 2](#step-2-download-the-sample).
 
 5. If **Azure Storage** isn't listed, open **PowerShell** as an administrator and run the following commands:
 
