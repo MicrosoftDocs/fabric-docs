@@ -10,7 +10,7 @@ metadata:
     - ignite-2023-fabric
     - build-2024
   ms.topic: faq
-  ms.date: 01/16/2024
+  ms.date: 12/17/2024
   no-loc: [Copilot]
   ms.collection: ce-skilling-ai-copilot
 title: "Copilot for Microsoft Fabric and Power BI: FAQ"
@@ -23,8 +23,7 @@ summary: |
   > - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
   > - If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md) tenant setting in the Fabric Admin portal.
   > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
-  > - Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
-  > - For more information, see the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-overview.md).
+  > - For more information, see the article [Overview of Copilot in Fabric](copilot-fabric-overview.md).
 
 sections:
   - name: Power BI
@@ -44,7 +43,7 @@ sections:
       - question: |
           Can Copilot prompts be saved for future reference?       
         answer: |
-          Copilot prompts can't be saved for future reference. The only experience where it's possible to view your prompts is by using the chat-magic function in Notebooks, under the Fabric Data Science view. 
+          Copilot prompts can't be saved for future reference. The only experience where it's possible to view your prompts is by using the chat-magic function in notebooks. 
 
       - question: |
           Does enabling Copilot and agreeing to the setting of "Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance" mean all my data is sent or processed outside my country?
@@ -66,7 +65,6 @@ sections:
 
           Next, when you select a Copilot-enabled URL, you have to initially load the semantic model. When you've completed loading the semantic model, then you see the Copilot button. See the [Create a report with Copilot for the Power BI service](/power-bi/create-reports/copilot-create-report) article.
 
-          If you load a semantic model and still can't see the Copilot button, file a bug here: Copilot Bug Template.
       - question: |
           I selected the Copilot button, and it's stuck on Analyzing your semantic model.
         answer: |
@@ -80,11 +78,11 @@ sections:
       - question: |
           I generated the report visuals, but the quality of the visuals concern me. I wouldn't choose them myself.  
         answer: |
-          We're continuously looking to improve the quality of the copilot generated visuals. For now, we recommend that you make the change by using the Power BI visualization tool.
+          We're continuously looking to improve the quality of the Copilot-generated visuals. For now, we recommend that you make the change by using the Power BI visualization tool.
       - question: |
           The accuracy of the narrative visual concerns me. 
         answer: |
-          We're continuously working to improve the accuracy of the narrative visual results. The Power BI team already has plans to improve the accuracy over the coming months. As a public preview, there might be mistakes. Know that we're working toward making the tool as accurate as possible. In the meantime, we recommend using the custom prompts as an extra tool to try to tweak the summary to meet your needs.
+          We're continuously working to improve the accuracy of the narrative visual results. We recommend using the custom prompts as an extra tool to try to tweak the summary to meet your needs.
       - question: |
           I want to disable Copilot immediately as I'm concerned with the data storage you mentioned.
         answer: |
@@ -92,7 +90,7 @@ sections:
       - question: |
           I want to suggest new features. How can I do that?  
         answer: |
-          First, thank you for the feedback. It's great that you found it useful. As part of the feedback sessions, we send you a form and you can add your suggestions there.
+          You can submit and vote on ideas for Microsoft Fabric on the [Ideas pages of the Fabric Community](https://community.fabric.microsoft.com/t5/Ideas/ct-p/PBI_Comm_Ideas). You can find more information about giving feedback in the [Learn about Microsoft Fabric feedback](feedback.md) article.
 
   - name: Data Factory
     questions:
@@ -123,4 +121,4 @@ additionalContent: |
   ## Related content
 
   - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
-  - [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md)
+  - [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md)
