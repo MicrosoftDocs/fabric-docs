@@ -5,12 +5,16 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 07/16/2024
+ms.date: 12/17/2024
 ---
 
 # Set up your environment
 
 This article is aimed at developers who are looking to build a workload using the Microsoft Fabric Workload Development Kit. The article guides you through the process of setting up your development environment so that you can start building your workload.
+
+## Platform requirements
+
+To develop a new workload, your Fabric subscription needs to have a [capacity](../enterprise/licenses.md#capacity).
 
 ## Configure Fabric
 
@@ -47,8 +51,6 @@ Download and install these tools before you start developing your workload.
 * [.NET 6.0 Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer) - You'll use .NET to build your workload.
 
 * [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer) - You'll use ASP.NET Core to build your workload.
-
-* [Azure CLI on Windows](/cli/azure/install-azure-cli-windows?tabs=azure-cli) - You'll use the [Azure Command-Line Interface (CLI)](/cli/azure/what-is-azure-cli) to run scripts that connect to Azure and run admin commands.
 
 * [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - Sends API calls directly from the workload to Fabric.
 
