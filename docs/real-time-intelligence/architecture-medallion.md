@@ -37,15 +37,12 @@ Real-Time Intelligence allows you to build a medallion architecture by processin
 
 :::image type="content" source="media/medallion-architecture/Architecture.png" alt-text="Diagram showing the medallion architecture in Real-Time Intelligence.":::
 
-
-
-
 - Bronze layer
 
-    The Bronze layer serves as the initial landing zone for all incoming raw data. In Real-Time Intelligense, the Bronze layer can ingest data using Eventstream or a table in Eventhouse, providing a foundation for subsequent enrichment and analysis in the Silver and Gold layers.
+    The Bronze layer serves as the initial landing zone for all incoming raw data. In Real-Time Intelligence, the Bronze layer can ingest data using Eventstream or a table in Eventhouse, providing a foundation for subsequent enrichment and analysis in the Silver and Gold layers.
 
     > [!TIP]
-    > You may want to keep this data for change capture purposes and the ability to replay the data. If your Bronze layer uses an eventstream, you can output the data to OneLake before any transformations or enhancements are performed by the event processing. If your Bronze layer uses an table, you can [mirror](event-house-onelake-availability.md) the data to OneLake.
+    > You may want to keep this data for change capture purposes and the ability to replay the data. If your Bronze layer uses Eventstream, you can output the data to OneLake before any transformations or enhancements are performed by the event processing. If your Bronze layer uses an table, you can [mirror](event-house-onelake-availability.md) the data to OneLake.
 
 - Silver layer
 
@@ -65,7 +62,7 @@ Real-Time Intelligence allows you to build a medallion architecture by processin
 
 **Visualize and act**
 
-The performance capabilities of Real-Time Intelligence allow you to visualize the data using components such as Power BI, Real-Time Dashboarda, or KQL querysets. You can pull data from both the Gold Layer for aggregated views, and the Silver layer to unlock high granularity analytics. Additionally, you can act on the data at any layer using [Activator](data-activator/activator-introduction.md), which unlocks the ability to act on data as it arrives in a eventstream, high-granular data in the Silver layer, and aggregated data from the Gold layer.
+The performance capabilities of Real-Time Intelligence allow you to visualize the data using components such as Power BI, Real-Time Dashboards, or KQL querysets. You can pull data from both the Gold Layer for aggregated views, and the Silver layer to unlock high granularity analytics. Additionally, you can act on the data at any layer using [Activator](data-activator/activator-introduction.md), which unlocks the ability to act on data as it arrives in Eventstream, high-granular data in the Silver layer, and aggregated data from the Gold layer.
 
 ## Key benefits
 
@@ -81,7 +78,7 @@ The medallion architecture in Real-Time Intelligence provides several benefits, 
 
 - Flexibility
 
-    In a typical medallion architecture, data is consumed only from the Gold Layer, losing the individual records and preventing high-granular analytics. With Eventhouse, you are able to consume data from both the Gold and Silver layers, unlocking high-granularity analytics. Eventhouse is built to handle queries against billions of records in seconds.
+    In a typical medallion architecture, data is consumed only from the Gold Layer, losing the individual records and preventing high-granular analytics. With Eventhouse, you're able to consume data from both the Gold and Silver layers, unlocking high-granularity analytics. Eventhouse is built to handle queries against billions of records in seconds.
 
 - Built-in data management
 
@@ -89,7 +86,7 @@ The medallion architecture in Real-Time Intelligence provides several benefits, 
 
 - Native Visualization layer
 
-    With a single click, you can pin any query from the Gold or Silver layer into a new or existing Power BI Report or Real-Time Dashboard.
+    With a single action, you can pin any query from the Gold or Silver layer into a new or existing Power BI Report or Real-Time Dashboard.
 
 - OneLake Availability
 
