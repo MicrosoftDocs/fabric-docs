@@ -11,7 +11,7 @@ items:
   - name: Git and deployment pipelines
     href: eventhouse-git-deployment-pipelines.md
   - name: Medallion architecture
-    href: medallion-architecture.md
+    href: architecture-medallion.md
   - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
