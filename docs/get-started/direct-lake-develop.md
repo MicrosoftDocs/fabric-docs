@@ -4,7 +4,7 @@ description: "Learn about how to develop Direct Lake semantic models."
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 10/03/2024
+ms.date: 12/16/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -153,11 +153,9 @@ Model write operations with the XMLA endpoint support:
 - Source and version control, continuous integration and continuous deployment (CI/CD) with Azure DevOps and GitHub. For more information, see [Content lifecycle management](/power-bi/guidance/powerbi-implementation-planning-content-lifecycle-management-overview).
 - Automation tasks like semantic model refresh, and applying changes to Direct Lake semantic models by using PowerShell and the REST APIs.
 
-When changing a semantic model using XMLA, you must update the *ChangedProperties* and *PBI_RemovedChildren* collection for the changed object to include any modified or removed properties. If you don't perform that update, Power BI modeling tools might overwrite any changes the next time the schema is synchronized.
+When changing a semantic model using XMLA, you must update the *ChangedProperties* and *PBI_RemovedChildren* collection for the changed object to include any modified or removed properties. If you don't perform that update, Power BI modeling tools might overwrite any changes the next time the schema is synchronized with the Lakehouse.
 
-The supported models for changing a semantic model using XMLA are the following:
-* Table/Column rename (*ChangeProperty* = name)
-* Remove table (add table to *PBI_RemovedChildren* annotation in the query expression)
+Learn more about semantic model object lineage tags in the [lineage tags for Power BI semantic models](/analysis-services/tom/lineage-tags-for-power-bi-semantic-models) article.
 
 
 > [!IMPORTANT]
