@@ -44,6 +44,10 @@ After the *Capacity admins can develop additional workloads* tenant setting is e
 
 2. Enable the **Fabric Developer Mode** setting.
 
+## DevGateway
+
+The DevGateway is a workload development component for communicating between your on-premises workload development box and Fabric. Download the [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) and extract the folder in your local machine.
+
 ## Required tools
 
 Download and install these tools before you start developing your workload.
@@ -55,8 +59,6 @@ Download and install these tools before you start developing your workload.
 * [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - Sends API calls directly from the workload to Fabric.
 
 * [Git](https://git-scm.com/downloads) - A distributed version control system that we use to manage and track project changes.
-
-* [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - A workload development component for communicating between your on-premises workload development box and Fabric.
 
 * [Node.js](https://nodejs.org/en/download) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. Used to run the server-side JavaScript code.
 

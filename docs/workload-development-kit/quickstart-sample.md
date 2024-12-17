@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: quickstart  #Don't change
 ms.custom:
-ms.date: 05/21/2024
+ms.date: 12/17/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
@@ -165,3 +165,24 @@ The rest of the steps in this quickstart are performed in Visual Studio 2022. Us
 
 2. Select **Boilerplate** and authorize Visual Studio's requests. A command prompt opens with information about the running solution.
 
+## Step 12: Run the DevGateway file
+
+1. Open **PowerShell** and navigate to the **DevGateway** folder.
+
+2. In PowerShell, run the command: `.\Microsoft.Fabric.Workload.DevGateway.exe`. When the output shows the message *info: DevGateway started*. the workload is running successfully.
+
+## Step 13: Open the sample workload in Fabric
+
+> [!TIP]
+> To open the sample workload in Fabric, you need to have three PowerShell windows open and running:
+> * **Frontend** - A Powershell with the command `npm start` running, as described in [Step 6](#step-6-run-the-frontend).
+> * **Boilerplate** - A Powershell running the boilerplate, as described in [Step 11](#step-11-run-the-boilerplate).
+> * **DevGateway** - A Powershell running `DevGateway.exe`, as described in [Step 12](#step-12-run-the-devgateway-file).
+
+1. Open Microsoft Fabric.
+
+2. Navigate to the folder that contains the workspace you're using for development.
+
+3. Select **New item**.
+
+4. Open **Sample Item (preview)**.
