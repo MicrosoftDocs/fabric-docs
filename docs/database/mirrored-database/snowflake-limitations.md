@@ -4,7 +4,7 @@ description: Learn about the limitations of mirrored databases from Snowflake in
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
-ms.date: 12/06/2024
+ms.date: 12/18/2024
 ms.topic: conceptual
 ---
 
