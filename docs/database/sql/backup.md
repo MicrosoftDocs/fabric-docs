@@ -4,7 +4,7 @@ description: Learn about automatic backups for SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: strrodic
-ms.date: 11/06/2024
+ms.date: 12/18/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2024
