@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Dataflow Gen2 pricing for Data Factory in Microsoft Fabric
 
-Dataflow Gen2 enables you to leverage a low-code interface with 300+ data and AI-based transformations, letting you transform data easier and with more flexibility than any other tool. Dataflow Gen2 is authored using the familiar Power Query experience that’s available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Once you publish a dataflow, the dataflow definition is generated - this is the program that runs once the dataflow is refreshed to produce tables in staging storage and/or output destination. During refresh, the definition of a dataflow is used by the dataflow engine to generate an orchestration plan, manage resources, and orchestrate execution of queries across data sources, gateways, and compute engines, and to create tables in either the staging storage or data destination.
+Dataflow Gen2 lets you use a low-code interface with 300+ data and AI-based transformations, letting you transform data easier and with more flexibility than any other tool. Dataflow Gen2 is authored using the familiar Power Query experience that’s available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Once you publish a dataflow, the dataflow definition is generated - this is the program that runs once the dataflow is refreshed to produce tables in staging storage and/or output destination. During refresh, the definition of a dataflow is used by the dataflow engine to generate an orchestration plan, manage resources, and orchestrate execution of queries across data sources, gateways, and compute engines, and to create tables in either the staging storage or data destination.
 
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-gen2-pricing-diagram.png" alt-text="Diagram of the Dataflow Gen2 architecture.":::
