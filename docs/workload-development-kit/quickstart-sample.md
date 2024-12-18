@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: quickstart  #Don't change
 ms.custom:
-ms.date: 12/17/2024
+ms.date: 12/18/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
@@ -17,13 +17,13 @@ This sample demonstrates storing and reading data from and to lakehouses. To do 
 
 ## Prerequisites
 
-* An environment that's [set up](environment-setup.md) for workload development.
+* An environment that is [set up](environment-setup.md) for workload development.
 
 * If [Azure storage](#step-1-setup-azure-storage) isn't installed on your tenant, you must be a [Global administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) in the tenant.
 
 ## Step 1: Setup Azure storage
 
-You'll need consent to use Azure Storage. In this step you'll check whether Azure Storage is installed in the tenant, and if it isn't you'll install it.
+You need consent to use Azure Storage. In this step you check whether Azure Storage is installed in the tenant, and if it isn't you install it.
 
 1. Log into the [Azure portal](https://portal.azure.com).
 
@@ -58,11 +58,11 @@ Follow these steps to get your tenant ID.
 
 1. Log into Fabric with the user you want to use to create the workload.
 2. Select the **Help & Support** (the question mark **?**) and then select **About**.
-3. From the **Tenant URL** copy the string of numbers and letters after `https://app.powerbi.com/home?ctid=`. This is your tenant ID.
+3. From the **Tenant URL**, copy the string of numbers and letters after `https://app.powerbi.com/home?ctid=`. This is your tenant ID.
 
     For example, if your tenant URL is `https://app.powerbi.com/home?ctid=bbbbcccc-1111-dddd-2222-eeee3333ffff`, your tenant ID is `bbbbcccc-1111-dddd-2222-eeee3333ffff`.
 
-## Step 4: Create an Azure Entra ID application
+## Step 4: Create a Microsoft Entra ID application
 
 Use the provided script to create an Azure Entra ID application.
 
@@ -70,7 +70,7 @@ Use the provided script to create an Azure Entra ID application.
 
 2. Navigate to *Microsoft-Fabric-workload-development-sample-main\Microsoft-Fabric-workload-development-sample-main\Authentication* folder.
 
-3. Run the command below. You'll need to authenticate with the credentials of the user you're using to create the workload.
+3. Run the command in this step. To authenticate, use the credentials of the user you're using to create the workload.
 
     ```powershell
     .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.WorkloadSample" -tenantId "<your-tenant-id>"
@@ -102,11 +102,11 @@ Open **PowerShell** and do the following:
 
 1. Navigate to *Microsoft-Fabric-workload-development-sample-main\Microsoft-Fabric-workload-development-sample-main\Authentication* folder.
 
-2. Run the command `npm install` to install the dependencies. A new folder called **node_modules** is created.
+2. To install the dependencies, run the command `npm install`. A new folder called **node_modules** is created.
 
-3. Run the command `npm start` to start the frontend.
+3. To start the frontend, run the command `npm start`.
 
-   Once the frontend runs successfully, you'll see a message that includes **successfully** in PowerShell, and your web browser will open with the `http://localhost:60006/` URL. To check that frontend is running successfully, in your browser, navigate to `http://localhost:60006/manifests`.
+   Once the frontend runs successfully, you see a message that includes **successfully** in PowerShell, and your web browser will open with the `http://localhost:60006/` URL. To check that frontend is running successfully, in your browser, navigate to `http://localhost:60006/manifests`.
 
 ## Step 7: Open Visual Studio 2022
 
@@ -137,9 +137,9 @@ The rest of the steps in this quickstart are performed in Visual Studio 2022. Us
 
 ## Step 9: Build the NuGet package
 
-1. From the Visual Studio menu, select **Build > Build Solution**. The build creates a Nuget package that includes the frontend and backend XML and JSON files.
+1. From the Visual Studio menu, select **Build > Build Solution**. The build creates a NuGet package that includes the frontend and backend XML and JSON files.
 
-2. From the *Output* window, take the path that's listed in the row starting with *Successfully created package*.
+2. From the *Output* window, take the path that is listed in the row starting with *Successfully created package*.
 
     In this output example, the path is highlighted in bold. `1>Successfully created package`**`C:\Dev kit\Microsoft-Fabric-workload-development-sample-main\Microsoft-Fabric-workload-development-sample-main\Backend\src\bin\Debug\ManifestPackage.1.0.0.nupkg`**.
 
