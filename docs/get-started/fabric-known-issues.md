@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 12/11/2024
+ms.date: 12/17/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  978  | Real-Time Intelligence  | [Renamed eventstream fails to open](known-issues/known-issue-978-renamed-eventstream-fails-open.md) | December 17, 2024 |
+|  977  | Power BI  | [Export to Excel using live connection with show items with no data turned on fails](known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md) | December 17, 2024 |
+|  976  | Power BI  | [Export-to-data disabled for a visual with visual calculation](known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md) | December 17, 2024 |
 |  966  | Power BI  | [Sync content from Git in workspace fails](known-issues/known-issue-966-sync-content-git-workspace-fails.md) | December 11, 2024 |
 |  968  | Power BI  | [Export data option is disabled for Q&A visual in the service](known-issues/known-issue-968-export-data-option-disabled-qa-visual.md) | December 10, 2024 |
 |  967  | Data Factory | [Pipeline activities don't save if their data warehouse connection is changed](known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md) | December 10, 2024 |
@@ -123,7 +126,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 | Fixed: November 5, 2024 |
 |  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 | Fixed: November 5, 2024 |
 |  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |  Fixed: November 5, 2024 |
-|  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 | Fixed: October 31, 2024 |
 
 ## Related content
 

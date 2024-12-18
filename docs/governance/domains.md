@@ -79,6 +79,8 @@ For information about defining a domain as a default domain, see [Define the dom
 
 ## Create a domain
 
+Before you start creating domains for your organization, it is recommended to review [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
+
 To create domain, you must be a Fabric admin.
 
 1. Open the admin portal and select the **Domains** tab.
