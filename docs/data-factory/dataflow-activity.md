@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
-ms.date: 12/07/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2
