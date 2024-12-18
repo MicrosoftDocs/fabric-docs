@@ -81,7 +81,7 @@ The ```notebookutils.fs.ls()``` API behaves differently when using relative path
 
     For example:
     ```python
-        notebookutils.fs.ls("Files/sample_datasets/public_holidays.parquet")
+    notebookutils.fs.ls("Files/sample_datasets/public_holidays.parquet")
     ```
 
 - **In a Python notebook**: The relative path is relative to the local file system's working directory, which by default is /home/trusted-service-user/work. Therefore, you should use the full path instead of a relative path ```notebookutils.fs.ls("/lakehouse/default/Files")``` to access the ```Files``` directory in the default Lakehouse.
