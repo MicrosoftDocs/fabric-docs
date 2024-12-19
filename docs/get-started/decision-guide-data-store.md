@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun, scbradl
 ms.topic: concept-article
-ms.date: 12/04/2024
+ms.date: 12/19/2024
 ms.custom:
   - FY25Q1-Linter
   - ignite-2024
@@ -32,7 +32,7 @@ Use this information to compare Fabric data stores such as warehouse, lakehouse,
 | **Multi-table transactions** | No | Yes | Yes, for [multi-table ingestion](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object) |
 | **Primary development interface** | Spark notebooks, Spark job definitions | SQL scripts | KQL Queryset, KQL Database |
 | **Security** | RLS, CLS\*\*, [table level](../data-warehouse/sql-granular-permissions.md) (T-SQL), none for Spark | [Object level](../data-warehouse/sql-granular-permissions.md), [RLS](../data-warehouse/column-level-security.md), [CLS](../data-warehouse/column-level-security.md), DDL/DML, [dynamic data masking](../data-warehouse/dynamic-data-masking.md) | RLS |
-| **Access data via shortcuts** | Yes | Yes | Yes |
+| **Access data via shortcuts** | Yes | Yes, via SQL analytics endpoint | Yes |
 | **Can be a source for shortcuts** |  Yes (files and tables) | Yes (tables) | Yes |
 | **Query across items** | Yes | Yes | Yes |
 | **Advanced analytics** | Interface for large-scale data processing, built-in data parallelism, and fault tolerance | Interface for large-scale data processing, built-in data parallelism, and fault tolerance | Time Series native elements, full geo-spatial and query capabilities |
