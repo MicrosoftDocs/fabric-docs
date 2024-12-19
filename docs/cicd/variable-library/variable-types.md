@@ -65,4 +65,3 @@ The variables in the Variable library can be any of the following basic types:
   For example, 2024-10-14T04:53:54Z.
 - Double: A number with decimal points.
 - Integer: A whole number that can be positive, negative, or zero
-- Array: An array of type string in this format [value1, value2, …]. Can be empty or null.

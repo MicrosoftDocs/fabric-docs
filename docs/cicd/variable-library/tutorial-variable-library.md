@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Learn how to use Variable libraries
+title: Learn how to use Variable libraries
 description: "Learn how to use Microsoft Fabric Variable libraries to customize and share item configurations in a workspace."
 author: mberdugo
 ms.author: monaberdugo
