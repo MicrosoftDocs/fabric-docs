@@ -55,9 +55,9 @@ The variable name is *not* case sensitive.
 
 The variables in the Variable library can be any of the following basic types:
 
-- String: (default) Any char. Can be null or empty.
-- Boolean: Gets *true* or *false*.
-- DateTime: The date and time are represented using ISO 8601 standard, yyyy-MM-ddTHH:mm:ssZ, where:
+- String: (default) Any character Can be null or empty.
+- Boolean: *True* or *False*.
+- DateTime: The date and time are represented using **ISO 8601 standard**, yyyy-MM-ddTHH:mm:ssZ, where:
   - *yyyy-MM-dd* is the four-digit year, followed by the two-digit month, and two-digit day
   - *T* separates the date and the time
   - *HH:mm:ss* is the two-digit hour in 24-hour format, followed by the two-digit minute, and two-digit second
