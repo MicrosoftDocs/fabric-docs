@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # How to use Stored procedure activity
@@ -51,7 +51,7 @@ Select a stored procedure, and optionally import its parameters or manually add 
 
 ## Step 4: Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
