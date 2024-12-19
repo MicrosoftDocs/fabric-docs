@@ -20,7 +20,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 
 Use this information to compare Fabric data stores such as warehouse, lakehouse, Eventhouse, SQL database, and Power BI datamart, based on data volume, type, developer persona, skill set, operations, and other capabilities. These comparisons are organized into the following two tables:
 
-| | **[Lakehouse](../data-engineering/lakehouse-overview.md)** | **[Warehouse](../data-warehouse/data-warehousing.md)** |  **[Eventhouse](../real-time-intelligence/eventhouse.md)** |
+| Table 1 of 2 | **[Lakehouse](../data-engineering/lakehouse-overview.md)** | **[Warehouse](../data-warehouse/data-warehousing.md)** |  **[Eventhouse](../real-time-intelligence/eventhouse.md)** |
 |---|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Unlimited |
 | **Type of data** |  Unstructured,<br>semi-structured,<br>structured | Structured,<br>semi-structured (JSON) | Unstructured,<br>semi-structured,<br>structured |
@@ -41,7 +41,7 @@ Use this information to compare Fabric data stores such as warehouse, lakehouse,
 
 \* Spark supports reading from tables using shortcuts, doesn't yet support accessing views, stored procedures, functions etc.
 
-| | **[Fabric SQL database](../database/sql/overview.md)** |  **[Power BI Datamart](/power-bi/transform-model/datamarts/datamarts-overview)** |
+|  Table 2 of 2 | **[Fabric SQL database](../database/sql/overview.md)** |  **[Power BI Datamart](/power-bi/transform-model/datamarts/datamarts-overview)** |
 |---|:---:|:---:|
 | **Data volume** | 4 TB | Up to 100 GB |
 | **Type of data** | Structured,<br>semi-structured,<br>unstructured | Structured |
