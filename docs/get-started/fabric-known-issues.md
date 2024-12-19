@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 12/02/2024
+ms.date: 12/17/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,16 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  978  | Real-Time Intelligence  | [Renamed eventstream fails to open](known-issues/known-issue-978-renamed-eventstream-fails-open.md) | December 17, 2024 |
+|  977  | Power BI  | [Export to Excel using live connection with show items with no data turned on fails](known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md) | December 17, 2024 |
+|  976  | Power BI  | [Export-to-data disabled for a visual with visual calculation](known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md) | December 17, 2024 |
+|  966  | Power BI  | [Sync content from Git in workspace fails](known-issues/known-issue-966-sync-content-git-workspace-fails.md) | December 11, 2024 |
+|  968  | Power BI  | [Export data option is disabled for Q&A visual in the service](known-issues/known-issue-968-export-data-option-disabled-qa-visual.md) | December 10, 2024 |
+|  967  | Data Factory | [Pipeline activities don't save if their data warehouse connection is changed](known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md) | December 10, 2024 |
+|  965  | Databases | [SQL database creation fails to create child items when item with same name exists](known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
+|  962  | Real-Time Intelligence | [Eventstream publish fails when column contains empty array and operator is added](known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md) | December 9, 2024 |
+|  957  | Data Factory | [Creation failure for Copy job item in empty workspace](known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 |
+|  955  | Data Factory | [Create Gateway public API doesn't work for service principals](known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md) | December 5, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](known-issues/known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
 |  950  | Power BI | [Incorrect column names after column format or aggregation change](known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md) | December 2, 2024 |
 |  949  | Power BI | [Power BI Copilot can excessively retry in rare error scenarios](known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md) | November 27, 2024 |
@@ -29,11 +39,9 @@ Select the **Title** to view more information about that specific known issue.
 |  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](known-issues/known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
-|  927  | Power BI | [PowerPoint add-in and Refresh Report API refresh date appears incorrect](known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md) | November 12, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
 |  923  | Power BI | [Tenant migrations paused through January 2025](known-issues/known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](known-issues/known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |
-|  916  | Power BI | [Visual doesn't load due to an unexpected error](known-issues/known-issue-916-visual-not-load-error.md) | November 7, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 |
@@ -49,7 +57,6 @@ Select the **Title** to view more information about that specific known issue.
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
 |  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](known-issues/known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
 |  872  | Data Warehouse | [Data warehouses don't show button friendly names](known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 |
-|  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](known-issues/known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 |
 |  842  | Data Warehouse | [Data warehouse exports using deployment pipelines or git fail](known-issues/known-issue-842-warehouse-exports-pipelines-fail.md) | September 23, 2024 |
@@ -76,7 +83,6 @@ Select the **Title** to view more information about that specific known issue.
 |  643  | Data Engineering | [Tables not available to add in Power BI semantic model](known-issues/known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 |
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 |
 |  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 |
-|  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 |
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
 |  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
@@ -88,6 +94,10 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  927  | Power BI | [PowerPoint add-in and Refresh Report API refresh date appears incorrect](known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md) | November 12, 2024 | Fixed: December 11, 2024 |
+|  916  | Power BI | [Visual doesn't load due to an unexpected error](known-issues/known-issue-916-visual-not-load-error.md) | November 7, 2024 | Fixed: December 10, 2024 |
+|  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 | Fixed: December 9, 2024 |
+|  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 | Fixed: December 4, 2024 |
 |  926  | Data Engineering | [Notebook failure inside Visual Studio Code for the Web](known-issues/known-issue-926-notebook-failure-visual-studio-code-web.md) | November 12, 2024 | Fixed: November 27, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 | Fixed: November 27, 2024 |
 |  641  | Power BI | [Visuals using the Denodo connector might show connection errors](known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md) | March 5, 2024 | Fixed: November 27, 2024 |
@@ -116,9 +126,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  892  | OneLake | [Data warehouse not accessible when using OneLake URLs with friendly names](known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md) | October 18, 2024 | Fixed: November 5, 2024 |
 |  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 | Fixed: November 5, 2024 |
 |  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |  Fixed: November 5, 2024 |
-|  873  | OneLake | [Write to shortcut destination using workspace identity fails](known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md) | September 30, 2024 | Fixed: October 31, 2024 |
-|  887  | Power BI | [Semantic model refresh fails due to circular dependency in calendar table](known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md) | October 17, 2024 | Fixed: October 25, 2024 |
-|  862  | Power BI | [Unexpected changes in fonts or themes in reports](known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md) | September 30, 2024 | Fixed: October 17, 2024 |
 
 ## Related content
 

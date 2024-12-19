@@ -11,6 +11,7 @@ ms.date: 06/06/2024
 ms.custom:
   - build-2023
   - ignite-2023
+#customer intent: As a developer, I want to know how to resolve conflicts when using Fabric's Git integration tools.
 ---
 
 # Conflict resolution

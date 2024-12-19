@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 12/02/2024
+ms.date: 12/15/2024
 ---
 
 # Authentication setup
@@ -41,7 +41,7 @@ To provision Azure Storage, open Windows PowerShell as administrator and run the
 Install-Module az  
 Import-Module az  
 Connect-AzureAD  
-New-AzureADServicePrincipal -AppId 66667777-aaaa-8888-bbbb-9999cccc0000
+New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
 ```
 
 ## Configure your application in Microsoft Entra ID manually
@@ -111,7 +111,7 @@ The scopes are:
 * `FabricLakehouse.Read.All`: For reading lakehouse files
 * `FabricLakehouse.ReadWrite.All`: For reading/writing lakehouse files
 
-Preauthorize `66667777-aaaa-8888-bbbb-9999cccc0000` (the Fabric client application) for these scopes.
+Preauthorize `871c010f-5e61-4fb1-83ac-98610a7e9110` (the Fabric client application) for these scopes.
 
 You can find the application IDs of these apps under **Microsoft Power BI** and **Power BI Service** in [Application IDs of commonly used Microsoft applications](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
 

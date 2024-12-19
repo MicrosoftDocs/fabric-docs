@@ -10,24 +10,28 @@ items:
     href: real-time-intelligence-compare.md
   - name: Git and deployment pipelines
     href: eventhouse-git-deployment-pipelines.md
+  - name: Implement medallion architecture
+    href: architecture-medallion.md
   - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
-    - name: 1- Create resources
+    - name: 1- Set up Eventhouse
       href: tutorial-1-resources.md
     - name: 2- Get data in the Real-Time hub
       href: tutorial-2-get-real-time-events.md
-    - name: 3- Query streaming data in a KQL queryset
-      href: tutorial-3-query-data.md
-    - name: 4- Create a Real-Time dashboard
-      href: tutorial-4-create-dashboard.md
-    - name: 5- Create a Power BI report
-      href: tutorial-5-power-bi-report.md
-    - name: 6- Set an alert on your eventstream
-      href: tutorial-6-set-alert.md
-    - name: 7- Clean up resources
-      href: tutorial-7-clean-up-resources.md
+    - name: 3- Transform data in your KQL database
+      href: tutorial-3-transform-kql-database.md
+    - name: 4- Query streaming data using KQL
+      href: tutorial-4-query-data.md
+    - name: 5- Create a Real-Time dashboard
+      href: tutorial-5-create-dashboard.md
+    - name: 6- Create a Power BI report
+      href: tutorial-6-power-bi-report.md
+    - name: 7- Set an alert on your event stream
+      href: tutorial-7-set-alert.md
+    - name: 8- Clean up resources
+      href: tutorial-8-clean-up-resources.md
 - name: User flows
   items:
   - name: "Discover and respond to events"
@@ -281,7 +285,7 @@ items:
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
-- name: Analyze and model data
+- name: Analyze and train data
   items:
   - name: Copilot for Real-Time Intelligence
     displayName: KQL queryset, kusto query language, natural language
@@ -290,10 +294,10 @@ items:
     items:
     - name: Create a KQL queryset
       href: create-query-set.md
-    - name: Access the data profile of a table
-      href: data-profile.md
     - name: Query data in a KQL queryset
       href: kusto-query-set.md
+    - name: Access the data profile of a table
+      href: data-profile.md
     - name: Customize results in the KQL Queryset results grid
       href: customize-results.md
     - name: Keyboard shortcuts
@@ -354,7 +358,7 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
-- name: Create alerts and actions
+- name: Track data
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
@@ -372,13 +376,15 @@ items:
       href: data-activator/activator-get-data-real-time-hub.md
   - name: Create Activator objects and rules
     items:
-    - name: Assign data to objects
-      href: data-activator/activator-assign-data-objects.md
-    - name: Create rules
+    - name: Overview of Activator rules
+      href: data-activator/activator-rules-overview.md
+    - name: Create rules and activations
       href: data-activator/activator-create-activators.md
+    - name: Assign data to Activator objects
+      href: data-activator/activator-assign-data-objects.md
     - name: Trigger Fabric items
       href: data-activator/activator-trigger-fabric-items.md
-    - name: Detection conditions
+    - name: Detection conditions for Activator
       href: data-activator/activator-detection-conditions.md
     - name: Create alerts from a Real-Time Dashboard
       href: data-activator/activator-get-data-real-time-dashboard.md

@@ -2,8 +2,8 @@
 title: Real-Time Intelligence- Explore your data visually with Real-Time Dashboards
 description: Learn about Real-Time Intelligence tutorial user flow 4- Explore your data visually in Real-Time Dashboards in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: concept-article
 ms.custom:
   - build-2024

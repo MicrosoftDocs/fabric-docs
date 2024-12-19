@@ -2,8 +2,8 @@
 title: Query acceleration over OneLake shortcuts (preview)
 description: Learn how to use the query acceleration policy over OneLake shortcuts to improve query performance and reduce latency for external delta tables.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - ignite-2024
