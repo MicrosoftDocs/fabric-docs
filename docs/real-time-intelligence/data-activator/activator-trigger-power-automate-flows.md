@@ -6,13 +6,13 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: Data Activator Custom Actions
-ms.date: 11/26/2024
+ms.date: 12/11/2024
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.
 ---
 
 # Activate custom actions (Power Automate flows)
 
-You can activate external systems with a Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule by defining custom actions with Power Automate. Custom actions can be useful for:
+You can activate external systems with a [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule by defining custom actions with Power Automate. Custom actions can be useful for:
 
 * Sending notifications using systems other than Teams and email.
 * Creating action items in ticketing systems.
@@ -22,13 +22,13 @@ To activate custom actions from your rules, first define a custom action by crea
 
 ## Create a custom action
 
-A custom action is a reusable action that you can use in multiple rules within an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. Creating a custom action requires familiarity with Power Automate. However, once you create a custom action, other [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] users can use the action in any rule, without requiring any knowledge of Power Automate.
+A custom action is a reusable action that you can use in multiple rules within [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items. Creating a custom action requires familiarity with Power Automate. However, once you create a custom action, other [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] users can use the action in any rule, without requiring any knowledge of Power Automate.
 
 A custom action defines how to call a specific external system from a rule using a flow. It defines a set of *input fields* to pass from your rules to the flow, so that the flow calls the external system. For example, suppose you want to define a custom action that adds a task to [Microsoft To Do](https://to-do.office.com/tasks/). The input field for such an action might be *Task name*. This custom action would link to a flow that uses a Microsoft To Do connector to create the task on your behalf.
 
 ### Name your action and add input fields
 
-Open Fabric Activator and select a rule to display the **Definition** pane. Scroll down to **Action** > **Type**, and select **New custom action**. 
+Open Activator and select a rule to display the **Definition** pane. Scroll down to **Action** > **Type**, and select **New custom action**. 
 
 Then, give your action a name such as *Add a To Do task* and define the input fields (such as _Task name_).
 

@@ -169,6 +169,10 @@ We added a setting that allows you to set the maximum number of parallel query e
 
 :::image type="content" source="./media/dataflows-gen2-incremental-refresh/dataflow-concurrency-control.png" alt-text="Screenshot of the dataflow concurrency control settings.":::
 
+### I want to use incremental refresh but I see that after enablement, the dataflow takes longer to refresh. What can I do?
+
+Incremental refresh, as described in this article, is designed to reduce the amount of data that needs to be processed and retrieved from the source system. However, if the dataflow takes longer to refresh after you enable incremental refresh, it might be because the additional overhead of checking if data changed and processing the buckets is higher than the time saved by processing less data. In this case, we recommend that you review the settings for incremental refresh and adjust them to better fit your scenario. For example, you can increase the bucket size to reduce the number of buckets and the overhead of processing them. Or you can reduce the number of buckets by increasing the bucket size. If you still experience low performance after adjusting the settings, you can disable incremental refresh and use a full refresh instead as that might be more efficient in your scenario.
+
 ## Next steps
 
 - [Dataflow Gen2 Overview](dataflows-gen2-overview.md)

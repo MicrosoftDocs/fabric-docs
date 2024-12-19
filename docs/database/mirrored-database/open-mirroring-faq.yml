@@ -19,10 +19,6 @@ sections:
   - name: Features and capabilities
     questions:
     - question: |
-        Is there a staging or landing zone for Snowflake? If so, is it outside of OneLake?
-      answer: 
-        For Snowflake, we do use a landing zone to store both the snapshot and change data into OneLake, to improve performance as we're converting these files in the landing zones into delta vertiparquet.
-    - question: |
         How long does the initial replication take?
       answer: 
         It depends on the size of the data and the data provider or application that you use to write data into open mirroring.

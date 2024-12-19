@@ -22,7 +22,7 @@ To connect an application to an API for GraphQL, you need three important pieces
 
 * Currently API for GraphQL requires applications to use Microsoft Entra for authentication. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app).
   
-* The authenticated user calling the API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](../get-started/give-access-workspaces.md).
+* The authenticated user calling the API requires Execute permissions to the GraphQL API (Run Queries and Mutations option when adding direct access permissions) and, if using Single sing-on (SSO) as the connectivity option in the API, read or write permissions are required in the data source of choice accordingly. For more information, see [Connect to a data source and build your schema](get-started-api-graphql.md).
 
 * Before you connect an application, you must have an API for GraphQL in Fabric. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
 
@@ -30,28 +30,13 @@ To connect an application to an API for GraphQL, you need three important pieces
 
 In the following steps, we showcase how to configure support for a ReactJS application in Microsoft Entra.
 
-1. Sign in to the [Azure portal](https://ms.portal.azure.com/#allservices).
-
-1. Search for and select **Microsoft Entra ID**.
-
-1. From the *Manage* list, select **App registration**.
-
-1. Select **New registration**.
-
-1. Fill in the required information:
-
-   * **Name** - Enter a name for your application.
-
-   * **Supported account types** - Select the accounts you want your app to support.
-
-   * (Optional) **Redirect URI** - Enter a URI if needed.
-
-1. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
-1. From the *Manage* list, select **API permissions**, then **Add permission**. 
+1. Register an application using the steps described on [Quickstart: Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+2. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
+1. Under the *Manage* list, select **API permissions**, then **Add permission**. 
 2. Add the **PowerBI Service**, select **Delegated permissions**, and select **Item.Execute.All** permissions. Make sure admin consent isn't required.
-3. Back to the *Manage* list, select **Authentication** > **Add a platform**, > **Single-page application**.
-4. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm that the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. In case the application receives an error related to cross-origin requests, add the **Mobile and desktop applications** platform in the previous step with the same redirect URI.
-5. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
+3.  Back to the *Manage* list, select **Authentication** > **Add a platform**, > **Single-page application**.
+4.  For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm that the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. In case the application receives an error related to cross-origin requests, add the **Mobile and desktop applications** platform in the previous step with the same redirect URI.
+5.  Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
 
 ## Set up a sample GraphQL API for application access
 

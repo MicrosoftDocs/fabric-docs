@@ -4,10 +4,9 @@ description: Learn about admin organizational visual capabilities and how to cus
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer:
-
 ms.custom:
 ms.topic: conceptual
-ms.date: 09/09/2024
+ms.date: 12/09/2024
 ---
 
 # Manage Power BI visuals admin settings
@@ -27,10 +26,10 @@ The UI tenant settings only affect the Power BI service. If you want these setti
 These settings allow you to control the following actions for Power BI visuals in your organization:
 
 * [Allow visuals created using the Power BI SDK](#visuals-from-appsource-or-a-file)
-* [Allow access to certified Power BI visuals only](#certified-power-bi-visuals)
-* [Allow downloads from custom visuals onto your storage device](#export-data-to-file)
-* [Allow custom visuals to store data on the user's local machine](#local-storage)
-* [Obtain Microsoft Entra access token](#appsource-custom-visuals-sso)
+* [Add and use certified Power BI visuals only](#certified-power-bi-visuals)
+* [Allow downloads from custom visuals](#export-data-to-file)
+* [AppSource Custom Visuals SSO](#appsource-custom-visuals-sso)
+* [Allow access to the browser's local storage](#local-storage)
 
 ### Visuals from AppSource or a file
 
@@ -82,7 +81,7 @@ UI changes to tenant settings apply only to the Power BI service. To manage the 
 
 ### Export data to file
 
-When this setting is enabled, users can download data from a custom visual into a file on their storage device. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings. This setting is disabled by default and applies to all visuals including those managed by your organizational store, Desktop, and web.
+When this setting is enabled, users can download data from a custom visual into a file on their storage device. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings. This setting is disabled by default and applies to all visuals including those visuals managed by your organizational store, Desktop, and web.
 
 >[!NOTE]
 >When this setting is enabled, a custom visual can export to files of the following types:
@@ -119,7 +118,7 @@ When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export dat
 
 ### Local storage
 
-This setting enables visuals to [store data on the browser's local storage](/power-bi/developer/visuals/local-storage) which helps improve performance. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings. The setting is enabled by default and applies to all visuals, including those managed by your organizational store, Desktop, and web.
+This setting enables visuals to [store data on the browser's local storage](/power-bi/developer/visuals/local-storage) which helps improve performance. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings. The setting is enabled by default and applies to all visuals, including those visuals managed by your organizational store, Desktop, and web.
 
 :::image type="content" source="./media/organizational-visuals/local-storage-setting.png" alt-text="Screenshot of the local storage settings admin switch." lightbox="./media/organizational-visuals/local-storage-setting.png" :::
 
@@ -138,7 +137,7 @@ To enable the local storage setting, follow these steps:
 
 ### AppSource Custom Visuals SSO
 
-When this setting is enabled, AppSource Custom Visuals can obtain  [Microsoft Entra ID (formerly known as Azure Active Directory) access tokens](/entra/identity/authentication/concept-authentication-oath-tokens) with restricted audiences for signed-in users, utilizing the [Authentication API](/graph/api/resources/authenticationmethods-overview). These tokens contain personal information such as the user's name and email address. Custom Visuals can send these tokens across different regions and compliance boundaries, and it is their full responsibility to handle the tokens they possess. The setting is disabled by default and applies to all AppSource Custom Visuals, including those managed by your organizational store.
+When this setting is enabled, AppSource Custom Visuals can obtain  [Microsoft Entra ID (formerly known as Azure Active Directory) access tokens](/entra/identity/authentication/concept-authentication-oath-tokens) with restricted audiences for signed-in users, utilizing the [Authentication API](/graph/api/resources/authenticationmethods-overview). These tokens contain personal information such as the user's name and email address. Custom Visuals can send these tokens across different regions and compliance boundaries, and it is their full responsibility to handle the tokens they possess. The setting is disabled by default and applies to all AppSource Custom Visuals, including those visuals managed by your organizational store.
 
 :::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch found in tenant settings.":::
 
@@ -155,7 +154,7 @@ When this setting is enabled, AppSource Custom Visuals can obtain  [Microsoft En
 
 ## Organizational visuals
 
-As a Fabric admin, you can manage the list of Power BI visuals available in your organization's [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store). The **Organizational visuals** tab, in the *Admin portal*, allows you to add and remove visuals and decide which visuals will automatically display in the visualization pane of your organization's users. You can add to the list any type of visual including uncertified visuals and *.pbiviz* visuals, even if they contradict the [tenant settings](#power-bi-visuals-tenant-settings) of your organization.
+As a Fabric admin, you can manage the list of Power BI visuals available in your organization's [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store). The **Organizational visuals** tab, in the *Admin portal*, allows you to add and remove visuals and decide which visuals automatically display in the visualization pane of your organization's users. You can add to the list any type of visual including uncertified visuals and *.pbiviz* visuals, even if they contradict the [tenant settings](#power-bi-visuals-tenant-settings) of your organization.
 
 Organizational visuals settings are automatically deployed to Power BI Desktop.
 
@@ -187,11 +186,11 @@ Use this method to add a new Power BI visual from a *.pbiviz* file.
 
       * Select whether users in your organization can access this visual. This setting is enabled by default.
 
-      * Select whether this visual will appear in the visualization pane of the users in your organization. This setting is disabled by default. For more information, see [add a visual to the visualization pane](#add-a-visual-to-the-visualization-pane).
+      * Select whether you want this visual to appear in the visualization pane of the users in your organization. This setting is disabled by default. For more information, see [add a visual to the visualization pane](#add-a-visual-to-the-visualization-pane).
 
-    :::image type="content" source="media/organizational-visuals/add-visual.png" alt-text="Screenshot of the add visual pop up menu with the options described in step two.":::
+    :::image type="content" source="media/organizational-visuals/add-visual.png" alt-text="Screenshot of the add visual pop-up menu with the options described in step 2.":::
 
-3. To initiate the upload request, select **Add**. After it's uploaded, the visual displays in the organizational visuals list.
+3. To initiate the upload request, select **Add**. After it uploads, the visual displays in the organizational visuals list.
 
 ### Add a visual from AppSource
 
@@ -203,7 +202,7 @@ AppSource Power BI visuals are automatically updated. Users in your organization
 
     :::image type="content" source="media/organizational-visuals/add-visual-from-appsource.png" alt-text="Screenshot showing the organizational visuals menu in the Power BI admin settings. The add visual option is expanded, and the from app source option is selected.":::
 
-2. In the **Power BI visuals** window, find the AppSource visual you want to add, and select **Add**. After it's uploaded, the visual displays in the organizational visuals list.
+2. In the **Power BI visuals** window, find the AppSource visual you want to add, and select **Add**. After it uploads, the visual displays in the organizational visuals list.
 
 ### Add a visual to the visualization pane
 
@@ -215,7 +214,7 @@ You can pick visuals from the organizational visuals page to automatically show 
 
 2. Enable the visualization pane setting and select **Update**.
 
-    :::image type="content" source="media/organizational-visuals/update-organizational-pane.png" alt-text="Screenshot showing the Visual Settings dialog box with the second button in the access area titled: the visual will appear in the visualization pane for the entire organization, enabled.":::
+    :::image type="content" source="media/organizational-visuals/update-organizational-pane.png" alt-text="Screenshot showing the Visual Settings dialog box with the second button in the access area titled: the visual appears in the visualization pane for the entire organization, enabled.":::
 
 ### Delete a visual uploaded from a file
 

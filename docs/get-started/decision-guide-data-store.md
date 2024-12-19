@@ -1,11 +1,15 @@
 ---
 title:  Fabric decision guide - choose a data store
 description: Review a reference table and scenarios to choose the most suitable data store for your Microsoft Fabric workloads, ensuring optimal performance.
-author: bradleyschacht
-ms.author: scbradl
-ms.reviewer: sngun, wiassaf
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sngun, scbradl
 ms.topic: concept-article
+<<<<<<< HEAD
 ms.date: 12/03/2024
+=======
+ms.date: 12/04/2024
+>>>>>>> 40373409595cb988779128c296ba9d19428eeca6
 ms.custom:
   - FY25Q1-Linter
   - ignite-2024
@@ -23,8 +27,8 @@ Use this information to compare Fabric data stores such as warehouse, lakehouse,
 | | **[Lakehouse](../data-engineering/lakehouse-overview.md)** | **[Warehouse](../data-warehouse/data-warehousing.md)** |  **[Eventhouse](../real-time-intelligence/eventhouse.md)** |
 |---|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Unlimited |
-| **Type of data** |  Unstructured,<br>semi-structured,<br>structured | Structured | Unstructured,<br>semi-structured,<br>structured |
-| **Primary developer persona** | Data engineer, data scientist | Data warehouse developer, data architect, database developer | App developer, data scientist, data engineer |
+| **Type of data** |  Unstructured,<br>semi-structured,<br>structured | Structured,<br>semi-structured (JSON) | Unstructured,<br>semi-structured,<br>structured |
+| **Primary developer persona** | Data engineer, data scientist | Data warehouse developer, data architect, data engineer, database developer | App developer, data scientist, data engineer |
 | **Primary dev skill** | Spark (Scala, PySpark, Spark SQL, R) | SQL | No code, KQL, SQL |
 | **Data organized by** | Folders and files, databases, and tables | Databases, schemas, and tables | Databases, schemas, and tables |
 | **Read operations** | Spark, T-SQL | T-SQL, Spark\* | KQL, T-SQL, Spark |
@@ -72,7 +76,7 @@ Susan, a professional developer, is new to Microsoft Fabric. They're ready to ge
 
 Susan has spent many years building data warehouses on relational database engines, and is familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a [**Fabric warehouse**](../data-warehouse/data-warehousing.md), which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
 
-Susan creates a new data warehouse and interacts with it using T-SQL just like her other SQL server databases. Most of the existing T-SQL code she has written to build her warehouse on SQL Server will work on the Fabric data warehouse making the transition easy. If she chooeses to, she can even use the same tools that work with her other databases, like SQL Server Management Studio. Using the SQL editor in the Fabric portal, Susan and other team members write analytic queries that reference other data warehouses and Delta tables in lakehouses simply by using three-part names to perform cross-database queries.
+Susan creates a new data warehouse and interacts with it using T-SQL just like her other SQL server databases. Most of the existing T-SQL code she has written to build her warehouse on SQL Server will work on the Fabric data warehouse making the transition easy. If she chooses to, she can even use the same tools that work with her other databases, like SQL Server Management Studio. Using the SQL editor in the Fabric portal, Susan and other team members write analytic queries that reference other data warehouses and Delta tables in lakehouses simply by using three-part names to perform cross-database queries.
 
 ### Scenario 2
 

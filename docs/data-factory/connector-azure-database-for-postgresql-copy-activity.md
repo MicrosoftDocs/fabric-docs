@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Database for Pos
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 11/19/2023
 ms.custom:
   - template-how-to
   - build-2023
@@ -38,12 +38,11 @@ Go to **Source** tab to configure your copy activity source. See the following c
 
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
-- **Connection**: Select an Azure Database for PostgreSQL connection from the connection list. If no connection exists, then create a new Azure Database for PostgreSQL connection by selecting **New**.
+- **Connection**: Select an Azure Database for PostgreSQL connection from the connection list. If no connection exists, then create a new Azure Database for PostgreSQL connection.
 - **Connection type**: Select **Azure Database for PostgreSQL**.
 - **Use query**: Select **Table** to read data from the specified table or select **Query** to read data using queries.
     - If you select **Table**:
-      - **Table**: Select the table from the drop-down list or select **Edit** to manually enter it to read data. 
+      - **Table**: Select the table from the drop-down list or select **Enter manually** to manually enter it to read data. 
 
         :::image type="content" source="./media/connector-azure-database-for-postgresql/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
@@ -57,6 +56,7 @@ The following three properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
+- **Query timeout (minutes)**: Specify the wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout).
 - **Partition option**: Specifies the data partitioning options used to load data from Azure Database for PostgreSQL. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an Azure Database for PostgreSQL is controlled by the **Degree of copy parallelism** in the copy activity settings tab.
 
     If you select **None**, you choose not to use partition.
@@ -93,10 +93,9 @@ Go to **Destination** tab to configure your copy activity destination. See the f
 
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
-- **Connection**: Select an Azure Database for PostgreSQL connection from the connection list. If no connection exists, then create a new Azure Database for PostgreSQL connection by selecting **New**.
+- **Connection**: Select an Azure Database for PostgreSQL connection from the connection list. If no connection exists, then create a new Azure Database for PostgreSQL connection.
 - **Connection type**: Select **Azure Database for PostgreSQL**.
-- **Table**: Select the table from the drop-down list or select **Edit** to manually enter it to write data. 
+- **Table**: Select the table from the drop-down list or select **Enter manually** to enter it to write data. 
 
 Under **Advanced**, you can specify the following fields:
 
@@ -145,10 +144,10 @@ The following table contains more information about the copy activity in Azure D
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the source data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
 |**Connection type** |Your source connection type. |**Azure Database for PostgreSQL** |Yes|/|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.|• **Table** <br>• **Query** |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• query|
+|**Query timeout (minutes)** | The wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout). |timespan |No |queryTimeout|
 | **Partition names** | The list of physical partitions that needs to be copied. If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  | < your partition names > | No | partitionNames | 
 | **Partition column name** | The name of the source column **in integer or date/datetime type** (`int`, `smallint`, `bigint`, `date`, `timestamp without time zone`, `timestamp with time zone` or `time without time zone`) that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column. | < your partition column names > | No | partitionColumnName | 
 | **Partition upper bound** | The maximum value of the partition column to copy data out. If you use a query to retrieve the source data, hook `?AdfRangePartitionUpbound` in the WHERE clause. | < your partition upper bound > | No | partitionUpperBound | 
@@ -159,7 +158,6 @@ The following table contains more information about the copy activity in Azure D
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the destination data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
 |**Connection type** |Your destination connection type. |**Azure Database for PostgreSQL** |Yes|/|
 |**Table**|Your destination data table to write data.| < name of your destination table > |Yes |typeProperties (under *`typeProperties`* -> *`sink`*):<br>&nbsp; - schema<br>&nbsp; - table<br>|
