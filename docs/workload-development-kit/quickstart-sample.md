@@ -100,7 +100,7 @@ Use the provided script to create an Azure Entra ID application.
 
 Open **PowerShell** and do the following:
 
-1. Navigate to *Microsoft-Fabric-workload-development-sample-main\Microsoft-Fabric-workload-development-sample-main\Authentication* folder.
+1. Navigate to *Microsoft-Fabric-workload-development-sample-main\Microsoft-Fabric-workload-development-sample-main\Frontend* folder.
 
 2. To install the dependencies, run the command `npm install`. A new folder called **node_modules** is created.
 
@@ -139,7 +139,7 @@ The rest of the steps in this quickstart are performed in Visual Studio 2022. Us
 
 1. From the Visual Studio menu, select **Build > Build Solution**. The build creates a NuGet package that includes the frontend and backend XML and JSON files.
 
-2. From the *Output* window, take the path that is listed in the row starting with *Successfully created package*.
+2. From the *Output* window, take the path that is listed in the row starting with *1>Successfully created package*.
 
     In this output example, the path is highlighted in bold. `1>Successfully created package`**`C:\Dev kit\Microsoft-Fabric-workload-development-sample-main\Microsoft-Fabric-workload-development-sample-main\Backend\src\bin\Debug\ManifestPackage.1.0.0.nupkg`**.
 

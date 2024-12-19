@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 12/18/2024
+ms.date: 12/19/2024
 ---
 
 # Set up your environment
@@ -14,11 +14,11 @@ This article is aimed at developers who are looking to build a workload using th
 
 ## Platform requirements
 
-To develop a new workload, your Fabric subscription needs to have a [capacity](../enterprise/licenses.md#capacity).
+To develop a new workload, your [Microsoft Fabric](app.powerbi.com) subscription needs to have a [capacity](../enterprise/licenses.md#capacity) with an F or P SKU. Fabric [trial capacities](../get-started/fabric-trial.md) are also supported.
 
 ## Configure Fabric
 
-To start developing workloads, you need to be granted permissions in the Fabric service. You might need to contact other people in your organization to get the necessary permissions.
+To start developing workloads, you need to be granted permissions in the Fabric service. You might need to contact other teams in your organization to get the necessary permissions.
 
 ### Ensure you have admin access on the workspace you plan to work with
 
@@ -55,8 +55,6 @@ Download and install these tools before you start developing your workload.
 * [.NET 6.0 Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer) - .NET is used to build your workload.
 
 * [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer) - ASP.NET Core is used to build your workload.
-
-* [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - Sends API calls directly from the workload to Fabric.
 
 * [Git](https://git-scm.com/downloads) - A distributed version control system that we use to manage and track project changes.
 
