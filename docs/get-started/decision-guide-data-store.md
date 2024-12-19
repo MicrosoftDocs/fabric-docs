@@ -5,11 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun, scbradl
 ms.topic: concept-article
-<<<<<<< HEAD
-ms.date: 12/03/2024
-=======
 ms.date: 12/04/2024
->>>>>>> 40373409595cb988779128c296ba9d19428eeca6
 ms.custom:
   - FY25Q1-Linter
   - ignite-2024
