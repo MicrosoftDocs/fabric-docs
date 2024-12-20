@@ -16,7 +16,13 @@ ms.search.form: Source and Destination
 >[!NOTE]
 >This article contains references to the term `SLAVE`, a term that Microsoft no longer uses. When the term is removed from the software, we'll remove it from this article.
 
-This article shows you how to add a MySQL Change Data Capture source to an eventstream. Currently, MySQL Database CDC is supported from the following services: **Azure Database for MySQL**, **Amazon RDS for MySQL**,  **Amazon Aurora MySQL** and **Google Cloud SQL for MySQL (GCP)**. This guide uses **Azure Database for MySQL CDC** as an example.
+This article shows you how to add a MySQL Change Data Capture source to an eventstream. Currently, MySQL Database CDC is supported from the following services:
+- **Azure Database for MySQL**
+- **Amazon RDS for MySQL**
+- **Amazon Aurora MySQL** 
+- **Google Cloud SQL for MySQL (GCP)**. 
+
+This guide uses **Azure Database for MySQL CDC** as an example.
 
 Once the MySQL Database CDC source is added to the eventstream, it captures row-level changes to the specified tables. These changes can then be processed in real-time and sent to different destinations for further analysis.
 
