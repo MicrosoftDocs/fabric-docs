@@ -52,7 +52,7 @@ When the partition count is 4 or greater, throughput is based on the selected th
 
 ### Streaming connector sources
 
-The throughput for streaming connector sources ranges from **5 MB/s to 30 MB/s**. 
+The throughput for streaming connector sources is up to **30 MB/s**. 
 
 **Streaming Connector Sources Include**:
 - Azure SQL Database Change Data Capture (CDC)
