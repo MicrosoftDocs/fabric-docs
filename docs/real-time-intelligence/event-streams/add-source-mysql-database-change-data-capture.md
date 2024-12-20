@@ -30,7 +30,7 @@ Once the MySQL Database CDC source is added to the eventstream, it captures row-
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
-## Set up MySQL Database
+## Set up MySQL DB
 
 The connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with appropriate privileges on all databases where the Messaging Connector can capture the changes from. You can directly use the **admin user** to connect to the database which normally has the appropriate privileges, or you can follow these steps to create a new user:
 
