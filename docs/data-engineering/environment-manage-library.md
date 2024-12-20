@@ -60,11 +60,11 @@ Fabric provides the option to export the full public library list to a YAML file
 
 ## Custom libraries
 
-Custom libraries refer to code built by you or your organization. Fabric supports custom library files in .whl, .jar, and .tar.gz formats.
+Custom libraries refer to code built by you or your organization. Fabric supports custom library files in .whl, .py, .jar, and .tar.gz formats.
 
 > [!NOTE]
 > Fabric only supports *.tar.gz* files for R language.
-> Use the *.whl* file format for Python language.
+> Use the *.whl, .py* file format for Python language.
 
 :::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot of the environment Custom Libraries screen.":::
 
