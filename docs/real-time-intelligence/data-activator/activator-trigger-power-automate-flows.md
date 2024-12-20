@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: Data Activator Custom Actions
-ms.date: 12/11/2024
+ms.date: 12/12/2024
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.
 ---
 
@@ -32,7 +32,7 @@ Open Activator and select a rule to display the **Definition** pane. Scroll down
 
 Then, give your action a name such as *Add a To Do task* and define the input fields (such as _Task name_).
 
-:::image type="content" source="media/activator-detection-conditions/data-activator-detection-condition-05.png" alt-text="Screenshot of creating an Activator new custom action.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-new-custom-action.png" alt-text="Screenshot of creating an Activator new custom action.":::
 
 The next step is to define your flow in Power Automate. Select **Copy** to copy the connection string, then choose **Open flow builder**. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] takes you to Power Automate so that you can define the flow.
 
@@ -41,9 +41,13 @@ The next step is to define your flow in Power Automate. Select **Copy** to copy 
 The flow is prepopulated with an action for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
 
 > [!IMPORTANT]
-> You must paste the connection string from the previous step into this action, as shown in the following screenshot. Select **When an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule is triggered** and paste the connection string as shown in the following screenshot. Once you do so, add further steps to your flow as needed, and save the flow.
+> You must paste the connection string from the previous step into this action, as shown in the following screenshot. Select **When an Activator rule is triggered** and paste the connection string as shown in the following screenshot. Once you do so, add further steps to your flow as needed, and save the flow.
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-power-automate.png" alt-text="Screenshot of defining a flow for activator.":::
+
+To access your custom input fields in the flow, select the field to customize and choose **fx**.
+
+
 
 To learn more about Power Automate, see [Power Automate](/power-automate).
 
