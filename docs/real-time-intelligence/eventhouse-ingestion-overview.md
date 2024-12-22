@@ -76,7 +76,7 @@ The location of your data determines available methods for ingesting data into E
 | Dataflows                                 | Get data in Eventhouse                 |                | [Get data from Azure storage](get-data-azure-storage.md) |
 | Local file                                | Get data in Eventhouse                 |                | [Get data from local file](get-data-local-file.md)       |
 | OneLake (ingestion)                       | Get data in Eventhouse                 |                | [Get data from OneLake](get-data-onelake.md)             |
-| OneLake (shortcut)                        | Get data in Eventhouse                 |      [Onelake shortcuts](onelake-shortcuts.md)          |                                                          |
+| OneLake (shortcut)                        | Get data in Eventhouse                 |                | [Onelake shortcuts](onelake-shortcuts.md)                |
 
 ### Low-latency or real-time ingestion  
 
@@ -91,7 +91,7 @@ There are several ways to transform data that will eventually land in Eventhouse
 
 #### Transform data in Eventstreams
 
-Eventstreams provides a built-in processor that can perform transformations on the data before it lands in Eventhouse. This is a good option if you want to transform data in a managed environment, if you want to route data to multiple destinations based on transformation logic, and if the available transformations satisfy your needs.
+If you're using Eventstreams to load data in your Eventhouse, you can use the built-in processor that can perform transformations on the data before it lands in Eventhouse. This is a good option if you want to transform data in a managed environment, if you want to route data to multiple destinations based on transformation logic, and if the available transformations satisfy your needs.
 
 Available transformations include:
 
@@ -106,10 +106,12 @@ For more information on these processing options, see [Process event data with e
 
 #### Transform data with update policies
 
-If the transformations available in Eventstreams are not sufficient for your needs, you want to have more control, your data source is not supported in eventstreams, or you want to lower costs associated with your data management, you can use update policies in Eventhouse to transform data. [Update policies](/kusto/management/update-policy?view=microsoft-fabric&preserve-view=true) are automation mechanisms triggered when new data is written to a table. Update policies on tables provide an efficient way to apply rapid transformations and are compatible with the [medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md).
+If the transformations available in Eventstreams are not sufficient for your needs, you want to have more control, your data source is not supported in eventstreams, or you want to lower costs associated with your data management, you can use update policies in Eventhouse to transform data. 
+
+[Update policies](/kusto/management/update-policy?view=microsoft-fabric&preserve-view=true) are automation mechanisms triggered when new data is written to a table. Update policies on tables provide an efficient way to apply rapid transformations and are compatible with the [medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md).
 
 To use update policies, first land data in Eventhouse in one of the available methods, and then apply the transformation logic in the update policy.
 
-* Get data from [OneLake](get-data-onelake.md)
-* [Onelake shortcuts](onelake-shortcuts.md)
+For more information, see [Implement medallion architecture in Real-Time Intelligence](architecture-medallion.md).
 
+## Related content
