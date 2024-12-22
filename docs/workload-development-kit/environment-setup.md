@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 12/19/2024
+ms.date: 12/22/2024
 ---
 
 # Set up your environment
@@ -51,10 +51,6 @@ The DevGateway is a workload development component for communicating between you
 ## Required tools
 
 Download and install these tools before you start developing your workload.
-
-* [.NET 6.0 Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer) - .NET is used to build your workload.
-
-* [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer) - ASP.NET Core is used to build your workload.
 
 * [Git](https://git-scm.com/downloads) - A distributed version control system that we use to manage and track project changes.
 

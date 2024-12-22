@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: quickstart  #Don't change
 ms.custom:
-ms.date: 12/18/2024
+ms.date: 12/22/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
@@ -20,6 +20,10 @@ This sample demonstrates storing and reading data from and to lakehouses. To do 
 * An environment that is [set up](environment-setup.md) for workload development.
 
 * If [Azure storage](#step-1-setup-azure-storage) isn't installed on your tenant, you must be a [Global administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) in the tenant.
+
+* [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer) - ASP.NET Core is used to build the sample workload.
+
+* [.NET 6.0 Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer) - .NET is used to build the sample workload.
 
 ## Step 1: Setup Azure storage
 
@@ -181,7 +185,7 @@ The rest of the steps in this quickstart are performed in Visual Studio 2022. Us
 
 1. Open Microsoft Fabric.
 
-2. Navigate to the folder that contains the workspace you're using for development.
+2. Navigate to the workspace that you're using for development.
 
 3. Select **New item**.
 
