@@ -5,7 +5,7 @@ items:
   items:
   - name: Microsoft Fabric licenses
     href: licenses.md
-  - name: Microsoft Fabric features
+  - name: Features parity
     href: fabric-features.md    
 - name: Get started
   items:
