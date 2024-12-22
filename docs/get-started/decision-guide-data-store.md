@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun, scbradl
 ms.topic: concept-article
-ms.date: 12/04/2024
+ms.date: 12/19/2024
 ms.custom:
   - FY25Q1-Linter
   - ignite-2024
@@ -20,7 +20,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 
 Use this information to compare Fabric data stores such as warehouse, lakehouse, Eventhouse, SQL database, and Power BI datamart, based on data volume, type, developer persona, skill set, operations, and other capabilities. These comparisons are organized into the following two tables:
 
-| | **[Lakehouse](../data-engineering/lakehouse-overview.md)** | **[Warehouse](../data-warehouse/data-warehousing.md)** |  **[Eventhouse](../real-time-intelligence/eventhouse.md)** |
+| Table 1 of 2 | **[Lakehouse](../data-engineering/lakehouse-overview.md)** | **[Warehouse](../data-warehouse/data-warehousing.md)** |  **[Eventhouse](../real-time-intelligence/eventhouse.md)** |
 |---|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Unlimited |
 | **Type of data** |  Unstructured,<br>semi-structured,<br>structured | Structured,<br>semi-structured (JSON) | Unstructured,<br>semi-structured,<br>structured |
@@ -32,7 +32,7 @@ Use this information to compare Fabric data stores such as warehouse, lakehouse,
 | **Multi-table transactions** | No | Yes | Yes, for [multi-table ingestion](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object) |
 | **Primary development interface** | Spark notebooks, Spark job definitions | SQL scripts | KQL Queryset, KQL Database |
 | **Security** | RLS, CLS\*\*, [table level](../data-warehouse/sql-granular-permissions.md) (T-SQL), none for Spark | [Object level](../data-warehouse/sql-granular-permissions.md), [RLS](../data-warehouse/column-level-security.md), [CLS](../data-warehouse/column-level-security.md), DDL/DML, [dynamic data masking](../data-warehouse/dynamic-data-masking.md) | RLS |
-| **Access data via shortcuts** | Yes | Yes | Yes |
+| **Access data via shortcuts** | Yes | Yes, via SQL analytics endpoint | Yes |
 | **Can be a source for shortcuts** |  Yes (files and tables) | Yes (tables) | Yes |
 | **Query across items** | Yes | Yes | Yes |
 | **Advanced analytics** | Interface for large-scale data processing, built-in data parallelism, and fault tolerance | Interface for large-scale data processing, built-in data parallelism, and fault tolerance | Time Series native elements, full geo-spatial and query capabilities |
@@ -41,7 +41,7 @@ Use this information to compare Fabric data stores such as warehouse, lakehouse,
 
 \* Spark supports reading from tables using shortcuts, doesn't yet support accessing views, stored procedures, functions etc.
 
-| | **[Fabric SQL database](../database/sql/overview.md)** |  **[Power BI Datamart](/power-bi/transform-model/datamarts/datamarts-overview)** |
+|  Table 2 of 2 | **[Fabric SQL database](../database/sql/overview.md)** |  **[Power BI Datamart](/power-bi/transform-model/datamarts/datamarts-overview)** |
 |---|:---:|:---:|
 | **Data volume** | 4 TB | Up to 100 GB |
 | **Type of data** | Structured,<br>semi-structured,<br>unstructured | Structured |

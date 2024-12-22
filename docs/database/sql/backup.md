@@ -4,7 +4,7 @@ description: Learn about automatic backups for SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: strrodic
-ms.date: 11/06/2024
+ms.date: 12/18/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -19,7 +19,7 @@ This article describes the automated backups feature for SQL database in Microso
 
 Database backups are an essential part of any business continuity and disaster recovery strategy, because they help protect your data from corruption or deletion.  
 
-For all new, restored, and copied databases, SQL database in Fabric retains sufficient backups to allow a point-in-time restore (PITR) within the last seven days by default. The service takes regular full, differential, and log backups to ensure that databases are restorable to any point in time within the retention period for the database.
+All new and restored SQL databases in Fabric retain sufficient backups to allow a point-in-time restore (PITR) within the last seven days by default. The service takes regular full, differential, and log backups to ensure that databases are restorable to any point in time within the retention period for the database.
 
 If you delete a database, the system keeps backups in the same way for an online database, until the retention period of seven days expires.  
 
@@ -60,7 +60,10 @@ You can view the list of backups using simple T-SQL command through a Dynamic Ma
 To query backup history catalog, simply run [T-SQL script through Fabric portal](query-editor.md) (or other client tool of your choice):
 
 ```sql
-SELECT * FROM sys.dm_database_backups;
+SELECT *
+FROM sys.dm_database_backups
+WHERE in_retention = 1
+ORDER BY backup_finish_date DESC;
 ```
 
 ## Frequently asked questions about backups for SQL database in Fabric

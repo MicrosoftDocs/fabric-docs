@@ -4,7 +4,7 @@ description: A known issue is posted where the Power BI add-in for PowerPoint an
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/12/2024
+ms.date: 12/11/2024
 ms.custom: known-issue-927
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-927
 
 When you use the Power BI add-in for PowerPoint, the last refresh time presented at the button of the add-in page isn't always updated after a refresh. Additionally, when you invoke the report.refresh() method from the powerbi-client SDK, an error is thrown, despite the underlying report data being successfully refreshed.
 
-**Status:** Open
+**Status:** Fixed: December 11, 2024
 
 **Product Experience:** Power BI
 
