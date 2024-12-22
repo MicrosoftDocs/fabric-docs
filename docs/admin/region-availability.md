@@ -32,21 +32,21 @@ This table lists regions where all Fabric workloads are available.
 | Americas                     | Europe                     | Middle East | Africa             | Asia Pacific                    |
 |:-----------------------------|:---------------------------|:------------|:-------------------|:--------------------------------|
 | Brazil South                 | North Europe               | UAE North   | South Africa North | Australia East                  |
-| Canada Central               | West Europe                |             |                    | Australia Southeast<sup>1</sup> |
+| Canada Central               | West Europe                |             |                    | Australia Southeast<sup>2</sup> |
 | Canada East                  | France Central             |             |                    | Central India                   |
 | Central US                   | Germany West Central       |             |                    | East Asia                       |
-| East US<sup>2</sup>          | Italy North<sup>1</sup>    |             |                    | Japan East<sup>1</sup>          |
-| East US 2<sup>2</sup>        | Norway East                |             |                    | Korea Central                   |
-| North Central US<sup>2</sup> | Poland Central<sup>1</sup> |             |                    | Southeast Asia                  |
+| East US<sup>1</sup>          | Italy North<sup>2</sup>    |             |                    | Japan East<sup>2</sup>          |
+| East US 2<sup>1</sup>        | Norway East                |             |                    | Korea Central                   |
+| North Central US<sup>1</sup> | Poland Central<sup>2</sup> |             |                    | Southeast Asia                  |
 | South Central US             | Sweden Central             |             |                    | South India                     |
 | West US                      | Switzerland North          |             |                    |                                 |
 | West US 2                    | Switzerland West           |             |                    |                                 |
-| West US 3<sup>1</sup>        | UK South                   |             |                    |                                 |
+| West US 3<sup>2</sup>        | UK South                   |             |                    |                                 |
 |                              | UK West                    |             |                    |                                 |
 
-<sup>1</sup> [Fabric SQL database](../database/sql/overview.md) isn't available in this region.
+<sup>1</sup> [Workspace monitoring](../get-started/workspace-monitoring-overview.md) isn't available in this region.
 
-<sup>2</sup> [Workspace monitoring](../get-started/workspace-monitoring-overview.md) isn't available in this region.
+<sup>2</sup> [Fabric SQL database](../database/sql/overview.md) isn't available in this region.
 
 ### Power BI
 
