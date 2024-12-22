@@ -28,7 +28,7 @@ The following schematic shows sample ingestion architectures for ingesting data 
 
 ## Location of data
 
-The location of your data determines available methods for ingesting data into Eventhouse. Some sources have direct connectors to Eventhouse. Other connectors are available through [Eventstreams](get-data-eventstream.md). If your data is not in a supported source, you can use [programmatic connectors](data-connectors/data-connectors.md) to ingest data into Eventhouse.
+The location of your data determines available methods for ingesting data into Eventhouse. Some sources have direct connectors to Eventhouse. Other connectors are available through [Eventstreams](get-data-eventstream.md). You can use [programmatic connectors](data-connectors/data-connectors.md) to ingest data into Eventhouse. Data can also be [ingested from OneLake](get-data-onelake.md) or directly consumed from a [OneLake shortcut](onelake-shortcuts.md) (with or without [acceleration](query-acceleration-overview.md)) as an external table.
 
 | Data source                               | Ingestion method                       | Considerations | Links                                                    |
 | ----------------------------------------- | -------------------------------------- | -------------- | -------------------------------------------------------- |
@@ -80,18 +80,15 @@ The location of your data determines available methods for ingesting data into E
 
 ## Low-latency or real-time ingestion  
 
-Based on your requirements, you can choose from the following options for low-latency or real-time ingestion:
-
-TODO: add information about the different options and when to use each.
-
+TODO: add information about how this affects the ingestion method decision.
 
 ## Preprocess or transformation
 
-There are several ways to transform data that will eventually land in Eventhouse. The best method for you depends on your specific requirements and constraints. Here are some considerations to help you decide:
+There are several ways to transform data that will eventually land in Eventhouse. If you're using Eventstreams, you can [transform data in Eventstreams](#transform-data-in-eventstreams). If you're ingesting data with any method, you can [transform data with update policies](#transform-data-with-update-policies).
 
 ### Transform data in Eventstreams
 
-If you're using Eventstreams to load data in your Eventhouse, you can use the built-in processor that can perform transformations on the data before it lands in Eventhouse. This is a good option if you want to transform data in a managed environment, if you want to route data to multiple destinations based on transformation logic, and if the available transformations satisfy your needs.
+Eventstreams provides a built-in processor that can perform transformations on the data before it lands in Eventhouse. This is a good option if you want to transform data in a managed environment, if you want to route data to multiple destinations based on transformation logic, and if the available transformations satisfy your needs.
 
 Available transformations include:
 
@@ -106,7 +103,13 @@ For more information on these processing options, see [Process event data with e
 
 ### Transform data with update policies
 
-If the transformations available in Eventstreams are not sufficient for your needs, you want to have more control, your data source is not supported in eventstreams, or you want to lower costs associated with your data management, you can use update policies in Eventhouse to transform data. 
+If one of the following statements describes yoru situation, you might want to use update policies in Eventhouse to transform data. 
+
+Update policies are a good option if:
+* your data source is not supported in Eventstreams
+* the transformations available in Eventstreams are not sufficient for your needs
+* you want to have more control
+* you want to lower costs associated with your data management
 
 [Update policies](/kusto/management/update-policy?view=microsoft-fabric&preserve-view=true) are automation mechanisms triggered when new data is written to a table. Update policies on tables provide an efficient way to apply rapid transformations and are compatible with the [medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md).
 
