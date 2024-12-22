@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.topic: overview
 ms.custom:
   - ignite-2024
-ms.date: 11/20/2024
+ms.date: 12/22/2024
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -47,14 +47,14 @@ Workload monitoring sample queries are available from [workspace-monitoring](htt
 
 ## Considerations and limitations
 
-* Workspace monitoring isn't available in all Azure regions.
+* Workspace monitoring isn't available in all Azure regions. You can see where the feature is available in [Workload and feature availability](../admin/region-availability.md#workload-and-feature-availability).
 
 * The capacity the workspace is hosted on must be in the same region as the tenant.
 
 * You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
 
 * The workspace monitoring Eventhouse is a read-only item.
-    * To delete the database, use the workspace settings.
+    * To delete the database, use the workspace settings. Before recreating a deleted database, wait about 15 minutes.
     * To share the database, grant users a workspace *member* or *admin* [role](roles-workspaces.md).
 
 * The retention period for monitoring data is 30 days.
