@@ -43,7 +43,7 @@ TODO: add information about the different options and when to use each.
 
 There are several ways to transform data that will eventually land in Eventhouse. The best method for you depends on your specific requirements and constraints. Here are some considerations to help you decide:
 
-#### Transform data in Eventstreams
+#### [Transform data in Eventstreams](#tab/eventstreams)
 
 Eventstreams provides a built-in processor that can perform transformations on the data before it lands in Eventhouse. This is a good option if you want to transform data in a managed environment, if you want to route data to multiple destinations based on transformation logic, and if the available transformations satisfy your needs.
 
@@ -58,28 +58,29 @@ Available transformations include:
 
 For more information on these processing options, see [Process event data with event processor editor](event-streams/process-events-using-event-processor-editor.md).
 
-#### Transform data with update policies
+#### [Transform data with update policies](#tab/update-policies)
 
 If the transformations available in Eventstreams are not sufficient for your needs, you want to have more control, or want to lower costs associated with your data management, you can use update policies in Eventhouse to transform data. [Update policies](/kusto/management/update-policy?view=microsoft-fabric&preserve-view=true) are automation mechanisms triggered when new data is written to a table. Update policies on tables provide an efficient way to apply rapid transformations and are compatible with the [medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md).
 
 To use update policies, first land data in Eventhouse in one of the available methods, and then apply the transformation logic in the update policy.
 
+---
 
-### Eventstreams
+### [Eventstreams](#tab/eventstreams)
 
 The [eventstreams](event-streams/overview.md) experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the Eventstream item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. 
 
 For a list of supported sources, see [Supported sources](event-streams/add-manage-eventstream-sources.md#supported-sources).
 
-### Programmatic connectors
+### [Programmatic connectors](#tab/programmatic-connectors)
 
 For data in sources that are not supported by Eventstreams, you can use programmatic connectors to ingest data into Eventhouse. Some programmatic connectors support streaming data, while others are blob-based.
 
 For a full list of connectors, functionality, and use cases, see [Data connectors overview](data-connectors/data-connectors.md).
 
-### Get data experience
+### [Get data experience](#tab/get-data)
 
-The following table summarizes the various options to get data in to Eventhouse using the Get data wizard in Real-Time Intelligence. To learn more about each source, go to the documentation linked in the source name.
+The following list summarizes the various options to get data in to Eventhouse using the Get data wizard in Real-Time Intelligence. To learn more about each source, go to the documentation linked in the source name.
 
 * [Get data from Azure storage](get-data-azure-storage.md)
 * [Get data from Amazon S3](get-data-amazon-s3.md)
@@ -89,10 +90,11 @@ The following table summarizes the various options to get data in to Eventhouse 
 * [Get data from Real-Time hub](get-data-real-time-hub.md)
 * [Get data from local file](get-data-local-file.md)
 
-### OneLake
+### [OneLake](#tab/onelake)
 
-Data from Onelake can be used in Eventhouses in one of two ways:
+Data from Onelake can be used in Eventhouses in several ways:
 
 * Get data from [OneLake](get-data-onelake.md)
 * [Onelake shortcuts](onelake-shortcuts.md)
 
+---
