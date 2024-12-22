@@ -14,7 +14,7 @@ This article is aimed at developers who are looking to build a workload using th
 
 ## Platform requirements
 
-To develop a new workload, your [Microsoft Fabric](app.powerbi.com) subscription needs to have a [capacity](../enterprise/licenses.md#capacity) with an F or P SKU. Fabric [trial capacities](../get-started/fabric-trial.md) are also supported.
+To develop a new workload, your [Microsoft Fabric](https://app.powerbi.com) subscription needs to have a [capacity](../enterprise/licenses.md#capacity) with an F or P SKU. Fabric [trial capacities](../get-started/fabric-trial.md) are also supported.
 
 ## Configure Fabric
 
