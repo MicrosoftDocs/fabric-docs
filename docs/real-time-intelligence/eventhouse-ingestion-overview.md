@@ -26,7 +26,7 @@ The following schematic shows sample ingestion architectures for ingesting data 
 
 :::image type="content" source="media/eventhouse-ingestion-overview/schematic-ingestion-methods.png" alt-text="Schematic image showing all possible ingestion methods and their paths to Eventhouse." lightbox="media/eventhouse-ingestion-overview/schematic-ingestion-methods.png":::
 
-### Location of data
+## Location of data
 
 The location of your data determines available methods for ingesting data into Eventhouse. Some sources have direct connectors to Eventhouse. Other connectors are available through [Eventstreams](get-data-eventstream.md). If your data is not in a supported source, you can use [programmatic connectors](data-connectors/data-connectors.md) to ingest data into Eventhouse.
 
@@ -78,18 +78,18 @@ The location of your data determines available methods for ingesting data into E
 | OneLake (ingestion)                       | Get data in Eventhouse                 |                | [Get data from OneLake](get-data-onelake.md)             |
 | OneLake (shortcut)                        | Get data in Eventhouse                 |                | [Onelake shortcuts](onelake-shortcuts.md)                |
 
-### Low-latency or real-time ingestion  
+## Low-latency or real-time ingestion  
 
 Based on your requirements, you can choose from the following options for low-latency or real-time ingestion:
 
 TODO: add information about the different options and when to use each.
 
 
-### Preprocess or transformation
+## Preprocess or transformation
 
 There are several ways to transform data that will eventually land in Eventhouse. The best method for you depends on your specific requirements and constraints. Here are some considerations to help you decide:
 
-#### Transform data in Eventstreams
+### Transform data in Eventstreams
 
 If you're using Eventstreams to load data in your Eventhouse, you can use the built-in processor that can perform transformations on the data before it lands in Eventhouse. This is a good option if you want to transform data in a managed environment, if you want to route data to multiple destinations based on transformation logic, and if the available transformations satisfy your needs.
 
@@ -104,7 +104,7 @@ Available transformations include:
 
 For more information on these processing options, see [Process event data with event processor editor](event-streams/process-events-using-event-processor-editor.md).
 
-#### Transform data with update policies
+### Transform data with update policies
 
 If the transformations available in Eventstreams are not sufficient for your needs, you want to have more control, your data source is not supported in eventstreams, or you want to lower costs associated with your data management, you can use update policies in Eventhouse to transform data. 
 
