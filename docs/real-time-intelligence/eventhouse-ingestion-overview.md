@@ -20,7 +20,7 @@ The right solution for you depends significantly on these main factors:
 
 * [Where is your data stored?](#location-of-data)
 * [Do you require low-latency or real-time ingestion?](#low-latency-or-real-time-ingestion)
-* [Does your data need preprocess or transformation?](#preprocess-or-transformation)
+* [Does your data need transformations?](#data-transformation)
 
 The following schematic shows sample ingestion architectures for ingesting data in Eventhouse:
 
@@ -32,16 +32,19 @@ The location of your data determines available methods for ingesting data into E
 
 For a complete list of sources organized by category, see:
 
-* [Get data overview](get-data-overview.md)
-* [Add and manage an event source in an eventstream](event-streams/add-manage-eventstream-sources.md)
-* [Data connectors overview](data-connectors/data-connectors.md)
-
+* [Eventstream sources](event-streams/add-manage-eventstream-sources.md)
+* [Connectors sources](data-connectors/data-connectors.md)
+* [Get data sources](get-data-overview.md)
 
 ## Low-latency or real-time ingestion  
 
-TODO: add information about how this affects the ingestion method decision.
+What latency do you require for your data? The answer to this question will help you decide which ingestion method to use. 
 
-## Preprocess or transformation
+If you want to do analytics on raw data without preprocessing, you should directly ingest into Eventhouse using [Get data sources](get-data-overview.md) or [connectors](data-connectors/data-connectors.md). If you can tolerate slightly more latency and want to transform data before it lands in the Eventhouse, you can use [Eventstreams](get-data-eventstream.md) to preprocess data. If you need to alert on data in real-time, you can use [Activator rules](data-activator/activator-rules-overview.md) in Eventstreams.
+
+TODO: is there a benchmark on latency for each method?
+
+## Data transformation
 
 There are several ways to transform data that will eventually land in Eventhouse. If you're using Eventstreams, you can [transform data in Eventstreams](#transform-data-in-eventstreams). If you're ingesting data with any method including Eventstreams, you can [transform data with update policies](#transform-data-with-update-policies) after it lands in the Eventhouse.
 
@@ -73,3 +76,7 @@ Update policies are a good option if:
 To use update policies, first land data in Eventhouse in one of the available methods, and then apply the transformation logic in the update policy. For more information, see [Implement medallion architecture in Real-Time Intelligence](architecture-medallion.md).
 
 ## Related content
+
+* [Eventstream sources](event-streams/add-manage-eventstream-sources.md)
+* [Connectors sources](data-connectors/data-connectors.md)
+* [Get data sources](get-data-overview.md)
