@@ -85,7 +85,7 @@ TODO: add information about how this affects the ingestion method decision.
 
 ## Preprocess or transformation
 
-There are several ways to transform data that will eventually land in Eventhouse. If you're using Eventstreams, you can [transform data in Eventstreams](#transform-data-in-eventstreams). If you're ingesting data with any method, you can [transform data with update policies](#transform-data-with-update-policies).
+There are several ways to transform data that will eventually land in Eventhouse. If you're using Eventstreams, you can [transform data in Eventstreams](#transform-data-in-eventstreams). If you're ingesting data with any method including Eventstreams,, you can [transform data with update policies](#transform-data-with-update-policies) after it's landed in the Eventhouse.
 
 ### Transform data in Eventstreams
 
