@@ -36,6 +36,21 @@ For a complete list of sources organized by category, see:
 * [Connectors sources](data-connectors/data-connectors.md)
 * [Get data sources](get-data-overview.md)
 
+> [!NOTE]
+> In some cases, there are multiple methods to ingest data from the same source. The following section can help you decide which method to use.
+
+### Apache Kafka
+
+TODO: add content
+
+### Azure Event Hubs
+
+TODO: add content
+
+### OneLake
+
+TODO: add content
+
 ## Low-latency or real-time ingestion  
 
 What latency do you require for your data? The answer to this question will help you decide which ingestion method to use. 
