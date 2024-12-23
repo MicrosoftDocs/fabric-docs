@@ -168,6 +168,8 @@ items:
     items:
     - name: Eventhouse ingestion overview
       href: eventhouse-ingestion-overview.md
+    - name: Get data overview
+      href: get-data-overview.md
     - name: Data formats
       href: ingestion-supported-formats.md
     - name: Schema optimization best practices
