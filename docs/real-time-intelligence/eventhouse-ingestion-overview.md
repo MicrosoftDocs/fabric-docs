@@ -36,14 +36,14 @@ The location of your data determines available methods for ingesting data into E
 | Amazon Kinesis Data Streams               | Eventstreams                           |                |                                                          |
 | Amazon Managed Streaming for Apache Kafka | Eventstreams                           |                |                                                          |
 | Amazon S3                                 | Get data in Eventhouse                 |                | [Get data from Amazon S3](get-data-amazon-s3.md)         |
-| Apache Flink                              | Programmatic connector - streaming     |                |                                                          |
-| Apache Kafka (pull)                       | Programmatic connector - streaming     |                |                                                          |
+| Apache Flink                              | Programmatic connector - streaming     |                |   [Get data from Apache Flink](get-data-flink.md)                            |
+| Apache Kafka (pull)                       | Programmatic connector - streaming     | TODO: Add comparision between methods               |   [Get data from Kafka](get-data-kafka.md)         |
 | Apache Kafka (push)                       | Eventstreams                           |                |                                                          |
-| Apache Log4J 2                            | Programmatic connector - streaming     |                |                                                          |
-| Apache Spark                              | Programmatic connector - non streaming |                |                                                          |
+| Apache Log4J 2                            | Programmatic connector - streaming     |                |  [Get data with the Apache log4J 2 connector](get-data-log4j2.md)                                 |
+| Apache Spark                              | Programmatic connector - non streaming |                |    [Get data from Apache Spark](get-data-spark.md)                                                      |
 | Azure Blob Storage events                 | Eventstreams                           |                |                                                          |
 | Azure Cosmos DB CDC                       | Eventstreams                           |                |                                                          |
-| Azure Data Factory                        | Programmatic connector - non streaming |                |                                                          |
+| Azure Data Factory                        | Programmatic connector - non streaming |    TODO: Add comparision between methods            |                                                          |
 | Azure Event Hubs                          | Programmatic connector - streaming     |                |                                                          |
 | Azure Event Hubs                          | Get data in Eventhouse                 |                | [Get data from Azure Event Hubs](get-data-event-hub.md)  |
 | Azure Event Hubs (push)                   | Eventstreams                           |                |                                                          |
@@ -52,28 +52,28 @@ The location of your data determines available methods for ingesting data into E
 | Azure Service Bus                         | Eventstreams                           |                |                                                          |
 | Azure SQL Database CDC                    | Eventstreams                           |                |                                                          |
 | Azure SQL Managed Instance CDC            | Eventstreams                           |                |                                                          |
-| Azure Storage                             | Get data in Eventhouse                 |                |                                                          |
-| Azure Stream Analytics                    | Programmatic connector - streaming     |                |                                                          |
+| Azure Storage                             | Get data in Eventhouse                 |                |   [Get data from Azure storage](get-data-azure-storage.md)                                                       |
+| Azure Stream Analytics                    | Programmatic connector - streaming     |                | [Ingest data from Azure Stream Analytics](/azure/data-explorer/stream-analytics-connector?context=%2Ffabric%2Fcontext%2Fcontext-rti&pivots=fabric&tabs=portal)                                                         |
 | Confluent Cloud Kafka                     | Eventstreams                           |                |                                                          |
-| Cribl Stream                              | Programmatic connector - streaming     |                |                                                          |
+| Cribl Stream                              | Programmatic connector - streaming     |                |   [Get data from Cribl Stream](get-data-cribl-stream.md)                                                      |
 | Custom endpoint                           | Eventstreams                           |                |                                                          |
 | Data pipeline                             | Get data in Eventhouse                 |                |                                                          |
 | Dataflows                                 | Get data in Eventhouse                 |                | [Get data from Azure storage](get-data-azure-storage.md) |
 | Fabric Job events                         | Eventstreams                           |                |                                                          |
 | Fabric OneLake events                     | Eventstreams                           |                |                                                          |
 | Fabric Workspace Item events              | Eventstreams                           |                |                                                          |
-| Fluent Bit                                | Programmatic connector - streaming     |                |                                                          |
+| Fluent Bit                                | Programmatic connector - streaming     |                |     [Get data with Fluent Bit](get-data-fluent.md)                                                     |
 | Google Cloud Pub/Sub                      | Eventstreams                           |                |                                                          |
 | Local file                                | Get data in Eventhouse                 |                | [Get data from local file](get-data-local-file.md)       |
 | Logstash                                  | Programmatic connector - non streaming |                |                                                          |
 | MySQL Database CDC                        | Eventstreams                           |                |                                                          |
-| NLog                                      | Programmatic connector - streaming     |                |                                                          |
-| OneLake (ingestion)                       | Get data in Eventhouse                 |                | [Get data from OneLake](get-data-onelake.md)             |
-| OneLake (shortcut)                        | Get data in Eventhouse                 |                | [Onelake shortcuts](onelake-shortcuts.md)                |
+| NLog                                      | Programmatic connector - streaming     |                |    [Ingest data with the NLog sink](/azure/data-explorer/nlog-sink?context=%2Ffabric%2Fcontext%2Fcontext-rti&pivots=fabric&tabs=windows)                                                      |
+| OneLake (ingestion)                       | Get data in Eventhouse                 |   TODO: Add comparision between methods             | [Get data from OneLake](get-data-onelake.md)             |
+| OneLake (shortcut)                        | Get data in Eventhouse                 |                | [Onelake shortcuts](onelake-shortcuts.md)   [Query acceleration for OneLake shortcuts - overview (preview)](query-acceleration-overview.md)             |
 | Open Telemetry                            | Programmatic connector - streaming     |                |                                                          |
 | PostgreSQL Database CDC                   | Eventstreams                           |                |                                                          |
 | Power Automate                            | Programmatic connector - non streaming |                |                                                          |
-| Serilog                                   | Programmatic connector - streaming     |                |                                                          |
+| Serilog                                   | Programmatic connector - streaming     |                |     [Get data from Serilog](get-data-serilog.md)                                                     |
 | Splunk                                    | Programmatic connector - non streaming |                |                                                          |
 | Splunk Universal Forwarder                | Programmatic connector - non streaming |                |                                                          |
 | SQL Server VM DB CDC                      | Eventstreams                           |                |                                                          |
