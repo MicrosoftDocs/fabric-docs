@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: quickstart  #Don't change
 ms.custom:
-ms.date: 12/22/2024
+ms.date: 12/23/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
@@ -35,9 +35,7 @@ You need consent to use Azure Storage. In this step you check whether Azure Stor
 
 3. From the **Application type** filter dropdown list, select **All applications** and then select **Apply**.
 
-4. In the **Application ID starts with** filter search box, enter the following application ID: `e406a681-f3d4-42a8-90b6-c2b029497af1` and then select **Apply**.
-
-    If **Azure Storage** is listed, it's already installed and you can continue to [Step 2](#step-2-download-the-sample).
+4. In the *Search by application name or object ID* search box, enter **Azure Storage**.
 
 5. If **Azure Storage** isn't listed, open **PowerShell** as an administrator and run the following commands:
 
@@ -82,10 +80,10 @@ Use the provided script to create an Azure Entra ID application.
 
 4. Copy the following details from the output of the script:
 
-* **ApplicationIdUri / Audience** - For example, `api://localdevinstance/<your-tenant-id>/Org.WorkloadSample/OyR`
-* **RedirectURI** - `http://localhost:60006/close`
-* **Application Id** - For example, `00001111-aaaa-2222-bbbb-3333cccc4444`
-* **secret** - For example, `aaaaa~0b0b0b0b0b0b0b0b0b.bb~2d2d2d2d2d2d2`
+    * **ApplicationIdUri / Audience** - For example, `api://localdevinstance/<your-tenant-id>/Org.WorkloadSample/OyR`
+    * **RedirectURI** - `http://localhost:60006/close`
+    * **Application Id** - For example, `00001111-aaaa-2222-bbbb-3333cccc4444`
+    * **secret** - For example, `aaaaa~0b0b0b0b0b0b0b0b0b.bb~2d2d2d2d2d2d2`
 
 ## Step 5: Update the .env.dev file
 
