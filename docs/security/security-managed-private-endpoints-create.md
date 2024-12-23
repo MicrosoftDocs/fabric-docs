@@ -88,8 +88,6 @@ This guide provides code samples to help you get started in your own notebooks t
 
 1. Use the experience switcher on the left-hand side of your home page to switch the **Develop** experience.
 
-    :::image type="content" source="./media/security-managed-private-endpoints-create/enter-data-engineering-experience.png" alt-text="Screenshot showing how to get into the data engineering experience in Fabric.":::
-
 1. Navigate to your desired workspace or create a new one if needed.
 
 1. To create a notebook, select **New item** from the workspace and choose **Notebook**.
