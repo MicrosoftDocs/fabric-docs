@@ -57,7 +57,7 @@ The location of your data determines available methods for ingesting data into E
 | Cribl Stream                              | Programmatic connector - streaming     |                |   [Get data from Cribl Stream](get-data-cribl-stream.md)                                                      |
 | Custom endpoint                           | Eventstreams                           |                |                                                          |
 | Data pipeline                             | Get data in Eventhouse                 |                |                                                          |
-| Dataflows                                 | Get data in Eventhouse                 |                | [Get data from Azure storage](get-data-azure-storage.md) |
+| Dataflows                                 | Get data in Eventhouse                 |                |  |
 | Fabric Job events                         | Eventstreams                           |                |                                                          |
 | Fabric OneLake events                     | Eventstreams                           |                |                                                          |
 | Fabric Workspace Item events              | Eventstreams                           |                |                                                          |
@@ -103,18 +103,15 @@ For more information on these processing options, see [Process event data with e
 
 ### Transform data with update policies
 
-If one of the following statements describes your situation, you might want to use update policies in Eventhouse to transform data. 
-
 Update policies are a good option if:
-* your data source isn't supported in Eventstreams
-* the transformations available in Eventstreams aren't sufficient for your needs
-* you want to have more control
-* you want to lower costs associated with your data management
+
+* Your data source isn't supported in Eventstreams.
+* The transformations available in Eventstreams aren't sufficient for your needs.
+* You want to have more control.
+* You want to lower costs associated with your data management.
 
 [Update policies](/kusto/management/update-policy?view=microsoft-fabric&preserve-view=true) are automation mechanisms triggered when new data is written to a table. Update policies on tables provide an efficient way to apply rapid transformations and are compatible with the [medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md).
 
-To use update policies, first land data in Eventhouse in one of the available methods, and then apply the transformation logic in the update policy.
-
-For more information, see [Implement medallion architecture in Real-Time Intelligence](architecture-medallion.md).
+To use update policies, first land data in Eventhouse in one of the available methods, and then apply the transformation logic in the update policy. For more information, see [Implement medallion architecture in Real-Time Intelligence](architecture-medallion.md).
 
 ## Related content
