@@ -1,5 +1,5 @@
 ---
-title: Get data ingestion overview
+title: Get data overview
 description: Learn about available options to get data in an Eventhouse in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: shsagir
