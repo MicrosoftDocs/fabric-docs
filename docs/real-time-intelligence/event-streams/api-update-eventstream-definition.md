@@ -27,7 +27,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventstreams/{
 | ---- | ----- | ---- | ----- | ------------- |
 | eventstreamId | path | True | string `uuid`| The eventstream ID. |
 | workspaceId | path | True | string `uuid`| The workspace ID. |
-| updateMetadata | query | False | boolean | Whether to update the item's metadata if it is provided in the `.platform` file. True - Update the metadata if it is provided in the `.platform` file as part of the definition, False - Do not update the metadata. |
+| updateMetadata | query | False | boolean | Whether to update the item's metadata if provided in the `.platform` file. True - Update the metadata if provided in the `.platform` file as part of the definition, False - Don't update the metadata. |
 
 
 ## Sample request

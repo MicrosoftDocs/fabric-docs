@@ -27,9 +27,9 @@ Currently, Eventstream supports the following definition based APIs:
 
 | APIs | Description |
 | ----------- | ---------------------- |
-| [Create Eventstream item with definition](#create-eventstream-item-with-definition) | Use to create an Eventstream item in the workspace with detailed information about its topology including source, destinations, operators, and streams. |
-| [Get Eventstream item definition](#get-eventstream-item-definition) | Use to get an Eventstream item definition with detailed information about its topology including source, destinations, operators, and streams. |
-| [Update Eventstream item definition](#update-eventstream-item-definition) | Use to update or edit an Eventstream item definition including source, destinations, operators, and streams. |
+| [Create Eventstream item with definition](api-create-with-definition.md) | Use to create an Eventstream item in the workspace with detailed information about its topology including source, destinations, operators, and streams. |
+| [Get Eventstream item definition](api-get-eventstream-definition.md) | Use to get an Eventstream item definition with detailed information about its topology including source, destinations, operators, and streams. |
+| [Update Eventstream item definition](api-update-eventstream-definition.md) | Use to update or edit an Eventstream item definition including source, destinations, operators, and streams. |
 
 To manage your Eventstream items using CRUD operations, visit [Fabric REST APIs - Eventstream](/rest/api/fabric/eventstream/items). These APIs support the following operations:
 
@@ -413,4 +413,3 @@ Example of stream in API body:
 
 * [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
 * [Eventstream item definition](/rest/api/fabric/articles/item-management/definitions/eventstream-definition)
-* [Eventstream API Swagger](/rest/api/fabric/articles/eventstream/items)
