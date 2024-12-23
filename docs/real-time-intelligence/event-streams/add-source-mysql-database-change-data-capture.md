@@ -16,7 +16,7 @@ ms.search.form: Source and Destination
 >[!NOTE]
 >This article contains references to the term `SLAVE`, a term that Microsoft no longer uses. When the term is removed from the software, we'll remove it from this article.
 
-This article shows you how to add a MySQL Change Data Capture source to an eventstream. Currently, MySQL Database CDC is supported from the following services:
+This article shows you how to add a MySQL Change Data Capture source to an eventstream. Currently, MySQL Database CDC is supported from the following services where the databases can be accessed publicly:
 - **Azure Database for MySQL**
 - **Amazon RDS for MySQL**
 - **Amazon Aurora MySQL** 
@@ -31,7 +31,7 @@ Once the MySQL Database CDC source is added to the eventstream, it captures row-
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- Access to an instance of MySQL Database CDC - Flexible Server.
+- Access to an instance of MySQL Database, such as: a database in Azure Database for MySQL - Flexible Server.
 - Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 

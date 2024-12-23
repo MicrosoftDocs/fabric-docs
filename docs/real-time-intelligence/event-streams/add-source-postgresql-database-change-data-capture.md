@@ -15,7 +15,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a PostgreSQL Database Change Data Capture (CDC) source to an eventstream.
 
-The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a PostgreSQL database. Currently, PostgreSQL Database Change Data Capture (CDC) is supported from the following services: 
+The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a PostgreSQL database. Currently, PostgreSQL Database Change Data Capture (CDC) is supported from the following services where the databases can be accessed publicly: 
 - **Azure Database for PostgreSQL**
 - **Amazon RDS for PostgreSQL**
 - **Amazon Aurora PostgreSQL**

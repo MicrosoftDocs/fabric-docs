@@ -15,7 +15,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a SQL Server on VM DB Change Data Capture (CDC) source to an eventstream. 
 
-The SQL Server on VM DB (CDC) source connector for Fabric event streams allows you to capture a snapshot of the current data in a SQL Server database on VM. Currently, SQL Server on VM DB (CDC) is supported from the following services:
+The SQL Server on VM DB (CDC) source connector for Fabric event streams allows you to capture a snapshot of the current data in a SQL Server database on VM. Currently, SQL Server on VM DB (CDC) is supported from the following services where the databases can be accessed publicly:
 - **SQL Server on Azure Virtual Machines**
 - **Amazon RDS for SQL Server**
 - **Amazon RDS Custom for SQL Server**
