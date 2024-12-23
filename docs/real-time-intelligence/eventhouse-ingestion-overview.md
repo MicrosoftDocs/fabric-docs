@@ -28,7 +28,7 @@ The following schematic shows sample ingestion architectures for ingesting data 
 
 ## Location of data
 
-The location of your data determines available methods for ingesting data into Eventhouse. Some sources have direct connectors to Eventhouse. Other connectors are available through [Eventstreams](get-data-eventstream.md). You can use [programmatic connectors](data-connectors/data-connectors.md) to ingest data into Eventhouse. Data can also be [ingested from OneLake](get-data-onelake.md) or directly consumed from a [OneLake shortcut](onelake-shortcuts.md) (with or without [acceleration](query-acceleration-overview.md)) as an external table.
+The location of your data determines available methods for ingesting data into Eventhouse. Data from some sources can be directly loaded into an Eventhouse in the "Get data" experience. You can also use [programmatic connectors](data-connectors/data-connectors.md) to ingest data directly into Eventhouse. A variety of connectors are available through [Eventstreams](get-data-eventstream.md). Data can also be [ingested from OneLake](get-data-onelake.md) or directly consumed from a [OneLake shortcut](onelake-shortcuts.md) (with or without [acceleration](query-acceleration-overview.md)) as an external table.
 
 | Data source                               | Ingestion method                       | Considerations | Links                                                    |
 | ----------------------------------------- | -------------------------------------- | -------------- | -------------------------------------------------------- |
@@ -42,23 +42,23 @@ The location of your data determines available methods for ingesting data into E
 | Apache Spark                              | Programmatic connector - non streaming |                |    [Get data from Apache Spark](get-data-spark.md)                                                      |
 | Azure Blob Storage events                 | Eventstreams                           |                |                                                          |
 | Azure Cosmos DB CDC                       | Eventstreams                           |                |                                                          |
-| Azure Data Factory                        | Programmatic connector - non streaming |    TODO: Add comparison between methods            |                                                          |
-| Azure Event Hubs                          | Programmatic connector - streaming     |                |                                                          |
+| Azure Data Factory                        | Programmatic connector - non streaming |                |                                                          |
+| Azure Event Hubs                          | Programmatic connector - streaming     |     TODO: Add comparison between methods            |                                                          |
 | Azure Event Hubs                          | Get data in Eventhouse                 |                | [Get data from Azure Event Hubs](get-data-event-hub.md)  |
-| Azure Event Hubs (push)                   | Eventstreams                           |                |                                                          |
+| Azure Event Hubs (push)                   | Eventstreams                           |                | [Add Azure Event Hubs source to an eventstream](event-streams/add-source-azure-event-hubs.md)                                                         |
 | Azure Functions                           | Programmatic connector - non streaming |                |                                                          |
-| Azure IoT Hub                             | Eventstreams                           |                |                                                          |
-| Azure Service Bus                         | Eventstreams                           |                |                                                          |
+| Azure IoT Hub                             | Eventstreams                           |                |     [Add Azure IoT Hub source to an eventstream](event-streams/add-source-azure-iot-hub.md)                                                     |
+| Azure Service Bus                         | Eventstreams                           |                |     [Add Azure Service Bus source to an eventstream (preview)](event-streams/add-source-azure-service-bus.md)                                                     |
 | Azure SQL Database CDC                    | Eventstreams                           |                |                                                          |
 | Azure SQL Managed Instance CDC            | Eventstreams                           |                |                                                          |
 | Azure Storage                             | Get data in Eventhouse                 |                |   [Get data from Azure storage](get-data-azure-storage.md)                                                       |
 | Azure Stream Analytics                    | Programmatic connector - streaming     |                | [Ingest data from Azure Stream Analytics](/azure/data-explorer/stream-analytics-connector?context=%2Ffabric%2Fcontext%2Fcontext-rti&pivots=fabric&tabs=portal)                                                         |
-| Confluent Cloud Kafka                     | Eventstreams                           |                |                                                          |
+| Confluent Cloud Kafka                     | Eventstreams                           |                |         [Add Confluent Kafka source to an eventstream](event-streams/add-source-confluent-kafka.md)                                                 |
 | Cribl Stream                              | Programmatic connector - streaming     |                |   [Get data from Cribl Stream](get-data-cribl-stream.md)                                                      |
-| Custom endpoint                           | Eventstreams                           |                |                                                          |
+| Custom endpoint                           | Eventstreams                           |                |     [Add a custom endpoint or custom app source to an eventstream](event-streams/add-source-custom-app.md)                                                     |
 | Data pipeline                             | Get data in Eventhouse                 |                |                                                          |
 | Dataflows                                 | Get data in Eventhouse                 |                |  |
-| Fabric Job events                         | Eventstreams                           |                |                                                          |
+| Fabric Job events                         | Eventstreams                           |                |        [Get Job events in Real-Time hub (preview)](../real-time-hub/create-streams-fabric-job-events.md)                                                  |
 | Fabric OneLake events                     | Eventstreams                           |                |                                                          |
 | Fabric Workspace Item events              | Eventstreams                           |                |                                                          |
 | Fluent Bit                                | Programmatic connector - streaming     |                |     [Get data with Fluent Bit](get-data-fluent.md)                                                     |
@@ -70,12 +70,12 @@ The location of your data determines available methods for ingesting data into E
 | OneLake (ingestion)                       | Get data in Eventhouse                 |   TODO: Add comparison between methods             | [Get data from OneLake](get-data-onelake.md)             |
 | OneLake (shortcut)                        | Get data in Eventhouse                 |                | [Onelake shortcuts](onelake-shortcuts.md)   [Query acceleration for OneLake shortcuts - overview (preview)](query-acceleration-overview.md)             |
 | Open Telemetry                            | Programmatic connector - streaming     |                |                                                          |
-| PostgreSQL Database CDC                   | Eventstreams                           |                |                                                          |
+| PostgreSQL Database CDC                   | Eventstreams                           |                |  [Add PostgreSQL Database CDC source to an eventstream](event-streams/add-source-postgresql-database-change-data-capture.md)                                                        |
 | Power Automate                            | Programmatic connector - non streaming |                |                                                          |
 | Serilog                                   | Programmatic connector - streaming     |                |     [Get data from Serilog](get-data-serilog.md)                                                     |
 | Splunk                                    | Programmatic connector - non streaming |                |                                                          |
 | Splunk Universal Forwarder                | Programmatic connector - non streaming |                |                                                          |
-| SQL Server VM DB CDC                      | Eventstreams                           |                |                                                          |
+| SQL Server VM DB CDC                      | Eventstreams                           |                |    [Add SQL Server on VM DB (CDC) source to an eventstream](event-streams/add-source-sql-server-change-data-capture.md)                                                      |
 | Telegraf                                  | Programmatic connector - streaming     |                |                                                          |
 
 ## Low-latency or real-time ingestion  
