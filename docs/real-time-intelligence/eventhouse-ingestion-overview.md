@@ -30,20 +30,19 @@ The following schematic shows sample ingestion architectures for ingesting data 
 
 The location of your data determines available methods for ingesting data into Eventhouse. Some sources have direct connectors to Eventhouse. Other connectors are available through [Eventstreams](get-data-eventstream.md). You can use [programmatic connectors](data-connectors/data-connectors.md) to ingest data into Eventhouse. Data can also be [ingested from OneLake](get-data-onelake.md) or directly consumed from a [OneLake shortcut](onelake-shortcuts.md) (with or without [acceleration](query-acceleration-overview.md)) as an external table.
 
-
 | Data source                               | Ingestion method                       | Considerations | Links                                                    |
 | ----------------------------------------- | -------------------------------------- | -------------- | -------------------------------------------------------- |
 | Amazon Kinesis Data Streams               | Eventstreams                           |                |                                                          |
 | Amazon Managed Streaming for Apache Kafka | Eventstreams                           |                |                                                          |
 | Amazon S3                                 | Get data in Eventhouse                 |                | [Get data from Amazon S3](get-data-amazon-s3.md)         |
 | Apache Flink                              | Programmatic connector - streaming     |                |   [Get data from Apache Flink](get-data-flink.md)                            |
-| Apache Kafka (pull)                       | Programmatic connector - streaming     | TODO: Add comparision between methods               |   [Get data from Kafka](get-data-kafka.md)         |
+| Apache Kafka (pull)                       | Programmatic connector - streaming     | TODO: Add comparison between methods               |   [Get data from Kafka](get-data-kafka.md)         |
 | Apache Kafka (push)                       | Eventstreams                           |                |                                                          |
 | Apache Log4J 2                            | Programmatic connector - streaming     |                |  [Get data with the Apache log4J 2 connector](get-data-log4j2.md)                                 |
 | Apache Spark                              | Programmatic connector - non streaming |                |    [Get data from Apache Spark](get-data-spark.md)                                                      |
 | Azure Blob Storage events                 | Eventstreams                           |                |                                                          |
 | Azure Cosmos DB CDC                       | Eventstreams                           |                |                                                          |
-| Azure Data Factory                        | Programmatic connector - non streaming |    TODO: Add comparision between methods            |                                                          |
+| Azure Data Factory                        | Programmatic connector - non streaming |    TODO: Add comparison between methods            |                                                          |
 | Azure Event Hubs                          | Programmatic connector - streaming     |                |                                                          |
 | Azure Event Hubs                          | Get data in Eventhouse                 |                | [Get data from Azure Event Hubs](get-data-event-hub.md)  |
 | Azure Event Hubs (push)                   | Eventstreams                           |                |                                                          |
@@ -68,7 +67,7 @@ The location of your data determines available methods for ingesting data into E
 | Logstash                                  | Programmatic connector - non streaming |                |                                                          |
 | MySQL Database CDC                        | Eventstreams                           |                |                                                          |
 | NLog                                      | Programmatic connector - streaming     |                |    [Ingest data with the NLog sink](/azure/data-explorer/nlog-sink?context=%2Ffabric%2Fcontext%2Fcontext-rti&pivots=fabric&tabs=windows)                                                      |
-| OneLake (ingestion)                       | Get data in Eventhouse                 |   TODO: Add comparision between methods             | [Get data from OneLake](get-data-onelake.md)             |
+| OneLake (ingestion)                       | Get data in Eventhouse                 |   TODO: Add comparison between methods             | [Get data from OneLake](get-data-onelake.md)             |
 | OneLake (shortcut)                        | Get data in Eventhouse                 |                | [Onelake shortcuts](onelake-shortcuts.md)   [Query acceleration for OneLake shortcuts - overview (preview)](query-acceleration-overview.md)             |
 | Open Telemetry                            | Programmatic connector - streaming     |                |                                                          |
 | PostgreSQL Database CDC                   | Eventstreams                           |                |                                                          |
@@ -85,7 +84,7 @@ TODO: add information about how this affects the ingestion method decision.
 
 ## Preprocess or transformation
 
-There are several ways to transform data that will eventually land in Eventhouse. If you're using Eventstreams, you can [transform data in Eventstreams](#transform-data-in-eventstreams). If you're ingesting data with any method including Eventstreams,, you can [transform data with update policies](#transform-data-with-update-policies) after it's landed in the Eventhouse.
+There are several ways to transform data that will eventually land in Eventhouse. If you're using Eventstreams, you can [transform data in Eventstreams](#transform-data-in-eventstreams). If you're ingesting data with any method including Eventstreams, you can [transform data with update policies](#transform-data-with-update-policies) after it lands in the Eventhouse.
 
 ### Transform data in Eventstreams
 
@@ -104,11 +103,11 @@ For more information on these processing options, see [Process event data with e
 
 ### Transform data with update policies
 
-If one of the following statements describes yoru situation, you might want to use update policies in Eventhouse to transform data. 
+If one of the following statements describes your situation, you might want to use update policies in Eventhouse to transform data. 
 
 Update policies are a good option if:
-* your data source is not supported in Eventstreams
-* the transformations available in Eventstreams are not sufficient for your needs
+* your data source isn't supported in Eventstreams
+* the transformations available in Eventstreams aren't sufficient for your needs
 * you want to have more control
 * you want to lower costs associated with your data management
 
