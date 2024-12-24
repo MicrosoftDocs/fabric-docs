@@ -39,6 +39,9 @@ For the **event throughput** setting, you can select the throughput level for in
 
 Here’s how different nodes perform at each throughput level.
 
+> [!NOTE]
+> The throughput upper limits listed here are based on ideal results from lab testing. 
+
 ### Azure Event Hubs source
 
 For Azure Event Hubs sources, throughput depends on both the selected throughput level and the number of Azure Event Hubs source partitions. When the Azure Event Hubs source partition count is less than 4, throughput is limited by the partition count, regardless of the selected throughput level. The throughput upper limits are as follows:
@@ -52,7 +55,7 @@ When the partition count is 4 or greater, throughput is based on the selected th
 
 ### Streaming connector sources
 
-The throughput for streaming connector sources ranges from **5 MB/s to 30 MB/s**. 
+The throughput for streaming connector sources is up to **30 MB/s**. 
 
 **Streaming Connector Sources Include**:
 - Azure SQL Database Change Data Capture (CDC)

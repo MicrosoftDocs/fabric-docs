@@ -1,24 +1,24 @@
 ---
 title: Microsoft Fabric features by SKU
-description: Learn which Fabric features are available to you depending on the capacity type. The article lists features according to SKUs by capacity type.
+description: Learn about Fabric features parity according to the capacity type. The article lists features according to SKUs by capacity type.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
-ms.date: 12/02/2024
+ms.date: 12/22/2024
 ---
 
-# Microsoft Fabric features by SKU
+# Microsoft Fabric features parity
 
-Microsoft Fabric is a cloud-based platform with a rich set of features. The availability of these features depends on the SKU and capacity type. This article lists key Fabric features according to [SKU](licenses.md#capacity) type.
+Microsoft Fabric is a cloud-based platform with a rich set of features. The availability of these features depends on the SKU and capacity type. This article shows parity of key Fabric features according to [SKU](licenses.md#capacity) type.
 
-## Features list
+## Features parity list
 
 The following table lists Fabric features according to SKU type. The table lists features that are only supported in specific SKUs. Unless otherwise noted, none of these features are supported when using a [trial capacity](../get-started/fabric-trial.md).
 
 | Feature                                                                                               | F SKU         | P SKUs       |
 |-------------------------------------------------------------------------------------------------------|:-------------:|:------------:|
-| [AI Skills](../data-science/concept-ai-skill.md)                                                      | F64 or higher | &#x2705;  
+| [AI Skills](../data-science/concept-ai-skill.md)                                                      | F64 or higher | &#x2705;     |
 | [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                          | &#x2705;      | &#x274C;     |
 | [Copilot](../get-started/copilot-fabric-overview.md)                                                  | F64 or higher | &#x2705;     |
 | [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)<sup>1</sup>   | &#x2705;      | &#x274C;     |
