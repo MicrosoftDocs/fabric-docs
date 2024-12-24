@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/06/2024
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -126,7 +126,9 @@ The following properties are **required**:
     - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
 
       :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
-
+    
+    > [!NOTE]
+    > The table name must be at least one character long, without '/' or '\\', no trailing dot, and no leading or trailing spaces.
 
     - Under **Advanced**, you can specify the following fields:
       - **Table actions**: Specify the operation against the selected table.
