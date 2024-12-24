@@ -4,7 +4,7 @@ description: A known issue is posted where custom visuals are blurry in zoomed i
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/14/2024
+ms.date: 12/24/2024
 ms.custom: known-issue-808
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-808
 
 When using the Microsoft Edge (Chromium) browser, you can zoom the screen in or out. When you change the zoom percentage, custom visuals appear blurry on the screen.
 
-**Status:** Open
+**Status:** Fixed: December 24, 2024
 
 **Product Experience:** Power BI
 
