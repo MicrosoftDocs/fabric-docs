@@ -168,7 +168,7 @@ The Real-Time Intelligence experience contains operations for [eventstreams](#ev
 
 You can find the consumption rates for eventstreams in [Monitor capacity consumption for Microsoft Fabric eventstreams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
-[!INCLUDE [operation-types](/fabric/real-time-intelligence/event-streams/includes/operation-types.md)]
+[!INCLUDE [operation-types](../real-time-intelligence/event-streams/includes/operation-types.md)]
 
 #### Fabric events
 
