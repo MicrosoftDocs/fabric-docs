@@ -67,7 +67,7 @@ items:
     href: multitasking.md
   - name: Localize your workload
     href: localization.md
-- name: Publish your workload
+- name: Publish
   items:
   - name: Publishing requirements
     href: publish-workload-requirements.md    
