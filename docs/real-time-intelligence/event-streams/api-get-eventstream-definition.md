@@ -37,6 +37,8 @@ POST https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a
 
 ## Sample Response
 
+The sample response includes a payload with a Base64-encoded string.
+
 ```json
 {
   "definition": {
@@ -53,6 +55,115 @@ POST https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a
       }
     ]
   }
+}
+```
+
+Below is the decoded payload content of the Base64 string for reference.
+
+```json
+{
+  "sources": [
+    {
+      "name": "SqlServerOnVmDbCdc",
+      "type": "SQLServerOnVMDBCDC",
+      "properties":
+      {
+        "dataConnectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+        "tableName": ""
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "name": "Lakehouse",
+      "type": "Lakehouse",
+      "properties":
+      {
+        "workspaceId": "bbbb1111-cc22-3333-44dd-555555eeeeee",
+        "itemId": "cccc2222-dd33-4444-55ee-666666ffffff",
+        "schema": "",
+        "deltaTable": "newTable",
+        "minimumRows": 100000,
+        "maximumDurationInSeconds": 120,
+        "inputSerialization":
+        {
+          "type": "Json",
+          "properties":
+          {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [{"name": "derivedStream"}]
+    }
+  ],
+  "streams": [
+    {
+      "name": "myEventstream-stream",
+      "type": "DefaultStream",
+      "properties":
+      {},
+      "inputNodes": [{"name": "SqlServerOnVmDbCdc"}]
+    },
+    {
+      "name": "derivedStream",
+      "type": "DerivedStream",
+      "properties":
+      {
+        "inputSerialization":
+        {
+          "type": "Json",
+          "properties":
+          {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [{"name": "GroupBy"}]
+    }
+  ],
+  "operators": [
+    {
+      "name": "GroupBy",
+      "type": "GroupBy",
+      "inputNodes": [{"name": "myEventstream-stream"}],
+      "properties":
+      {
+        "aggregations": [
+          {
+            "aggregateFunction": "Average",
+            "column":
+            {
+              "expressionType": "ColumnReference",
+              "node": null,
+              "columnName": "payload",
+              "columnPathSegments": [{"field": "ts_ms"}]
+            },
+            "alias": "AVG_ts_ms"
+          }
+        ],
+        "groupBy": [],
+        "window":
+        {
+          "type": "Tumbling",
+          "properties":
+          {
+            "duration":
+            {
+              "value": 5,
+              "unit": "Minute"
+            },
+            "offset":
+            {
+              "value": 1,
+              "unit": "Minute"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "compatibilityLevel": "1.0"
 }
 ```
 

@@ -29,6 +29,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
 
 ## Sample request
 
+The sample request includes a payload with a Base64-encoded string.
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items

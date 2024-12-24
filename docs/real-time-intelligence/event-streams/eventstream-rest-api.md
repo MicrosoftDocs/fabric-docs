@@ -72,7 +72,7 @@ Create a JSON payload that will be converted to base64 in the API request. The E
 
 Use the [API templates in GitHub](https://github.com/microsoft/fabric-event-streams/blob/main/API%20Templates/eventstream-definition.json) to help define your Eventstream body.
 
-For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition). 
+For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 
 **Example of Eventstream definition in JSON:**
 
@@ -230,6 +230,8 @@ Invoke-RestMethod -Headers $headerParams -Method POST -Uri $evenstreamAPI -Body 
 ```
 
 ## Eventstream item definition
+
+The Eventstream item definition has a graph-like structure consisting of four components: sources, destinations, operators, and streams.
 
 ### Sources
 

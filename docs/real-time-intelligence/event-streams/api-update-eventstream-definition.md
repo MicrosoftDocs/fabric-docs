@@ -172,4 +172,4 @@ POST https://api.fabric.microsoft.com/v1/workspaces/cfafbeb1-8037-4d0c-896e-a46f
 
 ## Related content
 
-* [Update Eventstream Definition](rest/api/fabric/eventstream/items/update-eventstream-definition)
+* [Update Eventstream Definition](/rest/api/fabric/eventstream/items/update-eventstream-definition)
