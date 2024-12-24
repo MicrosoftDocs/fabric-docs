@@ -168,11 +168,8 @@ The Real-Time Intelligence experience contains operations for [eventstreams](#ev
 
 You can find the consumption rates for eventstreams in [Monitor capacity consumption for Microsoft Fabric eventstreams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
-| Operation                       | Description                               | Item         | Azure billing meter        | Type       |
-| ------------------------------- | ----------------------------------------- | ------------ | -------------------------- | ---------- |
-| Eventstream Per Hour            | Ingestion or processing for Eventstream  | Eventstream | eventstream Capacity Usage CU               | Background |
-| Eventstream Data Traffic per GB | Data Ingress and Egress                   | Eventstream | eventstream Data Traffic per GB Capacity Usage CU | Background |
-| Eventstream Processor Per Hour  | ASA Processing                            | Eventstream | eventstreams Processor Capacity Usage CU    | Background |
+[!INCLUDE [operation-types](/docs/real-time-intelligence/event-streams/includes/operation-types.md)]
+
 
 #### Fabric events
 
