@@ -43,6 +43,10 @@ For troubleshooting, see:
 - Mirroring across [Microsoft Entra](/entra/fundamentals/new-name) tenants is not supported where an Azure SQL Database and the Fabric workspace are in separate tenants.  
 - Microsoft Purview Information Protection/sensitivity labels defined in Azure SQL Database are not cascaded and mirrored to Fabric OneLake.
 
+> [!NOTE]
+> The following internal error will be shown when trying to mirroring across tenants instead of showing cross-tenant is not supported.
+> The database cannot be mirrored to Fabric due to below error: Test connection failed. Internal error has occurred.
+
 ## Table level
 
 - A table that does not have a defined primary key cannot be mirrored.
