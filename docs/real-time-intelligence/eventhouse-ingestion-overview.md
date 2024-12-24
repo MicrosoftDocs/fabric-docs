@@ -45,11 +45,18 @@ TODO: add content
 
 ### Azure Event Hubs
 
-TODO: add content
+Data from Azure Event Hubs can be ingested into an Eventhouse in two ways:
+* [Ingest data from Azure Event Hubs](get-data-event-hub.md): in this method, data is ingested directly from Azure Event Hubs into an Eventhouse.
+* [Add Azure Event Hubs source to an eventstream](event-streams/add-source-azure-event-hubs.md): in this method, data is ingested into an Eventstream and then into an Eventhouse.
+
+TODO: Add explanation of when to choose what
 
 ### OneLake
 
-TODO: add content
+Data from Onelake can be used in an Eventhouse in two ways:
+
+* [Ingest data from OneLake](get-data-onelake.md): in this method, data is ingested from OneLake into an Eventhouse.
+* [Use OneLake shortcuts](onelake-shortcuts.md): in this method, data is directly consumed from a OneLake shortcut and treaded as an external table. To improve query performance on a OneLake shortcut, use [query acceleration](query-acceleration-overview.md).
 
 ## Low-latency or real-time ingestion  
 

@@ -21,6 +21,8 @@ This article summarizes the methods available to ingest data directly into an [E
 - [Eventstream](get-data-eventstream.md)
 - [OneLake](get-data-onelake.md)
 - [Real-Time hub (preview)](get-data-real-time-hub.md)
+- [Data Factory copy](../data-factory/connector-kql-database-copy-activity.md)
+- [Dataflows](../data-factory/connector-azure-data-explorer.md)
 
 ## Related content
 
