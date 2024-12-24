@@ -162,11 +162,11 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [eventstreams](#eventstreams), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Eventstream](#eventstreams), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Eventstreams
 
-You can find the consumption rates for eventstreams in [Monitor capacity consumption for Microsoft Fabric eventstreams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
+You can find the consumption rates for Eventstream in [Monitor capacity consumption for Microsoft Fabric eventstreams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
 [!INCLUDE [operation-types](../real-time-intelligence/event-streams/includes/operation-types.md)]
 
