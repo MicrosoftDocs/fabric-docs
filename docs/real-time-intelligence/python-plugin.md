@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2024
-ms.date: 11/19/2024
+ms.date: 12/25/2024
 ms.search.form: product-kusto
 ---
 
@@ -27,7 +27,7 @@ The Python plugin runs a user-defined function (UDF) using a Python script. The 
 The plugin is disabled by default.
 
 1. To enable the plugin, browse to your **KQL database**.
-1. Select **Manage** > **Plugins**.
+1. Select **Eventhouse** > **Plugins**.
 1. Enable the **Python language extension** by toggling the button to **On**, then select **Done**.
 
     > [!WARNING]
@@ -39,5 +39,5 @@ The plugin is disabled by default.
 
 ## Related content
 
-* For examples of user-defined functions that use the Python plugin, see the [Functions library](/azure/data-explorer/kusto/functions-library/functions-library?context=%2Ffabric%2Fcontext%2Fcontext-rti&pivots=fabric)
+* For examples of user-defined functions that use the Python plugin, see the [Functions library](/azure/data-explorer/kusto/functions-library/functions-library?context=%2Ffabric%2Fcontext%2Fcontext-rti&pivots=fabric).
 * [Query data in a KQL queryset](kusto-query-set.md)
