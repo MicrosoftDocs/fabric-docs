@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/27/2023
+ms.date: 12/24/2024
 #customer intent: As a data engineer, I want to learn how to create a OneLake shortcut inside a Fabric lakehouse using different data sources so that I can efficiently access and manage data within the lakehouse.
 ---
 
@@ -35,9 +35,13 @@ If you don't have a lakehouse, create one by following these steps: [Create a la
 
 [!INCLUDE [onelake-shortcut](../includes/onelake-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut(s) appears under the selected directory in the **Explorer** pane.
+The lakehouse automatically refreshes. The shortcut(s) appears under the selected directory in the **Explorer** pane. You can differentiate a regular file or table from the shortcut from its properties. The properties have a **Shortcut Type** parameter that indicates the item is a shortcut.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
+
+## Delete a shortcut
+
+To delete a shortcut, select the **...** icon next to the shortcut file or table and select **Delete**.
 
 ## Related content
 
