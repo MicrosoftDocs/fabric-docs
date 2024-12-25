@@ -275,7 +275,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
 - It may take up to a minute for the Table API to recognize new shortcuts.
-- OneLake shortcuts do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints, to learn more, see [managed private endpoints for Fabric.](../security-managed-private-endpoints-overview.md#limitations-and-considerations)
+- OneLake shortcuts do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints, to learn more, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
 
 ## Related content
 
