@@ -17,7 +17,7 @@ ms.date: 12/24/2024
 
 In this article, you learn how to create a OneLake shortcut inside a Fabric lakehouse. You can use a lakehouse, a data warehouse, or a Kusto Query Language (KQL) database as the source for your shortcut.
 
-For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
+For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](/rest/api/fabric/core/onelake-shortcuts/create-shortcut?tabs=HTTP).
 
 ## Prerequisite
 
@@ -41,7 +41,7 @@ The lakehouse automatically refreshes. The shortcut(s) appears under the selecte
 
 ## Delete a shortcut
 
-To delete a shortcut, select the **...** icon next to the shortcut file or table and select **Delete**.
+To delete a shortcut, select the **...** icon next to the shortcut file or table and select **Delete**. To delete shortcuts programmatically, see [OneLake shortcuts REST APIs](/rest/api/fabric/core/onelake-shortcuts/delete-shortcut?tabs=HTTP)
 
 ## Related content
 
