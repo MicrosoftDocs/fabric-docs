@@ -164,8 +164,8 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
 ## Sample response
 
 ```http
-  Location: https://api.fabric.microsoft.com/v1/operations/427f6c34-b64e-4ee4-8ea5-b533c0e203ef
-  x-ms-operation-id: 427f6c34-b64e-4ee4-8ea5-b533c0e203ef
+  Location: https://api.fabric.microsoft.com/v1/operations/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
+  x-ms-operation-id: aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
   Retry-After: 30
 ```
 
