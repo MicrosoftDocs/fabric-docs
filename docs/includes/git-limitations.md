@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 11/18/2024
+ms.date: 12/26/2024
 ---
 
 ### General Git integration limitations
@@ -25,6 +25,7 @@ ms.date: 11/18/2024
 
 #### [GitHub limitations](#tab/github)
 
+- Only cloud versions of GitHub are supported. On-prem isn't supported.
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - The total combined size of files to commit at once is limited to 50 MB. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing files, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
 
@@ -50,10 +51,10 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
-- Git folder use the logical ID (Guid) as a prefix before the type if the item’s display name:
+- If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
-  - Ends with <kbd>.</kbd> or a space
-  - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+  - Ends with a <kbd>.</kbd> or a space
+  - Contains any forbidden characters as described in [directory name limitations](#directory-name-limitations)
 
 ### Directory name limitations
 
@@ -85,5 +86,5 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - During the *Commit to Git* process, the Fabric service deletes files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder aren't deleted.
 - After you commit changes, you might notice some unexpected changes to the item that you didn't make. These changes are semantically insignificant and can happen for several reasons. For example:
   - Manually changing the item definition file. These changes are valid, but might be different than if done through the editors. For example, if you rename a semantic model column in Git and import this change to the workspace, the next time you commit changes to the semantic model, the *bim* file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine that generates the *bim* files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
-  - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the Git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the *.pbip* project and upload it to Git using *CRLF*.
+  - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the Git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the project file (*.pbip*) and upload it to Git using *CRLF*.
 - Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
