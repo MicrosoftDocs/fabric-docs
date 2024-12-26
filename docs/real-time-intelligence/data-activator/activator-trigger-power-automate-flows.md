@@ -42,7 +42,7 @@ The flow is prepopulated with an action for [!INCLUDE [fabric-activator](../incl
 
 You must paste the connection string from the previous step into this action. Select the Power Automate tile that displays the **Invalid parameters** error. Then paste the connection string that you copied in the previous step. This removes the error message and allows you to continue building your flow. 
 
-:::image type="content" source="media/activator-trigger-power-automate-flows/activator-automate.png" alt-text="Screenshot of defining a flow for activator.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-automate.png" alt-text="Screenshot of pasting the connection string.":::
 
 1. Select the plus sign (+) to add a new step to the flow. 
 1. Search for **To Do** and choose **Add a to-do (V3)**.
