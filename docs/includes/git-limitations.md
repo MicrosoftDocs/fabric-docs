@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 11/18/2024
+ms.date: 12/26/2024
 ---
 
 ### General Git integration limitations
@@ -25,6 +25,7 @@ ms.date: 11/18/2024
 
 #### [GitHub limitations](#tab/github)
 
+- Only cloud versions of GitHub are supported. On-prem isn't supported.
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - The total combined size of files to commit at once is limited to 50 MB. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing files, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
 
