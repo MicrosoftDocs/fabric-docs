@@ -54,7 +54,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
   - Ends with a <kbd>.</kbd> or a space
-  - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+  - Contains any forbidden characters as described in [directory name limitations](#directory-name-limitations)
 
 ### Directory name limitations
 
