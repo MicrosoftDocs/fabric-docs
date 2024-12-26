@@ -103,6 +103,7 @@ SQL Developers or citizen developers
 Data Engineers or SQL Developers 
    :::column-end:::
 :::row-end:::
+---
 :::row:::
    :::column span="1"::: 
 Data loading

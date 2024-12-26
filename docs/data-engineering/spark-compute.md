@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/20/2023
+ms.date: 12/25/2024
 ---
 # What is Apache Spark compute in Microsoft Fabric?
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Apache Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Apache Spark session initialization, typically within 5 to 10 seconds, with no need for manual setup. You also get the flexibility to customize Apache Spark pools according to your specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience.
+Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Apache Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Apache Spark session initialization, typically within 5 to 10 seconds, with no need for manual setup. You also get the flexibility to customize Apache Spark pools according to your specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience. In short a starter pool is a quick way to use pre-configured Spark, while a Spark pool offers customization and flexibility.
 
 :::image type="content" source="media/spark-compute/spark-compute-overview.png" alt-text="Image of a Spark compute platform with starter pools and custom Spark pools." lightbox="media/spark-compute/spark-compute-overview.png":::
 

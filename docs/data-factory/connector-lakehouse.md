@@ -4,7 +4,7 @@ description: This article details how to use the Data Factory Lakehouse connecto
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
   - ignite-2023
