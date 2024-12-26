@@ -51,7 +51,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
-- Git folder use the logical ID (Guid) as a prefix before the type if the item’s display name:
+- If the item’s display name has any of these characteristics, Git folder renames it to the logical ID (Guid) and type:
   - Has more than 256 characters
   - Ends with <kbd>.</kbd> or a space
   - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
