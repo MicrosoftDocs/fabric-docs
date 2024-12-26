@@ -33,8 +33,8 @@ Before you create the solution, ensure the following prerequisites are set up in
 - Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
 :::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
 - [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
-- A diagram of what you want your Apache Airflow DAG to look like or save the given image in [step 1](#step-1-upload-the-sketch-to-azure-blob-storage) to your local machine.
-5. Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
+- A diagram of what you want your Apache Airflow DAG to look like or save the given image in [step 1](#step-1-upload-the-image-to-fabric-lakehouse) to your local machine.
+- Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
    ```bash
    azure-storage-file-datalake
    Pillow
@@ -45,10 +45,10 @@ Before you create the solution, ensure the following prerequisites are set up in
 Before you can analyze the image, you need to upload it to your Lakehouse. 
 :::image type="content" source="media/apache-airflow-jobs/airflow-dag-diagram.png" lightbox="media/apache-airflow-jobs/airflow-dag-diagram.png" alt-text="Screenshot represents DAG diagram of Apache Airflow.":::
 
-1. Upload the file stored in your local machine to the `Files` folder in your Lakehouse.
+1. Upload the file from your local machine to the Lakehouse's `Files` folder.
 :::image type="content" source="media/apache-airflow-jobs/airflow-upload-lakehouse.png" lightbox="media/apache-airflow-jobs/airflow-upload-lakehouse.png" alt-text="Screenshot represents file upload to Fabric Lakehouse.":::
 
-2. Copy the account URL of your Fabric Lakehouse, it will later be used in the Apache Airflow DAG to authenticate with the Lakehouse.
+2. Copy the storage account name of your Fabric Lakehouse, it will later be used in the Apache Airflow connection to authenticate with the Lakehouse.
 :::image type="content" source="media/apache-airflow-jobs/airflow-lakehouse-name.png" lightbox="media/apache-airflow-jobs/airflow-lakehouse-name.png" alt-text="Screenshot represents Fabric Lakehouse name.":::
 
 ### Step 2: Set up Environment Variables to authenticate with Lakehouse and Azure OpenAI.
@@ -63,7 +63,7 @@ We are going to use the Lakehouse Rest APIs to download the image from the Lakeh
 - `FABRIC_CLIENT_SECRET`: The client secret of the Microsoft Entra ID app.
 - `FABRIC_TENANT_ID`: The tenant ID of the Microsoft Entra ID app.
 
-#### Crdentials for Azure Open AI
+#### Credentials for Azure Open AI
 We use the `gpt-4o` model deployment in Azure OpenAI to analyze the whiteboard sketch of the pipeline and convert it into an Apache Airflow DAG. To connect to the Azure OpenAI API, store the API key and endpoint in environment variables:
 - `OPENAI_API_KEY`: Enter your Azure OpenAI API key.
 - `OPENAI_API_ENDPOINT`: Enter the endpoint URL for your deployed `gpt-4o` model.
@@ -144,18 +144,18 @@ Now, follow the steps to implement the workflow:
            client_secret = os.getenv("FABRIC_CLIENT_SECRET")
            tenant_id = os.getenv("FABRIC_TENANT_ID")
 
-            tokenCredential = ClientSecretCredential(
-                tenant_id=tenant,
-                client_id=app_id,
-                client_secret=app_secret
-            )
+           tokenCredential = ClientSecretCredential(
+               tenant_id=tenant,
+               client_id=app_id,
+               client_secret=app_secret
+           )
 
            lakehouse_client = DataLakeServiceClient(
-                account_url,
-                redential=tokenCredential
-            )
+               account_url,
+               credential=tokenCredential
+           )
 
-            blob_data = lakehouse_client.get_file_client(workspace_name, file_path).download_file().readall()
+           blob_data = lakehouse_client.get_file_client(workspace_name, file_path).download_file().readall()
 
            image = Image.open(io.BytesIO(blob_data))
            
@@ -165,8 +165,8 @@ Now, follow the steps to implement the workflow:
            encoded_image = base64.b64encode(buffered.getvalue()).decode('ascii')
            
            return {"encoded_image": encoded_image}
-   
-       
+
+
        @task
        def generate_dag_code_from_openai(image_from_blob: dict, system_prompt: str, **context):
            """
@@ -177,8 +177,8 @@ Now, follow the steps to implement the workflow:
            :return: Dictionary containing the generated DAG code as a string.
            """
            
-           azureAI_api_key = Variable.get("openai_api_key")
-           azureAI_endpoint = Variable.get("openai_api_endpoint")
+           azureAI_api_key = os.getenv("OPENAI_API_KEY")
+           azureAI_endpoint = os.getenv("OPENAI_API_ENDPOINT")
    
            image = image_from_blob["encoded_image"]
            
