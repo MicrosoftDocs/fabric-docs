@@ -40,16 +40,35 @@ The next step is to define your flow in Power Automate. Select **Copy** to copy 
 
 The flow is prepopulated with an action for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
 
-> [!IMPORTANT]
-> You must paste the connection string from the previous step into this action, as shown in the following screenshot. Select **When an Activator rule is triggered** and paste the connection string as shown in the following screenshot. Once you do so, add further steps to your flow as needed, and save the flow.
+You must paste the connection string from the previous step into this action. Select the Power Automate tile that displays the **Invalid parameters** error. Then paste the connection string that you copied in the previous step. This removes the error message and allows you to continue building your flow. 
 
-:::image type="content" source="media/activator-trigger-power-automate-flows/activator-power-automate.png" alt-text="Screenshot of defining a flow for activator.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-automate.png" alt-text="Screenshot of defining a flow for activator.":::
 
-To access your custom input fields in the flow, select the field to customize and choose **fx**.
+1. Select the plus sign (+) to add a new step to the flow. 
+1. Search for **To Do** and choose **Add a to-do (V3)**.
+    :::image type="content" source="media/activator-trigger-power-automate-flows/activator-add-task.png" alt-text="Screenshot of defining a flow for activator.":::
 
+1. Fill in the necessary fields in the **Add a to-do (V3)** window. Start by selecting the **To-do list** dropdown and choosing the **Tasks** field that we created in an ealier step. 
 
+### Use properties and dynamic content in your flow
 
+Optionally, insert an expression into the Inputs field. If you select an input field and see the **fx** icon, select it.
+
+When you select a property, it is added into the text box. In the pop-up window that opens, select a function to start your expression. To complete your expression, place the cursor in the function, and then select Dynamic content. Search for or select the content/tokens to add, and then select Add. Your completed expression appears in the Inputs field.
+
+You can now click on the property inside of the action card and open it up again for further editing.
+
+1. In this example, select the dropdown for **To-do List** and select the **Tasks** value you created earlier. 
+1. Insert expressions in the **Title** field by selecting the **Title** field and **fx**. 
+1. In the **Function** tab, search for utcNow() and add it. By adding a date to the title, you might avoid duplicate names. 
+1. Still in the Function tab, search for **triggerBody** and select it. In the editing field, add one of the custom properties to update this field dynamically.  
+
+    :::image type="content" source="media/activator-trigger-power-automate-flows/activator-edit-fx.png" alt-text="Screenshot of the Function tab's editing screen.":::
+
+1. Select **Add** > **Save**.
 To learn more about Power Automate, see [Power Automate](/power-automate).
+
+1. Optionally, select **Test** from the menu bar to force the flow to run. 
 
 ### Complete your custom action
 
@@ -59,13 +78,13 @@ After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fab
 
 ## Call your custom action from a rule
 
-Once you create a custom action, it's available for use by all rules and users who have access to that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. To call your custom action, from a rule, select **Action** > **Type** from the **Definition** pane, and select your custom action from the list:
+Once you create a custom action, it's available for use by all rules and users who have access to the activator item you defined in the custom action. To call your custom action, from a rule, select **Action** > **Type** from the **Definition** pane, and select your custom action from the list. 
 
-:::image type="content" source="media/activator-trigger-power-automate-flows/activator-list.png" alt-text="Screenshot of calling a custom action for Activator.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-type-list.png" alt-text="Screenshot of the Type dropdown showing the newly created action.":::
 
-You then see the input fields for your custom action. Fill them out as appropriate for your rule definition:
+Select the action to see the **Definiton** pane for your custom action. Then select **Edit action** to see the entry fields for your rule. Fill them out as appropriate for your rule definition:
 
-:::image type="content" source="media/activator-detection-conditions/data-activator-detection-conditions-09.png" alt-text="Screenshot of custom action input for activator.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-edit-action.png" alt-text="Screenshot of custom action input for activator.":::
 
 When your rule activates, it calls your flow, sending it the values of the input fields that you defined.
 
