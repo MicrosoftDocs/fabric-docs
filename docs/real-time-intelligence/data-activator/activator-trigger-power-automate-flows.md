@@ -66,15 +66,14 @@ You can now click on the property inside of the action card and open it up again
     :::image type="content" source="media/activator-trigger-power-automate-flows/activator-edit-fx.png" alt-text="Screenshot of the Function tab's editing screen.":::
 
 1. Select **Add** > **Save**.
-To learn more about Power Automate, see [Power Automate](/power-automate).
 
 1. Optionally, select **Test** from the menu bar to force the flow to run. 
 
+To learn more about Power Automate, see [Power Automate](/power-automate).
+
 ### Complete your custom action
 
-After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Upon successful saving of the flow, you see a confirmation box in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a rule](#call-your-custom-action-from-a-rule).
-
-:::image type="content" source="media/activator-detection-conditions/data-activator-detection-conditions-07.png" alt-text="Screenshot of custom action completion for activator.":::
+After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. 
 
 ## Call your custom action from a rule
 
@@ -82,7 +81,7 @@ Once you create a custom action, it's available for use by all rules and users w
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-type-list.png" alt-text="Screenshot of the Type dropdown showing the newly created action.":::
 
-Select the action to see the **Definiton** pane for your custom action. Then select **Edit action** to see the entry fields for your rule. Fill them out as appropriate for your rule definition:
+Select **Edit action** to see the entry fields for your rule. Fill them out as appropriate for your rule definition:
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-edit-action.png" alt-text="Screenshot of custom action input for activator.":::
 
