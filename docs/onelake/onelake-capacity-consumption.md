@@ -58,6 +58,6 @@ You may be wondering, how do shortcuts affect my OneLake usage? In the above exa
 
 * If Capacity1 is paused and Capacity2 is active, you can’t read the data in Workspace1 (Capacity1) but you can still use the data using the shortcut in Workspace2. In both cases, as the data is still stored in Capacity1, storage costs remain billed to Capacity1
 
-f your CU consumption exceeds the capacity limit, [throttling](../enterprise/throttling.md) may occur, causing transactions to be delayed or rejected temporarily.
+If your CU consumption exceeds the capacity limit, [throttling](../enterprise/throttling.md) may occur, causing transactions to be delayed or rejected temporarily.
 
 Start Fabric’s 60-day free trial to explore OneLake and other features, and visit the [Fabric forum](https://community.fabric.microsoft.com/t5/Forums/ct-p/ac_forums) for questions.
