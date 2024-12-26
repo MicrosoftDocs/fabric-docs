@@ -4,7 +4,7 @@ description: "Learn about Direct Lake storage mode in Microsoft Fabric and when 
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 09/17/2024
+ms.date: 12/26/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -181,14 +181,13 @@ Direct Lake semantic models present some considerations and limitations.
 - [Auto data/time intelligence in Power BI Desktop](/power-bi/transform-model/desktop-auto-date-time) is not supported. [Marking your own date table](/power-bi/transform-model/desktop-date-tables) as a date table is supported.
 - The length of string column values is limited to 32,764 Unicode characters.
 - The floating point value _NaN_ (not a number) isn't supported.
-- Embedding scenarios that use the [For your customer](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-embed-for-your-customers) usage scenario aren't supported.
 - [Publish to web from Power BI](/power-bi/collaborate-share/service-publish-to-web) is only supported when using a [fixed identity for the Direct Lake semantic model](direct-lake-manage.md#sharable-cloud-connection).
 - In the [web modeling experience](/power-bi/transform-model/service-edit-data-models), validation is limited for Direct Lake semantic models. User selections are assumed to be correct, and no queries are issued to validate cardinality or cross filter selections for relationships, or for the selected date column in a marked date table.
 - In the Fabric portal, the _Direct Lake_ tab in the refresh history lists only Direct Lake-related refresh failures. Successful refresh (framing) operations aren't listed.
 - Your Fabric SKU determines the maximum available memory per Direct Lake semantic model for the capacity. When the limit is exceeded, queries to the semantic model might be slower due to excessive paging in and out of the model data.
 - Creating a Direct Lake semantic model in a workspace that is in a different region of the data source workspace is not supported. For example, if the Lakehouse is in West Central US, then you can only create semantic models from this Lakehouse in the same region. A workaround is to create a Lakehouse in the other region's workspace and shortcut to the tables before creating the semantic model. To find what region you are in, see [find your Fabric home region](/fabric/admin/find-fabric-home-region).
 - You can create and view a custom Direct Lake semantic model using a Service Principal identity, but the default Direct Lake semantic model does not support Service Principals. Make sure service principal authentication is enabled for Fabric REST APIs in your tenant and grant the service principal Contributor or higher permissions to the workspace of your Direct Lake semantic model.
-- Direct Lake does not support service principal profiles for authentication.
+- Service Principal only works with [Fixed Identity](./direct-lake-fixed-identity.md) connection (No-SSO).
 
 ## Comparison to other storage modes
 
