@@ -53,7 +53,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
-  - Ends with <kbd>.</kbd> or a space
+  - Ends with a <kbd>.</kbd> or a space
   - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
 
 ### Directory name limitations
