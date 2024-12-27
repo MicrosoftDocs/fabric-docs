@@ -41,10 +41,6 @@ items:
     href: workload-communication.md  
   - name: Workload environment
     href: workload-environment.md
-  - name: Authentication
-    items:
-
-       
   - name: Item lifecycle
     href: item-lifecycle.md
   - name: User permissions
