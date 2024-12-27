@@ -55,7 +55,7 @@ Before you can analyze the image, you need to upload it to your Lakehouse.
 
 > Note: This tutorial is based on Airflow version 2.6.3.
 
-:::image type="content" source="media/apache-airflow-jobs/rename-add-env-vars.png" lightbox="media/apache-airflow-jobs/rename-add-env-vars.png" alt-text="Screenshot to add environment variables in apache airflow job.":::
+:::image type="content" source="media/apache-airflow-jobs/rename-add-environment-variables.png" lightbox="media/apache-airflow-jobs/rename-add-env-vars.png" alt-text="Screenshot to add environment variables in apache airflow job.":::
 
 #### Credentials for Lakehouse Rest APIs. 
 We are going to use the Lakehouse Rest APIs to download the image from the Lakehouse. To authenticate with the Lakehouse Rest APIs, you need to set the following environment variables in Apache Airflow Job.
@@ -63,7 +63,7 @@ We are going to use the Lakehouse Rest APIs to download the image from the Lakeh
 - `FABRIC_CLIENT_SECRET`: The client secret of the Microsoft Entra ID app.
 - `FABRIC_TENANT_ID`: The tenant ID of the Microsoft Entra ID app.
 
-#### Credentials for Azure Open AI
+#### Credentials for Azure OpenAI
 We use the `gpt-4o` model deployment in Azure OpenAI to analyze the whiteboard sketch of the pipeline and convert it into an Apache Airflow DAG. To connect to the Azure OpenAI API, store the API key and endpoint in environment variables:
 - `OPENAI_API_KEY`: Enter your Azure OpenAI API key.
 - `OPENAI_API_ENDPOINT`: Enter the endpoint URL for your deployed `gpt-4o` model.
@@ -290,7 +290,7 @@ Now, follow the steps to implement the workflow:
 ### Step 5: Get Ready to execute the newly generated DAG
 1. Open the Apache Airflow Job UI.
 2. The newly generated DAG is saved in the DAGs folder as `openai_dag.py`.
-   :::image type="content" source="media/apache-airflow-jobs/new-file-openai-dag.png" lightbox="media/apache-airflow-jobs/new-file-openai-dag.png" alt-text="Screenshot represents new dag generated with openai dag generator.":::
+   :::image type="content" source="media/apache-airflow-jobs/new-file-openai-dag.png" lightbox="media/apache-airflow-jobs/new-file-openai-dag.png" alt-text="Screenshot represents new dag generated with openAI dag generator.":::
 3. Open the DAG file to review the code. You can edit it as needed and configure the necessary connections for the operators.
 4. Once the connections are set, you can trigger the DAG to execute the workflow.
    :::image type="content" source="media/apache-airflow-jobs/openai-resultant-dag.png" lightbox="media/apache-airflow-jobs/openai-resultant-dag.png" alt-text="Screenshot represents resultant dag from OpenAI.":::
