@@ -55,7 +55,7 @@ Before you can analyze the image, you need to upload it to your Lakehouse.
 
 > Note: This tutorial is based on Airflow version 2.6.3.
 
-:::image type="content" source="media/apache-airflow-jobs/rename-add-environment-variables.png" lightbox="media/apache-airflow-jobs/rename-add-env-vars.png" alt-text="Screenshot to add environment variables in apache airflow job.":::
+:::image type="content" source="media/apache-airflow-jobs/rename-add-environment-variables.png" lightbox="media/apache-airflow-jobs/rename-add-environment-variables.png" alt-text="Screenshot to add environment variables in apache airflow job.":::
 
 #### Credentials for Lakehouse Rest APIs. 
 We're going to use the Lakehouse Rest APIs to download the image from the Lakehouse. To authenticate with the Lakehouse Rest APIs, you need to set the following environment variables in Apache Airflow Job.
