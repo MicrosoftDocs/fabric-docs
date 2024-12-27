@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 12/24/2024
+ms.date: 12/27/2024
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
@@ -33,9 +33,11 @@ You can use the Fabric UI to create shortcuts interactively, and you can use the
 
 ### Lakehouse
 
-When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses are composed of two top level folders: the **Tables** folder and the **Files** folder. The **Tables** folder represents the managed portion of the lakehouse, while the **Files** folder is the unmanaged portion of the lakehouse.
-In the **Tables** folder, you can only create shortcuts at the top level. Shortcuts aren't supported in other subdirectories of the **Tables** folder. If the target of the shortcut contains data in the Delta\Parquet format, the lakehouse automatically synchronizes the metadata and recognizes the folder as a table.
-In the **Files** folder, there are no restrictions on where you can create shortcuts. You can create them at any level of the folder hierarchy. Table discovery doesn't happen in the **Files** folder.
+When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses are composed of two top level folders: the **Tables** folder and the **Files** folder. The **Tables** folder represents the managed portion of the lakehouse i.e for structured datasets. While the **Files** folder is the unmanaged portion of the lakehouse i.e for unstructured or semi-structured data.
+
+In the **Tables** folder, you can only create shortcuts at the top level. Shortcuts aren't supported in other subdirectories of the **Tables** folder. Shortcuts in the Tables section typically point to internal sources within OneLake or are linked to other data assets that conform to the Delta table format. If the target of the shortcut contains data in the Delta\Parquet format, the lakehouse automatically synchronizes the metadata and recognizes the folder as a table.
+
+In the **Files** folder, there are no restrictions on where you can create shortcuts. You can create them at any level of the folder hierarchy. Table discovery doesn't happen in the **Files** folder. Shortcuts here can point to both internal (OneLake) and external storage systems with data in any format.
 
 :::image type="content" source="media\onelake-shortcuts\lake-view-table-view.png" alt-text="Diagram showing the Lake view and the Table view side by side.":::
 
