@@ -2,10 +2,12 @@
 title: Get data from Cribl Stream
 description: Learn how to get data from Cribl Stream in a KQL database in Real-Time Intelligence.
 ms.reviewer: akshayd
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
-ms.date: 09/22/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ---
 # Get data from Cribl Stream
 

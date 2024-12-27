@@ -2,13 +2,14 @@
 title: Use example queries in Real-Time Intelligence
 description: Learn how to use example queries to get an initial look at your data in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/05/2024
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: product-kusto
 ---
 # Use example queries

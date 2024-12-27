@@ -1,10 +1,10 @@
 ---
-title: Limits and quotas in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+title: "Limits and Quotas in Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 04/24/2024
+ms.date: 12/06/2024
 ms.topic: limits-and-quotas
 ms.custom:
   - references_regions
@@ -27,65 +27,17 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 
 | | Available |
 | --- | --- |
-| **API for NoSQL** | ✔️ |
-| **API for MongoDB (RU-based)** | ❌ |
-| **API for MongoDB (vCore-based)** | ❌ |
-| **API for Apache Gremlin** | ❌ |
-| **API for Table** | ❌ |
-| **API for Apache Cassandra (RU-based)** | ❌ |
-| **Managed Instance for Apache Cassandra** | ❌ |
+| **API for NoSQL** | Yes |
+| **API for MongoDB (RU-based)** | No |
+| **API for MongoDB (vCore-based)** | No |
+| **API for Apache Gremlin** | No |
+| **API for Table** | No |
+| **API for Apache Cassandra (RU-based)** | No |
+| **Managed Instance for Apache Cassandra** | No |
 
 ### Supported regions
 
-Here's a list of regions that support mirroring for Azure Cosmos DB:
-
-:::row:::
-   :::column span="":::
-    **Asia Pacific**:
-
-    - Australia East
-    - Australia Southeast
-    - Central India
-    - East Asia
-    - Japan East
-    - Korea Central
-    - Southeast Asia
-    - South India
-   :::column-end:::
-   :::column span="":::
-   **Europe**
-
-    - North Europe
-    - West Europe
-    - France Central
-    - Germany West Central
-    - Norway East
-    - Sweden Central
-    - Switzerland North
-    - Switzerland West
-    - UK South
-    - UK West
-   :::column-end:::
-   :::column span="":::
-    **Americas**:
-
-    - Brazil South
-    - Canada Central
-    - Canada East
-    - Central US
-    - East US
-    - East US2
-    - North Central US
-    - West US
-    - West US2
-   :::column-end:::
-   :::column span="":::
-    **Middle East and Africa**:
-
-    - South Africa North
-    - UAE North
-   :::column-end:::
-:::row-end:::
+[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Account and database limitations
 
@@ -163,6 +115,6 @@ If you would like to give feedback on current limitations, features, or issues; 
 
 ## Related content
 
-- [Overview of Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db.md)
+- [Mirroring Azure Cosmos DB (Preview)](azure-cosmos-db.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml)

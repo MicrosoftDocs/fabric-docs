@@ -1,5 +1,5 @@
 ---
-title: How to integrate notebooks with org app
+title: How to integrate notebooks with Org app
 description: Learn how to create an org app, integrate notebooks, and preview contents in the app.
 ms.reviewer: snehagunda
 ms.author: jingzh
@@ -8,11 +8,12 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: Create and use notebooks
 ms.date: 07/25/2024
 ---
 
-# How to integrate notebooks with org app
+# How to integrate notebooks with Org app
 
 This article shows you how to integrate notebooks into an app. This new integration is designed to enhance your productivity by using Notebook as a rich content carrier and streamline your workflow by providing a seamless experience within [Org app](/power-bi/consumer/org-app-items/org-app-items), making it easier than ever to interact with data insights.  
 
@@ -25,7 +26,7 @@ You can now easily embed the Fabric Notebook in the Org app. With rich content l
 
 The operations applied to the embedded Notebook in Org app by consumers won't be saved, after refreshing the page, all the settings will be reset to default view.
 
-![Animated GIF of notebook in app.](media/notebook-in-app/notebook-in-app.gif)
+:::image type="content" border="true" source="media/notebook-in-app/notebook-in-app.gif" alt-text="Animated GIF of notebook in app.":::
 
 1. Create an **Org app** in the workspace new item panel with your APP name.
 

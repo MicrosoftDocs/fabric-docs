@@ -8,6 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.date: 11/15/2023
 ---
 
@@ -19,9 +20,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Message**: `Duplicate columns with same name '%name;' are detected from source. This is NOT supported by Azure Table Storage destination.`
 
-- **Cause**: Duplicated source columns might occur for one of the following reasons:
-   * You're using the database as a source and applied table joins.
-   * You have unstructured CSV files with duplicated column names in the header row.
+- **Cause**: Duplicated source columns might occur if you're using the database as a source and applied table joins, or if you have unstructured CSV files with duplicated column names in the header row.
 
 - **Recommendation**:  Double-check and fix the source columns, as necessary.
 

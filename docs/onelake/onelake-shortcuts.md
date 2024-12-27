@@ -10,8 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-  - build-2024
-ms.date: 11/12/2024
+ms.date: 12/24/2024
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
@@ -257,7 +256,7 @@ In this case, if User A has write permissions in the ADLS Gen2 account, the **Ba
 
 When creating shortcuts between multiple Fabric items within a workspace, you can visualize the shortcut relationships through the workspace lineage view. Select the **Lineage view** button (:::image type="icon" source="media\onelake-shortcuts\lineage-view-button.png":::) in the upper right corner of the Workspace explorer.
 
-:::image type="content" source="media\onelake-shortcuts\lineage-view.png" alt-text="Screenshot of the lineage view screen." lightbox="media\onelake-shortcuts\lineage-view.png":::
+:::image type="content" source="media\onelake-shortcuts\lineage-view.png" alt-text="Screenshot of the lineage view screen to visualize shortcut relationship." lightbox="media\onelake-shortcuts\lineage-view.png":::
 
 > [!NOTE]
 > The lineage view is scoped to a single workspace. Shortcuts to locations outside the selected workspace won't appear.
@@ -275,6 +274,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - More shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
 - It may take up to a minute for the Table API to recognize new shortcuts.
+- OneLake shortcuts do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints, to learn more, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
 
 ## Related content
 

@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/12/2024
+ms.date: 12/25/2024
 ---
 
 # Lakehouse tutorial: Prepare and transform data in the lakehouse

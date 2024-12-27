@@ -4,7 +4,7 @@ description: This documentation provides an in-depth comparison of connector ava
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 12/07/2023
+ms.date: 12/18/2024
 ms.custom: template-how-to, build-2023
 ---
 
