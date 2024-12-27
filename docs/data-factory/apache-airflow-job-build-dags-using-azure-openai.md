@@ -48,7 +48,7 @@ Before you can analyze the image, you need to upload it to your Lakehouse.
 1. Upload the file from your local machine to the Lakehouse's `Files` folder.
 :::image type="content" source="media/apache-airflow-jobs/airflow-upload-lakehouse.png" lightbox="media/apache-airflow-jobs/airflow-upload-lakehouse.png" alt-text="Screenshot represents file upload to Fabric Lakehouse.":::
 
-2. Copy the storage account name of your Fabric Lakehouse, it will later be used in the Apache Airflow connection to authenticate with the Lakehouse.
+2. Copy the storage account name of your Fabric Lakehouse, it is used in the Apache Airflow connection to authenticate with the Lakehouse.
 :::image type="content" source="media/apache-airflow-jobs/airflow-lakehouse-name.png" lightbox="media/apache-airflow-jobs/airflow-lakehouse-name.png" alt-text="Screenshot represents Fabric Lakehouse name.":::
 
 ### Step 2: Set up Environment Variables to authenticate with Lakehouse and Azure OpenAI.
@@ -282,7 +282,7 @@ Now, follow the steps to implement the workflow:
 2. Navigate to the DAGs tab and locate the `OpenAI_Dag_Generator` DAG. Click on it.
 3. Click on the play button and Select `Trigger DAG w/ config`.
    :::image type="content" source="media/apache-airflow-jobs/trigger-dag.png" lightbox="media/apache-airflow-jobs/trigger-dag.png" alt-text="Screenshot shows how to trigger dag using config.":::
-4. You are presented with a form showing DAG parameters. We've provided a default system prompt, seed, temperature, top_p, and max_tokens. You can modify these values as needed.
+4. You're presented with a form showing DAG parameters. We provide a default system prompt, seed, temperature, top_p, and max_tokens. You can modify these values as needed.
    :::image type="content" source="media/apache-airflow-jobs/dag-parameters.png" lightbox="media/apache-airflow-jobs/dag-parameters.png" alt-text="Screenshot represents DAG parameters.":::
 5. Click on `Trigger` button to start.
 6. After the successful DAG execution, you would see a new DAG generated with the filename `openai_dag.py` in the `dags` folder of Apache Airflow Job.
@@ -290,7 +290,7 @@ Now, follow the steps to implement the workflow:
 ### Step 5: Get Ready to execute the newly generated DAG
 1. Open the Apache Airflow Job UI.
 2. The newly generated DAG is saved in the DAGs folder as `openai_dag.py`.
-   :::image type="content" source="media/apache-airflow-jobs/new-file-openai-dag.png" lightbox="media/apache-airflow-jobs/new-file-openai-dag.png" alt-text="Screenshot represents new dag generated with openAI dag generator.":::
+   :::image type="content" source="media/apache-airflow-jobs/new-file-openai-dag.png" lightbox="media/apache-airflow-jobs/new-file-openai-dag.png" alt-text="Screenshot represents new dag generated with OpenAI dag generator.":::
 3. Open the DAG file to review the code. You can edit it as needed and configure the necessary connections for the operators.
 4. Once the connections are set, you can trigger the DAG to execute the workflow.
    :::image type="content" source="media/apache-airflow-jobs/openai-resultant-dag.png" lightbox="media/apache-airflow-jobs/openai-resultant-dag.png" alt-text="Screenshot represents resultant dag from OpenAI.":::
