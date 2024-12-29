@@ -1,31 +1,32 @@
 ---
-title: "Data warehouse tutorial: Create tables with T-SQL in a Warehouse in Microsoft Fabric"
-description: "In this tutorial, you will create tables in the warehouse by using T-SQL."
+title: "Data warehouse tutorial: Create tables with T-SQL in a warehouse"
+description: "In this tutorial, learn how to create tables in the warehouse with T-SQL."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 11/10/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Create tables with T-SQL in a Warehouse in Microsoft Fabric
+# Tutorial: Create tables with T-SQL in a warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-In this tutorial, you will create tables in the warehouse by using T-SQL.
+In this tutorial, learn how to create tables in the warehouse with T-SQL.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
 >
-> 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
-> 1. [Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a warehouse](tutorial-ingest-data.md)
 
 ## Create tables
 
-In this task, you will create tables in the warehouse by using T-SQL.
+In this task, learn how to create tables in the warehouse with T-SQL.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
@@ -35,7 +36,7 @@ In this task, you will create tables in the warehouse by using T-SQL.
 
    :::image type="content" source="media/tutorial-create-tables/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." border="false":::
 
-1. In the query editor, paste the following code. The code drops the `dimension_city` table (if it exists), and the creates the table. It also drops the `fact_sale` table (if it exists), and creates the table.
+1. In the query editor, paste the following code. The code drops the `dimension_city` table (if it exists), and then creates the dimension table. It also drops the `fact_sale` table (if it exists), and creates the fact table.
 
    ```sql
     --Drop the dimension_city table if it already exists.
@@ -101,17 +102,19 @@ In this task, you will create tables in the warehouse by using T-SQL.
 
    :::image type="content" source="media/tutorial-create-tables/rename-query-option.png" alt-text="Screenshot of the Rename option available when right-clicking the query tab." border="false":::
 
-1. In the **Rename** window, replace the name with `Create Tables`.
+1. In the **Rename** window, in the **Name** box, replace the default name with `Create Tables`.
 
    :::image type="content" source="media/tutorial-create-tables/rename-script.png" alt-text="Screenshot of the Rename window, showing the script name entered." border="false":::
 
 1. Select **Rename**.
 
-1. Verify that the two new tables are listed in the **Explorer** pane. The `dimension_customer` table was created in the [previous tutorial](tutorial-ingest-data.md).
+1. If necessary, in the **Explorer** pane, expand the **Schemas** folder, the `dbo` schema, and the **Tables** folder.
+
+1. Verify that the two new tables are listed. The `dimension_customer` table was created in the [previous tutorial](tutorial-ingest-data.md).
 
    :::image type="content" source="media/tutorial-create-tables/explorer-verify.png" alt-text="Screenshot of the Explorer pane, showing where to find your tables and newly created query." border="false":::
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Load data with T-SQL into a Warehouse in Microsoft Fabric](tutorial-load-data.md)
+> [Tutorial: Load data with T-SQL into a warehouse](tutorial-load-data.md)

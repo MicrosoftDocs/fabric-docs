@@ -1,10 +1,10 @@
 ---
 title: "Data warehouse tutorial: Ingest data into a Warehouse"
-description: "In this tutorial, you will ingest data from Microsoft Azure Storage into a Fabric warehouse to create tables."
+description: "In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 11/10/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -15,25 +15,23 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-In this tutorial, you will ingest data from Microsoft Azure Storage into a Fabric warehouse to create tables.
+In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
 >
-> 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
+> 1. [Create a workspace](tutorial-create-workspace.md)
 > 1. [Create a Warehouse](tutorial-create-warehouse.md)
 
 ## Ingest data
 
-In this task, you will ingest data into the warehouse to create tables.
+In this task, learn how to ingest data into the warehouse to create tables.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
 1. In the workspace landing pane, select **+ New Item** to display the full list of available item types.
 
 1. From the list, in the **Get data** section, select the **Data pipeline** item type.
-
-   :::image type="content" source="media/tutorial-ingest-data/select-data-pipeline-item-type.png" alt-text="Screenshot of the New item panel, highlighting the Data pipeline item type." border="false":::
 
 1. In the **New pipeline** window, in the **Name** box, enter `Load Customer Data`.
 
@@ -57,19 +55,15 @@ In this task, you will ingest data into the warehouse to create tables.
 
    :::image type="content" source="media/tutorial-ingest-data/general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name." border="false":::
 
-1. On the **Source** page, in the **Connection** dropdown, select **More** in order to reveal all of the data sources you can choose from, including data sources in OneLake data hub.
+1. On the **Source** page, in the **Connection** dropdown, select **More** in order to reveal all of the data sources you can choose from, including data sources in [OneLake catalog](../governance/onelake-catalog.md).
 
-1. Select **+ New Item** to create a new data source.
+1. Select **+ New** to create a new data source.
 
 1. Search for, and then select, **Azure Blobs**.
 
-1. On the **Connect data source** page, complete the following settings:
+1. On the **Connect data source** page, in the **Account name or URL** box, enter `https://fabrictutorialdata.blob.core.windows.net/sampledata/`.
 
-   1. In the **Account name or URL** box, enter `https://fabrictutorialdata.blob.core.windows.net/sampledata/`.
-
-   1. Notice that the **Connection name** box is automatically populated, but for clarity, replace the text with `Wide World Importers Public Sample`.
-
-   1. In the **Authentication kind** dropdown, select **Anonymous**.
+1. Notice that the **Connection name** dropdown is automatically populated and that the authentication kind is set to **Anonymous**.
 
    :::image type="content" source="media/tutorial-ingest-data/new-connection-settings.png" alt-text="Screenshot of the Connect to data source window showing all settings done." border="false":::
 
@@ -101,7 +95,7 @@ In this task, you will ingest data into the warehouse to create tables.
 
    :::image type="content" source="media/tutorial-ingest-data/destination-page-settings.png" alt-text="Screenshot of the Destination page, highlighting where the changes made in the previous steps." lightbox="media/tutorial-ingest-data/destination-page-settings.png" border="false":::
 
-1. On the ribbon, select **Run**.
+1. On the **Home** ribbon, select **Run**.
 
 1. In the **Save and run?** dialog, select **Save and run** to have the pipeline load the `dimension_customer` table.
 
@@ -114,4 +108,4 @@ In this task, you will ingest data into the warehouse to create tables.
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create tables with T-SQL in a Warehouse in Microsoft Fabric](tutorial-create-tables.md)
+> [Tutorial: Create tables with T-SQL in a Warehouse](tutorial-create-tables.md)

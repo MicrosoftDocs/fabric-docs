@@ -1,10 +1,10 @@
 ---
-title: "Data warehouse tutorial: Clone a table with T-SQL in a Warehouse in Microsoft Fabric"
-description: "In this tutorial, you will clone a table by using T-SQL."
+title: "Data warehouse tutorial: Clone a table with T-SQL in a Warehouse"
+description: "In this tutorial, learn how to clone a table with T-SQL."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: ajagadish, prlangad
-ms.date: 11/10/2024
+ms.reviewer: scbradl, prlangad
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
@@ -12,21 +12,29 @@ ms.custom:
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 
-# Tutorial: Clone a table with T-SQL in a Warehouse in Microsoft Fabric
+# Tutorial: Clone a table with T-SQL in a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-In this tutorial, you will clone a table by using T-SQL. Specifically, you will create a [table clone](clone-table.md) by using the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL statement.
+In this tutorial, learn how to clone a table with T-SQL. Specifically, you learn how to create a [table clone](clone-table.md) with the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL statement.
+
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
+> 1. [Create tables with T-SQL in a Warehouse](tutorial-create-tables.md)
 
 A cloned table provides several benefits:
 
 - You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL statement to create a table clone at the _current point-in-time_ or at a _previous point-in-time_.
 - You can clone tables in the Fabric portal. For examples, see [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
-- You can query data in a warehouse as it appeared in the past by using a `SELECT` statement with the `OPTION` clause. For more information, see [Query data as it existed in the past](time-travel.md).
+- You can query data in a Warehouse as it appeared in the past by using a `SELECT` statement with the `OPTION` clause. For more information, see [Query data as it existed in the past](time-travel.md).
 
 ## Clone a table within the same schema
 
-In this task, you will clone a table within the same schema in a warehouse.
+In this task, learn how to clone a table within the same schema in the warehouse.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
@@ -52,15 +60,18 @@ In this task, you will clone a table within the same schema in a warehouse.
 
    :::image type="content" source="media/tutorial-clone-table/explorer-select-table.png" alt-text="Screenshot of the Explorer pane, highlighting the dimension city 1 table." border="false":::
 
-1. To create a table clone as of a _past point in time_, in the query editor, paste the following code **to replace the existing statements**. The code creates a clone of the `dimension_city` table and the `fact_sale` table at certain points in time.
+1. To create a table clone as of a _past point in time_, in the query editor, paste the following code **to replace the existing statements**. The code creates a clone of the `dimension_city` table and the `fact_sale` table at a certain point in time.
 
    ```sql
     --Create a clone of the dbo.dimension_city table at a specific point in time.   
-   CREATE TABLE [dbo].[dimension_city2] AS CLONE OF [dbo].[dimension_city] AT '2024-04-29T23:51:48.923';
+   CREATE TABLE [dbo].[dimension_city2] AS CLONE OF [dbo].[dimension_city] AT '2025-01-01T10:00:00.000';
 
     --Create a clone of the dbo.fact_sale table at a specific point in time.
-   CREATE TABLE [dbo].[fact_sale2] AS CLONE OF [dbo].[fact_sale] AT '2024-04-29T23:51:48.923';
+   CREATE TABLE [dbo].[fact_sale2] AS CLONE OF [dbo].[fact_sale] AT '2025-01-01T10:00:00.000';
    ```
+
+    > [!IMPORTANT]
+    > You should replace the timestamp with a past date that is within 30 days of today, but after the date and time (in Coordinated Universal Time—UTC) that you completed the [Ingest data into a Warehouse](tutorial-ingest-data.md) tutorial.
 
 1. Run the query.
 
@@ -70,7 +81,7 @@ In this task, you will clone a table within the same schema in a warehouse.
 
 ## Clone a table across schemas within the same warehouse
 
-In this task, you will clone a table across schemas within the same warehouse.
+In this task, learn how to clone a table across schemas within the same warehouse.
 
 1. To create a new query, on the **Home** ribbon, select **New SQL query**.
 
@@ -92,15 +103,18 @@ In this task, you will clone a table across schemas within the same warehouse.
 
 1. When execution completes, preview the data loaded into the `dimension_city1` table in the `dbo1` schema.
 
-1. To create a table clone as of a _previous point in time_, in the query editor, paste the following code **to replace the existing statements**. The code create a clone of the `dimension_city` table and the `fact_sale` table at certain points in time in the new schema.
+1. To create table clones as of a _previous point in time_, in the query editor, paste the following code **to replace the existing statements**. The code create a clone of the `dimension_city` table and the `fact_sale` table at certain points in time in the new schema.
 
     ```sql
     --Create a clone of the dbo.dimension_city table in the dbo1 schema.
-    CREATE TABLE [dbo1].[dimension_city2] AS CLONE OF [dbo].[dimension_city] AT '2024-04-29T23:51:48.923';
+    CREATE TABLE [dbo1].[dimension_city2] AS CLONE OF [dbo].[dimension_city] AT '2025-01-01T10:00:00.000';
 
     --Create a clone of the dbo.fact_sale table in the dbo1 schema.
-    CREATE TABLE [dbo1].[fact_sale2] AS CLONE OF [dbo].[fact_sale] AT '2024-04-29T23:51:48.923';
+    CREATE TABLE [dbo1].[fact_sale2] AS CLONE OF [dbo].[fact_sale] AT '2025-01-01T10:00:00.000';
    ```
+
+    > [!IMPORTANT]
+    > You should replace the timestamp with a past date that is within 30 days of today, but after the date and time (in UTC) that you completed the [Ingest data into a Warehouse](tutorial-ingest-data.md) tutorial.
 
 1. Run the query.
 
@@ -111,7 +125,7 @@ In this task, you will clone a table across schemas within the same warehouse.
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Transform data with a stored procedure in a Warehouse in Microsoft Fabric](tutorial-transform-data.md)
+> [Tutorial: Transform data with a stored procedure in a Warehouse](tutorial-transform-data.md)
 
 ## Related content
 

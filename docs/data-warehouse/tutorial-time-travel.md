@@ -1,29 +1,29 @@
 ---
-title: "Data warehouse tutorial: Time travel with T-SQL in a Warehouse in Microsoft Fabric"
-description: "In this tutorial, you will use T-SQL statements to time travel in a warehouse table."
+title: "Data warehouse tutorial: Time travel with T-SQL in a Warehouse"
+description: "In this tutorial, learn how to use T-SQL statements to time travel in a warehouse table."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 11/10/2024
+ms.date: 12/29/2024
 ms.custom:
   - build-2024
 ms.topic: how-to
 ---
 
-# Tutorial: Time travel with T-SQL in a Warehouse in Microsoft Fabric
+# Tutorial: Time travel with T-SQL in a Warehouse
 
-In this tutorial, you will use T-SQL statements to _[time travel](time-travel.md)_ in a warehouse table. Time travel means to query data as it existed at a specific point in time, which is made automatically possible by Fabric Data Warehouse [data retention](time-travel.md#data-retention).
+In this tutorial, learn how to use T-SQL statements to _[time travel](time-travel.md)_ in a warehouse table. Time travel means to query data as it existed at a specific point in time, which is made automatically possible by Fabric Warehouse [data retention](time-travel.md#data-retention).
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
 >
-> 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
-> 1. [Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
-> 1. [Ingest data into a Warehouse in Microsoft Fabric](tutorial-ingest-data.md)
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
 
 ## Work with time travel queries
 
-In this task, you will create a view of the top 10 customers by sales. You will use the view in the next task to run time-travel queries.
+In this task, learn how to create a view of the top 10 customers by sales. You will use the view in the next task to run time-travel queries.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
@@ -31,16 +31,16 @@ In this task, you will create a view of the top 10 customers by sales. You will 
 
    :::image type="content" source="media/tutorial-time-travel/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option on the ribbon." border="false":::
 
-1. In the query editor, paste the following code and read the comment.
+1. In the query editor, paste the following code. The code creates a view named `Top10Customers`. The view uses a query to retrieve the top 10 customers based on sales.
 
     ```sql
     --Create the Top10Customers view.
-    CREATE VIEW dbo.Top10Customers
+    CREATE VIEW [dbo].[Top10Customers]
     AS
     SELECT TOP(10)
         FS.[CustomerKey],
         DC.[Customer],
-        SUM(FS.TotalIncludingTax) AS TotalSalesAmount
+        SUM(FS.[TotalIncludingTax]) AS [TotalSalesAmount]
     FROM
         [dbo].[dimension_customer] AS DC
         INNER JOIN [dbo].[fact_sale] AS FS
@@ -49,21 +49,18 @@ In this task, you will create a view of the top 10 customers by sales. You will 
         FS.[CustomerKey],
         DC.[Customer]
     ORDER BY
-        TotalSalesAmount DESC;
+        [TotalSalesAmount] DESC;
     ```
 
 1. Run the query.
 
-1. When execution completes, rename the query as `Create Top 10 View`.
+1. When execution completes, rename the query as `Create Top 10 Customer View`.
 
-1. In the **Explorer** pane, from inside the **Views** folder, verify that the `Top10Customers` view exists.
+1. In the **Explorer** pane, from inside the **Views** folder for the `dbo` schema, verify that the `Top10Customers` view exists.
 
    :::image type="content" source="media/tutorial-time-travel/explorer-view.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created view." border="false":::
 
 1. Create a new query to work with time travel queries.
-
-> [!NOTE]
-> Currently, you can only use the Coordinated Universal Time (UTC) time zone for time travel.
 
 1. In the query editor, paste the following code. The code updates the `TotalIncludingTax` value for a single fact row to deliberately inflate its total sales. It also retrieves the current timestamp.
 
@@ -78,15 +75,18 @@ In this task, you will create a view of the top 10 customers by sales. You will 
     SELECT CURRENT_TIMESTAMP;
    ```
 
+    > [!NOTE]
+    > Currently, you can only use the Coordinated Universal Time (UTC) time zone for time travel.
+
 1. Run the query.
 
 1. When execution completes, rename the query as `Time Travel`.
 
-1. In the **Results** pane, copy the timestamp value to the clipboard.
+1. In the **Results** pane, notice the timestamp value.
 
    :::image type="content" source="media/tutorial-time-travel/results-copy-timestamp.png" alt-text="Screenshot of the Results pane, highlighting the value to copy." border="false":::
 
-1. To retrieve the top 10 customers _as of now_, in the query editor, paste the following statement **to replace the existing statements**. The code retrieves the top 10 customers by using the `FOR TIMESTAMP AS OF` query hint.
+1. To retrieve the top 10 customers _as of now_, in a new query editor, paste the following statement. The code retrieves the top 10 customers by using the `FOR TIMESTAMP AS OF` query hint.
 
    ```sql
     --Retrieve the top 10 customers as of now.
@@ -95,7 +95,13 @@ In this task, you will create a view of the top 10 customers by sales. You will 
     OPTION (FOR TIMESTAMP AS OF 'YOUR_TIMESTAMP');
    ```
 
-1. In the query, replace `YOUR_TIMESTAMP` with the timestamp you copied to the clipboard.
+1. Rename the query as `Time Travel Now`.
+
+1. Return to the `Time Travel` query, and then use the **Copy** command to copy the query results.
+
+   :::image type="content" source="media/tutorial-time-travel/copy-results-command.png" alt-text="Screenshot of the Copy command, highlighting Copy Query results." border="false":::
+
+1. Return to the `Time Travel Now` query, and then replace `YOUR_TIMESTAMP` with the timestamp you copied to the clipboard.
 
 1. Run the query, and notice that the second top `CustomerKey` value is 49 for `Tailspin Toys (Muir, MI)`.
 
@@ -109,7 +115,7 @@ In this task, you will create a view of the top 10 customers by sales. You will 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a query with the visual query builder in a Warehouse in Microsoft Fabric](tutorial-visual-query.md)
+> [Tutorial: Create a query with the visual query builder in a Warehouse](tutorial-visual-query.md)
 
 ## Related content
 

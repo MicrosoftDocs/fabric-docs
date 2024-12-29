@@ -1,10 +1,10 @@
 ---
 title: "Data warehouse tutorial: Create a Warehouse"
-description: In this second tutorial step, after you've created your workspace, learn how to create your first Warehouse in Microsoft Fabric.
+description: "In this tutorial, learn how to create a Warehouse in Microsoft Fabric."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 11/10/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -15,14 +15,14 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In this tutorial, you will create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+In this tutorial, learn how to create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 > [!NOTE]
-> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete the [Create a Microsoft Fabric workspace](tutorial-create-workspace.md) tutorial.
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete the [Create a workspace](tutorial-create-workspace.md) tutorial.
 
 ## Create a warehouse
 
-In this task, you will create a warehouse.
+In this task, learn how to create a warehouse.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
@@ -41,4 +41,4 @@ In this task, you will create a warehouse.
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Ingest data into a Warehouse in Microsoft Fabric](tutorial-ingest-data.md)
+> [Tutorial: Ingest data into a Warehouse](tutorial-ingest-data.md)

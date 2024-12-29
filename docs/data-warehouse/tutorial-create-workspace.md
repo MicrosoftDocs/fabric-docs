@@ -1,10 +1,10 @@
 ---
 title: "Data warehouse tutorial: Create a workspace"
-description: "In this first tutorial, you will create a workspace that you will use to support the other tutorials in the series."
+description: "In this first tutorial, learn how to create a workspace to support the other tutorials in the series."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 11/10/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -12,15 +12,15 @@ ms.custom:
   - ignite-2024
 ---
 
-# Tutorial: Create a Microsoft Fabric workspace
+# Tutorial: Create a workspace
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In this first tutorial, you will create a workspace that you will use to support the [other tutorials in the series](tutorial-introduction.md#data-warehouse-end-to-end-scenario).
+In this first tutorial, learn how to create a workspace to support the [other tutorials in the series](tutorial-introduction.md#data-warehouse-end-to-end-scenario).
 
 ## Create a workspace
 
-In this task, you will create a workspace. A workspace contains the items needed for data warehousing and can include Data Factory pipelines, the data warehouse, Power BI semantic models, and reports.
+In this task, learn how to create a workspace. A workspace contains the items needed for data warehousing and can include Data Factory pipelines, the data warehouse, Power BI semantic models, and reports.
 
 1. Sign in to [Power BI](https://powerbi.com).
 
@@ -36,7 +36,7 @@ In this task, you will create a workspace. A workspace contains the items needed
 
 1. Choose either the **Fabric capacity** or **Trial** license mode.
 
-1. Choose a premium capacity you have access to.
+1. In the **Capacity** dropdown, choose a premium capacity you have access to.
 
 1. Select **Apply** to create and open the new workspace.
 
@@ -46,4 +46,4 @@ In this task, you will create a workspace. A workspace contains the items needed
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
+> [Tutorial: Create a Warehouse](tutorial-create-warehouse.md)

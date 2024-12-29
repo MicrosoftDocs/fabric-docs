@@ -1,10 +1,10 @@
 ---
 title: "Data warehouse tutorial: Create a Direct Lake semantic model and Power BI report"
-description: "In this tutorial, you will create a Direct Lake semantic model and a Power BI report."
+description: "In this tutorial, learn how to create a Direct Lake semantic model and a Power BI report."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 11/10/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -20,13 +20,13 @@ In this tutorial, you will create a Direct Lake semantic model and a Power BI re
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
 >
-> 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
+> 1. [Create a workspace](tutorial-create-workspace.md)
 > 1. [Create a Warehouse](tutorial-create-warehouse.md)
 > 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
 
 ## Create a semantic model
 
-In this task, you will create a Direct Lake semantic model based the `Wide World Importers` warehouse.
+In this task, learn how to create a Direct Lake semantic model based the `Wide World Importers` warehouse.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
@@ -42,13 +42,17 @@ In this task, you will create a Direct Lake semantic model based the `Wide World
 
 1. In the **New semantic model** window, in the **Direct Lake semantic model name** box, enter `Sales Model`.
 
-1. Expand the `dbo` > **Tables**, and then check the `dimension_city` and `fact_sale` tables.
+1. Expand the `dbo` schema, expand the **Tables** folder, and then check the `dimension_city` and `fact_sale` tables.
 
    :::image type="content" source="media/tutorial-power-bi-report/new-semantic-model-settings.png" alt-text="Screenshot of the New semantic model windows, highlighting the name box, and the selection of the dimension city and fact sale tables." lightbox="media/tutorial-power-bi-report/new-semantic-model-settings.png" border="false":::
 
 1. Select **Confirm**.
 
-1. To open the model designer, return to the workspace landing page, and then select the `Sales Model` semantic model.
+1. To open the semantic model, return to the workspace landing page, and then select the `Sales Model` semantic model.
+
+1. To open the model designer, on the menu, select **Open data model**.
+
+   :::image type="content" source="media/tutorial-power-bi-report/open-data-model.png" alt-text="Screenshot of the menu, highlighting the Open data model option." border="false":::
 
 1. To create a relationship, in the model designer, on the **Home** ribbon, select **Manage relationships**.
 
@@ -58,7 +62,7 @@ In this task, you will create a Direct Lake semantic model based the `Wide World
 
    :::image type="content" source="media/tutorial-power-bi-report/new-relationship-window-new-relationship.png" alt-text="Screenshot of the New relationship window, highlighting the + New relationship button." border="false":::
 
-1. In the **New relationship window**, use the following steps to create the relationship:
+1. In the **New relationship window**, complete the following steps to create the relationship:
 
     1. In the **From table** dropdown, select the `dimension_city` table.
 
@@ -78,7 +82,7 @@ In this task, you will create a Direct Lake semantic model based the `Wide World
 
 ## Create a Power BI report
 
-In this task, you will create a Power BI report based on the semantic model you created in the first task.
+In this task, learn how to create a Power BI report based on the semantic model you created in the [first task](#create-a-semantic-model).
 
 1. On the **Home** ribbon, select **New report**.
 
@@ -96,7 +100,7 @@ In this task, you will create a Power BI report based on the semantic model you 
 
    :::image type="content" source="media/tutorial-power-bi-report/report-visual-layout-1.png" alt-text="Diagram of the report page layout showing the chart visual placed at the top-left region of the report page." border="false":::
 
-1. Select anywhere on the blank canvas so the column chart visual is no longer selected.
+1. Select anywhere on the blank canvas to ensure that the column chart visual is no longer selected.
 
 1. Complete the following steps to create a map visual:
 
@@ -116,7 +120,7 @@ In this task, you will create a Power BI report based on the semantic model you 
 
    :::image type="content" source="media/tutorial-power-bi-report/report-visual-layout-2.png" alt-text="Diagram of the report page layout showing the chart visual placed at the bottom-left region of the report page." border="false":::
 
-1. Select anywhere on the blank canvas so that the map visual is no longer selected.
+1. Select anywhere on the blank canvas to ensure that the map visual is no longer selected.
 
 1. Complete the following steps to create a table visual:
 

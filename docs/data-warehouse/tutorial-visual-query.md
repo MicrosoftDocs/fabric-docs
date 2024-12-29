@@ -1,32 +1,32 @@
 ---
-title: "Data warehouse tutorial: Create a query with the visual query builder in a Warehouse in Microsoft Fabric"
-description: "In this tutorial, you will create a query with the visual query builder."
+title: "Data warehouse tutorial: Create a query with the visual query builder in a Warehouse"
+description: "In this tutorial, learn how to create a query with the visual query builder."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 11/10/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Create a query with the visual query builder in a Warehouse in Microsoft Fabric
+# Tutorial: Create a query with the visual query builder in a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In this tutorial, you will create a query with the visual query builder.
+In this tutorial, learn how to create a query with the visual query builder.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
 >
-> 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
-> 1. [Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
-> 1. [Ingest data into a Warehouse in Microsoft Fabric](tutorial-ingest-data.md)
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
 
 ## Use the visual query builder
 
-In this task, you will create a query with the visual query builder.
+In this task, learn how to create a query with the visual query builder.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
@@ -34,7 +34,7 @@ In this task, you will create a query with the visual query builder.
 
    :::image type="content" source="media/tutorial-visual-query/ribbon-new-visual-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New visual query option." border="false":::
 
-1. From the **Explorer** pane, drag the `fact_sale` table to the visual query canvas.
+1. From the **Explorer** pane, from the `dbo` schema **Tables** folder, drag the `fact_sale` table to the visual query canvas.
 
    :::image type="content" source="media/tutorial-visual-query/drag-drop-table.png" alt-text="Screenshot of the Explorer pane, highlighting the fact sale table to drag to the visual query canvas." border="false":::
 
@@ -44,7 +44,7 @@ In this task, you will create a query with the visual query builder.
 
 1. In the **Keep top rows** window, enter `10000`, and then select **OK**.
 
-1. From the **Explorer** pane, drag the `dimension_city` table to the visual query canvas.
+1. From the **Explorer** pane, from the `dbo` schema **Tables** folder, drag the `dimension_city` table to the visual query canvas.
 
 1. To join the tables, on the query designer ribbon, select **Combine** > **Merge queries as new**.
 
@@ -54,11 +54,11 @@ In this task, you will create a query with the visual query builder.
 
    1. In the **Left table for merge** dropdown, select `dimension_city`.
 
-   1. In the grid below, select the `CityKey` column.
+   1. In the following grid, select the `CityKey` column.
 
    1. In the **Right table for merge** dropdown, select `fact_sale`.
 
-   1. In the grid below, select the `CityKey` column.
+   1. In the following grid, select the `CityKey` column.
 
    1. In the **Join kind** section, select **Inner**.
 
@@ -66,7 +66,7 @@ In this task, you will create a query with the visual query builder.
 
 1. Select **OK**.
 
-1. In the data preview pane (located along the bottom of the query designer), scroll to the right to locate the `fact_sale` column.
+1. In the data preview pane, locate the `fact_sale` column (the last column).
 
    :::image type="content" source="media/tutorial-visual-query/data-preview-fact-sale-column.png" alt-text="Screenshot of the data preview pane, highlighting the fact sale column." border="false":::
 
@@ -115,7 +115,7 @@ In this task, you will create a query with the visual query builder.
 
    :::image type="content" source="media/tutorial-visual-query/data-preview-final-result.png" alt-text="Screenshot of the final query result, showing three grouping columns, and three summarized columns." border="false":::
 
-1. To rename the query, right-click on the query tab, and then select **Rename**.
+1. Rename the query, right-click on the query tab, and then select **Rename**.
 
    :::image type="content" source="media/tutorial-create-tables/rename-query-option.png" alt-text="Screenshot of the Refresh option available when right-clicking the query editor tab." border="false":::
 
@@ -124,4 +124,4 @@ In this task, you will create a query with the visual query builder.
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Use a notebook to analyze data in a Warehouse in Microsoft Fabric](tutorial-analyze-data-notebook.md)
+> [Tutorial: Use a notebook to analyze data in a Warehouse](tutorial-analyze-data-notebook.md)

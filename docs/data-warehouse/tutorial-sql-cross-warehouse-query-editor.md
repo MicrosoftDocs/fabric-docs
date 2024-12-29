@@ -1,10 +1,10 @@
 ---
-title: "Data warehouse tutorial: certain points in time."
-description: "In this tutorial, you will use the SQL query editor to write cross-warehouse query."
+title: "Data warehouse tutorial: Create a cross-warehouse query in a Warehouse"
+description: "In this tutorial, learn how to work with the SQL query editor to write cross-warehouse query."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 11/10/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -15,19 +15,19 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In this tutorial, you will use the SQL query editor to write cross-warehouse query.
+In this tutorial, learn how to work with the SQL query editor to write cross-warehouse query.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
 >
-> 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
-> 1. [Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
-> 1. [Ingest data into a Warehouse in Microsoft Fabric](tutorial-ingest-data.md)
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
 > 1. [Analyze data with a notebook](tutorial-analyze-data-notebook.md)
 
 ## Add a warehouse to the Explorer pane
 
-In this task, you will use the SQL query editor to write cross-warehouse query.
+In this task, learn how to work with the SQL query editor to write cross-warehouse query.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
@@ -37,7 +37,7 @@ In this task, you will use the SQL query editor to write cross-warehouse query.
 
     :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="Screenshot of the Explorer pane, highlighting the + Warehouse button." border="false":::
 
-1. In the **OneLake catalog**, select the `Shortcut_Exercise` SQL analytics endpoint. The SQL analytics endpoint was created in the [Use a notebook to analyze data in a Warehouse in Microsoft Fabric](tutorial-analyze-data-notebook.md) tutorial.
+1. In the **OneLake catalog** window, select the `Shortcut_Exercise` SQL analytics endpoint. You created the SQL analytics endpoint in the [Analyze data with a notebook](tutorial-analyze-data-notebook.md) tutorial.
 
     :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="Screenshot of the OneLake catalog window, highlighting the SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" border="false":::
 
@@ -47,7 +47,7 @@ In this task, you will use the SQL query editor to write cross-warehouse query.
 
 ## Run the cross-warehouse query
 
-In this task, you will run the cross-warehouse query. Specifically, you will run a query that joins the `Wide World Importers` warehouse to the `Shortcut_Exercise` SQL analytics endpoint.
+In this task, learn how to run the cross-warehouse query. Specifically, you will run a query that joins the `Wide World Importers` warehouse to the `Shortcut_Exercise` SQL analytics endpoint.
 
 > [!NOTE]
 > A cross-database query uses three-part naming of _database.schema.table_ to reference objects.
@@ -87,4 +87,4 @@ In this task, you will run the cross-warehouse query. Specifically, you will run
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Direct Lake semantic model and Power BI report in Microsoft Fabric](tutorial-power-bi-report.md)
+> [Tutorial: Create a Direct Lake semantic model and Power BI report](tutorial-power-bi-report.md)
