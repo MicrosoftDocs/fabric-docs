@@ -45,7 +45,7 @@ For an environment, you can choose from various [Spark runtimes](runtime.md), ea
 
 ### Manage libraries
 
-Except for the built-in libraries provided by each Spark runtime, the Fabric environment allows you to install libraries from public sources or upload custom libraries built by you or your organization. Once you successfully install the libraries, they're available in your Spark sessions. For more information, see [Library management in Fabric environments](environment-manage-library.md).
+Except for the built-in libraries provided by each Spark runtime, the Fabric environment allows you to install libraries from public sources or upload custom libraries built by you or your organization. Once you successfully install the libraries, they're available in your Spark sessions. For more information, see [Library management in Fabric environments](environment-manage-library.md). You can also find the best practices of managing libraries in Microsoft Fabric.[Manage Apache Spark libraries in Microsoft Fabric](library-management.md)
 
 ### Resources
 

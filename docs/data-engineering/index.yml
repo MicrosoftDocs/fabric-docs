@@ -62,6 +62,8 @@ landingContent:
             url: lakehouse-notebook-explore.md
           - text: Visualize notebooks
             url: notebook-visualization.md
+          - text: Use Python experience on Notebook
+            url: using-python-experience-on-notebook.md
           - text: Notebooks source control and deployment
             url: notebook-source-control-deployment.md
           - text: Use NotebookUtils in notebook
@@ -124,6 +126,24 @@ landingContent:
             url: tutorial-lakehouse-clean-up.md
 
   # Card 
+  - title: VS Code integration
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Use notebooks from VS Code
+            url: author-notebook-with-vs-code.md
+          - text: Use container image from VS Code
+            url: set-up-vs-code-extension-with-docker-image.md
+          - text: Use notebooks from VS Code with resource
+            url: author-notebook-resource-with-vs-code.md
+          - text: Use Spark job definitions from VS Code
+            url: author-sjd-with-vs-code.md
+          - text: Explore lakehouse from VS Code
+            url: explore-lakehouse-with-vs-code.md
+          - text: Develop notebook from VS Code web experience
+            url: author-notebook-with-vs-code-web.md
+
+  # Card 
   - title: Apache Spark
     linkLists:
       - linkListType: concept
@@ -154,23 +174,7 @@ landingContent:
             url: microsoft-spark-utilities.md
           - text: Configure capacity settings
             url: capacity-settings-management.md
-  # Card 
-  - title: VS Code integration
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Use notebooks from VS Code
-            url: author-notebook-with-vs-code.md
-          - text: Use container image from VS Code
-            url: set-up-vs-code-extension-with-docker-image.md
-          - text: Use notebooks from VS Code with resource
-            url: author-notebook-resource-with-vs-code.md
-          - text: Use Spark job definitions from VS Code
-            url: author-sjd-with-vs-code.md
-          - text: Explore lakehouse from VS Code
-            url: explore-lakehouse-with-vs-code.md
-          - text: Develop notebook from VS Code web experience
-            url: author-notebook-with-vs-code-web.md
+
   # Card 
   - title: Get started with environment
     linkLists:
@@ -192,3 +196,18 @@ landingContent:
             url: environment-manage-resources.md
           - text: Migrate the existing workspace libraries and Spark properties to an environment
             url: environment-workspace-migration.md   
+# Card 
+  - title: Livy API
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the Livy API?
+            url: api-livy-overview.md
+      - linkListType: get-started
+        links:
+          - text: Create and run Spark jobs using the Livy API
+            url: get-started-api-livy.md
+          - text: Submit Livy API session jobs
+            url: get-started-api-livy-session.md
+          - text: Submit Livy API batch jobs
+            url: get-started-api-livy-batch.md

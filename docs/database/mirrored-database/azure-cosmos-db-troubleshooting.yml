@@ -21,10 +21,6 @@ sections:
   - name: General questions
     questions:
       - question: |
-          I can't see the option for mirroring in the Fabric portal's "Create" or "Data Warehouse" page. How do I enable mirroring?
-        answer: |
-          Your organization admin must enable the mirroring feature to see the mirroring option in your Fabric workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md).
-      - question: |
           Mirroring is failing when loading the databases with an "SQLAPIendpoint" error. How do I resolve this error?
         answer: |
           This error typically indicates that your Azure Cosmos DB account key is no longer valid for the connection you selected. Once the connection credentials are updated with a valid account key, set up mirroring again.
@@ -44,14 +40,6 @@ sections:
           No, Continuous backup must be enabled for Azure Cosmos DB accounts that are intended to be a mirroring source.
 
           If there's an error message when enabling continuous backup for an Azure Cosmos DB account, the account might have limitations blocking the feature. For example, if you previously deleted analytical store for the account, the account can't support continuous backup. In this scenario, the only remaining option is to use a new Azure Cosmos DB account for mirroring.
-      - question: |
-          Why am I getting "trial capacity" errors when I select "Create a mirrored Azure Cosmos DB database"?
-        answer: |
-          You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
-      - question: |
-          Why am I getting "internal server error" when I select "Create a mirrored Azure Cosmos DB database"?
-        answer: |
-          You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
       - question: |
           Why is replication not working and I'm getting "internal server error" when I select "monitor replication"?
         answer: |

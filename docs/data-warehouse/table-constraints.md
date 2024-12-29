@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - ignite-2024
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric
@@ -72,6 +73,6 @@ ALTER TABLE ForeignKeyTable ADD CONSTRAINT FK_ForeignKeyTablec1 FOREIGN KEY (c1)
 - [Data types in Microsoft Fabric](data-types.md)
 - [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
 - [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)
-- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](data-warehousing.md#synapse-data-warehouse)
+- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](data-warehousing.md#fabric-data-warehouse)
 - [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md)
 - [Query a warehouse](query-warehouse.md)

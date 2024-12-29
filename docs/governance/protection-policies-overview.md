@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 11/03/2024
+ms.date: 11/21/2024
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 
 
@@ -16,9 +16,6 @@ ms.date: 11/03/2024
 Microsoft Purview protection access control policies (protection policies) enable organizations to control access to items in Fabric using sensitivity labels.
 
 The target audience for this article is security and compliance admins, Fabric admins and users, and anyone else who wants to learn about how protection policies control access to items in Fabric. If you want to see how to create a protection policy for Fabric, see [Create and manage protection policies for Fabric (preview)](./protection-policies-create.md).
-
-> [!NOTE]
-> Protection policies currently don't support allowing service principals to retain access permissions to Fabric items that are protected by a protection policy. This means that service principals are blocked from accessing any item protected by a protection policy.
 
 ## How do protection policies for Fabric work?
 
@@ -60,12 +57,14 @@ Protection policies are supported for all native Fabric items types, and for Pow
 
 ## Considerations and limitations
 
-* Protection policies currently don't support allowing service principals to retain access permissions to Fabric items that are protected by a protection policy. This means that service principals are blocked from accessing any item protected by a protection policy.
-* With protection policies for Fabric, there can only be one label per protection policy, and only one protection policy per label. Labels used in protection policies can, however, also be associated with regular sensitivity label policies.
 * Up to 50 protection policies can be created.
+
 * Up to 100 users and groups can be added to a protection policy.
+
 * Protection policies for Fabric don't support guest/external users.
+
 * ALM pipelines won't work in scenarios where a user creates an ALM pipeline in a workspace that contains an item protected by a protection policy that doesn't include the user.
+
 * After a policy has been created, it may take up to 30 minutes for it to start detecting and protecting items labeled with the sensitivity label that was associated with the policy.
 
 ## Related content

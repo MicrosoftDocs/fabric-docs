@@ -4,7 +4,7 @@ description: This article explains how to copy data using SQL server.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -196,7 +196,7 @@ WHERE s.name='[your schema]' AND t.name = '[your table name]'
 
 If the table has physical partition, you would see "HasPartition" as "yes" like the following.
 
-:::image type="content" source="./media/connector-sql-server/sql-query-result.png" alt-text="Sql query result":::
+:::image type="content" source="./media/connector-sql-server/sql-query-result.png" alt-text="Screenshot of the SQL query result.":::
 
 ## Table summary
 

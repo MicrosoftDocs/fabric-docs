@@ -70,10 +70,26 @@ NotebookUtils works with the file system in the same way as Spark APIs. Take *no
 To list the content of a directory, use *notebookutils.fs.ls('Your directory path')*. For example:
 
 ```python
-notebookutils.fs.ls("Files/tmp") # works with the default lakehouse files using relative path 
-notebookutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path>")  # based on ABFS file system 
-notebookutils.fs.ls("file:/tmp")  # based on local file system of driver node 
+notebookutils.fs.ls("Files/tmp") # The relatvie path may work with different base path, details in below 
+notebookutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path>")  # The absolute path, like: ABFS file system
+notebookutils.fs.ls("file:/tmp")  # The full path of the local file system of driver node
 ```
+
+The ```notebookutils.fs.ls()``` API behaves differently when using relative path, depending on the type of notebook.
+
+- **In a Spark notebook**: The relative path is relative to the default Lakehouse's ABFSS path. For example, ```notebookutils.fs.ls("Files")``` points to the ```Files``` directory in the default Lakehouse.
+
+    For example:
+    ```python
+    notebookutils.fs.ls("Files/sample_datasets/public_holidays.parquet")
+    ```
+
+- **In a Python notebook**: The relative path is relative to the local file system's working directory, which by default is /home/trusted-service-user/work. Therefore, you should use the full path instead of a relative path ```notebookutils.fs.ls("/lakehouse/default/Files")``` to access the ```Files``` directory in the default Lakehouse.
+
+    For example:
+    ```python
+    notebookutils.fs.ls("/lakehouse/default/Files/sample_datasets/public_holidays.parquet")
+    ```
 
 ### View file properties
 
@@ -148,6 +164,10 @@ This method appends the given string to a file, encoded in UTF-8.
 ```python
 notebookutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
+
+> [!NOTE] 
+> - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
+> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
@@ -230,7 +250,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 > [!IMPORTANT]
 > This feature is in [preview](../get-started/preview.md).
 
-The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
+The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the reference notebook runs share the compute resources.
 
 With `notebookutils.notebook.runMultiple()`, you can:
 
@@ -535,7 +555,7 @@ notebookutils.fs.mount(
 ```
 
 Mount parameters:
-- fileCacheTimeout: Blobs will be cached in the local temp folder for 120 seconds by default. During this time, blobfuse will not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, in order to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
+- fileCacheTimeout: Blobs are cached in the local temp folder for 120 seconds by default. During this time, blobfuse does not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
 - timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
 
 You can use these parameters like this:
@@ -636,7 +656,7 @@ notebookutils.fs.unmount("/test")
 
 ## Lakehouse utilities
 
-`notebookutils.lakehouse` provides utilities specifically tailored for managing Lakehouse items. These utilities empower you to create, get, update, and delete Lakehouse artifacts effortlessly.
+`notebookutils.lakehouse` provides utilities tailored for managing Lakehouse items. These utilities empower you to create, get, update, and delete Lakehouse artifacts effortlessly.
 
 ### Overview of methods
 
@@ -736,9 +756,35 @@ With ``` notebookutils.runtime.context ``` you can get the context information o
 notebookutils.runtime.context
 ```
 
+## Session management
+
+### Stop an interactive session
+
+Instead of manually click stop button, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, we provide an API ```notebookutils.session.stop()``` to support stopping the interactive session via code, it's available for Scala and PySpark.
+
+```python
+notebookutils.session.stop()
+```
+
+```notebookutils.session.stop()``` API stops the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they are available to other sessions in the same pool.
+
+### Restart the Python interpreter
+
+notebookutils.session utility provides a way to restart the Python interpreter.
+
+```python
+notebookutils.session.restartPython()
+```
+
+> [!NOTE]
+> - In the notebook reference run case, ```restartPython()``` will only restart the Python interpreter of the current notebook that being referenced.
+> - In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
+
 ## Known issue 
 
-When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
+- When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
+
+- The Python notebook doesn't support the **stop**, **restartPython** APIs when using notebookutils.session utility for session management.
 
 ## Related content
 

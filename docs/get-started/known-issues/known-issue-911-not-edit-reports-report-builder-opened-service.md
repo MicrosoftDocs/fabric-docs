@@ -4,7 +4,7 @@ description: A known issue is posted where you can't edit paginated reports in R
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/30/2024
+ms.date: 11/05/2024
 ms.custom: known-issue-911
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-911
 
 When you try to edit a paginated report in a workspace by selecting **Edit in Power BI Report Builder** from the item menu, the browser offers the choice of opening the link in Power BI Report Builder (or download it, if it's not installed). The change is due to a [recent change in Chromium](https://issues.chromium.org/issues/375228139).
 
-**Status:** Open
+**Status:** Fixed: November 5, 2024
 
 **Product Experience:** Power BI
 

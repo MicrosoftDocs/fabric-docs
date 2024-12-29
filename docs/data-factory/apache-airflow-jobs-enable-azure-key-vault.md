@@ -13,7 +13,7 @@ ms.date: 03/25/2024
 # Enable Azure Key Vault as a secret backend
 
 > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 Apache Airflow offers various backends for securely storing sensitive information such as variables and connections. One of these options is Azure Key Vault. This article walks you through the process of configuring Key Vault as the secret backend for Apache Airflow Job.
 
@@ -49,9 +49,9 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
   - **AZURE_TENANT_ID** = \<Tenant Id\>
   - **AZURE_CLIENT_SECRET** = \<Client Secret of SPN\>
 
-- With these settings you can use variables and connections inside your Airflow DAGs. The names of the connections and variables need to follow `AIRFLOW__SECRETS__BACKEND_KWARGS`, as defined previously. For example if the variable name is `sample_var`, then you should store it as `airflow-variables-sample-var`. For more information, see [Azure Key Vault as secret back end](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/secrets-backends/azure-key-vault.html).
+- With these settings you can use variables and connections inside your Airflow DAGs. The names of the connections and variables need to follow `AIRFLOW__SECRETS__BACKEND_KWARGS`, as defined previously. For example if the variable name is `sample_var`, then you should store it as `airflow-variables-sample-var`. For more information, see [Azure Key Vault as secret backend](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/secrets-backends/azure-key-vault.html).
 
-## Sample DAG using Key Vault as the back end
+## Sample DAG using Key Vault as the backend
 
 1. Create the new Python file `adf.py` with the following contents:
 

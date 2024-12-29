@@ -1,6 +1,6 @@
 ---
 title: What is data warehousing in Microsoft Fabric?
-description: Learn more about data warehousing workloads in Synapse Data Warehouse in Microsoft Fabric.
+description: Learn more about data warehousing workloads in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo, chweb, cynotebo
@@ -12,13 +12,14 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # What is data warehousing in Microsoft Fabric?
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] is a next-generation data warehousing solution within Microsoft Fabric.
+Fabric Data Warehouse is a next-generation data warehousing solution within Microsoft Fabric.
 
 The lake-centric warehouse is built on an enterprise grade distributed processing engine that enables industry leading performance at scale while minimizing the need for configuration and management. Living in the data lake and designed to natively support open data formats, Fabric data warehouse enables seamless collaboration between data engineers and business users without compromising security or governance.
 
@@ -36,11 +37,13 @@ Data warehouse customers benefit from:
 
 ## Data warehousing items
 
-Fabric Warehouse is not a traditional enterprise data warehouse, it's a lake warehouse that supports two distinct warehousing items: the Fabric data warehouse and the SQL analytics endpoint. Both are purpose-built to meet customers' business needs while providing best in class performance, minimizing costs, and reduced administrative overhead.
+Fabric Data Warehouse is not a traditional enterprise data warehouse, it's a lake warehouse that supports two distinct warehousing items: the Fabric data warehouse and the SQL analytics endpoint. Both are purpose-built to meet customers' business needs while providing best in class performance, minimizing costs, and reduced administrative overhead.
 
-### Synapse Data Warehouse
+<a id="synapse-data-warehouse"></a>
 
-In a Microsoft Fabric workspace, a Synapse Data Warehouse or **Warehouse** is labeled as 'Warehouse' in the **Type** column. When you need the full power and transactional capabilities (DDL and DML query support) of a data warehouse, this is the fast and simple solution for you.
+### Fabric Data Warehouse
+
+In a Microsoft Fabric workspace, a Fabric warehouse is labeled as **Warehouse** in the **Type** column. When you need the full power and transactional capabilities (DDL and DML query support) of a data warehouse, this is the fast and simple solution for you.
 
 :::image type="content" source="media/data-warehousing/warehouse-type.png" alt-text="Screenshot showing the Warehouse type in workspace." lightbox="media/data-warehousing/warehouse-type.png":::
 

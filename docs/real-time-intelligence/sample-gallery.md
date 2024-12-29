@@ -2,13 +2,14 @@
 title: Sample Gallery
 description: Learn how to load sample data into Real-Time Intelligence and explore it using sample queries in a KQL queryset.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/21/2024
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: KQL Queryset
 ---
 

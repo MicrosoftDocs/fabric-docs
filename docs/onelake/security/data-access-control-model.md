@@ -7,6 +7,7 @@ author: yuturchi
 ms.topic: concept-article
 ms.custom:
   - onelake-data-access-public-preview-april-2024
+  - ignite-2024
 ms.date: 05/09/2024
 #customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the impact on Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---
@@ -307,7 +308,7 @@ When someone shares a lakehouse, they can also grant access to the SQL analytics
 Learn more about data sharing permissions model:
 
 - [How lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
-- [Share your warehouse and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
+- [Share your data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
 
 ## Shortcuts
 

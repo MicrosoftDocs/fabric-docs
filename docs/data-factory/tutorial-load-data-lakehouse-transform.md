@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Copy sample data into Lakehouse and transform with a dataflow with Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
@@ -22,8 +22,6 @@ A Microsoft Fabric enabled workspace. If you don't already have one, refer to th
 ## Create a data pipeline 
 
 1. Switch to the **Data Factory** experience.
-
-   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/switch-to-data-factory-workload.png" alt-text="Screenshot showing the selection of the Data Factory experience.":::
 
 1. Select **New** and then **Data pipeline**, and then input a name for your pipeline.
 

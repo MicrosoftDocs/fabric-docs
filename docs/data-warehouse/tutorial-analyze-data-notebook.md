@@ -4,7 +4,7 @@ description: "In this tutorial, learn how to analyze data with notebooks in a Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 11/10/2024
+ms.date: 11/19/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023

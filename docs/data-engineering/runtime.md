@@ -22,6 +22,8 @@ Major components of Fabric Runtime:
 
 - **Delta Lake** - an open-source storage layer that brings ACID transactions and other data reliability features to Apache Spark. Integrated within Fabric Runtime, Delta Lake enhances data processing capabilities and ensures data consistency across multiple concurrent operations.
 
+- **[The Native Execution Engine](./native-execution-engine-overview.md)** - is a transformative enhancement for Apache Spark workloads, offering significant performance gains by directly executing Spark queries on lakehouse infrastructure. Integrated seamlessly, it requires no code changes and avoids vendor lock-in, supporting both Parquet and Delta formats across Apache Spark APIs in Runtime 1.3 (Spark 3.5). This engine boosts query speeds up to four times faster than traditional OSS Spark, as shown by the TPC-DS 1TB benchmark, reducing operational costs and improving efficiency across various data tasks—including data ingestion, ETL, analytics, and interactive queries. Built on Meta’s Velox and Intel’s Apache Gluten, it optimizes resource use while handling diverse data processing scenarios.
+
 - **Default-level packages for Java/Scala, Python, and R** - packages that support diverse programming languages and environments. These packages are automatically installed and configured, allowing developers to apply their preferred programming languages for data processing tasks.
 
 - The Microsoft Fabric Runtime is built upon **a robust open-source operating system**, ensuring compatibility with various hardware configurations and system requirements.
@@ -46,33 +48,33 @@ Visit [Runtime 1.1](./runtime-1-1.md), [Runtime 1.2](./runtime-1-2.md) or [Runti
 ## Fabric optimizations
 
 In Microsoft Fabric, both the Spark engine and the Delta Lake implementations incorporate platform-specific optimizations and features. These features are designed to use native integrations within the platform. It's important to note that all these features can be disabled to achieve standard Spark and Delta Lake functionality. The Fabric Runtimes for Apache Spark encompass:
-* The complete open-source version of Apache Spark.
-* A collection of nearly 100 built-in, distinct query performance enhancements. These enhancements include features like partition caching (enabling the FileSystem partition cache to reduce metastore calls) and Cross Join to Projection of Scalar Subquery.
-* Built-in intelligent cache.
+
+- The complete open-source version of Apache Spark.
+- A collection of nearly 100 built-in, distinct query performance enhancements. These enhancements include features like partition caching (enabling the FileSystem partition cache to reduce metastore calls) and Cross Join to Projection of Scalar Subquery.
+- Built-in intelligent cache.
 
 Within the Fabric Runtime for Apache Spark and Delta Lake, there are native writer capabilities that serve two key purposes:
 
 1. They offer differentiated performance for writing workloads, optimizing the writing process.
 2. They default to V-Order optimization of Delta Parquet files. The Delta Lake V-Order optimization is crucial for delivering superior read performance across all Fabric engines. To gain a deeper understanding of how it operates and how to manage it, refer to the dedicated article on [Delta Lake table optimization and V-Order](./delta-optimization-and-v-order.md).
 
-
 ## Multiple runtimes support
+
 Fabric supports multiple runtimes, offering users the flexibility to seamlessly switch between them, minimizing the risk of incompatibilities or disruptions.
 
-**By default, all new workspaces use the latest runtime version, which is currently [Runtime 1.3](./runtime-1-3.md).** 
+**By default, all new workspaces use the latest runtime version, which is currently [Runtime 1.3](./runtime-1-3.md).**
 
-To change the runtime version at the workspace level, go to Workspace Settings > Data Engineering/Science > Spark Compute > Workspace Level Default, and select your desired runtime from the available options.
+To change the runtime version at the workspace level, go to **Workspace Settings** > **Data Engineering/Science** > **Spark settings**. From the **Environment** tab, select your desired runtime version from the available options. Select **Save** to confirm your selection.
+
+:::image type="content" source="media\runtime\runtime-change.png" alt-text="Screenshot showing how to change the runtime version in the workspace settings.":::
 
 Once you make this change, all system-created items within the workspace, including Lakehouses, SJDs, and Notebooks, will operate using the newly selected workspace-level runtime version starting from the next Spark Session. If you're currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session continue as is. However, starting from the next session or job, the selected runtime version will be applied.
-
-:::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
 ### Consequences of runtime changes on Spark Settings
 
 In general, we aim to migrate all Spark settings. However, if we identify that the Spark setting isn't compatible with Runtime B, we issue a warning message and refrain from implementing the setting.
 
 :::image type="content" source="media\mrs\spark-settings-runtime-change.png" alt-text="Spark Settings Runtime Change.":::
-
 
 ### Consequences of runtime changes on library management
 
@@ -88,12 +90,11 @@ Delta Lake features are always backwards compatible, ensuring tables created in 
 
 Each Delta table is associated with a protocol specification, defining the features it supports. Applications that interact with the table, either for reading or writing, rely on this protocol specification to determine if they are compatible with the table's feature set. If an application lacks the capability to handle a feature listed as supported in the table's protocol, It's unable to read from or write to that table.
 
-The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page ["How does Delta Lake manage feature compatibility?"
-](https://docs.delta.io/2.4.0/versioning.html#language-python) to read details about it.
+The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page ["How does Delta Lake manage feature compatibility?"](https://docs.delta.io/2.4.0/versioning.html#language-python) to read details about it.
 
 :::image type="content" source="media\mrs\delta-upgrade-table-protocol.gif" alt-text="GIF showing the immediate warning when upgradeTableProtocol method is used." lightbox="media\mrs\delta-upgrade-table-protocol.gif":::
 
-Users can execute the command `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` within the PySpark environment, and in Spark SQL and Scala. This command allows them to initiate an update on the Delta table. 
+Users can execute the command `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` within the PySpark environment, and in Spark SQL and Scala. This command allows them to initiate an update on the Delta table.
 
 It's essential to note that when performing this upgrade, users receive a warning indicating that upgrading the Delta protocol version is a nonreversible process. This means that once the update is executed, it cannot be undone.
 
@@ -107,19 +108,19 @@ Additionally, users should verify that all current and future production workloa
 
 In the latest [Fabric Runtime, version 1.3](./runtime-1-3.md) and [Fabric Runtime, version 1.2](./runtime-1-2.md), the default table format (`spark.sql.sources.default`) is now `delta`. In previous versions of [Fabric Runtime, version 1.1](./runtime-1-1.md) and on all Synapse Runtime for Apache Spark containing Spark 3.3 or below, the default table format was defined as `parquet`. Check [the table with Apache Spark configuration details](./lakehouse-and-delta-tables.md) for  differences between Azure Synapse Analytics and Microsoft Fabric.
 
-All tables created using Spark SQL, PySpark, Scala Spark, and Spark R, whenever the table type is omitted, will create the table as `delta` by default. If scripts explicitly set the table format, that will be respected. The command `USING DELTA` in Spark create table commands becomes redundant. 
+All tables created using Spark SQL, PySpark, Scala Spark, and Spark R, whenever the table type is omitted, will create the table as `delta` by default. If scripts explicitly set the table format, that will be respected. The command `USING DELTA` in Spark create table commands becomes redundant.
 
 Scripts that expect or assume parquet table format should be revised. The following commands are not supported in Delta tables:
-* `ANALYZE TABLE $partitionedTableName PARTITION (p1) COMPUTE STATISTICS`
-* `ALTER TABLE $partitionedTableName ADD PARTITION (p1=3)`
-* `ALTER TABLE DROP PARTITION`
-* `ALTER TABLE RECOVER PARTITIONS`
-*  `ALTER TABLE SET SERDEPROPERTIES`
-*  `LOAD DATA`
-*  `INSERT OVERWRITE DIRECTORY`
-*  `SHOW CREATE TABLE`
-*  `CREATE TABLE LIKE `
 
+- `ANALYZE TABLE $partitionedTableName PARTITION (p1) COMPUTE STATISTICS`
+- `ALTER TABLE $partitionedTableName ADD PARTITION (p1=3)`
+- `ALTER TABLE DROP PARTITION`
+- `ALTER TABLE RECOVER PARTITIONS`
+- `ALTER TABLE SET SERDEPROPERTIES`
+- `LOAD DATA`
+- `INSERT OVERWRITE DIRECTORY`
+- `SHOW CREATE TABLE`
+- `CREATE TABLE LIKE`
 
 ## Related content
 

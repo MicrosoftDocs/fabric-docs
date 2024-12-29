@@ -150,4 +150,4 @@ In this task, you will create a Power BI report based on the semantic model you 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Build a Power BI report from OneLake data hub in Microsoft Fabric](tutorial-build-report-onelake-data-hub.md)
+> [Tutorial: Build a report from the OneLake](tutorial-build-report-onelake-data-hub.md)

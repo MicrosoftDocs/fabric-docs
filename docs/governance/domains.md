@@ -7,10 +7,15 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/14/2024
+  - ignite-2024
+ms.date: 12/16/2024
 ---
 
 # Fabric domains
+
+This article introduces key concepts of domains in Fabric, and shows how to set up and manage them. To get started planning domains for your organization, see [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
+
+## Introduction
 
 Today, organizations are facing massive growth in data, and there's an increasing need to be able to organize and manage that data in a logical way that facilitates more targeted and efficient use and governance.
 
@@ -73,6 +78,8 @@ The specified users and/or members of the specified security groups generally au
 For information about defining a domain as a default domain, see [Define the domain as a default domain](#define-the-domain-as-a-default-domain).
 
 ## Create a domain
+
+Before you start creating domains for your organization, it is recommended to review [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
 
 To create domain, you must be a Fabric admin.
 
@@ -223,6 +230,14 @@ Select **Default domain** and specify users and/or security groups. When you add
 
 Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select **Delegated Settings**. The following admin settings can potentially be overridden.
 
+#### Domain-level default sensitivity label
+
+If the [domain-level default sensitivity label feature](./domain-default-sensitivity-label.md) is enabled in your organization, you can specify a sensitivity label that will be applied by default to items in workspaces that are assigned to the domain.
+
+To specify a default sensitivity label for your domain, you must be a Fabric admin or a domain admin of the domain.
+
+Expand **Delegated Settings** and choose **Information protection**. You'll see the option **Set a default label for this domain**. Select the drop down menu and select the desired sensitivity label. The label will be applied to items in workspaces associated with the domain according to the logic described in [Domain-level default sensitivity labels in Microsoft Fabric](./domain-default-sensitivity-label.md).  
+
 #### Certification settings
 
 Certification is a way for organizations to label items that it considers to be quality items. For more information about certification, see [Endorsement](./endorsement-overview.md).
@@ -251,6 +266,8 @@ Whenever a domain is created, edited, or deleted, that activity is recorded in t
 
 * [Domain management tenant settings](../admin/service-admin-portal-domain-management-settings.md)
 * [Domain design - best practices](./domains-best-practices.md)
+* [Domain-level default sensitivity labels](./domain-default-sensitivity-label.md)
 * [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
 * [Audit schema for domains](./domains-audit-schema.md)
 * [Admin role in workspaces](../get-started/roles-workspaces.md)
+* [Blog: Easily implement data mesh architecture with domains in Fabric](https://blog.fabric.microsoft.com/blog/easily-implement-data-mesh-architecture-with-domains-in-fabric/)

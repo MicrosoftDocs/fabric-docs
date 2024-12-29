@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.search.form: Pipeline tutorials
 ---
 
@@ -18,7 +18,7 @@ In this tutorial, you learn how to incrementally load data from Data Warehouse t
 
 ## Overview
 
-Here is the high-level solution diagram:
+Here's the high-level solution diagram:
 
 :::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/logic-introduction.png" alt-text="Diagram showing incrementally load data logic.":::
 
@@ -47,7 +47,7 @@ Here are some tables and stored procedure that you need to prepare in your sourc
 
 #### 1. Create a data source table in your Data Warehouse 
 
-Run the following SQL command in your Data Warehouse to create a table named *data_source_table* as the data source table. In this tutorial, you'll use it as the sample data to do the incremental copy.
+Run the following SQL command in your Data Warehouse to create a table named *data_source_table* as the data source table. In this tutorial, you use it as the sample data to do the incremental copy.
 
 ```sql
 create table data_source_table
@@ -132,9 +132,8 @@ END
 ### Step 1: Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
-1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
+1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
@@ -146,7 +145,7 @@ END
 
 ### Step 2: Add a lookup activity for the last watermark
 
-In this step, you create a lookup activity to get the last watermark value. The default value `1/1/2010 12:00:00 AM` set before will be obtained.
+In this step, you create a lookup activity to get the last watermark value. The default value `1/1/2010 12:00:00 AM` set before is obtained.
 
 1. Select **Add pipeline activity** and select **Lookup** from the drop-down list.
 
@@ -165,7 +164,7 @@ In this step, you create a lookup activity to get the last watermark value. The 
 
 ### Step 3: Add a lookup activity for the new watermark
 
-In this step, you create a lookup activity to get the new watermark value. You'll use a query to obtain the new watermark from your source data table. The maximum value in *LastModifytime* column in *data_source_table* will be obtained.
+In this step, you create a lookup activity to get the new watermark value. You use a query to obtain the new watermark from your source data table. The maximum value in *LastModifytime* column in *data_source_table* is obtained.
 
 1. On the top bar, select **Lookup** under **Activities** tab to add the second lookup activity.
 

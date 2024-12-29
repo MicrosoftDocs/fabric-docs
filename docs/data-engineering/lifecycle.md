@@ -5,6 +5,9 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
+ms.custom:
+  - ignite-2024
+ms.date: 11/11/2024
 ---
 
 # Lifecycle of Apache Spark runtimes in Fabric
@@ -20,7 +23,7 @@ With a commitment to excellence, we approach new preview runtime releases carefu
 > [!TIP]
 > Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
-The following table lists the runtime name, and release dates for supported Azure Synapse Runtime releases.
+The following table lists the runtime name, and release dates for supported Azure Synapse runtime releases.
 
 | Runtime name                                               | Release stage | End of Support date |
 |-----------------------------------------------------------|---------------|---------------------|
@@ -30,6 +33,10 @@ The following table lists the runtime name, and release dates for supported Azur
 
 
 :::image type="content" source="media\runtime\lifecycle-runtimes.png" alt-text="Diagram showing lifecycle of a runtime in Fabric." lightbox="media\runtime\lifecycle-runtimes.png":::
+
+> [!div class="nextstepaction"]
+> [Watch the Fabric Espresso Video from Product Engineering Group about Lifecycle of Apache Spark Runtimes in Fabric](https://youtu.be/1nlqp5Dv6ko?si=gsVeQVKzTTS15X8R)
+
 
 The diagram outlines the lifecycle of a runtime version from its experimental public preview to its deprecation and removal.
 

@@ -4,14 +4,14 @@ description: "In this tutorial, you will build a report from OneLake data hub wi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 11/10/2024
+ms.date: 11/19/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Build a Power BI report from OneLake data hub in Microsoft Fabric
+# Tutorial: Build a report from OneLake
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

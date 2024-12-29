@@ -6,6 +6,7 @@ ms.author: makromer
 ms.topic: concept-article
 ms.custom:
   - build-2024
+  - ignite-2024
 ms.date: 09/16/2024
 ---
 
@@ -13,7 +14,7 @@ ms.date: 09/16/2024
 
 ## Introduction
 
-A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon file events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blog storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including event streams and Reflex triggers. Inside of the Fabric Data Factory pipeline design canvas, there's a Trigger button to create a Reflex trigger for your pipeline, or you can create the trigger directly from the Data Activator experience.
+A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon file events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blob storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including eventstreams and Reflex triggers. Inside of the Fabric Data Factory pipeline design canvas, there's a Trigger button to create a Reflex trigger for your pipeline, or you can create the trigger directly from the Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] experience.
 
 > [!NOTE]
 > Storage event triggers are currently in public preview.
@@ -33,7 +34,7 @@ A common use case for invoking Data Factory data pipelines is to trigger a pipel
    :::image type="content" source="media/pipeline-storage-event-triggers/connect-azure-blob-storage-events.png" lightbox="media/pipeline-storage-event-triggers/connect-azure-blob-storage-events.png" alt-text="Screenshot showing where to connect to Azure Blob Storage events for a Blob Storage account.":::
 
 1. Choose your Azure subscription and Blob Storage account.
-1. A new event stream object is created in your Fabric workspace, so be sure to select the correct workspace under **Stream details**.
+1. A new eventstream object is created in your Fabric workspace, so be sure to select the correct workspace under **Stream details**.
 1. Select **Next**.
 1. Choose event types. You can see there are many more event options you can choose other than file created and file deleted.
 
@@ -84,5 +85,5 @@ You might notice the use of a _?_ after the _pipeline()_ object reference, which
 
 ## Related content
 
-- [Create a Reflex trigger](../data-activator/data-activator-get-started.md#create-a-data-activator-reflex-item)
-- [Microsoft Fabric event streams](../real-time-analytics/event-streams/overview.md)
+- [Create a Reflex trigger](../real-time-intelligence/data-activator/activator-get-started.md#create-an-activator-item)
+- [Microsoft Fabric eventstreams](../real-time-analytics/event-streams/overview.md)
