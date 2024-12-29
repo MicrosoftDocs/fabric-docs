@@ -1,5 +1,5 @@
 ---
-title: "Data warehouse tutorial: Create a cross-warehouse query in a Warehouse in Microsoft Fabric"
+title: "Data warehouse tutorial: certain points in time."
 description: "In this tutorial, you will use the SQL query editor to write cross-warehouse query."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
 ---
 
-# Tutorial: Create cross-warehouse queries with the SQL query editor
+# Tutorial: Create a cross-warehouse query in Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -37,11 +37,9 @@ In this task, you will use the SQL query editor to write cross-warehouse query.
 
     :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="Screenshot of the Explorer pane, highlighting the + Warehouse button." border="false":::
 
-1. In the **OneLake data hub** window, select the `Shortcut_Exercise` SQL analytics endpoint.
+1. In the **OneLake catalog**, select the `Shortcut_Exercise` SQL analytics endpoint. The SQL analytics endpoint was created in the [Use a notebook to analyze data in a Warehouse in Microsoft Fabric](tutorial-analyze-data-notebook.md) tutorial.
 
-    _The SQL analytics endpoint was created in the [Use a notebook to analyze data in a Warehouse in Microsoft Fabric](tutorial-analyze-data-notebook.md) tutorial._
-
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="Screenshot of the OneLake data hub window, highlighting the SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" border="false":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="Screenshot of the OneLake catalog window, highlighting the SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" border="false":::
 
 1. Select **Confirm**.
 
@@ -58,7 +56,7 @@ In this task, you will run the cross-warehouse query. Specifically, you will run
 
    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." border="false":::
 
-1. In the query editor, paste the following code and read the comment.
+1. In the query editor, paste the following code. The code retrieves an aggregate of quantity sold by stock item, description, and customer.
 
     ```sql
     --Retrieve an aggregate of quantity sold by stock item, description, and customer.

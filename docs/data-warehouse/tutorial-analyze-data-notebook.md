@@ -1,6 +1,6 @@
 ---
-title: "Data warehouse tutorial: Use a notebook to analyze data in a Warehouse in Microsoft Fabric"
-description: "In this tutorial, you will use two techniques to analyze data in a warehouse with a notebook."
+title: "Data warehouse tutorial: Analyze data in a notebook"
+description: "In this tutorial, learn how to analyze data with notebooks in a Fabric warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
@@ -11,11 +11,11 @@ ms.custom:
   - ignite-2023
 ---
 
-# Tutorial: Use a notebook to analyze data in a Warehouse in Microsoft Fabric
+# Tutorial: Analyze data in a notebook
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In this tutorial, you will use two techniques to analyze data in a warehouse with a notebook.
+In this tutorial, learn how to use two techniques to analyze data in a warehouse with a notebook.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
@@ -26,7 +26,7 @@ In this tutorial, you will use two techniques to analyze data in a warehouse wit
 
 ## Create a T-SQL notebook
 
-In this task, you will create a T-SQL notebook.
+In this task, learn how to create a T-SQL notebook.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
@@ -36,15 +36,15 @@ In this task, you will create a T-SQL notebook.
 
 1. In the **Explorer** pane, select **Warehouses** to reveal the objects of the `Wide World Importers` warehouse.
 
-1. To generate a quite SQL template to explore data, to the right of the `dimension_city` table, select the ellipsis (…), and then select **SELECT TOP 100**.
+1. To generate a SQL template to explore data, to the right of the `dimension_city` table, select the ellipsis (…), and then select **SELECT TOP 100**.
 
    :::image type="content" source="media/tutorial-analyze-data-notebook/tsql-notebook-select-top-100.png" alt-text="Screenshot of Explorer pane, highlighting the selection of the SELECT TOP 100 option." lightbox="media/tutorial-analyze-data-notebook/tsql-notebook-select-top-100.png" border="false":::
 
-1. To run the code cell, select the **Run cell** button (located at the left of the statement).
+1. To run the T-SQL code in this cell, select the **Run cell** button for the code cell.
 
    :::image type="content" source="media/tutorial-analyze-data-notebook/run-tsql-code-cell.png" alt-text="Screenshot of the notebook, highlighting the Run cell button for the code cell." lightbox="media/tutorial-analyze-data-notebook/run-tsql-code-cell.png" border="false":::
 
-1. Review the query result in the lower pane.
+1. Review the query result in the results pane.
 
 ## Create a lakehouse shortcut and analyze data with an notebook
 
@@ -55,8 +55,6 @@ In this task, you will create a lakehouse shortcut and analyze data with a noteb
 1. Select **+ New Item** to display the full list of available item types.
 
 1. From the list, in the **Store data** section, select the **Lakehouse** item type.
-
-   :::image type="content" source="media/tutorial-analyze-data-notebook/select-lakehouse-item-type.png" alt-text="Screenshot of the New item panel, highlighting the Lakehouse item type." lightbox="media/tutorial-analyze-data-notebook/select-lakehouse-item-type.png" border="false":::
 
 1. In the **New lakehouse** window, enter the name `Shortcut_Exercise`.
 
@@ -82,9 +80,7 @@ In this task, you will create a lakehouse shortcut and analyze data with a noteb
 
 1. Select **Create**.
 
-1. In the **Explorer** pane, select the `dimension_customer` table to preview the data.
-
-    _The lakehouse retrieved the data from the `dimension_customer` table in the warehouse._
+1. In the **Explorer** pane, select the `dimension_customer` table to preview the data, and then review the data retrieved from the `dimension_customer` table in the warehouse.
 
 1. To create a notebook to query the `dimension_customer` table, on the **Home** ribbon, in the **Open notebook** dropdown, select **New notebook**.
 

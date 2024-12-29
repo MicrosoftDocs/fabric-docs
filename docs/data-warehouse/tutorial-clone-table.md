@@ -34,7 +34,7 @@ In this task, you will clone a table within the same schema in a warehouse.
 
    :::image type="content" source="media/tutorial-clone-table/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option on the ribbon." border="false":::
 
-1. In the query editor, paste the following code and read the comments.
+1. In the query editor, paste the following code. The code creates a clone of the `dimension_city` table and the `fact_sale` table.
 
    ```sql
     --Create a clone of the dbo.dimension_city table.
@@ -52,7 +52,7 @@ In this task, you will clone a table within the same schema in a warehouse.
 
    :::image type="content" source="media/tutorial-clone-table/explorer-select-table.png" alt-text="Screenshot of the Explorer pane, highlighting the dimension city 1 table." border="false":::
 
-1. To create a table clone as of a _past point in time_, in the query editor, paste the following code **to replace the existing statements**, and then read the comments.
+1. To create a table clone as of a _past point in time_, in the query editor, paste the following code **to replace the existing statements**. The code creates a clone of the `dimension_city` table and the `fact_sale` table at certain points in time.
 
    ```sql
     --Create a clone of the dbo.dimension_city table at a specific point in time.   
@@ -68,13 +68,13 @@ In this task, you will clone a table within the same schema in a warehouse.
 
 1. Rename the query as `Clone Tables`.
 
-## Clone a table across schemas
+## Clone a table across schemas within the same warehouse
 
 In this task, you will clone a table across schemas within the same warehouse.
 
 1. To create a new query, on the **Home** ribbon, select **New SQL query**.
 
-1. In the query editor, paste the following code and read the comments.
+1. In the query editor, paste the following code. The code creates a schema, and then create a clone of the `fact_sale` table and the `dimension_city` table in the new schema.
 
    ```sql
     --Create a new schema within the warehouse named dbo1.
@@ -92,7 +92,7 @@ In this task, you will clone a table across schemas within the same warehouse.
 
 1. When execution completes, preview the data loaded into the `dimension_city1` table in the `dbo1` schema.
 
-1. To create a table clone as of a _previous point in time_, in the query editor, paste the following code **to replace the existing statements**, and then read the comments.
+1. To create a table clone as of a _previous point in time_, in the query editor, paste the following code **to replace the existing statements**. The code create a clone of the `dimension_city` table and the `fact_sale` table at certain points in time in the new schema.
 
     ```sql
     --Create a clone of the dbo.dimension_city table in the dbo1 schema.

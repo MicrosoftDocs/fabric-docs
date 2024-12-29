@@ -1,6 +1,6 @@
 ---
-title: "Data warehouse tutorial: Ingest data into a Warehouse in Microsoft Fabric"
-description: "In this tutorial, you will ingest data from Azure Blob storage into the warehouse to create tables."
+title: "Data warehouse tutorial: Ingest data into a Warehouse"
+description: "In this tutorial, you will ingest data from Microsoft Azure Storage into a Fabric warehouse to create tables."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
@@ -11,17 +11,17 @@ ms.custom:
   - ignite-2023
 ---
 
-# Tutorial: Ingest data into a Warehouse in Microsoft Fabric
+# Tutorial: Ingest data into a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-In this tutorial, you will ingest data from Azure Blob storage into the warehouse to create tables.
+In this tutorial, you will ingest data from Microsoft Azure Storage into a Fabric warehouse to create tables.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
 >
 > 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
-> 1. [Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
 
 ## Ingest data
 
@@ -39,9 +39,7 @@ In this task, you will ingest data into the warehouse to create tables.
 
    :::image type="content" source="media/tutorial-ingest-data/create-new-pipeline.png" alt-text="Screenshot of the New pipeline dialog, highlighting the entered name." border="false":::
 
-1. To provision the pipeline, select **Create**.
-
-    _Provisioning is complete when the **Build a data pipeline** landing page appears._
+1. To provision the pipeline, select **Create**. Provisioning is complete when the **Build a data pipeline** landing page appears.
 
 1. On the data pipeline landing page, select **Pipeline activity**.
 
@@ -61,9 +59,7 @@ In this task, you will ingest data into the warehouse to create tables.
 
 1. On the **Source** page, in the **Connection** dropdown, select **More** in order to reveal all of the data sources you can choose from, including data sources in OneLake data hub.
 
-1. Select **New** to create a new data source.
-
-   :::image type="content" source="media/tutorial-ingest-data/create-new-data-source.png" alt-text="Screenshot of the Get data window, highlighting the New option." border="false":::
+1. Select **+ New Item** to create a new data source.
 
 1. Search for, and then select, **Azure Blobs**.
 
@@ -91,7 +87,7 @@ In this task, you will ingest data into the warehouse to create tables.
 
    1. In the **File format** dropdown, select **Parquet**.
 
-1. To preview the data and test that there are no errors, select **Preview data** (next to the **File path** boxes).
+1. To preview the data and test that there are no errors, select **Preview data**.
 
    :::image type="content" source="media/tutorial-ingest-data/source-page-settings.png" alt-text="Screenshot of the Source page, highlighting the changes made in the previous steps, and the Preview data function." lightbox="media/tutorial-ingest-data/source-page-settings.png" border="false":::
 

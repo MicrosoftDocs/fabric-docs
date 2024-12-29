@@ -30,7 +30,7 @@ In this task, you will remove the workspace you created in the first tutorial.
 
    :::image type="content" source="media/tutorial-clean-up/select-workspace-settings.png" alt-text="Screenshot of the workspace landing page, highlighting the Workspace settings option."  border="false":::
 
-1. In the **Workspace settings** pane, in the **General** tab, scroll down to locate the **Manage** section.
+1. In the **Workspace settings** pane, in the **General** tab, locate the **Manage** section.
 
 1. Select **Remove this workspace**.
 

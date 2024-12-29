@@ -1,6 +1,6 @@
 ---
 title: "Data warehouse tutorial: Transform data with a stored procedure in a Warehouse in Microsoft Fabric"
-description: "In this tutorial, you will create a stored procedure to transform data in a warehouse table."
+description: "In this tutorial, learn how to create a stored procedure in a warehouse to transform data in a table."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
@@ -16,7 +16,7 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In this tutorial, you will create a stored procedure to transform data in a warehouse table.
+In this tutorial, learn how to create a stored procedure in a warehouse to transform data in a table.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:

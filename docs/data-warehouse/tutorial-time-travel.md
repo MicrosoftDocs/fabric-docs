@@ -12,7 +12,7 @@ ms.topic: how-to
 
 # Tutorial: Time travel with T-SQL in a Warehouse in Microsoft Fabric
 
-In this tutorial, you will use T-SQL statements to _[time travel](time-travel.md)_ in a warehouse table. Time travel means to query at a specific point in time, which is made possible due to [data retention](time-travel.md#data-retention).
+In this tutorial, you will use T-SQL statements to _[time travel](time-travel.md)_ in a warehouse table. Time travel means to query data as it existed at a specific point in time, which is made automatically possible by Fabric Data Warehouse [data retention](time-travel.md#data-retention).
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
@@ -21,7 +21,7 @@ In this tutorial, you will use T-SQL statements to _[time travel](time-travel.md
 > 1. [Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
 > 1. [Ingest data into a Warehouse in Microsoft Fabric](tutorial-ingest-data.md)
 
-## Create a view
+## Work with time travel queries
 
 In this task, you will create a view of the top 10 customers by sales. You will use the view in the next task to run time-travel queries.
 
@@ -60,16 +60,12 @@ In this task, you will create a view of the top 10 customers by sales. You will 
 
    :::image type="content" source="media/tutorial-time-travel/explorer-view.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created view." border="false":::
 
-## Work with time travel
-
-In this task, you will update a row in a table and retrieve the current timestamp. You will then retrieve the top 10 customers by using the `FOR TIMESTAMP AS OF` query hint.
+1. Create a new query to work with time travel queries.
 
 > [!NOTE]
 > Currently, you can only use the Coordinated Universal Time (UTC) time zone for time travel.
 
-1. Create a new query.
-
-1. In the query editor, paste the following code and read the comments.
+1. In the query editor, paste the following code. The code updates the `TotalIncludingTax` value for a single fact row to deliberately inflate its total sales. It also retrieves the current timestamp.
 
    ```sql
     --Update the TotalIncludingTax for a single fact row to deliberately inflate its total sales.
@@ -90,7 +86,7 @@ In this task, you will update a row in a table and retrieve the current timestam
 
    :::image type="content" source="media/tutorial-time-travel/results-copy-timestamp.png" alt-text="Screenshot of the Results pane, highlighting the value to copy." border="false":::
 
-1. To retrieve the top 10 customers _as of now_, in the query editor, paste the following statement **to replace the existing statements**, and then read the comment.
+1. To retrieve the top 10 customers _as of now_, in the query editor, paste the following statement **to replace the existing statements**. The code retrieves the top 10 customers by using the `FOR TIMESTAMP AS OF` query hint.
 
    ```sql
     --Retrieve the top 10 customers as of now.

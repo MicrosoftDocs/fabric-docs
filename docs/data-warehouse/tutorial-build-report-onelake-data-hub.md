@@ -28,9 +28,7 @@ In this tutorial, you will build a report from OneLake data hub with the data in
 
 In this task, you will build a report from OneLake data hub.
 
-1. In the Fabric portal, in the navigation pane, select **OneLake data hub**.
-
-   :::image type="content" source="media/tutorial-build-report-onelake-data-hub/navigation-pane-onelake-data-hub.png" alt-text="Screenshot of the navigation pane, highlighting OneLake data hub." border="false":::
+1. In the Fabric portal, in the navigation pane, select **OneLake data hub**. TODO: Reference OneLake button.
 
 1. In the OneLake data hub landing page, to limit the list of items to your data, select the **My data** filter option.
 
@@ -38,7 +36,8 @@ In this task, you will build a report from OneLake data hub.
 
 1. From the item list, select  the item named `Wide World Importers` that is of type **Semantic model (default)**.
 
-    _Every warehouse has a corresponding [default semantic model](semantic-models.md#understand-whats-in-the-default-power-bi-semantic-model). It presents a [star schema model](dimensional-modeling-overview.md#star-schema-design) of the warehouse tables, providing you with a quick way to report on data in the warehouse._
+   > [!NOTE]
+   > Every warehouse has a corresponding [default semantic model](semantic-models.md#understand-whats-in-the-default-power-bi-semantic-model). It presents a [star schema model](dimensional-modeling-overview.md#star-schema-design) of the warehouse tables, providing you with a quick way to report on data in the warehouse._
 
 1. In the semantic model landing page, in the **Discover business insights** section, open the dropdown, and then select **Auto-create a report**.
 

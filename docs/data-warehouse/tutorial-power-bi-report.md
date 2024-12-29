@@ -1,5 +1,5 @@
 ---
-title: "Data warehouse tutorial: Create a Direct Lake semantic model and Power BI report in Microsoft Fabric"
+title: "Data warehouse tutorial: Create a Direct Lake semantic model and Power BI report"
 description: "In this tutorial, you will create a Direct Lake semantic model and a Power BI report."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
 ---
 
-# Tutorial: Create a Direct Lake semantic model and Power BI report in Microsoft Fabric
+# Tutorial: Create a Direct Lake semantic model and Power BI report
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -21,8 +21,8 @@ In this tutorial, you will create a Direct Lake semantic model and a Power BI re
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
 >
 > 1. [Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
-> 1. [Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
-> 1. [Ingest data into a Warehouse in Microsoft Fabric](tutorial-ingest-data.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
 
 ## Create a semantic model
 
@@ -32,7 +32,7 @@ In this task, you will create a Direct Lake semantic model based the `Wide World
 
 1. Open the `Wide World Importers` warehouse.
 
-1. At the top left, select the **Reporting** ribbon.
+1. Select the **Reporting** tab.
 
    :::image type="content" source="media/tutorial-power-bi-report/select-reporting-ribbon.png" alt-text="Screenshot of the Fabric portal, highlighting the Reporting ribbon." border="false":::
 
@@ -92,7 +92,7 @@ In this task, you will create a Power BI report based on the semantic model you 
 
    :::image type="content" source="media/tutorial-power-bi-report/column-chart-visual.png" alt-text="Screenshot of the column chart visual showing sum of profit by sales territory." border="true":::
 
-   1. Resize the column chart visual by dragging the bottom-right corner of the visual. Ensure that it fills the top-left region of the report page.
+   1. If necessary, resize the column chart visual by dragging the bottom-right corner of the visual. Ensure that it fills the top-left region of the report page.
 
    :::image type="content" source="media/tutorial-power-bi-report/report-visual-layout-1.png" alt-text="Diagram of the report page layout showing the chart visual placed at the top-left region of the report page." border="false":::
 
@@ -133,7 +133,7 @@ In this task, you will create a Power BI report based on the semantic model you 
 
    :::image type="content" source="media/tutorial-power-bi-report/table-visual.png" alt-text="Screenshot of the table visual showing four columns of data." border="true":::
 
-1. If necessary, reposition and resize the table visual to place it at the right region of the report page.
+1. If necessary, reposition and resize the table visual to place it in an empty region of the report page.
 
    :::image type="content" source="media/tutorial-power-bi-report/report-visual-layout-3.png" alt-text="Diagram of the report page layout showing the chart visual placed at the right region of the report page." border="false":::
 

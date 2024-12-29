@@ -91,7 +91,7 @@ In this task, you will create a query with the visual query builder.
         1. `StateProvince`
         1. `City`
 
-    1. In the **New column name** box, replace the value with `SumOfTaxAmount`.
+    1. In the **New column name** box, enter the name `SumOfTaxAmount`.
         1. In the **Operation** dropdown, select **Sum**.
         1. In the **Column** dropdown, select `TaxAmount`.
 

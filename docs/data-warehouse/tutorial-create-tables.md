@@ -35,7 +35,7 @@ In this task, you will create tables in the warehouse by using T-SQL.
 
    :::image type="content" source="media/tutorial-create-tables/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." border="false":::
 
-1. In the query editor, paste the following code and read the comments.
+1. In the query editor, paste the following code. The code drops the `dimension_city` table (if it exists), and the creates the table. It also drops the `fact_sale` table (if it exists), and creates the table.
 
    ```sql
     --Drop the dimension_city table if it already exists.
@@ -107,9 +107,7 @@ In this task, you will create tables in the warehouse by using T-SQL.
 
 1. Select **Rename**.
 
-1. Verify that the two new tables are listed in the **Explorer** pane.
-
-    _The `dimension_customer` table was created in the [previous tutorial](tutorial-ingest-data.md)._
+1. Verify that the two new tables are listed in the **Explorer** pane. The `dimension_customer` table was created in the [previous tutorial](tutorial-ingest-data.md).
 
    :::image type="content" source="media/tutorial-create-tables/explorer-verify.png" alt-text="Screenshot of the Explorer pane, showing where to find your tables and newly created query." border="false":::
 

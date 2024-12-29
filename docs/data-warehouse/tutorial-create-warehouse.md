@@ -1,5 +1,5 @@
 ---
-title: "Data warehouse tutorial: Create a Warehouse in Microsoft Fabric"
+title: "Data warehouse tutorial: Create a Warehouse"
 description: In this second tutorial step, after you've created your workspace, learn how to create your first Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
 ---
 
-# Tutorial: Create a Warehouse in Microsoft Fabric
+# Tutorial: Create a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -29,8 +29,6 @@ In this task, you will create a warehouse.
 1. Select **+ New Item** to display the full list of available item types.
 
 1. From the list, in the **Store data** section, select the **Warehouse** item type.
-
-   :::image type="content" source="media/tutorial-create-warehouse/select-warehouse-item-type.png" alt-text="Screenshot of the New item panel, highlighting the Warehouse item type." lightbox="media/tutorial-create-warehouse/select-warehouse-item-type.png" border="false":::
 
 1. In the **New warehouse** window, enter the name `Wide World Importers`.
 
