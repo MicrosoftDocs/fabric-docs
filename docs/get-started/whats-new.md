@@ -468,12 +468,9 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 |:-- |:-- | :-- |
 -->
 
-## Archive
-
-For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md).
-
 ## Related content
 
+- [Microsoft Fabric What's New archive](whats-new-archive.md)
 - [Modernization Best Practices and Reusable Assets Blog](https://techcommunity.microsoft.com/t5/modernization-best-practices-and/bg-p/ModernizationBestPracticesBlog)
 - [Azure Data Explorer Blog](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/bg-p/AzureDataExplorer)
 - [Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/)
