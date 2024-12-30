@@ -64,4 +64,4 @@ The variables in the Variable library can be any of the following basic types:
   - *Z* indicates that the time is in Coordinated Universal Time (UTC)
   For example, 2024-10-14T04:53:54Z.
 - Double: A number with decimal points.
-- Integer: A whole number that can be positive, negative, or zero
+- Integer: A whole number that can be positive, negative, or zero.

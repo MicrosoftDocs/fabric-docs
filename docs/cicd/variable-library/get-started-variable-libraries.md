@@ -90,6 +90,12 @@ Value sets are sets of values for the Variable library item. A value set consist
 
 The default value set is the value set that is used by default in any stage of the deployment pipeline unless you specifically define a different value set to use.
 
+When you create a new Variable library item. The default values are used until you provide new values.
+
+To reset a variable value to the default value, select the reset button.
+
+:::image type="content" source="./media/get-started-with-variable-libraries/reset-to-default.png" alt-text="Screenshot of a Variable library. There's a reset button next to the value of a variable.":::
+
 ### Add a value set
 
 To add another value set that can be used in different environments:
@@ -108,7 +114,7 @@ To edit a value set, select the three dots next to the name of the value set.
 
 You have the following options:
 
-* Set as active value set for that stage
+* Set as active value set
 * Rename the value set
 * Delete the value set
 
