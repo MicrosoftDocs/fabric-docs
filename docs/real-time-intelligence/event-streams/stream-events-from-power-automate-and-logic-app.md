@@ -154,7 +154,7 @@ The steps to stream events from Logic Apps to your eventstream using the Event H
 - **Execute JavaScript Code**: [Copy the script content](https://github.com/xujxu/flightinfo.pam/blob/main/logicAppScript/flights.info.mocks.js) into this step.
 - **Send Event** : Configure the Event Hubs using the **Event Hubs name** and **Connection string** obtained from your Custom endpoint in your eventstream.
 
-   :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/logic-apps.png" alt-text="Screenshot showing how to configure logic apps." lightbox="media/stream-events-from-power-automate-and-logic-app/logic-apps.png" :::
+   :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/logic-apps.png" alt-text="Screenshot showing how to configure logic apps.":::
 
 ## Related content
 
