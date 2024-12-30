@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 07/10/2024
+ms.date: 12/10/2024
 ms.custom:
   - build-2023
   - ignite-2023
