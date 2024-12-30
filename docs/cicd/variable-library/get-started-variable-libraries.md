@@ -86,6 +86,10 @@ To add a new variable to the library:
 
 Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage of the deployment pipeline. For each stage, you can choose to use the active value set for that stage.
 
+### Default value set
+
+The default value set is the value set that is used by default in any stage of the deployment pipeline unless you specifically define a different value set to use.
+
 ### Add a value set
 
 To add another value set that can be used in different environments:
@@ -104,7 +108,7 @@ To edit a value set, select the three dots next to the name of the value set.
 
 You have the following options:
 
-* Set as active value set
+* Set as active value set for that stage
 * Rename the value set
 * Delete the value set
 
