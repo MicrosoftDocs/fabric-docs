@@ -72,7 +72,7 @@ items:
     - name: REST APIs
       href: variable-library/automate-variable-library.md
   - name: "Tutorial: Use Variable libraries in cicd-overview.md"
-    href: variable-library/variable-library-tutorial.md
+    href: variable-library/tutorial-variable-library.md
   - name: Variable library FAQ and Troubleshooting
     href: variable-library/variable-library-faq.yml
 - name: Lifecycle management best practices

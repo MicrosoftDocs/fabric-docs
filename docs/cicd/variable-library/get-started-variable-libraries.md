@@ -56,27 +56,39 @@ An empty Variable library appears. You can now add variables to it.
 
 :::image type="content" source="./media/get-started-with-variable-libraries/empty-variable-library.png" alt-text="Screenshot of an empty Variable library. It says there are no variables, and there's a green button that says New variable.":::
 
-## Add a variable
+## Manage the Variable library variables
 
-To add a variable to the library:
+You can manage the variables in the Variable library from the top menu bar
+
+:::image type="content" source="./media/get-started-with-variable-libraries/add-variable.png" alt-text="Screenshot of a Variable library. On top, there's a button that says New variable.":::
+
+### Add a variable
+
+To add a new variable to the library:
 
 1. Select **+ New variable**
 1. Enter a name (make sure it follows the [naming conventions](./variable-types.md#name-of-a-variable-in-the-variable-library))
 1. Select a type from the drop-down list
 1. Enter a default value
 1. Add a note explaining what the variable is for or how to use it (optional)
-1. Save
+1. Select **Save**
 
-:::image type="content" source="./media/get-started-with-variable-libraries/add-variable.png" alt-text="Screenshot of a Variable library. On top, there's a button that says New variable.":::
+### Delete or edit a variable
+
+* To delete a variable, select one or more variables and select **Delete variable** and then **Save**.
+* To edit the name, type, or value set of a variable, change the value and select **Save**.
+* To add another alternative value set, select **Add value set**.
 
 > [!NOTE]
 > Selecting **Save** after editing any variable in the Variable library triggers an error validation check to make sure all the variable names and values are valid. Any errors must be fixed before the changes are saved.
 
-## Value sets
+## Alternative value sets
 
-Value sets are sets of values for the Variable library item. A value set consists value for each variable in the item. You can have multiple value sets for a Variable library item, and choose which one to use in different environments.
+Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage of the deployment pipeline. For each stage, you can choose to use the active value set for that stage.
 
 ### Add a value set
+
+To add another value set that can be used in different environments:
 
 1. Select **Add value set**
 1. Name the value set (make sure it follows the [naming conventions](./variable-types.md#name-of-a-value-set-in-the-variable-library))
@@ -97,18 +109,6 @@ You have the following options:
 * Delete the value set
 
 Select **Save**.
-
-## Manage the Variable library variables
-
-The following operations can be performed from the top menu bar:
-
-:::image type="content" source="./media/get-started-with-variable-libraries/menu-bar.png" alt-text="Screenshot of a menu bar found on the top of the screen. It has four buttons, Save, New variable, Delete variable, and Add value set.":::
-
-* To delete a variable, select one or more variables and select **Delete variable**.
-* To edit the name, type, or value set of a variable, change the value and select **Save**.
-* To add another alternative value set, select **Add value set**.
-
-
 
 ## Related content
 
