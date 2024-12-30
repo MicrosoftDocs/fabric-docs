@@ -26,7 +26,7 @@ In this task, you'll remove the workspace you created in the first tutorial.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-1. In the workspace landing page, at the top-right, select **Workspace settings**.
+1. In the workspace landing page, select **Workspace settings**.
 
    :::image type="content" source="media/tutorial-clean-up/select-workspace-settings.png" alt-text="Screenshot of the workspace landing page, highlighting the Workspace settings option."  border="false":::
 
