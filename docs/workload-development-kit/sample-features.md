@@ -53,9 +53,9 @@ To connect the sample item to a lakehouse, follow these steps.
 
 3. Select **Connect**.
 
-### Step 3: Perform a calculation
+### Step 3: Create a calculation
 
-To perform a calculation using the sample item, follow these steps.
+To create a calculation using the sample item, follow these steps.
 
 1. the *Sample Item Editor*, fill in the following fields:
     - **Operand 1** - Enter a number.
@@ -66,7 +66,15 @@ To perform a calculation using the sample item, follow these steps.
 
 3. (Optional) To multiply each operand by two, select **Double the result**.
 
-### Step 4: View your calculation
+### Step 4: Run your job
+
+Run the calculation job to create a lakehouse text file with the calculation results. To run the job, follow these steps.
+
+1. In the *Sample Item Editor*, select the **Jobs** tab.
+
+2. Select **Run jobs** and from the dropdown menu, select **Scheduled Job**.
+
+### Step 5: View your calculation
 
 To open the file with the calculation results, follow these steps.
 
