@@ -139,7 +139,7 @@ In this task, learn how to create a Power BI report based on the semantic model 
 
 1. If necessary, reposition and resize the table visual to place it in an empty region of the report page.
 
-   :::image type="content" source="media/tutorial-power-bi-report/report-visual-layout-3.png" alt-text="Diagram of the report page layout showing the chart visual placed in the report page." border="false":::
+   :::image type="content" source="media/tutorial-power-bi-report/report-visual-layout-3.png" alt-text="Diagram of the report page layout showing the second chart visual placed in the report page." border="false":::
 
 1. Verify that the completed design of the report page resembles the following image.
 
