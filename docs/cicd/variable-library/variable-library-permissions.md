@@ -21,9 +21,9 @@ The Microsoft Fabric Variable library permissions are aligned with the Fabric wo
 
 Permissions are aligned with the fabric permission model:
 
-- Workspace permissions
-- Viewer permissions: Someone with viewer permissions can Add/Edit/Delete, but not save their changes. Viewer can also see available variables for reference on a consumer item with all their details and referred variables values.
-- Contributor/Member/Admin permissions: In general, CRUD permissions. For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
+Workspace permissions: Viewer, contributor, member, and admin permissions are supported.
+
+Anyone who is a contributor or above can add,edit, and delete. For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
 
 ## Variable permissions
 

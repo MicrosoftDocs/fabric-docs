@@ -56,7 +56,7 @@ An empty Variable library appears. You can now add variables to it.
 
 :::image type="content" source="./media/get-started-with-variable-libraries/empty-variable-library.png" alt-text="Screenshot of an empty Variable library. It says there are no variables, and there's a green button that says New variable.":::
 
-## Manage the Variable library variables
+## Manage Variable library and their variables
 
 You can manage the variables in the Variable library from the top menu bar
 
@@ -82,23 +82,9 @@ To add a new variable to the library:
 > [!NOTE]
 > Selecting **Save** after editing any variable in the Variable library triggers an error validation check to make sure all the variable names and values are valid. Any errors must be fixed before the changes are saved.
 
-## Alternative value sets
-
-Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage of the deployment pipeline. For each stage, you can choose to use the active value set for that stage.
-
-### Default value set
-
-The default value set is the value set that is used by default in any stage of the deployment pipeline unless you specifically define a different value set to use.
-
-When you create a new Variable library item. The default values are used until you provide new values.
-
-To reset a variable value to the default value, select the reset button.
-
-:::image type="content" source="./media/get-started-with-variable-libraries/reset-to-default.png" alt-text="Screenshot of a Variable library. There's a reset button next to the value of a variable.":::
-
 ### Add a value set
 
-To add another value set that can be used in different environments:
+To add another value set that can be used a different stage:
 
 1. Select **Add value set**
 1. Name the value set (make sure it follows the [naming conventions](./variable-types.md#name-of-a-value-set-in-the-variable-library))
@@ -114,11 +100,15 @@ To edit a value set, select the three dots next to the name of the value set.
 
 You have the following options:
 
-* Set as active value set
+* Set as active value set for that stage
 * Rename the value set
 * Delete the value set
 
 Select **Save**.
+
+To reset a variable value of each variable to the default value, select the reset button.
+
+:::image type="content" source="./media/get-started-with-variable-libraries/reset-to-default.png" alt-text="Screenshot of a Variable library. There's a reset button next to the value of a variable.":::
 
 ## Related content
 

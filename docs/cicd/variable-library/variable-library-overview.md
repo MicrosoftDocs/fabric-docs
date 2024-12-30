@@ -24,20 +24,33 @@ The Fabric Variable library:
 
 Variable libraries enable customers to:
 
-* [Customize configurations](#customize-configurations)
-* [Share configurations](#share-configurations)
+* Customize configurations:
 
-## Customize configurations
+  A variable value can be configured based on the release pipeline stage. The user can configure the Variable library with different sets of value, one for each stage of the release pipeline. Then, after one-time settings of the active value-set for each stage, the correct value is automatically used in the pipeline stage. Some examples include:
 
-A variable value can be configured based on the release pipeline stage. The user can configure the Variable library with different sets of value, one for each stage of the release pipeline. Then, after one-time settings of the active value-set for each stage, the correct value is automatically used in the pipeline stage. Some examples include:
+  * Changing items connection based on the stage
+  * Switching to a different cloud data source based on the stage
+  * Adjusting data quantity in a query based on the stage
 
-* Changing items connection based on the stage
-* Switching to a different cloud data source based on the stage
-* Adjusting data quantity in a query based on the stage
+* Share configurations
 
-## Share configurations
+  Variable libraries provide a centralized way to manage configurations across the workspace items. For example, Lakehouses in the workspace using the same shortcut can share the same configuration across the workspace.
 
-Variable libraries provide a centralized way to manage configurations across the workspace items. For example, Lakehouses in the workspace using the same shortcut can share the same configuration across the workspace.
+## Variable library structure
+
+### Core components
+
+Variable libraries contain one or more variables. Each variable has a name, type, and default value. You can also add notes to each variable to describe its purpose.
+
+## Default value
+
+The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets).
+
+When you create a new value set, the new value set is created with pointers to the default value for each variable.
+
+### Value sets (optional)
+
+Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage of the deployment pipeline. For each stage, you can choose to use the active value set for that stage.
 
 ## Supported items
 
