@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: quickstart  #Don't change
 ms.custom:
-ms.date: 12/23/2024
+ms.date: 12/30/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
@@ -188,3 +188,7 @@ The rest of the steps in this quickstart are performed in Visual Studio 2022. Us
 3. Select **New item**.
 
 4. Open **Sample Item (preview)**.
+
+## Related content
+
+* [Understand the development sample](sample-features.md)
