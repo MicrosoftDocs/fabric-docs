@@ -14,7 +14,7 @@ Apache Airflow Jobs in Microsoft Fabric provides cloud-native experience for dat
 
 Now, with the `gpt-4o` AI model in Azure, we're pushing the limits of what you can do with Apache Airflow Jobs and making it possible for you to create Apache Airflow DAGs from just your whiteboard sketch idea. This feature is useful for data engineers and data scientists who want to quickly prototype and visualize their data workflows.
 
-In this article, you create an end to end workflow that downloads the sketch stored in Azure Blob Storage, use `gpt-4o` to turn it into Apache Airflow DAG and load it into Apache Airflow Jobs for execution. 
+In this article, you create an end to end workflow that downloads the sketch stored in your Lakehouse, use `gpt-4o` to turn it into Apache Airflow DAG and load it into Apache Airflow Jobs for execution. 
 
 ## Prerequisites
 Before you create the solution, ensure the following prerequisites are set up in Azure and Fabric:
@@ -29,64 +29,61 @@ Before you create the solution, ensure the following prerequisites are set up in
   2. Select Apply.
      :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 - [An **Azure OpenAI** account with an API key and a deployed gpt-4o model.](/azure/ai-services/openai/quickstart?tabs=command-line%2Cjavascript-keyless%2Ctypescript-keyless%2Cpython-new&pivots=programming-language-python)
-- [Create an **Azure Blob Storage** account.](/azure/storage/common/storage-account-create?tabs=azure-portal)
+- [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
+- Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
+:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
 - [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
-- Apache Airflow dag diagram. Save the given image in [step 1](#step-1-upload-the-sketch-to-azure-blob-storage) to your local machine.
-<!-- 5. Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
+- A diagram of what you want your Apache Airflow DAG to look like or save the given image in [step 1](#step-1-upload-the-image-to-fabric-lakehouse) to your local machine.
+- Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
    ```bash
-Pillow
-   ``` -->
+   azure-storage-file-datalake
+   Pillow
+   ```
 
-### Step 1: Upload the sketch to Azure Blob Storage
+### Step 1: Upload the image to Fabric Lakehouse
 
-Before you can analyze the sketch, you need to upload it to Azure Blob Storage. This sketch is used in our AzureOpenAI DAG Generator to convert it into Apache Airflow DAG.[Create a container](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) in Azure Blob Storage called `airflow-dag-images` and upload the image there.
+Before you can analyze the image, you need to upload it to your Lakehouse. 
 :::image type="content" source="media/apache-airflow-jobs/airflow-dag-diagram.png" lightbox="media/apache-airflow-jobs/airflow-dag-diagram.png" alt-text="Screenshot represents DAG diagram of Apache Airflow.":::
 
-### Step 2: Set up an Airflow Connection for Azure Blob Storage
+1. Upload the file from your local machine to the Lakehouse's `Files` folder.
+:::image type="content" source="media/apache-airflow-jobs/airflow-upload-lakehouse.png" lightbox="media/apache-airflow-jobs/airflow-upload-lakehouse.png" alt-text="Screenshot represents file upload to Fabric Lakehouse.":::
 
-In Apache Airflow, accessing external resources requires configuring a connection. To retrieve the sketch stored in Azure Blob Storage container, set up an Azure Blob Storage connection in Airflow. This connection enables Apache Airflow to authenticate and interact with the Azure Blob Storage service, allowing you to securely access and manage the stored files.
+2. Copy the storage account name of your Fabric Lakehouse, it is used in the Apache Airflow connection to authenticate with the Lakehouse.
+:::image type="content" source="media/apache-airflow-jobs/airflow-lakehouse-name.png" lightbox="media/apache-airflow-jobs/airflow-lakehouse-name.png" alt-text="Screenshot represents Fabric Lakehouse name.":::
 
-To retrieve the access key and connection string:
-1. Go to the Azure portal and navigate to your Azure Blob Storage account.
-2. Under **Security + Networking**, select **Access keys**.
-3. You find the access keys and the complete connection string. Copy these values and paste them in the Apache Airflow connection.
-   :::image type="content" source="media/apache-airflow-jobs/blob-storage.png" lightbox="media/apache-airflow-jobs/blob-storage.png" alt-text="Screenshot represents how to get connection string and key of Azure Blob Storage.":::
+### Step 2: Set up Environment Variables to authenticate with Lakehouse and Azure OpenAI.
 
-In the workflow, we are using the `WasbHook` to download the sketch from Azure Blob Storage. To enable it, you need to set up a connection in Airflow:
-1. Open Apache Airflow Job, Click on `View Connections` -> `+` -> Select Connection Type as `Azure Blob Storage`.
-2. Fill in the following details:
-    * Connection ID: Set it to `wasb_conn_id` (ensure it matches the code).
-    * Connection Type: Azure Blob Storage
-    * Blob Storage Key: Enter the access key for your Azure Blob Storage account.
-    * Blob Storage Connection String: Enter the connection string for your Azure Blob Storage account.
+> Note: This tutorial is based on Airflow version 2.6.3.
 
-### Step 2: Store Azure OpenAI API Key and Endpoint in Airflow Variables
+:::image type="content" source="media/apache-airflow-jobs/rename-add-environment-variables.png" lightbox="media/apache-airflow-jobs/rename-add-environment-variables.png" alt-text="Screenshot to add environment variables in apache airflow job.":::
 
-We use the `gpt-4o` model deployment in Azure OpenAI to analyze the whiteboard sketch of the pipeline and convert it into an Apache Airflow DAG. To connect to the Azure OpenAI API, store the API key and endpoint as Airflow variables:
+#### Credentials for Lakehouse Rest APIs. 
+We're going to use the Lakehouse Rest APIs to download the image from the Lakehouse. To authenticate with the Lakehouse Rest APIs, you need to set the following environment variables in Apache Airflow Job.
+- `FABRIC_CLIENT_ID`: The client ID of the Microsoft Entra ID app.
+- `FABRIC_CLIENT_SECRET`: The client secret of the Microsoft Entra ID app.
+- `FABRIC_TENANT_ID`: The tenant ID of the Microsoft Entra ID app.
 
-1. Open the **Airflow UI**.
-2. Navigate to **Admin** > **Variables**. 
-3. Click **+** to create new variables.
-4. Add the following variables with their respective values:
-   - **`openai_api_key`**: Enter your Azure OpenAI API key.
-   - **`openai_api_endpoint`**: Enter the endpoint URL for your deployed `gpt-4o` model.
+#### Credentials for Azure OpenAI
+We use the `gpt-4o` model deployment in Azure OpenAI to analyze the whiteboard sketch of the pipeline and convert it into an Apache Airflow DAG. To connect to the Azure OpenAI API, store the API key and endpoint in environment variables:
+- `OPENAI_API_KEY`: Enter your Azure OpenAI API key.
+- `OPENAI_API_ENDPOINT`: Enter the endpoint URL for your deployed `gpt-4o` model.
 
-### Step 3: Create an Apache Airflow DAG to generate dags from sketches
+### Step 3: Create an Apache Airflow DAG to generate DAGs from sketches
 
-With all prerequisites complete, you are ready to set up the Azure OpenAI DAG Generator workflow.
+With all prerequisites complete, you're ready to set up the Azure OpenAI DAG Generator workflow.
 
 #### How the Azure OpenAI DAG Generator works
-1. Download the sketch from Azure Blob Storage: The image is encoded in base64 format and sent to Azure OpenAI.
+1. Download the sketch from your Lakehouse: The image is encoded in base64 format and sent to Azure OpenAI.
 2. Generate DAG Code using Azure OpenAI: The workflow uses the `gpt-4o` model to generate the DAG code from the sketch and given system prompt.
 3. Azure OpenAI interprets the input image and system prompt, generating python code that represents an Apache Airflow DAG. The response includes this code as part of the API output.
-4. The generated DAG code is retrieved from the API response and written to a Python file in the dags directory. Before you use the file, configure the connections required by the operators in the Apache Airflow and the file is immediately ready for use in the Apache Airflow Jobs interface.
+4. The generated DAG code is retrieved from the API response and written to a Python file in the `dags` directory. Before you use the file, configure the connections required by the operators in the Apache Airflow and the file is immediately ready for use in the Apache Airflow Jobs interface.
 
 #### Code for Azure OpenAI DAG Generator
 
 Now, follow the steps to implement the workflow:
 
 1. Create a file named openapi_dag_generator.py in the dags directory of your Apache Airflow project.
-2. Add the following code to the file, Replace `container_name` and `blob_name` with the actual values and save the file.
+2. Add the following code to the file. Replace `yourStorageAccountName`, `workspace_name` and `file_path` with the actual values and save the file.
    ```python
    import io
    import json
@@ -99,9 +96,9 @@ Now, follow the steps to implement the workflow:
    from airflow.models.param import Param
    from airflow.decorators import dag, task
    from airflow.models.baseoperator import chain
-   from airflow.providers.microsoft.azure.hooks.wasb import WasbHook
-   
-   
+   from azure.storage.filedatalake import DataLakeServiceClient
+
+
    @dag(
        start_date=datetime(2023, 11, 1),
        schedule=None,
@@ -134,16 +131,32 @@ Now, follow the steps to implement the workflow:
        """
        
        @task
-       def fetch_image_from_blob(blob_name: str, container_name: str):
+       def fetch_image_from_lakehouse(workspace_name: str, file_path: str):
            """
-           Downloads an image from Azure Blob Storage and encodes it as a Base64 string.
+           Downloads an image from Fabric Lakehouse and encodes it as a Base64 string.
            
-           :param blob_name: Name of the blob in Azure Blob Storage.
-           :param container_name: Name of the container in Azure Blob Storage.
+           :param workspace_name: Name of the workspace where your Lakehouse is located.
+           :param file_path: Relative file path stored in the Fabric Lakehouse.
            :return: Dictionary containing the encoded image as a Base64 string.
            """
-           wasb_hook = WasbHook(wasb_conn_id="wasb_conn_id")
-           blob_data = wasb_hook.download(container_name=container_name, blob_name=blob_name).readall()
+           account_url = f"https://{yourStorageAccountName}.dfs.fabric.microsoft.com"
+           client_id = os.getenv("FABRIC_CLIENT_ID")
+           client_secret = os.getenv("FABRIC_CLIENT_SECRET")
+           tenant_id = os.getenv("FABRIC_TENANT_ID")
+
+           tokenCredential = ClientSecretCredential(
+               tenant_id=tenant,
+               client_id=app_id,
+               client_secret=app_secret
+           )
+
+           lakehouse_client = DataLakeServiceClient(
+               account_url,
+               credential=tokenCredential
+           )
+
+           blob_data = lakehouse_client.get_file_client(workspace_name, file_path).download_file().readall()
+
            image = Image.open(io.BytesIO(blob_data))
            
            # Encode image as Base64
@@ -152,8 +165,8 @@ Now, follow the steps to implement the workflow:
            encoded_image = base64.b64encode(buffered.getvalue()).decode('ascii')
            
            return {"encoded_image": encoded_image}
-   
-       
+
+
        @task
        def generate_dag_code_from_openai(image_from_blob: dict, system_prompt: str, **context):
            """
@@ -164,8 +177,8 @@ Now, follow the steps to implement the workflow:
            :return: Dictionary containing the generated DAG code as a string.
            """
            
-           azureAI_api_key = Variable.get("openai_api_key")
-           azureAI_endpoint = Variable.get("openai_api_endpoint")
+           azureAI_api_key = os.getenv("OPENAI_API_KEY")
+           azureAI_endpoint = os.getenv("OPENAI_API_ENDPOINT")
    
            image = image_from_blob["encoded_image"]
            
@@ -252,9 +265,9 @@ Now, follow the steps to implement the workflow:
        chain(
            save_dag(
                generate_dag_code_from_openai(
-                   fetch_image_from_blob(
-                       blob_name="airflow-dag-diagram.png",
-                       container_name="airflow-dag-images"
+                   fetch_image_from_lakehouse(
+                       workspace_name="airflow-dag-images"
+                       file_path="airflow-dag-diagram.png",
                    ),
                    "{{ params.system_prompt }}"
                )
@@ -269,15 +282,15 @@ Now, follow the steps to implement the workflow:
 2. Navigate to the DAGs tab and locate the `OpenAI_Dag_Generator` DAG. Click on it.
 3. Click on the play button and Select `Trigger DAG w/ config`.
    :::image type="content" source="media/apache-airflow-jobs/trigger-dag.png" lightbox="media/apache-airflow-jobs/trigger-dag.png" alt-text="Screenshot shows how to trigger dag using config.":::
-4. You are presented with a form showing DAG parameters. We've provided a default system prompt, seed, temperature, top_p, and max_tokens. You can modify these values as needed.
+4. You're presented with a form showing DAG parameters. We provide a default system prompt, seed, temperature, top_p, and max_tokens. You can modify these values as needed.
    :::image type="content" source="media/apache-airflow-jobs/dag-parameters.png" lightbox="media/apache-airflow-jobs/dag-parameters.png" alt-text="Screenshot represents DAG parameters.":::
 5. Click on `Trigger` button to start.
-6. After the successful DAG execution, you would see a new DAG generated by the filename `openai_dag.py` in the dags directory in Apache Airflow UI itself.
+6. After the successful DAG execution, you would see a new DAG generated with the filename `openai_dag.py` in the `dags` folder of Apache Airflow Job.
 
 ### Step 5: Get Ready to execute the newly generated DAG
 1. Open the Apache Airflow Job UI.
 2. The newly generated DAG is saved in the DAGs folder as `openai_dag.py`.
-   :::image type="content" source="media/apache-airflow-jobs/new-file-openai-dag.png" lightbox="media/apache-airflow-jobs/new-file-openai-dag.png" alt-text="Screenshot represents new dag generated with openai dag generator.":::
+   :::image type="content" source="media/apache-airflow-jobs/new-file-openai-dag.png" lightbox="media/apache-airflow-jobs/new-file-openai-dag.png" alt-text="Screenshot represents new dag generated with OpenAI dag generator.":::
 3. Open the DAG file to review the code. You can edit it as needed and configure the necessary connections for the operators.
 4. Once the connections are set, you can trigger the DAG to execute the workflow.
    :::image type="content" source="media/apache-airflow-jobs/openai-resultant-dag.png" lightbox="media/apache-airflow-jobs/openai-resultant-dag.png" alt-text="Screenshot represents resultant dag from OpenAI.":::
