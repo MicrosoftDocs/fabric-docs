@@ -22,7 +22,7 @@ Now that you've completed all tutorials, we recommend that you clean up by remov
 
 ## Remove the workspace
 
-In this task, you will remove the workspace you created in the first tutorial.
+In this task, you'll remove the workspace you created in the first tutorial.
 
 1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
