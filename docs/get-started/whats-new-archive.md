@@ -605,9 +605,11 @@ This section summarizes archived improvements and features for [Real-Time Intell
 |June 2023|**Get started with exploring your data with KQL – a purpose-built tool for petabyte scale data analytics**|In this blog, we focus on the [different ways of querying data in Real-Time Intelligence](https://blog.fabric.microsoft.com/blog/get-started-with-exploring-your-data-with-kql-a-purpose-built-tool-for-petabyte-scale-data-analytics). |
 |May 2023|**Ingest, transform, and route real-time events with Microsoft Fabric eventstreams**|You can now [ingest, capture, transform and route real-time events to various destinations in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/ingest-transform-and-route-real-time-events-with-microsoft-fabric-event-streams) with a no-code experience using Microsoft Fabric eventstreams. |
 
-## Microsoft Fabric core features
+<a id="microsoft-fabric-core-features"></a>
 
-Archived news and feature announcements core to the Microsoft Fabric experience.
+## Microsoft Fabric platform features
+
+Archived news and feature announcements about the Microsoft Fabric platform experience.
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
