@@ -70,10 +70,26 @@ NotebookUtils works with the file system in the same way as Spark APIs. Take *no
 To list the content of a directory, use *notebookutils.fs.ls('Your directory path')*. For example:
 
 ```python
-notebookutils.fs.ls("Files/tmp") # works with the default lakehouse files using relative path 
-notebookutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path>")  # based on ABFS file system 
-notebookutils.fs.ls("file:/tmp")  # based on local file system of driver node 
+notebookutils.fs.ls("Files/tmp") # The relatvie path may work with different base path, details in below 
+notebookutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path>")  # The absolute path, like: ABFS file system
+notebookutils.fs.ls("file:/tmp")  # The full path of the local file system of driver node
 ```
+
+The ```notebookutils.fs.ls()``` API behaves differently when using relative path, depending on the type of notebook.
+
+- **In a Spark notebook**: The relative path is relative to the default Lakehouse's ABFSS path. For example, ```notebookutils.fs.ls("Files")``` points to the ```Files``` directory in the default Lakehouse.
+
+    For example:
+    ```python
+    notebookutils.fs.ls("Files/sample_datasets/public_holidays.parquet")
+    ```
+
+- **In a Python notebook**: The relative path is relative to the local file system's working directory, which by default is /home/trusted-service-user/work. Therefore, you should use the full path instead of a relative path ```notebookutils.fs.ls("/lakehouse/default/Files")``` to access the ```Files``` directory in the default Lakehouse.
+
+    For example:
+    ```python
+    notebookutils.fs.ls("/lakehouse/default/Files/sample_datasets/public_holidays.parquet")
+    ```
 
 ### View file properties
 

@@ -3,7 +3,7 @@ title: Change data capture from SAP to Microsoft Fabric with Azure Data Factory
 description: This tutorial describes how to use change data capture with SAP to import data to a Microsoft Fabric OneLake with Azure Data Factory.
 author: ukchrist
 ms.topic: tutorial
-ms.date: 02/01/2024
+ms.date: 12/18/2024
 ms.author: ulrichchrist
 ---
 
@@ -46,7 +46,7 @@ Creating an SAP CDC dataset as described in the document on linked service confi
 
 ## Setting up ADLS Gen2 connectivity for staging
 
-Before writing the change data from the SAP source system into the sink, it's staged into a folder in ADLS Gen2. From there, the mapping data flow runtime picks the data up and processes it according to the steps defined in the data flow. The data flow provided as part of the template merges the changes with the existing data in the sink table and thus give you an up-to-date copy of the source.
+Before writing the change data from the SAP source system into the sink, it's staged into a folder in ADLS Gen2. From there, the mapping data flow runtime picks up the data and processes it according to the steps defined in the data flow. The data flow provided as part of the template merges the changes with the existing data in the sink table and thus give you an up-to-date copy of the source.
 
 Setup of an ADLS Gen2 linked service is described here: [Create an Azure Data Lake Storage Gen2 linked service using UI](/azure/data-factory/connector-azure-data-lake-storage?tabs=data-factory#create-an-azure-data-lake-storage-gen2-linked-service-using-ui).
 
@@ -146,7 +146,7 @@ With the setup of the linked services completed, you can import the template and
 
 1. After you configure the template, ADF creates the new pipeline, and you can make any adjustments you require for your specific setup. As a first step, configure the staging folder to intermediately store the change data from SAP before it's merged with your delta table in Fabric. Select on the data flow activity in the pipeline and select the **Settings** tab. In the **Staging** properties you can see the staging linked service configured in the last step. Enter a **Staging storage folder**.
 
-1. Double click on the data flow activity in the pipeline open the mapping dataflow to configure your source and sink. First, select the SAP CDC source transfer, and select the **Source options** tab. Provide the detail properties of your source object in **ODP context**, **ODP name** and **Key columns** (as a JSON array). Then select a **Run mode**. For details on these properties, refer to [Azure Data Factory documentation for SAP change data capture capabilities](/azure/data-factory/sap-change-data-capture-introduction-architecture).
+1. Double select on the data flow activity in the pipeline open the mapping dataflow to configure your source and sink. First, select the SAP CDC source transfer, and select the **Source options** tab. Provide the detail properties of your source object in **ODP context**, **ODP name** and **Key columns** (as a JSON array). Then select a **Run mode**. For details on these properties, refer to [Azure Data Factory documentation for SAP change data capture capabilities](/azure/data-factory/sap-change-data-capture-introduction-architecture).
 
 1. Select the sink transformation of the data flow, and then select the **Settings** tab, and enter the **Table name** for the Lakehouse table in your Fabric workspace. Select the radio button **Custom expression** of the **Key columns** property and enter the key columns of your source as a JSON array.
 

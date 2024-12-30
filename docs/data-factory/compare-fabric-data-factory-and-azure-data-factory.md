@@ -4,7 +4,7 @@ description: This article provides information about compare differences between
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
   - buyild-2023
@@ -22,19 +22,19 @@ In the modern experience of Data Factory in Fabric, there are some different fea
 
 |Azure Data Factory |Data Factory in Fabric |Description |
 |:---|:---|:---|
-|Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Datawarehouse, and more. |
+|Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Data warehouse, and more. |
 |Mapping dataflow  |Dataflow Gen2 | Dataflow Gen2 provides easier experience to build transformation. We are in progress of letting more functions of mapping dataflow supported in Dataflow Gen2 |
 |Activities |Activities|We are in progress to make more activities of ADF supported in Data Factory in Fabric. Data Factory in Fabric also has some newly attracted activities like Office 365 Outlook activity. Details are in [Activity overview](activity-overview.md).|
-|Dataset |Not Applicable|Data Factory in Fabric doesn’t have dataset concepts. Connection will be used for connecting each data source and pull data. |
+|Dataset |Not Applicable|Data Factory in Fabric doesn’t have dataset concepts. Connection is used for connecting each data source and pull data. |
 |Linked Service |Connections |Connections have similar functionality as linked service, but connections in Fabric have more intuitive way to create. |
 |Triggers |Schedule triggers and file event triggers |Fabric can use the scheduler and Reflex events to automatically run pipelines. File event triggers are supported natively in pipelines in Microsoft Fabric Data Factory.  |
-|Publish |Save, Run |For pipeline in Fabric, you don’t need to publish to save the content. Instead, you can use Save button to save the content directly. When you click Run button, it will save the content before running pipeline. |
+|Publish |Save, Run |For pipeline in Fabric, you don’t need to publish to save the content. Instead, you can use Save button to save the content directly. When you select Run button, it saves the content before running pipeline. |
 |Autoresolve and Azure Integration runtime |Not Applicable |In Fabric, we don’t have the concept of Integration runtime. |
 |Self-hosted integration runtimes |On-premises Data Gateway |On-premises Data Gateway enables access to on-premises data via the Fabric Data Factory. Details are in [How to access on-premises data sources in Data Factory for Microsoft Fabric](how-to-access-on-premises-data.md). |
 |Azure-SSIS integration runtimes |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design. |
 |MVNet and Private End Point |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design.|
 |Expression language |Expression language |Expression language is similar in ADF and Fabric. |
-|Authentication type in linked service |Authentication kind in connection |Authentication kind in Fabric pipeline already supported popular authentication types in ADF, and more authentication kinds will be added. |
+|Authentication type in linked service |Authentication kind in connection |Authentication kind in Fabric pipeline already supported popular authentication types in ADF, and more authentication kinds are added. |
 |CI/CD |CI/CD |CI/CD capability in Fabric Data Factory will be coming soon. |
 |Export and Import ARM |Save as |Save as is available in Fabric pipeline to duplicate a pipeline. |
 |Monitoring |Monitoring, Run history |The monitoring hub in Fabric has more advanced functions and modern experience like monitoring across different workspaces for better insights. |
