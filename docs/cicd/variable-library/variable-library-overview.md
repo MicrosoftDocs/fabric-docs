@@ -44,7 +44,7 @@ Variable libraries contain one or more variables. Each variable has a name, type
 
 :::image type="content" source="./media/variable-library-overview/define-values.png" alt-text="Screenshot of variable library with several variables and their core components.":::
 
-## Default value
+### Default value
 
 The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets-optional).
 
@@ -52,7 +52,7 @@ When you create a new value set, the new value set is created with pointers to t
 
 ### Value sets (optional)
 
-Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage of the deployment pipeline. For each stage, you can choose to use the active value set for that stage.
+Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage. The active (or effective) value set is the one that is used in the current stage.
 
 :::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of variable library with several alternative value sets.":::
 
