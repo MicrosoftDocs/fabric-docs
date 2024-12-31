@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 12/30/2024
+ms.date: 12/31/2024
 
 # Customer intent: As a developer, I want to understand the Fabric capablities that the workload development kit sample showcases, so that I can use them in the workloads I develop.
 ---
@@ -39,7 +39,7 @@ To create a new sample item, follow these steps.
     - **Name** - Enter a name for the item.
     - **Sample description** - (Optional) Enter a description for the item.
     >[!TIP]
-    >If you select the *Request Initial Concent* checkbox, you'll see how the concent pop-up window looks. This option showcases the ability to ask users to give concent before they create a new item.
+    >If you select the *Request Initial consent* checkbox, you'll see how the consent pop-up window looks. This option showcases the ability to ask users to give consent before they create a new item.
 
 6. Select **Create**. The *Sample Item Editor* opens.
 
@@ -49,7 +49,7 @@ To connect the sample item to a lakehouse, follow these steps.
 
 1. In the *Sample Item Editor*, select the barrel icon next to **Lakehouse**.
 
-2. From the dropdown list, select the Lakehouse you want to connect to. If you don't have any lakehouses in the list, [create a lakehouse](../data-engineering/create-lakehouse.md)
+2. From the dropdown list, select the Lakehouse you want to connect to. If you don't have any lakehouses in the list, [create a lakehouse](../data-engineering/create-lakehouse.md).
 
 3. Select **Connect**.
 
@@ -80,7 +80,7 @@ To open the file with the calculation results, follow these steps.
 
 1. In Fabric, navigate to the lakehouse you connected to your sample item.
     >[!TIP]
-    >You can search for your workhouse in the search bar.
+    >You can search for your lakehouse in the search bar.
 
 2. In the lakehouse, from the explorer pane, open the **Files** folder.
 
@@ -132,7 +132,7 @@ This section lists some of the Fabric frontend capabilities showcased in the *AP
     - **Dialog description** - The text you enter here will appear in the top of the dialog box.
     - **Supported types** - Showcases the ability to create a dropdown list of items that can be filtered when displaying the dialog box. This option isn't implemented.
     - **Present workspace explorer** - When turned on, workspace explorer is open when the dialog box is opened.
-    - **Allow multiselection** - When on, you can select multiple items in the dialog box.
+    - **Allow multiselection** - When turned on, you can select multiple items in the dialog box.
 
 ### FluentUI Playground
 

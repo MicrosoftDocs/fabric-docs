@@ -5,11 +5,11 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: quickstart  #Don't change
 ms.custom:
-ms.date: 12/30/2024
+ms.date: 12/31/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
-# Quickstart: Run a workload sample
+# Quickstart - Run a workload sample
 
 This quickstart guide shows you how to create and run a Microsoft Fabric workload using a sample workload.
 
