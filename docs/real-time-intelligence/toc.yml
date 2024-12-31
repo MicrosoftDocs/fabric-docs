@@ -168,6 +168,8 @@ items:
         href: event-streams/transform-and-stream-real-time-events-to-lakehouse.md
       - name: Stream real-time events from custom application to Microsoft Fabric KQL Database
         href: event-streams/stream-real-time-events-from-custom-app-to-kusto.md
+      - name: Stream events to Eventstream using Power Automate
+        href: event-streams/stream-events-from-power-automate.md
       - name: Build a Power BI report by streaming data from Azure IoT Hub
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
