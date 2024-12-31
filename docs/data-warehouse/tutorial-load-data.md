@@ -1,63 +1,67 @@
 ---
-title: Data warehouse tutorial - load data using T-SQL
-description: In this tutorial step, learn how to load data from a public storage account into a table using T-SQL.
+title: "Data warehouse tutorial: Load data with T-SQL into a Warehouse"
+description: "In this tutorial, learn how to load data from a public storage Azure Blob storage account into Warehouse tables with T-SQL."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 07/18/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Load data using T-SQL
+# Tutorial: Load data with T-SQL into a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-Now that you know how to build a data warehouse, load a table, and generate a report, it's time to extend the solution by exploring other methods for loading data.
+In this tutorial, learn how to load data from a public storage Azure Blob storage account into Warehouse tables with T-SQL.
 
-## Load data with COPY INTO
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
+> 1. [Create tables with T-SQL in a Warehouse](tutorial-create-tables.md)
 
-1. From the ribbon, select **New SQL query**.
+## Load data with T-SQL
 
-   :::image type="content" source="media/tutorial-load-data/home-ribbon-select-new.png" alt-text="Screenshot of the Home screen ribbon, showing where to select New SQL query.":::
+In this task, learn to load data with T-SQL.
 
-1. In the query editor, paste the following code.
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
+
+1. On the **Home** ribbon, select **New SQL query**.
+
+   :::image type="content" source="media/tutorial-load-data/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option.":::
+
+1. In the query editor, paste the following code. The code copies data from Parquet files sourced from an Azure Blob storage account into the `dimension_city` table and `fact_sale` table.
 
    ```sql
-   --Copy data from the public Azure storage account to the dbo.dimension_city table.
-   COPY INTO [dbo].[dimension_city]
-   FROM 'https://fabrictutorialdata.blob.core.windows.net/sampledata/WideWorldImportersDW/tables/dimension_city.parquet'
-   WITH (FILE_TYPE = 'PARQUET');
+    --Copy data from the public Azure storage account to the dimension_city table.
+    COPY INTO [dbo].[dimension_city]
+    FROM 'https://fabrictutorialdata.blob.core.windows.net/sampledata/WideWorldImportersDW/tables/dimension_city.parquet'
+    WITH (FILE_TYPE = 'PARQUET');
    
-   --Copy data from the public Azure storage account to the dbo.fact_sale table.
-   COPY INTO [dbo].[fact_sale]
-   FROM 'https://fabrictutorialdata.blob.core.windows.net/sampledata/WideWorldImportersDW/tables/fact_sale.parquet'
-   WITH (FILE_TYPE = 'PARQUET');
+    --Copy data from the public Azure storage account to the fact_sale table.
+    COPY INTO [dbo].[fact_sale]
+    FROM 'https://fabrictutorialdata.blob.core.windows.net/sampledata/WideWorldImportersDW/tables/fact_sale.parquet'
+    WITH (FILE_TYPE = 'PARQUET');
    ```
 
-1. Select **Run** to execute the query. The query takes between one and four minutes to execute.
+1. On the query designer ribbon, select **Run** to execute the query.
 
-   :::image type="content" source="media/tutorial-load-data/select-run-option.png" alt-text="Screenshot showing where to select Run to execute your query.":::
+   :::image type="content" source="media/tutorial-load-data/run-to-execute.png" alt-text="Screenshot of the Run option on the query editor ribbon.":::
 
-1. After the query is completed, review the messages to see the rows affected which indicated the number of rows that were loaded into the `dimension_city` and `fact_sale` tables respectively.
+1. When the script execution completes, review the messages to determine how many rows were loaded into the `dimension_city` table and `fact_sale` table.
 
-   :::image type="content" source="media/tutorial-load-data/review-query-messages.png" alt-text="Screenshot of a list of messages, showing where to find the number of rows that were loaded into the tables." lightbox="media/tutorial-load-data/review-query-messages.png":::
+1. To load a preview of the loaded data, in the **Explorer** pane, select `fact_sale`.
 
-1. Load the data preview to validate the data loaded successfully by selecting on the `fact_sale` table in the **Explorer**.
+   :::image type="content" source="media/tutorial-load-data/explorer-select-table.png" alt-text="Screenshot of the Explorer pane, highlighting the fact sale table.":::
 
-   :::image type="content" source="media/tutorial-load-data/explorer-select-table.png" alt-text="Screenshot of the Explorer, showing where to find and select the table.":::
-
-1. Rename the query for reference later. Right-click on **SQL query 1** in the **Explorer** and select **Rename**.
-
-   :::image type="content" source="media/tutorial-load-data/right-click-rename.png" alt-text="Screenshot of the Explorer pane, showing where to right-click on the table name and select Rename.":::
-
-1. Type `Load Tables` to change the name of the query.
-
-1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
+1. Rename the query as `Load Tables`.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Clone a table using T-SQL in Microsoft Fabric](tutorial-clone-table.md)
+> [Tutorial: Clone a table with T-SQL in a Warehouse](tutorial-clone-table.md)
