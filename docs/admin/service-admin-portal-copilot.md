@@ -8,7 +8,7 @@ ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 12/31/2024
 LocalizationGroup: Administration
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -21,6 +21,8 @@ Copilot and the Azure OpenAI Service are controlled by settings in the **Copilot
 ## Users can use Copilot and other features powered by Azure OpenAI
 
 When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot. This setting can be managed at both the tenant and the capacity levels. For more information, see [Overview of Copilot in Fabric](/fabric/get-started/copilot-fabric-overview).
+
+:::image type="content" source="../get--started/media/copilot-enable-fabric/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled.":::
 
 ## Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
 
