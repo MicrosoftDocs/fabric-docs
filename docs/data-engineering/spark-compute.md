@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/25/2024
+ms.date: 12/30/2024
 ---
 # What is Apache Spark compute in Microsoft Fabric?
 
@@ -42,7 +42,14 @@ If you don't use your Spark pool for 2 minutes after your session expires, your 
 
 You can even create single node Spark pools, by setting the minimum number of nodes to one, so the driver and executor run in a single node that comes with restorable HA and is suited for small workloads.
 
-The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Apache Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 384 Spark VCores (64 * 2 * 3X Burst Multiplier). You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 384.
+The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Apache Spark VCores (a unit of computing power for Spark) equals one capacity unit.
+
+> [!NOTE]
+> In Apache Spark, users get two Apache Spark VCores for every capacity unit they reserve as part of their SKU.
+> One Capacity Unit = Two Spark VCores
+> So F64 => 128 Spark Vcores and on which a 3x Burst Multiplier is applied which gives a total of 384 Spark VCores
+
+For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 384 Spark VCores (64 * 2 * 3X Burst Multiplier). You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 384.
 
 Spark pools are billed like starter pools; you don't pay for the custom Spark pools that you have created unless you have an active Spark session created for running a notebook or Spark job definition. You're only billed for the duration of your job runs. You aren't billed for stages like the cluster creation and deallocation after the job is complete.
 
@@ -51,10 +58,6 @@ Spark pools are billed like starter pools; you don't pay for the custom Spark po
 For example, if you submit a notebook job to a custom Spark pool, you're only charged for the time period when the session is active. The billing for that notebook session stops once the Spark session has stopped or expired. You aren't charged for the time taken to acquire cluster instances from the cloud or for the time taken for initializing the Spark context.
 
 Possible custom pool configurations for F64 based on the previous example:
-> [!NOTE]
->In Apache Spark, users get two Apache Spark VCores for every capacity unit they reserve as part of their SKU.
->One Capacity Unit = Two Spark VCores
->So F64 => 128 Spark Vcores and on which a 3x Burst Multiplier is applied which gives a total of 384 Spark VCores
 
 | Fabric capacity SKU | Capacity units | Max Spark VCores with Burst Factor | Node size | Max number of nodes |
 |--|--|--|--|--|
