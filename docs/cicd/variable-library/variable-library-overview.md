@@ -40,17 +40,21 @@ Variable libraries enable customers to:
 
 ### Core components
 
-Variable libraries contain one or more variables. Each variable has a name, type, and default value. You can also add notes to each variable to describe its purpose.
+Variable libraries contain one or more variables. Each variable has a name, type, and [default value](#default-value). You can also add a note to each variable to describe its purpose or how to use it.
+
+:::image type="content" source="./media/variable-library-overview/define-values.png" alt-text="Screenshot of variable library with several variables and their core components.":::
 
 ## Default value
 
-The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets).
+The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets-optional).
 
 When you create a new value set, the new value set is created with pointers to the default value for each variable.
 
 ### Value sets (optional)
 
 Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage of the deployment pipeline. For each stage, you can choose to use the active value set for that stage.
+
+:::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of variable library with several alternative value sets.":::
 
 ## Supported items
 

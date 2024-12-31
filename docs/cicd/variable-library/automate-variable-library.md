@@ -96,3 +96,19 @@ The Variable library item schema is a JSON object that contains two parts:
 * The note field can have up to 2,048 chars.
 * The value-set description field can have up to 2,048 chars.
 * Both item name and variable name are *not* case sensitive. Therefore, when consumer item requests a variable’s value resolution, we return the value even if the case doesn't match.
+
+
+2 public REST APIs - 
+* crud items and definiteion
+* get/set active value set
+
+rest apis:
+rest/apis/fabric
+TOC for VL
+overview
+create
+delete
+get
+get x definition
+update
+update definition

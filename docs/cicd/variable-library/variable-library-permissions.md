@@ -19,11 +19,16 @@ The Microsoft Fabric Variable library permissions are aligned with the Fabric wo
 
 ## Variable library item permissions
 
-Permissions are aligned with the fabric permission model:
+Permissions are given according to your workspace role:
 
-Workspace permissions: Viewer, contributor, member, and admin permissions are supported.
+Workspace role | Permissions
+---------------|------------
+Viewer | Can view the Variable library item.
+Contributor | Can view, add, edit, and delete the Variable library item.
+Member | Can view, add, edit, and delete the Variable library item.
+Admin | Can view, add, edit, and delete the Variable library item.
 
-Anyone who is a contributor or above can add,edit, and delete. For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
+For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
 
 ## Variable permissions
 
