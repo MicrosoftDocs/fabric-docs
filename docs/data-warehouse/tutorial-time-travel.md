@@ -1,98 +1,121 @@
 ---
-title: Data warehouse tutorial - Time travel in Warehouse
-description: Examples on how to use time travel in Warehouse in Microsoft Fabric.
+title: "Data warehouse tutorial: Time travel with T-SQL in a Warehouse"
+description: "In this tutorial, learn how to use T-SQL statements to time travel in a warehouse table."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 06/10/2024
+ms.date: 12/29/2024
 ms.custom:
   - build-2024
 ms.topic: how-to
 ---
-# Tutorial: Time travel using T-SQL at statement level
 
-In this article, learn how to time travel in your warehouse at the statement level using T-SQL. This feature allows you to query data as it appeared in the past, within a [retention period](time-travel.md#data-retention).
+# Tutorial: Time travel with T-SQL in a Warehouse
+
+In this tutorial, learn how to use T-SQL statements to _[time travel](time-travel.md)_ in a warehouse table. Time travel means to query data as it existed at a specific point in time, which is made automatically possible by Fabric Warehouse [data retention](time-travel.md#data-retention).
 
 > [!NOTE]
-> Currently, only the Coordinated Universal Time (UTC) time zone is used for time travel.
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
 
-## Time travel
+## Work with time travel queries
 
-In this example, we'll update a row, and show how to easily query the previous value using the `FOR TIMESTAMP AS OF` query hint.
+In this task, learn how to create a view of the top 10 customers by sales. You will use the view in the next task to run time-travel queries.
 
-1. From the **Home** tab of the ribbon, select **New SQL query**.
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-   :::image type="content" source="media/tutorial-time-travel/home-ribbon-select-new.png" alt-text="Screenshot from the Fabric portal of the New SQL query button." lightbox="media/tutorial-time-travel/home-ribbon-select-new.png":::
+1. On the **Home** ribbon, select **New SQL query**.
 
-1. In the query editor, paste the following code to create the view `Top10CustomerView`. Select **Run** to execute the query.
+   :::image type="content" source="media/tutorial-time-travel/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option on the ribbon." border="false":::
+
+1. In the query editor, paste the following code. The code creates a view named `Top10Customers`. The view uses a query to retrieve the top 10 customers based on sales.
 
     ```sql
-    CREATE VIEW dbo.Top10CustomersView
+    --Create the Top10Customers view.
+    CREATE VIEW [dbo].[Top10Customers]
     AS
-    SELECT TOP (10)
-        FS.[CustomerKey],
-        DC.[Customer],
-        SUM(FS.TotalIncludingTax) AS TotalSalesAmount
+    SELECT TOP(10)
+        FS.[CustomerKey],
+        DC.[Customer],
+        SUM(FS.[TotalIncludingTax]) AS [TotalSalesAmount]
     FROM
-        [dbo].[dimension_customer] AS DC
-    INNER JOIN
-        [dbo].[fact_sale] AS FS ON DC.[CustomerKey] = FS.[CustomerKey]
+        [dbo].[dimension_customer] AS DC
+        INNER JOIN [dbo].[fact_sale] AS FS
+            ON DC.[CustomerKey] = FS.[CustomerKey]
     GROUP BY
-        FS.[CustomerKey],
-        DC.[Customer]
+        FS.[CustomerKey],
+        DC.[Customer]
     ORDER BY
-        TotalSalesAmount DESC;
+        [TotalSalesAmount] DESC;
     ```
 
-1. In the **Explorer**, verify that you can see the newly created view `Top10CustomersView` by expanding the **View** node under `dbo` schema.
+1. Run the query.
 
-   :::image type="content" source="media/tutorial-time-travel/explorer.png" alt-text="Screenshot of the user's image.":::
+1. When execution completes, rename the query as `Create Top 10 Customer View`.
 
-1. Create another new query, similar to Step 1. From the **Home** tab of the ribbon, select **New SQL query**.
+1. In the **Explorer** pane, from inside the **Views** folder for the `dbo` schema, verify that the `Top10Customers` view exists.
 
-1. In the query editor, paste the following code. This updates the `TotalIncludingTax` column value to `200000000` for the record which has the `SaleKey` value of `22632918`. Select **Run** to execute the query.
+   :::image type="content" source="media/tutorial-time-travel/explorer-view.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created view." border="false":::
 
-   ```sql
-   /*Update the TotalIncludingTax value of the record with SaleKey value of 22632918*/
-   UPDATE [dbo].[fact_sale]
-   SET TotalIncludingTax = 200000000
-   WHERE SaleKey = 22632918;
-   ```
+1. Create a new query to work with time travel queries.
 
-1. In the query editor, paste the following code. The `CURRENT_TIMESTAMP` T-SQL function returns the current UTC timestamp as a **datetime**. Select **Run** to execute the query.
+1. In the query editor, paste the following code. The code updates the `TotalIncludingTax` value for a single fact row to deliberately inflate its total sales. It also retrieves the current timestamp.
 
    ```sql
-   SELECT CURRENT_TIMESTAMP;
+    --Update the TotalIncludingTax for a single fact row to deliberately inflate its total sales.
+    UPDATE [dbo].[fact_sale]
+    SET [TotalIncludingTax] = 200000000
+    WHERE [SaleKey] = 22632918; --For customer 'Tailspin Toys (Muir, MI)'
+    GO
+    
+    --Retrieve the current (UTC) timestamp.
+    SELECT CURRENT_TIMESTAMP;
    ```
 
-1. Copy the timestamp value returned to your clipboard. 
+    > [!NOTE]
+    > Currently, you can only use the Coordinated Universal Time (UTC) time zone for time travel.
 
-1. Paste the following code in the query editor and replace the timestamp value with the current timestamp value obtained from the prior step. The timestamp syntax format is `YYYY-MM-DDTHH:MM:SS[.FFF]`. 
-1. Remove the trailing zeroes, for example: `2024-04-24T20:59:06.097`.
-1. The following example returns the list of top ten customers by `TotalIncludingTax`, including the new value for `SaleKey` `22632918`. Select **Run** to execute the query.
+1. Run the query.
+
+1. When execution completes, rename the query as `Time Travel`.
+
+1. In the **Results** pane, notice the timestamp value (your value will be the current UTC date and time).
+
+   :::image type="content" source="media/tutorial-time-travel/results-copy-timestamp.png" alt-text="Screenshot of the Results pane, highlighting the timestamp value to copy." border="false":::
+
+1. To retrieve the top 10 customers _as of now_, in a new query editor, paste the following statement. The code retrieves the top 10 customers by using the `FOR TIMESTAMP AS OF` query hint.
 
    ```sql
-   /*View of Top10 Customers as of today after record updates*/
-   SELECT *
-   FROM [WideWorldImporters].[dbo].[Top10CustomersView]
-   OPTION (FOR TIMESTAMP AS OF '2024-04-24T20:59:06.097');
+    --Retrieve the top 10 customers as of now.
+    SELECT *
+    FROM [dbo].[Top10Customers]
+    OPTION (FOR TIMESTAMP AS OF 'YOUR_TIMESTAMP');
    ```
 
-1. Paste the following code in the query editor and replace the timestamp value to a time prior to executing the update script to update the `TotalIncludingTax` value. This would return the list of top ten customers *before* the `TotalIncludingTax` was updated for `SaleKey` 22632918. Select **Run** to execute the query.
+1. Rename the query as `Time Travel Now`.
 
-   ```sql
-   /*View of Top10 Customers as of today before record updates*/
-   SELECT *
-   FROM [WideWorldImporters].[dbo].[Top10CustomersView]
-   OPTION (FOR TIMESTAMP AS OF '2024-04-24T20:49:06.097');
-   ```
+1. Return to the `Time Travel` query, and then use the **Copy** command to copy the query results.
 
-For more examples, visit [How to: Query using time travel at the statement level](how-to-query-using-time-travel.md).
+   :::image type="content" source="media/tutorial-time-travel/copy-results-command.png" alt-text="Screenshot of the Copy command, highlighting Copy Query results." border="false":::
+
+1. Return to the `Time Travel Now` query, and then replace `YOUR_TIMESTAMP` with the timestamp you copied to the clipboard.
+
+1. Run the query, and notice that the second top `CustomerKey` value is 49 for `Tailspin Toys (Muir, MI)`.
+
+1. Modify the timestamp value to an earlier time _by subtracting one minute_ from the timestamp.
+
+1. Run the query again, and notice that the second top `CustomerKey` value is 381 for `Wingtip Toys (Sarversville, PA)`.
+
+> [!TIP]
+> For more time travel examples, see [How to: Query using time travel at the statement level](how-to-query-using-time-travel.md).
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a query with the visual query builder](tutorial-visual-query.md)
+> [Tutorial: Create a query with the visual query builder in a Warehouse](tutorial-visual-query.md)
 
 ## Related content
 

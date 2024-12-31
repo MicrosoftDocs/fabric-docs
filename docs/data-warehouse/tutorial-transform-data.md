@@ -1,10 +1,10 @@
 ---
-title: Data warehouse tutorial - transform data using a stored procedure
-description: In this tutorial step, learn how to create and save a new stored procedure to transform data.
+title: "Data warehouse tutorial: Transform data with a stored procedure in a Warehouse"
+description: "In this tutorial, learn how to create a stored procedure in a Warehouse to transform data in a table."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -12,46 +12,58 @@ ms.custom:
   - build-2024
 ---
 
-# Tutorial: Transform data using a stored procedure
+# Tutorial: Transform data with a stored procedure in a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Learn how to create and save a new stored procedure to transform data.
+In this tutorial, learn how to create a stored procedure in a Warehouse to transform data in a table.
 
-## Transform data
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
 
-1. From the **Home** tab of the ribbon, select **New SQL query**.
+## Create a stored procedure
 
-   :::image type="content" source="media/tutorial-transform-data/home-ribbon-select-new.png" alt-text="Screenshot of the ribbon of the Home tab, showing where to select New SQL query." lightbox="media/tutorial-transform-data/home-ribbon-select-new.png":::
+In this task, learn how to create a stored procedure to transform data in a warehouse table.
 
-1. In the query editor, paste the following code to create the stored procedure `dbo.populate_aggregate_sale_by_city`. This stored procedure will create and load the `dbo.aggregate_sale_by_date_city` table in a later step.
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
+
+1. On the **Home** ribbon, select **New SQL query**.
+
+   :::image type="content" source="media/tutorial-transform-data/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." border="false":::
+
+1. In the query editor, paste the following code. The code drops the stored procedure (if it exists), and it then creates a stored procedure named `populate_aggregate_sale_by_city`. The stored procedure logic creates a table named `aggregate_sale_by_date_city` and inserts data into it with a group-by query that joins the `fact_sale` and `dimension_city` tables.
 
    ```sql
-   --Drop the stored procedure if it already exists.
-   DROP PROCEDURE IF EXISTS [dbo].[populate_aggregate_sale_by_city]
-   GO
+    --Drop the stored procedure if it already exists.
+    DROP PROCEDURE IF EXISTS [dbo].[populate_aggregate_sale_by_city];
+    GO
    
-   --Create the populate_aggregate_sale_by_city stored procedure.
-   CREATE PROCEDURE [dbo].[populate_aggregate_sale_by_city]
-   AS
-   BEGIN
-       --If the aggregate table already exists, drop it. Then create the table.
-       DROP TABLE IF EXISTS [dbo].[aggregate_sale_by_date_city];
-       CREATE TABLE [dbo].[aggregate_sale_by_date_city]
-           (
-               [Date] [DATETIME2](6),
-               [City] [VARCHAR](8000),
-               [StateProvince] [VARCHAR](8000),
-               [SalesTerritory] [VARCHAR](8000),
-               [SumOfTotalExcludingTax] [DECIMAL](38,2),
-               [SumOfTaxAmount] [DECIMAL](38,6),
-               [SumOfTotalIncludingTax] [DECIMAL](38,6),
-               [SumOfProfit] [DECIMAL](38,2)
-           );
-   
-       --Reload the aggregated dataset to the table.
-       INSERT INTO [dbo].[aggregate_sale_by_date_city]
-       SELECT
+    --Create the populate_aggregate_sale_by_city stored procedure.
+    CREATE PROCEDURE [dbo].[populate_aggregate_sale_by_city]
+    AS
+    BEGIN
+        --Drop the aggregate table if it already exists.
+        DROP TABLE IF EXISTS [dbo].[aggregate_sale_by_date_city];
+        --Create the aggregate table.
+        CREATE TABLE [dbo].[aggregate_sale_by_date_city]
+        (
+           [Date] [DATETIME2](6),
+           [City] [VARCHAR](8000),
+           [StateProvince] [VARCHAR](8000),
+           [SalesTerritory] [VARCHAR](8000),
+           [SumOfTotalExcludingTax] [DECIMAL](38,2),
+           [SumOfTaxAmount] [DECIMAL](38,6),
+           [SumOfTotalIncludingTax] [DECIMAL](38,6),
+           [SumOfProfit] [DECIMAL](38,2)
+        );
+        
+        --Load aggregated data into the table.
+        INSERT INTO [dbo].[aggregate_sale_by_date_city]
+        SELECT
            FS.[InvoiceDateKey] AS [Date], 
            DC.[City], 
            DC.[StateProvince], 
@@ -60,63 +72,54 @@ Learn how to create and save a new stored procedure to transform data.
            SUM(FS.[TaxAmount]) AS [SumOfTaxAmount], 
            SUM(FS.[TotalIncludingTax]) AS [SumOfTotalIncludingTax], 
            SUM(FS.[Profit]) AS [SumOfProfit]
-       FROM [dbo].[fact_sale] AS FS
-       INNER JOIN [dbo].[dimension_city] AS DC
+        FROM [dbo].[fact_sale] AS FS
+        INNER JOIN [dbo].[dimension_city] AS DC
            ON FS.[CityKey] = DC.[CityKey]
-       GROUP BY
+        GROUP BY
            FS.[InvoiceDateKey],
            DC.[City], 
            DC.[StateProvince], 
            DC.[SalesTerritory]
-       ORDER BY 
+        ORDER BY 
            FS.[InvoiceDateKey], 
            DC.[StateProvince], 
            DC.[City];
-   END
+    END;
    ```
 
-1. To save this query for reference later, right-click on the query tab, and select **Rename**.
+1. To execute the query, on the query designer ribbon, select **Run**.
 
-   :::image type="content" source="media/tutorial-transform-data/query-tab-select-rename.png" alt-text="Screenshot of the tabs in the editor screen, showing where to right-click on the query and select Rename.":::
+1. When execution completes, rename the query as `Create Aggregate Procedure`.
 
-1. Type **Create Aggregate Procedure** to change the name of the query.
+1. In the **Explorer** pane, from inside the **Stored Procedures** folder for the `dbo` schema, verify that the `aggregate_sale_by_date_city` stored procedure exists.
 
-1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
+   :::image type="content" source="media/tutorial-transform-data/explorer-stored-procedure.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created stored procedure." border="false":::
 
-1. Select **Run** to execute the query.
+## Run the stored procedure
 
-1. Select the **refresh** button on the ribbon.
+In this task, learn how to execute the stored procedure to transform data in a warehouse table.
 
-   :::image type="content" source="media/tutorial-transform-data/home-ribbon-refresh.png" alt-text="Screenshot of the Home ribbon, showing where to select the Refresh button." lightbox="media/tutorial-transform-data/home-ribbon-refresh.png":::
+1. Create a new query.
 
-1. In the **Object explorer**, verify that you can see the newly created stored procedure by expanding the **StoredProcedures** node under the `dbo` schema.
-
-   :::image type="content" source="media/tutorial-transform-data/explorer-expand-node.png" alt-text="Screenshot of the Explorer pane, showing where to expand the StoredProcedures node to find your newly created procedure.":::
-
-1. From the **Home** tab of the ribbon, select **New SQL query**.
-
-1. In the query editor, paste the following code. This T-SQL executes `dbo.populate_aggregate_sale_by_city` to create the `dbo.aggregate_sale_by_date_city` table.
+1. In the query editor, paste the following code. The code executes the `populate_aggregate_sale_by_city` stored procedure.
 
    ```sql
-   --Execute the stored procedure to create the aggregate table.
-   EXEC [dbo].[populate_aggregate_sale_by_city];
+    --Execute the stored procedure to create and load aggregated data.
+    EXEC [dbo].[populate_aggregate_sale_by_city];
    ```
 
-1. To save this query for reference later, right-click on the query tab, and select **Rename**.
+1. Run the query.
 
-1. Type **Run Create Aggregate Procedure** to change the name of the query.
+1. When execution completes, rename the query as `Run Aggregate Procedure`.
 
-1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
+1. To preview the aggregated data, in the **Explorer** pane, select the `aggregate_sale_by_date_city` table.
 
-1. Select **Run** to execute the query.
+    > [!NOTE]
+    > If the table doesn't appear, select the ellipsis (…) for the **Tables** folder, and then select **Refresh**.
 
-1. Select the **refresh** button on the ribbon. The query takes between two and three minutes to execute.
-
-1. In the **Object explorer**, load the data preview to validate the data loaded successfully by selecting on the `aggregate_sale_by_city` table in the **Explorer**.
-
-   :::image type="content" source="media/tutorial-transform-data/validate-loaded-data.png" alt-text="Screenshot of the Explorer pane next to a Data preview screen that lists the data loaded into the selected table." lightbox="media/tutorial-transform-data/validate-loaded-data.png":::
+   :::image type="content" source="media/tutorial-transform-data/explorer-aggregate-table.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created table." border="false":::
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Time travel using T-SQL at statement level](tutorial-time-travel.md)
+> [Tutorial: Time travel with T-SQL in a Warehouse](tutorial-time-travel.md)
