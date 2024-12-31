@@ -1,111 +1,111 @@
 ---
-title: Data warehouse tutorial - ingest data into a Warehouse in Microsoft Fabric
-description: In this third tutorial step, learn how to ingest data into the warehouse you created in the last step.
+title: "Data warehouse tutorial: Ingest data into a Warehouse"
+description: "In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 07/18/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Ingest data into a Warehouse in Microsoft Fabric
+# Tutorial: Ingest data into a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can ingest data into that warehouse.
+In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables.
+
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
 
 ## Ingest data
 
-1. From the **Build a warehouse** landing page, select the **Data Warehouse Tutorial** workspace in the navigation menu to return to the workspace item list.
+In this task, learn how to ingest data into the warehouse to create tables.
 
-   :::image type="content" source="media/tutorial-ingest-data/select-tutorial-menu.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-1. Select **New** > **More options** to display a full list of available items.
+1. In the workspace landing pane, select **+ New Item** to display the full list of available item types.
 
-1. In the **Data Factory** section, select **Data pipeline**.
+1. From the list, in the **Get data** section, select the **Data pipeline** item type.
 
-1. On the **New pipeline** dialog, enter `Load Customer Data` as the name.
+1. In the **New pipeline** window, in the **Name** box, enter `Load Customer Data`.
 
-   :::image type="content" source="media/tutorial-ingest-data/new-pipeline-dialog.png" alt-text="Screenshot of the New pipeline dialog box, showing where to enter the name and select Create.":::
+   :::image type="content" source="media/tutorial-ingest-data/create-new-pipeline.png" alt-text="Screenshot of the New pipeline dialog, highlighting the entered name." border="false":::
 
-1. Select **Create**.
+1. To provision the pipeline, select **Create**. Provisioning is complete when the **Build a data pipeline** landing page appears.
 
-1. Select **Pipeline activity**.
+1. On the data pipeline landing page, select **Pipeline activity**.
 
-   :::image type="content" source="media/tutorial-ingest-data/start-building-pipeline.png" alt-text="Screenshot of the Pipeline activity button.":::
+   :::image type="content" source="media/tutorial-ingest-data/select-pipeline-activity.png" alt-text="Screenshot of the Build a data pipeline landing page, highlighting the Pipeline activity option." lightbox="media/tutorial-ingest-data/select-pipeline-activity.png" border="false":::
 
-1. Select **Copy data** from the **Move & transform** section.
+1. In the menu, from inside the **Move and transform** section, select **Copy data**.
 
-   :::image type="content" source="media/tutorial-ingest-data/select-copy-data.png" alt-text="Screenshot of the Move and transform section, showing where to select Copy data.":::
+   :::image type="content" source="media/tutorial-ingest-data/select-copy-data.png" alt-text="Screenshot of the Move and transform section, showing where to select Copy data." border="false":::
 
-1. If necessary, select the newly created **Copy data** activity from the design canvas and follow the next steps to configure it.
+1. On the pipeline design canvas, select the **Copy data** activity.
 
-1. On the **General** page, for **Name**, enter `CD Load dimension_customer`.
+   :::image type="content" source="media/tutorial-ingest-data/copy-data-activity.png" alt-text="Screenshot of the Copy data located on the design canvas." border="false":::
 
-   :::image type="content" source="media/tutorial-ingest-data/general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name.":::
+1. To set up the activity, on the **General** page, in the **Name** box, replace the default text with `CD Load dimension_customer`.
 
-1. On the **Source** page, select the **Connection** dropdown. Select **More** to see all of the data sources you can choose from, including data sources in your OneLake.
+   :::image type="content" source="media/tutorial-ingest-data/general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name." border="false":::
 
-1. Select **New** to create a new connection.
+1. On the **Source** page, in the **Connection** dropdown, select **More** in order to reveal all of the data sources you can choose from, including data sources in [OneLake catalog](../governance/onelake-catalog.md).
 
-1. On the **New connection** page, select or type to select **Azure Blobs** from the list of connection options.
+1. Select **+ New** to create a new data source.
 
-1. Select **Continue**.
+1. Search for, and then select, **Azure Blobs**.
 
-1. On the **Connection settings** page, configure the settings as follows:
+1. On the **Connect data source** page, in the **Account name or URL** box, enter `https://fabrictutorialdata.blob.core.windows.net/sampledata/`.
 
-   1. In the **Account name or URL**, enter `https://fabrictutorialdata.blob.core.windows.net/sampledata/`.
+1. Notice that the **Connection name** dropdown is automatically populated and that the authentication kind is set to **Anonymous**.
 
-   1. In the **Connection credentials** section, select **Create new connection** in the dropdown list for the **Connection**. 
-
-   1. The **Connection name** field is automatically populated, but for clarity, type in `Wide World Importers Public Sample`.
-
-   1. Set the **Authentication kind** to **Anonymous**.
-
-   :::image type="content" source="media/tutorial-ingest-data/new-connection-settings.png" alt-text="Screenshot of the Connections settings screen with the Account name and Connection credentials fields filled in as directed in the previous steps.":::
+   :::image type="content" source="media/tutorial-ingest-data/new-connection-settings.png" alt-text="Screenshot of the Connect to data source window showing all settings done." border="false":::
 
 1. Select **Connect**.
 
-1. Change the remaining settings on the **Source** page of the copy activity as follows, to reach the .parquet files in `https://fabrictutorialdata.blob.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_customer/*.parquet`:
+1. On the **Source** page, to access the Parquet files in the data source, complete the following settings:
 
-   1. In the **File path** text boxes, provide:
+   1. In the **File path** boxes, enter:
 
-       1. **Container:** `sampledata`
+       1. **File path - Container:** `sampledata`
 
        1. **File path - Directory:** `WideWorldImportersDW/tables`
 
        1. **File path - File name:** `dimension_customer.parquet`
 
-   1. In the **File format** drop-down, choose **Parquet**.
+   1. In the **File format** dropdown, select **Parquet**.
 
-1. Select **Preview data** next to the **File path** setting to ensure there are no errors.
+1. To preview the data and test that there are no errors, select **Preview data**.
 
-   :::image type="content" source="media/tutorial-ingest-data/source-tab-change-details.png" alt-text="Screenshot of the Source tab, showing where to change the file path and format details, and select Preview data." lightbox="media/tutorial-ingest-data/source-tab-change-details.png"::: <!-- TODO UPDATE -->
+   :::image type="content" source="media/tutorial-ingest-data/source-page-settings.png" alt-text="Screenshot of the Source page, highlighting the changes made in the previous steps, and the Preview data function." lightbox="media/tutorial-ingest-data/source-page-settings.png" border="false":::
 
-1. Select the **Destination** page of the Copy data activity. For **Connection**, select the warehouse item **WideWorldImporters** from the list, or select **More** to search for the warehouse.
+1. On the **Destination** page, in the **Connection** dropdown, select the `Wide World Importers` warehouse.
 
-1. Next to the **Table option** configuration setting, select the **Auto create table** radio button.
+1. For **Table option**, select the **Auto create table** option.
 
-1. The dropdown menu next to the **Table** configuration setting will automatically change to two text boxes.
+1. In the first **Table** box, enter `dbo`.
 
-1. In the first box next to the **Table** setting, enter `dbo`.
+1. In the second box, enter `dimension_customer`.
 
-1. In the second box next to the **Table** setting, enter `dimension_customer`.
+   :::image type="content" source="media/tutorial-ingest-data/destination-page-settings.png" alt-text="Screenshot of the Destination page, highlighting where the changes made in the previous steps." lightbox="media/tutorial-ingest-data/destination-page-settings.png" border="false":::
 
-   :::image type="content" source="media/tutorial-ingest-data/destination-tab.png" alt-text="Screenshot of the Destination tab, showing where to enter and select the details specified in the previous steps." lightbox="media/tutorial-ingest-data/destination-tab.png":::
+1. On the **Home** ribbon, select **Run**.
 
-1. From the ribbon, select **Run**.
+1. In the **Save and run?** dialog, select **Save and run** to have the pipeline load the `dimension_customer` table.
 
-1. Select **Save and run** from the dialog box. The pipeline to load the `dimension_customer` table with start.
+   :::image type="content" source="media/tutorial-ingest-data/save-run-dialog.png" alt-text="Screenshot of the Save and run dialog, highlighting the Save and run button." border="false":::
 
-1. Monitor the copy activity's progress on the **Output** page and wait for it to complete.
+1. To monitor the progress of the copy activity, review the pipeline run activities in the **Output** page (wait for it to complete with a **Succeeded** status).
 
-   :::image type="content" source="media/tutorial-ingest-data/monitor-output-page.png" alt-text="Screenshot of the Output page, showing what a successful run looks like." lightbox="media/tutorial-ingest-data/monitor-output-page.png":::
+   :::image type="content" source="media/tutorial-ingest-data/monitor-output-page.png" alt-text="Screenshot of the Output page, highlighting the Succeeded status." lightbox="media/tutorial-ingest-data/monitor-output-page.png" border="false":::
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create tables in a data warehouse](tutorial-create-tables.md)
+> [Tutorial: Create tables with T-SQL in a Warehouse](tutorial-create-tables.md)
