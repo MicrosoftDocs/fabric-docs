@@ -46,7 +46,7 @@ In this task, learn how to create a T-SQL notebook.
 
 1. Review the query result in the results pane.
 
-## Create a lakehouse shortcut and analyze data with an notebook
+## Create a lakehouse shortcut and analyze data with a notebook
 
 In this task, learn how to create a lakehouse shortcut and analyze data with a notebook.
 

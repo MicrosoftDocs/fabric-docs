@@ -94,7 +94,7 @@ In this task, learn how to create a Power BI report based on the semantic model 
 
    1. In the **Data** pane, expand the `dimension_city` table, and then check the `SalesTerritory` field.
 
-   :::image type="content" source="media/tutorial-power-bi-report/column-chart-visual.png" alt-text="Screenshot of the column chart visual showing sum of profit by sales territory." border="true":::
+       :::image type="content" source="media/tutorial-power-bi-report/column-chart-visual.png" alt-text="Screenshot of the column chart visual showing sum of profit by sales territory." border="true":::
 
    1. If necessary, resize the column chart visual by dragging the corner of the visual.
 

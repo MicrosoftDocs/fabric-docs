@@ -82,9 +82,9 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 
 1. When execution completes, rename the query as `Time Travel`.
 
-1. In the **Results** pane, notice the timestamp value.
+1. In the **Results** pane, notice the timestamp value (your value will be the current UTC date and time).
 
-   :::image type="content" source="media/tutorial-time-travel/results-copy-timestamp.png" alt-text="Screenshot of the Results pane, highlighting the value to copy." border="false":::
+   :::image type="content" source="media/tutorial-time-travel/results-copy-timestamp.png" alt-text="Screenshot of the Results pane, highlighting the timestamp value to copy." border="false":::
 
 1. To retrieve the top 10 customers _as of now_, in a new query editor, paste the following statement. The code retrieves the top 10 customers by using the `FOR TIMESTAMP AS OF` query hint.
 

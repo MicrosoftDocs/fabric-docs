@@ -55,8 +55,6 @@ In this task, learn to load data with T-SQL.
 
 1. When the script execution completes, review the messages to determine how many rows were loaded into the `dimension_city` table and `fact_sale` table.
 
-   :::image type="content" source="media/tutorial-load-data/review-query-messages.png" alt-text="Screenshot of the messages, highlighting the number of rows loaded into each table." lightbox="media/tutorial-load-data/review-query-messages.png":::
-
 1. To load a preview of the loaded data, in the **Explorer** pane, select `fact_sale`.
 
    :::image type="content" source="media/tutorial-load-data/explorer-select-table.png" alt-text="Screenshot of the Explorer pane, highlighting the fact sale table.":::
