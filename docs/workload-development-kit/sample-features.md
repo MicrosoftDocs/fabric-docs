@@ -17,7 +17,7 @@ The workspace development kit sample is designed to showcase some of the capabil
 
 ## Prerequisites
 
-To understand the sample and the Fabric capabilities it showcases, you need to install it on your local machine using the instructions in [Quickstart: Run a workload sample](quickstart-sample.md) guide.
+To understand the sample and the Fabric capabilities it showcases, you need to install it on your local machine using the instructions in [Quickstart - Run a workload sample](quickstart-sample.md) guide.
 
 ## Sample functionality
 
