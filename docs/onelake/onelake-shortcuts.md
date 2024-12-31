@@ -10,7 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 12/27/2024
+ms.date: 12/31/2024
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
@@ -275,6 +275,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
 - More shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
+- A Fabric shortcut syncs with the source almost instantly, but propagation time may vary due to data source performance, cached views, or network connectivity issues.
 - It may take up to a minute for the Table API to recognize new shortcuts.
 - OneLake shortcuts do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints, to learn more, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
 
