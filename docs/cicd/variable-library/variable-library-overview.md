@@ -48,7 +48,7 @@ Variable libraries contain one or more variables. Each variable has a name, type
 
 The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets-optional).
 
-When you create a new value set, the new value set is created with pointers to the default value for each variable.
+When you create an alternative value set, the new value set is created with pointers to the default value for each variable. You can then change the value for each variable in the new value set.
 
 ### Value sets (optional)
 
