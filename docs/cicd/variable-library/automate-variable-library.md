@@ -11,12 +11,22 @@ ms.date: 11/12/2024
 
 # Automate Variable libraries by using APIs and Azure DevOps (preview)
 
-You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis) to fully automate the Variable library management. Here are a few examples of what can be done by using the APIs:
+You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis) to fully automate the Variable library management.
+
+If you're using the APIs as part of your lifecycle management, permissions for item reference are checked during Git Update and deployment pipeline deployment.
+
+The following REST APIs are available for Variable library items:
+
+* Create Variable library
+* Delete Variable library
+* Get Variable library
+* Get Variable library definition
+* Update
+* Update Variable library definition
+
 
 * **Read**/**Update** the Variable library item *schema*
 * **Read**/**Update** the Variable library item *active value-set*
-
-If you're using the APIs as part of your lifecycle management, permissions for item reference are checked during Git Update and deployment pipeline deployment.
 
 ## Read the Variable library item information
 
@@ -44,7 +54,7 @@ For example:
 }
 ```
 
-The Variable library item CRUD APIs support service principle.
+The Variable library item REST APIs support service principle.
 
 ## Variable library schema
 
@@ -92,23 +102,4 @@ The Variable library item schema is a JSON object that contains two parts:
 
 ## Considerations and limitations
 
-* Users can add *up to 1,000 variables* and *up to 1,000 value-sets*, as long as the total number of cells in the alternative value-sets is under 10,000 cells and the item’s size not bigger than 3 MB. This is validated when the user saves changes.
-* The note field can have up to 2,048 chars.
-* The value-set description field can have up to 2,048 chars.
-* Both item name and variable name are *not* case sensitive. Therefore, when consumer item requests a variable’s value resolution, we return the value even if the case doesn't match.
-
-
-2 public REST APIs - 
-* crud items and definiteion
-* get/set active value set
-
-rest apis:
-rest/apis/fabric
-TOC for VL
-overview
-create
-delete
-get
-get x definition
-update
-update definition
+Both item name and variable name are *not* case sensitive. Therefore, when consumer item requests a variable’s value resolution, we return the value even if the case doesn't match.

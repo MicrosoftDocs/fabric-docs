@@ -46,10 +46,15 @@ The variables.json file contains the variables and their default values. For exa
     {
       "name": "WaitTime",
       "type": "integer",
-      "defaultValue": "1",
+      "defaultValue": 1,
       "note": "Wait time in minutes"
+    },
+    {
+      "name": "var2",
+      "type": "string",
+      "defaultValue": "value2"
     }
-  ]
+  ],
 }
 ```
 
@@ -70,6 +75,12 @@ The variable library folder contains a subfolder called ValueSets. This subfolde
 ```
 
 Item permissions are checked during Git Update and commit.
+
+## Considerations and limitations
+
+* There can be *up to 1,000 variables* and *up to 1,000 value-sets*, as long as the total number of cells in the alternative value-sets is under 10,000 cells, and the item’s size not bigger than 3 MB. This is validated when the user saves changes.
+* The note field can have up to 2,048 characters.
+* The value-set description field can have up to 2,048 characters.
 
 ## Related content
 
