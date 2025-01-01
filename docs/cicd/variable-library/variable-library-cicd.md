@@ -28,13 +28,30 @@ Variable libraries and their values can be deployed in deployment pipelines to m
 
 ## Variable libraries and Git integration
 
-Variable library items are stored as folders that can be maintained and synced between Fabric and your Git provider. The files and subfolders here represent a Variable library. Depending on your project, the Variable library folder can include:
+Variable library items are stored as folders that can be maintained and synced between Fabric and your Git provider.
+
+The Variable library item schema is a JSON object that contains three parts:
 
 * Variable library name
 
   * [Value sets](#value-set): Contains a JSON file for each value set.
   * platform.json: [Automatically generated](../git-integration/source-code-format.md#platform-file) file.
   * [variables.json](#variables): Contains the variables and their default values.
+
+
+## Variable library schema
+
+The Variable library item schema is a JSON object that contains three parts:
+
+* [Variables](#variables) – The variables contained in the item, and their properties.
+  * name
+  * type
+  * defaultValue
+  * note (if any)
+* [Value-sets](#value-set): A set of values for the variables. A value set consists of:
+  * name
+  * value
+* [platform.json](../git-integration/source-code-format.md#platform-file): Automatically generated file.
 
 ### Variables
 

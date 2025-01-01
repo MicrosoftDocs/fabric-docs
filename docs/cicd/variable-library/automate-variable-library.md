@@ -33,7 +33,7 @@ The following REST APIs are available for Variable library items:
 * To view the item's schema, use the *Get item definition* API call. This call returns:
   * Variables - name, type, note, and default value
   * Value-sets – names and their adjustable variables’ value
-* Use the ‘Get item’ API call to view under the custom property section the active value-set name of this item.
+* Use the *Get item* API call to view the active value-set of this item.
 
 ## Update the Variable library item information
 
