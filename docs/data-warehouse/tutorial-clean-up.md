@@ -1,10 +1,10 @@
 ---
-title: Data warehouse tutorial - clean up tutorial resources
-description: In this final tutorial step, clean up the workspace, individual reports, pipelines, warehouses, and other items you created as part of the tutorial.
+title: "Data warehouse tutorial: Clean up tutorial resources"
+description: "In this tutorial, you will remove the workspace you created in the first tutorial."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -15,23 +15,28 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace. In this tutorial, you will clean up the workspace, individual reports, pipelines, warehouses, and other items you created as part of the tutorial.
+Now that you've completed all tutorials, we recommend that you clean up by removing the tutorial workspace. Removing the workspace will help conserve your capacity resources.
 
-## Delete a workspace
+> [!CAUTION]
+> All content in the workspace will be permanently deleted after a retention period of seven days.
 
-1. In the Fabric portal, select **Data Warehouse Tutorial** in the navigation pane to return to the workspace item list.
+## Remove the workspace
 
-   :::image type="content" source="media/tutorial-clean-up/select-the-tutorial.png" alt-text="Screenshot of the navigation pane, showing where to select the tutorial.":::
+In this task, you'll remove the workspace you created in the first tutorial.
 
-1. In the menu of the workspace header, select **Workspace settings**.
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-   :::image type="content" source="media/tutorial-clean-up/workspace-settings-option.png" alt-text="Screenshot of the top of the Data Warehouse Tutorial workspace, showing where to select Workspace settings." lightbox="media/tutorial-clean-up/workspace-settings-option.png":::
+1. In the workspace landing page, select **Workspace settings**.
 
-1. Select **Other** > **Delete this workspace**.
+   :::image type="content" source="media/tutorial-clean-up/select-workspace-settings.png" alt-text="Screenshot of the workspace landing page, highlighting the Workspace settings option."  border="false":::
 
-   :::image type="content" source="media/tutorial-clean-up/settings-delete-workspace.png" alt-text="Screenshot of the Workspace settings screen, showing where to select Delete this workspace." lightbox="media/tutorial-clean-up/settings-delete-workspace.png":::
+1. In the **Workspace settings** pane, in the **General** tab, locate the **Manage** section.
 
-1. Select **Delete** on the warning to remove the workspace and all its contents.
+1. Select **Remove this workspace**.
+
+   :::image type="content" source="media/tutorial-clean-up/workspace-settings-remove-workspace.png" alt-text="Screenshot of the Workspace settings pane, highlighting the Remove this workspace button." border="false":::
+
+1. When prompted to delete the workspace, select **Delete**.
 
 ## Next step
 
