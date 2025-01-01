@@ -10,7 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.topic: concept-article
-ms.date: 08/19/2024
+ms.date: 12/04/2024
 LocalizationGroup: Administration
 ---
 
@@ -28,7 +28,7 @@ The following table describes the columns of the list of workspaces.
 | --------- | --------- |
 | **Name** | The name given to the workspace. |
 | **Description** | The information that is given in the description field of the workspace settings. |
-| **Type** | The type of workspace. There are two types of workspaces:<br>![Screenshot of app workspace icon.](./media/portal-workspaces/app-workspace-icon.png) **Workspace** (also known as "app workspace")<br>![Screenshot of personal workspace icon in the list of workspaces table explanation.](./media/portal-workspaces/personal-workspace-icon.png) **Personal Group** ("My workspaces")|
+| **Type** | The type of workspace. There are two types of workspaces:<br>:::image type="icon" border="false" source="./media/portal-workspaces/app-workspace-icon.png"::: **Workspace** (also known as "app workspace")<br>:::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: **Personal Group** ("My workspaces")|
 | **State** | The state lets you know if the workspace is available for use. There are five states, **Active**, **Orphaned**, **Deleted**, **Removing**, and **Not found**. For more information, see [Workspace states](#workspace-states). |
 | **Capacity name** | Name given to the workspace's capacity. |
 | **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](/power-bi/enterprise/service-admin-premium-manage). |
@@ -141,7 +141,7 @@ To gain access to a particular My workspace
 > [!NOTE]
 > Once access is obtained, the ribbon and the More options (...) menu will show **Remove Access** for the same My workspace. If you do not remove access by selecting one of these options, access will automatically be revoked for the admin after 24-hours. The My workspace owner's access remains intact.
 
-Once you have access, the My workspace will show up in the list of workspaces accessible from the navigation pane. The icon ![Screenshot of personal workspace icon in the list of workspaces table explanation.](./media/portal-workspaces/personal-workspace-icon.png) indicates that it's a My workspace.
+Once you have access, the My workspace will show up in the list of workspaces accessible from the navigation pane. The icon :::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: indicates that it's a My workspace.
 
 Once you go inside the My workspace, you can perform any actions as if it's your own My workspace. You can view and make any changes to the contents, including sharing or unsharing. But you can't grant anyone else access to the My workspace.  
 
@@ -178,23 +178,23 @@ Moving workspaces from one capacity to another, has the following restrictions:
 
 * When you move a workspace, all jobs related to items in the workspace get cancelled.
 
-* Workspaces with non Power BI Fabric items can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
+* Workspaces with Fabric items (such as lakehouses and notebooks) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
 
-* Non Power BI Fabric items can't move between regions.
+* Fabric items can't move between regions.
 
 This means the following:
 
 * **Moving a workspace from one capacity to another within the same region**
 
-    If the workspace has non Power BI Fabric items, you can only move it from one Premium or Fabric capacity to another Premium or Fabric capacity. If you want to move the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, you won't be able to do so unless you delete all non-Power BI Fabric items first.
+    If the workspace has Fabric items (such as lakehouses or notebooks), you can only move it from one Premium or Fabric capacity to another Premium or Fabric capacity. If you want to move the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, you won't be able to do so unless you delete all Fabric items first.
 
-    If the workspace has no non Power BI Fabric items (that is, it has only Power BI items) moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
+    If the workspace has no Fabric items (that is, it has only Power BI items) moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    If the workspace has no non Power BI Fabric items (only Power BI items) then moving the workspace to another capacity in a different region is supported.
+    If the workspace has Fabric items (that is, it has only Power BI items) then moving the workspace to another capacity in a different region is supported.
 
-    If you want to move a workspace that contains non Power BI Fabric items, you must delete all the non Power BI Fabric items first.  After the workspace is migrated to a different region, it can take up to an hour before you can create new non-Power BI Fabric items.
+    If you want to move a workspace that contains Fabric items, you must delete all the Fabric items first.  After the workspace is migrated to a different region, it can take up to an hour before you can create new Fabric items.
 
 ## Related content
 

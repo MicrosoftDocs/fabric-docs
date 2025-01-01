@@ -4,7 +4,7 @@ description: A known issue is posted where Azure SQL Database change data doesn'
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/24/2024
+ms.date: 11/19/2024
 ms.custom: known-issue-723
 ---
 
@@ -15,7 +15,7 @@ If you set up Fabric mirrored databases from Azure SQL Database, you might see t
 - Azure SQL database SLO is upgraded in the following sequence: Update SLO to Standard/Business Critical/General Purpose and then upgrade to Hyperscale
 - Azure SQL database SLO is reverse migrated from Hyperscale to Standard/General Purpose/Business Critical SLO
 
-**Status:** Open
+**Status:** Fixed: November 19, 2024
 
 **Product Experience:** Data Warehouse
 

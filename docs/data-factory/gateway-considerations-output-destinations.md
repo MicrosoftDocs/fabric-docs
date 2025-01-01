@@ -6,7 +6,7 @@ ms.author: nikkiwaghani
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # On-premises data gateway considerations for data destinations in Dataflow Gen2
@@ -48,8 +48,8 @@ To troubleshoot the issue, follow these steps:
 
 ### Solution: Set new firewall rules on server running the gateway
 
-The firewall rules on the gateway server and/or customer's proxy servers need to be updated to allow outbound traffic from the gateway server to the below endpoints. If your firewall does not support wildcards, 
-then use the IP addresses from [Azure IP Ranges and Service Tags](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fdownload%2Fdetails.aspx%3Fid%3D56519&data=05%7C02%7CNikita.Waghani%40microsoft.com%7Caaa71e3a46df465f10ce08dc4a944869%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638467247942873812%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=gnMtWIOsUsZocKEu3zqPMs9e2d7gVIPH%2B28OqlIhLps%3D&reserved=0). Note that they will need to be kept in sync each month.
+The firewall rules on the gateway server and/or customer's proxy servers need to be updated to allow outbound traffic from the gateway server to the below endpoints. If your firewall doesn't support wildcards, 
+then use the IP addresses from [Azure IP Ranges and Service Tags](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fdownload%2Fdetails.aspx%3Fid%3D56519&data=05%7C02%7CNikita.Waghani%40microsoft.com%7Caaa71e3a46df465f10ce08dc4a944869%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638467247942873812%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=gnMtWIOsUsZocKEu3zqPMs9e2d7gVIPH%2B28OqlIhLps%3D&reserved=0). They need to be kept in sync each month.
 
 * **Protocol**: TCP
 * **Endpoints**: *.datawarehouse.pbidedicated.windows.net, *.datawarehouse.fabric.microsoft.com, *.dfs.fabric.microsoft.com 
@@ -78,7 +78,7 @@ To implement this workaround, follow these steps:
 
     :::image type="content" source="media/gateway-considerations-output-destination/remove-destination.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination being removed." lightbox="media/gateway-considerations-output-destination/remove-destination.png":::
 
-1. Create a new dataflow that uses the dataflow connector to connect to the ingest dataflow. This dataflow is responsible for ingesting the data from staging into the data destination.
+1. Create a new dataflow that uses the dataflow connector to connect to the ingested dataflow. This dataflow is responsible for ingesting the data from staging into the data destination.
 
     :::image type="content" source="media/gateway-considerations-output-destination/get-data-dataflow-connector.png" alt-text="Screenshot of the Power Query editor with the Get Data option selected, and the Dataflow connector option emphasized." lightbox="media/gateway-considerations-output-destination/get-data-dataflow-connector.png":::
 
@@ -88,6 +88,6 @@ To implement this workaround, follow these steps:
 
     :::image type="content" source="media/gateway-considerations-output-destination/set-data-destination.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination being set." lightbox="media/gateway-considerations-output-destination/set-data-destination.png":::
 
-1. Optionally, you can disable staging for this new dataflow. This change prevents the data from being copied to the staging lakehouse again and instead copies the data directly from the ingest dataflow to the data destination.
+1. Optionally, you can disable staging for this new dataflow. This change prevents the data from being copied to the staging lakehouse again and instead copies the data directly from the ingested dataflow to the data destination.
 
     :::image type="content" source="media/gateway-considerations-output-destination/disable-staging.png" alt-text="Screenshot of the Power Query editor with the staging option being disabled." lightbox="media/gateway-considerations-output-destination/disable-staging.png":::

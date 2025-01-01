@@ -60,6 +60,8 @@ When enabled at the environment level, all subsequent jobs and notebooks inherit
 
 > [!IMPORTANT]
 > Previously, the Native Execution Engine was enabled through Spark settings within the environment configuration. With our latest update (**roll-out in progress**), we’ve simplified this by introducing a toggle button in the Acceleration tab of the environment settings. **Re-enable the Native Execution Engine using the new toggle - to continue using the Native Execution Engine, please go to the Acceleration tab in the environment settings and enable it through the toggle button.** The new toggle setting in the UI now takes priority over any previous Spark property configurations. If you previously enabled the Native Execution Engine through Spark settings, it will be disabled until re-enabled via the UI toggle.
+>
+> In alignment with Microsoft's Azure deployment freeze policy during the Thanksgiving and Black Friday holidays, we have rescheduled the rollout for the North Central US (NCUS) region to December 6th and the East US region to December 9th. We appreciate your understanding and patience during this busy time.
 
 
 #### Enable for a notebook or Spark job definition
