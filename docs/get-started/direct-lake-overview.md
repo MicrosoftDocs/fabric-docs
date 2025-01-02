@@ -4,7 +4,7 @@ description: "Learn about Direct Lake storage mode in Microsoft Fabric and when 
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 12/26/2024
+ms.date: 01/02/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -188,6 +188,8 @@ Direct Lake semantic models present some considerations and limitations.
 - Creating a Direct Lake semantic model in a workspace that is in a different region of the data source workspace is not supported. For example, if the Lakehouse is in West Central US, then you can only create semantic models from this Lakehouse in the same region. A workaround is to create a Lakehouse in the other region's workspace and shortcut to the tables before creating the semantic model. To find what region you are in, see [find your Fabric home region](/fabric/admin/find-fabric-home-region).
 - You can create and view a custom Direct Lake semantic model using a Service Principal identity, but the default Direct Lake semantic model does not support Service Principals. Make sure service principal authentication is enabled for Fabric REST APIs in your tenant and grant the service principal Contributor or higher permissions to the workspace of your Direct Lake semantic model.
 - Service Principal only works with [Fixed Identity](./direct-lake-fixed-identity.md) connection (No-SSO).
+- Embedding reports requires a [V2 embed token](/power-bi/developer/embedded/generate-embed-token).
+- Automation is only supported with [service principal](/power-bi/developer/embedded/embed-service-principal) authentication.
 
 ## Comparison to other storage modes
 
