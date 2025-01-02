@@ -213,7 +213,7 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 | Semantic model object-level security (OLS) | Yes | Yes | Yes |
 | Large data volumes without refresh requirement | Yes | Less suited – a larger capacity size might be required for querying and refreshing | Yes |
 | Reduce data latency | Yes – when [automatic updates](#automatic-updates) is enabled, or programmatic reframing; however, [data preparation](direct-lake-understand-storage.md#delta-table-optimization) must be done upstream first | No  | Yes |
-
+| Power BI Embedded | Yes | Yes | Yes |
 <sup>1</sup> You can't combine Direct Lake storage mode tables with DirectQuery or Dual storage mode tables _in the same semantic model_. However, you can use Power BI Desktop to create a composite model on a Direct Lake semantic model and then extend it with new tables (by using Import, DirectQuery, or Dual storage mode) or calculations. For more information, see [Build a composite model on a semantic model](/power-bi/transform-model/desktop-composite-models#building-a-composite-model-on-a-semantic-model-or-model).
 
 ## Related content
