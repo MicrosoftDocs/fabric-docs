@@ -4,7 +4,7 @@ description: Learn how to load data with data pipelines into SQL database in Fab
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
-ms.date: 11/07/2024
+ms.date: 01/02/2025
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -51,3 +51,6 @@ A data pipeline is a logical grouping of activities that together perform a data
 
 - [Get started with deployment pipelines integration with SQL database in Microsoft Fabric](deployment-pipelines.md)
 - [Ingest sample data and create objects and data](tutorial-ingest-data.md)
+- [Set up your SQL database connection in Data Factory (Preview)](../../data-factory/connector-sql-database.md)
+- [SQL database connector overview (Preview)](../../data-factory/connector-sql-database-overview.md)
+- [Configure SQL database in a copy activity (Preview)](../../data-factory/connector-sql-database-copy-activity.md)
