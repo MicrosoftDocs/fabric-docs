@@ -26,7 +26,7 @@ Fabric offers powerful tools for CI/CD (continuous integration and continuous de
 
 **Deployment pipelines (continuous deployment)**: enable the creation of stages (for example, Development, Test, Production) with linked workspaces. Items supported in each stage are automatically replicated to subsequent stages, and changes in a workspace trigger deployment in a release pipeline. Developers can configure the pipeline to ensure that changes are tested and deployed efficiently across environments.  
 
-Fabric provides you with different options for building CI/CD processes, based on common scenarios. Please see [**CI/CD workflow options in Fabric**](..\cicd\manage-deployment.md).  
+Fabric supports various CI/CD workflows tailored to common scenarios. For more detials, see [**CI/CD workflow options in Fabric**](..\cicd\manage-deployment.md).  
 
 > [!NOTE]
 > During deployment only metadata is being copied, and data isn't copied.  
