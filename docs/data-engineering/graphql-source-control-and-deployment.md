@@ -12,7 +12,7 @@ ms.date: 12/19/2024
 Learn how Git integration and deployment pipelines work with API for GraphQL in Microsoft Fabric. This article helps you to understand how to set up a connection to your repository, manage your API for GraphQL, and deploy them across different environments.
 
 > [!NOTE]
-> API for GraphQL source control and deployment is in **preview**.
+> API for GraphQL source control and deployment is currently in **preview**.
 
 ## Prerequisites
 
