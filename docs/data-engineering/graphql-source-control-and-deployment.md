@@ -99,7 +99,7 @@ The next message pops up confirming the items that you're about to deploy. Selec
 
 ## Current limitations
 
-1. Fabric CI/CD doesn't support [**autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) for the child artifact. That means that if the API for GraphQL connects to SQL Analytics Endpoint as a child of a data source in original workspace (for example, in Dev stage), the lineage doesn't carry over to the target workspace (for example, Test stage), and the deployed API for GraphQL in the target workspace (e.g Test stage) still remains connected to the SQL Analytics Endpoint in the original workspace (Dev stage).
+1. Fabric CI/CD does not support [**autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) of the child items. This means that if the API for GraphQL connects to a SQL Analytics Endpoint as a child of a data source in the original workspace (e.g., Dev stage), the lineage does not transfer to the target workspace (e.g., Test stage). As a result, the deployed API for GraphQL in the target workspace (i.e Test stage) remains connected to the SQL Analytics Endpoint in the original workspace (i.e Dev stage).
 
 2. Deploying API for GraphQL by using a Service Principal isn't supported.  
 
