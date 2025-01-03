@@ -9,7 +9,7 @@ ms.subservice: cicd
 ms.custom:
   - ignite-2024
 ms.topic: overview
-ms.date: 12/17/2024
+ms.date: 12/26/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -49,7 +49,7 @@ Before you enable Git integration, make sure you review the following privacy st
 The following Git providers are supported:
 
 * [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
-* [GitHub](https://github.com/)
+* [GitHub](https://github.com/) (cloud versions only)
 * [GitHub Enterprise](https://github.com/enterprise)
 
 ## Supported items

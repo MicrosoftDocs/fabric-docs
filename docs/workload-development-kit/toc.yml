@@ -9,8 +9,10 @@ items:
   items:
   - name: Set up your environment
     href: environment-setup.md
-  - name: QuickStart - Run a workload sample
+  - name: Quickstart - Run a workload sample
     href: quickstart-sample.md
+  - name: Understand the development sample
+    href: sample-features.md    
 - name: Development cycle
   items:
   - name: Frontend implementation guide
@@ -41,10 +43,6 @@ items:
     href: workload-communication.md  
   - name: Workload environment
     href: workload-environment.md
-  - name: Authentication
-    items:
-
-       
   - name: Item lifecycle
     href: item-lifecycle.md
   - name: User permissions
