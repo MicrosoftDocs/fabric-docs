@@ -66,7 +66,7 @@ We're going to use the Lakehouse Rest APIs to download the image from the Lakeho
 #### Credentials for Azure OpenAI
 We use the `gpt-4o` model deployment in Azure OpenAI to analyze the whiteboard sketch of the pipeline and convert it into an Apache Airflow DAG. To connect to the Azure OpenAI API, store the API key and endpoint in environment variables:
 - `OPENAI_API_KEY`: Enter your Azure OpenAI API key.
-- `OPENAI_API_ENDPOINT`: Enter the endpoint URL for your deployed `gpt-4o` model.
+- `OPENAI_API_ENDPOINT`: Enter the endpoint URL for your deployed `gpt-4o` model. For example, `https://ai-contosoai6211465843515213.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-02-15-preview`.
 
 ### Step 3: Create an Apache Airflow DAG to generate DAGs from sketches
 
@@ -86,6 +86,7 @@ Now, follow the steps to implement the workflow:
 2. Add the following code to the file. Replace `yourStorageAccountName`, `workspace_name` and `file_path` with the actual values and save the file.
    ```python
    import io
+   import os
    import json
    import base64
    import requests
@@ -97,6 +98,7 @@ Now, follow the steps to implement the workflow:
    from airflow.decorators import dag, task
    from airflow.models.baseoperator import chain
    from azure.storage.filedatalake import DataLakeServiceClient
+   from azure.identity import ClientSecretCredential
 
 
    @dag(
@@ -145,9 +147,9 @@ Now, follow the steps to implement the workflow:
            tenant_id = os.getenv("FABRIC_TENANT_ID")
 
            tokenCredential = ClientSecretCredential(
-               tenant_id=tenant,
-               client_id=app_id,
-               client_secret=app_secret
+               tenant_id=tenant_id,
+               client_id=client_id,
+               client_secret=client_secret
            )
 
            lakehouse_client = DataLakeServiceClient(
@@ -266,8 +268,8 @@ Now, follow the steps to implement the workflow:
            save_dag(
                generate_dag_code_from_openai(
                    fetch_image_from_lakehouse(
-                       workspace_name="airflow-dag-images"
-                       file_path="airflow-dag-diagram.png",
+                       workspace_name="airflow-dag-images", # Your Fabric Workspace
+                       file_path="airflow-dag-diagram.png" # For example: lakehouse_ai.Lakehouse/Files/airflow-dag-diagram.pn
                    ),
                    "{{ params.system_prompt }}"
                )
