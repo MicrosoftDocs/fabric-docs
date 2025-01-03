@@ -35,7 +35,7 @@ Items from workspace are stored in the associated Git repository as Infrastructu
 
 ## Data source authentication methods
 
-In this section, you learn about data source authentication methods for connecting data sources to your API for GraphQL and understand how that may impact autobinding between the API for GraphQL and its connected data sources in development pipelines. You can learn more about autobinding in [**the deployment pipeline process**](..\cicd\deployment-pipelines\understand-the-deployment-process.md).  
+In this section, you learn about authentication methods to connect data sources to your API for GraphQL and understand their impact on autobinding between the API for GraphQL and its connected data sources in development pipelines. You can learn more about autobinding in [**the deployment pipeline process**](..\cicd\deployment-pipelines\understand-the-deployment-process.md).  
 
 There are two options available to connect data sources to your API for GraphQL:
 
