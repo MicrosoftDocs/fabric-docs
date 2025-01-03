@@ -269,7 +269,7 @@ Now, follow the steps to implement the workflow:
                generate_dag_code_from_openai(
                    fetch_image_from_lakehouse(
                        workspace_name="airflow-dag-images", # Your Fabric Workspace
-                       file_path="airflow-dag-diagram.png" # For example: lakehouse_ai.Lakehouse/Files/airflow-dag-diagram.pn
+                       file_path="lakehouse_ai.Lakehouse/Files/airflow-dag-diagram.png" # Path to the image file located in the Lakehouse
                    ),
                    "{{ params.system_prompt }}"
                )
