@@ -20,7 +20,7 @@ Learn how Git integration and deployment pipelines work with API for GraphQL in 
 
 ## Overview
 
-Fabric provides powerful tools for CI/CD (continuous integration and continuous deployment) and development lifecycle management with two main components: [**Git integration**](..\cicd\git-integration\git-get-started.md) (CI) and [**deployment pipelines**](..\cicd\deployment-pipelines\get-started-with-deployment-pipelines.md) (CD). workspaces act as central components for both Git synchronization and deployment stages.
+Fabric offers powerful tools for CI/CD (continuous integration and continuous deployment) and development lifecycle management through two main components: [**Git integration**](..\cicd\git-integration\git-get-started.md) (CI) and [**deployment pipelines**](..\cicd\deployment-pipelines\get-started-with-deployment-pipelines.md) (CD). Workspaces serve as central components for both Git synchronization and deployment stages.
 
 **Git integration (continuous integration)**: allows you to synchronize items in a workspace (such as code, configurations, or APIs) with repositories in [**version control systems**](..\cicd\git-integration\intro-to-git-integration.md). Changes to items in a workspace can be version-controlled and tracked through Git.
 
