@@ -152,8 +152,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         time.sleep(5)
         print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
-    # Make the next request
-    get_statement_response = requests.get(get_statement, headers=headers)
+        # Make the next request
+        get_statement_response = requests.get(get_statement, headers=headers)
 
     rst = get_statement_response.json()['output']['data']['text/plain']
     print(rst)
@@ -195,8 +195,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         time.sleep(5)
         print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
-    # Make the next request
-    get_statement_response = requests.get(get_statement, headers=headers)
+        # Make the next request
+        get_statement_response = requests.get(get_statement, headers=headers)
 
     rst = get_statement_response.json()['output']['data']['text/plain']
     print(rst)
