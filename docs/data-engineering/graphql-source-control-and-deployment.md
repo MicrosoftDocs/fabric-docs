@@ -1,5 +1,5 @@
 ---
-title: API for GraphQL source control and deployment (preview)
+title: Source control and deployment pipelines in API for GraphQL (preview)
 description: Learn how Git integration and deployment pipelines work with API for GraphQL. 
 author: HHPHTTP
 ms.author: hhosseinpour
