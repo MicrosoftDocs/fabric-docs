@@ -103,7 +103,7 @@ The next message pops up confirming the items that you're about to deploy. Selec
 
 2. Using a service principal to deploy an API for GraphQL is currently not supported.
 
-3. [**Autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) isn't supported when the **Saved Credential** approach is used for data source connections. For more information, please check out the **data source authentication methods** section described above.
+3. [**Autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) isn't supported when the **Saved Credential** approach is used for data source connections. For more information, see [data source authentication methods](#data-source-authentication-methods) section described above.
 
 ## Related content
 
