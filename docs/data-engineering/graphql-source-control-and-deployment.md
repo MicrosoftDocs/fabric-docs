@@ -31,7 +31,7 @@ Fabric supports various CI/CD workflows tailored to common scenarios. For more d
 > [!NOTE]
 > During deployment only metadata is being copied, and data isn't copied.  
 
-Items from workspace are stored in the associated Git repository as Infrastructure as Code (IaC). Code changes in the repository can be automated to trigger the deployment in pipelines allowing you to have code changes automatically replicated across stages for testing and production release purposes.
+Items from workspace are stored in the associated Git repository as Infrastructure as Code (IaC). Code changes in the repository can trigger the deployment in pipelines. This method allows you to have code changes automatically replicated across stages for testing and production release purposes.
 
 ## Data source authentication methods
 
