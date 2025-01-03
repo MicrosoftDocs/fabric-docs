@@ -28,6 +28,7 @@ In both cases, you can use security groups to provide access to a specified list
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- Review [Fabric region availability](../../admin/region-availability.md).
 - To enable SQL database, you need to be a member of one of the following admin roles:
   - [Microsoft 365 Global admin](../../admin/microsoft-fabric-admin.md#microsoft-365-admin-roles)
   - [Power Platform admin](../../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
