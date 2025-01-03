@@ -61,7 +61,7 @@ Fabric API for GraphQL offers Git integration for source control. With Git integ
 
 **Set up a Connection:**
 
-From your workspace settings, you can easily set up a connection to your repo to commit and sync changes. To set up the connection see [**Get started with Git integration**](..\cicd\git-integration\git-get-started.md). Once connected, your items, including API for GraphQL, appear in the **Source control** panel.
+From your **Workspace settings**, you can easily set up a connection to your repo to commit and sync changes. To set up the connection see [**Get started with Git integration**](..\cicd\git-integration\git-get-started.md). Once connected, your items, including API for GraphQL, appear in the **Source control** panel.
 
 :::image type="content" source="media\graphql-source-control-and-deployment\graphql-source-control-workspaceview.png" alt-text="Screenshot of workspace and source control status.":::
 
