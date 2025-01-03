@@ -88,7 +88,9 @@ landingContent:
           - text: Connect applications
             url: connect-apps-api-graphql.md
           - text: Query multiple data sources
-            url: multiple-data-sources-graphql.md      
+            url: multiple-data-sources-graphql.md
+          - text: GraphQL source control and deployment pipelines
+            url: graphql-source-control-and-deployment.md
   # Card 
   - title: Delta Lake
     linkLists:

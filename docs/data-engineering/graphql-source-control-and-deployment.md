@@ -22,14 +22,14 @@ Learn how Git integration and deployment pipelines work with API for GraphQL in 
 
 Fabric offers powerful tools for CI/CD (continuous integration and continuous deployment) and development lifecycle management through two main components: [**Git integration**](..\cicd\git-integration\git-get-started.md) (CI) and [**deployment pipelines**](..\cicd\deployment-pipelines\get-started-with-deployment-pipelines.md) (CD). Workspaces serve as central components for both Git synchronization and deployment stages.
 
-**Git integration (continuous integration)**: allows you to synchronize items in a workspace (such as code, configurations, or APIs) with repositories in [**version control systems**](..\cicd\git-integration\intro-to-git-integration.md). Changes to items in a workspace can be version-controlled and tracked through Git.
+**Git integration (CI)**: Synchronizes workspace items (e.g., code, configurations, APIs) with [version control repositories](..\cicd\git-integration\intro-to-git-integration.md), enabling version control and change tracking via Git.
 
-**Deployment pipelines (continuous deployment)**: enable the creation of stages (for example, Development, Test, Production) with linked workspaces. Items supported in each stage are automatically replicated to subsequent stages, and changes in a workspace trigger deployment in a release pipeline. Developers can configure the pipeline to ensure that changes are tested and deployed efficiently across environments.  
+**Deployment pipelines (CD)**: Enables the creation of stages (e.g., Development, Test, Production) with linked workspaces. Items supported in each stage are automatically replicated to subsequent stages, and changes in a workspace trigger deployment in a release pipeline. You can configure the pipeline to ensure that changes are tested and deployed efficiently across environments.
 
 Fabric supports various CI/CD workflows tailored to common scenarios. For more detials, see [**CI/CD workflow options in Fabric**](..\cicd\manage-deployment.md).  
 
 > [!NOTE]
-> During deployment only metadata is being copied, and data isn't copied.  
+> Only metadata is copied during deployment; and data is not copied.
 
 Items from workspace are stored in the associated Git repository as Infrastructure as Code (IaC). Code changes in the repository can trigger the deployment in pipelines. This method allows you to have code changes automatically replicated across stages for testing and production release purposes.
 
@@ -85,7 +85,7 @@ Use the following steps to complete your API for GraphQL deployment using the de
 
 2. Assign workspaces to different stages according to your deployment goals.
 
-3. Select, view, and compare items including API for GraphQL between different stages, as shown in the following example. The highlighted areas indicating changed item count between the previous stage and current stage.
+3. Select, **view**, and compare items including API for GraphQL between different stages, as shown in the following example. The highlighted areas indicating changed item count between the previous stage and current stage.
 
 :::image type="content" source="media\graphql-source-control-and-deployment\graphql-pipeline-changeditems.png" alt-text="Screenshot of pipeline illustrating items' status in each development stage.":::
 

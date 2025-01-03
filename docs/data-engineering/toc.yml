@@ -305,3 +305,5 @@ items:
      href: multiple-data-sources-graphql.md
    - name: Monitoring GraphQL operations
      href: graphql-operations.md
+   - name: GraphQL source control and deployment pipelines
+     href: graphql-source-control-and-deployment.md
