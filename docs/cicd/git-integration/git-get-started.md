@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 01/05/2025
 ms.custom:
   - build-2023
   - ignite-2023
@@ -109,7 +109,9 @@ To keep your workspace synced with the Git branch, [commit any changes](#commit-
 
 ## Commit changes to git
 
-Once you successfully connect to a Git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the Git branch, or you can undo the changes and revert to the previous status. Read more about [commits](git-integration-process.md#commit).
+Once you successfully connect to a Git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the Git branch, or you can undo the changes and revert to the previous status.  
+If any items in the workspace are in subfolders, the folder structure is preserved in the Git repository when you commit changes. Empty folders are ignored.  
+Read more about [commits](git-integration-process.md#commit).
 
 ### [Commit to Git](#tab/commit-to-git)
 
@@ -158,7 +160,7 @@ The selected items in your workspace revert to how they were when the workspace 
 
 ## Update workspace from Git
 
-Whenever anyone commits a new change to the connected Git branch, a notification appears in the relevant workspace. Use the **Source control** panel to pull the latest changes, merges, or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
+Whenever anyone commits a new change to the connected Git branch, a notification appears in the relevant workspace. Use the **Source control** panel to pull the latest changes, merges, or reverts into the workspace and update live items. Changes to folders are also updated. Read more about [updating](git-integration-process.md#update).
 
 To update a workspace, follow these steps:
 
