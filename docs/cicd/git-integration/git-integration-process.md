@@ -116,7 +116,7 @@ When connected and synched, the workspace structure is mirrored in the Git repos
 
 Empty folders aren't copied to Git. When you create or move items to the folder, the folder is created in Git.
 
-[Enter side by side screenshots of matching Git & Fabric fodler structure] 
+:::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
 
 ### Connect to a shared workspace
 
