@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 10/29/2024
+ms.date: 01/05/2025
 ms.custom:
   - build-2023
   - ignite-2023
@@ -110,6 +110,14 @@ If you don’t select which content to sync, you can’t continue to work.
 
 :::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot notification that you can't continue working until workspace is synced.":::
 
+### Folders
+
+When connected and synched, the workspace structure is mirrored in the Git repository, including folders and subfolders. Workspace items in folders are exported to folders with the same name in the Git directory. Conversely, items in Git folders are imported to folders with the same name in the workspace.
+
+Empty folders aren't copied to Git. When you create or move items to the folder, the folder is created in Git.
+
+[Enter side by side screenshots of matching Git & Fabric fodler structure] 
+
 ### Connect to a shared workspace
 
 If you try connecting to a workspace that's already [connected to Git](./manage-branches.md), you might get the following message:
@@ -179,6 +187,8 @@ The Refresh button :::image type="icon" source="./media/git-integration-process/
 
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
+Changes to an item's folder (for example, moving an item to a different folder) are shown as a changes to the item that require an update or commit.
+
 #### Commit
 
 - Items in the workspace that were changed are listed in the *Changes* section. When there's more than one changed item, you can select which items to commit to the Git branch.
@@ -243,6 +253,7 @@ GitHub account details include:
 <!---
 ---
 --->
+
 ## Considerations and limitations
 
 [!INCLUDE [limitations](../../includes/git-limitations.md)]

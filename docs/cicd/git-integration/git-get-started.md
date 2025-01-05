@@ -77,9 +77,6 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
-    > [!NOTE]
-    > You can only connect a workspace to one branch and one folder at a time.
-
     - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
     - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
     - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project).
@@ -91,9 +88,6 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
 #### [GitHub branch connect](#tab/GitHub)
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
-
-    > [!NOTE]
-    > You can only connect a workspace to one branch and one folder at a time.
 
     - [Repository URL](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, the URL is automatically filled in and you can only connect to that repository.
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
