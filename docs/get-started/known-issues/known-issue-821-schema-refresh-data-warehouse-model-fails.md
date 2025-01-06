@@ -4,7 +4,7 @@ description: A known issue is posted where schema refresh for a data warehouse's
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/28/2024
+ms.date: 01/06/2025
 ms.custom: known-issue-821
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-821
 
 You can have a semantic model built on a data warehouse. When you try to refresh the schema for the semantic model, you receive an error message, and the schema isn't refreshed.
 
-**Status:** Open
+**Status:** Fixed: January 6, 2025
 
 **Product Experience:** Data Warehouse
 
