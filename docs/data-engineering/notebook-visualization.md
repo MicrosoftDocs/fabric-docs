@@ -37,11 +37,36 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 
 ### Rich dataframe table view
 
+#### Free selection support on table view
+
+**Table** view is rendered by default when using _display()_ command. The rich dataframe preview in the notebook offers a free selection function designed to enhance the data analysis experience through flexible and intuitive selection capabilities. This feature allows users to interact with dataframes more efficiently and gain deeper insights with ease.
+ 
+- **Column selection**
+  - **Single column**: Click the column header to select the entire column.
+  - **Multiple columns**: After selecting a single column, press and hold the 'Shift' key, then click another column header to select multiple columns.
+
+- **Row selection**
+  - **Single row**: Click on a row header to select the entire row.
+  - **Multiple rows**: After selecting a single row, press and hold the 'Shift' key, then click another row header to select multiple rows.
+
+- **Cell content preview**: Preview the content of individual cells to get a quick and detailed look at the data without the need to write additional code.
+
+- **Column summary**: Get a summary of each column, including data distribution and key statistics, to quickly understand the characteristics of the data.
+
+- **Free area selection**: Select any continuous segment of the table to get an overview of the total selected cells and the numeric values in the selected area.
+
+- **Copying Selected Content**: In all selection cases, you can quickly copy the selected content using the 'Ctrl + C' shortcut. The selected data is copied in CSV format, making it easy to process in other applications.
+
+  ![Animated GIF of free selection support.](media\notebook-visualization\free-selection.gif)
+
+#### Data profiling support via Inspect pane
+
 ![Animated GIF of rich dataframe preview.](media\notebook-visualization\rich-dataframe-preview.gif)
 
-1. **Table** view is rendered by default when using _display()_ command.
 1. You can profile your dataframe by clicking on **Inspect** button. It provides the summarized data distribution and showing statistics of each column.
+
 1. Each card in the "Inspect" side pane maps to a column of the dataframe, you can view more details by clicking on the card or selecting a column in the table.
+
 1. You can view the cell details by clicking on the cell of the table. This feature is useful when the dataframe contains long string type of contents.
 
 ### New rich dataframe chart view
