@@ -160,7 +160,7 @@ There are several methods to determine if an operator in your Apache Spark job w
 
 Access the Spark UI or Spark history server to locate the query you need to inspect. To access the Spark web UI, navigate to your Spark Job Definition and run it. From the **Runs** tab, select the **...** next to the **Application name** and select **Open Spark web UI**. You can also access the Spark UI from the **Monitor** tab in the workspace. Select the notebook or pipeline, from the monitoring page, there's a direct link to the **Spark UI** for active jobs.
 
-:::image type="content" source="media\native\spark-web-ui.png" alt-text="Screenshot showing to navigate to the Spark web UI." lightbox="media\native\spark-web-ui.png":::
+:::image type="content" source="media\native\spark-web-ui.png" alt-text="Screenshot showing how to navigate to the Spark web UI." lightbox="media\native\spark-web-ui.png":::
 
 In the query plan displayed within the Spark UI interface, look for any node names that end with the suffix *Transformer*, *NativeFileScan, or *VeloxColumnarToRowExec*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*.
 
