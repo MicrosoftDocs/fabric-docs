@@ -44,6 +44,23 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 1. Each card in the "Inspect" side pane maps to a column of the dataframe, you can view more details by clicking on the card or selecting a column in the table.
 1. You can view the cell details by clicking on the cell of the table. This feature is useful when the dataframe contains long string type of contents.
 
+### Free selection support on display() table view
+
+The rich dataframe preview in the notebook offers a free selection function designed to enhance the data analysis experience through flexible and intuitive selection capabilities.  This feature allows users to interact with dataframes more efficiently and gain deeper insights with ease.
+ 
+- **Multi-Column Selection**: Users can select multiple columns by pressing the 'Shift' key, enabling a more comprehensive analysis of the data.
+
+- **Row selection**: Click on a row header or column header to select each row and know the column count of the dataframe. 
+
+- **Cell Content Preview**: Preview the content of individual cells, providing a quick and detailed look at the data without the need to write additional code. You can quickly copy the selected content using the 'Ctrl + C' shortcut.
+
+- **Column Summary**: Get a summary of each column, including data distribution and key statistics, to quickly understand the characteristics of the data.
+
+- **Free area selection**: Select any continuous segment of the table, get an overview of the total selected cells and the numeric values in the selected area.
+
+  ![Animated GIF of free selection support.](media\notebook-visualization\free-selection.gif)
+
+
 ### New rich dataframe chart view
 
  > [!NOTE]
