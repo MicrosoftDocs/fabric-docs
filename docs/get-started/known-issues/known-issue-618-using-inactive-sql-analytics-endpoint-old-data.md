@@ -4,7 +4,7 @@ description: A known issue is posted where Using an inactive SQL analytics endpo
 author: mihart
 ms.author: mihart
 ms.topic: troubleshooting 
-ms.date: 02/14/2024
+ms.date: 01/06/2025
 ms.custom: known-issue-618
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-618
 
 If you use a SQL analytics endpoint that hasn't been active for a while, the SQL analytics endpoint scans the underlying delta tables. It's possible for you to query one of the tables before the refresh is completed with the latest data. If so, you might see old data being returned or even errors being raised if the parquet files were vacuumed.
 
-**Status:** Open
+**Status:** Fixed: January 6, 2025
 
 **Product Experience:** Data Warehouse
 
