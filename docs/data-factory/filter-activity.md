@@ -7,7 +7,7 @@ ms.reviewer: jburchel
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Filter activity to filter items from an array

@@ -91,6 +91,5 @@ bcp bcptest in "c:\temp\sample.dat" -S <your_server>.database.fabric.microsoft.c
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
-- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
 - [SQL database in Microsoft Fabric](overview.md)
 - [Ingest data into SQL database via data pipelines](load-data-pipelines.md)

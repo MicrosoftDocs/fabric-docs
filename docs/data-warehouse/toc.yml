@@ -26,31 +26,31 @@ items:
     href: tutorial-introduction.md
   - name: 1. Create a workspace
     href: tutorial-create-workspace.md
-  - name: 2. Create a warehouse
+  - name: 2. Create a Warehouse
     href: tutorial-create-warehouse.md
-  - name: 3. Ingest data into a warehouse
+  - name: 3. Ingest data into a Warehouse
     href: tutorial-ingest-data.md
   - name: 4. Create tables
     href: tutorial-create-tables.md
-  - name: 5. Load data using T-SQL
+  - name: 5. Load data with T-SQL
     href: tutorial-load-data.md
-  - name: 6. Clone a table using T-SQL
+  - name: 6. Clone a table with T-SQL
     href: tutorial-clone-table.md
-  - name: 7. Transform data using stored procedure
+  - name: 7. Transform data with a stored procedure
     href: tutorial-transform-data.md
-  - name: 8. Time travel using T-SQL
+  - name: 8. Time travel with T-SQL
     href: tutorial-time-travel.md
   - name: 9. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 10. Analyze data with a notebook
+  - name: 10. Analyze data in a notebook
     href: tutorial-analyze-data-notebook.md
-  - name: 11. Create queries with the SQL query editor
+  - name: 11. Create a cross-warehouse query
     href: tutorial-sql-cross-warehouse-query-editor.md
-  - name: 12. Create Power BI reports
+  - name: 12. Create a semantic model and report
     href: tutorial-power-bi-report.md
-  - name: 13. Build a report from the OneLake
+  - name: 13. Generate a report from OneLake catalog
     href: tutorial-build-report-onelake-data-hub.md
-  - name: 14. Clean up resources
+  - name: 14. Clean up tutorial resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 

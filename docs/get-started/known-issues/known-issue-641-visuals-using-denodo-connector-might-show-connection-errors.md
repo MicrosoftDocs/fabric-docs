@@ -4,7 +4,7 @@ description: A known issue is posted where visuals using the Denodo connector mi
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/05/2024
+ms.date: 11/27/2024
 ms.custom: known-issue-641
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-641
 
 If your Denodo Server restarts or is briefly offline, your connection to the server isn't available. Any visuals in the Power BI reports that use the Denodo connector in DirectQuery mode show a connection error. However, these errors might show for more than ~20 min after the server comes back online.
 
-**Status:** Open
+**Status:** Fixed: November 27, 2024
 
 **Product Experience:** Power BI
 

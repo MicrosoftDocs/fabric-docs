@@ -34,7 +34,7 @@ Microsoft Fabric offers a wide range of capabilities designed to enhance product
 * **OneLake:** A unified data lake that simplifies data management and access.
 * **Copilot support:** AI-driven features that assist users by providing intelligent suggestions and automating tasks.
 * **Integration with Microsoft 365:** Seamless integration with Microsoft 365 tools, enhancing collaboration and productivity across the organization.
-* **Azure AI studio:** Utilizes Azure AI Studio for advanced AI and machine learning capabilities, enabling users to build and deploy AI models efficiently.
+* **Azure AI Foundry:** Utilizes Azure AI Foundry for advanced AI and machine learning capabilities, enabling users to build and deploy AI models efficiently.
 * **Unified data management:** Centralized data discovery that simplifies governance, sharing, and access.
 
 ## Unification with SaaS foundation

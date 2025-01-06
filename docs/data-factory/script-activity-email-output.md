@@ -7,7 +7,7 @@ author: nabhishek
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Run a Script activity and send an output summary by email

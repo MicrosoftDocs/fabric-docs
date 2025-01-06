@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 07/14/2024
+ms.date: 12/15/2024
 ---
 
 # Authentication setup
@@ -115,7 +115,7 @@ Preauthorize `871c010f-5e61-4fb1-83ac-98610a7e9110` (the Fabric client applicati
 
 You can find the application IDs of these apps under **Microsoft Power BI** and **Power BI Service** in [Application IDs of commonly used Microsoft applications](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
 
-Here's how the **Expose an API** section should look in your application. In this example, the ID URI is `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample`.
+Here's how the **Expose an API** section should look in your application. In this example, the ID URI is `api://localdevinstance/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/Fabric.WorkloadSample`.
 
 :::image type="content" source="./media/authentication-tutorial/expose-api-section.png" alt-text="Screenshot showing how your Expose an API section should look." lightbox="./media/authentication-tutorial/expose-api-section.png":::
 

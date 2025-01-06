@@ -2,8 +2,8 @@
 title: Get data from Eventstream
 description: Learn how to get data from an eventstream in a KQL database in Real-Time Intelligence.
 ms.reviewer: aksdi
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023

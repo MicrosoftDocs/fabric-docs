@@ -1,10 +1,10 @@
 ---
-title: Data warehouse tutorial - create a workspace
-description: As a first tutorial step, learn how to create a workspace, which you'll work in for the rest of the tutorial.
+title: "Data warehouse tutorial: Create a workspace"
+description: "In this first tutorial, learn how to create a workspace to support the other tutorials in the series."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -12,33 +12,38 @@ ms.custom:
   - ignite-2024
 ---
 
-# Tutorial: Create a Microsoft Fabric workspace
+# Tutorial: Create a workspace
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Before you can create a warehouse, you need to create a workspace where you'll build out the remainder of the tutorial.
+In this first tutorial, learn how to create a workspace to support the [other tutorials in the series](tutorial-introduction.md#data-warehouse-end-to-end-scenario).
 
 ## Create a workspace
 
-The workspace contains all the items needed for data warehousing, including: Data Factory pipelines, the data warehouse, Power BI semantic models, operational databases, and reports.
+In this task, learn how to create a workspace. A workspace contains the items needed for data warehousing and can include Data Factory pipelines, the data warehouse, Power BI semantic models, and reports.
 
 1. Sign in to [Power BI](https://powerbi.com).
-1. Select **Workspaces** > **New workspace**.
 
-   :::image type="content" source="media/tutorial-create-workspace/create-new-workspace.png" alt-text="Screenshot of workspaces pane showing where to select New workspace.":::
+1. From the navigation pane, select **Workspaces**, and then select **+ New workspace**.
 
-1. Fill out the **Create a workspace** form as follows:
-   1. **Name**: Enter `Data Warehouse Tutorial`, and some characters for uniqueness.
-   1. **Description**: Optionally, enter a description for the workspace.
+   :::image type="content" source="media/tutorial-create-workspace/create-new-workspace.png" alt-text="Screenshot of Workspaces pane, highlighting the + New workspace button." border="false":::
 
-   :::image type="content" source="media/tutorial-create-workspace/create-a-workspace-dialog.png" alt-text="Screenshot of the Create a workspace dialog box, showing where to enter the new workspace name.":::
+1. In the **Create a workspace** pane, in the **Name** box, enter `Data Warehouse Tutorial` (add some trailing characters if the name isn't available).
+
+   :::image type="content" source="media/tutorial-create-workspace/create-a-workspace-dialog.png" alt-text="Screenshot of the Create a workspace dialog box, showing where to enter the new workspace name." border="false":::
 
 1. Expand the **Advanced** section.
-1. Choose **Fabric capacity** or **Trial** in the **License mode** section.
-1. Choose a premium capacity you have access to.
-1. Select **Apply**. The workspace is created and opened.
+
+1. Choose either the **Fabric capacity** or **Trial** license mode.
+
+1. In the **Capacity** dropdown, choose a premium capacity you have access to.
+
+1. Select **Apply** to create and open the new workspace.
+
+> [!NOTE]
+> Ensure that you use this workspace to complete all [tutorials in this series](tutorial-introduction.md#data-warehouse-end-to-end-scenario).
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Microsoft Fabric data warehouse](tutorial-create-warehouse.md)
+> [Tutorial: Create a Warehouse](tutorial-create-warehouse.md)

@@ -3,7 +3,7 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 11/21/2024
+ms.date: 11/27/2024
 ms.topic: conceptual
 ---
 
@@ -58,6 +58,9 @@ If you want to replicate selective tables instead of all the tables in the speci
 > 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) or [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance).
 > 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternativley, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
+> [!NOTE]
+> `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database. If your Fabric capacity region is in North Central US or East US, please do not specify this property as currently this feature is not supported in those regions.
+
 ### JSON definition example of Snowflake
 
 ```json
@@ -89,7 +92,10 @@ If you want to replicate selective tables instead of all the tables in the speci
         "source": {
             "type": "AzureSqlDatabase",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "landingZone":{
+                    "type":"MountedRelationalDatabase"
+                }
             }
         },
         "target": {
@@ -111,7 +117,10 @@ If you want to replicate selective tables instead of all the tables in the speci
         "source": {
             "type": "AzureSqlMI",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "landingZone":{
+                    "type":"MountedRelationalDatabase"
+                }
             }
         },
         "target": {

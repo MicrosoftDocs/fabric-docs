@@ -4,7 +4,7 @@ description: Learn how to enable the SQL database feature in your Fabric tenant 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
-ms.date: 11/19/2024
+ms.date: 12/18/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -28,10 +28,12 @@ In both cases, you can use security groups to provide access to a specified list
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- Review [Fabric region availability](../../admin/region-availability.md).
 - To enable SQL database, you need to be a member of one of the following admin roles:
   - [Microsoft 365 Global admin](../../admin/microsoft-fabric-admin.md#microsoft-365-admin-roles)
   - [Power Platform admin](../../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
   - [Fabric admin](../../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
+- Currently, Fabric SQL database is not available if you had [Private link](../../security/security-private-links-overview.md) enabled on your Fabric tenant at the start of the preview on November 19.
 
 ## Enable SQL database for your tenant
 
@@ -43,8 +45,9 @@ In your tenant, you can enable SQL database for:
 
 Follow these steps to enable SQL database for your tenant.
 
-1. Navigate to the [tenant settings](../../admin/tenant-settings-index.md) in the admin portal and in **Microsoft Fabric**, expand **SQL database (preview)**.
-1. Enable the **SQL database (preview)** switch.
+1. Navigate to the [tenant settings](../../admin/tenant-settings-index.md) in the admin portal and in **Microsoft Fabric**, expand **Users can create Fabric items** and **SQL database (preview)**.
+1. Enable the **Users can create Fabric items** and **SQL database (preview)** switches.
+
 1. (Optional) Use the **Specific security groups** option to enable SQL database for specific users.
     - You can select **The entire organization** if you want everyone to create databases.
     - You can select **Specific security groups** to allow selected individuals in a group to create databases.

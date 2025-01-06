@@ -1,102 +1,127 @@
 ---
-title: Data warehouse tutorial - create a query with the visual query builder
-description: In this tutorial step, learn how to create and save a specific query with the visual query builder.
+title: "Data warehouse tutorial: Create a query with the visual query builder in a Warehouse"
+description: "In this tutorial, learn how to create a query with the visual query builder."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Create a query with the visual query builder
+# Tutorial: Create a query with the visual query builder in a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Create and save a query with the visual query builder in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
+In this tutorial, learn how to create a query with the visual query builder.
+
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
 
 ## Use the visual query builder
 
-1. From the **Home** tab of the ribbon, select **New visual query**.
+In this task, learn how to create a query with the visual query builder.
 
-   :::image type="content" source="media/tutorial-visual-query/new-visual-query.png" alt-text="Screenshot of the ribbon, showing where to select New visual query." lightbox="media/tutorial-visual-query/new-visual-query.png":::
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-1. Drag the `fact_sale` table from the **Explorer** to the query design pane.
+1. On the **Home** ribbon, open the **New SQL query** dropdown, and then select **New visual query**.
 
-   :::image type="content" source="media/tutorial-visual-query/drag-drop-table.png" alt-text="Screenshot of the explorer pane next to the query design pane, showing where to drag the table.":::
+   :::image type="content" source="media/tutorial-visual-query/ribbon-new-visual-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New visual query option." border="false":::
 
-1. Limit the dataset size by selecting **Reduce rows** > **Keep top rows** from the transformations ribbon.
+1. From the **Explorer** pane, from the `dbo` schema **Tables** folder, drag the `fact_sale` table to the visual query canvas.
 
-   :::image type="content" source="media/tutorial-visual-query/keep-top-rows-option.png" alt-text="Screenshot of the Reduce rows drop-down menu, showing where to select the Keep top rows option.":::
+   :::image type="content" source="media/tutorial-visual-query/drag-drop-table.png" alt-text="Screenshot of the Explorer pane, highlighting the fact sale table to drag to the visual query canvas." border="false":::
 
-1. In the **Keep top rows** dialog, enter `10000`.
+1. To limit the dataset size, on the query designer ribbon, select **Reduce rows** > **Keep top rows**.
 
-1. Select **OK**.
+   :::image type="content" source="media/tutorial-visual-query/keep-top-rows.png" alt-text="Screenshot of the Reduce rows dropdown, highlighting the Keep top rows option." border="false":::
 
-1. Drag the `dimension_city` table from the explorer to the query design pane.
+1. In the **Keep top rows** window, enter `10000`, and then select **OK**.
 
-1. From the transformations ribbon, select the dropdown next to **Combine** and select **Merge queries as new**.
+1. From the **Explorer** pane, from the `dbo` schema **Tables** folder, drag the `dimension_city` table to the visual query canvas.
 
-   :::image type="content" source="media/tutorial-visual-query/merge-queries-new.png" alt-text="Screenshot of the transformations ribbon with the Combine drop-down menu open, showing where to select Merge queries as new.":::
+1. To join the tables, on the query designer ribbon, select **Combine** > **Merge queries as new**.
 
-1. On the **Merge** settings page:
+   :::image type="content" source="media/tutorial-visual-query/merge-queries-new.png" alt-text="Screenshot of the Combine dropdown, highlighting the Merge queries as new option." border="false":::
 
-   1. In the **Left table for merge** dropdown list, choose `dimension_city`
+1. In the **Merge** dialog, complete the following settings:
 
-   1. In the **Right table for merge** dropdown list, choose `fact_sale`
+   1. In the **Left table for merge** dropdown, select `dimension_city`.
 
-   1. Select the `CityKey` field in the `dimension_city` table by selecting on the column name in the header row to indicate the join column.
+   1. In the following grid, select the `CityKey` column.
 
-   1. Select the `CityKey` field in the `fact_sale` table by selecting on the column name in the header row to indicate the join column.
+   1. In the **Right table for merge** dropdown, select `fact_sale`.
 
-   1. In the **Join kind** diagram selection, choose **Inner**.
+   1. In the following grid, select the `CityKey` column.
 
-   :::image type="content" source="media/tutorial-visual-query/merge-settings-details.png" alt-text="Screenshot of the Merge dialog box, showing where to find table names and CityKey fields.":::
+   1. In the **Join kind** section, select **Inner**.
 
-1. Select **OK**.
-
-1. With the **Merge** step selected, select the **Expand** button next to `fact_sale` on the header of the data grid then select the columns `TaxAmount`, `Profit`, and `TotalIncludingTax`.
-
-   :::image type="content" source="media/tutorial-visual-query/table-expand-selected.png" alt-text="Screenshot of the table with Merge selected and TaxAmount, Profit, and TotalIncludingTax selected.":::
+   :::image type="content" source="media/tutorial-visual-query/merge-settings.png" alt-text="Screenshot of the Merge dialog, highlighting the settings." border="false":::
 
 1. Select **OK**.
 
-1. Select **Transform** > **Group by** from the transformations ribbon.
+1. In the data preview pane, locate the `fact_sale` column (the last column).
 
-   :::image type="content" source="media/tutorial-visual-query/transform-group-by.png" alt-text="Screenshot of the transformations ribbon, showing where to select Group by from the Transform drop-down menu." lightbox="media/tutorial-visual-query/transform-group-by.png":::
+   :::image type="content" source="media/tutorial-visual-query/data-preview-fact-sale-column.png" alt-text="Screenshot of the data preview pane, highlighting the fact sale column." border="false":::
 
-1. On the **Group by** settings page:
+1. In the `fact_sale` column header, select the **Expand** button.
 
-   1. Change to **Advanced**.
+   :::image type="content" source="media/tutorial-visual-query/data-preview-fact-sale-column-expand.png" alt-text="Screenshot of the data preview pane, highlighting the fact sale column expand button." border="false":::
 
-   1. **Group by** (if necessary, select **Add grouping** to add more group by columns):
-       1. `Country`
-       1. `StateProvince`
-       1. `City`
+1. In the column selector dialog, select only these three columns: `TaxAmount`, `Profit`, and `TotalIncludingTax`.
 
-   1. **New column name** (if necessary, select **Add aggregation** to add more aggregate columns and operations):
-       1. `SumOfTaxAmount` 
-           1. Choose **Operation** of **Sum** and **Column** of `TaxAmount`.
-       1. `SumOfProfit` 
-           1. Choose **Operation** of **Sum** and **Column** of `Profit`.
-       1. `SumOfTotalIncludingTax` 
-           1. Choose **Operation** of **Sum** and **Column** of `TotalIncludingTax`.
-
-   :::image type="content" source="media/tutorial-visual-query/group-by-settings.png" alt-text="Screenshot of the Group by settings page with the correct values entered and selected.":::
+   :::image type="content" source="media/tutorial-visual-query/merge-column-selection.png" alt-text="Screenshot of the merge column selection, highlighting the selection of Tax Amount, Profit, and Total Including Tax." border="false":::
 
 1. Select **OK**.
 
-1. Right-click on **Visual query 1** in the **Explorer** and select **Rename**.
+1. To aggregate the dataset, on the ribbon, select **Transform** > **Group by**.
 
-   :::image type="content" source="media/tutorial-visual-query/rename-visual-query.png" alt-text="Screenshot showing where to right select on the new visual query in the Explorer pane, and where to select Rename." lightbox="media/tutorial-visual-query/rename-visual-query.png":::
+   :::image type="content" source="media/tutorial-visual-query/transform-group-by.png" alt-text="Screenshot of the Transform dropdown, highlighting the Group by option." border="false":::
 
-1. Type `Sales Summary` to change the name of the query.
+1. In the **Group by** dialog, complete the following settings:
 
-1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
+    1. In the three **Group by** dropdowns, set the following options:
+        1. `Country`
+        1. `StateProvince`
+        1. `City`
+
+    1. In the **New column name** box, enter the name `SumOfTaxAmount`.
+        1. In the **Operation** dropdown, select **Sum**.
+        1. In the **Column** dropdown, select `TaxAmount`.
+
+    1. Select **Add aggregation**.
+
+    1. Set the aggregation as follows:
+       1. **New column name**: `SumOfProfit`
+       1. **Operation**: **Sum**
+       1. **Column**: `Profit`
+
+    1. Add another aggregation, and set the aggregation as follows:
+       1. **New column name**: `SumOfTotalIncludingTax`
+       1. **Operation**: **Sum**
+       1. **Column**: `TotalIncludingTax`
+
+   :::image type="content" source="media/tutorial-visual-query/group-by-settings.png" alt-text="Screenshot of the Group by dialog, highlighting the settings." border="false":::
+
+1. Select **OK**.
+
+1. Review the query result in the data preview pane.
+
+   :::image type="content" source="media/tutorial-visual-query/data-preview-final-result.png" alt-text="Screenshot of the final query result, showing three grouping columns, and three summarized columns." border="false":::
+
+1. Rename the query, right-click on the query tab, and then select **Rename**.
+
+   :::image type="content" source="media/tutorial-create-tables/rename-query-option.png" alt-text="Screenshot of the Refresh option available when right-clicking the query editor tab." border="false":::
+
+1. In the **Rename** window, replace the name with `Sales Summary`, and then select **Rename**.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Analyze data with a notebook](tutorial-analyze-data-notebook.md)
+> [Tutorial: Use a notebook to analyze data in a Warehouse](tutorial-analyze-data-notebook.md)

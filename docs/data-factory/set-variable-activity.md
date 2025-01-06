@@ -7,7 +7,7 @@ author: kromerm
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Set Variable activity in Fabric

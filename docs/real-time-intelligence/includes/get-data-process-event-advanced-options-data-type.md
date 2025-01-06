@@ -1,8 +1,8 @@
 ---
 title: Include file for the Edit column heading in Real-Time Analytics
 description: Include file for the Edit column heading in the Get data hub in Real-Time Analytics.
-author: YaelSchuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.topic: include
 ms.custom: build-2023, build-2024
 ms.date: 04/21/2024

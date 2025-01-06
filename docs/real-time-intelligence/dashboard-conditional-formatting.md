@@ -1,8 +1,8 @@
 ---
 title: Apply conditional formatting in Real-Time Dashboard visuals
 description: Learn how to apply conditional formatting to Real-Time Dashboard visuals.
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.reviewer: gabil
 ms.topic: how-to
 ms.custom:

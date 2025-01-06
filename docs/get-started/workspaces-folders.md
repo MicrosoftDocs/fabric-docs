@@ -7,7 +7,7 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: how-to
 ms.custom: fabric
 ms.search.form: product-trident, Manage your workspace
-ms.date: 03/25/2024
+ms.date: 12/16/2024
 #customer intent: As a user, I want to learn how to create folders in workspaces so that I can efficiently organize and manage items in the workspace.
 ---
 
@@ -17,7 +17,7 @@ This article explains what folders in workspaces are and how to use them in work
 
 ## Create a folder in a workspace
 
-1. In a workspace, select **New** > **Folder**.
+1. In a workspace, select **New folder**.
 
     :::image type="content" source="media/workspaces-folders/create-folder-new-menu.png" alt-text="Screenshot showing entry point of folder creation in new menu.":::
 
@@ -29,10 +29,10 @@ This article explains what folders in workspaces are and how to use them in work
 
     :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot showing a folder is created successfully.":::
 
-1. You can create nested subfolders in a folder in the same way. Maximum 10 level nested subfolders can be created. 
+1. You can create nested subfolders in a folder in the same way. A maximum of 10 levels of nested subfolders can be created. 
 
    > [!NOTE]
-   > You can nest up to 10 folders within the root folder.
+   > You can nest up to 10 folders in the root folder.
 
 ### Folder name requirements
 
@@ -84,21 +84,21 @@ Folder names must follow certain naming conventions:
     > [!NOTE]
     > Currently, you can't create certain items in a folder: 
     >
-    > - dataflow gen2
-    > - streaming semantic model
-    > - streaming dataflow
+    > - Dataflows gen2
+    > - Streaming semantic models
+    > - Streaming dataflows
     >
-    > If you create items from the home page or the **Create** hub, items are created in the root level of the workspace.
+    > If you create items from the home page or the **Create** hub, items are created at the root level of the workspace.
 
 ## Publish to folder (preview)
 
 You can now publish your Power BI reports to specific folders in your workspace. 
 
-When you publish a report, you can choose the specific workspace and folder for your report, seen below. 
+When you publish a report, you can choose the specific workspace and folder for your report, as illustrated in the following image. 
 
 :::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot showing selecting a folder for where a report gets published." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
 
-To publish reports to specific folders in the service, make sure the **Publish dialogs support folder selection** setting is enabled in the Preview features tab in the options menu. 
+To publish reports to specific folders in the service, make sure that in Power BI Desktop, the **Publish dialogs support folder selection** setting is enabled in the **Preview features** tab in the options menu. 
 
 :::image type="content" source="media/workspaces-folders/publish-folder-dialog.png" alt-text="Screenshot showing selecting publish dialogs support folder selection box." lightbox="media/workspaces-folders/publish-folder-dialog.png":::
     
@@ -129,7 +129,7 @@ To publish reports to specific folders in the service, make sure the **Publish d
 
 Workspace admins, members, and contributors can create, modify, and delete folders in the workspace. Viewers can only view folder hierarchy and navigate in the workspace.
 
-Currently folders inherit the permissions of the workspace where they're located. 
+Currently, folders inherit the permissions of the workspace where they're located. 
 
 | Capability  | Admin   | Member   | Contributor | Viewer   |
 |-------|---------|----------|-------------|----------|
@@ -141,12 +141,12 @@ Currently folders inherit the permissions of the workspace where they're located
 
 ## Considerations and limitations
 
-- Currently dataflow gen2, streaming semantic model, and streaming dataflow can't be created in folders. 
+- Currently dataflows gen2, streaming semantic models, and streaming dataflows can't be created in folders. 
 - If you trigger item creation from the home page, create hub, and industry solution, items are created at the root level of workspaces.
-- Git doesn't support workspace folders yet.
+- Git doesn't currently support workspace folders.
 - If folders **is enabled** in the Power BI service but **not enabled** in Power BI Desktop, republishing a report that is in a nested folder will replace the report in the nested folder.
-- If Power BI Desktop folders **is enabled** in Power BI Desktop, but **not enabled** in the Service and you publish to a nested folder, the report will be published to the general workspace.
-- When publishing reports to folders, report names must be unique throughout an entire workspace, regardless of its location. Therefore, when publishing a report to a workspace that has another report with the same name in a different folder, the report will publish to the location of the already existing report. If you want to move the report to a new folder location in the workspace you will need to make this change in the Power BI Service.
+- If Power BI Desktop folders **is enabled** in Power BI Desktop, but **not enabled** in the service and you publish to a nested folder, the report will be published to the general workspace.
+- When publishing reports to folders, report names must be unique throughout an entire workspace, regardless of their location. Therefore, when publishing a report to a workspace that has another report with the same name in a different folder, the report will publish to the location of the already existing report. If you want to move the report to a new folder location in the workspace, you need to make this change in the Power BI service.
 - Folders are not supported in [Template App workspaces](/power-bi/connect-data/service-template-apps-overview).
 
 ## Related content

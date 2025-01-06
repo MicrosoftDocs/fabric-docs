@@ -4,7 +4,7 @@ description: A known issue is posted where SQL database mirror doesn't start whe
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/01/2024
+ms.date: 11/27/2024
 ms.custom: known-issue-702
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-702
 
 When you create an SQL database mirror artifact, you can create a SQL connection with service principal authentication to perform the mirroring. If you created the SQL connection during the creation of the mirror item, the mirror doesn't start.
 
-**Status:** Open
+**Status:** Fixed: November 27, 2024
 
 **Product Experience:** Data Factory
 

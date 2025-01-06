@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/27/2024
+ms.date: 12/03/2024
 ---
 
 # Buy a Microsoft Fabric subscription
@@ -22,9 +22,9 @@ Microsoft Fabric has an array of capacities that you can buy. The capacities are
 
 Microsoft Fabric operates on two types of SKUs:
 
-* **Azure** - Billed per second with no commitment.
+* **Azure** - Billed per second with no commitment. To save costs, you can make a [yearly reservation](/azure/cost-management-billing/reservations/fabric-capacity).
 
-* **Microsoft 365** - Billed monthly or yearly, with a monthly commitment
+* **Microsoft 365** - Billed monthly or yearly, with a monthly commitment.
 
 ## Azure SKUs
 

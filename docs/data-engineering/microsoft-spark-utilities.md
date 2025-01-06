@@ -629,6 +629,9 @@ With ``` mssparkutils.runtime.context ``` you can get the context information of
 mssparkutils.runtime.context
 ```
 
+> [!NOTE]
+> ```mssparkutils.env``` is not officially supported on Fabric, please use ```notebookutils.runtime.context``` as alternative.
+
 ## Known issue 
 
 When using runtime version above 1.2 and run ``` mssparkutils.help() ```, the listed **fabricClient**, **warehouse**, and **workspace** APIs are not supported for now, will be available in the further.

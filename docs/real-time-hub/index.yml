@@ -6,8 +6,6 @@ summary: Microsoft Fabric Real-Time hub is single, tenant-wide, unified, logical
 metadata:
   title: Real-Time hub in Microsoft Fabric documentation
   description: Microsoft Fabric Real-Time hub is single, tenant-wide, unified, logical place for streaming data-in-motion.
-  ms.service: fabric  #Required; use either service or product per approved list.
-  ms.subservice: real-time-hub
   ms.custom:
     - build-2024
     - ignite-2024

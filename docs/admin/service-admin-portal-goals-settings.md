@@ -36,9 +36,6 @@ To turn on the Metrics set setting:
 1. Specify who can access metric sets in Power BI. 
 1. Select Apply to save your changes.
 
-## Copilot summaries
-
-If Copilot tenant settings are on, Copilot summaries of metrics are available. For more information about Copilot tenant settings, read [Copilot tenant settings](service-admin-portal-copilot.md).
 
 ## Related content
 

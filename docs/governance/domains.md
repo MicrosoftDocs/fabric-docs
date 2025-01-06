@@ -8,10 +8,14 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2024
-ms.date: 11/11/2024
+ms.date: 12/16/2024
 ---
 
 # Fabric domains
+
+This article introduces key concepts of domains in Fabric, and shows how to set up and manage them. To get started planning domains for your organization, see [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
+
+## Introduction
 
 Today, organizations are facing massive growth in data, and there's an increasing need to be able to organize and manage that data in a logical way that facilitates more targeted and efficient use and governance.
 
@@ -74,6 +78,8 @@ The specified users and/or members of the specified security groups generally au
 For information about defining a domain as a default domain, see [Define the domain as a default domain](#define-the-domain-as-a-default-domain).
 
 ## Create a domain
+
+Before you start creating domains for your organization, it is recommended to review [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
 
 To create domain, you must be a Fabric admin.
 
@@ -264,3 +270,4 @@ Whenever a domain is created, edited, or deleted, that activity is recorded in t
 * [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
 * [Audit schema for domains](./domains-audit-schema.md)
 * [Admin role in workspaces](../get-started/roles-workspaces.md)
+* [Blog: Easily implement data mesh architecture with domains in Fabric](https://blog.fabric.microsoft.com/blog/easily-implement-data-mesh-architecture-with-domains-in-fabric/)
