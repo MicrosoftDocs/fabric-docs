@@ -47,7 +47,7 @@ Sensitivity labels can apply access control to Fabric and Power BI data and cont
 * In [supported export paths](#supported-export-paths). This scenario relies on sensitivity labels that are associated with Microsoft Purview *publishing* policies. When a user tries to open a file generated via one of the supported export paths, their access depends on the permissions they have under that policy. See [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels).
 
 > [!IMPORTANT]
-> Access control in all other scenarios is unsupported. This includes cross-tenant scenarios, such as [external data sharing](/fabric/governance/external-data-sharing-overview), where data is accessed from another tenant, or other export paths, such as export to .csv files or .txt files.
+> Access control in all other scenarios is unsupported. This includes cross-tenant scenarios, such as [external data sharing](/fabric/governance/external-data-sharing-overview#security-considerations), where data is accessed from another tenant, or other export paths, such as export to *.csv* files or *.txt* files.
 
 ## Supported export paths
 
