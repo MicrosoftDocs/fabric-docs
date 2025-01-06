@@ -37,16 +37,9 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 
 ### Rich dataframe table view
 
-![Animated GIF of rich dataframe preview.](media\notebook-visualization\rich-dataframe-preview.gif)
+#### Free selection support on table view
 
-1. **Table** view is rendered by default when using _display()_ command.
-1. You can profile your dataframe by clicking on **Inspect** button. It provides the summarized data distribution and showing statistics of each column.
-1. Each card in the "Inspect" side pane maps to a column of the dataframe, you can view more details by clicking on the card or selecting a column in the table.
-1. You can view the cell details by clicking on the cell of the table. This feature is useful when the dataframe contains long string type of contents.
-
-### Free selection support on display() table view
-
-The rich dataframe preview in the notebook offers a free selection function designed to enhance the data analysis experience through flexible and intuitive selection capabilities. This feature allows users to interact with dataframes more efficiently and gain deeper insights with ease.
+**Table** view is rendered by default when using _display()_ command. The rich dataframe preview in the notebook offers a free selection function designed to enhance the data analysis experience through flexible and intuitive selection capabilities. This feature allows users to interact with dataframes more efficiently and gain deeper insights with ease.
  
 - **Multi-column selection**: Users can select multiple columns by pressing the 'Shift' key, enabling a more comprehensive analysis of the data.
 
@@ -60,6 +53,15 @@ The rich dataframe preview in the notebook offers a free selection function desi
 
   ![Animated GIF of free selection support.](media\notebook-visualization\free-selection.gif)
 
+#### Data profiling support via Inspect pane
+
+![Animated GIF of rich dataframe preview.](media\notebook-visualization\rich-dataframe-preview.gif)
+
+1. You can profile your dataframe by clicking on **Inspect** button. It provides the summarized data distribution and showing statistics of each column.
+
+1. Each card in the "Inspect" side pane maps to a column of the dataframe, you can view more details by clicking on the card or selecting a column in the table.
+
+1. You can view the cell details by clicking on the cell of the table. This feature is useful when the dataframe contains long string type of contents.
 
 ### New rich dataframe chart view
 
