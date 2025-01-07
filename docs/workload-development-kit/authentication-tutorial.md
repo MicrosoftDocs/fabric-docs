@@ -10,21 +10,21 @@ ms.date: 07/14/2024
 #customer intent: As an Independent Software Vendor (ISV) or a developer, I want to learn how to set up the authorization for a customized Fabric workload.
 ---
 
-# Authentication setup
+# Set up an enterprise application
+
+For your workload to work in Fabric, you need to set up an Azure enterprise application. This application is used to authenticate your workload against Azure.
 
 ## Prerequisites
 
 * At least a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role.
 
-## Configure a Microsoft Entra ID application
+## Step 1: Create a new enterprise application
 
-For your workload to work in Fabric, you need to set up a [Microsoft Entra ID](/entra/fundamentals/whatis) application. This application is used to authenticate your workload against Azure.
+To create a new enterprize application, follow these steps:
 
-Follow these steps to create your application:
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-
-2. Browse to **Identity > Applications > App registrations** and select **New registration**.
+2. Navigate to **Identity > Applications > App registrations** and select **New registration**.
 
 3. Enter a display Name for your application.
 
@@ -32,34 +32,101 @@ Follow these steps to create your application:
 
 5. Select **Register**.
 
-6. Once your app is registered, go to the *manage* section and select **Expose an API**.
+## Step 2: Configure the redirect URI
 
-7. Next to *Application ID URI*, select **Add**.
+The redirect URI is a URI that closes the page when you go to it. When users don't give consent to use your app, they'll be directed to the redirect URI. You can add several redirect URIs to your app.
 
-8. In the *Edit application ID URI* pane, add a URI for your application using this format: `api://localdevinstance/<tenant ID><workload><subpath>`.
+To configure your enterprise application, follow these steps:
 
-   * **Workload** - The name of the workload as specified in the manifest.
-   * **Tenant ID** - The tenant ID of the user used in Fabric to run the sample.
-   * The ID URI doesn't end with a slash.
-   * At the end of the *ID URI* there can be an optional subpath consisting of a string of English lower or upper case letters, numbers, and dashes, up to 36 characters.
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-   > [!TIP]
-   > For help finding the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
+2. Navigate to *Enterprize applications > All applications* and select your application.
 
-   For example, if the publisher's tenant ID is *853d9f4f-c71b-4420-b6ec-60e503458946*, and the workload's name is *Fabric.WorkloadSample* then:
+3. From the *Manage* section, select **Single sign-on**.
 
-   * The following URIs *are* valid
+4. In *Configure application properties*, select the **Go to application** link.
 
-      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
-      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/abc`
+5. Select **Add a Redirect URI**.
 
-   * The following URIs *aren't* valid
+6. From *Platform configurations* select **Add a platform**.
 
-      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/`
-      * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/a`
-      * Any ID URI that doesn't start with `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
+7. In the *Configure platforms* pane, select **Single-page application**.
 
-To work with authentication in Fabric, you need to set up a Microsoft Entra ID application. This application is used to authenticate users and authorize access to your workload. To create an application, follow these steps:
+8. In the *Configure single-page application* add a redirect URI to **Redirect URIs**. The [sample example](quickstart-sample.md#step-4-create-a-microsoft-entra-id-application) uses `http://localhost:60006/close` as the redirect URI.
+
+9. Select **Configure**.
+
+## Step 3: Verify that you have a multitenant app
+
+To verify that your app is a multitenant app, follow these steps .
+
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+2. Navigate to *Enterprize applications > All applications* and select your application.
+
+3. From the *Manage* section, select **Single sign-on**.
+
+4. In *Configure application properties*, select the **Go to application** link.
+
+5. In your application, from the *Manage* section, select **Authentication**.
+
+6. In the *Supported account types*, verify that *Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)* is selected. If it isn't, select it and then select **Save**.
+
+## Step 4: Enter an application ID URI
+
+Create an application ID URI using this format: `api://localdevinstance/<tenant ID><workload name><(optional)subpath>`. The ID URI can't end with a slash.
+
+* **Workload name** - The name of the workload you're developing. The workload name must be identical to the [WorkloadName](backend-manifest.md#workloadname-attribute) specified in the backend manifest.
+* **Tenant ID** - Your tenant ID. If you don't know what's your tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
+* **Subpath** - (Optional) A string of English lower or upper case letters, numbers, and dashes. The subpath string can be up to 36 characters long.
+
+Here are examples of valid and invalid URIs when the tenant ID  is *bbbbcccc-1111-dddd-2222-eeee3333ffff*, and the workload name is *Fabric.WorkloadSample* then:
+
+* **Valid URIs**
+
+   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Fabric.WorkloadSample
+   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Fabric.WorkloadSample/abc
+
+* **Invalid URIs**:
+
+   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Fabric.WorkloadSample/af/
+   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Fabric.WorkloadSample/af/a
+
+To add an application ID URI to your app, follow these steps.
+
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+2. Navigate to *Enterprize applications > All applications* and select your application.
+
+3. From the *Manage* section, select **Single sign-on**.
+
+4. In *Configure application properties*, select the **Go to application** link.
+
+5. In your application, from the *Manage* section, select **Expose an API**.
+
+6. Next to *Application ID URI*, select **Add**.
+
+7. In the *Edit application ID URI* pane, add your application ID URI.
+
+## Step 5: Add scopes
+
+Your app requires [scopes](/entra/identity-platform/scopes-oidc) (also known as permissions) to work with Create, Read, Update, and Delete (CRUD) APIs.
+
+  for workload items, and to perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope). In addition, add two dedicated Fabric applications to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric.
+
+To add scopes to your app, follow these steps.
+
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+2. Navigate to *Enterprize applications > All applications* and select your application.
+
+3. From the *Manage* section, select **Single sign-on**.
+
+4. In *Configure application properties*, select the **Go to application** link.
+
+5. In your application, from the *Manage* section, select **Expose an API**.
+
+6. In *Scopes defined by this API*, select **Add a scope**.
 
 
 
@@ -76,75 +143,35 @@ To work with authentication in Fabric, you need to set up a Microsoft Entra ID a
 
 
 
-> [!NOTE]  
-> To configure the authentication settings that are described in this article, you must have the Global Administrator role.
 
-## Azure Storage provisioning
 
-The authentication sample that's used in this article demonstrates how to store data in and read data from a lakehouse architecture. It requires generating tokens for the Azure Storage service in on-behalf-of (OBO) flows. To generate tokens, you must consent to using Azure Storage with your application. To consent, Azure Storage must first be provisioned in the tenant.
 
-To verify that Azure Storage is provisioned in the tenant:
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Go to **Microsoft Entra ID** > **Enterprise applications**.
-1. In the search filters, select **Application type = All applications**. The application ID starts with `e406a681-f3d4-42a8-90b6-c2b029497af1`.
 
-    :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning in the Azure portal." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If the Azure Storage application is shown in the search results, storage is already provisioned, and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). Otherwise, a Global Administrator needs to configure the application.
 
-To provision Azure Storage, open Windows PowerShell as administrator and run the following script:
-  
-```console
-Install-Module az  
-Import-Module az  
-Connect-AzureAD  
-New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
+
+
+
+
+
 ```
 
-## Configure your application in Microsoft Entra ID manually
 
-To authenticate a workload, the workload application must be registered in Microsoft Entra ID. If you don't have an application registered, [create a new application](/entra/identity-platform/quickstart-register-app#register-an-application). Then, complete the following steps.
 
-1. Apply the following configurations to your application:
 
-   1. Make the application a multitenant app.
-   1. For dev applications, configure the redirect URI as `http://localhost:60006/close` with the single-page application (SPA) platform. This configuration is required to support Microsoft consent. You can add other redirect URIs.
+
+
   
-   > [!NOTE]
-   >
-   >* The redirect URI should be a URI that simply closes the page when you go to it. The URI `http://localhost:60006/close` is already configured in the frontend sample. You can revise the redirect URI in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/index.ts). If you change the URI, make sure that it matches the URI that's configured for your application.
-   >* You can configure the redirect URI after you create the application. To change the redirect URI settings, go to **Authentication** > **Manage**.
-   >* The redirect URL must return an HTML page that calls only to JavaScript `windows.close()`.
-
-   :::image type="content" source="./media/authentication-tutorial/register-application.png" alt-text="Screenshot of the application registration UI." lightbox="./media/authentication-tutorial/register-application.png":::
-
-1. Change the application ID URI for your application. Go to **Manage** > **Expose an API**, and edit the value for **Application ID URI** for your app.
-
-   For a developer mode scenario, the application ID URI should start with `api://localdevinstance/<Workload publisher's tenant ID in lowercase (the tenant ID of the user used in Fabric to run the sample)>/<Name of your workload>` and an optional subpath at the end that starts with `/` (see the examples later in this section).
-
-   Application ID URI parameters:
-
-   * The workload name must be exactly as specified in the manifest.
-   * The ID URI can't end with a slash (`/`).
-   * The end of the ID URI can have an optional subpath identified by a string of up to 36 characters. It can contain only English lowercase and uppercase letters, numbers, and dashes.
-
-   > [!TIP]
-   > Get help finding [your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
-
-   For example, if the publisher's tenant ID is `aaaabbbb-0000-cccc-1111-dddd2222eeee` and the workload name is `Fabric.WorkloadSample`, then:
 
 
-   * The following URIs *are* valid:
 
-     * `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample`
-     * `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample/abc`
 
-   * The following URIs *aren't* valid:
 
-     * `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample/af/`
-     * `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample/af/a`
-     * Any ID URI that doesn't start with `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample`
+
+
+
+
 
 ### Add a scope for CRUD APIs and jobs
 
