@@ -71,7 +71,7 @@ When surge protection is active, capacity state events are generated. The _Syste
 |Overloaded|AllRejected|Indicates the capacity exceeded the background rejection limit. Background and interactive operations are being rejected.|
 
 > [!NOTE]
-> When the capacity reaches its compute limit, it'll experience interactive delays, interactive rejections, or all rejections even when surge protection is enabled.
+> When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.
 
 ### Per operation status messages for surge protection
 
