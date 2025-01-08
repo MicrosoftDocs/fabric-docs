@@ -89,7 +89,7 @@ When surge protection is active, background requests are rejected. In the Fabric
 
 - _Background rejection threshold_ is not an upper limit on _24-hours background percentage_. This is because in progress jobs continue to run and report additional usage. 
 
-- If you pause a capacity when it is in an overloaded state, the system events table in the capacity metircs app may show an **Active NotOverloaded** event after the **Paused** event. This is a known issue. The capacity is still paused. The NotOverloaded event is generated due to a timing issue during the pause action.  
+- If you pause a capacity when it is in an overloaded state, the system events table in the capacity metrics app may show an **Active NotOverloaded** event after the **Paused** event. This is a known issue. The capacity is still paused. The NotOverloaded event is generated due to a timing issue during the pause action.  
 
 ### Related content
 
