@@ -51,7 +51,7 @@ You need to be a Fabric Capacity Administrator.
 Capacity admins set a _background rejection threshold_ and a _background recovery threshold_ when they enable surge protection. 
 
 
-- The **Background Rejection threshold** determines when surge protection becomes active. The threshold applies to the _24-hour background percentage_ for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection is not enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
+- The **Background Rejection threshold** determines when surge protection becomes active. The threshold applies to the _24-hour background percentage_ for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection isn't enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
 - The **Background Recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations. 
 
 
@@ -79,15 +79,15 @@ When surge protection is active, background requests are rejected. In the Fabric
 
 ### Considerations and limitations
 
-- When surge protection is active, background jobs are rejected. This means there is still broad impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a specific range of usage. However, while surge protection is enabled, background operations might be rejected, and this can impact performance. To fully protect critical solutions, we recommend isolating them in a designated capacity.
+- When surge protection is active, background jobs are rejected. This means there's still broad impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a specific range of usage. However, while surge protection is enabled, background operations might be rejected, and this can impact performance. To fully protect critical solutions, we recommend isolating them in a designated capacity.
 
-- Surge protection doesn't guarantee that interactive requests aren't delayed or rejected. As a capacity admin, you'll need to use the capacity metrics app to review data in the throttling charts and then adjust the surge protection background rejection threshold as needed.
+- Surge protection doesn't guarantee that interactive requests aren't delayed or rejected. As a capacity admin, you need to use the capacity metrics app to review data in the throttling charts and then adjust the surge protection background rejection threshold as needed.
 
 - Some requests initiated from Fabric UI are billed as background operations or depend on background operations to complete. These requests are rejected when surge protection is active.  
 
 - Surge protection doesn't stop in progress jobs. 
 
-- _Background rejection threshold_ is not an upper limit on _24-hours background percentage_. This is because in progress jobs continue to run and report additional usage. 
+- _Background rejection threshold_ isn't an upper limit on _24-hours background percentage_. This is because in progress jobs continue to run and report additional usage. 
 
 - If you pause a capacity when it is in an overloaded state, the system events table in the capacity metrics app may show an **Active NotOverloaded** event after the **Paused** event. This is a known issue. The capacity is still paused. The NotOverloaded event is generated due to a timing issue during the pause action.  
 

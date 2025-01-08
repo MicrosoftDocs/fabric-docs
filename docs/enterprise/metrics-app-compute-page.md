@@ -154,7 +154,7 @@ The system events table displays the following elements:
   
   * **State Change Reason** - Displays the event trigger.
 
-Below is a table of system events.
+The table lists system events for capacities.
 |Capacity State|Capacity state change reason|When shown|
 | -------- | -------- | -------- |
 |Active|ManuallyResumed|Indicates the capacity is active. Occurs when a paused capacity is resumed.|
