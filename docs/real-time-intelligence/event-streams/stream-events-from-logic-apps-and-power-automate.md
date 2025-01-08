@@ -117,11 +117,11 @@ Before you start, you must complete the following prerequisites:
 
 1. Select **Save** to save the workflow.
 
-   :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/save-workflow.png" alt-text="Screenshot showing how to get Event Hubs name." lightbox="media/stream-events-from-power-automate-and-logic-app/save-workflow.png" :::
+   :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/save-workflow.png" alt-text="Screenshot showing how to save workflow." lightbox="media/stream-events-from-power-automate-and-logic-app/save-workflow.png" :::
 
 1. On the designer toolbar, from the Run menu, select **Run**.
 
-   :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/run-workflow.png" alt-text="Screenshot showing how to get Event Hubs name." lightbox="media/stream-events-from-power-automate-and-logic-app/run-workflow.png" :::
+   :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/run-workflow.png" alt-text="Screenshot showing how to run workflow." lightbox="media/stream-events-from-power-automate-and-logic-app/run-workflow.png" :::
 
 1. After you complete these steps, you can preview you data in your eventstream. 
 
