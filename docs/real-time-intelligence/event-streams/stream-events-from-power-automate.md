@@ -86,7 +86,7 @@ Before you start, you must complete the following prerequisites:
 ## Stream events from Logic Apps to your eventstream using the custom endpoint
 
 1. Create a Logic App and workflow resource in [Azure portal](https://portal.azure.com/).
-1. Open the newly created workflow, select **Add a trigger**, and select **Recurrence**.
+1. Open the newly created workflow, select **Add a trigger**, and then select **Recurrence**.
    
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\add-recurrence.png" alt-text="Screenshot that shows how to add a recurrence in workflow.":::
 
@@ -94,7 +94,7 @@ Before you start, you must complete the following prerequisites:
 
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\long-running.png" alt-text="Screenshot that shows how to set recurrence for long running.":::
 
-1. Select the **+ Add an action** and then select the **Excute JavaScript**, [Copy the script content](https://github.com/microsoft/fabric-event-streams/blob/main/Use%20Case/logic-apps-to-eventstream/flights.info.mocks.js) into **code** field.
+1. Select the **+ Add an action** and then select the **Excute JavaScript**, [Copy this script content](https://github.com/microsoft/fabric-event-streams/blob/main/Use%20Case/logic-apps-to-eventstream/flights.info.mocks.js) into **code** field.
 
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\add-javascript.png" alt-text="Screenshot that shows how to add JavaScript.":::
 
@@ -152,7 +152,7 @@ Before you start, you must complete the following prerequisites:
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/my-flow.png" alt-text="Screenshot showing the newly added flow." lightbox="media/stream-events-from-power-automate-and-logic-app/my-flow.png" :::
 
-1. Open your Power Automate flow and then select **Edit** and then add the **Event Hubs** action step, and then select **Send event**. Refer to the steps in [Stream events from Logic Apps to your eventstream using the custom endpoint](#stream-events-from-logic-apps-to-your-eventstream-using-the-custom-endpoint) to configure the event hub and set **Recurrence** for long-running.
+1. Open your Power Automate flow, select **Edit** and add the **Event Hubs** action step, and then select **Send event**. Refer to the steps in [stream events from Logic Apps](#stream-events-from-logic-apps-to-your-eventstream-using-the-custom-endpoint) to configure the event hub and set **Recurrence** for long-running.
 
 1. Navigate back to **My Flows**, and select the flow to **Turn on** it
 
