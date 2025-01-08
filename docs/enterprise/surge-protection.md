@@ -52,7 +52,7 @@ Capacity admins set a _background rejection threshold_ and a _background recover
 
 
 - The **Background Rejection threshold** determines when surge protection becomes active. The threshold applies to the _24-hour background percentage_ for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection is not enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
-- The **Background Recovery threshold** determines when surge protection stops being active. This happens when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations. 
+- The **Background Recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations. 
 
 
 > [!NOTE]
