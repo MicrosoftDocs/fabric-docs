@@ -65,7 +65,7 @@ When surge protection is active, capacity state events are generated. The _Syste
 |Capacity State|Capacity state change reason|When shown|
 | -------- | -------- | -------- |
 |Active|NotOverloaded|Indicates the capacity is below all throttling and surge protection thresholds.|
-|Overloaded|SurgeProtectionActive|Indicates the capacity exceeded the configured surge protection threshold. The capacity hasn't dropped below the configured recovery threshold. Background operations are being rejected.|
+|Overloaded|SurgeProtectionActive|Indicates the capacity exceeded the configured surge protection threshold. The capacity is above the configured recovery threshold. Background operations are being rejected.|
 |Overloaded|InteractiveDelayAndSurgeProtectionActive|Indicates the capacity exceeded the interactive delay throttling limit and the configured surge protection threshold. The capacity hasn't dropped below the configured recovery threshold. Background operations are being rejected. Interactive operations are experiencing delays.|
 |Overloaded|InteractiveRejectedAndSurgeProtectionActive|Indicates the capacity exceeded the interactive rejection throttling limit and the configured surge protection threshold. The capacity hasn't dropped below the configured recovery threshold. Background and interactive operations are being rejected.|
 |Overloaded|AllRejected|Indicates the capacity exceeded the background rejection limit. Background and interactive operations are being rejected.|
