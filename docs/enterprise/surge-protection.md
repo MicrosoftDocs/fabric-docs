@@ -93,6 +93,6 @@ When surge protection is active, background requests are rejected. In the Fabric
 
 ### Related content
 
-- [Understanding the Microsoft Fabric Capacity Metrics app compute page. ](/fabric/enterprise/metrics-app-compute-page)
+- [Understanding the Microsoft Fabric Capacity Metrics app compute page](metrics-app-compute-page.md)
 
-- [Understand the metrics app timepoint page ](/fabric/enterprise/metrics-app-timepoint-page.)
+- [Understand the metrics app timepoint page ](metrics-app-timepoint-page.md)
