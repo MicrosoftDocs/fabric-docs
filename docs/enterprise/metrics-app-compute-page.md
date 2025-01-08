@@ -144,16 +144,29 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 
 ## System Events
 
-Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md). When the state of the capacity has remained unchanged for last 14 days, the table doesn't display any information.
+Displays capacity events. When the state of the capacity has remained unchanged for last 14 days, the table doesn't display any information.
 
 The system events table displays the following elements:
 
   * **Time** - The time the capacity was paused or resumed.
   
-  * **State** - The state of the capacity. *Suspended* indicates that the capacity was paused. *Active* indicates that the capacity was resumed.
+  * **State** - The state of the capacity. 
   
   * **State Change Reason** - Displays the event trigger.
 
+Below is a table of system events.
+|Capacity State|Capacity state change reason|When shown|
+| -------- | -------- | -------- |
+|Active|ManuallyResumed|Indicates the capacity is active. Occurs when a paused capacity is resumed.|
+|Active|NotOverloaded|Indicates the capacity is active and is below all throttling and surge protection thresholds.|
+|Overloaded|SurgeProtectionActive|Indicates the capacity exceeded the configured surge protection threshold. The capacity hasn't dropped below the configured recovery threshold. Background operations are being rejected.|
+|Overloaded|InteractiveDelayAndSurgeProtectionActive|Indicates the capacity exceeded the interactive delay throttling limit and the configured surge protection threshold. The capacity hasn't dropped below the configured recovery threshold. Background operations are being rejected. Interactive operations are experiencing delays.|
+|Overloaded|InteractiveRejectedAndSurgeProtectionActive|Indicates the capacity exceeded the interactive rejection throttling limit and the configured surge protection threshold. The capacity hasn't dropped below the configured recovery threshold. Background and interactive operations are being rejected.|
+|Overloaded|AllRejected|Indicates the capacity exceeded the background rejection limit. Background and interactive operations are being rejected.|
+|Suspended|ManuallyPaused|Indicates the capacity is paused.|
+
+For more information on pause and resume, see [Monitor a paused capacity](monitor-paused-capacity.md). 
+For more information on surge protection, see [Surge Protection](surge-protection.md).
 ## Matrix by item and operation
 
 A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed in this section. The colors in the table represent your *performance delta*.
