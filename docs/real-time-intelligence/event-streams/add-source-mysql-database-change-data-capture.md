@@ -55,8 +55,9 @@ The connector uses the Debezium MySQL connector to capture changes in your MySQL
    mysql> GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user'@'%';
    ```
 
-   > [!NOTE]
-   > When a global read lock is unavailable, as in hosted options like Amazon RDS or Aurora, table-level locks are used to create the consistent snapshot. In this case, you need to grant `LOCK TABLES` permission to the user.
+   > **[!NOTE]**
+   > When a global read lock is unavailable, as in hosted options like Amazon RDS or Aurora, table-level locks are used to create the consistent snapshot. In this case, you need to grant **`LOCK TABLES`** permission to the user. Additionally, to support **`FLUSH`** operations during the snapshot, you may also need to grant **`RELOAD`** or **`FLUSH_TABLES`** privileges, depending on the specific operation being performed.
+.
 
 1. Finalize the user's permissions:
 
