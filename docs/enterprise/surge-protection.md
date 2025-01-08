@@ -81,7 +81,7 @@ When surge protection is active, background requests are rejected. In the Fabric
 
 - When surge protection is active, background jobs are rejected. This means there is still broad impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a specific range of usage. However, while surge protection is enabled, background operations might be rejected, and this can impact performance. To fully protect critical solutions, we recommend isolating them in a designated capacity.
 
-- Surge protection doesn't guarantee that interactive requests will not be delayed or rejected. As a capacity admin, you'll need to use the capacity metrics app to review data in the throttling charts and then adjust the surge protection background rejection threshold as needed.
+- Surge protection doesn't guarantee that interactive requests aren't delayed or rejected. As a capacity admin, you'll need to use the capacity metrics app to review data in the throttling charts and then adjust the surge protection background rejection threshold as needed.
 
 - Some requests initiated from Fabric UI are billed as background operations or depend on background operations to complete. These requests are rejected when surge protection is active.  
 
