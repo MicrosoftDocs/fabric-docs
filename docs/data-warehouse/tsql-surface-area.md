@@ -49,7 +49,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Manually created multi-column stats
 - Materialized views
 - `MERGE`
-- `OPENROWSET`
 - `PREDICT`
 - Queries targeting system and user tables
 - Recursive queries
