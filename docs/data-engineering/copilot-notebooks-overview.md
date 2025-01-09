@@ -45,7 +45,7 @@ Run the cell at the top of the notebook, with this code:
 %activate_dscopilot
 ```
 
-After the cell successfully executes, yous can use Copilot. You must rerun the cell at the top of the notebook each time your session in the notebook closes.
+After the cell successfully executes, you can use Copilot. You must rerun the cell at the top of the notebook each time your session in the notebook closes.
 
 :::image type="content" source="media/copilot-notebooks-overview/copilot-cell-executed-successfully.png" alt-text="Screenshot showing successful cell execution." lightbox="media/copilot-notebooks-overview/copilot-cell-executed-successfully.png":::
 
