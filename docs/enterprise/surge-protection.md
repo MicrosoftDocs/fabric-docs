@@ -49,7 +49,7 @@ To enable surge protection, follow these steps:
 
 1. Select **Apply**.
 
-## How monitor surge protection
+## How to monitor surge protection
 
 1. Open the Microsoft Fabric Capacity Metrics app.
 
