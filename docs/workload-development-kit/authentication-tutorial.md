@@ -74,9 +74,9 @@ To verify that your app is a multitenant app, follow these steps .
 
 ## Step 4: Enter an application ID URI
 
-Create an application ID URI using this format: `api://localdevinstance/<tenant ID><workload name><(optional)subpath>`. The ID URI can't end with a slash.
+Create an application ID URI using this format: `api://localdevinstance/<tenant ID>/<workload name>/<(optional)subpath>`. The ID URI can't end with a slash.
 
-* **Workload name** - The name of the workload you're developing. The workload name must be identical to the [WorkloadName](backend-manifest.md#workloadname-attribute) specified in the backend manifest.
+* **Workload name** - The name of the workload you're developing. The workload name must be identical to the [WorkloadName](backend-manifest.md#workloadname-attribute) specified in the backend manifest, and start with `Org.`.
 * **Tenant ID** - Your tenant ID. If you don't know what's your tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
 * **Subpath** - (Optional) A string of English lower or upper case letters, numbers, and dashes. The subpath string can be up to 36 characters long.
 
@@ -84,13 +84,13 @@ Here are examples of valid and invalid URIs when the tenant ID  is *bbbbcccc-111
 
 * **Valid URIs**
 
-   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Fabric.WorkloadSample
-   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Fabric.WorkloadSample/abc
+   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Org.WorkloadSample
+   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Org.WorkloadSample/abc
 
 * **Invalid URIs**:
 
-   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Fabric.WorkloadSample/af/
-   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Fabric.WorkloadSample/af/a
+   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Org.WorkloadSample/af/
+   * api://localdevinstance/bbbbcccc-1111-dddd-2222-eeee3333ffff/Org.WorkloadSample/af/a
 
 To add an application ID URI to your app, follow these steps.
 
