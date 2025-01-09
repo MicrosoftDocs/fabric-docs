@@ -3,7 +3,6 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 11/27/2024
 ms.topic: conceptual
 ---
 
@@ -184,7 +183,7 @@ The previous examples apply to the scenario that automatically replicates all th
 {
     "properties": {
         "source": {
-            "type": "Snowflake",
+            "type": "<your source type>",
             "typeProperties": {
                 "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
                 "database": "xxxx"
@@ -454,10 +453,6 @@ Response 200: (No body)
 ## Microsoft Fabric .NET SDK
 
 The .NET SDK that supports Fabric mirroring is available at [Microsoft Fabric .NET SDK](https://www.nuget.org/packages/Microsoft.Fabric.Api/1.0.0-beta.11). The version needs to be >= 1.0.0-beta.11.
-
-## Known limitations
-
-Currently Service Principal/Managed Identity authentication is not supported if your [tenant home region](../../admin/find-fabric-home-region.md) is in North Central US or East US. You can use it in other regions.
 
 ## Related content
 
