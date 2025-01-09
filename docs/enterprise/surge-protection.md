@@ -4,7 +4,7 @@
 # For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
 
 title: Surge Protection
-description: Surge Protection helps limit overuse of your capacity by setting a limit on the total background compute consumption.
+description: Surge protection helps limit overuse of your capacity by setting a limit on the total background compute consumption.
 author:      LukaszPawlowski-MS # GitHub alias
 ms.author:   lukaszp # Microsoft alias
 ms.service: fabric
@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date:     11/18/2024
 ---
 
-# Surge Protection (preview)
+# Surge protection (preview)
 
 Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs. You configure surge protection for each capacity. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.
 
-### Prerequisites
+## Prerequisites
 
-You need to be a Fabric Capacity Administrator.
+You need to be an admin on the capacity.
 
-### Enabling surge protection
-
+## Enabling surge protection
+To enable surge protection, follow these steps:
 1. Open the Fabric Admin Portal.
 
 1. Navigate to **Capacity settings**.
@@ -38,7 +38,7 @@ You need to be a Fabric Capacity Administrator.
 
 1. Select **Apply**.
 
-### How monitor surge protection
+## How monitor surge protection
 
 1. Open the Microsoft Fabric Capacity Metrics app.
 
@@ -46,7 +46,7 @@ You need to be a Fabric Capacity Administrator.
 
 1. The _system events_ table shows when surge protection became active and when the capacity returned to a not overloaded state.
 
-### Surge protection thresholds
+## Surge protection thresholds
 
 Capacity admins set a _background rejection threshold_ and a _background recovery threshold_ when they enable surge protection. 
 
@@ -60,7 +60,7 @@ Capacity admins set a _background rejection threshold_ and a _background recover
 
 ### System events for Surge Protection
 
-When surge protection is active, capacity state events are generated. The _System events_ table in the _Fabric Capacity metrics app_ shows the events. Below are the state events relevant to surge protection. A complete list of capacity state events is available in [Understanding the Microsoft Fabric Capacity Metrics app compute page](/fabric/enterprise/metrics-app-compute-page)
+When surge protection is active, capacity state events are generated. The _System events_ table in the _Fabric Capacity metrics app_ shows the events. Below are the state events relevant to surge protection. A complete list of capacity state events is available in [Understanding the Microsoft Fabric Capacity Metrics app compute page](/fabric/enterprise/metrics-app-compute-page).
 
 |Capacity State|Capacity state change reason|When shown|
 | -------- | -------- | -------- |
@@ -73,9 +73,9 @@ When surge protection is active, capacity state events are generated. The _Syste
 > [!NOTE]
 > When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.
 
-### Per operation status messages for surge protection
+## Per operation status messages for surge protection
 
-When surge protection is active, background requests are rejected. In the Fabric capacity metrics app, these requests appear with status _Rejected_ or _RejectedSurgeProtection_. These status messages appear in the Fabric capacity metrics app timepoint page.  See [Understand the metrics app timepoint page](metrics-app-timepoint-page.md).
+When surge protection is active, background requests are rejected. In the Fabric capacity metrics app, these requests appear with status _Rejected_ or _RejectedSurgeProtection_. These status messages appear in the Fabric capacity metrics app timepoint page. See [Understand the metrics app timepoint page](metrics-app-timepoint-page.md).
 
 ### Considerations and limitations
 
@@ -89,9 +89,9 @@ When surge protection is active, background requests are rejected. In the Fabric
 
 - _Background rejection threshold_ isn't an upper limit on _24-hours background percentage_. This is because in progress jobs continue to run and report additional usage. 
 
-- If you pause a capacity when it is in an overloaded state, the system events table in the capacity metrics app may show an **Active NotOverloaded** event after the **Suspended** event. This is a known issue. The capacity is still paused. The NotOverloaded event is generated due to a timing issue during the pause action.  
+- If you pause a capacity when it is in an overloaded state, the system events table in the capacity metrics app may show an **Active NotOverloaded** event after the **Suspended** event. The capacity is still paused. The NotOverloaded event is generated due to a timing issue during the pause action.  
 
-### Related content
+## Related content
 
 - [Understanding the Microsoft Fabric Capacity Metrics app compute page](metrics-app-compute-page.md)
 
