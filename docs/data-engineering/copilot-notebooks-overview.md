@@ -39,7 +39,7 @@ First select the Copilot icon in the notebooks ribbon. The Copilot chat panel op
 
 Run the cell at the top of the notebook, with this code:
 
-```
+```python
 #Run this cell to install the required packages for Copilot
 %load_ext dscopilot_installer
 %activate_dscopilot
