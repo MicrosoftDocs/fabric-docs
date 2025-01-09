@@ -123,7 +123,7 @@ Power BI Desktop for Power BI Report Server doesn't support information protecti
 
 ## Connecting to data sources
 
-To successfully connect from Fabric or Power BI (including Power BI Desktop) to a data source (such as an Excel file) that has a sensitivity label that applies access control, information protection must be enabled in Fabric/Power BI (that is, the tenant setting **Allow users to apply sensitivity labels for content** must be set to *Enabled*).
+To successfully connect from Fabric or Power BI (including Power BI Desktop) to a data source (such as an Excel file) that has a sensitivity label that applies file encryption, information protection must be enabled in Fabric/Power BI (that is, the tenant setting **Allow users to apply sensitivity labels for content** must be set to *Enabled*).
 
 ## Sovereign clouds
 
