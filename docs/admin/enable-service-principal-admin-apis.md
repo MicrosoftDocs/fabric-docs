@@ -4,7 +4,7 @@ description: Learn how to enable service principal authentication to permit use 
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 07/22/2024
+ms.date: 01/09/2025
 
 # Customer intent: As a developer, learn how to enable service principal authentication to permit use of read-only and update admin APIs.
 ---
