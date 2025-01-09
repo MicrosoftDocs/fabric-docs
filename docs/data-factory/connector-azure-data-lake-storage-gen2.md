@@ -41,7 +41,7 @@ In some cases, the Power Query connector article might include advanced options,
 
 To create a connection in a data pipeline:
 
-1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**
+1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
@@ -75,7 +75,7 @@ To create a connection in a data pipeline:
 
 1. Grant the workspace identity, organizational account, or service principal access to the storage account. For more information, see [Create a OneLake shortcut to storage account with trusted workspace access](../security/security-trusted-workspace-access.md#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access)
 
-1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#resource-instance-rule).
+1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#configure-trusted-workspace-access-in-adls-gen2).
 
 1. Follow steps from [Set up your connection](#set-up-your-connection) to create the connection.
 
@@ -169,7 +169,7 @@ To use service principal authentication, follow these steps:
 
 In the **General** tab, select the privacy level that you want apply in the **Privacy level** drop-down list. Three privacy levels are supported. For more information, go to General.
 
-:::image type="content" source="media/connector-azure-data-lake-storage-gen2/privacy-level.png" alt-text="Screenshot showing that Privacy Level of data lake gen2":::
+:::image type="content" source="media/connector-azure-data-lake-storage-gen2/privacy-level.png" alt-text="Screenshot showing that Privacy Level of data lake gen2.":::
 
 ### Step 4: Create your connection
 

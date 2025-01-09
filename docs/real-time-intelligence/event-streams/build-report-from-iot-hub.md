@@ -6,10 +6,9 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 01/18/2024
-ms.search.form: Event Streams Tutorials
+  - ignite-2024
+ms.date: 11/18/2024
+ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a report to monitor the health my devices.
 ---
 
@@ -21,7 +20,7 @@ If you have IoT devices that are connected to your Azure IoT Hub, you can ingest
 
 Before you begin, make sure you have:
 
-- Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
+- Access to a workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
 - An Azure IoT hub with event data and the necessary permission to access the policy keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
 ## Create a KQL database and an eventstream

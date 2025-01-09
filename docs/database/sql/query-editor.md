@@ -1,0 +1,97 @@
+---
+title: Query with the SQL Editor
+description: Learn how to use the SQL database query editor in the Microsoft Fabric portal
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: yoleichen
+ms.date: 12/19/2024
+ms.topic: how-to
+ms.custom:
+  - ignite-2024
+---
+# Query with the SQL query editor
+
+**Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
+
+This article describes how to use the SQL query editor in the Microsoft Fabric portal.
+
+The SQL query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing, and validation. You can run Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL) statements.
+
+You can also query the data in your database with multiple tools with a [SQL connection string](connect.md).
+
+## SQL query editor in the Fabric portal
+
+The SQL query editor provides a text editor to write queries using T-SQL.
+
+To access the built-in SQL query editor, create a new query using the **New SQL query** button. If you select the dropdown list, you can easily create T-SQL objects with code templates that populate in your SQL query window.
+
+:::image type="content" source="media/query-editor/query-editor-and-templates.png" alt-text="Screenshot from the Fabric portal of the SQL query editor and templates.":::
+
+As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab to indicate that your query is being saved.
+
+### View query results
+
+Once you've written the T-SQL query, select **Run** to execute the query. Two tabs contain the query result set and information.
+
+- The result set of data is displayed in the **Results** tab.
+    - You can further search for strings within the results grid to get filtered rows matching search criteria.
+    - If number of rows returned is more than 10,000 rows, the preview is limited to 10,000 rows. To view the entire result set, you can query the data with other tools using the [SQL connection string](connect.md).
+- The **Messages** tab shows SQL messages returned when SQL query is run.
+- The status bar indicates the query status, duration of the run and number of rows and columns returned in results.
+
+ :::image type="content" source="media/query-editor/run-results-tab.png" alt-text="Screenshot from the Fabric portal of the SQL query editor results tab and resultset." lightbox="media/query-editor/run-results-tab.png":::
+
+#### Save as view
+
+You can save your query as a view using the **Save as view** button. 
+
+Select the schema name that you have access to create views, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it appears in the **Explorer**.
+
+:::image type="content" source="media/query-editor/save-as-view.png" alt-text="Screenshot from the Fabric portal of the SQL query editor of the Save as View feature window.":::  
+
+#### Download as Excel/JSON/CSV
+
+You can download your result set as an Microsoft Excel (.xlsx) file using the download button. You can also download JSON or CSV versions of the result set data, as well as copy/paste the result set to your clipboard.
+
+:::image type="content" source="media/query-editor/download-results-in-xlsx.png" alt-text="Screenshot from the Fabric portal of the SQL query editor showing the Download results button.":::
+
+#### Multiple result sets
+
+When you run multiple queries and those return multiple results, you can select results dropdown list to see individual results.
+
+   :::image type="content" source="media/query-editor/multiple-result-sets.png" alt-text="Screenshot from the Fabric portal of the SQL query editor showing multiple result sets in the dropdown list.":::
+
+## Copilot
+
+The SQL query editor is powered by [Copilot for SQL database](copilot.md). It is designed to accelerate database development by leveraging generative AI to simplify and automate database management and improving the efficiency of writing T-SQL queries. Copilot is contextualized to your database's schema and can generate answers catered for you.
+
+Copilot for SQL database offers a variety of features, detailed in the [Introduction to Copilot](copilot.md#introduction-to-copilot-for-sql-database).
+
+Before your business can start using Copilot for SQL database, you need to [enable Copilot](../../get-started/copilot-enable-fabric.md).
+
+## Keyboard shortcuts
+
+Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The table in this article lists all the shortcuts available in SQL query editor in the Microsoft Fabric portal:
+
+| **Function** | **Windows** **Shortcut** |**macOS Shortcut**|
+|---|---| -------- |
+| New SQL query | `Ctrl + J` | `Cmd + J`|
+| Close current tab | `Ctrl + Shift + F4` | `Cmd + Shift + F4` |
+| Search string | `Ctrl + F` |`Cmd + F`|
+| Replace string | `Ctrl + H` | `Cmd + H`|
+| Undo | `Ctrl + Z` |`Cmd + Z`|
+| Redo | `Ctrl + Y` |`Cmd + Y`|
+| Go one word left | `Ctrl + Left arrow key` | `Cmd + Left arrow key` |
+| Go one word right | `Ctrl + Right arrow key` | `Cmd + Right arrow key` |
+| Indent increase | `Tab` | `Tab` |
+| Indent decrease | `Shift + Tab` | `Shift + Tab` |
+| Comment | `Ctrl + K`, `Ctrl + C` | `Cmd + K`,`Cmd + C` |
+| Uncomment | `Ctrl + K`, `Ctrl + U` | `Cmd + K`, `Cmd + U` |
+| Move cursor up | `↑` | `↑` |
+| Move cursor down | `↓` | `↓` |
+| Select All | `Ctrl + A` | `Cmd + A` |
+
+## Related Content
+
+- [Connect to your SQL database in Microsoft Fabric](connect.md)
+- [Features comparison: Azure SQL Database and SQL database in Fabric (preview)](feature-comparison-sql-database-fabric.md)

@@ -4,7 +4,7 @@ description: A known issue is posted where the teaching bubble blocks Lakehouse 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/31/2024
+ms.date: 11/19/2024
 ms.custom: known-issue-800
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-800
 
 When you open a lakehouse for the first time, a teaching bubble appears to guide you through the feature. Before you close the teaching bubble, you can't open the context menu in the Lakehouse explorer.
 
-**Status:** Open
+**Status:** Fixed: November 19, 2024
 
 **Product Experience:** Data Engineering
 

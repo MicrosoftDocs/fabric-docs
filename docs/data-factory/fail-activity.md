@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
-ms.date: 12/11/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Fail activity to cause pipeline execution to fail with a customized error message and error code

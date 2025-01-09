@@ -5,14 +5,14 @@ author: mystina
 ms.author: majia
 ms.topic: overview
 ms.custom:
-  - build-2024
-ms.date: 08/25/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
-# Introduction to Fabric Real-Time hub (preview)
+# Introduction to Fabric Real-Time hub
 Real-Time hub is the single place for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with the hub. There are no extra steps needed to set up or manage it. It also provides abundant connectors for simplified data ingestion into Fabric. This article explains these features in detail.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## Single place for data-in-motion across your organization
 
@@ -30,11 +30,12 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 | ------ | ------- |
 | Streaming data from other clouds | <ul><li>Google Cloud Pub/Sub</li><li>Amazon Kinesis Data Streams</li> |
 | Kafka Clusters | <ul><li>Confluent Cloud Kafka</li><li>Apache Kafka</li><li>Amazon Managed Streaming for Apache Kafka</li></ul> |
-| Database Change Data Capture (CDC) feeds | <ul><li>Azure SQL Database CDC</li><li>PostgreSQL Database CDC</li><li>Azure Cosmos DB CDC</li><li>MySQL Database CDC</li><li>Azure SQL Managed Instance CDC</li><li>SQL Server on VM DB CDC</li></ul> |
-| Microsoft streaming sources | <ul><li>Azure Event Hubs</li><li>IoT hubs</li></ul> |
-| Fabric events | <ul><li>Azure storage account events</li><li>Fabric workspace item events <br/>(automatically generated)</li></ul> |
+| Database Change Data Capture (CDC) feeds | <ul><li>Azure SQL Database CDC</li><li>PostgreSQL Database CDC</li><li>MySQL Database CDC</li><li>Azure Cosmos DB CDC</li><li>Azure SQL Managed Instance CDC</li><li>SQL Server on virtual machine (VM) DB CDC</li></ul> |
+| Microsoft streaming sources | <ul><li>Azure Event Hubs</li><li>Azure Service Bus</li><li>Azure IoT Hub</li></ul> |
+| Fabric events | Fabric workspace item events (automatically generated) |
+| Azure events | Azure storage account events |
 
-A unified *Get Events* experience makes it effortless to connect these sources to components in Real-Time hub like eventstream, KQL database, and Data Activator.  
+The Real-Time hub makes it effortless to connect these sources to components in Real-Time hub like eventstream, KQL database, and Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)].  
 
 ## Data integrations
 
@@ -52,7 +53,7 @@ A unified *Get Events* experience makes it effortless to connect these sources t
 
 - **Fabric events**
 
-    Events that are generated via Fabric artifacts and external sources, are made available in Fabric to support event-driven scenarios like real-time alerting and triggering downstream actions. You can monitor and react to events including Fabric workspace item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. Users can also send these events to other destinations via Fabric Event Streams.
+    Events that are generated via Fabric artifacts and external sources, are made available in Fabric to support event-driven scenarios like real-time alerting and triggering downstream actions. You can monitor and react to events including Fabric workspace item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. Users can also send these events to other destinations via Fabric eventstreams.
 
 ## Process, analyze, and act on data streams
 

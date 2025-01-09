@@ -40,7 +40,7 @@ Here are some useful tips about working with workspaces.
 
 After you select and open a workspace, this workspace becomes your current workspace. You can quickly navigate to it from anywhere by selecting the workspace icon from left nav pane.
 
-![Screenshot of current workspace in left nav pane.](media/workspaces/current-workspace-icon-left-nav.png)
+:::image type="content" border="true" source="media/workspaces/current-workspace-icon-left-nav.png" alt-text="Screenshot of current workspace in left nav pane.":::
 
 ## Workspace layout
 

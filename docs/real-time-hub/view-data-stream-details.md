@@ -5,18 +5,18 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 09/05/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
-# View details of data streams in Fabric Real-Time hub (preview)
-You can view details of a data stream in **Real-Time hub** from the  **All data streams** page.  
+# View details of data streams in Fabric Real-Time hub
+You can view details of a data stream in **Real-Time hub** from the  **All data streams** page or from the **My data streams** page.
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 
 ## View details of a stream
 
-On the **All data streams** page, select the stream whose parent is an eventstream.
+On the **All data streams** or **My data streams** page, select the stream whose parent is an eventstream.
 
 :::image type="content" source="./media/view-data-stream-details/stream-details.png" alt-text="Screenshot that shows the Stream detail view page." lightbox="./media/view-data-stream-details/stream-details.png":::
 
@@ -55,7 +55,7 @@ On the top of the stream details page, you can take the following actions on the
 
 | Action | Description |
 | ------ | ----------- |
-| Preview this data | Preview the data in the stream or derived stream. For more information, see [Preview data streams](preview-data-streams.md). |
+| Preview data | Preview the data in the stream or derived stream. For more information, see [Preview data streams](preview-data-streams.md). |
 | Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. |
 | Endorse | Endorse parent eventstream of the stream. For more information, see [Endorse data streams](endorse-data-streams.md). |
 | Set alert | The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). For more information, see [Set alerts on streams in Real-Time hub](set-alerts-data-streams.md). |
@@ -101,8 +101,11 @@ On the top of the KQL table details page, you can take the following actions on 
 
 | Action | Description |
 | ------ | ----------- |
+| Explore data | Explore data in the KQL table. |
+| Create real-time dashboard (Preview) |[Create a real-time dashboard](../real-time-intelligence/dashboard-real-time-create.md) based on data in the KQL table. |
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
+
 
 :::image type="content" source="./media/view-data-stream-details/kql-table-actions.png" alt-text="Screenshot that shows the actions available for a KQL table in the detail view page.":::
 

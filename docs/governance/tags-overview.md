@@ -5,14 +5,14 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
+ms.custom:
+  - ignite-2024
 ms.topic: conceptual #Don't change
 ms.date: 08/06/2024
-
 #customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
-
 ---
 
-# Tags in Microsoft Fabric
+# Tags in Microsoft Fabric (preview)
 
 Tags is a Microsoft Fabric feature that gives organizations the ability to apply additional metadata to items in Fabric to facilitate and enhance data categorization, organization, and discoverability. Tags are configurable text labels, such as *Sales – FR 2023*, *HR – Summer Event*, or *FY 2024*, that Fabric administrators can define according to their organization's needs. Data and content owners can then apply these tags to their Fabric items, and users in the organization can use the tags to help them find the data and content they need.
 

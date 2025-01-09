@@ -4,7 +4,7 @@ description: This article provides information about how to create an IBM Db2 da
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 09/13/2024
+ms.date: 12/06/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -23,7 +23,7 @@ The IBM Db2 database connector supports the following authentication types for c
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Windows| n/a | √ |
-|Basic| n/a | √ |
+|Basic| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 

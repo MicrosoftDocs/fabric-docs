@@ -2,13 +2,14 @@
 title: Tutorial- Use a notebook with Apache Spark to query a KQL database
 description: Learn how to import and query the NYC GreenTaxi notebook in your Real-Time Intelligence in Microsoft Fabric environment using Apache Spark.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/13/2024
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database

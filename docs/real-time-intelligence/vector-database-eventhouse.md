@@ -2,10 +2,12 @@
 title: "Tutorial: Use an Eventhouse as a vector database"
 description: Learn about how you can use an Eventhouse to store and query vector data in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: tutorial
-ms.date: 10/13/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database
@@ -172,9 +174,9 @@ To successfully make a call against Azure OpenAI, you need an endpoint, key, and
 
 | Variable name | Value |
 |---|---|
-| endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure OpenAI Studio](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
+| endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure AI Foundry](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
 | API key |	This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). You can use either KEY1 or KEY2. |
-| deployment ID | This value can be found under the **Deployments** section in the [Azure OpenAI Studio](https://oai.azure.com/). |
+| deployment ID | This value can be found under the **Deployments** section in the [Azure AI Foundry](https://oai.azure.com/). |
 
 Use the information in the table when running the Azure OpenAI cells.
 

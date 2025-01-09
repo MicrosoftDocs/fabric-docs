@@ -1,15 +1,20 @@
 ---
-title: "Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)"
+title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Database"
 description: Troubleshooting topics for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 11/07/2024
+ms.date: 12/02/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
+  - ignite-2024
 ---
-# Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)
+# Troubleshoot Fabric mirrored databases from Azure SQL Database
+
+This article covers troubleshooting steps troubleshooting for mirroring Azure SQL Database.
+
+For troubleshooting the automatically configured mirroring for Fabric SQL database, see [Troubleshoot mirroring from Fabric SQL database (preview)](../sql/mirroring-troubleshooting.md).
 
 ## Changes to Fabric capacity or workspace
 
@@ -20,6 +25,7 @@ ms.custom:
 | Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
 | Fabric trial capacity expired |  Mirroring stops automatically | See [Fabric trial capacity expires](../../get-started/fabric-trial.md#the-trial-expires). |
 | Fabric capacity exceeded | Mirroring will pause | Wait until the overload state is over or update your capacity. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations). Mirroring will continue once the capacity is recovered. |
+| Any other resource errors | Mirroring will be disabled | To ensure your compute resources are not impacted and to minimize impact on the Azure SQL Database, mirroring will be disabled on any persistent resource errors. |
 
 ## T-SQL queries for troubleshooting
 
@@ -69,9 +75,9 @@ User Assigned Managed Identity (UAMI) is not supported. If you add a UAMI, it be
 
 Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item.
 
-If you accidentally remove the SPN permission, Mirroring Azure SQL database will not function as expected. No new data can be mirrored from the source database.
+If you accidentally remove the SPN permission, Mirroring Azure SQL Database will not function as expected. No new data can be mirrored from the source database.
 
-If you remove Azure SQL database SPN permissions or permissions are not set up correctly, use the following steps.
+If you remove Azure SQL Database SPN permissions or permissions are not set up correctly, use the following steps.
 
 1. Add the SPN as a user by selecting the `...` ellipses option on the mirrored database item.
 1. Select the **Manage Permissions** option.
@@ -79,5 +85,5 @@ If you remove Azure SQL database SPN permissions or permissions are not set up c
 
 ## Related content
 
-- [Limitations in Microsoft Fabric](../../data-warehouse/limitations.md)
-- [Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric (Preview)](azure-sql-database-mirroring-faq.yml)
+- [Limitations of Microsoft Fabric Data Warehouse](../../data-warehouse/limitations.md)
+- [Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric](azure-sql-database-mirroring-faq.yml)

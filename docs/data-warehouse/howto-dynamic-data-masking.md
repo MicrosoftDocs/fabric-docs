@@ -1,6 +1,6 @@
 ---
-title: How to implement dynamic data masking in Synapse Data Warehouse
-description: Learn how to implement dynamic data masking in Synapse Data Warehouse in Microsoft Fabric.
+title: How to implement dynamic data masking in Fabric Data Warehouse
+description: Learn how to implement dynamic data masking in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
@@ -8,9 +8,10 @@ ms.date: 10/09/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 
-# How to implement dynamic data masking in Synapse Data Warehouse
+# How to implement dynamic data masking in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

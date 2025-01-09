@@ -9,13 +9,13 @@ ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 08/19/2024
+ms.date: 12/15/2024
 #customer intent: As a developer, I want to learn how to deploy content to an empty or nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool so that I can manage my content lifecycle.
 ---
 
 # Deploy content using Deployment pipelines
 
-Any [licensed user](../../enterprise/licenses.md) who's at least a contributor in the source workspace, can deploy content to an empty stage (a stage that doesn't contain content). The workspace must reside on a capacity for the deployment to be completed.
+Any [licensed user](../../enterprise/licenses.md) who's at least a contributor in the source and target workspace, can deploy content to an unassigned target stage. The workspace must reside on a capacity for the deployment to be completed.
 
 You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines) to programmatically perform deployments. For more information, see [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 

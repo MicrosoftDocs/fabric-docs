@@ -2,13 +2,14 @@
 title: Customize results in the KQL Queryset results grid
 description: Learn how to customize results in the KQL Queryset results grid in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-author: YaelSchuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/21/2024
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: KQL Queryset
 ---
 # Customize results in the KQL Queryset results grid

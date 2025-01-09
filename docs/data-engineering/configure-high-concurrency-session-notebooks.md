@@ -7,7 +7,8 @@ author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 06/07/2024
+  - ignite-2024
+ms.date: 11/11/2024
 ---
 
 # Configure high concurrency mode for Fabric notebooks
@@ -39,9 +40,9 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png" alt-text="Screenshot showing the navigation to workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png":::
 
-1. Navigate to the **Synapse** section > **Spark Compute** > **High Concurrency**
+1. Navigate to the **Data Engineering/Science** section > **Spark settings** > **High concurrency**
 
-1. In the **High Concurrency** section, you could choose to **enable** or **disable** the setting.
+1. In the **High concurrency** section and enable it **for notebooks**. You could choose to **enable** or **disable** the setting from this pane.
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-high-concurrency-section-selected.png" alt-text="Screenshot showing the high concurrency section in workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-high-concurrency-section-selected.png":::
 
@@ -67,7 +68,7 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png" alt-text="Screenshot showing the option to start a new high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png":::
 
-1. Create a new notebook and by navigating to the **Run** menu as mentioned in the above steps, in the drop down menu you will now see the newly created high concurrency session listed.
+1. Create a new notebook and by navigating to the **Run** menu as mentioned in the above steps, in the drop-down menu you will now see the newly created high concurrency session listed.
 
 1. Selecting the existing high concurrency session attaches the second notebook to the session.
 

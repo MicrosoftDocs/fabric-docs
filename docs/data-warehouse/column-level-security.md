@@ -8,6 +8,7 @@ ms.date: 08/21/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 # Column-level security in Fabric data warehousing
 
@@ -71,6 +72,6 @@ The SELECT permission was denied on the column 'CreditCard' of the object 'Custo
 ## Related content
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
-- [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
+- [Share your data and manage permissions](share-warehouse-manage-permissions.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)

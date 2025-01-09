@@ -1,11 +1,11 @@
 ---
 title: Dataflow Gen2 default destination
 description: Learn about default data destination configurations and settings in Dataflow Gen2.
-author: miquelladeboer
-ms.author: mideboer
+author: luitwieler
+ms.author: jeluitwi
 ms.reviewer: dougklo
 ms.topic: conceptual
-ms.date: 3/22/2024
+ms.date: 12/16/2024
 ---
 
 # Dataflow Gen2 default destination
@@ -32,8 +32,5 @@ With the default destination, the settings are set to a default behavior that ca
 | -------- | --------- | --------- | --------- |
 | **Update method** |Replace | Append | Append |
 | **Schema change on publish** | Dynamic | Fixed | Fixed |
-
-> [!NOTE]
-> The previous update method for Lakehouse was **append**. This method is now changed to **replace**.
 
 To edit the settings of an individual data destination, use the gear icon in the Power Query **Data destination** pane to edit the destination. When you edit the individual data destination, this change only affects the specific query. Currently, it isn't possible to change the behavior of the default destination.

@@ -21,7 +21,7 @@ This document describes how to share an item and manage its permissions.
 
 ## Share an item via link
 
-1. In the list of items, or in an open item, select the **Share** button ![Screenshot of share button.](media/share-items/share-button.png).
+1. In the list of items, or in an open item, select the **Share** button :::image type="content" border="true" source="media/share-items/share-button.png" alt-text="Screenshot of share button.":::.
 
 1. The **Create and send link** dialog opens. Select **People in your organization can view**.
 

@@ -17,7 +17,7 @@ items:
   items:
   - name: Enable Fabric for your organization
     href: fabric-switch.md
-  - name: Enable Data Activator for your organization
+  - name: Enable Activator for your organization
     href: data-activator-switch.md    
   - name: Region availability
     href: region-availability.md
@@ -73,7 +73,7 @@ items:
   - name: View refresh summary
     href: service-admin-portal-refresh-summary.md
   - name: View usage metrics
-    href: service-admin-portal-usage-metrics.md
+    href: feature-usage-adoption.md
 - name: Workspace administration
   items:
   - name: Manage workspaces

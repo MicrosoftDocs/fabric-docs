@@ -4,7 +4,7 @@ description: A known issue is posted where the Lakehouse explorer doesn't recogn
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 11/23/2023
+ms.date: 12/05/2023
 ms.custom: known-issue-563
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-563
 
 The Lakehouse explorer doesn't correctly identify Data Warehouse tables names containing spaces and special characters, such as non-Latin characters.
 
-**Status:** Open
+**Status:** Fixed: December 5, 2024
 
 **Product Experience:** Data Engineering
 

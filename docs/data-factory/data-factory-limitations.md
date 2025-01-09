@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 10/08/2024
+ms.date: 12/12/2024
 ---
 
 # Data Factory limitations overview
@@ -63,11 +63,11 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
   - Duration and binary columns aren't supported while authoring Dataflow Gen2 dataflows.
 - You must have a [currently supported gateway installed](/data-integration/gateway/service-gateway-monthly-updates) to use with Dataflow Gen2. The minimum version that works with Dataflow Gen2 is **3000.210.14**.
 - When using OAuth2 credentials, the gateway currently doesn't support refreshes longer than an hour. These refreshes will fail because the gateway cannot support refreshing tokens automatically when access tokens expire, which happens one hour after the refresh started. If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you may be hitting this error. This limitation for long running refreshes exists for both VNET gateways and on-premises data gateways.
-- The incremental refresh feature isn't available yet in Dataflow Gen2.
 - The Delta Lake specification doesn't support case sensitive column names, so `MyColumn` and `mycolumn`, while supported in Mashup, results in a "duplicate columns" error.
 - Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour. Read more about the [gateway considerations when using data destinations](gateway-considerations-output-destinations.md).
 - Currently, column nullability is defaulting to allow nulls in all columns in the destination.
-- You cannot connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflows Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You will need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints. 
+- You cannot connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflows Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You will need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints.
+- Dataflows Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest in. Use a native user in the tenant to connect to the data sources and destinations.
 
 The following table indicates the supported data types in specific storage locations.
 

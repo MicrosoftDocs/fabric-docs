@@ -5,7 +5,7 @@ author: xujxu
 ms.author: xujiang1
 ms.topic: how-to 
 ms.date: 10/29/2024
-ms.search.form: Monitor event streams capacity consumption
+ms.search.form: Monitor eventstreams capacity consumption
 ---
 
 # Microsoft Fabric event streams capacity consumption
@@ -13,7 +13,7 @@ ms.search.form: Monitor event streams capacity consumption
 This article contains information on how Microsoft Fabric event streams usage is billed and reported. 
 
 ## Operation types
-The event streams usage is defined by four operation types, which are described in the following table. The table provides information about event streams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
+The eventstreams usage is defined by four operation types, which are described in the following table. The table provides information about eventstreams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
  
 
 | Operation in Capacity Metrics App | Description | Operation unit of measure | Fabric consumption rate |

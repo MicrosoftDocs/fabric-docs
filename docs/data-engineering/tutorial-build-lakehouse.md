@@ -132,7 +132,7 @@ In this section, you'll build a report from the ingested data.
 
 1. To ensure that the tables in the semantic model are always in sync, switch to the **SQL analytics endpoint** view and open the lakehouse **settings** pane. Select **Default Power BI semantic model** and turn on **Sync the default Power BI semantic model**. For more information, see [Default Power BI semantic models](../data-warehouse/semantic-models.md#sync-the-default-power-bi-semantic-model).
 
-   :::image type="content" source="media\tutorial-build-lakehouse\enable-semantic-model-sync.png" alt-text="Screenshot showing how to turn on data sync to the default semantic model":::
+   :::image type="content" source="media\tutorial-build-lakehouse\enable-semantic-model-sync.png" alt-text="Screenshot showing how to turn on data sync to the default semantic model.":::
 
 1. After the table is added, Fabric creates a semantic model with the same name as the lakehouse.
 

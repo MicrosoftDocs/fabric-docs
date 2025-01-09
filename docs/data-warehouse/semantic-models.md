@@ -10,12 +10,13 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
 ---
 
 # Default Power BI semantic models in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
 
 In [!INCLUDE [product-name](../includes/product-name.md)], Power BI semantic models are a logical description of an analytical domain, with metrics, business friendly terminology, and representation, to enable deeper analysis. This semantic model is typically a [star schema](dimensional-modeling-overview.md#star-schema-design) with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the semantic model, the semantic model is created automatically for you, and you choose which tables, relationships, and measures are to be added, and the aforementioned business logic gets inherited from the parent lakehouse or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention.
 
@@ -24,7 +25,7 @@ Visualizations and analysis in **Power BI reports** can now be built in the web 
 **Power BI semantic models** represent a source of data ready for reporting, visualization, discovery, and consumption. Power BI semantic models provide:
 
 - The ability to expand warehousing constructs to include hierarchies, descriptions, relationships. This allows deeper semantic understanding of a domain.
-- The ability to catalog, search, and find Power BI semantic model information in the Data Hub.
+- The ability to catalog, search, and find Power BI semantic model information in the OneLake catalog.
 - The ability to set bespoke permissions for workload isolation and security.
 - The ability to create measures, standardized metrics for repeatable analysis.
 - The ability to create Power BI reports for visual analysis.
@@ -131,7 +132,7 @@ Having your data in Microsoft Fabric means you can create Power BI semantic mode
 
 To create a Power BI semantic model in import or DirectQuery mode, follow these steps:
 
-1. Open Power BI Desktop, sign in, and click on **OneLake data hub**.
+1. Open Power BI Desktop, sign in, and select **OneLake**.
 
 1. Choose the SQL analytics endpoint of the lakehouse or warehouse.
 

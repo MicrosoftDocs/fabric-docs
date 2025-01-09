@@ -9,7 +9,7 @@ ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 12/10/2024
 ms.search.form: Deployment history
 #customer intent: As a developer, I want to learn about the deployment history feature in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -70,9 +70,9 @@ You can choose to see the deployment history of a specific stage, or of all stag
 
 The following section lists the deployment history limitations.
 
-* Detailed information is displayed from June 2022. Before this date, summarized information is displayed.
+* Detailed information is displayed from June 2022. Before this date, only summarized information is displayed.
 
-* Deployment history displays the name of the item during deployment. When you change an item's name, deployment history treats it as a new item. In such cases, the item with the changed name will appear in the log for the first time, after it's deployed.
+* Deployment history displays the name of the item during deployment. When you change an item's name, deployment history treats it as a new item. In that case, the item with the changed name appears in the log for the first time, after it's deployed.
 
 ## Related content
 

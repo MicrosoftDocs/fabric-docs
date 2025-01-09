@@ -13,9 +13,6 @@ ms.date: 05/21/2024
 
 # Fabric API for GraphQL editor
 
-> [!NOTE]
-> Microsoft Fabric API for GraphQL is in preview.
-
 The Fabric API for GraphQL provides a graphical in-browser GraphQL development environment, which enables an interactive playground to compose, test, and see the live results of your GraphQL queries and mutations.
 
 To go to the editor, open the API for GraphQL item in Fabric and select **Query** at the lower left corner of your portal screen.

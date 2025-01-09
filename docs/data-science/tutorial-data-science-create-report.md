@@ -14,9 +14,7 @@ ms.date: 10/16/2023
 
 # Tutorial Part 5: Visualize predictions with a Power BI report
 
-In this tutorial, you'll create a Power BI report from the predictions data that was generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
-
-
+In this tutorial, you create a Power BI report from the predictions data generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 You'll learn how to:
 
@@ -33,7 +31,7 @@ You'll learn how to:
 
 This is part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
 
-* [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+* [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).
 * [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
 * [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
 * [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
@@ -53,7 +51,7 @@ Create a new semantic model linked to the predictions data you produced in part 
 
    :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New semantic model dialog box, showing where to select the correct data and select Continue.":::
 
-1. Select **Confirm**.  
+1. Select **Confirm**.
 
 ## Add new measures
 
@@ -61,7 +59,7 @@ Now add a few measures to the semantic model:
 
 1. Add a new measure for the churn rate.
 
-    1. Select **New measure** in the top ribbon.  This action adds a new item named **Measure** to the **customer_churn_test_predictions** dataset, and opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon. This action adds a new item named **Measure** to the **customer_churn_test_predictions** dataset, and opens a formula bar above the table.
 
         :::image type="content" source="media/tutorial-data-science-create-report/new-measure.png" alt-text="Screenshot show creating a new measure.":::
 
@@ -71,26 +69,26 @@ Now add a few measures to the semantic model:
         Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])
         ```
 
-    1. To apply the formula, select the check mark in the formula bar.  The new measure appears in the data table.  The calculator icon shows it was created as a measure.
+    1. To apply the formula, select the check mark in the formula bar. The new measure appears in the data table. The calculator icon shows it was created as a measure.
     1. Change the format from **General** to **Percentage** in the **Properties** panel.
     1. Scroll down in the **Properties** panel to change the **Decimal places** to 1.
 
         :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set." lightbox="media/tutorial-data-science-create-report/churn-rate.png":::
 
-1. Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
+1. Add a new measure that counts the total number of bank customers. You'll need it for the rest of the new measures.
   
-    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the `customer_churn_test_predictions` dataset.  This action also opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the `customer_churn_test_predictions` dataset. This action also opens a formula bar above the table.
     1. Each prediction represents one customer. To determine the total number of customers, replace `Measure =` in the formula bar with:
 
         ```python
         Customers = COUNT(customer_churn_test_predictions[predictions])
         ```
 
-    1. Select the check mark in the formula bar to apply the formula.
+    1. To apply the formula, select the check mark in the formula bar.
 
 1. Add the churn rate for Germany.
 
-    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the `customer_churn_test_predictions` dataset.  This action also opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the `customer_churn_test_predictions` dataset. This action also opens a formula bar above the table.
     1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
         ```python
@@ -123,7 +121,7 @@ Once you're done with all operations, move on to the Power BI report authoring p
 
 Once the report page appears, add these visuals:
 
-1. Select the text box on the top ribbon and enter a title for the report, such as "Bank Customer Churn".  Change the font size and background color in the Format panel.  Adjust the font size and color by selecting the text and using the format bar.
+1. Select the text box on the top ribbon and enter a title for the report, such as "Bank Customer Churn". Change the font size and background color in the Format panel. Adjust the font size and color by selecting the text and using the format bar.
 1. In the Visualizations panel, select the **Card** icon. From the **Data** pane, select **Churn Rate**. Change the font size and background color in the Format panel. Drag this visualization to the top right of the report.
 
     :::image type="content" source="media/tutorial-data-science-create-report/card-churn.png" alt-text="Screenshot shows addition of Churn Rate card." lightbox="media/tutorial-data-science-create-report/card-churn.png":::
@@ -136,7 +134,6 @@ Once the report page appears, add these visuals:
 
     :::image type="content" source="media/tutorial-data-science-create-report/number-of-products.png" alt-text="Screenshot shows addition of a stacked column chart of NumOfProducts." lightbox="media/tutorial-data-science-create-report/number-of-products.png":::
 
-
 1. In the Visualizations panel, select the **Stacked column chart** icon. Select **NewCreditsScore** for x-axis and  **Churn Rate** for y-axis.
 
     :::image type="content" source="media/tutorial-data-science-create-report/new-credit-score.png" alt-text="Screenshot shows adding a stacked column chart of NewCreditScore." lightbox="media/tutorial-data-science-create-report/new-credit-score.png":::
@@ -145,26 +142,23 @@ Once the report page appears, add these visuals:
 
     :::image type="content" source="media/tutorial-data-science-create-report/change-title.png" alt-text="Screenshot shows changing the title for the chart." lightbox="media/tutorial-data-science-create-report/change-title.png":::
 
-
 1. In the Visualizations panel, select the **Clustered column chart** card. Select **Germany Churn**, **Spain Churn**, **France Churn** in that order for the y-axis.
 
     :::image type="content" source="media/tutorial-data-science-create-report/germany-spain-france.png" alt-text="Screenshot shows the clustered column chart." lightbox="media/tutorial-data-science-create-report/germany-spain-france.png":::
 
 > [!NOTE]
-> This report represents an illustrated example of how you might analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the you may have to do more thorough ideation of what visualizations to create, based on syour subject matter expertise, and what your firm and business analytics team has standardized as metrics.
-
+> This report represents an illustrated example of how you might analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the you may have to do more thorough ideation of what visualizations to create, based on your subject matter expertise, and what your firm and business analytics team has standardized as metrics.
 
 The Power BI report shows:
 
-* Customers who use more than two of the bank products have a higher churn rate although few customers had more than two products. The bank should collect more data, but also investigate other features correlated with more products (see the plot in the bottom left panel).
-* Bank customers in Germany have a higher churn rate than in France and Spain (see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
-* There are more middle aged customers (between 25-45) and customers between 45-60 tend to exit more.
-* Finally, customers with lower credit scores would most likely leave the bank for other financial institutes. The bank should look into ways that encourage customers with lower credit scores and account balances to stay with the bank.
-
+* Bank customers who use more than two of the bank products have a higher churn rate, although few customers had more than two products. The bank should collect more data, but also investigate other features that correlate with more products (review the plot in the bottom left panel).
+* Bank customers in Germany have a higher churn rate than in France and Spain (review the plot in the bottom right panel), suggesting that an investigation into what encouraged customers to leave could become helpful.
+* There are more middle aged customers (between 25-45), and customers between 45-60 tend to exit more.
+* Finally, customers with lower credit scores would most likely leave the bank for other financial institutions. The bank should look for ways to encourage customers with lower credit scores and account balances to stay with the bank.
 
 ## Next step
 
-This completes the five part tutorial series.  See other end-to-end sample tutorials:
+This completes the five part tutorial series. See other end-to-end sample tutorials:
 
 > [!div class="nextstepaction"]
 > [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)

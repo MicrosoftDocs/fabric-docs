@@ -4,12 +4,13 @@ description: "This article describes how to create an external data share to sha
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 04/16/2024
-
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 #customer intent: As a data owner, I want to share data in my tenant's OneLake storage with an user in another Fabric tenant.
 ---
 
-# Create an external data share (preview)
+# Create an external data share
 
 This article shows how you can share data from your Fabric tenant's OneLake storage with users in other Fabric tenants.
 
@@ -17,14 +18,14 @@ Before sharing data with a user in another tenant via external data sharing, be 
 
 ## Prerequisites
 
-* A lakehouse or KQL database with at least one folder or table.
+* A lakehouse with at least one folder or table.
 * Standard Fabric read and reshare permissions on the item you're sharing.
 
 ## Create an external data share
 
-1. In a workspace or in the OneLake data hub, find the Fabric item that contains the data you want to share. See the list of [supported Fabric item types](./external-data-sharing-overview.md#supported-fabric-item-types).
+1. In a workspace or in the OneLake catalog, find the Fabric item that contains the data you want to share. See the list of [supported Fabric item types](./external-data-sharing-overview.md#supported-fabric-item-types).
 
-1. Open the context menu of the selected item and choose **External data share (preview)**.
+1. Open the context menu of the selected item and choose **External data share**.
 
     :::image type="content" source="./media/external-data-sharing-create/external-data-share-option.png" alt-text="Screenshot showing the external data share option in an item's options menu.":::
 

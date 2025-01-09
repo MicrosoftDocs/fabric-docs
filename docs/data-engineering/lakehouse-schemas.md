@@ -87,6 +87,7 @@ Below listed unsupported features/functionalities are for current release of pub
 | Workspace name containing special characters	| Workspace with special characters (for example, space, slashes) isn't supported. A user error is shown. |
 | Spark views | Not supported. |
 | Hive specific features | Not supported. |
+| Spark.catalog API | Not supported. Use Spark SQL instead. |
 | `USE <schemaName>` | Doesn't work cross workspaces, but supported within same workspace. |
 | Migration	| Migration of existing non-schema Lakehouses to schema-based Lakehouses isn't supported. |
 
