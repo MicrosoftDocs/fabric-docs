@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
-ms.date: 12/29/2024
+ms.date: 01/09/2025
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 # customer intent: As a developer, I want to understand how the Microsoft Fabric deployment pipelines process works so that I can use it effectively.
 ---
@@ -481,7 +481,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * If autobinding is engaged, then:
 
-  * Native query and DirectQuery together isn't supported.
+  * Native query and DirectQuery together isn't supported. This includes proxy datasets.
   * The datasource connection must be the first step in the mashup expression.
 
 * When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will still be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
