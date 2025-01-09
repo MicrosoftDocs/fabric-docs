@@ -1,12 +1,13 @@
 ---
-title: "Tutorial: Eventhouse Public APIs"
-description: Walkthrough of how to utilize the public APIs for Eventhouse and KQL Database
-author: Brad Watts
-ms.author: bwatts
-ms.reviewer: 
+title: Eventhouse Public APIs
+description: Learn how to utilize the public APIs for Eventhouse and KQL Database to automate deployments, manage data efficiently, and enhance your development workflow.
+author: shsagir
+ms.author: shsagir
+ms.reviewer: bwatts
 ms.topic: concept-article
 ms.date: 12/05/2024
 ms.custom:
+#customer-intent: As a developer, I want to use the Eventhouse and KQL APIs so that I can automate deployments and manage data efficiently.
 ---
 
 Combining the Fabric APIs with the existing KQL APIs allows you to fully automate your deployment of Eventhouse with KQL Databases. With the Fabric APIs I'm able create/update/delete items in Fabric and with the KQL APIs I can access the data plane of a resource and do things like create tables, change policies, etc..
