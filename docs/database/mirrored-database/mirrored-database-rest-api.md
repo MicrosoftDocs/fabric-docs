@@ -3,6 +3,7 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
+ms.date: 01/08/2025
 ms.topic: conceptual
 ---
 
