@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.topic: overview
-ms.date: 01/09/2025
+ms.date: 01/10/2025
 ---
 
 # Fabric region availability
@@ -42,9 +42,9 @@ This table lists regions where all Fabric workloads are available.
 | West US                      | Switzerland North          |             |                    |                                 |
 | West US 2                    | Switzerland West           |             |                    |                                 |
 | West US 3<sup>*</sup>        | UK South                   |             |                    |                                 |
-|                              | UK West                    |             |                    |                                 |
+|                              | UK West<sup>*</sup>        |             |                    |                                 |
 
-<sup>1</sup> [Fabric SQL database](../database/sql/overview.md) isn't available in this region.
+<sup>*</sup> [Fabric SQL database](../database/sql/overview.md) isn't available in this region.
 
 ### Power BI
 
