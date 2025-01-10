@@ -22,7 +22,8 @@ Your semantic model refresh fails with an error message. The error message is si
 
 ## Solutions and workarounds
 
-You can mitigate the issue by changing the `CALENDARAUTO` function to the `CALENDAR` function.
+You can mitigate the issue by either changing the `CALENDARAUTO` function to the `CALENDAR` function, or rebuilding your CALENDAR table and its connections.
+
 
 ## Next steps
 
