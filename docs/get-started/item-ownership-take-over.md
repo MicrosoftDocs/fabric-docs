@@ -5,7 +5,7 @@ ms.reviewer: sakjai
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 12/08/2024
+ms.date: 01/10/2025
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.
 ---
 # Take ownership of Fabric items
@@ -31,13 +31,13 @@ To take ownership of a Fabric item:
 
 1. A message bar indicates whether the take over was successful.
 
-   If the take over fails, due to either parent item ownership failure or child item ownership failure, select **Take over** again.
+   If the take over fails for any reason, select **Take over** again.
 
    | **Operation status** | **Error message** | **Next step** |
    |---|---|---|
    | **Success** | Successfully took over the item. | None. |
    | **Partial Failure** | Can't take over child items. Try again. | Retry take over of parent item. |
-   | **Complete Failure** | Can't take over \<ItemName\>. Try again. | Retry take over of parent item. |
+   | **Complete Failure** | Can't take over \<item_name\>. Try again. | Retry take over of parent item. |
 
 > [!NOTE]
 > Data Pipeline items require the additional step of ensuring that the **Last Modified By** user is also updated after taking item ownership. You can do this by making a small edit to the item and saving it. For example, you could make a small change to the activity name.
@@ -103,4 +103,4 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
-* There is no API support for changing ownership of Fabric items that support the take over feature. This does not impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses, which continues to be available.
+* Currently, there is no API support for changing ownership of Fabric items. This does not impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses, which continues to be available.
