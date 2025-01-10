@@ -4,11 +4,11 @@ metadata:
   description: This article answers frequently asked questions about SQL database in Microsoft Fabric (preview).
   author: WilliamDAssafMSFT
   ms.author: wiassaf
-  ms.reviewer: nzagorac, antho, sukkaur
+  ms.reviewer: nzagorac, antho, sukkaur, amapatil
   ms.topic: faq
   ms.custom:
     - ignite-2024
-  ms.date: 11/06/2024
+  ms.date: 12/11/2024
 title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -103,6 +103,12 @@ sections:
 
   - name: Licensing
     questions:
+
+      - question: |
+          Is SQL database in Fabric currently free, and if so, for how long?
+        answer:
+          SQL database in Fabric completely is free until February 1, 2025. After this date, compute and data storage charges begin. Backup billing starts on March 1, 2025.
+
       - question: |
           What are licensing options for SQL database in Fabric? 
         answer:
@@ -118,7 +124,7 @@ sections:
       - question: |
           Where is SQL database in Fabric available?
         answer:
-          SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+          SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](../../admin/region-availability.md).
 
           Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
 

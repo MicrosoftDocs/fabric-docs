@@ -1,8 +1,8 @@
 ---
 title: Create Activator alerts from a KQL Queryset
 description: Learn how to create a Fabric Activator alert from the results of a KQL query in a KQL Queryset in Real-Time Intelligence.
-author: yaelschuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.reviewer: guregini
 ms.topic: how-to
 ms.date: 11/27/2024
@@ -34,7 +34,7 @@ Here are some ways you can use [!INCLUDE [fabric-activator](../includes/fabric-a
 * A [KQL Queryset](../../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md).
 
 > [!IMPORTANT]
-> Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-database), creating an alert is not supported. 
+> Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-data-source), creating an alert is not supported. 
 
 The following steps show you how to create an alert on a query that creates a visualization, or on a query that doesn't create a visualization.
 

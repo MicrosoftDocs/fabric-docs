@@ -2,8 +2,8 @@
 title: Real-Time Intelligence tutorial part 8- Clean up resources
 description: Learn how to delete the resources in your Microsoft Fabric workspace.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: tutorial
 ms.custom:
   - build-2024

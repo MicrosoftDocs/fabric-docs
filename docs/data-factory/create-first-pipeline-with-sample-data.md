@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -53,7 +53,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data.png" alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the Public Holidays sample data selected.":::
 
-1. On the **Connect to data source** page of the assistant, the preview for the **Public Holidays** sample data is displayed, and then click **Next**.
+1. On the **Connect to data source** page of the assistant, the preview for the **Public Holidays** sample data is displayed, and then select **Next**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data-preview.png" alt-text="Screenshot showing the sample data for the Public Holidays sample data.":::
 
@@ -95,7 +95,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details.png" alt-text="Screenshot showing the run details window.":::
 
-1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes.
+1. You can also schedule the pipeline to run with a specific frequency as required. Here's an example showing a schedule for the pipeline set to run every 15 minutes.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 

@@ -36,6 +36,10 @@ This article presents a series of useful scenarios that can be used individually
 - [Create a branch workspace](#create-a-branch-workspace)
 - [Merge changes from one branch into another](#merge-changes-from-one-branch-into-another)
 
+The scenarios in this article are covered in an episode of Data Exposed. Watch the video for an overview of the source control integration in Fabric:
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=data-exposed&ep=introduction-to-the-source-control-built-in-with-sql-database-in-fabric-data-exposed]
+
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).

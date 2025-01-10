@@ -4,7 +4,7 @@ description: Learn how to use the SQL database query editor in the Microsoft Fab
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen
-ms.date: 10/07/2024
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -77,7 +77,6 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 |---|---| -------- |
 | New SQL query | `Ctrl + J` | `Cmd + J`|
 | Close current tab | `Ctrl + Shift + F4` | `Cmd + Shift + F4` |
-| Run SQL script | `Ctrl + Enter` or `Shift + Enter` | `Cmd + Enter` or `Shift + Enter` |
 | Search string | `Ctrl + F` |`Cmd + F`|
 | Replace string | `Ctrl + H` | `Cmd + H`|
 | Undo | `Ctrl + Z` |`Cmd + Z`|

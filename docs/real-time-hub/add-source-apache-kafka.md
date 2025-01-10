@@ -1,6 +1,6 @@
 ---
-title: Add Apache Kafka as source in Real-Time hub
-description: This article describes how to add Apache Kafka as an event source in Fabric Real-Time hub.
+title: Add Apache Kafka as source in Fabric Real-Time hub
+description: This article describes how to add an Apache Kafka topic as an event source in Fabric Real-Time hub using an API key.
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
@@ -8,11 +8,11 @@ ms.custom:
   - references_regions
   - ignite-2024
 ms.date: 11/18/2024
+# Customer intent: I want to learn how to add an Apache Kafka topic as a source in Fabric Real-Time hub.
 ---
 
-# Add Apache Kafka as source in Real-Time hub (preview)
+# Add Apache Kafka as source in Fabric Real-Time hub (preview)
 This article describes how to add Apache Kafka as an event source in Fabric Real-Time hub. 
-
 
 ## Prerequisites 
 
@@ -23,6 +23,7 @@ This article describes how to add Apache Kafka as an event source in Fabric Real
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add Apache Kafka as a source
+Here are the steps to add an Apache Kafka topic as a source in Fabric Real-Time hub. 
 
 [!INCLUDE [apache-kafka-connector](../real-time-intelligence/event-streams/includes/apache-kafka-source-connector.md)]
 

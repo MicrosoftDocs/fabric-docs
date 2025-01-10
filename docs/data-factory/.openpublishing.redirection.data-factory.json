@@ -187,87 +187,92 @@
       },
       {
         "source_path_from_root": "/docs/data-factory/create-data-workflows.md",
-        "redirect_url": "/docs/data-factory/create-apache-airflow-jobs.md",
+        "redirect_url": "/fabric/data-factory/create-apache-airflow-jobs",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-access-private-container-registry.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-access-private-container-registry.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-access-private-container-registry",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-concepts.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-concepts.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-concepts",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-dbt-fabric.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-dbt-fabric.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-dbt-fabric",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-enable-azure-key-vault.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-enable-azure-key-vault.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-enable-azure-key-vault",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-hello-world.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-hello-world.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-hello-world",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-install-private-package.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-install-private-package.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-install-private-package",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-migrate-azure-workflow-orchestration-manager.md",
-        "redirect_url": "/docs/data-factory/apache-airlfow-jobs-migrate-azure-workflow-orchestration-manager.md ",
+        "redirect_url": "/fabric/data-factory/apache-airlfow-jobs-migrate-azure-workflow-orchestration-manager ",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-power-bi-semantic-model-refresh.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-power-bi-semantic-model-refresh.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-power-bi-semantic-model-refresh",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-run-azure-data-factory-pipeline.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-run-azure-data-factory-pipeline.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-run-azure-data-factory-pipeline",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-run-databricks-job.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-run-databricks-job.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-run-databricks-job",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-run-fabric-item-job.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-run-fabric-item-job.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-run-fabric-item-job",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-set-smtp-server.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-set-smtp-server.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-set-smtp-server",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-supported-apache-airflow-configurations.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-supported-apache-airflow-configurations.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-supported-apache-airflow-configurations",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-sync-git-repo.md",
-        "redirect_url": "/docs/data-factory/apache-airflow-jobs-sync-git-repo.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-jobs-sync-git-repo",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-workspace-settings.md",
-        "redirect_url": "/docs/data-factory/data-workflows-workspace-settings.md",
+        "redirect_url": "/fabric/data-factory/apache-airflow-workspace-settings",
         "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/certification-submission.md",
-        "redirect_url": "/docs/data-factory/connector-certification.md",
+        "redirect_url": "/fabric/data-factory/connector-certification",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/data-factory-known-issues.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
         "redirect_document_id": false
       }
     ]

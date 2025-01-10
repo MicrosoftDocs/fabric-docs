@@ -2,8 +2,8 @@
 title: Get data from Amazon S3
 description: Learn how to get data from Amazon S3 in a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023

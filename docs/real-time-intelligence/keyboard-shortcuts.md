@@ -2,8 +2,8 @@
 title: Keyboard shortcuts
 description: Learn about keyboard shortcuts (hot keys) in Real-Time Intelligence.
 ms.reviewer: mibar
-author: YaelSchuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.topic: reference
 ms.custom:
   - ignite-2024

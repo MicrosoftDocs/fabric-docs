@@ -4,7 +4,7 @@ description: Learn about the limitations of mirrored databases from Snowflake in
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
-ms.date: 12/06/2024
+ms.date: 12/18/2024
 ms.topic: conceptual
 ---
 
@@ -27,7 +27,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 
 ## Security
 
-- Snowflake authentication only via username/password is supported.
+- Snowflake authentication via username/password and Entra (single sign on (SSO)) are supported.
 - Sharing recipients must be added to the workspace. To share a dataset or report, first add access to the workspace with a role of admin, member, reader, or contributor.
 
 ## Performance

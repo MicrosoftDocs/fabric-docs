@@ -82,7 +82,7 @@ To label a data item as master data:
 * You must be [authorized by the Fabric administrator](../admin/endorsement-master-data-enable.md).
 
     > [!NOTE]
-    > If you aren't authorized to designate a data item as master data yourself, you can [the master data designation](#request-certification-or-master-data-designation).
+    > If you aren't authorized to designate a data item as master data yourself, you can [request the master data designation](#request-certification-or-master-data-designation).
 
 * You must have write permissions on the item you want to apply the **Master data** badge to.
 

@@ -10,8 +10,9 @@ ms.custom:
   - intro-get-started
   - build-2023
   - ignite-2023
-ms.date: 04/14/2024
+ms.date: 11/14/2024
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
+# customer intent: As a developer, I want to know how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool, so that I can manage my content more efficiently.
 ---
 
 # Get started with deployment pipelines

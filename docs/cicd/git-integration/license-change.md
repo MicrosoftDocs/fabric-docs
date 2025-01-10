@@ -9,6 +9,7 @@ ms.subservice: cicd
 ms.topic: conceptual 
 ms.date: 06/06/2024
 ms.custom: build-2023
+# customer intent: As a developer, I want to know what happens to my Git connection when my license expires or changes so that I can plan accordingly.
 ---
 
 # Git integration license change

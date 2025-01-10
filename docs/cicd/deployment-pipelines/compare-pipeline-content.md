@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/09/2023
+ms.date: 12/09/2024
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to compare the content of the source stage and target stage before deployment so that I can ensure that the content is correct.
 ---

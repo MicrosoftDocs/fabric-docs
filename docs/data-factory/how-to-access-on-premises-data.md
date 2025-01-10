@@ -6,7 +6,7 @@ ms.author: lle
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 02/23/2024
+ms.date: 12/18/2024
 ms.search.form: On-premises data sources gateway
 ---
 

@@ -2,8 +2,8 @@
 title: Create OneLake shortcuts in a KQL database
 description: Learn how to create a OneLake shortcut in a KQL database to query data from internal and external sources.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
