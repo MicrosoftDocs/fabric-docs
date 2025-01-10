@@ -44,7 +44,7 @@ Instead of reading data from the staging `[bing_covid-19_data]` table, you can a
 ```sql
 CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
 AS
-SELECT * 
+SELECT id, updated, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
 WHERE DATEPART(YEAR,[updated]) = '2023'
 ```
@@ -63,7 +63,8 @@ Instead of reading data from the staging `[bing_covid-19_data]` table, you can a
 ```sql
 CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
 AS
-SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth], * 
+SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth],
+        id, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
 ```
 
