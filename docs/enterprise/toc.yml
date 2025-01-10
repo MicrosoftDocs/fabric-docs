@@ -25,6 +25,8 @@ items:
     href: scale-capacity.md
   - name: Throttling
     href: throttling.md
+  - name: Surge protection
+    href: surge-protection.md
   - name: Fabric operations    
     href: fabric-operations.md   
   - name: Optimize your capacity
