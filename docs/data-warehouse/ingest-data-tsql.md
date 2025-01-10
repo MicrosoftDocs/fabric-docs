@@ -42,11 +42,11 @@ WHERE DATEPART(YEAR,[updated]) = '2023';
 Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function (public preview):
 
 ```sql
-CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
+CREATE TABLE [dbo].[bing_covid-19_data_2022]
 AS
 SELECT id, updated, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
-WHERE DATEPART(YEAR,[updated]) = '2023'
+WHERE DATEPART(YEAR,[updated]) = '2022'
 ```
 
 You can also create a new table with new `year`, `month`, `dayofmonth` columns, with values obtained from `updated` column in the source table. This can be useful if you're trying to visualize infection data by year, or to see months when the most COVID-19 cases are observed:
@@ -77,10 +77,11 @@ SELECT [country_region],[month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM [dbo].[bing_covid-19_data_with_year_month_day]
 GROUP BY [country_region],[month];
 
-CREATE TABLE [dbo].[infections_by_month_2]
+CREATE TABLE [dbo].[infections_by_month_2022]
 AS
 SELECT [country_region], DATEPART(MONTH,[updated]) AS [month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+WHERE DATEPART(YEAR,[updated]) = '2022'
 GROUP BY [country_region],DATEPART(MONTH,[updated]);
 ```
 
