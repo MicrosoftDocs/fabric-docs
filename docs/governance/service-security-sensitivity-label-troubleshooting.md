@@ -121,6 +121,10 @@ Import of sensitivity-labeled *.pbix* files (both protected and unprotected) sto
 
 Power BI Desktop for Power BI Report Server doesn't support information protection. If you try to open a protected *.pbix* file, the file won't open, and you'll receive an error message. Sensitivity-labeled *.pbix* files that aren't encrypted can be opened as normal.
 
+## Connecting to data sources
+
+To successfully connect from Fabric or Power BI (including Power BI Desktop) to a data source (such as an Excel file) that has a sensitivity label that applies file encryption, information protection must be enabled in Fabric/Power BI (that is, the tenant setting **Allow users to apply sensitivity labels for content** must be set to *Enabled*).
+
 ## Sovereign clouds
 
 Sensitivity labels are supported in the following sovereign clouds:

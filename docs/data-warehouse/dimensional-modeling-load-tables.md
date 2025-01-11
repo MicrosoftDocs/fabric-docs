@@ -4,7 +4,7 @@ description: "Learn about loading tables in a dimensional model in Microsoft Fab
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: v-myerspeter, drubiolo, chweb
-ms.date: 06/21/2024
+ms.date: 01/06/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -67,7 +67,7 @@ Data in staging tables should never be made available to business users. It's on
 > [!NOTE]
 > When your data is stored in a [Fabric Lakehouse](../data-engineering/lakehouse-overview.md), it might not be necessary to stage its data in the data warehouse. If it implements a [medallion architecture](../onelake/onelake-medallion-lakehouse-architecture.md), you could source its data from either the bronze, silver, or gold layer.
 
-We recommend that you create a schema in the warehouse, possibly named `staging`. Staging tables should resemble the source tables as closely as possible in terms of column names and data types. The contents of each table should be removed at the start of the ETL process. However, note that Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables [can't be truncated](tsql-surface-area.md#limitations). Instead, you can drop and recreate each staging table before loading it with data.
+We recommend that you create a schema in the warehouse, possibly named `staging`. Staging tables should resemble the source tables as closely as possible in terms of column names and data types. The contents of each table should be removed at the start of the ETL process. `TRUNCATE TABLE` is supported for this purpose.
 
 You can also consider data virtualization alternatives as part of your staging strategy. You can use:
 

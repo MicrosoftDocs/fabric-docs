@@ -13,9 +13,6 @@ ms.date: 05/21/2024
 
 # Connect applications to Fabric API for GraphQL
 
-> [!NOTE]
-> Microsoft Fabric API for GraphQL is in preview.
-
 To connect an application to an API for GraphQL, you need three important pieces of information: a **Client ID**, your **Tenant ID**, and your **GraphQL endpoint address** in Fabric. In the following sections, we showcase how to create and retrieve all the details you need and how to access your API using a sample application.
 
 ## Prerequisites

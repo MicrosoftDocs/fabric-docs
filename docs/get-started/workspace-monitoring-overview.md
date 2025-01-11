@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.topic: overview
 ms.custom:
   - ignite-2024
-ms.date: 12/22/2024
+ms.date: 01/09/2025
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -46,8 +46,6 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 Workload monitoring sample queries are available from [workspace-monitoring](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring) in the Fabric samples GitHub repository.
 
 ## Considerations and limitations
-
-* Workspace monitoring isn't available in all Azure regions. You can see where the feature is available in [Workload and feature availability](../admin/region-availability.md#workload-and-feature-availability).
 
 * The capacity the workspace is hosted on must be in the same region as the tenant.
 
