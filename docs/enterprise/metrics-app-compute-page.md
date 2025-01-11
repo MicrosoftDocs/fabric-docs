@@ -158,10 +158,12 @@ This table lists system events for capacities.
 
 |Capacity State|Capacity state change reason|When shown|
 | -------- | -------- | -------- |
+|Active|Created|Indicates the capacity was created.|
 |Active|ManuallyResumed|Indicates the capacity is active. Occurs when a paused capacity is resumed.|
 |Active|NotOverloaded|Indicates the capacity is active and is below all throttling and surge protection thresholds.|
+|Deleted|Deleted|Indicates the capacity was deleted.|
 |Overloaded|AllRejected|Indicates the capacity exceeded the background rejection limit. The capacity rejects background and interactive operations.|
-|Overloaded|InteractiveDelayed|Indicates the capacity exceeded the interactive delay throttling limit. The capacity delays interactive operations.|
+|Overloaded|InteractiveDelay|Indicates the capacity exceeded the interactive delay throttling limit. The capacity delays interactive operations.|
 |Overloaded|InteractiveDelayAndSurgeProtectionActive|Indicates the capacity exceeded the interactive delay throttling limit and the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity rejects background operations and delays interactive operations.|
 |Overloaded|InteractiveRejected|Indicates the capacity exceeded the interactive rejection throttling limit. The capacity rejects interactive operations.|
 |Overloaded|InteractiveRejectedAndSurgeProtectionActive|Indicates the capacity exceeded the interactive rejection throttling limit and the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity rejects background and interactive operations.|
