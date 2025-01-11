@@ -160,10 +160,10 @@ This table lists system events for capacities.
 | -------- | -------- | -------- |
 |Active|ManuallyResumed|Indicates the capacity is active. Occurs when a paused capacity is resumed.|
 |Active|NotOverloaded|Indicates the capacity is active and is below all throttling and surge protection thresholds.|
-|Overloaded|AllRejected|Indicates the capacity exceeded the background rejection limit. The capacity will reject background and interactive operations.|
-|Overloaded|InteractiveDelayed|Indicates the capacity exceeded the interactive delay throttling limit. The capacity will delay interactive operations.|
-|Overloaded|InteractiveDelayAndSurgeProtectionActive|Indicates the capacity exceeded the interactive delay throttling limit and the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity will reject background operations and will delay interactive operations.|
-|Overloaded|InteractiveRejected|Indicates the capacity exceeded the interactive rejection throttling limit. The capacity will reject interactive operations.|
+|Overloaded|AllRejected|Indicates the capacity exceeded the background rejection limit. The capacity rejects background and interactive operations.|
+|Overloaded|InteractiveDelayed|Indicates the capacity exceeded the interactive delay throttling limit. The capacity delays interactive operations.|
+|Overloaded|InteractiveDelayAndSurgeProtectionActive|Indicates the capacity exceeded the interactive delay throttling limit and the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity rejects background operations and delays interactive operations.|
+|Overloaded|InteractiveRejected|Indicates the capacity exceeded the interactive rejection throttling limit. The capacity rejects interactive operations.|
 |Overloaded|InteractiveRejectedAndSurgeProtectionActive|Indicates the capacity exceeded the interactive rejection throttling limit and the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity will reject background and interactive operations.|
 |Overloaded|SurgeProtectionActive|Indicates the capacity exceeded the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity will reject background operations.|
 |Suspended|ManuallyPaused|Indicates the capacity is paused.|
