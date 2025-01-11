@@ -5,12 +5,12 @@ ms.reviewer: sakjai
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 01/10/2025
+ms.date: 01/11/2025
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.
 ---
 # Take ownership of Fabric items
 
-When a user leaves the organization, or if their credentials become disabled for some reason, it's possible that any Fabric items they own will stop working correctly. In such cases, anyone with read and write permissions on such an item (such as workspace admins, members, and contributors) can take ownership of the item, using the procedure described in this article.
+When a user leaves the organization, or if they don't sign in for more than 90 days, it's possible that any Fabric items they own will stop working correctly. In such cases, anyone with read and write permissions on such an item (such as workspace admins, members, and contributors) can take ownership of the item, using the procedure described in this article.
 
 When a user takes over ownership of an item using this procedure, they also become the owner of any child items the item might have. You can't take over ownership of child items directly - only through the parent item.
 
@@ -103,4 +103,4 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
-* Currently, there is no API support for changing ownership of Fabric items. This does not impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses, which continues to be available.
+* Currently, there is no API support for changing ownership of Fabric items. This does not impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses, which continues to be available. taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
