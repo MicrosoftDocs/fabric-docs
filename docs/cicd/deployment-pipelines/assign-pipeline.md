@@ -180,7 +180,7 @@ If two or more items in the workspace to be paired have the same name, type and 
 
   * The workspace isn't assigned to any other deployment pipeline.
 
-  * The workspace resides on a [Fabric capacity](../../enterprise/licenses.md).
+  * The workspace resides on a [Fabric capacity](../../enterprise/licenses.md#capacity).
 
   * You have at least [workspace contributor](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace contributor permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 
