@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.custom:
     - build-2023
     - ignite-2023
-ms.date: 01/09/2025
+ms.date: 01/12/2025
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.
 ---
@@ -31,7 +31,7 @@ For more information about assigning workspaces and the implications regarding c
 
 ## Assign a workspace to any vacant pipeline stage
 
-To assign a workspace to a deployment pipeline, the pipeline stage you want to assign the workspace to has to be vacant. To assign a workspace to a pipeline stage that already has another workspace assigned to it, [unassign](#unassign-a-workspace-from-a-pipeline-stage) the current workspace from that stage and then assign the new workspace.
+To assign a workspace to a deployment pipeline, the pipeline stage you want to assign the workspace to has to be vacant. To assign a workspace to a pipeline stage that already has another workspace assigned to it, [unassign](#unassign-a-workspace-from-a-deployment-pipeline-stage) the current workspace from that stage and then assign the new workspace.
 
 Before you assign a workspace to a deployment pipeline stage, review the [limitations](#considerations-and-limitations) section and make sure that the workspace meets the required conditions.
 
