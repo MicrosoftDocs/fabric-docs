@@ -133,7 +133,17 @@ To add scopes to your app, follow these steps.
 
 
 
+API Permissions - external services dependencies
 
+Expose an API - the APIs that the application exposes (uses) - 
+
+Preauthorize (Add a client application) doesn't require customer consent (pop-up window) -0 the app has to have at least one preauthorized scope
+
+Our apps:
+
+d2450708-699c-41e3-8077-b0c8341509aa - Backend
+
+871c010f-5e61-4fb1-83ac-98610a7e9110 - Frontend
 
 
 
