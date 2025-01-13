@@ -20,7 +20,7 @@ Notebook Utilities (NotebookUtils) is a built-in package to help you easily perf
 
 > [!NOTE]
 >
-> - MsSparkUtils has been officially renamed to **NotebookUtils**. The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - MsSparkUtils is officially renamed to **NotebookUtils**. The existing code remains **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
 > - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates are exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
@@ -126,7 +126,7 @@ This method offers a more efficient approach to copying or moving files, particu
 
 > [!NOTE]
 > - ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
-> - Due to the [limitations of OneLake shortcut](/docs/onelake/onelake-shortcuts#limitations-and-considerations), when you need to use ```notebookutils.fs.cp()``` or ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
+> - Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use ```notebookutils.fs.cp()``` or ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
 
 
 ```python
@@ -168,7 +168,7 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 
 > [!NOTE] 
 > - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
-> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5s ~ 1s between the recurring writes. This is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5s ~ 1s between the recurring writes. This recommendation is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
@@ -279,7 +279,7 @@ The execution result from the root notebook is as follows:
 
 :::image type="content" source="media\notebook-utilities\reference-notebook-list.png" alt-text="Screenshot of reference a list of notebooks." lightbox="media\notebook-utilities\reference-notebook-list.png":::
 
-The following is an example of running notebooks with topological structure using `notebookutils.notebook.runMultiple()`. Use this method to easily orchestrate notebooks through a code experience.
+Here's an example of running notebooks with topological structure using `notebookutils.notebook.runMultiple()`. Use this method to easily orchestrate notebooks through a code experience.
 
 ```python
 # run multiple notebooks with parameters
@@ -325,7 +325,7 @@ notebookutils.notebook.validateDAG(DAG)
 > [!NOTE]
 > - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
 > - The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
-> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell in child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
+> - The default time-out for entire DAG is 12 hours, and the default time-out for each cell in child notebook is 90 seconds. You can change the time-out by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 
 ### Exit a notebook
 
@@ -342,7 +342,7 @@ notebookutils.notebook.exit("value string")
 ```
 
 > [!NOTE]
-> The *exit()* function overwrites the current cell output, to avoid losing the output of other code statements, call ```notebookutils.notebook.exit()``` in a separate cell.
+> The *exit()* function overwrites the current cell output. To avoid losing the output of other code statements, call ```notebookutils.notebook.exit()``` in a separate cell.
 
 For example:
 
@@ -556,8 +556,8 @@ notebookutils.fs.mount(
 ```
 
 Mount parameters:
-- fileCacheTimeout: Blobs are cached in the local temp folder for 120 seconds by default. During this time, blobfuse does not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
-- timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
+- fileCacheTimeout: Blobs are cached in the local temp folder for 120 seconds by default. During this time, blobfuse does not check whether the file is up to date or not. The parameter could be set to change the default time-out time. When multiple clients modify files at the same time, to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
+- timeout: The mount operation time-out is 120 seconds by default. The parameter could be set to change the default time-out time. When there are too many executors or when mount times out, we recommend increasing the value.
 
 You can use these parameters like this:
 
@@ -661,7 +661,7 @@ notebookutils.fs.unmount("/test")
 
 ### Overview of methods
 
-Below is an overview of the available methods provided by `notebookutils.lakehouse`:
+Here is an overview of the available methods provided by `notebookutils.lakehouse`:
 
 ```python
 # Create a new Lakehouse artifact
