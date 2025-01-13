@@ -187,7 +187,7 @@ The Refresh button :::image type="icon" source="./media/git-integration-process/
 
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
-Changes to an item's folder (for example, moving an item to a different folder) are shown as a changes to the item that require an update or commit.
+Changes to an item's folder (for example, moving an item to a different folder) appear as changes to the item that require an update or commit.
 
 #### Commit
 
