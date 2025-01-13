@@ -21,7 +21,7 @@ Notebook Utilities (NotebookUtils) is a built-in package to help you easily perf
 > [!NOTE]
 >
 > - MsSparkUtils has been officially renamed to **NotebookUtils**. The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
-> - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates will be exclusively supported with notebookutils namespace going forward.
+> - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates are exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
 
@@ -126,7 +126,7 @@ This method offers a more efficient approach to copying or moving files, particu
 
 > [!NOTE]
 > - ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
-> - Due to the [limitations of OneLake shortcut](/docs/onelake/onelake-shortcuts), when you need to use ```notebookutils.fs.cp()``` or ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
+> - Due to the [limitations of OneLake shortcut](/docs/onelake/onelake-shortcuts#limitations-and-considerations), when you need to use ```notebookutils.fs.cp()``` or ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
 
 
 ```python
@@ -168,7 +168,7 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 
 > [!NOTE] 
 > - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
-> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s ~ 1s between the recurring writes. This is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
@@ -333,7 +333,7 @@ This method exits a notebook with a value. You can run nesting function calls in
 
 - When you call an *exit()* function from a notebook interactively, the Fabric notebook throws an exception, skips running subsequent cells, and keeps the Spark session alive.
 
-- When you orchestrate a notebook in a pipeline that calls an *exit()* function, the notebook activity returns with an exit value, completes the pipeline run, and stops the Spark session.
+- When you orchestrate a notebook in a pipeline that calls an exit() function, the notebook activity returns with an exit value.This completes the pipeline run and stops the Spark session.
 
 - When you call an *exit()* function in a notebook that is being referenced, Fabric Spark will stop the further execution of the referenced notebook, and continue to run the next cells in the main notebook that calls the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
@@ -342,7 +342,7 @@ notebookutils.notebook.exit("value string")
 ```
 
 > [!NOTE]
-> The *exit()* function will overwrite the current cell output, to avoid losing the output of other code statements, please call ```notebookutils.notebook.exit()``` in a separate cell.
+> The *exit()* function overwrites the current cell output, to avoid losing the output of other code statements, call ```notebookutils.notebook.exit()``` in a separate cell.
 
 For example:
 
@@ -570,7 +570,7 @@ notebookutils.fs.mount(
 ```
 
 > [!NOTE]
-> For security purposes, it is advised to avoid embedding credentials directly in code. To further safeguard your credentials, any secrets displayed in notebook outputs will be redacted. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
+> For security purposes, it is advised to avoid embedding credentials directly in code. To further safeguard your credentials, any secrets displayed in notebook outputs is redacted. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse
 
@@ -767,7 +767,7 @@ Instead of manually click stop button, sometimes it's more convenient to stop an
 notebookutils.session.stop()
 ```
 
-```notebookutils.session.stop()``` API stops the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they are available to other sessions in the same pool.
+```notebookutils.session.stop()``` API stops the current interactive session asynchronously in the background. It also stops the Spark session and release resources occupied by the session, so they are available to other sessions in the same pool.
 
 ### Restart the Python interpreter
 
@@ -778,7 +778,7 @@ notebookutils.session.restartPython()
 ```
 
 > [!NOTE]
-> - In the notebook reference run case, ```restartPython()``` will only restart the Python interpreter of the current notebook that being referenced.
+> - In the notebook reference run case, ```restartPython()``` only restarts the Python interpreter of the current notebook that being referenced.
 > - In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
 
 ## Known issue 
