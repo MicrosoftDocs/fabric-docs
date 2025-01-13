@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 11/07/2024
+ms.date: 01/12/2025
 ---
 
 # Manage your Fabric capacity
@@ -29,7 +29,7 @@ The capacity settings page shows a list of all the capacities in your [tenant](.
    >[!NOTE]
    >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
 
-* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A SKUs.
+* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
 
 * **Trial** - A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use Trial SKUs.
 
@@ -170,7 +170,21 @@ To change the name of your Power BI Premium capacity, follow these steps:
 
 # [Power BI Embedded](#tab/power-bi-embedded)
 
-You can't change a trial capacity's name.
+#### A SKUs
+
+Use the Azure Command-Line Interface (CLI) [az powerbi](/cli/azure/powerbi) commands.
+
+#### EM SKUs
+
+To change the name of your EM capacity, follow these steps:
+
+1. In the **Capacity settings** page, select **Power BI Embedded**.
+
+2. From the list of capacities, select the gear icon (**&#9881;**) next to the capacity you want to change.
+
+3. In the capacity's setting page, select the pencil icon next to the **Capacity name** field.
+
+4. Enter the new name for the capacity, and then select the checkmark icon (**&check;*)*.
 
 # [Trial](#tab/trial)
 

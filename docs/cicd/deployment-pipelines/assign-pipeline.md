@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.custom:
     - build-2023
     - ignite-2023
-ms.date: 09/15/2024
+ms.date: 01/12/2025
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.
 ---
@@ -19,6 +19,9 @@ ms.search.form: Deployment pipelines operations
 
 Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is important for organizations that already have workspaces that are used as different environments of a managed release. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 
+> [!NOTE]
+> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
+
 For more information about assigning workspaces and the implications regarding capacities and permissions, see [The deployment pipelines process](./understand-the-deployment-process.md#assign-a-workspace-to-an-empty-stage).
 
 <!---
@@ -26,23 +29,20 @@ For more information about assigning workspaces and the implications regarding c
 >This article describes how to assign and unassign a workspace to a deployment pipeline stage in the Fabric service. You can also perform these functions programmatically, using the [Assign Workspace](/rest/api/fabric/pipelines/assign-workspace) and [Unassign Workspace](/rest/api/fabric/pipelines/unassign-workspace) Fabric REST APIs.
 -->
 
-> [!IMPORTANT]
-> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
-
 ## Assign a workspace to any vacant pipeline stage
 
-To assign a workspace to a pipeline, the pipeline stage you want to assign the workspace to has to be vacant. If you want to assign a workspace to a pipeline stage that already has another workspace assigned to it, [unassign](#unassign-a-workspace-from-a-pipeline-stage) the current workspace from that stage and then assign the new workspace.
+To assign a workspace to a deployment pipeline, the pipeline stage you want to assign the workspace to has to be vacant. To assign a workspace to a pipeline stage that already has another workspace assigned to it, [unassign](#unassign-a-workspace-from-a-deployment-pipeline-stage) the current workspace from that stage and then assign the new workspace.
 
-Before you assign a workspace to a pipeline stage, review the [limitations](#considerations-and-limitations) section and make sure that the workspace meets the required conditions.
+Before you assign a workspace to a deployment pipeline stage, review the [limitations](#considerations-and-limitations) section and make sure that the workspace meets the required conditions.
 
 >[!NOTE]
->Before you assign or unassign a workspace to a pipeline, consider that every time you deploy to a vacant stage, a new workspace is created, and whenever you unassign a workspace, you lose all the stage deployments history and configured rules.
+>Before you assign or unassign a workspace to a deployment pipeline, consider that every time you deploy to a vacant stage, a new workspace is created, and whenever you unassign a workspace, you lose all the stage deployment's history and configured rules.
 
-To assign a workspace to a pipeline stage, follow these steps:
+To assign a workspace to a deployment pipeline stage, follow these steps:
 
-### [Assign a workspace: New UI](#tab/new)
+### [Assign a workspace: New UI](#tab/new-ui)
 
-1. Open the pipeline.
+1. Open the deployment pipeline.
 1. In the stage you want to assign a workspace to, expand the dropdown titled **Add content to this stage**.
 1. Select the workspace you want to assign to this stage.
 
@@ -50,9 +50,9 @@ To assign a workspace to a pipeline stage, follow these steps:
 
 1. Select **Assign**.
 
-### [Assign a workspace: Original UI](#tab/old)
+### [Assign a workspace: Original UI](#tab/old-ui)
 
-1. Open the pipeline.
+1. Open the deployment pipeline.
 
     :::image type="content" source="media/assign-pipeline/new-workspace.png" alt-text="A screenshot showing a deployment pipelines new workspace with all the pipeline stages unassigned." lightbox="media/assign-pipeline/new-workspace.png":::
 
@@ -68,15 +68,15 @@ To assign a workspace to a pipeline stage, follow these steps:
 
 ---
 
-## Unassign a workspace from a pipeline stage
+## Unassign a workspace from a deployment pipeline stage
 
-You can unassign a workspace from any pipeline stage. If you want to assign a different workspace to a pipeline stage, you first have to unassign the current workspace from that stage.
+You can unassign a workspace from any deployment pipeline stage. If you want to assign a different workspace to a deployment pipeline stage, you first have to unassign the current workspace from that stage.
 
-To unassign a workspace from a pipeline stage, follow these steps:
+To unassign a workspace from a deployment pipeline stage, follow these steps:
 
-### [Unassign a workspace: New UI](#tab/new)
+### [Unassign a workspace: New UI](#tab/new-ui)
 
-1. Open the pipeline.
+1. Open the deployment pipeline.
 
 1. In the stage you want to unassign the workspace from, select the three dots in the lower left corner.
 
@@ -88,9 +88,9 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
     :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines. The unassign button is highlighted.":::
 
-### [Unassign a workspace: Original UI](#tab/old)
+### [Unassign a workspace: Original UI](#tab/old-ui)
 
-1. Open the pipeline.
+1. Open the deployment pipeline.
 
 1. In the stage you want to unassign the workspace from, select **settings**.
 
@@ -148,11 +148,11 @@ Pairing can happen in one of two ways:
 
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 
-#### [Paired items: New UI](#tab/new)
+#### [Paired items: New UI](#tab/new-ui)
 
 :::image type="content" source="./media/assign-pipeline/paired-items-new.png" alt-text="Screenshot of new UI showing adjacent stages. Paired items are listed on the same line, and one item in the second stage isn't in the first stage.":::
 
-#### [Paired items: Original UI](#tab/old)
+#### [Paired items: Original UI](#tab/old-ui)
 
 :::image type="content" source="./media/assign-pipeline/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 
@@ -174,13 +174,13 @@ If two or more items in the workspace to be paired have the same name, type and 
 
 ## Considerations and limitations
 
-* Only workspaces that can be assigned to a pipeline appear in the dropdown list. A workspace can be assigned to a pipeline stage if the following conditions apply:
+* Only workspaces that can be assigned to a deployment pipeline appear in the dropdown list. A workspace can be assigned to a deployment pipeline stage if the following conditions apply:
 
   * You're an admin of the workspace.
 
-  * The workspace isn't assigned to any other pipeline.
+  * The workspace isn't assigned to any other deployment pipeline.
 
-  * The workspace resides on a [Fabric capacity](../../enterprise/licenses.md).
+  * The workspace resides on a [Fabric capacity](../../enterprise/licenses.md#capacity).
 
   * You have at least [workspace contributor](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace contributor permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 

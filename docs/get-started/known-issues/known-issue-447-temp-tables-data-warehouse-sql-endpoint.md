@@ -4,7 +4,7 @@ description: A known issue is posted where Temp tables in Data Warehouse and SQL
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting
-ms.date: 07/05/2023
+ms.date: 01/06/2025
 ms.custom:
   - known-issue-447
   - ignite-2023
@@ -14,7 +14,7 @@ ms.custom:
 
 Users can create Temp tables in the Data Warehouse and in SQL analytics endpoint but data from user tables can't be inserted into Temp tables. Temp tables can't be joined to user tables.
 
-**Status:** Open
+**Status:** Fixed: January 6, 2025
 
 **Product Experience:** Data Warehouse
 
