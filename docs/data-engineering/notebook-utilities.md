@@ -168,7 +168,7 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 
 > [!NOTE] 
 > - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
-> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s ~ 1s between the recurring writes. This is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5s ~ 1s between the recurring writes. This is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
@@ -570,7 +570,7 @@ notebookutils.fs.mount(
 ```
 
 > [!NOTE]
-> For security purposes, it is advised to avoid embedding credentials directly in code. To further safeguard your credentials, any secrets displayed in notebook outputs is redacted. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
+> For security purposes, it is advised to avoid embedding credentials directly in code. To further safeguard your credentials, any secrets displayed in notebook outputs are redacted. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse
 
