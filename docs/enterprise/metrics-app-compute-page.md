@@ -144,7 +144,7 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 
 ## System Events
 
-Displays capacity events. The table doesn't display any information if the state of the capacity is unchanged for the last 14 days.
+Displays capacity events. When the state of the capacity has remained unchanged for last 14 days, the table doesn't display any information.
 
 The system events table displays the following elements:
 
