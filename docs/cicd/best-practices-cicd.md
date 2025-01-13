@@ -6,6 +6,8 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: best-practice
 ms.date: 09/15/2024
+ms.service: fabric
+ms.subservice: cicd
 ms.custom:
   - intro-deployment
   - build-2023
