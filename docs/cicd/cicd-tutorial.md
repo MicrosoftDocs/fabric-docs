@@ -5,6 +5,8 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: tutorial
+ms.service: fabric
+ms.subservice: cicd
 ms.custom:
   - ignite-2023
 ms.date: 07/10/2024
