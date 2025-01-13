@@ -143,7 +143,7 @@ Before you start, you must complete the following prerequisites:
 
 In this section, you'll learn how to create a flow in Power Automate to generate simulated flight data and send it to your eventstream. Since Power Automate doesn't support the 'Execute JavaScript Code' action, a few variables need to be defined to produce the simulated data. To simplify this process, a preconfigured flow with the necessary variables is provided for downloading and importing. Follow the steps below to create your flow using the preconfigured package and complete the remaining configuration to send the simulated data to your eventstream.
 
-1. Download this zip file from this [git repo](https://github.com/microsoft/fabric-event-streams/blob/main/Use%20Case/power-automate-to-eventstream/FlightInfoData_20250110051433.zip) which contains preconfigured flows for scheduling the sending of mock flight data. 
+1. Download this zip file from this [git repo](https://github.com/microsoft/fabric-event-streams/blob/main/Use%20Case/power-automate-to-eventstream/FlightInfoData_20250113023956.zip) which contains preconfigured flows for scheduling the sending of mock flight data. 
 1. Login in [Power Automate](https://make.powerautomate.com/) with your Power BI account.
 1. Navigate to **My Flows** in the left navigating pane.
    
