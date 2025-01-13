@@ -126,7 +126,7 @@ This method offers a more efficient approach to copying or moving files, particu
 
 > [!NOTE]
 > - ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
-> - Due to the [limitations of OneLake shortcut](/docs/onelake/onelake-shortcuts.md), when you need to use ```notebookutils.fs.cp()``` or ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
+> - Due to the [limitations of OneLake shortcut](/docs/onelake/onelake-shortcuts), when you need to use ```notebookutils.fs.cp()``` or ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
 
 
 ```python
