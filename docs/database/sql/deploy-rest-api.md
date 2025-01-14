@@ -33,11 +33,11 @@ The script creates a database named with the logged-in user's alias and the date
 In the following script, replace `<your workspace id>` with your Fabric workspace ID. You can [find the ID of a workspace](../../admin/portal-workspace.md#identify-your-workspace-id) easily in the URL, it's the unique string inside two `/` characters after `/groups/` in your browser window. For example, `11aa111-a11a-1111-1abc-aa1111aaaa` in `https://fabric.microsoft.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/`.
  
 This script demonstrates the following:
- 1. Retrieve an access token using [Get-AzAccessToken](powershell/module/az.accounts/get-azaccesstoken) and [convert it from a secure string](powershell/azure/faq?view=azps-13.1.0#how-can-i-convert-a-securestring-to-plain-text-in-powershell-). If using PowerShell 7, [ConvertFrom-SecureString](powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.4#example-4-convert-a-secure-string-directly-to-a-plaintext-string) is also an option.
- 1. Create a new SQL database using the [POST /v1/workspaces/{workspaceId}/items](/rest/api/fabric/articles/workspaces-items.md) endpoint.
+ 1. Retrieve an access token using [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) and [convert it from a secure string](/powershell/azure/faq?view=azps-13.1.0#how-can-i-convert-a-securestring-to-plain-text-in-powershell-). If using PowerShell 7, [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.4#example-4-convert-a-secure-string-directly-to-a-plaintext-string) is also an option.
+ 1. Create a new SQL database using the [Items - Create Item API](/rest/api/fabric/core/items/create-item).
  1. List all SQL databases in a Fabric workspace.
  1. Connec to the database with [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility) to run a script to create an object.
- 1. Delete the database using the [DELETE /v1/workspaces/{workspaceId}/items/{itemId}](/rest/api/fabric/articles/workspaces-items.md) endpoint.
+ 1. Delete the database using the [Items - Delete Item API](/rest/api/fabric/core/items/delete-item).
 
 ```powershell
 Import-Module Az.Accounts
