@@ -22,7 +22,7 @@ You see failures when you try to ingest Fabric events from Reflex.
 
 ## Solutions and workarounds
 
-No workarounds at this time. This article will be updated when the fix is released.
+No workarounds at this time.
 
 ## Next steps
 
