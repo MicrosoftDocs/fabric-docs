@@ -56,7 +56,7 @@ try {
     $access_token.UserId -match('^[^@]+') | Out-Null
 
     $body = @{
-        displayName = $matches[0] + (Get-Date -Format "MMddyyyy") + '9'
+        displayName = $matches[0] + (Get-Date -Format "MMddyyyy")
         type = "SQLDatabase"
         description = "Created using public api"
     }
