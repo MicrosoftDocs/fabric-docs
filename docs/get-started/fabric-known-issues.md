@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 01/07/2025
+ms.date: 01/13/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  991  | Data Factory | [Apache Airflow job creation shows Fabric upgrade message](known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md) | January 13, 2025 |
+|  989  | Data Factory | [Local data access isn't allowed for pipeline using on-premises data gateway](known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md) | January 13, 2025 |
+|  988  | Real-Time Intelligence | [Data activator events aren’t ingested for Reflex events](known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md) | January 13, 2025 |
 |  986  | Power BI | [Direct Lake query cancellation might cancel other queries](known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries.md) | January 7, 2025 |
 |  985  | Power BI | [Direct Lake query cancellation causes model to fall back to DirectQuery](known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md) | January 7, 2025 |
 |  979  | Databases | [SQL databases not available with private link through January 2025](known-issues/known-issue-979-sql-databases-not-available-private-link.md) | January 6, 2025 |
@@ -39,12 +42,10 @@ Select the **Title** to view more information about that specific known issue.
 |  948  | Power BI | [Metrics app timepoint details missing for new P2 capacities](known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md) | November 27, 2024 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
-|  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](known-issues/known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
 |  923  | Power BI | [Tenant migrations paused through January 2025](known-issues/known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
-|  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](known-issues/known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 |
@@ -70,7 +71,6 @@ Select the **Title** to view more information about that specific known issue.
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
 |  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 |
-|  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 |
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
 |  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
@@ -93,6 +93,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 | Fixed: January 13, 2025 |
+|  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](known-issues/known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |  Fixed: January 13, 2025 |
+|  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 | Fixed: January 13, 2025 |
 |  977  | Power BI  | [Export to Excel using live connection with show items with no data turned on fails](known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md) | December 17, 2024 | Fixed: January 6, 2025 |
 |  821  | Data Warehouse | [Schema refresh for a data warehouse's semantic model fails](known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md) | August 28, 2024 | Fixed: January 6, 2025 |
 |  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 | Fixed: January 6, 2025 |
@@ -103,10 +106,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  916  | Power BI | [Visual doesn't load due to an unexpected error](known-issues/known-issue-916-visual-not-load-error.md) | November 7, 2024 | Fixed: December 10, 2024 |
 |  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 | Fixed: December 9, 2024 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 | Fixed: December 4, 2024 |
-|  926  | Data Engineering | [Notebook failure inside Visual Studio Code for the Web](known-issues/known-issue-926-notebook-failure-visual-studio-code-web.md) | November 12, 2024 | Fixed: November 27, 2024 |
-|  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 | Fixed: November 27, 2024 |
-|  641  | Power BI | [Visuals using the Denodo connector might show connection errors](known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md) | March 5, 2024 | Fixed: November 27, 2024 |
-|  640  | Power BI | [Microsoft Defender detects OpenSSL vulnerabilities in Power BI Desktop](known-issues/known-issue-640-microsoft-defender-detects-openssl-vulnerabilities-desktop.md) | March 5, 2024 | Fixed: November 27, 2024 |
 
 ## Related content
 
