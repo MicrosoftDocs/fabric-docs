@@ -136,6 +136,9 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Service principals
+    href: service-principals.md
+    displayName: SPN
   - name: Microsoft Entra ID authentication
     href: entra-id-authentication.md
   - name: Workspace roles
