@@ -4,7 +4,7 @@ description: A known issue is posted where the new tile for Dataflow Gen2 (CI/CD
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/22/2024
+ms.date: 01/13/2025
 ms.custom: known-issue-933
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-933
 
 You might see a new tile for creating a **Dataflow Gen2 (CI/CD, preview)** Fabric item. If you select the tile, you get an upgrade dialog box and you can't use the feature.
 
-**Status:** Open
+**Status:** Fixed: January 13, 2025
 
 **Product Experience:** Data Factory
 
