@@ -17,9 +17,9 @@ Fabric Copilot capacity is a capacity setting that consolidates organizational F
 ## Steps to enabling a Fabric Copilot capacity
 
 There are three steps required to enable Fabric Copilot capacity.
-1. The Fabric administrator [enables Copilot](../admin/service-admin-copilot.md) for users within the organization.
-2. The Fabric administrator enables capacity administrators as [authorized to designate their capacity as a Copilot capacity](../admin/service-admin-copilot.md)  to designate their capacities as Fabric Copilot Capacities.
-3. The capacity administrator needs to assign a group of users as [Fabric Copilot capacity users](capacity-settings.md) on their capacity.
+1. The Fabric administrator [enables Copilot](../admin/service-admin-portal-copilot.md) for users within the organization.
+2. The Fabric administrator enables capacity administrators as [authorized to designate their capacity as a Copilot capacity](../admin/service-admin-portal-copilot.md)  to designate their capacities as Fabric Copilot Capacities.
+3. The capacity administrator needs to assign a group of users as [Fabric Copilot capacity users](../admin/capacity-settings.md) on their capacity.
 
 ## Frequently asked questions
 
