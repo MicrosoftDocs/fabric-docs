@@ -49,7 +49,7 @@ You can connect to Fabric warehouses by using service principals with tools like
 
 ### Control plane permissions
 
-SPNs can be granted access to warehouses using [workspace role](/fabric/data-warehouse/workspace-roles) through Manage access in the workspace. In addition, warehouses can be shared with an SPN through the Fabric portal via [Item Permissions](/fabric/data-warehouse/share-warehouse-manage-permissions). 
+SPNs can be granted access to warehouses using [workspace roles](/fabric/data-warehouse/workspace-roles) through **Manage access** in the workspace. In addition, warehouses can be shared with an SPN through the Fabric portal via [Item Permissions](/fabric/data-warehouse/share-warehouse-manage-permissions). 
 
 ### Date plane permissions
 
