@@ -46,7 +46,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
       |Field | Description| Value|
       |-----|-----| -----|
-      | **URL**| The connection string for your S3 compatible endpoint. For this shortcut type, you must provide a non-bucket specific URL. | `https://s3.contoso.com` |
+      | **URL**| The connection string for your S3 compatible endpoint. For this shortcut type, you must provide a non-bucket specific URL. This URL must allow path style bucket addressing, not just virtual hosted style. | `https://s3.contoso.com` |
       |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If no connections exist, create a new connection.| *Create new connection* |
       |**Connection name** | The S3 compatible connection name.| A name for your connection.|
       |**Access Key ID**| The access key ID to be used when accessing the S3 compatible endpoint. | Your access key.|
