@@ -40,13 +40,13 @@ For more information, see [MongoDB integration into open mirroring in Microsoft 
 
 ## dab
 
-dab Nexus is an SAP-certified solution for data extraction from SAP ECC and SAP S/4HANA (on-premises and Private Cloud Edition). Through its integration with open mirroring it supports near real-time analytics on SAP data in Microsoft Fabric.
+dab Nexus is an SAP-certified solution for data extraction from SAP ECC and SAP S/4HANA (on-premises and Private Cloud Edition). It now integrates with open mirroring to support near real-time analytics on SAP data in Microsoft Fabric.
 For an overview of dab Nexus, see [Effortless SAP Data Integration in Microsoft Fabric](https://aka.ms/mirroring/dab-mirroring-overview).
 For the technical documentation of dab Nexus, see [Quickstart Guide Managed App - dab:Help](https://aka.ms/mirroring/dab-mirroring-doc).
 
 ## Simplement
 
-Simplement Roundhouse is an SAP-certified solution for data extraction from a variety of SAP source systems supporting near real-time data integration with Microsoft Fabric via open mirroring.
+Simplement Roundhouse is an SAP-certified solution for data extraction from a variety of SAP source systems. It now supports near real-time data integration into Microsoft Fabric via open mirroring.
 For more information, see [Simplement integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/simplement-overview).
 
 ## Related content
