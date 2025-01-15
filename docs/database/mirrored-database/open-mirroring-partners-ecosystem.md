@@ -3,8 +3,8 @@ title: "Open Mirroring (Preview) Partner Ecosystem"
 description: Learn about the open mirrored databases partner ecosystem in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur
-ms.date: 11/19/2024
+ms.reviewer: tinglee, sbahadur, ulrichchrist
+ms.date: 01/15/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -37,6 +37,17 @@ For more information, see [Striim integration into open mirroring in Microsoft F
 MongoDB integrated with open mirroring for a solution to bring operational data from MongoDB Atlas to Microsoft Fabric for Big data analytics, AI and BI, combining it with the rest of the data estate of the enterprise. Once mirroring is enabled for a MongoDB Atlas collection, the corresponding table in OneLake is kept in sync with the changes in source MongoDB Atlas collection, unlocking opportunities of varied analytics and AI and BI in near real-time.
 
 For more information, see [MongoDB integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/mongodb-docs).
+
+## dab
+
+dab Nexus is an SAP-certified solution for data extraction from SAP ECC and SAP S/4HANA (on-premises and Private Cloud Edition). Through its integration with open mirroring it supports near real-time analytics on SAP data in Microsoft Fabric.
+For an overview of dab Nexus, see [Effortless SAP Data Integration in Microsoft Fabric](https://aka.ms/mirroring/dab-mirroring-overview).
+For the technical documentation of dab Nexus, see [Quickstart Guide Managed App - dab:Help](https://aka.ms/mirroring/dab-mirroring-doc).
+
+## Simplement
+
+Simplement Roundhouse is an SAP-certified solution for data extraction from a variety of SAP source systems supporting near real-time data integration with Microsoft Fabric via open mirroring.
+For more information, see [Simplement integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/simplement-overview).
 
 ## Related content
 
