@@ -4,7 +4,7 @@ description: Learn about service principals (SPN) as security identities for app
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara # Microsoft alias
-ms.date: 01/06/2025
+ms.date: 01/15/2025
 ms.topic: how-to
 ---
 
@@ -19,13 +19,13 @@ An Azure service principal (SPN) is a security identity used by applications or 
 1. [Create a service principal, assign roles, and create secret using Azure](/entra/identity-platform/howto-create-service-principal-portal).
 1. Ensure the tenant admin can enable **Service principals can use Fabric APIs** in Fabric Admin portal.
 
-1. Ensure a user with Administrator [workspace role](/fabric/data-warehouse/workspace-roles) can grant access for an SPN through **Manage access** in the Workspace.
+1. Ensure a user with Administrator [workspace role](workspace-roles.md) can grant access for an SPN through **Manage access** in the Workspace.
 
       :::image type="content" source="media/service-principals/manage-access.png" alt-text="Screenshot from the Fabric portal of the manage access popup window.":::
 
 ## Create and access warehouses through REST APIs using SPN
 
-Users with administrator, member, or contributor [workspace role](/fabric/data-warehouse/workspace-roles) can use service principals for authentication to create, update, read, and delete Warehouse items via Fabric [REST APIs](/rest/api/fabric/warehouse/items). This allows you to automate repetitive tasks such as provisioning or managing warehouses without relying on user credentials.
+Users with administrator, member, or contributor [workspace role](workspace-roles.md) can use service principals for authentication to create, update, read, and delete Warehouse items via Fabric [REST APIs](/rest/api/fabric/warehouse/items). This allows you to automate repetitive tasks such as provisioning or managing warehouses without relying on user credentials.
 
 If you use a delegated account or fixed identity (owner's identity) to create the warehouse, the warehouse will use that credential while accessing OneLake. This creates a problem when the owner leaves the organization, because the warehouse will stop working. **To avoid this, create warehouses using an SPN.**
 
@@ -49,19 +49,17 @@ You can connect to Fabric warehouses by using service principals with tools like
 
 ### Control plane permissions
 
-SPNs can be granted access to warehouses using [workspace roles](/fabric/data-warehouse/workspace-roles) through **Manage access** in the workspace. In addition, warehouses can be shared with an SPN through the Fabric portal via [Item Permissions](/fabric/data-warehouse/share-warehouse-manage-permissions). 
+SPNs can be granted access to warehouses using [workspace roles](workspace-roles.md) through **Manage access** in the workspace. In addition, warehouses can be shared with an SPN through the Fabric portal via [Item Permissions](share-warehouse-manage-permissions.md). 
 
-### Date plane permissions
+### Data plane permissions
 
-Once warehouses are provided control plane permissions to an SPN through workspace roles or Item permissions, administrators can use T-SQL commands like `GRANT` to assign specific [data plane permissions](/fabric/security/permission-model#compute-permissions) to service principals, to control precisely which metadata/data and operations an SPN has access to. This is recommended to follow the principle of least privilege.
+Once warehouses are provided control plane permissions to an SPN through workspace roles or Item permissions, administrators can use T-SQL commands like `GRANT` to assign specific [data plane permissions](../security/permission-model.md#compute-permissions) to service principals, to control precisely which metadata/data and operations an SPN has access to. This is recommended to follow the principle of least privilege.
 
 For example:
 
 ```sql
 GRANT SELECT ON <table name> TO <service principal name>;
 ```
-
-### Run T-SQL queries on SPN created resources
 
 Once permissions are granted, SPNs can connect to client application tools like SSMS, thereby providing secure access for developers to run COPY INTO (with and without firewall enabled storage), and also to run any T-SQL query programmatically on a schedule with [Data Factory pipelines](../data-factory/pipeline-landing-page.md).
 
@@ -71,9 +69,9 @@ Once permissions are granted, SPNs can connect to client application tools like 
 
 When an SPN runs queries in the warehouse, there are various monitoring tools that provide visibility into the user or SPN that ran the query. You can find the user for query activity the following ways:
 
-- [Dynamic management views (DMVs)](monitor-using-dmv.md): `login_name` column in `sys.dm_exec_sessions`
-- [Query Insights](query-insights.md): `login_name` column in `queryinsights.exec_requests_history` view
-- [Query activity](query-activity.md): **Submitter** column in Fabric query activity
+- [Dynamic management views (DMVs)](monitor-using-dmv.md): `login_name` column in `sys.dm_exec_sessions`.
+- [Query Insights](query-insights.md): `login_name` column in `queryinsights.exec_requests_history` view.
+- [Query activity](query-activity.md): `submitter` column in Fabric query activity.
 - [Capacity metrics app](../enterprise/metrics-app.md): Compute usage for warehouse operations performed by SPN appears as the Client ID under the **User** column in Background operations drill through table.
 
 For more information, see [Monitor Fabric Data warehouse](monitoring-overview.md).
