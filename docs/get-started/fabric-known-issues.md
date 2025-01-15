@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 01/13/2025
+ms.date: 01/15/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -39,7 +39,6 @@ Select the **Title** to view more information about that specific known issue.
 |  955  | Data Factory | [Create Gateway public API doesn't work for service principals](known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md) | December 5, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](known-issues/known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
 |  950  | Power BI | [Incorrect column names after column format or aggregation change](known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md) | December 2, 2024 |
-|  948  | Power BI | [Metrics app timepoint details missing for new P2 capacities](known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md) | November 27, 2024 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
@@ -93,6 +92,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  948  | Power BI | [Metrics app timepoint details missing for new P2 capacities](known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md) | November 27, 2024 | Fixed: January 15, 2025 |
 |  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 | Fixed: January 13, 2025 |
 |  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](known-issues/known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |  Fixed: January 13, 2025 |
 |  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 | Fixed: January 13, 2025 |

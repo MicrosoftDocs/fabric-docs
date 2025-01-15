@@ -4,7 +4,7 @@ description: A known issue is posted where metrics app timepoint details are mis
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/27/2024
+ms.date: 01/15/2025
 ms.custom: known-issue-948
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-948
 
 In the Fabric Capacity Metrics app, you can view the timepoint details for your capacity. If you have a new P2 capacity, you see that the timepoint detail is missing.
 
-**Status:** Open
+**Status:** Fixed: January 15, 2025
 
 **Product Experience:** Power BI
 
