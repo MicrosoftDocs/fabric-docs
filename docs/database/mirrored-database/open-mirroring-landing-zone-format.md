@@ -25,9 +25,9 @@ For every mirrored database, there is a unique storage location in OneLake for m
 
 For example, if you have tables (`Table A`, `Table B`, `Table C`) to be created in the landing zone, create folders like the following URLs:
 
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/TableA`
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/TableB`
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/TableC`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Files/TableA`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Files/TableB`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Files/TableC`
 
 
 ### Metadata file in the landing zone
@@ -122,9 +122,9 @@ A table path can be specified within a schema folder. A schema landing zone shou
 
 For example, if you have schemas (`Schema1`, `Schema2`) and tables (`Table A`, `Table B`, `Table C`) to be created in the landing zone, create folders like the following paths in OneLake:
 
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Schema1.schema/TableA`
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Schema1.schema/TableB`
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Schema2.schema/TableC`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Files/Schema1.schema/TableA`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Files/Schema1.schema/TableB`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Files/Schema2.schema/TableC`
 
 ## Table columns and column operations
 
