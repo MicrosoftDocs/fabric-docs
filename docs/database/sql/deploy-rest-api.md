@@ -26,17 +26,17 @@ The Fabric platform has a rich set of REST APIs that can be used to deploy and m
 
 ## Create a new SQL database via REST API
 
-This example script uses `Connect-AzAccount`, an alias of `az login` to prompt for credentials. It then uses the credentials to obtain an access token that will be used for the REST API calls. SQLCMD uses the context of the account that was given to `Connect-AzAccount`.
+This example script uses `Connect-AzAccount`, an alias of `az login` to prompt for credentials. It uses those credentials to obtain an access token to use for the REST API calls. SQLCMD uses the context of the account that was given to `Connect-AzAccount`.
 
 The script creates a database named with the logged-in user's alias and the date. Currently, the REST API doesn't return a status so we must loop and check for the database to be created. After the database is created, SQLCMD is used to create some objects and then query for their existence. Finally, we delete the database.
 
 In the following script, replace `<your workspace id>` with your Fabric workspace ID. You can [find the ID of a workspace](../../admin/portal-workspace.md#identify-your-workspace-id) easily in the URL, it's the unique string inside two `/` characters after `/groups/` in your browser window. For example, `11aa111-a11a-1111-1abc-aa1111aaaa` in `https://fabric.microsoft.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/`.
  
-This script demonstrates the following:
- 1. Retrieve an access token using [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) and [convert it from a secure string](/powershell/azure/faq?view=azps-13.1.0#how-can-i-convert-a-securestring-to-plain-text-in-powershell-). If using PowerShell 7, [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.4#example-4-convert-a-secure-string-directly-to-a-plaintext-string) is also an option.
+This script demonstrates:
+ 1. Retrieve an access token using [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) and [convert it from a secure string](/powershell/azure/faq?view=azps-13.1.0&preserve-view=true#how-can-i-convert-a-securestring-to-plain-text-in-powershell-). If using PowerShell 7, [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.4&preserve-view=true#example-4-convert-a-secure-string-directly-to-a-plaintext-string) is also an option.
  1. Create a new SQL database using the [Items - Create Item API](/rest/api/fabric/core/items/create-item).
  1. List all SQL databases in a Fabric workspace.
- 1. Connec to the database with [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility) to run a script to create an object.
+ 1. Connect to the database with [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility) to run a script to create an object.
  1. Delete the database using the [Items - Delete Item API](/rest/api/fabric/core/items/delete-item).
 
 ```powershell
