@@ -41,7 +41,7 @@ When you start a trial of a Fabric capacity, your trial [capacity](../enterprise
 
 ## About the trial license
 
-Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays the nontrial licenses. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
+If you do not already have an assigned Power BI [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) license, you'll receive a Power BI [Individual Trial](/power-bi/fundamentals/service-self-service-signup-purchase-for-power-bi?tabs=trial#start-a-trial) when initiating a Fabric trial capacity. This individual trial enables you to perform the actions and use the features that a PPU license enables. Your Account manager still displays the nontrial licenses assigned to you. But in order to make full use of Fabric, your Fabric trial includes the Power BI Individual trial.
 
 ## Use your trial
 
