@@ -93,7 +93,8 @@ Limitations of service principals with Microsoft Fabric Data Warehouse:
 
 - Default semantic models are not supported for SPN created warehouses and as a result, features such as listing tables in dataset view, creating report from the default dataset will not work.
 - Service principal for SQL analytics endpoints is not currently supported.
-- Service principal or Entra ID credentials are currently not supported for COPY INTO error files. 
+- Service principal or Entra ID credentials are currently not supported for COPY INTO error files.
+- Service principals are not supported for [GIT APIs](/rest/api/fabric/core/git). SPN support exists only for [Deployment pipeline APIs](/rest/api/fabric/core/deployment-pipelines). 
 
 ### Related content
 
