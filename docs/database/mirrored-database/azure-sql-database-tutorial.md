@@ -3,7 +3,7 @@ title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL D
 description: Learn how to configure a mirrored database from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: roblescarlos, im-microsoft
+ms.reviewer: imotiwala
 ms.date: 01/15/2025
 ms.topic: tutorial
 ms.custom:
