@@ -47,9 +47,13 @@ You can connect to Fabric warehouses by using service principals with tools like
 
 :::image type="content" source="media/service-principals/microsoft-entra-service-principal-sign-in.png" alt-text="Screenshot of signing into Fabric with an SPN in SQL Server Management Studio (SSMS)." lightbox="media/service-principals/microsoft-entra-service-principal-sign-in.png":::
 
-### Granular access control
+### Control plane permissions
 
-Warehouses can be shared with an SPN through the Fabric portal. Once shared, administrators can use T-SQL commands like `GRANT` to assign specific permissions to service principals, to control precisely which data and operations an SPN has access to. This is recommended to follow the principle of least privilege.
+SPNs can be granted access to warehouses using [workspace role](/fabric/data-warehouse/workspace-roles) through Manage access in the workspace. In addition, warehouses can be shared with an SPN through the Fabric portal via [Item Permissions](/fabric/data-warehouse/share-warehouse-manage-permissions). 
+
+### Date plane permissions
+
+Once warehouses are provided control plane permissions to an SPN through workspace roles or Item permissions, administrators can use T-SQL commands like `GRANT` to assign specific [data plane permissions](/fabric/security/permission-model#compute-permissions) to service principals, to control precisely which metadata/data and operations an SPN has access to. This is recommended to follow the principle of least privilege.
 
 For example:
 
@@ -59,7 +63,7 @@ GRANT SELECT ON <table name> TO <service principal name>;
 
 ### Run T-SQL queries on SPN created resources
 
-Connecting to client application tools, like SSMS, using an SPN provides secure access for developers to run COPY INTO (with and without firewall enabled storage), and also to run any T-SQL query programmatically on a schedule with [Data Factory pipelines](../data-factory/pipeline-landing-page.md).
+Once permissions are granted, SPNs can connect to client application tools like SSMS, thereby providing secure access for developers to run COPY INTO (with and without firewall enabled storage), and also to run any T-SQL query programmatically on a schedule with [Data Factory pipelines](../data-factory/pipeline-landing-page.md).
 
 :::image type="content" source="media/service-principals/copy-into-example.png" alt-text="Screenshot of a query and result in SQL Server Management Studio (SSMS), where the user has accessed an Azure Storage object using the SPN." lightbox="media/service-principals/copy-into-example.png":::
 
@@ -89,8 +93,9 @@ Ownership of warehouses can be changed from an SPN to user, and from a user to a
 
 Limitations of service principals with Microsoft Fabric Data Warehouse:
 
-- Default semantic models in a warehouse created by SPN will not work properly, like listing tables in dataset view, creating report from the default dataset.
+- Default semantic models are not supported for SPN created warehouses and as a result, features such as listing tables in dataset view, creating report from the default dataset will not work.
 - Service principal for SQL analytics endpoints is not currently supported.
+- Service principal or Entra ID credentials are currently not supported for COPY INTO error files. 
 
 ### Related content
 
