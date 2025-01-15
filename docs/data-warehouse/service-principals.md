@@ -29,7 +29,7 @@ Users with administrator, member, or contributor [workspace role](workspace-role
 
 If you use a delegated account or fixed identity (owner's identity) to create the warehouse, the warehouse will use that credential while accessing OneLake. This creates a problem when the owner leaves the organization, because the warehouse will stop working. **To avoid this, create warehouses using an SPN.**
 
-Fabric also requires the user to sign in every 30 days to ensure a valid token is provided for security reasons. In the case of data warehouse, this would be the owner that needs to sign in to Fabric every 30 days. This can now be automated using an SPN - by running the [List](/rest/api/fabric/warehouse/items/list-warehouses?tabs=HTTP) API.
+Fabric also requires the user to sign in every 30 days to ensure a valid token is provided for security reasons. For a data warehouse, the owner needs to sign in to Fabric every 30 days. This can be automated using an SPN with the [List](/rest/api/fabric/warehouse/items/list-warehouses?tabs=HTTP) API.
 
 :::image type="content" source="media/service-principals/create-api.png" alt-text="Screenshot of a Fabric API POST call using an SPN." lightbox="media/service-principals/create-api.png"::: 
 
