@@ -18,7 +18,7 @@ The following are the open mirroring partners who have already built solutions t
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-This page will be updated during the current preview.
+This page is updated during the current preview.
 
 ## Oracle GoldenGate 23ai
 
@@ -46,7 +46,7 @@ For the technical documentation of dab Nexus, see [Quickstart Guide Managed App 
 
 ## Simplement
 
-Simplement Roundhouse is an SAP-certified solution for data extraction from a variety of SAP source systems. It now supports near real-time data integration into Microsoft Fabric via open mirroring.
+Simplement Roundhouse is an SAP-certified solution for data extraction from various SAP source systems. It now supports near real-time data integration into Microsoft Fabric via open mirroring.
 For more information, see [Simplement integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/simplement-overview).
 
 ## Related content
