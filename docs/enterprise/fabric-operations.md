@@ -189,7 +189,7 @@ You can find the consumption rates for KQL Database in [KQL Database consumption
 
 | Operation   | Description                                          | Item                         | Azure billing meter | Type        |
 | ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
-| KustoUpTime | Measure of the time that the KQL database is Active  | KQL Database or KQL Queryset | KQL Database Capacity Usage CU         | Interactive |
+| Eventhouse UpTime | Measure of the time that Event House is Active  | Event House | Eventhouse Capacity Usage CU         | Interactive |
 
 ### Spark
 
