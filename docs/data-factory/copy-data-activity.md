@@ -3,7 +3,7 @@ title: How to copy data using copy activity
 description: Learn how to add a copy activity directly or through the copy assistant.
 ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
-author: jianleishen
+author: jianleishen, dmc-at-work
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -44,7 +44,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
 ### Configure your source
 
-1. Select a data source type from the category. You'll use Azure Blob Storage as an example. Select **Azure Blob Storage** and then select **Next**.
+1. Select a data source type from the category. You will use Azure Blob Storage as an example. Select **Azure Blob Storage** and then select **Next**.
 
    :::image type="content" source="media/copy-data-activity/choose-data-source.png" alt-text="Screenshot of Choose data source screen." lightbox="media/copy-data-activity/choose-data-source.png":::
 
@@ -65,7 +65,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
 ### Configure your destination
 
-1. Select a data source type from the category. You'll use Azure Blob Storage as an example. You can either create a new connection that links to a new Azure Blob Storage account by following the steps in the previous section or use an existing connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
+1. Select a data source type from the category. You will use Azure Blob Storage as an example. You can either create a new connection that links to a new Azure Blob Storage account by following the steps in the previous section or use an existing connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
 
    :::image type="content" source="media/copy-data-activity/choose-destination.png" alt-text="Screenshot showing how to select Azure Blob Storage." lightbox="media/copy-data-activity/choose-destination.png":::
 
@@ -111,7 +111,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
    :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline.png" alt-text="Screenshot showing where to select New." lightbox="media/copy-data-activity/configure-source-connection-in-pipeline.png":::
 
-   1. Choose the data source type from the pop-up window. You'll use Azure SQL Database as an example. Select **Azure SQL Database**, and then select **Continue**.
+   1. Choose the data source type from the pop-up window. You will use Azure SQL Database as an example. Select **Azure SQL Database**, and then select **Continue**.
    
       :::image type="content" source="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png" alt-text="Screenshot showing how to select the data source." lightbox="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png":::
 
@@ -164,7 +164,7 @@ If the connector that you apply supports mapping, you can go to **Mapping** tab 
 
    :::image type="content" source="media/copy-data-activity/configure-mapping-in-pipeline.png" alt-text="Screenshot of mapping settings 1." lightbox="media/copy-data-activity/configure-mapping-in-pipeline.png":::
 
-2. You can see the auto mapping is shown up. Specify your **Source** column and **Destination** column. If you create a new table in the destination, you can customize your **Destination** column name here. If you want to write data into the existing destination table, you can't modify the existing **Destination** column name. You can also view the **Type** of source and destination columns. 
+2. You can see the auto mapping is shown up. Specify your **Source** column and **Destination** column. If you create a new table in the destination, you can customize your **Destination** column name here. If you want to write data into the existing destination table, you cannot modify the existing **Destination** column name. You can also view the **Type** of source and destination columns. 
 
    :::image type="content" source="media/copy-data-activity/configure-mapping-in-pipeline-2.png" alt-text="Screenshot of mapping settings 2." lightbox="media/copy-data-activity/configure-mapping-in-pipeline-2.png":::
 
@@ -196,7 +196,7 @@ See the following table for the description of each setting.
 | **Preserve** | Specify whether to preserve metadata/ACLs during data copy. | preserve |
 
 >[!NOTE]
-> If you use staged copy with compression enabled, the service principal authentication for staging blob connection isn't supported.
+> If you use staged copy with compression enabled, the service principal authentication for staging blob connection is not supported.
 
 ### Configure parameters in a copy activity
 
