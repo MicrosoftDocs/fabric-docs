@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 09/05/2024
+ms.date: 01/16/2025
 ms.search.form: lakehouse api
 ---
 
@@ -209,7 +209,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
     "mode": "overwrite", 
     "formatOptions": 
     { 
-        "header": true, 
+        "header": "true", 
         "delimiter": ",", 
         "format": "CSV" 
     } 
@@ -270,7 +270,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehou
     "executionData": {
         "tableName": "{table_name}",
         "optimizeSettings": {
-            "vOrder": true,
+            "vOrder": "true",
             "zOrderBy": [
                 "tipAmount"
             ]
