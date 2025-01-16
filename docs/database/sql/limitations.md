@@ -45,7 +45,9 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 
 ## Availability
 
-SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+SQL database in Fabric is available in most regions where Microsoft Fabric is available. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+
+[!INCLUDE [tenant-region-availability-note](../../includes/tenant-region-availability-note.md)]
 
 Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
 

@@ -59,6 +59,8 @@ Follow these steps to enable SQL database for your tenant.
 
 Capacity admins can override this setting, depending on their needs. For example, your organization might decide not to enable SQL database experience for everyone at tenant level but allow the usage of SQL database in a specific capacity. This lets your organization allow a group of developers try out SQL database in a specific capacity in a more controlled manner.
 
+[!INCLUDE [tenant-region-availability-note](../../includes/tenant-region-availability-note.md)]
+
 Follow these steps to enable SQL database in Microsoft Fabric for a specific capacity:
 
 1. Navigate to the [capacity settings](../../admin/service-admin-portal-capacity-settings.md) in the admin portal.
