@@ -9,6 +9,11 @@
             "source_path_from_root": "/docs/governance/data-loss-prevention-overview.md",
             "redirect_url": "/purview/dlp-powerbi-get-started",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/governance/onelake-catalog.md",
+            "redirect_url": "/fabric/governance/onelake-catalog-overview",
+            "redirect_document_id": true
         }
     ]
 }
