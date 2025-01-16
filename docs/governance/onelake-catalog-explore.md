@@ -14,7 +14,7 @@ ms.custom: ignite-2024-fabric, ignite-2024
 
 OneLake catalog's Explore tab helps you find, explore, and use the Fabric items you need. It features an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. The Explore tab also features selectors and filters to narrow down and focus the list, making it easier to find what you need.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-explore-tab-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog explore tab." lightbox="./media/onelake-catalog-explore/onelake-explore-tab-general-view.png" border="false"::: 
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-tab-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog explore tab." lightbox="./media/onelake-catalog-explore/onelake-explore-tab-general-view.png" border="false"::: 
 
 The Explore tab provides
 
@@ -30,7 +30,7 @@ This article explains what you see in the Explore tab and describes how to use i
 
 To open the Explore tab, select the OneLake catalog icon in the Fabric navigation pane and then select the Explore tab.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-open.png":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-open.png":::
 
 ## Find items in the items list
 
@@ -65,7 +65,7 @@ The following table describes the list columns.
 
 If domains have been defined in your organization, you can use the OneLake catalog's domain selector to select a domain or subdomain. Only workspaces and items and belonging to the selected domain or subdomain will be displayed and treated in the Explore tab. Your selection persists for subsequent sessions.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
 
 For more information about domains, see [Fabric domains](./domains.md).
 
@@ -90,13 +90,13 @@ The filters pane contains several predefined filters. These filters operate acro
 
 Fabric items are categorized into buckets based on what they are for and where they fit into the task flow. For example, items that contain data, such as lakehouses and semantic models, are categorized as *Data types*, while reports and dashboards are categorized as *Insight types*. Use the item type category selector to select the item type category you're interested in.
 
-:::image type="content" source="./media/onelake-catalog/onelake-data-catalog-item-type-selector.png" alt-text="Screenshot of the OneLake catalog's item type selector.":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-item-type-selector.png" alt-text="Screenshot of the OneLake catalog's item type selector.":::
 
 ### Find items by tag
 
 Use the tags selector to display items tagged with the tags you select.
 
-:::image type="content" source="./media/onelake-catalog/onelake-data-catalog-tags-selector.png" alt-text="Screenshot of the Explore tab's tags selector.":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-tags-selector.png" alt-text="Screenshot of the Explore tab's tags selector.":::
 
 > [!NOTE]
 > The tag selector is only visible if tags are enabled in your organization.
@@ -105,7 +105,7 @@ Use the tags selector to display items tagged with the tags you select.
 
 Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane.. The items you're allowed to see in that workspace will be displayed in the items list.
 
-:::image type="content" source="./media/onelake-catalog/onelake-data-catalog-workspace-filter.png" alt-text="Screenshot of the Explore tab's workspaces filter.":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png" alt-text="Screenshot of the Explore tab's workspaces filter.":::
 
 The preceding image shows the *Sales Org* workspace selected in the Workspaces section. Because the item classification selector is set to *Data types*, only semantic models are shown (as no other type of data items are present in this workspace). The semantic model *Contoso FY21 goals* is selected, and its details are shown in the item details view. To explore the details of other items in the list, just select them. The item details view stays open until you dismiss it. This makes it easy to browse the details of items one after another, without losing your list context.
 
@@ -118,13 +118,13 @@ Each item in the items list has an options menu that enables you to do things, s
 
 To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
 
 ## View item details
 
 The items details view enables you to drill down and explore items. Select an item in the items list display its details.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-item-details-view.png" alt-text="Screenshot of the Explore tab item details view.":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the Explore tab item details view.":::
 
 Tap **Open** to open the item's editor.
 
@@ -141,13 +141,13 @@ The overview tab shows the following information:
 
 Data items such as semantic models and lakehouses show the underlying table and column schema for exploration purposes.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-overview-tab.png" alt-text="Screenshot of the Explore tab item view overview tab." lightbox="./media/onelake-catalog/onelake-catalog-overview-tab.png":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png" alt-text="Screenshot of the Explore tab item view overview tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png":::
 
 ### Lineage tab
 
 The lineage tab shows you the upstream and downstream items in the item's lineage. Metadata about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc. Lineage can be displayed in either a list view (shown in the image that follows) or in a graphical view.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-lineage-tab.png" alt-text="Screenshot of the Explore tab item view lineage tab." lightbox="./media/onelake-catalog/onelake-catalog-lineage-tab.png":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-lineage-tab.png" alt-text="Screenshot of the Explore tab item view lineage tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-lineage-tab.png":::
 
 For more information about lineage, see [Lineage in Fabric](./lineage.md).
 
@@ -155,7 +155,7 @@ For more information about lineage, see [Lineage in Fabric](./lineage.md).
 
 The monitor tab displays activities for the item. Press **Show** on a record to see the details of that activity. The monitor tab is available for items types supported by the [monitor hub](../admin/monitoring-hub.md).
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-monitor-tab.png" alt-text="Screenshot of the Explore tab item view monitor tab." lightbox="./media/onelake-catalog/onelake-catalog-monitor-tab.png":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-monitor-tab.png" alt-text="Screenshot of the Explore tab item view monitor tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-monitor-tab.png":::
 
 ## Considerations and limitations
 
