@@ -3,7 +3,7 @@ title: Navigate the Fabric Lakehouse explorer
 description: The lakehouse explorer consists of the object explorer, main view, and ribbon. Use it to load data into your lakehouse, and then browse and preview your data.
 ms.reviewer: snehagunda
 ms.author: avinandac
-author: avinandaMS
+author: avinandaMS, dmc-at-work
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -27,7 +27,7 @@ The Lakehouse explorer offers a unified, graphical representation of your entire
 
 - The **Unidentified Area** is a unique space within the managed area of your lakehouse. It displays any folders or files present in the managed area that lack associated tables in SyMS. For instance, if a user uploads unsupported files like images or audio files to the managed area, they won't be automatically detected and linked to tables. Instead, they appear in this unidentified area. The primary purpose of this section is to prompt users to either remove these files from the managed area or transfer them to the File Section for further processing.
 
-- The **File Section** represents the unmanaged area of your lakehouse and can be considered a "landing zone" for raw data ingested from various sources. Before this data can be used for analysis, it often requires additional processing. In this section, you can navigate through directories, select a directory to preview, load a folder into a table, and perform various other actions. It's worth noting that **the File Section displays folder-level objects exclusively**. To view file-level objects, you need to utilize the Main View area.
+- The **File Section** represents the unmanaged area of your lakehouse and can be considered a "landing zone" for raw data ingested from various sources. Before this data can be used for analysis, it often requires additional processing. In this section, you can navigate through directories, select a directory to preview, load a folder into a table, and perform various other actions. It is worth noting that **the File Section displays folder-level objects exclusively**. To view file-level objects, you need to utilize the Main View area.
 
 ## Main view area
 
@@ -35,7 +35,7 @@ The main view area of the lakehouse page is the space where most of the data int
 
 ### Table preview
 
-Our table preview datagrid is equipped it with a suite of powerful features that elevate your data interactions to make working with your data even more seamless. Here's are some key features:
+Our table preview datagrid is equipped it with a suite of powerful features that elevate your data interactions to make working with your data even more seamless. Here are some key features:
 
 - Sort columns in ascending or descending order with a simple click. This feature provides you with full control over your data's organization while working with large semantic models or when you need to quickly identify trends.
 
