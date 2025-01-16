@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 01/05/2025
+ms.date: 01/16/2025
 ms.custom:
   - build-2023
   - ignite-2023
@@ -117,6 +117,9 @@ When connected and synched, the workspace structure is mirrored in the Git repos
 Empty folders aren't copied to Git. When you create or move items to the folder, the folder is created in Git.
 
 :::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
+
+> [!NOTE]
+> Now that the folder structure is maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update the workspace first, the subfolders are deleted.
 
 ### Connect to a shared workspace
 
