@@ -34,7 +34,7 @@ This article explains what you see in the OneLake catalog and describes how to u
 
 To open the OneLake catalog, select the OneLake icon in the Fabric navigation pane.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-open.png":::
+:::image type="content" source="./media/onelake-catalog-overview/onelake-catalog-overview-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-open.png":::
 
 By default the catalog opens on the explore tab. If necessary, select the tab you're interested in to continue.
 ## Related content
