@@ -70,33 +70,36 @@ items:
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-analytics-endpoint.md
-  - name: Warehouse collation
-    href: collation.md
-    displayName: case insensitive collation
-  - name: Create a sample warehouse 
-    href: create-warehouse-sample.md
-  - name: Warehouse performance
-    href: guidelines-warehouse-performance.md
+  - name: Data types
+    href: data-types.md
+  - name: Primary, foreign, and unique keys
+    href: table-constraints.md
+  - name: Source control with Warehouse
+    href: source-control.md
   - name: SQL analytics endpoint performance
     href: sql-analytics-endpoint-performance.md
   - name: Tables
     href: tables.md
-  - name: Data types
-    href: data-types.md
   - name: T-SQL surface area
     href: tsql-surface-area.md
-  - name: Primary, foreign, and unique keys
-    href: table-constraints.md
-  - name: Generate unique identifiers
-    href: generate-unique-identifiers.md
   - name: Transactions
     href: transactions.md 
+  - name: Warehouse performance
+    href: guidelines-warehouse-performance.md
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
-  - name: Source control with Warehouse
-    href: source-control.md
-  - name: Analyze with range bands
-    href: analyze-range-bands.md
+  - name: How to
+    items:    
+    - name: Create a sample warehouse 
+      href: create-warehouse-sample.md
+    - name: Analyze with range bands
+      href: analyze-range-bands.md
+    - name: Generate unique identifiers
+      href: generate-unique-identifiers.md
+    - name: Use Case-insensitive collation
+      href: collation.md
+      displayName: case insensitive collation
+
 - name: Dimensional modeling
   items:
   - name: Overview
@@ -133,14 +136,13 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Service principals
+    href: service-principals.md
+    displayName: SPN
   - name: Microsoft Entra ID authentication
     href: entra-id-authentication.md
   - name: Workspace roles
     href: workspace-roles.md
-  - name: Manage SQL granular permissions
-    href: sql-granular-permissions.md
-  - name: Share your data
-    href: share-warehouse-manage-permissions.md    
   - name: Column-level security
     href: column-level-security.md
   - name: Row-level security
@@ -149,6 +151,10 @@ items:
     href: dynamic-data-masking.md
   - name: How to
     items: 
+    - name: Share your data
+      href: share-warehouse-manage-permissions.md    
+    - name: Manage SQL granular permissions
+      href: sql-granular-permissions.md
     - name: Implement column-level security
       href: tutorial-column-level-security.md    
     - name: Implement row-level security
@@ -168,7 +174,7 @@ items:
   - name: Query data as it existed in the past
     href: time-travel.md
     displayName: Time travel
-  - name: "How to: Query using time travel"
+  - name: Query using time travel
     href: how-to-query-using-time-travel.md
     displayName: Query using time travel
   - name: Query data with a T-SQL notebook
@@ -326,17 +332,17 @@ items:
   items:
   - name: Monitoring overview
     href: monitoring-overview.md
-  - name: Monitor using Capacity Metrics app
-    href: usage-reporting.md
-    displayName: Billing, usage reporting
-  - name: Monitor using DMVs
-    href: monitor-using-dmv.md
   - name: Query activity
     href: query-activity.md
   - name: Query insights
     href: query-insights.md
   - name: How to
     items:    
+      - name: Monitor using Capacity Metrics app
+        href: usage-reporting.md
+        displayName: Billing, usage reporting
+      - name: Monitor using DMVs
+        href: monitor-using-dmv.md
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
 - name: Warehouse capacity

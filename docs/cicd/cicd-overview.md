@@ -1,14 +1,17 @@
 ---
-title: Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric
-description: An overview of the CI/CD continuous integration, continuous deployment as part of the ALM cycle process in Microsoft Fabric.
+title: Introduction to CI/CD in Microsoft Fabric
+description: An overview of the CI/CD continuous integration, continuous deployment as part of the Application lifecycle management (ALM) cycle process in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.custom:
   - build-2023
   - ignite-2023
-ms.topic: conceptual
-ms.date: 08/10/2023
+ms.topic: concept-article
+ms.service: fabric
+ms.subservice: cicd
+ms.date: 01/12/2025
+#customer intent: As a developer, I want to understand the CI/CD process in Microsoft Fabric so that I can efficiently manage the lifecycle of my applications.
 ---
 
 # What is lifecycle management in Microsoft Fabric?

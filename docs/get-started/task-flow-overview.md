@@ -4,8 +4,8 @@ description: This article gives an overview of task flows and task flow terminol
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
-ms.topic: concept-article
-ms.date: 06/06/2024
+ms.topic: conceptual
+ms.date: 01/10/2025
 
 #customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution. 
 
@@ -25,7 +25,7 @@ Fabric provides a range of predefined, end-to-end task flows based on industry b
 Each workspace has one task flow. The task flow occupies the upper part of workspace list view. It consists of a canvas where you can build the visualization of your data analytics project, and a side pane where you can see and edit details about the task flow, tasks, and connectors.
 
 > [!NOTE]
-> You can [resize or hide the task flow](./task-flow-work-with.md#resize-or-hide-the-taskflow) using the controls on the horizontal separator bar.
+> You can [resize or hide the task flow](./task-flow-work-with.md#resize-or-hide-the-task-flow) using the controls on the horizontal separator bar.
 
 ## Key concepts
 
@@ -47,12 +47,15 @@ Each task has a task type that classifies the task based on its key capabilities
 | Task type | What you want to do with the task |
 |:--------|:----------|
 | **General** | Create a customized task for your project needs that you can assign available item types to. |
-| **Get data** | Ingest both batch and real-time data into a single location within your Fabric workspace. |
+| **Get data** | Ingest batch and real-time data into a single location within your Fabric workspace. |
+| **Mirror data** | Replicate your data from any location to OneLake in near real-time. |
 | **Store data** | Organize, query, and store your ingested data in an easily retrievable format. |
 | **Prepare data** | Clean, transform, extract, and load your data for analysis and modeling tasks. |
 | **Analyze and train data** | Propose hypotheses, train models, and explore your data to make decisions and predictions. |
 | **Track data** | Monitor your streaming or nearly real-time operational data, and make decisions based on gained insights. |
 | **Visualize data** | Present your data as rich visualizations and insights that can be shared with others. |
+| **Distribute data** | Package your items for distribution as customized, easy-to-use apps. |
+| **Develop data** | Create and build your software, applications, and data solutions. |
 
 ### Connector
 
@@ -62,7 +65,6 @@ Connectors are arrows that represent logical connections between the tasks in th
 
 ## Considerations and limitations
 
-* The positioning of tasks on the task flow canvas is persistent. However, due to a known issue, when a new task is added to the canvas, all tasks that aren't connected to another task will return to their default position. Therefore, whenever possible, it's recommended to connect all tasks before adding a new task.
 * Creating paginated reports, dataflows Gen1, and semantic models from a task isn't supported.
 * Creating reports from a task is supported only if a published semantic model is picked. 
 
