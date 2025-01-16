@@ -17,18 +17,18 @@ ms.date: 07/25/2024
 
 # OneLake, the OneDrive for data
 
-OneLake is a single, unified, logical data lake for your whole organization. A data Lake processes large volumes of data from various sources. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
+OneLake is a single, unified, logical data lake for your whole organization. A data lake processes large volumes of data from various sources. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
 
 - **One data lake** for the entire organization
 - **One copy of data** for use with multiple analytical engines
 
 ## One data lake for the entire organization
 
-Before OneLake, it was easier for customers to create multiple lakes for different business groups rather than collaborating on a single lake, even with the extra overhead of managing multiple resources. OneLake focuses on removing these challenges by improving collaboration. Every customer tenant has exactly one OneLake. There can never be more than one and if you have Fabric, there can never be zero. Every Fabric tenant automatically provisions OneLake, with no extra resources to set up or manage.
+Before OneLake, it was easier for customers to create multiple lakes for different business groups rather than collaborating on a single lake, even with the extra overhead of managing multiple resources. OneLake focuses on removing these challenges by improving collaboration. Every customer tenant has exactly one (1) OneLake. There can never be more than one (1) and if you have Fabric, there can never be zero. Every Fabric tenant automatically provisions OneLake, with no extra resources to set up or manage.
 
 ### Governed by default with distributed ownership for collaboration
 
-The concept of a tenant is a unique benefit of a SaaS service. Knowing where a customer’s organization begins and ends provides a natural governance and compliance boundary, which is under the control of a tenant admin. Any data that lands in OneLake is governed by default. While all data is within the boundaries set by the tenant admin, it's important that this admin doesn't become a central gatekeeper preventing other parts of the organization from contributing to OneLake.
+The concept of a tenant is a unique benefit of a SaaS service. Knowing where a customer’s organization begins and ends provides a natural governance and compliance boundary, which is under the control of a tenant admin. Any data that lands in OneLake is governed by default. While all data is within the boundaries set by the tenant admin, it's important that this admin does not become a central gatekeeper preventing other parts of the organization from contributing to OneLake.
 
 Within a tenant, you can create any number of workspaces. Workspaces enable different parts of the organization to distribute ownership and access policies. Each workspace is part of a capacity that is tied to a specific region and is billed separately.
 
@@ -72,7 +72,7 @@ For more information on how to use shortcuts, see [OneLake shortcuts](onelake-sh
 
 While applications might have separation of storage and computing, the data is often optimized for a single engine, which makes it difficult to reuse the same data for multiple applications. With Fabric, the different analytical engines (T-SQL, Apache Spark, Analysis Services, etc.) store data in the open Delta Parquet format to allow you to use the same data across multiple engines.
 
-There's no longer a need to copy data just to use it with another engine. You're always able to choose the best engine for the job that you're trying to do. For example, imagine you have a team of SQL engineers building a fully transactional data warehouse. They can use the T-SQL engine and all the power of T-SQL to create tables, transform data, and load the data to tables. If a data scientist wants to make use of this data, they no longer need to go through a special Spark/SQL driver. OneLake stores all data in Delta Parquet format. Data scientists can use the full power of the Spark engine and its open-source libraries directly over the data.
+There is no longer a need to copy data just to use it with another engine. You are always able to choose the best engine for the job that you are trying to do. For example, imagine you have a team of SQL engineers building a fully transactional data warehouse. They can use the T-SQL engine and all the power of T-SQL to create tables, transform data, and load the data to tables. If a data scientist wants to make use of this data, they no longer need to go through a special Spark/SQL driver. OneLake stores all data in Delta Parquet format. Data scientists can use the full power of the Spark engine and its open-source libraries directly over the data.
 
 Business users can build Power BI reports directly on top of OneLake using the new Direct Lake mode in the Analysis Services engine. The Analysis Services engine is what powers Power BI semantic models, and it has always offered two modes of accessing data: import and direct query. Direct Lake mode gives users all the speed of import without needing to copy the data, combining the best of import and direct query. For more information, see [Direct Lake](https://aka.ms/DirectLake).
 
