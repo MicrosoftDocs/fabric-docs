@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, sbahadur
-ms.date: 12/06/2024
+ms.date: 01/15/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -83,7 +83,7 @@ For troubleshooting, see:
 
 ## Warehouse limitations
 
-- Source schema hierarchy is not replicated to the mirrored database. Instead, source schema is flattened, and schema name is encoded into the mirrored database table name.  
+- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this capability was enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
 
 ## Mirrored item limitations
 

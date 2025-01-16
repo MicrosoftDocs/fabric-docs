@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 12/06/2024
+ms.date: 01/15/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -107,7 +107,7 @@ The feature availability also depends on Fabric regions. For a complete list of 
 ## SQL analytics endpoint limitations
 
 - The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. See [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
-- Source schema hierarchy isn't replicated to the mirrored database. Instead, source schema is flattened, and schema name is encoded into the mirrored database table name.  
+- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this capability was enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
 
 ## Supported regions
 
