@@ -59,7 +59,7 @@ If you want to replicate selective tables instead of all the tables in the speci
 > 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
 > [!NOTE]
-> `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database. If your Fabric capacity region is in North Central US or East US, don't specify this property as currently this feature isn't supported in those regions.
+> `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database.
 
 ### JSON definition example of Snowflake
 
