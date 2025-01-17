@@ -127,6 +127,10 @@ sections:
           SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](../../admin/region-availability.md).
 
           Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
+      - question: |
+          My capacity is in a supported region but I still do not see the option to enable SQL database. What should I do?
+        answer:
+          SQL database in Fabric must be available in the home region of the tenant as well as the capacity region. Check the home region of your tenant to ensure SQL database in Fabric is available in that region. For more information, see [Fabric availability](../../admin/region-availability.md).
 
   - name: Troubleshooting
     questions:

@@ -18,7 +18,7 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 # What is deployment pipelines?
 
 > [!NOTE]
-> This articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
+> The articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
 Microsoft Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
 
@@ -47,6 +47,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md) *(preview)*
 * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another) *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Organizational apps *(preview)*
 * Paginated reports
