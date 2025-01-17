@@ -22,7 +22,7 @@ Microsoft Fabric environments provide flexible configurations for running your S
 
 Public libraries are sourced from repositories such as PyPI and Conda, which Fabric currently supports.
 
-:::image type="content" source="media\environment-lm\env-library-management-public-library.png" alt-text="Screenshot of the environment Public Libraries screen.":::
+:::image type="content" source="media\environment-lm\env-library-management-public-library.png" alt-text="Screenshot of the environment Public Libraries screen." lightbox="media\environment-lm\env-library-management-public-library.png":::
 
 ### Add a new public library
 
@@ -66,7 +66,7 @@ Custom libraries refer to code built by you or your organization. Fabric support
 > Fabric only supports *.tar.gz* files for R language.
 > Use the *.whl* file format for Python language.
 
-:::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot of the environment Custom Libraries screen.":::
+:::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot of the environment Custom Libraries screen." lightbox="media\environment-lm\env-library-management-custom-library.png":::
 
 ### Upload the custom library
 

@@ -13,9 +13,9 @@ ms.date: 11/11/2024
 
 # Configure high concurrency mode for Fabric notebooks
 
-When you run a notebook in Microsoft Fabric, an Apache Spark session is started and is used to run the queries submitted as part of the notebook cell executions. With High Concurrency Mode enabled, there's no need to start new spark sessions every time to run a notebook.
+When you run a notebook in Microsoft Fabric, an Apache Spark session is started and is used to run the queries submitted as part of the notebook cell executions. With high concurrency mode enabled, there's no need to start new spark sessions every time to run a notebook.
 
-If you already have a High Concurrency session running, you could attach notebooks to the high concurrency session getting a spark session instantly to run the queries and achieve a greater session utilization rate.
+If you already have a high concurrency session running, you could attach notebooks to the high concurrency session getting a spark session instantly to run the queries and achieve a greater session utilization rate.
 
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-session-working.gif" alt-text="Animation showing high concurrency session for notebooks.":::
 
@@ -34,15 +34,13 @@ For notebooks to share a single Spark session, they must:
 
 ## Configure high concurrency mode
 
-By default, all the Fabric workspaces are enabled with high concurrency Mode. Use the following steps to configure the high concurrency feature:
+By default, all the Fabric workspaces are enabled with high concurrency mode. Use the following steps to configure the high concurrency feature:
 
-1. Click on **Workspace Settings** Option in your Fabric Workspace
+1. Click on **Workspace settings** option in your Fabric workspace.
 
-   :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png" alt-text="Screenshot showing the navigation to workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png":::
+1. Navigate to the **Data Engineering/Science** section > **Spark settings** > **High concurrency**.
 
-1. Navigate to the **Data Engineering/Science** section > **Spark settings** > **High concurrency**
-
-1. In the **High concurrency** section and enable it **for notebooks**. You could choose to **enable** or **disable** the setting from this pane.
+1. In the **High concurrency** section, enable the **For notebooks** setting. You can choose to **enable** or **disable** the setting from this pane.
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-high-concurrency-section-selected.png" alt-text="Screenshot showing the high concurrency section in workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-high-concurrency-section-selected.png":::
 
@@ -54,37 +52,37 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
 ## Run notebooks in high concurrency session
 
-1. Open the Fabric workspace
+1. Open the Fabric workspace.
 
-1. Create a Notebook or open an existing Notebook
+1. Create a notebook or open an existing notebook.
 
-1. Navigate to the **Run** tab in the menu ribbon and select on the **session type** dropdown that has **Standard** selected as the default option.
+1. Navigate to the **Run** tab in the menu ribbon and select the **session type** dropdown that has **Standard** selected as the default option.
 
-   :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-high-concurrency-session.png" alt-text="Screenshot showing the high concurrency option in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\start-high-concurrency-session.png":::
+   :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-high-concurrency-session.png" alt-text="Screenshot showing the high concurrency option in the Notebook menu." lightbox="media\high-concurrency-mode-for-notebooks\start-high-concurrency-session.png":::
 
 1. Select **New high concurrency session**.
 
 1. Once the high concurrency session has started, you could now add upto 5 notebooks in the high concurrency session.
 
-   :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png" alt-text="Screenshot showing the option to start a new high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png":::
+   :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png" alt-text="Screenshot showing the option to start a new high concurrency session in the Notebook menu." lightbox="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png":::
 
 1. Create a new notebook and by navigating to the **Run** menu as mentioned in the above steps, in the drop-down menu you will now see the newly created high concurrency session listed.
 
 1. Selecting the existing high concurrency session attaches the second notebook to the session.
 
-   :::image type="content" source="media\high-concurrency-mode-for-notebooks\attach-session.png" alt-text="Screenshot showing the option to attach to an existing high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\attach-session.png":::
+   :::image type="content" source="media\high-concurrency-mode-for-notebooks\attach-session.png" alt-text="Screenshot showing the option to attach to an existing high concurrency session in the Notebook menu." lightbox="media\high-concurrency-mode-for-notebooks\attach-session.png":::
 
 1. Once the notebook has been attached, you can start executing the notebook steps instantly.
 
 1. The high concurrency session status also shows the number of notebooks attached to a given session at any point in time.
 
-1. At any point in time if you feel the notebook attached to a high concurrency session requires more dedicated compute, you can choose to switch the notebook to a standard session by selecting the option to detach the notebook from the High Concurrency in the Run menu tab.
+1. At any point in time if you feel the notebook attached to a high concurrency session requires more dedicated compute, you can choose to switch the notebook to a standard session by selecting the option to detach the notebook from the high concurrency in the Run menu tab.
 
-    :::image type="content" source="media\high-concurrency-mode-for-notebooks\detach-to-standard-session.png" alt-text="Screenshot showing the option to detach from a high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\detach-to-standard-session.png":::
+    :::image type="content" source="media\high-concurrency-mode-for-notebooks\detach-to-standard-session.png" alt-text="Screenshot showing the option to detach from a high concurrency session in the Notebook menu." lightbox="media\high-concurrency-mode-for-notebooks\detach-to-standard-session.png":::
 
-1. You can view the session status, type and session ID by navigating to **status** bar, select the **Session ID** allows you to explore the jobs executed in this high concurrency session and view logs of the spark session in the monitoring detail page.
+1. You can view the session status, type, and ID in the **status bar**. Select the **Session ID** to explore the jobs executed in this high concurrency session and to view logs of the spark session on the monitoring detail page.
 
-   :::image type="content" source="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png" alt-text="Screenshot showing the session details of a high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png":::
+   :::image type="content" source="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png" alt-text="Screenshot showing the session details of a high concurrency session in the Notebook menu." lightbox="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png":::
 
 ## Monitoring and debugging notebooks running in high concurrency session
 
@@ -106,5 +104,5 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 
 In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering experiences using Lakehouse and Notebooks:
 
-- To get started with Lakehouse, see [Creating a Lakehouse](create-lakehouse.md).
-- To get started with Notebooks, see [How to use a Notebook](how-to-use-notebook.md)
+* To get started with Lakehouse, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).
+* To get started with notebooks, see [How to use a Microsoft Fabric notebooks](how-to-use-notebook.md).

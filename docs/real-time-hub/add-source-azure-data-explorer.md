@@ -17,10 +17,11 @@ This article describes how to create a database shortcut for an Azure Data Explo
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - You need to have a **contributor** role or higher to the Azure Data Explorer cluster.  
 
+## Navigate to Real-Time hub
+[!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
+
 ## Launch Create Database Shortcut experience 
 
-1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/). 
-1. Select **Real-Time hub** from the left navigation bar. 
 1. In the left pane, select **Microsoft sources**.
 1. From the **Source** drop-down menu, choose **Azure Data Explorer**. 
 

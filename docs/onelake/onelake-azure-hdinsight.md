@@ -28,7 +28,7 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
 1. Give this UAMI access to the Fabric workspace that contains your items. For help deciding what role is best, see [Workspace roles](..\get-started\roles-workspaces.md).
 
-   :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.jpg" alt-text="Screenshot showing where to select an item in the Manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.jpg":::
+   :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.png" alt-text="Screenshot showing how to open the manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.png":::
 
 1. Navigate to your lakehouse and find the name for your workspace and lakehouse. You can find them in the URL of your lakehouse or the **Properties** pane for a file.
 

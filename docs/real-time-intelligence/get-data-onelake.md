@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2024
-ms.date: 11/19/2024
+ms.date: 12/24/2024
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -25,10 +25,9 @@ In this article, you learn how to get data from OneLake into either a new or exi
 
 ## Copy file path from Lakehouse
 
-1. In the experience switcher, choose **Data Engineering**.
-1. Select the Lakehouse environment containing the data source you want to use.
+1. From your workspace select the Lakehouse environment containing the data source you want to use.
 
-1. Place your cursor over the desired file and select the **More** menu, then select **Properties**.
+1. Place your cursor over the desired file and select the **More (...)** menu, then select **Properties**.
 
     > [!IMPORTANT]
     >
