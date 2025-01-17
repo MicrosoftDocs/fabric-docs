@@ -24,11 +24,11 @@ OneLake catalog's govern tab is a centralized place to help you analyze, improve
 
 To open the govern tab, select the OneLake catalog icon in the Fabric navigation pane and then select the govern tab.
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-open.png":::
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the OneLake catalog.":::
 
 ## Your governance status at a glance
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-governance-status.png" alt-text="Screenshot showing the top insights on the govern tab.":::
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png" alt-text="Screenshot showing the top insights on the govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png":::
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
