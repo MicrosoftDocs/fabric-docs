@@ -18,7 +18,7 @@ ms.search.form: Deployment rules
 
 When you're working in a deployment pipeline, different stages might have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, you can define a rule for semantic model in a production stage to point to a production database instead of one in the test stage. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, inherits the value as defined in the deployment rule. This rule always applies as long as it's unchanged and valid.
+When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, you can define a rule for semantic model in a production stage to point to a production database instead of one in the test stage. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production inherits the value as defined in the deployment rule. This rule always applies as long as it's unchanged and valid.
 
 > [!NOTE]
 > The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
@@ -31,6 +31,7 @@ You can configure data source rules, parameter rules, and default lakehouse rule
 |**Semantic model**          |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific semantic model.         |
 |**Datamart**         |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific datamart.         |
 |**Paginated report** |✅ |❌ |❌ |Defined for the data sources of each paginated report. Use to determine the data sources of the paginated report. |
+|**Mirrored database** |✅ |❌ |❌ |Defined for the data sources of each mirrored database. |
 |**Notebook** |❌ |❌ |✅ |Use to determine the default lakehouse for a specific notebook. |
 
 >[!NOTE]

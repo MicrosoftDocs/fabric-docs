@@ -318,6 +318,8 @@ items:
         href: ../database/mirrored-database/open-mirroring-partners-ecosystem.md
   - name: Mirroring REST API
     href: ../database/mirrored-database/mirrored-database-rest-api.md 
+  - name: CI/CD for mirrored databases
+    href: ../database/mirrored-database/mirrored-database-cicd.md 
   - name: Troubleshoot Mirroring
     href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance
