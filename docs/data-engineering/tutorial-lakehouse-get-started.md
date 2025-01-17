@@ -23,11 +23,9 @@ Sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). T
 
 In this step, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI semantic models, and reports.
 
-1. Sign in to [Power BI](https://powerbi.com/).
+1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 
 1. Select **Workspaces** and **New workspace**.
-
-   :::image type="content" source="media\tutorial-lakehouse-get-started\create-new-workspace.png" alt-text="Screenshot showing where to select Workspaces and create a new workspace.":::
 
 1. Fill out the **Create a workspace** form with the following details:
 

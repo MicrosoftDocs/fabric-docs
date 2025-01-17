@@ -137,7 +137,7 @@ items:
     items:
     - name: Capacity settings overview
       href: capacity-settings-overview.md
-    - name: Configure capacity Settings
+    - name: Configure capacity settings
       href: capacity-settings-management.md
     - name: Spark workspace settings 
       href: workspace-admin-settings.md

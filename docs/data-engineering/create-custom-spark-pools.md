@@ -25,9 +25,7 @@ To create or manage the Spark pool associated with your workspace:
 
 1. Go to your workspace and select **Workspace settings**.
 
-   :::image type="content" source="media\workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu.":::
-
-1. Select the **Data Engineering/Science** option to expand the menu and then select **Spark Compute**.
+1. Select the **Data Engineering/Science** option to expand the menu, then select **Spark settings**.
 
    :::image type="content" source="media/workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media/workspace-admin-settings/spark-compute-detail-view.png" :::
 
