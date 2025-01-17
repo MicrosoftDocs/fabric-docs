@@ -26,6 +26,14 @@ To open the govern tab, select the OneLake catalog icon in the Fabric navigation
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-open.png":::
 
+| Insight | What does it show and why is it important |
+|:--------|:--------|
+| **Summary** | The first insight shows you at a glance how many items you own, how many workspaces they’re spread over, and how many domains you have items associated with. |
+| **Items you own by type** | This insight shows you at a glance how your data is distributed over different item types. |
+| **Items you own by last refresh date** | Gives you a glance at how up to date your data is. Regularly refreshing items ensures that data remains current and relevant, reducing the risk of outdated or unused items cluttering the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs. |
+| **Items with description** | Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, as well as hinder reuse. |
+| **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
+
 ## Data refresh
 
 The data shown in the insights visuals reflects the last successful refresh of the the OneLake catalog report located in your My workspace. The data automatically refreshes whenever you visit the govern tab. You can also manually refresh the data on demand using the **Refresh** button on the govern tab.
