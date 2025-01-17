@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
   - ignite-2024
 ms.collection: ce-skilling-ai-copilot
-ms.date: 11/05/2024
+ms.date: 01/15/2025
 ---
 
 # Microsoft Fabric trial capacity
@@ -111,7 +111,7 @@ If you're the Capacity administrator, assign the trial capacity to multiple work
 1. Open **Workspaces** and select the name of a Premium workspace.
 2. Select the ellipses(...) and choose **Workspace settings** > **Premium** > **Trial**.
 
-    :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+    :::image type="content" source="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
 For more information, see [Use Workspace settings](workspaces.md#license-mode).  
 
@@ -234,7 +234,7 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 
 Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Trial** as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
-:::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+:::image type="content" source="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
 ## Related content
 
