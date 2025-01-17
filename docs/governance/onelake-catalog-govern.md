@@ -26,6 +26,10 @@ To open the govern tab, select the OneLake catalog icon in the Fabric navigation
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-open.png":::
 
+## Your governance status at a glance
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-governance-status.png" alt-text="Screenshot showing the top insights on the govern tab.":::
+
 | Insight | What does it show and why is it important |
 |:--------|:--------|
 | **Summary** | Shows you at a glance how many items you own, how many workspaces they're spread over, and how many domains you have items associated with. |
