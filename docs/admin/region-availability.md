@@ -21,6 +21,8 @@ For details about purchasing a Fabric subscription, see [Buy a Microsoft Fabric 
 
 Your [home region](find-fabric-home-region.md) is associated with your tenant. If your home region doesn't reside in the regions listed below, you won’t be able to access all the Fabric functionalities. In such cases, to access all the Fabric features, you can create a capacity in a region where Fabric is available. For more information, see [Multi-Geo support for Fabric](service-admin-premium-multi-geo.md).
 
+[!INCLUDE [tenant-region-availability-note](../includes/tenant-region-availability-note.md)]
+
 ## Workload and feature availability
 
 The tables below list the availability of Fabric workloads according to the region your tenant is in.
