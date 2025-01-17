@@ -43,15 +43,13 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
 
 Use the following steps to create a lakehouse:
 
-1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
-
-1. Switch to the **Data Engineering** experience.
+1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 
 1. Navigate to your desired workspace or create a new one if needed.
 
-1. To create a lakehouse, select **New item** from the workspace and select **Lakehouse**.
+1. To create a lakehouse, select **New item** from the workspace, then select **Lakehouse** in the panel that opens.
 
-   :::image type="content" source="media\get-started-streaming\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog.":::
+   :::image type="content" source="media\get-started-streaming\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-streaming\new-lakehouse.png":::
 
 1. Enter name of your lakehouse and select **Create**.
 
@@ -59,11 +57,9 @@ Use the following steps to create a lakehouse:
 
 Use the following steps to create a Spark Job Definition:
 
-1. From the same workspace where you created a lakehouse, select the **Create** icon from the left menu.
+1. From the same workspace where you created a lakehouse, select **New item**.
 
-1. Under "Data Engineering", select **Spark Job Definition**.
-
-   :::image type="content" source="media\get-started-streaming\new-sjd.png" alt-text="Screenshot showing new Spark Job Definition dialog.":::
+1. In the panel that opens, under **Get data**, select **Spark Job Definition**.
 
 1. Enter name of your Spark Job Definition and select **Create**.
 

@@ -4,7 +4,7 @@ description: Learn how to create a Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 09/24/2024
+ms.date: 12/30/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -20,43 +20,33 @@ ms.search.form: Create a warehouse # This article's title should not change. If 
 This article describes how to get started with [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including discovering creation and consumption of the warehouse. You learn how to create your warehouse from scratch and sample along with other helpful information to get you acquainted and proficient with warehouse capabilities offered through the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
 > [!TIP]
-> You can proceed with either a [new blank Warehouse](#how-to-create-a-blank-warehouse) or [a new Warehouse with sample data](#how-to-create-a-warehouse-with-sample-data) to continue this series of Get Started steps.
+> You can proceed with either a [new blank Warehouse](#how-to-create-a-blank-warehouse) or [a new Warehouse with sample data](#how-to-create-a-warehouse-sample) to continue this series of Get Started steps.
 
-<a id="how-to-create-a-warehouse"></a>
+<a id="how-to-create-a-warehouse"></a><a id="how-to-create-a-blank-warehouse"></a>
 
-## How to create a blank warehouse
+## Create a warehouse
 
-In this section, we walk you through three distinct workloads available for creating a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from scratch in the [!INCLUDE [product-name](../includes/product-name.md)] portal: using [the Home hub](#create-a-warehouse-using-the-home-hub), [the Create hub](#create-a-warehouse-using-the-create-hub), or [the workspace list view](#create-a-warehouse-from-the-workspace-list-view).
+You can start creating your warehouse from the workspace. Select **+ New Item** and look for the **Warehouse** or **Sample warehouse** card under the **Store data** section. 
 
-#### Create a warehouse using the Home hub
+An empty warehouse is created for you to start creating objects in the warehouse. You can use either [sample data](/azure/open-datasets/dataset-catalog) to get a jump start or load your own test data if you prefer.
 
-The first hub in the navigation pane is the **Home** hub. You can start creating your warehouse from the **Home** hub by selecting the **Warehouse** card under the **New** section. An empty warehouse is created for you to start creating objects in the warehouse. You can use either [sample data](/azure/open-datasets/dataset-catalog) to get a jump start or load your own test data if you prefer.
+:::image type="content" source="media/create-warehouse/warehouse-home-hub.png" alt-text="Screenshot showing the Sample warehouse and Warehouse cards in the New Item menu.":::
 
-:::image type="content" source="media/create-warehouse/warehouse-home-hub.png" alt-text="Screenshot showing the Warehouse card in the Home hub.":::
-
-#### Create a warehouse using the Create hub
-
-Another option available to create your warehouse is through the **Create** hub, which is the second hub in the navigation pane.
-
-You can create your warehouse from the **Create** hub by selecting the **Warehouse** card under the **Data Warehousing** section. When you select the card, an empty warehouse is created for you to start creating objects in the warehouse or use a sample to get started as previously mentioned.
-
-#### Create a warehouse from the workspace list view
-
-To create a warehouse, navigate to your workspace, select **+ New** and then select **Warehouse** to create a warehouse.
-
-#### Ready for data
+Another option available to create your warehouse is through the **Create** button in the navigation pane. Look for the **Warehouse** or **Sample warehouse** cards under **Data Warehouse**.
 
 Once initialized, you can load data into your warehouse. For more information about getting data into a warehouse, see [Ingesting data](ingest-data.md).
 
 <a id="how-to-create-a-warehouse-sample"></a>
 
-## How to create a warehouse with sample data
+## Create a warehouse with sample data
 
 In this section, we walk you through creating a sample [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from scratch.
 
-1. The first hub in the navigation pane is the **Home** hub. You can start creating your warehouse sample from the **Home** hub by selecting the **Warehouse sample** card under the **New** section.
+1. Select the **Warehouse sample** card.
+    - In your workspace, select **+ New Item** and look for the **Warehouse** or **Sample warehouse** card under the **Store data** section. 
+    - Or, select **Create** in the navigation pane. Look for the **Warehouse** or **Sample warehouse** cards under **Data Warehouse**.
 
-   :::image type="content" source="media/create-warehouse/home-hub-warehouse-sample.png" alt-text="Screenshot showing the Warehouse sample card in the Home hub.":::
+   :::image type="content" source="media/create-warehouse/home-hub-warehouse-sample.png" alt-text="Screenshot showing the Warehouse and Sample warehouse cards.":::
 
 1. Provide the name for your sample warehouse and select **Create**.
 
@@ -73,8 +63,6 @@ If you have an existing warehouse created that's empty, the following steps will
 1. The data loading takes few minutes to complete.
 
 1. On completion of loading sample data, the warehouse displays data loaded into tables and views to query.
-
-   :::image type="content" source="media/create-warehouse/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the warehouse loaded with sample data." lightbox="media/create-warehouse/warehouse-with-sample-table-view.png":::
 
 1. The following sample T-SQL scripts can be used on the sample data in your new warehouse.
 

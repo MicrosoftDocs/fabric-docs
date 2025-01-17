@@ -8,7 +8,7 @@ reviewer: avangrootel
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 09/21/2024
+ms.date: 01/09/2025
 ms.collection: ce-skilling-ai-copilot
 
 ---
@@ -64,11 +64,15 @@ After a few minutes, the lakehouse is populated with the necessary data.
 
 ## Create an AI skill
 
-1. To create a new AI skill, go to the **Data Science** experience and select **AI Skill**.
+1. To create a new AI skill, first select **New item**, as shown in this screenshot:
 
-   :::image type="content" source="./media/ai-skill-scenario/create-first-ai-skill.png" alt-text="Screenshot showing where to create AI skills." lightbox="./media/ai-skill-scenario/create-first-ai-skill.png":::
+   :::image type="content" source="./media/ai-skill-scenario/create-ai-skill-scenario-new-item-step.png" alt-text="Screenshot showing the New item step to build an AI skill." lightbox="./media/ai-skill-scenario/create-ai-skill-scenario-new-item-step.png":::
 
-1. Enter a name to create an AI skill.
+1. At the next screen, type **AI skill** in the upper right text box, and select the **AI Skill (preview)** at the left, as shown in this screenshot:
+
+   :::image type="content" source="./media/ai-skill-scenario/select-the-ai-skill-item-type.png" alt-text="Screenshot showing selection of the AI skill item type." lightbox="./media/ai-skill-scenario/select-the-ai-skill-item-type.png":::
+
+1. Enter a name to create an AI skill, and select **Create**.
 
 ## Select the data
 
@@ -127,7 +131,7 @@ This scenario uses the following set of instructions:
 - When analyzing trends over time, use `FactInternetSales` and join with `DimDate` to group data by month, quarter, or year.
 - Always check for data consistency by joining `FactInternetSales` with the corresponding dimension tables.
 - Use SUM for aggregating sales data to ensure you're capturing total values accurately.
-- Prioritize sales revenue metrics over order quantity to gauge the financial impact accurately.
+- Prioritize sales revenue metrics over order quantity, to gauge the financial impact accurately.
 - Always group by relevant dimensions (for example, product, customer, date) to get detailed insights.
 - When asked about customer demographics, join `DimCustomer` with relevant fact tables.
 - For sales by promotion, join `FactInternetSales` with `DimPromotion` and group by promotion name.

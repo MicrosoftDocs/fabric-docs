@@ -48,11 +48,11 @@ In **Workspace settings**, review your existing configurations.
 
 3. *Skip this step if you didn't have any public libraries in your workspace settings.* Navigate to the **Public Libraries** section and select **Add from .yml** on the ribbon. Upload **Publiclibrary.yml**, which you downloaded from the existing workspace settings.
 
-    :::image type="content" source="media\environment-migration\create-and-configure-env-public-library.png" alt-text="Screenshot showing where to select Add from .yml to install a public library.":::
+    :::image type="content" source="media\environment-migration\create-and-configure-env-public-library.png" alt-text="Screenshot showing where to select Add from .yml to install a public library." lightbox="media\environment-migration\create-and-configure-env-public-library.png":::
 
 4. *Skip this step if you didn't have any custom libraries in your workspace settings.* Navigate to the **Custom Libraries** section and select **Upload** on the ribbon. Upload the custom library files, which you downloaded from the existing workspace settings.
 
-    :::image type="content" source="media\environment-migration\create-and-configure-env-custom-library.png" alt-text="Screenshot showing where to select Upload to install a custom library.":::
+    :::image type="content" source="media\environment-migration\create-and-configure-env-custom-library.png" alt-text="Screenshot showing where to select Upload to install a custom library." lightbox="media\environment-migration\create-and-configure-env-custom-library.png":::
 
 5. *Skip this step if you didn't have any Spark properties in your workspace settings.* Navigate to the **Spark properties** section and select **Upload** on the ribbon. Upload the **Sparkproperties.yml** file, which you downloaded from the existing workspace settings.
 

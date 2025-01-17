@@ -31,7 +31,7 @@ If you are the admin of a workspace, navigate to the workspace settings, and set
 
 After connecting, you can find items including the environments syncing with the repo.
 
-:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-git-connected-to-repo.png" alt-text="Screenshot of successfully connecting the workspace to an Azure DevOps repo.":::
+:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-git-connected-to-repo.png" alt-text="Screenshot of successfully connecting the workspace to an Azure DevOps repo." lightbox="media\environment-git-and-deployment-pipeline\environment-git-connected-to-repo.png":::
 
 ### Local representation of an environment in Git
 
@@ -66,7 +66,7 @@ Fabric’s deployment pipelines simplify the process of delivering modified cont
 
 You can set up a deployment pipeline by assigning the workspaces with different phases. Learn more on [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
-:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-deployment-pipeline.png" alt-text="Screenshot of deploying environment in deployment pipeline.":::
+:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-deployment-pipeline.png" alt-text="Screenshot of deploying environment in deployment pipeline." lightbox="media\environment-git-and-deployment-pipeline\environment-deployment-pipeline.png":::
 
 You can find the deploying status after setting up the pipeline successfully. After clicking the **Deploy** button with environment selected, all contents of the environment are deployed to the destination workspaces. The status of the original environment is preserved in this process, meaning the published configurations stay in published state and require no extra publishing.
 
