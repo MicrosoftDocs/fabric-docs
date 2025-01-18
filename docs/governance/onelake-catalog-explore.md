@@ -10,7 +10,7 @@ ms.custom: ignite-2024-fabric, ignite-2024
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
 
-# Discover and explore Fabric items in the OneLake catalog
+# Find and explore data in the OneLake catalog
 
 OneLake catalog's explore tab helps you find, explore, and use the Fabric items you need. It features an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. The explore tab also features selectors and filters to narrow down and focus the list, making it easier to find what you need.
 

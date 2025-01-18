@@ -13,7 +13,7 @@ items:
     href: standards-compliance.md
 - name: OneLake catalog
   items:
-  - name: Overview
+  - name: OneLake catalog overview
     href: onelake-catalog-overview.md
   - name: Find and explore data
     href: onelake-catalog-explore.md

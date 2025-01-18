@@ -10,7 +10,7 @@ ms.custom:
 #customer intent: As data owner, I want to learn about OneLake catalog's Govern tab, and use it's capabilities to get insights about and govern the data in Fabric that I own.
 ---
 
-# Govern your data in Fabric
+# Monitor and improve your data's governance posture with the OneLake catalog
 
 OneLake catalog's govern tab is a centralized place to help you analyze, improve, and monitor the governance posture of the data you own across Fabric. The govern tab provides:
 

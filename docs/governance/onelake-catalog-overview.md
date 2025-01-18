@@ -18,9 +18,9 @@ OneLake catalog is a centralized place that helps you find, explore, and use the
 
 * **[Govern tab](./onelake-catalog-govern.md)**: The govern tab provides insights that help you understand the governance posture of all the data you own in Fabric, and presents recommended actions you can take to improve the governance status of your data.
 
-:::image type="content" source="./media/onelake-catalog-overview/onelake-catalog-overview-general-view.png" alt-text="Screenshot showing the OneLake catalog." lightbox="./media/onelake-catalog-overview/onelake-catalog-overview-general-view.png"::: 
-
 To get to the OneLake catalog, select the OneLake icon in the Fabric navigation pane. By default the catalog opens on the explore tab. If necessary, select the tab you're interested in to continue.
+
+:::image type="content" source="./media/onelake-catalog-overview/onelake-catalog-overview-general-view.png" alt-text="Screenshot showing the OneLake catalog." lightbox="./media/onelake-catalog-overview/onelake-catalog-overview-general-view.png":::
 
 ## Related content
 
