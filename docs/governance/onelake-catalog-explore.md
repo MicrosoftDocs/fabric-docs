@@ -14,7 +14,7 @@ ms.custom: ignite-2024-fabric, ignite-2024
 
 OneLake catalog's explore tab helps you find, explore, and use the Fabric items you need. It features an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. The explore tab also features selectors and filters to narrow down and focus the list, making it easier to find what you need.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-tab-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog explore tab." lightbox="./media/onelake-catalog-explore/onelake-explore-tab-general-view.png" border="false"::: 
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-tab-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog explore tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-tab-general-view.png" border="false"::: 
 
 The explore tab provides
 
