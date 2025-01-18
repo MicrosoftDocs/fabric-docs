@@ -44,7 +44,7 @@ Select **View more** to see all available insights, which include insights about
 | **Summary** | Shows you at a glance how many items you own, how many workspaces they're spread over, and how many domains you have items associated with. |
 | **Items you own by type** | Shows you at a glance how your data is distributed over different item types. |
 | **Items you own by last refresh date** | Shows you at a glance how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs. |
-| **Items with description** | Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, as well as hinder reuse. |
+| **Items with description** | Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, and hinder reuse. |
 | **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
 
 ### All insights
@@ -58,13 +58,13 @@ Select **View more** to see all available insights, which include insights about
 | **Workspace assignment to domains** | Shows you how many workspaces as assigned to a domain. |
 | **Items by type** | Shows you how many items you own by type. |
 | **Items by last refresh** | Shows you how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs.|
-| **Items last refreshed more than 4 months ago** | Data that hasn't been refreshed in over four months is quite likely to be stale and could indicate a refresh problem. |
+| **Items last refreshed more than 4 months ago** | Data that hasn't been refreshed in over four months is likely to be stale and could indicate a refresh problem. |
 | **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
-| **Items you last visited more than 4 months ago** | Shows you the number and type of items that you should review to make sure that they are still current and needed. |
+| **Items you last visited more than 4 months ago** | Shows you the number and type of items that you should review to make sure that they're still current and needed. |
 
 #### Sensitivity label coverage
 
-Sensitivity labels help users understand the sensitivity of the data they work with. Moreover, some organizations mightt use sensitivity labels to apply access control on sensitive data. Hence unlableled items represent a potential security risk, both because users are more likely to make inappropriate use such data, and because there is no protection in the case of accidental exposure to non-authorized users.
+Sensitivity labels help users understand the sensitivity of the data they work with. Moreover, some organizations might use sensitivity labels to apply access control on sensitive data. Hence unlabeled items represent a potential security risk, both because users are more likely to make inappropriate use of such data, and because there's no protection in the case of accidental exposure to unauthorized users.
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
@@ -72,7 +72,7 @@ Sensitivity labels help users understand the sensitivity of the data they work w
 | **Items per sensitivity label** | Shows you how much each sensitivity label is used. This information might serve as a preliminary indication of whether the correct labels are being applied to your data. |
 | **Unlabeled items by type** | Seeing which type of items are unlabeled might help you identify a problem in your labeling strategy. |
 | **Unlabeled items that were recently refreshed** | Recently refreshed items often contain updated or active data. Without sensitivity labels, they could be accidentally shared, creating compliance and/or security risks.|
-| **Your unlabled items you recently visited** | Recently visited items that don't have sensitivity labels are at risk of unauthorized access or misuse, as their security level is unknown and they lack the protections that they might have gotten if they had the appropriate sensitivity label. |
+| **Your unlabeled items you recently visited** | Recently visited items that don't have sensitivity labels are at risk of unauthorized access or misuse, as their security level is unknown and they lack the protections that they might have gotten if they had the appropriate sensitivity label. |
 
 #### Discover, trust, and reuse
 
@@ -81,19 +81,19 @@ Metadata attributes such as endorsement, description, and tags
 | Insight | What does it show and why is it important |
 |:--------|:--------|
 | **Master Data, Certified, Promoted** | Shows you how many items have been endorsed with each endorsement type. A small number of certified items might indicate that most of the data hasn't gone through the certification process and might not meet quality standards. Increase the number of certified items to promote trust in the the data. |
-| **Unendorsed items by type** | Endorsing items as Master data, Certified, or Promoted increases trust and reuse. When data is not endorsed, people are more likely to create more duplicates, leading to discovery, security, and capacity issues. |
+| **Unendorsed items by type** | Endorsing items as Master data, Certified, or Promoted increases trust and reuse. When data isn't endorsed, people are more likely to create more duplicates, leading to discovery, security, and capacity issues. |
 | **Items with description** |Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, as well as hinder reuse.|
 | **Items without description by type** ||
 | **Tagged items by type** | |
-| **Untagged items by type** | Tags enhance searchability. By tagging frequently accessed content andrecently visited items can help users locate valuable resources quickly. |
+| **Untagged items by type** | Tags enhance searchability. By tagging frequently accessed content and recently visited items can help users locate valuable resources quickly. |
 
 ### OneLake catalog governance report
 
 ### Data refresh
 
-The data shown in the insights visuals reflects the last successful refresh of the the OneLake catalog report located in your My workspace. The data automatically refreshes whenever you visit the govern tab. You can also manually refresh the data on demand using the **Refresh** button on the govern tab.
+The data shown in the insights visuals reflects the last successful refresh of the OneLake catalog report located in your My workspace. The data automatically refreshes whenever you visit the govern tab. You can also manually refresh the data on demand using the **Refresh** button on the govern tab.
 
-If the data is not refreshing as expected, check the notifications pane and the [Monitor page](/fabric/admin/monitoring-hub). If case of repeated failure, or if you can't figure out what's causing the failure, try regenerating the report by closing the govern tab, deleting the OneLake catalog governance report and its associated semantic model from your My workspace, and then opening the govern tab once again.
+If the data isn't refreshing as expected, check the notifications pane and the [Monitor page](/fabric/admin/monitoring-hub). If case of repeated failure, or if you can't figure out what's causing the failure, try regenerating the report by closing the govern tab, deleting the OneLake catalog governance report and its associated semantic model from your My workspace, and then opening the govern tab once again.
 
 ## Improve your data's governance posture
 
