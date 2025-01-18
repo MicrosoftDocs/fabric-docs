@@ -4,7 +4,7 @@ description: Learn how to enable the SQL database feature in your Fabric tenant 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
-ms.date: 12/18/2024
+ms.date: 01/16/2025
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -33,7 +33,6 @@ In both cases, you can use security groups to provide access to a specified list
   - [Microsoft 365 Global admin](../../admin/microsoft-fabric-admin.md#microsoft-365-admin-roles)
   - [Power Platform admin](../../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
   - [Fabric admin](../../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
-- Currently, Fabric SQL database is not available if you had [Private link](../../security/security-private-links-overview.md) enabled on your Fabric tenant at the start of the preview on November 19.
 
 ## Enable SQL database for your tenant
 
