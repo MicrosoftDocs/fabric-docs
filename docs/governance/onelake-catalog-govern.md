@@ -22,7 +22,7 @@ OneLake catalog's govern tab is a centralized place to help you analyze, improve
 
 ## Open the govern tab
 
-To open the govern tab, select the OneLake catalog icon in the Fabric navigation pane and then select the govern tab.
+To get to the govern tab, select the OneLake catalog icon in the Fabric navigation pane and then select the govern tab.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the OneLake catalog.":::
 
@@ -47,24 +47,26 @@ To open the govern tab, select the OneLake catalog icon in the Fabric navigation
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
-| **Domains, Workspaces, Items** ||
-| **Data hierarchy** ||
-| **Workspace assignment to domains** ||
-| **Items by type** ||
-| **Items by last refresh** ||
-| **Items last refreshed more than 4 months ago** ||
-| **Items by your last access date** ||
-| **Items you last visited more than 4 months ago** ||
+| **Domains, Workspaces, Items** | Shows you how many items you own, how many domains your items are associated with, and how many workspaces they're spread across. |
+| **Data hierarchy** | Shows you where your data is located. The visual is interactive, and enables you to drill down through the hierarchy from the domain level to the level of the individual items. |
+| **Workspace assignment to domains** | Shows you how many workspaces as assigned to a domain. |
+| **Items by type** | Shows you how many items you own by type. |
+| **Items by last refresh** | Shows you how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs.|
+| **Items last refreshed more than 4 months ago** | Data that hasn't been refreshed in over four months is quite likely to be stale and could indicate a refresh problem. |
+| **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
+| **Items you last visited more than 4 months ago** | Shows you the number and type of items that you should review to make sure that they are still current and needed. |
 
 #### Sensitivity label coverage
 
+Sensitivity labels help users understand the sensitivity of the data they work with. Moreover, some organizations mightt use sensitivity labels to apply access control on sensitive data. Hence unlableled items represent a potential security risk, both because users are more likely to make inappropriate use such data, and because there is no protection in the case of accidental exposure to non-authorized users.
+
 | Insight | What does it show and why is it important |
 |:--------|:--------|
-| **Sensitivity  label coverage** ||
-| **Items per sensitivity label** ||
-| **Unlabeled items by type** ||
-| **Unlabeled items that were recently refreshed** ||
-| **Your unlabled items you recently visited** ||
+| **Sensitivity  label coverage** | Shows you what percentage of the items you own have a sensitivity label applied. |
+| **Items per sensitivity label** | Shows you how much each sensitivity label is used. This information might be used as a preliminary indication of whether the correct labels are being applied to your data. |
+| **Unlabeled items by type** | Seeing which type of items are unlabeled might help you identify a problem in your labeling strategy. |
+| **Unlabeled items that were recently refreshed** | Recently refreshed items often contain updated or active data. Without sensitivity labels, they could be accidentally shared, creating compliance and/or security risks.|
+| **Your unlabled items you recently visited** | Recently visited items that don't have sensitivity labels are at risk of unauthorized access or misuse, as their security level is unknown and they lack the protections that they might have gotten if they had the appropriate sensitivity label. |
 
 #### Discover, trust, and reuse
 
