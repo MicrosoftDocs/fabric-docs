@@ -99,6 +99,8 @@ If the data is not refreshing as expected, check the notifications pane and the 
 
 The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data you own. When you select a card, you see an insight about your data, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue.
 
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions.png" alt-text="Screenshot showing the recommended action guidance tool-tip.":::
+
 The recommended actions vary depending on what the insights reveal about your data.
 
 ## Get help with your data governance efforts
@@ -109,7 +111,7 @@ To help you effectively analyze, improve, and maintain the governance status of 
 
 * The govern tab doesn't currently support cross-tenant scenarios.
 
-* Currently, only insights are filtered according to OneLake catalog's domain filter. This means that if you set the filter to a given domain, the only insights you'll see are those that are related to the selected domain domain, but you might see recommended actions that are related to items associated with other domains as well.
+* Currently, only insights are filtered according to OneLake catalog's domain filter. This means that if you set the filter to a given domain, the insights you'll see will be based only on items that are associated with that domain. However, you might see recommended actions that are related to items associated with other domains as well.
 
 ## Related content
 
