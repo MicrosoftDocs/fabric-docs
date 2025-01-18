@@ -26,7 +26,9 @@ To open the govern tab, select the OneLake catalog icon in the Fabric navigation
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the OneLake catalog.":::
 
-## Your governance status at a glance
+## Get insights about the governance status of your data
+
+### Your governance status at a glance
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png" alt-text="Screenshot showing the top insights on the govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png":::
 
@@ -38,11 +40,15 @@ To open the govern tab, select the OneLake catalog icon in the Fabric navigation
 | **Items with description** | Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, as well as hinder reuse. |
 | **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
 
-## Data refresh
+### Data refresh
 
 The data shown in the insights visuals reflects the last successful refresh of the the OneLake catalog report located in your My workspace. The data automatically refreshes whenever you visit the govern tab. You can also manually refresh the data on demand using the **Refresh** button on the govern tab.
 
 If the data is not refreshing as expected, check the notifications pane and the [Monitor page](/fabric/admin/monitoring-hub). If case of repeated failure, or if you can't figure out what's causing the failure, try regenerating the report by closing the govern tab, deleting the OneLake catalog governance report and its associated semantic model from your My workspace, and then opening the govern tab once again.
+
+## Improve your data's governance posture
+
+## Get help with your data governance efforts
 
 ## Considerations and limitations
 
