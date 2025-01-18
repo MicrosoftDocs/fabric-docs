@@ -18,27 +18,14 @@ OneLake catalog is a centralized place that helps you find, explore, and use the
 
 * **[Govern tab](./onelake-catalog-govern.md)**: The govern tab provides insights that help you understand the governance posture of all the data you own in Fabric, and presents recommended actions you can take to improve the governance status of your data.
 
-:::image type="content" source="./media/onelake-catalog/onelake-catalog-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-general-view.png" border="false"::: 
+:::image type="content" source="./media/onelake-catalog-overview/onelake-catalog-overview-general-view.png" alt-text="Screenshot showing the OneLake catalog." lightbox="./media/onelake-catalog-overview/onelake-catalog-overview-general-view.png"::: 
 
-The OneLake catalog provides
+To get to the OneLake catalog, select the OneLake icon in the Fabric navigation pane. By default the catalog opens on the explore tab. If necessary, select the tab you're interested in to continue.
 
-* [A list of all Fabric items you have access to in your organization](#find-items-in-the-items-list).
-* [An item details view that enables you to drill down on an item without leaving the catalog](#view-item-details).
-* [Filters and selectors to help you find the content you're looking for](#filter-the-items-list).
-* [A way to scoping the catalog to display only items of a particular domain](#scope-the-catalog-to-a-particular-domain).
-* [An options menu for item actions](#open-an-items-options-menu)
-
-This article explains what you see in the OneLake catalog and describes how to use it.
-
-## Open the OneLake catalog
-
-To open the OneLake catalog, select the OneLake icon in the Fabric navigation pane.
-
-:::image type="content" source="./media/onelake-catalog-overview/onelake-catalog-overview-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog/onelake-catalog-open.png":::
-
-By default the catalog opens on the explore tab. If necessary, select the tab you're interested in to continue.
 ## Related content
 
+* [Discover and explore Fabric items in the OneLake catalog](./onelake-catalog-explore.md)
+* [Govern your data in Fabric](./onelake-catalog-govern.md)
 * [Endorsement](./endorsement-overview.md)
 * [Fabric domains](./domains.md)
 * [Lineage in Fabric](./lineage.md)

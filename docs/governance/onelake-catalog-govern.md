@@ -1,11 +1,11 @@
 ---
-title: Discover and explore Fabric items in the OneLake catalog
-description: Learn how to discover, explore, manage, and use your organization's Fabric items in the OneLake catalog.
+title: Govern your data in Fabric 
+description: Use the OneLake catalog's govern tab to get insights about the governance posture of the data you own in Fabric and guidance about how to improve it.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 01/12/2025
+ms.date: 01/18/2025
 ms.custom:
 #customer intent: As data owner, I want to learn about OneLake catalog's Govern tab, and use it's capabilities to get insights about and govern the data in Fabric that I own.
 ---
