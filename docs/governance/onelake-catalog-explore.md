@@ -61,7 +61,7 @@ The following table describes the list columns.
 > * Semantic models that have been configured as [discoverable](/power-bi/collaborate-share/service-discovery).
 > * Power BI reports whose associated semantic model has violated a [data loss prevention policy that restricts access](/purview/dlp-powerbi-get-started#how-do-dlp-policies-for-fabric-work).
 
-## Scope the explore tab to a particular domain
+## Scope the catalog to a particular domain
 
 If domains have been defined in your organization, you can use the OneLake catalog's domain selector to select a domain or subdomain. Only workspaces and items and belonging to the selected domain or subdomain will be displayed and treated in the explore tab. Your selection persists for subsequent sessions.
 

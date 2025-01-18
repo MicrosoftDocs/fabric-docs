@@ -1,16 +1,16 @@
 ---
-title: Discover and explore Fabric items in the OneLake catalog
-description: Learn how to discover, explore, manage, and use your organization's Fabric items in the OneLake catalog.
+title: OneLake catalog overview
+description: Learn about the Microsoft Fabric's OneLake catalog and the capabilities it offers.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 01/16/2025
+ms.date: 01/18/2025
 ms.custom: ignite-2024-fabric, ignite-2024
-#customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the capabilities of the OneLake catelog and how it can help me find, manage, use, and govern the content I need.
+#customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the OneLake catelog and the capabilities it offers.
 ---
 
-# Discover and explore Fabric items in the OneLake catalog
+# OneLake catalog overview
 
 OneLake catalog is a centralized place that helps you find, explore, and use the Fabric items you need, and govern the data you own. It features two tabs:
 
