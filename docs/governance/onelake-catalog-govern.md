@@ -12,7 +12,7 @@ ms.custom:
 
 # Monitor and improve your data's governance posture with the OneLake catalog
 
-OneLake catalog's govern tab is a centralized place to help you analyze, improve, and monitor the governance posture of the data you own across Fabric. The govern tab provides:
+OneLake catalog's govern tab helps you analyze, improve, and monitor the governance posture of the data you own across Fabric. It centralizes in one place:
 
 * Insights that help you understand the governance status of your data and identify areas for improvement.
 
@@ -20,16 +20,22 @@ OneLake catalog's govern tab is a centralized place to help you analyze, improve
 
 * Links to tools and learning resources you can use to help you analyze, improve, and maintain the governance of the data you own in Fabric.
 
+The insights you that see on the govern tab are based on all the items in Fabric that you own. These are the items that can appear when you apply the **My items** filter on the [explore tab](./onelake-catalog-explore.md).
+
+The first time you open the govern tab, it might take a few moments for the insights and recommended actions to appear. 
+
 ## Open the govern tab
 
-To get to the govern tab, select the OneLake catalog icon in the Fabric navigation pane and then select the govern tab.
-
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the OneLake catalog.":::
+To get to the govern tab, select the [OneLake catalog icon in the Fabric navigation pane](./onelake-catalog-overview.md) and then select the govern tab.
 
 ## Get insights about the governance status of your data
 
+The **Your governance status at a glance** section provides basic high-level insights about the content you've created in Fabric. The data in these insights is based on the last successful refresh of your OneLake catalog governance report. The data refreshes automatically every time you open the govern tab. You can also select the Refresh button if you want to make sure that you've got the latest data.
 
-### Top insights
+Select **View more** to see all available insights, which include insights about sensitivity label coverage and item metadata.
+
+
+### Your governance status at a glance
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png" alt-text="Screenshot showing the top insights on the govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png":::
 
@@ -63,7 +69,7 @@ Sensitivity labels help users understand the sensitivity of the data they work w
 | Insight | What does it show and why is it important |
 |:--------|:--------|
 | **Sensitivity  label coverage** | Shows you what percentage of the items you own have a sensitivity label applied. |
-| **Items per sensitivity label** | Shows you how much each sensitivity label is used. This information might be used as a preliminary indication of whether the correct labels are being applied to your data. |
+| **Items per sensitivity label** | Shows you how much each sensitivity label is used. This information might serve as a preliminary indication of whether the correct labels are being applied to your data. |
 | **Unlabeled items by type** | Seeing which type of items are unlabeled might help you identify a problem in your labeling strategy. |
 | **Unlabeled items that were recently refreshed** | Recently refreshed items often contain updated or active data. Without sensitivity labels, they could be accidentally shared, creating compliance and/or security risks.|
 | **Your unlabled items you recently visited** | Recently visited items that don't have sensitivity labels are at risk of unauthorized access or misuse, as their security level is unknown and they lack the protections that they might have gotten if they had the appropriate sensitivity label. |
@@ -74,12 +80,12 @@ Metadata attributes such as endorsement, description, and tags
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
-| **Master Data, Certified, Promoted** ||
-| **Unendorsed items by type** ||
-| **Items with description** ||
+| **Master Data, Certified, Promoted** | Shows you how many items have been endorsed with each endorsement type. A small number of certified items might indicate that most of the data hasn't gone through the certification process and might not meet quality standards. Increase the number of certified items to promote trust in the the data. |
+| **Unendorsed items by type** | Endorsing items as Master data, Certified, or Promoted increases trust and reuse. When data is not endorsed, people are more likely to create more duplicates, leading to discovery, security, and capacity issues. |
+| **Items with description** |Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, as well as hinder reuse.|
 | **Items without description by type** ||
-| **Tagged items by type** ||
-| **Untagged items by type** ||
+| **Tagged items by type** | |
+| **Untagged items by type** | Tags enhance searchability. By tagging frequently accessed content andrecently visited items can help users locate valuable resources quickly. |
 
 ### OneLake catalog governance report
 
@@ -91,7 +97,13 @@ If the data is not refreshing as expected, check the notifications pane and the 
 
 ## Improve your data's governance posture
 
+The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data you own. When you select a card, you see an insight about your data, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue.
+
+The recommended actions vary depending on what the insights reveal about your data.
+
 ## Get help with your data governance efforts
+
+To help you effectively analyze, improve, and maintain the governance status of your data, in the **Top solutions** and **Read, watch, and learn** sections you'll find links to tools and resources you can use to help you keep your data healthy from the standpoint of governance.
 
 ## Considerations and limitations
 
@@ -101,6 +113,8 @@ If the data is not refreshing as expected, check the notifications pane and the 
 
 ## Related content
 
+* [OneLake catalog overview](./onelake-catalog-overview.md)
+* [Discover and explore Fabric items in the OneLake catalog](./onelake-catalog-explore.md)
 * [Endorsement](./endorsement-overview.md)
 * [Fabric domains](./domains.md)
 * [Lineage in Fabric](./lineage.md)

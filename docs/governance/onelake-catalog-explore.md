@@ -165,6 +165,8 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 ## Related content
 
+* [OneLake catalog overview](./onelake-catalog-overview.md)
+* [Monitor and improve your data's governance posture with the OneLake catalog](./onelake-catalog-govern.md)
 * [Endorsement](./endorsement-overview.md)
 * [Fabric domains](./domains.md)
 * [Lineage in Fabric](./lineage.md)
