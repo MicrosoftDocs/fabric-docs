@@ -32,7 +32,7 @@ To get to the govern tab, select the [OneLake catalog icon in the Fabric navigat
 
 The **Your governance status at a glance** section provides basic high-level insights about the content you've created in Fabric. The data in these insights is based on the last successful refresh of your OneLake catalog governance report. The data refreshes automatically every time you open the govern tab. You can also select the Refresh button if you want to make sure that you've got the latest data.
 
-Select **View more** to see all available insights, which include insights about sensitivity label coverage and item metadata.
+Select **View more** to see [all available insights](#all-insights), which include insights about sensitivity label coverage and item metadata.
 
 
 ### Your governance status at a glance
