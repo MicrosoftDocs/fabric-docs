@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 01/14/2025
 ms.search.form: Create New Model, Model Comparison
 ---
 
@@ -30,13 +30,21 @@ You can directly create a machine learning model from the Fabric UI. The MLflow 
 To create a machine learning model from the UI, you can:
 
 1. Create a new data science workspace, or select an existing data science workspace.
-1. From the **+ New** dropdown, select **Model** to create an empty model in your data science workspace.
+1. Create a new workspace or select an existing one.
+1. You can create a new item through the workspace or by using Create.
+    1. Workspace:
+        1. Select your workspace.
+        1. Select **New item**.
+        1. Select **ML Model** under *Analyze and train data*.
+          :::image type="content" source="media/machine-learning-model/new-item.png" alt-text="Screenshot showing where to select Experiment in your workspace." lightbox="media/machine-learning-experiment/new-item.png":::
+    1. Create button:
+        1. Select **Create**, which can be found in **...** from the vertical menu.
+          :::image type="content" source="media/machine-learning-model/create.png" alt-text="Screenshot of create button." lightbox="media/machine-learning-experiment/create.png":::
+        1. Select **ML Model** under *Data Science*.
+          :::image type="content" source="media/machine-learning-model/create-2.png" alt-text="Screenshot showing where to select Experiment after selecting create." lightbox="media/machine-learning-experiment/create-2.png":::
+1. After model creation, you can start adding model versions to track run metrics and parameters. Register or save experiment runs to an existing model.
 
-   :::image type="content" source="media/machine-learning-model/new-drop-down-menu.png" alt-text="Screenshot showing the New drop-down menu." lightbox="media/machine-learning-model/new-drop-down-menu.png":::
-
-3. After model creation, you can start adding model versions to track run metrics and parameters. Register or save experiment runs to an existing model.
-
-You can also create a machine learning experiment directly from your authoring experience with the `mlflow.register_model()` API. If a registered machine learning model with the given name doesn't exist, the API creates it automatically.
+You can also create a machine learning model directly from your authoring experience with the `mlflow.register_model()` API. If a registered machine learning model with the given name doesn't exist, the API creates it automatically.
 
 ```python
 import mlflow
@@ -152,7 +160,6 @@ for rm in client.list_registered_models():
 ## Apply machine learning models
 
 Once you train a model on a data set, you can apply that model to data it never saw to generate predictions. We call this model use technique **scoring** or **inferencing**. For more information about [!INCLUDE [product-name](../includes/product-name.md)] model scoring, see the next section.
-
 
 ## Related content
 

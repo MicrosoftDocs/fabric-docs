@@ -74,7 +74,7 @@ Microsoft Fabric environment can be attached to your **Data Engineering/Science*
 
 ### Attach an environment as workspace default
 
-Find the **Environment** tab by selecting **Workspace setting** -> **Data Engineering/Science** -> **Spark settings**.
+Find the **Environment** tab by selecting **Workspace settings** > **Data Engineering/Science** > **Spark settings**.
 
 #### New workspaces
 
@@ -82,22 +82,22 @@ When you're working in a workspace that's either new or doesn't have the library
 
 :::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot of the Workspace settings Set default environment screen.":::
 
-Workspace admins can define the default workload for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attach to **Workspace Settings**.
-:::image type="content" source="media\environment-introduction\env-workspace-setting-in-code-artifact.png" alt-text="Screenshot of Workspace configuration effective range.":::
+Workspace admins can define the default workload for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attach to **Workspace settings**.
+:::image type="content" source="media\environment-introduction\env-workspace-setting-in-code-artifact.png" alt-text="Screenshot of Workspace configuration effective range." lightbox="media\environment-introduction\env-workspace-setting-in-code-artifact.png":::
 
-The **Set default environment** toggle can enhance the user experience. By default, this toggle is set to **Off**. If there's no default Spark property or library required as the workspace default, admins can define the Spark runtime in this circumstance. However, if an admin wants to prepare a default Spark compute and libraries for the workspace, they can switch the toggle to **On** and easily attach an environment as the workspace default. This option makes all configurations in the environment effective as the **Workspace Settings**.
+The **Set default environment** toggle can enhance the user experience. By default, this toggle is set to **Off**. If there's no default Spark property or library required as the workspace default, admins can define the Spark runtime in this circumstance. However, if an admin wants to prepare a default Spark compute and libraries for the workspace, they can switch the toggle to **On** and easily attach an environment as the workspace default. This option makes all configurations in the environment effective as the **Workspace settings**.
 
 :::image type="content" source="media\environment-introduction\env-workspace-toggle-on.png" alt-text="Screenshot of default environment selection.":::
 
 #### Workspaces with existing library or Spark properties
 
-The environment feature is a big upgrade to the **Data Engineering/Data Science** section in **Workspace Settings**. As part of this upgrade, Fabric no longer supports library management and adding new Spark properties at the workspace level. You can migrate your existing libraries and Spark properties to an environment and attach it as the workspace default. For more information, see [Migrate workspace libraries and Spark properties to a default environment](environment-workspace-migration.md).
+The environment feature is a big upgrade to the **Data Engineering/Data Science** section in **Workspace settings**. As part of this upgrade, Fabric no longer supports library management and adding new Spark properties at the workspace level. You can migrate your existing libraries and Spark properties to an environment and attach it as the workspace default. For more information, see [Migrate workspace libraries and Spark properties to a default environment](environment-workspace-migration.md).
 
 ### Attach an environment to a notebook or a Spark job definition
 
 The **Environment** menu appears in both the notebook and Spark job definition Home tabs. Available environments are listed in the menu. If you select an environment, the Spark compute and libraries configured in it are effective after you start a Spark session.
 
-:::image type="content" source="media\environment-introduction\env-notebook-selection.png" alt-text="Screenshot showing where to attach an environment in a notebook.":::
+:::image type="content" source="media\environment-introduction\env-notebook-selection.png" alt-text="Screenshot showing where to attach an environment in a notebook." lightbox="media\environment-introduction\env-notebook-selection.png":::
 
 >[!NOTE]
 > If you switch to a different environment while in an active session, the newly selected environment will not take effect until the next session.
@@ -106,7 +106,7 @@ The **Environment** menu appears in both the notebook and Spark job definition H
 
 Microsoft Fabric supports sharing an item with different level of permissions.
 
-:::image type="content" source="media\environment-introduction\environment-sharing.png" alt-text="Screenshot of showing how to share an environment.":::
+:::image type="content" source="media\environment-introduction\environment-sharing.png" alt-text="Screenshot of showing how to share an environment." lightbox="media\environment-introduction\environment-sharing.png":::
 
 When you share an environment item, recipients automatically receive **Read permission**. With this permission, they can explore the environment’s configurations and attach it to notebooks or Spark jobs. For smooth code execution, ensure to grant read permissions for attached environments when sharing notebooks and Spark job definitions.
 
