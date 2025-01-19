@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 01/14/2025
+ms.date: 01/19/2025
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->

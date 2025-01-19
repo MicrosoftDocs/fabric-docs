@@ -6,7 +6,9 @@ items:
   - name: Microsoft Fabric licenses
     href: licenses.md
   - name: Features parity
-    href: fabric-features.md    
+    href: fabric-features.md   
+  - name: Release management and deployment process
+    href: fabric-release-management.md       
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric subscription
