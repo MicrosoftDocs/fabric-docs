@@ -20,7 +20,7 @@ OneLake catalog's govern tab helps you analyze, improve, and monitor the governa
 
 * [Links to tools and learning resources](#get-help-with-your-data-governance-efforts) you can use to help you analyze, improve, and maintain the governance of the data you own in Fabric.
 
-The insights you that see on the govern tab are based on all the items in Fabric that you own. These are the items that can appear when you apply the **My items** filter on the [explore tab](./onelake-catalog-explore.md).
+The insights that you see on the govern tab are based on all the items in Fabric that you own. These are the items that can appear when you apply the **My items** filter on the [explore tab](./onelake-catalog-explore.md).
 
 The first time you open the govern tab, it might take a few moments for the insights and recommended actions to appear. 
 
@@ -58,7 +58,7 @@ The Your data estate insights provide an overview of the content you've created 
 |:--------|:--------|
 | **Domains, Workspaces, Items** | Shows you how many items you own, how many domains your items are associated with, and how many workspaces they're spread across. |
 | **Data hierarchy** | Shows you where your data is located. The visual is interactive, and enables you to drill down through the hierarchy from the domain level to the level of the individual items. |
-| **Workspace assignment to domains** | Shows you how many workspaces as assigned to a domain. |
+| **Workspace assignment to domains** | Shows you how many workspaces are assigned to a domain. |
 | **Items by type** | Shows you how many items you own by type. |
 | **Items by last refresh** | Shows you how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs.|
 | **Items last refreshed more than 4 months ago** | Data that hasn't been refreshed in over four months is likely to be stale and could indicate a refresh problem. |
@@ -67,7 +67,7 @@ The Your data estate insights provide an overview of the content you've created 
 
 #### Sensitivity label coverage
 
-Sensitivity label insights Sensitivity labels help users understand the sensitivity of the data they work with. Moreover, some organizations might use sensitivity labels to apply access control on sensitive data. Hence unlabeled items represent a potential security risk, both because users are more likely to make inappropriate use of such data, and because there's no protection in the case of accidental exposure to unauthorized users.
+Sensitivity labels help users understand the sensitivity of the data they work with. Moreover, some organizations might use sensitivity labels to apply access control on sensitive data. Hence unlabeled items represent a potential security risk, both because users are more likely to make inappropriate use of such data, and because there's no protection in the case of accidental exposure to unauthorized users.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-sensitivity-label-coverage.png" alt-text="Screenshot showing the sensitivity label coverage insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-sensitivity-label-coverage.png":::
 
