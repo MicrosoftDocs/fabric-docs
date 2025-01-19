@@ -50,6 +50,10 @@ Select **View more** to see [all available insights](#all-insights), which inclu
 
 #### Your data estate
 
+The Your data estate insights provide an overview of the content you've created in Fabric to help you identify actions you can take to improve your content's governance posture.
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-your-data-estate.png" alt-text="Screenshot showing the your data estate insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-your-data-estate.png":::
+
 | Insight | What does it show and why is it important |
 |:--------|:--------|
 | **Domains, Workspaces, Items** | Shows you how many items you own, how many domains your items are associated with, and how many workspaces they're spread across. |
@@ -63,7 +67,9 @@ Select **View more** to see [all available insights](#all-insights), which inclu
 
 #### Sensitivity label coverage
 
-Sensitivity labels help users understand the sensitivity of the data they work with. Moreover, some organizations might use sensitivity labels to apply access control on sensitive data. Hence unlabeled items represent a potential security risk, both because users are more likely to make inappropriate use of such data, and because there's no protection in the case of accidental exposure to unauthorized users.
+Sensitivity label insights Sensitivity labels help users understand the sensitivity of the data they work with. Moreover, some organizations might use sensitivity labels to apply access control on sensitive data. Hence unlabeled items represent a potential security risk, both because users are more likely to make inappropriate use of such data, and because there's no protection in the case of accidental exposure to unauthorized users.
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-sensitivity-label-coverage.png" alt-text="Screenshot showing the sensitivity label coverage insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-sensitivity-label-coverage.png":::
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
@@ -76,6 +82,8 @@ Sensitivity labels help users understand the sensitivity of the data they work w
 #### Discover, trust, and reuse
 
 Metadata attributes such as endorsement, description, and tags
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-metadata-addributes.png" alt-text="Screenshot showing the discover, trust, and reuse insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-metadata-addributes.png":::
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
