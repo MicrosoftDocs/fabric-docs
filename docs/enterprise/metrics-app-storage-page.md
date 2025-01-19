@@ -36,7 +36,7 @@ In this page, there are three cards present to provide specific information on s
 
 * **Current storage (GB)** - Displays the latest storage in GB.
 
-* **Billable storage (GB)** - Displays the billable storage in GB. Soft-deleted data is billed at the same rate as active data.
+* **Billable storage (GB)** - Displays the billable storage in GB. [Soft-deleted data](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) is billed at the same rate as active data.
 
 >[!NOTE]
 >* Billable storage volume can be lower than current storage volume. If the capacity has less storage usage at the start of the reporting period, the billable storage volume is lower than the current storage.
