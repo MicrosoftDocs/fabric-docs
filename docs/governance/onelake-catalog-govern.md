@@ -96,7 +96,11 @@ The recommended actions vary depending on what the insights reveal about your da
 
 ## Get help with your data governance efforts
 
-To help you effectively analyze, improve, and maintain the governance status of your data, in the **Top solutions** and **Read, watch, and learn** sections you'll find links to tools and resources you can use to help you keep your data healthy from the standpoint of governance.
+The govern tab provides links to tools and resources you can use to help you keep your data healthy from the standpoint of governance:
+
+* **Top solutions**: Lists relevant Microsoft Fabric solutions for data governance, compliance, and security, along with links to documentation.
+
+* **Read, watch, and learn** Provides links to other relevant documentation and resources.
 
 ## Create custom reports
 
