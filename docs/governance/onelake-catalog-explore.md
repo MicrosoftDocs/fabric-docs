@@ -103,7 +103,7 @@ Use the tags selector to display items tagged with the tags you select.
 
 ### Filter items by workspace
 
-Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane.. The items you're allowed to see in that workspace will be displayed in the items list.
+Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane. The items you're allowed to see in that workspace will be displayed in the items list.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png" alt-text="Screenshot of the explore tab's workspaces filter.":::
 

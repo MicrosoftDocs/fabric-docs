@@ -85,7 +85,7 @@ Sensitivity labels help users understand the sensitivity of the data they work w
 
 The visuals in the Discover, trust, and reuse section provide insights about item metadata attributes such as endorsement status, description, and tags. For more information about endorsement, see [Endorsement overview](./endorsement-overview.md). For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.md).
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-metadata-addributes.png" alt-text="Screenshot showing the discover, trust, and reuse insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-metadata-addributes.png":::
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-metadata-attributes.png" alt-text="Screenshot showing the discover, trust, and reuse insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-metadata-attributes.png":::
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
@@ -93,7 +93,7 @@ The visuals in the Discover, trust, and reuse section provide insights about ite
 | **Unendorsed items by type** | Endorsing items as Master data, Certified, or Promoted increases trust and reuse. When data isn't endorsed, people are more likely to create more duplicates, leading to discovery, security, and capacity issues. |
 | **Items with description** |Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, as well as hinder reuse.|
 | **Items without description by type** | Helps you focus on what kinds of items are missing a description. |
-| **Tagged items by type** | Helps you understand what kinds of content is being tagged. |
+| **Tagged items by type** | Helps you understand what different types of content is being tagged. |
 | **Untagged items by type** | Tags enhance searchability. By tagging frequently accessed content and recently visited items can help users locate valuable resources quickly. |
 
 ## Improve the governance posture of your data
