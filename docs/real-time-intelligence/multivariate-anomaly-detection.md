@@ -41,7 +41,7 @@ In this step, you enable the python plugin in your Eventhouse. This step is requ
 1. Select **Python 3.11.7 DL (preview)**.
 1. Select **Done**.
 
-    :::image type="content" source="media/multivariate-anomaly-detection/python-package.png"** alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse." lightbox="media/multivariate-anomaly-detection/python-package.png":::
+    :::image type="content" source="media/multivariate-anomaly-detection/python-package.png" alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse." lightbox="media/multivariate-anomaly-detection/python-package.png":::
 
 ## Part 3- Create a Spark environment
 
