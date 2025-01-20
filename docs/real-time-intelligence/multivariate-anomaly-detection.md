@@ -41,7 +41,7 @@ In this step, you enable the python plugin in your Eventhouse. This step is requ
 1. Select **Python 3.11.7 DL (preview)**.
 1. Select **Done**.
 
-    :::image type="content" source="media/multivariate-anomaly-detection/python-package.png" alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/python-package.png"** alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse." lightbox="media/multivariate-anomaly-detection/python-package.png":::
 
 ## Part 3- Create a Spark environment
 
@@ -49,7 +49,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
 
 1. From your workspace, select **+ New item** then **Environment**.
 
-    :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of the Environment tile in New item window.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of the Environment tile in New item window." lightbox="media/multivariate-anomaly-detection/create-environment.png":::
 
 1. Enter the name *MVAD_ENV* for the environment and then select **Create**.
 1. Under **Libraries**, select **Public libraries**.
@@ -57,7 +57,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
 1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.3.1, which is the version included in the Kusto Python 3.11.7 DL.
 1. Select **Save**.
 
-    :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment." lightbox="media/multivariate-anomaly-detection/add-package.png":::
 
 1. Select the **Home** tab in the environment.
 1. Select the **Publish** icon from the ribbon. :::image type="icon" source="media/multivariate-anomaly-detection/publish-icon.png" border="false":::
@@ -273,7 +273,7 @@ For general information, see [Create a KQL queryset](create-query-set.md).
 
 The resulting anomaly chart should look like the following image:
 
-:::image type="content" source="media/multivariate-anomaly-detection/kql-query-output.png" alt-text="Screenshot of multivariate anomaly output.":::
+:::image type="content" source="media/multivariate-anomaly-detection/kql-query-output.png" alt-text="Screenshot of multivariate anomaly output." lightbox="media/multivariate-anomaly-detection/kql-query-output.png":::
 
 ## Clean up resources
 
