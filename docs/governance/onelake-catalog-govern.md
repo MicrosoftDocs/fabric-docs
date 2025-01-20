@@ -93,7 +93,7 @@ The visuals in the Discover, trust, and reuse section provide insights about ite
 | **Unendorsed items by type** | Endorsing items as Master data, Certified, or Promoted increases trust and reuse. When data isn't endorsed, people are more likely to create more duplicates, leading to discovery, security, and capacity issues. |
 | **Items with description** |Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, as well as hinder reuse.|
 | **Items without description by type** | Helps you focus on what kinds of items are missing a description. |
-| **Tagged items by type** | Helps you understand what different types of content is being tagged. |
+| **Tagged items by type** | Helps you understand the different types of content is being tagged. |
 | **Untagged items by type** | Tags enhance searchability. By tagging frequently accessed content and recently visited items can help users locate valuable resources quickly. |
 
 ## Improve the governance posture of your data
