@@ -72,7 +72,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Stream events from Logic Apps to your eventstream using the custom endpoint
 
-In this section, you'll learn how to design a workflow that periodically generates simulated flight data on a recurring schedule. The workflow will construct a flight information message with randomized values in each fields using JavaScript code defined in the 'Execute JavaScript' action.
+In this section, you'll learn how to design a workflow that periodically generates simulated flight data on a recurring schedule. The workflow will use JavaScript code in the 'Execute JavaScript' action to construct a flight information message with randomized values for each field. Once the message is constructed, it will be sent to the eventstream's endpoint using the Event Hub protocol.
 
 1. Create a Logic App using the **Standard** plan instead of the Consumption plan to simplify configuration, as the 'Execute JavaScript' action in the Consumption plan requires an additional integration account.
 
