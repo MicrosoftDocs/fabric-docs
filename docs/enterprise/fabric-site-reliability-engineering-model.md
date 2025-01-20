@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 01/13/2025
 ---
 
-# Microsoft Fabric site reliability engineering (SRE) model
+# Site reliability
 
 This document describes the Fabric team's approach to maintaining a reliable, performant, and scalable service for customers. It describes monitoring service health, mitigating incidents and acting on necessary improvements. Other important operational aspects such as security and release management are outside of the scope of this document. This document was created to share knowledge with our customers, who often raise questions regarding site reliability engineering practices. The intention is to offer transparency into how Fabric minimizes service disruption through safe deployment, continuous monitoring, and rapid incident response. The techniques described here also provide a blueprint for teams hosting service-based solutions to build foundational live site processes that are efficient and effective at scale.
 
