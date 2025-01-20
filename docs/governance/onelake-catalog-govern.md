@@ -16,7 +16,7 @@ OneLake catalog's govern tab helps you analyze, improve, and monitor the governa
 
 * [Insights](#get-insights-about-the-governance-status-of-your-data) that help you understand the governance status of your data and identify areas for improvement.
 
-* [Recommended actions](#improve-your-datas-governance-posture) you can take to improve your data's governance posture. The recommended actions are accompanied by guidance to help you accomplish them.
+* [Recommended actions](#improve-the-governance-posture-of-your-data) you can take to improve your data's governance posture. The recommended actions are accompanied by guidance to help you accomplish them.
 
 * [Links to tools and learning resources](#get-help-with-your-data-governance-efforts) you can use to help you analyze, improve, and maintain the governance of the data you own in Fabric.
 
