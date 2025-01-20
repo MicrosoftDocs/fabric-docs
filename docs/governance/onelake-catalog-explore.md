@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 01/16/2025
+ms.date: 01/20/2025
 ms.custom: ignite-2024-fabric, ignite-2024
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
