@@ -1,5 +1,5 @@
 ---
-title: Govern your data in Fabric 
+title: Monitor and improve the governance of your Fabric data with the OneLake catalog
 description: Use the OneLake catalog's govern tab to get insights about the governance posture of the data you own in Fabric and guidance about how to improve it.
 author: paulinbar
 ms.author: painbar
@@ -10,7 +10,7 @@ ms.custom:
 #customer intent: As data owner, I want to learn about OneLake catalog's Govern tab, and use it's capabilities to get insights about and govern the data in Fabric that I own.
 ---
 
-# Monitor and improve your data's governance posture with the OneLake catalog
+# Monitor and improve the governance of your Fabric data
 
 OneLake catalog's govern tab helps you analyze, improve, and monitor the governance posture of the data you own across Fabric. It centralizes in one place:
 
@@ -20,7 +20,7 @@ OneLake catalog's govern tab helps you analyze, improve, and monitor the governa
 
 * [Links to tools and learning resources](#get-help-with-your-data-governance-efforts) you can use to help you analyze, improve, and maintain the governance of the data you own in Fabric.
 
-The insights that you see on the govern tab are based on all the items in Fabric that you own. These are the items that can appear when you apply the **My items** filter on the [explore tab](./onelake-catalog-explore.md).
+The insights that you see on the govern tab are based on all the items in Fabric that you own. These are the items that can appear when you apply the **My items** filter on the [explore tab](./onelake-catalog-explore.md) (see [Considerations and limitations for exceptions](#considerations-and-limitations)).
 
 The first time you open the govern tab, it might take a few moments for the insights and recommended actions to appear. 
 
