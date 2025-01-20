@@ -9,14 +9,14 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2024
-ms.date: 12/27/2024
+ms.date: 1/20/2025
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my Power Automate and Logic Apps using Fabric event streams.
 ---
 
 # Stream events to Eventstream using Logic Apps and Power Automate 
 
-In this tutorial, you learn how to stream real-time events from  **Logic Apps** or **Power Automate** to Real-Time Intelligence using a custom endpoint source in Microsoft Fabric Eventstream. While the flows for Logic Apps and Power Automate are configured differently, they serve the same purpose: to periodically send the simulated flight data containing columns such as `ScanUtcTime` and `FlightInfo`. The difference in flow is because **Logic Apps** supports executing JavaScript, but **Power Automate** doesn't. Choose the approach that best suits your requirements.
+In this tutorial, you learn how to stream real-time events from  **Logic Apps** or **Power Automate** to Real-Time Intelligence using a custom endpoint source in Microsoft Fabric Eventstream. While the flows for Logic Apps and Power Automate are configured differently, they serve the same purpose: to periodically send the simulated flight data containing columns such as `ScanUtcTime` and `FlightInfo`. The difference in flow is because **Logic Apps** supports executing JavaScript, but **Power Automate** doesn't.
 
 The flow in Logic App (with stateful workflow) and Power Automate are:
 
@@ -28,7 +28,7 @@ The flow in Logic App (with stateful workflow) and Power Automate are:
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/power-automate.png" alt-text="Screenshot showing Power Automate flow." lightbox="media/stream-events-from-power-automate-and-logic-app/power-automate.png":::
 
-Although the flows in **Logic Apps** and **Power Automate** are different, they achieve the same result—sending flight data to Real-Time Intelligence.
+Although the flows in **Logic Apps** and **Power Automate** are different, they achieve the same result—sending flight data to Real-Time Intelligence. **Choose the approach that best suits your requirements.**
 
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/preview-data.png" alt-text="Screenshot showing flight data in eventstream." lightbox="media/stream-events-from-power-automate-and-logic-app/preview-data.png" :::
@@ -48,9 +48,9 @@ In this tutorial, you learn how to:
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a workspace with Contributor or higher permissions where your eventstream is located.
-- If using **Logic Apps**, an Azure account and subscription that can be used to create logic apps. If you don't have a subscription, [sign up for a free Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- If using **Power Automate**, an account on **Power Automate**.
+- Access to a workspace with Contributor or higher permissions where your eventstream is located.
+- For **Logic Apps**, an Azure account with a valid subscription to create logic apps. If you don't have one, [sign up for a free Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- For **Power Automate**, an active **Power Automate** account.
 
 
 ## Create an eventstream 
@@ -72,7 +72,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Stream events from Logic Apps to your eventstream using the custom endpoint
 
-In this section, you'll learn how to design a workflow that periodically generates simulated flight data on a recurring schedule. The workflow will construct a FlightInfo message with randomized fields using JavaScript code defined in the 'Execute JavaScript' action.
+In this section, you'll learn how to design a workflow that periodically generates simulated flight data on a recurring schedule. The workflow will construct a flight information message with randomized values in each fields using JavaScript code defined in the 'Execute JavaScript' action.
 
 1. Create a Logic App using the **Standard** plan instead of the Consumption plan to simplify configuration, as the 'Execute JavaScript' action in the Consumption plan requires an additional integration account.
 
@@ -107,12 +107,14 @@ In this section, you'll learn how to design a workflow that periodically generat
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/connection-string.png" alt-text="Screenshot showing how to get connection string." lightbox="media/stream-events-from-power-automate-and-logic-app/connection-string.png" :::
    
-1. After the new connection created and returned to event hub Parameters configuration, select **Enter custom value** from the drop-down menu of the **Event Hubs name** and enter the event hub name which can copy from Eventstream Custom endpoint.
+1. After the new connection created and returned to event hub Parameters configuration, select **Enter custom value** from the drop-down menu of the **Event Hub Name** and enter the event hub name which can copy from Eventstream Custom endpoint.
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/event-hub-name.png" alt-text="Screenshot showing how to get Event Hubs name." lightbox="media/stream-events-from-power-automate-and-logic-app/event-hub-name.png" :::
 
 1. Select **Content** for the **Advanced parameters** and configure the **Content** as the **Output** .
    
+   :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/configure-event-hub-content.png" alt-text="Screenshot showing configure event hub content." lightbox="media/stream-events-from-power-automate-and-logic-app/configure-event-hub-content.png" :::
+
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/output.png" alt-text="Screenshot showing configure event hub as output." lightbox="media/stream-events-from-power-automate-and-logic-app/output.png" :::
 
 1. Select **Save** to save the workflow.
