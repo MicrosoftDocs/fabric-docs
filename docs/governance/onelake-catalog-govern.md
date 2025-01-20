@@ -122,9 +122,11 @@ If the data isn't refreshing as expected, check the notifications pane and the [
 
 ## Considerations and limitations
 
-* The govern tab doesn't currently support cross-tenant scenarios.
+* The govern tab currently supports reports, dashboards, and [data-type items](./onelake-catalog-explore.md#find-items-by-item-type-category) (such as lakehouses and semantic models).
 
-* Currently, only insights are filtered according to OneLake catalog's domain filter. This means that if you set the filter to a given domain, the insights you'll see will be based only on items that are associated with that domain. However, you might see recommended actions that are related to items associated with other domains as well.
+* The govern tab doesn't support cross-tenant scenarios.
+
+* Currently, OneLake catalog's [domain selector](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) only filters insights. This means that if you set the selector to a given domain, the insights you'll see will be based only on items that are associated with the selected domain. However, the recommended actions that are displayed might include actions related to items that associated with other domains.
 
 ## Related content
 
