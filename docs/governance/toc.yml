@@ -17,7 +17,7 @@ items:
     href: onelake-catalog-overview.md
   - name: Find and explore data
     href: onelake-catalog-explore.md
-  - name: Monitor and improve your data's governance posture
+  - name: Monitor and improve governance of your data
     href: onelake-catalog-govern.md
 - name: Microsoft Purview
   items:

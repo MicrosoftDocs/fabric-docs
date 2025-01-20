@@ -96,7 +96,7 @@ The visuals in the Discover, trust, and reuse section provide insights about ite
 | **Tagged items by type** | Helps you understand what kinds of content is being tagged. |
 | **Untagged items by type** | Tags enhance searchability. By tagging frequently accessed content and recently visited items can help users locate valuable resources quickly. |
 
-## Improve your data's governance posture
+## Improve the governance posture of your data
 
 The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data you own. When you select a card, you see an insight about your data, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue.
 
