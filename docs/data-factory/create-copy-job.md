@@ -75,6 +75,7 @@ Complete the following steps to create a new Copy job:
 - Configure Copy button isn't available yet for advanced settings including incremental copy without full load, override or upsert data in destination.
 - Incremental copy mode can't work with Fabric Lakehouse as source.
 - Row deletion can't be captured from source store.
+- When copying files to storage locations, empty files will be created at the destination if no data is loaded from the source.
 
 ## Related content
 
