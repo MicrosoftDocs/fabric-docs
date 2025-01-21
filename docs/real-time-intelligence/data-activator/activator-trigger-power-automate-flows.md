@@ -45,7 +45,7 @@ You must paste the connection string from the previous step into this action. Se
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-automate.png" alt-text="Screenshot of pasting the connection string.":::
 
 1. Select the plus sign (+) to add a new step to the flow. 
-1. Search for **To Do** and choose **Add a to-do (V3)**.
+1. In this example, we're adding a **To Do** task, so we search for **To Do** and choose **Add a to-do (V3)**.
     :::image type="content" source="media/activator-trigger-power-automate-flows/activator-add-task.png" alt-text="Screenshot of defining a flow for activator.":::
 
 1. Fill in the necessary fields in the **Add a to-do (V3)** window. Start by selecting the **To-do list** dropdown and choosing the **Tasks** field that we created in an ealier step. 
