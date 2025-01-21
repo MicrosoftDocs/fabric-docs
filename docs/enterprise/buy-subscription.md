@@ -52,6 +52,9 @@ To buy an Azure SKU, you need to be an owner or a contributor of an Azure subscr
   * Microsoft.Fabric/capacities/suspend/action
   * Microsoft.Fabric/capacities/resume/action
 
+    >[!NOTE]
+    >Fabric items cannot be moved between regions. If you plan to relocate Fabric resources between regions or from a different SKU, ensure you select the same region as your other SKUs.
+
 To buy an Azure SKU, follow these steps:
 
 1. Sign in to the [Azure portal](https://portal.azure.com/).
