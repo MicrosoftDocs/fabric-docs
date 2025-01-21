@@ -199,6 +199,8 @@ items:
     - name: Monitor mirrored databases
       displayName: Monitor mirroring
       href: ../database/mirrored-database/monitor.md
+    - name: Mirrored database logs
+      href: ../database/mirrored-database/monitor-logs.md
     - name: Share and manage permissions
       href: ../database/mirrored-database/share-and-manage-permissions.md
   - name: Explore mirrored data
