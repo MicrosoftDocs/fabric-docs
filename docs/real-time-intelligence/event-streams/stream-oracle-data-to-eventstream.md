@@ -339,7 +339,7 @@ After the Oracle GoldenGate core application is installed, it can be configured 
 
 You should be able to see two tables (TCUSTMER and TCUSTORD) are created and four records are inserted there.
 
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/table-record.png" alt-text="Screenshot that shows the two tables are created and 4 records." lightbox="./media/stream-oracle-data-to-eventstream/table-record.png" :::
+:::image type="content" source="./media/stream-oracle-data-to-eventstream/table-record.png" alt-text="Screenshot that shows the two tables are created and 4 records." lightbox="./media/stream-oracle-data-to-eventstream/table-record.png" :::
 
 ### Configure and enable the extract
 
@@ -472,7 +472,7 @@ In this section, you're guided to configure the Oracle GoldenGate Big Data to re
 
 ### Prepare the Eventstream Kafka endpoint
 
-Following the normal Eventstream and its custom endpoint source creation to obtain the Kafka endpoint information for later use, see [Add a custom endpoint or custom app source to an eventstream](./add-source-custom-app?pivots=standard-capabilities#kafka-1).
+Following the normal Eventstream and its custom endpoint source creation to obtain the Kafka endpoint information for later use, see [Add a custom endpoint or custom app source to an eventstream](./add-source-custom-app.md?pivots=standard-capabilities#kafka-1).
 
 ### Configure the replicate for Oracle GoldenGate Big Data
 
