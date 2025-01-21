@@ -40,7 +40,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
 
 ### Create Oracle Virtual Machine
 
-1. Open your preferred shell to sign in to your Azure subscription with the [az login](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli) command. Then follow the on-screen directions:
+1. Open your preferred shell to sign in to your Azure subscription with the [az login](https://learn.microsoft.com/cli/azure/authenticate-azure-cli) command. Then follow the on-screen directions:
    
    ```bash
    $ az login
@@ -101,7 +101,7 @@ To create the Oracle database, use SSH to sign in to the virtual machine that wa
 
    :::image type="content" source="./media/stream-oracle-data-to-eventstream/create-oggxserver.png" alt-text="Screenshot that shows how to create the windows VM." lightbox="./media/stream-oracle-data-to-eventstream/create-oggxserver.png" :::
 
-1. Follow [this guide](https://learn.microsoft.com/en-us/windows/wsl/install) to install the WSL on the windows VM (oggXServer) so that SSH can be used to connect to Oracle VM (oggVM). You may also use other SSH tools, like putty to connect as well.
+1. Follow [this guide](https://learn.microsoft.com/windows/wsl/install) to install the WSL on the windows VM (oggXServer) so that SSH can be used to connect to Oracle VM (oggVM). You may also use other SSH tools, like putty to connect as well.
     ```bash
     PS C:\Users\azureuser> wsl --install -d Ubuntu
     ```
@@ -339,7 +339,7 @@ After the Oracle GoldenGate core application is installed, it can be configured 
 
 You should be able to see two tables (TCUSTMER and TCUSTORD) are created and four records are inserted there.
 
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/table-record.png" alt-text="Screenshot that shows the two tables (TCUSTMER and TCUSTORD) are created and 4 records." lightbox="./media/stream-oracle-data-to-eventstream/table-record.png" :::
+    :::image type="content" source="./media/stream-oracle-data-to-eventstream/table-record.png" alt-text="Screenshot that shows the two tables are created and 4 records." lightbox="./media/stream-oracle-data-to-eventstream/table-record.png" :::
 
 ### Configure and enable the extract
 
@@ -472,7 +472,7 @@ In this section, you're guided to configure the Oracle GoldenGate Big Data to re
 
 ### Prepare the Eventstream Kafka endpoint
 
-Following the normal Eventstream and its custom endpoint source creation to obtain the Kafka endpoint information for later use, see [Add a custom endpoint or custom app source to an eventstream](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-source-custom-app?pivots=standard-capabilities#kafka-1).
+Following the normal Eventstream and its custom endpoint source creation to obtain the Kafka endpoint information for later use, see [Add a custom endpoint or custom app source to an eventstream](./add-source-custom-app?pivots=standard-capabilities#kafka-1).
 
 ### Configure the replicate for Oracle GoldenGate Big Data
 
