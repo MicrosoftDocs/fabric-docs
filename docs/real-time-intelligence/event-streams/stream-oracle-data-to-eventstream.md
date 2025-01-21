@@ -40,7 +40,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
 
 ### Create Oracle Virtual Machine
 
-1. Open your preferred shell to sign in to your Azure subscription with the [az login](~/cli/azure/authenticate-azure-cli) command. Then follow the on-screen directions:
+1. Open your preferred shell to sign in to your Azure subscription with the [az login](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli) command. Then follow the on-screen directions:
    
    ```bash
    $ az login
@@ -100,7 +100,7 @@ To create the Oracle database, use SSH to sign in to the virtual machine that wa
 
    :::image type="content" source="./media/stream-oracle-data-to-eventstream/create-oggxserver.png" alt-text="Screenshot that shows how to create the windows VM." lightbox="./media/stream-oracle-data-to-eventstream/create-oggxserver.png" :::
 
-1. Follow [this guide](~/windows/wsl/install) to install the WSL on the windows VM (oggXServer) so that SSH can be used to connect to Oracle VM (oggVM). You may also use other SSH tools, like putty to connect as well.
+1. Follow [this guide](https://learn.microsoft.com/en-us/windows/wsl/install) to install the WSL on the windows VM (oggXServer) so that SSH can be used to connect to Oracle VM (oggVM). You may also use other SSH tools, like putty to connect as well.
     ```bash
     PS C:\Users\azureuser> wsl --install -d Ubuntu
     ```
@@ -128,29 +128,29 @@ With the completion of the above, you should be able to SSHed to the Oracle VM o
     $ ssh -i ~/.ssh/oggVM.pem azureuser@10.0.0.4
     ```
 
-2. Change the user to 'oracle'.
+1. Change the user to 'oracle'.
     ```bash
     $ sudo su - oracle
     ```
 
-3. Create the database using following command. This command can take 30-40 minutes to complete.
+1. Create the database using following command. This command can take 30-40 minutes to complete.
     ```bash
     $ dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbname cdb1 -sid cdb1 -responseFile NO_VALUE -characterSet AL32UTF8 -sysPassword OraPasswd1 -systemPassword OraPasswd1 -createAsContainerDatabase true -numberOfPDBs 1 -pdbName pdb1 -pdbAdminPassword OraPasswd1 -databaseType MULTIPURPOSE -automaticMemoryManagement false -storageType FS -datafileDestination "/u01/app/oracle/oradata/" -ignorePreReqs
     ```
 
-4. Set the ORACLE_SID and LD_LIBRARY_PATH variables
+1. Set the ORACLE_SID and LD_LIBRARY_PATH variables
     ```bash
     $ export ORACLE_SID=cdb1
     $ export LD_LIBRARY_PATH=$ORACLE_HOME/lib
     ```
 
-5. Add ORACLE_SID and LD_LIBRARY_PATH to ~/.bashrc file, so that these settings are saved for future sign-ins. ORACLE_HOME variable should already be set in .bashrc file
+1. Add ORACLE_SID and LD_LIBRARY_PATH to ~/.bashrc file, so that these settings are saved for future sign-ins. ORACLE_HOME variable should already be set in .bashrc file
     ```bash
     $ sed -i '$ a export ORACLE_SID=cdb1' .bashrc
     $ sed -i '$ a export LD_LIBRARY_PATH=$ORACLE_HOME/lib' .bashrc
     ```
 
-6. Start Oracle listener
+1. Start Oracle listener
     ```bash
     $ lsnrctl start
     ```
