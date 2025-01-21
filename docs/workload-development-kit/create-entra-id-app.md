@@ -1,12 +1,12 @@
 ---
-title: Fabric Workload Development Kit authentication setup
-description: Learn how to set up authentication for a Microsoft Fabric customized workload.
+title: Set up a Microsoft Entra ID application of your Workload Development Kit solution's
+description: Learn how to set up a Microsoft Entra ID application for your workload development environment.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 07/14/2024
-authentication-tutorial
+
 #customer intent: As an Independent Software Vendor (ISV) or a developer, I want to learn how to set up the authorization for a customized Fabric workload.
 ---
 
