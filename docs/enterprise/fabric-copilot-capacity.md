@@ -26,6 +26,6 @@ There are three steps required to enable Fabric Copilot capacity.
 
 *Fabric Copilot capacity is only supported in the Fabric tenant's home region.
 
-*The Fabric Copilot capacity has to reside on at least an F64 or P1 [SKU](licenses.md/#capacity).
+*The Fabric Copilot capacity has to reside on at least an F64 or P1 [SKU](licenses.md#capacity).
 
 *Data is processed in the region where you are using Copilot. Usage / billing records which contain the metadata of the Fabric items / workspaces are available to the capacity administrator of the Copilot capacity.
