@@ -11,26 +11,21 @@ ms.date:
 
 # Setting up a Fabric Copilot capacity
 
-This article describes how to set up a Fabric Copilot capacity. This article is aimed at admins who want to manage their organization's copilot usage and provide a consoliated billing capability.
-Fabric Copilot capacity is a capacity setting that consolidates organizational Fabric copilot usage for users designated by the capacity admin.
+This article describes how to set up a Fabric Copilot capacity. This article is aimed at admins who want to manage their organization's Copilot usage and provide a consolidated billing capability.
 
+When you enable the Fabric Copilot capacity for a specified set of users, all of their Copilot usage across Fabric is only billed in the Fabric Copilot capacity.
+ 
 ## Steps to enabling a Fabric Copilot capacity
 
 There are three steps required to enable Fabric Copilot capacity.
 1. The Fabric administrator [enables Copilot](../admin/service-admin-portal-copilot.md) for users within the organization.
-2. The Fabric administrator enables capacity administrators as [authorized to designate their capacity as a Copilot capacity](../admin/service-admin-portal-copilot.md)  to designate their capacities as Fabric Copilot Capacities.
+2. The Fabric administrator enables capacity administrators as [authorized to designate their capacity as a Copilot capacity](../admin/service-admin-portal-copilot.md).
 3. The capacity administrator needs to assign a group of users as [Fabric Copilot capacity users](../admin/capacity-settings.md) on their capacity.
 
-## Frequently asked questions
+## Considerations and limitations
 
-1. What regions can I set up a Fabric Copilot capacity?
+*Fabric Copilot capacity is only supported in the Fabric tenant's home region.
 
-Fabric Copilot capacity is only supported in the Fabric tenant's home region.
+*The Fabric Copilot capacity has to reside on at least an F64 or P1 [SKU](licenses.md/#capacity).
 
-2. What are the size restrictions for a Fabric Copilot capacity?
-
-Fabric Copilot capacity needs to be greater or equal to a P1 premium capacity or an F64 Fabric capacity.
-
-3. Does Fabric Copilot Capacity maintain my organization's data governance requirements?
-
-Data is always processed in the region where you are using copilot, and this does not change with Copilot capacity. Usage / billing records which contain the metadata of the Fabric items / workspaces are available to the capacity administrator of the Copilot capacity and by allowing only authorized users to designate Copilot capacity, we have delegated control to the Fabric admin.
+*Data is processed in the region where you are using Copilot. Usage / billing records which contain the metadata of the Fabric items / workspaces are available to the capacity administrator of the Copilot capacity.
