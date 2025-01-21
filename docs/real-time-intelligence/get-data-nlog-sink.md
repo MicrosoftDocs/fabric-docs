@@ -1,9 +1,9 @@
 ---
 title: Get data with the NLog sink
 description: Learn how to get data with the NLog sink in a KQL database in Real-Time Intelligence.
-ms.reviewer: yaschust
-ms.author: v-andykop
-author: AndyKop
+ms.reviewer: akshayd
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - ignite-2024

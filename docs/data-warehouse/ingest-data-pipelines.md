@@ -27,23 +27,20 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 ## Create a data pipeline
 
 1. To create a new pipeline navigate to your workspace, select the **+New** button, and select **Data pipeline**.
-    :::image type="content" source="media/ingest-data-pipelines/new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All.":::
+    :::image type="content" source="media/ingest-data-pipelines/new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New Item button, under the Get data section. The Data pipeline button is highlighted.":::
+1. To create a new pipeline navigate to your workspace, select the **+ New item** button, and select **Data pipeline**.
+    - In your workspace, select **+ New Item** and look for the **Data pipeline** card in the **Get data** section. 
+    - Or, select **Create** in the navigation pane. Look for the **Data pipeline** card in the **Data Factory** section.
 
 1. In the **New pipeline** dialog, provide a name for your new pipeline and select **Create**.
 
-1. You'll land in the pipeline canvas area, where you see three options to get started: **Add a pipeline activity**, **Copy data**, and **Choose a task to start**.
+1. You'll land in the pipeline canvas area, where you see options to get started.
 
     :::image type="content" source="media/ingest-data-pipelines/start-building-data-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media/ingest-data-pipelines/start-building-data-pipeline.png":::
 
-    Each of these options offers different alternatives to create a pipeline:
+    Pick the **Copy data assistant** option to launch the **Copy assistant**.
 
-    - **Add pipeline activity**: this option launches the pipeline editor, where you can create new pipelines from scratch by using pipeline activities.
-    - **Copy data**: this option launches a step-by-step assistant that helps you select a data source, a destination, and configure data load options such as the column mappings. On completion, it creates a new pipeline activity with a **Copy Data** task already configured for you.
-    - **Choose a task to start**: this option launches a set of predefined templates to help get you started with pipelines based on different scenarios.
-
-    Pick the **Copy data** option to launch the **Copy assistant**.
-
-1. The first page of the **Copy data** assistant helps you pick your own data from various data sources, or select from one of the provided samples to get started. For this tutorial, we'll use the **COVID-19 Data Lake** sample. Select this option and select **Next**.
+1. The first page of the **Copy data** assistant helps you pick your own data from various data sources, or select from one of the provided samples to get started. Select **Sample data** from the menu bar on this page. For this tutorial, we'll use the **COVID-19 Data Lake** sample. Select this option and select **Next**.
 
     :::image type="content" source="media/ingest-data-pipelines/sample-data-page.png" alt-text="Screenshot showing choices to use sample data or other data sources." lightbox="media/ingest-data-pipelines/sample-data-page.png":::
 
@@ -51,13 +48,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
     :::image type="content" source="media/ingest-data-pipelines/data-source-page.png" alt-text="Screenshot showing different dataset options for the COVID-19 sample, file formats, and a grid showing a preview of the data.":::
 
-1. The next page, **Data destinations**, allows you to configure the type of the destination workspace. We'll load data into a warehouse in our workspace, so select the **Warehouse** tab, and the **Data Warehouse** option. Select **Next**.
-
-    :::image type="content" source="media/ingest-data-pipelines/data-destination-type-page.png" alt-text="Screenshot showing different destination options." lightbox="media/ingest-data-pipelines/data-destination-type-page.png":::
-
-1. Now it's time to pick the warehouse to load data into. Select your desired warehouse in the dropdown list and select **Next**. 
-
-    :::image type="content" source="media/ingest-data-pipelines/data-destination-details-page.png" alt-text="Screenshot showing a dropdown list with a warehouse selected." lightbox="media/ingest-data-pipelines/data-destination-details-page.png":::
+1. The next page, **Data destinations**, allows you to configure the type of the destination workspace. We'll load data into a warehouse in our workspace. Select your desired warehouse in the dropdown list and select **Next**. 
 
 1. The last step to configure the destination is to provide a name to the destination table and configure the column mappings. Here you can choose to load the data to a new table or to an existing one, provide a schema and table names, change column names, remove columns, or change their mappings. You can accept the defaults, or adjust the settings to your preference.
 
@@ -65,7 +56,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
     When you're done reviewing the options, select **Next**.
 
-1. The next page gives you the option to use staging, or provide advanced options for the data copy operation (which uses the T-SQL COPY command). Review the options without changing them and select **Next**.
+1. The next page gives you the option to use [staging](/azure/data-factory/copy-activity-performance-features#staged-copy), or provide advanced options for the data copy operation (which uses the T-SQL COPY command). Review the options without changing them, and select **Next**.
  
 1. The last page in the assistant offers a summary of the copy activity. Select the option **Start data transfer immediately** and select **Save + Run**. 
 
@@ -76,8 +67,6 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
     :::image type="content" source="media/ingest-data-pipelines/monitor-pipeline.png" alt-text="Screenshot showing the pipeline canvas with a Copy activity in the center, and the pipeline execution status showing the current status In progress." lightbox="media/ingest-data-pipelines/monitor-pipeline.png":::
 
 1. After a few seconds, your pipeline finishes successfully. Navigating back to your warehouse, you can select your table to preview the data and confirm that the copy operation concluded. 
-
-    :::image type="content" source="media/ingest-data-pipelines/table-preview-covid-19.png" alt-text="Screenshot showing a warehouse with the bing_covid_19 table selected, and a grid showing a preview of the data in the table." lightbox="media/ingest-data-pipelines/table-preview-covid-19.png":::
 
 For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], visit:
 
