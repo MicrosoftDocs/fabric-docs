@@ -69,7 +69,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
 ### Import notebook
 
 1. Download the sample notebook from the [GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/vector-database-eventhouse-notebook.ipynb).
-1. Browse to your Fabric environment. In the experience switcher, choose **Develop** and then your workspace.
+1. Browse to your Fabric environment. In the experience switcher, choose **Fabric** and then your workspace.
 1. Select **Import** > **Notebook** >  **From this computer** > **Upload** then choose the notebook you downloaded in a previous step.
 1. Once the import is complete, open the imported notebook from your workspace.
 
