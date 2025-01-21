@@ -86,8 +86,6 @@ items:
     href: transactions.md 
   - name: Warehouse performance
     href: guidelines-warehouse-performance.md
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
   - name: How to
     items:    
     - name: Create a sample warehouse 
