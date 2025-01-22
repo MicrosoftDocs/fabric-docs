@@ -9,7 +9,7 @@ ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
 ms.date: 08/15/2024
-ms.search.form: Variable libraries, CI/CD
+ms.search.form: CI/CD and Variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to manage my content lifecycle.
 ---
 
