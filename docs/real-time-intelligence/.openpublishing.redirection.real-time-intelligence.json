@@ -1,5 +1,5 @@
 {
-  "redirections": [
+  "redirections": [   
     {
       "redirect_url": "/fabric/context/context-rti.json",
       "source_path_from_root": "/docs/context/context-rta.json.yml",
@@ -201,6 +201,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/fabric/real-time-intelligence/event-streams/includes/create-eventstream.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/includes/create-an-eventstream",
+      "redirect_document_id": false
+    },    
+    {
       "source_path_from_root": "/docs/real-time-analytics/eventhouse.md",
       "redirect_url": "/fabric/real-time-intelligence/eventhouse",
       "redirect_document_id": false
@@ -362,7 +367,7 @@
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-7-clean-up-resources.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-7-clean-up-resources",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-8-clean-up-resources",
       "redirect_document_id": false
     },
     {
@@ -458,36 +463,46 @@
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-explore.md",
       "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-advanced-kql-queries.md",
       "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-build-report.md",
       "redirect_url": "/fabric/real-time-intelligence/tutorial-6-power-bi-report",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-set-alert.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-set-alert",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-7-set-alert",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-set-alert.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-7-set-alert",
       "redirect_document_id": true
     },
     {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-query-data.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-query-data",
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-query-data.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
       "redirect_document_id": true
     },
     {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-create-dashboard.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-create-dashboard",
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-create-dashboard.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
       "redirect_document_id": true
     },
     {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-power-bi-report.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-power-bi-report",
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-power-bi-report.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-power-bi-report",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-7-clean-up-resources.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-8-clean-up-resources",
       "redirect_document_id": true
     },
     {

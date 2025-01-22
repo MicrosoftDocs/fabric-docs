@@ -4,13 +4,13 @@ description: A known issue is posted where external data sharing doesn't work in
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/19/2024
+ms.date: 12/17/2024
 ms.custom: known-issue-934
 ---
 
 # Known issue - External data sharing doesn't work in a different region capacity lakehouse
 
-When you accept an external data share invitation, you can select the lakehouse where the shortcut to the shared data is created. If you select a lakehouse within a capacity that resides in a different region than your home tenant region, the operation fails.
+When you accept an external data share invitation, you can select the lakehouse where the external share to the shared data is created. If you select a lakehouse within a capacity that resides in a different region than your home tenant region, the operation fails.
 
 **Status:** Open
 
@@ -18,7 +18,7 @@ When you accept an external data share invitation, you can select the lakehouse 
 
 ## Symptoms
 
-After selecting the lakehouse and the path where to create the shortcut to the external data, the operation fails.
+After selecting the lakehouse and the path where to create the external share to the external data, the operation fails.
 
 ## Solutions and workarounds
 

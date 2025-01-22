@@ -1,10 +1,10 @@
 ---
-title: Data warehouse tutorial - introduction
-description: Learn about the purpose of the tutorial, the end-to-end scenario and architecture, the sample data, and the data model.
+title: "Data warehouse tutorial: Introduction"
+description: "Learn about the purpose of the tutorial, the end-to-end scenario and architecture, the sample data, and the data model."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 07/18/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -12,7 +12,7 @@ ms.custom:
   - ignite-2024
 ---
 
-# Data warehouse tutorial introduction
+# Tutorial: Introduction
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -33,20 +33,20 @@ As prerequisites to this tutorial, complete the following steps:
 
 In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] developer at the fictional *Wide World Importers* company and complete the following steps in the [!INCLUDE [product-name](../includes/product-name.md)] portal to build and implement an end-to-end data warehouse solution:
 
-1. [Create a [!INCLUDE [product-name](../includes/product-name.md)] workspace](tutorial-create-workspace.md).
+1. [Create a workspace](tutorial-create-workspace.md).
 1. [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](tutorial-create-warehouse.md).
 1. [Ingest data](tutorial-ingest-data.md) from source to the data warehouse dimensional model with a data pipeline.
-1. [Create tables](tutorial-create-tables.md) in your [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+1. [Create tables with T-SQL](tutorial-create-tables.md) in your [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 1. [Load data with T-SQL](tutorial-load-data.md) with the SQL query editor.
-1. [Clone a table using T-SQL](tutorial-clone-table.md) with the SQL query editor.
-1. [Transform the data](tutorial-transform-data.md) to create aggregated datasets using T-SQL.
-1. [Time travel using T-SQL](tutorial-time-travel.md) to see data as it appeared.
-1. [Use the visual query editor](tutorial-visual-query.md) to query the data warehouse.
-1. [Analyze data](tutorial-analyze-data-notebook.md) with a notebook.
-1. [Create and execute cross-warehouse queries](tutorial-sql-cross-warehouse-query-editor.md) with SQL query editor.
-1. [Create Power BI reports](tutorial-power-bi-report.md) using DirectLake mode to analyze the data in place.
-1. [Build a report](tutorial-build-report-onelake-data-hub.md) from OneLake.
-1. [Clean up resources](tutorial-clean-up.md) by deleting the workspace and other items.
+1. [Clone a table with T-SQL](tutorial-clone-table.md) with the SQL query editor.
+1. [Transform data with a stored procedure](tutorial-transform-data.md) to create aggregated datasets.
+1. [Time travel with T-SQL](tutorial-time-travel.md) to see data as it appeared at a point in time.
+1. [Create a query with the visual query editor](tutorial-visual-query.md) to retrieve results from the data warehouse.
+1. [Analyze data in a notebook](tutorial-analyze-data-notebook.md).
+1. [Create and execute a cross-warehouse query](tutorial-sql-cross-warehouse-query-editor.md) with SQL query editor.
+1. [Create a DirectLake semantic model and Power BI report](tutorial-power-bi-report.md) to analyze the data in place.
+1. [Generate a report](tutorial-build-report-onelake-data-hub.md) from the OneLake catalog.
+1. [Clean up tutorial resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
 ## Data warehouse end-to-end architecture
 
@@ -77,4 +77,4 @@ While the WWI dimensional model contains multiple [fact tables](dimensional-mode
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Microsoft Fabric workspace](tutorial-create-workspace.md)
+> [Tutorial: Create a workspace](tutorial-create-workspace.md)

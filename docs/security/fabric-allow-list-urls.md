@@ -105,6 +105,7 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |**Required**: Fabric DW SQL |datawarehouse.fabric.microsoft.com|TCP 1433|
 |**Required**: Fabric DW SQL |datawarehouse.pbidedicated.microsoft.com|TCP 1433|
 |**Required**: Fabric DW SQL |*.pbidedicated.microsoft.com|TCP 1433|
+|**Required**: Fabric DW SQL |*.pbidedicated.windows.net |TCP 1433|
 
 ## Data Science
 

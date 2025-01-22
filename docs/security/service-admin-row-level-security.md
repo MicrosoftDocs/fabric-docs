@@ -39,7 +39,7 @@ To manage security on your semantic model, open the workspace where you saved yo
 
     :::image type="content" source="media/service-admin-row-level-security/dataset-more-options-menu.png" alt-text="Screenshot showing the More options menu with Security selected.":::
 
-Security takes you to the Role-Level Security page where you add members to a role you created. Contributor (and higher workspace roles) will see **Security** and can assign users to a role.
+Security takes you to the Role-Level Security page where you add members to a role you created. Contributor (and higher workspace roles) will see **Security** and can assign users to a role. As a note you can only manage security on models that have row-level security roles already defined in Power BI Desktop or when editing your data model in the Power BI service.
 
 ## Working with members
 

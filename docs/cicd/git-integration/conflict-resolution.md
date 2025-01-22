@@ -1,16 +1,17 @@
 ---
 title: Resolve conflicts with Git integration
-description: Learn how to resolve conflicts when using Fabric's Git integration tools.
+description: Learn how to resolve conflicts when using Fabric's Git integration tools, including selecting versions, reverting states, and resolving conflicts in Git.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 06/06/2024
+ms.date: 12/06/2024
 ms.custom:
   - build-2023
   - ignite-2023
+#customer intent: As a developer, I want to know how to resolve conflicts when using Fabric's Git integration tools.
 ---
 
 # Conflict resolution
@@ -28,6 +29,7 @@ There are three ways to resolve a conflict:
 - [Select which version to keep](#resolve-conflict-in-ui) through the UI.
 - [Revert](#revert-to-a-previous-state) either the workspace or the Git repository to a previous synced state.
 - [Resolve](#resolve-conflict-in-git) the conflict in Git.
+- [Manually update](./partial-update.md) the workspace if one or more items fail to update.
 
 ## Resolve conflict in UI
 

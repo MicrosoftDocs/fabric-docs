@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: sbahadur
 author: shaween18
 ms.topic: how-to
-ms.date: 11/16/2023
+ms.date: 12/18/2024
 ---
 
 # Transform data by running an Azure Databricks activity

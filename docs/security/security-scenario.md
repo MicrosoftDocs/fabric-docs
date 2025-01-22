@@ -4,7 +4,7 @@ description: "Learn about Microsoft Fabric security concepts and features that c
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: v-myerspeter, vparasuraman
-ms.date: 08/27/2024
+ms.date: 12/12/2024
 ms.topic: conceptual
 ms.custom: fabric-cat, security-guidance
 ---
@@ -133,7 +133,7 @@ There are some considerations for using this pattern:
 - AWS S3 supports encryption at-rest using [customer-managed keys](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). Fabric can perform in-place reads on S3 buckets using [S3 shortcut](../onelake/create-s3-shortcut.md); however, write operations using a shortcut to AWS S3 are not supported.
 - Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
-- In Microsoft Fabric, Power BI experience supports [customer-managed key](/power-bi/enterprise/service-encryption-customer-managed-keys).
+- In Microsoft Fabric, Power BI supports customer-managed key with [Bring your own encryption keys for Power BI](/power-bi/enterprise/service-encryption-byok).
 - Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts. as the cached data is persisted on OneLake.
 
 ## Data residency

@@ -287,7 +287,7 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
 - Copilot may generate Spark statement, which may not executable in Python notebook.
 
-- Currently, the data pipelines integration, scheduler and Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing, please stay tuned as we continue to roll out support in more regions.
+- Currently, Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing, please stay tuned as we continue to roll out support in more regions.
 
 ## Related content
 

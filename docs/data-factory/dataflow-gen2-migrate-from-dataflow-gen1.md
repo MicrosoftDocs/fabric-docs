@@ -5,7 +5,7 @@ author: itsnotaboutthecell
 ms.author: alpowers
 ms.reviewer: dougklopfenstein, mllopis
 ms.topic: conceptual
-ms.date: 11/26/2024
+ms.date: 12/08/2024
 ms.custom: fabric-cat, intro-migration
 ---
 
@@ -103,11 +103,11 @@ There are other considerations to factor into your planning before migrating to 
 
 You require a Pro or Premium Per User (PPU) license to publish or manage Power BI dataflows (Dataflow Gen1). In contrast, you only require a Microsoft Fabric (Free) license to author a Dataflow Gen2 in a Premium capacity workspace.
 
-### Migration
+### Migration scenarios
 
-[Power Query templates](/power-query/power-query-template) simplify the process of transferring a project between different Power Query integrations. They help streamline what could otherwise be a complex and time-consuming task. Templates encapsulate the entire Power Query project, including scripts and metadata, into a single, portable file.
+When you migrate your dataflows, it's important to think beyond simply copying existing solutions. Instead, we recommend modernizing your solutions by taking advantage of the latest innovations and capabilities of Dataflow Gen2. This approach ensures that your solutions can support the growing demands of the business.
 
-Power Query templates have been designed to be compatible with various integrations, such as Power BI dataflows and Fabric Dataflow Gen2, ensuring a smooth transition between these services.
+In the [migration scenarios article](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md), several methods for upgrading, taking inventory, and using accelerators like [Power Query templates](/power-query/power-query-template) are described. These methods can help to ensure a seamless upgrade for your projects.
 
 ### Roadmap
 
@@ -117,6 +117,7 @@ The [Microsoft Fabric release plan](https://aka.ms/fabricreleaseplan) announces 
 
 For more information about this article, check out the following resources:
 
+- [Dataflow migration scenarios](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md)
 - [What is Data Factory in Microsoft Fabric?](data-factory-overview.md)
 - [Getting from Dataflow Generation 1 to Dataflow Generation 2](dataflows-gen2-overview.md)
 - Questions? [Try asking the Fabric community](https://community.fabric.microsoft.com/)

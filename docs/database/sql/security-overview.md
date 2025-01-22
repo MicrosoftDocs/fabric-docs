@@ -4,7 +4,7 @@ description: Learn about security in SQL database in Microsoft Fabric.
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: wiassaf
-ms.date: 11/19/2024
+ms.date: 01/16/2025
 ms.topic: conceptual
 ---
 # Security in SQL database in Microsoft Fabric

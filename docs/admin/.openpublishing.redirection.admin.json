@@ -15,7 +15,12 @@
             "redirect_url": "/fabric/admin/fabric-switch",
             "redirect_document_id": false
         },
+
         {
+            "source_path_from_root": "/docs/admin/service-admin-portal-usage-metrics.md",
+            "redirect_url": "/fabric/admin/feature-usage-adoption",
+            "redirect_document_id": false
+        },        {
             "source_path_from_root": "/docs/admin/service-admin-setup-certification.md",
             "redirect_url": "/fabric/admin/endorsement-certification-enable",
             "redirect_document_id": false

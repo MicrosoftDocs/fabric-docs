@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 08/01/2024
+ms.date: 11/29/2024
 ---
 
 # Data pipelines pricing for Data Factory in Microsoft Fabric
@@ -27,12 +27,12 @@ When you run a Data Pipeline with Data Factory in Microsoft Fabric, Fabric Capac
 
 The following table shows a breakdown of the pricing model for data pipelines within Data Factory in Microsoft Fabric:
 
-|Data Pipelines Engine Type  |Charge Meters and Metric Units  |Fabric Capacity Units (CUs) consumption rate  |
+|Data Pipelines Engine Type  |Charge Meters and Metric Units  |Fabric Capacity Units (CU) consumption rate  |
 |---------|---------|---------|
-|Data movement    | Based on Copy activity run duration in hours and the used intelligent optimization throughput resources        | 1.5 CUs / hour   |
-|Data orchestration     |  Incorporates orchestration activity runs and activity integration runtime charges       | 0.0056 CUs for each non-copy activity run |
+|Data movement    | Based on Copy activity run duration in hours and the used intelligent optimization throughput resources        | 1.5 CU hours   |
+|Data orchestration     |  Incorporates orchestration activity runs and activity integration runtime charges       | 0.0056 CU hours for each non-copy activity run |
 
-It indicates that for each intelligent optimization throughput resource usage in a Data Pipeline execution, 1.5 CU per hour are consumed for data movement Copy activities. Secondly, each orchestration activity run consumes 0.0056 CU. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.  
+It indicates that for each intelligent optimization throughput resource usage in a Data Pipeline execution, 1.5 CU hours are consumed for data movement Copy activities. Secondly, each orchestration activity run consumes 0.0056 CU hours. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.  
 
 > [!NOTE]
 > Whenever a pipeline orchestration activity triggers other Fabric artifacts to run (for example, Notebook or Dataflow Gen2), the consumption for those artifacts needs to be taken into account as well.

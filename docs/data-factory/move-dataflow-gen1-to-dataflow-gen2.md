@@ -4,7 +4,7 @@ description: This article describes the procedure for moving Dataflow Gen1 queri
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -13,7 +13,7 @@ ms.custom:
 
 # Move queries from Dataflow Gen1 to Dataflow Gen2
 
-Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows have been created over the years using the original version of dataflows  (now called *Dataflow Gen1* and listed as the **Dataflow** type in your workspace).  This article describes how you can reuse your older Dataflow Gen1 dataflows by importing Dataflow Gen1 dataflows into Dataflow Gen2 using the export template feature. It also includes information on how to copy the Gen1 queries and paste them into a new Dataflow Gen2.
+Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows were created over the years using the original version of dataflows (now called *Dataflow Gen1* and listed as the **Dataflow** type in your workspace).  This article describes how you can reuse your older Dataflow Gen1 dataflows by importing Dataflow Gen1 dataflows into Dataflow Gen2 using the export template feature. It also includes information on how to copy the Gen1 queries and paste them into a new Dataflow Gen2.
 
 ## Use the export template feature
 
@@ -47,7 +47,7 @@ To use the export template feature:
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/configure-your-connection.png" alt-text="Screenshot showing the Power Query editor with Configure connection emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/configure-your-connection.png":::
 
-Your Dataflow Gen1 has now been imported to Dataflow Gen2.
+Your Dataflow Gen1 is now imported to Dataflow Gen2.
 
 ## Copy and paste existing Dataflow Gen1 queries
 
@@ -79,7 +79,7 @@ To copy existing Dataflow Gen1 queries:
 
 1. Select **Connect** to connect to your data.
 
-1. Once you've connected to your data, right-click the initial blank query, and then select **Delete** to remove the empty query.
+1. Once you connect to your data, right-click the initial blank query, and then select **Delete** to remove the empty query.
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/clean-up-query.png" alt-text="Screenshot showing the blank query selected, with emphasis on the delete option in the query's menu.":::
 

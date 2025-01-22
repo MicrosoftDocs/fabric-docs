@@ -4,7 +4,7 @@ description: Learn about how to perform a restore in-place of a warehouse in Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish, sosivara
-ms.date: 07/17/2024
+ms.date: 01/14/2025
 ms.topic: conceptual
 ms.custom:
   - build-2024
@@ -23,9 +23,6 @@ ms.search.form: Warehouse Restore # This article's title should not change. If s
 Restore in-place is an essential part of data recovery that allows restoration of the warehouse to a prior known good state. A restore overwrites the existing warehouse, using restore points from the existing warehouse.
 
 You can also query data in a warehouse as it appeared in the past, using the T-SQL `OPTION` syntax. For more information, see [Query data as it existed in the past](time-travel.md).
-
-> [!NOTE]
-> The restore points and restore in place features are currently in preview.
 
 ## What are restore points?
 

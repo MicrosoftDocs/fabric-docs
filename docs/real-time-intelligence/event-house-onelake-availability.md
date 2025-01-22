@@ -2,8 +2,8 @@
 title: Eventhouse OneLake Availability
 description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023

@@ -7,7 +7,7 @@ author: abnarain
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 04/15/2023
+ms.date: 12/18/2024
 ---
 
 # Tutorial: Refresh Power BI Semantic Model with Apache Airflow Job

@@ -73,7 +73,7 @@ items:
   - name: View refresh summary
     href: service-admin-portal-refresh-summary.md
   - name: View usage metrics
-    href: service-admin-portal-usage-metrics.md
+    href: feature-usage-adoption.md
 - name: Workspace administration
   items:
   - name: Manage workspaces

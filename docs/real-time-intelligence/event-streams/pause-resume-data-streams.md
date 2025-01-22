@@ -73,6 +73,8 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Amazon MSK Kafka                                          | Source        | YES                       | - When streaming was last stopped           |
 | Custom App                                                | Source        | NO                        |                                             |
 | Fabric Workspace events source                            | Source        | NO                        |                                             |
+| Fabric OneLake events                                     | Source        | NO                        |                                             |
+| Fabric Job events                                         | Source        | NO                        |                                             |
 | Azure Blob storage                                        | Source        | NO                        |                                             |
 | Lakehouse                                                 | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Eventhouse (Event processing before ingestion)          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |

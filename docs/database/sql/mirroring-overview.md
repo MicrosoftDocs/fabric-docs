@@ -4,7 +4,7 @@ description: "Learn more about automatic mirroring to OneLake for SQL database i
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
-ms.date: 11/14/2024
+ms.date: 01/16/2025
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
@@ -64,8 +64,8 @@ Connect to the replicated copy of your SQL database data in OneLake via the SQL 
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
-- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
+- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
 
 ## Related content
 

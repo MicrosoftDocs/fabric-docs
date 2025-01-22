@@ -4,7 +4,7 @@ description: Learn about options to connect to your SQL database in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 10/17/2024
+ms.date: 01/16/2025
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -91,6 +91,6 @@ bcp bcptest in "c:\temp\sample.dat" -S <your_server>.database.fabric.microsoft.c
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
-- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
 - [SQL database in Microsoft Fabric](overview.md)
+- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
 - [Ingest data into SQL database via data pipelines](load-data-pipelines.md)

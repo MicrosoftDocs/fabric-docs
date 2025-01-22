@@ -12,7 +12,13 @@ items:
   - name: Standards compliance
     href: standards-compliance.md
 - name: OneLake catalog
-  href: onelake-catalog.md
+  items:
+  - name: OneLake catalog overview
+    href: onelake-catalog-overview.md
+  - name: Find and explore data
+    href: onelake-catalog-explore.md
+  - name: Monitor and improve governance of your data
+    href: onelake-catalog-govern.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview and Fabric
@@ -22,8 +28,10 @@ items:
         href: /purview/register-scan-fabric-tenant?context=/fabric/governance/context/context-purview
       - name: Connect cross-tenant
         href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/governance/context/context-purview
-  - name: Microsoft Purview Hub
+  - name: Microsoft Purview Hub - Admins
     href: use-microsoft-purview-hub.md
+  - name: Microsoft Purview Hub - Data owners
+    href: use-microsoft-purview-hub-data-owners.md
   - name: Information protection
     items:
     - name: Information protection in Microsoft Fabric

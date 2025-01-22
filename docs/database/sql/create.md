@@ -4,7 +4,7 @@ description: Learn how to create a SQL database in Microsoft Fabric in the Fabri
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
-ms.date: 11/07/2024
+ms.date: 01/16/2025
 ms.topic: how-to
 ms.custom:
   - ignite-2024

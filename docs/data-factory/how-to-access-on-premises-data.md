@@ -6,7 +6,7 @@ ms.author: lle
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 02/23/2024
+ms.date: 01/21/2025
 ms.search.form: On-premises data sources gateway
 ---
 
@@ -50,7 +50,6 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
    - Folder
    - Google Analytics
    - IBM DB2
-   - IBM Informix Database
    - MySQL
    - OData
    - ODBC
