@@ -91,7 +91,7 @@ landingContent:
         - text: Process data streams
           url: process-data-streams-using-transformations.md          
         - text: Transform and route data streams 
-          url: ../real-time-intelligence/event-streams/route-events-based-on-content?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+          url: ../real-time-intelligence/event-streams/route-events-based-on-content.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
 
   # Card 
   - title: Set alerts on data streams and events
