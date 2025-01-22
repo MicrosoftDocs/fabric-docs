@@ -4,7 +4,7 @@ description: A known issue is posted where line chart value-axis zoom sliders do
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/20/2024
+ms.date: 01/22/2025
 ms.custom: known-issue-938
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-938
 
 The vertical/Y-axis value-axis zoom controls might not work correctly for line charts or line chart varieties, such as area chart or stacked area chart. The issue most often occurs if markers, stacked totals, or anomaly markers are enabled.
 
-**Status:** Open
+**Status:** Fixed: January 22, 2025
 
 **Product Experience:** Power BI
 

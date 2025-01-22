@@ -291,7 +291,7 @@ write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true
 
 Use the delta table to create a semantic model.
 
-1. On the left, select **OneLake data hub**
+1. On the left, select **OneLake**
 1. Select the lakehouse that you attached to your notebook
 1. Select **Open**
 

@@ -9,7 +9,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/29/2024
+ms.date: 01/29/2024
 #customer intent: As a data scientist, I want to build an uplift model so I can estimate causal impact.
 ---
 
@@ -28,26 +28,14 @@ This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](inc
 
 You can follow along in a notebook in one of two ways:
 
-- Open and run the built-in notebook in the Synapse Data Science experience
-- Upload your notebook from GitHub to the Synapse Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
-The sample **Uplift modeling** notebook accompanies this tutorial. Visit [!INCLUDE [this resource](includes/follow-along-built-in-notebook.md)] for more information about accessing built-in sample notebooks for tutorials.
+The sample **Uplift modeling** notebook accompanies this tutorial.
 
-To open the tutorial's built-in sample notebook in the Synapse Data Science experience:
-
-1. Go to the Synapse Data Science home page
-
-1. **Select Use a sample**
-
-1. Select the corresponding sample:
-
-   1. From the default End-to-end workflows (Python) tab, if the sample is for a Python tutorial
-   1. From the End-to-end workflows (R) tab, if the sample is for an R tutorial
-   1. From the Quick tutorials tab, if the sample is for a quick tutorial
-
-1. [Attach a lakehouse to the notebook](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before you start running code
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
 ### Import the notebook from GitHub
 

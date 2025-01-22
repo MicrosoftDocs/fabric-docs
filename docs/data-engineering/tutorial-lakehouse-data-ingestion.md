@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/19/2024
+ms.date: 01/16/2025
 ---
 
 # Lakehouse tutorial: Ingest data into the lakehouse
@@ -25,9 +25,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. Select **Workspaces** in the left navigation pane, and then select your new workspace from the **Workspaces** menu. The items view of your workspace appears.
 
-1. From the **+New** menu item in the workspace ribbon, select **Data pipeline**.
-
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\create-data-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
+1. From the **New item** option in the workspace ribbon, select **Data pipeline**.
 
 1. In the **New pipeline** dialog box, specify the name as **IngestDataFromSourceToLakehouse** and select **Create**. A new data factory pipeline is created and opened.
 
@@ -65,7 +63,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. After the successful execution of the pipeline, go to your lakehouse (**wwilakehouse**) and open the explorer to see the imported data.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing how to navigate to the lakehouse.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing how to navigate to the lakehouse." lightbox="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png":::
 
 1. Verify that the folder **WideWorldImportersDW** is present in the **Explorer** view and contains data for all tables.
 

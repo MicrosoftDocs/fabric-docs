@@ -8,7 +8,7 @@ reviewer: sdgilley
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
-ms.date: 01/22/2024
+ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine learning model so I can predict customer churn.
 ---
 
@@ -36,8 +36,8 @@ This tutorial covers these steps:
 
 You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Data Science experience
-- Upload your notebook from GitHub to the Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
@@ -194,18 +194,18 @@ display(df, summary=True)
 
 ### Use Data Wrangler to perform initial data cleaning
 
-Launch Data Wrangler directly from the notebook to explore and transform pandas dataframes. At the notebook ribbon **Data** tab, use the Data Wrangler dropdown prompt to browse the activated pandas DataFrames available for editing. Select the DataFrame you want to open in Data Wrangler.
+Launch Data Wrangler directly from the notebook to explore and transform pandas dataframes. Select the Data Wrangler dropdown from the horizontal toolbar to browse the activated pandas DataFrames available for editing. Select the DataFrame you want to open in Data Wrangler.
 
 >[!NOTE]
 >Data Wrangler cannot be opened while the notebook kernel is busy. The cell execution must finish before you launch Data Wrangler. [Learn more about Data Wrangler](https://aka.ms/fabric/datawrangler).
 
-:::image type="content" source="./media/tutorial-bank-churn/select-data-wrangler.png" alt-text="Screenshot that shows where to access Data Wrangler.":::
+:::image type="content" source="./media/customer-churn/select-data-wrangler.png" alt-text="Screenshot that shows where to access Data Wrangler." lightbox="./media/customer-churn/select-data-wrangler.png":::
 
 After the Data Wrangler launches, a descriptive overview of the data panel is generated, as shown in the following images. The overview includes information about the dimension of the DataFrame, any missing values, etc. You can use Data Wrangler to generate the script to drop the rows with missing values, the duplicate rows and the columns with specific names. Then, you can copy the script into a cell. The next cell shows that copied script.
 
-:::image type="content" source="./media/tutorial-bank-churn/menu-data-wrangler.png" alt-text="Screenshot that shows the Data Wrangler menu.":::
+:::image type="content" source="./media/customer-churn/menu-data-wrangler.png" alt-text="Screenshot that shows the Data Wrangler menu." lightbox="./media/customer-churn/menu-data-wrangler.png":::
 
-:::image type="content" source="./media/tutorial-bank-churn/missing-data-data-wrangler.png" alt-text="Screenshot that shows missing data in Data Wrangler.":::
+:::image type="content" source="./media/customer-churn/missing-data-data-wrangler.png" alt-text="Screenshot that shows missing data in Data Wrangler." lightbox="./media/customer-churn/missing-data-data-wrangler.png":::
 
 ```python
 def clean_data(df):
@@ -262,7 +262,7 @@ for ax,col in zip(axes.flatten(), df_num_cols.columns):
 fig.delaxes(axes[1,2])
 ```
 
-:::image type="content" source="media/tutorial-bank-churn/box-plots.jpg" alt-text="Screenshot that shows a notebook display of the box plot for numerical attributes.":::
+:::image type="content" source="media/customer-churn/box-plots.jpg" alt-text="Screenshot that shows a notebook display of the box plot for numerical attributes.":::
 
 ### Show the distribution of exited and non-exited customers
 
@@ -276,7 +276,7 @@ for ind, item in enumerate (attr_list):
 fig.subplots_adjust(hspace=0.7)
 ```
 
-:::image type="content" source="media/tutorial-bank-churn/bar-charts.jpg" alt-text="Screenshot that shows a notebook display of the distribution of exited versus non-exited customers.":::
+:::image type="content" source="media/customer-churn/bar-charts.jpg" alt-text="Screenshot that shows a notebook display of the distribution of exited versus non-exited customers.":::
 
 ### Show the distribution of numerical attributes
 
@@ -296,7 +296,7 @@ for i,j in itertools.zip_longest(columns, range(length)):
 plt.show()
 ```
 
-:::image type="content" source="media/tutorial-bank-churn/numerical-attributes.jpg" alt-text="Screenshot that shows a notebook display of numerical attributes.":::
+:::image type="content" source="media/customer-churn/numerical-attributes.jpg" alt-text="Screenshot that shows a notebook display of numerical attributes.":::
 
 ### Perform feature engineering
 
@@ -314,9 +314,9 @@ df_clean["NewEstSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels 
 
 With the same steps to launch Data Wrangler, as discussed earlier, use the Data Wrangler to perform one-hot encoding. This cell shows the copied generated script for one-hot encoding:
 
-:::image type="content" source="./media/tutorial-bank-churn/1-hot-encoding-data-wrangler.png" alt-text="Screenshot that shows one-hot encoding in Data Wrangler.":::
+:::image type="content" source="./media/customer-churn/1-hot-encoding-data-wrangler.png" alt-text="Screenshot that shows one-hot encoding in Data Wrangler." lightbox="./media/customer-churn/1-hot-encoding-data-wrangler.png":::
 
-:::image type="content" source="./media/tutorial-bank-churn/1-hot-encoding-select-columns-data-wrangler.png" alt-text="Screenshot that shows the selection of columns in Data Wrangler.":::
+:::image type="content" source="./media/customer-churn/1-hot-encoding-select-columns-data-wrangler.png" alt-text="Screenshot that shows the selection of columns in Data Wrangler." lightbox="./media/customer-churn/1-hot-encoding-select-columns-data-wrangler.png":::
 
 ```python
 df_clean = pd.get_dummies(df_clean, columns=['Geography', 'Gender'])
@@ -369,7 +369,7 @@ Autologging automatically captures both the input parameter values and the outpu
 
 When complete, your experiment resembles this image:
 
-:::image type="content" source="./media/tutorial-bank-churn/experiment-runs.png" alt-text="Screenshot that shows the experiment page for the bank churn experiment.":::
+:::image type="content" source="./media/customer-churn/experiment-runs.png" alt-text="Screenshot that shows the experiment page for the bank churn experiment." lightbox="./media/customer-churn/experiment-runs.png":::
 
 All the experiments with their respective names are logged, and you can track their parameters and performance metrics. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
@@ -485,7 +485,7 @@ To view your experiments:
 1. On the left panel, select your workspace.
 1. Find and select the experiment name, in this case, **sample-bank-churn-experiment**.
 
-:::image type="content" source="./media/tutorial-bank-churn/experiment-runs-expanded.png" alt-text="Screenshot that shows logged values for one of the models.":::
+:::image type="content" source="./media/customer-churn/experiment-runs.png" alt-text="Screenshot that shows logged values for one of the models." lightbox= "./media/customer-churn/experiment-runs.png":::
 
 ## Step 5: Evaluate and save the final machine learning model
 
@@ -547,7 +547,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
 tn, fp, fn, tp = cfm.ravel()
 ```
 
-:::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-4.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for random forest with a maximum depth of four.":::
+:::image type="content" source="media/customer-churn/confusion-random-forest-depth-4.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for random forest with a maximum depth of four.":::
 
 Create a confusion matrix for the random forest classifier with maximum depth of eight, with six features:
 
@@ -558,7 +558,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
 tn, fp, fn, tp = cfm.ravel()
 ```
 
-:::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-8.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for random forest with a maximum depth of eight.":::
+:::image type="content" source="media/customer-churn/confusion-random-forest-depth-8.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for random forest with a maximum depth of eight.":::
 
 Create a confusion matrix for LightGBM:
 
@@ -569,7 +569,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
 tn, fp, fn, tp = cfm.ravel()
 ```
 
-:::image type="content" source="media/tutorial-bank-churn/confusion-lgbm.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for LightGBM.":::
+:::image type="content" source="media/customer-churn/confusion-lgbm.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for LightGBM.":::
 
 ### Save results for Power BI
 
@@ -591,18 +591,19 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 Access your saved table in Power BI:
 
-1. On the left, select **OneLake data hub**
-1. Select the lakehouse that you added to this notebook
-1. In the **Open this Lakehouse** section, select **Open**
-1. On the ribbon, select **New semantic model**. Select `df_pred_results`, and then select **Continue** to create a new Power BI semantic model linked to the predictions
-1. Select **New report** from the tools at the top of the semantic models page, to open the Power BI report authoring page
+1. On the left, select **OneLake**.
+1. Select the lakehouse that you added to this notebook.
+1. In the **Open this Lakehouse** section, select **Open**.
+1. On the ribbon, select **New semantic model**. Select `df_pred_results`, and then select **Confirm** to create a new Power BI semantic model linked to the predictions.
+1. Open new semantic model. You can find it in OneLake.
+1. Select **Create New report** under file from the tools at the top of the semantic models page, to open the Power BI report authoring page.
 
 The following screenshot shows some example visualizations. The data panel shows the delta tables and columns to select from a table. After selection of appropriate category (x) and value (y) axis, you can choose the filters and functions - for example, sum or average of the table column.
 
 > [!NOTE]
 > In this screenshot, the illustrated example describes the analysis of the saved prediction results in Power BI:
 
-:::image type="content" source="./media/tutorial-bank-churn/power-bi-dashboard.png" alt-text="Screenshot that shows a Power BI dashboard example.":::
+:::image type="content" source="./media/customer-churn/power-bi-dashboard.png" alt-text="Screenshot that shows a Power BI dashboard example." lightbox="./media/customer-churn/power-bi-dashboard.png":::
 
 However, for a real customer churn use-case, the user might need a more thorough set of requirements of the visualizations to create, based on subject matter expertise, and what the firm and business analytics team and firm have standardized as metrics.
 
