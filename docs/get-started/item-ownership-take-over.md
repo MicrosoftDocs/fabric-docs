@@ -5,7 +5,7 @@ ms.reviewer: sakjai
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 01/11/2025
+ms.date: 01/22/2025
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.
 ---
 # Take ownership of Fabric items
@@ -49,27 +49,7 @@ To take ownership of a Fabric item:
 
 Some connections that use the previous item owner's credentials might stop working if the new item owner doesn't have access to the connection. In such cases, you might see a warning message.
 
-In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. The steps for this procedure in common item types are described in the following sections.
-
-### KQL Queryset
-
-1. Open the KQL queryset.
-
-1. In the **Explorer** pane, add another connection or select an existing one.
-
-   :::image type="content" source="./media/item-ownership-take-over/kql-queryset-add-connection.png" alt-text="Screenshot showing how to add another connection or select an existing one in a KQL Queryset item.":::
-
-### Real-Time Dashboard
-
-1. Open the real-time dashboard in edit mode.
-
-1. Choose **New data source** on the tool bar.
- 
-1. Select **Add+** to add new data sources.
-
-   :::image type="content" source="./media/item-ownership-take-over/real-time-dashboard-add-new-data-sources.png" alt-text="Screenshot showing how to add a new data source in a Kusto Dashboard.":::
-
-1. In the new or existing tile, select the appropriate data source.
+In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. The steps for this procedure in common item types are described in the following sections. This is not an exhaustive list of item types and is meant for illustration purposes. For specific guidance about taking ownership of Fabric items that have connections, see the item-specific documentation for each item type.
 
 ### Pipelines
 
@@ -81,13 +61,27 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    :::image type="content" source="./media/item-ownership-take-over/data-pipeline-replace-connection.png" alt-text="Screenshot showing how to add the appropriate connection in a pipeline.":::
 
+### KQL Queryset
+
+1. Open the KQL queryset.
+
+1. In the **Explorer** pane, add another connection or select an existing one.
+
+### Real-Time Dashboard
+
+1. Open the real-time dashboard in edit mode.
+
+1. Choose **New data source** on the tool bar.
+ 
+1. Select **Add+** to add new data sources.
+
+1. In the new or existing tile, select the appropriate data source.
+
 ### User data functions
 
 1. Open the item and go to **Manage Connections**.
 
 1. Select **Add data connection** to add a new connection and use that in the data function.
-
-   :::image type="content" source="./media/item-ownership-take-over/user-function-add-data-connection.png" alt-text="Screenshot showing how to add a new connection in a user data function.":::
 
 ## Considerations and limitations
 
@@ -103,4 +97,4 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
-* Currently, there is no API support for changing ownership of Fabric items. This does not impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, datamarts, and warehouses, which continues to be available. taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
+* Currently, there is no API support for changing ownership of Fabric items. This does not impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, and datamarts, which continues to be available. For information about taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
