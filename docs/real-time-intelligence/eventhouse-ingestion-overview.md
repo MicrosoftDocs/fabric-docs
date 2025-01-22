@@ -19,7 +19,7 @@ This article outlines the various methods for ingesting data into an Eventhouse 
 The right solution for you depends significantly on these main factors:
 
 * [Where is your data stored?](#location-of-data)
-* [Do you require low-latency or real-time ingestion?](#low-latency-or-real-time-ingestion)
+* [Do you require low-latency (real-time ingestion)?](#low-latency-or-real-time-ingestion)
 * [Does your data need transformations?](#data-transformation)
 
 The following schematic shows sample ingestion architectures for ingesting data in Eventhouse:
