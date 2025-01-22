@@ -30,41 +30,17 @@ landingContent:
         links:
           - text: Get started with Real-Time hub
             url: get-started-real-time-hub.md
-
-  # Card 
-  - title: Discover and manage streams
-    linkLists:
-      - linkListType: how-to-guide
+      - linkListType: concept
         links:
-          - text: Explore streams
-            url: explore-data-streams.md
-          - text: View stream details
-            url: view-data-stream-details.md
-          - text: Preview streams
-            url: preview-data-streams.md
-          - text: Endorse streams
-            url: endorse-data-streams.md
-          - text: Explore Fabric events
-            url: explore-fabric-events.md
-
-  # Card 
-  - title: Consume events and streams
-    linkLists:
-      - linkListType: how-to-guide
+          - text: Supported sources
+            url: supported-sources.md      
+      - linkListType: tutorial
         links:
-        - text: Process data streams
-          url: process-data-streams-using-transformations.md
-        - text: Analyze data streams
-          url: analyze-data-streams-using-kql-table-queries.md
-        - text: Set alerts on streams
-          url: set-alerts-data-streams.md
-        - text: Set alerts on Azure Blob Storage events
-          url: set-alerts-azure-blob-storage-events.md
-        - text: Set alerts on Fabric workspace item events
-          url: set-alerts-fabric-workspace-item-events.md
+          - text: Supported sources
+            url: ../real-time-intelligence/tutorial-introduction.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
 
   # Card 
-  - title: Create streams for Microsoft sources
+  - title: Bring your data from Microsoft sources into Real-Time hub as streams
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -90,7 +66,7 @@ landingContent:
             url: add-source-azure-data-explorer.md
 
   # Card 
-  - title: Create streams for external sources
+  - title: Bring your data in external sources into Real-Time hub as streams
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -106,11 +82,43 @@ landingContent:
             url: add-source-amazon-managed-streaming-for-kafka.md
 
   # Card 
-  - title: Create streams for Fabric events
+  - title: Process and analyze data streams
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Get Azure Blob Storage events
-            url: get-azure-blob-storage-events.md
-          - text: Create streams for Fabric workspace item events
-            url: create-streams-fabric-workspace-item-events.md
+        - text: Process data streams
+          url: process-data-streams-using-transformations.md
+        - text: Analyze data streams
+          url: analyze-data-streams-using-kql-table-queries.md
+
+  # Card 
+  - title: Set alerts on streams and events
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+        - text: Set alerts on streams
+          url: set-alerts-data-streams.md
+        - text: Set alerts on Azure Blob Storage events
+          url: set-alerts-azure-blob-storage-events.md
+        - text: Set alerts on Fabric workspace item events
+          url: set-alerts-fabric-workspace-item-events.md
+
+  # Card 
+  - title: Discover and manage streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Explore streams
+            url: explore-data-streams.md
+          - text: Explore Azure events
+            url: explore-azure-events.md
+          - text: Explore Fabric events
+            url: explore-fabric-events.md
+          - text: View stream details
+            url: view-data-stream-details.md
+          - text: Preview streams
+            url: preview-data-streams.md
+          - text: Endorse streams
+            url: endorse-data-streams.md
+
+  
