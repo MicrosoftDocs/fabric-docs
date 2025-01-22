@@ -5,7 +5,7 @@ ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 06/06/2024
+ms.date: 01/10/2025
 
 #customer intent: As a data analytics solution architect, I need to know to create tasks so that I can build a task flow that illustrates my project and that engineers can use to guide and facilitate their work on the project. As an engineer, I want to understand how to use task to organize and facilitate my work.
 ---
@@ -35,11 +35,13 @@ Select a task to display the task details pane. The following image shows the ma
 1. [Assign existing items to task](#assign-existing-items-to-a-task)
 1. [Delete task](#delete-a-task)
 
-## Resize or hide the taskflow
+## Resize or hide the task flow
 
-To resize the task flow, drag the resize bar on the horizontal separator up or down.
+You can resize the task flow, or even hide it, according to your personal needs and preferences. Fabric remembers task flow resize and show/hide choices per user and per workspace, so each time you return to a workspace, the task flow size and show/hide status will be the same as it was the last time you left the workspace.
 
-To show/hide the task flow, select the show/hide control at the right side of the separator.
+* To resize the task flow, drag the resize bar on the horizontal separator up or down.
+
+* To show/hide the task flow, select the show/hide control at the right side of the separator.
 
 :::image type="content" source="./media/task-flow-work-with/resize-show-hide-task-flow-controls.png" alt-text="Screenshot showing the Show/Hide control at the right side of the horizontal separation bar." lightbox="./media/task-flow-work-with/resize-show-hide-task-flow-controls.png" border="false":::
 
@@ -132,6 +134,9 @@ To create a new item for a specific task:
 
     If you don't see the item type you want, change the **Display** selector from *Recommended items* to *All items*, and then choose the item type you want.
 
+> [!NOTE]
+> When you first save a new report, you'll be given the opportunity to assign it to any task that exists in the workspace.
+
 ### Assign existing items to a task
 
 To assign existing items to a task:
@@ -194,7 +199,7 @@ Alternatively,
     :::image type="content" source="./media/task-flow-work-with/delete-task-via-task-flow-details-pane.png" alt-text="Screenshot showing how to delete a task from the task flow details pane.":::
 
 > [!NOTE]
-> Deleting a task does not delete the items assigned to it. They remain in the workspace.
+> Deleting a task doesn't delete the items assigned to it. They remain in the workspace.
 
 ## Navigate items with the task flow
 
@@ -207,9 +212,6 @@ With items assigned to tasks in a task flow, you can use the task flow to quickl
 * When you select a task, the items list is filtered to show only the items that are assigned to that task.
 
     :::image type="content" source="./media/task-flow-work-with/filter-item-list.png" alt-text="Screenshot illustrating how to filter the item list by selecting a task.":::
-
-    > [!NOTE]
-    > Selecting a task filters the current items list only - it doesn't show items from subfolders.
 
 ## Select a new predefined task flow
 

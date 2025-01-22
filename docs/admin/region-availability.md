@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.topic: overview
-ms.date: 12/22/2024
+ms.date: 01/10/2025
 ---
 
 # Fabric region availability
@@ -21,6 +21,8 @@ For details about purchasing a Fabric subscription, see [Buy a Microsoft Fabric 
 
 Your [home region](find-fabric-home-region.md) is associated with your tenant. If your home region doesn't reside in the regions listed below, you won’t be able to access all the Fabric functionalities. In such cases, to access all the Fabric features, you can create a capacity in a region where Fabric is available. For more information, see [Multi-Geo support for Fabric](service-admin-premium-multi-geo.md).
 
+[!INCLUDE [tenant-region-availability-note](../includes/tenant-region-availability-note.md)]
+
 ## Workload and feature availability
 
 The tables below list the availability of Fabric workloads according to the region your tenant is in.
@@ -32,21 +34,19 @@ This table lists regions where all Fabric workloads are available.
 | Americas                     | Europe                     | Middle East | Africa             | Asia Pacific                    |
 |:-----------------------------|:---------------------------|:------------|:-------------------|:--------------------------------|
 | Brazil South                 | North Europe               | UAE North   | South Africa North | Australia East                  |
-| Canada Central               | West Europe                |             |                    | Australia Southeast<sup>2</sup> |
+| Canada Central               | West Europe                |             |                    | Australia Southeast<sup>*</sup> |
 | Canada East                  | France Central             |             |                    | Central India                   |
 | Central US                   | Germany West Central       |             |                    | East Asia                       |
-| East US<sup>1</sup>          | Italy North<sup>2</sup>    |             |                    | Japan East<sup>2</sup>          |
-| East US 2<sup>1</sup>        | Norway East                |             |                    | Korea Central                   |
-| North Central US<sup>1</sup> | Poland Central<sup>2</sup> |             |                    | Southeast Asia                  |
+| East US                      | Italy North<sup>*</sup>    |             |                    | Japan East<sup>*</sup>          |
+| East US 2                    | Norway East                |             |                    | Korea Central                   |
+| North Central US             | Poland Central<sup>*</sup> |             |                    | Southeast Asia                  |
 | South Central US             | Sweden Central             |             |                    | South India                     |
 | West US                      | Switzerland North          |             |                    |                                 |
 | West US 2                    | Switzerland West           |             |                    |                                 |
-| West US 3<sup>2</sup>        | UK South                   |             |                    |                                 |
-|                              | UK West                    |             |                    |                                 |
+| West US 3<sup>*</sup>        | UK South                   |             |                    |                                 |
+|                              | UK West<sup>*</sup>        |             |                    |                                 |
 
-<sup>1</sup> [Workspace monitoring](../get-started/workspace-monitoring-overview.md) isn't available in this region.
-
-<sup>2</sup> [Fabric SQL database](../database/sql/overview.md) isn't available in this region.
+<sup>*</sup> [Fabric SQL database](../database/sql/overview.md) isn't available in this region.
 
 ### Power BI
 

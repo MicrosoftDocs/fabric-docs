@@ -143,7 +143,7 @@ Check out other tutorials for semantic link / SemPy:
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
 - [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)](tutorial-relationships-detection.md)
-- [Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)](tutorial-great-expectations.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link](tutorial-relationships-detection.md)
+- [Tutorial: Validate data using SemPy and Great Expectations (GX)](tutorial-great-expectations.md)
 
 <!-- nbend -->

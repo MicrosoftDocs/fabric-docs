@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/01/2024
+ms.date: 01/10/2025
 ---
 
 # Prepare your system for data science tutorials
@@ -21,36 +21,54 @@ Before you begin the data science end-to-end tutorial series, learn about prereq
 
 * If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
-## Import tutorial notebooks
+## Create a notebook
 
-We utilize the notebook item in the Data Science experience to demonstrate various Fabric capabilities. The notebooks are available as Jupyter notebook files that can be imported to your Fabric-enabled workspace.
+Each tutorial is available as a Jupyter notebook file in GitHub.  Many of the tutorials are also available as samples in the Data Science workload.  Use one of the following methods to access the tutorials:
 
-1. Download your notebook(s).  Make sure to download the files by using the "Raw" file link in GitHub.
-    * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial).
-    * For the **Tutorials** notebooks, download the notebooks(.ipynb) files from the parent folder [ai-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/ai-samples).
+* [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks), then copy and paste the code from the tutorial.
 
-1. On the Data science experience homepage, select **Import notebook** and upload the notebook files that you downloaded in step 1.
+* <a name="open-sample-notebook"></a> Open the sample notebook (when available) in the Data Science workload:
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\select-import-notebook.png" alt-text="Screenshot showing where to select Import notebook on the Data science home page." lightbox="media\tutorial-data-science-prepare-system\select-import-notebook.png":::
+    1. From the left pane, select **Workloads**.
+    1. Select **Data Science**.
+    1. From the **Explore a sample** card, select **Select**.
+    1. Select the corresponding sample:
+    
+        * From the default **End-to-end workflows (Python)** tab, if the sample is for a Python tutorial.
+        * From the **End-to-end workflows (R)** tab, if the sample is for an R tutorial.
+        * From the **Quick tutorials** tab, if the sample is for a quick tutorial.
+    
+* <a name="import-tutorial-notebooks"></a> Import the notebook from GitHub to your workspace:
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\import-status-upload.png" alt-text="Screenshot of Import status dialog box, showing where to select Upload." lightbox="media\tutorial-data-science-prepare-system\import-status-upload.png":::
+    1. Download your notebook(s).  Make sure to download the files by using the "Raw" file link in GitHub.
+        * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial).
+        * For the **Tutorials** notebooks, download the notebooks(.ipynb) files from the parent folder [ai-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/ai-samples).
 
-1. Once the notebooks are imported, select **Go to workspace** in the import dialog box.
+    1. On the left navigation for the Fabric homepage, select your workspace.
+    1. Select **Import** > **Notebook** > **From this computer**.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\import-success-workspace.png" alt-text="Screenshot of the import success dialog box, showing where to select Go to workspace." lightbox="media\tutorial-data-science-prepare-system\import-success-workspace.png":::
+        :::image type="content" source="media\tutorial-data-science-prepare-system\select-import-notebook.png" alt-text="Screenshot showing where to select Import notebook on the Data science home page." lightbox="media\tutorial-data-science-prepare-system\select-import-notebook.png":::
+    1. Select Upload and select the downloaded notebook file.
 
-1. The imported notebooks are now available in your workspace for use.
+        :::image type="content" source="media\tutorial-data-science-prepare-system\import-status-upload.png" alt-text="Screenshot of Import status dialog box, showing where to select Upload." lightbox="media\tutorial-data-science-prepare-system\import-status-upload.png":::
 
-1. If the imported notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
+    1. Once the notebooks are imported, select **Go to workspace** in the import dialog box.
+
+        :::image type="content" source="media\tutorial-data-science-prepare-system\import-success-workspace.png" alt-text="Screenshot of the import success dialog box, showing where to select Go to workspace." lightbox="media\tutorial-data-science-prepare-system\import-success-workspace.png":::
+
+    1. The imported notebooks are now available in your workspace for use.
+
+    1. If the imported notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
+
+    :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
 
 ## Attach a lakehouse to the notebooks
 
 To demonstrate Fabric lakehouse features, many of the tutorials require attaching a default lakehouse to the notebooks. The following steps show how to add a lakehouse to a notebook in a Fabric-enabled workspace.
 
 > [!NOTE]
-> Before executing each notebooks, you need to perform these steps on that notebook. 
+> Before executing each notebook, you need to perform these steps on that notebook. 
 
 1. Open the notebook in the workspace.
 

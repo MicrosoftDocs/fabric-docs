@@ -4,7 +4,7 @@ metadata:
   description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
-  ms.reviewer: imotiwala, roblescarlos
+  ms.reviewer: imotiwala
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.custom:

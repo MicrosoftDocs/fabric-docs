@@ -65,6 +65,12 @@ You _scale out_ by moving some of your workspaces or items to a different Fabric
 
 You can also consider moving Power BI workspaces to shared capacity, provided that consumers have [Power BI Pro](/power-bi/fundamentals/service-features-license-type#pro-license) licenses that let them continue to access the content.
 
+### Configure surge protection
+
+[Surge protection](surge-protection.md) helps limit overuse of your capacity by limiting the total amount of compute background jobs consume. This reduces total compute so interactive delays or rejections are less likely. It also helps the capacity recover faster if there's a period of throttling or rejections. You configure surge protection for each capacity. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. 
+
+When surge protection is active, background jobs are rejected. This means there's impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a range of usage that best balances compute needs within the capacity. To fully protect critical solutions, it's recommended to isolate them in a correctly sized capacity. 
+
 ## Compute optimization by Fabric experience
 
 The experiences and items in Fabric work differently, so you don't necessarily optimize them in the same way. This section lists Fabric items according to experience, and actions you can take to optimize them.
