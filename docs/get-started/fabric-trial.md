@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
   - ignite-2024
 ms.collection: ce-skilling-ai-copilot
-ms.date: 11/05/2024
+ms.date: 01/15/2025
 ---
 
 # Microsoft Fabric trial capacity
@@ -41,7 +41,7 @@ When you start a trial of a Fabric capacity, your trial [capacity](../enterprise
 
 ## About the trial license
 
-Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays the nontrial licenses. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
+If you do not already have an assigned Power BI [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) license, you'll receive a Power BI [Individual Trial](/power-bi/fundamentals/service-self-service-signup-purchase-for-power-bi?tabs=trial#start-a-trial) when initiating a Fabric trial capacity. This individual trial enables you to perform the actions and use the features that a PPU license enables. Your Account manager still displays the nontrial licenses assigned to you. But in order to make full use of Fabric, your Fabric trial includes the Power BI Individual trial.
 
 ## Use your trial
 
@@ -111,7 +111,7 @@ If you're the Capacity administrator, assign the trial capacity to multiple work
 1. Open **Workspaces** and select the name of a Premium workspace.
 2. Select the ellipses(...) and choose **Workspace settings** > **Premium** > **Trial**.
 
-    :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+    :::image type="content" source="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
 For more information, see [Use Workspace settings](workspaces.md#license-mode).  
 
@@ -234,7 +234,7 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 
 Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Trial** as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
-:::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+:::image type="content" source="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
 ## Related content
 

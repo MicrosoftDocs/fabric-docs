@@ -17,21 +17,15 @@ Get started with the Fabric API for GraphQL by creating an API, then linking a d
 
 ## Prerequisites
 
-- Enable the "Users can create Fabric items" [Tenant Admin Setting](/fabric/admin/about-tenant-settings).
+- Enable the "Users can create Fabric items" [admin tenant setting](/fabric/admin/about-tenant-settings).
 
 ## Creating an API for GraphQL
 
 To create an API for GraphQL:
 
-1. From the Fabric portal home page, select **Data Engineering** from the list of workloads.
+1. Select **New item** from any workspace. In the panel that opens, under **Develop data**, select **API for GraphQL**.
 
-1. Select **API for GraphQL (Preview)**.
-
-   :::image type="content" source="media/get-started-api-graphql/api-graphql-workspace-button.png" alt-text="Screenshot of the API tile, which you select to create a new API item.":::
-
-   Alternatively, select **New** > **API for GraphQL (Preview)** from any workspace in Data Engineering.
-
-   :::image type="content" source="media/get-started-api-graphql/workspace-new-api-graphql.png" alt-text="Screenshot of the workspace toolbar, showing where to select the New option.":::
+   :::image type="content" source="media/get-started-api-graphql/workspace-new-api-graphql.png" alt-text="Screenshot of the workspace toolbar, showing where to select the New option." lightbox="media/get-started-api-graphql/workspace-new-api-graphql.png":::
 
 1. Enter a **Name** for your item and select **Create**.
 

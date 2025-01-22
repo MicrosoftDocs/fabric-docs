@@ -456,6 +456,62 @@ Cancel a pipeline’s job instance.
 ***Location**: ```https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/items/<itemId>/jobs/instances/<jobInstanceId>```
 **Retry-after**: ```60```
 
+## Query activity runs
+
+Example:
+
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<job id>/queryactivityruns```
+
+Body:
+
+```json
+{
+  "filters":[],
+  "orderBy":[{"orderBy":"ActivityRunStart","order":"DESC"}],
+  "lastUpdatedAfter":"2024-05-22T14:02:04.1423888Z",
+  "lastUpdatedBefore":"2024-05-24T13:21:27.738Z"
+}
+```
+
+> [!NOTE]
+> "job id" is the same id created and used in the Job Scheduler Public APIs
+
+Response 200:
+```json
+[
+    {
+        "pipelineName": "ca91f97e-5bdd-4fe1-b39a-1f134f26a701",
+        "pipelineRunId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
+        "activityName": "Wait1",
+        "activityType": "Wait",
+        "activityRunId": "cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a",
+        "linkedServiceName": "",
+        "status": "Succeeded",
+        "activityRunStart": "2024-05-23T13:43:03.6397566Z",
+        "activityRunEnd": "2024-05-23T13:43:31.3906179Z",
+        "durationInMs": 27750,
+        "input": {
+            "waitTimeInSeconds": 27
+        },
+        "output": {},
+        "error": {
+            "errorCode": "",
+            "message": "",
+            "failureType": "",
+            "target": "Wait1",
+            "details": ""
+        },
+        "retryAttempt": null,
+        "iterationHash": "",
+        "userProperties": {},
+        "recoveryStatus": "None",
+        "integrationRuntimeNames": null,
+        "executionDetails": null,
+        "id": "/SUBSCRIPTIONS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/RESOURCEGROUPS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/PROVIDERS/MICROSOFT.TRIDENT/WORKSPACES/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/pipelineruns/bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f/activityruns/cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a"
+    }
+]
+```
+
 ## Current limitations
 
 - Platform Limitation: Service Principal authentication isn't supported at the moment.

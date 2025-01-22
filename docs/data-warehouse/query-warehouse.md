@@ -4,7 +4,7 @@ description: Learn more about options to write TSQL queries on the SQL analytics
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, kecona
-ms.date: 08/01/2024
+ms.date: 01/02/2025
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -52,13 +52,17 @@ To get started with this tutorial, check the following prerequisites:
 
    :::image type="content" source="media/query-warehouse/new-visual-query.png" alt-text="Screenshot showing where to select New visual query in the ribbon." lightbox="media/query-warehouse/new-visual-query.png":::
 
-1. A new tab appears for you to create a visual query.
+1. A new tab appears for you to create a visual query. To add tables to the visual query, right-click on tables in the **Explorer**, or select their `...` action menu, and select **Insert to canvas**. Or, you can drag and drop them into the visual query by selecting, holding, then dragging the tables from the **Explorer**.
+   :::image type="content" source="media/query-warehouse/insert-into-canvas.png" lightbox="media/query-warehouse/insert-into-canvas.png" alt-text="Screenshot of adding a table to the visual query. Select Insert to canvas.":::
 
-   :::image type="content" source="media/query-warehouse/visual-query-tab.png" alt-text="Screenshot of a new query tab in the visual query editor of the Fabric portal." lightbox="media/query-warehouse/visual-query-tab.png":::
+   > [!TIP]
+   > To drag and drop tables from the **Explorer**, select, hold, and then drag them into the visual query.
 
-1. Drag and drop tables from the object **Explorer** to **Visual query editor** window to create a query.
+1. Join tables together using options in the **Combine** window. In the following screenshot, we join the `Date` and `Weather` tables using an **Inner** join on the common `DateID` key columns.
 
-   :::image type="content" source="media/query-warehouse/drag-drop-visual-query.png" alt-text="Screenshot of a creating a new visual query." lightbox="media/query-warehouse/drag-drop-visual-query.png":::
+   :::image type="content" source="media/query-warehouse/merge.png" lightbox="media/query-warehouse/merge.png" alt-text="Screenshot of the Merge window joining the Date and Trip tables in the visual query editor.":::
+
+1. The result set join shows combined data. You can manipulate the query with other functions in the Visual query editor toolbar. You can save the resulting query as a new view or view the T-SQL as well.
 
 ## Write a cross-database query
 
@@ -111,15 +115,13 @@ There are several ways you can write cross-database or cross-warehouse queries w
 
 ## Select Top 100 Rows from the Explorer
 
-1. After opening your warehouse from the workspace, expand your database, schema and tables folder in the object **Explorer** to see all tables listed.
+1. After opening your warehouse from the workspace, expand your database, schema, and tables folder in the object **Explorer** to see all tables listed.
 
 1. Right-click on the table that you would like to query and select **Select TOP 100 rows**.
 
    :::image type="content" source="media/query-warehouse/select-top-100-rows.png" alt-text="Screenshot showing where to select the Select Top 100 Rows option in the right-click menu." lightbox="media/query-warehouse/select-top-100-rows.png":::
 
 1. Once the script is automatically generated, select the **Run** button to run the script and see the results.
-
-   :::image type="content" source="media/query-warehouse/select-top-run.png" alt-text="Screenshot showing results of select top 100 rows." lightbox="media/query-warehouse/select-top-run.png":::
 
 > [!NOTE]
 > At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.

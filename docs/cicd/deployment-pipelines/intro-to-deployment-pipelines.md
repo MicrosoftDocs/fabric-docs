@@ -18,11 +18,11 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 # What is deployment pipelines?
 
 > [!NOTE]
-> This articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
+> The articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
 Microsoft Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
 
-> [!IMPORTANT]
+> [!NOTE]
 >
 > * The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
 > * Some of the items for deployment pipelines are in preview. For more information, see the list of [supported items](#supported-items).
@@ -47,6 +47,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md) *(preview)*
 * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another) *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Organizational apps *(preview)*
 * Paginated reports
@@ -79,11 +80,11 @@ You decide how many stages you want in your deployment pipeline. There can be an
 
     After testing the content, use the production stage to share the final version of your content with business users across the organization.
 
-### [New pipeline design](#tab/new)
+### [New pipeline design](#tab/new-ui)
 
 :::image type="content" source="media/intro-to-deployment-pipelines/full-pipeline-new.gif" alt-text="A screenshot of a working deployment pipeline with all three stages, development, test, and production, populated.":::
 
-### [Original pipeline design](#tab/old)
+### [Original pipeline design](#tab/old-ui)
 
 :::image type="content" source="media/intro-to-deployment-pipelines/full-pipeline-old.gif" alt-text="A screenshot the original working deployment pipeline design with all three stages, development, test, and production, populated.":::
 
@@ -99,11 +100,11 @@ If items aren't paired, even if they appear to be the same (have the same name, 
 
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 
-### [New pairing design](#tab/new)
+### [New pairing design](#tab/new-ui)
 
 :::image type="content" source="./media/intro-to-deployment-pipelines/paired-items-new.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line in the new UI.":::
 
-### [Original pairing design](#tab/old)
+### [Original pairing design](#tab/old-ui)
 
 :::image type="content" source="./media/intro-to-deployment-pipelines/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 

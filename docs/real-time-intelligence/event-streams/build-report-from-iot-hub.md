@@ -23,21 +23,23 @@ Before you begin, make sure you have:
 - Access to a workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
 - An Azure IoT hub with event data and the necessary permission to access the policy keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
-## Create a KQL database and an eventstream
+> [!NOTE]
+> The examples in this article use **my-kqldb** for the KQL database and **my-eventstream** for the eventstream. Confirm that these two items appear in your workspace.
 
-Follow these steps to create a KQL database and an eventstream in your workspace:
+## Create an eventstream
+Follow these steps to create an eventstream in your workspace:
 
-1. Navigate to **My workspace**, and under the **New** drop-down menu, select **Show all**.
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-    :::image type="content" source="./media/add-iot-hub-source/my-workspace-show-all.png" alt-text="Screenshot that shows where to select my workspace and select show all to find eventstream.":::
 
-2. Scroll down to the **Real-Time Intelligence** section, select **KQL Database** or **Eventstream**.
+## Create a KQL database
 
-    :::image type="content" source="./media/add-iot-hub-source/add-kusto-and-eventstream.png" alt-text="Screenshot that shows where to find the eventstream and KQL database.":::
+Follow these steps to create an eventhouse, which automatically creaets a KQL database in your workspace:
 
-3. Enter the name for the new KQL database or eventstream, and then select **Create**. The examples in this article use **my-kqldb** for the KQL database and **my-eventstream** for the eventstream. Confirm that these two items appear in your workspace.
-
-    :::image type="content" source="./media/add-iot-hub-source/workspace-kql-and-eventstream.png" alt-text="Screenshot that shows where to find the eventstream and KQL database in the workspace.":::
+1. Navigate to **My workspace**. 
+1. Select **+ New item** button at the top of the page.
+1. On the **New item** page, select **Eventhouse**. 
+1. In the **new Eventhouse** pop-up window, enter a name for the eventhouse. 
 
 ## Add an IoT source to the eventstream
 

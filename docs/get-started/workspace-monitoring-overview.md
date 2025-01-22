@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.topic: overview
 ms.custom:
   - ignite-2024
-ms.date: 01/09/2025
+ms.date: 01/20/2025
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -37,6 +37,9 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
     * [Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)
     * [Metrics](../real-time-intelligence/monitor-metrics.md)
     * [Query logs](../real-time-intelligence/monitor-logs-query.md)
+
+* Mirrored database
+    * [Mirrored database logs](../database/mirrored-database/monitor-logs.md)
 
 * Power BI
     * [Semantic models](/power-bi/enterprise/semantic-model-operations)

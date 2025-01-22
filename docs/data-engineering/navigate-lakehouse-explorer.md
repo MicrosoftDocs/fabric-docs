@@ -15,7 +15,7 @@ ms.search.form: Lakehouse Explorer
 
 # Navigate the Fabric Lakehouse explorer
 
-The Lakehouse explorer page serves as the central hub for all your interactions within the Lakehouse environment. The explorer is built into the Fabric portal. To open the lakehouse explorer, switch to **Data Engineering** with the workload switcher. Find and navigate to your lakehouse item, which opens the explorer where you can interact with the lakehouse data. The explorer is your gateway to seamlessly load data into your lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse explorer, the Main View, and the Ribbon.
+The Lakehouse explorer page serves as the central hub for all your interactions within the Lakehouse environment. The explorer is built into the Fabric portal. To open the lakehouse explorer, go to the workspace that has the lakehouse. Find and select your lakehouse item, which opens the explorer where you can interact with the lakehouse data. The explorer is your gateway to seamlessly load data into your lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse explorer, the Main View, and the Ribbon.
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif explaining the controls within the lakehouse explorer." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 

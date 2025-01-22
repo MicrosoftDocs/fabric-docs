@@ -40,7 +40,7 @@ If you have common libraries for different code items and don't require frequent
 
 It will take some time to make the libraries in environments become effective when publishing. It normally takes 5-15 minutes, depending on the complexity of the libraries. During this process, the system will help to resolve the potential conflicts and download required dependencies.
 
-One benefit of this approach is that the successfully installed libraries are guaranteed to be available when the Spark session is started with environment attached.It saves effort of maintaining common libraries for your projects.
+One benefit of this approach is that the successfully installed libraries are guaranteed to be available when the Spark session is started with environment attached. It saves effort of maintaining common libraries for your projects.
 
 It's highly recommended for pipeline scenarios with its stability.
 
@@ -183,7 +183,7 @@ The *.jar* files are support at notebook sessions with following command.
 ```
 
 The code cell is using Lakehouse's storage as an example. At the notebook explorer, you can copy the full file ABFS path and replace in the code.
-:::image type="content" source="media\environment-lm\library-management-get-ABFS-path.png" alt-text="Screenshot of get the ABFS path.":::
+:::image type="content" source="media\environment-lm\library-management-get-ABFS-path.png" alt-text="Screenshot of the menu commands to get the ABFS path." lightbox="media\environment-lm\library-management-get-ABFS-path.png":::
 
 ## Related content
 
