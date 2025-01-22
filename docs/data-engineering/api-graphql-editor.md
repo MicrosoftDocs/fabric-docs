@@ -15,7 +15,7 @@ ms.date: 05/21/2024
 
 The Fabric API for GraphQL provides a graphical in-browser GraphQL development environment, which enables an interactive playground to compose, test, and see the live results of your GraphQL queries and mutations.
 
-To go to the editor, open the API for GraphQL item in Fabric and select **Query** at the lower left corner of your portal screen.
+To go to the editor, open the API for GraphQL item from its workspace in Fabric and select **Query** at the lower left corner of your portal screen.
 
 :::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears in the lower left corner of the Fabric screen." lightbox="media/api-graphql-editor/query-view-button.png":::
 

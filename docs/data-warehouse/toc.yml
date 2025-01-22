@@ -86,8 +86,6 @@ items:
     href: transactions.md 
   - name: Warehouse performance
     href: guidelines-warehouse-performance.md
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
   - name: How to
     items:    
     - name: Create a sample warehouse 
@@ -199,6 +197,8 @@ items:
     - name: Monitor mirrored databases
       displayName: Monitor mirroring
       href: ../database/mirrored-database/monitor.md
+    - name: Mirrored database logs
+      href: ../database/mirrored-database/monitor-logs.md
     - name: Share and manage permissions
       href: ../database/mirrored-database/share-and-manage-permissions.md
   - name: Explore mirrored data
@@ -318,6 +318,8 @@ items:
         href: ../database/mirrored-database/open-mirroring-partners-ecosystem.md
   - name: Mirroring REST API
     href: ../database/mirrored-database/mirrored-database-rest-api.md 
+  - name: CI/CD for mirrored databases
+    href: ../database/mirrored-database/mirrored-database-cicd.md 
   - name: Troubleshoot Mirroring
     href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance

@@ -28,7 +28,7 @@ When an Apache Spark job is triggered, the button to open **Spark web UI** is in
 
 ### Open the Spark web UI from Apache Spark application detail page
 
-The Spark web UI can also be opened through the Apache Spark application detail page. Select **Monitoring hub** on the left side of the page, and then select an Apache Spark application. The detail page of the application appears.
+The Spark web UI can also be opened through the Apache Spark application detail page. Select **Monitor** on the left side of the page, and then select an Apache Spark application. The detail page of the application appears.
 
 :::image type="content" source="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png" alt-text="Screenshot showing open the Spark web UI from Apache Spark application detail page." lightbox="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png":::
 

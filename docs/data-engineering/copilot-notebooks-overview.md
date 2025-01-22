@@ -35,7 +35,7 @@ With Copilot for Data Science and Data Engineering, you can chat with an AI assi
 
 First select the Copilot icon in the notebooks ribbon. The Copilot chat panel opens, and a new cell appears at the top of your notebook. This cell must run each time a Spark session loads in a Fabric notebook. Otherwise, the Copilot experience won't properly operate. We are in the process of evaluating other mechanisms for handling this required initialization in future releases.
 
-:::image type="content" source="media/copilot-notebooks-overview/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot ribbon." lightbox="media/copilot-notebooks-overview/copilot-ribbon-button.png":::
+:::image type="content" source="media/copilot-notebooks-overview/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot button in the ribbon." lightbox="media/copilot-notebooks-overview/copilot-ribbon-button.png":::
 
 Run the cell at the top of the notebook, with this code:
 

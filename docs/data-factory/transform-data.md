@@ -37,7 +37,7 @@ Follow these steps to set up your dataflow.
 
 1. Choose your Fabric enabled workspace, and then select **New**. Then select **Dataflow Gen2**.
 
-   :::image type="content" source="media/transform-data/select-dataflow.png" alt-text="Screenshot showing where to start creating a dataflow gen2." :::
+   :::image type="content" source="media/transform-data/select-dataflow.png" alt-text="Screenshot showing where to start creating a dataflow gen2." lightbox="media/transform-data/select-dataflow.png":::
 
 1. The dataflow editor window appears.  Select the **Import from SQL Server** card.
 

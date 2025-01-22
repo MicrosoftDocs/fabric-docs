@@ -10,7 +10,7 @@ ms.subservice: cicd
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/18/2024
+ms.date: 12/26/2024
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 

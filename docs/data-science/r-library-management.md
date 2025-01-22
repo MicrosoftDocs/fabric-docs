@@ -110,13 +110,10 @@ Currently, the following `devtools` functions are supported within [!INCLUDE [pr
 
 To use a session-level custom library, you must first upload it to an attached Lakehouse.  
 
+1. Open the notebook you want to use the custom library in.
 1. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
     :::image type="content" source="media/r-library-management/add-lakehouse.png" alt-text="Screenshot of how to add a lakehouse to your notebook.":::
-
-1. To add files to this lakehouse, select your workspace and then select the lakehouse.
-
-    :::image type="content" source="media/r-library-management/select-lakehouse.png" alt-text="Screenshot of how to navigate to your lakehouse to add files.":::
 
 1. Right click or select the "..." next to **Files** to upload your _.tar.gz_ file.
 

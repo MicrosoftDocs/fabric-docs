@@ -234,7 +234,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 1. In this Livy API session case, you can see your previous sessions submissions, run details, Spark versions, and configuration. Notice the stopped status on the top right.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." :::
+    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-activity-details.png" :::
 
 To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Microsoft Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
 
