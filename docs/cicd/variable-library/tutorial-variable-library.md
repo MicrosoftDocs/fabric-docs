@@ -36,7 +36,7 @@ Connect to workspace....
 
 ## Create a Variable library
 
-[Introduce a task and its role in completing the process.]
+First, create a Variable library item in your workspace to hold the variables. To create a variable library:
 
 <!-- Required: Tasks to complete in the process - H2
 
