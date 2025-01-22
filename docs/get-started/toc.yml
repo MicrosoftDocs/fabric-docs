@@ -179,11 +179,13 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Git operations and deployment pipelines don't work with lakehouses
+      href: known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md
     - name: Apache Airflow job creation shows Fabric upgrade message
       href: known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md
     - name: Local data access isn't allowed for pipeline using on-premises data gateway
       href: known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md
-    - name: Data activator events aren’t ingested for Reflex events
+    - name: Data activator events aren't ingested for Reflex events
       href: known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md
     - name: Direct Lake query cancellation might cancel other queries
       href: known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries.md
