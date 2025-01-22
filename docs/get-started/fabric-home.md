@@ -12,6 +12,8 @@ ms.date: 01/14/2025
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
 
+[!INCLUDE [new user recruitment](../../../fabric-docs-pr/includes/fabric-new-user-research.md)]
+
 This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. 
 
 ## Find what you need on your Home canvas
