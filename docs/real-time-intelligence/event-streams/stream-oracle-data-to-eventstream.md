@@ -16,7 +16,7 @@ ms.search.form: Eventstreams Tutorials
 
 # Stream Oracle CDC Data to RTI Eventstream Kafka Endpoint with GoldenGate
 
-In this tutorial, you learn how to use Oracle GoldenGate (OGG) to extract and replicate Oracle database CDC (change data capture) data to Microsoft Fabric Real-Time Intelligence using the Kafka endpoint offered from an Eventstream’s custom endpoint source. This setup allows for real-time processing of CDC data and enables sending it to various destinations within Fabric, such as Eventhouse, Reflex, Derived stream, or custom endpoint destination for further analysis.
+In this tutorial, you learn how to use Oracle GoldenGate (OGG) to extract and replicate Oracle database CDC (change data capture) data to Microsoft Fabric Real-Time Intelligence using the Kafka endpoint offered from an Eventstream’s custom endpoint source. This setup allows for real-time processing of Oracle CDC data and enables sending it to various destinations within Fabric, such as Eventhouse, Reflex, Derived stream, or custom endpoint destination for further analysis.
 
 :::image type="content" source="./media/stream-oracle-data-to-eventstream/data-flow.png" alt-text="Screenshot that shows how to connect oracle cdc to eventstream." lightbox="./media/stream-oracle-data-to-eventstream/data-flow.png" :::
 
@@ -157,7 +157,7 @@ With the completion of the above, you should be able to SSHed to the Oracle VM o
 
 By now, the Oracle database has been created. To enable the Oracle CDC for GoldenGate, the archive log needs to be enabled. Follow the steps below to get it enabled.
 
-1. Connect to sqlplus
+1. Connect to sqlplus:
     ```bash
     $ sqlplus / as sysdba
     ```
@@ -252,7 +252,7 @@ All the operations in this section are performed on Oracle VM (oggVM). So, Use S
    
     :::image type="content" source="./media/stream-oracle-data-to-eventstream/goldengate-2.png" alt-text="Screenshot that shows the second step to configure golden gate." lightbox="./media/stream-oracle-data-to-eventstream/goldengate-2.png" :::
 
-8. Select Install in the summary step.
+8. Select **Install** in the summary step.
      
     :::image type="content" source="./media/stream-oracle-data-to-eventstream/goldengate-3.png" alt-text="Screenshot that shows the third step to configure golden gate." lightbox="./media/stream-oracle-data-to-eventstream/goldengate-3.png" :::
 
@@ -268,7 +268,7 @@ After the Oracle GoldenGate core application is installed, it can be configured 
 
 ### Prepare the database for extract
 
-1. Create or update the tnsnames.ora file
+1. Create or update the tnsnames.ora file.
     ```bash
     $ sudo su - oracle
     $ cd $ORACLE_HOME/network/admin
@@ -342,7 +342,7 @@ You should be able to see two tables (TCUSTMER and TCUSTORD) are created and fou
 
 ### Configure and enable the extract
 
-1. Configure the extract parameter file for Oracle GoldenGate Extract
+1. Configure the extract parameter file for Oracle GoldenGate Extract.
     ```bash
     $ sudo su – oracle
     ```
@@ -371,12 +371,12 @@ You should be able to see two tables (TCUSTMER and TCUSTORD) are created and fou
 
 1. Register extract--integrated extract.
     ```bash
-    GGSCI> dblogin userid C##GGADMIN@cdb1, password ggadmin
+    GGSCI> dblogin userid C##GGADMIN@cdb1
     GGSCI> REGISTER EXTRACT EXT1 DATABASE CONTAINER(pdb1)
     GGSCI> exit
     ```
 
-1. Set up extract checkpoints and start real-time extract
+1. Set up extract checkpoints and start real-time extract.
     ```bash
     GGSCI> ADD EXTRACT EXT1, INTEGRATED TRANLOG, BEGIN NOW
     GGSCI> ADD RMTTRAIL ./dirdat/rt, EXTRACT EXT1, MEGABYTES 10
@@ -388,7 +388,7 @@ You should be able to see two tables (TCUSTMER and TCUSTORD) are created and fou
 1. Smoke test for the configured extract.
     1. Sign in DB with test account and insert a record to the table:
         ```bash
-        $ sqlplus ggtest/ggtest@pdb1
+        $ sqlplus ggtest
         ```
 
         ```sql
@@ -403,7 +403,7 @@ You should be able to see two tables (TCUSTMER and TCUSTORD) are created and fou
         $ cd /u01/app/oggcore
         $ ./ggsci
         GGSCI> STATS EXT1
-    ```
+        ```
 
 ## Install Oracle GoldenGate Big Data
 
@@ -417,7 +417,7 @@ The Windows VM (oggXServer) is still used to download these software packages an
 
 1. Download [Kafka package(kafka_2.13-3.9.0.tgz)](https://dlcdn.apache.org/kafka/3.9.0/kafka_2.13-3.9.0.tgz).
 
-1. Download JAVA SDK(jdk-8u202-linux-x64.tar.gz) from [Java Archive Downloads](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
+1. Download [JAVA SDK(jdk-8u202-linux-x64.tar.gz](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html).
 
 1. Use the SCP command in WSL to transfer them to Oracle VM:
     ```bash
@@ -498,6 +498,7 @@ All the operations in this section are performed on Oracle VM (oggVM). So, use S
     ```bash
     GGSCI> START MGR
     GGSCI> INFO ALL
+    GGSCI> EXIT
     ```
 
 3. Copy the Kafka handler template configuration files.
@@ -552,11 +553,11 @@ All the operations in this section are performed on Oracle VM (oggVM). So, use S
     #Sample gg.classpath for HDP
     #gg.classpath=/etc/kafka/conf:/usr/hdp/current/kafka-broker/libs/*
     ```
-    - You can find the {YOUR.TOPIC.NAME} value on the **SAS Key Authentication** page under the **Kafka tab.**: 
+    - You can find {YOUR.TOPIC.NAME} value on the **SAS Key Authentication** page under the **Kafka tab**: 
   
     :::image type="content" source="./media/stream-oracle-data-to-eventstream/topic-name.png" alt-text="Screenshot that shows how to get topic name." lightbox="./media/stream-oracle-data-to-eventstream/topic-name.png" :::
 
-7. Make changes to custom_producer.properties file by adding your Eventstream connect string and password needed to connect to Eventstream
+7. Make changes to custom_producer.properties file by adding your Eventstream connect string and password needed to connect to Eventstream.
     ```bash
     $ vim dirprm/custom_kafka_producer.properties
     ```
@@ -565,7 +566,7 @@ All the operations in this section are performed on Oracle VM (oggVM). So, use S
     bootstrap.servers={YOUR.BOOTSTRAP.SERVER}
     security.protocol=SASL_SSL
     sasl.mechanism=PLAIN
-    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password={YOUR.CONNECTION.STRING};
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";
 
     acks=1
     reconnect.backoff.ms=1000
@@ -586,15 +587,10 @@ All the operations in this section are performed on Oracle VM (oggVM). So, use S
     ```bash
     $ ./ggsci
     GGSCI> START RKAFKA
-    Sending START request to Manager ...
-    Replicat group RKAFKA starting.
     ```
 
-    ```plaintext
+    ```bash
     GGSCI> INFO ALL
-    Program     Status      Group       Lag at Chkpt  Time Since Chkpt
-    MANAGER     RUNNING
-    REPLICAT    RUNNING     RKAFKA      00:00:00      00:53:17
     GGSCI> EXIT
     ```
 
@@ -604,7 +600,7 @@ To validate the whole E2E flow, let’s sign in to the Oracle database with ggte
 
 1. Sign in Oracle DB with test account to insert a few new records:
     ```bash
-    $ sqlplus ggtest/ggtest@pdb1
+    $ sqlplus ggtest
     ```
 
     ```sql
@@ -615,6 +611,6 @@ To validate the whole E2E flow, let’s sign in to the Oracle database with ggte
     SQL> EXIT;
     ```
 
-1. Preview the data that you sent with this Kafka application. Select the eventstream node, which is the middle node that displays your eventstream name.
+1. Preview the data that you sent with this Kafka endpoint source. Select the default stream node, which is the middle node that shows your eventstream name.
 
     :::image type="content" source="./media/stream-oracle-data-to-eventstream/preview-data.png" alt-text="Screenshot that shows how to preview data in eventstream." lightbox="./media/stream-oracle-data-to-eventstream/preview-data.png" :::
