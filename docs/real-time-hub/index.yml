@@ -36,11 +36,11 @@ landingContent:
             url: supported-sources.md      
       - linkListType: tutorial
         links:
-          - text: Supported sources
+          - text: Real-Time Intelligence tutorial
             url: ../real-time-intelligence/tutorial-introduction.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
 
   # Card 
-  - title: Bring your data from Microsoft sources into Real-Time hub as streams
+  - title: Bring your data from Microsoft sources into Real-Time hub as data streams
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -66,7 +66,7 @@ landingContent:
             url: add-source-azure-data-explorer.md
 
   # Card 
-  - title: Bring your data in external sources into Real-Time hub as streams
+  - title: Bring your data in external sources into Real-Time hub as data streams
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -92,7 +92,7 @@ landingContent:
           url: analyze-data-streams-using-kql-table-queries.md
 
   # Card 
-  - title: Set alerts on streams and events
+  - title: Set alerts on data streams and events
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -104,7 +104,7 @@ landingContent:
           url: set-alerts-fabric-workspace-item-events.md
 
   # Card 
-  - title: Discover and manage streams
+  - title: Discover and manage data streams
     linkLists:
       - linkListType: how-to-guide
         links:
