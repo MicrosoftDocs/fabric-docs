@@ -13,10 +13,6 @@ ms.date: 10/24/2024
 
 Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their data pipelines efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations, including pipeline CRUD (Create, Read, Update, and Delete), scheduling, and monitoring. This makes it easier for users to manage their data integration processes.
 
-## Mounting APIs
-
-The Mounting Public APIs are now available. These APIs allow you to seamlessly integrate and access various public data sources within your data pipelines.
-
 ## API use cases for data pipelines
 
 The APIs for pipelines in Fabric Data Factory can be used in various scenarios:
@@ -157,48 +153,6 @@ Create a pipeline with a base64 definition in a specified workspace.
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
-}
-```
-
-## Create a Mounted Data Factory
-
-Create a Mounted Data Factory using mounting APIs.
-
-**Sample request**:
-
-**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
-
-**Payload value**:
-
-```{"DataFactoryResourceId":"/subscriptions/<Your ADF subscription Id>/resourceGroups/<Your ADF resource group name>/providers/Microsoft.DataFactory/factories/<Your ADF name>"}```
-
-**Payload**:
-
-```rest
-{ 
-  "displayName": "pipeline_mdf", 
-  "type": " MountedDataFactory ", 
-  "definition": { 
-    "parts": [ 
-      { 
-        "path": "mountedDataFactory-content.json", 
-        "payload": <Your Base64 encoded payload value from above>, 
-        "payloadType": "InlineBase64" 
-      } 
-    ] 
-  } 
-}
-```
-
-**Sample response**:
-
-```rest
-{
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
-    "type": "MountedDataFactory", 
-    "displayName": "pipeline_mdf", 
-    "description": "", 
-    "workspaceId": "<Your workspaceId>”
 }
 ```
 
