@@ -14,27 +14,6 @@ ms.date: 09/16/2024
 
 In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs will be released later. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
 
-## Mounting Public APIs
-The Mounting Public APIs are now available. These APIs allow you to seamlessly integrate and access various public data sources within your data pipelines.
-
-## Obtain an authorization token
-
-### Option 1: Using MSAL.Net
-
-[Fabric API quickstart - Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token)
-
-Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: Workspace.ReadWrite.All, Item.ReadWrite.All. For more information about token acquisition with MSAL.Net to, see [Token Acquisition - Microsoft Authentication Library for .NET](/entra/msal/dotnet/acquiring-tokens/overview).
-
-Paste the Application (client) ID you copied earlier and paste it for ClientId variable.
-
-### Option 2: Using the Fabric Portal
-
-Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
-
-```powerBIAccessToken```
-
-Copy the token and paste it for the ClientId variable.
-
 ## Item Definition with payload base64 encoded
 
 - Use [Base64 Encode and Decode](https://www.base64encode.org/) to encode your JSON.
