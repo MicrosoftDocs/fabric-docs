@@ -19,7 +19,7 @@ This page contains information on how the Fabric Copilot usage is billed and rep
 
 
 ## Consumption rate
-Requests to Copilot consume Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when Copilot is used. For example, when user using [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Copilot for Data Factory](../fabric/fundamentals/copilot-fabric-data-factory.md), or [Copilot for Data Science and Data Engineering](./copilot-notebooks-overview.md).
+Requests to Copilot consume Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when Copilot is used. For example, when user using [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Copilot for Data Factory](../docs/fundamentals/copilot-fabric-data-factory.md), or [Copilot for Data Science and Data Engineering](./copilot-notebooks-overview.md).
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
