@@ -50,7 +50,7 @@ landingContent:
             url: git-integration/git-integration-process.md
           - text: The deployment pipelines process
             url: deployment-pipelines/understand-the-deployment-process.md
-      - linkListType: reference
+      - linkListType: overview
         links:
           - text: Frequently asked questions about the Fabric lifecycle management tools
             url: faq.yml
@@ -94,3 +94,7 @@ landingContent:
             url: deployment-pipelines/pipeline-automation.md
           - text: Automate Variable libraries
             url: variable-library/variable-library-automation.md
+      - linkListType: reference
+        links:
+          - text: Fabric REST APIs
+            url: /rest/api/fabric/articles/using-fabric-apis
