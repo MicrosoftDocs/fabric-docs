@@ -7,7 +7,7 @@ ms.reviewer:
 ms.topic: product-comparison
 ms.custom:
   - ignite-2024
-ms.date: 11/06/2024
+ms.date: 01/15/2025
 ---
 # Microsoft Fabric decision guide: choose a SQL database
 
@@ -30,7 +30,7 @@ For a detailed comparison of features and capabilities, see [Features comparison
 | Hardware configurations | Gen5, Fsv2, DC | Latest |
 | Copilot skills | [Yes](/azure/azure-sql/copilot/copilot-azure-sql-overview) | [Yes](copilot.md) |
 | Elastic pools | [Yes](/azure/azure-sql/database/elastic-pool-overview) | No |
-| Create options | Azure portal, PowerShell, Az CLI, Azure Resource Manager, Bicep, Terraform, T-SQL, REST API | Fabric portal, REST API, Terraform |
+| Create options | Azure portal, PowerShell, Az CLI, Azure Resource Manager, Bicep, Terraform, T-SQL, REST API | Fabric portal, REST API |
 | Secure | Azure RBAC, SQL permissions | [Fabric workspace roles and sharing permissions](share-sql-manage-permission.md), SQL permissions |
 | Authentication | Microsoft Entra ID authentication, SQL authentication | Microsoft Entra ID authentication |
 | Database mirroring to Fabric OneLake | [Yes, manually enabled](../mirrored-database/azure-sql-database.md) | [Yes, automatically enabled for all eligible tables](../mirrored-database/overview.md) |

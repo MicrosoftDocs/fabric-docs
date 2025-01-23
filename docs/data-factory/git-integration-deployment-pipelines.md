@@ -39,7 +39,7 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 ## Steps for testing deployment pipelines
 
 1. As opposed to Git Integration, no manual set-up is required by the user, you can start using deployment pipelines directly from your existing workspace.
-1. Select the **Deployment pipelines** icon on the app navigator on the left of the screen.
+1. Select **Workspaces** on the app navigator on the left of the screen, and then select the **Deployment pipelines** icon.
 
    :::image type="content" source="media/git-integration-deployment-pipelines/deployment-pipelines.png" alt-text="Screenshot showing where to select the Deployment pipelines button on the left-hand app navigator for Fabric.":::
 

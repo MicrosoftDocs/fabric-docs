@@ -3,7 +3,7 @@ title: "Troubleshoot Fabric Mirrored Databases"
 description: Troubleshooting scenarios, workarounds, and links for mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
+ms.reviewer: imotiwala, maprycem, cynotebo
 ms.date: 11/19/2024
 ms.topic: troubleshooting
 ms.custom:

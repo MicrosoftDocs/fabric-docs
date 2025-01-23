@@ -137,7 +137,7 @@ items:
     items:
     - name: Capacity settings overview
       href: capacity-settings-overview.md
-    - name: Configure capacity Settings
+    - name: Configure capacity settings
       href: capacity-settings-management.md
     - name: Spark workspace settings 
       href: workspace-admin-settings.md
@@ -263,6 +263,8 @@ items:
     href: explore-lakehouse-with-vs-code.md
   - name: Develop notebook with VS Code web experience
     href: author-notebook-with-vs-code-web.md
+  - name: Develop notebook with Fabric runtime
+    href: fabric-runtime-in-vscode.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse

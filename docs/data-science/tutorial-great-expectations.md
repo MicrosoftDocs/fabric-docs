@@ -30,7 +30,8 @@ This tutorial shows you how to:
 
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 * Download the [_Retail Analysis Sample PBIX.pbix_](https://download.microsoft.com/download/9/6/D/96DDC2FF-2568-491D-AAFA-AFDD6F763AE3/Retail%20Analysis%20Sample%20PBIX.pbix) file. 
-* In your workspace, use the **Upload** button to upload the _Retail Analysis Sample PBIX.pbix_ file to the workspace.
+* In your workspace, select __Import__ > __Report or Paginated Report__ > __From this computer__ to upload the _Retail Analysis Sample PBIX.pbix_ file to your workspace.
+
 
 ## Follow along in notebook
 

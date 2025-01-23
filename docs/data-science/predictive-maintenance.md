@@ -9,7 +9,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/22/2024
+ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.
 ---
 
@@ -37,8 +37,8 @@ This tutorial covers these steps:
 
 You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Data Science experience
-- Upload your notebook from GitHub to the Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
@@ -221,7 +221,7 @@ sns.heatmap(corr_matrix, annot=True)
 plt.show()
 ```
 
-:::image type="content" source="media/predictive-maintenance/correlation-matrix.png" alt-text="Screenshot showing a plot of the correlation matrix of features.":::
+:::image type="content" source="media/predictive-maintenance/correlation-matrix.png" alt-text="Screenshot showing a plot of the correlation matrix of features." lightbox ="media/predictive-maintenance/correlation-matrix.png":::
 
 As expected, failure (`IsFail`) correlates with the selected features (columns). The correlation matrix shows that `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` have the highest correlation with the `IsFail` variable.
 
@@ -239,7 +239,7 @@ fig.subplots_adjust(hspace=0.2)
 fig.delaxes(axes[1,2])
 ```
 
-:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="Screenshot showing a graph plot of the features.":::
+:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="Screenshot showing a graph plot of the features." lightbox= "media/predictive-maintenance/sparse-plot.png":::
 
 As the plotted graphs show, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse. They seem to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset likely produces reliable results that can generalize to a new dataset.
 
@@ -265,7 +265,7 @@ for p in ax.patches:
 plt.show()
 ```
 
-:::image type="content" source="media/predictive-maintenance/imbalance-plot.png" alt-text="Screenshot of a plot showing that samples are imbalanced.":::
+:::image type="content" source="media/predictive-maintenance/imbalance-plot.png" alt-text="Screenshot of a plot showing that samples are imbalanced." lightbox ="media/predictive-maintenance/imbalance-plot.png":::
 
 The plots indicate that the no-failure class (shown as `IsFail=0` in the second plot) constitutes most of the samples. Use an oversampling technique to create a more balanced training dataset:
 
@@ -313,7 +313,7 @@ for p in ax.patches:
 plt.show()
 ```
 
-:::image type="content" source="media/predictive-maintenance/balanced-plot.png" alt-text="Screenshot of a plot showing that samples are balanced.":::
+:::image type="content" source="media/predictive-maintenance/balanced-plot.png" alt-text="Screenshot of a plot showing that samples are balanced." lightbox= "media/predictive-maintenance/balanced-plot.png":::
 
 You successfully balanced the dataset. You can now move to model training.
 
@@ -485,11 +485,11 @@ In the previous section, you trained three different classifiers: random forest,
 
 For the UI path option, navigate to your workspace and filter the models.
 
-:::image type="content" source="media/predictive-maintenance/filter-models.png" alt-text="Screenshot of the filter, with models selected.":::
+:::image type="content" source="media/predictive-maintenance/filter-models.png" alt-text="Screenshot of the filter, with models selected." lightbox = "media/predictive-maintenance/filter-models.png":::
 
 Select individual models for details of the model performance.
 
-:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="Screenshot of performance details for models.":::
+:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="Screenshot of performance details for models." lightbox = "media/predictive-maintenance/model-metrics.png":::
 
 This example shows how to programmatically access the models through MLflow:
 
@@ -571,7 +571,7 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 Show the results in an offline format, with a Power BI dashboard.
 
-:::image type="content" source="media/predictive-maintenance/predictive-maintenance-power-bi.png" alt-text="Screenshot of the data displayed as a Power BI dashboard.":::
+:::image type="content" source="media/predictive-maintenance/predictive-maintenance-power-bi.png" alt-text="Screenshot of the data displayed as a Power BI dashboard." lightbox= "media/predictive-maintenance/predictive-maintenance-power-bi.png":::
 
 The dashboard shows that `Tool_wear` and `Torque` create a noticeable boundary between failed and unfailed cases, as expected from the earlier correlation analysis in step 2.
 

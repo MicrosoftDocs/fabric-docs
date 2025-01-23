@@ -4,7 +4,7 @@ description: Learn about the limitations of mirrored databases from Snowflake in
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
-ms.date: 12/18/2024
+ms.date: 01/15/2025
 ms.topic: conceptual
 ---
 
@@ -17,6 +17,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 - Any table names and column names with special characters `,;{}()\=` and spaces aren't replicated.
 - If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there's a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
 - Only replicating native tables are supported. Currently, External, Transient, Temporary, Dynamic tables aren't supported.
+- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this capability was enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently can't be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over will be determined by taking the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list will not be mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you're prevented from selecting more than 500 tables.
