@@ -86,7 +86,7 @@ landingContent:
   # Card
   - title: Automate your lifecycle management workflows
     linkLists:
-      - linkListType: tutorial
+      - linkListType: how-to-guide
         links:
           - text: Automate Git workflows
             url: git-integration/git-automation.md
