@@ -70,7 +70,7 @@ Take the properties object and surround them in braces - **{ }** - so the REST I
 
 [REST API - Items - Create item](/rest/api/fabric/core/items/create-item )
 
-Example 1 - CreateDataPipeline:
+Example - CreateDataPipeline:
 
 ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
 
@@ -114,48 +114,6 @@ Response 201:
     "displayName": "Pipeline_1", 
     "description": "", 
     "workspaceId": "<Your WS Id>" 
-} 
-```
-
-Example 2 – Create MountedDataFactory 
-
-```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
-
-Body: 
-
-Payload:
-
-```json
-{"DataFactoryResourceId":"/subscriptions/<ADF subscription Id>/resourceGroups/<ADF resource group name>/providers/Microsoft.DataFactory/factories/<ADF datafactory name>"} 
-```
-
-Encoded JSON:
-
-```json
-{ 
-  "displayName": "pipeline_mdf", 
-  "type": " MountedDataFactory ", 
-  "definition": { 
-    "parts": [ 
-      { 
-        "path": "mountedDataFactory-content.json", 
-        "payload": <base64 encoded value>, 
-        "payloadType": "InlineBase64" 
-      } 
-    ] 
-  } 
-}  
-```
-
-Response 201:
-
-```json
-{ 
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
-    "type": "MountedDataFactory", 
-    "displayName": "Pipeline_mdf", 
-    "description": "", 
-    "workspaceId": "<Your WS Id>"
 } 
 ```
 
