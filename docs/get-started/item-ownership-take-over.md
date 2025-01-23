@@ -43,7 +43,7 @@ To take ownership of a Fabric item:
 > Data Pipeline items require the additional step of ensuring that the **Last Modified By** user is also updated after taking item ownership. You can do this by making a small edit to the item and saving it. For example, you could make a small change to the activity name.
 
 > [!IMPORTANT]
-> The take over feature does not cover ownership change of related items. For instance, if a data pipeline has notebook activity, changing ownership of the data pipeline doesn't change the ownership of the notebook. Ownership of related items needs to be changed separately.
+> The take over feature doesn't cover ownership change of related items. For instance, if a data pipeline has notebook activity, changing ownership of the data pipeline doesn't change the ownership of the notebook. Ownership of related items needs to be changed separately.
 
 ## Repair connections after Fabric item ownership change
 
@@ -97,4 +97,4 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
-* Currently, there is no API support for changing ownership of Fabric items. This does not impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, and datamarts, which continues to be available. For information about taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
+* Currently, there's no API support for changing ownership of Fabric items. This doesn't impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, and datamarts, which continues to be available. For information about taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
