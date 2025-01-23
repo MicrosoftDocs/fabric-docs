@@ -44,30 +44,44 @@ You must paste the connection string from the previous step into this action. Se
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-automate.png" alt-text="Screenshot of pasting the connection string.":::
 
+#### Add a new step to the flow
+
 1. Select the plus sign (+) to add a new step to the flow. 
 1. In this example, we're adding a **To Do** task, so we search for **To Do** and choose **Add a to-do (V3)**.
     :::image type="content" source="media/activator-trigger-power-automate-flows/activator-add-task.png" alt-text="Screenshot of defining a flow for activator.":::
 
-1. Fill in the necessary fields in the **Add a to-do (V3)** window. Start by selecting the **To-do list** dropdown and choosing the **Tasks** field that we created in an ealier step. 
+1. Fill in the necessary fields in the **Add a to-do (V3)** window. Start by selecting the **To-do list** dropdown and choosing the **Task name** field that we created in an ealier step. 
 
 ### Use properties and dynamic content in your flow
 
-Optionally, insert an expression into the Inputs field. If you select an input field and see the **fx** icon, select it.
+Optionally, insert an expression into the Inputs field. If you select an input field and see an **fx** icon, select it.
 
-When you select a property, it is added into the text box. In the pop-up window that opens, select a function to start your expression. To complete your expression, place the cursor in the function, and then select Dynamic content. Search for or select the content/tokens to add, and then select Add. Your completed expression appears in the Inputs field.
+When you select a property, it is added into the text box. In the pop-up window that opens, select a function to start your expression. To complete your expression, place the cursor in the function, and then select **Dynamic content**. Search for or select the content/tokens to add, and then select **Add**. Your completed expression appears in the **Inputs** field.
 
 You can now click on the property inside of the action card and open it up again for further editing.
 
-1. In this example, select the dropdown for **To-do List** and select the **Tasks** value you created earlier. 
+1. In this example, select the dropdown for **To-do List** and select the **Task name** value you created earlier. 
 1. Insert expressions in the **Title** field by selecting the **Title** field and **fx**. 
 1. In the **Function** tab, search for utcNow() and add it. By adding a date to the title, you might avoid duplicate names. 
-1. Still in the Function tab, search for **triggerBody** and select it. In the editing field, add one of the custom properties to update this field dynamically.  
+
+#### Pass an input field to your flow
+
+Reuse an input field by adding it to a function
+
+You can reuse any input fields that you create. Earlier we created one input field and named it "task name." Now let's use "task name" in a function. 
+
+
+1. Still in the **Function** tab, type or search for **triggerBody** and select it. In the editing field, you can add any predefined input fields. Earlier we created an input field "task name." Let's add it to the triggerBody function. The function looks like this:
+
+triggerBody()?['customProperties]/NAME_OF_INPUT_FIELD']
 
     :::image type="content" source="media/activator-trigger-power-automate-flows/activator-edit-fx.png" alt-text="Screenshot of the Function tab's editing screen.":::
 
 1. Select **Add** > **Save**.
 
 1. Optionally, select **Test** from the menu bar to force the flow to run. 
+
+you can add fields from the Event itself that I can dynamically pass through using the dropdown
 
 To learn more about Power Automate, see [Power Automate](/power-automate).
 
