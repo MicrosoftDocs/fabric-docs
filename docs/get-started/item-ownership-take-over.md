@@ -5,7 +5,7 @@ ms.reviewer: sakjai
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 01/22/2025
+ms.date: 01/24/2025
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.
 ---
 # Take ownership of Fabric items
@@ -49,7 +49,7 @@ To take ownership of a Fabric item:
 
 Some connections that use the previous item owner's credentials might stop working if the new item owner doesn't have access to the connection. In such cases, you might see a warning message.
 
-In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. The steps for this procedure in common item types are described in the following sections. This is not an exhaustive list of item types and is meant for illustration purposes. For specific guidance about taking ownership of Fabric items that have connections, see the item-specific documentation for each item type.
+In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. The following sections describe the steps for doing this procedure for several common item types. For guidance about taking ownership of other item types that have connections, see the relevant documentation for each item type.
 
 ### Pipelines
 
