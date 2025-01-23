@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 11/19/2024
+ms.date: 01/23/2025
 ms.topic: troubleshooting
 ms.custom:
   - ignite-2024
@@ -14,8 +14,6 @@ ms.search.form: Fabric Mirroring
 # Troubleshoot Fabric mirrored databases
 
 Scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Resources
 
@@ -40,6 +38,10 @@ Review limitations documentation for each data source:
 ## Stop replication
 
 When you select **Stop replication**, OneLake files remain as is, but incremental replication stops. You can restart the replication at any time by selecting **Start replication**. You might want to do stop/start replication when resetting the state of replication, after source database changes, or as a troubleshooting tool.  
+
+## Take ownership of a mirrored database
+
+Currently, mirrored database doesn't support ownership change. If a mirrored database stops working because the item owner has left the organization or it's no longer valid, you need to recreate the mirrored database.
 
 ## Troubleshoot
 
