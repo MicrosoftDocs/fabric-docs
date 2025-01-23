@@ -1,11 +1,10 @@
 ---
 title: Copilot consumption
 description: Information on how Fabric Copilot usage affects your CU consumption.
-ms.author: ruxu
-author: ruixinxu
+ms.author: rarikhy
+author: rrikhy
 ms.topic: how-to
-ms.custom:
-ms.date: 11/25/2024
+ms.date: 01/23/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -23,8 +22,8 @@ Requests to Copilot consume Fabric Capacity Units. This table defines how many c
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-|Copilot in Fabric |The input prompt |Per 1,000 Tokens |200 CU seconds|
-|Copilot in Fabric |The output completion |Per 1,000 Tokens|600 CU seconds|
+|Copilot in Fabric |The input prompt |Per 1,000 Tokens |100 CU seconds|
+|Copilot in Fabric |The output completion |Per 1,000 Tokens|400 CU seconds|
 
 
 ## Monitor the usage  
@@ -35,13 +34,13 @@ The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) dis
 
 ## Capacity utilization type 
 
-Fabric Copilots are classified as "background job" as the capacity utilization type to handle a higher volume of Copilot requests during peak hours.  
+Fabric Copilots are classified as "background jobs" to handle a higher volume of Copilot requests during peak hours.
 
-Fabric is designed to provide lightning-fast performance by allowing operations to access more CU (Capacity Units) resources than are allocated to capacity. Fabric smooths or averages the CU usage of an "interactive job" over a minimum of 5 minutes, "background job" over a 24-hour period. According to the [Fabric throttling policy](../enterprise/throttling.md), the first phase of throttling begins when a capacity consumed all its available CU resources for the next 10 minutes.  
+Fabric is designed to provide lightning-fast performance by allowing operations to access more CU (Capacity Units) resources than are allocated to capacity. Fabric smooths or averages the CU usage of an "interactive job" over a minimum of 5 minutes and a "background job" over a 24-hour period. According to the Fabric throttling policy, the first phase of throttling begins when a capacity has consumed all its available CU resources for the next 10 minutes.
 
-For example, assume each Copilot request has 2,000 input tokens and 500 output tokens. The price for one Copilot request = (2,000 * 200+500 * 600)/1,000 = 700 CU seconds = 11.66 CU minutes.  
+For example, assume each Copilot request has 2,000 input tokens and 500 output tokens. The price for one Copilot request is calculated as follows: (2,000 * 100 + 500 * 400) / 1,000 = 700 CU seconds = 11.66 CU minutes.
 
-Copilot is a background job, each Copilot request (~24 CU minute job) consume only one CU minute of each hour of a capacity. For a customer on F64 who has 64 * 24 CU Hours (1,536) in a day and each Copilot job consume (24 CU mins / 60 mins) = 0.4 CU Hours. Customers can run over 3.8k requests before they exhaust the capacity, but then everything shuts down.  
+Since Copilot is a background job, each Copilot request (~24 CU minute job) consumes only one CU minute of each hour of a capacity. For a customer on F64 who has 64 * 24 CU Hours (1,536) in a day, and each Copilot job consumes (24 CU mins / 60 mins) = 0.4 CU Hours, customers can run over 3,800 requests before they exhaust the capacity. However, once the capacity is exhausted, all operations will shut down.
 
 ## Region mapping 
 
