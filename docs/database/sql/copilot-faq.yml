@@ -52,7 +52,7 @@ sections:
         If you encounter harmful or inappropriate content in the system, you can provide feedback or report a concern by selecting the downvote button on the response. We're constantly working to improve our technology to proactively address issues in line with our [responsible AI principles](https://www.microsoft.com/ai/our-approach).
     - question: How much does Copilot cost?
       answer: |
-         To learn more about how the Fabric Copilot usage is billed and reported, see [Copilot in Fabric consumption](../fundamentals/copilot-fabric-consumption.md).
+         To learn more about how the Fabric Copilot usage is billed and reported, see [Copilot in Fabric consumption](../get-started/copilot-fabric-consumption.md).
     - question: How is the transmitted prompt and query data protected?
       answer: |
         Copilot takes several measures to protect data including:
@@ -62,7 +62,7 @@ sections:
         - Access to log and feedback data is strictly controlled. The data is stored in a separate subscription. The data is only accessible by 1) Just-In-Time JIT approval from Azure operations personnel using [secure admin workstations](/azure/security/fundamentals/infrastructure-components).
     - question: Where can I learn more about privacy and data protection?
       answer: |
-        For more information on how Copilot processes and uses personal data, see [Privacy, security, and responsible use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md).
+        For more information on how Copilot processes and uses personal data, see [Privacy, security, and responsible use of Copilot in Fabric](../get-started/copilot-privacy-security.md).
 
 additionalContent: |
 
