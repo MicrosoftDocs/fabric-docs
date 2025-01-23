@@ -1,8 +1,8 @@
 ---
 title: Workspaces in Microsoft Fabric and Power BI
 description: Learn about workspaces, which are collections of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
-author: maggiesMSFT
-ms.author: maggies
+author: paulinbar
+ms.author: painbar
 ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
 ms.custom:
