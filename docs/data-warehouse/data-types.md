@@ -54,7 +54,11 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 | **text and ntext** | Use **varchar**. |
 | **image** | Use **varbinary**. |
 | **tinyint** | Use **smallint**. |
-| **geography** | No equivalent. |
+| **geography** | Store geography data as a (latitude,longitude) column pair or a **varbinary** column with the well-known binary content and cast it to a geography value. As an alternative, use **varchar** and store data as well-known-text. |
+| **geometry** | Store geometry data as a (latitude,longitude) column pair or a **varbinary** column with the well-known binary content and cast it to a geometry value As an alternative, use **varchar** and store data as well-known-text. |
+| **json** | Use **varchar**. |
+| **xml** | No equivalent. |
+| **User-defined type (CLR)** | No equivalent. |
 
 Unsupported data types can still be used in T-SQL code for variables, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
 
