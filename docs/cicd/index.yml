@@ -24,7 +24,7 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Lifecycle management?
+          - text: What is CI/CD Lifecycle management?
             url: ./cicd-overview.md 
           - text: What is Git integration?
             url: git-integration/intro-to-git-integration.md 
