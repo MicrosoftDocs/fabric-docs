@@ -3,8 +3,8 @@ title: Data types
 description: Learn about the T-SQL data types supported the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo
-ms.date: 12/02/2024
+ms.reviewer: cynotebo, jovanpop
+ms.date: 01/23/2025
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
