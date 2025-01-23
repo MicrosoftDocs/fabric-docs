@@ -12,18 +12,18 @@ ms.date: 01/23/2025
 
 # Information protection in Microsoft Fabric
 
-Information protection in Fabric and Power BI enables organizations to categorize and protect their sensitive data using sensitivity labels and polices from Microsoft Purview Information Protection. In addition, Fabric and Power BI provide additional capabilities to help organizations achieve maximum sensitivity label coverage, and to manage and govern their senstive data.
+Information protection in Fabric and Power BI enables organizations to categorize and protect their sensitive data using sensitivity labels and policies from Microsoft Purview Information Protection. In addition, Fabric and Power BI provide additional capabilities to help organizations achieve maximum sensitivity label coverage, and to manage and govern their sensitive data.
 
 This article describes Fabric and Power BI's information protection [capabilities](#capabilities). You can find details about current support in the [considerations and limitations](#considerations-and-limitations) section.
 
 ## Requirements
 
-* [An appropriate license for Microsoft Purview information protection](/purview/information-protection#licensing-requirements).
+* [An appropriate license for Microsoft Purview Information Protection](/purview/information-protection#licensing-requirements).
 
    > [!NOTE]
-   > If your organization uses Azure Information Protection sensitivity labels, they need to be migrated to the Microsoft Purview Information Protection unified labeling platform in order for the them to be used in Fabric. [Learn more about migrating sensitivity labels](/azure/information-protection/configure-policy-migrate-labels).
+   > If your organization uses Azure Information Protection sensitivity labels, they need to be migrated to the Microsoft Purview Information Protection unified labeling platform in order for them to be used in Fabric. [Learn more about migrating sensitivity labels](/azure/information-protection/configure-policy-migrate-labels).
 
-* To be able to apply labels to Power BI items, a user must have a Power BI Pro or Premium Per User (PPU) license in addition to the licenses needed for Microsoft Purview information protection.
+* To be able to apply labels to Power BI items, a user must have a Power BI Pro or Premium Per User (PPU) license in addition to the licenses needed for Microsoft Purview Information Protection.
 
 * Office apps have their own [licensing requirements for viewing and applying sensitivity labels](/microsoft-365/compliance/get-started-with-sensitivity-labels#subscription-and-licensing-requirements-for-sensitivity-labels).
 
@@ -42,7 +42,7 @@ Sensitivity labels can apply access control to Fabric and Power BI data and cont
 
 * In the tenant where the sensitivity labels were applied. This scenario relies on sensitivity labels that are associated with Microsoft Purview *protection* policies. When a user logged in to the Fabric tenant where the labels were applied tries to access an item that has a label associated with a protection policy, their access is controlled by that protection policy. See [Protection policies in Microsoft Fabric (preview)](/fabric/governance/protection-policies-overview) for more information.
 
-* In Power BI Desktop (*.pbix*) files. This scenario relies on sensitivity labels that are associated with Microsoft Purview *publishing* policies. When a user tries to open a *.pbix* file that has a sensitivity label accociated with a publishing policy, their access depends on the permissions they have under that policy. See [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels).
+* In Power BI Desktop (*.pbix*) files. This scenario relies on sensitivity labels that are associated with Microsoft Purview *publishing* policies. When a user tries to open a *.pbix* file that has a sensitivity label associated with a publishing policy, their access depends on the permissions they have under that policy. See [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels).
 
 * In [supported export paths](#supported-export-paths). This scenario relies on sensitivity labels that are associated with Microsoft Purview *publishing* policies. When a user tries to open a file generated via one of the supported export paths, their access depends on the permissions they have under that policy. See [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels).
 
