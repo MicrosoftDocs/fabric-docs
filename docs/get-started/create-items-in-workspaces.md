@@ -3,7 +3,7 @@ title: Create items in workspaces
 description: "Learn how to create an item inside a workspace to build your data solution."
 author: yicw16322
 ms.author: yicw
-ms.reviewer: maggies
+ms.reviewer: painbar
 ms.service: fabric
 ms.topic: how-to
 ms.date: 10/16/2024
