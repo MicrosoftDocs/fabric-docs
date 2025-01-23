@@ -224,6 +224,11 @@
             "source_path_from_root": "/docs/get-started/copilot-notebooks-overview.md",
             "redirect_url": "/fabric/data-engineering/copilot-notebooks-overview",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/apply-sensitivity-labels.md",
+            "redirect_url": "/fabric/fundamentals/apply-sensitivity-labels",
+            "redirect_document_id": true
         }
     ]
 }
