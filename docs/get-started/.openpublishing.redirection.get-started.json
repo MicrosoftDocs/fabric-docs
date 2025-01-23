@@ -226,18 +226,8 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/docs/get-started/copilot-data-factory-privacy-security.md",
-            "redirect_url": "/fabric/data-engineering/copilot-data-factory-privacy-security",
-            "redirect_document_id": true
-        },
-        {
-            "source_path_from_root": "/docs/get-started/copilot-data-science-privacy-security.md",
-            "redirect_url": "/fabric/data-engineering/copilot-data-science-privacy-security",
-            "redirect_document_id": true
-        },
-        {
-            "source_path_from_root": "/docs/get-started/copilot-data-warehouse-privacy-security.md",
-            "redirect_url": "/fabric/data-engineering/copilot-data-warehouse-privacy-security",
+            "source_path_from_root": "/docs/get-started/apply-sensitivity-labels.md",
+            "redirect_url": "/fabric/fundamentals/apply-sensitivity-labels",
             "redirect_document_id": true
         }
     ]
