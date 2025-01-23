@@ -49,7 +49,7 @@ To take ownership of a Fabric item:
 
 Some connections that use the previous item owner's credentials might stop working if the new item owner doesn't have access to the connection. In such cases, you might see a warning message.
 
-In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. The following sections describe the steps for doing this procedure for several common item types. For guidance about taking ownership of other item types that have connections, see the relevant documentation for each item type.
+In this scenario, the new item owner can fix connections by going into the item and replacing the connection with a new or existing connection. The following sections describe the steps for doing this procedure for several common item types. For other item types that have connections, refer to the item's connection management documentation.
 
 ### Pipelines
 
