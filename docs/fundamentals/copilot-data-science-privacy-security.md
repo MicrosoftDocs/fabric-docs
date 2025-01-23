@@ -15,7 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 
 # Privacy, security, and responsible use of Copilot for Data Science
 
-In this article, learn how [Microsoft Copilot for Data Science](copilot-notebooks-overview.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](copilot-privacy-security.md).
+In this article, learn how [Microsoft Copilot for Data Science](../data-engineering/copilot-notebooks-overview.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](../data-engineering/copilot-privacy-security.md).
 
 With Copilot for Data Science in Microsoft Fabric and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Data Science and the other workloads.
 
