@@ -35,6 +35,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 
 - If you're changing most the data in a large table, it's more efficient to stop and restart Mirroring. Inserting or updating billions of records can take a long time.
 - Some schema changes aren't reflected immediately. Some schema changes need a data change (insert/update/delete) before schema changes are replicated to Fabric.
+- When mirroring data from Snowflake to a customer's OneLake, we usually stage the data to improve performance. However, if data exfiltration from Snowflake through inline url is disabled ([PREVENT_UNLOAD_TO_INLINE_URL](https://docs.snowflake.com/en/sql-reference/parameters#prevent-unload-to-inline-url)), direct read from Snowflake may be required. This approach can lead to slower replication times and an increased risk of connection timeouts, particularly for large datasets.
 
 ## Supported regions
 
