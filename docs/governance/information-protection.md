@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/06/2024
+ms.date: 01/23/2025
 ---
 
 # Information protection in Microsoft Fabric
