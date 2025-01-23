@@ -120,4 +120,3 @@ ORDER BY
 ## Related content
 
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
-- [Warehouse settings and context menus](settings-context-menus.md)
