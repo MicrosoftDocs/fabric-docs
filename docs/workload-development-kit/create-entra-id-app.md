@@ -10,17 +10,17 @@ ms.date: 07/14/2024
 #customer intent: As an Independent Software Vendor (ISV) or a developer, I want to learn how to set up the authorization for a customized Fabric workload.
 ---
 
-# Set up an enterprise application
+# Set up an Entra ID application
 
-For your workload to work in Fabric, you need to set up an Azure enterprise application. This application is used to authenticate your workload against Azure.
+For your workload to work in Fabric, you need to register an application with the Microsoft identity platform, also known as Microsoft Entra ID. This application is used to authenticate your workload against Azure.
 
 ## Prerequisites
 
 * At least a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role.
 
-## Step 1: Create a new enterprise application
+## Step 1: Register an Entra ID application
 
-To create a new enterprise application, follow these steps:
+To create a new Entra ID application, follow these steps:
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -34,9 +34,9 @@ To create a new enterprise application, follow these steps:
 
 ## Step 2: Configure the redirect URI
 
-The redirect URI is a URI that closes the page when you go to it. When users don't give consent to use your app, they are directed to the redirect URI. You can add several redirect URIs to your app.
+You need to configure your redirect URI to a URI that closes the page immediately when navigating to it. For more information, see [Redirect URI (reply URL) outline and restrictions](/entra/identity-platform/reply-url).
 
-To configure your enterprise application, follow these steps:
+To configure your Entra ID application, follow these steps:
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -98,9 +98,7 @@ To add an application ID URI to your app, follow these steps.
 
 ## Step 5: Add scopes
 
-You need to define [scopes](/entra/identity-platform/scopes-oidc) (also known as permissions) for your app. The scopes allow others to use your app's functionality. Every app has to have scopes for at least the Create, Read, Update, and Delete (CRUD) APIs.
-
-For example, the [workload sample](quickstart-sample.md) gives four examples of API permissions that other can use. You can see these mock permissions in [scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Constants/WorkloadScopes.cs):
+You need to define [scopes](/entra/identity-platform/scopes-oidc) (also known as permissions) for your app. The scopes allow others to use your app's functionality. For example, the [workload sample](quickstart-sample.md) gives four examples of API permissions that other can use. You can see these mock permissions in [scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Constants/WorkloadScopes.cs):
 
 * `Item1.Read.All` - For reading workload items
 
@@ -124,7 +122,7 @@ To add scopes to your app, follow these steps.
 
 ## Step 6: Add Client applications
 
-Allow the workload development kit applications to access Fabric without asking for user consent.
+Allow Fabric to request a token for your application without user consent.
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
 
