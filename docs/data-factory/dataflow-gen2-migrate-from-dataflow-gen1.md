@@ -82,7 +82,7 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | **Governance** |||
 | Content [endorsement](../governance/endorsement-overview.md), to promote or certify valuable, high-quality Fabric items | Yes | Yes |
 | [Microsoft Purview integration](../governance/microsoft-purview-fabric.md), which helps customers manage and govern Fabric items | Yes | Yes |
-| Microsoft Information Protection (MIP) [sensitivity labels](../get-started/apply-sensitivity-labels.md) and integration with [Microsoft Defender for Cloud Apps](../governance/service-security-using-defender-for-cloud-apps-controls.md) for data loss prevention (DLP) | Yes | Yes |
+| Microsoft Information Protection (MIP) [sensitivity labels](../fundamentals/apply-sensitivity-labels.md) and integration with [Microsoft Defender for Cloud Apps](../governance/service-security-using-defender-for-cloud-apps-controls.md) for data loss prevention (DLP) | Yes | Yes |
 | **Monitoring and diagnostic logging** |||
 | Enhanced [refresh history](dataflows-gen2-monitor.md), which allows you to evaluate in detail what happened during the refresh of your dataflow | No | Yes |
 | [Monitoring hub](../admin/monitoring-hub.md), which provides monitoring capabilities for Fabric items | No | Yes |
