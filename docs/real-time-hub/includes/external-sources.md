@@ -5,12 +5,11 @@ author: spelluru
 ms.author: spelluru
 ms.topic: include
 ms.custom:
-  - build-2024
-ms.date: 09/16/2024
+  - ignite-2024
+ms.date: 11/18/2024
 ---
 
-- [Google Cloud Pub/Sub](../add-source-google-cloud-pub-sub.md)
-- [Amazon Kinesis Data Streams](../add-source-amazon-kinesis-data-streams.md)
-- [Confluent Cloud Kafka](../add-source-confluent-kafka.md)
-- [Apache Kafka](../add-source-apache-kafka.md)
-- [Amazon Managed Streaming for Apache Kafka](../add-source-amazon-managed-streaming-for-kafka.md)
+| Source | Source | Source | 
+| ----- | ----- | ----- | 
+| [Google Cloud Pub/Sub](../add-source-google-cloud-pub-sub.md) | [Amazon Kinesis Data Streams](../add-source-amazon-kinesis-data-streams.md) | [Confluent Cloud Kafka](../add-source-confluent-kafka.md) |
+| [Apache Kafka (preview)](../add-source-apache-kafka.md) | [Amazon Managed Streaming for Apache Kafka](../add-source-amazon-managed-streaming-for-kafka.md) | |

@@ -4,7 +4,7 @@ description: A known issue is posted where environment doesn't work when runtime
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/23/2024
+ms.date: 11/19/2024
 ms.custom: known-issue-728
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-728
 
 When you change the Fabric Runtime version of an environment item to Runtime 1.1 using Microsoft Fabric Git REST APIs through Deployment pipelines, the environment lands in an inconsistent state.
 
-**Status:** Open
+**Status:** Fixed: November 19, 2024
 
 **Product Experience:** Data Engineering
 

@@ -1,6 +1,6 @@
 ---
 title: Caching in Fabric data warehousing
-description: Learn more about caching in Synapse Data Warehouse in Microsoft Fabric.
+description: Learn more about fully transparent caching in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: fipopovi
@@ -8,13 +8,14 @@ ms.date: 04/24/2024
 ms.topic: overview
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Caching in Fabric data warehousing
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Retrieving data from the data lake is crucial input/output (IO) operation with substantial implications for query performance. In [!INCLUDE [product-name](../includes/product-name.md)], Synapse Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. Additionally, it intelligently minimizes the need for remote storage reads by leveraging local caches.
+Retrieving data from the data lake is crucial input/output (IO) operation with substantial implications for query performance. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. Additionally, it intelligently minimizes the need for remote storage reads by leveraging local caches.
 
 Caching is a technique that improves the performance of data processing applications by reducing the IO operations. Caching stores frequently accessed data and metadata in a faster storage layer, such as local memory or local SSD disk, so that subsequent requests can be served more quickly, directly from the cache. If a particular set of data has been previously accessed by a query, any subsequent queries will retrieve that data directly from the in-memory cache. This approach significantly diminishes IO latency, as local memory operations are notably faster compared to fetching data from remote storage.
 
@@ -59,4 +60,4 @@ When the cache reaches its capacity threshold and fresh data is being read for t
 
 ## Related content
 
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)

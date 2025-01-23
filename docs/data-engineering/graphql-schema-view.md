@@ -13,9 +13,6 @@ ms.date: 05/21/2024
 
 # Fabric API for GraphQL schema view and Schema explorer
 
-> [!NOTE]
-> Microsoft Fabric API for GraphQL is in preview.
-
 The GraphQL schema, which is based on the GraphQL Schema Definition Language (SDL), defines the format of the data exposed in the API. It's an abstraction layer that provides flexibility to consumers while hiding backend implementation details. The schema is based on a collection of object types that contain fields.
 
 ## Schema view
@@ -69,11 +66,11 @@ Queries and mutations in the schema explorer have two additional options:
 
 - **Disable** - Prevents any requests from executing the query or mutation. If execution is attempted, an error is returned. Once a query or a mutation is disabled, a schema reload occurs, and the query or mutation appears grayed out in the schema explorer.
 
-![Screenshot of disable query or mutation option shown on schema explorer.](./media/graphql-schema-view/disable-query.png)
+:::image type="content" border="true" source="./media/graphql-schema-view/disable-query.png" alt-text="Screenshot of disable query or mutation option shown on schema explorer.":::
 
 - **Enable** - Re-enable a previously disabled query or mutation. Execution of the item is immediately available upon schema reload operation that takes place after selecting the **Enable** option.
 
-![Screenshot of enable query of mutation option shown on schema explorer.](media/graphql-schema-view/enable-query.png)
+:::image type="content" border="true" source="media/graphql-schema-view/enable-query.png" alt-text="Screenshot of enable query of mutation option shown on schema explorer.":::
 
 Please note that queries or mutations auto generated from stored procedures can only be deleted. Once deleted, they can be re-added using the **Get Data** or the **Update Schema** options.
 

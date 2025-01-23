@@ -1,5 +1,5 @@
 ---
-title: Overview of Fabric workload authentication JavaScript API (preview)
+title: Overview of Fabric workload authentication JavaScript API
 description: Learn how to use JavaScript APIs to authenticate a customized Fabric workload.
 author: KesemSharabi
 ms.author: kesharab
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Authentication JavaScript API (preview)
+# Authentication JavaScript API
 
 The Fabric front end offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. This article describes this API. 
 
@@ -69,7 +69,7 @@ When calling the acquireAccessToken JS API, we can provide three parameters:
 
 ### additionalScopesToConsent
 If The workload frontend is asking for a token to use for calls to the workload backend, this parameter should be null.
-Workload backend can fail to perform OBO on the token received because of a consent missing error, in that case the workload backend will need to propagate the error to the workload frontend and provide this paramter.
+Workload backend can fail to perform OBO on the token received because of a consent missing error, in that case the workload backend will need to propagate the error to the workload frontend and provide this parameter.
 
 ### claimsForConditionalAccessPolicy
 
@@ -83,4 +83,4 @@ Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-w
 
 ### promptFullConsent
 When passed as true, a full consent of the static dependencies will pop for the user regardless whether it provided a consent previously or not.
-An example usage for this paramter is to add a button to the UX where the user can use it to grant full consent to the workload.
+An example usage for this parameter is to add a button to the UX where the user can use it to grant full consent to the workload.

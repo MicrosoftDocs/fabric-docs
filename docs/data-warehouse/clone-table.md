@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - build-2024
+  - ignite-2024
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Clone table in Microsoft Fabric
@@ -31,11 +32,15 @@ You can also query data in a warehouse as it appeared in the past, using the T-S
 
 A zero-copy clone creates a replica of the table by copying the metadata, while still referencing the same data files in OneLake. The metadata is copied while the underlying data of the table stored as parquet files is not copied. The creation of a clone is similar to creating a table within a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Table clone in Synapse Data Warehouse
+<a id="table-clone-in-synapse-data-warehouse"></a>
 
-### Creation of a table clone
+## Table clone in Fabric Data Warehouse
 
 Within a warehouse, a clone of a table can be created near-instantaneously using simple T-SQL. A clone of a table can be created within or across schemas in a warehouse.
+
+<a id="creation-of-a-table-clone"></a>
+
+### Create a table clone
 
 Clone of a table can be created based on either:
 

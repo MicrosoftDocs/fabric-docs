@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/30/2024
+ms.date: 01/14/2025
 ---
 
 # Autologging in [!INCLUDE [product-name](../includes/product-name.md)]
@@ -43,10 +43,6 @@ mlflow.autolog(
 )
 
 ```
-
-
-
-
 
 ## Customization
 
@@ -102,17 +98,16 @@ mlflow.autolog(disable=True)
 
 Workspace administrators can enable or disable [!INCLUDE [product-name](../includes/product-name.md)] autologging for all notebooks and sessions in their workspace by using the workspace settings. To enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] autologging:
 
-1. In your [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] workspace, select **Workspace settings**.
+1. In your workspace, select **Workspace settings**.
 
-   :::image type="content" source="./media/machine-learning-experiment/autologging-workspace-setting.png" alt-text="Screenshot of the Synapse Data Science page with Workspace settings highlighted." lightbox="./media/machine-learning-experiment/autologging-workspace-setting.png":::
+   :::image type="content" source="./media/mlflow-autologging/autologging-workspace-setting.png" alt-text="Screenshot of workspace with Workspace settings highlighted." lightbox="./media/mlflow-autologging/autologging-workspace-setting.png":::
 
-1. On the **Workspace settings** screen, expand **Data Engineering/Science** on the left navigation bar and select **Spark settings**.
-
-1. On the **Spark settings** screen, select the **Automatic log** tab.
+1. In *Workspace settings*, expand **Data Engineering/Science** on the left navigation bar and select **Spark settings**.
+1. In *Spark settings*, select the **Automatic log** tab.
 1. Set **Automatically track machine learning experiments and models** to **On** or **Off**.
 1. Select **Save**.
 
-   :::image type="content" source="./media/machine-learning-experiment/autologging-setting-detail.png" alt-text="Screenshot of the Data Science workspace setting for autologging." lightbox="./media/machine-learning-experiment/autologging-setting-detail.png":::
+   :::image type="content" source="./media/mlflow-autologging/autologging-setting-detail.png" alt-text="Screenshot of workspace setting for autologging." lightbox="./media/mlflow-autologging/autologging-setting-detail.png":::
 
 ## Related content
 

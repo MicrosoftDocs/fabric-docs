@@ -83,14 +83,14 @@ Under **Advanced** settings in the **Source** tab, the following XML format rela
     - **xsd**: Select this to validate the XML schema using XSD.
     - **dtd**: Select this to validate the XML schema using DTD.
     
-    :::image type="content" source="./media/format-xml/validation-mode.png" alt-text="Screenshot showing validation modes. ":::
+    :::image type="content" source="./media/format-xml/validation-mode.png" alt-text="Screenshot showing validation modes.":::
 
 - **Namespaces**: Specify whether to enable namespace when parsing the XML files. It is selected by default.
 - **Namespace prefix pairs**: If the **Namespaces** is enabled, selecting **+ New** and specify the **URL** and **Prefix**. You can add more pairs by selecting **+ New**. <br> Namespace URI to prefix mapping is used to name fields when parsing the XML file.
 If an XML file has namespace and namespace is enabled, by default, the field name is the same as it is in the XML document.
 If there is an item defined for the namespace URI in this map, the field name is `prefix:fieldName`.
 
-    :::image type="content" source="./media/format-xml/namespace-prefix-pairs.png" alt-text="Screenshot showing namespace prefix pairs. ":::
+    :::image type="content" source="./media/format-xml/namespace-prefix-pairs.png" alt-text="Screenshot showing namespace prefix pairs.":::
 
 - **Detect data type**: Specify whether to detect integer, double, and Boolean data types. It is selected by default.
 

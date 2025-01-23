@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/09/2023
+ms.date: 01/09/2025
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to compare the content of the source stage and target stage before deployment so that I can ensure that the content is correct.
 ---
@@ -20,12 +20,12 @@ Before you deploy content to a different stage, it can be helpful to see the dif
 
 Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there's more than one item in a workspace with the same name and type, then the items are paired if their paths are the same. If the path isn't the same, the items aren't paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item overrides its paired item metadata, including its name, if it was changed. For more information on pairing, see [pairing items](./understand-the-deployment-process.md#autobinding).
 
-> [!IMPORTANT]
-> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
+> [!NOTE]
+> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
 
 ## Compare stages
 
-### [New deployment pipeline UI](#tab/new)
+### [New deployment pipeline UI](#tab/new-ui)
 
 A comparison icon indicator appears on each stage card except for the first stage of the pipeline. It indicates if this stage is identical to the source stage (previous stage) to give a quick visual insight into the differences between them.
 
@@ -60,7 +60,7 @@ This item can't be selected for deployment (since it doesn't exist in the source
 
 - **Same as source** – No difference was identified between this item and its pair in the source stage.
 
-### [Original Deployment pipeline UI](#tab/old)
+### [Original Deployment pipeline UI](#tab/old-ui)
 
 :::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare.png" alt-text="Screenshot showing three stages of deployment. There's a green check between the test and production stages and an orange X between the development and test stages." lightbox="media/compare-pipeline-content/deployment-pipelines-compare.png":::
 
@@ -97,13 +97,13 @@ Items that aren't paired or that were changed get one of the following labels:
 
 If there's a change in the schema, you can see the differences between the two items by selecting the **Compare** button.
 
-### [New Deployment change review button](#tab/new)
+### [New Deployment change review button](#tab/new-ui)
 
 To compare the items in the two stages, select the **Compare** icon:
 
 :::image type="content" source="./media/compare-pipeline-content/compare-new.png" alt-text="Screenshot showing the compare button in the top right corner.":::
 
-### [Original Deployment change review button](#tab/old)
+### [Original Deployment change review button](#tab/old-ui)
 
 If a text item, like a semantic model, is different, hover over it to see the **Change review** button.
 

@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/05/2024
+ms.date: 01/10/2025
 #customer intent: As a data analyst, I want to use the Microsoft Fabric lineage view to understand and manage machine learning models and experiments.
 ---
 
@@ -31,8 +31,6 @@ There are several reasons why lineage is important in your machine learning work
 ## Data science item types
 
 Microsoft Fabric integrates machine learning models and experiments into a unified platform. As part of this approach, users can browse the relationship between Fabric Data Science items and other Fabric items.
-
-:::image type="content" source="media/data-science-overview/lineage-data-science.gif" alt-text="Gif showing lineage view for models and experiments." lightbox="media/data-science-overview/lineage-data-science.gif":::
 
 ### Machine learning models
 
@@ -68,9 +66,9 @@ To access the lineage view:
 
    :::image type="content" source="media/lineage/workspace-artifact-lineage-data-science.png" alt-text="Image showing workspace lineage view in Fabric." lightbox="media/lineage/workspace-artifact-lineage-data-science.png":::
 
-3. You can also navigate to **Lineage** view for a specific item by opening the context menu.
+3. You can also navigate to **Lineage** view for a specific item by opening the context menu and selecting to view the workspace or item lineage.
 
-   :::image type="content" source="media/lineage/artifact-lineage-view-data-science.png" alt-text="Image showing workspace lineage view in Fabric for a given item." lightbox="media/lineage/artifact-lineage-view-data-science.png":::
+   :::image type="content" source="media/lineage/artifact-lineage-view-data-science.png" alt-text="Image showing context menu in Fabric for a given item." lightbox="media/lineage/artifact-lineage-view-data-science.png":::
 
 ## Related content
 

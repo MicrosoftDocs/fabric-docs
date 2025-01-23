@@ -1,6 +1,6 @@
 ---
-title: Pause and resume in Synapse Data Warehouse
-description: Learn more about the pause and resume capacity for data warehousing in Fabric.
+title: Pause and resume in Fabric Data Warehouse
+description: Learn more about the pause and resume capacity for Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
@@ -8,13 +8,14 @@ ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - ignite-2024
 ---
 
-# Pause and resume in Fabric data warehousing
+# Pause and resume in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Microsoft Fabric capacity can be paused to enable cost savings for your organization. Similar to other workloads, Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)] is affected when the Fabric capacity is paused.
+Microsoft Fabric capacity can be paused to enable cost savings for your organization. Similar to other workloads, Fabric Data Warehouse is affected when the Fabric capacity is paused.
 
 A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)] cannot be paused individually. To learn more about how to pause and resume your Fabric capacity, visit [Pause and resume your capacity](../enterprise/pause-resume.md).
 

@@ -115,9 +115,9 @@ Configurations for job-related actions associated with the item job instance.
     - **cancel** (object): Action for canceling a job.
     - **retry** (object): Action for retrying a job.
 
-### Item Settings and Job Types
+### Item Settings
 
-Defines additional configurations related to job types and scheduling.
+Configurations options for item settings.
 
 - **itemSettings** (object): Extra settings for the item.
   - **schedule** (object): Contains scheduling information.
@@ -126,7 +126,13 @@ Defines additional configurations related to job types and scheduling.
   - **recentRun** (object): Configuration for recent job runs.
     - **useRecentRunsComponent** (boolean): Whether to use fabric shared recent runs component.
 
-- **itemJobTypes** (array): Categories for job types associated with the item. You can select up to two categories per item. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
+### Item Task Flow Categories
+
+Defines your item categories for integrating with Fabric [Task Flow Framework.](../get-started/task-flow-overview.md).
+
+- **itemJobTypes** (array): Specifies the categories assigned to an item within the task flow framework. Each item can have up to two categories. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
+If no category is specified, "others" is used as the default.
+
 
 > [!NOTE]
 > When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.

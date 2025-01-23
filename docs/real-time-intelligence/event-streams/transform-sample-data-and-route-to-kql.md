@@ -8,8 +8,9 @@ ms.topic: tutorial
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - ignite-2024
 ms.date: 11/17/2023
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 ---
 
 # Tutorial: Explore and transform sample bike-sharing data with Eventstream for KQL Database integration
@@ -18,23 +19,21 @@ Eventstream is a streaming platform that allows you to ingest, transform, and ro
 
 ## Prerequisites
 
-* Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL Database are located.
+* Access to a workspace with Contributor or above permissions where your Eventstream and KQL Database are located.
 * A KQL Database created in your workspace.
 
-## Create an eventstream and add sample bike data
-
+## Create an eventstream 
 Follow these steps to create an eventstream in your workspace:
 
-1. Switch your Power BI experience to **Real-Time Intelligence** and select the **Eventstream** button to create a new one.
-2. Name your Eventstream "eventstream-1" and select **Create**.
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-    :::image type="content" source="./media/transform-sample-data-and-to-kql/create-eventstream.png" alt-text="Screenshot that shows where to add new eventstream." lightbox="./media/transform-sample-data-and-to-kql/create-eventstream.png":::
 
-3. On the Eventstream canvas, expand **New source** and select **Sample data**. Give a name to the source and select **Bicycles** as the sample data.
+## Add sample bike data
+
+1. On the Eventstream canvas, expand **New source** and select **Sample data**. Give a name to the source and select **Bicycles** as the sample data.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/add-bike-data.png" alt-text="Screenshot that shows where to add sample data in eventstream." lightbox="./media/transform-sample-data-and-to-kql/add-bike-data.png":::
-
-4. You can preview the data in eventstream to verify if the sample bike data is added successfully.
+1. You can preview the data in eventstream to verify if the sample bike data is added successfully.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/preview-eventstream.png" alt-text="Screenshot that shows where to preview data in eventstream." lightbox="./media/transform-sample-data-and-to-kql/preview-eventstream.png":::
 

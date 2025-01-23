@@ -2,12 +2,14 @@
 title: Discover and respond to events
 description: Learn about the Real-Time Intelligence tutorial user flow 1 and how to discover and respond to events in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: concept-article
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+  - ignite-2024
+ms.date: 11/19/2024
+ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to discover and respond to events in Real-Time Intelligence.
 ---
@@ -19,8 +21,6 @@ This user flow shows how a Data Engineer or Data Analyst can discover events in 
 
 :::image type="content" source="media/user-flows/user-flow-1.png" alt-text="Schematic image showing the steps in user flow 1." lightbox="media/user-flows/user-flow-1.png" border="false":::
 
-[!INCLUDE [preview-note](../real-time-hub/includes/preview-note.md)]
-
 ## Steps
 
 1. Browse  for available data streams: **streams and tables** in Real-Time hub. 
@@ -28,7 +28,7 @@ This user flow shows how a Data Engineer or Data Analyst can discover events in 
 
     For detailed steps and information, see [Explore data streams](../real-time-hub/explore-data-streams.md).
 1. View the details of the selected stream. You can see the stream information, related items, and profile of incoming and outgoing messages. For more information, see [View data stream details](../real-time-hub/view-data-stream-details.md).
-1. Set an alert on the stream. Define the desired property, condition, and action to take. For detailed steps and information, see [Set alerts on streams](../real-time-hub/set-alerts-data-streams.md). Save this alert as a reflex item in Data Activator.
+1. Set an alert on the stream. Define the desired property, condition, and action to take. For detailed steps and information, see [Set alerts on streams](../real-time-hub/set-alerts-data-streams.md). Save this alert as a reflex item in Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)].
 
 ## Potential use cases
 
@@ -40,4 +40,3 @@ This flow is useful for a variety of scenarios across all industries. Here are j
 * **Finance and Insurance:** A financial analyst uses real-time data for fraud detection. They also use the data to improve operational efficiency.
 * **Energy and Utilities:** An energy company uses real-time data to monitor station data, and detect energy leakage. They also use the data for failure monitoring and predictive maintenance.
 * **Logistics:** A logistics company uses real-time data to monitor the location of their vehicles and optimize routes. They also use the data for warehouse management and inventory tracking.
-

@@ -70,6 +70,8 @@ landingContent:
             url: activity-overview.md
           - text: Move data with copy assistant
             url: tutorial-move-data-lakehouse-copy-assistant.md
+          - text: Migrate from Dataflow Gen1 to Dataflow Gen2
+            url: dataflow-gen2-migrate-from-dataflow-gen1.md
 
   # Card
   - title: Data gateway

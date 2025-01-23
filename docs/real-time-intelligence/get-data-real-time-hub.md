@@ -2,14 +2,15 @@
 title: Get data from Real-Time hub (preview)
 description: Learn how to get data from Real-Time hub in a KQL database in Real-time Intelligence.
 ms.reviewer: aksdi
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
   - build-2024
-ms.date: 04/18/2024
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -74,7 +75,7 @@ The **Inspect** tab opens with a preview of the data.
 
 To complete the ingestion process, select **Finish**.
 
-:::image type="content" source="media/get-data-real-time-hub/inspect-data.png" alt-text="Screenshot of the inspect tab. " lightbox="media/get-data-real-time-hub/inspect-data.png":::
+:::image type="content" source="media/get-data-real-time-hub/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-real-time-hub/inspect-data.png":::
 
 Optionally:
 

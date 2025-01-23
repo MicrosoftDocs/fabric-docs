@@ -4,7 +4,7 @@ description: A known issue is posted where the response times when composing SQL
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/13/2024
+ms.date: 11/20/2024
 ms.custom: known-issue-716
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-716
 
 You can write and execute queries on a data warehouse's SQL analytics endpoint by using the SQL query editor. The response time from the user experience (UX) is slower than expected. The delay can range from seconds to minutes.
 
-**Status:** Open
+**Status:** Fixed: November 20, 2024
 
 **Product Experience:** Data Warehouse
 

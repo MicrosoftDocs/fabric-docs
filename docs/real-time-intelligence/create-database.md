@@ -2,13 +2,14 @@
 title: Create a KQL database
 description: Learn how to create a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/16/2024
+  - ignite-2024
+ms.date: 11/11/2024
 ms.search.form: KQL Database
 ---
 # Create a KQL database

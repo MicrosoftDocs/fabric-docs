@@ -2,10 +2,12 @@
 title: Create an eventhouse
 description: Learn about how to create an eventhouse for data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
-ms.date: 06/04/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an eventhouse for data storage in Real-Time Analytics so that I can effectively manage my data.
 ---

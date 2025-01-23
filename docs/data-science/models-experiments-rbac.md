@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 01/10/2025
 ---
 
 # Data science roles and permissions

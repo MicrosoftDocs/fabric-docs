@@ -4,7 +4,7 @@ description: "Learn about Microsoft Fabric security concepts and features that c
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: v-myerspeter, vparasuraman
-ms.date: 08/27/2024
+ms.date: 12/12/2024
 ms.topic: conceptual
 ms.custom: fabric-cat, security-guidance
 ---
@@ -47,11 +47,11 @@ Here's what happens when a user signs in to Fabric.
 
 | **Item** | **Description** |
 | --- | --- |
-| ![Item 1.](../media/legend-number/legend-number-01-fabric.svg) | The user opens a browser (or a client application) and signs in to the [Fabric portal](https://app.fabric.microsoft.com/). |
-| ![Item 2.](../media/legend-number/legend-number-02-fabric.svg) | The user is immediately redirected to Microsoft Entra ID, and they're required to authenticate. Authentication verifies that it's the correct person signing in. |
-| ![Item 3.](../media/legend-number/legend-number-03-fabric.svg) | After authentication succeeds, the web front end receives the user's request and delivers the front-end (HTML and CSS) content from the nearest location. It also routes the request to the metadata platform and backend capacity platform. |
-| ![Item 4.](../media/legend-number/legend-number-04-fabric.svg) | The metadata platform, which resides in your tenant's [home region](../admin/find-fabric-home-region.md), stores your tenant's metadata, such as workspaces and access controls. This platform ensures that the user is authorized to access the relevant workspaces and Fabric items. |
-| ![Item 5.](../media/legend-number/legend-number-05-fabric.svg) | The back-end capacity platform performs compute operations and stores your data. It's located in the [capacity region](../admin/service-admin-premium-multi-geo.md). When a workspace is assigned to Fabric capacity, all data that resides in the workspace, including the data lake [OneLake](../onelake/onelake-overview.md), is stored and processed in the capacity region. |
+| :::image type="icon" source="../media/legend-number/legend-number-01-fabric.svg"::: | The user opens a browser (or a client application) and signs in to the [Fabric portal](https://app.fabric.microsoft.com/?pbi_source=learn-security-security-scenario). |
+| :::image type="icon" source="../media/legend-number/legend-number-02-fabric.svg"::: | The user is immediately redirected to Microsoft Entra ID, and they're required to authenticate. Authentication verifies that it's the correct person signing in. |
+| :::image type="icon" source="../media/legend-number/legend-number-03-fabric.svg"::: | After authentication succeeds, the web front end receives the user's request and delivers the front-end (HTML and CSS) content from the nearest location. It also routes the request to the metadata platform and backend capacity platform. |
+| :::image type="icon" source="../media/legend-number/legend-number-04-fabric.svg"::: | The metadata platform, which resides in your tenant's [home region](../admin/find-fabric-home-region.md), stores your tenant's metadata, such as workspaces and access controls. This platform ensures that the user is authorized to access the relevant workspaces and Fabric items. |
+| :::image type="icon" source="../media/legend-number/legend-number-05-fabric.svg"::: | The back-end capacity platform performs compute operations and stores your data. It's located in the [capacity region](../admin/service-admin-premium-multi-geo.md). When a workspace is assigned to Fabric capacity, all data that resides in the workspace, including the data lake [OneLake](../onelake/onelake-overview.md), is stored and processed in the capacity region. |
 
 The metadata platform and the back-end capacity platform each run in secured virtual networks. These networks expose a series of secure endpoints to the internet so that they can receive requests from users and other services. Apart from these endpoints, services are protected by network security rules that block access from the public internet.
 
@@ -133,7 +133,7 @@ There are some considerations for using this pattern:
 - AWS S3 supports encryption at-rest using [customer-managed keys](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). Fabric can perform in-place reads on S3 buckets using [S3 shortcut](../onelake/create-s3-shortcut.md); however, write operations using a shortcut to AWS S3 are not supported.
 - Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
-- In Microsoft Fabric, Power BI experience supports [customer-managed key](/power-bi/enterprise/service-encryption-customer-managed-keys).
+- In Microsoft Fabric, Power BI supports customer-managed key with [Bring your own encryption keys for Power BI](/power-bi/enterprise/service-encryption-byok).
 - Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts. as the cached data is persisted on OneLake.
 
 ## Data residency
@@ -179,7 +179,7 @@ The following table lists common security scenarios and the tools you can use to
 | I'm a **developer** who can write data ingestion code by using Spark notebooks. I want to load data in Fabric from source systems that I have access to. The source data is in Azure behind private endpoints, and I don't want to install and maintain on-premises data gateway infrastructure. | Use [Fabric notebooks](../data-engineering/how-to-use-notebook.md) with [Azure private endpoints](/azure/private-link/manage-private-endpoint?tabs=manage-private-link-powershell). | Outbound |
 | I have many existing pipelines in Azure Data Factory (ADF) and Synapse pipelines that connect to my data sources and load data into Azure. I now want to modify those pipelines to load data into Fabric. | Use the [Lakehouse connector](../data-factory/connector-lakehouse-overview.md) in existing pipelines. | Outbound |
 | I have a data ingestion framework developed in Spark that connects to my data sources securely and loads them into Azure. I'm running it on Azure Databricks and/or Synapse Spark. I want to continue using Azure Databricks and/or Synapse Spark to load data into Fabric. | Use the [OneLake and the Azure Data Lake Storage (ADLS) Gen2 API](../onelake/onelake-api-parity.md) (Azure Blob Filesystem driver) | Outbound |
-| I want to ensure that my Fabric endpoints are protected from the public internet. | As a SaaS service, the Fabric back end is already protected from the public internet. For more protection, use [Microsoft Entra conditional access policies for Fabric](security-conditional-access.md) and/or enable [private links at tenant level](security-private-links-overview.md) for Fabric and block public internet access. | Inbound |
+| I want to ensure that my Fabric endpoints are protected from the public internet. | As a SaaS service, the Fabric backend is already protected from the public internet. For more protection, use [Microsoft Entra conditional access policies for Fabric](security-conditional-access.md) and/or enable [private links at tenant level](security-private-links-overview.md) for Fabric and block public internet access. | Inbound |
 | I want to ensure that Fabric can be accessed from only within my corporate network and/or from compliant devices. | Use [Microsoft Entra conditional access policies for Fabric](security-conditional-access.md). | Inbound |
 | I want to ensure that anyone accessing Fabric must perform multifactor authentication. | Use [Microsoft Entra conditional access policies for Fabric](security-conditional-access.md). | Inbound |
 | I want to lock down my entire Fabric tenant from the public internet and allow access only from within my virtual networks. | Enable [private links at tenant level](security-private-links-overview.md) for Fabric and block public internet access. | Inbound |

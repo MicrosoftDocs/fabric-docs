@@ -19,7 +19,7 @@ Using the Spark job definition item's inline monitoring, you can track the follo
 * Monitor the progress and status of a running Spark job definition.
 * View the status and duration of previous Spark job definition runs.
 
-You can get this information from the **Recent Runs** contextual menu in the workspace or by browsing the Spark job definition activities in the monitoring hub.
+You can get this information from the **Recent Runs** contextual menu in the workspace or by browsing the Spark job definition activities in the Monitor pane.
 
 ## Spark job definition inline monitoring
 
@@ -29,15 +29,15 @@ The Spark job definition inline monitoring feature allows you to view Spark job 
 
 ## Spark job definition item view in workspace
 
-You can access the job runs associated with specific Spark job definition items by using the **Recent run** contextual menu on the workspace homepage.
+You can access the job runs associated with specific Spark job definition items by using the **Recent runs** contextual menu on the workspace homepage.
 
 :::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-artifact-view-in-workspace.png" alt-text="Screenshot showing the spark job definition item view in workspace." lightbox="media\monitor-spark-job-definitions\spark-job-definition-artifact-view-in-workspace.png":::
 
-## Spark job definition runs in the Monitoring hub
+## Spark job definition runs in the Monitor pane
 
-To view all the Spark applications related to a Spark job definition, go to the **Monitoring hub**.  Sort or filter the **Item Type** column to view all the run activities associated with the Spark job definitions.
+To view all the Spark applications related to a Spark job definition, go to the **Monitor pane**.  Sort or filter the **Item Type** column to view all the run activities associated with the Spark job definitions.
 
-:::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png" alt-text="Screenshot showing the spark job definition runs in Monitoring hub." lightbox="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png":::
+:::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png" alt-text="Screenshot showing the spark job definition runs in the Monitor pane." lightbox="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png":::
 
 ## Related content
 

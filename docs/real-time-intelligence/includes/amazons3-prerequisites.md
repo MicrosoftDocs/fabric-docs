@@ -1,8 +1,8 @@
 ---
 title: Include file for the Amazon S3 shortcut prerequisite in Real-Time Intelligence
 description: Include file for the Amazon S3 shortcut prerequisite in Real-Time Intelligence
-author: YaelSchuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.topic: include
 ms.custom:
   - build-2023

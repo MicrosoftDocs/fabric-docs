@@ -4,7 +4,7 @@ description: This documentation provides an overview of the activity continuity 
 author: lrtoyou1223 
 ms.author: lle
 ms.topic: how-to 
-ms.date: 12/07/2023
+ms.date: 12/18/2024
 ms.custom: template-how-to, build-2023 
 ---
 
@@ -14,7 +14,7 @@ This documentation provides an overview of the activity continuity between Azure
 
 ## Activity parity overview
 
-With Data Factory in Microsoft Fabric, we continue to maintain a high degree of continuity with Azure Data Factory. Approximately 90% of activities accessible in ADF are already available under Data Factory in Fabric. Here is a breakdown of the activities and their availability in both ADF and Data Factory in Fabric:
+With Data Factory in Microsoft Fabric, we continue to maintain a high degree of continuity with Azure Data Factory. Approximately 90% of activities accessible in ADF are already available under Data Factory in Fabric. Here's a breakdown of the activities and their availability in both ADF and Data Factory in Fabric:
 
 |Activity|ADF| Data Factory in Fabric|
 |:---|:---|:---|
@@ -49,9 +49,9 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 |Dataflow Gen2|N/A|Y|
 |Office 365 Outlook|N/A|Y|
 |Teams|N/A|Y|
-|Dataset Refresh|N/A|N|
-|Azure ML Batch Execution|Deprecated|N/A|
-|Azure ML Update Resource|Deprecated|N/A|
+|Semantic model refresh|N/A|Y|
+|Azure Machine Learning Batch Execution|Deprecated|N/A|
+|Azure Machine Learning Update Resource|Deprecated|N/A|
 |Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
 |USQL|Deprecated|N/A|
 
@@ -61,9 +61,9 @@ In addition to maintaining activity continuity, Data Factory in Fabric introduce
 
 1. **Outlook**: Available in Fabric Data Factory to facilitate integration with Outlook services.
 1. **Teams**: Available in Fabric Data Factory to enable orchestration of Microsoft Teams activities.
-1. **Dataset Refresh**: In progress in Fabric Data Factory to enhance dataset refresh capabilities.
+1. **Semantic model refresh**: Available in Fabric Data Factory to enhance Power BI semantic model refresh capabilities.
 1. **Dataflow Gen2**: Available in Fabric Data Factory to empower data orchestration with advanced dataflow capabilities.
 
 ## Conclusion
 
-With Data Factory in Fabric, you can confidently transition from Azure Data Factory while maintaining a high degree of activity continuity and benefiting from new capabilities. Please refer to this documentation [Activity overview](activity-overview.md) when planning your data integration and orchestration workflows in Fabric Data Factory.
+With Data Factory in Fabric, you can confidently transition from Azure Data Factory while maintaining a high degree of activity continuity and benefiting from new capabilities. Refer to this documentation [Activity overview](activity-overview.md) when planning your data integration and orchestration workflows in Fabric Data Factory.

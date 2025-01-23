@@ -2,10 +2,12 @@
 title: Add a query visualization in Real-Time Intelligence
 description: Learn how to add a query visualization in Real-Time Intelligence.
 ms.reviewer: mibar
-ms.author: yaschust
-author: yaelschuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
-ms.date: 10/30/2024
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ---
 # Add and modify a query visualization
 

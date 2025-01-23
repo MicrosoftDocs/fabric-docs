@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
-ms.date: 04/15/2023
+ms.date: 12/18/2024
 ---
 
 # Tutorial: Run a Fabric data pipeline and notebook using Apache Airflow DAGs
@@ -46,12 +46,12 @@ To get started, you must complete the following prerequisites:
 - Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
 :::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
 
-- Enable the Triggerers in data workflows to allow the usage of deferrable operators.
-   :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggerers.":::
+- Enable the Triggers in data workflows to allow the usage of deferrable operators.
+   :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggers.":::
 
 ## Apache Airflow plugin
 
-To trigger an on-demand Microsoft Fabric item run, this tutorial uses the [apache-airflow-microsoft-fabric-plugin](https://pypi.org/project/apache-airflow-microsoft-fabric-plugin/) which is pre-installed in the Apache Airflow job requirements. 
+To trigger an on-demand Microsoft Fabric item run, this tutorial uses the [apache-airflow-microsoft-fabric-plugin](https://pypi.org/project/apache-airflow-microsoft-fabric-plugin/) which is preinstalled in the Apache Airflow job requirements. 
 
 ## Authentication
 
@@ -76,7 +76,7 @@ The first step in the authorization code flow is for the user to authorize the a
 The plugin requires the following scopes for authentication:
 -  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
 -  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
--  **offline_access**: Standard OIDC scope that's requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
+-  **offline_access**: Standard OIDC scope requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only
 // This request uses Item.Execute.All, Item.Read.All and offline_access scopes. You can update them as per your requirements.
@@ -95,7 +95,7 @@ client_id={client_id}
 To know more about parameters, refer to [Request authorization code](/entra/identity-platform/v2-oauth2-auth-code-flow#request-an-authorization-code).
 
 #### User consent Experience
-After the app sends the authorization request, the user is asked to enter their credentials to authenticate with Microsoft. The Microsoft identity platform v2.0 endpoint ensures that the user has consented to the permissions indicated in the scope query parameter. The following screenshot is an example of the consent dialog box presented for a Microsoft account user.
+After the app sends the authorization request, the user is asked to enter their credentials to authenticate with Microsoft. The Microsoft identity platform v2.0 endpoint ensures that the user consents to the permissions indicated in the scope query parameter. The following screenshot is an example of the consent dialog box presented for a Microsoft account user.
 
 :::image type="content" source="media/apache-airflow-jobs/user-consent-fabric-plugin.png" lightbox="media/apache-airflow-jobs/user-consent-fabric-plugin.png" alt-text="Screenshot to show user consent experience while authenticating with Microsoft Fabric.":::
 
@@ -112,7 +112,7 @@ code=M0ab92efe-b6fd-df08-87dc-2c6500a7f84d...
 ```
 
 ### Step 2: Request an access token
-The app uses the authorization code received in the previous step to request an access token by sending a POST request to the `/token` endpoint. Make sure your scope and redirect_uri match the values you used in the previous step.  You can paste the following request in a tool like Postman or Insomnia to send the request.
+The app uses the authorization code received in the previous step to request an access token by sending a POST request to the `/token` endpoint. Make sure your scope and redirect_uri match the values you used in the previous step.  You can paste the following request in a tool like Insomnia to send the request.
 
 ```http
 // Line breaks for legibility only
@@ -134,7 +134,7 @@ client_id={client_id}
 To know more about parameters, refer to [Request an access token](/entra/identity-platform/v2-oauth2-auth-code-flow#request-an-access-token).
 
 #### Access token response
-The access token contains a list of the permissions that the access token is good for in the scope parameter. The response is similar to the following sample. Copy the 'refresh_token' value from the response to use in the Apache Airflow connection.
+The access token contains a list of the permissions that the access token is good for in the scope parameter. The response is similar to the following sample. Copy the 'refresh_token' value from the response for use in the Apache Airflow connection.
 
 ```http
 HTTP/1.1 200 OK
@@ -161,7 +161,7 @@ Apache Airflow connection is used to store the credentials required to authentic
 
    - <strong>Connection ID:</strong> Name of the Connection ID.
    - <strong>Connection Type:</strong> Generic
-   - <strong>Login:</strong> The Application (client) ID assigned to your app.
+   - <strong>Sign in:</strong> The Application (client) ID assigned to your app.
    - <strong>Password:</strong> The refresh token fetched in previous step.
    - <strong>Extra:</strong> This field contains the following parameters:
       - **tenantId**: (Required) The {tenant} value in the path of the request can be used to control who can sign into the application.
@@ -244,14 +244,14 @@ Create a new file in the `plugins` folder with the following code:
 
 ### In Apache Airflow Job UI
 
-1. When you open your DAG file in Fabric Managed Storage, "Results" appears at the bottom. Click on the arrow to view the results of the DAG run.
+1. When you open your DAG file in Fabric Managed Storage, "Results" appears at the bottom. Select on the arrow to view the results of the DAG run.
    :::image type="content" source="media/apache-airflow-jobs/monitor-in-fabric-ui.png" lightbox="media/apache-airflow-jobs/monitor-in-fabric-ui.png" alt-text="Screenshot to view Apache Airflow DAG in Apache Airflow job itself.":::
 
 ### In Apache Airflow UI
 
 1. Go to the Airflow UI and select the DAG you created.
 
-2. If you add the plugin, you see an external monitoring link. Click on it to navigate to the item run.
+2. If you add the plugin, you see an external monitoring link. Select on it to navigate to the item run.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" alt-text="Screenshot to view Apache Airflow DAGs with external link.":::
 
 3. Xcom Integration: Trigger the DAG to view task outputs in the Xcom tab.

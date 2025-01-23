@@ -10,8 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-  - build-2024
-ms.date: 07/19/2024
+ms.date: 12/31/2024
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
@@ -33,9 +32,11 @@ You can use the Fabric UI to create shortcuts interactively, and you can use the
 
 ### Lakehouse
 
-When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses are composed of two top level folders: the **Tables** folder and the **Files** folder. The **Tables** folder represents the managed portion of the lakehouse, while the **Files** folder is the unmanaged portion of the lakehouse.
-In the **Tables** folder, you can only create shortcuts at the top level. Shortcuts aren't supported in other subdirectories of the **Tables** folder. If the target of the shortcut contains data in the Delta\Parquet format, the lakehouse automatically synchronizes the metadata and recognizes the folder as a table.
-In the **Files** folder, there are no restrictions on where you can create shortcuts. You can create them at any level of the folder hierarchy. Table discovery doesn't happen in the **Files** folder.
+When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses are composed of two top level folders: the **Tables** folder and the **Files** folder. The **Tables** folder represents the managed portion of the lakehouse i.e for structured datasets. While the **Files** folder is the unmanaged portion of the lakehouse i.e for unstructured or semi-structured data.
+
+In the **Tables** folder, you can only create shortcuts at the top level. Shortcuts aren't supported in other subdirectories of the **Tables** folder. Shortcuts in the Tables section typically point to internal sources within OneLake or are linked to other data assets that conform to the Delta table format. If the target of the shortcut contains data in the Delta\Parquet format, the lakehouse automatically synchronizes the metadata and recognizes the folder as a table.
+
+In the **Files** folder, there are no restrictions on where you can create shortcuts. You can create them at any level of the folder hierarchy. Table discovery doesn't happen in the **Files** folder. Shortcuts here can point to both internal (OneLake) and external storage systems with data in any format.
 
 :::image type="content" source="media\onelake-shortcuts\lake-view-table-view.png" alt-text="Diagram showing the Lake view and the Table view side by side.":::
 
@@ -143,7 +144,7 @@ S3 shortcuts must point to the https endpoint for the S3 bucket.
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> You do not need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
+> You don't need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
 > 
 > Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
 
@@ -166,7 +167,7 @@ Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.
 
 #### Access
 
-When configuring the connection for a GCS shortcut you can either specify the global endpoint for the storage service or use a bucket specific endpoint.
+When configuring the connection for a GCS shortcut, you can either specify the global endpoint for the storage service or use a bucket specific endpoint.
 
 - Global Endpoint example: `https://storage.googleapis.com`
 - Bucket Specific Endpoint example: `https://<BucketName>.storage.googleapis.com`
@@ -212,7 +213,7 @@ Dataverse shortcuts use a delegated authorization model. In this model, the shor
 
 ## Caching
 
-Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
+Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24 hrs it's purged from the cache. Individual files greater than 1 GB in size aren't cached.
 > [!NOTE]
 > Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
 
@@ -257,7 +258,7 @@ In this case, if User A has write permissions in the ADLS Gen2 account, the **Ba
 
 When creating shortcuts between multiple Fabric items within a workspace, you can visualize the shortcut relationships through the workspace lineage view. Select the **Lineage view** button (:::image type="icon" source="media\onelake-shortcuts\lineage-view-button.png":::) in the upper right corner of the Workspace explorer.
 
-:::image type="content" source="media\onelake-shortcuts\lineage-view.png" alt-text="Screenshot of the lineage view screen." lightbox="media\onelake-shortcuts\lineage-view.png":::
+:::image type="content" source="media\onelake-shortcuts\lineage-view.png" alt-text="Screenshot of the lineage view screen to visualize shortcut relationship." lightbox="media\onelake-shortcuts\lineage-view.png":::
 
 > [!NOTE]
 > The lineage view is scoped to a single workspace. Shortcuts to locations outside the selected workspace won't appear.
@@ -272,9 +273,11 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Shortcuts don't support non-Latin characters.
 - Copy Blob API not supported for ADLS or S3 shortcuts.
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
-- Additional shortcuts can't be created inside ADLS or S3 shortcuts.
-- Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
+- More shortcuts can't be created inside ADLS or S3 shortcuts.
+- Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
+- A Fabric shortcut syncs with the source almost instantly, but propagation time may vary due to data source performance, cached views, or network connectivity issues.
 - It may take up to a minute for the Table API to recognize new shortcuts.
+- OneLake shortcuts do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints, to learn more, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
 
 ## Related content
 

@@ -27,7 +27,7 @@ ms.date: 05/21/2024
         1. Paste those values into the **API Key** and **API Key Secret** fields. 
         1. Select **Connect**
 
-            :::image type="content" source="./media/confluent-kafka-source-connector/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings. ":::        
+            :::image type="content" source="./media/confluent-kafka-source-connector/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings.":::        
 1. Scroll to see the **Configure Confluent data source** section on the page. Enter the information to complete the configuration of the Confluent data source. 
     1. For **Topic**, enter a topic name from your Confluent Cloud. You can create or manage your topic in the Confluent Cloud Console. 
     1. For **Consumer group**, Enter a consumer group of your Confluent Cloud. It provides you with the dedicated consumer group for getting the events from Confluent Cloud cluster. 
@@ -36,5 +36,5 @@ ms.date: 05/21/2024
         - **Latest** – the latest available data
         - **None** – don't automatically set the offset. 
 
-            :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings. ":::        
+            :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings.":::        
 1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.

@@ -4,7 +4,7 @@ description: A known issue is posted where an embedded paginated report renders 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/07/2024
+ms.date: 11/12/2024
 ms.custom: known-issue-919
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-919
 
 You can embed a paginated report into an application. When you access the report, you might see an error message pop-up; however, the report renders correctly.
 
-**Status:** Open
+**Status:** Fixed: November 12, 2024
 
 **Product Experience:** Power BI
 

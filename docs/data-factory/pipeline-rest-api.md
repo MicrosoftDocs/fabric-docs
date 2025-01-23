@@ -10,27 +10,9 @@ ms.date: 09/16/2024
 # Microsoft Fabric data pipeline public REST API (Preview)
 
 > [!IMPORTANT]
-> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs will be released later. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
-
-## Obtain an authorization token
-
-### Option 1: Using MSAL.Net
-
-[Fabric API quickstart - Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token)
-
-Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: Workspace.ReadWrite.All, Item.ReadWrite.All. For more information about token acquisition with MSAL.Net to, see [Token Acquisition - Microsoft Authentication Library for .NET](/entra/msal/dotnet/acquiring-tokens/overview).
-
-Paste the Application (client) ID you copied earlier and paste it for ClientId variable.
-
-### Option 2: Using the Fabric Portal
-
-Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
-
-```powerBIAccessToken```
-
-Copy the token and paste it for the ClientId variable.
+In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs are not yet available. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Item Definition with payload base64 encoded
 
@@ -88,7 +70,7 @@ Take the properties object and surround them in braces - **{ }** - so the REST I
 
 [REST API - Items - Create item](/rest/api/fabric/core/items/create-item )
 
-Example:
+Example - CreateDataPipeline:
 
 ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
 
@@ -102,7 +84,7 @@ Body:
 ```
 
 > [!NOTE]
-> The documentation states that there are only 2 required properties - **displayName** and **type**. Currently, Workload-DI does not support creation without a **definition** as well. The fix for this erroneous requirement is currently being deployed. For now, you can send the same default definition used by the Fabric user interface:
+> The documentation states that there are only 2 required properties - **displayName** and **type**. Currently, Workload-DI doesn't support creation without a **definition** as well. The fix for this erroneous requirement is currently being deployed. For now, you can send the same default definition used by the Fabric user interface:
 > ```‘{"properties":{"activities":[]}}’```
 
 Modified JSON including definition:
@@ -318,7 +300,7 @@ Body:
 Response 202: (No body)
 
 > [!NOTE]
-> There is no body returned currently, but the job Id should be returned. During the preview, it can be found in the returned headers, in the ‘Location’ property.
+> There's no body returned currently, but the job Id should be returned. During the preview, it can be found in the returned headers, in the _Location_ property.
 
 ## Get item job instance
 
@@ -355,14 +337,14 @@ Example:
 Response 202: (No body)
 
 > [!NOTE]
-> After cancelling a job you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
+> After canceling a job, you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
 
 
 ## Query activity runs
 
 Example:
 
-```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<job id>/queryactivityruns```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<Job ID>/queryactivityruns```
 
 Body:
 
@@ -383,10 +365,10 @@ Response 200:
 [
     {
         "pipelineName": "ca91f97e-5bdd-4fe1-b39a-1f134f26a701",
-        "pipelineRunId": "f2fa7a0e-586d-4d73-a2b4-7ddc785243ae",
+        "pipelineRunId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
         "activityName": "Wait1",
         "activityType": "Wait",
-        "activityRunId": "ef579d3d-d23e-477a-8150-d6e15d66a532",
+        "activityRunId": "cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a",
         "linkedServiceName": "",
         "status": "Succeeded",
         "activityRunStart": "2024-05-23T13:43:03.6397566Z",
@@ -409,7 +391,7 @@ Response 200:
         "recoveryStatus": "None",
         "integrationRuntimeNames": null,
         "executionDetails": null,
-        "id": "/SUBSCRIPTIONS/4DA86268-68B8-4B08-AD58-A7AEE54138CD/RESOURCEGROUPS/4DA86268-68B8-4B08-AD58-A7AEE54138CD/PROVIDERS/MICROSOFT.TRIDENT/WORKSPACES/4DA86268-68B8-4B08-AD58-A7AEE54138CD/pipelineruns/f2fa7a0e-586d-4d73-a2b4-7ddc785243ae/activityruns/ef579d3d-d23e-477a-8150-d6e15d66a532"
+        "id": "/SUBSCRIPTIONS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/RESOURCEGROUPS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/PROVIDERS/MICROSOFT.TRIDENT/WORKSPACES/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/pipelineruns/bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f/activityruns/cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a"
     }
 ]
 

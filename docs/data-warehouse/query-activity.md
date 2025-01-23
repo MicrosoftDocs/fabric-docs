@@ -6,6 +6,8 @@ ms.author: jacindaeng
 ms.reviewer: wiassaf
 ms.date: 05/28/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2024
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Monitor your running and completed T-SQL queries using Query activity
@@ -95,6 +97,6 @@ The same information regarding completed, failed, and canceled queries from Quer
 
 ## Related content
 
-- [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
+- [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](query-activity.md)

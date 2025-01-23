@@ -2,10 +2,12 @@
 title: Use Fabric notebooks with data from a KQL database
 description: Learn how to query data in a KQL Database from Microsoft Fabric Notebooks using KQL (Kusto Query Language)
 ms.reviewer: orhasban
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
-ms.date: 11/21/2023
+ms.custom:
+  - ignite-2024
+ms.date: 11/19/2024
 ms.search.form: Notebooks
 --- 
 # Use Fabric notebooks with data from a KQL database
@@ -43,7 +45,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     # The database with data to be read.
     database = "DocsDatabase"
     # The access credentials.
-    accessToken = mssparkutils.credentials.getToken(kustoUri)
+    accessToken = mssparkutils.credentials.getToken('kusto')
     kustoDf  = spark.read\
         .format("com.microsoft.kusto.spark.synapse.datasource")\
         .option("accessToken", accessToken)\
@@ -65,7 +67,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     # The table to write the data 
     table    = ""
     # The access credentials for the write
-    accessToken = mssparkutils.credentials.getToken(kustoUri)
+    accessToken = mssparkutils.credentials.getToken('kusto')
     
     # Generate a range of 5 rows with Id's 5 to 9
     data = spark.range(5,10) 

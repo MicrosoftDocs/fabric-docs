@@ -11,6 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
+  - ignite-2024
 ---
 
 # Migration​: ​Azure Synapse Analytics dedicated SQL pools to Fabric
@@ -376,7 +377,7 @@ A SQL Database Project can:
 
 For the data migration, you'll then use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse. 
 
-Adding to the Azure Data Studio supportability to Fabric, the Microsoft Fabric CAT team has provided a set of PowerShell scripts to handle the extraction, creation, and deployment of schema (DDL) and database code (DML) via a SQL Database Project. For a walkthrough of using the SQL Database project with our helpful PowerShell scripts, see [microsoft/fabric-migration on GitHub.com](https://github.com/microsoft/fabric-migration/tree/main/data-warehouse#deploy_and_create_migration_scripts_from_sourceps1---deploy-as-sql-package). 
+Adding to the Azure Data Studio supportability of Microsoft Fabric, the Microsoft Fabric CAT team has provided a set of PowerShell scripts to handle the extraction, creation, and deployment of schema (DDL) and database code (DML) via a SQL Database Project. For a walkthrough of using the SQL Database project with our helpful PowerShell scripts, see [microsoft/fabric-migration on GitHub.com](https://github.com/microsoft/fabric-migration/tree/main/data-warehouse#deploy_and_create_migration_scripts_from_sourceps1---deploy-as-sql-package). 
 
 For more information on SQL Database Projects, see [Getting started with the SQL Database Projects extension](/azure-data-studio/extensions/sql-database-project-extension-getting-started?view=fabric&preserve-view=true) and [Build and Publish a project](/azure-data-studio/extensions/sql-database-project-extension-build?view=fabric&preserve-view=true).
 
@@ -420,7 +421,7 @@ The dbt framework generates DDL and DML (SQL scripts) on the fly with each execu
 
 The dbt framework is code-first approach. The data must be migrated by using options listed in this document, such as [CETAS](#migration-of-data-with-cetas) or [COPY/Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity).
 
-The dbt adapter for Microsoft Fabric Synapse Data Warehouse allows the existing dbt projects that were targeting different platforms such as Synapse dedicated SQL pools, Snowflake, Databricks, Google Big Query, or Amazon Redshift to be migrated to a Fabric Warehouse with a simple configuration change.
+The dbt adapter for Microsoft Fabric Data Warehouse allows the existing dbt projects that were targeting different platforms such as Synapse dedicated SQL pools, Snowflake, Databricks, Google Big Query, or Amazon Redshift to be migrated to a Fabric Warehouse with a simple configuration change.
 
 To get started with a dbt project targeting Fabric Warehouse, see [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md). This document also lists an option to move between different warehouses/platforms.
 
@@ -436,6 +437,6 @@ Several factors to note so that you can design your process for maximum performa
 ## Related content
 
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)

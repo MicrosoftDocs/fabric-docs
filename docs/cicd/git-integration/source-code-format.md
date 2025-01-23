@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 07/23/2024
+ms.date: 01/23/2025
 ms.custom: build-2023
 #customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
@@ -50,10 +50,17 @@ Each item's directory has specific, required files that define that item.
 
 The following items are currently supported in Microsoft Fabric:
 
+- [Mirrored databases](#mirrored-databases)
 - [Notebook](#notebook-files)
 - [Paginated report](#paginated-report-files)
 - [Report](#report-files)
 - [Semantic model](#semantic-model-files)
+
+#### Mirrored databases
+
+Mirrored database folders contain a *.json* file defining the mirrored database.
+
+For instructions on using Git integration with mirrored databases, see [CI/CD for mirrored databases](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration).
 
 #### Notebook files
 
@@ -65,7 +72,7 @@ For instructions on using Git integration with notebooks, see [Notebook source c
 
 Paginated report folders contain an *.rdl* file defining the paginated report. RDL (Report Definition Language) is an XML representation of a paginated report definition.
 
-For more information o RDL, see [Report Definition Language (RDL)](/power-bi/paginated-reports/report-definition-language).
+For more information about RDL, see [Report Definition Language (RDL)](/power-bi/paginated-reports/report-definition-language).
 For instructions on using Git integration with paginated reports, see [Git integration with paginated reports](/power-bi/paginated-reports/paginated-github-integration).
 
 #### Report files

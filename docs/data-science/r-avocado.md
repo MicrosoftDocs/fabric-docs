@@ -197,7 +197,7 @@ conv_houston_ts_arima <- auto.arima(conv_houston_ts,
 checkresiduals(conv_houston_ts_arima)
 ```
 
-![Screenshot that shows a graph of residuals.](./media/r-avocado/residuals.png)
+:::image type="content" border="true" source="./media/r-avocado/residuals.png" alt-text="Screenshot that shows a graph of residuals.":::
 
 Show a graph of forecasts from the Houston ARIMA model:
 

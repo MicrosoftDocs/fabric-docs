@@ -35,13 +35,11 @@ For notebooks to share a single Spark session, they must:
 
 Fabric workspace admins can enable the high concurrency mode for pipelines using the workspace settings. Use the following steps to configure the high concurrency feature:
 
-1. Select **Workspace Settings** option in your Fabric workspace
+1. Select the **Workspace settings** option in your Fabric workspace.
 
-   :::image type="content" source="media/high-concurrency-mode-for-notebooks/workspace-settings-nav.png" alt-text="Screenshot showing the navigation to workspace settings." lightbox="media/high-concurrency-mode-for-notebooks/workspace-settings-nav.png":::
+2. Navigate to the **Data Engineering/Science** section > **Spark settings** > **High concurrency**.
 
-2. Navigate to the **Data Engineering and Science** section > **Spark Compute** > **High Concurrency**
-
-3. In the **High Concurrency** section, enable the **For pipeline running multiple notebooks** setting.
+3. In the **High concurrency** section, enable the **For pipeline running multiple notebooks** setting.
 
    :::image type="content" source="media/high-concurrency-for-notebooks-in-pipelines/workspace-settings-high-concurrency-pipelines.png" alt-text="Screenshot showing the high concurrency section in workspace settings." lightbox="media/high-concurrency-for-notebooks-in-pipelines/workspace-settings-high-concurrency-pipelines.png":::
 
@@ -51,15 +49,13 @@ Fabric workspace admins can enable the high concurrency mode for pipelines using
 
 ## Use session tag in notebook to group shared sessions
 
-1. Open the Fabric workspace
+1. Navigate to your workspace, select the **New item** button, and create a new **Data pipeline**.
 
-2. Create a pipeline item using the **Create** menu
+2. Navigate to the **Activities** tab in the menu ribbon and add a **Notebook** activity.
 
-3. Navigate to the **Activities** tab in the menu ribbon and add a **Notebook** activity.
+3. From **Advanced settings**, specify any string value for the **session tag** property.
 
-4. From **Advanced settings**, specify any string value for the **session tag** property.
-
-5. After the session tag is added, the notebook sharing uses this tag as matching criteria bundling all notebooks with the same session tag.
+4. After the session tag is added, the notebook sharing uses this tag as matching criteria bundling all notebooks with the same session tag.
 
    :::image type="content" source="media/high-concurrency-for-notebooks-in-pipelines/session-tag-high-concurrency-pipelines.png" alt-text="Screenshot showing the option to start a new high concurrency session in Notebook Menu." lightbox="media/high-concurrency-for-notebooks-in-pipelines/session-tag-high-concurrency-pipelines.png":::
 
@@ -67,9 +63,9 @@ Fabric workspace admins can enable the high concurrency mode for pipelines using
 
 Monitoring and debugging can be challenging when multiple notebooks are running within a shared session. In high concurrency mode, log separation is provided, enabling you to trace logs from Spark events for each individual notebook.
 
-1. When the session is in progress or in completed state, you can view the session status by navigating to the **Run** menu and selecting the **All Runs** option
+1. When the session is in progress or in completed state, you can view the session status by navigating to the **Run** menu and selecting the **All Runs** option.
 
-1. This opens the run history of the notebook with the list of current active and historic spark sessions
+1. This opens the run history of the notebook with the list of current active and historic spark sessions.
 
    :::image type="content" source="media/high-concurrency-mode-for-notebooks/view-all-runs-in-high-concurrency-mode.png" alt-text="Screenshot showing the all runs page for a notebook in a high concurrency session." lightbox="media/high-concurrency-mode-for-notebooks/view-all-runs-in-high-concurrency-mode.png":::
   
@@ -81,5 +77,5 @@ Monitoring and debugging can be challenging when multiple notebooks are running 
 
 ## Related content
 
-* To learn more about High Concurrency mode in Microsoft Fabric, see [Overview on High Concurrency Mode in Microsoft Fabric](high-concurrency-overview.md)
-* To get started with High Concurrency mode for notebooks, see [How to use a High Concurrency Mode in Notebooks](configure-high-concurrency-session-notebooks.md)
+* To learn more about high concurrency mode in Microsoft Fabric, see [High concurrency mode in Apache Spark for Fabric](high-concurrency-overview.md).
+* To get started with high concurrency mode for notebooks, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).

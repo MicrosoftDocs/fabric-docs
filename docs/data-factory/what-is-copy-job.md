@@ -10,11 +10,11 @@ ms.search.form: copy-job-tutorials
 
 # What is the Copy job (preview) in Data Factory for Microsoft Fabric
 
-Data Factory in Fabric empowers users to seamlessly integrate data from over 100 built-in connectors - both sources and destinations - through a visually intuitive interface. The Copy _activity_, working within data pipelines, facilitates data ingestion. Meanwhile, Dataflow Gen2 supports data transformations, and pipelines orchestrate the flow of integration.
+Data Factory in Fabric empowers users to seamlessly integrate data from over 100 built-in connectors - both sources and destinations - through a visually intuitive interface. The Copy activity, working within data pipelines, facilitates data ingestion. Meanwhile, Dataflow Gen2 supports data transformations, and pipelines orchestrate the flow of integration.
 
 ## Advantages of the Copy job
 
-While the legacy Copy activity within data pipelines handles data ingestion with bulk/batch operations, creating data pipelines in Data Factory still proves challenging for many users that are new to the field, with a steeper learning curve. So, we're thrilled to introduce the Copy job, elevating the data ingestion experience to a more streamlined and user-friendly process from any source to any destination. Now, copying your data is easier than ever before. Moreover, Copy job supports various data delivery styles, including both batch copy and incremental copy, offering flexibility to meet your specific needs.
+While the Copy activity within data pipelines handles data ingestion with bulk/batch operations, creating data pipelines in Data Factory still proves challenging for many users that are new to the field, with a steeper learning curve. So, we're thrilled to introduce the Copy job, elevating the data ingestion experience to a more streamlined and user-friendly process from any source to any destination. Now, copying your data is easier than ever before. Moreover, Copy job supports various data delivery styles, including both batch copy and incremental copy, offering flexibility to meet your specific needs.
 
 :::image type="content" source="media/copy-job/monitor-copy-job.png" lightbox="media/copy-job/monitor-copy-job.png" alt-text="Screenshot showing the Copy job and its results pane.":::
 
@@ -22,7 +22,7 @@ Some advantages of the Copy job over other data movement methods include:
 
 - **Intuitive Experience**: Experience seamless data copying with no compromises, making it easier than ever.
 - **Efficiency**: Enable incremental copying effortlessly, reducing manual intervention. This efficiency translates to less resource utilization and faster copy durations.
-- **Flexibility**: Take control of your data copying preferences. You can choose which tables and columns to copy, map the data as needed, and define the behavior for reading and writing. Moreover, you can set schedules that best suit your requirements, whether it's a one-off task or a recurring operation.
+- **Flexibility**: While enjoy the simplicity, you also have the flexibility to control your data movement. Choose which tables and columns to copy, map the data, define read/write behavior, and set schedules that fit your needs, whether for a one-time task or recurring operation.
 - **Robust performance**: A serverless setup enabling data transfer with large-scale parallelism, maximizing data movement throughput for your system. 
 
 ## Supported connectors

@@ -10,8 +10,9 @@ ms.custom:
   - intro-get-started
   - build-2023
   - ignite-2023
-ms.date: 04/14/2024
+ms.date: 11/14/2024
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
+# customer intent: As a developer, I want to know how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool, so that I can manage my content more efficiently.
 ---
 
 # Get started with deployment pipelines
@@ -19,12 +20,11 @@ ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introd
 This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. We recommend reading the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understanding [which items can be deployed](./intro-to-deployment-pipelines.md#supported-items) before you proceed.
 
 > [!NOTE]
-> Some of the items for deployment pipelines are in preview. For more information, see the list of [supported items](./intro-to-deployment-pipelines.md#supported-items).
+>
+> * The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
+> * Some of the items for deployment pipelines are in preview. For more information, see the list of [supported items](./intro-to-deployment-pipelines.md#supported-items).
 
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
-
-> [!IMPORTANT]
-> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
 
 ## Prerequisites
 
@@ -71,7 +71,7 @@ From the workspace, select **Create deployment pipeline**.
 
 1. Set your deployment pipeline’s structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages named **Development**, **Test**, and **Production**. You can accept these default stages or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline. You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you're done.
 
-### [Customize the pipeline: new UI](#tab/new)
+### [Customize the pipeline: new UI](#tab/new-ui)
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline-new.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
@@ -79,7 +79,7 @@ To navigate between stages, zoom in and out with your mouse wheel or use the but
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages-new.png" alt-text="Screenshot of deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages-new.png":::
 
-### [Customize the pipeline: original UI](#tab/old)
+### [Customize the pipeline: original UI](#tab/old-ui)
 
    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
@@ -109,11 +109,11 @@ By default, the final stage of the pipeline is made public. A consumer of a publ
 
 You can have as many public stages as you want, or none at all. To change the public status of a stage at any time, go to the pipeline stage settings and check or uncheck the **Make this stage public** box.
 
-#### [Stage settings: new UI](#tab/stage-settings-new)
+#### [Stage settings: new UI](#tab/new-ui)
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings-new.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
-#### [Stage settings: original UI](#tab/stage-settings-old)
+#### [Stage settings: original UI](#tab/old-ui)
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 

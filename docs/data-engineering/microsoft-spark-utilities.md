@@ -145,6 +145,9 @@ This method appends the given string to a file, encoded in UTF-8.
 mssparkutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
 
+> [!NOTE] 
+> When using the ``` mssparkutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```mssparkutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+
 ### Delete file or directory
 
 This method removes a file or directory.
@@ -625,6 +628,9 @@ With ``` mssparkutils.runtime.context ``` you can get the context information of
 ```python
 mssparkutils.runtime.context
 ```
+
+> [!NOTE]
+> ```mssparkutils.env``` is not officially supported on Fabric, please use ```notebookutils.runtime.context``` as alternative.
 
 ## Known issue 
 

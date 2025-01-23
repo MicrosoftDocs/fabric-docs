@@ -8,13 +8,14 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+  - ignite-2024
+ms.date: 11/11/2024
 ---
 # Billing and utilization reporting for Apache Spark in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-This article explains the compute utilization and reporting for ApacheSpark which powers the Synapse Data Engineering and Science workloads in Microsoft Fabric. The compute utilization includes lakehouse operations like table preview, load to delta, notebook runs from the interface, scheduled runs, runs triggered by notebook steps in the pipelines, and Apache Spark job definition runs. 
+This article explains the compute utilization and reporting for ApacheSpark which powers the Fabric Data Engineering and Science workloads in Microsoft Fabric. The compute utilization includes lakehouse operations like table preview, load to delta, notebook runs from the interface, scheduled runs, runs triggered by notebook steps in the pipelines, and Apache Spark job definition runs. 
 
 Like other experiences in Microsoft Fabric, Data Engineering also uses the capacity associated with a workspace to run these job and your overall capacity charges appear in the Azure portal under your [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview) subscription. To learn more about Fabric billing, see [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 

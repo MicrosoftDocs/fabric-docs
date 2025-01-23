@@ -4,10 +4,11 @@ description: Learn more about scenarios for the lakehouse and data warehousing w
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 04/24/2024
+ms.date: 12/19/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
+  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse
@@ -18,7 +19,7 @@ This article explains the data warehousing workload with the [[!INCLUDE [fabric-
 
 ## What is a Lakehouse SQL analytics endpoint?
 
-In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [[!INCLUDE [fabric-se](includes/fabric-dw.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created.
+In Fabric, when you create a warehouse, a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created.
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one Lakehouse. The number of [!INCLUDE [fabric-se](includes/fabric-se.md)]s in a workspace matches the number of Lakehouse items.
 
@@ -29,7 +30,7 @@ The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in t
 There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. Microsoft Fabric users can't create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in a workspace. A [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created for every Lakehouse. To get a [!INCLUDE [fabric-se](includes/fabric-se.md)], [create a lakehouse](../onelake/create-lakehouse-onelake.md) and a [!INCLUDE [fabric-se](includes/fabric-se.md)] will be automatically created for the Lakehouse.
 
 > [!NOTE]
-> Behind the scenes, the [!INCLUDE [fabric-se](includes/fabric-se.md)] is using the same engine as the [Warehouse](data-warehousing.md#synapse-data-warehouse) to serve high performance, low latency SQL queries.
+> Behind the scenes, the [!INCLUDE [fabric-se](includes/fabric-se.md)] is using the same engine as the [Warehouse](data-warehousing.md#fabric-data-warehouse) to serve high performance, low latency SQL queries.
 
 ### Automatic Metadata Discovery
 
@@ -51,7 +52,7 @@ Warehouses can also be added as subject area or domain oriented solutions for sp
 
 If you choose to keep your data in Fabric, it will **always be open** and accessible through APIs, Delta format, and of course T-SQL.
 
-### Query as a service over your delta tables from Lakehouse and other items from OneLake data hub
+### Query as a service over your delta tables from Lakehouse and other items from OneLake
 
 There are use cases where an analyst, data scientist, or data engineer might need to query data within a data lake. In Fabric, this end to end experience is completely SaaSified.
 
@@ -62,7 +63,7 @@ Data in a Microsoft Fabric Lakehouse is physically stored in OneLake with the fo
 - The `/Files` folder contains raw and unconsolidated (bronze) files that should be processed by data engineers before they're analyzed. The files might be in various formats such as CSV, Parquet, different types of images, etc.
 - The `/Tables` folder contains refined and consolidated (gold) data that is ready for business analysis. The consolidated data is in Delta Lake format.
 
-A [!INCLUDE [fabric-se](includes/fabric-se.md)] can read data in the `/tables` folder within OneLake. Analysis is as simple as querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse. Together with the Warehouse, you also get cross-database queries and the ability to seamless switch from read-only queries to building additional business logic on top of your OneLake data with Synapse Data Warehouse.
+A [!INCLUDE [fabric-se](includes/fabric-se.md)] can read data in the `/tables` folder within OneLake. Analysis is as simple as querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse. Together with the Warehouse, you also get cross-database queries and the ability to seamless switch from read-only queries to building additional business logic on top of your OneLake data with Fabric Data Warehouse.
 
 ### Data Engineering with Spark, and Serving with SQL
 

@@ -38,7 +38,7 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2-gb-on-premises-csv-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-1.png" alt-text="Screenshot showing details of the Dataflow Gen2 Refresh cost":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-1.png" alt-text="Screenshot showing details of the Dataflow Gen2 Refresh cost.":::
 
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-2.png" alt-text="Screenshot showing details of a Dataflow Gen2 High Scale Dataflow Compute consumption used in the run.":::
 

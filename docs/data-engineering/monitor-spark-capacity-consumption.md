@@ -8,7 +8,8 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+  - ignite-2024
+ms.date: 11/11/2024
 ms.search.form: Monitor Spark capacity consumption
 ---
 
@@ -24,15 +25,15 @@ The following operations from lakehouses, notebooks, and Spark job definitions a
 |--|--|--|
 | **Lakehouse operations** | Lakehouse | Users preview table in the Lakehouse explorer. |
 | **Lakehouse table load** | Lakehouse | Users load delta table in the Lakehouse explorer. |
-| **Notebook run** | Synapse Notebook | Synapse Notebook runs manually by users. |
-| **Notebook HC run** | Synapse Notebook | Synapse Notebook runs under the high concurrency Apache Spark session. |
-| **Notebook scheduled run** | Synapse Notebook | Synapse Notebook runs triggered by notebook scheduled events. |
-| **Notebook pipeline run** | Synapse Notebook | Synapse Notebook runs triggered by pipeline. |
-| **Notebook VS Code run** | Synapse Notebook | Synapse Notebook runs in VS Code. |
+| **Notebook run** | Notebook | Notebook runs manually by users. |
+| **Notebook HC run** |  Notebook | Notebook runs under the high concurrency Apache Spark session. |
+| **Notebook scheduled run** | Notebook | Notebook runs triggered by notebook scheduled events. |
+| **Notebook pipeline run** | Notebook | Notebook runs triggered by pipeline. |
+| **Notebook VS Code run** | Notebook | Notebook runs in VS Code. |
 | **Spark job run** | Spark Job Definition | Spark batch job runs initiated by user submission. |
-| **Spark job scheduled run** | Spark Job Definition | Synapse batch job runs triggered by notebook scheduled events. |
-| **Spark job pipeline run** | Spark Job Definition | Synapse batch job runs triggered by pipeline. |
-| **Spark job VS Code run** | Spark Job Definition | Synapse Spark job definition submitted from VS Code. |
+| **Spark job scheduled run** | Spark Job Definition | Batch job runs triggered by notebook scheduled events. |
+| **Spark job pipeline run** | Spark Job Definition | Batch job runs triggered by pipeline. |
+| **Spark job VS Code run** | Spark Job Definition | Spark job definition submitted from VS Code. |
 
 ## Spark capacity consumption that isn't reported
 

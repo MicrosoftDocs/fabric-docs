@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 1/13/2024
 ---
 
 # Module 2: Transform data with a dataflow in Data Factory
@@ -28,8 +28,8 @@ The high-level steps in the dataflow are as follows:
 
 ## Get data from a Lakehouse table
 
-1. From the sidebar, select **Create**, and then **Dataflow Gen2** to create a new dataflow gen2.
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow-inline.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 button highlighted." lightbox="media/tutorial-end-to-end-dataflow/create-new-dataflow.png":::
+1. From the sidebar, select your workspace, select **New item**, and then **Dataflow Gen2** to create a new Dataflow Gen2.
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow-inline.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 button highlighted." lightbox="media/tutorial-end-to-end-dataflow/create-new-dataflow-inline.png":::
 
 1. From the new dataflow menu, select **Get data**, and then **More...**.
 

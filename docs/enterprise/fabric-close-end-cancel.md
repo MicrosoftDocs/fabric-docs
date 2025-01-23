@@ -32,7 +32,7 @@ If you signed up for Power BI as an individual, and you don't want to use Power 
 
 1. On the **General** tab, select **Close Account**.
 
-    ![Screenshot showing the Power BI settings menu. General and the close account menu options are highlighted.](media/fabric-close-end-cancel/close-account-settings-2.png)
+    :::image type="content" border="true" source="media/fabric-close-end-cancel/close-account-settings-2.png" alt-text="Screenshot showing the Power BI settings menu. General and the close account menu options are highlighted.":::
 
 1. Select a reason for closing the account. You can also provide further information. Then select **Close account**.
 
@@ -42,7 +42,7 @@ If you signed up for Power BI as an individual, and you don't want to use Power 
 
 If your organization signed you up for Power BI, contact your admin. Ask them to unassign the license from your account.
 
-![Screenshot of the close account message for Managed Users.](media/fabric-close-end-cancel/close-account-managed.png)
+:::image type="content" border="true" source="media/fabric-close-end-cancel/close-account-managed.png" alt-text="Screenshot of the close account message for Managed Users.":::
 
 ## Cancel a Fabric capacity trial that you started
 
@@ -122,7 +122,7 @@ If you signed up for Power BI as an individual, you can close your account from 
 
 1. On the **General** tab, select **Close Account**.
 
-    ![Screenshot showing the Power BI settings menu. General and the close account menu options are highlighted.](media/fabric-close-end-cancel/close-account-settings-2.png)
+    :::image type="content" border="true" source="media/fabric-close-end-cancel/close-account-settings-2.png" alt-text="Screenshot showing the Power BI settings menu. General and the close account menu options are highlighted.":::
 
 1. Select a reason for closing the account. You can also provide further information. Then select **Close account**.
 
@@ -132,6 +132,6 @@ If you signed up for Power BI as an individual, you can close your account from 
 
 If your organization signed you up for Power BI, contact your admin. Ask them to unassign the license from your account.
 
-![Screenshot of the close account message for Managed Users.](media/fabric-close-end-cancel/close-account-managed.png)
+:::image type="content" border="true" source="media/fabric-close-end-cancel/close-account-managed.png" alt-text="Screenshot of the close account message for Managed Users.":::
 
 ---

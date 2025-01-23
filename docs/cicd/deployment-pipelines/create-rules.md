@@ -18,7 +18,10 @@ ms.search.form: Deployment rules
 
 When you're working in a deployment pipeline, different stages might have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, you can define a rule for semantic model in a production stage to point to a production database instead of one in the test stage. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, inherits the value as defined in the deployment rule. This rule always applies as long as it's unchanged and valid.
+When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, you can define a rule for semantic model in a production stage to point to a production database instead of one in the test stage. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production inherits the value as defined in the deployment rule. This rule always applies as long as it's unchanged and valid.
+
+> [!NOTE]
+> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
 
 You can configure data source rules, parameter rules, and default lakehouse rules. The following table lists the type of items you can configure rules for, and the type of rule you can configure for each one.
 
@@ -28,6 +31,7 @@ You can configure data source rules, parameter rules, and default lakehouse rule
 |**Semantic model**          |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific semantic model.         |
 |**Datamart**         |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific datamart.         |
 |**Paginated report** |✅ |❌ |❌ |Defined for the data sources of each paginated report. Use to determine the data sources of the paginated report. |
+|**Mirrored database** |✅ |❌ |❌ |Defined for the data sources of each mirrored database. |
 |**Notebook** |❌ |❌ |✅ |Use to determine the default lakehouse for a specific notebook. |
 
 >[!NOTE]
@@ -37,7 +41,7 @@ You can configure data source rules, parameter rules, and default lakehouse rule
 
 To create a deployment rule, follow the steps in this section. After you create all the deployment rules you need, deploy the semantic models with the newly created rules from the source stage to the target stage where the rules were created. Your rules don't apply until you deploy the semantic models from the source to the target stage.
 
-### [Create a deployment rule in the new UI](#tab/new)
+### [Create a deployment rule in the new UI](#tab/new-ui)
 
 1. In the pipeline stage you want to create a deployment rule for, select **Deployment rules**.
 
@@ -73,7 +77,7 @@ To create a deployment rule, follow the steps in this section. After you create 
     * **Default lakehouse rules**
          This rule only applies to notebooks. Select a lakehouse to connect to the notebook in the target stage and set it as its default. For more information, see [Notebook in deployment pipelines](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines).
 
-### [Create a deployment rule in the original UI](#tab/old)
+### [Create a deployment rule in the original UI](#tab/old-ui)
 
 1. In the pipeline stage you want to create a deployment rule for, select **Deployment rules**.
 
@@ -116,23 +120,14 @@ To create a deployment rule, follow the steps in this section. After you create 
 Data source rules can be defined for the following data sources:
 
 * Azure Analysis Services (AAS)
-
 * Azure Synapse
-
 * SQL Server Analysis Services (SSAS)
-
 * Azure SQL Server
-
 * SQL server
-
 * Odata Feed
-
 * Oracle
-
 * SapHana (import mode only; not direct query mode)
-
 * SharePoint
-
 * Teradata
 
 For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-for-configurations-that-will-change-between-stages).
@@ -158,15 +153,10 @@ This section lists the limitations for the deployment rules.
 * The following scenarios aren't supported:
 
   * Data source rules for dataflows that have other dataflows as sources.
-
   * Data source rules for common data model (CDM) folders in a dataflow.
-
   * Data source rules for semantic models that use dataflows as their source.
-
   * Creating data source rules on a semantic model that uses Native query and DirectQuery together.
-
   * Parameter rules aren't supported for paginated reports.
-
   * Adding data source rules for semantic models and dataflows on data sources which are parametrized.
 
 ## Related content

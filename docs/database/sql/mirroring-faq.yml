@@ -1,0 +1,88 @@
+### YamlMime:FAQ
+metadata:
+  title: "Frequently asked questions for Mirroring Fabric SQL database (preview)"
+  description: This article answers frequently asked questions about Mirroring of Fabric SQL database (preview).
+  author: WilliamDAssafMSFT
+  ms.author: wiassaf
+  ms.reviewer: nzagorac
+  ms.topic: faq
+  ms.custom:
+    - ignite-2024
+  ms.date: 10/14/2024
+title: "Frequently asked questions for Mirroring Fabric SQL database (preview)"
+summary: |
+  This article answers frequently asked questions about Mirroring Fabric SQL database.
+
+sections:
+  - name: Features and capabilities
+    questions:
+      - question: |
+          How does mirroring for Fabric SQL database differ from mirroring for Azure SQL Database? 
+        answer: 
+          The same technology is used for both Azure SQL and Fabric SQL databases. The main difference is that authentication and setup are taken care for you in case of Fabric SQL database.  
+      - question: |
+           Is there a staging or landing zone for Fabric SQL database? If so, is it outside of OneLake? 
+        answer: 
+          A landing zone in OneLake stores both the snapshot and change data, to improve performance when converting files into delta verti-parquet.
+      - question: |
+          How long does the initial replication take? 
+        answer: 
+          It depends on the size of the data that is being brought in. 
+      - question: |
+          How long does it take to replicate inserts/updates/deletes?
+        answer: 
+          Near real-time latency.
+      - question: |
+          Do you support replicating of views, transient or external tables?
+        answer: 
+          No. Currently, only replicating regular tables are supported.
+      - question: |
+          Can Power BI reports on mirrored data use direct lake mode?
+        answer: 
+          Yes, since tables are all v-ordered delta tables.
+  - name: Self-help
+    questions:
+      - question: |
+          How do I know if my data is replicated? 
+        answer: |
+           If you're experiencing mirroring problems, perform the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
+           - Execute the following query to check if the changes properly flow: 
+              ```sql
+              SELECT * FROM sys.dm_change_feed_log_scan_sessions 
+              ```
+
+           For troubleshooting steps, see [Troubleshoot mirroring from Fabric SQL database](mirroring-troubleshooting.md). 
+      - question: |
+          What are the replication statuses? 
+        answer: 
+          See [Monitor Fabric mirrored Fabric SQL database replication](mirroring-monitor.md).
+      - question: |
+          Can I mirror only specific tables from my SQL database in Fabric?
+        answer: 
+          No, all tables eligible for mirroring will be automatically included into mirroring.
+
+  - name: Security
+    questions:
+      - question: |
+          Is data ever leaving the customers Fabric tenant? 
+        answer: 
+          No. 
+      - question: |
+          Is data staged outside of a customer environment? 
+        answer: 
+          No. Data isn't staged outside of customer environment, it's staged in the customer's OneLake.
+
+  - name: Cost Management 
+    questions:
+      - question: |
+          What are the costs associated with Mirroring?
+        answer: 
+          There is no compute cost for mirroring data from Fabric SQL database to Fabric OneLake. The Mirroring storage cost is free up to a certain limit based on the purchased compute capacity SKU you provision. Learn more from the Mirroring section in [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+
+additionalContent: |
+
+  ## Related content
+
+  - [Monitor Fabric mirrored Fabric SQL database replication](mirroring-monitor.md)
+  - [Mirroring Fabric SQL database (preview)](mirroring-overview.md)
+  - [Limitations and behaviors for Fabric SQL database mirroring (preview)](mirroring-limitations.md)
