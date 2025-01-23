@@ -10,9 +10,9 @@ ms.date: 09/16/2024
 # Microsoft Fabric data pipeline public REST API (Preview)
 
 > [!IMPORTANT]
-> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs will be released later. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
+In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs are not yet available. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Item Definition with payload base64 encoded
 
@@ -84,7 +84,7 @@ Body:
 ```
 
 > [!NOTE]
-> The documentation states that there are only 2 required properties - **displayName** and **type**. Currently, Workload-DI does not support creation without a **definition** as well. The fix for this erroneous requirement is currently being deployed. For now, you can send the same default definition used by the Fabric user interface:
+> The documentation states that there are only 2 required properties - **displayName** and **type**. Currently, Workload-DI doesn't support creation without a **definition** as well. The fix for this erroneous requirement is currently being deployed. For now, you can send the same default definition used by the Fabric user interface:
 > ```‘{"properties":{"activities":[]}}’```
 
 Modified JSON including definition:
@@ -300,7 +300,7 @@ Body:
 Response 202: (No body)
 
 > [!NOTE]
-> There is no body returned currently, but the job Id should be returned. During the preview, it can be found in the returned headers, in the ‘Location’ property.
+> There's no body returned currently, but the job Id should be returned. During the preview, it can be found in the returned headers, in the _Location_ property.
 
 ## Get item job instance
 
@@ -337,14 +337,14 @@ Example:
 Response 202: (No body)
 
 > [!NOTE]
-> After cancelling a job you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
+> After canceling a job, you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
 
 
 ## Query activity runs
 
 Example:
 
-```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<job id>/queryactivityruns```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<Job ID>/queryactivityruns```
 
 Body:
 
