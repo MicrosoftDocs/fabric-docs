@@ -50,13 +50,13 @@ Each item's directory has specific, required files that define that item.
 
 The following items are currently supported in Microsoft Fabric:
 
-- [Mirrored database](#mirrored-database)
+- [Mirrored databases](#mirrored-databases)
 - [Notebook](#notebook-files)
 - [Paginated report](#paginated-report-files)
 - [Report](#report-files)
 - [Semantic model](#semantic-model-files)
 
-#### Mirrored database
+#### Mirrored databases
 
 Mirrored database folders contain a *.json* file defining the mirrored database.
 
