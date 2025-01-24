@@ -88,6 +88,6 @@ The team also invested in additional harms mitigations, including technological 
 ## Related content
 
 - [Privacy, security, and responsible use of Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
-- [Overview of Copilot for Data Science and Data Engineering (preview)](copilot-notebooks-overview.md)
+- [Overview of Copilot for Data Science and Data Engineering (preview)](../data-engineering/copilot-notebooks-overview.md)
 - [Copilot for Data Factory overview](copilot-fabric-data-factory.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
