@@ -111,6 +111,31 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/docs/get-started/create-items-in-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/create-items-in-workspaces",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-create-lakehouse.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-create-lakehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-develop.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-develop",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-edit-tables.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-edit-tables",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/create-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/create-workspaces",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/docs/get-started/fabric-help-pane.md",
             "redirect_url": "/fabric/fundamentals/fabric-help-pane",
             "redirect_document_id": true
