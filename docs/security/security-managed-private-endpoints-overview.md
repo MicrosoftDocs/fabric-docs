@@ -68,7 +68,6 @@ For more information about supported data sources for managed private endpoints 
     | UAE Central    |
     | Brazil South   |
     | Singapore |
-    | Central US  |
 
 * **Limitations for specific workloads**:
 
