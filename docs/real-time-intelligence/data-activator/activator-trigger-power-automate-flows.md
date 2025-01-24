@@ -30,13 +30,13 @@ A custom action defines how to call a specific external system from a rule using
 
 Open Activator and select a rule to display the **Definition** pane. Scroll down to **Action** > **Type**, and select **New custom action**. 
 
-Then, give your action a name such as *Add a To Do task* and define the input fields (such as _Task name_).
+Then, give your action a name such as *Add a To Do task*. Define the input fields that you'd like to use later when creating a flow in Power Automate. These strings, such as *task name*, *assignee*, etc. [can be passed in code to Power Automate](#pass-an-input-field-to-your-flow). And, back in Activator, you can give these strings a name that shows up in your To Do task -- such as *remember to check on-time delivery stats" and "Sally." 
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-new-custom-action.png" alt-text="Screenshot of creating an Activator new custom action.":::
 
 The next step is to define your flow in Power Automate. Select **Copy** to copy the connection string, then choose **Open flow builder**. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] takes you to Power Automate so that you can define the flow.
 
-### Define your flow
+### Define your flow in Power Automate
 
 The flow is prepopulated with an action for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
 
@@ -50,38 +50,32 @@ You must paste the connection string from the previous step into this action. Se
 1. In this example, we're adding a **To Do** task, so we search for **To Do** and choose **Add a to-do (V3)**.
     :::image type="content" source="media/activator-trigger-power-automate-flows/activator-add-task.png" alt-text="Screenshot of defining a flow for activator.":::
 
-1. Fill in the necessary fields in the **Add a to-do (V3)** window. Start by selecting the **To-do list** dropdown and choosing the **Task name** field that we created in an ealier step. 
+1. Fill in the necessary fields in the **Add a to-do (V3)** window. Start by selecting an existing list from the **To-do list** dropdown or choosing **Enter a custom value** and giving a new To Do list a name. 
 
-### Use properties and dynamic content in your flow
+Optionally, insert an expression into the input fields. If you select an input field and see an **fx** icon, that means that the field supports functions and dynamic content. Let's add dynamic content to the **Title** input field and pass a function in the **Body Content** input field. 
 
-Optionally, insert an expression into the Inputs field. If you select an input field and see an **fx** icon, select it.
+### Use dynamic content in your flow
 
-When you select a property, it is added into the text box. In the pop-up window that opens, select a function to start your expression. To complete your expression, place the cursor in the function, and then select **Dynamic content**. Search for or select the content/tokens to add, and then select **Add**. Your completed expression appears in the **Inputs** field.
+**Dynamic content** lets you add fields from the Activator event itself.Select the field from the dropdownth to dynamically pass it to the flow. 
 
-You can now click on the property inside of the action card and open it up again for further editing.
+1. With your cursor in the **Title** field, select **fx**.
+1. Select the **Dynamic content** tab.  
+    When you select dynamic content, it's added into the text box.
+1. Add the date and time using **Activation time**. When you select **Add**, the expression appears in the **Title** field. Hover over **Activation time** to see what information is being passed. By adding a date to the title, you might avoid duplicate names.
 
-1. In this example, select the dropdown for **To-do List** and select the **Task name** value you created earlier. 
-1. Insert expressions in the **Title** field by selecting the **Title** field and **fx**. 
-1. In the **Function** tab, search for utcNow() and add it. By adding a date to the title, you might avoid duplicate names. 
 
 #### Pass an input field to your flow
 
-Reuse an input field by adding it to a function
+1. Move your cursor into the **Body Content** field, select **fx**.
+1. Search for the **triggerBody** function or copy and paste this function: triggerBody()?['customProperties]/NAME_OF_INPUT_FIELD']. Replace NAME_OF_INPUT_FIELD with one of the **Input fields** that you created earlier. In this example, we use *task name.*
 
-You can reuse any input fields that you create. Earlier we created one input field and named it "task name." Now let's use "task name" in a function. 
-
-
-1. Still in the **Function** tab, type or search for **triggerBody** and select it. In the editing field, you can add any predefined input fields. Earlier we created an input field "task name." Let's add it to the triggerBody function. The function looks like this:
-
-triggerBody()?['customProperties]/NAME_OF_INPUT_FIELD']
+    You can use any predefined input field you create in Power Automate functions. 
 
     :::image type="content" source="media/activator-trigger-power-automate-flows/activator-edit-fx.png" alt-text="Screenshot of the Function tab's editing screen.":::
 
-1. Select **Add** > **Save**.
+1. Select **Add** > **Save**. It might take a few minutes to save.
 
 1. Optionally, select **Test** from the menu bar to force the flow to run. 
-
-you can add fields from the Event itself that I can dynamically pass through using the dropdown
 
 To learn more about Power Automate, see [Power Automate](/power-automate).
 
@@ -110,3 +104,4 @@ When your rule activates, it calls your flow, sending it the values of the input
 You can also learn more about Microsoft Fabric:
 
 * [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+Theou can
