@@ -216,6 +216,21 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-consumption.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-consumption",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-enable-fabric.md",
+            "redirect_url": "/fabric/fundamentals/copilot-enable-fabric",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-database-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-database-privacy-security",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-fabric-data-factory.md",
             "redirect_url": "/fabric/fundamentals/copilot-fabric-data-factory",
             "redirect_document_id": false
