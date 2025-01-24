@@ -227,7 +227,7 @@
         },
 
         {
-            "source_path_from_root": "/docs/get-started/directlake-overview.md",
+            "source_path_from_root": "/docs/get-started/direct-lake-overview.md",
             "redirect_url": "/fabric/get-started/direct-lake-overview",
             "redirect_document_id": true
         },
