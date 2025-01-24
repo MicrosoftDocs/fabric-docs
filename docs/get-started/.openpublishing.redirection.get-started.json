@@ -136,6 +136,31 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/docs/get-started/decision-guide-data-store.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-data-store",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-lakehouse-warehouse.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-lakehouse-warehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-pipeline-dataflow-spark.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-pipeline-dataflow-spark",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/delta-lake-interoperability.md",
+            "redirect_url": "/fabric/fundamentals/delta-lake-interoperability",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-analyze-query-processing.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-analyze-query-processing",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
