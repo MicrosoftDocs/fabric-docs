@@ -29,7 +29,7 @@ In this article, you learn how to read data and metadata and evaluate measures i
 
 This article uses the _Customer Profitability Sample.pbix_ semantic model. This semantic model references a company manufacturing marketing materials. It contains product, customer, and corresponding revenue data for various business units.
 
-1. Open your [workspace](../get-started/workspaces.md) in Fabric Data Science
+1. Open your [workspace](../fundamentals/workspaces.md) in Fabric Data Science
 1. Select **Upload > Browse**, and select the _Customer Profitability Sample.pbix_ semantic model.
 
 :::image type="content" source="media/read-write-power-bi-python/upload-power-bi-data-to-workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi-python/upload-power-bi-data-to-workspace.png":::
