@@ -15,7 +15,7 @@ no-loc: [Copilot]
 ---
 # What's new in Microsoft Fabric?
 
-This page is continuously updated with a recent review of what's new in [Microsoft Fabric](microsoft-fabric-overview.md).
+This page is continuously updated with a recent review of what's new in [Microsoft Fabric](../get-started/microsoft-fabric-overview.md).
 
 - To follow the latest in Fabric news and features, see the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
 - For community, marketing, case studies, and industry news, see the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
