@@ -101,13 +101,8 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/docs/get-started/direct-lake-fixed-identity.md",
-            "redirect_url": "/fabric/get-started/direct-lake-fixed-identity",
-            "redirect_document_id": true
-        },
-        {
             "source_path_from_root": "/docs/get-started/direct-lake-manage.md",
-            "redirect_url": "/fabric/get-started/direct-lake-manage",
+            "redirect_url": "/fabric/fundamentals/direct-lake-manage",
             "redirect_document_id": true
         },
         {
@@ -153,6 +148,16 @@
         {
             "source_path_from_root": "/docs/get-started/fabric-trial.md",
             "redirect_url": "/fabric/fundamentals/fabric-trial",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-fixed-identity.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-fixed-identity",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-overview.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-overview",
             "redirect_document_id": true
         },
         {
@@ -220,10 +225,9 @@
             "redirect_url": "/fabric/fundamentals/end-to-end-tutorials",
             "redirect_document_id": true
         },
-
         {
             "source_path_from_root": "/docs/get-started/direct-lake-overview.md",
-            "redirect_url": "/fabric/get-started/direct-lake-overview",
+            "redirect_url": "/fabric/fundamentals/direct-lake-overview",
             "redirect_document_id": true
         },
         {
