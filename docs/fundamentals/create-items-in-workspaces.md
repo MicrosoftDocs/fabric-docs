@@ -3,7 +3,7 @@ title: Create items in workspaces
 description: "Learn how to create an item inside a workspace to build your data solution."
 author: yicw16322
 ms.author: yicw
-ms.reviewer: maggies
+ms.reviewer: painbar
 ms.service: fabric
 ms.topic: how-to
 ms.date: 10/16/2024
@@ -13,7 +13,7 @@ ms.date: 10/16/2024
 
 # Create items in workspaces
 
-This article explains how to create items in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about items and workspaces, see the [Microsoft Fabric terminology](fabric-terminology.md) and [Workspaces](workspaces.md) article.
+This article explains how to create items in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about items and workspaces, see the [Microsoft Fabric terminology](../get-started/fabric-terminology.md) and [Workspaces](workspaces.md) article.
 
 ## Create an item in a workspace
 

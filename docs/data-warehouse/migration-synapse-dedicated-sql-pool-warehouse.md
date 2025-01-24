@@ -92,7 +92,7 @@ Consider the following activities as a planning runbook for your migration from 
         1. Scale resources up/down as workload shifts from Azure Synapse Analytics to Microsoft Fabric.
         1. Build a repeatable template from the experience gained for future migrations. Iterate.
         1. Identify opportunities for cost optimization, security, scalability, and operational excellence
-        1. Identify opportunities to modernize your data estate with the [latest Fabric features](../get-started/whats-new.md).
+        1. Identify opportunities to modernize your data estate with the [latest Fabric features](../fundamentals/whats-new.md).
 
 ## 'Lift and shift' or modernize?
 

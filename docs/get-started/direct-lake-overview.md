@@ -81,7 +81,7 @@ Columns loaded into memory are then _resident_ in memory. Future queries that in
 
 A column remains resident until there's reason for it to be removed (evicted) from memory. Reasons that columns might get removed include:
 
-- The model or table was refreshed (see [Framing](#framing) in the next section).
+- The model or table was refreshed after a Delta table update at the source (see [Framing](#framing) in the next section).
 - No query used the column for some time.
 - Other memory management reasons, including memory pressure in the capacity due to other, concurrent operations.
 
@@ -91,7 +91,9 @@ Your choice of Fabric SKU determines the maximum available memory for each Direc
 
 _Framing_ provides model owners with point-in-time control over what data is loaded into the semantic model. Framing is a Direct Lake operation triggered by a refresh of a semantic model, and in most cases takes only a few seconds to complete. That's because it's a low-cost operation where the semantic model analyzes the metadata of the latest version of the Delta Lake tables and is updated to reference the latest Parquet files in OneLake.
 
-When framing occurs, resident columns might be evicted from memory and the point in time of the refresh becomes the new baseline for all future transcoding events. From this point, Direct Lake queries only consider data in the Delta tables as of the time of the most recent framing operation. For that reason, Direct Lake tables are queried to return data based on the state of the Delta table _at the point of the most recent framing operation_. That time isn't necessarily the latest state of the Delta tables.
+When framing occurs, resident table column segments and dictionaries might be evicted from memory if the underlying data has changed and the point in time of the refresh becomes the new baseline for all future transcoding events. From this point, Direct Lake queries only consider data in the Delta tables as of the time of the most recent framing operation. For that reason, Direct Lake tables are queried to return data based on the state of the Delta table _at the point of the most recent framing operation_. That time isn't necessarily the latest state of the Delta tables.
+
+Note that the semantic model analyzes the Delta log of each Delta table during framing to drop only the affected column segments and to reload newly added data during transcoding. An important optimization is that dictionaries will usually not be dropped when incremental framing takes effect, and new values are added to the existing dictionaries. This incremental framing approach helps to reduce the reload burden and benefits query performance. In the ideal case, when a Delta table received no updates, no reload is necessary for columns already resident in memory and queries show far less performance impact after framing because incremental framing essentially enables the semantic model to update substantial portions of the existing in-memory data in place.
 
 The following diagram shows how Direct Lake framing operations work.
 

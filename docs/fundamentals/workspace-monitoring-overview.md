@@ -56,7 +56,7 @@ Workload monitoring sample queries are available from [workspace-monitoring](htt
 
 * The workspace monitoring Eventhouse is a read-only item.
     * To delete the database, use the workspace settings. Before recreating a deleted database, wait about 15 minutes.
-    * To share the database, grant users a workspace *member* or *admin* [role](roles-workspaces.md).
+    * To share the database, grant users a workspace *member* or *admin* [role](../get-started/roles-workspaces.md).
 
 * The retention period for monitoring data is 30 days.
 

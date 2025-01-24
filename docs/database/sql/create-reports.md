@@ -19,7 +19,7 @@ It's easy to quickly create reports with SQL database in Fabric. In this walkthr
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
 - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../get-started/workspaces.md) or use an existing Fabric workspace.
+- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database with the AdventureWorks sample data](load-adventureworks-sample-data.md).
 
 ## Build a new report

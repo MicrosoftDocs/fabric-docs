@@ -26,7 +26,7 @@ Alternatively, you can continue the development of your model by using an XMLA-c
 
 ### Model tables
 
-Model tables are based on either a table or a view of the SQL analytics endpoint. However, avoid using views whenever possible. That's because queries to a model table based on a view will always [fall back to DirectQuery mode](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+Model tables are based on either a table or a view of the SQL analytics endpoint. However, avoid using views whenever possible. That's because queries to a model table based on a view will always [fall back to DirectQuery mode](../get-started/direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
 
 Tables should include columns for filtering, grouping, sorting, and summarizing, in addition to columns that support model relationships. While unnecessary columns don't affect semantic model query performance (because they won't be loaded into memory), they result in a larger storage size in OneLake and require more compute resources to load and maintain.
 
@@ -35,14 +35,14 @@ Tables should include columns for filtering, grouping, sorting, and summarizing,
 
 To learn how to select which tables to include in your Direct Lake semantic model, see [Edit tables for Direct Lake semantic models](direct-lake-edit-tables.md).
 
-For more information about columns to include in your semantic model tables, see [Understand storage for Direct Lake semantic models](direct-lake-understand-storage.md#unnecessary-columns).
+For more information about columns to include in your semantic model tables, see [Understand storage for Direct Lake semantic models](../get-started/direct-lake-understand-storage.md#unnecessary-columns).
 
 ## Enforce data-access rules
 
 When you have requirements to deliver subsets of model data to different users, you can enforce data-access rules. You enforce rules by setting up object-level security (OLS) and/or row-level security (RLS) in the [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or in the semantic model.
 
 > [!NOTE]
-> The topic of _enforcing data-access rules_ is different, yet related, to _setting permissions_ for content consumers, creators, and users who will manage the semantic model (and related Fabric items). For more information about setting permissions, see [Manage Direct Lake semantic models](direct-lake-manage.md#set-fabric-item-permissions).
+> The topic of _enforcing data-access rules_ is different, yet related, to _setting permissions_ for content consumers, creators, and users who will manage the semantic model (and related Fabric items). For more information about setting permissions, see [Manage Direct Lake semantic models](../get-started/direct-lake-manage.md#set-fabric-item-permissions).
 
 ### Object-level security (OLS)
 
@@ -65,7 +65,7 @@ For a semantic model, you can set up RLS to [control access to rows in model tab
 
 ### How queries are evaluated
 
-The [reason to develop Direct Lake semantic models](direct-lake-overview.md#when-should-you-use-direct-lake-storage-mode) is to achieve high performance queries over large volumes of data in OneLake. Therefore, you should strive to design a solution that maximizes the chances of in-memory querying.
+The [reason to develop Direct Lake semantic models](../get-started/direct-lake-overview.md#when-should-you-use-direct-lake-storage-mode) is to achieve high performance queries over large volumes of data in OneLake. Therefore, you should strive to design a solution that maximizes the chances of in-memory querying.
 
 The following steps approximate how queries are evaluated (and whether they fail). The benefits of Direct Lake storage mode are only possible when the fifth step is achieved.
 
@@ -76,8 +76,8 @@ The following steps approximate how queries are evaluated (and whether they fail
 1. If the query contains any table in the SQL analytics endpoint that enforces RLS or a view is used, the query falls back to DirectQuery mode.
     1. If the cloud connection uses SSO (default), RLS is determined by the access level of the report consumer.
     1. If the cloud connection uses a fixed identity, RLS is determined by the access level of the fixed identity.
-1. If the query [exceeds the guardrails of the capacity](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations), it falls back to DirectQuery mode.
-1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](direct-lake-overview.md#column-loading-transcoding) as and when it's required.
+1. If the query [exceeds the guardrails of the capacity](../get-started/direct-lake-overview.md#fabric-capacity-guardrails-and-limitations), it falls back to DirectQuery mode.
+1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](../get-started/direct-lake-overview.md#column-loading-transcoding) as and when it's required.
 
 ### Source item permissions
 
@@ -113,7 +113,7 @@ In either case, it's strongly recommended that the cloud connection uses a fixed
 
 #### Rules in the SQL analytics endpoint
 
-It's appropriate to enforce data-access rules in the SQL analytics endpoint when the semantic model [cloud connection](direct-lake-manage.md#set-up-the-cloud-connection) uses [single sign-on (SSO)](direct-lake-manage.md#single-sign-on). That's because the identity of the user is delegated to query the SQL analytics endpoint, ensuring that queries return only the data the user is allowed to access. It's also appropriate to enforce data-access rules at this level when users will query the SQL analytics endpoint directly for other workloads (for example, to create a Power BI paginated report, or export data).
+It's appropriate to enforce data-access rules in the SQL analytics endpoint when the semantic model [cloud connection](../get-started/direct-lake-manage.md#set-up-the-cloud-connection) uses [single sign-on (SSO)](../get-started/direct-lake-manage.md#single-sign-on). That's because the identity of the user is delegated to query the SQL analytics endpoint, ensuring that queries return only the data the user is allowed to access. It's also appropriate to enforce data-access rules at this level when users will query the SQL analytics endpoint directly for other workloads (for example, to create a Power BI paginated report, or export data).
 
 Notably, however, a semantic model query will fall back to DirectQuery mode when it includes any table that enforces RLS in the SQL analytics endpoint. Consequently, the semantic model might never cache data into memory to achieve high performance queries.
 
@@ -169,12 +169,12 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 
 - The `compatibilityLevel` property of the database object is 1604 (or higher).
 - The mode property of Direct Lake partitions is set to `directLake`.
-- Direct Lake partitions use shared expressions to define data sources. The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-overview.md#directquery-fallback) mode for any reason).
+- Direct Lake partitions use shared expressions to define data sources. The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](../get-started/direct-lake-overview.md#directquery-fallback) mode for any reason).
 
 
 ## Post-publication tasks
 
-After you publish a Direct Lake semantic model, you should complete some setup tasks. For more information, see [Manage Direct Lake semantic models](direct-lake-manage.md#post-publication-tasks).
+After you publish a Direct Lake semantic model, you should complete some setup tasks. For more information, see [Manage Direct Lake semantic models](../get-started/direct-lake-manage.md#post-publication-tasks).
 
 ## Unsupported features
 
@@ -189,9 +189,9 @@ The following model features aren't supported by Direct Lake semantic models:
 
 ## Related content
 
-- [Direct Lake overview](direct-lake-overview.md)
-- [Manage Direct Lake semantic models](direct-lake-manage.md)
-- [Understand storage for Direct Lake semantic models](direct-lake-understand-storage.md)
+- [Direct Lake overview](../get-started/direct-lake-overview.md)
+- [Manage Direct Lake semantic models](../get-started/direct-lake-manage.md)
+- [Understand storage for Direct Lake semantic models](../get-started/direct-lake-understand-storage.md)
 - [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md)
 - [Edit tables for Direct Lake semantic models](direct-lake-edit-tables.md)
 - [OneLake integration for semantic models](/power-bi/enterprise/onelake-integration-overview)
