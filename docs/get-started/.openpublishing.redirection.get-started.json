@@ -211,8 +211,38 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/copilot-faq-fabric.yml",
+            "redirect_url": "/fabric/fundamentals/copilot-faq-fabric",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-data-factory.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-data-factory",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-privacy-security",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-notebooks-chat-magics.md",
             "redirect_url": "/fabric/data-engineering/copilot-notebooks-chat-magics",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-factory-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-factory-privacy-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-science-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-science-privacy-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-warehouse-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-warehouse-privacy-security",
             "redirect_document_id": true
         },
         {
