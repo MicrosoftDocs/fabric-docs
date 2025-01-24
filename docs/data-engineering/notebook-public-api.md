@@ -48,6 +48,9 @@ The following **Job scheduler** actions are available for notebooks:
 
 For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
+> [!NOTE]
+> Service principal authentication is available for Notebook CRUD API and Job scheduler API, meaning you can use service principal to do the CRUD operations and trigger/cancel notebook runs, and get the run status. You need to add the service principal to the workspace with the appropriate role.
+
 ## Notebook REST API usage examples
 
 Use the following instructions to test usage examples for specific notebook public APIs and verify the results.
