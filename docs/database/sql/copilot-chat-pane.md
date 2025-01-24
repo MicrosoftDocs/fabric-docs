@@ -54,4 +54,4 @@ The supported capabilities of interacting through chat include:
 ## Related content
 
 - [Copilot for SQL database in Fabric (preview)](copilot.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

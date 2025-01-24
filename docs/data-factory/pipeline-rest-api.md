@@ -10,30 +10,9 @@ ms.date: 09/16/2024
 # Microsoft Fabric data pipeline public REST API (Preview)
 
 > [!IMPORTANT]
-> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs will be released later. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
-
-## Mounting Public APIs
-The Mounting Public APIs are now available. These APIs allow you to seamlessly integrate and access various public data sources within your data pipelines.
-
-## Obtain an authorization token
-
-### Option 1: Using MSAL.Net
-
-[Fabric API quickstart - Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token)
-
-Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: Workspace.ReadWrite.All, Item.ReadWrite.All. For more information about token acquisition with MSAL.Net to, see [Token Acquisition - Microsoft Authentication Library for .NET](/entra/msal/dotnet/acquiring-tokens/overview).
-
-Paste the Application (client) ID you copied earlier and paste it for ClientId variable.
-
-### Option 2: Using the Fabric Portal
-
-Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
-
-```powerBIAccessToken```
-
-Copy the token and paste it for the ClientId variable.
+In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs are not yet available. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Item Definition with payload base64 encoded
 
@@ -91,7 +70,7 @@ Take the properties object and surround them in braces - **{ }** - so the REST I
 
 [REST API - Items - Create item](/rest/api/fabric/core/items/create-item )
 
-Example 1 - CreateDataPipeline:
+Example - CreateDataPipeline:
 
 ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
 
@@ -105,7 +84,7 @@ Body:
 ```
 
 > [!NOTE]
-> The documentation states that there are only 2 required properties - **displayName** and **type**. Currently, Workload-DI does not support creation without a **definition** as well. The fix for this erroneous requirement is currently being deployed. For now, you can send the same default definition used by the Fabric user interface:
+> The documentation states that there are only 2 required properties - **displayName** and **type**. Currently, Workload-DI doesn't support creation without a **definition** as well. The fix for this erroneous requirement is currently being deployed. For now, you can send the same default definition used by the Fabric user interface:
 > ```‘{"properties":{"activities":[]}}’```
 
 Modified JSON including definition:
@@ -135,48 +114,6 @@ Response 201:
     "displayName": "Pipeline_1", 
     "description": "", 
     "workspaceId": "<Your WS Id>" 
-} 
-```
-
-Example 2 – Create MountedDataFactory 
-
-```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
-
-Body: 
-
-Payload:
-
-```json
-{"DataFactoryResourceId":"/subscriptions/<ADF subscription Id>/resourceGroups/<ADF resource group name>/providers/Microsoft.DataFactory/factories/<ADF datafactory name>"} 
-```
-
-Encoded JSON:
-
-```json
-{ 
-  "displayName": "pipeline_mdf", 
-  "type": " MountedDataFactory ", 
-  "definition": { 
-    "parts": [ 
-      { 
-        "path": "mountedDataFactory-content.json", 
-        "payload": <base64 encoded value>, 
-        "payloadType": "InlineBase64" 
-      } 
-    ] 
-  } 
-}  
-```
-
-Response 201:
-
-```json
-{ 
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
-    "type": "MountedDataFactory", 
-    "displayName": "Pipeline_mdf", 
-    "description": "", 
-    "workspaceId": "<Your WS Id>"
 } 
 ```
 
@@ -363,7 +300,7 @@ Body:
 Response 202: (No body)
 
 > [!NOTE]
-> There is no body returned currently, but the job Id should be returned. During the preview, it can be found in the returned headers, in the ‘Location’ property.
+> There's no body returned currently, but the job Id should be returned. During the preview, it can be found in the returned headers, in the _Location_ property.
 
 ## Get item job instance
 
@@ -400,14 +337,14 @@ Example:
 Response 202: (No body)
 
 > [!NOTE]
-> After cancelling a job you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
+> After canceling a job, you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
 
 
 ## Query activity runs
 
 Example:
 
-```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<job id>/queryactivityruns```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<Job ID>/queryactivityruns```
 
 Body:
 
