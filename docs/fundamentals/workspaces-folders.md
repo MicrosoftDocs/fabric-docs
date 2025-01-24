@@ -152,5 +152,5 @@ Currently, folders inherit the permissions of the workspace where they're locate
 ## Related content
 
 - [Folders in deployment pipelines](../cicd/deployment-pipelines/understand-the-deployment-process.md)
-- [Create workspaces](create-workspaces.md)
-- [Give users access to workspaces](give-access-workspaces.md)
+- [Create workspaces](../get-started/create-workspaces.md)
+- [Give users access to workspaces](../get-started/give-access-workspaces.md)

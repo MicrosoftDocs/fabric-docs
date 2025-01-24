@@ -18,7 +18,7 @@ ms.date: 07/27/2024
 
 *Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports, and to create task flows. This article describes workspaces, how to manage access to them, and what settings are available.
 
-Ready to get started? Read [Create a workspace](create-workspaces.md).
+Ready to get started? Read [Create a workspace](../get-started/create-workspaces.md).
 
 :::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace with folders." lightbox="media/workspaces/fabric-workspace-page.png":::
 
@@ -26,10 +26,10 @@ Ready to get started? Read [Create a workspace](create-workspaces.md).
 
 Here are some useful tips about working with workspaces.
 
-- **Set up a task flow for the workspace** to organize your data project and to help others understand and work on your project. Read more about [task flows](./task-flow-overview.md).
-- **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pin workspaces](create-workspaces.md#pin-workspaces).
+- **Set up a task flow for the workspace** to organize your data project and to help others understand and work on your project. Read more about [task flows](../get-started/task-flow-overview.md).
+- **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pin workspaces](../get-started/create-workspaces.md#pin-workspaces).
 
-- **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](roles-workspaces.md).
+- **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](../get-started/roles-workspaces.md).
 - **Create folders in the workspace**: Organize and manage artifacts in the workspace. Read more about [creating folders in workspaces](workspaces-folders.md).
 - **Navigate to current workspace** from anywhere by selecting the icon on left nav pane. Read more about [current workspace](#current-workspace) in this article.
 - **Workspace settings**: As workspace admin, you can update and manage your workspace configurations in [workspace settings](#workspace-settings).
@@ -59,7 +59,7 @@ List view is divided into the task flow and the items list.
 
 :::image type="content" source="./media/workspaces/workspace-list-view.png" alt-text="Screenshot showing the layout of list view and its controls." lightbox="./media/workspaces/workspace-list-view.png":::
 
-1. **Task flow**: The task flow is where you can create or view a graphical representation of  your data project. The task flow shows the logical flow of the project - it doesn't show the flow of data. Read more about [task flows](./task-flow-overview.md).
+1. **Task flow**: The task flow is where you can create or view a graphical representation of  your data project. The task flow shows the logical flow of the project - it doesn't show the flow of data. Read more about [task flows](../get-started/task-flow-overview.md).
 1. **Items list**: The items list is where you see the items and folders in the workspace. If you have tasks in the task flow, you can filter the items list by selecting the tasks.
 1. **Resize bar**: You can resize the task flow and items list by dragging the resize bar up or down.
 1. **Show/Hide task flow**: If you don't want to see the task flow, you can hide it using the hide/show arrows at the side of the separator bar.
@@ -82,7 +82,7 @@ You can also open it from the workspace page.
 
 ### Workspace contact list
 
-The Contact list feature allows you to specify which users receive notification about issues occurring in the workspace. By default, the one who created the workspace is in the contact list. You can add others to that list while [creating workspace](create-workspaces.md#contact-list) or in workspace settings after creation. Users or groups in the contact list are also listed in the user interface (UI) of the workspace settings, so workspace users know whom to contact.
+The Contact list feature allows you to specify which users receive notification about issues occurring in the workspace. By default, the one who created the workspace is in the contact list. You can add others to that list while [creating workspace](../get-started/create-workspaces.md#contact-list) or in workspace settings after creation. Users or groups in the contact list are also listed in the user interface (UI) of the workspace settings, so workspace users know whom to contact.
 
 :::image type="content" source="media/workspaces/contact-list-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
 
@@ -93,7 +93,7 @@ The Workspace SharePoint feature allows you to configure a Microsoft 365 Group w
 > [!NOTE]
 > Creating Microsoft 365 Groups may be restricted in your environment, or the ability to create them from your SharePoint site may be disabled. If this is the case, speak with your IT department.
 
-[!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to [give access to the workspace](give-access-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
+[!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to [give access to the workspace](../get-started/give-access-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
 
 You can configure SharePoint in workspace settings by typing in the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the SharePoint for the group.
 
@@ -165,5 +165,5 @@ Limitations to be aware of:
 
 ## Related content
 
-* [Create workspaces](create-workspaces.md)
-* [Give users access to workspaces](give-access-workspaces.md)
+* [Create workspaces](../get-started/create-workspaces.md)
+* [Give users access to workspaces](../get-started/give-access-workspaces.md)
