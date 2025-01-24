@@ -101,13 +101,23 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/docs/get-started/directlake-fixed-identity.md",
+            "source_path_from_root": "/docs/get-started/direct-lake-fixed-identity.md",
             "redirect_url": "/fabric/get-started/direct-lake-fixed-identity",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-manage.md",
+            "redirect_url": "/fabric/get-started/direct-lake-manage",
             "redirect_document_id": true
         },
         {
             "source_path_from_root": "/docs/get-started/endorsement-promote-certify.md",
             "redirect_url": "/fabric/fundamentals/endorsement-promote-certify",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-power-bi-desktop.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-power-bi-desktop",
             "redirect_document_id": true
         },
         {
@@ -118,6 +128,41 @@
         {
             "source_path_from_root": "/docs/get-started/direct-lake-create-lakehouse.md",
             "redirect_url": "/fabric/fundamentals/direct-lake-create-lakehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-understand-storage.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-understand-storage",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-search.md",
+            "redirect_url": "/fabric/fundamentals/fabric-search",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-settings.md",
+            "redirect_url": "/fabric/fundamentals/fabric-settings",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-terminology.md",
+            "redirect_url": "/fabric/fundamentals/fabric-terminology",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-trial.md",
+            "redirect_url": "/fabric/fundamentals/fabric-trial",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/feedback.md",
+            "redirect_url": "/fabric/fundamentals/feedback",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-known-issues.md",
+            "redirect_url": "/fabric/fundamentals/fabric-known-issues",
             "redirect_document_id": true
         },
         {
