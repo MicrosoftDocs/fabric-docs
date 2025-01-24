@@ -206,14 +206,13 @@ In this section, you learn how to download the Oracle GoldenGate Core Applicatio
 
 1. Complete the configuration by launching the **XLAUNCH** application from the Start menu. Make sure to select **No Access Control**.
    
-   :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch1.png" alt-text="Screenshot that shows selecting no access control when configure xlaunch.":::
+   :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch1.png" alt-text="Screenshot that shows the first step to configure xlaunch.":::
 
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch2.png" alt-text="Screenshot that shows selecting no access control when configure xlaunch.":::
+    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch2.png" alt-text="Screenshot that shows the second step to configure xlaunch.":::
 
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch3.png" alt-text="Screenshot that shows selecting no access control when configure xlaunch.":::
+    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch3.png" alt-text="Screenshot that shows the third step to configure xlaunch.":::
 
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch4.png" alt-text="Screenshot that shows selecting no access control when configure xlaunch.":::
-
+    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch4.png" alt-text="Screenshot that shows the last step to configure xlaunch.":::
 
 ### Install Oracle GoldenGate Core Application on oggVM
 
