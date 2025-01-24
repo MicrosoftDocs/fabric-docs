@@ -226,11 +226,6 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/docs/get-started/direct-lake-overview.md",
-            "redirect_url": "/fabric/fundamentals/direct-lake-overview",
-            "redirect_document_id": true
-        },
-        {
             "source_path_from_root": "/docs/get-started/decision-guide-data-store.md",
             "redirect_url": "/fabric/fundamentals/decision-guide-data-store",
             "redirect_document_id": true
