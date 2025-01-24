@@ -15,7 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 ---
 
 # Copilot tenant settings
-Copilot and the Azure OpenAI Service are controlled by settings in the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
+Fabric Copilot settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
 
 ## Enabled by default
 
