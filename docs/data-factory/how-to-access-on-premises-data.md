@@ -115,7 +115,7 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
 Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination. 
 
->[!Note]
+> [!NOTE]
 > Local access for the machine with the on-premises data gateway installed is not allowed in data pipelines.
 
 ## Related content
