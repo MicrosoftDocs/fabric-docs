@@ -158,7 +158,7 @@
         {
             "source_path_from_root": "/docs/get-started/directlake-fixed-identity.md",
             "redirect_url": "/fabric/fundamentals/directlake-fixed-identity",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/get-started/direct-lake-overview.md",
@@ -168,7 +168,7 @@
         {
             "source_path_from_root": "/docs/get-started/directlake-overview.md",
             "redirect_url": "/fabric/fundamentals/directlake-overview",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/get-started/feedback.md",
