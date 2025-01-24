@@ -70,7 +70,7 @@ Trial capacities are created in your home region and don't support Multi-Geo.
 
 Follow the steps below to move workspaces from one capacity to another in the same region. During migration, certain operations might fail, such as publishing new semantic models or scheduled data refresh.
 
-1. Open the [workspace settings](../get-started/workspaces.md#workspace-settings).
+1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
 2. From the side bar, select **License info**.
 

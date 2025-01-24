@@ -116,6 +116,31 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/docs/get-started/whats-new.md",
+            "redirect_url": "/fabric/fundamentals/whats-new",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspaces.md",
+            "redirect_url": "/fabric/fundamentals/workspaces",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspaces-folders.md",
+            "redirect_url": "/fabric/fundamentals/workspaces-folders",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspace-monitoring-overview.md",
+            "redirect_url": "/fabric/fundamentals/workspace-monitoring-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/whats-new-archive.md",
+            "redirect_url": "/fabric/fundamentals/whats-new-archive",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/docs/get-started/fabric-home.md",
             "redirect_url": "/fabric/fundamentals/fabric-home",
             "redirect_document_id": true
