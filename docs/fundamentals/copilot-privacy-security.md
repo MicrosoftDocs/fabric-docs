@@ -134,7 +134,7 @@ Privacy, security, and responsible use for:
 - [Copilot for Data Warehouse (preview)](copilot-data-warehouse-privacy-security.md)
 - [Copilot for SQL Databases (preview)](../get-started/copilot-database-privacy-security.md)
 - [Copilot for Power BI](../get-started/copilot-power-bi-privacy-security.md)
-- [Copilot for Real-Time Intelligence (preview)](copilot-real-time-intelligence-privacy-security.md)
+- [Copilot for Real-Time Intelligence (preview)](../get-started/copilot-real-time-intelligence-privacy-security.md)
 
 ## Related content
 

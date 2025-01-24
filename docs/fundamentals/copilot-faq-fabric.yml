@@ -113,5 +113,5 @@ sections:
 additionalContent: |
   ## Related content
 
-  - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
+  - [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
   - [Privacy, security, and responsible use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
