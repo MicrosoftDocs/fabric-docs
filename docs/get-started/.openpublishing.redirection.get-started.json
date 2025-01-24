@@ -216,6 +216,21 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/copilot-real-time-intelligence-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-real-time-intelligence-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-power-bi-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-power-bi-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-overview.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-overview",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-fabric-consumption.md",
             "redirect_url": "/fabric/fundamentals/copilot-fabric-consumption",
             "redirect_document_id": false
