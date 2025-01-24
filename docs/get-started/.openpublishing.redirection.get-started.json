@@ -156,11 +156,6 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/docs/get-started/direct-lake-fixed-identity.md",
-            "redirect_url": "/fabric/fundamentals/direct-lake-fixed-identity",
-            "redirect_document_id": true
-        },
-        {
             "source_path_from_root": "/docs/get-started/direct-lake-overview.md",
             "redirect_url": "/fabric/fundamentals/direct-lake-overview",
             "redirect_document_id": true
