@@ -99,5 +99,5 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 ## Related content
 
 - [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
-- [Discover data items in the OneLake data hub](onelake-data-hub.md)
+- [Discover data items in the OneLake data hub](../data-warehouse/tutorial-build-report-dataonelake-data-hub.md)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
