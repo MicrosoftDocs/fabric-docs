@@ -80,7 +80,7 @@ Here are some tips that can help improve the accuracy of the KQL queries generat
 
 ## Related content
 
-* [Privacy, security, and responsible use of Copilot for Real-Time Intelligence (preview)](copilot-real-time-analytics-privacy-security.md)
+* [Privacy, security, and responsible use of Copilot for Real-Time Intelligence (preview)](../fundamentals/copilot-real-time-analytics-privacy-security.md)
 * [Copilot for Microsoft Fabric: FAQ](copilot-faq-fabric.yml)
 * [Overview of Copilot in Fabric (preview)](copilot-fabric-overview.md)
 * [Query data in a KQL queryset](../real-time-analytics/kusto-query-set.md)
