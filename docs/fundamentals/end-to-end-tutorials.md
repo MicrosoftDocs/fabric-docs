@@ -47,5 +47,5 @@ The following tutorials walk you through scenarios within specific Fabric experi
 
 ## Related content
 
-* [Create a workspace](create-workspaces.md)
-* Discover data items in the [OneLake data hub](onelake-data-hub.md)
+* [Create a workspace](../get-started/create-workspaces.md)
+* Discover data items in the [OneLake data hub](../data-warehouse/tutorial-build-report-onelake-data-hub.md)
