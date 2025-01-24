@@ -92,9 +92,9 @@ SqlPackage is capable of deploying a `.dacpac` to a new (empty) database or incr
 The SqlPackage [publish](/sql/tools/sqlpackage/sqlpackage-publish) and [extract](/sql/tools/sqlpackage/sqlpackage-extract) syntax is similar to the import/export commands.
 
 > [!WARNING]
-> Using SqlPackage to deploy a SQL project or `.dacpac` to SQL database in Fabric is recommended. Deploying a `.dacpac` from Visual Studio may be unsuccesful.
+> Using SqlPackage to deploy a SQL project or `.dacpac` to SQL database in Fabric is recommended. Deploying a `.dacpac` from Visual Studio may be unsuccessful.
 
-To deploy a `.dacpac` that was created from Azure SQL Database, SQL Server, or a SQL project targetting a platform other than SQL database in Fabric, append the property `/p:AllowIncompatiblePlatform=true` to the SqlPackage publish command.
+To deploy a `.dacpac` that was created from Azure SQL Database, SQL Server, or a SQL project targeting a platform other than SQL database in Fabric, append the property `/p:AllowIncompatiblePlatform=true` to the SqlPackage publish command.
 
 ## Related content
 
