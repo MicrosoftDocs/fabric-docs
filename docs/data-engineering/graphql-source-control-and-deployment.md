@@ -105,6 +105,8 @@ The next message pops up confirming the items that you're about to deploy. Selec
 
 3. [**Autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) isn't supported when the **Saved Credential** approach is used for data source connections. For more information, see [data source authentication methods](#data-source-authentication-methods) section described above.
 
+4. Azure SQL database is not currently supported but is planned to be available in our next release, scheduled for March 2025.
+
 ## Related content
 
 * [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)
