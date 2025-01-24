@@ -161,11 +161,6 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/docs/get-started/fabric-known-issues.md",
-            "redirect_url": "/fabric/fundamentals/fabric-known-issues",
-            "redirect_document_id": true
-        },
-        {
             "source_path_from_root": "/docs/get-started/direct-lake-develop.md",
             "redirect_url": "/fabric/fundamentals/direct-lake-develop",
             "redirect_document_id": true
