@@ -216,6 +216,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/copilot-real-time-intelligence.md",
+            "redirect_url": "/fabric/fundamentals/copilot-real-time-intelligence",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-real-time-intelligence-privacy-security.md",
             "redirect_url": "/fabric/fundamentals/copilot-real-time-intelligence-privacy-security",
             "redirect_document_id": false
