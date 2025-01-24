@@ -62,7 +62,7 @@ Microsoft is committed to ensuring that our AI systems are guided by our AI prin
 
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.
 
-For more information, see [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md).
+For more information, see [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
 
 ## Limitations of Copilot for SQL database
 
@@ -79,4 +79,4 @@ Here are the current limitations of Copilot for SQL database:
 - [How to: Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
 - [How to: Use Copilot code completion for SQL database](copilot-code-completion.md)
 - [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
