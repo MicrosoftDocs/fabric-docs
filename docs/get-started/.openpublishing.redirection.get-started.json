@@ -51,6 +51,66 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/give-access-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/give-access-workspaces",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/index.yml",
+            "redirect_url": "/fabric/fundamentals/index",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/lakehouse-powber-bi-reporting.md",
+            "redirect_url": "/fabric/fundamentals/inlakehouse-powber-bi-reporting",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/microsoft-fabric-overview.md",
+            "redirect_url": "/fabric/fundamentals/microsoft-fabric-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/preview.md",
+            "redirect_url": "/fabric/fundamentals/preview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/roles-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/roles-workspaces",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/share-items.md",
+            "redirect_url": "/fabric/fundamentals/share-items",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/task-flow-create.md",
+            "redirect_url": "/fabric/fundamentals/task-flow-create",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/task-flow-overview.md",
+            "redirect_url": "/fabric/fundamentals/task-flow-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/task-flow-work-with.md",
+            "redirect_url": "/fabric/fundamentals/task-flow-work-with",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/icons.md",
+            "redirect_url": "/fabric/fundamentals/icons",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/toc.yml",
+            "redirect_url": "/fabric/fundamentals/toc.yml",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
