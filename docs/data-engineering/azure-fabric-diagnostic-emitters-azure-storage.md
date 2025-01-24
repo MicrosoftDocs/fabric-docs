@@ -90,7 +90,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 > [!NOTE]
 >
-> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../get-started/workspaces.md).
+> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 ### Step 4: View the logs files in Azure storage account
 
