@@ -19,7 +19,7 @@ In this article, learn how [Microsoft Copilot for Data Science](../data-engineer
 
 With Copilot for Data Science in Microsoft Fabric and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Data Science and the other workloads.
 
-For considerations and limitations, see [Limitations](../data-engineering//copilot-notebooks-overview.md#limitations).
+For considerations and limitations, see [Limitations](../data-engineering/copilot-notebooks-overview.md#limitations).
 
 ## Data use of Copilot for Data Science
 
