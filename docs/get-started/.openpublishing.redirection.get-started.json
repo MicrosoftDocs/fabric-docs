@@ -106,6 +106,32 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/docs/get-started/endorsement-promote-certify.md",
+            "redirect_url": "/fabric/fundamentals/endorsement-promote-certify",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-help-pane.md",
+            "redirect_url": "/fabric/fundamentals/fabric-help-pane",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-home.md",
+            "redirect_url": "/fabric/fundamentals/fabric-home",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/enable-workspace-monitoring.md",
+            "redirect_url": "/fabric/fundamentals/enable-workspace-monitoring",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/end-to-end-tutorials.md",
+            "redirect_url": "/fabric/fundamentals/end-to-end-tutorials",
+            "redirect_document_id": true
+        },
+
+        {
             "source_path_from_root": "/docs/get-started/directlake-overview.md",
             "redirect_url": "/fabric/get-started/direct-lake-overview",
             "redirect_document_id": true
