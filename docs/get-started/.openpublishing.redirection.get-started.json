@@ -106,8 +106,109 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/docs/get-started/endorsement-promote-certify.md",
+            "redirect_url": "/fabric/fundamentals/endorsement-promote-certify",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/create-items-in-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/create-items-in-workspaces",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-create-lakehouse.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-create-lakehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-develop.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-develop",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-edit-tables.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-edit-tables",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/create-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/create-workspaces",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-help-pane.md",
+            "redirect_url": "/fabric/fundamentals/fabric-help-pane",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/whats-new.md",
+            "redirect_url": "/fabric/fundamentals/whats-new",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspaces.md",
+            "redirect_url": "/fabric/fundamentals/workspaces",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspaces-folders.md",
+            "redirect_url": "/fabric/fundamentals/workspaces-folders",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspace-monitoring-overview.md",
+            "redirect_url": "/fabric/fundamentals/workspace-monitoring-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/whats-new-archive.md",
+            "redirect_url": "/fabric/fundamentals/whats-new-archive",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-home.md",
+            "redirect_url": "/fabric/fundamentals/fabric-home",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/enable-workspace-monitoring.md",
+            "redirect_url": "/fabric/fundamentals/enable-workspace-monitoring",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/end-to-end-tutorials.md",
+            "redirect_url": "/fabric/fundamentals/end-to-end-tutorials",
+            "redirect_document_id": true
+        },
+
+        {
             "source_path_from_root": "/docs/get-started/directlake-overview.md",
             "redirect_url": "/fabric/get-started/direct-lake-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-data-store.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-data-store",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-lakehouse-warehouse.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-lakehouse-warehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-pipeline-dataflow-spark.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-pipeline-dataflow-spark",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/delta-lake-interoperability.md",
+            "redirect_url": "/fabric/fundamentals/delta-lake-interoperability",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-analyze-query-processing.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-analyze-query-processing",
             "redirect_document_id": true
         },
         {
@@ -211,8 +312,73 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/copilot-faq-fabric.yml",
+            "redirect_url": "/fabric/fundamentals/copilot-faq-fabric",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-real-time-intelligence.md",
+            "redirect_url": "/fabric/fundamentals/copilot-real-time-intelligence",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-real-time-intelligence-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-real-time-intelligence-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-power-bi-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-power-bi-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-overview.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-consumption.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-consumption",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-enable-fabric.md",
+            "redirect_url": "/fabric/fundamentals/copilot-enable-fabric",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-database-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-database-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-data-factory.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-data-factory",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-privacy-security",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-notebooks-chat-magics.md",
             "redirect_url": "/fabric/data-engineering/copilot-notebooks-chat-magics",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-factory-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-factory-privacy-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-science-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-science-privacy-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-warehouse-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-warehouse-privacy-security",
             "redirect_document_id": true
         },
         {
@@ -223,6 +389,11 @@
         {
             "source_path_from_root": "/docs/get-started/copilot-notebooks-overview.md",
             "redirect_url": "/fabric/data-engineering/copilot-notebooks-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/apply-sensitivity-labels.md",
+            "redirect_url": "/fabric/fundamentals/apply-sensitivity-labels",
             "redirect_document_id": true
         }
     ]

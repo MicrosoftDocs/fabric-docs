@@ -34,7 +34,7 @@ The following table describes the columns of the list of workspaces.
 | **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](/power-bi/enterprise/service-admin-premium-manage). |
 | **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a Microsoft Fabric upgrade. |
 
-The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup**, all other workspaces are of type **Workspace**. For more information, see [Workspaces](../get-started/workspaces.md).
+The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup**, all other workspaces are of type **Workspace**. For more information, see [Workspaces](../fundamentals/workspaces.md).
 
 ## Workspace states
 

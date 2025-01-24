@@ -21,7 +21,7 @@ In this tutorial, you'll create a new [SQL database in Fabric](overview.md).
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
     - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, you'll receive an error message "SQL database failed to create."
 - You must be a member of the Admin or Member roles for the workspace to create a SQL database.
-- You can use an existing workspace or [create a new Fabric workspace](../../get-started/workspaces.md).
+- You can use an existing workspace or [create a new Fabric workspace](../../fundamentals/workspaces.md).
 
 ## Create new SQL database in Fabric
 

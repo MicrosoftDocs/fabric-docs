@@ -19,9 +19,9 @@ You can get data for use in Fabric [!INCLUDE [fabric-activator](../includes/fabr
 * You can connect to Real-Time Hub events from an empty activator.
 * You can connect to Real-Time Hub events from an activator that already has events flowing into it.
 
-### Browse Real-Time Hub from [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+### Browse Real-Time Hub from Activator
 
-To browse Real-Time Hub items from an activator, select **Get data** from the toolbar as shown in the following image.
+To browse Real-Time Hub items from an activator, select **Home** > **Get data** from the toolbar as shown in the following image.
 
 :::image type="content" source="media/activator-get-data-real-time-hub/data-activator-real-time-hub-01.png" alt-text="Screenshot of get data from Real-Time Hub.":::
 

@@ -72,4 +72,4 @@ additionalContent: |
   - [How to: Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
   - [How to: Use Copilot code completion for SQL database](copilot-code-completion.md)
   - [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)
-  - [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+  - [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

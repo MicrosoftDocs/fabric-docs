@@ -1,8 +1,8 @@
 ---
 title: Create folders in workspaces
 description: "Learn how to create a folder inside a workspace to enable users to efficiently organize and manage items in the workspace."
-author: maggiesMSFT
-ms.author: maggies
+author: paulinbar
+ms.author: painbar
 ms.reviewer: yicw, mesrivas,liud
 ms.topic: how-to
 ms.custom: fabric
@@ -152,5 +152,5 @@ Currently, folders inherit the permissions of the workspace where they're locate
 ## Related content
 
 - [Folders in deployment pipelines](../cicd/deployment-pipelines/understand-the-deployment-process.md)
-- [Create workspaces](create-workspaces.md)
-- [Give users access to workspaces](give-access-workspaces.md)
+- [Create workspaces](../get-started/create-workspaces.md)
+- [Give users access to workspaces](../get-started/give-access-workspaces.md)
