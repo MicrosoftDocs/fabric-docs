@@ -20,7 +20,7 @@ This article describes machine learning model and experiment permissions in [!IN
 
 > [!NOTE]
 > After you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], or if you have an admin role in a workspace, you can give others access to it by assigning them a different role.
-> To learn more about workspaces and how to grant users access to your workspace, review the articles [Workspaces](../fundamentals/workspaces.md) and [Giving users access to workspaces](../../docs/get-started/give-access-workspaces.md).
+> To learn more about workspaces and how to grant users access to your workspace, review the articles [Workspaces](../fundamentals/workspaces.md) and [Giving users access to workspaces](../fundamentals/give-access-workspaces.md).
 
 ## Permissions for machine learning experiments
 

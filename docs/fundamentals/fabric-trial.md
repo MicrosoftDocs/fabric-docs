@@ -37,7 +37,7 @@ Creating and collaborating in Fabric includes:
 ## About the trial capacity
 
 When you start a trial of a Fabric capacity, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These features include:
-- [Copilot](/fabric/get-started/copilot-faq-fabric)
+- [Copilot](./copilot-faq-fabric.yml)
 - [Trusted workspace access](../security/security-trusted-workspace-access.md)
 - [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview)
 
