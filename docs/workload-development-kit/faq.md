@@ -57,7 +57,7 @@ Further information can be found here: [Plan a Saas offer for the commercial mar
 
 ### Is there a plan to certify these workloads?
 
-We don't perform code certification as these workloads are embedded in Fabric, not hosted on it. Workloads are embedded in Fabric similarly to how apps are embedded in Microsoft Teams. We validate the workload publishers and request them to attest to specific areas, use the certification link from the [Workload detailed page](../fundamentals/fabric-home.md#find-and-learn-about-other-workloads) to review the publisher attestations. Furthermore, all workloads are governed with a Microsoft Entra application, giving Tenant admins full control over who can consent to which applications or scopes, ensuring compliance with organizational Microsoft Entra governance. 
+We don't perform code certification as these workloads are embedded in Fabric, not hosted on it. Workloads are embedded in Fabric similarly to how apps are embedded in Microsoft Teams. We validate the workload publishers and request them to attest to specific areas, use the certification link from the [Workload detailed page](../fundamentals/fabric-home.md) to review the publisher attestations. Furthermore, all workloads are governed with a Microsoft Entra application, giving Tenant admins full control over who can consent to which applications or scopes, ensuring compliance with organizational Microsoft Entra governance. 
 
 ### Is the Partner Workload running on a Fabric Capacity?
 
