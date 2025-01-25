@@ -233,7 +233,7 @@ conceptualContent:
           - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
             text: Transform data in a warehouse
-          - url: fundamentals/copilot-notebooks-overview.md
+          - url: data-engineering/copilot-notebooks-overview.md
             itemType: overview
             text: Transform data with Copilot for notebooks
           - url: real-time-intelligence/event-streams/process-events-using-event-processor-editor.md
