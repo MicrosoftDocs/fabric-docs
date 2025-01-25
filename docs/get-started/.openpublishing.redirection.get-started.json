@@ -146,6 +146,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/`lakehouse-pbi-reporting.md`",
+            "redirect_url": "/fabric/fundamentals/lakehouse-pbi-reporting",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/directlake-analyze-query-processing.md",
             "redirect_url": "/fabric/get-started/direct-lake-analyze-query-processing",
             "redirect_document_id": true
