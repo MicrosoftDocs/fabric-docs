@@ -22,7 +22,7 @@ After you first publish a Direct Lake semantic model ready for reporting, you sh
 - [Set Fabric item permissions](#set-fabric-item-permissions)
 - [Set up scheduled refresh](#refresh-direct-lake-semantic-models)
 
-Optionally, you can also set up [data discovery](/power-bi/collaborate-share/service-discovery) to allow report creators to read metadata, helping them to discover data in the [OneLake data hub](../data-warehouse/tutorial-build-report-onelake-data-hub.md) and request access to it. You can also [endorse](/power-bi/collaborate-share/service-endorsement-overview) (certified or promoted) the semantic model to communicate that it represents quality data fit for use.
+Optionally, you can also set up [data discovery](/power-bi/collaborate-share/service-discovery) to allow report creators to read metadata, helping them to discover data in the [OneLake data hub](../governance/onelake-catalog-overview.md) and request access to it. You can also [endorse](/power-bi/collaborate-share/service-endorsement-overview) (certified or promoted) the semantic model to communicate that it represents quality data fit for use.
 
 ## Set up the cloud connection
 
