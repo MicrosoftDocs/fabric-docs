@@ -54,6 +54,6 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Related content
 
-- [Overview of Copilot in Fabric](../get-started/copilot-fabric-overview.md)
+- [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
 - [Copilot in Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)

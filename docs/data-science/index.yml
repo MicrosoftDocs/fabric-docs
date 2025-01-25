@@ -40,7 +40,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Use the Copilot chat panel
-            url: ../fundamentals//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 
 # Card 
   - title: AI skill (preview)

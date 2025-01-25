@@ -12,7 +12,7 @@ ms.date: 09/02/2024
 
 # Enable monitoring in your workspace
 
-This article explains how to enable [monitoring](../get-started/workspace-monitoring-overview.md) in a Microsoft Fabric workspace.
+This article explains how to enable [monitoring](../fundamentals/workspace-monitoring-overview.md) in a Microsoft Fabric workspace.
 
 ## Prerequisites
 
@@ -34,4 +34,4 @@ Follow these steps to enable monitoring in your workspace:
 
 ## Related content
 
-* [What is workspace monitoring?](../get-started/workspace-monitoring-overview.md)
+* [What is workspace monitoring?](../fundamentals/workspace-monitoring-overview.md)

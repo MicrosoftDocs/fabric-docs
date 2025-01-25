@@ -23,7 +23,7 @@ summary: |
   > - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
   > - If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md) tenant setting in the Fabric Admin portal.
   > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
-  > - For more information, see the article [Overview of Copilot in Fabric](../get-started/copilot-fabric-overview.md).
+  > - For more information, see the article [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
 
 sections:
   - name: Power BI
@@ -90,7 +90,7 @@ sections:
       - question: |
           I want to suggest new features. How can I do that?  
         answer: |
-          You can submit and vote on ideas for Microsoft Fabric on the [Ideas page of the Fabric Community](https://community.fabric.microsoft.com/t5/Ideas/ct-p/PBI_Comm_Ideas). Read more about giving feedback in the [Learn about Microsoft Fabric feedback](../get-started/feedback.md) article.
+          You can submit and vote on ideas for Microsoft Fabric on the [Ideas page of the Fabric Community](https://community.fabric.microsoft.com/t5/Ideas/ct-p/PBI_Comm_Ideas). Read more about giving feedback in the [Learn about Microsoft Fabric feedback](../fundamentals/feedback.md) article.
 
   - name: Real-Time Intelligence
     questions:
@@ -113,5 +113,5 @@ sections:
 additionalContent: |
   ## Related content
 
-  - [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+  - [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
   - [Privacy, security, and responsible use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
