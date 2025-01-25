@@ -34,9 +34,9 @@ landingContent:
       - linkListType: overview
         links:
           - text: Overview
-            url: ../fundamentals/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
           - text: Chat-magics in Notebooks
-            url: ../fundamentals/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
       - linkListType: how-to-guide
         links:
           - text: Use the Copilot chat panel

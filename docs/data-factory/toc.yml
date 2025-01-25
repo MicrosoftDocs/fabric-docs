@@ -1028,7 +1028,7 @@
     - name: Data Factory limitations
       href: data-factory-limitations.md
     - name: Fabric known issues
-      href: ../fundamentals/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
+      href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
   - name: Reference
     items:
     - name: CI/CD for data pipelines
