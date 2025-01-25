@@ -140,10 +140,15 @@
             "redirect_url": "/fabric/get-started/decision-guide-data-store",
             "redirect_document_id": false
         },          
-        {
-            "source_path_from_root": "/docs/get-started/lakehouse-pbi-reporting.md`",
+	    {
+            "source_path_from_root": "/docs/get-started/lakehouse-power-bi-reporting.md",
             "redirect_url": "/fabric/fundamentals/lakehouse-power-bi-reporting",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/lakehouse-pbi-reporting.md",
+            "redirect_url": "/fabric/fundamentals/lakehouse-power-bi-reporting",
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/get-started/directlake-analyze-query-processing.md",
