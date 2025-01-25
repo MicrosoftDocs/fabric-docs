@@ -49,7 +49,7 @@ landingContent:
           - text: Get started with a task flow
             url: task-flow-overview.md 
           - text: Find items in OneLake data hub
-            url: onelake-data-hub.md 
+            url: ../governance/onelake-catalog-overview.md 
           - text: Promote and certify items
             url: endorsement-promote-certify.md 
       - linkListType: how-to-guide
@@ -99,7 +99,7 @@ landingContent:
           - text: Use the integrated Help pane
             url: fabric-help-pane.md
           - text: Check for known issues
-            url: fabric-known-issues.md
+            url: ../get-started/fabric-known-issues.md
           - text: Contact Support
             url: /power-bi/support/service-support-options
    
