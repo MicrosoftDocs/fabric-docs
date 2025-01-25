@@ -57,5 +57,5 @@ The governance and insights section provides links to help admins and users with
 
 ## Related content
 
-* [What is Fabric](../get-started/microsoft-fabric-overview.md)
+* [What is Fabric](../fundamentals/microsoft-fabric-overview.md)
 * [What is Microsoft Fabric admin?](../admin/microsoft-fabric-admin.md)

@@ -21,13 +21,13 @@ Fabric Copilot settings are controlled by the **Copilot and Azure OpenAI Service
 
 ### Users can use Copilot and other features powered by Azure OpenAI
 
-When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot. This setting can be managed at both the tenant and the capacity levels. For more information, see [Overview of Copilot in Fabric](/fabric/get-started/copilot-fabric-overview).
+When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot. This setting can be managed at both the tenant and the capacity levels. For more information, see [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
 
 :::image type="content" source="../fundamentals/media/copilot-enable-fabric/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled.":::
 
 ### Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
 
-This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. For more information, see [Available regions](/fabric/get-started/copilot-fabric-overview#available-regions).
+This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. For more information, see [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions).
 ## Not enabled by default
 
 ### Capacities can be designated as Fabric Copilot capacities.  
@@ -40,6 +40,6 @@ Copilot capacities enable users' usage and billing to be consolidated under a si
 
 ## Related content
 
-- [Copilot in Fabric and Power BI overview](../get-started/copilot-fabric-overview.md)
+- [Copilot in Fabric and Power BI overview](../fundamentals/copilot-fabric-overview.md)
 - [About tenant settings](about-tenant-settings.md)
 

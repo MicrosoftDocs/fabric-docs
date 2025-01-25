@@ -30,7 +30,7 @@ landingContent:
       - linkListType: how-to-guide
         links:             
           - text: Manage access
-            url:  ../get-started/roles-workspaces.md
+            url:  ../fundamentals/roles-workspaces.md
           - text: Audit
             url:  ../admin/track-user-activities.md  
       - linkListType: deploy
@@ -72,7 +72,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Discover
-            url: ../get-started/onelake-data-hub.md
+            url: ../governance/onelake-catalog-overview.md
           - text: Track lineage 
             url:  lineage.md   
           - text: Analyze impact 

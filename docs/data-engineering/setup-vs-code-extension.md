@@ -74,7 +74,7 @@ To validate the setup, open the extension settings and check the details there:
 
 ### Choose a workspace to work with
 
-To select a Fabric workspace, you must have a workspace created. If you don't have one, you can create one in the Fabric portal. For more information, see [Create a workspace](../get-started/create-workspaces.md).
+To select a Fabric workspace, you must have a workspace created. If you don't have one, you can create one in the Fabric portal. For more information, see [Create a workspace](../fundamentals/create-workspaces.md).
 
 Once you have a workspace, choose it by selecting the **Select Workspace** option. A list appears of all workspaces that you have access to; select the one you want from the list.
 

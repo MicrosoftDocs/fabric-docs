@@ -47,7 +47,7 @@ SQL database in Fabric is part of the **Database** workload, and the data is acc
 
 With your SQL database in Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs, and built for openness and collaboration between technology solutions that can read the open-source Delta Lake table format. The Delta tables can then be used everywhere in Fabric, allowing users to accelerate their journey into Fabric.
 
-The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS). To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS). To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
 SQL database in Fabric creates three items in your Fabric workspace:
 
@@ -139,7 +139,7 @@ Do you already have an external database and want to leverage Fabric's integrati
 
 ## Related content
 
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
 - [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
 - [Direct Lake](/power-bi/enterprise/directlake-overview)

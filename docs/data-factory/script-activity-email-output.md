@@ -18,7 +18,7 @@ This example shows how to run a script on an Azure SQL instance and send an outp
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Create a script activity and configure its output to be sent by email

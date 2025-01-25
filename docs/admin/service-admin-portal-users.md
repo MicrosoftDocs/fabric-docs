@@ -21,4 +21,4 @@ You manage Power BI users, groups, and admins in the [Microsoft 365 admin center
 
 * [Administration overview](admin-overview.md)
 * [Microsoft 365 admin center help](/microsoft-365/admin/)
-* [Give users access to workspaces](../get-started/give-access-workspaces.md)
+* [Give users access to workspaces](../fundamentals/give-access-workspaces.md)

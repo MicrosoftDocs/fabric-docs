@@ -19,7 +19,7 @@ ms.collection: ce-skilling-ai-copilot
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
-This article provides answers to common questions related to business data security and privacy to help your organization get started with Copilot in Fabric. The article [Privacy, security, and responsible use for Copilot in Power BI (preview)](../get-started/copilot-power-bi-privacy-security.md) provides an overview of Copilot in Power BI. Read on for details about Copilot for Fabric.
+This article provides answers to common questions related to business data security and privacy to help your organization get started with Copilot in Fabric. The article [Privacy, security, and responsible use for Copilot in Power BI (preview)](../fundamentals/copilot-power-bi-privacy-security.md) provides an overview of Copilot in Power BI. Read on for details about Copilot for Fabric.
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
@@ -132,11 +132,11 @@ Privacy, security, and responsible use for:
 - [Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
 - [Copilot for Data Science (preview)](copilot-data-science-privacy-security.md)
 - [Copilot for Data Warehouse (preview)](copilot-data-warehouse-privacy-security.md)
-- [Copilot for SQL Databases (preview)](../get-started/copilot-database-privacy-security.md)
-- [Copilot for Power BI](../get-started/copilot-power-bi-privacy-security.md)
-- [Copilot for Real-Time Intelligence (preview)](../get-started/copilot-real-time-intelligence-privacy-security.md)
+- [Copilot for SQL Databases (preview)](../fundamentals/copilot-database-privacy-security.md)
+- [Copilot for Power BI](../fundamentals/copilot-power-bi-privacy-security.md)
+- [Copilot for Real-Time Intelligence (preview)](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
 
 ## Related content
 
-- [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
 - [Copilot in Fabric and Power BI: FAQ](copilot-faq-fabric.yml)

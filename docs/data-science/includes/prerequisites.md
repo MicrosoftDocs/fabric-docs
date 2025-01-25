@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 01/10/2025
 ---
 
-- Get a [Microsoft Fabric subscription](../../enterprise/licenses.md). Or, sign up for a free [Microsoft Fabric trial](../../get-started/fabric-trial.md).
+- Get a [Microsoft Fabric subscription](../../enterprise/licenses.md). Or, sign up for a free [Microsoft Fabric trial](../../fundamentals/fabric-trial.md).
 
 - Sign in to [[!INCLUDE [product-name](../../includes/product-name.md)]](https://fabric.microsoft.com/).
 

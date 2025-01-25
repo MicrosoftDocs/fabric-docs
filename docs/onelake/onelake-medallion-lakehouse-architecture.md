@@ -110,7 +110,7 @@ Here are two patterns to consider.
 - **Pattern 1:** Create each zone as a lakehouse. In this case, business users access data by using the SQL analytics endpoint.
 - **Pattern 2:** Create the bronze and silver zones as lakehouses, and the gold zone as data warehouse. In this case, business users access data by using the data warehouse endpoint.
 
-While you can create all lakehouses in a single Fabric workspace, we recommend that you create each lakehouse in its own, separate [Fabric workspace](../get-started/workspaces.md). This approach provides you with more control and better governance at the zone level.
+While you can create all lakehouses in a single Fabric workspace, we recommend that you create each lakehouse in its own, separate [Fabric workspace](../fundamentals/workspaces.md). This approach provides you with more control and better governance at the zone level.
 
 For the bronze zone, we recommend that you store the data in its original format, or use Parquet or Delta Lake. Whenever possible, keep the data in its original format. If the source data is from OneLake, Azure Data Lake Store Gen2 (ADLS Gen2), Amazon S3, or Google, create a [shortcut](onelake-shortcuts.md) in the bronze zone instead of copying the data across.
 
@@ -156,7 +156,7 @@ For more information about implementing a Fabric lakehouse, see the following re
 
 - Tutorial: [Lakehouse end-to-end scenario](../data-engineering/tutorial-lakehouse-introduction.md)
 - [Lakehouse and Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md)
-- [Microsoft Fabric decision guide: choose a data store](../get-started/decision-guide-data-store.md)
+- [Microsoft Fabric decision guide: choose a data store](../fundamentals/decision-guide-data-store.md)
 - [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
 - [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).

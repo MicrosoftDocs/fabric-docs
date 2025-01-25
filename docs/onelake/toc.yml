@@ -100,7 +100,7 @@ items:
   - name: Release notes
     href: onelake-file-explorer-release-notes.md
 - name: Discover data in the OneLake data hub
-  href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
+  href: ../governance/onelake-catalog-overview.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
 - name: Billing and consumption
   items:
   - name: OneLake compute and storage consumption
