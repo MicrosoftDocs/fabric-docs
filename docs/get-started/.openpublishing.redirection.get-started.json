@@ -148,7 +148,7 @@
         {
             "source_path_from_root": "/docs/get-started/lakehouse-pbi-reporting.md`",
             "redirect_url": "/fabric/get-started/lakehouse-power-bi-reporting",
-            "redirect_document_id": false
+            "redirect_document_id": true
         },
         {
             "source_path_from_root": "/docs/get-started/directlake-analyze-query-processing.md",
