@@ -1,5 +1,5 @@
 items:
-- name: Get started documentation
+- name: Microsoft Fabric fundamentals documentation
   href: index.yml
 - name: Overview
   items:
