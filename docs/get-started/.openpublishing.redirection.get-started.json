@@ -106,11 +106,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "/docs/get-started/toc.yml",
-            "redirect_url": "/fabric/fundamentals/toc.yml",
-            "redirect_document_id": false
-        },
-        {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
@@ -146,7 +141,7 @@
             "redirect_document_id": false
         },          
         {
-            "source_path_from_root": "/docs/get-started/lakehouse-pbi-reporting.md",
+            "source_path_from_root": "/docs/get-started/lakehouse-bi-reporting.md",
             "redirect_url": "/fabric/get-started/lakehouse-power-bi-reporting",
             "redirect_document_id": true
         },
