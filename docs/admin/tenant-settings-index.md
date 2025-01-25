@@ -114,7 +114,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Make promoted content discoverable](/power-bi/collaborate-share/service-discovery)|Allow users in this org who can promote content to make content they promote discoverable by users who don't have access to it.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
 |[Make certified content discoverable](/power-bi/collaborate-share/service-discovery)|Allow users in the org who can certify content to make content they certify discoverable by users who don't have access to it.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
-|[Discover content](../fundamentals/onelake-data-hub.md#find-recommended-items)|Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
+|[Discover content](../governance/onelake-catalog-overview.md#find-recommended-items)|Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
 
 ## App settings
 
