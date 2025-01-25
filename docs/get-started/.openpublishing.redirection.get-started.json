@@ -106,11 +106,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "/docs/get-started/toc.yml",
-            "redirect_url": "/fabric/fundamentals/toc.yml",
-            "redirect_document_id": false
-        },
-        {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
@@ -146,7 +141,7 @@
             "redirect_document_id": false
         },          
         {
-            "source_path_from_root": "/docs/get-started/lakehouse-pbi-reporting.md",
+            "source_path_from_root": "/docs/get-started/lakehouse-bi-reporting.md",
             "redirect_url": "/fabric/get-started/lakehouse-power-bi-reporting",
             "redirect_document_id": true
         },
@@ -161,13 +156,18 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/docs/get-started/directlake-fixed-identity.md",
-            "redirect_url": "/fabric/get-started/direct-lake-fixed-identity",
+            "source_path_from_root": "/docs/get-started/direct-lake-manage.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-manage",
             "redirect_document_id": true
         },
         {
             "source_path_from_root": "/docs/get-started/endorsement-promote-certify.md",
             "redirect_url": "/fabric/fundamentals/endorsement-promote-certify",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-power-bi-desktop.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-power-bi-desktop",
             "redirect_document_id": true
         },
         {
@@ -178,6 +178,56 @@
         {
             "source_path_from_root": "/docs/get-started/direct-lake-create-lakehouse.md",
             "redirect_url": "/fabric/fundamentals/direct-lake-create-lakehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-understand-storage.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-understand-storage",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-search.md",
+            "redirect_url": "/fabric/fundamentals/fabric-search",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-settings.md",
+            "redirect_url": "/fabric/fundamentals/fabric-settings",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-terminology.md",
+            "redirect_url": "/fabric/fundamentals/fabric-terminology",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-trial.md",
+            "redirect_url": "/fabric/fundamentals/fabric-trial",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-fixed-identity.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-fixed-identity",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/directlake-fixed-identity.md",
+            "redirect_url": "/fabric/fundamentals/directlake-fixed-identity",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-overview.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/directlake-overview.md",
+            "redirect_url": "/fabric/fundamentals/directlake-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/feedback.md",
+            "redirect_url": "/fabric/fundamentals/feedback",
             "redirect_document_id": true
         },
         {
@@ -238,12 +288,6 @@
         {
             "source_path_from_root": "/docs/get-started/end-to-end-tutorials.md",
             "redirect_url": "/fabric/fundamentals/end-to-end-tutorials",
-            "redirect_document_id": true
-        },
-
-        {
-            "source_path_from_root": "/docs/get-started/directlake-overview.md",
-            "redirect_url": "/fabric/get-started/direct-lake-overview",
             "redirect_document_id": true
         },
         {
