@@ -61,8 +61,8 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "/docs/get-started/lakehouse-powber-bi-reporting.md",
-            "redirect_url": "/fabric/fundamentals/inlakehouse-powber-bi-reporting",
+            "source_path_from_root": "/docs/get-started/lakehouse-powber-pbi-reporting.md",
+            "redirect_url": "/fabric/fundamentals/lakehouse-powber-pbi-reporting",
             "redirect_document_id": false
         },
         {
@@ -141,9 +141,9 @@
             "redirect_document_id": false
         },          
         {
-            "source_path_from_root": "/docs/get-started/lakehouse-bi-reporting.md",
-            "redirect_url": "/fabric/get-started/lakehouse-power-bi-reporting",
-            "redirect_document_id": true
+            "source_path_from_root": "/docs/get-started/lakehouse-power-bi-reporting.md",
+            "redirect_url": "/fabric/fundamentals/lakehouse-power-bi-reporting",
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/get-started/directlake-analyze-query-processing.md",
