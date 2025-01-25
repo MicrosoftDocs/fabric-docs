@@ -70,8 +70,8 @@ Data used with Power BI is stored in internal storage provided by Power BI by de
 
 Now that you've created the workspace, you'll want to add other users to *roles* in the workspace, so you can collaborate with them. See these articles for more information:
 
-- [Give users access to a workspace](give-access-workspaces.md)
-- [Roles in workspaces](roles-workspaces.md)
+- [Give users access to a workspace](../get-started/give-access-workspaces.md)
+- [Roles in workspaces](../get-started/roles-workspaces.md)
 
 ## Pin workspaces
 

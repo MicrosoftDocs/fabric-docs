@@ -16,7 +16,7 @@ LocalizationGroup: Admin
 
 This article describes how to create a lakehouse, create a Delta table in the lakehouse, and then create a basic semantic model for the lakehouse in a Microsoft Fabric workspace.
 
-Before getting started creating a lakehouse for Direct Lake, be sure to read [Direct Lake overview](direct-lake-overview.md).
+Before getting started creating a lakehouse for Direct Lake, be sure to read [Direct Lake overview](../get-started/direct-lake-overview.md).
 
 ## Create a lakehouse
 
@@ -114,6 +114,6 @@ When you're finished adding relationships and DAX measures, you can then create 
 
 ## Related content
 
-- [Specify a fixed identity for a Direct Lake model](direct-lake-fixed-identity.md)
-- [Direct Lake overview](direct-lake-overview.md)  
+- [Specify a fixed identity for a Direct Lake model](../get-started/direct-lake-fixed-identity.md)
+- [Direct Lake overview](../get-started/direct-lake-overview.md)  
 - [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md)  
