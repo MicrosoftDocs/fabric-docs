@@ -19,7 +19,7 @@ In this tutorial, you build a data pipeline to move a CSV file from an input fol
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 - Select the **Try it now!** button to prepare the Azure Blob Storage data source of the Copy. Create a new resource group for this Azure Blob Storage and select **Review + Create** > **Create**.
 
   [:::image type="icon" source="./media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/try-it-now.png":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fquickstarts%2Fmicrosoft.datafactory%2Fdata-factory-copy-data-tool%2Fazuredeploy.json)

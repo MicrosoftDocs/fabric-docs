@@ -40,6 +40,6 @@ Copilot capacities enable users' usage and billing to be consolidated under a si
 
 ## Related content
 
-- [Copilot in Fabric and Power BI overview](../get-started/copilot-fabric-overview.md)
+- [Copilot in Fabric and Power BI overview](../fundamentals/copilot-fabric-overview.md)
 - [About tenant settings](about-tenant-settings.md)
 

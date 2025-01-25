@@ -175,7 +175,7 @@ You'll now grant access to another account in your organization and then control
 
    You also have GRANT, DENY, and other Data Control Language (DCL) operations for a finer-grained security model for your SQL database in Fabric data.
 
-For more information about sharing, see [Share your SQL database and manage permissions](share-sql-manage-permission.md) and [Share items in Microsoft Fabric](../../get-started/share-items.md).
+For more information about sharing, see [Share your SQL database and manage permissions](share-sql-manage-permission.md) and [Share items in Microsoft Fabric](../../fundamentals/share-items.md).
 
 ## Next step
 

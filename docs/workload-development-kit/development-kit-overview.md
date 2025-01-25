@@ -15,7 +15,7 @@ The Microsoft Fabric Workload Development Kit is a robust set of tools designed 
 
 ## What are Workloads?
 
-In [Microsoft Fabric](../get-started/microsoft-fabric-overview.md), workloads signify different components that are integrated into the Fabric framework. Workloads enhance the usability of your service within the familiar Fabric workspace, eliminating the need to leave the Fabric environment for different services. [Data Factory](../data-factory/data-factory-overview.md), [Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/enterprise/service-premium-what-is) and [Fabric [!INCLUDE [fabric-activator](../real-time-intelligence//includes/fabric-activator.md)]](../real-time-intelligence/data-activator/activator-introduction.md) are some of the Fabric workloads.
+In [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md), workloads signify different components that are integrated into the Fabric framework. Workloads enhance the usability of your service within the familiar Fabric workspace, eliminating the need to leave the Fabric environment for different services. [Data Factory](../data-factory/data-factory-overview.md), [Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/enterprise/service-premium-what-is) and [Fabric [!INCLUDE [fabric-activator](../real-time-intelligence//includes/fabric-activator.md)]](../real-time-intelligence/data-activator/activator-introduction.md) are some of the Fabric workloads.
 
 With the Workload Development Kit, you can create your own workload for your data applications. Publishing a Fabric Workload to the Fabric Workload Hub increases discoverability and user engagement, supporting compelling business models. The Microsoft Fabric Workloads Development Kit provides the necessary tools and interfaces to embed your data application in Microsoft Fabric.
 
@@ -45,7 +45,7 @@ After developing your Fabric Workload according to the [certification requiremen
 ## Key Considerations for Developing a Fabric Workload
 There are several important concepts to understand before beginning development of a Fabric workload:
 - Native Fabric Experience: Review the [Fabric UX system](https://aka.ms/fabricux) to learn the basics design concepts, all published workloads must comply to these design principles.
-- Integrate with the Fabric workspace: Your existing data application is required to function in a [Fabric workspace](../get-started/workspaces.md), where users create **instances** of your data application and collaborate with other Fabric users.
+- Integrate with the Fabric workspace: Your existing data application is required to function in a [Fabric workspace](../fundamentals/workspaces.md), where users create **instances** of your data application and collaborate with other Fabric users.
 - Integrate with Fabric as a multitenant application: Your workload is embedded in Fabric but we don't host your code. Fabric exposes APIs to allow the workload to get access to user data, user context and environment information to allow you to map between the customer's environment and your cloud deployment. It's the responsibility of the Workload to comply and attest to industry standards such as GDPR, ISO, SOC 2 etc.
 
 ## Trademarks
