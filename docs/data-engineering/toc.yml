@@ -162,7 +162,7 @@ items:
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
     - name: Monitor Apache Spark Applications Resource Utilization 
-      href: spark-resource-utilization-monitoring.md
+      href: monitor-spark-resource-utilization.md
     - name: Monitor run series
       href: apache-spark-monitor-run-series.md
     - name: Navigate the Apache Spark history server

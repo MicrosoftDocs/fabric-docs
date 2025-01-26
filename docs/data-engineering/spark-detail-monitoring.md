@@ -62,7 +62,7 @@ In the Apache Spark application monitoring details page, the job runs list is di
 
 ## Resources
 
-The executor usage graph under the **Resources** tab visualizes the allocation and utilization of Spark executors for the current Spark application in near real-time during Spark execution. You can refer to: [Monitor Apache Spark Applications Resource Utilization](spark-resource-utilization-monitoring.md)
+The executor usage graph under the **Resources** tab visualizes the allocation and utilization of Spark executors for the current Spark application in near real-time during Spark execution. You can refer to: [Monitor Apache Spark Applications Resource Utilization](monitor-spark-resource-utilization.md).
 
 ## Summary panel
 

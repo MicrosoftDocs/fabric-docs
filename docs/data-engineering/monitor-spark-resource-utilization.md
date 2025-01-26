@@ -10,9 +10,11 @@ ms.search.form: Monitor Spark application using resource utilization
 ---
 
 
-# Monitor Apache Spark Applications Resource Utilization
+# Monitor Apache Spark applications resource utilization
 
 The executor usage graph under the Resources tab visualizes the allocation and utilization of Spark executors for the current Spark application in near real-time during Spark execution. The graph also provides an interactive experience, allowing you to view Spark jobs and tasks by clicking on running executors at a given moment. Currently, only Spark runtime version 3.4 and above support this feature.  
+
+## Resources tab
 
 Click on the **Resources** tab to access a graph featuring four distinct line graphs, each depicting a different executor status: **Running**, **Idled**, **Allocated**, and **Maximum instances**. 
 
