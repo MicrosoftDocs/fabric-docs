@@ -1,5 +1,5 @@
 ---
-title: Stream Oracle CDC data to RTI Eventstream Kafka endpoint with GoldenGate 
+title: Stream Oracle CDC data to RTI Eventstream Kafka endpoint with Oracle GoldenGate 
 description: Learn how to stream real-time events from Oracle CDC data to Eventstream using the Kafka endpoint with GoldenGate.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -14,14 +14,14 @@ ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream the change data capture events from my Oracle DB using Fabric event streams.
 ---
 
-# Stream Oracle CDC Data to RTI Eventstream Kafka Endpoint with GoldenGate
+# Stream Oracle CDC Data to RTI Eventstream Kafka Endpoint with Oracle GoldenGate
 
 In this tutorial, you learn how to use Oracle GoldenGate (OGG) to extract and replicate Oracle database CDC (change data capture) data to Microsoft Fabric Real-Time Intelligence using the Kafka endpoint offered from an Eventstream’s custom endpoint source. This setup allows for real-time processing of Oracle CDC data and enables sending it to various destinations within Fabric, such as Eventhouse, Reflex, Derived stream, or custom endpoint destination for further analysis.
 
 :::image type="content" source="./media/stream-oracle-data-to-eventstream/data-flow.png" alt-text="Screenshot that shows how to connect oracle cdc to eventstream." lightbox="./media/stream-oracle-data-to-eventstream/data-flow.png" :::
 
 
-## In this tutorial, you will:
+In this tutorial, you will:
 
 > [!div class="checklist"]
 >
@@ -32,7 +32,7 @@ In this tutorial, you learn how to use Oracle GoldenGate (OGG) to extract and re
 > - Configure OGG Big Data to replicate the CDC data to Eventstream’s Kafka endpoint.
 > - Validate the entire end-to-end flow from Oracle to Eventstream.
 
-## Prerequisites:
+## Prerequisites
 - Get access to a workspace with **Contributor** or higher permissions where your eventstream is located.
 - Preferred shell: Windows, Linux, or [Azure Shell](https://shell.azure.com/).
 - Familiarity with Unix editors like `vi` or `vim`, and a basic understanding of X Server.
@@ -60,7 +60,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
     ```
 
 1. Create the network resources that are required for this tutorial:
-    1. reate a virtual network (VNET) which is used for the virtual machines in this tutorial:
+    1. reate a virtual network (virtual network) which is used for the virtual machines in this tutorial:
         ```bash
         $ az network vnet create --name oggVnet --resource-group esoggcdcrg --address-prefixes "10.0.0.0/16" --subnet-name oggSubnet1 --subnet-prefixes "10.0.0.0/24"
         ```
@@ -72,7 +72,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
         ```bash
         $ az network nsg rule create --resource-group esoggcdcrg --nsg-name oggVnetNSG --name oggAllowVnet --protocol '*' --direction inbound --priority 3400 --source-address-prefix 'VirtualNetwork' --source-port-range '*' --destination-address-prefix 'VirtualNetwork' --destination-port-range '*' --access allow
         ```
-    1. Create NSG rule to allow RDP connection to connect the windows VM. It will be used to access the windows VM remotely from your local windows machine:
+    1. Create NSG rule to allow RDP connection to connect the windows VM. It is used to access the windows VM remotely from your local windows machine:
         ```bash
         $ az network nsg rule create --resource-group esoggcdcrg --nsg-name oggAllowRDP --protocol '*' --direction inbound --priority 3410 --source-address-prefix '*' --source-port-range '*' --destination-address-prefix '*' --destination-port-range '3389' --access allow
         ```
@@ -92,7 +92,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
 
 ### Create and Configure X Server VM
 
-To create the Oracle database, it requires to use SSH to login to the virtual machine that was created in the previous step. Because the NSG rule defined before denies all inbound connections but allows connections within the virtual network and RDP 3389 port, a Windows virtual machine is created to connect to the Oracle virtual machine. This Windows virtual machine is also used to host the X server which is to receive the graphical installation interface when installing the GoldenGate core application on Oracle VM later.
+To create the Oracle database, it requires to use SSH to log in to the virtual machine that was created in the previous step. Because the NSG rule defined before denies all inbound connections but allows connections within the virtual network and RDP 3389 port, a Windows virtual machine is created to connect to the Oracle virtual machine. This Windows virtual machine is also used to host the X server which is to receive the graphical installation interface when installing the GoldenGate core application on Oracle VM later.
 
 1. Replace your password and run the following command to create a Windows workstation VM where we deploy X Server.
     ```bash
@@ -110,7 +110,7 @@ To create the Oracle database, it requires to use SSH to login to the virtual ma
 
    :::image type="content" source="./media/stream-oracle-data-to-eventstream/install-ubantu.png" alt-text="Screenshot that shows how to install the WSL on the windows VM." lightbox="./media/stream-oracle-data-to-eventstream/install-ubantu.png" :::
 
-1. You may need to download the private key for SSH sign in on oggXServer from the oggVM. After the key is downloaded, use this key (move this key to your WSL home .ssh directory) to login:
+1. You may need to download the private key for SSH sign in on oggXServer from the oggVM. After the key is downloaded, use this key (move this key to your WSL home .ssh directory) to log in:
     ```bash
     $ ssh -i ~/.ssh/id_rsa.pem azureuser@10.0.0.4
     ```
@@ -123,9 +123,9 @@ To create the Oracle database, it requires to use SSH to login to the virtual ma
 
 ### Create the Oracle Database
 
-With the completion of the above, you should be able to login to the Oracle VM on the X server windows VM (oggXServer) with SSH. Follow these steps to get the Oracle database created.
+With the completion of the above, you should be able to log in to the Oracle VM on the X server windows VM (oggXServer) with SSH. Follow these steps to get the Oracle database created.
 
-1. Use SSH to login to Oracle VM (oggVM).
+1. Use SSH to log in to Oracle VM (oggVM).
     ```bash
     $ chmod 400 ~/.ssh/oggVM.pem
     $ ssh -i ~/.ssh/oggVM.pem azureuser@10.0.0.4
@@ -206,17 +206,17 @@ In this section, you learn how to download the Oracle GoldenGate Core Applicatio
 
 1. Complete the configuration by launching the **XLAUNCH** application from the Start menu. Make sure to select **No Access Control**.
    
-   :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch1.png" alt-text="Screenshot that shows the first step to configure xlaunch.":::
+   :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch-1.png" alt-text="Screenshot that shows the first step to configure xlaunch.":::
 
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch2.png" alt-text="Screenshot that shows the second step to configure xlaunch.":::
+    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch-2.png" alt-text="Screenshot that shows the second step to configure xlaunch.":::
 
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch3.png" alt-text="Screenshot that shows the third step to configure xlaunch.":::
+    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch-3.png" alt-text="Screenshot that shows the third step to configure xlaunch.":::
 
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch4.png" alt-text="Screenshot that shows the last step to configure xlaunch.":::
+    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch-4.png" alt-text="Screenshot that shows the last step to configure xlaunch.":::
 
 ### Install Oracle GoldenGate Core Application on oggVM
 
-All the operations in this section are performed on Oracle VM (oggVM). So, Use SSH login to this VM and follow these steps to get it installed.
+All the operations in this section are performed on Oracle VM (oggVM). So, Use SSH sign in to this VM and follow these steps to get it installed.
 
 1. Connect to oggVM with SSH.
     ```bash
@@ -346,7 +346,7 @@ After the Oracle GoldenGate core application is installed, it can be configured 
 
 You should be able to see two tables (TCUSTMER and TCUSTORD) are created and two records are inserted in each of the two tables.
 
-:::image type="content" source="./media/stream-oracle-data-to-eventstream/table-record.png" alt-text="Screenshot that shows the two tables are created and 4 records." lightbox="./media/stream-oracle-data-to-eventstream/table-record.png" :::
+:::image type="content" source="./media/stream-oracle-data-to-eventstream/table-record.png" alt-text="Screenshot that shows the two tables are created and four records." lightbox="./media/stream-oracle-data-to-eventstream/table-record.png" :::
 
 ### Configure and enable the extract
 
@@ -420,7 +420,7 @@ You should be able to see two tables (TCUSTMER and TCUSTORD) are created and two
     ```
 
 1. Smoke test for the configured extract.
-    1. Login DB with test account and insert a record to the table:
+    1. Sign in DB with test account and insert a record to the table:
         ```bash
         $ sqlplus ggtest
         ```
@@ -506,7 +506,7 @@ The Windows VM (oggXServer) is still used to download these software packages an
 
 ### Install the three software packages
 
-To install the three software packages, get them extracted to the individual folders and get the corresponding environment variables configured. All the operations in this section are performed on Oracle VM (oggVM). So, use SSH login to this VM and follow these steps to get them installed.
+To install the three software packages, get them extracted to the individual folders and get the corresponding environment variables configured. All the operations in this section are performed on Oracle VM (oggVM). So, use SSH sign in to this VM and follow these steps to get them installed.
 
 1. Connect to oggVM with SSH.
     ```bash
@@ -557,7 +557,7 @@ Following the normal creation procedures of Eventstream and its custom endpoint 
 
 ### Configure the replicate for Oracle GoldenGate Big Data
 
-All the operations in this section are performed on Oracle VM (oggVM). So, use SSH login to this VM and follow these steps to get it configured.
+All the operations in this section are performed on Oracle VM (oggVM). So, use SSH sign in to this VM and follow these steps to get it configured.
 
 1. Connect to oggVM with SSH if you lost the connection after previous section.
     ```bash
@@ -669,7 +669,7 @@ All the operations in this section are performed on Oracle VM (oggVM). So, use S
 
     :::image type="content" source="./media/stream-oracle-data-to-eventstream/server-key.png" alt-text="Screenshot that shows how to get bootstrap and connection key." lightbox="./media/stream-oracle-data-to-eventstream/server-key.png" :::
 
-8. Login into your GoldenGate instance and start the replicate process.
+8. Sign in into your GoldenGate instance and start the replicate process.
     ```bash
     $ ./ggsci
     GGSCI> START RKAFKA
@@ -690,9 +690,9 @@ All the operations in this section are performed on Oracle VM (oggVM). So, use S
 
 ## Validate the whole E2E flow from Oracle to Eventstream
 
-To validate the whole E2E flow, let’s login to the Oracle database with **ggtest** account to insert a few records and then go to Eventstream to check if the change data flows in.
+To validate the whole E2E flow, let’s sign in to the Oracle database with **ggtest** account to insert a few records and then go to Eventstream to check if the change data flows in.
 
-1. Login Oracle DB with test account to insert a few new records:
+1. Log in Oracle DB with test account to insert a few new records:
     ```bash
     $ sqlplus ggtest
     ```
