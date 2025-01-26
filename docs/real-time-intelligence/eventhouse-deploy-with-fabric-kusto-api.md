@@ -118,10 +118,16 @@ For this step you will utilize the KQL APIs. We would like to do three things
 ```
 import requests
 token_string = mssparkutils.credentials.getToken(f"{queryURI}")
+url = f"{queryURI}/v1/rest/mgmt"
 
+payload = {
+    "csl": '.execute database script with (ContinueOnErrors=true) <| .create-merge table T(a:string, b:string); .alter-merge table T policy retention softdelete = 10d; .alter table T policy caching hot = 3d',
+    "db": f"{DBName}"
+}
 
 header = {'Content-Type':'application/json','Authorization': f'Bearer {token_string}'}
-response = requests.get(url='https://api.fabric.microsoft.com/v1/workspaces', headers=header)
+
+response=requests.post(url,json=payload,header=header)
 ```
 
 Notice that we import the "request" module because this is a KQL API and not a direct Fabric API. This adds a few steps in order to authenticate the response but is still easily accomplished.
