@@ -43,7 +43,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
 
 ### Create Oracle Virtual Machine
 
-1. Open your preferred shell to sign in to your Azure subscription with the [az login](https://learn.microsoft.com/cli/azure/authenticate-azure-cli) command. Then follow the on-screen directions:
+1. Open your preferred shell to sign in to your Azure subscription with the ``az login `` command. Then follow the on-screen directions:
    
    ```bash
    $ az login
@@ -103,7 +103,7 @@ To create the Oracle database, it requires to use SSH to log in to the virtual m
 
    :::image type="content" source="./media/stream-oracle-data-to-eventstream/create-oggxserver.png" alt-text="Screenshot that shows how to create the windows VM." lightbox="./media/stream-oracle-data-to-eventstream/create-oggxserver.png" :::
 
-1. Follow [this guide](https://learn.microsoft.com/windows/wsl/install) to install the WSL on the windows VM (oggXServer) so that SSH can be used to connect to Oracle VM (oggVM). You may also use other SSH tools, like putty to connect as well.
+1. Install the WSL on the windows VM (oggXServer) so that SSH can be used to connect to Oracle VM (oggVM). You may also use other SSH tools, like putty to connect as well.
     ```bash
     PS C:\Users\azureuser> wsl --install -d Ubuntu
     ```
