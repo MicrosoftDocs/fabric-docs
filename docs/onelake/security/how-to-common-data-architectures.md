@@ -52,7 +52,7 @@ Identify the downstream consumers and grant access according to the minimum perm
 
 ### Workspace roles
 
-Workspace role assignments follow the same guidelines for both hub and spoke and data mesh architectures. The job responsibilities table outlines which [workspace role](../../get-started/roles-workspaces.md) to assign to users based on the functions they perform in the workspace.
+Workspace role assignments follow the same guidelines for both hub and spoke and data mesh architectures. The job responsibilities table outlines which [workspace role](../../fundamentals/roles-workspaces.md) to assign to users based on the functions they perform in the workspace.
 
 | Job responsibilities | Workspace role |
 | ---- | --- |
@@ -99,5 +99,5 @@ You can also share data with report consumers by using an [app](/power-bi/consum
 
 - [OneLake data access roles (preview)](./get-started-data-access-roles.md)
 - [OneLake data access control model](./data-access-control-model.md)
-- [Workspace roles](../../get-started/roles-workspaces.md)
-- [Share items](../../get-started/share-items.md)
+- [Workspace roles](../../fundamentals/roles-workspaces.md)
+- [Share items](../../fundamentals/share-items.md)

@@ -26,7 +26,7 @@ For Spark pool considerations, refer to [differences between Azure Synapse Spark
 
 ## Prerequisites
 
-If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 
 ## Option 1: From Spark pool to workspace's default pool
 

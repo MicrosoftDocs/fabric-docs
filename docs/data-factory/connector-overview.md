@@ -21,9 +21,9 @@ Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] offers a 
 
 Before you can set up a connection in Dataflow Gen2 or a data pipeline, the following prerequisites are required:
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Supported data connectors in dataflows
 
