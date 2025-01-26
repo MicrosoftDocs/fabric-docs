@@ -161,7 +161,7 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
-    - name: Monitor Apache Spark Applications Resource Utilization 
+    - name: Monitor Apache Spark applications resource utilization 
       href: monitor-spark-resource-utilization.md
     - name: Monitor run series
       href: apache-spark-monitor-run-series.md
