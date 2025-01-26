@@ -67,7 +67,7 @@ Fabric provides two options to use Azure AI services:
 
 ### Available regions for Azure OpenAI Service
 
-For the list of Azure regions where prebuilt AI services in Fabric are now available, visit the [Available regions](../../get-started/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
+For the list of Azure regions where prebuilt AI services in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
 
 ### Available regions for Text Analytics and Azure AI Translator 
 Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).

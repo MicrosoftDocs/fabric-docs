@@ -18,7 +18,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 ## Prerequisites
 
 * A Microsoft account or a Microsoft Entra user identity.
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Use the publicly available [**help** cluster](https://dataexplorer.azure.com/help) or [create a database](create-database.md).
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Use the publicly available [**help** cluster](https://dataexplorer.azure.com/help) or [create a database](create-database.md).
 
 ## Add a visual to a query
 

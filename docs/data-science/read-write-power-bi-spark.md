@@ -34,7 +34,7 @@ You will also learn how to write data that semantic models can consume.
 
 In this article, we use the _Customer Profitability Sample.pbix_ semantic model. This semantic model references a company manufacturing marketing materials and contains data about products, customers, and corresponding revenue for various business units.
 
-1. From the left pane, select __Workspaces__ and then select the name of your [workspace](../get-started/workspaces.md) to open it.
+1. From the left pane, select __Workspaces__ and then select the name of your [workspace](../fundamentals/workspaces.md) to open it.
 1. Select __Import__ > __Report or Paginated Report__ > __From this computer__ and select the _Customer Profitability Sample.pbix_ semantic model.
 
 :::image type="content" source="media/read-write-power-bi-spark/upload-power-bi-data-to-workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi-spark/upload-power-bi-data-to-workspace.png":::

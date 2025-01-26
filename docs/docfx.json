@@ -77,6 +77,8 @@
                 "enterprise/**/*.yml": "enterprise",
                 "get-started/**/*.yml": "get-started",
                 "get-started/**/*.md": "get-started",
+                "fundamentals/**/*.yml": "get-started",
+                "fundamentals/**/*.md": "get-started",
                 "governance/**/*.md": "governance",
                 "governance/**/*.yml": "governance",
                 "onelake/**/*.md": "onelake",
@@ -115,6 +117,8 @@
                 "enterprise/**/*.yml": "https://ideas.fabric.microsoft.com/",
                 "get-started/**/*.md": "https://ideas.fabric.microsoft.com/",
                 "get-started/**/*.yml": "https://ideas.fabric.microsoft.com/",
+                "fundamentals/**/*.md": "https://ideas.fabric.microsoft.com/",
+                "fundamentals/**/*.yml": "https://ideas.fabric.microsoft.com/",
                 "governance/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=62ac7a81-45f9-ed11-8849-000d3a4ef41d",
                 "governance/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=62ac7a81-45f9-ed11-8849-000d3a4ef41d",
                 "onelake/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=a81db3f3-43be-ed11-83ff-00224827e905",
@@ -145,6 +149,8 @@
                 "enterprise/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "get-started/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "get-started/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "fundamentals/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "fundamentals/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "governance/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "governance/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "onelake/**/*.md": "https://community.fabric.microsoft.com/powerbi",
@@ -158,6 +164,9 @@
             },
             "search.app": {
                 "get-started/**/*.md": [ 
+                    "fabric-powerbi-docs"
+                ],
+                "fundamentals/**/*.md": [ 
                     "fabric-powerbi-docs"
                 ],
                 "admin/**/*.md": [

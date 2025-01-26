@@ -19,7 +19,7 @@ This scenario shows how to integrate Unity Catalog external Delta tables to OneL
 
 Before you connect, you must have:
 
-- A [Fabric workspace](../get-started/create-workspaces.md).
+- A [Fabric workspace](../fundamentals/create-workspaces.md).
 - A [Fabric lakehouse](../data-engineering/tutorial-build-lakehouse.md) in your workspace.
 - [External Unity Catalog Delta tables](/azure/databricks/sql/language-manual/sql-ref-external-tables) created within your Azure Databricks workspace.
 

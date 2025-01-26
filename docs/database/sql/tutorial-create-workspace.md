@@ -20,7 +20,7 @@ Before you can create a database and get further in this tutorial, create a new 
 
 ## Prerequisites
 
-1. You need an existing Fabric capacity. If you don't have one, [start a Fabric trial](../../get-started/fabric-trial.md).
+1. You need an existing Fabric capacity. If you don't have one, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 1. Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
 
 ## Create a workspace
