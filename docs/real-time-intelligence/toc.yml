@@ -299,7 +299,7 @@ items:
   items:
   - name: Copilot for Real-Time Intelligence
     displayName: KQL queryset, kusto query language, natural language
-    href: ../get-started/copilot-real-time-intelligence.md
+    href: ../fundamentals/copilot-real-time-intelligence.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset

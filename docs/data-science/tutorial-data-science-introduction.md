@@ -17,7 +17,7 @@ This set of tutorials demonstrates a sample end-to-end scenario in the Fabric da
 
 
 
-If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
+If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md).
 
 ## Introduction
 

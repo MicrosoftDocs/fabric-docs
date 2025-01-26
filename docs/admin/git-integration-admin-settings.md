@@ -49,7 +49,7 @@ Enable this setting to allow all users, or a specific group of users, to export 
 
 :::image type="content" source="./media/git-integration-admin-settings/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of sensitivity labels switch.":::
 
-Learn more about [sensitivity labels](../get-started/apply-sensitivity-labels.md).
+Learn more about [sensitivity labels](../fundamentals/apply-sensitivity-labels.md).
 
 ## Users can sync workspace items with GitHub repositories
 

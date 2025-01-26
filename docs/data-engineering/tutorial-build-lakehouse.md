@@ -23,7 +23,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 > * Add tables to the semantic model
 > * Build a report
 
-If you don’t have Microsoft Fabric, sign up for a free [trial capacity](../get-started/fabric-trial.md).
+If you don’t have Microsoft Fabric, sign up for a free [trial capacity](../fundamentals/fabric-trial.md).
 
 ## Prerequisites
 

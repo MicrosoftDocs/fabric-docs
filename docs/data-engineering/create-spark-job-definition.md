@@ -20,7 +20,7 @@ In this tutorial, learn how to create a Spark job definition in Microsoft Fabric
 
 Before you get started, you need:
 
-- A Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 
 > [!TIP]
 > To run the Spark job definition item, you must have a main definition file and default lakehouse context. If you don't have a lakehouse, you can create one by following the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).

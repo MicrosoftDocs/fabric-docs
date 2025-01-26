@@ -27,7 +27,7 @@ This article describes how to use the Copy job in Data Factory for Microsoft Fab
 
 Complete the following steps to create a new Copy job:
 
-1. [Create a new workspace](../get-started/create-workspaces.md) or use an existing workspace.
+1. [Create a new workspace](../fundamentals/create-workspaces.md) or use an existing workspace.
 1. Select **+ New Item**, and then choose the **Copy job (preview)** icon to create a new Copy job.
 
    :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job (preview).":::

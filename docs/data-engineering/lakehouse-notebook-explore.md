@@ -19,7 +19,7 @@ In this tutorial, learn how to explore the data in your lakehouse with a noteboo
 
 To get started, you need the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - Read the [Lakehouse overview](lakehouse-overview.md).
 
 ## Open or create a notebook from a lakehouse
