@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 01/22/2025
+ms.date: 01/27/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -23,7 +23,7 @@ Select the **Title** to view more information about that specific known issue.
 |  1005  | Data Engineering | [Git operations and deployment pipelines don't work with lakehouses](known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md) | January 22, 2025 |
 |  991  | Data Factory | [Apache Airflow job creation shows Fabric upgrade message](known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md) | January 13, 2025 |
 |  989  | Data Factory | [Local data access isn't allowed for pipeline using on-premises data gateway](known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md) | January 13, 2025 |
-|  988  | Real-Time Intelligence | [Data activator events aren’t ingested for Reflex events](known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md) | January 13, 2025 |
+|  988  | Real-Time Intelligence | [Data activator events aren't ingested for Reflex events](known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md) | January 13, 2025 |
 |  986  | Power BI | [Direct Lake query cancellation might cancel other queries](known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries.md) | January 7, 2025 |
 |  985  | Power BI | [Direct Lake query cancellation causes model to fall back to DirectQuery](known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md) | January 7, 2025 |
 |  979  | Databases | [SQL databases not available with private link through January 2025](known-issues/known-issue-979-sql-databases-not-available-private-link.md) | January 6, 2025 |
@@ -42,6 +42,7 @@ Select the **Title** to view more information about that specific known issue.
 |  950  | Power BI | [Incorrect column names after column format or aggregation change](known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md) | December 2, 2024 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
+|  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](known-issues/known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
 |  923  | Power BI | [Tenant migrations paused through January 2025](known-issues/known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
@@ -92,7 +93,6 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
-|  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 | January 22, 2025 |
 |  948  | Power BI | [Metrics app timepoint details missing for new P2 capacities](known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md) | November 27, 2024 | Fixed: January 15, 2025 |
 |  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 | Fixed: January 13, 2025 |
 |  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](known-issues/known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |  Fixed: January 13, 2025 |
@@ -103,9 +103,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  447  | Data Warehouse | [Temp tables in Data Warehouse and SQL analytics endpoint](known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md)    |  July 5, 2023  | Fixed: January 6, 2025 |
 |  949  | Power BI | [Power BI Copilot can excessively retry in rare error scenarios](known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md) | November 27, 2024 | Fixed: December 24, 2024 |
 |  808  | Power BI | [Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser](known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md) | August 14, 2024 | Fixed: December 24, 2024 |
-|  927  | Power BI | [PowerPoint add-in and Refresh Report API refresh date appears incorrect](known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md) | November 12, 2024 | Fixed: December 11, 2024 |
-|  916  | Power BI | [Visual doesn't load due to an unexpected error](known-issues/known-issue-916-visual-not-load-error.md) | November 7, 2024 | Fixed: December 10, 2024 |
-|  861  | Power BI | [Unable to close organizational app items in left navigation pane](known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md) | September 26, 2024 | Fixed: December 9, 2024 |
 
 ## Related content
 
