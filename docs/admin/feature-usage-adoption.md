@@ -169,6 +169,8 @@ This section lists the report's considerations and limitations.
 * *NA* represents data that isn't available on an audit event. This can happen when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
 * The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
+
+* Workspaces with retention periods longer than 30 days won't appear in the report, but can be seen in the admin portal workspaces menu.
   
 ### Pro and PPU capacities
 
