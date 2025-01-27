@@ -18,9 +18,6 @@ ms.search.form: Eventstreams Tutorials
 
 In this tutorial, you learn how to use Oracle GoldenGate (OGG) to extract and replicate Oracle database CDC (change data capture) data to Microsoft Fabric Real-Time Intelligence using the Kafka endpoint offered from an Eventstream’s custom endpoint source. This setup allows for real-time processing of Oracle CDC data and enables sending it to various destinations within Fabric, such as Eventhouse, Reflex, Derived stream, or custom endpoint destination for further analysis.
 
-:::image type="content" source="./media/stream-oracle-data-to-eventstream/data-flow.png" alt-text="Screenshot that shows how to connect oracle cdc to eventstream." lightbox="./media/stream-oracle-data-to-eventstream/data-flow.png" :::
-
-
 In this tutorial, you will:
 
 > [!div class="checklist"]
@@ -43,7 +40,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
 
 ### Create Oracle Virtual Machine
 
-1. Open your preferred shell to sign in to your Azure subscription with the ``az login `` command. Then follow the on-screen directions:
+1. Open your preferred shell to sign in to your Azure subscription with the ``az login`` command. Then follow the on-screen directions:
    
    ```bash
    $ az login
@@ -60,7 +57,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
     ```
 
 1. Create the network resources that are required for this tutorial:
-    1. reate a virtual network (virtual network) which is used for the virtual machines in this tutorial:
+    1. Create a virtual network (virtual network) which is used for the virtual machines in this tutorial:
         ```bash
         $ az network vnet create --name oggVnet --resource-group esoggcdcrg --address-prefixes "10.0.0.0/16" --subnet-name oggSubnet1 --subnet-prefixes "10.0.0.0/24"
         ```
@@ -108,7 +105,7 @@ To create the Oracle database, it requires to use SSH to log in to the virtual m
     PS C:\Users\azureuser> wsl --install -d Ubuntu
     ```
 
-   :::image type="content" source="./media/stream-oracle-data-to-eventstream/install-ubantu.png" alt-text="Screenshot that shows how to install the WSL on the windows VM." lightbox="./media/stream-oracle-data-to-eventstream/install-ubantu.png" :::
+   :::image type="content" source="./media/stream-oracle-data-to-eventstream/install-ubuntu.png" alt-text="Screenshot that shows how to install the WSL on the windows VM." lightbox="./media/stream-oracle-data-to-eventstream/install-ubuntu.png" :::
 
 1. You may need to download the private key for SSH sign in on oggXServer from the oggVM. After the key is downloaded, use this key (move this key to your WSL home .ssh directory) to log in:
     ```bash
@@ -205,14 +202,6 @@ In this section, you learn how to download the Oracle GoldenGate Core Applicatio
     - Launch "XLAUNCH" application from start menu.
 
 1. Complete the configuration by launching the **XLAUNCH** application from the Start menu. Make sure to select **No Access Control**.
-   
-   :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch-1.png" alt-text="Screenshot that shows the first step to configure xlaunch.":::
-
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch-2.png" alt-text="Screenshot that shows the second step to configure xlaunch.":::
-
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch-3.png" alt-text="Screenshot that shows the third step to configure xlaunch.":::
-
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/configure-xlaunch-4.png" alt-text="Screenshot that shows the last step to configure xlaunch.":::
 
 ### Install Oracle GoldenGate Core Application on oggVM
 
@@ -253,20 +242,12 @@ All the operations in this section are performed on Oracle VM (oggVM). So, Use S
     You should see the Xming server is opened by this installer.
 
 6. Select **Oracle GoldenGate for Oracle Database 21c**. Then select **Next** to continue.
-   
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/goldengate-1.png" alt-text="Screenshot that shows the first step to configure golden gate." lightbox="./media/stream-oracle-data-to-eventstream/goldengate-1.png" :::
 
 7. Choose the software installation path as **/u01/app/oggcore**, make sure **Start Manager** box is selected and select **Next** to continue.
-   
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/goldengate-2.png" alt-text="Screenshot that shows the second step to configure golden gate." lightbox="./media/stream-oracle-data-to-eventstream/goldengate-2.png" :::
 
 8. Select **Install** in the summary step.
-     
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/goldengate-3.png" alt-text="Screenshot that shows the third step to configure golden gate." lightbox="./media/stream-oracle-data-to-eventstream/goldengate-3.png" :::
 
 9. Select Close in the last step.
-   
-    :::image type="content" source="./media/stream-oracle-data-to-eventstream/goldengate-4.png" alt-text="Screenshot that shows the fourth step to configure golden gate." lightbox="./media/stream-oracle-data-to-eventstream/goldengate-4.png" :::
 
 Now, the Oracle GoldenGate core application is successfully installed in the Oracle VM (oggVM).
 
@@ -345,8 +326,6 @@ After the Oracle GoldenGate core application is installed, it can be configured 
     ```
 
 You should be able to see two tables (TCUSTMER and TCUSTORD) are created and two records are inserted in each of the two tables.
-
-:::image type="content" source="./media/stream-oracle-data-to-eventstream/table-record.png" alt-text="Screenshot that shows the two tables are created and four records." lightbox="./media/stream-oracle-data-to-eventstream/table-record.png" :::
 
 ### Configure and enable the extract
 
