@@ -1,5 +1,5 @@
 ---
-title: Stream Oracle CDC data to RTI Eventstream Kafka endpoint with Oracle GoldenGate 
+title: Stream Oracle CDC data to Eventstream Kafka endpoint
 description: Learn how to stream real-time events from Oracle CDC data to Eventstream using the Kafka endpoint with GoldenGate.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -14,7 +14,7 @@ ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream the change data capture events from my Oracle DB using Fabric event streams.
 ---
 
-# Stream Oracle CDC Data to RTI Eventstream Kafka Endpoint with Oracle GoldenGate
+# Stream Oracle CDC Data to Fabric Eventstream Kafka Endpoint with Oracle GoldenGate
 
 In this tutorial, you learn how to use Oracle GoldenGate (OGG) to extract and replicate Oracle database CDC (change data capture) data to Microsoft Fabric Real-Time Intelligence using the Kafka endpoint offered from an Eventstream’s custom endpoint source. This setup allows for real-time processing of Oracle CDC data and enables sending it to various destinations within Fabric, such as Eventhouse, Reflex, Derived stream, or custom endpoint destination for further analysis.
 
@@ -69,7 +69,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
         ```bash
         $ az network nsg rule create --resource-group esoggcdcrg --nsg-name oggVnetNSG --name oggAllowVnet --protocol '*' --direction inbound --priority 3400 --source-address-prefix 'VirtualNetwork' --source-port-range '*' --destination-address-prefix 'VirtualNetwork' --destination-port-range '*' --access allow
         ```
-    1. Create NSG rule to allow RDP connection to connect the windows VM. It is used to access the windows VM remotely from your local windows machine:
+    1. Create NSG rule to allow RDP connection to connect the windows VM. It's used to access the windows VM remotely from your local windows machine:
         ```bash
         $ az network nsg rule create --resource-group esoggcdcrg --nsg-name oggAllowRDP --protocol '*' --direction inbound --priority 3410 --source-address-prefix '*' --source-port-range '*' --destination-address-prefix '*' --destination-port-range '3389' --access allow
         ```
@@ -89,7 +89,7 @@ This section provides instructions on using Azure CLI commands to create an Orac
 
 ### Create and Configure X Server VM
 
-To create the Oracle database, it requires to use SSH to log in to the virtual machine that was created in the previous step. Because the NSG rule defined before denies all inbound connections but allows connections within the virtual network and RDP 3389 port, a Windows virtual machine is created to connect to the Oracle virtual machine. This Windows virtual machine is also used to host the X server which is to receive the graphical installation interface when installing the GoldenGate core application on Oracle VM later.
+To create the Oracle database, it requires to use SSH to sign-in to the virtual machine that was created in the previous step. Because the NSG rule defined before denies all inbound connections but allows connections within the virtual network and RDP 3389 port, a Windows virtual machine is created to connect to the Oracle virtual machine. This Windows virtual machine is also used to host the X server which is to receive the graphical installation interface when installing the GoldenGate core application on Oracle VM later.
 
 1. Replace your password and run the following command to create a Windows workstation VM where we deploy X Server.
     ```bash
@@ -100,14 +100,14 @@ To create the Oracle database, it requires to use SSH to log in to the virtual m
 
    :::image type="content" source="./media/stream-oracle-data-to-eventstream/create-oggxserver.png" alt-text="Screenshot that shows how to create the windows VM." lightbox="./media/stream-oracle-data-to-eventstream/create-oggxserver.png" :::
 
-1. Install the WSL on the windows VM (oggXServer) so that SSH can be used to connect to Oracle VM (oggVM). You may also use other SSH tools, like putty to connect as well.
+1. Install the WSL on the windows VM (oggXServer) so that SSH can be used to connect to Oracle VM (oggVM). You can also use other SSH tools, like putty to connect as well.
     ```bash
     PS C:\Users\azureuser> wsl --install -d Ubuntu
     ```
 
    :::image type="content" source="./media/stream-oracle-data-to-eventstream/install-ubuntu.png" alt-text="Screenshot that shows how to install the WSL on the windows VM." lightbox="./media/stream-oracle-data-to-eventstream/install-ubuntu.png" :::
 
-1. You may need to download the private key for SSH sign in on oggXServer from the oggVM. After the key is downloaded, use this key (move this key to your WSL home .ssh directory) to log in:
+1. You need to download the private key for SSH sign in on oggXServer from the oggVM. After the key is downloaded, use this key (move this key to your WSL home .ssh directory) to sign-in:
     ```bash
     $ ssh -i ~/.ssh/id_rsa.pem azureuser@10.0.0.4
     ```
@@ -120,15 +120,15 @@ To create the Oracle database, it requires to use SSH to log in to the virtual m
 
 ### Create the Oracle Database
 
-With the completion of the above, you should be able to log in to the Oracle VM on the X server windows VM (oggXServer) with SSH. Follow these steps to get the Oracle database created.
+Now, you should be able to sign-in to the Oracle VM on the X server windows VM (oggXServer) with SSH. Follow these steps to get the Oracle database created.
 
-1. Use SSH to log in to Oracle VM (oggVM).
+1. Use SSH to sign-in to Oracle VM (oggVM).
     ```bash
     $ chmod 400 ~/.ssh/oggVM.pem
     $ ssh -i ~/.ssh/oggVM.pem azureuser@10.0.0.4
     ```
 
-1. Change the user to 'oracle'.
+1. Change the user to `oracle`.
     ```bash
     $ sudo su - oracle
     ```
@@ -155,7 +155,7 @@ With the completion of the above, you should be able to log in to the Oracle VM 
     $ lsnrctl start
     ```
 
-By now, the Oracle database has been created. To enable the Oracle CDC for GoldenGate, the archive log needs to be enabled. Follow the steps below to get it enabled.
+By now, the Oracle database has been created. To enable the Oracle CDC for GoldenGate, the archive log needs to be enabled. Follow these steps to get it enabled.
 
 1. Connect to sqlplus:
     ```bash
@@ -671,7 +671,7 @@ All the operations in this section are performed on Oracle VM (oggVM). So, use S
 
 To validate the whole E2E flow, let’s sign in to the Oracle database with **ggtest** account to insert a few records and then go to Eventstream to check if the change data flows in.
 
-1. Log in Oracle DB with test account to insert a few new records:
+1. Sign-in Oracle DB with test account to insert a few new records:
     ```bash
     $ sqlplus ggtest
     ```
