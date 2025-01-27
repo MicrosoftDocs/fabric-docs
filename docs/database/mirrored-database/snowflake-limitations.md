@@ -4,7 +4,7 @@ description: Learn about the limitations of mirrored databases from Snowflake in
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, shaween18
-ms.date: 01/23/2025
+ms.date: 01/27/2025
 ms.topic: conceptual
 ---
 
@@ -14,14 +14,14 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 
 ## Database level limitations
 
-- Any table names and column names with special characters `,;{}()\=` and spaces aren't replicated.
 - If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there's a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
 - Only replicating native tables are supported. Currently, External, Transient, Temporary, Dynamic tables aren't supported.
-- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this capability was enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
+- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. Learn more from [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
+- Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently can't be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over will be determined by taking the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list will not be mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you're prevented from selecting more than 500 tables.
- 
+
 ## Network and firewall
 
 - Currently, Mirroring does not support Snowflake instances behind a virtual network or private networking. If your Snowflake instance is behind a private network, you can't enable Snowflake mirroring.
