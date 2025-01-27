@@ -221,7 +221,7 @@ If the following conditions aren't met, you can't see the deployment pipelines b
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
-* You're an admin of a [workspace](../get-started/create-workspaces.md).
+* You're an admin of a [workspace](../fundamentals/create-workspaces.md).
 
 ### I can't see the pipeline stage tag in my workspace
 

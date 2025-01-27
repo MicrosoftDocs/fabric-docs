@@ -17,7 +17,7 @@ The article is primarily targeted at Fabric administrators, who are responsible 
 
 ## Fabric platform
 
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence (BI). The Fabric platform comprises a series of services and infrastructure components that support the common functionality for all [Fabric experiences](../get-started/microsoft-fabric-overview.md#components-of-microsoft-fabric). Collectively, they offer a comprehensive set of analytics experiences designed to work together seamlessly. Experiences include [Lakehouse](../data-engineering/lakehouse-overview.md), [Data Factory](../data-factory/data-factory-overview.md), [Fabric Data Engineering](../data-engineering/data-engineering-overview.md), [Fabric Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/fundamentals/power-bi-overview), and others.
+[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence (BI). The Fabric platform comprises a series of services and infrastructure components that support the common functionality for all [Fabric experiences](../fundamentals/microsoft-fabric-overview.md#components-of-microsoft-fabric). Collectively, they offer a comprehensive set of analytics experiences designed to work together seamlessly. Experiences include [Lakehouse](../data-engineering/lakehouse-overview.md), [Data Factory](../data-factory/data-factory-overview.md), [Fabric Data Engineering](../data-engineering/data-engineering-overview.md), [Fabric Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/fundamentals/power-bi-overview), and others.
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you benefit from a highly integrated, end-to-end, and easy-to-use product that's designed to simplify your analytics needs. Fabric was designed from the outset to protect sensitive assets.
 
@@ -63,7 +63,7 @@ For performance reasons, Fabric sometimes encapsulates authorization information
 
 In Fabric, a tenant is assigned to a home metadata platform cluster, which is located in a single region that meets the data residency requirements of that region's geography. Tenant metadata, which can include customer data, is stored in this cluster.
 
-Customers can control where their [workspaces](../get-started/workspaces.md) are located. They can choose to locate their workspaces in the same geography as their metadata platform cluster, either explicitly by assigning their workspaces on capacities in that region or implicitly by using Fabric Trial, Power BI Pro, or Power BI Premium Per User [license mode](../get-started/workspaces.md#license-mode). In the latter case, all customer data is stored and processed in this single geography. For more information, see [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
+Customers can control where their [workspaces](../fundamentals/workspaces.md) are located. They can choose to locate their workspaces in the same geography as their metadata platform cluster, either explicitly by assigning their workspaces on capacities in that region or implicitly by using Fabric Trial, Power BI Pro, or Power BI Premium Per User [license mode](../fundamentals/workspaces.md#license-mode). In the latter case, all customer data is stored and processed in this single geography. For more information, see [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
 
 Customers can also create [Multi-Geo capacities](../admin/service-admin-premium-multi-geo.md) located in geographies (geos) other than their home region. In this case, compute and storage (including [OneLake](../onelake/onelake-overview.md) and experience-specific storage) is located in the multi-geo region, however the tenant metadata remains in the home region. Customer data will only be stored and processed in these two geographies. For more information, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
@@ -97,13 +97,13 @@ For more information, see [Fabric and OneLake security](../onelake/security/fabr
 
 ### Workspace security
 
-[Workspaces](../get-started/workspaces.md) represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace by assigning users to [workspace roles](../get-started/roles-workspaces.md).
+[Workspaces](../fundamentals/workspaces.md) represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace by assigning users to [workspace roles](../fundamentals/roles-workspaces.md).
 
 For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md).
 
 ### Item security
 
-Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
+Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../fundamentals/share-items.md) or by managing the permissions of an item.
 
 ## Compliance resources
 

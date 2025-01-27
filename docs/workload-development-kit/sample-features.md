@@ -110,7 +110,7 @@ This section lists some of the Fabric capabilities showcased in the *Jobs* tab.
 
 - **Schedule** - Opens a pane that allows you to schedule a job. The schedule pane includes these sub tabs:
     - **About** - You can edit the name and description of the sample item.
-    - **Sensitivity labels** - Allows you to select a [sensitivity label](../get-started/apply-sensitivity-labels.md) for the sample item.
+    - **Sensitivity labels** - Allows you to select a [sensitivity label](../fundamentals/apply-sensitivity-labels.md) for the sample item.
     - **Endorsement** - Allows you to select an [endorsement](../governance/endorsement-overview.md) for the sample item.
     - **Tags (preview)** - Showcases the ability to add additional functionality to a workload item.
 

@@ -66,4 +66,4 @@ Once you connect your eventstream item to [!INCLUDE [fabric-activator](../includ
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

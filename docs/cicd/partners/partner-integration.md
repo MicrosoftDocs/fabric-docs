@@ -21,7 +21,7 @@ ms.date: 07/29/2024
 
 ## Interop with Fabric OneLake
 
-The primary focus with Interop model is on enabling ISVs to integrate their solutions with the [OneLake Foundation](../../get-started/microsoft-fabric-overview.md). To Interop with Microsoft Fabric, we provide integration using a multitude of connectors in Data Factory and in Real-Time Intelligence, REST APIs for OneLake, shortcuts in OneLake, data sharing across Fabric tenants, and database mirroring.
+The primary focus with Interop model is on enabling ISVs to integrate their solutions with the [OneLake Foundation](../../fundamentals/microsoft-fabric-overview.md). To Interop with Microsoft Fabric, we provide integration using a multitude of connectors in Data Factory and in Real-Time Intelligence, REST APIs for OneLake, shortcuts in OneLake, data sharing across Fabric tenants, and database mirroring.
 
 :::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing different ways to interop with OneLake: APIs, Data Factory, RTI, Multicloud shortcuts, data sharing, and database mirroring.":::
 
