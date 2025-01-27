@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 01/23/2025
+ms.date: 01/27/2025
 ms.topic: troubleshooting
 ms.custom:
   - ignite-2024
@@ -38,6 +38,20 @@ Review limitations documentation for each data source:
 ## Stop replication
 
 When you select **Stop replication**, OneLake files remain as is, but incremental replication stops. You can restart the replication at any time by selecting **Start replication**. You might want to do stop/start replication when resetting the state of replication, after source database changes, or as a troubleshooting tool.  
+
+## Replicate source schema hierarchy
+
+When mirroring data from various types of source databases, your source schema hierarchy is preserved in the mirrored database. This ensures that your data remains consistently organized across different services, allowing you to consume it using the same logic in SQL analytics endpoint, Spark Notebooks, semantic models, and other references to the data.
+
+For mirrored databases created before this capability was enabled, you see the source schema is flattened in the mirrored database, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
+
+If you use API to create/update mirrored database, set value for property `defaultSchema` which indicates whether to replicate the schema hierarchy from the source database. Refer to the definition samples in [Microsoft Fabric mirroring public REST API](mirrored-database-rest-api.md).
+
+## Delta column mapping support
+
+Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`) from your source databases to the mirrored databases. Behind the scene, mirroring writes data into OneLake with Delta column mapping enabled.
+
+For tables with special character in column names that are already under replication before this capabilities was enabled, to include such columns, you need to update the mirrored database settings by removing and re-adding those tables, or stop and restart the mirrored database.
 
 ## Take ownership of a mirrored database
 
