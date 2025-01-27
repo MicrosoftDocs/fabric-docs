@@ -27,7 +27,7 @@
         "docs/real-time-intelligence/.openpublishing.redirection.real-time-intelligence.json",
         "docs/security/.openpublishing.redirection.security.json",
         "docs/workload-development-kit/.openpublishing.redirection.workload-development-kit.json",
-        "docs/workload-development-kit/.openpublishing.redirection.known-issues.json"
+        "docs/known-issues/.openpublishing.redirection.known-issues.json"
       ]
     }
   ],
