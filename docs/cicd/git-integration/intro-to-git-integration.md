@@ -9,7 +9,7 @@ ms.subservice: cicd
 ms.custom:
   - ignite-2024
 ms.topic: overview
-ms.date: 11/17/2024
+ms.date: 12/26/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -30,7 +30,7 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Only a few items are currently supported, but the list of [supported items](#supported-items) is growing.
 
-* Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you're familiar with basic Git concepts.  
+* Read up on basic [Git](/devops/develop/git/what-is-git) and [version control](/devops/develop/git/what-is-version-control) concepts.  
 
 * Read more about the [Git integration process](./git-integration-process.md).
 
@@ -49,7 +49,7 @@ Before you enable Git integration, make sure you review the following privacy st
 The following Git providers are supported:
 
 * [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
-* [GitHub](https://github.com/)
+* [GitHub](https://github.com/) (cloud versions only)
 * [GitHub Enterprise](https://github.com/enterprise)
 
 ## Supported items
@@ -57,15 +57,15 @@ The following Git providers are supported:
 The following items are currently supported:
 
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
-* Dataflows gen2 *(preview)*
-* EventHouse *(preview)*
-* EventStream *(preview)*
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
 * [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
+* [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md) *(preview)*
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
 * Reflex *(preview)*
-* [Reports](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
+* [Reports](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview), or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
 * [Semantic models](./source-code-format.md#semantic-model-files) (except push datasets, live connections to Analysis Services, model v1) *(preview)*
 * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*

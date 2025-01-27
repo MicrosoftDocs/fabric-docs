@@ -60,7 +60,7 @@ Fabric trial capacities can be canceled, be deleted, be purchased, and expire.
 
 ### Cancel a Fabric trial capacity
 
-The Fabric trial capacity lasts 60 days. [Cancel a Fabric capacity trial](../get-started/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial is canceled or expires. Use this article to find helpful information on how to save your data whether you upgrade or not.  
+The Fabric trial capacity lasts 60 days. [Cancel a Fabric capacity trial](../fundamentals/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial is canceled or expires. Use this article to find helpful information on how to save your data whether you upgrade or not.  
 
 ### Delete a Fabric capacity and Fabric trial capacity
 

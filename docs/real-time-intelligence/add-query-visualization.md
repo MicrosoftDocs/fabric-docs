@@ -2,8 +2,8 @@
 title: Add a query visualization in Real-Time Intelligence
 description: Learn how to add a query visualization in Real-Time Intelligence.
 ms.reviewer: mibar
-ms.author: yaschust
-author: yaelschuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -18,7 +18,7 @@ For a full list of available visuals, see [Visualization](/kusto/query/render-op
 ## Prerequisites
 
 * A Microsoft account or a Microsoft Entra user identity.
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Use the publicly available [**help** cluster](https://dataexplorer.azure.com/help) or [create a database](create-database.md).
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Use the publicly available [**help** cluster](https://dataexplorer.azure.com/help) or [create a database](create-database.md).
 
 ## Add a visual to a query
 

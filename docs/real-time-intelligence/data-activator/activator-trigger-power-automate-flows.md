@@ -103,5 +103,5 @@ When your rule activates, it calls your flow, sending it the values of the input
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
-Theou can
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
+

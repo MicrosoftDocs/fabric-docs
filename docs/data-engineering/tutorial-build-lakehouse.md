@@ -18,12 +18,12 @@ ms.date: 07/25/2024
 In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports. In this tutorial, you'll learn to:
 
 > [!div class="checklist"]
-> * Create a lakehouse from the Data Engineering workload
+> * Create a lakehouse in Microsoft Fabric
 > * Download and ingest sample customer data
 > * Add tables to the semantic model
 > * Build a report
 
-If you don’t have a Microsoft Fabric, sign up for a free [trial capacity](../get-started/fabric-trial.md).
+If you don’t have Microsoft Fabric, sign up for a free [trial capacity](../fundamentals/fabric-trial.md).
 
 ## Prerequisites
 
@@ -32,17 +32,13 @@ If you don’t have a Microsoft Fabric, sign up for a free [trial capacity](../g
 
 ## Create a lakehouse
 
-In this section, you create a lakehouse from the Data Engineering experience.
+In this section, you create a lakehouse in Fabric.
 
-1. In [Power BI](https://powerbi.com/), select **Workspaces** from the left-hand menu.
+1. In [Fabric](https://app.fabric.microsoft.com), select **Workspaces** from the navigation bar.
 
-1. To open your workspace, enter its name in the search textbox located at the top and select it from the search results.
+1. To open your workspace, enter its name in the search box located at the top and select it from the search results.
 
-1. From the switcher located at the bottom left, select **Data Engineering**.
-
-   :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screenshot showing where to select the switcher and Data Engineering.":::
-
-1. In the **Data Engineering** screen, select **Lakehouse** to create a lakehouse.
+1. From the workspace, select **New item**, then select **Lakehouse**.
 
 1. In the **New lakehouse** dialog box, enter **wwilakehouse** in the **Name** field.
 
@@ -61,7 +57,7 @@ In this section, you ingest sample customer data into the lakehouse.
 
 1. In the **Home** tab, under **Get data in your lakehouse**, you see options to load data into the lakehouse. Select **New Dataflow Gen2**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\load-data-lakehouse-option.png" alt-text="Screenshot showing where to select New Dataflow Gen2 option to load data into your lakehouse.":::
+   :::image type="content" source="media\tutorial-build-lakehouse\load-data-lakehouse-option.png" alt-text="Screenshot showing where to select New Dataflow Gen2 option to load data into your lakehouse." lightbox="media\tutorial-build-lakehouse\load-data-lakehouse-option.png":::
 
 1. On the new dataflow screen, select **Import from a Text/CSV file**.
 
@@ -100,11 +96,11 @@ In this section, you ingest sample customer data into the lakehouse.
 
    :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot showing where to find the Refresh now icon.":::
 
-1. Once the dataflow is refreshed, select your new lakehouse in the left navigation bar to view the **dimension_customer** Delta table.
+1. Once the dataflow is refreshed, select your new lakehouse in the navigation bar to view the **dimension_customer** Delta table.
 
    :::image type="content" source="media\tutorial-build-lakehouse\open-lakehouse.png" alt-text="Screenshot of navigation panel from which the lakehouse is opened.":::
 
-1. Select the table to preview its data. You can also use the SQL analytics endpoint of the lakehouse to query the data with SQL statements. Select **SQL analytics endpoint** from the **Lakehouse** drop-down menu at the top right of the screen.
+1. Select the table to preview its data. You can also use the SQL analytics endpoint of the lakehouse to query the data with SQL statements. Select **SQL analytics endpoint** from the **Lakehouse** dropdown menu at the top right of the screen.
 
    :::image type="content" source="media\tutorial-build-lakehouse\lakehouse-delta-table.png" alt-text="Screenshot of the Delta table, showing where to select SQL analytics endpoint." lightbox="media\tutorial-build-lakehouse\lakehouse-delta-table.png":::
 
@@ -140,7 +136,7 @@ In this section, you'll build a report from the ingested data.
 
 1. From the semantic model pane, you can view all the tables. You have options to create reports either from scratch, paginated reports, or let Power BI automatically create a report based on your data. For this tutorial, under **Explore this data**, select **Auto-create a report**. In the next tutorial, we create a report from scratch.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report.":::
+   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report." lightbox="media\tutorial-build-lakehouse\dataset-details-create-report.png":::
 
 1. Because the table is a dimension and there are no measures in it, Power BI creates a measure for the row count and aggregates it across different columns, and creates different charts as shown in the following image. You can save this report for the future by selecting **Save** from the top ribbon. You can make more changes to this report to meet your requirements by including or excluding other tables or columns.
 

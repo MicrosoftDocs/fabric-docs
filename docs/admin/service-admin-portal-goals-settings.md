@@ -21,7 +21,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Users in the organization can create and use metrics in Power BI.
 
-To learn more, see [Get started with metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
+To learn more, see [Get started with metrics in Power BI](/power-bi/create-reports/get-started-metrics).
 
 ## Metric sets setting (preview)
 

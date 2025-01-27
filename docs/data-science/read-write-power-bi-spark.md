@@ -8,7 +8,7 @@ reviewer: eisber
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 01/10/2025
 ms.search.form: Read write powerbi
 ---
 
@@ -21,6 +21,10 @@ You will also learn how to write data that semantic models can consume.
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 - Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+
+    - From the left pane, select __Workloads__.
+    - Select __Data Science__.
+
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
 - [!INCLUDE [sempy-notebook-installation](includes/sempy-notebook-installation.md)]
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
@@ -30,14 +34,14 @@ You will also learn how to write data that semantic models can consume.
 
 In this article, we use the _Customer Profitability Sample.pbix_ semantic model. This semantic model references a company manufacturing marketing materials and contains data about products, customers, and corresponding revenue for various business units.
 
-1. Open your [workspace](../get-started/workspaces.md) in Fabric Data Science.
-1. Select **Upload > Browse** and select the _Customer Profitability Sample.pbix_ semantic model.
+1. From the left pane, select __Workspaces__ and then select the name of your [workspace](../fundamentals/workspaces.md) to open it.
+1. Select __Import__ > __Report or Paginated Report__ > __From this computer__ and select the _Customer Profitability Sample.pbix_ semantic model.
 
-:::image type="content" source="media/read-write-power-bi/upload-power-bi-data-to workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi/upload-power-bi-data-to workspace.png":::
+:::image type="content" source="media/read-write-power-bi-spark/upload-power-bi-data-to-workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi-spark/upload-power-bi-data-to-workspace.png":::
 
 Once the upload is done, your workspace has three new artifacts: a Power BI report, a dashboard, and a semantic model named _Customer Profitability Sample_. You use this semantic model for the steps in this article.
 
-:::image type="content" source="media/read-write-power-bi/uploaded-artifacts-in-workspace.png" alt-text="Screenshot showing the items from the Power BI file uploaded into the workspace." lightbox="media/read-write-power-bi/uploaded-artifacts-in-workspace.png":::
+:::image type="content" source="media/read-write-power-bi-spark/uploaded-artifacts-in-workspace.png" alt-text="Screenshot showing the items from the Power BI file uploaded into the workspace." lightbox="media/read-write-power-bi-spark/uploaded-artifacts-in-workspace.png":::
 
 ## Read and write data, using Spark in Python, R, SQL, and Scala
 

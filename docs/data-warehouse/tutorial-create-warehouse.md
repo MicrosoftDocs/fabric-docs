@@ -1,47 +1,44 @@
 ---
-title: Data warehouse tutorial - create a new Warehouse in Microsoft Fabric
-description: In this second tutorial step, after you've created your workspace, learn how to create your first Warehouse in Microsoft Fabric.
+title: "Data warehouse tutorial: Create a Warehouse"
+description: "In this tutorial, learn how to create a Warehouse in Microsoft Fabric."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Tutorial: Create a Warehouse in Microsoft Fabric
+# Tutorial: Create a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Now that you have a workspace, you can create your first [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+In this tutorial, learn how to create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Create your first Warehouse
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete the [Create a workspace](tutorial-create-workspace.md) tutorial.
 
-1. Select **Workspaces** in the navigation menu.
+## Create a warehouse
 
-1. Search for the workspace you created in [Tutorial: Create a Microsoft Fabric workspace](tutorial-create-workspace.md) by typing in the search textbox at the top and selecting your workspace to open it.
+In this task, learn how to create a warehouse.
 
-   :::image type="content" source="media/tutorial-create-warehouse/search-workspaces.png" alt-text="Screenshot of the Workspaces panel, showing where to search for and select a workspace.":::
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-1. Select the **+ New** button to display a full list of available items. From the list of objects to create, choose **Warehouse ** to create a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+1. Select **+ New Item** to display the full list of available item types.
 
-   :::image type="content" source="media/tutorial-create-warehouse/new-show-all.png" alt-text="Screenshot of the workspace screen, showing where to select Warehouse  in the New drop-down menu.":::
+1. From the list, in the **Store data** section, select the **Warehouse** item type.
 
-1. On the **New warehouse** dialog, enter `WideWorldImporters` as the name.
+1. In the **New warehouse** window, enter the name `Wide World Importers`.
 
-<!-- 1. Set the **Sensitivity** to **Public**. -->
+    :::image type="content" source="media/tutorial-create-warehouse/create-new-warehouse.png" alt-text="Screenshot of the New warehouse window, highlighting the entered name." border="false":::
 
-1. Select **Create**.
+1. Select **Create** to provision the warehouse. Provisioning is complete when the **Build a warehouse** landing page appears.
 
-   :::image type="content" source="media/tutorial-create-warehouse/new-warehouse-create.png" alt-text="Screenshot of the New warehouse dialog box, showing where to enter a warehouse name, set the Sensitivity, and select Create.":::
-
-1. When provisioning is complete, the **Build a warehouse** landing page appears.
-
-   :::image type="content" source="media/tutorial-create-warehouse/build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page." lightbox="media/tutorial-create-warehouse/build-a-warehouse.png":::
+   :::image type="content" source="media/tutorial-create-warehouse/build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page." lightbox="media/tutorial-create-warehouse/build-a-warehouse.png" border="false":::
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Ingest data into a Microsoft Fabric data warehouse](tutorial-ingest-data.md)
+> [Tutorial: Ingest data into a Warehouse](tutorial-ingest-data.md)

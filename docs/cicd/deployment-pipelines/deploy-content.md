@@ -9,18 +9,18 @@ ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 08/19/2024
+ms.date: 01/21/2025
 #customer intent: As a developer, I want to learn how to deploy content to an empty or nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool so that I can manage my content lifecycle.
 ---
 
 # Deploy content using Deployment pipelines
 
-Any [licensed user](../../enterprise/licenses.md) who's at least a contributor in the source workspace, can deploy content to an empty stage (a stage that doesn't contain content). The workspace must reside on a capacity for the deployment to be completed.
+Any [licensed user](../../enterprise/licenses.md) who's at least a contributor in the source stage, can deploy content to an unassigned target stage. For deploying to an existing target stage, the user must also be at least a contributor in the target stage.
 
 You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines) to programmatically perform deployments. For more information, see [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
-> [!IMPORTANT]
-> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
+> [!NOTE]
+> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
 
 ## Deploy to an empty stage
 
@@ -44,18 +44,18 @@ After you choose how to deploy your content, you can [Review your deployment and
 
 #### Deploy all content
 
-##### [New deploy method](#tab/new)
+##### [New deploy method](#tab/new-ui)
 
 1. Select the target stage.
 1. From the drop-down menu, choose an adjacent stage to deploy from.
 1. Select the items you want to deploy.
-1. Select the **Deploy** button. 
+1. Select the **Deploy** button.
 
 :::image type="content" source="media/deploy-content/deploy-new.png" alt-text="A screenshot showing how to deploy content from the development to test stage in the new deployment pipeline interface." lightbox="media/deploy-content/deploy-new.png":::
 
 The deployment process creates a duplicate workspace in the target stage. This workspace includes all the selected content from the source stage.
 
-##### [Original deploy method](#tab/old)
+##### [Original deploy method](#tab/old-ui)
 
 Select the stage to deploy from and then select the deployment button. The deployment process creates a duplicate workspace in the target stage. This workspace includes all the content existing in the current stage.
 
@@ -71,7 +71,7 @@ Fabric items are often related to or dependent on other items. Dashboards, repor
 
 If you don't want to deploy everything from that stage, you can select only specific items for deployment. Since dashboards, reports, semantic models, and dataflows can have dependencies, you can use the select related button to see all the items that the selected item is dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
-##### [New selective deploy method](#tab/new)
+##### [New selective deploy method](#tab/new-ui)
 
  The deploy button shows the number of items selected for deployment.
 
@@ -79,7 +79,7 @@ Unsupported items are also shown in this list. Unsupported items can't be deploy
 
 :::image type="content" source="media/deploy-content/selective-deploy-new.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines." lightbox="media/deploy-content/selective-deploy-new.png":::
 
-##### [Original selective deploy method](#tab/old)
+##### [Original selective deploy method](#tab/old-ui)
 
 :::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
 

@@ -125,7 +125,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
 > [!NOTE]
 >
-> Only workspace admins can manage configurations. The values will apply to notebooks and Spark job definitions that attach to Workspace Settings. For more details, see [Fabric Workspace Settings](../get-started/workspaces.md).
+> Only workspace admins can manage configurations. The values will apply to notebooks and Spark job definitions that attach to Workspace Settings. For more details, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 
 ## Submit an Apache Spark application and view the logs and metrics

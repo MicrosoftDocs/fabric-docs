@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/03/2024
+ms.date: 12/12/2024
 ---
 
 # Operation list
@@ -504,7 +504,7 @@ The following operations are available in the audit logs.
 | Request Copilot features in   Fabric | RequestCopilot | Request Copilot features in Fabric |
 | Request OpenAI by Spark code   in Fabric | RequestSparkCodeFirst | Request OpenAI by Spark code in Fabric |
 | Request OpenAI model | RequestOpenAI | Request OpenAI models in ML workload.  |
-| Requested Power BI dataflow refresh | RequestDataflowRefresh | Not currently used  |
+| Requested Power BI dataflow refresh | RequestDataflowRefresh | A dataflow refresh starts. The refresh can be scheduled or triggered manually from the portal or an API.  |
 | Requested Power BI semantic model refresh from external app | RefreshDatasetFromExternalApplication | Not currently used  |
 | Requested Power BI semantic model refresh | RefreshDataset |   |
 | Requested SAS token for Power BI storage | AcquireStorageSASFromExternalApplication | Not currently used  |

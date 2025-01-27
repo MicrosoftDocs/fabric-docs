@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Delete data activity to look up data from a data source
@@ -21,7 +21,7 @@ You can use the Delete Activity in Data Factory to delete files or folders from 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a lookup activity to a pipeline with UI

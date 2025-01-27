@@ -44,7 +44,7 @@ Read the full version of the release notes for a specific Apache Spark version b
 
 Encountering a 404 error with the message 'Operation failed: The specified path doesn't exist' is a common issue when performing parallel data insertions into the same table using an SQL INSERT INTO query. This error can result in data loss. Our new feature, the File Output Committer Algorithm, resolves this issue, allowing customers to perform parallel data insertion seamlessly.
 
-To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/3.4.0/configuration.html#:~:text=spark.sql.sources.partitionOverwriteMode).
+To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/latest/configuration.html#runtime-sql-configuration).
 
 #### Smart reads, which skip files from failed jobs
 
@@ -64,7 +64,7 @@ Here are the visible changes:
 
 ## Migration guide from Runtime 1.1 to Runtime 1.2
 
-When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://spark.apache.org/docs/3.4.0/migration-guide.html).
+When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://archive.apache.org/dist/spark/docs/3.4.0/migration-guide.html).
 
 ## New features and improvements of Delta Lake 2.4
 [Delta Lake](https://delta.io/) is an [open source project](https://github.com/delta-io/delta) that enables building a lakehouse architecture on top of data lakes. Delta Lake provides [ACID transactions](https://docs.delta.io/2.4.0/concurrency-control.html), scalable metadata handling, and unifies [streaming](https://docs.delta.io/2.4.0/delta-streaming.html) and [batch](https://docs.delta.io/2.4.0/delta-batch.html) data processing on top of existing data lakes.

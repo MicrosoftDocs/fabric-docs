@@ -4,7 +4,7 @@ description: Learn what tools to use to analyze database performance, utilizatio
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: amar.patil # Microsoft alias
-ms.date: 11/01/2024
+ms.date: 01/22/2025
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
@@ -21,6 +21,9 @@ This article includes tools and methods to monitor your SQL database in Microsof
 The [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) provides visibility into capacity usage of each database allowing you to see the compute charges for all user-generated and system-generated T-SQL statements within a database. 
 
 For more information on monitoring capacity usage, see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md).
+
+> [!TIP]
+> In this blog post, learn how [the capacity metrics app can be used for monitoring usage and consumption of SQL databases in Fabric](https://blog.fabric.microsoft.com/blog/efficiently-monitor-sql-database-usage-and-consumption-in-microsoft-fabric-using-capacity-metrics-app?ft=All).
 
 ## Performance Dashboard
 

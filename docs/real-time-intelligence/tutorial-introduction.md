@@ -2,8 +2,8 @@
 title: Real-Time Intelligence tutorial - Introduction
 description: Get started with Real-Time Intelligence in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: tutorial
 ms.custom:
   - build-2024
@@ -42,7 +42,7 @@ Specifically, in this tutorial, you learn how to:
 
 ## Prerequisites
 
-To successfully complete this tutorial, you need a [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+To successfully complete this tutorial, you need a [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 
 ## Related content
 

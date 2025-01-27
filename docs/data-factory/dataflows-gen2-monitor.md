@@ -6,7 +6,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.author: jeluitwi
 ---
 
@@ -43,7 +43,7 @@ Some times you might need to get a CSV file of your refresh. To get this file, t
 
 ### Reviewing your dataflow refresh from the UI
 
-Once you've determined which dataflow you want to investigate, you can drill down into one of the refreshes by selecting the **Start time** field. This screen provides you with more information about the refresh that was performed. This includes general information about the refresh and a list of tables and activities.
+Once you determined which dataflow you want to investigate, you can drill down into one of the refreshes by selecting the **Start time** field. This screen provides you with more information about the refresh that was performed. This includes general information about the refresh and a list of tables and activities.
 
 :::image type="content" source="./media/dataflows-gen2-monitor/refresh-details.png" alt-text="Screenshot showing an overview of the refresh history." lightbox="./media/dataflows-gen2-monitor/refresh-details.png":::
 
@@ -57,11 +57,11 @@ In short, this overview provides you:
 - Session ID
 - Dataflow ID
 
-The **Tables** section reflects all the entities you've enabled load for in your dataflow. Meaning that those tables shown here are being loaded into the staging area of your dataflow. These tables are the entities you can access using the Power Query Dataflow connector in Power BI, Excel, or dataflows. You can select any of the listed table names to view the details of this specific table. Once you select the name, you arrive at the following **Details** screen:
+The **Tables** section reflects all the entities for which you enable loading in your dataflow. Meaning that those tables shown here are being loaded into the staging area of your dataflow. These tables are the entities you can access using the Power Query Dataflow connector in Power BI, Excel, or dataflows. You can select any of the listed table names to view the details of this specific table. Once you select the name, you arrive at the following **Details** screen:
 
 :::image type="content" source="./media/dataflows-gen2-monitor/table-details.png" alt-text="Screenshot of the Details screen, showing the details of the specific table." lightbox="./media/dataflows-gen2-monitor/table-details.png":::
 
-The **Activities** section reflects all the actions that have taken place during the refresh, for example loading data to your output destination. This table also allows you to dive deeper into the details of the specific activity. By selecting the name of the activity, you arrive at the following **Details** screen:
+The **Activities** section reflects all the actions that took place during the refresh, for example loading data to your output destination. This table also allows you to dive deeper into the details of the specific activity. By selecting the name of the activity, you arrive at the following **Details** screen:
 
 :::image type="content" source="./media/dataflows-gen2-monitor/activity-details.png" alt-text="Screenshot of the Details screen, showing the details of the specific activity." lightbox="./media/dataflows-gen2-monitor/activity-details.png":::
 
@@ -75,7 +75,7 @@ This screen gives you more clarity in what happened during the activity. For exa
     - Endpoints contacted
     - Volume processed by the connector
 
-To investigate what happened, you can drill down into an activity or table. The following screen provides you with general information about the refresh and errors. If you're drilling into an activity, you are presented with how much data got processed and sent to your output destination.
+To investigate what happened, you can drill down into an activity or table. The following screen provides you with general information about the refresh and errors. If you're drilling into an activity, you're presented with how much data got processed and sent to your output destination.
 
 ## Monitoring hub
 

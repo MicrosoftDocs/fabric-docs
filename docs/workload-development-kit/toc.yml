@@ -4,31 +4,45 @@ items:
 - name: Overview
   items:
   - name: Development Kit overview
-    href: development-kit-overview.md
-  - name: Monetize your workload
-    href: monetization.md  
-  - name: Publish your workload
-    href: publish-workload-flow.md
-  - name: Publishing requirements
-    href: publish-workload-requirements.md    
+    href: development-kit-overview.md  
 - name: Get started
   items:
   - name: Set up your environment
     href: environment-setup.md
-  - name: QuickStart - Run a workload sample
+  - name: Quickstart - Run a workload sample
     href: quickstart-sample.md
+  - name: Understand the development sample
+    href: sample-features.md    
+- name: Development cycle
+  items:
+  - name: Frontend implementation guide
+    href: extensibility-front-end.md
+  - name: Backend implementation guide
+    href: extensibility-back-end.md 
+- name: Authentication
+  items:
+  - name: Authentication overview
+    href: authentication-concept.md  
+  - name: Authentication guidelines and deep dive
+    href: authentication-guidelines.md      
+  - name: Backend authentication
+    href: back-end-authentication.md
+  - name: Set up authentication
+    href: authentication-tutorial.md        
+  - name: Authentication JavaScript API
+    href: authentication-javascript-api.md      
+- name: Tutorials
+  items:
+  - name: Azure web app deployment
+    href: azure-web-app-deployment-tutorial.md
+  - name: Working in cloud mode
+    href: workload-cloud-setup.md       
 - name: Concept
   items:
+  - name: Communication guide
+    href: workload-communication.md  
   - name: Workload environment
     href: workload-environment.md
-  - name: Authentication
-    items:
-    - name: Authentication overview
-      href: authentication-concept.md
-    - name: Backend authentication
-      href: back-end-authentication.md
-    - name: Authentication JavaScript API
-      href: authentication-javascript-api.md         
   - name: Item lifecycle
     href: item-lifecycle.md
   - name: User permissions
@@ -39,36 +53,28 @@ items:
     href: backend-manifest.md
   - name: The workload frontend manifests
     href: frontend-manifests.md
-- name: Tutorials
+- name: How-To
   items:
   - name: Add workloads
-    href: more-workloads-add.md
+    href: more-workloads-add.md  
   - name: Upload and manage a workload
-    href: manage-workload.md
-  - name: Publish a workload to Fabric
-    href: publish-workload.md
-  - name: Set up authentication
-    href: authentication-tutorial.md
-  - name: Authentication guidelines and deep dive
-    href: authentication-guidelines.md
-  - name: Frontend implementation guide
-    href: extensibility-front-end.md
-  - name: Backend implementation guide
-    href: extensibility-back-end.md
-  - name: Communication guide
-    href: workload-communication.md
-  - name: Azure web app deployment
-    href: azure-web-app-deployment-tutorial.md
-  - name: Working in cloud mode
-    href: workload-cloud-setup.md
+    href: manage-workload.md   
   - name: Onboard to the monitoring hub
-    href: monitoring-hub.md
-  - name: How-To
-    items:
-    - name: Onboard to Multitasking
-      href: multitasking.md
-    - name: Localize your workload
-      href: localization.md
+    href: monitoring-hub.md         
+  - name: Onboard to Multitasking
+    href: multitasking.md
+  - name: Localize your workload
+    href: localization.md
+- name: Publish
+  items:
+  - name: Publishing requirements
+    href: publish-workload-requirements.md    
+  - name: Publish your workload
+    href: publish-workload-flow.md 
+  - name: Publish a workload to Fabric
+    href: publish-workload.md     
+  - name: Monetize your workload
+    href: monetization.md         
 - name: Reference
   items:
    - name: Frequently asked questions

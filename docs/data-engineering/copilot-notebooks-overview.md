@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - copilot-learning-hub
-ms.date: 10/30/2024
+ms.date: 01/09/2025
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -35,14 +35,14 @@ With Copilot for Data Science and Data Engineering, you can chat with an AI assi
 
 First select the Copilot icon in the notebooks ribbon. The Copilot chat panel opens, and a new cell appears at the top of your notebook. This cell must run each time a Spark session loads in a Fabric notebook. Otherwise, the Copilot experience won't properly operate. We are in the process of evaluating other mechanisms for handling this required initialization in future releases.
 
-:::image type="content" source="media/copilot-notebooks-overview/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot ribbon." lightbox="media/copilot-notebooks-overview/copilot-ribbon-button.png":::
+:::image type="content" source="media/copilot-notebooks-overview/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot button in the ribbon." lightbox="media/copilot-notebooks-overview/copilot-ribbon-button.png":::
 
 Run the cell at the top of the notebook, with this code:
 
-```
+```python
 #Run this cell to install the required packages for Copilot
-%pip install https://aka.ms/chat-magics-0.0.0-py3-none-any.whl
-%load_ext chat_magics
+%load_ext dscopilot_installer
+%activate_dscopilot
 ```
 
 After the cell successfully executes, you can use Copilot. You must rerun the cell at the top of the notebook each time your session in the notebook closes.

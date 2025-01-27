@@ -60,7 +60,7 @@ This section is divided into Fabric experience. Each experience had a table that
 
 ### Copilot in Fabric
 
-[Copilot](../get-started/copilot-fabric-overview.md) operations are listed in this table. You can find the consumption rates for Copilot in [Copilot consumption](../get-started/copilot-fabric-consumption.md).
+[Copilot](../fundamentals/copilot-fabric-overview.md) operations are listed in this table. You can find the consumption rates for Copilot in [Copilot consumption](../fundamentals/copilot-fabric-consumption.md).
 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
@@ -189,7 +189,7 @@ You can find the consumption rates for KQL Database in [KQL Database consumption
 
 | Operation   | Description                                          | Item                         | Azure billing meter | Type        |
 | ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
-| KustoUpTime | Measure of the time that the KQL database is Active  | KQL Database or KQL Queryset | KQL Database Capacity Usage CU         | Interactive |
+| Eventhouse UpTime | Measure of the time that Event House is Active  | Event House | Eventhouse Capacity Usage CU         | Interactive |
 
 ### Spark
 

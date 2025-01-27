@@ -6,7 +6,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024   
 ms.author: jeluitwi
 ---
 
@@ -18,13 +18,11 @@ In this tutorial, you build a data pipeline to move OData from a Northwind sourc
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../get-started/create-workspaces.md) that isn't the default My Workspace.
+- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../fundamentals/create-workspaces.md) that isn't the default My Workspace.
 
 ## Create a Lakehouse
 
 To start, you first need to create a lakehouse. A lakehouse is a data lake that is optimized for analytics. In this tutorial, you create a lakehouse that's used as a destination for the dataflow.
-
-1. Switch to the **Data Engineering** experience.
 
 1. Go to your Fabric enabled workspace.
 
@@ -32,7 +30,7 @@ To start, you first need to create a lakehouse. A lakehouse is a data lake that 
 
 1. Select **Lakehouse** in the create menu.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-lakehouse.png" alt-text="Screenshot of the create menu with Create Lakehouse emphasized.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-lakehouse.png" alt-text="Screenshot of the create menu with Create Lakehouse emphasized." lightbox="media/tutorial-dataflows-gen2-pipeline-activity/create-lakehouse.png":::
 
 1. Enter a **Name** for the lakehouse.
 1. Select **Create**.
@@ -43,15 +41,13 @@ Now you've created a lakehouse and you can now set up the dataflow.
 
 A dataflow is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
 
-1. Switch to the **Data Factory** experience.
-
 1. Go to your Fabric enabled workspace.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace.":::
 
 1. Select **Dataflow Gen2** in the create menu.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-dataflow-gen2.png" alt-text="Screenshot of the Dataflow Gen2 selection under the new menu.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-dataflow-gen2.png" alt-text="Screenshot of the Dataflow Gen2 selection under the new menu." lightbox="media/tutorial-dataflows-gen2-pipeline-activity/create-dataflow-gen2.png":::
 
 1. Ingest the data from the OData source.
 

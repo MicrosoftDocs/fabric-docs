@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -21,7 +21,7 @@ In this tutorial, you build a data pipeline to move a Sample dataset to the Data
 To get started, you must complete the following prerequisites:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 - Make sure you have already created a Data Warehouse. To create it, refer to [Create a Data Warehouse](../data-warehouse/create-warehouse.md)
 
 ## Create a data pipeline

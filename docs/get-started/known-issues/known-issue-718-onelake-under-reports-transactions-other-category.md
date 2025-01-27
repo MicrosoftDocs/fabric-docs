@@ -4,13 +4,13 @@ description: A known issue is posted where OneLake under-reports transactions in
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/30/2024
+ms.date: 12/11/2024
 ms.custom: known-issue-718
 ---
 
 # Known issue - OneLake under-reports transactions in the Other category
 
-OneLake is currently under-reporting **OneLake Other Operations Via Redirect** transactions. HTTP 400 errors other than 401 and 403 errors aren't billed. When we fix the issue, your usage for the **OneLake Other Operations Via Redirect** transactions might go up. If your usage exceeds your capacity limits, your capacity might be throttled.
+OneLake is currently under-reporting **OneLake Other Operations Via Redirect** transactions that occur when a lakehouse automatically detects Delta tables. HTTP 400 errors other than 401 and 403 errors aren't billed. When we fix the issue, your usage for the **OneLake Other Operations Via Redirect** transactions might go up. If your usage exceeds your capacity limits, your capacity might be throttled.
 
 **Status:** Open
 

@@ -11,7 +11,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
 ms.search.form: product-data-integration, Data_Factory_Overview, product-data-factory
-ms.date: 12/05/2024
+ms.date: 12/18/2024
 ---
 
 # What is Data Factory in Microsoft Fabric?

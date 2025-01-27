@@ -13,9 +13,9 @@ metadata:
     - ignite-2024
   ms.topic: landing-page
   ms.collection: collection
-  author: YaelSchuster
-  ms.author: yaschust
-  ms.date: 11/19/2024
+  author: shsagir
+  ms.author: shsagir
+  ms.date: 01/22/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -32,7 +32,16 @@ landingContent:
             url: real-time-intelligence-compare.md
           - text: Real-Time Intelligence tutorial
             url: tutorial-introduction.md
-
+      - linkListType: concept
+        links:
+          - text: Activator
+            url: data-activator/activator-introduction.md
+          - text: Eventhouse 
+            url: eventhouse.md
+          - text: Real-Time hub
+            url: ../real-time-hub/real-time-hub-overview.md
+          - text: Eventstreams
+            url: event-streams/overview.md
 
   # Card
   - title: Real-Time hub

@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
-ms.date: 11/19/2024
+ms.date: 01/06/2024
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
 ---
 
@@ -49,7 +49,7 @@ Data is shared across tenants using Fabric-internal security mechanisms. The sha
 
 With this understanding in mind, be aware of the following:
 
-* The sharer can't control who has access to the data in the consumer's tenant.
+* The sharer can't control who has access to the data in the consumer's tenant. For more information about how access control applied in the consumer tenant is enforced, see [Information protection in Microsoft Fabric and Power BI: Access control](/fabric/governance/information-protection#access-control).
 
 * The consumer can grant access to the data to anyone, even guest users from outside the consumer's organization.
 

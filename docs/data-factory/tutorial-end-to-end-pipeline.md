@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Module 1: Create a pipeline with Data Factory
@@ -23,15 +23,15 @@ The high-level steps in module 1 are as follows:
 ## Create a data pipeline
 
 1. A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription is required. [Create a free account](https://azure.microsoft.com/free/).
-1. Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+1. Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 1. Sign into [Power BI](https://app.powerbi.com/).
 
 
-1. Select the default Power BI icon at the bottom left of the screen, and switch to the **Data Factory** experience.
+1. Select the default Power BI icon at the bottom left of the screen, and select **Fabric**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/switch-data-factory.png" alt-text="Screenshot showing the selection of the Data Factory experience.":::
 
-1. Select **Data pipeline** and provide a pipeline name. Then select **Create**.
+1. Select a workspace from the **Workspaces** tab, then select **+ New item**, and choose **Data pipeline**. Provide a pipeline name. Then select **Create**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new data pipeline selected.":::
 

@@ -17,9 +17,9 @@ Every Fabric SQL database is created with a paired SQL analytics endpoint. This 
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../get-started/workspaces.md) or use an existing Fabric workspace.
+- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 - Consider loading the [AdventureWorks sample data](load-adventureworks-sample-data.md) in a new SQL database.
 
@@ -48,7 +48,7 @@ The SQL analytics endpoint can be queried with T-SQL multiple ways:
 1. Select the context menu (`...`) for any table, and select **Properties** from the menu. Here you can see the OneLake information and `ABFS` file path.
 1. Close the **Properties** page and select the context menu (`...`) for one the tables again.
 1. Select **New Query** and **SELECT TOP 100**. Run the query to see the top 100 rows of data, queried from the SQL analytics endpoint, a copy of the database in OneLake.
-1. If you have other databases in your workspace, you can also run queries with cross-database joins. Select the **+ Warehouse** button in the **Object Explorer** to add the SQL analytics endpoint for another database. You can write T-SQL queries similar to the following that join different [Fabric data stores](../../get-started/decision-guide-data-store.md) together:
+1. If you have other databases in your workspace, you can also run queries with cross-database joins. Select the **+ Warehouse** button in the **Object Explorer** to add the SQL analytics endpoint for another database. You can write T-SQL queries similar to the following that join different [Fabric data stores](../../fundamentals/decision-guide-data-store.md) together:
     ```sql
     SELECT TOP (100) [a.AccountID], 
                 [a.Account_Name], 

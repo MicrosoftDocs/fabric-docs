@@ -2,8 +2,8 @@
 title: Vector database
 description: Learn about what vector databases are and how you can use Eventhouse to store and query vector data in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: concept-article
 ms.custom:
   - ignite-2024

@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Get Metadata activity to look up data from a data source
@@ -19,7 +19,7 @@ You can use the Get Metadata activity to retrieve the metadata of any data in a 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Get Metadata activity to a pipeline with UI

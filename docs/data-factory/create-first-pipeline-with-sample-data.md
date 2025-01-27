@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -21,18 +21,18 @@ In this quickstart, you build a data pipeline to move a Sample dataset to the La
 To get started, you must complete the following prerequisites:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a data pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
-1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
+1. Select the Power BI icon in the bottom left of the screen, then select **Fabric** to open homepage of Microsoft Fabric.
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
+1. Select **New item** and choose Data pipeline, then input a pipeline name to create a new pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
   :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
@@ -53,7 +53,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data.png" alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the Public Holidays sample data selected.":::
 
-1. On the **Connect to data source** page of the assistant, the preview for the **Public Holidays** sample data is displayed, and then click **Next**.
+1. On the **Connect to data source** page of the assistant, the preview for the **Public Holidays** sample data is displayed, and then select **Next**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data-preview.png" alt-text="Screenshot showing the sample data for the Public Holidays sample data.":::
 
@@ -95,7 +95,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details.png" alt-text="Screenshot showing the run details window.":::
 
-1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes.
+1. You can also schedule the pipeline to run with a specific frequency as required. Here's an example showing a schedule for the pipeline set to run every 15 minutes.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 

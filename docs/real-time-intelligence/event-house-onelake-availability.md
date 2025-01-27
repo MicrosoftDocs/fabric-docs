@@ -2,8 +2,8 @@
 title: Eventhouse OneLake Availability
 description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -36,7 +36,7 @@ The following table describes the behavior of your KQL database and tables when 
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data
 
 ## Turn on OneLake availability

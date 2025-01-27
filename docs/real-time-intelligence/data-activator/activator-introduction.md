@@ -61,4 +61,4 @@ Properties are useful when you want to reuse logic across multiple activators. Y
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

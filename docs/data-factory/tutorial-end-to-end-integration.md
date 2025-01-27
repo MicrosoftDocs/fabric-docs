@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Module 3: Automate and send notifications with Data Factory
 
-You'll complete this module in 10 minutes to send an email notifying you when all the jobs in a pipeline are complete, and configure it to run on a scheduled basis.
+You complete this module in 10 minutes to send an email notifying you when all the jobs in a pipeline are complete, and configure it to run on a scheduled basis.
 
 In this module you learn how to:
 - Add an Office 365 Outlook activity to send the output of a Copy activity by email.

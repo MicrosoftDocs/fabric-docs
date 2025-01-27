@@ -10,4 +10,4 @@ ms.custom:
 ms.date: 10/19/2023
 ---
 > [!IMPORTANT]
-> This feature is in [preview](../get-started/preview.md).
+> This feature is in [preview](../fundamentals/preview.md).

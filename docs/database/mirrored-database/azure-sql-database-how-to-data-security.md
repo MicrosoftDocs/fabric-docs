@@ -3,7 +3,7 @@ title: "Secure Data in Microsoft Fabric Mirrored Databases From Azure SQL Databa
 description: Learn about how to secure data in mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: roblescarlos
+ms.reviewer: imotiwala
 ms.date: 11/19/2024
 ms.topic: how-to
 ms.custom:

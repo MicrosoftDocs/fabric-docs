@@ -2,8 +2,8 @@
 title: Create a KQL queryset
 description: Learn how to create a KQL queryset to query the data in your KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-author: YaelSchuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -16,7 +16,7 @@ In this article, you learn how to create a new KQL queryset. The KQL Queryset is
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data
 
 ## Create a KQL queryset

@@ -3,8 +3,8 @@ title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL D
 description: Learn how to configure a mirrored database from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: roblescarlos, im-microsoft
-ms.date: 11/08/2024
+ms.reviewer: imotiwala
+ms.date: 01/15/2025
 ms.topic: tutorial
 ms.custom:
   - ignite-2024
@@ -20,12 +20,14 @@ ms.custom:
     - The source Azure SQL Database can be either a single database or a database in an elastic pool.
     - If you don't have an Azure SQL Database, [create a new single database](/azure/azure-sql/database/single-database-create-quickstart?view=azuresql-db&preserve-view=true&tabs=azure-portal). Use the [Azure SQL Database free offer](/azure/azure-sql/database/free-offer?view=azuresql-db&preserve-view=true) if you haven't already.
     - Review the [tier and purchasing model requirements for Azure SQL Database](azure-sql-database.md#tier-and-purchasing-model-support).
-    - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
-- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+    - As a tutorial, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
+- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
     - If you want to mirror a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
-<!-- - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md). -->
+<!-- - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md). -->
 - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
-- Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
+- Ensure the following Fabric tenant settings are enabled. To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
+    - [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
+    - [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings)
 - Networking requirements for Fabric to access your Azure SQL Database:
     - Currently, Mirroring doesn't support Azure SQL Database logical servers behind an Azure Virtual Network or private networking. If you have your Azure SQL logical server behind a private network, you can't enable Azure SQL Database mirroring.
     - You need to update your Azure SQL logical server firewall rules to [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access), and enable the [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) option to connect to your Azure SQL Database logical server.

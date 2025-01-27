@@ -20,7 +20,7 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 
 ## Prerequisites
 
-* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
+* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [Real-Time Dashboard](../../real-time-intelligence/dashboard-real-time-create.md) with at least one tile displaying data
 
 ## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule using **Set alert**
@@ -94,4 +94,4 @@ The most common reason that a measure value can change over time is that the mos
 * [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

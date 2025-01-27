@@ -2,8 +2,8 @@
 title: Create a database shortcut
 description: Learn how to create a database shortcut to data in another KQL Database or in Azure Data Explorer in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -47,7 +47,7 @@ Select the desired tab that corresponds with the way you'd like to create a shor
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
 * An [eventhouse](create-eventhouse.md)
 
@@ -87,7 +87,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
 
 > [!IMPORTANT]

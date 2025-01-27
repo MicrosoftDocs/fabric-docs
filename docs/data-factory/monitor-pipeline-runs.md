@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]
 
-In this how-to guide, you'll learn the different ways to review and monitor your pipeline runs.
+In this how-to guide, you learn the different ways to review and monitor your pipeline runs.
 
 ## Monitor data pipeline runs
 
@@ -31,11 +31,11 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
    :::image type="content" source="media/monitor-pipeline-runs/filter-recent-runs.png" alt-text="Screenshot of filter options.":::
 
-4. Select one of your pipeline runs to view detailed information. You’ll be able to view what your pipeline looks like and view more properties like Run ID or errors if your pipeline run failed.
+4. Select one of your pipeline runs to view detailed information. You're able to view what your pipeline looks like and view more properties like Run ID or errors if your pipeline run failed.
 
    :::image type="content" source="media/monitor-pipeline-runs/view-recent-run-additional-details.png" alt-text="Screenshot of recent run details.":::
 
-5. If you have greater than 2000 activity runs in your pipelines, click **Load more** to see more results in the same monitoring page. 
+5. If you have greater than 2000 activity runs in your pipelines, select **Load more** to see more results in the same monitoring page. 
 
    :::image type="content" source="media/monitor-pipeline-runs/load-more.png" alt-text="Screenshot of activity runs with a load more text box highlighted.":::
 
@@ -63,7 +63,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
 10. You can also **Rerun** your data pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
 
-11. To view performance details, select an activity from the list of **Activity Runs**. Performance details will pop up.
+11. To view performance details, select an activity from the list of **Activity Runs**. Performance details pop up.
 
    :::image type="content" source="media/monitor-pipeline-runs/performance-details.png" alt-text="Screenshot of Copy data details screen.":::
 

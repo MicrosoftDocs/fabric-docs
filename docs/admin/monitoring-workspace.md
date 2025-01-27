@@ -56,6 +56,8 @@ You can use the reports in the admin monitoring workspace for getting insights a
 
 ## Considerations and limitations
 
+* Private links aren't supported.
+
 * Only users whose admin roles are assigned directly can set up the admin monitoring workspace. If the workspace creator's admin role is assigned through a group, data refreshes in the workspace fail.
 
 * The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Workspace users, including admins, aren't able to edit or view properties of items such as semantic models and reports in the workspace.

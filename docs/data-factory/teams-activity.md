@@ -7,7 +7,7 @@ author: jonburchel
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Teams activity to send a message in Teams (Preview)
@@ -22,7 +22,7 @@ The Teams activity in Data Factory for Microsoft Fabric allows you to send a mes
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Teams activity to a pipeline with UI

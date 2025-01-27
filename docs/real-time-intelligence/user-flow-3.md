@@ -2,8 +2,8 @@
 title: Discover streaming sources from Microsoft
 description: Learn about Real-Time Intelligence tutorial user flow 3- Discover streaming sources in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: concept-article
 ms.custom:
   - build-2024

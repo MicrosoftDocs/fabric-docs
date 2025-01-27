@@ -2,8 +2,8 @@
 title: Create stored functions in Real-Time Intelligence
 description: "Learn how to use the `.create-or-alter function` command to create stored functions in Real-Time Intelligence."
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -29,7 +29,7 @@ For more information on the `.create-or-alter` `function` command, see [`.create
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
 
 ## Functions
