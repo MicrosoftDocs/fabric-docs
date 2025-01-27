@@ -17,7 +17,7 @@ In this tutorial, we provide end-to-end steps to a common scenario that uses the
 
 ## Prerequisites
 
-A Microsoft Fabric enabled workspace. If you don't already have one, refer to the article [Create a workspace](../get-started/create-workspaces.md).
+A Microsoft Fabric enabled workspace. If you don't already have one, refer to the article [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a data pipeline 
 

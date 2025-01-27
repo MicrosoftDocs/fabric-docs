@@ -41,7 +41,7 @@ The following lakehouse information is serialized and tracked in a git connected
 > The tracked logical guid is an automatically generated cross-workspace identifier representing an item and its source control representation.
 
 > [!IMPORTANT]
-> Only the Lakehouse container artifact is tracked in git in the current experience. Tables, folders, shortcuts and other metadata changes aren't tracked and versioned in git.
+> Only the Lakehouse container artifact is tracked in git in the current experience. __Tables (Delta and non-Delta) and Folders in the Files section aren't tracked and versioned in git__.
 
 ### Lakehouse git integration capabilities
 
@@ -50,7 +50,17 @@ The following capabilities are available:
 * Serialization of the Lakehouse object metadata to a git JSON representation.
 * Apply changes directly or use pull request to control changes to upstream or downstream workspaces and branches.
 * Renaming lakehouses are tracked in git. Updating a renamed lakehouse also renames the default semantic data model and SQL Analytics endpoint.
-* No action is applied to tables, folders and shortcuts, metadata, and data of those items is always preserved.
+* __No action is applied to tables and folders metadata__, and data of those items is always preserved.
+* __OneLake Shortcuts metadata__ is preserved in git. 
+
+### OneLake Shortcuts git integration capabilities
+
+* Shortcuts definitions in both the Tables and Files section are stored in a file named ```shortcuts.metadata.json``` under the lakehouse folder in git.
+* The following operations are supported and tracked automatically: __addition, deletion and updates__ of Shortcuts. 
+* The operations can be performed directly in the Fabric user interface or in the git repository by changing the ```shortcuts.metadata.json``` file.
+
+> [!IMPORTANT]
+> Use caution when changing OneLake Shortcut properties directly in the ```shortcuts.metadata.json``` file. Incorrect changes to the properties, specially GUIDs, can render the OneLake Shortcut invalid when updates are applied back to the workspace.
 
 ## Lakehouse in deployment pipelines
 
@@ -70,6 +80,16 @@ Lakehouse deployment pipelines integration capabilities:
 * No object inside the Lakehouse is overwritten.
 
 * Updates to Lakehouse name can be synchronized across workspaces in a deployment pipeline context.
+
+### OneLake Shortcuts in deployment pipelines
+
+* Shortcuts definitions are synced across stages in the deployment pipelines.
+* Shortcuts with external targets (ADLS Gen2, S3, etc) will be the same across all stages.
+* Shortcuts with internal targets (OneLake Shortcuts) in the same workspace are automatically remapped across stages. Shortcuts targeting Data Warehouse and Semantic Models will not be remapped. Tables, Folders and Files will not be created in the target. In order for the Shortcut to be valid, those need to be created in the target workspace.
+* On the scenario that the same Shortcut needs to target different locations on different stages. For example, in Development point to a specific Folder in Amazon S3, and in Production a different folder in ADLS Gen2. After the deployment, update the OneLake Shortcut definition in Lakehouse or directly using OneLake APIs.
+
+> [!IMPORTANT]
+> A deployment __will override the state of shortcuts in the target workspace__. All the Shortcuts in the target lakehouse will be updated or deleted based on the state in the source lakehouse. New shortcuts will be created in the target lakehouse.
 
 ## Related content
 

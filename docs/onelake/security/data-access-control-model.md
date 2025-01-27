@@ -239,7 +239,7 @@ Workspace and Item permissions let you grant "coarse-grain" access to data in On
 
 ## OneLake RBAC and Workspace permissions
 
-The workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../get-started/roles-workspaces.md)
+The workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../fundamentals/roles-workspaces.md)
 
 Workspace roles in Fabric grant the following permissions in OneLake.
 
