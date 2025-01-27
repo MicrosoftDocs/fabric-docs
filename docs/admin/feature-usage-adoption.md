@@ -14,7 +14,7 @@ ms.date: 08/07/2024
 
 The Feature usage and adoption report provides an in-depth analysis of how different features are utilized and adopted across your Microsoft Fabric tenant.
 
-You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or [Microsoft 365 global administator](/microsoft-365/admin/add-users/about-admin-roles). Conversely, you can have one of these roles share the report or semantic model directly with you. With build permissions to the semantic model, users can also design a custom report that relies on the same underlying data.
+You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or [Microsoft 365 global administrator](/microsoft-365/admin/add-users/about-admin-roles). Conversely, you can have one of these roles share the report or semantic model directly with you. With build permissions to the semantic model, users can also design a custom report that relies on the same underlying data.
 
 ## Navigation
 
@@ -28,7 +28,7 @@ Additionally, use the filter pane to filter activity data based on the desired a
     
 ## Report pages
 
-The report is comprised of five pages:
+The report is composed of five pages:
 
 * **Activity Overview** - Provides a high-level overview of Fabric usage across the organization
 
@@ -64,7 +64,7 @@ On the Analysis page, you can view:
 
 #### Example
 
-Continuing the example from the [Activity Overview](#activity-overview-page) page, you use the Analysis page to investigate why the *Sales and Marketing* capacity had significantly more activity in December than all other capacities. The decomposition tree reveals the most popular activity on the *Sales and Marketing* capacity was *ViewReport*, which signifies the viewing of a Power BI report. You then drill through to the [Activity Details](#activity-details-page) page to identify which reports were most frequently viewed that month on the *Sales and Marketing* capacity.
+Continuing the example from the [Activity Overview](#activity-overview-page) page, you use the Analysis page to investigate why the *Sales and Marketing* capacity had more activity in December than all other capacities. The decomposition tree reveals the most popular activity on the *Sales and Marketing* capacity was *ViewReport*, which signifies the viewing of a Power BI report. You then drill through to the [Activity Details](#activity-details-page) page to identify which reports were most frequently viewed that month on the *Sales and Marketing* capacity.
 
 To drill through to the [Activity Details](#activity-details-page) page:
 
@@ -90,7 +90,7 @@ The Activity Details page shows detailed information on specific usage scenarios
 
 * **Workspace ID** - The ID of the workspace that the activity took place in
 
-* **User (UPN)** - The user principal name (UPN) of the user who conducted the activity
+* **User (UPN)** - The user principal name of the user who conducted the activity
 
 * **Operation** - The formal name of the operation
 
@@ -102,7 +102,7 @@ From the [Analysis](#analysis-page) page, you drill through on frequently conduc
 
 ### Inventory page
 
-The Inventory page displays all items in your Fabric tenant and how they are utilized. You can filter the Inventory page by:
+The Inventory page displays all items in your Fabric tenant and how they're utilized. You can filter the Inventory page by:
 
 * **Item type** - Including reports, dashboards, lakehouses, notebooks, and more
 
@@ -138,7 +138,7 @@ After drilling through, you see the following information for the selected item 
 
 * **Modified by** - The ID of the user that last modified the item
 
-* **Activity status** - The status of an item whether it is active or inactive based on recent activity
+* **Activity status** - The status of an item whether it's active or inactive based on recent activity
 
 * **Items** - The total number of items
 
@@ -164,7 +164,7 @@ This section lists the report's considerations and limitations.
 
 * Using the *next level in the hierarchy* option on the *Most active Capacities* visual doesn't update the dynamic visual title.
 
-* Items with the same name, or those deleted and recreated with the same name, may reflect as one item in certain visuals. To count the total number of unique items, use item IDs or the *Total items* measure.
+* Items with the same name, or items deleted and recreated with the same name, may reflect as one item in certain visuals. To count the total number of unique items, use item IDs or the *Total items* measure.
 
 * *NA* represents data that isn't available on an audit event. This can happen when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
