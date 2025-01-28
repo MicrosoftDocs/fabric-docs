@@ -3,8 +3,8 @@ title: Data types
 description: Learn about the T-SQL data types supported the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo
-ms.date: 12/02/2024
+ms.reviewer: cynotebo, jovanpop
+ms.date: 01/23/2025
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
@@ -37,7 +37,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 
 \*\* The **uniqueidentifier** data type is a T-SQL data type without a matching data type in Delta Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading **uniqueidentifier** columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading **uniqueidentifier** values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a **uniqueidentifier** column don't work as expected.
 
-\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview for the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The **varchar(max)** data type is not supported in the [!INCLUDE [fabric-dw](includes/fabric-se.md)].
+\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview for the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The string columns from the underlying Delta Lake files in One Lake are represented as **varchar(8000)** instead of **varchar(max)** in the [!INCLUDE [fabric-dw](includes/fabric-se.md)].
 
 For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric).
 
@@ -54,7 +54,11 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 | **text and ntext** | Use **varchar**. |
 | **image** | Use **varbinary**. |
 | **tinyint** | Use **smallint**. |
-| **geography** | No equivalent. |
+| **geography** | Store geography data as a (latitude, longitude) column pair or a **varbinary** column with the well-known binary content and cast it to a geography value. As an alternative, use **varchar** type, and store data as well-known-text. |
+| **geometry** | Store geometry data as a (latitude, longitude) column pair or a **varbinary** column with the well-known binary content and cast it to a geometry value As an alternative, use **varchar** type, and store data as well-known-text. |
+| **json** | Use **varchar**. |
+| **xml** | No equivalent. |
+| **User-defined type (CLR)** | No equivalent. |
 
 Unsupported data types can still be used in T-SQL code for variables, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
 

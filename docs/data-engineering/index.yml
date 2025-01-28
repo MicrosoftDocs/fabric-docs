@@ -62,6 +62,8 @@ landingContent:
             url: lakehouse-notebook-explore.md
           - text: Visualize notebooks
             url: notebook-visualization.md
+          - text: Use Python experience on Notebook
+            url: using-python-experience-on-notebook.md
           - text: Notebooks source control and deployment
             url: notebook-source-control-deployment.md
           - text: Use NotebookUtils in notebook
@@ -140,6 +142,8 @@ landingContent:
             url: explore-lakehouse-with-vs-code.md
           - text: Develop notebook from VS Code web experience
             url: author-notebook-with-vs-code-web.md
+          - text: Develop notebook with Fabric runtime
+            url: fabric-runtime-in-vscode.md
 
   # Card 
   - title: Apache Spark

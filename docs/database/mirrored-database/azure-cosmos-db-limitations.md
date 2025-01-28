@@ -15,7 +15,7 @@ ms.custom:
 This article details the current limitations for Azure Cosmos DB accounts mirrored into Microsoft Fabric. The limitation and quota details on this page are subject to change in the future.
 
 > [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Mirroring for Azure Cosmos DB is currently in [preview](../../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Availability
 

@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Data Factory pricing in Microsoft Fabric
@@ -33,16 +33,16 @@ Whether you’re a citizen or professional developer, Data Factory enables you t
 
 Here are some example scenarios for pricing of data pipelines:
 
-- [Load 1 TB Parquet to a data warehouse](pricing-scenario-load-1-tb-parquet-to-data-warehouse.md)
-- [Load 1 TB Parquet to a data warehouse via staging](pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md)
-- [Load 1 TB CSV files to a Lakehouse table](pricing-scenario-load-1-tb-csv-to-lakehouse-table.md)
-- [Load 1 TB CSV files to a Lakehouse files with binary copy](pricing-scenario-load-1-tb-csv-to-lakehouse-files.md)
-- [Load 1 TB Parquet to a Lakehouse table](pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md)
+- [Load 1-TB Parquet to a data warehouse](pricing-scenario-load-1-tb-parquet-to-data-warehouse.md)
+- [Load 1-TB Parquet to a data warehouse via staging](pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md)
+- [Load 1-TB CSV files to a Lakehouse table](pricing-scenario-load-1-tb-csv-to-lakehouse-table.md)
+- [Load 1-TB CSV files to a Lakehouse files with binary copy](pricing-scenario-load-1-tb-csv-to-lakehouse-files.md)
+- [Load 1-TB Parquet to a Lakehouse table](pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md)
 
 Here are some pricing examples for Dataflow Gen2:
 
-- [Load on-premises 2 GB CSV file to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md)
-- [Load 2 GB Parquet to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md)
+- [Load on-premises 2-GB CSV file to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md)
+- [Load 2-GB Parquet to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md)
 
 ## Related content
 

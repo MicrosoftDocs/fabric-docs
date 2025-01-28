@@ -15,7 +15,7 @@ The article explains compute usage reporting of the SQL database in Microsoft Fa
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
 
-During the current preview, there's no cost for SQL database in Fabric.
+SQL database in Fabric completely is free until February 1, 2025. After this date, compute and data storage charges begin. Backup billing starts on March 1, 2025.
 
 ## Capacity
 

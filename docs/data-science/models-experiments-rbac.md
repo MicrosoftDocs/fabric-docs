@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 01/10/2025
 ---
 
 # Data science roles and permissions
@@ -20,7 +20,7 @@ This article describes machine learning model and experiment permissions in [!IN
 
 > [!NOTE]
 > After you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], or if you have an admin role in a workspace, you can give others access to it by assigning them a different role.
-> To learn more about workspaces and how to grant users access to your workspace, review the articles [Workspaces](../get-started/workspaces.md) and [Giving users access to workspaces](../../docs/get-started/give-access-workspaces.md).
+> To learn more about workspaces and how to grant users access to your workspace, review the articles [Workspaces](../fundamentals/workspaces.md) and [Giving users access to workspaces](../fundamentals/give-access-workspaces.md).
 
 ## Permissions for machine learning experiments
 
@@ -50,9 +50,9 @@ A user's role in a workspace implicitly grants them permissions on the datasets 
 |**Write**                              |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::            |:::image type="icon" source="./media/data-science-overview/no.png" border="false":::   |
 
 > [!NOTE]
-> You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To learn more about workspace roles in [!INCLUDE [product-name](../includes/product-name.md)], see [Roles in workspaces](../get-started/roles-workspaces.md)
+> You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To learn more about workspace roles in [!INCLUDE [product-name](../includes/product-name.md)], see [Roles in workspaces](../fundamentals/roles-workspaces.md)
 
 ## Related content
 
-- Learn about roles in workspaces: [Roles in [!INCLUDE [product-name](../includes/product-name.md)] workspaces](../get-started/roles-workspaces.md)
-- Give users access to workspaces: [Granting access to users](../get-started/give-access-workspaces.md)
+- Learn about roles in workspaces: [Roles in [!INCLUDE [product-name](../includes/product-name.md)] workspaces](../fundamentals/roles-workspaces.md)
+- Give users access to workspaces: [Granting access to users](../fundamentals/give-access-workspaces.md)

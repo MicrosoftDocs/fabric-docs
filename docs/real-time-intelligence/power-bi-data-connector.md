@@ -2,8 +2,8 @@
 title: Connect KQL Database to Power BI Desktop
 description: Learn how to connect your KQL database as a data source in Power BI Desktop.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -21,7 +21,7 @@ To create reports with Power BI service using a KQL queryset, see [Create a Powe
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with data
 * [Power BI Desktop](https://powerbi.microsoft.com/get-started)
 

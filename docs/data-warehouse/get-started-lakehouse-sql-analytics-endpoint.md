@@ -4,7 +4,7 @@ description: Learn more about scenarios for the lakehouse and data warehousing w
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 04/24/2024
+ms.date: 12/19/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -15,11 +15,11 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing. For a decision guide on choosing to develop warehouse data, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md).
+This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing. For a decision guide on choosing to develop warehouse data, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
 
 ## What is a Lakehouse SQL analytics endpoint?
 
-In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [[!INCLUDE [fabric-se](includes/fabric-dw.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created.
+In Fabric, when you create a warehouse, a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created.
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one Lakehouse. The number of [!INCLUDE [fabric-se](includes/fabric-se.md)]s in a workspace matches the number of Lakehouse items.
 
@@ -139,7 +139,7 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analyt
 ## Related content
 
 - [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
-- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md)
+- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
 - [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
 - [Default Power BI semantic models](semantic-models.md)
 - [Load data into the lakehouse](../data-engineering/load-data-lakehouse.md)

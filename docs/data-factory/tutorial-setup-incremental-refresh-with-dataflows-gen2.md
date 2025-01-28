@@ -7,7 +7,7 @@ author: luitwieler
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 1/13/2025
 ---
 
 # Pattern to incrementally amass data with Dataflow Gen2
@@ -27,7 +27,7 @@ The high-level steps in this tutorial are as follows:
 
 ## Prerequisites
 
-You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../get-started/create-workspaces.md). Also, the tutorial assumes you are using the diagram view in Dataflow Gen2. To check if you are using the diagram view, in the top ribbon go to **View** and make sure **Diagram view** is selected.
+You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../fundamentals/create-workspaces.md). Also, the tutorial assumes you're using the diagram view in Dataflow Gen2. To check if you're using the diagram view, in the top ribbon go to **View** and make sure **Diagram view** is selected.
 
 ## Create a dataflow to load data from an OData source into a lakehouse
 
@@ -39,7 +39,7 @@ In this section, you create a dataflow to load data from an OData source into a 
 
 1. Create a new Dataflow Gen2 in your workspace.
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-dataflow-gen2.png" alt-text="Screenshot showing the create dataflow dropdown.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-dataflow-gen2.png" alt-text="Screenshot showing the create dataflow dropdown." lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-dataflow-gen2.png":::
 
 1. Add a new source to the dataflow. Select the OData source and enter the following URL: `https://services.OData.org/V4/Northwind/Northwind.svc`
 
@@ -124,7 +124,7 @@ This section adds a query to the dataflow to filter the data based on the data i
 
 1. In the data preview, right-click on the `OrderID` column and select **Drill down**.
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/drill-down.png" alt-text="Screenshot showing the drill down function.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/drill-down.png" alt-text="Screenshot showing the drill-down function.":::
 
 1. From the ribbon, select **List Tools** -> **Statistics** -> **Maximum**.
 
@@ -167,7 +167,7 @@ Notebooks support multiple languages, but this tutorial uses PySpark. Pyspark is
 
 1. Create a new notebook in your workspace.
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-notebook.png" alt-text="Screenshot showing the new notebook dialog.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-notebook.png" alt-text="Screenshot showing the new notebook dialog." lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-notebook.png":::
 
 1. Add the following PySpark code to your notebook:
 
@@ -210,4 +210,4 @@ Notebooks support multiple languages, but this tutorial uses PySpark. Pyspark is
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/run-pipeline.png" alt-text="Screenshot showing the run pipeline dialog.":::
 
-You now have a pipeline that removes old data from the lakehouse and reloads the data from the OData source into the lakehouse. With this setup, you can reload the data from the OData source into the lakehouse on a regular basis.
+You now have a pipeline that removes old data from the lakehouse and reloads the data from the OData source into the lakehouse. With this setup, you can reload the data from the OData source into the lakehouse regularly.

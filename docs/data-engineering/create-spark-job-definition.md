@@ -20,7 +20,7 @@ In this tutorial, learn how to create a Spark job definition in Microsoft Fabric
 
 Before you get started, you need:
 
-- A Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 
 > [!TIP]
 > To run the Spark job definition item, you must have a main definition file and default lakehouse context. If you don't have a lakehouse, you can create one by following the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).
@@ -31,19 +31,13 @@ The Spark job definition creation process is quick and simple; there are several
 
 ### Options to create a Spark job definition
 
-There are a few ways you can get started with the creation process:
+There are two ways you can get started with the creation process:
 
-- **Data engineering homepage**: You can easily create a Spark job definition through the **Spark Job Definition** card under the **New** section in the homepage.
+- **Workspace view**: You can easily create a Spark job definition through the **Fabric workspace** by selecting **New item** > **Spark Job Definition**.
 
-  :::image type="content" source="media\create-spark-job-definition\spark-job-definition-card.png" alt-text="Screenshot showing where to select the Spark job definition card.":::
+- **Fabric Home**: Another entry point to create a Spark job definition is the **Data analytics using a SQL ...** tile on the Fabric home page. You can find the same option by selecting the **General** tile.
 
-- **Workspace view**: You can also create a Spark job definition through the **Workspace** in **Data Engineering** by using the **New** dropdown menu.
-
-  :::image type="content" source="media\create-spark-job-definition\data-engineering-new.png" alt-text="Screenshot showing where to select Spark job definition in the New menu.":::
-
-- **Create view**: Another entry point to create a Spark job definition is the **Create** page under **Data Engineering**.
-
-  :::image type="content" source="media\create-spark-job-definition\create-hub-data-engineering.png" alt-text="Screenshot showing where to select Spark job definition on the Create Hub.":::
+  :::image type="content" source="media\create-spark-job-definition\create-hub-data-engineering.png" alt-text="Screenshot showing where to select Spark job definition on the Create Hub." lightbox="media\create-spark-job-definition\create-hub-data-engineering.png":::
 
 You need to give your Spark job definition a name when you create it. The name must be unique within the current workspace. The new Spark job definition is created in your current workspace.
 

@@ -20,7 +20,7 @@ For Spark library considerations, refer to [differences between Azure Synapse Sp
 
 ## Prerequisites
 
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 * If you don’t have one already, create an [Environment](create-and-use-environment.md) in your workspace. 
 
 ## Option 1: Adding Spark libraries to custom environment

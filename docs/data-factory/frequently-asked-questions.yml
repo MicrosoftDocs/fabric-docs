@@ -18,7 +18,7 @@ sections:
       - question: |
           What is the difference between data factory and data engineering tab in Fabric?
         answer: |
-          Data Factory helps you solve complex data integration and ETL scenarios with cloud-scale data movement and data transformation services while data engineering helps you create lake house, use Apache Spark to transform and prepare your data. Differences between each of the Fabric terminologies / experiences are available under [Microsoft Fabric terminology](../get-started/fabric-terminology.md).    
+          Data Factory helps you solve complex data integration and ETL scenarios with cloud-scale data movement and data transformation services while data engineering helps you create lake house, use Apache Spark to transform and prepare your data. Differences between each of the Fabric terminologies / experiences are available under [Microsoft Fabric terminology](../fundamentals/fabric-terminology.md).    
       - question: |
           How do I track and monitor the capacity of Fabric used with the pipelines?
         answer: |

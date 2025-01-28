@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 12/19/2023
+ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -14,11 +14,11 @@ ms.search.form: Pipeline Tutorials
 
 The partition feature in Lakehouse table as destination offers the capability to load data to Lakehouse table with partitions. The partitions are generated in Lakehouse destination, and then benefit the downstream jobs or consumption. 
 
-This tutorial helps you learn how to load data to Lakehouse using partition in a Data pipeline. As an example, you will try to load sample dataset into Lakehouse using one or multiple partition columns by taking the following steps. The sample dataset **Public Holidays** is used as sample data.
+This tutorial helps you learn how to load data to Lakehouse using partition in a Data pipeline. As an example, you load sample dataset into Lakehouse using one or multiple partition columns by taking the following steps. The sample dataset **Public Holidays** is used as sample data.
 
 ## Prerequisite
 
-- Make sure you have a Project Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a Project Microsoft Fabric enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a Data pipeline
 
@@ -77,7 +77,7 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
     
     :::image type="content" source="media/tutorial-lakehouse-partition/lakehouse-partition-public-holiday-files.png" lightbox="media/tutorial-lakehouse-partition/lakehouse-partition-public-holiday-files.png" alt-text="Screenshot showing the file view of copied public holiday data.":::
     
-    For multiple partition columns, you will find the table is partitioned into different folders by country or region names. 
+    For multiple partition columns, you find the table is partitioned into different folders by country or region names. 
         
     :::image type="content" source="media/tutorial-lakehouse-partition/partition-country-folder.png" lightbox="media/tutorial-lakehouse-partition/partition-country-folder.png" alt-text="Screenshot showing partition country or region folder.":::
         
@@ -85,7 +85,7 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
             
     :::image type="content" source="media/tutorial-lakehouse-partition/country-partition-by-ispaidtimeoff.png" lightbox="media/tutorial-lakehouse-partition/country-partition-by-ispaidtimeoff.png" alt-text="Screenshot showing country or region partition by ispaidtimeoff.":::
             
-    Similarly, if you add three columns to partition the table, you will get the second level folder partitioned by the third column added.
+    Similarly, if you add three columns to partition the table, you get the second level folder partitioned by the third column added.
         
 ## Related content
 

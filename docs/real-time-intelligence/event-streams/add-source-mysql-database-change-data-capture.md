@@ -16,23 +16,29 @@ ms.search.form: Source and Destination
 >[!NOTE]
 >This article contains references to the term `SLAVE`, a term that Microsoft no longer uses. When the term is removed from the software, we'll remove it from this article.
 
-This article shows you how to add an Azure Database for MySQL Change Data Capture source to an eventstream. The Azure MySQL Database Change Data Capture (CDC) Source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in an Azure Database for MySQL database.
+This article shows you how to add a MySQL Change Data Capture source to an eventstream. Currently, MySQL Database CDC is supported from the following services where the databases can be accessed publicly:
+- **Azure Database for MySQL**
+- **Amazon RDS for MySQL**
+- **Amazon Aurora MySQL** 
+- **Google Cloud SQL for MySQL (GCP)**. 
 
-You can specify the tables to monitor, and the eventstream records any future row-level changes to the tables. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations in Fabric for further processing or analysis.
+This guide uses **Azure Database for MySQL CDC** as an example.
+
+Once the MySQL Database CDC source is added to the eventstream, it captures row-level changes to the specified tables. These changes can then be processed in real-time and sent to different destinations for further analysis.
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- Access to an instance of Azure Database for MySQL - Flexible Server.
+- Access to an instance of MySQL Database, such as: a database in Azure Database for MySQL - Flexible Server.
 - Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
 ## Set up MySQL DB
 
-The connector uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with appropriate privileges on all databases where the Messaging Connector can capture the changes from. You can directly use the **admin user** to connect to the database which normally has the appropriate privileges already as below. or you can follow the below steps to create a new user 
+The connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with appropriate privileges on all databases where the Messaging Connector can capture the changes from. You can directly use the **admin user** to connect to the database which normally has the appropriate privileges, or you can follow these steps to create a new user:
 
 > [!NOTE]
 > The new user or admin account and the corresponding password will be used to connect to database later inside Eventstream. 
@@ -49,13 +55,16 @@ The connector uses the Debezium MySQL connector to capture changes in your Azure
    mysql> GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user'@'%';
    ```
 
+   > [!NOTE]
+   > When a global read lock is unavailable, as in hosted options like Amazon RDS or Aurora, table-level locks are used to create the consistent snapshot. In this case, you need to grant **`LOCK TABLES`** permission to the user. Additionally, to support **`FLUSH`** operations during the snapshot, you may also need to grant **`RELOAD`** or **`FLUSH_TABLES`** privileges.
+
 1. Finalize the user's permissions:
 
    ```
    mysql> FLUSH PRIVILEGES;
    ```
 
-To confirm if the user or admin has the required privileges granted, run the below command and then the required privileges in step#2 above should be shown.
+To confirm if the user or admin has the required privileges granted, run this command and then the required privileges in step#2 should be shown:
 
 ```
 SHOW GRANTS FOR user;
@@ -66,7 +75,7 @@ For more information about granting the required permissions to the user, see [D
 
 ## Enable the binlog
 
-You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes.
+You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes. This section uses **Azure Database for MySQL CDC** as an example to show the configuration steps.
 
 1. On the Azure portal page for your Azure Database for MySQL account, select **Server parameters** under **Settings** in the left navigation.
 
@@ -78,24 +87,24 @@ You must enable binary logging for MySQL replication. The binary logs record tra
 
    :::image type="content" border="true" source="media/add-source-mysql-database-change-data-capture/binlog.png" alt-text="A screenshot of the binlog settings for replication under Server parameters.":::
 
-## Add Azure MySQL DB (CDC) as a source
+## Add MySQL DB (CDC) as a source
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **MySQL DB (CDC)** tile.
 
 :::image type="content" source="./media/add-source-mysql-database-change-data-capture/select-mysql-database.png" alt-text="Screenshot that shows the selection of MySQL DB (CDC) as the source type in the Get events wizard." lightbox="./media/add-source-mysql-database-change-data-capture/select-mysql-database.png":::
 
-## Configure and connect to Azure MySQL DB (CDC) 
+## Configure and connect to MySQL DB (CDC) 
 
 [!INCLUDE [mysql-database-cdc-connector](./includes/mysql-database-cdc-source-connector.md)]
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## View updated eventstream
-1. You see the Azure MySQL DB (CDC) source added to your eventstream in **Edit mode**.
+1. You see the MySQL DB (CDC) source added to your eventstream in **Edit mode**.
 
     :::image type="content" source="media/add-source-mysql-database-change-data-capture/edit-mode.png" alt-text="A screenshot of the added Azure MySQL DB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-mysql-database-change-data-capture/edit-mode.png":::
-2. Select **Publish** to publish the changes and begin streaming Azure MySQL DB CDC data to the eventstream.
+1. Select **Publish** to publish the changes and begin streaming MySQL DB CDC data to the eventstream.
 
     :::image type="content" source="media/add-source-mysql-database-change-data-capture/live-view.png" alt-text="A screenshot of the added Azure MySQL DB CDC source in Live mode." lightbox="media/add-source-mysql-database-change-data-capture/live-view.png":::
 

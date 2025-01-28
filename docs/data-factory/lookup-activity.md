@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Lookup activity to look up data from a data source
@@ -21,7 +21,7 @@ Lookup activity reads and returns the content of a configuration file or table. 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a lookup activity to a pipeline with UI
@@ -51,7 +51,7 @@ The example in the previous image shows a blob storage connection, but each conn
 
 ## Supported capabilities
 
-- The Lookup activity can return up to 5000 rows; if the result set contains more records, the first 5000 rows are returned.
+- The Lookup activity can return up to 5,000 rows; if the result set contains more records, the first 5,000 rows are returned.
 - The Lookup activity output supports up to 4 MB in size; activity fails if the size exceeds the limit.
 - The longest duration for Lookup activity before timeout is 24 hours.
 

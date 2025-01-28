@@ -6,14 +6,14 @@ ms.author: eskot
 author: ekote
 ms.topic: conceptual
 ms.custom:
-ms.date: 5/13/2024
+ms.date: 01/06/2025
 ---
 
 # Native execution engine for Fabric Spark
 
 The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with **[Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md)**, and works with both Parquet and Delta formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
 
-The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
+The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1 TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
 The Native Execution Engine is based on two key OSS components: [Velox](https://github.com/facebookincubator/velox), a C++ database acceleration library introduced by Meta, and [Apache Gluten (incubating)](https://github.com/apache/incubator-gluten), a middle layer responsible for offloading JVM-based SQL engines’ execution to native engines introduced by Intel.
 
@@ -36,7 +36,7 @@ For information on the operators and functions supported by the native execution
 To use the full capabilities of the native execution engine during the preview phase, specific configurations are necessary. The following procedures show how to activate this feature for notebooks, Spark job definitions, and entire environments.
 
 > [!IMPORTANT]
-> The native execution engine supports the latest GA runtime version, which is [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md). With the release of the native execution engine in Runtime 1.3, support for the previous version—[Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md)—has been discontinued. We encourage all customers to upgrade to the latest Runtime 1.3. Note that if you are using the Native Execution Engine on Runtime 1.2, native acceleration will soon be disabled.
+> The native execution engine supports the latest GA runtime version, which is [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md). With the release of the native execution engine in Runtime 1.3, support for the previous version—[Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md)—has been discontinued. We encourage all customers to upgrade to the latest Runtime 1.3. If you're using the Native Execution Engine on Runtime 1.2, native acceleration will soon be disabled.
 
 
 ### Enable at the environment level
@@ -59,9 +59,7 @@ When enabled at the environment level, all subsequent jobs and notebooks inherit
 
 
 > [!IMPORTANT]
-> Previously, the Native Execution Engine was enabled through Spark settings within the environment configuration. With our latest update (**roll-out in progress**), we’ve simplified this by introducing a toggle button in the Acceleration tab of the environment settings. **Re-enable the Native Execution Engine using the new toggle - to continue using the Native Execution Engine, please go to the Acceleration tab in the environment settings and enable it through the toggle button.** The new toggle setting in the UI now takes priority over any previous Spark property configurations. If you previously enabled the Native Execution Engine through Spark settings, it will be disabled until re-enabled via the UI toggle.
->
-> In alignment with Microsoft's Azure deployment freeze policy during the Thanksgiving and Black Friday holidays, we have rescheduled the rollout for the North Central US (NCUS) region to December 6th and the East US region to December 9th. We appreciate your understanding and patience during this busy time.
+> Previously, the Native Execution Engine was enabled through Spark settings within the environment configuration. With our latest update (**roll-out in progress**), we’ve simplified this by introducing a toggle button in the Acceleration tab of the environment settings. **Re-enable the Native Execution Engine using the new toggle - to continue using the Native Execution Engine, please go to the Acceleration tab in the environment settings and enable it through the toggle button.** The new toggle setting in the UI now takes priority over any previous Spark property configurations. If you previously enabled the Native Execution Engine through Spark settings, it is disabled until re-enabled via the UI toggle.
 
 
 #### Enable for a notebook or Spark job definition
@@ -158,13 +156,17 @@ There are several methods to determine if an operator in your Apache Spark job w
 
 ### Spark UI and Spark history server
 
-Access the Spark UI or Spark history server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix *Transformer*, *NativeFileScan* or *VeloxColumnarToRowExec*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*.
+Access the Spark UI or Spark history server to locate the query you need to inspect. To access the Spark web UI, navigate to your Spark Job Definition and run it. From the **Runs** tab, select the **...** next to the **Application name** and select **Open Spark web UI**. You can also access the Spark UI from the **Monitor** tab in the workspace. Select the notebook or pipeline, from the monitoring page, there's a direct link to the **Spark UI** for active jobs.
+
+:::image type="content" source="media\native\spark-web-ui.png" alt-text="Screenshot showing how to navigate to the Spark web UI." lightbox="media\native\spark-web-ui.png":::
+
+In the query plan displayed within the Spark UI interface, look for any node names that end with the suffix *Transformer*, *NativeFileScan, or *VeloxColumnarToRowExec*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*.
 
 :::image type="content" source="media\native\spark-ui.jpg" alt-text="Screenshot showing how to check DAG visualization that ends with the suffix Transformer." lightbox="media\native\spark-ui.jpg":::
 
 ### DataFrame explain
 
-Alternatively, you can execute the `df.explain()` command in your notebook to view the execution plan. Within the output, look for the same *Transformer*, *NativeFileScan* or *VeloxColumnarToRowExec* suffixes. This method provides a quick way to confirm whether specific operations are being handled by the native execution engine.
+Alternatively, you can execute the `df.explain()` command in your notebook to view the execution plan. Within the output, look for the same *Transformer*, *NativeFileScan, or *VeloxColumnarToRowExec* suffixes. This method provides a quick way to confirm whether specific operations are being handled by the native execution engine.
 
 :::image type="content" source="media\native\df-details.jpg" alt-text="Screenshot showing how to check the physical plan for your query, and see that the query was executed by the native execution engine." lightbox="media\native\df-details.jpg":::
 
@@ -188,7 +190,7 @@ You can navigate to the new 'Gluten SQL / DataFrame' tab to view the Gluten buil
 
 ### Query Execution Graph
 
-You can also click on the query description for the Apache Spark query execution plan visualization. The execution graph provides native execution details across stages and their respective operations. Background colors differentiate the execution engines: green represents the Native Execution Engine, while light blue indicates that the operation is running on the default JVM Engine.
+You can also select on the query description for the Apache Spark query execution plan visualization. The execution graph provides native execution details across stages and their respective operations. Background colors differentiate the execution engines: green represents the Native Execution Engine, while light blue indicates that the operation is running on the default JVM Engine.
 
 :::image type="content" source="media\native\query-execution-graph.jpeg" alt-text="Screenshot showing query execution graph." lightbox="media\native\query-execution-graph.jpeg":::
 
@@ -196,12 +198,12 @@ You can also click on the query description for the Apache Spark query execution
 
 While the native execution engine enhances performance for Apache Spark jobs, note its current limitations.
 
-- Some Delta-specific operations aren't supported (yet as we are actively working on it), including merge operations, checkpoint scans, and deletion vectors.
+- Some Delta-specific operations aren't supported (yet as we're actively working on it), including merge operations, checkpoint scans, and deletion vectors.
 - Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array_contains` function, as well as Spark structured streaming. Usage of these incompatible operations or functions as part of an imported library will also cause fallback to the Spark engine.
-- Scans from storage solutions that utilize private endpoints aren't (yet as we are actively working on it) supported.
+- Scans from storage solutions that utilize private endpoints aren't (yet as we're actively working on it) supported.
 - The engine doesn't support ANSI mode, so it searches, and once ANSI mode is enabled, it automatically falls back to vanilla Spark.
 
-When using date filters in queries, it is essential to ensure that the data types on both sides of the comparison match to avoid performance issues. Mismatched data types may not bring query execution boost and may require explicit casting. Always ensure that the data types of the left-hand side (LHS) and right-hand side (RHS) of a comparison are identical, as mismatched types will not always be automatically cast. If a type mismatch is unavoidable, use explicit casting to match the data types, such as `CAST(order_date AS DATE) = '2024-05-20'`. Queries with mismatched data types that require casting will not be accelerated by Native Execution Engine, so ensuring type consistency is crucial for maintaining performance. For example, instead of `order_date = '2024-05-20'` where `order_date` is `DATETIME` and the string is `DATE`, explicitly cast `order_date` to `DATE` to ensure consistent data types and improve performance. 
+When using date filters in queries, it's essential to ensure that the data types on both sides of the comparison match to avoid performance issues. Mismatched data types may not bring query execution boost and may require explicit casting. Always ensure that the data types of the left-hand side (LHS) and right-hand side (RHS) of a comparison are identical, as mismatched types won't always be automatically cast. If a type mismatch is unavoidable, use explicit casting to match the data types, such as `CAST(order_date AS DATE) = '2024-05-20'`. Queries with mismatched data types that require casting won't be accelerated by Native Execution Engine, so ensuring type consistency is crucial for maintaining performance. For example, instead of `order_date = '2024-05-20'` where `order_date` is `DATETIME` and the string is `DATE`, explicitly cast `order_date` to `DATE` to ensure consistent data types and improve performance. 
 
 > [!div class="nextstepaction"]
 > [Watch the Fabric Espresso Video from Product Engineering Group about Native Execution Engine](https://youtu.be/8GJj4QlFlsw?si=r7M5VUI7NdyoR66v)

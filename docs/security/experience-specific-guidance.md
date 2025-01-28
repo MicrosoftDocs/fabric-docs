@@ -219,8 +219,6 @@ In newly created workspace C2.W2:
 
 1. Connect the interim lakehouse in your warehouse explorer.
 
-    :::image type="content" source="./media/experience-specific-guidance/connect-temp-lakehouse-to-warehouse.png" alt-text="Screenshot of warehouse Explorer during warehouse recovery.":::
-
 1. Depending on how you're going to deploy table definitions prior to data import, the actual T-SQL used for imports can vary. You can use INSERT INTO, SELECT INTO or CREATE TABLE AS SELECT approach to recover Warehouse tables from lakehouses. Further in the example, we would be using INSERT INTO flavor. (If you use the code below, replace samples with actual table and column names)
 
     ```
@@ -271,6 +269,10 @@ If you want to recover a Dataflow Gen2 item in the new region, you need to expor
 ### Data Pipelines
 
 Customers can't access data pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions.
+
+### Copy Job
+
+Customers can't access copy job in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical copy jobs in multiple workspaces across different regions.
 
 ## Real-Time Intelligence
 

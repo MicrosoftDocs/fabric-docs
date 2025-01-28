@@ -3,7 +3,7 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 11/27/2024
+ms.date: 01/08/2025
 ms.topic: conceptual
 ---
 
@@ -56,10 +56,10 @@ If you want to replicate selective tables instead of all the tables in the speci
 > To mirror data from Azure SQL Database or Azure SQL Managed Instance, you need to also do the following before start mirroring:
 >
 > 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) or [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance).
-> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternativley, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
+> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
 > [!NOTE]
-> `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database. If your Fabric capacity region is in North Central US or East US, please do not specify this property as currently this feature is not supported in those regions.
+> `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database.
 
 ### JSON definition example of Snowflake
 
@@ -184,7 +184,7 @@ The previous examples apply to the scenario that automatically replicates all th
 {
     "properties": {
         "source": {
-            "type": "Snowflake",
+            "type": "<your source type>",
             "typeProperties": {
                 "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
                 "database": "xxxx"
@@ -374,7 +374,7 @@ Body:
 Response 200: (No body)
 
 > [!NOTE]
-> This API supports adding/removing tables by refreshing the `mountedTables` property. It also supports updating the source connection ID, database name and default schema (these three properties can only be updated when **Get mirroring status** api returns `Initialized`/`Stopped`).
+> This API supports adding/removing tables by refreshing the `mountedTables` property. It also supports updating the source connection ID, database name, and default schema (these three properties can only be updated when **Get mirroring status** API returns `Initialized`/`Stopped`).
 
 ## Get mirroring status
 
@@ -405,7 +405,7 @@ Example:
 Response 200: (No body)
 
 > [!NOTE]
-> Mirroring can not be started when above **Get mirroring status** api returns `Initializing` status.
+> Mirroring can't be started when above **Get mirroring status** API returns `Initializing` status.
 
 ## Get tables mirroring status
 
@@ -449,15 +449,11 @@ Example:
 Response 200: (No body)
 
 > [!NOTE]
-> After stopping mirroring, you can call **Get mirroring status** api to query the mirroring status.
+> After stopping mirroring, you can call **Get mirroring status** API to query the mirroring status.
 
 ## Microsoft Fabric .NET SDK
 
 The .NET SDK that supports Fabric mirroring is available at [Microsoft Fabric .NET SDK](https://www.nuget.org/packages/Microsoft.Fabric.Api/1.0.0-beta.11). The version needs to be >= 1.0.0-beta.11.
-
-## Known limitations
-
-Currently Service Principal/Managed Identity authentication is not supported if your [tenant home region](../../admin/find-fabric-home-region.md) is in North Central US or East US. You can use it in other regions.
 
 ## Related content
 

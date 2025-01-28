@@ -4,7 +4,7 @@ description: This article provides information about how to set up an Azure SQL 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -85,7 +85,7 @@ Select **Basic** under **Authentication method**.
 
 #### OAuth2 authentication
 
-Open **Edit credentials**. You'll notice the sign in interface. Enter your account and password to sign in your account. After signing in, go back to the **New connection** page.
+Open **Edit credentials**. You notice the sign in interface. Enter your account and password to sign in your account. After signing in, go back to the **New connection** page.
 
 :::image type="content" source="./media/connector-azure-sql-database/authentication-oauth2.png" alt-text="Screenshot showing OAuth2 authentication method.":::
 

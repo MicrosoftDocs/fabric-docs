@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Quickstart: Move and transform data with dataflows and data pipelines
@@ -21,13 +21,13 @@ In this tutorial, you discover how the dataflow and data pipeline experience can
 To get started, you must have the following prerequisites:
 
 - A tenant account with an active subscription. Create a [free account](https://azure.microsoft.com/free/).
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md) that isn’t the default My Workspace.
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md) that isn’t the default My Workspace.
 - [An Azure SQL database with table data](/azure/azure-sql/database/single-database-create-quickstart).
 - [A Blob Storage account](/azure/storage/common/storage-account-create).
 
 ## Dataflows compared to pipelines
 
-Dataflows Gen2 enable you to leverage a low-code interface and 300+ data and AI-based transformations to you easily clean, prep, and transform data with more flexibility than any other tool. Data Pipelines enable rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.  In a pipeline, you can create logical groupings of activities that perform a task, which might include calling a Dataflow to clean and prep your data. While there is some functionality overlap between the two, the choice of which to use for a specific scenario depends on whether you require the full richness of pipelines or can use the simpler but more limited capabilities of dataflows. For more details, refer to the [Fabric decision guide](../get-started/decision-guide-pipeline-dataflow-spark.md#copy-activity-dataflow-and-spark-properties)
+Dataflows Gen2 lets you to use a low-code interface and 300+ data and AI-based transformations to you easily clean, prep, and transform data with more flexibility than any other tool. Data Pipelines enable rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.  In a pipeline, you can create logical groupings of activities that perform a task, which might include calling a Dataflow to clean and prep your data. While there's some functionality overlap between the two, the choice of which to use for a specific scenario depends on whether you require the full richness of pipelines or can use the simpler but more limited capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md#copy-activity-dataflow-and-spark-properties)
 
 ## Transform data with dataflows
 
@@ -37,7 +37,7 @@ Follow these steps to set up your dataflow.
 
 1. Choose your Fabric enabled workspace, and then select **New**. Then select **Dataflow Gen2**.
 
-   :::image type="content" source="media/transform-data/select-dataflow.png" alt-text="Screenshot showing where to start creating a dataflow gen2." :::
+   :::image type="content" source="media/transform-data/select-dataflow.png" alt-text="Screenshot showing where to start creating a dataflow gen2." lightbox="media/transform-data/select-dataflow.png":::
 
 1. The dataflow editor window appears.  Select the **Import from SQL Server** card.
 
@@ -67,7 +67,7 @@ Follow these steps to set up your dataflow.
 
    :::image type="content" source="media/transform-data/select-join-keys-kind.png" alt-text="Screenshot of the Merge configuration screen.":::
 
-1. Select the **Add data destination** button, which looks like a database symbol with an arrow above it, from the new merge query you just created. Then select **Azure SQL database** as the destination type.
+1. Select the **Add data destination** button, which looks like a database symbol with an arrow above it, from the new merge query you created. Then select **Azure SQL database** as the destination type.
 
    :::image type="content" source="media/transform-data/select-data-destination-inline.png" alt-text="Screenshot highlighting the Add data destination button on the newly created merge query." lightbox="media/transform-data/select-data-destination.png":::
 
@@ -154,7 +154,7 @@ Now that you created a Dataflow Gen2, you can operate on it in a pipeline. In th
 
 ### Step 5: Design your data pipeline and save to run and load data
 
-1. To run the **Copy** activity after the **Dataflow** activity, drag from **Succeeded** on the **Dataflow** activity to the **Copy** activity. The **Copy** activity only runs after the **Dataflow** activity has succeeded.  
+1. To run the **Copy** activity after the **Dataflow** activity, drag from **Succeeded** on the **Dataflow** activity to the **Copy** activity. The **Copy** activity only runs after the **Dataflow** activity succeeds.  
 
    :::image type="content" source="media/transform-data/copy-dataflow-activity.png" alt-text="Screenshot showing how to make the dataflow run take place after the copy activity.":::
 
@@ -176,7 +176,7 @@ Once you finish developing and testing your pipeline, you can schedule it to exe
 
 ## Related content
 
-This sample shows you how to create and configure a Dataflow Gen2 to create a merge query and store it in an Azure SQL database, then copy data from the database into a text file in Azure Blob Storage.  You learned how to:
+This sample shows you how to create and configure a Dataflow Gen2 to create a merge query and store it in an Azure SQL database, then copy data from the database into a text file in Azure Blob Storage. You learned how to:
 
 > [!div class="checklist"]
 > - Create a dataflow.

@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Migrate to Data Factory in Microsoft Fabric
@@ -33,11 +33,11 @@ To enable customers to upgrade to Microsoft Fabric from Azure Data Factory (ADF)
 
   In addition, for customers considering migrating their ADF mapping dataflows to Fabric, you can apply sample code from the Fabric Customer Advisory Team (Fabric CAT) to convert mapping dataflows to Spark code. Find out more at [Mapping dataflows to Microsoft Fabric](https://github.com/sethiaarun/mapping-data-flow-to-spark).
 
-- **Azure Data Factory in Fabric (preview)** - We introduce a new capability that allows you to connect to your existing ADF factories from your Fabric workspace. By clicking “Azure Data Factory” inside of your Fabric Data Factory workspace, you will now be able to fully manage your ADF factories directly from the Fabric workspace UI! You’ll be able to trigger, execute, and monitor your pipelines as you do in ADF but directly inside of Fabric. 
+- **Azure Data Factory in Fabric (preview)** - We introduce a new capability that allows you to connect to your existing ADF factories from your Fabric workspace. By clicking “Azure Data Factory” inside of your Fabric Data Factory workspace, now you can fully manage your ADF factories directly from the Fabric workspace UI! You can trigger, execute, and monitor your pipelines as you do in ADF but directly inside of Fabric. 
 
-As part of the Data Factory in Microsoft Fabric roadmap, we are working towards the preview of the following by Q2 CY2024:
+As part of the Data Factory in Microsoft Fabric roadmap, we're working towards the preview of the following by Q2 CY2024:
 
-- **Upgrade from ADF pipelines to Fabric** - We are working with customers and the community to learn how we can best support upgrades of data pipelines from ADF to Fabric. As part of this, we will deliver an upgrade experience that empowers you to test your existing data pipelines in Fabric using mounting and upgrading the data pipelines.
+- **Upgrade from ADF pipelines to Fabric** - We're working with customers and the community to learn how we can best support upgrades of data pipelines from ADF to Fabric. As part of this, we deliver an upgrade experience that empowers you to test your existing data pipelines in Fabric using mounting and upgrading the data pipelines.
 
 ## Migrate Power BI Dataflow Gen1 to Dataflow Gen2 in Fabric
 
@@ -49,7 +49,7 @@ Dataflow Gen2 in Fabric provides many advantages and new capabilities compared t
 - Enhanced Refresh History & Monitoring experience
 - Enhanced Authoring and Publish experiences. 
 
-We encourage customers to start trying out Dataflow Gen2, either to recreate existing Dataflow Gen1 scenarios or to try out new ones. Early feedback on Dataflow Gen2 will help us evolve and mature product capabilities.
+We encourage customers to start trying out Dataflow Gen2, either to recreate existing Dataflow Gen1 scenarios or to try out new ones. Early feedback on Dataflow Gen2 helps us evolve and mature product capabilities.
 
 We have a few options for customers to recreate your Gen1 dataflows as Dataflow Gen2: 
 

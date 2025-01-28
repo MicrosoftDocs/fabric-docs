@@ -4,7 +4,7 @@ description: This article explains how to copy data using PostgreSQL.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 11/19/2023
 ms.custom:
   - template-how-to
   - build-2023
@@ -37,12 +37,11 @@ Go to **Source** tab to configure your copy activity source. See the following c
 
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
-- **Connection**: Select a PostgreSQL connection from the connection list. If no connection exists, then create a new PostgreSQL connection by selecting **New**.
+- **Connection**: Select a PostgreSQL connection from the connection list. If no connection exists, then create a new PostgreSQL connection.
 - **Connection type**: Select **PostgreSQL**.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
-      - **Table**: Specify the name of the table to read data. Select the table from the drop-down list or select **Edit** to manually enter it. 
+      - **Table**: Specify the name of the table to read data. Select the table from the drop-down list or select **Enter manually** to enter it.
 
         :::image type="content" source="./media/connector-postgresql/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
@@ -55,7 +54,8 @@ The following three properties are **required**:
         > Schema and table names are case-sensitive. Enclose them in "" (double quotes) in the query.
     
 Under **Advanced**, you can specify the following fields:
-        
+
+- **Query timeout (minutes)**: Specify the wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout).
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Mapping
@@ -74,10 +74,10 @@ The following table contains more information about the copy activity in Postgre
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the source data store.|< your PostgreSQL connection >|Yes|connection|
 |**Connection type** |Your source connection type. |**PostgreSQL** |Yes|/|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using SQL queries.|• **Table** <br>• **Query** |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• query|
+|**Query timeout (minutes)** | The wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout). |timespan |No |queryTimeout|
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
 ## Related content

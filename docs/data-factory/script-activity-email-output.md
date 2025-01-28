@@ -7,7 +7,7 @@ author: nabhishek
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Run a Script activity and send an output summary by email
@@ -18,7 +18,7 @@ This example shows how to run a script on an Azure SQL instance and send an outp
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Create a script activity and configure its output to be sent by email

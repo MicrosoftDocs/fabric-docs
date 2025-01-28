@@ -2,8 +2,8 @@
 title: Data formats supported by Real-Time Intelligence for ingestion.
 description: Learn about the various data and compression formats supported by Real-Time Intelligence for ingestion.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: concept-article
 ms.custom:
   - ignite-2024

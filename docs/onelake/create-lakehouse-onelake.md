@@ -20,13 +20,11 @@ This tutorial is a quick guide to creating a lakehouse and getting started with 
 
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
 
-1. Switch to Data Engineering using the workload switcher icon at the lower left corner of your homepage.
-
 1. Select **Workspaces** from the left-hand menu.
 
 1. To open your workspace, enter its name in the search textbox located at the top and select it from the search results.
 
-1. In the upper left corner of the workspace home page, select **New** and then choose **Lakehouse**.
+1. In the upper left corner of the workspace home page, select **New item** and then choose **Lakehouse** under **Get data** section.
 
 1. Give your lakehouse a name and select **Create**.
 
@@ -50,7 +48,7 @@ At this point, you have a lakehouse running on top of OneLake. Next, add some da
 
    :::image type="content" source="media\create-lakehouse-onelake\upload-files-screen.png" alt-text="Screenshot of the upload files screen where you can select a local file to upload.":::
 
-1. You’ve now added data to OneLake. To add data in bulk or schedule data loads into OneLake, use the **Get data** button to create pipelines. Find more details about options for getting data in [Microsoft Fabric decision guide: copy activity, dataflow, or Spark](../get-started/decision-guide-pipeline-dataflow-spark.md).
+1. You’ve now added data to OneLake. To add data in bulk or schedule data loads into OneLake, use the **Get data** button to create pipelines. Find more details about options for getting data in [Microsoft Fabric decision guide: copy activity, dataflow, or Spark](../fundamentals/decision-guide-pipeline-dataflow-spark.md).
 
 1. Select the More icon (**…**) for the file you uploaded and select **Properties** from the menu.
 

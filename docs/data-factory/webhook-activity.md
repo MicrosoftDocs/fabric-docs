@@ -7,7 +7,7 @@ ms.reviewer: jburchel
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the WebHook activity to call an endpoint and wait for it to complete
@@ -18,7 +18,7 @@ A webhook activity can control the execution of pipelines through custom code. W
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a WebHook activity to a pipeline with UI

@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 11/07/2024
+ms.date: 01/12/2025
 ---
 
 # Manage your Fabric capacity
@@ -29,9 +29,9 @@ The capacity settings page shows a list of all the capacities in your [tenant](.
    >[!NOTE]
    >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
 
-* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A SKUs.
+* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
 
-* **Trial** - A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use Trial SKUs.
+* **Trial** - A [Microsoft Fabric trial](../fundamentals/fabric-trial.md) capacity. These capacities use Trial SKUs.
 
 * **Fabric capacity** - A Microsoft Fabric capacity. These capacities use F SKUs.
 
@@ -124,7 +124,7 @@ To create a new Power BI Embedded with an EM SKU, follow these steps:
 
 # [Trial](#tab/trial)
 
-To create a new Trial capacity, see [Microsoft Fabric trial](../get-started/fabric-trial.md#start-the-fabric-capacity-trial).
+To create a new Trial capacity, see [Microsoft Fabric trial](../fundamentals/fabric-trial.md#start-the-fabric-capacity-trial).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -170,7 +170,21 @@ To change the name of your Power BI Premium capacity, follow these steps:
 
 # [Power BI Embedded](#tab/power-bi-embedded)
 
-You can't change a trial capacity's name.
+#### A SKUs
+
+Use the Azure Command-Line Interface (CLI) [az powerbi](/cli/azure/powerbi) commands.
+
+#### EM SKUs
+
+To change the name of your EM capacity, follow these steps:
+
+1. In the **Capacity settings** page, select **Power BI Embedded**.
+
+2. From the list of capacities, select the gear icon (**&#9881;**) next to the capacity you want to change.
+
+3. In the capacity's setting page, select the pencil icon next to the **Capacity name** field.
+
+4. Enter the new name for the capacity, and then select the checkmark icon (**&check;*)*.
 
 # [Trial](#tab/trial)
 
@@ -216,7 +230,7 @@ To add or remove admins in a Power BI Embedded capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-capacity-trial) is assigned to the user who signed up for the trial. You can't add or remove admins to a Trial capacity.
+A [trial capacity](../fundamentals/fabric-trial.md#start-the-fabric-capacity-trial) is assigned to the user who signed up for the trial. You can't add or remove admins to a Trial capacity.
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -306,7 +320,7 @@ To delete a Power BI Embedded capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-To delete a trial capacity, you need to cancel the trial. To cancel a trial, see [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial).
+To delete a trial capacity, you need to cancel the trial. To cancel a trial, see [End a Fabric trial](../fundamentals/fabric-trial.md#end-a-fabric-trial).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 

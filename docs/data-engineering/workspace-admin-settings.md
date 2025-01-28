@@ -17,7 +17,7 @@ ms.date: 11/15/2023
 
 When you create a workspace in Microsoft Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Microsoft Fabric, there's no need to choose the node or machine sizes, as these options are handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Apache Spark session start experience for users to get started and run your Apache Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Apache Spark pool and size the nodes based on their performance needs.
 
-To make changes to the Apache Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../get-started/roles-workspaces.md).
+To make changes to the Apache Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
 To manage the Spark settings for the pool associated with your workspace:
 

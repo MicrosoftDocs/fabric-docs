@@ -2,8 +2,8 @@
 title: Use example queries in Real-Time Intelligence
 description: Learn how to use example queries to get an initial look at your data in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -22,7 +22,7 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with data
 
 ## Query table

@@ -28,7 +28,7 @@ To learn more about Fabric capacity, see [Microsoft Fabric concepts and licenses
 
 Planning the size of a capacity can be a challenge. That's because the required compute can vary widely due to the operations performed, how well they're executed (for example, the efficiency of a DAX query or the Python code in a notebook), or the level of concurrency.
 
-To help you determine the right capacity size, you can provision [trial capacities](../get-started/fabric-trial.md) or [pay-as-you-go F SKUs](buy-subscription.md#azure-skus) to measure the actual capacity size required before purchasing an F SKU reserved instance.
+To help you determine the right capacity size, you can provision [trial capacities](../fundamentals/fabric-trial.md) or [pay-as-you-go F SKUs](buy-subscription.md#azure-skus) to measure the actual capacity size required before purchasing an F SKU reserved instance.
 
 > [!TIP]
 > It's always a good strategy to start small and then gradually increase the size of your capacity as necessary.
@@ -64,6 +64,12 @@ You can also resize, pause, and resume [Fabric F SKUs](scale-capacity.md) to ali
 You _scale out_ by moving some of your workspaces or items to a different Fabric capacity to spread the workload. It can be a good option when different capacity strategies, settings, or administrators are required. Provisioning multiple capacities is also a good strategy to help isolate compute for high-priority items, and also for self-service or development content. For example, the executives in your organization expect highly responsive reports and dashboards. These reports and dashboards can reside in a separate capacity dedicated to executive reporting.
 
 You can also consider moving Power BI workspaces to shared capacity, provided that consumers have [Power BI Pro](/power-bi/fundamentals/service-features-license-type#pro-license) licenses that let them continue to access the content.
+
+### Configure surge protection
+
+[Surge protection](surge-protection.md) helps limit overuse of your capacity by limiting the total amount of compute background jobs consume. This reduces total compute so interactive delays or rejections are less likely. It also helps the capacity recover faster if there's a period of throttling or rejections. You configure surge protection for each capacity. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. 
+
+When surge protection is active, background jobs are rejected. This means there's impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a range of usage that best balances compute needs within the capacity. To fully protect critical solutions, it's recommended to isolate them in a correctly sized capacity. 
 
 ## Compute optimization by Fabric experience
 
