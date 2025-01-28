@@ -24,13 +24,13 @@ The report is designed for admins to analyze their Fabric inventory in various w
 
 Use the slicers pane on the left side of the report to filter inventory on key attributes such as workspace, item type, and capacity. The filters pane on the right side of the report provides more options to further manipulate the data.
 
-To switch pages, use the navigation buttons at the top right of the report. Some buttons enable only after a certain action is taken. For example, the Details page button enables once any visual element is selected, allowing users to drill through for a tabular view of their data. The Workspace page button enables only when a  _Workspace name_ value is selected on a visual. The Analysis page button is always enabled for a flexible view of your inventory.
+To switch pages, use the navigation buttons at the top right of the report. Some buttons enable only after a certain action is taken. For example, the Details page button enables once any visual element is selected, allowing users to drill through for a tabular view of their data. The Workspace page button enables only when a  _Workspace name_ value is selected on a visual.
 
 ## Report pages
 
 The report is composed of four pages:
 
-* **Inventory Overview** - Provides a high-level overview of Fabric items across the organization
+* **Inventory Overview** - Provides a high-level overview of Fabric items across your organization
 
 * **Analysis** - Visualizes inventory across different dimensions in a highly flexible format
 
@@ -84,19 +84,23 @@ On the Workspace page, you're provided with details on how items within a specif
 
 * Item deleted within the last 30 days
 
-You can only get to the *Workspace* page by drilling through from another page.
+#### Example
 
-To drill through, right-click a visual element, then select the *Workspace* page from the "Drill through" menu. After drilling through, you can see detailed metrics for the selected workspace, with the ability to drill through even further to the *Details* page.
+To drill into the details of a specific workspace:
 
-Once on the Workspace page, users can select the _Reset filters_ button to reflect visuals for other workspaces or for the entire tenant.
+1. Right-click any visual that uses the *Workspace name* field, then select the *Workspace* page from the "Drill through" menu.
 
-In the next release, the Workspace page will also be enabled as a summary page.
+2. After drilling through, you can see detailed metrics for the selected workspace, with the ability to drill through even further to the *Details* page.
+
+3. Once on the Workspace page, users can select the _Reset filters_ button to reflect visuals for other workspaces or for the entire tenant.
+
+You can only get to the *Workspace* page by drilling through from another page. In the next release, the Workspace page will also be enabled as a summary page for easier access.
 
 ### Details page
 
 The Details page provides a table that highlights inventory in a tabular format.
 
-You can only navigate to the *Details* page by drilling through from other pages in the report. To drill through, right-click a value in a visual, then select the *Details* page from the "Drill through" menu. After drilling through to the *Details* page, you can see information for the specific subset of items.
+You can only navigate to the *Details* page by drilling through from other pages in the report. To drill through, right-click a value in any visual, then select the *Details* page from the "Drill through" menu. After drilling through to the *Details* page, you can see information for the specific subset of items.
 
 You can export data from the Details page, or any other visual, by clicking _More options_ in the visual header and selecting _Export data_.
 
@@ -109,7 +113,7 @@ You can export data from the Details page, or any other visual, by clicking _Mor
 | Total capacities    | The number of capacities across the entire tenant, or based on the filters you apply.    |
 | Total workspaces  | The number of workspaces across the entire tenant, or based on the filters you apply.    |
 | User access count | The number of individual users with access to an item or workspace.    |
-| Group access count    | The number of group members with access to an item or workspace. Group owners aren't included, but service principals are (as long as they're a group member). Group access counts are calculated by flattening the parent and nested groups, so users are deduped if they're members of multiple groups in a nest.   |
+| Group access count    | The number of group members with access to an item or workspace. Group owners aren't included, but service principals are (as long as they're a group member). Group access counts are calculated by flattening nested groups, so users are deduped if they're members of multiple groups in a nest.   |
 | Total access count    | The number of individual users and group members with access to an item or workspace; the sum of user and access count. Users aren't deduped if they have access to an item or workspace through a group and individual access.   |
 
 Access counts for an item include both direct access through _Manage permissions_, or access inherited through a workspace role. Access counts also include sharing links if created for a specific persons or group.
@@ -118,7 +122,7 @@ Access counts for an item include both direct access through _Manage permissions
 
 * To drill through from the Analysis page decomp visual, you must right-click a node and select the desired drill through target page. The page navigation buttons don't always enable even when decomp visual elements are selected.
 
-* In the next release of the report, the Workspace page will always be enabled, and its drill through fields will be extended to other workspace-related fields such as workspace type. The Analysis page will be enabled as a drill through page.
+* In the next release of the report, the Workspace page will always be enabled, and its drill through fields will be extended to other workspace-related fields such as *Workspace type*. The Analysis page will be enabled as a drill through page.
 
 * More fields will be added to the Analysis page decomp visual. 
 
