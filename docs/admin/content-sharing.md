@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 08/07/2024
 ---
 
-# Content sharing report (private preview)
+# Content sharing report (preview)
 
 The Content sharing report is designed for admins to understand how Fabric items are distributed and shared across their organization. Using insights gained from the report, admins can better govern their tenant and take action on items if needed.
 
@@ -20,11 +20,11 @@ You can also have an admin share the report or semantic model directly with you.
 
 ## Navigation
 
-The report is designed for admins to analyze their Fabric inventory in a variety of ways.
+The report is designed for admins to analyze their Fabric inventory in various ways.
 
-Use the slicers pane on the left side of the report to filter inventory on a variety of key attributes such as workspace, item type, and capacity. The filters pane on the right side of the report provides additional options to further manipulate the data.
+Use the slicers pane on the left side of the report to filter inventory on key attributes such as workspace, item type, and capacity. The filters pane on the right side of the report provides more options to further manipulate the data.
 
-Use the navigation buttons at the top right of the report to switch pages. Some buttons will only enable when a certain action is taken. For example, the Details page button will enable once any visual element is selected, allowing users to drill through for a tabular view of their data. The Workspace page button will only enable when a  _Workspace name_ value is selected on a visual. The Analysis page button is always enabled for a flexible view of your inventory.
+To switch pages, use the navigation buttons at the top right of the report. Some buttons enable only after a certain action is taken. For example, the Details page button enables once any visual element is selected, allowing users to drill through for a tabular view of their data. The Workspace page button enables only when a  _Workspace name_ value is selected on a visual. The Analysis page button is always enabled for a flexible view of your inventory.
 
 ## Report pages
 
@@ -54,15 +54,15 @@ Use the Inventory Overview page to quickly answer questions such as:
 
 ### Analysis page
 
-On the Analysis page, you are provided with a decomposition tree visual to aggregate and drill into your inventory in a highly flexible format.
+On the Analysis page, you're provided with a decomposition tree visual to aggregate and drill into your inventory in a highly flexible format.
 
-Using the toggle at the top of the page, users can decide whether to break down their inventory by total items or total access count. Definitions for these measures are provided down below in the _Measures_ section.
+Users can decide whether to break down their inventory by total items or total access count by using the toggle at the top of the page. Definitions for these measures are provided below in the _Measures_ section.
 
 You can break down either measure across a variety of item-related dimensions - including item type, workspace name, endorsement, and more.
 
 #### Example
 
-In a large organization, the Analysis page can be helpful to quickly analyze item distribution in a variety of ways. You can also drill into specific data points for a closer look at item distribution.
+In a large organization, the Analysis page can be helpful to quickly analyze item distribution. You can also drill into specific data points for a closer look at item distribution.
 
 To drill into the details of a specific scenario from the decomposition tree visual:
 
@@ -74,7 +74,7 @@ After drilling through, the target page and its visuals will be pre-filtered to 
 
 ### Workspace page
 
-On the Workspace page, you are provided with details on how items within a specific workspace are shared. The Workspace page includes visuals that highlight certain scenarios such as:
+On the Workspace page, you're provided with details on how items within a specific workspace are shared. The Workspace page includes visuals that highlight certain scenarios such as:
 
 * Most shared items by total access count
 
@@ -86,7 +86,7 @@ On the Workspace page, you are provided with details on how items within a speci
 
 You can only get to the *Workspace* page by drilling through from another page.
 
-To drill through, right-click a visual elemen, then select the *Workspace* page from the "Drill through" menu. After drilling through, you can see detailed metrics for the selected workspace, with the ability to drill through even further to the *Details* page.
+To drill through, right-click a visual element, then select the *Workspace* page from the "Drill through" menu. After drilling through, you can see detailed metrics for the selected workspace, with the ability to drill through even further to the *Details* page.
 
 Once on the Workspace page, users can select the _Reset filters_ button to reflect visuals for other workspaces or for the entire tenant.
 
@@ -109,18 +109,18 @@ You can export data from the Details page, or any other visual, by clicking _Mor
 | Total capacities    | The number of capacities across the entire tenant, or based on the filters you apply.    |
 | Total workspaces  | The number of workspaces across the entire tenant, or based on the filters you apply.    |
 | User access count | The number of individual users with access to an item or workspace.    |
-| Group access count    | The number of group members with access to an item or workspace. Group owners aren't included, but service principals are (as long as they are a group member). Group access counts are calculated by flattening the parent and nested groups, so users are deduped if they are members of multiple groups in a nest.   |
-| Total access count    | The number of individual users and group members with access to an item or workspace; the sum of user and access count. Users are not deduped if they have access to an item or workspace through a group and individual access.   |
+| Group access count    | The number of group members with access to an item or workspace. Group owners aren't included, but service principals are (as long as they're a group member). Group access counts are calculated by flattening the parent and nested groups, so users are deduped if they're members of multiple groups in a nest.   |
+| Total access count    | The number of individual users and group members with access to an item or workspace; the sum of user and access count. Users aren't deduped if they have access to an item or workspace through a group and individual access.   |
 
-Access counts for an item include both direct access through _Manage permissions_, or access inherited through a workspace role. Access counts also include sharing links if created for a specific person(s) or group.
+Access counts for an item include both direct access through _Manage permissions_, or access inherited through a workspace role. Access counts also include sharing links if created for a specific persons or group.
 
 ## Upcoming fixes and enhancements
 
-* To drill through from the Analysis page decomp visual, you must right-click a node and select the desired drill through target page. The page navigation buttons do not always enable even when decomp visual elements are selected.
+* To drill through from the Analysis page decomp visual, you must right-click a node and select the desired drill through target page. The page navigation buttons don't always enable even when decomp visual elements are selected.
 
-* In the next release of the report, the Workspace page will always be enabled, and its drill through fields will be extended to other workspace-related fields such as workspace type. The Analysis page will also be enabled as a drill through page.
+* In the next release of the report, the Workspace page will always be enabled, and its drill through fields will be extended to other workspace-related fields such as workspace type. The Analysis page will be enabled as a drill through page.
 
-* Additional fields will be added to the Analysis page decomp visual. 
+* More fields will be added to the Analysis page decomp visual. 
 
 ## Considerations and limitations
 
@@ -134,13 +134,13 @@ This section lists the report's considerations and limitations.
 
 * Workspaces with retention periods longer than 30 days won't appear in the report, but can be seen in the admin portal workspaces menu.
 
-* Inventory which has been created and deleted within a 24 hour period may have incomplete information.
+* Inventory created and deleted within a 24 hour period may have incomplete information.
 
-* Reports and dashboard which have been embedded in apps will appear twice; use the _Item id_ value to differentiate.
+* Reports and dashboards embedded in apps appear twice; use the _Item Id_ value to differentiate.
 
 ### Pro and PPU capacities
 
-Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities. Inventory may be categorized under these logical capacities using the values below.
+Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities.
 
   * **Pro logical capacities** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro* or *SharedOnPremium*.
 
