@@ -39,8 +39,6 @@ In this task, learn how to work with the SQL query editor to write cross-warehou
 
 1. In the **OneLake catalog** window, select the `Shortcut_Exercise` SQL analytics endpoint.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="Screenshot of the OneLake catalog window, highlighting the SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" border="false":::
-
 1. Select **Confirm**.
 
 1. In the **Explorer** pane, notice that the `Shortcut_Exercise` SQL analytics endpoint is available.
