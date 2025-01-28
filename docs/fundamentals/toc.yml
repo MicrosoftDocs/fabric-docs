@@ -59,6 +59,8 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
+  - name: Take ownership of Fabric items
+    href: item-ownership-take-over.md
   - name: Workspace identity
     href: ../security/workspace-identity.md
   - name: Workspace monitoring

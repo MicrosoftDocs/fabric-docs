@@ -363,3 +363,7 @@ The following table provides the limitations of OneLake data access roles.
 
 - If you change a OneLake RBAC Role definition, it takes about 5 minutes for OneLake to apply the updated definitions.
 - If you change a user group in OneLake RBAC role, it takes about an hour for OneLake to apply the role's permissions on the updated user group.
+
+## Consideration and Limitations
+
+- If you assign an RBAC role to a B2B guest user, you must [configure your external collaboration settings for B2B in Microsoft Entra External ID](/entra/external-id/external-collaboration-settings-configure). The **Guest user access** setting must be set to **Guest users have the same access as members (most inclusive)**.
