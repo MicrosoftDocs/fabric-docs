@@ -56,9 +56,9 @@ Use the Inventory Overview page to quickly answer questions such as:
 
 On the Analysis page, you're provided with a decomposition tree visual to aggregate and drill into your inventory in a highly flexible format.
 
-Users can decide whether to break down their inventory by total items or total access count by using the toggle at the top of the page. Definitions for these measures are provided below in the _Measures_ section.
+Users can decide whether to break down their inventory by total items or total access count by using the toggle at the top of the page. Definitions for these measures are provided in the _Measures_ section.
 
-You can break down either measure across a variety of item-related dimensions - including item type, workspace name, endorsement, and more.
+You can break down either measure across different item-related dimensions - including item type, workspace name, endorsement, and more.
 
 #### Example
 
@@ -70,7 +70,7 @@ To drill into the details of a specific scenario from the decomposition tree vis
 
 2. From the *Drill through* menu, select the appropriate page - either the Workspace or Details page - where you'd like to navigate to.
 
-After drilling through, the target page and its visuals will be pre-filtered to the specific subset of data selected from the previous page.
+After drilling through, the target page and its visuals will be prefiltered to the specific subset of data selected from the previous page.
 
 ### Workspace page
 
@@ -132,11 +132,11 @@ This section lists the report's considerations and limitations.
 
 * The report retains information for 30 days, including deleted capacities, workspaces, and other items.
 
-* Workspaces with retention periods longer than 30 days won't appear in the report, but can be seen in the admin portal workspaces menu.
+* Workspaces with retention periods longer than 30 days don't appear in the report, but can be seen in the admin portal workspaces menu.
 
 * Inventory created and deleted within a 24 hour period may have incomplete information.
 
-* Reports and dashboards embedded in apps appear twice; use the _Item Id_ value to differentiate.
+* Reports and dashboards embedded in apps appear twice; use the _Item ID_ value to differentiate.
 
 ### Pro and PPU capacities
 
