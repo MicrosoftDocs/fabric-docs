@@ -132,72 +132,20 @@ response=requests.post(url,json=payload,header=header)
 
 Notice that we import the "request" module because this is a KQL API and not a direct Fabric API. This adds a few steps in order to authenticate the response but is still easily accomplished.
 
-### Summary
-For this example we utlized the Microsoft Fabric APIs to create an Eventhouse and a KQL DB in an existing Workspace. Then used the KQL APIs to configure the KQL DB.
+## Clean up resources
 
-Next we'll do the same thing exept using just Microsoft Fabric APIs.
+Once you finish the tutorial, you might want to delete all resources you created. You can delete the eventhouse and database, or you can delete the entire workspace.
 
-## Useful Links
-**Fabric API Support for Eventhouse**
+1. Browse to the workspace in which you created the tutorial.
+1. From the menu ribbon, select **Workspace settings**.
+1. In the **General** settings pane, scroll down to the **Delete workspace** section.
+1. Select **Remove this workspace**.
+1. On the warning dialog that open, select **Delete**. Once a workspace is deleted, it can't be recovered.
 
-|Action  | Document Link |
-|  ------------- | ------------- |
-Create Eventhouse  Items | [Create Eventhouse – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/create-eventhouse)
-Delete Eventhouse  Items | [Delete Eventhouse – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/delete-eventhouse) 
-Get Eventhouse  Items | [Get Eventhouse – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/get-eventhouse)
-Get Eventhouse Item Definition | [Get Evenhouse Definition - Rest API](https://learn.microsoft.com/en-us/rest/api/fabric/eventhouse/items/get-eventhouse-definition?tabs=HTTP)
-Update Eventhouse  Items | [Update Eventhouse – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/update-eventhouse)
-Update Eventhouse Item Definition | [Update Eventhouse Definition - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/eventhouse/items/update-eventhouse-definition?tabs=HTTP)
-List Items  Items | [List Eventhouses – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/list-eventhouses)
+## Related content
 
-**Fabric API Support for KQL DB**
-
-|Action  | Document Link |
-|  ------------- | ------------- |
-Create KQL Database  Items | [Create KQL Database – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/create-kql-database) 
-Delete KQL Database  Items | [Delete KQL Database – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/delete-kql-database?tabs=HTTP) 
-Get KQL Database  Items | [Get KQL Database – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/get-kql-database?tabs=HTTP) 
-Get KQL Database Item Definition | [Get KQL Database Definition - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldatabase/items/get-kql-database-definition?tabs=HTTP)
-Update KQL Database  Items | [Update KQL Database – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/update-kql-database?tabs=HTTP) 
-Update KQL Database Item Definition | [Update KQL Database Item Definition](https://learn.microsoft.com/en-us/rest/api/fabric/kqldatabase/items/update-kql-database-definition?tabs=HTTP)
-List KQL Databases  Items | [List KQL Databases – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/list-kql-databases?tabs=HTTP) 
-
-**Fabric API Support for KQL Queryset**
-
-|Action  | Document Link |
-|  ------------- | ------------- |
-Create KQL Queryset Items | [Create KQL Queryset - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqlqueryset/items/create-kql-queryset?tabs=HTTP)
-Delete KQL Queryset  Items | [Delete KQL Querysets – REST API](https://learn.microsoft.com/rest/api/fabric/kqlqueryset/items/delete-kql-queryset) 
-Get KQL Queryset  Items | [Get KQL Queryset – REST API](https://learn.microsoft.com/rest/api/fabric/kqlqueryset/items/get-kql-queryset?tabs=HTTP) 
-Get KQL Queryset Item Definition | [Get KQL Queryset Definition - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqlqueryset/items/get-kql-queryset-definition?tabs=HTTP)
-List KQL Queryset  Items | [List KQL Querysets – REST API](https://learn.microsoft.com/rest/api/fabric/kqlqueryset/items/list-kql-querysets?tabs=HTTP) 
-Update KQL Queryset  Items | [Update KQL Queryset – REST API](https://learn.microsoft.com/rest/api/fabric/kqlqueryset/items/update-kql-queryset?tabs=HTTP) 
-Update KQL Queryset Items Definition | [Update KQL Queryset Definition - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqlqueryset/items/update-kql-queryset-definition?tabs=HTTP)
-
-**Fabric API Support for Dashboards**
-
-|Action  | Document Link |
-|  ------------- | ------------- |
-Create Dashboard Items | [Create Dashboard - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/create-kql-dashboard?tabs=HTTP)
-List Dashboard  Items | [List Dashboards – REST API](https://learn.microsoft.com/en-us/rest/api/fabric/dashboard/items/list-dashboards?tabs=HTTP) 
-Delete Dashboard Items | [Delete Dashboard - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/delete-kql-dashboard?tabs=HTTP)
-Get Dashboard Items | [Get Dashboard - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/get-kql-dashboard?tabs=HTTP)
-Update Dashboard Items | [Update Dashboard - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/update-kql-dashboard?tabs=HTTP)
-Update Dashboard Items Definition | [Update Dashboard Item Definition](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/update-kql-dashboard-definition?tabs=HTTP)
-
-**KQL API Support for Fabric Eventhouse and Database**
-
-|Action  | Document Link |
-|  ------------- | ------------- |
-Query/Management |  [Query/management HTTP request – Azure Data Explorer & Real-Time Analytics](https://learn.microsoft.com/azure/data-explorer/kusto/api/rest/request)
-
-**Definition Schema**
-|Action  | Document Link |
-|  ------------- | ------------- |
-Eventhouse Definition | [Eventhouse Definition](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/eventhouse-definition)
-KQL DB Definition | [KQL DB Definition](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/kql-database-definition)
-KQL Queryset Definition | [KQL Queryset Definition](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/kql-queryset-definition) 
-KQL Dashboard Definition | [KQL Dashboard Definition](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/kql-dashboard-definition)
-
-
-
+* [Deploy an eventhouse using APIs overview](eventhouse-deploy-with-api-overview.md)
+* [Tutorial: Deploy an eventhouse using Fabric APIs with schema script](eventhouse-deploy-with-fabric-api.md)
+* [Eventhouse item operations](/rest/api/fabric/eventhouse/items)
+* [KQL Database item operations](/rest/api/fabric/kqldatabase/items)
+* [KQL Database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition)

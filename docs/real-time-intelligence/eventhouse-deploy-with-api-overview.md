@@ -1,5 +1,5 @@
 ---
-title: Deploy an eventhouse using APIs
+title: Deploy an eventhouse using APIs overview
 description: Learn how to use APIs for Eventhouse and KQL Database to automate deployments, manage data efficiently, and enhance your development workflow
 author: shsagir
 ms.author: shsagir
@@ -9,7 +9,7 @@ ms.date: 12/05/2024
 ms.custom:
 #customer intent: As a developer, I want to use the Eventhouse and KQL APIs so that I can automate deployments and manage data efficiently.
 ---
-# Deploy an eventhouse using APIs
+# Deploy an eventhouse using APIs overview
 
 You can fully automate the deployment of your Eventhouses with KQL Databases using APIs. You can use Fabric APIs to create, update, and delete items within your workspace. You can then use one of the following methods to manage your eventhouses and databases by performing actions such as creating tables and changing policies:
 
@@ -27,9 +27,10 @@ When choosing the right method to manage your Eventhouse and KQL Database, consi
 
 To learn how to use APIs to deploy an Eventhouse, see the following tutorials:
 
-- Fabric only <!--- link to tutorial -->
-- Fabric + Kusto <!--- link to tutorial -->
+- [Tutorial: Deploy an eventhouse using Fabric APIs with schema script](eventhouse-deploy-with-fabric-api.md)
+- [Tutorial: Deploy an eventhouse using Fabric and Kusto APIs](eventhouse-deploy-with-fabric-kusto-api.md)
 
 ## Related content
 
-- [Eventhouse API](/rest/api/fabric/articles/eventhouse-api)
+- [Eventhouse API overview](/rest/api/fabric/eventhouse/items)
+- [KQL Database API overview](/rest/api/fabric/kqldatabase/items)
