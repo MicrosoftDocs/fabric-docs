@@ -85,6 +85,7 @@ In this scenario, the new item owner can fix connections by going into the item 
 
 ## Considerations and limitations
 
+* This feature is currently not available in East Asia and Southeast Asia due to Lunar New Year code freeze. It will become available in these regions starting next week.
 * The following Fabric items don't support ownership change.
 
    * Mirrored Cosmos DB
@@ -97,4 +98,6 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
+* If a parent item uses system generated child items, which are not visible to or accessible by users, then ownership takeover will not be available for such parent items. This could happen when Reflex or Event stream items are created as part of Real-time hub.
 * Currently, there's no API support for changing ownership of Fabric items. This doesn't impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, and datamarts, which continues to be available. For information about taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
+* This feature does not cover ownership takeover as a service principal.
