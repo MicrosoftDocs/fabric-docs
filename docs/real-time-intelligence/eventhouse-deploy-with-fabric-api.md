@@ -4,245 +4,203 @@ description: Learn how to use APIs for Eventhouse and KQL Database to automate d
 author: shsagir
 ms.author: shsagir
 ms.reviewer: bwatts
-ms.topic: concept-article
-ms.date: 12/05/2024
+ms.topic: tutorial
+ms.date: 01/28/2025
 ms.custom:
 #customer intent: As a developer, I want to use the Eventhouse and KQL APIs so that I can automate deployments and manage data efficiently.
 ---
 # Tutorial: Deploy an eventhouse using Fabric APIs
 
-You can fully automate the deployment of your eventhouses with KQL databases by combining Fabric APIs and Kusto APIs. Fabric APIs allow you to create, update, and delete items within Fabric. Meanwhile, KQL APIs enable you to manage your eventhouses and databases by performing actions such as creating tables, changing policies, and running queries on your data.
+This article teaches you how to fully automate the deployment of an eventhouses with KQL databases by using Fabric APIs with a database schema script. Fabric APIs allow you to create, update, and delete items within Fabric. Meanwhile, KQL APIs enable you to manage your eventhouses and databases by performing actions such as creating tables, changing policies, and running queries on your data.
 
-## Example
+In this tutorial, you:
 
-Let's first walk through an example to see how the APIs can be used for automation. If
-you're new to KQL in Fabric it will be good to brush up on:
+> [!div class="checklist"]
+>
+> * Set up your environment
+> * Create an eventhouse
+> * Create base64 strings for definitions
+> * Create and configure the KQL database
+> * Monitor the operation for completion
 
-- Overview
-- Eventhouse Overview
-- KQL Database Overview
-- Creating a table
-- Caching Policy
-- Retention Policy
+## Prerequisites
 
-## Environment
-For this walkthrough we will utilize a Microsoft Fabric Notebook, using python to make all of the API calls. Being we are already in Micrsoft Fabric and logged in we do not have to authenticate but the API calls and payload will be identical no matter what tool you use.ore your data. 
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* Your workspace ID. For more information, see [Identify your workspace ID](../admin/portal-workspace.md#identify-your-workspace-id).
 
-We will do two different options. One option using a combination of Fabric APIs along with KQL APIs and another option using just eh Fabric APIs with definitions.
+## Set up your environment
 
-## Option: Microsoft Fabric APIs with Definitions
+For this tutorial, you use Fabric notbooks to run python [code snippets](../data-engineering/author-execute-notebook.md#code-snippets). You use the *sempy.fabric* package in *semantic-link* python package to make the API calls using your credentials. The API calls and payload are identical, regardless of the tool you use.
 
-Below we'll utilize the Fabric APIs with Definitions to accomplish the same steps as above.
+Start by setting up your environment:
 
-1. Create an Eventhouse
-2. Add a KQL Database to the Eventhouse
-4. Create a table on the Database and configure it's Caching and Retention Policy
+1. Navigate to an existing notebook or create a new one.
+1. In a code cell, enter code to import the packages:
 
-### Step 1: Configure the Notebook
-For calling the APIs we will utilize sempy.fabric package in semantic-link. You can use this code to install and import.
-```
-!pip install semantic-link --q
+    ```python
+    !pip install semantic-link --q
 
-import sempy.fabric as fabric
-import base64
-import time
-import uuid
-import json
-```
+    import sempy.fabric as fabric
+    import base64
+    import time
+    import uuid
+    import json
+    ```
 
-Next we'll setup our client to make the API calls and set the variables for an existing Workspace Id along with what you want the Eventhouse and KQL DB to be name.
-```
-client = fabric.FabricRestClient()
-workspaceId = 'dee24b18-6c23-4ea3-891d-b974bc89a63d'
-EventhouseName = f"{'SampleEventhouse'}_{uuid.uuid4()}"
-DBName=f"{'SampleDB'}_{uuid.uuid4()}"
-DBCache="P30D"
-DBStorage="P365D"
-```
+1. Set up your client to make the API calls and set a variable for your workspace ID and a UUID to ensure the names are unique:
 
-### Step 2: Create the Eventhouse
-You can utilize the Fabric Create Eventhouse API to create a new Eventhouse. We need the Eventhouse ID for the next step so we'll set it in a variable.
+    ```python
+    client = fabric.FabricRestClient()
+    workspace_id = 'aaaabbbb-0000-cccc-1111-dddd2222eeee'
+    uuid = uuid.uuid4()
+    ```
 
-```
-url = f"v1/workspaces/{workspaceId}/eventhouses"
+### Create an eventhouse
 
-payload = {
-    "displayName": f"{EventhouseName}"
-}
+1. Add a variable for your eventhouse name.
 
-response=client.post(url,json=payload)
+    ```python
+    eventhouse_name = f"{'SampleEventhouse'}_{uuid}"
+    ```
 
-EventhouseId=response.json()['id']
-```
-**Output**
+1. Use the [Fabric Create Eventhouse API](/rest/api/fabric/eventhouse/items/create-eventhouse) to create a new eventhouse. Set the eventhouse ID in a variable:
+
+    ```python
+    url = f"v1/workspaces/{workspace_id}/eventhouses"
+    payload = {
+      "displayName": f"{eventhouse_name}"
+    }
+
+    response = client.post(url, json=payload)
+    eventhouse_id = response.json()['id']
+    ```
+
+<!-- **Output**
+
 ```
 {
   "id": "<Item_Id>",
   "type": "Eventhouse",
   "displayName": "SampleEventhouse",
   "description": "",
-  "workspaceId": "<Workspace_ID>"
+  "workspace_id": "<Workspace_ID>"
 }
-```
+``` -->
 
-### Step 3: Create Base64 Strings for Definitions
-The API with definitions require base64 strings. For more information on what the definition should look like click [here](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/kql-database-definition).
+### Create Base64 strings for definitions
 
-Below we define both the database properties and the database schema. Then encode them as base64 so we can urtilize that in our API calls.
+The [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) uses [item definitions](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) for database properties and schemas that require base64 strings. The properties set the database level retention policies and database schema script contains the commands to run to create database entities.
 
-```
-dbproperties={
-  "databaseType": "ReadWrite",
-  "parentEventhouseItemId": f"{EventhouseId}", 
-  "oneLakeCachingPeriod": f"{DBCache}", 
-  "oneLakeStandardStoragePeriod": f"{DBStorage}" 
-}
+1. Add variables for your configuring you KQL database.
 
-dbproperties = json.dumps(dbproperties)
+    ```python
+    database_name = f"{'SampleDatabase'}_{uuid}"
+    database_cache = "3d"
+    database_storage = "30d"
+    ```
 
+1. Create a base64 string for the database properties:
 
-dbschema=""".create-merge table T(a:string, b:string)
-.alter table T policy retention @'{"SoftDeletePeriod":"10.00:00:00","Recoverability":"Enabled"}'
-.alter table T policy caching hot = 3d
-"""
+    ```python
+    database_properties = {
+      "databaseType": "ReadWrite",
+      "parentEventhouseItemId": f"{eventhouse_id}",
+      "oneLakeCachingPeriod": f"{database_cache}",
+      "oneLakeStandardStoragePeriod": f"{database_storage}"
+    }
+    database_properties = json.dumps(database_properties)
 
+    database_properties_string = database_properties.encode('utf-8')
+    database_properties_bytes = base64.b64encode(database_properties_string)
+    database_properties_string = database_properties_bytes.decode('utf-8')
+    ```
 
-dbproperties_string = dbproperties.encode('utf-8')
-dbproperties_bytes = base64.b64encode(dbproperties_string)
-dbproperties_string = dbproperties_bytes.decode('utf-8')
+1. Create a base64 string for the database schema:
 
-dbschema_string = dbschema.encode('utf-8')
-dbschema_bytes = base64.b64encode(dbschema_string)
-dbschema_string = dbschema_bytes.decode('utf-8')
-```
+    ```python
+    database_schema=""".create-merge table T(a:string, b:string)
+    .alter table T policy retention @'{"SoftDeletePeriod":"10.00:00:00","Recoverability":"Enabled"}'
+    .alter table T policy caching hot = 3d
+    """
 
-### Step 4: Create and Configure the Database
-Now that we have the base64 strings we can call the create database api and include the definition to configure the database.
+    database_schema_string = database_schema.encode('utf-8')
+    database_schema_bytes = base64.b64encode(database_schema_string)
+    database_schema_string = database_schema_bytes.decode('utf-8')
+    ```
 
-```
-url = f"v1/workspaces/{workspaceId}/kqlDatabases"
+### Create and configure the KQL database
+
+Use the [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to create a new KQL database with the retention policies and schema you defined.
+
+```python
+url = f"v1/workspaces/{workspace_id}/kqlDatabases"
 
 payload = {
-    "displayName": f"{DBName}",
-    "definition": {
-      "parts": [
-        {
-          "path": "DatabaseProperties.json",
-          "payload": f"{dbproperties_string}",
-          "payloadType": "InlineBase64"
-        },
-        {
-          "path": "DatabaseSchema.kql",
-          "payload": f"{dbschema_string}",
-          "payloadType": "InlineBase64"
-        }
-      ]
+  "displayName": f"{database_name}",
+  "definition": {
+    "parts": [
+      {
+        "path": "DatabaseProperties.json",
+        "payload": f"{database_properties_string}",
+        "payloadType": "InlineBase64"
+      },
+      {
+        "path": "DatabaseSchema.kql",
+        "payload": f"{database_schema_string}",
+        "payloadType": "InlineBase64"
+      }
+    ]
   }
 }
 
-print(payload)
-
-response=client.post(url,json=payload)
+response = client.post(url, json=payload)
 ```
 
-### Step 5: Monitor Operation for Completion
-Creating an item with a definition is a long running job. So you need to monitor the operation for completion as it runs async. The below code will check the status and provide the results when the operation is complete.
+### Monitor the operation for completion
 
-```
-print(f"Create request status code {response.status_code}")
+Creating an item with a definition is a long-running operation that runs asynchronously. You can monitor the operation using status_code and location information in the response object from the create database API call, as follows:
+
+```python
+print(f"Create request status code: {response.status_code}")
 print(response.headers['Location'])
 async_result_polling_url = response.headers['Location']
 
 while True:
-    async_response = client.get(async_result_polling_url)
-    async_status = async_response.json().get('status').lower()
-    print("Long running operation status " + async_status)
-    if async_status != 'running':
-        break
-   
-    time.sleep(3)
+  async_response = client.get(async_result_polling_url)
+  async_status = async_response.json().get('status').lower()
+  print(f"Long running operation status: {async_status}")
+  if async_status != 'running':
+    break
 
-print("Long running operation reached terminal state '" + async_status +"'")
+  time.sleep(3)
+
+print(f"Long running operation reached terminal state: '{async_status}'")
 
 if async_status == 'succeeded':
-    print("The operation completed successfully.")
-    final_result_url= async_response.headers['Location']
-    final_result = client.get(final_result_url)
-    print(f"Final result: {final_result.json()}")
+  print("The operation completed successfully.")
+  final_result_url= async_response.headers['Location']
+  final_result = client.get(final_result_url)
+  print(f"Final result: {final_result.json()}")
 elif async_status == 'failed':
-    print("The operation failed.")
+  print("The operation failed.")
 else:
-    print("The operation is in an unexpected state:", status)
+  print(f"The operation is in an unexpected state: {status}")
 ```
 
-That's it! This will create the new database, set the database level retention policies, and then run the KQL commands defined in the database schema script.
+## Clean up resources
 
-## Summary
-Using the Fabric APIs along with the KQL APIs allow us to interact with both the control plane of Fabric along with the data plane of KQL. With the addition of the APIs with definitions we have multiple options to interact with the data plane and automate your deployments.
-- With the KQL API you are able to execute any command that is available on a Fabric KQL Database or Eventhouse.
-- With the API with Definition you are able to execute a KQL script to configure your database
+Once you finish the tutorial, you might want to delete all resources you created. You can delete the eventhouse and database, or you can delete the entire workspace.
 
-## Useful Links
-**Fabric API Support for Eventhouse**
+1. Browse to the workspace in which you created the tutorial.
+1. From the menu ribbon, select **Workspace settings**.
+1. In the **General** settings pane, scroll down to the **Delete workspace** section.
+1. Select **Remove this workspace**.
+1. On the warning dialog that open, select **Delete**. Once a workspace is deleted, it can't be recovered.
 
-|Action  | Document Link |
-|  ------------- | ------------- |
-Create Eventhouse  Items | [Create Eventhouse – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/create-eventhouse)
-Delete Eventhouse  Items | [Delete Eventhouse – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/delete-eventhouse) 
-Get Eventhouse  Items | [Get Eventhouse – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/get-eventhouse)
-Get Eventhouse Item Definition | [Get Evenhouse Definition - Rest API](https://learn.microsoft.com/en-us/rest/api/fabric/eventhouse/items/get-eventhouse-definition?tabs=HTTP)
-Update Eventhouse  Items | [Update Eventhouse – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/update-eventhouse)
-Update Eventhouse Item Definition | [Update Eventhouse Definition - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/eventhouse/items/update-eventhouse-definition?tabs=HTTP)
-List Items  Items | [List Eventhouses – REST API](https://learn.microsoft.com/rest/api/fabric/eventhouse/items/list-eventhouses)
+## Related content
 
-**Fabric API Support for KQL DB**
-
-|Action  | Document Link |
-|  ------------- | ------------- |
-Create KQL Database  Items | [Create KQL Database – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/create-kql-database) 
-Delete KQL Database  Items | [Delete KQL Database – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/delete-kql-database?tabs=HTTP) 
-Get KQL Database  Items | [Get KQL Database – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/get-kql-database?tabs=HTTP) 
-Get KQL Database Item Definition | [Get KQL Database Definition - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldatabase/items/get-kql-database-definition?tabs=HTTP)
-Update KQL Database  Items | [Update KQL Database – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/update-kql-database?tabs=HTTP) 
-Update KQL Database Item Definition | [Update KQL Database Item Definition](https://learn.microsoft.com/en-us/rest/api/fabric/kqldatabase/items/update-kql-database-definition?tabs=HTTP)
-List KQL Databases  Items | [List KQL Databases – REST API](https://learn.microsoft.com/rest/api/fabric/kqldatabase/items/list-kql-databases?tabs=HTTP) 
-
-**Fabric API Support for KQL Queryset**
-
-|Action  | Document Link |
-|  ------------- | ------------- |
-Create KQL Queryset Items | [Create KQL Queryset - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqlqueryset/items/create-kql-queryset?tabs=HTTP)
-Delete KQL Queryset  Items | [Delete KQL Querysets – REST API](https://learn.microsoft.com/rest/api/fabric/kqlqueryset/items/delete-kql-queryset) 
-Get KQL Queryset  Items | [Get KQL Queryset – REST API](https://learn.microsoft.com/rest/api/fabric/kqlqueryset/items/get-kql-queryset?tabs=HTTP) 
-Get KQL Queryset Item Definition | [Get KQL Queryset Definition - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqlqueryset/items/get-kql-queryset-definition?tabs=HTTP)
-List KQL Queryset  Items | [List KQL Querysets – REST API](https://learn.microsoft.com/rest/api/fabric/kqlqueryset/items/list-kql-querysets?tabs=HTTP) 
-Update KQL Queryset  Items | [Update KQL Queryset – REST API](https://learn.microsoft.com/rest/api/fabric/kqlqueryset/items/update-kql-queryset?tabs=HTTP) 
-Update KQL Queryset Items Definition | [Update KQL Queryset Definition - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqlqueryset/items/update-kql-queryset-definition?tabs=HTTP)
-
-**Fabric API Support for Dashboards**
-
-|Action  | Document Link |
-|  ------------- | ------------- |
-Create Dashboard Items | [Create Dashboard - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/create-kql-dashboard?tabs=HTTP)
-List Dashboard  Items | [List Dashboards – REST API](https://learn.microsoft.com/en-us/rest/api/fabric/dashboard/items/list-dashboards?tabs=HTTP) 
-Delete Dashboard Items | [Delete Dashboard - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/delete-kql-dashboard?tabs=HTTP)
-Get Dashboard Items | [Get Dashboard - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/get-kql-dashboard?tabs=HTTP)
-Update Dashboard Items | [Update Dashboard - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/update-kql-dashboard?tabs=HTTP)
-Update Dashboard Items Definition | [Update Dashboard Item Definition](https://learn.microsoft.com/en-us/rest/api/fabric/kqldashboard/items/update-kql-dashboard-definition?tabs=HTTP)
-
-**KQL API Support for Fabric Eventhouse and Database**
-
-|Action  | Document Link |
-|  ------------- | ------------- |
-Query/Management |  [Query/management HTTP request – Azure Data Explorer & Real-Time Analytics](https://learn.microsoft.com/azure/data-explorer/kusto/api/rest/request)
-
-**Definition Schema**
-|Action  | Document Link |
-|  ------------- | ------------- |
-Eventhouse Definition | [Eventhouse Definition](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/eventhouse-definition)
-KQL DB Definition | [KQL DB Definition](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/kql-database-definition)
-KQL Queryset Definition | [KQL Queryset Definition](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/kql-queryset-definition) 
-KQL Dashboard Definition | [KQL Dashboard Definition](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/kql-dashboard-definition)
-
-
-
+* [Deploy an eventhouse using APIs overview](eventhouse-deploy-with-api-overview.md)
+* [Tutorial: Deploy an eventhouse using Fabric and Kusto APIs](eventhouse-deploy-with-fabric-kusto-api.md)
+* [Eventhouse item operations](/rest/api/fabric/eventhouse/items)
+* [KQL Database item operations](/rest/api/fabric/kqldatabase/items)
+* [KQL Database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition)
