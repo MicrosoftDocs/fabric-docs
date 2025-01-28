@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.topic: overview
 ms.custom:
   - ignite-2024
-ms.date: 01/20/2025
+ms.date: 01/28/2025
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -49,8 +49,6 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 Workload monitoring sample queries are available from [workspace-monitoring](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring) in the Fabric samples GitHub repository.
 
 ## Considerations and limitations
-
-* The capacity the workspace is hosted on must be in the same region as the tenant.
 
 * You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
 
