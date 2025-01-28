@@ -63,6 +63,7 @@ Optionally, insert an expression into the input fields. If you select an input f
 1. Select the **Dynamic content** tab.  
     When you select dynamic content, it's added into the text box.
 1. Add the date and time using **Activation time**. When you select **Add**, the expression appears in the **Title** field. Hover over **Activation time** to see what information is being passed. By adding a date to the title, you might avoid duplicate names.
+1. Optionally, remove **DefaultToDo** placeholder text and replace it with something more meaningful, such as **Temperatue task**.
 
 
 #### Pass an input field to your flow
