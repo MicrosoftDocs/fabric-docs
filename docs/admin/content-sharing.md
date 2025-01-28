@@ -70,7 +70,7 @@ To drill into the details of a specific scenario from the decomposition tree vis
 
 2. From the *Drill through* menu, select the Workspace or Details page.
 
-After drilling through, the target page and its visuals are prefiltered to the specific subset of data you selected in the previous page.
+After you drill through, the target page and its visuals are prefiltered to the specific subset of data selected in the previous page.
 
 ### Workspace page
 
@@ -108,7 +108,7 @@ You can export data from the Details page, or any other visual, by clicking _Mor
 
 The following measures are used in visuals throughout the *content sharing* report and are also available in the semantic model.
 
-Measure calculations consider filter context, so measure values will change as you apply filters or interact with other visuals.
+Measure calculations consider filter context, so measure values change as you apply filters or interact with other visuals.
 
 Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include sharing links if created for a specific persons or group.
 
@@ -122,11 +122,11 @@ Access counts include access to an item through _Manage permissions_, or access 
 | Group access count    | The number of group members with access to an item.   |
 | Total access count    | The number of individual users and group members with access to an item.   |
 
-Group owners aren't included in *group access counts*, but service principals are. Group access counts are calculated by flattening membership of all nested groups, so users are not double counted if they're members of multiple groups in a nest.
+Group owners aren't included in *group access counts*, but service principals are. Group access counts are calculated by flattening membership of all nested groups, so users aren't double counted if they're members of multiple groups in a nest.
 
 *Access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items.
 
-*Total access counts* include both individual access to an item and access through a group, so users will be double counted if they have access to an item in both scenarios.
+*Total access counts* include both individual access to an item and access through a group, so users are double counted if they have access to an item in both scenarios.
 
 ## Upcoming fixes and enhancements
 
