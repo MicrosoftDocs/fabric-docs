@@ -67,6 +67,6 @@ The following items support the Variable library:
 
 ## Related content
 
-* [Related article title](link.md)
+* [Variable library permissions](./variable-library-permissions.md)
 * [Related article title](link.md)
 * [Related article title](link.md)
