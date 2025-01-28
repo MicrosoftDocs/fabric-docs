@@ -30,9 +30,9 @@ A custom action defines how to call a specific external system from a rule using
 
 Open Activator and select a rule to display the **Definition** pane. Scroll down to **Action** > **Type**, and select **New custom action**. 
 
-Then, give your action a name such as *Add a To Do task*. Define the input fields that you'd like to use later when creating a flow in Power Automate. These strings, such as *task name*, *assignee*, etc. [can be passed in code to Power Automate](#pass-an-input-field-to-your-flow). And, back in Activator, you can give these strings a name that shows up in your To Do task -- such as *remember to check on-time delivery stats" and "Sally." 
+Then, give your action a name such as *Add a To Do task*. Define the input fields that you'd like to use later when creating a flow in Power Automate. These strings, such as *task name*, *assignee*, etc. [can be passed in code to Power Automate](#pass-an-input-field-to-your-flow). And, back in Activator, you can give these strings a name that shows up in your To Do task -- such as *check package temperature" and "Sally." 
 
-:::image type="content" source="media/activator-trigger-power-automate-flows/activator-new-custom-action.png" alt-text="Screenshot of creating an Activator new custom action.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-new-custom-actions.png" alt-text="Screenshot of creating an Activator new custom action.":::
 
 The next step is to define your flow in Power Automate. Select **Copy** to copy the connection string, then choose **Open flow builder**. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] takes you to Power Automate so that you can define the flow.
 
@@ -46,8 +46,9 @@ You must paste the connection string from the previous step into this action. Se
 
 #### Add a new step to the flow
 
-1. Select the plus sign (+) to add a new step to the flow. 
+1. Select the plus sign (+) to add a new step to the flow.
 1. In this example, we're adding a **To Do** task, so we search for **To Do** and choose **Add a to-do (V3)**.
+
     :::image type="content" source="media/activator-trigger-power-automate-flows/activator-add-task.png" alt-text="Screenshot of defining a flow for activator.":::
 
 1. Fill in the necessary fields in the **Add a to-do (V3)** window. Start by selecting an existing list from the **To-do list** dropdown or choosing **Enter a custom value** and giving a new To Do list a name. 
@@ -56,7 +57,7 @@ Optionally, insert an expression into the input fields. If you select an input f
 
 ### Use dynamic content in your flow
 
-**Dynamic content** lets you add fields from the Activator event itself.Select the field from the dropdownth to dynamically pass it to the flow. 
+**Dynamic content** lets you add fields from the Activator event itself. Select the field from the dropdown to dynamically pass it to the flow. 
 
 1. With your cursor in the **Title** field, select **fx**.
 1. Select the **Dynamic content** tab.  
@@ -85,7 +86,7 @@ After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fab
 
 ## Call your custom action from a rule
 
-Once you create a custom action, it's available for use by all rules and users who have access to the activator item you defined in the custom action. To call your custom action, from a rule, select **Action** > **Type** from the **Definition** pane, and select your custom action from the list. 
+Once you create a custom action, it's available for use by all rules and users who have access to the activator item you defined in the custom action. To call your custom action, from a rule, select the rule and choose **Action** > **Type** from the **Definition** pane, and select your custom action from the list. 
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-type-list.png" alt-text="Screenshot of the Type dropdown showing the newly created action.":::
 
@@ -93,7 +94,9 @@ Select **Edit action** to see the entry fields for your rule. Fill them out as a
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-edit-action.png" alt-text="Screenshot of custom action input for activator.":::
 
-When your rule activates, it calls your flow, sending it the values of the input fields that you defined.
+When your rule activates, it calls your flow, sending it the values of the input fields that you defined. Since we asked our fow to update a To Do list, open Microsoft To Do to see the new task. 
+
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-to-do.png" alt-text="Screenshot of the Microsoft To Do screen showing the new tasks.":::
 
 ## Related content
 
