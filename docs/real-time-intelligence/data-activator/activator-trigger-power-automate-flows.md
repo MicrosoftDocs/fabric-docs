@@ -85,6 +85,8 @@ To learn more about Power Automate, see [Power Automate](/power-automate).
 
 After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. 
 
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-to-do-success.png" alt-text="Screenshot showing success screen in Activator.":::
+
 ## Call your custom action from a rule
 
 Once you create a custom action, it's available for use by all rules and users who have access to the activator item you defined in the custom action. To call your custom action, from a rule, select the rule and choose **Action** > **Type** from the **Definition** pane, and select your custom action from the list. 
