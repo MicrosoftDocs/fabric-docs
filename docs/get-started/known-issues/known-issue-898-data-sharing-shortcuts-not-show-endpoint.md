@@ -4,7 +4,7 @@ description: A known issue is posted where the external data sharing OneLake sho
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/25/2024
+ms.date: 01/28/2025
 ms.custom: known-issue-898
 ---
 
@@ -16,7 +16,7 @@ You can set up external data sharing using OneLake shortcuts. The shortcut table
 
 **Status:** Open
 
-**Product Experience:** OneLake
+**Product Experience:** Fixed: January 28, 2025
 
 ## Symptoms
 

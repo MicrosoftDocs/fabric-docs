@@ -181,6 +181,14 @@ items:
       href: ../get-started/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Copilot sidecar chat fails with certain private link settings
+      href: ../get-started/known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md
+    - name: Reports that use functions with RLS don't work
+      href: ../get-started/known-issues/known-issue-1002-reports-functions-rls-not-work.md
+    - name: Some SQL query syntax fails in a graph database query
+      href: ../get-started/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md
+    - name: KQL database loads continuously without an error
+      href: ../get-started/known-issues/known-issue-990-kql-database-loads-continuously-without-error.md
     - name: Git operations and deployment pipelines don't work with lakehouses
       href: ../get-started/known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md
     - name: Apache Airflow job creation shows Fabric upgrade message

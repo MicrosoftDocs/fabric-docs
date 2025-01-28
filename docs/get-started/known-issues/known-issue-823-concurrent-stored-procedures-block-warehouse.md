@@ -4,7 +4,7 @@ description: A known issue is posted where concurrent stored procedures block ea
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/04/2024
+ms.date: 01/28/2025
 ms.custom: known-issue-823
 ---
 
@@ -14,7 +14,7 @@ You can execute the same stored procedure in parallel in a data warehouse. When 
 
 **Status:** Open
 
-**Product Experience:** Data Warehouse
+**Product Experience:** Fixed: January 28, 2025
 
 ## Symptoms
 
