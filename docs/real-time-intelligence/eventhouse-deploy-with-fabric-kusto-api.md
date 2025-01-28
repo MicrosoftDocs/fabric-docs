@@ -1,6 +1,6 @@
 ---
-title: Deploy an eventhouse using APIs
-description: Learn how to use APIs for Eventhouse and KQL Database to automate deployments, manage data efficiently, and enhance your development workflow
+title: Deploy an eventhouse using Fabric and Kusto APIs
+description: Learn how to use Fabric and Kusto APIs for Eventhouse and KQL Database to automate deployments, manage data efficiently, and enhance your development workflow
 author: shsagir
 ms.author: shsagir
 ms.reviewer: bwatts
