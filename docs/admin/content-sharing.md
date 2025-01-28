@@ -56,7 +56,7 @@ Use the Inventory Overview page to quickly answer questions such as:
 
 On the Analysis page, you're provided with a decomposition tree visual to aggregate and drill into your inventory.
 
-Using the toggle at the top of the page, you can decide whether to break down your inventory by total items or by total access count. Definitions for these measures are provided in the [Measures](#Measures) section.
+Using the toggle at the top of the page, you can decide whether to break down your inventory by total items or by total access count. Definitions for these measures are provided in the [Measures](#measures) section.
 
 You can break down either measure across different item-related dimensions, including item type, workspace name, endorsement, and more.
 
