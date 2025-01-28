@@ -25,21 +25,21 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Fabric?
-            url: microsoft-fabric-overview.md 
+            url: ../fundamentals/microsoft-fabric-overview.md 
           - text: Fabric terminology
-            url: fabric-terminology.md
+            url: ../fundamentals/fabric-terminology.md
           - text: What's New
-            url: whats-new.md
+            url: ../fundamentals/whats-new.md
       - linkListType: get-started
         links:
           - text: Start a Fabric trial 
-            url: fabric-trial.md
+            url: ../fundamentals/fabric-trial.md
           - text: Fabric home navigation
-            url: fabric-home.md
+            url: ../fundamentals/fabric-home.md
           - text: End-to-end tutorials
-            url: end-to-end-tutorials.md
+            url: ../fundamentals/end-to-end-tutorials.md
           - text: Context sensitive Help pane
-            url: fabric-help-pane.md
+            url: ../fundamentals/fabric-help-pane.md
 
   # Card 
   - title: Get started with Fabric items
@@ -47,15 +47,15 @@ landingContent:
       - linkListType: concept
         links:
           - text: Get started with a task flow
-            url: task-flow-overview.md 
+            url: ../fundamentals/task-flow-overview.md 
           - text: Find items in OneLake data hub
             url: ../governance/onelake-catalog-overview.md 
           - text: Promote and certify items
-            url: endorsement-promote-certify.md 
+            url: ../fundamentals/endorsement-promote-certify.md 
       - linkListType: how-to-guide
         links:
           - text: Apply sensitivity labels
-            url: apply-sensitivity-labels.md 
+            url: ../fundamentals/apply-sensitivity-labels.md 
 
   # Card 
   - title: Copilot
@@ -63,15 +63,15 @@ landingContent:
       - linkListType: concept
         links:
           - text: Copilot overview
-            url: copilot-fabric-overview.md
+            url: ../fundamentals/copilot-fabric-overview.md
           - text: Copilot in Fabric FAQ
-            url: copilot-faq-fabric.yml
+            url: ../fundamentals/copilot-faq-fabric.yml
           - text: Privacy, security, and responsible use for Copilot
-            url: copilot-privacy-security.md
+            url: ../fundamentals/copilot-privacy-security.md
       - linkListType: how-to-guide
         links:
           - text: Enable Copilot
-            url: copilot-enable-fabric.md
+            url: ../fundamentals/copilot-enable-fabric.md
 
   # Card 
   - title: Workspaces
@@ -79,17 +79,17 @@ landingContent:
       - linkListType: concept
         links:
           - text: Fabric workspace
-            url: workspaces.md
+            url: ../fundamentals/workspaces.md
           - text: Workspace roles
-            url: roles-workspaces.md
+            url: ../fundamentals/roles-workspaces.md
       - linkListType: get-started
         links:
           - text: Create a workspace
-            url: create-workspaces.md
+            url: ../fundamentals/create-workspaces.md
       - linkListType: how-to-guide
         links:
           - text: Workspace access control
-            url: give-access-workspaces.md
+            url: ../fundamentals/give-access-workspaces.md
             
   # Card 
   - title: Get Help
@@ -97,9 +97,9 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Use the integrated Help pane
-            url: fabric-help-pane.md
+            url: ../fundamentals/fabric-help-pane.md
           - text: Check for known issues
-            url: ../docs/fabric-known-issues.md
+            url: ../known-issues/fabric-known-issues.md
           - text: Contact Support
             url: /power-bi/support/service-support-options
    
