@@ -1,0 +1,8 @@
+items:
+- name: Microsoft Fabric fundamentals documentation
+  href: index.yml
+- name: Known issues
+  items:
+  - name: Fabric known issues
+    href: fabric-known-issues.md
+  
