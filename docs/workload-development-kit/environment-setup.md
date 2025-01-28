@@ -38,7 +38,7 @@ To enable the *Workspace admins can develop partner workloads* tenant setting, f
 
 ### Enable developer mode
 
-After the *Capacity admins can develop additional workloads* tenant setting is enabled, you need to enable the *Fabric Developer Mode* setting.
+After the *Workspace admins can develop partner workloads* tenant setting is enabled, you need to enable the *Fabric Developer Mode* setting.
 
 1. In Fabric, go to **Settings > Developer settings**.
 
