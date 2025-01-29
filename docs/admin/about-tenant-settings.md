@@ -35,7 +35,7 @@ To get to the tenant settings:
 
 1. In the side pane that appears, select **Admin portal** under the **Governance and insights** heading.
 
-The admin portal opens. Select **Tenant settings**.
+1. The admin portal opens. Select **Tenant settings**.
 
 ## How to use the tenant settings
 
