@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 01/28/2025
+ms.date: 01/29/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1011  | Power BI | [Models with specific gateway configuration might experience refresh issues](known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md) | January 29, 2025 |
+|  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 |
 |  1003  | Databases | [Copilot sidecar chat fails with certain private link settings](known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md) | January 28, 2025 |
 |  1002  | Power BI | [Reports that use functions with RLS don't work](known-issues/known-issue-1002-reports-functions-rls-not-work.md) | January 28, 2025 |
 |  996  | Databases | [Some SQL query syntax fails in a graph database query](known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md) | January 28, 2025 |
