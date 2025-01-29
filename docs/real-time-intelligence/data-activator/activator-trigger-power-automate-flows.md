@@ -95,7 +95,7 @@ Once you create a custom action, it's available for use by all rules and users w
 
 Select **Edit action** to see the entry fields for your rule. Fill them out as appropriate for your rule definition:
 
-When your rule activates, it calls your flow, sending it the values of the input fields that you defined. Since we asked our fow to update a To Do list, open Microsoft To Do to see the new task. 
+When your rule activates, it calls your flow, sending it the values of the input fields that you defined. Since we asked our flow to update a To Do list, open Microsoft To Do to see the new task. 
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-to-do-pane.png" alt-text="Screenshot of the Microsoft To Do screen showing the new tasks.":::
 
