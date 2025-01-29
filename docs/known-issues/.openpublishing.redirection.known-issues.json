@@ -82,7 +82,7 @@
         },
         {
             "source_path_from_root": "/docs/get-started/known-issue-996-sql-query-syntax-fails-graph-database-query.md",
-            "redirect_url": "/fabric/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.",
+            "redirect_url": "/fabric/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query",
             "redirect_document_id": false
         }  
     ]
