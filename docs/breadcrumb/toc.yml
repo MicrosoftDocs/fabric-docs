@@ -36,6 +36,9 @@ items:
   - name: Get started
     tocHref: /fabric/get-started/
     topicHref: /fabric/get-started/index
+  - name: Fundamentals
+    tocHref: /fabric/fundamentals/
+    topicHref: /fabric/fundamentals/index
 - name: Microsoft Fabric
   tocHref: /azure/
   topicHref: /fabric/index

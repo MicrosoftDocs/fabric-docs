@@ -18,7 +18,7 @@ In this article, you learn how to access an existing KQL database and optionally
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 
 ## Access a KQL database
 

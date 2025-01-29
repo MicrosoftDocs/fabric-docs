@@ -32,7 +32,7 @@ This flow can be visualized as follows:
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
 * An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
     * Make sure that local authentication is [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure OpenAI resource.
@@ -69,7 +69,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
 ### Import notebook
 
 1. Download the sample notebook from the [GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/vector-database-eventhouse-notebook.ipynb).
-1. Browse to your Fabric environment. In the experience switcher, choose **Develop** and then your workspace.
+1. Browse to your Fabric environment. In the experience switcher, choose **Fabric** and then your workspace.
 1. Select **Import** > **Notebook** >  **From this computer** > **Upload** then choose the notebook you downloaded in a previous step.
 1. Once the import is complete, open the imported notebook from your workspace.
 

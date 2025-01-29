@@ -43,7 +43,7 @@ For more information about the admin portal, see [What is the admin portal?](../
 
 Tenant, domain, and workspace admins each have settings within their scope that they can configure to control who has access to certain functionalities at different levels. Some tenant-level settings can be delegated to domain and capacity admins.
 
-For more information, see [About tenant settings](../admin/about-tenant-settings.md), [Configure domain settings](./domains.md#configure-domain-settings), and [Workspace settings](../get-started/workspaces.md#workspace-settings).
+For more information, see [About tenant settings](../admin/about-tenant-settings.md), [Configure domain settings](./domains.md#configure-domain-settings), and [Workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
 **Guidance**: Fabric admins should define tenant-wide settings, leaving domain admins to override delegated settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings.
 
@@ -51,7 +51,7 @@ For more information, see [About tenant settings](../admin/about-tenant-settings
 
 Domains are a way of logically grouping together all the data in an organization that is relevant to particular areas or fields, for example, by business unit. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
 
-Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. With respect to governance, some tenant-level settings for managing and governing data can be delegated to the domain level, thus allowing domain-specific configuration of those settings.
+Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake data hub](../governance/onelake-catalog-overview.md), users can filter content by domain in order find content that is relevant to them. With respect to governance, some tenant-level settings for managing and governing data can be delegated to the domain level, thus allowing domain-specific configuration of those settings.
 
 For more information, see [Domains](./domains.md).
 
@@ -135,7 +135,7 @@ Fabric provides built-in capabilities to help users find and use reliable, quali
 
 The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them. Filtering and search options make it easier to get to relevant data.
 
-For more information, see [Discover data items in the OneLake data hub](../get-started/onelake-data-hub.md).
+For more information, see [Discover data items in the OneLake data hub](../governance/onelake-catalog-overview.md).
 
  **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the data hub. Carefully defined domains help set the context for teams and make for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
 

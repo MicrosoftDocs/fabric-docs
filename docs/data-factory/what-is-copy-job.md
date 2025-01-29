@@ -38,7 +38,7 @@ Currently, you can use the Copy job for cloud data transfer or copying data from
 - Azure Blob Storage
 - Amazon RDS for SQL Server
 
-The product team is exploring further connector support, so [stay tuned for updates](../get-started/whats-new.md).
+The product team is exploring further connector support, so [stay tuned for updates](../fundamentals/whats-new.md).
 
 ## Copy behavior
 

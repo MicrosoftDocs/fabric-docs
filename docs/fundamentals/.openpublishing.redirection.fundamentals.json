@@ -1,0 +1,1019 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-471-embedded-setup-tool-isnt-responsive.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-482-desktop-sign-in-prompt-shows-unsupported-personal-microsoft-accounts.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-571-contributor-can-not-update-organizational-app.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/give-access-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/give-access-workspaces",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/index.yml",
+            "redirect_url": "/fabric/fundamentals/index",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/lakehouse-powber-pbi-reporting.md",
+            "redirect_url": "/fabric/fundamentals/lakehouse-powber-pbi-reporting",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/microsoft-fabric-overview.md",
+            "redirect_url": "/fabric/fundamentals/microsoft-fabric-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/preview.md",
+            "redirect_url": "/fabric/fundamentals/preview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/roles-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/roles-workspaces",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/share-items.md",
+            "redirect_url": "/fabric/fundamentals/share-items",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/task-flow-create.md",
+            "redirect_url": "/fabric/fundamentals/task-flow-create",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/task-flow-overview.md",
+            "redirect_url": "/fabric/fundamentals/task-flow-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/task-flow-work-with.md",
+            "redirect_url": "/fabric/fundamentals/task-flow-work-with",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/icons.md",
+            "redirect_url": "/fabric/fundamentals/icons",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-580-git-integration-tab-disappears-workspace-settings.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-447-temp-tables-in-dw-and-sql-endpoint.md",
+            "redirect_url": "/fabric/get-started/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/onelake-data-hub.md",
+            "redirect_url": "/fabric/governance/onelake-catalog",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-enable.md",
+            "redirect_url": "/fabric/get-started/copilot-fabric-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-warehouse-lakehouse.md",
+            "redirect_url": "/fabric/get-started/decision-guide-data-store",
+            "redirect_document_id": false
+        },          
+	    {
+            "source_path_from_root": "/docs/get-started/lakehouse-power-bi-reporting.md",
+            "redirect_url": "/fabric/fundamentals/lakehouse-power-bi-reporting",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/lakehouse-pbi-reporting.md",
+            "redirect_url": "/fabric/fundamentals/lakehouse-power-bi-reporting",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/directlake-analyze-query-processing.md",
+            "redirect_url": "/fabric/get-started/direct-lake-analyze-query-processing",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/directlake-create-lakehouse.md",
+            "redirect_url": "/fabric/get-started/direct-lake-create-lakehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-manage.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-manage",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/endorsement-promote-certify.md",
+            "redirect_url": "/fabric/fundamentals/endorsement-promote-certify",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-power-bi-desktop.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-power-bi-desktop",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/create-items-in-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/create-items-in-workspaces",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-create-lakehouse.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-create-lakehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-understand-storage.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-understand-storage",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-search.md",
+            "redirect_url": "/fabric/fundamentals/fabric-search",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-settings.md",
+            "redirect_url": "/fabric/fundamentals/fabric-settings",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-terminology.md",
+            "redirect_url": "/fabric/fundamentals/fabric-terminology",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-trial.md",
+            "redirect_url": "/fabric/fundamentals/fabric-trial",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-fixed-identity.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-fixed-identity",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/directlake-fixed-identity.md",
+            "redirect_url": "/fabric/fundamentals/directlake-fixed-identity",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-overview.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/directlake-overview.md",
+            "redirect_url": "/fabric/fundamentals/directlake-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/feedback.md",
+            "redirect_url": "/fabric/fundamentals/feedback",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-develop.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-develop",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-edit-tables.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-edit-tables",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/create-workspaces.md",
+            "redirect_url": "/fabric/fundamentals/create-workspaces",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-help-pane.md",
+            "redirect_url": "/fabric/fundamentals/fabric-help-pane",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/whats-new.md",
+            "redirect_url": "/fabric/fundamentals/whats-new",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspaces.md",
+            "redirect_url": "/fabric/fundamentals/workspaces",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspaces-folders.md",
+            "redirect_url": "/fabric/fundamentals/workspaces-folders",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/workspace-monitoring-overview.md",
+            "redirect_url": "/fabric/fundamentals/workspace-monitoring-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/whats-new-archive.md",
+            "redirect_url": "/fabric/fundamentals/whats-new-archive",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/fabric-home.md",
+            "redirect_url": "/fabric/fundamentals/fabric-home",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/enable-workspace-monitoring.md",
+            "redirect_url": "/fabric/fundamentals/enable-workspace-monitoring",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/end-to-end-tutorials.md",
+            "redirect_url": "/fabric/fundamentals/end-to-end-tutorials",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-data-store.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-data-store",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-lakehouse-warehouse.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-lakehouse-warehouse",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/decision-guide-pipeline-dataflow-spark.md",
+            "redirect_url": "/fabric/fundamentals/decision-guide-pipeline-dataflow-spark",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/delta-lake-interoperability.md",
+            "redirect_url": "/fabric/fundamentals/delta-lake-interoperability",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/direct-lake-analyze-query-processing.md",
+            "redirect_url": "/fabric/fundamentals/direct-lake-analyze-query-processing",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-462-fabric-user-git-column-synced-activity.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-519-capacity-metrics-app-shows-variance-workload-summary.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-521-throttling-logic-delayed-power-bi-eventstream.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-535-new-card-visual-formatting-appears-disappears.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-546-closing-dataflow-gen1-takes-wrong-workspace.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-222-search-strings-japanese-symbols-dont-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-461-scheduled-refresh-dataset-hangs.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-526-dataflow-rest-api-returns-more-data-sources-gateways.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-530-creating-updating-fabric-items-blocked.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-552-autoscale-not-triggered-carry-forward-accumulated-usage.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md      ",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-592-relationships-default-semantic-model-dropped.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-602-dataflow-gen1-premium-workspaces-azure-cosmos-db.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-616-under-billing-onelake-storage.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-640-microsoft-defender-detects-openssl-vulnerabilities-desktop.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-642-load-table-public-api-response-returns-error.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-647-library-management-updates-public-python-libraries-time-out.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-663-creating-opening-dataflow-gen2-fails-capacity-inactive.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-664-creating-opening-dataflow-gen2-shows-endless-spinner.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-665-currency-format-unavailable-web-modeling.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-678-git-integrated-workspaces-show-status-uncommitted.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-689-copilot-service-capacity-setting-delegation-postponed.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-710-onelake-audit-events-not-show-microsoft-365-admin-center.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-711-azure-analysis-services-table-not-show-data.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-713-sign-in-required-browse-secure-embed-url.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-716-response-times-composing-sql-queries-slower.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-742-virtual-network-data-gateway-service-interruption.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-749-tenant-migrations-paused-june-2024.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-752-cross-region-shortcuts-not-show-data.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-762-python-r-visuals-not-work-capacity.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues//known-issue-781-pipeline-copy-oracle-data-gateway-errors.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-790-spark-operations-fail.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-796-mirroring-cosmos-db-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-797-localization-blocks-operations-lakehouse.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-800-teaching-bubble-blocks-lakehouse-explorer-context-menu.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-801-custom-visuals-not-render.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-811-fabric-runtime-invalid-libraries.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-822-sql-queries-fail-intermittently.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-825-paginated-cascading-parameters-default-values-not-expected.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-836-copilot-dax-query-view-returns-dax-query-error.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-839-dynamics-365-business-central-connector-causes-failures.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-840-excel-enterprise-data-types-feature-experiences-issues.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-850-postgresql-connections-additions-updates-fail.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-858-live-connect-semantic-models-template-apps-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-859-dynamic-subscriptions-not-send-emails-recipients.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-861-unable-close-organizational-app-items-left-navigation.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-862-unexpected-changes-fonts-themes-reports.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-865-configure-workspace-storage-adls-gen2-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-866-not-add-my-workspace-org-app-items-org-app.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-867-report-pages-not-show-org-app-items.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-873-write-shortcut-destination-workspace-identity-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-887-semantic-model-refresh-fails-circular-dependency.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-892-data-warehouse-not-accessible-friendly-names.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-911-not-edit-reports-report-builder-opened-service.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-916-visual-not-load-error.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-919-embedded-report-renders-correctly-shows-error.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-926-notebook-failure-visual-studio-code-web.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-927-powerpoint-add-in-refresh-report-api-date-incorrect.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-faq-fabric.yml",
+            "redirect_url": "/fabric/fundamentals/copilot-faq-fabric",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-real-time-intelligence.md",
+            "redirect_url": "/fabric/fundamentals/copilot-real-time-intelligence",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-real-time-intelligence-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-real-time-intelligence-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-power-bi-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-power-bi-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-overview.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-consumption.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-consumption",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-enable-fabric.md",
+            "redirect_url": "/fabric/fundamentals/copilot-enable-fabric",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-database-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-database-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-fabric-data-factory.md",
+            "redirect_url": "/fabric/fundamentals/copilot-fabric-data-factory",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-privacy-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-notebooks-chat-magics.md",
+            "redirect_url": "/fabric/data-engineering/copilot-notebooks-chat-magics",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-factory-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-factory-privacy-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-science-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-science-privacy-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-data-warehouse-privacy-security.md",
+            "redirect_url": "/fabric/fundamentals/copilot-data-warehouse-privacy-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-notebooks-chat-pane.md",
+            "redirect_url": "/fabric/data-engineering/copilot-notebooks-chat-pane",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/copilot-notebooks-overview.md",
+            "redirect_url": "/fabric/data-engineering/copilot-notebooks-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/get-started/apply-sensitivity-labels.md",
+            "redirect_url": "/fabric/fundamentals/apply-sensitivity-labels",
+            "redirect_document_id": true
+        }
+    ]
+}

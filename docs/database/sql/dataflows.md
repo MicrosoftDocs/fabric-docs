@@ -13,15 +13,15 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Fabric Dataflow Gen2 allows you to transform data while moving it. This article is a quick orientation for using dataflows with SQL database in Fabric, one of several options to copy data from source to source. For comparison of options, see [Microsoft Fabric decision guide: copy activity, dataflow, or Spark](../../get-started/decision-guide-pipeline-dataflow-spark.md).
+Fabric Dataflow Gen2 allows you to transform data while moving it. This article is a quick orientation for using dataflows with SQL database in Fabric, one of several options to copy data from source to source. For comparison of options, see [Microsoft Fabric decision guide: copy activity, dataflow, or Spark](../../fundamentals/decision-guide-pipeline-dataflow-spark.md).
 
 Fabric Dataflow Gen2 supports many configurations and options, including scheduling, this article's example is simplified to get you started with a simple data copy.
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../get-started/workspaces.md) or use an existing Fabric workspace.
+- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 - Load the [AdventureWorks sample data](load-adventureworks-sample-data.md) in a new SQL database, or use your own sample data.
 

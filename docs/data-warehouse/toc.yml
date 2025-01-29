@@ -7,9 +7,9 @@ items:
   expanded: true
   items:
   - name: Decision guide - choose a data store
-    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Decision guide - Warehouse and Lakehouse
-    href: ../get-started/decision-guide-lakehouse-warehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    href: ../fundamentals/decision-guide-lakehouse-warehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
@@ -86,8 +86,6 @@ items:
     href: transactions.md 
   - name: Warehouse performance
     href: guidelines-warehouse-performance.md
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
   - name: How to
     items:    
     - name: Create a sample warehouse 
@@ -199,6 +197,8 @@ items:
     - name: Monitor mirrored databases
       displayName: Monitor mirroring
       href: ../database/mirrored-database/monitor.md
+    - name: Mirrored database logs
+      href: ../database/mirrored-database/monitor-logs.md
     - name: Share and manage permissions
       href: ../database/mirrored-database/share-and-manage-permissions.md
   - name: Explore mirrored data

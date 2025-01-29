@@ -84,7 +84,7 @@ Here are some general guidelines to help you make the decision:
 
 - Choose a **lakehouse** when you need a large repository of highly unstructured data from heterogeneous sources, leveraging low-cost object storage and want to use SPARK as your primary development tool. Acting as a 'lightweight' data warehouse, you always have the option to use the SQL endpoint and T-SQL tools to deliver reporting and data intelligence scenarios in your lakehouse.
 
-For more detailed decision guidance, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md).
+For more detailed decision guidance, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
 
 ## Related content
 

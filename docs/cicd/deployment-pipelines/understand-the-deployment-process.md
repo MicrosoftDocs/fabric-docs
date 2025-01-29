@@ -397,7 +397,7 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Pipelines only have one permission, *Admin*, which is required for sharing, editing and deleting a pipeline.
 
-* Workspaces have different permissions, also called [roles](../../get-started/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
+* Workspaces have different permissions, also called [roles](../../fundamentals/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
 
 * Deployment pipelines doesn't support [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) as pipeline admins.
 

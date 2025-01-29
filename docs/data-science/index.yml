@@ -34,13 +34,13 @@ landingContent:
       - linkListType: overview
         links:
           - text: Overview
-            url: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
           - text: Chat-magics in Notebooks
-            url: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
       - linkListType: how-to-guide
         links:
           - text: Use the Copilot chat panel
-            url: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 
 # Card 
   - title: AI skill (preview)

@@ -17,9 +17,9 @@ The Fabric platform has a rich set of REST APIs that can be used to deploy and m
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../get-started/workspaces.md) or use an existing Fabric workspace.
+- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - You must be a member of the Admin or Member roles for the workspace to create a SQL database.
 - Install the golang version of [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility). Run `winget install sqlcmd` on Windows to install. For other operating systems, see [aka.ms/go-sqlcmd](https://aka.ms/go-sqlcmd).
 - The Az PowerShell module. Run `Install-Module az` in PowerShell to install.

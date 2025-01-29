@@ -30,7 +30,7 @@ With Dataflow Gen2 (CI/CD preview), you can now:
 
 To get started, you must complete the following prerequisites:
 
-- Have a Microsoft Fabric tenant account with an active subscription. Create an account for [free](/fabric/get-started/fabric-trial).
+- Have a Microsoft Fabric tenant account with an active subscription. Create an account for [free](../fundamentals/fabric-trial.md).
 - Make sure you have a Microsoft Fabric enabled workspace.
 - To enjoy Git integration, make sure it's enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
 

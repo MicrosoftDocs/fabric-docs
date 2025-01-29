@@ -36,8 +36,8 @@ For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md
 
 Workspace roles are used for development team collaboration within a workspace. Role assignment determines the actions available to the user and applies to all items within the workspace.
 
-- For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces](../get-started/roles-workspaces.md).
-- For instructions on assigning workspace roles, see [Give workspace access](../get-started/give-access-workspaces.md).
+- For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
+- For instructions on assigning workspace roles, see [Give workspace access](../fundamentals/give-access-workspaces.md).
 
 For details on the specific Warehouse capabilities provided through workspace roles, see [Workspace roles in Fabric data warehousing](workspace-roles.md).
 
