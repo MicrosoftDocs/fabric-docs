@@ -4,7 +4,7 @@ description: A known issue is posted where concurrent stored procedures block ea
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/04/2024
+ms.date: 01/28/2025
 ms.custom: known-issue-823
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-823
 
 You can execute the same stored procedure in parallel in a data warehouse. When the stored procedure is run concurrently, it causes blocking because each stored procedure takes an exclusive lock during plan generation.
 
-**Status:** Open
+**Status:** Fixed: January 28, 2025
 
 **Product Experience:** Data Warehouse
 

@@ -74,7 +74,7 @@ Changes to the tables and columns in the OneLake data source, typically a Lakeho
 
 :::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-09.png" alt-text="Screen shot of editing tables of a semantic model in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-09.png":::
 
-Learn more about [Edit tables for Direct Lake semantic models](/fabric/get-started/direct-lake-edit-tables). 
+Learn more about [Edit tables for Direct Lake semantic models](./direct-lake-edit-tables.md). 
 
 ## Use refresh
 

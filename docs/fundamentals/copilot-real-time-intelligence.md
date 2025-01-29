@@ -20,7 +20,7 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Read or write access to a [KQL queryset](../real-time-analytics/create-query-set.md)
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]

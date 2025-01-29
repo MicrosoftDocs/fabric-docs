@@ -94,6 +94,6 @@ The medallion architecture in Real-Time Intelligence provides several benefits, 
 
 ## Related content
 
-- [Microsoft Fabric decision guide: choose a data store](../get-started/decision-guide-data-store.md)
+- [Microsoft Fabric decision guide: choose a data store](../fundamentals/decision-guide-data-store.md)
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).

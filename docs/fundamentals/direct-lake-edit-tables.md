@@ -84,6 +84,6 @@ There are some differences for the default Power BI semantic model in Direct Lak
 
 ## Related content
 
-- [Direct Lake overview](../get-started/direct-lake-overview.md)
+- [Direct Lake overview](../fundamentals/direct-lake-overview.md)
 - [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md)  
 - [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md)  

@@ -37,7 +37,7 @@ Creating and collaborating in Fabric includes:
 ## About the trial capacity
 
 When you start a trial of a Fabric capacity, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These features include:
-- [Copilot](/fabric/get-started/copilot-faq-fabric)
+- [Copilot](./copilot-faq-fabric.yml)
 - [Trusted workspace access](../security/security-trusted-workspace-access.md)
 - [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview)
 
@@ -191,7 +191,7 @@ If you don't have a work or school account and want to sign up for a free trial.
 If you do see the **Start trial** button in your Account manager:
 
 - You might not be able to start a trial if your tenant exhausted its limit of trial capacities. If that is the case, you have the following options:
-  - Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](../get-started/give-access-workspaces.md).
+  - Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
   - [Purchase a Fabric capacity from Azure](https://aka.ms/fabricibiza) by performing a search for *Microsoft Fabric*.
 
 - To increase tenant trial capacity limits, [reach out to your Fabric administrator](#look-up-the-trial-capacity-administrator) to create a Microsoft support ticket.

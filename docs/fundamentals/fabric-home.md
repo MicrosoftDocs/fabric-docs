@@ -20,7 +20,7 @@ This article gives a high level view of navigating to your items and actions fro
 
 The final section of Home is the center area, called the **canvas**. The content of your canvas updates as you select different items. By default, the Home canvas displays options for creating new items, recents, and getting started resources. To collapse a section on your canvas, select the **Show less** view. 
 
-When you create a new item, it saves in your **My workspace** unless you selected a workspace from **Workspaces**. To learn more about creating items in workspaces, see [create workspaces](../get-started/create-workspaces.md).
+When you create a new item, it saves in your **My workspace** unless you selected a workspace from **Workspaces**. To learn more about creating items in workspaces, see [create workspaces](../fundamentals/create-workspaces.md).
 
 > [!NOTE]
 > Power BI **Home** is different from the other product workloads. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
@@ -45,7 +45,7 @@ To open **Home**, select it from the top of your navigation pane (nav pane).
 
 ## Most important content at your fingertips
 
-The items that you can create and access appear on Home. If your Home canvas gets crowded, use [global search](../get-started/fabric-search.md) to find what you need, quickly. The layout and content on Fabric Home is different for every user.
+The items that you can create and access appear on Home. If your Home canvas gets crowded, use [global search](../fundamentals/fabric-search.md) to find what you need, quickly. The layout and content on Fabric Home is different for every user.
 
 :::image type="content" source="media/fabric-home/fabric-home-steps.png" alt-text="Screenshot of Home with sections of the canvas numbered." lightbox="media/fabric-home/fabric-home-steps.png":::
 
@@ -97,7 +97,7 @@ The workspace opens on your canvas, and the name of the workspace is listed on y
 - When you open a workspace, its name replaces **My workspace**.  
 - Whenever you create a new item, it's added to the open workspace.  
 
-For more information, see [Workspaces](../get-started/workspaces.md).
+For more information, see [Workspaces](../fundamentals/workspaces.md).
 
 ## Create items
 
@@ -105,7 +105,7 @@ For more information, see [Workspaces](../get-started/workspaces.md).
 
 The first row on your Home canvas is a selection of task flow templates. Fabric task flow is a workspace feature that enables you to build a visualization of the flow of work in the workspace. Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project.
 
-To learn more, see [Task flows in Microsoft Fabric](../get-started/task-flow-overview.md)
+To learn more, see [Task flows in Microsoft Fabric](../fundamentals/task-flow-overview.md)
 
 ### Create items using workloads
 
@@ -127,7 +127,7 @@ For more information about workloads, see [Workloads in Fabric](../workload-deve
 
 ## Find your content using search, sort, and filter
 
-To learn about the many ways to search from [!INCLUDE [product-name](../includes/product-name.md)], see [Searching and sorting](../get-started/fabric-search.md). Global searching is available by item, name, keyword, workspace, and more.
+To learn about the many ways to search from [!INCLUDE [product-name](../includes/product-name.md)], see [Searching and sorting](../fundamentals/fabric-search.md). Global searching is available by item, name, keyword, workspace, and more.
 
 ## Find answers in the context sensitive Help pane
 
@@ -147,7 +147,7 @@ To return to the default Help pane, select the left arrow.
 
 :::image type="content" source="media/fabric-home/fabric-home-arrow.png" alt-text="Screenshot of the left arrow icon.":::
 
-For more information about searching, see [Searching and sorting](../get-started/fabric-search.md).
+For more information about searching, see [Searching and sorting](../fundamentals/fabric-search.md).
 
 For more information about the Help pane, see [Get in-product help](fabric-help-pane.md).
 
@@ -170,4 +170,4 @@ In the upper-right corner of Home are several helpful icons. Take time to explor
 ## Related content
 
 - [Power BI Home](/power-bi/consumer/end-user-home)
-- [Start a Fabric trial](../get-started/fabric-trial.md)
+- [Start a Fabric trial](../fundamentals/fabric-trial.md)

@@ -6,7 +6,7 @@ ms.author: lle
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 01/21/2025
+ms.date: 01/24/2025
 ms.search.form: On-premises data sources gateway
 ---
 
@@ -115,6 +115,8 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
 Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination. 
 
+> [!NOTE]
+> Local access to the machine with the on-premises data gateway installed is not allowed in data pipelines.
 
 ## Related content
 

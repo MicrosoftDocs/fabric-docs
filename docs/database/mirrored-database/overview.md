@@ -39,7 +39,7 @@ Mirroring in Fabric provides an easy experience to speed the time-to-value for i
 
 - Near real time replication of data and metadata into a SaaS data-lake, with built-in analytics built-in for BI and AI
 
-The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
 Mirroring creates three items in your Fabric workspace:
 
@@ -135,7 +135,7 @@ You can also directly create and manage a [SQL database in Microsoft Fabric (Pre
 
 ## Related content
 
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake overview](../../get-started/direct-lake-overview.md)
+- [Direct Lake overview](../../fundamentals/direct-lake-overview.md)

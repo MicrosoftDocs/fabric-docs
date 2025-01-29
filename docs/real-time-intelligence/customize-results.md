@@ -18,7 +18,7 @@ Use the results grid in the KQL Queryset to customize results and perform furthe
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL Database](create-database.md) with editing permissions and data
 * A [KQL Queryset](kusto-query-set.md)
 

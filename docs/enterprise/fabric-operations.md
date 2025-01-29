@@ -60,7 +60,7 @@ This section is divided into Fabric experience. Each experience had a table that
 
 ### Copilot in Fabric
 
-[Copilot](../get-started/copilot-fabric-overview.md) operations are listed in this table. You can find the consumption rates for Copilot in [Copilot consumption](../get-started/copilot-fabric-consumption.md).
+[Copilot](../fundamentals/copilot-fabric-overview.md) operations are listed in this table. You can find the consumption rates for Copilot in [Copilot consumption](../fundamentals/copilot-fabric-consumption.md).
 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |

@@ -19,7 +19,7 @@ In this article, you learn how to get data from Azure storage (ADLS Gen2 contain
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
 * A [storage account](/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal)
 

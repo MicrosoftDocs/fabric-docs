@@ -128,7 +128,7 @@ Configurations options for item settings.
 
 ### Item Task Flow Categories
 
-Defines your item categories for integrating with Fabric [Task Flow Framework.](../get-started/task-flow-overview.md).
+Defines your item categories for integrating with Fabric [Task Flow Framework.](../fundamentals/task-flow-overview.md).
 
 - **itemJobTypes** (array): Specifies the categories assigned to an item within the task flow framework. Each item can have up to two categories. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
 If no category is specified, "others" is used as the default.

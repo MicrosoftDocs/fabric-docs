@@ -187,4 +187,4 @@ Full DQL, No DML, limited DDL T-SQL Support such as SQL Views and TVFs
 
 ## Related content
 
-- [Microsoft Fabric decision guide: choose a data store](../get-started/decision-guide-data-store.md)
+- [Microsoft Fabric decision guide: choose a data store](../fundamentals/decision-guide-data-store.md)

@@ -24,7 +24,7 @@ In this tutorial, you use sample data included with Fabric [!INCLUDE [fabric-act
 
 ## Prerequisites
 
-Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../get-started/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
+Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../fundamentals/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
 
 ## Create a sample activator
 
@@ -142,4 +142,4 @@ Once you finish with the rules you created as part of the tutorial, be sure to s
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
