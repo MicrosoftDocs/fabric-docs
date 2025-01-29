@@ -20,7 +20,7 @@ This article explains basic Git concepts and the process of integrating Git with
 
 ## Permissions
 
-- In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
+- Your organization's administrator must [enable Git integration](../../admin/git-integration-admin-settings.md).
 - If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations). This restriction doesn't apply to GitHub.
 - The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
 
@@ -46,8 +46,8 @@ The following table describes the permissions needed in the Fabric workspace to 
 | Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     |
 | View Git connection details                                          | Admin, Member, Contributor                                                                |
 | See workspace 'Git status'                                           | Admin, Member, Contributor                                                                |
-| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
-| Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
+| Update from Git                                                      | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
+| Commit workspace changes to Git                                      | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
 | Create new Git branch from within Fabric                             | Admin                                                                                     |
 | Branch out to another workspace                                            | Admin, Member, Contributor                                                                |
 
@@ -198,7 +198,7 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Actions you can take on the current branch**:
 
-  - [*Branch out to another workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (any role): Creates a new workspace and new branch or switches to an existing branch based on the last commit of the branch connected to the current workspace. It connects to the target workspace and branch.
+  - [*Branch out to another workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (any role): Creates a new workspace and new branch, or switches to an existing workspace based on the last commit of the branch connected to the current workspace. It then connects to the target workspace and branch.
   - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
   - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
@@ -206,12 +206,12 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Related branches**.  
    The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.  
-   This allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
-   Click on an item in the list to open the relevant workspace.
+   This feature allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
+   To open the relevant workspace, select item in the list.
 
   :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
 
-See [Branching out limitations](#branching-out-limitations) for more information.
+For more information, see [Branching out limitations](#branching-out-limitations).
 
 ### Account details
 
