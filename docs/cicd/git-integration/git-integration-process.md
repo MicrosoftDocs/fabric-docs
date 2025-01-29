@@ -49,7 +49,7 @@ The following table describes the permissions needed in the Fabric workspace to 
 | Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
 | Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
 | Create new Git branch from within Fabric                             | Admin                                                                                     |
-| Branch out to a new workspace                                            | Admin, Member, Contributor                                                                |
+| Branch out to another workspace                                            | Admin, Member, Contributor                                                                |
 
 #### Git roles
 
@@ -68,7 +68,7 @@ The following table describes the Git permissions needed to perform various comm
 | Update from Git                                                      | Read=Allow   |
 | Commit workspace changes to Git                                      | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
 | Create new Git branch from within Fabric                             | Role=Write<br/>Create branch=Allow            |
-| Branch out to a new workspace                                        | Read=Allow<br/>Create branch=Allow            |
+| Branch out to another workspace                                      | Read=Allow<br/>Create branch=Allow            |
                                     
 
 ##### [GitHub Repos](#tab/GitHub)
@@ -86,7 +86,7 @@ The following table describes the Git permissions needed to perform various comm
   | Update from Git                                                      | Contents= Access: Read                        |
   | Commit workspace changes to Git                                      | Contents= Access: Read and write<br/>branch policy should allow direct commit  |
   | Create new Git branch from within Fabric                             | Contents= Access: Read and write              |
-  | Branch out to a new workspace                                        | Content=Read and write                        |
+  | Branch out to another workspace                                      | Content=Read and write                        |
 
 - If you're using classic access token, the repo scope must be enabled:
 
@@ -198,7 +198,7 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Actions you can take on the current branch**:
 
-  - [*Branch out to new workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (any role): Creates a new workspace and new branch or switch to an existing branch based on the last commit of the branch connected to the current workspace. It connects to the target workspace and branch.
+  - [*Branch out to another workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (any role): Creates a new workspace and new branch or switch to an existing branch based on the last commit of the branch connected to the current workspace. It connects to the target workspace and branch.
   - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
   - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 

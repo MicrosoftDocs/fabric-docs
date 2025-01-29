@@ -59,7 +59,7 @@ For a specific guidance on how to use the new Power BI Desktop file format in gi
 
 For a developer who works in the web, the flow would be as follows:
 
-1. From the *Branches* tab of the **Source control** menu, select **Branch out to a workspace**.
+1. From the *Branches* tab of the **Source control** menu, select **Branch out to another workspace**.
 
     :::image type="content" source="./media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
