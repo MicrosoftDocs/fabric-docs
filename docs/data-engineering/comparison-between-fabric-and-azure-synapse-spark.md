@@ -185,7 +185,7 @@ Notebooks and Spark job definitions are primary code items for developing Apache
 
 - **High concurrency**: In Fabric, you can attach notebooks to a high concurrency session. This option is an alternative for users using ThreadPoolExecutor in Azure Synapse. For more information, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).
 
-- **.NET for Spark C#**: Fabric doesn't support .NET Spark (C#). However, we recommendation that users with [existing workloads written in C# or F# migrate to Python or Scala](/azure/synapse-analytics/spark/spark-dotnet).
+- **.NET for Spark C#**: Fabric doesn't support .NET Spark (C#). However, the recommendation that users with [existing workloads written in C# or F# migrate to Python or Scala](/azure/synapse-analytics/spark/spark-dotnet).
 
 - **Built-in scheduled run support**: Fabric supports scheduled runs for notebooks.
 
