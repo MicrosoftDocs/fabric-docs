@@ -29,7 +29,23 @@ For a comprehensive understanding of the end-to-end experience, see [Fabric BCDR
 
 OneLake soft delete protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. The current default is 28 days but starting May 2024 we are transitioning to a 7-day default retention period, so new workspaces will have this updated period. All soft-deleted data is billed at the same rate as active data.
 
-You can restore files and folders using Blob REST APIs, Azure Storage SDKs, and the PowerShell Az.Storage module.  Learn how to list and undelete files using these [PowerShell instructions](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell) and how to connect to [OneLake with PowerShell](../onelake/onelake-powershell.md#connect-to-onelake-with-azure-powershell).  
+You can restore files and folders using Blob REST APIs, Azure Storage SDKs, and the PowerShell Az.Storage module.  Learn how to list and undelete files using these [PowerShell instructions](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell) and how to connect to [OneLake with PowerShell](../onelake/onelake-powershell.md#connect-to-onelake-with-azure-powershell).
+
+### Restore soft deleted files via Microsoft Azure Storage Explorer
+
+You can restore files which were deleted from a Lakehouse by connecting via Microsoft Azure Storage Explorer with the following steps:
+1. Download, Install and Open Microsoft Azure Storage Explorer
+1. Select `Connect to Azure Storage`
+1. Select `ADLS Gen2 or directory`
+1. Sign in using OAuth (or your prefered method)
+1. Enter connection Info
+   Blob Container or Directory URL: https://onelake.dfs.fabric.microsoft.com/ + your workspace ID,
+   e.g. `https://onelake.dfs.fabric.microsoft.com/8ebe7fed-acac-4905-8e5c-027c55521e54`. You can get the workspace ID from the URL, it is the Id which follows the groups/ part in the URL.  
+   Note: the undelete API call will not work using the workspace name as the container name.
+1. Connect
+1. Left to the bar which shows the path there is a drop down, the default is `Active blobs`, change it to `Active and soft deleted blobs`
+1. Navigate to the folder which contains the file to be restored
+1. Right click the file and click undelete
 
 ## Related content
 
