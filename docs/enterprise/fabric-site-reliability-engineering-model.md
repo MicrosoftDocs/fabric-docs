@@ -4,7 +4,7 @@ description: Learn about the Microsoft Fabric site reliability engineering (SRE)
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 01/13/2025
+ms.date: 01/29/2025
 ---
 
 # Site reliability
@@ -63,7 +63,7 @@ SRE team members use their unique skill set and considerable live site experienc
 
 * **Perceived Reliability Alerts** - SREs also craft alerts that detect cases when customers are unsuccessful due to any type of error. This can include failures from user errors and indicate a need for improved documentation or a modified user experience. These alerts also can notify engineers of unexpected system errors that might otherwise be misclassified as a user error. *Example: Dataset refresh fails due to incorrect credentials* 
 
-Another critical role of the SRE team is to automate TSG actions to the extent possible through Azure Automation. In cases where complete automation is not possible, the SRE team defines actions to enrich an alert with useful and incident-specific diagnostic information to accelerate subsequent investigation. Such enrichment is paired with prescriptive guidance in a corresponding TSG so that live site engineers can either take a specific action to mitigate the incident or quickly escalate to SMEs for more investigation.
+Another critical role of the SRE team is to automate TSG actions to the extent possible through Azure Automation. In cases where complete automation isn't possible, the SRE team defines actions to enrich an alert with useful and incident-specific diagnostic information to accelerate subsequent investigation. Such enrichment is paired with prescriptive guidance in a corresponding TSG so that live site engineers can either take a specific action to mitigate the incident or quickly escalate to SMEs for an additional investigation.
 
 As a direct result of these efforts, more than 82% of incidents are mitigated without any human interaction. The remaining incidents have enough enrichment data and supporting documentation to be handled without SME involvement in 99.7% of cases.
 
@@ -77,7 +77,7 @@ Live Site SREs also enforce alert quality in several ways, including the followi
 
 ## Our practices for incident response
 
-When an automated live site incident is created for the Fabric service, one of the first priorities is to notify customers of potential impact. Azure has a target notification time of 15 minutes, which is difficult to achieve when notifications are manually posted by incident managers after joining a call. Communications in such cases are at risk of being late or inaccurate due to required manual analysis. Azure Monitoring offers centralized monitoring and alerting solutions that based on certain metrics within this time window, can detect possible impact. However, Fabric is a SaaS offering with complex scenarios and user interactions that cannot be easily modeled and tracked using such alerting systems. In response, the Fabric team developed the [Time To Notify Ziro (TTN0)](#time-to-notify-zero) notification service.
+When an automated live site incident is created for the Fabric service, one of the first priorities is to notify customers of potential impact. Azure has a target notification time of 15 minutes, which is difficult to achieve when notifications are manually posted by incident managers after joining a call. Communications in such cases are at risk of being late or inaccurate due to required manual analysis. Azure Monitoring offers centralized monitoring and alerting solutions that based on certain metrics within this time window, can detect possible impact. However, Fabric is a SaaS offering with complex scenarios and user interactions that can't be easily modeled and tracked using such alerting systems. In response, the Fabric team developed the [Time To Notify Zero (TTN0)](#time-to-notify-zero) notification service.
 
 Fabric’s live site philosophy emphasizes automated resolution of incidents to improve overall scalability and sustainability of the SRE team. The emphasis on automation enables mitigation at scale and can potentially avoid costly rollbacks or risky expedited fixes to production systems. When manual investigation is required, Fabric adopts a tiered approach with initial investigation done by a dedicated SRE team. SRE team members are experienced in managing live site incidents, facilitating cross-team communication, and driving mitigation. In cases where the acting SRE team member requires more context on an impacted scenario/component, they might engage the Subject Matter Expert (SME) of that area for guidance. Finally, the SME team conducts simulations of system component failures to understand and to mitigate issues in advance of an active live site incident.
 
@@ -87,11 +87,11 @@ Once the affected component or scenario of the service is determined, the Fabric
 
 * **Execute Business Continuity/Disaster Recovery (BCDR) process** - Allows the team to fail over primary workloads to this alternate environment in three minutes if a serious issue is found in a new service version. BCDR can also be used when environmental factors or dependent services prevent the primary cluster/region from operating normally.
 
-* **Leverage resiliency of dependent services** - Fabric proactively evaluates and invests in resiliency and redundancy efforts for all dependent services (such as SQL, Redis Cache, Key Vault). Resiliency includes sufficient component monitoring to detect upstream/downstream regressions as well as local, zonal, and regional redundancy (where applicable). Investing in these capabilities ensures that tooling exists for automatic or manual triggering of recovery operations to mitigate impact from an affected dependency. 
+* **Leverage resiliency of dependent services** - Fabric proactively evaluates and invests in resiliency and redundancy efforts for all dependent services (such as SQL, Redis Cache, Key Vault). Resiliency includes sufficient component monitoring to detect upstream and downstream regressions as well as local, zonal, and regional redundancy (where applicable). Investing in these capabilities ensures that tooling exists for automatic or manual triggering of recovery operations to mitigate impact from an affected dependency. 
 
 ### Time To Notify Zero
 
-Time To Notify Zero, also known as *TTN0*, is a fully automated incident notification service that uses our internal alerting infrastructure to identify specific scenarios and customers that are impacted by a newly created incident. It is also integrated with external monitoring agents outside of Azure to detect connectivity issues that might otherwise go unnoticed. TTN0 allows customers to receive an email when TTN0 detects a service disruption or degradation. With TTN0, the Fabric team can send reliable, targeted notifications within 10 minutes of impact start time (which is 33% faster than the Azure target). Since the solution is fully automated, there is minimal risk from human error or delays.
+Time To Notify Zero, also known as *TTN0*, is a fully automated incident notification service that uses our internal alerting infrastructure to identify specific scenarios and customers that are impacted by a newly created incident. It's also integrated with external monitoring agents outside of Azure to detect connectivity issues that might otherwise go unnoticed. TTN0 allows customers to receive an email when TTN0 detects a service disruption or degradation. With TTN0, the Fabric team can send reliable, targeted notifications within 10 minutes of impact start time (which is 33% faster than the Azure target). Since the solution is fully automated, there's minimal risk from human error or delays.
 
 ## Our practices for continuous improvement
 
