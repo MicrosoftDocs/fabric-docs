@@ -74,6 +74,11 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
 - [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
+- When branching out to an existing workspace:
+  - The target workspace must support a Git connection.
+  - The user must be an admin of the target workspace.
+  - The target workspace must have capacity.
+  - The workspace can't have template apps.
 
 ### Sync and commit limitations
 
