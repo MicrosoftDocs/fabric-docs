@@ -12,9 +12,9 @@ ms.custom: known-issue-823
 
 You can execute the same stored procedure in parallel in a data warehouse. When the stored procedure is run concurrently, it causes blocking because each stored procedure takes an exclusive lock during plan generation.
 
-**Status:** Open
+**Status:** Fixed: January 28, 2025
 
-**Product Experience:** Fixed: January 28, 2025
+**Product Experience:** Data Warehouse
 
 ## Symptoms
 

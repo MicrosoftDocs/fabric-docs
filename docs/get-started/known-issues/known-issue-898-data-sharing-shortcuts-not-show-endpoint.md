@@ -14,9 +14,9 @@ External data sharing OneLake shortcuts don't support blob specific APIs
 
 You can set up external data sharing using OneLake shortcuts. The shortcut tables show in the shared tenant in the lakehouse, but don't show in the SQL analytics endpoint. Additionally, if you try to use a blob-specific API to access the OneLake shortcut involved in the external data share, the API call fails.
 
-**Status:** Open
+**Status:** Fixed: January 28, 2025
 
-**Product Experience:** Fixed: January 28, 2025
+**Product Experience:** OneLake
 
 ## Symptoms
 
