@@ -97,7 +97,7 @@ Select **Edit action** to see the entry fields for your rule. Fill them out as a
 
 When your rule activates, it calls your flow, sending it the values of the input fields that you defined. Since we asked our fow to update a To Do list, open Microsoft To Do to see the new task. 
 
-:::image type="content" source="media/activator-trigger-power-automate-flows/activator-to-do.png" alt-text="Screenshot of the Microsoft To Do screen showing the new tasks.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-to-do-lists.png" alt-text="Screenshot of the Microsoft To Do screen showing the new tasks.":::
 
 ## Related content
 
