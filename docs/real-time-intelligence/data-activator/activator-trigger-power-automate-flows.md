@@ -63,7 +63,7 @@ Optionally, insert an expression into the input fields. If you select an input f
 1. Select the **Dynamic content** tab.  
     When you select dynamic content, it's added into the text box.
 1. Add the date and time using **Activation time**. When you select **Add**, the expression appears in the **Title** field. Hover over **Activation time** to see what information is being passed. By adding a date to the title, you might avoid duplicate names.
-1. Optionally, remove **DefaultToDo** placeholder text and replace it with something more meaningful, such as **Temperatue task**.
+1. Optionally, remove **DefaultToDo** placeholder text and replace it with something more meaningful, such as **Temperature task**.
 
 
 #### Pass an input field to your flow
@@ -97,7 +97,7 @@ Select **Edit action** to see the entry fields for your rule. Fill them out as a
 
 When your rule activates, it calls your flow, sending it the values of the input fields that you defined. Since we asked our fow to update a To Do list, open Microsoft To Do to see the new task. 
 
-:::image type="content" source="media/activator-trigger-power-automate-flows/activator-to-do.png" alt-text="Screenshot of the Microsoft To Do screen showing the new tasks.":::
+:::image type="content" source="media/activator-trigger-power-automate-flows/activator-to-do-lists.png" alt-text="Screenshot of the Microsoft To Do screen showing the new tasks.":::
 
 ## Related content
 
