@@ -41,7 +41,7 @@ If the items you're developing are available in other tools, you can work on tho
 
 The workflow for developers using a client tool like Power BI Desktop should look something like this:
 
-1. [Clone](/azure/devops/repos/git/clone?) the repo into a local machine. (You only need to do this step once.)
+1. [Clone](/azure/devops/repos/git/clone?) the repo onto a local machine. (You only need to do this step once.)
 1. Open the project in Power BI Desktop using the local copy of the *PBIProj*.
 1. Make changes and save the updated files locally. [Commit](/azure/devops/repos/git/gitquickstart#commit-your-work) to the local repo.
 1. When ready, [push](/azure/devops/repos/git/pushing) the branch and commits to the remote repo.
@@ -71,7 +71,7 @@ For a developer who works in the web, the flow would be as follows:
 
    Fabric creates the new workspace and branch. You're automatically taken to the new workspace.
 
-   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new isolated environment. The sync might take a few minutes. See troubleshooting tips for more information on [branching out](../troubleshoot-cicd.md#branching-out-i-dont-see-the-branch-i-want-to-connect-to).
+   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new isolated environment. The sync might take a few minutes. For more information on branching out, see [troubleshooting tips](../troubleshoot-cicd.md#branching-out-i-dont-see-the-branch-i-want-to-connect-to).
 
    :::image type="content" source="./media/manage-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
@@ -80,11 +80,11 @@ For a developer who works in the web, the flow would be as follows:
 
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
-See [branching out limitations](./git-integration-process.md#branching-out-limitations) for more information.
+For more information, see [branching out limitations](./git-integration-process.md#branching-out-limitations).
 
 ## Release process
 
-The release process begins once new updates complete a Pull Request process and merge into the team’s shared branch (such as *Main*, *Dev* etc.). From this point, we'll outline the different options to build a release process in Fabric. You can find the different considerations for the release process in [manage deployment pipelines](../manage-deployment.md).
+The release process begins once new updates complete a Pull Request process and merge into the team’s shared branch (such as *Main*, *Dev*, etc.). From this point, we outline the different options to build a release process in Fabric. You can find the different considerations for the release process in [manage deployment pipelines](../manage-deployment.md).
 
 ## Switch branches
 
