@@ -14,7 +14,7 @@
             "source_path_from_root": "/fabric/known-issues/index.yml",
             "redirect_url": "/fabric/index.yml",
             "redirect_document_id": false
-        }
+        },
         {
             "source_path_from_root": "/get-started/known-issues/known-issue-1002-reports-functions-rls-not-work.md",
             "redirect_url": "/fabric/known-issues/known-issue-1002-reports-functions-rls-not-work",
