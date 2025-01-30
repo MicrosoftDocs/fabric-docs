@@ -80,8 +80,8 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | Feature                                                                 | Azure Data Factory | Fabric Data Factory |
 |-------------------------------------------------------------------------|--------------------|---------------------|
 | Ensure seamless execution of activities in a pipeline with [scheduled runs](pipeline-runs.md) | Yes                | Yes                 |
-| Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes                | [Planned](../release-plan/shared-experiences.md#allow-multiple-schedulers-single-item)             |
-| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes                | [Planned](../release-plan/data-factory.md#data-pipeline-support-tumbling-window-triggers)             |
+| Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes                | [Planned](/fabric/release-plan/shared-experiences#allow-multiple-schedulers-single-item)             |
+| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes                | [Planned](/fabric/release-plan/data-factoryd#data-pipeline-support-tumbling-window-triggers)             |
 | Event triggers to automate the execution of pipeline runs in response to specific or relevant event occurrences | Yes                | Yes<sup>1</sup>                |
 
 <sup>1</sup> Use Fabric eventstreams and Reflex to trigger execution run events, refer to [Pipeline event triggers](pipeline-storage-event-triggers.md).
@@ -110,7 +110,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 
 | Feature                                                                 | Azure Data Factory | Fabric Data Factory |
 |-------------------------------------------------------------------------|--------------------|---------------------|
-| [Virtual network (virtual network) data gateway](/data-integration/vnet/overview) connectivity, which allows Fabric to work seamlessly in an organization's virtual network | No                 | [Planned](../release-plan/data-factory.md#data-pipeline-support-vnet-gateways)             |
+| [Virtual network (virtual network) data gateway](/data-integration/vnet/overview) connectivity, which allows Fabric to work seamlessly in an organization's virtual network | No                 | [Planned](/fabric/release-plan/data-factory#data-pipeline-support-vnet-gateways)             |
 | [On-premises data gateway](/data-integration/gateway/service-gateway-onprem) connectivity, which allows for secure access of data between an organization's on-premises data sources and Fabric | No (use the [Self hosted integration runtime (SHIR)](/azure/data-factory/concepts-integration-runtime#self-hosted-integration-runtime) instead)                 | Yes                 |
 | Azure [service tags](../security/security-service-tags.md) support, which is a defined group of IP addresses that is automatically managed to minimize the complexity of updates or changes to network security rules | Yes                | Yes                 |
 
@@ -143,7 +143,7 @@ Fabric pipelines require at minimum a Microsoft Fabric (Free) license to author 
 
 The Microsoft Fabric release plan documentation announces the latest updates and timelines to customers as features are prepared for future releases, including what's new and planned for Data Factory in Microsoft Fabric.
 
-For more information, see [Microsoft Fabric release plan documentation](../release-plan).
+For more information, see [Microsoft Fabric release plan documentation](/fabric/release-plan).
 
 ## Related content
 
