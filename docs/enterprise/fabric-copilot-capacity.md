@@ -11,7 +11,7 @@ ms.date:
 
 # Setting up a Fabric Copilot capacity
 
-This article describes how to set up a Fabric Copilot capacity which allows admins to consolidate all Fabric Copilot usage in a tenant for Fabric and Power BI users.
+This article describes how to set up a Fabric Copilot capacity which allows admins to consolidate all charges for Fabric Copilot usage in a tenant for Fabric users.
  
 ## Steps to enabling a Fabric Copilot capacity
 
