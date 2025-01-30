@@ -67,24 +67,28 @@
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
     items:
-    - name: Activity Continuity between ADF and Data Factory in Fabric
-      href: activity-parity.md
     - name: Connector Continuity between ADF and Data Factory in Fabric
       href: connector-parity.md
     - name: Migration paths from ADF and Power BI
-      href: upgrade-paths.md
-    - name: Planning your migration from ADF
-      href: migrate-planning-azure-data-factory.md
-    - name: Migrate from ADF 
-      href: migrate-from-azure-data-factory.md
-    - name: Move queries from Dataflow Gen1 to Gen2
-      href: move-dataflow-gen1-to-dataflow-gen2.md
-    - name: How to ingest data from ADF to Fabric
-      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
-    - name: Migrate from Dataflow Gen1 to Dataflow Gen2
-      href: dataflow-gen2-migrate-from-dataflow-gen1.md
-    - name: Migrate to Dataflow Gen2 scenarios
-      href: dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md
+      href: upgrade-paths.md    
+    - name: Pipelines
+      items:
+      - name: Planning your migration from ADF
+        href: migrate-planning-azure-data-factory.md
+      - name: Migrate from ADF 
+        href: migrate-from-azure-data-factory.md      
+      - name: How to ingest data from ADF to Fabric
+        href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
+      - name: Activity Continuity between ADF and Data Factory in Fabric
+        href: activity-parity.md
+    - name: Data flows
+      items:
+      - name: Move queries from Dataflow Gen1 to Gen2
+        href: move-dataflow-gen1-to-dataflow-gen2.md      
+      - name: Migrate from Dataflow Gen1 to Dataflow Gen2
+        href: dataflow-gen2-migrate-from-dataflow-gen1.md
+      - name: Migrate to Dataflow Gen2 scenarios
+        href: dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md  
   - name: Tutorials
     items:
     - name: End-to-end Data Factory tutorial
