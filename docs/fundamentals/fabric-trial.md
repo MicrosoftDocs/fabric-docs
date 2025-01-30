@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
   - ignite-2024
 ms.collection: ce-skilling-ai-copilot
-ms.date: 01/15/2025
+ms.date: 01/29/2025
 ---
 
 # Microsoft Fabric trial capacity
@@ -66,7 +66,7 @@ You can start a trial several different ways. The first two methods make you the
 - Attempt to use a Fabric feature. If your organization enabled self-service, attempting to use a Fabric feature launches a Fabric trial.
 - Join a trial started by a coworker by adding your workspace to that existing trial capacity. This action only is possible if the owner gives you, or gives the entire organization, **Contributor permissions** to the trial.
 
-For more information, see {Sharing trial capacities](#sharing-trial-capacities).
+For more information, see [Sharing trial capacities](#share-trial-capacities).
 
 Follow these steps to start your Fabric capacity trial and become the Capacity administrator of that trial.
 
