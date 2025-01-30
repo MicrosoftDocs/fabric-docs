@@ -61,11 +61,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "/docs/get-started/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md",
-            "redirect_url": "/fabric/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing",
-            "redirect_document_id": false
-        },
-        {
             "source_path_from_root": "/docs/get-started/known-issue-856-pipeline-fails-when-copy-data-warehouse.md",
             "redirect_url": "/fabric/known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse",
             "redirect_document_id": false
