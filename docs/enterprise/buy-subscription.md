@@ -80,7 +80,47 @@ To buy an Azure SKU, follow these steps:
 
 6. Select **Review + create**.
 
-## Microsoft 365 SKUs
+### Fabric quotas
+Microsoft Fabric provides limits (quotas) on how many total Fabric CUs you can provision on your subscription depending on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). The following sections explain how to review your provisioned CU usage in your Azure subscription and how to request a quota increase for Microsoft Fabric.
+
+##### Viewing your Fabric CU quota usage
+To view your provisioned CU usage, you must have an Azure account with the contributor role, or another role that includes *contributor* access. Follow these steps to view your Fabric quota usage.
+1. Sign in to the [Azure portal](https://portal.azure.com/#home)
+2. Search for *quotas* and select **Quotas**.
+3. On the Overview page, select **Microsoft Fabric**.
+4. You will be able to see your usage records by subscription - select the following filters
+   * **Provider** - Select *Microsoft Fabric*.
+   * **Subscription** - Select the subscription you want to see usage for.
+   * **Region** - Select the region you want to see usage for.
+   * **Usage** - Select *Show all*.
+  
+##### Requesting a quota increase
+To request a quota increase, you must have an Azure account with the contributor role, or another role that includes *contributor* access. Follow these steps to submit a request for a quota increase.
+1. Sign in to the [Azure portal](https://portal.azure.com/#home)
+2. Search for *quotas* and select **Quotas**.
+3. On the Overview page, select **Microsoft Fabric**.
+4. Select New Quota Request. Select one of these options to increase the quota(s):
+    * Enter a new limit
+    * Adjust the usage %
+    * You can also [add **Quotas** to your **Favorites** list](/azure/azure-portal/azure-portal-add-remove-sort-favorites) so that you  can quickly go back to it.
+5. When you're finished, select **Submit**.
+
+Your request will be reviewed, and you'll be notified if the request can be fulfilled. This usually happens within a few minutes. If your request isn't fulfilled, you'll need to open a support request so that a support engineer can assist you with the increase.
+
+##### Create support request for quota increase
+To request an increase to your quota, do the following:
+1.	Go to the New support request page in the Azure portal by following the steps to [Open a support request](/azure/azure-portal/supportability/how-to-create-azure-support-request).
+2.	On the Problem description tab of the New support request page,
+    * **Issue Type** Select *Service* and *subscription limits (quotas)* for the Issue type, and your subscription from the drop-down.
+    * **Quota type** Type *Fabric* and select *Microsoft Fabric*.
+3.	Select **Next**.
+4.	On the *Additional details* tab, under *Problem details*, select **Enter details** to enter additional information.
+5.	In the *Quota details window*, specify your new limits.
+6.  Select **Save**.
+7.	Fill in the remaining details of your quota request.
+8.  Select *Next: Review + create>>*, and after reviewing the request details, select **Create** to submit the request.
+
+### Microsoft 365 SKUs
 
 Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it's [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. Power BI EM SKUs don't support Microsoft Fabric.
 
