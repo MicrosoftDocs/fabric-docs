@@ -8,7 +8,7 @@ ms.date: 01/27/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Fabric known issues
+# Fabric known issues 
 
 This page lists known issues for Fabric and Power BI features. Before submitting a Support request, review this list to see if the issue that you're experiencing is already known and being addressed. Known issues are also available as an [interactive embedded Power BI report](https://support.fabric.microsoft.com/known-issues/).
 
