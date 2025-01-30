@@ -457,6 +457,7 @@ The following table lists required permissions for popular deployment pipeline a
 This section lists most of the limitations in deployment pipelines.
 
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md#capacity).
+* Currently, when you deploy a workspace to an existing target workspace different region, there may not be a warning in the deploy dialog.
 * The maximum number of items that can be deployed in a single deployment is 300.
 * Downloading a *.pbix* file after deployment isn't supported.
 * [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) aren't supported as pipeline admins.
@@ -464,7 +465,6 @@ This section lists most of the limitations in deployment pipelines.
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
 * For a list of supported items, see [supported items](./intro-to-deployment-pipelines.md#supported-items). Any item not on the list isn't supported.
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
-* Only Power BI items can be deployed to a workspace in a different capacity region. Other Fabric items can't be deployed to a workspace in a different capacity region. **Currently, there is no warning in the deploy dialog if different regions are involved**.
 * PBIR reports aren't supported.
 
 ### Semantic model limitations
