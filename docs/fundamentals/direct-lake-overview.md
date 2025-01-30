@@ -192,7 +192,6 @@ Direct Lake semantic models present some considerations and limitations.
 - Embedding reports requires a [V2 embed token](/power-bi/developer/embedded/generate-embed-token).
 - Direct Lake does not support service principal profiles for authentication.
 - Customized Direct Lake semantic models created by Service Principal and viewer with Service Principal are supported, but default Direct Lake semantic models are not supported.
-- Service Principal Profile is not supported.
 
 ## Comparison to other storage modes
 
