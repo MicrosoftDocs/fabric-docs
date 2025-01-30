@@ -87,8 +87,11 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | [Audit log](../admin/track-user-activities.md), which tracks user activities across Fabric and Microsoft 365 | No                 | Yes                 |
 
 <sup>1</sup> Use the Get metadata, Until and If condition activities for equivalent metadata retrieval of the Validation activity.
+
 <sup>2</sup> Use the Invoke remote pipeline function to execute the mapping data flow activities, refer to the [Pipeline support](pipeline-support.md).
+
 <sup>3</sup> To view the connectors that are currently supported for data pipelines, refer to [Pipeline support](pipeline-support.md).
+
 <sup>4</sup> Use Fabric eventstreams and Reflex to trigger execution run events, refer to [Pipeline event triggers](pipeline-storage-event-triggers.md).
 
 ## Considerations
