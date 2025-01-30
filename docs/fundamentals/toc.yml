@@ -1,7 +1,7 @@
 items:
 - name: Microsoft Fabric fundamentals documentation
   href: index.yml
-- name: Overview 
+- name: Overview
   items:
   - name: What is Microsoft Fabric?
     href: microsoft-fabric-overview.md
