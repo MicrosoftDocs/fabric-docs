@@ -44,29 +44,29 @@ Select the **Title** to view more information about that specific known issue.
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](../get-started/known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](../get-started/known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](../get-started/known-issues/known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
-|  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](../get-started/known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
-|  923  | Power BI | [Tenant migrations paused through January 2025](../get-started/known-issues/known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
-|  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](../get-started/known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
-|  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](../get-started/known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
-|  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](../get-started/known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 |
-|  903  | Data Warehouse | [Data warehouse data preview might fail if multiple data warehouse items](../get-started/known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md) | October 28, 2024 |
-|  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](../get-started/known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |
-|  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](../get-started/known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 |
-|  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](../get-started/known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 |
-|  895  | OneLake | [Dataverse shortcut creation and read fails when organization is moved](../get-started/known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md) | October 23, 2024 |
-|  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](../get-started/known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
-|  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](../get-started/known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 |
-|  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](../get-started/known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
-|  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](../get-started/known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 |
-|  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](../get-started/known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
-|  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](../get-started/known-issues/known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
-|  872  | Data Warehouse | [Data warehouses don't show button friendly names](../get-started/known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 |
-|  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](../get-started/known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
-|  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](../get-started/known-issues/known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 |
-|  842  | Data Warehouse | [Data warehouse exports using deployment pipelines or git fail](../get-started/known-issues/known-issue-842-warehouse-exports-pipelines-fail.md) | September 23, 2024 |
-|  846  | OneLake | [OneLake BCDR write transactions aren't categorized correctly for billing](../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) | September 17, 2024 |
-|  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](../get-started/known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 |
-|  835  | Data Engineering | [Managed private endpoint connection could fail](../get-started/known-issues/known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
+|  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](../known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
+|  923  | Power BI | [Tenant migrations paused through January 2025](../known-issues/known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
+|  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](../known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
+|  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](../known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
+|  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](../known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 |
+|  903  | Data Warehouse | [Data warehouse data preview might fail if multiple data warehouse items](../known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md) | October 28, 2024 |
+|  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](../known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |
+|  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](../known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 |
+|  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](../known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 |
+|  895  | OneLake | [Dataverse shortcut creation and read fails when organization is moved](../known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md) | October 23, 2024 |
+|  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](../known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
+|  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](../known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 |
+|  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](../known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
+|  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](../known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 |
+|  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](../known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
+|  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](../known-issues/known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
+|  872  | Data Warehouse | [Data warehouses don't show button friendly names](../known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 |
+|  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](../known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
+|  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](../known-issues/known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 |
+|  842  | Data Warehouse | [Data warehouse exports using deployment pipelines or git fail](../known-issues/known-issue-842-warehouse-exports-pipelines-fail.md) | September 23, 2024 |
+|  846  | OneLake | [OneLake BCDR write transactions aren't categorized correctly for billing](../known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) | September 17, 2024 |
+|  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](../known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 |
+|  835  | Data Engineering | [Managed private endpoint connection could fail](../known-issues/known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
 |  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](../get-started/known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 |
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](../get-started/known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](../get-started/known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
