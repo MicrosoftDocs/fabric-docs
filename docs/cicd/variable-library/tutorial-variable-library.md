@@ -14,7 +14,7 @@ ms.search.form: Variable library tutorial
 
 # Tutorial: Use Variable libraries to customize and share item configurations
 
-This tutorial shows you how to use dynamic content in data pipelines. create a Variable library item and add variables to it so that you can automate different values for different stages of your deployment pipeline.
+This tutorial shows you how to use dynamic content in data pipelines. create a Variable library item and add variables to it so that you can automate different values for different stages of your deployment pipeline. In this tutorial we copy data from one lakehouse to another, and use the Variable library to set the source and destination values for the copy activity.
 
 In this tutorial, you:
 
@@ -33,25 +33,19 @@ In this tutorial, you:
 
 ## Step 1: Prepare data sources (optional)
 
-For the purposes of this tutorial, we will create a workspace with some source data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
+For the purposes of this tutorial, we will create a workspace called *Sources LHs* with some source data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
 
-1. [Create a workspace](../../fundamentals/create-workspaces.md)
-1. 
-Connect to workspace....
+1. [Create a workspace](../../fundamentals/create-workspaces.md) called *Sources LHs*.
+1. [Create a lakehouse](../../onelake/create-lakehouse-onelake.md) item in the workspace, *called SourceLH_Dev*.
+1. [Create a data pipeline with sample data from public holidays](../../data-factory/create-first-pipeline-with-sample-data.md) (steps 1-3). (38 minutes)
+1. Create two more lakehouses (*SourceLH_Test* and *SourceLH_Prod*) with sample data.
 
 ## Step 2: Create a workspace
 
-First, create a workspace that will contain the Variable library item in your workspace to hold the variables. To create the workspace:
-
-<!-- Required: Tasks to complete in the process - H2
-
-In one or more H2 sections, describe tasks that 
-the user completes in the process the tutorial describes.
-
--->
+Now that we have our sample data, create a workspace that will contain the Variable library item in your workspace to hold the variables. To create the workspace:
 
 1. [Create a workspace](../../fundamentals/create-workspaces.md). We'll call it *Copy with Variables WS*.
-1. Procedure step
+1. In the workspace, create a new data pipeline
 1. Procedure step
 
 ## Create a data pipeline
