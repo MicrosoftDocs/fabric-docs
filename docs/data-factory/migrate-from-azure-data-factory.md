@@ -81,7 +81,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 |-------------------------------------------------------------------------|--------------------|---------------------|
 | Ensure seamless execution of activities in a pipeline with [scheduled runs](pipeline-runs.md) | Yes                | Yes                 |
 | Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes                | [Planned](/fabric/release-plan/shared-experiences#allow-multiple-schedulers-single-item)             |
-| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes                | [Planned](/fabric/release-plan/data-factoryd#data-pipeline-support-tumbling-window-triggers)             |
+| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes                | [Planned](/fabric/release-plan/data-factory#data-pipeline-support-tumbling-window-triggers)             |
 | Event triggers to automate the execution of pipeline runs in response to specific or relevant event occurrences | Yes                | Yes<sup>1</sup>                |
 
 <sup>1</sup> Use Fabric eventstreams and Reflex to trigger execution run events, refer to [Pipeline event triggers](pipeline-storage-event-triggers.md).
