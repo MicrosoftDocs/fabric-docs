@@ -104,6 +104,17 @@ The following tables contain more information about the copy activity in Microso
 |**Start time (UTC)**|Start DateTime value to filter on.|\<start time>|Yes if `dateFilterColumn` is specified|startTime|
 |**End time (UTC)**|End DateTime value to filter on.|\<end time>|Yes if `dateFilterColumn` is specified|endTime|
 
+## Troubleshooting
+When Running the pipeline you may recieve an error similar to this:
+
+```
+Operation on target Microsoft365 Filtered Copy failed: ErrorCode=UserErrorOffice365DataLoaderError,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Office365 data loading failed to execute. office365LoadErrorType: PermanentError. Your application is not registered with a resource type for billing on MGDC. Effective January 31st 2024, billing has been enabled for all MGDC pipelines on Fabric. Please re-register or update your application or manually register your resource type for billing to continue running MGDC pipelines on Fabric. Please follow these instructions in aka.ms/mgdcdocs/onboardingexperience. For additional assistance, please create a new support request for Microsoft Graph Data Connect by following the instructions provided here: https://aka.ms/data-connect-faq.,Source=Microsoft.DataTransfer.ClientLibrary,'
+```
+in addition to checking the steps in the links in the error messsge above, you may need to delete and recreate the graph registration in the azure portal Graph Data Connect blade.
+
+Additional troubleshooting information is available here: [Troubleshoot Microsoft Graph Data Connect](/graph/data-connect-troubleshooting)
+
+
 ## Related content
 
 - [How to create a Microsoft 365 connection](connector-microsoft-365.md)
