@@ -306,7 +306,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "/docs/get-started/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md",
+            "source_path_from_root": "docs/get-started/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md",
             "redirect_url": "/fabric/known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error",
             "redirect_document_id": false
         },
