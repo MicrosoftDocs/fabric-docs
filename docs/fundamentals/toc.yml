@@ -355,7 +355,7 @@ items:
       href: ../get-started/known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md
 - name: Resources
   items:
-    - name: Icons 
+    - name: Icons
       href: icons.md
     - name: What's new? archive
       href: whats-new-archive.md
