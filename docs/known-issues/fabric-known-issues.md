@@ -28,7 +28,7 @@ Select the **Title** to view more information about that specific known issue.
 |  985  | Power BI | [Direct Lake query cancellation causes model to fall back to DirectQuery](../known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md) | January 7, 2025 |
 |  979  | Databases | [SQL databases not available with private link through January 2025](../known-issues/known-issue-979-sql-databases-not-available-private-link.md) | January 6, 2025 |
 |  975  | Power BI | [Create report doesn't work on Eventhouse monitoring KQL database](../get-started/known-issues/known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md) | January 6, 2025 |
-|  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](../get-started/known-issues/known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 |
+|  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](../known-issues/known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 |
 |  978  | Real-Time Intelligence  | [Renamed eventstream fails to open](../known-issues/known-issue-978-renamed-eventstream-fails-open.md) | December 17, 2024 |
 |  976  | Power BI  | [Export-to-data disabled for a visual with visual calculation](../get-started/known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md) | December 17, 2024 |
 |  966  | Power BI  | [Sync content from Git in workspace fails](../get-started/known-issues/known-issue-966-sync-content-git-workspace-fails.md) | December 11, 2024 |

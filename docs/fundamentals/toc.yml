@@ -208,47 +208,47 @@ items:
     - name: SQL databases not available with private link through January 2025
       href: ../known-issues/known-issue-979-sql-databases-not-available-private-link.md
     - name: Create report doesn't work on Eventhouse monitoring KQL database
-      href: ../get-started/known-issues/known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md
+      href: ../known-issues/known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md
     - name: Show table command in KQL Queryset editor fails
-      href: ../get-started/known-issues/known-issue-974-show-table-kql-queryset-editor-fails.md
+      href: ../known-issues/known-issue-974-show-table-kql-queryset-editor-fails.md
     - name: Renamed eventstream fails to open
       href: ../known-issues/known-issue-978-renamed-eventstream-fails-open.md
     - name: Export to Excel using live connection with show items with no data turned on fails
-      href: ../get-started/known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md
+      href: ../known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md
     - name: Export-to-data disabled for a visual with visual calculation
-      href: ../get-started/known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md
+      href: ../known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md
     - name: Sync content from Git in workspace fails
-      href: ../get-started/known-issues/known-issue-966-sync-content-git-workspace-fails.md
+      href: ../known-issues/known-issue-966-sync-content-git-workspace-fails.md
     - name: Export data option is disabled for Q&A visual in the service
-      href: ../get-started/known-issues/known-issue-968-export-data-option-disabled-qa-visual.md
+      href: ../known-issues/known-issue-968-export-data-option-disabled-qa-visual.md
     - name: Pipeline activities don't save if their data warehouse connection is changed
-      href: ../get-started/known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md
+      href: ../known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md
     - name: SQL database creation fails to create child items when item with same name exists
-      href: ../get-started/known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md
+      href: ../known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md
     - name: Eventstream publish fails when column contains empty array and operator is added
-      href: ../get-started/known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md
+      href: ../known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md
     - name: Creation failure for Copy job item in empty workspace
-      href: ../get-started/known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
+      href: ../known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
     - name: Create Gateway public API doesn't work for service principals
-      href: ../get-started/known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md
+      href: ../known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md
     - name: Create, configure, or delete a mirror fails
-      href: ../get-started/known-issues/known-issue-954-create-configure-delete-mirror-fails.md
+      href: ../known-issues/known-issue-954-create-configure-delete-mirror-fails.md
     - name: Incorrect column names after column format or aggregation change
-      href: ../get-started/known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md
+      href: ../known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md
     - name: Power BI Copilot can excessively retry in rare error scenarios
-      href: ../get-started/known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md
+      href: ../known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md
     - name: Metrics app timepoint details missing for new P2 capacities
-      href: ../get-started/known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md
+      href: ../known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md
     - name: Intermittent failures on deployment of Sustainability solution
-      href: ../get-started/known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
+      href: ../known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
     - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work
-      href: ../get-started/known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md
+      href: ../known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md
     - name: New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported
-      href: ../get-started/known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md
+      href: ../known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md
     - name: Line chart value-axis zoom sliders don't work with markers enabled
-      href: ../get-started/known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md
+      href: ../known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md
     - name: External data sharing doesn't work in a different region capacity lakehouse
-      href: ../get-started/known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
+      href: ../known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
     - name: The default environment's resources folder doesn't work in notebooks
       href: ../get-started/known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
     - name: Tenant migrations paused through January 2025
