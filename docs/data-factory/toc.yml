@@ -73,6 +73,8 @@
       href: connector-parity.md
     - name: Migration paths from ADF and Power BI
       href: upgrade-paths.md
+    - name: Planning your migration from ADF
+      href: migrate-planning-azure-data-factory.md
     - name: Migrating from ADF 
       href: migrate-from-azure-data-factory.md
     - name: Move queries from Dataflow Gen1 to Gen2

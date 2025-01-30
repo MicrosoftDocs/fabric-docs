@@ -147,4 +147,4 @@ For more information, see [Microsoft Fabric release plan documentation](/release
 
 ## Related content
 
-[Learn how to plan for your ADF to Fabric Data Factory migration](needtoaddlink).
+[Learn how to plan for your ADF to Fabric Data Factory migration](migrate-planning-azure-data-factory.md).
