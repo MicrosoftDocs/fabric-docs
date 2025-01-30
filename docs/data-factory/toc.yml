@@ -81,7 +81,7 @@
         href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
       - name: Activity Continuity between ADF and Data Factory in Fabric
         href: activity-parity.md
-    - name: Data flows
+    - name: Dataflows
       items:
       - name: Move queries from Dataflow Gen1 to Gen2
         href: move-dataflow-gen1-to-dataflow-gen2.md      
