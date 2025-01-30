@@ -6,6 +6,151 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md",
+            "redirect_url": "/fabric/known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md",
+            "redirect_url": "/fabric/known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md",
+            "redirect_url": "/fabric/known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issue-819-subscriptions-exports-maps-wrong-results.md",
+            "redirect_url": "/fabric/known-issues/known-issue-819-subscriptions-exports-maps-wrong-results",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issue-821-schema-refresh-data-warehouse-model-fails.md",
+            "redirect_url": "/fabric/known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issue-823-concurrent-stored-procedures-block-warehouse.md",
+            "redirect_url": "/fabric/known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issue-835-managed-private-endpoint-connection-fail.md",
+            "redirect_url": "/fabric/known-issues/known-issue-835-managed-private-endpoint-connection-fail",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md",
+            "redirect_url": "/fabric/known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/",
+            "redirect_url": "/fabric/known-issues/",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/fabric/known-issues/toc.yml",
             "redirect_url": "/fabric/known-issues/toc.yml",
             "redirect_document_id": false

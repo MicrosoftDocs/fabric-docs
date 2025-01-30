@@ -250,63 +250,63 @@ items:
     - name: External data sharing doesn't work in a different region capacity lakehouse
       href: ../get-started/known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
     - name: The default environment's resources folder doesn't work in notebooks
-      href: ../get-started/known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
+      href: ../known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
     - name: Tenant migrations paused through January 2025
-      href: ../get-started/known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
+      href: ../known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
     - name: More options menu on a visual doesn't open in unsaved reports
-      href: ../get-started/known-issues/known-issue-918-more-options-not-open-unsaved-reports.md
+      href: ../known-issues/known-issue-918-more-options-not-open-unsaved-reports.md
     - name: SQL analytics endpoint tables lose statistics
-      href: ../get-started/known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md
+      href: ../known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md
     - name: SQL analytics endpoint tables lose permissions
-      href: ../get-started/known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md
+      href: ../known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md
     - name: INFO.VIEW.MEASURES() in calculated table might cause errors
-      href: ../get-started/known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md
+      href: ../known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md
     - name: Data warehouse data preview might fail if multiple data warehouse items
-      href: ../get-started/known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md
+      href: ../known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md
     - name: External data sharing OneLake shortcuts don't show in SQL analytics endpoint
-      href: ../get-started/known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md
+      href: ../known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md
     - name: OneLake Shared Access Signature (SAS) can't read cross-region shortcuts
-      href: ../get-started/known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md
+      href: ../known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md
     - name: Pipeline fails when getting a token to connect to Kusto
-      href: ../get-started/known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md
+      href: ../known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md
     - name: Dataverse shortcut creation and read fails when organization is moved
-      href: ../get-started/known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md
+      href: ../known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md
     - name: Can't connect to semantic model from Excel or use Analyze in Excel
-      href: ../get-started/known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md
+      href: ../known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md
     - name: Data warehouse tables aren't accessible or updatable
-      href: ../get-started/known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md
+      href: ../known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md
     - name: Spark jobs might fail due to Runtime 1.3 updates for GA
-      href: ../get-started/known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md
+      href: ../known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md
     - name: Premium capacity doesn't add excess usage into carry forward
-      href: ../get-started/known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md
+      href: ../known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md
     - name: Data pipeline connection fails after connection creator role is removed
-      href: ../get-started/known-issues/known-issue-877-pipeline-connection-fails-role-removed.md
+      href: ../known-issues/known-issue-877-pipeline-connection-fails-role-removed.md
     - name: Data warehouses don't show button friendly names
-      href: ../get-started/known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md
+      href: ../known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md
     - name: Pipeline fails when copying data to data warehouse with staging
-      href: ../get-started/known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md
+      href: ../known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md
     - name: Intermittent refresh failure through on-premises data gateway
-      href: ../get-started/known-issues/known-issue-844-intermittent-refresh-failure-gateway.md
+      href: ../known-issues/known-issue-844-intermittent-refresh-failure-gateway.md
     - name: Data warehouse exports using deployment pipelines or git fail
-      href: ../get-started/known-issues/known-issue-842-warehouse-exports-pipelines-fail.md
+      href: ../known-issues/known-issue-842-warehouse-exports-pipelines-fail.md
     - name: OneLake BCDR write transactions aren't categorized correctly for billing
-      href: ../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md
+      href: ../known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md
     - name: Monitoring hub displays incorrect queued duration
-      href: ../get-started/known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md
+      href: ../known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md
     - name: Managed private endpoint connection could fail
-      href: ../get-started/known-issues/known-issue-835-managed-private-endpoint-connection-fail.md
+      href: ../known-issues/known-issue-835-managed-private-endpoint-connection-fail.md
     - name: Concurrent stored procedures block each other in data warehouse
-      href: ../get-started/known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md
+      href: ../known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md
     - name: Schema refresh for a data warehouse's semantic model fails
-      href: ../get-started/known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md
+      href: ../known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md
     - name: Subscriptions and exports with maps might produce wrong results
-      href: ../get-started/known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md
+      href: ../known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md
     - name: Pipelines don't support Role property for Snowflake connector
-      href: ../get-started/known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md
+      href: ../known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md
     - name: Pipeline deployment fails when parent contains deactivated activity
-      href: ../get-started/known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md
+      href: ../known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md
     - name: Inserting nulls into Data Warehouse tables fail with incorrect error message
-      href: ../get-started/known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md
+      href: ../known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md
     - name: Dataflow Gen2 refresh fails due to missing SQL analytics endpoint
       href: ../get-started/known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md
     - name: Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser
