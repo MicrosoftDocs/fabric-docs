@@ -47,89 +47,49 @@ Due to its distributed architecture, Fabric capacities are less sensitive to ove
 
 The following table lists features supported in Azure Data Factory and Fabric Data Factory.
 
-#### Pipeline activities
-
 | Feature                                                                 | Azure Data Factory | Fabric Data Factory |
 |-------------------------------------------------------------------------|--------------------|---------------------|
+| Pipeline activities |||
 | [Office 365](outlook-activity.md) and [Teams](teams-activity.md) activities enable you to seamlessly send messages, facilitating efficient communication and collaboration across your organization | No                 | Yes                 |
 | Create connections to your [Power BI semantic model](semantic-model-refresh-activity.md) and [Dataflow Gen2](dataflow-activity.md) to ensure your data is consistently refreshed and up-to-date | No                 | Yes                 |
 | [Validation](/azure/data-factory/control-flow-validation-activity) in a pipeline to ensure the pipeline only continues execution once it validates the attached dataset reference exists, that it meets the specified criteria, or times out | Yes                | Yes<sup>1</sup>                |
 | Execute a [SQL Server Integration Services (SSIS)](/azure/data-factory/how-to-invoke-ssis-package-ssis-activity) package to perform data integration and transformation operations | Yes                | Planned             |
-
-<sup>1</sup> Use the Get metadata, Until and If condition activities for equivalent metadata retrieval of the Validation activity.
-
-#### Data transformation
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
-| Visually designed data transformations using Apache Spark clusters with [Mapping Dataflows](/azure/data-factory/concepts-data-flow-overview) to create and manage data transformation processes through a graphical interface | Yes                | No<sup>1</sup>                 |
+| Data transformation |||
+| Visually designed data transformations using Apache Spark clusters with [Mapping Dataflows](/azure/data-factory/concepts-data-flow-overview) to create and manage data transformation processes through a graphical interface | Yes                | No<sup>2</sup>                 |
 | Visually designed data transformations using the Fabric compute engine with the intuitive graphical interface of Power Query in [Dataflow Gen2](data-factory-overview.md#dataflows) | No                 | Yes                 |
-
-<sup>1</sup> Use the Invoke remote pipeline function to execute the mapping data flow activities, refer to the [Pipeline support](pipeline-support.md).
-
-#### Connectivity
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
-| Support for all [Data Factory data sources](/power-query/connectors)                               | Yes                | In progress<sup>1</sup>        |
-
-<sup>1</sup> To view the connectors that are currently supported for data pipelines, refer to [Pipeline support](pipeline-support.md).
-
-#### Scalability
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
+| Connectivity |||
+| Support for all [Data Factory data sources](/power-query/connectors)                               | Yes                | In progress<sup>3</sup>        |
+| Scalability |||
 | Ensure seamless execution of activities in a pipeline with [scheduled runs](pipeline-runs.md) | Yes                | Yes                 |
 | Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes                | [Planned](/fabric/release-plan/shared-experiences#allow-multiple-schedulers-single-item)             |
 | Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes                | [Planned](/fabric/release-plan/data-factory#data-pipeline-support-tumbling-window-triggers)             |
-| Event triggers to automate the execution of pipeline runs in response to specific or relevant event occurrences | Yes                | Yes<sup>1</sup>                |
-
-<sup>1</sup> Use Fabric eventstreams and Reflex to trigger execution run events, refer to [Pipeline event triggers](pipeline-storage-event-triggers.md).
-
-#### Artificial intelligence
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
+| Event triggers to automate the execution of pipeline runs in response to specific or relevant event occurrences | Yes                | Yes<sup>4</sup>                |
+| Artificial intelligence |||
 | [Copilot for Data Factory](../get-started/copilot-fabric-data-factory.md), which provides intelligent pipeline generation to ingest data with ease and explanations to help better understand complex pipelines or to provide suggestions for error messages | No                 | Yes                 |
-
-#### Content management
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
+| Content management |||
 | [Data lineage view](../governance/lineage.md), which help users understand and assess pipeline dependencies | Yes                | Yes                 |
 | [Deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md), which manage the lifecycle of Fabric content      | Yes                | Yes                 |
-
-#### Platform scalability and resiliency
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
+| Platform scalability and resiliency |||
 | [Premium capacity](../enterprise/licenses.md) architecture, which supports increased scale and performance | Yes                | Yes                 |
 | [Multi-Geo](../admin/service-admin-premium-multi-geo.md) support, which helps multinational customers address regional, industry-specific, or organizational data residency requirements | Yes                | Yes                 |
-
-#### Security
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
+| Security |||
 | [Virtual network (virtual network) data gateway](/data-integration/vnet/overview) connectivity, which allows Fabric to work seamlessly in an organization's virtual network | No                 | [Planned](/fabric/release-plan/data-factory#data-pipeline-support-vnet-gateways)             |
 | [On-premises data gateway](/data-integration/gateway/service-gateway-onprem) connectivity, which allows for secure access of data between an organization's on-premises data sources and Fabric | No (use the [Self hosted integration runtime (SHIR)](/azure/data-factory/concepts-integration-runtime#self-hosted-integration-runtime) instead)                 | Yes                 |
 | Azure [service tags](../security/security-service-tags.md) support, which is a defined group of IP addresses that is automatically managed to minimize the complexity of updates or changes to network security rules | Yes                | Yes                 |
-
-#### Governance
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
+| Governance |||
 | Content [endorsement](../governance/endorsement-overview.md), to promote or certify valuable, high-quality Fabric items | No                 | Yes                 |
 | [Microsoft Purview integration](../governance/microsoft-purview-fabric.md), which helps customers manage and govern Fabric items | Yes                | Yes                 |
 | Microsoft Information Protection (MIP) [sensitivity labels](../get-started/apply-sensitivity-labels.md) and integration with [Microsoft Defender for Cloud Apps](../governance/service-security-using-defender-for-cloud-apps-controls.md) for data loss prevention | No                 | Yes                 |
-
-#### Monitoring and diagnostic logging
-
-| Feature                                                                 | Azure Data Factory | Fabric Data Factory |
-|-------------------------------------------------------------------------|--------------------|---------------------|
+| Monitoring and diagnostic logging |||
 | Logging pipeline execution events into an event store to monitor, analyze, and troubleshoot pipeline performance | Yes                | Planned             |
 | [Monitoring hub](../admin/monitoring-hub.md), which provides monitoring capabilities for Fabric items | No                 | Yes                 |
 | [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), which provides monitoring capabilities for Fabric capacities | No                 | Yes                 |
 | [Audit log](../admin/track-user-activities.md), which tracks user activities across Fabric and Microsoft 365 | No                 | Yes                 |
+
+<sup>1</sup> Use the Get metadata, Until and If condition activities for equivalent metadata retrieval of the Validation activity.
+<sup>2</sup> Use the Invoke remote pipeline function to execute the mapping data flow activities, refer to the [Pipeline support](pipeline-support.md).
+<sup>3</sup> To view the connectors that are currently supported for data pipelines, refer to [Pipeline support](pipeline-support.md).
+<sup>4</sup> Use Fabric eventstreams and Reflex to trigger execution run events, refer to [Pipeline event triggers](pipeline-storage-event-triggers.md).
 
 ## Considerations
 
