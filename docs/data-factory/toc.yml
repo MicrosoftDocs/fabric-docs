@@ -71,8 +71,10 @@
       href: activity-parity.md
     - name: Connector Continuity between ADF and Data Factory in Fabric
       href: connector-parity.md
-    - name: Migrate from ADF and Power BI
+    - name: Migration paths from ADF and Power BI
       href: upgrade-paths.md
+    - name: Migrating from ADF 
+      href: migrate-from-azure-data-factory.md
     - name: Move queries from Dataflow Gen1 to Gen2
       href: move-dataflow-gen1-to-dataflow-gen2.md
     - name: How to ingest data from ADF to Fabric
