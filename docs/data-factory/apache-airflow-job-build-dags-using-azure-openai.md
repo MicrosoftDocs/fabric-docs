@@ -2,7 +2,7 @@
 title: Use Azure OpenAI in Apache Airflow Job
 description: Learn to generate Apache Airflow DAGs by transforming whiteboard sketches into DAG code using Azure OpenAI.
 ms.reviewer: abnarain
-ms.author: v-ambgarg
+ms.author: nabhishek
 author: abnarain
 ms.topic: how-to
 ms.date: 11/18/2024
