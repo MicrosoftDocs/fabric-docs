@@ -231,6 +231,106 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md",
+            "redirect_url": "/fabric/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md",
+            "redirect_url": "/fabric/known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md",
+            "redirect_url": "/fabric/known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md",
+            "redirect_url": "/fabric/known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md",
+            "redirect_url": "/fabric/known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md",
+            "redirect_url": "/fabric/known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md",
+            "redirect_url": "/fabric/known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-643-tables-not-available-semantic-model.md",
+            "redirect_url": "/fabric/known-issues/known-issue-643-tables-not-available-semantic-model",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md",
+            "redirect_url": "/fabric/known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md",
+            "redirect_url": "/fabric/known-issues/known-issue-718-onelake-under-reports-transactions-other-category",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md",
+            "redirect_url": "/fabric/known-issues/known-issue-726-pipeline-xml-format-copy-stuck",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md",
+            "redirect_url": "/fabric/known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md",
+            "redirect_url": "/fabric/known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md",
+            "redirect_url": "/fabric/known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md",
+            "redirect_url": "/fabric/known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md",
+            "redirect_url": "/fabric/known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md",
+            "redirect_url": "/fabric/known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md",
+            "redirect_url": "/fabric/known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md",
+            "redirect_url": "/fabric/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md",
+            "redirect_url": "/fabric/known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md/",
             "redirect_url": "/fabric/known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported",
             "redirect_document_id": false

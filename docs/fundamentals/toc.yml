@@ -308,45 +308,45 @@ items:
     - name: Inserting nulls into Data Warehouse tables fail with incorrect error message
       href: ../known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md
     - name: Dataflow Gen2 refresh fails due to missing SQL analytics endpoint
-      href: ../get-started/known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md
+      href: ../known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md
     - name: Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser
-      href: ../get-started/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md
+      href: ../known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md
     - name: Multiple installations of on-premises data gateway causes pipelines to fail
-      href: ../get-started/known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
+      href: ../known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
     - name: SQL analytics endpoint table queries fail due to RLE
-      href: ../get-started/known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
+      href: ../known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
     - name: Data warehouse deployment using deployment pipelines fails
-      href: ../get-started/known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
+      href: ../known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
     - name: Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines
-      href: ../get-started/known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md
+      href: ../known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md
     - name: SQL analytics endpoint table sync fails when table contains linked functions
-      href: ../get-started/known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md
+      href: ../known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md
     - name: Dataflows Gen2 staging warehouse doesn't work in deployment pipelines
-      href: ../get-started/known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md
+      href: ../known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md
     - name: Copy activity from Oracle to lakehouse fails for Number data type
-      href: ../get-started/known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md
+      href: ../known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md
     - name: Pipeline using XML format copy gets stuck
-      href: ../get-started/known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md
+      href: ../known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md
     - name: West India region doesn't support on-premises data gateway for data pipelines
-      href: ../get-started/known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md
+      href: ../known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md
     - name: OneLake under-reports transactions in the Other category
-      href: ../get-started/known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md
+      href: ../known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md
     - name: Tables not available to add in Power BI semantic model
-      href: ../get-started/known-issues/known-issue-643-tables-not-available-semantic-model.md
+      href: ../known-issues/known-issue-643-tables-not-available-semantic-model.md
     - name: Type mismatch when writing decimals and dates to lakehouse using a dataflow
-      href: ../get-started/known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md
+      href: ../known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md
     - name: Using an inactive SQL analytics endpoint can show old data
-      href: ../get-started/known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md
+      href: ../known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md
     - name: Data warehouse with more than 20,000 tables fails to load
-      href: ../get-started/known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md
+      href: ../known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md
     - name: User column incorrectly shows as System in Fabric capacity metrics app
-      href: ../get-started/known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md
+      href: ../known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md
     - name: InProgress status shows in Fabric capacity metrics app for completed queries
-      href: ../get-started/known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
+      href: ../known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
     - name: Warehouse's object explorer doesn't support case-sensitive object names
-      href: ../get-started/known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
+      href: ../known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
     - name: Temp tables in Warehouse and SQL analytics endpoint
-      href: ../get-started/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
+      href: ../known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
     - name: Closing a Dataflow Gen1 takes you to the wrong workspace
       href: ../get-started/known-issues/known-issue-546-closing-dataflow-gen1-takes-wrong-workspace.md
     - name: New card visual formatting appears or disappears in Service
