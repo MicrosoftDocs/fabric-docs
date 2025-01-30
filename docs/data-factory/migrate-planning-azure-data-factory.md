@@ -44,7 +44,7 @@ In ADF, integration runtimes (IRs) are configuration objects that represent comp
 
 Microsoft Fabric is a software-as-a-service (SaaS) product whereas ADF is a platform-as-a-service (PaaS) product. What this means in terms of integration runtimes is that you don't need to configure anything to use pipelines or dataflows in Fabric as the default is to use cloud-based compute in the region where your Fabric capacities are located. SSIS IRs don't exist in Fabric and for on-premises data connectivity you use a Fabric-specific component known as the [on-premises Data Gateway](how-to-access-on-premises-data.md) (OPDG). And for virtual network based connectivity to secured networks, you use the Virtual Network Data Gateway in Fabric.  
 
-When migrating from ADF to Fabric, you won't need to migrate public network Azure (cloud) IRs. you need to recreate your SHIRs as OPDGs and virtual network enabled Azure IRs as [Virtual Network Data Gateways](/data-integration/vnet/overview.md).  
+When migrating from ADF to Fabric, you won't need to migrate public network Azure (cloud) IRs. you need to recreate your SHIRs as OPDGs and virtual network enabled Azure IRs as [Virtual Network Data Gateways](/data-integration/vnet/overview).  
 
 :::image type="content" source="media/migrate-planning-azure-data-factory/manage-gateways.png" alt-text="Screenshot showing the Manage connections and gateways option on the Fabric Admin page.":::
 
@@ -96,7 +96,7 @@ Change Data Capture (CDC) in ADF is a preview feature that makes it easy to move
 
 ### Azure Synapse Link
 
-Although not available in ADF, Synapse pipeline users have frequently utilized Azure Synapse Link to replicate data from SQL databases to their data lake in turnkey approach. In Fabric, you recreate the Azure Synapse Link artifacts as Mirroring items in your workspace. For more information, see on Fabric [database mirroring](/database/mirrored-database/overview.md).
+Although not available in ADF, Synapse pipeline users have frequently utilized Azure Synapse Link to replicate data from SQL databases to their data lake in turnkey approach. In Fabric, you recreate the Azure Synapse Link artifacts as Mirroring items in your workspace. For more information, see on Fabric [database mirroring](../database/mirrored-database/overview.md).
 
 ### SQL Server Integration Services (SSIS)
 
@@ -104,7 +104,7 @@ SSIS is the on-premises data integration and ETL tool that Microsoft ships with 
 
 ### Invoke pipeline activity
 
-A common activity that is used in ADF pipelines is the _Execute pipeline activity_ which allows you to call another pipeline in your factory. In Fabric, we significantly enhanced this activity as the _Invoke pipeline activity_. Refer to the [Invoke pipeline activity](invoke-pipelinel-activity.md) documentation.
+A common activity that is used in ADF pipelines is the _Execute pipeline activity_ which allows you to call another pipeline in your factory. In Fabric, we significantly enhanced this activity as the _Invoke pipeline activity_. Refer to the [Invoke pipeline activity](invoke-pipeline-activity.md) documentation.
 
 This activity is useful for migration scenarios where you have many ADF pipelines that use ADF-specific features like Mapping Data Flows or SSIS. You can maintain those pipelines as-is in ADF or even Synapse pipelines, and then call that pipeline inline from your new Fabric Data Factory pipeline by using the Invoke pipeline activity and pointing to the remote factory pipeline.
 
