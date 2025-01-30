@@ -16,7 +16,7 @@ This article targets Azure Data Factory and Synapse Gen2 pipeline creators. It p
 
 Microsoft Fabric is an integrated platform for both self-service and IT-managed enterprise data. With exponential growth in data volumes and complexity, Fabric customers demand enterprise solutions that scale, are secure, easy to manage, and accessible to all users across the largest of organizations.
 
-In recent years, Microsoft invested significant work to deliver scalable cloud capabilities to customers. To that end, Data Factory in Fabric empowers a large ecosystem of data integration developers and data integration solutions built up over decades to leverage the full set of features, and capabilities that go far beyond comparable functionality available in previous generations.
+In recent years, Microsoft invested significant work to deliver scalable cloud capabilities to customers. To that end, Data Factory in Fabric empowers a large ecosystem of data integration developers and data integration solutions built up over decades to use the full set of features, and capabilities that go far beyond comparable functionality available in previous generations.
 
 Naturally, customers are asking whether there's an opportunity to consolidate by hosting their data integration solutions within Fabric. They often ask questions like:
 
@@ -28,12 +28,12 @@ Naturally, customers are asking whether there's an opportunity to consolidate by
 Answers to many of these questions are described in this article.
 
 > [!NOTE]
-> The decision to migrate to Fabric capacities depends on the requirements of each customer. Customers should carefully evaluate additional benefits in order to make an informed decision. We expect to see organic migration to Fabric pipelines over time, and our intention is that it happens on terms that each customer is comfortable with.
-> To be clear, currently there aren't any plans to deprecate Azure Data Factory or Synapse Gen2 for data ingestion. There is a priority to focus investment on Fabric pipelines for enterprise data ingestion, and so the additional value provided by Fabric capacities will increase over time. Customers who choose Fabric capacities can expect to benefit from alignment with the Microsoft Fabric product roadmap.
+> The decision to migrate to Fabric capacities depends on the requirements of each customer. Customers should carefully evaluate other benefits in order to make an informed decision. We expect to see organic migration to Fabric pipelines over time, and our intention is that it happens on terms that each customer is comfortable with.
+> To be clear, currently there aren't any plans to deprecate Azure Data Factory or Synapse Gen2 for data ingestion. There's a priority to focus investment on Fabric pipelines for enterprise data ingestion, and so the extra value provided by Fabric capacities will increase over time. Customers who choose Fabric capacities can expect to benefit from alignment with the Microsoft Fabric product roadmap.
 
 ### Convergence of enterprise and self-service data integration
 
-The consolidation of items in Fabric simplifies discovery, collaboration, and management by co-locating resources. This allows central IT teams to operationalize mission-critical data movement and transformation services aligned with corporate standards, including data lineage and monitoring, while more easily integrating popular self-service items.
+The consolidation of items in Fabric simplifies discovery, collaboration, and management by colocating resources. This allows central IT teams to operationalize mission-critical data movement and transformation services aligned with corporate standards, including data lineage and monitoring, while more easily integrating popular self-service items.
 
 To support the collaborative and scalable needs of organizations, Fabric pipelines introduce Office 365 and Teams activities for sending messages, seamless refreshes of Power BI semantic models, and robust governance features, helping organizations manage data lineage and pipeline monitoring. The integration of generative AI via Copilot further enhances the pipeline experience by offering intelligent pipeline generation and error resolution explanations, simplifying the creation and management of complex solutions.
 
@@ -65,7 +65,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | Visually designed data transformations using Apache Spark clusters with [Mapping Dataflows](/azure/data-factory/concepts-data-flow-overview) to create and manage data transformation processes through a graphical interface | Yes                | No<sup>1</sup>                 |
 | Visually designed data transformations using the Fabric compute engine with the intuitive graphical interface of Power Query in [Dataflow Gen2](data-factory-overview.md#dataflows) | No                 | Yes                 |
 
-<sup>1</sup> Use the invoke remote pipeline function to execute the mapping data flow activities, refer to the [Pipeline support](pipeline-support.md).
+<sup>1</sup> Use the Invoke remote pipeline function to execute the mapping data flow activities, refer to the [Pipeline support](pipeline-support.md).
 
 #### Connectivity
 
@@ -81,7 +81,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 |-------------------------------------------------------------------------|--------------------|---------------------|
 | Ensure seamless execution of activities in a pipeline with [scheduled runs](pipeline-runs.md) | Yes                | Yes                 |
 | Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes                | [Planned](/release-plan/shared-experiences.md#allow-multiple-schedulers-single-item)             |
-| Utilize tumbling window triggers to schedule pipeline runs within distinct, non-overlapping time windows | Yes                | [Planned](/release-plan/data-factory.md#data-pipeline-support-tumbling-window-triggers)             |
+| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes                | [Planned](/release-plan/data-factory.md#data-pipeline-support-tumbling-window-triggers)             |
 | Event triggers to automate the execution of pipeline runs in response to specific or relevant event occurrences | Yes                | Yes<sup>1</sup>                |
 
 <sup>1</sup> Use Fabric eventstreams and Reflex to trigger execution run events, refer to [Pipeline event triggers](pipeline-storage-event-triggers.md).
@@ -110,7 +110,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 
 | Feature                                                                 | Azure Data Factory | Fabric Data Factory |
 |-------------------------------------------------------------------------|--------------------|---------------------|
-| [Virtual network (VNet) data gateway](/data-integration/vnet/overview) connectivity, which allows Fabric to work seamlessly in an organization's virtual network | No                 | [Planned](/release-plan/data-factory.md#data-pipeline-support-vnet-gateways)             |
+| [Virtual network (virtual network) data gateway](/data-integration/vnet/overview) connectivity, which allows Fabric to work seamlessly in an organization's virtual network | No                 | [Planned](/release-plan/data-factory.md#data-pipeline-support-vnet-gateways)             |
 | [On-premises data gateway](/data-integration/gateway/service-gateway-onprem) connectivity, which allows for secure access of data between an organization's on-premises data sources and Fabric | No (use the [Self hosted integration runtime (SHIR)](/azure/data-factory/concepts-integration-runtime#self-hosted-integration-runtime) instead)                 | Yes                 |
 | Azure [service tags](/security/security-service-tags.md) support, which is a defined group of IP addresses that is automatically managed to minimize the complexity of updates or changes to network security rules | Yes                | Yes                 |
 
@@ -133,7 +133,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 
 ## Considerations
 
-There are some additional considerations to factor into your planning before migrating to Fabric pipelines.
+There are some other considerations to factor into your planning before migrating to Fabric pipelines.
 
 ### Licensing
 
@@ -141,7 +141,7 @@ Fabric pipelines require at minimum a Microsoft Fabric (Free) license to author 
 
 ### Roadmap
 
-The Microsoft Fabric release plan documentation announces the latest updates and timelines to customers as features are prepared for future releases, including what's new and planned for Data Factory in Microsoft Fabric. 
+The Microsoft Fabric release plan documentation announces the latest updates and timelines to customers as features are prepared for future releases, including what's new and planned for Data Factory in Microsoft Fabric.
 
 For more information, see [Microsoft Fabric release plan documentation](/release-plan).
 
