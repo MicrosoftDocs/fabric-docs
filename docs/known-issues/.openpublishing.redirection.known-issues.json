@@ -14,6 +14,76 @@
             "source_path_from_root": "/fabric/known-issues/index.yml",
             "redirect_url": "/fabric/index.yml",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1002-reports-functions-rls-not-work.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1002-reports-functions-rls-not-work",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-978-renamed-eventstream-fails-open.md",
+            "redirect_url": "/fabric/known-issues/known-issue-978-renamed-eventstream-fails-open",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-979-sql-databases-not-available-private-link.md",
+            "redirect_url": "/fabric/known-issues/known-issue-979-sql-databases-not-available-private-link",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md",
+            "redirect_url": "/fabric/known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries.md",
+            "redirect_url": "/fabric/known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md",
+            "redirect_url": "/fabric/known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md",
+            "redirect_url": "/fabric/known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-990-kql-database-loads-continuously-without-error.md",
+            "redirect_url": "/fabric/known-issues/known-issue-990-kql-database-loads-continuously-without-error",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md",
+            "redirect_url": "/fabric/known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md",
+            "redirect_url": "/fabric/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query",
+            "redirect_document_id": false
         }  
     ]
 }
