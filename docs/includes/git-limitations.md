@@ -70,10 +70,10 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process#fabric-permissions-needed-for-common-operations).
 - There must be an available capacity for this action.
 - All [workspace](#workspace-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
-- When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
 - Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
 - [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
+- When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
 - When branching out to an existing workspace:
   - The target workspace must support a Git connection.
   - The user must be an admin of the target workspace.

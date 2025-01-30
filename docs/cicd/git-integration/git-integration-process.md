@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 01/29/2025
+ms.date: 01/30/2025
 ms.custom:
   - build-2023
   - ignite-2023
@@ -198,7 +198,7 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Actions you can take on the current branch**:
 
-  - [*Branch out to another workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (contributor and above): Creates a new workspace and new branch, or switches to an existing workspace based on the last commit of the branch connected to the current workspace. It then connects to the target workspace and branch.
+  - [*Branch out to another workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (contributor and above): Creates a new workspace, or switches to an existing workspace based on the last commit to the current workspace. It then connects to the target workspace and branch.
   - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
   - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
