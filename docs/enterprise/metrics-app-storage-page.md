@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023
   - build-2024
   - ignite-2024
-ms.date: 09/12/2024
+ms.date: 01/16/2025
 ---
 
 # Understand the metrics app storage page
@@ -36,7 +36,7 @@ In this page, there are three cards present to provide specific information on s
 
 * **Current storage (GB)** - Displays the latest storage in GB.
 
-* **Billable storage (GB)** - Displays the billable storage in GB.
+* **Billable storage (GB)** - Displays the billable storage in GB. [Soft-deleted data](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) is billed at the same rate as active data.
 
 >[!NOTE]
 >* Billable storage volume can be lower than current storage volume. If the capacity has less storage usage at the start of the reporting period, the billable storage volume is lower than the current storage.
@@ -46,7 +46,7 @@ In this page, there are three cards present to provide specific information on s
 
 ### Top workspaces by billable storage %
 
-A table showing storage information for the selected top workspaces. Use the *Top* slicer to change the number of workspaces with the largest storage volume you want to review. The workspaces are ordered according to storage volume. The workspaces that have the highest storage volume appear at the top of the list.
+ A table showing storage information for the selected top workspaces. To change the number of workspaces with the largest storage volume you want to review, use the visual *Top* slicer on the visual's filter pane. The workspaces are ordered according to storage volume. The workspaces that have the highest storage volume appear at the top of the list.
 
 * **Workspace name** - Name of the workspace.
 
@@ -54,7 +54,7 @@ A table showing storage information for the selected top workspaces. Use the *To
 
 * **Operation name** - The name of the displayed operation.
 
-* **Deletion status** - Indicates whether the workspace is active or not.
+* **Deletion status** - Indicates whether the workspace is active or not. Soft-deleted data is billed at the same rate as active data.
 
 * **Billing type** - Indicates whether the workspace is billable or not.
 
