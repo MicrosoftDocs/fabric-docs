@@ -1,7 +1,7 @@
 ---
 title: Known issue - Renamed eventstream fails to open
 description: A known issue is posted where a renamed eventstream fails to open.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/17/2024

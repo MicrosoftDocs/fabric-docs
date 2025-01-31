@@ -1,8 +1,8 @@
 ---
 title: Get data for Activator from eventstreams
 description: Learn how to get data from eventstreams for use in Activator and integrate it into your applications.
-author: mihart
-ms.author: mihart
+author: kfollis
+ms.author: kfollis
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 11/19/2024

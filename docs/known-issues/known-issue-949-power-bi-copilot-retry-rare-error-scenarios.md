@@ -1,7 +1,7 @@
 ---
 title: Known issue - Power BI Copilot can excessively retry in rare error scenarios
 description: A known issue is posted where Power BI Copilot can excessively retry in rare error scenarios.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/24/2024

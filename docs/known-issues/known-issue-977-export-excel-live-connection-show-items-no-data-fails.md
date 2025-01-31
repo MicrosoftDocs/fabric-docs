@@ -1,7 +1,7 @@
 ---
 title: Known issue - Export to Excel using live connection with show items with no data turned on fails
 description: A known issue is posted where the export to Excel functionality using live connection with show items with no data turned on fails.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/06/2025
