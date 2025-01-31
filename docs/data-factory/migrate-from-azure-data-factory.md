@@ -87,7 +87,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), which provides monitoring capabilities for Fabric capacities | No                 | Yes                 |
 | [Audit log](../admin/track-user-activities.md), which tracks user activities across Fabric and Microsoft 365 | No                 | Yes                 |
 
-<sup>1</sup> Use the [Get metadata](get-metadata-activity.md), [Until](until-activity.md) and [If condition](if-condition-activity) activities for equivalent metadata retrieval of the Validation activity.
+<sup>1</sup> Use the [Get metadata](get-metadata-activity.md), [Until](until-activity.md) and [If condition](if-condition-activity.md) activities for equivalent metadata retrieval of the Validation activity.
 
 <sup>2</sup> Use the Invoke remote pipeline function to execute the mapping data flow activities, refer to the [Invoke Pipeline activity](invoke-pipeline-activity.md).
 
