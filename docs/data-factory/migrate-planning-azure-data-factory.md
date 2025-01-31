@@ -88,7 +88,7 @@ To migrate your triggers from ADF to Fabric, think about rebuilding your schedul
 
 Debugging pipelines is simpler in Fabric than in ADF. This simplicity is because Fabric Data Factory pipelines don't have a separate concept of _debug mode_ that you find in ADF pipelines and data flows. Instead, when you build your pipeline, you're always in interactive mode. To test and debug your pipelines, you only need to select the play button from the Pipeline editor toolbar when you're ready in your development cycle. Pipelines in Fabric don't include the _debug until_ stepwise pattern of debugging interactively. Instead, in Fabric, you utilize the activity state and set only the activities that you wish to test as active while setting all other activities to inactive to achieve the same testing and debug patterns. Refer to the following video that walks through how to achieve this debugging experience in Fabric.
 
-> [!VIDEO https://www.youtube.com/embed?v=bqq8HZM2b1Q]
+> [!VIDEO https://www.youtube.com/embed/bqq8HZM2b1Q?feature=oembed]
 
 ### Change Data Capture
 
