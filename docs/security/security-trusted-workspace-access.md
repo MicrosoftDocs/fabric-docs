@@ -227,10 +227,6 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Trusted workspace access is not supported if a service principal is used to create shortcut.
 * Trusted workspace access isn't compatible with cross-tenant requests.
 
-### Troubleshooting issues with trusted workspace access
-
-If a shortcut in a lakehouse that targets a firewall-protected ADLS Gen2 storage account becomes inaccessible, it might be because the lakehouse has been shared with a user who doesn't have an admin, member, or contributor role in the workspace where the lakehouse resides. This is a [known issue](../known-issues/fabric-known-issues.md). The remedy is not to share the lakehouse with users who don't have an admin, member, or contributor role in the workspace.
-
 ### ARM template sample
 
 ```json
