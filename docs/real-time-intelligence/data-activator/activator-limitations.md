@@ -1,8 +1,8 @@
 ---
 title: Activator limitations
 description: Learn about the limitations of using Activator in your applications and dashboards. Activator provides real-time insights and analytics for your data.
-author: mihart
-ms.author: mihart
+author: kfollis
+ms.author: kfollis
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter, ignite-2024
 ms.search.form: product-reflex

@@ -1,7 +1,7 @@
 ---
 title: Known issue - Tenant migrations paused through January 2025
 description: A known issue is posted where tenant migrations paused through January 2025.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/15/2025
