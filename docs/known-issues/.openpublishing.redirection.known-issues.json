@@ -431,7 +431,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "/docs/known-issues",
+            "source_path_from_root": "/docs/known-issues/index.yml",
             "redirect_url": "/fabric/known-issues/fabric-known-issues",
             "redirect_document_id": false
         }           
