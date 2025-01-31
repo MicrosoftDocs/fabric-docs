@@ -1,7 +1,7 @@
 ---
 title: Known issue - Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser
 description: A known issue is posted where custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/24/2024

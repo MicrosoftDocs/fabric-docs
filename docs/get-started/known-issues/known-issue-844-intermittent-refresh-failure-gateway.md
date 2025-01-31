@@ -1,7 +1,7 @@
 ---
 title: Known issue - Intermittent refresh failure through on-premises data gateway
 description: A known issue is posted where you see an intermittent refresh failure through the on-premises data gateway.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 09/25/2024

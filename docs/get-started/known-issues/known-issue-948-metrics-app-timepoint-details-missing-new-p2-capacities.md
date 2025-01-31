@@ -1,7 +1,7 @@
 ---
 title: Known issue - Metrics app timepoint details missing for new P2 capacities
 description: A known issue is posted where metrics app timepoint details are missing for new P2 capacities.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/15/2025

@@ -1,8 +1,8 @@
 ---
 title: Create Activator alerts from a Real-Time Dashboard
 description: Learn how to create an Activator alert from a Real-Time Dashboard and receive real-time notifications when conditions are met.
-author: mihart
-ms.author: mihart
+author: kfollis
+ms.author: kfollis
 ms.topic: how-to
 ms.reviewer: guregini
 ms.custom: FY25Q1-Linter, ignite-2024

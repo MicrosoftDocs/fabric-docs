@@ -1,8 +1,8 @@
 ---
 title: Known issue - Type mismatch when writing decimals and dates to lakehouse using a dataflow
 description: A known issue is posted where there's a type mismatch when writing decimals and dates to lakehouse using a dataflow.
-author: mihart
-ms.author: mihart
+author: kfollis
+ms.author: kfollis
 ms.topic: troubleshooting 
 ms.date: 02/16/2024
 ms.custom: known-issue-591
