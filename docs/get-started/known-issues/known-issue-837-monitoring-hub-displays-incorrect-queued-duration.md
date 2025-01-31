@@ -1,7 +1,7 @@
 ---
 title: Known issue - Monitoring hub displays incorrect queued duration
 description: A known issue is posted where Monitoring hub displays incorrect queued duration.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 09/17/2024

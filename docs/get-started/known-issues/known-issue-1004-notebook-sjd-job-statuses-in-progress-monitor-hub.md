@@ -1,7 +1,7 @@
 ---
 title: Known issue - Notebook and SJD job statuses are in progress in monitor hub
 description: A known issue is posted where notebook and SJD job statuses are in progress in monitor hub.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/29/2025

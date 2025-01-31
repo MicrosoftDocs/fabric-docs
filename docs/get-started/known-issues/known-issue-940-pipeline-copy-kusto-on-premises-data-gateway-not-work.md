@@ -1,7 +1,7 @@
 ---
 title: Known issue - Pipeline copy data to Kusto using an on-premises data gateway doesn't work
 description: A known issue is posted where the pipeline copy data to Kusto using an on-premises data gateway doesn't work.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 11/22/2024

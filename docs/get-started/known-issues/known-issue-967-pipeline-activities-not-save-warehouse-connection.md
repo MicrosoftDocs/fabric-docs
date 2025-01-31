@@ -1,7 +1,7 @@
 ---
 title: Known issue - Pipeline activities don't save if their data warehouse connection is changed
 description: A known issue is posted where pipeline activities don't save if their data warehouse connection is changed.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/10/2024
