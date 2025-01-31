@@ -1,7 +1,7 @@
 ---
 title: Known issue - INFO.VIEW.MEASURES() in calculated table might cause errors
 description: A known issue is posted where INFO.VIEW.MEASURES() in calculated table might cause errors
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/31/2024

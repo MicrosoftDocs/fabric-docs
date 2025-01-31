@@ -1,7 +1,7 @@
 ---
 title: Known issue - OneLake under-reports transactions in the Other category
 description: A known issue is posted where OneLake under-reports transactions in the Other category.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/11/2024

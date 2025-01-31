@@ -1,7 +1,7 @@
 ---
 title: Known issue - Schema refresh for a data warehouse's semantic model fails
 description: A known issue is posted where schema refresh for a data warehouse's semantic model fails.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/06/2025
