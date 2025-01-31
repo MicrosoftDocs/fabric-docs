@@ -1,7 +1,7 @@
 ---
 title: Known issue - Create, configure, or delete a mirror fails
 description: A known issue is posted where trying to create, configure, or delete a mirror fails.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/02/2024

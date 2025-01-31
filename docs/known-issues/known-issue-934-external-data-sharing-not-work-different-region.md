@@ -1,7 +1,7 @@
 ---
 title: Known issue - External data sharing doesn't work in a different region capacity lakehouse
 description: A known issue is posted where external data sharing doesn't work in a different region capacity lakehouse.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/17/2024

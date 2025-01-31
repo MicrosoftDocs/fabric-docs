@@ -1,7 +1,7 @@
 ---
 title: Known issue - Pipeline using XML format copy gets stuck
 description: A known issue is posted where a pipeline using XML format copy gets stuck.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 05/24/2024

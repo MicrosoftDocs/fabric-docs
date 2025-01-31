@@ -1,7 +1,7 @@
 ---
 title: Known issue - External data sharing OneLake shortcuts don't show in SQL analytics endpoint
 description: A known issue is posted where the external data sharing OneLake shortcuts don't support blob specific APIs
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/28/2025
