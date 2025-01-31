@@ -1,7 +1,7 @@
 ---
 title: Known issue - Creation failure for Copy job item in empty workspace
 description: A known issue is posted where the Copy job item isn't created in an empty workspace.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/05/2024

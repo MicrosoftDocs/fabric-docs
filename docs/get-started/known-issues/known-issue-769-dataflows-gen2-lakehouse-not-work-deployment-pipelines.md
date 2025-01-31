@@ -1,7 +1,7 @@
 ---
 title: Known issue - Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines
 description: A known issue is posted where Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 07/02/2024
