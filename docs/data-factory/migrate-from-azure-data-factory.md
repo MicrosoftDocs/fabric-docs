@@ -1,11 +1,12 @@
 ---
 title: Migrate from Azure Data Factory to Fabric Data Factory
 description: This article provides details on how customers of Azure Data Factory (ADF) can migrate their existing solutions to Data Factory in Microsoft Fabric.
-ms.reviewer: jonburchel
-ms.author: makromer
-author: kromerm
+author: itsnotaboutthecell
+ms.author: alpowers
+ms.reviewer: makromer, jonburchel
 ms.topic: conceptual
 ms.date: 01/30/2025
+ms.custom: fabric-cat, intro-migration
 ---
 
 # Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
@@ -41,7 +42,7 @@ By utilizing a common platform, the workflow is streamlined, enhancing solution 
 
 ### Fabric capacities
 
-Due to its distributed architecture, Fabric capacities are less sensitive to overall load, temporal spikes, and high concurrency. By consolidating capacities to larger Fabric capacity SKUs, customers can achieve increased performance and throughput. Refer to [Optimize Fabric capacities](../enterprise/optimize-capacity.md) for more information.
+Due to its distributed architecture, Fabric capacities are less sensitive to overall load, temporal spikes, and high concurrency. By consolidating capacities to larger Fabric capacity SKUs, customers can achieve increased performance and throughput.
 
 ### Feature comparison
 
@@ -86,9 +87,9 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), which provides monitoring capabilities for Fabric capacities | No                 | Yes                 |
 | [Audit log](../admin/track-user-activities.md), which tracks user activities across Fabric and Microsoft 365 | No                 | Yes                 |
 
-<sup>1</sup> Use the Get metadata, Until and If condition activities for equivalent metadata retrieval of the Validation activity.
+<sup>1</sup> Use the [Get metadata](get-metadata-activity.md), [Until](until-activity.md) and [If condition](if-condition-activity.md) activities for equivalent metadata retrieval of the Validation activity.
 
-<sup>2</sup> Use the Invoke remote pipeline function to execute the mapping data flow activities, refer to the [Pipeline support](pipeline-support.md).
+<sup>2</sup> Use the Invoke remote pipeline function to execute the mapping data flow activities, refer to the [Invoke Pipeline activity](invoke-pipeline-activity.md).
 
 <sup>3</sup> To view the connectors that are currently supported for data pipelines, refer to [Pipeline support](pipeline-support.md).
 
