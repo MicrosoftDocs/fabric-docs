@@ -125,15 +125,11 @@ Your organization might have up to 250 [!INCLUDE [fabric-activator](../includes/
 ## Application Life Cycle limitations
 
 The following components are currently not supported in Activator ALM:
-
-* Real-Time Hub Azure Storage events
-
-* Data Piplelies
-
-* Power BI
-
 * Eventstream  (rolling out)
-
+* Real Time Hub Fabric Events (roling out)
+* Real-Time Hub Azure Storage events - not supported
+* Data Piplelies (as target action) 
+* Power BI
 
 ## Related content
 
