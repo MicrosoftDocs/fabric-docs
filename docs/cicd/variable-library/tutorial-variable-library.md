@@ -62,8 +62,7 @@ Now that we have our sample data, create a new workspace that will contain the V
 ## Create a variable library with variables
 
 1. Create an empty Variable library item. Call it *WS variables*.
-1. Open the Variable library and add a variable called *Source_LH*. Give it the type *string*, and the value of the object id of the source lakehouse.
-1. Create a variable called WaitTime with type *integer*.
+1. Open the Variable library and add a variable called *SourceLH*. Give it the type *string*, and the value of the object id of the source lakehouse.
 1. Create a variable called DestinationTableName with type *string*. Give it the value *DevCopiedData*. This is the name of the table where the data will be copied in the destination lakehouse (This_WS_LH).
 
 :::image type="content" source="./tutorial-variable-library/default-value-set.png" alt-text="Screenshot of the Variable library item with a variables and the default value set.":::
@@ -71,14 +70,59 @@ Now that we have our sample data, create a new workspace that will contain the V
 ## Add value-sets to the variables
 
 1. Create a value-set called *Test VS* and one called *Prod VS*.
-1. Set the values of *Source_LH* to the object ids of *SourceLH_Test* and *SourceLH_Prod* respectively.
+1. Set the values of *SourceLH* to the object ids of *SourceLH_Test* and *SourceLH_Prod* respectively.
 1. Set the value of *DestinationTableName* to *TestCopiedData* and *ProdCopiedData* respectively.
 
 :::image type="content" source="./tutorial-variable-library/variable-library-values.png" alt-text="Screenshot of the variable library with the default value set and two alternative value sets.":::
 
+## Declare the variables
+
+Now that the value-sets are defined, we declare the variables in the pipeline so that we can use them in the pipeline stages.
+
+1. In the data pipeline, click on the canvass to open the pipeline settings.
+1. Select the **Library variables** tab.
+1. Enter a name for each variable, and enter its library, variable name and type.
+
+:::image type="content" source="./tutorial-variable-library/declare-variable-library.png" alt-text="Screenshot of the data pipeline settings.":::
+
 ## Set rules for the active value-set
 
-1. In the data pipeline, go to **Destination** and set the root folder to *Tables* and the Table to.
+### Set the source lakehouse
+
+Now that the value-sets are defined, set the rules for the active value-set. For each stage, we want to use the relevant lakehouse.
+
+1. In the data pipeline, go to **Source > Connection** and delete the current connection (*SourceLH_Dev*).
+1. From the dropdown menu, select *Use dynamic content*.
+
+   :::image type="content" source="./tutorial-variable-library/dynamic-content.png" alt-text="{alt-text}":::
+
+1. From the Add dynamic content pane, select *Library variables* and then *SourceLH*. This will set the value of the source lakehouse to the value of SourceLH in the active value set.
+
+   :::image type="content" source="./tutorial-variable-library/dynamic-source.png" alt-text="Screenshot of the pipeline expression builder with the variable library variable selected.":::
+
+1. Select **OK** to save the dynamic value as the source connection. The connection type is automatically set to *Lakehouse* and the Workspace ID is set.
+1. Set the Root folder to *Tables*.
+1. To set the table name, check the box that says Enter manually, and type *PublicHolidays*.
+
+   :::image type="content" source="./tutorial-variable-library/source-table-name.png" alt-text="Screenshot of the data pipeline source connection."::: 
+
+1. Select **Save** to save the source connection.
+
+### Set the destination table
+
+Now that the value-sets are defined, set the rules for the active value-set. For each stage, we want to use the relevant lakehouse, and we want the relevant name of the destination table.
+
+1. In the data pipeline, go to **Destination** and set the root folder to *Tables*.
+1. To set the value of the table name to the relevant table, select *Add dynamic content*.
+
+   :::image type="content" source="./tutorial-variable-library/dynamic-source.png" alt-text="Screenshot of data pipeline source connection.":::
+
+1. From the pipeline expression builder, Go to Library variables and select DestTableName. This will set the value of the destination table to the value of of DestinationTableName in the active value set.
+
+   :::image type="content" source="./tutorial-variable-library/table-name.png" alt-text="Screenshot of the pipeline expression builder with the variable library variable selected.":::
+
+1. Select **OK** to save the dynamic value as the Table name.
+1. Save.
 
 ## Related content
 
