@@ -62,7 +62,7 @@ Data from Onelake can be used in an Eventhouse in two ways:
 
 What latency do you require for your data? The answer to this question will help you decide which ingestion method to use. 
 
-If you want to do analytics on raw data without preprocessing, you should directly ingest into Eventhouse using [Get data sources](get-data-overview.md) or [connectors](data-connectors/data-connectors.md). If you can tolerate slightly more latency and want to transform data before it lands in the Eventhouse, you can use [Eventstreams](get-data-eventstream.md) to preprocess data. If you need to alert on data in real-time, you can use [Activator rules](data-activator/activator-rules-overview.md) in Eventstreams.
+If you want to do analytics on raw data without preprocessing, you should directly ingest into Eventhouse using [Get data sources](get-data-overview.md) or [connectors](data-connectors/data-connectors.md). To transform data before it lands in the Eventhouse, you can use [Eventstreams](get-data-eventstream.md) to preprocess data. If you need to alert on data in real-time, you can use [Activator rules](data-activator/activator-rules-overview.md) in Eventstreams.
 
 TODO: is there a benchmark on latency for each method?
 
