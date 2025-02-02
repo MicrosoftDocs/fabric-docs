@@ -42,21 +42,6 @@ For a complete list of sources organized by category, see:
 * [Connectors sources](data-connectors/data-connectors.md)
 * [Get data sources](get-data-overview.md)
 
-> [!NOTE]
-> In some cases, there are multiple methods to ingest data from the same source. The following section can help you decide which method to use.
-
-### Apache Kafka
-
-TODO: add content
-
-### Azure Event Hubs
-
-Data from Azure Event Hubs can be ingested into an Eventhouse in two ways:
-* [Ingest data from Azure Event Hubs](get-data-event-hub.md): in this method, data is ingested directly from Azure Event Hubs into an Eventhouse.
-* [Add Azure Event Hubs source to an eventstream](event-streams/add-source-azure-event-hubs.md): in this method, data is ingested into an Eventstream and then into an Eventhouse.
-
-TODO: Add explanation of when to choose what
-
 ### OneLake
 
 Data from Onelake can be used in an Eventhouse in two ways:
