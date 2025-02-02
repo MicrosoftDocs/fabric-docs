@@ -47,63 +47,38 @@ For the purposes of this tutorial, we will create a workspace called *Sources LH
 Now that we have our sample data, create a new workspace that will contain the Variable library item. To create the workspace:
 
 1. [Create a workspace](../../fundamentals/create-workspaces.md). We'll call it *Copy with Variables WS*. Make it a type string and set the value to the object id of Lakehouse.
-1. In the workspace, [create a new data pipeline](../../data-factory/create-first-pipeline-with-sample-data.md) (Steps 1-3){12 minutes}.
 1. Create an empty lakehouse in the workspace called *This_WH_LH*.
-1. Create an empty Variable library item. Call it *WS variables*.
-1. In the data pipeline, go to **Source > Connection** and select *SourceLH_Dev* as the source lakehouse. Wait for the lakehouse to load.
-1. Go to **Destination > Connection** and select *This_WH_LH* as the destination lakehouse.
-1. Open the Variable library and add a variable called *Source_LH_*.
 
 ## Create a data pipeline
 
-1. [Create a data pipeline](../../fundamentals/)
-Add activity - copy data
-## Create a variable library
+1. In the workspace, [create a new data pipeline](../../data-factory/create-first-pipeline-with-sample-data.md) (Steps 1-3){12 minutes}.
+1. In the data pipeline, go to **Source > Connection** and select *SourceLH_Dev* as the source lakehouse. Wait for the lakehouse to load.
+1. Go to **Destination > Connection** and select *This_WH_LH* as the destination lakehouse.
 
-## Add variables to the library
+  > [!TIP]
+  > The lakehouse object ID is the unique identifier of your lakehouse. You can find it in the URL of the lakehouse item in the workspace.
+  > :::image type="content" source="./tutorial-variable-library/lakehouse-id.png" alt-text="Screenshot of URL of a lakehouse item. The lakehouse ID is after the word lakehouses.":::
 
-[Introduce a task and its role in completing the process.]
+## Create a variable library with variables
 
-<!-- Required: Tasks to complete in the process - H2
+1. Create an empty Variable library item. Call it *WS variables*.
+1. Open the Variable library and add a variable called *Source_LH*. Give it the type *string*, and the value of the object id of the source lakehouse.
+1. Create a variable called WaitTime with type *integer*.
+1. Create a variable called DestinationTableName with type *string*. Give it the value *DevCopiedData*. This is the name of the table where the data will be copied in the destination lakehouse (This_WS_LH).
 
-In one or more H2 sections, describe tasks that 
-the user completes in the process the tutorial describes.
-
--->
-
-1. Procedure step
-1. Procedure step
-1. Procedure step
+:::image type="content" source="./tutorial-variable-library/default-value-set.png" alt-text="Screenshot of the Variable library item with a variables and the default value set.":::
 
 ## Add value-sets to the variables
 
-[Introduce a task and its role in completing the process.]
+1. Create a value-set called *Test VS* and one called *Prod VS*.
+1. Set the values of *Source_LH* to the object ids of *SourceLH_Test* and *SourceLH_Prod* respectively.
+1. Set the value of *DestinationTableName* to *TestCopiedData* and *ProdCopiedData* respectively.
 
-<!-- Required: Tasks to complete in the process - H2
+:::image type="content" source="./tutorial-variable-library/variable-library-values.png" alt-text="Screenshot of the variable library with the default value set and two alternative value sets.":::
 
-In one or more H2 sections, describe tasks that 
-the user completes in the process the tutorial describes.
+## Set rules for the active value-set
 
--->
-
-1. Procedure step
-1. Procedure step
-1. Procedure step
-
-## Set a default value-set
-
-[Introduce a task and its role in completing the process.]
-
-<!-- Required: Tasks to complete in the process - H2
-
-In one or more H2 sections, describe tasks that 
-the user completes in the process the tutorial describes.
-
--->
-
-1. Procedure step
-1. Procedure step
-1. Procedure step
+1. In the data pipeline, go to **Destination** and set the root folder to *Tables* and the Table to.
 
 ## Related content
 
