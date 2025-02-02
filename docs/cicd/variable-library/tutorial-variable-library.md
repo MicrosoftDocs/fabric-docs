@@ -124,6 +124,13 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 1. Select **OK** to save the dynamic value as the Table name.
 1. Save.
 
+
+## Run the pipeline
+
+## Create deployment pipeline
+
+Now that the data pipeline is set up, create a deployment pipeline to deploy the data pipeline to different environments.
+
 ## Related content
 
 * [Related article title](link.md)
