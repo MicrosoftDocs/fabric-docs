@@ -31,7 +31,7 @@ The capacity settings page shows a list of all the capacities in your [tenant](.
 
 * **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
 
-* **Trial** - A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use Trial SKUs.
+* **Trial** - A [Microsoft Fabric trial](../fundamentals/fabric-trial.md) capacity. These capacities use Trial SKUs.
 
 * **Fabric capacity** - A Microsoft Fabric capacity. These capacities use F SKUs.
 
@@ -124,7 +124,7 @@ To create a new Power BI Embedded with an EM SKU, follow these steps:
 
 # [Trial](#tab/trial)
 
-To create a new Trial capacity, see [Microsoft Fabric trial](../get-started/fabric-trial.md#start-the-fabric-capacity-trial).
+To create a new Trial capacity, see [Microsoft Fabric trial](../fundamentals/fabric-trial.md#start-the-fabric-capacity-trial).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -230,7 +230,7 @@ To add or remove admins in a Power BI Embedded capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-capacity-trial) is assigned to the user who signed up for the trial. You can't add or remove admins to a Trial capacity.
+A [trial capacity](../fundamentals/fabric-trial.md#start-the-fabric-capacity-trial) is assigned to the user who signed up for the trial. You can't add or remove admins to a Trial capacity.
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -320,7 +320,7 @@ To delete a Power BI Embedded capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-To delete a trial capacity, you need to cancel the trial. To cancel a trial, see [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial).
+To delete a trial capacity, you need to cancel the trial. To cancel a trial, see [End a Fabric trial](../fundamentals/fabric-trial.md#end-a-fabric-trial).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 

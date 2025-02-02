@@ -21,7 +21,7 @@ There are two ways to use Fabric notebooks with data from your KQL database:
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with at least viewing permissions
 
 ## Use Kusto snippets in a notebook

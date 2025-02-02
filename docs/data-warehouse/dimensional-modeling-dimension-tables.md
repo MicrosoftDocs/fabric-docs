@@ -89,7 +89,7 @@ A sample dimension table also has _dimension attributes_, like the `FirstName` c
 > [!TIP]
 > A good way to determine which dimensions and attributes you need is to find the right people and ask the right questions. Specifically, stay alert for the mention of the word _by_. For example, when someone says they need to analyze sales _by_ salesperson, _by_ month, and _by_ product category, they're telling you that they need dimensions that have those attributes.
 
-If you plan to create a [Direct Lake semantic model](../get-started/direct-lake-overview.md), you should include all possible columns required for filtering and grouping as dimension attributes. That's because Direct Lake semantic models don't support calculated columns.
+If you plan to create a [Direct Lake semantic model](../fundamentals/direct-lake-overview.md), you should include all possible columns required for filtering and grouping as dimension attributes. That's because Direct Lake semantic models don't support calculated columns.
 
 ### Foreign keys
 

@@ -1,7 +1,7 @@
 ---
 title: Known issue - Sync content from Git in workspace fails
 description: A known issue is posted where the sync content from Git in workspace fails.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/11/2024

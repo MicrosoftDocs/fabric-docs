@@ -1,0 +1,361 @@
+items:
+- name: Microsoft Fabric fundamentals documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Microsoft Fabric?
+    href: microsoft-fabric-overview.md
+  - name: Start a Fabric trial
+    href: fabric-trial.md
+  - name: Microsoft Fabric preview information
+    href: preview.md    
+  - name: Fabric terminology
+    href: fabric-terminology.md
+  - name: What's New
+    href: whats-new.md
+- name: Get started
+  items:
+  - name: End-to-end tutorials
+    href: end-to-end-tutorials.md
+- name: Task flows
+  items:
+  - name: Task flow overview
+    href: task-flow-overview.md
+  - name: Set up a task flow
+    href: task-flow-create.md
+  - name: Work with task flows
+    href: task-flow-work-with.md
+- name: Decision guides
+  items:
+  - name: Decision guide - copy activity, dataflow, or Spark
+    href: decision-guide-pipeline-dataflow-spark.md
+  - name: Decision guide - choose a data store
+    href: decision-guide-data-store.md
+  - name: Decision guide - Warehouse and Lakehouse
+    href: ../fundamentals/decision-guide-lakehouse-warehouse.md
+- name: Find your way around Fabric
+  items:
+  - name: Find your items from Fabric Home
+    href: fabric-home.md
+  - name: Context sensitive Help pane
+    href: fabric-help-pane.md
+  - name: Search, sort, and filter
+    href: fabric-search.md
+  - name: Fabric settings
+    href: fabric-settings.md 
+- name: Workspaces
+  items:
+  - name: Workspaces
+    href: workspaces.md
+  - name: Create a workspace
+    href: create-workspaces.md
+  - name: Roles in workspaces
+    href: roles-workspaces.md
+  - name: Create items in workspaces
+    href: create-items-in-workspaces.md
+  - name: Create folders in workspaces
+    href: workspaces-folders.md
+  - name: Give users access to workspaces
+    href: give-access-workspaces.md
+  - name: Manage a workspace with Git
+    href: ../cicd/git-integration/git-get-started.md
+  - name: Take ownership of Fabric items
+    href: item-ownership-take-over.md
+  - name: Workspace identity
+    href: ../security/workspace-identity.md
+  - name: Workspace monitoring
+    items:
+      - name: What is workspace monitoring?
+        href: workspace-monitoring-overview.md
+      - name: Enable monitoring in your workspace
+        href: enable-workspace-monitoring.md      
+- name: Find Fabric items with the OneLake catalog
+  href: ../governance/onelake-catalog.md
+- name: Copilot in Fabric
+  items:
+  - name: Copilot in Fabric overview
+    href: copilot-fabric-overview.md
+  - name: Enable Copilot in Fabric
+    href: copilot-enable-fabric.md
+  - name: Copilot in Fabric FAQ
+    href: copilot-faq-fabric.yml
+  - name: Privacy, security, and responsible use for Copilot in Fabric
+    items:
+    - name: Privacy, security, and responsible use
+      href: copilot-privacy-security.md
+    - name: Responsible use in SQL database
+      href: copilot-database-privacy-security.md
+    - name: Responsible use in Data Factory
+      href: copilot-data-factory-privacy-security.md
+    - name: Responsible use in Data Science
+      href: copilot-data-science-privacy-security.md
+    - name: Responsible use in Data Warehouse
+      href: copilot-data-warehouse-privacy-security.md
+    - name: Responsible use in Power BI
+      href: copilot-power-bi-privacy-security.md
+    - name: Responsible use in Real-Time Intelligence
+      href: copilot-real-time-intelligence-privacy-security.md
+  - name: Copilot for Data Factory
+    href: copilot-fabric-data-factory.md
+  - name: Copilot for Data Science and Data Engineering
+    items:
+    - name: Copilot for Data Science and Data Engineering
+      href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+    - name: Overview of Chat-magics in Notebooks (preview)
+      href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+    - name: Use the Copilot chat panel (preview)
+      href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+  - name: Copilot for Data Warehouse
+    href: ../data-warehouse/copilot.md
+  - name: Copilot for Real-Time Intelligence
+    href: copilot-real-time-intelligence.md
+  - name: Copilot in Fabric Consumption
+    href: copilot-fabric-consumption.md
+- name: Direct Lake
+  items:
+  - name: Direct Lake overview
+    href: direct-lake-overview.md
+  - name: Develop Direct Lake models
+    href: direct-lake-develop.md
+  - name: Manage Direct Lake models
+    href: direct-lake-manage.md
+  - name: Understand storage for Direct Lake
+    href: direct-lake-understand-storage.md
+  - name: Direct Lake in Power BI Desktop (preview)
+    href: direct-lake-power-bi-desktop.md        
+  - name: Edit tables for Direct Lake semantic models
+    href: direct-lake-edit-tables.md
+  - name: Create a Lakehouse for Direct Lake
+    href: direct-lake-create-lakehouse.md
+  - name: Specify a fixed identity
+    href: direct-lake-fixed-identity.md
+  - name: Analyze query processing
+    href: direct-lake-analyze-query-processing.md
+  - name: Direct Lake mode and PBI reporting
+    href: lakehouse-power-bi-reporting.md
+- name: Promote or certify items
+  href: endorsement-promote-certify.md
+- name: Share items
+  href: share-items.md
+- name: Apply sensitivity labels
+  href: apply-sensitivity-labels.md
+- name: Delta Lake interoperability
+  href: delta-lake-interoperability.md
+- name: Learn about Microsoft Fabric feedback
+  href: feedback.md  
+- name: Fabric adoption roadmap
+  items: 
+  - name: Introduction
+    href: /power-bi/guidance/fabric-adoption-roadmap?context=/fabric/context/context&bc=/fabric/breadcrumb/toc.json
+  - name: Maturity levels
+    href: /power-bi/guidance/fabric-adoption-roadmap-maturity-levels?context=/fabric/context/context
+  - name: Data culture
+    href: /power-bi/guidance/fabric-adoption-roadmap-data-culture?context=/fabric/context/context
+  - name: Executive sponsorship
+    href: /power-bi/guidance/fabric-adoption-roadmap-executive-sponsorship?context=/fabric/context/context
+  - name: Business alignment
+    href: /power-bi/guidance/fabric-adoption-roadmap-business-alignment?context=/fabric/context/context
+  - name: Content ownership
+    href: /power-bi/guidance/fabric-adoption-roadmap-content-ownership-and-management?context=/fabric/context/context
+  - name: Content delivery scope
+    href: /power-bi/guidance/fabric-adoption-roadmap-content-delivery-scope?context=/fabric/context/context
+  - name: Center of Excellence
+    href: /power-bi/guidance/fabric-adoption-roadmap-center-of-excellence?context=/fabric/context/context
+  - name: Governance
+    href: /power-bi/guidance/fabric-adoption-roadmap-governance?context=/fabric/context/context
+  - name: Mentoring and user enablement
+    href: /power-bi/guidance/fabric-adoption-roadmap-mentoring-and-user-enablement?context=/fabric/context/context
+  - name: Community of practice
+    href: /power-bi/guidance/fabric-adoption-roadmap-community-of-practice?context=/fabric/context/context
+  - name: User support
+    href: /power-bi/guidance/fabric-adoption-roadmap-user-support?context=/fabric/context/context
+  - name: System oversight
+    href: /power-bi/guidance/fabric-adoption-roadmap-system-oversight?context=/fabric/context/context
+  - name: Change management
+    href: /power-bi/guidance/fabric-adoption-roadmap-change-management?context=/fabric/context/context
+  - name: Conclusion
+    href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
+- name: Known issues
+  items:
+    - name: Active known issues for Fabric + Power BI - chart
+      href: ../get-started/fabric-known-issues.md
+    - name: Active known issues for Fabric and Power BI - interactive report
+      href: https://support.fabric.microsoft.com/known-issues
+    - name: Models with specific gateway configuration might experience refresh issues
+      href: ../get-started/known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md
+    - name: Notebook and SJD job statuses are in progress in monitor hub
+      href: ../get-started/known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md
+    - name: Copilot sidecar chat fails with certain private link settings
+      href: ../get-started/known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md
+    - name: Reports that use functions with RLS don't work
+      href: ../get-started/known-issues/known-issue-1002-reports-functions-rls-not-work.md
+    - name: Some SQL query syntax fails in a graph database query
+      href: ../get-started/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md
+    - name: KQL database loads continuously without an error
+      href: ../get-started/known-issues/known-issue-990-kql-database-loads-continuously-without-error.md
+    - name: Git operations and deployment pipelines don't work with lakehouses
+      href: ../get-started/known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md
+    - name: Apache Airflow job creation shows Fabric upgrade message
+      href: ../get-started/known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md
+    - name: Local data access isn't allowed for pipeline using on-premises data gateway
+      href: ../get-started/known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md
+    - name: Data activator events aren't ingested for Reflex events
+      href: ../get-started/known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md
+    - name: Direct Lake query cancellation might cancel other queries
+      href: ../get-started/known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries.md
+    - name: Direct Lake query cancellation causes model to fall back to DirectQuery
+      href: ../get-started/known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md
+    - name: SQL databases not available with private link through January 2025
+      href: ../get-started/known-issues/known-issue-979-sql-databases-not-available-private-link.md
+    - name: Create report doesn't work on Eventhouse monitoring KQL database
+      href: ../get-started/known-issues/known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md
+    - name: Show table command in KQL Queryset editor fails
+      href: ../get-started/known-issues/known-issue-974-show-table-kql-queryset-editor-fails.md
+    - name: Renamed eventstream fails to open
+      href: ../get-started/known-issues/known-issue-978-renamed-eventstream-fails-open.md
+    - name: Export to Excel using live connection with show items with no data turned on fails
+      href: ../get-started/known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md
+    - name: Export-to-data disabled for a visual with visual calculation
+      href: ../get-started/known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md
+    - name: Sync content from Git in workspace fails
+      href: ../get-started/known-issues/known-issue-966-sync-content-git-workspace-fails.md
+    - name: Export data option is disabled for Q&A visual in the service
+      href: ../get-started/known-issues/known-issue-968-export-data-option-disabled-qa-visual.md
+    - name: Pipeline activities don't save if their data warehouse connection is changed
+      href: ../get-started/known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md
+    - name: SQL database creation fails to create child items when item with same name exists
+      href: ../get-started/known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md
+    - name: Eventstream publish fails when column contains empty array and operator is added
+      href: ../get-started/known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md
+    - name: Creation failure for Copy job item in empty workspace
+      href: ../get-started/known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
+    - name: Create Gateway public API doesn't work for service principals
+      href: ../get-started/known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md
+    - name: Create, configure, or delete a mirror fails
+      href: ../get-started/known-issues/known-issue-954-create-configure-delete-mirror-fails.md
+    - name: Incorrect column names after column format or aggregation change
+      href: ../get-started/known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md
+    - name: Power BI Copilot can excessively retry in rare error scenarios
+      href: ../get-started/known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md
+    - name: Metrics app timepoint details missing for new P2 capacities
+      href: ../get-started/known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md
+    - name: Intermittent failures on deployment of Sustainability solution
+      href: ../get-started/known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
+    - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work
+      href: ../get-started/known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md
+    - name: New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported
+      href: ../get-started/known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md
+    - name: Line chart value-axis zoom sliders don't work with markers enabled
+      href: ../get-started/known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md
+    - name: External data sharing doesn't work in a different region capacity lakehouse
+      href: ../get-started/known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
+    - name: The default environment's resources folder doesn't work in notebooks
+      href: ../get-started/known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
+    - name: Tenant migrations paused through January 2025
+      href: ../get-started/known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
+    - name: More options menu on a visual doesn't open in unsaved reports
+      href: ../get-started/known-issues/known-issue-918-more-options-not-open-unsaved-reports.md
+    - name: SQL analytics endpoint tables lose statistics
+      href: ../get-started/known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md
+    - name: SQL analytics endpoint tables lose permissions
+      href: ../get-started/known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md
+    - name: INFO.VIEW.MEASURES() in calculated table might cause errors
+      href: ../get-started/known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md
+    - name: Data warehouse data preview might fail if multiple data warehouse items
+      href: ../get-started/known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md
+    - name: External data sharing OneLake shortcuts don't show in SQL analytics endpoint
+      href: ../get-started/known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md
+    - name: OneLake Shared Access Signature (SAS) can't read cross-region shortcuts
+      href: ../get-started/known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md
+    - name: Pipeline fails when getting a token to connect to Kusto
+      href: ../get-started/known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md
+    - name: Dataverse shortcut creation and read fails when organization is moved
+      href: ../get-started/known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md
+    - name: Can't connect to semantic model from Excel or use Analyze in Excel
+      href: ../get-started/known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md
+    - name: Data warehouse tables aren't accessible or updatable
+      href: ../get-started/known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md
+    - name: Spark jobs might fail due to Runtime 1.3 updates for GA
+      href: ../get-started/known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md
+    - name: Premium capacity doesn't add excess usage into carry forward
+      href: ../get-started/known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md
+    - name: Data pipeline connection fails after connection creator role is removed
+      href: ../get-started/known-issues/known-issue-877-pipeline-connection-fails-role-removed.md
+    - name: Data warehouses don't show button friendly names
+      href: ../get-started/known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md
+    - name: Pipeline fails when copying data to data warehouse with staging
+      href: ../get-started/known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md
+    - name: Intermittent refresh failure through on-premises data gateway
+      href: ../get-started/known-issues/known-issue-844-intermittent-refresh-failure-gateway.md
+    - name: Data warehouse exports using deployment pipelines or git fail
+      href: ../get-started/known-issues/known-issue-842-warehouse-exports-pipelines-fail.md
+    - name: OneLake BCDR write transactions aren't categorized correctly for billing
+      href: ../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md
+    - name: Monitoring hub displays incorrect queued duration
+      href: ../get-started/known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md
+    - name: Managed private endpoint connection could fail
+      href: ../get-started/known-issues/known-issue-835-managed-private-endpoint-connection-fail.md
+    - name: Concurrent stored procedures block each other in data warehouse
+      href: ../get-started/known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md
+    - name: Schema refresh for a data warehouse's semantic model fails
+      href: ../get-started/known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md
+    - name: Subscriptions and exports with maps might produce wrong results
+      href: ../get-started/known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md
+    - name: Pipelines don't support Role property for Snowflake connector
+      href: ../get-started/known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md
+    - name: Pipeline deployment fails when parent contains deactivated activity
+      href: ../get-started/known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md
+    - name: Inserting nulls into Data Warehouse tables fail with incorrect error message
+      href: ../get-started/known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md
+    - name: Dataflow Gen2 refresh fails due to missing SQL analytics endpoint
+      href: ../get-started/known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md
+    - name: Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser
+      href: ../get-started/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md
+    - name: Multiple installations of on-premises data gateway causes pipelines to fail
+      href: ../get-started/known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
+    - name: SQL analytics endpoint table queries fail due to RLE
+      href: ../get-started/known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
+    - name: Data warehouse deployment using deployment pipelines fails
+      href: ../get-started/known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
+    - name: Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines
+      href: ../get-started/known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md
+    - name: SQL analytics endpoint table sync fails when table contains linked functions
+      href: ../get-started/known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md
+    - name: Dataflows Gen2 staging warehouse doesn't work in deployment pipelines
+      href: ../get-started/known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md
+    - name: Copy activity from Oracle to lakehouse fails for Number data type
+      href: ../get-started/known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md
+    - name: Pipeline using XML format copy gets stuck
+      href: ../get-started/known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md
+    - name: West India region doesn't support on-premises data gateway for data pipelines
+      href: ../get-started/known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md
+    - name: OneLake under-reports transactions in the Other category
+      href: ../get-started/known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md
+    - name: Tables not available to add in Power BI semantic model
+      href: ../get-started/known-issues/known-issue-643-tables-not-available-semantic-model.md
+    - name: Type mismatch when writing decimals and dates to lakehouse using a dataflow
+      href: ../get-started/known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md
+    - name: Using an inactive SQL analytics endpoint can show old data
+      href: ../get-started/known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md
+    - name: Data warehouse with more than 20,000 tables fails to load
+      href: ../get-started/known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md
+    - name: User column incorrectly shows as System in Fabric capacity metrics app
+      href: ../get-started/known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md
+    - name: InProgress status shows in Fabric capacity metrics app for completed queries
+      href: ../get-started/known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
+    - name: Warehouse's object explorer doesn't support case-sensitive object names
+      href: ../get-started/known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
+    - name: Temp tables in Warehouse and SQL analytics endpoint
+      href: ../get-started/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
+    - name: Closing a Dataflow Gen1 takes you to the wrong workspace
+      href: ../get-started/known-issues/known-issue-546-closing-dataflow-gen1-takes-wrong-workspace.md
+    - name: New card visual formatting appears or disappears in Service
+      href: ../get-started/known-issues/known-issue-535-new-card-visual-formatting-appears-disappears.md
+    - name: Sign in fails for securely embedded reports using Chrome or Microsoft Edge browser
+      href: ../get-started/known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md
+- name: Resources
+  items:
+    - name: Icons
+      href: icons.md
+    - name: What's new? archive
+      href: whats-new-archive.md

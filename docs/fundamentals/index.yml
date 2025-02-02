@@ -1,0 +1,105 @@
+### YamlMime:Landing
+
+title: Microsoft Fabric fundamentals documentation # < 60 chars
+summary: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # < 160 chars
+
+metadata:
+  title: Microsoft Fabric fundamentals documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: get-started
+  ms.topic: landing-page # Required
+  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  ms.collection: ce-skilling-ai-copilot
+  ms.date: 07/05/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card 
+  - title: About Microsoft Fabric
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Fabric?
+            url: microsoft-fabric-overview.md 
+          - text: Fabric terminology
+            url: fabric-terminology.md
+          - text: What's New
+            url: whats-new.md
+      - linkListType: get-started
+        links:
+          - text: Start a Fabric trial 
+            url: fabric-trial.md
+          - text: Fabric home navigation
+            url: fabric-home.md
+          - text: End-to-end tutorials
+            url: end-to-end-tutorials.md
+          - text: Context sensitive Help pane
+            url: fabric-help-pane.md
+
+  # Card 
+  - title: Get started with Fabric items
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Get started with a task flow
+            url: task-flow-overview.md 
+          - text: Find items in OneLake data hub
+            url: ../governance/onelake-catalog-overview.md 
+          - text: Promote and certify items
+            url: endorsement-promote-certify.md 
+      - linkListType: how-to-guide
+        links:
+          - text: Apply sensitivity labels
+            url: apply-sensitivity-labels.md 
+
+  # Card 
+  - title: Copilot
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Copilot overview
+            url: copilot-fabric-overview.md
+          - text: Copilot in Fabric FAQ
+            url: copilot-faq-fabric.yml
+          - text: Privacy, security, and responsible use for Copilot
+            url: copilot-privacy-security.md
+      - linkListType: how-to-guide
+        links:
+          - text: Enable Copilot
+            url: copilot-enable-fabric.md
+
+  # Card 
+  - title: Workspaces
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Fabric workspace
+            url: workspaces.md
+          - text: Workspace roles
+            url: roles-workspaces.md
+      - linkListType: get-started
+        links:
+          - text: Create a workspace
+            url: create-workspaces.md
+      - linkListType: how-to-guide
+        links:
+          - text: Workspace access control
+            url: give-access-workspaces.md
+            
+  # Card 
+  - title: Get Help
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Use the integrated Help pane
+            url: fabric-help-pane.md
+          - text: Check for known issues
+            url: ../get-started/fabric-known-issues.md
+          - text: Contact Support
+            url: /power-bi/support/service-support-options
+   

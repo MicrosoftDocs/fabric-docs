@@ -34,7 +34,7 @@ To access the deployment pipelines feature, you must meet the following conditio
 
 * You have a [Microsoft Fabric subscription](../../enterprise/licenses.md)
 
-* You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md)
+* You're an admin of a Fabric [workspace](../../fundamentals/create-workspaces.md)
 
 >[!NOTE]
 > You can also see the deployment pipelines button if you previously created a pipeline or if a pipeline was shared with you.
@@ -57,7 +57,7 @@ To create a pipeline from anywhere in Fabric:
 
 ### [Create a pipeline from a workspace in Power BI](#tab/from-workspace)
 
-From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../get-started/create-workspaces.md).
+From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../fundamentals/create-workspaces.md).
 
 From the workspace, select **Create deployment pipeline**.
 

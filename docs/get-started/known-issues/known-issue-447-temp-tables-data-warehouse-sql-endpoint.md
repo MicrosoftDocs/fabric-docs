@@ -1,7 +1,7 @@
 ---
 title: Known issue - Temp tables in Data Warehouse and SQL analytics endpoint
 description: A known issue is posted where Temp tables in Data Warehouse and SQL analytics endpoint
-author: mihart
+author: kfollis
 ms.author: anirmale
 ms.topic: troubleshooting
 ms.date: 01/06/2025
