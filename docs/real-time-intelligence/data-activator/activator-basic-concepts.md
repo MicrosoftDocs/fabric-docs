@@ -1,8 +1,8 @@
 ---
 title: Activator - basic concepts
 description: "Definitions and descriptions of concepts used by Activator. These include: eventstreams, rules, events, objects, activators, and more."
-author: mihart
-ms.author: mihart
+author: kfollis
+ms.author: kfollis
 ms.topic: concept-article
 ms.custom:
   - ignite-2024

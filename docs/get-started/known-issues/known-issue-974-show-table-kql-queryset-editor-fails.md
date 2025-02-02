@@ -1,7 +1,7 @@
 ---
 title: Known issue - Show table command in KQL Queryset editor fails
 description: A known issue is posted where the show table command in KQL Queryset editor fails.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/06/2025
