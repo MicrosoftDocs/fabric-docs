@@ -57,9 +57,19 @@ Data from Onelake can be used in an Eventhouse in two ways:
 
 * [Ingest data from OneLake](get-data-onelake.md): in this method, data is ingested from OneLake into an Eventhouse.
 * [Use OneLake shortcuts](onelake-shortcuts.md): in this method, data is directly consumed from a OneLake shortcut and treated as an external table. To improve query performance on a OneLake shortcut, use [query acceleration](query-acceleration-overview.md).
-    * **Pros of using OneLake shortcuts**: The data is available immediately, resources are consumed only for queries, partitioning can lead to good performance on targeted queries. 
-    * **Cons of using OneLake shortcuts**: The data is not indexed, if using many small files, no data management can result in poor performance. 
-    
+
+**Pros of using OneLake shortcuts**: 
+
+* The data is available immediately. 
+* Resources are consumed only for queries. 
+* Partitioning can lead to good performance on targeted queries. 
+
+**Cons of using OneLake shortcuts**:
+
+* The data is not indexed. 
+* If using many small files, no data management can result in poor performance. 
+* External tables don't support update policies or materialized views.
+
 > [!TIP]
 > For data seldomly used and where queries scan few blobs, using OneLake shortcuts is a good choice. For complex aggregations, data ingestion from OneLake offers better performance.
 
@@ -68,8 +78,6 @@ Data from Onelake can be used in an Eventhouse in two ways:
 What latency do you require for your data? The answer to this question will help you decide which ingestion method to use. 
 
 If you want to do analytics on raw data without preprocessing, you should directly ingest into Eventhouse using [Get data sources](get-data-overview.md) or [connectors](data-connectors/data-connectors.md). To transform data before it lands in the Eventhouse, you can use [Eventstreams](get-data-eventstream.md) to preprocess data. If you need to alert on data in real-time, you can use [Activator rules](data-activator/activator-rules-overview.md) in Eventstreams.
-
-TODO: is there a benchmark on latency for each method?
 
 ## Data transformation
 
