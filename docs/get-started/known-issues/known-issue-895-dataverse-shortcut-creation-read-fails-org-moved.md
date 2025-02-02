@@ -1,7 +1,7 @@
 ---
 title: Known issue - Dataverse shortcut creation and read fails when organization is moved
 description: A known issue is posted where Dataverse shortcut creation and read fails when organization is moved.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/23/2024

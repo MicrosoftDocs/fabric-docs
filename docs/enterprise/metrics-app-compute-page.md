@@ -23,7 +23,7 @@ At the top of each page, the **Capacity Name** field allows you to select the ca
 
 The multi metric ribbon chart provides an hourly view of your capacity's usage. To identify daily patterns, drill down to a specific day. Selecting each stacked column filters the main matrix and the other visuals according to your selection.
 
-The multi metric column ribbon displays the following four values. You'll see the top results for these values per item during the past two weeks.
+The multi metric column ribbon displays the following four values. You see the top results for these values per item during the past two weeks.
 
 * **CU** - Capacity Units (CU) processing time in seconds.
 
@@ -35,7 +35,7 @@ The multi metric column ribbon displays the following four values. You'll see th
 
 ## Capacity utilization and throttling
 
-Displays usage and throttling for the selected capacity. Use the tabs at the top of the visual to toggle how the visual is displayed.
+Displays usage and throttling for the selected capacity. To toggle how the visual is displayed, use the tabs at the top of the visual.
 
 ### Utilization  
 
@@ -43,7 +43,7 @@ Displays CU usage over time.
 
 :::image type="content" source="media/fabric-cross-filter.gif" alt-text="Animation that shows cross-filtered data in the multi metric ribbon chart." lightbox="media/fabric-cross-filter.gif":::
 
-Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
+To toggle how the visual is displayed, use the tabs at the top right corner of the visual.
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
 
@@ -88,13 +88,13 @@ Throttling is based on the amount of future capacity consumption resulting from 
 | Interactive rejection |60 minutes < usage <= 24 hours |User requested interactive jobs are rejected. |
 | Background rejection |Usage > 24 hours |User scheduled background jobs are rejected and not executed. |
 
-Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
+To toggle how the visual is displayed, use the tabs at the top right corner of the visual.
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
 
 * **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
 
-Use the tabs at the top of the visual to toggle between interactive delay, interactive rejection, and background rejection. Timepoints with a value that's above 100% are rendered with darker color.
+To toggle between interactive delay, interactive rejection, and background rejection, use the tabs at the top of the visual. Timepoints with a value that's above 100% are rendered with a darker color.
 
 The interactive and background rejection tabs work in the same way. If you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before the start of interactive or background rejection, which causes user requested jobs to be rejected.
 
@@ -140,20 +140,38 @@ Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-rib
 To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
 
 >[!NOTE]
->Non billable usage does not drain capacity or lead to throttling or auto scale.
+>Non billable usage doesn't drain capacity or lead to throttling or auto scale.
 
 ## System Events
 
-Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md). When the state of the capacity has remained unchanged for last 14 days, the table doesn't display any information.
+Displays capacity events. When the state of the capacity has remained unchanged for last 14 days, the table doesn't display any information.
 
 The system events table displays the following elements:
 
   * **Time** - The time the capacity was paused or resumed.
   
-  * **State** - The state of the capacity. *Suspended* indicates that the capacity was paused. *Active* indicates that the capacity was resumed.
+  * **State** - The state of the capacity. 
   
   * **State Change Reason** - Displays the event trigger.
 
+This table lists system events for capacities.
+
+|Capacity State|Capacity state change reason|When shown|
+| -------- | -------- | -------- |
+|Active|Created|Indicates the capacity was created.|
+|Active|ManuallyResumed|Indicates the capacity is active. Occurs when a paused capacity is resumed.|
+|Active|NotOverloaded|Indicates the capacity is active and is below all throttling and surge protection thresholds.|
+|Deleted|Deleted|Indicates the capacity was deleted.|
+|Overloaded|AllRejected|Indicates the capacity exceeded the background rejection limit. The capacity rejects background and interactive operations.|
+|Overloaded|InteractiveDelay|Indicates the capacity exceeded the interactive delay throttling limit. The capacity delays interactive operations.|
+|Overloaded|InteractiveDelayAndSurgeProtectionActive|Indicates the capacity exceeded the interactive delay throttling limit and the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity rejects background operations and delays interactive operations.|
+|Overloaded|InteractiveRejected|Indicates the capacity exceeded the interactive rejection throttling limit. The capacity rejects interactive operations.|
+|Overloaded|InteractiveRejectedAndSurgeProtectionActive|Indicates the capacity exceeded the interactive rejection throttling limit and the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity rejects background and interactive operations.|
+|Overloaded|SurgeProtectionActive|Indicates the capacity exceeded the configured surge protection threshold. The capacity is above the configured recovery threshold. The capacity rejects background operations.|
+|Suspended|ManuallyPaused|Indicates the capacity is paused.|
+
+For more information on pause and resume, see [Monitor a paused capacity](monitor-paused-capacity.md). 
+For more information on surge protection, see [Surge Protection](surge-protection.md).
 ## Matrix by item and operation
 
 A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed in this section. The colors in the table represent your *performance delta*.

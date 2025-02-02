@@ -1,10 +1,10 @@
 ---
 title: Known issue - More options menu on a visual doesn't open in unsaved reports
 description: A known issue is posted where the **More options** menu on a visual doesn't open in unsaved reports.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/07/2024
+ms.date: 01/13/2025
 ms.custom: known-issue-918
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-918
 
 When you're focused on a Power BI visual, you can select the **More options (...)** button to open the menu. When you select **More options**, the menu doesn't open if the report is unsaved.
 
-**Status:** Open
+**Status:** Fixed: January 13, 2025
 
 **Product Experience:** Power BI
 

@@ -1,10 +1,10 @@
 ---
 title: Known issue - Export to Excel using live connection with show items with no data turned on fails
 description: A known issue is posted where the export to Excel functionality using live connection with show items with no data turned on fails.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/17/2024
+ms.date: 01/06/2025
 ms.custom: known-issue-977
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-977
 
 You can have a visual that has one or more grouping columns and also has **Show items with no data** enabled. If you try to export to Excel using a live connection, the export fails.
 
-**Status:** Open
+**Status:** Fixed: January 6, 2025
 
 **Product Experience:** Power BI
 

@@ -41,7 +41,7 @@ When the switch is on, administrators and Premium workspace owners can [configur
 
 ## Workspace admins can turn on monitoring for their workspaces
 
-Enable [workspace monitoring](../get-started/workspace-monitoring-overview.md), a feature that allows workspace admins to monitor their workspace.
+Enable [workspace monitoring](../fundamentals/workspace-monitoring-overview.md), a feature that allows workspace admins to monitor their workspace.
 
 ## Microsoft can store query text to aid in support investigation
 

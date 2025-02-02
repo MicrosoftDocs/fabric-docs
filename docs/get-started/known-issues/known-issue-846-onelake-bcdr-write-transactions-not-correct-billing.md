@@ -1,10 +1,10 @@
 ---
 title: Known issue - OneLake BCDR write transactions aren't categorized correctly for billing
 description: A known issue is posted where OneLake BCDR write transactions aren't categorized correctly for billing.
-author: mihart
+author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/5/2024
+ms.date: 01/28/2025
 ms.custom: known-issue-846
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-846
 
 You can enable Business Continuity and Disaster Recovery (BCDR) for a specific capacity in Fabric. The write transactions that OneLake reports that go through our client are categorized and billed as non-BCDR.
 
-**Status:** Open
+**Status:** Fixed: January 28, 2025
 
 **Product Experience:** OneLake
 

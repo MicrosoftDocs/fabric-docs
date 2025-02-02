@@ -6,7 +6,11 @@ items:
   - name: Microsoft Fabric licenses
     href: licenses.md
   - name: Features parity
-    href: fabric-features.md    
+    href: fabric-features.md   
+  - name: Release management and deployment process
+    href: fabric-release-management.md  
+  - name: Site reliability
+    href: fabric-site-reliability-engineering-model.md       
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric subscription
@@ -25,6 +29,8 @@ items:
     href: scale-capacity.md
   - name: Throttling
     href: throttling.md
+  - name: Surge protection
+    href: surge-protection.md
   - name: Fabric operations    
     href: fabric-operations.md   
   - name: Optimize your capacity

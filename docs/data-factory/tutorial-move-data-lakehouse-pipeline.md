@@ -19,7 +19,7 @@ In this tutorial, you build a data pipeline to move data in Azure SQL Database t
 To get started, you must complete the following prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. Create an account for free.
-- Make sure you have a Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a Microsoft Fabric enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a data pipeline
 

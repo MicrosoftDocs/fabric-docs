@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/25/2024
+ms.date: 01/27/2025
 #customer intent: As a data engineer, I want to understand how to connect to Microsoft OneLake using the existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs so that I can seamlessly access and manipulate my data.
 ---
 

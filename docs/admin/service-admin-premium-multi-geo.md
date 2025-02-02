@@ -8,7 +8,7 @@ ms.custom:
   - ignite-2023
   - ignite-2024
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 02/02/2025
 LocalizationGroup: Premium
 ---
 
@@ -70,7 +70,9 @@ Trial capacities are created in your home region and don't support Multi-Geo.
 
 Follow the steps below to move workspaces from one capacity to another in the same region. During migration, certain operations might fail, such as publishing new semantic models or scheduled data refresh.
 
-1. Open the [workspace settings](../get-started/workspaces.md#workspace-settings).
+When you're performing a migration, don't delete or pause either the source or destination workspace capacities. Deleting or pausing a capacity during migration, can result in missing items. If you deleted or paused your capacity before the migration is finished and you have missing items in the migrated workspace, try migrating the workspace again.
+
+1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
 2. From the side bar, select **License info**.
 

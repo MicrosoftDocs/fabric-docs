@@ -7,5 +7,5 @@ items:
     tocHref: /fabric/onelake
     topicHref: /fabric/onelake/index
   - name: OneLake
-    tocHref: /fabric/get-started
+    tocHref: /fabric/fundamentals
     topicHref: /fabric/onelake/index    

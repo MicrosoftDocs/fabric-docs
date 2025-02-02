@@ -26,7 +26,7 @@ To access the deployment pipelines feature, you must meet the following conditio
 
 * You have a [Microsoft Fabric subscription](../enterprise/licenses.md)
 
-* You're an admin of a Fabric [workspace](../get-started/create-workspaces.md)
+* You're an admin of a Fabric [workspace](../fundamentals/create-workspaces.md)
 
 ## Development process
 

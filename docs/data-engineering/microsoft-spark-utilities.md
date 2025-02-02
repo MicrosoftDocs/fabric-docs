@@ -213,7 +213,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 ### Reference run multiple notebooks in parallel
 
 > [!IMPORTANT]
-> This feature is in [preview](../get-started/preview.md).
+> This feature is in [preview](../fundamentals/preview.md).
 
 The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
 

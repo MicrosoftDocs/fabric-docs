@@ -25,7 +25,7 @@ Every workspace automatically has a lineage view.
 
 ## Permissions
 
-Any user with a [role in a workspace](../get-started/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
+Any user with a [role in a workspace](../fundamentals/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
 
 ## Open lineage view
 

@@ -3,8 +3,8 @@ title: Implement row-level security in Microsoft Fabric data warehousing
 description: A guide to use row-level security in Fabric Data Warehousing
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: stwynant
-ms.date: 07/26/2024
+ms.reviewer: dhsundar
+ms.date: 01/16/2025
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -33,7 +33,8 @@ Before you begin, make sure you have the following:
 ## 2. Define security policies
 
 1. Determine the roles and predicates you want to use to control access to data. Roles define who can access data, and predicates define the criteria for access.
-1. Create security predicates. Security predicates are conditions that determine which rows a user can access. You can create security predicates as inline table-valued functions. This simple exercise assumes there is a column in your data table, `UserName_column`, that contains the relevant username, populated by the system function [USER_NAME()](/sql/t-sql/functions/user-name-transact-sql?view=fabric&preserve-view=true).
+1. Create security predicates. Security predicates are conditions that determine which rows a user can access. You can create security predicates as inline table-valued functions.
+
 
     ```sql
     -- Creating schema for Security
@@ -46,7 +47,8 @@ Before you begin, make sure you have the following:
     WITH SCHEMABINDING
     AS
         RETURN SELECT 1 AS tvf_securitypredicate_result
-    WHERE @UserName = USER_NAME();
+    WHERE @UserName = USER_NAME()
+    OR USER_NAME() = 'BatchProcess@contoso.com';
     GO
     
     -- Using the function to create a Security Policy
@@ -58,8 +60,9 @@ Before you begin, make sure you have the following:
     ```
 
 1. Replace `YourSecurityPolicy` with your policy name, `tvf_securitypredicate` with the name of your predicate function, `sampleschema` with the name of your schema and `sampletable` with the name of your target table. 
-1. Replace `UserName_column` with a column in your table that contains user names.
-1. Replace `WHERE @UserName = USER_NAME();` with a `WHERE` clause that matches the desired predicate-based security filter. For example, this filters the data where the `UserName` column, mapped to the `@UserName` parameter, matches the result of the system function [USER_NAME()](/sql/t-sql/functions/user-name-transact-sql?view=fabric&preserve-view=true).
+1. This exercise assumes there is a column in your data table, `UserName_column`, that contains the relevant username, populated by the system function [USER_NAME()](/sql/t-sql/functions/user-name-transact-sql?view=fabric&preserve-view=true). Replace `UserName_column` with a column in your table that contains user names.
+1. Replace `WHERE @UserName = USER_NAME();` with a `WHERE` clause that matches the desired predicate-based security filter. For example, this filters the data where the `UserName` column, mapped to the `@UserName` parameter, matches the result of the system function [USER_NAME()](/sql/t-sql/functions/user-name-transact-sql?view=fabric&preserve-view=true). 
+    - Optionally, the `WHERE` statement also includes an exception for the username of the managed identity that handles data movement, for example, `BatchProcess@contoso.com`.
 1. Repeat these steps to create security policies for other tables if needed.
 
 ## 3. Test row-level security

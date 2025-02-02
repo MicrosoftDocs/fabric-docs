@@ -17,21 +17,15 @@ Get started with the Fabric API for GraphQL by creating an API, then linking a d
 
 ## Prerequisites
 
-- Enable the "Users can create Fabric items" [Tenant Admin Setting](/fabric/admin/about-tenant-settings).
+- Enable the "Users can create Fabric items" [admin tenant setting](/fabric/admin/about-tenant-settings).
 
 ## Creating an API for GraphQL
 
 To create an API for GraphQL:
 
-1. From the Fabric portal home page, select **Data Engineering** from the list of workloads.
+1. Select **New item** from any workspace. In the panel that opens, under **Develop data**, select **API for GraphQL**.
 
-1. Select **API for GraphQL (Preview)**.
-
-   :::image type="content" source="media/get-started-api-graphql/api-graphql-workspace-button.png" alt-text="Screenshot of the API tile, which you select to create a new API item.":::
-
-   Alternatively, select **New** > **API for GraphQL (Preview)** from any workspace in Data Engineering.
-
-   :::image type="content" source="media/get-started-api-graphql/workspace-new-api-graphql.png" alt-text="Screenshot of the workspace toolbar, showing where to select the New option.":::
+   :::image type="content" source="media/get-started-api-graphql/workspace-new-api-graphql.png" alt-text="Screenshot of the workspace toolbar, showing where to select the New option." lightbox="media/get-started-api-graphql/workspace-new-api-graphql.png":::
 
 1. Enter a **Name** for your item and select **Create**.
 
@@ -52,7 +46,7 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
    :::image type="content" source="media/get-started-api-graphql/get-data-connectivity.png" alt-text="Screenshot of the Chose connectivity option.":::
 
    Here you can define how API clients can access the API to execute GraphQL requests based on two distinct options: 
-   * **Single sign-on (SSO)**: use client credentials to connect to data sources, which means the authenticated API user must have access to the underlying data source. For example, if you're exposing Lakehouse data to your API clients the authenticated user needs to have access to both the API and the Lakehouse. More specifically *Execute* permissions to the GraphQL API (*Run Queries and Mutations* option when adding direct access permissions) and read or write permissions required in the data source of choice accordingly. Alternatively the user can be added as workspace member with a *contributor role* where both the API and data source items are located, which will give the required access to both items from a single place. For more information, see [Give users access to workspaces](../get-started/give-access-workspaces.md).
+   * **Single sign-on (SSO)**: use client credentials to connect to data sources, which means the authenticated API user must have access to the underlying data source. For example, if you're exposing Lakehouse data to your API clients the authenticated user needs to have access to both the API and the Lakehouse. More specifically *Execute* permissions to the GraphQL API (*Run Queries and Mutations* option when adding direct access permissions) and read or write permissions required in the data source of choice accordingly. Alternatively the user can be added as workspace member with a *contributor role* where both the API and data source items are located, which will give the required access to both items from a single place. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
    * **Saved credentials**: use saved credentials to connect to data sources, which means the authenticated API user doesn't require direct access to the data source. A saved credential is shared to access the data between the API and underlying tables in the data source. For example, if you're exposing Lakehouse data to your API clients the authenticated user just need to have direct access to the API (*Run Queries and Mutations* option when adding direct access permissions) and not the Lakehouse. A saved credential is used to connect the API to the data source and is shared by all authenticated API users. This option is required if you're exposing an Azure data source such as an Azure SQL database via GraphQL. After selecting OK, you'll be prompted to create a new saved credential after choosing a data source in the next step if there isn't a saved credential for it already in place.
 
    Once selected these options are enforced for all data sources subsequently added to the API. It's not possible to mix single-sign on and saved credentials in the same API. Furthermore, while you can use User Principal Names (UPNs) or Service Principal Names (SPNs) to connect to your API, service principals only support single-sign on (SSO) currently. User principals can leverage either SSO or saved credentials, depending on your security requirements.

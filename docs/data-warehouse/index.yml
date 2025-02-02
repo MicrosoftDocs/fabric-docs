@@ -33,7 +33,7 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: End to End tutorials 
-            url: ../get-started/end-to-end-tutorials.md
+            url: ../fundamentals/end-to-end-tutorials.md
           - text: Data warehouse tutorial
             url: tutorial-introduction.md            
           - text: Create a Warehouse quickstart

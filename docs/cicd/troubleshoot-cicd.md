@@ -5,10 +5,12 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
+ms.service: fabric
+ms.subservice: cicd
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/28/2024
+ms.date: 12/26/2024
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -205,7 +207,7 @@ If the following conditions aren't met, you can't see the deployment pipelines b
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
-* You're an admin of a [workspace](../get-started/create-workspaces.md).
+* You're an admin of a [workspace](../fundamentals/create-workspaces.md).
 
 ### I can't see the pipeline stage tag in my workspace
 

@@ -65,4 +65,4 @@ Code completion enhances your productivity and workflow in Copilot for SQL datab
 - [Copilot for SQL database in Microsoft Fabric (preview)](copilot.md)
 - [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
 - [How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

@@ -33,7 +33,7 @@ Allow users in the organization who can [certify content](/power-bi/collaborate-
 
 Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.
 
-To learn more, see [Find recommended items](../get-started/onelake-data-hub.md#find-recommended-items).
+To learn more, see [Find recommended items](../governance/onelake-catalog-overview.md).
 
 ## Related content
 

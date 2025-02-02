@@ -11,7 +11,7 @@ ms.date: 11/06/2024
 
 # GraphQL operations
 
-GraphQL operation logs are part of the [workspace monitoring](../get-started/workspace-monitoring-overview.md) logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the usage and performance of your workspace.
+GraphQL operation logs are part of the [workspace monitoring](../fundamentals/workspace-monitoring-overview.md) logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the usage and performance of your workspace.
 
 ## GraphQL operation logs
 
@@ -81,6 +81,6 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 ## Related content
 
-* [What is workspace monitoring?](../get-started/workspace-monitoring-overview.md)
+* [What is workspace monitoring?](../fundamentals/workspace-monitoring-overview.md)
 
-* [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
+* [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)

@@ -13,7 +13,7 @@ ms.date: 08/21/2024
 
 # Lakehouse end-to-end scenario: overview and architecture
 
-Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
 
 This tutorial walks you through an end-to-end scenario from data acquisition to data consumption. It helps you build a basic understanding of Fabric, including the different experiences and how they integrate, as well as the professional and citizen developer experiences that come with working on this platform. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
@@ -27,7 +27,7 @@ With the flexibility offered by Fabric, you can implement either lakehouse or da
 
 This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). If you don't have a Power BI license, [sign up for a Power BI free license](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-tutorial-lakehouse-introduction) and then you can start the Fabric trial.
+1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../fundamentals/fabric-trial.md). If you don't have a Power BI license, [sign up for a Fabric free license](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-tutorial-lakehouse-introduction) and then you can start the Fabric trial.
 
 1. Build and implement an end-to-end lakehouse for your organization:
 

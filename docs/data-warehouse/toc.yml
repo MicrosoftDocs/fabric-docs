@@ -7,9 +7,9 @@ items:
   expanded: true
   items:
   - name: Decision guide - choose a data store
-    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Decision guide - Warehouse and Lakehouse
-    href: ../get-started/decision-guide-lakehouse-warehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    href: ../fundamentals/decision-guide-lakehouse-warehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
@@ -26,31 +26,31 @@ items:
     href: tutorial-introduction.md
   - name: 1. Create a workspace
     href: tutorial-create-workspace.md
-  - name: 2. Create a warehouse
+  - name: 2. Create a Warehouse
     href: tutorial-create-warehouse.md
-  - name: 3. Ingest data into a warehouse
+  - name: 3. Ingest data into a Warehouse
     href: tutorial-ingest-data.md
   - name: 4. Create tables
     href: tutorial-create-tables.md
-  - name: 5. Load data using T-SQL
+  - name: 5. Load data with T-SQL
     href: tutorial-load-data.md
-  - name: 6. Clone a table using T-SQL
+  - name: 6. Clone a table with T-SQL
     href: tutorial-clone-table.md
-  - name: 7. Transform data using stored procedure
+  - name: 7. Transform data with a stored procedure
     href: tutorial-transform-data.md
-  - name: 8. Time travel using T-SQL
+  - name: 8. Time travel with T-SQL
     href: tutorial-time-travel.md
   - name: 9. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 10. Analyze data with a notebook
+  - name: 10. Analyze data in a notebook
     href: tutorial-analyze-data-notebook.md
-  - name: 11. Create queries with the SQL query editor
+  - name: 11. Create a cross-warehouse query
     href: tutorial-sql-cross-warehouse-query-editor.md
-  - name: 12. Create Power BI reports
+  - name: 12. Create a semantic model and report
     href: tutorial-power-bi-report.md
-  - name: 13. Build a report from the OneLake
+  - name: 13. Generate a report from OneLake catalog
     href: tutorial-build-report-onelake-data-hub.md
-  - name: 14. Clean up resources
+  - name: 14. Clean up tutorial resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
@@ -70,33 +70,34 @@ items:
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-analytics-endpoint.md
-  - name: Warehouse collation
-    href: collation.md
-    displayName: case insensitive collation
-  - name: Create a sample warehouse 
-    href: create-warehouse-sample.md
-  - name: Warehouse performance
-    href: guidelines-warehouse-performance.md
+  - name: Data types
+    href: data-types.md
+  - name: Primary, foreign, and unique keys
+    href: table-constraints.md
+  - name: Source control with Warehouse
+    href: source-control.md
   - name: SQL analytics endpoint performance
     href: sql-analytics-endpoint-performance.md
   - name: Tables
     href: tables.md
-  - name: Data types
-    href: data-types.md
   - name: T-SQL surface area
     href: tsql-surface-area.md
-  - name: Primary, foreign, and unique keys
-    href: table-constraints.md
-  - name: Generate unique identifiers
-    href: generate-unique-identifiers.md
   - name: Transactions
     href: transactions.md 
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
-  - name: Source control with Warehouse
-    href: source-control.md
-  - name: Analyze with range bands
-    href: analyze-range-bands.md
+  - name: Warehouse performance
+    href: guidelines-warehouse-performance.md
+  - name: How to
+    items:    
+    - name: Create a sample warehouse 
+      href: create-warehouse-sample.md
+    - name: Analyze with range bands
+      href: analyze-range-bands.md
+    - name: Generate unique identifiers
+      href: generate-unique-identifiers.md
+    - name: Use Case-insensitive collation
+      href: collation.md
+      displayName: case insensitive collation
+
 - name: Dimensional modeling
   items:
   - name: Overview
@@ -133,14 +134,13 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Service principals
+    href: service-principals.md
+    displayName: SPN
   - name: Microsoft Entra ID authentication
     href: entra-id-authentication.md
   - name: Workspace roles
     href: workspace-roles.md
-  - name: Manage SQL granular permissions
-    href: sql-granular-permissions.md
-  - name: Share your data
-    href: share-warehouse-manage-permissions.md    
   - name: Column-level security
     href: column-level-security.md
   - name: Row-level security
@@ -149,6 +149,10 @@ items:
     href: dynamic-data-masking.md
   - name: How to
     items: 
+    - name: Share your data
+      href: share-warehouse-manage-permissions.md    
+    - name: Manage SQL granular permissions
+      href: sql-granular-permissions.md
     - name: Implement column-level security
       href: tutorial-column-level-security.md    
     - name: Implement row-level security
@@ -168,7 +172,7 @@ items:
   - name: Query data as it existed in the past
     href: time-travel.md
     displayName: Time travel
-  - name: "How to: Query using time travel"
+  - name: Query using time travel
     href: how-to-query-using-time-travel.md
     displayName: Query using time travel
   - name: Query data with a T-SQL notebook
@@ -193,6 +197,8 @@ items:
     - name: Monitor mirrored databases
       displayName: Monitor mirroring
       href: ../database/mirrored-database/monitor.md
+    - name: Mirrored database logs
+      href: ../database/mirrored-database/monitor-logs.md
     - name: Share and manage permissions
       href: ../database/mirrored-database/share-and-manage-permissions.md
   - name: Explore mirrored data
@@ -312,6 +318,8 @@ items:
         href: ../database/mirrored-database/open-mirroring-partners-ecosystem.md
   - name: Mirroring REST API
     href: ../database/mirrored-database/mirrored-database-rest-api.md 
+  - name: CI/CD for mirrored databases
+    href: ../database/mirrored-database/mirrored-database-cicd.md 
   - name: Troubleshoot Mirroring
     href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance
@@ -326,17 +334,17 @@ items:
   items:
   - name: Monitoring overview
     href: monitoring-overview.md
-  - name: Monitor using Capacity Metrics app
-    href: usage-reporting.md
-    displayName: Billing, usage reporting
-  - name: Monitor using DMVs
-    href: monitor-using-dmv.md
   - name: Query activity
     href: query-activity.md
   - name: Query insights
     href: query-insights.md
   - name: How to
     items:    
+      - name: Monitor using Capacity Metrics app
+        href: usage-reporting.md
+        displayName: Billing, usage reporting
+      - name: Monitor using DMVs
+        href: monitor-using-dmv.md
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
 - name: Warehouse capacity

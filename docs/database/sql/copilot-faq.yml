@@ -32,7 +32,7 @@ sections:
           - [How to: Use the Copilot Explain and Fix quick action features for SQL database](copilot-quick-actions.md)          
     - question: "How do I enable Copilot for my SQL database in Fabric?"
       answer: |
-        Review the steps in [Enable Copilot in Fabric](../../get-started/copilot-enable-fabric.md). 
+        Review the steps in [Enable Copilot in Fabric](../../fundamentals/copilot-enable-fabric.md). 
     - question: Are the results from Copilot reliable?
       answer: |
         Copilot is designed to generate the best possible responses with the database context it has access to. However, like any AI system, responses aren't perfect. All of Copilot's responses should be carefully tested, reviewed, and vetted before making changes to your Fabric SQL database environment.
@@ -47,12 +47,12 @@ sections:
         User-provided prompts and Copilot's responses aren't used to further train, retrain, or improve Azure OpenAI Service foundation models that generate responses. User-provided prompts and Copilot's responses are collected and used to improve Microsoft products and services only when users give explicit consent to include this information within feedback. We collect user engagement data, such as, number of chat sessions and session duration, the skill used in a particular session, thumbs up, thumbs down, feedback, etc. This information is retained and used as described in the [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement).
     - question: What should I do if I see unexpected or offensive content?
       answer: |
-        The SQL database team built Copilot guided by our AI principles and Responsible AI Standard. We have prioritized mitigating exposing customers to offensive content. However, you might still see unexpected results. We're constantly working to improve our technology in preventing harmful content. For more information, see [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md).
+        The SQL database team built Copilot guided by our AI principles and Responsible AI Standard. We have prioritized mitigating exposing customers to offensive content. However, you might still see unexpected results. We're constantly working to improve our technology in preventing harmful content. For more information, see [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
 
         If you encounter harmful or inappropriate content in the system, you can provide feedback or report a concern by selecting the downvote button on the response. We're constantly working to improve our technology to proactively address issues in line with our [responsible AI principles](https://www.microsoft.com/ai/our-approach).
     - question: How much does Copilot cost?
       answer: |
-         To learn more about how the Fabric Copilot usage is billed and reported, see [Copilot in Fabric consumption](../../get-started/copilot-fabric-consumption.md).
+         To learn more about how the Fabric Copilot usage is billed and reported, see [Copilot in Fabric consumption](../../fundamentals/copilot-fabric-consumption.md).
     - question: How is the transmitted prompt and query data protected?
       answer: |
         Copilot takes several measures to protect data including:
@@ -62,7 +62,7 @@ sections:
         - Access to log and feedback data is strictly controlled. The data is stored in a separate subscription. The data is only accessible by 1) Just-In-Time JIT approval from Azure operations personnel using [secure admin workstations](/azure/security/fundamentals/infrastructure-components).
     - question: Where can I learn more about privacy and data protection?
       answer: |
-        For more information on how Copilot processes and uses personal data, see [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md).
+        For more information on how Copilot processes and uses personal data, see [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
 
 additionalContent: |
 
@@ -72,4 +72,4 @@ additionalContent: |
   - [How to: Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
   - [How to: Use Copilot code completion for SQL database](copilot-code-completion.md)
   - [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)
-  - [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+  - [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

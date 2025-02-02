@@ -239,7 +239,7 @@ Workspace and Item permissions let you grant "coarse-grain" access to data in On
 
 ## OneLake RBAC and Workspace permissions
 
-The workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../get-started/roles-workspaces.md)
+The workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../fundamentals/roles-workspaces.md)
 
 Workspace roles in Fabric grant the following permissions in OneLake.
 
@@ -363,3 +363,7 @@ The following table provides the limitations of OneLake data access roles.
 
 - If you change a OneLake RBAC Role definition, it takes about 5 minutes for OneLake to apply the updated definitions.
 - If you change a user group in OneLake RBAC role, it takes about an hour for OneLake to apply the role's permissions on the updated user group.
+
+## Consideration and Limitations
+
+- If you assign an RBAC role to a B2B guest user, you must [configure your external collaboration settings for B2B in Microsoft Entra External ID](/entra/external-id/external-collaboration-settings-configure). The **Guest user access** setting must be set to **Guest users have the same access as members (most inclusive)**.

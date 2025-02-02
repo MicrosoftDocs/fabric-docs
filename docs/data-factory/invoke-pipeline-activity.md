@@ -19,7 +19,7 @@ The Fabric **invoke pipeline activity** can execute another [!INCLUDE [product-n
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 > [!NOTE]

@@ -62,5 +62,5 @@ You can secure data for use with shortcuts just like any other folder in OneLake
 
 - [OneLake data access roles (preview)](./get-started-data-access-roles.md)
 - [OneLake data access control model](./data-access-control-model.md)
-- [Workspace roles](../../get-started/roles-workspaces.md)
-- [Share items](../../get-started/share-items.md)
+- [Workspace roles](../../fundamentals/roles-workspaces.md)
+- [Share items](../../fundamentals/share-items.md)

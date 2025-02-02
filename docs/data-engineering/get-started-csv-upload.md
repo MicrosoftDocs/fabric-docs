@@ -19,25 +19,25 @@ ms.search.form: csv load to delta to pbi report
 
 In this tutorial you learn to:
 
-* Upload a CSV file to a Lakehouse
+* Upload a CSV file to a lakehouse
 * Convert the file to a Delta table
 * Generate a semantic model and create a Power BI report
 
-## Create a Lakehouse and get a CSV file ready
+## Create a lakehouse and get a CSV file ready
 
-1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com). Select **Data Engineering** from the workload switcher in the bottom-left corner.
+1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 1. Make sure that you're in your desired workspace. Open your existing workspace or create a new one.
-1. From the workspace, select **New item** page, and select **Lakehouse**.
+1. From the workspace, select **New item**, then select **Lakehouse**.
 
-   :::image type="content" source="media\get-started-csv-upload\new-lakehouse-inline.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-csv-upload\new-lakehouse.png":::
+   :::image type="content" source="media\get-started-csv-upload\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-csv-upload\new-lakehouse.png":::
 
-1. Enter name of your Lakehouse.
+1. Enter the name of your lakehouse.
 1. Select **Create**.
 1. Download the "Taxi Zone Lookup Table" [CSV file](https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv) from the [TLC Trip Record Data website](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page), and save to a location in your computer.
 
-## Upload a CSV file to the Lakehouse
+## Upload a CSV file to the lakehouse
 
-1. Create the ```TaxiData```  folder under the ```Files``` section of your Lakehouse.
+1. Create the ```TaxiData```  folder under the ```Files``` section of your lakehouse.
 1. Upload the file to the folder, by using the **Upload file** item in the folder contextual menu.
 1. Once uploaded, select the folder to see its content.
 1. Rename the file to remove special characters, in this example, remove the '+' character. To see the full list of special characters, read the [Load to Delta Lake tables](load-to-tables.md) article.
