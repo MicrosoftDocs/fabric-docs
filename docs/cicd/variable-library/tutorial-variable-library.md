@@ -7,7 +7,7 @@ ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: tutorial
-ms.date: 01/28/2025
+ms.date: 02/02/2025
 ms.search.form: Variable library tutorial
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle..
 ---
@@ -37,16 +37,22 @@ For the purposes of this tutorial, we will create a workspace called *Sources LH
 
 1. [Create a workspace](../../fundamentals/create-workspaces.md) called *Sources LHs*.
 1. [Create a lakehouse](../../onelake/create-lakehouse-onelake.md) item in the workspace, *called SourceLH_Dev*.
-1. [Create a data pipeline with sample data from public holidays](../../data-factory/create-first-pipeline-with-sample-data.md) (steps 1-3). (10 minutes)
+1. [Create a data pipeline with sample data from public holidays](../../data-factory/create-first-pipeline-with-sample-data.md) (steps 1-3). {10 minutes}
+1. Create another workspace called *Copy with Variables WS* [Dev]
+1. Create an empty lakehoue called This_WH_LH
 1. Create two more lakehouses (*SourceLH_Test* and *SourceLH_Prod*) with sample data.
 
 ## Step 2: Create a workspace
 
-Now that we have our sample data, create a workspace that will contain the Variable library item in your workspace to hold the variables. To create the workspace:
+Now that we have our sample data, create a new workspace that will contain the Variable library item. To create the workspace:
 
-1. [Create a workspace](../../fundamentals/create-workspaces.md). We'll call it *Copy with Variables WS*.
-1. In the workspace, create a new data pipeline 12 minutes.
-1. Procedure step
+1. [Create a workspace](../../fundamentals/create-workspaces.md). We'll call it *Copy with Variables WS*. Make it a type string and set the value to the object id of Lakehouse.
+1. In the workspace, [create a new data pipeline](../../data-factory/create-first-pipeline-with-sample-data.md) (Steps 1-3){12 minutes}.
+1. Create an empty lakehouse in the workspace called *This_WH_LH*.
+1. Create an empty Variable library item. Call it *WS variables*.
+1. In the data pipeline, go to **Source > Connection** and select *SourceLH_Dev* as the source lakehouse. Wait for the lakehouse to load.
+1. Go to **Destination > Connection** and select *This_WH_LH* as the destination lakehouse.
+1. Open the Variable library and add a variable called *Source_LH_*.
 
 ## Create a data pipeline
 
