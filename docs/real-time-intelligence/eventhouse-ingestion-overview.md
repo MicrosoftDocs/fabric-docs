@@ -21,6 +21,12 @@ The right solution for you depends significantly on these main factors:
 * [Where is your data stored?](#location-of-data)
 * [Do you require low-latency (real-time ingestion)?](#low-latency-or-real-time-ingestion)
 * [Does your data need transformations?](#data-transformation)
+* Do you need to ingest data:
+
+    * [one-time](#one-time-ingestion)
+    * [continuously](#continuous-ingestion)
+    * [backfill data](#backfill-data)
+    * [backfill data and then ingest continuously](#backfill-data-and-then-ingest-continuously)
 
 The following schematic shows sample ingestion architectures for ingesting data in Eventhouse:
 
@@ -61,13 +67,13 @@ Data from Onelake can be used in an Eventhouse in two ways:
 **Pros of using OneLake shortcuts**: 
 
 * The data is available immediately. 
-* Resources are consumed only for queries. 
+* Resources are only consumed for queries. 
 * Partitioning can lead to good performance on targeted queries. 
 
 **Cons of using OneLake shortcuts**:
 
-* The data is not indexed. 
-* If using many small files, no data management can result in poor performance. 
+* The data is not indexed.
+* If using many small files, the lack of data management on shortcuts can result in poor performance. 
 * External tables don't support update policies or materialized views.
 
 > [!TIP]
@@ -81,7 +87,7 @@ If you want to do analytics on raw data without preprocessing, you should direct
 
 ## Data transformation
 
-There are several ways to transform data that will eventually land in Eventhouse. If you're using Eventstreams, you can [transform data in Eventstreams](#transform-data-in-eventstreams). If you're ingesting data with any method including Eventstreams, you can [transform data with update policies](#transform-data-with-update-policies) after it lands in the Eventhouse.
+There are several ways to transform data that will eventually land in Eventhouse. If you're using Eventstreams, you can [transform data in Eventstreams](#transform-data-in-eventstreams). If you're ingesting data with any method including Eventstreams, you can land the data in Eventhouse and then [transform data with update policies](#transform-data-with-update-policies).
 
 ### Transform data in Eventstreams
 
@@ -109,6 +115,18 @@ Update policies are a good option if:
 * You want to lower costs associated with your data management.
 
 To use update policies, first land data in Eventhouse in one of the available methods, and then apply the transformation logic in the update policy. For more information, see [Implement medallion architecture in Real-Time Intelligence](architecture-medallion.md).
+
+## One time vs. continuous ingestion
+
+The frequency at which you need to ingest data can help you decide which ingestion method to use.
+
+### One-time ingestion
+
+### Continuous ingestion
+
+### Backfill data
+
+### Backfill data and then ingest continuously
 
 ## Related content
 
