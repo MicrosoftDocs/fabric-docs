@@ -56,7 +56,12 @@ TODO: Add explanation of when to choose what
 Data from Onelake can be used in an Eventhouse in two ways:
 
 * [Ingest data from OneLake](get-data-onelake.md): in this method, data is ingested from OneLake into an Eventhouse.
-* [Use OneLake shortcuts](onelake-shortcuts.md): in this method, data is directly consumed from a OneLake shortcut and treaded as an external table. To improve query performance on a OneLake shortcut, use [query acceleration](query-acceleration-overview.md).
+* [Use OneLake shortcuts](onelake-shortcuts.md): in this method, data is directly consumed from a OneLake shortcut and treated as an external table. To improve query performance on a OneLake shortcut, use [query acceleration](query-acceleration-overview.md).
+    * **Pros of using OneLake shortcuts**: The data is available immediately, resources are consumed only for queries, partitioning can lead to good performance on targeted queries. 
+    * **Cons of using OneLake shortcuts**: The data is not indexed, if using many small files, no data management can result in poor performance. 
+    
+> [!TIP]
+> For data seldomly used and where queries scan few blobs, using OneLake shortcuts is a good choice. For complex aggregations, data ingestion from OneLake offers better performance.
 
 ## Low-latency or real-time ingestion  
 
