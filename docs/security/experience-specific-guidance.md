@@ -93,7 +93,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 
 #### Approach 2: Use Azure Storage Explorer to copy files and tables
 
-To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer.  Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md) for detailed steps. For large data sizes, use [Approach 1](#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
+To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer. Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md) for detailed steps. For large data sizes, use [Approach 1](#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
 
 > [!NOTE]
 > The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover them.
@@ -106,7 +106,7 @@ Notebooks from the primary region remain unavailable to customers and the code i
 
 The best way to make this easy and quick is to use Fabric Git integration, then synchronize your notebook with your ADO repo. After the service fails over to another region, you can use the repo to rebuild the notebook in the new workspace you created.  
 
-1. Setup Git integration and select **Connect and sync** with ADO repo.
+1. Configure Git Integration for your workspace and select **Connect and sync** with ADO repo.
 
     :::image type="content" source="./media/experience-specific-guidance/notebook-connect-sync-ado-repo.png" alt-text="Screenshot showing how to connect and sync notebook with ADO repo.":::
 
@@ -168,7 +168,7 @@ You can recover the SJD items by copying the code from the original region by us
 
 1. Create a new SJD item (for example, SJD1) in the new workspace C2.W2, with the same settings and configurations as the original SJD item (for example, language, environment, etc.).
 
-1. Use Azure Storage Explorer to copy Libs, Mains and Snapshots from the original SJD item to the new SJD item.
+1. Use Azure Storage Explorer to copy Libs, Mains, and Snapshots from the original SJD item to the new SJD item.
 
     :::image type="content" source="./media/experience-specific-guidance/sjd-copy-from-original-sdj-to-new-sjd.png" alt-text="Screenshot showing how to copy from the original spark job definition to the new spark job definition.":::
 
