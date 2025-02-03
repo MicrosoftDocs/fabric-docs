@@ -37,6 +37,11 @@ Event operations represent operations for publish, filtering, and delivery of ev
  
 For example, when a Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] trigger is created to take an action on a workspace item event, the source workspace’s capacity is charged for the publish operations, and the [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]’s capacity is charged for the filtering and delivery operations. 
 
+The following operations are the different types of Event Operations:
+-	Publish operations: are charged for every event that is published by the source. The publish operation for the same event is charged once even if there are multiple consumers to the same event.
+-	Filtering operations: are charged for every filtering computation that is applied on the data field in the event. Filtering operations on the header of the event are free.
+    - If there is a filtering configuration on the header and the data field, a single event can match both the filter on the header and the filter on the data field. In that case, the filtering operation is also free.
+-	Delivery operations: are charged for every delivery attempt of an event. If the destination is temporarily unavailable or if there is a transient failure, the event will be retried with a exponential back-off mechanism. Each attempt to deliver the event is counted for the bill.
 
 ### Event listener 
 This meter kicks in when a consumer is created for Fabric and Azure events and is charged to the consumer’s capacity. For example when an [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] trigger is created to act on an event, this meter is charged per hour during the existence of this trigger.
