@@ -1,6 +1,6 @@
 ---
 title: Multivariate anomaly detection
-description: Learn how to perform multivariate anomaly detection in Real-Time Intelligence, ensuring you can train and apply detection models for advanced data insights.
+description: Learn how to perform multivariate anomaly detection in Real-Time Intelligence.
 ms.reviewer: adieldar
 author: shsagir
 ms.author: shsagir
@@ -34,9 +34,9 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
 ## Part 2- Enable KQL Python plugin
 
-In this step, you enable the python plugin in your Eventhouse. This step is required to [run the predict anomalies](#part-9--predict-anomalies-in-the-kql-queryset) Python code in the KQL queryset. It's important to choose the correct package that contains the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package.
+In this step, you enable the python plugin in your Eventhouse. This step is required to [run the predict anomalies](#part-9--predict-anomalies-in-the-kql-queryset) Python code in the KQL queryset. It's important to choose the correct image that contains the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package.
 
-1. In the Eventhouse screen, select your database, then select **Eventhouse** > **Plugins** from the ribbon.
+1. In the Eventhouse screen, select  **Eventhouse** > **Plugins** from the ribbon.
 1. In the Plugins pane, toggle the **Python language extension to** to **On**.
 1. Select **Python 3.11.7 DL (preview)**.
 1. Select **Done**.
@@ -54,7 +54,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
 1. Enter the name *MVAD_ENV* for the environment and then select **Create**.
 1. Under **Libraries**, select **Public libraries**.
 1. Select **Add from PyPI**.
-1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.3.1, which is the version included in the Kusto Python 3.11.7 DL.
+1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.3.2.
 1. Select **Save**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment." lightbox="media/multivariate-anomaly-detection/add-package.png":::
@@ -80,7 +80,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
 
 ## Part 5- Copy OneLake path to the table
 
-Make sure you select the *demo_stocks_change* table. In the **Table details** pane, select **Copy URI** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to be used in a later step.
+Make sure you select the *demo_stocks_change* table. In the **Table details** pane, select **OneLake folder** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to be used in a later step.
 
 :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
