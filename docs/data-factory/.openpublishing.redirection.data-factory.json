@@ -274,6 +274,11 @@
         "source_path_from_root": "/docs/data-factory/data-factory-known-issues.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/upgrade-paths.md",
+        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_document_id": false
       }
     ]
 }
