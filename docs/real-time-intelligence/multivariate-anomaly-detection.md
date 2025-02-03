@@ -36,7 +36,7 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
 In this step, you enable the python plugin in your Eventhouse. This step is required to [run the predict anomalies](#part-9--predict-anomalies-in-the-kql-queryset) Python code in the KQL queryset. It's important to choose the correct image that contains the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package.
 
-1. In the Eventhouse screen, select  **Eventhouse** > **Plugins** from the ribbon.
+1. In the Eventhouse screen, select **Eventhouse** > **Plugins** from the ribbon.
 1. In the Plugins pane, toggle the **Python language extension to** to **On**.
 1. Select **Python 3.11.7 DL (preview)**.
 1. Select **Done**.
