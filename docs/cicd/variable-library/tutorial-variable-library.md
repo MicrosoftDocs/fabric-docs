@@ -31,7 +31,7 @@ In this tutorial, you:
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A workspace with datasources 
 
-## Step 1: Prepare data sources (optional)
+## Step 0: Prepare data sources (optional)
 
 For the purposes of this tutorial, we will create a workspace called *Sources LHs* with some source data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
 
@@ -42,14 +42,14 @@ For the purposes of this tutorial, we will create a workspace called *Sources LH
 1. Create an empty lakehoue called This_WH_LH
 1. Create two more lakehouses (*SourceLH_Test* and *SourceLH_Prod*) with sample data.
 
-## Step 2: Create a workspace
+## Step 1: Create a workspace
 
 Now that we have our sample data, create a new workspace that will contain the Variable library item. To create the workspace:
 
 1. [Create a workspace](../../fundamentals/create-workspaces.md). We'll call it *Copy with Variables WS*. Make it a type string and set the value to the object id of Lakehouse.
 1. Create an empty lakehouse in the workspace called *This_WH_LH*.
 
-## Create a data pipeline
+## Step 2: Create a data pipeline
 
 1. In the workspace, [create a new data pipeline](../../data-factory/create-first-pipeline-with-sample-data.md) (Steps 1-3){12 minutes}.
 1. In the data pipeline, go to **Source > Connection** and select *SourceLH_Dev* as the source lakehouse. Wait for the lakehouse to load.
@@ -59,7 +59,7 @@ Now that we have our sample data, create a new workspace that will contain the V
   > The lakehouse object ID is the unique identifier of your lakehouse. You can find it in the URL of the lakehouse item in the workspace.
   > :::image type="content" source="./media/tutorial-variable-library/lakehouse-id.png" alt-text="Screenshot of URL of a lakehouse item. The lakehouse ID is after the word lakehouses.":::
 
-## Create a variable library with variables
+## Step 3: Create a variable library with variables
 
 1. Create an empty Variable library item. Call it *WS variables*.
 1. Open the Variable library and add a variable called *SourceLH*. Give it the type *string*, and the value of the object id of the source lakehouse.
@@ -67,7 +67,7 @@ Now that we have our sample data, create a new workspace that will contain the V
 
 :::image type="content" source="./media/tutorial-variable-library/default-value-set.png" alt-text="Screenshot of the Variable library item with a variables and the default value set.":::
 
-## Add value-sets to the variables
+### Add value-sets to the variables
 
 1. Create a value-set called *Test VS* and one called *Prod VS*.
 1. Set the values of *SourceLH* to the object ids of *SourceLH_Test* and *SourceLH_Prod* respectively.
@@ -75,7 +75,7 @@ Now that we have our sample data, create a new workspace that will contain the V
 
 :::image type="content" source="./media/tutorial-variable-library/variable-library-values.png" alt-text="Screenshot of the variable library with the default value set and two alternative value sets.":::
 
-## Declare the variables
+### Declare the variables
 
 Now that the value-sets are defined, we declare the variables in the pipeline so that we can use them in the pipeline stages.
 
@@ -85,9 +85,9 @@ Now that the value-sets are defined, we declare the variables in the pipeline so
 
 :::image type="content" source="./media/tutorial-variable-library/declare-variable-library.png" alt-text="Screenshot of the data pipeline settings.":::
 
-## Set rules for the active value-set
+### Set rules for the active value-set
 
-### Set the source lakehouse
+## Step 4: Set the source and destination in the lakehouse
 
 Now that the value-sets are defined, set the rules for the active value-set. For each stage, we want to use the relevant lakehouse.
 
@@ -124,7 +124,7 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 1. Select **OK** to save the dynamic value as the Table name.
 1. Save.
 
-## Connect workspace to Git (optional)
+## Step 5: Connect workspace to Git (optional)
 
 To see how the variable library is [represented in Git](./variable-library-cicd.md), or to edit the variables from a Git repository, connect the workspace to a Git repository.
 
@@ -144,7 +144,7 @@ Notice, also, that the *artifactId* of the lakehouse is set to the value of the 
 
 These values can be edited in the Git repository and updated to the workspace.
 
-## Create deployment pipeline
+## Step 6: Create deployment pipeline
 
 Now that the data pipeline is set up, create a deployment pipeline to deploy the data pipeline to different environments.
 
