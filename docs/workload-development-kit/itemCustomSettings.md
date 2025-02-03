@@ -32,7 +32,7 @@ In order to add custom item settings, you first need to include getItemSettings 
 
 ## Example of adding custom item tabs
 
-:::image type="content" source="./media/custom-item-settings/example-custom-item-tabs.png" alt-text="Screenshot of an item's custom settings." lightbox="./media/custom-item-settings/example-custom-item-tabs.png":::
+:::image type="content" source="./media/custom-item-settings/example-custom-item-tabs.png" alt-text="Screenshot of an item's custom settings. The custom item tab is marked in red frame number 1. The loaded iframe that is loaded after selection of this tab is marked in red box number 2 and presented in the right side of the screen." lightbox="./media/custom-item-settings/example-custom-item-tabs.png":::
 
 ### Handling the action
 
@@ -79,7 +79,7 @@ workloadClient.action.onAction(async function ({ action, data }) {
     - **route** (object): When a specific setting tab is clicked from item settings, a panel iframe is loaded into the right-side content area to load the specific route owned by the workload (we can see it in - *2*).
 - **searchTokenMatchesBySection** (object): An optional object that receives a section name as a key and an array of keywords as the value. The key is triggered whenever any of the array words are searched.
 Example:
-:::image type="content" source="./media/custom-item-settings/example-search.png" alt-text="Screenshot of a search tokens example." lightbox="./media/custom-item-settings/example-search.png":::
+:::image type="content" source="./media/custom-item-settings/example-search.png" alt-text="Screenshot of a search tokens example. Search box is marked in red frame number 1. Section of results options of the search is marked in red frame number 2. The corresponding tab of the result is marked in red frame number 3." lightbox="./media/custom-item-settings/example-search.png":::
 In this example, we started to type one of the keyword values (1), and it triggered the section name as a result option (2). Clicking on this option navigates us to the corresponding custom tab (3). This field is aligned with and can be used for localization.
 ## Iframe route definition
 
@@ -116,7 +116,7 @@ export function App({ history, workloadClient }: AppProps) {
 ```
 ## Customize "About" page
 
-:::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of a about custom settings." lightbox="./media/custom-item-settings/example-about.png":::
+:::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of a about custom settings. We can see that the current chosen tab in the settings is the about tab, which marked in black frame. In the right side, we see the loaded tab. On the top, is the default about settings, which include name, description, location, and details. Below the default section, we're loading the custom about section iframe, which is marked in red frame" lightbox="./media/custom-item-settings/example-about.png":::
 
 "Item "About" page supports adding workload specific content using hybrid view (default about settings and the workload custom iframe). To achieve that, you should add another item custom setting.
 ```typescript

@@ -65,7 +65,7 @@ items:
     href: multitasking.md
   - name: Localize your workload
     href: localization.md
-  - name: Add Customized Item Settings
+  - name: Add customized item settings
     href: itemCustomSettings.md
 - name: Publish
   items:
