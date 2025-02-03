@@ -73,7 +73,7 @@ items:
       href: variable-library/variable-reference.md
     - name: REST APIs
       href: variable-library/automate-variable-library.md
-  - name: "Tutorial: Use Variable libraries in cicd-overview.md"
+  - name: "Tutorial: Use Variable libraries in CI/CD"
     href: variable-library/tutorial-variable-library.md
   - name: Variable library FAQ and Troubleshooting
     href: variable-library/variable-library-faq.yml
