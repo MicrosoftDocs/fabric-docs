@@ -36,7 +36,7 @@ In this tutorial, you:
 For the purposes of this tutorial, we will create a workspace called *Sources LHs* with some source data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
 
 1. [Create a workspace](../../fundamentals/create-workspaces.md) called *Sources LHs*.
-1. [Create a lakehouse](../../onelake/create-lakehouse-onelake.md) item in the workspace, *called SourceLH_Dev*.
+1. [Create a lakehouse](../../onelake/create-lakehouse-onelake.md) item in the workspace, called *SourceLH_Dev*.
 1. [Create a data pipeline with sample data from public holidays](../../data-factory/create-first-pipeline-with-sample-data.md) (steps 1-3). {10 minutes}
 1. Create another workspace called *Copy with Variables WS* [Dev]
 1. Create an empty lakehoue called This_WH_LH
