@@ -101,4 +101,4 @@ Item permissions are checked during Git Update and commit.
 
 ## Related content
 
-* [Git integration source code format](..//git-integration/git-integration-source-code-format.md)
+* [Git integration source code format](../git-integration/git-integration-source-code-format.md)

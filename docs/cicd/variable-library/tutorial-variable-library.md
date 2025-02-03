@@ -1,6 +1,6 @@
 ---
 title: Learn how to use Variable libraries
-description: "Learn how to use Microsoft Fabric Variable libraries to customize and share item configurations in a workspace."
+description: "Go through all the steps of creating a variable library and using different variable values in different stages of a deployment pipeline."
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
@@ -98,7 +98,7 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 
 1. From the Add dynamic content pane, select *Library variables* and then *SourceLH*. This will set the value of the source lakehouse to the value of SourceLH in the active value set.
 
-   :::image type="content" source="./media/tutorial-variable-library/dynamic-source.png" alt-text="Screenshot of the pipeline expression builder with the variable library variable selected.":::
+   :::image type="content" source="./media/tutorial-variable-library/dynamic-source.png" alt-text="Screenshot of the pipeline expression builder with showing the dynamic source of the variable.":::
 
 1. Select **OK** to save the dynamic value as the source connection. The connection type is automatically set to *Lakehouse* and the Workspace ID is set.
 1. Set the Root folder to *Tables*.
@@ -128,7 +128,7 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 
 To see how the variable library is [represented in Git](./variable-library-cicd.md), or to edit the variables from a Git repository, connect the workspace to a Git repository.
 
-1. [Connect the workspace to a Git repository](../source-control/get-started-with-source-control.md#step-1---connect-to-a-git-repository).
+1. [Connect the workspace to a Git repository](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
 1. From the workspace, select **Source control** and [connect](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo) the workspace to a Git repository.
 1. From the [Source control](../git-integration/git-get-started.md#commit-to-git) pane, select **Commit** to push the workspace content to the Git repository.
 

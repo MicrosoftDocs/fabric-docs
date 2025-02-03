@@ -87,7 +87,7 @@ To add a new variable to the library:
 To add another value set that can be used a different stage:
 
 1. Select **Add value set**
-1. Name the value set (make sure it follows the [naming conventions](./variable-types.md#name-of-a-value-set-in-the-variable-library))
+1. Name the value set (make sure it follows the [naming conventions](./variable-types.md#variable-types))
 1. Select **Set as active** if you want to use this value to be the currently active value set
 1. Enter values for all the variables in the Variable library
 1. Select **Save**
@@ -112,6 +112,5 @@ To reset a variable value of each variable to the default value, select the rese
 
 ## Related content
 
-* [Related article title](link.md)
 * [Related article title](link.md)
 * [Related article title](link.md)

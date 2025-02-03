@@ -22,5 +22,3 @@ This article provides a reference for the variables that can be used in a fabric
 
 ## Related content
 
-* [Get started with Git integration](./git-get-started.md)
-* [Understand the Git integration process](./git-integration-process.md)
