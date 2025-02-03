@@ -272,11 +272,11 @@ Customers can't access data pipelines in the event of regional disaster, and the
 
 ### Copy Job
 
-CopyJob users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, in the event of a regional disaster, a user's CopyJobs will remain available.
+CopyJob users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, after a regional disaster, a user's CopyJobs remain available.
 
 #### User-managed redundancy with Git integration (in public preview)
 
-The best way to make this easy and quick is to use Fabric Git integration, then synchronize your CopyJob with your ADO repo. After the service fails over to another region, you can use the repository to rebuild the CopyJob in the new workspace you created.
+The best way to make this process easy and quick is to use Fabric Git integration, then synchronize your CopyJob with your ADO repo. After the service fails over to another region, you can use the repository to rebuild the CopyJob in the new workspace you created.
 
 1. Setup Git integration and select **connect and sync** with ADO repo.
 
@@ -288,7 +288,7 @@ The best way to make this easy and quick is to use Fabric Git integration, then 
 
 1. Recover the CopyJob from the ADO repo.
 
-    1. In the newly created workspace, connect and sync to your Azure ADO repo again. All Fabric items in this repository will be automatically downloaded to your new Workspace.
+    1. In the newly created workspace, connect and sync to your Azure ADO repo again. All Fabric items in this repository are automatically downloaded to your new Workspace.
 
         :::image type="content" source="./media/experience-specific-guidance/copyjob-connect-sync-ado-repo.png" alt-text="Screenshot showing Workspace reconnected to ADO repo.":::
 
