@@ -1,16 +1,16 @@
 ---
-title: Monitor and improve the governance of your Fabric data with the OneLake catalog
+title: Govern your Fabric data with the OneLake catalog
 description: Use the OneLake catalog's govern tab to get insights about the governance posture of the data you own in Fabric and guidance about how to improve it.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 01/20/2025
+ms.date: 02/03/2025
 ms.custom:
 #customer intent: As data owner, I want to learn about OneLake catalog's Govern tab, and use it's capabilities to get insights about and govern the data in Fabric that I own.
 ---
 
-# Monitor and improve the governance of your Fabric data
+# Govern your Fabric data
 
 OneLake catalog's govern tab helps you analyze, improve, and monitor the governance posture of the data you own across Fabric. It centralizes in one place:
 
