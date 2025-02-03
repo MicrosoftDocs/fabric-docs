@@ -115,7 +115,7 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 1. In the data pipeline, go to **Destination** and set the root folder to *Tables*.
 1. To set the value of the table name to the relevant table, select *Add dynamic content*.
 
-   :::image type="content" source="./media/tutorial-variable-library/dynamic-source.png" alt-text="Screenshot of data pipeline source connection.":::
+   :::image type="content" source="./media/tutorial-variable-library/dynamic-content.png" alt-text="Screenshot of data pipeline source connection.":::
 
 1. From the pipeline expression builder, Go to Library variables and select DestTableName. This will set the value of the destination table to the value of of DestinationTableName in the active value set.
 
