@@ -277,7 +277,7 @@
       },
       {
         "source_path_from_root": "/docs/data-factory/upgrade-paths.md",
-        "redirect_url": "/fabric/get-started/migrate-planning-azure-data-factory",
+        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
         "redirect_document_id": false
       }
     ]
