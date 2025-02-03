@@ -272,7 +272,29 @@ Customers can't access data pipelines in the event of regional disaster, and the
 
 ### Copy Job
 
-Customers can't access copy job in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical copy jobs in multiple workspaces across different regions.
+CopyJob users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, in the event of a regional disaster, a user's CopyJobs will remain available.
+
+#### User-managed redundancy with Git integration (in public preview)
+
+The best way to make this easy and quick is to use Fabric Git integration, then synchronize your CopyJob with your ADO repo. After the service fails over to another region, you can use the repository to rebuild the CopyJob in the new workspace you created.
+
+1. Setup Git integration and select **connect and sync** with ADO repo.
+
+    :::image type="content" source="./media/experience-specific-guidance/copyjob-connect-sync-ado-repo.png" alt-text="Screenshot showing how to connect and sync Workspace with ADO repo.":::
+
+    The following image shows the synced CopyJob.
+
+    :::image type="content" source="./media/experience-specific-guidance/copyjob-synced-copyjob.png" alt-text="Screenshot showing CopyJob synced with ADO repo.":::
+
+1. Recover the CopyJob from the ADO repo.
+
+    1. In the newly created workspace, connect and sync to your Azure ADO repo again. All Fabric items in this repository will be automatically downloaded to your new Workspace.
+
+        :::image type="content" source="./media/experience-specific-guidance/copyjob-connect-sync-ado-repo.png" alt-text="Screenshot showing Workspace reconnected to ADO repo.":::
+
+    1. If the original CopyJob uses a Lakehouse, users can refer to the [Lakehouse section](#lakehouse) to recover the Lakehouse and then connect the newly recovered CopyJob to the newly recovered Lakehouse.
+
+For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md).
 
 ## Real-Time Intelligence
 
