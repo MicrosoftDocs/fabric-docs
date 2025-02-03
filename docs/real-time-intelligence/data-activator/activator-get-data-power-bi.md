@@ -25,7 +25,7 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to fine tune 
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * You need edit permissions to a Power BI report that is published online to a workspace.
 
 ## Create an alert for a Power BI report visual
