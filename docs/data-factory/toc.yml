@@ -73,11 +73,11 @@
       items:
       - name: Planning your migration from ADF
         href: migrate-planning-azure-data-factory.md
-      - name: Connector Continuity between ADF and Data Factory in Fabric
+      - name: Connector Continuity between ADF and Fabric
         href: connector-parity.md        
       - name: Migrate from ADF 
         href: migrate-from-azure-data-factory.md      
-      - name: Activity Continuity between ADF and Data Factory in Fabric
+      - name: Activity Continuity between ADF and Fabric
         href: activity-parity.md
     - name: Dataflows
       items:
