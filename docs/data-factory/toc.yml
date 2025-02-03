@@ -66,9 +66,7 @@
     - name: Bring Azure Data Factory to Fabric
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
-    items:
-    - name: Migration paths from ADF and Power BI
-      href: upgrade-paths.md    
+    items:  
     - name: Pipelines
       items:
       - name: Planning your migration from ADF
