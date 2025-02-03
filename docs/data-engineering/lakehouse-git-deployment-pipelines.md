@@ -58,9 +58,14 @@ The following capabilities are available:
 * Shortcuts definitions in both the Tables and Files section are stored in a file named ```shortcuts.metadata.json``` under the lakehouse folder in git.
 * The following operations are supported and tracked automatically: __addition, deletion and updates__ of Shortcuts. 
 * The operations can be performed directly in the Fabric user interface or in the git repository by changing the ```shortcuts.metadata.json``` file.
+* Shortcuts with internal targets (OneLake Shortcuts) are automatically updated during git syncronization. In order for the Shortcut to be valid, those need to be valid targets in the workspace. If the targets are invalid for Shortcuts defined in the lakehouse tables section, those Shortcuts will be moved to the ```Unidentified``` section until references are resolved.
 
 > [!IMPORTANT]
 > Use caution when changing OneLake Shortcut properties directly in the ```shortcuts.metadata.json``` file. Incorrect changes to the properties, specially GUIDs, can render the OneLake Shortcut invalid when updates are applied back to the workspace.
+
+> [!IMPORTANT]
+> An update from git __will override the state of shortcuts in the workspace__. All the Shortcuts in the workspace will be created, updated or deleted based on the incoming state from git. Always click on "review changes" to understand the changes that will be deployed to the workspace.
+
 
 ## Lakehouse in deployment pipelines
 
@@ -89,7 +94,7 @@ Lakehouse deployment pipelines integration capabilities:
 * On the scenario that the same Shortcut needs to target different locations on different stages. For example, in Development point to a specific Folder in Amazon S3, and in Production a different folder in ADLS Gen2. After the deployment, update the OneLake Shortcut definition in Lakehouse or directly using OneLake APIs.
 
 > [!IMPORTANT]
-> A deployment __will override the state of shortcuts in the target workspace__. All the Shortcuts in the target lakehouse will be updated or deleted based on the state in the source lakehouse. New shortcuts will be created in the target lakehouse.
+> A deployment __will override the state of shortcuts in the target workspace__. All the Shortcuts in the target lakehouse will be updated or deleted based on the state in the source lakehouse. New shortcuts will be created in the target lakehouse. Always click on "review changes" to understand the changes that will be deployed between source and target workspaces.
 
 ## Related content
 
