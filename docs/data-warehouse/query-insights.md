@@ -57,7 +57,7 @@ There are three system views to provide answers to these questions:
   - Returns information about each completed SQL request/query.
  
 - [queryinsights.exec_sessions_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-sessions-history-transact-sql?view=fabric&preserve-view=true)
-  - Returns information about past sessions and executed queries.
+  - Returns information about completed sessions.
 
 - [queryinsights.long_running_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
   - Returns the information about queries by query execution time.
