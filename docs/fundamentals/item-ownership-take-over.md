@@ -15,7 +15,7 @@ When a user leaves the organization, or if they don't sign in for more than 90 d
 When a user takes over ownership of an item using this procedure, they also become the owner of any child items the item might have. You can't take over ownership of child items directly - only through the parent item.
 
 > [!NOTE]
-> Items such as semantic models, datasets, reports, datamarts, and dataflows have existing functionality for changing item ownership that remains the same. This article describes the procedure for taking ownership of other Fabric items.
+> Items such as semantic models, reports, datamarts, dataflows gen1 and dataflows gen2 have existing functionality for changing item ownership that remains the same. This article describes the procedure for taking ownership of other Fabric items.
 
 ## Prerequisites
 
