@@ -6,7 +6,7 @@ ms.author: mschaumberg
 ms.topic: how-to
 ms.date: 11/25/2024
 ---
-# **Add custom item settings**
+# Add custom item settings
 Item settings are pieces of information associated with a specific item, including properties that are frequently updated and the resources attached to the item. These settings are displayed to provide necessary item metadata information to users, allowing them to easily read the values of the item settings.
 
 
@@ -116,7 +116,7 @@ export function App({ history, workloadClient }: AppProps) {
 ```
 ## Customize "About" page
 
-:::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of a about custom settings. We can see that the current chosen tab in the settings is the about tab, which marked in black frame. In the right side, we see the loaded tab. On the top, is the default about settings, which include name, description, location, and details. Below the default section, we're loading the custom about section iframe, which is marked in red frame" lightbox="./media/custom-item-settings/example-about.png":::
+:::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of a about custom settings. We can see that the current chosen tab in the settings is the about tab, which marked in black frame. In the right side, we see the loaded tab. On the top, is the default about settings, which include name, description, location, and details. Below the default section, we're loading the custom about section iframe, which is marked in red frame." lightbox="./media/custom-item-settings/example-about.png":::
 
 "Item "About" page supports adding workload specific content using hybrid view (default about settings and the workload custom iframe). To achieve that, you should add another item custom setting.
 ```typescript
