@@ -34,26 +34,28 @@ The feature is in preview and doesn't have a user interface. The migration is pe
 
 Before you migrate, consider the following key points:
 
-| Consideration | Supported | Notes |
-|--|--|--|
-| Single database migration | :x: | The migration is performed on the entire cluster; single database migration isn't supported. |
-| Reversibility | :x: | Once migrated, the process is irreversible, and the source cluster can't be restored. |
-| Migration into existing eventhouse | :x: | The migration process creates a new eventhouse and can't be performed into an existing eventhouse. |
-| Access for users from other tenants | :x: | Users from other tenants who had access to data in the cluster lose access to the data in Eventhouse. |
-| System-assigned managed identities | :x: | System-assigned managed identities can't be migrated. |
-| Cluster Azure RBAC roles | :heavy_check_mark: | Cluster Azure role-based access control (Azure RBAC) roles are migrated and augmented with Eventhouse roles. |
-| Data connections (Event Hubs, IoT Hub, Event Grid) | :x: | Data connections aren't migrated. |
-| Data export operations (mirroring) | :x: | Data export operations aren't migrated. |
-| Follower and leader clusters | :x: | Follower and leader clusters can't be migrated. |
-| Same region requirement | :heavy_check_mark: | The cluster and the eventhouse must be in the same region, meaning that the target Fabric workspace must have the same capacity region as the source cluster. |
-| Cross-region migration | :x: | Cross-region migration isn't supported. |
-| Database pretty names | :x: | Database pretty names aren't migrated. |
-| Customer-managed keys | :x: | Customer-managed keys aren't migrated. |
-| Virtual network injected clusters | :x: | Virtual network injected clusters aren't migrated. |
-| Private Endpoint enabled clusters | :x: | Private Endpoint enabled clusters aren't migrated. |
-| Managed Private Endpoint clusters | :x: | Managed Private Endpoint clusters aren't migrated. |
-| Firewall rules | :x: | Firewall rules aren't migrated. |
-| Python in sandbox | :heavy_check_mark: | When the sandbox is migrated, Python is enabled in the eventhouse. |
+- The migration is performed on the entire cluster; single database migration isn't supported.
+- Once migrated, the process is irreversible, and the source cluster can't be restored.
+- The migration process creates a new eventhouse and can't be performed into an existing eventhouse.
+- Users from other tenants who had access to data in the cluster lose access to the data in Eventhouse.
+- The cluster and the eventhouse must be in the same region, meaning that the target Fabric workspace must have the same capacity region as the source cluster.
+
+| Consideration                                      | Supported          |
+|----------------------------------------------------|--------------------|
+| System-assigned managed identities                 | :x:                |
+| Cluster Azure RBAC roles                           | :heavy_check_mark: |
+| Data connections (Event Hubs, IoT Hub, Event Grid) | :x:                |
+| Data export operations (mirroring)                 | :x:                |
+| Follower and leader clusters                       | :x:                |
+| Same region requirement                            | :heavy_check_mark: |
+| Cross-region migration                             | :x:                |
+| Database pretty names                              | :x:                |
+| Customer-managed keys                              | :x:                |
+| Virtual network injected clusters                  | :x:                |
+| Private Endpoint enabled clusters                  | :x:                |
+| Managed Private Endpoint clusters                  | :x:                |
+| Firewall rules                                     | :x:                |
+| Python in sandbox                                  | :heavy_check_mark: |
 
 <!-- **Migration scope**
 
@@ -64,15 +66,14 @@ Before you migrate, consider the following key points:
 
 **Identity and connections**
 
-- System-assigned managed identities can't be migrated.
+- System-assigned managed identities are not supported and aren't migrated.
 - Cluster Azure role-based access control (Azure RBAC) roles are migrated and augmented with Eventhouse roles.
-- Data connections, such as Event Hubs, IoT Hub, and Event Grid, aren't migrated.
-- Data export operations, such as mirroring, aren't migrated.
+- Data connections aren't migrated. Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must manually re-create the supported data connections in Eventhouse.
+- Data export operations like .export, continous export will not be migrated automatically.
 
 **Compatibility**
 
-- Follower and leader clusters can't be migrated.
-- The cluster and the eventhouse must be in the same region, meaning that the target Fabric workspace must have the same capacity region as the source cluster.
+- Follower and leader relationships must be removed before migration.
 - Cross-region migration isn't supported.
 - Database pretty names, customer-managed keys, virtual network injected clusters, Private Endpoint enabled clusters, Managed Private Endpoint clusters, and firewall rules aren't migrated.
 - When the sandbox is migrated, Python is enabled in the eventhouse. -->

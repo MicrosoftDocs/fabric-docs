@@ -100,7 +100,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventhouses/va
   "StatusCode": "OK",
   "MessageCode": "ClusterValidForMigrationWithWarnings",
   "Message": "Cluster 'PoolName' is valid for Fabric migration, but has warnings.",
-  "CustomParameters": "{\"WarningExample\":\"Cluster is configured with {FeatureExample}. {FeatureExample} is not supported in Fabric.\"}"
+  "CustomParameters": "{\"PrivateEndpointsWarning\": \"Cluster has Private Endpoints. Private Endpoints are not supported in Fabric.\", \"FirewallRulesWarning\": \"Cluster has Firewall rules. Firewall rules are not supported in Fabric.\"}"
 }
 ```
 
