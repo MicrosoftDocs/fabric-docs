@@ -1,5 +1,5 @@
 ---
-title: Add Customized Item Settings
+title: Add customized item settings
 description: Learn about how you can add your own item settings tabs.
 author: matanSchaumberg
 ms.author: mschaumberg
@@ -10,7 +10,7 @@ ms.date: 11/25/2024
 Item settings are pieces of information associated with a specific item, including properties that are frequently updated and the resources attached to the item. These settings are displayed to provide necessary item metadata information to users, allowing them to easily read the values of the item settings.
 
 
-## Item Manifest
+## Item manifest
 
 In order to add custom item settings, you first need to include getItemSettings under itemSettings in the frontend item manifest:
 ```json
