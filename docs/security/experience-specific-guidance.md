@@ -278,7 +278,7 @@ CopyJob users must undertake proactive measures to protect against a regional di
 
 The best way to make this process easy and quick is to use Fabric Git integration, then synchronize your CopyJob with your ADO repo. After the service fails over to another region, you can use the repository to rebuild the CopyJob in the new workspace you created.
 
-1. Setup Git integration and select **connect and sync** with ADO repo.
+1. Configure your workspace's Git Integration and select **connect and sync** with ADO repo.
 
     :::image type="content" source="./media/experience-specific-guidance/copyjob-connect-sync-ado-repo.png" alt-text="Screenshot showing how to connect and sync Workspace with ADO repo.":::
 
