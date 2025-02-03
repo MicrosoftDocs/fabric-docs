@@ -67,18 +67,16 @@
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
     items:
-    - name: Connector Continuity between ADF and Data Factory in Fabric
-      href: connector-parity.md
     - name: Migration paths from ADF and Power BI
       href: upgrade-paths.md    
     - name: Pipelines
       items:
       - name: Planning your migration from ADF
         href: migrate-planning-azure-data-factory.md
+      - name: Connector Continuity between ADF and Data Factory in Fabric
+        href: connector-parity.md        
       - name: Migrate from ADF 
         href: migrate-from-azure-data-factory.md      
-      - name: How to ingest data from ADF to Fabric
-        href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
       - name: Activity Continuity between ADF and Data Factory in Fabric
         href: activity-parity.md
     - name: Dataflows
@@ -103,6 +101,8 @@
         href: tutorial-end-to-end-integration.md
     - name: SAP CDC to Fabric OneLake using ADF
       href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
+    - name: How to ingest data from ADF to Fabric
+      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md      
   - name: Connectors
     items:
     - name: Connector overview
