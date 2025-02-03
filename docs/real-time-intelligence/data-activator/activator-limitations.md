@@ -122,6 +122,15 @@ Your organization might have up to 250 [!INCLUDE [fabric-activator](../includes/
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
 
+## Application Life Cycle limitations
+
+The following components are currently not supported in Activator ALM:
+* Eventstream  (rolling out)
+* Real Time Hub Fabric Events (roling out)
+* Real-Time Hub Azure Storage events - not supported
+* Data Piplelies (as target action) 
+* Power BI
+
 ## Related content
 
 * [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
