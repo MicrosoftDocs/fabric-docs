@@ -130,7 +130,7 @@ To see how the variable library is [represented in Git](./variable-library-cicd.
 
 1. [Connect the workspace to a Git repository](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
 1. From the workspace, select **Source control** and [connect](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo) the workspace to a Git repository.
-1. From the [Source control](../git-integration/git-get-started.md#commit-to-git) pane, select **Commit** to push the workspace content to the Git repository.
+1. From the [Source control](../git-integration/git-get-started.md#commit-changes-to-git) pane, select **Commit** to push the workspace content to the Git repository.
 
 The git repo has a folder for each item in the workspace. The Variable library item is represented by a folder called *WS variables.VariableLibrary*. For more information about the contents of this folder, see [Variable libraries in Git](./variable-library-cicd.md).
 
