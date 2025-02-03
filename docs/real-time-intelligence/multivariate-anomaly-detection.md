@@ -52,6 +52,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
     :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of the Environment tile in New item window." lightbox="media/multivariate-anomaly-detection/create-environment.png":::
 
 1. Enter the name *MVAD_ENV* for the environment and then select **Create**.
+1. From the **Home** tab of the environment, select **Runtime** > *1.2 (Spark 3.4, Delta 2.4)*.
 1. Under **Libraries**, select **Public libraries**.
 1. Select **Add from PyPI**.
 1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.3.2.
