@@ -64,7 +64,7 @@ The following capabilities are available:
 > Use caution when changing OneLake Shortcut properties directly in the ```shortcuts.metadata.json``` file. Incorrect changes to the properties, specially GUIDs, can render the OneLake Shortcut invalid when updates are applied back to the workspace.
 
 > [!IMPORTANT]
-> An update from git __will override the state of shortcuts in the workspace__. All the Shortcuts in the workspace will be created, updated or deleted based on the incoming state from git. Always click on "review changes" to understand the changes that will be deployed to the workspace.
+> An update from git __will override the state of shortcuts in the workspace__. All the Shortcuts in the workspace will be created, updated or deleted based on the incoming state from git.
 
 
 ## Lakehouse in deployment pipelines
