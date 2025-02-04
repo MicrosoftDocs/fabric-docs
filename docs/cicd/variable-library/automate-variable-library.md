@@ -25,6 +25,8 @@ The following REST APIs are available for Variable library items:
 * **Update** Variable library definition
 * **Read**/**Update** the Variable library item *active value-set*
 
+For a complete list of APIs, see the [Variable library REST APIs reference](https://review.learn.microsoft.com/fabric/cicd/variable-library-apis?branch=pr-en-us-6898).
+
 ## Read the Variable library item information
 
 * To view the item's schema, use the *Get item definition* API call. This call returns:
