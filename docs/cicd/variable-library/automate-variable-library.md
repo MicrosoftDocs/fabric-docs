@@ -17,15 +17,12 @@ If you're using the APIs as part of your lifecycle management, permissions for i
 
 The following REST APIs are available for Variable library items:
 
-* Create Variable library
-* Delete Variable library
-* Get Variable library
-* Get Variable library definition
-* Update
-* Update Variable library definition
-
-
-* **Read**/**Update** the Variable library item *schema*
+* **Create** Variable library
+* **Delete** Variable library
+* **Get** Variable library
+* **Get** Variable library definition
+* **Update**
+* **Update** Variable library definition
 * **Read**/**Update** the Variable library item *active value-set*
 
 ## Read the Variable library item information
@@ -65,9 +62,6 @@ The Variable library item schema is a JSON object that contains two parts:
   * type
   * defaultValue
   * note (if any)
-* **Value-sets** – A set of values for the variables. A value set consists of:
-  * name
-  * value
 
 ```json
 "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/1.0.0/schema.json",
@@ -87,6 +81,10 @@ The Variable library item schema is a JSON object that contains two parts:
   ],
 }
 ```
+
+* **Value-sets** – A set of values for the variables. A value set consists of:
+  * name
+  * value
 
 ```json
 "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/1.0.0/schema.json",
