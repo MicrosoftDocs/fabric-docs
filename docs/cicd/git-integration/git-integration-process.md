@@ -112,14 +112,16 @@ If you don’t select which content to sync, you can’t continue to work.
 
 ### Folders
 
-When connected and synched, the workspace structure is mirrored in the Git repository, including folders and subfolders. Workspace items in folders are exported to folders with the same name in the Git directory. Conversely, items in Git folders are imported to folders with the same name in the workspace.
+When connected and synced, the workspace structure is mirrored in the Git repository, including folders structure. Workspace items in folders are exported to folders with the same name in the Git repo. Conversely, items in Git folders are imported to folders with the same name in the workspace.
 
-Empty folders aren't copied to Git. When you create or move items to the folder, the folder is created in Git.
+Empty folders aren't copied to Git. When you create or move items to a folder, the folder is created in Git.
 
 :::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
 
 > [!NOTE]
 > Now that the folder structure is maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update the workspace first, the subfolders are deleted.
+
+Folder structure is maintained up to 10 levels deep.
 
 ### Connect to a shared workspace
 
@@ -190,7 +192,7 @@ The Refresh button :::image type="icon" source="./media/git-integration-process/
 
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
-Changes to an item's folder (for example, moving an item to a different folder) appear as changes to the item that require an update or commit.
+Changes to an item's folder (for example, moving an item to a different folder) appear as changes to the item that requires an update or commit.
 
 #### Commit
 
