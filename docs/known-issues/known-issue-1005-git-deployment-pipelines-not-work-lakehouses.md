@@ -4,7 +4,7 @@ description: A known issue is posted where Git operations and deployment pipelin
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/22/2025
+ms.date: 02/04/2025
 ms.custom: known-issue-1005
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1005
 
 You can't use Git operations or deployment pipelines that require lakehouse items.
 
-**Status:** Open
+**Status:** Fixed: February 4, 2025
 
 **Product Experience:** Data Engineering
 
