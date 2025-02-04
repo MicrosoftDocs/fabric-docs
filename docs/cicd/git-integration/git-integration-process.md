@@ -119,7 +119,7 @@ Empty folders aren't copied to Git. When you create or move items to a folder, t
 :::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
 
 > [!NOTE]
-> Now that the folder structure is maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update the workspace first, the subfolders are deleted.
+> Now that the folder structure is maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace.
 
 Folder structure is maintained up to 10 levels deep.
 
