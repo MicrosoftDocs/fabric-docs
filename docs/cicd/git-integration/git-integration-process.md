@@ -46,8 +46,8 @@ The following table describes the permissions needed in the Fabric workspace to 
 | Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     |
 | View Git connection details                                          | Admin, Member, Contributor                                                                |
 | See workspace 'Git status'                                           | Admin, Member, Contributor                                                                |
-| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
-| Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
+| Update from Git                                                      | All of the following permissions:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
+| Commit workspace changes to Git                                      | All of the following permissions:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
 | Create new Git branch from within Fabric                             | Admin                                                                                     |
 | Branch out to a new workspace                                            | Admin, Member, Contributor                                                                |
 
@@ -119,7 +119,7 @@ Empty folders aren't copied to Git. When you create or move items to a folder, t
 :::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
 
 > [!NOTE]
-> Now that the folder structure is maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update the workspace first, the subfolders are deleted.
+> Now that the folder structure is maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update the workspace first, the subfolders are deleted.
 
 Folder structure is maintained up to 10 levels deep.
 
@@ -221,12 +221,12 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Related branches**.  
    The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.  
-   This allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
-   Click on an item in the list to open the relevant workspace.
+   This tab allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
+   Select an item in the list to open the relevant workspace.
 
   :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
 
-See [Branching out limitations](#branching-out-limitations) for more information.
+For more information, see [Branching out limitations](#branching-out-limitations).
 
 ### Account details
 
