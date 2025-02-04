@@ -146,7 +146,7 @@ This section lists the report's considerations and limitations.
 
 * The report retains information for 30 days, including deleted capacities, workspaces, and other items.
 
-* Workspaces with extended retention periods don't appear in the report after 30 days, but can be seen in the admin portal workspaces menu until they're permanently deleted.
+* Deleted workspaces with extended retention don't appear in the report after 30 days. They can be seen in the admin portal until they're permanently deleted.
 
 * Inventory created and deleted within a 24 hour period may have incomplete information.
 
