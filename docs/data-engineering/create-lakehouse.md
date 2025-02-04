@@ -18,19 +18,19 @@ ms.search.form: Create lakehouse
 
 In this tutorial, you learn different ways to create a Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Create a lakehouse
+## Prerequisites
 
-The lakehouse creation process is quick and simple; there are several ways to get started.
+To create a lakehouse, you need access to a [Fabric enabled workspace](../admin/fabric-switch.md). Fabric admins can enable trial or paid capacity for a tenant or users.
 
 ### Ways to create a lakehouse
 
-There are a few ways you can get started with the creation process:
+The lakehouse creation process is quick and simple; there are several ways to get started.
 
 1. **Data Engineering** homepage
 
    - You can easily create a lakehouse through the **Lakehouse** card under the **New** section in the homepage.
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse card." lightbox="media\create-lakehouse\lakehouse-card.png":::
+   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse item under Data Engineering." lightbox="media\create-lakehouse\lakehouse-card.png":::
 
 1. **Workspace** view
 
