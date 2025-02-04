@@ -148,7 +148,7 @@ This section lists the report's considerations and limitations.
 
 * Deleted workspaces with extended retention don't appear in the report after 30 days. They can be seen in the admin portal until they're permanently deleted.
 
-* Inventory created and deleted within a 24 hour period may have incomplete information.
+* Items created and deleted within a 24 hour period may have incomplete information.
 
 * Reports and dashboards embedded in apps appear twice. Use the _Item ID_ value to differentiate.
 
