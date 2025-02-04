@@ -20,7 +20,7 @@ In this tutorial, you learn different ways to create a Lakehouse in [!INCLUDE [p
 
 ## Prerequisites
 
-To create a lakehouse, you need access to a [Fabric enabled workspace](../admin/fabric-switch.md). Fabric admins can enable trial or paid capacity for a tenant or users.
+To create a lakehouse, you need access to a [Fabric enabled workspace](../admin/fabric-switch.md). Fabric admins can enable trial or paid capacity for a tenant or users. If Fabric isn't enabled, you won't see the lakehouse card.
 
 ### Ways to create a lakehouse
 
