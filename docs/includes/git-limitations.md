@@ -49,6 +49,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Maximum length of branch name is 244 characters.
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
+- Folder structure is maintained up to 10 levels deep.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
