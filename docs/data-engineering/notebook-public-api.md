@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 01/28/2025
 ms.search.form: Notebook REST API ci cd
 ---
 
@@ -18,9 +18,6 @@ ms.search.form: Notebook REST API ci cd
 The Microsoft Fabric REST API provides a service endpoint for the create, read, update, and delete (CRUD) operations of a Fabric item. This article describes the available notebook REST APIs and their usage.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
-> [!NOTE]
-> [Service principal authentication](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is available for Notebook CRUD API. It's not supported for run notebook API for now.
 
 With the notebook APIs, data engineers and data scientists can automate their own pipelines and conveniently and efficiently establish CI/CD. These APIs also make it easy for users to manage and manipulate Fabric notebook items, and integrate notebooks with other tools and systems.
 
@@ -47,6 +44,9 @@ The following **Job scheduler** actions are available for notebooks:
 |Get Item Job Instance| Get notebook run status.|
 
 For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
+
+> [!NOTE]
+> Service principal authentication is available for Notebook CRUD API and Job scheduler API, meaning you can use service principal to do the CRUD operations and trigger/cancel notebook runs, and get the run status. You need to add the service principal to the workspace with the appropriate role.
 
 ## Notebook REST API usage examples
 

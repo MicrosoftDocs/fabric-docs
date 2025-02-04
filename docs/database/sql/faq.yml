@@ -8,7 +8,7 @@ metadata:
   ms.topic: faq
   ms.custom:
     - ignite-2024
-  ms.date: 12/11/2024
+  ms.date: 01/31/2025
 title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -79,13 +79,21 @@ sections:
           Is data staged outside of a customer environment? 
         answer: 
           No. Data isn't staged outside of customer environment, it's staged in the customer's OneLake.
+      - question: | 
+          Is Private Link available for SQL database in Fabric?
+        answer:
+          Yes. Private Links are available at the tenant level. For more information, see [Private links](../../security/security-private-links-overview.md).
 
   - name: Cost management 
     questions:
       - question: |
           What are the costs associated with SQL database in Fabric?
         answer: 
-          During preview, there's no cost for SQL database in Fabric.
+          After February 1, 2025, compute and data storage are charged to your Fabric capacity. Additionally, backup billing will start after April 1, 2025.
+      - question: |
+          How do I monitor SQL database in Fabric consumption?
+        answer: 
+          For more information on consumption of your [Fabric Capacity](../../enterprise/licenses.md), see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
 
   - name: Monitoring
     questions: 
@@ -105,11 +113,6 @@ sections:
     questions:
 
       - question: |
-          Is SQL database in Fabric currently free, and if so, for how long?
-        answer:
-          SQL database in Fabric completely is free until February 1, 2025. After this date, compute and data storage charges begin. Backup billing starts on March 1, 2025.
-
-      - question: |
           What are licensing options for SQL database in Fabric? 
         answer:
           A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
@@ -124,9 +127,13 @@ sections:
       - question: |
           Where is SQL database in Fabric available?
         answer:
-          SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](../../admin/region-availability.md).
+          See [Fabric availability](../../admin/region-availability.md#all-workloads).
 
           Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
+      - question: |
+          My capacity is in a supported region but I still do not see the option to enable SQL database. What should I do?
+        answer:
+          SQL database in Fabric must be available in the home region of the tenant as well as the capacity region. Check the home region of your tenant to ensure SQL database in Fabric is available in that region. For more information, see [Fabric availability](../../admin/region-availability.md).
 
   - name: Troubleshooting
     questions:

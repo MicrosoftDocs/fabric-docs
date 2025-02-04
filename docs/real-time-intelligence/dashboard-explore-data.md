@@ -20,7 +20,7 @@ This exploration can provide additional insights into your data, enhancing your 
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A dashboard with visuals. For more information, see [Create a Real-Time Dashboard](dashboard-real-time-create.md)
 
 ## Start your data exploration

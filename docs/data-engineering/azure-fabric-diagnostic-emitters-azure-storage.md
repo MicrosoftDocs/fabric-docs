@@ -32,8 +32,8 @@ To collect diagnostic logs and metrics, you can use an existing Azure Storage ac
    spark.synapse.diagnostic.emitter.MyStorageBlob.type: "AzureStorage"
    spark.synapse.diagnostic.emitter.MyStorageBlob.categories: "DriverLog,ExecutorLog,EventLog,Metrics"
    spark.synapse.diagnostic.emitter.MyStorageBlob.uri:  "https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>"
-   spark.synapse.diagnostic.emitter.MyDestination1.auth: "AccessKey"
-   spark.synapse.diagnostic.emitter.MyDestination1.secret: <storage-access-key>
+   spark.synapse.diagnostic.emitter.MyStorageBlob.auth: "AccessKey"
+   spark.synapse.diagnostic.emitter.MyStorageBlob.secret: <storage-access-key>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
@@ -90,7 +90,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 > [!NOTE]
 >
-> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../get-started/workspaces.md).
+> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 ### Step 4: View the logs files in Azure storage account
 

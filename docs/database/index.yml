@@ -36,7 +36,7 @@ landingContent:
           - text: "Decision guide: Which SQL database?"
             url: sql/decision-guide.md
           - text: "Decision guide: Which data store?"
-            url: ../get-started/decision-guide-data-store.md
+            url: ../fundamentals/decision-guide-data-store.md
   # Card 
   - title: Get started with SQL database
     linkLists:

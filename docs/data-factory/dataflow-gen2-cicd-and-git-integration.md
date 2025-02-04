@@ -14,8 +14,8 @@ ms.date: 11/26/2024
 
 Dataflow Gen2 now supports Continuous Integration/Continuous Deployment (CI/CD) and Git integration. This feature allows you to create, edit, and manage dataflows in a Git repository that's connected to your fabric workspace. Additionally, you can use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces. This article goes deeper into how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
 
-   > [!Note]
-   > The release of CI/CD and Git integration support has been rescheduled to January to ensure the quality of the release and ensure that there is no impact to existing operations. We apologize for any inconvenience and appreciate your understanding.
+   > [!IMPORTANT]
+   > Git integration and deployment pipeline (CI/CD) for Dataflows Gen2 in Data Factory for Microsoft Fabric are currently in public preview. This information relates to a pre-release product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## New features
 
@@ -30,7 +30,7 @@ With Dataflow Gen2 (CI/CD preview), you can now:
 
 To get started, you must complete the following prerequisites:
 
-- Have a Microsoft Fabric tenant account with an active subscription. Create an account for [free](/fabric/get-started/fabric-trial).
+- Have a Microsoft Fabric tenant account with an active subscription. Create an account for [free](../fundamentals/fabric-trial.md).
 - Make sure you have a Microsoft Fabric enabled workspace.
 - To enjoy Git integration, make sure it's enabled for your workspace. To learn more about enabling Git integration, go to [Get started with Git integration](/fabric/cicd/git-integration/git-get-started).
 

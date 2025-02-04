@@ -42,7 +42,7 @@ To restore a database using a point-in-time restore capability, you must have on
 - Contributor
 - Member
 
-For more information, see [Microsoft Fabric roles](../../get-started/roles-workspaces.md).
+For more information, see [Microsoft Fabric roles](../../fundamentals/roles-workspaces.md).
 
 ### How to restore a SQL database in Microsoft Fabric
 

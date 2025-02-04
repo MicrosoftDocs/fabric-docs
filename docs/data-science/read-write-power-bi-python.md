@@ -29,14 +29,14 @@ In this article, you learn how to read data and metadata and evaluate measures i
 
 This article uses the _Customer Profitability Sample.pbix_ semantic model. This semantic model references a company manufacturing marketing materials. It contains product, customer, and corresponding revenue data for various business units.
 
-1. Open your [workspace](../get-started/workspaces.md) in Fabric Data Science
+1. Open your [workspace](../fundamentals/workspaces.md) in Fabric Data Science
 1. Select **Upload > Browse**, and select the _Customer Profitability Sample.pbix_ semantic model.
 
-:::image type="content" source="media/read-write-power-bi/upload-power-bi-data-to workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi/upload-power-bi-data-to workspace.png":::
+:::image type="content" source="media/read-write-power-bi-python/upload-power-bi-data-to-workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi-python/upload-power-bi-data-to-workspace.png":::
 
 When the upload is complete, your workspace has three new artifacts: a Power BI report, a dashboard, and a semantic model named _Customer Profitability Sample_. The steps in this article rely on that semantic model.
 
-:::image type="content" source="media/read-write-power-bi/uploaded-artifacts-in-workspace.png" alt-text="Screenshot showing the items from the Power BI file uploaded into the workspace." lightbox="media/read-write-power-bi/uploaded-artifacts-in-workspace.png":::
+:::image type="content" source="media/read-write-power-bi-python/uploaded-artifacts-in-workspace.png" alt-text="Screenshot showing the items from the Power BI file uploaded into the workspace." lightbox="media/read-write-power-bi-python/uploaded-artifacts-in-workspace.png":::
 
 ## Use Python to read data from semantic models
 

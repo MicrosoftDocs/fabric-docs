@@ -80,7 +80,7 @@ import pandas as pd
  
 # Read a Parquet file from your Lakehouse into a Pandas DataFrame
 # Replace LAKEHOUSE_PATH and FILENAME with your own values
-df = pandas.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
+df = pd.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
 display(df)
 ```
 
