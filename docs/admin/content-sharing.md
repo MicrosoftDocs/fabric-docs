@@ -110,7 +110,7 @@ The following measures are used in visuals throughout the *content sharing* repo
 
 Measure calculations consider filter context, so measure values change as you apply filters or interact with other visuals.
 
-Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include sharing links if created for a specific persons or group.
+Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include service principals and sharing links for a specific persons or group.
 
 | Measure name    | Description |
 | -------- | ------- |
@@ -118,13 +118,13 @@ Access counts include access to an item through _Manage permissions_, or access 
 | Total domains | The number of domains across the entire tenant.     |
 | Total capacities    | The number of capacities across the entire tenant.    |
 | Total workspaces  | The number of workspaces across the entire tenant.    |
-| User access count | The number of individual users with access to an item.    |
-| Group access count    | The number of group members with access to an item.   |
-| Total access count    | The number of individual users and group members with access to an item.   |
+| User access count | The number of individual users and service principals with access to an item.    |
+| Group access count    | The number of group members and service principals with access to an item.   |
+| Total access count    | The number of individual users, service principals, and group members with access to an item.   |
 
-Group owners aren't included in *group access counts*, but service principals are. Group access counts are calculated by flattening membership of all nested groups, so users aren't double counted if they're members of multiple groups in a nest.
+Group owners aren't included in *group access counts*. Group access counts are calculated by flattening membership of all nested groups, so users aren't double counted if they're members of multiple groups in a nest. *Group access counts* also include +1 for each nested group in a nest.
 
-*Access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items.
+*Access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items, not the container itself.
 
 *Total access counts* include both individual access to an item and access through a group, so users are double counted if they have access to an item in both scenarios.
 
@@ -146,7 +146,7 @@ This section lists the report's considerations and limitations.
 
 * The report retains information for 30 days, including deleted capacities, workspaces, and other items.
 
-* Workspaces with retention periods longer than 30 days don't appear in the report, but can be seen in the admin portal workspaces menu.
+* Workspaces with extended retention periods don't appear in the report after 30 days, but can be seen in the admin portal workspaces menu until they're permanently deleted.
 
 * Inventory created and deleted within a 24 hour period may have incomplete information.
 
