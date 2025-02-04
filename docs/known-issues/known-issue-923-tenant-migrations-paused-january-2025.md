@@ -1,16 +1,16 @@
 ---
-title: Known issue - Tenant migrations paused through January 2025
-description: A known issue is posted where tenant migrations paused through January 2025.
+title: Known issue - Tenant migrations paused through February 2025
+description: A known issue is posted where tenant migrations paused through February 2025.
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/15/2025
+ms.date: 02/04/2025
 ms.custom: known-issue-923
 ---
 
-# Known issue - Tenant migrations paused through January 2025
+# Known issue - Tenant migrations paused through February 2025
 
-Cross-region tenant migrations are paused through January 31, 2025. New and existing requests aren't processed during this time period.
+Cross-region tenant migrations are paused through February 28, 2025. New and existing requests aren't processed during this time period.
 
 **Status:** Open
 
@@ -18,7 +18,7 @@ Cross-region tenant migrations are paused through January 31, 2025. New and exis
 
 ## Symptoms
 
-New and existing cross-region tenant migration requests aren't processed through January 31, 2025.
+New and existing cross-region tenant migration requests aren't processed through February 28, 2025.
 
 ## Solutions and workarounds
 
