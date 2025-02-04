@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2024
-ms.date: 11/11/2024
+ms.date: 02/03/2025
 ms.search.form: delta lake v-order optimization
 ---
 
@@ -25,7 +25,7 @@ Power BI and SQL engines make use of Microsoft Verti-Scan technology and V-Order
 
 V-Order works by applying special sorting, row group distribution, dictionary encoding and compression on parquet files, thus requiring less network, disk, and CPU resources in compute engines to read it, providing cost efficiency and performance. V-Order sorting has a 15% impact on average write times but provides up to 50% more compression.
 
-It's __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used on control V-Order on its partitions.
+It's __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used to control the V-Order of its partitions.
 
 V-Order is applied at the parquet file level. Delta tables and its features, such as Z-Order, compaction, vacuum, time travel, etc. are orthogonal to V-Order, as such, are compatible and can be used together for extra benefits.
 

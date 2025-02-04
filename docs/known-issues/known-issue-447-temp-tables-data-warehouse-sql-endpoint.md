@@ -4,7 +4,7 @@ description: A known issue is posted where Temp tables in Data Warehouse and SQL
 author: kfollis
 ms.author: anirmale
 ms.topic: troubleshooting
-ms.date: 01/06/2025
+ms.date: 01/27/2025
 ms.custom:
   - known-issue-447
   - ignite-2023
