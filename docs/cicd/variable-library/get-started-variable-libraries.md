@@ -100,7 +100,7 @@ To edit a value set, select the three dots next to the name of the value set.
 
 You have the following options:
 
-* Set as active value set for that stage
+* Set as active value set for this workspace
 * Rename the value set
 * Delete the value set
 
