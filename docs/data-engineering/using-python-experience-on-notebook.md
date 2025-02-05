@@ -215,30 +215,18 @@ FILE
 
 ```python
 conn = notebookutils.data.connect_to_artifact("lakehouse_name_or_id", "optional_workspace_id", "optional_lakehouse_type")
-
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM sys.schemas;")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 #### Query data from Warehouse
 
 ```python
 conn = notebookutils.data.connect_to_artifact("warehouse_name_or_id", "optional_workspace_id", "optional_warehouse_type")
-
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM sys.schemas;")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 > [!NOTE]
->
-> - The Data utilities in NotebookUtils is only available on Python notebook for now.
-> - Known limitation: For `connect_to_artifact` API, the returned `conn` object internally initializes a PBI token to authenticate the user when connecting to the data source. However, it does not support token refresh. Currently the PBI token is valid for only one hour, any query exceeding one hour will fail due to token expiration issue.
+> The Data utilities in NotebookUtils is only available on Python notebook for now.
 
 ## Browse code snippets
 
