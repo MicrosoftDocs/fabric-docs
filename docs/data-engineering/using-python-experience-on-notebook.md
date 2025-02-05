@@ -17,15 +17,15 @@ ms.date: 11/25/2024
  > [!NOTE]
  > Currently, the feature is in preview.
 
-The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
+The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
 
 With a Python notebook, you can get:
 
 - **Multiple built-in python kernels**: Python notebooks offer a pure Python coding environment without Spark, with two versions of Python kernel - Python 3.10 and 3.11 available by default, and the native ipython features supported such as iPyWidget, magic commands.
 
-- **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This ensures efficient resource utilization for data exploration projects with smaller data size.
+- **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This setup ensures efficient resource utilization for data exploration projects with smaller data size.
 
-- **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
+- **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This feature enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
 
 - **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL endpoints in explorer, by using notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
 
@@ -154,7 +154,7 @@ You can use ```notebookutils.help()``` to list available APIs and also get help 
 
 > [!NOTE]
 > - Currently, the feature is in preview.
-> - The API contract may change in the near future.
+> - The API contract may change soon.
 
 You can use `notebookutils.data` utilities to establish a connection with provided data source and then read and query data using T-SQL statement.
 
@@ -267,7 +267,7 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
 ## Public preview known limitations
 
-- Live pool experience is not guaranteed for every python notebook run. The session start time may up to 3 mins if the notebook run does not hit live pool, while the python notebook usage is growing, out intelligent pooling methods will gradually increase the live pool allocation to meet the demand.
+- Live pool experience is not guaranteed for every python notebook run. The session start time may take up to 3 minutes if the notebook run does not hit the live pool. As Python notebook usage grows, our intelligent pooling methods gradually increase the live pool allocation to meet the demand.
 
 - Environment integration is not available on Python notebook by public preview.
 
@@ -275,7 +275,7 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
 - Copilot may generate Spark statement, which may not executable in Python notebook.
 
-- Currently, Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing, please stay tuned as we continue to roll out support in more regions.
+- Currently, Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing stay tuned as we continue to roll out support in more regions.
 
 ## Related content
 
