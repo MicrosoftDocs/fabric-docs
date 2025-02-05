@@ -8,6 +8,7 @@ ms.date: 11/07/2024
 ms.topic: tutorial
 ms.custom:
   - ignite-2024
+ms.search.form: SQL database – Tutorial
 ---
 
 # SQL database in Fabric tutorial introduction

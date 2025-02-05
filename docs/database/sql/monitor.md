@@ -8,6 +8,7 @@ ms.date: 01/22/2025
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
+ms.search.form: SQL database - Monitor
 ---
 # Monitor SQL database in Microsoft Fabric
 

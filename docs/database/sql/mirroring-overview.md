@@ -8,6 +8,7 @@ ms.date: 01/16/2025
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
+ms.search.form: SQL database - Mirroring Overview
 ---
 # Mirroring Fabric SQL database in Microsoft Fabric (preview)
 

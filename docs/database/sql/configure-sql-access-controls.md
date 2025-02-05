@@ -8,6 +8,7 @@ ms.date: 10/11/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2024
+ms.search.form: SQL database - Manage SQL Security
 ---
 
 # Configure granular access control for a SQL database

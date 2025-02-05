@@ -8,7 +8,7 @@ ms.date: 01/16/2025
 ms.topic: how-to
 ms.custom:
   - ignite-2024
-ms.search.form: product-databases
+ms.search.form: product-databases, SQL database – Create a SQL database
 ---
 # Create a SQL database in the Fabric portal
 

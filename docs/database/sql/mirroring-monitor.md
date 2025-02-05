@@ -8,6 +8,7 @@ ms.date: 11/06/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
+ms.search.form: SQL database - Monitor Replication
 ---
 # Monitor Fabric mirrored Fabric SQL database replication
 

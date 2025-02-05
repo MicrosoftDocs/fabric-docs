@@ -8,6 +8,7 @@ ms.date: 11/01/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2024
+ms.search.form: SQL database - Create a Table
 ---
 # Create a table in SQL database in Fabric
 

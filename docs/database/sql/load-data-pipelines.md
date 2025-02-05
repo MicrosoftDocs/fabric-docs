@@ -8,7 +8,7 @@ ms.date: 01/02/2025
 ms.topic: how-to
 ms.custom:
   - ignite-2024
-ms.search.form:
+ms.search.form: SQL database - Load Data with Data Pipelines
 ---
 # Load data with data pipelines into SQL database in Microsoft Fabric
 

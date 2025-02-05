@@ -8,6 +8,7 @@ ms.date: 11/06/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2024
+ms.search.form: SQL database - Load Data with Dataflow
 ---
 # Load data with Dataflow Gen2 into SQL database in Microsoft Fabric
 
