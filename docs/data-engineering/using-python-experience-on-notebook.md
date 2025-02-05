@@ -153,8 +153,7 @@ You can use ```notebookutils.help()``` to list available APIs and also get help 
 ### Data utilities
 
 > [!NOTE]
-> - Currently, the feature is in preview.
-> - The API contract may change soon.
+> Currently, the feature is in preview.
 
 You can use `notebookutils.data` utilities to establish a connection with provided data source and then read and query data using T-SQL statement.
 
