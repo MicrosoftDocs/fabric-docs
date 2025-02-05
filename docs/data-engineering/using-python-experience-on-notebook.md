@@ -173,7 +173,7 @@ NAME
     notebookutils.data - Utility for read/query data from connected data sources in Fabric
 
 FUNCTIONS
-    connect_to_artifact(artifact: str, workspace: str = '', artifact_type: str = None) -> pyodbc.Connection
+    connect_to_artifact(artifact: str, workspace: str = '', artifact_type: str = '', **kwargs)
         Establishes and returns an ODBC connection to a specified artifact within a workspace 
         for subsequent data queries using T-SQL.
         
@@ -182,6 +182,8 @@ FUNCTIONS
                              use the workspace where the current notebook is located.
         :param artifactType: Optional; The type of the artifact, Currently supported type are Lakehouse, Warehouse and MirroredDatabase. 
                                 If not provided, the method will try to determine the type automatically.
+        :param **kwargs Optional: Additional optional configuration. Supported keys include:
+            - tds_endpoint : Allow user to specify a custom TDS endpoint to use for connection.
         :return: A connection object to the specified artifact.
         
         :raises UnsupportedArtifactException: If the specified artifact type is not supported to connect.
@@ -190,13 +192,10 @@ FUNCTIONS
         Examples:
             sql_query = "SELECT DB_NAME()"
             with notebookutils.data.connect_to_artifact("ARTIFACT_NAME_OR_ID", "WORKSPACE_ID", "ARTIFACT_TYPE") as conn:
-                cursor = conn.cursor()
-                cursor.execute(sql_query)
-                rows = cursor.fetchall()
-                for row in rows:
-                    print(row)
+                df = conn.query(sql_query)
+                display(df)
     
-    help(method_name=None)
+    help(method_name: str = '') -> None
         Provides help for the notebookutils.data module or the specified method.
         
         Examples:
@@ -208,7 +207,7 @@ DATA
     __all__ = ['help', 'connect_to_artifact']
 
 FILE
-    /home/trusted-service-user/jupyter-env/python3.11/lib/python3.11/site-packages/notebookutils/data.py
+    /home/trusted-service-user/jupyter-env/python3.10/lib/python3.10/site-packages/notebookutils/data.py
 ```
 
 #### Query data from Lakehouse
