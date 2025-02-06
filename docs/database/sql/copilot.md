@@ -8,6 +8,7 @@ ms.date: 01/16/2025
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
+ms.collection: ce-skilling-ai-copilot
 ---
 # Copilot for SQL database in Microsoft Fabric (preview)
 
