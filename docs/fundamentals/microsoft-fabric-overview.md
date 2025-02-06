@@ -20,17 +20,15 @@ ms.date: 01/22/2025
 
 # What is Microsoft Fabric?
 
+Microsoft Fabric is an enterprise-ready, end-to-end analytics platform. It unifies data movement, data processing, ingestion, transformation, real-time event routing, and report building. It supports these capabilities with integrated services like Data Engineering, Data Factory, Data Science, Real-Time Analytics, Data Warehouse, and Databases.
+
+Fabric provides a seamless, user-friendly SaaS experience. It integrates separate components into a cohesive stack. It centralizes data storage with OneLake and embeds AI capabilities, eliminating the need for manual integration. With Fabric, you can efficiently transform raw data into actionable insights.
+
 [!INCLUDE [new user recruitment](../includes/fabric-new-user-research.md)]
-
-Microsoft Fabric is an end-to-end analytics and data platform designed for enterprises that require a unified solution. It encompasses data movement, processing, ingestion, transformation, real-time event routing, and report building. It offers a comprehensive suite of services including Data Engineering, Data Factory, Data Science, Real-Time Analytics, Data Warehouse, and Databases.
-
-With Fabric, you don't need to assemble different services from multiple vendors. Instead, it offers a seamlessly integrated, user-friendly platform that simplifies your analytics requirements. Operating on a Software as a Service (SaaS) model, Fabric brings simplicity and integration to your solutions.
-
-Microsoft Fabric integrates separate components into a cohesive stack. Instead of relying on different databases or data warehouses, you can centralize data storage with OneLake. AI capabilities are seamlessly embedded within Fabric, eliminating the need for manual integration. With Fabric, you can easily transition your raw data into actionable insights for business users.
 
 ## Capabilities of Fabric
 
-Microsoft Fabric offers a wide range of capabilities designed to enhance productivity, data management, and AI integration. Here are some of the key capabilities:
+Microsoft Fabric enhances productivity, data management, and AI integration. Here are some of its key capabilities:
 
 * **Role-specific workloads:** Customized solutions for various roles within an organization, providing each user with the necessary tools.
 * **OneLake:** A unified data lake that simplifies data management and access.
@@ -41,21 +39,20 @@ Microsoft Fabric offers a wide range of capabilities designed to enhance product
 
 ## Unification with SaaS foundation
 
-Microsoft Fabric is built on a Software as a Service (SaaS) foundation. It unifies new and existing components from Power BI, Azure Synapse Analytics, Azure Data Factory, and more into a single environment, tailored for customized user experiences.
+Microsoft Fabric is built on a Software as a Service (SaaS) platform. It unifies new and existing components from Power BI, Azure Synapse Analytics, Azure Data Factory, and more into a single environment.
 
 :::image type="content" source="media\microsoft-fabric-overview\fabric-architecture.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric." lightbox="media\microsoft-fabric-overview\fabric-architecture.png":::
 
-Fabric integrates workloads like Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Industry solutions, Databases, and Power BI into a shared SaaS foundation. Each of these experiences is tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. The AI-integrated Fabric stack accelerates the data journey and offers the following advantages:
+Fabric integrates workloads like Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Industry solutions, Databases, and Power BI into a SaaS platform. Each of these workloads is tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. Advantages of Fabric include:
 
-* Extensive integrated analytics
-* Familiar and easy-to-learn shared experiences
+* Comprehensive integrated analytics
+* Consistent, user-friendly experiences
 * Easy access and reuse of all assets
 * Unified data lake storage preserving data in its original location
+* AI-enhanced stack to accelerate the data journey
 * Centralized administration and governance
 
-Fabric seamlessly integrates data and services, enabling unified management, governance, and discovery. It ensures security for items, data, and row-level access. You can centrally configure core enterprise capabilities. Permissions are automatically applied across all the underlying services. Additionally, data sensitivity labels inherit automatically across the items in the suite. Governance is powered by Purview, which is built into Fabric.
-
-Fabric allows creators to concentrate on producing their best work, freeing them from the need to integrate, manage, or even understand the underlying infrastructure.
+Fabric centralizes data discovery, administration, and governance by automatically applying permissions and inheriting data sensitivity labels across all the items in the suite. Governance is powered by Purview, which is built into Fabric. This seamless integration lets creators focus on producing their best work without managing the underlying infrastructure.
 
 ## Components of Microsoft Fabric
 
