@@ -181,6 +181,8 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Unsupported error for legacy timestamp in Fabric Runtime 1.3
+      href: ../known-issues/known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md
     - name: Models with specific gateway configuration might experience refresh issues
       href: ../known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md
     - name: Notebook and SJD job statuses are in progress in monitor hub
