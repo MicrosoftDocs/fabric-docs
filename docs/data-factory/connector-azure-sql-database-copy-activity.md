@@ -190,7 +190,7 @@ WHERE s.name='[your schema]' AND t.name = '[your table name]'
 
 If the table has physical partition, you would see "HasPartition" as "yes" like the following.
 
-:::image type="content" source="./media/connector-azure-sql-database-managed-instance/sql-query-result.png" alt-text="Sql query result.":::
+:::image type="content" source="./media/connector-azure-sql-managed-instance/sql-query-result.png" alt-text="Sql query result.":::
 
 ## Table summary
 
