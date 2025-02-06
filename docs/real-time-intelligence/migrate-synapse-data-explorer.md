@@ -5,7 +5,7 @@ author: shsagir
 ms.author: shsagir
 ms.reviewer: sharmaanshul
 ms.topic: how-to
-ms.date: 11/19/2024
+ms.date: 02/06/2025
 #customer intent: As a data engineer, I want to understand the migration process from Azure Synapse Data Explorer to Fabric Eventhouse so that I can effectively transition my workloads.
 ---
 
@@ -18,8 +18,6 @@ This feature allows you to migrate all the data from a single Synapse Data Explo
 > [!IMPORTANT]
 > After the migration, the source cluster is placed in a new state called *Migrated*. In this state, the cluster is suspended and can't be resumed or restored. As long as the source cluster exists, its endpoints are redirected to the eventhouse. The source cluster's endpoints remain active for up to 90 days following the migration. Once the source cluster is deleted, its endpoints stop redirecting to the eventhouse. We recommend that users update all queries and ingestion processes to the new eventhouse endpoints within this period.
 
-The migration process can take a few minutes. During this period, the source cluster continues to serve queries but doesn't process new ingestions. If you're using queued ingestion, the requests are processed after the migration with no data loss. However, streaming ingestion doesn't work during this period.
-
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
@@ -30,55 +28,35 @@ The migration process can take a few minutes. During this period, the source clu
 
 ## Key considerations
 
-The feature is in preview and doesn't have a user interface. The migration is performed using the Fabric migration endpoint.
-
 Before you migrate, consider the following key points:
 
-- The migration is performed on the entire cluster; single database migration isn't supported.
-- Once migrated, the process is irreversible, and the source cluster can't be restored.
-- The migration process creates a new eventhouse and can't be performed into an existing eventhouse.
-- Users from other tenants who had access to data in the cluster lose access to the data in Eventhouse.
-- The cluster and the eventhouse must be in the same region, meaning that the target Fabric workspace must have the same capacity region as the source cluster.
+- The migration process creates a new eventhouse.
+- The migration is performed on the entire cluster, including all its databases.
+- The migration process is irreversible.
+- You must manually add users from other tenants who previously had access to the cluster to the new eventhouse.
+- The cluster and the eventhouse must be in the same capacity region.
 
-| Consideration                                      | Supported          |
-|----------------------------------------------------|--------------------|
-| System-assigned managed identities                 | :x:                |
-| Cluster Azure RBAC roles                           | :heavy_check_mark: |
-| Data connections (Event Hubs, IoT Hub, Event Grid) | :x:                |
-| Data export operations (mirroring)                 | :x:                |
-| Follower and leader clusters                       | :x:                |
-| Same region requirement                            | :heavy_check_mark: |
-| Cross-region migration                             | :x:                |
-| Database pretty names                              | :x:                |
-| Customer-managed keys                              | :x:                |
-| Virtual network injected clusters                  | :x:                |
-| Private Endpoint enabled clusters                  | :x:                |
-| Managed Private Endpoint clusters                  | :x:                |
-| Firewall rules                                     | :x:                |
-| Python in sandbox                                  | :heavy_check_mark: |
+## Which features can be migrated?
 
-<!-- **Migration scope**
-
-- The migration is performed on the entire cluster; single database migration isn't supported.
-- Once migrated, the process is irreversible, and the source cluster can't be restored.
-- The migration process creates a new eventhouse and can't be performed into an existing eventhouse.
-- Users from other tenants who had access to data in the cluster lose access to the data in Eventhouse.
-
-**Identity and connections**
-
-- System-assigned managed identities are not supported and aren't migrated.
-- Cluster Azure role-based access control (Azure RBAC) roles are migrated and augmented with Eventhouse roles.
-- Data connections aren't migrated. Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must manually re-create the supported data connections in Eventhouse.
-- Data export operations like .export, continous export will not be migrated automatically.
-
-**Compatibility**
-
-- Follower and leader relationships must be removed before migration.
-- Cross-region migration isn't supported.
-- Database pretty names, customer-managed keys, virtual network injected clusters, Private Endpoint enabled clusters, Managed Private Endpoint clusters, and firewall rules aren't migrated.
-- When the sandbox is migrated, Python is enabled in the eventhouse. -->
+| Feature | Can be migrated | Notes |
+|--|--|--|
+| System-assigned managed identities | :x: |  |
+| Cluster Azure RBAC roles | :heavy_check_mark: |  |
+| Data connections, such as Event Hubs, IoT Hub, Event Grid | :x: | Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must manually create supported data connections in the new eventhouse. |
+| Data export operations | :x: | Data export operations, such as `.export` commands and continous export, aren't migrated automatically. You must manaully add them in the new eventhouse.|
+| Follower and leader clusters | :x: | You must manually remove them before migration. |
+| Cross-region migration | :x: |  |
+| Database pretty names | :x: | You must manually add them in the new eventhouse. |
+| Customer-managed keys | :x: | You must manually remove them before migration. |
+| Virtual network injected clusters | :x: | You must manually disable it before migration. |
+| Private Endpoint enabled clusters | :x: | You must manually disable it before migration. |
+| Managed Private Endpoint enabled clusters | :x: | You must manually disable it before migration. |
+| Firewall rules | :x: |  |
+| Python in sandbox | :heavy_check_mark: | Python is automatically enabled in the new eventhouse. |
 
 ## Migration steps
+
+The migration process can take a few minutes. During this period, the source cluster continues to serve queries but doesn't process new ingestions. If you're using queued ingestion, the requests are processed after the migration with no data loss. However, streaming ingestion doesn't work during this period.
 
 The migration process is performed using Fabric REST API endpoints. The process involves the following steps:
 
