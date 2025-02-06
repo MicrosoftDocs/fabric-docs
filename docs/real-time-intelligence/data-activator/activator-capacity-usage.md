@@ -49,7 +49,7 @@ Activator background capacity consumption is calculated based on the following o
 
 ### Interactive consumption
 
-Interactive capacity consumption activities are charged at a fraction of the background operation cost. Interactive capacity consumption includes exploring the data, reviewing events, viewing visualized activations, and performing other data related activities to define rules for the Activator. 
+Interactive capacity consumption activities are charged at a 1/1000 of the background operation cost. Interactive capacity consumption includes exploring the data, reviewing events, viewing visualized activations, and performing other data related activities to define rules for the Activator. 
 
 ## Pause and resume activity in your capacity
 
