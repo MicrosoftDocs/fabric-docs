@@ -3,7 +3,6 @@ title: What is Apache Airflow job?
 description: Learn about when to use Apache Airflow job, basic concepts, and supported regions.
 ms.topic: conceptual
 ms.custom:
-  - build-2024
 author: nabhishek
 ms.author: abnarain
 ms.date: 04/16/2024

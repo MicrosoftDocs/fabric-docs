@@ -7,7 +7,6 @@ ms.reviewer: scbradl, prlangad
 ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
-  - build-2024
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 

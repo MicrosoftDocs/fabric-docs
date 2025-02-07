@@ -6,7 +6,6 @@ ms.author: arali
 author: ekote
 ms.topic: overview
 ms.custom:
-  - build-2024
 ms.date: 01/08/2025
 ---
 

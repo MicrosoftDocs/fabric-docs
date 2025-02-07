@@ -5,8 +5,7 @@ author: snehagunda
 ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
-- build-2024
-  - copilot-learning-hub
+- copilot-learning-hub
   - ignite-2024
 ms.topic: conceptual
 ms.date: 12/22/2024

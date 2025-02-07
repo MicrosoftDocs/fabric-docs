@@ -6,8 +6,7 @@ ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
 ms.custom:
-  - build-2024
-  - ignite-2024
+- ignite-2024
 ms.search.form: product-trident
 ms.date: 12/14/2023
 ---
