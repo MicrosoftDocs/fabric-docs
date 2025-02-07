@@ -5,7 +5,6 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.custom:
-  - ignite-2023
 ms.topic: concept-article
 ms.service: fabric
 ms.subservice: cicd

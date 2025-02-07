@@ -7,7 +7,6 @@ ms.reviewer: procha
 ms.date: 07/29/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
   - ignite-2024
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---

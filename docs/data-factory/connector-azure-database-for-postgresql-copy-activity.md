@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 11/19/2023
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Configure Azure Database for PostgreSQL in a copy activity

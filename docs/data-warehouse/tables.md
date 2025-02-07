@@ -7,7 +7,6 @@ ms.reviewer: kecona
 ms.date: 10/09/2024
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Tables in data warehousing in Microsoft Fabric

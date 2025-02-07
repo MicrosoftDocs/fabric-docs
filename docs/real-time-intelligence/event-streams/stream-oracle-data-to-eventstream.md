@@ -6,7 +6,6 @@ ms.author: xujiang1
 author: WenyangShi
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
   - ignite-2024
 ms.date: 01/15/2025
 ms.search.form: Eventstreams Tutorials

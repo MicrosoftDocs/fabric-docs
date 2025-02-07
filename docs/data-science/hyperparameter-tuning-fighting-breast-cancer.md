@@ -3,7 +3,6 @@ title: Hyperparameter tuning
 description: Identify the best combination of hyperparameters for your chosen classifiers with SynapseML.
 ms.topic: overview
 ms.custom:
-  - ignite-2023
 ms.author: ssalgado
 author: ssalgadodev
 ms.reviewer: jessiwang

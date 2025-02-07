@@ -4,7 +4,6 @@ description: This article describes how to use Delphix Compliance Services maski
 author: ptyx507
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 11/15/2023
 ms.author: miescobar
 ---

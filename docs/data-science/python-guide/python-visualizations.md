@@ -7,7 +7,6 @@ ms.reviewer: midesa
 reviewer: midesa
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 04/16/2024
 ms.search.form: Python Language
 #customer intent: As a data analyst, I want to learn to perform data analysis by using Azure Open Datasets and Apache Spark to create useful visualizations.

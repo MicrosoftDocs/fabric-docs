@@ -6,7 +6,6 @@ ms.author: aamerril
 author: aamerril
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
 ms.date: 11/15/2023
 #customer intent: As a data architect, I want to understand how to secure OneLake data for common data architectures so that I can ensure the appropriate access and permissions are granted to different users based on their roles and responsibilities.
 ---

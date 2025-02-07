@@ -2,7 +2,7 @@
 title: Use AI services with SynapseML in Microsoft Fabric
 description: Enrich your data with artificial intelligence (AI) in Azure Synapse Analytics using pretrained models from Azure AI services.
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom: 
 ms.author: mopeakande
 author: msakande
 ms.reviewer: jessiwang

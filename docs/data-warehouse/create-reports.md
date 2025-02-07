@@ -7,7 +7,6 @@ ms.reviewer: salilkanade
 ms.date: 07/26/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
   - ignite-2024
 ms.search.form: Reporting # This article's title should not change. If so, contact engineering.
 ---

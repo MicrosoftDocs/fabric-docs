@@ -5,7 +5,6 @@ author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 01/24/2025
 ms.search.form: On-premises data sources gateway
 ---

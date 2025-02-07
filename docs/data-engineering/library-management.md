@@ -6,7 +6,6 @@ ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 04/16/2024
 #customer intent: As a user, I want to learn about the mechanisms that Microsoft Fabric offers to manage libraries in order to make use of prewritten code.
 ---

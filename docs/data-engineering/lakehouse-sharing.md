@@ -6,7 +6,6 @@ ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 04/19/2024
 ms.search.form: Lakehouse Sharing Permissions
 ---

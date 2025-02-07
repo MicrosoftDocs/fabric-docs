@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 01/23/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Amazon S3 Compatible connector overview
