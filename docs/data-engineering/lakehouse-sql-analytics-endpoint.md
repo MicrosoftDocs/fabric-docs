@@ -6,8 +6,7 @@ ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023-fabric
-  - ignite-2024
+- ignite-2024
 ms.date: 10/16/2024
 ms.search.form: Lakehouse SQL Analytics Endpoint
 ---

@@ -7,7 +7,6 @@ author: murggu
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

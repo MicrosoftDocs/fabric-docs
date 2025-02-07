@@ -6,7 +6,6 @@ ms.author: noelleli
 author: n0elleli
 ms.topic: quickstart
 ms.custom:
-  - ignite-2023-fabric
 ms.date: 12/18/2024
 ---
 

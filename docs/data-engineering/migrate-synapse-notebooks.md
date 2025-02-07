@@ -7,8 +7,7 @@ author: murggu
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023-fabric
-  - ignite-2024
+- ignite-2024
 ms.date: 11/15/2023
 ---
 

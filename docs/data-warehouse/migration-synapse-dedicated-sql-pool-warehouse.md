@@ -8,8 +8,7 @@ ms.date: 07/17/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
-  - ignite-2023-fabric
-  - build-2024
+- build-2024
   - ignite-2024
 ---
 

@@ -5,7 +5,6 @@ author: rrikhy
 ms.author: rarikhy
 ms.topic: how-to
 ms:custom:
-  - ignite-2023-fabric
 ms.date: 01/16/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot

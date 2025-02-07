@@ -5,7 +5,6 @@ author: snehagunda
 ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
-  - ignite-2023-fabric
 ms.topic: conceptual
 ms.date: 07/15/2024
 no-loc: [Copilot]

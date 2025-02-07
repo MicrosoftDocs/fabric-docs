@@ -6,8 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023-fabric
-  - ignite-2024
+- ignite-2024
 ms.date: 11/17/2023
 ms.search.form: Eventstreams Tutorials
 ---

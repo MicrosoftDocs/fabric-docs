@@ -6,7 +6,6 @@ ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023-fabric
 ms.date: 12/18/2024
 ---
 
