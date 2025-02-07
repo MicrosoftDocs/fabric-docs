@@ -4,8 +4,7 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 01/12/2025
+ms.date: 02/05/2025
 ---
 
 # Manage your Fabric capacity
@@ -16,7 +15,7 @@ This article describes the Microsoft Fabric capacity settings. The article is ai
 
 To get to the capacity settings, follow these steps:
 
-1. In the Power BI service, select the gear icon (**&#9881;**), and then select **Admin portal**.
+1. In Microsoft Fabric, select the gear icon (**&#9881;**), and then select **Admin portal**.
 
 2. In the Admin portal, select **Capacity settings**.
 
@@ -42,6 +41,8 @@ The rest of this article is divided to sections based on the different capacity 
 This section lists basic capacity management tasks, such as creating a new capacity, changing a capacity's name and deleting a capacity.
 
 ### Create a new capacity
+
+To create a new capacity you need to be a [Microsoft Fabric admin](../admin/microsoft-fabric-admin.md).
 
 # [Power BI Premium](#tab/power-bi-premium)
 
@@ -156,6 +157,8 @@ To create a new Fabric capacity, follow these steps:
 
 ### Change the name of your capacity
 
+To change the name of your capacity, you need to be a capacity admin. To become a capacity admin, you need to be assigned the capacity admin role in the capacity settings. For more information, see [Add and remove admins](#add-and-remove-admins).
+
 # [Power BI Premium](#tab/power-bi-premium)
 
 To change the name of your Power BI Premium capacity, follow these steps:
@@ -197,6 +200,8 @@ You can't change a Fabric capacity's name.
 ---
 
 ### Add and remove admins
+
+To add and remove admins from your capacity, you need to be a capacity admin.
 
 # [Power BI Premium](#tab/power-bi-premium)
 
@@ -250,6 +255,8 @@ To add or remove admins in a Fabric capacity, follow these steps:
 
 ### Resize a capacity
 
+To resize your capacity, you need to be a capacity admin. To become a capacity admin, you need to be assigned the capacity admin role in the capacity settings. For more information, see [Add and remove admins](#add-and-remove-admins).
+
 # [Power BI Premium](#tab/power-bi-premium)
 
 To resize a Power BI Premium capacity, follow these steps:
@@ -291,6 +298,8 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 ---
 
 ### Delete a capacity
+
+To delete a capacity you need to be a [Microsoft Fabric admin](../admin/microsoft-fabric-admin.md).
 
 When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in Onelake Data Hub and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention policy](portal-workspaces.md#workspace-retention).
 

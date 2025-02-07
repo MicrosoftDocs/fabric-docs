@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 01/29/2025
+ms.date: 02/05/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,13 +20,13 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
 |  1011  | Power BI | [Models with specific gateway configuration might experience refresh issues](./known-issue-1011-models-specific-gateway-configuration-refresh-issues.md) | January 29, 2025 |
 |  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 |
 |  1003  | Databases | [Copilot sidecar chat fails with certain private link settings](./known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md) | January 28, 2025 |
 |  1002  | Power BI | [Reports that use functions with RLS don't work](./known-issue-1002-reports-functions-rls-not-work.md) | January 28, 2025 |
 |  996  | Databases | [Some SQL query syntax fails in a graph database query](./known-issue-996-sql-query-syntax-fails-graph-database-query.md) | January 28, 2025 |
 |  990  | Real-Time Intelligence | [KQL database loads continuously without an error](./known-issue-990-kql-database-loads-continuously-without-error.md) | January 28, 2025 |
-|  1005  | Data Engineering | [Git operations and deployment pipelines don't work with lakehouses](./known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md) | January 22, 2025 |
 |  991  | Data Factory | [Apache Airflow job creation shows Fabric upgrade message](./known-issue-991-apache-airflow-job-creation-upgrade-message.md) | January 13, 2025 |
 |  989  | Data Factory | [Local data access isn't allowed for pipeline using on-premises data gateway](./known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md) | January 13, 2025 |
 |  988  | Real-Time Intelligence | [Data activator events aren't ingested for Reflex events](./known-issue-988-data-activator-events-not-ingested-reflex-events.md) | January 13, 2025 |
@@ -43,7 +43,6 @@ Select the **Title** to view more information about that specific known issue.
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
 |  962  | Real-Time Intelligence | [Eventstream publish fails when column contains empty array and operator is added](./known-issue-962-eventstream-publish-fails-column-empty-array-operator.md) | December 9, 2024 |
 |  957  | Data Factory | [Creation failure for Copy job item in empty workspace](./known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 |
-|  955  | Data Factory | [Create Gateway public API doesn't work for service principals](./known-issue-955-create-gateway-public-api-not-work-service-principals.md) | December 5, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](./known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
 |  950  | Power BI | [Incorrect column names after column format or aggregation change](./known-issue-950-incorrect-column-names-column-format-aggregation-change.md) | December 2, 2024 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](./known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
@@ -51,7 +50,7 @@ Select the **Title** to view more information about that specific known issue.
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](./known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](./known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
-|  923  | Power BI | [Tenant migrations paused through January 2025](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
+|  923  | Power BI | [Tenant migrations paused through February 2025](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](./known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](./known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 |
@@ -96,6 +95,8 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  955  | Data Factory | [Create Gateway public API doesn't work for service principals](./known-issue-955-create-gateway-public-api-not-work-service-principals.md) | December 5, 2024 | Fixed: February 5, 2025 |
+|  1005  | Data Engineering | [Git operations and deployment pipelines don't work with lakehouses](./known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md) | January 22, 2025 | Fixed: February 4, 2025 |
 |  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](./known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |  Fixed: January 28, 2025 |
 |  846  | OneLake | [OneLake BCDR write transactions aren't categorized correctly for billing](./known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) | September 17, 2024 |  Fixed: January 28, 2025 |
 |  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](./known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 | Fixed: January 28, 2025 |

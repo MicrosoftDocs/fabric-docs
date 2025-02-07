@@ -175,7 +175,9 @@ This section lists the report's considerations and limitations.
 
 * The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
 
-* Workspaces with retention periods longer than 30 days won't appear in the report, but can be seen in the admin portal workspaces menu.
+* Deleted workspaces with extended retention don't appear in the report after 30 days. They can be seen in the admin portal until they're permanently deleted.
+
+* Items created and deleted within a 24 hour period may have incomplete information.
   
 ### Pro and Premium Per User (PPU)
 
