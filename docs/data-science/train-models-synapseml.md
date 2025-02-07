@@ -7,7 +7,6 @@ ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 12/22/2023
 ---
 

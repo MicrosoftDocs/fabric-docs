@@ -7,7 +7,6 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
 ms.date: 12/10/2024
 ms.search.form: Deployment history
 #customer intent: As a developer, I want to learn about the deployment history feature in the Fabric service so that I can manage my development process efficiently.

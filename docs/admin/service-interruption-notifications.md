@@ -6,7 +6,6 @@ ms.author: kesharab
 ms.reviewer: ''
 
 ms.custom:
-  - ignite-2023
 ms.topic: troubleshooting
 ms.date: 03/17/2024
 ---

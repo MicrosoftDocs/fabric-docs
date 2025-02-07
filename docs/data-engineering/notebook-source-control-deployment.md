@@ -6,8 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 08/22/2024
 ms.search.form: Notebook git deployment pipelines alm ci cd
 ---

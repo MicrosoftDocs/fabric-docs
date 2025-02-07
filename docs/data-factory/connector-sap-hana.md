@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 02/06/2025
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Set up your SAP HANA database connection

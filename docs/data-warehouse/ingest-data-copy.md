@@ -7,7 +7,6 @@ ms.reviewer: procha
 ms.date: 12/30/2024
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.search.form: Ingesting data
 ---
 

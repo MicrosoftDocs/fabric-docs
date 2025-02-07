@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 07/02/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Set up your Salesforce objects connection

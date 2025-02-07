@@ -7,7 +7,6 @@ ms.reviewer: scbradl
 ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ---
 
 # Tutorial: Create a Warehouse

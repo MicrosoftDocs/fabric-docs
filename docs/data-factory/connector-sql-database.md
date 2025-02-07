@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 12/09/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Set up your SQL database connection (Preview)

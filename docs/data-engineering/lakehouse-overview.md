@@ -6,7 +6,6 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
 ms.custom:
-  - ignite-2023
 ms.date: 02/04/2025
 ms.search.form: Lakehouse Overview
 ---

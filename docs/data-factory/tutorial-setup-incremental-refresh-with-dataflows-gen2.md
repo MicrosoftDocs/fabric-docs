@@ -6,7 +6,6 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 1/13/2025
 ---
 

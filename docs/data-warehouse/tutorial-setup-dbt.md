@@ -7,7 +7,6 @@ ms.reviewer: maprycem
 ms.date: 09/04/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
   - ignite-2024
 ---
 

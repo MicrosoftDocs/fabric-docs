@@ -6,7 +6,6 @@ ms.author: sgilley
 author: sdgilley
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 10/16/2023
 ---
 
