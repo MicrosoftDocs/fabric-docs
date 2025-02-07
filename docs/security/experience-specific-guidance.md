@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-- build-2024
 ms.date: 11/07/2024
 ---
 

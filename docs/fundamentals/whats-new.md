@@ -9,8 +9,7 @@ ms.topic: whats-new
 ms.collection:
   - ce-skilling-ai-copilot
 ms.custom:
-  - build-2024
-  - ignite-2024
+- ignite-2024
 no-loc: [Copilot]
 ---
 # What's new in Microsoft Fabric?

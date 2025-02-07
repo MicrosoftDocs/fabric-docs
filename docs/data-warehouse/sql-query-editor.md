@@ -9,8 +9,7 @@ ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
+- ignite-2024
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query using the SQL query editor

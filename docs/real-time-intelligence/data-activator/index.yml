@@ -9,8 +9,7 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: enterprise
   ms.custom:
-    - build-2024
-  ms.topic: landing-page
+ms.topic: landing-page
   author: kfollis
   ms.author: kfollis
   ms.date: 09/24/2024

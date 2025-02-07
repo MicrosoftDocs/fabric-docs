@@ -6,8 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
+- ignite-2024
 # ms.custom:
 ms.date: 05/24/2024
 ---

@@ -8,10 +8,8 @@ ms.date: 09/25/2024
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
-  - build-2024
-  - build-2024-dataai
-  - build-2024-fabric
-  - copilot-learning-hub
+- build-2024-dataai
+- copilot-learning-hub
   - ignite-2024
 ---
 # Overview of Copilot for Data Warehouse

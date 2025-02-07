@@ -6,8 +6,7 @@ ms.author: xujiang1
 author: wenyang
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
+- ignite-2024
 ms.date: 11/21/2024
 ms.search.form: Pause and Resume
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
