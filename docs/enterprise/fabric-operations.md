@@ -5,7 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2023-fabric
   - build-2024

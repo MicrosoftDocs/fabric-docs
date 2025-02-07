@@ -6,7 +6,6 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual
 ms.custom:
-  - build-2023
   - ignite-2023
 ms.date: 12/18/2024
 ai-usage: ai-assisted

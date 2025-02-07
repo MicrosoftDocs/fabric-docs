@@ -6,9 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
   - ignite-2023
   - build-2024
   - ignite-2024

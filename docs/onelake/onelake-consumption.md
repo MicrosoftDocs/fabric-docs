@@ -5,7 +5,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 07/31/2024

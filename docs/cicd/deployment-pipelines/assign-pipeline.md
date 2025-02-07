@@ -8,7 +8,6 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
-    - build-2023
     - ignite-2023
 ms.date: 01/12/2025
 ms.search.form: Deployment pipelines operations

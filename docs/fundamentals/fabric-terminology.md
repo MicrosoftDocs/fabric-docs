@@ -6,7 +6,6 @@ ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
 ms.custom:
-  - build-2023
   - ignite-2023
   - build-2024
   - ignite-2024

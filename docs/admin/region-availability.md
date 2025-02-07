@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.custom:
   - references_regions
-  - build-2023
   - ignite-2023
 ms.topic: overview
 ms.date: 01/10/2025

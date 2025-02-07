@@ -6,7 +6,6 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom:
-  - build-2023
   - ignite-2023
   - FY25Q1-Linter 
 ms.date: 07/25/2024

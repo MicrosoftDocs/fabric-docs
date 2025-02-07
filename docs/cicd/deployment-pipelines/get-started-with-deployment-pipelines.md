@@ -8,7 +8,6 @@ ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - intro-get-started
-  - build-2023
   - ignite-2023
 ms.date: 11/14/2024
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines

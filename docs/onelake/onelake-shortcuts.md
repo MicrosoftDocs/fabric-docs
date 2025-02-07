@@ -7,7 +7,6 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 12/31/2024
