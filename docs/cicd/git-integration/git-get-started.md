@@ -9,7 +9,6 @@ ms.subservice: cicd
 ms.topic: how-to
 ms.date: 07/10/2024
 ms.custom:
-  - build-2023
   - ignite-2023
 ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.

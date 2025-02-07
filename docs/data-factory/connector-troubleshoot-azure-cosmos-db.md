@@ -6,7 +6,6 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2024
 ms.date: 10/23/2024

@@ -7,7 +7,6 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-  - build-2023
   - ignite-2023
 ms.date: 10/27/2024
 ms.search.form: Deployment rules

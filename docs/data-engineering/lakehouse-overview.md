@@ -6,9 +6,6 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
   - ignite-2023
 ms.date: 02/04/2025
 ms.search.form: Lakehouse Overview

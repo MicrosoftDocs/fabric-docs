@@ -6,9 +6,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 07/25/2024

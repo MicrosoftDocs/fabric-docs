@@ -7,7 +7,6 @@ author: aamerril
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 05/09/2024

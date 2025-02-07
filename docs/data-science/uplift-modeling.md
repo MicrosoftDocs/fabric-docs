@@ -7,7 +7,6 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
-  - build-2023
   - ignite-2023
 ms.date: 01/29/2024
 #customer intent: As a data scientist, I want to build an uplift model so I can estimate causal impact.

@@ -7,7 +7,6 @@ ms.reviewer: jacindaeng
 ms.date: 09/20/2024
 ms.topic: how-to
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2024
 ms.search.form: Data preview # This article's title should not change. If so, contact engineering.
