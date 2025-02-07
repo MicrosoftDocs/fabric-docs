@@ -7,7 +7,6 @@ ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
 ms.date: 09/25/2024
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2024
 ---

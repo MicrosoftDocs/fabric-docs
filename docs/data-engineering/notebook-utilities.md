@@ -6,9 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
   - ignite-2023
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
 ms.date: 07/25/2024

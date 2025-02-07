@@ -6,7 +6,6 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
 ms.custom:
-  - build-2023
   - ignite-2023
 ms.date: 5/12/2023
 ---
