@@ -6,7 +6,6 @@ ms.author: rarikhy
 ms.reviewer: franksolomon
 ms.topic: overview
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
   - copilot-learning-hub
 ms.date: 01/09/2025

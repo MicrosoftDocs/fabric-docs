@@ -7,7 +7,6 @@ ms.topic: troubleshooting
 ms.date: 10/05/2023
 ms.custom:
   - known-issue-506
-  - ignite-2023
 ---
 
 # Known issue - InProgress status shows in Fabric capacity metrics app for completed queries

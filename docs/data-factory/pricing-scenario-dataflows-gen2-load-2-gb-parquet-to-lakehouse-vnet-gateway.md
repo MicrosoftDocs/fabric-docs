@@ -6,7 +6,6 @@ ms.author: lle
 author: lrtoyou1223
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 10/25/2024
 ---

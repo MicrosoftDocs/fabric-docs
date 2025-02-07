@@ -6,7 +6,6 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
   - build-2024
 ms.date: 04/12/2023
 ms.search.form: Lakehouse Explorer

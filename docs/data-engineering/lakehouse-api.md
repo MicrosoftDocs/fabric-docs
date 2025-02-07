@@ -6,7 +6,6 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 01/16/2025
 ms.search.form: lakehouse api

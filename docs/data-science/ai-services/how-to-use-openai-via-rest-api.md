@@ -7,7 +7,6 @@ ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 6/25/2024
 ms.search.form:

@@ -7,7 +7,6 @@ ms.reviewer: romanbat
 reviewer: RomanBat
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 06/17/2024
 ms.search.form: semantic link
 ---

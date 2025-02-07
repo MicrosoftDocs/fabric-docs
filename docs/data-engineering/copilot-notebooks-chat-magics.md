@@ -5,7 +5,6 @@ author: rrikhy
 ms.author: rarikhy
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 01/16/2024
 no-loc: [Copilot]

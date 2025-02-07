@@ -5,7 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom:
-  - ignite-2023
 ms.date: 07/01/2024
 ---
 

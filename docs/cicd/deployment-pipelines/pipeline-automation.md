@@ -7,7 +7,6 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
 ms.date: 11/13/2024
 ms.search.form: Deployment pipelines APIs, Automate deployment pipelines, Power BI automation tools, Azure DevOps 
 #customer intent: As a developer, I want to automate my deployment pipeline using APIs and Azure DevOps so that I can streamline the release process.

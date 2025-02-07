@@ -6,7 +6,6 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 04/26/2024
 ms.search.form: lakehouse table maintenance delta lake tables

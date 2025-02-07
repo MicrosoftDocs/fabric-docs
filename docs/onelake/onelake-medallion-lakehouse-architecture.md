@@ -8,7 +8,6 @@ ms.topic: concept-article
 ms.date: 11/15/2023
 ms.custom:
   - fabric-cat
-  - ignite-2023
   - ignite-2023-fabric
 #customer intent: As a data engineer, I want to understand medallion lakehouse architecture and learn how to implement a lakehouse so that I can optimally structure and store my organization's data.
 ---

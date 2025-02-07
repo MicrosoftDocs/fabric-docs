@@ -8,7 +8,6 @@ reviewer: ruixinxu
 ms.topic: overview
 ms.custom:
   - references_regions
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 11/29/2024
 ms.search.form:

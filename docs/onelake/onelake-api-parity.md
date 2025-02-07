@@ -6,7 +6,6 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to understand the differences between OneLake and Azure Data Lake Storage (ADLS) Gen2 APIs, so that I can effectively use OneLake for managing and manipulating data in my applications.
 ---

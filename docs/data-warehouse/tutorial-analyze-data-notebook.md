@@ -7,7 +7,6 @@ ms.reviewer: prlangad
 ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ---
 
 # Tutorial: Analyze data in a notebook

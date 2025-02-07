@@ -6,7 +6,6 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart
 ms.custom:
-  - ignite-2023
 ms.date: 12/18/2024
 ms.search.form: DataflowGen2 Tutorials
 ---

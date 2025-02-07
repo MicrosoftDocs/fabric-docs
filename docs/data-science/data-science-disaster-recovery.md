@@ -6,7 +6,6 @@ ms.author: larryfr
 author: Blackmist
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 10/13/2023
 ---

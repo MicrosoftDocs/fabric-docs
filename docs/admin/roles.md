@@ -5,7 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
   - has-azure-ad-ps-ref
   - azure-ad-ref-level-one-done
 ms.date: 09/22/2024

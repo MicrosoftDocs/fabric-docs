@@ -6,7 +6,6 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
   - build-2024
   - ignite-2024
 ms.date: 11/15/2023

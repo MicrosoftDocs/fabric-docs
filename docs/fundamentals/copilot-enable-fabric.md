@@ -5,7 +5,6 @@ author: snehagunda
 ms.author: sngun
 ms.reviewer: shlindsay
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
 ms.date: 12/26/2024

@@ -5,7 +5,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 07/31/2024
 #customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.

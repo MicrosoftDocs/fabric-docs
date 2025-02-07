@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 12/06/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Set up your IBM Db2 database connection

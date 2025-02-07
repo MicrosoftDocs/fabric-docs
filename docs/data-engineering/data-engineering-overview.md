@@ -6,7 +6,6 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
 ms.custom:
-  - ignite-2023
   - ignite-2023-fabric
 ms.date: 05/13/2024
 ---
