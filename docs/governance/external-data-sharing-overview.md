@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.date: 01/06/2024
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
 ---

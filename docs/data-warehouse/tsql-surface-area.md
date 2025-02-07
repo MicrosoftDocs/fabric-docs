@@ -7,7 +7,6 @@ ms.reviewer: cynotebo, jovanpop
 ms.date: 01/06/2025
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Microsoft Fabric

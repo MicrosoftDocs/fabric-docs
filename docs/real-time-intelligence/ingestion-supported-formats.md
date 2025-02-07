@@ -6,7 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: concept-article
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 ---
 

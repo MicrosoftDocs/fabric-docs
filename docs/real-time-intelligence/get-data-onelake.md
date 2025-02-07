@@ -6,7 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 12/24/2024
 ms.search.form: Get data in a KQL Database
 ---

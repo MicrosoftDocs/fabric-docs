@@ -7,7 +7,6 @@ author: gsaurer
 ms.topic: overview
 ms.custom:
 - build 2024
-- ignite-2024
 ms.search.form: product-trident
 ms.date: 01/22/2025
 ---

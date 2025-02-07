@@ -7,7 +7,6 @@ ms.reviewer: amar.patil # Microsoft alias
 ms.date: 01/22/2025
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ---
 # Monitor SQL database in Microsoft Fabric
 

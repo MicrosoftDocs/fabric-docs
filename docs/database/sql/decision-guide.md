@@ -6,7 +6,6 @@ ms.author: wiassaf
 ms.reviewer:
 ms.topic: product-comparison
 ms.custom:
-  - ignite-2024
 ms.date: 01/15/2025
 ---
 # Microsoft Fabric decision guide: choose a SQL database

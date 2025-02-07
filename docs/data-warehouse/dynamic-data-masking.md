@@ -7,7 +7,6 @@ ms.reviewer: dhsundar
 ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ---
 
 # Dynamic data masking in Fabric data warehousing

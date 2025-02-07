@@ -7,7 +7,6 @@ ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
 ms.date: 09/25/2024
 ms.custom:
-  - ignite-2024
 ---
 
 # Roles in workspaces in Microsoft Fabric

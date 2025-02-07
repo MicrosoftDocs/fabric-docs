@@ -9,7 +9,6 @@ ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
 - copilot-learning-hub
-  - ignite-2024
 ---
 # Overview of Copilot for Data Warehouse
 
