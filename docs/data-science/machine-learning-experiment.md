@@ -7,7 +7,6 @@ ms.reviewer: midesa
 reviewer: midesa
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 01/14/2025
 ms.search.form: Create New Experiment, Run Comparison
 ---

@@ -7,7 +7,6 @@ ms.reviewer: prlangad, kecona
 ms.date: 01/02/2025
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
   - ignite-2024
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---

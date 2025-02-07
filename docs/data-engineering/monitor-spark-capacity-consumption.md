@@ -6,7 +6,6 @@ author: jejiang
 ms.author: jejiang
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
   - ignite-2024
 ms.date: 11/11/2024
 ms.search.form: Monitor Spark capacity consumption

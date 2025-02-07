@@ -7,7 +7,6 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 01/15/2025
 #customer intent: As a data scientist, I want to build a recommendation model so I can create personalized recommendations.
 ---

@@ -6,7 +6,6 @@ ms.author: makromer
 author: kromerm
 ms.topic: best-practice
 ms.custom:
-  - build-2024
 ms.date: 05/03/2024
 ---
 

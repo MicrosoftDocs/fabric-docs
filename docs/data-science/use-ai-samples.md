@@ -7,7 +7,6 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 01/22/2024
 ms.collection: ce-skilling-ai-copilot
 ---

@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 09/06/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Iceberg format for Data Factory in Microsoft Fabric

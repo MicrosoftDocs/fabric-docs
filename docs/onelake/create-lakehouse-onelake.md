@@ -6,7 +6,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 05/09/2024
 #customer intent: As a data engineer, I want to learn how to create a lakehouse and load data into it with OneLake so that I can efficiently manage and analyze large amounts of data in Microsoft Fabric.
 ---

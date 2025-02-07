@@ -7,7 +7,6 @@ author: Matt1883
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
-  - build-2024
 ms.date: 3/26/2024
 #customer intent: As a data engineer, I want to learn how to create an Amazon S3 compatible shortcut so that I can easily access data in my S3 bucket.
 ---

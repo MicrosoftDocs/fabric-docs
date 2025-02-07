@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Set up your Databricks connection

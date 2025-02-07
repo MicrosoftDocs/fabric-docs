@@ -5,7 +5,6 @@ author: sdgilley
 ms.author: sgilley
 ms.topic: include
 ms.custom:
-  - ignite-2023
 ms.date: 01/10/2025
 ---
 

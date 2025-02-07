@@ -5,7 +5,7 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 04/29/2024
-ms.custom: template-how-to, build-2023
+ms.custom: template-how-to
 ---
 
 # How to configure Azure SQL Managed Instance in copy activity

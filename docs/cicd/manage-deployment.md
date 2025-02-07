@@ -9,7 +9,6 @@ ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 09/25/2024
 ms.custom:
-  - ignite-2023
 #customer intent: As a developer, I want to learn how to use deployment pipelines in Fabric so that I can manage my development process efficiently.
 ---
 

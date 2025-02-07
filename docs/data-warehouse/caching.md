@@ -7,7 +7,6 @@ ms.reviewer: fipopovi
 ms.date: 04/24/2024
 ms.topic: overview
 ms.custom:
-  - ignite-2023
   - ignite-2024
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---

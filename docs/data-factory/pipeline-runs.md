@@ -6,7 +6,6 @@ ms.author: noelleli
 author: n0elleli
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

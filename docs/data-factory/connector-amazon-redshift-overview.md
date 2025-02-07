@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 01/24/2025
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Amazon Redshift connector overview

@@ -6,7 +6,6 @@ ms.author: sgilley
 author: sdgilley
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 01/22/2024
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model in R so I can detect future fraudulent transactions.

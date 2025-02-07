@@ -7,7 +7,6 @@ ms.topic: troubleshooting
 ms.date: 11/11/2024
 ms.custom:
   - known-issue-529
-  - ignite-2023
 ---
 
 # Known issue - Data warehouse with more than 20,000 tables fails to load

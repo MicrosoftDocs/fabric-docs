@@ -6,7 +6,6 @@ ms.author: sgilley
 author: sdgilley
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
 ---
