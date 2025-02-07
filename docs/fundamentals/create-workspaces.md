@@ -7,7 +7,6 @@ ms.reviewer: yicw, mesrivas
 ms.topic: how-to
 ms.date: 04/15/2024
 ms.custom:
-  - build-2023
   - ignite-2023
 #customer intent: As a report creator, I want use workspaces so that I can create collections of artifacts that are related.
 ---

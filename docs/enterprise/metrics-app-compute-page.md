@@ -5,7 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-  - build-2023
   - ignite-2023
   - build-2024
 ms.date: 02/21/2024

@@ -7,7 +7,6 @@ ms.reviewer: emtehran
 ms.date: 09/10/2024
 ms.topic: conceptual
 ms.custom:
-  - build-2023
   - ignite-2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---

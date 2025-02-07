@@ -6,7 +6,6 @@ ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2023-fabric
   - ignite-2024
