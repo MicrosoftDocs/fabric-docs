@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
-ms.date: 01/15/2025
+ms.date: 02/06/2025
 ms.topic: tutorial
 ms.custom:
   - ignite-2024
@@ -99,7 +99,8 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
    - **Authentication kind**:
        - Basic (SQL Authentication)
        - Organization account (Microsoft Entra ID)  
-       - Tenant ID (Azure Service Principal)  
+       - Tenant ID (Azure Service Principal)
+          - You need service principal credentials, but not the service principal key. 
 1. Select **Connect**.
 
 ## Start mirroring process
