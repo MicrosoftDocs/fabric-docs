@@ -6,7 +6,6 @@ ms.author: sgilley
 author: sdgilley
 ms.topic: tutorial
 ms.custom:
-  - build-2023
   - ignite-2023
 ms.date: 10/16/2023
 #CustomerIntent: As a data scientist, I want to create a Power BI report to visualize the predictions data.

@@ -7,7 +7,6 @@ ms.reviewer: salilkanade, dhsundar, jacinda-eng
 ms.date: 02/03/2025
 ms.topic: how-to
 ms.custom:
-  - build-2023
   - ignite-2023
   - ignite-2024
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.

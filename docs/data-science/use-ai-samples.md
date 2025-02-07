@@ -7,9 +7,6 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
   - ignite-2023
 ms.date: 01/22/2024
 ms.collection: ce-skilling-ai-copilot

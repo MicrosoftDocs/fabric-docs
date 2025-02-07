@@ -6,7 +6,6 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom:
-  - build-2023
   - ignite-2023
 ms.date: 01/16/2025
 ---
