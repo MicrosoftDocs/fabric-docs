@@ -8,7 +8,6 @@ ms.date: 09/25/2024
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
-- build-2024-dataai
 - copilot-learning-hub
   - ignite-2024
 ---

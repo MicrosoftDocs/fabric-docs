@@ -8,7 +8,6 @@ ms.date: 10/22/2024
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
-- build-2024-dataai
 - ignite-2024
 ---
 # How to: Use Copilot quick actions for Fabric Data Warehouse
