@@ -6,8 +6,6 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 12/18/2024
 ms.search.form: product-data-factory
 ---

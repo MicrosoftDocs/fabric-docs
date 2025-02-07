@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 04/10/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Configure Data Warehouse in a copy activity

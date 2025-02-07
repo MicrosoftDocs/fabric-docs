@@ -6,7 +6,6 @@ ms.author: jejiang
 author: jejiang
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Browse artifacts recent runs
 ---

@@ -6,7 +6,6 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 05/13/2024
 ms.search.form: Create lakehouse
 ---

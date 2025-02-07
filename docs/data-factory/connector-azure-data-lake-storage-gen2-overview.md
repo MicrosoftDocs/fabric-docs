@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 09/16/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Azure Data Lake Storage Gen2 connector overview

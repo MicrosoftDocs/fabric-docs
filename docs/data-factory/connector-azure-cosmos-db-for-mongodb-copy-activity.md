@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 05/07/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Configure Azure Cosmos DB for MongoDB in a copy activity

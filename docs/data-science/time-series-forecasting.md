@@ -7,7 +7,6 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 01/14/2025
 ---
 

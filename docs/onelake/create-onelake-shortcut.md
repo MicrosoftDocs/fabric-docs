@@ -7,7 +7,6 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 12/24/2024
 #customer intent: As a data engineer, I want to learn how to create a OneLake shortcut inside a Fabric lakehouse using different data sources so that I can efficiently access and manage data within the lakehouse.
 ---

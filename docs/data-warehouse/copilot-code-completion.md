@@ -8,9 +8,6 @@ ms.date: 09/26/2024
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
-  - build-2024
-  - build-2024-dataai
-  - build-2024-fabric
   - ignite-2024
 ---
 # How to: Use Copilot code completion for Fabric Data Warehouse

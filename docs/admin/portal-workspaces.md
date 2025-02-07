@@ -7,7 +7,6 @@ ms.reviewer: ''
 
 ms.custom:
   - admin-portal
-  - ignite-2023
 ms.topic: concept-article
 ms.date: 12/04/2024
 LocalizationGroup: Administration

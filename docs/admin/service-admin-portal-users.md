@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.custom:
   - admin-portal
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/08/2024
 LocalizationGroup: Administration

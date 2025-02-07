@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 07/01/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Configure Salesforce in a copy activity

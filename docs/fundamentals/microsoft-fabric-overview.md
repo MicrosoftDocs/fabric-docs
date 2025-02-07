@@ -6,11 +6,8 @@ ms.author: gesaur
 author: gsaurer
 ms.topic: overview
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-  - build 2024
-  - build-2024
-  - ignite-2024
+- build 2024
+- ignite-2024
 ms.search.form: product-trident
 ms.date: 01/22/2025
 ---

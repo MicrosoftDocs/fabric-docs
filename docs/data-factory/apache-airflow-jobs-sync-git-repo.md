@@ -6,9 +6,7 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: quickstart
 ms.custom:
-  - build-2024
 # ms.custom:
-#   - ignite-2023
 ms.date: 03/25/2024
 ---
 
