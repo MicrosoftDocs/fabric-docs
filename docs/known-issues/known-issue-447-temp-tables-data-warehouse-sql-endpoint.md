@@ -7,7 +7,6 @@ ms.topic: troubleshooting
 ms.date: 01/27/2025
 ms.custom:
   - known-issue-447
-  - ignite-2023
 ---
 
 # Known issue - Temp table usage in Data Warehouse and SQL analytics endpoint

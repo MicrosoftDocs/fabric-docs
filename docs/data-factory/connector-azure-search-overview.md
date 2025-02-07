@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 04/24/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Azure AI Search connector overview

@@ -6,8 +6,6 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---

@@ -6,7 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.search.form: Microsoft Spark utilities
 ms.date: 05/02/2024
 ---

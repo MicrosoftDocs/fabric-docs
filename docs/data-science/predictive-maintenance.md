@@ -7,7 +7,6 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.
 ---

@@ -7,7 +7,6 @@ ms.reviewer: cynotebo
 ms.date: 09/25/2024
 ms.topic: overview
 ms.custom:
-  - ignite-2023
   - ignite-2024
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---

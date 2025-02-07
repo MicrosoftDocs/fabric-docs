@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 01/23/2025
 ---
 

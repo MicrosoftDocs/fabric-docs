@@ -6,7 +6,6 @@ ms.author: qixwang
 author: qixwang
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 05/24/2024
 ---
 

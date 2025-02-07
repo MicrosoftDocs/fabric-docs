@@ -6,7 +6,6 @@ ms.author: makromer
 author: kromerm
 ms.topic: overview
 ms.custom:
-  - ignite-2023
 ms.search.form: product-data-integration, Data_Factory_Overview, product-data-factory
 ms.date: 12/18/2024
 ---

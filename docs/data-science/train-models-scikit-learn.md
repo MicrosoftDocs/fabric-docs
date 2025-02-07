@@ -7,7 +7,6 @@ ms.reviewer: negust
 reviewer: nelgson
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 07/11/2024
 ms.search.form: Train models with scikit-learn
 

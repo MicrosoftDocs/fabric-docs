@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 03/18/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Configure Oracle Cloud Storage in a copy activity

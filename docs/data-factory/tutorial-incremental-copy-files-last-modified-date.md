@@ -6,7 +6,6 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 08/05/2024
 ms.search.form: Pipeline tutorials
 ---
