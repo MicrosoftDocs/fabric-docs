@@ -56,7 +56,7 @@ Fabric centralizes data discovery, administration, and governance by automatical
 
 ## Components of Microsoft Fabric
 
-Fabric offers a comprehensive set of analytics experiences designed to work together seamlessly. The platform tailors each of these experiences to a specific persona and a specific task:
+Fabric offers the following workloads, each customized for a specific role and task:
 
 * **Power BI** - Power BI lets you easily connect to your data sources, visualize, and discover what's important, and share that with anyone or everyone you want. This integrated experience allows business owners to access all data in Fabric quickly and intuitively and to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
@@ -82,39 +82,35 @@ The Microsoft Fabric platform unifies the OneLake and lakehouse architecture acr
 
 ### OneLake
 
-A data lake is the foundation on which all the Fabric workloads are built. Microsoft Fabric Lake is also known as [OneLake](../onelake/onelake-overview.md). OneLake is built into the Fabric platform and provides a unified location to store all organizational data where the workloads operate.
+A data lake is the foundation for all Fabric workloads. In Microsoft Fabric, this lake is called[OneLake](../onelake/onelake-overview.md). It's built into the platform and serves as a single store for all organizational data.
 
-OneLake is built on ADLS (Azure Data Lake Storage) Gen2. It provides a single SaaS experience and a tenant-wide store for data that serves both professional and citizen developers. OneLake simplifies Fabric experiences by eliminating the need for you to understand infrastructure concepts such as resource groups, RBAC (Role-Based Access Control), Azure Resource Manager, redundancy, or regions. You don't need an Azure account to use Fabric.
+OneLake is built on ADLS (Azure Data Lake Storage) Gen2. It provides a single SaaS experience and a tenant-wide store for data that serves both professional and citizen developers. It simplifies the user experience by removing the need to understand complex infrastructure details like resource groups, RBAC, Azure Resource Manager, redundancy, or regions. You don't need an Azure account to use Fabric.
 
-OneLake eliminates data silos, which individual developers often create when they provision and configure their own isolated storage accounts. Instead, OneLake provides a single, unified storage system for all developers. It ensures easy data discovery, sharing, and uniform enforcement of policy and security settings. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
+OneLake prevents data silos by offering one unified storage system that makes data discovery, sharing, and consistent policy enforcement easy. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
 
 ### OneLake and lakehouse data hierarchy
 
-OneLake is hierarchical in nature to simplify management across your organization. Microsoft Fabric includes OneLake and there's no requirement for any up-front provisioning. There's only one OneLake per tenant and it provides a single-pane-of-glass file-system namespace that spans across users, regions, and clouds. OneLake organizes data into manageable containers for easy handling. The tenant maps to the root of OneLake and is at the top level of the hierarchy. You can create any number of workspaces, which you can think of as folders, within a tenant.
+OneLake’s hierarchical design simplifies organization-wide management. Fabric includes OneLake by default, so no upfront provisioning is needed. Each tenant gets one unified OneLake with single file-system namespace that spans users, regions, and clouds. OneLake organizes data into containers for easy handling. The tenant maps to the root of OneLake and is at the top level of the hierarchy. You can create multiple workspaces (which are like folders) within a tenant.
 
-The following image shows how Fabric stores data in various items within OneLake. As shown, you can create multiple workspaces within a tenant, and create multiple lakehouses within each workspace. A lakehouse is a collection of files, folders, and tables that represents a database over a data lake. To learn more, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md).
+The following image shows how Fabric stores data in OneLake. You can have several workspaces per tenant and multiple lakehouses within each workspace. A lakehouse is a collection of files, folders, and tables that acts as a database over a data lake. To learn more, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md).
 
 :::image type="content" source="media\microsoft-fabric-overview\hierarchy-within-tenant.png" alt-text="Diagram of the hierarchy of items like lakehouses and semantic models within a workspace within a tenant.":::
 
-Every developer and business unit in the tenant can easily create their own workspaces in OneLake. They can ingest data into their own lakehouses, then start processing, analyzing, and collaborating on the data, just like OneDrive in Microsoft Office.
+Every developer and business unit in the tenant can create their own workspaces in OneLake. They can ingest data into lakehouses and start processing, analyzing, and collaborating on that data—similar to using OneDrive in Microsoft Office.
 
 ## Fabric compute engines
 
-All the Microsoft Fabric compute experiences are prewired to OneLake, just like the Office applications are prewired to use the organizational OneDrive. The experiences such as Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-Time Intelligence use OneLake as their native store. They don't need any extra configuration.
+All Microsoft Fabric compute experiences come preconfigured with OneLake, much like Office apps automatically use organizational OneDrive. The experiences such as Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-Time Intelligence etc. use OneLake as their native store without extra setup.
 
 :::image type="content" source="media\microsoft-fabric-overview\onelake-architecture.png" alt-text="Diagram of different Fabric experiences all accessing the same OneLake data storage." lightbox="media\microsoft-fabric-overview\onelake-architecture.png":::
 
-OneLake allows instant mounting of your existing Platform as a Service (PaaS) storage accounts into OneLake with the [Shortcut](../onelake/onelake-shortcuts.md) feature. You don't need to migrate or move any of your existing data. Using shortcuts, you can access the data stored in your Azure Data Lake Storage.
-
-Shortcuts also allow you to easily share data between users and applications without moving or duplicating information. You can create shortcuts to other storage systems, allowing you to compose and analyze data across clouds with transparent, intelligent caching that reduces egress costs and brings data closer to compute.
+OneLake lets you instantly mount your existing PaaS storage accounts using the [Shortcut](../onelake/onelake-shortcuts.md) feature. You don't have to migrate your existing data. Shortcuts provide direct access to data in Azure Data Lake Storage. They also enable easy data sharing between users and applications without duplicating files. Additionally, you can create shortcuts to other storage systems, allowing you to analyze cross-cloud data with intelligent caching that reduces egress costs and brings data closer to compute.
 
 ## Real-Time hub: the unification of data streams
 
-The Real-Time hub is a foundational location for data in motion.
+The Real-Time hub is a foundational location for data in motion. It provides a unified SaaS experience and tenant-wide logical place for streaming data. It lists data from every source, allowing users to discover, ingest, manage, and react to it. It contains both [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables. Streams include [**Data streams**](../real-time-intelligence/event-streams/create-manage-an-eventstream.md), **Microsoft sources** (like, [Azure Event Hubs](../real-time-hub/add-source-azure-event-hubs.md), [Azure IoT Hub](../real-time-hub/add-source-azure-iot-hub.md), [Azure SQL DB Change Data Capture (CDC)](../real-time-hub/add-source-azure-sql-database-cdc.md), [Azure Cosmos DB CDC](../real-time-hub/add-source-azure-cosmos-db-cdc.md), and [PostgreSQL DB CDC](../real-time-hub/add-source-postgresql-database-cdc.md)), and [**Fabric events**](../real-time-intelligence/event-streams/add-source-fabric-workspace.md) (Fabric events and external events from Azure, Microsoft 365, or other clouds).
 
-The Real-Time hub provides a unified SaaS experience and tenant-wide logical place for all data-in-motion. The Real-Time hub lists all data in motion from all sources that customers can discover, ingest, manage, and consume and react upon, and contains both [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables. Streams include [**Data streams**](../real-time-intelligence/event-streams/create-manage-an-eventstream.md), **Microsoft sources** (for example, [Azure Event Hubs](../real-time-hub/add-source-azure-event-hubs.md), [Azure IoT Hub](../real-time-hub/add-source-azure-iot-hub.md), [Azure SQL DB Change Data Capture (CDC)](../real-time-hub/add-source-azure-sql-database-cdc.md), [Azure Cosmos DB CDC](../real-time-hub/add-source-azure-cosmos-db-cdc.md), and [PostgreSQL DB CDC](../real-time-hub/add-source-postgresql-database-cdc.md)), and [**Fabric events**](../real-time-intelligence/event-streams/add-source-fabric-workspace.md) (Fabric system events and external system events brought in from Azure, Microsoft 365, or other clouds).
-
-The Real-Time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of source so that they can collaborate and develop streaming applications within one place. For more information, see [What is the Real-Time hub?](../real-time-hub/real-time-hub-overview.md)
+The Real-Time hub makes it easy discover, ingest, manage, and consume data-in-motion from a wide variety of sources to collaborate and develop streaming applications in one place. For more information, see [What is the Real-Time hub?](../real-time-hub/real-time-hub-overview.md)
 
 ## Fabric solutions for ISVs
 
