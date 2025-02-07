@@ -45,7 +45,7 @@ Microsoft Fabric is built on a Software as a Service (SaaS) platform. It unifies
 
 Fabric integrates workloads like Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Industry solutions, Databases, and Power BI into a SaaS platform. Each of these workloads is tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. Advantages of Fabric include:
 
-* Comprehensive integrated analytics
+* End to end integrated analytics
 * Consistent, user-friendly experiences
 * Easy access and reuse of all assets
 * Unified data lake storage preserving data in its original location
