@@ -4,7 +4,7 @@ description: Understand how to trigger Fabric items with Activator and automate 
 author: kfollis
 ms.author: kfollis
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.date: 11/08/2024
 ms.search.form: Data Activator Fabric Item
 ---

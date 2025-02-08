@@ -7,7 +7,7 @@ author: alexlzx
 ms.topic: how-to
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
-ms.custom: reference_regions, ignite-2024
+ms.custom: reference_regions
 ---
 
 # Add Azure Service Bus source to an eventstream (preview)

@@ -7,7 +7,6 @@ ms.reviewer: antho, sukkaur, dlevy
 ms.date: 01/02/2025
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.search.form:
 ---
 # Load data with data pipelines into SQL database in Microsoft Fabric

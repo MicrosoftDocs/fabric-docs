@@ -6,7 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ms.date: 12/24/2024
 ms.search.form: Notebooks
 ---
