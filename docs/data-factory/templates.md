@@ -6,7 +6,6 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.date: 12/18/2024
 ms.search.form: Pipeline Template
 ---

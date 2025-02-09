@@ -7,7 +7,6 @@ ms.reviewer: imotiwala, maprycem, cynotebo
 ms.date: 01/27/2025
 ms.topic: troubleshooting
 ms.custom:
-  - ignite-2024
 ms.search.form: Fabric Mirroring
 ---
 

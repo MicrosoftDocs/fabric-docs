@@ -7,7 +7,6 @@ ms.reviewer: maprycem
 ms.date: 09/04/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ---
 
 # Tutorial: Set up dbt for Fabric Data Warehouse

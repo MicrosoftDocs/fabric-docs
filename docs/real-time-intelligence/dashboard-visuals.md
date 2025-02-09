@@ -6,7 +6,6 @@ author: shsagir
 ms.reviewer: gabil
 ms.topic: how-to
 ms.custom:
-- ignite-2024
 ms.date: 11/19/2024
 ---
 # Real-Time Dashboard-specific visuals

@@ -7,7 +7,6 @@ ms.reviewer: joanpo
 ms.date: 09/26/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations of Microsoft Fabric Data Warehouse

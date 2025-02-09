@@ -6,7 +6,6 @@ ms.author: monaberdugo
 author: mberdugo
 ms.topic: overview
 ms.custom:
-- ignite-2024
 ms.search.form:
 ms.date: 07/29/2024
 #customer intent: As an ISV, I want to learn about the different pathways to integrate with Microsoft Fabric so that I can leverage the platform's capabilities to build and deploy my solutions.

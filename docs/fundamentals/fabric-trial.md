@@ -6,7 +6,6 @@ ms.reviewer: mihirwagle
 ms.author: kfollis
 ms.topic: concept-article
 ms.custom:
-  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ms.date: 01/29/2025
 ---

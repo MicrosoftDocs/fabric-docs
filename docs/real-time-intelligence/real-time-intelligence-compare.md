@@ -6,7 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: overview
 ms.custom:
-- ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
