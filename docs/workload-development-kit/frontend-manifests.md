@@ -74,11 +74,11 @@ Configurations for creating new items in the product, specifying options for use
       - **mediaType** (integer): Media type of the slide. Use `0` for images and `1` for videos.
       - **source** (string): Path to the image or video source.
       - **Note**: For videos: Provide a URL to the video. Supported formats are:
-        - `https://player.vimeo.com/video/<number>`
-          - Example: `https://player.vimeo.com/video/123456`
-          - Note: Do **not** include `www.` in the URL.
         - `https://youtube.com/embed/<id>` or `https://www.youtube.com/embed/<id>`
-          - Example: `https://www.youtube.com/embed/HQwLPhE2zys?si=GWtHz0-HWU0VnF4W
+          - Example: `https://www.youtube.com/embed/UNgpBOCvwa8?si=KwsR879MaVZd5CJi
+        - `https://player.vimeo.com/video/<number>`
+          - Note: Do **not** include `www.` in the vimeo URL.
+
 
 #### Example of `slideMedia` Configuration:
 
@@ -90,11 +90,7 @@ Configurations for creating new items in the product, specifying options for use
   },
   {
     "mediaType": 1,
-    "source": "https://youtube.com/embed/HQwLPhE2zys?si=GWtHz0-HWU0VnF4W"
-  },
-  {
-    "mediaType": 1,
-    "source": "https://player.vimeo.com/video/123456"
+    "source": "https://youtube.com/embed/UNgpBOCvwa8?si=KwsR879MaVZd5CJi"
   }
 ]
 ```
