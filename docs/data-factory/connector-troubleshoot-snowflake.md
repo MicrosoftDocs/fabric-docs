@@ -7,7 +7,7 @@ ms.subservice: data-movement
 ms.topic: troubleshooting
 ms.date: 11/08/2024
 ms.author: jianleishen
-ms.custom: has-adal-ref, synapse, ignite-2024
+ms.custom: has-adal-ref, synapse
 ---
 
 # Troubleshoot the Snowflake connector in Data Factory and Azure Synapse

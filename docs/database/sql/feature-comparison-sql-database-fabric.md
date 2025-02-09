@@ -7,7 +7,6 @@ ms.reviewer: nzagorac, antho, sukkaur, drskwier
 ms.date: 01/16/2025
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ---
 # Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)
 

@@ -6,7 +6,6 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-- ignite-2024
 ms.date: 11/15/2023
 ms.search.form: delta lake interoperability
 ---

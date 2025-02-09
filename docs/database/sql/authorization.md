@@ -7,7 +7,6 @@ ms.reviewer: wiassaf
 ms.date: 10/11/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.search.form:
 ---
 # Authorization in SQL database in Microsoft Fabric
