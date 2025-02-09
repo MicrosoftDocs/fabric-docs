@@ -4,7 +4,7 @@ description: Learn how to get started using Activator and unleash the power of d
 author: kfollis
 ms.author: kfollis
 ms.topic: how-to
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Getting Started
 ms.date: 01/20/2025
 #customer intent: As a Fabric user I want to get started with Activator.

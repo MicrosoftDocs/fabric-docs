@@ -6,7 +6,6 @@ ms.author: eskot
 author: ekote
 ms.topic: overview
 ms.custom:
-  - ignite-2024
 ms.date: 11/11/2024
 ---
 
