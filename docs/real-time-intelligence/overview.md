@@ -58,6 +58,7 @@ Real-Time Intelligence in Microsoft Fabric offers capabilities that, in
 combination, enable the creation of Real-Time Intelligence solutions in
 support of business and engineering processes.
 
+Update this image to add Blue Eventhouse logo
 :::image type="content" source="media/overview/overview-schematic.png" alt-text="Diagram of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border="none":::
 
 -   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data isn't only available but also accessible to all, promoting quick decision-making, and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
