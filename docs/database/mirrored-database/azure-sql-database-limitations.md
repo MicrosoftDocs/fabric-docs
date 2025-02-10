@@ -3,8 +3,8 @@ title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure SQL D
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: imotiwala, sbahadur
-ms.date: 01/27/2025
+ms.reviewer: imotiwala, sbahadur, drskwier
+ms.date: 02/10/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
