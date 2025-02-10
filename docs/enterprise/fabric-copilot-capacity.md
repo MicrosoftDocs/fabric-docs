@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
-ms.date: 
+ms.date: 01-21-2025
 ---
 
 # Setting up a Fabric Copilot capacity
@@ -22,8 +22,8 @@ There are three steps required to enable Fabric Copilot capacity.
 
 ## Considerations and limitations
 
-*Fabric Copilot capacity is only supported in the Fabric tenant's home region.
+* Fabric Copilot capacity is only supported in the Fabric tenant's home region.
 
-*The Fabric Copilot capacity has to reside on at least an F64 or P1 [SKU](licenses.md#capacity).
+* The Fabric Copilot capacity has to reside on at least an F64 or P1 [SKU](licenses.md#capacity).
 
-*Data is processed in the region where you are using Copilot. Usage / billing records which contain the metadata of the Fabric items / workspaces are available to the capacity administrator of the Copilot capacity.
+* Data is processed in the region where you are using Copilot. Usage / billing records which contain the metadata of the Fabric items / workspaces are available to the capacity administrator of the Copilot capacity.
