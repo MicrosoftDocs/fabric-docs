@@ -18,19 +18,19 @@ Throttling is applied at the capacity level, meaning that while one capacity, or
 
 ## Balance between performance and reliability
 
-Fabric is designed to deliver lightning-fast performance to its customers by allowing operations to access more capacity unit (CU) resources than are allocated to the capacity. Tasks that might take several minutes to complete on other platforms can be finished in mere seconds on Fabric. With Fabric's built-in _bursting_ and _smoothing_, capacities can be self-managing and self-healing when temporary spikes in usage would otherwise cause other systems to fail or slow down. 
+Fabric is designed to deliver lightning-fast performance to its customers by allowing operations to access more capacity unit (CU) resources than are provisioned by the capacity. Tasks that might take several minutes to complete on other platforms can be finished in mere seconds on Fabric. With Fabric's built-in _bursting_ and _smoothing_, capacities can be self-managing and self-healing when temporary spikes in usage would otherwise cause other systems to fail or slow down. 
 
 ### Bursting
-To ensure lightning-fast performance, Fabric uses _bursting_ to lets operations run as fast as they can. This ensures users get results quickly without waiting. Because of bursting, users can temporarily use more compute than the provisioned compute. It means that a smaller capacity can run larger jobs that would normally require a more expensive capacity. 
+To ensure fast performance, Fabric uses _bursting_ to lets operations run as fast as they can. This ensures users get results quickly without waiting. Because of bursting, users can temporarily use more compute than the provisioned compute. It means that a smaller capacity can run larger jobs that would normally require a more expensive capacity. 
 
 ### Smoothing
-To avoid penalizing users when operations benefit from bursting, Fabric _smooths_ or averages the CU usage of an operation over a longer timeframe. This behavior ensures users can enjoy consistently fast performance without experiencing throttling. The usage is distributed over future _timeslots_ that are automatically managed by the capacity.
+To avoid penalizing users when operations benefit from bursting, Fabric _smooths_ or averages the CU usage of an operation over a longer timeframe. This behavior ensures users can enjoy consistently fast performance without experiencing throttling. The usage is distributed over future _timepoints_ that are automatically managed by the capacity.
 
 Interactive operations are smoothed over a minimum of five minutes, and up to 64 minutes depending on how much CU usage they consume. Background operations are smoothed over a 24-hour period because they typically have long runtimes and large CU consumption.
 
-Smoothed usage accumulates as job runs and is payed for by _future capacity_, which is the CU that are avabilable in future timeslots because the capacity is running continuously. 
+Smoothed usage accumulates as job runs and is paid for by _future capacity_, which is the CU that are available in future timepoints because the capacity is running continuously. 
 
-Bursting and smoothing work together to eliminate the need for data scientists and database administrators to spend time creating job schedules that spread CU load across the day. With background jobs smoothing over 24-hours, scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, users can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
+Bursting and smoothing work together make it easier for capacity users to do their work. For example, data scientists and database administrators typically spend time scheduling jobs and spreading them out across the day. With smoothing, the compute cost for background jobs is smoothed over 24-hours. This means scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, users can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
 
 ## Throttle triggers and throttle stages
 
@@ -90,8 +90,8 @@ Unlike traditional system, in Fabric it's common that an operation started by on
 When there's a chain of calls, there's a risk of _compound throttling_, which is when throttling is applied more than once to the same request. Fabric has built-in infrastructure that reduces the likelihood of compound throttling that workloads opt-in to using. When workloads support compound throttling protection, then a request is throttled only once for each capacity that participates in the chain. The throttling decision occurs when the request starts and applies to all operations in the chain. So if a request is delayed, it is only delayed once. If a chain relies on more than one capacity then each capacity enforces it's throttling once for the first request it receives in the chain. 
 
 The following workload experiences support compound throttling:
-1. TBD1
-2. TBD2
+1. When a semantic model connects to another semantic model using Direct Query. Both models residing on the same capacity.
+2. A DAX query form a paginated report to a semantic model.
 3. TBD3
 4. TBD4
 
@@ -111,7 +111,7 @@ Microsoft Fabric divides operations into two types, *interactive* and *backgroun
 
 Some admins might notice that operations are sometimes classified as interactive and smoothed as background, or vice versa. This distinction happens because Fabric’s throttling systems must apply throttling rules before a request begins to run. Smoothing occurs after the job has started running and CU consumption can be measured.
 
-Throttling systems attempt to accurately categorize operations upon submission, but sometimes an operation’s classification might change after throttling has been applied. When the operation begins to run, more detailed information about the request becomes available. In ambiguous scenarios, the throttling system tries to err on the side of classifying operations as background, which is in the user’s best interest.
+Throttling systems attempt to accurately categorize operations upon submission, but sometimes an operation’s classification might change after throttling has been applied. When the operation begins to run, more detailed information about the request becomes available. In ambiguous scenarios, the throttling system falls back to classifying operations as background, which is in the user’s best interest.
 
 ## Track overages and rejected operations
 
@@ -128,7 +128,7 @@ To view a visual history of any overutilization of capacity, including carryforw
 The Microsoft Fabric Capacity Metrics app drilldown allows admins to see operations that were rejected during a throttling event. There's limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. When a request is rejected, end users receive an error message that asks them to try again later.
 
 ## Billable and non-billable compute
-When you review capacity usage in the capacity metrics app, you'll see some operations are considered billable and other as non-billiable. Only billable operations are included in throttling caculations. Non-billable operations are typically generated by preview capabilities that is not yet billing. Use non-billable operations to plan ahead so that your capacity is sized correctly for when these preview features become billable.
+When you review capacity usage in the capacity metrics app, you'll see some operations are considered billable and other as non-billable. Only billable operations are included in throttling calculations. Non-billable operations are typically generated by preview capabilities that is not yet billed. Use non-billable operations to plan ahead so that your capacity is sized correctly for when these preview features become billable.
 
 ## Actions you can take to recover from overload situations
 
