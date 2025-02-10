@@ -7,9 +7,6 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 12/31/2024
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---

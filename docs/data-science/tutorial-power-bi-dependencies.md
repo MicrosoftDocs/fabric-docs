@@ -7,7 +7,6 @@ ms.reviewer: alsavelv
 reviewer: alsavelv
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 09/27/2023
 ---
 

@@ -1,16 +1,16 @@
 ---
-title: How to configure Azure SQL Database Managed Instance in copy activity
-description: This article explains how to copy data using Azure SQL Database Managed Instance.
+title: How to configure Azure SQL Managed Instance in copy activity
+description: This article explains how to copy data using Azure SQL Managed Instance.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 04/29/2024
-ms.custom: template-how-to, build-2023
+ms.custom: template-how-to
 ---
 
-# How to configure Azure SQL Database Managed Instance in copy activity
+# How to configure Azure SQL Managed Instance in copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database Managed Instance.
+This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Managed Instance.
 
 ## Supported configuration
 
@@ -28,29 +28,29 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Source
 
-The following properties are supported for Azure SQL Database Managed Instance under the **Source** tab of a copy activity.
+The following properties are supported for Azure SQL Managed Instance under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-sql-database-managed-instance/source.png" alt-text="Screenshot showing the source tab and the list of properties.":::
+:::image type="content" source="./media/connector-azure-sql-managed-instance/source.png" alt-text="Screenshot showing the source tab and the list of properties.":::
 
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an Azure SQL Database Managed Instance connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Database Managed Instance connection by selecting **New**.
-- **Connection type**: Select **Azure SQL Database Managed Instance**.
+- **Connection**: Select an Azure SQL Managed Instance connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Managed Instance connection by selecting **New**.
+- **Connection type**: Select **Azure SQL Managed Instance**.
 - **Use query**: Specify the way to read data. You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting:
 
   - **Table**: Read data from the table specified. Select your source table from the drop-down list or select **Edit** to enter it manually. 
 
   - **Query**: Specify the custom SQL query to read data. An example is `select * from MyTable`. Or select the pencil icon to edit in code editor.
   
-     :::image type="content" source="./media/connector-azure-sql-database-managed-instance/use-query-query.png" alt-text="Screenshot showing Query settings.":::
+     :::image type="content" source="./media/connector-azure-sql-managed-instance/use-query-query.png" alt-text="Screenshot showing Query settings.":::
 
   - **Stored procedure**: Use the stored procedure that reads data from the source table. The last SQL statement must be a SELECT statement in the stored procedure.
 
     - **Stored procedure name**: Select the stored procedure or specify the stored procedure name manually when selecting the **Edit** to read data from the source table.
     - **Stored procedure parameters**: Specify values for stored procedure parameters. Allowed values are name or value pairs. The names and casing of parameters must match the names and casing of the stored procedure parameters. You can select **Import parameters** to get your stored procedure parameters.
 
-      :::image type="content" source="./media/connector-azure-sql-database-managed-instance/use-query-stored-procedure.png" alt-text="Screenshot showing stored procedure settings.":::
+      :::image type="content" source="./media/connector-azure-sql-managed-instance/use-query-stored-procedure.png" alt-text="Screenshot showing stored procedure settings.":::
 
 Under **Advanced**, you can specify the following fields:
 
@@ -58,9 +58,9 @@ Under **Advanced**, you can specify the following fields:
 
 - **Isolation level**: Specifies the transaction locking behavior for the SQL source. The allowed values are: **Read committed**, **Read uncommitted**, **Repeatable read**, **Serializable**, **Snapshot**. If not specified, the database's default isolation level is used. Refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel) for more details.
 
-    :::image type="content" source="./media/connector-azure-sql-database-managed-instance/isolation-level.png" alt-text="Screenshot showing Isolation level settings.":::
+    :::image type="content" source="./media/connector-azure-sql-managed-instance/isolation-level.png" alt-text="Screenshot showing Isolation level settings.":::
 
-- **Partition option**: Specify the data partitioning options used to load data from Azure SQL Database Managed Instance. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from Azure SQL Database Managed Instance is controlled by **Degree of copy parallelism** in copy activity settings tab.
+- **Partition option**: Specify the data partitioning options used to load data from Azure SQL Managed Instance. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from Azure SQL Managed Instance is controlled by **Degree of copy parallelism** in copy activity settings tab.
 
   - **None**: Choose this setting to not use a partition.
   - **Physical partitions of table**: When you use a physical partition, the partition column and mechanism are automatically determined based on your physical table definition.
@@ -68,30 +68,30 @@ Under **Advanced**, you can specify the following fields:
 
     - **Partition column name**: Specify the name of the source column in **integer or date/datetime** type (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that's used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is auto-detected and used as the partition column. 
     
-         If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Azure SQL Database Managed Instance](#parallel-copy-from-azure-sql-database-managed-instance) section.
+         If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Azure SQL Managed Instance](#parallel-copy-from-azure-sql-managed-instance) section.
 
-    - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Azure SQL Database Managed Instance](#parallel-copy-from-azure-sql-database-managed-instance) section.
-    - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Azure SQL Database Managed Instance](#parallel-copy-from-azure-sql-database-managed-instance) section.
+    - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Azure SQL Managed Instance](#parallel-copy-from-azure-sql-managed-instance) section.
+    - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Azure SQL Managed Instance](#parallel-copy-from-azure-sql-managed-instance) section.
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
  
 
 Note the following points:
 
-- If **Query** is specified for source, the copy activity runs this query against the Azure SQL Database Managed Instance source to get the data. You also can specify a stored procedure by specifying **Stored procedure name** and **Stored procedure parameters** if the stored procedure takes parameters.
+- If **Query** is specified for source, the copy activity runs this query against the Azure SQL Managed Instance source to get the data. You also can specify a stored procedure by specifying **Stored procedure name** and **Stored procedure parameters** if the stored procedure takes parameters.
 - When using stored procedure in source to retrieve data, note if your stored procedure is designed as returning different schema when different parameter value is passed in, you might encounter failure or see unexpected result when importing schema from UI or when copying data to SQL database with auto table creation.
 
 ### Destination
 
-The following properties are supported for Azure SQL Database Managed Instance under the **Destination** tab of a copy activity.
+The following properties are supported for Azure SQL Managed Instance under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-sql-database-managed-instance/destination.png" alt-text="Screenshot showing Destination tab.":::
+:::image type="content" source="./media/connector-azure-sql-managed-instance/destination.png" alt-text="Screenshot showing Destination tab.":::
 
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an Azure SQL Database Managed Instance connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Database Managed Instance connection by selecting **New**.
-- **Connection type**: Select **Azure SQL Database Managed Instance**.
+- **Connection**: Select an Azure SQL Managed Instance connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Managed Instance connection by selecting **New**.
+- **Connection type**: Select **Azure SQL Managed Instance**.
 - **Table option**: You can choose **Use existing** to use the table specified. Or choose **Auto create table** to automatically create a destination table if the table doesn't exist in the source schema, and note that this selection is not supported when stored procedure is used as the write behavior.
 
    If you select **Use existing**: 
@@ -104,20 +104,20 @@ Under **Advanced**, you can specify the following fields:
 
 - **Write behavior**: Defines the write behavior when the source is files from a file-based data store. You can choose **Insert**, **Upsert, or **Stored procedure**.
 
-  - **Insert**: Choose this option use insert write behavior to load data into Azure SQL Database Managed Instance.
+  - **Insert**: Choose this option use insert write behavior to load data into Azure SQL Managed Instance.
 
-  - **Upsert**: Choose this option use upsert write behavior to load data into Azure SQL Database Managed Instance.
+  - **Upsert**: Choose this option use upsert write behavior to load data into Azure SQL Managed Instance.
   
     - **Use TempDB**: Specify whether to use a global temporary table or physical table as the interim table for upsert. By default, the service uses global temporary table as the interim table and this property is selected.
 
-      :::image type="content" source="./media/connector-azure-sql-database-managed-instance/use-tempdb.png" alt-text="Screenshot showing select Use TempDB.":::
+      :::image type="content" source="./media/connector-azure-sql-managed-instance/use-tempdb.png" alt-text="Screenshot showing select Use TempDB.":::
 
     - **Select user DB schema**: When the **Use TempDB** isn't selected, specify the interim schema for creating an interim table if a physical table is used.
 
       >[!Note]
       > You must have the permission for creating and deleting tables. By default, an interim table will share the same schema as a destination table.
 
-      :::image type="content" source="./media/connector-azure-sql-database-managed-instance/not-use-tempdb.png" alt-text="Screenshot showing not select Use TempDB.":::
+      :::image type="content" source="./media/connector-azure-sql-managed-instance/not-use-tempdb.png" alt-text="Screenshot showing not select Use TempDB.":::
 
     - **Key columns**: Specify the column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used.
 
@@ -129,7 +129,7 @@ Under **Advanced**, you can specify the following fields:
       - **Table type parameter name**: Specify the parameter name of the table type specified in the stored procedure.
       - **Parameters**: Specify values for stored procedure parameters. Allowed values are name or value pairs. The names and casing of parameters must match the names and casing of the stored procedure parameters. You can select **Import parameters** to get your stored procedure parameters.
       
-      :::image type="content" source="./media/connector-azure-sql-database-managed-instance/write-behavior-stored-procedure.png" alt-text="Screenshot showing stored procedure settings in destination write behavior.":::
+      :::image type="content" source="./media/connector-azure-sql-managed-instance/write-behavior-stored-procedure.png" alt-text="Screenshot showing stored procedure settings in destination write behavior.":::
 
 - **Bulk insert table lock**: Choose **Yes** or **No** (default). Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients. You can specify this property when you select **Insert** or **Upsert** as your write behavior. For more information, go to [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql)
 
@@ -143,25 +143,25 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Azure SQL Database Managed Instance with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Azure SQL Managed Instance with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
-If you apply Azure SQL Database Managed Instance with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you apply Azure SQL Managed Instance with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
 
-:::image type="content" source="media/connector-azure-sql-database-managed-instance/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+:::image type="content" source="media/connector-azure-sql-managed-instance/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
-## Parallel copy from Azure SQL Database Managed Instance
+## Parallel copy from Azure SQL Managed Instance
 
-The Azure SQL Database Managed Instance connector in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
+The Azure SQL Managed Instance connector in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
 
-When you enable partitioned copy, copy activity runs parallel queries against your Azure SQL Database Managed Instance source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Azure SQL Database Managed Instance.
+When you enable partitioned copy, copy activity runs parallel queries against your Azure SQL Managed Instance source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Azure SQL Managed Instance.
 
-You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Azure SQL Database Managed Instance. The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
+You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Azure SQL Managed Instance. The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
 
 | Scenario                                                     | Suggested settings                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -192,11 +192,11 @@ WHERE s.name='[your schema]' AND t.name = '[your table name]'
 
 If the table has physical partition, you would see "HasPartition" as "yes" like the following.
 
-:::image type="content" source="./media/connector-azure-sql-database-managed-instance/sql-query-result.png" alt-text="Sql query result.":::
+:::image type="content" source="./media/connector-azure-sql-managed-instance/sql-query-result.png" alt-text="Sql query result.":::
 
 ## Table summary
 
-See the following table for the summary and more information for the Azure SQL Database Managed Instance copy activity.
+See the following table for the summary and more information for the Azure SQL Managed Instance copy activity.
 
 ### Source information
 
@@ -204,7 +204,7 @@ See the following table for the summary and more information for the Azure SQL D
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
-|**Connection type** |Your connection type. Select **Azure SQL Database Managed Instance**.|**Azure SQL Database Managed Instance** |Yes|/|
+|**Connection type** |Your connection type. Select **Azure SQL Managed Instance**.|**Azure SQL Managed Instance** |Yes|/|
 |**Use query** |The custom SQL query to read data.|• Table<br>• Query<br>• Stored procedure |Yes |/|
 |**Table** | Your source data table. |< name of your table>|No |schema <br> table|
 |**Query** | The custom SQL query to read data. |< your query > |No |sqlReaderQuery|
@@ -212,7 +212,7 @@ See the following table for the summary and more information for the Azure SQL D
 |**Stored procedure parameter** | These parameters are for the stored procedure. Allowed values are name or value pairs. The names and casing of parameters must match the names and casing of the stored procedure parameters. |< name or value pairs >  |No |storedProcedureParameters|
 |**Query timeout** |The timeout for query command execution. |timespan<br>(the default is 120 minutes) |No |queryTimeout|
 |**Isolation level** |Specifies the transaction locking behavior for the SQL source.|• Read committed<br>• Read uncommitted<br>• Repeatable read<br>• Serializable<br>• Snapshot|No |isolationLevel:<br>• ReadCommitted<br>• ReadUncommitted<br>• RepeatableRead<br>• Serializable<br>• Snapshot|
-|**Partition option** |The data partitioning options used to load data from Azure SQL Database Managed Instance. |• None (default)<br>• Physical partitions of table<br>• Dynamic range |No |partitionOption:<br>• None (default)<br>• PhysicalPartitionsOfTable<br>• DynamicRange|
+|**Partition option** |The data partitioning options used to load data from Azure SQL Managed Instance. |• None (default)<br>• Physical partitions of table<br>• Dynamic range |No |partitionOption:<br>• None (default)<br>• PhysicalPartitionsOfTable<br>• DynamicRange|
 | **Partition column name** | The name of the source column in **integer or date/datetime** type (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that's used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is auto-detected and used as the partition column. If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause.  | < your partition column names > | No | partitionColumnName | 
 | **Partition upper bound** | The maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. | < your partition upper bound > | No | partitionUpperBound | 
 | **Partition lower bound** |The minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. | < your partition lower bound > | No | partitionLowerBound | 
@@ -224,10 +224,10 @@ See the following table for the summary and more information for the Azure SQL D
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|< your connection >|Yes|connection|
-|**Connection type** |Your connection type. Select **Azure SQL Database Managed Instance**.|**Azure SQL Database Managed Instance** |Yes|/|
+|**Connection type** |Your connection type. Select **Azure SQL Managed Instance**.|**Azure SQL Managed Instance** |Yes|/|
 |**Table option** |Specifies whether to automatically create the destination table if it doesn't exist based on the source schema.|• Use existing <br>• Auto create table|Yes |tableOption:<br><br>• autoCreate|
 |**Table**|Your destination data table.| \<name of your table\> |Yes |schema <br> table|
-|**Write behavior** |The write behavior for copy activity to load data into Azure SQL Database Managed Instance database.|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureTableTypeParameterName, storedProcedureParameters|
+|**Write behavior** |The write behavior for copy activity to load data into Azure SQL Managed Instance database.|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureTableTypeParameterName, storedProcedureParameters|
 |**Use TempDB** | Whether to use the global temporary table or physical table as the interim table for upsert. |selected (default) or unselected  |No |useTempDB:<br>true (default) or false |
 |**Select user DB schema** | The interim schema for creating interim table if physical table is used. Note: user need to have the permission for creating and deleting table. By default, interim table will share the same schema as destination table. Apply when you don't select **Use TempDB**. |selected (default) or unselected  |No |interimSchemaName|
 |**Key columns** | The column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used. |< your key column> |No |keys|
@@ -243,4 +243,4 @@ See the following table for the summary and more information for the Azure SQL D
 
 ## Related content
 
-- [Azure SQL Database Managed Instance overview](connector-azure-sql-database-managed-instance-overview.md)
+- [Azure SQL Managed Instance overview](connector-azure-sql-managed-instance-overview.md)

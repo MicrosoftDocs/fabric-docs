@@ -6,7 +6,6 @@ ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
 ms.date: 12/31/2024
 LocalizationGroup: Administration

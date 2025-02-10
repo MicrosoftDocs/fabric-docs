@@ -6,8 +6,6 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
   - FY25Q1-Linter 
 ms.date: 07/25/2024
 # Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.

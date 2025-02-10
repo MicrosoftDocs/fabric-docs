@@ -7,8 +7,6 @@ ms.reviewer: sosivara
 ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 ---
 
 # Pause and resume in Fabric Data Warehouse

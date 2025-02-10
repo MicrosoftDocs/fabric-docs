@@ -7,8 +7,6 @@ ms.reviewer: midesa
 reviewer: midesa
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 01/10/2025
 #customer intent: As a data analyst, I want to use the Microsoft Fabric lineage view to understand and manage machine learning models and experiments.
 ---

@@ -7,7 +7,6 @@ ms.reviewer: strrodic
 ms.date: 12/18/2024
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ---
 # Automatic backups in SQL database in Microsoft Fabric
 

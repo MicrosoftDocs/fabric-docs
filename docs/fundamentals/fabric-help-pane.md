@@ -6,8 +6,6 @@ ms.author: kfollis
 ms.reviewer: kfollis
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 01/15/2025
 ---
 # Self-help with the Fabric contextual Help pane

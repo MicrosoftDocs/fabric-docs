@@ -4,7 +4,7 @@ description: Include file for the Mapping transformations heading in the Get dat
 author: shsagir
 ms.author: shsagir
 ms.topic: include
-ms.custom: build-2023
+ms.custom: 
 ms.date: 09/18/2023
 ---
 ### Mapping transformations

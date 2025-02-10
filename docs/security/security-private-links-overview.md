@@ -6,7 +6,6 @@ ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.date: 01/07/2025
 ---
 

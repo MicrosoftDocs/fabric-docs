@@ -7,8 +7,6 @@ ms.topic: overview
 ms.date: 05/13/2024
 ms.custom:
   - template-howto
-  - build-2023
-  - ignite-2023
 ms.search.form: Browse Spark applications in the Monitor pane
 ---
 

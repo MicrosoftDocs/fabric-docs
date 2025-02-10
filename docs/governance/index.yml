@@ -9,7 +9,6 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: governance
   ms.custom:
-    - ignite-2024
   ms.topic: landing-page # Required
   author: paulinbar
   ms.author: painbar
