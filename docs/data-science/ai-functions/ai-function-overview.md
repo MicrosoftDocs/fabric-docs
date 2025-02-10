@@ -13,6 +13,7 @@ ms.search.form: TBD
 ---
 
 # Transform and enrich data in seconds with AI functions (Preview)
+
 Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code. There's no need for custom configuration, complex infrastructure management, or even specific technical expertise.
 
 AI functions, currently in public preview, allow you to complete the following tasks in a single line of Python or PySpark code, with support for more languages in the works:
@@ -29,17 +30,21 @@ AI functions, currently in public preview, allow you to complete the following t
 Whether you're looking to translate product reviews from one language into another or to generate action items with custom text prompts, AI functions put the power of Fabric's native LLM into your hands, accelerating data transformation and discovery regardless of your level of experience.
 
 ## Prerequisites
+
 [Standard]
 
 ## Limitations
+
 [Standard]
 
 ## Getting started with AI functions
+
 To access the AI functions library in a Fabric notebook, you need to install some custom packages. In a future release, this step will be handled for you. Until then, all you need to do is copy and run the following cells in Python or PySpark.
 
 The first cell will install the AI functions library and its dependencies.
 
 # [Python](#tab/pandas)
+
 ```python
 # Install fixed version of packages
 %pip install openai==1.30
@@ -53,6 +58,7 @@ The first cell will install the AI functions library and its dependencies.
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 %%configure -f
 {
@@ -66,11 +72,13 @@ The first cell will install the AI functions library and its dependencies.
     }
 }
 ```
+
 ---
 
 The second cell will import the AI functions library and its dependencies (plus an optional library in Python for displaying dynamic progress bars to track the status of every operation you apply).
 
 # [Python](#tab/pandas)
+
 ```python
 # Required imports
 import synapse.ml.aifunc as aifunc
@@ -83,22 +91,28 @@ tqdm.pandas()
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 from synapse.ml.spark.aifunc.DataFrameExtensions import AIFunctions
 from synapse.ml.services.openai import OpenAIDefaults
 defaults = OpenAIDefaults()
 defaults.set_deployment_name("gpt-35-turbo-0125")
 ```
+
 ---
 
 ## Applying AI functions
+
 Each of the following functions allows you to invoke Fabric's native LLM endpoint to transform and enrich data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames with Python code or Spark DataFrames with PySpark code. Support for additional programming languages will be available in the future.
 
 ### [Calculate similarity](similarity.md)
+
 The `ai.similarity` function invokes AI to compare input text values to corresponding text values in another column or to a single text value. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
 
 #### Examples:
+
 # [Python](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -115,6 +129,7 @@ display(df)
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -129,13 +144,17 @@ df = spark.createDataFrame([
 similarity = df.ai.similarity(input_col="name", other_col="comparison", output_col="similarity")
 display(similarity)
 ```
+
 ---
 
 ### [Categorize text](classify.md)
+
 The `ai.classify` function invokes AI to categorize input text according to custom labels you choose. For more detailed instructions on how to use `ai.classify`, please visit [this dedicated article](classify.md).
 
 #### Examples:
+
 # [Python](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -151,6 +170,7 @@ display(df)
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -164,13 +184,17 @@ df = spark.createDataFrame([
 categories = df.ai.classify(labels=["kitchen", "bedroom", "garage", "other"], input_col="description", output_col="category")
 display(categories)
 ```
+
 ---
 
 ### [Detect sentiment](analyze-sentiment.md)
+
 The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If it can’t be determined, the sentiment is left blank. For more detailed instructions on how to use `ai.analyze_sentiment`, please visit [this dedicated article](analyze-sentiment.md).
 
 #### Examples:
+
 # [Python](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -187,6 +211,7 @@ display(df)
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -201,13 +226,17 @@ df = spark.createDataFrame([
 sentiment = df.ai.analyze_sentiment(input_col="review", output_col="sentiment")
 display(sentiment)
 ```
+
 ---
 
 ### [Extract entities](extract.md)
+
 The `ai.extract` function invokes AI to find specific types of information designated by labels you choose (such as locations or names) within input text. For more detailed instructions on how to use `ai.extract`, please visit [this dedicated article](extract.md).
 
 #### Examples:
+
 # [Python](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -222,6 +251,7 @@ display(df)
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -234,13 +264,17 @@ df = spark.createDataFrame([
 entities = df.ai.extract(labels=["name", "address"], input_col="description")
 display(entities)
 ```
+
 ---
 
 ### [Fix grammar](fix-grammar.md)
+
 The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. For more detailed instructions on how to use `ai.fix_grammar`, please visit [this dedicated article](fix-grammar.md).
 
 #### Examples:
+
 # [Python](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -256,6 +290,7 @@ display(df)
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -269,13 +304,17 @@ df = spark.createDataFrame([
 results = df.ai.fix_grammar(input_col="raw_text", output_col="corrected")
 display(results)
 ```
+
 ---
 
 ### [Summarize text](summarize.md)
+
 The `ai.summarize` function invokes AI to generate summaries of input text (either values in a single column of a DataFrame or rows in the entire DataFrame). For more detailed instructions on how to use `ai.summarize`, please visit [this dedicated article](summarize.md).
 
 #### Examples:
+
 # [Python](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -307,6 +346,7 @@ display(df)
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -336,13 +376,17 @@ df = spark.createDataFrame([
 summaries = df.ai.summarize(input_col="input", output_col="summary")
 display(summaries)
 ```
+
 ---
 
 ### [Translate](translate.md)
+
 The `ai.translate` function invokes AI to translate input text to a new language of your choosing. For more detailed instructions on how to use `ai.translate`, please visit [this dedicated article](translate.md).
 
 #### Examples:
+
 # [Python](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -357,6 +401,7 @@ display(df)
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -369,13 +414,17 @@ df = spark.createDataFrame([
 translations = df.ai.translate(to_lang="spanish", input_col="input_text", output_col="translation")
 display(translations)
 ```
+
 ---
 
 ### [Use a custom prompt](generate-response.md)
+
 The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions on how to use `ai.generate_response`, please visit [this dedicated article](generate-response.md).
 
 #### Examples:
+
 # [Python](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -391,6 +440,7 @@ display(df)
 ```
 
 # [PySpark](#tab/pandas)
+
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
@@ -404,9 +454,11 @@ df = spark.createDataFrame([
 results = df.ai.gen(template="Complete this comma separated list of 5 {category}: {example}, ", output_col="list")
 display(results)
 ```
+
 ---
 
 ## Customizing AI function configuration
+
 AI functions are designed to work out of the box in Fabric notebooks, with the underlying LLM and settings set by default. Users who want more flexible configurations, however, can modify the following variables to customize their solutions:
 
 - **Config 1**: TBD
