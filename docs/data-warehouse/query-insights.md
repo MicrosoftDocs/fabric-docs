@@ -4,7 +4,7 @@ description: Query insights makes past query execution data and aggregated insig
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: mariyaali
-ms.date: 2/6/2025
+ms.date: 02/10/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
@@ -120,7 +120,8 @@ Furthermore, you can assess the use of cache by examining the sum of `data_scann
 
 > [!NOTE]
 > The data scanned values might not account the data moved during the intermediate stages of query execution. In some cases, the size of the data moved and CPU required to process may be larger than the data scanned value indicates.
-> Data scanned values will appear as 0 for COPY INTO statements.
+>
+> Data scanned values will appear as `0` for `COPY INTO` statements.
 
 ```sql
 SELECT distributed_statement_id, query_hash, data_scanned_remote_storage_mb, data_scanned_memory_mb, data_scanned_disk_mb, label, command
