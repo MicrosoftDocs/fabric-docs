@@ -431,16 +431,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "/fabric/known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md",
-            "redirect_url": "/fabric/get-started/fabric-known-issues",
-            "redirect_document_id": false
-        },
-        {
-            "source_path_from_root": "/fabric/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md",
-            "redirect_url": "/fabric/get-started/fabric-known-issues",
-            "redirect_document_id": false
-        },
-        {
             "source_path_from_root": "/docs/known-issues/index.yml",
             "redirect_url": "/fabric/known-issues/fabric-known-issues",
             "redirect_document_id": false
