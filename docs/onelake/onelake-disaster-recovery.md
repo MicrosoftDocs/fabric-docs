@@ -33,19 +33,12 @@ You can restore files and folders using Blob REST APIs, Azure Storage SDKs, and 
 
 ### Restore soft deleted files via Microsoft Azure Storage Explorer
 
-You can restore files which were deleted from a Lakehouse by connecting via Microsoft Azure Storage Explorer with the following steps:
-1. Download, Install and Open Microsoft Azure Storage Explorer
-2. Select `Connect to Azure Storage`
-3. Select `ADLS Gen2 or directory`
-4. Sign in using OAuth (or your prefered method)
-5. Enter connection info: Blob Container or Directory URL: https://onelake.dfs.fabric.microsoft.com/ + your workspace ID.
-  e.g. `https://onelake.dfs.fabric.microsoft.com/8ebe7fed-acac-4905-8e5c-027c55521e54`. You can retrieve the workspace ID from thew workspace URL (/groups/{workspaceID}).
-6. Connect
-7. Click the drop-down to the left of the bar containing the path and select 'Active and soft deleted blobs' instead of the default 'Active Blobs'
-8. Navigate to the folder containing the soft-deleted file
-9. Right click the file and select 'undelete'
+You can restore files which were deleted from a Lakehouse by connecting via Microsoft Azure Storage Explorer.  First, connect to your workspace from Azure Storage Explorer [by following these instructions](https://learn.microsoft.com/en-us/fabric/onelake/onelake-azure-storage-explorer).  When connecting, make sure to use the the workspace ID in the URL, e.g. 'https://onelake.dfs.fabric.microsoft.com/8ebe7fed-acac-4905-8e5c-027c55521e54'.  You can find the workspace ID in the workspace URL in the Fabric portal ('/groups/{workspaceID}). To undelete data in Azure Storage Explorer you must use the GUID-based OneLake path.
 
-Please note that the Undelete API  will not work using the workspace friendly name as the container name.
+Once connected to your workspace, you can restore yourt soft-deleted data with the following steps:
+1. Click the drop-down to the left of the bar containing the path and select 'Active and soft deleted blobs' instead of the default 'Active Blobs'
+2. Navigate to the folder containing the soft-deleted file
+3. Right click the file and select 'undelete'
 
 ## Related content
 
