@@ -43,7 +43,7 @@ To access the AI functions library in a Fabric notebook, you need to install som
 
 The first cell will install the AI functions library and its dependencies.
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # Install fixed version of packages
@@ -57,7 +57,7 @@ The first cell will install the AI functions library and its dependencies.
 %pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9.0-spark3.4-4-fe616c4b-SNAPSHOT/synapseml_internal-1.0.9.0.dev1-py2.py3-none-any.whl
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 %%configure -f
@@ -77,7 +77,7 @@ The first cell will install the AI functions library and its dependencies.
 
 The second cell will import the AI functions library and its dependencies (plus an optional library in Python for displaying dynamic progress bars to track the status of every operation you apply).
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # Required imports
@@ -90,7 +90,7 @@ from tqdm.auto import tqdm
 tqdm.pandas()
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 from synapse.ml.spark.aifunc.DataFrameExtensions import AIFunctions
@@ -111,7 +111,7 @@ The `ai.similarity` function invokes AI to compare input text values to correspo
 
 #### Examples:
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -128,7 +128,7 @@ df["similarity"] = df["name"].ai.similarity(df["comparison"])
 display(df)
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -153,7 +153,7 @@ The `ai.classify` function invokes AI to categorize input text according to cust
 
 #### Examples:
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -169,7 +169,7 @@ df["category"] = df['description'].ai.classify("kitchen", "bedroom", "garage", "
 display(df)
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -193,7 +193,7 @@ The `ai.analyze_sentiment` function invokes AI to identify whether the emotional
 
 #### Examples:
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -210,7 +210,7 @@ df["sentiment"] = df["review"].ai.analyze_sentiment()
 display(df)
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -235,7 +235,7 @@ The `ai.extract` function invokes AI to find specific types of information desig
 
 #### Examples:
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -250,7 +250,7 @@ df = df["description"].ai.extract("name", "address")
 display(df)
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -273,7 +273,7 @@ The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and p
 
 #### Examples:
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -289,7 +289,7 @@ df["corrected"] = df["raw_text"].ai.fix_grammar()
 display(df)
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -313,7 +313,7 @@ The `ai.summarize` function invokes AI to generate summaries of input text (eith
 
 #### Examples:
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -345,7 +345,7 @@ df["summary"] = df["text"].ai.summarize()
 display(df)
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -385,7 +385,7 @@ The `ai.translate` function invokes AI to translate input text to a new language
 
 #### Examples:
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -400,7 +400,7 @@ df["translation"] = df["input_text"].ai.translate("spanish")
 display(df)
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -423,7 +423,7 @@ The `ai.generate_response` function invokes AI to generate custom text based on 
 
 #### Examples:
 
-# [Python](#tab/pandas)
+# [Python](#tab/python)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -439,7 +439,7 @@ df["list"] = df.ai.gen("Complete this comma-separated list of 5 {category}: {exa
 display(df)
 ```
 
-# [PySpark](#tab/pandas)
+# [PySpark](#tab/pyspark)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
