@@ -4,10 +4,10 @@ description: "Learn more about the Microsoft Copilot for SQL database in Fabric,
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen, sukkaur
-ms.date: 11/04/2024
+ms.date: 01/16/2025
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
+ms.collection: ce-skilling-ai-copilot
 ---
 # Copilot for SQL database in Microsoft Fabric (preview)
 
@@ -62,7 +62,7 @@ Microsoft is committed to ensuring that our AI systems are guided by our AI prin
 
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.
 
-For more information, see [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md).
+For more information, see [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
 
 ## Limitations of Copilot for SQL database
 
@@ -72,11 +72,11 @@ Here are the current limitations of Copilot for SQL database:
 - Copilot might produce inaccurate results when the intent is to evaluate data. Copilot only has access to the database schema, none of the data inside.
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
 - People who are able to meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
-<!-- - Copilot for SQL database in Fabric is not currently available if Private Link is enabled and Public Access is turned off in the tenant setting. -->
+- Copilot for SQL database in Fabric is not currently available if Private Link is enabled and Public Access is turned off in the tenant setting.
 
 ## Related content
 
 - [How to: Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
 - [How to: Use Copilot code completion for SQL database](copilot-code-completion.md)
 - [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

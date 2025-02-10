@@ -6,7 +6,6 @@ ms.author: painbar
 ms.reviewer: 'jadelynray'
 
 ms.custom:
-  - ignite-2023
 ms.topic: conceptual
 ms.date: 11/02/2023
 LocalizationGroup: Admin

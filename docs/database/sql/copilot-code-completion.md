@@ -7,7 +7,6 @@ ms.reviewer: yoleichen, sukkaur
 ms.date: 11/01/2024
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ---
 # How to: Use the Copilot Code Completion for SQL database in Fabric
@@ -65,4 +64,4 @@ Code completion enhances your productivity and workflow in Copilot for SQL datab
 - [Copilot for SQL database in Microsoft Fabric (preview)](copilot.md)
 - [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
 - [How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

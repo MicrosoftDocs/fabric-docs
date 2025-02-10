@@ -4,10 +4,9 @@ description: This article compares the database engine features of Azure SQL Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, drskwier
-ms.date: 01/02/2025
+ms.date: 01/16/2025
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ---
 # Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)
 
@@ -16,7 +15,7 @@ ms.custom:
 Azure SQL Database and SQL database in Microsoft Fabric share a common code base with the latest stable version of the Microsoft SQL Database Engine. Most of the standard SQL language, query processing, and database management features are identical.
 
 - For a decision guide comparing Azure SQL Database to SQL database in Fabric, see [Microsoft Fabric decision guide: choose a SQL database](decision-guide.md).
-- For a decision guide comparing SQL database to other data stores in Microsoft Fabric, see [Microsoft Fabric decision guide: choose a data store](../../get-started/decision-guide-data-store.md).
+- For a decision guide comparing SQL database to other data stores in Microsoft Fabric, see [Microsoft Fabric decision guide: choose a data store](../../fundamentals/decision-guide-data-store.md).
 
 Many features are common between SQL Server and Azure SQL Database and SQL database in Fabric, for example:
 
@@ -131,7 +130,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | [VNet](/azure/virtual-network/virtual-networks-overview) | Partial, restricted access using [VNet Endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
-| **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview). | [Private links](../../security/security-private-links-overview.md) are not currently available. |
+| **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, using [Private links](../../security/security-private-links-overview.md)  |
 
 ## Resource limits
 

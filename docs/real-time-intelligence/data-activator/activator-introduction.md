@@ -1,10 +1,10 @@
 ---
 title: Introduction to Activator
 description: Learn about Activator, a powerful tool for automating actions based on changing data in Microsoft Fabric.
-author: mihart
-ms.author: mihart
+author: kfollis
+ms.author: kfollis
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Introduction
 ms.date: 11/05/2024
 #customer intent: As a Fabric user I want to understand what Activator is and learn some of the basic concepts.
@@ -61,4 +61,4 @@ Properties are useful when you want to reuse logic across multiple activators. Y
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

@@ -15,14 +15,14 @@ In this guide, join two Azure Cosmos DB for NoSQL containers from separate datab
 You can join data from Cosmos DB with any other mirrored databases, warehouses, or lakehouses within same Fabric workspace.
 
 > [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Mirroring for Azure Cosmos DB is currently in [preview](../../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Prerequisites
 
 - An existing Azure Cosmos DB for NoSQL account.
   - If you don't have an Azure subscription, [Try Azure Cosmos DB for NoSQL free](https://cosmos.azure.com/try/).
   - If you have an existing Azure subscription, [create a new Azure Cosmos DB for NoSQL account](/azure/cosmos-db/nosql/quickstart-portal).
-- An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../get-started/fabric-trial.md).
+- An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring. For more information, see [account requirements](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
 > [!TIP]

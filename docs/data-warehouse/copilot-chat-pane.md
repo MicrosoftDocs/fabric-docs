@@ -8,10 +8,6 @@ ms.date: 08/01/2024
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
-  - build-2024
-  - build-2024-dataai
-  - build-2024-fabric
-  - ignite-2024
 ---
 # How to: Use the Copilot chat pane for Fabric Data Warehouse
 
@@ -76,4 +72,4 @@ You can ask Copilot questions about the warehouse normally and it should respond
 - [Microsoft Copilot for Fabric Data Warehouse](copilot.md)
 - [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
 - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
-- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md)

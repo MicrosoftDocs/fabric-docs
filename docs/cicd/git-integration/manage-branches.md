@@ -9,8 +9,6 @@ ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 10/27/2024
 ms.custom:
-  - build-2023
-  - ignite-2023
 #customer intent: As a developer, I want to learn how to use Git branches in Fabric so that I can work in my own isolated environment.
 ---
 

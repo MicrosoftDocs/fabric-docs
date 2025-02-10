@@ -7,7 +7,6 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.custom:
-  - ignite-2024
 ms.topic: overview
 ms.date: 12/26/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
@@ -61,6 +60,7 @@ The following items are currently supported:
 * [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
 * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md) *(preview)*
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+* [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
 * Reflex *(preview)*

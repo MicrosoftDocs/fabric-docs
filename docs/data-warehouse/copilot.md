@@ -8,11 +8,7 @@ ms.date: 09/25/2024
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
-  - build-2024
-  - build-2024-dataai
-  - build-2024-fabric
-  - copilot-learning-hub
-  - ignite-2024
+- copilot-learning-hub
 ---
 # Overview of Copilot for Data Warehouse
 
@@ -70,7 +66,7 @@ Microsoft is committed to ensuring that our AI systems are guided by our [AI pri
 
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.
 
-For more information, see [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md).
+For more information, see [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md).
 
 ## Limitations of Copilot for Data Warehouse
 
@@ -88,4 +84,4 @@ Here are the current limitations of Copilot for Data Warehouse:
 - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
 - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 - [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
-- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md)

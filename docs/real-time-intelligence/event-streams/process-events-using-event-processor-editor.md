@@ -6,7 +6,6 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/21/2024
 ms.search.form: Event Processor
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json

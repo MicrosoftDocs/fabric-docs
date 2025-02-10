@@ -7,7 +7,6 @@ ms.reviewer: sukkaur
 ms.date: 11/05/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ---
 # Performance Dashboard for SQL database in Microsoft Fabric
 
@@ -22,7 +21,6 @@ To open the Performance Dashboard for your SQL database in Fabric:
 - On the **Home** toolbar in the [Query Editor](query-editor.md) window, select **Performance summary**.
    :::image type="content" source="media/performance-dashboard/performance-summary.png" alt-text="Screenshot from the Fabric SQL Editor highlighting the Performance summary button in the Home toolbar." lightbox="media/performance-dashboard/performance-summary.png":::
 - Right-click on the context button (the three dots) in the item view, then select **Open performance summary**.
-   :::image type="content" source="media/performance-dashboard/open-performance-summary.png" alt-text="Screenshot from the Fabric portal of the Fabric items list. Right-click the SQL database item's three dots to open the pop-up menu." lightbox="media/performance-dashboard/open-performance-summary.png":::
 
 ## Alerts
 

@@ -25,7 +25,7 @@ To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs
 #### Option 1: Configure with Azure Event Hubs Connection String
 
 1. Create a Fabric Environment Artifact in Fabric
-2. Add the following **Spark properties** with the appropriate values to the environment artifact, or **select Add from .yml** in the ribbon to download the [sample yaml file](https://sparklighter.blob.core.windows.net/package/FabricSparkMonitorConfiguration/eventhub_spark_properties_option_1.yml) which already containing the following properties.  
+2. Add the following **Spark properties** with the appropriate values to the environment artifact, or **select Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.blob.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/eventhub_spark_properties_option_1.yml) which already containing the following properties.  
 
    ```properties
    spark.synapse.diagnostic.emitters: MyEventHub
@@ -55,7 +55,7 @@ To configure Azure Key Vault for storing the workspace key:
    - **Value**: Enter the `<connection-string>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
 4. Create a Fabric Environment Artifact in Fabric.
-5. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to download the [sample yaml file](https://sparklighter.blob.core.windows.net/package/FabricSparkMonitorConfiguration/eventhub_spark_properties_option_2.yml), which includes following Spark properties.
+5. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to download the [sample yaml file](https://tridentvscodeextension.blob.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/eventhub_spark_properties_option_2.yml), which includes following Spark properties.
 
    ```properties
    spark.synapse.diagnostic.emitters: MyEventHub
@@ -85,7 +85,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 > [!NOTE]
 >
-> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../get-started/workspaces.md).
+> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 ## Available configurations
 

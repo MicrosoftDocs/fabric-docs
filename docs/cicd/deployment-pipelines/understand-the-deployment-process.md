@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
-ms.date: 01/09/2025
+ms.date: 01/30/2025
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 # customer intent: As a developer, I want to understand how the Microsoft Fabric deployment pipelines process works so that I can use it effectively.
 ---
@@ -21,8 +21,8 @@ During deployment, Microsoft Fabric copies the content from the source stage to 
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
-> [!IMPORTANT]
-> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We're working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
+> [!NOTE]
+> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
 
 There are two main parts of the deployment pipelines process:
 
@@ -96,11 +96,11 @@ During deployment, deployment pipelines checks for dependencies. The deployment 
 
 Autobinding works only with items that are supported by deployment pipelines and reside within Fabric. To view the dependencies of an item, from the item's *More options* menu, select *View lineage*.
 
-#### [New View lineage UI](#tab/new)
+#### [New View lineage UI](#tab/new-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/view-lineage-new.png" alt-text="A screenshot of the new view lineage option, in an item's more options menu.":::
 
-#### [Original View lineage UI](#tab/old)
+#### [Original View lineage UI](#tab/old-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/view-lineage-old.png" alt-text="A screenshot of the old view lineage option, in an item's more options menu.":::
 
@@ -172,7 +172,7 @@ When you deploy content that contains folders to a different stage, the folder h
 
 ### Folders representation
 
-#### [New folders representation UI](#tab/new)
+#### [New folders representation UI](#tab/new-ui)
 
 The workspace content is shown as it's structured in the workspace. Folders are listed, and in order to see their items you need to select the folder. An item’s full path is shown at the top of the items list. Since a deployment is of items only, you can only select a folder that contains supported items. Selecting a folder for deployment means selecting all its items and subfolders with their items for a deployment.
 
@@ -180,7 +180,7 @@ This picture shows the contents of a folder inside the workspace. The full pathn
 
 :::image type="content" source="media/understand-the-deployment-process/folder-path-new.png" alt-text="Screenshot showing the contents of a folder with full pathname of the folder. The name includes the name of the folder.":::
 
-#### [Original folders representation UI](#tab/old)
+#### [Original folders representation UI](#tab/old-ui)
 
 The workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
 
@@ -196,11 +196,11 @@ Deploy items inside a folder from that folder. You can't deploy items from diffe
 
 Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* when compared. This item doesn't appear in the compare window since it isn't a schema change but settings change.
 
-#### [Moved folder item in new UI](#tab/new)
+#### [Moved folder item in new UI](#tab/new-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/moved-folder-item-new.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder in the new UI.":::
 
-#### [Moved folder item in original UI](#tab/old)
+#### [Moved folder item in original UI](#tab/old-ui)
 
 Unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*).
 
@@ -366,11 +366,11 @@ Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incre
 
 Create an app for each deployment pipeline stage, so that you can test each update from an end user's point of view. Use the **publish** or **view** button in the workspace card to publish or view the app in a specific pipeline stage.
 
-### [Publish app - new UI](#tab/new)
+### [Publish app - new UI](#tab/new-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/publish-new.png" alt-text="A screenshot showing the publish app button, in the stage options.":::
 
-### [Publish app - original UI](#tab/old)
+### [Publish app - original UI](#tab/old-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/publish.png" alt-text="A screenshot highlighting the publish app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/publish.png":::
 
@@ -378,11 +378,11 @@ Create an app for each deployment pipeline stage, so that you can test each upda
 
 In the production stage, you can also update the app page in Fabric, so that any content updates become available to app users.
 
-### [Update app - new UI](#tab/new)
+### [Update app - new UI](#tab/new-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/update-new.png" alt-text="A screenshot highlighting the update app button in the new UI.":::
 
-### [Update app - original UI](#tab/old)
+### [Update app - original UI](#tab/old-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/update-app.png" alt-text="A screenshot highlighting the update app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/update-app.png":::
 
@@ -397,7 +397,7 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Pipelines only have one permission, *Admin*, which is required for sharing, editing and deleting a pipeline.
 
-* Workspaces have different permissions, also called [roles](../../get-started/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
+* Workspaces have different permissions, also called [roles](../../fundamentals/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
 
 * Deployment pipelines doesn't support [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) as pipeline admins.
 
@@ -457,6 +457,7 @@ The following table lists required permissions for popular deployment pipeline a
 This section lists most of the limitations in deployment pipelines.
 
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md#capacity).
+* Currently, when you deploy a workspace to an existing target workspace in a different region, there may not be a warning in the deploy dialog.
 * The maximum number of items that can be deployed in a single deployment is 300.
 * Downloading a *.pbix* file after deployment isn't supported.
 * [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) aren't supported as pipeline admins.
@@ -464,7 +465,6 @@ This section lists most of the limitations in deployment pipelines.
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
 * For a list of supported items, see [supported items](./intro-to-deployment-pipelines.md#supported-items). Any item not on the list isn't supported.
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
-* Only Power BI items can be deployed to a workspace in a different capacity region. Other Fabric items can't be deployed to a workspace in a different capacity region.
 * PBIR reports aren't supported.
 
 ### Semantic model limitations

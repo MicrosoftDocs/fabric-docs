@@ -7,12 +7,6 @@ ms.reviewer: joanpo, chweb, cynotebo
 ms.date: 08/20/2024
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
-  - ignite-2023-fabric
-  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # What is data warehousing in Microsoft Fabric?
@@ -84,7 +78,7 @@ Here are some general guidelines to help you make the decision:
 
 - Choose a **lakehouse** when you need a large repository of highly unstructured data from heterogeneous sources, leveraging low-cost object storage and want to use SPARK as your primary development tool. Acting as a 'lightweight' data warehouse, you always have the option to use the SQL endpoint and T-SQL tools to deliver reporting and data intelligence scenarios in your lakehouse.
 
-For more detailed decision guidance, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md).
+For more detailed decision guidance, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
 
 ## Related content
 

@@ -7,7 +7,6 @@ ms.reviewer: wiassaf
 ms.date: 05/28/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Monitor your running and completed T-SQL queries using Query activity
