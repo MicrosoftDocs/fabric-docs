@@ -6,7 +6,6 @@ ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
 - copilot-learning-hub
-  - ignite-2024
 ms.topic: conceptual
 ms.date: 10/17/2024
 no-loc: [Copilot]

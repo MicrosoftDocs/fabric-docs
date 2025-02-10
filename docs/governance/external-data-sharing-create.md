@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 #customer intent: As a data owner, I want to share data in my tenant's OneLake storage with an user in another Fabric tenant.
 ---

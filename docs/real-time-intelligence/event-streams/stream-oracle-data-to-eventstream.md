@@ -6,7 +6,6 @@ ms.author: xujiang1
 author: WenyangShi
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ms.date: 01/15/2025
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream the change data capture events from my Oracle DB using Fabric event streams.

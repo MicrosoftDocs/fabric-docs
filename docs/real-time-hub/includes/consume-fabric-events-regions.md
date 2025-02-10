@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: include
 ms.date: 01/15/2025
-ms.custom: references_regions, ignite-2024
+ms.custom: references_regions
 ---
 
 > [!NOTE]

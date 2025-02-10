@@ -3,7 +3,6 @@ title: Automated ML in Fabric
 description: Overview of Automated ML in Fabric
 ms.topic: overview
 ms.custom:
-  - ignite-2024
 ms.author: midesa
 author: midesa
 ms.date: 11/18/2024

@@ -7,7 +7,6 @@ ms.reviewer: bwoody
 ms.date: 10/28/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ---
 # Query the database and review Copilot features

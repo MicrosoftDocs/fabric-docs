@@ -5,7 +5,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 #customer intent: I want to learn how to get data from Apache Spark using the Kusto connector for Spark.
 ---

@@ -7,7 +7,6 @@ ms.reviewer: imotiwala
 ms.date: 02/06/2025
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database
