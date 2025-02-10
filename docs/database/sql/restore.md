@@ -7,7 +7,6 @@ ms.reviewer: strrodic
 ms.date: 11/07/2024
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ---
 # Restore from a backup in SQL database in Microsoft Fabric
 
@@ -42,7 +41,7 @@ To restore a database using a point-in-time restore capability, you must have on
 - Contributor
 - Member
 
-For more information, see [Microsoft Fabric roles](../../get-started/roles-workspaces.md).
+For more information, see [Microsoft Fabric roles](../../fundamentals/roles-workspaces.md).
 
 ### How to restore a SQL database in Microsoft Fabric
 

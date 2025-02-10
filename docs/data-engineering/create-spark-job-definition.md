@@ -6,8 +6,6 @@ ms.author: qixwang
 author: qixwang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 05/13/2024
 ms.search.form: Create Spark Job Definition,spark_job_definition
 ---
@@ -20,7 +18,7 @@ In this tutorial, learn how to create a Spark job definition in Microsoft Fabric
 
 Before you get started, you need:
 
-- A Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 
 > [!TIP]
 > To run the Spark job definition item, you must have a main definition file and default lakehouse context. If you don't have a lakehouse, you can create one by following the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).

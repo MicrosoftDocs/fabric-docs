@@ -7,8 +7,6 @@ ms.reviewer: yicw, mesrivas
 ms.topic: how-to
 ms.date: 04/15/2024
 ms.custom:
-  - build-2023
-  - ignite-2023
 #customer intent: As a report creator, I want use workspaces so that I can create collections of artifacts that are related.
 ---
 # Create a workspace
@@ -70,8 +68,8 @@ Data used with Power BI is stored in internal storage provided by Power BI by de
 
 Now that you've created the workspace, you'll want to add other users to *roles* in the workspace, so you can collaborate with them. See these articles for more information:
 
-- [Give users access to a workspace](../get-started/give-access-workspaces.md)
-- [Roles in workspaces](../get-started/roles-workspaces.md)
+- [Give users access to a workspace](../fundamentals/give-access-workspaces.md)
+- [Roles in workspaces](../fundamentals/roles-workspaces.md)
 
 ## Pin workspaces
 

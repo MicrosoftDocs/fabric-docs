@@ -6,8 +6,6 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---
@@ -21,7 +19,7 @@ In this quickstart, you build a data pipeline to move a Sample dataset to the La
 To get started, you must complete the following prerequisites:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a data pipeline
 

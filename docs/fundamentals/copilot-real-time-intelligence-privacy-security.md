@@ -6,8 +6,6 @@ ms.author: shsagir
 ms.reviewer: mibar
 ms.topic: conceptual
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 11/19/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -15,7 +13,7 @@ ms.collection: ce-skilling-ai-copilot
 
 # Privacy, security, and responsible use of Copilot for Real-Time Intelligence
 
-In this article, learn how [Copilot for Real-Time Intelligence](../get-started/copilot-real-time-intelligence.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md).
+In this article, learn how [Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md).
 
 This feature  leverages the power of OpenAI to seamlessly translate natural language queries into Kusto Query Language (KQL), a specialized language for querying large datasets. In essence, it acts as a bridge between users' everyday language and the technical intricacies of KQL removing adoption barriers for users unfamiliar with the language. By harnessing OpenAI's advanced language understanding, this feature empowers users to submit business questions in a familiar, natural language format, which are then converted into KQL queries.  
 
@@ -52,5 +50,5 @@ Copilot for Real-Time Intelligence has access to data that is accessible to the 
 
 ## Related content
 
-* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
 * [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)

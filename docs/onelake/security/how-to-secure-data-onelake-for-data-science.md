@@ -6,7 +6,6 @@ ms.author: aamerril
 author: aamerril
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
 ms.date: 05/09/2024
 #customer intent: As a data scientist, I want to learn how to secure data in OneLake for data science teams so that I can ensure the privacy and integrity of the data used in my workloads.
 ---
@@ -62,5 +61,5 @@ You can secure data for use with shortcuts just like any other folder in OneLake
 
 - [OneLake data access roles (preview)](./get-started-data-access-roles.md)
 - [OneLake data access control model](./data-access-control-model.md)
-- [Workspace roles](../../get-started/roles-workspaces.md)
-- [Share items](../../get-started/share-items.md)
+- [Workspace roles](../../fundamentals/roles-workspaces.md)
+- [Share items](../../fundamentals/share-items.md)

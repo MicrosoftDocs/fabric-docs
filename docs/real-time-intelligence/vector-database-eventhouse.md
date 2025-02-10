@@ -6,7 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: Eventhouse
 ---
@@ -32,7 +31,7 @@ This flow can be visualized as follows:
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
 * An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
     * Make sure that local authentication is [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure OpenAI resource.

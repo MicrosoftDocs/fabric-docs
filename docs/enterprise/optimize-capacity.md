@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: v-myerspeter, pmahoney, pvenkat, alpowers, seanmirabile, scbradl, gilherau
 ms.topic: how-to
-ms.custom: fabric-cat, build-2024, ignite-2024
+ms.custom: fabric-cat
 ms.date: 07/30/2024
 ---
 
@@ -28,7 +28,7 @@ To learn more about Fabric capacity, see [Microsoft Fabric concepts and licenses
 
 Planning the size of a capacity can be a challenge. That's because the required compute can vary widely due to the operations performed, how well they're executed (for example, the efficiency of a DAX query or the Python code in a notebook), or the level of concurrency.
 
-To help you determine the right capacity size, you can provision [trial capacities](../get-started/fabric-trial.md) or [pay-as-you-go F SKUs](buy-subscription.md#azure-skus) to measure the actual capacity size required before purchasing an F SKU reserved instance.
+To help you determine the right capacity size, you can provision [trial capacities](../fundamentals/fabric-trial.md) or [pay-as-you-go F SKUs](buy-subscription.md#azure-skus) to measure the actual capacity size required before purchasing an F SKU reserved instance.
 
 > [!TIP]
 > It's always a good strategy to start small and then gradually increase the size of your capacity as necessary.

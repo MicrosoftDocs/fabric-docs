@@ -59,4 +59,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 ## Related content
 
 * [What is workspace monitoring?](../../fundamentals/workspace-monitoring-overview.md)
-* [Enable monitoring in your workspace](../../get-started/enable-workspace-monitoring.md)
+* [Enable monitoring in your workspace](../../fundamentals/enable-workspace-monitoring.md)

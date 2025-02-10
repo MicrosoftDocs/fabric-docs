@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
 ms.date: 01/20/2025
-ms.custom: ignite-2024-fabric, ignite-2024
+ms.custom: 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the OneLake catelog and the capabilities it offers.
 ---
 

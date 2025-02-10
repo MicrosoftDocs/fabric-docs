@@ -6,9 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 12/24/2024
 ms.search.form: Notebooks
 ---
@@ -27,7 +24,7 @@ Specifically, you learn how to:
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 
 ## 1- Create a KQL database
 

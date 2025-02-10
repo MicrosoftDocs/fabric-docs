@@ -6,8 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: tutorial
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 12/02/2024
 ms.subservice: rti-core
 ms.search.form: Get started//
@@ -42,7 +40,7 @@ Specifically, in this tutorial, you learn how to:
 
 ## Prerequisites
 
-To successfully complete this tutorial, you need a [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+To successfully complete this tutorial, you need a [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 
 ## Related content
 

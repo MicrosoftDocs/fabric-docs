@@ -5,7 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: reference
 ms.custom:
-  - ignite-2024
 ms.date: 11/06/2024
 ---
 
@@ -83,4 +82,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 * [What is workspace monitoring?](../fundamentals/workspace-monitoring-overview.md)
 
-* [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
+* [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)

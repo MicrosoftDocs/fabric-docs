@@ -7,8 +7,6 @@ ms.reviewer: maprycem
 ms.date: 09/04/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 ---
 
 # Tutorial: Set up dbt for Fabric Data Warehouse
@@ -50,7 +48,7 @@ Follow this list to install and set up the dbt prerequisites:
 
     A long list of the packages and current versions should be returned from this command.
 
-1. If you don't already have one, create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
+1. If you don't already have one, create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../fundamentals/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
 
 ## Get started with dbt-fabric adapter
 

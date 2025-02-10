@@ -6,7 +6,6 @@ ms.author: wiassaf
 ms.reviewer: ajagadish
 ms.date: 12/29/2024
 ms.custom:
-  - build-2024
 ms.topic: how-to
 ---
 

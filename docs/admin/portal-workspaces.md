@@ -7,8 +7,6 @@ ms.reviewer: ''
 
 ms.custom:
   - admin-portal
-  - build-2023
-  - ignite-2023
 ms.topic: concept-article
 ms.date: 12/04/2024
 LocalizationGroup: Administration
@@ -192,7 +190,7 @@ This means the following:
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    If the workspace has Fabric items (that is, it has only Power BI items) then moving the workspace to another capacity in a different region is supported.
+    If the workspace has no Fabric items (that is, it has only Power BI items) then moving the workspace to another capacity in a different region is supported.
 
     If you want to move a workspace that contains Fabric items, you must delete all the Fabric items first.  After the workspace is migrated to a different region, it can take up to an hour before you can create new Fabric items.
 

@@ -9,8 +9,6 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: rti-core
   ms.custom:
-    - build-2024
-    - ignite-2024
   ms.topic: landing-page
   ms.collection: collection
   author: shsagir

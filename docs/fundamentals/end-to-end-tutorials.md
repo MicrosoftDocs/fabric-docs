@@ -6,10 +6,6 @@ ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - build-2024
-  - ignite-2024
 ms.search.form: product-trident
 ms.date: 11/25/2024
 ---
@@ -47,5 +43,5 @@ The following tutorials walk you through scenarios within specific Fabric experi
 
 ## Related content
 
-* [Create a workspace](../get-started/create-workspaces.md)
+* [Create a workspace](../fundamentals/create-workspaces.md)
 * Discover data items in the [OneLake data hub](../governance/onelake-catalog-overview.md)

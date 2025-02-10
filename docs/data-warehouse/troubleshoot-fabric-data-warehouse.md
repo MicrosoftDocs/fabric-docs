@@ -7,10 +7,6 @@ ms.reviewer: xiaoyul
 ms.date: 07/26/2024
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Troubleshoot the Warehouse

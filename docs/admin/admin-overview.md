@@ -9,7 +9,7 @@ ms.date: 08/04/2024
 
 # Administration overview
 
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. Fabric unified administration enables you to [secure](../security/security-overview.md) and [govern](../governance/governance-compliance-overview.md) data across the platform, and [manage](#manage) Fabric features. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
+[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. Fabric unified administration enables you to [secure](../security/security-overview.md) and [govern](../governance/governance-compliance-overview.md) data across the platform, and [manage](#manage) Fabric features. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
 
 This article uses the generic term "admin." For details about which types of admins can perform the tasks described here, visit these articles:
 - [Admin roles in Fabric](../admin/microsoft-fabric-admin.md).
@@ -93,7 +93,7 @@ Capacity and workspace settings allow you to be more specific when you control y
 
 ### Grant permissions
 
-In Fabric, [workspace roles](../get-started/roles-workspaces.md) allow workspace admins to manage who can access data. Some of the things workspace roles determine, are which users can view, create, share, and delete Fabric items. As an admin, you can grant and revoke workspace roles, using them to control access to data in your organization. You can also create security groups and use them to control workspace access.
+In Fabric, [workspace roles](../fundamentals/roles-workspaces.md) allow workspace admins to manage who can access data. Some of the things workspace roles determine, are which users can view, create, share, and delete Fabric items. As an admin, you can grant and revoke workspace roles, using them to control access to data in your organization. You can also create security groups and use them to control workspace access.
 
 ## Monitor
 
@@ -129,7 +129,7 @@ This section provides a high level list of some of the admin capabilities mentio
 | [Feature usage and adoption report](../admin/feature-usage-adoption.md)        | Review the usage of Fabric features       |
 | [Tenant settings](../admin/about-tenant-settings.md)  | Control Fabric settings across your organization |
 | [Track user activities in Microsoft Fabric](../admin/track-user-activities.md) | Use log entries to view Fabric operations |
-| [workspace roles](../get-started/roles-workspaces.md) | Set up permissions for Fabric workspaces         |
+| [workspace roles](../fundamentals/roles-workspaces.md) | Set up permissions for Fabric workspaces         |
 
 ## Related content
 

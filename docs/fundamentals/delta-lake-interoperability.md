@@ -6,10 +6,6 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - build-2024
-  - ignite-2024
 ms.date: 11/15/2023
 ms.search.form: delta lake interoperability
 ---
@@ -65,5 +61,5 @@ Currently, Fabric doesn't support these Delta Lake features:
 
 * [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 * Learn more about [Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) in Fabric Lakehouse and Synapse Spark.
-* [Learn about Direct Lake in Power BI and Microsoft Fabric](../get-started/direct-lake-overview.md).
+* [Learn about Direct Lake in Power BI and Microsoft Fabric](../fundamentals/direct-lake-overview.md).
 * Learn more about [querying tables from the Warehouse through its published Delta Lake Logs](../data-warehouse/query-delta-lake-logs.md).
