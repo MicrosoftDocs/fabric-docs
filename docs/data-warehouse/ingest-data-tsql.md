@@ -3,8 +3,8 @@ title: Ingest data into your Warehouse using Transact-SQL
 description: Follow steps to ingest data into a Warehouse table using Transact-SQL
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: procha
-ms.date: 04/24/2024
+ms.reviewer: procha, jovanpop
+ms.date: 02/10/2025
 ms.topic: how-to
 ms.custom:
 ms.search.form: Ingesting data
@@ -16,13 +16,16 @@ ms.search.form: Ingesting data
 
 The Transact-SQL language offers options you can use to load data at scale from existing tables in your lakehouse and warehouse into new tables in your warehouse. These options are convenient if you need to create new versions of a table with aggregated data, versions of tables with a subset of the rows, or to create a table as a result of a complex query. Let's explore some examples.
 
-## <a id="creating-a-new-table-with-the-result-of-a-query-by-using-create-table-as-select-ctas"></a> Create a new table with the result of a query by using CREATE TABLE AS SELECT (CTAS)
+<a id="creating-a-new-table-with-the-result-of-a-query-by-using-create-table-as-select-ctas"></a>
 
-The **CREATE TABLE AS SELECT (CTAS)** statement allows you to create a new table in your warehouse from the output of a `SELECT` statement. It runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
-You can use the following options for the **SELECT** part of CTAS statement:
-- Reading a DW table (for example a staging table).
+## Create a new table with the result of a query by using CREATE TABLE AS SELECT (CTAS)
+
+The `CREATE TABLE AS SELECT` (CTAS) statement allows you to create a new table in your warehouse from the output of a `SELECT` statement. It runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
+
+You can use the following options for the `SELECT` part of CTAS statement:
+- Reading a warehouse table, such as a staging table.
 - Reading a Lakehouse table auto-generated via SQL analytics endpoint for Lakehouse.
-- Reading data directly from external file using the `OPENROWSET` function (public preview).
+- Reading data directly from external file using the `OPENROWSET` function (preview).
 
 > [!NOTE]
 > The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
