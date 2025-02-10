@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
   - ignite-2024
-ms.date: 01-21-2025
+ms.date: 01/21/2025
 ---
 
 # Setting up a Fabric Copilot capacity
