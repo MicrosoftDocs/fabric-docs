@@ -64,7 +64,7 @@ You can also import files from outside Fabric to create Fabric items in a worksp
    
 4. Check if new items are created in workspace and the import process is completed successfully.
 
-    :::image type="content" source="media/create-items-in-workspaces/create-notebook-by-importing.png" alt-text="Screenshots showing a Notebook is successfully created by importing":::
+    :::image type="content" source="media/create-items-in-workspaces/create-notebook-by-importing.png" alt-text="Screenshots showing a Notebook is successfully created by importing.":::
 
 ## Related content
 
