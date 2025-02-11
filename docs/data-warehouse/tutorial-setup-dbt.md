@@ -60,7 +60,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     - Or, for example, you can use the `git clone` command:
 
     ```powershell
-    git clone https://github.com/dbt-labs/jaffle_shop.git
+    git clone https://github.com/dbt-labs/jaffle-shop-classic.git
     ```
 
 1. Open the `jaffle_shop` project folder in Visual Studio Code.
