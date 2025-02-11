@@ -197,7 +197,7 @@
         },
         {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md",
-            "redirect_url": "/fabric/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
         },
         {
@@ -237,7 +237,7 @@
         },
         {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md/",
-            "redirect_url": "/fabric/known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
         },
         {
