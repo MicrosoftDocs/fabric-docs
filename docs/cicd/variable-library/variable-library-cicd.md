@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-ms.date: 08/15/2024
+ms.date: 02/11/2025
 ms.search.form: CI/CD and Variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to manage my content lifecycle.
 ---
@@ -29,17 +29,6 @@ Variable libraries and their values can be deployed in deployment pipelines to m
 ## Variable libraries and Git integration
 
 Variable library items are stored as folders that can be maintained and synced between Fabric and your Git provider.
-
-The Variable library item schema is a JSON object that contains three parts:
-
-* Variable library name
-
-  * [Value sets](#value-set): Contains a JSON file for each value set.
-  * platform.json: [Automatically generated](../git-integration/source-code-format.md#platform-file) file.
-  * [variables.json](#variables): Contains the variables and their default values.
-
-
-## Variable library schema
 
 The Variable library item schema is a JSON object that contains three parts:
 
