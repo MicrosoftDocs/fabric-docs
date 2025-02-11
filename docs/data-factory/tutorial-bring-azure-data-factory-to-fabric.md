@@ -6,8 +6,6 @@ ms.author: lle
 author: lrtoyou1223
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 08/25/2024
 ms.search.form: Pipeline tutorials
 ---

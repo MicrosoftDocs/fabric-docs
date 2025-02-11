@@ -6,7 +6,6 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
 ms.custom:
-  - build-2024
 ms.date: 05/08/2024
 ---
 

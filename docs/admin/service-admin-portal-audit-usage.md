@@ -6,7 +6,6 @@ ms.author: painbar
 ms.service: fabric
 ms.custom:
   - tenant-setting
-  - ignite-2024
 ms.topic: how-to
 ms.date: 11/04/2024
 ---

@@ -6,8 +6,6 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 10/07/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
 ms.search.form: SQL database - Load Sample Data
 ---
 # Load AdventureWorks sample data in your SQL database in Microsoft Fabric

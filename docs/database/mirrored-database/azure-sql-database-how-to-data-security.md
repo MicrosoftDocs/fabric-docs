@@ -7,7 +7,6 @@ ms.reviewer: imotiwala
 ms.date: 11/19/2024
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ---
 
 # How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Database

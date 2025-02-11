@@ -7,10 +7,6 @@ ms.reviewer: prlangad
 ms.date: 04/24/2024
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.search.form: Create a warehouse
 ---
 # Create a sample Warehouse in Microsoft Fabric

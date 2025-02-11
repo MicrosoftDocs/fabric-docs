@@ -8,8 +8,6 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
-    - build-2023
-    - ignite-2023
 ms.date: 01/12/2025
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.

@@ -6,8 +6,6 @@ ms.author: wiassaf
 ms.reviewer: yoleichen
 ms.date: 12/19/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
 ms.search.form: SQL database - Query with SQL Editor
 ---
 # Query with the SQL query editor

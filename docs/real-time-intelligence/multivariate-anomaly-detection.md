@@ -6,7 +6,6 @@ author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 12/24/2024
 ms.search.form: KQL Queryset
 #customer intent: As a data scientist, I want to detect anomalies across multiple metrics so that I can proactively identify complex issues.
@@ -108,17 +107,17 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** pa
 
     ```python
     def convert_onelake_to_abfss(onelake_uri):
-    if not onelake_uri.startswith('https://'):
-        raise ValueError("Invalid OneLake URI. It should start with 'https://'.")
-    uri_without_scheme = onelake_uri[8:]
-    parts = uri_without_scheme.split('/')
-    if len(parts) < 3:
-        raise ValueError("Invalid OneLake URI format.")
-    account_name = parts[0].split('.')[0]
-    container_name = parts[1]
-    path = '/'.join(parts[2:])
-    abfss_uri = f"abfss://{container_name}@{parts[0]}/{path}"
-    return abfss_uri
+        if not onelake_uri.startswith('https://'):
+            raise ValueError("Invalid OneLake URI. It should start with 'https://'.")
+        uri_without_scheme = onelake_uri[8:]
+        parts = uri_without_scheme.split('/')
+        if len(parts) < 3:
+            raise ValueError("Invalid OneLake URI format.")
+        account_name = parts[0].split('.')[0]
+        container_name = parts[1]
+        path = '/'.join(parts[2:])
+        abfss_uri = f"abfss://{container_name}@{parts[0]}/{path}"
+        return abfss_uri
     ```
 
 1. Replace the *OneLakeTableURI* placeholder with your OneLake URI copied from [Part 5- Copy OneLake path to the table](#part-5--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.

@@ -6,7 +6,6 @@ ms.author: sngun
 author: snehagunda
 ms.topic: how-to
 ms.custom:
-  - build-2024
 ms.search.form: Get started with GraphQL API
 ms.date: 10/03/2024
 ---

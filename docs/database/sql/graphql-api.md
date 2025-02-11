@@ -6,8 +6,6 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 10/07/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
 ms.search.form: SQL database - Create GraphQL API
 ---
 # Create GraphQL API from your SQL database in the Fabric portal

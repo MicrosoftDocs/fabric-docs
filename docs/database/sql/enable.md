@@ -7,7 +7,6 @@ ms.reviewer: antho, sukkaur, dlevy
 ms.date: 01/16/2025
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.search.form: product-databases
 ---
 # Enable SQL database in Fabric using Admin Portal tenant settings

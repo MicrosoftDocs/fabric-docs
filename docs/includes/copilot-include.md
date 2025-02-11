@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.topic: include
 ms.custom:
-  - build-2024
 ms.date: 05/09/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot

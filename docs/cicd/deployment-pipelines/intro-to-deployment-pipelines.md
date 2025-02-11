@@ -7,9 +7,6 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 01/30/2025
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.

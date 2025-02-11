@@ -7,8 +7,6 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/15/2023
 #customer intent: As a data analyst, I want to learn how to access OneLake shortcuts in an Apache Spark notebook so that I can easily read data from shortcuts and use them in my Spark analysis.
 ---

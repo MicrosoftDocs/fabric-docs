@@ -6,9 +6,6 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 02/03/2025
 ms.search.form: delta lake v-order optimization
 ---

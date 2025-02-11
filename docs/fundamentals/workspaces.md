@@ -6,8 +6,6 @@ ms.author: painbar
 ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
 ms.date: 07/27/2024

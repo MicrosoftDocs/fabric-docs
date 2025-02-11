@@ -4,7 +4,7 @@ description: A known issue is posted where the Create Gateway public API doesn't
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/05/2024
+ms.date: 02/05/2025
 ms.custom: known-issue-955
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-955
 
 You can use the Fabric public API to [create a gateway](/rest/api/fabric/core/gateways/create-gateway). If you attempt to use the API to create a gateway using a service principal, you might experience errors.
 
-**Status:** Open
+**Status:** Fixed: February 5, 2025
 
 **Product Experience:** Data Factory
 

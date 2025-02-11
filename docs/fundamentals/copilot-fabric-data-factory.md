@@ -7,7 +7,6 @@ ms.reviewer: alpowers
 ms.topic: conceptual
 ms.date: 06/02/2024
 ms.custom:
-  - ignite-2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---

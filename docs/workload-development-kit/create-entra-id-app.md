@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 02/02/2025
+ms.date: 02/05/2025
 
 #customer intent: As an Independent Software Vendor (ISV) or a developer, I want to learn how to set up the authorization for a customized Fabric workload.
 ---
@@ -163,6 +163,8 @@ To configure the [backend](extensibility-back-end.md), you need to configure a s
 
 ## Step 9: Add an idtyp optional claim
 
+Te `idtype` [claim](/entra/identity-platform/optional-claims-reference) signals that the token that the workload gets from Fabric is an app only token.
+
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 2. Navigate to  *Applications > App registration* and select your application.
@@ -176,16 +178,6 @@ To configure the [backend](extensibility-back-end.md), you need to configure a s
 6. In *Claim*, select **idtyp**.
 
 7. Select **Add**.
-
-## Step 10: Set your application to work with auth token v1
-
-1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
-
-2. Navigate to  *Applications > App registration* and select your application.
-
-3. In your application, from the *Manage* section, select **Manifest**.
-
-4. If your manifest has the `accessTokenAcceptedVersion` value, verify that it's set to `null` or `1`. 
 
 ## Related content
 

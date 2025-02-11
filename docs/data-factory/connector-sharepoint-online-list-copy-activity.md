@@ -7,9 +7,6 @@ ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
-  - build-2024
 ---
 
 # Configure SharePoint Online List in a Copy activity

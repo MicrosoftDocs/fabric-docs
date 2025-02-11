@@ -4,7 +4,7 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 02/04/2025
+ms.date: 02/05/2025
 ---
 
 # Manage your Fabric capacity
@@ -15,7 +15,7 @@ This article describes the Microsoft Fabric capacity settings. The article is ai
 
 To get to the capacity settings, follow these steps:
 
-1. In the Power BI service, select the gear icon (**&#9881;**), and then select **Admin portal**.
+1. In Microsoft Fabric, select the gear icon (**&#9881;**), and then select **Admin portal**.
 
 2. In the Admin portal, select **Capacity settings**.
 
