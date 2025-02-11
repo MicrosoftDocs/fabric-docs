@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 11/12/2024
+ms.date: 02/11/2025
 #customer intent: As a developer, I want to learn how to automate Variable libraries in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs, so that I can manage my content lifecycle.
 ---
 
@@ -15,91 +15,28 @@ You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fab
 
 If you're using the APIs as part of your lifecycle management, permissions for item reference are checked during Git Update and deployment pipeline deployment.
 
-The following REST APIs are available for Variable library items:
+The following table lists the APIs available for the variable library in Fabric.
 
-* **Create** Variable library
-* **Delete** Variable library
-* **Get** Variable library
-* **Get** Variable library definition
-* **Update**
-* **Update** Variable library definition
-* **Read**/**Update** the Variable library item *active value-set*
-
-For a complete list of APIs, see the [Variable library REST APIs reference](https://review.learn.microsoft.com/fabric/cicd/variable-library-apis?branch=pr-en-us-6898).
-
-## Read the Variable library item information
-
-* To view the item's schema, use the *Get item definition* API call. This call returns:
-  * Variables - name, type, note, and default value
-  * Value-sets – names and their adjustable variables’ value
-* Use the *Get item* API call to view the active value-set of this item.
-
-## Update the Variable library item information
-
-* To update the item’s schema, use the *Update item definition* API call which returns:
-  * Variables – Add variable/Remove variable/Edit variable (name, type, note, and default value)
-  * value-sets – Add VS/Remove VS/Edit VS name/Edit VS’s variable value
-* Use the custom property of active VS name in the *Update item* API call, to specify the active value-set for this item.
-
-**Including this property is optional, but once included in the call, a value is required to prevent you from accidentally removing an active value-set removed without setting a different one to be active.
-
-For example:
-
-```json
-{
-  "properties": {
-    "activeValueSetName": "TestStageVS",
-  }
-}
-```
+| Scenario | Request | Action                          | URL  |
+|----------|---------|---------------------------------|------|
+| 1        | Create  | Create empty item               | POST<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/6b8e97f4-d26a-42cb-9083-55b70c599abf/VariableLibraries><br><br>Body:<br>{ "displayName": "VL_5", "description": "A VL description" }<br>** Important!! add in request header: Content-Type: application/json |
+| 2        | Get     | Get item information            | GET<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/8789dc83-9968-4896-a037-dc63ad482d46/VariableLibraries/d01c3d05-48fe-473f-85ff-a13c5965836f> |
+| 3        | Update  | Rename item                     | PATCH<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/6b8e97f4-d26a-42cb-9083-55b70c599abf/VariableLibraries/c1a1fb50-bd9f-465c-b0dd-cfc6d3551874><br><br>Body:<br><br>{ "displayName"<br>: "V5_New_Name", "<br>description"<br>: "A new description for VL." } |
+| 4        | Delete  | Delete                          | DELETE<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/6b8e97f4-d26a-42cb-9083-55b70c599abf/VariableLibraries/8d53aea2-59c8-42ed-bc93-462c8c187922> |
+| 5        | List items | Get variables list in workspace      | GET<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/05a748f5-3b62-48e8-8d54-44fee6a588ca/VariableLibraries> |
+| 6        | Get item definition | Export              | POST<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/05a748f5-3b62-48e8-8d54-44fee6a588ca/VariableLibraries/285977f2-d3a2-40db-928a-b320b8539e58/getDefinition<br><br><br>DAILY:<br><https://dailyapi.fabric.microsoft.com/v1/workspaces/7569a44c-8d5f-4e62-9357-e88239bce4d5/items/9a2d616c-a2eb-4539-8e70-9967b6c2c0a0/getDefinition> |
+| 7        | Location | Status Failed                  | GET<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/operations/b96cc629-e948-4cd1-b755-8f4c0a4fd9d6> (LOCATION) |
+| 8        | Result   | Get result                     | GET (RESULT- location header)<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/operations/b96cc629-e948-4cd1-b755-8f4c0a4fd9d6/result> |
+| 9        |          | Base64       | Payload- send TextWizard<br>delete payload=<br><br>Copy the definitions part for Import |
+| 10       | Update Definition | Import                | POST<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/05a748f5-3b62-48e8-8d54-44fee6a588ca/VariableLibraries/285977f2-d3a2-40db-928a-b320b8539e58/updateDefinition><br><br>Request (from export results)<br>:::image type="content" source="./media/import.png" alt-text="Import code."::: |
+| 11       |          | Import with change | Take the payload from 9 and change value<br>copy payload, and paste in import request |
+| 12       | Get + active value set |                  | GET<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/8789dc83-9968-4896-a037-dc63ad482d46/VariableLibraries/d01c3d05-48fe-473f-85ff-a13c5965836f> |
+| 13       | Set value set | Set/change active value set | PATCH<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/05a748f5-3b62-48e8-8d54-44fee6a588ca/VariableLibraries/ac4cba21-2252-4a8c-8d20-f2ac9bc96419><br><br>{ <br>"displayName": "V5_New_Name",<br> "description": "A new description for VL.",<br>"properties": {<br>"activeValueSetName": "set2" <br>} <br>}<br><br>For the default value set:<br><br>{<br>"displayName": "V5_New_Name",<br>"description": "A new description for VL.", <br>"properties": {<br>"activeValueSetName": null<br>}<br>} |
+| 14       | Create with definition | create Variable Library with content (definition/ payloads) | POST<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/878c3e0c-b7d8-4222-9b45-f9d7d7010f64/VariableLibraries> |
+| 15       |          | Test conflict name (already exist) | POST<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/05a748f5-3b62-48e8-8d54-44fee6a588ca/VariableLibraries><br><br>{<br>"definition": { <br>"parts": [ <br>{ <br>"path": "variables.json", <br>"payload": "XYZ", <br>"payloadType": "InlineBase64" },<br>{ <br>"path": "valueSets/ValueSet2.json",<br>"payload": "XYZ", <br>"payloadType": "InlineBase64" <br>}, <br>{ <br>"path": ".platform", <br>"payload": "XYZ", <br>"payloadType": "InlineBase64" <br>} <br>] <br>} <br>} |
 
 The Variable library item REST APIs support service principle.
 
-## Variable library schema
-
-The Variable library item schema is a JSON object that contains two parts:
-
-* **Variables** file – The variables contained in the item, and their properties.
-  * name
-  * type
-  * defaultValue
-  * note (if any)
-
-```json
-"$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/1.0.0/schema.json",
-{
-  "variables": [
-    {
-      "name": "var1",
-      "type": "string",
-      "defaultValue": "value1",
-      "note": "This is a note"
-    },
-    {
-      "name": "var2",
-      "type": "int",
-      "defaultValue": 1
-    }
-  ],
-}
-```
-
-* **Value-sets** – A set of values for the variables. A value set consists of:
-  * name
-  * value
-
-```json
-"$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/1.0.0/schema.json",
-"valueSetName: "NewVS",
-"overrides": [
-  {
-    "name": "var1",
-    "value": "value1"
-  }
- ]
-}
-```
-
 ## Considerations and limitations
 
-Both item name and variable name are *not* case sensitive. Therefore, when consumer item requests a variable’s value resolution, we return the value even if the case doesn't match.
+Item names and variable names are *not* case sensitive. Therefore, when a consumer item requests a variable’s value resolution, we return the value even if the case doesn't match.
