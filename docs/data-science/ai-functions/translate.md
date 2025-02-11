@@ -72,7 +72,7 @@ display(translations)
 
 - Calculate similarity with [`ai.similarity`](similarity.md).
 - Categorize text with [`ai.classify`](classify.md).
-- Detect sentiment with [`ai.analyze_sentiment`](analyze_sentiment.md).
+- Detect sentiment with [`ai.analyze-sentiment`](analyze_sentiment.md).
 - Extract entities with [`ai_extract`](extract.md).
 - Fix grammar with [`ai.fix_grammar`](fix-grammar.md).
 - Summarize text with [`ai.summarize`](summarize.md).
