@@ -13,7 +13,7 @@ ms.date: 02/11/2025
 
 This article describes how to set up a Fabric Copilot capacity which allows admins to consolidate all charges for Fabric Copilot usage in a tenant for Fabric users.
 
-## Steps to enable a Fabric Copilot capacity
+## Enable a Fabric Copilot capacity
 
 There are three steps required to enable Fabric Copilot capacity.
 
@@ -29,4 +29,4 @@ There are three steps required to enable Fabric Copilot capacity.
 
 * The Fabric Copilot capacity has to reside on at least an F64 or P1 [SKU](licenses.md#capacity).
 
-* Data is processed in the region where you are using Copilot. Usage and billing records that contain the metadata of the Fabric items or workspaces, are available to the Copilot capacity administrator.
+* Data is processed in the region where you're using Copilot. Usage and billing records that contain the metadata of the Fabric items or workspaces, are available to the Copilot capacity administrator.
