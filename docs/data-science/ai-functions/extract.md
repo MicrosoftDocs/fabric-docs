@@ -17,7 +17,7 @@ The `ai.extract` function uses Generative AI to scan input text and pull out spe
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

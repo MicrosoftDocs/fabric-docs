@@ -28,7 +28,7 @@ AI functions, currently in public preview, allow you to complete the following t
 
 Whether you're looking to translate product reviews from one language into another or to generate action items with custom text prompts, AI functions put the power of Fabric's native LLM into your hands, accelerating data transformation and discovery regardless of your level of experience.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
