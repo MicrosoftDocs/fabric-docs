@@ -9,11 +9,11 @@ ms.custom:
 ms.date: 02/11/2025
 ---
 
-# Setting up a Fabric Copilot capacity
+# Set up Fabric Copilot capacity
 
 This article describes how to set up a Fabric Copilot capacity which allows admins to consolidate all charges for Fabric Copilot usage in a tenant for Fabric users.
 
-## Enable a Fabric Copilot capacity
+## Enable Fabric Copilot capacity
 
 There are three steps required to enable Fabric Copilot capacity.
 
