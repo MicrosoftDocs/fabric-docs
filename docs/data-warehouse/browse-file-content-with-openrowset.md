@@ -50,7 +50,7 @@ Since this data is publicly available and doesn't require authentication, you ca
 
 You don't need to specify the `FORMAT` option, as the `OPENROWSET` function will assume you are reading the `CSV` format based on the `.csv` file extension in the URI.
 
-> [Note]
+> [!Note]
 > In the results, you might notice that the first row in this file contains the column names instead of data. In this case, you will need to modify the query using the HEADER_ROW option to skip the row and use it only for the column names. This is part of the data exploration process, as you gradually adjust the file until it matches the underlying data.
 
 ## Reading custom text files
