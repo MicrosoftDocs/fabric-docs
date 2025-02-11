@@ -1,33 +1,34 @@
 ---
-title: TBD
-description: TBD.
+title: Transform and enrich data at scale with AI functions (Preview)
+description: Learn how to invoke AI functions in Fabric, harnessing the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
-ms.topic: TBD
-ms.custom: TBD
-ms.date: TBD
+ms.topic: how-to
+ms.date: 02/20/2025
 
-ms.search.form: TBD
+ms.search.form: AI functions
 ---
 
-# Transform and enrich data in seconds with AI functions (Preview)
+# Transform and enrich data at scale with AI functions (Preview)
 
 Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code. There's no need for custom configuration, complex infrastructure management, or even specific technical expertise.
 
-AI functions, currently in public preview, allow you to complete the following tasks in a single line of Python or PySpark code, with support for more languages in the works:
+AI functions, currently in public preview, allow you to complete the following tasks in a single line of Python or PySpark code:
 
-- [**Calculate similarity**](#calculate-similarity): Compare the meanings of input text against corresponding text in another column (or against a single string).
-- [**Categorize text**](#categorize-text): Classify input text values according to labels you choose.
-- [**Detect sentiment**](#detect-sentiment): Identify the emotional state expressed by input text.
-- [**Extract entities**](#extract-entities): Find specific types of information, such as locations or names, within input text.
-- [**Fix grammar**](#fix-grammar): Correct the spelling, grammar, and punctuation of input text.
-- [**Summarize text**](#summarize-text): Get summaries of input text.
-- [**Translate**](#translate): Translate text into another language.
-- [**Use a custom prompt**](#use-a-custom-prompt): Generate responses based on your own instructions.
+- [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meanings of input text against corresponding text in another column (or against a single string).
+- [**Categorize text with `ai.classify`**](#categorize-text-with-aiclassify): Classify input text values according to labels you choose.
+- [**Detect sentiment with `ai.analyze_sentiment`**](#detect-sentiment-with-aianalyze_sentiment): Identify the emotional state expressed by input text.
+- [**Extract entities with `ai_extract`**](#extract-entities-with-aiextract): Find specific types of information, such as locations or names, within input text.
+- [**Fix grammar with `ai.fix_grammar`**](#fix-grammar-with-aifix_grammar): Correct the spelling, grammar, and punctuation of input text.
+- [**Summarize text with `ai.summarize`**](#summarize-text-with-aisummarize): Get summaries of input text.
+- [**Translate text with `ai.translate`**](#translate-text-with-aitranslate): Translate text into another language.
+- [**Answer custom user prompts with `ai.generate_response`**](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
 
 Whether you're looking to translate product reviews from one language into another or to generate action items with custom text prompts, AI functions put the power of Fabric's native LLM into your hands, accelerating data transformation and discovery regardless of your level of experience.
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -103,13 +104,13 @@ defaults.set_deployment_name("gpt-35-turbo-0125")
 
 ## Applying AI functions
 
-Each of the following functions allows you to invoke Fabric's native LLM endpoint to transform and enrich data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames with Python code or Spark DataFrames with PySpark code. Support for additional programming languages will be available in the future.
+Each of the following functions allows you to invoke Fabric's native LLM endpoint to transform and enrich data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames (with Python code) or Spark DataFrames (with PySpark code). Support for more programming languages will be available in the future.
 
-### [Calculate similarity](similarity.md)
+### Calculate similarity with [`ai.similarity`](similarity.md)
 
 The `ai.similarity` function invokes AI to compare input text values to corresponding text values in another column or to a single text value. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
 
-#### Examples:
+#### Sample usage
 
 # [Python](#tab/python)
 
@@ -147,11 +148,11 @@ display(similarity)
 
 ---
 
-### [Categorize text](classify.md)
+### Categorize text with [`ai.classify`](classify.md)
 
 The `ai.classify` function invokes AI to categorize input text according to custom labels you choose. For more detailed instructions on how to use `ai.classify`, please visit [this dedicated article](classify.md).
 
-#### Examples:
+#### Sample usage
 
 # [Python](#tab/python)
 
@@ -187,11 +188,11 @@ display(categories)
 
 ---
 
-### [Detect sentiment](analyze-sentiment.md)
+### Detect sentiment with [`ai.analyze_sentiment`](analyze-sentiment.md)
 
 The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If it can’t be determined, the sentiment is left blank. For more detailed instructions on how to use `ai.analyze_sentiment`, please visit [this dedicated article](analyze-sentiment.md).
 
-#### Examples:
+#### Sample usage
 
 # [Python](#tab/python)
 
@@ -229,11 +230,11 @@ display(sentiment)
 
 ---
 
-### [Extract entities](extract.md)
+### Extract entities with [`ai.extract`](extract.md)
 
 The `ai.extract` function invokes AI to find specific types of information designated by labels you choose (such as locations or names) within input text. For more detailed instructions on how to use `ai.extract`, please visit [this dedicated article](extract.md).
 
-#### Examples:
+#### Sample usage
 
 # [Python](#tab/python)
 
@@ -267,11 +268,11 @@ display(entities)
 
 ---
 
-### [Fix grammar](fix-grammar.md)
+### Fix grammar with [`ai.fix_grammar`](fix-grammar.md)
 
 The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. For more detailed instructions on how to use `ai.fix_grammar`, please visit [this dedicated article](fix-grammar.md).
 
-#### Examples:
+#### Sample usage
 
 # [Python](#tab/python)
 
@@ -307,11 +308,11 @@ display(results)
 
 ---
 
-### [Summarize text](summarize.md)
+### Summarize text with [`ai.summarize`](summarize.md)
 
 The `ai.summarize` function invokes AI to generate summaries of input text (either values in a single column of a DataFrame or rows in the entire DataFrame). For more detailed instructions on how to use `ai.summarize`, please visit [this dedicated article](summarize.md).
 
-#### Examples:
+#### Sample usage
 
 # [Python](#tab/python)
 
@@ -379,11 +380,11 @@ display(summaries)
 
 ---
 
-### [Translate](translate.md)
+### Translate text with [`ai.translate`](translate.md)
 
 The `ai.translate` function invokes AI to translate input text to a new language of your choosing. For more detailed instructions on how to use `ai.translate`, please visit [this dedicated article](translate.md).
 
-#### Examples:
+#### Sample usage
 
 # [Python](#tab/python)
 
@@ -417,11 +418,11 @@ display(translations)
 
 ---
 
-### [Use a custom prompt](generate-response.md)
+### Answer custom user prompts with [`ai.generate_response`](generate-response.md)
 
 The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions on how to use `ai.generate_response`, please visit [this dedicated article](generate-response.md).
 
-#### Examples:
+#### Sample usage
 
 # [Python](#tab/python)
 
@@ -459,8 +460,13 @@ display(results)
 
 ## Customizing AI function configuration
 
-AI functions are designed to work out of the box in Fabric notebooks, with the underlying LLM and settings set by default. Users who want more flexible configurations, however, can modify the following variables to customize their solutions:
+AI functions are designed to work out of the box in Fabric notebooks, with the underlying LLM and settings configured by default. Users who want more flexible configurations, however, can modify the following variables to customize their solutions:
 
 - **Config 1**: TBD
 - **Config 2**: TBD
 - **Config 3**: TBD
+
+## Related content
+
+- TBD
+- Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)
