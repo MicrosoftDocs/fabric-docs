@@ -24,17 +24,17 @@ The sample data sets are designed to help you understand how to use Real-Time In
 
 The sample end-to-end solution includes the following components for you to explore:
 
-* **Eventstream**: An eventstream is the engine for data ingestion and processing of your real-time data into Microsoft Fabric. You can transform your data and route it via filters to various destinations.
+* **Eventstream**: An Eventstream is the engine for data ingestion and processing of your real-time data into Microsoft Fabric. You can transform your data and route it via filters to various destinations.
 
-* **Eventhouse**: An eventhouse is where data is stored and analyzed. An eventhouse is designed to handle real-time data streams efficiently. An eventhouse can hold one or more KQL databases. They're tailored to large volumes of time-based, streaming events with structured, semi structured, and unstructured data.
+* **Eventhouse**: An Eventhouse is where data is stored and analyzed. An Eventhouse is designed to handle real-time data streams efficiently. An Eventhouse can hold one or more KQL databases. They're tailored to large volumes of time-based, streaming events with structured, semi structured, and unstructured data.
 
-* **KQL Database**: A KQL database is where data is stored and managed. It allows you to query data in real-time, providing a powerful tool for data exploration and analysis. The KQL database supports various data policies and transformations.
+* **KQL Database**: A KQL Database is where data is stored and managed. It allows you to query data in real-time, providing a powerful tool for data exploration and analysis. The KQL database supports various data policies and transformations.
 
-* **KQL Queryset**: A KQL queryset is used to run queries, view, and customize query results on data from a KQL database.
+* **KQL Queryset**: A KQL Queryset is used to run queries, view, and customize query results on data from a KQL database.
 
-* **Real-Time Dashboard**: A Real-Time dashboard provides an up-to-the-second snapshot of various goals and data points in a collection of tiles. Each tile has an underlying query and a visual representation. It allows you to visualize data in real-time, providing insights and enabling data exploration.
+* **Real-Time Dashboard**: A Real-Time Dashboard provides an up-to-the-second snapshot of various goals and data points in a collection of tiles. Each tile has an underlying query and a visual representation. It allows you to visualize data in real-time, providing insights and enabling data exploration.
 
-* **Power BI**: is used to create real-time reports that display data from eventstreams and KQL databases managed by Real-Time Intelligence.
+* **Power BI**: is used to create real-time reports that display data from Eventstreams and KQL Databases managed by Real-Time Intelligence.
 
 ## Create a sample end-to-end solution
 
@@ -49,17 +49,17 @@ The sample end-to-end solution includes the following components for you to expl
 1. Select the sample items to create. By default, all items are selected.
 
     > [!NOTE]
-    > It's recommended to create the entire component set. Eventstream and Eventhouse are required. You can deselect Real-time dashboard, Report, or Queryset if you do not want to create them.
+    > It's recommended to create the entire component set. Eventstream and Eventhouse are required. You can deselect Real-time Dashboard, Report, or Queryset if you don't want to create them.
 
     :::image type="content" source="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample.png" alt-text="Screenshot of the Configure samples window showing the selected items and the Destination Location." lightbox="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample.png":::
 
 1. Set the **Destination Location** for the sample components. By default, the items are created in the current workspace. You can select a different workspace from the dropdown list.
 
-1. Click **Create** to create the sample components. The progress window shows the status of the creation process.
+1. Select **Create** to create the sample components. The progress window shows the status of the creation process.
 
     :::image type="content" source="media/get-data-e2e-sample/get-data-create-e2e-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/get-data-e2e-sample/get-data-create-e2e-samples-progress.png":::
 
-1. Once the items are created, you can start exploring the Evenhouse and other components in the Real-Time Intelligence workspace.
+1. Once the items are created, you can start exploring the Eventhouse and other components in the Real-Time Intelligence workspace.
 
    :::image type="content" source="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample-ready.png" alt-text="Screenshot informing you that the data is ready." lightbox="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample-ready.png":::
 
