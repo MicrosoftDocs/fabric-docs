@@ -2,7 +2,7 @@
 title: End to end experiences in real-time
 description: Use the sample gallery to create an end-to-end real-time solution
 ms.reviewer: 
-ms.author:
+ms.author: shsagir
 author: ktalmor
 ms.topic: how-to
 ms.custom:
@@ -61,14 +61,14 @@ The sample end-to-end solution includes the following components for you to expl
 
 1. Once the items are created, you can start exploring the Evenhouse and other components in the Real-Time Intelligence workspace.
 
-   :::image type="content" source="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample-ready.png.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard." lightbox="media/get-data-e2e-sample/get-data-create-e2e-sample-folder.png":::
+   :::image type="content" source="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample-ready.png" alt-text="Screenshot informing you that the data is ready." lightbox="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample-ready.png":::
 
 1. Open the folder to see all the sample items.
 
-    :::image type="content" source="media/get-data-e2e-sample/get-data-e2e-sample-folder.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard." lightbox="media/get-data-e2e-sample/get-data-create-e2e-sample-folder.png":::
+    :::image type="content" source="media/get-data-e2e-sample/get-data-e2e-sample-folder.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard." lightbox="media/get-data-e2e-sample/get-data-e2e-sample-folder.png":::
 
 To implement this solution with your own data, follow the Real-Time Intelligence tutorial.
 
 ## Related Topics
 
-- [Real-Time Intelligence tutorials](https:///tutorial-introduction)
+* [Real-Time Intelligence tutorials](/tutorial-introduction)
