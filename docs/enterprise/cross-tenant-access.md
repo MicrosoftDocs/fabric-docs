@@ -7,7 +7,13 @@ ms.topic: article
 ms.date: 02/10/2025
 ---
 
-# Cross tenant access (private preview)
+# Cross tenant access (preview)
+
+@@@@@@@ somewhere add CONCENT
+
+@@@@@@@ Terminology: Gust and Provider
+
+@@@@@@@ Link to doc: https://microsoft.sharepoint.com/:w:/t/DataCloud/ER5rSiSf5dRJv1uBY8F77TcBJV8Ua8qR3tKMREW6CW_gow?e=oXNUgg
 
 >[!IMPORTANT]
 >Cross tenant access is a private preview feature. To participate in the preview, contact your Microsoft representative.
@@ -17,6 +23,10 @@ Cross tenant access allows third parties to access data in their Microsoft Fabri
 This article is aimed at third parties who want to set up cross tenant access.
 
 <sup>*</sup>The term *third-party service provider* is also known as *independent software vendor (ISV)*.
+
+## Prerequisites
+
+
 
 ## Install Microsoft Fabric
 
