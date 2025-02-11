@@ -181,6 +181,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Dataflow connector doesn't show dataflows with view only permissions
+      href: ../known-issues/known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md
+    - name: Unsupported error for legacy timestamp in Fabric Runtime 1.3
+      href: ../known-issues/known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md
     - name: Models with specific gateway configuration might experience refresh issues
       href: ../known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md
     - name: Notebook and SJD job statuses are in progress in monitor hub
@@ -235,8 +239,6 @@ items:
       href: ../known-issues/known-issue-954-create-configure-delete-mirror-fails.md
     - name: Incorrect column names after column format or aggregation change
       href: ../known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md
-    - name: Power BI Copilot can excessively retry in rare error scenarios
-      href: ../known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md
     - name: Metrics app timepoint details missing for new P2 capacities
       href: ../known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md
     - name: Intermittent failures on deployment of Sustainability solution
@@ -251,7 +253,7 @@ items:
       href: ../known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
     - name: The default environment's resources folder doesn't work in notebooks
       href: ../known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
-    - name: Tenant migrations paused through January 2025
+    - name: Tenant migrations paused through February 2025
       href: ../known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
     - name: More options menu on a visual doesn't open in unsaved reports
       href: ../known-issues/known-issue-918-more-options-not-open-unsaved-reports.md
@@ -309,8 +311,6 @@ items:
       href: ../known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md
     - name: Dataflow Gen2 refresh fails due to missing SQL analytics endpoint
       href: ../known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md
-    - name: Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser
-      href: ../known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md
     - name: Multiple installations of on-premises data gateway causes pipelines to fail
       href: ../known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
     - name: SQL analytics endpoint table queries fail due to RLE

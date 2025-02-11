@@ -5,10 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
-  - build-2024
 ms.date: 11/07/2024
 ---
 
@@ -93,7 +89,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 
 #### Approach 2: Use Azure Storage Explorer to copy files and tables
 
-To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer.  Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md) for detailed steps. For large data sizes, use [Approach 1](#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
+To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer. Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md) for detailed steps. For large data sizes, use [Approach 1](#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
 
 > [!NOTE]
 > The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover them.
@@ -106,7 +102,7 @@ Notebooks from the primary region remain unavailable to customers and the code i
 
 The best way to make this easy and quick is to use Fabric Git integration, then synchronize your notebook with your ADO repo. After the service fails over to another region, you can use the repo to rebuild the notebook in the new workspace you created.  
 
-1. Setup Git integration and select **Connect and sync** with ADO repo.
+1. Configure Git Integration for your workspace and select **Connect and sync** with ADO repo.
 
     :::image type="content" source="./media/experience-specific-guidance/notebook-connect-sync-ado-repo.png" alt-text="Screenshot showing how to connect and sync notebook with ADO repo.":::
 
@@ -168,7 +164,7 @@ You can recover the SJD items by copying the code from the original region by us
 
 1. Create a new SJD item (for example, SJD1) in the new workspace C2.W2, with the same settings and configurations as the original SJD item (for example, language, environment, etc.).
 
-1. Use Azure Storage Explorer to copy Libs, Mains and Snapshots from the original SJD item to the new SJD item.
+1. Use Azure Storage Explorer to copy Libs, Mains, and Snapshots from the original SJD item to the new SJD item.
 
     :::image type="content" source="./media/experience-specific-guidance/sjd-copy-from-original-sdj-to-new-sjd.png" alt-text="Screenshot showing how to copy from the original spark job definition to the new spark job definition.":::
 
@@ -272,7 +268,29 @@ Customers can't access data pipelines in the event of regional disaster, and the
 
 ### Copy Job
 
-Customers can't access copy job in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical copy jobs in multiple workspaces across different regions.
+CopyJob users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, after a regional disaster, a user's CopyJobs remain available.
+
+#### User-managed redundancy with Git integration (in public preview)
+
+The best way to make this process easy and quick is to use Fabric Git integration, then synchronize your CopyJob with your ADO repo. After the service fails over to another region, you can use the repository to rebuild the CopyJob in the new workspace you created.
+
+1. Configure your workspace's Git Integration and select **connect and sync** with ADO repo.
+
+    :::image type="content" source="./media/experience-specific-guidance/copyjob-connect-sync-ado-repo.png" alt-text="Screenshot showing how to connect and sync Workspace with ADO repo.":::
+
+    The following image shows the synced CopyJob.
+
+    :::image type="content" source="./media/experience-specific-guidance/copyjob-synced-copyjob.png" alt-text="Screenshot showing CopyJob synced with ADO repo.":::
+
+1. Recover the CopyJob from the ADO repo.
+
+    1. In the newly created workspace, connect and sync to your Azure ADO repo again. All Fabric items in this repository are automatically downloaded to your new Workspace.
+
+        :::image type="content" source="./media/experience-specific-guidance/copyjob-connect-sync-ado-repo.png" alt-text="Screenshot showing Workspace reconnected to ADO repo.":::
+
+    1. If the original CopyJob uses a Lakehouse, users can refer to the [Lakehouse section](#lakehouse) to recover the Lakehouse and then connect the newly recovered CopyJob to the newly recovered Lakehouse.
+
+For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md).
 
 ## Real-Time Intelligence
 

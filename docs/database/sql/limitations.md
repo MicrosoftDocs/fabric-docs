@@ -7,7 +7,6 @@ ms.reviewer: nzagorac, antho, sukkaur
 ms.date: 01/16/2025
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ---
 # Limitations in SQL database in Microsoft Fabric (preview)
 

@@ -4,7 +4,7 @@ description: A known issue is posted where INFO.VIEW.MEASURES() in calculated ta
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/31/2024
+ms.date: 02/10/2025
 ms.custom: known-issue-902
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-902
 
 You can add the Data Analysis Expressions (DAX) function INFO.VIEW.MEASURES() to a calculated table in a semantic model. In some cases, an error happens when you create the calculated table. Other times, after the table is in the model, you might receive an error when you remove other tables. The issue is more likely to happen on semantic models that have a calculation group that includes a dynamic format string in one or more calculation items.
 
-**Status:** Open
+**Status:** Fixed: February 10, 2025
 
 **Product Experience:** Power BI
 

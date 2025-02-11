@@ -6,8 +6,6 @@ ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 08/22/2024
 ms.search.form: Lakehouse Get Data
 ---

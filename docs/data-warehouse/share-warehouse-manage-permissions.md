@@ -7,9 +7,6 @@ ms.reviewer: jacindaeng
 ms.date: 09/27/2024
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Share your data and manage permissions

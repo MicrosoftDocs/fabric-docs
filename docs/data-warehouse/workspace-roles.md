@@ -7,8 +7,6 @@ ms.reviewer: cynotebo, jacindaeng
 ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Workspace roles in Fabric data warehousing

@@ -7,7 +7,6 @@ ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 06/17/2024
 ms.search.form: semantic link
 ---

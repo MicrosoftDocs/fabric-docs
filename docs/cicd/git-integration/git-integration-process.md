@@ -9,8 +9,6 @@ ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 01/16/2025
 ms.custom:
-  - build-2023
-  - ignite-2023
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 

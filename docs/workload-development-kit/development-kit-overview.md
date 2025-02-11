@@ -5,7 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.date: 05/21/2024
 ---
 

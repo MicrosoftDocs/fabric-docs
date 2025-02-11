@@ -5,8 +5,6 @@ author: shsagir
 ms.author: shsagir
 ms.topic: include
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 06/25/2023
 ---
 
