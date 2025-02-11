@@ -5,7 +5,6 @@ author: shsagir
 ms.author: shsagir
 ms.topic: include
 ms.custom:
-  - build-2024
 ms.date: 03/14/2024
 ---
 | Name                 | Minimum CUs | SSD capacity (GB) of free storage |

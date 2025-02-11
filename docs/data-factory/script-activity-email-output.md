@@ -6,7 +6,6 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

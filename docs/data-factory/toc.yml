@@ -240,9 +240,9 @@
     - name: Azure SQL Managed Instance
       items:
       - name: Azure SQL Managed Instance - Overview
-        href: connector-azure-sql-database-managed-instance-overview.md
+        href: connector-azure-sql-managed-instance-overview.md
       - name: Configure in data pipeline Copy activity
-        href: connector-azure-sql-database-managed-instance-copy-activity.md
+        href: connector-azure-sql-managed-instance-copy-activity.md
     - name: Azure Synapse Analytics
       items:
       - name: Azure Synapse Analytics - Overview

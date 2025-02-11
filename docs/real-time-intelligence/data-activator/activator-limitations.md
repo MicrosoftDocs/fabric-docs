@@ -4,7 +4,7 @@ description: Learn about the limitations of using Activator in your applications
 author: kfollis
 ms.author: kfollis
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
 ms.date: 12/02/2024
 #customer intent: As a Fabric user I want to learn about Activator limitations.
@@ -126,9 +126,9 @@ Your organization might have up to 250 [!INCLUDE [fabric-activator](../includes/
 
 The following components are currently not supported in Activator ALM:
 * Eventstream  (rolling out)
-* Real Time Hub Fabric Events (roling out)
+* Real Time Hub Fabric Events (rolling out)
 * Real-Time Hub Azure Storage events - not supported
-* Data Piplelies (as target action) 
+* Data Pipelines (as target action) 
 * Power BI
 
 ## Related content

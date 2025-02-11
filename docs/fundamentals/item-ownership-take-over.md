@@ -85,8 +85,6 @@ In this scenario, the new item owner can fix connections by going into the item 
 
 ## Considerations and limitations
 
-* This feature is not yet available in East Asia and Southeast Asia.
-
 * The following Fabric items don't support ownership change.
 
    * Mirrored Cosmos DB

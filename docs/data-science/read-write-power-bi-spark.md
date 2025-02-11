@@ -7,7 +7,6 @@ ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 01/10/2025
 ms.search.form: Read write powerbi
 ---

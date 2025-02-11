@@ -6,11 +6,7 @@ ms.author: rarikhy
 ms.reviewer: franksolomon
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-fabric
-  - ignite-2023
-  - ignite-2023-fabric
-  - copilot-learning-hub
+- copilot-learning-hub
 ms.date: 01/09/2025
 ms.search.form: Data Science Overview
 no-loc: [Copilot]

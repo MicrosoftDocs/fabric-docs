@@ -7,7 +7,6 @@ ms.reviewer: ajagadish, sosivara
 ms.date: 01/14/2025
 ms.topic: conceptual
 ms.custom:
-  - build-2024
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---
 # Restore in-place of a warehouse in Microsoft Fabric

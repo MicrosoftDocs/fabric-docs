@@ -6,8 +6,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to learn how to transform data with Apache Spark and query it with SQL using OneLake and Fabric notebooks so that I can efficiently analyze and manipulate data in my lakehouse workspace.
 ---
