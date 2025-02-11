@@ -31,6 +31,22 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [TBD]
 
+### Example
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([
+        "This duvet, lovingly hand-crafted from all-natural polyester, is perfect for a good night's sleep.",
+        "Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",
+        "Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the light commuter!"
+    ], columns=["description"])
+
+df["category"] = df['description'].ai.classify("kitchen", "bedroom", "garage", "other")
+display(df)
+```
+
 ## Use `ai.classify` with PySpark
 
 [TBD]

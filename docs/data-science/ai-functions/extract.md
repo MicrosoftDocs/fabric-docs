@@ -31,6 +31,21 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [TBD]
 
+### Example
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([
+        "My name is MJ Lee. I live in a house on 1234 Roderick Lane in Plainville, CT, with two cats.",
+        "Kris Turner's house at 1500 Smith Avenue is the biggest on the block!"
+    ], columns=["description"])
+
+df = df["description"].ai.extract("name", "address")
+display(df)
+```
+
 ## Use `ai.extract` with PySpark
 
 [TBD]

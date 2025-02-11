@@ -31,6 +31,23 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [TBD]
 
+### Example
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([ 
+        ("Jean Luc Picard", "Peppa Pig"), 
+        ("William T. Riker", "Barney"), 
+        ("Dolores O'Riordan", "Sinéad O'Connor"), 
+        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
+    ], columns=["name", "comparison"])
+    
+df["similarity"] = df["name"].ai.similarity(df["comparison"])
+display(df)
+```
+
 ## Use `ai.similarity` with PySpark
 
 [TBD]

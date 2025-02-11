@@ -29,7 +29,34 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.generate_response` with Python
 
-[TBD]
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([
+        ("apple", "fruits"),
+        ("blue", "colors"),
+        ("lizard", "reptiles")
+    ], columns=["example", "category"])
+
+df["list"] = df.ai.gen("Complete this comma-separated list of 5 {category}: {example}, ", is_format=True)
+display(df)
+```
+
+### Example
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = spark.createDataFrame([
+        ("Where is the bus?",),
+        ("The bus is on the beach.",),
+    ], ["input_text"])
+
+translations = df.ai.translate(to_lang="spanish", input_col="input_text", output_col="translation")
+display(translations)
+```
 
 ## Use `ai.generate_response` with PySpark
 

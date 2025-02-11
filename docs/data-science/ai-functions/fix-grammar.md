@@ -31,6 +31,22 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [TBD]
 
+### Example
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([
+        "oh yeah, she and me go weigh back!",
+        "You SUre took you'RE sweetthyme!",
+        "teh time has come at last."
+    ], columns=["raw_text"])
+
+df["corrected"] = df["raw_text"].ai.fix_grammar()
+display(df)
+```
+
 ## Use `ai.fix_grammar` with PySpark
 
 [TBD]

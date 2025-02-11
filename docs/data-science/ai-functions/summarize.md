@@ -31,6 +31,38 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [TBD]
 
+### Example
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df= pd.DataFrame([
+        """
+        Well, that goat was a mighty fine old goat, I did always say. I never had to
+        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
+        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
+        no, I know what you're thinking, not goatee like the facial hair-style --
+        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
+        the goat, don't you know. Anyway, we used to keep him in a little pen, where
+        he would bleat his little goat heart out, as he happily munched on grass.
+        """,
+        """
+        Pursuant to subsection 2, paragraph 7, we find that the alleged business
+        expense was undertaken under questionable judgment. The employee in question 
+        was found to have purchased five lots of moisturizer due to a misunderstanding 
+        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
+        he made the purchase. Compounding this error was his misapprehension that
+        the cream was infused with diamond dust to give it an extra sparkle, thereby
+        justifying, at least in his mind, its exorbitant cost. The board recommends
+        immediate disciplinary action.
+        """
+    ], columns=["text"])
+
+df["summary"] = df["text"].ai.summarize()
+display(df)
+```
+
 ## Use `ai.summarize` with PySpark
 
 [TBD]

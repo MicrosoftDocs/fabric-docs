@@ -31,6 +31,23 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [TBD]
 
+### Example
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([
+        "This was the worst product ever. It went crazy and destroyed my beautiful kitchen counter. Shame!",
+        "This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!",
+        "I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",
+        "It's OK I suppose."
+    ], columns=["review"])
+
+df["sentiment"] = df["review"].ai.analyze_sentiment()
+display(df)
+```
+
 ## Use `ai.analyze_sentiment` with PySpark
 
 [TBD]
