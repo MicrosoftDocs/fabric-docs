@@ -13,7 +13,7 @@ ms.date: 01/21/2025
 
 This article describes how to set up a Fabric Copilot capacity which allows admins to consolidate all charges for Fabric Copilot usage in a tenant for Fabric users.
  
-## Steps to enabling a Fabric Copilot capacity
+## Steps to enable a Fabric Copilot capacity
 
 There are three steps required to enable Fabric Copilot capacity.
 1. The Fabric administrator [enables Copilot](../admin/service-admin-portal-copilot.md) for users within the organization.
