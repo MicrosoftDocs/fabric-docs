@@ -19,10 +19,10 @@ items:
     href: sku-considerations.md
   - name: End a trial, close an account, cancel a subscription
     href: fabric-close-end-cancel.md
-  - name: Fabric Copilot capacity
-    href: fabric-copilot-capacity.md
 - name: Capacity operations
   items:
+  - name: Fabric Copilot capacity
+    href: fabric-copilot-capacity.md  
   - name: Understand your Azure bill
     href: azure-billing.md
   - name: Pause and resume your capacity
