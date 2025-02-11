@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 01/16/2025
+ms.date: 02/11/2025
 ms.custom:
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -18,9 +18,9 @@ This article explains basic Git concepts and the process of integrating Git with
 
 ## Permissions
 
-- In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations). This restriction doesn't apply to GitHub.
-- The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
+- Your organization's administrator must [enable Git integration](../../admin/git-integration-admin-settings.md).
+- The tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations) if the workspace and *Azure* repo are in two different regions. This restriction doesn't apply to GitHub.
+- The permissions you have in both the workspace and Git, as listed in the next sections, determine the actions you can take.
 
 ### Required Git permissions for popular actions
 
@@ -112,20 +112,21 @@ If you don’t select which content to sync, you can’t continue to work.
 
 When connected and synced, the workspace structure is mirrored in the Git repository, including folders structure. Workspace items in folders are exported to folders with the same name in the Git repo. Conversely, items in Git folders are imported to folders with the same name in the workspace.
 
-Empty folders aren't copied to Git. When you create or move items to a folder, the folder is created in Git.
-
 :::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
 
 > [!NOTE]
-> Now that the folder structure is maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace.
+> Since folder structure is now maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update first, the Git folder structure overwrites the workspace folder structure.
 
-Folder structure is maintained up to 10 levels deep.
+* Empty folders aren't copied to Git. When you create or move items to a folder, the folder is created in Git.
+* Empty folders in Git are deleted automatically.
+* Empty folders in the workspace aren't deleted automatically even if all items are moved to different folders.
+* Folder structure is maintained up to 10 levels deep.
 
 ### Connect to a shared workspace
 
 If you try connecting to a workspace that's already [connected to Git](./manage-branches.md), you might get the following message:
 
-:::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling yo to sign in to a Git account.":::
+:::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling you to sign in to a Git account.":::
 
 Go to the **Accounts** tab on the right side of the Source control panel, choose an account, and connect to it.
 
