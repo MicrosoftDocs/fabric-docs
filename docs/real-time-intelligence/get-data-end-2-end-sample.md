@@ -1,5 +1,5 @@
 ---
-title: End to end experiences in real-time
+title: End-to-end sample solution in real-time
 description: Use the sample gallery to create an end-to-end real-time solution
 ms.reviewer: 
 ms.author: shsagir
