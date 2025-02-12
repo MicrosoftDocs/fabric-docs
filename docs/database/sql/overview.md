@@ -6,8 +6,7 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 12/04/2024
 ms.topic: overview
-ms.custom:
-ms.search.form: product-databases
+ms.search.form: product-databases, SQL database - Overview
 ---
 # SQL database in Microsoft Fabric (Preview)
 
