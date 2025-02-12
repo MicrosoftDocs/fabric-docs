@@ -34,7 +34,7 @@ Smoothing offers relief for customers who create sudden spikes during their peak
 
 Burstable capacity is finite. There's a limit applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads causing [throttling](compute-capacity-smoothing-throttling.md).
 
-The limit (or guardrail) is a scale factor directly correlated to the Fabric Capacity SKU size that is assigned to the workspace.
+The limit (or guardrail) is a scale factor directly correlated to the Fabric Capacity SKU size the workspace is assigned to.
 
 | Fabric SKU | Equivalent Premium SKU | Baseline Capacity Units (CU) | Burstable Scale Factor |
 |------------|-----------------------|------------------------------|------------------------|
@@ -61,7 +61,7 @@ Larger SKU sizes have access to more total capacity units, allowing more complex
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] fully isolates ingestion from query processing, as described in [Workload management](workload-management.md#ingestion-isolation). 
 
-The burstable scale factor can be achieved independently for ingestion at the same time the burstable scale factor is achieved for query processing. These scale factors encapsulate all processes within a single workspace. However, capacity can be assigned to multiple workspaces. Therefore, the aggregate max scale factor across a capacity would be represented in the following formula: `([Query burstable scale factor] + [Ingestion burstable scale factor]) * [number of Fabric workspaces] = [aggregate burstable scale factor]`
+The burstable scale factor can be achieved independently for ingestion at the same time the burstable scale factor is achieved for query processing. These scale factors encapsulate all processes within a single workspace. However, multiple workspaces can be assigned to a capacity. Therefore, the aggregate max scale factor across a capacity would be represented in the following formula: `([Query burstable scale factor] + [Ingestion burstable scale factor]) * [number of Fabric workspaces] = [aggregate burstable scale factor]`
 
 ## Considerations
 
