@@ -7,7 +7,6 @@ ms.reviewer: antho, sukkaur, dlevy
 ms.date: 01/16/2025
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.search.form: product-databases
 ---
 # Enable SQL database in Fabric using Admin Portal tenant settings
@@ -27,7 +26,7 @@ In both cases, you can use security groups to provide access to a specified list
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Review [Fabric region availability](../../admin/region-availability.md).
 - To enable SQL database, you need to be a member of one of the following admin roles:
   - [Microsoft 365 Global admin](../../admin/microsoft-fabric-admin.md#microsoft-365-admin-roles)

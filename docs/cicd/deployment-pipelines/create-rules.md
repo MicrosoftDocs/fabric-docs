@@ -7,8 +7,6 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 10/27/2024
 ms.search.form: Deployment rules
 #customer intent: As a developer, I want to learn how to create deployment rules in Fabric's Application lifecycle management (ALM) tool so that I can simplify deploying content between stages in my deployment pipeline.

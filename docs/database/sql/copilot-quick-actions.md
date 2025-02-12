@@ -7,7 +7,6 @@ ms.reviewer: yoleichen, sukkaur
 ms.date: 10/07/2024
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.collection: ce-skilling-ai-copilot
 ---
 # How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric
@@ -67,4 +66,4 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 - [Copilot for SQL database in Fabric (preview)](copilot.md)
 - [How to: Use Copilot code completion for SQL database](copilot-code-completion.md)
 - [How to: Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

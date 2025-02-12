@@ -6,7 +6,6 @@ ms.author: sgilley
 author: sdgilley
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 01/22/2024
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict customer churn.
 ---

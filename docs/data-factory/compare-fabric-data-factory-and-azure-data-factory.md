@@ -8,7 +8,6 @@ ms.date: 12/18/2024
 ms.custom:
   - template-how-to
   - buyild-2023
-  - ignite-2023
 ms.search.form: Pipeline Activity Overview
 ---
 

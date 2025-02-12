@@ -5,11 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
-  - build-2024
-  - ignite-2024
 ms.date: 11/10/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -60,7 +55,7 @@ This section is divided into Fabric experience. Each experience had a table that
 
 ### Copilot in Fabric
 
-[Copilot](../get-started/copilot-fabric-overview.md) operations are listed in this table. You can find the consumption rates for Copilot in [Copilot consumption](../get-started/copilot-fabric-consumption.md).
+[Copilot](../fundamentals/copilot-fabric-overview.md) operations are listed in this table. You can find the consumption rates for Copilot in [Copilot consumption](../fundamentals/copilot-fabric-consumption.md).
 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |

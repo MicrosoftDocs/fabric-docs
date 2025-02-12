@@ -7,7 +7,6 @@ ms.reviewer: antho, sukkaur, dlevy
 ms.date: 01/02/2025
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.search.form:
 ---
 # Load data with data pipelines into SQL database in Microsoft Fabric
@@ -20,7 +19,7 @@ A data pipeline is a logical grouping of activities that together perform a data
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Create a new workspace or use an existing Fabric workspace.
 - Create or use an existing **SQL database in Fabric**. If you don't have one already, [create a new SQL database in Fabric](create.md).
 - Create or use an existing **Azure SQL Database**, with data.

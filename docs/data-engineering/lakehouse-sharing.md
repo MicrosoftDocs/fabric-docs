@@ -6,7 +6,6 @@ ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 04/19/2024
 ms.search.form: Lakehouse Sharing Permissions
 ---
@@ -62,5 +61,5 @@ For more information, see [Get started with OneLake data access roles](../onelak
 ## Related content
 
 - [Workspace roles in Lakehouse](workspace-roles-lakehouse.md)
-- [Share items in Microsoft Fabric](../get-started/share-items.md)
+- [Share items in Microsoft Fabric](../fundamentals/share-items.md)
 - [Role-based access control (RBAC)](../onelake/security/data-access-control-model.md)

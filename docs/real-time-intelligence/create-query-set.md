@@ -6,7 +6,6 @@ author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: KQL Queryset
 ---
@@ -16,7 +15,7 @@ In this article, you learn how to create a new KQL queryset. The KQL Queryset is
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data
 
 ## Create a KQL queryset

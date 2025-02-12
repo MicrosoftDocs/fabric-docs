@@ -6,7 +6,6 @@ ms.author: wiassaf
 ms.reviewer:
 ms.topic: product-comparison
 ms.custom:
-  - ignite-2024
 ms.date: 01/15/2025
 ---
 # Microsoft Fabric decision guide: choose a SQL database
@@ -37,7 +36,7 @@ For a detailed comparison of features and capabilities, see [Features comparison
 | Cross-platform queries in Fabric | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
 | Source of Fabric shortcuts | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
 | Source for Power BI DirectLake mode | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
-| Free offer | [Yes, free 100,000 vCore s/month](/azure/azure-sql/database/free-offer) | [Yes, with Microsoft Fabric trial capacity](../../get-started/fabric-trial.md) |
+| Free offer | [Yes, free 100,000 vCore s/month](/azure/azure-sql/database/free-offer) | [Yes, with Microsoft Fabric trial capacity](../../fundamentals/fabric-trial.md) |
 | Monitoring | Azure Monitor, [database watcher](/azure/azure-sql/database-watcher-overview) | [Performance Dashboard](performance-dashboard.md), Capacity metrics app |
 
 ## Scenarios

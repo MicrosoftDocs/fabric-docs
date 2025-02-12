@@ -6,8 +6,6 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
   - FY25Q1-Linter 
 ms.date: 07/25/2024
 # Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.
@@ -23,7 +21,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 > * Add tables to the semantic model
 > * Build a report
 
-If you don’t have Microsoft Fabric, sign up for a free [trial capacity](../get-started/fabric-trial.md).
+If you don’t have Microsoft Fabric, sign up for a free [trial capacity](../fundamentals/fabric-trial.md).
 
 ## Prerequisites
 

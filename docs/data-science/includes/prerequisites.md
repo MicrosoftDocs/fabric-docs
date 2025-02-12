@@ -5,12 +5,10 @@ author: sdgilley
 ms.author: sgilley
 ms.topic: include
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 01/10/2025
 ---
 
-- Get a [Microsoft Fabric subscription](../../enterprise/licenses.md). Or, sign up for a free [Microsoft Fabric trial](../../get-started/fabric-trial.md).
+- Get a [Microsoft Fabric subscription](../../enterprise/licenses.md). Or, sign up for a free [Microsoft Fabric trial](../../fundamentals/fabric-trial.md).
 
 - Sign in to [[!INCLUDE [product-name](../../includes/product-name.md)]](https://fabric.microsoft.com/).
 

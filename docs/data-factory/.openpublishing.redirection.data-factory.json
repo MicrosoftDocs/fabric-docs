@@ -274,6 +274,21 @@
         "source_path_from_root": "/docs/data-factory/data-factory-known-issues.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/upgrade-paths.md",
+        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-managed-instance-copy-activity.md",
+        "redirect_url": "/fabric/data-factory/connector-azure-sql-managed-instance-copy-activity",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-managed-instance-overview.md",
+        "redirect_url": "/fabric/data-factory/connector-azure-sql-managed-instance-overview",
+        "redirect_document_id": false
       }
     ]
 }

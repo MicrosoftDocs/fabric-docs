@@ -5,8 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 01/23/2025
 ---
 
@@ -80,7 +78,7 @@ The following table summarizes the information protection capabilities in Fabric
 
 ### Manual labeling
 
-When you enable sensitivity labels on your tenant, you specify which users can apply sensitivity labels. While the other information protection capabilities described in this article can ensure that most items get labeled without someone having to manually apply a label, manual labeling makes it possible for users to change labels on items. For more information about how to manually apply sensitivity labels to Fabric items, see [How to apply sensitivity labels](../get-started/apply-sensitivity-labels.md).
+When you enable sensitivity labels on your tenant, you specify which users can apply sensitivity labels. While the other information protection capabilities described in this article can ensure that most items get labeled without someone having to manually apply a label, manual labeling makes it possible for users to change labels on items. For more information about how to manually apply sensitivity labels to Fabric items, see [How to apply sensitivity labels](../fundamentals/apply-sensitivity-labels.md).
 
 > [!NOTE]
 > For a user to be able to apply sensitivity labels to Fabric items, it's not enough just to include the user in the list of specified users. The sensitivity label must also be published to the user as part of the label's policy definitions in the Microsoft Purview compliance center. For more information, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
@@ -91,11 +89,11 @@ Default labeling is fully supported in Power BI and is described in [Default lab
 
 * When a non-Power BI Fabric item is created, if there's a clear, substantive create dialog, the default sensitivity label will be applied to the item if the user doesn't choose a label. If the item is created in a process where there's no clear create dialog, the default label **won't** be applied.
 
-* When a Fabric item that has no label is updated, if the item is a Power BI item, a change to any of its attributes causes the default label to be applied if the user doesn't apply a label. If the item is a non-Power BI Fabric item, only changes to certain attributes, such as name and description, cause the default label to be applied. And this is only if the change is made in the item's [flyout menu](../get-started/apply-sensitivity-labels.md#apply-a-label). For changes made in the experience interface, default labeling isn't currently supported.
+* When a Fabric item that has no label is updated, if the item is a Power BI item, a change to any of its attributes causes the default label to be applied if the user doesn't apply a label. If the item is a non-Power BI Fabric item, only changes to certain attributes, such as name and description, cause the default label to be applied. And this is only if the change is made in the item's [flyout menu](../fundamentals/apply-sensitivity-labels.md#apply-a-label). For changes made in the experience interface, default labeling isn't currently supported.
 
 ### Mandatory labeling
 
-Mandatory labeling is currently supported for Power BI items only. Mandatory labeling isn’t enforced if changes are made via the [flyout menu](../get-started/apply-sensitivity-labels.md#apply-a-label).
+Mandatory labeling is currently supported for Power BI items only. Mandatory labeling isn’t enforced if changes are made via the [flyout menu](../fundamentals/apply-sensitivity-labels.md#apply-a-label).
 
 For lakehouses, pipelines, and data warehouses: Assuming that information protection is enabled, if mandatory labeling is on and default labeling is off, it will be possible for the user to select a label. However, mandatory labeling logic isn't enforced. That means that the user can save the item without a label, unless the experience itself requires that a label be set.
 

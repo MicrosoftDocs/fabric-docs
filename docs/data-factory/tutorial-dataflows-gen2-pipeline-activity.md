@@ -4,8 +4,6 @@ description: This article describes how to use a dataflow in a pipeline.
 author: luitwieler
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024   
 ms.author: jeluitwi
 ---
@@ -18,7 +16,7 @@ In this tutorial, you build a data pipeline to move OData from a Northwind sourc
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../get-started/create-workspaces.md) that isn't the default My Workspace.
+- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../fundamentals/create-workspaces.md) that isn't the default My Workspace.
 
 ## Create a Lakehouse
 

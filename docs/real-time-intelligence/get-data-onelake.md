@@ -6,9 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 12/24/2024
 ms.search.form: Get data in a KQL Database
 ---
@@ -19,7 +16,7 @@ In this article, you learn how to get data from OneLake into either a new or exi
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [Lakehouse](../data-engineering/create-lakehouse.md)
 * A [KQL database](create-database.md) with editing permissions
 

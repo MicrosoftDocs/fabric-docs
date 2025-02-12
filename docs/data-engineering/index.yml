@@ -9,8 +9,6 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-engineering
   ms.custom:
-    - ignite-2023
-    - build-2024
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda
@@ -91,6 +89,8 @@ landingContent:
             url: multiple-data-sources-graphql.md
           - text: GraphQL source control and deployment pipelines
             url: graphql-source-control-and-deployment.md
+          - text: Monitoring dashboard and logging (preview) 
+            url: graphql-monitor-log.md      
   # Card 
   - title: Delta Lake
     linkLists:

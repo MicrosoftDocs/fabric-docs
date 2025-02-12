@@ -5,9 +5,7 @@ author: msakande
 ms.author: mopeakande
 ms.topic: include
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 10/19/2023
 ---
 > [!IMPORTANT]
-> This feature is in [preview](../get-started/preview.md).
+> This feature is in [preview](../fundamentals/preview.md).
