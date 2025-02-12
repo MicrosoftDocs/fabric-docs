@@ -26,6 +26,8 @@ To ensure fast performance, Fabric uses _bursting_ to let operations run as fast
 ### Smoothing
 To avoid penalizing users when operations benefit from bursting, Fabric _smooths_ or averages the CU usage of an operation over a longer timeframe. This behavior ensures users can enjoy consistently fast performance without experiencing throttling. The usage is distributed over future _timepoints_ that are automatically managed by the capacity.
 
+Microsoft Fabric divides operations into two types, *interactive* and *background*. You can find descriptions of these and the distinctions between them in [Fabric operations](fabric-operations.md).
+
 Interactive operations are smoothed over a minimum of five minutes, and up to 64 minutes depending on how much CU usage they consume. Background operations are smoothed over a 24-hour period because they typically have long runtimes and large CU consumption.
 
 Smoothed usage accumulates as job runs and is paid for by _future capacity_, which is the CU that is available in future timepoints because the capacity is running continuously. 
@@ -88,7 +90,11 @@ When a capacity enters a throttled state, it only affects operations that are re
 
 In Fabric it's common for an operation started by one item or workload to call other items or workloads to complete. There are many examples, but a typical one is viewing a report. Each visual in the report runs a query against an underlying semantic model. The semantic model might also read data form OneLake in order to provide the query result. Each of these requests forms a chain.  
 
-When there's a chain of calls, there's a risk of _compound throttling_, which is when throttling is applied more than once to the same request. Fabric has built-in infrastructure that reduces the likelihood of compound throttling that workloads opt in to using. When workloads support compound throttling protection, then a request is throttled only once for each capacity that participates in the chain. The throttling decision occurs when the request starts and applies to all operations in the chain. So if a request is delayed, it's only delayed once. If a chain relies on more than one capacity, then each capacity enforces it's throttling once for the first request it receives in the chain. 
+When there's a chain of calls, there's a risk of _compound throttling_, which is when throttling is applied more than once to the same request. Fabric has a built-in compound throttling protection that reduces the likelihood of compound throttling occurring. Workloads can opt-in to using this protection.
+
+When workloads support compound throttling protection, a request is throttled only once for each capacity that participates in the chain. The throttling decision occurs when the request starts and applies to all operations in the chain. So, if a request is delayed, it's only delayed once. 
+
+If a chain relies on more than one capacity, then each capacity enforces it's throttling once for the first request it receives in the chain. 
 
 The following workload experiences support compound throttling:
 - When a semantic model connects to another semantic model using Direct Query. Both models residing on the same capacity.
@@ -108,7 +114,6 @@ Similarly, almost all operations in the **Warehouse** category are reported as *
 
 ## Interactive and background classifications for throttling and smoothing
 
-Microsoft Fabric divides operations into two types, *interactive* and *background*. You can find descriptions of these and the distinctions between them in [Fabric operations](fabric-operations.md).
 
 Some admins might notice that operations are sometimes classified as interactive and smoothed as background, or vice versa. This distinction happens because Fabric’s throttling systems must apply throttling rules before a request begins to run.
 
