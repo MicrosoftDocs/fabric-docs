@@ -25,4 +25,4 @@ The Salesforce Service Cloud connector supports the following capabilities in da
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None <br> On-premises | Organizational account |
 
-To learn more about the copy activity configuration for Salesforce objects in data pipelines, go to [Configure in a data pipeline copy activity](connector-salesforce-service-cloud-copy-activity.md).
+To learn more about the copy activity configuration for Salesforce Service Cloud in data pipelines, go to [Configure in a data pipeline copy activity](connector-salesforce-service-cloud-copy-activity.md).
