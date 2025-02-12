@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 11/07/2024
 ms.topic: tutorial
-ms.custom:
+ms.search.form: SQL database – Tutorial
 ---
 
 # SQL database in Fabric tutorial introduction
