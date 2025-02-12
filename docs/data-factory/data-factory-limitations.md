@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 01/31/2025
+ms.date: 02/12/2025
 ---
 
 # Data Factory limitations overview
@@ -28,6 +28,7 @@ The following list describes the current limitations of pipelines in Data Factor
 -	Pipelines can't use a managed virtual network.
 -	Web activity doesn't support service principal based authentication.
 -	Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly.
+-	Dataflow Gen2 (CI/CD, preview) is currently not supported in pipeline as activity. It will be supported soon. 
 -	Background sync of authentication does not happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
 
 ## Data pipeline resource limits
