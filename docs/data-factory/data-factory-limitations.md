@@ -28,7 +28,7 @@ The following list describes the current limitations of pipelines in Data Factor
 -	Pipelines can't use a managed virtual network.
 -	Web activity doesn't support service principal based authentication.
 -	Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly.
--	Dataflow Gen2 (CI/CD, preview) is currently not supported in pipeline as activity. It will be supported soon. 
+-	Dataflow Gen2 (CI/CD, preview) is currently not supported in pipeline as activity. 
 -	Background sync of authentication does not happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
 
 ## Data pipeline resource limits
@@ -69,8 +69,8 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour. Read more about the [gateway considerations when using data destinations](gateway-considerations-output-destinations.md).
 - Currently, column nullability is defaulting to allow nulls in all columns in the destination.
 - You can't connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflow Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints.
-- Dataflow Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest in. Use a native user in the tenant to connect to the data sources and destinations.
-- Consuming data from a dataflow gen2 with the dataflow connector requieres Admin, Member or Contributor permissions. Viewer permissions is not sufficient and is not supported for consuming data from the dataflow.
+- Dataflow Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest. Use a native user in the tenant to connect to the data sources and destinations.
+- Consuming data from a dataflow gen2 with the dataflow connector requires Admin, Member or Contributor permissions. Viewer permission is not sufficient and is not supported for consuming data from the dataflow.
 
 The following table indicates the supported data types in specific storage locations.
 
