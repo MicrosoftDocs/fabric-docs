@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: concept-article
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 02/12/2025
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview
@@ -25,25 +25,27 @@ You can create a [KQL database](create-database.md) within an eventhouse. The KQ
 
 The system overview page of an eventhouse shows you the following information:
 
-* Eventhouse details
-* Running state of the eventhouse
-* OneLake storage usage
-* OneLake storage usage by database
-* Compute usage
-* Compute usage by user
-* Most active databases
-* Recent events
+* Eventhousoe details
+* Eventhouse storage
+* System resources - Evenhouse and OneLake
+* Activity in minutes
+* Ingestion rate
+* Comupue minutes - Top users
+* Databases - Most querired and Top ingested
+* What's new
 
 For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse).
 
 The databases page of an eventhouse shows you database information either in list or tile view. The following information about each database is displayed in tile view:
 
 * Database name
-* A graph of queries that were run over the past week
-* Data size
-* Caching policy
-* Retention policy
-* Last ingestion date
+* Database details
+* Database Activity Tracker - line or bar chart display
+* Database table queries
+* Filters for users and applications
+* Data preview
+* Query insights
+* Ingestion failures
 
 ## Minimum consumption
 
