@@ -44,6 +44,7 @@ The first phase of throttling begins when a capacity has consumed all its availa
 >Microsoft tries to improve customer flexibility in using the service, while balancing the need to manage customer capacity usage. For this reason, Microsoft might change or update the Fabric throttling policy.
 
 The table summarizes the throttling triggers and stages. 
+
 | Usage  | Policy Limits	 | Platform Policy	Experience Impact | 
 | --- | --- | --- | 
 | Usage <= 10 minutes	 | Overage protection	 | Jobs can consume 10 minutes of future capacity use without throttling. | 
@@ -146,3 +147,4 @@ When your capacity is overloaded and users are experiencing throttling, they rec
 ## Related content
 
 * [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md) to monitor Fabric capacities.
+* [How to resize your capacity](scale-capacity.md).
