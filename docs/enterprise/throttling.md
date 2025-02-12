@@ -12,7 +12,7 @@ ms.date: 01/24/2025
 
 # The Fabric throttling policy
 
-Throttling occurs when a tenant’s capacity consumes more capacity resources than it has purchased. Too much throttling can result in a degraded end-user experience. A Microsoft Fabric tenant can create multiple capacities and assign workspaces to a specific capacity for billing and sizing.
+Throttling occurs when a capacity consumes more capacity resources than it has purchased. Too much throttling can result in a degraded end-user experience. A Microsoft Fabric tenant can create multiple capacities and assign workspaces to a specific capacity for billing and sizing.
 
 Throttling is applied at the capacity level, meaning that while one capacity, or set of workspaces, might be experiencing reduced performance due to being overloaded, other capacities might continue running normally. In cases where features such as OneLake artifacts are produced in one capacity and consumed by another, the throttling state of the consuming capacity determines whether calls to the artifact are throttled.
 
@@ -99,8 +99,6 @@ If a chain relies on more than one capacity, then each capacity enforces it's th
 The following workload experiences support compound throttling:
 - When a semantic model connects to another semantic model using Direct Query. Both models residing on the same capacity.
 - A DAX query form a paginated report to a semantic model.
-- TBD3
-- TBD4
 
 ## Throttling behavior is specific to Fabric workloads
 
@@ -123,7 +121,7 @@ The throttling system attempts to accurately categorize operations upon submissi
 
 You can see if your capacity is overloaded by reviewing the [Utilization chart](metrics-app-compute-page.md#utilization) in the [Microsoft Fabric Capacity Metrics app](metrics-app.md). A spike that goes over the line indicates an overage. To further investigate the overage, drill through to the timepoint page. You can then review both your interactive and background operations, and see which ones were responsible for the overages.
 
-Since utilization exceeding 100% doesn't automatically mean throttling, you need to use the [Throttling chart](metrics-app-compute-page.md#throttling) when evaluating overages. From there you can open a table that shows minutes to burndown, a chart with add, burndown, and cumulative percent, and more.
+Since utilization exceeding 100% doesn't automatically mean throttling, you need to use the [Throttling chart](metrics-app-compute-page.md#throttling) when evaluating overages. From there you can open a table that shows minutes to burndown, a chart with add, burndown, and cumulative percent, and more. The minutes to burndown shows how long burndown would take if no more operations ran in the capacity.
 
 :::image type="content" source="media/fabric-drill-through.gif" alt-text="Animation that shows the drill-through option for a selected time point." lightbox="media/fabric-drill-through.gif":::
 
