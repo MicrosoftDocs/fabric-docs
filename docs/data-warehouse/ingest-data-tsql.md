@@ -3,8 +3,8 @@ title: Ingest data into your Warehouse using Transact-SQL
 description: Follow steps to ingest data into a Warehouse table using Transact-SQL
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: procha
-ms.date: 04/24/2024
+ms.reviewer: procha, jovanpop
+ms.date: 02/10/2025
 ms.topic: how-to
 ms.custom:
 ms.search.form: Ingesting data
@@ -16,9 +16,16 @@ ms.search.form: Ingesting data
 
 The Transact-SQL language offers options you can use to load data at scale from existing tables in your lakehouse and warehouse into new tables in your warehouse. These options are convenient if you need to create new versions of a table with aggregated data, versions of tables with a subset of the rows, or to create a table as a result of a complex query. Let's explore some examples.
 
-## <a id="creating-a-new-table-with-the-result-of-a-query-by-using-create-table-as-select-ctas"></a> Create a new table with the result of a query by using CREATE TABLE AS SELECT (CTAS)
+<a id="creating-a-new-table-with-the-result-of-a-query-by-using-create-table-as-select-ctas"></a>
 
-The **CREATE TABLE AS SELECT (CTAS)** statement allows you to create a new table in your warehouse from the output of a `SELECT` statement. It runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
+## Create a new table with the result of a query by using CREATE TABLE AS SELECT (CTAS)
+
+The `CREATE TABLE AS SELECT` (CTAS) statement allows you to create a new table in your warehouse from the output of a `SELECT` statement. It runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
+
+You can use the following options for the `SELECT` part of CTAS statement:
+- Reading a warehouse table, such as a staging table.
+- Reading a Lakehouse table auto-generated via SQL analytics endpoint for Lakehouse.
+- Reading data directly from external file using the `OPENROWSET` function (preview).
 
 > [!NOTE]
 > The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
@@ -33,6 +40,16 @@ FROM [dbo].[bing_covid-19_data]
 WHERE DATEPART(YEAR,[updated]) = '2023';
 ```
 
+Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function (public preview):
+
+```sql
+CREATE TABLE [dbo].[bing_covid-19_data_2022]
+AS
+SELECT id, updated, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+WHERE DATEPART(YEAR,[updated]) = '2022'
+```
+
 You can also create a new table with new `year`, `month`, `dayofmonth` columns, with values obtained from `updated` column in the source table. This can be useful if you're trying to visualize infection data by year, or to see months when the most COVID-19 cases are observed:
 
 ```sql
@@ -40,6 +57,16 @@ CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
 AS
 SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth], * 
 FROM [dbo].[bing_covid-19_data];
+```
+
+Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file and transform results:
+
+```sql
+CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
+AS
+SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth],
+        id, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
 ```
 
 As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality affects spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
@@ -50,6 +77,13 @@ AS
 SELECT [country_region],[month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM [dbo].[bing_covid-19_data_with_year_month_day]
 GROUP BY [country_region],[month];
+
+CREATE TABLE [dbo].[infections_by_month_2022]
+AS
+SELECT [country_region], DATEPART(MONTH,[updated]) AS [month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+WHERE DATEPART(YEAR,[updated]) = '2022'
+GROUP BY [country_region],DATEPART(MONTH,[updated]);
 ```
 
 Based on this new table, we can see that the United States observed more confirmed cases across all years in the month of `January`, followed by `December` and `October`. `April` is the month with the lowest number of cases overall:
