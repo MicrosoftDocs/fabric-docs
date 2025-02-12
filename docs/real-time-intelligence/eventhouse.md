@@ -25,13 +25,14 @@ You can create a [KQL database](create-database.md) within an eventhouse. The KQ
 
 The system overview page of an eventhouse shows you the following information:
 
-* Eventhousoe details
+* Eventhouse details
 * Eventhouse storage
-* System resources - Evenhouse and OneLake
+* System resources - Eventhouse and OneLake
 * Activity in minutes
 * Ingestion rate
 * Comupue minutes - Top users
-* Databases - Most querired and Top ingested
+* Most queried databases
+* Top ingested databases
 * What's new
 
 For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse).
