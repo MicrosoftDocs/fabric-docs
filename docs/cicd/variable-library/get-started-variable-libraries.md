@@ -6,8 +6,8 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: get-started
-ms.date: 01/22/2025
+ms.topic: quickstart
+ms.date: 02/12/2025
 ms.search.form: Create and use Variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle.
 
@@ -34,10 +34,11 @@ You can create a Variable library item from the Fabric home page or from inside 
 
 ### [From home page](#tab/home-page)
 
-1. From the side navigation bar, select **Create** (If it’s not there, select the three dots -> create)
+1. From the side navigation bar, select **Create** (If it’s not there, select the three dots -> Create)
+
 1. In the **Data Factory** section, select **Variable library**
 
-   :::image type="content" source="./media/get-started-with-variable-libraries/create-from-home.png" alt-text="Screenshot of UI for creating a Variable library item from the Fabric home page.":::
+   :::image type="content" source="./media/get-started-with-variable-libraries/create-from-home.png" alt-text="Screenshot of UI showing the location of variable libraries in the data factory section.":::
 
 1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
 

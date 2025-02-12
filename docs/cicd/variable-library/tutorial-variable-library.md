@@ -22,8 +22,12 @@ In this tutorial, you:
 >
 > * Create a Variable library
 > * Add variables to the library
-> * Define value-sets for the variables
-> * Set rules for the active value-set
+> * Define additional value-sets for the variables
+> * Consume the variables in another item in the workspace (data pipeline)
+> * Edit the variables in a Git repository
+> * Create a deployment pipeline and deploy the variable library
+> * Change the active value set in the target stage of the deployment pipeline
+> * Show that the value of the variable complies with the active value set in each stage
 
 ## Prerequisites
 
