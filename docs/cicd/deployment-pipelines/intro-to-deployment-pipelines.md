@@ -44,14 +44,14 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
 * [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
 * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another) *(preview)*
-* KQL queryset 
+* KQL Queryset 
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
 * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Org app *(preview)*
 * Paginated report
 * Power BI Dataflow
-* Real-time dashboard
+* Real-time Dashboard
 * Report (based on supported semantic models)
 * Semantic model (that originates from a .pbix file and isn't a PUSH dataset)
 * SQL database *(preview)*
