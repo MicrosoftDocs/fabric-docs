@@ -37,25 +37,25 @@ You can learn how to use the deployment pipelines tool by following these links.
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
 * Activator
-* Dashboards
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
+* Dashboard
+* [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
 * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
-* [Datamarts](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
+* [Datamart](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
 * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
 * [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
 * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another) *(preview)*
 * KQL queryset 
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
-* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* Org apps *(preview)*
-* Paginated reports
-* Power BI Dataflows
+* [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
+* Org app *(preview)*
+* Paginated report
+* Power BI Dataflow
 * Realtime dashboard
-* Reports (based on supported semantic models)
-* Semantic models (that originate from .pbix files and aren't PUSH datasets)
+* Report (based on supported semantic models)
+* Semantic model (that originates from a .pbix file and isn't a PUSH dataset)
 * SQL database *(preview)*
-* [Warehouses](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
+* [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
 
 ## Pipeline structure
 
