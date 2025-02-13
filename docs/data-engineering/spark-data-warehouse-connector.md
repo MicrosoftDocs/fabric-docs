@@ -79,6 +79,7 @@ import com.microsoft.spark.fabric.tds.implicits.write.FabricSparkTDSImplicits._
 import com.microsoft.spark.fabric.Constants
 import org.apache.spark.sql.SaveMode 
 ```
+---
 
 The following code is an example to read data from a table or view in a Spark DataFrame:
 
