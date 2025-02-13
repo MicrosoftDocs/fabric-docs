@@ -22,7 +22,6 @@ Fabric provides a seamless, user-friendly SaaS experience. It integrates separat
 ## Capabilities of Fabric
 
 Microsoft Fabric enhances productivity, data management, and AI integration. Here are some of its key capabilities:
-F
 * **Role-specific workloads:** Customized solutions for various roles within an organization, providing each user with the necessary tools.
 * **OneLake:** A unified data lake that simplifies data management and access.
 * **Copilot support:** AI-driven features that assist users by providing intelligent suggestions and automating tasks.
