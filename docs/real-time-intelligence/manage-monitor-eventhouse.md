@@ -37,9 +37,11 @@ B. **Explorer pane**: The explorer pane provides an intuitive interface for navi
 
 C. **Main view area**: The main view area displays the system overview details for the eventhouse.
 
+D. **Details area**: The details area provides additional information about the eventhouse.
+
 ## Eventhouse ribbon
 
-The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view and enable minimum consumption.
+The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, enable minimum consumption, add databases, add plugins, and collapse or expand the details area.
 
 ### Enable minimum consumption
 
@@ -74,13 +76,27 @@ The system overview page provides a snapshot of the current state of the eventho
         * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute [capacity reached its limits](../enterprise/throttling.md). Try again later or contact your capacity admin to [increase the capacity](../enterprise/scale-capacity.md).
         * **Suspended capacity**: The capacity used for this eventhouse was suspended. Contact your capacity admin to [reverse the suspension](../enterprise/pause-resume.md).
         * **Unknown**: For unknown reasons, the eventhouse is unavailable.
-    * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any more data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
-    * **Storage usage by database**: Shows the storage breakdown by database. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
+
+    * **Eventhouse storage**: Shows the storage capacity and cache misses of the eventhouse. The storage capacity is divided into categories:
+        * **Original size**: The uncompressed original size of the eventhouse.
+        * **Compressed size**: The compressed size of the eventhouse, giving you a snapshot of the data footprint.
+        * **Premium**: The total high-performance storage currently in use by this Eventhouse.
+        * **Cache misses**
+            * **Cache misses**: The current percentage of cache misses from the last hour.
+            * **Last 24 hours**: The percentage change from 1 hour to 24 hours ago​.
+            * **Last week**: The percentage change from 1 hour to one week ago​.
+
+    * **System resources**: Shows a snapshot of the storage breakdown by database. You can drill-down into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
+
     * **Activity in minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
         For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used are just 5 minutes.
 
         Likewise, even if 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
+
+    * **Ingestion**
+
+
 
     * **Most queried databases**: Highlights the most active databases in the eventhouse. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
     * **Eventhouse details**: Displays the eventhouse name, creation date, and last updated date. You can copy the following eventhouse URI values:
