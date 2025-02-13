@@ -6,7 +6,7 @@ ms.author: painbar
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 01/10/2025
+ms.date: 02/13/2025
 ---
 
 # Fabric region availability
