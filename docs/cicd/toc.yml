@@ -7,7 +7,7 @@ items:
   href: cicd-tutorial.md
 - name: CI/CD workflow options in Fabric
   href: manage-deployment.md
-- name: Continuous integration
+- name: Continuous integration with Git
   items:
   - name: "Introduction to Git integration"
     href: git-integration/intro-to-git-integration.md
@@ -31,7 +31,7 @@ items:
       href: git-integration/license-change.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
-- name: Continuous Deployment
+- name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines
     href: deployment-pipelines/intro-to-deployment-pipelines.md
