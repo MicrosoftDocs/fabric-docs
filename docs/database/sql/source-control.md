@@ -3,8 +3,8 @@ title: "Fabric SQL database source control integration"
 description: Learn how to work with your SQL database with Fabric's git integration source control.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: antho, sukkaur
-ms.date: 10/07/2024
+ms.reviewer: antho, sukkaur, drskwier
+ms.date: 02/13/2025
 ms.topic: how-to
 ms.custom:
 ms.search.form:
@@ -98,10 +98,10 @@ In this scenario, you'll be creating database objects as code in the SQL project
 
 Updating a SQL database in Fabric from source control combines a SQL project build and SqlPackage publish operation. The SQL project build validates the syntax of the SQL files and generates a `.dacpac` file. The SqlPackage publish operation determined the changes necessary to update the database to match the `.dacpac` file. Because of the streamlined nature of the Fabric interface, the following options are applied to the SqlPackage publish operation:
 
-- /p:ScriptDatabaseOptions = false
-- /p:DoNotAlterReplicatedObjects = false
-- /p:IncludeTransactionalScripts = true
-- /p:GenerateSmartDefaults = true
+- `/p:ScriptDatabaseOptions = false`
+- `/p:DoNotAlterReplicatedObjects = false`
+- `/p:IncludeTransactionalScripts = true`
+- `/p:GenerateSmartDefaults = true`
 
 The source controlled SQL project can also be cloned to your local machine for editing in VS Code, Visual Studio, or other SQL project tools. The SQL project should be built locally to validate changes before committing them to source control.
 
