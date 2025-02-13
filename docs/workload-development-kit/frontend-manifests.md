@@ -85,12 +85,12 @@ Configurations for creating new items in the product, specifying options for use
 ```json
 "slideMedia": [
   {
-    "mediaType": 0,
-    "source": "assets/images/SlideImage1.png"
-  },
-  {
     "mediaType": 1,
     "source": "https://youtube.com/embed/UNgpBOCvwa8?si=KwsR879MaVZd5CJi"
+  },
+  {
+    "mediaType": 0,
+    "source": "assets/images/SlideImage1.png"
   }
 ]
 ```
