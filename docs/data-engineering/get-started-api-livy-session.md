@@ -63,7 +63,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     app = PublicClientApplication(
         client_id,
-        authority="https://login.microsoftonline.com/43a26159-4e8e-442a-9f9c-cb7a13481d48"
+        authority="https://login.microsoftonline.com/"Entra_TenantID"
     )
 
     result = None

@@ -12,7 +12,8 @@ ms.date: 11/19/2024
 # Use the Livy API to submit and execute Spark jobs
 
 > [!NOTE]
-> The Livy API for Fabric Data Engineering is in preview.
+> The Livy API for Fabric Data Engineering is in public preview.
+> The Livy API doesn't support Azure Service Principal (SPN), although we plan to add SPN support.
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
@@ -45,7 +46,6 @@ There are many Microsoft Entra scope permissions required to execute Livy jobs. 
 * Code.AccessStorage.All
 * Item.ReadWrite.All
 * Lakehouse.Execute.All
-* Lakehouse.Read.All
 * Workspace.ReadWrite.All
 
 :::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-API-permissions.png" :::
