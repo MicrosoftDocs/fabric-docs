@@ -21,30 +21,45 @@ Variable libraries make it easy to manage configurations across different stages
 
 Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. Each stage has its own active value set which can be changed at any time.
 
-* Permissions for Item reference are checked during deployment.
-* If you update the Variable library or any of its variables, the item will appear as different in a granular compare.
+<!--- * Permissions for Item reference are checked during deployment.
+* --->
 
-:::image type="content" source="./media/variable-library-cicd/variable-library-compare.png" alt-text="Screenshot of granlar compare in deployment pipelines with the variable library showing as different in the two stages.":::
+If you update the Variable library variables or value sets, the item will appear as different in a granular compare.
+For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
+
+* added, deleted or edited variables
+* added or deleted value sets
+* names of variables
+* order of variables
+
+:::image type="content" source="./media/variable-library-cicd/variable-library-compare.png" alt-text="Screenshot of granular compare in deployment pipelines with the variable library showing as different in the two stages.":::
+
+Changes to the active value set doesn't register as in a *different* in the granular compare since the active value set is not stored in the deployment pipeline, and not in the Variable library itself.
 
 ## Variable libraries and Git integration
 
-Variable library items are stored as folders that can be maintained and synced between Fabric and your Git provider.
+Like other Fabric items, Variable libraries can be integrated with Git for source control. Variable library items are stored as folders that can be maintained and synced between Fabric and your Git provider.
+
+Item permissions are checked during Git Update and commit.
 
 The Variable library item schema is a JSON object that contains three parts:
 
-* [Variables](#variables) – The variables contained in the item, and their properties.
-  * name
-  * type
-  * defaultValue
-  * note (if any)
-* [Value-sets](#value-set): A set of values for the variables. A value set consists of:
-  * name
-  * value
-* [platform.json](../git-integration/source-code-format.md#platform-file): Automatically generated file.
+* [Variables](#variables)
+* [Value-sets](#value-set) folder
+* [platform.json](../git-integration/source-code-format.md#platform-file): Automatically generated file
+
+:::image type="content" source="./media/variable-library-cicd/git-files.png" alt-text="Screenshot of Git folder with variable library files in it.":::
 
 ### Variables
 
-The variables.json file contains the variables and their default values. For example:
+The variables.json file contains the variable names and their default values: 
+
+* name
+* type
+* defaultValue
+* note (optional)
+
+For example:
 
 ```json
 {
@@ -66,7 +81,12 @@ The variables.json file contains the variables and their default values. For exa
 
 ### Value set
 
-The variable library folder contains a subfolder called ValueSets. This subfolder contains a JSON file for each value set. The JSON file contains only the variable values for non default values in that value set. For example:
+The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. The JSON file contains only the variable values for *non default* values in that value set. 
+
+* name
+* value
+
+For example:
 
 ```json
 {
@@ -80,7 +100,7 @@ The variable library folder contains a subfolder called ValueSets. This subfolde
 }
 ```
 
-Item permissions are checked during Git Update and commit.
+Values for variables not in this file are taken from the default value set.
 
 ## Considerations and limitations
 

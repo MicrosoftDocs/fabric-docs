@@ -7,12 +7,12 @@ ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: tutorial
-ms.date: 02/02/2025
+ms.date: 02/13/2025
 ms.search.form: Variable library tutorial
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle..
 ---
 
-# Tutorial: Use Variable libraries to customize and share item configurations
+# Tutorial: Use Variable libraries to customize and share item configurations (preview)
 
 This tutorial shows you how to use dynamic content in data pipelines. create a Variable library item and add variables to it so that you can automate different values for different stages of your deployment pipeline. In this tutorial we copy data from one lakehouse to another, and use the Variable library to set the source and destination values for the copy activity.
 

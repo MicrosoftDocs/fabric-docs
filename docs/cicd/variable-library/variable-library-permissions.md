@@ -28,6 +28,8 @@ Contributor | Can view, add, edit, and delete the Variable library item.
 Member | Can view, add, edit, and delete the Variable library item.
 Admin | Can view, add, edit, and delete the Variable library item.
 
+To set an item as a variable value in a Variable library , you need to have at least read permission for that item. For example, if you want to set the value of a variable to be a lakehouse, you need to have read permission for the lakehouse.
+
 For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
 
 ## Variable permissions

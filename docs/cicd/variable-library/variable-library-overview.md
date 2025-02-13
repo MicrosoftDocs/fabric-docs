@@ -51,7 +51,7 @@ The default value is the value that is used by default unless you specifically d
 
 When you create an alternative value set, the new value set is created with pointers to the default value for each variable. You can then change the value for each variable in the new value set.
 
-### Value sets (optional)
+### Additional value sets (optional)
 
 Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage. The active (or effective) value set is the one that is used in the current stage.
 

@@ -19,11 +19,11 @@ A Variable library item in Microsoft Fabric contains a list of variables and the
 
 Each variable in the Variable library has the following properties:
 
-- Name
+- [Name](#naming-conventions)
 - Note (optional)
-- Type
+- [Type](#variable-types)
 - Default value set
-- Alternative value sets value – A pointer to the default value, unless it was changed to be a static/fixed value.
+- Alternative value sets (optional)
 
 ## Naming conventions
 
@@ -63,5 +63,11 @@ The variables in the Variable library can be any of the following basic types:
   - *HH:mm:ss* is the two-digit hour in 24-hour format, followed by the two-digit minute, and two-digit second
   - *Z* indicates that the time is in Coordinated Universal Time (UTC)
   For example, 2024-10-14T04:53:54Z.
-- Double: A number with decimal points.
+- Number: Any number. Use this type to represent GUIDs.
 - Integer: A whole number that can be positive, negative, or zero.
+
+## Alternative value sets
+
+The value of the variables in the alternative value set point to the default value, unless it was changed to be a static/fixed value.
+If you change the value of a variable in the alternative value set, the alternative value is saved in the value-sets JSON file.
+You can change the order of the value sets or value of a variable in the alternative value set in this JASON file in Git.
