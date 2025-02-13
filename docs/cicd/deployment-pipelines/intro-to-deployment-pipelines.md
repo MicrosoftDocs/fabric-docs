@@ -51,7 +51,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Org app *(preview)*
 * Paginated report
 * Power BI Dataflow
-* Realtime dashboard
+* Real-time dashboard
 * Report (based on supported semantic models)
 * Semantic model (that originates from a .pbix file and isn't a PUSH dataset)
 * SQL database *(preview)*
