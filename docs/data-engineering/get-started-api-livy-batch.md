@@ -12,7 +12,8 @@ ms.date: 11/19/2024
 # Use the Livy API to submit and execute Livy batch jobs
 
 > [!NOTE]
-> The Livy API for Fabric Data Engineering is in preview.
+> The Livy API for Fabric Data Engineering is in public preview.
+> The Livy API doesn't support Azure Service Principal (SPN), although we plan to add SPN support.
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
