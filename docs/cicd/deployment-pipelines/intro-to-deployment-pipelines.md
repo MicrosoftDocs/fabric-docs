@@ -7,7 +7,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
 ms.custom:
-ms.date: 01/30/2025
+ms.date: 02/13/2025
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -42,14 +42,16 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
 * [Datamarts](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
 * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
-* [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md) *(preview)*
+* [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
 * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another) *(preview)*
+* KQL queryset 
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Org apps *(preview)*
 * Paginated reports
 * Power BI Dataflows
+* Realtime dashboard
 * Reports (based on supported semantic models)
 * Semantic models (that originate from .pbix files and aren't PUSH datasets)
 * SQL database *(preview)*
