@@ -54,7 +54,7 @@ And more. Copilot responds with the answer or the code, which you can copy and p
 
 As you use Copilot, you can also invoke the magic commands inside of a notebook cell to obtain output directly in the notebook. For example, for natural language answers to responses, you can ask questions using the "%%chat" command, such as:
 
-```
+```python
 %%chat
 What are some machine learning models that may fit this dataset?
 ```
@@ -63,7 +63,7 @@ What are some machine learning models that may fit this dataset?
 
 or
 
-```
+```python
 %%code
 Can you generate code for a logistic regression that fits this data?
 ```
