@@ -61,7 +61,7 @@ Since OneLake uses a different permission model than ADLS, response headers rela
 
 ## Open Source Integration
 
-Since OneLake supports the same APIs as ADLS and Blob Storage, many open source libraries and packages compatible with ADLS and Blob Storage work seamlessly with OneLake (for example, [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/)). Other libraries may require small updates to accommodate OneLake endpoints or other compatibility issues. The following libraries are confirmed to be compatible with OneLake due to recent changes. This list isn't exhaustive:
+Since OneLake supports the same APIs as ADLS and Blob Storage, many open source libraries and packages compatible with ADLS and Blob Storage work seamlessly with OneLake (for example, [Azure Storage Explorer](https://azure.microsoft.com/products/storage/storage-explorer/)). Other libraries may require small updates to accommodate OneLake endpoints or other compatibility issues. The following libraries are confirmed to be compatible with OneLake due to recent changes. This list isn't exhaustive:
 
 - [Delta-RS](https://github.com/delta-io/delta-rs)
 - [Rust Object Store](https://crates.io/crates/object_store/0.7.0)
