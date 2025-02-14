@@ -88,11 +88,8 @@ Use the following steps to get started with Copilot for Dataflow Gen2:
  
 1. To leverage the power of Azure OpenAI when creating or transforming your data, ask Copilot to create sample data by typing this text:
 
-   ```copilot-prompt
-   Create a new query with sample data that lists all the Microsoft OS versions and the year they were released
-   ```
-   GitHub Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://aka.ms/copilot-general-use-faqs).
-   
+    ```Create a new query with sample data that lists all the Microsoft OS versions and the year they were released```
+
     Copilot adds a new query to the Queries pane list, containing the results of your input. At this point, you can either transform data in the user interface, continue to edit with Copilot text input, or delete the query with an input such as ```Delete my current query```.
 
     :::image type="content" source="media/copilot-fabric-data-factory/copilot-create-new-query.png" alt-text="Screenshot showing a new query being created." lightbox="media/copilot-fabric-data-factory/copilot-create-new-query.png":::
