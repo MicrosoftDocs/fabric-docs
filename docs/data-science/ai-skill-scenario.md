@@ -4,18 +4,18 @@ description: Learn how to configure an AI skill on the AdventureWorks dataset.
 author: fbsolo-ms1
 ms.author: amjafari
 ms.reviewer: franksolomon
-reviewer: avangrootel
+reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 01/09/2025
+ms.date: 02/13/2025
 ms.collection: ce-skilling-ai-copilot
 
 ---
 
 # AI skill example with the AdventureWorks dataset (preview)
 
-This article shows how to configure an AI skill on the AdventureWorks dataset.
+This article demonstrates how to set up an AI skill, using a lakehouse as a data source. To describe the process, we first create a lakehouse, and then add data to it. Then, we create an AI skill and configure the lakehouse as its data source. After you create the AI skill, you can follow the same steps to add your data sources if you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, or a KQL database. While the steps shown here focus on the lakehouse, the process is similar for other data sources—you just need to make adjustments based on your specific selection.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -25,18 +25,20 @@ This article shows how to configure an AI skill on the AdventureWorks dataset.
 - [AI skill tenant switch](./ai-skill-tenant-switch.md) is enabled.
 - [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
 - [Cross-geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
+- [Cross-geo storing for AI]()
+- A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
 
-## Create a lakehouse with AdventureWorksDW
+## Create a lakehouse with AdventureWorksLH
 
-First, create a lakehouse and populate it with the necessary data.
+First, create a lakehouse, and populate it with the necessary data.
 
-If you already have an instance of AdventureWorksDW in a warehouse or lakehouse, you can skip this step. If not, create a lakehouse from a notebook. Use the notebook to populate the lakehouse with the data.
+If you already have an instance of **AdventureWorksLH** in a lakehouse (or a warehouse), you can skip this step. If not, you can use these instructions to populate the lakehouse with the data from a Fabric notebook:
 
 1. Create a new notebook in the workspace where you want to create your AI skill.
 
-1. On the left side of the **Explorer** pane, select **+ Data sources**. This option adds an existing lakehouse or creates a new lakehouse.
+1. On the left side of the **Explorer** pane, select **+ Data sources**. This option allows you to add an existing lakehouse, or to create a new lakehouse. Here, we create a new lakehouse and then assign a name to it.
 
-1. In the top cell, add the following code snippet:
+1. In the top cell, add this code snippet:
 
     ```python
     import pandas as pd
@@ -56,138 +58,113 @@ If you already have an instance of AdventureWorksDW in a warehouse or lakehouse,
         spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
     ```
 
-1. Select **Run all**.
+1. Select **Run all**, as shown in this screenshot:
 
-   :::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the AdventureWorks upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
+   :::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot that shows a notebook with the AdventureWorks upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
 
-After a few minutes, the lakehouse is populated with the necessary data.
+After a few minutes, the lakehouse populates with the necessary data.
 
 ## Create an AI skill
 
-1. To create a new AI skill, first select **New item**, as shown in this screenshot:
+1. To create a new AI skill, first navigate to your workspace. Then, select the **+ New Item** button. In the **All items** tab, find **AI skill**, to locate the appropriate option. Once selected, you're prompted to provide a name for your AI skill. For more information about naming the AI skill, refer to the next screenshot. After you enter the name, proceed with the following steps to align the AI skill with your specific requirements, as shown in these screenshots:
 
-   :::image type="content" source="./media/ai-skill-scenario/create-ai-skill-scenario-new-item-step.png" alt-text="Screenshot showing the New item step to build an AI skill." lightbox="./media/ai-skill-scenario/create-ai-skill-scenario-new-item-step.png":::
+   :::image type="content" source="./media/ai-skill-scenario/create-ai-skill.png" alt-text="Screenshot that shows where to create AI skills." lightbox="./media/ai-skill-scenario/create-ai-skill.png":::
 
-1. At the next screen, type **AI skill** in the upper right text box, and select the **AI Skill (preview)** at the left, as shown in this screenshot:
-
-   :::image type="content" source="./media/ai-skill-scenario/select-the-ai-skill-item-type.png" alt-text="Screenshot showing selection of the AI skill item type." lightbox="./media/ai-skill-scenario/select-the-ai-skill-item-type.png":::
-
-1. Enter a name to create an AI skill, and select **Create**.
+   :::image type="content" source="./media/ai-skill-scenario/name-ai-skill.png" alt-text="Screenshot that shows where to provide the AI skill name." lightbox="./media/ai-skill-scenario/name-ai-skill.png":::
 
 ## Select the data
 
-Select the lakehouse you created and select **Connect**. You must then select the tables for which you want the AI skill to have available access.
+Select the lakehouse you created in the previous step, and then select **Connect**. Once you add the lakehouse as a data source, the **Explorer** pane on the left side of the AI Skill page displays the lakehouse name. Select the lakehouse to view all available tables. Use the checkboxes to select the tables you want to make available to the AI. For this scenario, select the following tables as shown in the next screenshot:
 
-This exercise uses these tables:
+- `dimcustomer`
+- `dimdate`
+- `dimgeography`
+- `dimproduct`
+- `dimproductcategory`
+- `dimpromotion`
+- `dimreseller`
+- `dimsalesterritory`
+- `factinternetsales`
+- `cactresellersales`
 
-- `DimCustomer`
-- `DimDate`
-- `DimGeography`
-- `DimProduct`
-- `DimProductCategory`
-- `DimPromotion`
-- `DimReseller`
-- `DimSalesTerritory`
-- `FactInternetSales`
-- `FactResellerSales`
+:::image type="content" source="./media/ai-skill-scenario/get-started.png" alt-text="Screenshot that shows the available tables in the Explorer pane." lightbox="./media/ai-skill-scenario/get-started.png":::
 
 ## Provide instructions
 
-When you first ask the AI skill questions with the listed tables selected, the AI skill answers them fairly well. For instance, for the question **What is the most sold product?**, the AI skill returns:
+To add AI instructions, select the **AI instructions** button, to open the AI instructions pane. You can add these instructions.
 
-- `Long-Sleeve Logo Jersey, L`
+The `AdventureWorksLH` data source contains comprehensive information across three tables:
 
-However, the SQL query needs some improvement. First, it only looks at the `FactResellerSales` table. It ignores the `FactInternetSales` table. Second, it orders the products by order quantity, when total sales revenue associated with the product is the most important consideration, as shown in this screenshot:
+- `dimcustomer`, for detailed customer demographics and contact information
+- `dimdate`, for date-related data like calendar and fiscal information
+- `dimgeography`, for geographical details including city names and country region codes
 
-:::image type="content" source="./media/ai-skill-scenario/most-sold-ai-skill-first-question.png" alt-text="Screenshot showing the first example AI skill highest sales product question." lightbox="./media/ai-skill-scenario/most-sold-ai-skill-first-question.png":::
+Use this data source for queries and analyses that involve customer details, time-based events, and geographical locations as shown in this screenshot:
 
-To improve the query generation, provide some instructions, as shown in these examples:
-
-- Whenever I ask about "the most sold" products or items, the metric of interest is total sales revenue and not order quantity.
-- The primary table to use is `FactInternetSales`. Only use `FactResellerSales` if explicitly asked about resales or when asked about total sales.
-
-Asking the question again returns a different answer, `Mountain-200 Black, 46`, as shown in this screenshot:
-
-:::image type="content" source="./media/ai-skill-scenario/most-sold-ai-skill-second-question.png" alt-text="Screenshot showing the second example AI skill highest sales product question." lightbox="./media/ai-skill-scenario/most-sold-ai-skill-second-question.png":::
-
-The corresponding SQL draws from the `FactInternetSales` table, and it sorts by the sum of the sales amount. The AI followed the instructions.
-
-As you continue to experiment with queries, you should add more instructions.
-
-This scenario uses the following set of instructions:
-
-- Whenever I ask about "the most sold" products or items, the metric of interest is sales revenue and not order quantity.
-- The primary table to use is `FactInternetSales`. Only use `FactResellerSales` if explicitly asked about resales or when asked about total sales.
-- When asked about the impact of promotions, do so on the increase in sales revenue, not just the number of units sold.
-- For customer insights, focus on the total sales amount per customer rather than the number of orders.
-- Use `DimDate` to extract specific time periods (for example, year, month) when performing time-based analysis.
-- When analyzing geographical data, prioritize total sales revenue and average sales per order for each region.
-- For product category insights, always use `DimProductCategory` to group products accordingly.
-- When comparing sales between regions, use `DimSalesTerritory` for accurate territory details.
-- Use `DimCurrency` to normalize sales data if analyzing sales in different currencies.
-- For detailed product information, always join `FactInternetSales` with `DimProduct`.
-- Use `DimPromotion` to analyze the effectiveness of different promotional campaigns.
-- For reseller performance, focus on total sales amount and not just the number of products sold.
-- When analyzing trends over time, use `FactInternetSales` and join with `DimDate` to group data by month, quarter, or year.
-- Always check for data consistency by joining `FactInternetSales` with the corresponding dimension tables.
-- Use SUM for aggregating sales data to ensure you're capturing total values accurately.
-- Prioritize sales revenue metrics over order quantity, to gauge the financial impact accurately.
-- Always group by relevant dimensions (for example, product, customer, date) to get detailed insights.
-- When asked about customer demographics, join `DimCustomer` with relevant fact tables.
-- For sales by promotion, join `FactInternetSales` with `DimPromotion` and group by promotion name.
-- Normalize sales figures using `DimCurrency` for comparisons involving different currencies.
-- Use `ORDER BY` clauses to sort results by the metric of interest (for example, sales revenue, total orders).
-- `ListPrice` in `DimProduct` is the suggested selling price, while `UnitPrice` in `FactInternetSales` and `FactResellerSales` is the actual price at which each unit was sold. For most use cases on revenue, the unit price should be used.
-- Rank top resellers by sales amount.
-
-If you copy this text into the notes for the model text box, the AI refers to these instructions when it generates its SQL queries.
+:::image type="content" source="./media/ai-skill-scenario/add-ai-instructions.png" alt-text="Screenshot showing the AI instructions text box." lightbox="./media/ai-skill-scenario/add-ai-instructions.png":::
 
 ## Provide examples
 
-In addition to instructions, examples serve as another effective way to guide the AI. If you have questions that your AI skill often receives, or questions that require complex joins, consider adding examples for them.
+To add example queries, select the **Example queries** button, to open the example queries pane. This pane provides options to add or edit example queries for all supported data sources. For each data source, you can select **Add or edit example queries** to input the relevant examples, as shown in this screenshot:
 
-For example, the question **How many active customers did we have June 1st, 2013** generates some valid SQL, as shown in this screenshot:
+:::image type="content" source="./media/ai-skill-scenario/add-example-queries-LH.png" alt-text="Screenshot showing the Add or edit example queries option." lightbox="./media/ai-skill-scenario/add-example-queries-LH.png":::
 
-:::image type="content" source="./media/ai-skill-scenario/active-customer-ai-skill-first-question.png" alt-text="Screenshot showing the first example AI skill active customer count question." lightbox="./media/ai-skill-scenario/active-customer-ai-skill-first-question.png":::
+In this example, you should add example queries for the lakehouse data source that you created. We start with this question:
 
-However, it isn't a good answer.
+`Question: Calculate the average percentage increase in sales amount for repeat purchases for every zipcode. Repeat purchase is a purchase subsequent to the first purchase (the average should always be computed relative to the first purchase)`
 
-Part of the problem is that "active customer" doesn't have a formal definition. More instructions in the notes to the model text box might help, but users might frequently ask this question. You need to make sure that the AI handles the question correctly. The relevant query is moderately complex, so provide an example by selecting the edit button.
+For that question, we use the SQL Server query shown in this SQL Server code snippet:
 
-:::image type="content" source="./media/ai-skill-scenario/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/ai-skill-scenario/ai-skill-adding-examples.png":::
+    ```sql
+    SELECT AVG((s.SalesAmount - first_purchase.SalesAmount) / first_purchase.SalesAmount * 100) AS AvgPercentageIncrease
+    FROM factinternetsales s
+    INNER JOIN dimcustomer c ON s.CustomerKey = c.CustomerKey
+    INNER JOIN dimgeography g ON c.GeographyKey = g.GeographyKey
+    INNER JOIN (
+    	SELECT *
+    	FROM (
+    		SELECT
+    			CustomerKey,
+    			SalesAmount,
+                OrderDate,
+    			ROW_NUMBER() OVER (PARTITION BY CustomerKey ORDER BY OrderDate) AS RowNumber
+    		FROM factinternetsales
+    	) AS t
+    	WHERE RowNumber = 1
+    ) first_purchase ON s.CustomerKey = first_purchase.CustomerKey
+    WHERE s.OrderDate > first_purchase.OrderDate
+    GROUP BY g.PostalCode;
+    ```
 
-Then you can upload an example.
+We have a second question:
 
-:::image type="content" source="./media/ai-skill-scenario/examples-ai-skill-sql-query.png" alt-text="Screenshot showing an example AI skill SQL query." lightbox="./media/ai-skill-scenario/examples-ai-skill-sql-query.png":::
+For that second question, we use the SQL Server query shown in this SQL Server code snippet:
 
-A repeat of the question returns an improved answer.
+`Question: Show the monthly total and year-to-date total sales. Order by year and month.`
+    
+    ```sql    
+    SELECT
+        Year,
+    	Month,
+    	MonthlySales,
+    	SUM(MonthlySales) OVER (PARTITION BY Year ORDER BY Year, Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS CumulativeTotal
+    FROM (
+    	SELECT
+    	   YEAR(OrderDate) AS Year,
+    	   MONTH(OrderDate) AS Month,
+    	   SUM(SalesAmount) AS MonthlySales
+    	FROM factinternetsales
+    	GROUP BY YEAR(OrderDate), MONTH(OrderDate)
+    ) AS t
+    ```
 
-:::image type="content" source="./media/ai-skill-scenario/active-customer-ai-skill-second-question.png" alt-text="Screenshot showing the second example AI skill active customer count question." lightbox="./media/ai-skill-scenario/active-customer-ai-skill-second-question.png":::
+This screenshot shows those questions and their associated SQL Server queries:
 
-You can manually add examples, but you can also upload them from a JSON file. Providing examples from a file is helpful when you have many SQL queries that you want to upload all at once, instead of manually uploading the queries one by one. For this exercise, use these examples:
-
-```json
-{
-    "how many active customers did we have June 1st, 2010?": "SELECT COUNT(DISTINCT fis.CustomerKey) AS ActiveCustomerCount FROM factinternetsales fis JOIN dimdate dd ON fis.OrderDateKey = dd.DateKey WHERE dd.FullDateAlternateKey BETWEEN DATEADD(MONTH, -6, '2010-06-01') AND '2010-06-01' GROUP BY fis.CustomerKey HAVING COUNT(fis.SalesOrderNumber) >= 2;",
-    "which promotion was the most impactful?": "SELECT dp.EnglishPromotionName, SUM(fis.SalesAmount) AS PromotionRevenue FROM factinternetsales fis JOIN dimpromotion dp ON fis.PromotionKey = dp.PromotionKey GROUP BY dp.EnglishPromotionName ORDER BY PromotionRevenue DESC;",
-    "who are the top 5 customers by total sales amount?": "SELECT TOP 5 CONCAT(dc.FirstName, ' ', dc.LastName) AS CustomerName, SUM(fis.SalesAmount) AS TotalSpent FROM factinternetsales fis JOIN dimcustomer dc ON fis.CustomerKey = dc.CustomerKey GROUP BY CONCAT(dc.FirstName, ' ', dc.LastName) ORDER BY TotalSpent DESC;",
-    "what is the total sales amount by year?": "SELECT dd.CalendarYear, SUM(fis.SalesAmount) AS TotalSales FROM factinternetsales fis JOIN dimdate dd ON fis.OrderDateKey = dd.DateKey GROUP BY dd.CalendarYear ORDER BY dd.CalendarYear;",
-    "which product category generated the highest revenue?": "SELECT dpc.EnglishProductCategoryName, SUM(fis.SalesAmount) AS CategoryRevenue FROM factinternetsales fis JOIN dimproduct dp ON fis.ProductKey = dp.ProductKey JOIN dimproductcategory dpc ON dp.ProductSubcategoryKey = dpc.ProductCategoryKey GROUP BY dpc.EnglishProductCategoryName ORDER BY CategoryRevenue DESC;",
-    "what is the average sales amount per order by territory?": "SELECT dst.SalesTerritoryRegion, AVG(fis.SalesAmount) AS AvgOrderValue FROM factinternetsales fis JOIN dimsalesterritory dst ON fis.SalesTerritoryKey = dst.SalesTerritoryKey GROUP BY dst.SalesTerritoryRegion ORDER BY AvgOrderValue DESC;",
-    "what is the total sales amount by currency?": "SELECT dc.CurrencyName, SUM(fis.SalesAmount) AS TotalSales FROM factinternetsales fis JOIN dimcurrency dc ON fis.CurrencyKey = dc.CurrencyKey GROUP BY dc.CurrencyName ORDER BY TotalSales DESC;",
-    "which product had the highest sales revenue last year?": "SELECT dp.EnglishProductName, SUM(fis.SalesAmount) AS TotalRevenue FROM factinternetsales fis JOIN dimproduct dp ON fis.ProductKey = dp.ProductKey JOIN dimdate dd ON fis.ShipDateKey = dd.DateKey WHERE dd.CalendarYear = YEAR(GETDATE()) - 1 GROUP BY dp.EnglishProductName ORDER BY TotalRevenue DESC;",
-    "what are the monthly sales trends for the last year?": "SELECT dd.CalendarYear, dd.MonthNumberOfYear, SUM(fis.SalesAmount) AS TotalSales FROM factinternetsales fis JOIN dimdate dd ON fis.ShipDateKey = dd.DateKey WHERE dd.CalendarYear = YEAR(GETDATE()) - 1 GROUP BY dd.CalendarYear, dd.MonthNumberOfYear ORDER BY dd.CalendarYear, dd.MonthNumberOfYear;",
-    "how did the latest promotion affect sales revenue?": "SELECT dp.EnglishPromotionName, SUM(fis.SalesAmount) AS PromotionRevenue FROM factinternetsales fis JOIN dimpromotion dp ON fis.PromotionKey = dp.PromotionKey WHERE dp.StartDate >= DATEADD(MONTH, 0, GETDATE()) GROUP BY dp.EnglishPromotionName ORDER BY PromotionRevenue DESC;",
-    "which territory had the highest sales revenue?": "SELECT dst.SalesTerritoryRegion, SUM(fis.SalesAmount) AS TotalSales FROM factinternetsales fis JOIN dimsalesterritory dst ON fis.SalesTerritoryKey = dst.SalesTerritoryKey GROUP BY dst.SalesTerritoryRegion ORDER BY TotalSales DESC;",
-    "who are the top 5 resellers by total sales amount?": "SELECT TOP 5 dr.ResellerName, SUM(frs.SalesAmount) AS TotalSales FROM factresellersales frs JOIN dimreseller dr ON frs.ResellerKey = dr.ResellerKey GROUP BY dr.ResellerName ORDER BY TotalSales DESC;",
-    "what is the total sales amount by customer region?": "SELECT dg.EnglishCountryRegionName, SUM(fis.SalesAmount) AS TotalSales FROM factinternetsales fis JOIN dimcustomer dc ON fis.CustomerKey = dc.CustomerKey JOIN dimgeography dg ON dc.GeographyKey = dg.GeographyKey GROUP BY dg.EnglishCountryRegionName ORDER BY TotalSales DESC;",
-    "which product category had the highest average sales price?": "SELECT dpc.EnglishProductCategoryName, AVG(fis.UnitPrice) AS AvgPrice FROM factinternetsales fis JOIN dimproduct dp ON fis.ProductKey = dp.ProductKey JOIN dimproductcategory dpc ON dp.ProductSubcategoryKey = dpc.ProductCategoryKey GROUP BY dpc.EnglishProductCategoryName ORDER BY AvgPrice DESC;"
-}
-```
+:::image type="content" source="./media/ai-skill-scenario/add-example-queries-SQL.png" alt-text="Screenshot showing questions and their associated SQL Server queries." lightbox="./media/ai-skill-scenario/add-example-queries-SQL.png":::
 
 ## Test and revise the AI skill
 
-Both instructions and examples were added to the AI skill. As testing proceeds, more examples and instructions can improve the AI skill even further. Work with your colleagues to see if you provided examples and instructions that cover the kinds of questions they want to ask.
+Both AI instructions and example queries are added to the AI skill. As you continue testing, you can improve the AI skill performance if you add more examples and refine the instructions. Collaborate with your colleagues to gather feedback, and based on their input, ensure the provided example queries and instructions align with the types of questions they want to ask.
 
 ## Use the AI skill programmatically
 
@@ -199,44 +176,104 @@ Before you publish the AI skill, it doesn't have a published URL value, as shown
 
 :::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png" alt-text="Screenshot showing that an AI skill doesn't have a published URL value before publication." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png":::
 
-After you validate the performance of the AI skill, you might decide to publish it. In this case, select **Publish**, as shown in this screenshot:
+After you validate the performance of the AI skill, you might want to publish it so that you can then share it with your colleagues who want to do Q&A over data. In this case, select **Publish**, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/ai-select-publish.png" alt-text="Screenshot showing selection of the Publish option." lightbox="./media/ai-skill-scenario/ai-select-publish.png":::
 
 The published URL for the AI skill appears, as shown in this screenshot:
 
-:::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png":::
+:::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL of the AI skill." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png":::
 
-You can then copy the published URL and use it in the Fabric notebook. This way, you can query the AI skill by making calls to the AI skill API in a Fabric notebook. Paste the copied URL in this code snippet. Then replace the question with any query relevant to your AI skill. This example uses `\<generic published URL value\>` as the URL.
+You can then copy the published URL, and use it in the Fabric notebook. This way, you can make calls to the AI skill API in a Fabric notebook, to query the AI skill. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your AI skill. This example uses `\<generic published URL value\>` as the URL.
+
+```python
+%pip install "openai==1.14.1"
+```
 
 ```python
 import requests
 import json
 import pprint
+import typing as t
+import time
+import uuid
+
+from openai import OpenAI
+from openai._exceptions import APIStatusError
+from openai._models import FinalRequestOptions
+from openai._types import Omit
+from openai._utils import is_given
 from synapse.ml.mlflow import get_mlflow_env_config
-
-
-# the URL could change if the workspace is assigned to a different capacity
-url = "https://<generic published URL value>"
+from sempy.fabric._token_provider import SynapseTokenProvider
+ 
+base_url = "https://<generic published base URL value>"
+question = "What datasources do you have access to?"
 
 configs = get_mlflow_env_config()
 
-headers = {
-    "Authorization": f"Bearer {configs.driver_aad_token}",
-    "Content-Type": "application/json; charset=utf-8"
-}
+# Create OpenAI Client
+class FabricOpenAI(OpenAI):
+    def __init__(
+        self,
+        api_version: str ="2024-05-01-preview",
+        **kwargs: t.Any,
+    ) -> None:
+        self.api_version = api_version
+        default_query = kwargs.pop("default_query", {})
+        default_query["api-version"] = self.api_version
+        super().__init__(
+            api_key="",
+            base_url=base_url,
+            default_query=default_query,
+            **kwargs,
+        )
+    
+    def _prepare_options(self, options: FinalRequestOptions) -> None:
+        headers: dict[str, str | Omit] = (
+            {**options.headers} if is_given(options.headers) else {}
+        )
+        options.headers = headers
+        headers["Authorization"] = f"Bearer {configs.driver_aad_token}"
+        if "Accept" not in headers:
+            headers["Accept"] = "application/json"
+        if "ActivityId" not in headers:
+            correlation_id = str(uuid.uuid4())
+            headers["ActivityId"] = correlation_id
 
-question = "{userQuestion: \"what is an example product?\"}"
+        return super()._prepare_options(options)
 
-response = requests.post(url, headers=headers, data = question)
+# Pretty printing helper
+def pretty_print(messages):
+    print("---Conversation---")
+    for m in messages:
+        print(f"{m.role}: {m.content[0].text.value}")
+    print()
 
-print("RESPONSE: ", response)
+fabric_client = FabricOpenAI()
+# Create assistant
+assistant = fabric_client.beta.assistants.create(model="not used")
+# Create thread
+thread = fabric_client.beta.threads.create()
+# Create message on thread
+message = fabric_client.beta.threads.messages.create(thread_id=thread.id, role="user", content=question)
+# Create run
+run = fabric_client.beta.threads.runs.create(thread_id=thread.id, assistant_id=assistant.id)
 
-print("")
+# Wait for run to complete
+while run.status == "queued" or run.status == "in_progress":
+    run = fabric_client.beta.threads.runs.retrieve(
+        thread_id=thread.id,
+        run_id=run.id,
+    )
+    print(run.status)
+    time.sleep(2)
 
-response = json.loads(response.content)
+# Print messages
+response = fabric_client.beta.threads.messages.list(thread_id=thread.id, order="asc")
+pretty_print(response)
 
-print(response["result"])
+# Delete thread
+fabric_client.beta.threads.delete(thread_id=thread.id)
 ```
 
 ## Related content

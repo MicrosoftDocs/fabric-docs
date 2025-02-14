@@ -9,7 +9,7 @@ reviewer: avangrootel
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
-ms.date: 09/20/2024
+ms.date: 02/14/2025
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: AI skill Concepts
 
@@ -19,17 +19,17 @@ ms.search.form: AI skill Concepts
 
 # AI skill concepts (preview)
 
-With the Microsoft Fabric AI skill, you can make data more accessible to your colleagues. You can configure a generative AI system to generate queries that answer questions about your data. After you configure the AI skill, you can share it with your colleagues, who can then ask their questions in plain English. Based on their questions, the AI generates queries over your data that answer those questions.
+With the Microsoft Fabric AI skill, you can make data more accessible for your colleagues. You can configure a generative AI system to build queries that answer questions about your data. After you configure the AI skill, you can share it with your colleagues, who can then ask their questions in plain English. Based on their questions, the AI generates queries over your data that answer those questions.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## How the AI skill works
 
-The AI skill relies on generative AI, specifically, large language models (LLMs). These LLMs can generate queries, for example, T-SQL queries, based on a specific schema and a question. The system sends a question in the AI skill, information about the selected data (including the table and column names, and the data types found in the tables) to the LLM. Next, it requests generation of a T-SQL query that answers the question. Parse the generated query to first ensure that it doesn't change the data in any way. Then execute that query. Finally, show the query execution results. An AI skill is intended to access specific database resources, and then generate and execute relevant T-SQL queries.
+The AI skill relies on generative AI, specifically, large language models (LLMs). These LLMs can generate queries-for example, T-SQL queries-based on a specific schema and a question. The system sends a question in the AI skill, information about the selected data (including the table and column names, and the data types found in the tables) to the LLM. Next, it requests generation of a T-SQL query that answers the question. Parse the generated query to first ensure that it doesn't change the data in any way. Then execute that query. Finally, show the query execution results. An AI skill is intended to access specific database resources, and then generate and execute relevant T-SQL queries.
 
 ## AI skill configuration
 
-Think of the AI skill as you might think about Power BI reports. You first build the report, and then you share the report with your colleagues who can consume it to get their data insights. The AI skill works in a similar way. You need to first create and configure the AI skill. Then, you can share it with your colleagues.
+Think of the AI skill the way you might think about Power BI reports. You first build the report, and then you share the report with your colleagues who can consume it to get their data insights. The AI skill works in a similar way. You need to first create and configure the AI skill. Then, you can share it with your colleagues.
 
 You should expect to handle some necessary configuration steps before the AI skill works properly. An AI skill can often provide out-of-the-box answers to reasonable questions, but it could provide incorrect answers for your specific situation. Incorrect answers typically occur because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers.
 
@@ -43,7 +43,7 @@ The technology behind the AI skill and the Fabric copilots is similar. They both
 ## Evaluation of the AI skill
 
 - The product team tested the AI skill on different public and private T-SQL task benchmarks to ascertain the quality of SQL queries.
-- The product team also invested in extra harm mitigations. These include technological approaches to focus copilot output on the context of the chosen data sources.
+- The product team also invested in extra harm mitigations. This effort includes technological approaches to focus copilot output on the context of the chosen data sources.
 
 ## Limitations
 
