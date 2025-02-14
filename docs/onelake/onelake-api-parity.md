@@ -68,16 +68,28 @@ Since OneLake supports the same APIs as ADLS and Blob Storage, many open source 
 
 ## Examples
 
-### List items within a workspace
+### List items within a workspace (ADLS)
 
 ```http
 GET https://onelake.dfs.fabric.microsoft.com/myWorkspace?resource=filesystem&recursive=false
 ```
 
-### Create a folder within a lakehouse
+### List items within a workspace (Blob)
+
+```http
+GET  https://onelake.blob.fabric.microsoft.com/myWorkspace?restype=container&comp=list&delimiter=%2F
+```
+
+### Create a folder within a lakehouse (ADLS)
 
 ```http
 PUT https://onelake.dfs.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/Files/newFolder/?resource=directory
+```
+
+### Get blob properties (Blob)
+
+```http
+HEAD  https://onelake.blob.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/Files/file.txt
 ```
 
 ## Related content
