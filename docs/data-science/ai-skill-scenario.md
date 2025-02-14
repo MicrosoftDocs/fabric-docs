@@ -115,26 +115,26 @@ In this example, you should add example queries for the lakehouse data source th
 
 For that question, we use the SQL Server query shown in this SQL Server code snippet:
 
-    ```sql
-    SELECT AVG((s.SalesAmount - first_purchase.SalesAmount) / first_purchase.SalesAmount * 100) AS AvgPercentageIncrease
-    FROM factinternetsales s
-    INNER JOIN dimcustomer c ON s.CustomerKey = c.CustomerKey
-    INNER JOIN dimgeography g ON c.GeographyKey = g.GeographyKey
-    INNER JOIN (
-    	SELECT *
-    	FROM (
-    		SELECT
-    			CustomerKey,
-    			SalesAmount,
-                OrderDate,
-    			ROW_NUMBER() OVER (PARTITION BY CustomerKey ORDER BY OrderDate) AS RowNumber
-    		FROM factinternetsales
-    	) AS t
-    	WHERE RowNumber = 1
-    ) first_purchase ON s.CustomerKey = first_purchase.CustomerKey
-    WHERE s.OrderDate > first_purchase.OrderDate
-    GROUP BY g.PostalCode;
-    ```
+```sql
+SELECT AVG((s.SalesAmount - first_purchase.SalesAmount) / first_purchase.SalesAmount * 100) AS AvgPercentageIncrease
+FROM factinternetsales s
+INNER JOIN dimcustomer c ON s.CustomerKey = c.CustomerKey
+INNER JOIN dimgeography g ON c.GeographyKey = g.GeographyKey
+INNER JOIN (
+    SELECT *
+    FROM (
+        SELECT
+            CustomerKey,
+            SalesAmount,
+            OrderDate,
+            ROW_NUMBER() OVER (PARTITION BY CustomerKey ORDER BY OrderDate) AS RowNumber
+        FROM factinternetsales
+    ) AS t
+    WHERE RowNumber = 1
+) first_purchase ON s.CustomerKey = first_purchase.CustomerKey
+WHERE s.OrderDate > first_purchase.OrderDate
+GROUP BY g.PostalCode;
+```
 
 We have a second question:
 
@@ -142,21 +142,21 @@ For that second question, we use the SQL Server query shown in this SQL Server c
 
 `Question: Show the monthly total and year-to-date total sales. Order by year and month.`
     
-    ```sql    
+```sql    
+SELECT
+    Year,
+    Month,
+    MonthlySales,
+    SUM(MonthlySales) OVER (PARTITION BY Year ORDER BY Year, Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS CumulativeTotal
+FROM (
     SELECT
-        Year,
-    	Month,
-    	MonthlySales,
-    	SUM(MonthlySales) OVER (PARTITION BY Year ORDER BY Year, Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS CumulativeTotal
-    FROM (
-    	SELECT
-    	   YEAR(OrderDate) AS Year,
-    	   MONTH(OrderDate) AS Month,
-    	   SUM(SalesAmount) AS MonthlySales
-    	FROM factinternetsales
-    	GROUP BY YEAR(OrderDate), MONTH(OrderDate)
-    ) AS t
-    ```
+        YEAR(OrderDate) AS Year,
+        MONTH(OrderDate) AS Month,
+        SUM(SalesAmount) AS MonthlySales
+    FROM factinternetsales
+    GROUP BY YEAR(OrderDate), MONTH(OrderDate)
+) AS t
+```
 
 This screenshot shows those questions and their associated SQL Server queries:
 
