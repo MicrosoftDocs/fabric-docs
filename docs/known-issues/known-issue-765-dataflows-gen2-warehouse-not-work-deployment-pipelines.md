@@ -4,7 +4,7 @@ description: A known issue is posted where Dataflows Gen2 staging warehouse does
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/02/2024
+ms.date: 02/14/2025
 ms.custom: known-issue-765
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-765
 
 You can use Git integration for your Dataflow Gen2 dataflows. When you begin to commit the workspace to the Git repo, you see the dataflow's staging warehouse, named **DataflowsStagingWarehouse**, available to commit. While you can select the staging warehouse to be exported, the integration doesn't work properly. If using a deployment pipeline, you can't deploy **DataflowsStagingWarehouse** to the next stage.
 
-**Status:** Open
+**Status:** Fixed: February 14, 2025
 
 **Product Experience:** Data Factory
 
