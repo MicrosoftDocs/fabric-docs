@@ -17,7 +17,7 @@ In this article, learn how [Microsoft Copilot for SQL databases](../database/sql
 
 With Copilot for SQL databases in Microsoft Fabric and other generative AI features, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in your database and other workloads.
 
-For limitations, see [Limitations of Copilot for SQL database](../database/sql/copilot.md#limitations-of-copilot-for-sql-database).
+For limitations, see [Limitations of Copilot for SQL database](../database/sql/copilot.md#limitations).
 
 ## Data use of Copilot for SQL databases
 
