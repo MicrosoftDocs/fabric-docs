@@ -72,6 +72,8 @@ items:
     href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Data types
     href: data-types.md
+  - name: Manage objects in a warehouse
+    href: manage-objects.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md
   - name: Source control with Warehouse
