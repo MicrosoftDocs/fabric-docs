@@ -16,7 +16,7 @@ ms.collection:
 
 Microsoft Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline database tasks. It integrates seamlessly with your Fabric database, providing intelligent insights to help you along each step of your T-SQL explorations.
 
-## Key features for Copilot
+## Key features for Microsoft Copilot
 
 Copilot for SQL database generates T-SQL code by utilizing table and view names, column names, primary key, and foreign key metadata. It doesn't use data in tables to generate T-SQL suggestions.
 
@@ -32,11 +32,11 @@ Copilot for SQL database generates T-SQL code by utilizing table and view names,
 
 - **Document-based Q&A**: Ask Copilot questions about general SQL database capabilities, and it responds in natural language. Copilot also helps find documentation related to your request.
 
-## Enable Copilot
+## Enable Microsoft Copilot
 
 [!INCLUDE [copilot-include](../../includes/copilot-include.md)]
 
-## Use Copilot in SQL database in Microsoft Fabric
+## Use Microsoft Copilot in SQL database in Microsoft Fabric
 
 Here are some tips for effectively maximizing productivity with Microsoft Copilot:
 
@@ -63,7 +63,7 @@ Here are some tips for effectively maximizing productivity with Microsoft Copilo
   > [!NOTE]  
   > AI powers Copilot, so surprises and mistakes are possible.
 
-## Responsible use of Copilot
+## Responsible use of Microosft Copilot
 
 Microsoft is committed to ensuring that our AI principles and Responsible AI Standards guide our AI systems. These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to address emerging issues proactively.
 
@@ -81,7 +81,7 @@ Here are the current limitations of Copilot for SQL database:
 - People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
 - Copilot for SQL database in Fabric isn't currently available if Private Link is enabled and Public Access is turned off in the tenant setting.
 
-## Frequently Asked Questions (FAQ)
+## Frequently Asked Questions (FAQ) about Microsoft Copilot for SQL database
 
 For more information about using Microsoft Copilot for SQL database in Fabric, visit ["Frequently asked questions for Copilot in SQL database in Microsoft Fabric](copilot-faq.yml).
 
