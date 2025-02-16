@@ -181,6 +181,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: CopyJob item deletion fails with error
+      href: ../known-issues/known-issue-1024-copy-job-item-deletion-fails-error.md
+    - name: Preview destination data on a pipeline's copy activity fails
+      href: ../known-issues/known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md
     - name: Dataflow connector doesn't show dataflows with view only permissions
       href: ../known-issues/known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md
     - name: Unsupported error for legacy timestamp in Fabric Runtime 1.3
