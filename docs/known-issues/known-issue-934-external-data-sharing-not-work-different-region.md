@@ -4,7 +4,7 @@ description: A known issue is posted where external data sharing doesn't work in
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/17/2024
+ms.date: 02/14/2025
 ms.custom: known-issue-934
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-934
 
 When you accept an external data share invitation, you can select the lakehouse where the external share to the shared data is created. If you select a lakehouse within a capacity that resides in a different region than your home tenant region, the operation fails.
 
-**Status:** Open
+**Status:** Fixed: February 14, 2025
 
 **Product Experience:** Power BI
 
