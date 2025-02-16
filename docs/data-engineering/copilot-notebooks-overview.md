@@ -7,7 +7,7 @@ ms.reviewer: franksolomon
 ms.topic: overview
 ms.custom:
 - copilot-learning-hub
-ms.date: 01/09/2025
+ms.date: 02/13/2025
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -54,7 +54,7 @@ And more. Copilot responds with the answer or the code, which you can copy and p
 
 As you use Copilot, you can also invoke the magic commands inside of a notebook cell to obtain output directly in the notebook. For example, for natural language answers to responses, you can ask questions using the "%%chat" command, such as:
 
-```
+```python
 %%chat
 What are some machine learning models that may fit this dataset?
 ```
@@ -63,7 +63,7 @@ What are some machine learning models that may fit this dataset?
 
 or
 
-```
+```python
 %%code
 Can you generate code for a logistic regression that fits this data?
 ```
@@ -72,8 +72,10 @@ Can you generate code for a logistic regression that fits this data?
 
 Copilot for Data Science and Data Engineering also has schema and metadata awareness of tables in the lakehouse. Copilot can provide relevant information in context of your data in an attached lakehouse. For example, you can ask:
 
+```copilot-prompt
 - "How many tables are in the lakehouse?"
 - "What are the columns of the table customers?"
+```
 
 Copilot responds with the relevant information if you added the lakehouse to the notebook. Copilot also has awareness of the names of files added to any lakehouse attached to the notebook. You can refer to those files by name in your chat. For example, if you have a file named **sales.csv** in your lakehouse, you can ask "Create a dataframe from sales.csv". Copilot generates the code and displays it in the chat panel. With Copilot for notebooks, you can easily access and query your data from different sources. You don't need the exact command syntax to do it.
 

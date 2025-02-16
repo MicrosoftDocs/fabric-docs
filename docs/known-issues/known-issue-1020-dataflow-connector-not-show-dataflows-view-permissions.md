@@ -4,7 +4,7 @@ description: A known issue is posted where the dataflow connector doesn't show d
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/10/2025
+ms.date: 02/14/2025
 ms.custom: known-issue-1020
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1020
 
 You can't see dataflow data using the dataflow connector. The issue happens when connecting to either a Dataflow Gen2 or Dataflow Gen2 (CI/CD preview) dataflow. You only have view access to the workspace that contains the dataflow.
 
-**Status:** Open
+**Status:** Fixed: February 14, 2025
 
 **Product Experience:** Data Factory
 
