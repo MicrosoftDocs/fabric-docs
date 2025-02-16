@@ -14,6 +14,8 @@ items:
     href: architecture-medallion.md
   - name: End to end tutorial
     items:
+    - name: End to end sample solution
+      href: sample-end-to-end.md
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
     - name: 1- Set up Eventhouse
