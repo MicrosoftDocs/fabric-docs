@@ -39,4 +39,4 @@ The Variable library item REST APIs support service principle.
 
 ## Considerations and limitations
 
-Item names and variable names are *not* case sensitive. Therefore, when a consumer item requests a variable’s value resolution, we return the value even if the case doesn't match.
+ [!INCLUDE [limitations](./includes/variable-library-limitations.md)]

@@ -20,7 +20,7 @@ A Variable library item in Microsoft Fabric contains a list of variables and the
 Each variable in the Variable library has the following properties:
 
 - [Name](#naming-conventions)
-- Note (optional)
+- Note (optional) Up to 2,048 characters
 - [Type](#variable-types)
 - Default value set
 - Alternative value sets (optional)
@@ -53,6 +53,7 @@ The variable name is *not* case sensitive.
 
 ## Variable types
 
+Before you can add a value to a variable, you must define the variable type.
 The variables in the Variable library can be any of the following basic types:
 
 - String: (default) Any character Can be null or empty.
@@ -66,8 +67,14 @@ The variables in the Variable library can be any of the following basic types:
 - Number: Any number. Use this type to represent GUIDs.
 - Integer: A whole number that can be positive, negative, or zero.
 
+Once a variable has a defined value, if you try to change its type, a consent dialog will pop up alerting the user that all the variable values will be reset and that this change could be a breaking change on the consumer item side. 
+
 ## Alternative value sets
 
-The value of the variables in the alternative value set point to the default value, unless it was changed to be a static/fixed value.
+When you create a new value set in a Variable library, the new values are set as pointers to the default values. You can change  to be a static/fixed value.
 If you change the value of a variable in the alternative value set, the alternative value is saved in the value-sets JSON file.
 You can change the order of the value sets or value of a variable in the alternative value set in this JASON file in Git.
+
+## Considerations and limitations
+
+ [!INCLUDE [limitations](./includes/variable-library-limitations.md)]

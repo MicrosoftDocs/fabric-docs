@@ -65,6 +65,10 @@ The following items support the Variable library:
 <!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Notebook --->
 
+## Considerations and limitations
+
+ [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
+
 ## Related content
 
 * [Variable library permissions](./variable-library-permissions.md)

@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: quickstart
-ms.date: 02/12/2025
+ms.date: 02/16/2025
 ms.search.form: Create and use Variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle.
 
@@ -88,7 +88,7 @@ To add a new variable to the library:
 To add another value set that can be used a different stage:
 
 1. Select **Add value set**
-1. Name the value set (make sure it follows the [naming conventions](./variable-types.md#variable-types))
+1. Name the value set (make sure it follows the [naming conventions](./variable-types.md#variable-types)) and give it a description (optional) of up to 2,048 characters.
 1. Select **Set as active** if you want to use this value to be the currently active value set
 1. Enter values for all the variables in the Variable library
 1. Select **Save**
@@ -105,11 +105,15 @@ You have the following options:
 * Rename the value set
 * Delete the value set
 
-Select **Save**.
+Select **Save**. Any changes only take effect after you save them.
 
 To reset a variable value of each variable to the default value, select the reset button.
 
 :::image type="content" source="./media/get-started-with-variable-libraries/reset-to-default.png" alt-text="Screenshot of a Variable library. There's a reset button next to the value of a variable.":::
+
+## Considerations and limitations
+
+ [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
 
 ## Related content
 

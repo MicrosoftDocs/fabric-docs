@@ -104,9 +104,7 @@ Values for variables not in this file are taken from the default value set.
 
 ## Considerations and limitations
 
-* There can be *up to 1,000 variables* and *up to 1,000 value-sets*, as long as the total number of cells in the alternative value-sets is under 10,000 cells, and the item’s size not bigger than 3 MB. This is validated when the user saves changes.
-* The note field can have up to 2,048 characters.
-* The value-set description field can have up to 2,048 characters.
+ [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
 
 ## Related content
 

@@ -157,6 +157,9 @@ Now that the data pipeline is set up, create a deployment pipeline to deploy the
 1. From the Test stage, [set the active value-set](./get-started-variable-libraries.md#edit-a-value-set) in the *WS Variables* library to *Test VS*. From the *Production* stage, set the active value-set in the *WS Variables* library to *Prod VS*.
 1. Run the pipeline from different stages to see the values it has in each stage. (Close the pipeline and open it again from each stage to see the values reload). Check the input value to see the value of each variable in that stage.
 
+## Considerations and limitations
+
+ [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
 
 ## Related content
 
