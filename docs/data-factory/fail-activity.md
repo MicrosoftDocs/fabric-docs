@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
-ms.date: 12/11/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Fail activity to cause pipeline execution to fail with a customized error message and error code
@@ -16,7 +16,7 @@ You might occasionally want to throw an error in a pipeline intentionally. A [Lo
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Fail activity to a pipeline with UI

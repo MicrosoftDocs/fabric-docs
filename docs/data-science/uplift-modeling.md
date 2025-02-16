@@ -1,14 +1,13 @@
 ---
 title: 'Tutorial: Create, train, and evaluate an uplift model'
 description: This tutorial describes creation, training, and evaluation of uplift models and application of uplift modeling techniques.
-ms.reviewer: franksolomon
-ms.author: narsam
-author: narmeens
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: amjafari
+reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 04/03/2024
+ms.date: 01/29/2024
 #customer intent: As a data scientist, I want to build an uplift model so I can estimate causal impact.
 ---
 
@@ -18,6 +17,8 @@ This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](inc
 
 ## Prerequisites
 
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
 * Familiarity with [Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
 * A lakehouse for this notebook, to store data for this example. For more information, visit [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks)
 
@@ -25,26 +26,14 @@ This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](inc
 
 You can follow along in a notebook in one of two ways:
 
-- Open and run the built-in notebook in the Synapse Data Science experience
-- Upload your notebook from GitHub to the Synapse Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
-The sample **Uplift modeling** notebook accompanies this tutorial. Visit [!INCLUDE [this resource](includes/follow-along-built-in-notebook.md)] for more information about accessing built-in sample notebooks for tutorials.
+The sample **Uplift modeling** notebook accompanies this tutorial.
 
-To open the tutorial's built-in sample notebook in the Synapse Data Science experience:
-
-1. Go to the Synapse Data Science home page
-
-1. **Select Use a sample**
-
-1. Select the corresponding sample:
-
-   1. From the default End-to-end workflows (Python) tab, if the sample is for a Python tutorial
-   1. From the End-to-end workflows (R) tab, if the sample is for an R tutorial
-   1. From the Quick tutorials tab, if the sample is for a quick tutorial
-
-1. [Attach a lakehouse to the notebook](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before you start running code
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
 ### Import the notebook from GitHub
 
@@ -64,7 +53,7 @@ Be sure to [attach a lakehouse to the notebook](./tutorial-data-science-prepare-
 
 The Criteo AI Lab created the dataset. That dataset has 13M rows. Each row represents one user. Each row has 12 features, a treatment indicator, and two binary labels that include visit and conversion.
 
-**f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 treatment conversion**
+:::image type="content" source="./media/uplift-modeling/criteo-ai-lab-dataset-structure.png"  alt-text="Screenshot showing the Criteo AI Lab dataset structure." lightbox="./media/uplift-modeling/criteo-ai-lab-dataset-structure.png":::
 
 - **f0 - f11**: feature values (dense, floating values)
 - **treatment**: whether or not a user was randomly target for treatment (for example, advertising) (1 = treatment, 0 = control)
@@ -260,7 +249,7 @@ mlflow.autolog(exclusive=False)
 
 ```python
 classifier = (
-    LightGBMClassifier()
+    LightGBMClassifier(dataTransferMode="bulk")
     .setFeaturesCol("features")  # Set the column name for features
     .setNumLeaves(10)  # Set the number of leaves in each decision tree
     .setNumIterations(100)  # Set the number of boosting iterations

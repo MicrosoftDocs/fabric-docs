@@ -6,9 +6,7 @@ ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Data Factory pricing in Microsoft Fabric
@@ -25,9 +23,6 @@ You can manage your Fabric Data Factory run costs easily with simplified billing
 
 ## Data Factory pricing meters
 
-> [!NOTE]
-> We are currently experiencing an issue in Fabric Data Factory capacity unit emissions resulting in very low billing for data pipelines. We expected to have this issue corrected shortly. In the interim, you can expect to see much lower than expected CUs and billing for your data pipelines in Fabric Data Factory.
-
 Whether you’re a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines. These experiences operate on multiple services with different capacity meters. Data pipelines use **Data Orchestration** and **Data Movement** meters, while Dataflow Gen2 uses **Standard Compute** and **High Scale Compute**. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
 
 :::image type="content" source="media/pricing-overview/pricing-meters.svg" alt-text="Diagram showing the pricing meters for Data Factory in Microsoft Fabric.":::
@@ -36,16 +31,16 @@ Whether you’re a citizen or professional developer, Data Factory enables you t
 
 Here are some example scenarios for pricing of data pipelines:
 
-- [Load 1 TB Parquet to a data warehouse](pricing-scenario-load-1-tb-parquet-to-data-warehouse.md)
-- [Load 1 TB Parquet to a data warehouse via staging](pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md)
-- [Load 1 TB CSV files to a Lakehouse table](pricing-scenario-load-1-tb-csv-to-lakehouse-table.md)
-- [Load 1 TB CSV files to a Lakehouse files with binary copy](pricing-scenario-load-1-tb-csv-to-lakehouse-files.md)
-- [Load 1 TB Parquet to a Lakehouse table](pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md)
+- [Load 1-TB Parquet to a data warehouse](pricing-scenario-load-1-tb-parquet-to-data-warehouse.md)
+- [Load 1-TB Parquet to a data warehouse via staging](pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md)
+- [Load 1-TB CSV files to a Lakehouse table](pricing-scenario-load-1-tb-csv-to-lakehouse-table.md)
+- [Load 1-TB CSV files to a Lakehouse files with binary copy](pricing-scenario-load-1-tb-csv-to-lakehouse-files.md)
+- [Load 1-TB Parquet to a Lakehouse table](pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md)
 
 Here are some pricing examples for Dataflow Gen2:
 
-- [Load on-premises 2 GB CSV file to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md)
-- [Load 2 GB Parquet to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md)
+- [Load on-premises 2-GB CSV file to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md)
+- [Load 2-GB Parquet to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md)
 
 ## Related content
 

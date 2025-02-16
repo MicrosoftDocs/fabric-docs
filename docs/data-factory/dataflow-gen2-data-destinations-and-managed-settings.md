@@ -1,11 +1,11 @@
 ---
 title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
-ms.reviewer: jonburchel
+ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 4/10/2024
+ms.date: 11/20/2024
 ---
 
 # Dataflow Gen2 data destinations and managed settings
@@ -19,6 +19,7 @@ The following list contains the supported data destinations.
 * Fabric Lakehouse
 * Fabric Warehouse
 * Fabric KQL database
+* Fabric SQL database
 
 ## Entry points
 
@@ -74,7 +75,7 @@ When you're loading into a new table, the automatic settings are on by default. 
 
 * **Managed mapping**: Mapping is managed for you. When you need to make changes to your data/query to add another column or change a data type, mapping is automatically adjusted for this change when you republish your dataflow. You don't have to go into the data destination experience every time you make changes to your dataflow, allowing for easy schema changes when you republish the dataflow.
 
-* **Drop and recreate table**: To allow for these schema changes, on every dataflow refresh the table is dropped and recreated. Your dataflow refresh fails if you have any relationships or measures added to your table.
+* **Drop and recreate table**: To allow for these schema changes, on every dataflow refresh the table is dropped and recreated. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 > [!NOTE]
 > Currently, automatic setting are only supported for Lakehouse and Azure SQL database as data destination.  
@@ -99,7 +100,7 @@ Most destinations support both append and replace as update methods. However, Fa
 
 Schema options on publish only apply when the update method is replace. When you append data, changes to the schema aren't possible.
 
-* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination flow when you make any changes to your query. When the dataflow is refreshed, your table is dropped and recreated. Your dataflow refresh fails if you have any relationships or measures added to your table.
+* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination flow when you make any changes to your query. When the dataflow is refreshed, your table is dropped and recreated. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 * **Fixed schema**: When you choose fixed schema, schema changes aren't possible. When the dataflow gets refreshed, only the rows in the table are dropped and replaced with the output data from the dataflow. Any relationships or measures on the table stay intact. If you make any changes to your query in the dataflow, the dataflow publish fails if it detects that the query schema doesn't match the data destination schema. Use this setting when you don't plan to change the schema and have relationships or measure added to your destination table.
 
@@ -110,20 +111,20 @@ Schema options on publish only apply when the update method is replace. When you
 
 ## Supported data source types per destination
 
-| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output |
-| --- | --- | --- | --- | --- | --- |
-| Action                           | No  | No  | No  | No  | No  |
-| Any                              | No  | No  | No  | No  | No  |
-| Binary                           | No  | No  | No  | No  | No  |
-| Currency                         | Yes | Yes | Yes | Yes | No  |
-| DateTimeZone                     | Yes | Yes | Yes | No  | No  |
-| Duration                         | No  | No  | Yes | No  | No  |
-| Function                         | No  | No  | No  | No  | No  |
-| None                             | No  | No  | No  | No  | No  |
-| Null                             | No  | No  | No  | No  | No  |
-| Time                             | Yes | Yes | No  | No | No |
-| Type                             | No  | No  | No  | No  | No  |
-| Structured (List, Record, Table) | No  | No  | No  | No  | No  |
+| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output | Fabric SQL Database (SQL) Output |
+| --- | --- | --- | --- | --- | --- |--- |
+| Action                           | No  | No  | No  | No  | No  | No  |
+| Any                              | No  | No  | No  | No  | No  | No  |
+| Binary                           | No  | No  | No  | No  | No  | No  |
+| Currency                         | Yes | Yes | Yes | Yes | No  | Yes |
+| DateTimeZone                     | Yes | Yes | Yes | No  | No  | Yes |
+| Duration                         | No  | No  | Yes | No  | No  | No  |
+| Function                         | No  | No  | No  | No  | No  | No  |
+| None                             | No  | No  | No  | No  | No  | No  |
+| Null                             | No  | No  | No  | No  | No  | No  |
+| Time                             | Yes | Yes | No  | No | No   | Yes |
+| Type                             | No  | No  | No  | No  | No  | No  |
+| Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
 
 ## Advanced topics
 
@@ -133,13 +134,11 @@ To enhance performance of query processing, staging can be used within Dataflows
 
 When staging is enabled on your queries (the default behavior), your data is loaded into the staging location, which is an internal Lakehouse only accessible by dataflows itself.
 
-Using staging locations can enhance performance in some cases.
+Using staging locations can enhance performance in some cases in which folding the query to the SQL analytics endpoint is faster than in memory processing.
 
-#### Loading data into the Lakehouse
+When you're loading data into the Lakehouse or other non-warehouse destinations, we by default disable the staging feature to improve performance. When you load data into the data destination, the data is directly written to the data destination without using staging. If you want to use staging for your query, you can enable it again.
 
-When you're loading data into the Lakehouse, we recommend that you disable staging on the query to avoid loading twice into a similar destination, once for staging and once for data destination. To improve the dataflow performance, disable staging for any query that has Lakehouse as the data destination.
-
-To disable staging, right-click on the query and disable staging by selecting the **Enable staging** button. Your query then turns italic.
+To enable staging, right-click on the query and enable staging by selecting the **Enable staging** button. Your query then turns blue.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/disable-staging.png" alt-text="Screenshot of the query drop-down menu with Enable staging emphasized.":::
 
@@ -155,11 +154,39 @@ If you already have a warehouse as a destination and try to disable staging, a w
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
 
+### Vacuuming your Lakehouse data destination
+
+When using Lakehouse as a destination for Dataflow Gen2 in Microsoft Fabric, it's crucial to perform regular maintenance to ensure optimal performance and efficient storage management. One essential maintenance task is vacuuming your data destination. This process helps to remove old files that are no longer referenced by the Delta table log, thereby optimizing storage costs and maintaining the integrity of your data.
+
+#### Why vacuuming is important
+
+1. **Storage Optimization**: Over time, Delta tables accumulate old files that are no longer needed. Vacuuming helps to clean up these files, freeing up storage space and reducing costs.
+2. **Performance Improvement**: Removing unnecessary files can enhance query performance by reducing the number of files that need to be scanned during read operations.
+3. **Data Integrity**: Ensuring that only relevant files are retained helps maintain the integrity of your data, preventing potential issues with uncommitted files that could lead to reader failures or table corruption.
+
+#### How to vacuum your data destination
+
+To vacuum your Delta tables in Lakehouse, follow these steps:
+
+1. **Navigate to your Lakehouse**: From your Microsoft Fabric account, go to the desired Lakehouse.
+2. **Access table maintenance**: In the Lakehouse explorer, right-click on the table you want to maintain or use the ellipsis to access the contextual menu.
+3. **Select maintenance options**: Choose the **Maintenance** menu entry and select the **Vacuum** option.
+4. **Run the vacuum command**: Set the retention threshold (default is seven days) and execute the vacuum command by selecting **Run now**.
+
+#### Best practices
+
+- **Retention period**: Set a retention interval of at least seven days to ensure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
+- **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
+
+By incorporating vacuuming into your data maintenance strategy, you can ensure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
+
+For more detailed information on table maintenance in Lakehouse, refer to the [Delta table maintenance documentation](/fabric/data-engineering/lakehouse-table-maintenance).
+
 ### Nullable
 
 In some cases when you have a nullable column, it gets detected by Power Query as non-nullable and when writing to the data destination, the column type is non-nullable. During refresh, the following error occurs:
 
-`E104100 Couldn’t refresh entity because of an issue with the mashup document MashupException.Error: DataFormat.Error: Error in replacing table’s content with new data in a version: #{0}., InnerException: We can’t insert null data into a non-nullable column., Underlying error: We can’t insert null data into a non-nullable column. Details: Reason = DataFormat.Error;Message = We can’t insert null data into a non-nullable column.; Message.Format = we can’t insert null data into a non-nullable column.`
+`E104100 Couldn't refresh entity because of an issue with the mashup document MashupException.Error: DataFormat.Error: Error in replacing table's content with new data in a version: #{0}., InnerException: We can't insert null data into a non-nullable column., Underlying error: We can't insert null data into a non-nullable column. Details: Reason = DataFormat.Error;Message = We can't insert null data into a non-nullable column.; Message.Format = we can't insert null data into a non-nullable column.`
 
 To force nullable columns, you can try the following steps:
 
@@ -179,3 +206,11 @@ To force nullable columns, you can try the following steps:
    ```
 
 4. Add the data destination.
+
+### Data types conversion and upscaling
+
+In some cases the data type within the dataflow differs from what is supported in the data destination below are some default conversions we have put in place to ensure you are still able to get your data in the data destination:
+
+| Destination | Dataflow Datatype | Destination Datatype |
+|-------------|--------------------|-----------------------|
+| Fabric Warehouse   | Int8.Type          | Int16.Type            |

@@ -1,13 +1,14 @@
 ---
 title: Data Access Control Model in OneLake (Public Preview)
-description: Learn the details of how OneLake secures data.
+description: Learn the details of how OneLake secures data with role-based access control and the impact on Fabric permissions.
 ms.reviewer: aamerril
 ms.author: yuturchi
 author: yuturchi
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - onelake-data-access-public-preview-april-2024
-ms.date: 4/1/2024
+ms.date: 05/09/2024
+#customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the impact on Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---
 
 # Role-based access control (RBAC)
@@ -22,7 +23,7 @@ OneLake RBAC restricts data access for users with Workspace **Viewer** or read a
 
 ## How to create RBAC roles
 
-You can define and manage OneLake RBAC roles using Lakehouse experience.
+You can define and manage OneLake RBAC roles through your lakehouse data access settings.
 
 Learn more in [Get Started with Data Access Roles](../security/get-started-data-access-roles.md).
 
@@ -237,7 +238,7 @@ Workspace and Item permissions let you grant "coarse-grain" access to data in On
 
 ## OneLake RBAC and Workspace permissions
 
-The workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../get-started/roles-workspaces.md)
+The workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../fundamentals/roles-workspaces.md)
 
 Workspace roles in Fabric grant the following permissions in OneLake.
 
@@ -265,7 +266,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 | Read  | No by default, use OneLake RBAC to grant access. | No | No |
 | ReadAll | Yes by default. Use OneLake RBAC to restrict the access. | No | No |
 | Write | Yes | Yes | Yes |
-| Reshare, ViewOutput, ViewLogs | N/A - can't be granted on its own |  N/A - can't be granted on its own |  N/A - can't be granted on its own |
+| Execute, Reshare, ViewOutput, ViewLogs | N/A - can't be granted on its own |  N/A - can't be granted on its own |  N/A - can't be granted on its own |
 
 ### OneLake RBAC and Lakehouse SQL Analytics Endpoint permissions
 
@@ -283,7 +284,7 @@ In Microsoft Fabric, when the user creates a lakehouse, the system also provisio
 
 | **Default Semantic Model Permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can see schema in Semantic Model?** | **Can read data in Semantic Model?** |
 |----------|----------|----------|--------------|-------------|
-| Read  | No by default, use OneLake RBAC to grant access. | No | No | Yes by default. Can be restricted with [Power BI Object-level Security](/power-bi/enterprise/service-admin-ols?tabs=table) and [Power BI Row-Level security](/power-bi/enterprise/service-admin-rls)  |
+| Read  | No by default, use OneLake RBAC to grant access. | No | No | Yes by default. Can be restricted with [Power BI object-level security](../../security/service-admin-object-level-security.md?tabs=table) and [Power BI row-level security](../../security/service-admin-row-level-security.md)  |
 | Build | Yes by default. Use OneLake RBAC to restrict the access. | Yes | Yes | Yes |
 | Write | Yes | Yes | Yes | Yes |
 | Reshare |  N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own |
@@ -292,9 +293,9 @@ In Microsoft Fabric, when the user creates a lakehouse, the system also provisio
 
 When user shares a lakehouse, they grant other users or a group of users access to a lakehouse without giving access to the workspace and the rest of its items. Shared lakehouse can be found through Data Hub or the Shared with Me section in Microsoft Fabrics.
 
-When someone shares a lakehouse, they can also grant access to the SQL endpoint and associated default semantic model.
+When someone shares a lakehouse, they can also grant access to the SQL analytics endpoint and associated default semantic model.
 
-:::image type="content" source=".\media\lakehouse-sharing.png" alt-text="A snapshot showing the Lakehouse user experience of sharing data.":::
+:::image type="content" source=".\media\lakehouse-sharing.png" alt-text="A screenshot of the lakehouse Grant people access screen.":::
 
 | **Sharing Option** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** | **Can view and build Semantic Models?** |
 |----------|----------|----------|----------|-----|
@@ -304,8 +305,9 @@ When someone shares a lakehouse, they can also grant access to the SQL endpoint 
 | Build  reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
 
 Learn more about data sharing permissions model:
+
 - [How lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
-- [Share your warehouse and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
+- [Share your data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
 
 ## Shortcuts
 
@@ -316,7 +318,7 @@ For any folder in a lakehouse, RBAC permissions always inherit to all [Internal 
 When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut*. As a result, this user must have OneLake RBAC permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through **Power BI semantic models** or **T-SQL**, the calling user’s identity is not passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through **Power BI semantic models** or **T-SQL**, the calling user's identity is not passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user.
 
 Defining RBAC permissions for the internal shortcut is not allowed and must be defined on the target folder located in the target item. Since defining RBAC permissions is limited to lakehouse items only, OneLake enables RBAC permissions only for shortcuts targeting folders in lakehouse items.
 
@@ -348,7 +350,7 @@ Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake Shortcuts](../one
 
 ### Limits on OneLake RBAC
 
-The following table provides the limitations of OneLake data access roles. 
+The following table provides the limitations of OneLake data access roles.
 
 | Scenario | Limit |
 | ---- | ---- |
@@ -360,3 +362,7 @@ The following table provides the limitations of OneLake data access roles.
 
 - If you change a OneLake RBAC Role definition, it takes about 5 minutes for OneLake to apply the updated definitions.
 - If you change a user group in OneLake RBAC role, it takes about an hour for OneLake to apply the role's permissions on the updated user group.
+
+## Consideration and Limitations
+
+- If you assign an RBAC role to a B2B guest user, you must [configure your external collaboration settings for B2B in Microsoft Entra External ID](/entra/external-id/external-collaboration-settings-configure). The **Guest user access** setting must be set to **Guest users have the same access as members (most inclusive)**.

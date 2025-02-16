@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Azure Database for PostgreSQL connector overview
@@ -26,7 +24,7 @@ The Azure Database for PostgreSQL connector supports the following capabilities 
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
-| **Lookup activity** | None | Basic |
+| **Copy activity (source/destination)** | None <br> On-premises | Basic |
+| **Lookup activity** | None <br> On-premises | Basic |
 
 To learn more about the copy activity configuration for Azure Database for PostgreSQL in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-database-for-postgresql-copy-activity.md).

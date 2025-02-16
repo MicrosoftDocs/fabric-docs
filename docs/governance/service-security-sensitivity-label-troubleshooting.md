@@ -4,8 +4,7 @@ description: Find guidance for resolving common issues related to sensitivity la
 author: paulinbar
 ms.author: painbar
 manager: kfollis
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/11/2024
@@ -126,6 +125,10 @@ Import of sensitivity-labeled *.pbix* files (both protected and unprotected) sto
 
 Power BI Desktop for Power BI Report Server doesn't support information protection. If you try to open a protected *.pbix* file, the file won't open, and you'll receive an error message. Sensitivity-labeled *.pbix* files that aren't encrypted can be opened as normal.
 
+## Connecting to data sources
+
+To successfully connect from Fabric or Power BI (including Power BI Desktop) to a data source (such as an Excel file) that has a sensitivity label that applies file encryption, information protection must be enabled in Fabric/Power BI (that is, the tenant setting **Allow users to apply sensitivity labels for content** must be set to *Enabled*).
+
 ## Sovereign clouds
 
 Sensitivity labels are supported in the following sovereign clouds:
@@ -199,7 +202,7 @@ Sensitivity labels inherited from data sources are automatically propagated down
 
 ### Can't set or remove sensitivity labels using Power BI REST admin APIs
 
-* Users must have administrator rights (such as Microsoft 365 global administrator or Fabric administrator) to call these APIs.
+* Users must be Fabric administrators to call these APIs.
 * The admin user (and the delegated user, if provided) must have sufficient [usage rights](/azure/information-protection/configure-usage-rights) to set or remove labels.
 * To set a sensitivity label using the setLabels API, the admin user (or the delegated user, if provided) must have the label included in their label policy.
 * The APIs allow a maximum of 25 requests per hour. Each request can update up to 2000 artifacts.

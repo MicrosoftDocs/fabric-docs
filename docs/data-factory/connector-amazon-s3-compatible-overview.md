@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 01/23/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Amazon S3 Compatible connector overview
@@ -25,9 +23,9 @@ The Amazon S3 Compatible connector supports the following capabilities in Data p
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Access Key |
-| **Lookup activity** | None | Access Key |
-| **GetMetadata activity** | None | Access Key |
-| **Delete activity** | None | Access Key |
+| **Copy activity (source/destination)** | None <br> On-premises | Access Key |
+| **Lookup activity** | None <br> On-premises | Access Key |
+| **GetMetadata activity** | None <br> On-premises | Access Key |
+| **Delete activity** | None <br> On-premises | Access Key |
 
 To learn more about the copy activity configuration for Amazon S3 Compatible in Data pipeline, go to [Configure in a data pipeline copy activity](connector-amazon-s3-compatible-copy-activity.md).

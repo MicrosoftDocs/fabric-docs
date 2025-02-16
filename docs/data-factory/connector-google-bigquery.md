@@ -4,11 +4,9 @@ description: This article provides information about how to create a Google BigQ
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your Google BigQuery connection
@@ -22,7 +20,7 @@ The Google BigQuery connector supports the following authentication types for co
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Service Account Login| n/a | √ |
+|Service Account Login| √ | √ |
 |Organizational account| n/a | √ |
 
 ## Set up your connection in Dataflow Gen2
@@ -34,7 +32,3 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 - To connect to the Google BigQuery connector from Power Query, go to [Connect to Google BigQuery data from Power Query Online](/power-query/connectors/google-bigquery#connect-to-google-bigquery-data-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
-
-## Set up your connection in a data pipeline
-
-Data Factory in Microsoft Fabric doesn't currently support Google BigQuery data in data pipelines.

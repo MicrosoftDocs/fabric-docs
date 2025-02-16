@@ -4,7 +4,7 @@ description: This article describes how to use continuous integration and deploy
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.date: 04/07/2024
+ms.date: 04/18/2024
 ---
 
 # Git integration and deployment for data pipelines (Preview)
@@ -39,7 +39,7 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 ## Steps for testing deployment pipelines
 
 1. As opposed to Git Integration, no manual set-up is required by the user, you can start using deployment pipelines directly from your existing workspace.
-1. Select the **Deployment pipelines** icon on the app navigator on the left of the screen.
+1. Select **Workspaces** on the app navigator on the left of the screen, and then select the **Deployment pipelines** icon.
 
    :::image type="content" source="media/git-integration-deployment-pipelines/deployment-pipelines.png" alt-text="Screenshot showing where to select the Deployment pipelines button on the left-hand app navigator for Fabric.":::
 
@@ -52,11 +52,9 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
 ## Current limitations
 
-- Currently, pipelines with activities that reference Fabric artifacts (for example, Notebook or Invoke pipeline activities) require that those dependent items already be imported and present in the target workspace. For now, you must sequence your deployments so those items are loaded first.
 - Deployment rules in Deployment Pipelines (built-in Fabric CI/CD) aren't yet supported.
-- Service Principal Auth (SPN) is currenty not supported
 
-## Next steps
+## Related content
 
 - [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
 - [Understand the deployment process](../cicd/deployment-pipelines/understand-the-deployment-process.md)

@@ -1,13 +1,11 @@
 ---
 title: Data science tutorial - get started
 description: Learn about the Data science tutorial, including an overview of the steps you follow through the series and details about the end-to-end scenario.
-ms.reviewer: sgilley
-ms.author: amjafari
-author: amhjf
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 03/01/2024
 ---
 
@@ -17,7 +15,7 @@ This set of tutorials demonstrates a sample end-to-end scenario in the Fabric da
 
 
 
-If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
+If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md).
 
 ## Introduction
 

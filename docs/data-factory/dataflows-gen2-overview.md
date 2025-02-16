@@ -4,9 +4,7 @@ description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory 
 author: luitwieler
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/24/2024
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ---
@@ -21,7 +19,7 @@ Dataflow Gen2 is the new generation of dataflows. The new generation of dataflow
 |--------|---|---|
 | Author dataflows with Power Query  | ✓ | ✓ |
 | Shorter authoring flow | ✓ |  |
-| Auto-Save and background publishing | ✓ |  |
+| AutoSave and background publishing | ✓ |  |
 | Data destinations  | ✓  |   |
 | Improved monitoring and refresh history       | ✓ |   |
 | Integration with data pipelines     | ✓  |   |

@@ -4,11 +4,9 @@ description: Learn how to configure datamart tenant settings as the Fabric admin
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration

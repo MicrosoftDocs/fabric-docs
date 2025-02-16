@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # KQL Database connector overview
@@ -25,7 +23,7 @@ The KQL Database connector supports the following capabilities in data pipelines
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | User Auth |
-| **Lookup activity** | None | User Auth |
+| **Copy activity (source/destination)** | None <br> On-premises | User Auth |
+| **Lookup activity** | None <br> On-premises | User Auth |
 
 To learn about the copy activity configuration for KQL Database in data pipelines, go to [Configure KQL Database in a copy activity](connector-kql-database-copy-activity.md).

@@ -1,16 +1,14 @@
 ---
-title: Job queueing for Fabric Spark
-description: Learn about the job queueing for notebooks, Spark job definitions, and lakehouse jobs in Fabric.
+title: Job queueing in Apache Spark for Fabric
+description: Learn about background job queueing for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 04/10/2024
 ---
-# Job queueing in Microsoft Fabric Spark
+# Job queueing in Apache Spark for Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
@@ -19,7 +17,12 @@ After purchasing the capacity, admins can create workspaces within the capacity 
 
 Learn more about the [Spark Concurrency Limits in Microsoft Fabric](spark-job-concurrency-and-queueing.md)
 
-Job queueing is supported for Notebook jobs that are triggered by pipelines or through the scheduler, as well as for Spark job definitions. The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added to the queue based on the time of their submission and are constantly retried and start executing when the capacity is freed up. 
+Job queueing is supported for Notebook jobs that are triggered by pipelines or through the scheduler, as well as for Spark job definitions. Queueing is not supported for **interactive notebook jobs** and notebook jobs triggered through **notebook public API**.
+
+The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added to the queue based on the time of their submission and are constantly retried and start executing when the capacity is freed up. 
+
+> [!NOTE]
+> Queueing of Spark jobs is not supported when your Fabric capacity is in its throttled state. All new jobs submitted will be rejected.
 
 :::image type="content" source="media\job-queueing-for-fabric-spark\job-queueing-animation.gif" alt-text="Animated illustration of the process of job queuing in Microsoft Fabric.":::
 
@@ -53,6 +56,8 @@ The following section lists various queue sizes for Spark workloads based on Mic
 
 > [!NOTE]
 > Queueing is not supported for Fabric trial capacities. Users would have to switch to a paid Fabric F or P SKU to use queueing for Spark jobs.
+
+Once the max queue limit has been reached for a Fabric capacity, the new jobs submitted will be throttled with an error message _[TooManyRequestsForCapacity] This spark job can't be run because you have hit a spark compute or API rate limit. To run this spark job, cancel an active Spark job through the Monitoring hub, choose a larger capacity SKU, or try again later. HTTP status code: 430 {Learn more} HTTP status code: 430_.
 
 ## Related content
 

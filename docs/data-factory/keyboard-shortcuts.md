@@ -52,7 +52,7 @@ When editing a Fabric pipeline, you can right-click in the canvas to view the li
 |Multi-select     |Ctrl + Click         |
 |Range select     |Ctrl + Shift + Click         |
 
-## Next steps
+## Related content
 
 [Quickstart: Create your first pipeline to copy data](create-first-pipeline-with-sample-data.md)
 

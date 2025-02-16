@@ -4,12 +4,9 @@ description: This article provides information about how to create a Snowflake d
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
 ---
 
 # Set up your Snowflake database connection
@@ -23,7 +20,7 @@ The Snowflake database connector supports the following authentication types for
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Snowflake| √ | √ |
-|Microsoft account| n/a | √ |
+|Microsoft account| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 

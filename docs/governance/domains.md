@@ -5,12 +5,14 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 03/19/2024
+ms.date: 12/16/2024
 ---
 
 # Fabric domains
+
+This article introduces key concepts of domains in Fabric, and shows how to set up and manage them. To get started planning domains for your organization, see [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
+
+## Introduction
 
 Today, organizations are facing massive growth in data, and there's an increasing need to be able to organize and manage that data in a logical way that facilitates more targeted and efficient use and governance.
 
@@ -24,7 +26,7 @@ Currently, Microsoft Fabric's data mesh architecture primarily supports organizi
 
 In Fabric, a domain is a way of logically grouping together all the data in an organization that is relevant to a particular area or field. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
 
-To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items in them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#domain-settings-delegation), thus allowing domain-specific configuration of those settings.
+To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items in them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../governance/onelake-catalog-overview.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#domain-settings-delegation), thus allowing domain-specific configuration of those settings.
 
 ### Subdomains
 
@@ -40,12 +42,12 @@ There are three roles involved in the creation and management of domains:
 
     Domain admins can access to the **Domains** tab in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the [domain image](#domain-image) and [override tenant settings](#domain-settings-delegation) for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
 
-* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) whom a domain or Fabric admin has authorized to assign the workspaces they're the admins of to a domain, or to change the current domain assignment.
+* **Domain contributor**: Domain contributors are [workspace admins](../fundamentals/roles-workspaces.md) whom a domain or Fabric admin has authorized to assign the workspaces they're the admins of to a domain, or to change the current domain assignment.
 
     Domain contributors assign the workspaces they're an admin of in the settings of the workspace itself. They don't have access to the **Domains** tab in the admin portal.
     
     > [!NOTE]
-    > Remember, to be able to assign a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../get-started/roles-workspaces.md) in the workspace).
+    > Remember, to be able to assign a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../fundamentals/roles-workspaces.md) in the workspace).
 
 ### Domain settings delegation
 
@@ -61,11 +63,20 @@ For information about how to specify an image for a domain, see [Specify a domai
 
 ### Default domain
 
-A default domain is a domain that has been specified as the default domain for specific users and/or security groups. This means that when these users/security groups create a new workspace, or when they update an unassigned workspace they're an admin of, that workspace will automatically be assigned to that domain. These users/security groups generally automatically become domain contributors of the workspaces that are assigned in this manner.
+A default domain is a domain that has been defined as the default domain for specified users and/or security groups. When you define a domain as the default domain for specified users and/or security groups, the following happens:
 
-For information about specifying a default domain, see [Specify a default domain](#specify-a-default-domain).
+1. The system scans the organization's workspaces. When it finds a workspace whose admin is a specified user or member of a specified security group:
+    * If the workspace already has a domain assignment, it is preserved. The default domain doesn't override the current assignment.
+    * If the workspace is unassigned, it is assigned to the default domain.
+1. After this, whenever a specified user or member of a specified security group creates a new workspace, it is assigned to the default domain.
+
+The specified users and/or members of the specified security groups generally automatically become domain contributors of workspaces that are assigned in this manner.
+
+For information about defining a domain as a default domain, see [Define the domain as a default domain](#define-the-domain-as-a-default-domain).
 
 ## Create a domain
+
+Before you start creating domains for your organization, it is recommended to review [Best practices for planning and creating domains in Microsoft Fabric](./domains-best-practices.md).
 
 To create domain, you must be a Fabric admin.
 
@@ -149,7 +160,7 @@ The domain settings side pane has the following tabs:
 * [Image](#specify-a-domain-image): Specify domain image
 * [Admins](#specify-domain-admins): Specify domain admins
 * [Contributors](#specify-domain-contributors): Specify domain contributors
-* [Default domain](#specify-a-default-domain): Set up domain as a default domain
+* [Default domain](#define-the-domain-as-a-default-domain): Set up domain as a default domain
 * [Delegated settings](#delegate-settings-to-the-domain-level): Override tenant-level settings
 
 > [!NOTE]
@@ -201,20 +212,28 @@ Select **Contributors** and then specify who can assign workspaces to the domain
 >[!NOTE]
 > For domain contributors to be able to associate their workspaces with their domains, they must have an admin role in the workspaces they are trying to associate with the domain.
 
-### Specify a default domain
+### Define the domain as a default domain
 
-To specify a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
+To define a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
 
-Select **Default domain** and specify users and/or security groups. When the specified users and/or security groups create new workspaces, or update unassigned workspaces, those workspaces will automatically be assigned to the domain.
+Select **Default domain** and specify users and/or security groups. When you add people to the default domain list, unassigned workspaces they're admins of, and new workspaces they create, will automatically be assigned to the domain. For a detailed description of the process, see [Default domain](#default-domain).
 
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
 
 > [!Note]
-> The users/security groups specified in the default domain definition generally automatically become domain contributors of the workspaces that get assigned to the domain via the default domain mechanism.
+> The users and/or members of the security groups specified in the default domain definition generally automatically become domain contributors of the workspaces that get assigned to the domain via the default domain mechanism.
 
 ### Delegate settings to the domain level
 
 Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select **Delegated Settings**. The following admin settings can potentially be overridden.
+
+#### Domain-level default sensitivity label
+
+If the [domain-level default sensitivity label feature](./domain-default-sensitivity-label.md) is enabled in your organization, you can specify a sensitivity label that will be applied by default to items in workspaces that are assigned to the domain.
+
+To specify a default sensitivity label for your domain, you must be a Fabric admin or a domain admin of the domain.
+
+Expand **Delegated Settings** and choose **Information protection**. You'll see the option **Set a default label for this domain**. Select the drop down menu and select the desired sensitivity label. The label will be applied to items in workspaces associated with the domain according to the logic described in [Domain-level default sensitivity labels in Microsoft Fabric](./domain-default-sensitivity-label.md).  
 
 #### Certification settings
 
@@ -238,11 +257,14 @@ Most of the actions available from the UI are available through the Fabric REST 
 
 ## Track user activity on domains
 
-Whenever a domain is created, edited or deleted, that activity is recorded in the audit log for Fabric. You can track these activities in the unified audit log or in the Fabric activity log. For information about the information in the Fabric auditing schema that's specific to domains, see [Audit schema for domains](./domains-audit-schema.md).
+Whenever a domain is created, edited, or deleted, that activity is recorded in the audit log for Fabric. You can track these activities in the unified audit log or in the Fabric activity log. For information about the information in the Fabric auditing schema that's specific to domains, see [Audit schema for domains](./domains-audit-schema.md).
 
 ## Related content
 
 * [Domain management tenant settings](../admin/service-admin-portal-domain-management-settings.md)
+* [Domain design - best practices](./domains-best-practices.md)
+* [Domain-level default sensitivity labels](./domain-default-sensitivity-label.md)
 * [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
 * [Audit schema for domains](./domains-audit-schema.md)
-* [Admin role in workspaces](../get-started/roles-workspaces.md)
+* [Admin role in workspaces](../fundamentals/roles-workspaces.md)
+* [Blog: Easily implement data mesh architecture with domains in Fabric](https://blog.fabric.microsoft.com/blog/easily-implement-data-mesh-architecture-with-domains-in-fabric/)

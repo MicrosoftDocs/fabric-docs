@@ -1,13 +1,11 @@
 ---
 title: Train classification models using explainable boosting machines (preview)
 description: Learn how to train classification models using explainable boosting machines
-ms.reviewer: larryfr
-ms.author: midesa
-author: midesa
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: midesa
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

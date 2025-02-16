@@ -6,8 +6,7 @@ ms.author: abnarain
 ms.reviewer: jburchel
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the WebHook activity to call an endpoint and wait for it to complete
@@ -18,7 +17,7 @@ A webhook activity can control the execution of pipelines through custom code. W
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a WebHook activity to a pipeline with UI
@@ -43,11 +42,11 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Web activity settings
 
-1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
    :::image type="content" source="media/webhook-activity/choose-web-connection-and-configure.png" alt-text="Screenshot showing the WebHook activity settings tab highlighting the tab, and where to choose a new connection.":::
 
-1. When you choose **+ New** to create a new connection, you see the connection creation dialog where you can provide the base URL and credentials to connect.
+1. When you create a new connection, you see the connection creation dialog where you can provide the base URL and credentials to connect.
 
    :::image type="content" source="media/webhook-activity/create-new-connection.png" alt-text="Screenshot showing the new connection dialog for the WebHook activity.":::
 
