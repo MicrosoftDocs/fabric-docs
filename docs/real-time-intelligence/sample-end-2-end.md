@@ -63,9 +63,7 @@ This example uses the bike rental sample data:
 
     :::image type="content" source="media/get-data-e2e-sample/get-data-create-e2e-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/get-data-e2e-sample/get-data-create-e2e-samples-progress.png":::
 
-1. Once the items are created, you can start exploring the Eventhouse and other components in the Real-Time Intelligence workspace.
-
-1. Open the folder to see all the sample items.
+1. Once the items are created, open the folder to see all the sample components. Explore the solution by selecting components such as the eventhouse.
 
     :::image type="content" source="media/get-data-e2e-sample/get-data-e2e-sample-folder.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard.":::
 
