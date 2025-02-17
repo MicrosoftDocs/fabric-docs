@@ -61,7 +61,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - The name of the directory that connects to the Git repository has the following naming restrictions:
 
   - The directory name can't begin or end with a space or tab.
-  - The directory name can't contain any of the following characters: <kbd>"</kbd><kbd>/</kbd><kbd>:</kbd> <kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd></kbd>
+  - The directory name can't contain any of the following characters: <kbd>"</kbd><kbd>/</kbd><kbd>:</kbd> <kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd>|</kbd>
 
 - The item folder (the folder that contains the item files) can't contain any of the following characters: <kbd>"</kbd><kbd>:</kbd><kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd>|</kbd>. If you rename the folder to something that includes one of these characters, Git can't connect or sync with the workspace and an error occurs.
 
