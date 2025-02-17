@@ -7,7 +7,6 @@ ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: overview
 ms.custom:
-  - ignite-2023
 ms.date: 06/05/2024
 ms.search.form: semantic link
 ---

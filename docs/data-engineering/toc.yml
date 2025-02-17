@@ -307,3 +307,5 @@ items:
      href: multiple-data-sources-graphql.md
    - name: Monitoring GraphQL operations
      href: graphql-operations.md
+   - name: Monitoring dashboard and logging (preview)
+     href: graphql-monitor-log.md

@@ -5,9 +5,8 @@ author: snehagunda
 ms.author: sngun
 ms.reviewer: alpowers
 ms.topic: conceptual
-ms.date: 06/02/2024
+ms.date: 02/13/2025
 ms.custom:
-  - ignite-2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -61,7 +60,7 @@ Use the following steps to get started with Copilot for Dataflow Gen2:
 
 1. In the Connect to data source for the OData connector, input the following text into the URL field:
 
-    ```
+    ```http
     https://services.odata.org/V4/Northwind/Northwind.svc/
     ```
 

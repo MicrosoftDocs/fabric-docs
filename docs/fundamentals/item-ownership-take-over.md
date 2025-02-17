@@ -5,7 +5,7 @@ ms.reviewer: sakjai
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 01/28/2025
+ms.date: 01/31/2025
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.
 ---
 # Take ownership of Fabric items
@@ -15,7 +15,7 @@ When a user leaves the organization, or if they don't sign in for more than 90 d
 When a user takes over ownership of an item using this procedure, they also become the owner of any child items the item might have. You can't take over ownership of child items directly - only through the parent item.
 
 > [!NOTE]
-> This article describes the procedure for taking ownership of Fabric items. Power BI items have their own functionality for changing item ownership.
+> Items such as semantic models, reports, datamarts, dataflows gen1 and dataflows gen2 have existing functionality for changing item ownership that remains the same. This article describes the procedure for taking ownership of other Fabric items.
 
 ## Prerequisites
 
@@ -85,8 +85,6 @@ In this scenario, the new item owner can fix connections by going into the item 
 
 ## Considerations and limitations
 
-* This feature is not yet available in East Asia and Southeast Asia.
-
 * The following Fabric items don't support ownership change.
 
    * Mirrored Cosmos DB
@@ -101,7 +99,7 @@ In this scenario, the new item owner can fix connections by going into the item 
 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
-* The option to take over a parent item isn't available if the parent item has system-generated child items that aren't visible or accessible to users. Such a situation can arise when items such as Eventstream items and Reflex items are created through the Real-Time hub.
+* The option to take over an item isn't available if the item is a system-generated item not visible or accessible to users in a workspace. For instance, a parent item might have system-generated child items - this can happen when items such as Eventstream items and Data Activator items are created through the Real-Time hub. In such cases, the take over option is not available for the parent item.
 
 * Currently, there's no API support for changing ownership of Fabric items. This doesn't impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, and datamarts, which continues to be available. For information about taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
 

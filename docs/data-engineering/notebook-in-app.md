@@ -6,9 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Create and use notebooks
 ms.date: 07/25/2024
 ---
