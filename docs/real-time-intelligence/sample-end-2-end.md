@@ -12,9 +12,10 @@ ms.date: 02/11/2025
 
 # End-to-end sample solution
 
-This process creates a group of sample items automatically. It allows you to use the main features of Real-Time Intelligence with a sample set of data, with no setup. You'll have an end-to-end solution that demonstrates how Real-Time Intelligence components work together, enabling you to stream, analyze, and visualize real-time data in a real-world context.
+This process creates a group of sample items automatically. It allows you to use the main features of Real-Time Intelligence with a sample set of data. You'll have an end-to-end solution that demonstrates how Real-Time Intelligence components work together, enabling you to stream, analyze, and visualize real-time data in a real-world context.
 
-To implement this solution with your own data, follow the [end-to-end tutorial](tutorial-introduction.md).
+> [!Note]
+> To implement this solution with your own data, follow the [end-to-end tutorial](tutorial-introduction.md).
 
 The sample data sets are designed to help you understand how to use Real-Time Intelligence components. The sample data sets include:
 
@@ -39,13 +40,13 @@ The sample end-to-end solution includes the following components for you to expl
 
 ## Create a sample solution with bike rental data
 
-This example uses the bike sample data:
+This example uses the bike rental sample data:
 
 1. Select **Workloads** from the left navigation bar and then **Real-Time Intelligence**.
 
 1. On the **Real-Time Intelligence samples** tile, select **Get started**.
 
-1. In the **Create samples** window, select **Get started** with Bike rental data or with Stock ticker data.
+1. In the **Create samples** window, select **Get started** with Bike rental data.
 
       :::image type="content" source="media/get-data-e2e-sample/get-data-create-e2e-samples.png" alt-text="Screenshot of the Create samples window showing the Bike rental data and Get started button.":::
 
