@@ -84,6 +84,8 @@ The right information pane displays the details of the selected database.
 
 The center database information pane depicts data activity, table information including query insights and, ingestion failures.  
 
+You can filter by user, application, and/or query status to refine the database overview data.
+
 |Card | Item| Description|
 |---|---|---|
 |**Data Activity Tracker**|

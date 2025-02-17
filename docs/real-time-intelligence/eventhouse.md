@@ -41,15 +41,13 @@ The databases page of an eventhouse shows you database information either in lis
 
 * Database name
 * Database details
-* Database Activity Tracker - line or bar chart display
+* Database Activity Tracker
 * Database tables
 * Data preview
-* Query insights - highlights query duration percentile, cache hit misses, and top queries.
-* Ingestion failures - highlights permanent failures only.
+* Query insights
+* Ingestion failures
 
-You can filter by user, application, and/or query status to refine the database overview data.
-
-For more information, see [Database details](create-database.md#Database-details).
+For more information, see [Database details](create-database.md#database-details).
 
 ## Minimum consumption
 
