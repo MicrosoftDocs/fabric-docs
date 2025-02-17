@@ -61,7 +61,7 @@ These steps show how to create an end-to-end solution using the bike rental samp
 
 1. Select **Create** to create the sample components. The progress window shows the status of the creation process.
 
-    :::image type="content" source="media/sample-end-to-end-solutione/create-end-to-end-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png":::
+    :::image type="content" source="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png":::
 
 1. Once the items are created, open the folder to see all the sample components. Explore the solution by selecting components such as the eventhouse.
 
