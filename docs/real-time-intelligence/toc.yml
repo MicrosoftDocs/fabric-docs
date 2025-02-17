@@ -15,7 +15,7 @@ items:
   - name: End to end tutorial
     items:
     - name: End to end sample solution
-      href: sample-end-2-end.md
+      href: sample-end-2-end
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
     - name: 1- Set up Eventhouse
