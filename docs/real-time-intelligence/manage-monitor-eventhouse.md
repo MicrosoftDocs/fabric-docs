@@ -124,7 +124,7 @@ The system overview page provides a snapshot of the current state of the eventho
         * Create, alter, or delete a table
         * Create or delete an external table
         * Create, alter, or delete a materialized view
-        * Create, alter, or delete a function
+        * Create, alter, or delete a functionpoih njbyv
         * Alter a caching policy, retention policy, or table update policy
 
 1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1 h), one day (1 d), one week (7 d), one month (30 d).
