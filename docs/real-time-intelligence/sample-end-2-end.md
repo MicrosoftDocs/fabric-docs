@@ -24,7 +24,7 @@ The sample data sets are designed to help you understand how to use Real-Time In
 
 ## Components of the sample solution
 
-The sample end-to-end solution includes the following components for you to explore:
+The sample end-to-end solution includes the following components:
 
 * **Eventstream**: An Eventstream is the engine for data ingestion and processing of your real-time data into Microsoft Fabric. You can transform your data and route it via filters to various destinations. Read more about [event streams](event-streams/overview.md).
 
