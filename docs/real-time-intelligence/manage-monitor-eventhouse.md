@@ -60,6 +60,17 @@ Minimum consumption sets a minimum available capacity unit (CU) size for an even
 
 The Eventhouse explorer provides an intuitive interface for navigating between Eventhouse views and for working with databases.
 
+### View eventhouse details
+
+The system overview page provides a snapshot of the evenhouse details. It displays the eventhouse region, last ingestion date, miinimum consumption setting, and plugins. 
+
+You can copy the following eventhouse URI values:
+
+| URI type | Usage |
+|--|--|
+| Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](data-connectors/data-connectors.md) and APIs to run queries or management commands. |
+| Ingestion URI | URI that can be used by connectors and APIs to ingest data. |
+
 ### View system overview details for an eventhouse
 
 The system overview page provides a snapshot of the current state of the eventhouse.
@@ -70,7 +81,12 @@ The system overview page provides a snapshot of the current state of the eventho
 
     The system overview page displays the following information:
 
-    * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
+    * **Running state of the eventhouse**: Shows the operational status of the eventhouse. 
+
+        :::image type="content" source="media/eventhouse/system-state.png" alt-text="Screenshot showing the system state icon":::
+
+        Possible states are:
+
         * **Running**: The eventhouse is running optimally.
         * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later. If you have enabled security features, try connecting to your environment using a VPN connection.
         * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute [capacity reached its limits](../enterprise/throttling.md). Try again later or contact your capacity admin to [increase the capacity](../enterprise/scale-capacity.md).
@@ -88,25 +104,20 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **System resources**: Shows a snapshot of the storage breakdown by database. You can drill-down into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
-    * **Activity in minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
+    * **Activity in minutes**: Shows the duration in minutes to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
         For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used are just 5 minutes.
 
         Likewise, even if 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
-    * **Ingestion**
+    * **Ingestion**: Shows the number of ingested rows and the number of databases along a time line that can be filtered by hour, day, wekk, or month. The information can help you understand the efficiency with which data is being ingested into the eventhouse.
 
+    * **Compute minutes - top 5 users**: Shows the total compute minutes the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
 
+    * **Databases**: Lists the most queried and top ingested databases in the eventhouse.
+        * **Most queiried databases**: Highlights the most active databases in the eventhouse, includingh the number of queries, errors, the duration and the cache misses per database. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
+        * **Top ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows.
 
-    * **Most queried databases**: Highlights the most active databases in the eventhouse. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
-    * **Eventhouse details**: Displays the eventhouse name, creation date, and last updated date. You can copy the following eventhouse URI values:
-
-        |URI type |Usage |
-        |---|---|
-        |Query URI |URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](data-connectors/data-connectors.md) and APIs to run queries or management commands.|
-        |Ingestion URI |URI that can be used by connectors and APIs to ingest data.|
-
-    * **Activity in minutes - Top 5 users**: Shows the total compute minutes used users. The information can help you understand the efficiency with which users are utilizing compute units.
     * **What's new**: Highlights recent eventhouse events, such as the following operations:
 
         * Create or delete a database
