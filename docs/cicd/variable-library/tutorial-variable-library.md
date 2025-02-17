@@ -35,7 +35,7 @@ In this tutorial, you:
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A workspace with datasources 
 
-## Step 0: Prepare data sources (optional)
+## Before you begin: Prepare data sources (optional)
 
 For the purposes of this tutorial, we will create a workspace called *Sources LHs* with some source data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
 

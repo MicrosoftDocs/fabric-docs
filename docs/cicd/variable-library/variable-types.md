@@ -71,9 +71,9 @@ Once a variable has a defined value, if you try to change its type, a consent di
 
 ## Alternative value sets
 
-When you create a new value set in a Variable library, the new values are set as pointers to the default values. You can change  to be a static/fixed value.
+When you create a new value set in a Variable library, the new values are set as pointers to the default values. You can change them to be a fixed value.
 If you change the value of a variable in the alternative value set, the alternative value is saved in the value-sets JSON file.
-You can change the order of the value sets or value of a variable in the alternative value set in this JASON file in Git.
+You can change the order the value sets are displayed or change the value of a variable in the alternative value set in this JASON file in Git.
 
 ## Considerations and limitations
 
