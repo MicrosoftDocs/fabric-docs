@@ -53,7 +53,7 @@ This example uses the bike rental sample data:
 1. Select the sample items to create. By default, all items are selected.
 
     > [!NOTE]
-    > It's recommended to create the entire component set. Eventstream and Eventhouse are required. You can deselect Real-time Dashboard, Report, or Queryset if you don't want to create them.
+    > Real-time Dashboard, Report, and Queryset are optional and can be cleared. However, we recommend creating the entire component set for the best experience.
 
     :::image type="content" source="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample.png" alt-text="Screenshot of the Configure samples window showing the selected items and the Destination Location." lightbox="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample.png":::
 
