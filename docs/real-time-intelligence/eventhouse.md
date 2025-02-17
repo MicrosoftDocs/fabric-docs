@@ -44,7 +44,7 @@ The databases page of an eventhouse shows you database information either in lis
 * Database Activity Tracker - line or bar chart display
 * Database tables
 * Data preview
-* Query insights - highlights query duration percentile, cache hit misses, and top querires.
+* Query insights - highlights query duration percentile, cache hit misses, and top queries.
 * Ingestion failures - highlights permanent failures only.
 
 You can filter by user, application, and/or query status to refine the database overview data.
@@ -59,7 +59,7 @@ Your eventhouse is designed to optimize cost by suspending the service when not 
 
 For instructions on how to enable minimum consumption, see [Enable minimum consumption](manage-monitor-eventhouse.md#enable-minimum-consumption).
 
-## Next step
+## Related content
 
 > [!div class="nextstepaction"]
 > [Create an eventhouse](create-eventhouse.md)

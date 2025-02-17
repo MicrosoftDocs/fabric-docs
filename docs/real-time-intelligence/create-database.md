@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 11/11/2024
+ms.date: 02/17/2025
 ms.search.form: KQL Database
 ---
 # Create a KQL database
@@ -53,7 +53,7 @@ When you create a new KQL database, an attached environment is automatically cre
 
 The main page of your KQL database shows an overview of the contents of your database. The following tables list the available information in the center and right information panes.
 
-:::image type="content" source="media/create-database/database-dashboard-new.png" alt-text="Screenshot of KQL database main page showing the database details cards."  lightbox="media/create-database/database-dashboard-new.png":::
+:::image type="content" source="media/create-database/database-dashboard-new.png" alt-text="Screenshot of KQL database main page showing the database details cards." lightbox="media/create-database/database-dashboard-new.png":::
 
 ### Database right pane details
 
@@ -82,14 +82,14 @@ The right information pane displays the details of the selected database.
 
 ### Database center information pane
 
-The center database information pane depicts data activity, table information including query insights and ingestion failures.  
+The center database information pane depicts data activity, table information including query insights and, ingestion failures.  
 
 |Card | Item| Description|
 |---|---|---|
 |**Data Activity Tracker**|
 | | Number of rows | The number of rows loaded into the database in the selected time range. You can toggle between viewing query or ingestion data, and between bar and line graph views. |
 | | Last run | The time when the histogram was last generated.|
-| | Interval | Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, seven days, and 30 days. |
+| | Interval | Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, 7 days, and 30 days. |
 | | Refresh | Refresh your histogram.|
 | | Histogram | The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time.|
 |**Tables**|
@@ -99,7 +99,7 @@ The center database information pane depicts data activity, table information in
 |**Query insights**|
 | | Daily query duration percentiles over time|  |
 | | Cache hit misses over time|  |
-| | Top queriries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
+| | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
 |**Ingestion failures**|
 | | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|
 
@@ -138,7 +138,7 @@ The center database information pane depicts a histogram of the ingestion data, 
 |**Histogram**|
 | | Number of rows | The number of rows ingested into the database.|
 | | Last run | The time when the histogram was last generated.|
-| | Interval |Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, seven days, and 30 day intervals. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. |
+| | Interval |Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, 7 days, and 30 day intervals. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. |
 | | Refresh | Refresh your histogram.|
 | | Histogram | The ingestion histogram displays data by the interval chosen.|
 |**Data preview**|
