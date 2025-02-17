@@ -53,7 +53,7 @@ When you create a new KQL database, an attached environment is automatically cre
 
 The main page of your KQL database shows an overview of the contents of your database. The following tables list the available information in the center and right information panes.
 
-:::image type="content" source="media/create-database/database-dashboard.png" alt-text="Screenshot of KQL database main page showing the database details cards."  lightbox="media/create-database/database-dashboard-extended.png":::
+:::image type="content" source="media/create-database/database-dashboard-new.png" alt-text="Screenshot of KQL database main page showing the database details cards."  lightbox="media/create-database/database-dashboard-new.png":::
 
 ### Database right pane details
 
@@ -64,38 +64,44 @@ The right information pane displays the details of the selected database.
 |---|---|---|
 | **Size**|
 | | Compressed| Total size of compressed data.|
-| | Original size | Total size of uncompressed data.|
+| | Original | Total size of uncompressed data.|
 | **OneLake**|
 | | Availability| Set OneLake availability to **On** or **Off**. When OneLake availability is turned on, tables can't be renamed.|
 | | Latency| The maximum time until data is available across tables in OneLake.|
 | |Table number |The number of tables available in OneLake. |
-| | OneLake folder | OneLake folder path that can be used for creating shortcuts.|
+| | OneLake folder | Copy the OneLake folder path for creating shortcuts.|
 |**Overview**|
-| | Created by | The user name of person who created the database, if available, and the database creation date.|
+| | Created by | The user name of person who created the database.|
+| | Created on | The creation date of the database, if available.|
 | | Region | Shows the region where your capacity is hosted. For more information, see [Fabric region availability](../admin/region-availability.md).|
 | | Query URI | The URI used to run queries or management commands.|
+| | Last ingestion | The date of the last data ingestion.|
 | | Ingestion URI | The date of the last data ingestion and the URI that can be used to get data.|
 | | Caching Policy | The time period in which data is cached and kept in local SSD storage. For more information, see [Caching policy](/fabric/real-time-intelligence/data-policies#caching-policy).|
 | | Retention Policy | The time period after which data is automatically removed from tables or materialized views. For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy).|
 
 ### Database center information pane
 
-The center database information pane depicts a histogram of the ingestion data, table information, and a means to preview the database ingestion information.  
+The center database information pane depicts data activity, table information including query insights and ingestion failures.  
 
 |Card | Item| Description|
 |---|---|---|
-|**Histogram**|
-| | Number of rows | The number of rows loaded into the database in the selected time range.|
+|**Data Activity Tracker**|
+| | Number of rows | The number of rows loaded into the database in the selected time range. You can toggle between viewing query or ingestion data, and between bar and line graph views. |
 | | Last run | The time when the histogram was last generated.|
 | | Interval | Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, seven days, and 30 days. |
 | | Refresh | Refresh your histogram.|
 | | Histogram | The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time.|
 |**Tables**|
-| | Search for table| Search for a database table.|
-| | New table | Create a new table|
 | | Tables display | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake* availability or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Caching*, and *Retention*. |
 |**Data preview**|
 | | Data preview | Shows a preview of the last 100 records ingested for each table. Displays Ingestion time, TableName, and Record. Select **Columns** to select columns and values for a Pivot view.|
+|**Query insights**|
+| | Daily query duration percentiles over time|  |
+| | Cache hit misses over time|  |
+| | Top queriries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
+|**Ingestion failures**|
+| | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|
 
 ## Table details
 
