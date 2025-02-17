@@ -12,15 +12,15 @@ ms.date: 02/11/2025
 
 # End-to-end sample solution
 
-This process creates a group of sample items automatically. It allows you to use the main features of Real-Time Intelligence with a sample set of data. You'll have an end-to-end solution that demonstrates how Real-Time Intelligence components work together, enabling you to stream, analyze, and visualize real-time data in a real-world context.
+In this article, you learn how to use the End-to-end sample solution to automatically create a collection of sample items. It allows you to explore the main features of Real-Time Intelligence with sample data. It provides a comprehensive end-to-end solution, demonstrating how Real-Time Intelligence components work together to stream, analyze, and visualize real-time data in a real-world context.
 
 > [!Tip]
 > To implement this solution with your own data, follow the [end-to-end tutorial](tutorial-introduction.md).
 
 The sample data sets are designed to help you understand how to use Real-Time Intelligence components. The sample data sets include:
 
-* **Bike rental data**: includes London-based bike movements, monitor station occupancies, and track user patterns.
-* **Stock ticker data**: includes 40 years of sample S&P 500 stock ticker data.
+* **Bike rental data**: Contains London-based bike movements, monitor station occupancies, and track user patterns.
+* **Stock ticker data**: Contains 40 years of sample S&P 500 stock ticker data.
 
 ## Components of the sample solution
 
