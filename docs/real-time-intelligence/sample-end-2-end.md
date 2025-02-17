@@ -12,7 +12,7 @@ ms.date: 02/11/2025
 
 # End-to-end sample solution
 
-In this article, you learn how to use the End-to-end sample solution to automatically create a collection of sample items. It allows you to explore the main features of Real-Time Intelligence with sample data. It provides a comprehensive end-to-end solution, demonstrating how Real-Time Intelligence components work together to stream, analyze, and visualize real-time data in a real-world context.
+In this article, you learn how to use the End-to-end sample solution to automatically create a collection of sample components. It allows you to explore the main features of Real-Time Intelligence with sample data. It provides a comprehensive end-to-end solution, demonstrating how Real-Time Intelligence components work together to stream, analyze, and visualize real-time data in a real-world context.
 
 > [!Tip]
 > To implement this solution with your own data, follow the [end-to-end tutorial](tutorial-introduction.md).
@@ -40,7 +40,7 @@ The sample end-to-end solution includes the following components:
 
 ## Create a sample solution with bike rental data
 
-This example uses the bike rental sample data:
+These steps show how to create an end-to-end solution using the bike rental sample data.
 
 1. Select **Workloads** from the left navigation bar and then **Real-Time Intelligence**.
 
