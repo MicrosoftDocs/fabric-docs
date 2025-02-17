@@ -83,7 +83,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Running state of the eventhouse**: Shows the operational status of the eventhouse. 
 
-        :::image type="content" source="media/eventhouse/system-state.png" alt-text="Screenshot showing the system state icon":::
+        :::image type="content" source="media/eventhouse/system-state.png" alt-text="Screenshot showing the system state icon next to the database name.":::
 
         Possible states are:
 
