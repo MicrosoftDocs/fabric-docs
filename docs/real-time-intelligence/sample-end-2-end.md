@@ -14,7 +14,7 @@ ms.date: 02/11/2025
 
 This process creates a group of sample items automatically. It allows you to use the main features of Real-Time Intelligence with a sample set of data. You'll have an end-to-end solution that demonstrates how Real-Time Intelligence components work together, enabling you to stream, analyze, and visualize real-time data in a real-world context.
 
-> [!Note]
+> [!Tip]
 > To implement this solution with your own data, follow the [end-to-end tutorial](tutorial-introduction.md).
 
 The sample data sets are designed to help you understand how to use Real-Time Intelligence components. The sample data sets include:
