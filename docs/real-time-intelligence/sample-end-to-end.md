@@ -48,24 +48,24 @@ This example uses the bike rental sample data:
 
 1. In the **Create samples** window, select **Get started** with Bike rental data.
 
-      :::image type="content" source="media/get-data-e2e-sample/get-data-create-e2e-samples.png" alt-text="Screenshot of the Create samples window showing the Bike rental data and Get started button.":::
+      :::image type="content" source="media/get-data-end-to-end-sample/get-data-create-end-to-end-samples.png" alt-text="Screenshot of the Create samples window showing the Bike rental data and Get started button.":::
 
 1. Select the sample items to create. By default, all items are selected.
 
     > [!NOTE]
     > Real-time Dashboard, Report, and Queryset are optional and can be cleared. However, we recommend creating the entire component set for the best experience.
 
-    :::image type="content" source="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample.png" alt-text="Screenshot of the Configure samples window showing the selected items and the Destination Location." lightbox="media/get-data-e2e-sample/get-data-configure-bike-e2e-sample.png":::
+    :::image type="content" source="media/get-data-end-to-end-sample/get-data-configure-bike-end-to-end-sample.png" alt-text="Screenshot of the Configure samples window showing the selected items and the Destination Location." lightbox="media/get-data-end-to-end-sample/get-data-configure-bike-end-to-end-sample.png":::
 
 1. Set the **Destination Location** for the sample components. By default, the items are created in the current workspace. You can select a different workspace from the dropdown list.
 
 1. Select **Create** to create the sample components. The progress window shows the status of the creation process.
 
-    :::image type="content" source="media/get-data-e2e-sample/get-data-create-e2e-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/get-data-e2e-sample/get-data-create-e2e-samples-progress.png":::
+    :::image type="content" source="media/get-data-end-to-end-sample/get-data-create-end-to-end-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/get-data-end-to-end-sample/get-data-create-end-to-end-samples-progress.png":::
 
 1. Once the items are created, open the folder to see all the sample components. Explore the solution by selecting components such as the eventhouse.
 
-    :::image type="content" source="media/get-data-e2e-sample/get-data-e2e-sample-folder.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard.":::
+    :::image type="content" source="media/get-data-end-to-end-sample/get-data-end-to-end-sample-folder.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard.":::
 
 ## Related content
 
