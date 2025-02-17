@@ -89,7 +89,7 @@ To add another value set that can be used a different stage:
 
 1. Select **Add value set**
 1. Name the value set (make sure it follows the [naming conventions](./variable-types.md#variable-types)) and give it a description (optional) of up to 2,048 characters.
-1. Select **Set as active** if you want to use this value to be the currently active value set
+1. Select **Set as active** if you want to use this value to be the currently active value set in this workspace
 1. Enter values for all the variables in the Variable library
 1. Select **Save**
 
