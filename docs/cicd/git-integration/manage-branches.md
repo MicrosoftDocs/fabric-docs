@@ -43,7 +43,7 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 1. Open the project in Power BI Desktop using the local copy of the *PBIProj*.
 1. Make changes and save the updated files locally. [Commit](/azure/devops/repos/git/gitquickstart#commit-your-work) to the local repo.
 1. When ready, [push](/azure/devops/repos/git/pushing) the branch and commits to the remote repo.
-1. Test the changes against other items or more data by connecting the new branch to a separate workspace, and uploading the semantic model and reports using the *update all* button in the source control panel. Do any tests or configuration changes there before merging into the *main* branch.
+1. Test the changes against other items or against more data. To test the changes, connect the new branch to a separate workspace, and upload the semantic model and reports using the *update all* button in the source control panel. Do any tests or configuration changes there before merging into the *main* branch.
 
    If no tests are required in the workspace, the developer can merge changes directly into the *main* branch, without the need for another workspace.
 
@@ -82,7 +82,7 @@ For more information, see [branching out limitations](./git-integration-process.
 
 ## Release process
 
-The release process begins once new updates complete a Pull Request process and merge into the team’s shared branch (such as *Main*, *Dev*, etc.). From this point, we outline the different options to build a release process in Fabric. To read about different options to consider when designing your workflow, see [release process](../manage-deployment.md#release-process).
+The release process begins once new updates complete a Pull Request process and merge into the team’s shared branch (such as *Main*, *Dev*, etc.). From this point, There are different options to build a release process in Fabric. To read about different options to consider when designing your workflow, see [release process](../manage-deployment.md#release-process).
 
 ## Switch branches
 
