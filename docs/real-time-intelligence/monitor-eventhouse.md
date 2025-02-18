@@ -30,7 +30,7 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 ## Eventhouse monitoring dashboard templates
 
-You can download dashboard templates from the [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards) GitHub repository.
+You can download dashboard templates from the [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards) GitHub repository. The repository contains instructions on how to prepare the environment and use the templates.
 
 The templates allow users to create monitoring dashboards and to track workspace activities in real-time by connecting directly to the underlying monitoring Eventhouse cluster. In the dashboard, you can monitor operations, users, semantic models, database queries, and ingestion patterns.
 
