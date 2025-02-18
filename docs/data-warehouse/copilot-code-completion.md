@@ -1,9 +1,9 @@
 ---
 title: "How to: Use Copilot code completion for Fabric Data Warehouse"
 description: Learn more about Microsoft Copilot code completion for Fabric Data Warehouse, to provide intelligent autocomplete-style code suggestions.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: salilkanade, jacinda-eng
+author: markingmyname
+ms.author: maghan
+ms.reviewer: salilkanade, wiassaf, jacinda-eng
 ms.date: 09/26/2024
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
@@ -13,7 +13,7 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-Copilot for Data Warehouse provides intelligent autocomplete-style T-SQL code suggestions to simplify your coding experience. 
+Copilot for Data Warehouse provides intelligent autocomplete-style T-SQL code suggestions to simplify your coding experience.
 
 As you start writing T-SQL code or comments in the editor, Copilot for Data Warehouse leverages your warehouse schema and query tab context to complement the existing IntelliSense with inline code suggestions. The completions can come in varied lengths - sometimes the completion of the current line, and sometimes a whole new block of code. The code completions support all types of T-SQL queries: data definition language (DDL), data query language (DQL), and data manipulation language (DML). You can accept all or part of a suggestion or keep typing to ignore the suggestions. It can also generate alternative suggestions for you to pick.
 

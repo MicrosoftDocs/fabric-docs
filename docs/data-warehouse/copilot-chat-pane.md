@@ -1,13 +1,13 @@
 ---
-title: "How to: Use the Copilot chat pane for Fabric Data Warehouse"
+title: "How To: Use the Copilot Chat Pane for Fabric Data Warehouse"
 description: Learn more about Microsoft Copilot chat pane for Fabric Data Warehouse, to ask questions specific to your warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: salilkanade
-ms.date: 08/01/2024
+author: markingmyname
+ms.author: maghan
+ms.reviewer: salilkanade, wiassaf
+ms.date: 02/18/2025
 ms.topic: how-to
-ms.collection: ce-skilling-ai-copilot
-ms.custom:
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 # How to: Use the Copilot chat pane for Fabric Data Warehouse
 
@@ -39,7 +39,9 @@ The supported capabilities of interacting through chat include:
 ## Get started
 
 1. In the **Data warehouse** workload, open a warehouse, and open a new SQL query.
+
 1. To open the Copilot chat pane, select the **Copilot** button.
+
     :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon." lightbox="media/copilot-chat-pane/copilot-button.png":::
 
 1. The chat pane offers helpful starter prompts to get started and familiar with Copilot. Select any option to ask Copilot a question. The **Ask a question** button provides example questions that are tailored specifically to your warehouse.
@@ -53,15 +55,15 @@ The supported capabilities of interacting through chat include:
 
 You can ask Copilot questions about the warehouse normally and it should respond accordingly. However, if you want to force Copilot to perform a specific skill, there are `/` commands that you can use. These commands must be at the start of your chat message.
 
-| Command        | Description                                                                                                 |
-|----------------|-------------------------------------------------------------------------------------------------------------|
-| `/generate-sql`| Generate a SQL query from the prompt submitted to Copilot.                                                    |
-| `/explain`     | Generate an explanation for the query within the active query tab.                                            |
-| `/fix`         | Generate a fix for the query within the active query tab. You can optionally add additional context to fix a specific part or aspect of the query. |
-| `/question`    | Generate a natural language response from the prompt submitted to Copilot.                                    |
-| `/help`        | Get help for using Copilot. This links to documentation to Copilot and how to use it.                    |
+| Command | Description |
+| --- | --- |
+| `/generate-sql` | Generate a SQL query from the prompt submitted to Copilot. |
+| `/explain` | Generate an explanation for the query within the active query tab. |
+| `/fix` | Generate a fix for the query within the active query tab. You can optionally add additional context to fix a specific part or aspect of the query. |
+| `/question` | Generate a natural language response from the prompt submitted to Copilot. |
+| `/help` | Get help for using Copilot. This links to documentation to Copilot and how to use it. |
 
- For `/generate-sql`, `/question`, and optionally `/fix`, include additional information regarding your intent. For example:
+For `/generate-sql`, `/question`, and optionally `/fix`, include additional information regarding your intent. For example:
 
 - `/generate-sql select numbers 1 through 10`
 - `/question what types of security are supported in this warehouse?`

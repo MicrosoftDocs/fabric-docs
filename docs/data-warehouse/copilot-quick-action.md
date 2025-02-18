@@ -1,14 +1,15 @@
 ---
 title: "How to: Use Copilot quick actions for Fabric Data Warehouse"
 description: Learn more about Microsoft Copilot quick actions for Fabric Data Warehouse, to explain and fix SQL queries in the SQL query editor.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: salilkanade
+author: markingmyname
+ms.author: maghan
+ms.reviewer: salilkanade, wiassaf
 ms.date: 10/22/2024
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
 ---
+
 # How to: Use Copilot quick actions for Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
@@ -19,9 +20,9 @@ There are two AI-powered quick actions that are currently supported in Copilot f
 
 Quick actions can accelerate productivity by helping you write and understand queries faster. These buttons are located at the top of the SQL query editor, near the **Run** button.
 
-- The **Explain** quick action will leave a summary at the top of the query and in-line code comments throughout the query to describe what the query is doing.
+- The **Explain** quick action leaves a summary at the top of the query and in-line code comments throughout the query to describe what the query is doing.
 
-- The **Fix** quick action will fix errors in your query syntax or logic. After running a SQL query and being met with an error, you can fix your queries easily. Copilot will automatically take the SQL error message into context when fixing your query. Copilot will also leave a comment indicating where and how it has edited the T-SQL code.  
+- The **Fix** quick action fixes errors in your query syntax or logic. After running a SQL query and being met with an error, you can fix your queries easily. Copilot automatically takes the SQL error message into context when fixing your query. Copilot also leaves a comment indicating where and how it has edited the T-SQL code.  
 
 Copilot leverages information about your warehouse schema, query tab contents, and execution results to give you relevant and useful feedback on your query.
 

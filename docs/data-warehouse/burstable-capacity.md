@@ -34,7 +34,7 @@ Smoothing offers relief for customers who create sudden spikes during their peak
 
 Burstable capacity is finite. There's a limit applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads causing [throttling](compute-capacity-smoothing-throttling.md).
 
-The limit (or guardrail) is a scale factor directly correlated to the Fabric Capacity SKU size that is assigned to the workspace.
+The limit is a scale factor directly correlated to the Fabric capacity SKU size that is assigned to the workspace.
 
 | Fabric SKU | Equivalent Premium SKU | Baseline Capacity Units (CU) | Burstable Scale Factor |
 |------------|-----------------------|------------------------------|------------------------|
@@ -50,7 +50,7 @@ The limit (or guardrail) is a scale factor directly correlated to the Fabric Cap
 | F1024      | P5                    | 1024                         | 1x - 12x               |
 | F2048      |                       | 2048                         | 1x - 12x               |
 
-Smaller SKU sizes are often used for Dev/Test scenarios or ad hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
+Smaller SKU sizes are often used for dev/test scenarios or ad hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
 
 Larger SKU sizes have access to more total capacity units, allowing more complex workloads to run optimally and with more concurrency. Therefore, if desired performance of a workload is not being achieved, [increasing the capacity SKU size](../enterprise/scale-capacity.md) might be beneficial.
 
