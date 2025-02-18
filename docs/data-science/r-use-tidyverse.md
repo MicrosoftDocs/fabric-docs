@@ -1,13 +1,11 @@
 ---
 title: Use Tidyverse
 description: How to use Tidyverse, a collection of R packages designed for data science.
-ms.reviewer: sgilley
-ms.author: ruxu
-author: ruixinxu
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
 ---
@@ -153,7 +151,7 @@ ggplot(stocksL, aes(x=time, y=price, colour = stock)) +
 
 ```
 
-![Graph of plot line.](./media/r-use-tidyverse/ggplot-line.png)
+:::image type="content" border="true" source="./media/r-use-tidyverse/ggplot-line.png" alt-text="Graph of plot line.":::
 
 
 ```R
@@ -163,7 +161,7 @@ ggplot(stocksL, aes(x=time, y=price, colour = stock)) +
   geom_boxplot()
 ```
 
-![Graph of plot box.](./media/r-use-tidyverse/ggplot-box.png)
+:::image type="content" border="true" source="./media/r-use-tidyverse/ggplot-box.png" alt-text="Graph of plot box.":::
 
 
 ## Model building
@@ -176,7 +174,7 @@ ggplot(mtcars, aes(wt,mpg))+
 geom_point()
 ```
 
-![Graph of mpg and wt.](./media/r-use-tidyverse/mpg-wt.png)
+:::image type="content" border="true" source="./media/r-use-tidyverse/mpg-wt.png" alt-text="Graph of mpg and wt.":::
 
 From the scatterplot, the relationship looks approximately linear and the variance looks constant. Let's try to model this using linear regression.
 
@@ -221,7 +219,7 @@ ggplot(lm_aug, aes(x = wt, y = mpg)) +
   geom_abline(intercept = lm_fit$fit$coefficients[1], slope = lm_fit$fit$coefficients[2], color = "blue")
 ```
 
-![Graph of model result.](./media/r-use-tidyverse/model-out.png)
+:::image type="content" border="true" source="./media/r-use-tidyverse/model-out.png" alt-text="Graph of model result.":::
 
 
 ## Related content

@@ -5,9 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - build-2024
-ms.date: 06/10/2024
+ms.date: 07/10/2024
 ---
 
 # The Fabric throttling policy
@@ -56,7 +54,7 @@ If you need to pay down your carryforward faster, you can increase your SKU size
 
 While most Fabric products follow the previously mentioned throttling rules, there are some exceptions.
 
-For example, Fabric event streams have many operations that can run for years once they're started. Throttling new event stream operations wouldn’t make sense, so instead, the amount of CU resources allocated to keeping the stream open is reduced until the capacity is in good standing again.
+For example, Fabric eventstreams have many operations that can run for years once they're started. Throttling new eventstream operations wouldn’t make sense, so instead, the amount of CU resources allocated to keeping the stream open is reduced until the capacity is in good standing again.
 
 Another exception is Real-Time Intelligence, which wouldn’t be real-time if operations were delayed by 20 seconds. As a result, Real-Time Intelligence ignores the first stage of throttling with 20-second delays at 10 minutes of carryforward and waits until the rejection phase at 60 minutes of carryforward to begin throttling. This behavior ensures users can continue to enjoy real-time performance even during periods of high demand.
 
@@ -86,13 +84,13 @@ The Microsoft Fabric Capacity Metrics app drilldown allows admins to see operati
 
 ## Actions you can take to recover from overload situations
 
-Strategies you can use to recover from a throttling situation:
+When your capacity is throttled to the point it's frozen, users receive an error if their action requires Fabric compute resources. For example, the error can say *Cannot load model due to reaching capacity limits*. In such cases, you can use these strategies to recover your capacity from its frozen state.
 
-* wait until the overload state is over before issuing new requests.
-* upgrade the SKU of an F capacity.
-* pause/resume an F capacity.
-* [autoscale](/power-bi/enterprise/service-premium-auto-scale) a P capacity.
-* move lower priority or overconsuming workspaces out of the capacity.
+* Wait until the overload state is over before issuing new requests.
+* Upgrade the SKU of an F capacity.
+* Pause/resume an F capacity.
+* [Autoscale](/power-bi/enterprise/service-premium-auto-scale) a P capacity.
+* Move lower priority or overconsuming workspaces out of the capacity.
 
 ## Related content
 

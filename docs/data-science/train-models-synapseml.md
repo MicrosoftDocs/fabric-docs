@@ -1,13 +1,12 @@
 ---
 title: How to train models with SynapseML
 description: Learn how to train models with SynapseML
+ms.author: ssalgado
+author: ssalgadodev
 ms.reviewer: jessiwang
-ms.author: jessiwang
-author: JessicaXYWang
+reviewer: JessicaXYWang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/22/2023
 ---
 

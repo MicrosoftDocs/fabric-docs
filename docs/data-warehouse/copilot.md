@@ -1,24 +1,20 @@
 ---
-title: Copilot for Synapse Data Warehouse
-description: Learn more about Microsoft Copilot for Synapse Data Warehouse in Microsoft Fabric, the integrated AI assistant for your Fabric warehouse.
+title: Copilot for Data Warehouse (preview)
+description: Learn more about Microsoft Copilot for Fabric Data Warehouse, the integrated AI assistant for your Fabric warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 05/29/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 09/25/2024
 ms.topic: conceptual
-ms.custom:
-  - build-2024
-  - build-2024-dataai
-  - build-2024-fabric
 ms.collection: ce-skilling-ai-copilot
+ms.custom:
+- copilot-learning-hub
 ---
-# Microsoft Copilot for Synapse Data Warehouse
+# Overview of Copilot for Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-Microsoft Copilot for Synapse Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Copilot integrates seamlessly with your Fabric warehouse, providing intelligent insights to help you along each step of the way in your T-SQL explorations.
+Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Copilot integrates seamlessly with your Fabric warehouse, providing intelligent insights to help you along each step of the way in your T-SQL explorations.
 
 ## Introduction to Copilot for Data Warehouse
 
@@ -34,13 +30,13 @@ Key features of Copilot for Warehouse include:
 There are three ways to interact with Copilot in the Fabric Warehouse editor.
 
 - **Chat Pane**: Use the chat pane to ask questions to Copilot through natural language. Copilot will respond with a generated SQL query or natural language based on the question asked.
-    - [How to: Use the Copilot chat pane for Synapse Data Warehouse](copilot-chat-pane.md)
+    - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
 - **Code completions**: Start writing T-SQL in the SQL query editor and Copilot will automatically generate a code suggestion to help complete your query. The **Tab** key accepts the code suggestion, or keep typing to ignore the suggestion.
-    - [How to: Use Copilot code completion for Synapse Data Warehouse](copilot-code-completion.md)
+    - [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
 - **Quick Actions**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
     - **Explain:** Copilot can provide natural language explanations of your SQL query and warehouse schema in comments format.
     - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios can include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot will also provide comments that explain the changes and suggest SQL best practices.
-    - [How to: Use Copilot quick actions for Synapse Data Warehouse](copilot-quick-action.md)
+    - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 
 ## Use Copilot effectively
 
@@ -70,7 +66,7 @@ Microsoft is committed to ensuring that our AI systems are guided by our [AI pri
 
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.
 
-For more information, see [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md).
+For more information, see [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md).
 
 ## Limitations of Copilot for Data Warehouse
 
@@ -78,13 +74,14 @@ Here are the current limitations of Copilot for Data Warehouse:
 
 - Copilot doesn't understand previous inputs and can't undo changes after a user commits a change when authoring, either via user interface or the chat pane. For example, you can't ask Copilot to "Undo my last 5 inputs." However, users can still use the existing user interface options to delete unwanted changes or queries.
 - Copilot can't make changes to existing SQL queries. For example, if you ask Copilot to edit a specific part of an existing query, it doesn't work.
-- Copilot may produce inaccurate results when the intent is to evaluate data. Copilot only has access to the warehouse schema, none of the data inside.
+- Copilot might produce inaccurate results when the intent is to evaluate data. Copilot only has access to the warehouse schema, none of the data inside.
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
 - People who are able to meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
 
 ## Related content
 
 - [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md)
-- [How to: Use the Copilot chat pane for Synapse Data Warehouse](copilot-chat-pane.md)
-- [How to: Use Copilot quick actions for Synapse Data Warehouse](copilot-quick-action.md)
-- [How to: Use Copilot code completion for Synapse Data Warehouse](copilot-code-completion.md)
+- [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
+- [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
+- [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
+- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md)

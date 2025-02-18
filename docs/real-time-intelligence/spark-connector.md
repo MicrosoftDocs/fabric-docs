@@ -2,18 +2,16 @@
 title: Tutorial- Use a notebook with Apache Spark to query a KQL database
 description: Learn how to import and query the NYC GreenTaxi notebook in your Real-Time Intelligence in Microsoft Fabric environment using Apache Spark.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 04/21/2024
+ms.date: 12/24/2024
 ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database
 
-Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-Time Intelligence and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+Notebooks are both readable documents containing data analysis descriptions and results and executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-Time Intelligence and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 Specifically, you learn how to:
 
@@ -26,20 +24,17 @@ Specifically, you learn how to:
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 
 ## 1- Create a KQL database
 
-1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Intelligence**.
-2. Select the **KQL Database** tile.
+1. Select your workspace from the left navigation bar.
 
-    :::image type="content" source="media/jupyter-notebook/kql-database-tile.png" alt-text="Screenshot of new KQL database tile in Real-Time Intelligence.":::
+1. Follow one of these steps to start creating an eventstream:
+    * Select **New item** and then **Eventhouse**. In the **Eventhouse name** field, enter *nycGreenTaxi*, then select **Create**. A KQL database is generated with the same name.
+    * In an existing eventhouse, select **Databases**. Under **KQL databases** select **+**, in the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
 
-3. In the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
-
-    The KQL database has now been created within the context of the selected workspace.
-
-4. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
+1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
     :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
@@ -60,17 +55,11 @@ We've created a sample notebook that takes you through all the necessary steps f
 
 The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Spark notebook to load and query data in your KQL database.
 
-1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
-1. Select **Import notebook**.
-
-    :::image type="content" source="media/jupyter-notebook/import-notebook.png" alt-text="Screenshot of item options in Data Engineering. The item titled Import notebook is highlighted.":::
-
-1. In the **Import status** window, select **Upload**.
+1. From your workspace select **Import** > **Notebook** >  **From this computer** > **Upload** then choose the NYC GreenTaxi notebook you downloaded in a previous step.
 
     :::image type="content" source="media/spark-connector/upload-notebook.png" alt-text="Screenshot of Import status window. The button titled Upload is highlighted.":::
 
-1. Select the NYC GreenTaxi notebook you downloaded in a previous step.
-1. Once the import is complete, return to your workspace to open this notebook.
+1. Once the import is complete, open the notebook from your workspace.
 
 ## 4- Get data
 
@@ -93,7 +82,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 
 1. Run the cell.
 
-1. Run the next cell to write data to your database. It may take a few minutes for this step to complete.
+1. Run the next cell to write data to your database. It can take a few minutes for this step to complete.
 
     :::image type="content" source="media/spark-connector/code-cell-3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell-3.png":::
 

@@ -1,0 +1,439 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/get-started/fabric-known-issues.md",
+            "redirect_url": "/fabric/known-issues/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md",
+            "redirect_url": "/fabric/known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-918-more-options-not-open-unsaved-reports.md",
+            "redirect_url": "/fabric/known-issues/known-issue-918-more-options-not-open-unsaved-reports",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md",
+            "redirect_url": "/fabric/known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-923-tenant-migrations-paused-january-2025.md",
+            "redirect_url": "/fabric/known-issues/known-issue-923-tenant-migrations-paused-january-2025",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/fabric/known-issues/toc.yml",
+            "redirect_url": "/fabric/known-issues/toc.yml",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/fabric/known-issues/index.yml",
+            "redirect_url": "/fabric/index.yml",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1002-reports-functions-rls-not-work.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1002-reports-functions-rls-not-work",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md",
+            "redirect_url": "/fabric/known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-978-renamed-eventstream-fails-open.md",
+            "redirect_url": "/fabric/known-issues/known-issue-978-renamed-eventstream-fails-open",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-979-sql-databases-not-available-private-link.md",
+            "redirect_url": "/fabric/known-issues/known-issue-979-sql-databases-not-available-private-link",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md",
+            "redirect_url": "/fabric/known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries.md",
+            "redirect_url": "/fabric/known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md",
+            "redirect_url": "/fabric/known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md",
+            "redirect_url": "/fabric/known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-990-kql-database-loads-continuously-without-error.md",
+            "redirect_url": "/fabric/known-issues/known-issue-990-kql-database-loads-continuously-without-error",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md",
+            "redirect_url": "/fabric/known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md",
+            "redirect_url": "/fabric/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md",
+            "redirect_url": "/fabric/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md",
+            "redirect_url": "/fabric/known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md",
+            "redirect_url": "/fabric/known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md",
+            "redirect_url": "/fabric/known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md",
+            "redirect_url": "/fabric/known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md",
+            "redirect_url": "/fabric/known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md",
+            "redirect_url": "/fabric/known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-643-tables-not-available-semantic-model.md",
+            "redirect_url": "/fabric/known-issues/known-issue-643-tables-not-available-semantic-model",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md",
+            "redirect_url": "/fabric/known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md",
+            "redirect_url": "/fabric/known-issues/known-issue-718-onelake-under-reports-transactions-other-category",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md",
+            "redirect_url": "/fabric/known-issues/known-issue-726-pipeline-xml-format-copy-stuck",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md",
+            "redirect_url": "/fabric/known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md",
+            "redirect_url": "/fabric/known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md",
+            "redirect_url": "/fabric/known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md",
+            "redirect_url": "/fabric/known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md",
+            "redirect_url": "/fabric/known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md",
+            "redirect_url": "/fabric/known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md",
+            "redirect_url": "/fabric/known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md",
+            "redirect_url": "/fabric/known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-934-external-data-sharing-not-work-different-region.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-934-external-data-sharing-not-work-different-region",
+            "redirect_document_id": false
+        }, 
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled",
+            "redirect_document_id": false
+        }, 
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md/",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-954-create-configure-delete-mirror-fails.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-954-create-configure-delete-mirror-fails",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-966-sync-content-git-workspace-fails.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-966-sync-content-git-workspace-fails",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-968-export-data-option-disabled-qa-visual.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-968-export-data-option-disabled-qa-visual",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-974-show-table-kql-queryset-editor-fails.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-974-show-table-kql-queryset-editor-fails",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-976-export-to-data-disabled-visual-calculation",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md/",
+            "redirect_url": "/fabric/known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md",
+            "redirect_url": "/fabric/known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md",
+            "redirect_url": "/fabric/known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md",
+            "redirect_url": "/fabric/known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md",
+            "redirect_url": "/fabric/known-issues/known-issue-819-subscriptions-exports-maps-wrong-results",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md",
+            "redirect_url": "/fabric/known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md",
+            "redirect_url": "/fabric/known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-835-managed-private-endpoint-connection-fail.md",
+            "redirect_url": "/fabric/known-issues/known-issue-835-managed-private-endpoint-connection-fail",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md",
+            "redirect_url": "/fabric/known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-842-warehouse-exports-pipelines-fail.md",
+            "redirect_url": "/fabric/known-issues/known-issue-842-warehouse-exports-pipelines-fail",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-844-intermittent-refresh-failure-gateway.md",
+            "redirect_url": "/fabric/known-issues/known-issue-844-intermittent-refresh-failure-gateway",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md",
+            "redirect_url": "/fabric/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md",
+            "redirect_url": "/fabric/known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md",
+            "redirect_url": "/fabric/known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-877-pipeline-connection-fails-role-removed.md",
+            "redirect_url": "/fabric/known-issues/known-issue-877-pipeline-connection-fails-role-removed",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md",
+            "redirect_url": "/fabric/known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md",
+            "redirect_url": "/fabric/known-issues/known-issue-883-spark-jobs-fail-runtime-updates",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md",
+            "redirect_url": "/fabric/known-issues/known-issue-891-warehouse-tables-not-accessible-updatable",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md",
+            "redirect_url": "/fabric/known-issues/known-issue-893-not-connect-semantic-model-analyze-excel",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md",
+            "redirect_url": "/fabric/known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md",
+            "redirect_url": "/fabric/known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md",
+            "redirect_url": "/fabric/known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md",
+            "redirect_url": "/fabric/known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md",
+            "redirect_url": "/fabric/known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md",
+            "redirect_url": "/fabric/known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/get-started/known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md",
+            "redirect_url": "/fabric/known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/index.yml",
+            "redirect_url": "/fabric/known-issues/fabric-known-issues",
+            "redirect_document_id": false
+        }           
+    ]
+}

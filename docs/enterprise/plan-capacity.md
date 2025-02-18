@@ -9,11 +9,11 @@ ms.date: 06/10/2024
 
 # Plan your capacity size
 
-[Capacity](licenses.md#capacity) planning is the process of estimating the resources needed to run Microsoft Fabric efficiently. Capacity planning helps you avoid performance issues, such as slow queries, timeouts, or throttling. Capacity planning can also help you optimize your spending, by choosing the right [capacity SKU](licenses.md#capacity-license).
+[Capacity](licenses.md#capacity) planning is the process of estimating the resources needed to run Microsoft Fabric efficiently. Capacity planning helps you avoid performance issues, such as slow queries, timeouts, or throttling. Capacity planning can also help you optimize your spending, by choosing the right [capacity SKU](licenses.md#capacity).
 
 ## Understand how consumption is calculated
 
-The [capacity SKU](licenses.md#capacity-license) table shows the number of Capacity Units (CUs) per SKU. To understand how the SKU's compute power translates to your usage, use the [capacity metrics app](metrics-app-compute-page.md). The app uses the same 30-second evaluation period that's used by the capacity platform when measuring consumption. Multiply the number of CUs in the SKU table by 30 to get the number of CUs used in 30 seconds.
+The [capacity SKU](licenses.md#capacity) table shows the number of Capacity Units (CUs) per SKU. To understand how the SKU's compute power translates to your usage, use the [capacity metrics app](metrics-app-compute-page.md). The app uses the same 30-second evaluation period that's used by the capacity platform when measuring consumption. Multiply the number of CUs in the SKU table by 30 to get the number of CUs used in 30 seconds.
 
 | SKU | Capacity Units (CU) | 30-second CU use |
 |--|--|--|
@@ -33,7 +33,7 @@ The [capacity SKU](licenses.md#capacity-license) table shows the number of Capac
 
 Follow these steps to estimate the size of the capacity you need. We recommend that you evaluate the use of a specific Fabric workload, such as [Power BI](/power-bi/enterprise/service-premium-what-is), [Spark](../data-engineering/spark-compute.md), or a [Data Warehouse](../data-warehouse/data-warehousing.md).
 
-1. Create a [trial capacity](../get-started/fabric-trial.md).
+1. Create a [trial capacity](../fundamentals/fabric-trial.md).
 
 2. In the [capacity metrics app](metrics-app-compute-page.md), review the [utilization](metrics-app-compute-page.md#utilization) visual.
 

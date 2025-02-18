@@ -5,7 +5,7 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to, build-2023
+ms.custom: template-how-to
 ---
 
 # How to configure Amazon RDS for SQL Server in copy activity
@@ -124,7 +124,7 @@ WHERE s.name='[your schema]' AND t.name = '[your table name]'
 
 If the table has physical partition, you would see "HasPartition" as "yes" like the following.
 
-:::image type="content" source="./media/connector-amazon-rds-for-sql-server/sql-query-result.png" alt-text="Sql query result":::
+:::image type="content" source="./media/connector-amazon-rds-for-sql-server/sql-query-result.png" alt-text="Screenshot of the SQL query result.":::
 
 ## Table summary
 

@@ -30,9 +30,13 @@ items:
   - name: Create an Amazon S3 compatible shortcut
     href: create-s3-compatible-shortcut.md
   - name: Create a Google Cloud Storage shortcut
-    href: create-gcs-shortcut.md  
+    href: create-gcs-shortcut.md
   - name: Create shortcuts to on-premises data
     href: create-on-premises-shortcut.md
+  - name: Create shortcuts to an Iceberg table
+    href: onelake-iceberg-tables.md
+  - name: Shortcut security
+    href: onelake-shortcut-security.md
   - name: Access OneLake shortcuts in an Apache Spark notebook
     href: access-onelake-shortcuts.md
   - name: Use shortcuts REST API
@@ -63,7 +67,7 @@ items:
   items:
   - name: Fabric and OneLake data security
     href: ./security/fabric-onelake-security.md
-  - name: OneLake Data Access Control Model
+  - name: OneLake data access control model
     href: ./security/data-access-control-model.md
   - name: Get started with securing data in OneLake
     items:
@@ -81,6 +85,12 @@ items:
       href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
     - name: For common data architectures
       href: ./security/how-to-common-data-architectures.md
+  - name: Authorize with a OneLake shared access signature (SAS)
+    items:
+    - name: What is OneLake SAS?
+      href: onelake-shared-access-signature-overview.md
+    - name: Create a OneLake SAS
+      href: how-to-create-a-onelake-shared-access-signature.md
   - name: Plan for disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
@@ -89,15 +99,25 @@ items:
     href: onelake-file-explorer.md
   - name: Release notes
     href: onelake-file-explorer-release-notes.md
-- name: Discover data in the OneLake data hub
-  href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
+- name: Discover data in the OneLake catalog
+  href: ../governance/onelake-catalog-overview.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
 - name: Billing and consumption
   items:
   - name: OneLake compute and storage consumption
     href: onelake-consumption.md
   - name: OneLake capacity consumption example
     href: OneLake-capacity-consumption.md
+- name: OneLake events
+  items:
+  - name: Explore OneLake events
+    href: ../real-time-hub/explore-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Get OneLake events in Real-Time hub
+    href: ../real-time-hub/create-streams-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Set alerts on OneLake events
+    href: ../real-time-hub/set-alerts-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Reference
   items: 
   - name: OneLake shortcuts REST API
     href: /rest/api/fabric/core/onelake-shortcuts
+  - name: OneLake data access roles REST API
+    href: /rest/api/fabric/core/onelake-data-access-security

@@ -1,13 +1,12 @@
 ---
 title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook'
 description: This article shows how to use SemPy to calculate measures in Power BI semantic models.
-ms.reviewer: mopeakande
-reviewer: msakande
-ms.author: alsavelv
-author: alsavelv
+ms.reviewer: alsavelv
+reviewer: alsavelv
+ms.author: mopeakande
+author: msakande
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 09/27/2023
 ---
 
@@ -126,7 +125,7 @@ fabric.evaluate_measure(dataset, measure=["Average Selling Area Size", "Total St
 
 ## Use Power BI XMLA connector
 
-The default semantic model client is backed by Power BI's REST APIs. If there are any issues running queries with this client, it's possible to switch the back end to Power BI's XMLA interface using `use_xmla=True`. The SemPy parameters remain the same for measure calculation with XMLA.
+The default semantic model client is backed by Power BI's REST APIs. If there are any issues running queries with this client, it's possible to switch the backend to Power BI's XMLA interface using `use_xmla=True`. The SemPy parameters remain the same for measure calculation with XMLA.
 
 ```python
 fabric.evaluate_measure(dataset, \
@@ -143,7 +142,7 @@ Check out other tutorials for semantic link / SemPy:
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
 - [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)](tutorial-relationships-detection.md)
-- [Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)](tutorial-great-expectations.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link](tutorial-relationships-detection.md)
+- [Tutorial: Validate data using SemPy and Great Expectations (GX)](tutorial-great-expectations.md)
 
 <!-- nbend -->

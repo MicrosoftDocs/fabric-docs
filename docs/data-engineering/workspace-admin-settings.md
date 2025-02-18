@@ -1,23 +1,21 @@
 ---
-title: Apache Spark workspace administration settings in Microsoft Fabric
-description: Learn about the workspace administration settings for Data Engineering and Science experiences such as Apache Spark Pools, high concurrency Mode, runtime version, Spark properties, and autologging.
+title: Workspace administration settings in Microsoft Fabric
+description: Learn about the workspace administration settings for Data Engineering and Science experiences in Fabric.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/15/2023
 ---
 
-# Apache Spark workspace administration settings in Microsoft Fabric
+# Data Engineering workspace administration settings in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 When you create a workspace in Microsoft Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Microsoft Fabric, there's no need to choose the node or machine sizes, as these options are handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Apache Spark session start experience for users to get started and run your Apache Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Apache Spark pool and size the nodes based on their performance needs.
 
-To make changes to the Apache Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../get-started/roles-workspaces.md).
+To make changes to the Apache Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
 To manage the Spark settings for the pool associated with your workspace:
 
@@ -48,7 +46,7 @@ Admins can create custom Spark pools based on their compute requirements by sele
 
 :::image type="content" source="media/workspace-admin-settings/custom-pool-creation-inline.png" alt-text="Screenshot showing custom pool creation options." lightbox="media/workspace-admin-settings/custom-pool-creation.png":::
 
-Apache Spark for Microsoft Fabric supports single node clusters, which allows users to select a minimum node configuration of 1 in which case the driver and executor run in a single node. These single node clusters offer restorable high-availability in case of node failures and better job reliability for workloads with smaller compute requirements. You can also enable or disable autoscaling option for your custom Spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
+Apache Spark for Microsoft Fabric supports single node clusters, which allows users to select a minimum node configuration of 1 in which case the driver and executor run in a single node. These single node clusters offer restorable high-availability during node failures and better job reliability for workloads with smaller compute requirements. You can also enable or disable autoscaling option for your custom Spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
 
 You can also select the option to dynamically allocate executors to pool automatically optimal number of executors within the max bound specified based on the data volume for better performance.
 
@@ -60,7 +58,7 @@ Learn more about [Apache Spark compute for Fabric](spark-compute.md).
 
 :::image type="content" source="media/workspace-admin-settings/customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items.":::
 
-If the setting is turned off by the workspace admin, the Default pool and its compute configurations will be used for all environments in the workspace.
+If the setting is turned off by the workspace admin, the Default pool and its compute configurations are used for all environments in the workspace.
 
 ## Environment
 
@@ -72,13 +70,27 @@ As a Fabric workspace admin, you can select an Environment as workspace default 
 
 You can also create a new one through the **Environment** dropdown.
 
-:::image type="content" source="media/workspace-admin-settings/env-dropdown-ws-inline.png" alt-text="Environment creation through attachment dropdown in WS setting" lightbox="media/workspace-admin-settings/env-dropdown-ws.png":::
+:::image type="content" source="media/workspace-admin-settings/env-dropdown-ws-inline.png" alt-text="Screenshot of environment creation through attachment dropdown in WS setting." lightbox="media/workspace-admin-settings/env-dropdown-ws.png":::
 
 If you disable the option to have a default environment, you have the option to select the Fabric runtime version from the available runtime versions listed in the dropdown selection. 
 
 :::image type="content" source="media/workspace-admin-settings/select-runtime-from-list-inline.png" alt-text="Screenshot showing where to select runtime version." lightbox="media/workspace-admin-settings/select-runtime-from-list.png":::
 
 Learn more about [Apache Spark runtimes](runtime.md).
+
+## Jobs
+
+Jobs settings allow admins to control the job admission logic for all the Spark jobs in the workspace. 
+
+:::image type="content" source="media/workspace-admin-settings/jobs-settings.png" alt-text="Screenshot showing the jobs settings." lightbox="media/workspace-admin-settings/jobs-settings.png":::
+
+By default all workspaces are enabled with Optimistic Job Admission. Learn more about [Job admission for Spark in Microsoft Fabric](job-admission-management.md).
+
+You can enable the **Reserve maximum cores for active Spark jobs** to turn of Optimistic job admission based approach and reserve max cores for their Spark jobs. 
+
+You can also set the **Spark session timeout** to customize the session expiry for all the notebook interactive sessions. 
+> [!NOTE]
+> The default session expiry is set to 20 minutes for the interactive Spark sessions.
 
 ## High concurrency
 

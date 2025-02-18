@@ -1,13 +1,11 @@
 ---
 title: "Tutorial: Train and register machine learning models"
 description: In this third part of the tutorial series, learn how to train machine learning models to predict whether bank customers would stop doing business with the bank or not, and then register the trained models.
-ms.reviewer: sgilley
-ms.author: amjafari
-author: amhjf
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 06/04/2024
 ---
 
@@ -21,7 +19,7 @@ In this tutorial, you'll:
 
 > [!div class="checklist"]
 >
-> * Train Random Forrest and LightGBM models.
+> * Train Random Forest and LightGBM models.
 > * Use Microsoft Fabric's native integration with the MLflow framework to log the trained machine learning models, the used hyperaparameters, and evaluation metrics.
 > * Register the trained machine learning model.
 > * Assess the performances of the trained machine learning models on the validation dataset.
@@ -103,7 +101,7 @@ mlflow.autolog(exclusive=False)
 
 ## Import scikit-learn and LightGBM
 
-With your data in place, you can now define the machine learning models. You'll apply Random Forrest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
+With your data in place, you can now define the machine learning models. You'll apply Random Forest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
 
 
 ```python

@@ -6,9 +6,7 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 01/28/2025
 ms.search.form: Notebook REST API ci cd
 ---
 
@@ -18,9 +16,6 @@ ms.search.form: Notebook REST API ci cd
 The Microsoft Fabric REST API provides a service endpoint for the create, read, update, and delete (CRUD) operations of a Fabric item. This article describes the available notebook REST APIs and their usage.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
-> [!NOTE]
-> [Service principal authentication](/entra/identity-platform/app-objects-and-service-principals#service-principal-object)  is not supported for now.
 
 With the notebook APIs, data engineers and data scientists can automate their own pipelines and conveniently and efficiently establish CI/CD. These APIs also make it easy for users to manage and manipulate Fabric notebook items, and integrate notebooks with other tools and systems.
 
@@ -48,6 +43,9 @@ The following **Job scheduler** actions are available for notebooks:
 
 For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
+> [!NOTE]
+> Service principal authentication is available for Notebook CRUD API and Job scheduler API, meaning you can use service principal to do the CRUD operations and trigger/cancel notebook runs, and get the run status. You need to add the service principal to the workspace with the appropriate role.
+
 ## Notebook REST API usage examples
 
 Use the following instructions to test usage examples for specific notebook public APIs and verify the results.
@@ -61,21 +59,21 @@ The Fabric Rest API defines a unified endpoint for operations. Replace the place
 
 ### Create a notebook with a definition
 
-Create a notebook item with an existing .ipynb file:
+Create a notebook item with an existing .ipynb file and other type of source files.
 
 **Request**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items
-
+ 
 {
     "displayName":"Notebook1",
     "type":"Notebook",
     "definition" : {
-        "format": "ipynb",
+        "format": "ipynb", // Use "fabricGitSource" for source file format.
         "parts": [
             {
-                "path": "artifact.content.ipynb",
+                "path": "notebook-content.ipynb", // fabric source file format, .py, .scala, .sql files are supported.
                 "payload": "eyJuYmZvcm1hdCI6NCwibmJmb3JtYXRfbWlub3IiOjUsImNlbGxzIjpbeyJjZWxsX3R5cGUiOiJjb2RlIiwic291cmNlIjpbIiMgV2VsY29tZSB0byB5b3VyIG5ldyBub3RlYm9va1xuIyBUeXBlIGhlcmUgaW4gdGhlIGNlbGwgZWRpdG9yIHRvIGFkZCBjb2RlIVxuIl0sImV4ZWN1dGlvbl9jb3VudCI6bnVsbCwib3V0cHV0cyI6W10sIm1ldGFkYXRhIjp7fX1dLCJtZXRhZGF0YSI6eyJsYW5ndWFnZV9pbmZvIjp7Im5hbWUiOiJweXRob24ifX19",
                 "payloadType": "InlineBase64"
             }
@@ -105,7 +103,7 @@ The payload in the request is a base64 string converted from the following sampl
         "language_info": {
             "name": "python"
         },
-        "trident": {
+        "dependencies": {
             "environment": {
                 "environmentId": "6524967a-18dc-44ae-86d1-0ec903e7ca05",
                 "workspaceId": "c31eddd2-26e6-4aa3-9abb-c223d3017004"
@@ -175,6 +173,10 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ART
         "configuration": {
             "conf": {
                 "spark.conf1": "value"
+            },
+            "environment": {
+                "id": "<environment_id>",
+                "name": "<environment_name>"
             },
             "defaultLakehouse": {
                 "name": "<lakehouse-name>",

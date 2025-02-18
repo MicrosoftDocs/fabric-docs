@@ -1,14 +1,12 @@
 ---
-title: Develop, execute, and debug Apache Spark job definitions in VS Code
+title: Create and manage Apache Spark job definitions in VS Code
 description: Learn about the VS Code extension for Synapse, which supports a pro-developer experience for creating, running, and debugging Spark job definitions.
 ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/13/2024
+ms.date: 11/11/2024
 ms.search.form: VSCodeExtension
 ---
 
@@ -40,7 +38,7 @@ To upload or overwrite the main definition file, select the **Add Main File** op
 
 To upload the library file that the main definition file references, select the **Add Lib File** option.
 
-   :::image type="content" source="media\vscode\upload-lib.png" alt-text="Screenshot showing upload lib button.":::
+   :::image type="content" source="media\vscode\upload-lib.png" alt-text="Screenshot showing upload library button.":::
 
 After you have uploaded a file, you can override it by clicking the **Update File** option and uploading a new file, or you can delete the file via the **Delete** option.
 

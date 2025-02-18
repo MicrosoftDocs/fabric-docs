@@ -6,70 +6,42 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Azure Cosmos DB CDC source to an eventstream (preview)
+# Add Azure Cosmos DB CDC source to an eventstream
 
-This article shows you how to add an Azure Cosmos DB (**Azure Cosmos DB for NoSQL**) Change Data Capture source to an eventstream. The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database.
+This article shows you how to add an Azure Cosmos DB (**Azure Cosmos DB for NoSQL**) Change Data Capture source to an eventstream. 
 
-The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
-
-[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
-## Prerequisites
-
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
-- Access to an **Azure Cosmos DB for NoSQL** account and database.
-- Your Azure Cosmos DB for NoSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+[!INCLUDE [azure-cosmos-db-cdc-source-prerequisites-connection-details](./includes/azure-cosmos-db-cdc-source-prerequisites-connection-details.md)]
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 
-## Get connection details from the Azure portal
-
-The labels for the items you need to collect from the Azure portal are shown in the steps below. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
-
-> [!NOTE]
-> Azure Cosmos DB for NoSQL CDC is using the [**Latest Version Mode**](/azure/cosmos-db/nosql/change-feed-modes?tabs=latest-version#latest-version-change-feed-mode) of [Azure Cosmos DB Change Feed](/azure/cosmos-db/change-feed). It captures the changes to records in the latest version. Note that Deletions are't captured with this mode.  
-
-
-1. On the Azure portal page for your Azure Cosmos DB account, select **Keys** under **Settings** in the left navigation.
-
-1. On the **Keys** page, copy the **URI** and **Primary key** values to use for setting up the eventstream connection.
-
-   ![A screenshot of the URI and Primary key on the Azure Cosmos DB Keys page in the Azure portal.](media/add-source-azure-cosmos-db-change-data-capture/uri.png)
-
-1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
-
-   ![A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/containers.png)
-
-
 ## Add Azure Cosmos DB (CDC) as a source
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
+On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.
 
-1. On the next screen, select **Add external source**.
-
-   ![A screenshot of selecting Add external source.](media/external-sources/add-external-source.png)
+:::image type="content" source="./media/add-source-azure-cosmos-db-change-data-capture/select-azure-cosmos-db.png" alt-text="Screenshot that shows the selection of Azure Cosmos DB (CDC) as the source type in the Select a data source wizard." lightbox="./media/add-source-azure-cosmos-db-change-data-capture/select-azure-cosmos-db.png":::
 
 ## Configure and connect to Azure Cosmos DB (CDC)
 
 [!INCLUDE [azure-cosmos-db-connector](./includes/azure-cosmos-db-cdc-source-connector.md)]
 
-You see the Azure Cosmos DB (CDC) source added to your eventstream in **Edit mode**.
+## View updated eventstream
+1. You see the Azure Cosmos DB (CDC) source added to your eventstream in **Edit mode**. Select **Publish** to publish the changes and begin streaming Azure Cosmos DB CDC data to the eventstream.
 
-   ![A screenshot of the added Azure Cosmos DB CDC source in Edit mode with the Publish button highlighted.](media/add-source-azure-cosmos-db-change-data-capture/edit-mode.png)
+    :::image type="content" source="media/add-source-azure-cosmos-db-change-data-capture/edit-mode.png" alt-text="A screenshot of the added Azure Cosmos DB CDC source in Edit mode with the Publish button highlighted.":::
+1. You see the eventstream in Live mode. Select **Edit** on the ribbon to get back to the Edit mode to update the eventstream. 
 
-Select **Publish** to publish the changes and begin streaming Azure Cosmos DB CDC data to the eventstream.
-
-   ![A screenshot of the published eventstream with Azure Cosmos DB source in Live View.](media/add-source-azure-cosmos-db-change-data-capture/live-view.png)
+    :::image type="content" source="media/add-source-azure-cosmos-db-change-data-capture/live-view.png" alt-text="A screenshot of the published eventstream with Azure Cosmos DB source in Live View.":::
 
 ## Related content
 

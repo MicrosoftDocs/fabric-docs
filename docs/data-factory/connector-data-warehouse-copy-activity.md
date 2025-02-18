@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 04/10/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Configure Data Warehouse in a copy activity
@@ -128,6 +126,8 @@ If your source data store and format isn't originally supported by a COPY comman
 When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. 
 
 To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage.
+
+Please note that you need to ensure the IP range of the Data Warehouse has been allowed correctly from the staging storage.
 
 ### Mapping
 

@@ -4,8 +4,7 @@ description: Learn how Power BI semantic models can inherit sensitivity labels f
 author: paulinbar
 ms.author: painbar
 manager: kfollis
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: conceptual
 ms.custom:
 ms.date: 03/28/2024

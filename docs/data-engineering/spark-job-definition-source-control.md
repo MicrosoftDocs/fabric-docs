@@ -1,6 +1,6 @@
 ---
 title: Spark Job Definition source control
-description: Learn about Spark Job Definition Git integration 
+description: Learn about Spark job definition Git integration, including how to set up a connection and how files are represented in Git.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang

@@ -6,14 +6,15 @@ ms.author: eskot
 author: ekote
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 10/14/2024
 ---
 
-# Runtime 1.1
+# Fabric Runtime 1.1 (EOSA)
 
 Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of the Data Engineering and Data Science experiences in Fabric. This document covers the Fabric Runtime 1.1 components and versions.
+
+> [!Warning]
+> The end of support date for Runtime 1.1 has been announced as July 12, 2024. Runtime 1.1, based on Apache Spark 3.3, will be deprecated and disabled as of March 31, 2025. [Upgrade your workspace](./runtime.md#multiple-runtimes-support) and environments to Runtime 1.2 or Runtime 1.3. For the complete lifecycle and support policies of Apache Spark runtimes in Fabric, refer to [Lifecycle of Apache Spark runtimes in Fabric](./lifecycle.md).
 
 Microsoft Fabric Runtime 1.1 is one of the runtimes offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
 
@@ -25,11 +26,14 @@ Microsoft Fabric Runtime 1.1 is one of the runtimes offered within the Microsoft
 - Delta Lake: 2.2
 - R: 4.2.2
 
+> [!TIP]
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
+
 Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 
-Microsoft Fabric periodically releases maintenance updates for Runtime 1.1, delivering bug fixes, performance enhancements, and security patches. Ensuring you stay up to date with these updates guarantees optimal performance and reliability for your data processing tasks. **If you are currently using Runtime 1.1, you can upgrade to Runtime 1.2 by navigating to Workspace Settings > Data Engineering / Science > Spark Settings.**
+Microsoft Fabric periodically releases maintenance updates for Runtime 1.1, delivering bug fixes, performance enhancements, and security patches. Ensuring you stay up to date with these updates guarantees optimal performance and reliability for your data processing tasks. **If you are currently using Runtime 1.1, you can upgrade to Runtime 1.3 or to Runtime 1.2 by navigating to Workspace Settings > Data Engineering / Science > Spark Settings > Environment.**
 
-:::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version.":::
+:::image type="content" source="media\mrs\runtime13.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\mrs\runtime13.png":::
 
 ## New features and improvements - Apache Spark 3.3.1
 
@@ -41,7 +45,7 @@ Check the source and full release notes at [Delta Lake 2.2.0](https://github.com
 
 ## Default-level packages for Java/Scala
 
-For a list of all the default level packages for Java, Scala, Python and their respective versions see the [release notes](https://github.com/microsoft/synapse-spark-runtime/blob/main/Fabric/spark3.3/Official-Spark3.3-Rel-2024-05-01.3-rc.1.md)
+For a list of all the default level packages for Java, Scala, Python and their respective versions see the [release notes](https://github.com/microsoft/synapse-spark-runtime/tree/9ba4059c0d9433bf2b6e25cd70fe60c6e0acd51c/Fabric/Runtime%201.1%20(Spark%203.3)).
 
 ## Migration between different Apache Spark versions
 

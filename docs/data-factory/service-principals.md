@@ -5,7 +5,7 @@ author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.reviewer: dougklo
 ms.topic: conceptual
-ms.date: 1/16/2024
+ms.date: 09/16/2024
 ---
 
 # Service principal support in Data Factory
@@ -43,7 +43,7 @@ In this example, you can use service principal to connect to Azure Data Lake Sto
 
 ### Connect to your data using service principal in Dataflow Gen2
 
-1. Navigate to [Fabric](https://app.fabric.microsoft.com/).
+1. Navigate to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-factory-service-principals).
 
 2. Create a new Dataflow Gen2 or edit an existing one where you would like to add the data source.  
 

@@ -5,16 +5,14 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
-ms.date: 05/27/2024
+ms.date: 11/12/2024
 ---
 
 # User permissions
 
 User permissions are used to control which user can access data in Microsoft Fabric. When you create your workload, use permissions to secure your workload, and to add functionality to your workload. This article lists the permissions for internal and external users in the Microsoft Fabric Workload Development Kit.
 
-## Internal user permissions
-
-This table lists the permissions for internal users in the Microsoft Fabric Workload Development Kit.
+This table lists the Microsoft Fabric user permissions in the Microsoft Fabric Workload Development Kit.
 
 | Operation | Viewer | Contributor | Member | Admin |
 |--|--|--|--|--|
@@ -28,13 +26,6 @@ This table lists the permissions for internal users in the Microsoft Fabric Work
 | Give access to a workspace | N/A | N/A | &#x2705; | &#x2705; |
 | Edit item | &#x274C; | &#x2705; | &#x2705; | &#x2705; |
 | Share item | &#x274C; | &#x274C; | &#x274C; | &#x274C; |
-
-## External user permissions
-
-This table lists the permissions for external users in the Microsoft Fabric Workload Development Kit.
-
-| Operation | Viewer | Contributor | Member | Admin |
-|--|--|--|--|--|
 | See the workload list |&#x2705;|&#x2705;|&#x2705;|&#x2705;|
 | Create a new item |N/A|&#x2705;|&#x2705;|&#x2705;|
 | Read item (open item) |&#x2705;|&#x2705;|&#x2705;|&#x2705;|
@@ -48,7 +39,7 @@ This table lists the permissions for external users in the Microsoft Fabric Work
 
 ## Considerations and limitations
 
-* Opening the [admin portal](../admin/admin-center.md) isn't supported. A user with admin permissions that opens the admin portal, will view it as if he is a non-admin user.
+* Opening the [admin portal](../admin/admin-center.md) isn't supported. A user with admin permissions that opens the admin portal, will view it as a non-admin user.
 
 * You can't assign these roles to a user:
     * Capacity admin

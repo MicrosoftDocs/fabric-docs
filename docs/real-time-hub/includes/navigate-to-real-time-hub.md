@@ -5,14 +5,13 @@ author: spelluru
 ms.author: spelluru
 ms.topic: include
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ---
 
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
-1. Switch to the Real-Time Intelligence experience in Microsoft Fabric. Select **Microsoft Fabric** on the left navigation bar, and select **Real-Time Intelligence**. 
+1. If you see **Power BI** at the bottom-left of the page, switch to the **Fabric** workload by selecting **Power BI** and then by selecting **Fabric**.
 
-    :::image type="content" source="../media/get-started-real-time-hub/switch-to-real-time-intelligence.png" alt-text="Screenshot that shows the Fabric Real-Time hub with Real-Time Intelligence selected." lightbox="../media/get-started-real-time-hub/switch-to-real-time-intelligence.png":::    
-1. Select **Real-Time hub** on the left navigation bar. 
+    :::image type="content" source="./media/launch-get-events-experience/switch-to-fabric-workload.png" alt-text="Screenshot that shows how to switch to the Fabric workload.":::    
+1. Select **Real-Time** on the left navigation bar.
 
-    :::image type="content" source="../media/get-started-real-time-hub/hub-data-streams-tab.png" alt-text="Screenshot that shows the Fabric Real-Time hub with the default tab Data streams selected." lightbox="../media/get-started-real-time-hub/hub-data-streams-tab.png":::
+    :::image type="content" source="../media/get-started-real-time-hub/select-real-time-hub.png" alt-text="Screenshot that shows the Real-Time selected on the left navigation bar." lightbox="../media/get-started-real-time-hub/select-real-time-hub.png":::

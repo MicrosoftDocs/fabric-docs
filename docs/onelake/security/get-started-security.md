@@ -1,13 +1,13 @@
 ---
 title: OneLake security overview
-description: Get started with securing your data in OneLake with this overview of the concepts and capabilities.
+description: Get started with securing your data in OneLake with this overview of the core concepts and capabilities.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
-  - ignite-2023
 ms.date: 11/15/2023
+#customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
 
 # OneLake security overview
@@ -42,7 +42,7 @@ You can simplify the management of Fabric workspace roles by assigning them to s
 
 ## Item permissions
 
-With the [sharing](../../get-started/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. Item permissions grant access to connect to that item and which item endpoints the user is able to access.
+With the [sharing](../../fundamentals/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. Item permissions grant access to connect to that item and which item endpoints the user is able to access.
 
 |     Permission |   See the item metadata? |     See data in SQL? |     See data in OneLake? |
 |----------------|--------------------------|----------------------|--------------------------|
@@ -58,7 +58,7 @@ Another way to configure permissions is via an item's **Manage permissions** pag
 
 Data access can also be given through the SQL compute engine in Microsoft Fabric. The access granted through SQL only applies to users accessing data through SQL, but you can use this security to give more selective access to certain users. In its current state, SQL supports restricting access to specific tables and schemas, as well as row and column level security.
 
-Users accessing data through SQL may see different results than accessing data directly in OneLake depending on the compute permissions applied. To prevent this, ensure that a user's item permissions are configured to only grant them access to either the SQL Endpoint (using ReadData) or OneLake (using ReadAll or data access roles preview).
+Users accessing data through SQL may see different results than accessing data directly in OneLake depending on the compute permissions applied. To prevent this, ensure that a user's item permissions are configured to only grant them access to either the SQL analytics endpoint (using ReadData) or OneLake (using ReadAll or data access roles preview).
 
 In the following example, a user is given read-only access to a lakehouse through item sharing. The user is granted SELECT permission on a table through the SQL analytics endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don't have sufficient permissions. The user can successfully read through SQL SELECT statements.
 
@@ -88,6 +88,6 @@ Learn more about the security model for shortcuts in [Data Access Control Model]
 
 - [Fabric and OneLake security overview](./fabric-onelake-security.md)
 - [OneLake data access roles (preview)](./get-started-data-access-roles.md)
-- [Workspace roles](../../get-started/roles-workspaces.md)
+- [Workspace roles](../../fundamentals/roles-workspaces.md)
 - [OneLake file explorer](../onelake-file-explorer.md)
-- [Share items](../../get-started/share-items.md)
+- [Share items](../../fundamentals/share-items.md)

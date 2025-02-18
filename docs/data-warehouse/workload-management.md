@@ -5,11 +5,8 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stevehow
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Workload management

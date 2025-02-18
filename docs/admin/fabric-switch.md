@@ -4,18 +4,16 @@ description: Learn how to enable Microsoft Fabric for your organization.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/07/2023
+ms.date: 02/05/2025
 ---
 
 # Enable Microsoft Fabric for your organization
 
-The [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) admin switch lets organizations that use Power BI enable Microsoft Fabric.
+The [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) admin switch lets organizations that use Power BI enable Microsoft Fabric.
 
 >[!NOTE]
->Microsoft Fabric availability is restricted in some regions. For more information, see [Fabric region availability](./region-availability.md).
+>* Power BI is part of Microsoft Fabric. The Power BI portal mentioned in this article is now the Microsoft Fabric portal. 
+>* Microsoft Fabric availability is restricted in some regions. For more information, see [Fabric region availability](./region-availability.md).
 
 You can enable Microsoft Fabric for:
 
@@ -27,13 +25,7 @@ In both cases, you can use security groups to provide Microsoft Fabric access to
 
 ## Prerequisites
 
-To enable Microsoft Fabric, you need to have one of the following admin roles:
-
-* [Microsoft 365 Global admin](microsoft-fabric-admin.md#microsoft-365-admin-roles)
-
-* [Power Platform admin](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
-
-* [Fabric admin](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
+To enable Microsoft Fabric, you need to have the *Fabric administrator* role.
 
 ## Enable for your tenant
 
@@ -50,7 +42,7 @@ In your tenant, you can enable Microsoft Fabric for:
 
 Follow these steps to enable Microsoft Fabric for your tenant.
 
-1. Navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric*, expand **Users can create Fabric items**.
+1. In the Power BI portal, navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric*, expand **Users can create Fabric items**.
 
 2. Enable the **Users can create Fabric items** switch.
 
@@ -67,7 +59,7 @@ Consider the Microsoft Fabric setting at the tenant level a recommendation for t
 
 Follow these steps to enable Microsoft Fabric for a specific capacity.
 
-1. Navigate to the [capacity settings](service-admin-portal-capacity-settings.md) in the admin portal.
+1. Navigate to the [capacity settings](capacity-settings.md) in the admin portal.
 
 2. Select the capacity you want to enable Microsoft Fabric for.
 
@@ -96,4 +88,3 @@ Users that don't have Microsoft Fabric enabled, can:
 ## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
-* [Enable Data Activator](data-activator-switch.md)

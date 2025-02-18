@@ -6,9 +6,7 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/01/2024
+ms.date: 07/19/2024
 ---
 
 # Lakehouse tutorial: Building reports in Microsoft Fabric
@@ -31,13 +29,13 @@ In traditional DirectQuery mode, the Power BI engine directly queries the data f
 
 DirectLake mode now eliminates this import requirement by loading the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur, thus combining the advantages of DirectQuery and import mode while avoiding their disadvantages. DirectLake mode is the ideal choice for analyzing very large semantic models and semantic models with frequent updates at the source.
 
-1. From your **wwilakehouse** lakehouse, select **SQL analytics endpoint** from the **Lakehouse** drop-down menu at the top right of the screen.
+1. From your **wwilakehouse** lakehouse, select **SQL analytics endpoint** from the **Lakehouse** dropdown menu at the top right of the screen.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL analytics endpoint from the top right drop-down menu.":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL analytics endpoint from the top right dropdown menu." lightbox="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png":::
 
-1. From the SQL endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI semantic model.
+1. From the SQL analytics endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI semantic model.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png" alt-text="Screenshot showing where to select the Refresh icon and the Model tab.":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png" alt-text="Screenshot showing where to select the Refresh icon and the Model tab." lightbox="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png":::
 
 1. For this data model, you need to define the relationship between different tables so that you can create reports and visualizations based on data coming across different tables. From the **fact_sale** table, drag the **CityKey** field and drop it on the **CityKey** field in the **dimension_city** table to create a relationship. The **New relationship** dialog box appears.
 
@@ -57,7 +55,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    - Select the box next to **Assume referential integrity**.
 
-   - Select **OK**.
+   - Select **Save**.
 
       :::image type="content" source="media\tutorial-lakehouse-build-report\create-relationship-dialog.png" alt-text="Screenshot of the New relationship dialog box, showing where to select Assume referential integrity.":::
 

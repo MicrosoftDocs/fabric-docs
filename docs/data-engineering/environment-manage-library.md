@@ -1,6 +1,6 @@
 ---
 title: Library management in Fabric environments
-description: Learn how to include public and custom libraries in Fabric environments.
+description: Learn about library management in Fabric, including how to add public and custom libraries to your Fabric environments.
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
@@ -12,11 +12,17 @@ ms.search.for: Manage libraries in Environment
 
 Microsoft Fabric environments provide flexible configurations for running your Spark jobs. Libraries provide reusable code that developers want to include in their work. Except for the built-in libraries that come with each Spark runtime, you can install public and custom libraries in your Fabric environments. And you can easily attach environments to your notebooks and Spark job definitions.
 
+> [!NOTE]
+> Modifying the version of a specific package could potentially break other packages that depend on it. For instance, downgrading `azure-storage-blob` might cause problems with `Pandas` and various other libraries that rely on `Pandas`, including `mssparkutils`, `fsspec_wrapper`, and `notebookutils`.
+> You can view the list of preinstalled packages and their versions for each runtime [here](runtime.md).
+> Check more options and best practices of using libraries in Microsoft Fabric: [Manage Apache Spark libraries in Microsoft Fabric](library-management.md)
+>
+
 ## Public libraries
 
 Public libraries are sourced from repositories such as PyPI and Conda, which Fabric currently supports.
 
-:::image type="content" source="media\environment-lm\env-library-management-public-library.png" alt-text="Screenshot of the environment Public Libraries screen.":::
+:::image type="content" source="media\environment-lm\env-library-management-public-library.png" alt-text="Screenshot of the environment Public Libraries screen." lightbox="media\environment-lm\env-library-management-public-library.png":::
 
 ### Add a new public library
 
@@ -54,13 +60,13 @@ Fabric provides the option to export the full public library list to a YAML file
 
 ## Custom libraries
 
-Custom libraries refer to code built by you or your organization. Fabric supports custom library files in .whl, .jar, and .tar.gz formats.
+Custom libraries refer to code built by you or your organization. Fabric supports custom library files in .whl, .py, .jar, and .tar.gz formats.
 
 > [!NOTE]
 > Fabric only supports *.tar.gz* files for R language.
-> Use the *.whl* file format for Python language.
+> Use the *.whl, .py* file format for Python language.
 
-:::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot of the environment Custom Libraries screen.":::
+:::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot of the environment Custom Libraries screen." lightbox="media\environment-lm\env-library-management-custom-library.png":::
 
 ### Upload the custom library
 

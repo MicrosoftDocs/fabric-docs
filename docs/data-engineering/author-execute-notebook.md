@@ -1,13 +1,11 @@
 ---
 title: Develop, execute, and manage notebooks
-description: Learn how to author and develop Microsoft Fabric notebook jobs with rich built-in features.
+description: Learn how to author, execute, and manage Microsoft Fabric notebook jobs with rich built-in features.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.search.form: Develop and run notebooks
 ms.date: 11/15/2023
 ---
@@ -99,19 +97,19 @@ Fabric notebooks provide code snippets that help you easily write commonly used 
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippet contents align with the code cell language. You can see available snippets by typing **Snippet**. You can also type any keyword to see a list of relevant snippets. For example, if you type **read**, you see the list of snippets to read data from various data sources.
 
-![Animated GIF of code snippets.](media/author-execute-notebook/code-snippet.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/code-snippet.gif" alt-text="Animated GIF of code snippets.":::
 
 ### Drag and drop to insert snippets
 
 Use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here; you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
-![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-snippet.gif" alt-text="Animated GIF of drag and drop to insert snippets.":::
 
 ### Drag and drop to insert images
 
 Use drag and drop to easily insert images from your browser or local computer to a markdown cell.
 
-![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drag-drop-insert-image.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-image.gif" alt-text="Animated GIF of drag and drop to insert images.":::
 
 ### Format text cell with toolbar buttons
 
@@ -127,7 +125,7 @@ Select **Undo** or **Redo**, or press **Z** or **Shift+Z** to revoke the most re
 
 Supported undo cell operations:
 
-- Insert or delete cell. You can revoke the delete operations by selecting **Undo** (the text content is kept along with the cell).
+- Insert or delete cell. You can revoke the deleted operations by selecting **Undo** (the text content is kept along with the cell).
 - Reorder cell.
 - Toggle parameter.
 - Convert between code cell and Markdown cell.
@@ -139,7 +137,7 @@ Supported undo cell operations:
 
 You can drag from the empty part of a cell and drop it to the desired position.
 
-<!-- ![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif) -->
+<!-- :::image type="content" border="true" source="media/author-execute-notebook/drag-drop-move-cell.gif" alt-text="Animated GIF of drag and drop to move a cell."::: -->
 
 You can also move the selected cell using **Move up** and **Move down** on the ribbon.
 
@@ -155,7 +153,7 @@ You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode)
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide input** to collapse the current cell's input. To expand it again, select **Show input** when the cell is collapsed.
 
-<!-- ![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif) -->
+<!-- :::image type="content" border="true" source="media/author-execute-notebook/collapse-cell-input.gif" alt-text="Animated GIF of collapsing cell input."::: -->
 
 ### Collapse a cell output
 
@@ -163,7 +161,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table will see an unauthorized error during query execution.
+Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
 > Security only applies during query execution and any notebook cells containing query results can be viewed by users that are not authorized to run queries against the data directly.
@@ -172,7 +170,7 @@ Using [OneLake data access roles (preview)](../onelake/security/get-started-data
 
 The lock and freeze cell operations allow you to make cells read-only or stop code cells from being run on an individual basis.
 
-![Animated GIF of lock or freeze a cell.](media/author-execute-notebook/lock-and-freeze-cell.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/lock-and-freeze-cell.gif" alt-text="Animated GIF of lock or freeze a cell.":::
 
 ### Merge and split cells
 
@@ -192,7 +190,7 @@ Selecting Outlines or Table of Contents presents the first markdown header of an
 
 The markdown folding option allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations.
 
-![Animated GIF of markdown folding.](media/author-execute-notebook/markdown-folding.gif)
+:::image type="content" border="true" source="media/author-execute-notebook/markdown-folding.gif" alt-text="Animated GIF of markdown folding.":::
 
 ### Find and replace
 
@@ -237,7 +235,7 @@ Select **Cancel all** to cancel the running cells or cells waiting in the queue.
 
 #### Reference run a Notebook
 
-In addition to [mssparkutils reference run API](microsoft-spark-utilities.md), you can also use the ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. The ```%run``` magic command supports nested calls but doesn't support recursive calls. You receive an exception if the statement depth is larger than **five**.
+In addition to [notebookutils reference run API](notebook-utilities.md), you can also use the ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. The ```%run``` magic command supports nested calls but doesn't support recursive calls. You receive an exception if the statement depth is larger than **five**.
 
 Example:
 ``` %run Notebook1 { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true,  "parameterString": "abc" } ```.
@@ -257,7 +255,7 @@ The ```%run``` command also allows you to run Python or SQL files that are store
 ``` %run [-b/--builtin -c/--current] [script_file.py/.sql] [variables ...] ```
 
 For options:
-- **-b/--builtin**: This option indicates that the command will find and run the specified script file from the notebook’s built-in resources.
+- **-b/--builtin**: This option indicates that the command finds and runs the specified script file from the notebook’s built-in resources.
 - **-c/--current**: This option ensures that the command always uses the current notebook’s built-in resources, even if the current notebook is referenced by other notebooks.
 
 Examples:
@@ -278,8 +276,8 @@ Usage example for nested run case:
     - **Notebook2**: Contains *script_file2.py* in its built-in resources
 - Let's use **Notebook1** work as a root notebook with the content: ``` %run Notebook2 ```.
 - Then in the **Notebook2** the usage instruction is:
-    - To run *script_file1.py* in **Notebook1**(the root Notebook) the code would be: ``` %run -b script_file1.py ```
-    - To run *script_file2.py* in **Notebook2**(the current Notebook) the code would be: ``` %run -b -c script_file2.py ```
+    - To run *script_file1.py* in **Notebook1**(the root Notebook), the code would be: ``` %run -b script_file1.py ```
+    - To run *script_file2.py* in **Notebook2**(the current Notebook), the code would be: ``` %run -b -c script_file2.py ```
 
 ### Variable explorer
 
@@ -418,6 +416,8 @@ IPython Widgets are eventful Python objects that have a representation in the br
 - The Fabric global *display* function doesn't support displaying multiple widgets in one call (for example, *display(a, b)*). This behavior is different from the IPython *display* function.
 
 - If you close a notebook that contains an IPython widget, you can't see or interact with it until you execute the corresponding cell again.
+  
+- The interact function (ipywidgets.interact) is not supported.
 
 ## Integrate a notebook
 
@@ -444,20 +444,21 @@ You can personalize your Spark session with the magic command **%%configure**. F
 ```json
 %%configure
 {
-    // You can get a list of valid parameters to config the session from  https://github.com/cloudera/livy#request-body.
-    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g", "472g"]
-    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80]
+    // You can get a list of valid parameters to config the session from https://github.com/cloudera/livy#request-body.
+    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g"]
+    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64]
     "executorMemory": "28g",
     "executorCores": 4,
     "jars": ["abfs[s]: //<file_system>@<account_name>.dfs.core.windows.net/<path>/myjar.jar", "wasb[s]: //<containername>@<accountname>.blob.core.windows.net/<path>/myjar1.jar"],
-    "conf": {
+    "conf":
+    {
         // Example of customized property, you can specify count of lines that Spark SQL returns by configuring "livy.rsc.sql.num-rows".
         "livy.rsc.sql.num-rows": "3000",
         "spark.log.level": "ALL"
-    }
+    },
     "defaultLakehouse": {  // This overwrites the default lakehouse for current session
         "name": "<lakehouse-name>",
-        "id": "<lakehouse-id>",
+        "id": "<(optional) lakehouse-id>",
         "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>" // Add workspace ID if it's from another workspace
     },
     "mountPoints": [
@@ -470,6 +471,11 @@ You can personalize your Spark session with the magic command **%%configure**. F
             "source": "abfs[s]://<file_system>@<account_name>.dfs.core.windows.net/<path1>"
         },
     ],
+    "environment": {
+        "id": "<environment-id>",
+        "name": "<environment-name>"
+    },
+    "sessionTimeoutInSeconds": 1200,
     "useStarterPool": false,  // Set to true to force using starter pool
     "useWorkspacePool": "<workspace-pool-name>"
 }
@@ -480,7 +486,7 @@ You can personalize your Spark session with the magic command **%%configure**. F
 > - We recommend that you set the same value for "DriverMemory" and "ExecutorMemory" in %%configure. The "driverCores" and "executorCores" values should also be the same.
 > - The "defaultLakehouse" will overwrite your pinned lakehouse in Lakehouse explorer, but that only works in your current notebook session.
 > - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run will fail due to cannot restart session.
-> - The %%configure used in mssparkutils.notebook.run will be ignored but used in %run notebook will continue executing.
+> - The %%configure used in notebookutils.notebook.run will be ignored but used in %run notebook will continue executing.
 > - The standard Spark configuration properties must be used in the "conf" body. Fabric does not support first level reference for the Spark configuration properties.
 > - Some special Spark properties, including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", and "spark.executor.instances" don't take effect in "conf" body.
 
@@ -614,8 +620,8 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 
 | **Action** | **Notebook shortcuts** |
 |---|---|
-| Move cursor up | Up |
-| Move cursor down | Down |
+| Move up cursor | Up |
+| Move down cursor | Down |
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
 | Comment or Uncomment | Ctrl + / <br/> Comment: Ctrl + K + C <br/> Uncomment: Ctrl + K + U |
@@ -635,4 +641,4 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 ## Related content
 
 - [Notebook visualization](notebook-visualization.md)
-- [Introduction of Fabric MSSparkUtils](microsoft-spark-utilities.md)
+- [Introduction of Fabric NotebookUtils](notebook-utilities.md)

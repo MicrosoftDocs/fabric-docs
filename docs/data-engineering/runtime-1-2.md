@@ -6,15 +6,14 @@ ms.author: eskot
 author: ekote
 ms.topic: overview
 ms.custom:
-  - ignite-2023
-ms.date: 06/06/2023
+ms.date: 10/14/2024
 ---
 
-# Runtime 1.2
+# Fabric Runtime 1.2 (GA)
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.2 components and versions.
 
-Microsoft Fabric Runtime 1.2 is the latest GA runtime version. The major components of Runtime 1.2 include:
+The major components of Runtime 1.2 include:
 
 - Apache Spark 3.4.1
 - Operating System: Mariner 2.0
@@ -23,6 +22,9 @@ Microsoft Fabric Runtime 1.2 is the latest GA runtime version. The major compone
 - Python: 3.10
 - Delta Lake: 2.4.0
 - R: 4.2.2
+
+> [!TIP]
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version.":::
 
@@ -41,7 +43,7 @@ Read the full version of the release notes for a specific Apache Spark version b
 
 Encountering a 404 error with the message 'Operation failed: The specified path doesn't exist' is a common issue when performing parallel data insertions into the same table using an SQL INSERT INTO query. This error can result in data loss. Our new feature, the File Output Committer Algorithm, resolves this issue, allowing customers to perform parallel data insertion seamlessly.
 
-To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/3.4.0/configuration.html#:~:text=spark.sql.sources.partitionOverwriteMode).
+To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/latest/configuration.html#runtime-sql-configuration).
 
 #### Smart reads, which skip files from failed jobs
 
@@ -61,7 +63,7 @@ Here are the visible changes:
 
 ## Migration guide from Runtime 1.1 to Runtime 1.2
 
-When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://spark.apache.org/docs/3.4.0/migration-guide.html).
+When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://archive.apache.org/dist/spark/docs/3.4.0/migration-guide.html).
 
 ## New features and improvements of Delta Lake 2.4
 [Delta Lake](https://delta.io/) is an [open source project](https://github.com/delta-io/delta) that enables building a lakehouse architecture on top of data lakes. Delta Lake provides [ACID transactions](https://docs.delta.io/2.4.0/concurrency-control.html), scalable metadata handling, and unifies [streaming](https://docs.delta.io/2.4.0/delta-streaming.html) and [batch](https://docs.delta.io/2.4.0/delta-batch.html) data processing on top of existing data lakes.
@@ -78,7 +80,7 @@ Read the full version of the release notes for [Delta Lake 2.4](https://github.c
 
 ## Default level packages for Java, Scala, Python libraries
 
-For a list of all the default level packages for Java, Scala, Python and their respective versions see the [release notes](https://github.com/microsoft/synapse-spark-runtime/blob/main/Fabric/spark3.4/Official-Spark3.4-Rel-2024-04-18.4-rc.1.md)
+For a list of all the default level packages for Java, Scala, Python and their respective versions see the [release notes](https://github.com/microsoft/synapse-spark-runtime/tree/9ba4059c0d9433bf2b6e25cd70fe60c6e0acd51c/Fabric/Runtime%201.2%20(Spark%203.4)).
 
 ## Related content
 

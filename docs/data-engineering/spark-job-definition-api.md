@@ -1,15 +1,11 @@
 ---
 title: Apache Spark job definition API tutorial
-description: Learn how to create a Spark job definition via public API.
+description: Learn how to create and update a Spark job definition with the Microsoft Fabric Rest API, which provides a service endpoint for CRUD operations of Fabric items.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: spark_job_definition
 ---

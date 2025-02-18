@@ -1,13 +1,12 @@
 ---
 title: 'Tutorial: Clean data with functional dependencies'
 description: This article shows how to use information about functional dependencies in data for data cleaning.
-ms.reviewer: mopeakande
-reviewer: msakande
-ms.author: alsavelv
-author: alsavelv
+ms.author: mopeakande
+author: msakande
+ms.reviewer: alsavelv
+reviewer: alsavelv
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 09/27/2023
 ---
 

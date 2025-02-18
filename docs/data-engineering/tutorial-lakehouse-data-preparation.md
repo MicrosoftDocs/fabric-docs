@@ -6,9 +6,7 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/01/2024
+ms.date: 12/25/2024
 ---
 
 # Lakehouse tutorial: Prepare and transform data in the lakehouse
@@ -28,9 +26,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Download the notebooks from the [Lakehouse Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/Lakehouse%20Tutorial%20Source%20Code) folder.
 
-1. From the switcher located at the bottom left of the screen, select **Data Engineering**.
-
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\workload-switcher-data-engineering.png" alt-text="Screenshot showing where to find the switcher and select Data Engineering.":::
+1. From the workspace, select **Import** > **Notebook** > **From this computer**.
 
 1. Select **Import notebook** from the **New** section at the top of the landing page.
 
@@ -74,7 +70,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    
    table_name = 'fact_sale'
    
-   df = spark.read.format("parquet").load('Files/wwi-raw-data/full/fact_sale_1y_full')
+   df = spark.read.format("parquet").load('Files/wwi-raw-data/WideWorldImportersDW/parquet/full/fact_sale_1y_full')
    df = df.withColumn('Year', year(col("InvoiceDateKey")))
    df = df.withColumn('Quarter', quarter(col("InvoiceDateKey")))
    df = df.withColumn('Month', month(col("InvoiceDateKey")))
@@ -87,12 +83,13 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    ```python
    from pyspark.sql.types import *
    def loadFullDataFromSource(table_name):
-       df = spark.read.format("parquet").load('Files/wwi-raw-data/full/' + table_name)
+       df = spark.read.format("parquet").load('Files/wwi-raw-data/WideWorldImportersDW/parquet/full/' + table_name)
        df = df.drop("Photo")
        df.write.mode("overwrite").format("delta").save("Tables/" + table_name)
     
    full_tables = [
        'dimension_city',
+       'dimension_customer',
        'dimension_date',
        'dimension_employee',
        'dimension_stock_item'
@@ -132,7 +129,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    df_dimension_city = spark.read.table("wwilakehouse.dimension_city")
    ```
 
-   In this cell, you join these tables using the dataframes created earlier, do group by to generate aggregation, rename a few of the columns, and finally write it as a Delta table in the **Tables** section of the lakehouse.
+   Add the following code to the same cell to join these tables using the dataframes created earlier. Group by to generate aggregation, rename a few of the columns, and finally write it as a Delta table in the **Tables** section of the lakehouse.
   
    ```python
    sale_by_date_city = df_fact_sale.alias("sale") \

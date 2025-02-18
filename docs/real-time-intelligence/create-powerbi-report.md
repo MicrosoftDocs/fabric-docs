@@ -2,15 +2,11 @@
 title:  Visualize data in a Power BI report
 description: Learn how to visualize data from a KQL queryset in a Power BI report.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
-ms.date: 04/21/2024
+ms.date: 11/19/2024
 ---
 
 # Visualize data in a Power BI report
@@ -21,7 +17,7 @@ To use multiple tables to build your Power BI report, see [Use data from a KQL d
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
 
 ## Create a report
@@ -31,12 +27,13 @@ There are three possible ways to create a report:
 1. **Option 1:** Browse to a KQL queryset.
 1. **Option 2:** Open the **Explore your data** window from a KQL database.
     1. Write and select the query you want to build into a Power BI report. The output of this query is used as the semantic model for building the report.
-    1. On the ribbon, select **Build Power BI report**.
+    1. From the *Explore your data* window, select **Power BI**.
 
-        :::image type="content" source="media/create-powerbi-report/build-report.png" alt-text="Screenshot of query editor showing an example query. The Build Power BI report option on the ribbon is highlighted." lightbox="media/create-powerbi-report/build-report.png":::
+        :::image type="content" source="media/create-powerbi-report/build-report.png" alt-text="Screenshot of query editor showing an example query. The Power BI option is highlighted." lightbox="media/create-powerbi-report/build-report.png":::
+1. **Option 3:** On the ribbon, select **Power BI**.
 1. Create a report from an entire table. Browse to a KQL database.
     1. Select the **More menu** [**...**] of the table you want to use for the report.
-    2. Select **Build Power BI report**.
+    2. Select **Power BI**.
 
     :::image type="content" source="media/create-powerbi-report/build-report-from-table.png" alt-text="Screenshot of building a Power BI report from a table. The table menu is open with Build Power BI report selected.":::
 

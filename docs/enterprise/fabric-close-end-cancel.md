@@ -1,11 +1,9 @@
 ---
 title: Fabric and Power BI, end, close, cancel
 description: Learn how to end a trial, cancel a subscription, and close an account in Fabric and Power BI. 
-author: mihart
-ms.author: mihart
+author: kfollis
+ms.author: kfollis
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: pbi-fundamentals
 ms.topic: how-to
 ms.date: 04/30/2024
 ms.custom: licensing support
@@ -34,7 +32,7 @@ If you signed up for Power BI as an individual, and you don't want to use Power 
 
 1. On the **General** tab, select **Close Account**.
 
-    ![Screenshot showing the Power BI settings menu. General and the close account menu options are highlighted.](media/fabric-close-end-cancel/close-account-settings-2.png)
+    :::image type="content" border="true" source="media/fabric-close-end-cancel/close-account-settings-2.png" alt-text="Screenshot showing the Power BI settings menu. General and the close account menu options are highlighted.":::
 
 1. Select a reason for closing the account. You can also provide further information. Then select **Close account**.
 
@@ -44,7 +42,7 @@ If you signed up for Power BI as an individual, and you don't want to use Power 
 
 If your organization signed you up for Power BI, contact your admin. Ask them to unassign the license from your account.
 
-![Screenshot of the close account message for Managed Users.](media/fabric-close-end-cancel/close-account-managed.png)
+:::image type="content" border="true" source="media/fabric-close-end-cancel/close-account-managed.png" alt-text="Screenshot of the close account message for Managed Users.":::
 
 ## Cancel a Fabric capacity trial that you started
 
@@ -62,12 +60,12 @@ Fabric trial capacities can be canceled, be deleted, be purchased, and expire.
 
 ### Cancel a Fabric trial capacity
 
-The Fabric trial capacity lasts 60 days. [Cancel a Fabric capacity trial](../get-started/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial is canceled or expires. Use this article to find helpful information on how to save your data whether you upgrade or not.  
+The Fabric trial capacity lasts 60 days. [Cancel a Fabric capacity trial](../fundamentals/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial is canceled or expires. Use this article to find helpful information on how to save your data whether you upgrade or not.  
 
 ### Delete a Fabric capacity and Fabric trial capacity
 
 The Capacity administrator can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different Fabric capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and 
-[Fabric capacity deletion.](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion)
+[Fabric capacity deletion.](../admin/capacity-settings.md#delete-a-capacity)
 
 ### Buy a Fabric trial capacity
 
@@ -124,7 +122,7 @@ If you signed up for Power BI as an individual, you can close your account from 
 
 1. On the **General** tab, select **Close Account**.
 
-    ![Screenshot showing the Power BI settings menu. General and the close account menu options are highlighted.](media/fabric-close-end-cancel/close-account-settings-2.png)
+    :::image type="content" border="true" source="media/fabric-close-end-cancel/close-account-settings-2.png" alt-text="Screenshot showing the Power BI settings menu. General and the close account menu options are highlighted.":::
 
 1. Select a reason for closing the account. You can also provide further information. Then select **Close account**.
 
@@ -134,6 +132,6 @@ If you signed up for Power BI as an individual, you can close your account from 
 
 If your organization signed you up for Power BI, contact your admin. Ask them to unassign the license from your account.
 
-![Screenshot of the close account message for Managed Users.](media/fabric-close-end-cancel/close-account-managed.png)
+:::image type="content" border="true" source="media/fabric-close-end-cancel/close-account-managed.png" alt-text="Screenshot of the close account message for Managed Users.":::
 
 ---

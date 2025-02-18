@@ -1,88 +1,68 @@
 ---
-title: Set up your Microsoft Fabric development environment (preview)
+title: Set up your Microsoft Fabric development environment
 description: Learn how to set up your Microsoft Fabric Workload Development Kit environment so that you can start developing your workloads.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 05/21/2024
+ms.date: 01/27/2025
 ---
 
-# Set up your environment (preview)
+# Set up your environment
 
-This article is aimed at developers who are looking to build a workload using the Microsoft Fabric Workload Development Kit. The article will guide you through the process of setting up your development environment so that you can start building your workload.
+This article is aimed at developers who are looking to build a workload using the Microsoft Fabric Workload Development Kit. The article guides you through the process of setting up your development environment so that you can start building your workload.
 
-## Prerequisites
+## Platform requirements
 
-The following steps are required before getting started with workload development.
+To develop a new workload, your [Microsoft Fabric](https://app.powerbi.com) subscription needs to have a [capacity](../enterprise/licenses.md#capacity) with an F or P SKU. Fabric [trial capacities](../fundamentals/fabric-trial.md) are also supported.
 
-### [Git](https://git-scm.com/downloads)
+## Configure Fabric
 
-A distributed version control system that we use to manage and track changes to our project.
+To start developing workloads, you need to be granted permissions in the Fabric service. You might need to contact other teams in your organization to get the necessary permissions.
 
-### [npm (Node Package Manager)](https://www.npmjs.com/get-npm)
+### Ensure you have admin access on the workspace you plan to work with
 
-Default package manager for Node.js used to manage and share the packages that you use in your project.
+To begin development and connect your local machine to a Fabric [workspace](../enterprise/licenses.md#workspace), you can either create a new workspace or ask to be added as an admin on an existing one. Developers must have admin permissions on the workspace to register their workload.
 
-### [Node.js](https://nodejs.org/en/download/)
+### Enable the development tenant setting
 
-An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. We'll use this to run our server-side JavaScript code.
+To begin development, the *Workspace admins can develop partner workloads* [tenant](../enterprise/licenses.md#tenant) setting needs to be enabled. If you're not an admin on the tenant that has the capacity you're planning to use for development, ask your [organization's admin](../admin/roles.md) to enable this setting.
 
-### [Webpack](https://webpack.js.org/guides/installation/)
+To enable the *Workspace admins can develop partner workloads* tenant setting, follow these steps:
 
-A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
+1. In Fabric, go to **Settings > Admin portal**.
 
-### [Webpack CLI](https://webpack.js.org/api/cli/)
+2. In the tenant settings, go to the **Additional workloads** section.
 
-The command line interface for Webpack. This allows us to use Webpack from the command line.
+3. Enable the **Workspace admins can develop partner workloads** tenant setting.
 
-### [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516)
+### Enable developer mode
 
-**In local mode only** is required to allow the workload backend, which is locally hosted, to communicate with the tenant. The workload operates on the developer's machine. Workload API calls from Fabric to the workload are channeled through Azure Relay, with the workload's side of the Azure Relay channel managed by the DevGateway command-line utility. Workload control API calls are made directly from the workload to Fabric, not requiring the Azure Relay channel. The DevGateway utility also manages the registration of the workload's local (development) instance with Fabric within a specific capacity context, making the workload accessible in all workspaces assigned to that capacity.
+After the *Workspace admins can develop partner workloads* tenant setting is enabled, you need to enable the *Fabric Developer Mode* setting.
 
-> [!NOTE]
-> Terminating the DevGateway utility automatically removes the workload instance registration.
+1. In Fabric, go to **Settings > Developer settings**.
 
-## Create your environment
+2. Enable the **Fabric Developer Mode** setting.
 
-Follow the stages below to create your environment.
+## DevGateway
 
-### Workload environment authentication
+The DevGateway is a workload development component for communicating between your on-premises workload development box and Fabric. Download the [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) and extract the folder in your local machine.
 
-Setting up workload access to Fabric tenant requires configuration of Microsoft Entra ID for your workload application. Microsoft Entra ID is necessary to ensure secure access and operation of your application's data plane API.
+## Required tools
 
-Key steps include:
+Download and install these tools before you start developing your workload.
 
-1. **Adding scopes for data plane API**: These scopes represent groups of operations exposed by your data plane API. Four example scopes are provided in the backend sample, covering read and write operations for workload items and Lakehouse files.
+* [Git](https://git-scm.com/downloads) - A distributed version control system that we use to manage and track project changes.
 
-1. **Preauthorizing the Fabric client application**: The Fabric client application needs to be preauthorized for the scopes you've defined. This ensures it can perform the necessary operations on your workload items and Lakehouse files.
+* [Node.js](https://nodejs.org/en/download) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. Used to run the server-side JavaScript code.
 
-1. **Generating a secret for your application**: This secret is used to secure your application and will be used when configuring the backend sample.
+   [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - Install as part of the Nodes.js installation. npm is the default package manager for Node.js, which is used to manage and share the packages that you use in your project.
 
-1. **Adding optional claim 'idtyp'**: This claim is added to the access token and is used for identity purposes.
+* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - An integrated development environment (IDE).
 
-These steps are required when setting up the workload, For a detailed guide on how to perform these steps, see [Authentication setup](./authentication-tutorial.md).
+* [Webpack](https://webpack.js.org/guides/installation/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
 
-### Web app (cloud mode only)
-
-Cloud mode (in conjunction to local machine mode) workload deployment requires setting up a web app domain for the Frontend (FE) and Backend (BE). These must be subdomains of the resource ID with a maximum of one more segment. The reply URL host domain should be the same as the FE host domain. For more information, see [Creating and deploying the boilerplate backend web app](./azure-web-app-deployment-tutorial.md).
-
-### Setting up a Fabric development tenant
-
-In the context of executing the workload SDK sample and building a workload, it's recommended to employ a dedicated development tenant. This practice ensures an isolated environment, minimizing the risk of inadvertent disruptions or modifications to production systems. Moreover, it provides an additional layer of security, safeguarding production data from potential exposure or compromise. Adherence to this recommendation aligns with industry best practices and contributes to a robust, reliable, and secure development lifecycle.
-
-#### Tenant setting and development settings
-
-1. The Fabric admin's permission is required to be able to begin development and connect with your local machine to a Fabric capacity. Only developers with capacity admin permission can connect and register their workload on to a capacity. Frontend development doesn't require capacity admin permissions.
-
-   To enable a user to begin development, include them in the **Capacity admins can develop additional workloads** tenant setting.
-
-   :::image type="content" source="./media/environment-setup/environment-setup-tenant-settings.png" alt-text="Screenshot of Additional workloads tenant settings.":::
-
-1. After the user has been granted permission in the previous step, **each** user can enable development mode for the development settings area under Fabric developer mode.
-
-   :::image type="content" source="./media/environment-setup/environment-setup-developer-mode.png" alt-text="Screenshot of turning on Workloads Developer Mode.":::
+* [Webpack CLI](https://webpack.js.org/guides/installation) - A command line interface for Webpack.
 
 ## Related content
 

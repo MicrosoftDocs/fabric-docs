@@ -1,15 +1,11 @@
 ---
-title: Create a lakehouse
+title: Create a lakehouse in Microsoft Fabric
 description: Learn how to create a lakehouse from the Data Engineering homepage, the Workspace view, or the Create page.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.date: 05/13/2024
 ms.search.form: Create lakehouse
 ---
@@ -18,19 +14,19 @@ ms.search.form: Create lakehouse
 
 In this tutorial, you learn different ways to create a Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Create a lakehouse
+## Prerequisites
 
-The lakehouse creation process is quick and simple; there are several ways to get started.
+To create a lakehouse, you need access to a [Fabric enabled workspace](../admin/fabric-switch.md). Fabric admins can enable trial or paid capacity for a tenant or users. If Fabric isn't enabled, you won't see the lakehouse card.
 
 ### Ways to create a lakehouse
 
-There are a few ways you can get started with the creation process:
+The lakehouse creation process is quick and simple; there are several ways to get started.
 
 1. **Data Engineering** homepage
 
    - You can easily create a lakehouse through the **Lakehouse** card under the **New** section in the homepage.
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse card." lightbox="media\create-lakehouse\lakehouse-card.png":::
+   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse item under Data Engineering." lightbox="media\create-lakehouse\lakehouse-card.png":::
 
 1. **Workspace** view
 
@@ -62,7 +58,8 @@ There are a few ways you can get started with the creation process:
 To delete a lakehouse, navigate to **OneLake data hub** and find your lakehouse. select the **...** next to the lakehouse name and select **Delete**. The lakehouse and its associated SQL analytics endpoint and semantic model are deleted. 
 
 > [!NOTE]
-> A lakehouse can't be deleted if it's referenced elsewhere, for example, in a pipeline or within a real time analytics workflow.
+> - A lakehouse can't be deleted if it's referenced elsewhere, for example, in a pipeline or within a real time analytics workflow.
+> - There is no way to restore a lakehouse after it's deleted.
 
 ## Related content
 

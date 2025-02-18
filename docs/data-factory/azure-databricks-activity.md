@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: sbahadur
 author: shaween18
 ms.topic: how-to
-ms.date: 11/16/2023
+ms.date: 12/18/2024
 ---
 
 # Transform data by running an Azure Databricks activity
@@ -22,7 +22,7 @@ This article provides a step-by-step walkthrough that describes how to create an
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Configuring an Azure Databricks activity
@@ -60,7 +60,10 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. The Azure Databricks Activity now also supports **Cluster Policy and Unity Catalog support**.
     - Under advanced settings, you have the option to choose the **Cluster Policy** so you can specify which cluster configurations are permitted.
-    - Also, under advanced settings, you have the option to configure the **Unity Catalog Access Mode** for added security.
+    - Also, under advanced settings, you have the option to configure the **Unity Catalog Access Mode** for added security. The available [access mode types](/azure/databricks/compute/access-mode-limitations) are:
+      - **Single User Access Mode** This mode is designed for scenarios where each cluster is used by a single user. It ensures that the data access within the cluster is restricted to that user only. This mode is useful for tasks that require isolation and individual data handling.
+      - **Shared Access Mode** In this mode, multiple users can access the same cluster. It combines Unity Catalog's data governance with the legacy table access control lists (ACLs). This mode allows for collaborative data access while maintaining governance and security protocols. However, it has certain limitations, such as not supporting Databricks Runtime ML, Spark-submit jobs, and specific Spark APIs and UDFs.
+      - **No Access Mode** This mode disables interaction with the Unity Catalog, meaning clusters do not have access to data managed by Unity Catalog. This mode is useful for workloads that do not require Unity Catalog’s governance features.
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-policy-uc-support.png" alt-text="Screenshot showing the policy ID and Unity Catalog support under Cluster settings tab of the Azure Databricks activity.":::
 
