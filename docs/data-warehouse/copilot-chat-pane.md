@@ -4,11 +4,12 @@ description: Learn more about Microsoft Copilot chat pane for Fabric Data Wareho
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 02/18/2025
+ms.date: 03/30/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
 ---
+
 # How to: Use the Copilot chat pane for Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
@@ -42,14 +43,11 @@ The supported capabilities of interacting through chat include:
 
 1. To open the Copilot chat pane, select the **Copilot** button.
 
-    :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon." lightbox="media/copilot-chat-pane/copilot-button.png":::
-
 1. The chat pane offers helpful starter prompts to get started and familiar with Copilot. Select any option to ask Copilot a question. The **Ask a question** button provides example questions that are tailored specifically to your warehouse.
 
 1. You can also type a request of your choice in the chat box and Copilot responds accordingly.
 
 1. To find documentation related to your request, select the **Help** button.
-    :::image type="content" source="media/copilot-chat-pane/copilot-chat.png" alt-text="Screenshot from the Fabric portal showing the Copilot chat.":::
 
 ## More powerful use cases
 
@@ -59,7 +57,7 @@ You can ask Copilot questions about the warehouse normally and it should respond
 | --- | --- |
 | `/generate-sql` | Generate a SQL query from the prompt submitted to Copilot. |
 | `/explain` | Generate an explanation for the query within the active query tab. |
-| `/fix` | Generate a fix for the query within the active query tab. You can optionally add additional context to fix a specific part or aspect of the query. |
+| `/fix` | Generate a fix for the query within the active query tab. You can optionally add more context to fix a specific part or aspect of the query. |
 | `/question` | Generate a natural language response from the prompt submitted to Copilot. |
 | `/help` | Get help for using Copilot. This links to documentation to Copilot and how to use it. |
 
