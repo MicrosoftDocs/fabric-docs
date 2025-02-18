@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot code completion for Fabric Data 
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf, jacinda-eng
-ms.date: 03/30/2025
+ms.date: 03/01/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot

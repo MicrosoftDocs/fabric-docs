@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot quick actions for Fabric Data Wa
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 02/18/2025
+ms.date: 03/01/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
