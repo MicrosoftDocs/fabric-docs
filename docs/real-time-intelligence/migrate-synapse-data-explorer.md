@@ -34,24 +34,23 @@ Before you migrate, consider the following key points:
 - The migration is performed on the entire cluster, including all its databases.
 - The migration process is irreversible.
 - You must manually add users from other tenants who previously had access to the cluster to the new eventhouse.
-- The cluster and the eventhouse must be in the same capacity region.
+- The cluster and the eventhouse must be in the same region.
 
 ## Which features can be migrated?
 
 | Feature | Can be migrated | Notes |
 |--|--|--|
-| System-assigned managed identities | :x: |  |
+| System-assigned managed identities | :x: | Not supported in Eventhouse. |
 | Cluster Azure RBAC roles | :heavy_check_mark: |  |
 | Data connections, such as Event Hubs, IoT Hub, Event Grid | :x: | Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must manually create supported data connections in the new eventhouse. |
 | Data export operations | :x: | Data export operations, such as `.export` commands and continous export, aren't migrated automatically. You must manaully add them in the new eventhouse.|
 | Follower and leader clusters | :x: | You must manually remove them before migration. |
-| Cross-region migration | :x: |  |
 | Database pretty names | :x: | You must manually add them in the new eventhouse. |
 | Customer-managed keys | :x: | You must manually remove them before migration. |
 | Virtual network injected clusters | :x: | You must manually disable it before migration. |
 | Private Endpoint enabled clusters | :x: | You must manually disable it before migration. |
 | Managed Private Endpoint enabled clusters | :x: | You must manually disable it before migration. |
-| Firewall rules | :x: |  |
+| Firewall rules | :x: | Not supported in Eventhouse |
 | Python in sandbox | :heavy_check_mark: | Python is automatically enabled in the new eventhouse. |
 
 ## Migration steps
