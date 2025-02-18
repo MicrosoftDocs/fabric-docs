@@ -11,7 +11,7 @@ ms.custom:
 ---
 # How to: Use Copilot code completion for Fabric Data Warehouse
 
-**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Copilot for Data Warehouse provides intelligent autocomplete-style T-SQL code suggestions to simplify your coding experience.
 

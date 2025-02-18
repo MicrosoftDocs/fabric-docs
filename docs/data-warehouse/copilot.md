@@ -13,7 +13,7 @@ ms.custom:
 
 # Overview of Copilot for Data Warehouse
 
-**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Copilot integrates seamlessly with your Fabric warehouse, providing intelligent insights to help you along each step of the way in your T-SQL explorations.
 

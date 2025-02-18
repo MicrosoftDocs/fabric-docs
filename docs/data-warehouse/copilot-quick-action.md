@@ -12,7 +12,7 @@ ms.custom:
 
 # How to: Use Copilot quick actions for Fabric Data Warehouse
 
-**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 There are two AI-powered quick actions that are currently supported in Copilot for Data Warehouse: **Explain** and **Fix**.
 

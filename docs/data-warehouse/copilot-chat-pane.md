@@ -11,7 +11,7 @@ ms.collection:
 ---
 # How to: Use the Copilot chat pane for Fabric Data Warehouse
 
-**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Copilot for Data Warehouse includes a chat pane to interact with Copilot in natural language. In this interface, you can ask Copilot questions specific to your data warehouse or generally about data warehousing in Fabric. Depending on the question, Copilot responds with a generated SQL query or a natural language response.
 
