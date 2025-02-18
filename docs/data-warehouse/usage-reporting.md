@@ -34,6 +34,8 @@ In the capacity-based SaaS model, Fabric Data Warehouse aims to make the most of
 
 CUs consumed by Fabric Data Warehouse include read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 
+In simple terms, 1 Fabric capacity unit = 0.5 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] vCores. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 32 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] vCores.
+
 ## Compute usage reporting
 
 The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity.  
