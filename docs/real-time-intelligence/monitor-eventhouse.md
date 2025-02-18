@@ -11,7 +11,7 @@ ms.date: 02/13/2025
 
 # Eventhouse monitoring
 
-Eventhouse monitoring in Fabric offers comprehensive insights into the usage and performance of your eventhouse by collecting end-to-end metrics and logs for all aspects of an Eventhouse. It's part of [workspace monitoring](../fundamentals/workspace-monitoring-overview.md) that allows you to monitor Fabric items in your workspace. Eventhouse monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse, which you can use to optimize your eventhouse and improve the user experience.
+Eventhouse monitoring in Fabric offers comprehensive insights into the usage and performance of your eventhouse by collecting end-to-end metrics and logs for all aspects of an Eventhouse. It's part of [workspace monitoring](../fundamentals/workspace-monitoring-overview.md) that allows you to monitor Fabric items in your workspace. Eventhouse monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. Use these queries to optimize your eventhouse and improve the user experience.
 
 ## Eventhouse monitoring tables
 
@@ -30,9 +30,9 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 ## Eventhouse monitoring dashboard templates
 
-You can download dashboard templates from the [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards) Github repository.
+You can download dashboard templates from the [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards) GitHub repository.
 
-The template allow users to create monitoring dashboards and to track workspace activities in real-time by connecting directly to the underlying monitoring Eventhouse cluster. In the dashboard, you can monitor operations, users, semantic models, database queries, and ingestion paterns.
+The templates allow users to create monitoring dashboards and to track workspace activities in real-time by connecting directly to the underlying monitoring Eventhouse cluster. In the dashboard, you can monitor operations, users, semantic models, database queries, and ingestion patterns.
 
 There are two monitoring templates available:
 
