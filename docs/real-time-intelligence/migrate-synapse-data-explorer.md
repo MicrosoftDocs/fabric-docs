@@ -50,7 +50,7 @@ Before you migrate, consider the following key points:
 | Virtual network injected clusters | :x: | You must manually disable it before migration. |
 | Private Endpoint enabled clusters | :x: | You must manually disable it before migration. |
 | Managed Private Endpoint enabled clusters | :x: | You must manually disable it before migration. |
-| Firewall rules | :x: | Not supported in Eventhouse |
+| Firewall rules | :x: | Not supported in Eventhouse. |
 | Python in sandbox | :heavy_check_mark: | Python is automatically enabled in the new eventhouse. |
 
 ## Migration steps
