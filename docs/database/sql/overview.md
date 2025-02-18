@@ -4,10 +4,9 @@ description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 12/04/2024
+ms.date: 02/13/2025
 ms.topic: overview
-ms.custom:
-ms.search.form: product-databases
+ms.search.form: product-databases, SQL database - Overview
 ---
 # SQL database in Microsoft Fabric (Preview)
 
@@ -130,6 +129,10 @@ You can use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics
 ## Mirroring for Azure SQL Database
 
 Do you already have an external database and want to leverage Fabric's integration? You can use Mirroring in Fabric as a low-cost and low-latency solution to bring data from various systems together. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from an existing [Azure SQL Database](../mirrored-database/azure-sql-database.md).
+
+## Elastic pools
+
+Fabric SQL database doesn't support the Azure SQL Database elastic pools concept by name, but similar concepts are available with Fabric capacities and Fabric workspaces. A single Fabric capacity can provide resources for Fabric SQL databases in different workspaces. This provides both a simplification of billing in a single capacity similar to elastic pools, as well as security isolation for different workspaces.
 
 ## Next step
 
