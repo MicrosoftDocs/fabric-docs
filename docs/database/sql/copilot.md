@@ -60,8 +60,8 @@ Here are some tips for effectively maximizing productivity with Microsoft Copilo
  - Show all sales transactions that occurred on [a specific date]
  ```
 
-  > [!NOTE]  
-  > AI powers Copilot, so surprises and mistakes are possible.
+  > [!NOTE]
+  > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Responsible use of Microosft Copilot
 
