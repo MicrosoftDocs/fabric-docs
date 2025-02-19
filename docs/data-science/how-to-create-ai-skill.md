@@ -145,7 +145,7 @@ aren't allowed, to protect the integrity of your data.
 
 At any point, you can select the **Clear chat** button to clear the chat, as shown in the following screenshot:
 
-:::image type="content" source="./media/how-to-create-ai-skill/clear-chat.png" alt-text="Screenshot showing the steps taken by an AI skill." lightbox="./media/how-to-create-ai-skill/clear-chat.png":::
+:::image type="content" source="./media/how-to-create-ai-skill/clear-chat.png" alt-text="Screenshot highlighting the Clear chat feature." lightbox="./media/how-to-create-ai-skill/clear-chat.png":::
 
 The Clear chat feature erases all chat history and starts a new session. Once you delete your chat history, you can't retrieve it.
 
