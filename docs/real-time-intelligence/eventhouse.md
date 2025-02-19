@@ -27,10 +27,10 @@ The system overview page of an eventhouse shows you the following information:
 
 * Eventhouse details
 * Eventhouse storage
-* System resources - Eventhouse and OneLake
-* Activity in minutes
-* Ingestion rate
+* System resources
+* Compute usage
 * Comupue minutes - Top users
+* Ingestion rate
 * Most queried databases
 * Top ingested databases
 * What's new
