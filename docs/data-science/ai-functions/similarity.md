@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Calculate similarity with the `ai.similarity` function
 
-The `ai.similarity` function uses Generative AI to compare two string values and calculate a semantic similarity score—all in just a single line of Python or PySpark code. You can compare text values from one column of a DataFrame to pairwise values in another column or to a single text value. Similarity scores range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning.
+The `ai.similarity` function uses Generative AI to compare two string expressions and calculate a semantic similarity score—all in just a single line of code. You can compare text values from one column of a DataFrame with a single common text value or pairwise with text values in another column of the same dimensions as the input. Similarity scores range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning.
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
@@ -27,9 +27,25 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [Standard]
 
-## Use `ai.similarity` with Python
+## Use `ai.similarity` with pandas
 
 [TBD]
+
+### Syntax
+
+```python
+df["similarity"] = df["col1"].ai.similarity(df["col2"])
+```
+
+### Parameters
+
+| **Name** | **Description** |
+|---|---|
+| **`other`** <br> Required | A [string](https://docs/python.org/3/library/stdtypes.html#str) containing a single common text value for computing similarity scores with each row of input text, or another [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) with the same dimensions as the input, containing text values for computing pairwise similarity scores with each row of input text. |
+
+### Returns
+
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing similarity scores for each row of input text.
 
 ### Example
 
@@ -42,9 +58,9 @@ df = pd.DataFrame([
         ("William T. Riker", "Barney"), 
         ("Dolores O'Riordan", "Sinéad O'Connor"), 
         ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
-    ], columns=["name", "comparison"])
+    ], columns=["names", "comparisons"])
     
-df["similarity"] = df["name"].ai.similarity(df["comparison"])
+df["similarity"] = df["names"].ai.similarity(df["comparisons"])
 display(df)
 ```
 
@@ -58,18 +74,18 @@ display(df)
 df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 ```
 
-### Inputs
+### Parameters
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Required | TBD |
-| **`other_col`** <br> Optional | TBD |
-| **`other`** <br> Optional | TBD |
-| **`output_col`** <br> Optional | TBD |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be used for computing similarity scores |
+| **`other`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing a single common text value for computing similarity scores |
+| **`other_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a second existing column with text values for computing pairwise similarity scores |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store calculated similarity scores for each row of input text |
 
 ### Returns
 
-[TBD]
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing generated similarity scores for each row of input text.
 
 ### Example
 
@@ -78,12 +94,14 @@ df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("Where is the bus?",),
-        ("The bus is on the beach.",),
-    ], ["input_text"])
+        ("Jean Luc Picard", "Peppa Pig"), 
+        ("William T. Riker", "Barney"), 
+        ("Dolores O'Riordan", "Sinéad O'Connor"), 
+        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
+    ], ["names", "comparisons"])
 
-translations = df.ai.translate(to_lang="spanish", input_col="input_text", output_col="translation")
-display(translations)
+similarity = df.ai.similarity(input_col="names", other_col="comparisons", output_col="similarity")
+display(similarity)
 ```
 
 ## Related content

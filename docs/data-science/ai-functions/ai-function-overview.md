@@ -13,20 +13,20 @@ ms.search.form: AI functions
 
 # Transform and enrich data at scale with AI functions (Preview)
 
-Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code. There's no need for custom configuration, complex infrastructure management, or even specific technical expertise.
+Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code. There's no need for detailed configurations, complex infrastructure management, or even specific technical expertise.
 
-AI functions, currently in public preview, allow you to complete the following tasks in a single line of Python or PySpark code:
+AI functions, currently in public preview, allow you to complete the following tasks in a single line of code:
 
-- [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meanings of input text against corresponding text in another column (or against a single string).
+- [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with corresponding text in another column or with a single common text value.
 - [**Categorize text with `ai.classify`**](#categorize-text-with-aiclassify): Classify input text values according to labels you choose.
 - [**Detect sentiment with `ai.analyze_sentiment`**](#detect-sentiment-with-aianalyze_sentiment): Identify the emotional state expressed by input text.
-- [**Extract entities with `ai_extract`**](#extract-entities-with-aiextract): Find specific types of information, such as locations or names, within input text.
+- [**Extract entities with `ai_extract`**](#extract-entities-with-aiextract): Find and extract specific types of information, such as locations or names, within input text.
 - [**Fix grammar with `ai.fix_grammar`**](#fix-grammar-with-aifix_grammar): Correct the spelling, grammar, and punctuation of input text.
 - [**Summarize text with `ai.summarize`**](#summarize-text-with-aisummarize): Get summaries of input text.
-- [**Translate text with `ai.translate`**](#translate-text-with-aitranslate): Translate text into another language.
+- [**Translate text with `ai.translate`**](#translate-text-with-aitranslate): Translate input text into another language.
 - [**Answer custom user prompts with `ai.generate_response`**](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
 
-Whether you're looking to translate product reviews from one language into another or to generate action items with custom text prompts, AI functions put the power of Fabric's native LLM into your hands, accelerating data transformation and discovery regardless of your level of experience.
+Whether you're looking to translate product reviews from one language into another or to generate action items using custom text prompts, AI functions put the power of Fabric's native LLM into your hands, accelerating data transformation and discovery regardless of your level of experience.
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
@@ -44,7 +44,7 @@ To access the AI functions library in a Fabric notebook, you need to install som
 
 The first cell will install the AI functions library and its dependencies.
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # Install fixed version of packages
@@ -78,7 +78,7 @@ The first cell will install the AI functions library and its dependencies.
 
 The second cell will import the AI functions library and its dependencies (plus an optional library in Python for displaying dynamic progress bars to track the status of every operation you apply).
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # Required imports
@@ -104,15 +104,15 @@ defaults.set_deployment_name("gpt-35-turbo-0125")
 
 ## Applying AI functions
 
-Each of the following functions allows you to invoke Fabric's native LLM endpoint to transform and enrich data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames (with Python code) or Spark DataFrames (with PySpark code). Support for more programming languages will be available in the future.
+Each of the following functions allows you to invoke Fabric's native LLM endpoint to transform and enrich data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. Support for more programming languages will be available in the future.
 
 ### Calculate similarity with [`ai.similarity`](similarity.md)
 
-The `ai.similarity` function invokes AI to compare input text values to corresponding text values in another column or to a single text value. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
+The `ai.similarity` function invokes AI to compare input text values to corresponding text values in another column or to a single common text value. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
 
 #### Sample usage
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -140,9 +140,9 @@ df = spark.createDataFrame([
         ("William T. Riker", "Barney"), 
         ("Dolores O'Riordan", "Sinéad O'Connor"), 
         ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
-    ], ["name", "comparison"])
+    ], ["names", "comparisons"])
 
-similarity = df.ai.similarity(input_col="name", other_col="comparison", output_col="similarity")
+similarity = df.ai.similarity(input_col="names", other_col="comparisons", output_col="similarity")
 display(similarity)
 ```
 
@@ -154,7 +154,7 @@ The `ai.classify` function invokes AI to categorize input text according to cust
 
 #### Sample usage
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -164,9 +164,9 @@ df = pd.DataFrame([
         "This duvet, lovingly hand-crafted from all-natural polyester, is perfect for a good night's sleep.",
         "Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",
         "Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the light commuter!"
-    ], columns=["description"])
+    ], columns=["descriptions"])
 
-df["category"] = df['description'].ai.classify("kitchen", "bedroom", "garage", "other")
+df["categories"] = df['descriptions'].ai.classify("kitchen", "bedroom", "garage", "other")
 display(df)
 ```
 
@@ -180,9 +180,9 @@ df = spark.createDataFrame([
         ("This duvet, lovingly hand-crafted from all-natural polyester, is perfect for a good night's sleep.",),
         ("Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",),
         ("Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the light commuter!",)
-    ], ["description"])
+    ], ["descriptions"])
     
-categories = df.ai.classify(labels=["kitchen", "bedroom", "garage", "other"], input_col="description", output_col="category")
+categories = df.ai.classify(labels=["kitchen", "bedroom", "garage", "other"], input_col="descriptions", output_col="categories")
 display(categories)
 ```
 
@@ -194,7 +194,7 @@ The `ai.analyze_sentiment` function invokes AI to identify whether the emotional
 
 #### Sample usage
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -205,9 +205,9 @@ df = pd.DataFrame([
         "This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!",
         "I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",
         "It's OK I suppose."
-    ], columns=["review"])
+    ], columns=["reviews"])
 
-df["sentiment"] = df["review"].ai.analyze_sentiment()
+df["sentiment"] = df["reviews"].ai.analyze_sentiment()
 display(df)
 ```
 
@@ -222,9 +222,9 @@ df = spark.createDataFrame([
         ("This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!!",),
         ("I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",),
         ("It's OK I suppose.",)
-    ], ["review"])
+    ], ["reviews"])
 
-sentiment = df.ai.analyze_sentiment(input_col="review", output_col="sentiment")
+sentiment = df.ai.analyze_sentiment(input_col="reviews", output_col="sentiment")
 display(sentiment)
 ```
 
@@ -232,11 +232,11 @@ display(sentiment)
 
 ### Extract entities with [`ai.extract`](extract.md)
 
-The `ai.extract` function invokes AI to find specific types of information designated by labels you choose (such as locations or names) within input text. For more detailed instructions on how to use `ai.extract`, please visit [this dedicated article](extract.md).
+The `ai.extract` function invokes AI to find and extract specific types of information designated by labels you choose (such as locations or names) from input text. For more detailed instructions on how to use `ai.extract`, please visit [this dedicated article](extract.md).
 
 #### Sample usage
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -245,9 +245,9 @@ The `ai.extract` function invokes AI to find specific types of information desig
 df = pd.DataFrame([
         "My name is MJ Lee. I live in a house on 1234 Roderick Lane in Plainville, CT, with two cats.",
         "Kris Turner's house at 1500 Smith Avenue is the biggest on the block!"
-    ], columns=["description"])
+    ], columns=["descriptions"])
 
-df = df["description"].ai.extract("name", "address")
+df = df["descriptions"].ai.extract("name", "address")
 display(df)
 ```
 
@@ -260,9 +260,9 @@ display(df)
 df = spark.createDataFrame([
         ("My name is MJ Lee. I live in a house on 1234 Roderick Lane in Plainville, CT, with two cats.",),
         ("Kris Turner's house at 1500 Smith Avenue is the biggest on the block!",)
-    ], ["description"])
+    ], ["descriptions"])
 
-entities = df.ai.extract(labels=["name", "address"], input_col="description")
+entities = df.ai.extract(labels=["name", "address"], input_col="descriptions")
 display(entities)
 ```
 
@@ -274,7 +274,7 @@ The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and p
 
 #### Sample usage
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -284,9 +284,9 @@ df = pd.DataFrame([
         "oh yeah, she and me go weigh back!",
         "You SUre took you'RE sweetthyme!",
         "teh time has come at last."
-    ], columns=["raw_text"])
+    ], columns=["text"])
 
-df["corrected"] = df["raw_text"].ai.fix_grammar()
+df["corrections"] = df["text"].ai.fix_grammar()
 display(df)
 ```
 
@@ -300,9 +300,9 @@ df = spark.createDataFrame([
         ("oh yeah, she and me go weigh back!",),
         ("You SUre took you'RE sweetthyme!",),
         ("teh time has come at last.",)
-    ], ["raw_text"])
+    ], ["text"])
 
-results = df.ai.fix_grammar(input_col="raw_text", output_col="corrected")
+results = df.ai.fix_grammar(input_col="text", output_col="corrections")
 display(results)
 ```
 
@@ -314,7 +314,7 @@ The `ai.summarize` function invokes AI to generate summaries of input text (eith
 
 #### Sample usage
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -342,7 +342,7 @@ df= pd.DataFrame([
         """
     ], columns=["text"])
 
-df["summary"] = df["text"].ai.summarize()
+df["summaries"] = df["text"].ai.summarize()
 display(df)
 ```
 
@@ -372,9 +372,9 @@ df = spark.createDataFrame([
         justifying, at least in his mind, its exorbitant cost. The board recommends
         immediate disciplinary action.
         """,)
-    ], ["input"])
+    ], ["text"])
 
-summaries = df.ai.summarize(input_col="input", output_col="summary")
+summaries = df.ai.summarize(input_col="text", output_col="summaries")
 display(summaries)
 ```
 
@@ -386,7 +386,7 @@ The `ai.translate` function invokes AI to translate input text to a new language
 
 #### Sample usage
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -395,9 +395,9 @@ The `ai.translate` function invokes AI to translate input text to a new language
 df = pd.DataFrame([
         "Where is the bus?", 
         "The bus is on the beach."
-    ], columns=["input_text"])
+    ], columns=["text"])
 
-df["translation"] = df["input_text"].ai.translate("spanish")
+df["translations"] = df["text"].ai.translate("spanish")
 display(df)
 ```
 
@@ -410,9 +410,9 @@ display(df)
 df = spark.createDataFrame([
         ("Where is the bus?",),
         ("The bus is on the beach.",),
-    ], ["input_text"])
+    ], ["text"])
 
-translations = df.ai.translate(to_lang="spanish", input_col="input_text", output_col="translation")
+translations = df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 display(translations)
 ```
 
@@ -424,7 +424,7 @@ The `ai.generate_response` function invokes AI to generate custom text based on 
 
 #### Sample usage
 
-# [Python](#tab/python)
+# [pandas](#tab/pandas)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -436,7 +436,7 @@ df = pd.DataFrame([
         ("lizard", "reptiles")
     ], columns=["example", "category"])
 
-df["list"] = df.ai.gen("Complete this comma-separated list of 5 {category}: {example}, ", is_format=True)
+df["list"] = df.ai.generate_response("Complete this comma-separated list of 5 {category}: {example}, ", is_format=True)
 display(df)
 ```
 
@@ -452,7 +452,7 @@ df = spark.createDataFrame([
         ("lizard", "reptile"),
     ], ["example", "category"])
 
-results = df.ai.gen(template="Complete this comma separated list of 5 {category}: {example}, ", output_col="list")
+results = df.ai.generate_response(template="Complete this comma separated list of 5 {category}: {example}, ", output_col="list")
 display(results)
 ```
 
@@ -468,5 +468,12 @@ AI functions are designed to work out of the box in Fabric notebooks, with the u
 
 ## Related content
 
-- TBD
+- Calculate similarity with [`ai.similarity`](similarity.md).
+- Detect sentiment with [`ai.analyze_sentiment`](analyze-sentiment.md).
+- Categorize text with [`ai.classify`](classify.md).
+- Extract entities with [`ai_extract`](extract.md).
+- Fix grammar with [`ai.fix_grammar`](fix-grammar.md).
+- Summarize text with [`ai.summarize`](summarize.md).
+- Translate text with [`ai.translate`](translate.md).
+- Answer custom user prompts with [`ai.generate_response`](generate-response.md).
 - Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)

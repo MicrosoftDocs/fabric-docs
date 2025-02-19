@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Answer custom user prompts with the `ai.generate_response` function
 
-The `ai.generate_response` function uses Generative AI to generate custom text responses based on your own instructions—all in just a single line of Python or PySpark code.
+The `ai.generate_response` function uses Generative AI to generate custom text responses based on your own instructions—all in just a single line of code.
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
@@ -27,7 +27,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [Standard]
 
-## Use `ai.generate_response` with Python
+## Use `ai.generate_response` with pandas
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -68,7 +68,7 @@ display(translations)
 df.ai.generate_response(prompt="instructions", output_col="response")
 ```
 
-### Inputs
+### Parameters
 
 | **Name** | **Description** |
 |---|---|

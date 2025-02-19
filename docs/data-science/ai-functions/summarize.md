@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Summarize text with the `ai.summarize` function
 
-The `ai.summarize` function uses Generative AI to generate summaries of input text (either values in a single column of a DataFrame or rows in the entire DataFrame)—all in just a single line of Python or PySpark code.
+The `ai.summarize` function uses Generative AI to generate summaries of input text (either values in a single column of a DataFrame or rows in the entire DataFrame)—all in just a single line of code.
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
@@ -27,9 +27,23 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [Standard]
 
-## Use `ai.summarize` with Python
+## Use `ai.summarize` with pandas
 
 [TBD]
+
+### Syntax
+
+```python
+df["summaries"] = df["text"].ai.summarize()
+```
+
+### Parameters
+
+None
+
+### Returns
+
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing summaries for each row of input text. If the input text is `null`, the result will be `null`.
 
 ### Example
 
@@ -59,7 +73,7 @@ df= pd.DataFrame([
         """
     ], columns=["text"])
 
-df["summary"] = df["text"].ai.summarize()
+df["summaries"] = df["text"].ai.summarize()
 display(df)
 ```
 
@@ -70,19 +84,19 @@ display(df)
 ### Syntax
 
 ```python
-df.ai.summarize(input_col="text", output_col="summary")
+df.ai.summarize(input_col="text", output_col="summaries")
 ```
 
-### Inputs
+### Parameters
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Optional | TBD |
-| **`output_col`** <br> Optional | TBD |
+| **`input_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be summarized |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store summaries for each row of input text |
 
 ### Returns
 
-[TBD]
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing summarized text for each row of input text. If the input text is `null`, the result will be `null`. If no input column is specified, the function will summarize the entire DataFrame.
 
 ### Example
 
@@ -110,9 +124,9 @@ df = spark.createDataFrame([
         justifying, at least in his mind, its exorbitant cost. The board recommends
         immediate disciplinary action.
         """,)
-    ], ["input"])
+    ], ["text"])
 
-summaries = df.ai.summarize(input_col="input", output_col="summary")
+summaries = df.ai.summarize(input_col="text", output_col="summaries")
 display(summaries)
 ```
 

@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Detect sentiment with the `ai.analyze_sentiment` function
 
-The `ai.analyze_sentiment` function uses Generative AI to detect whether the emotional state expressed by input text is positive, negative, mixed, or neutral—all in just a single line of Python or PySpark code. If the sentiment can’t be determined, the output is left blank.
+The `ai.analyze_sentiment` function uses Generative AI to detect whether the emotional state expressed by input text is positive, negative, mixed, or neutral—all in just a single line of code. If the sentiment can’t be determined, the output is left blank.
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
@@ -27,9 +27,23 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [Standard]
 
-## Use `ai.analyze_sentiment` with Python
+## Use `ai.analyze_sentiment` with pandas
 
 [TBD]
+
+### Syntax
+
+```python
+df["sentiment"] = df["text"].ai.analyze_sentiment()
+```
+
+### Parameters
+
+None
+
+### Returns
+
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing sentiment labels for each row of input text. Each sentiment label will be `positive`, `negative`, `neutral`, or `mixed`. If a sentiment cannot be determined, the return value will be `null`.
 
 ### Example
 
@@ -42,9 +56,9 @@ df = pd.DataFrame([
         "This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!",
         "I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",
         "It's OK I suppose."
-    ], columns=["review"])
+    ], columns=["reviews"])
 
-df["sentiment"] = df["review"].ai.analyze_sentiment()
+df["sentiment"] = df["reviews"].ai.analyze_sentiment()
 display(df)
 ```
 
@@ -58,16 +72,16 @@ display(df)
 df.ai.analyze_sentiment(input_col="text", output_col="sentiment")
 ```
 
-### Inputs
+### Parameters
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Required | TBD |
-| **`output_col`** <br> Optional | TBD |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be analyzed for sentiment |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store the sentiment label for each row of input text |
 
 ### Returns
 
-[TBD]
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing sentiment labels that match the text values from each row of the input column. Each sentiment label will be `positive`, `negative`, `neutral`, or `mixed`. If a sentiment cannot be determined, the return value will be `null`.
 
 ### Example
 
@@ -80,9 +94,9 @@ df = spark.createDataFrame([
         ("This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!!",),
         ("I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",),
         ("It's OK I suppose.",)
-    ], ["review"])
+    ], ["reviews"])
 
-sentiment = df.ai.analyze_sentiment(input_col="review", output_col="sentiment")
+sentiment = df.ai.analyze_sentiment(input_col="reviews", output_col="sentiment")
 display(sentiment)
 ```
 

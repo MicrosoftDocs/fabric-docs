@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Translate text with the `ai.translate` function
 
-The `ai.translate` function uses Generative AI to translate input text to a new language of your choosing, all in just a single line of Python or PySpark code.
+The `ai.translate` function uses Generative AI to translate input text to a new language of your choosing, all in just a single line of code.
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
@@ -27,9 +27,25 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [Standard]
 
-## Use `ai.translate` with Python
+## Use `ai.translate` with pandas
 
 [TBD]
+
+### Syntax
+
+```python
+df["translations"] = df["text"].ai.translate("target_language")
+```
+
+### Parameters
+
+| **Name** | **Description** |
+|---|---|
+| **`to_lang`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) representing the target language for text translations |
+
+### Returns
+
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing translations for each row of input text. If the input text is `null`, the result will be `null`.
 
 ### Example
 
@@ -37,13 +53,13 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
-df = spark.createDataFrame([
-        ("Where is the bus?",),
-        ("The bus is on the beach.",),
-    ], ["input_text"])
+df = pd.DataFrame([
+        "Where is the bus?", 
+        "The bus is on the beach."
+    ], columns=["text"])
 
-translations = df.ai.translate(to_lang="spanish", input_col="input_text", output_col="translation")
-display(translations)
+df["translations"] = df["text"].ai.translate("spanish")
+display(df)
 ```
 
 ## Use `ai.translate` with PySpark
@@ -53,20 +69,20 @@ display(translations)
 ### Syntax
 
 ```python
-df.ai.translate(to_lang="spanish", input_col="text", output_col="translation")
+df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 ```
 
-### Inputs
+### Parameters
 
 | **Name** | **Description** |
 |---|---|
-| **`to_lang`** <br> Required | TBD |
-| **`input_col`** <br> Optional | TBD |
-| **`output_col`** <br> Optional | TBD |
+| **`to_lang`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the target language for text translations |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be translated |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store translations for each row of input text |
 
 ### Returns
 
-[TBD]
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing translations for each row of original text in the input column. If the input text is `null`, the result will be `null`.
 
 ### Example
 
@@ -77,9 +93,9 @@ df.ai.translate(to_lang="spanish", input_col="text", output_col="translation")
 df = spark.createDataFrame([
         ("Where is the bus?",),
         ("The bus is on the beach.",),
-    ], ["input_text"])
+    ], ["text"])
 
-translations = df.ai.translate(to_lang="spanish", input_col="input_text", output_col="translation")
+translations = df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 display(translations)
 ```
 

@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Fix grammar with the `ai.fix_grammar` function
 
-The `ai.fix_grammar` function uses Generative AI to correct the spelling, grammar, and punctuation of input text—all in just a single line of Python or PySpark code.
+The `ai.fix_grammar` function uses Generative AI to correct the spelling, grammar, and punctuation of input text—all in just a single line of code.
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
@@ -27,9 +27,23 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [Standard]
 
-## Use `ai.fix_grammar` with Python
+## Use `ai.fix_grammar` with pandas
 
 [TBD]
+
+### Syntax
+
+```python
+df["corrections"] = df["text"].ai.fix_grammar()
+```
+
+### Parameters
+
+None
+
+### Returns
+
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing corrected text for each row of input text. If the input text is `null`, the result will be `null`.
 
 ### Example
 
@@ -41,9 +55,9 @@ df = pd.DataFrame([
         "oh yeah, she and me go weigh back!",
         "You SUre took you'RE sweetthyme!",
         "teh time has come at last."
-    ], columns=["raw_text"])
+    ], columns=["text"])
 
-df["corrected"] = df["raw_text"].ai.fix_grammar()
+df["corrections"] = df["text"].ai.fix_grammar()
 display(df)
 ```
 
@@ -54,19 +68,19 @@ display(df)
 ### Syntax
 
 ```python
-df.ai.fix_grammar(input_col="text", output_col="correction")
+df.ai.fix_grammar(input_col="text", output_col="corrections")
 ```
 
-### Inputs
+### Parameters
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Required | TBD |
-| **`output_col`** <br> Optional | TBD |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be corrected for spelling, grammar, and punctuation |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store corrected text for each row of input text |
 
 ### Returns
 
-[TBD]
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing corrected text for each row of the input column. If the input text is `null`, the result will be `null`.
 
 ### Example
 
@@ -78,9 +92,9 @@ df = spark.createDataFrame([
         ("oh yeah, she and me go weigh back!",),
         ("You SUre took you'RE sweetthyme!",),
         ("teh time has come at last.",)
-    ], ["raw_text"])
+    ], ["text"])
 
-results = df.ai.fix_grammar(input_col="raw_text", output_col="corrected")
+results = df.ai.fix_grammar(input_col="text", output_col="corrections")
 display(results)
 ```
 
