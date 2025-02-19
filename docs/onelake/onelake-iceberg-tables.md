@@ -344,6 +344,14 @@ Keep in mind the following temporary limitations when you use this feature:
 
     We are working on support for *merge-on-read* Iceberg tables.
 
+ * **Certain Iceberg partition transform types are not supported**
+
+    Currently, the [Iceberg partition types](https://iceberg.apache.org/spec/#partition-transforms) ``bucket[N]``, ``truncate[W]``, and ``void`` are not supported.
+
+    If the Iceberg table being converted contains these partition transform types, virtualization to the Delta Lake format will not succeed.
+
+    We're working on an improvement to remove this limitation.
+
 
 ## Related content
 
