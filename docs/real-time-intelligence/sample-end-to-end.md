@@ -1,5 +1,5 @@
 ---
-title: End-to-end sample solution in real-time
+title: End-to-end sample in real-time
 description: Use the sample gallery to create an end-to-end real-time solution that shows how to stream, analyze, and visualize real-time data in a real-world context.
 ms.reviewer: sharmaanshul
 ms.author: shsagir
