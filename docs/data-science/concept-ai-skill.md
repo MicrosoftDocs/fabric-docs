@@ -5,11 +5,11 @@ description: Learn how to create an AI skill that can answer questions about dat
 author: fbsolo-ms1
 ms.author: amjafari
 ms.reviewer: franksolomon
-reviewer: avangrootel
+reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
-ms.date: 02/14/2025
+ms.date: 02/18/2025
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: AI skill Concepts
 
@@ -19,54 +19,93 @@ ms.search.form: AI skill Concepts
 
 # AI skill concepts (preview)
 
-With the Microsoft Fabric AI skill, you can make data more accessible for your colleagues. You can configure a generative AI system to build queries that answer questions about your data. After you configure the AI skill, you can share it with your colleagues, who can then ask their questions in plain English. Based on their questions, the AI generates queries over your data that answer those questions.
+AI skill is a new Microsoft Fabric feature that allows you to build your own conversational Q&A systems using generative AI. AI skill makes data insights more accessible and actionable for everyone in your organization. With an AI skill, your team can have conversations, with plain English-language questions, about the data that your organization stored in Fabric OneLake and then receive relevant answers. This way, even people without technical expertise in AI or a deep understanding of the data structure can receive precise and context-rich answers.
+
+You can also add organization-specific instructions, examples, and guidance to fine-tune the AI skill. This ensures that responses align with your organization's needs and goals, allowing everyone to engage with data more effectively. AI skill fosters a culture of data-driven decision-making because it lowers barriers to insight accessibility, it facilitates collaboration, and it helps your organization extract more value from its data.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## How the AI skill works
 
-The AI skill relies on generative AI, specifically, large language models (LLMs). These LLMs can generate queries-for example, T-SQL queries-based on a specific schema and a question. The system sends a question in the AI skill, information about the selected data (including the table and column names, and the data types found in the tables) to the LLM. Next, it requests generation of a T-SQL query that answers the question. Parse the generated query to first ensure that it doesn't change the data in any way. Then execute that query. Finally, show the query execution results. An AI skill is intended to access specific database resources, and then generate and execute relevant T-SQL queries.
+AI skill uses large language models (LLMs) to help users interact with their data naturally. AI skill applies Azure OpenAI Assistant APIs, and it behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases), and invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers—eliminating the need to write complex queries and ensuring accurate and secure data access.
+
+Here’s how it works in detail:
+
+**Question Parsing & Validation**: The AI Skill applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. It ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The AI Skill strictly enforces read-only access, maintaining read-only data connections to all data sources.
+
+**Data Source Identification**: The AI skill uses the user's credentials to access the schema of the data source. This ensures that the system fetches data structure information that the user has permission to view. It then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), and KQL databases. It might also reference user-provided AI instructions to determine the most relevant data source.
+
+**Tool Invocation & Query Generation**: Once the correct data source(s) are identified, the AI skill rephrases the question for clarity and structure and then invokes the corresponding tool to generate a structured query:
+
+- natural language to SQL (NL2SQL) for relational databases (Lakehouse/Warehouse).
+- natural language to DAX (NL2DAX) for Power BI datasets (Semantic Models).
+- natural language to KQL (NL2KQL) for KQL databases.
+
+The selected tool generates a query based on the provided schema, metadata, and context that are passed by the agent underlying the AI skill.
+
+**Query Validation**: The tool performs validation to ensure the query is correctly formed and adheres to its own security protocols, and RAI policies.
+
+**Query Execution & Response:**: Once validated, the AI Skill executes the query against the chosen data source. The results are formatted into a human-readable response, which might include structured data such as tables, summaries, or key insights.
+
+This approach ensures that users can interact with their data using natural language, while the AI skill handles the complexities of query generation, validation, and execution—all without requiring users to write SQL, DAX, or KQL themselves.
 
 ## AI skill configuration
 
-Think of the AI skill the way you might think about Power BI reports. You first build the report, and then you share the report with your colleagues who can consume it to get their data insights. The AI skill works in a similar way. You need to first create and configure the AI skill. Then, you can share it with your colleagues.
+Configuring an AI skill is similar to building a Power BI report—you start by designing and refining it to ensure it meets your needs, then publish and share it with colleagues so they can interact with the data. Setting up an AI skill involves:
 
-You should expect to handle some necessary configuration steps before the AI skill works properly. An AI skill can often provide out-of-the-box answers to reasonable questions, but it could provide incorrect answers for your specific situation. Incorrect answers typically occur because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers.
+**Selecting Data Sources**: An AI skill supports up to five data sources in any combination, including lakehouses, warehouses, KQL databases, and Power BI semantic models. For example, a configured AI skill could include five Power BI semantic models. It could include a mix of two Power BI semantic models, one lakehouse, and one Kusto database. You have many available options.
+
+**Choosing Relevant Tables**: After you select the data sources, you need to add them one at a time, and define the specific tables from each source that the AI skill will use. This step ensures that the AI skill retrieves accurate results by focusing only on relevant data.
+
+**Adding Context**: To improve the AI skill accuracy, you can provide more context through AI instructions and example queries. As the underlying agent for the AI skill, the context helps the Azure OpenAI Assistant API make more informed decisions about how to process user questions, and determine which data source is best suited to answer them.
+
+- **AI instructions**: You can provide custom rules or definitions that clarify organizational terminology or specific requirements. You can also add instructions to guide the agent that underlies the AI skill, in determining the best data source to answer specific types of questions. These instructions can provide more context or preferences that influence how the agent selects and queries data sources.
+
+    - Direct questions about **financial metrics** to a Power BI semantic model.
+    - Assign queries involving **raw data exploration** to the lakehouse.
+    - Route questions requiring **log analysis** to the KQL database.
+
+- **Example queries**: You can add sample question-query pairs to illustrate how the AI skill should respond to common queries. These examples serve as a guide for the agent, which helps it understand how to interpret similar questions and generate accurate responses. Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources.
+
+By combining clear AI instructions and relevant example queries, you can better align the AI skill with your organization’s data needs, ensuring more accurate and context-aware responses.
 
 ## Difference between an AI skill and a copilot
 
-The technology behind the AI skill and the Fabric copilots is similar. They both use generative AI to reason over data. They also have some key differences:
+While both AI skills and Fabric copilots use generative AI to process and reason over data, there are key differences in their functionality and use cases:
 
-- **Configuration**: With an AI skill, you can configure the AI to behave the way you need. You can provide it with instructions and examples that tune it to your specific use case. A Fabric copilot doesn't offer this configuration flexibility.
-- **Use case**: A copilot can help you do your work on Fabric. It can help you generate notebook code or data warehouse queries. In contrast, the AI skill operates independently. You can eventually connect it to Microsoft Teams and other areas outside of Fabric.
+**Configuration Flexibility**: AI skills are highly configurable. You can provide custom instructions and examples to tailor their behavior to specific scenarios. Fabric copilots, on the other hand, are preconfigured, and they don't offer this level of customization.
+
+**Scope and Use Case**: Fabric copilots are designed to assist with tasks within Microsoft Fabric, such as generation of notebook code or warehouse queries. AI skills, in contrast, are standalone artifacts. To make AI skill more versatile for broader use cases, they can integrate with external systems like Microsoft Copilot Studio, Azure AI Foundry, Microsoft Teams, or other tools outside Fabric.
 
 ## Evaluation of the AI skill
 
-- The product team tested the AI skill on different public and private T-SQL task benchmarks to ascertain the quality of SQL queries.
-- The product team also invested in extra harm mitigations. This effort includes technological approaches to focus copilot output on the context of the chosen data sources.
+The quality and safety of AI skill responses went through rigorous evaluation:
+
+**Benchmark Testing**: The product team tested AI skills across a range of public and private datasets to ensure high-quality and accurate responses.
+
+**Enhanced Harm Mitigations**: More safeguards are in place to ensure that AI skill outputs remain focused on the context of selected data sources, to reduce the risk of irrelevant or misleading answers.
 
 ## Limitations
 
-The AI skill is currently in public preview and has limitations. Updates will improve the AI skill over time.
+The AI skill is currently in public preview and it has limitations. Updates will improve the AI skill over time.
 
-- Generative AI doesn't interpret the results of an executed T-SQL query. It only generates that query.
-- The AI skill might return incorrect answers. You should test the AI skill with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
-- Only T-SQL queries on warehouses and lakehouses are supported.
-- The AI skill only generates T-SQL "read" queries. It doesn't generate T-SQL queries that create, update, or delete data.
+- Generative AI doesn't interpret the results of an executed T-SQL/DAX/KQL query. It only generates that query.
+- You can't add more than five data sources to the AI skill.
+- The AI skill only generates T-SQL/DAX/KQL "read" queries. It doesn't generate T-SQL/DAX/KQL queries that create, update, or delete data.
 - The AI skill can only access data that you provide. It only uses the data resource configurations that you provide.
-- The AI skill has data access permissions that match the permissions granted to the AI skill questioner. This is true when the AI skill is published to other locations, for example, Copilot for Microsoft 365 or Microsoft Copilot Studio.
+- The AI skill has data access permissions that match the permissions granted to the user interacting with the AI skill. This is true when the AI skill is published to other locations-for example, Microsoft Copilot Studio, Azure AI Foundry, and Microsoft Teams.
 - You can't use the AI skill to access unstructured data resources. These resources include .pdf, .docx, or .txt files, for example.
-- At this time, you can only select a single warehouse or a single lakehouse.
-- The AI skill doesn't support a conversational interface. Every question must be fully self-contained. It doesn't remember earlier questions.
-- It blocks non-English language questions or instructions.
-- You can't connect the AI skill to Fabric copilots, Microsoft Teams, or other experiences outside of Fabric.
+- The AI skill blocks non-English language questions or instructions.
 - You can't change the LLM that the AI skill uses.
-- The AI skill loses accuracy if you use nondescriptive column names.
-- The AI skill loses accuracy if you use large schemas with dozens of tables.
-- The AI skill is in a preview status. It has a limited scope and it might have bugs. Because of these considerations, we recommend that you avoid its use in production systems. Also avoid its use for critical decisions.
-- Nondescriptive data resource column and table names have a significant, negative impact on generated T-SQL query quality. We recommend the use of descriptive names.
+- You can't add a KQL database as a data source if it has more than 1,000 tables or any table with over 100 columns.
+- You can't add a Power BI semantic model as a data source if it contains more than a total of 100 columns and measures.
+- The AI skill works best with 25 or fewer tables selected across all data sources.
+- Nondescriptive data resource column and table names have a significant, negative impact on generated T-SQL/DAX/KQL query quality. We recommend the use of descriptive names.
 - Use of too many columns and tables might lower AI skill performance.
 - The AI skill is currently designed to handle simple queries. Complex queries that require many joins or sophisticated logic tend to have lower reliability.
+- If you add a Power BI semantic model as a data source, the AI skill doesn't use any hidden tables, columns, or measures.
+- To add a Power BI semantic model as a data source for AI skill, you need read/write permissions for that Power BI semantic model. Querying an AI skill that uses a Power BI semantic model also requires that you have read/write permissions for the underlying Power BI semantic model.
+- The AI skill might return incorrect answers. You should test the AI skill with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
 
 ## Related content
 

@@ -8,7 +8,7 @@ reviewer: midesa
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 02/14/2025
+ms.date: 02/19/2025
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create an AI skill that relies on generative AI, that my colleagues and I can use to have conversations about our data.
@@ -17,115 +17,211 @@ ms.collection: ce-skilling-ai-copilot
 
 # Create an AI skill (preview)
 
-Are you ready for conversations about your data? You can create AI experiences with the AI skill on Microsoft Fabric to answer questions over your lakehouse and warehouse tables. This technique lowers the barriers for others to answer their data questions, because your colleagues can ask their questions in English and receive data-driven answers.
+With a Microsoft Fabric AI skill, you can create conversational AI experiences that answer questions about data stored in lakehouses, warehouses, Power BI semantic models, and KQL databases in Fabric. Your data insights become accessible. Your colleagues can ask questions in plain English and receive data-driven answers, even if they aren’t AI experts or deeply familiar with the data.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
-- A paid F64 or higher Fabric capacity resource.
+- A paid F64 or higher Fabric capacity resource. 
 - [AI skill tenant switch](./ai-skill-tenant-switch.md) is enabled.
 - [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
 - [Cross-geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
-- A warehouse or lakehouse with data.
+- [Cross-geo storing for AI]()
+- A warehouse, lakehouse, Power BI semantic models, and Kusto databases with data.
 
-## Create and configure an AI skill
+## End-to-End Flow for Creating and Consuming AI skills in Fabric
 
-Creation and configuration of an AI skill on Fabric involves these steps:
+This section outlines the key steps to create, validate, and share an AI skill in Fabric, making it accessible for consumption.
 
 1. Create a new AI skill.
-1. Select your data.
-1. Ask the questions.
-1. Provide examples.
-1. Provide instructions.
+2. Select your data.
+3. Ask the questions.
+4. Provide instructions to the AI.
+5. Provide examples for each data source.
+6. Publish and share AI skill.
 
 The process is straightforward and you can begin testing the AI skill resources in minutes.
 
 ## Create a new AI skill
 
-Like other standard Fabric items creation processes, you can create a new AI skill from the Fabric **Data Science** home page. Select the workspace **New** option, or use the Create Hub. You must provide a name for the AI skill, as shown in this screenshot:
+To create a new AI Skill, first navigate to your workspace, and then select the **+ New Item** button. In the All items tab, search for **AI skill** to locate the appropriate option, as shown in this screenshot:
 
-:::image type="content" source="./media/how-to-create-ai-skill/create-ai-skill.png" alt-text="Screenshot showing creation of an AI skill name." lightbox="./media/how-to-create-ai-skill/create-ai-skill.png":::
+:::image type="content" source="./media/how-to-create-ai-skill/create-ai-skill.png" alt-text="Screenshot showing creation of an AI skill." lightbox="./media/how-to-create-ai-skill/create-ai-skill.png":::
+
+Once selected, you are prompted to provide a name for your AI Skill, as shown in this screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/name-ai-skill.png" alt-text="Screenshot showing how to provide name for the AI skill." lightbox="./media/how-to-create-ai-skill/name-ai-skill.png":::
+
+Refer to the provided screenshot for a visual guide on naming the AI Skill. After entering the name, proceed with the configuration to align the AI Skill with your specific requirements.
 
 ## Select your data
 
-After you create an AI skill, you then select a data source. It can be either a data warehouse or a lakehouse. On the next screen, select the warehouse or lakehouse, and then select **Connect**.
+After you create an AI skill, you can add up to five data sources, including lakehouses, warehouses, Power BI semantic models, and KQL databases in any combination. For example, you could add five Power BI semantic models, or two Power BI semantic models, one lakehouse, and one KQL database.
 
-The left pane populates with the available tables in the selected data source. Use the checkboxes to make a table available or unavailable to the AI. You must select at least one table before you can ask the AI skill your questions.
+When you create an AI Skill for the first time, and provide a name, the OneLake catalog automatically appears, allowing you to add data sources. To add a data source, select it from the catalog as shown on the next screen, then select **Connect**. Each data source must be added individually; for example, you can add a lakehouse, select **Connect**, and then proceed to add another data source. To filter the data source types, select the filter icon and then select the desired type. You can view only the data sources of the selected type, making it easier to locate and connect the appropriate sources for your AI Skill.
+
+Once you add the data source, the **Explorer** on the left pane of the AI skill page populates with the available tables in each selected data source, where you can use the checkboxes to make tables available or unavailable to the AI as shown in the following screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/change-datasource.png" alt-text="Screenshot showing how to add data sources." lightbox="./media/how-to-create-ai-skill/change-datasource.png":::
+
+For subsequent additions of data sources, navigate to the **Explorer** on the left pane of the AI Skill page, and select **+ Data source**, as shown in this screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/add-datasource-OE.png" alt-text="Screenshot that shows how to add more data sources." lightbox="./media/how-to-create-ai-skill/add-datasource-OE.png":::
+
+The OneLake catalog opens again, and you can seamlessly add more data sources as needed.
 
 > [!NOTE]
-> Make sure you use descriptive column names. Instead of using column names like `C1` or `ActCu`, use `ActiveCustomer` or `IsCustomerActive`. Descriptive names are the most effective way to get more reliable queries out of the AI.
->
-> Use the notes for the model in the UI configuration panel.
-> If the AI skill generates incorrect T-SQL queries, you can provide instructions to the model in plain English, to improve future queries. The system uses these instructions with every query. Short and direct instructions work best.
+> You need read/write permission to add a Power BI semantic model as a data source to the AI skill.
+> Make sure to use descriptive names for both tables and columns. A table named `SalesData` is more meaningful than `TableA`, and column names like `ActiveCustomer` or `IsCustomerActive` are clearer than `C1` or `ActCu`. Descriptive names help the AI generate more accurate and reliable queries.
 
 ## Ask questions
 
-After you select the data, you can start asking questions. The system handles questions that a single query can answer, as shown in this screenshot:
+After you add the data sources and select the relevant tables for each data source, you can start asking questions. The system handles questions as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/ask.png" alt-text="Screenshot showing a question for an AI skill." lightbox="./media/how-to-create-ai-skill/ask.png":::
 
-Questions like the following examples should work:
+Questions similar to these examples should also work:
 
 - "What were our total sales in California in 2023?"
+- "What are the top 5 products with the highest list prices, and what are their categories?"
 - "What are the most expensive items that have never been sold?"
 
-These questions are out of scope:
+Questions of these types are suitable because the system can translate them into structured queries (T-SQL, DAX, or KQL), execute them against databases, and then return concrete answers based on stored data.
+
+However, like these are out of scope:
 
 - "Why is our factory productivity lower in Q2 2024?"
 - "What is the root cause of our sales spike?"
 
-When you ask a question, the system uses your credentials to fetch the schema. Based on the question, the system uses the information you provided (see the [Provide examples](#provide-example-queries) and [Provide instructions](#provide-instructions) sections), and the schema, to construct a prompt. This prompt is the text sent to an AI skill, which generates multiple SQL queries.
+These questions are currently out of scope because they require complex reasoning, correlation analysis, or external factors not directly available in the database. The AI skill currently doesn't perform advanced analytics, machine learning, or causal inference. It simply retrieves and processes structured data based on the user’s query.
 
-After generation of the SQL queries, study them to ensure that they only query the data. Also, verify that they don't create, update, delete, or otherwise change your data in any way. Then, extract the best query candidate from the list of generated queries. Make any needed basic repairs on the best AI-generated query. Finally, with your credentials, re-execute the query to receive the result set.
+When you ask a question, the AI skill uses the Azure OpenAI Assistant API to process the request. The flow operates this way:
+
+### Schema Access Using User Credentials
+
+The system first uses the credentials of the user to access the schema of the data source (for example, lakehouse, warehouse, PBI semantic model, or KQL databases). This ensures that the system fetches data structure information that the user has permission to view.
+
+### Constructing the Prompt
+
+To interpret the user's question, the system combines:
+
+1. User Query: The natural language question provided by the user.
+2. Schema Information: Metadata and structural details of the data source retrieved in the previous step.
+3. Examples and Instructions: Any predefined examples (for example, sample questions and answers) or specific instructions provided when setting up the AI skill. These examples and instructions help refine the AI's understanding of the question, and guide how the AI interacts with the data.
+
+All this information is used to construct a prompt. This prompt serves as an input to the Azure OpenAI Assistant API, which behaves as an agent underlying the AI skill. This essentially instructs the AI skill about how to process the query, and the type of answer to produce.
+
+### Tool Invocation Based on Query Needs
+
+The agent analyzes the constructed prompt, and decides which tool to invoke to retrieve the answer:
+
+1. Natural Language to SQL (NL2SQL): Used to generate SQL queries when the data resides in a lakehouse or warehouse
+2. Natural Language to DAX (NL2DAX): Used to create DAX queries to interact with semantic models in Power BI data sources
+3. Natural Language to KQL (NL2KQL): Used to construct KQL queries to query data in KQL databases
+
+The selected tool generates a query using the schema, metadata, and context that the agent underlying the AI skill provides. Then the tool validates the query, to ensure proper formatting and compliance with its security protocols, and its own Responsible AI (RAI) policies.
+
+### Response Construction
+
+The agent underlying the AI skill executes the query and ensures that the response is structured and formatted appropriately. The agent often includes extra context to make the answer user-friendly. Finally, the answer is displayed to the user in a conversational interface, as shown in the following screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/answer.png" alt-text="Screenshot showing the answer to the question by an AI skill." lightbox="./media/how-to-create-ai-skill/answer.png":::
+
+The agent presents both the result and the intermediate steps that AI skill took to retrieve the final answer. This approach enhances transparency and allows validation of those steps, if necessary. Users can expand the dropdown for the steps to view all the steps the AI Skill took to retrieve the answer, as shown in the following screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/answer-steps.png" alt-text="Screenshot showing the steps taken by an AI skill." lightbox="./media/how-to-create-ai-skill/answer-steps.png":::
+
+Additionally, the AI skill provides the generated code used to query the corresponding data source, offering further insight into how the response was constructed.
+
+These queries are designed exclusively for querying data. Operations that involve
+
+- data creation
+- data updates
+- data deletions
+- any type of data change
+
+aren't allowed, to protect the integrity of your data.
+
+At any point, you can select the **Clear chat** button to clear the chat, as shown in the following screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/clear-chat.png" alt-text="Screenshot showing the steps taken by an AI skill." lightbox="./media/how-to-create-ai-skill/clear-chat.png":::
+
+The Clear chat feature erases all chat history and starts a new session. Once you delete your chat history, you can't retrieve it.
 
 ## Change the data source
 
-To switch to another lakehouse or warehouse, select the arrows near the top of the **Explorer** pane, as shown in this screenshot:
+To remove a data source, hover over the data source name in the **Explorer** on the left pane of the AI skill page until the three-dot menu appears. Select the three dots to reveal the options, then select **Remove** to delete the data source as shown in the following screenshot:
 
-:::image type="content" source="./media/how-to-create-ai-skill/change-datasource.png" alt-text="Screenshot showing selection of another data source." lightbox="./media/how-to-create-ai-skill/change-datasource.png":::
+:::image type="content" source="./media/how-to-create-ai-skill/delete-datasource.png" alt-text="Screenshot showing how to delete or refresh data sources" lightbox="./media/how-to-create-ai-skill/delete-datasource.png":::
 
-## Configuring the AI skill
+Alternatively, if your data source changed, you can select **Refresh** within the same menu, as shown in the following screenshot:
 
-The AI skill offers several configuration options that allow creators to customize its behavior to better suit their needs. These configurations provide flexibility in how the AI skill processes and presents data, enabling more control over the outcomes.
+:::image type="content" source="./media/how-to-create-ai-skill/refresh-datasource.png" alt-text="Screenshot showing how to refresh a data source" lightbox="./media/how-to-create-ai-skill/refresh-datasource.png":::
 
-### Provide example queries
+This ensures that any data source updates are both reflected and correctly populated in the explorer, to keep your AI skill in sync with the latest data.
 
-You can provide the AI skill with example SQL queries to enhance its accuracy. This technique, known as **Few Shot Learning** in generative AI, allows you to guide the AI skill to generate answers that align with your expectations.
+## AI skill configuration
 
-When you provide the AI with sample query/question pairs, it uses these examples as a reference when answering future questions. The AI browses through the provided examples to find the most relevant queries that match the new question. This helps the AI incorporate business-specific logic and respond to common queries that end users frequently ask.
-
-If you notice that the AI doesn't generate the desired SQL queries, you can supply more examples to improve its performance.
-
-> [!TIP]
-> A diverse set of example queries enhances the AI skill's ability to generate accurate and relevant SQL queries.
-
-To add examples, select the edit button under "Example SQL Queries" on the right-hand side, as shown in the next screenshot:
-
-:::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples.png":::
-
-> [!NOTE]
-> The AI skill only refers to queries that contain valid SQL and that match the schema of the selected tables. The AI skill won't use queries that haven't completed validation. Make sure that all example queries are valid and correctly aligned with the schema to ensure their effective utilization.
+The AI skill offers several configuration options that allow users to customize AI skill behavior, to better match the needs of your organization. As the AI skill processes and presents data, these configurations offer flexibility that enables more control over the outcomes.
 
 ### Provide instructions
 
-You can also steer the AI with instructions. You can provide these instructions in the **Notes for model** text box. Here, you can write instructions in English. The AI uses those instructions when it generates SQL.
+You can provide specific instructions to guide the AI's behavior. To add them, select **AI instructions** as shown in the following screenshot:
 
-If you find that the AI consistently misinterprets certain words or acronyms, you can provide definitions of terms in this section, as shown in this screenshot:
+:::image type="content" source="./media/how-to-create-ai-skill/select-adding-instructions.png" alt-text="Screenshot showing selection of the AI instructions button." lightbox="./media/how-to-create-ai-skill/select-adding-instructions.png":::
+
+The AI instructions pane opens, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png" alt-text="Screenshot showing where you can edit the instructions you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png":::
 
-### Customize SQL query variations
+Here, you can write up to 15,000 characters in plain English-language text, to instruct the AI about how to handle queries.
 
-The **SQL Query Variations** setting controls the variability in the number of SQL queries the AI skill generates before determining the final query. Adjustments to this setting can influence the number of different SQL queries the AI skill evaluates before it arrives at the final query.
+For example, you can specify the exact data source to use for certain types of questions. Examples of data source choices could involve directing the AI to use
 
-If you want the AI skill to explore more possible query paths before it chooses the most appropriate one, increase the SQL Query Variations setting. This can help with complex scenarios where multiple potential query structures might yield the desired result.
+- Power BI semantic models for financial queries
+- a lakehouse for sales data
+- a KQL database for operational metrics
 
-### Show executed SQL query
+These instructions ensure that the AI generates appropriate queries, whether SQL, DAX, or KQL, based on your guidance and the context of the questions.
 
-The **Show executed SQL query** setting allows creators to debug the results produced by the AI skill. When enabled, this setting provides visibility into the final SQL query generated by the AI skill that was used to produce the final output.
+If your AI resource consistently misinterprets certain words, acronyms, or terms, you can provide clear definitions in this section, to ensure that the AI understands and processes them correctly. This becomes especially useful for domain-specific terminology or unique business jargon.
 
-You can enable this setting to verify or troubleshoot the SQL queries that the AI skill generates. This helps to understand how the AI skill constructs queries, and it ensures they align with the expected logic and structure.
+By tailoring these instructions and defining terms, you enhance the AI's ability to deliver precise and relevant insights, in full alignment with your data strategy and business requirements.
+
+### Provide example queries
+
+You can enhance the accuracy of the AI skill responses when you provide example queries tailored to each data source, such as Lakehouse, Warehouse, and Kusto. This approach, in generative AI known as **Few-Shot Learning**, helps guide the AI Skill to generate responses that better align with your expectations.
+
+When you provide the AI with sample query/question pairs, it references these examples when it answers future questions. Matching new queries to the most relevant examples helps the AI incorporate business-specific logic, and respond effectively to commonly asked questions. This functionality enables fine-tuning for individual data sources, and ensures generation of more accurate SQL or KQL queries.
+
+Power BI semantic model data don't support adding sample query/question pairs at this time. However, for supported data sources such as Lakehouse, Warehouse, and Kusto, providing more examples can significantly improve the AI’s ability to generate precise queries when its default performance needs adjustment.
+
+> [!TIP]
+> A diverse set of example queries enhances the ability of an AI skill to generate accurate and relevant SQL/KQL queries. To add example queries, select the **Example queries** button to open the example queries pane, as shown in the following screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples.png":::
+
+This pane provides options to add or edit example queries for all supported data sources. For each data source, you can select Add or Edit Example Queries to input the relevant examples, as shown in the following screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples.png":::
+
+To add examples, select the **Example queries** button to open the example queries pane on the right. This pane provides options to add or edit example queries for all supported data sources. For each data source, you can select Add or Edit Example Queries to input the relevant examples, as shown in the following screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples-sql.png" alt-text="Screenshot showing the SQL examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples-sql.png":::
+
+> [!NOTE]
+> The AI skill only refers to queries that contain valid SQL/KQL syntax and that match the schema of the selected tables. The AI skill won't use queries that haven't completed their validation. Make sure that all example queries are valid and correctly aligned with the schema to ensure that the AI skill utilizes them effectively.
+
+## Publish AI Skill and Share
+
+After you test the performance of your AI skill across various questions, and you confirm that it generates accurate SQL, DAX, OR KQL queries, you can share it with your colleagues. At that point, select **Publish**, as shown in the following screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/publish-ai-skill.png" alt-text="Screenshot showing publication of an AI skill." lightbox="./media/how-to-create-ai-skill/publish-ai-skill.png":::
+
+This step opens a window that asks for a description of the AI skill. Here, provide a detailed description of what the AI skill does. These details guide your colleagues about the functionality of the AI skill, and assist other AI systems/orchestrators to effectively invoke that AI skill.
+
+After AI skill publication, you'll have two versions of it. One version is the current development version, which you can continue to refine and improve. The second version is the published version, which you can share with your colleagues who want to query the AI skill to get answers to their questions. You can incorporate feedback from your colleagues into your current development version as you develop it, to further enhance the AI skill’s performance.
 
 ## Related content
 

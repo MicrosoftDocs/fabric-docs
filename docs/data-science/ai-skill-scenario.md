@@ -8,14 +8,14 @@ reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 02/13/2025
+ms.date: 02/18/2025
 ms.collection: ce-skilling-ai-copilot
 
 ---
 
 # AI skill example with the AdventureWorks dataset (preview)
 
-This article demonstrates how to set up an AI skill, using a lakehouse as a data source. To describe the process, we first create a lakehouse, and then add data to it. Then, we create an AI skill and configure the lakehouse as its data source. After you create the AI skill, you can follow the same steps to add your data sources if you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, or a KQL database. While the steps shown here focus on the lakehouse, the process is similar for other data sources—you just need to make adjustments based on your specific selection.
+This article describes how to set up an AI skill, using a lakehouse as a data source. To illustrate the process, we first create a lakehouse, and then add data to it. Then, we create an AI skill and configure the lakehouse as its data source. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, or a KQL database, you can follow the same steps after you create the AI skill to add your data sources. While the steps shown here focus on the lakehouse, the process is similar for other data sources—you just need to make adjustments based on your specific selection.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -30,15 +30,15 @@ This article demonstrates how to set up an AI skill, using a lakehouse as a data
 
 ## Create a lakehouse with AdventureWorksLH
 
-First, create a lakehouse, and populate it with the necessary data.
+First, create a lakehouse and populate it with the necessary data.
 
-If you already have an instance of **AdventureWorksLH** in a lakehouse (or a warehouse), you can skip this step. If not, you can use these instructions to populate the lakehouse with the data from a Fabric notebook:
+If you already have an instance of AdventureWorksLH in a lakehouse (or a warehouse), you can skip this step. If not, you can use the following instructions from a Fabric notebook to populate the lakehouse with the data.
 
 1. Create a new notebook in the workspace where you want to create your AI skill.
 
-1. On the left side of the **Explorer** pane, select **+ Data sources**. This option allows you to add an existing lakehouse, or to create a new lakehouse. Here, we create a new lakehouse and then assign a name to it.
+1. On the left side of the **Explorer** pane, select **+ Data sources**. This option allows you to add an existing lakehouse or creates a new lakehouse. For sake of clarity, create a new lakehouse and assign a name to it.
 
-1. In the top cell, add this code snippet:
+1. In the top cell, add the following code snippet:
 
     ```python
     import pandas as pd
@@ -58,23 +58,27 @@ If you already have an instance of **AdventureWorksLH** in a lakehouse (or a war
         spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
     ```
 
-1. Select **Run all**, as shown in this screenshot:
+1. Select **Run all**.
 
-   :::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot that shows a notebook with the AdventureWorks upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
+   :::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the AdventureWorks upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
 
 After a few minutes, the lakehouse populates with the necessary data.
 
 ## Create an AI skill
 
-1. To create a new AI skill, first navigate to your workspace. Then, select the **+ New Item** button. In the **All items** tab, find **AI skill**, to locate the appropriate option. Once selected, you're prompted to provide a name for your AI skill. For more information about naming the AI skill, refer to the next screenshot. After you enter the name, proceed with the following steps to align the AI skill with your specific requirements, as shown in these screenshots:
+1. To create a new AI skill, navigate to your workspace and select the **+ New Item** button, as shown in this screenshot:
 
-   :::image type="content" source="./media/ai-skill-scenario/create-ai-skill.png" alt-text="Screenshot that shows where to create AI skills." lightbox="./media/ai-skill-scenario/create-ai-skill.png":::
+   :::image type="content" source="./media/ai-skill-scenario/create-ai-skill.png" alt-text="Screenshot showing where to create AI skills." lightbox="./media/ai-skill-scenario/create-ai-skill.png":::
 
-   :::image type="content" source="./media/ai-skill-scenario/name-ai-skill.png" alt-text="Screenshot that shows where to provide the AI skill name." lightbox="./media/ai-skill-scenario/name-ai-skill.png":::
+In the All items tab, search for **AI skill** to locate the appropriate option. Once selected, a prompt asks you to provide a name for your AI skill, as shown in this screenshot:
+
+   :::image type="content" source="./media/ai-skill-scenario/name-ai-skill.png" alt-text="Screenshot showing where to provide name for AI skill." lightbox="./media/ai-skill-scenario/name-ai-skill.png":::
+
+After you enter the name, proceed with the following steps to align the AI skill with your specific requirements.
 
 ## Select the data
 
-Select the lakehouse you created in the previous step, and then select **Connect**. Once you add the lakehouse as a data source, the **Explorer** pane on the left side of the AI Skill page displays the lakehouse name. Select the lakehouse to view all available tables. Use the checkboxes to select the tables you want to make available to the AI. For this scenario, select the following tables as shown in the next screenshot:
+Select the lakehouse you created in the previous step, and select **Connect**. Once the lakehouse is added as a data source, the **Explorer** pane on the left side of the AI Skill page shows the lakehouse name. Select the lakehouse to view all available tables. Use the checkboxes to select the tables you want to make available to the AI. For this scenario, select these tables:
 
 - `dimcustomer`
 - `dimdate`
@@ -87,84 +91,76 @@ Select the lakehouse you created in the previous step, and then select **Connect
 - `factinternetsales`
 - `cactresellersales`
 
-:::image type="content" source="./media/ai-skill-scenario/get-started.png" alt-text="Screenshot that shows the available tables in the Explorer pane." lightbox="./media/ai-skill-scenario/get-started.png":::
+:::image type="content" source="./media/ai-skill-scenario/get-started.png" alt-text="Screenshot showing where you can select tables for AI." lightbox="./media/ai-skill-scenario/get-started.png":::
 
 ## Provide instructions
 
-To add AI instructions, select the **AI instructions** button, to open the AI instructions pane. You can add these instructions.
+To add AI instructions, select the **AI instructions** button to open the AI instructions pane on the right. You can add the following instructions.
 
 The `AdventureWorksLH` data source contains comprehensive information across three tables:
 
 - `dimcustomer`, for detailed customer demographics and contact information
-- `dimdate`, for date-related data like calendar and fiscal information
-- `dimgeography`, for geographical details including city names and country region codes
+- `dimdate`, for date-related data - for example, calendar and fiscal information
+- `dimgeography`, for geographical details including city names and country region codes.
 
-Use this data source for queries and analyses that involve customer details, time-based events, and geographical locations as shown in this screenshot:
+Use this data source for queries and analyses that involve customer details, time-based events, and geographical locations.
 
-:::image type="content" source="./media/ai-skill-scenario/add-ai-instructions.png" alt-text="Screenshot showing the AI instructions text box." lightbox="./media/ai-skill-scenario/add-ai-instructions.png":::
+:::image type="content" source="./media/ai-skill-scenario/add-ai-instructions.png" alt-text="Screenshot showing where you can provide the instructions to the AI." lightbox="./media/ai-skill-scenario/add-ai-instructions.png":::
 
 ## Provide examples
 
-To add example queries, select the **Example queries** button, to open the example queries pane. This pane provides options to add or edit example queries for all supported data sources. For each data source, you can select **Add or edit example queries** to input the relevant examples, as shown in this screenshot:
+To add example queries, select the **Example queries** button to open the example queries pane on the right. This pane provides options to add or edit example queries for all supported data sources. For each data source, you can select Add or Edit Example Queries to input the relevant examples, as shown in the following screenshot:
 
-:::image type="content" source="./media/ai-skill-scenario/add-example-queries-LH.png" alt-text="Screenshot showing the Add or edit example queries option." lightbox="./media/ai-skill-scenario/add-example-queries-LH.png":::
+:::image type="content" source="./media/ai-skill-scenario/add-example-queries-LH.png" alt-text="Screenshot showing where you can add the examples you provide to the AI." lightbox="./media/ai-skill-scenario/add-example-queries-LH.png":::
 
-In this example, you should add example queries for the lakehouse data source that you created. We start with this question:
+Here, you should add Example queries for the lakehouse data source that you created.
 
 `Question: Calculate the average percentage increase in sales amount for repeat purchases for every zipcode. Repeat purchase is a purchase subsequent to the first purchase (the average should always be computed relative to the first purchase)`
 
-For that question, we use the SQL Server query shown in this SQL Server code snippet:
-
-```sql
+```SQL
 SELECT AVG((s.SalesAmount - first_purchase.SalesAmount) / first_purchase.SalesAmount * 100) AS AvgPercentageIncrease
 FROM factinternetsales s
 INNER JOIN dimcustomer c ON s.CustomerKey = c.CustomerKey
 INNER JOIN dimgeography g ON c.GeographyKey = g.GeographyKey
 INNER JOIN (
-    SELECT *
-    FROM (
-        SELECT
-            CustomerKey,
-            SalesAmount,
+	SELECT *
+	FROM (
+		SELECT
+			CustomerKey,
+			SalesAmount,
             OrderDate,
-            ROW_NUMBER() OVER (PARTITION BY CustomerKey ORDER BY OrderDate) AS RowNumber
-        FROM factinternetsales
-    ) AS t
-    WHERE RowNumber = 1
+			ROW_NUMBER() OVER (PARTITION BY CustomerKey ORDER BY OrderDate) AS RowNumber
+		FROM factinternetsales
+	) AS t
+	WHERE RowNumber = 1
 ) first_purchase ON s.CustomerKey = first_purchase.CustomerKey
 WHERE s.OrderDate > first_purchase.OrderDate
 GROUP BY g.PostalCode;
 ```
 
-We have a second question:
-
-For that second question, we use the SQL Server query shown in this SQL Server code snippet:
-
 `Question: Show the monthly total and year-to-date total sales. Order by year and month.`
-    
-```sql    
+
+```SQL
 SELECT
     Year,
-    Month,
-    MonthlySales,
-    SUM(MonthlySales) OVER (PARTITION BY Year ORDER BY Year, Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS CumulativeTotal
+	Month,
+	MonthlySales,
+	SUM(MonthlySales) OVER (PARTITION BY Year ORDER BY Year, Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS CumulativeTotal
 FROM (
-    SELECT
-        YEAR(OrderDate) AS Year,
-        MONTH(OrderDate) AS Month,
-        SUM(SalesAmount) AS MonthlySales
-    FROM factinternetsales
-    GROUP BY YEAR(OrderDate), MONTH(OrderDate)
+	SELECT
+	   YEAR(OrderDate) AS Year,
+	   MONTH(OrderDate) AS Month,
+	   SUM(SalesAmount) AS MonthlySales
+	FROM factinternetsales
+	GROUP BY YEAR(OrderDate), MONTH(OrderDate)
 ) AS t
 ```
 
-This screenshot shows those questions and their associated SQL Server queries:
-
-:::image type="content" source="./media/ai-skill-scenario/add-example-queries-SQL.png" alt-text="Screenshot showing questions and their associated SQL Server queries." lightbox="./media/ai-skill-scenario/add-example-queries-SQL.png":::
+:::image type="content" source="./media/ai-skill-scenario/add-example-queries-SQL.png" alt-text="Screenshot showing adding SQL examples." lightbox="./media/ai-skill-scenario/add-example-queries-SQL.png":::
 
 ## Test and revise the AI skill
 
-Both AI instructions and example queries are added to the AI skill. As you continue testing, you can improve the AI skill performance if you add more examples and refine the instructions. Collaborate with your colleagues to gather feedback, and based on their input, ensure the provided example queries and instructions align with the types of questions they want to ask.
+Both AI instructions and example queries were added to the AI skill. As you continue testing, adding more examples and refining instructions can further improve the AI skill performance. Collaborate with your colleagues to gather feedback. Based on their input, ensure that the provided example queries and instructions align with the types of questions they want to ask.
 
 ## Use the AI skill programmatically
 
@@ -176,15 +172,15 @@ Before you publish the AI skill, it doesn't have a published URL value, as shown
 
 :::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png" alt-text="Screenshot showing that an AI skill doesn't have a published URL value before publication." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png":::
 
-After you validate the performance of the AI skill, you might want to publish it so that you can then share it with your colleagues who want to do Q&A over data. In this case, select **Publish**, as shown in this screenshot:
+After you validate the performance of the AI skill, you might decide to publish it so you can then share it with your colleagues who want to do Q&A over data. In this case, select **Publish**, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/ai-select-publish.png" alt-text="Screenshot showing selection of the Publish option." lightbox="./media/ai-skill-scenario/ai-select-publish.png":::
 
 The published URL for the AI skill appears, as shown in this screenshot:
 
-:::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL of the AI skill." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png":::
+:::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png":::
 
-You can then copy the published URL, and use it in the Fabric notebook. This way, you can make calls to the AI skill API in a Fabric notebook, to query the AI skill. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your AI skill. This example uses `\<generic published URL value\>` as the URL.
+You can then copy the published URL and use it in the Fabric notebook. This way, you can query the AI skill by making calls to the AI skill API in a Fabric notebook. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your AI skill. This example uses `\<generic published URL value\>` as the URL.
 
 ```python
 %pip install "openai==1.14.1"
