@@ -14,7 +14,7 @@ ms.collection:
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Microsoft Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline database tasks. It integrates seamlessly with your Fabric database, providing intelligent insights to help you along each step of your T-SQL explorations.
+Microsoft Copilot for SQL database in Microsoft Fabric is an AI assistant that streamlines database tasks. It integrates seamlessly with your Fabric database, providing intelligent insights to help you along each step of your T-SQL explorations.
 
 ## Why use Copilot for SQL database?
 
