@@ -65,7 +65,7 @@ When you run multiple queries and those return multiple results, you can select 
 
 The SQL query editor is powered by [Copilot for SQL database](copilot.md). It is designed to accelerate database development by leveraging generative AI to simplify and automate database management and improving the efficiency of writing T-SQL queries. Copilot is contextualized to your database's schema and can generate answers catered for you.
 
-Copilot for SQL database offers a variety of features. For more information, visit [What is Microsoft Copilot for SQL database in Microsoft Fabric](copilot.md#key-features-for-copilot).
+Copilot for SQL database offers a variety of features. For more information, visit [Why use Copilot](copilot.md#why-use-copilot-for-sql-database).
 
 Before your business can start using Copilot for SQL database, you need to [enable Copilot](../../fundamentals/copilot-enable-fabric.md).
 
