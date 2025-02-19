@@ -16,9 +16,15 @@ ms.collection:
 
 Microsoft Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline database tasks. It integrates seamlessly with your Fabric database, providing intelligent insights to help you along each step of your T-SQL explorations.
 
-## Key features for Microsoft Copilot
+## Why use Copilot for SQL database?
 
-Copilot for SQL database generates T-SQL code by utilizing table and view names, column names, primary key, and foreign key metadata. It doesn't use data in tables to generate T-SQL suggestions.
+Here are some key features and benefits of using Microsoft Copilot for SQL database in Microsoft Fabric:
+
+- **Increased productivity**: Copilot can help you write T-SQL queries faster and more efficiently, allowing you to focus on analyzing data rather than writing code.
+
+- **Improved accuracy**: By leveraging AI, Copilot can help reduce errors in your T-SQL code, ensuring that your queries are more accurate and reliable.
+
+- **Enhanced learning**: Copilot can provide explanations and suggestions for T-SQL code, helping you learn and understand SQL better.
 
 - [**Code completion**](copilot-code-completion.md): Start writing T-SQL in the SQL query editor, and Microsoft Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. Copilot can also suggest code completions for table and column names, functions, and keywords.
 
@@ -30,13 +36,13 @@ Copilot for SQL database generates T-SQL code by utilizing table and view names,
 
 - **Natural Language to SQL**: This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
 
-- **Document-based Q&A**: Ask Copilot questions about general SQL database capabilities, and it responds in natural language. Copilot also helps find documentation related to your request.
+## Enable Copilot in SQL database in Microsoft Fabric
 
-## Enable Microsoft Copilot
+To enable Copilot in SQL database in Microsoft Fabric, follow the steps outlined below.
 
 [!INCLUDE [copilot-include](../../includes/copilot-include.md)]
 
-## Use Microsoft Copilot in SQL database in Microsoft Fabric
+## Use Copilot in SQL database in Microsoft Fabric
 
 Here are some tips for effectively maximizing productivity with Microsoft Copilot:
 
@@ -63,13 +69,9 @@ Here are some tips for effectively maximizing productivity with Microsoft Copilo
   > [!NOTE]
   > AI powers Copilot, so surprises and mistakes are possible.
 
-## Responsible use of Microosft Copilot
+## Responsible use of Copilot in Fabric
 
-Microsoft is committed to ensuring that our AI principles and Responsible AI Standards guide our AI systems. These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to address emerging issues proactively.
-
-Copilot features in Fabric are built to meet the Responsible AI Standard, which means they're reviewed by multidisciplinary teams for potential harms and then refined to include mitigations.
-
-For more information, see [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
+Visit [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
 
 ## Limitations
 
@@ -81,15 +83,12 @@ Here are the current limitations of Copilot for SQL database:
 - People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
 - Copilot for SQL database in Fabric isn't currently available if Private Link is enabled and Public Access is turned off in the tenant setting.
 
-## Frequently Asked Questions (FAQ) about Microsoft Copilot for SQL database
-
-For more information about using Microsoft Copilot for SQL database in Fabric, visit ["Frequently asked questions for Copilot in SQL database in Microsoft Fabric](copilot-faq.yml).
-
-For more information about using Microsoft Copilot, visit [Use Copilot to get the most from Learn](https://review.learn.microsoft.com/copilot/roadmap/use-copilot-to-get-the-most-from-learn?branch=pr-en-us-474).
+use-copilot-to-get-the-most-from-learn?branch=pr-en-us-474).
 
 ## Related content
 
-- [Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
+- [Use Copilot to get the most from Learn](https://review.learn.microsoft.com/copilot/roadmap/)
 - [Use Copilot code completion for SQL database](copilot-code-completion.md)
 - [Use Copilot quick actions for SQL database](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
+- [Frequently asked questions for Copilot in SQL database in Microsoft Fabric](copilot-faq.yml)
+- [Use Copilot to get the most from Learn](https://review.learn.microsoft.com/copilot/roadmap/)
