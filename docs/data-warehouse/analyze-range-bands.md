@@ -4,7 +4,7 @@ description: "Learn how to analyze Microsoft Fabric Warehouse data with range ba
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: v-myerspeter
-ms.date: 06/21/2024
+ms.date: 02/19/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -37,9 +37,9 @@ CREATE TABLE [d_RangeBand]
 ```
 
 > [!NOTE]
-> Technically, this table isn't a dimension table. It's a helper table that organizes fact or dimension data for analysis.
+> Technically, this table isn't a [dimension table](dimensional-modeling-dimension-tables.md). It's a helper table that organizes fact or dimension data for analysis.
 
-You should consider creating a composite [primary key or unique constraint](table-constraints.md) based on the `Series` and `RangeLabel` columns to ensure that duplicate ranges within a series can't be created. You should also verify that the lower and upper boundary values don't overlap and that there aren't any gaps.
+You should verify no duplicates are inserted in this table, based on the `Series` and `RangeLabel` columns, in order to avoid duplicate ranges within a series are created. You should also verify that the lower and upper boundary values don't overlap and that there aren't any gaps. You can could a composite [primary key or unique constraint](table-constraints.md) based on the `Series` and `RangeLabel` columns but only with the `NOT ENFORCED` keyword. Primary key, unique key, and foreign key constraints require [NOT ENFORCED](/sql/t-sql/statements/alter-table-column-constraint-transact-sql?view=fabric&preserve-view=true#not-enforced) in Fabric Data Warehouse. Integrity of the constraints must be maintained by processes that insert the information.
 
 > [!TIP]
 > You can add a `RangeLabelSort` column with an **int** data type if you need to control the sort order of the range bands. This column will help you present the range bands in a meaningful way, especially when the range label text values don't sort in a logical order.
