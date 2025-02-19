@@ -72,8 +72,12 @@ Eventhouse item creation payload
 
 | Name | Type | Description |
 |-|-|-|
-| 202 Accepted | | Request accepted, eventhouse provisioning in progress.<br><br>Headers<br><br>Location: string - URI address that you can poll using GET requests to monitor the progress of the migration.<br>x-ms-operation-id: string<br>Retry-After: integer |
+| 202 Accepted | | Request accepted, eventhouse provisioning in progress.<br><br>Response object includes:<br><br>Location: string - URI address for monitoring the progress, see [Monitor migration progress](#monitor-migration-progress).<br>x-ms-operation-id: string<br>Retry-After: integer |
 | Other Status Codes | [Error response](/rest/api/fabric/eventhouse/items/create-eventhouse#errorresponse) | Common error codes:<br><br>InvalidItemType - Item type is invalid.<br>ItemDisplayNameAlreadyInUse - Item display name is already used.<br>CorruptedPayload - The provided payload is corrupted. |
+
+### Monitor migration progress
+
+If the migration request response is successful, you can use the `Location` URI returned in the response with GET requests to monitor the progress of the migration.
 
 ## Examples
 
@@ -100,9 +104,6 @@ POST https://api.fabric.microsoft.com/v1/workspaces/WorkspaceId/eventhouses
 "x-ms-operation-id": "{operationId}",
 "Retry-After": 30
 ```
-
-> [!NOTE]
-> You can use GET requests to poll the URI returned in `Location` to monitor the progress of the migration.
 
 ## Related content
 

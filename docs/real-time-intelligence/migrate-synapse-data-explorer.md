@@ -36,11 +36,14 @@ Before you migrate, consider the following key points:
 - The migration process is irreversible.
 - You must manually add users from other tenants who previously had access to the cluster to the new eventhouse.
 - The cluster and the eventhouse must be in the same region.
+- The migration process can take a few hours to complete, depending on the size of the cluster. For information on tracking the status, see [Monitor migration progress](migrate-api-to-eventhouse.md#monitor-migration-progress).
 
 ## Which features can be migrated?
 
-| Feature | Can be migrated | Notes |
+| Feature | Can be migrated? | Notes |
 |--|--|--|
+| Purge | :x: | Not supported in Eventhouse. |
+| Cluster-level policies | :x: | |
 | System-assigned managed identities | :x: | Not supported in Eventhouse. |
 | Cluster Azure RBAC roles | :heavy_check_mark: |  |
 | Data connections, such as Event Hubs, IoT Hub, Event Grid | :x: | Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must manually create supported data connections in the new eventhouse. |
