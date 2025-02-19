@@ -22,7 +22,7 @@ Here are some key features and benefits of using Microsoft Copilot for SQL datab
 
 - **Increased productivity**: Copilot can help you write T-SQL queries faster and more efficiently, allowing you to focus on analyzing data rather than writing code.
 
-- **Improved accuracy**: By leveraging AI, Copilot can help reduce errors in your T-SQL code, ensuring that your queries are more accurate and reliable.
+- **Improved accuracy**: By using AI, Copilot can help reduce errors in your T-SQL code, ensuring that your queries are more accurate and reliable.
 
 - **Enhanced learning**: Copilot can provide explanations and suggestions for T-SQL code, helping you learn and understand SQL better.
 
@@ -30,7 +30,7 @@ Here are some key features and benefits of using Microsoft Copilot for SQL datab
 
 - **[Quick actions](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
 
-- **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, etc. Copilot will also provide comments that explain the changes and suggest SQL best practices.
+- **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, etc. Copilot  also provides comments that explain the changes and suggest SQL best practices.
 
 - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
 
@@ -71,7 +71,7 @@ Here are some tips for effectively maximizing productivity with Microsoft Copilo
 
 ## Responsible use of Copilot in Fabric
 
-Visit [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
+For information about using Copilot responsibly, visit [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
 
 ## Limitations
 
@@ -82,8 +82,6 @@ Here are the current limitations of Copilot for SQL database:
 - Copilot responses can include inaccurate or low-quality content, so review outputs before using them in your work.
 - People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
 - Copilot for SQL database in Fabric isn't currently available if Private Link is enabled and Public Access is turned off in the tenant setting.
-
-use-copilot-to-get-the-most-from-learn?branch=pr-en-us-474).
 
 ## Related content
 
