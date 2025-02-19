@@ -63,17 +63,17 @@ These steps show how to create an end-to-end solution using the bike rental samp
 
     :::image type="content" source="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png":::
 
-1. When the sample data is ready, start exploring by selecting the **Open Eventhouse** or **Open Folder** button.
+1. When the sample data is ready, start exploring by selecting **Open Eventhouse** or **Open Folder**.
 
     :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-navigate.png" alt-text="Screenshot of the interface with Open Eventhouse and Open Folder buttons.":::
 
-1. To explore the sample data at any time, open the workspace, browse to the Bike_sample folder.
+1. To explore the sample data at any time, open the workspace and browse to the Bike_sample folder.
 
     :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-folder.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard.":::
 
 1. Select the Bike_Eventhouse, Bike_Eventstream, Bike_Queryset, or Bike_Dashboard and explore the sample data. After you open each item for the first time, they appear in the left navigation bar to access easily.
 
-    :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-bike-db.png" alt-text="Screenshot of sample bike database and left navigation bar.":::
+    :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-bike-db.png" alt-text="Screenshot of sample bike database and left navigation bar." lightbox="media/sample-end-to-end-solution/end-to-end-sample-bike-db.png":::
 
 ## Related content
 
