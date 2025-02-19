@@ -59,8 +59,8 @@ Before you begin, you must:
    import os
    from pyspark.sql.types import *
    for filename in os.listdir("/lakehouse/default/Files/<replace with your folder path>"):
-   df=spark.read.format('csv').options(header="true",inferSchema="true").load("abfss://<replace with workspace name>@onelake.dfs.fabric.microsoft.com/<replace with item name>.Lakehouse/Files/<folder name>/"+filename,on_bad_lines="skip")
-   df.write.mode("overwrite").format("delta").save("Tables/<name of delta table>")
+       df=spark.read.format('csv').options(header="true",inferSchema="true").load("abfss://<replace with workspace name>@onelake.dfs.fabric.microsoft.com/<replace with item name>.Lakehouse/Files/<folder name>/"+filename,on_bad_lines="skip")
+       df.write.mode("overwrite").format("delta").save("Tables/<name of delta table>")
    ```
 
 1. To see your new table, refresh your view of the `/Tables` directory.
