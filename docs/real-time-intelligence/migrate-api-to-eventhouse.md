@@ -77,7 +77,7 @@ Eventhouse item creation payload
 
 ### Monitor migration progress
 
-If the migration request response is successful, you can use the `Location` URI returned in the response with GET requests to monitor the progress of the migration.
+If the migration request response is successful, you can use GET requests with the `Location` URI returned in the response to monitor the progress of the migration.
 
 ## Examples
 
