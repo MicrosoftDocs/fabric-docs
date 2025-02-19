@@ -24,7 +24,8 @@ This feature allows you to migrate all the data from a single Synapse Data Explo
 
 - The source cluster must be in a running state and resource locks are removed.
 - A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-- Users must have Admin permissions on both the source cluster and the target Fabric workspace to initiate the migration process
+- You must have at least the **Owner** role on the source cluster
+- You must have at least the **Admin** role on the target Fabric workspace
 
 ## Key considerations
 
