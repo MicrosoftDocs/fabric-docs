@@ -14,7 +14,7 @@ ms.collection:
 
 [Brief introduction about Copilot and its purpose.]
 
-## Key features
+## Why use Copilot for [Product/Service]?
 
 [Overview of key features and capabilities.]
 
@@ -33,12 +33,6 @@ ms.collection:
 ## Limitations
 
 [List limitations of Copilot for the product/service.]
-
-## Frequently asked questions (FAQs)
-
-Link to overall FAQ [Asking questions about capabilities and receiving responses.]
-
-Link to specific product/service FAWQs [Asking questions about capabilities and receiving responses.]
 
 ## Related content
 
