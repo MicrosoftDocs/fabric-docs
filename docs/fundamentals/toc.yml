@@ -181,6 +181,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Slow Spark session startup caused by Native Execution Engine
+      href: ../known-issues/known-issue-1028-slow-spark-session-startup-native-execution-engine.md
+    - name: Mirroring fails for tables with unique index on unsupported data type
+      href: ../known-issues/known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md
     - name: CopyJob item deletion fails with error
       href: ../known-issues/known-issue-1024-copy-job-item-deletion-fails-error.md
     - name: Preview destination data on a pipeline's copy activity fails
