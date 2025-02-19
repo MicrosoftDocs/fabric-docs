@@ -27,7 +27,7 @@ In this article, you learn about how to manage and gain insights about an eventh
 
 1. Select an eventhouse from your list of items in the workspace.
 
-:::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Eventhouse page." lightbox="media/eventhouse/event-house-page.png":::
+:::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Eventhouse page." lightbox="media/eventhouse/event-house-page.png"::: <!-- TODO: Update the image when dev is complete-->
 
 This page is divided into the following sections:
 
@@ -62,14 +62,14 @@ The Eventhouse explorer provides an intuitive interface for navigating between E
 
 ### View eventhouse details
 
-The system overview page provides a snapshot of the eventhouse details. It displays the eventhouse region, last ingestion date, minimum consumption setting, and plugins. 
+The eventhouse details area displays the region, last ingestion date, minimum consumption setting, and plugins. You can expand or collapse the details area using the button, or from the ribbon.
 
-You can copy the following eventhouse URI values:
+In the details area, you can copy the following eventhouse URI values:
 
 | URI type | Usage |
 |--|--|
 | Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](data-connectors/data-connectors.md) and APIs to run queries or management commands. |
-| Ingestion URI | URI that can be used by connectors and APIs to ingest data. |
+| Ingestion URI | URI that for use by connectors and APIs to ingest data. |
 
 ### View system overview details for an eventhouse
 
@@ -97,10 +97,10 @@ The system overview page provides a snapshot of the current state of the eventho
         * **Original size**: The uncompressed original size of the eventhouse.
         * **Compressed size**: The compressed size of the eventhouse, giving you a snapshot of the data footprint.
         * **Premium**: The total high-performance storage currently in use by this Eventhouse.
-        * **Cache misses**
+        <!--  * **Cache misses**
             * **Cache misses**: The current percentage of cache misses from the last hour.
             * **Last 24 hours**: The percentage change from 1 hour to 24 hours ago​.
-            * **Last week**: The percentage change from 1 hour to one week ago​.
+            * **Last week**: The percentage change from 1 hour to one week ago​. -->
 
     * **System resources**: Shows a snapshot of the storage breakdown by database. You can drilldown into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
@@ -127,7 +127,7 @@ The system overview page provides a snapshot of the current state of the eventho
         * Create, alter, or delete a functionpoih njbyv
         * Alter a caching policy, retention policy, or table update policy
 
-1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1 h), one day (1 d), one week (7 d), one month (30 d).
+1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1H), one day (1D), one week (7D), one month (30D).
 
 ### View all databases in an eventhouse
 

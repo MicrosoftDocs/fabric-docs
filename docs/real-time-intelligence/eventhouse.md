@@ -17,9 +17,9 @@ Eventhouses are tailored to time-based, streaming events with structured, semist
 
 ## When do I create an eventhouse?
 
-Use an eventhouse for any scenario that includes event-based data, for example, telemetry and log data, time series and IoT data, security and compliance logs, or financial records.
+Use an eventhouse for any scenario that includes event-based data. For example, telemetry and log data, time series and IoT data, security and compliance logs, or financial records.
 
-You can create a [KQL database](create-database.md) within an eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). An exploratory [query environment](create-database.md#explore-your-kql-database) is created for each KQL Database, which can be used for exploration and data management. [Data availability in OneLake](one-logical-copy.md) can be enabled on a database or table level.
+You can create a [KQL database](create-database.md) within an eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). An exploratory [query environment](create-database.md#explore-your-kql-database) is created for each KQL database, which can be used for exploration and data management. [Data availability in OneLake](one-logical-copy.md) can be enabled on a database or table level.
 
 ## What information do I see in an eventhouse?
 
@@ -29,7 +29,7 @@ The system overview page of an eventhouse shows you the following information:
 * Eventhouse storage
 * System resources
 * Compute usage
-* Comupue minutes - Top users
+* Activity in minutes
 * Ingestion rate
 * Most queried databases
 * Top ingested databases
