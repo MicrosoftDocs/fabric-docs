@@ -77,7 +77,11 @@ Eventhouse item creation payload
 
 ### Monitor migration progress
 
-If the migration request response is successful, you can use GET requests with the `Location` URI returned in the response to monitor the progress of the migration.
+If the migration request response is successful, you can use GET requests with the `Location` URI returned in the response to monitor the progress of the migration, as follows:
+
+```http
+GET https://api.fabric.microsoft.com/v1/operations/{operationId}
+```
 
 ## Examples
 
