@@ -91,4 +91,3 @@ use-copilot-to-get-the-most-from-learn?branch=pr-en-us-474).
 - [Use Copilot code completion for SQL database](copilot-code-completion.md)
 - [Use Copilot quick actions for SQL database](copilot-quick-actions.md)
 - [Frequently asked questions for Copilot in SQL database in Microsoft Fabric](copilot-faq.yml)
-- [Use Copilot to get the most from Learn](https://review.learn.microsoft.com/copilot/roadmap/)
