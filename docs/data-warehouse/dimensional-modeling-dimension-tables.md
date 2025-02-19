@@ -3,7 +3,7 @@ title: "Modeling dimension tables in Warehouse"
 description: "Learn about dimension tables in Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: v-myerspeter, drubiolo, chweb
+ms.reviewer: drubiolo, chweb
 ms.date: 06/21/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
