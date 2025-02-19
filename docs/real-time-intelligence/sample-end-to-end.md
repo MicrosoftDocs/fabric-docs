@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 02/17/2025
+ms.date: 02/19/2025
 #customer intent: As a data analyst, I want to create an end-to-end real-time solution so that I can understand how Real-Time Intelligence components work together.
 ---
 
@@ -19,8 +19,8 @@ In this article, you learn how to use the End-to-end sample solution to automati
 
 The sample data sets are designed to help you understand how to use Real-Time Intelligence components. The sample data sets include:
 
-* **Bike rental data**: Contains London-based bike movements, monitor station occupancies, and track user patterns.
-* **Stock ticker data**: Contains 40 years of sample S&P 500 stock ticker data.
+* **Bike rental data**: Contains London-based bike movements, occupancies, and tracks user patterns.
+* **Stock ticker data**: Contains sample S&P 500 stock ticker data.
 
 ## Components of the sample solution
 
@@ -38,7 +38,7 @@ The sample end-to-end solution includes the following components:
 
 * **Power BI**: is used to create real-time reports that display data from Eventstreams and KQL Databases managed by Real-Time Intelligence.
 
-## Create a sample solution with bike rental data
+## Create a sample solution
 
 These steps show how to create an end-to-end solution using the bike rental sample data.
 
@@ -63,9 +63,17 @@ These steps show how to create an end-to-end solution using the bike rental samp
 
     :::image type="content" source="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png":::
 
-1. Once the items are created, open the folder to see all the sample components. Explore the solution by selecting components such as the eventhouse.
+1. When the sample data is ready, start exploring by selecting the **Open Eventhouse** or **Open Folder** button.
+
+    :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-navigate.png" alt-text="Screenshot of the interface with Open Eventhouse and Open Folder buttons.":::
+
+1. To explore the sample data at any time, open the workspace, browse to the Bike_sample folder.
 
     :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-folder.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard.":::
+
+1. Select the Bike_Eventhouse, Bike_Eventstream, Bike_Queryset, or Bike_Dashboard and explore the sample data. After you open each item for the first time, they appear in the left navigation bar to access easily.
+
+    :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-bike-db.png" alt-text="Screenshot of sample bike database and left navigation bar.":::
 
 ## Related content
 
