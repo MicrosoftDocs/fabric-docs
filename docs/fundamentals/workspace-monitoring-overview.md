@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom:
-ms.date: 01/28/2025
+ms.date: 02/19/2025
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -64,3 +64,4 @@ Workload monitoring sample queries are available from [workspace-monitoring](htt
 ## Related content
 
 * [Enable monitoring in your workspace](enable-workspace-monitoring.md)
+* [Eventhouse monitoring](../real-time-intelligence/monitor-eventhouse.md)
