@@ -9,7 +9,7 @@ ms.date: 02/18/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# AI Skill sharing and permission management (preview)
+# AI skill sharing and permission management (preview)
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -23,13 +23,16 @@ Creation of an AI skill is an iterative process. It involves refinement of vario
 
 As you make adjustments to enhance the performance of the AI skill performance, you can eventually publish that AI skill. Once published, a read-only version is generated, which you can share with others.
 
-When you try to publish the AI skill, you can include a description that explains what the AI skill does. The description is available to consumers of the AI skill, to help them understand its purpose and functionality. Other automated systems and orchestrators use it, to invoke AI skill outside of Microsoft Fabric.
+When you try to publish the AI skill, you can include a description that explains what the AI skill does. The description is available to consumers of the AI skill, to help them understand its purpose and functionality. Other automated systems and orchestrators can also use the description, to invoke AI skill outside of Microsoft Fabric.
+
+> [!NOTE]
+> You can ask AI skill to describe what it does. You can then refine and summarize the response to use as its description when publishing.
 
 :::image type="content" source="./media/ai-skill-sharing/publish-ai-skill-description.png" alt-text="Screenshot showing creation of an AI skill description." lightbox="./media/ai-skill-sharing/publish-ai-skill-description.png":::
 
 <!-- <img src="./media/ai-skill-sharing/publish-ai-skill-description.png" alt="Screenshot showing creation of an AI skill description." width="700"/> -->
 
-After you publish your AI skill, you can continue to refine its current version, to enhance its performance, without affecting the published version that other people use. This way, you can iterate with confidence, knowing that your changes remain isolated from the published version. You can seamlessly switch between the published and current versions, testing the same set of queries on both to compare their performance. This helps you assess the effects of your changes, and you can gain valuable insights into how they improve your AI skill's effectiveness. The following screenshot shows how to switch between published and developed AI skill versions:
+After you publish your AI skill, you can continue to refine its current draft version, to enhance its performance, without affecting the published version that other people use. This way, you can iterate with confidence, knowing that your changes remain isolated from the published version. You can seamlessly switch between the published and draft versions, testing the same set of queries on both to compare their performance. This helps you assess the effects of your changes, and you can gain valuable insights into how they improve your AI skill's effectiveness. The following screenshot shows how to switch between published and developed AI skill versions:
 
 :::image type="content" source="./media/ai-skill-sharing/published-switch.png" alt-text="Screenshot showing how to switch between published and development AI skill versions." lightbox="./media/ai-skill-sharing/published-switch.png":::
 
@@ -50,8 +53,8 @@ You have complete control over access to your AI skill, and complete control of 
 <!-- <img src="./media/ai-skill-sharing/sharing-main.png" alt="Screenshot showing how to share an AI skill link." width="300"/> -->
 
 - **No permission selected**: If you don't select any other permission, users can only query the **published** version of the AI skill. They have no access to edit or even view any configurations or details. This maintains the integrity of your AI skill set-up.
-- **View details**: Users can view the details and configurations of both the published and current versions of the AI skill, but they can't make any changes to it. However, they can still query the AI skill, and build informative insights without risk of unintended modifications.
-- **Edit and view details**: Users have full access to view and edit all the details and configurations of both the published and current versions of the AI skill. They can also query the AI skill, which makes it ideal for collaborative work.
+- **View details**: Users can view the details and configurations of both the published and draft versions of the AI skill, but they can't make any changes to it. However, they can still query the AI skill, and build informative insights without risk of unintended modifications.
+- **Edit and view details**: Users have full access to view and edit all the details and configurations of both the published and draft versions of the AI skill. They can also query the AI skill, which makes it ideal for collaborative work.
 
 The following screenshot shows the actual permissions that you can select:
 
@@ -59,7 +62,7 @@ The following screenshot shows the actual permissions that you can select:
 
 <!-- <img src="./media/ai-skill-sharing/permission-models.png" alt="Screenshot showing how to select AI skill sharing permissions." width="300"/> -->
 
-If you share an AI Skill before you publish it, users with default permissions (without any other permissions) can't query it. It works this way because the default permission allows users to query only the published version—if a published version doesn't yet exist, users can't query the AI skill. Users with other permissions (**View details**, or **Edit and view details**) can only access the current version. The following screenshot shows the option to share an AI skill without publishing it:
+If you share an AI Skill before you publish it, users with default permissions (without any other permissions) can't query it. It works this way because the default permission allows users to query only the published version—if a published version doesn't yet exist, users can't query the AI skill. Users with other permissions (**View details**, or **Edit and view details**) can only access the draft version. The following screenshot shows the option to share an AI skill without publishing it:
 
 :::image type="content" source="./media/ai-skill-sharing/share-without-publish.png" alt-text="Screenshot showing the option to share an AI skill without publishing." lightbox="./media/ai-skill-sharing/share-without-publish.png":::
 

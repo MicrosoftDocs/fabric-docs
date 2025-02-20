@@ -78,7 +78,7 @@ After you enter the name, proceed with the following steps to align the AI skill
 
 ## Select the data
 
-Select the lakehouse you created in the previous step, and select **Connect**. Once the lakehouse is added as a data source, the **Explorer** pane on the left side of the AI Skill page shows the lakehouse name. Select the lakehouse to view all available tables. Use the checkboxes to select the tables you want to make available to the AI. For this scenario, select these tables:
+Select the lakehouse you created in the previous step, and then select **Add**. Once the lakehouse is added as a data source, the **Explorer** pane on the left side of the AI skill page shows the lakehouse name. Select the lakehouse to view all available tables. Use the checkboxes to select the tables you want to make available to the AI. For this scenario, select these tables:
 
 - `dimcustomer`
 - `dimdate`
@@ -97,7 +97,7 @@ Select the lakehouse you created in the previous step, and select **Connect**. O
 
 To add AI instructions, select the **AI instructions** button to open the AI instructions pane on the right. You can add the following instructions.
 
-The `AdventureWorksLH` data source contains comprehensive information across three tables:
+The `AdventureWorksLH` data source contains information from three tables:
 
 - `dimcustomer`, for detailed customer demographics and contact information
 - `dimdate`, for date-related data - for example, calendar and fiscal information
@@ -109,7 +109,7 @@ Use this data source for queries and analyses that involve customer details, tim
 
 ## Provide examples
 
-To add example queries, select the **Example queries** button to open the example queries pane on the right. This pane provides options to add or edit example queries for all supported data sources. For each data source, you can select Add or Edit Example Queries to input the relevant examples, as shown in the following screenshot:
+To add example queries, select the **Example queries** button to open the example queries pane on the right. This pane provides options to add or edit example queries for all supported data sources. For each data source, you can select **Add or Edit Example Queries** to input the relevant examples, as shown in the following screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/add-example-queries-LH.png" alt-text="Screenshot showing where you can add the examples you provide to the AI." lightbox="./media/ai-skill-scenario/add-example-queries-LH.png":::
 
@@ -158,9 +158,12 @@ FROM (
 
 :::image type="content" source="./media/ai-skill-scenario/add-example-queries-SQL.png" alt-text="Screenshot showing adding SQL examples." lightbox="./media/ai-skill-scenario/add-example-queries-SQL.png":::
 
+> [!NOTE]
+> Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources.
+
 ## Test and revise the AI skill
 
-Both AI instructions and example queries were added to the AI skill. As you continue testing, adding more examples and refining instructions can further improve the AI skill performance. Collaborate with your colleagues to gather feedback. Based on their input, ensure that the provided example queries and instructions align with the types of questions they want to ask.
+Now that you configured the AI skill, added AI instructions, and provided example queries for the lakehouse, you can interact with it by asking questions and receiving answers. As you continue testing, you can add more examples, and refine the instructions, to further improve the performance of the AI skill. Collaborate with your colleagues to gather feedback, and based on their input, ensure the provided example queries and instructions align with the types of questions they want to ask.
 
 ## Use the AI skill programmatically
 
@@ -184,6 +187,10 @@ You can then copy the published URL and use it in the Fabric notebook. This way,
 
 ```python
 %pip install "openai==1.14.1"
+```
+
+```python
+%pip install httpx==0.27.2
 ```
 
 ```python
