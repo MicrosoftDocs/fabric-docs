@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.fix_grammar` with pandas
 
-[TBD]
+The `ai.fix_grammar` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to correct the spelling, grammar, and punctuation of each row of input. The function returns a pandas Series containing corrected text values, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -72,7 +72,7 @@ df.ai.fix_grammar(input_col="text", output_col="corrections")
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing corrected text for each row of the input column. If the input text is `null`, the result will be `null`.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing corrected text for each row of text in the input column. If the input text is `null`, the result will be `null`.
 
 ### Example
 

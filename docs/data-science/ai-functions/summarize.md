@@ -21,7 +21,9 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.summarize` with pandas
 
-[TBD]
+The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to summarize each row of input. The function returns a pandas Series containing summaries, which can be stored in a new column of the DataFrame.
+
+The `ai.summarize` function can also be called on an entire [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to summarize full rows rather than values in a particular column.
 
 ### Syntax
 
@@ -130,7 +132,7 @@ df.ai.summarize(output_col="summaries")
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing summarized text for each row of input text. If the input text is `null`, the result will be `null`. If no input column is specified, the function will summarize the entire DataFrame.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing summarized text for each row of text in the input column. If the input text is `null`, the result will be `null`. If no input column is specified, the function will summarize the entire DataFrame.
 
 ### Example
 

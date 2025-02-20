@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.extract` with pandas
 
-[TBD]
+The `ai.extract` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to extract user-provided entity types from each row of input. Unlike the other AI functions, `ai.extract` returns a pandas DataFrame (rather than a Series) with a separate column for each specified entity type that was extracted.
 
 ### Syntax
 
@@ -38,7 +38,7 @@ df_entities = df["text"].ai.extract("entity1", "entity2", "entity3")
 
 ### Returns
 
-A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dtypes.html) with a column for each specified entity type. These column(s) contain the entities extracted from the text values in each row of the input column. If more than one match for a given entity is identified, only one will be returned. If no match is found, the result will be `null`.
+A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dtypes.html) with a column for each specified entity type. These column(s) contain the entities extracted for each row of input text. If more than one match for a given entity is identified, only one will be returned. If no match is found, the result will be `null`.
 
 ### Example
 
@@ -75,7 +75,7 @@ df.ai.extract(labels=["entity1", "entity2", "entity3"], input_col="text")
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column for each specified entity type. These column(s) contain the entities extracted from the text values in each row of the input column. If more than one match for a given entity is identified, only one will be returned. If no match is found, the result will be `null`.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column for each specified entity type. These column(s) contain the entities extracted for each row of text in the input column. If more than one match for a given entity is identified, only one will be returned. If no match is found, the result will be `null`.
 
 ### Example
 

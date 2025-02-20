@@ -40,7 +40,7 @@ Whether you're looking to translate product reviews from one language into anoth
 
 ## Getting started with AI functions
 
-To access the AI functions library in a Fabric notebook, you need to install some custom packages. In a future release, this step will be handled for you. Until then, all you need to do is copy and run the following cells in Python or PySpark.
+To access the AI functions library in a Fabric notebook, you need to install some custom packages. In a future release, this step will be handled for you. Until then, all you need to do is copy and run the following cells for pandas or PySpark, depending on your use case.
 
 The first cell will install the AI functions library and its dependencies.
 
@@ -417,12 +417,12 @@ The `ai.generate_response` function invokes AI to generate custom text based on 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        ("apple", "fruits"),
-        ("blue", "colors"),
-        ("lizard", "reptiles")
-    ], columns=["example", "category"])
+        ("Sandals"),
+        ("Polo shirts"),
+        ("Water bottles")
+    ], columns=["product"])
 
-df["list"] = df.ai.generate_response("Complete this comma-separated list of 5 {category}: {example}, ", is_format=True)
+df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale on the product.")
 display(df)
 ```
 
@@ -433,24 +433,16 @@ display(df)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("apple", "fruits"),
-        ("blue", "colors"),
-        ("lizard", "reptile"),
-    ], ["example", "category"])
+        ("Sandals",),
+        ("Polo shirts",),
+        ("Water bottles",)
+    ], ["product"])
 
-results = df.ai.generate_response(template="Complete this comma separated list of 5 {category}: {example}, ", output_col="list")
-display(results)
+responses = df.ai.generate_response(prompt="Write a snappy, enticing email subject line for a summer sale on the product.", output_col="response")
+display(responses)
 ```
 
 ---
-
-## Customizing AI function configuration
-
-AI functions are designed to work out of the box in Fabric notebooks, with the underlying LLM and settings configured by default. Users who want more flexible configurations, however, can modify the following variables to customize their solutions:
-
-- **Config 1**: TBD
-- **Config 2**: TBD
-- **Config 3**: TBD
 
 ## Related content
 

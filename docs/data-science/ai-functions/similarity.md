@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.similarity` with pandas
 
-[TBD]
+The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to calculate semantic similarity with respect to a single common text value, or to corresponding pairwise values in another column, for each row of input. The function returns a pandas Series containing similarity scores, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -116,7 +116,7 @@ df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing generated similarity scores for each row of input text.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing generated similarity scores for each row of text in the input column.
 
 ### Example
 

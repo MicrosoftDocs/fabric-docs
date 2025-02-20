@@ -21,32 +21,20 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.generate_response` with pandas
 
-```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
-
-df = pd.DataFrame([
-        ("apple", "fruits"),
-        ("blue", "colors"),
-        ("lizard", "reptiles")
-    ], columns=["example", "category"])
-
-df["list"] = df.ai.gen("Complete this comma-separated list of 5 {category}: {example}, ", is_format=True)
-display(df)
-```
+The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class (unlike the other AI functions, which extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class). The function can be called on an entire pandas DataFrame. It returns a pandas Series containing custom text responses to a user-provided prompt for each row of input, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
-# [With a standard prompt](#tab/standard-prompt)
+# [Generating responses with a standard prompt](#tab/standard-prompt)
 
 ```python
-TBD
+df["response"] = df.ai.generate_response(prompt="Instructions for a custom response")
 ```
 
-# [With a template prompt](#tab/similarity-single)
+# [Generating responses with a template prompt](#tab/similarity-single)
 
 ```python
-TBD
+df["response"] = df.ai.generate_response(prompt="Instructions for a custom response based on specific {column1} and {column2} values", is_prompt_template=True)
 ```
 
 ---
@@ -57,24 +45,43 @@ TBD
 |---|---|
 | **`prompt`** <br> Required | TBD |
 | **`is_prompt_template`** <br> Optional | TBD |
-| **`output_col`** <br> Optional | TBD |
 
 ### Returns
 
-A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing TBD TBD TBD.
+A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing custom text responses to the prompt for each row of input text.
 
 ### Example
 
-# [With a standard prompt](#tab/standard-prompt)
+# [Generating responses with a standard prompt](#tab/standard-prompt)
 
 ```python
-TBD
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([
+        ("Sandals"),
+        ("Polo shirts"),
+        ("Water bottles")
+    ], columns=["product"])
+
+df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale on the product.")
+display(df)
 ```
 
-# [With a template prompt](#tab/similarity-single)
+# [Generating responses with a template prompt](#tab/similarity-single)
 
 ```python
-TBD
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([
+        ("001", "Sandals", "Flipflops", "2021"),
+        ("002", "Polo shirts", "T-shirts", "2010"),
+        ("003", "Water bottles", "Coolers", "2015")
+    ], columns=["id", "product", "product_rec", "yr_introduced"])
+
+df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale on the {product}.", is_prompt_template=True)
+display(df)
 ```
 
 ---
@@ -85,16 +92,16 @@ TBD
 
 ### Syntax
 
-# [With a standard prompt](#tab/standard-prompt)
+# [Generating responses with a standard prompt](#tab/standard-prompt)
 
 ```python
-df.ai.generate_response(prompt="instructions", output_col="response")
+df.ai.generate_response(prompt="Instructions for a custom response", output_col="response")
 ```
 
-# [With a template prompt](#tab/similarity-single)
+# [Generating responses with a template prompt](#tab/similarity-single)
 
 ```python
-df.ai.generate_response(prompt="instructions", output_col="response")
+df.ai.generate_response(prompt="Instructions for a custom response based on specific {column1} and {column2} values", is_prompt_template=True, output_col="response")
 ```
 
 ---
@@ -109,30 +116,40 @@ df.ai.generate_response(prompt="instructions", output_col="response")
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing TBD TBD TBD.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing custom text responses to the prompt for each row of text in the input column.
 
 ### Example
 
-# [With a standard prompt](#tab/standard-prompt)
-
-```python
-TBD
-```
-
-# [With a template prompt](#tab/similarity-single)
+# [Generating responses with a standard prompt](#tab/standard-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("apple", "fruits"),
-        ("blue", "colors"),
-        ("lizard", "reptile"),
-    ], ["example", "category"])
+        ("Sandals",),
+        ("Polo shirts",),
+        ("Water bottles",)
+    ], ["product"])
 
-results = df.ai.gen(template="Complete this comma separated list of 5 {category}: {example}, ", output_col="list")
-display(results)
+responses = df.ai.generate_response(prompt="Write a snappy, enticing email subject line for a summer sale on the product.", output_col="response")
+display(responses)
+```
+
+# [Generating responses with a template prompt](#tab/similarity-single)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = spark.createDataFrame([
+        ("001", "Sandals", "Flipflops", "2021"),
+        ("002", "Polo shirts", "T-shirts", "2010"),
+        ("003", "Water bottles", "Coolers", "2015")
+    ], ["id", "product", "product_rec", "yr_introduced"])
+
+responses = df.ai.generate_response(prompt="Write a snappy, enticing email subject line for a summer sale on the {product}.", is_prompt_template=True, output_col="response")
+display(responses)
 ```
 
 ---

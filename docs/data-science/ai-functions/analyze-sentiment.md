@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.analyze_sentiment` with pandas
 
-[TBD]
+The `ai.analyze_sentiment` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to detect the sentiment of each row of input. The function returns a pandas Series containing sentiment labels, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -73,7 +73,7 @@ df.ai.analyze_sentiment(input_col="text", output_col="sentiment")
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing sentiment labels that match the text values from each row of the input column. Each sentiment label will be `positive`, `negative`, `neutral`, or `mixed`. If a sentiment cannot be determined, the return value will be `null`.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing sentiment labels that match each row of text in the input column. Each sentiment label will be `positive`, `negative`, `neutral`, or `mixed`. If a sentiment cannot be determined, the return value will be `null`.
 
 ### Example
 
