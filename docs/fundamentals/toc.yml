@@ -181,6 +181,8 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Git integration undo after initial sync fails might delete items
+      href: ../known-issues/known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md
     - name: Slow Spark session startup caused by Native Execution Engine
       href: ../known-issues/known-issue-1028-slow-spark-session-startup-native-execution-engine.md
     - name: Mirroring fails for tables with unique index on unsupported data type
