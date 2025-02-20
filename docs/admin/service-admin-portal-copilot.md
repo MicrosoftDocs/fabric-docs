@@ -27,6 +27,15 @@ When this setting is enabled, users can access the features powered by Azure Ope
 ### Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
 
 This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. For more information, see [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions).
+
+### Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
+
+
+![Screenshot-2025-01-31-152022](https://github.com/user-attachments/assets/e9a18f78-dbdd-40c1-a2a7-38c2bcfe37e0)
+
+This setting is only applicable for customers who want to use Copilot in Notebooks and the AI Skill Feature in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. For more information, see [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions).
+
+
 ## Not enabled by default
 
 ### Capacities can be designated as Fabric Copilot capacities.  
