@@ -4,7 +4,7 @@ description: "Learn about dimension tables in Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: drubiolo, chweb
-ms.date: 06/21/2024
+ms.date: 02/19/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -225,7 +225,7 @@ The following diagram depicts the before and after state of a salesperson dimens
 
 :::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-1.svg" alt-text="Diagram shows the structure of the salesperson dimension table, and the before and after values for a changed phone number for a single salesperson." border="false":::
 
-This SCD type doesn't preserve historical perspective because the existing row is updated. That means SCD type 1 changes can result in different higher-level aggregations. For example, if a salesperson is assigned to a different sales region, a SCD type 1 change would overwrite the dimension row. The rollup of salespeople historic sales results to region would then produce a different outcome because it now uses the new current sales region. It's as if that salesperson was always assigned to the new sales region.
+This SCD type doesn't preserve historical perspective because the existing row is updated. That means SCD type 1 changes can result in different higher-level aggregations. For example, if a salesperson is assigned to a different sales region, an SCD type 1 change would overwrite the dimension row. The rollup of salespeople historic sales results to region would then produce a different outcome because it now uses the new current sales region. It's as if that salesperson was always assigned to the new sales region.
 
 #### SCD type 2
 
