@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to
-ms.search.form: SQL database - Load Data with Dataflow
+ms.search.form: Ingesting data into SQL database
 ---
 # Load data with Dataflow Gen2 into SQL database in Microsoft Fabric
 
