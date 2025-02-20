@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 02/20/2025
 ---
 
-# Domain management tenant settings
+# Microsoft Fabric tenant settings
 
 Microsoft Fabric tenant settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
@@ -36,7 +36,7 @@ For more information, see [SQL database in Microsoft Fabric (Preview)](../databa
 
 ## Users can discover and create org apps (preview)​
 
-For more information, see [Get started with org apps (preview)](../consumer/org-app-items/org-app-items.md).
+For more information, see [Get started with org apps (preview)](/power-bi/consumer/org-app-items/org-app-items).
 
 ## Product Feedback
 
