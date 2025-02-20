@@ -24,6 +24,7 @@ This feature allows you to migrate all the data from a single Synapse Data Explo
 
 - The source cluster must be in a running state and resource locks are removed.
 - A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+- You must have a [Microsoft Entra token](/rest/api/fabric/articles/get-started/fabric-api-quickstart)
 - You must have at least the **Owner** role on the source cluster
 - You must have at least the **Admin** role on the target Fabric workspace
 
@@ -59,17 +60,18 @@ Before you migrate, consider the following key points:
 
 ## Migration steps
 
-The migration process can take a few minutes. During this period, the source cluster continues to serve queries but doesn't process new ingestions. If you're using queued ingestion, the requests are processed after the migration with no data loss. However, streaming ingestion doesn't work during this period.
+The migration process can take a few hours to complete, depending on the size of the cluster. During this period, the source cluster continues to serve queries but doesn't process new ingestions. If you're using queued ingestion, the requests are processed after the migration with no data loss. However, streaming ingestion doesn't work during this period.
 
-The migration process is performed using Fabric REST API endpoints. The process involves the following steps:
+The migration process is performed using Fabric REST API endpoints. The recommended steps for performing the migration are as follows:
 
-1. Get a [Microsoft Entra token](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
-1. Use the [Validate migration to Eventhouse](migrate-api-validate-synapse-data-explorer.md) endpoint to check whether the Azure Synapse Analytics Data Explorer cluster can be migrated to an eventhouse.
-1. Use the [Migrate to Eventhouse](migrate-api-to-eventhouse.md) with the `migrationSourceClusterUrl` payload to create an eventhouse with the migration source cluster URL. The process creates a new eventhouse and migrates all databases from the source cluster to the eventhouse.
-1. Validate the migration by checking the [eventhouse state](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse) is **Running**, and that the migrated databases appear in the [KQL database list](manage-monitor-eventhouse.md#view-all-databases-in-an-eventhouse).
+1. **Validate**: Use the [Validate migration to Eventhouse](migrate-api-validate-synapse-data-explorer.md) endpoint to check whether the Azure Synapse Analytics Data Explorer cluster can be migrated to an eventhouse.
+1. **Migrate**: Use the [Migrate to Eventhouse](migrate-api-to-eventhouse.md) with the `migrationSourceClusterUrl` payload to create an eventhouse with the migration source cluster URL. The process creates a new eventhouse and migrates all databases from the source cluster to the eventhouse.
+1. **Verify**: Verify the migration by checking the [eventhouse state](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse) is **Running**, and that the migrated databases appear in the [KQL database list](manage-monitor-eventhouse.md#view-all-databases-in-an-eventhouse).
 
     > [!IMPORTANT]
-    > Make sure to update queries and ingestion process to point to new [Eventhouse endpoints](access-database-copy-uri.md#copy-uri) within 90 days of migration. After 90 days, the source cluster is deleted and its endpoints stop redirecting to the eventhouse and it will not be recoverable.
+    > Make sure to update queries and ingestion processes to point to new [Eventhouse endpoints](access-database-copy-uri.md#copy-uri) within 90 days of migration. After 90 days, the source cluster is deleted and its endpoints stop redirecting to the eventhouse and it will not be recoverable.
+
+The API endpoints can be called directly or in an automated PowerShell script. A sample PowerShell script is available in the [Microsoft Fabric GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/migrate-synapse-to-eventhouse.ps1).
 
 ## Related content
 
