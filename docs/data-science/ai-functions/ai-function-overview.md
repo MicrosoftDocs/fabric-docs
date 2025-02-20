@@ -55,7 +55,7 @@ The first cell will install the AI functions library and its dependencies.
 %pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9/synapseml_core-1.0.9-py2.py3-none-any.whl
 
 # Install SynapseML-Internal .whl with AI functions library from blob storage:
-%pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9.0-spark3.4-4-fe616c4b-SNAPSHOT/synapseml_internal-1.0.9.0.dev1-py2.py3-none-any.whl
+%pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9.0-spark3.4-16-a3283d22-SNAPSHOT/synapseml_internal-1.0.9.0.dev1-py2.py3-none-any.whl
 ```
 
 # [PySpark](#tab/pyspark)
@@ -76,7 +76,7 @@ The first cell will install the AI functions library and its dependencies.
 
 ---
 
-The second cell will import the AI functions library and its dependencies (plus an optional library in Python for displaying dynamic progress bars to track the status of every operation you apply).
+The second cell will import the AI functions library and its dependencies (plus an optional library in Python for displaying dynamic progress bars to track the status of every function you apply).
 
 # [pandas](#tab/pandas)
 

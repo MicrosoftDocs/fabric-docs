@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.generate_response` with pandas
 
-The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class (unlike the other AI functions, which extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class). The function can be called on an entire pandas DataFrame. It returns a pandas Series containing custom text responses to a user-provided prompt for each row of input, which can be stored in a new column of the DataFrame.
+The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class (unlike the other AI functions, which extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class). The function can be called on an entire pandas DataFrame. It returns a pandas Series containing custom text responses to a user-provided prompt for each row of input, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -43,12 +43,12 @@ df["response"] = df.ai.generate_response(prompt="Instructions for a custom respo
 
 | **Name** | **Description** |
 |---|---|
-| **`prompt`** <br> Required | TBD |
-| **`is_prompt_template`** <br> Optional | TBD |
+| **`prompt`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) containing prompt instructions to be applied to input text values for custom responses. |
+| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) indicating whether the prompt should be treated as a format string. If this value is `True`, then TBD. If it's `False`, as it is by default, TBD. |
 
 ### Returns
 
-A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing custom text responses to the prompt for each row of input text.
+A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) containing custom text responses to the prompt for each row of input text.
 
 ### Example
 
@@ -110,9 +110,9 @@ df.ai.generate_response(prompt="Instructions for a custom response based on spec
 
 | **Name** | **Description** |
 |---|---|
-| **`prompt`** <br> Required | TBD |
-| **`is_prompt_template`** <br> Optional | TBD |
-| **`output_col`** <br> Optional | TBD |
+| **`prompt`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing prompt instructions to be applied to input text values for custom responses. |
+| **`is_prompt_template`** <br> Optional | A [boolean](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.BooleanType.html) indicating whether the prompt should be treated as a format string. If this value is `True`, then TBD. If it's `False`, as it is by default, TBD. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store custom responses for each row of input text. If this value is not set, a default name will be generated for the new column. |
 
 ### Returns
 

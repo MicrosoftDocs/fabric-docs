@@ -21,9 +21,9 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.summarize` with pandas
 
-The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to summarize each row of input. The function returns a pandas Series containing summaries, which can be stored in a new column of the DataFrame.
+The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to summarize each row of input. The function returns a pandas Series containing summaries, which can be stored in a new column of the DataFrame.
 
-The `ai.summarize` function can also be called on an entire [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to summarize full rows rather than values in a particular column.
+The `ai.summarize` function can also be called on an entire DataFrame to summarize full rows rather than values in a particular column.
 
 ### Syntax
 
@@ -127,8 +127,8 @@ df.ai.summarize(output_col="summaries")
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be summarized |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store summaries for each row of input text |
+| **`input_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be summarized. If this value is not set, the function will summarize the entire DataFrame rather than a specific column. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store summaries for each row of input text. If this value is not set, a default name will be generated for the new column. |
 
 ### Returns
 

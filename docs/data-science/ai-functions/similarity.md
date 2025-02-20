@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.similarity` with pandas
 
-The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to calculate semantic similarity with respect to a single common text value, or to corresponding pairwise values in another column, for each row of input. The function returns a pandas Series containing similarity scores, which can be stored in a new column of the DataFrame.
+The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to calculate semantic similarity with respect to a single common text value, or with respect to corresponding pairwise values in another column, for each row of input. The function returns a pandas Series containing similarity scores, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -43,7 +43,7 @@ df["similarity"] = df["col1"].ai.similarity(df["col2"])
 
 | **Name** | **Description** |
 |---|---|
-| **`other`** <br> Required | A [string](https://docs/python.org/3/library/stdtypes.html#str) containing a single common text value for computing similarity scores with each row of input text, or another [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) with the same dimensions as the input, containing text values for computing pairwise similarity scores with each row of input text. |
+| **`other`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) containing a single common text value for computing similarity scores with each row of input text, or another [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) with the same dimensions as the input, containing text values for computing pairwise similarity scores with each row of input text. |
 
 ### Returns
 
@@ -110,9 +110,9 @@ df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 | **Name** | **Description** |
 |---|---|
 | **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be used for computing similarity scores |
-| **`other`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing a single common text value for computing similarity scores |
-| **`other_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a second existing column with text values for computing pairwise similarity scores |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store calculated similarity scores for each row of input text |
+| **`other`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing a single common text value for computing similarity scores. |
+| **`other_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a second existing column with text values for computing pairwise similarity scores. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store calculated similarity scores for each row of input text. If this value is not set, a default name will be generated for the new column. |
 
 ### Returns
 

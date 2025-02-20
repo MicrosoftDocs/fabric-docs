@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.translate` with pandas
 
-The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to translate each row of input into a user-specified target language. The function returns a pandas Series containing translations, which can be stored in a new column of the DataFrame.
+The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to translate each row of input into a user-specified target language. The function returns a pandas Series containing translations, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -33,7 +33,7 @@ df["translations"] = df["text"].ai.translate("target_language")
 
 | **Name** | **Description** |
 |---|---|
-| **`to_lang`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) representing the target language for text translations |
+| **`to_lang`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) representing the target language for text translations. |
 
 ### Returns
 
@@ -69,9 +69,9 @@ df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 
 | **Name** | **Description** |
 |---|---|
-| **`to_lang`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the target language for text translations |
-| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be translated |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store translations for each row of input text |
+| **`to_lang`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the target language for text translations. |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be translated. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store translations for each row of input text. If this value is not set, a default name will be generated for the new column. |
 
 ### Returns
 

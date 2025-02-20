@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.classify` with pandas
 
-The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to assign user-provided labels to each row of input. The function returns a pandas Series containing classification labels, which can be stored in a new column of the DataFrame.
+The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to assign user-provided labels to each row of input. The function returns a pandas Series containing classification labels, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -33,7 +33,7 @@ df["classification"] = df["text"].ai.classify("category1", "category2", "categor
 
 | **Name** | **Description** |
 |---|---|
-| **`labels`** <br> Required | One or more [strings](https://docs.python.org/3/library/stdtypes.html#str) representing the set of classification labels to be matched to input text values |
+| **`labels`** <br> Required | One or more [strings](https://docs.python.org/3/library/stdtypes.html#str) representing the set of classification labels to be matched to input text values. |
 
 ### Returns
 
@@ -69,9 +69,9 @@ df.ai.classify(labels=["category1", "category2", "category3"], input_col="text",
 
 | **Name** | **Description** |
 |---|---|
-| **`labels`** <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the set of classification labels to be matched to text values in the input column |
-| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be classified according to the custom labels |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store classification label for each row of input text |
+| **`labels`** <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the set of classification labels to be matched to text values in the input column. |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be classified according to the custom labels. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store classification label for each row of input text. If this value is not set, a default name will be generated for the new column. |
 
 ### Returns
 

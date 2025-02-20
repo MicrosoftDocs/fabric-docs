@@ -21,7 +21,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.extract` with pandas
 
-The `ai.extract` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) to extract user-provided entity types from each row of input. Unlike the other AI functions, `ai.extract` returns a pandas DataFrame (rather than a Series) with a separate column for each specified entity type that was extracted.
+The `ai.extract` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to extract user-provided entity types from each row of input. Unlike the other AI functions, `ai.extract` returns a pandas DataFrame (rather than a Series) with a separate column for each specified entity type that was extracted.
 
 ### Syntax
 
@@ -33,12 +33,12 @@ df_entities = df["text"].ai.extract("entity1", "entity2", "entity3")
 
 | **Name** | **Description** |
 |---|---|
-| **`labels`** <br> Required | One or more [strings](https://docs.python.org/3/library/stdtypes.html#str) representing the set of entity types to be extracted from input text values |
-| **`with_raw`** <br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) containing the name of an optional new column to store the raw extracted JSON for each row in the returned DataFrame |
+| **`labels`** <br> Required | One or more [strings](https://docs.python.org/3/library/stdtypes.html#str) representing the set of entity types to be extracted from input text values. |
+| **`with_raw`** <br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) containing the name of an optional new column to store the raw extracted JSON for each row in the returned DataFrame. By default, this value is not set, and raw extracted JSON is not stored. |
 
 ### Returns
 
-A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dtypes.html) with a column for each specified entity type. These column(s) contain the entities extracted for each row of input text. If more than one match for a given entity is identified, only one will be returned. If no match is found, the result will be `null`.
+A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) with a column for each specified entity type. These column(s) contain the entities extracted for each row of input text. If more than one match for a given entity is identified, only one will be returned. If no match is found, the result will be `null`.
 
 ### Example
 
@@ -69,9 +69,9 @@ df.ai.extract(labels=["entity1", "entity2", "entity3"], input_col="text")
 
 | **Name** | **Description** |
 |---|---|
-| **`labels`** <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the set of entity types to be extracted from text values in the input column |
-| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be scanned for the custom entities |
-| **`with_raw`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an optional new column to store the raw extracted JSON for each row in the DataFrame |
+| **`labels`** <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the set of entity types to be extracted from text values in the input column. |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be scanned for the custom entities. |
+| **`with_raw`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an optional new column to store the raw extracted JSON for each row in the DataFrame. |
 
 ### Returns
 
