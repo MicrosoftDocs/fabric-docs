@@ -19,9 +19,9 @@ Use this reference guide and the example scenarios to help you in deciding wheth
 |---|:---:|:---:|:---:|:---:|
 | **Use case** | Data lake and data warehouse migration,<br>data ingestion,<br>lightweight transformation | Data ingestion,<br>data transformation,<br>data wrangling,<br>data profiling | event data ingestion,<br>event data transformation | Data ingestion,<br>data transformation,<br>data processing,<br>data profiling |
 | **Primary developer persona** | Data engineer,<br>data integrator | Data engineer,<br>data integrator,<br>business analyst | Data engineer,<br>data scientist,<br>data developer | Data integrator,<br>data engineer |
-| **Primary developer skill set** | ETL,<br>SQL,<br>JSON | ETL,<br>M,<br>SQL | SQL, JSON, Kafka |Spark (Scala, Python, Spark SQL, R) |
+| **Primary developer skill set** | ETL,<br>SQL,<br>JSON | ETL,<br>M,<br>SQL | SQL, JSON, messaging |Spark (Scala, Python, Spark SQL, R) |
 | **Code written** | No code,<br>low code | No code,<br>low code | No Code, <br>low code | Code |
-| **Data volume** | Low to high | Low to high | High | Low to high |
+| **Data volume** | Low to high | Low to high | Medium to High | Low to high |
 | **Development interface** | Wizard,<br>canvas | Power query | Canvas | Notebook,<br>Spark job definition |
 | **Sources** | 30+ connectors | 150+ connectors | Database CDC, Kafka, Pub/Sub Messaging Systems, Event streams | Hundreds of Spark libraries |
 | **Destinations** | 18+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Eventhouse, Lakehouse, Activator Alert, Custom Endpoint | Hundreds of Spark libraries |
