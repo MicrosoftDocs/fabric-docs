@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 01/14/2025
 ms.topic: how-to
-ms.search.form: SQL database - Deploy via REST API
+ms.search.form: Develop and run queries in SQL editor
 ---
 # Create a SQL database in Microsoft Fabric via REST API
 
