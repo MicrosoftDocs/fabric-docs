@@ -17,7 +17,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 If you want to get to the tenant settings in the Fabric portal, see [How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
-## [Microsoft Fabric](fabric-switch.md)
+## [Microsoft Fabric](./service-admin-portal-microsoft-fabric-tenant-settings.md)
 
 | Setting name | Description |
 |------|-------|
