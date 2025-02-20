@@ -6,6 +6,7 @@ ms.author: wiassaf
 ms.reviewer:
 ms.topic: product-comparison
 ms.custom:
+ms.search.form: SQL database Overview
 ms.date: 02/13/2025
 ---
 # Microsoft Fabric decision guide: choose a SQL database
