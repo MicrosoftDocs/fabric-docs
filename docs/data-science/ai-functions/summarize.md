@@ -19,22 +19,22 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-[Standard]
-
-## Limitations
-
-[Standard]
-
 ## Use `ai.summarize` with pandas
 
 [TBD]
 
 ### Syntax
 
+# [Summarizing column values](#tab/column-summary)
+
 ```python
 df["summaries"] = df["text"].ai.summarize()
+```
+
+# [Summarizing DataFrame rows](#tab/dataframe-summary)
+
+```python
+df["summaries"] = df.ai.summarize()
 ```
 
 ### Parameters
@@ -46,6 +46,40 @@ None
 A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing summaries for each row of input text. If the input text is `null`, the result will be `null`.
 
 ### Example
+
+# [Summarizing column values](#tab/column-summary)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df= pd.DataFrame([
+        """
+        Well, that goat was a mighty fine old goat, I did always say. I never had to
+        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
+        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
+        no, I know what you're thinking, not goatee like the facial hair-style --
+        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
+        the goat, don't you know. Anyway, we used to keep him in a little pen, where
+        he would bleat his little goat heart out, as he happily munched on grass.
+        """,
+        """
+        Pursuant to subsection 2, paragraph 7, we find that the alleged business
+        expense was undertaken under questionable judgment. The employee in question 
+        was found to have purchased five lots of moisturizer due to a misunderstanding 
+        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
+        he made the purchase. Compounding this error was his misapprehension that
+        the cream was infused with diamond dust to give it an extra sparkle, thereby
+        justifying, at least in his mind, its exorbitant cost. The board recommends
+        immediate disciplinary action.
+        """
+    ], columns=["text"])
+
+df["summaries"] = df["text"].ai.summarize()
+display(df)
+```
+
+# [Summarizing DataFrame rows](#tab/dataframe-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -83,8 +117,16 @@ display(df)
 
 ### Syntax
 
+# [Summarizing column values](#tab/column-summary)
+
 ```python
 df.ai.summarize(input_col="text", output_col="summaries")
+```
+
+# [Summarizing DataFrame rows](#tab/dataframe-summary)
+
+```python
+df.ai.summarize(output_col="summaries")
 ```
 
 ### Parameters
@@ -99,6 +141,40 @@ df.ai.summarize(input_col="text", output_col="summaries")
 A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing summarized text for each row of input text. If the input text is `null`, the result will be `null`. If no input column is specified, the function will summarize the entire DataFrame.
 
 ### Example
+
+# [Summarizing column values](#tab/column-summary)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = spark.createDataFrame([
+        ("""
+        Well, that goat was a mighty fine old goat, I did always say. I never had to
+        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
+        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
+        no, I know what you're thinking, not goatee like the facial hair-style --
+        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
+        the goat, don't you know. Anyway, we used to keep him in a little pen, where
+        he would bleat his little goat heart out, as he happily munched on grass.
+        """,),
+        ("""
+        Pursuant to subsection 2, paragraph 7, we find that the alleged business
+        expense was undertaken under questionable judgment. The employee in question 
+        was found to have purchased five lots of moisturizer due to a misunderstanding 
+        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
+        he made the purchase. Compounding this error was his misapprehension that
+        the cream was infused with diamond dust to give it an extra sparkle, thereby
+        justifying, at least in his mind, its exorbitant cost. The board recommends
+        immediate disciplinary action.
+        """,)
+    ], ["text"])
+
+summaries = df.ai.summarize(input_col="text", output_col="summaries")
+display(summaries)
+```
+
+# [Summarizing DataFrame rows](#tab/dataframe-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 

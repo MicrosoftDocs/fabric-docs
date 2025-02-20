@@ -19,14 +19,6 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-[Standard]
-
-## Limitations
-
-[Standard]
-
 ## Use `ai.generate_response` with pandas
 
 ```python
@@ -43,19 +35,44 @@ df["list"] = df.ai.gen("Complete this comma-separated list of 5 {category}: {exa
 display(df)
 ```
 
-### Example
+### Syntax
+
+# [With a standard prompt](#tab/standard-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+TBD
+```
 
-df = spark.createDataFrame([
-        ("Where is the bus?",),
-        ("The bus is on the beach.",),
-    ], ["input_text"])
+# [With a template prompt](#tab/similarity-single)
 
-translations = df.ai.translate(to_lang="spanish", input_col="input_text", output_col="translation")
-display(translations)
+```python
+TBD
+```
+
+### Parameters
+
+| **Name** | **Description** |
+|---|---|
+| **`prompt`** <br> Required | TBD |
+| **`is_prompt_template`** <br> Optional | TBD |
+| **`output_col`** <br> Optional | TBD |
+
+### Returns
+
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing TBD TBD TBD.
+
+### Example
+
+# [With a standard prompt](#tab/standard-prompt)
+
+```python
+TBD
+```
+
+# [With a template prompt](#tab/similarity-single)
+
+```python
+TBD
 ```
 
 ## Use `ai.generate_response` with PySpark
@@ -63,6 +80,14 @@ display(translations)
 [TBD]
 
 ### Syntax
+
+# [With a standard prompt](#tab/standard-prompt)
+
+```python
+df.ai.generate_response(prompt="instructions", output_col="response")
+```
+
+# [With a template prompt](#tab/similarity-single)
 
 ```python
 df.ai.generate_response(prompt="instructions", output_col="response")
@@ -78,9 +103,17 @@ df.ai.generate_response(prompt="instructions", output_col="response")
 
 ### Returns
 
-[TBD]
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing TBD TBD TBD.
 
 ### Example
+
+# [With a standard prompt](#tab/standard-prompt)
+
+```python
+TBD
+```
+
+# [With a template prompt](#tab/similarity-single)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -95,6 +128,7 @@ df = spark.createDataFrame([
 results = df.ai.gen(template="Complete this comma separated list of 5 {category}: {example}, ", output_col="list")
 display(results)
 ```
+
 
 ## Related content
 

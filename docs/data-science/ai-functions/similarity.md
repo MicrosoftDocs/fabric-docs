@@ -19,19 +19,19 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-[Standard]
-
-## Limitations
-
-[Standard]
-
 ## Use `ai.similarity` with pandas
 
 [TBD]
 
 ### Syntax
+
+# [With a single text value](#tab/similarity-single)
+
+```python
+df["similarity"] = df["col1"].ai.similarity("value")
+```
+
+# [With pairwise text values](#tab/similarity-pairwise)
 
 ```python
 df["similarity"] = df["col1"].ai.similarity(df["col2"])
@@ -48,6 +48,25 @@ df["similarity"] = df["col1"].ai.similarity(df["col2"])
 A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing similarity scores for each row of input text.
 
 ### Example
+
+# [With a single text value](#tab/similarity-single)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = pd.DataFrame([ 
+        ("Jean Luc Picard", "Peppa Pig"), 
+        ("William T. Riker", "Barney"), 
+        ("Dolores O'Riordan", "Sinéad O'Connor"), 
+        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
+    ], columns=["names", "comparisons"])
+    
+df["similarity"] = df["names"].ai.similarity(df["comparisons"])
+display(df)
+```
+
+# [With pairwise text values](#tab/similarity-pairwise)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -70,6 +89,14 @@ display(df)
 
 ### Syntax
 
+# [With a single text value](#tab/similarity-single)
+
+```python
+df.ai.similarity(input_col="col1", other="value", output_col="similarity")
+```
+
+# [With pairwise text values](#tab/similarity-pairwise)
+
 ```python
 df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 ```
@@ -88,6 +115,25 @@ df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing generated similarity scores for each row of input text.
 
 ### Example
+
+# [With a single text value](#tab/similarity-single)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+
+df = spark.createDataFrame([
+        ("Jean Luc Picard", "Peppa Pig"), 
+        ("William T. Riker", "Barney"), 
+        ("Dolores O'Riordan", "Sinéad O'Connor"), 
+        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
+    ], ["names", "comparisons"])
+
+similarity = df.ai.similarity(input_col="names", other_col="comparisons", output_col="similarity")
+display(similarity)
+```
+
+# [With pairwise text values](#tab/similarity-pairwise)
 
 ```python
 # This code uses AI. Always review output for mistakes. 

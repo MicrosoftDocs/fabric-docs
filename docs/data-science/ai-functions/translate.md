@@ -19,14 +19,6 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-[Standard]
-
-## Limitations
-
-[Standard]
-
 ## Use `ai.translate` with pandas
 
 [TBD]
