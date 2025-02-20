@@ -37,6 +37,8 @@ df["similarity"] = df["col1"].ai.similarity("value")
 df["similarity"] = df["col1"].ai.similarity(df["col2"])
 ```
 
+---
+
 ### Parameters
 
 | **Name** | **Description** |
@@ -83,6 +85,8 @@ df["similarity"] = df["names"].ai.similarity(df["comparisons"])
 display(df)
 ```
 
+---
+
 ## Use `ai.similarity` with PySpark
 
 [TBD]
@@ -100,6 +104,8 @@ df.ai.similarity(input_col="col1", other="value", output_col="similarity")
 ```python
 df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 ```
+
+---
 
 ### Parameters
 
@@ -149,6 +155,8 @@ df = spark.createDataFrame([
 similarity = df.ai.similarity(input_col="names", other_col="comparisons", output_col="similarity")
 display(similarity)
 ```
+
+---
 
 ## Related content
 

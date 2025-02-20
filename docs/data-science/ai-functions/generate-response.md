@@ -49,6 +49,8 @@ TBD
 TBD
 ```
 
+---
+
 ### Parameters
 
 | **Name** | **Description** |
@@ -75,6 +77,8 @@ TBD
 TBD
 ```
 
+---
+
 ## Use `ai.generate_response` with PySpark
 
 [TBD]
@@ -92,6 +96,8 @@ df.ai.generate_response(prompt="instructions", output_col="response")
 ```python
 df.ai.generate_response(prompt="instructions", output_col="response")
 ```
+
+---
 
 ### Parameters
 
@@ -129,6 +135,7 @@ results = df.ai.gen(template="Complete this comma separated list of 5 {category}
 display(results)
 ```
 
+---
 
 ## Related content
 

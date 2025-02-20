@@ -37,6 +37,8 @@ df["summaries"] = df["text"].ai.summarize()
 df["summaries"] = df.ai.summarize()
 ```
 
+---
+
 ### Parameters
 
 None
@@ -111,6 +113,8 @@ df["summaries"] = df["text"].ai.summarize()
 display(df)
 ```
 
+---
+
 ## Use `ai.summarize` with PySpark
 
 [TBD]
@@ -128,6 +132,8 @@ df.ai.summarize(input_col="text", output_col="summaries")
 ```python
 df.ai.summarize(output_col="summaries")
 ```
+
+---
 
 ### Parameters
 
@@ -205,6 +211,8 @@ df = spark.createDataFrame([
 summaries = df.ai.summarize(input_col="text", output_col="summaries")
 display(summaries)
 ```
+
+---
 
 ## Related content
 
