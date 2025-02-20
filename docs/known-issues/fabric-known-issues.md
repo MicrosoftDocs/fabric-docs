@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 02/10/2025
+ms.date: 02/19/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,7 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  1020  | Data Factory | [Dataflow connector doesn't show dataflows with view only permissions](./known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md) | February 10, 2025 |
+|  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
+|  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
+|  1024  | Data Factory | [CopyJob item deletion fails with error](./known-issue-1024-copy-job-item-deletion-fails-error.md) | February 14, 2025 |
+|  1023  | Data Factory | [Preview destination data on a pipeline's copy activity fails](./known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md) | February 14, 2025 |
 |  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
 |  1011  | Power BI | [Models with specific gateway configuration might experience refresh issues](./known-issue-1011-models-specific-gateway-configuration-refresh-issues.md) | January 29, 2025 |
 |  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 |
@@ -49,7 +52,6 @@ Select the **Title** to view more information about that specific known issue.
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](./known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](./known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](./known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
-|  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](./known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
 |  923  | Power BI | [Tenant migrations paused through February 2025](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
@@ -76,15 +78,12 @@ Select the **Title** to view more information about that specific known issue.
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](./known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
 |  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](./known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](./known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
-|  769  | Data Factory | [Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines](./known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
 |  767  | Data Warehouse | [SQL analytics endpoint table sync fails when table contains linked functions](./known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md) | July 2, 2024 |
-|  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](./known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](./known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](./known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](./known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](./known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
 |  643  | Data Engineering | [Tables not available to add in Power BI semantic model](./known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 |
-|  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](./known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](./known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 |
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](./known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
 |  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](./known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
@@ -95,6 +94,11 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1020  | Data Factory | [Dataflow connector doesn't show dataflows with view only permissions](./known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md) | February 10, 2025 | Fixed: February 14, 2025 |
+|  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](./known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 | Fixed: February 14, 2025 |
+|  769  | Data Factory | [Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines](./known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md) | July 2, 2024 | Fixed: February 14, 2025 |
+|  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](./known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 | Fixed: February 14, 2025 |
+|  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](./known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 | Fixed: February 14, 2025 |
 |  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](./known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 | Fixed: February 10, 2025 |
 |  955  | Data Factory | [Create Gateway public API doesn't work for service principals](./known-issue-955-create-gateway-public-api-not-work-service-principals.md) | December 5, 2024 | Fixed: February 5, 2025 |
 |  1005  | Data Engineering | [Git operations and deployment pipelines don't work with lakehouses](./known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md) | January 22, 2025 | Fixed: February 4, 2025 |
