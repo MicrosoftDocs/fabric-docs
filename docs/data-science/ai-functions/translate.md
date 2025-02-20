@@ -46,8 +46,9 @@ A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.htm
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        "Where is the bus?", 
-        "The bus is on the beach."
+        "Hello! How are you doing today?", 
+        "Tell me what you'd like to know, and I'll do my best to help.", 
+        "The only thing we have to fear is fear itself."
     ], columns=["text"])
 
 df["translations"] = df["text"].ai.translate("spanish")
@@ -83,8 +84,9 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("Where is the bus?",),
-        ("The bus is on the beach.",),
+        ("Hello! How are you doing today?",),
+        ("Tell me what you'd like to know, and I'll do my best to help.",),
+        ("The only thing we have to fear is fear itself.",),
     ], ["text"])
 
 translations = df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")

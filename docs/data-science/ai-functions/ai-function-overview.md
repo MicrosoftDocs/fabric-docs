@@ -17,7 +17,7 @@ Microsoft Fabric empowers all users—from developers to business analysts—to 
 
 AI functions, currently in public preview, allow you to complete the following tasks in a single line of code:
 
-- [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with corresponding text in another column or with a single common text value.
+- [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with a single common text value or with corresponding text values in another column.
 - [**Categorize text with `ai.classify`**](#categorize-text-with-aiclassify): Classify input text values according to labels you choose.
 - [**Detect sentiment with `ai.analyze_sentiment`**](#detect-sentiment-with-aianalyze_sentiment): Identify the emotional state expressed by input text.
 - [**Extract entities with `ai_extract`**](#extract-entities-with-aiextract): Find and extract specific types of information, such as locations or names, within input text.
@@ -108,7 +108,7 @@ Each of the following functions allows you to invoke Fabric's native LLM endpoin
 
 ### Calculate similarity with [`ai.similarity`](similarity.md)
 
-The `ai.similarity` function invokes AI to compare input text values to corresponding text values in another column or to a single common text value. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
+The `ai.similarity` function invokes AI to compare input text values a single common text value or to corresponding text values in another column. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
 
 #### Sample usage
 
@@ -119,13 +119,12 @@ The `ai.similarity` function invokes AI to compare input text values to correspo
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([ 
-        ("Jean Luc Picard", "Peppa Pig"), 
-        ("William T. Riker", "Barney"), 
-        ("Dolores O'Riordan", "Sinéad O'Connor"), 
-        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
-    ], columns=["name", "comparison"])
+        ("Bill Gates", "Microsoft"), 
+        ("Satya Nadella", "Toyota"), 
+        ("Joan of Arc", "Nike") 
+    ], columns=["names", "companies"])
     
-df["similarity"] = df["name"].ai.similarity(df["comparison"])
+df["similarity"] = df["names"].ai.similarity(df["companies"])
 display(df)
 ```
 
@@ -136,13 +135,12 @@ display(df)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("Jean Luc Picard", "Peppa Pig"), 
-        ("William T. Riker", "Barney"), 
-        ("Dolores O'Riordan", "Sinéad O'Connor"), 
-        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
-    ], ["names", "comparisons"])
+        ("Bill Gates", "Microsoft"), 
+        ("Satya Nadella", "Toyota"), 
+        ("Joan of Arc", "Nike")
+    ], ["names", "companies"])
 
-similarity = df.ai.similarity(input_col="names", other_col="comparisons", output_col="similarity")
+similarity = df.ai.similarity(input_col="names", other_col="companies", output_col="similarity")
 display(similarity)
 ```
 
@@ -161,12 +159,12 @@ The `ai.classify` function invokes AI to categorize input text according to cust
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        "This duvet, lovingly hand-crafted from all-natural polyester, is perfect for a good night's sleep.",
+        "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
         "Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",
-        "Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the light commuter!"
+        "Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the professional commuter!"
     ], columns=["descriptions"])
 
-df["categories"] = df['descriptions'].ai.classify("kitchen", "bedroom", "garage", "other")
+df["category"] = df['descriptions'].ai.classify("kitchen", "bedroom", "garage", "other")
 display(df)
 ```
 
@@ -177,9 +175,9 @@ display(df)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("This duvet, lovingly hand-crafted from all-natural polyester, is perfect for a good night's sleep.",),
+        ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",),
         ("Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",),
-        ("Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the light commuter!",)
+        ("Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the professional commuter!",)
     ], ["descriptions"])
     
 categories = df.ai.classify(labels=["kitchen", "bedroom", "garage", "other"], input_col="descriptions", output_col="categories")
@@ -201,10 +199,10 @@ The `ai.analyze_sentiment` function invokes AI to identify whether the emotional
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        "This was the worst product ever. It went crazy and destroyed my beautiful kitchen counter. Shame!",
-        "This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!",
-        "I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",
-        "It's OK I suppose."
+        "The cleaning spray permanently stained my beautiful kitchen counter. Never again!",
+        "I used this sunscreen on my vacation to Florida, and I didn't get burned at all. Would recommend.",
+        "I'm torn about this speaker system. The sound was high quality, though it didn't connect to my roommate's phone.",
+        "The umbrella is OK, I guess."
     ], columns=["reviews"])
 
 df["sentiment"] = df["reviews"].ai.analyze_sentiment()
@@ -218,10 +216,10 @@ display(df)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("This was the worst product ever. It went crazy and destroyed my beautiful kitchen counter. Shame!",),
-        ("This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!!",),
-        ("I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",),
-        ("It's OK I suppose.",)
+        ("The cleaning spray permanently stained my beautiful kitchen counter. Never again!",),
+        ("I used this sunscreen on my vacation to Florida, and I didn't get burned at all. Would recommend.",),
+        ("I'm torn about this speaker system. The sound was high quality, though it didn't connect to my roommate's phone.",),
+        ("The umbrella is OK, I guess.",)
     ], ["reviews"])
 
 sentiment = df.ai.analyze_sentiment(input_col="reviews", output_col="sentiment")
@@ -243,12 +241,12 @@ The `ai.extract` function invokes AI to find and extract specific types of infor
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        "My name is MJ Lee. I live in a house on 1234 Roderick Lane in Plainville, CT, with two cats.",
-        "Kris Turner's house at 1500 Smith Avenue is the biggest on the block!"
+        "MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",
+        "Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey."
     ], columns=["descriptions"])
 
-df = df["descriptions"].ai.extract("name", "address")
-display(df)
+df_entities = df["descriptions"].ai.extract("name", "profession", "city")
+display(df_entities)
 ```
 
 # [PySpark](#tab/pyspark)
@@ -258,12 +256,12 @@ display(df)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("My name is MJ Lee. I live in a house on 1234 Roderick Lane in Plainville, CT, with two cats.",),
-        ("Kris Turner's house at 1500 Smith Avenue is the biggest on the block!",)
+        ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",),
+        ("Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey.",)
     ], ["descriptions"])
 
-entities = df.ai.extract(labels=["name", "address"], input_col="descriptions")
-display(entities)
+df_entities = df.ai.extract(labels=["name", "profession", "city"], input_col="descriptions")
+display(df_entities)
 ```
 
 ---
@@ -281,9 +279,9 @@ The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and p
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        "oh yeah, she and me go weigh back!",
-        "You SUre took you'RE sweetthyme!",
-        "teh time has come at last."
+        "There are an error here.",
+        "She and me go weigh back. We used to hang out every weeks.",
+        "The big picture are right, but you're details is all wrong."
     ], columns=["text"])
 
 df["corrections"] = df["text"].ai.fix_grammar()
@@ -297,9 +295,9 @@ display(df)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("oh yeah, she and me go weigh back!",),
-        ("You SUre took you'RE sweetthyme!",),
-        ("teh time has come at last.",)
+        ("There are an error here.",),
+        ("She and me go weigh back. We used to hang out every weeks.",),
+        ("The big picture are right, but you're details is all wrong.",)
     ], ["text"])
 
 results = df.ai.fix_grammar(input_col="text", output_col="corrections")
@@ -321,28 +319,21 @@ The `ai.summarize` function invokes AI to generate summaries of input text (eith
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df= pd.DataFrame([
+        ("Microsoft Teams", "2017",
         """
-        Well, that goat was a mighty fine old goat, I did always say. I never had to
-        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
-        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
-        no, I know what you're thinking, not goatee like the facial hair-style --
-        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
-        the goat, don't you know. Anyway, we used to keep him in a little pen, where
-        he would bleat his little goat heart out, as he happily munched on grass.
-        """,
+        The ultimate messaging app for your organization—a workspace for real-time 
+        collaboration and communication, meetings, file and app sharing, and even the 
+        occasional emoji! All in one place, all in the open, all accessible to everyone.
+        """),
+        ("Microsoft Fabric", "2023",
         """
-        Pursuant to subsection 2, paragraph 7, we find that the alleged business
-        expense was undertaken under questionable judgment. The employee in question 
-        was found to have purchased five lots of moisturizer due to a misunderstanding 
-        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
-        he made the purchase. Compounding this error was his misapprehension that
-        the cream was infused with diamond dust to give it an extra sparkle, thereby
-        justifying, at least in his mind, its exorbitant cost. The board recommends
-        immediate disciplinary action.
-        """
-    ], columns=["text"])
+        An enterprise-ready, end-to-end analytics platform that unifies data movement, 
+        data processing, ingestion, transformation, and report building into a seamless, 
+        user-friendly SaaS experience. Transform raw data into actionable insights.
+        """)
+    ], columns=["product", "release_year", "description"])
 
-df["summaries"] = df["text"].ai.summarize()
+df["summaries"] = df["description"].ai.summarize()
 display(df)
 ```
 
@@ -353,28 +344,21 @@ display(df)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("""
-        Well, that goat was a mighty fine old goat, I did always say. I never had to
-        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
-        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
-        no, I know what you're thinking, not goatee like the facial hair-style --
-        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
-        the goat, don't you know. Anyway, we used to keep him in a little pen, where
-        he would bleat his little goat heart out, as he happily munched on grass.
+        ("Microsoft Teams", "2017",
+        """
+        The ultimate messaging app for your organization—a workspace for real-time 
+        collaboration and communication, meetings, file and app sharing, and even the 
+        occasional emoji! All in one place, all in the open, all accessible to everyone.
         """,),
-        ("""
-        Pursuant to subsection 2, paragraph 7, we find that the alleged business
-        expense was undertaken under questionable judgment. The employee in question 
-        was found to have purchased five lots of moisturizer due to a misunderstanding 
-        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
-        he made the purchase. Compounding this error was his misapprehension that
-        the cream was infused with diamond dust to give it an extra sparkle, thereby
-        justifying, at least in his mind, its exorbitant cost. The board recommends
-        immediate disciplinary action.
+        ("Microsoft Fabric", "2023",
+        """
+        An enterprise-ready, end-to-end analytics platform that unifies data movement, 
+        data processing, ingestion, transformation, and report building into a seamless, 
+        user-friendly SaaS experience. Transform raw data into actionable insights.
         """,)
-    ], ["text"])
+    ], ["product", "release_year", "description"])
 
-summaries = df.ai.summarize(input_col="text", output_col="summaries")
+summaries = df.ai.summarize(input_col="description", output_col="summary")
 display(summaries)
 ```
 
@@ -393,8 +377,9 @@ The `ai.translate` function invokes AI to translate input text to a new language
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        "Where is the bus?", 
-        "The bus is on the beach."
+        "Hello! How are you doing today?", 
+        "Tell me what you'd like to know, and I'll do my best to help.", 
+        "The only thing we have to fear is fear itself."
     ], columns=["text"])
 
 df["translations"] = df["text"].ai.translate("spanish")
@@ -408,8 +393,9 @@ display(df)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("Where is the bus?",),
-        ("The bus is on the beach.",),
+        ("Hello! How are you doing today?",),
+        ("Tell me what you'd like to know, and I'll do my best to help.",),
+        ("The only thing we have to fear is fear itself.",),
     ], ["text"])
 
 translations = df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")

@@ -49,67 +49,53 @@ A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.htm
 
 ### Example
 
-# [Summarizing column values](#tab/column-summary)
+# [Summarizing columns](#tab/column-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df= pd.DataFrame([
+        ("Microsoft Teams", "2017",
         """
-        Well, that goat was a mighty fine old goat, I did always say. I never had to
-        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
-        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
-        no, I know what you're thinking, not goatee like the facial hair-style --
-        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
-        the goat, don't you know. Anyway, we used to keep him in a little pen, where
-        he would bleat his little goat heart out, as he happily munched on grass.
-        """,
+        The ultimate messaging app for your organization—a workspace for real-time 
+        collaboration and communication, meetings, file and app sharing, and even the 
+        occasional emoji! All in one place, all in the open, all accessible to everyone.
+        """),
+        ("Microsoft Fabric", "2023",
         """
-        Pursuant to subsection 2, paragraph 7, we find that the alleged business
-        expense was undertaken under questionable judgment. The employee in question 
-        was found to have purchased five lots of moisturizer due to a misunderstanding 
-        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
-        he made the purchase. Compounding this error was his misapprehension that
-        the cream was infused with diamond dust to give it an extra sparkle, thereby
-        justifying, at least in his mind, its exorbitant cost. The board recommends
-        immediate disciplinary action.
-        """
-    ], columns=["text"])
+        An enterprise-ready, end-to-end analytics platform that unifies data movement, 
+        data processing, ingestion, transformation, and report building into a seamless, 
+        user-friendly SaaS experience. Transform raw data into actionable insights.
+        """)
+    ], columns=["product", "release_year", "description"])
 
-df["summaries"] = df["text"].ai.summarize()
+df["summaries"] = df["description"].ai.summarize()
 display(df)
 ```
 
-# [Summarizing DataFrame rows](#tab/dataframe-summary)
+# [Summarizing DataFrames](#tab/dataframe-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df= pd.DataFrame([
+        ("Microsoft Teams", "2017",
         """
-        Well, that goat was a mighty fine old goat, I did always say. I never had to
-        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
-        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
-        no, I know what you're thinking, not goatee like the facial hair-style --
-        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
-        the goat, don't you know. Anyway, we used to keep him in a little pen, where
-        he would bleat his little goat heart out, as he happily munched on grass.
-        """,
+        The ultimate messaging app for your organization—a workspace for real-time 
+        collaboration and communication, meetings, file and app sharing, and even the 
+        occasional emoji! All in one place, all in the open, all accessible to everyone.
+        """),
+        ("Microsoft Fabric", "2023",
         """
-        Pursuant to subsection 2, paragraph 7, we find that the alleged business
-        expense was undertaken under questionable judgment. The employee in question 
-        was found to have purchased five lots of moisturizer due to a misunderstanding 
-        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
-        he made the purchase. Compounding this error was his misapprehension that
-        the cream was infused with diamond dust to give it an extra sparkle, thereby
-        justifying, at least in his mind, its exorbitant cost. The board recommends
-        immediate disciplinary action.
-        """
-    ], columns=["text"])
+        An enterprise-ready, end-to-end analytics platform that unifies data movement, 
+        data processing, ingestion, transformation, and report building into a seamless, 
+        user-friendly SaaS experience. Transform raw data into actionable insights.
+        """)
+    ], columns=["product", "release_year", "description"])
 
-df["summaries"] = df["text"].ai.summarize()
+df["summaries"] = df.ai.summarize()
 display(df)
 ```
 
@@ -121,13 +107,13 @@ display(df)
 
 ### Syntax
 
-# [Summarizing column values](#tab/column-summary)
+# [Summarizing columns](#tab/column-summary)
 
 ```python
 df.ai.summarize(input_col="text", output_col="summaries")
 ```
 
-# [Summarizing DataFrame rows](#tab/dataframe-summary)
+# [Summarizing DataFrames](#tab/dataframe-summary)
 
 ```python
 df.ai.summarize(output_col="summaries")
@@ -155,28 +141,21 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("""
-        Well, that goat was a mighty fine old goat, I did always say. I never had to
-        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
-        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
-        no, I know what you're thinking, not goatee like the facial hair-style --
-        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
-        the goat, don't you know. Anyway, we used to keep him in a little pen, where
-        he would bleat his little goat heart out, as he happily munched on grass.
+        ("Microsoft Teams", "2017",
+        """
+        The ultimate messaging app for your organization—a workspace for real-time 
+        collaboration and communication, meetings, file and app sharing, and even the 
+        occasional emoji! All in one place, all in the open, all accessible to everyone.
         """,),
-        ("""
-        Pursuant to subsection 2, paragraph 7, we find that the alleged business
-        expense was undertaken under questionable judgment. The employee in question 
-        was found to have purchased five lots of moisturizer due to a misunderstanding 
-        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
-        he made the purchase. Compounding this error was his misapprehension that
-        the cream was infused with diamond dust to give it an extra sparkle, thereby
-        justifying, at least in his mind, its exorbitant cost. The board recommends
-        immediate disciplinary action.
+        ("Microsoft Fabric", "2023",
+        """
+        An enterprise-ready, end-to-end analytics platform that unifies data movement, 
+        data processing, ingestion, transformation, and report building into a seamless, 
+        user-friendly SaaS experience. Transform raw data into actionable insights.
         """,)
-    ], ["text"])
+    ], ["product", "release_year", "description"])
 
-summaries = df.ai.summarize(input_col="text", output_col="summaries")
+summaries = df.ai.summarize(input_col="description", output_col="summaries")
 display(summaries)
 ```
 
@@ -187,28 +166,21 @@ display(summaries)
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("""
-        Well, that goat was a mighty fine old goat, I did always say. I never had to
-        mow the lawn once as a boy, and let me tell you, did I appreciate it! Now
-        that goat -- a billy-goat, did I mention? -- anyway, his name was Goaty. No,
-        no, I know what you're thinking, not goatee like the facial hair-style --
-        though he did awful look like he had one. Literally "Goat-ee." Emphasis on
-        the goat, don't you know. Anyway, we used to keep him in a little pen, where
-        he would bleat his little goat heart out, as he happily munched on grass.
+        ("Microsoft Teams", "2017",
+        """
+        The ultimate messaging app for your organization—a workspace for real-time 
+        collaboration and communication, meetings, file and app sharing, and even the 
+        occasional emoji! All in one place, all in the open, all accessible to everyone.
         """,),
-        ("""
-        Pursuant to subsection 2, paragraph 7, we find that the alleged business
-        expense was undertaken under questionable judgment. The employee in question 
-        was found to have purchased five lots of moisturizer due to a misunderstanding 
-        about the humidity in Cleveland, Ohio, and through a series of poor decisions,
-        he made the purchase. Compounding this error was his misapprehension that
-        the cream was infused with diamond dust to give it an extra sparkle, thereby
-        justifying, at least in his mind, its exorbitant cost. The board recommends
-        immediate disciplinary action.
+        ("Microsoft Fabric", "2023",
+        """
+        An enterprise-ready, end-to-end analytics platform that unifies data movement, 
+        data processing, ingestion, transformation, and report building into a seamless, 
+        user-friendly SaaS experience. Transform raw data into actionable insights.
         """,)
-    ], ["text"])
+    ], ["product", "release_year", "description"])
 
-summaries = df.ai.summarize(input_col="text", output_col="summaries")
+summaries = df.ai.summarize(output_col="summaries")
 display(summaries)
 ```
 

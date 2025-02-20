@@ -25,13 +25,13 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ### Syntax
 
-# [With a single text value](#tab/similarity-single)
+# [Comparing against a single value](#tab/similarity-single)
 
 ```python
 df["similarity"] = df["col1"].ai.similarity("value")
 ```
 
-# [With pairwise text values](#tab/similarity-pairwise)
+# [Comparing column values pairwise](#tab/similarity-pairwise)
 
 ```python
 df["similarity"] = df["col1"].ai.similarity(df["col2"])
@@ -51,37 +51,35 @@ A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.htm
 
 ### Example
 
-# [With a single text value](#tab/similarity-single)
+# [Comparing against a single value](#tab/similarity-single)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([ 
-        ("Jean Luc Picard", "Peppa Pig"), 
-        ("William T. Riker", "Barney"), 
-        ("Dolores O'Riordan", "Sinéad O'Connor"), 
-        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
-    ], columns=["names", "comparisons"])
+        ("Bill Gates"), 
+        ("Satya Nadella"), 
+        ("Joan of Arc")
+    ], columns=["name"])
     
-df["similarity"] = df["names"].ai.similarity(df["comparisons"])
+df["similarity"] = df["name"].ai.similarity("Microsoft")
 display(df)
 ```
 
-# [With pairwise text values](#tab/similarity-pairwise)
+# [Comparing column values pairwise](#tab/similarity-pairwise)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([ 
-        ("Jean Luc Picard", "Peppa Pig"), 
-        ("William T. Riker", "Barney"), 
-        ("Dolores O'Riordan", "Sinéad O'Connor"), 
-        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
-    ], columns=["names", "comparisons"])
+        ("Bill Gates", "Microsoft"), 
+        ("Satya Nadella", "Toyota"), 
+        ("Joan of Arc", "Nike") 
+    ], columns=["names", "companies"])
     
-df["similarity"] = df["names"].ai.similarity(df["comparisons"])
+df["similarity"] = df["names"].ai.similarity(df["companies"])
 display(df)
 ```
 
@@ -93,13 +91,13 @@ display(df)
 
 ### Syntax
 
-# [With a single text value](#tab/similarity-single)
+# [Comparing against a single value](#tab/similarity-single)
 
 ```python
 df.ai.similarity(input_col="col1", other="value", output_col="similarity")
 ```
 
-# [With pairwise text values](#tab/similarity-pairwise)
+# [Comparing column values pairwise](#tab/similarity-pairwise)
 
 ```python
 df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
@@ -122,37 +120,35 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 
 ### Example
 
-# [With a single text value](#tab/similarity-single)
+# [Comparing against a single value](#tab/similarity-single)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("Jean Luc Picard", "Peppa Pig"), 
-        ("William T. Riker", "Barney"), 
-        ("Dolores O'Riordan", "Sinéad O'Connor"), 
-        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
-    ], ["names", "comparisons"])
+        ("Bill Gates",), 
+        ("Sayta Nadella",), 
+        ("Joan of Arc",) 
+    ], ["names"])
 
-similarity = df.ai.similarity(input_col="names", other_col="comparisons", output_col="similarity")
+similarity = df.ai.similarity(input_col="names", other="Microsoft", output_col="similarity")
 display(similarity)
 ```
 
-# [With pairwise text values](#tab/similarity-pairwise)
+# [Comparing column values pairwise](#tab/similarity-pairwise)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("Jean Luc Picard", "Peppa Pig"), 
-        ("William T. Riker", "Barney"), 
-        ("Dolores O'Riordan", "Sinéad O'Connor"), 
-        ("Sherlock Holmes", "a fictional victorian London-based consulting detective") 
-    ], ["names", "comparisons"])
+        ("Bill Gates", "Microsoft"), 
+        ("Satya Nadella", "Toyota"), 
+        ("Joan of Arc", "Nike")
+    ], ["names", "companies"])
 
-similarity = df.ai.similarity(input_col="names", other_col="comparisons", output_col="similarity")
+similarity = df.ai.similarity(input_col="names", other_col="companies", output_col="similarity")
 display(similarity)
 ```
 

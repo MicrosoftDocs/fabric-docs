@@ -44,10 +44,10 @@ A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.htm
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        "This was the worst product ever. It went crazy and destroyed my beautiful kitchen counter. Shame!",
-        "This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!",
-        "I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",
-        "It's OK I suppose."
+        "The cleaning spray permanently stained my beautiful kitchen counter. Never again!",
+        "I used this sunscreen on my vacation to Florida, and I didn't get burned at all. Would recommend.",
+        "I'm torn about this speaker system. The sound was high quality, though it didn't connect to my roommate's phone.",
+        "The umbrella is OK, I guess."
     ], columns=["reviews"])
 
 df["sentiment"] = df["reviews"].ai.analyze_sentiment()
@@ -82,10 +82,10 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("This was the worst product ever. It went crazy and destroyed my beautiful kitchen counter. Shame!",),
-        ("This cream was the best ever! It restored the pinkish hue to my cheeks and gave me a new outlook on life. Thank you!!",),
-        ("I'm not sure about this blow-torch. On the one hand, I did complete my iron-sculpture, but on the other hand my hair caught on fire.",),
-        ("It's OK I suppose.",)
+        ("The cleaning spray permanently stained my beautiful kitchen counter. Never again!",),
+        ("I used this sunscreen on my vacation to Florida, and I didn't get burned at all. Would recommend.",),
+        ("I'm torn about this speaker system. The sound was high quality, though it didn't connect to my roommate's phone.",),
+        ("The umbrella is OK, I guess.",)
     ], ["reviews"])
 
 sentiment = df.ai.analyze_sentiment(input_col="reviews", output_col="sentiment")

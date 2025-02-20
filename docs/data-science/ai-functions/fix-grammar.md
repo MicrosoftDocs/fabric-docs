@@ -44,9 +44,9 @@ A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.htm
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        "oh yeah, she and me go weigh back!",
-        "You SUre took you'RE sweetthyme!",
-        "teh time has come at last."
+        "There are an error here.",
+        "She and me go weigh back. We used to hang out every weeks.",
+        "The big picture are right, but you're details is all wrong."
     ], columns=["text"])
 
 df["corrections"] = df["text"].ai.fix_grammar()
@@ -81,9 +81,9 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("oh yeah, she and me go weigh back!",),
-        ("You SUre took you'RE sweetthyme!",),
-        ("teh time has come at last.",)
+        ("There are an error here.",),
+        ("She and me go weigh back. We used to hang out every weeks.",),
+        ("The big picture are right, but you're details is all wrong.",)
     ], ["text"])
 
 results = df.ai.fix_grammar(input_col="text", output_col="corrections")
