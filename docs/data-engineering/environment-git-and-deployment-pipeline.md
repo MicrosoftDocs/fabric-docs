@@ -5,7 +5,7 @@ ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
 ms.date: 07/14/2024
-ms.search.for: Fabric environment Git integration and deployment pipeline
+ms.search.form: Fabric environment Git integration and deployment pipeline
 ---
 
 # Environment Git integration and deployment pipeline

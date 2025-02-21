@@ -1,6 +1,6 @@
 ---
-title: Copilot for Real-Time Intelligence
-description: "Learn how Copilot in Real-Time Intelligence can help you explore your data and extract valuable insights."
+title: Copilot for Real-Time Intelligence (nl2kql)
+description: "Learn how Copilot in Real-Time Intelligence (nl2kql) can help you explore your data and extract valuable insights."
 author: shsagir
 ms.author: shsagir
 ms.reviewer: mibar
