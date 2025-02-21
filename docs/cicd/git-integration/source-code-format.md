@@ -88,8 +88,8 @@ For more information about report folders and a complete list of their contents,
 
 Semantic model folders contain the following files:
 
-- definition.pbidataset
-- model.bim file (TMSL format) OR \definition folder (TMDL format)
+- definition.pbism
+- \definition folder with TMDL files
 
 For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project semantic model folder](/power-bi/developer/projects/projects-dataset).
 
