@@ -155,7 +155,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 | Semantic model on-demand refresh | A background semantic model refresh initiated by the user, using the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Semantic model scheduled refresh | A scheduled background semantic model refresh, performed by the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Full report email subscription | A PDF or PowerPoint copy of an entire Power BI report, attached to an [email subscription](/power-bi/collaborate-share/end-user-subscribe)  | Report | Power BI Capacity Usage CU | Background |
-| Interactive query | Queries initiated by an on-demand data request. For example, loading a model when opening a report, user interaction with a report , or querying a dataset before rendering.| Semantic model | Power BI Capacity Usage CU | Interactive |
+| Interactive query | Queries initiated by an on-demand data request. For example, loading a model when opening a report, user interaction with a report, or querying a dataset before rendering.| Semantic model | Power BI Capacity Usage CU | Interactive |
 | PublicApiExport | A Power BI report exported with the [export report to file](/power-bi/developer/embedded/export-to) REST API | Report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report exported with the [export paginated report to file](/power-bi/developer/embedded/export-paginated-report) REST API  | Paginated report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report viewed in Power BI service   | Paginated report | Power BI Capacity Usage CU | Interactive |
@@ -193,7 +193,7 @@ You can find the consumption rates for KQL Database in [KQL Database consumption
 
 | Operation   | Description                                          | Item                         | Azure billing meter | Type        |
 | ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
-| Eventhouse UpTime | Measure of the time that Event House is Active  | Event House | Eventhouse Capacity Usage CU         | Interactive |
+| Eventhouse UpTime | Measure of the time that Eventhouse is Active  | Eventhouse | Eventhouse Capacity Usage CU         | Interactive |
 
 ### Spark
 
