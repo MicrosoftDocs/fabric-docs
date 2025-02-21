@@ -31,9 +31,13 @@ This article guides you through creating a Service Principal application, settin
 2. Browse to **Identity** > **Applications** > **App registrations**, and select **New registration**.
 3. Enter a display **Name** for your application.
 4. Open your app, copy the **client ID** and **tenant ID** for later use.
+
    :::image type="content" border="true" source="media\entra-id-auth\app-id.png" alt-text="Screenshot of app ID.":::
+
 5. Go to **Certificates & secrets**, add a new client secret and copy the value.
+
    :::image type="content" border="true" source="media\entra-id-auth\app-secret.png" alt-text="Screenshot of app secret.":::
+
 6. Once completed, you should have the following three information ready:
    * Azure Client ID
    * Azure Tenant ID
@@ -42,8 +46,11 @@ This article guides you through creating a Service Principal application, settin
 ## Step 2: Assign Fabric workspace permission
 
 1. Go to your Fabric workspace and select **Manage access**.
+
    :::image type="content" border="true" source="media\entra-id-auth\workspace-manage-access.png" alt-text="Screenshot of workspace manage access.":::
-2. Search for the application created in the previous step and assign the **Contributor** (or higher) to your app.
+
+1. Search for the application created in the previous step and assign the **Contributor** (or higher) to your app.
+
    :::image type="content" border="true" source="media\entra-id-auth\assign-workspace-permission.png" alt-text="Screenshot of assigning workspace permission to an app.":::
 
 ## Step 3: Set up project in VS Code
@@ -82,7 +89,9 @@ This article guides you through creating a Service Principal application, settin
 1. Select **Custom Endpoint** > **Entra ID Authentication**, copy the following details, and paste them into the **ProducerSample.java** file:
    * Event hub namespace
    * Event hub
+
    :::image type="content" border="true" source="media\entra-id-auth\producer-sample.png" alt-text="Screenshot of producer sample code in VS Code.":::
+
 1. Run the following command to build and run the project:
 
    ``` powershell
@@ -100,7 +109,9 @@ If the data is sent successfully, you can go to your eventstream and view the in
    * Event hub namespace
    * Event hub
    * Consumer group
+
    :::image type="content" border="true" source="media\entra-id-auth\consumer-sample.png" alt-text="Screenshot of consumer sample code in VS Code.":::
+
 1. Run the following command to build and run the project:
 
    ``` powershell
@@ -113,8 +124,5 @@ After successfully running the project, you can view the incoming data in your a
 
 ## Related content
 
-To learn how to add other sources to an eventstream, see the following articles:
-
-* [Azure Event Hubs](add-source-azure-event-hubs.md)
-* [Azure IoT Hub](add-source-azure-iot-hub.md)
-* [Sample data](add-source-sample-data.md)
+* [Add Custom Endpoint source](add-source-custom-app.md)
+* [Add Custom Endpoint destination](add-destination-custom-app.md)
