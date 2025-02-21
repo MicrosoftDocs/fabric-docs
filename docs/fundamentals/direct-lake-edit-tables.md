@@ -81,6 +81,27 @@ The following image shows the **New semantic model** dialog.
 
 There are some differences for the default Power BI semantic model in Direct Lake mode. Refer to the [default Power BI semantic models in Microsoft Fabric](/fabric/data-warehouse/semantic-models) article for more information about the differences.
 
+## Creating relationships between tables
+
+Now you have tables in your semantic model you can create relationships between them. 
+
+In the **Model view**, dragging a column from one table to a column in another table will open the **Relationship editor** or **Properties** pane with the columns pre-selected and default cardinality of Many to one (*:1) and cross-filter direction (Single) pre-populated. 
+
+:::image type="content" source="media/direct-lake-edit-tables/direct-lake-relationship-editor-in-Power-BI-Desktop.png" alt-text="Screenshot of a relationship between Direct Lake storage mode tables in Power BI Desktop." lightbox="media/direct-lake-edit-tables/direct-lake-relationship-editor-in-Power-BI-Desktop.png":::
+
+Selecting **Manage relationships** from the ribbon will give you the option to create a **New relationship** without any pre-selections in the editor. 
+
+Using the context menu on the **Data** pane **Model Explorer**'s **Relationships** node to pick **New relationship** will give you the option to create a relationship without any pre-selections in the **Properties** pane. 
+
+To edit an existing relationship, select any created relationship line in the diagram view to show the relationship in the **Properties** pane, and double-clicking will open the **relationship editor**.
+
+In other storage modes there are data previews and relationship validation to populate the cardinality and cross-filter direction based on column profiling queries automatically. Direct Lake storage mode currently does not run queries to show data previews or validate relationships cardinality and cross-filter direction. Many to one (*:1) cardinality and single cross-filter direction are always populated but these may need to be changed manually to reflect the relationship correctly. To manually validate your relationship properties, run a DAX query in **DAX query view** or create a visual in **Report view** using these two tables together.
+
+Refer to the [create relationships in Power BI](/power-bi/transform-model/desktop-create-and-manage-relationships) article for more information about table relationships.
+
+### Limitations
+- Tables in Direct Lake storage mode do not show data previews in the relationship dialog.
+- Tables in Direct Lake storage mode do not have relationship validation for cardinality and cross-filter direction.
 
 ## Related content
 
