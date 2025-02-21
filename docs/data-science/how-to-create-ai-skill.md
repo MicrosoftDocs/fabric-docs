@@ -65,14 +65,16 @@ Once you add the data source, the **Explorer** on the left pane of the AI skill 
 
 :::image type="content" source="./media/how-to-create-ai-skill/change-datasource.png" alt-text="Screenshot showing how to add data sources." lightbox="./media/how-to-create-ai-skill/change-datasource.png":::
 
+> [!NOTE]
+> You need read/write permission to add a Power BI semantic model as a data source to the AI skill.
+
 For subsequent additions of data sources, navigate to the **Explorer** on the left pane of the AI skill page, and select **+ Data source**, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/add-datasource-OE.png" alt-text="Screenshot that shows how to add more data sources." lightbox="./media/how-to-create-ai-skill/add-datasource-OE.png":::
 
 The OneLake catalog opens again, and you can seamlessly add more data sources as needed.
 
-> [!NOTE]
-> You need read/write permission to add a Power BI semantic model as a data source to the AI skill.
+> [!TIP]
 > Make sure to use descriptive names for both tables and columns. A table named `SalesData` is more meaningful than `TableA`, and column names like `ActiveCustomer` or `IsCustomerActive` are clearer than `C1` or `ActCu`. Descriptive names help the AI generate more accurate and reliable queries.
 
 ## Ask questions
@@ -153,11 +155,15 @@ The Clear chat feature erases all chat history and starts a new session. Once yo
 
 To remove a data source, hover over the data source name in the **Explorer** on the left pane of the AI skill page until the three-dot menu appears. Select the three dots to reveal the options, then select **Remove** to delete the data source as shown in the following screenshot:
 
-:::image type="content" source="./media/how-to-create-ai-skill/delete-datasource.png" alt-text="Screenshot showing how to delete or refresh data sources" lightbox="./media/how-to-create-ai-skill/delete-datasource.png":::
+<img src="./media/how-to-create-ai-skill/delete-datasource.png" alt="Screenshot showing how to delete or refresh data sources." width="300"/>
+
+<!-- :::image type="content" source="./media/how-to-create-ai-skill/delete-datasource.png" alt-text="Screenshot showing how to delete or refresh data sources" lightbox="./media/how-to-create-ai-skill/delete-datasource.png"::: -->
 
 Alternatively, if your data source changed, you can select **Refresh** within the same menu, as shown in the following screenshot:
 
-:::image type="content" source="./media/how-to-create-ai-skill/refresh-datasource.png" alt-text="Screenshot showing how to refresh a data source" lightbox="./media/how-to-create-ai-skill/refresh-datasource.png":::
+<img src="./media/how-to-create-ai-skill/refresh-datasource.png" alt="Screenshot showing how to refresh a data source." width="300"/>
+
+<!-- :::image type="content" source="./media/how-to-create-ai-skill/refresh-datasource.png" alt-text="Screenshot showing how to refresh a data source" lightbox="./media/how-to-create-ai-skill/refresh-datasource.png"::: -->
 
 This ensures that any data source updates are both reflected and correctly populated in the explorer, to keep your AI skill in sync with the latest data.
 
@@ -169,7 +175,9 @@ The AI skill offers several configuration options that allow users to customize 
 
 You can provide specific instructions to guide the AI's behavior. To add them, select **AI instructions** as shown in the following screenshot:
 
-:::image type="content" source="./media/how-to-create-ai-skill/select-adding-instructions.png" alt-text="Screenshot showing selection of the AI instructions button." lightbox="./media/how-to-create-ai-skill/select-adding-instructions.png":::
+<img src="./media/how-to-create-ai-skill/select-adding-instructions.png" alt="Screenshot showing selection of the AI instructions button." width="300"/>
+
+<!-- :::image type="content" source="./media/how-to-create-ai-skill/select-adding-instructions.png" alt-text="Screenshot showing selection of the AI instructions button." lightbox="./media/how-to-create-ai-skill/select-adding-instructions.png"::: -->
 
 The AI instructions pane opens, as shown in this screenshot:
 

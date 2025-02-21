@@ -68,7 +68,7 @@ Configuring an AI skill is similar to building a Power BI report—you start by 
 - **Example queries**: You can add sample question-query pairs to illustrate how the AI skill should respond to common queries. These examples serve as a guide for the agent, which helps it understand how to interpret similar questions and generate accurate responses.
 
 > [!NOTE]
-> Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources.
+> Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources. Also, if you previously created and published an AI skill, and you have used its URL programmatically, the URL will no longer work if you open the AI skill in the AI skill new user interface page. To resolve this, you must republish the AI skill, and use the new URL based on the Assistants API.
 
 By combining clear AI instructions and relevant example queries, you can better align the AI skill with your organization’s data needs, ensuring more accurate and context-aware responses.
 
