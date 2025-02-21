@@ -46,9 +46,9 @@ To update the AI skill description without making any other changes, navigate to
 
 The **Fabric AI skill sharing** feature allows you to share your AI skills with others, with a range of permission models, as shown in this screenshot:
 
-<!-- img src="./media/ai-skill-sharing/sharing-main.png" alt="Screenshot showing how to share an AI skill link." width="300"/> -->
+<img src="./media/ai-skill-sharing/sharing-main.png" alt="Screenshot showing how to share an AI skill link." width="300"/>
 
-:::image type="content" source="./media/ai-skill-sharing/sharing-main.png" alt-text="Screenshot showing how to share an AI skill link." lightbox="./media/ai-skill-sharing/sharing-main.png":::
+<!-- :::image type="content" source="./media/ai-skill-sharing/sharing-main.png" alt-text="Screenshot showing how to share an AI skill link." lightbox="./media/ai-skill-sharing/sharing-main.png"::: -->
 
 You have complete control over access to your AI skill, and complete control of its use. Additionally, when you share the AI skill, you must also share access to the underlying data it uses. The AI Skill honors all user permissions to the data, including Row-Level Security (RLS) and Column-Level Security (CLS).
 
@@ -60,9 +60,9 @@ You have complete control over access to your AI skill, and complete control of 
 
 The following screenshot shows the actual permissions that you can select:
 
-:::image type="content" source="./media/ai-skill-sharing/permission-models.png" alt-text="Screenshot showing selection of actual AI skill sharing permissions." lightbox="./media/ai-skill-sharing/permission-models.png":::
+<!-- :::image type="content" source="./media/ai-skill-sharing/permission-models.png" alt-text="Screenshot showing selection of actual AI skill sharing permissions." lightbox="./media/ai-skill-sharing/permission-models.png"::: -->
 
-<!-- img src="./media/ai-skill-sharing/permission-models.png" alt="Screenshot showing selection of actual AI skill sharing permissions." width="300"/> -->
+<img src="./media/ai-skill-sharing/permission-models.png" alt="Screenshot showing selection of actual AI skill sharing permissions." width="300"/>
 
 If you share an AI Skill before you publish it, users with default permissions (without any other permissions) can't query it. It works this way because the default permission allows users to query only the published version—if a published version doesn't yet exist, users can't query the AI skill. Users with other permissions (**View details**, or **Edit and view details**) can only access the draft version. The following screenshot shows the option to share an AI skill without publishing it:
 
