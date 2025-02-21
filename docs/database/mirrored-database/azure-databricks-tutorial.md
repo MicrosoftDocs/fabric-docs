@@ -83,9 +83,8 @@ This section guides you on configuring network security for your Azure Data Lake
 
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
 - To enable the workspace identity authentication type (recommended), the Fabric workspace must be associated with any F capacity. To create a workspace identity, see [Authenticate with workspace identity](../../security/workspace-identity-authenticate.md#step-1-create-the-workspace-identity).
-- Default catalog storage isn't supported. This is storage for the catalog that is created as the default catalog for workspaces where the Unity Catalog is automatically enabled. 
+- Default catalog behind a storage firewall isn't supported. This is storage for the catalog that is created as the default catalog for workspaces where the Unity Catalog is automatically enabled.
 - A catalog must be associated with a single storage account. 
-- Only bring-your-own ADLS storage is supported.
 
 ### Enable network security access
 
@@ -96,14 +95,14 @@ This section guides you on configuring network security for your Azure Data Lake
 1. Select an **Existing connection** to the storage account if you have one configured. 
 
    - If you don't have an existing ADLS connection, create a **New connection**.  
-   - The **URL** of the storage endpoint is where the selected catalog's data is stored. The endpoint should be the specific folder where the data is stored, rather than specifying the endpoint to be at the storage account level. For example, provide `https://<storage account>.dfs.core.windows.net/container1/folder1` rather than `https://<storage account>.dfs.core.windows.net/`.     
+   - The **URL** of the storage endpoint is where the selected catalog's data is stored. The endpoint should be the specific folder where the data is stored, rather than specifying the endpoint to be at the storage account level. For example, provide `https://<storage account>.dfs.core.windows.net/container1/folder1` rather than `https://<storage account>.dfs.core.windows.net/`.
    - Provide the connection credentials. The authentication types supported are Organizational account, Service principal, and Workspace Identity (recommended). 
 
 1. In the Azure portal, provide access rights to the storage account based on the authentication type you picked in the previous step. Navigate to the storage account in the Azure portal. Select **Access Control (IAM)**. Select **+Add** and **Add role assignment**. For more information, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page).
 
    - If you specified the storage account as part of the connection, the chosen authentication object needs to have the **Storage Blob Data Reader** role on the storage account. 
    - If you specified a specific container as part of the connection, chosen authentication object needs to have **Storage Blob Data Reader** role on the container.  
-   - If you specified a specific folder within a container (recommended), chosen authentication object needs to have the **Read (R) and Execute (E)** at the folder level. If you're using Service Principal or Workspace Identity as the authentication type, you need to give that Service Principal or Workspace Identity **Execute** permissions to the root folder of the container, and to each folder in the hierarchy of folders that lead to the folder that you specified. 
+   - If you specified a specific folder within a container (recommended), chosen authentication object needs to have the **Read (R)** and **Execute (E)** at the folder level. If you're using Service Principal or Workspace Identity as the authentication type, you need to give that Service Principal or Workspace Identity **Execute** permissions to the root folder of the container, and to each folder in the hierarchy of folders that lead to the folder that you specified. 
 
    For more information and steps to grant ADLS access, see [ADLS Access control](/azure/storage/blobs/data-lake-storage-access-control#how-to-set-acls).
       
