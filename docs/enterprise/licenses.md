@@ -10,7 +10,7 @@ ms.date: 11/28/2024
 
 # Microsoft Fabric concepts and licenses
 
-[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity](#capacity), and at least one [per-user license](#per-user-licenses).
+[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity](#capacity). To create Power BI Semantic Models and Reports, your organization will need at least one [per-user license](#per-user-licenses).
 
 A Microsoft Fabric deployment can be organized in various ways according to your organizational needs. This illustration shows two different ways of deploying Fabric in an organization. Retail company A has a single Microsoft Entra tenant for the entire company. Retail company B has two Microsoft Entra tenants, which have complete separation between them, one for military products and another for commercial products. Both companies deployed Fabric capacities according to their geographical location.
 
