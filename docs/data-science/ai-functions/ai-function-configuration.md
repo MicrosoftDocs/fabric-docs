@@ -1,6 +1,6 @@
 ---
-title: Transform and enrich data at scale with AI functions (Preview)
-description: Learn how to invoke AI functions in Fabric, harnessing the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code.
+title: Configure AI functions in Fabric for custom use (Preview)
+description: Learn how to configure AI funtions in Fabric for custom use, modifying the underlying LLM and other default settings.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
