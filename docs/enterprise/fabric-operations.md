@@ -89,8 +89,8 @@ One Fabric capacity unit = 0.383 SQL database vCores.
  
 | Operation | Description | Item | Azure Billing Meter | Type |
 |-----------|-------------|------|---------------------|------|
-| SQL Usage | Compute for all user-generated and system-generated SQL queries, modifications, and data processing operations within a Database | Database | SQL database in Microsoft Fabric Capacity Usage CU | Interactive |
-| Allocated SQL Storage | The dynamically formatted file storage space for a SQL database in Fabric allocated for storing tables, indexes, transaction logs, and metadata. Fully integrated with One lake. | Database | SQL Storage Data Stored | Background |
+| SQL Usage | Compute for all user-generated and system-generated SQL queries, modifications, and data processing operations within a database | Database | SQL database in Microsoft Fabric Capacity Usage CU | Interactive |
+| Allocated SQL Storage | The dynamically consumed storage space for a SQL database in Fabric allocated  for storing tables, indexes, transaction logs, and metadata. Fully integrated with OneLake. | Database | SQL Storage Data Stored | Background |
 
 ### Data Warehouse
 
