@@ -18,12 +18,10 @@ The `ai.extract` function uses Generative AI to scan input text and extract spec
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
 > [!NOTE]
-> This feature is in [preview](../../get-started/preview.md):
+> This feature is in [preview](../../get-started/preview.md) in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and above:
 >
-> - Please be sure to review the prerequisites and limitations in [this overview article](ai-function-overview.md), including the [library installations](ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - AI functions are supported in the Fabric 3.5 runtime.
-> - Currently, the default language model powering these funtions is **gpt-3.5-turbo-0125**, and the default embedding model is **text-embedding-ada-002**.
-> - Although the default model can handle several languages, most of the AI functions have been optimized for use on English texts.
+> - Please be sure to review the prerequisites in [this overview article](ai-function-overview.md), including the [library installations](ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Although the underlying model can handle several languages, most of the AI functions have been optimized for use on English texts.
 > - To learn about customizing the configuration of AI functions in Fabric, please visit [this article](ai-function-configuration.md).
 
 ## Use `ai.extract` with pandas
