@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: concept-article
 ms.custom:
-ms.date: 01/27/2025
+ms.date: 02/21/2025
 #customer intent: As a data engineer, I want to understand how to connect to Microsoft OneLake using the existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs so that I can seamlessly access and manipulate my data.
 ---
 
@@ -60,7 +60,7 @@ For quick, ad-hoc testing of OneLake using direct API calls, here's a simple exa
 
   ```powershell
   Connect-AzAccount
-  $testToken = Get-AzAccessToken -ResourceTypeName Storage
+  $testToken = Get-AzAccessToken -AsSecureString -ResourceTypeName Storage
   # Retrieved token is of string type which you can validate with the "$testToken.Token.GetTypeCode()" command.
   $testToken.Token | Set-Clipboard
   ```
