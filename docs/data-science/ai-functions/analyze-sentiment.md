@@ -22,7 +22,7 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 >
 > - Please be sure to review the prerequisites in [this overview article](ai-function-overview.md), including the [library installations](ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions have been optimized for use on English texts.
-> - To learn about customizing the configuration of AI functions in Fabric, please visit [this article](ai-function-configuration.md).
+> - To learn about customizing the configuration of AI functions, please visit [this article](ai-function-configuration.md).
 
 ## Use `ai.analyze_sentiment` with pandas
 
