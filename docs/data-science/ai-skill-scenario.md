@@ -23,8 +23,8 @@ This article describes how to set up an AI skill, using a lakehouse as a data so
 
 - A paid F64 or higher Fabric capacity resource.
 - [AI skill tenant switch](./ai-skill-tenant-switch.md) is enabled.
-- [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
-- [Cross-geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
+- [Copilot tenant switch](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) is enabled.
+- [Cross-geo sharing for AI](../admin/service-admin-portal-copilot.md#capacities-can-be-designated-as-fabric-copilot-capacities) is enabled, if relevant.
 - [Cross-geo storing for AI]()
 - A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
 
