@@ -87,7 +87,7 @@ Now you have tables in your semantic model you can create relationships between 
 
 In the **Model view**, dragging a column from one table to a column in another table opens the **Relationship editor** or **Properties** pane with the columns pre-selected and default cardinality of Many to one (*:1) and cross-filter direction (Single) pre-populated. 
 
-:::image type="content" source="media/direct-lake-edit-tables/direct-lake-relationship-editor-in-Power-BI-Desktop.png" alt-text="Screenshot of a relationship between Direct Lake storage mode tables in Power BI Desktop." lightbox="media/direct-lake-edit-tables/direct-lake-relationship-editor-in-Power-BI-Desktop.png":::
+:::image type="content" source="media/direct-lake-edit-tables/direct-lake-relationship-editor-in-Power-BI-Desktop.png" alt-text="Screenshot of a relationship between Direct Lake storage mode tables in Power BI Desktop." lightbox="media/direct-lake-edit-tables/direct-lake-relationship-editor-in-power-bi-desktop.png":::
 
 Selecting **Manage relationships** from the ribbon gives you the option to create a **New relationship** without any pre-selections in the editor. 
 
