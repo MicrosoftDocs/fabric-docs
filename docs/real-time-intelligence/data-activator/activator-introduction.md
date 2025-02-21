@@ -18,6 +18,9 @@ It then automatically takes appropriate action such as alerting users or kicking
 
 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] allows customers to build a digital nervous system that acts across all their data, at scale, and in a timely manner. Business users can describe business conditions in a no-code experience to launch actions such as email, Teams notifications, Power Automate flows, and call into third party action systems. Business users can self-serve their needs and reduce their reliance on internal IT and developer teams, either of which is often costly and hinders agility. Customer organizations don’t need a developer team to manage and maintain custom in-house monitoring or alerting solutions.
 
+:::image type="content" source="./media/activator-introduction/activator.png" alt-text="Diagram that shows the architecture of Fabric Activator.":::
+
+
 Some common use cases are:
 
 * Run ads when same-store sales decline.
