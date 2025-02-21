@@ -154,7 +154,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 | Web modeling write | A data model write operation in the semantic model web modeling user experience  | Semantic model | Power BI Capacity Usage CU | Interactive |
 | XMLA read | XMLA read operations initiated by the user, for queries and discoveries  | Semantic model | Power BI Capacity Usage CU | Interactive |
 | XMLA write | A background XMLA write operation that changes the model  | Semantic model | Power BI Capacity Usage CU | Background |
-| Power BI scripting visual execution | R and Py visuals run triggered by Power BI report render |Power BI scripting report | Spark memory optimized capacity (CU) | Interactive |
+| Power BI scripting visual execution | R and Py visuals run triggered by rendering Power BI report |Power BI scripting report | Spark memory optimized capacity (CU) | Interactive |
 
 ### Real-Time Intelligence
 
