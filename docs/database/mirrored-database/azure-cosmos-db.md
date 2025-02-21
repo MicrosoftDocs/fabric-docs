@@ -7,8 +7,6 @@ ms.reviewer: anithaa, wiassaf
 ms.date: 11/19/2024
 ms.topic: overview
 ms.custom:
-ms.collection:
-  - ce-skilling-ai-copilot
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---

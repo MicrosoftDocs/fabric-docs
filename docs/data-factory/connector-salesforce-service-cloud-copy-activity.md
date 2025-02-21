@@ -63,7 +63,7 @@ The following properties are supported for Salesforce Service Cloud under the **
 
 The following properties are **required**:
 
-- **Connection**: Select a Salesforce Service Cloud connection from the connection list. If no connection exists, then create a new Salesforce Service Cloud connection by selecting **New**.
+- **Connection**: Select a Salesforce Service Cloud connection from the connection list. If no connection exists, then create a new Salesforce Service Cloud connection.
 - **Object API**: Specify the Salesforce Service Cloud name to write data to. Select the name from the drop-down list.
 
 Under **Advanced**, you can specify the following fields:
@@ -101,14 +101,13 @@ The following tables contain more information about the copy activity in Salesfo
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|\<your Salesforce Service Cloud connection> |Yes|connection|
-|**Connection type** | Your connection type. Select **Salesforce Service Cloud**.|**SalesforceServiceCloud**|Yes |/|
 |**Use query** |The way to read data from Salesforce. |• **Object API** <br>• **Report**<br>• **SOQL Query** |Yes |/|
 | *For **Object API*** |  |  |  |  |
 | **Object API** | Specify the Salesforce Service Cloud name to retrieve data from. |< your object name >  | Yes | objectApiName |
 | *For **Report*** |  |  |  |  |
 | **Report ID** | The ID of the Salesforce Service Cloud report to retrieve data from. It isn't supported in destination. There are [limitations](https://developer.salesforce.com/docs/atlas.en-us.api_analytics.meta/api_analytics/sforce_analytics_rest_api_limits_limitations.htm) when you use reports. | \<your report ID> | Yes | reportId |
 | *For **SOQL Query*** |  |  |  |  |
-| **SOQL Query** | Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If you don't specify **SOQL query**, all the data of the Salesforce object specified in **Object API** or **Report ID** will be retrieved. |< your SOQL query >  | Yes | query |
+| **SOQL Query** | Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If you don't specify **SOQL query**, all the data of the Salesforce Service Cloud specified in **Object API** or **Report ID** will be retrieved. |< your SOQL query >  | Yes | query |
 | **Include deleted objects** | Indicates whether to query the existing records, or query all records including the deleted ones. | selected or unselected (default) | No | includeDeletedObjects: <br>true or false (default) |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
@@ -119,9 +118,9 @@ The following tables contain more information about the copy activity in Salesfo
 | **Connection** |Your connection to the destination data store.|\<your Salesforce Service Cloud connection> |Yes|connection|
 | **Object API** | Specify the Salesforce Service Cloud name to write data to. | < your object name > | Yes | objectApiName |
 | **Write behavior** | The write behavior for the operation. Allowed values are **Insert** and **Upsert**. You can choose a behavior from the drop-down list. | • Insert<br>• Upsert| No (default is Insert) | writeBehavior: <br>insert<br>upsert |
-| **External ID field** | The name of the external ID field for the upsert operation. The specified field must be defined as **External ID Field** in the Salesforce object. It can't have NULL values in the corresponding input data. | < your external ID field >  | Yes for "Upsert" | externalIdFieldName |
+| **External ID field** | The name of the external ID field for the upsert operation. The specified field must be defined as **External ID Field** in the Salesforce Service Cloud object. It can't have NULL values in the corresponding input data. | < your external ID field >  | Yes for "Upsert" | externalIdFieldName |
 | **Ignore null values** | Indicates whether to ignore NULL values from input data during a write operation. | selected or unselected (default) | No | ignoreNullValues: <br>true or false (default) |
-| **Write batch size** | The row count of data written to Salesforce in each batch. Suggest set this value from 10,000 to 200,000. Too few rows in each batch reduces copy performance. Too many rows in each batch may cause API time-out. | \<number of rows> <br>(integer) | No (default is 100,000) | writeBatchSize |
+| **Write batch size** | The row count of data written to Salesforce Service Cloud in each batch. Suggest set this value from 10,000 to 200,000. Too few rows in each batch reduces copy performance. Too many rows in each batch may cause API time-out. | \<number of rows> <br>(integer) | No (default is 100,000) | writeBatchSize |
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
 ## Salesforce Bulk API 2.0 Limits

@@ -79,7 +79,7 @@ For more information about supported data sources for managed private endpoints 
 
 * **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
 
-* Creating a managed private endpoint with a fully qualified domain name (FQDN) is not supported.
+* Creating a managed private endpoint with a fully qualified domain name (FQDN) via Private Link Service is not supported.
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 
