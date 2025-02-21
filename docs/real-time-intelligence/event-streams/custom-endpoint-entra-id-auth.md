@@ -21,7 +21,7 @@ This article guides you through creating a Service Principal application, settin
 
 ## Prerequisites
 
-* An Eventstream item in the workspace with Custom Endpoint source or destination. Refer to [this guide](/add-source-custom-app.md) for adding Custom Endpoint to Eventstream.
+* An Eventstream item in the workspace with Custom Endpoint source or destination. Refer to [this guide](add-source-custom-app.md) for adding Custom Endpoint to Eventstream.
 * Install [Visual Studio Code](https://code.visualstudio.com/Download).
 * Set up VS Code for Java development. Install [Coding pack for Java](https://code.visualstudio.com/docs/java/java-tutorial).
 
