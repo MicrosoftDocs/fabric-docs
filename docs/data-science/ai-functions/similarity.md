@@ -1,19 +1,19 @@
 ---
 title: Calculate similarity with the `ai.similarity` function
-description: Learn how to use the `ai.similarity` function, which invokes Generative AI to compare two string values and calculate a semantic similarity score.
+description: Learn how to use the `ai.similarity` function, which invokes Generative AI to compare string values and calculate semantic similarity scores.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 
 ms.search.form: AI functions
 ---
 
 # Calculate similarity with the `ai.similarity` function
 
-The `ai.similarity` function uses Generative AI to compare two string expressions and calculate a semantic similarity score—all in just a single line of code. You can compare text values from one column of a DataFrame with a single common text value or pairwise with text values in another column of the same dimensions as the input. Similarity scores range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning.
+The `ai.similarity` function uses Generative AI to compare two string expressions and calculate a semantic similarity score—all in just a single line of code. You can compare text values from one column of a DataFrame with a single common text value or with pairwise text values in another column.
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
@@ -21,17 +21,19 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.similarity` with pandas
 
-The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to calculate semantic similarity with respect to a single common text value, or with respect to corresponding pairwise values in another column, for each row of input. The function returns a pandas Series containing similarity scores, which can be stored in a new column of the DataFrame.
+The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to assess each input row's semantic similarity with respect to a single common text value or with respect to corresponding pairwise values in another column (i.e. pandas Series) of the same dimensions as the input column.
+
+The function returns a pandas Series containing similarity scores, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
-# [Comparing against a single value](#tab/similarity-single)
+# [Comparing with a single value](#tab/similarity-single)
 
 ```python
 df["similarity"] = df["col1"].ai.similarity("value")
 ```
 
-# [Comparing column values pairwise](#tab/similarity-pairwise)
+# [Comparing with pairwise values](#tab/similarity-pairwise)
 
 ```python
 df["similarity"] = df["col1"].ai.similarity(df["col2"])
@@ -43,15 +45,15 @@ df["similarity"] = df["col1"].ai.similarity(df["col2"])
 
 | **Name** | **Description** |
 |---|---|
-| **`other`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) containing a single common text value for computing similarity scores with each row of input text, or another [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) with the same dimensions as the input, containing text values for computing pairwise similarity scores with each row of input text. |
+| **`other`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) containing a single common text value for computing similarity scores with respect to each row of input text, or another [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) with the same dimensions as the input, containing text values for computing pairwise similarity scores with each row of input text. |
 
 ### Returns
 
-A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing similarity scores for each row of input text.
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing similarity scores for each row of input text. Please note that the output similarity scores are relative and best used for ranking. Scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning.
 
 ### Example
 
-# [Comparing against a single value](#tab/similarity-single)
+# [Comparing with a single value](#tab/similarity-single)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -67,7 +69,7 @@ df["similarity"] = df["name"].ai.similarity("Microsoft")
 display(df)
 ```
 
-# [Comparing column values pairwise](#tab/similarity-pairwise)
+# [Comparing with pairwise values](#tab/similarity-pairwise)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -87,17 +89,19 @@ display(df)
 
 ## Use `ai.similarity` with PySpark
 
-[TBD]
+The `ai.similarity` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter, along with a single common text value for comparisons or the name of another column for pairwise comparisons.
+
+The function returns a new DataFrame with similarity scores for each row of input text stored in an ouput column.
 
 ### Syntax
 
-# [Comparing against a single value](#tab/similarity-single)
+# [Comparing with a single value](#tab/similarity-single)
 
 ```python
 df.ai.similarity(input_col="col1", other="value", output_col="similarity")
 ```
 
-# [Comparing column values pairwise](#tab/similarity-pairwise)
+# [Comparing with pairwise values](#tab/similarity-pairwise)
 
 ```python
 df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
@@ -109,18 +113,18 @@ df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be used for computing similarity scores |
-| **`other`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing a single common text value for computing similarity scores. |
-| **`other_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a second existing column with text values for computing pairwise similarity scores. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store calculated similarity scores for each row of input text. If this value is not set, a default name will be generated for the new column. |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be used for computing similarity scores. |
+| **`other`** or **`other_col`** <br> Required | Only one of these parameters is required. The `other` parameter is a [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing a single common text value for computing similarity scores with respect to each row of input. The `other_col` parameter is a [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) designating the name of a second existing column with text values for computing pairwise similarity scores. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store calculated similarity scores for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing generated similarity scores for each row of text in the input column.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing generated similarity scores for each row of text in the input column. Please note that the output similarity scores are relative and best used for ranking. Scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning.
 
 ### Example
 
-# [Comparing against a single value](#tab/similarity-single)
+# [Comparing with a single value](#tab/similarity-single)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -136,7 +140,7 @@ similarity = df.ai.similarity(input_col="names", other="Microsoft", output_col="
 display(similarity)
 ```
 
-# [Comparing column values pairwise](#tab/similarity-pairwise)
+# [Comparing with pairwise values](#tab/similarity-pairwise)
 
 ```python
 # This code uses AI. Always review output for mistakes. 

@@ -6,7 +6,7 @@ author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 
 ms.search.form: AI functions
 ---
@@ -21,7 +21,9 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.classify` with pandas
 
-The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to assign user-provided labels to each row of input. The function returns a pandas Series containing classification labels, which can be stored in a new column of the DataFrame.
+The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to assign user-provided labels to each row of input.
+
+The function returns a pandas Series containing classification labels, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -57,7 +59,9 @@ display(df)
 
 ## Use `ai.classify` with PySpark
 
-[TBD]
+The `ai.classify` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter, along with a list of classification labels.
+
+The function returns a new DataFrame with labels matching each row of input text stored in an ouput column.
 
 ### Syntax
 
@@ -71,7 +75,8 @@ df.ai.classify(labels=["category1", "category2", "category3"], input_col="text",
 |---|---|
 | **`labels`** <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the set of classification labels to be matched to text values in the input column. |
 | **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be classified according to the custom labels. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store classification label for each row of input text. If this value is not set, a default name will be generated for the new column. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store classification label for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
 
 ### Returns
 

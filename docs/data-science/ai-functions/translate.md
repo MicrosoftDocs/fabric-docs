@@ -6,7 +6,7 @@ author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 
 ms.search.form: AI functions
 ---
@@ -21,7 +21,9 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.translate` with pandas
 
-The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to translate each row of input into a user-specified target language. The function returns a pandas Series containing translations, which can be stored in a new column of the DataFrame.
+The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to translate each row of input into a user-specified target language. 
+
+The function returns a pandas Series containing translations, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -57,7 +59,9 @@ display(df)
 
 ## Use `ai.translate` with PySpark
 
-[TBD]
+The `ai.translate` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter, along with a target language.
+
+The function returns a new DataFrame with translations for each row of input text stored in an ouput column.
 
 ### Syntax
 
@@ -71,7 +75,8 @@ df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 |---|---|
 | **`to_lang`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the target language for text translations. |
 | **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be translated. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store translations for each row of input text. If this value is not set, a default name will be generated for the new column. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store translations for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
 
 ### Returns
 

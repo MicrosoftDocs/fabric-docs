@@ -1,19 +1,19 @@
 ---
 title: Summarize text with the `ai.summarize` function
-description: Learn how to use the `ai.summarize` function, which invokes Generative AI to generate summaries of input text (either values in a single column of a DataFrame or rows in the entire DataFrame).
+description: Learn how to use the `ai.summarize` function, which invokes Generative AI to provide summaries of input text (either values from a single column of a DataFrame or values across all its columns, row by row).
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 
 ms.search.form: AI functions
 ---
 
 # Summarize text with the `ai.summarize` function
 
-The `ai.summarize` function uses Generative AI to generate summaries of input text (either values in a single column of a DataFrame or rows in the entire DataFrame)—all in just a single line of code.
+The `ai.summarize` function uses Generative AI to generate summaries of input text (either values from a single column of a DataFrame or values across all columns, row by row)—all in just a single line of code.
 
 To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
 
@@ -21,19 +21,19 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.summarize` with pandas
 
-The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to summarize each row of input. The function returns a pandas Series containing summaries, which can be stored in a new column of the DataFrame.
+The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to summarize each row of input from that column alone. As an alternative, the `ai.summarize` function can also be called on an entire DataFrame to summarize values across all columns, row by row.
 
-The `ai.summarize` function can also be called on an entire DataFrame to summarize full rows rather than values in a particular column.
+The function returns a pandas Series containing summaries, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
-# [Summarizing column values](#tab/column-summary)
+# [Summarizing values from a single column](#tab/column-summary)
 
 ```python
 df["summaries"] = df["text"].ai.summarize()
 ```
 
-# [Summarizing DataFrame rows](#tab/dataframe-summary)
+# [Summarizing values across all columns](#tab/dataframe-summary)
 
 ```python
 df["summaries"] = df.ai.summarize()
@@ -51,7 +51,7 @@ A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.htm
 
 ### Example
 
-# [Summarizing columns](#tab/column-summary)
+# [Summarizing values from a single column](#tab/column-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -76,7 +76,7 @@ df["summaries"] = df["description"].ai.summarize()
 display(df)
 ```
 
-# [Summarizing DataFrames](#tab/dataframe-summary)
+# [Summarizing values across all columns](#tab/dataframe-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -105,17 +105,19 @@ display(df)
 
 ## Use `ai.summarize` with PySpark
 
-[TBD]
+The `ai.summarize` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). If the name of an existing input column is specified as a parameter, the function summarizes each value from that column alone. Otherwise, the function summarizes text values across all columns of the DataFrame, row by row.
+
+The function returns a new DataFrame with summaries for each row of input text (from a single column or across all columns) stored in an ouput column.
 
 ### Syntax
 
-# [Summarizing columns](#tab/column-summary)
+# [Summarizing values from a single column](#tab/column-summary)
 
 ```python
 df.ai.summarize(input_col="text", output_col="summaries")
 ```
 
-# [Summarizing DataFrames](#tab/dataframe-summary)
+# [Summarizing values across all columns](#tab/dataframe-summary)
 
 ```python
 df.ai.summarize(output_col="summaries")
@@ -127,8 +129,9 @@ df.ai.summarize(output_col="summaries")
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be summarized. If this value is not set, the function will summarize the entire DataFrame rather than a specific column. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store summaries for each row of input text. If this value is not set, a default name will be generated for the new column. |
+| **`input_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be summarized. If this parameter is not set, the function will summarize the entire DataFrame rather than a specific column. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store summaries for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
 
 ### Returns
 
@@ -136,7 +139,7 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 
 ### Example
 
-# [Summarizing column values](#tab/column-summary)
+# [Summarizing values from a single column](#tab/column-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -161,7 +164,7 @@ summaries = df.ai.summarize(input_col="description", output_col="summaries")
 display(summaries)
 ```
 
-# [Summarizing DataFrame rows](#tab/dataframe-summary)
+# [Summarizing values across all columns](#tab/dataframe-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 

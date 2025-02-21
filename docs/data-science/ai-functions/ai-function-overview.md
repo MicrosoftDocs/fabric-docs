@@ -108,7 +108,7 @@ Each of the following functions allows you to invoke Fabric's native LLM endpoin
 
 ### Calculate similarity with [`ai.similarity`](similarity.md)
 
-The `ai.similarity` function invokes AI to compare input text values a single common text value or to corresponding text values in another column. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
+The `ai.similarity` function invokes AI to compare input text values a single common text value or to corresponding text values in another column. Please note that the output similarity scores are relative and best used for ranking. Scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
 
 #### Sample usage
 
@@ -308,7 +308,7 @@ display(results)
 
 ### Summarize text with [`ai.summarize`](summarize.md)
 
-The `ai.summarize` function invokes AI to generate summaries of input text (either values in a single column of a DataFrame or rows in the entire DataFrame). For more detailed instructions on how to use `ai.summarize`, please visit [this dedicated article](summarize.md).
+The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame or values across all columns, row by row). For more detailed instructions on how to use `ai.summarize`, please visit [this dedicated article](summarize.md).
 
 #### Sample usage
 
@@ -422,7 +422,7 @@ df = pd.DataFrame([
         ("Water bottles")
     ], columns=["product"])
 
-df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale on the product.")
+df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale.")
 display(df)
 ```
 

@@ -6,7 +6,7 @@ author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 
 ms.search.form: AI functions
 ---
@@ -21,14 +21,16 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.generate_response` with pandas
 
-The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class (unlike the other AI functions, which extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class). The function can be called on an entire pandas DataFrame. It returns a pandas Series containing custom text responses to a user-provided prompt for each row of input, which can be stored in a new column of the DataFrame.
+The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class (unlike the other AI functions, which extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class). The function can be called on an entire pandas DataFrame to generate custom text responses row by row, using either a simple prompt (i.e. a literal string that considers all columns values as context) or a template prompt (i.e. a format string that considers only embedded values from designated columns as context).
+
+The function returns a pandas Series containing custom text responses for each row of input, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
-# [Generating responses with a standard prompt](#tab/standard-prompt)
+# [Generating responses with a simple prompt](#tab/standard-prompt)
 
 ```python
-df["response"] = df.ai.generate_response(prompt="Instructions for a custom response")
+df["response"] = df.ai.generate_response(prompt="Instructions for a custom response based on all column values")
 ```
 
 # [Generating responses with a template prompt](#tab/similarity-single)
@@ -44,7 +46,7 @@ df["response"] = df.ai.generate_response(prompt="Instructions for a custom respo
 | **Name** | **Description** |
 |---|---|
 | **`prompt`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) containing prompt instructions to be applied to input text values for custom responses. |
-| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) indicating whether the prompt should be treated as a format string. If this value is `True`, then TBD. If it's `False`, as it is by default, TBD. |
+| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) indicating whether the prompt should be treated as a format string that considers only certain columns for context, or as a literal string that considers all columns for context. If this parameter is set to `True`, then only specific column values from each row will be considered by the prompt, and those column names must be designated with curly braces. (Other columns will be ignored.) If this parameter is set to `False`, as it is by default, then all column values in an input row will be considered by the prompt. |
 
 ### Returns
 
@@ -52,7 +54,7 @@ A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFra
 
 ### Example
 
-# [Generating responses with a standard prompt](#tab/standard-prompt)
+# [Generating responses with a simple prompt](#tab/standard-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -64,7 +66,7 @@ df = pd.DataFrame([
         ("Water bottles")
     ], columns=["product"])
 
-df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale on the product.")
+df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale.")
 display(df)
 ```
 
@@ -88,14 +90,16 @@ display(df)
 
 ## Use `ai.generate_response` with PySpark
 
-[TBD]
+The `ai.generate_response` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter, along with a string-based prompt and a boolean indicating whether that prompt should be treated as a format string.
+
+The function returns a new DataFrame with custom responses for each row of input text stored in an output column.
 
 ### Syntax
 
-# [Generating responses with a standard prompt](#tab/standard-prompt)
+# [Generating responses with a simple prompt](#tab/standard-prompt)
 
 ```python
-df.ai.generate_response(prompt="Instructions for a custom response", output_col="response")
+df.ai.generate_response(prompt="Instructions for a custom response based on all column values", output_col="response")
 ```
 
 # [Generating responses with a template prompt](#tab/similarity-single)
@@ -111,8 +115,9 @@ df.ai.generate_response(prompt="Instructions for a custom response based on spec
 | **Name** | **Description** |
 |---|---|
 | **`prompt`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing prompt instructions to be applied to input text values for custom responses. |
-| **`is_prompt_template`** <br> Optional | A [boolean](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.BooleanType.html) indicating whether the prompt should be treated as a format string. If this value is `True`, then TBD. If it's `False`, as it is by default, TBD. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store custom responses for each row of input text. If this value is not set, a default name will be generated for the new column. |
+| **`is_prompt_template`** <br> Optional | A [boolean](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.BooleanType.html) indicating whether the prompt should be treated as a format string that considers only certain columns for context, or as a literal string that considers all columns for context. If this parameter is set to `True`, then only specific column values from each row will be considered by the prompt, and those column names must be designated with curly braces. (Other columns will be ignored.) If this parameter is set to `False`, as it is by default, then all column values in an input row will be considered by the prompt |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store custom responses for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
 
 ### Returns
 
@@ -120,7 +125,7 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 
 ### Example
 
-# [Generating responses with a standard prompt](#tab/standard-prompt)
+# [Generating responses with a simple prompt](#tab/standard-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 

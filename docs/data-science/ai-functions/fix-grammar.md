@@ -6,7 +6,7 @@ author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 
 ms.search.form: AI functions
 ---
@@ -21,7 +21,9 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 
 ## Use `ai.fix_grammar` with pandas
 
-The `ai.fix_grammar` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class, allowing you to call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to correct the spelling, grammar, and punctuation of each row of input. The function returns a pandas Series containing corrected text values, which can be stored in a new column of the DataFrame.
+The `ai.fix_grammar` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to correct the spelling, grammar, and punctuation of each row of input. 
+
+The function returns a pandas Series containing corrected text values, which can be stored in a new column of the DataFrame.
 
 ### Syntax
 
@@ -55,7 +57,9 @@ display(df)
 
 ## Use `ai.fix_grammar` with PySpark
 
-[TBD]
+The `ai.fix_grammar` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter.
+
+The function returns a new DataFrame with corrected text for each row of input text stored in an ouput column.
 
 ### Syntax
 
@@ -68,7 +72,8 @@ df.ai.fix_grammar(input_col="text", output_col="corrections")
 | **Name** | **Description** |
 |---|---|
 | **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be corrected for spelling, grammar, and punctuation. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store corrected text for each row of input text. If this value is not set, a default name will be generated for the new column. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store corrected text for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
 
 ### Returns
 
