@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 02/20/2025
+ms.date: 02/21/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1032  | Real-Time Intelligence | [Eventstream updates with Eventhouse destination causes error](./known-issue-1032-eventstream-updates-eventhouse-destination-error.md) | February 21, 2025 |
 |  1031  | Administration & Management | [Git integration undo after initial sync fails might delete items](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
 |  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
@@ -51,7 +52,7 @@ Select the **Title** to view more information about that specific known issue.
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](./known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](./known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
-|  923  | Power BI | [Tenant migrations paused through February 2025](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
+|  923  | Power BI | [Tenant migrations paused through March 2025](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](./known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  903  | Data Warehouse | [Data warehouse data preview might fail if multiple data warehouse items](./known-issue-903-warehouse-preview-fail-multiple-warehouse.md) | October 28, 2024 |
