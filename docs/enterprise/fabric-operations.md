@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/10/2024
+ms.date: 02/20/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -82,6 +82,15 @@ You can find the consumption rates for Pipelines in [Data pipelines pricing for 
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
 | DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units  | Pipeline | Data Movement Capacity Usage CU | Background |
 | ActivityRun  | A Data Factory data pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
+
+### Databases
+
+One Fabric capacity unit = 0.383 SQL database vCores.
+ 
+| Operation | Description | Item | Azure Billing Meter | Type |
+|-----------|-------------|------|---------------------|------|
+| SQL Usage | Compute for all user-generated and system-generated SQL queries, modifications, and data processing operations within a Database | Database | SQL database in Microsoft Fabric Capacity Usage CU | Interactive |
+| Allocated SQL Storage | The dynamically formatted file storage space for a SQL database in Fabric allocated for storing tables, indexes, transaction logs, and metadata. Fully integrated with One lake. | Database | SQL Storage Data Stored | Background |
 
 ### Data Warehouse
 
