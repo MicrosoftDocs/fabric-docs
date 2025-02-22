@@ -2,11 +2,11 @@
 title:  Fabric decision guide - copy activity, dataflow, Eventstream, or Spark
 description: Review a reference table and some quick scenarios to help in choosing whether to use copy activity, dataflow, Eventstream, or Spark to work with your data in Fabric.
 ms.reviewer: sngun
-ms.author: scbradl, chschmidt
-author: bradleyschacht, christopher schmidt
+ms.author: chschmidt
+author: christopher schmidt
 ms.topic: quickstart
 ms.custom:
-ms.date: 5/12/2023, revised 2/20/2025
+ms.date: 2/20/2025
 ---
 
 # Microsoft Fabric decision guide: copy activity, dataflow, Eventstream, or Spark
