@@ -34,7 +34,7 @@ Whether you're looking to translate product reviews from one language into anoth
 
 - To use AI functions with Fabric's native LLM endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
 - Like other Fabric features powered by Azure OpenAI, AI functions require paid F SKUs (F64 or higher) or P SKUs (P1 or higher). With a smaller capacity resource, you'll need to provide AI functions with your own Azure OpenAI resource [as a custom configuration](ai-function-overview.md).
-- Depending on your location, you may need to enable a tenant setting allowing data sent to Azure OpenAI to be processed outside your capacity's geographic region, compliance bounary, or national cloud instance. Learn more [here](../../get-started/copilot-fabric-overview#available-regions-for-azure-openai-service).
+- Depending on your location, you may need to enable a tenant setting allowing data sent to Azure OpenAI to be processed outside your capacity's geographic region, compliance bounary, or national cloud instance. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 
 > [!NOTE]
 >
