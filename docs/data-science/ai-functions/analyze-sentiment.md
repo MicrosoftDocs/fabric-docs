@@ -111,4 +111,5 @@ display(sentiment)
 - Summarize text with [`ai.summarize`](summarize.md).
 - Translate text with [`ai.translate`](translate.md).
 - Answer custom user prompts with [`ai.generate_response`](generate-response.md).
-- To learn more about the full set of AI functions, please visit [this overview article](ai-function-overview.md).
+- Learn more about the full set of AI functions [here](ai-function-overview.md).
+- Learn how to customize the configuration of AI functions [here](ai-function-configuration.md).

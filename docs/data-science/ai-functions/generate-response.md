@@ -32,13 +32,13 @@ The function returns a pandas Series containing custom text responses for each r
 
 ### Syntax
 
-# [Generating responses with a simple prompt](#tab/standard-prompt)
+# [Generating responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 df["response"] = df.ai.generate_response(prompt="Instructions for a custom response based on all column values")
 ```
 
-# [Generating responses with a template prompt](#tab/similarity-single)
+# [Generating responses with a template prompt](#tab/template-prompt)
 
 ```python
 df["response"] = df.ai.generate_response(prompt="Instructions for a custom response based on specific {column1} and {column2} values", is_prompt_template=True)
@@ -59,7 +59,7 @@ A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFra
 
 ### Example
 
-# [Generating responses with a simple prompt](#tab/standard-prompt)
+# [Generating responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -75,7 +75,7 @@ df["response"] = df.ai.generate_response("Write a snappy, enticing email subject
 display(df)
 ```
 
-# [Generating responses with a template prompt](#tab/similarity-single)
+# [Generating responses with a template prompt](#tab/template-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -101,13 +101,13 @@ The function returns a new DataFrame with custom responses for each row of input
 
 ### Syntax
 
-# [Generating responses with a simple prompt](#tab/standard-prompt)
+# [Generating responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 df.ai.generate_response(prompt="Instructions for a custom response based on all column values", output_col="response")
 ```
 
-# [Generating responses with a template prompt](#tab/similarity-single)
+# [Generating responses with a template prompt](#tab/template-prompt)
 
 ```python
 df.ai.generate_response(prompt="Instructions for a custom response based on specific {column1} and {column2} values", is_prompt_template=True, output_col="response")
@@ -130,7 +130,7 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 
 ### Example
 
-# [Generating responses with a simple prompt](#tab/standard-prompt)
+# [Generating responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -146,7 +146,7 @@ responses = df.ai.generate_response(prompt="Write a snappy, enticing email subje
 display(responses)
 ```
 
-# [Generating responses with a template prompt](#tab/similarity-single)
+# [Generating responses with a template prompt](#tab/template-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -173,4 +173,5 @@ display(responses)
 - Fix grammar with [`ai.fix_grammar`](fix-grammar.md).
 - Summarize text with [`ai.summarize`](summarize.md).
 - Translate text with [`ai.translate`](translate.md).
-- To learn more about the full set of AI functions, please visit [this overview article](ai-function-overview.md).
+- Learn more about the full set of AI functions [here](ai-function-overview.md).
+- Learn how to customize the configuration of AI functions [here](ai-function-configuration.md).

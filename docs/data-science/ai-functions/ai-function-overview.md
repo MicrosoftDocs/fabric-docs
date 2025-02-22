@@ -13,7 +13,9 @@ ms.search.form: AI functions
 
 # Transform and enrich data at scale with AI functions (Preview)
 
-Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Now, thanks to a new set of AI functions for text analytics, Fabric users can harness the power of industry-leading LLMs to transform and enrich data with lightweight, user-friendly code. There's no need for detailed configurations, complex infrastructure management, or even specific technical expertise.
+[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
+
+Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Now, thanks to a new set of AI functions for text analytics, Fabric users can harness the power of industry-leading LLMs to transform and enrich data with lightweight, user-friendly code. There's no need for detailed configuration, complex infrastructure management, or even specific technical expertise.
 
 AI functions, currently in public preview, allow you to complete the following tasks—all in a single line of code:
 
@@ -28,18 +30,16 @@ AI functions, currently in public preview, allow you to complete the following t
 
 Whether you're looking to translate product reviews from one language into another or to generate action items using custom text prompts, AI functions put the power of Fabric's native LLM into your hands, turbocharging data analytics regardless of your level of experience.
 
-[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 - To use AI functions with Fabric's native LLM endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
-- Like other Fabric features powered by Azure OpenAI, AI functions require paid F SKUs (F64 or higher) or P SKUs (P1 or higher). With a smaller capacity resource, you'll need to provide AI functions with your own Azure OpenAI resource [as a custom configuration](ai-function-overview.md).
-- Depending on your location, you may need to enable a tenant setting allowing data sent to Azure OpenAI to be processed outside your capacity's geographic region, compliance bounary, or national cloud instance. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
+- You'll also need an F64 or higher SKU, or a P SKU, in one of the [Fabric regions](../../admin/region-availability.md). With a smaller capacity resource, you'll need to provide AI functions with your own Azure OpenAI resource [using custom configurations](ai-function-configuration.md).
+- Depending on your location, you may need to enable a tenant setting for cross-geo sharing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 
 > [!NOTE]
 >
 > - AI functions are supported in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and above.
-> - By default, the functions are currently powered by the **gpt-3.5-turbo (0125)** LLM.
+> - By default, the functions are currently powered by the **gpt-3.5-turbo (0125)** model.
 > - Although the underlying model can handle several languages, most of the AI functions have been optimized for use on English texts.
 
 ## Getting started with AI functions
