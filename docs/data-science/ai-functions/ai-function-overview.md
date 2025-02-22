@@ -13,34 +13,38 @@ ms.search.form: AI functions
 
 # Transform and enrich data at scale with AI functions (Preview)
 
-Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code. There's no need for detailed configurations, complex infrastructure management, or even specific technical expertise.
+Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Now, thanks to a new set of AI functions for text analytics, Fabric users can harness the power of industry-leading LLMs to transform and enrich data with lightweight, user-friendly code. There's no need for detailed configurations, complex infrastructure management, or even specific technical expertise.
 
-AI functions, currently in public preview, allow you to complete the following tasks in a single line of code:
+AI functions, currently in public preview, allow you to complete the following tasks—all in a single line of code:
 
 - [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with a single common text value or with corresponding text values in another column.
 - [**Categorize text with `ai.classify`**](#categorize-text-with-aiclassify): Classify input text values according to labels you choose.
 - [**Detect sentiment with `ai.analyze_sentiment`**](#detect-sentiment-with-aianalyze_sentiment): Identify the emotional state expressed by input text.
-- [**Extract entities with `ai_extract`**](#extract-entities-with-aiextract): Find and extract specific types of information, such as locations or names, within input text.
+- [**Extract entities with `ai_extract`**](#extract-entities-with-aiextract): Find and extract specific types of information from input text, such as locations or names.
 - [**Fix grammar with `ai.fix_grammar`**](#fix-grammar-with-aifix_grammar): Correct the spelling, grammar, and punctuation of input text.
 - [**Summarize text with `ai.summarize`**](#summarize-text-with-aisummarize): Get summaries of input text.
 - [**Translate text with `ai.translate`**](#translate-text-with-aitranslate): Translate input text into another language.
 - [**Answer custom user prompts with `ai.generate_response`**](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
 
-Whether you're looking to translate product reviews from one language into another or to generate action items using custom text prompts, AI functions put the power of Fabric's native LLM into your hands, accelerating data transformation and discovery regardless of your level of experience.
+Whether you're looking to translate product reviews from one language into another or to generate action items using custom text prompts, AI functions put the power of Fabric's native LLM into your hands, turbocharging data analytics regardless of your level of experience.
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
-[Standard]
+- To use AI functions with Fabric's native LLM endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
+- Like other Fabric features powered by Azure OpenAI, AI functions require paid F SKUs (F64 or higher) or P SKUs (P1 or higher). With a smaller capacity resource, you'll need to provide AI functions with your own Azure OpenAI resource [as a custom configuration](ai-function-overview.md).
+- Depending on your location, you may need to enable a tenant setting allowing data sent to Azure OpenAI to be processed outside your capacity's geographic region, compliance bounary, or national cloud instance. Learn more [here](../../get-started/copilot-fabric-overview#available-regions-for-azure-openai-service).
 
-## Limitations
-
-[Standard]
+> [!NOTE]
+>
+> - AI functions are supported in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and above.
+> - By default, the functions are currently powered by the **gpt-3.5-turbo (0125)** LLM.
+> - Although the underlying model can handle several languages, most of the AI functions have been optimized for use on English texts.
 
 ## Getting started with AI functions
 
-To access the AI functions library in a Fabric notebook, you need to install some custom packages. In a future release, this step will be handled for you. Until then, all you need to do is copy and run the following cells for pandas or PySpark, depending on your use case.
+To access the AI functions library in a Fabric notebook, you need to install some custom packages. In a future release, this step will be handled for you. Until then, please run the following cells to use AI functions with pandas or PySpark, depending on your use case.
 
 The first cell will install the AI functions library and its dependencies.
 
@@ -106,9 +110,12 @@ defaults.set_deployment_name("gpt-35-turbo-0125")
 
 Each of the following functions allows you to invoke Fabric's native LLM endpoint to transform and enrich data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. Support for more programming languages will be available in the future.
 
+> [!TIP]
+> To learn about customizing the configuration of AI functions, please visit [this article](ai-function-configuration.md).
+
 ### Calculate similarity with [`ai.similarity`](similarity.md)
 
-The `ai.similarity` function invokes AI to compare input text values a single common text value or to corresponding text values in another column. Please note that the output similarity scores are relative and best used for ranking. Scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
+The `ai.similarity` function invokes AI to compare input text values a single common text value or to corresponding text values in another column. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
 
 #### Sample usage
 
@@ -454,4 +461,5 @@ display(responses)
 - Summarize text with [`ai.summarize`](summarize.md).
 - Translate text with [`ai.translate`](translate.md).
 - Answer custom user prompts with [`ai.generate_response`](generate-response.md).
+- Learn how to [customize the configuration of AI functions](ai-function-configuration.md).
 - Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)
