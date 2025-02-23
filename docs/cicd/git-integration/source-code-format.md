@@ -132,6 +132,13 @@ The `.platform` file contains the following attributes:
 - `displayName`: (string) The name of the item.
 - `description`: (optional string) Description of the item.
 
+To rename an item, change the `displayName`. Changing the name of the folder doesn’t change the display name of the item in the workspace.
+
+The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
+
+> [!NOTE]
+> When you commit changes to Git in version 1, the system files are automatically updated to version 2 along with the changes. Also, any new files exported from Power BI Desktop developer mode will be saved in the version 2 file format.
+
 #### [Version 1](#tab/v1)
 
 If you're using version 1, each item directory has two files:
