@@ -160,7 +160,7 @@ items:
       items:
       - name: Secure outbound using managed private endpoints
         href: event-streams/set-up-private-endpoint.md
-      - name: Entra ID authentication
+      - name: Microsoft Entra ID authentication
         href: event-streams/custom-endpoint-entra-id-auth.md
     - name: Tutorials
       items:
