@@ -4,7 +4,7 @@ description: A known issue is posted where the sync content from Git in workspac
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/11/2024
+ms.date: 02/20/2025
 ms.custom: known-issue-966
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-966
 
 You can connect your workspace to Git and perform a sync from Git into the workspace. When you choose the **Sync content from Git into this workspace** and select the **Sync** button, you receive an error and the sync fails.
 
-**Status:** Open
+**Status:** Fixed: February 20, 2025
 
 **Product Experience:** Power BI
 

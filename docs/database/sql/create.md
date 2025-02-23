@@ -6,8 +6,7 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
 ms.date: 01/16/2025
 ms.topic: how-to
-ms.custom:
-ms.search.form: product-databases
+ms.search.form: product-databases, Get Started
 ---
 # Create a SQL database in the Fabric portal
 

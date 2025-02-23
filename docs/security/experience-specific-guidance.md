@@ -292,6 +292,20 @@ The best way to make this process easy and quick is to use Fabric Git integratio
 
 For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md).
 
+### Apache Airflow Job
+
+Apache Airflow Job in Fabric users must undertake proactive measures to protect against a regional disaster. 
+
+We recommend managing redundancy with Fabric Git integration. First, synchronize your Airflow Job with your ADO repo. If the service fails over to another region, you can use the repository to rebuild the Airflow Job in the new workspace you created. 
+
+Here are the steps to achieve this:
+
+1. Configure your workspace's Git Integration and select "connect and sync" with the ADO repo.
+
+1. After that, you will see your Airflow job has been synced to your ADO repo.
+
+1. If you need to recover the Airflow job from the ADO repo, create a new workspace, connect, and sync to your Azure ADO repo again. All Fabric items, including Airflow, in this repository will be automatically downloaded to your new workspace.
+
 ## Real-Time Intelligence
 
 This guide walks you through the recovery procedures for the Real-Time Intelligence experience. It covers KQL databases/querysets and eventstreams.

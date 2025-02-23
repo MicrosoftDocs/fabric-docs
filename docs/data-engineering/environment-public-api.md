@@ -5,7 +5,7 @@ ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
 ms.date: 05/01/2024
-ms.search.for: Manage the environment through public APIs
+ms.search.form: Manage the environment through public APIs
 ---
 
 # Manage the environment through public APIs

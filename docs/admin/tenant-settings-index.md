@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 02/11/2025
+ms.date: 02/23/2025
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -17,7 +17,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 If you want to get to the tenant settings in the Fabric portal, see [How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
-## [Microsoft Fabric](fabric-switch.md)
+## [Microsoft Fabric](./service-admin-portal-microsoft-fabric-tenant-settings.md)
 
 | Setting name | Description |
 |------|-------|
@@ -25,7 +25,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |Users can create and use ADF Mount items (preview)|Users can connect and test existing ADF pipelines in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2250738)|
 |[Users can create Healthcare Cohort items (preview)](/industry/healthcare/healthcare-data-solutions/discover-and-build-cohorts-overview)|Users can explore and create healthcare cohorts using natural language from the multi-modal healthcare data estate provided by the Healthcare solutions item. The data may contain Protected Health Information (PHI). Collaborators with workspace access can view, build on, and modify the healthcare cohort items within that workspace.<br><br>By turning this setting on, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2257737).|
 |[Users can create and use Apache Airflow jobs (preview)](../data-factory/create-apache-airflow-jobs.md)|Apache Airflow jobs offer an integrated runtime environment, enabling users to author, execute, and schedule Python DAGs. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://aka.ms/fabricairflowintrodoc)|
-|User data functions (preview)|Select the admins who can view and change this setting, including any security group selections you've made.|
 |[SQL database (preview)​](../database/sql/overview.md)|Users can create SQL databases​.  [Learn More](https://aka.ms/fabricsqldb)|
 |[Users can discover and create org apps (preview)​](/power-bi/consumer/org-app-items/org-app-items)|Turn on this setting to let users create org apps as items. Users with access will be able to view them. By turning on this setting, you agree to the  [Preview Terms](https://aka.ms/orgapps_previewterms).<br><br>If turned off, any org app items created will be hidden until this setting is turned on again. The prior version of workspace apps will still be available.  [Learn More](https://aka.ms/orgapps_learnmore)|
 |[Product Feedback](../fundamentals/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
@@ -34,8 +33,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Users can discover and use metrics (preview)](./service-admin-portal-goals-settings.md#metric-sets-setting-preview)|Turn on this setting to let users in the organization search for, view, and use metrics. They can use metrics to create new items, such as reports, across Fabric. By turning this setting on, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).<br><br>If turned off, any metrics and metric sets created will be hidden until this setting is turned on again. Semantic models underlying metric sets and downstream items created from metrics will always be visible.|
 |Graph Intelligence (preview)|Explore data and build algorithms with Graph​.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2282471)|
 |[Mirrored Azure Databricks Catalog (preview)](../database/mirrored-database/azure-databricks.md)|Turn on this setting to allow users to add Azure Databricks catalogs, schemas, and tables to Fabric workspaces and explore data from Fabric without needing to move data.  [Learn More](https://aka.ms/adbfabricdoc)|
-|[Users can create variable libraries (preview)](https://go.microsoft.com/fwlink/?linkid=2285517)|Turn on this setting to allow users to create variable libraries and their related value sets.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2285517)|
-|Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric|Attending conferences can help your data teams learn in-depth about how to best use the Fabric platform for your business needs and build professional relationships with community members, Microsoft engineering and product teams, and the Fabric Customer Advisory Team (CAT). These conferences may be organized and hosted by third parties.|
+|[Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric](./service-admin-portal-microsoft-fabric-tenant-settings.md#users-can-be-informed-of-upcoming-conferences-featuring-microsoft-fabric-when-they-are-logged-in-to-fabric)|Attending conferences can help your data teams learn in-depth about how to best use the Fabric platform for your business needs and build professional relationships with community members, Microsoft engineering and product teams, and the Fabric Customer Advisory Team (CAT). These conferences may be organized and hosted by third parties.|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 

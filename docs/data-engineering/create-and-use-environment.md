@@ -5,7 +5,7 @@ ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
 ms.date: 05/01/2024
-ms.search.for: Create and use Environment
+ms.search.form: Create and use Environment
 ---
 
 # Create, configure, and use an environment in Microsoft Fabric
