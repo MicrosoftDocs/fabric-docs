@@ -4,7 +4,7 @@ description: An article
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: article
-ms.date: 02/10/2025
+ms.date: 02/23/2025
 ---
 
 # Cross tenant access (preview)
@@ -12,9 +12,9 @@ ms.date: 02/10/2025
 >[!IMPORTANT]
 >Cross tenant access is a private preview feature. To participate in the preview, contact your Microsoft representative.
 
-Cross tenant access allows third parties, also known as gusts, to access data hosted on a provider's Microsoft Fabric tenant. Guests give concent for providers to manage their data, and use cross tenant access to get to it. This feature is useful for organizations that need to access data that is managed by a service provider. For example, when company A manages Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
+Cross tenant access allows guests to access data hosted on a provider's Microsoft Fabric tenant. This feature is useful for organizations that need to access data that's stored on a service provider's tenant. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
 
-This article is aimed at gusts who want to set up cross tenant access.
+This article is aimed at guests who want to set up cross tenant access. 
 
 ## How it works
 
@@ -39,7 +39,8 @@ When consent is revoked, guests lose access to warehouses in the provider tenant
 
 * [PowerShell](/powershell/azure/install-azure-powershell).
 
-* MISSING LINK TO POWERSHELL CMDLETS
+* Windows PowerShell v3.0 with [Microsoft Power BI Cmdlets for Windows PowerShell and PowerShell Core](/powershell/power-bi/overview).
+    * [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount)
 
 ## Install applications
 
@@ -76,9 +77,11 @@ Follow these steps to install the apps:
 
 ## Enable cross tenant access
 
-This article shows how to enable cross tenant access using PowerShell scripts that call Fabric REST APIs. You can use other methods to call these APIs.
+This section shows how to enable cross tenant access using PowerShell scripts that call Fabric REST APIs. You can use other methods to call these APIs.
 
-### WHAT DOES SCRIP 1 DO?
+### Log into Fabric
+
+Use [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) to log into Fabric.
 
 ```powershell
 PowerShell | API 
@@ -88,34 +91,24 @@ $url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent”
 Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json” 
 ```
 
-### WHAT DOES SCRIP 2 DO?
+### Provide consent
+
+Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body.
 
 ```powershell
-PowerShell | API 
-PUT https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent 
-Request body 
-{ 
-    "resourceTenantObjectId”: “GUID_VAL"
+$body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’ 
+$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent” 
+Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json” 
 } 
 ```
 
 ## Disable cross tenant access
 
-This article shows how to disable cross tenant access using PowerShell scripts that call Fabric REST APIs. You can use other methods to call these APIs.
+This section shows how to disable cross tenant access using PowerShell scripts that call Fabric REST APIs. You can use other methods to call these APIs.
 
-### WHAT DOES SCRIP 3 DO?
+Before you run the script, [log into Fabric](#log-into-fabric).
 
-```powershell
-PowerShell | API 
-
-Connect-PowerBIServiceAccount 
-
-$body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’ 
-$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/revokeConsent” 
-Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json” 
-```
-
-### WHAT DOES SCRIP 4 DO?
+Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the revoke consent API for cross tenant access with a specific provider. Provide the tenant ID of the provider in the request body.
 
 ```powershell
 PowerShell | API 
