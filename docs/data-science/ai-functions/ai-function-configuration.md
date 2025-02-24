@@ -19,7 +19,7 @@ AI functions, which allow users to apply LLM-powered transformations to their en
 
 ## Customizing AI functions with PySpark
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. The code sample below shows how to override the native Fabric LLM endpoint with your own Azure OpenAI LLM resource:
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. The code sample below shows how to override the native Fabric LLM endpoint with your own Azure OpenAI LLM resource by specifying a deployment name, subscription key, URL, and custom temperature (in this case 0.05):
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
@@ -28,7 +28,7 @@ defaults = OpenAIDefaults()
 defaults.set_deployment_name("YOUR DEPLOYMENT HERE")
 defaults.set_subscription_key("YOUR SUBSCRIPTION KEY HERE")
 defaults.set_URL("YOUR URL HERE")
-defaults.set_temperature(0)
+defaults.set_temperature(0.05)
 ```
 
 Each of the modifiable parameters can be retrieved and printed with the code below:
