@@ -33,7 +33,7 @@ Whether you're looking to translate product reviews from one language into anoth
 ## Prerequisites
 
 - To use AI functions with Fabric's native LLM endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
-- You'll also need an F64 or higher SKU, or a P SKU, in one of the [Fabric regions](../../admin/region-availability.md). With a smaller capacity resource, you'll need to provide AI functions with your own Azure OpenAI resource [using custom configurations](ai-function-configuration.md).
+- You'll also need an F64 or higher SKU or a P SKU. With a smaller capacity resource, you'll need to provide AI functions with your own Azure OpenAI resource [using custom configurations](ai-function-configuration.md).
 - Depending on your location, you may need to enable a tenant setting for cross-geo sharing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 
 > [!NOTE]
@@ -69,7 +69,7 @@ The first cell will install the AI functions library and its dependencies.
 {
     "name": "synapseml",
     "conf": {
-        "spark.jars.packages": "com.microsoft.azure:synapseml_2.12:1.0.9-spark3.5,com.microsoft.azure:synapseml-internal_2.12:1.0.9.0-spark3.5",
+        "spark.jars.packages": "com.microsoft.azure:synapseml_2.12:1.0.10-spark3.5,com.microsoft.azure:synapseml-internal_2.12:1.0.10.0-spark3.5",
         "spark.jars.repositories": "https://mmlspark.azureedge.net/maven",
         "spark.jars.excludes": "org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.12,org.scalactic:scalactic_2.12,org.scalatest:scalatest_2.12,com.fasterxml.jackson.core:jackson-databind",
         "spark.yarn.user.classpath.first": "true",
