@@ -25,6 +25,15 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
+## Prerequisites
+
+- [A paid F64 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
+- [AI skill tenant switch](./ai-skill-tenant-switch.md) is enabled.
+- [Copilot tenant switch](../admin/service-admin-portal-copilot.md#users-can-use-copilot-and-other-features-powered-by-azure-openai) is enabled.
+- [Cross-geo processing for AI](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) is enabled, if relevant.
+- [Cross-geo storing for AI](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
+- A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
+
 ## How the AI skill works
 
 AI skill uses large language models (LLMs) to help users interact with their data naturally. AI skill applies Azure OpenAI Assistant APIs, and it behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases), and it invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers—eliminating the need to write complex queries and ensuring accurate and secure data access.
@@ -68,7 +77,7 @@ Configuring an AI skill is similar to building a Power BI report—you start by 
 - **Example queries**: You can add sample question-query pairs to illustrate how the AI skill should respond to common queries. These examples serve as a guide for the agent, which helps it understand how to interpret similar questions and generate accurate responses.
 
 > [!NOTE]
-> Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources. Also, if you previously created and published an AI skill, and you have used its URL programmatically, the URL will no longer work if you open the AI skill in the AI skill new user interface page. To resolve this, you must republish the AI skill, and use the new URL based on the Assistants API.
+> Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources.
 
 By combining clear AI instructions and relevant example queries, you can better align the AI skill with your organization’s data needs, ensuring more accurate and context-aware responses.
 
@@ -110,6 +119,7 @@ The AI skill is currently in public preview and it has limitations. Updates will
 - If you previously created an AI skill that used a warehouse as a data source, and the warehouse was located in a workspace that doesn't host that AI skill, you might encounter an error. To resolve this issue, delete the existing data source and add it again.
 - To add a Power BI semantic model as a data source for AI skill, you need read/write permissions for that Power BI semantic model. Querying an AI skill that uses a Power BI semantic model also requires that you have read/write permissions for the underlying Power BI semantic model.
 - The AI skill might return incorrect answers. You should test the AI skill with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
+- If you previously created and published an AI skill, and you have used its URL programmatically, the URL will no longer work if you open the AI skill in the AI skill new user interface page. To resolve this, you must republish the AI skill, and use the new URL based on the Assistants API.
 
 ## Related content
 

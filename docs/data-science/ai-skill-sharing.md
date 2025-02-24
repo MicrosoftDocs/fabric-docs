@@ -13,6 +13,15 @@ ms.collection: ce-skilling-ai-copilot
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
+## Prerequisites
+
+- [A paid F64 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
+- [AI skill tenant switch](./ai-skill-tenant-switch.md) is enabled.
+- [Copilot tenant switch](../admin/service-admin-portal-copilot.md#users-can-use-copilot-and-other-features-powered-by-azure-openai) is enabled.
+- [Cross-geo processing for AI](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) is enabled, if relevant.
+- [Cross-geo storing for AI](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
+- A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
+
 ## Publishing and versioning
 
 Creation of an AI skill is an iterative process. It involves refinement of various configurations, for example
