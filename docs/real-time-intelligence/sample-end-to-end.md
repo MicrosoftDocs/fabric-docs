@@ -61,7 +61,7 @@ These steps show how to create an end-to-end sample using the bike rental sample
 
 1. Select **Create** to create the sample components. The progress window shows the status of the creation process.
 
-    :::image type="content" source="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component" lightbox="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png":::
+    :::image type="content" source="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png" alt-text="Screenshot of the progress with a status next to each component." lightbox="media/sample-end-to-end-solution/create-end-to-end-samples-progress.png":::
 
 1. When the sample data is ready, start exploring by selecting **Open Eventhouse** or **Open Folder**.
 
