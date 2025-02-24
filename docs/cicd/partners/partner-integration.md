@@ -135,7 +135,7 @@ Currently, the Workload Hub offers five workloads in Public Preview, enabling or
 
 :::image type="content" source="media/partner-integration/quantexa-workload.png" alt-text="Diagram showing how to create your own fabric workload." lightbox="media/partner-integration/quantexa-workload.png":::
 
-**[Teradata AI Unlimited](https://app.fabric.microsoft.com/workloadhub/detail/Teradata.AIUnlimited.AIUnlimited?experience=fabric-developer)**: A serverless engine that accelerates innovation by integrating Teradata AI within Microsoft Fabric.
+**[Teradata AI Unlimited](https://app.fabric.microsoft.com/workloadhub/detail/Teradata.AIUnlimited.AIUnlimited?experience=fabric-developer)**: Combines Teradata's analytic engine with Microsoft Fabric's data management capabilities through Teradata's in-database functions.
 
 :::image type="content" source="media/partner-integration/teradata-workload.png" alt-text="Diagram showing how to create your own fabric workload." lightbox="media/partner-integration/teradata-workload.png":::
 
