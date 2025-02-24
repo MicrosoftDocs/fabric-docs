@@ -13,12 +13,44 @@ ms.search.form: AI functions
 
 # TBD
 
-AI functions are designed to work out of the box in Fabric notebooks, with the underlying LLM and settings configured by default. Users who want more flexible configurations, however, can modify the following variables to customize their solutions:
+AI functions are designed to work out of the box in Fabric notebooks, with the underlying language model and its associated settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+
+## Customizing AI funtions with pandas
+
+## Customizing AI functions with PySpark
+
+If you're using AI functions with PySpark, you can use the `OpenAIDefaults` TBD to modify the underlying language model wi
 
 - **Config 1**: TBD
 - **Config 2**: TBD
 - **Config 3**: TBD
+- **Config 4**: TBD
 
+```python
+from synapse.ml.services.openai import OpenAIDefaults
+defaults = OpenAIDefaults()
+
+# TBD COMMENT
+
+defaults.set_deployment_name("gpt-35-turbo-0125")
+defaults.set_subscription_key(aoai_key)
+defaults.set_URL("https://synapseml-openai-2.openai.azure.com/")
+defaults.set_temperature(0.05)
+
+print(defaults.get_deployment_name())
+print(defaults.get_subscription_key())
+print(defaults.get_URL())
+print(defaults.get_temperature())
+```
+
+Each of the modifiable parameters can be reset as follows:
+
+```python
+defaults.reset_deployment_name()
+defaults.reset_subscription_key()
+defaults.reset_URL()
+defaults.reset_temperature()
+```
 
 ## Related content
 

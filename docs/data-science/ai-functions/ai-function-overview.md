@@ -59,7 +59,7 @@ The first cell will install the AI functions library and its dependencies.
 %pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9/synapseml_core-1.0.9-py2.py3-none-any.whl
 
 # Install SynapseML-Internal .whl with AI functions library from blob storage:
-%pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9.0-spark3.4-16-a3283d22-SNAPSHOT/synapseml_internal-1.0.9.0.dev1-py2.py3-none-any.whl
+%pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.10.0-spark3.4/synapseml_internal-1.0.10.0.dev1-py2.py3-none-any.whl
 ```
 
 # [PySpark](#tab/pyspark)
