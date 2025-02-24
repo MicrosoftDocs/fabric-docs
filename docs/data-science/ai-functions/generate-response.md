@@ -142,7 +142,7 @@ df = spark.createDataFrame([
         ("Water bottles",)
     ], ["product"])
 
-responses = df.ai.generate_response(prompt="Write a snappy, enticing email subject line for a summer sale on the product.", output_col="response")
+responses = df.ai.generate_response(prompt="Write a snappy, eye-grabbing email subject line for a summer sale.", output_col="response")
 display(responses)
 ```
 
@@ -158,7 +158,7 @@ df = spark.createDataFrame([
         ("003", "Water bottles", "Coolers", "2015")
     ], ["id", "product", "product_rec", "yr_introduced"])
 
-responses = df.ai.generate_response(prompt="Write a snappy, enticing email subject line for a summer sale on the {product}.", is_prompt_template=True, output_col="response")
+responses = df.ai.generate_response(prompt="Write a snappy, eye-grabbing email subject line for a summer sale on the {product}.", is_prompt_template=True, output_col="response")
 display(responses)
 ```
 

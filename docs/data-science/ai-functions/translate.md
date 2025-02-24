@@ -24,6 +24,8 @@ To learn more about the full set of AI functions, which unlock dynamic insights 
 > - Although the underlying model can handle several languages, most of the AI functions have been optimized for use on English texts.
 > - To learn about customizing the configuration of AI functions, please visit [this article](ai-function-configuration.md).
 
+## Use `ai.translate` with pandas
+
 The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to translate each row of input into a user-specified target language. 
 
 The function returns a pandas Series containing translations, which can be stored in a new column of the DataFrame.
