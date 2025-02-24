@@ -26,13 +26,13 @@ Currently, the following supported data sources can be exposed through the Fabri
 - Microsoft Fabric SQL database
 - Microsoft Fabric Lakehouse via SQL Analytics Endpoint
 - Microsoft Fabric Mirrored Databases via SQL Analytics Endpoint, including:
-      - Mirrored databases from Azure SQL Database
-      - Mirrored databases from Azure SQL Managed Instance
-      - Mirrored databases from Azure CosmosDB
-      - Mirrored databases from Microsoft Fabric SQL Database
-      - Mirrored databases from Azure Databricks
-      - Mirrored databases from Snowflake
-      - Open mirrored databases
+    - Mirrored databases from Azure SQL Database
+    - Mirrored databases from Azure SQL Managed Instance
+    - Mirrored databases from Azure CosmosDB
+    - Mirrored databases from Microsoft Fabric SQL Database
+    - Mirrored databases from Azure Databricks
+    - Mirrored databases from Snowflake
+    - Open mirrored databases
 - Azure SQL database
 - Datamart
 

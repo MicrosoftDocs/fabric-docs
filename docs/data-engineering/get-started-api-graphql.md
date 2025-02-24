@@ -80,7 +80,7 @@ The table below summarizes the different supported permutations and minimum requ
 |API Caller        | Data source connectivity | Required GraphQL API permissions|Required Data Source permissions|Entra app scope|
 |------------------|--------------------------|---------------------------------|-------------------------------|-----------------|
 |User Principal (UPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the UPN at the data source|*GraphQLApi.Execute.All*|
-|Service Principal (SPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the SPN at the data source|*GraphQLApi.Execute.All*|
+|Service Principal (SPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the SPN at the data source|Not Applicable|
 |User Principal (UPN)|Saved credentials| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the saved credential (connection) at the data source|*GraphQLApi.Execute.All*|
 |Service Principal (SPN)|Saved credentials| Currently not supported|Currently not supported|Currently not supported|
 
