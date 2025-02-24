@@ -4,7 +4,7 @@ description: "Learn about Direct Lake storage mode in Microsoft Fabric and when 
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 01/07/2025
+ms.date: 02/24/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -175,7 +175,7 @@ Direct Lake semantic models present some considerations and limitations.
 
 - When a Direct Lake semantic model table connects to a table in the SQL analytics endpoint that enforces row-level security (RLS), queries that involve that model table will always fall back to DirectQuery mode. Query performance might be slower.
 - When a Direct Lake semantic model table connects to a view in the SQL analytics endpoint, queries that involve that model table will always fall back to DirectQuery mode. Query performance might be slower.
-- Composite modeling isn't supported. That means Direct Lake semantic model tables can't be mixed with tables in other storage modes, such as Import, DirectQuery, or Dual (except for special cases, including [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters)).
+- Composite modeling support is currently in **preview**. Composite Direct Lake semantic model tables can be mixed with tables in other storage modes, such as Import, DirectQuery, or Dual (also including [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters)). However, the preview release of composite modeling for Direct Lake semantic models does not support Web Modeling, RemoteModeling, GIT or CICD.
 - Calculated columns and calculated tables that reference columns or tables in Direct Lake storage mode aren't supported. [Calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables, and calculated tables that don't reference Direct Lake columns or tables are supported. 
 - Direct Lake storage mode tables don't support complex Delta table column types. Binary and GUID semantic types are also unsupported. You must convert these data types into strings or other supported data types.
 - Table relationships require the data types of related columns to match.
