@@ -168,7 +168,7 @@ The `ai.classify` function invokes AI to categorize input text according to cust
 df = pd.DataFrame([
         "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
         "Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",
-        "Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the professional commuter!"
+        "Enjoy this *BRAND NEW CAR!* A compact SUV perfect for the professional commuter!"
     ], columns=["descriptions"])
 
 df["category"] = df['descriptions'].ai.classify("kitchen", "bedroom", "garage", "other")
@@ -184,7 +184,7 @@ display(df)
 df = spark.createDataFrame([
         ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",),
         ("Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",),
-        ("Enjoy this *BREAND NEW CAR!* A compact SUV perfect for the professional commuter!",)
+        ("Enjoy this *BRAND NEW CAR!* A compact SUV perfect for the professional commuter!",)
     ], ["descriptions"])
     
 categories = df.ai.classify(labels=["kitchen", "bedroom", "garage", "other"], input_col="descriptions", output_col="categories")
