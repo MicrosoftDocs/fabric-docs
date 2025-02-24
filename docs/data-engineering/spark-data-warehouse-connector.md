@@ -131,7 +131,7 @@ df = spark.read.synapsesql("<warehouse/lakehouse name>.<schema name>.<table or v
 df.write.format("delta").saveAsTable("<Lakehouse table name>")
 ```
 
-### Writing a Spark dataframe data to warehouse table
+### Write a Spark dataframe data to warehouse table
 This connector employs a two-phase write process to a Fabric DW table. Initially, it stages the Spark dataframe data into an intermediate storage, followed by using the `COPY INTO` command to ingest the data into the Fabric DW table. This approach ensures scalability with increasing data volume.
 
 #### Supported DataFrame save modes
@@ -142,7 +142,7 @@ Following save modes are supported when writing source data of a dataframe to a 
 * Overwrite: If the destination table exists, then existing data in the destination is replaced with data. Else, a new table is created with data.
 * Append: If the destination table exists, then the new data is appended to it. Else, a new table is created with data.
 
-The following code are examples of writing Spark dataframe's data to a Fabric DW table: 
+The following code shows examples of writing Spark dataframe's data to a Fabric DW table: 
 
 ```python
 df.write.synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>") # this uses default mode - errorifexists
