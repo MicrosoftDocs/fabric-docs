@@ -34,10 +34,10 @@ defaults.set_temperature(0)
 Each of the modifiable parameters can be retrieved and printed with the code below:
 
 ```python
-defaults.reset_deployment_name()
-defaults.reset_subscription_key()
-defaults.reset_URL()
-defaults.reset_temperature()
+print(defaults.get_deployment_name())
+print(defaults.get_subscription_key())
+print(defaults.get_URL())
+print(defaults.get_temperature())
 ```
 
 And you can reset the parameters as easily as you modified them, reverting to the native Fabric LLM endpoint to power the AI functions:
