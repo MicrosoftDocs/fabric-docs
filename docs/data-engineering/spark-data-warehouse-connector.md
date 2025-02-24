@@ -20,7 +20,7 @@ The Spark connector for Fabric Data Warehouse enables Spark developers and data 
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
 
 > [!NOTE]
-> The connector is currently in preview. For more information, see the [current considerations](spark-data-warehouse-connector.md#Considerations-for-using-this-connector) later in this article.  
+> The connector is currently in preview. For more information, see the [current considerations](spark-data-warehouse-connector.md#considerations-for-using-this-connector) later in this article.  
 
 ## Authentication
 
