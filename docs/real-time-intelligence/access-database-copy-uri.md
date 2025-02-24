@@ -47,7 +47,7 @@ You can copy two types of URIs from the **Database details** card in your KQL da
 
 ## Share a KQL database link
 
-Create a link to the database, manage the link permissions, and send the link to authorized users so they can access the database. For more information, see [Share items](//docs/fundamentals/share-items.md).
+Create a link to the database, manage the link permissions, and send the link to authorized users so they can access the database. For more information, see [Share items](/fabric/fundamentals/share-items).
 
 :::image type="content" source="media/create-database/database-share.png" alt-text="Image of the share button on the top right of the screen":::
 
@@ -57,4 +57,4 @@ Create a link to the database, manage the link permissions, and send the link to
 ## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
-* [Share items in Microsoft Fabric](//docs/fundamentals/share-items.md)
+* [Share items in Microsoft Fabric](/fabric/fundamentals/share-items)
