@@ -51,7 +51,7 @@ Create a link to the database, manage the link permissions, and send the link to
 
 :::image type="content" source="media/create-database/database-share.png" alt-text="Image of the share button on the top right of the screen":::
 
-> [Note:]
+> [!NOTE]
 > The shared link provides access to a single database. There is no bulk sharing option for multiple databases, and an Eventhouse can't be shared.
 
 ## Related content
