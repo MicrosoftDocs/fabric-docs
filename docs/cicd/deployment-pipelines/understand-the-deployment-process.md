@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
-ms.date: 01/30/2025
+ms.date: 02/23/2025
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 # customer intent: As a developer, I want to understand how the Microsoft Fabric deployment pipelines process works so that I can use it effectively.
 ---
@@ -457,7 +457,6 @@ The following table lists required permissions for popular deployment pipeline a
 This section lists most of the limitations in deployment pipelines.
 
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md#capacity).
-* Currently, when you deploy a workspace to an existing target workspace in a different region, there may not be a warning in the deploy dialog.
 * The maximum number of items that can be deployed in a single deployment is 300.
 * Downloading a *.pbix* file after deployment isn't supported.
 * [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) aren't supported as pipeline admins.
