@@ -139,6 +139,7 @@ You can perform the following actions:
 * To query tables in a database, hover over the desired database > select **More menu** [**...**] > **Query data**. The **Explore your data** pane opens where you can write and run queries on the selected database. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 * To ingest data into a database, hover over the desired database > select **More menu** [**...**] > **Get data** > select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
 * To delete a database, hover over the desired database > select **More menu** [**...**] > **Delete** > **Delete database**.
+* To share a database, select the database from the list > select **Share** > enter the email addresses of the users you want to share the database with > select **Share**. * Sharing multiple databases or the Eventhouse is not supported.
 
 ## Related content
 
