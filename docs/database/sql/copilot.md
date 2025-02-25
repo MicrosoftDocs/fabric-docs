@@ -27,7 +27,7 @@ Copilot operates through a high-level architecture that includes:
 
 This architecture ensures that Copilot can deliver accurate and relevant assistance, making your experience with [Product/Service] more efficient and enjoyable.
 
-## Features of Copilot for SQL database in Microsoft Fabric
+## Features of Copilot for SQL database in Fabric
 
 Here are some benefits of using Microsoft Copilot for SQL database in Microsoft Fabric.
 
@@ -53,13 +53,13 @@ Here are some benefits of using Microsoft Copilot for SQL database in Microsoft 
 
 **[Natural Language to SQL](copilot-chat-pane.md)**: This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
 
-## Enable Copilot in SQL database in Microsoft Fabric
+## Enable Copilot in SQL database in Fabric
 
 To enable Copilot in the SQL database in Microsoft Fabric, follow the steps below.
 
 [!INCLUDE [copilot-include](../../includes/copilot-include.md)]
 
-## Best practices for using Copilot in SQL database in Microsoft Fabric
+## Best practices for using Copilot in SQL database in Fabric
 
 Here are some tips for effectively maximizing productivity with Microsoft Copilot:
 
