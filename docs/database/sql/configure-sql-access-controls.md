@@ -6,7 +6,7 @@ ms.author: jaszymas
 ms.reviewer: wiassaf # Microsoft alias
 ms.date: 10/11/2024
 ms.topic: how-to
-ms.custom:
+ms.search.form: SQL database security
 ---
 
 # Configure granular access control for a SQL database

@@ -4,7 +4,7 @@ description: A known issue is posted where an eventstream publish fails when col
 author: kfollis
 ms.author: kfollis
 ms.topic: troubleshooting  
-ms.date: 12/09/2024
+ms.date: 02/20/2025
 ms.custom: known-issue-962
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-962
 
 You can create an eventstream that has columns of data and a transformation operator to process the data. The data contains a column with an empty array. If you try to publish the eventstream, it shows an error and doesn't publish.
 
-**Status:** Open
+**Status:** Fixed: February 20, 2025
 
 **Product Experience:** Real-Time Intelligence
 
