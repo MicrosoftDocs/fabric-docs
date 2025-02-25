@@ -43,11 +43,17 @@ Add a configuration-driven copy activity together with your low-code dataflow re
 
 Data pipelines in Data Factory implement the Copy activity, which supports the full flexibility and integration with other activities in traditional pipelines, but also invovles a learning curve, which can impose challenges and create barriers for new users who want to rapidly instrument the movement of data from source to destination. The Copy job was introduced to simplify the copy process and make moving data quick and easy for a broad range of scenarios that don't require further instrumentation or integration with other activities.
 
+:::image type="content" source="media/copy-job/copy-job-mode.png" alt-text="Screenshot of the user interface showing a Copy job." lightbox="media/copy-job/copy-job-mode.png":::
+
 Learn more about how to use the Copy job to move your data with ease in [What is Copy job](what-is-copy-job.md).
 
 ## Apache Airflow jobs
 
 Many Data Factory users are familiar with Apache Airflow. The Apache Airflow job is the next generation of Data Factory's Workflow Orchestration Manager. It's a simple and efficient way to create and manage Apache Airflow orchestration jobs, enabling you to run Directed Acyclic Graphs (DAGs) at scale with ease. It empowers you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources for example, databases, data warehouse, Lakehouse, real-time data, and more.
+
+While there are many things you can do with Apache Airflow, the following image shows an example of a running simple Hello World Python script using the feature:
+
+:::image type="content" source="media/apache-airflow-jobs/boilerplate-directed-acyclic-graph.png" alt-text="Screenshot of the user interface showing an Apache Airflow job." lightbox="media/apache-airflow-jobs/boilerplate-directed-acyclic-graph.png":::
 
 Learn more and get started with the Apache Airflow job in [What is Apache Airflow job](apache-airflow-jobs-concepts.md)
 
