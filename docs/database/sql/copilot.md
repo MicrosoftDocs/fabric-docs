@@ -14,7 +14,7 @@ ms.collection:
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Microsoft Copilot for SQL Database in Microsoft Fabric is an AI tool designed to simplify the management and querying of SQL databases. It offers features like intelligent code completion, quick actions, and natural language to SQL conversion, seamlessly integrating with your Fabric database to provide smart insights for T-SQL tasks. This article explores how Copilot can enhance productivity, accuracy, and learning for database administrators, developers, and data analysts by streamlining workflows and improving efficiency.
+Microsoft Copilot for SQL database in Microsoft Fabric is an AI tool designed to simplify the management and querying of SQL databases. Copilot offers intelligent code completion, quick actions, and natural language to SQL conversion. This article explores how Copilot can enhance productivity, accuracy, and learning for database administrators, developers, and data analysts.
 
 ## How Copilot works
 
