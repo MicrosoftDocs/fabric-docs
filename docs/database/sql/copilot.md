@@ -80,6 +80,5 @@ Here are the current limitations of Copilot for SQL database:
 
 ## Related content
 
-- [Use Copilot to get the most from Learn](https://review.learn.microsoft.com/copilot/roadmap/)
 - [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
 - [Frequently asked questions for Copilot in SQL database in Microsoft Fabric](copilot-faq.yml)
