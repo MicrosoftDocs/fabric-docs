@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 02/24/2025
+ms.date: 02/25/2025
 ms.search.form: product-kusto
 ---
 
@@ -47,12 +47,18 @@ You can copy two types of URIs from the **Database details** card in your KQL da
 
 ## Share a KQL database link
 
-Create a link to the database, manage the link permissions, and send the link to authorized users so they can access the database. For more information, see [Share items](/fabric/fundamentals/share-items).
+To share your KQL database, follow these steps:
 
-:::image type="content" source="media/create-database/database-share.png" alt-text="Image of the share button on the top right of the screen":::
+1. Select **Share** to create a link to the database.
+2. Manage the link permissions to ensure only authorized users can access it.
+3. Send the link to the authorized users.
 
 > [!NOTE]
 > The shared link provides access to a single database. There is no bulk sharing option for multiple databases, and an Eventhouse can't be shared.
+
+:::image type="content" source="media/create-database/database-share.png" alt-text="Image of the share button on the top right of the screen":::
+
+For more details, see [Share items](/fabric/fundamentals/share-items).
 
 ## Related content
 
