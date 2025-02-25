@@ -6,7 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom:
-ms.date: 1/13/2025
+ms.date: 02/25/2025
 ---
 
 # Copy sample data into Lakehouse and transform with a dataflow with Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]

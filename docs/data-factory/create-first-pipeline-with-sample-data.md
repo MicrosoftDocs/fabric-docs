@@ -6,7 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
 ms.custom:
-ms.date: 12/18/2024
+ms.date: 02/25/2025
 ms.search.form: Pipeline Tutorials
 ---
 

@@ -6,7 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom:
-ms.date: 12/18/2024
+ms.date: 02/25/2025
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -49,11 +49,11 @@ In this session, you start to build your pipeline by following below steps about
 
 ### Step 2: Configure your source
 
-1. Choose the **COVID-19 Data Lake** from the **Sample data** options for your data source, and then select **Next**.
+1. Choose the **NYC Taxi - Green** from the **Sample data** options for your data source, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/covid-19-data-lake.png" alt-text="Screenshot showing the COVID-19 Data Lake sample data selection in the Copy data assistant.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/nyc-taxi-green.png" alt-text="Screenshot showing the NYC Taxi - Green sample data selection in the Copy data assistant.":::
 
-1. In the **Connect to data source** section of the **Copy data** assistant, a preview of the sample data **Bing COVID-19** is displayed. Select **Next** to move on to the data destination.
+1. In the **Connect to data source** section of the **Copy data** assistant, a preview of the sample data **NYC Taxi - Green** is displayed. Select **Next** to move on to the data destination.
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/preview-data.png" alt-text="Screenshot showing a preview of the Bing COVID-19 sample data.":::
 
