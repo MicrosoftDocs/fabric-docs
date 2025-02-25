@@ -1,10 +1,10 @@
 ---
-title: Copilot for Data Warehouse Overview
+title: "Copilot for Data Warehouse (Preview)"
 description: Learn more about Microsoft Copilot for Fabric Data Warehouse, the integrated AI assistant for your Fabric warehouse.
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 03/01/2025
+ms.date: 02/20/2025
 ms.topic: conceptual
 ms.collection:
   - ce-skilling-ai-copilot

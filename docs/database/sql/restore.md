@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: strrodic
 ms.date: 11/07/2024
 ms.topic: how-to
-ms.custom: Backup & Restore
+ms.search.form: Backup & Restore
 ---
 # Restore from a backup in SQL database in Microsoft Fabric
 

@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot code completion for Fabric Data 
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf, jacinda-eng
-ms.date: 03/01/2025
+ms.date: 02/20/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -47,7 +47,7 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 
 ## Related content
 
-- [Microsoft Copilot for Fabric Data Warehouse](copilot.md)
+- [Overview of Copilot for Data Warehouse](copilot.md)
 - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
 - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md)

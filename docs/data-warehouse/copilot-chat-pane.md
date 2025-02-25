@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot chat pane for Fabric Data Wareho
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 03/01/2025
+ms.date: 02/20/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -53,13 +53,13 @@ The supported capabilities of interacting through chat include:
 
 You can ask Copilot questions about the warehouse normally and it should respond accordingly. However, if you want to force Copilot to perform a specific skill, there are `/` commands that you can use. These commands must be at the start of your chat message.
 
-| Command | Description |
-| --- | --- |
-| `/generate-sql` | Generate a SQL query from the prompt submitted to Copilot. |
-| `/explain` | Generate an explanation for the query within the active query tab. |
-| `/fix` | Generate a fix for the query within the active query tab. You can optionally add more context to fix a specific part or aspect of the query. |
-| `/question` | Generate a natural language response from the prompt submitted to Copilot. |
-| `/help` | Get help for using Copilot. This links to documentation to Copilot and how to use it. |
+| Command         | Description                                                                                                                                  |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `/generate-sql` | Generate a SQL query from the prompt submitted to Copilot.                                                                                   |
+| `/explain`      | Generate an explanation for the query within the active query tab.                                                                           |
+| `/fix`          | Generate a fix for the query within the active query tab. You can optionally add more context to fix a specific part or aspect of the query. |
+| `/question`     | Generate a natural language response from the prompt submitted to Copilot.                                                                   |
+| `/help`         | Get help for using Copilot. This links to documentation to Copilot and how to use it.                                                        |
 
 For `/generate-sql`, `/question`, and optionally `/fix`, include additional information regarding your intent. For example:
 
