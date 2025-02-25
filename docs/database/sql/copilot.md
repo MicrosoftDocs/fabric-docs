@@ -18,7 +18,7 @@ Microsoft Copilot for SQL database in Microsoft Fabric is an AI tool designed to
 
 ## Features of Copilot for SQL database in Fabric
 
-Here are some benefits of using Microsoft Copilot for SQL database in Microsoft Fabric.
+Get started with Copilot for SQL database in Microsoft Fabric:
 
 - [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md): Start writing T-SQL in the SQL query editor, and Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion.
 
