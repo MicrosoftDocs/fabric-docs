@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 02/21/2025
+ms.date: 02/25/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1035  | Data Engineering | [Lakehouse ALM operations fail for Git using public APIs in UK South](./known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md) | February 25, 2025 |
+|  1029  | Administration & Management | [Existing preview surge protection rules from aren't visible in Capacity settings](./known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md) | February 25, 2025 |
 |  1032  | Real-Time Intelligence | [Eventstream updates with Eventhouse destination causes error](./known-issue-1032-eventstream-updates-eventhouse-destination-error.md) | February 21, 2025 |
 |  1031  | Administration & Management | [Git integration undo after initial sync fails might delete items](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
@@ -27,7 +29,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1024  | Data Factory | [CopyJob item deletion fails with error](./known-issue-1024-copy-job-item-deletion-fails-error.md) | February 14, 2025 |
 |  1023  | Data Factory | [Preview destination data on a pipeline's copy activity fails](./known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md) | February 14, 2025 |
 |  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
-|  1011  | Power BI | [Models with specific gateway configuration might experience refresh issues](./known-issue-1011-models-specific-gateway-configuration-refresh-issues.md) | January 29, 2025 |
 |  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 |
 |  1003  | Databases | [Copilot sidecar chat fails with certain private link settings](./known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md) | January 28, 2025 |
 |  1002  | Power BI | [Reports that use functions with RLS don't work](./known-issue-1002-reports-functions-rls-not-work.md) | January 28, 2025 |
@@ -93,6 +94,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1011  | Power BI | [Models with specific gateway configuration might experience refresh issues](./known-issue-1011-models-specific-gateway-configuration-refresh-issues.md) | January 29, 2025 | Fixed: February 25, 2025 |
 |  978  | Real-Time Intelligence  | [Renamed eventstream fails to open](./known-issue-978-renamed-eventstream-fails-open.md) | December 17, 2024 | Fixed: February 20, 2025 |
 |  966  | Power BI  | [Sync content from Git in workspace fails](./known-issue-966-sync-content-git-workspace-fails.md) | December 11, 2024 | Fixed: February 20, 2025 |
 |  962  | Real-Time Intelligence | [Eventstream publish fails when column contains empty array and operator is added](./known-issue-962-eventstream-publish-fails-column-empty-array-operator.md) | December 9, 2024 | Fixed: February 20, 2025 |
@@ -111,10 +113,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](./known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 | Fixed: January 13, 2025 |
 |  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](./known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |  Fixed: January 13, 2025 |
 |  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](./known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 | Fixed: January 13, 2025 |
-|  977  | Power BI  | [Export to Excel using live connection with show items with no data turned on fails](./known-issue-977-export-excel-live-connection-show-items-no-data-fails.md) | December 17, 2024 | Fixed: January 6, 2025 |
-|  821  | Data Warehouse | [Schema refresh for a data warehouse's semantic model fails](./known-issue-821-schema-refresh-data-warehouse-model-fails.md) | August 28, 2024 | Fixed: January 6, 2025 |
-|  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](./known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 | Fixed: January 6, 2025 |
-|  447  | Data Warehouse | [Temp tables in Data Warehouse and SQL analytics endpoint](./known-issue-447-temp-tables-data-warehouse-sql-endpoint.md)    |  July 5, 2023  | Fixed: January 6, 2025 |
 
 ## Related content
 
