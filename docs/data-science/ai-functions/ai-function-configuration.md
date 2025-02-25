@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Customize the configuration of AI functions in Fabric
 
-[AI functions](ai-function-overview.md), which allow Fabric users to apply LLM-powered operations to their enterprise data in a single line of code, are designed to work out of the box in Fabric notebooks. The underlying language model and its settings are configured by default, but users who want more flexible configurations can customize their solutions with a few extra lines of code.
+AI functions allow users to apply LLM-powered transformations to their enterprise data [in a single line of code](ai-function-overview.md). They're designed to work out-of-the-box, in Fabric notebooks, with the underlying language model and its associated language model settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 ## Customizing AI functions with pandas
 
@@ -70,7 +70,7 @@ df["sentiment"] = df["text"].ai.analyze_sentiment()
 display(df)
 ```
 
-If you want to substitute a [custom Azure Open AI LLM resource](https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource) in place of the native Fabric LLM, you can the `aifunc.setup` function with your own client, as shown in the code sample below:
+If you want to substitute a [custom Azure Open AI LLM resource](../../../../azure-docs/articles/ai-services/openai/how-to/create-resource.md) in place of the native Fabric LLM, you can the `aifunc.setup` function with your own client, as shown in the code sample below:
 
 ```python
 from openai import AzureOpenAI
@@ -137,4 +137,5 @@ defaults.reset_temperature()
 - Summarize text with [`ai.summarize`](summarize.md).
 - Translate text with [`ai.translate`](translate.md).
 - Answer custom user prompts with [`ai.generate_response`](generate-response.md).
+- Learn more about the full set of AI functions [here](ai-function-overview.md).
 - Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)
