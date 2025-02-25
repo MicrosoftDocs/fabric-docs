@@ -70,7 +70,7 @@ df["sentiment"] = df["text"].ai.analyze_sentiment()
 display(df)
 ```
 
-If you want to substitute a [custom Azure Open AI LLM resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource) in place of the native Fabric LLM, you can the `aifunc.setup` function with your own client, as shown in the code sample below:
+If you want to substitute a [custom Azure Open AI LLM resource](https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource) in place of the native Fabric LLM, you can the `aifunc.setup` function with your own client, as shown in the code sample below:
 
 ```python
 from openai import AzureOpenAI
@@ -88,7 +88,7 @@ aifunc.setup(client)  # Set the client for all functions
 
 ## Customizing AI functions with PySpark
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show how you can override the native Fabric LLM endpoint with a [custom Azure OpenAI LLM deployment](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource):
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show how you can override the native Fabric LLM endpoint with a [custom Azure OpenAI LLM deployment](https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource):
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
@@ -106,7 +106,7 @@ You can subsitute your own values for the deployment name, subscription key, end
 |---|---|
 | **`deployment_name`** | A string value designating the custom name of your model deployment in Azure Open AI or Azure AI Foundry. In the Azure portal, this value will appear under **Resource Management > Model Deployments**. In the Azure AI Foundry portal, the value will appear on the **Deployments** page. By default, the native Fabric LLM endpoint deployment is set to **gpt-35-turbo-0125**. |
 | **`subscription_key`** | An API key used for authentication with your LLM resource. In the Azure portal, this value will appear in the **Keys and Endpoint** section. |
-| **`URL`**| A URL designating the endpoint of your LLM resource. In the Azure portal, this value will appear in the **Keys and Endpoint** section. For example: https://docs-test-001.openai.azure.com/. |
+| **`URL`**| A URL designating the endpoint of your LLM resource. In the Azure portal, this value will appear in the **Keys and Endpoint** section. For example: "https://your-openai-endpoint.openai.azure.com/". |
 | **`temperature`** | A numeric value between **0** and **1**. Higher temperatures will increase the randomness or creativity of the underlying model's outputs. By default, the Fabric LLM endpoint's temperature is set to **0**. |
 
 Each of the `OpenAIDefaults` parameters can be retrieved and printed with the code below:
