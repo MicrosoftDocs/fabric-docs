@@ -6,7 +6,6 @@ ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 10/25/2024
 ms.topic: tutorial
-ms.search.form: SQL database - Query with SQL analytics endpoint
 ---
 
 # Use the SQL analytics endpoint to query data

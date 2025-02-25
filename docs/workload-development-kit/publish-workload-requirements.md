@@ -4,7 +4,7 @@ description: Learn about the guidelines and requirements for publishing a Micros
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 08/21/2024
+ms.date: 02/18/2025
 ---
 
 # Workload publishing requirements
@@ -40,7 +40,7 @@ This document provides a comprehensive overview of all the different components 
 | Marketplace Offer | Partners need to enlist a SaaS offer in Azure Marketplace. This offer can just be a *contact us* listing to get leads from the platform. We expect partners to also transact over the Marketplace. You can build Bring Your Own License (BYOL) capabilities into your workload. | Workload Package | Required | Required | [Creating a SaaS offer](/partner-center/marketplace-offers/create-new-saas-offer) <br> <br> [Commercial marketplace certification policies](/legal/marketplace/certification-policies#1000-software-as-a-service-saas) |
 |Documentation | You need to provide documentation for your Workload to customers in an easy and understandable form. | Workload Package | Required | Required | |
 | Monetization | You can use Azure Marketplace to monetize your workload. | Attestation | Not Supported | Optional | [Monetize your workload](monetization.md) |
-| Workload page| Gallery videos aren't allowed to show non product related ads. Add up to four videos that demonstrate your offer. Videos should be hosted on an external video service|Workload Package|Optional|Optional|[Azure Marketplace video guidelines](https://learn.microsoft.com/partner-center/marketplace-offers/create-new-saas-offer-listing#add-videos-optional)|
+| Workload page| Gallery videos aren't allowed to show non product related ads. Add up to four videos that demonstrate your offer. Videos should be hosted on an external video service|Workload Package|Optional|Optional|[Azure Marketplace video guidelines](/partner-center/marketplace-offers/create-new-saas-offer-listing#add-videos-optional)|
 
 ## Technical requirements
 
