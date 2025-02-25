@@ -156,7 +156,7 @@ FROM (
 ) AS t
 ```
 
-:::image type="content" source="./media/ai-skill-scenario/add-example-queries-sql.png" alt-text="Screenshot showing adding SQL examples." lightbox="./media/ai-skill-scenario/add-example-queries-sql.png":::
+:::image type="content" source="./media/ai-skill-scenario/add-example-queries-sql-server.png" alt-text="Screenshot showing adding SQL examples." lightbox="./media/ai-skill-scenario/add-example-queries-sql-server.png":::
 
 > [!NOTE]
 > Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources.

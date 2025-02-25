@@ -34,13 +34,6 @@ With a Microsoft Fabric AI skill, you can create conversational AI experiences t
 
 This section outlines the key steps to create, validate, and share an AI skill in Fabric, making it accessible for consumption.
 
-1. Create a new AI skill.
-1. Select your data.
-1. Ask the questions.
-1. Provide instructions to the AI.
-1. Provide examples for each data source.
-1. Publish and share AI skill.
-
 The process is straightforward and you can begin testing the AI skill resources in minutes.
 
 ## Create a new AI skill
@@ -118,9 +111,9 @@ All this information is used to construct a prompt. This prompt serves as an inp
 
 The agent analyzes the constructed prompt, and decides which tool to invoke to retrieve the answer:
 
-1. Natural Language to SQL (NL2SQL): Used to generate SQL queries when the data resides in a lakehouse or warehouse
-1. Natural Language to DAX (NL2DAX): Used to create DAX queries to interact with semantic models in Power BI data sources
-1. Natural Language to KQL (NL2KQL): Used to construct KQL queries to query data in KQL databases
+- Natural Language to SQL (NL2SQL): Used to generate SQL queries when the data resides in a lakehouse or warehouse
+- Natural Language to DAX (NL2DAX): Used to create DAX queries to interact with semantic models in Power BI data sources
+- Natural Language to KQL (NL2KQL): Used to construct KQL queries to query data in KQL databases
 
 The selected tool generates a query using the schema, metadata, and context that the agent underlying the AI skill provides. Then the tool validates the query, to ensure proper formatting and compliance with its security protocols, and its own Responsible AI (RAI) policies.
 
@@ -157,13 +150,13 @@ To remove a data source, hover over the data source name in the **Explorer** on 
 
 <!--<img src="./media/how-to-create-ai-skill/delete-datasource.png" alt="Screenshot showing how to delete or refresh data sources." width="300"/> -->
 
-:::image type="content" source="./media/how-to-create-ai-skill/delete-datasource.png" alt-text="Screenshot showing how to delete or refresh data sources" lightbox="./media/how-to-create-ai-skill/delete-datasource.png":::
+:::image type="content" source="./media/how-to-create-ai-skill/delete-datasource.png" alt-text="Screenshot showing how to delete or refresh data sources." lightbox="./media/how-to-create-ai-skill/delete-datasource.png":::
 
 Alternatively, if your data source changed, you can select **Refresh** within the same menu, as shown in the following screenshot:
 
 <!-- <img src="./media/how-to-create-ai-skill/refresh-datasource.png" alt="Screenshot showing how to refresh a data source." width="300"/> -->
 
-:::image type="content" source="./media/how-to-create-ai-skill/refresh-datasource.png" alt-text="Screenshot showing how to refresh a data source" lightbox="./media/how-to-create-ai-skill/refresh-datasource.png":::
+:::image type="content" source="./media/how-to-create-ai-skill/refresh-datasource.png" alt-text="Screenshot showing how to refresh a data source." lightbox="./media/how-to-create-ai-skill/refresh-datasource.png":::
 
 This ensures that any data source updates are both reflected and correctly populated in the explorer, to keep your AI skill in sync with the latest data.
 
