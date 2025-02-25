@@ -64,11 +64,12 @@ Here are some tips for effectively maximizing productivity with Microsoft Copilo
 - Use natural language that applies to your table and view your database's names, column names, primary keys, and foreign keys. This context helps Copilot generate accurate queries. Specify what columns you wish to see, aggregations, and any filtering criteria as explicitly as possible. Given your schema context, Copilot should be able to correct typos or understand context.
 - When using code completions, leave a comment at the top of the query with `--` to help guide the Copilot with context about the query you're trying to write.
 - Avoid ambiguous or overly complex language in your prompts. Simplify the question while maintaining its clarity. This editing ensures that Copilot can translate it into a meaningful T-SQL query that retrieves the desired data from the ass
-- The following example prompts are clear, specific, and tailored to the properties of your schema and data database, making it easier for Copilot to generate accurate T-SQL queries:
 
-### Example prompts
+## Example prompts
 
 The following example prompts are clear, specific, and tailored to the properties of your schema and data database, making it easier for Copilot to generate accurate T-SQL queries.
+
+In the Chat Pane you can ask questions like:
 
 ```copilot-prompt
  - What are the top-selling products by quantity?
