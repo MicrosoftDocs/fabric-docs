@@ -66,7 +66,7 @@ After a few minutes, the lakehouse populates with the necessary data.
 
 ## Create an AI skill
 
-1. To create a new AI skill, navigate to your workspace and select the **+ New Item** button, as shown in this screenshot:
+To create a new AI skill, navigate to your workspace and select the **+ New Item** button, as shown in this screenshot:
 
    :::image type="content" source="./media/ai-skill-scenario/create-ai-skill.png" alt-text="Screenshot showing where to create AI skills." lightbox="./media/ai-skill-scenario/create-ai-skill.png":::
 
@@ -111,7 +111,7 @@ Use this data source for queries and analyses that involve customer details, tim
 
 To add example queries, select the **Example queries** button to open the example queries pane on the right. This pane provides options to add or edit example queries for all supported data sources. For each data source, you can select **Add or Edit Example Queries** to input the relevant examples, as shown in the following screenshot:
 
-:::image type="content" source="./media/ai-skill-scenario/add-example-queries-LH.png" alt-text="Screenshot showing where you can add the examples you provide to the AI." lightbox="./media/ai-skill-scenario/add-example-queries-LH.png":::
+:::image type="content" source="./media/ai-skill-scenario/add-example-queries-lakehouse.png" alt-text="Screenshot showing where you can add the examples you provide to the AI." lightbox="./media/ai-skill-scenario/add-example-queries-lakehouse.png":::
 
 Here, you should add Example queries for the lakehouse data source that you created.
 
@@ -156,7 +156,7 @@ FROM (
 ) AS t
 ```
 
-:::image type="content" source="./media/ai-skill-scenario/add-example-queries-SQL.png" alt-text="Screenshot showing adding SQL examples." lightbox="./media/ai-skill-scenario/add-example-queries-SQL.png":::
+:::image type="content" source="./media/ai-skill-scenario/add-example-queries-sql.png" alt-text="Screenshot showing adding SQL examples." lightbox="./media/ai-skill-scenario/add-example-queries-sql.png":::
 
 > [!NOTE]
 > Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources.

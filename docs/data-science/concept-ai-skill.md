@@ -46,9 +46,9 @@ Here’s how it works in detail:
 
 **Tool Invocation & Query Generation**: Once the correct data source or sources are identified, the AI skill rephrases the question for clarity and structure and then invokes the corresponding tool to generate a structured query:
 
-- natural language to SQL (NL2SQL) for relational databases (Lakehouse/Warehouse).
-- natural language to DAX (NL2DAX) for Power BI datasets (Semantic Models).
-- natural language to KQL (NL2KQL) for KQL databases.
+- Natural language to SQL (NL2SQL) for relational databases (Lakehouse/Warehouse).
+- Natural language to DAX (NL2DAX) for Power BI datasets (Semantic Models).
+- Natural language to KQL (NL2KQL) for KQL databases.
 
 The selected tool generates a query based on the provided schema, metadata, and context that are passed by the agent underlying the AI skill.
 

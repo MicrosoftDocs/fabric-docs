@@ -30,16 +30,16 @@ With a Microsoft Fabric AI skill, you can create conversational AI experiences t
 - [Cross-geo storing for AI](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) is enabled.
 - A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
 
-## End-to-End Flow for Creating and Consuming AI skills in Fabric
+## End-to-End Flow for creating and consuming AI skills in Fabric
 
 This section outlines the key steps to create, validate, and share an AI skill in Fabric, making it accessible for consumption.
 
 1. Create a new AI skill.
-2. Select your data.
-3. Ask the questions.
-4. Provide instructions to the AI.
-5. Provide examples for each data source.
-6. Publish and share AI skill.
+1. Select your data.
+1. Ask the questions.
+1. Provide instructions to the AI.
+1. Provide examples for each data source.
+1. Publish and share AI skill.
 
 The process is straightforward and you can begin testing the AI skill resources in minutes.
 
@@ -70,7 +70,7 @@ Once you add the data source, the **Explorer** on the left pane of the AI skill 
 
 For subsequent additions of data sources, navigate to the **Explorer** on the left pane of the AI skill page, and select **+ Data source**, as shown in this screenshot:
 
-:::image type="content" source="./media/how-to-create-ai-skill/add-datasource-OE.png" alt-text="Screenshot that shows how to add more data sources." lightbox="./media/how-to-create-ai-skill/add-datasource-OE.png":::
+:::image type="content" source="./media/how-to-create-ai-skill/add-datasource-onelake-explorer.png" alt-text="Screenshot that shows how to add more data sources." lightbox="./media/how-to-create-ai-skill/add-datasource-onelake-explorer.png":::
 
 The OneLake catalog opens again, and you can seamlessly add more data sources as needed.
 
@@ -100,31 +100,31 @@ These questions are currently out of scope because they require complex reasonin
 
 When you ask a question, the AI skill uses the Azure OpenAI Assistant API to process the request. The flow operates this way:
 
-### Schema Access Using User Credentials
+### Schema access with user credentials
 
 The system first uses the credentials of the user to access the schema of the data source (for example, lakehouse, warehouse, PBI semantic model, or KQL databases). This ensures that the system fetches data structure information that the user has permission to view.
 
-### Constructing the Prompt
+### Constructing the prompt
 
 To interpret the user's question, the system combines:
 
 1. User Query: The natural language question provided by the user.
-2. Schema Information: Metadata and structural details of the data source retrieved in the previous step.
-3. Examples and Instructions: Any predefined examples (for example, sample questions and answers) or specific instructions provided when setting up the AI skill. These examples and instructions help refine the AI's understanding of the question, and guide how the AI interacts with the data.
+1. Schema Information: Metadata and structural details of the data source retrieved in the previous step.
+1. Examples and Instructions: Any predefined examples (for example, sample questions and answers) or specific instructions provided when setting up the AI skill. These examples and instructions help refine the AI's understanding of the question, and guide how the AI interacts with the data.
 
 All this information is used to construct a prompt. This prompt serves as an input to the Azure OpenAI Assistant API, which behaves as an agent underlying the AI skill. This essentially instructs the AI skill about how to process the query, and the type of answer to produce.
 
-### Tool Invocation Based on Query Needs
+### Tool invocation based on query needs
 
 The agent analyzes the constructed prompt, and decides which tool to invoke to retrieve the answer:
 
 1. Natural Language to SQL (NL2SQL): Used to generate SQL queries when the data resides in a lakehouse or warehouse
-2. Natural Language to DAX (NL2DAX): Used to create DAX queries to interact with semantic models in Power BI data sources
-3. Natural Language to KQL (NL2KQL): Used to construct KQL queries to query data in KQL databases
+1. Natural Language to DAX (NL2DAX): Used to create DAX queries to interact with semantic models in Power BI data sources
+1. Natural Language to KQL (NL2KQL): Used to construct KQL queries to query data in KQL databases
 
 The selected tool generates a query using the schema, metadata, and context that the agent underlying the AI skill provides. Then the tool validates the query, to ensure proper formatting and compliance with its security protocols, and its own Responsible AI (RAI) policies.
 
-### Response Construction
+### Response construction
 
 The agent underlying the AI skill executes the query and ensures that the response is structured and formatted appropriately. The agent often includes extra context to make the answer user-friendly. Finally, the answer is displayed to the user in a conversational interface, as shown in the following screenshot:
 
@@ -155,15 +155,15 @@ The Clear chat feature erases all chat history and starts a new session. Once yo
 
 To remove a data source, hover over the data source name in the **Explorer** on the left pane of the AI skill page until the three-dot menu appears. Select the three dots to reveal the options, then select **Remove** to delete the data source as shown in the following screenshot:
 
-<img src="./media/how-to-create-ai-skill/delete-datasource.png" alt="Screenshot showing how to delete or refresh data sources." width="300"/>
+<!--<img src="./media/how-to-create-ai-skill/delete-datasource.png" alt="Screenshot showing how to delete or refresh data sources." width="300"/> -->
 
-<!-- :::image type="content" source="./media/how-to-create-ai-skill/delete-datasource.png" alt-text="Screenshot showing how to delete or refresh data sources" lightbox="./media/how-to-create-ai-skill/delete-datasource.png"::: -->
+:::image type="content" source="./media/how-to-create-ai-skill/delete-datasource.png" alt-text="Screenshot showing how to delete or refresh data sources" lightbox="./media/how-to-create-ai-skill/delete-datasource.png":::
 
 Alternatively, if your data source changed, you can select **Refresh** within the same menu, as shown in the following screenshot:
 
-<img src="./media/how-to-create-ai-skill/refresh-datasource.png" alt="Screenshot showing how to refresh a data source." width="300"/>
+<!-- <img src="./media/how-to-create-ai-skill/refresh-datasource.png" alt="Screenshot showing how to refresh a data source." width="300"/> -->
 
-<!-- :::image type="content" source="./media/how-to-create-ai-skill/refresh-datasource.png" alt-text="Screenshot showing how to refresh a data source" lightbox="./media/how-to-create-ai-skill/refresh-datasource.png"::: -->
+:::image type="content" source="./media/how-to-create-ai-skill/refresh-datasource.png" alt-text="Screenshot showing how to refresh a data source" lightbox="./media/how-to-create-ai-skill/refresh-datasource.png":::
 
 This ensures that any data source updates are both reflected and correctly populated in the explorer, to keep your AI skill in sync with the latest data.
 
@@ -175,9 +175,9 @@ The AI skill offers several configuration options that allow users to customize 
 
 You can provide specific instructions to guide the AI's behavior. To add them, select **AI instructions** as shown in the following screenshot:
 
-<img src="./media/how-to-create-ai-skill/select-adding-instructions.png" alt="Screenshot showing selection of the AI instructions button." width="300"/>
+<!-- <img src="./media/how-to-create-ai-skill/select-adding-instructions.png" alt="Screenshot showing selection of the AI instructions button." width="300"/> -->
 
-<!-- :::image type="content" source="./media/how-to-create-ai-skill/select-adding-instructions.png" alt-text="Screenshot showing selection of the AI instructions button." lightbox="./media/how-to-create-ai-skill/select-adding-instructions.png"::: -->
+:::image type="content" source="./media/how-to-create-ai-skill/select-adding-instructions.png" alt-text="Screenshot showing selection of the AI instructions button." lightbox="./media/how-to-create-ai-skill/select-adding-instructions.png":::
 
 The AI instructions pane opens, as shown in this screenshot:
 
