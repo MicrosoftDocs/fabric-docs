@@ -113,3 +113,4 @@ display(translations)
 - Summarize text with [`ai.summarize`](summarize.md).
 - Answer custom user prompts with [`ai.generate_response`](generate-response.md).
 - To learn more about the full set of AI functions, please visit [this overview article](ai-function-overview.md).
+- Learn how to [customize the configuration of AI functions](ai-function-configuration.md).
