@@ -1,6 +1,6 @@
 ---
 title: Answer custom user prompts with the `ai.generate_response` function
-description: Learn how to use the `ai.generate_response` function, which invokes Generative AI to generate custom text responses based on your own instructions.
+description: Learn how to use the `ai.generate_response` function to generate custom text responses based on your own instructions.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
@@ -13,22 +13,22 @@ ms.search.form: AI functions
 
 # Answer custom user prompts with the `ai.generate_response` function
 
-The `ai.generate_response` function uses Generative AI to generate custom text responses based on your own instructions—all in just a single line of code.
+The `ai.generate_response` function uses Generative AI to generate custom text responses based on your own instructions—all with a single line of code.
 
-To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
 
 > [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md) in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and above:
+> This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
-> - Please be sure to review the prerequisites in [this overview article](ai-function-overview.md), including the [library installations](ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - Although the underlying model can handle several languages, most of the AI functions have been optimized for use on English texts.
-> - To learn about customizing the configuration of AI functions, please visit [this article](ai-function-configuration.md).
+> - Review the prerequisites in [this overview article](./ai-function-overview.md), including the [library installations](./ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
+> - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
 
 ## Use `ai.generate_response` with pandas
 
-The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class (unlike the other AI functions, which extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class). The function can be called on an entire pandas DataFrame to generate custom text responses row by row, using either a simple prompt (i.e. a literal string that considers all columns values as context) or a template prompt (i.e. a format string that considers only embedded values from designated columns as context).
+The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class. The `ai.generate_response` function differs from the other AI functions, because those functions extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call this function on an entire pandas DataFrame, to generate custom text responses row by row. You use either a simple prompt (a literal string that considers all columns values as context) or a template prompt (a format string that considers only embedded values from designated columns as context).
 
-The function returns a pandas Series containing custom text responses for each row of input, which can be stored in a new column of the DataFrame.
+The function returns a pandas Series that contains custom text responses for each row of input. The text responses can be stored in a new DataFrame column.
 
 ### Syntax
 
@@ -50,12 +50,12 @@ df["response"] = df.ai.generate_response(prompt="Instructions for a custom respo
 
 | **Name** | **Description** |
 |---|---|
-| **`prompt`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) containing prompt instructions to be applied to input text values for custom responses. |
-| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) indicating whether the prompt should be treated as a format string that considers only certain columns for context, or as a literal string that considers all columns for context. If this parameter is set to `True`, then only specific column values from each row will be considered by the prompt, and those column names must be designated with curly braces. (Other columns will be ignored.) If this parameter is set to `False`, as it is by default, then all column values in an input row will be considered by the prompt. |
+| **`prompt`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) that contains prompt instructions to be applied to input text values for custom responses. |
+| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt should be treated as a format string that considers only certain columns for context, or as a literal string that considers all columns for context. If this parameter is set to `True`, only specific column values from each row are considered by the prompt. In this case, those column names must be designated with curly braces. Other columns are ignored. If this parameter is set to its default value of `False`, then the prompt will consider all column values for each input row. |
 
 ### Returns
 
-A [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) containing custom text responses to the prompt for each row of input text.
+The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) that contains custom text responses to the prompt for each input text row.
 
 ### Example
 
@@ -95,9 +95,9 @@ display(df)
 
 ## Use `ai.generate_response` with PySpark
 
-The `ai.generate_response` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter, along with a string-based prompt and a boolean indicating whether that prompt should be treated as a format string.
+The `ai.generate_response` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter. You must also specify a string-based prompt, and a boolean that indicates whether that prompt should be treated as a format string.
 
-The function returns a new DataFrame with custom responses for each row of input text stored in an output column.
+The function returns a new DataFrame, with custom responses for each input text row stored in an output column.
 
 ### Syntax
 
@@ -119,14 +119,14 @@ df.ai.generate_response(prompt="Instructions for a custom response based on spec
 
 | **Name** | **Description** |
 |---|---|
-| **`prompt`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing prompt instructions to be applied to input text values for custom responses. |
-| **`is_prompt_template`** <br> Optional | A [boolean](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.BooleanType.html) indicating whether the prompt should be treated as a format string that considers only certain columns for context, or as a literal string that considers all columns for context. If this parameter is set to `True`, then only specific column values from each row will be considered by the prompt, and those column names must be designated with curly braces. (Other columns will be ignored.) If this parameter is set to `False`, as it is by default, then all column values in an input row will be considered by the prompt |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store custom responses for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
-| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
+| **`prompt`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains prompt instructions to be applied to input text values, for custom responses. |
+| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt should be treated as a format string that considers only certain columns for context, or as a literal string that considers all columns for context. If this parameter is set to `True`, only specific column values from each row are considered by the prompt. In this case, those column names must be designated with curly braces. Other columns are ignored. If this parameter is set to its default value of `False`, then the prompt will consider all column values for each input row. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store custom responses for each row of input text. If this parameter is not set, a default name is generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name is generated for the error column. If there are no errors for a row of input, the value in this column is `null`. |
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing custom text responses to the prompt for each row of text in the input column.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains custom text responses to the prompt for each input column text row.
 
 ### Example
 
@@ -166,12 +166,12 @@ display(responses)
 
 ## Related content
 
-- Calculate similarity with [`ai.similarity`](similarity.md).
-- Categorize text with [`ai.classify`](classify.md).
-- Detect sentiment with [`ai.analyze_sentiment`](analyze-sentiment.md).
-- Extract entities with [`ai_extract`](extract.md).
-- Fix grammar with [`ai.fix_grammar`](fix-grammar.md).
-- Summarize text with [`ai.summarize`](summarize.md).
-- Translate text with [`ai.translate`](translate.md).
-- Learn more about the full set of AI functions [here](ai-function-overview.md).
-- Learn how to customize the configuration of AI functions [here](ai-function-configuration.md).
+- Calculate similarity with [`ai.similarity`](./similarity.md).
+- Categorize text with [`ai.classify`](./classify.md).
+- Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
+- Extract entities with [`ai_extract`](./extract.md).
+- Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
+- Summarize text with [`ai.summarize`](./summarize.md).
+- Translate text with [`ai.translate`](./translate.md).
+- Learn more about the full set of AI functions [here](./ai-function-overview.md).
+- Learn how to customize the configuration of AI functions [here](./ai-function-configuration.md).

@@ -1,6 +1,6 @@
 ---
 title: Categorize text with the `ai.classify` function
-description: Learn how to use the `ai.classify` function, which invokes Generative AI to categorize input text according to custom labels you choose.
+description: Learn how to use the `ai.classify` function to categorize input text according to custom labels you choose.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
@@ -13,22 +13,22 @@ ms.search.form: AI functions
 
 # Categorize text with the `ai.classify` function
 
-The `ai.classify` function uses Generative AI to categorize input text according to custom labels you choose—all in just a single line of code.
+The `ai.classify` function uses Generative AI to categorize input text according to custom labels you choose—all with a single line of code.
 
-To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
 
 > [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md) in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and above:
+> This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
-> - Please be sure to review the prerequisites in [this overview article](ai-function-overview.md), including the [library installations](ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - Although the underlying model can handle several languages, most of the AI functions have been optimized for use on English texts.
-> - To learn about customizing the configuration of AI functions, please visit [this article](ai-function-configuration.md).
+> - Review the prerequisites in [this overview article](./ai-function-overview.md), including the [library installations](./ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
+> - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
 
 ## Use `ai.classify` with pandas
 
-The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to assign user-provided labels to each row of input.
+The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to assign user-provided labels to each input row.
 
-The function returns a pandas Series containing classification labels, which can be stored in a new column of the DataFrame.
+The function returns a pandas Series that contains classification labels, which can be stored in a new DataFrame column.
 
 ### Syntax
 
@@ -44,7 +44,7 @@ df["classification"] = df["text"].ai.classify("category1", "category2", "categor
 
 ### Returns
 
-A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing classification labels for each row of input text. If a text value cannot be classified, the corresponding label will be `null`.
+The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains classification labels for each input text row. If a text value can't be classified, the corresponding label is `null`.
 
 ### Example
 
@@ -66,7 +66,7 @@ display(df)
 
 The `ai.classify` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter, along with a list of classification labels.
 
-The function returns a new DataFrame with labels matching each row of input text stored in an ouput column.
+The function returns a new DataFrame with labels that match each row of input text stored in an output column.
 
 ### Syntax
 
@@ -78,14 +78,14 @@ df.ai.classify(labels=["category1", "category2", "category3"], input_col="text",
 
 | **Name** | **Description** |
 |---|---|
-| **`labels`** <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) representing the set of classification labels to be matched to text values in the input column. |
-| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be classified according to the custom labels. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store classification label for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
-| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
+| **`labels`** <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that represents the set of classification labels to be matched to text values in the input column. |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to be classified according to the custom labels. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store a classification label for each input text row. If this parameter isn't set, a default name is generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column. The new column stores any OpenAI errors that result from processing each row of input text. If this parameter isn't set, a default name is generated for the error column. If there are no errors for a row of input, the value in this column is `null`. |
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing classification labels that match each row of text in the input column. If a text value cannot be classified, the corresponding label will be `null`.
+The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains classification labels that match each input column text row. If a text value can't be classified, the corresponding label is `null`.
 
 ### Example
 
@@ -105,12 +105,12 @@ display(categories)
 
 ## Related content
 
-- Calculate similarity with [`ai.similarity`](similarity.md).
-- Detect sentiment with [`ai.analyze_sentiment`](analyze-sentiment.md).
-- Extract entities with [`ai_extract`](extract.md).
-- Fix grammar with [`ai.fix_grammar`](fix-grammar.md).
-- Summarize text with [`ai.summarize`](summarize.md).
-- Translate text with [`ai.translate`](translate.md).
-- Answer custom user prompts with [`ai.generate_response`](generate-response.md).
-- Learn more about the full set of AI functions [here](ai-function-overview.md).
-- Learn how to customize the configuration of AI functions [here](ai-function-configuration.md).
+- Calculate similarity with [`ai.similarity`](./similarity.md).
+- Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
+- Extract entities with [`ai_extract`](./extract.md).
+- Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
+- Summarize text with [`ai.summarize`](./summarize.md).
+- Translate text with [`ai.translate`](./translate.md).
+- Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
+- Learn more about the full set of AI functions [here](./ai-function-overview.md).
+- Learn how to customize the configuration of AI functions [here](./ai-function-configuration.md).
