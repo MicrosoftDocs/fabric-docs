@@ -11,17 +11,6 @@ ms.topic: overview
 
 Microsoft Copilot for [Product/Service] is an AI-powered assistant designed to help you streamline and automate your tasks. By leveraging advanced machine learning algorithms, Copilot can understand your needs and provide intelligent suggestions, automate repetitive tasks, and enhance your productivity.
 
-## How Copilot Works
-
-Copilot operates through a high-level architecture that includes:
-
-- **Data Ingestion**: Collects data from various sources within the [Product/Service] ecosystem.
-- **Machine Learning Models**: Utilizes pre-trained models to analyze and interpret the data.
-- **User Interaction**: Provides a user-friendly interface for interaction and feedback.
-- **Continuous Learning**: Continuously improves its performance based on user interactions and new data.
-
-This architecture ensures that Copilot can deliver accurate and relevant assistance, making your experience with [Product/Service] more efficient and enjoyable.
-
 ## Features of Copilot for [Product/Service]
 
 [Overview of key features and capabilities.]
