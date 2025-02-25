@@ -10,7 +10,7 @@ ms.collection:
   - ce-skilling-ai-copilot
 ---
 
-# What is Microsoft Copilot for SQL database in Microsoft Fabric? (Preview)
+# What is Microsoft Copilot for SQL database in Microsoft Fabric (Preview)?
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
@@ -20,7 +20,7 @@ Microsoft Copilot for SQL database in Microsoft Fabric is an AI assistant that s
 
 This article provides an overview of Microsoft Copilot for SQL Database in Microsoft Fabric, an AI-powered assistant designed to enhance your database management and querying experience. Whether you're a database administrator, developer, or data analyst, this guide will help you understand how Copilot can improve your productivity, accuracy, and learning by offering features like code completion, quick actions, and natural language to SQL conversion. Read on to discover how Copilot can streamline your SQL database tasks and make your workflow more efficient.
 
-## Why use Copilot for SQL database?
+## Features of Copilot for SQL database in Microsoft Fabric
 
 Here are some benefits for using Microsoft Copilot for SQL database in Microsoft Fabric:
 
@@ -28,17 +28,17 @@ Here are some benefits for using Microsoft Copilot for SQL database in Microsoft
 - **Improved accuracy**: By using AI, Copilot can help reduce errors in your T-SQL code, ensuring that your queries are more accurate and reliable.
 - **Enhanced learning**: Copilot can provide explanations and suggestions for T-SQL code, helping you learn and understand SQL better.
 
-## Features of Copilot for SQL database
-
 - [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md): Start writing T-SQL in the SQL query editor and Copilot will automatically generate a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. 
 
 - **[How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
 
   - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios can include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot will also provide comments that explain the changes and suggest SQL best practices.
-  
+ 
   - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
-  
+
 - **[How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)**: Use the chat pane to ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
+    - Natural Language to SQL - This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
+    - Document-based Q&A - This tool generates natural language answers to questions about the database schema, such as table and column names, primary keys, and foreign keys.
 
 Microsoft Copilot for SQL database in Microsoft Fabric offers a range of features designed to enhance your database management experience. From intelligent code completion to quick actions and natural language to SQL conversion, Copilot provides tools that streamline your workflow and improve productivity. Below, we explore these features in detail.
 
@@ -53,10 +53,6 @@ Microsoft Copilot for SQL database in Microsoft Fabric offers a range of feature
 - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, etc. Copilot also provides comments that explain the changes and suggest SQL best practices.
 
 - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
-
-### Natural Language to SQL
-
-This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
 
 ## Enable Copilot in SQL database in Microsoft Fabric
 
