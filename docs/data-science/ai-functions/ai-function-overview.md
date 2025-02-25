@@ -15,20 +15,20 @@ ms.search.form: AI functions
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-Microsoft Fabric empowers all users—from developers to business analysts—to derive more value from their enterprise data using Generative AI, with experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and the [AI skill](../how-to-create-ai-skill.md). Now, thanks to a new set of AI functions for text analytics, Fabric users can harness the power of industry-leading LLMs to transform and enrich data with lightweight, user-friendly code. There's no need for detailed configuration, complex infrastructure management, or even specific technical expertise.
+With Microsoft Fabric, all users—from developers to business analysts—can derive more value from their enterprise data with Generative AI experiences, including [Copilot](../../get-started/copilot-notebooks-overview.md) and [AI skills](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading LLMs to transform and enrich data with lightweight, user-friendly code. They don't need detailed configuration, complex infrastructure management, or even specific technical expertise.
 
 AI functions, currently in public preview, allow you to complete the following tasks—all in a single line of code:
 
-- [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with a single common text value or with corresponding text values in another column.
+- [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with a single common text value, or with corresponding text values in another column.
 - [**Categorize text with `ai.classify`**](#categorize-text-with-aiclassify): Classify input text values according to labels you choose.
 - [**Detect sentiment with `ai.analyze_sentiment`**](#detect-sentiment-with-aianalyze_sentiment): Identify the emotional state expressed by input text.
-- [**Extract entities with `ai_extract`**](#extract-entities-with-aiextract): Find and extract specific types of information from input text, such as locations or names.
+- [**Extract entities with `ai_extract`**](#extract-entities-with-aiextract): Find and extract specific types of information from input text, for example locations or names.
 - [**Fix grammar with `ai.fix_grammar`**](#fix-grammar-with-aifix_grammar): Correct the spelling, grammar, and punctuation of input text.
 - [**Summarize text with `ai.summarize`**](#summarize-text-with-aisummarize): Get summaries of input text.
 - [**Translate text with `ai.translate`**](#translate-text-with-aitranslate): Translate input text into another language.
 - [**Answer custom user prompts with `ai.generate_response`**](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
 
-Whether you're looking to translate product reviews from one language into another or to generate action items using custom text prompts, AI functions put the power of Fabric's native LLM into your hands, turbocharging data analytics regardless of your level of experience.
+Whether you want to translate product reviews from one language into another, or to generate action items using custom text prompts, AI functions put the power of Fabric's native LLM into your hands, turbocharging data analytics regardless of your level of experience.
 
 ## Prerequisites
 
@@ -44,9 +44,9 @@ Whether you're looking to translate product reviews from one language into anoth
 
 ## Getting started with AI functions
 
-To access the AI functions library in a Fabric notebook, you need to install some custom packages. In a future release, this step will be handled for you. Until then, please run the following cells to use AI functions with pandas or PySpark, depending on your use case.
+Use of the AI functions library in a Fabric notebook requires the installation of certain custom packages. The following cells install those packages. After installation, you can use AI functions with pandas or PySpark, depending on your own use case. A future release will handle the installation of these packages automatically.
 
-The first cell will install the AI functions library and its dependencies.
+The first cell installs the AI functions library and its dependencies.
 
 # [pandas](#tab/pandas)
 
@@ -80,7 +80,7 @@ The first cell will install the AI functions library and its dependencies.
 
 ---
 
-The second cell will import the AI functions library and its dependencies (plus an optional library in Python for displaying dynamic progress bars to track the status of every function you apply).
+The second cell imports the AI functions library and its dependencies. It also imports an optional Python library to display dynamic progress bars that track the status of every function you apply.
 
 # [pandas](#tab/pandas)
 
@@ -108,14 +108,14 @@ defaults.set_deployment_name("gpt-35-turbo-0125")
 
 ## Applying AI functions
 
-Each of the following functions allows you to invoke Fabric's native LLM endpoint to transform and enrich data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. Support for more programming languages will be available in the future.
+Each of the following functions allows you to invoke Fabric's native LLM endpoint, transforming or enriching data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. Support for more programming languages will be available in the future.
 
 > [!TIP]
-> To learn about customizing the configuration of AI functions, please visit [this article](ai-function-configuration.md).
+> To learn about customizing the configuration of AI functions, please visit [this article](./ai-function-configuration.md).
 
-### Calculate similarity with [`ai.similarity`](similarity.md)
+### Calculate similarity with **ai.similarity**
 
-The `ai.similarity` function invokes AI to compare input text values a single common text value or to corresponding text values in another column. Similarity scores can range from -1 (opposites) to 1 (identical), with 0 indicating that the values are completely unrelated in meaning. For more detailed instructions on how to use `ai.similarity`, please visit [this dedicated article](similarity.md).
+The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with corresponding text values in another column. Similarity scores can range from **-1** (opposites) to **1** (identical). A score of **0** indicates that the values are completely unrelated in meaning. For more detailed instructions about the use of `ai.similarity`, please visit [this article](./similarity.md).
 
 #### Sample usage
 
@@ -153,9 +153,9 @@ display(similarity)
 
 ---
 
-### Categorize text with [`ai.classify`](classify.md)
+### Categorize text with **ai.classify**
 
-The `ai.classify` function invokes AI to categorize input text according to custom labels you choose. For more detailed instructions on how to use `ai.classify`, please visit [this dedicated article](classify.md).
+The `ai.classify` function invokes AI to categorize input text, according to custom labels you choose. For more information about the use of `ai.classify`, please visit [this article](./classify.md).
 
 #### Sample usage
 
@@ -193,9 +193,9 @@ display(categories)
 
 ---
 
-### Detect sentiment with [`ai.analyze_sentiment`](analyze-sentiment.md)
+### Detect sentiment with **ai.analyze_sentiment**
 
-The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If it can’t be determined, the sentiment is left blank. For more detailed instructions on how to use `ai.analyze_sentiment`, please visit [this dedicated article](analyze-sentiment.md).
+The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If AI can't make this determination, the sentiment is left blank. For more detailed instructions about the use of `ai.analyze_sentiment`, please visit [this article](./analyze-sentiment.md).
 
 #### Sample usage
 
@@ -235,9 +235,9 @@ display(sentiment)
 
 ---
 
-### Extract entities with [`ai.extract`](extract.md)
+### Extract entities with **ai.extract**
 
-The `ai.extract` function invokes AI to find and extract specific types of information designated by labels you choose (such as locations or names) from input text. For more detailed instructions on how to use `ai.extract`, please visit [this dedicated article](extract.md).
+The `ai.extract` function invokes AI to find and extract specific types of information designated by labels you choose—for example, locations or names—from input text. For more detailed instructions about the use of `ai.extract`, please visit [this article](./extract.md).
 
 #### Sample usage
 
@@ -273,9 +273,9 @@ display(df_entities)
 
 ---
 
-### Fix grammar with [`ai.fix_grammar`](fix-grammar.md)
+### Fix grammar with **ai.fix_grammar**
 
-The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. For more detailed instructions on how to use `ai.fix_grammar`, please visit [this dedicated article](fix-grammar.md).
+The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. For more detailed instructions about the use of `ai.fix_grammar`, please visit [this article](./fix-grammar.md).
 
 #### Sample usage
 
@@ -313,9 +313,9 @@ display(results)
 
 ---
 
-### Summarize text with [`ai.summarize`](summarize.md)
+### Summarize text with **ai.summarize**
 
-The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame or values across all columns, row by row). For more detailed instructions on how to use `ai.summarize`, please visit [this dedicated article](summarize.md).
+The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame, or values across all columns, row by row). For more detailed instructions about the use of `ai.summarize`, please visit [this dedicated article](./summarize.md).
 
 #### Sample usage
 
@@ -371,9 +371,9 @@ display(summaries)
 
 ---
 
-### Translate text with [`ai.translate`](translate.md)
+### Translate text with **ai.translate**
 
-The `ai.translate` function invokes AI to translate input text to a new language of your choosing. For more detailed instructions on how to use `ai.translate`, please visit [this dedicated article](translate.md).
+The `ai.translate` function invokes AI to translate input text to a new language of your choice. For more detailed instructions about the use of `ai.translate`, please visit [this article](./translate.md).
 
 #### Sample usage
 
@@ -411,9 +411,8 @@ display(translations)
 
 ---
 
-### Answer custom user prompts with [`ai.generate_response`](generate-response.md)
-
-The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions on how to use `ai.generate_response`, please visit [this dedicated article](generate-response.md).
+### Answer custom user prompts with **ai.generate_response***
+The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions about the use of `ai.generate_response`, please visit [this article](./generate-response.md).
 
 #### Sample usage
 
