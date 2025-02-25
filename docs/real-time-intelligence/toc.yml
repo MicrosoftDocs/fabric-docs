@@ -13,6 +13,8 @@ items:
     displayName: alm, application lifecycle management, cicd, devops
   - name: Implement medallion architecture
     href: architecture-medallion.md
+  - name: End to end sample
+    href: sample-end-to-end.md
   - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
@@ -159,8 +161,10 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Connect to Azure resources using private endpoints
+      - name: Secure outbound using managed private endpoints
         href: event-streams/set-up-private-endpoint.md
+      - name: Microsoft Entra ID authentication
+        href: event-streams/custom-endpoint-entra-id-auth.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
