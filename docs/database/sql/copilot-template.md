@@ -3,11 +3,8 @@ title: Template for Copilot for [Product/Service]
 description: Learn more about the Microsoft Copilot for [Product/Service], an AI assistant designed to streamline your [Product/Service] tasks.
 author: markingmyname
 ms.author: maghan
-ms.reviewer: yoleichen, sukkaur, wiassaf
 ms.date: 02/15/2025
 ms.topic: overview
-ms.collection:
-  - ce-skilling-ai-copilot
 ---
 
 # What is Microsoft Copilot for [Product/Service]?
@@ -18,14 +15,14 @@ Microsoft Copilot for [Product/Service] is an AI-powered assistant designed to h
 
 Copilot operates through a high-level architecture that includes:
 
-1. **Data Ingestion**: Collects data from various sources within the [Product/Service] ecosystem.
-2. **Machine Learning Models**: Utilizes pre-trained models to analyze and interpret the data.
-3. **User Interaction**: Provides a user-friendly interface for interaction and feedback.
-4. **Continuous Learning**: Continuously improves its performance based on user interactions and new data.
+- **Data Ingestion**: Collects data from various sources within the [Product/Service] ecosystem.
+- **Machine Learning Models**: Utilizes pre-trained models to analyze and interpret the data.
+- **User Interaction**: Provides a user-friendly interface for interaction and feedback.
+- **Continuous Learning**: Continuously improves its performance based on user interactions and new data.
 
 This architecture ensures that Copilot can deliver accurate and relevant assistance, making your experience with [Product/Service] more efficient and enjoyable.
 
-Features of Copilot for [Product/Service]
+## Features of Copilot for [Product/Service]
 
 [Overview of key features and capabilities.]
 
