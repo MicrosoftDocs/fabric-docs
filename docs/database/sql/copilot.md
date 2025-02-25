@@ -14,18 +14,7 @@ ms.collection:
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Microsoft Copilot for SQL Database in Microsoft Fabric is an AI tool designed to simplify the management and querying of SQL databases. It offers features like intelligent code completion, quick actions, and natural language to SQL conversion, seamlessly integrating with your Fabric database to provide smart insights for T-SQL tasks. This article explores how Copilot can enhance productivity, accuracy, and learning for database administrators, developers, and data analysts by streamlining workflows and improving efficiency.
-
-## How Copilot works
-
-Copilot operates through a high-level architecture that includes:
-
-- **Data Ingestion**: Collects data from various sources within the [Product/Service] ecosystem.
-- **Machine Learning Models**: Utilizes pretrained models to analyze and interpret the data.
-- **User Interaction**: Provides a user-friendly interface for interaction and feedback.
-- **Continuous Learning**: Continuously improves its performance based on user interactions and new data.
-
-This architecture ensures that Copilot can deliver accurate and relevant assistance, making your experience with [Product/Service] more efficient and enjoyable.
+Microsoft Copilot for SQL database in Microsoft Fabric is an AI tool designed to simplify the management and querying of SQL databases. Copilot offers intelligent code completion, quick actions, and natural language to SQL conversion. This article explores how Copilot can enhance productivity, accuracy, and learning for database administrators, developers, and data analysts.
 
 ## Features of Copilot for SQL database in Fabric
 
@@ -49,15 +38,7 @@ Here are some benefits of using Microsoft Copilot for SQL database in Microsoft 
 
 **[Code completion](copilot-code-completion.md)**: Start writing T-SQL in the SQL query editor, and Microsoft Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. Copilot can also suggest code completions for table and column names, functions, and keywords.
 
-### Quick actions
-
-**[Quick actions](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
-
-### Chat Pane
-
-**[Natural Language to SQL](copilot-chat-pane.md)**: This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
-
-
+Copilot responds with a T-SQL query or natural language based on your question in the Chat pane:
 
 ## Enable Copilot in SQL database in Fabric
 
