@@ -18,6 +18,8 @@ There are several high-level features Data Factory implements: dataflows, pipeli
 
 - Dataflows enable you to leverage more than 300 transformations in the dataflows designer, letting you transform data easier and with more flexibility than any other tool - including smart AI-based data transformations.
 - Data pipelines enable you to leverage the out-of-the-box rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
+- Copy jobs enable you to quickly and easily move data from any of the hundreds of supported connectors in Fabric, with a simple user interface and minimal learning curve.
+- Apache Airflow jobs enable you to use the full breadth of the Apache Airflow Workflow Orchestration Manager capabilities and leverage your existing workflows within Data Factory.
 
 ## Dataflows
 
