@@ -38,8 +38,12 @@ Here are some benefits of using Microsoft Copilot for SQL database in Microsoft 
   - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
 
 - **[How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)**: Use the chat pane to ask Copilot questions through natural language.
-  - Copilot responds with a generated SQL query or natural language based on the question.
-    - Natural Language to SQL - This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
+
+  Copilot responds with a generated SQL query or natural language based on the question.
+
+  The supported capabilities of interacting through Chat Pane:
+    - **Natural Language to SQL**: Generate T-SQL code and get suggestions of questions to ask to accelerate your workflow.
+    - **Documentation-based Q&A**: Ask Copilot questions about the capabilities of SQL database in Fabric and it provides answers in natural language along with relevant documentations.
 
 ### Code completion
 
@@ -52,6 +56,8 @@ Here are some benefits of using Microsoft Copilot for SQL database in Microsoft 
 ### Chat Pane
 
 **[Natural Language to SQL](copilot-chat-pane.md)**: This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
+
+
 
 ## Enable Copilot in SQL database in Fabric
 
