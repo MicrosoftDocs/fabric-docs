@@ -4,7 +4,7 @@ description: An article
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: article
-ms.date: 02/23/2025
+ms.date: 02/25/2025
 ---
 
 # Cross tenant access (preview)
@@ -12,9 +12,9 @@ ms.date: 02/23/2025
 >[!IMPORTANT]
 >Cross tenant access is a private preview feature. To participate in the preview, contact your Microsoft representative.
 
-Cross tenant access allows guests to access data hosted on a provider's Microsoft Fabric tenant. This feature is useful for organizations that need to access data that's stored on a service provider's tenant. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
+The cross tenant access feature allows guest tenant(s) to access data stored in a provider tenant’s Fabric data warehouses. This feature is useful for organizations that need to access data that's stored on a service provider's tenant. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
 
-This article is aimed at guests who want to set up cross tenant access. 
+This article is aimed at guests who want to set up cross tenant access.
 
 ## How it works
 
