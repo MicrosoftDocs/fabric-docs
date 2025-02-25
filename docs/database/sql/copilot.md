@@ -29,36 +29,29 @@ This architecture ensures that Copilot can deliver accurate and relevant assista
 
 ## Features of Copilot for SQL database in Microsoft Fabric
 
-Here are some benefits of using Microsoft Copilot for SQL database in Microsoft Fabric:
-
-- **Increased productivity**: Copilot can help you write T-SQL queries faster and more efficiently, allowing you to focus on analyzing data rather than writing code.
-
-- **Improved accuracy**: Using AI, Copilot can help reduce errors in your T-SQL code, ensuring your queries are more accurate and reliable.
-
-- **Enhanced learning**: Copilot can provide explanations and suggestions for T-SQL code, helping you learn and understand SQL better.
+Here are some benefits of using Microsoft Copilot for SQL database in Microsoft Fabric.
 
 - [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md): Start writing T-SQL in the SQL query editor, and Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion.
 
 - **[How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
-- **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot also provides comments that explain the changes and suggest SQL best practices.
-- **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
+  - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot also provides comments that explain the changes and suggest SQL best practices.
+  - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
 
 - **[How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)**: Use the chat pane to ask Copilot questions through natural language.
-- Copilot responds with a generated SQL query or natural language based on the question.
-- Natural Language to SQL - This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
-Document-based Q&A: This tool generates natural-language answers to questions about the database schema, such as table and column names, primary keys, and foreign keys.
+  - Copilot responds with a generated SQL query or natural language based on the question.
+    - Natural Language to SQL - This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
 
 ### Code completion
 
-[**Code completion**](copilot-code-completion.md): Start writing T-SQL in the SQL query editor, and Microsoft Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. Copilot can also suggest code completions for table and column names, functions, and keywords.
+**[Code completion**](copilot-code-completion.md)**: Start writing T-SQL in the SQL query editor, and Microsoft Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. Copilot can also suggest code completions for table and column names, functions, and keywords.
 
 ### Quick actions
 
 **[Quick actions](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
 
-- **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, etc. Copilot also provides comments that explain the changes and suggest SQL best practices.
+### Chat Pane
 
-- **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
+**[Natural Language to SQL](copilot-chat-pane.md)**: This tool generates T-SQL code from plain text requests, allowing users to query data without knowing SQL syntax.
 
 ## Enable Copilot in SQL database in Microsoft Fabric
 
