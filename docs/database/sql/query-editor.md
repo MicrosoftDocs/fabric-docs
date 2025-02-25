@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: yoleichen
 ms.date: 12/19/2024
 ms.topic: how-to
-ms.search.form: SQL database - Query with SQL Editor
+ms.search.form: Develop and run queries in SQL editor
 ---
 
 # Query with the SQL query editor
