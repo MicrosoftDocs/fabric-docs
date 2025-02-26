@@ -58,13 +58,14 @@ The variables in the Variable library can be any of the following basic types:
 
 - String: Any character Can be null or empty.
 - Boolean: *True* or *False*.
-- DateTime: The date and time are represented using **ISO 8601 standard**, yyyy-MM-ddTHH:mm:ssZ, where:
+- DateTime: The date and time are represented using **ISO 8601 standard**, yyyy-MM-ddTHH:mm:ss.xxxZ, where:
   - *yyyy-MM-dd* is the four-digit year, followed by the two-digit month, and two-digit day
   - *T* separates the date and the time
-  - *HH:mm:ss* is the two-digit hour in 24-hour format, followed by the two-digit minute, and two-digit second
+  - *HH:mm:ss.xxx* is the two-digit hour in 24-hour format, followed by the two-digit minute, two-digit second and 3 digit millisecond
   - *Z* indicates that the time is in Coordinated Universal Time (UTC)
-  For example, 2024-10-14T04:53:54Z.
-- Number: Any number. Use this type to represent GUIDs.
+  For example, 2025-01-14T16:15:20.123Z.
+- Number: Any number. 
+- GUID: Use this type to represent GUIDs.
 - Integer: A whole number that can be positive, negative, or zero.
 
 Once a variable has a defined value, if you try to change its type, a consent dialog will pop up alerting the user that all the variable values will be reset and that this change could be a breaking change on the consumer item side. 
@@ -73,7 +74,7 @@ Once a variable has a defined value, if you try to change its type, a consent di
 
 When you create a new value set in a Variable library, the new values are set as pointers to the default values. You can change them to be a fixed value.
 If you change the value of a variable in the alternative value set, the alternative value is saved in the value-sets JSON file.
-You can change the order the value sets are displayed or change the value of a variable in the alternative value set in this JASON file in Git.
+You can change the order the value sets are displayed or change the value of a variable in the alternative value set in this JSON file in Git.
 
 ## Considerations and limitations
 
