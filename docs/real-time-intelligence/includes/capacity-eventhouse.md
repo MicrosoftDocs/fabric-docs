@@ -5,7 +5,7 @@ author: shsagir
 ms.author: shsagir
 ms.topic: include
 ms.custom:
-ms.date: 02/17/2025
+ms.date: 03/14/2024
 ---
 | Name                 | Minimum CUs | SSD capacity (GB) of free storage |
 | -----------          | ----------- | --------------------------------- |
@@ -16,4 +16,3 @@ ms.date: 02/17/2025
 | Large                | 26          | 5250-6000                         |
 | Extra large          | 34          | 7000-8000                         |
 | Extra extra large    | 50          | 10500-12000                       |
-| Custom               | 51          | 14680-3666330                     |
