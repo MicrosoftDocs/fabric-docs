@@ -41,7 +41,7 @@ Add a configuration-driven copy activity together with your low-code dataflow re
 
 ## Copy jobs
 
-Data pipelines in Data Factory implement the Copy activity, which supports the full flexibility and integration with other activities in traditional pipelines, but also invovles a learning curve, which can impose challenges and create barriers for new users who want to rapidly instrument the movement of data from source to destination. The Copy job was introduced to simplify the copy process and make moving data quick and easy for a broad range of scenarios that don't require further instrumentation or integration with other activities.
+Data pipelines in Data Factory implement the Copy activity, which supports the full flexibility and integration with other activities in traditional pipelines, but also involves a learning curve, which can impose challenges and create barriers for new users who want to rapidly instrument the movement of data from source to destination. The Copy job was introduced to simplify the copy process and make moving data quick and easy for a broad range of scenarios that don't require further instrumentation or integration with other activities.
 
 :::image type="content" source="media/copy-job/copy-job-mode.png" alt-text="Screenshot of the user interface showing a Copy job." lightbox="media/copy-job/copy-job-mode.png":::
 
