@@ -34,13 +34,12 @@ You can download monitoring templates from the [workspace-monitoring-dashboards]
 
 The templates allow you to create monitoring dashboards that track workspace activities in real time by connecting directly to the underlying monitoring Eventhouse. In the dashboard, you can monitor operations, users, semantic models, database queries, and ingestion patterns.
 
-
 There are two monitoring templates available:
 
 * Real-Time Dashboard template
 * Power BI report template
 
-:::image type="content" source="media/eventhouse/fwm_rtid_template.png" alt-text="Screenshot of the real-time intelligence dashboard based on the template":::
+:::image type="content" source="media/eventhouse/event-house-dashboard.png" alt-text="Screenshot of the real-time intelligence dashboard based on the template" lightbox="media/eventhouse/event-house-dashboard.png":::
 
 ## Related content
 
