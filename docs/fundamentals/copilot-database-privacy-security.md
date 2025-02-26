@@ -1,12 +1,12 @@
 ---
 title: Privacy, security, and responsible use of Copilot for SQL database (preview)
 description: Learn about privacy, security, and responsible use of Copilot for SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: yoleichen, maghan
+author: markingmyname
+ms.author: maghan
+ms.reviewer: yoleichen, wiassaf
 ms.topic: conceptual
 ms.custom:
-ms.date: 10/17/2024
+ms.date: 02/26/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 # Privacy, security, and responsible use of Copilot for SQL database in Microsoft Fabric (preview)
