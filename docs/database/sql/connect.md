@@ -4,11 +4,9 @@ description: Learn about options to connect to your SQL database in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 10/17/2024
+ms.date: 01/16/2025
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
-ms.search.form: product-databases
+ms.search.form: product-databases, Connect to SQL database
 ---
 # Connect to your SQL database in Microsoft Fabric
 
@@ -18,7 +16,7 @@ You can connect to and query your [SQL database in Fabric](overview.md) in all t
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Create or use an existing SQL database in Fabric.
     - If you don't have one already, [create a new SQL database in Fabric](create.md).
 <!--    - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups). -->
@@ -91,6 +89,6 @@ bcp bcptest in "c:\temp\sample.dat" -S <your_server>.database.fabric.microsoft.c
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
-- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
 - [SQL database in Microsoft Fabric](overview.md)
+- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
 - [Ingest data into SQL database via data pipelines](load-data-pipelines.md)

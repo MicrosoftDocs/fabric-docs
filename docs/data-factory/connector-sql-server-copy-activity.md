@@ -4,11 +4,9 @@ description: This article explains how to copy data using SQL server.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Configure SQL server in a copy activity

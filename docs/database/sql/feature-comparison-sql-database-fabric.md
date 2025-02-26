@@ -4,10 +4,9 @@ description: This article compares the database engine features of Azure SQL Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, drskwier
-ms.date: 11/22/2024
+ms.date: 01/16/2025
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
+ms.search.form: SQL database Overview
 ---
 # Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)
 
@@ -16,7 +15,7 @@ ms.custom:
 Azure SQL Database and SQL database in Microsoft Fabric share a common code base with the latest stable version of the Microsoft SQL Database Engine. Most of the standard SQL language, query processing, and database management features are identical.
 
 - For a decision guide comparing Azure SQL Database to SQL database in Fabric, see [Microsoft Fabric decision guide: choose a SQL database](decision-guide.md).
-- For a decision guide comparing SQL database to other data stores in Microsoft Fabric, see [Microsoft Fabric decision guide: choose a data store](../../get-started/decision-guide-data-store.md).
+- For a decision guide comparing SQL database to other data stores in Microsoft Fabric, see [Microsoft Fabric decision guide: choose a data store](../../fundamentals/decision-guide-data-store.md).
 
 Many features are common between SQL Server and Azure SQL Database and SQL database in Fabric, for example:
 
@@ -164,6 +163,7 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 | [BCP](/sql/tools/bcp-utility) | Yes | Yes |
 | [BICEP](/azure/azure-resource-manager/bicep/overview) | Yes | No |
 | [Database watcher](/azure/azure-sql/database-watcher-overview) | Yes | Not currently |
+| [Data Factory in Microsoft Fabric connectors](../../data-factory/connector-overview.md) | Yes, see [Azure SQL Database connector overview](../../data-factory/connector-azure-sql-database-overview.md) | Yes, see [SQL database connector overview (Preview)](../../data-factory/connector-sql-database-overview.md) | 
 | [SMO](/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | Yes, see [SMO](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) | Yes, see [SMO](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) |
 | [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | Yes (minimum version is Visual Studio 2022 17.12) |
 | [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |

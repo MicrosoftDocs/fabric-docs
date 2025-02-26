@@ -8,7 +8,6 @@ metadata:
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.custom:
-    - ignite-2024
   ms.topic: faq
   ms.date: 03/18/2024
 title: |
@@ -16,7 +15,7 @@ title: |
 summary: | 
   This article answers frequently asked questions about Mirrored Azure Cosmos DB database in Microsoft Fabric.
   > [!IMPORTANT]
-  > Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+  > Mirroring for Azure Cosmos DB is currently in [preview](../../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 sections:
   - name: General questions

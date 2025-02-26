@@ -2,15 +2,10 @@
 title: Data management
 description: Learn how to manage your data in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: concept-article
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
-  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: Manage data in a KQL Database
 ---

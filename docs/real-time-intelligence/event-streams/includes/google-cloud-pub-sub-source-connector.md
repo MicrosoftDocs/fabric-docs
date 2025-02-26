@@ -5,7 +5,6 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: include
 ms.custom:
-  - ignite-2024
 ms.date: 11/22/2024
 ---
 

@@ -6,15 +6,14 @@ ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 11/07/2024
 ms.topic: tutorial
-ms.custom:
-  - ignite-2024
+ms.search.form: Get Started
 ---
 
 # SQL database in Fabric tutorial introduction
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-[Microsoft Fabric](../../get-started/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. The purpose of this tutorial is to provide a comprehensive guide to utilizing a **SQL database in Fabric**. This tutorial is tailored to help you navigate through the process of database creation, setting up database objects, exploring autonomous features, and combining and visualizing data. Additionally, you'll learn how to create a GraphQL endpoint, which serves as a modern approach to connecting and querying your data efficiently. You'll also learn how to use the SQL analytics endpoint to work with mirrored data for reporting and analysis, and developing data visualizations.
+[Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. The purpose of this tutorial is to provide a comprehensive guide to utilizing a **SQL database in Fabric**. This tutorial is tailored to help you navigate through the process of database creation, setting up database objects, exploring autonomous features, and combining and visualizing data. Additionally, you'll learn how to create a GraphQL endpoint, which serves as a modern approach to connecting and querying your data efficiently. You'll also learn how to use the SQL analytics endpoint to work with mirrored data for reporting and analysis, and developing data visualizations.
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -27,7 +26,7 @@ This tutorial isn't intended to serve as a reference architecture, nor does it c
 As prerequisites to this tutorial, complete the following steps:
 
 1. Sign into your [Power BI online account](https://powerbi.com/), or if you don't have an account yet, sign up for a free trial.
-1. [Enable Microsoft Fabric for your organization](../../admin/fabric-switch.md) in your tenant.
+1. [Enable Microsoft Fabric for your organization](enable.md) in your tenant.
 
 In this tutorial, you take on the role of a database developer, working at the Contoso Group. Your organization wants to evaluate Supply Chain information for the AdventureWorks and Northwind Traders subsidiaries based on past sales and current on-hand components for various products used in manufacturing.
 
@@ -44,8 +43,6 @@ You'll use sample data along with data and views that you create to Your goal is
 1. [Clean up resources](tutorial-clean-up.md)
 
 ## SQL database in Fabric end-to-end architecture
-
-:::image type="content" source="media/tutorial-introduction/diagram.png" alt-text="Diagram of Microsoft Fabric components and the data flow architecture involved in this tutorial." lightbox="media/tutorial-introduction/diagram.png":::
 
 **Data sources** - Microsoft Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data and build applications that generate and edit data.
 

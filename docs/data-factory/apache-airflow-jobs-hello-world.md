@@ -6,7 +6,6 @@ ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
 ms.custom:
-  - build-2024
 ms.date: 04/15/2024
 ---
 
@@ -34,7 +33,7 @@ To get started, you must complete the following prerequisite:
 
 ### Create an Apache Airflow Job
 
-1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
+1. You can use an existing workspace or [Create a new workspace](../fundamentals/create-workspaces.md).
 
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
 

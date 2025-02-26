@@ -6,7 +6,6 @@ ms.author: yuturchi
 author: yuturchi
 ms.topic: concept-article
 ms.custom:
-  - build-2024
 ms.date: 04/01/2024
 #customer intent: As a security engineer, I want to understand the security features and considerations of Fabric and OneLake so that I can ensure the confidentiality and integrity of the data stored in the lakehouse.
 ---
@@ -69,5 +68,5 @@ When you turn this switch ON, users can access data via all sources. When you tu
 - [OneLake Data Access Control Model (Preview)](./data-access-control-model.md)
 - [Get Started with OneLake Security (Preview)](./get-started-security.md)
 - [OneLake file explorer](../onelake-file-explorer.md)
-- [Workspace roles](../../get-started/roles-workspaces.md)
-- [Share items](../../get-started/share-items.md)
+- [Workspace roles](../../fundamentals/roles-workspaces.md)
+- [Share items](../../fundamentals/share-items.md)

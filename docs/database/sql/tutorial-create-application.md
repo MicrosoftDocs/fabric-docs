@@ -7,7 +7,6 @@ ms.reviewer: bwoody
 ms.date: 10/24/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ---
 
 # Create an application using DevOps and the GraphQL API

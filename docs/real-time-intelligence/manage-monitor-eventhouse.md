@@ -6,7 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
@@ -19,7 +18,7 @@ In this article, you learn about how to manage and gain insights about an eventh
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
 
 ## Navigate to an Eventhouse page

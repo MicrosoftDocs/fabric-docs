@@ -6,7 +6,7 @@ author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.custom: ignite-2024
+ms.custom: 
 ms.date: 08/12/2024
 
 ms.search.form: Data Wrangler

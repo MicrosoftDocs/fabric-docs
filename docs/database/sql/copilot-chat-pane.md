@@ -1,14 +1,13 @@
 ---
-title: "How to: Use the Copilot chat pane for SQL database"
+title: "How To: Use the Copilot Chat Pane for SQL Database"
 description: Learn more about Microsoft Copilot chat pane for SQL database in Microsoft Fabric, to ask questions specific about your database.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen, sukkaur
-ms.date: 10/07/2024
+ms.date: 02/20/2025
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 # How to: Use the Copilot Chat Pane for SQL database in Fabric
 
@@ -48,10 +47,10 @@ The supported capabilities of interacting through chat include:
 ## Regular usage of the chat pane
 
 - The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
-- To clear your conversation, select the broom icon :::image type="content" border="true" source="../../get-started/media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot from the Fabric portal showing the Copilot clean up prompt."::: to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
-- Read our [Privacy, security, and responsible use of Copilot for SQL databases (preview)](../../get-started/copilot-database-privacy-security.md) for details on data and algorithm use.
+- To clear your conversation, select the broom icon :::image type="content" border="true" source="../../data-engineering/media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot from the Fabric portal showing the Copilot clean up prompt."::: to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
+- Read our [Privacy, security, and responsible use of Copilot for SQL databases (preview)](../../fundamentals/copilot-database-privacy-security.md) for details on data and algorithm use.
 
 ## Related content
 
-- [Copilot for SQL database in Fabric (preview)](copilot.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../get-started/copilot-privacy-security.md)
+- [Copilot for SQL database in Microsoft Fabric (preview)](copilot.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

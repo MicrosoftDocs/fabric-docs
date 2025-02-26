@@ -5,8 +5,9 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: tutorial
+ms.service: fabric
+ms.subservice: cicd
 ms.custom:
-  - ignite-2023
 ms.date: 07/10/2024
 #customer intent: As a developer, I want to understand how to use Git integration with deployment pipelines to manage the lifecycle of my apps.
 ---

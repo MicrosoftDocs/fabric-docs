@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: sbahadur
 author: shaween18
 ms.topic: how-to
-ms.date: 11/16/2023
+ms.date: 12/18/2024
 ---
 
 # Transform data by running an Azure Databricks activity
@@ -22,7 +22,7 @@ This article provides a step-by-step walkthrough that describes how to create an
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Configuring an Azure Databricks activity

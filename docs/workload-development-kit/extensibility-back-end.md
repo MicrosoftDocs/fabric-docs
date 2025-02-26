@@ -30,7 +30,7 @@ Azure Relay enables communication between the local development environment and 
 
 The DevGateway utility has two roles:
 
-* It handles the workload's side of the Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity. DevGateway makes the workload accessible in all workspaces that are assigned to that capacity. The utility handles deregistration when the channel stops.
+* It handles the workload's side of the Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific workspace. The utility handles deregistration when the channel disconnects.
 * It works with Azure Relay to channel workload API calls from Fabric to the workload.
 
 Workload Control API calls are made directly from the workload to Fabric. The Azure Relay channel isn't required for the calls.
@@ -465,11 +465,7 @@ If you're a connecting a backend to the sample workload project, your item must 
 
 1. Switch to a named workspace. Leave the default workspace name **My workspace**.
 
-    :::image type="content" source="./media/extensibility-back-end/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
-
 1. From the correct workspace, load the sample workload and proceed with the tests:
-
-    :::image type="content" source="./media/extensibility-back-end/create-sample-workload.png" alt-text="Screenshot of UI for creating sample workload item.":::
 
 ## Contribute
 

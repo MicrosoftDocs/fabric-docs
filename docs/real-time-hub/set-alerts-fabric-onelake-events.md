@@ -63,6 +63,10 @@ On the **Set alert** page, follow these steps:
         1. Select all tables or a specific table that you're interested in, and then select **Add**. 
 
             :::image type="content" source="./media/create-streams-onelake-events/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="./media/create-streams-onelake-events/select-tables.png":::       
+
+        > [!NOTE]
+        > OneLake events are supported for data in OneLake. However, events for data in OneLake via shortcuts are not yet available.
+    
     1. Now, on the **Configure connection settings** page, you can add filters to set the filter conditions by selecting fields to watch and the alert value. To add a filter:
         1. Select **+ Filter**. 
         1. Select a field.

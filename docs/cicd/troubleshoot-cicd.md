@@ -5,10 +5,10 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
+ms.service: fabric
+ms.subservice: cicd
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 07/28/2024
+ms.date: 12/26/2024
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -137,6 +137,22 @@ To understand the considerations and limitations of various lifecycle management
 **Description of problem**: Changing the same item in the workspace and the Git branch can lead a possible conflict. If changes were made in the workspace and in the Git branch on the same item, updates are disabled until the conflict is resolved.  
 **Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
 
+#### Update failure: Fix duplicate logical IDs
+
+**Description of problem**: When trying to update, a dialog pops up indicating failure because the Git directory contains items with duplicate logical IDs.
+
+:::image type="content" source="./media/troubleshoot-cicd/duplicate-logical-id.png" alt-text="Screenshot of error message in the source control pane about duplicate logical IDs.":::
+
+**Cause**: The [logical ID](./git-integration/source-code-format.md#automatically-generated-system-files) of each item in the workspace must be unique. When you copy an item in the workspace, the logical ID is automatically changed to a unique ID. When you copy an item's directory in Git, the logical ID isn't changed. If you copy an item file in Git, and then try to update to the workspace, the logical ID is duplicated, causing an error.
+
+**Solution**: To resolve the issue, you need to change the logical ID of the duplicate item or items in Git before updating the workspace. You have two options:
+
+:::image type="content" source="./media/troubleshoot-cicd/fix-logical-id.png" alt-text="Screenshot of error message offering two options for fixing logical IDs.":::
+
+* If you have permission to make direct commits to the branch, select **Fix with direct commit**. This will modify the item's system file to create a unique logical ID in Git. The workspace data isn't modified until you update from Git.
+
+* If you don't have permission to make direct commits to the branch, select **Create branch and go to Git**. This will open a new branch and change the logical ID. You then need to merge the changes in Git before they can be seen in Fabric. Then, when you update from Git, the workspace data is modified.
+
 #### Update failure: Update doesn't complete because it would break dependency links
 
 **Description of problem**: After selecting **Update all** or **Undo**, a dialog pops up indicating failure because the action would break a dependency links.
@@ -205,7 +221,7 @@ If the following conditions aren't met, you can't see the deployment pipelines b
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
-* You're an admin of a [workspace](../get-started/create-workspaces.md).
+* You're an admin of a [workspace](../fundamentals/create-workspaces.md).
 
 ### I can't see the pipeline stage tag in my workspace
 

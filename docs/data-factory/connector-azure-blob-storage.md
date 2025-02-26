@@ -4,11 +4,9 @@ description: This article provides information about how to create an Azure Blob
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your Azure Blob Storage connection
@@ -48,7 +46,7 @@ You have two ways to browse to this page:
 * In copy assistant, browse to this page after selecting the connector.
 * In pipeline, browse to this page after selecting + New in Connection section and selecting the connector.
 
-### Step 1: Specify the account name or URL, connection and connection name
+### Step 1: Specify the account name or URL, connection, and connection name
 
 :::image type="content" source="./media/connector-azure-blob-storage/configure-azure-blob-storage-connection-common.png" alt-text="Screenshot showing the common connection setup for Azure Blob Storage.":::
 

@@ -20,9 +20,7 @@ Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
 
 ## Prerequisites
 
-* Fabric [Premium](/power-bi/enterprise/service-premium-per-user-faq) or [Trial capacity](../get-started/fabric-trial.md) with a Lakehouse.
-
-* Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API (preview).
+* Fabric [Premium](/power-bi/enterprise/service-premium-per-user-faq) or [Trial capacity](../fundamentals/fabric-trial.md) with a Lakehouse.
 
 * A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
 
@@ -78,14 +76,14 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         else:
           print("targetLakehouse is None")
 
-   df_valid_totalPrice = spark_session.sql("SELECT * FROM Guyhay_LivyDemo2.transactions where TotalPrice > 0")
+   df_valid_totalPrice = spark_session.sql("SELECT * FROM <YourLakeHouseDataTableName>.transactions where TotalPrice > 0")
    df_valid_totalPrice_plus_year = df_valid_totalPrice.withColumn("transaction_year", col("TransactionDate").substr(1, 4))
      
    deltaTablePath = "abfss:<YourABFSSpath>"+str(targetLakehouse)+".Lakehouse/Tables/CleanedTransactions"
    df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
    ```
 
-1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You'll need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code.
+1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You'll need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the Select SQL statement..
 
     :::image type="content" source="media\livy-api\Livy-batch-payload.png" alt-text="Screenshot showing the Python payload cell." lightbox="media\livy-api\Livy-batch-payload.png" :::
 
@@ -220,15 +218,15 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 1. When the batch job is completed state, you can view the session status by navigating to Monitor.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." lightbox="media\livy-api\Livy-batch-job-submission.png":::
+    :::image type="content" source="media\livy-api\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub.png":::
 
 1. Select and open most recent activity name.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." lightbox="media\livy-api\Livy-batch-job-submission.png":::
+    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-run.png":::
 
 1. In this Livy API session case, you can see your previous batch submission, run details, Spark versions, and configuration. Notice the stopped status on the top right.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub.":::
+    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-activity-details.png":::
 
 To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), a Microsoft Entra app token, Livy API endpoint URL, authentication against your Lakehouse, a Spark payload in your Lakehouse, and finally a batch Livy API session.
 

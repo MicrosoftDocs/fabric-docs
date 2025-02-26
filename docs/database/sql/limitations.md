@@ -4,10 +4,9 @@ description: A detailed list of limitations for SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 11/15/2024
+ms.date: 02/24/2025
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
+ms.search.form: SQL database Overview
 ---
 # Limitations in SQL database in Microsoft Fabric (preview)
 
@@ -24,6 +23,7 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 - SQL database in Fabric does not support Change Data Capture (CDC) or Azure Synapse Link for SQL.
 - SQL Audit is not currently supported in SQL database in Fabric.
 - Transparent Data Encryption (TDE) is not supported. SQL database in Fabric uses storage encryption with service-managed keys to protect all customer data at rest. Customer-managed keys are not supported.
+- In a [trial capacity](../../fundamentals/fabric-trial.md), you are limited to three databases. There is no limit on databases in other capacities.
 
 ## Table level  
 
@@ -42,6 +42,14 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 ### SQL analytics endpoint limitations  
 
 - The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
+
+## Availability
+
+SQL database in Fabric is available in most regions where Microsoft Fabric is available. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+
+[!INCLUDE [tenant-region-availability-note](../../includes/tenant-region-availability-note.md)]
+
+Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
 
 ## Limitations
 
