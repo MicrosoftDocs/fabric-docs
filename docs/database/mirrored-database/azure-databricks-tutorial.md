@@ -4,7 +4,7 @@ description: Learn how to create a mirrored database from Azure Databricks in Mi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sheppardshep, mspreshah
-ms.date: 02/21/2025
+ms.date: 02/26/2025
 ms.topic: tutorial
 ---
 
@@ -83,7 +83,7 @@ This section guides you on configuring network security for your Azure Data Lake
 
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
 - To enable the workspace identity authentication type (recommended), the Fabric workspace must be associated with any F capacity. To create a workspace identity, see [Authenticate with workspace identity](../../security/workspace-identity-authenticate.md#step-1-create-the-workspace-identity).
-- Default catalog behind a storage firewall isn't supported. This is storage for the catalog that is created as the default catalog for workspaces where the Unity Catalog is automatically enabled.
+- Azure Databricks workspace storage behind a firewall is not supported.
 - A catalog must be associated with a single storage account. 
 
 ### Enable network security access
