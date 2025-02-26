@@ -56,6 +56,10 @@ For tables that are already under replication before this feature enabled, to in
 
 Currently, mirrored database doesn't support ownership change. If a mirrored database stops working because the item owner has left the organization or it's no longer valid, you need to recreate the mirrored database.
 
+## Supported regions
+
+[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+
 ## Troubleshoot
 
 This section contains general Mirroring troubleshooting steps.
