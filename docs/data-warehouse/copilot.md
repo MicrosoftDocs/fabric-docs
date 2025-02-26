@@ -1,10 +1,10 @@
 ---
-title: "Copilot for Data Warehouse (Preview)"
+title: Overview of Microsoft Copilot for Microsoft Data Warehouse
 description: Learn more about Microsoft Copilot for Fabric Data Warehouse, the integrated AI assistant for your Fabric warehouse.
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 ms.topic: conceptual
 ms.collection:
   - ce-skilling-ai-copilot
@@ -12,17 +12,17 @@ ms.custom:
   - copilot-learning-hub
 ---
 
-# Overview of Copilot for Data Warehouse
+# What is Copilot for Data Warehouse?
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Copilot integrates seamlessly with your Fabric warehouse, providing intelligent insights to help you along each step of the way in your T-SQL explorations.
 
-## Introduction to Copilot for Data Warehouse
-
 Copilot for Data Warehouse utilizes table and view names, column names, primary key, and foreign key metadata to generate T-SQL code. Copilot for Data Warehouse doesn't use data in tables to generate T-SQL suggestions.
 
-Key features of Copilot for Warehouse include:
+## Features of Copilot for Data Warehouse in Fabric
+
+Copilot for Data Warehouse offers the following features:
 
 - **Natural Language to SQL**: Ask Copilot to generate SQL queries using simple natural language questions.
 - **Code completion**: Enhance your coding efficiency with AI-powered code completions.
@@ -31,21 +31,20 @@ Key features of Copilot for Warehouse include:
 
 There are three ways to interact with Copilot in the Fabric Warehouse editor.
 
-- **Chat Pane**: Use the chat pane to ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
+- **[Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)**: Use the chat pane to ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
+  - **Natural Language to SQL**: Generate T-SQL code and get suggestions of questions to ask to accelerate your workflow.
+  
+- **[Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)**: Start writing T-SQL in the SQL query editor and Copilot will automatically generate a code suggestion to help complete your query. The **Tab** key accepts the code suggestion, or keeps typing to ignore the suggestion.
 
-  - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
-
-- **Code completions**: Start writing T-SQL in the SQL query editor and Copilot will automatically generate a code suggestion to help complete your query. The **Tab** key accepts the code suggestion, or keeps typing to ignore the suggestion.
-
-  - [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
-
-- **Quick Actions**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
-
+- **[Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
   - **Explain:** Copilot can provide natural language explanations of your SQL query and warehouse schema in comments format.
   - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios can include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot also provides comments that explain the changes and suggest SQL best practices.
-  - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 
-## Use Copilot effectively
+## Enable Copilot
+
+[!INCLUDE [copilot-include](../includes/copilot-include.md)]
+
+## Best practices for using Copilot in Data Warehouse in Fabric
 
 Here are some tips for maximizing productivity with Copilot.
 
@@ -56,26 +55,29 @@ Here are some tips for maximizing productivity with Copilot.
 - When using code completions, leave a comment at the top of the query with `--` to help guide the Copilot with context about the query you're trying to write.
 - Avoid ambiguous or overly complex language in your prompts. Simplify the question while maintaining its clarity. This editing ensures Copilot can effectively translate it into a meaningful T-SQL query that retrieves the desired data from the associated tables and views.
 - Currently, natural language to SQL supports English language to T-SQL.
+
+## Example prompts
+
 - The following example prompts are clear, specific, and tailored to the properties of your schema and data warehouse, making it easier for Copilot to generate accurate T-SQL queries:
-  - `Show me all properties that sold last year`
-  - `Count all the products, group by each category`
-  - `Show all agents who sell properties in California`
-  - `Show agents who have listed more than two properties for sale`
-  - `Show the rank of each agent by property sales and show name, total sales, and rank`
 
-## Enable Copilot
+In the Chat Pane, you can use prompts like:
 
-[!INCLUDE [copilot-include](../includes/copilot-include.md)]
+```copilot-prompt
+  - Show me all properties that sold last year
+  - Count all the products, group by each category
+  - Show all agents who sell properties in California
+  - Show agents who have listed more than two properties for sale
+  - Show the rank of each agent by property sales and show name, total sales, and rank
+```
 
-## What should I know to use Copilot responsibly?
+> [!NOTE]  
+> AI powers Copilot, so surprises and mistakes are possible.
 
-Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
+## Responsible use of Copilot in Fabric
 
-Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.
+For information about using Copilot responsibly, visit [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
 
-For more information, see [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md).
-
-## Limitations of Copilot for Data Warehouse
+## Limitations
 
 Here are the current limitations of Copilot for Data Warehouse:
 
@@ -87,8 +89,8 @@ Here are the current limitations of Copilot for Data Warehouse:
 
 ## Related content
 
-- [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md)
+- [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
 - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
 - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 - [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
-- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot for Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
