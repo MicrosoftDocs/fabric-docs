@@ -15,7 +15,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 
 This article details the current limitations in [!INCLUDE [product-name](../includes/product-name.md)].
 
-These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL Database in Fabric, see [Limitations in SQL Database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
+These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL database in Fabric, see [Limitations in SQL database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
 
 ## Limitations
 
