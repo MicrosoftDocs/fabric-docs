@@ -6,7 +6,7 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-ms.date: 07/25/2024
+ms.date: 02/25/2025
 #customer intent: As a data engineer, I want to learn how to load data into OneLake and analyze it with Azure Databricks so that I can use my Azure Databricks notebook to read from and write to Delta tables.
 ---
 
@@ -36,7 +36,7 @@ Before you start, you must have:
 
 1. In the **New Pipeline** prompt, enter a name for the new pipeline and then select **Create**.
 
-1. For this exercise, select the **NYC Taxi - Green** sample data as the data source and then select **Next**.
+1. For this exercise, select the **NYC Taxi - Green** sample data as the data source.
 
    :::image type="content" source="media\onelake-open-access-quickstart\onelake-nyc-taxi.png" alt-text="Screenshot showing how to select NYC sample semantic model.":::
 
@@ -46,7 +46,7 @@ Before you start, you must have:
 
    :::image type="content" source="media\onelake-open-access-quickstart\onelake-dest-lake.png" alt-text="Screenshot showing how to select destination lakehouse.":::
 
-1. Select where you want to store the output. Choose **Tables** as the Root folder and enter "nycsample" as the table name.
+1. Select where you want to store the output. Choose **Tables** as the Root folder. Enter "nycsample" as the table name and select **Next**.
 
 1. On the **Review + Save** screen, select **Start data transfer immediately** and then select **Save + Run**.
 
