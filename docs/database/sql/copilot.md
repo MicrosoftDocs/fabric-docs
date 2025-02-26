@@ -2,7 +2,7 @@
 title: Overview of Microsoft Copilot for SQL Database in Microsoft Fabric
 description: "Learn more about the Microsoft Copilot for SQL database in Fabric, an AI assistant designed to streamline your database tasks."
 author: markingmyname
-ms.author: maghan
+ms.author:  maghan
 ms.reviewer: yoleichen, wiassaf
 ms.date: 02/26/2025
 ms.topic: overview
@@ -50,18 +50,18 @@ Here are some tips for effectively maximizing productivity with Microsoft Copilo
 
 The following example prompts are clear, specific, and tailored to the properties of your schema and database, making it easier for Copilot to generate accurate T-SQL queries.
 
-In the Chat Pane, you can use prompts like:
-
 ```copilot-prompt
  - What are the top-selling products by quantity?
  - Count all the products grouped by category
  - Show all sales transactions that occurred on [a specific date]
 ```
 
-> [!NOTE]  
+> [!NOTE]
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Responsible use of Copilot in Fabric
+
+Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
 
 For information about using Copilot responsibly, visit [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
 
@@ -79,3 +79,6 @@ Here are the current limitations of Copilot for SQL database:
 
 - [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
 - [Frequently asked questions for Copilot in SQL database in Microsoft Fabric](copilot-faq.yml)
+- [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md)
+- [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
+- [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)

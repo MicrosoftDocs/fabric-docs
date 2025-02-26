@@ -1,14 +1,15 @@
 ---
 title: "How To: Use the Copilot Chat Pane for SQL Database"
 description: Learn more about Microsoft Copilot chat pane for SQL database in Microsoft Fabric, to ask questions specific about your database.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: yoleichen, sukkaur
-ms.date: 02/20/2025
+author: markingmyname
+ms.author:  maghan
+ms.reviewer: yoleichen, wiassaf
+ms.date: 02/26/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
 ---
+
 # How to: Use the Copilot Chat Pane for SQL database in Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -42,7 +43,8 @@ The supported capabilities of interacting through chat include:
 1. Type a request of your choice in the chat box and Copilot responds accordingly.
 1. Ask follow-up questions or requests if applicable. Copilot provides a contextualized response with previous chat history.
 1. You can "copy" or "insert" code from the chat panel. At the top of each code block, two buttons allow input of query directly into the text editor.
-   :::image type="content" source="media/copilot-chat-pane/copilot-code-block.png" alt-text="Screenshot from the Fabric portal of a code block in Copilot's response.":::
+
+  :::image type="content" source="media/copilot-chat-pane/copilot-code-block.png" alt-text="Screenshot from the Fabric portal of a code block in Copilot's response.":::
 
 ## Regular usage of the chat pane
 
@@ -52,5 +54,5 @@ The supported capabilities of interacting through chat include:
 
 ## Related content
 
-- [Copilot for SQL database in Microsoft Fabric (preview)](copilot.md)
+- [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
 - [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
