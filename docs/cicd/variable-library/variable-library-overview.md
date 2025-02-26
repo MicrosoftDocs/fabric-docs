@@ -49,13 +49,13 @@ Variable libraries contain one or more variables. Each variable has a name, type
 
 The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets-optional).
 
-When you create an alternative value set, the new value set is created with pointers to the default value for each variable. You can then change the value for each variable in the new value set.
+### Alternative value sets (optional)
 
-### Additional value sets (optional)
-
-Value sets are sets of values for the Variable library item. A value set consists value for each variable in the library. You can have multiple value sets for each Variable library item, and choose which one to use in each stage. The active (or effective) value set is the one that is used in the current stage.
+Value sets are additional sets of values for the Variable library item. You can have multiple value sets for each Variable library item, and choose which one to use in each stage by setting it to be active. The active (or effective) value set is the one that is used in the current workspace stage. An active value set of a Variable library isn't changed during deployment or update from Git.
 
 :::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of variable library with several alternative value sets.":::
+
+When you create an alternative value set, the new value set is created with pointers to the default value for each variable. You can then change the value for each variable in the new value set.
 
 ## Supported items
 
@@ -64,10 +64,6 @@ The following items support the Variable library:
 * Data pipeline
 <!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Notebook --->
-
-## Considerations and limitations
-
- [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
 
 ## Related content
 

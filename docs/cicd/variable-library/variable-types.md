@@ -56,7 +56,7 @@ The variable name is *not* case sensitive.
 Before you can add a value to a variable, you must define the variable type.
 The variables in the Variable library can be any of the following basic types:
 
-- String: (default) Any character Can be null or empty.
+- String: Any character Can be null or empty.
 - Boolean: *True* or *False*.
 - DateTime: The date and time are represented using **ISO 8601 standard**, yyyy-MM-ddTHH:mm:ssZ, where:
   - *yyyy-MM-dd* is the four-digit year, followed by the two-digit month, and two-digit day
