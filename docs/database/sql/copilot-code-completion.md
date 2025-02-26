@@ -12,7 +12,7 @@ ms.collection:
 
 # How to: Use the Copilot Code Completion for SQL database in Fabric
 
-**Applies to:** [!INCLUDE [fabric-sqldb](../../includes/applies-to-version/fabric-sqldb.md)]
+**Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 Copilot for SQL database includes a code completion feature with Copilot.
 
@@ -24,7 +24,7 @@ As you start writing T-SQL code or comments in the editor, Copilot for SQL datab
 
 ## Prerequisites
 
-[!INCLUDE [copilot-include](../../../includes/copilot-include.md)]
+[!INCLUDE [copilot-include](../../includes/copilot-include.md)]
 
 - Verify the **Show Copilot completions** setting in enabled in your database settings.
   - You can also check the setting's status through the status bar at the bottom of the query editor.
@@ -64,4 +64,4 @@ Code completion enhances your productivity and workflow in Copilot for SQL datab
 - [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
 - [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
 - [How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
