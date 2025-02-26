@@ -58,7 +58,7 @@ items:
     href: connectivity.md
 - name: Copilot for Data Warehouse
   items:
-  - name: Overview of Copilot for Data Warehouse
+  - name: What is Copilot for Data Warehouse
     href: copilot.md
   - name: Use the Copilot chat pane
     href: copilot-chat-pane.md
