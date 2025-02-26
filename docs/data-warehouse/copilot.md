@@ -34,7 +34,7 @@ There are three ways to interact with Copilot in the Fabric Warehouse editor.
 - **[Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)**: Use the chat pane to ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
   - **Natural Language to SQL**: Generate T-SQL code and get suggestions of questions to ask to accelerate your workflow.
   
-- **[Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)**: Start writing T-SQL in the SQL query editor and Copilot will automatically generate a code suggestion to help complete your query. The **Tab** key accepts the code suggestion, or keeps typing to ignore the suggestion.
+- **[Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)**: Start writing T-SQL in the SQL query editor and Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion, or keeps typing to ignore the suggestion.
 
 - **[Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
   - **Explain:** Copilot can provide natural language explanations of your SQL query and warehouse schema in comments format.
