@@ -2,9 +2,9 @@
 metadata:
   title: "Frequently asked questions for Copilot in SQL database (preview)"
   description: This article answers frequently asked questions about Copilot in SQL database in Microsoft Fabric (preview).
-author: markingmyname
-ms.author:  maghan
-ms.reviewer: yoleichen, wiassaf
+  author: markingmyname
+  ms.author:  maghan
+  ms.reviewer: yoleichen, wiassaf
   ms.topic: faq
   ms.custom:
   ms.date: 02/26/2025
