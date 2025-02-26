@@ -14,7 +14,6 @@ This article contains information on how Microsoft Fabric event streams usage is
 
 ## Operation types
 The eventstreams usage is defined by four operation types, which are described in the following table. The table provides information about eventstreams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
- 
 
 | Operation in Capacity Metrics App | Description | Operation unit of measure | Fabric consumption rate |
 | --------------------------------- | ----------- | ------------------------- | ----------------------- |

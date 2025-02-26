@@ -181,6 +181,18 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Lakehouse ALM operations fail for Git using public APIs in UK South
+      href: ../known-issues/known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md
+    - name: Existing preview surge protection rules aren't visible in Capacity settings
+      href: ../known-issues/known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md
+    - name: Eventstream updates with Eventhouse destination causes error
+      href: ../known-issues/known-issue-1032-eventstream-updates-eventhouse-destination-error.md
+    - name: Git integration undo after initial sync fails might delete items
+      href: ../known-issues/known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md
+    - name: Slow Spark session startup caused by Native Execution Engine
+      href: ../known-issues/known-issue-1028-slow-spark-session-startup-native-execution-engine.md
+    - name: Mirroring fails for tables with unique index on unsupported data type
+      href: ../known-issues/known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md
     - name: CopyJob item deletion fails with error
       href: ../known-issues/known-issue-1024-copy-job-item-deletion-fails-error.md
     - name: Preview destination data on a pipeline's copy activity fails
@@ -257,7 +269,7 @@ items:
       href: ../known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
     - name: The default environment's resources folder doesn't work in notebooks
       href: ../known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
-    - name: Tenant migrations paused through February 2025
+    - name: Tenant migrations paused through March 2025
       href: ../known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
     - name: More options menu on a visual doesn't open in unsaved reports
       href: ../known-issues/known-issue-918-more-options-not-open-unsaved-reports.md

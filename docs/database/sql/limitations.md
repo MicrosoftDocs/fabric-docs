@@ -4,9 +4,9 @@ description: A detailed list of limitations for SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 01/16/2025
+ms.date: 02/24/2025
 ms.topic: conceptual
-ms.search.form: SQL database - Limitations
+ms.search.form: SQL database Overview
 ---
 # Limitations in SQL database in Microsoft Fabric (preview)
 
@@ -23,6 +23,7 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 - SQL database in Fabric does not support Change Data Capture (CDC) or Azure Synapse Link for SQL.
 - SQL Audit is not currently supported in SQL database in Fabric.
 - Transparent Data Encryption (TDE) is not supported. SQL database in Fabric uses storage encryption with service-managed keys to protect all customer data at rest. Customer-managed keys are not supported.
+- In a [trial capacity](../../fundamentals/fabric-trial.md), you are limited to three databases. There is no limit on databases in other capacities.
 
 ## Table level  
 
