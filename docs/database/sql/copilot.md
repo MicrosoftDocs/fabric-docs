@@ -1,10 +1,10 @@
 ---
-title: "Overview of Copilot for SQL Database (Preview)"
+title: Overview of Microsoft Copilot for SQL Database in Microsoft Fabric
 description: "Learn more about the Microsoft Copilot for SQL database in Fabric, an AI assistant designed to streamline your database tasks."
 author: markingmyname
 ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 02/25/2025
+ms.date: 02/26/2025
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
@@ -20,18 +20,15 @@ Microsoft Copilot for SQL database in Microsoft Fabric is an AI tool designed to
 
 Get started with Copilot for SQL database in Microsoft Fabric:
 
+- **[Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)**: Use the chat pane to ask Copilot questions through natural language.
+  - **Natural Language to SQL**: Generate T-SQL code and get suggestions of questions to ask to accelerate your workflow.
+  - **Documentation-based Q&A**: Ask Copilot questions about the capabilities of SQL database in Fabric and it provides answers in natural language along with relevant documentations.
+
 - **[Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md)**: Start writing T-SQL in the SQL query editor, and Microsoft Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. Copilot can also suggest code completions for table and column names, functions, and keywords.
 
 - **[Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
   - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot also provides comments that explain the changes and suggest SQL best practices.
   - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
-
-- **[Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)**: Use the chat pane to ask Copilot questions through natural language.
-
-  The supported capabilities of interacting through Chat Pane:
-  
-  - **Natural Language to SQL**: Generate T-SQL code and get suggestions of questions to ask to accelerate your workflow.
-  - **Documentation-based Q&A**: Ask Copilot questions about the capabilities of SQL database in Fabric and it provides answers in natural language along with relevant documentations.
 
 ## Enable Copilot in SQL database in Fabric
 
@@ -51,9 +48,9 @@ Here are some tips for effectively maximizing productivity with Microsoft Copilo
 
 ## Example prompts
 
-The following example prompts are clear, specific, and tailored to the properties of your schema and data database, making it easier for Copilot to generate accurate T-SQL queries.
+The following example prompts are clear, specific, and tailored to the properties of your schema and database, making it easier for Copilot to generate accurate T-SQL queries.
 
-In the Chat Pane, you can ask questions like:
+In the Chat Pane, you can use prompts like:
 
 ```copilot-prompt
  - What are the top-selling products by quantity?
