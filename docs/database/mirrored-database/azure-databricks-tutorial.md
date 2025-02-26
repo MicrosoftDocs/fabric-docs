@@ -77,14 +77,14 @@ In addition to the default Power BI semantic model, you have the option of updat
 
 ## Enable network security access for your Azure Data Lake Storage Gen2 account 
 
-This section guides you on configuring network security for your Azure Data Lake Storage (ADLS) Gen2 account, when a storage firewall is configured. 
+This section guides you on configuring network security for your Azure Data Lake Storage (ADLS) Gen2 account, when an [Azure Storage firewall](/azure/storage/common/storage-network-security) is configured. 
 
 ### Prerequisites
 
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
 - To enable the workspace identity authentication type (recommended), the Fabric workspace must be associated with any F capacity. To create a workspace identity, see [Authenticate with workspace identity](../../security/workspace-identity-authenticate.md#step-1-create-the-workspace-identity).
-- Azure Databricks workspace storage behind a firewall is not supported.
-- A catalog must be associated with a single storage account. 
+- This section is for reaching a Azure Data Lake Storage (ADLS) Gen2 storage account behind an Azure Storage firewall. Azure Databricks workspace storage behind an Azure Storage firewall is not supported.
+- A catalog must be associated with a single storage account.
 
 ### Enable network security access
 
