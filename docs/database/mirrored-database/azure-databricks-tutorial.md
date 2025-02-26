@@ -106,7 +106,7 @@ This section guides you on configuring network security for your Azure Data Lake
 
    For more information and steps to grant ADLS access, see [ADLS Access control](/azure/storage/blobs/data-lake-storage-access-control#how-to-set-acls).
       
-1. Use [Trusted Workspace Access](../../security/security-trusted-workspace-access.md) to access firewall-enabled Azure Data Lake Storage (ADLS) Gen2 accounts in a secure manner.
+1. Enable [Trusted Workspace Access](../../security/security-trusted-workspace-access.md) to access firewall-enabled Azure Data Lake Storage (ADLS) Gen2 accounts in a secure manner.
 
 1. A shortcut to Unity Catalog tables is created for the tables whose storage account name matches the storage account specified in the ADLS connection. For any tables whose storage account name doesn't match the storage account specified in the ADLS connection, shortcuts for those tables won't be created. 
 
