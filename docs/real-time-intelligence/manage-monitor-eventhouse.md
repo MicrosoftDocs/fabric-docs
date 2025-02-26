@@ -142,7 +142,7 @@ You can perform the following actions:
 * To share a database, select the database from the list > select **Share** > enter the email addresses of the users you want to share the database with > select **Share**.
 
 > [!NOTE]
-> Sharing multiple databases or shareing the Eventhouse is not supported.
+> Sharing multiple databases or sharing the Eventhouse is not supported.
 
 ## Related content
 
