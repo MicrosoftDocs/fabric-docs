@@ -60,8 +60,6 @@ Here are some tips for maximizing productivity with Copilot.
 
 - The following example prompts are clear, specific, and tailored to the properties of your schema and data warehouse, making it easier for Copilot to generate accurate T-SQL queries:
 
-In the Chat Pane, you can use prompts like:
-
 ```copilot-prompt
   - Show me all properties that sold last year
   - Count all the products, group by each category
@@ -74,6 +72,8 @@ In the Chat Pane, you can use prompts like:
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Responsible use of Copilot in Fabric
+
+Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
 
 For information about using Copilot responsibly, visit [Privacy, security, and responsible use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
 
