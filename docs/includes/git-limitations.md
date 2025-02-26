@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 12/26/2024
+ms.date: 02/26/2025
 ---
 
 ### General Git integration limitations
@@ -73,12 +73,13 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
 - [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
-- When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
+- When branching out, a new branch is created and the settings from the original branch aren't copied. Adjust any settings or definitions to ensure that the new meets your organization's policies.
 - When branching out to an existing workspace:
   - The target workspace must support a Git connection.
   - The user must be an admin of the target workspace.
   - The target workspace must have capacity.
   - The workspace can't have template apps.
+- **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](/fabric/cicd/git-integration/git-integration-process#commit-to-git) any items you want to keep before branching out.**
 
 ### Sync and commit limitations
 
