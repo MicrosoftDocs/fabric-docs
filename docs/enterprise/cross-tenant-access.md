@@ -95,7 +95,7 @@ Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/i
 
 ```powershell
 $body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’
-$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/revokeConsent”
+$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent”
 Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json”
 ```
 
@@ -108,12 +108,9 @@ Before you run the script, [log into Fabric](#log-into-fabric).
 Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the revoke consent API for cross tenant access with a specific provider. Provide the tenant ID of the provider in the request body.
 
 ```powershell
-PowerShell | API 
-PUT https://api.powerbi.com/v1/ephemeral/crosstenantauth/revokeConsent 
-Request body 
-{ 
-    "resourceTenantObjectId”: “GUID_VAL”
-} 
+$body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’
+$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/revokeConsent”
+Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json”
 ```
 
 ## Considerations and limitations
