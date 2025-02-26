@@ -75,7 +75,7 @@ In the Chat Pane, you can use prompts like:
 
 ## Responsible use of Copilot in Fabric
 
-For information about using Copilot responsibly, visit [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
+For information about using Copilot responsibly, visit [Privacy, security, and responsible use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
 
 ## Limitations
 
