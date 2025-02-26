@@ -13,22 +13,22 @@ ms.search.form: AI functions
 
 # Summarize text with the `ai.summarize` function
 
-The `ai.summarize` function uses Generative AI to generate summaries of input text (either values from a single column of a DataFrame or values across all columns, row by row)—all in just a single line of code.
+The `ai.summarize` function uses Generative AI to product summaries of input text—either values from a single column of a DataFrame or values across all columns—with a single line of code.
 
-To learn more about the full set of AI functions, which unlock dynamic insights by putting the power of Fabric's native LLM into your hands, please visit [this overview article](ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
 
 > [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md) in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and above:
+> This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
-> - Please be sure to review the prerequisites in [this overview article](ai-function-overview.md), including the [library installations](ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - Although the underlying model can handle several languages, most of the AI functions have been optimized for use on English texts.
-> - To learn about customizing the configuration of AI functions, please visit [this article](ai-function-configuration.md).
+> - Review the prerequisites in [this overview article](./ai-function-overview.md), including the [library installations](./ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
+> - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
 
 ## Use `ai.summarize` with pandas
 
-The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to summarize each row of input from that column alone. As an alternative, the `ai.summarize` function can also be called on an entire DataFrame to summarize values across all columns, row by row.
+The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to summarize each row value from that column alone. As an alternative, you can call the `ai.summarize` function on an entire DataFrame, to summarize values across all columns, row by row.
 
-The function returns a pandas Series containing summaries, which can be stored in a new column of the DataFrame.
+The function returns a pandas Series that contains summaries, which can be stored in a new DataFrame column.
 
 ### Syntax
 
@@ -52,7 +52,7 @@ None
 
 ### Returns
 
-A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) containing summaries for each row of input text. If the input text is `null`, the result will be `null`.
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains summaries for each input text row. If the input text is `null`, the result is `null`.
 
 ### Example
 
@@ -110,9 +110,9 @@ display(df)
 
 ## Use `ai.summarize` with PySpark
 
-The `ai.summarize` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). If the name of an existing input column is specified as a parameter, the function summarizes each value from that column alone. Otherwise, the function summarizes text values across all columns of the DataFrame, row by row.
+The `ai.summarize` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). If you specify the name of an existing input column as a parameter, the function summarizes each value from that column alone. Otherwise, the function summarizes text values across all columns of the DataFrame, row by row.
 
-The function returns a new DataFrame with summaries for each row of input text (from a single column or across all columns) stored in an ouput column.
+The function returns a new DataFrame with summaries for each input text row, from a single column or across all columns, stored in an output column.
 
 ### Syntax
 
@@ -134,13 +134,13 @@ df.ai.summarize(output_col="summaries")
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of an existing column with input text values to be summarized. If this parameter is not set, the function will summarize the entire DataFrame rather than a specific column. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store summaries for each row of input text. If this parameter is not set, a default name will be generated for the output column. |
-| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) containing the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter is not set, a default name will be generated for the error column. If there are no errors for a row of input, the value in this column will be `null`. |
+| **`input_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to summarize. If this parameter isn't set, the function summarizes values across all columns in the DataFrame, instead of values from a specific column. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store summaries for each input text row. If this parameter isn't set, a default name is generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each input text row. If this parameter isn't set, a default name is generated for the error column. If an input row has no errors, the value in this column is `null`. |
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column containing summarized text for each row of text in the input column. If the input text is `null`, the result will be `null`. If no input column is specified, the function will summarize the entire DataFrame.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains summarized text for each input column text row. If the input text is `null`, the result is `null`. If no input column is specified, the function summarizes values across all columns in DataFrame.
 
 ### Example
 
@@ -198,12 +198,11 @@ display(summaries)
 
 ## Related content
 
-- Calculate similarity with [`ai.similarity`](similarity.md).
-- Categorize text with [`ai.classify`](classify.md).
-- Detect sentiment with [`ai.analyze_sentiment`](analyze-sentiment.md).
-- Extract entities with [`ai_extract`](extract.md).
-- Fix grammar with [`ai.fix_grammar`](fix-grammar.md).
-- Translate text with [`ai.translate`](translate.md).
-- Answer custom user prompts with [`ai.generate_response`](generate-response.md).
-- To learn more about the full set of AI functions, please visit [this overview article](ai-function-overview.md).
-- Learn how to [customize the configuration of AI functions](ai-function-configuration.md).
+- Calculate similarity with [`ai.similarity`](./similarity.md).
+- Categorize text with [`ai.classify`](./classify.md).
+- Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
+- Extract entities with [`ai_extract`](./extract.md).
+- Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
+- Translate text with [`ai.translate`](./translate.md).
+- Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
+- To learn more about the full set of AI functions, visit [this overview article](./ai-function-overview.md).
