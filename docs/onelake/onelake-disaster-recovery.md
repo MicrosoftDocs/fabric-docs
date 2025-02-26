@@ -31,7 +31,7 @@ You can restore files and folders using Blob REST APIs, Azure Storage SDKs, and 
 
 ### Restore soft deleted files via Microsoft Azure Storage Explorer
 
-You can restore deleted Lakehouse files using Microsoft Azure Storage Explorer.  First, [connect to your workspace from Azure Storage Explorer](onelake-azure-storage-explorer.md) using the workspace ID in the URL. For example, `https://onelake.dfs.fabric.microsoft.com/8ebe7fed-acac-4905-8e5c-027c55521e54`.  You can find the workspace ID from the Fabric portal browser URL ('/groups/{workspaceID}). Ensure you use the GUID-based OneLake path to undelete data.
+You can restore deleted Lakehouse files using Microsoft Azure Storage Explorer.  First, [connect to your workspace from Azure Storage Explorer](onelake-azure-storage-explorer.md) using the workspace ID in the URL. For example, `https://onelake.dfs.fabric.microsoft.com/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`.  You can find the workspace ID from the Fabric portal browser URL ('/groups/{workspaceID}). Ensure you use the GUID-based OneLake path to undelete data.
 
 
 After connecting to your workspace, follow these steps to restore soft-deleted data:
