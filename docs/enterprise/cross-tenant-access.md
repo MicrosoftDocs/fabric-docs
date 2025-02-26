@@ -7,7 +7,7 @@ ms.topic: article
 ms.date: 02/26/2025
 ---
 
-# Cross tenant access (preview)
+# Data warehouse cross tenant access (preview)
 
 >[!IMPORTANT]
 >Cross tenant access is a private preview feature. To participate in the preview, contact your Microsoft representative.
@@ -36,6 +36,8 @@ When consent is revoked, guests lose access to warehouses in the provider tenant
 * A Microsoft [Entra ID tenant](/azure/azure-portal/get-subscription-tenant-id).
 
 * A user with a [Global administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role.
+
+* The *consent* and *revokeConsent* APIs require the *Tenant.ReadWrite.All* [scope](/entra/identity-platform/scopes-oidc).
 
 * [PowerShell](/powershell/azure/install-azure-powershell).
 
@@ -84,10 +86,7 @@ This section shows how to enable cross tenant access using PowerShell scripts th
 Use [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) to log into Fabric.
 
 ```powershell
-PowerShell | API 
 Connect-PowerBIServiceAccount 
-$body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’ 
-$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent” 
 ```
 
 ### Provide consent
@@ -95,10 +94,9 @@ $url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent”
 Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body.
 
 ```powershell
-$body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’ 
-$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent” 
-Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json” 
-} 
+$body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’
+$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/revokeConsent”
+Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json”
 ```
 
 ## Disable cross tenant access
