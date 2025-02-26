@@ -83,7 +83,7 @@ This section guides you on configuring network security for your Azure Data Lake
 
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
 - To enable the workspace identity authentication type (recommended), the Fabric workspace must be associated with any F capacity. To create a workspace identity, see [Authenticate with workspace identity](../../security/workspace-identity-authenticate.md#step-1-create-the-workspace-identity).
-- This section is for reaching a Azure Data Lake Storage (ADLS) Gen2 storage account behind an Azure Storage firewall. Azure Databricks workspace storage behind an Azure Storage firewall is not supported.
+- This section is for reaching an Azure Data Lake Storage (ADLS) Gen2 storage account behind an Azure Storage firewall. Azure Databricks workspace storage behind an Azure Storage firewall is not supported.
 - A catalog must be associated with a single storage account.
 
 ### Enable network security access
