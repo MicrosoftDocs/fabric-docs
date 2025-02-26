@@ -25,7 +25,7 @@ ms.date: 12/26/2024
 
 #### [GitHub limitations](#tab/github)
 
-- Only cloud versions of GitHub are supported. On-prem isn't supported.
+- Only cloud versions of GitHub are supported. On-premises isn't supported.
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - The total combined size of files to commit at once is limited to 50 MB. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing files, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
 
@@ -43,13 +43,13 @@ Some GitHub Enterprise settings aren't supported. For example:
 
 - Only the workspace admin can manage the connections to the [Git Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
 Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.  
-- The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
 
 ### Branch and folder limitations
 
 - Maximum length of branch name is 244 characters.
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
+- Folder structure is maintained up to 10 levels deep.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
