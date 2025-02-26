@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot for Fabric Data Warehouse, the i
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 02/27/2025
+ms.date: 02/26/2025
 ms.topic: conceptual
 ms.collection:
   - ce-skilling-ai-copilot
