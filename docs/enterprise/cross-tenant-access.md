@@ -88,7 +88,6 @@ PowerShell | API
 Connect-PowerBIServiceAccount 
 $body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’ 
 $url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent” 
-Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json” 
 ```
 
 ### Provide consent
@@ -117,4 +116,12 @@ Request body
 { 
     "resourceTenantObjectId”: “GUID_VAL”
 } 
+```
+
+## Considerations and limitations
+
+You might get a 403 (forbidden error) if the call is not routed to the correct cluster. When this happens, use the cluster URL of your tenant to call the consent API. For example:
+
+```http
+Example: https://{clusterUrl}/v1/ephemeral/crosstenantauth/consent 
 ```
