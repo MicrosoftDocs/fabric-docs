@@ -6,7 +6,7 @@ ms.topic: include
 
 ---
 
-The following are the Fabric regions that support mirroring:
+The following are the Fabric regions that support database mirroring and open mirroring:
 
 :::row:::
    :::column span="":::

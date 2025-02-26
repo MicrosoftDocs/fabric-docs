@@ -23,7 +23,7 @@ Select the **Title** to view more information about that specific known issue.
 |  1035  | Data Engineering | [Lakehouse ALM operations fail for Git using public APIs in UK South](./known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md) | February 25, 2025 |
 |  1029  | Administration & Management | [Existing preview surge protection rules aren't visible in Capacity settings](./known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md) | February 25, 2025 |
 |  1032  | Real-Time Intelligence | [Eventstream updates with Eventhouse destination causes error](./known-issue-1032-eventstream-updates-eventhouse-destination-error.md) | February 21, 2025 |
-|  1031  | Administration & Management | [Git integration undo after initial sync fails might delete items](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
+|  1031  | Administration & Management | [Git integration undo action appears after initial sync fails](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
 |  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
 |  1024  | Data Factory | [CopyJob item deletion fails with error](./known-issue-1024-copy-job-item-deletion-fails-error.md) | February 14, 2025 |
