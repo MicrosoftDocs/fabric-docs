@@ -51,7 +51,7 @@ Select the schema name that you have access to create views, provide name of vie
 
 #### Download as Excel/JSON/CSV
 
-You can download your result set as an Microsoft Excel (.xlsx) file using the download button. You can also download JSON or CSV versions of the result set data, as well as copy/paste the result set to your clipboard.
+You can download your result set as a Microsoft Excel (.xlsx) file using the download button. You can also download JSON or CSV versions of the result set data, as well as copy/paste the result set to your clipboard.
 
 :::image type="content" source="media/query-editor/download-results-in-xlsx.png" alt-text="Screenshot from the Fabric portal of the SQL query editor showing the Download results button.":::
 
