@@ -24,8 +24,8 @@ The lakehouse ALM public APIs fail with an error. The error message is similar t
 
 The following mitigations are possible:
 
-1. Add `OneLake.ReadWrite.All` scope to the user or identity performing the operation. With the proper scope in place, the public APIs work.
-1. Use the Fabric user interface flows to perform all ALM scenarios.
+- Add `OneLake.ReadWrite.All` scope to the user or identity performing the operation. With the proper scope in place, the public APIs work.
+- Use the Fabric user interface flows to perform all ALM scenarios.
 
 ## Next steps
 

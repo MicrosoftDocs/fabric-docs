@@ -183,7 +183,7 @@ items:
       href: https://support.fabric.microsoft.com/known-issues
     - name: Lakehouse ALM operations fail for Git using public APIs in UK South
       href: ../known-issues/known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md
-    - name: Existing preview surge protection rules from aren't visible in Capacity settings
+    - name: Existing preview surge protection rules aren't visible in Capacity settings
       href: ../known-issues/known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md
     - name: Eventstream updates with Eventhouse destination causes error
       href: ../known-issues/known-issue-1032-eventstream-updates-eventhouse-destination-error.md
