@@ -81,7 +81,7 @@ For information about using Copilot responsibly, visit [Privacy, security, and r
 
 Here are the current limitations of Copilot for Data Warehouse:
 
-- Copilot doesn't understand previous inputs and can't undo changes after a user commits a change when authoring, either via user interface or the chat pane. For example, you can't ask Copilot to "Undo my last five inputs." However, users can still use the existing user interface options to delete unwanted changes or queries.
+- Copilot doesn't understand previous inputs and can't undo changes after a user commits a change when authoring, either via user interface or the chat pane. For example, you can't ask Copilot to *Undo my last five inputs.* However, users can still use the existing user interface options to delete unwanted changes or queries.
 - Copilot can't make changes to existing SQL queries. For example, if you ask Copilot to edit a specific part of an existing query, it doesn't work.
 - Copilot might produce inaccurate results when the intent is to evaluate data. Copilot only has access to the warehouse schema, none of the data inside.
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
