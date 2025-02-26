@@ -51,8 +51,8 @@ For more information, see [Simplement integration into open mirroring in Microso
 
 ## SNP
 
-SNP Glue is a data integration solution certified for various SAP source systems including SAP S/4HANA (on-premises and Private Cloud Edition). With release 2502, it supports open mirroring for near real-time data integration into Microsoft Fabric: [](https://aka.ms/mirroring/snp-mirroring-doc).
-For an overview of SNP Glue see [](https://aka.ms/mirroring/snp-overview).
+SNP Glue is a data integration solution certified for various SAP source systems including SAP S/4HANA (on-premises and Private Cloud Edition). With release 2502, it supports open mirroring for near real-time data integration into Microsoft Fabric, see [SNP Glue release note](https://aka.ms/mirroring/snp-mirroring-doc).
+For more information on SNP Glue see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
 
 ## Related content
 
