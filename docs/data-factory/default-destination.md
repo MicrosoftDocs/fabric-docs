@@ -29,7 +29,7 @@ When you set a default destination it will ask you to choose a destination and p
 :::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-queries.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
 
 When finished your query will have the default destination set as the data destination.
-::: image type="content" source="media/dataflow-gen2-default-destination/default-destination-completed.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-completed.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
 
 If you decide later you want to set a default destination for a specific query, you can do so by selecting the query and then choose the default destination as the data destination.
 
