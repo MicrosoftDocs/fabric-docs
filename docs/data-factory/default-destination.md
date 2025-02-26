@@ -16,28 +16,29 @@ We have made it easier to get data into your Lakehouse, Warehouse, or KQL Databa
 
 ## Set a default destination in Dataflow Gen2
 
-When you create a Dataflow Gen2, you can set a default destination for your dataflow. This is a great way to get started with Dataflow Gen2 and load all the queries to the same destination. You can set the default destination from the ribbon in the editor or the status bar in the editor. This is a great way to speed up your dataflow creation process.
+When you create a Dataflow Gen2, you can set a default destination for your dataflow. This helps you get started quickly by loading all queries to the same destination. You can set the default destination from the ribbon or the status bar in the editor. This speeds up your dataflow creation process.
 
-Within the editor, you can find the default destination settings in the ribbon and the status bar.
+In the editor, you can find the default destination settings in the ribbon and the status bar.
 
 :::image type="content" source="media/dataflow-gen2-default-destination/default-destination-ribbon.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
 
-:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-status-bar.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the status bar.":::
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-status-bar.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination entry point in the status bar.":::
 
-When you set a default destination it will ask you to choose a destination and prompt you which queries you want to bind the default destination to. You can choose to set the default destination for all queries or only the selected queries.
+When you set a default destination, you will be prompted to choose a destination and select which queries to bind to it. You can set the default destination for all queries or only the selected ones.
 
-:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-queries.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-queries.png" alt-text="Screenshot of the Dataflow Gen2 editor with the prompt to bind the default destination to all queries or selected queries.":::
 
-When finished your query will have the default destination set as the data destination.
-:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-completed.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
+Once finished, your query will have the default destination set as the data destination.
 
-If you decide later you want to set a default destination for a specific query, you can do so by selecting the query and then choose the default destination as the data destination.
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-completed.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination set as the data destination.":::
 
-:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-in-query-settings.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
+If you later decide to set a default destination for a specific query, you can do so by selecting the query and then choosing the default destination as the data destination.
 
-:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-in-diagram-view.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-in-query-settings.png" alt-text="Screenshot of the Dataflow Gen2 editor with the option to bind the default destination in the query settings.":::
 
-To update the default destination, you can do so by deleteing the default destination and then setting a new default destination.
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-in-diagram-view.png" alt-text="Screenshot of the Dataflow Gen2 editor with the option to bind the default destination in the diagram view.":::
+
+To update the default destination, delete the current default destination and set a new one.
 
 ## Create a Dataflow Gen2 from the Lakehouse, Warehouse, or KQL Database experience
 
