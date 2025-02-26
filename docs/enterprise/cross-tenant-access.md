@@ -120,7 +120,7 @@ Request body
 
 ## Considerations and limitations
 
-You might get a 403 (forbidden error) if the call is not routed to the correct cluster. When this happens, use the cluster URL of your tenant to call the consent API. For example:
+You might get a 403 (forbidden) error if the call is not routed to the correct cluster. When this happens, use the cluster URL of your tenant to call the consent API. For example:
 
 ```http
 Example: https://{clusterUrl}/v1/ephemeral/crosstenantauth/consent 
