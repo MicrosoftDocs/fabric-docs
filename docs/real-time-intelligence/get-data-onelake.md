@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -73,7 +73,7 @@ Optionally:
 **Tabular (CSV, TSV, PSV)**:
 
 * If you're ingesting tabular formats in an *existing table*, you can select **Advanced** > **Keep table schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
-* To use the first row as column names, select  **Advanced** > **First row is column header**.
+* To use the first row as column names, select  **First row is column header**.
 
     :::image type="content" source="media/get-data-onelake/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
 
