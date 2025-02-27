@@ -1,27 +1,56 @@
 ---
-title: AI skill tenant settings (preview)
-description: Learn how administrators can configure AI skill tenant settings in Fabric.
+title: AI skill tenant setting (preview)
+description: Learn how to configure AI skill tenant settings for Power BI Semantic Models.
 author: fbsolo-ms1
 ms.author: amjafari
-ms.reviewer: amhjf
+ms.reviewer: franksolomon
+reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
-ms.topic: how-to #Don't change
-ms.date: 09/20/2024
+ms.topic: concept-article #Don't change; maybe should change to "how-to".
+ms.date: 02/18/2025
 ms.collection: ce-skilling-ai-copilot
+
 ---
 
-# AI skill tenant settings
+# Configuring AI skill tenant settings  
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+To use an AI skill in Microsoft Fabric, you must configure the required tenant settings. Additionally, if your AI skill uses a Power BI semantic model as a data source, you must enable specific tenant settings to allow connectivity. This guide walks you through the necessary configurations for a seamless setup.
 
-Fabric has a new tenant setting. Users can create and share AI Skill item types.
+## Understanding AI skill tenant settings  
 
-You can create natural language data questions and answer (or "Q & A") experiences using generative AI. You can then save those experiences as AI skill items. You can share AI skill items with others in your organization.
+By default, the AI skill feature in Microsoft Fabric is disabled at the tenant level. To enable users to create and share AI skill items, tenant administrators must activate this setting. This activation allows users to craft natural language Q&A experiences using generative AI, and then share these AI skill items within the organization. The following screenshot shows how to enable AI skill tenant settings:
 
 :::image type="content" source="media/ai-skill-tenant-setting/tenant-setting.png" alt-text="Screenshot highlighting the AI skill creation and sharing option in the admin portal." lightbox="media/ai-skill-tenant-setting/tenant-setting.png":::
 
-By default, the **Tenant settings** for a Fabric AI skill are disabled. Ask your tenant admins to enable them if you're allowed to use the AI skill.
+To enable AI skills for your organization:  
+
+1. **Access the Admin Portal**:  
+   - Sign in to the Microsoft Fabric portal with administrative privileges.  
+   - Select the gear icon in the top-right corner, and then select **Admin Portal**.  
+
+1. **Navigate to Tenant Settings**:  
+   - In the Admin Portal, select **Tenant settings**.  
+
+1. **Enable AI skill Feature**:  
+   - Within the Tenant settings, locate the **AI skill** section.  
+   - Enable the setting to allow users to create and share AI skill items.
+
+## Enable integration of Power BI semantic models via XMLA endpoints tenant settings
+
+XMLA (XML for Analysis) is a protocol that enables client applications to interact with analytical data sources, such as Power BI datasets. Enabling XMLA endpoints allows AI skills to query and manage these semantic models programmatically. For AI skills to access and interact with Power BI semantic models as a data source, the XMLA endpoint must be configured correctly.  
+
+To set up the XMLA endpoint:  
+
+**Enable XMLA Endpoints at the Tenant Level**:  
+- In the Admin Portal, navigate to **Tenant settings**.  
+- Locate the **Integration settings** section.  
+- Find the setting labeled **Allow XMLA endpoints and Analyze in Excel with on-premises datasets**.  
+- Enable this setting to allow users to connect to XMLA endpoints.  
+
+:::image type="content" source="media/ai-skill-tenant-setting/xmla-setting.png" alt-text="Screenshot highlighting the xmla setting in the admin portal." lightbox="media/ai-skill-tenant-setting/xmla-setting.png":::
+
+With proper configuration of these tenant settings, your organization can fully apply AI skills in Microsoft Fabric, seamlessly using Power BI semantic models as data sources to enhance data interaction and analysis capabilities.
 
 ## Related content
 
