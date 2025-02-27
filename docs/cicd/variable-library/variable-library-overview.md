@@ -47,7 +47,8 @@ Variable libraries contain one or more variables. Each variable has a name, type
 
 ### Default value
 
-The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets-optional).
+The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets-optional).  
+All variables must have a default value. If the variable type is *String*, the default value can be null.
 
 ### Alternative value sets (optional)
 
