@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 11/17/2024
 ---
 
-# Explore OneLake events in Fabric Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Explore OneLake events in Fabric Real-Time hub
 
 OneLake events inform you about changes in your data lake, such as the creation, modification, or deletion of files and folders.
 

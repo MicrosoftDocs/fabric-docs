@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 11/12/2024
 ---
 
-# Explore Job events in Fabric Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Explore Job events in Fabric Real-Time hub
 
 Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
 

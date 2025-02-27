@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2024
 ---
 
-# Get Azure Blob Storage events into Real-Time hub (preview)
+# Get Azure Blob Storage events into Real-Time hub
 
 This article describes how to get Azure Blob Storage events into Fabric Real-Time hub.
 
