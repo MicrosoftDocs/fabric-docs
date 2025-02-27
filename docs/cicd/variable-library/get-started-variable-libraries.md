@@ -31,8 +31,9 @@ To create Variable library items in Fabric, you need:
 ## Create a Variable library item
 
 You can create a Variable library item from the Fabric home page or from inside your workspace.
-
-### [From home page](#tab/home-page)
+    
+**From Home page:**
+<!--- ### [From home page](#tab/home-page) --->
 
 1. From the side navigation bar, select **Create** (If it’s not there, select the three dots -> Create)
 
@@ -42,7 +43,8 @@ You can create a Variable library item from the Fabric home page or from inside 
 
 1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
 
-### [From workspace](#tab/workspace)
+<!--- ### [From workspace](#tab/workspace) --->
+**From workspace:**
 
 1. Select **+ New item**
 1. Scroll down to the **Develop data** section, and select **Variable library**
@@ -50,8 +52,8 @@ You can create a Variable library item from the Fabric home page or from inside 
    :::image type="content" source="./media/get-started-with-variable-libraries/create-from-workspace.png" alt-text="Screenshot of UI for creating a Variable library item from an existing workspace.":::
 
 1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
-
----
+<!---
+--- --->
 
 An empty Variable library appears. You can now add variables to it.
 
