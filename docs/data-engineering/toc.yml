@@ -127,7 +127,7 @@ items:
       href: spark-job-definition-api.md
     - name: Spark job definition Git integration
       href: spark-job-definition-source-control.md
-    - name: Spark job definition Deployment pipeline integration
+    - name: Spark job definition deployment pipeline integration
       href: spark-job-definition-deployment-pipeline.md
   - name: Spark development
     items:
