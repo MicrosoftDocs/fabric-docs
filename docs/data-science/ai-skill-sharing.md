@@ -21,6 +21,8 @@ ms.collection: ce-skilling-ai-copilot
 - [Cross-geo processing for AI](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) is enabled.
 - [Cross-geo storing for AI](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) is enabled.
 - A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
+- [Power BI semantic models via XMLA endpoints tenant switch](./ai-skill-tenant-switch.md) is enabled for Power BI semantic model data sources.
+
 
 ## Publishing and versioning
 
