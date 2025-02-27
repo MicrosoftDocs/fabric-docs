@@ -75,7 +75,7 @@ items:
     href: copilot-notebooks-chat-pane.md
 - name: AI functions
   items: 
-    - name: Overview
+    - name: Transform and enrich data with AI functions
       href: ../data-science/ai-functions/ai-function-overview.md
     - name: ai.similarity
       href: ../data-science/ai-functions/similarity.md
@@ -93,7 +93,7 @@ items:
       href: ../data-science/ai-functions/translate.md
     - name: ai.generate_response
       href: ../data-science/ai-functions/generate-response.md
-    - name: Custom configurations
+    - name: Custom AI function configurations
       href: ../data-science/ai-functions/ai-function-configuration.md
 - name: Lakehouse access control
   items:
