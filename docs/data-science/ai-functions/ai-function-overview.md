@@ -1,5 +1,5 @@
 ---
-title: Transform and enrich data seamlessly with AI functions (Preview)
+title: Transform and enrich data seamlessly with AI functions
 description: Learn how to invoke AI functions in Fabric, harnessing the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code.
 ms.author: franksolomon
 author: fbsolo-ms1
@@ -11,7 +11,7 @@ ms.date: 02/26/2025
 ms.search.form: AI functions
 ---
 
-# Transform and enrich data at scale with AI functions (Preview)
+# Transform and enrich data seamlessly with AI functions (Preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 

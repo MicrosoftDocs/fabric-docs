@@ -1,5 +1,5 @@
 ---
-title: Customize the configuration of AI functions in Fabric (Preview)
+title: Customize the configuration of AI functions
 description: Learn how to configure AI funtions in Fabric for custom use, modifying the underlying LLM or other related settings.
 ms.author: franksolomon
 author: fbsolo-ms1
@@ -11,7 +11,7 @@ ms.date: 02/26/2025
 ms.search.form: AI functions
 ---
 
-# Customize the configuration of AI functions in Fabric
+# Customize the configuration of AI functions (Preview)
 
 AI functions, currently in public preview, allow users to apply LLM-powered transformations to their enterprise data [in a single line of code](./ai-function-overview.md). They're designed to work out-of-the-box, in Fabric notebooks, with the underlying language model and its settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
