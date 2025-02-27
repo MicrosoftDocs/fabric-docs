@@ -1,35 +1,30 @@
 ---
 title: Warehouse performance guidelines
 description: This article contains a list of performance guidelines for warehouse.
-author: SQLAdventurer
-ms.author: trichter
-ms.reviewer: wiassaf
-ms.date: 09/06/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: xiaoyul
+ms.date: 08/01/2024
 ms.topic: conceptual
+ms.custom:
 ---
-# Synapse Data Warehouse in Microsoft Fabric performance guidelines
+# Fabric Data Warehouse performance guidelines
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Below, you'll find guidance and important articles to focus on. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
+These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. In this article, you'll find guidance and important articles to focus on. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+## Cold run (cold cache) performance
 
-Included in this document are some specific articles devoted to guidelines that apply only during this Preview period.
+[Caching with local SSD and memory](caching.md) is automatic. The first 1-3 executions of a query perform noticeably slower than subsequent executions. If you are experiencing cold run performance issues, here are a couple of things you can do that can improve your cold run performance:
 
-## Cold run (cold cache) performance during public preview
+- If the first run's performance is crucial, try manually creating statistics. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance. However, if the first run's performance is not critical, you can rely on automatic statistics that will be generated in the first query and will continue to be leveraged in subsequent runs (so long as underlying data does not change significantly).
 
-[Caching with local SSD and memory](caching.md) is automatic. Cold run or first run query performance will be continuously improved during the Preview period. If you are experiencing cold run performance issues during your preview experience (for example, the first 1-3 executions of a query perform noticeably slower than subsequent executions) here are a couple of things you can do that may improve your cold run performance:
-
-- Manually create statistics. Auto-statistics is not available in preview at this time. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance during preview.
-
-- If using Power BI, use [Direct Lake](../data-engineering/lakehouse-pbi-reporting.md) mode where possible.
-
-- During this preview, execute your query several times and focus on the performance of later executions.
+- If using Power BI, use [Direct Lake](../fundamentals/lakehouse-power-bi-reporting.md) mode where possible.
  
 ## Metrics for monitoring performance
 
-Currently, the [Monitoring Hub](../admin/monitoring-hub.md) does not include [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you choose the Data Warehouse experience, you will not be able to access the **Monitoring Hub** from the left nav menu.
+Currently, the [Monitoring Hub](../admin/monitoring-hub.md) does not include [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you choose **Data Warehouse**, you will not be able to access the **Monitoring Hub** from the navigation bar.
 
 Fabric administrators will be able to access the **Capacity Utilization and Metrics** report for up-to-date information tracking the utilization of capacity that includes [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
@@ -41,11 +36,9 @@ You can use [dynamic management views (DMVs)](monitor-using-dmv.md) to monitor c
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] uses a query engine to create an execution plan for a given SQL query. When you submit a query, the query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which plan would require the least overhead, the engine needs to be able to evaluate the amount of work or rows that might be processed by each operator. Then, based on each plan's cost, it chooses the one with the least amount of estimated work. Statistics are objects that contain relevant information about your data, to allow the query optimizer to estimate these costs.
 
+You can also [manually update statistics](statistics.md#manual-statistics-for-all-tables) after each data load or data update to assure that the best query plan can be built.
+
 For more information statistics and how you can augment the automatically created statistics, see [Statistics in Fabric data warehousing](statistics.md).
-
-## Manually update Statistics after data modifications
-
-Currently, auto-update of statistics is not supported. You will need to [manually update statistics](statistics.md#manual-statistics-for-all-tables) after each data load or data update to assure that the best query plan can be built.
 
 ## Data ingestion guidelines
 
@@ -60,13 +53,13 @@ To help determine which option is best for you and to review some data ingestion
 
 ## Group INSERT statements into batches (avoid trickle inserts)
 
-A one-time load to a small table with an INSERT statement such as shown in the example below may be the best approach depending on your needs. However, if you need to load thousands or millions of rows throughout the day, it's likely that singleton INSERTS aren't optimal.
+A one-time load to a small table with an INSERT statement, such as shown in the following example, might be the best approach depending on your needs. However, if you need to load thousands or millions of rows throughout the day, singleton INSERTS aren't optimal.
 
 ```sql
 INSERT INTO MyLookup VALUES (1, 'Type 1') 
 ```
 
-For guidance on how to handle these trickle load scenarios, see [Best practices for ingesting data](ingest-data.md#best-practices).
+For guidance on how to handle these trickle-load scenarios, see [Best practices for ingesting data](ingest-data.md#best-practices).
 
 ## Minimize transaction sizes
 
@@ -78,17 +71,13 @@ Consider using [CTAS (Transact-SQL)](/sql/t-sql/statements/create-table-as-selec
 
 If you're using client applications, make sure you're using [!INCLUDE [product-name](../includes/product-name.md)] in a region that's close to your client computer. Client application examples include Power BI Desktop, SQL Server Management Studio, and Azure Data Studio.
 
-## Create (UNENFORCED) Primary Key, Foreign Key and Unique Constraints
+## Utilize star schema data design
 
-Having [primary key, foreign key and/or unique](table-constraints.md) constraints may help the Query Optimizer to generate an execution plan for a query. These constraints can only be UNENFORCED in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] so care must be taken to ensure referential integrity is not violated.
-
-## Utilize Star Schema data design
-
-A [star schema](/power-bi/guidance/star-schema) organizes data into fact and dimension tables. A star schema design facilitates analytical processing by de-normalizing the data from highly normalized OLTP systems, ingesting transactional data, and enterprise master data into a common, cleansed, and verified data structure that minimizes JOINS at query time, reduces the number of rows read and facilitates aggregations and grouping processing.
+A [star schema](dimensional-modeling-overview.md#star-schema-design) organizes data into [fact tables](dimensional-modeling-fact-tables.md) and [dimension tables](dimensional-modeling-dimension-tables.md). It facilitates analytical processing by denormalizing the data from highly normalized OLTP systems, ingesting transactional data, and enterprise master data into a common, cleansed, and verified data structure that minimizes joins at query time, reduces the number of rows read and facilitates aggregations and grouping processing.
 
 For more [!INCLUDE [fabric-dw](includes/fabric-dw.md)] design guidance, see [Tables in data warehousing](tables.md).
 
-## Reduce Query Result set sizes
+## Reduce query result set sizes
 
 Reducing query result set sizes helps you avoid client-side issues caused by large query results. The [SQL Query editor](sql-query-editor.md) results sets are limited to the first 10,000 rows to avoid these issues in this browser-based UI. If you need to return more than 10,000 rows, use SQL Server Management Studio (SSMS) or Azure Data Studio.
 
@@ -98,13 +87,23 @@ When defining your tables, use the smallest data type that supports your data as
 
 Use integer-based data types if possible. SORT, JOIN, and GROUP BY operations complete faster on integers than on character data.
 
-For supported data types and more information, see [data types](data-types.md#autogenerated-data-types-in-the-sql-endpoint).
+For supported data types and more information, see [data types](data-types.md#autogenerated-data-types-in-the-sql-analytics-endpoint).
 
-## Next steps
+## SQL analytics endpoint performance
 
-- [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+
+## Data Compaction
+
+Data compaction consolidates smaller Parquet files into fewer, larger files, which optimizes read operations. This process also helps in efficiently managing deleted rows by eliminating them from immutable Parquet files. The data compaction process involves re-writing tables or segments of tables into new Parquet files that are optimized for performance. For more information, see [Blog: Automatic Data Compaction for Fabric Warehouse](https://blog.fabric.microsoft.com/blog/announcing-automatic-data-compaction-for-fabric-warehouse/).
+
+The data compaction process is seamlessly integrated into the warehouse. As queries are executed, the system identifies tables that could benefit from compaction and performs necessary evaluations. There is no manual way to trigger data compaction.
+
+## Related content
+
+- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Limitations](limitations.md)
-- [Troubleshoot the Warehouse](troubleshoot-synapse-data-warehouse.md)
+- [Troubleshoot the Warehouse](troubleshoot-fabric-data-warehouse.md)
 - [Data types](data-types.md)
 - [T-SQL surface area](tsql-surface-area.md)
 - [Tables in data warehouse](tables.md)

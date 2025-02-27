@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
 ms.date: 05/23/2023
 ---
 
@@ -13,13 +13,11 @@ ms.date: 05/23/2023
 
 In this tutorial, learn how to explore the data in your lakehouse with a notebook.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 To get started, you need the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - Read the [Lakehouse overview](lakehouse-overview.md).
 
 ## Open or create a notebook from a lakehouse
@@ -74,6 +72,6 @@ The structure of the Lakehouse shown in the Notebook is the same as the one in t
 > [!NOTE]
 > The notebook will be created under your current workspace.
 
-## Next steps
+## Related content
 
 - [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md)

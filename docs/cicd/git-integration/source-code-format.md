@@ -1,87 +1,210 @@
 ---
 title: Git source code format
-description: Understand how the items in Microsoft Fabric's Git integration tool are structured
+description: This article describes the format of items in Microsoft Fabric's Git integration tool and how they're structured in the folder.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: conceptual 
-ms.date: 06/20/2023
-ms.custom: build-2023
+ms.service: fabric
+ms.subservice: cicd
+ms.topic: concept-article
+ms.date: 01/23/2025
+ms.custom: 
+#customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
 
 # Git integration source code format
 
-Items in Microsoft Fabric are stored in a folder. They can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory. These item directories have the same name as the item followed by the item type.
+Items in Microsoft Fabric are stored in a folder. The folder containing the item can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory.
 
-:::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of Git directory containing items.":::
+## Directory name
 
-Inside each item directory are the [mandatory system files that define the item](/power-bi/developer/projects/projects-overview). Besides these files, there are two automatically generated system files in each directory:
+When you save a new item in Git, Git integration automatically creates a directory for that item.
 
-- [item.metadata.json](#metadata-file)
-- [item.config.json](#config-file)
+The item directory name is based on the following rules:
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+- The pattern for the name is `{display name}.{public facing type}`.
+- If necessary, the following changes to the display name are made:
+  - Invalid characters are replaced with the [HTML number](https://www.ascii-code.com/).
+  - Leading space is replaced with its [HTML number](https://www.ascii-code.com/).
+  - Trailing space or dot is replaced with its [HTML number](https://www.ascii-code.com/).
+- If that folder name isn't available, the name of the item's logicalID (GUID) is used instead of the display name.
 
-## Metadata file
+For example, if you have the following items in a workspace (note that the first and third items have an invisible leading and trailing space respectively):
 
-```json
-{ 
-    "type": <string>, 
-    "displayName": <string>,
-    "description": <string>
-} 
-```
+:::image type="content" source="./media/source-code-format/item-names.png" alt-text="Screenshot of list of items in a Fabric workspace.":::
 
-The item.metadata.json file contains the following attributes:
+The following directories are created in the Git repository:
 
-- `type`: the item’s type (dataset, report etc.)
-- `displayName`: the name of the item
-- `description`: (optional) description of the item
+:::image type="content" source="./media/source-code-format/item-directory-names-git.png" alt-text="Screenshot of names of the Git directories containing the Fabric items.":::
 
-To rename an item, change the `displayName` in the ‘item.metadata.json’ file. Changing the name of the folder doesn’t change the display name of the item in the workspace.
+- Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
+- If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between different Fabric experiences. Changing the directory name *doesn't* cause an incoming change in the workspace.
 
-## Config file
+## Directory content
 
-```json
-{ 
-    version: <string>, 
-    logicalId: <guid>, 
-} 
-```
+Each item directory contains the [item definition files](#item-definition-files) and [automatically generated system files](#automatically-generated-system-files).
 
-The `item.config.json` file contains the following attributes:
+### Item definition files
 
-- `version`: version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
-- `logicalId`: an automatically generated cross-workspace identifier representing an item and its source control representation.
+Each item's directory has specific, required files that define that item.
 
-The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
+The following items are currently supported in Microsoft Fabric:
 
-## Item definition files
+- [Mirrored databases](#mirrored-databases)
+- [Notebook](#notebook-files)
+- [Paginated report](#paginated-report-files)
+- [Report](#report-files)
+- [Semantic model](#semantic-model-files)
 
-Besides the item.config.json file and the item.metadata.json file found in all item folders, each item's directory has specific files that define that item.
+#### Mirrored databases
 
-### Dataset files
+Mirrored database folders contain a *.json* file defining the mirrored database.
 
-Dataset folders contain the following files:
+For instructions on using Git integration with mirrored databases, see [CI/CD for mirrored databases](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration).
 
-- definition.pbidataset
-- model.bim
+#### Notebook files
 
-:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
+Notebook folders contain a *.py* file:
 
-For more information about dataset folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+For instructions on using Git integration with notebooks, see [Notebook source control and deployment](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration).
 
-### Report files
+#### Paginated report files
+
+Paginated report folders contain an *.rdl* file defining the paginated report. RDL (Report Definition Language) is an XML representation of a paginated report definition.
+
+For more information about RDL, see [Report Definition Language (RDL)](/power-bi/paginated-reports/report-definition-language).
+For instructions on using Git integration with paginated reports, see [Git integration with paginated reports](/power-bi/paginated-reports/paginated-github-integration).
+
+#### Report files
 
 Report folders contain the following files:
 
 - definition.pbir
 - report.json
 
-:::image type="content" source="./media/source-code-format/report-directory.png" alt-text="Screenshot of directory tree showing files in the report directory.":::
-
 For more information about report folders and a complete list of their contents, see [Power BI Desktop project report folder](/power-bi/developer/projects/projects-report).
 
-## Next steps
+#### Semantic model files
 
-[Get started with Git integration](./git-get-started.md)
+Semantic model folders contain the following files:
+
+- definition.pbism
+- \definition folder with TMDL files
+
+For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project semantic model folder](/power-bi/developer/projects/projects-dataset).
+
+### Automatically generated system files
+
+In addition to the item definition files, each item directory contains one or two automatically generated system files, depending on which version you're using:
+
+- A version 1 directory contains [item.metadata.json](#metadata-file) and [item.config.json](#config-file). With V1, both files must be in the directory.
+- A version 2 directory contains [.platform](#platform-file). This file includes the content of both item.metadata.json and item.config.json files. If you have this file, you can't have the other two files. If you're using version 1 and you commit changes, your system files are automatically updated to this version.
+
+>[!NOTE]
+> Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `.platform` file. You can’t have all three files.
+
+#### [Version 2](#tab/v2)
+
+#### Platform file
+
+In version 2, instead of having two source files in each item directory, the *.platform* file combines all the information into one file along with a *$schema* property. If you have this file, you can't have the other two files.
+
+```json
+{
+    "version": "2.0",
+    "$schema": https://developer.microsoft.com/json-schemas/fabric/platform/platformProperties.json,
+    "config": {
+        "logicalId": "e553e3b0-0260-4141-a42a-70a24872f88d"
+    },
+    "metadata": {
+        "type": "Report",
+        "displayName": "All visual types",
+        "description": "This is a report"
+    }
+}
+```
+
+The `.platform` file contains the following attributes:
+
+- `version`: Version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
+- `logicalId`: An automatically generated cross-workspace identifier representing an item and its source control representation.
+- `type`: (string) The item’s type (semantic model, report etc.)
+- `displayName`: (string) The name of the item.
+- `description`: (optional string) Description of the item.
+
+To rename an item, change the `displayName`. Changing the name of the folder doesn’t change the display name of the item in the workspace.
+
+The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
+
+> [!NOTE]
+> When you commit changes to Git in version 1, the system files are automatically updated to version 2 along with the changes. Also, any new files exported from Power BI Desktop developer mode will be saved in the version 2 file format.
+
+#### [Version 1](#tab/v1)
+
+If you're using version 1, each item directory has two files:
+
+- [item.metadata.json](#metadata-file)
+- [item.config.json](#config-file)
+
+```json
+{ 
+    "type": "report", 
+    "displayName": "All visual types",
+    "description": "This is a report"
+} 
+```
+
+```json
+{ 
+    version: "1.0", 
+    logicalId: "e553e3b0-0260-4141-a42a-70a24872f88d", 
+} 
+```
+
+#### Metadata file
+
+```json
+{ 
+    "type": "report", 
+    "displayName": "All visual types",
+    "description": "This is a report"
+} 
+```
+
+The item.metadata.json file contains the following attributes:
+
+- `type`: (string) The item’s type (semantic model, report etc.)
+- `displayName`: (string) The name of the item
+- `description`: (optional string) Description of the item
+
+To rename an item, change the `displayName` in the ‘item.metadata.json’ file. Changing the name of the folder doesn’t change the display name of the item in the workspace.
+
+#### Config file
+
+```json
+{ 
+    version: "1.0", 
+    logicalId: "e553e3b0-0260-4141-a42a-70a24872f88d", 
+} 
+```
+
+The `item.config.json` file contains the following attributes:
+
+- `version`: Version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
+- `logicalId`: An automatically generated cross-workspace identifier representing an item and its source control representation.
+
+The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
+
+> [!NOTE]
+> When you commit changes to Git in version 1, the system files are automatically updated to version 2 along with the changes. Also, any new files exported from Power BI Desktop developer mode will be saved in the version 2 file format.
+
+---
+
+> [!NOTE]
+>
+> - The *type* field is case-sensitive. Don't change the way it's automatically generated or it might fail.
+> - Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
+
+## Related content
+
+[Get started with Git integration.](./git-get-started.md)

@@ -1,37 +1,59 @@
 ---
 title: Audit and usage admin settings
-description: Learn how to configure Power BI audit and usage admin settings.
+description: Learn how to configure Fabric audit and usage admin settings.
 author: paulinbar
 ms.author: painbar
-ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.service: fabric
+ms.custom:
+  - tenant-setting
 ms.topic: how-to
-ms.date: 10/23/2022
-LocalizationGroup: Administration
+ms.date: 11/04/2024
 ---
 
 # Audit and usage tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Usage metrics for content creators
 
-When this setting is on, users in the organization can see usage metrics for dashboards, reports, and datasets that they have appropriate permissions for. Learn more about [usage metrics](/power-bi/collaborate-share/service-modern-usage-metrics).
+When this setting is on, users in the organization can see usage metrics for dashboards, reports, and semantic models for which they have appropriate permissions.
 
-To turn on this setting, go to **Admin portal > Tenant settings > Audit and usage settings** and turn on the **Usage metrics for content creators** setting.
+To learn more, see [Monitor usage metrics in the workspaces](/power-bi/collaborate-share/service-modern-usage-metrics).
 
 ## Per-user data in usage metrics for content creators
 
-Usage metrics for content creators will expose display names and email addresses of users who are accessing content. Learn more about [usage metrics](/power-bi/collaborate-share/service-modern-usage-metrics).
+Per-user data is enabled for usage metrics by default. Content creator account information, such as user name and email address, is included in the metrics report. If you don't wish to gather this information for all users, you can disable the feature for specified security groups or for an entire organization. Account information for the excluded users then shows in the report as *Unnamed*.
 
-Per-user data is enabled for usage metrics by default, and content creator account information is included in the metrics report. If you do not wish to gather this information for all users, you can disable the feature for specified security groups or for an entire organization. Account information for the excluded users will then show in the report as *Unnamed*.
+## Show user data in the Fabric Capacity Metrics app and reports
+
+This setting is affects the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) and is enabled by default.
+
+* **Enabled** -  The app shows user emails.
+
+* **Disabled** - The app doesn't show user emails.
 
 ## Azure Log Analytics connections for workspace administrators
 
-Power BI integration with [Azure Log Analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) enables [Power BI administrators](/training/modules/power-bi-admin-intro/4-administrator) and Premium Workspace owners to connect their Premium Workspaces to Azure Log Analytics to monitor the connected workspaces. Power BI administrators can enable this feature by going to **Admin Portal > Tenant settings > Audit and usage settings** and turning on the **Azure Log Analytics connections for workspace administrators** setting. When the switch is on, administrators and Premium Workspace owners can [configure **Azure Log Analytics for Power BI**](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure).
+Power BI integration with [Azure Log Analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) enables Fabric administrators and Premium workspace owners to connect their Premium workspaces to Azure Log Analytics to monitor the connected workspaces.
 
-## Next steps
+When the switch is on, administrators and Premium workspace owners can [configure **Azure Log Analytics for Power BI**](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure).
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+## Workspace admins can turn on monitoring for their workspaces
+
+Enable [workspace monitoring](../fundamentals/workspace-monitoring-overview.md), a feature that allows workspace admins to monitor their workspace.
+
+## Microsoft can store query text to aid in support investigation
+
+When this setting is enabled, Microsoft can store the query text generated when users use Fabric items such as reports and dashboards. This data is sometimes necessary for debugging and resolving complex issues related to the performance and functionality of Fabric Items such as semantic models. The setting is enabled by default.
+
+Storing and retaining query text data can have implications for data security and privacy. While it is recommended to leave the setting on to facilitate support, if there are organizational requirements that don't permit storing query text, or if you wish to opt out of this feature for any other reason, you can turn off the feature as follows:
+
+1. [Go to the tenant settings tab in the admin portal](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
+1. Find the setting **Microsoft can store query text to aid in support investigation**. It is in the Audit and usage section. You can use the search box on the tenant settings tab to help find it.
+1. Set the toggle to **Disabled**.
+
+For more information about the diagnostic query text storage feature, see [Diagnostic query text storage](./query-text-storage.md).
+
+## Related content
+
+* [About tenant settings](tenant-settings-index.md)

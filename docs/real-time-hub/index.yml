@@ -1,0 +1,124 @@
+### YamlMime:Landing
+
+title: Real-Time hub in Microsoft Fabric documentation
+summary: Microsoft Fabric Real-Time hub is single, tenant-wide, unified, logical place for streaming data-in-motion.
+
+metadata:
+  title: Real-Time hub in Microsoft Fabric documentation
+  description: Microsoft Fabric Real-Time hub is single, tenant-wide, unified, logical place for streaming data-in-motion.
+  ms.custom:
+  ms.topic: landing-page
+  ms.collection: collection # Optional; Remove if no collection is used.
+  author: spelluru
+  ms.author: spelluru
+  ms.date: 11/18/2024
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card 
+  - title: About Real-Time hub
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Real-Time hub?
+            url: real-time-hub-overview.md
+      - linkListType: get-started
+        links:
+          - text: Get started with Real-Time hub
+            url: get-started-real-time-hub.md
+      - linkListType: concept
+        links:
+          - text: Supported sources
+            url: supported-sources.md      
+      - linkListType: tutorial
+        links:
+          - text: Real-Time Intelligence tutorial
+            url: ../real-time-intelligence/tutorial-introduction.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+
+  # Card 
+  - title: Bring your data from Microsoft sources into Real-Time hub as data streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Azure Event Hubs
+            url: add-source-azure-event-hubs.md
+          - text: Azure Service Bus
+            url: add-source-azure-service-bus.md
+          - text: Azure IoT Hub
+            url: add-source-azure-iot-hub.md
+          - text: Azure SQL Database Change Data Capture (CDC)
+            url: add-source-azure-sql-database-cdc.md
+          - text: PostgreSQL Database CDC
+            url: add-source-postgresql-database-cdc.md
+          - text: MySQL Database CDC
+            url: add-source-mysql-database-cdc.md
+          - text: Azure Cosmos DB CDC
+            url: add-source-azure-cosmos-db-cdc.md
+          - text: Azure SQL Managed Instance DB CDC
+            url: add-source-azure-sql-managed-instance-cdc.md
+          - text: SQL Server on VM DB (CDC)
+            url: add-source-sql-server-on-vm-db-cdc.md
+          - text: Azure Data Explorer
+            url: add-source-azure-data-explorer.md
+
+  # Card 
+  - title: Bring your data in external sources into Real-Time hub as data streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Google Cloud Pub/Sub
+            url: add-source-google-cloud-pub-sub.md
+          - text: Amazon Kinesis Data Streams
+            url: add-source-amazon-kinesis-data-streams.md
+          - text: Apache Kafka
+            url: add-source-apache-kafka.md
+          - text: Confluent Cloud Kafka
+            url: add-source-confluent-kafka.md
+          - text: Amazon Managed Streaming for Kafka
+            url: add-source-amazon-managed-streaming-for-kafka.md
+
+  # Card 
+  - title: Process and analyze data streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+        - text: Analyze data streams
+          url: analyze-data-streams-using-kql-table-queries.md
+        - text: Process data streams
+          url: process-data-streams-using-transformations.md          
+        - text: Transform and route data streams 
+          url: ../real-time-intelligence/event-streams/route-events-based-on-content.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+
+  # Card 
+  - title: Set alerts on data streams and events
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+        - text: Set alerts on streams
+          url: set-alerts-data-streams.md
+        - text: Set alerts on Azure Blob Storage events
+          url: set-alerts-azure-blob-storage-events.md
+        - text: Set alerts on Fabric workspace item events
+          url: set-alerts-fabric-workspace-item-events.md
+
+  # Card 
+  - title: Discover and manage data streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Explore streams
+            url: explore-data-streams.md
+          - text: Explore Azure events
+            url: explore-azure-events.md
+          - text: Explore Fabric events
+            url: explore-fabric-events.md
+          - text: View stream details
+            url: view-data-stream-details.md
+          - text: Preview streams
+            url: preview-data-streams.md
+          - text: Endorse streams
+            url: endorse-data-streams.md
+
+  

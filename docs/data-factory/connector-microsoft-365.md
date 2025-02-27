@@ -4,15 +4,14 @@ description: This article provides information about how to do create Microsoft 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
 ---
 
 # How to create a Microsoft 365 connection
 
 This article outlines the steps to create a Microsoft 365 connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -22,19 +21,17 @@ This Microsoft 365 connector supports the following authentication types for cop
 |:---|:---|:---|
 |Service principal| √| n/a|
 
-## Prerequisites
+## Set up your connection in Dataflow Gen2
 
-The following prerequisites are required before you start:
+The Microsoft 365 connector isn't currently supported in Dataflow Gen2.
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+## Set up your connection in a data pipeline
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+To create a connection in a data pipeline:
 
-## Go to Manage gateways to create connection
+1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
-1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
-
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway":::
+   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
 2. Select **New** at the top of the ribbon to add a new data source.
 
@@ -61,13 +58,13 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 [Service Principal](#service-principal-authentication)
 
-:::image type="content" source="media/connector-microsoft-365/authentication-method.png" alt-text="Screenshot showing that authentication method of Microsoft 365":::
+:::image type="content" source="media/connector-microsoft-365/authentication-method.png" alt-text="Screenshot of the authentication method of Microsoft 365.":::
 
 #### Service Principal authentication
 
-:::image type="content" source="media/connector-microsoft-365/service-pricipal-authentication.png" alt-text="Screenshot showing that Service Principal authentication method of Microsoft 365":::
+:::image type="content" source="media/connector-microsoft-365/service-pricipal-authentication.png" alt-text="Screenshot of the Service Principal authentication method of Microsoft 365.":::
 
-- **Tenant Id**: Your service principal tenant ID. Specify the tenant information under which your Azure AD web application resides.
+- **Tenant Id**: Your service principal tenant ID. Specify the tenant information under which your Microsoft Entra web application resides.
 - **Service principal ID**: Specify the application's client ID.
 - **Service principal key**: Specify the application's key.
 
@@ -79,7 +76,7 @@ In the **General** tab, select the privacy level that you want apply in the **Pr
 
 Select **Create**. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-:::image type="content" source="./media/connector-microsoft-365/connection.png" alt-text="Screenshot showing connection page." lightbox="./media/connector-microsoft-365/connection.png":::
+:::image type="content" source="./media/connector-microsoft-365/connection.png" alt-text="Screenshot of the connection page." lightbox="./media/connector-microsoft-365/connection.png":::
 
 ## Table summary
 
@@ -98,10 +95,10 @@ The following table contains the supported authentication type properties.
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
 |**Service Principal**||||✓|
-|- Tenant ID|Your service principal tenant ID. Specify the tenant information under which your Azure AD web application resides.|Yes |||
+|- Tenant ID|Your service principal tenant ID. Specify the tenant information under which your Microsoft Entra web application resides.|Yes |||
 |- Service Principal ID|Specify the application's client ID.|Yes |||
 |- Service Principal key|Specify the application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [How to configure Microsoft 365 in a copy activity](connector-microsoft-365-copy-activity.md)

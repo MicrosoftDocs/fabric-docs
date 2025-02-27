@@ -1,24 +1,23 @@
 ---
 title: Switch activity
 description: Learn how to add a Switch activity to a pipeline and use it to look up data from a data source.
-author: chez-charlie
-ms.author: chez
+author: kromerm
+ms.author: makromer
 ms.reviewer: jburchel
 ms.topic: how-to
-ms.date: 08/21/2023
+ms.custom:
+ms.date: 11/15/2023
 ---
 
 # Use the Switch activity to conditionally branch execution in a pipeline
 
 The Switch activity in Microsoft Fabric provides the same functionality that a switch statement provides in programming languages. It evaluates a set of activities corresponding to a case that matches the condition evaluation.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a lookup activity to a pipeline with UI
@@ -62,6 +61,6 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

@@ -1,65 +1,86 @@
 ---
-title: Data warehouse tutorial - Create queries cross-warehouse with the SQL query editor
-description: In this tutorial step, learn how to use the SQL query editor to write cross-warehouse queries.
-ms.reviewer: wiassaf
-ms.author: prlangad
-author: prlangad
+title: "Data warehouse tutorial: Create a cross-warehouse query in a Warehouse"
+description: "In this tutorial, learn how to work with the SQL query editor to write cross-warehouse query."
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad
+ms.date: 12/29/2024
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
 ---
 
-# Tutorial: Create cross-warehouse queries with the SQL query editor
+# Tutorial: Create a cross-warehouse query in Warehouse
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In this tutorial, learn about how you can easily create and execute T-SQL queries with the SQL query editor across multiple warehouse, including joining together data from a [!INCLUDE [fabric-se](includes/fabric-se.md)] and a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+In this tutorial, learn how to work with the SQL query editor to write cross-warehouse query.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
+> 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
+> 1. [Analyze data with a notebook](tutorial-analyze-data-notebook.md)
 
-## Add multiple warehouses to the Explorer
+## Add a warehouse to the Explorer pane
 
-1. Select the `Data Warehouse Tutorial` workspace in the navigation menu.
-1. In the **Explorer**, select the **+ Warehouses** button.
+In this task, learn how to work with the SQL query editor to write cross-warehouse query.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="A screenshot from the Fabric portal Explorer, showing the + Warehouse button boxed in red.":::
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-1. Select the SQL endpoint of the lakehouse you created using shortcuts previously, named `ShortcutExercise`. Both warehouse experiences are added to the query.
+1. Select the `Wide World Importers` warehouse.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="A screenshot from the Fabric portal Add warehouses window. Two warehouses are selected, including the ShortcutExercise SQL endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png":::
+1. In the **Explorer** pane, select **+ Warehouses**.
 
-1. Your selected warehouses now show the same **Explorer** pane.
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="Screenshot of the Explorer pane, highlighting the + Warehouse button." border="false":::
 
-## Execute a cross-warehouse query
+1. In the **OneLake catalog** window, select the `Shortcut_Exercise` SQL analytics endpoint.
 
-In this example, you can see how easily you can run T-SQL queries across the `WideWorldImporters` warehouse and `ShortcutExercise` SQL Endpoint. You can write cross-database queries using three-part naming to reference the `database.schema.table`, as in SQL Server.
+1. Select **Confirm**.
 
-1. From the ribbon, select **New SQL query**.
+1. In the **Explorer** pane, notice that the `Shortcut_Exercise` SQL analytics endpoint is available.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/new-sql-query.png" alt-text="A screenshot from the Fabric portal showing the ribbon, and the New SQL query option boxed in red.":::
+## Run the cross-warehouse query
 
-1. In the query editor, copy and paste the following T-SQL code.
+In this task, learn how to run the cross-warehouse query. Specifically, you will run a query that joins the `Wide World Importers` warehouse to the `Shortcut_Exercise` SQL analytics endpoint.
+
+> [!NOTE]
+> A cross-database query uses three-part naming of _database.schema.table_ to reference objects.
+
+1. On the **Home** ribbon, select **New SQL query**.
+
+   :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." border="false":::
+
+1. In the query editor, paste the following code. The code retrieves an aggregate of quantity sold by stock item, description, and customer.
 
     ```sql
-    SELECT Sales.StockItemKey, 
-    Sales.Description, 
-    SUM(CAST(Sales.Quantity AS int)) AS SoldQuantity, 
-    c.Customer
-    FROM [dbo].[fact_sale] AS Sales,
-    [ShortcutExercise].[dbo].[dimension_customer] AS c
-    WHERE Sales.CustomerKey = c.CustomerKey
-    GROUP BY Sales.StockItemKey, Sales.Description, c.Customer;
+    --Retrieve an aggregate of quantity sold by stock item, description, and customer.
+    SELECT
+        Sales.StockItemKey,
+        Sales.Description,
+        c.Customer,
+        SUM(CAST(Sales.Quantity AS int)) AS SoldQuantity
+    FROM
+        [dbo].[fact_sale] AS Sales
+        INNER JOIN [Shortcut_Exercise].[dbo].[dimension_customer] AS c
+            ON Sales.CustomerKey = c.CustomerKey
+    GROUP BY
+        Sales.StockItemKey,
+        Sales.Description,
+        c.Customer;
     ```
 
-1. Select the **Run** button to execute the query. After the query is completed, you will see the results.
+1. Run the query, and review the query result.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/cross-warehouse-query-results.png" alt-text="A screenshot from the Fabric portal showing the results of a cross-warehouse query.":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/query-result.png" alt-text="Screenshot of the query result of the cross-warehouse query." border="false":::
 
-1. Rename the query for reference later. Right-click on `SQL query 1` in the **Explorer** and select **Rename**.
-1. Type `Cross-warehouse query` to change the name of the query.
-1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
+1. When execution completes, rename the query as `Cross-warehouse Query`.
 
-## Next steps
+> [!NOTE]
+> You can also run cross-warehouse queries that span data from a warehouse in a different workspace. However, cross-warehouse cross-workspace querying is only supported for queries _within the same region_.
+
+## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Power BI report](tutorial-power-bi-report.md)
+> [Tutorial: Create a Direct Lake semantic model and Power BI report](tutorial-power-bi-report.md)

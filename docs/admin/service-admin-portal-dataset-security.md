@@ -1,27 +1,27 @@
 ---
-title: Dataset Security admin setting
-description: Learn how to configure Power BI dataset security admin settings.
+title: Semantic model security admin setting
+description: Learn how to configure semantic model security admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+
+ms.custom:
+  - tenant-setting
 ms.topic: how-to
-ms.date: 03/10/2022
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
-# Dataset security tenant setting
+# Semantic model security tenant setting
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Block republish and disable package refresh
 
-Disable package refresh, and only allow the dataset owner to publish updates.
+Disable package refresh, and only allow the semantic model owner to publish updates.
 
-![Screenshot of the Block republish and disable package refresh tenant setting.](media/tenant-settings/block-republish-disable-package-tenant-setting.png)
+To learn more about semantic model security, see [Semantic model permissions](/power-bi/connect-data/service-datasets-permissions).
 
-## Next steps
+## Related content
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

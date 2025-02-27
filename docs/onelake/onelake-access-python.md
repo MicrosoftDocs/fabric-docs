@@ -1,29 +1,29 @@
 ---
 title: Access OneLake with Python
-description: Learn how to use the Azure Storage Python SDK to manage OneLake. 
+description: Learn how to use the Azure Storage Python SDK to access and manage files and directories in OneLake.
 ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
-ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 08/04/2023
+ms.topic: concept-article
+ms.custom:
+ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to learn how to use Python and the Azure Storage Python SDK to access and manage files and directories in OneLake so that I can efficiently work with data stored there and perform necessary operations such as uploading files, creating directories, and listing directory contents.
 ---
 
 # Use Python to manage files and folders in Microsoft OneLake
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article shows how you can use the Azure Storage Python SDK to manage files and directories in OneLake. This walkthrough covers the same content as [Use Python to manage directories and files in ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-python?tabs=azure-ad) and highlights the differences when connecting to OneLake.
 
 ## Prerequisites
 
-Before starting your project, make sure you have the following:  
-    - A workspace in your Fabric tenant with Contributor permissions.  
-    - A lakehouse in the workspace. Optionally, have data preloaded to read using Python.
+Before starting your project, make sure you have the following prerequisites:
+
+- A workspace in your Fabric tenant with Contributor permissions.  
+- A lakehouse in the workspace. Optionally, have data preloaded to read using Python.
 
 ## Set up your project
 
-From your project directory, install packages for the Azure Data Lake Storage and Azure Identity client libraries. OneLake supports the same SDKs as Azure Data Lake Storage (ADLS) Gen2 and supports Azure Active Directory authentication, which is provided by the azure-identity package.
+From your project directory, install packages for the Azure Data Lake Storage and Azure Identity client libraries. OneLake supports the same SDKs as Azure Data Lake Storage (ADLS) Gen2 and supports Microsoft Entra authentication, which is provided by the azure-identity package.  
 
 ```console
 pip install azure-storage-file-datalake azure-identity
@@ -43,7 +43,7 @@ from azure.identity import DefaultAzureCredential
 
 ## Authorize access to OneLake
 
-The example below creates a service client connected to OneLake that you'll use to create filesystem clients for other operations.  
+The following example creates a service client connected to OneLake that you can use to create filesystem clients for other operations. To authenticate to OneLake, this example uses the DefaultAzureCredential to automatically detect credentials and obtain the correct authentication token. Common methods of providing credentials for the Azure SDK include using the 'az login' command in the Azure Command Line Interface or the 'Connect-AzAccount' cmdlet from Azure PowerShell.  
 
 ```python
 def get_service_client_token_credential(self, account_name) -> DataLakeServiceClient:
@@ -59,7 +59,7 @@ To learn more about using DefaultAzureCredential to authorize access to data, se
 
 ## Working with directories
 
-To work with a directory in OneLake, create a filesystem client and directory client. You can use this directory client to perform a variety of operations, including renaming, moving, or listing paths (as seen below).  You can also create a directory client when creating a directory, using the [FileSystemClient.create_directory](https://learn.microsoft.com/python/api/azure-storage-file-datalake/azure.storage.filedatalake.filesystemclient#azure-storage-filedatalake-filesystemclient-create-directory) method.
+To work with a directory in OneLake, create a filesystem client and directory client. You can use this directory client to perform various operations, including renaming, moving, or listing paths (as seen in the following example). You can also create a directory client when creating a directory, using the [FileSystemClient.create_directory](/python/api/azure-storage-file-datalake/azure.storage.filedatalake.filesystemclient#azure-storage-filedatalake-filesystemclient-create-directory) method.
 
 ```python
 def create_file_system_client(self, service_client, file_system_name: str) : DataLakeServiceClient) -> FileSystemClient:
@@ -92,48 +92,53 @@ def upload_file_to_directory(self, directory_client: DataLakeDirectoryClient, lo
 
 ## Sample
 
-This sample combines the functions defined above to list the directory contents of any folder in OneLake.
+The following code sample lists the directory contents of any folder in OneLake.  
 
 ```python
-def get_service_client_token_credential(self, account_name) -> DataLakeServiceClient:
-    account_url = f"https://{account_name}.dfs.fabric.microsoft.com"
-    token_credential = DefaultAzureCredential()
+#Install the correct packages first in the same folder as this file. 
+#pip install azure-storage-file-datalake azure-identity
 
+from azure.storage.filedatalake import (
+    DataLakeServiceClient,
+    DataLakeDirectoryClient,
+    FileSystemClient
+)
+from azure.identity import DefaultAzureCredential
+
+# Set your account, workspace, and item path here
+ACCOUNT_NAME = "onelake"
+WORKSPACE_NAME = "<myWorkspace>"
+DATA_PATH = "<myLakehouse>.Lakehouse/Files/<path>"
+
+def main():
+    #Create a service client using the default Azure credential
+
+    account_url = f"https://{ACCOUNT_NAME}.dfs.fabric.microsoft.com"
+    token_credential = DefaultAzureCredential()
     service_client = DataLakeServiceClient(account_url, credential=token_credential)
 
-    return service_client
-
-def create_file_system_client(self, service_client, file_system_name: str) : DataLakeServiceClient) -> FileSystemClient:
-    file_system_client = service_client.get_file_system_client(file_system = file_system_name)
+    #Create a file system client for the workspace
+    file_system_client = service_client.get_file_system_client(WORKSPACE_NAME)
     
-    return file_system_client
-
-
-def list_directory_contents(self, file_system_client: FileSystemClient, directory_name: str):
-    paths = file_system_client.get_paths(path=directory_name)
+    #List a directory within the filesystem
+    paths = file_system_client.get_paths(path=DATA_PATH)
 
     for path in paths:
         print(path.name + '\n')
 
 if __name__ == "__main__":
-    account = sys.argv[1]
-    workspace = sys.argv[2]
-    path = sys.argv[3]
-    
-    oneLakeServiceClient = get_service_client_token_credential(account)
-    create_file_system_client(oneLakeServiceClient)
-    list_directory_contents(workspace, path)
+    main()
 
 ```
 
-To run this sample, save the code above into a file 'listOneLakeDirectory.py' and run the following command in the same directory. Remember to replace the workspace and path with your own data. 
+To run this sample, save the preceding code into a file `listOneLakeDirectory.py` and run the following command in the same directory. Remember to replace the workspace and path with your own values in the example.
 
-```powershell
-python listOneLakeDirectory.py "onelake" "myWorkspace" "myLakehouse.Lakehouse/Files/path"
+```terminal
+python listOneLakeDirectory.py
 ```
 
-## Learn more
+## Related content
 
 - [Use Python to manage ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
-- [OneLake API Parity](onelake-api-parity.md)
+- [OneLake parity and integration](onelake-api-parity.md)
 - [Sync OneLake with your Windows File Explorer](onelake-file-explorer.md)

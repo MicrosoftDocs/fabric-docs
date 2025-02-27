@@ -1,11 +1,11 @@
 ---
 title: Use Tidyverse
 description: How to use Tidyverse, a collection of R packages designed for data science.
-ms.reviewer: sgilley
-ms.author: ruxu
-author: ruixinxu
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
 ms.date: 04/24/2023
 ms.search.form: R Language
 ---
@@ -14,7 +14,7 @@ ms.search.form: R Language
 
 [Tidyverse](https://www.tidyverse.org/packages/) is a collection of R packages that data scientists commonly use in everyday data analyses. It includes packages for data import (`readr`), data visualization (`ggplot2`), data manipulation (`dplyr`, `tidyr`), functional programming (`purrr`), and model building (`tidymodels`) etc. The packages in `tidyverse` are designed to work together seamlessly and follow a consistent set of design principles.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of `tidyverse` with every runtime release. Import and start using your familiar R packages.
 
@@ -151,7 +151,7 @@ ggplot(stocksL, aes(x=time, y=price, colour = stock)) +
 
 ```
 
-![Graph of plot line.](./media/r-use-tidyverse/ggplot-line.png)
+:::image type="content" border="true" source="./media/r-use-tidyverse/ggplot-line.png" alt-text="Graph of plot line.":::
 
 
 ```R
@@ -161,7 +161,7 @@ ggplot(stocksL, aes(x=time, y=price, colour = stock)) +
   geom_boxplot()
 ```
 
-![Graph of plot box.](./media/r-use-tidyverse/ggplot-box.png)
+:::image type="content" border="true" source="./media/r-use-tidyverse/ggplot-box.png" alt-text="Graph of plot box.":::
 
 
 ## Model building
@@ -174,7 +174,7 @@ ggplot(mtcars, aes(wt,mpg))+
 geom_point()
 ```
 
-![Graph of mpg and wt.](./media/r-use-tidyverse/mpg-wt.png)
+:::image type="content" border="true" source="./media/r-use-tidyverse/mpg-wt.png" alt-text="Graph of mpg and wt.":::
 
 From the scatterplot, the relationship looks approximately linear and the variance looks constant. Let's try to model this using linear regression.
 
@@ -219,10 +219,10 @@ ggplot(lm_aug, aes(x = wt, y = mpg)) +
   geom_abline(intercept = lm_fit$fit$coefficients[1], slope = lm_fit$fit$coefficients[2], color = "blue")
 ```
 
-![Graph of model result.](./media/r-use-tidyverse/model-out.png)
+:::image type="content" border="true" source="./media/r-use-tidyverse/model-out.png" alt-text="Graph of model result.":::
 
 
-## Next steps
+## Related content
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)

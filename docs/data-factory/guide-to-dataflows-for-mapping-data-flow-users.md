@@ -1,40 +1,40 @@
 ---
-title: A guide to learning Dataflows for Mapping Data Flow users
-description: Guide on common transformations from Azure Data Factory Mapping Dataflows and their equivalent transformations in Power Query inside of Dataflows
+title: A guide to Fabric Dataflows for Azure Data Factory Mapping Data Flow users
+description: Guide on common transformations from Azure Data Factory Mapping Dataflows and their equivalent transformations in Power Query inside of Fabric's Dataflows
 author: itsnotaboutthecell
 ms.topic: overview
-ms.custom: 
-ms.date: 08/03/2023
+ms.custom: fabric-cat, intro-migration
+ms.date: 12/18/2024
 ms.author: alpowers
 ms.search.form: DataflowGen2
 ---
 
-# A guide to learning Dataflows for Mapping Data Flow users
+# A guide to Fabric Dataflows for Azure Data Factory Mapping Data Flow users
 
-Microsoft Fabric’s Data Factory experience provides an intuitive and user-friendly interface using Power Query Online that can help you streamline your data transformation workflows when authoring Dataflows Gen2. If you’re a developer with a background in Azure Data Factory and Mapping Data Flows, you’ll find this guide helpful in mapping your existing Mapping Data Flow transformations to the Dataflows Gen2 Power Query user interface.
+Microsoft Fabric’s Data Factory experience provides an intuitive and user-friendly interface using Power Query Online that can help you streamline your data transformation workflows when authoring Dataflow Gen2. If you’re a developer with a background in Azure Data Factory's Mapping Data Flows, you find this guide helpful in mapping your existing Mapping Data Flow transformations to the Dataflow Gen2 Power Query user interface.
 
 ## Global search box
-When first starting to author Dataflows, you can also leverage the Global search box (shortcut: **Alt + Q**) found in the middle of the editor to search for connectors, transformations (actions), queries, and more while you learn your way around the Power Query Online interface.
+When first starting to author Dataflows, you can also use the Global search box (shortcut: **Alt + Q**) found in the middle of the editor to search for connectors, transformations (actions), queries, and more while you learn your way around the Power Query Online interface.
 
-![Screenshot of the Global search box feature.](media/guide-to-dataflows-for-mapping-data-flow-users/global-search-box.png)
+:::image type="content" border="true" source="media/guide-to-dataflows-for-mapping-data-flow-users/global-search-box.png" alt-text="Screenshot of the Global search box feature.":::
 
 >[!NOTE]
 >Learn more about [Global search box](/power-query/search-box).
 
 ## Transformations
 
-When authoring Dataflows Gen2 using the Power Query Online interface, you can use the following table to understand how the current Mapping Data Flows capabilities translate and their equivalent toolbar navigation location in Dataflows Gen2 where applicable.
+When authoring Dataflow Gen2 using the Power Query Online interface, you can use the following table to understand how the current Mapping Data Flows capabilities translate and their equivalent toolbar navigation location in Dataflow Gen2 where applicable.
 
 
 ### Multiple inputs/outputs
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **New branch** | **Reference** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/new-branch.svg" alt-text="Screenshot of the New branch transformation icon." ::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/reference.png" alt-text="Screenshot of the Reference transformation icon in Power Query.":::<br><br>**Important:** Right click a query and select Reference. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/new-branch.svg" alt-text="Screenshot of the New branch transformation icon." ::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/reference.png" alt-text="Screenshot of the Reference transformation icon in Power Query.":::<br><br>**Important:** Right select a query and select Reference. |
 | **Join** | **Merge queries** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/join.svg" alt-text="Screenshot of the Join transformation icon.":::  | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/merge-queries.png" alt-text="Screenshot of the Merge queries transformation icon."::: <br><br> **Navigation:** <br>Home > Merge queries<br><br>**Important:**<br>Merge queries – Merge this query into another query in this project.<br>Merge queries as new – Merge this query into another query in this project to create a new query. |
 | **Conditional Split** | **Reference** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/conditional-split.svg" alt-text="Screenshot of the Conditional Split transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Reference.png" alt-text="Screenshot of the Reference transformation icon."::: <br><br> **Important:** Right click a query and select Reference, you can then apply additional transformation logic to limit specific rows manually. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/conditional-split.svg" alt-text="Screenshot of the Conditional Split transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Reference.png" alt-text="Screenshot of the Reference transformation icon."::: <br><br> **Important:** Right select a query and select Reference, you can then apply extra transformation logic to limit specific rows manually. |
 | **Union** | **Append queries** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Union.svg" alt-text="Screenshot of the Union transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/append-queries.png" alt-text="Screenshot of the Append queries transformation icon."::: <br><br> **Navigation:**<br>Home > Append queries<br><br>**Important:**<br>Append queries – Append this query into another query in this project.<br>Append queries as new – Append this query into another query in this project to create a new query. |
 | **Lookup** | **Merge queries** |
@@ -45,8 +45,10 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | :---- | :---- |
 | **Derived Column** | **Custom column** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/derived-column.svg" alt-text="Screenshot of the Derived Column transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/custom-column-options.png" alt-text="Screenshot of the Custom Column options transformation icons."::: <br><br> **Navigation:** <br>Add column > Custom column<br><br>**Important:**<br>Column from examples - Use examples to create a new column in this table. (Ctrl + E)<br>Custom column - Create a new column based on other columns, or a custom expression.<br>Invoke custom function - Invoke a custom function for each row of this table.<br>Conditional column - Create a new column that conditionally adds the values in the currently selected column. |
+||**Replace values** |
+| | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/replace-values.png" alt-text="Screenshot of the Replace values transformation icon."::: <br><br> **Navigation:**<br>Transform > Replace values |
 | **Select** | **Choose columns** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/select.svg" alt-text="Screenshot of the Select transformation icon.":::<br>**Note:** Includes the ability to select, drop and rename (Name as) columns and whether to drop or pass on duplicate columns | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/choose-columns.png" alt-text="Screenshot of the Choose columns transformation icon."::: <br><br> **Navigation:**<br>Home > Choose columns |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/select.svg" alt-text="Screenshot of the Select transformation icon.":::<br>**Note:** Includes the ability to select, drop, and rename (Name as) columns and whether to drop or pass on duplicate columns | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/choose-columns.png" alt-text="Screenshot of the Choose columns transformation icon."::: <br><br> **Navigation:**<br>Home > Choose columns |
 | **(Remove Mapping)** | **Remove columns** |
 | | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/remove-columns.png" alt-text="Screenshot of the Remove columns transformation icon."::: |
 | | **Navigation:**<br>Home > Remove columns |
@@ -89,8 +91,6 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/filter.svg" alt-text="Screenshot of the Filter transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/filter-rows.png" alt-text="Screenshot of the Filter rows transformation icon."::: <br><br> **Navigation:**<br>Home > Filter rows |
 | **Sort** | **Sort** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sort.svg" alt-text="Screenshot of the Sort transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sort.png" alt-text="Screenshot of the Power Query Sort transformation icon."::: <br><br> **Navigation:**<br>Home > Sort |
-| **Alter row** | **Replace values** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/alter-row.svg" alt-text="Screenshot of the Alter Row transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/replace-values.png" alt-text="Screenshot of the Replace values transformation icon."::: <br><br> **Navigation:**<br>Transform > Replace values |
 
 #### Flowlets
 | Mapping Data Flow | Dataflow Gen2 |
@@ -105,8 +105,9 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sink.svg" alt-text="Screenshot of the Sink transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/add-data-destination.png" alt-text="Screenshot of the Add data destination icon."::: <br><br> **Navigation:**<br>Home > Add data destination |
 
 ### Considerations and limitations
-The following mapping data flow transformations are not supported in Dataflows Gen2. To vote for support of these operations, please visit [Fabric ideas](https://aka.ms/fabricideas).
+The following mapping data flow transformations aren't supported in Dataflow Gen2. To vote for support of these operations, visit [Fabric ideas](https://aka.ms/fabricideas).
 
 - Assert
+- Alter Row
 - Stringify
 - Window

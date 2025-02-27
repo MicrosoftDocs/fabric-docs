@@ -5,15 +5,13 @@ ms.reviewer: jburchel
 ms.author: yexu
 author: dearandyxu
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 08/17/2023
+ms.custom:
+ms.date: 12/18/2024
 ---
 
 # Use the Delete data activity to look up data from a data source
 
 The Fabric Delete data activity can delete data from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. 
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 You can use the Delete Activity in Data Factory to delete files or folders from any supported storage stores. Use this activity to clean up or archive files when they are no longer needed.
 
@@ -21,7 +19,7 @@ You can use the Delete Activity in Data Factory to delete files or folders from 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a lookup activity to a pipeline with UI
@@ -43,7 +41,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Choose a data source
 
-Select the **Source** tab, and select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+Select the **Source** tab, and select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
 :::image type="content" source="media/delete-data-activity/choose-delete-data-source-and-configure.png" alt-text="Screenshot showing the Delete data activity Source tab highlighted, and highlighting where to create a new connection.":::
 
@@ -78,6 +76,6 @@ Now you are using the Delete activity to delete folder or files by the combinati
 
 :::image type="content" source="media/delete-data-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

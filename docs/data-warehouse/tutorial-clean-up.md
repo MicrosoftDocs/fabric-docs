@@ -1,38 +1,42 @@
 ---
-title: Data warehouse tutorial - clean up tutorial resources
-description: In this final tutorial step, clean up the workspace, individual reports, pipelines, warehouses, and other items you created as part of the tutorial.
-ms.reviewer: wiassaf
-ms.author: scbradl
-author: bradleyschacht
+title: "Data warehouse tutorial: Clean up tutorial resources"
+description: "In this tutorial, you will remove the workspace you created in the first tutorial."
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: scbradl
+ms.date: 12/29/2024
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
 ---
 
 # Tutorial: Clean up tutorial resources
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace. In this tutorial, you will clean up the workspace, individual reports, pipelines, warehouses, and other items you created as part of the tutorial.
+Now that you've completed all tutorials, we recommend that you clean up by removing the tutorial workspace. Removing the workspace will help conserve your capacity resources.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!CAUTION]
+> All content in the workspace will be permanently deleted after a retention period of seven days.
 
-## Delete a workspace
+## Remove the workspace
 
-1. Select **Data Warehouse Tutorial** in the navigation menu to return to the workspace item list.
+In this task, you'll remove the workspace you created in the first tutorial.
 
-   :::image type="content" source="media\tutorial-clean-up\select-the-tutorial.png" alt-text="Screenshot of the left navigation menu, showing where to select the tutorial.":::
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-1. In the menu of the workspace header, select **Workspace settings**.
+1. In the workspace landing page, select **Workspace settings**.
 
-   :::image type="content" source="media\tutorial-clean-up\workspace-settings-option.png" alt-text="Screenshot of the top of the Data Warehouse Tutorial workspace, showing where to select Workspace settings." lightbox="media\tutorial-clean-up\workspace-settings-option.png":::
+   :::image type="content" source="media/tutorial-clean-up/select-workspace-settings.png" alt-text="Screenshot of the workspace landing page, highlighting the Workspace settings option."  border="false":::
 
-1. Select **Other** > **Delete this workspace**.
+1. In the **Workspace settings** pane, in the **General** tab, locate the **Manage** section.
 
-   :::image type="content" source="media\tutorial-clean-up\settings-delete-workspace.png" alt-text="screenshot of the Workspace settings screen, showing where to select Delete this workspace." lightbox="media\tutorial-clean-up\settings-delete-workspace.png":::
+1. Select **Remove this workspace**.
 
-1. Select **Delete** on the warning to remove the workspace and all its contents.
+   :::image type="content" source="media/tutorial-clean-up/workspace-settings-remove-workspace.png" alt-text="Screenshot of the Workspace settings pane, highlighting the Remove this workspace button." border="false":::
 
-## Next steps
+1. When prompted to delete the workspace, select **Delete**.
 
-- [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
+## Next step
+
+> [!div class="nextstepaction"]
+> [What is data warehousing in Microsoft Fabric?](data-warehousing.md)

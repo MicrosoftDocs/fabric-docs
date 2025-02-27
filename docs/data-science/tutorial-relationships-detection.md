@@ -1,21 +1,19 @@
 ---
-title: 'Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link'
-description: This article shows how to detect relationships in the public _Synthea_ dataset, using Semantic Link.
-ms.reviewer: mopeakande
-reviewer: msakande
-ms.author: alsavelv
-author: alsavelv
+title: 'Tutorial: Discover relationships in the _Synthea_ dataset using semantic link'
+description: This article shows how to detect relationships in the public _Synthea_ dataset, using semantic link.
+ms.author: mopeakande
+reviewer: alsavelv
+ms.reviewer: alsavelv
+author: msakande
 ms.topic: tutorial
+ms.custom:
 ms.date: 09/27/2023
-#customer intent:
 ---
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/relationships_detection_tutorial.ipynb -->
 
-# Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link
+# Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link
 
-This tutorial illustrates how to detect relationships in the public _Synthea_ dataset, using Semantic Link. 
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+This tutorial illustrates how to detect relationships in the public _Synthea_ dataset, using semantic link.
 
 When you're working with new data or working without an existing data model, it can be helpful to discover relationships automatically. This relationship detection can help you to:
 
@@ -24,16 +22,17 @@ When you're working with new data or working without an existing data model, it 
    * validate updated data or new, incoming data, and
    * clean data.
 
-Even if relationships are known in advance, a search for relationships can help with better understanding of the data model or identification of data quality issues. 
+Even if relationships are known in advance, a search for relationships can help with better understanding of the data model or identification of data quality issues.
 
 In this tutorial, you begin with a simple baseline example where you experiment with only three tables so that connections between them are easy to follow. Then, you show a more complex example with a larger table set.
 
-### In this tutorial, you learn how to: 
-- Use components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data analysis. These components include:
+In this tutorial, you learn how to:
+
+- Use components of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
-    - Functions for pulling Power BI datasets from a Fabric workspace into your notebook.
-    - Functions that automate the discovery and visualization of relationships in your datasets.
-- Troubleshoot the process of relationship discovery for datasets with multiple tables and interdependencies.
+    - Functions for pulling semantic models from a Fabric workspace into your notebook.
+    - Functions that automate the discovery and visualization of relationships in your semantic models.
+- Troubleshoot the process of relationship discovery for semantic models with multiple tables and interdependencies.
 
 ## Prerequisites
 
@@ -44,7 +43,7 @@ In this tutorial, you begin with a simple baseline example where you experiment 
 
 The [relationships_detection_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/relationships_detection_tutorial.ipynb) notebook accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 ## Set up the notebook
 
@@ -87,8 +86,8 @@ In this section, you set up a notebook environment with the necessary modules an
 1. Select three tables from a larger set:
 
     * `patients` specifies patient information
-    * `encounters` specifies the patients that had medical encounters (for example, a medical appointment, procedure) 
-    * `providers` specifies which medical providers attended to the patients 
+    * `encounters` specifies the patients that had medical encounters (for example, a medical appointment, procedure)
+    * `providers` specifies which medical providers attended to the patients
 
     The `encounters` table resolves a many-to-many relationship between `patients` and `providers` and can be described as an [associative entity](https://wikipedia.org/wiki/Associative_entity):
 
@@ -114,14 +113,14 @@ In this section, you set up a notebook environment with the necessary modules an
     :::image type="content" source="media/tutorial-relationships-detection/plot-of-relationship-metadata.png" alt-text="Screenshot showing relationships between tables in the dataset." lightbox="media/tutorial-relationships-detection/plot-of-relationship-metadata.png":::
 
     The function lays out the relationship hierarchy from the left hand side to the right hand side, which corresponds to "from" and "to" tables in the output. In other words, the independent "from" tables on the left hand side use their foreign keys to point to their "to" dependency tables on the right hand side. Each entity box shows columns that participate on either the "from" or "to" side of a relationship.
-    
+
     By default, relationships are generated as "m:1" (not as "1:m") or "1:1". The "1:1" relationships can be generated one or both ways, depending on if the ratio of mapped values to all values exceeds `coverage_threshold` in just one or both directions. Later in this tutorial, you cover the less frequent case of "m:m" relationships.
 
 ## Troubleshoot relationship detection issues
 
 The baseline example shows a successful relationship detection on clean _Synthea_ data. In practice, the data is rarely clean, which prevents successful detection. There are several techniques that can be useful when the data isn't clean.
 
-This section of this tutorial addresses relationship detection when the dataset is dirty. 
+This section of this tutorial addresses relationship detection when the semantic model contains dirty data.
 
 1. Begin by manipulating the original DataFrames to obtain "dirty" data, and print the size of the dirty data.
 
@@ -151,14 +150,14 @@ This section of this tutorial addresses relationship detection when the dataset 
     find_relationships([patients_dirty, providers_dirty, encounters])
     ```
 
-    The output of the code shows that there's no relationships detected due to the errors that you introduced earlier to create the "dirty" dataset.
+    The output of the code shows that there's no relationships detected due to the errors that you introduced earlier to create the "dirty" semantic model.
 
 ### Use validation
 
 Validation is the best tool for troubleshooting relationship detection failures because:
 
    * It reports clearly why a particular relationship doesn't follow the Foreign Key rules and therefore can't be detected.
-   * It runs fast with large datasets because it focuses only on the declared relationships and doesn't perform a search.
+   * It runs fast with large semantic models because it focuses only on the declared relationships and doesn't perform a search.
 
 Validation can use any DataFrame with columns similar to the one generated by `find_relationships`. In the following code, the `suggested_relationships` DataFrame refers to `patients` rather than `patients_dirty`, but you can alias the DataFrames with a dictionary:
 
@@ -175,7 +174,7 @@ errors
 
 ### Loosen search criteria
 
-In more murky scenarios, you can try loosening your search criteria. This method increases the possibility of false positives. 
+In more murky scenarios, you can try loosening your search criteria. This method increases the possibility of false positives.
 
 1. Set `include_many_to_many=True` and evaluate if it helps:
 
@@ -257,7 +256,7 @@ By matching column names first, the detection runs faster.
 
 ## Detect relationships on the full _Synthea_ dataset
 
-The simple baseline example was a convenient learning and troubleshooting tool. In practice you may start from a dataset such as the full _Synthea_ dataset, which has a lot more tables. Explore the full _synthea_ dataset as follows.
+The simple baseline example was a convenient learning and troubleshooting tool. In practice, you may start from a semantic model such as the full _Synthea_ dataset, which has a lot more tables. Explore the full _synthea_ dataset as follows.
 
 1. Read all files from the _synthea/csv_ directory:
 
@@ -310,16 +309,17 @@ The simple baseline example was a convenient learning and troubleshooting tool. 
     suggested_relationships.sort_values(['Row Count From', 'Row Count To'], ascending=False)
     ```
 
-    In a different dataset, maybe it would be important to focus on number of nulls `Null Count From` or `Coverage To`.
+    In a different semantic model, maybe it would be important to focus on number of nulls `Null Count From` or `Coverage To`.
 
     This analysis can help you to understand if any of the relationships could be invalid, and if you need to remove them from the list of candidates.
 
 ## Related content
 
-Check out other tutorials for Semantic Link / SemPy:
+Check out other tutorials for semantic link / SemPy:
+
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
+- [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 
 <!-- nbend -->

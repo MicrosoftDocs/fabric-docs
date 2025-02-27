@@ -1,42 +1,42 @@
 ---
-title: 'Tutorial: Analyze functional dependencies in a Power BI sample dataset'
+title: 'Tutorial: Analyze functional dependencies in a Power BI semantic model'
 description: This article shows how to analyze functional dependencies that exist in columns of a DataFrame.
-ms.reviewer: mopeakande
-reviewer: msakande
-ms.author: alsavelv
-author: alsavelv
+ms.author: mopeakande
+author: msakande
+ms.reviewer: alsavelv
+reviewer: alsavelv
 ms.topic: tutorial
+ms.custom:
 ms.date: 09/27/2023
-#customer intent:
 ---
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb -->
 
-# Tutorial: Analyze functional dependencies in a Power BI sample dataset
+# Tutorial: Analyze functional dependencies in a semantic model
 
-In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of datasets. By using SemPy in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover nontrivial data quality issues in order to gain more accurate insights.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of semantic models (Power BI datasets). By using SemPy (preview) in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover nontrivial data quality issues in order to gain more accurate insights.
 
 In this tutorial, you learn how to:
-- Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
-- Get familiarized with components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data quality analysis. These components include:
+
+- Apply domain knowledge to formulate hypotheses about functional dependencies in a semantic model.
+- Get familiarized with components of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
-    - Useful functions for pulling Power BI datasets from a Fabric workspace into your notebook.
-    - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your datasets.
+    - Useful functions for pulling semantic models from a Fabric workspace into your notebook.
+    - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your semantic models.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 
-* Download the [_Customer Profitability Sample.pbix_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix) dataset from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets) and upload it to your workspace.
+* Download the [_Customer Profitability Sample.pbix_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix) semantic model from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets).
+* In your workspace, select __Import__ > __Report or Paginated Report__ > __From this computer__ to upload the _Customer Profitability Sample.pbix_ file to your workspace.
 
 ### Follow along in the notebook
 
 The [powerbi_dependencies_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb) notebook accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 ## Set up the notebook
 
@@ -57,7 +57,7 @@ In this section, you set up a notebook environment with the necessary modules an
 
 ## Load and preprocess the data
 
-This tutorial uses a standard Power BI sample dataset [Customer Profitability Sample.pbix](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/datasets). For a description of the dataset, see [Customer Profitability sample for Power BI](/power-bi/create-reports/sample-customer-profitability).
+This tutorial uses a standard sample semantic model [Customer Profitability Sample.pbix](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/datasets). For a description of the semantic model, see [Customer Profitability sample for Power BI](/power-bi/create-reports/sample-customer-profitability).
 
 1. Load the Power BI data into FabricDataFrames, using SemPy's `read_table` function:
 
@@ -109,8 +109,8 @@ A functional dependency manifests itself as a one-to-many relationship between t
     ```
 
     :::image type="content" source="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata.png" alt-text="Screenshot showing the plot of dependency metadata." lightbox="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata.png":::
-    
-    As expected, the functional dependencies graph shows that the `Customer` column determines some columns like `City`, `Postal Code`, and `Name`. 
+
+    As expected, the functional dependencies graph shows that the `Customer` column determines some columns like `City`, `Postal Code`, and `Name`.
 
     Surprisingly, the graph doesn't show a functional dependency between `City` and `Postal Code`, probably because there are many violations in the relationships between the columns. You can use SemPy's ``plot_dependency_violations`` function to visualize violations of dependencies between specific columns.
 
@@ -150,10 +150,10 @@ A functional dependency manifests itself as a one-to-many relationship between t
     ```python
     plot_dependency_metadata(customer_state_df2.find_dependencies(threshold=0.05))
     ```
-    
+
     :::image type="content" source="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata-for-higher-entropy-threshold.png" alt-text="Plot of the dependency metadata with a higher threshold for entropy." lightbox="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata-for-higher-entropy-threshold.png":::
 
-    If you apply domain knowledge of which entity determines values of other entities, this dependencies graph seems accurate. 
+    If you apply domain knowledge of which entity determines values of other entities, this dependencies graph seems accurate.
 
 1. Explore more data quality issues that were detected. For example, a dashed arrow joins `City` and `Region`, which indicates that the dependency is only approximate. This approximate relationship could imply that there's a partial functional dependency.
 
@@ -193,14 +193,16 @@ A functional dependency manifests itself as a one-to-many relationship between t
 
     Further inspection shows that it's actually two different customers (from different industries) with the same name.
 
-Exploratory data analysis is an exciting process, and so is data cleaning. There's always something that the data is hiding, depending on how you look at it, what you want to ask, and so on. Semantic Link provides you with new tools that you can use to achieve more with your data.
+Exploratory data analysis is an exciting process, and so is data cleaning. There's always something that the data is hiding, depending on how you look at it, what you want to ask, and so on. Semantic link provides you with new tools that you can use to achieve more with your data.
 
 ## Related content
 
-Check out other tutorials for Semantic Link / SemPy:
+Check out other tutorials for semantic link / SemPy:
+
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+- [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link](tutorial-relationships-detection.md)
+- [Tutorial: Validate data using SemPy and Great Expectations (GX)](tutorial-great-expectations.md)
 
 <!-- nbend -->

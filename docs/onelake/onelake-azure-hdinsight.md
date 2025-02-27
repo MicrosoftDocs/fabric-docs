@@ -1,33 +1,32 @@
 ---
 title: Integrate OneLake with Azure HDInsight
-description: Learn about Azure HDInsight integration and how to read and write data in OneLake using your Jupyter notebook in an HDInsight Spark cluster.
+description: Learn about Azure HDInsight integration and how to read and write data in OneLake using your Jupyter notebook in an HDInsight Apache Spark cluster.
 ms.reviewer: eloldag
 ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure HDInsight so that I can read and write data in OneLake using my Jupyter notebook in an HDInsight Apache Spark cluster.
 ---
 
 # Integrate OneLake with Azure HDInsight
 
 [Azure HDInsight](/azure/hdinsight/hdinsight-overview) is a managed cloud-based service for big data analytics that helps organizations process large amounts data. This tutorial shows how to connect to OneLake with a Jupyter notebook from an Azure HDInsight cluster.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Using Azure HDInsight
 
 To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
-1. Create an HDInsight (HDI) Spark cluster. Follow these instructions: [Set up clusters in HDInsight](/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters).
+1. Create an HDInsight (HDI) Apache Spark cluster. Follow these instructions: [Set up clusters in HDInsight](/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters).
    1. While providing cluster information, remember your Cluster login Username and Password, as you need them to access the cluster later.
    1. Create a user assigned managed identity (UAMI): [Create for Azure HDInsight - UAMI](/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2-portal) and choose it as the identity in the **Storage** screen.
 
       :::image type="content" source="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png" alt-text="Screenshot showing where to enter the user assigned managed identity in the Storage screen." lightbox="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png":::
 
-1. Give this UAMI access to the Fabric workspace that contains your items. For help deciding what role is best, see [Workspace roles](..\get-started\roles-workspaces.md).
+1. Give this UAMI access to the Fabric workspace that contains your items. For help deciding what role is best, see [Workspace roles](../fundamentals/roles-workspaces.md).
 
-   :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.jpg" alt-text="Screenshot showing where to select an item in the Manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.jpg":::
+   :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.png" alt-text="Screenshot showing how to open the manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.png":::
 
 1. Navigate to your lakehouse and find the name for your workspace and lakehouse. You can find them in the URL of your lakehouse or the **Properties** pane for a file.
 
@@ -39,7 +38,7 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
    :::image type="content" source="media\onelake-azure-hdinsight\enter-credentials.jpg" alt-text="Screenshot showing where to enter your credential information." lightbox="media\onelake-azure-hdinsight\enter-credentials.jpg":::
 
-1. Create a new Spark notebook.
+1. Create a new Apache Spark notebook.
 
 1. Copy the workspace and lakehouse names into your notebook and build the OneLake URL for your lakehouse. Now you can read any file from this file path.
 
@@ -59,6 +58,6 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
 You can now read and write data in OneLake using your Jupyter notebook in an HDI Spark cluster.
 
-## Next steps
+## Related content
 
-- [OneLake security](onelake-security.md)
+- [OneLake security](./security/fabric-onelake-security.md)

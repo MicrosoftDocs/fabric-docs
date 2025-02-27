@@ -38,8 +38,8 @@ landingContent:
         links:
           - text: Install the Microsoft Fabric Capacity Metrics app
             url: metrics-app-install.md
-          - text: Understand the Microsoft Fabric Capacity Metrics app overview page
-            url: metrics-app-overview-page.md
+          - text: Understand the Microsoft Fabric Capacity Metrics app compute page
+            url: metrics-app-compute-page.md
           - text: Understand the Microsoft Fabric Capacity Metrics app timepoint page
             url: metrics-app-timepoint-page.md
 

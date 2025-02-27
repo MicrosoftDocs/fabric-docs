@@ -5,15 +5,13 @@ ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+ms.date: 12/18/2024
 ---
 
 # Transform data with a ForEach activity
 
 The ForEach Activity defines a repeating control flow in a [!INCLUDE [product-name](../includes/product-name.md)] pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to a ForEach looping structure in programming languages.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Add a ForEach activity to a pipeline
 
@@ -23,7 +21,7 @@ This section describes how to use a ForEach activity in a pipeline.
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ### Creating the activity
@@ -48,20 +46,20 @@ Select the **Settings** tab, where you can specify whether processing of the ite
 
 ### ForEach activities
 
-You'll also define an activity or activities to be performed on each of the items in the list, in the ForEach **Activities** pane.
+You also define an activity or activities to be performed on each of the items in the list, in the ForEach **Activities** pane.
 
 :::image type="content" source="media/foreach-activity/foreach-activities-pane.png" alt-text="Screenshot showing the ForEach activities pane.":::
 
-Select the **+** button to add a new activity to the pane. You'll see a list of activities to choose. You can add multiple activities to the ForEach activity, and each is run on each of the items in the **Items** list.  Whether the **Sequential** option is selected in the ForEach settings or not, each of the child activities in the ForEach activities pane are processed sequentially to one another for each item. However, if **Sequential** isn't selected, multiple items are processed in parallel, each of them running sequentially through the list of child activities specified.
+Select the **+** button to add a new activity to the pane. You see a list of activities to choose. You can add multiple activities to the ForEach activity, and each is run on each of the items in the **Items** list.  Whether the **Sequential** option is selected in the ForEach settings or not, each of the child activities in the ForEach activities pane are processed sequentially to one another for each item. However, if **Sequential** isn't selected, multiple items are processed in parallel, each of them running sequentially through the list of child activities specified.
 
 :::image type="content" source="media/foreach-activity/foreach-child-activities.png" alt-text="Screenshot showing a ForEach activity with multiple child activities specified, and the + button highlighted showing a list of child activities to choose from when adding new activities to the pane.":::
 
 ### Referencing an item within an activity
 
-Select one of the child activities in the ForEach **Activities** pane, and switch to its **Settings** tab.  In this example, a **Stored Procedure** activity was selected.  Populate the settings for the activity as you normally would select a connection and stored procedure.  You can use the **@item()** iterator to refer to the current item being processed anywhere within an activity that supports dynamic content.  Here the **@item()** was used as the value for the FruitName parameter that is passed to a stored procedure.
+Select one of the child activities in the ForEach **Activities** pane, and switch to its **Settings** tab.  In this example, a **Stored Procedure** activity was selected.  Populate the settings for the activity as you normally would select a connection and stored procedure.  You can use the **@item()** iterator to refer to the current item being processed anywhere within an activity that supports dynamic content.  Here, the **@item()** was used as the value for the FruitName parameter that is passed to a stored procedure.
 
 :::image type="content" source="media/foreach-activity/foreach-child-activity-configuration.png" alt-text="Screenshot showing a stored procedure child activity with a parameter using the current @item() from the ForEach items list for its value.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

@@ -5,17 +5,15 @@ ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
-ms.custom: build-2023
-ms.date: 08/21/2023
+ms.custom:
+ms.date: 11/15/2023
 ---
 
 # Troubleshoot the REST connector in Data Factory in Microsoft Fabric
 
 This article provides suggestions to troubleshoot common problems with the REST connector in Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
-## Error code: RestSinkCallFailed
+## Error code: RestdestinationCallFailed
 
 - **Message**: `Rest Endpoint responded with Failure from server. Check the error from server:%message;`
 
@@ -31,7 +29,7 @@ This article provides suggestions to troubleshoot common problems with the REST 
 
 - **Recommendation**: Check the HTTP status code or the request URL or the response payload in the error message and fix the remote server issue.
 
-## Error code: RestSinkUNSupportedCompressionType
+## Error code: RestdestinationUNSupportedCompressionType
 
 - **Message**: `User Configured CompressionType is Not Supported By Data Factory：%message;`
 
@@ -56,9 +54,9 @@ This article provides suggestions to troubleshoot common problems with the REST 
     
     - Note that 'curl' might not be suitable to reproduce an SSL certificate validation issue. In some scenarios, the 'curl' command was executed successfully without encountering any SSL certificate validation issues. But when the same URL is executed in a browser, no SSL certificate is actually returned for the client to establish trust with server.
 
-      Tools like **Postman** and **Fiddler** are recommended for the preceding case.
+      Tools like **Fiddler** are recommended for the preceding case.
 
-## Next steps
+## Related content
 
 For more troubleshooting help, try these resources:
 
