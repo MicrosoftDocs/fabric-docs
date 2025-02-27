@@ -7,7 +7,9 @@ ms.topic: how-to
 ms.date: 11/13/2024
 ---
 
-# Set alerts on OneLake events in Real-Time hub
+# Set alerts on OneLake events in Real-Time hub (preview)
+
+[!INCLUDE [preview-note](./includes/preview-note.md)]
 
 This article describes how to set alerts on OneLake events in Real-Time hub.
 

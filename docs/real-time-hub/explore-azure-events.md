@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2024
 ---
 
-# Explore Azure events in Fabric Real-Time hub
+# Explore Azure events in Fabric Real-Time hub (preview)
 
 
 This article describes columns on the **Azure events** page and actions available for each event. 

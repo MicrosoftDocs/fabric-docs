@@ -8,8 +8,10 @@ ms.date: 11/13/2024
 # Customer intent: I want to know how to create eventstreams for OneLake events in Fabric Real-Time hub. 
 ---
 
-# Get OneLake events in Fabric Real-Time hub
+# Get OneLake events in Fabric Real-Time hub (preview)
 This article describes how to get OneLake events as an eventstream in Fabric Real-Time hub.
+
+[!INCLUDE [preview-note](./includes/preview-note.md)]
 
 Real-Time hub allows you to discover and subscribe to changes in files and folders in OneLake, and then react to those changes in real-time. For example, you can react to changes in files and folders in Lakehouse and use Data Activator alerting capabilities to set up alerts based on conditions and specify actions to take when the conditions are met. This article explains how to explore OneLake events in Real-Time hub.
 
