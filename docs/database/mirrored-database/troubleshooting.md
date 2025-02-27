@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 01/27/2025
+ms.date: 02/27/2025
 ms.topic: troubleshooting
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -101,7 +101,6 @@ These common error messages have explanations and mitigations:
 
 | **Error message** | **Reason** | **Mitigation** |
 |:--|:--|:--|
-| "The replication is being throttled due to destination space limit." | There's a maximum of 10 TB of storage space in destination per Mirrored database. The replication is being throttled due to destination space limit. | In the source database, drop tables, remove data, or shard. |
 | "The tables count may exceed the limit, there could be some tables missing."| There's a maximum of 500 tables. | In the source database, drop or filter tables. If the new table is the 500th table, no mitigation required. |
 | "The replication is being throttled and expected to continue at YYYY-MM-DDTHH:MM:ss." | There's a maximum of 1 TB of change data captured per Mirrored database per day. | Wait for throttling to end. |
 
