@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.service: fabric
 ms.subservice: cicd
 ms.custom:
-ms.date: 12/26/2024
+ms.date: 02/27/2025
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -76,18 +76,6 @@ To understand the considerations and limitations of various lifecycle management
 
 **Solution**: Open the Git repository in Azure DevOps and navigate to the Git folder defined in the connection. If the Git folder contains subdirectories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a subdirectory. If the Git folder doesn't contain any item directories, you can't connect to it. Either remove the subdirectories or connect to a different folder that doesn't contain subdirectories.
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
-
-**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
-
-:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
-
-**Cause**: The folder you're trying to connect doesn't exist, was deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
-
-**Solution**:
-
-* To create a new folder and connect it to the workspace, select **Create and sync**.  
-* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
 
 #### The Source control icon doesn't have a number
 
@@ -113,6 +101,27 @@ To understand the considerations and limitations of various lifecycle management
 **Description of problem**: When branching out to a new workspace, I’m navigated to the new workspace but Git integration isn’t enabled there.
 **Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace won't have Git integration enabled and you'll need to manually enable it from the workspace settings before syncing the workspace with Git.
 **Solution**: Enable Git integration from the workspace settings of your new workspace.
+
+### Connect folder issues
+
+#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
+
+**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
+
+:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
+
+**Cause**: The folder you're trying to connect doesn't exist, was deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
+
+**Solution**:
+
+* To create a new folder and connect it to the workspace, select **Create and sync**.  
+* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
+
+#### My Git status says I have uncommitted changes, but I didn't make any changes to my workspace 
+
+**Description of problem**: I want to update my workspace but it says that I have uncommitted changes. I didn't make any changes to my workspace.
+**Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. If your workspace has folders but the Git branch doesn't, you see the *uncommitted changes* message. If you try to update the workspace before committing the changes, you get a conflict. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
+**Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
 
 ### Commit issues
 
