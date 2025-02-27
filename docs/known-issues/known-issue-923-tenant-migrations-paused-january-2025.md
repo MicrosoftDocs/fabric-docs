@@ -10,7 +10,7 @@ ms.custom: known-issue-923
 
 # Known issue - Tenant migrations paused through March 2025
 
-Cross-region tenant migrations are paused through March 31, 2025. New and existing requests aren't processed during this time period. We are currently not accepting new tenant migration cases.
+Cross-region tenant migrations are paused through March 31, 2025. New and existing requests aren't processed during this time period. We're currently not accepting new tenant migration cases.
 
 **Status:** Open
 
