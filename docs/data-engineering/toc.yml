@@ -93,7 +93,7 @@ items:
       href: ../data-science/ai-functions/translate.md
     - name: ai.generate_response
       href: ../data-science/ai-functions/generate-response.md
-    - name: Custom AI function configurations
+    - name: Customize AI function configurations
       href: ../data-science/ai-functions/ai-function-configuration.md
 - name: Lakehouse access control
   items:

@@ -51,7 +51,7 @@ items:
       href: ./ai-functions/translate.md
     - name: ai.generate_response
       href: ./ai-functions/generate-response.md
-    - name: Custom AI function configurations
+    - name: Customize AI function configurations
       href: ./ai-functions/ai-function-configuration.md
 - name: AI skill
   items: 

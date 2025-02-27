@@ -21,20 +21,19 @@ By default, AI functions are powered by the native Fabric LLM endpoint. If you'r
 
 | **Parameter** | **Description** | **Default** |
 |---|---|---|
-| **`model_deployment_name`** | A string value designating the name of the language model deployment that powers AI functions. | **gpt-35-turbo-0125** |
-| **`embedding_deployment_name`** | A string value designating the name of the embedding model deployment that powers AI functions. | **text-embedding-ada-002** |
-| **`temperature`** | A float value between **0** and **1**. Higher temperatures will increase the randomness or creativity of the underlying model's outputs. | **0** |
-| **`seed`** | An int value designating the seed to use for the underlying model's response. | Default |
-| **`timeout`** | An int value designating the number of seconds before an AI function raises a timeout error. | Default |
-| **`max_concurrency`** | An int value designating the maximum number of rows to be processed in parallel with asynchronous requests to the model. | Default |
+| **`model_deployment_name`** | A string value designating the language model deployment that powers AI functions. | **gpt-35-turbo-0125** |
+| **`embedding_deployment_name`** | A string value designating the embedding model deployment that powers AI functions. | **text-embedding-ada-002** |
+| **`temperature`** | A float value between **0** and **1** designating the underlying model's temperature. Higher temperatures will increase the randomness or creativity of the model's outputs. | **0** |
+| **`seed`** | An int value designating the seed to use for the underlying model's response. The default behavior randomly picks a seed value for each row. Choosing a constant value will improve the reproducibility of your experiments. | **openai.NOT_GIVEN** |
+| **`timeout`** | An int value designating the number of seconds before an AI function raises a timeout error. By default, there is no timeout. | **None** |
+| **`max_concurrency`** | An int value designating the maximum number of rows to be processed in parallel with asynchronous requests to the model. Higher values will speed up the processing time (if your billing capacity can accomodate it). | **4** |
 
-The following code sample shows to override `aifunc.Conf` settings globally, so that they will apply to multiple AI function calls in a given session:
+The following code sample shows how to override `aifunc.Conf` settings globally, so that they will apply to multiple AI function calls in a given session:
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
-from aifunc import Conf
 aifunc.default_conf.temperature = 0.5 # Default: 0.0
 aifunc.default_conf.max_concurrency = 1 # Default: 4
 
@@ -49,13 +48,13 @@ df["sentiment"] = df["text"].ai.analyze_sentiment()
 display(df)
 ```
 
-You can also customize these settings per individual function call, using the optional `conf` parameter for any AI function. This parameter accepts an instance of the `aifunc.Conf` class. The code sample below modifies the default `aifunc` settings for only the `ai.translate` function call, using a custom temperature value. Please note that the `ai.analyze_sentiment` call still uses the defaults.
+You can also customize these settings per individual function call, using the optional `conf` parameter for any AI function. This parameter accepts an instance of the `aifunc.Conf` class. The code sample below modifies the default `aifunc` settings for only the `ai.translate` function call, using a custom temperature value. (Please note that the `ai.analyze_sentiment` call still uses the defaults.)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
 # Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
 
-from aifunc import Conf
+from synapse.ml.aifunc import Conf
 
 df = pd.DataFrame([
         "Hello! How are you doing today?", 
