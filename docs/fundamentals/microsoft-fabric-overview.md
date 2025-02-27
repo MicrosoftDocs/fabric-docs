@@ -34,7 +34,7 @@ Microsoft Fabric enhances productivity, data management, and AI integration. Her
 
 Microsoft Fabric is built on a Software as a Service (SaaS) platform. It unifies new and existing components from Power BI, Azure Synapse Analytics, Azure Data Factory, and more into a single environment.
 
-:::image type="content" source="media\microsoft-fabric-overview\fabric-architecture.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric." lightbox="media\microsoft-fabric-overview\fabric-architecture.png":::
+:::image type="content" source="media\microsoft-fabric-overview\fabric-architecture.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric." lightbox="media\microsoft-fabric-overview\fabric-architecture.png"::: //This image needs to be updated and include the Databases icon"
 
 Fabric integrates workloads like Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Industry solutions, Databases, and Power BI into a SaaS platform. Each of these workloads is tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. Advantages of Fabric include:
 
