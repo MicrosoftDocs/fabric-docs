@@ -67,7 +67,7 @@ df["sentiment"] = df["text"].ai.analyze_sentiment()
 display(df)
 ```
 
-To substitute a [custom Azure OpenAI LLM resource](/azure/ai-services/openai/how-to/create-resource.md) in place of the native Fabric LLM, you can use the `aifunc.setup` function with your own client, as shown in the next code sample:
+To substitute a custom Azure OpenAI LLM resource in place of the native Fabric LLM, you can use the `aifunc.setup` function with your own client, as shown in the next code sample:
 
 ```python
 from openai import AzureOpenAI
@@ -85,7 +85,7 @@ aifunc.setup(client)  # Set the client for all functions
 
 ## Customizing AI functions with PySpark
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show how you can override the native Fabric LLM endpoint with a [custom Azure OpenAI LLM deployment](/azure/ai-services/openai/how-to/create-resource.md):
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show how you can override the native Fabric LLM endpoint with a custom Azure OpenAI LLM deployment:
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
@@ -135,4 +135,4 @@ defaults.reset_temperature()
 - Translate text with [`ai.translate`](./translate.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - Learn more about the full set of AI functions [here](./ai-function-overview.md).
-- Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](./https://ideas.fabric.microsoft.com/)
+- Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)
