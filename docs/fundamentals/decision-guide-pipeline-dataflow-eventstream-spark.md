@@ -45,7 +45,7 @@ Mary is an experienced Power Query user, and the data volume is in the low to me
 
 Prashant, a data integrator with deep expertise in business processes and systems. An upstream team has successfully exposed event data from business applications as messages that can be consumed through downstream systems. Prashant has been assigned to integrate event data from business applications into Microsoft Fabric for real-time decision support.
 
-The data volume is in the medium to high range and the organization does not want to leverage pro-code solutions. Prashant does not want to worry about needing to schedule the data to be extracted, and wants to simply forward events as they occur. Prashant decides that **Eventstreams** in Microsoft Fabric makes sense to achieve this goal. The eventstreams feature in the Microsoft Fabric Real-Time Intelligence experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code.
+Given the medium to high data volume and the organization's preference for no-code solutions, Prashant seeks a way to seamlessly forward events as they occur without managing extraction schedules. To meet this need, he chooses **Eventstreams** in Microsoft Fabric. Eventstreams within the Real-Time Intelligence experience enables real-time data ingestion, transformation, and routing to various destinations—all without writing any code.
 
 ## Scenario4
 
