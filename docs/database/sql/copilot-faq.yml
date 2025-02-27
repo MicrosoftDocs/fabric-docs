@@ -2,12 +2,12 @@
 metadata:
   title: "Frequently asked questions for Copilot in SQL database (preview)"
   description: This article answers frequently asked questions about Copilot in SQL database in Microsoft Fabric (preview).
-  author: WilliamDAssafMSFT
-  ms.author: wiassaf
+  author: markingmyname
+  ms.author: maghan
   ms.reviewer: yoleichen
   ms.topic: faq
   ms.custom:
-  ms.date: 02/20/2025
+  ms.date: 02/26/2025
   ms.collection: ce-skilling-ai-copilot
 title: "Frequently asked questions for Copilot in SQL database in Microsoft Fabric (preview)"
 summary: |
@@ -68,7 +68,7 @@ additionalContent: |
 
   ## Related content
 
-  - [Copilot for SQL database in Fabric](copilot.md)
+  - [What is Copilot for SQL database in Fabric](copilot.md)
   - [How to: Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
   - [How to: Use Copilot code completion for SQL database](copilot-code-completion.md)
   - [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)

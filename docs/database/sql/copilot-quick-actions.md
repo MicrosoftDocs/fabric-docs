@@ -1,14 +1,15 @@
 ---
 title: "How To: Use the Copilot Explain and Fix Quick Action Features for SQL Database"
 description: Learn more about Microsoft Copilot Explain and Fix quick action features for SQL database in Fabric, to ask questions specific about your database.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: yoleichen, sukkaur
+author: markingmyname
+ms.author:  maghan
+ms.reviewer: yoleichen, wiassaf
 ms.date: 02/20/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
 ---
+
 # How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -33,7 +34,7 @@ Copilot uses information about your database schema, query tab contents, and exe
 
 Whether you're a beginner or an expert in writing SQL queries, quick actions allow you to understand and navigate the complexities of the SQL language to easily solve issues independently.
 
-### Explain
+## Explain
 
 To use Copilot to explain your queries, follow these steps:
 
@@ -45,7 +46,7 @@ To use Copilot to explain your queries, follow these steps:
 
 1. Review the comments that Copilot generated. You can edit or delete them if you want. You can also undo the changes if you don't like them, or make further edits.
 
-### Fix
+## Fix
 
 To get Copilot's help with fixing an error in your query, follow these steps:
 
@@ -63,7 +64,7 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 
 ## Related content
 
-- [Copilot for SQL database in Microsoft Fabric (preview)](copilot.md)
+- [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
 - [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md)
 - [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
 - [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
