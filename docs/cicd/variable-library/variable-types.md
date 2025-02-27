@@ -27,7 +27,7 @@ Each variable in the Variable library has the following properties:
 
 ## Naming conventions
 
-### Variable library name
+### Variable library item name
 
 The name of Variable library item itself must follow these conventions:
 
@@ -39,7 +39,7 @@ The name of Variable library item itself must follow these conventions:
 
 The Variable library name is *not* case sensitive.
 
-### Name of a variable in the Variable library
+### Variable name
 
 The name of a variable inside the Variable library must follow these conventions:
 
@@ -50,6 +50,8 @@ The name of a variable inside the Variable library must follow these conventions
 - Doesn't exceed 256 characters in length.
 
 The variable name is *not* case sensitive.
+
+### Value-set name
 
 ## Variable types
 
