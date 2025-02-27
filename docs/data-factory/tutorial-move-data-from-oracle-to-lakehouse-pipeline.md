@@ -6,8 +6,6 @@ ms.author: lle
 author: lrtoyou1223
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 05/17/2024
 ms.search.form: Pipeline Tutorials
 ---
@@ -31,9 +29,6 @@ To start, you must complete the following prerequisites:
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
-
-   :::image type="content" source="media/copy-data-activity/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
-
 1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
 
    :::image type="content" source="media/copy-data-activity/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::

@@ -6,8 +6,6 @@ author: sdgilley
 ms.author: sgilley
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 01/22/2024
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict delays.
@@ -291,7 +289,7 @@ write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true
 
 Use the delta table to create a semantic model.
 
-1. On the left, select **OneLake data hub**
+1. On the left, select **OneLake**
 1. Select the lakehouse that you attached to your notebook
 1. Select **Open**
 
@@ -306,17 +304,17 @@ Use the delta table to create a semantic model.
 
 To create the report shown at the beginning of this section, use these visualizations and data:
 
-1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false" alt-text="Screenshot showing a stacked barchart icon"::: Stacked bar chart with:
+1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png"::: Stacked bar chart with:
     1. Y-axis: **carrier_name**
     1. X-axis: **flight**. Select **Count** for the aggregation
     1. Legend: **origin_name**
-1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false" alt-text="Screenshot showing a stacked barchart icon"::: Stacked bar chart with:
+1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png"::: Stacked bar chart with:
     1. Y-axis: **dest_name**
     1. X-axis: **flight**. Select **Count** for the aggregation
     1. Legend: **origin_name**
-1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false" alt-text="Screenshot showing a slicer icon"::: Slicer with:
+1. :::image type="icon" source="media/r-flight-delay/slicer.png"::: Slicer with:
     1. Field: **_pred_class**
-1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false" alt-text="Screenshot showing a slicer icon"::: Slicer with:
+1. :::image type="icon" source="media/r-flight-delay/slicer.png"::: Slicer with:
     1. Field: **_pred_late**
 
 ## Related content

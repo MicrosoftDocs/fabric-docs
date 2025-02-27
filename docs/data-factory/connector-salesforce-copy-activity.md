@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 07/01/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Configure Salesforce in a copy activity
@@ -75,7 +73,7 @@ Under **Advanced**, you can specify the following fields:
   If you select **Upsert**:
   - **External ID field**: The name of the external ID field for the upsert operation. The specified field must be defined as **External ID Field** in the Salesforce object. It can't have NULL values in the corresponding input data.
 
-    :::image type="content" source="./media/connector-salesforce-objects/write-behavior-upsert.png" alt-text="Screenshot showing Write behavior - Upsert":::
+    :::image type="content" source="./media/connector-salesforce-objects/write-behavior-upsert.png" alt-text="Screenshot showing Write behavior - Upsert.":::
 
 - **Ignore null values**: Specify whether to ignore NULL values from input data during a write operation.
 

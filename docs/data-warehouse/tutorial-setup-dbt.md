@@ -7,7 +7,6 @@ ms.reviewer: maprycem
 ms.date: 09/04/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ---
 
 # Tutorial: Set up dbt for Fabric Data Warehouse
@@ -20,9 +19,9 @@ This tutorial guides you through setting up dbt and deploying your first project
 
 The [dbt](https://www.getdbt.com/product/what-is-dbt/) (Data Build Tool) open-source framework simplifies data transformation and analytics engineering. It focuses on SQL-based transformations within the analytics layer, treating SQL as code. dbt supports version control, modularization, testing, and documentation.
 
-The dbt adapter for Microsoft Fabric can be used to create dbt projects, which can then be deployed to a Fabric Synapse Data Warehouse.
+The dbt adapter for Microsoft Fabric can be used to create dbt projects, which can then be deployed to a Fabric Data Warehouse.
 
-You can also change the target platform for the dbt project by simply changing the adapter, for example; a project built for [Azure Synapse dedicated SQL pool](https://docs.getdbt.com/docs/core/connect-data-platform/azuresynapse-setup) can be upgraded in a few seconds to a [Fabric Synapse Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup).
+You can also change the target platform for the dbt project by simply changing the adapter, for example; a project built for [Azure Synapse dedicated SQL pool](https://docs.getdbt.com/docs/core/connect-data-platform/azuresynapse-setup) can be upgraded in a few seconds to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup).
 
 ## Prerequisites for the dbt adapter for Microsoft Fabric
 
@@ -49,7 +48,7 @@ Follow this list to install and set up the dbt prerequisites:
 
     A long list of the packages and current versions should be returned from this command.
 
-1. If you don't already have one, create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
+1. If you don't already have one, create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../fundamentals/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
 
 ## Get started with dbt-fabric adapter
 
@@ -125,7 +124,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 
     :::image type="content" source="media/tutorial-setup-dbt/dbt-test.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt/dbt-test.png":::
 
-You have now deployed a dbt project to Synapse Data Warehouse in Fabric.
+You have now deployed a dbt project to Fabric Data Warehouse.
 
 ## Move between different warehouses
 
@@ -153,7 +152,7 @@ Important things to consider when using dbt-fabric adapter:
 
 - Fabric supports Microsoft Entra ID (formerly Azure Active Directory) authentication for user principals, user identities, and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
 
-- Review the [T-SQL (Transact-SQL) commands](tsql-surface-area.md#limitations) not supported in Synapse Data Warehouse in Microsoft Fabric.
+- Review the [T-SQL (Transact-SQL) commands](tsql-surface-area.md#limitations) not supported in Fabric Data Warehouse.
 
 - Some T-SQL commands are supported by dbt-fabric adapter using `Create Table as Select` (CTAS), `DROP`, and `CREATE` commands, such as `ALTER TABLE ADD/ALTER/DROP COLUMN`, `MERGE`, `TRUNCATE`, `sp_rename`.
 

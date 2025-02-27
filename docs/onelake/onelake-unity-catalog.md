@@ -19,7 +19,7 @@ This scenario shows how to integrate Unity Catalog external Delta tables to OneL
 
 Before you connect, you must have:
 
-- A [Fabric workspace](../get-started/create-workspaces.md).
+- A [Fabric workspace](../fundamentals/create-workspaces.md).
 - A [Fabric lakehouse](../data-engineering/tutorial-build-lakehouse.md) in your workspace.
 - [External Unity Catalog Delta tables](/azure/databricks/sql/language-manual/sql-ref-external-tables) created within your Azure Databricks workspace.
 
@@ -29,7 +29,7 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 
 1. Create a Cloud storage connection used by your Unity Catalog tables. See how to set up a [ADLS Gen2 connection](../data-factory/connector-azure-data-lake-storage-gen2.md).
 
-2. Once you create the connection, obtain the connection ID by selecting **Settings** ![Settings gear icon](../data-factory/media/connector-common/settings.png) > **Manage connections and gateways** > **Connections** > **Settings**.
+2. Once you create the connection, obtain the connection ID by selecting **Settings** :::image type="icon" source="../data-factory/media/connector-common/settings.png"::: > **Manage connections and gateways** > **Connections** > **Settings**.
 
 :::image type="content" source="media\onelake-unity-catalog\adlsgen2-connection.png" alt-text="Screenshot showing ADLS Gen2 connection ID.":::
 

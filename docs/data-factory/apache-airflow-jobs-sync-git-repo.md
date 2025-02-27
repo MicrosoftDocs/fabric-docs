@@ -6,16 +6,14 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: quickstart
 ms.custom:
-  - build-2024
 # ms.custom:
-#   - ignite-2023
 ms.date: 03/25/2024
 ---
 
 # Synchronize your code from an existing GitHub repository
 
 > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 Data Workflows, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing data pipelines. Powered by the Apache Airflow runtime, Data Workflows provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based data workflows, articulated as Directed Acyclic Graphs (DAGs). It delivers a Software-as-a-Service (SaaS) experience for data pipeline development and management using Apache Airflow, making the runtime easily accessible and enabling the creation and operation of your data workflows.<br>
 With data workflows, you have two options for storing your workflow files: Fabric-managed storage and GitHub-managed storage. In this article, you'll learn how to synchronize your code from an existing GitHub repository.
@@ -34,7 +32,7 @@ With data workflows, you have two options for storing your workflow files: Fabri
 
 ### Create an Apache Airflow Job
 
-1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
+1. You can use an existing workspace or [Create a new workspace](../fundamentals/create-workspaces.md).
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
 
    :::image type="content" source="media/apache-airflow-jobs/more-options.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot shows click on more options.":::

@@ -6,7 +6,6 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
 ms.custom:
-  - build-2024
 ms.date: 05/08/2024
 ---
 
@@ -26,7 +25,7 @@ This article provides a step-by-step walkthrough that describes how to create an
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add an Azure HDInsight (HDI) activity to a pipeline with UI
@@ -59,7 +58,7 @@ To get started, you must complete the following prerequisites:
 
 Select the **Settings** tab to see the advanced settings for the activity.
 
-:::image type="content" source="media/azure-hdinsight-activity/settings.png" alt-text="Screenshot showing the Settings tab of the Azure HDInsight activity properties in the pipeline editor window. ":::
+:::image type="content" source="media/azure-hdinsight-activity/settings.png" alt-text="Screenshot showing the Settings tab of the Azure HDInsight activity properties in the pipeline editor window. .":::
 
 All advanced cluster properties and dynamic expressions supported in the [Azure Data Factory and Synapse Analytics HDInsight linked service](/azure/data-factory/compute-linked-services#azure-hdinsight-linked-service) are now also supported in the Azure HDInsight activity for Data Factory in Microsoft Fabric, under the **Advanced** section in the UI. These properties all support easy-to-use custom parameterized expressions with dynamic content.
 

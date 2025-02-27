@@ -9,7 +9,6 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-factory
   ms.custom:
-    - ignite-2023
   ms.topic: landing-page # Required
   author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
   ms.author: dougklo #Required; microsoft alias of author; optional team alias.
@@ -70,6 +69,8 @@ landingContent:
             url: activity-overview.md
           - text: Move data with copy assistant
             url: tutorial-move-data-lakehouse-copy-assistant.md
+          - text: Migrate from Dataflow Gen1 to Dataflow Gen2
+            url: dataflow-gen2-migrate-from-dataflow-gen1.md
 
   # Card
   - title: Data gateway

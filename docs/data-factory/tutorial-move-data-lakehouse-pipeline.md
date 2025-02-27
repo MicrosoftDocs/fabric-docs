@@ -5,8 +5,8 @@ ms.reviewer: jonburchel
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 10/10/2023
+ms.custom: 
+ms.date: 12/18/2024
 ms.search.form: Pipeline Copy Assistant
 ---
 
@@ -19,15 +19,12 @@ In this tutorial, you build a data pipeline to move data in Azure SQL Database t
 To get started, you must complete the following prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. Create an account for free.
-- Make sure you have a Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a Microsoft Fabric enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a data pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
-
-   :::image type="content" source="media/copy-data-activity/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
-
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
    :::image type="content" source="media/copy-data-activity/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::

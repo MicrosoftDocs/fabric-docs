@@ -7,9 +7,8 @@ ms.reviewer: xiaoyul
 ms.date: 08/01/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ---
-# Synapse Data Warehouse in Microsoft Fabric performance guidelines
+# Fabric Data Warehouse performance guidelines
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -21,7 +20,7 @@ These are guidelines to help you understand performance of your [!INCLUDE [fabri
 
 - If the first run's performance is crucial, try manually creating statistics. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance. However, if the first run's performance is not critical, you can rely on automatic statistics that will be generated in the first query and will continue to be leveraged in subsequent runs (so long as underlying data does not change significantly).
 
-- If using Power BI, use [Direct Lake](../get-started/lakehouse-power-bi-reporting.md) mode where possible.
+- If using Power BI, use [Direct Lake](../fundamentals/lakehouse-power-bi-reporting.md) mode where possible.
  
 ## Metrics for monitoring performance
 
@@ -104,7 +103,7 @@ The data compaction process is seamlessly integrated into the warehouse. As quer
 
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Limitations](limitations.md)
-- [Troubleshoot the Warehouse](troubleshoot-synapse-data-warehouse.md)
+- [Troubleshoot the Warehouse](troubleshoot-fabric-data-warehouse.md)
 - [Data types](data-types.md)
 - [T-SQL surface area](tsql-surface-area.md)
 - [Tables in data warehouse](tables.md)

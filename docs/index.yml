@@ -9,8 +9,6 @@ metadata:
   description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
   ms.service: fabric
   ms.custom:
-    - ignite-2023
-    - build-2024
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
@@ -28,7 +26,7 @@ highlightedContent:
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
-      url: get-started/fabric-trial.md
+      url: fundamentals/fabric-trial.md
     # Card
     - title: Security in Microsoft Fabric
       itemType: overview
@@ -36,19 +34,19 @@ highlightedContent:
     # Card
     - title:  Choose a Fabric data store
       itemType: concept
-      url: get-started/decision-guide-data-store.md
+      url: fundamentals/decision-guide-data-store.md
     # Card
     - title: Copilot in Microsoft Fabric
       itemType: concept
-      url: get-started/copilot-fabric-overview.md 
+      url: fundamentals/copilot-fabric-overview.md 
     # Card
     - title: Build solutions with taskflows
       itemType: tutorial
-      url: get-started/task-flow-overview.md     
+      url: fundamentals/task-flow-overview.md     
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
-      url: get-started/end-to-end-tutorials.md
+      url: fundamentals/end-to-end-tutorials.md
     # Card
     - title: Fabric capacity and license types
       itemType: concept
@@ -76,28 +74,28 @@ productDirectory:
       summary: Store all your organization's data in OneLake, a single, unified, logical data lake.
       url: onelake/index.yml
     # Card
-    - title: Industry Solutions
-      imageSrc: ./media/industry-solutions-icon.svg 
-      summary: Manage data, analyze, and make decisions with Industry-specific solutions such as retail, sustainability, healthcare, and manufacturing.
-      url: /industry/industry-data-solutions-fabric
+    - title: Databases
+      imageSrc: ./media/databases-icon.svg 
+      summary: Create operational SQL databases seamlessly for transactional workloads.
+      url: database/index.yml
     # Card
     - title: Real-Time Intelligence
-      imageSrc: ./media/synapse-real-time-intelligence-icon.png
-      summary: Discover insights from your streaming data. Ingest, index, and partition any data source or format, then query the data and create visualizations.
+      imageSrc: ./media/fabric-real-time-intelligence-icon.png
+      summary: Discover insights from your streaming data. Quickly ingest, query, create visualizations, and take actions on changes in your data.
       url: real-time-intelligence/index.yml
     # Card
-    - title: Synapse Data Engineering
-      imageSrc: ./media/synapse-data-engineering-icon.png
+    - title: Fabric Data Engineering
+      imageSrc: ./media/fabric-data-engineering-icon.png
       summary: Build, transform, and share your data estate using lakehouses, notebooks, and Spark environments.
       url: data-engineering/index.yml
     # Card
-    - title: Synapse Data Science
-      imageSrc: ./media/synapse-data-science-icon.png
+    - title: Fabric Data Science
+      imageSrc: ./media/fabric-data-science-icon.png
       summary: Unlock powerful insights using AI and machine learning technology.
       url: data-science/index.yml
     # Card
-    - title: Synapse Data Warehouse
-      imageSrc: ./media/synapse-data-warehouse-icon.png
+    - title: Fabric Data Warehouse
+      imageSrc: ./media/fabric-data-warehouse-icon.png
       summary: Analyze data in a secure SQL warehouse for greater scale and performance in an open data format.
       url: data-warehouse/index.yml
 
@@ -111,21 +109,21 @@ conceptualContent:
         # Card
         - title: "Get started"
           links:
-          - url: get-started/fabric-home.md
+          - url: fundamentals/fabric-home.md
             itemType: concept
             text: Tour the Fabric portal        
-          - url: get-started/share-items.md
+          - url: fundamentals/share-items.md
             itemType: how-to-guide
             text: Collaborate and share items
-          - url: get-started/task-flow-overview.md
+          - url: fundamentals/task-flow-overview.md
             itemType: concept
             text: Use task flows
-          - url: get-started/copilot-enable-fabric.md
+          - url: fundamentals/copilot-enable-fabric.md
             itemType: concept
             text: Try Copilot in Fabric
           # footerLink (optional)
           footerLink:
-            url: get-started/index.yml
+            url: fundamentals/index.yml
             text: See more
         # Card
         - title: Migrate to Fabric
@@ -145,17 +143,17 @@ conceptualContent:
         # Card
         - title: Decision guides
           links:
-          - url: get-started/decision-guide-data-store.md
+          - url: fundamentals/decision-guide-data-store.md
             itemType: quickstart
             text: Choose a data store
-          - url: get-started/decision-guide-pipeline-dataflow-spark.md
+          - url: fundamentals/decision-guide-pipeline-dataflow-spark.md
             itemType: concept
             text: Copy Activity, Dataflow, or Spark Guide
-          - url: get-started/decision-guide-lakehouse-warehouse.md
+          - url: fundamentals/decision-guide-lakehouse-warehouse.md
             itemType: concept
             text: Warehouse and Lakehouse
           footerLink:
-            url: get-started/index.yml
+            url: fundamentals/index.yml
             text: See more
         # Card
         - title: Administer your resources
@@ -190,10 +188,10 @@ conceptualContent:
           - url: real-time-intelligence/get-data-local-file.md
             itemType: how-to-guide
             text: Get data into KQL database
-          - url: real-time-intelligence/event-streams/add-source-azure-event-hubs.md
+          - url: real-time-intelligence/event-streams/add-manage-eventstream-sources.md
             itemType: how-to-guide
             text: Get data with eventstreams
-          - url: real-time-hub/add-source-azure-event-hubs.md
+          - url: real-time-hub/supported-sources.md
             itemType: how-to-guide
             text: Get data with Real-Time hub          
           footerLink:
@@ -232,7 +230,7 @@ conceptualContent:
           - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
             text: Transform data in a warehouse
-          - url: get-started/copilot-notebooks-overview.md
+          - url: data-engineering/copilot-notebooks-overview.md
             itemType: overview
             text: Transform data with Copilot for notebooks
           - url: real-time-intelligence/event-streams/process-events-using-event-processor-editor.md
@@ -283,20 +281,20 @@ conceptualContent:
         # Card
         - title: Use AI capabilities and get insights with Copilot
           links:
-          - url: get-started/copilot-fabric-overview.md
+          - url: fundamentals/copilot-fabric-overview.md
             itemType: concept
             text: Overview of Copilot in Fabric
-          - url: get-started/copilot-privacy-security.md
+          - url: fundamentals/copilot-privacy-security.md
             itemType: concept
             text: Copilot privacy, security, and responsible use
-          - url: get-started/copilot-faq-fabric.yml
+          - url: fundamentals/copilot-faq-fabric.yml
             itemType: how-to-guide
             text: Copilot FAQ
-          - url: get-started/copilot-fabric-consumption.md
+          - url: fundamentals/copilot-fabric-consumption.md
             itemType: how-to-guide
             text: Copilot billing and reporting
           footerLink:
-            url: get-started/copilot-fabric-overview.md
+            url: fundamentals/copilot-fabric-overview.md
             text: See more
         # Card
         - title: Govern your resources
@@ -340,7 +338,7 @@ conceptualContent:
         # Card
         - title: Stay informed with product updates
           links:
-          - url: get-started/whats-new.md
+          - url: fundamentals/whats-new.md
             itemType: whats-new
             text: What's new in Microsoft Fabric?
           - url: /fabric/release-plan/
@@ -416,8 +414,8 @@ conceptualContent:
               url: cicd/partners/partner-integration.md
               text: See more
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
-      summary: Learn about Fabric, access training materials and learning paths, stay updated with the blog, engage in forums, contribute to product ideas, join user groups, and explore the MVP program. # < 160 chars (Optional; Remove if not applicable.)
-      items:
+      summary: Discover Fabric, access training materials, learning paths. Stay updated with the blog, engage in forums, contribute ideas, join user groups, and explore the MVP program. # < 160 chars (Optional; Remove if not applicable.)
+      items: 
         # Card
         - title: Learning
           links:

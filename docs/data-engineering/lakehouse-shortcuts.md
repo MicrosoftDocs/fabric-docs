@@ -6,8 +6,6 @@ ms.author: tvilutis
 author: tedvilutis
 ms.topic: concept-article
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Lakehouse shortcuts
 #customer intent: As a data engineer, I want to create and manage shortcuts in a Fabric lakehouse to reference data from various sources without copying it.

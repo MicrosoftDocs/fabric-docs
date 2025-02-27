@@ -6,9 +6,7 @@ ms.author: mideboer
 author: miquelladeboer
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Data source management

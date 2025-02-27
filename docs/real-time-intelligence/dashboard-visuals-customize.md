@@ -1,26 +1,23 @@
 ---
-title: Customize Real-Time Dashboard visuals (preview)
+title: Customize Real-Time Dashboard visuals
 description: Learn how to customize your Real-Time Dashboard visuals.
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.reviewer: gabil
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 02/21/2024
+ms.date: 11/19/2024
 ---
 
-# Customize Real-Time Dashboard visuals (preview)
+# Customize Real-Time Dashboard visuals
 
 Real-Time Dashboards are a collection of tiles that feature a visual representation supported by an underlying Kusto Query Language (KQL) query. This article explains how to edit the visualizations and queries of a Real-Time Dashboard tile and provides an overview of customization properties specific to each visualization type.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 All visualizations that can be created in the context of the [render operator](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context-rta&pivots=fabric#visualizations) along with the [dashboard-specific visuals](dashboard-visuals.md) are available in Real-Time Dashboards.
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md)
 
 ## Customize a dashboard tile
@@ -87,7 +84,7 @@ For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown 
 
     The image renders in the tile's preview.
 
-    :::image type="content" source="media/customize-dashboard-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text. ":::
+    :::image type="content" source="media/customize-dashboard-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text.":::
 
 1. In the top menu, select **Apply changes** to save the tile.
 

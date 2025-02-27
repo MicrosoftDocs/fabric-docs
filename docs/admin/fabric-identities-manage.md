@@ -42,8 +42,7 @@ The columns of the list of identities are described in following table.
 | **Service principal ID**          | The object ID of the Enterprise application that is associated with the identity in Microsoft Entra.      |
 | **Application ID**                | The application ID of the Enterprise application that is associated with the identity in Microsoft Entra. |
 | **Tenant ID**                     | The ID of the tenant the identity is defined in.                                                          |
-| **Role**                          | The workspace role the identity has been assigned.                                                                                                         |
-| **Allowed in untrusted contexts** | Not applicable.                                                                                           |
+| **Role**                          | The workspace role the identity has been assigned.                                                        |
 
 ## Delete an identity
 

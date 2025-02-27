@@ -6,15 +6,11 @@ ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
 ms.custom:
-  - build-2024
 ms.search.form: GraphQL multiple data sources
 ms.date: 05/21/2024
 ---
 
 # Query multiple data sources in Fabric API for GraphQL
-
-> [!NOTE]
-> Microsoft Fabric API for GraphQL is in preview.
 
 In Fabric API for GraphQL, you can expose many data sources through a single API item. This feature allows you to issue a single query that retrieves data across multiple data sources.
 

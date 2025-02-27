@@ -6,10 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.search.form: Microsoft Spark utilities
 ms.date: 05/02/2024
 ---
@@ -145,6 +141,9 @@ This method appends the given string to a file, encoded in UTF-8.
 mssparkutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
 
+> [!NOTE] 
+> When using the ``` mssparkutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```mssparkutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+
 ### Delete file or directory
 
 This method removes a file or directory.
@@ -210,7 +209,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 ### Reference run multiple notebooks in parallel
 
 > [!IMPORTANT]
-> This feature is in [preview](../get-started/preview.md).
+> This feature is in [preview](../fundamentals/preview.md).
 
 The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
 
@@ -625,6 +624,9 @@ With ``` mssparkutils.runtime.context ``` you can get the context information of
 ```python
 mssparkutils.runtime.context
 ```
+
+> [!NOTE]
+> ```mssparkutils.env``` is not officially supported on Fabric, please use ```notebookutils.runtime.context``` as alternative.
 
 ## Known issue 
 

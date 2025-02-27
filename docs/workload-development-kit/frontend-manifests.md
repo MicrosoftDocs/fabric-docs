@@ -55,7 +55,7 @@ Configurations for creating new items in the product, specifying options for use
     - **icon** (object): Path to the icon used in the card.
     - **onClick** (object): Action triggered when the card is clicked.
     - **availableIn** (array): Locations where the card is available.
-    - **itemType** (string): Type of item linked to the create card.
+    - **itemType** (string): Type of item linked to the created card.
 
 ### Workspace Settings and Product Details
 
@@ -115,9 +115,9 @@ Configurations for job-related actions associated with the item job instance.
     - **cancel** (object): Action for canceling a job.
     - **retry** (object): Action for retrying a job.
 
-### Item Settings and Job Types
+### Item Settings
 
-Defines additional configurations related to job types and scheduling.
+Configurations options for item settings.
 
 - **itemSettings** (object): Extra settings for the item.
   - **schedule** (object): Contains scheduling information.
@@ -125,5 +125,18 @@ Defines additional configurations related to job types and scheduling.
     - **refreshType** (string): Specifies the item’s refresh capability. Possible values include `"None"`, `"Refresh"`, and `"Run"`.
   - **recentRun** (object): Configuration for recent job runs.
     - **useRecentRunsComponent** (boolean): Whether to use fabric shared recent runs component.
+  - **getItemSettings** (object): Configuration for custom item settings.
+    - **action** (string): name of the corresponding action that will return the list of custom item settings.
 
-- **itemJobTypes** (array): Categories for job types associated with the item. You can select up to two categories per item. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
+### Item Task Flow Categories
+
+Defines your item categories for integrating with Fabric [Task Flow Framework.](../fundamentals/task-flow-overview.md).
+
+- **itemJobTypes** (array): Specifies the categories assigned to an item within the task flow framework. Each item can have up to two categories. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
+If no category is specified, "others" is used as the default.
+
+
+> [!NOTE]
+> When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
+>
+> This step is only necessary for local development and is not required for cloud mode.

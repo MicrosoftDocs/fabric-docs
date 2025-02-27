@@ -48,7 +48,7 @@ Managed virtual networks are provisioned for a Fabric workspace when
     Learn more about [configuring Private Links for Microsoft Fabric](./security-private-links-overview.md)
 
     > [!NOTE]
-    > The managed virtual network is provisioned automatically as part of the job submission step for the first Spark Job in the workspace. Once the managed virtual network has been provisioned, the starter pools (default Compute option) for Spark are disabled, as these are pre-warmed clusters hosted in a shared virtual network. Spark jobs will run on custom pools created on-demand at the time of job submission within the dedicated managed virtual network of the workspace.
+    > The managed virtual network is provisioned automatically as part of the job submission step for the first Spark Job in the workspace. Once the managed virtual network has been provisioned, the starter pools (default Compute option) for Spark are disabled, as these are pre-warmed clusters hosted in a shared virtual network. Spark jobs will run on custom pools created on-demand at the time of job submission within the dedicated managed virtual network of the workspace which could take up around 3 to 5 minutes to start sessions in Spark. 
 
 ## Related content
 

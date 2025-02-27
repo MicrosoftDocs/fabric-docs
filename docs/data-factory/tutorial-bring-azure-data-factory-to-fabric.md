@@ -6,8 +6,6 @@ ms.author: lle
 author: lrtoyou1223
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 08/25/2024
 ms.search.form: Pipeline tutorials
 ---
@@ -22,7 +20,7 @@ To get started, you must complete the following prerequisites:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
 
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 - Enable the preview on your Microsoft Fabric tenant from the Fabric admin portal. Enable the Azure Data Factory preview using admin portal or reach out to your Fabric admin.
 
@@ -30,8 +28,6 @@ To get started, you must complete the following prerequisites:
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 2. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
-
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 3. Navigate to your Microsoft Fabric workspace. 
 4. In the homepage, select **Azure Data Factory**.
 
@@ -43,12 +39,12 @@ To get started, you must complete the following prerequisites:
 
 6. In the workspace artifact list page, you can see a new artifact is created.
 
-:::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-artifact.png" alt-text="Screenshot with the Azure data factory in fabric workspace. ":::
+:::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-artifact.png" alt-text="Screenshot with the Azure data factory in fabric workspace.":::
 
 7. You can select it and go into the Azure data factory UI. 
 8. You can edit or run any pipelines here.
 
-:::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-ui.png" alt-text="Screenshot with the Azure data factory in fabric. ":::
+:::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-ui.png" alt-text="Screenshot with the Azure data factory in fabric.":::
 
 ## Related content
 

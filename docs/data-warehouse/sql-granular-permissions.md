@@ -3,11 +3,10 @@ title: SQL granular permissions
 description: Learn about providing granular permissions via SQL in the warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo, stwynant
+ms.reviewer: cynotebo, dhsundar
 ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
@@ -29,7 +28,8 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 
 ### Limitations
 
-- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user is created automatically. The user will not be able to connect until sufficient workspace level rights are given. 
+- `CREATE USER` cannot be explicitly executed currently. When `GRANT` or `DENY` is executed, the user is created automatically. The user will not be able to connect until sufficient workspace level rights are given.
+
 ## View my permissions
 
 When a user connects to the SQL connection string, they can view the permissions available to them using the [sys.fn_my_permissions](/sql/relational-databases/system-functions/sys-fn-my-permissions-transact-sql?view=fabric&preserve-view=true) function.

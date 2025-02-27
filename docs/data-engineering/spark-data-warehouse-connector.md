@@ -1,15 +1,17 @@
 ---
-title: Spark connector for Microsoft Fabric Synapse Data Warehouse
+title: Spark connector for Microsoft Fabric Data Warehouse
 description: Learn how to use a Spark connector to access and work with data from a Microsoft Fabric warehouse and the SQL analytics endpoint of a lakehouse.
 author: ms-arali
 ms.author: arali
 ms.topic: how-to
-ms.date: 09/30/2024
+ms.custom:
+  - ignite-2024
+ms.date: 02/12/2025
 ---
 
-# Spark connector for Microsoft Fabric Synapse Data Warehouse
+# Spark connector for Microsoft Fabric Data Warehouse
 
-The Spark connector for Synapse Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items). The connector offers the following capabilities:
+The Spark connector for Fabric Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items). The connector offers the following capabilities:
 
 * You can work with data from a warehouse or SQL analytics endpoint in the same workspace or across multiple workspaces.
 * The SQL analytics endpoint of a Lakehouse is automatically discovered based on workspace context.
@@ -18,7 +20,7 @@ The Spark connector for Synapse Data Warehouse enables Spark developers and data
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
 
 > [!NOTE]
-> The connector is currently in preview. For more information, see the [current limitations](spark-data-warehouse-connector.md#current-limitations) later in this article.  
+> The connector is currently in preview. For more information, see the [current considerations](spark-data-warehouse-connector.md#considerations-for-using-this-connector) later in this article.  
 
 ## Authentication
 
@@ -61,17 +63,23 @@ spark.read.synapsesql("<warehouse/lakeshouse name>.<schema name>.<table or view 
 > [!IMPORTANT]
 > Run these import statements at the beginning of your notebook or before you start using the connector:
 
->  For Scala
->
-> `import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._`
->
-> `import com.microsoft.spark.fabric.Constants`
+# [PySpark](#tab/pyspark)
 
->  For PySpark (Python)
->
-> `import com.microsoft.spark.fabric`
->
-> `from com.microsoft.spark.fabric.Constants import Constants`
+```python
+import com.microsoft.spark.fabric
+from com.microsoft.spark.fabric.Constants import Constants  
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._
+import com.microsoft.spark.fabric.tds.implicits.write.FabricSparkTDSImplicits._
+import com.microsoft.spark.fabric.Constants
+import org.apache.spark.sql.SaveMode 
+```
+---
 
 The following code is an example to read data from a table or view in a Spark DataFrame:
 
@@ -99,20 +107,20 @@ df = spark.read.synapsesql("<warehouse/lakehouse name>.<schema name>.<table or v
 
 ### Read data across workspaces
 
-To access and read data from a data warehouse or lakehouse across workspaces, you can specify the workspace ID where your data warehouse or lakehouse exists and then lakehouse or data warehouse item id. This line provides an example of reading data from a table or view in a Spark DataFrame from the data warehouse or lakehouse with the specified workspace ID and lakehouse/data warehouse ID:
+To access and read data from a warehouse or lakehouse across workspaces, you can specify the workspace ID where your warehouse or lakehouse exists, and then lakehouse or warehouse item ID. The following line provides an example of reading data from a table or view in a Spark DataFrame from the warehouse or lakehouse with the specified workspace ID and lakehouse/warehouse ID:
 
 ```python
 # For lakehouse
 df = spark.read.option(Constants.WorkspaceId, "<workspace id>").synapsesql("<lakehouse name>.<schema name>.<table or view name>")
 df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.LakehouseId, "<lakehouse item id>").synapsesql("<lakehouse name>.<schema name>.<table or view name>")
 
-# For data warehouse
+# For warehouse
 df = spark.read.option(Constants.WorkspaceId, "<workspace id>").synapsesql("<warehouse name>.<schema name>.<table or view name>")
-df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.DatawarehouseId, "<data warehouse item id>").synapsesql("<warehouse name>.<schema name>.<table or view name>")
+df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.DatawarehouseId, "<warehouse item id>").synapsesql("<warehouse name>.<schema name>.<table or view name>")
 ```
 
 > [!NOTE]
-> When you're running the notebook, by default the connector looks for the specified data warehouse or lakehouse in the workspace of the lakehouse that's attached to the notebook. To reference a data warehouse or lakehouse from another workspace, specify the workspace ID and lakehouse or data warehouse item ID as above.
+> When you're running the notebook, by default the connector looks for the specified warehouse or lakehouse in the workspace of the lakehouse that's attached to the notebook. To reference a warehouse or lakehouse from another workspace, specify the workspace ID and lakehouse or warehouse item ID as above.
 
 ### Create a lakehouse table based on data from a warehouse
 
@@ -123,15 +131,40 @@ df = spark.read.synapsesql("<warehouse/lakehouse name>.<schema name>.<table or v
 df.write.format("delta").saveAsTable("<Lakehouse table name>")
 ```
 
+### Write a Spark dataframe data to warehouse table
+This connector employs a two-phase write process to a Fabric DW table. Initially, it stages the Spark dataframe data into an intermediate storage, followed by using the `COPY INTO` command to ingest the data into the Fabric DW table. This approach ensures scalability with increasing data volume.
+
+#### Supported DataFrame save modes
+Following save modes are supported when writing source data of a dataframe to a destination table in warehouse:
+
+* ErrorIfExists (default save mode): If destination table exists, then the write is aborted with an exception returned to the callee. Else, a new table is created with data.
+* Ignore: If the destination table exists, then the write will ignore the write request without returning an error. Else, a new table is created with data.
+* Overwrite: If the destination table exists, then existing data in the destination is replaced with data. Else, a new table is created with data.
+* Append: If the destination table exists, then the new data is appended to it. Else, a new table is created with data.
+
+The following code shows examples of writing Spark dataframe's data to a Fabric DW table: 
+
+```python
+df.write.synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>") # this uses default mode - errorifexists
+
+df.write.mode("errorifexists").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
+df.write.mode("ignore").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
+df.write.mode("append").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
+df.write.mode("overwrite").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
+```
+> [!NOTE]
+> The connector supports writing to a Fabric DW table only as the SQL analytics endpoint of a Lakehouse is read-only.
+
 ## Troubleshoot
 
 Upon completion, the read response snippet appears in the cell's output. Failure in the current cell also cancels subsequent cell executions of the notebook. Detailed error information is available in the Spark application logs.
 
-## Current limitations
+## Considerations for using this connector
 
 Currently, the connector:
 
-* Supports data retrieval from Fabric warehouses and SQL analytics endpoints of lakehouse items.
+* Supports data retrieval or read from Fabric warehouses and SQL analytics endpoints of lakehouse items.
+* Supports writing data to a warehouse table using different save modes - this is only available with the latest GA runtime, i.e., [Runtime 1.3](runtime-1-3.md)
 * Fabric DW now supports `Time Travel` however this connector doesn't work for a query with time travel syntax. 
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
 * Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In case of a custom or passthrough-query based read, users are required to escape column names that would contain special characters.

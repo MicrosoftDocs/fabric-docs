@@ -2,7 +2,7 @@
 title: Conditional KNN Exploring Art Across Cultures
 description: A guideline for match-finding via k-nearest-neighbors.
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom: 
 ms.author: ssalgado
 author: ssalgadodev
 ms.reviewer: jessiwang
