@@ -24,9 +24,12 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
 
+> [!TIP]
+> We recommend using the `ai.classify` function with at least 2 input labels.
+
 ## Use `ai.classify` with pandas
 
-The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to assign user-provided labels to each input row.
+The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to assign user-provided labels to each input row.
 
 The function returns a pandas Series that contains classification labels, which can be stored in a new DataFrame column.
 
@@ -44,7 +47,7 @@ df["classification"] = df["text"].ai.classify("category1", "category2", "categor
 
 ### Returns
 
-The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains classification labels for each input text row. If a text value can't be classified, the corresponding label is `null`.
+The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains a classification label for each input text row. If a text value can't be classified, the corresponding label is `null`.
 
 ### Example
 
@@ -66,7 +69,7 @@ display(df)
 
 The `ai.classify` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter, along with a list of classification labels.
 
-The function returns a new DataFrame with labels that match each row of input text stored in an output column.
+The function returns a new DataFrame, with labels that match each row of input text stored in an output column.
 
 ### Syntax
 

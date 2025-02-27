@@ -1,6 +1,6 @@
 ---
 title: Calculate similarity with the `ai.similarity` function
-description: Learn how to use the `ai.similarity` function, which invokes Generative AI to compare string values and calculate semantic similarity scores.
+description: Learn how to use the `ai.similarity` function to compare string values and calculate semantic similarity scores.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Calculate similarity with the `ai.similarity` function
 
-The `ai.similarity` function uses Generative AI to compare two string expressions, and then calculate a semantic similarity score—all with a single line of code. You can compare text values from one column of a DataFrame with a single common text value or with pairwise text values in another column.
+The `ai.similarity` function uses Generative AI to compare two string expressions and then calculate a semantic similarity score—all with a single line of code. You can compare text values from one column of a DataFrame with a single common text value or with pairwise text values in another column.
 
 AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
 
@@ -26,7 +26,7 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 
 ## Use `ai.similarity` with pandas
 
-The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column. The function measures the semantic similarity of each input row with respect to a single common text value. Alternatively, it can measure the semantic similarity of each row with respect to corresponding pairwise values in another column of the same dimensions as the input column.
+The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column. The function measures the semantic similarity of each input row with respect to a single common text value. Alternatively, it can measure the semantic similarity of each row with respect to corresponding pairwise values in another column that has the same dimensions as the input column.
 
 The function returns a pandas Series containing similarity scores, which can be stored in a new DataFrame column.
 

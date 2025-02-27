@@ -28,7 +28,7 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 
 The `ai.extract` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to extract custom entity types from each row of input.
 
-Unlike other AI functions, `ai.extract` returns a pandas DataFrame, instead of a Series, with a separate column for each specified entity type that contains extracted values for each input text row.
+Unlike other AI functions, `ai.extract` returns a pandas DataFrame, instead of a Series, with a separate column for each specified entity type that contains extracted values for each input row.
 
 ### Syntax
 
@@ -65,7 +65,7 @@ display(df_entities)
 
 The `ai.extract` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). The name of an existing input column must be specified as a parameter, along with a list of entity types to extract from each row of text.
 
-The function returns a new DataFrame with a separate column for each specified entity type that contains extracted values for each input text row.
+The function returns a new DataFrame, with a separate column for each specified entity type that contains extracted values for each input row.
 
 ### Syntax
 
@@ -78,7 +78,7 @@ df.ai.extract(labels=["entity1", "entity2", "entity3"], input_col="text")
 | **Name** | **Description** |
 |---|---|
 | **`labels`** <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that represents the set of entity types to be extracted from the text values in the input column. |
-| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column, with input text values to be scanned for the custom entities. |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to be scanned for the custom entities. |
 | **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each input text row. If this parameter isn't set, a default name is generated for the error column. If an input row has no errors, the value in this column is `null`. |
 
 ### Returns

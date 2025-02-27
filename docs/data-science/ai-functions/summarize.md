@@ -1,6 +1,6 @@
 ---
 title: Summarize text with the `ai.summarize` function
-description: Learn how to use the `ai.summarize` function, which invokes Generative AI to provide summaries of input text (either values from a single column of a DataFrame or values across all its columns, row by row).
+description: Learn how to use the `ai.summarize` function to produce summaries of input text (either values from a single column of a DataFrame or row values across all the columns).
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Summarize text with the `ai.summarize` function
 
-The `ai.summarize` function uses Generative AI to product summaries of input text—either values from a single column of a DataFrame or values across all columns—with a single line of code.
+The `ai.summarize` function uses Generative AI to product summaries of input text—either values from a single column of a DataFrame or row values across all the columns—with a single line of code.
 
 AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
 
@@ -26,7 +26,7 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 
 ## Use `ai.summarize` with pandas
 
-The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to summarize each row value from that column alone. As an alternative, you can call the `ai.summarize` function on an entire DataFrame, to summarize values across all columns, row by row.
+The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to summarize each row value from that column alone. Alternatively, you can call the `ai.summarize` function on an entire DataFrame, to summarize row values across all the columns.
 
 The function returns a pandas Series that contains summaries, which can be stored in a new DataFrame column.
 
@@ -110,9 +110,9 @@ display(df)
 
 ## Use `ai.summarize` with PySpark
 
-The `ai.summarize` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). If you specify the name of an existing input column as a parameter, the function summarizes each value from that column alone. Otherwise, the function summarizes text values across all columns of the DataFrame, row by row.
+The `ai.summarize` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). If you specify the name of an existing input column as a parameter, the function summarizes each value from that column alone. Otherwise, the function summarizes values across all columns of the DataFrame, row by row.
 
-The function returns a new DataFrame with summaries for each input text row, from a single column or across all columns, stored in an output column.
+The function returns a new DataFrame with summaries for each input text row, from a single column or across all the columns, stored in an output column.
 
 ### Syntax
 
@@ -206,3 +206,4 @@ display(summaries)
 - Translate text with [`ai.translate`](./translate.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - To learn more about the full set of AI functions, visit [this overview article](./ai-function-overview.md).
+- Learn how to customize the configuration of AI functions [here](./ai-function-configuration.md).

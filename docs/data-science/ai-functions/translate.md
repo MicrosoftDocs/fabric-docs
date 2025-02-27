@@ -1,6 +1,6 @@
 ---
 title: Translate text with the `ai.translate` function
-description: Learn how to use the `ai.translate` function, which invokes Generative AI to translate input text to a new language of your choosing.
+description: Learn how to use the `ai.translate` function to translate input text to a new language of your choosing.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Translate text with the `ai.translate` function
 
-The `ai.translate` function uses Generative AI to translate input text to a new language of your choice, all with a single line of code.
+The `ai.translate` function uses Generative AI to translate input text to a new language of your choice—all with a single line of code.
 
 AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
 
@@ -24,9 +24,12 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
 
+> [!TIP]
+> The `ai.translate` function has been tested on 10 target languages: **English**, **French**, **German**, **Spanish**, **Greek**, **Swedish**, **Finnish**, **Polish**, **Czech**, and **Italian**. Your results with other languages may vary.
+
 ## Use `ai.translate` with pandas
 
-The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To translate each input row into a user-specified target language, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
+The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to translate each input row into a target language of your choosing.
 
 The function returns a pandas Series that contains translations, which you can store in a new DataFrame column.
 
@@ -66,7 +69,7 @@ display(df)
 
 The `ai.translate` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify an existing input column name as a parameter, along with a target language.
 
-The function returns a new DataFrame that contains translations, which you can store in a new DataFrame column.
+The function returns a new DataFrame, with translations for each input text row stored in an output column.
 
 ### Syntax
 
@@ -113,3 +116,4 @@ display(translations)
 - Summarize text with [`ai.summarize`](./summarize.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - To learn more about the full set of AI functions, please visit [this overview article](./ai-function-overview.md).
+- Learn how to customize the configuration of AI functions [here](./ai-function-configuration.md).

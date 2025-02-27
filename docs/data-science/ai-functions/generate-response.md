@@ -26,7 +26,7 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 
 ## Use `ai.generate_response` with pandas
 
-The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class. The `ai.generate_response` function differs from the other AI functions, because those functions extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call this function on an entire pandas DataFrame, to generate custom text responses row by row. You use either a simple prompt (a literal string that considers all columns values as context) or a template prompt (a format string that considers only embedded values from designated columns as context).
+The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class. The `ai.generate_response` function differs from the other AI functions, because those functions extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call this function on an entire pandas DataFrame to generate custom text responses row by row. You can use either a simple prompt (a literal string that considers all columns values as context) or a template prompt (a format string that considers only embedded values from designated columns as context).
 
 The function returns a pandas Series that contains custom text responses for each row of input. The text responses can be stored in a new DataFrame column.
 

@@ -26,7 +26,7 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 
 ## Use `ai.analyze_sentiment` with pandas
 
-The `ai.analyze_sentiment` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. You can call the function on [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column, to detect the sentiment of each input row.
+The `ai.analyze_sentiment` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to detect the sentiment of each input row.
 
 The function returns a pandas Series that contains sentiment labels, which can be stored in a new column of the DataFrame.
 
@@ -79,7 +79,7 @@ df.ai.analyze_sentiment(input_col="text", output_col="sentiment")
 |---|---|
 | **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column, with input text values to be analyzed for sentiment. |
 | **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store the sentiment label for each row of input text. If this parameter isn't set, a default name is generated for the output column. |
-| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter isn't set, a default name is generated for the error column. If an input row has no errors, the value in this column for that row is `null`. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter isn't set, a default name is generated for the error column. If an input row has no errors, the value in this column is `null`. |
 
 ### Returns
 

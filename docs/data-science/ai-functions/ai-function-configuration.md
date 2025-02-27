@@ -1,6 +1,6 @@
 ---
 title: Customize the configuration of AI functions in Fabric (Preview)
-description: Learn how to configure AI funtions in Fabric for custom use, modifying the underlying LLM endpoint and other default settings.
+description: Learn how to configure AI funtions in Fabric for custom use, modifying the underlying LLM endpoint or other related settings.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
