@@ -1,6 +1,6 @@
 ---
 title: Customize the configuration of AI functions in Fabric (Preview)
-description: Learn how to configure AI funtions in Fabric for custom use, modifying the underlying LLM endpoint or other related settings.
+description: Learn how to configure AI funtions in Fabric for custom use, modifying the underlying LLM or other related settings.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
@@ -13,20 +13,20 @@ ms.search.form: AI functions
 
 # Customize the configuration of AI functions in Fabric
 
-AI functions allow users to apply LLM-powered transformations to their enterprise data [in a single line of code](ai-function-overview.md). They're designed to work out-of-the-box, in Fabric notebooks, with the underlying language model and its associated language model settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+AI functions, currently in public preview, allow users to apply LLM-powered transformations to their enterprise data [in a single line of code](./ai-function-overview.md). They're designed to work out-of-the-box, in Fabric notebooks, with the underlying language model and its settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 ## Customizing AI functions with pandas
 
 By default, AI functions are powered by the native Fabric LLM endpoint. If you're working with AI functions in pandas, you can use the `aifunc.Conf` class to modify some or all of the following underlying settings:
 
-| **Parameter** | **Description** |
-|---|---|
-| **`model_deployment_name`** | A string value designating the name of the language model deployment that powers AI functions. By default, the native Fabric LLM endpoint uses **gpt-35-turbo-0125** |
-| **`embedding_deployment_name`** | A string value designating the name of the embedding model deployment that powers AI functions. By default, the native Fabric LLM endpoint uses **text-embedding-ada-002**. |
-| **`temperature`** | A float value between **0** and **1**. Higher temperatures will increase the randomness or creativity of the underlying model's outputs. By default, the Fabric LLM endpoint's temperature is set to **0**. |
-| **`seed`** | An int value designating the seed to use for the underlying model's response. By default, this value is not specified. |
-| **`timeout`** | An int value designating the number of seconds before an AI function raises a timeout error. By default, this value is not specified. |
-| **`max_concurrency`** | An int value designating the maximum number of rows to be processed in parallel with asynchronous requests to the model. By default, this value is set to **4**. |
+| **Parameter** | **Description** | **Default** |
+|---|---|---|
+| **`model_deployment_name`** | A string value designating the name of the language model deployment that powers AI functions. | **gpt-35-turbo-0125** |
+| **`embedding_deployment_name`** | A string value designating the name of the embedding model deployment that powers AI functions. | **text-embedding-ada-002** |
+| **`temperature`** | A float value between **0** and **1**. Higher temperatures will increase the randomness or creativity of the underlying model's outputs. | **0** |
+| **`seed`** | An int value designating the seed to use for the underlying model's response. | Default |
+| **`timeout`** | An int value designating the number of seconds before an AI function raises a timeout error. | Default |
+| **`max_concurrency`** | An int value designating the maximum number of rows to be processed in parallel with asynchronous requests to the model. | Default |
 
 The following code sample shows to override `aifunc.Conf` settings globally, so that they will apply to multiple AI function calls in a given session:
 
@@ -49,9 +49,7 @@ df["sentiment"] = df["text"].ai.analyze_sentiment()
 display(df)
 ```
 
-You can also customize these settings per individual function call, using the optional `conf` parameter for any AI function. This parameter accepts an instance of the `aifunc.Conf` class.
-
-Unlike the example above, the code sample below modifies the default `aifunc` settings for only the `ai.translate` function call, using a custom temperature value. Please note that the `ai.analyze_sentiment` call still uses the defaults.
+You can also customize these settings per individual function call, using the optional `conf` parameter for any AI function. This parameter accepts an instance of the `aifunc.Conf` class. The code sample below modifies the default `aifunc` settings for only the `ai.translate` function call, using a custom temperature value. Please note that the `ai.analyze_sentiment` call still uses the defaults.
 
 ```python
 # This code uses AI. Always review output for mistakes. 
