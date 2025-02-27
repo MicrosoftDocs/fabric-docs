@@ -35,24 +35,24 @@ items:
   items: 
     - name: Transform and enrich data seamlessly with AI functions
       href: ./ai-functions/ai-function-overview.md
+    - name: ai.similarity
+      href: ./ai-functions/similarity.md
+    - name: ai.classify
+      href: ./ai-functions/classify.md
+    - name: ai.analyze_sentiment
+      href: ./ai-functions/analyze-sentiment.md
+    - name: ai.extract
+      href: ./ai-functions/extract.md
+    - name: ai.fix_grammar
+      href: ./ai-functions/fix-grammar.md
+    - name: ai.summarize
+      href: ./ai-functions/summarize.md
+    - name: ai.translate
+      href: ./ai-functions/translate.md
+    - name: ai.generate_response
+      href: ./ai-functions/generate-response.md
     - name: Customize the configuration of AI functions
       href: ./ai-functions/ai-function-configuration.md
-    - name: Calculate similarity with `ai.similarity`
-      href: ./ai-functions/similarity.md
-    - name: Categorize text with `ai.classify`
-      href: ./ai-functions/classify.md
-    - name: Detect sentiment with `ai.analyze_sentiment`
-      href: ./ai-functions/analyze-sentiment.md
-    - name: Extract entities with `ai.extract`
-      href: ./ai-functions/extract.md
-    - name: Fix grammar with `ai.fix_grammar`
-      href: ./ai-functions/fix-grammar.md
-    - name: Summarize text with `ai.summarize`
-      href: ./ai-functions/summarize.md
-    - name: Translate text with `ai.translate`
-      href: ./ai-functions/translate.md
-    - name: Answer custom user prompts with `ai.generate_response`
-      href: ./ai-functions/generate-response.md
 - name: AI skill
   items: 
     - name: What is the AI skill?
