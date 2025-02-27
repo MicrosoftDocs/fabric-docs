@@ -3,8 +3,6 @@ title: Analyze time series
 description: Use SynapseML and Azure AI services for multivariate anomaly detection.
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.author: ssalgado
 author: ssalgadodev
 ms.reviewer: jessiwang
@@ -298,7 +296,7 @@ plt.title("The contribution of each sensor to the detected anomaly")
 plt.show()
 ```
 
-:::image source="media/cognitive-services-multivariate-anomaly-detection/multivariate-anomaly-detection-plot.png" alt-text="Screenshot of multivariate anomaly detection results plot":::
+:::image source="media/cognitive-services-multivariate-anomaly-detection/multivariate-anomaly-detection-plot.png" alt-text="Screenshot of multivariate anomaly detection results plot.":::
 
 The plots show the raw data from the sensors (inside the inference window) in orange, green, and blue. The red vertical lines in the first figure show the detected anomalies that have a severity greater than or equal to `minSeverity`.
 

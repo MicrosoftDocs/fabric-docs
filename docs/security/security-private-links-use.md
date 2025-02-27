@@ -28,7 +28,7 @@ The following sections provide additional information for each step.
 
 ### Step 1. Set up private endpoints for Fabric
 
-1. Sign in to [Fabric](https://app.fabric.microsoft.com) as an administrator.
+1. Sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-security-security-private-links-use) as an administrator.
 1. [Go to the tenant settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 1. Find and expand the setting **Azure Private Link**.
 1. Set the toggle to *Enabled*.
@@ -263,7 +263,7 @@ The next step is to access Fabric privately, from the virtual machine you create
 
 1. Enter `nslookup <tenant-object-id-without-hyphens>-api.privatelink.analysis.windows.net`.
 
-1. You receive a response similar to the following message and can see that the private IP address is returned. You can see that the Onelake endpoint and Warehouse endpoint also return private IPs.
+1. You receive a response similar to the following message and can see that the private IP address is returned. You can see that the OneLake endpoint and Warehouse endpoint also return private IPs.
 
     :::image type="content" source="./media/security-private-links-use/nslookup-powershell.png" alt-text="Screenshot showing IP addresses returned in PowerShell." lightbox="./media/security-private-links-use/nslookup-powershell.png":::
 
@@ -278,7 +278,7 @@ If you disable public access for Fabric, certain constraints on access to Fabric
 > [!IMPORTANT]
 > When you turn on *Block Internet Access*, some unsupported Fabric items will be disabled. Learn full list of limitations and considerations in [About private links](./security-private-links-overview.md)
 
-To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** tenant setting.
+To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-security-security-private-links-use) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** tenant setting.
 
 :::image type="content" source="./media/security-private-links-use/block-public-internet-access-tenant-setting.png" alt-text="Screenshot showing the Block Public Internet Access tenant setting enabled.":::
 

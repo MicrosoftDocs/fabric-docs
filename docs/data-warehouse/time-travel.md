@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
 ms.custom:
-  - build-2024
 ms.topic: conceptual
 ms.date: 07/18/2024
 ---

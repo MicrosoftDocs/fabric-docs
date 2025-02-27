@@ -6,14 +6,13 @@ ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
 ms.custom:
-  - build-2024
 ms.date: 04/15/2024
 ---
 
 # Tutorial: Run Hello-world DAG in Apache Airflow Job
 
 > [!NOTE]
-> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 In this tutorial, you'll run a hello-world DAG in Apache Airflow Job. This tutorial focuses on familiarizing users with the features and environment of the Apache Airflow Job.
 
@@ -34,7 +33,7 @@ To get started, you must complete the following prerequisite:
 
 ### Create an Apache Airflow Job
 
-1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
+1. You can use an existing workspace or [Create a new workspace](../fundamentals/create-workspaces.md).
 
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
 

@@ -5,10 +5,10 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
+ms.service: fabric
+ms.subservice: cicd
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 07/28/2024
+ms.date: 02/27/2025
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -62,7 +62,7 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: When I try to connect to a Git repo I get a message that it can't connect because the workspace is in a different region.  
 **Cause**: If the workspace and repo are located in different regions, the cross-region switch must be enabled.  
-**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations).
 
 #### Connect failure: It says something went wrong when I try to connect
 
@@ -76,18 +76,6 @@ To understand the considerations and limitations of various lifecycle management
 
 **Solution**: Open the Git repository in Azure DevOps and navigate to the Git folder defined in the connection. If the Git folder contains subdirectories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a subdirectory. If the Git folder doesn't contain any item directories, you can't connect to it. Either remove the subdirectories or connect to a different folder that doesn't contain subdirectories.
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
-
-**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
-
-:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
-
-**Cause**: The folder you're trying to connect doesn't exist, was deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
-
-**Solution**:
-
-* To create a new folder and connect it to the workspace, select **Create and sync**.  
-* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
 
 #### The Source control icon doesn't have a number
 
@@ -114,6 +102,29 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace won't have Git integration enabled and you'll need to manually enable it from the workspace settings before syncing the workspace with Git.
 **Solution**: Enable Git integration from the workspace settings of your new workspace.
 
+### Connect folder issues
+
+#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
+
+**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
+
+:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
+
+**Cause**: The folder you're trying to connect doesn't exist, was deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
+
+**Solution**:
+
+* To create a new folder and connect it to the workspace, select **Create and sync**.  
+* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
+
+#### My Git status says I have uncommitted changes, but I didn't make any changes to my workspace 
+
+**Description of problem**: I want to update my workspace but it says that I have uncommitted changes. I didn't make any changes to my workspace.
+
+**Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. If your workspace has folders but the Git branch doesn't, you see the *uncommitted changes* message. If you try to update the workspace before committing the changes, you get a conflict. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
+
+**Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
+
 ### Commit issues
 
 #### The Commit button is disabled
@@ -136,6 +147,22 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: Changing the same item in the workspace and the Git branch can lead a possible conflict. If changes were made in the workspace and in the Git branch on the same item, updates are disabled until the conflict is resolved.  
 **Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
+
+#### Update failure: Fix duplicate logical IDs
+
+**Description of problem**: When trying to update, a dialog pops up indicating failure because the Git directory contains items with duplicate logical IDs.
+
+:::image type="content" source="./media/troubleshoot-cicd/duplicate-logical-id.png" alt-text="Screenshot of error message in the source control pane about duplicate logical IDs.":::
+
+**Cause**: The [logical ID](./git-integration/source-code-format.md#automatically-generated-system-files) of each item in the workspace must be unique. When you copy an item in the workspace, the logical ID is automatically changed to a unique ID. When you copy an item's directory in Git, the logical ID isn't changed. If you copy an item file in Git, and then try to update to the workspace, the logical ID is duplicated, causing an error.
+
+**Solution**: To resolve the issue, you need to change the logical ID of the duplicate item or items in Git before updating the workspace. You have two options:
+
+:::image type="content" source="./media/troubleshoot-cicd/fix-logical-id.png" alt-text="Screenshot of error message offering two options for fixing logical IDs.":::
+
+* If you have permission to make direct commits to the branch, select **Fix with direct commit**. This will modify the item's system file to create a unique logical ID in Git. The workspace data isn't modified until you update from Git.
+
+* If you don't have permission to make direct commits to the branch, select **Create branch and go to Git**. This will open a new branch and change the logical ID. You then need to merge the changes in Git before they can be seen in Fabric. Then, when you update from Git, the workspace data is modified.
 
 #### Update failure: Update doesn't complete because it would break dependency links
 
@@ -205,14 +232,13 @@ If the following conditions aren't met, you can't see the deployment pipelines b
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
-* You're an admin of a [workspace](../get-started/create-workspaces.md).
+* You're an admin of a [workspace](../fundamentals/create-workspaces.md).
 
 ### I can't see the pipeline stage tag in my workspace
 
 Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
 
-> [!div class="mx-imgBorder"]
-> ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/production-tag.png" alt-text="A screenshot of the production tag in a production pipeline workspace.":::
 
 ### Lost connections after deployment
 
@@ -446,7 +472,7 @@ If your deployment was previously successful, and is suddenly failing with broke
 
 Your deployment rules are missing values. This might have happened if your semantic model changed.
 
-![A screenshot of the invalid rules error displayed when a deployment fails due to broken links.](media/troubleshoot-cicd/broken-rule.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/broken-rule.png" alt-text="A screenshot of the invalid rules error displayed when a deployment fails due to broken links.":::
 
 When a previously successful deployment fails due to broken links, a warning is displayed. You can select **Configure rules** to navigate to the deployment rules pane, where the failed semantic model is marked. When you select the semantic model, the broken rules are marked.
 
@@ -462,8 +488,7 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 **Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
 
->[!div class="mx-imgBorder"]
->![A screenshot showing deployment pipelines deployment rules greyed out.](media/troubleshoot-cicd/rules-greyed-out.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/rules-greyed-out.png" alt-text="A screenshot showing deployment pipelines deployment rules greyed out.":::
 
 If one of the rule options is greyed out, it could be because of the following reasons:
 

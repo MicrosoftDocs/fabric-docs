@@ -80,7 +80,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of optimization history plot.](./media/model-training/optimization-history.png)](./media/model-training/optimization-history.png#lightbox)
+:::image type="content" border="true" source="./media/model-training/optimization-history.png" lightbox="./media/model-training/optimization-history.png" alt-text="Graph of optimization history plot.":::
 
 ### Feature importance
 
@@ -94,7 +94,7 @@ fig.show()
 ```
 Here is the resulting plot:
 
-[![Graph of feature importance plot.](./media/model-training/feature-importance.png)](./media/model-training/feature-importance.png#lightbox)
+:::image type="content" border="true" source="./media/model-training/feature-importance.png" lightbox="./media/model-training/feature-importance.png" alt-text="Graph of feature importance plot.":::
 
 ### Parallel coordinate plot
 
@@ -115,7 +115,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of parallel coordinate plot.](./media/model-training/parallel-coordinate-plot.png)](./media/model-training/parallel-coordinate-plot.png#lightbox)
+:::image type="content" border="true" source="./media/model-training/parallel-coordinate-plot.png" lightbox="./media/model-training/parallel-coordinate-plot.png" alt-text="Graph of parallel coordinate plot.":::
 
 ### Contour plot
 
@@ -139,7 +139,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of contour plot.](./media/model-training/contour-plot.png)](./media/model-training/contour-plot.png#lightbox)
+:::image type="content" border="true" source="./media/model-training/contour-plot.png" lightbox="./media/model-training/contour-plot.png" alt-text="Graph of contour plot.":::
 
 ### Empirical  distribution function
 
@@ -161,7 +161,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of the empirical distribution function plot.](./media/model-training/empirical-distribution-function-plot.png)](./media/model-training/empirical-distribution-function-plot.png#lightbox)
+:::image type="content" border="true" source="./media/model-training/empirical-distribution-function-plot.png" lightbox="./media/model-training/empirical-distribution-function-plot.png" alt-text="Graph of the empirical distribution function plot.":::
 
 ### Timeline plot
 
@@ -176,7 +176,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of timeline plot.](./media/model-training/timeline-plot.png)](./media/model-training/timeline-plot.png#lightbox)
+:::image type="content" border="true" source="./media/model-training/timeline-plot.png" lightbox="./media/model-training/timeline-plot.png" alt-text="Graph of timeline plot.":::
 
 ### Slice plot
 
@@ -197,7 +197,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of slice plot.](./media/model-training/slice-plot.png)](./media/model-training/slice-plot.png#lightbox)
+:::image type="content" border="true" source="./media/model-training/slice-plot.png" lightbox="./media/model-training/slice-plot.png" alt-text="Graph of slice plot.":::
 
 ### Hyperparameter importance
 
@@ -218,7 +218,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of hyperparameter importance plot.](./media/model-training/hyperparameter-importance-plot.png)](./media/model-training/hyperparameter-importance-plot.png#lightbox)
+:::image type="content" border="true" source="./media/model-training/hyperparameter-importance-plot.png" lightbox="./media/model-training/hyperparameter-importance-plot.png" alt-text="Graph of hyperparameter importance plot.":::
 
 ## Related content
 

@@ -7,8 +7,6 @@ author: jejiang
 ms.topic: overview
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -27,25 +25,21 @@ The following table compares Azure Synapse Spark and Fabric Spark across differe
 | Data | Primary storage (ADLS Gen2) <br>Data residency (cluster/region based) | Primary storage ([OneLake](../onelake/onelake-overview.md)) <br>Data residency (capacity/region based) |
 | Metadata | Internal Hive Metastore (HMS) <br>External HMS (using Azure SQL DB) | Internal HMS ([lakehouse](lakehouse-overview.md)) <br>-|
 | Connections | Connector type (linked services) <br>[Data sources](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary) <br>Data source conn. with workspace identity | Connector type (DMTS) <br>[Data sources](/power-query/connectors/) <br> - |
-| Security | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (network isolation) <br>Synapse workspace identity<br>Data Exfiltration Protection (DEP) <br>Service tags <br>Key Vault (via mssparkutils/ linked service) | [RBAC and access control](../get-started/roles-workspaces.md) <br> [OneLake RBAC](../onelake/security/data-access-control-model.md) <br> [Private Links](../security/security-private-links-overview.md) <br> [Managed VNet](../security/security-managed-vnets-fabric-overview.md) <br> [Workspace identity](../security/workspace-identity.md) <br>- <br>[Service tags](../security/security-service-tags.md) <br>Key Vault (via [mssparkutils](microsoft-spark-utilities.md)) |
+| Security | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (network isolation) <br>Synapse workspace identity<br>Data Exfiltration Protection (DEP) <br>Service tags <br>Key Vault (via mssparkutils/ linked service) | [RBAC and access control](../fundamentals/roles-workspaces.md) <br> [OneLake RBAC](../onelake/security/data-access-control-model.md) <br> [Private Links](../security/security-private-links-overview.md) <br> [Managed VNet](../security/security-managed-vnets-fabric-overview.md) <br> [Workspace identity](../security/workspace-identity.md) <br>- <br>[Service tags](../security/security-service-tags.md) <br>Key Vault (via [notebookutils](microsoft-spark-utilities.md)) |
 | DevOps | Azure DevOps integration <br>CI/CD (no built-in support) | [Azure DevOps integration](../cicd/git-integration/intro-to-git-integration.md)<br> [Deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) |
-| Developer experience | IDE integration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric UI <br>Collaboration (workspaces and sharing) <br>- <br>[API](/rest/api/fabric/)/SDK <br>[mssparkutils](microsoft-spark-utilities.md) |
-| Logging and monitoring | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>- <br>- <br>- |
+| Developer experience | IDE integration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric UI <br>Collaboration (workspaces and sharing) <br>[Livy API](api-livy-overview.md) <br>[API](/rest/api/fabric/)/SDK <br>[notebooktutils](microsoft-spark-utilities.md) |
+| Logging and monitoring | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>[Log Analytics](azure-fabric-diagnostic-emitters-log-analytics.md) <br>[Storage Account](azure-fabric-diagnostic-emitters-azure-storage.md) <br>[Event Hubs](azure-fabric-diagnostic-emitters-azure-event-hub.md) |
 | Business continuity and disaster recovery (BCDR) | BCDR (data) ADLS Gen2 | [BCDR (data) OneLake](../onelake/onelake-disaster-recovery.md) |
 
 Considerations and limitations:
 
 - **DMTS integration**: You can't use the DMTS via notebooks and Spark job definitions.
 
-- **Workload level RBAC**: Fabric supports four different workspace roles. Fore more information, see [Roles in workspaces in Microsoft Fabric](../get-started/roles-workspaces.md).
+- **Workload level RBAC**: Fabric supports four different workspace roles. Fore more information, see [Roles in workspaces in Microsoft Fabric](../fundamentals/roles-workspaces.md).
 
 - **Managed identity**: Currently, Fabric doesn't support running notebooks and Spark job definitions using the workspace identity or managed identity for Azure KeyVault in notebooks.
 
 - **CI/CD**: You can use the Fabric API/SDK and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
-
-- **Livy API and how to submit and manage Spark jobs**: Livy API is in the roadmap but not exposed yet in Fabric. You must create notebooks and Spark job definitions with the Fabric UI.
-
-- **Spark logs and metrics**: In Azure Synapse you can emit Spark logs and metrics to your own storage, such as Log Analytics, blob, and Event Hubs. You can also get a list of Spark applications for the workspace from the API. Currently, both of these capabilities aren't available in Fabric.
 
 - **Other considerations**:
   - **JDBC**: JDBC connection support isn't currently available in Fabric.
@@ -185,7 +179,7 @@ Notebooks and Spark job definitions are primary code items for developing Apache
 
 - **High concurrency**: In Fabric, you can attach notebooks to a high concurrency session. This option is an alternative for users using ThreadPoolExecutor in Azure Synapse. For more information, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).
 
-- **.NET for Spark C#**: Fabric doesn't support .NET Spark (C#). However, we recommendation that users with [existing workloads written in C# or F# migrate to Python or Scala](/azure/synapse-analytics/spark/spark-dotnet).
+- **.NET for Spark C#**: Fabric doesn't support .NET Spark (C#). However, the recommendation that users with [existing workloads written in C# or F# migrate to Python or Scala](/azure/synapse-analytics/spark/spark-dotnet).
 
 - **Built-in scheduled run support**: Fabric supports scheduled runs for notebooks.
 

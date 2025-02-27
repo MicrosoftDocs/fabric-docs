@@ -5,8 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/22/2024
 ---
 
@@ -25,7 +23,7 @@ The many controls in the admin portal are listed in the table below with links t
 | Feature | Description  |
 | :---    | :---         |
 | [Tenant settings](tenant-settings-index.md) | Enable, disable, and configure Microsoft Fabric. |
-| [Usage metrics](service-admin-portal-usage-metrics.md) | View usage metrics related to your organization. |
+| [Usage metrics](feature-usage-adoption.md) | View the feature usage and adoption report. |
 | [Users](service-admin-portal-users.md) | Manage users in the Microsoft 365 admin portal. |
 | [Premium Per User](service-admin-portal-premium-per-user.md) | Configure auto refresh and semantic model workload settings. |
 | [Audit logs](service-admin-portal-audit-logs.md) | Audit Microsoft Fabric activities in the Microsoft Purview compliance portal. |
@@ -43,7 +41,7 @@ The many controls in the admin portal are listed in the table below with links t
 
 To get to the admin portal, follow these steps:
 
-1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com) using your admin account credentials.
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
 
 2. Select **Fabric settings** and then from the menu select **Admin portal**.
 

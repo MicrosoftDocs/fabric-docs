@@ -7,8 +7,6 @@ ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 04/19/2024
 ms.search.form: Read and Write Pandas
 ---
@@ -80,7 +78,7 @@ import pandas as pd
  
 # Read a Parquet file from your Lakehouse into a Pandas DataFrame
 # Replace LAKEHOUSE_PATH and FILENAME with your own values
-df = pandas.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
+df = pd.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
 display(df)
 ```
 
@@ -100,7 +98,8 @@ df.to_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet")
 import pandas as pd 
  
 # Read an Excel file from your Lakehouse into a Pandas DataFrame
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
+# Replace LAKEHOUSE_PATH and FILENAME with your own values. Also need to add correct filepath after Files/ if file is placed in different folders
+# if using default lakehouse that attached to the notebook use the code to replace below: df = pandas.read_excel("/lakehouse/default/Files/FILENAME.xlsx") 
 df = pandas.read_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
 display(df) 
 ```

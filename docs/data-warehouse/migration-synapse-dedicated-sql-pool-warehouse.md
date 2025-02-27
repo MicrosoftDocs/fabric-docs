@@ -8,9 +8,6 @@ ms.date: 07/17/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
-  - build-2024
 ---
 
 # Migration​: ​Azure Synapse Analytics dedicated SQL pools to Fabric
@@ -21,7 +18,7 @@ This article details the strategy, considerations, and methods of migration of d
 
 ## Migration introduction
 
-As Microsoft introduced [Microsoft Fabric](../get-started/microsoft-fabric-overview.md), an all-in-one SaaS analytics solution for enterprises that offers a comprehensive suite of services, including [Data Factory](../data-factory/data-factory-overview.md), [Data Engineering](../data-engineering/data-engineering-overview.md), [Data Warehousing](../data-warehouse/data-warehousing.md), [Data Science](../data-science/data-science-overview.md), [Real-Time Intelligence](../real-time-intelligence/overview.md), and [Power BI](/power-bi/fundamentals/power-bi-overview). 
+As Microsoft introduced [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md), an all-in-one SaaS analytics solution for enterprises that offers a comprehensive suite of services, including [Data Factory](../data-factory/data-factory-overview.md), [Data Engineering](../data-engineering/data-engineering-overview.md), [Data Warehousing](../data-warehouse/data-warehousing.md), [Data Science](../data-science/data-science-overview.md), [Real-Time Intelligence](../real-time-intelligence/overview.md), and [Power BI](/power-bi/fundamentals/power-bi-overview). 
 
 This article focuses on options for schema (DDL) migration, database code (DML) migration, and data migration. Microsoft offers several options, and here we discuss each option in detail and provide guidance on which of these options you should consider for your scenario. This article uses the TPC-DS industry benchmark for illustration and performance testing. Your actual result might vary depending on many factors including type of data, data types, width of tables, data source latency, etc.
 
@@ -91,7 +88,7 @@ Consider the following activities as a planning runbook for your migration from 
         1. Scale resources up/down as workload shifts from Azure Synapse Analytics to Microsoft Fabric.
         1. Build a repeatable template from the experience gained for future migrations. Iterate.
         1. Identify opportunities for cost optimization, security, scalability, and operational excellence
-        1. Identify opportunities to modernize your data estate with the [latest Fabric features](../get-started/whats-new.md).
+        1. Identify opportunities to modernize your data estate with the [latest Fabric features](../fundamentals/whats-new.md).
 
 ## 'Lift and shift' or modernize?
 
@@ -376,7 +373,7 @@ A SQL Database Project can:
 
 For the data migration, you'll then use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse. 
 
-Adding to the Azure Data Studio supportability to Fabric, the Microsoft Fabric CAT team has provided a set of PowerShell scripts to handle the extraction, creation, and deployment of schema (DDL) and database code (DML) via a SQL Database Project. For a walkthrough of using the SQL Database project with our helpful PowerShell scripts, see [microsoft/fabric-migration on GitHub.com](https://github.com/microsoft/fabric-migration/tree/main/data-warehouse#deploy_and_create_migration_scripts_from_sourceps1---deploy-as-sql-package). 
+Adding to the Azure Data Studio supportability of Microsoft Fabric, the Microsoft Fabric CAT team has provided a set of PowerShell scripts to handle the extraction, creation, and deployment of schema (DDL) and database code (DML) via a SQL Database Project. For a walkthrough of using the SQL Database project with our helpful PowerShell scripts, see [microsoft/fabric-migration on GitHub.com](https://github.com/microsoft/fabric-migration/tree/main/data-warehouse#deploy_and_create_migration_scripts_from_sourceps1---deploy-as-sql-package). 
 
 For more information on SQL Database Projects, see [Getting started with the SQL Database Projects extension](/azure-data-studio/extensions/sql-database-project-extension-getting-started?view=fabric&preserve-view=true) and [Build and Publish a project](/azure-data-studio/extensions/sql-database-project-extension-build?view=fabric&preserve-view=true).
 
@@ -420,7 +417,7 @@ The dbt framework generates DDL and DML (SQL scripts) on the fly with each execu
 
 The dbt framework is code-first approach. The data must be migrated by using options listed in this document, such as [CETAS](#migration-of-data-with-cetas) or [COPY/Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity).
 
-The dbt adapter for Microsoft Fabric Synapse Data Warehouse allows the existing dbt projects that were targeting different platforms such as Synapse dedicated SQL pools, Snowflake, Databricks, Google Big Query, or Amazon Redshift to be migrated to a Fabric Warehouse with a simple configuration change.
+The dbt adapter for Microsoft Fabric Data Warehouse allows the existing dbt projects that were targeting different platforms such as Synapse dedicated SQL pools, Snowflake, Databricks, Google Big Query, or Amazon Redshift to be migrated to a Fabric Warehouse with a simple configuration change.
 
 To get started with a dbt project targeting Fabric Warehouse, see [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md). This document also lists an option to move between different warehouses/platforms.
 
@@ -436,6 +433,6 @@ Several factors to note so that you can design your process for maximum performa
 ## Related content
 
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)

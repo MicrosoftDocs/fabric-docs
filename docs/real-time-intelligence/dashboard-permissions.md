@@ -1,17 +1,20 @@
 ---
-title: Real-Time Dashboard permission segregation (preview)
+title: Real-Time Dashboard permissions (preview)
 description: Learn how to share Real-Time Dashboards without giving access to the underlying data source.
-ms.reviewer: yaschust 
-ms.author: yaschust 
-author: yaelschuster 
+ms.reviewer: yaschust
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
-ms.date: 08/12/2024
+ms.custom:
+ms.date: 11/19/2024
 ---
 # Real-Time Dashboard permissions (preview)
 
 Real-Time Dashboards are powerful tools for visualizing and analyzing data from various sources. For more information on Real-Time Dashboards, see [Create a Real-Time Dashboard (preview)](dashboard-real-time-create.md).
 
 In this article, you learn how to grant permissions and control access to data sources when sharing your real-time dashboards with other users.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 There are two types of permissions:
 
@@ -26,7 +29,7 @@ There are two types of permissions:
 
 ## Sharing Real-Time Dashboards
 
-When you [share](../get-started/share-items.md) a real-time dashboard, you can specify if the user can view, edit, or share. These permissions are for the real-time dashboard itself and not the underlying data. Access to the underlying data can be controlled by following the steps in [Set up data source permissions](#set-up-data-source-permissions).
+When you [share](../fundamentals/share-items.md) a real-time dashboard, you can specify if the user can view, edit, or share. These permissions are for the real-time dashboard itself and not the underlying data. Access to the underlying data can be controlled by following the steps in [Set up data source permissions](#set-up-data-source-permissions).
 
 ## Grant access to the data source
 
@@ -134,4 +137,4 @@ There are a few ways to revoke a user’s access permissions.
 ## Related content
 
 * [Create a Real-Time Dashboard (preview)](dashboard-real-time-create.md)
-* [Share items in Microsoft Fabric](../get-started/share-items.md)
+* [Share items in Microsoft Fabric](../fundamentals/share-items.md)

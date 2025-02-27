@@ -5,9 +5,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 07/31/2024
 #customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.
 ---
@@ -75,7 +72,7 @@ When disaster recovery is enabled, the data in OneLake gets geo-replicated. Thus
 
 > [!IMPORTANT]
 > 
-> Currently, OneLake BCDR transactions via Redirect are consuming Fabric CUs at the rate of non-BCDR transactions. The CU consumption for OneLake BCDR write operations is higher than non-BCDR. This is a temporary situation. Kindly check the [Known Issues](../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) for updates on when the issue will be corrected.
+> Currently, OneLake BCDR transactions via Redirect are consuming Fabric CUs at the rate of non-BCDR transactions. The CU consumption for OneLake BCDR write operations is higher than non-BCDR. This is a temporary situation. Kindly check the [Known Issues](../known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) for updates on when the issue will be corrected.
 
 When disaster recovery is enabled for a given capacity, write operations consume higher capacity units.
 

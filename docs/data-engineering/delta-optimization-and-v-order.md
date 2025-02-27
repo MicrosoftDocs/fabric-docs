@@ -6,9 +6,7 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 01/22/2024
+ms.date: 02/03/2025
 ms.search.form: delta lake v-order optimization
 ---
 
@@ -24,7 +22,7 @@ Power BI and SQL engines make use of Microsoft Verti-Scan technology and V-Order
 
 V-Order works by applying special sorting, row group distribution, dictionary encoding and compression on parquet files, thus requiring less network, disk, and CPU resources in compute engines to read it, providing cost efficiency and performance. V-Order sorting has a 15% impact on average write times but provides up to 50% more compression.
 
-It's __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used on control V-Order on its partitions.
+It's __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used to control the V-Order of its partitions.
 
 V-Order is applied at the parquet file level. Delta tables and its features, such as Z-Order, compaction, vacuum, time travel, etc. are orthogonal to V-Order, as such, are compatible and can be used together for extra benefits.
 
@@ -220,9 +218,9 @@ DeltaTable.createOrReplace(spark)\
 
 Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingesting data into data lake tables might have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem."
 
-Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size can be changed per workload requirements using configurations.
+Optimize Write is a Delta Lake on Microsoft Fabric and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size can be changed per workload requirements using configurations.
 
-The feature is __enabled by default__ in [!INCLUDE [product-name](../includes/product-name.md)] [Runtime for Apache Spark](./runtime.md). To learn more about Optimize Write usage scenarios, read the article [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark).
+The feature is __enabled by default__ in Microsoft Fabric [Runtime for Apache Spark](./runtime.md). To learn more about Optimize Write usage scenarios, read the article [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark).
 
 ## Merge optimization
 
