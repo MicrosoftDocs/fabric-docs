@@ -33,7 +33,7 @@ items:
     href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: AI functions
   items: 
-    - name: Transform and enrich data seamlessly with AI functions
+    - name: Overview
       href: ./ai-functions/ai-function-overview.md
     - name: ai.similarity
       href: ./ai-functions/similarity.md
@@ -51,7 +51,7 @@ items:
       href: ./ai-functions/translate.md
     - name: ai.generate_response
       href: ./ai-functions/generate-response.md
-    - name: Customize the configuration of AI functions
+    - name: Custom configurations
       href: ./ai-functions/ai-function-configuration.md
 - name: AI skill
   items: 
@@ -137,6 +137,8 @@ items:
   items:
   - name: Read and write data with Pandas
     href: read-write-pandas.md
+  - name: Transform and enrich data seamlessly with AI functions
+    href: ./ai-functions/ai-function-overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
   - name: Explore and transform Spark data with Data Wrangler
