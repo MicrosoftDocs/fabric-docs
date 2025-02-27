@@ -23,7 +23,7 @@ Use this reference guide and the example scenarios to help you in deciding wheth
 | **Code written** | No code,<br>low code | No code,<br>low code | No Code, <br>low code | Code |
 | **Data volume** | Low to high | Low to high | Medium to High | Low to high |
 | **Development interface** | Wizard,<br>canvas | Power query | Canvas | Notebook,<br>Spark job definition |
-| **Sources** | 30+ connectors | 150+ connectors | Database CDC, Kafka, Pub/Sub Messaging Systems, Event streams | Hundreds of Spark libraries |
+| **Sources** | 30+ connectors | 150+ connectors | Database supporting CDC (Change Data Capture), Kafka, Messaging Systems that support publish and subscribe pattern, Event streams | Hundreds of Spark libraries |
 | **Destinations** | 18+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Eventhouse, Lakehouse, Activator Alert, Custom Endpoint | Hundreds of Spark libraries |
 | **Transformation complexity** | Low:<br>lightweight - type conversion, column mapping, merge/split files, flatten hierarchy | Low to high:<br>300+ transformation functions | Low: <br>lightweight | Low to high:<br>support for native Spark and open-source libraries |
 
