@@ -24,7 +24,7 @@ Use this reference guide and the example scenarios to help you in deciding wheth
 | **Data volume** | Low to high | Low to high | Medium to High | Low to high |
 | **Development interface** | Wizard,<br>canvas | Power query | Canvas | Notebook,<br>Spark job definition |
 | **Sources** | 30+ connectors | 150+ connectors | Database supporting CDC (Change Data Capture), Kafka, Messaging Systems that support publish and subscribe pattern, Event streams | Hundreds of Spark libraries |
-| **Destinations** | 18+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Eventhouse, Lakehouse, Activator Alert, Custom Endpoint | Hundreds of Spark libraries |
+| **Destinations** | 18+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Eventhouse, Lakehouse, Activator Alert, Derived Stream, Custom Endpoint | Hundreds of Spark libraries |
 | **Transformation complexity** | Low:<br>lightweight - type conversion, column mapping, merge/split files, flatten hierarchy | Low to high:<br>300+ transformation functions | Low: <br>lightweight | Low to high:<br>support for native Spark and open-source libraries |
 
 Review the following three scenarios for help with choosing how to work with your data in Fabric.
