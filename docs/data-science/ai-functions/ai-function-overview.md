@@ -55,14 +55,14 @@ The following code samples install the AI functions library and its dependencies
 
 ```python
 # Install fixed version of packages
-%pip install openai==1.30
-%pip install --force-reinstall httpx==0.27.0
+%pip install -q openai==1.30 > /dev/null 2>&1
+%pip install -q --force-reinstall httpx==0.27.0 > /dev/null 2>&1
 
 # Install latest version of SynapseML-core
-%pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9/synapseml_core-1.0.9-py2.py3-none-any.whl
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9/synapseml_core-1.0.9-py2.py3-none-any.whl > /dev/null 2>&1
 
 # Install SynapseML-Internal .whl with AI functions library from blob storage:
-%pip install --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.10.0-spark3.4-2-9539f189-SNAPSHOT/synapseml_internal-1.0.10.0.dev1-py2.py3-none-any.whl
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.10.0-spark3.4-2-9539f189-SNAPSHOT/synapseml_internal-1.0.10.0.dev1-py2.py3-none-any.whl > /dev/null 2>&1
 ```
 
 # [PySpark](#tab/pyspark)
