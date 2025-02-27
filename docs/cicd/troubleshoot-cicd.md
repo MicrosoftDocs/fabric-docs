@@ -117,10 +117,10 @@ To understand the considerations and limitations of various lifecycle management
 * To create a new folder and connect it to the workspace, select **Create and sync**.  
 * To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
 
-#### ???
+#### My Git status says I have uncommitted changes, but I didn't make any changes to my workspace 
 
-**Description of problem**: When I try to connect to a Git branch, I get a message that workspace items might be deleted.
-**Cause**: The workspace has changes that weren't committed to Git. This can happen if your workspace has folders and the connected Git folder doesn't yet have subfolders.
+**Description of problem**: I want to update my workspace but it says that I have uncommitted changes. I didn't make any changes to my workspace.
+**Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. The first time you connect your workspace to Git get an uncommitted changes message. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
 **Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option.
 
 ### Commit issues

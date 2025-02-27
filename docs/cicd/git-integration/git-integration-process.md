@@ -124,6 +124,8 @@ When connected and synced, the workspace structure is mirrored in the Git reposi
 
 #### Handling folder changes safely
 
+Since Git now supports subfolders, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. The first time you connect your workspace to Git, you get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace.
+
 If you can't make changes to the connected branch directly, due to branch policy or permissions, we recommend using the *Checkout Branch* option:
 
 1. [Checkout a New Branch](./conflict-resolution.md#resolve-conflict-in-git): Use the checkout branch feature to create a branch with the updated state of your Fabric workspace.
