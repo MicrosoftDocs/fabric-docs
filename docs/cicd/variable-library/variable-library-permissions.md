@@ -15,11 +15,11 @@ ms.search.form: Introduction to Variable libraries, Manage Variable libraries, V
 
 # Variable library permissions (preview)
 
-The Microsoft Fabric Variable library permissions are aligned with the Fabric workspace model. This article explains who can access Variable libraries and their values.
+This article explains who can access Variable libraries and their values.
 
 ## Variable library item permissions
 
-Permissions are given according to your workspace role:
+The Microsoft Fabric Variable library permissions are aligned with the Fabric workspace model. Permissions are according to your workspace role, or the Variable library can be shared directly. 
 
 Workspace role | Permissions
 ---------------|------------
