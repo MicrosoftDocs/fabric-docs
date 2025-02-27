@@ -12,9 +12,6 @@ ms.collection: ce-skilling-ai-copilot
 ---
 # Copilot for Data Factory overview
 
-> [!IMPORTANT]
-> Copilot for Data Factory is generally available now, but its new Data pipeline capabilities are still in [preview](../fundamentals/preview.md).
-
 Copilot in Fabric enhances productivity, unlocks profound insights, and facilitates the creation of custom AI experiences tailored to your data. As a component of the Copilot in Fabric experience, Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows).  Essentially, Copilot in Data Factory operates like a subject-matter expert (SME) collaborating with you to design your dataflows.
 
 Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent [Mashup](/powerquery-m/m-spec-introduction) code generation to transform data using natural language input and generates code explanations to help you better understand earlier generated complex queries and tasks.
@@ -72,7 +69,7 @@ Use the following steps to get started with Copilot for Dataflow Gen2:
 
 1. Select the Customers query, and in the Copilot pane type this text: ```Only keep European customers```, then press <kbd>Enter</kbd> or select the **Send message** icon. 
 
-    Your input is now visible in the Copilot pane along with a returned response card. You can validate the step with the corresponding step title in the **Applied steps** list and review the formula bar or the data preview window for accuracy of your results.
+    Your input is now visible in the Copilot pane along with a returned response card. You can validate the step with the corresponding step title in the **Applied steps** list and review the formula bar or the data  window for accuracy of your results.
  
     :::image type="content" source="media/copilot-fabric-data-factory/copilot-filter-rows.png" alt-text="Screenshot showing Filter rows." lightbox="media/copilot-fabric-data-factory/copilot-filter-rows.png":::
 
@@ -165,9 +162,9 @@ Here are the current limitations of Copilot for Data Factory:
 - Copilot can't perform transformations or explanations across multiple queries in a single input. For instance, you can't ask Copilot to "Capitalize all the column headers for each query in my dataflow."
 - Copilot doesn't understand previous inputs and can't undo changes after a user commits a change when authoring, either via user interface or the chat pane. For example, you can't ask Copilot to "Undo my last 5 inputs." However, users can still use the existing user interface options to delete unwanted steps or queries.
 - Copilot can't make layout changes to queries in your session. For example, if you tell Copilot to create a new group for queries in the editor, it doesn't work.
-- Copilot may produce inaccurate results when the intent is to evaluate data that isn't present within the sampled results imported into the sessions data preview.
+- Copilot may produce inaccurate results when the intent is to evaluate data that isn't present within the sampled results imported into the sessions data .
 - Copilot doesn't produce a message for the skills that it doesn't support. For example, if you ask Copilot to "Perform statistical analysis and write a summary over the contents of this query", it doesn't complete the instruction successfully as mentioned previously. Unfortunately, it doesn't give an error message either.
 
 ## Related content
 
-- [Privacy, security, and responsible use of Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot for Data Factory](copilot-data-factory-privacy-security.md)
