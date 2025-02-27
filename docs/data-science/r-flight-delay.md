@@ -6,8 +6,6 @@ author: sdgilley
 ms.author: sgilley
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 01/22/2024
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict delays.
@@ -291,7 +289,7 @@ write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true
 
 Use the delta table to create a semantic model.
 
-1. On the left, select **OneLake data hub**
+1. On the left, select **OneLake**
 1. Select the lakehouse that you attached to your notebook
 1. Select **Open**
 

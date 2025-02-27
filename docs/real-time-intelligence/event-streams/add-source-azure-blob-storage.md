@@ -6,8 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 2/05/2024
 ms.search.form: Source and Destination
 ---
 
@@ -34,11 +33,8 @@ Fabric event streams support the following Blob Storage event types:
 
 For more information about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
 
-
-
 > [!NOTE]
-> This source is **not supported** in the following regions of your workspace capacity: Germany West Central, South-Central US, West US2, West US3, West India. 
-
+> Azure Blob Storage events connector is **not supported** in the following workspace capacity regions: Central US, Germany West Central, South-Central US, West US2, West US3, West India.
 
 ## Unstreamed vs. streamed events
 
@@ -104,7 +100,7 @@ After you link Azure Blob Storage events to Fabric events in Real-Time hub, you 
 
    :::image type="content" border="true" source="media/add-source-azure-blob-storage/default-stream.png" alt-text="A screenshot of the eventstream in Edit Mode showing the default stream.":::
 
-1. Then you need to publish the eventstream and make sure there's at least one event being triggered from your Azure Blob Storage in order to proceed with transformation or routing.
+1. **Publish** the eventstream and make sure there's at least one event being triggered from your Azure Blob Storage in order to proceed with transformation or routing.
 
    :::image type="content" border="true" source="media/add-source-azure-blob-storage/published.png" alt-text="A screenshot of the published eventstream in Live View.":::
 

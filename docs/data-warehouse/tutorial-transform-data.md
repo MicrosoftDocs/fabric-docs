@@ -7,9 +7,6 @@ ms.reviewer: scbradl
 ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - build-2024
 ---
 
 # Tutorial: Transform data with a stored procedure in a Warehouse

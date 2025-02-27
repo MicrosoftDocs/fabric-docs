@@ -206,7 +206,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 ### Use the T-SQL COPY statement to ingest data into a warehouse
 
-With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can use the [COPY T-SQL statement](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) to ingest data into your Fabric warehouse. Once the data is ingested into the warehouse, then you can start analyzing your data with SQL and Power BI.
+With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can use the [COPY T-SQL statement](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) to ingest data into your Fabric warehouse. Once the data is ingested into the warehouse, then you can start analyzing your data with SQL and Power BI. Users with Admin, Member, Contributor, Viewer workspace roles, or read permissions on the warehouse, can use trusted access along with the T-SQL COPY command.
 
 ### Restrictions and Considerations
 
@@ -217,7 +217,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
 * Connections to firewall-enabled Storage accounts will have the status *Offline* in Manage connections and gateways.
 * If you reuse connections that support trusted workspace access in Fabric items other than shortcuts and pipelines, or in other workspaces, they might not work.
-* Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
+* Only *organizational account*, *service principal*, and *workspace identity* must be used for authentication to storage accounts for trusted workspace access in shortcuts and pipelines.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
 * A maximum of 200 resource instance rules can be configured. For more information, see [Azure subscription limits and quotas - Azure Resource Manager](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 * Trusted workspace access only works when public access is enabled from selected virtual networks and IP addresses.
@@ -226,10 +226,6 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * If your organization has an Entra Conditional access policy for workload identities that includes all service principals, then trusted workspace access won't work. In such instances, you need to exclude specific Fabric workspace identities from the Conditional access policy for workload identities.
 * Trusted workspace access is not supported if a service principal is used to create shortcut.
 * Trusted workspace access isn't compatible with cross-tenant requests.
-
-### Troubleshooting issues with trusted workspace access
-
-If a shortcut in a lakehouse that targets a firewall-protected ADLS Gen2 storage account becomes inaccessible, it might be because the lakehouse has been shared with a user who doesn't have an admin, member, or contributor role in the workspace where the lakehouse resides. This is a [known issue](../get-started/known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md). The remedy is not to share the lakehouse with users who don't have an admin, member, or contributor role in the workspace.
 
 ### ARM template sample
 

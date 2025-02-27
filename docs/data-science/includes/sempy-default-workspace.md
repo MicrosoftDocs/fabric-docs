@@ -5,7 +5,6 @@ author: msakande
 ms.author: mopeakande
 ms.topic: include
 ms.custom:
-  - ignite-2023
 ms.date: 06/03/2024
 ---
 

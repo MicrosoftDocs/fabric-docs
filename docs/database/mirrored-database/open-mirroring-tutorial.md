@@ -16,7 +16,7 @@ In this tutorial, you configure an Open mirrored database in Fabric. This exampl
 
 ## Prerequisites
 
-- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
     - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
 - During the current preview, the ability to create an open mirrored database via the Fabric portal is not available in all Fabric capacity regions.
 

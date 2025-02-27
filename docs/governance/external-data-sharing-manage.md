@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 #customer intent: As a data owner, I want to manage the external data shares on an item.
 ---

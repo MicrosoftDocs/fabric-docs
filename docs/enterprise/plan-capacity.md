@@ -33,7 +33,7 @@ The [capacity SKU](licenses.md#capacity) table shows the number of Capacity Unit
 
 Follow these steps to estimate the size of the capacity you need. We recommend that you evaluate the use of a specific Fabric workload, such as [Power BI](/power-bi/enterprise/service-premium-what-is), [Spark](../data-engineering/spark-compute.md), or a [Data Warehouse](../data-warehouse/data-warehousing.md).
 
-1. Create a [trial capacity](../get-started/fabric-trial.md).
+1. Create a [trial capacity](../fundamentals/fabric-trial.md).
 
 2. In the [capacity metrics app](metrics-app-compute-page.md), review the [utilization](metrics-app-compute-page.md#utilization) visual.
 

@@ -6,8 +6,7 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
+ms.search.form: Create Power BI reports using SQL database
 ---
 # Create simple reports on your SQL database in Power BI
 
@@ -17,9 +16,9 @@ It's easy to quickly create reports with SQL database in Fabric. In this walkthr
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../get-started/workspaces.md) or use an existing Fabric workspace.
+- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database with the AdventureWorks sample data](load-adventureworks-sample-data.md).
 
 ## Build a new report

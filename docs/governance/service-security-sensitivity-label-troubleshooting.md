@@ -4,10 +4,9 @@ description: Find guidance for resolving common issues related to sensitivity la
 author: paulinbar
 ms.author: painbar
 manager: kfollis
-
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/01/2024
+ms.date: 02/16/2025
 LocalizationGroup: Data from files
 ---
 
@@ -78,6 +77,10 @@ To prevent leakage of sensitive data, the Power BI admin can block export from n
 
 ## Problems with PBIX files
 
+### Export from the Power BI service to a .pbix file fails when I try to export a report that has a protected sensitivity label
+
+When you export a report with a protected sensitivity label from the Power BI service to a pbix file, if the pbix file size gets to be greater than 6 GB, the protected label can't be applied (due to a Microsoft Purview Information Protection limitation) and the export fails.
+
 ### I can see a report and semantic model in the Power BI service, but when I download them to pbix, I get a message that says I don't have sufficient permissions to open the file
 
 In the Power BI service, sensitivity labeling doesn't affect access to content. Access to content in the service is determined solely by the permissions a user has on the content. While the labels are visible in the service, any associated encryption settings (configured in the Microsoft Purview compliance portal) aren't applied. They're applied only to data that leaves the service via [supported export paths](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths).
@@ -123,7 +126,7 @@ Power BI Desktop for Power BI Report Server doesn't support information protecti
 
 ## Connecting to data sources
 
-To successfully connect from Fabric or Power BI (including Power BI Desktop) to a data source (such as an Excel file) that has a sensitivity label that applies access control, information protection must be enabled in Fabric/Power BI (that is, the tenant setting **Allow users to apply sensitivity labels for content** must be set to *Enabled*).
+To successfully connect from Fabric or Power BI (including Power BI Desktop) to a data source (such as an Excel file) that has a sensitivity label that applies file encryption, information protection must be enabled in Fabric/Power BI (that is, the tenant setting **Allow users to apply sensitivity labels for content** must be set to *Enabled*).
 
 ## Sovereign clouds
 

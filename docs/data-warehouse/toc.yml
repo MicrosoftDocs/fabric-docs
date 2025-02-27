@@ -7,9 +7,9 @@ items:
   expanded: true
   items:
   - name: Decision guide - choose a data store
-    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Decision guide - Warehouse and Lakehouse
-    href: ../get-started/decision-guide-lakehouse-warehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    href: ../fundamentals/decision-guide-lakehouse-warehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
@@ -72,6 +72,8 @@ items:
     href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Data types
     href: data-types.md
+  - name: Manage objects in a warehouse
+    href: manage-objects.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md
   - name: Source control with Warehouse
@@ -86,8 +88,6 @@ items:
     href: transactions.md 
   - name: Warehouse performance
     href: guidelines-warehouse-performance.md
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
   - name: How to
     items:    
     - name: Create a sample warehouse 
@@ -112,6 +112,8 @@ items:
     href: dimensional-modeling-load-tables.md
 - name: Load data into the warehouse
   items:
+  - name: Explore file content with OPENROWSET
+    href: browse-file-content-with-openrowset.md
   - name: Ingesting data into the warehouse
     href: ingest-data.md
   - name: Ingest data with data pipelines
@@ -136,6 +138,9 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Service principals
+    href: service-principals.md
+    displayName: SPN
   - name: Microsoft Entra ID authentication
     href: entra-id-authentication.md
   - name: Workspace roles
@@ -196,6 +201,8 @@ items:
     - name: Monitor mirrored databases
       displayName: Monitor mirroring
       href: ../database/mirrored-database/monitor.md
+    - name: Mirrored database logs
+      href: ../database/mirrored-database/monitor-logs.md
     - name: Share and manage permissions
       href: ../database/mirrored-database/share-and-manage-permissions.md
   - name: Explore mirrored data
@@ -315,6 +322,8 @@ items:
         href: ../database/mirrored-database/open-mirroring-partners-ecosystem.md
   - name: Mirroring REST API
     href: ../database/mirrored-database/mirrored-database-rest-api.md 
+  - name: CI/CD for mirrored databases
+    href: ../database/mirrored-database/mirrored-database-cicd.md 
   - name: Troubleshoot Mirroring
     href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance

@@ -7,9 +7,6 @@ author: murggu
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
-  - ignite-2024
 ms.date: 11/15/2023
 ---
 
@@ -24,7 +21,7 @@ For HMS considerations, refer to [differences between Azure Synapse Spark and Fa
 
 ## Prerequisites
 
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 * If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
 
 ## Option 1: Export and import HMS to lakehouse metastore

@@ -7,8 +7,6 @@ ms.reviewer: negust
 reviewer: nelgson
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 07/17/2024
 ms.search.form: Train models with PyTorch
 

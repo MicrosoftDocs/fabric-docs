@@ -1,7 +1,6 @@
 ---
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: v-myerspeter
 ms.date: 06/16/2024
 ms.topic: include
 ms.custom: fabric-cat

@@ -6,7 +6,6 @@ ms.author: painbar
 
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 11/30/2024
 LocalizationGroup: Data from files
 ---

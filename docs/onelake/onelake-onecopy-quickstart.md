@@ -6,8 +6,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to learn how to transform data with Apache Spark and query it with SQL using OneLake and Fabric notebooks so that I can efficiently analyze and manipulate data in my lakehouse workspace.
 ---
@@ -61,8 +59,8 @@ Before you begin, you must:
    import os
    from pyspark.sql.types import *
    for filename in os.listdir("/lakehouse/default/Files/<replace with your folder path>"):
-   df=spark.read.format('csv').options(header="true",inferSchema="true").load("abfss://<replace with workspace name>@onelake.dfs.fabric.microsoft.com/<replace with item name>.Lakehouse/Files/<folder name>/"+filename,on_bad_lines="skip")
-   df.write.mode("overwrite").format("delta").save("Tables/<name of delta table>")
+       df=spark.read.format('csv').options(header="true",inferSchema="true").load("abfss://<replace with workspace name>@onelake.dfs.fabric.microsoft.com/<replace with item name>.Lakehouse/Files/<folder name>/"+filename,on_bad_lines="skip")
+       df.write.mode("overwrite").format("delta").save("Tables/<name of delta table>")
    ```
 
 1. To see your new table, refresh your view of the `/Tables` directory.

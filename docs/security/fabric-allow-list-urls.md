@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 10/08/2024
+ms.date: 01/27/2025
 ---
 
 # Add Fabric URLs to your allowlist
@@ -19,8 +19,8 @@ Fabric requires only TCP Port 443 to be opened for the listed endpoints.
 
 The tables in this article use the following conventions:
 
-* Wildcards (*) represent all levels under the root domain.
-* N/A is used when information isn't available.
+* Wildcard (*): Represents all levels under the root domain.
+* N/A: No specific port required.
 
 The **Endpoint** column lists domain names and links to external sites, which contain further endpoint information.
 

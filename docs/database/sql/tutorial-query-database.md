@@ -1,14 +1,13 @@
 ---
-title: SQL database tutorial - Query the database and review Copilot features
+title: SQL Database Tutorial - Query the Database and Review Copilot Features
 description: In this tutorial step, learn how to query the database and review Copilot features.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: bwoody
-ms.date: 10/28/2024
+ms.date: 02/20/2025
 ms.topic: tutorial
-ms.custom:
-  - ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 # Query the database and review Copilot features
 
@@ -175,7 +174,7 @@ You'll now grant access to another account in your organization and then control
 
    You also have GRANT, DENY, and other Data Control Language (DCL) operations for a finer-grained security model for your SQL database in Fabric data.
 
-For more information about sharing, see [Share your SQL database and manage permissions](share-sql-manage-permission.md) and [Share items in Microsoft Fabric](../../get-started/share-items.md).
+For more information about sharing, see [Share your SQL database and manage permissions](share-sql-manage-permission.md) and [Share items in Microsoft Fabric](../../fundamentals/share-items.md).
 
 ## Next step
 

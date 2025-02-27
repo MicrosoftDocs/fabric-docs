@@ -5,7 +5,7 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: overview
 ms.date: 05/01/2024
-ms.search.for: Manage Spark compute in Environment
+ms.search.form: Manage Spark compute in Environment
 ---
 
 # Spark compute configuration settings in Fabric environments
