@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.service: fabric
 ms.subservice: cicd
 ms.custom:
-ms.date: 12/26/2024
+ms.date: 02/27/2025
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -120,8 +120,8 @@ To understand the considerations and limitations of various lifecycle management
 #### My Git status says I have uncommitted changes, but I didn't make any changes to my workspace 
 
 **Description of problem**: I want to update my workspace but it says that I have uncommitted changes. I didn't make any changes to my workspace.
-**Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. The first time you connect your workspace to Git get an uncommitted changes message. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
-**Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
+**Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. If your workspace has folders but the Git branch doesn't, you see the *uncommitted changes* message. If you try to update the workspace before committing the changes, you get a conflict. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
+**Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
 
 ### Commit issues
 
