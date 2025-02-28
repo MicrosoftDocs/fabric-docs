@@ -48,7 +48,6 @@ Use the following steps to deploy Spark Job Definitions using deployment pipelin
 
     * To overwrite the default binding, provide the **LakehouseId**, **LakehouseName**, and the **WorkspaceId** where the target Lakehouse belong to. Make sure the **LakehouseId**, **LakehouseName**, and **LakehouseWorksapceId** correspond to each other. You can get the Lakehouse ID and Lakehouse workspace ID from the item URL link.
 
-
       :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-detail.png" alt-text="Screenshot of deployment rule detail." :::
 
 1. Once the deployment rule is updated, rerun the deployment to apply the changes
