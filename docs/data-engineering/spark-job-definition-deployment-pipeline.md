@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: conceptual
-ms.date: 03/31/2025
+ms.date: 02/27/2025
 ms.search.form: Spark Job Definition deployment pipeline
 ---
 
