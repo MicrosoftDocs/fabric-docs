@@ -22,7 +22,7 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
+> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
 
 ## Use `ai.similarity` with pandas
 

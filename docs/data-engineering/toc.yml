@@ -76,7 +76,7 @@ items:
 - name: AI functions
   items: 
     - name: Transform and enrich data with AI functions
-      href: ../data-science/ai-functions/ai-function-overview.md
+      href: ../data-science/ai-functions/overview.md
     - name: ai.similarity
       href: ../data-science/ai-functions/similarity.md
     - name: ai.classify
@@ -94,7 +94,7 @@ items:
     - name: ai.generate_response
       href: ../data-science/ai-functions/generate-response.md
     - name: Customize AI function configurations
-      href: ../data-science/ai-functions/ai-function-configuration.md
+      href: ../data-science/ai-functions/configuration.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions

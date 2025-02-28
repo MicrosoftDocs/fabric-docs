@@ -34,7 +34,7 @@ items:
 - name: AI functions
   items: 
     - name: Transform and enrich data with AI functions
-      href: ./ai-functions/ai-function-overview.md
+      href: ./ai-functions/overview.md
     - name: ai.similarity
       href: ./ai-functions/similarity.md
     - name: ai.classify
@@ -52,7 +52,7 @@ items:
     - name: ai.generate_response
       href: ./ai-functions/generate-response.md
     - name: Customize AI function configurations
-      href: ./ai-functions/ai-function-configuration.md
+      href: ./ai-functions/configuration.md
 - name: AI skill
   items: 
     - name: What is the AI skill?
@@ -138,7 +138,7 @@ items:
   - name: Read and write data with Pandas
     href: read-write-pandas.md
   - name: Transform and enrich data seamlessly with AI functions
-    href: ./ai-functions/ai-function-overview.md
+    href: ./ai-functions/overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
   - name: Explore and transform Spark data with Data Wrangler
