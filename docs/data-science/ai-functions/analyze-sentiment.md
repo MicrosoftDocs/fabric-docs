@@ -15,14 +15,14 @@ ms.search.form: AI functions
 
 The `ai.analyze_sentiment` function uses Generative AI to detect whether the emotional state expressed by input text is positive, negative, mixed, or neutral—all with a single line of code. If the function can't determine the sentiment, it leaves the output blank.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
-> - Review the prerequisites in [this overview article](./ai-function-overview.md), including the [library installations](./ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
+> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
 
 ## Use `ai.analyze_sentiment` with pandas
 
@@ -111,5 +111,5 @@ display(sentiment)
 - Summarize text with [`ai.summarize`](./summarize.md).
 - Translate text with [`ai.translate`](./translate.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
-- Learn more about the full set of AI functions [here](./ai-function-overview.md).
-- Learn how to customize the configuration of AI functions [here](./ai-function-configuration.md).
+- Learn more about the full set of AI functions [here](./overview.md).
+- Learn how to customize the configuration of AI functions [here](./configuration.md).

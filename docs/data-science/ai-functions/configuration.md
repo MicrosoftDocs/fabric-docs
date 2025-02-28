@@ -11,9 +11,15 @@ ms.date: 02/26/2025
 ms.search.form: AI functions
 ---
 
-# Customize the configuration of AI functions (preview)
+# Customize the configuration of AI functions
 
-AI functions, currently in public preview, allow users to harness the power of Fabric's native large language model (LLM) to [transform and enrich their enterprise data](./ai-function-overview.md). They're designed to work out-of-the-box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+AI functions, currently in public preview, allow users to harness the power of Fabric's native large language model (LLM) to [transform and enrich their enterprise data](./overview.md). They're designed to work out-of-the-box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+
+> [!IMPORTANT]
+> This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
+>
+> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 
 ## Customizing AI functions with pandas
 
@@ -134,5 +140,5 @@ defaults.reset_temperature()
 - Summarize text with [`ai.summarize`](./summarize.md).
 - Translate text with [`ai.translate`](./translate.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
-- Learn more about the full set of AI functions [here](./ai-function-overview.md).
+- Learn more about the full set of AI functions [here](./overview.md).
 - Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)

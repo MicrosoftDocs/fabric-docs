@@ -15,14 +15,14 @@ ms.search.form: AI functions
 
 The `ai.translate` function uses Generative AI to translate input text to a new language of your choice—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
-> - Review the prerequisites in [this overview article](./ai-function-overview.md), including the [library installations](./ai-function-overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
+> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
 
 > [!TIP]
 > The `ai.translate` function has been tested on 10 target languages: **English**, **French**, **German**, **Spanish**, **Greek**, **Swedish**, **Finnish**, **Polish**, **Czech**, and **Italian**. Your results with other languages may vary.
@@ -115,5 +115,5 @@ display(translations)
 - Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
 - Summarize text with [`ai.summarize`](./summarize.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
-- To learn more about the full set of AI functions, visit [this overview article](./ai-function-overview.md).
-- Learn how to customize the configuration of AI functions [here](./ai-function-configuration.md).
+- To learn more about the full set of AI functions, visit [this overview article](./overview.md).
+- Learn how to customize the configuration of AI functions [here](./configuration.md).
