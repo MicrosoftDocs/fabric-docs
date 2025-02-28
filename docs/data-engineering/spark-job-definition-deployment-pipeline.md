@@ -38,7 +38,7 @@ Use the following steps to deploy Spark Job Definitions using deployment pipelin
 
    * If all the items are deployed, the bindings between Spark Job Definition and other items are automatically created in the target stage. However if the lakehouse isn't deployed, the Spark Job Definition links to the source stage lakehouse. To modify this behavior, create a new deployment rule. Select **Deployment rules** and then select the Spark Job Definition item to create a rule.
 
-      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" alt-text="Screenshot of deployment rule." :::
+      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" lightbox="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" alt-text="Screenshot of deployment rule." :::
 
     * You can create separate deployment rule for the default lakehouse and additional lakehouse. Choose from the three options: **Same as source Lakehouse**, **N/A (No lakehouse)**, or **other** to manually enter the lakehouse information.
 
@@ -50,7 +50,7 @@ Use the following steps to deploy Spark Job Definitions using deployment pipelin
 
       :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-detail.png" alt-text="Screenshot of deployment rule detail." :::
 
-1. Once the deployment rule is updated, rerun the deployment to apply the changes
+1. Once the deployment rule is updated, rerun the deployment to apply the changes.
 
 
 ## Related content
