@@ -181,6 +181,8 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: FeatureNotAvailableError error in Network Security tab of Workspace Settings
+      href: ../known-issues/known-issue-1033-error-network-security-tab-workspace-settings.md
     - name: Lakehouse ALM operations fail for Git using public APIs in UK South
       href: ../known-issues/known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md
     - name: Existing preview surge protection rules aren't visible in Capacity settings
