@@ -1,55 +1,58 @@
 ---
-title: Spark Job Definition Deployment Pipeline Support
-description: Learn about Spark job definition Deployment Pipeline integration, including how to set up a deploy SJD cross different stages.
+title: Spark Job Definition deployment pipeline support
+description: Learn about Spark job definition deployment pipeline integration, including how to set up a deploy SJD cross different stages.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: conceptual
-ms.date: 02/21/2025
+ms.date: 02/27/2025
 ms.search.form: Spark Job Definition deployment pipeline
 ---
 
-# Spark job definition deployment pipeline integration 
+# Spark job definition deployment pipeline integration (Preview)
 
-This article explains how Deployment pipeline integration for Spark Job Definitions (SJD) in Microsoft Fabric works. Learn how to use Deployment pipelines to deploy your Spark job definitions across different environments/workspaces and synchronize changes between them.
+This article explains how deployment pipeline integration works for Spark Job Definitions (SJD) in Microsoft Fabric. Learn how to use Deployment pipelines to deploy your Spark job definitions across different environments/workspaces and synchronize changes 
+between them.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-## Detail steps to deploy spark job definition
+## Deploy a spark job definition
 
- Follow the steps to deploy your Spark job definitions via Deployment pipelines.
+Use the following steps to deploy Spark Job Definitions using deployment pipelines:
 
-1. Create a Deployment pipeline or open an existing one. For more information, see [Get started with deployment pipeline](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
+1. Sign into the [Fabric portal](https://app.fabric.microsoft.com/).
 
-2. Assign workspaces to different stages according to your deployment goals.
+1. Create a new deployment pipeline or open an existing one. For more information, see [Get started with deployment pipeline](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
-3. Select the items including Spark job definitions you want to deploy in the source stage, you can easily identify the differences between the source and target stages with the column **Compared to source**.
+1. [Assign workspaces to different stages](../cicd/deployment-pipelines/assign-pipeline.md) based on your deployment needs.
+
+1. Select items to deploy, including Spark Job Definitions. Use the **Compared to source** column to identify differences between source and target stages.
 
     :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-view.png" alt-text="Screenshot of deployment pipeline view." :::
 
-4. Click **Deploy** to deploy the selected items such as Spark job definitions to the target stage.
+1. Select **Deploy** to deploy selected items to the target stage.
 
     :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deploy.png" alt-text="Screenshot of run deployment." :::
 
-5. (Optional) You can create Deployment rule to overwrite the default bindings between Spark Job Definition and other items in the target stage.
-    By default, if all the items are deployed, in the target stage, the bindings between Spark Job Definition and other items are automatically created. If Lakehouse isn't deployed, in the target stage, the Spark Job Definition item is associated with the Lakehouse in the source stage. Click **Deployment rules** to create a Deployment rule.
+1. Optionally. You can create deployment rule to overwrite the default bindings between Spark Job Definition and other items in the target stage.
 
-    :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" alt-text="Screenshot of deployment rule." :::
+   * If all the items are deployed, the bindings between Spark Job Definition and other items are automatically created in the target stage. However if the lakehouse isn't deployed, the Spark Job Definition links to the source stage lakehouse. To modify this behavior, create a new deployment rule. Select **Deployment rules** and then select the Spark Job Definition item to create a rule.
 
-    You can create separate Deployment rule for default Lakehouse and Additional Lakehouse.Three options are available: Same with source Lakehouse, N/A(No Lakehouse), and other Lakehouse
+      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" lightbox="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" alt-text="Screenshot of deployment rule." :::
 
-    :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-type.png" alt-text="Screenshot of deployment rule type." :::
+    * You can create separate deployment rule for the default lakehouse and additional lakehouse. Choose from the three options: **Same as source Lakehouse**, **N/A (No lakehouse)**, or **other** to manually enter the lakehouse information.
 
-    :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-options.png" alt-text="Screenshot of deployment rule options." :::
+      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-type.png" alt-text="Screenshot of deployment rule type." :::
 
-    To overwrite the default binding, provide the Lakehouse ID, Lakehouse name, and the workspace ID where the target Lakehouse belong to.
-    :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-detail.png" alt-text="Screenshot of deployment rule detail." :::
+      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-options.png" alt-text="Screenshot of deployment rule options." :::
 
-    After the deployment rule is updated, you need to run the deployment again to see the effect.
+    * To overwrite the default binding, provide the **LakehouseId**, **LakehouseName**, and the **WorkspaceId** where the target Lakehouse belong to. Make sure the **LakehouseId**, **LakehouseName**, and **LakehouseWorksapceId** correspond to each other. You can get the Lakehouse ID and Lakehouse workspace ID from the item URL link.
 
-    > [!NOTE]
-    > Make sure the **Lakehouse ID**, **Lakehouse Name**, and **LakehouseWorksapce ID** should match with each other. You can get the Lakehouse ID and Lakehouse workspace ID from the item URL link.
+      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-detail.png" alt-text="Screenshot of deployment rule detail." :::
+
+1. Once the deployment rule is updated, rerun the deployment to apply the changes.
+
 
 ## Related content
 
-- [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
+* [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
