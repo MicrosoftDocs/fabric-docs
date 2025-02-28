@@ -15,7 +15,7 @@ ms.search.form: AI functions
 
 The `ai.extract` function uses Generative AI to scan input text and extract specific types of information designated by labels you choose (for example, locations or names)—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./ai-function-overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
@@ -50,7 +50,7 @@ The function returns a [pandas dataframe](https://pandas.pydata.org/docs/referen
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         "MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",
@@ -89,7 +89,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",),

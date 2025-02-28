@@ -15,7 +15,7 @@ ms.search.form: AI functions
 
 The `ai.classify` function uses Generative AI to categorize input text according to custom labels you choose—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./ai-function-overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
@@ -25,7 +25,7 @@ AI functions unlock dynamic insights by putting the power of the Fabric native l
 > - Visit [this article](./ai-function-configuration.md) to learn about customizing AI function configurations.
 
 > [!TIP]
-> We recommend using the `ai.classify` function with at least 2 input labels.
+> We recommend using the `ai.classify` function with at least two input labels.
 
 ## Use `ai.classify` with pandas
 
@@ -53,7 +53,7 @@ The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
@@ -94,7 +94,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",),

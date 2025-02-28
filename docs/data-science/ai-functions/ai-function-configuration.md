@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Customize the configuration of AI functions (preview)
 
-AI functions, currently in public preview, allow users to harness the power of Fabric's native large languge model (LLM) to [transform and enrich their enterprise data](./ai-function-overview.md). They're designed to work out-of-the-box, with the underlying model and its settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+AI functions, currently in public preview, allow users to harness the power of Fabric's native large language model (LLM) to [transform and enrich their enterprise data](./ai-function-overview.md). They're designed to work out-of-the-box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 ## Customizing AI functions with pandas
 
@@ -32,7 +32,7 @@ The next code sample shows how to override `aifunc.Conf` settings globally, so t
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 aifunc.default_conf.temperature = 0.5 # Default: 0.0
 aifunc.default_conf.max_concurrency = 10 # Default: 4
@@ -48,11 +48,11 @@ df["sentiment"] = df["text"].ai.analyze_sentiment()
 display(df)
 ```
 
-You can also customize these settings for each individual function call. Each AI function accepts an optional `conf` parameter. The next code sample modifies the default `aifunc` settings for only the `ai.translate` function call, using a custom temperature value. (Note that the `ai.analyze_sentiment` call still uses the default values.)
+You can also customize these settings for each individual function call. Each AI function accepts an optional `conf` parameter. The next code sample modifies the default `aifunc` settings for only the `ai.translate` function call, using a custom temperature value. (The `ai.analyze_sentiment` call still uses the default values, because no custom values are set.)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 from synapse.ml.aifunc import Conf
 

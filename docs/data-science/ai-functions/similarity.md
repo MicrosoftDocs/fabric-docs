@@ -15,7 +15,7 @@ ms.search.form: AI functions
 
 The `ai.similarity` function uses Generative AI to compare two string expressions and then calculate a semantic similarity score—all with a single line of code. You can compare text values from one column of a DataFrame with a single common text value or with pairwise text values in another column.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./ai-function-overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
@@ -50,7 +50,7 @@ df["similarity"] = df["col1"].ai.similarity(df["col2"])
 
 | **Name** | **Description** |
 |---|---|
-| **`other`** <br> Required | Either a [string](https://docs.python.org/3/library/stdtypes.html#str) that contains a single common text value used to compute similarity scores with respect to each input row, OR another [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that has the same dimensions as the input, and that contains text values used to compute pairwise similarity scores with each row. |
+| **`other`** <br> Required | Either a [string](https://docs.python.org/3/library/stdtypes.html#str) that contains a single common text value, which is used to compute similarity scores for each input row, OR another [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) with the same dimensions as the input, which contains text values that are used to compute pairwise similarity scores for each input row. |
 
 ### Returns
 
@@ -62,7 +62,7 @@ A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.htm
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([ 
         ("Bill Gates"), 
@@ -78,7 +78,7 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([ 
         ("Bill Gates", "Microsoft"), 
@@ -133,7 +133,7 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("Bill Gates",), 
@@ -149,7 +149,7 @@ display(similarity)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("Bill Gates", "Microsoft"), 

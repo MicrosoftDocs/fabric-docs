@@ -15,7 +15,7 @@ ms.search.form: AI functions
 
 The `ai.translate` function uses Generative AI to translate input text to a new language of your choice—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, please visit [this overview article](./ai-function-overview.md).
+AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./ai-function-overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
@@ -47,13 +47,13 @@ df["translations"] = df["text"].ai.translate("target_language")
 
 ### Returns
 
-A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains translations for each row of input text. If the input text is `null`, the result will be `null`.
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains translations for each row of input text. If the input text is `null`, the result is `null`.
 
 ### Example
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         "Hello! How are you doing today?", 
@@ -83,8 +83,8 @@ df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 |---|---|
 | **`to_lang`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that represents the target language for text translations. |
 | **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to be translated. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column that stores translations for each input text row. If this parameter is not set, a default name is generated for the output column. |
-| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column that stores any OpenAI errors that result from processing each input text row. If this parameter is not set, a default name is generated for the error column. If an input row has no errors, the value in this column is `null`. |
+| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column that stores translations for each input text row. If this parameter isn't set, a default name is generated for the output column. |
+| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column that stores any OpenAI errors that result from processing each input text row. If this parameter isn't set, a default name is generated for the error column. If an input row has no errors, the value in this column is `null`. |
 
 ### Returns
 
@@ -94,7 +94,7 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("Hello! How are you doing today?",),
@@ -115,5 +115,5 @@ display(translations)
 - Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
 - Summarize text with [`ai.summarize`](./summarize.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
-- To learn more about the full set of AI functions, please visit [this overview article](./ai-function-overview.md).
+- To learn more about the full set of AI functions, visit [this overview article](./ai-function-overview.md).
 - Learn how to customize the configuration of AI functions [here](./ai-function-configuration.md).

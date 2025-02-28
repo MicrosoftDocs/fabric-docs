@@ -1,6 +1,6 @@
 ---
 title: Transform and enrich data seamlessly with AI functions
-description: Learn how to invoke AI functions in Fabric, harnessing the power of industry-leading LLMs to transform and enrich data out of the box with lightweight, user-friendly code.
+description: Learn how to invoke AI functions in Fabric, harnessing the power of industry-leading large language models (LLMs) to transform and enrich data out of the box with lightweight, user-friendly code.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
@@ -15,7 +15,7 @@ ms.search.form: AI functions
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-With Microsoft Fabric, all users—from developers to business analysts—can derive more value from their enterprise data through Generative AI experiences, including [Copilot](../../get-started/copilot-notebooks-overview.md) and [AI skills](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading LLMs to transform and enrich data with lightweight, user-friendly code. They don't need detailed configuration, complex infrastructure management, or even specific technical expertise.
+With Microsoft Fabric, all users—from developers to business analysts—can derive more value from their enterprise data through Generative AI experiences, including [Copilot](../../get-started/copilot-notebooks-overview.md) and [AI skills](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading large language models (LLMs) to transform and enrich data with lightweight, user-friendly code. They don't need detailed configuration, complex infrastructure management, or even specific technical expertise.
 
 AI functions, currently in public preview, allow you to complete the following tasks—all in a single line of code:
 
@@ -33,23 +33,23 @@ Whether you want to translate product reviews from one language into another, or
 ## Prerequisites
 
 - To use AI functions with Fabric's native LLM endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
-- You'll also need an F64 or higher SKU or a P SKU. With a smaller capacity resource, you'll need to provide AI functions with your own Azure OpenAI resource [using custom configurations](ai-function-configuration.md).
+- You also need an F64 or higher SKU or a P SKU. With a smaller capacity resource, you need to provide AI functions with your own Azure OpenAI resource [using custom configurations](ai-function-configuration.md).
 - Depending on your location, you may need to enable a tenant setting for cross-geo sharing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 
 > [!NOTE]
 >
-> - AI functions are supported in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and above.
+> - AI functions are supported in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 > - By default, the functions are currently powered by the **gpt-3.5-turbo (0125)** model.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 
 ## Getting started with AI functions
 
-Use of the AI functions library in a Fabric notebook currently requires certain custom packages. The following cells install and import those packages. After that, you can use AI functions with pandas or PySpark, depending on your preference. A future release will handle this setup automatically.
+Use of the AI functions library in a Fabric notebook currently requires certain custom packages. The following cells install and import those packages. After that, you can use AI functions with pandas or PySpark, depending on your preference.
 
 The following code samples install the AI functions library and its dependencies.
 
 > [!WARNING]
-> The PySpark configuration cell will take a few minutes to finish executing. We appreciate your patience.
+> The PySpark configuration cell takes a few minutes to finish executing. We appreciate your patience.
 
 # [pandas](#tab/pandas)
 
@@ -62,7 +62,7 @@ The following code samples install the AI functions library and its dependencies
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9/synapseml_core-1.0.9-py2.py3-none-any.whl > /dev/null 2>&1
 
 # Install SynapseML-Internal .whl with AI functions library from blob storage:
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.10.0-spark3.4-2-9539f189-SNAPSHOT/synapseml_internal-1.0.10.0.dev1-py2.py3-none-any.whl > /dev/null 2>&1
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.10.0-spark3.4-5-a5d50c90-SNAPSHOT/synapseml_internal-1.0.10.0.dev1-py2.py3-none-any.whl > /dev/null 2>&1
 ```
 
 # [PySpark](#tab/pyspark)
@@ -111,14 +111,14 @@ defaults.set_deployment_name("gpt-35-turbo-0125")
 
 ## Applying AI functions
 
-Each of the following functions allows you to invoke Fabric's native LLM endpoint, transforming or enriching data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. Support for more programming languages will be available in the future.
+Each of the following functions allows you to invoke Fabric's native LLM endpoint, transforming or enriching data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
 
 > [!TIP]
-> To learn about customizing the configuration of AI functions, please visit [this article](./ai-function-configuration.md).
+> To learn about customizing the configuration of AI functions, visit [this article](./ai-function-configuration.md).
 
 ### Calculate similarity with `ai.similarity`
 
-The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity scores, which are relative, can range from **-1** (opposites) to **1** (identical). A score of **0** indicates that the values are completely unrelated in meaning. For more detailed instructions about the use of `ai.similarity`, please visit [this article](./similarity.md).
+The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity scores, which are relative, can range from **-1** (opposites) to **1** (identical). A score of **0** indicates that the values are completely unrelated in meaning. For more detailed instructions about the use of `ai.similarity`, visit [this article](./similarity.md).
 
 #### Sample usage
 
@@ -126,7 +126,7 @@ The `ai.similarity` function invokes AI to compare input text values with a sing
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([ 
         ("Bill Gates", "Microsoft"), 
@@ -142,7 +142,7 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("Bill Gates", "Microsoft"), 
@@ -158,7 +158,7 @@ display(similarity)
 
 ### Categorize text with `ai.classify`
 
-The `ai.classify` function invokes AI to categorize input text, according to custom labels you choose. For more information about the use of `ai.classify`, please visit [this article](./classify.md).
+The `ai.classify` function invokes AI to categorize input text, according to custom labels you choose. For more information about the use of `ai.classify`, visit [this article](./classify.md).
 
 #### Sample usage
 
@@ -166,7 +166,7 @@ The `ai.classify` function invokes AI to categorize input text, according to cus
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
@@ -182,7 +182,7 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",),
@@ -198,7 +198,7 @@ display(categories)
 
 ### Detect sentiment with `ai.analyze_sentiment`
 
-The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If AI can't make this determination, the output is left blank. For more detailed instructions about the use of `ai.analyze_sentiment`, please visit [this article](./analyze-sentiment.md).
+The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If AI can't make this determination, the output is left blank. For more detailed instructions about the use of `ai.analyze_sentiment`, visit [this article](./analyze-sentiment.md).
 
 #### Sample usage
 
@@ -206,7 +206,7 @@ The `ai.analyze_sentiment` function invokes AI to identify whether the emotional
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         "The cleaning spray permanently stained my beautiful kitchen counter. Never again!",
@@ -223,7 +223,7 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("The cleaning spray permanently stained my beautiful kitchen counter. Never again!",),
@@ -240,7 +240,7 @@ display(sentiment)
 
 ### Extract entities with `ai.extract`
 
-The `ai.extract` function invokes AI to find and extract specific types of information designated by labels you choose—for example, locations or names—from input text. For more detailed instructions about the use of `ai.extract`, please visit [this article](./extract.md).
+The `ai.extract` function invokes AI to find and extract specific types of information designated by labels you choose—for example, locations or names—from input text. For more detailed instructions about the use of `ai.extract`, visit [this article](./extract.md).
 
 #### Sample usage
 
@@ -248,7 +248,7 @@ The `ai.extract` function invokes AI to find and extract specific types of infor
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         "MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",
@@ -263,7 +263,7 @@ display(df_entities)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",),
@@ -278,7 +278,7 @@ display(df_entities)
 
 ### Fix grammar with `ai.fix_grammar`
 
-The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. For more detailed instructions about the use of `ai.fix_grammar`, please visit [this article](./fix-grammar.md).
+The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. For more detailed instructions about the use of `ai.fix_grammar`, visit [this article](./fix-grammar.md).
 
 #### Sample usage
 
@@ -286,7 +286,7 @@ The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and p
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         "There are an error here.",
@@ -302,7 +302,7 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("There are an error here.",),
@@ -318,7 +318,7 @@ display(corrections)
 
 ### Summarize text with `ai.summarize`
 
-The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame, or row values across all the columns). For more detailed instructions about the use of `ai.summarize`, please visit [this dedicated article](./summarize.md).
+The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame, or row values across all the columns). For more detailed instructions about the use of `ai.summarize`, visit [this dedicated article](./summarize.md).
 
 #### Sample usage
 
@@ -326,7 +326,7 @@ The `ai.summarize` function invokes AI to generate summaries of input text (eith
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df= pd.DataFrame([
         ("Microsoft Teams", "2017",
@@ -351,7 +351,7 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("Microsoft Teams", "2017",
@@ -376,7 +376,7 @@ display(summaries)
 
 ### Translate text with `ai.translate`
 
-The `ai.translate` function invokes AI to translate input text to a new language of your choice. For more detailed instructions about the use of `ai.translate`, please visit [this article](./translate.md).
+The `ai.translate` function invokes AI to translate input text to a new language of your choice. For more detailed instructions about the use of `ai.translate`, visit [this article](./translate.md).
 
 #### Sample usage
 
@@ -384,7 +384,7 @@ The `ai.translate` function invokes AI to translate input text to a new language
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         "Hello! How are you doing today?", 
@@ -400,7 +400,7 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("Hello! How are you doing today?",),
@@ -415,7 +415,7 @@ display(translations)
 ---
 
 ### Answer custom user prompts with `ai.generate_response`
-The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions about the use of `ai.generate_response`, please visit [this article](./generate-response.md).
+The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions about the use of `ai.generate_response`, visit [this article](./generate-response.md).
 
 #### Sample usage
 
@@ -423,7 +423,7 @@ The `ai.generate_response` function invokes AI to generate custom text based on 
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
         ("Sandals"),
@@ -439,7 +439,7 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
         ("Sandals",),
