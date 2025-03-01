@@ -16,13 +16,13 @@ ms.collection: ce-skilling-ai-copilot
 # Copilot tenant settings
 Fabric Copilot settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
 
-For information about how to get to the Fabric tenant settings, see [About tenant settings - How to get to the tenant settings](./about-tenant-settings#how-to-get-to-the-tenant-settings).
+For information about how to get to the Fabric tenant settings, see [About tenant settings - How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
 The following settings are enabled by default:
 
 * [Users can use Copilot and other features powered by Azure OpenAI](#users-can-use-copilot-and-other-features-powered-by-azure-openai)
 * [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
-* ]Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-copilot#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
+* [Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 
 The following setting is disabled by default:
 
