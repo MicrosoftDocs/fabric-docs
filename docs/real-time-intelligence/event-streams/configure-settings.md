@@ -51,19 +51,19 @@ For Azure Event Hubs sources, throughput depends on both the selected throughput
 | 1               | 9 MB/s            |
 | 3               | 10 MB/s           |
 
-When the partition count is 4 or greater, throughput is based on the selected throughput level.
+When the partition count is 4, 16, or 32, throughput depends on the selected level (low, medium, high). For other partition counts within this range, throughput falls between these limits.
 
 ### Streaming connector sources
 
-The throughput for streaming connector sources is up to **30 MB/s**. 
+The throughput for streaming connector sources is up to **30 MB/s**. If higher throughput is needed, please contact product group.
 
-**Streaming Connector Sources Include**:
+**Streaming connector sources include**:
 - Azure SQL Database Change Data Capture (CDC)
 - Azure Service Bus
 - PostgreSQL Database CDC
 - MySQL Database CDC
 - Azure Cosmos DB CDC
-- SQL Server on VM DB (CDC)
+- SQL Server on VM DB CDC
 - Azure SQL Managed Instance CDC
 - Google Cloud Pub/Sub
 - Amazon Kinesis Data Streams
@@ -76,21 +76,24 @@ The following table shows the throughput upper limit for different nodes.
 
 | Node                       |  Type        | Throughput Level | Throughput  (up-to)   |
 |----------------------------|--------------|------------------|-----------------------|
-| **Custom Endpoint**        | Source       | Low              | 150 MB/s             |
-|                            |              | Medium           | 300 MB/s             |
-|                            |              | High             | 400 MB/s             |
-| **Custom Endpoint**        | Destination  | Low              | 150 MB/s             |
-|                            |              | Medium           | 300 MB/s             |
-|                            |              | High             | 400 MB/s             |
+| **Custom Endpoint**        | Source / Destination      | Low              | 100 MB/s             |
+|                            |              | Medium           | 150 MB/s             |
+|                            |              | High             | 200 MB/s             |
 | **Lakehouse**              | Destination  | Low              | 40 MB/s              |
 |                            |              | Medium           | 150 MB/s             |
-|                            |              | High             | 250 MB/s             |
+|                            |              | High             | 200 MB/s             |
 | **Eventhouse (Direct Ingestion)** | Destination | Low       | 10 MB/s              |
 |                            |              | Medium           | 50 MB/s              |
 |                            |              | High             | 100 MB/s             |
 | **Eventhouse (Event processing before ingestion)** | Destination | Low       | 20 MB/s              |
 |                            |              | Medium           | 100 MB/s             |
 |                            |              | High             | 200 MB/s             |
+
+**\*Note**: The above throughput limits were tested under these conditions:
+
+1. The source event sender and Eventstream are in the same data center.
+1. Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
+1. The source event data was sent using thousands of threads to continuously send data via EventHubProducerClient.
 
 
 ## Endorsement setting
