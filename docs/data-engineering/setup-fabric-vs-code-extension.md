@@ -42,7 +42,7 @@ In order to use all the features of this extension, you need to have the followi
 1. [Visual Studio Code](https://code.visualstudio.com/)
 2. [.NET 8](https://dotnet.microsoft.com/en-us/download)
 3. [Python](https://www.python.org/downloads/)
-3. [Azure Functions Core Tools v4](https://learn.microsoft.com/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools)
+3. [Azure Functions Core Tools v4](/azure/azure-functions/functions-run-local)
 
 ### What is User data functions?
 [Microsoft Fabric User data Functions](https://support.fabric.microsoft.com/en-us/blog/10474?ft=Core:category) is a serverless solution that enables you to quickly and easily write custom logic for your data solutions in Microsoft Fabric. Fabric Data Functions are invoked as an HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
