@@ -251,7 +251,7 @@ items:
   items:
   - name: Fabric extensions for VS Code  
     href: setup-fabric-vs-code-extension.md
-  - name: Fabric data engineering extension for VS Code
+  - name: Synapse VS Code extension
     href: setup-vs-code-extension.md
   - name: VS Code extension with Docker image
     href: set-up-vs-code-extension-with-docker-image.md
