@@ -136,7 +136,7 @@ If you can't make changes to the connected branch directly, due to branch policy
 
 If you try connecting to a workspace that's already [connected to Git](./manage-branches.md), you might get the following message:
 
-:::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling yo to sign in to a Git account.":::
+:::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling you to sign in to a Git account.":::
 
 Go to the **Accounts** tab on the right side of the Source control panel, choose an account, and connect to it.
 
