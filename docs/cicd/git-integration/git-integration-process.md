@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 01/30/2025
+ms.date: 03/02/2025
 ms.custom:
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -124,7 +124,7 @@ When connected and synced, the workspace structure is mirrored in the Git reposi
 
 #### Handling folder changes safely
 
-Since Git now supports subfolders, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different because the folder structure is different. The first time you connect your workspace to Git, you get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace.
+Since Git now supports subfolders, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different because the folder structure is different. When you connect a workspace that has folders to Git, you get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace.
 
 If you can't make changes to the connected branch directly, due to branch policy or permissions, we recommend using the *Checkout Branch* option:
 
