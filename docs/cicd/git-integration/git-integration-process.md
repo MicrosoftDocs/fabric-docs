@@ -112,15 +112,25 @@ If you don’t select which content to sync, you can’t continue to work.
 
 When connected and synced, the workspace structure is mirrored in the Git repository, including folders structure. Workspace items in folders are exported to folders with the same name in the Git repo. Conversely, items in Git folders are imported to folders with the same name in the workspace.
 
-:::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
-
 > [!NOTE]
-> Since folder structure is now maintained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update first, the Git folder structure overwrites the workspace folder structure.
+> Since folder structure is now retained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update first, the Git folder structure **overwrites the workspace** folder structure. For more information, see [Handling folder changes safely](#handling-folder-changes-safely).
+
+:::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
 
 * Empty folders aren't copied to Git. When you create or move items to a folder, the folder is created in Git.
 * Empty folders in Git are deleted automatically.
 * Empty folders in the workspace aren't deleted automatically even if all items are moved to different folders.
-* Folder structure is maintained up to 10 levels deep.
+* Folder structure is retained up to 10 levels deep.
+
+#### Handling folder changes safely
+
+Since Git now supports subfolders, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different because the folder structure is different. The first time you connect your workspace to Git, you get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace.
+
+If you can't make changes to the connected branch directly, due to branch policy or permissions, we recommend using the *Checkout Branch* option:
+
+1. [Checkout a New Branch](./conflict-resolution.md#resolve-conflict-in-git): Use the checkout branch feature to create a branch with the updated state of your Fabric workspace.
+1. Commit Folder Changes: Any workspace folder changes can then be committed to this new branch.
+1. Merge Changes: Use your regular pull request (PR) and merge processes to integrate these updates back into the original branch.
 
 ### Connect to a shared workspace
 

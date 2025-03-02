@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.custom:
 ms.topic: overview
-ms.date: 01/05/2025
+ms.date: 02/27/2025
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -27,7 +27,7 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 * Collaborate with others or work alone using Git branches
 * Apply the capabilities of familiar source control tools to manage Fabric items
 
-The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. The workspace structure, including subfolders, is preserved in the Git repository.
+The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. The workspace structure, including [subfolders](./git-integration-process.md#folders), is preserved in the Git repository.
 
 See the list of [supported items](#supported-items).
 

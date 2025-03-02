@@ -267,6 +267,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehou
 {
     "executionData": {
         "tableName": "{table_name}",
+        "schemaName": "{schema_name}",
         "optimizeSettings": {
             "vOrder": "true",
             "zOrderBy": [
