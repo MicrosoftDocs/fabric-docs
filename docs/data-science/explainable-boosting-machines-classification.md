@@ -6,8 +6,6 @@ author: lgayhardt
 ms.reviewer: midesa
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

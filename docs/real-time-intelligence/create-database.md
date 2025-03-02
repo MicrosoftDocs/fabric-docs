@@ -6,9 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 11/11/2024
 ms.search.form: KQL Database
 ---
@@ -20,7 +17,7 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 
 ## Create a new KQL database
 

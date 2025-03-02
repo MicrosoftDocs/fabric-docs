@@ -7,8 +7,6 @@ author: murggu
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -23,7 +21,7 @@ For Spark job definition considerations, refer to [differences between Azure Syn
 
 ## Prerequisites
 
-If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 
 ## Option 1: Create Spark job definition manually
 

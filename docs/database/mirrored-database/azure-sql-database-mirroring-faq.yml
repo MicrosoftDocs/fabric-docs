@@ -4,11 +4,10 @@ metadata:
   description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
-  ms.reviewer: imotiwala, roblescarlos
+  ms.reviewer: imotiwala
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.custom:
-    - ignite-2024
   ms.topic: faq
   ms.date: 10/11/2024
 title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric"

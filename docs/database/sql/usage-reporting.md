@@ -4,10 +4,9 @@ description: This article will share what customers can expect from the metrics 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: amapatil # Microsoft alias
-ms.date: 10/31/2024
+ms.date: 01/31/2025
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
+ms.search.form: SQL database Billing and Utilization
 ---
 # Billing and utilization reporting for SQL database in Microsoft Fabric
 
@@ -15,7 +14,7 @@ The article explains compute usage reporting of the SQL database in Microsoft Fa
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
 
-During the current preview, there's no cost for SQL database in Fabric.
+After February 1, 2025, compute and data storage for SQL database are charged to your Fabric capacity. Additionally, backup billing will start after April 1, 2025.
 
 ## Capacity
 
@@ -26,6 +25,8 @@ Capacity is a dedicated set of resources that is available at a given time to be
 ### Capacity for SQL database in Microsoft Fabric
 
 In the capacity-based SaaS model, SQL database aims to make the most of the purchased capacity and provide visibility into usage.
+
+In simple terms, 1 Fabric capacity unit = 0.383 SQL database vCores. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 24.512 SQL database vCores.
 
 ### Compute usage reporting
 

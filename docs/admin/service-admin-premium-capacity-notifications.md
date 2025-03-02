@@ -5,7 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: ''
 ms.custom:
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Premium

@@ -2,12 +2,10 @@
 title: Runtime 1.1 in Fabric
 description: Learn about Apache Spark-based Runtime 1.1 that is available in Fabric, including unique features, capabilities, and best practices.
 ms.reviewer: snehagunda
-ms.author: eskot
-author: ekote
+ms.author: sngun
+author: SnehaGunda
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 10/14/2024
 ---
 

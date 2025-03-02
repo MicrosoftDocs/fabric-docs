@@ -6,8 +6,6 @@ ms.author: qixwang
 author: qixwang
 ms.topic: overview
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ms.search.form: VSCodeExtension
 ---
@@ -33,7 +31,7 @@ The Synapse VS Code extension can also be used in the VS Code for the Web experi
 
 You can open a notebook in the VS Code for the Web experience by clicking the **Open in VS Code(Web)** button on the notebook authoring page in the Fabric portal. After you select the button, a separate browser tab is opened with the VS Code for the web experience. If you haven't already installed the extension, it is automatically installed, and activated, and the notebook is opened.
 
-:::image type="content" source="media\vscode\open-notebook-in-vs-code-web.png" alt-text="Screenshot showing how to open notebook in VS Code for the Web.":::
+:::image type="content" source="media\vscode\open-notebook-in-vs-code-web.png" alt-text="Screenshot showing how to open notebook in VS Code for the Web." lightbox="media\vscode\open-notebook-in-vs-code-web.png":::
 
 ## Manage notebooks and notebook file system
 

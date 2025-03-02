@@ -6,8 +6,7 @@ ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
-ms.date: 10/31/2024
+ms.date: 01/07/2025
 ---
 
 # Private links for secure access to Fabric
@@ -69,11 +68,9 @@ Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric
 
 Visual query in Warehouse doesn't work when the **Block Public Internet Access** tenant setting is enabled.
 
-<!-- 
 ### SQL database
 
 Accessing a SQL database or the SQL analytics endpoint in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio or Visual Studio Code) to [connect to SQL database](../database/sql/connect.md) via private link. For more information on connecting to a SQL database, see [Authentication in SQL database in Microsoft Fabric](../database/sql/authentication.md).
--->
 
 ### Lakehouse, Notebook, Spark job definition, Environment
 
@@ -100,8 +97,6 @@ ML Model, Experiment, and AI skill supports private link.
 
 * If internet access is disabled, and if the Power BI semantic model, Datamart, or Dataflow Gen1 connects to a Power BI semantic model or Dataflow as a data source, the connection will fail.
 
-* Direct Lake mode is currently not supported using Private Link.
-
 * Publish to Web isn't supported when the tenant setting **Azure Private Link** is enabled in Fabric.
 
 * Email subscriptions aren't supported when the tenant setting **Block Public Internet Access** is enabled in Fabric.
@@ -109,6 +104,8 @@ ML Model, Experiment, and AI skill supports private link.
 * Exporting a Power BI report as PDF or PowerPoint isn't supported when the tenant setting **Azure Private Link** is enabled in Fabric.
 
 * If your organization is using Azure Private Link in Fabric, modern usage metrics reports will contain partial data (only Report Open events). A current limitation when transferring client information over private links prevents Fabric from capturing Report Page Views and performance data over private links. If your organization had enabled the **Azure Private Link** and **Block Public Internet Access** tenant settings in Fabric, the refresh for the dataset fails and the usage metrics report doesn't show any data.
+
+* Copilot isn't currently supported for Private Link or closed network environments.
 
 ### Eventhouse
 
@@ -159,11 +156,11 @@ There are several considerations to keep in mind while working with private endp
 
 * Each private endpoint can be connected to one tenant only.  You can't set up a private link to be used by more than one tenant.
 
-* **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. [Learn more about this scenario](/data-integration/gateway/service-gateway-install#private-link-consideration). VNet data gateways will work. For more information, see [these considerations](/data-integration/gateway/service-gateway-install#private-link-consideration).
+* **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. [Learn more about this scenario](/data-integration/gateway/service-gateway-install#related-considerations). VNet data gateways will work. For more information, see [these considerations](/data-integration/gateway/service-gateway-install#related-considerations).
 
-* **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway is not supported when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links.
+* **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway isn't supported when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links.
 
-* Private Links will not work with VNet Data Gateway download diagnostics.
+* Private Links won't work with VNet Data Gateway download diagnostics.
 
 * Private links resource REST APIs don't support tags.
 

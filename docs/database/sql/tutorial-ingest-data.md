@@ -1,14 +1,13 @@
 ---
-title: SQL database tutorial - Ingest sample data and create objects and data using T-SQL and pipelines
+title: SQL Database Tutorial - Ingest Sample Data and Create Objects and Data Using T-SQL and Pipelines
 description: In this third tutorial step, learn how to ingest sample data and create extra objects and data.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: bwoody
-ms.date: 10/27/2024
+ms.date: 02/20/2025
 ms.topic: tutorial
-ms.custom:
-  - ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 
 # Ingest sample data and create objects and data
@@ -150,3 +149,9 @@ The data is now ingested into your database. You can now create a query that com
 
 > [!div class="nextstepaction"]
 > [Query the database and review autonomous features](tutorial-query-database.md)
+
+## Related content
+
+- [Set up your SQL database connection in Data Factory (Preview)](../../data-factory/connector-sql-database.md)
+- [SQL database connector overview (Preview)](../../data-factory/connector-sql-database-overview.md)
+- [Configure SQL database in a copy activity (Preview)](../../data-factory/connector-sql-database-copy-activity.md)

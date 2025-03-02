@@ -4,10 +4,9 @@ description: Learn how to use the SQL database query editor in the Microsoft Fab
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen
-ms.date: 10/07/2024
+ms.date: 12/19/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
+ms.search.form: Develop and run queries in SQL editor
 ---
 # Query with the SQL query editor
 
@@ -67,7 +66,7 @@ The SQL query editor is powered by [Copilot for SQL database](copilot.md). It is
 
 Copilot for SQL database offers a variety of features, detailed in the [Introduction to Copilot](copilot.md#introduction-to-copilot-for-sql-database).
 
-Before your business can start using Copilot for SQL database, you need to [enable Copilot](../../get-started/copilot-enable-fabric.md).
+Before your business can start using Copilot for SQL database, you need to [enable Copilot](../../fundamentals/copilot-enable-fabric.md).
 
 ## Keyboard shortcuts
 
@@ -77,7 +76,6 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 |---|---| -------- |
 | New SQL query | `Ctrl + J` | `Cmd + J`|
 | Close current tab | `Ctrl + Shift + F4` | `Cmd + Shift + F4` |
-| Run SQL script | `Ctrl + Enter` or `Shift + Enter` | `Cmd + Enter` or `Shift + Enter` |
 | Search string | `Ctrl + F` |`Cmd + F`|
 | Replace string | `Ctrl + H` | `Cmd + H`|
 | Undo | `Ctrl + Z` |`Cmd + Z`|

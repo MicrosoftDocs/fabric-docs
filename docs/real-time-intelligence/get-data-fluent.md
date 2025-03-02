@@ -6,7 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 12/01/2024
 ---
 # Get data with Fluent Bit
@@ -18,7 +17,7 @@ For a complete list of data connectors, see [Data connectors overview](data-conn
 ## Prerequisites
 
 * [Fluent Bit](https://docs.fluentbit.io/manual/installation/getting-started-with-fluent-bit).
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 * A [KQL database](create-database.md) with ingestion permissions.
 * A [KQL queryset](create-query-set.md), which will be referred to later as your query environment. <a id=ingestion-uri></a>
 * Your database ingestion URI to use as the *TargetURI* value. For more information, see [Copy URI](access-database-copy-uri.md#copy-uri).

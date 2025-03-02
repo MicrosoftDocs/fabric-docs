@@ -6,15 +6,14 @@ ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 11/07/2024
 ms.topic: tutorial
-ms.custom:
-  - ignite-2024
+ms.search.form: Get Started
 ---
 
 # SQL database in Fabric tutorial introduction
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-[Microsoft Fabric](../../get-started/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. The purpose of this tutorial is to provide a comprehensive guide to utilizing a **SQL database in Fabric**. This tutorial is tailored to help you navigate through the process of database creation, setting up database objects, exploring autonomous features, and combining and visualizing data. Additionally, you'll learn how to create a GraphQL endpoint, which serves as a modern approach to connecting and querying your data efficiently. You'll also learn how to use the SQL analytics endpoint to work with mirrored data for reporting and analysis, and developing data visualizations.
+[Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. The purpose of this tutorial is to provide a comprehensive guide to utilizing a **SQL database in Fabric**. This tutorial is tailored to help you navigate through the process of database creation, setting up database objects, exploring autonomous features, and combining and visualizing data. Additionally, you'll learn how to create a GraphQL endpoint, which serves as a modern approach to connecting and querying your data efficiently. You'll also learn how to use the SQL analytics endpoint to work with mirrored data for reporting and analysis, and developing data visualizations.
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 

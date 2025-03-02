@@ -3,7 +3,7 @@ title: Change ownership of Fabric Warehouse
 description: Learn how to change the owner of a Fabric Warehouse via API call.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: stwynant
+ms.reviewer: dhsundar
 ms.date: 09/13/2024
 ms.topic: how-to
 ---

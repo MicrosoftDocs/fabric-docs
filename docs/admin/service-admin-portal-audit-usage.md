@@ -6,7 +6,6 @@ ms.author: painbar
 ms.service: fabric
 ms.custom:
   - tenant-setting
-  - ignite-2024
 ms.topic: how-to
 ms.date: 11/04/2024
 ---
@@ -41,7 +40,7 @@ When the switch is on, administrators and Premium workspace owners can [configur
 
 ## Workspace admins can turn on monitoring for their workspaces
 
-Enable [workspace monitoring](../get-started/workspace-monitoring-overview.md), a feature that allows workspace admins to monitor their workspace.
+Enable [workspace monitoring](../fundamentals/workspace-monitoring-overview.md), a feature that allows workspace admins to monitor their workspace.
 
 ## Microsoft can store query text to aid in support investigation
 
