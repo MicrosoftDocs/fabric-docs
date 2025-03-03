@@ -13,10 +13,10 @@ ms.search.form: Fabric Data Functions
 To invoke User data functions(Preview) from a front-end app in python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using VS Code. 
 
 ## Prerequisites
-1. Install VS Code. Download Python 3.11 on your local machine.
-2. Create a [Microsoft Fabric Account for free](https://www.microsoft.com/microsoft-fabric/getting-started) if you don't have one. 
-3. [Create a workspace](../../fundamentals/create-workspaces.md)
-4. Create a user data functions item and publish. See [how to create in VS Code](./create-user-data-functions-in-vs-code.md) or [how to create in portal](./create-user-data-functions-in-portal.md). Publish the changes so its ready to be invoked. 
+- Install [Visual Studio Code](https://code.visualstudio.com/download). Download [Python 3.1](https://www.python.org/downloads/release/python-3110/) on your local machine.
+- Create a [Microsoft Fabric Account for free](https://www.microsoft.com/microsoft-fabric/getting-started) if you don't have one. 
+- [Create a workspace](../../fundamentals/create-workspaces.md)
+- Create a user data functions item and publish. See [how to create in VS Code](./create-user-data-functions-vs-code.md) or [how to create in portal](./create-user-data-functions-portal.md). Publish the changes so its ready to be invoked. 
 
 ## Create a front-end application to invoke the function
 
@@ -48,7 +48,7 @@ To invoke User data functions(Preview) from a front-end app in python, you can s
     # DO NOT USE IN PRODUCTION.
     # Below code to acquire token is for development purpose only to test the GraphQL endpoint
     # For production, always register an application in a Microsoft Entra ID tenant and use the appropriate client_id and scopes
-    # https://learn.microsoft.com/en-us/fabric/data-engineering/connect-apps-api-graphql#create-a-microsoft-entra-app
+    # https://learn.microsoft.com/fabric/data-engineering/connect-apps-api-graphql#create-a-microsoft-entra-app
 
     app = InteractiveBrowserCredential()
     scp = 'https://analysis.windows.net/powerbi/api/user_impersonation'

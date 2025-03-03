@@ -17,33 +17,33 @@ Learn more [Fabric Git integration process](../../cicd/git-integration/git-integ
 ## Set up a connection
 From your workspace settings, you can easily set up a connection to your repo to commit and sync changes. To set up the connection, see [Get started with Git integration](../../cicd/git-integration/git-get-started.md). Once connected, your items, including user data functions, appear in the **Source control** panel.
 
-:::image type="content" source="..\media\user-data-functions-git-deployment\udf-source-control-view.png" alt-text="Screenshot showing User data function with uncommitted changes in source control" lightbox="..\media\user-data-functions-git-deployment\udf-source-control-view.png":::
+:::image type="content" source="..\media\user-data-functions-git-deployment\udf-source-control-view.png" alt-text="Screenshot showing User data function with uncommitted changes in source control." lightbox="..\media\user-data-functions-git-deployment\udf-source-control-view.png":::
 
 After you successfully commit the user data functions items to the Git repo, you see the user data functions folders in the repository. You can now execute future operations, like Create pull request.
 
 ## User data functions representation in Git
 The following image is an example of the file structure of each user data functions item in the repo:
 
-:::image type="content" source="..\media\user-data-functions-git-deployment\udf-folder-structure.png" alt-text="Screenshot showing folder structure for a user data functions item in the repository" lightbox="..\media\user-data-functions-git-deployment\udf-folder-structure.png":::
+:::image type="content" source="..\media\user-data-functions-git-deployment\udf-folder-structure.png" alt-text="Screenshot showing folder structure for a user data functions item in the repository." lightbox="..\media\user-data-functions-git-deployment\udf-folder-structure.png":::
 
 The folder structure includes: 
 
-1. **.platform**: The `.platform` file contains the following attributes:
-    :::image type="content" source="..\media\user-data-functions-git-deployment\platform-json-file.png" alt-text="Screenshot showing.platform file for a User data functions item" lightbox="..\media\user-data-functions-git-deployment\platform-json-file.png":::
+- **.platform**: The `.platform` file contains the following attributes:
+    :::image type="content" source="..\media\user-data-functions-git-deployment\platform-json-file.png" alt-text="Screenshot showing.platform file for a User data functions item." lightbox="..\media\user-data-functions-git-deployment\platform-json-file.png":::
 
     - **version**: Version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
     - **logicalId**: An automatically generated cross-workspace identifier representing an item and its source control representation.
     - **type**: `UserDataFunction` is the type to define User data functions item.
     - **displayName**: Represents the name of the item. When the user data functions item is renamed, this displayName is updated. 
  
-2. **definitions.json**: This file shares all the user data functions item definition such as connections, libraries, etc. as a representation of user data functions item properties. 
-    :::image type="content" source="..\media\user-data-functions-git-deployment\definitions-json-file.png" alt-text="Screenshot showing definitions.json file for a User data functions item" lightbox="..\media\user-data-functions-git-deployment\definitions-json-file.png":::
+- **definitions.json**: This file shares all the user data functions item definition such as connections, libraries, etc. as a representation of user data functions item properties. 
+    :::image type="content" source="..\media\user-data-functions-git-deployment\definitions-json-file.png" alt-text="Screenshot showing definitions.json file for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\definitions-json-file.png":::
 
-3. **function-app.py**: This file is your functions code. Any code changes you make to the user data functions item, is synced into the repo with this file. You can perform various git operations to manage the code development cycle.
-    :::image type="content" source="..\media\user-data-functions-git-deployment\function-app-python-file.png" alt-text="Screenshot showing function-app.py file for a User data functions item" lightbox="..\media\user-data-functions-git-deployment\function-app-python-file.png":::
+- **function-app.py**: This file is your functions code. Any code changes you make to the user data functions item, is synced into the repo with this file. You can perform various git operations to manage the code development cycle.
+    :::image type="content" source="..\media\user-data-functions-git-deployment\function-app-python-file.png" alt-text="Screenshot showing function-app.py file for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\function-app-python-file.png":::
 
-4. **resources**: The folder contains functions.json file that contains all the metadata such as connections, libraries, and functions within this item. **DO NOT UPDATE THIS FILE** manually. `functions.json` allows Fabric to create or recreate the user data functions item in a workspace. 
-    :::image type="content" source="..\media\user-data-functions-git-deployment\functions-json-file.png" alt-text="Screenshot showing function.json file in resources folder for a User data functions item" lightbox="..\media\user-data-functions-git-deployment\functions-json-file.png":::
+- **resources**: The folder contains functions.json file that contains all the metadata such as connections, libraries, and functions within this item. **DO NOT UPDATE THIS FILE** manually. `functions.json` allows Fabric to create or recreate the user data functions item in a workspace. 
+    :::image type="content" source="..\media\user-data-functions-git-deployment\functions-json-file.png" alt-text="Screenshot showing function.json file in resources folder for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\functions-json-file.png":::
 
 
 ## User data functions in deployment pipelines

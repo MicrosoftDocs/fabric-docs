@@ -9,7 +9,7 @@ ms.search.form: Fabric User Data Functions
 ---
 
 
-# Overview of Fabric User data functions Programming model (Preview)
+# Overview of Fabric user data functions programming model (Preview)
 The Fabric programming model helps you to easily create Data function sets and easily connect to Fabric data sources such as Datawareshouse or Lakehouse etc. to read data, transform it in any desired output. The model is leaning towards having to learn Fabric data function set concepts and focusing more on ease of development in Python. 
 
 ## Prerequisites
@@ -19,9 +19,9 @@ The Fabric programming model helps you to easily create Data function sets and e
 ## User data functions SDK 
 Fabric User data functions item can contain many functions. Each function is a stateless method in your Python script that processes input and produces output. User data functions programming model allows you to get started with few steps: 
 
-1. All of the code you need to create User data functions in Python is imported from `fabric.functions`. The sample already includes the line `import fabric.functions as fn`, so any classes can be created through `fn`.
+- All of the code you need to create User data functions in Python is imported from `fabric.functions`. The sample already includes the line `import fabric.functions as fn`, so any classes can be created through `fn`.
 
-2. Ensure the line `fn.UserDataFunctions()` is at the beginning of the code, before any functions you create, in `function_app.py`. It provides the execution context for all the functions defined in this item.
+- Ensure the line `fn.UserDataFunctions()` is at the beginning of the code, before any functions you create, in `function_app.py`. It provides the execution context for all the functions defined in this item.
 
 **Example:**
 ```python
@@ -92,7 +92,7 @@ The arguments for `@udf.connection` are:
 - `alias` is the alias of data connection you is added to your data function. You can get alias from **Manage connections**.
 - `argName` and `alias` can be same, in such cases you can just use `@udf.connection("<alias for data connection>")`
 
-### Example Usage
+### Example
 
 ```python
 # Where demosqldatabase is the argument name and the alias for my data connection used for this function
@@ -220,5 +220,6 @@ The following properties are returned when a function is executed:
 | 500 (Internal Server Error)| The request failed due to internal error.|
 
 
-## Next Steps
+## Next steps
+- [Create user data functions](./create-user-data-functions-portal.md)
 - [User data functions samples](https://github.com/microsoft/fabric-user-data-functions-samples)

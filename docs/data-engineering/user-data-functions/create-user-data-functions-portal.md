@@ -8,32 +8,32 @@ ms.date: 03/27/2025
 ms.search.form: Fabric User Data Functions
 ---
 
-# Create a new Fabric User Data Functions (Preview)
+# Create a new Fabric user data functions (Preview)
 
 User data functions let you run your code to define custom logic needed for your data engineering needs. You can write many functions within a User data function item. Currently we support **Python 3.11** language. In this article, you learn how to:
 
-1. Create a new User Data Functions item
-2. Create a new sample function and publish your changes
-3. Manage functions within User data functions item 
-4. Test the function
+1. Create a new user data functions item
+2. Add a new data function
+3. Manage functions 
+4. Test the data function
 
 
 ## Prerequisites
-1. A Microsoft Fabric capacity. If you don't have one, you can create a [trial capacity for free](../../get-started/fabric-trial.md).
-2. A [Fabric Workspace](../../get-started/create-workspaces.md) linked to the capacity
+- A Microsoft Fabric capacity. If you don't have one, you can create a [trial capacity for free](../../get-started/fabric-trial.md).
+- A [Fabric Workspace](../../get-started/create-workspaces.md) linked to the capacity
  
 ## Create a new Fabric User Data Functions set
 1. Select your workspace, and select on **+ New item**. 
 2. Select Item type as **All items**. Search for and select **User data functions**. 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\select-user-data-functions.png" alt-text="Screenshot showing selecting a user data functions item" lightbox="..\media\user-data-functions-create-in-portal\select-user-data-functions.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\select-user-data-functions.png" alt-text="Screenshot showing selecting a user data functions item." lightbox="..\media\user-data-functions-create-in-portal\select-user-data-functions.png":::
 
 3. Provide a **name** for the User data functions item.
  
 4. Select **New functions** to start with a ``hello_fabric`` function template. The default language is **Python**. Functions explorer shows all the functions that are published and ready to be invoked.
-  :::image type="content" source="..\media\user-data-functions-create-in-portal\new-functions-to-create-template.png" alt-text="Screenshot creating a new function using a template" lightbox="..\media\user-data-functions-create-in-portal\new-functions-to-create-template.png":::
+  :::image type="content" source="..\media\user-data-functions-create-in-portal\new-functions-to-create-template.png" alt-text="Screenshot creating a new function using a template." lightbox="..\media\user-data-functions-create-in-portal\new-functions-to-create-template.png":::
 
 5. The `hello_fabric` function is published and then ready to be invoked. 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\hello_fabric-template.png" alt-text="Screenshot showing the code for hello_fabric function" lightbox="..\media\user-data-functions-create-in-portal\hello_fabric-template.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\hello-fabric-template.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="..\media\user-data-functions-create-in-portal\hello-fabric-template.png":::
 
 ### Programming model key concepts 
 User data functions use [Python Programming model](./python-programming-model.md) to create, run, debug, update functions within a user data functions item. All the functions within a User data functions item are written to file `function_app.py`. You can open it in VS Code to work on it locally. 
@@ -48,8 +48,8 @@ import logging
 udf = fn.UserDataFunctions()
 ```
 
-1. To create, run, manage functions, you need `fabric.functions` SDK and few other important libraries such as `logging` allows you to write custom logs. 
-2. `udf=fn.UserDataFunctions()` is the construct to define functions within a User data functions item. 
+- To create, run, manage functions, you need `fabric.functions` SDK and few other important libraries such as `logging` allows you to write custom logs. 
+- `udf=fn.UserDataFunctions()` is the construct to define functions within a User data functions item. 
 
 Each function starts with a `@udf.function()` decorator before your can write the function definition. Read more about our [Python Programming model](./python-programming-model.md).
 
@@ -77,23 +77,23 @@ def maskCreditCard(cardNumber: int)-> str:
    ```
 Once the function is ready, publish the function and then test it. 
 
-### Manage functions within User data functions item 
+## Manage data functions
 You can add, update, or remove functions from a User data functions item.
 
 ### Add a new data function from sample 
 Owner of the User data function item can edit the item and add or remove functions within this item. Follow the steps to add a sample function:
 
 1. Select **Library management** to add new library that you can use in a function.
-   :::image type="content" source="..\media\user-data-functions-manage-libraries\select_library_management.png" alt-text="Screenshot showing how to manage libraries" lightbox="..\media\user-data-functions-manage-libraries\select_library_management.png":::
+   :::image type="content" source="..\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="..\media\user-data-functions-manage-libraries\select-library-management.png":::
 
 2. Select **pandas** library and select the version. Once the library is added, it is autosaved. 
-   :::image type="content" source="..\media\user-data-functions-manage-libraries\add_pandas_library.png" alt-text="Screenshot showing how to add pandas library" lightbox="..\media\user-data-functions-manage-libraries\add_pandas_library.png":::
+   :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library." lightbox="..\media\user-data-functions-manage-libraries\add-pandas-library.png":::
 
 3. Select **Insert sample** and select **Manipulate data with pandas library**. 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\insert-sample-using-pandas.png" alt-text="Screenshot showing how to insert a sample that uses pandas library" lightbox="..\media\user-data-functions-create-in-portal\insert-sample-using-pandas.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\insert-sample-using-pandas.png" alt-text="Screenshot showing how to insert a sample that uses pandas library." lightbox="..\media\user-data-functions-create-in-portal\insert-sample-using-pandas.png":::
 
 5. The sample is inserted into the editor. To save your changes, you need to select **Publish**. Publishing the changes can take 1-2 minutes. 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png" alt-text="Screenshot showing code snippet of the sample in the editor" lightbox="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png" alt-text="Screenshot showing code snippet of the sample in the editor." lightbox="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png":::
 
 Now the function is ready to tested or invoked from another application or Fabric item such as data pipelines. 
 
@@ -125,7 +125,7 @@ def hello_fabric(name: str) -> str:
 
 ## Test the function 
 1. Select **Run** icon, next to `manipulate_data` function in the Functions explorer. 
-    :::image type="content" source="..\media\user-data-functions-create-in-portal\test-data-function.png" alt-text="Screenshot showing how to test the data functions" lightbox="..\media\user-data-functions-create-in-portal\test-data-function.png":::
+    :::image type="content" source="..\media\user-data-functions-create-in-portal\test-data-function.png" alt-text="Screenshot showing how to test the data functions." lightbox="..\media\user-data-functions-create-in-portal\test-data-function.png":::
 
 2. Pass the input as a list, for pandas sample in a JSON format.   
    ```json
@@ -139,11 +139,12 @@ def hello_fabric(name: str) -> str:
    ```
   
 5. Select **Run** to test the function.
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png" alt-text="Screenshot showing the output when a function is successfully executed" lightbox="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png" alt-text="Screenshot showing the output when a function is successfully executed." lightbox="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png":::
 
 6. You can see the live logs and the output for the function to validate if it ran successfully. 
 
 ## Next steps
+- [Develop user data functions in VS Code](./create-user-data-functions-vs-code.md)
 - [Learn about User data functions programming model](./python-programming-model.md)
 
 
