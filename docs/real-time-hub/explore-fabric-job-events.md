@@ -97,6 +97,9 @@ The `data` object has the following properties:
 | `data.jobStartTime` | timestamp | The job's start time. | `2017-06-26T18:41:00.9584103Z` |
 | `data.jobEndTime` | timestamp | The job's end time. | `2017-06-26T18:41:00.9584103Z` |
 
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
+
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)

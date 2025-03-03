@@ -94,6 +94,8 @@ The `data` object has the following properties:
 | `contentOffset` | number | The offset in bytes of a write operation taken at the point where the event-triggering application completed writing to the file. | 0 |
 | `sequencer` | string | An opaque string value representing the logical sequence of events. | `00000000000004420000000000028963` |
 
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
 
 ## Related content
 

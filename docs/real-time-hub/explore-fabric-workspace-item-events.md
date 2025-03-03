@@ -94,6 +94,9 @@ The `data` object has the following properties:
 
 [!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
 
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
+
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)

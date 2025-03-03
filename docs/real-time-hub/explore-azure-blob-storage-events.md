@@ -102,6 +102,8 @@ The `data` object has the following properties:
 | `identity` | string | A string value representing the identity associated with the event. For Secure File Transfer Protocol (SFTP), the value is the local user name. | `localuser` | 
 | `storageDiagnostics` | object | Diagnostic data occasionally included by the Azure Storage service. When present, event consumers should ignore it. | `{{Storage diagnostic object}}` |
 
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
 
 ## Related content
 
