@@ -4,7 +4,7 @@ description: Learn how to deploy a new SQL database in Microsoft Fabric using RE
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dlevy
-ms.date: 02/28/2025
+ms.date: 03/03/2025
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
@@ -21,7 +21,7 @@ The Fabric platform has a rich set of REST APIs that can be used to deploy and m
 - [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - You must be a member of the Admin or Member roles for the workspace to create a SQL database.
 - Install the golang version of [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility). Run `winget install sqlcmd` on Windows to install. For other operating systems, see [aka.ms/go-sqlcmd](https://aka.ms/go-sqlcmd).
-- [PowerShell 7](/powershell/scripting/install/installing-powershell-on-windows)
+- PowerShell 5.1 or [PowerShell 7.4 and higher](/powershell/scripting/install/installing-powershell-on-windows)
 - The Az PowerShell module. Run `Install-Module az` in PowerShell to install.
 
 ## Create a new SQL database via REST API
