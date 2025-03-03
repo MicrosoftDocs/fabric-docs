@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 02/28/2025
+ms.date: 03/03/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 |
 |  1033  | Administration & Management | [FeatureNotAvailableError error in Network Security tab of Workspace Settings](./known-issue-1033-error-network-security-tab-workspace-settings.md) | February 28, 2025 |
 |  1035  | Data Engineering | [Lakehouse ALM operations fail for Git using public APIs in UK South](./known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md) | February 25, 2025 |
 |  1029  | Administration & Management | [Existing preview surge protection rules aren't visible in Capacity settings](./known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md) | February 25, 2025 |
@@ -110,10 +111,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](./known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |  Fixed: January 28, 2025 |
 |  846  | OneLake | [OneLake BCDR write transactions aren't categorized correctly for billing](./known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) | September 17, 2024 |  Fixed: January 28, 2025 |
 |  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](./known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 | Fixed: January 28, 2025 |
-|  948  | Power BI | [Metrics app timepoint details missing for new P2 capacities](./known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md) | November 27, 2024 | Fixed: January 15, 2025 |
-|  933  | Data Factory | [New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported](./known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md) | November 22, 2024 | Fixed: January 13, 2025 |
-|  918  | Power BI | [More options menu on a visual doesn't open in unsaved reports](./known-issue-918-more-options-not-open-unsaved-reports.md) | November 7, 2024 |  Fixed: January 13, 2025 |
-|  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](./known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 | Fixed: January 13, 2025 |
 
 ## Related content
 
