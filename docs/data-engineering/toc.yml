@@ -250,7 +250,7 @@ items:
 - name: VS Code integration 
   items:
   - name: Fabric extensions for VS Code  
-    href: setup-fabric-vs-code-extension.md
+    href: set-up-fabric-vs-code-extension.md
   - name: Synapse VS Code extension
     href: setup-vs-code-extension.md
   - name: VS Code extension with Docker image
@@ -270,7 +270,7 @@ items:
   - name: Develop notebook with Fabric runtime
     href: fabric-runtime-in-vscode.md
   - name: Develop user data functions in VS Code
-    href: ./user-data-functions/create-user-data-functions-in-vs-code.md
+    href: ./user-data-functions/create-user-data-functions-vs-code.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse
@@ -320,15 +320,15 @@ items:
 - name: User data functions (preview)
   items:
    - name: Create User data functions
-     href: ./user-data-functions/create-user-data-functions-in-portal.md
+     href: ./user-data-functions/create-user-data-functions-portal.md
    - name: Integration with data pipelines
-     href: ./user-data-functions/create-functions-activity-in-data-pipelines.md
+     href: ./user-data-functions/create-functions-activity-data-pipelines.md
    - name: Source control and deployment pipelines
      href: ./user-data-functions/git-and-deployment-pipelines.md
    - name: Python programming model
      href: ./user-data-functions/python-programming-model.md
    - name: Tutorial - Invoke functions using Python
-     href: ./user-data-functions/tutorial-invoke-using-python-app.md
+     href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: View logs
      href: ./user-data-functions/view-function-logs.md
   

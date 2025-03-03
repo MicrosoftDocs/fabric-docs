@@ -177,7 +177,7 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
 ```
 
 ## How to invoke a function
-Functions can be invoked by calling the Function endpoint Url. Select the function you want to invoke in the **Functions explorer** and select **Copy Function URL**. Use this URL in your front end application to invoke the function. [See Invoke user data functions from an application](./tutorial-invoke-using-python-app.md)
+Functions can be invoked by calling the Function endpoint Url. Select the function you want to invoke in the **Functions explorer** and select **Copy Function URL**. Use this URL in your front end application to invoke the function. [See Invoke user data functions from an application](./tutorial-invoke-from-python-app.md)
 
 
 ## Output schema for User data function 

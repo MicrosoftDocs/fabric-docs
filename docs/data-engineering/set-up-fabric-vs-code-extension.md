@@ -45,7 +45,7 @@ In order to use all the features of this extension, you need to have the followi
 - [Azure Functions Core Tools v4](/azure/azure-functions/functions-run-local)
 
 ### What is user data functions?
-[Microsoft Fabric user data Functions](./user-data-functions/create-user-data-functions-in-portal.md) is a serverless solution that enables you to quickly and easily write custom logic for your data solutions in Microsoft Fabric. Fabric Data Functions are invoked as an HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
+[Microsoft Fabric user data Functions](./user-data-functions/create-user-data-functions-portal.md) is a serverless solution that enables you to quickly and easily write custom logic for your data solutions in Microsoft Fabric. Fabric Data Functions are invoked as an HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
 
 ### Features
 The features supported are:
@@ -62,5 +62,5 @@ The features supported are:
 
 
 ## Next Steps
-- [Develop user data functions in Visual Studio Code](./user-data-functions/create-user-data-functions-in-vs-code.md)
+- [Develop user data functions in Visual Studio Code](./user-data-functions/create-user-data-functions-vs-code.md)
 - [Develop Fabric Notebooks in Visual Studio Code.md](./setup-vs-code-extension.md)

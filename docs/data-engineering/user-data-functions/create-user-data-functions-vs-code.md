@@ -35,7 +35,7 @@ In this quickstart, you learn how to create a user data functions item in Visual
 10. Set the virtual environment for the folder by selecting **Yes**.
 11. Open `function_app.py` to add more than one function.
 
-    :::image type="content" source="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png" alt-text="Screenshot showing an user data functions item opened in VS Code." lightbox="..\media\user-data-functions-create-in-vs-code\open-fabric.png":::
+    :::image type="content" source="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png" alt-text="Screenshot showing an user data functions item opened in VS Code." lightbox="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png":::
 
 ## Write your first function
 Write a user defined data function with `@udf.function()` decorator to define the start of function. You can pass an input for the function such as primitive data types like str, int, float, etc. Within the function, you can write your custom business logic. 
