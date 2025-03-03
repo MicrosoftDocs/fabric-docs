@@ -3,7 +3,7 @@ title: Subscribe permission for Fabric events
 description: This article describes what are the subscribe permission required for Fabric events.
 author: robece
 ms.author: robece
-ms.topic: subscribe-permission
+ms.topic: concept-article
 ms.custom:
 ms.date: 03/03/2025
 ---

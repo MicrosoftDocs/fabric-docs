@@ -1,6 +1,6 @@
 ---
-title: Introduction to Fabric Events in Real-Time Hub
-description: This article describes what Fabric Events in Real-Time hub are and how it can be used in near-realtime scenarios.
+title: Introduction to Fabric events in Real-Time Hub
+description: This article describes what Fabric events in Real-Time hub are and how it can be used in near-realtime scenarios.
 author: robece
 ms.author: robece
 ms.topic: overview
@@ -8,19 +8,19 @@ ms.custom:
 ms.date: 02/27/2025
 ---
 
-# Introduction to Fabric Events
+# Introduction to Fabric events
 This overview provides a comprehensive understanding of Fabric events and their capabilities.
 
-Fabric Events allow users to subscribe to events produced by Fabric and Azure resources. Fabric Events allows downstream processes that have subscribed to these events to be triggered in near real-time, providing an efficient communication model at high scale and higher fault tolerance.
+Fabric events allow users to subscribe to events produced by Fabric and Azure resources. Fabric events allows downstream processes that have subscribed to these events to be triggered in near real-time, providing an efficient communication model at high scale and higher fault tolerance.
 
-## Key Features
-**Event Sources**: Fabric events support event-driven scenarios where events can be published by various sources, including events produced by your OneLake, items in your workspace or jobs in your tenant. You can also subscribe to events produced from external sources like your Azure blob storage accounts.
+## Key features
+**Event sources**: Fabric events support event-driven scenarios where events can be published by various sources, including events produced by your OneLake, items in your workspace or jobs in your tenant. You can also subscribe to events produced from external sources like your Azure blob storage accounts.
 
 **Subscriptions**: Subscriptions (also known as notifications) enable filtering of events per subscription and distribution of selected events to trigger the desired destination when the event occurs. Subscriptions can deliver events via push.
  
 ## Common scenarios
 
-**Using Workspace item events**
+### Using Workspace item events
 
 Workspace item events are generated when changes occur to items within a Fabric workspace. These events can be triggered by actions such as creating, updating, or deleting workspace items like datasets, reports, or dashboards.
 
@@ -30,7 +30,7 @@ With workspace item events, I can set up an alert mechanism using the activator 
 
 By utilizing these alerts, I can stay informed about critical updates and respond quickly, ensuring the integrity and accuracy of the workspace items.
 
-**Using Job Events**
+### Using Job events
 
 Job events are generated when an item in Fabric runs a job. Such as a refresh of a semantic model, a scheduled run of a pipeline, or manually clicking “run” in a notebook. Each of these can generate a corresponding job, which in turn generates a set of corresponding job events. 
 
@@ -38,7 +38,7 @@ As a data engineer. My daily work is to develop and maintain pipelines and noteb
 
 With job events, I can set up an alert mechanism in conjunction with the activator trigger. For example, when the scheduler triggers a new job, or a job fails, I can receive an email alert. This way, even if I'm not in front of the computer, I can still get the information I care about. 
 
-**Using OneLake events**
+### Using OneLake events
 
 OneLake events are generated when changes occur in your data lake, such as the creation, modification, or deletion of files and folders. These events are particularly beneficial in scenarios where immediate awareness of data changes is critical, such as in fraud detection, data processing, or real-time analytics.
  
@@ -48,7 +48,7 @@ With OneLake events, you can set up alerts to notify your team of critical data 
  
 By staying ahead of data modifications, you can ensure your operations remain efficient and responsive.
 
-**Using Azure events**
+### Using Azure events
 
 Azure Blob Storage events are generated when actions occur on blobs within an Azure 
 storage account. These events can be triggered by actions such as creating, updating, or deleting blobs.
