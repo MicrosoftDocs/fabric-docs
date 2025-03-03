@@ -16,6 +16,8 @@ The Eventhouse page serves as the central hub for all your interactions within t
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
+For advanced analytic insights, see [Eventhouse monitoring overview](monitor-eventhouse.md).
+
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
@@ -144,3 +146,4 @@ You can perform the following actions:
 
 * [Eventhouse overview](eventhouse.md)
 * [Create an eventhouse](create-eventhouse.md)
+* [Eventhouse monitoring overview](monitor-eventhouse.md)
