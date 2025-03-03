@@ -34,6 +34,10 @@ Once you are in **Tenant Settings**, you can proceed with enabling the necessary
 
 For AI skill to function properly, the [**Copilot and Azure OpenAI Service**](../admin/service-admin-portal-copilot.md#users-can-use-copilot-and-other-features-powered-by-azure-openai) tenant settings must be enabled. These settings control user access and data processing policies.
 
+> [!NOTE]
+> At the time you create an AI skill, the tenant settings for Security Group support in Copilot and Azure OpenAI tenant switches (Copilot and Azure OpenAI Services, Cross-Geo Processing, and Cross-Geo Storage) don't allow you to enable these settings for a specific security group. We are aware of this limitation and are working on a solution.
+As a temporary workaround, you can enable the switches for the entire organization, create the AI Skill, and then revert the switch back to a specific security group.
+
 ### Required settings
 
 - **Users can use Copilot and other features powered by Azure OpenAI**:
