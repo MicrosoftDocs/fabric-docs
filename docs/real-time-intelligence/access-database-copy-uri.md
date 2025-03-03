@@ -50,8 +50,8 @@ You can copy two types of URIs from the **Database details** card in your KQL da
 To share your KQL database, follow these steps:
 
 1. Select **Share** to create a link to the database.
-2. Manage the link permissions to ensure only authorized users can access it.
-3. Send the link to the authorized users.
+1. Manage the link permissions to ensure only authorized users can access it.
+1. Send the link to the authorized users.
 
 > [!NOTE]
 > The shared link provides access to a single database. There is no bulk sharing option for multiple databases, and an Eventhouse can't be shared.
