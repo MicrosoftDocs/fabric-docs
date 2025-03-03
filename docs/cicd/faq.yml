@@ -76,7 +76,7 @@ sections:
           * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
           * [Supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-semantic-model-rules)
           * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-          * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)* Deployment pipelines can't be used to deploy items to a workspace that's in a different region.
+          * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
           
       - question: How can I assign workspaces to all the stages in a pipeline?
         answer: You can either assign one workspace to your pipeline and deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
