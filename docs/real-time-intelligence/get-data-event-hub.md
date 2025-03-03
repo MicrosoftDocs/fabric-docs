@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 02/27/2025
 ms.search.form: Get data in a KQL Database, Data connection
 ---
 # Get data from Azure Event Hubs
@@ -128,12 +128,8 @@ To complete the ingestion process, select **Finish**.
 
 :::image type="content" source="media/get-data-event-hub/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-azure-storage/inspect-data.png":::
 
-Optionally:
+[!INCLUDE [get-data-inspect-formats](includes/get-data-inspect-formats.md)]
 
-* Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are CSV, JSON, PSV, SCsv, SOHsv TSV, TXT, and TSVE.
-* [Edit columns](#edit-columns).
-* Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 * If the data you see in the preview window isn't complete, you might need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your event hub:
 
   * **Discard and fetch new data**: discards the data presented and searches for new events.
