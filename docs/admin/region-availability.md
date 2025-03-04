@@ -85,7 +85,7 @@ This table lists regions where public preview features are available, according 
 | Poland Central | &#x274C; | &#x274C; | &#x274C; | &#x2705; |
 | South Africa North | Synapse Notebook | &#x2705; | &#x2705; | &#x2705; |
 | South Africa West | &#x274C; | &#x274C; | &#x274C; | &#x2705; |
-| South Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
+| South Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x274C; |
 | Southeast Asia | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
 | South India | <li>Dataflows</li><li>Exploration</li> | &#x274C; | &#x274C; | &#x2705; |
 | Sweden Central | Synapse Notebook | &#x274C; | &#x274C; | &#x2705; |
