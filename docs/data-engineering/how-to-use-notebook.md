@@ -34,7 +34,7 @@ The execution of a notebook can be triggered by three different manners in Fabri
 
 The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
 
-The first time when a notebook is created, a warning message will be shown to remind you the risk of running the code without reviewing it.
+The first time when a notebook is created, a warning message is shown to remind you the risk of running the code without reviewing it.
 
 :::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook.":::
 
@@ -56,7 +56,7 @@ Like other standard Fabric item creation processes, you can easily create a new 
 
 ### Import existing notebooks
 
-You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.Scala*, and *.sql*, and create new notebook items accordingly.
+You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.scala*, and *.sql*, and create new notebook items accordingly.
 
 :::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu.":::
 
@@ -159,7 +159,7 @@ The file editor allows you to view and edit files directly within the notebook's
    :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
 
 - Content change on file editor needs to be saved manually by clicking the **Save** button or keyboard shortcut: **Ctrl+S**, file editor doesn't support autosave.
-- File editor is also affected by [notebook mode](#notebook-mode-switcher). You can only view files but cannot edit them if you are in the notebook mode without editing permission.
+- [notebook mode](#notebook-mode-switcher) also affects the file editor. You can only view files but cannot edit them if you are in the notebook mode without editing permission.
 
 > [!NOTE]
 > Here are some limitations for file editor.
@@ -225,7 +225,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
 ![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
 
 > [!NOTE]
-> For a comment item, the tagged user will not receive an Email notification anymore if you update the comment within one hour. But it will send Email notification to the new tagged user.
+> For a comment item, the tagged user will not receive an Email notification anymore if you update the comment within one hour. But it sends Email notification to the new tagged user.
 
 ## Version history
 
@@ -257,7 +257,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
 > [!NOTE]
 >
-> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar will prompt you to view the changes, you need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
+> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar prompts you to view the changes. You need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
     :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore.":::
 > - System checkpoints will expire after **1** year.
 
