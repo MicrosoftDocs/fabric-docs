@@ -56,7 +56,7 @@ To share your KQL database, follow these steps:
 > [!NOTE]
 > The shared link provides access to a single database. There is no bulk sharing option for multiple databases, and an Eventhouse can't be shared.
 
-:::image type="content" source="media/create-database/database-share.png" alt-text="Image of the share button on the top right of the screen":::
+:::image type="content" source="media/create-database/database-share.png" alt-text="Screenshot that shows the Share button on the top right of the screen.":::
 
 For more details, see [Share items](/fabric/fundamentals/share-items).
 
