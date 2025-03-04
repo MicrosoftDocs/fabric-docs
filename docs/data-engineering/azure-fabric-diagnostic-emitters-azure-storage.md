@@ -119,12 +119,13 @@ Here's a sample log record in JSON format:
 
 ```json
 {
-  "timestamp": "2024-09-06T03:09:37.235Z",
+  "timestamp": "2025-02-28T09:13:57.978Z",
   "category": "Log|EventLog|Metrics",
   "fabricLivyId": "<fabric-livy-id>",
   "applicationId": "<application-id>",
   "applicationName": "<application-name>",
   "executorId": "<driver-or-executor-id>",
+  "userId": "<the-submitter-user-id>",
   "fabricTenantId": "<my-fabric-tenant-id>",
   "capacityId": "<my-fabric-capacity-id>",
   "artifactType": "SynapseNotebook|SparkJobDefinition",
@@ -136,12 +137,12 @@ Here's a sample log record in JSON format:
   "isHighConcurrencyEnabled": "true|false",
   "properties": {
     // The message properties of logs, events and metrics.
-    "timestamp": "2024-09-06T03:09:37.235Z",
-    "message": "Initialized BlockManager: BlockManagerId(1, vm-04b22223, 34319, None)",
-    "logger_name": "org.apache.spark.storage.BlockManager",
+    "timestamp": "2025-02-28T09:13:57.941Z",
+    "message": "ApplicationAttemptId: appattempt_1740734011890_0001_000001",
+    "logger_name": "org.apache.spark.deploy.yarn.ApplicationMaster",
     "level": "INFO",
-    "thread_name": "dispatcher-Executor"
-    //...
+    "thread_name": "main"
+    // ...
   }
 }
 ```
