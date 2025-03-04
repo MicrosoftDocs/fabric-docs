@@ -7,7 +7,7 @@ ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
 ms.date: 12/02/2024
-#customer intent: As a Fabric user I want to learn about Activator limitations.
+#customer intent: As a Fabric user I want to learn about Activator limitations so that I can know when I can use it appropriately.
 ---
 
 # [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations
@@ -122,7 +122,7 @@ Your organization might have up to 250 [!INCLUDE [fabric-activator](../includes/
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
 
-## Application Life Cycle limitations
+## Application Lifecycle limitations
 
 The following components are currently not supported in Activator ALM:
 * Eventstream  (rolling out)
