@@ -148,7 +148,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 
 > [!NOTE]
-> Currently, reading/writing environment resource folder in notebook code is not supported in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
+> Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
 
 ### File editor
 
