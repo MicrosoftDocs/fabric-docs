@@ -34,7 +34,7 @@ You must have a Fabric administrator role or higher to be able to create, rename
 
 This section shows how to create a set of one or more tags.
 
-1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (preview)**.
+1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags**.
 
     The **Tags** tab opens. All currently defined tags are listed on the tab.
 
@@ -54,7 +54,7 @@ This section shows how to create a set of one or more tags.
 
 ## Rename a tag
 
-1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (preview)**.
+1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags**.
 
 1. Open the options menu of the tag you want to rename and select **Rename**.
 
@@ -64,7 +64,7 @@ This section shows how to create a set of one or more tags.
 
 ## Delete a tag from the set of tags
 
-1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (preview)**.
+1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags**.
 
 1. Open the options menu of the tag you want to rename and select **Delete**.
 
