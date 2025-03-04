@@ -15,9 +15,9 @@ The functions activity in Data pipelines for Microsoft Fabric allows you to run 
 
 To get started, you must complete the following prerequisites:
 
-1. [Sign in with Fabric Account or Sign up for free](../../get-started/fabric-trial.md)
-2. [Create a workspace](../../get-started/create-workspaces.md)
-3. [Create a user data function in Fabric](./create-user-data-functions-portal.md)
+- [Sign in with Fabric Account or Sign up for free](../../get-started/fabric-trial.md)
+- [Create a workspace](../../get-started/create-workspaces.md)
+- [Create a user data function in Fabric](./create-user-data-functions-portal.md)
 
 ## Add a functions activity to a pipeline with UI
 
