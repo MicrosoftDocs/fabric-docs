@@ -32,7 +32,7 @@ import logging
 udf = fn.UserDataFunctions()
 ```
 
-3. **Limits**: The request payload length is limited to 2 MB. 
+- The request payload length is limited to 2 MB. 
 
 ## Write a data function 
 A user defined data function is identified with `@udf.function()` decorator. You can pass an input for the function such as primitive data types like str, int, float, etc. In the function code, you can write your business logic. 
@@ -83,9 +83,9 @@ The programming model allows you to securely use these connections without havin
  
 In order to define you connection to data sources you want to use with your custom logic to read or write data, use `@udf.connection`. You can use it in any of the following formats:
 
-•`@udf.connection(alias="<alias for data connection>", argName="sqlDB")`
-•`@udf.connection("<alias for data connection>", "<argName>")`
-•`@udf.connection("<alias for data connection>")`
+- `@udf.connection(alias="<alias for data connection>", argName="sqlDB")`
+- `@udf.connection("<alias for data connection>", "<argName>")`
+- `@udf.connection("<alias for data connection>")`
 
 The arguments for `@udf.connection` are:
 - `argName` is the name of the argument you use as input for your data function.

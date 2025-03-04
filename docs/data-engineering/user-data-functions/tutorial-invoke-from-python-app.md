@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Invoke User data functions from a Python application
+title: Tutorial - Invoke user data functions from a Python application
 description: Learn how to invoke user data functions from a python web application
 ms.author: sumuth
 author: mksuni
@@ -8,9 +8,9 @@ ms.date: 03/27/2025
 ms.search.form: Fabric Data Functions
 ---
 
-# Tutorial - Invoke User data functions from a Python application
+# Tutorial - Invoke user data functions from a Python application
 
-To invoke User data functions(Preview) from a front-end app in python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using VS Code. 
+To invoke user data functions (Preview) from a front-end app in python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using VS Code. 
 
 ## Prerequisites
 - Install [Visual Studio Code](https://code.visualstudio.com/download). Download [Python 3.1](https://www.python.org/downloads/release/python-3110/) on your local machine.
@@ -37,7 +37,7 @@ To invoke User data functions(Preview) from a front-end app in python, you can s
     pip install azure-identity, requests 
     ```
    
-5. Create a `app.py` file and use the code to invoke the User data function. 
+5. Create a `app.py` file and use the code to invoke the user data function. 
 
     ```python
     from azure.identity import InteractiveBrowserCredential
@@ -73,7 +73,7 @@ To invoke User data functions(Preview) from a front-end app in python, you can s
             }
 
     try:   
-    # Call the User data function public URL 
+    # Call the user data function public URL 
     response = requests.post(FUNCTION_URL, json=data, headers=headers)
     response.raise_for_status()
     print(json.dumps(response.json()))

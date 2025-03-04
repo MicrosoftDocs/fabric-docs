@@ -29,7 +29,7 @@ To use a functions activity in a pipeline, complete the following steps:
 - Search for Functions in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 - Select the new **Functions** activity on the pipeline editor canvas if it isn't already selected.
 
-   :::image type="content" source="..\media\user-data-functions-activity-in-pipelines\add-functions-activity-in-pipelines.png" alt-text="Screenshot showing how to find functions activity." lightbox="..\media\user-data-functions-activity-in-pipelines\add-functions-activity-in-pipelines.png":::
+   :::image type="content" source="..\media\user-data-functions-activity-in-pipelines\add-function-activity-in-pipelines.png" alt-text="Screenshot showing how to find functions activity." lightbox="..\media\user-data-functions-activity-in-pipelines\add-function-activity-in-pipelines.png":::
 
 ### Functions activity settings
 There are two settings for functions activity. They are:

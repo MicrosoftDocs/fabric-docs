@@ -25,7 +25,7 @@ Select the function in the Functions explorer and right select to select **view 
 ## View all invocation logs 
 You can see all the invocations listed in the logs view. Select the **Date** to view more details for the invocation that occurred at that time. 
 
-:::image type="content" source="..\media\user-data-functions-view-logs\view-all-invocations-logs.png" alt-text="Screenshot showing how to view all the invocations for the functions ordered by date" lightbox="..\media\user-data-functions-view-logs\view-all-invocations-logs.png":::
+:::image type="content" source="..\media\user-data-functions-view-logs\view-all-invocations-logs.png" alt-text="Screenshot showing how to view all the invocations for the functions ordered by date." lightbox="..\media\user-data-functions-view-logs\view-all-invocations-logs.png":::
 
 - **Invocation ID** - It shows the ID of that specific function invocation. The InvocationID is returned as part of an HTTP header. If there's any issues, users can reference this Invocation ID in a support request to retrieve more information about that invocation. </br>
 - **Date (UTC)** - The timestamp showing the start of the function invocation. You can select on the link to review all the logs for that invocation. It shows details of the invocation with all messages logged by user or service. </br>

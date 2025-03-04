@@ -63,4 +63,4 @@ The features supported are:
 
 ## Next Steps
 - [Develop user data functions in Visual Studio Code](./user-data-functions/create-user-data-functions-vs-code.md)
-- [Develop Fabric Notebooks in Visual Studio Code.md](./setup-vs-code-extension.md)
+- [Develop Fabric Notebooks in Visual Studio Code](./setup-vs-code-extension.md)
