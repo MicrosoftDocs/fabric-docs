@@ -181,13 +181,17 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Sync for data warehouse and SQL analytics endpoint fail in West Europe
+      href: ../known-issues/known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md
+    - name: FeatureNotAvailableError error in Network Security tab of Workspace Settings
+      href: ../known-issues/known-issue-1033-error-network-security-tab-workspace-settings.md
     - name: Lakehouse ALM operations fail for Git using public APIs in UK South
       href: ../known-issues/known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md
     - name: Existing preview surge protection rules aren't visible in Capacity settings
       href: ../known-issues/known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md
     - name: Eventstream updates with Eventhouse destination causes error
       href: ../known-issues/known-issue-1032-eventstream-updates-eventhouse-destination-error.md
-    - name: Git integration undo after initial sync fails might delete items
+    - name: Git integration undo action appears after initial sync fails
       href: ../known-issues/known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md
     - name: Slow Spark session startup caused by Native Execution Engine
       href: ../known-issues/known-issue-1028-slow-spark-session-startup-native-execution-engine.md
