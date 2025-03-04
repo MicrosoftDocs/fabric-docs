@@ -124,7 +124,7 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 
 ### Built-in resources folder
 
-The built-in resources folder is a system predefined folder for each notebook item instance. Here are the key capabilities for the notebook resources.
+The built-in resources folder is a system-defined folder unique to each notebook instance. The contents uploaded to the built-in folders are only accessible in the current notebook. Here are the key capabilities for the notebook resources.
 
 - You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI.
 - You can use relative paths like `builtin/YourData.txt` for quick exploration. The `notebookutils.nbResPath` method helps you compose the full path.
