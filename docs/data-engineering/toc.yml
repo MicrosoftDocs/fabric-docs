@@ -73,6 +73,28 @@ items:
     href: copilot-notebooks-chat-magics.md
   - name: Use the Copilot chat panel (preview)
     href: copilot-notebooks-chat-pane.md
+- name: AI functions
+  items: 
+    - name: Transform and enrich data with AI functions
+      href: ../data-science/ai-functions/overview.md
+    - name: ai.similarity
+      href: ../data-science/ai-functions/similarity.md
+    - name: ai.classify
+      href: ../data-science/ai-functions/classify.md
+    - name: ai.analyze_sentiment
+      href: ../data-science/ai-functions/analyze-sentiment.md
+    - name: ai.extract
+      href: ../data-science/ai-functions/extract.md
+    - name: ai.fix_grammar
+      href: ../data-science/ai-functions/fix-grammar.md
+    - name: ai.summarize
+      href: ../data-science/ai-functions/summarize.md
+    - name: ai.translate
+      href: ../data-science/ai-functions/translate.md
+    - name: ai.generate_response
+      href: ../data-science/ai-functions/generate-response.md
+    - name: Customize AI function configurations
+      href: ../data-science/ai-functions/configuration.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
@@ -250,8 +272,8 @@ items:
 - name: VS Code integration 
   items:
   - name: Fabric extensions for VS Code  
-    href: setup-fabric-vs-code-extension.md
-  - name: Fabric data engineering extension for VS Code
+    href: set-up-fabric-vs-code-extension.md
+  - name: Synapse VS Code extension
     href: setup-vs-code-extension.md
   - name: VS Code extension with Docker image
     href: set-up-vs-code-extension-with-docker-image.md
@@ -270,7 +292,7 @@ items:
   - name: Develop notebook with Fabric runtime
     href: fabric-runtime-in-vscode.md
   - name: Develop user data functions in VS Code
-    href: ./user-data-functions/create-user-data-functions-in-vs-code.md
+    href: ./user-data-functions/create-user-data-functions-vs-code.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse
@@ -319,18 +341,16 @@ items:
      href: spark-arcgis-geoanalytics.md
 - name: User data functions (preview)
   items:
-   - name: Overview
-     href: ./user-data-functions/user-data-functions-overview.md
-   - name: Create a new User data functions item
-     href: ./user-data-functions/create-user-data-functions-in-portal.md
+   - name: Create User data functions
+     href: ./user-data-functions/create-user-data-functions-portal.md
    - name: Integration with data pipelines
-     href: ./user-data-functions/create-functions-activity-in-data-pipelines.md
+     href: ./user-data-functions/create-functions-activity-data-pipelines.md
    - name: Source control and deployment pipelines
      href: ./user-data-functions/git-and-deployment-pipelines.md
    - name: Python programming model
      href: ./user-data-functions/python-programming-model.md
    - name: Tutorial - Invoke functions using Python
-     href: ./user-data-functions/tutorial-invoke-using-python-app.md
+     href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: View logs
      href: ./user-data-functions/view-function-logs.md
   

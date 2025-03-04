@@ -20,12 +20,12 @@ While invoking a data function, you want to see the logs for a particular invoca
 ## View the function invocation logs
 Select the function in the Functions explorer and right select to select **view historical logs** to view the logs.
 
-:::image type="content" source="..\media\user-data-functions-view-logs\select-view-historical-logs.png" alt-text="Screenshot showing how to view historical logs for a function" lightbox="..\media\user-data-functions-view-logs\select-view-historical-logs.png":::
+:::image type="content" source="..\media\user-data-functions-view-logs\select-view-historical-logs.png" alt-text="Screenshot showing how to view historical logs for a function." lightbox="..\media\user-data-functions-view-logs\select-view-historical-logs.png":::
 
 ## View all invocation logs 
 You can see all the invocations listed in the logs view. Select the **Date** to view more details for the invocation that occurred at that time. 
 
-:::image type="content" source="..\media\user-data-functions-view-logs\view-all-invocations-logs.png" alt-text="Screenshot showing how to view all the invocations for the functions ordered by date" lightbox="..\media\user-data-functions-view-logs\view-all-invocations-logs.png":::
+:::image type="content" source="..\media\user-data-functions-view-logs\view-all-invocations-logs.png" alt-text="Screenshot showing how to view all the invocations for the functions ordered by date." lightbox="..\media\user-data-functions-view-logs\view-all-invocations-logs.png":::
 
 - **Invocation ID** - It shows the ID of that specific function invocation. The InvocationID is returned as part of an HTTP header. If there's any issues, users can reference this Invocation ID in a support request to retrieve more information about that invocation. </br>
 - **Date (UTC)** - The timestamp showing the start of the function invocation. You can select on the link to review all the logs for that invocation. It shows details of the invocation with all messages logged by user or service. </br>
@@ -36,7 +36,7 @@ You can see all the invocations listed in the logs view. Select the **Date** to 
 ## View the log details of individual function invocations
 You can view the details on the log listed here. All the logs added in your function code can be viewed and track here. Any errors and exceptions are visible in this details page. Each log line contains the timestamp, the log message, and the associated type (Information, Warning, Debug, etc.).
 
-:::image type="content" source="..\media\user-data-functions-view-logs\view-detailed-log-for-an-invocation.png" alt-text="Screenshot showing how to detailed logs for a given function invocation" lightbox="..\media\user-data-functions-view-logs\view-detailed-log-for-an-invocation.png":::
+:::image type="content" source="..\media\user-data-functions-view-logs\view-detailed-log-for-an-invocation.png" alt-text="Screenshot showing how to detailed logs for a given function invocation." lightbox="..\media\user-data-functions-view-logs\view-detailed-log-for-an-invocation.png":::
 
 ## Generate you own logs during invocation
 
@@ -51,6 +51,6 @@ logger.critical('This is a CRITICAL message')
 
 ## Next steps
 - [Learn User data functions programming model](./python-programming-model.md)
-- [Invoke a function from a python app](./tutorial-invoke-using-python-app.md)
+- [Invoke a function from a python app](./tutorial-invoke-from-python-app.md)
 
 
