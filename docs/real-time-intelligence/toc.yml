@@ -315,6 +315,8 @@ items:
       href: create-query-set.md
     - name: Query data in a KQL queryset
       href: kusto-query-set.md
+    - name: Share KQL queries
+      href: kusto-share-queries.md
     - name: Access the data profile of a table
       href: data-profile.md
     - name: Customize results in the KQL Queryset results grid
