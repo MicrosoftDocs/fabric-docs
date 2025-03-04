@@ -271,7 +271,9 @@ items:
     href: environment-workspace-migration.md
 - name: VS Code integration 
   items:
-  - name: Overview
+  - name: Fabric extensions for VS Code  
+    href: set-up-fabric-vs-code-extension.md
+  - name: Synapse VS Code extension
     href: setup-vs-code-extension.md
   - name: VS Code extension with Docker image
     href: set-up-vs-code-extension-with-docker-image.md
@@ -289,6 +291,8 @@ items:
     href: author-notebook-with-vs-code-web.md
   - name: Develop notebook with Fabric runtime
     href: fabric-runtime-in-vscode.md
+  - name: Develop user data functions in VS Code
+    href: ./user-data-functions/create-user-data-functions-vs-code.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse
@@ -335,3 +339,20 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
+- name: User data functions (preview)
+  items:
+   - name: Create User data functions
+     href: ./user-data-functions/create-user-data-functions-portal.md
+   - name: Integration with data pipelines
+     href: ./user-data-functions/create-functions-activity-data-pipelines.md
+   - name: Source control and deployment pipelines
+     href: ./user-data-functions/git-and-deployment-pipelines.md
+   - name: Python programming model
+     href: ./user-data-functions/python-programming-model.md
+   - name: Tutorial - Invoke functions using Python
+     href: ./user-data-functions/tutorial-invoke-from-python-app.md
+   - name: View logs
+     href: ./user-data-functions/view-function-logs.md
+  
+        
+     
