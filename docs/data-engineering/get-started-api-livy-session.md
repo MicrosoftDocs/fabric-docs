@@ -122,6 +122,15 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. You can verify that the Livy session is created by using the [View your jobs in the Monitoring hub](#View your jobs in the Monitoring hub).
 
+### Integration with Fabric Environments
+
+By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use your Fabric Environment, simply update the prior Create a Livy API Spark session notebook cell with this two line change.
+
+    ```python
+    create_livy_session = requests.post(livy_base_url, headers=headers, json={
+    "conf" : {"spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}})
+    ```
+
 ### Submit a spark.sql statement using the Livy API Spark session
 
 1. Add another notebook cell and insert this code.
