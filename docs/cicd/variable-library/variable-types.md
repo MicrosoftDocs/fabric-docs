@@ -51,6 +51,10 @@ The name of a variable inside the Variable library must follow these conventions
 
 The variable name is *not* case sensitive.
 
+### Value set name
+
+The value set names have the same restrictions as [variable names](#variable-name).
+
 ## Variable types
 
 Before you can add a value to a variable, you must define the variable type.
