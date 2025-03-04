@@ -56,7 +56,7 @@ Like other standard Fabric item creation processes, you can easily create a new 
 
 ### Import existing notebooks
 
-You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.scala*, and *.sql*, and create new notebook items accordingly.
+You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.Scala*, and *.sql*, and create new notebook items accordingly.
 
 :::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu.":::
 
@@ -106,7 +106,7 @@ The subfolder and files under the **Tables** and **Files** section of the **Lake
 
 ### Folder and file operations
 
-If you select a file (.csv, .parquet, .txt, .jpg, .png, etc.) with a right mouse click, you can use the Spark or Pandas API to load the data. A new code cell is generated and inserted beneath the focus cell.
+If you select a file (.csv,.parquet,.txt,.jpg,.png, etc.) with a right mouse click, you can use the Spark or Pandas API to load the data. A new code cell is generated and inserted beneath the focus cell.
 
 You can easily copy a path with a different format from the select file or folder and use the corresponding path in your code.
 
@@ -225,7 +225,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
 ![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
 
 > [!NOTE]
-> For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
+> For a comment item, the tagged user will not receive an Email notification anymore if you update the comment within one hour. But it will send Email notification to the new tagged user.
 
 ## Version history
 
@@ -251,7 +251,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
    :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff."lightbox="media\how-to-use-notebook\checkpoint-diff-view.png":::
 
-1. You can manage the version from the checkpoint drop down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
+1. You can manage the version from the checkpoint drop-down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
 
    :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint."lightbox="media\how-to-use-notebook\more-options-with-the-checkpoint.png":::
 
