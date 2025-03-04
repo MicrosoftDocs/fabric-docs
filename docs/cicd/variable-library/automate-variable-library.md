@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 02/11/2025
+ms.date: 03/04/2025
 #customer intent: As a developer, I want to learn how to automate Variable libraries in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs, so that I can manage my content lifecycle.
 ---
 
@@ -28,7 +28,7 @@ The following table lists the APIs available for the variable library in Fabric.
 | 7        | Location | Status Failed                  | GET<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/operations/b96cc629-e948-4cd1-b755-8f4c0a4fd9d6> (LOCATION) |
 | 8        | Result   | Get result                     | GET (RESULT- location header)<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/operations/b96cc629-e948-4cd1-b755-8f4c0a4fd9d6/result> |
 | 9        |          | Base64       | Payload- send TextWizard<br>delete payload=<br><br>Copy the definitions part for Import |
-| 10       | Update Definition | Import                | POST<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/05a748f5-3b62-48e8-8d54-44fee6a588ca/VariableLibraries/285977f2-d3a2-40db-928a-b320b8539e58/updateDefinition><br><br>Request (from export results)<br>:::image type="content" source="./media/import.png" alt-text="Import code."::: |
+| 10       | Update Definition | Import                | POST<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/05a748f5-3b62-48e8-8d54-44fee6a588ca/VariableLibraries/285977f2-d3a2-40db-928a-b320b8539e58/updateDefinition><br><br>Request (from export results)<br>:::image type="content" source="./media/automate-variable-library/import.png" alt-text="Import code."::: |
 | 11       |          | Import with change | Take the payload from 9 and change value<br>copy payload, and paste in import request |
 | 12       | Get + active value set |                  | GET<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/8789dc83-9968-4896-a037-dc63ad482d46/VariableLibraries/d01c3d05-48fe-473f-85ff-a13c5965836f> |
 | 13       | Set value set | Set/change active value set | PATCH<br><https://biazure-int-edog-redirect.analysis-df.windows.net/v1/workspaces/05a748f5-3b62-48e8-8d54-44fee6a588ca/VariableLibraries/ac4cba21-2252-4a8c-8d20-f2ac9bc96419><br><br>{ <br>"displayName": "V5_New_Name",<br> "description": "A new description for VL.",<br>"properties": {<br>"activeValueSetName": "set2" <br>} <br>}<br><br>For the default value set:<br><br>{<br>"displayName": "V5_New_Name",<br>"description": "A new description for VL.", <br>"properties": {<br>"activeValueSetName": null<br>}<br>} |

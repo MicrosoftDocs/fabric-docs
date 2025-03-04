@@ -42,7 +42,7 @@ You can create a Variable library item from the Fabric home page or from inside 
 
    :::image type="content" source="./media/get-started-with-variable-libraries/create-from-home.png" alt-text="Screenshot of UI showing the location of variable libraries in the data factory section.":::
 
-1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
+1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-item-name).
 
 <!--- ### [From workspace](#tab/workspace) --->
 **From workspace:**
@@ -52,7 +52,7 @@ You can create a Variable library item from the Fabric home page or from inside 
 
    :::image type="content" source="./media/get-started-with-variable-libraries/create-from-workspace.png" alt-text="Screenshot of UI for creating a Variable library item from an existing workspace.":::
 
-1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
+1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-item-name).
 <!---
 --- --->
 
@@ -71,7 +71,7 @@ You can manage the variables in the Variable library from the top menu bar
 To add a new variable to the library:
 
 1. Select **+ New variable**
-1. Enter a name (make sure it follows the [naming conventions](./variable-types.md#name-of-a-variable-in-the-variable-library))
+1. Enter a name (make sure it follows the [naming conventions](./variable-types.md#variable-name))
 1. Select a type from the drop-down list
 1. Enter a default value
 1. Add a note explaining what the variable is for or how to use it (optional)
