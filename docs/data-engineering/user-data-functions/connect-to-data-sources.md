@@ -22,7 +22,7 @@ The following data sources are currently supported for Fabric User Data Function
 - [Fabric SQL Database](../../database/sql/overview.md)
 - [Fabric Warehouse](../../data-warehouse/create-warehouse.md)
 - [Fabric Lakehouse](../lakehouse-overview.md)
-- [Fabric Mirrored Databases](..\..\database\mirrored-database\overview.md)
+- [Fabric Mirrored Databases](../../database\mirrored-database\overview.md)
 
 ## How to create a new data connection for your User Data Functions item
 Any data connections you add will be associated with your User Data Functions item and can be referenced in the code of any of your functions. To follow this guide, you will need a Fabric User Data Functions item and an existing Fabric data source.

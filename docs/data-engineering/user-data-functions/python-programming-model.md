@@ -163,8 +163,7 @@ This method takes two parameters:
 ## Invoking a function from an external application
 Functions can be invoked by issuing a REST call to the endpoint URL. Select the function you want to invoke in the **Functions explorer** and select **Copy Function URL**. You can also turn on or off the ability to use this URL externally from the **Properties** menu.
 
-:::image type="content" source="..
-\media\user-data-functions-python-programming-model\python-programming-model-1.png" alt-text="Screenshot showing how to debug locally with breakpoints." lightbox="..\media\user-data-functions-python-programming-model\python-programming-model-1.png":::
+:::image type="content" source="..\media\user-data-functions-python-programming-model\python-programming-model-1.png" alt-text="Screenshot showing how to debug locally with breakpoints." lightbox="..\media\user-data-functions-python-programming-model\python-programming-model-1.png":::
 
 Then, use this URL in your application to invoke the function. See [Invoke user data functions from an application](./tutorial-invoke-from-python-app.md)
 
