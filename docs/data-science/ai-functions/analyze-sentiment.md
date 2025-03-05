@@ -15,14 +15,15 @@ ms.search.form: AI functions
 
 The `ai.analyze_sentiment` function uses Generative AI to detect whether the emotional state expressed by input text is positive, negative, mixed, or neutral—all with a single line of code. If the function can't determine the sentiment, it leaves the output blank.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Use `ai.analyze_sentiment` with pandas
 
@@ -77,7 +78,7 @@ df.ai.analyze_sentiment(input_col="text", output_col="sentiment")
 
 | **Name** | **Description** |
 |---|---|
-| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column, with input text values to be analyzed for sentiment. |
+| **`input_col`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to be analyzed for sentiment. |
 | **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store the sentiment label for each row of input text. If this parameter isn't set, a default name is generated for the output column. |
 | **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter isn't set, a default name is generated for the error column. If an input row has no errors, the value in this column is `null`. |
 
@@ -113,3 +114,4 @@ display(sentiment)
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - Learn more about the full set of AI functions [here](./overview.md).
 - Learn how to customize the configuration of AI functions [here](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
