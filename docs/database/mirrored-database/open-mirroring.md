@@ -55,9 +55,7 @@ In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md),
 
 ## Open mirroring cost considerations
 
-Same as for all types of mirroring in Fabric, open mirroring offers a free terabyte of mirroring storage for every capacity unit (CU) you have purchased and provisioned. For example, if you purchase F64, you get 64 free terabytes worth of storage for your mirrored replicas. OneLake storage is billed only when the free mirroring storage limit is exceeded, or the capacity is paused.
-
-In addition, the compute needed to manage the complexity of change data is free and it doesn't consume capacity. Requests to OneLake as part of the mirroring process consume capacity like normal with [OneLake compute consumption](../../onelake/onelake-consumption.md#transactions).
+Fabric compute used to replicate your data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
 
 ## Next step
 
