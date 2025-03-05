@@ -466,4 +466,4 @@ display(responses)
 - Translate text with [`ai.translate`](./translate.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - Learn how to [customize the configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

@@ -118,3 +118,4 @@ display(categories)
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - Learn more about the full set of AI functions [here](./overview.md).
 - Learn how to customize the configuration of AI functions [here](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
