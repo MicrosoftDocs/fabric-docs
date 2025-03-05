@@ -20,7 +20,7 @@ AI functions, currently in public preview, allow users to harness the power of F
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users will temporarily be limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Customizing AI functions with pandas
 
@@ -32,7 +32,7 @@ By default, AI functions are powered by Fabric's built-in AI endpoint. The LLM's
 | **`embedding_deployment_name`**<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | **text-embedding-ada-002** |
 | **`temperature`**<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between **0.0** and **1.0** that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | **0.0** |
 | **`seed`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | **openai.NOT_GIVEN** |
-| **`timeout`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a timeout error. By default, there's no timeout. | **None** |
+| **`timeout`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no time-out. | **None** |
 | **`max_concurrency`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to be processed in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). | **4** |
 
 The next code sample shows how to override `aifunc.Conf` settings globally, so that they apply to all AI function calls in a given session:

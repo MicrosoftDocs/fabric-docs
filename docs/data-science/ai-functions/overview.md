@@ -42,13 +42,13 @@ It's seamless to incorporate these functions as part of data-science and data-en
 > - AI functions are supported in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 > - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users will temporarily be limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Getting started with AI functions
 
 Use of the AI functions library in a Fabric notebook currently requires certain custom packages. The following code installs and imports those packages. Afterward, you can use AI functions with pandas or PySpark, depending on your preference.
 
-The sample code below installs the AI functions library and its dependencies.
+This code cell installs the AI functions library and its dependencies.
 
 > [!WARNING]
 > The PySpark configuration cell takes a few minutes to finish executing. We appreciate your patience.
@@ -85,7 +85,7 @@ The sample code below installs the AI functions library and its dependencies.
 
 ---
 
-The sample code below imports the AI functions library and its dependencies. The pandas cell also imports an optional Python library to display progress bars that track the status of every AI function call.
+This code cell imports the AI functions library and its dependencies. The pandas cell also imports an optional Python library to display progress bars that track the status of every AI function call.
 
 # [pandas](#tab/pandas)
 
