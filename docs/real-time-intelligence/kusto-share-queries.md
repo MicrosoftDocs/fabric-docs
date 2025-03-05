@@ -1,17 +1,17 @@
 ---
-title: Share KQL queries
+title: Share queries
 description: Learn how to share KQL queries in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 03/04/2025
+ms.date: 03/05/2025
 ms.search.form: KQL Queryset
 ---
-# Share KQL queries
+# Share queries
 
-In this article, you learn how to share Kusto Query Language (KQL) queries, including how to share a query link, share the query results, or pin it to a dashboard. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+In this article, you learn how to share Kusto Query Language (KQL) queries. This includes how to share a query link, share the query results, or pin it to a dashboard. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ In this article, you learn how to share Kusto Query Language (KQL) queries, incl
 
 ## Pin to dashboard
 
-To pin a query to a dashboard for continuous monitoring, follow these steps:
+To pin a query to a [Real-Time dashboard](dashboard-real-time-create.md) for continuous monitoring, follow these steps:
 
 1. In the query window, select the query that you want to pin.
 
@@ -64,7 +64,7 @@ To copy and share the queries you create, follow these steps:
 
 To use a shared query, follow these steps:
 
-1. Open the Real-Time Intelligence shared link. The link opens as an unsaved, temporary query.
+1. Open the Real-Time Intelligence link that was shared with you. The link opens as an unsaved, temporary query.
 1. Run the query or add other steps to the query.
 1. Then either:
     1. Close the query without saving it.
