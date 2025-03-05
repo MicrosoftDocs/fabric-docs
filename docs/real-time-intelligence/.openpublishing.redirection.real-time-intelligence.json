@@ -1,5 +1,5 @@
 {
-  "redirections": [
+  "redirections": [   
     {
       "redirect_url": "/fabric/context/context-rti.json",
       "source_path_from_root": "/docs/context/context-rta.json.yml",
@@ -200,6 +200,11 @@
       "redirect_url": "/fabric/real-time-intelligence/event-streams/transform-sample-data-and-route-to-kql",
       "redirect_document_id": false
     },
+    {
+      "source_path_from_root": "/fabric/real-time-intelligence/event-streams/includes/create-eventstream.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/includes/create-an-eventstream",
+      "redirect_document_id": false
+    },    
     {
       "source_path_from_root": "/docs/real-time-analytics/eventhouse.md",
       "redirect_url": "/fabric/real-time-intelligence/eventhouse",
@@ -663,6 +668,11 @@
     {
       "source_path_from_root": "/docs/data-activator/index.yml",
       "redirect_url": "/fabric/real-time-intelligence/data-activator/index",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/eventhouse-git-deployment-pipelines.md",
+      "redirect_url": "/fabric/real-time-intelligence/git-deployment-pipelines",
       "redirect_document_id": true
     }
   ]

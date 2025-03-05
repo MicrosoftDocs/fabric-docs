@@ -6,9 +6,7 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: quickstart
 ms.custom:
-  - build-2024
 # ms.custom:
-#   - ignite-2023
 ms.date: 03/25/2024
 ---
 
@@ -34,7 +32,7 @@ With data workflows, you have two options for storing your workflow files: Fabri
 
 ### Create an Apache Airflow Job
 
-1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
+1. You can use an existing workspace or [Create a new workspace](../fundamentals/create-workspaces.md).
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
 
    :::image type="content" source="media/apache-airflow-jobs/more-options.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot shows click on more options.":::

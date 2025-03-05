@@ -8,7 +8,6 @@ metadata:
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.custom:
-    - ignite-2024
   ms.topic: faq
   ms.date: 03/18/2024
 title: |
@@ -16,7 +15,7 @@ title: |
 summary: | 
   This article answers frequently asked questions about Mirrored Azure Cosmos DB database in Microsoft Fabric.
   > [!IMPORTANT]
-  > Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+  > Mirroring for Azure Cosmos DB is currently in [preview](../../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 sections:
   - name: General questions
@@ -49,12 +48,11 @@ sections:
       - question: |
           What costs are associated with mirroring Azure Cosmos DB?
         answer: |
-          Mirroring is in preview. There are currently no costs for compute used to replicate data from Azure Cosmos DB to Fabric OneLake. Storage costs for OneLake are also free upto certain limits. For more information, see [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). 
-          The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
+          Fabric compute used to replicate your Cosmos DB data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
           
           For Azure Cosmos DB, continuous backup is a prerequisite to mirroring. If you enabled any continuous backup tier before mirroring, you don't accrue any extra cost. If you enable continuous backup specifically for mirroring, 7-day backup mode is free of cost; if you enable 30-day backup, you're billed the price associated with that feature. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
           
-          If you use data explorer to view the source data from Azure Cosmos DB, you will accrue costs based on Request Units (RU) usage.         
+          If you use data explorer to view the source data from Azure Cosmos DB, you will accrue costs based on Request Units (RU) usage.
       - question: |
           How are egress fees handled for mirroring Azure Cosmos DB?
         answer: |

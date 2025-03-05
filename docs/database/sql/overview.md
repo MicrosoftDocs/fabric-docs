@@ -4,11 +4,9 @@ description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 12/04/2024
+ms.date: 02/13/2025
 ms.topic: overview
-ms.custom:
-  - ignite-2024
-ms.search.form: product-databases
+ms.search.form: product-databases, SQL database Overview
 ---
 # SQL database in Microsoft Fabric (Preview)
 
@@ -47,7 +45,7 @@ SQL database in Fabric is part of the **Database** workload, and the data is acc
 
 With your SQL database in Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs, and built for openness and collaboration between technology solutions that can read the open-source Delta Lake table format. The Delta tables can then be used everywhere in Fabric, allowing users to accelerate their journey into Fabric.
 
-The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS). To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS). To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
 SQL database in Fabric creates three items in your Fabric workspace:
 
@@ -132,6 +130,10 @@ You can use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics
 
 Do you already have an external database and want to leverage Fabric's integration? You can use Mirroring in Fabric as a low-cost and low-latency solution to bring data from various systems together. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from an existing [Azure SQL Database](../mirrored-database/azure-sql-database.md).
 
+## Elastic pools
+
+Fabric SQL database doesn't support the Azure SQL Database elastic pools concept by name, but similar concepts are available with Fabric capacities and Fabric workspaces. A single Fabric capacity can provide resources for Fabric SQL databases in different workspaces. This provides both a simplification of billing in a single capacity similar to elastic pools, as well as security isolation for different workspaces.
+
 ## Next step
 
 > [!div class="nextstepaction"]
@@ -139,7 +141,7 @@ Do you already have an external database and want to leverage Fabric's integrati
 
 ## Related content
 
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
 - [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
 - [Direct Lake](/power-bi/enterprise/directlake-overview)

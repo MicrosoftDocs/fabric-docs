@@ -3,19 +3,16 @@ title: "Troubleshoot Fabric Mirrored Databases"
 description: Troubleshooting scenarios, workarounds, and links for mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
-ms.date: 11/19/2024
+ms.reviewer: imotiwala, maprycem, cynotebo
+ms.date: 02/27/2025
 ms.topic: troubleshooting
 ms.custom:
-  - ignite-2024
 ms.search.form: Fabric Mirroring
 ---
 
 # Troubleshoot Fabric mirrored databases
 
 Scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Resources
 
@@ -40,6 +37,28 @@ Review limitations documentation for each data source:
 ## Stop replication
 
 When you select **Stop replication**, OneLake files remain as is, but incremental replication stops. You can restart the replication at any time by selecting **Start replication**. You might want to do stop/start replication when resetting the state of replication, after source database changes, or as a troubleshooting tool.  
+
+## Replicate source schema hierarchy
+
+When you mirror data from various types of source databases, your source schema hierarchy is preserved in the mirrored database. It ensures that your data remains consistently organized across different services, allowing you to consume it using the same logic in SQL analytics endpoint, Spark Notebooks, semantic models, and other references to the data.
+
+For mirrored databases created before this feature enabled, you see the source schema is flattened in the mirrored database, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
+
+If you use API to create/update mirrored database, set value for property `defaultSchema` which indicates whether to replicate the schema hierarchy from the source database. Refer to the definition samples in [Microsoft Fabric mirroring public REST API](mirrored-database-rest-api.md).
+
+## Delta column mapping support
+
+Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`) from your source databases to the mirrored databases. Behind the scene, mirroring writes data into OneLake with Delta column mapping enabled.
+
+For tables that are already under replication before this feature enabled, to include columns with special character in names, you need to update the mirrored database settings by removing and re-adding those tables, or stop and restart the mirrored database.
+
+## Take ownership of a mirrored database
+
+Currently, mirrored database doesn't support ownership change. If a mirrored database stops working because the item owner has left the organization or it's no longer valid, you need to recreate the mirrored database.
+
+## Supported regions
+
+[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Troubleshoot
 
@@ -82,7 +101,6 @@ These common error messages have explanations and mitigations:
 
 | **Error message** | **Reason** | **Mitigation** |
 |:--|:--|:--|
-| "The replication is being throttled due to destination space limit." | There's a maximum of 10 TB of storage space in destination per Mirrored database. The replication is being throttled due to destination space limit. | In the source database, drop tables, remove data, or shard. |
 | "The tables count may exceed the limit, there could be some tables missing."| There's a maximum of 500 tables. | In the source database, drop or filter tables. If the new table is the 500th table, no mitigation required. |
 | "The replication is being throttled and expected to continue at YYYY-MM-DDTHH:MM:ss." | There's a maximum of 1 TB of change data captured per Mirrored database per day. | Wait for throttling to end. |
 

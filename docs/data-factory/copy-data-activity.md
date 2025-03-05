@@ -6,8 +6,6 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 08/05/2024
 ---
 

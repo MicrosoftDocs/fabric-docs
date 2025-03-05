@@ -6,10 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
 ms.date: 07/25/2024
 ---
@@ -20,8 +16,8 @@ Notebook Utilities (NotebookUtils) is a built-in package to help you easily perf
 
 > [!NOTE]
 >
-> - MsSparkUtils has been officially renamed to **NotebookUtils**. The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
-> - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates will be exclusively supported with notebookutils namespace going forward.
+> - MsSparkUtils is officially renamed to **NotebookUtils**. The existing code remains **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates are exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
 
@@ -120,12 +116,16 @@ This method copies a file or directory, and supports copy activity across file s
 notebookutils.fs.cp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
 ```
 
+> [!NOTE]
+> Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use ```notebookutils.fs.cp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
+
 ### Performant copy file
 
 This method offers a more efficient approach to copying or moving files, particularly when dealing with large data volumes. For enhanced performance on Fabric, it is advisable to utilize `fastcp` as a substitute for the traditional `cp` method.
 
 > [!NOTE]
-> ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
+> - ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
+> - Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
 
 
 ```python
@@ -167,7 +167,7 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 
 > [!NOTE] 
 > - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
-> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5s ~ 1s between the recurring writes. This recommendation is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
@@ -248,7 +248,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 ### Reference run multiple notebooks in parallel
 
 > [!IMPORTANT]
-> This feature is in [preview](../get-started/preview.md).
+> This feature is in [preview](../fundamentals/preview.md).
 
 The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the reference notebook runs share the compute resources.
 
@@ -278,7 +278,7 @@ The execution result from the root notebook is as follows:
 
 :::image type="content" source="media\notebook-utilities\reference-notebook-list.png" alt-text="Screenshot of reference a list of notebooks." lightbox="media\notebook-utilities\reference-notebook-list.png":::
 
-The following is an example of running notebooks with topological structure using `notebookutils.notebook.runMultiple()`. Use this method to easily orchestrate notebooks through a code experience.
+Here's an example of running notebooks with topological structure using `notebookutils.notebook.runMultiple()`. Use this method to easily orchestrate notebooks through a code experience.
 
 ```python
 # run multiple notebooks with parameters
@@ -324,7 +324,7 @@ notebookutils.notebook.validateDAG(DAG)
 > [!NOTE]
 > - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
 > - The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
-> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell in child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
+> - The default time-out for entire DAG is 12 hours, and the default time-out for each cell in child notebook is 90 seconds. You can change the time-out by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 
 ### Exit a notebook
 
@@ -332,7 +332,7 @@ This method exits a notebook with a value. You can run nesting function calls in
 
 - When you call an *exit()* function from a notebook interactively, the Fabric notebook throws an exception, skips running subsequent cells, and keeps the Spark session alive.
 
-- When you orchestrate a notebook in a pipeline that calls an *exit()* function, the notebook activity returns with an exit value, completes the pipeline run, and stops the Spark session.
+- When you orchestrate a notebook in a pipeline that calls an exit() function, the notebook activity returns with an exit value.This completes the pipeline run and stops the Spark session.
 
 - When you call an *exit()* function in a notebook that is being referenced, Fabric Spark will stop the further execution of the referenced notebook, and continue to run the next cells in the main notebook that calls the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
@@ -341,7 +341,7 @@ notebookutils.notebook.exit("value string")
 ```
 
 > [!NOTE]
-> The *exit()* function will overwrite the current cell output, to avoid losing the output of other code statements, please call ```notebookutils.notebook.exit()``` in a separate cell.
+> The *exit()* function overwrites the current cell output. To avoid losing the output of other code statements, call ```notebookutils.notebook.exit()``` in a separate cell.
 
 For example:
 
@@ -555,8 +555,8 @@ notebookutils.fs.mount(
 ```
 
 Mount parameters:
-- fileCacheTimeout: Blobs are cached in the local temp folder for 120 seconds by default. During this time, blobfuse does not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
-- timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
+- fileCacheTimeout: Blobs are cached in the local temp folder for 120 seconds by default. During this time, blobfuse does not check whether the file is up to date or not. The parameter could be set to change the default time-out time. When multiple clients modify files at the same time, to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
+- timeout: The mount operation time-out is 120 seconds by default. The parameter could be set to change the default time-out time. When there are too many executors or when mount times out, we recommend increasing the value.
 
 You can use these parameters like this:
 
@@ -569,7 +569,7 @@ notebookutils.fs.mount(
 ```
 
 > [!NOTE]
-> For security purposes, it is advised to avoid embedding credentials directly in code. To further safeguard your credentials, any secrets displayed in notebook outputs will be redacted. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
+> For security purposes, it is advised to avoid embedding credentials directly in code. To further safeguard your credentials, any secrets displayed in notebook outputs are redacted. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse
 
@@ -660,7 +660,7 @@ notebookutils.fs.unmount("/test")
 
 ### Overview of methods
 
-Below is an overview of the available methods provided by `notebookutils.lakehouse`:
+Here is an overview of the available methods provided by `notebookutils.lakehouse`:
 
 ```python
 # Create a new Lakehouse artifact
@@ -766,7 +766,7 @@ Instead of manually click stop button, sometimes it's more convenient to stop an
 notebookutils.session.stop()
 ```
 
-```notebookutils.session.stop()``` API stops the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they are available to other sessions in the same pool.
+```notebookutils.session.stop()``` API stops the current interactive session asynchronously in the background. It also stops the Spark session and release resources occupied by the session, so they are available to other sessions in the same pool.
 
 ### Restart the Python interpreter
 
@@ -777,7 +777,7 @@ notebookutils.session.restartPython()
 ```
 
 > [!NOTE]
-> - In the notebook reference run case, ```restartPython()``` will only restart the Python interpreter of the current notebook that being referenced.
+> - In the notebook reference run case, ```restartPython()``` only restarts the Python interpreter of the current notebook that being referenced.
 > - In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
 
 ## Known issue 

@@ -6,8 +6,6 @@ author: lgayhardt
 ms.reviewer: None
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 01/22/2024
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---
@@ -35,8 +33,8 @@ This tutorial covers these steps:
 
 You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Synapse Data Science experience
-- Upload your notebook from GitHub to the Synapse Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 

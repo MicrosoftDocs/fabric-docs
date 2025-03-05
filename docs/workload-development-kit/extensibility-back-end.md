@@ -465,11 +465,7 @@ If you're a connecting a backend to the sample workload project, your item must 
 
 1. Switch to a named workspace. Leave the default workspace name **My workspace**.
 
-    :::image type="content" source="./media/extensibility-back-end/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
-
 1. From the correct workspace, load the sample workload and proceed with the tests:
-
-    :::image type="content" source="./media/extensibility-back-end/create-sample-workload.png" alt-text="Screenshot of UI for creating sample workload item.":::
 
 ## Contribute
 

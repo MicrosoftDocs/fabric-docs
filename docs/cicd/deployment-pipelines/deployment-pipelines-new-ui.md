@@ -12,9 +12,6 @@ ms.search.form: Deployment pipelines UI
 
 # New deployment pipelines user interface (preview)
 
-> [!IMPORTANT]
-> The new user interface for Microsoft Fabric's Deployment pipelines is temporarily disabled. We are working to resolve the issue and will update this page when the new UI is available again. In the meantime, you can continue to use the original UI.
-
 The user interface for Microsoft Fabric's Deployment pipelines is undergoing a change to improve the user experience. The new UI is designed to be more focused, easier to navigate, and have a smoother flow. The functionality has stayed the same, and anything you can do with the original UI you can do with the new UI.
 
 > [!NOTE]

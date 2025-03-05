@@ -7,7 +7,6 @@ author: matt1883
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
-  - build-2024
 ms.date: 05/21/2024
 #customer intent: As a data analyst, I want to learn how to create shortcuts to on-premises data using a Fabric on-premises data gateway so that I can easily access and analyze data from various sources without the need for data movement or duplication.
 ---

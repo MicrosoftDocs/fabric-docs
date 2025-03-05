@@ -6,8 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.search.form: Create and use notebooks
 ms.date: 11/25/2024
 ---
@@ -17,15 +15,15 @@ ms.date: 11/25/2024
  > [!NOTE]
  > Currently, the feature is in preview.
 
-The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
+The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
 
 With a Python notebook, you can get:
 
 - **Multiple built-in python kernels**: Python notebooks offer a pure Python coding environment without Spark, with two versions of Python kernel - Python 3.10 and 3.11 available by default, and the native ipython features supported such as iPyWidget, magic commands.
 
-- **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This ensures efficient resource utilization for data exploration projects with smaller data size.
+- **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This setup ensures efficient resource utilization for data exploration projects with smaller data size.
 
-- **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
+- **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This feature enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
 
 - **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL endpoints in explorer, by using notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
 
@@ -153,8 +151,7 @@ You can use ```notebookutils.help()``` to list available APIs and also get help 
 ### Data utilities
 
 > [!NOTE]
-> - Currently, the feature is in preview.
-> - The API contract may change in the near future.
+> Currently, the feature is in preview.
 
 You can use `notebookutils.data` utilities to establish a connection with provided data source and then read and query data using T-SQL statement.
 
@@ -173,7 +170,7 @@ NAME
     notebookutils.data - Utility for read/query data from connected data sources in Fabric
 
 FUNCTIONS
-    connect_to_artifact(artifact: str, workspace: str = '', artifact_type: str = None) -> pyodbc.Connection
+    connect_to_artifact(artifact: str, workspace: str = '', artifact_type: str = '', **kwargs)
         Establishes and returns an ODBC connection to a specified artifact within a workspace 
         for subsequent data queries using T-SQL.
         
@@ -182,6 +179,8 @@ FUNCTIONS
                              use the workspace where the current notebook is located.
         :param artifactType: Optional; The type of the artifact, Currently supported type are Lakehouse, Warehouse and MirroredDatabase. 
                                 If not provided, the method will try to determine the type automatically.
+        :param **kwargs Optional: Additional optional configuration. Supported keys include:
+            - tds_endpoint : Allow user to specify a custom TDS endpoint to use for connection.
         :return: A connection object to the specified artifact.
         
         :raises UnsupportedArtifactException: If the specified artifact type is not supported to connect.
@@ -190,13 +189,10 @@ FUNCTIONS
         Examples:
             sql_query = "SELECT DB_NAME()"
             with notebookutils.data.connect_to_artifact("ARTIFACT_NAME_OR_ID", "WORKSPACE_ID", "ARTIFACT_TYPE") as conn:
-                cursor = conn.cursor()
-                cursor.execute(sql_query)
-                rows = cursor.fetchall()
-                for row in rows:
-                    print(row)
+                df = conn.query(sql_query)
+                display(df)
     
-    help(method_name=None)
+    help(method_name: str = '') -> None
         Provides help for the notebookutils.data module or the specified method.
         
         Examples:
@@ -208,37 +204,25 @@ DATA
     __all__ = ['help', 'connect_to_artifact']
 
 FILE
-    /home/trusted-service-user/jupyter-env/python3.11/lib/python3.11/site-packages/notebookutils/data.py
+    /home/trusted-service-user/jupyter-env/python3.10/lib/python3.10/site-packages/notebookutils/data.py
 ```
 
 #### Query data from Lakehouse
 
 ```python
 conn = notebookutils.data.connect_to_artifact("lakehouse_name_or_id", "optional_workspace_id", "optional_lakehouse_type")
-
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM sys.schemas;")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 #### Query data from Warehouse
 
 ```python
 conn = notebookutils.data.connect_to_artifact("warehouse_name_or_id", "optional_workspace_id", "optional_warehouse_type")
-
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM sys.schemas;")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 > [!NOTE]
->
-> - The Data utilities in NotebookUtils is only available on Python notebook for now.
-> - Known limitation: For `connect_to_artifact` API, the returned `conn` object internally initializes a PBI token to authenticate the user when connecting to the data source. However, it does not support token refresh. Currently the PBI token is valid for only one hour, any query exceeding one hour will fail due to token expiration issue.
+> The Data utilities in NotebookUtils is only available on Python notebook for now.
 
 ## Browse code snippets
 
@@ -279,7 +263,7 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
 ## Public preview known limitations
 
-- Live pool experience is not guaranteed for every python notebook run. The session start time may up to 3 mins if the notebook run does not hit live pool, while the python notebook usage is growing, out intelligent pooling methods will gradually increase the live pool allocation to meet the demand.
+- Live pool experience is not guaranteed for every python notebook run. The session start time may take up to 3 minutes if the notebook run does not hit the live pool. As Python notebook usage grows, our intelligent pooling methods gradually increase the live pool allocation to meet the demand.
 
 - Environment integration is not available on Python notebook by public preview.
 
@@ -287,7 +271,7 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
 - Copilot may generate Spark statement, which may not executable in Python notebook.
 
-- Currently, Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing, please stay tuned as we continue to roll out support in more regions.
+- Currently, Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing stay tuned as we continue to roll out support in more regions.
 
 ## Related content
 

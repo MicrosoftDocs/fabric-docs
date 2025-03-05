@@ -3,12 +3,10 @@ title: Row-level security in Fabric data warehousing
 description: Learn about row-level security in tables in Fabric data warehousing.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: stwynant
+ms.reviewer: dhsundar
 ms.date: 08/01/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 ---
 # Row-level security in Fabric data warehousing
 

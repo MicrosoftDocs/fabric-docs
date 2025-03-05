@@ -6,7 +6,6 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -56,7 +55,7 @@ To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow 
 
 1. Confirm that your Azure Database for PostgreSQL Flexible Server instance allows public network traffic.
 
-2. Grant the **admin user** replication permissions by running the following SQL statement. If you want to use other user account to connect your PostgreSQL DB to fetch CDC, ensure the user is the **table owner**.
+1. Grant the **admin user** replication permissions by running the following SQL statement. If you want to use other user account to connect your PostgreSQL DB to fetch CDC, ensure the user is the **table owner**.
 
    ```sql
    ALTER ROLE <admin_user_or_table_owner_user> WITH REPLICATION;

@@ -6,12 +6,8 @@ ms.author: rarikhy
 ms.reviewer: franksolomon
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-fabric
-  - ignite-2023
-  - ignite-2023-fabric
-  - copilot-learning-hub
-ms.date: 10/30/2024
+- copilot-learning-hub
+ms.date: 02/13/2025
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -35,14 +31,14 @@ With Copilot for Data Science and Data Engineering, you can chat with an AI assi
 
 First select the Copilot icon in the notebooks ribbon. The Copilot chat panel opens, and a new cell appears at the top of your notebook. This cell must run each time a Spark session loads in a Fabric notebook. Otherwise, the Copilot experience won't properly operate. We are in the process of evaluating other mechanisms for handling this required initialization in future releases.
 
-:::image type="content" source="media/copilot-notebooks-overview/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot ribbon." lightbox="media/copilot-notebooks-overview/copilot-ribbon-button.png":::
+:::image type="content" source="media/copilot-notebooks-overview/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot button in the ribbon." lightbox="media/copilot-notebooks-overview/copilot-ribbon-button.png":::
 
 Run the cell at the top of the notebook, with this code:
 
-```
+```python
 #Run this cell to install the required packages for Copilot
-%pip install https://aka.ms/chat-magics-0.0.0-py3-none-any.whl
-%load_ext chat_magics
+%load_ext dscopilot_installer
+%activate_dscopilot
 ```
 
 After the cell successfully executes, you can use Copilot. You must rerun the cell at the top of the notebook each time your session in the notebook closes.
@@ -58,7 +54,7 @@ And more. Copilot responds with the answer or the code, which you can copy and p
 
 As you use Copilot, you can also invoke the magic commands inside of a notebook cell to obtain output directly in the notebook. For example, for natural language answers to responses, you can ask questions using the "%%chat" command, such as:
 
-```
+```python
 %%chat
 What are some machine learning models that may fit this dataset?
 ```
@@ -67,7 +63,7 @@ What are some machine learning models that may fit this dataset?
 
 or
 
-```
+```python
 %%code
 Can you generate code for a logistic regression that fits this data?
 ```
@@ -76,8 +72,10 @@ Can you generate code for a logistic regression that fits this data?
 
 Copilot for Data Science and Data Engineering also has schema and metadata awareness of tables in the lakehouse. Copilot can provide relevant information in context of your data in an attached lakehouse. For example, you can ask:
 
+```copilot-prompt
 - "How many tables are in the lakehouse?"
 - "What are the columns of the table customers?"
+```
 
 Copilot responds with the relevant information if you added the lakehouse to the notebook. Copilot also has awareness of the names of files added to any lakehouse attached to the notebook. You can refer to those files by name in your chat. For example, if you have a file named **sales.csv** in your lakehouse, you can ask "Create a dataframe from sales.csv". Copilot generates the code and displays it in the chat panel. With Copilot for notebooks, you can easily access and query your data from different sources. You don't need the exact command syntax to do it.
 

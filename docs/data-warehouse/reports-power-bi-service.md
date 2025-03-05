@@ -7,9 +7,6 @@ ms.reviewer: salilkanadey
 ms.date: 04/24/2024
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Reporting
 ---
 # Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop

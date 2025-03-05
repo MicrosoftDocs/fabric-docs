@@ -43,8 +43,7 @@ To get started, you must complete the following prerequisites:
 
    For more information, Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
 
-- Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
-:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
+- Ensure that the account used for generating the refresh tokens has contributor permissions on the workspace that contains the data pipeline and notebook.
 
 - Enable the Triggers in data workflows to allow the usage of deferrable operators.
    :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggers.":::
