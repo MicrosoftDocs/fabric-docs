@@ -1,6 +1,6 @@
 ---
 title: Summarize text with the `ai.summarize` function
-description: Learn how to use the `ai.summarize` function to produce summaries of input text (either values from a single column of a DataFrame or row values across all the columns).
+description: Learn how to use the `ai.summarize` function to produce summaries of input text (either values from a single column of a DataFrame or values across all the columns).
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
@@ -13,20 +13,21 @@ ms.search.form: AI functions
 
 # Summarize text with the `ai.summarize` function
 
-The `ai.summarize` function uses Generative AI to product summaries of input text—either values from a single column of a DataFrame or row values across all the columns—with a single line of code.
+The `ai.summarize` function uses Generative AI to product summaries of input text—either values from one column of a DataFrame or values across all the columns—with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
+> - During the initial rollout of AI functions, users will temporarily be limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Use `ai.summarize` with pandas
 
-The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to summarize each row value from that column alone. Alternatively, you can call the `ai.summarize` function on an entire DataFrame, to summarize row values across all the columns.
+The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to summarize each row value from that column alone. Alternatively, you can call the `ai.summarize` function on an entire DataFrame, to summarize values across all the columns.
 
 The function returns a pandas Series that contains summaries, which can be stored in a new DataFrame column.
 
@@ -140,7 +141,7 @@ df.ai.summarize(output_col="summaries")
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains summarized text for each input column text row. If the input text is `null`, the result is `null`. If no input column is specified, the function summarizes values across all columns in DataFrame.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains summarized text for each input text row. If the input text is `null`, the result is `null`. If no input column is specified, the function summarizes values across all columns in the DataFrame.
 
 ### Example
 

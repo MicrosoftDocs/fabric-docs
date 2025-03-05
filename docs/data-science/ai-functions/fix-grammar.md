@@ -15,14 +15,15 @@ ms.search.form: AI functions
 
 The `ai.fix_grammar` function uses Generative AI to correct the spelling, grammar, and punctuation of input text—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
+> - During the initial rollout of AI functions, users will temporarily be limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Use `ai.fix_grammar` with pandas
 

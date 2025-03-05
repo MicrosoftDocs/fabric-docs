@@ -15,9 +15,9 @@ ms.search.form: AI functions
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-With Microsoft Fabric, all users—from developers to business analysts—can derive more value from their enterprise data through Generative AI experiences, including [Copilot](../../get-started/copilot-notebooks-overview.md) and [AI skills](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for text analytics, Fabric users can now harness the power of industry-leading large language models (LLMs) to transform and enrich data with lightweight, user-friendly code. They don't need detailed configuration, complex infrastructure management, or even specific technical expertise.
+With Microsoft Fabric, all business professionals—from developers to analysts—can derive more value from their enterprise data through Generative AI, using experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and [AI skills](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for data engineering, Fabric users can now harness the power of industry-leading large language models (LLMs) to transform and enrich data seamlessly.
 
-AI functions, currently in public preview, allow you to complete the following tasks—all in a single line of code:
+AI functions harness the power of GenAI for summarization, classification, text generation, and so much more—all with a single line of code:
 
 - [**Calculate similarity with `ai.similarity`**](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with a single common text value, or with corresponding text values in another column.
 - [**Categorize text with `ai.classify`**](#categorize-text-with-aiclassify): Classify input text values according to labels you choose.
@@ -28,25 +28,27 @@ AI functions, currently in public preview, allow you to complete the following t
 - [**Translate text with `ai.translate`**](#translate-text-with-aitranslate): Translate input text into another language.
 - [**Answer custom user prompts with `ai.generate_response`**](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
 
-Whether you want to translate product reviews from one language into another, or to generate action items using custom text prompts, AI functions put the power of Fabric's native LLM into your hands, turbocharging data analytics regardless of your level of experience.
+It's seamless to incorporate these functions as part of data-science and data-engineering workflows, whether you're working with pandas or Spark. There is no detailed configuration, no complex infrastructure management, and no specific technical expertise needed.
 
 ## Prerequisites
 
-- To use AI functions with Fabric's native LLM endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
+- To use AI functions with Fabric's built-in AI endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
 - You also need an F64 or higher SKU or a P SKU. With a smaller capacity resource, you need to provide AI functions with your own Azure OpenAI resource [using custom configurations](./configuration.md).
-- Depending on your location, you may need to enable a tenant setting for cross-geo sharing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
+- Depending on your location, you may need to enable a tenant setting for cross-geo processing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
+
 
 > [!NOTE]
 >
 > - AI functions are supported in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
-> - By default, the functions are currently powered by the **gpt-3.5-turbo (0125)** model.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
+> - During the initial rollout of AI functions, users will temporarily be limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Getting started with AI functions
 
-Use of the AI functions library in a Fabric notebook currently requires certain custom packages. The following cells install and import those packages. After that, you can use AI functions with pandas or PySpark, depending on your preference.
+Use of the AI functions library in a Fabric notebook currently requires certain custom packages. The following code installs and imports those packages. Afterward, you can use AI functions with pandas or PySpark, depending on your preference.
 
-The following code samples install the AI functions library and its dependencies.
+The sample code below installs the AI functions library and its dependencies.
 
 > [!WARNING]
 > The PySpark configuration cell takes a few minutes to finish executing. We appreciate your patience.
@@ -55,14 +57,14 @@ The following code samples install the AI functions library and its dependencies
 
 ```python
 # Install fixed version of packages
-%pip install -q openai==1.30 > /dev/null 2>&1
-%pip install -q --force-reinstall httpx==0.27.0 > /dev/null 2>&1
+%pip install -q openai==1.30
+%pip install -q --force-reinstall httpx==0.27.0
 
 # Install latest version of SynapseML-core
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9/synapseml_core-1.0.9-py2.py3-none-any.whl > /dev/null 2>&1
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9/synapseml_core-1.0.9-py2.py3-none-any.whl
 
 # Install SynapseML-Internal .whl with AI functions library from blob storage:
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.10.0-spark3.4-5-a5d50c90-SNAPSHOT/synapseml_internal-1.0.10.0.dev1-py2.py3-none-any.whl > /dev/null 2>&1
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.10.0-spark3.4-6-0cb46b55-SNAPSHOT/synapseml_internal-1.0.10.0.dev1-py2.py3-none-any.whl
 ```
 
 # [PySpark](#tab/pyspark)
@@ -83,7 +85,7 @@ The following code samples install the AI functions library and its dependencies
 
 ---
 
-The following cells import the AI functions library and its dependencies. The pandas cell also imports an optional Python library to display dynamic progress bars that track the status of every AI function you apply.
+The sample code below imports the AI functions library and its dependencies. The pandas cell also imports an optional Python library to display progress bars that track the status of every AI function call.
 
 # [pandas](#tab/pandas)
 
@@ -111,14 +113,14 @@ defaults.set_deployment_name("gpt-35-turbo-0125")
 
 ## Applying AI functions
 
-Each of the following functions allows you to invoke Fabric's native LLM endpoint, transforming or enriching data with state-of-the-art Generative AI. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
+Each of the following functions allows you to invoke Fabric's built-in AI endpoint to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
 
 > [!TIP]
 > To learn about customizing the configuration of AI functions, visit [this article](./configuration.md).
 
 ### Calculate similarity with `ai.similarity`
 
-The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity scores, which are relative, can range from **-1** (opposites) to **1** (identical). A score of **0** indicates that the values are completely unrelated in meaning. For more detailed instructions about the use of `ai.similarity`, visit [this article](./similarity.md).
+The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity scores are relative, and they can range from **-1** (opposites) to **1** (identical). A score of **0** indicates that the values are completely unrelated in meaning. For more detailed instructions about the use of `ai.similarity`, visit [this article](./similarity.md).
 
 #### Sample usage
 
@@ -158,7 +160,7 @@ display(similarity)
 
 ### Categorize text with `ai.classify`
 
-The `ai.classify` function invokes AI to categorize input text, according to custom labels you choose. For more information about the use of `ai.classify`, visit [this article](./classify.md).
+The `ai.classify` function invokes AI to categorize input text according to custom labels you choose. For more information about the use of `ai.classify`, visit [this article](./classify.md).
 
 #### Sample usage
 
@@ -240,7 +242,7 @@ display(sentiment)
 
 ### Extract entities with `ai.extract`
 
-The `ai.extract` function invokes AI to find and extract specific types of information designated by labels you choose—for example, locations or names—from input text. For more detailed instructions about the use of `ai.extract`, visit [this article](./extract.md).
+The `ai.extract` function invokes AI to scan input text and extract specific types of information designated by labels you choose—for example, locations or names. For more detailed instructions about the use of `ai.extract`, visit [this article](./extract.md).
 
 #### Sample usage
 
@@ -426,12 +428,12 @@ The `ai.generate_response` function invokes AI to generate custom text based on 
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        ("Sandals"),
-        ("Polo shirts"),
-        ("Water bottles")
+        ("Scarves"),
+        ("Snow pants"),
+        ("Ski goggles")
     ], columns=["product"])
 
-df["response"] = df.ai.generate_response("Write a snappy, eye-grabbing email subject line for a summer sale.")
+df["response"] = df.ai.generate_response("Write a short, punchy email subject line for a winter sale.")
 display(df)
 ```
 
@@ -442,12 +444,12 @@ display(df)
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("Sandals",),
-        ("Polo shirts",),
-        ("Water bottles",)
+        ("Scarves",),
+        ("Snow pants",),
+        ("Ski goggles",)
     ], ["product"])
 
-responses = df.ai.generate_response(prompt="Write a snappy, eye-grabbing email subject line for a summer sale on the product.", output_col="response")
+responses = df.ai.generate_response(prompt="Write a short, punchy email subject line for a winter sale.", output_col="response")
 display(responses)
 ```
 

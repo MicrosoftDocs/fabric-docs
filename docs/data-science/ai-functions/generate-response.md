@@ -15,14 +15,15 @@ ms.search.form: AI functions
 
 The `ai.generate_response` function uses Generative AI to generate custom text responses based on your own instructions—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
+> - During the initial rollout of AI functions, users will temporarily be limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Use `ai.generate_response` with pandas
 
@@ -51,7 +52,7 @@ df["response"] = df.ai.generate_response(prompt="Instructions for a custom respo
 | **Name** | **Description** |
 |---|---|
 | **`prompt`** <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) that contains prompt instructions to be applied to input text values for custom responses. |
-| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt is a format string or a literal string. If this parameter is set to `True`, then the function considers only the specific column values from each row that appear in the format string. In this case, those column names must appear between curly braces, and other columns are ignored. If this parameter is set to its default value of `False`, then the function considers all column values as context for each input row. |
+| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt is a format string or a literal string. If this parameter is set to `True`, then the function considers only the specific row values from each column name that appears in the format string. In this case, those column names must appear between curly braces, and other columns are ignored. If this parameter is set to its default value of `False`, then the function considers all column values as context for each input row. |
 
 ### Returns
 
@@ -66,12 +67,12 @@ The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/referen
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        ("Sandals"),
-        ("Polo shirts"),
-        ("Water bottles")
+        ("Scarves"),
+        ("Snow pants"),
+        ("Ski goggles")
     ], columns=["product"])
 
-df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale.")
+df["response"] = df.ai.generate_response("Write a short, punchy email subject line for a winter sale.")
 display(df)
 ```
 
@@ -82,12 +83,12 @@ display(df)
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = pd.DataFrame([
-        ("001", "Sandals", "Flipflops", "2021"),
-        ("002", "Polo shirts", "T-shirts", "2010"),
-        ("003", "Water bottles", "Coolers", "2015")
+        ("001", "Scarves", "Boots", "2021"),
+        ("002", "Snow pants", "Sweaters", "2010"),
+        ("003", "Ski goggles", "Helmets", "2015")
     ], columns=["id", "product", "product_rec", "yr_introduced"])
 
-df["response"] = df.ai.generate_response("Write a snappy, enticing email subject line for a summer sale on the {product}.", is_prompt_template=True)
+df["response"] = df.ai.generate_response("Write a short, punchy email subject line for a winter sale on the {product}.", is_prompt_template=True)
 display(df)
 ```
 
@@ -120,13 +121,13 @@ df.ai.generate_response(prompt="Instructions for a custom response based on spec
 | **Name** | **Description** |
 |---|---|
 | **`prompt`** <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains prompt instructions to be applied to input text values, for custom responses. |
-| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt is a format string or a literal string. If this parameter is set to `True`, then the function considers only the specific column values from each row that appear in the format string. In this case, those column names must appear between curly braces, and other columns are ignored. If this parameter is set to its default value of `False`, then the function considers all column values as context for each input row. |
+| **`is_prompt_template`** <br> Optional | A [boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt is a format string or a literal string. If this parameter is set to `True`, then the function considers only the specific row values from each column that appears in the format string. In this case, those column names must appear between curly braces, and other columns are ignored. If this parameter is set to its default value of `False`, then the function considers all column values as context for each input row. |
 | **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store custom responses for each row of input text. If this parameter isn't set, a default name is generated for the output column. |
 | **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each row of input text. If this parameter isn't set, a default name is generated for the error column. If there are no errors for a row of input, the value in this column is `null`. |
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains custom text responses to the prompt for each input column text row.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains custom text responses to the prompt for each input text row.
 
 ### Example
 
@@ -137,12 +138,12 @@ A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/py
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("Sandals",),
-        ("Polo shirts",),
-        ("Water bottles",)
+        ("Scarves",),
+        ("Snow pants",),
+        ("Ski goggles",)
     ], ["product"])
 
-responses = df.ai.generate_response(prompt="Write a snappy, eye-grabbing email subject line for a summer sale.", output_col="response")
+responses = df.ai.generate_response(prompt="Write a short, punchy email subject line for a winter sale.", output_col="response")
 display(responses)
 ```
 
@@ -153,12 +154,12 @@ display(responses)
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 
 df = spark.createDataFrame([
-        ("001", "Sandals", "Flipflops", "2021"),
-        ("002", "Polo shirts", "T-shirts", "2010"),
-        ("003", "Water bottles", "Coolers", "2015")
+        ("001", "Scarves", "Boots", "2021"),
+        ("002", "Snow pants", "Sweaters", "2010"),
+        ("003", "Ski goggles", "Helmets", "2015")
     ], ["id", "product", "product_rec", "yr_introduced"])
 
-responses = df.ai.generate_response(prompt="Write a snappy, eye-grabbing email subject line for a summer sale on the {product}.", is_prompt_template=True, output_col="response")
+responses = df.ai.generate_response(prompt="Write a short, punchy email subject line for a winter sale on the {product}.", is_prompt_template=True, output_col="response")
 display(responses)
 ```
 
