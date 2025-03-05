@@ -231,7 +231,7 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
 | spark.synapse.logAnalytics.keyVault.name | - | The Key Vault URI for the Log Analytics ID and key. |
 | spark.synapse.logAnalytics.keyVault.key.workspaceId | SparkLogAnalyticsWorkspaceId | The Key Vault secret name for the Log Analytics workspace ID. |
 | spark.synapse.logAnalytics.keyVault.key.secret | SparkLogAnalyticsSecret | The Key Vault secret name for the Log Analytics workspace. |
-| spark.synapse.logAnalytics.uriSuffix | ods.opinsights.azure.com | The destination Log Analytics workspace [URI suffix](../azure/azure-monitor/logs/data-collector-api#request-uri). If your workspace isn't in Azure global, you need to update the URI suffix according to the respective cloud. |
+| spark.synapse.logAnalytics.uriSuffix | ods.opinsights.azure.com | The destination Log Analytics workspace [URI suffix](/azure/azure-monitor/logs/data-collector-api#request-uri). If your workspace isn't in Azure global, you need to update the URI suffix according to the respective cloud. |
 | spark.synapse.logAnalytics.filter.eventName.match | - | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerJobStart,SparkListenerJobEnd`. |
 | spark.synapse.logAnalytics.filter.loggerName.match | - | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger`. |
 | spark.synapse.logAnalytics.filter.metricName.match | - | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used`. |
@@ -255,7 +255,7 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
       - Confirm that Log Analytics has the necessary write permissions.
       - If KeyVault is involved, ensure that the KeyVault read permissions are properly assigned to the relevant service or user.
    
-   3) **Inspect Data Limits**: Fabric sends log data to Azure Monitor by using the HTTP Data Collector API. [The data posted to the Azure Monitor Data collection API is subject to certain constraints](../azure/azure-monitor/logs/data-collector-api#data-limits):
+   3) **Inspect Data Limits**: Fabric sends log data to Azure Monitor by using the HTTP Data Collector API. [The data posted to the Azure Monitor Data collection API is subject to certain constraints](/azure/azure-monitor/logs/data-collector-api#data-limits):
 
       - Maximum of 30 MB per post to Azure Monitor Data Collector API. This is a size limit for a single post. If the data from a single post exceeds 30 MB, you should split the data into smaller sized chunks and send them concurrently.
       - Maximum of 32 KB for field values. If the field value is greater than 32 KB, the data is truncated.
