@@ -341,7 +341,9 @@ items:
      href: spark-arcgis-geoanalytics.md
 - name: User data functions (preview)
   items:
-   - name: Create User data functions
+   - name: Overview
+     href: ./user-data-functions/user-data-functions-overview.md
+   - name: Create a User data functions item
      href: ./user-data-functions/create-user-data-functions-portal.md
    - name: Integration with data pipelines
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
