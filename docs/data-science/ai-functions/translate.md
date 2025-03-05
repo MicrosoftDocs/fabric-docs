@@ -15,17 +15,18 @@ ms.search.form: AI functions
 
 The `ai.translate` function uses Generative AI to translate input text to a new language of your choice—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 > [!TIP]
-> The `ai.translate` function has been tested on 10 target languages: **English**, **French**, **German**, **Spanish**, **Greek**, **Swedish**, **Finnish**, **Polish**, **Czech**, and **Italian**. Your results with other languages may vary.
+> The `ai.translate` function was tested with 10 languages: **Czech**, **English**, **Finnish**, **French**, **German**, **Greek**, **Italian**, **Polish**, **Spanish**, and **Swedish**. Your results with other languages may vary.
 
 ## Use `ai.translate` with pandas
 
@@ -117,3 +118,4 @@ display(translations)
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - To learn more about the full set of AI functions, visit [this overview article](./overview.md).
 - Learn how to customize the configuration of AI functions [here](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

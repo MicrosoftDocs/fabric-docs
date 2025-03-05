@@ -15,18 +15,19 @@ ms.search.form: AI functions
 
 The `ai.similarity` function uses Generative AI to compare two string expressions and then calculate a semantic similarity score—all with a single line of code. You can compare text values from one column of a DataFrame with a single common text value or with pairwise text values in another column.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Use `ai.similarity` with pandas
 
-The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column. The function measures the semantic similarity of each input row with respect to a single common text value. Alternatively, it can measure the semantic similarity of each row with respect to corresponding pairwise values in another column that has the same dimensions as the input column.
+The `ai.similarity` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to calculate the semantic similarity of each input row with respect to a single common text value. Alternatively, the function can calculate the semantic similarity of each row with respect to corresponding pairwise values in another column that has the same dimensions as the input column.
 
 The function returns a pandas Series containing similarity scores, which can be stored in a new DataFrame column.
 
@@ -54,7 +55,7 @@ df["similarity"] = df["col1"].ai.similarity(df["col2"])
 
 ### Returns
 
-A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains similarity scores for each input text row. The output similarity scores are relative, and they're best used for ranking. Scores can range from -1 (opposites) to 1 (identical). A score of 0 indicates that the values are unrelated in meaning.
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains similarity scores for each input text row. The output similarity scores are relative, and they're best used for ranking. Scores can range from **-1** (opposites) to **1** (identical). A score of **0** indicates that the values are unrelated in meaning.
 
 ### Example
 
@@ -125,7 +126,7 @@ df.ai.similarity(input_col="col1", other_col="col2", output_col="similarity")
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains generated similarity scores for each input column text row. The output similarity scores are relative, and they're best used for ranking. Scores can range from -1 (opposites) to 1 (identical). A score of 0 indicates that the values are unrelated in meaning.
+A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains generated similarity scores for each input text row. The output similarity scores are relative, and they're best used for ranking. Scores can range from **-1** (opposites) to **1** (identical). A score of **0** indicates that the values are unrelated in meaning.
 
 ### Example
 
@@ -174,3 +175,4 @@ display(similarity)
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - Learn more about the full set of AI functions [here](./overview.md).
 - Learn how to customize the configuration of AI functions [here](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
