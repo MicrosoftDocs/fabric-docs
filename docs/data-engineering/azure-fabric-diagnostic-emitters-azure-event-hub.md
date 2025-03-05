@@ -41,9 +41,6 @@ To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs
 
 > [!NOTE]
 >
-> **Known issue**: Unable to start a session using Option 2 provisionally.
-> Currently, storing secrets in Key Vault prevents Spark sessions from starting. Please prioritize configuring it using the method outlined in Option 1.
-> 
 > Ensure that users who submit Apache Spark applications are granted read secret permissions. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
 
 To configure Azure Key Vault for storing the workspace key:
@@ -72,6 +69,10 @@ To configure Azure Key Vault for storing the workspace key:
 
 ### Step 3: Attach the Environment Artifact to Notebooks or Spark Job Definitions, or Set It as the Workspace Default
 
+   > [!NOTE]
+   >
+   > Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
+
 **To attach the environment to Notebooks or Spark job definitions**:
 1. Navigate to the specific notebook or Spark job definition in Fabric.
 2. Select the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
@@ -82,10 +83,6 @@ To configure Azure Key Vault for storing the workspace key:
 1. Navigate to Workspace Settings in Fabric.
 2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**.
 3. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
-
-> [!NOTE]
->
-> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 ## Available configurations
 

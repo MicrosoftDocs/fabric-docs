@@ -40,10 +40,10 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
 
    ```properties
    spark.synapse.diagnostic.emitters: <EMITTER_NAME>
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.type: "AzureLogAnalytics"
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.categories: "Log,EventLog,Metrics"
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.secret: <LOG_ANALYTICS_WORKSPACE_KEY>
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.type: "AzureLogAnalytics"
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.categories: "Log,EventLog,Metrics"
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.secret: <LOG_ANALYTICS_WORKSPACE_KEY>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
@@ -82,12 +82,12 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
    ```properties
    // Spark properties for EMITTER_NAME
-   spark.synapse.diagnostic.emitters EMITTER_NAME
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.type: "AzureLogAnalytics"
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.categories: "Log,EventLog,Metrics"
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.secret.keyVault: <AZURE_KEY_VAULT_NAME>
-   spark.synapse.diagnostic.emitter.EMITTER_NAME.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
+   spark.synapse.diagnostic.emitters <EMITTER_NAME>
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.type: "AzureLogAnalytics"
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.categories: "Log,EventLog,Metrics"
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.secret.keyVault: <AZURE_KEY_VAULT_NAME>
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
@@ -266,9 +266,11 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
 2. **How can I confirm that Log Analytics permissions are correctly configured?**
 
    To ensure Log Analytics can receive logs, verify the following permissions:
+
    1) **Log Analytics Write Permissions**:
       - Log in to the Azure portal and navigate to your Log Analytics workspace.
       - In the "Access control (IAM)" section, confirm that your user, service principal, or application has been assigned the "Log Analytics Contributor" or "Contributor" role.
+
    2) **KeyVault Read Permissions (if applicable)**:
       - If logs involve KeyVault, go to the KeyVault's "Access policies" or "Access control (IAM)" section.
       - Ensure the relevant user or service principal has read permissions, such as the "Key Vault Reader" role. If permissions are misconfigured, contact your Azure administrator to adjust the role assignments and wait for the permissions to sync (this may take a few minutes).
@@ -282,6 +284,7 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
 4. **Azure Log Analytics Data Limits**
 
    Fabric sends log data to Azure Monitor by using the HTTP Data Collector API. [The data posted to the Azure Monitor Data collection API is subject to certain constraints](/azure/azure-monitor/logs/data-collector-api#data-limits):
+   
    - Maximum of 30 MB per post to Azure Monitor Data Collector API. This is a size limit for a single post. If the data from a single post exceeds 30 MB, you should split the data into smaller sized chunks and send them concurrently.
    - Maximum of 32 KB for field values. If the field value is greater than 32 KB, the data is truncated.
    - Recommended maximum of 50 fields for a given type. This is a practical limit from a usability and search experience perspective.  
