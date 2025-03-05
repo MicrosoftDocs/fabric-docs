@@ -13,16 +13,17 @@ ms.search.form: AI functions
 
 # Extract entities with the `ai.extract` function
 
-The `ai.extract` function uses Generative AI to scan input text and extract specific types of information designated by labels you choose (for example, locations or names)—all with a single line of code.
+The `ai.extract` function uses Generative AI to scan input text and extract specific types of information designated by labels you choose—for example, locations or names—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Use `ai.extract` with pandas
 
@@ -44,7 +45,7 @@ df_entities = df["text"].ai.extract("entity1", "entity2", "entity3")
 
 ### Returns
 
-The function returns a [pandas dataframe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) with a column for each specified entity type. The column or columns contain the entities extracted for each row of input text. If the function identifies more than one match for a given entity, it returns only one of those matches. If no match is found, the result is `null`.
+The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) with a column for each specified entity type. The column or columns contain the entities extracted for each row of input text. If the function identifies more than one match for a given entity, it returns only one of those matches. If no match is found, the result is `null`.
 
 ### Example
 
@@ -111,3 +112,4 @@ display(df_entities)
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - Learn more about the full set of AI functions [here](./overview.md).
 - Learn how to customize the configuration of AI functions [here](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
