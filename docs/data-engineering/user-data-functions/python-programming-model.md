@@ -1,6 +1,6 @@
 ---
 title: Python Programming model for Fabric User Data Functions (Preview)
-description: Overview of the  User data functions programming model using Python
+description: Overview of the User data functions programming model for Python
 ms.author: sumuth
 author: mksuni
 ms.topic: overview
@@ -10,47 +10,51 @@ ms.search.form: Fabric User Data Functions
 
 
 # Overview of Fabric user data functions programming model (Preview)
-The Fabric programming model helps you to easily create Data function sets and easily connect to Fabric data sources such as Datawareshouse or Lakehouse etc. to read data, transform it in any desired output. The model is leaning towards having to learn Fabric data function set concepts and focusing more on ease of development in Python. 
 
-## Prerequisites
-- [Python 3.11 version](https://www.python.org/downloads/release/python-3110/) 
-- [User data functions Python SDK in PyPI](https://pypi.org/project/fabric-user-data-functions/) 
+The Fabric User Data Functions programming model is a SDK that provides the necessary functionality to author and publish runnable functions in Fabric, and seamlessly integrate with other items in the Fabric ecosystem, such as Fabric data sources. This library is [publicly available in PyPI](https://pypi.org/project/fabric-user-data-functions/) and is pre-installed in your User Data Functions items.
 
 ## User data functions SDK 
-Fabric User data functions item can contain many functions. Each function is a stateless method in your Python script that processes input and produces output. User data functions programming model allows you to get started with few steps: 
+A Fabric User Data Functions item contains one or many functions you can invoke from the Fabric portal, from another Fabric item or from an external application using the provided REST endpoint. Each function is a method in your Python script that allows passing parameters and returning an output to the invoker. The User Data Functions programming model contains the following components: 
 
-- All of the code you need to create User data functions in Python is imported from `fabric.functions`. The sample already includes the line `import fabric.functions as fn`, so any classes can be created through `fn`.
+- The `fabric.functions` library provides the code you need to create User data functions in Python. You can see this library being imported in your first function template when you create a new User Data Functions item.
 
-- Ensure the line `fn.UserDataFunctions()` is at the beginning of the code, before any functions you create, in `function_app.py`. It provides the execution context for all the functions defined in this item.
+- The method `fn.UserDataFunctions()` provides the execution context. This is added at the beginning of the code file in all new User Data Functions items, before any function defintions.
 
-**Example:**
-```python
-import datetime
-import fabric.functions as fn
-import logging
+  **Example:**
+  ```python
+  import datetime
+  import fabric.functions as fn
+  import logging
 
-udf = fn.UserDataFunctions()
-```
+  udf = fn.UserDataFunctions()
+  ```
 
-- The request payload length is limited to 2 MB. 
+- Every function is identified with a `@udf.function()` decorator. This decorator will define if your function can be invoked individually from the portal or an external invoker.
 
-## Write a data function 
-A user defined data function is identified with `@udf.function()` decorator. You can pass an input for the function such as primitive data types like str, int, float, etc. In the function code, you can write your business logic. 
+  **Invokable function example**
+  ```python
+  # This is a hello fabric function sample that can be invoked from the Fabric portal, another Fabric item or an external application.
 
-**Example**
-```python
-# This is a hello fabric function sample 
-@udf.function()
-def hello_fabric(name: str) -> str:
-    logging.info('Python UDF trigger function processed a request.')
-    logging.info('Executing hello fabric function.')
-    
-    return f"Welcome to Fabric Functions, {name}, at {datetime.datetime.now()}!"
-    
-```
+  @udf.function()
+  def hello_fabric(name: str) -> str:
+      logging.info('Python UDF trigger function processed a request.')
+      logging.info('Executing hello fabric function.')
+      
+      return f"Welcome to Fabric Functions, {name}, at {datetime.datetime.now()}!"
+  ```
+
+- Any Python methods without the `@udf.function()` decorator cannot be invoked directly. They can only be invoked from functions that contain the decorator, and can be used as helper functions.
+
+  **Helper function example**
+  ```python
+  # This is a helper function that can be invoked from other functions, but cannot be invoked or run directly because it doesn't have the @udf.function() decorator
+
+  def uppercase_name(name: str) -> str:
+      return name.upper()
+  ```
 
 ## Input types supported 
-The input data types supported are:
+You can define input parameters for the function such as primitive data types like str, int, float, etc. The supported input data types are:
 
 | **JSON Type** | **Python Data type** |
 | ------------------- | ------------------------ |
@@ -76,21 +80,21 @@ The output data types supported are:
 | None|
 
 ## Data connections to Fabric data sources
-The programming model allows you to securely use these connections without having to use the connection strings in your code. You can add data connections to your user data functions item to any data source in Fabric. The library `fabric.functions` provides two ways to handle data connections: 
+This module allows you to reference the data connections that were created in the [Manage connections feature](./connect-to-data-sources.md) without the need for writing connection strings in your code. The library `fabric.functions` provides two ways to handle data connections: 
 
-- **fabric.functions.FabricSqlConnection:** It allows you to work with SQL databases in Fabric, including SQL Analytics endpoints
+- **fabric.functions.FabricSqlConnection:** It allows you to work with SQL databases in Fabric, including SQL Analytics endpoints and Fabric Warehouses.
 - **fabric.functions.FabricLakehouseClient:** It allows you to work with Lakehouses, with a way to connect to both Lakehouse tables and Lakehouse files.
  
-In order to define you connection to data sources you want to use with your custom logic to read or write data, use `@udf.connection`. You can use it in any of the following formats:
+To reference a connection to a data source, you need to use the `@udf.connection` decorator. You can use it in any of the following formats:
 
 - `@udf.connection(alias="<alias for data connection>", argName="sqlDB")`
 - `@udf.connection("<alias for data connection>", "<argName>")`
 - `@udf.connection("<alias for data connection>")`
 
 The arguments for `@udf.connection` are:
-- `argName` is the name of the argument you use as input for your data function.
-- `alias` is the alias of data connection you is added to your data function. You can get alias from **Manage connections**.
-- `argName` and `alias` can be same, in such cases you can just use `@udf.connection("<alias for data connection>")`
+- `argName` is the name of the variable you will use as input for your function.
+- `alias` is the alias of the connection you added in the **Manage connections** menu.
+- If the `argName` and `alias` have the same value, you can use `@udf.connection("<alias and argName for the data connection>")`.
 
 ### Example
 
@@ -99,89 +103,74 @@ The arguments for `@udf.connection` are:
 @udf.connection("demosqldatabase")
 @udf.function()
 def read_from_sql_db(demosqldatabase: fn.FabricSqlConnection)-> list:
-   # Replace with the query you want to run
-   query = "SELECT * FROM (VALUES ('John Smith', 31), ('Kayla Jones', 33)) AS Employee(EmpName, DepID);"
-   . . . .
-   . . . .
-   return results
+  # Replace with the query you want to run
+  query = "SELECT * FROM (VALUES ('John Smith', 31), ('Kayla Jones', 33)) AS Employee(EmpName, DepID);"
+
+  # [...] Here is where the rest of your SqlConnection code would be.
+
+  return results
 ```
 
 ## Get invocation properties using UserDataFunctionContext
-A parameter with the data type UserDataFunctionContext can be added to a User Data Function to access metadata about a function's invocation, with the data supplied within it for you.
+The programming model also includes the `UserDataFunctionContext` object. This is object contains the function invocation metadata and can be used to create specific app logic for certain invocation mechanisms.
 
-Here are the properties for UserDataFunctionContext:
+The following are the properties for the `UserDataFunctionContext` object:
 
 
 |Property Name|Data Type|Description|
 |---------------|-------------|------------------------------------|
-| Invocation ID | string| The unique Guid tied to the invocation of the user data function |
-| ExecutingUser | UserDetails | Metadata of the user's information that is being used to authorize the invocation of the function |
+| Invocation ID | string| The unique GUID tied to the invocation of the User Data Function |
+| ExecutingUser | object | Metadata of the user's information used to authorize the invocation. |
 
-Where ExecutingUser contains the following information:
+The `ExecutingUser` object contains the following information:
 
 | Property Name| Data Type| Description|
 |----------------| ----------------|-----------------------------------------|
-| Oid | string (Guid) | The user's object ID, which is an immutable identifier for the requestor, which is the verified identity of the user or service principal. This ID uniquely identifies the requestor across applications. We suggest using it in tandem with TenantId to be the values to perform authorization checks. |
-| TenantId | string (Guid) | The tenant ID of the user, which represents the tenant that the user is signed into. |
-| PreferredUsername | string | The preferred username of the user, which can be an email address, phone number, generic username, or unformatted string. It's mutable. | 
+| OID | string (GUID) | The user's object ID, which is an immutable identifier for the requestor. This is the verified identity of the user or service principal used to invoke this function across applications. |
+| TenantId | string (GUID) | The ID of the tenant that the user is signed in to. |
+| PreferredUsername | string | The preferred username of the invoking user, as set by them. This value is mutable. | 
 
-For the function to inject data into the UserDataFunctionContext parameter, you must use an attribute for UserDataFunctionContext. Add `@udf.context(argName="<parameter name>")` to the top of the function. `argName` is optional and can be defined in the function input parameters.
+To access the `UserDataFunctionContext` parameter, you must use this decorator: `@udf.context(argName="<parameter name>")` at the top of the function definition.
 
 **Example**
 ```python
-@udf.context(myContext")
+@udf.context(argName="myContext")
 @udf.function()
 def getContext(myContext: fabric.functions.UserDataFunctionContext)-> str:
     logging.info('Python UDF trigger function processed a request.')
     return f"Hello oid = {context.executing_user['Oid']}, TenantId = {context.executing_user['TenantId']}, PreferredUsername = {context.executing_user['PreferredUsername']}, InvocationId = {context.invocation_id}"
 ```
 
-## Example: Function that queries data 
-Here's an example function that queries a Warehouse in Fabric and then write the data to a csv in a Lakehouse in Fabric. Before using the sample, [Create a Data warehouse with sample data](../../data-warehouse/create-warehouse-sample.md) or your own data before creating this function. The function example reads the results from a query for a table in the data warehouse.
- 
-Before running the example, complete these steps:
+## Throw a handled error using UserThrownError
+When developing your function, you can throw an expected error response using the `UserThrownError` available in the Python programming model. One use of this method is managing cases where the user-provided inputs fail to pass business validation rules. 
 
-1. Select Manage connections to connect to a Fabric SQL Database
-2. Copy the Alias name and replace it in `@udf.connection()` decorator.
-
+**Example**
 ```python
-# This sample allows you to read data from a Fabric SQL Database 
-# Complete these steps before testing this function 
-# 1. Select Manage connections to connect to a Fabric SQL Database
-# 2. Copy the Alias name and replace it below inside the @udf.connection() decorator.
+import datetime
 
-@udf.connection(argName="sqlDB",alias="<alias for sql database>")
 @udf.function()
-def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
-    # Replace with the query you want to run
-    query = "SELECT * FROM (VALUES ('John Smith', 31), ('Kayla Jones', 33)) AS Employee(EmpName, DepID);"
+def raise_userthrownerror(age: int)-> str:
+    if age < 18:
+        raise fn.UserThrownError("You must be 18 years or older to use this service.", {"age": age})
 
-    # Establish a connection to the SQL database
-    connection = sqlDB.connect()
-    cursor = connection.cursor()
-
-    # Execute the query
-    cursor.execute(query)
-
-    # Fetch all results
-    results = []
-    for row in cursor.fetchall():
-        results.append(row)
-
-    # Close the connection
-    cursor.close()
-    connection.close()
-        
-    return results
-
+    return f"Welcome to Fabric Functions at {datetime.datetime.now()}!"
 ```
 
-## How to invoke a function
-Functions can be invoked by calling the Function endpoint Url. Select the function you want to invoke in the **Functions explorer** and select **Copy Function URL**. Use this URL in your front end application to invoke the function. [See Invoke user data functions from an application](./tutorial-invoke-from-python-app.md)
+This method takes two parameters:
+- `Message`: This string will be returned as the error message to the application that is invoking this function.
+- A dictionary of properties that will be returned to the application that is invoking this function.
+
+## Invoking a function from an external application
+Functions can be invoked by issuing a REST call to the endpoint URL. Select the function you want to invoke in the **Functions explorer** and select **Copy Function URL**. You can also turn on or off the ability to use this URL externally from the **Properties** menu.
+
+:::image type="content" source="..
+\media\user-data-functions-python-programming-model\python-programming-model-1.png" alt-text="Screenshot showing how to debug locally with breakpoints." lightbox="..\media\user-data-functions-python-programming-model\python-programming-model-1.png":::
+
+Then, use this URL in your application to invoke the function. See [Invoke user data functions from an application](./tutorial-invoke-from-python-app.md)
 
 
-## Output schema for User data function 
-The output for a user data function uses the following schema. 
+### Output schema 
+When invoking a User Data Function from an external application, the output schema will have the following format: 
 
 ```json
 {
@@ -201,24 +190,31 @@ The output for a user data function uses the following schema.
 }
 ```
 
-The following properties are returned when a function is executed:
-- **functionName**: It provides the name of the function executed.
-- **invocationId**: It provides the invocation ID for execution of a function at a given time.
-- **status**: You can view the status of the function execution.
-- **output**: You can see the output of the function based on output type defined in the function. 
-- **errors**: If any errors were captured, you see the error name, error message, and any more information about the issue.
+The following properties are returned:
+- **functionName**: The name of the function that was executed.
+- **invocationId**: The invocation ID for execution of a function.
+- **status**: The outcome of the function's execution. This can have any of the following values: `Succeeded`, `BadRequest`, `Failed`, `Timeout` and `ResponseTooLarge`.
+- **output**: The output value returned by the function. 
+- **errors**: If any errors were captured, this will return a list of each error with their name, error message and error properties.
 
 ## Error codes
 
 | **Error code** | **Description** |
 | ------------------- | ------------------------ |
-| 200 OK (Success)| The request as successful|
-| 403 (Forbidden) | The response is too large and the invocation fails.|
-| 408 (Request Timeout) | The request failed due to execution taking more than 200 s. |
-| 409 (Conflict) | The request throws an exception during execution. |
+| 200 OK (Success)| The request was successful|
+| 403 (Forbidden) | The response was too large and the invocation failed.|
+| 408 (Request Timeout) | The request failed due to the execution taking more than 200 seconds. |
+| 409 (Conflict) | The request threw an exception during the execution. |
 | 400 (Bad Request)| The request failed due to invalid or missing input parameters.|
-| 500 (Internal Server Error)| The request failed due to internal error.|
+| 500 (Internal Server Error)| The request failed due to an internal error.|
 
+## Service limits
+
+| Limit | Value | Description |
+|-------|-------------|----|
+| Request payload length | 2 MB | The maximum size of all request parameters combined. |
+| Request execution timeout | 200 seconds | The maximum amount of time a function can run for.|
+| Response size limit | 30MB | The maximum size of the response's return value of a function.| 
 
 ## Next steps
 - [Create user data functions](./create-user-data-functions-portal.md)

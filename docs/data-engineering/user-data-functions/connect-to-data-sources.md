@@ -111,7 +111,7 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
     return results
 ```
 
-And that's all you need to connect to a data source from your Fabric User Data Functions. 
+And that's all you need to connect to a data source from your Fabric User Data Functions. Make sure to publish your functions before you try to run your changes.
 
 ## Next steps
 - [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md) or by using [the VSCode extension](./create-user-data-functions-vs-code.md).

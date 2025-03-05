@@ -10,9 +10,9 @@ ms.search.form: Fabric Uuser data functions, VSCode
 
 # Create a user data functions item in Visual Studio Code (Preview)
 
-Microsoft Fabric Data Functions is a serverless solution that enables you to quickly and easily develop applications on top of Fabric-native data sources. You can use user data functions to create efficient and scalable web services, APIs, or microservices. The advantages are increased flexibility and cost-effectiveness of serverless computing in Fabric. Fabric user data functions are invoked as an HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
+Fabric User Data Functions is a serverless solution that enables you to quickly and easily develop applications on top of Fabric-native data sources. The advantages are increased flexibility and cost-effectiveness of serverless computing in Fabric. Fabric User Data Functions are invoked as an HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
 
-In this quickstart, you learn how to create a user data functions item in Visual Studio Code. 
+In this quickstart, you learn how to create a User Data Functions item in Visual Studio Code. 
 
 ## Prerequisites
 - [A Fabric Workspace](../../get-started/create-workspaces.md)
