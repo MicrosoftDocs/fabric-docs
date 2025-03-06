@@ -56,11 +56,11 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
-- name: Copilot for Data Warehouse
+- name: Copilot in Data Warehouse
   items:
-  - name: What is Copilot for Data Warehouse?
+  - name: What is Copilot in Data Warehouse?
     href: copilot.md
-  - name: Use the Copilot chat pane
+  - name: Use the chat pane
     href: copilot-chat-pane.md
   - name: Use code completions
     href: copilot-code-completion.md
