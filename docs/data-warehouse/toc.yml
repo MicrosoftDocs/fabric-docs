@@ -56,7 +56,7 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
-- name: Copilot for Data Warehouse
+- name: Copilot in Data Warehouse
   items:
   - name: What is Copilot in Data Warehouse?
     href: copilot.md
