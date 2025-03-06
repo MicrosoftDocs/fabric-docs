@@ -97,8 +97,6 @@ ML Model, Experiment, and AI skill supports private link.
 
 * If internet access is disabled, and if the Power BI semantic model, Datamart, or Dataflow Gen1 connects to a Power BI semantic model or Dataflow as a data source, the connection will fail.
 
-* Direct Lake mode is currently not supported using Private Link.
-
 * Publish to Web isn't supported when the tenant setting **Azure Private Link** is enabled in Fabric.
 
 * Email subscriptions aren't supported when the tenant setting **Block Public Internet Access** is enabled in Fabric.
@@ -125,6 +123,11 @@ Limitations:
 ### Healthcare data solutions (preview)
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. Within a tenant that has been enabled with a private link, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data.  This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
+
+### Azure and Fabric Events
+Azure and Fabric events support private link such that when the **Block Public Internet Access** tenant setting is enabled:
+- Any new configuration to consume Azure events, like Azure Blob Storage events, would be blocked.
+- Existing configurations that are consuming Azure events will start losing any new events.
 
 ### Other Fabric items
 

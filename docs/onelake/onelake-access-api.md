@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: concept-article
 ms.custom:
-ms.date: 01/27/2025
+ms.date: 02/21/2025
 #customer intent: As a data engineer, I want to understand how to connect to Microsoft OneLake using the existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs so that I can seamlessly access and manipulate my data.
 ---
 
@@ -14,7 +14,7 @@ ms.date: 01/27/2025
 
 Microsoft OneLake provides open access to all of your Fabric items through existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS Gen2 just by using a OneLake URI instead. You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.
 
-As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences instead of the ADLS Gen2 APIs. For a full list of changes to these APIs, see [OneLake API parity](onelake-api-parity.md).
+As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. For a full list of changes to these APIs, see [OneLake API parity](onelake-api-parity.md).
 
 ## URI syntax
 
@@ -60,7 +60,7 @@ For quick, ad-hoc testing of OneLake using direct API calls, here's a simple exa
 
   ```powershell
   Connect-AzAccount
-  $testToken = Get-AzAccessToken -ResourceTypeName Storage
+  $testToken = Get-AzAccessToken -AsSecureString -ResourceTypeName Storage
   # Retrieved token is of string type which you can validate with the "$testToken.Token.GetTypeCode()" command.
   $testToken.Token | Set-Clipboard
   ```
@@ -74,6 +74,15 @@ OneLake regional endpoints all follow the same format: `https://<region>-onelake
 ## Common issues
 
 If a tool or package compatible with ADLS Gen2 isn't working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (`dfs.fabric.microsoft.com`) than ADLS Gen2 (`dfs.core.windows.net`), some tools don't recognize the OneLake endpoint and block it. Some tools allow you to use custom endpoints (such as PowerShell). Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint. If you find a URL validation issue or have any other issues connecting to OneLake, [let us know](https://ideas.fabric.microsoft.com/).
+
+## Resources
+
+OneLake is accessible through the same APIs and SDKs as ADLS Gen2. To learn more about using ADLS Gen2 APIs, please see the following pages:
+- [ADLS Gen2 API Reference](/rest/api/storageservices/data-lake-storage-gen2)
+- ADLS Gen2 Filesystem SDKs
+  - [.NET](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet)
+  - [Python](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
+  - [Java](/azure/storage/blobs/data-lake-storage-directory-file-acl-java)
 
 ## Samples
 

@@ -2,8 +2,8 @@
 title: Apache Spark runtime lifecycle in Fabric
 description: Lifecycle for Apache Spark runtime in Fabric
 ms.reviewer: snehagunda
-ms.author: eskot
-author: ekote
+ms.author: sngun
+author: SnehaGunda
 ms.topic: overview
 ms.custom:
 ms.date: 11/11/2024
