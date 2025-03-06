@@ -309,3 +309,5 @@ items:
      href: graphql-operations.md
    - name: Monitoring dashboard and logging (preview)
      href: graphql-monitor-log.md
+   - name: Limitations
+     href: api-graphql-limits.md
