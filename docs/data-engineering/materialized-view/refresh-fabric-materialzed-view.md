@@ -1,8 +1,8 @@
 ---
 title: "Refresh a Fabric materialized view"
 description: Learn How to refresh a Fabric Materialized view.
-author: sreekzz
-ms.author: v-sreeiyer
+author: abhishjain002 
+ms.author: abhishjain 
 ms.topic: how-to
 ms.date: 03/06/2025
 ---
