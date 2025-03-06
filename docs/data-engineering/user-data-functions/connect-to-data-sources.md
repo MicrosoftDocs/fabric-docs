@@ -25,28 +25,28 @@ The following data sources are currently supported for Fabric User Data Function
 - [Fabric Mirrored Databases](../../database\mirrored-database\overview.md)
 
 ## How to create a new data connection for your User Data Functions item
-Any data connections you add will be associated with your User Data Functions item and can be referenced in the code of any of your functions. To follow this guide, you will need a Fabric User Data Functions item and an existing Fabric data source.
+Any data connections you add will be associated with your User Data Functions item and can be referenced in the code of any of your functions. To follow this guide, you need an existing Fabric User Data Functions item and an existing Fabric data source.
 
-### 1. Open the Manage Connections menu from your Functions portal
+### 1. Open the `Manage Connections` menu from your Functions portal
 You will find the **Manage Connections button** in the top bar of the Functions portal editor.
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-1.png" alt-text="Portal editor with a highlight on a button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-1.png":::
 
-Once you click on it, this will open a side panel. This panel will contain the data connections you create. Click on **Add data connection** to create a new one.
+Once you click on it, this will open a side panel. This panel contains any data connections you created. Click on **Add data connection** to create a new one.
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-2.png" alt-text="Manage connections side panel with no connections listed." lightbox="..\media\user-data-functions-manage-connections\manage-connections-2.png":::
 
 ### 2. Select your data connection from the OneLake Catalog
-After clicking on `Add data connection`, you will see the OneLake catalog with a list of all the existing data sources that your user account has access to, including those in other Workspaces. This list is also filtered to include the supported data sources only. 
+After clicking on `Add data connection`, you will see the OneLake catalog with a list of all the data sources your user account has access to. This list includes data sources that may be in other Workspaces. This list is also filtered to include the supported data sources only. 
 
 From here, select your data source of choice and **click on the Connect button**.
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-3.png" alt-text="OneLake data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-3.png":::
 
 > [!NOTE]
-> If you can't find the data source you are looking for, make sure you have the right permissions to connect to it, or make sure it is part of the supported data source types listed at the top of this article. 
+> If you can't find the data source you are looking for, make sure you have the right permissions to connect to it. Alternatively, make sure you are using a supported data source, as listed at the top of this article.
 
-This will create a new connection to the data source you selected and add it to the connections side panel. Once you see this connection, **take note of the Alias field** that was generated. You will need this to reference this connection from any function in your User Data Functions item.
+This will create a new connection to the data source you selected and add it to the connections side panel. Once you see this connection, **take note of the Alias field** that was generated. You will need this alias to reference this connection from any function in your User Data Functions item.
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-4.png" alt-text="The connections side panel with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\manage-connections-4.png":::
 
@@ -81,7 +81,7 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
     return results
 ```
 
-To use the data connection you created, modify the following line in this sample: `@udf.connection(argName="sqlDB",alias="<alias for sql database>")` by replacing the value of the `alias` with the one you obtained from the Manage connections tab. The below code shows this example with the value `ContosoDatabase`:
+To use the data connection you created, modify the following line in this sample: `@udf.connection(argName="sqlDB",alias="<alias for sql database>")` by replacing the value of the `alias` with the one you obtained from the `Manage Connections` menu. The below code shows this example with the value `ContosoDatabase`:
 
 ```python
 @udf.connection(argName="sqlDB",alias="ContosoDatabase")
