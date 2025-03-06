@@ -58,12 +58,12 @@ To configure Azure Key Vault for storing the workspace key:
    spark.synapse.diagnostic.emitters: MyEventHub
    spark.synapse.diagnostic.emitter.MyEventHub.type: "AzureEventHub"
    spark.synapse.diagnostic.emitter.MyEventHub.categories: "Log,EventLog,Metrics"
-   spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault: <AZURE_KEY_VAULT_NAME>
+   spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault: <AZURE_KEY_VAULT_URI>
    spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
    
-   Fill in the following parameters in the configuration file: `<AZURE_KEY_VAULT_NAME>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, refer to [Azure Event Hubs configurations](#available-configurations).
+   Fill in the following parameters in the configuration file: `<AZURE_KEY_VAULT_URI>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, refer to [Azure Event Hubs configurations](#available-configurations).
    
 6. Save and publish changes.
 
@@ -92,12 +92,12 @@ To configure Azure Key Vault for storing the workspace key:
 | `spark.synapse.diagnostic.emitter.<destination>.type`                       | Required. Built-in destination type. To enable Azure Event Hubs destination, the value should be `AzureEventHub`.                                                                                    |
 | `spark.synapse.diagnostic.emitter.<destination>.categories`                 | Optional. The comma-separated selected log categories. Available values include `DriverLog`, `ExecutorLog`, `EventLog`, `Metrics`. If not set, the default value is **all** categories.              |
 | `spark.synapse.diagnostic.emitter.<destination>.secret`                     | Optional. The Azure Event Hubs instance connection string. This field should match this pattern `Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>;EntityPath=<PathName>` |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) name where the secret (connection string) is stored.                                                                  |
+| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) uri where the secret (connection string) is stored.                                                  |
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the secret (connection string) is stored.                                                                         |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated Log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match`    | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used` |
-
+|  `spark.fabric.pools.skipStarterPools`  | Required. This Spark property is used to force an on-demand Spark session. You should set the value to true when using the default pool in order to trigger the libraries to emit logs and metrics. |
 
 > [!NOTE]
 >

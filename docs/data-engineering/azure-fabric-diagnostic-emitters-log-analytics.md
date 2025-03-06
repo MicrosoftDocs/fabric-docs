@@ -77,7 +77,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
    - `<EMITTER_NAME>`: The name for emmiter.
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: The Log Analytics workspace ID.
-   - `<AZURE_KEY_VAULT_NAME>`: The key vault name that you configured.
+   - `<AZURE_KEY_VAULT_URI>`: The key vault uri that you configured.
    - `<AZURE_KEY_VAULT_SECRET_KEY_NAME>` (optional): The secret name in the key vault for the workspace key. The default is `SparkLogAnalyticsSecret`.
 
    ```properties
@@ -86,7 +86,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    spark.synapse.diagnostic.emitter.<EMITTER_NAME>.type: "AzureLogAnalytics"
    spark.synapse.diagnostic.emitter.<EMITTER_NAME>.categories: "Log,EventLog,Metrics"
    spark.synapse.diagnostic.emitter.<EMITTER_NAME>.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
-   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.secret.keyVault: <AZURE_KEY_VAULT_NAME>
+   spark.synapse.diagnostic.emitter.<EMITTER_NAME>.secret.keyVault: <AZURE_KEY_VAULT_URI>
    spark.synapse.diagnostic.emitter.<EMITTER_NAME>.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
@@ -96,7 +96,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    ```properties
    spark.synapse.logAnalytics.enabled: "true"
    spark.synapse.logAnalytics.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
-   spark.synapse.logAnalytics.keyVault.name: <AZURE_KEY_VAULT_NAME>
+   spark.synapse.logAnalytics.keyVault.name: <AZURE_KEY_VAULT_URI>
    spark.synapse.logAnalytics.keyVault.key.secret: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
@@ -209,32 +209,31 @@ Using `spark.synaspe.diagnostic.emitter.*` prefix to configure the Log Analytics
 
 | Configuration | Description |
 | --- | --- |
-| `spark.synapse.diagnostic.emitters`                                         | Required. The comma-separated destination names of diagnostic emitters. For example, `MyDest1,MyDest2` |
-| `spark.synapse.diagnostic.emitter.<destination>.type`                       | Required. Built-in destination type. To enable Azure storage destination, `AzureStorage` needs to be included in this field. |
-| `spark.synapse.diagnostic.emitter.<destination>.categories`                 | Optional. The comma-separated selected log categories. Available values include `DriverLog`, `ExecutorLog`, `EventLog`, `Metrics`. If not set, the default value is **all** categories. |
+| `spark.synapse.diagnostic.emitters`                                         | Required. The comma-separated destination names of diagnostic emitters. For example, `MyDest1`,`MyDest2`. |
+| `spark.synapse.diagnostic.emitter.<destination>.type`                       | Required. Built-in destination type. To enable Azure Log Analytics destination, AzureLogAnalytics needs to be included in this field. |
+| `spark.synapse.diagnostic.emitter.<destination>.categories`                 | Optional. The comma-separated selected log categories. Available values include `Log`, `EventLog`, `Metrics`. If not set, the default value is **all** categories. |
 | `spark.synapse.diagnostic.emitter.<destination>.workspaceId`                | Required. The destination Log Analytics workspace ID. |
-| `spark.synapse.diagnostic.emitter.<destination>.secret`                     | Optional. The secret (AccessKey or SAS) content. |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) name where the secret (AccessKey or SAS) is stored. |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the secret (AccessKey or SAS) is stored. |
-| `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
-| `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated Log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
-| `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match`    | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used` |
-| `spark.fabric.pools.skipStarterPools`    | Required. This Spark property is used to force an on-demand Spark session. You should set the value to `True` when using the default pool in order to trigger the libraries to emit logs and metrics.  |
+| `spark.synapse.diagnostic.emitter.<destination>.secret`                     | Optional. The workspace secret content. |
+| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secre`t is not specified. The [Azure Key vault](/azure/key-vault/general/overview) URI where the secret is stored. |
+| `park.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName`  | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the LA workspace secret is stored. |
+| `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd`. |
+| `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger`. |
+| `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match`    | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used`.|
 
 Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics information.
 
 | Configuration name | Default value | Description |
 | --- | --- | --- |
-| spark.synapse.logAnalytics.enabled | false | To enable the Log Analytics sink for the Spark applications, true. Otherwise, false. |
-| spark.synapse.logAnalytics.workspaceId | - | The destination Log Analytics workspace ID. |
-| spark.synapse.logAnalytics.secret | - | The destination Log Analytics workspace secret. |
-| spark.synapse.logAnalytics.keyVault.name | - | The Key Vault URI for the Log Analytics ID and key. |
-| spark.synapse.logAnalytics.keyVault.key.workspaceId | SparkLogAnalyticsWorkspaceId | The Key Vault secret name for the Log Analytics workspace ID. |
-| spark.synapse.logAnalytics.keyVault.key.secret | SparkLogAnalyticsSecret | The Key Vault secret name for the Log Analytics workspace. |
-| spark.synapse.logAnalytics.uriSuffix | ods.opinsights.azure.com | The destination Log Analytics workspace [URI suffix](/azure/azure-monitor/logs/data-collector-api#request-uri). If your workspace isn't in Azure global, you need to update the URI suffix according to the respective cloud. |
-| spark.synapse.logAnalytics.filter.eventName.match | - | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerJobStart,SparkListenerJobEnd`. |
-| spark.synapse.logAnalytics.filter.loggerName.match | - | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger`. |
-| spark.synapse.logAnalytics.filter.metricName.match | - | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used`. |
+| `spark.synapse.logAnalytics.enabled` | false | To enable the Log Analytics sink for the Spark applications, true. Otherwise, false. |
+| `spark.synapse.logAnalytics.workspaceId` | - | The destination Log Analytics workspace ID. |
+| `spark.synapse.logAnalytics.secret` | - | The destination Log Analytics workspace secret. |
+| `spark.synapse.logAnalytics.keyVault.name` | - | The Key Vault URI for the Log Analytics ID and key. |
+| `spark.synapse.logAnalytics.keyVault.key.workspaceId` | SparkLogAnalyticsWorkspaceId | The Key Vault secret name for the Log Analytics workspace ID. |
+| `spark.synapse.logAnalytics.keyVault.key.secret` | SparkLogAnalyticsSecret | The Key Vault secret name for the Log Analytics workspace. |
+| `spark.synapse.logAnalytics.uriSuffix` | ods.opinsights.azure.com | The destination Log Analytics workspace [URI suffix](/azure/azure-monitor/logs/data-collector-api#request-uri). If your workspace isn't in Azure global, you need to update the URI suffix according to the respective cloud. |
+| `spark.synapse.logAnalytics.filter.eventName.match` | - | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerJobStart,SparkListenerJobEnd`. |
+| `spark.synapse.logAnalytics.filter.loggerName.match` | - | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger`. |
+| `spark.synapse.logAnalytics.filter.metricName.match` | - | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used`. |
 
 > [!NOTE]
 >
@@ -279,17 +278,7 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
 
    This occurs because you have configured spark.fabric.pools.skipStarterPool: true, which skips the Starter Pool (a type of Live Pool) and instead uses an On-Demand Pool to start the Spark session. Starting a spark session in the On-Demand Pool typically takes around 3 minutes to create and initialize.
 
-   The reason is that the diagnostic library requires specific configurations to be applied at Spark session startup—a process only supported by On-Demand Pools, as they are dynamically created during startup. In contrast, Live Pool sessions are pre-started and cannot apply these configurations during initialization. For more details on Fabric Spark compute, please refer [Apache Spark compute for Data Engineering and Data Science](spark-compute.md).
-
-4. **Azure Log Analytics Data Limits**
-
-   Fabric sends log data to Azure Monitor by using the HTTP Data Collector API. [The data posted to the Azure Monitor Data collection API is subject to certain constraints](/azure/azure-monitor/logs/data-collector-api#data-limits):
-   
-   - Maximum of 30 MB per post to Azure Monitor Data Collector API. This is a size limit for a single post. If the data from a single post exceeds 30 MB, you should split the data into smaller sized chunks and send them concurrently.
-   - Maximum of 32 KB for field values. If the field value is greater than 32 KB, the data is truncated.
-   - Recommended maximum of 50 fields for a given type. This is a practical limit from a usability and search experience perspective.  
-   - Tables in Log Analytics workspaces support only up to 500 columns. 
-   - Maximum of 45 characters for column names.
+   The reason is that the diagnostic library requires specific configurations to be applied at Spark session startup a process only supported by On-Demand Pools, as they are dynamically created during startup. In contrast, Live Pool sessions are pre-started and cannot apply these configurations during initialization. For more details on Fabric Spark compute, please refer [Apache Spark compute for Data Engineering and Data Science](spark-compute.md).
 
 ## Next steps
 
