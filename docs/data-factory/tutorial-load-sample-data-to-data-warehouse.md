@@ -43,7 +43,7 @@ In this session, you start to build your pipeline by following below steps about
 
 ### Step 1: Start with the Copy assistant
 
-1. After selecting **Copy data** on the canvas,  the **Copy assistant** tool will be opened to get started.
+1. Select **Copy data assistant** on the canvas to open the **copy assistant** tool to get started. Or Select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/copy-data.png" alt-text="Screenshot showing the Copy data button on a new pipeline.":::
 

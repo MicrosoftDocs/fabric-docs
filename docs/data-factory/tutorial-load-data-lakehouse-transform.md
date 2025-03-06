@@ -33,7 +33,7 @@ Use the following steps to load sample data into Lakehouse.
 
 ### Step 1: Start with the Copy assistant
 
-Select **Copy Data** on the canvas, to open the **Copy assistant** tool to get started.
+Select **Copy data assistant** on the canvas to open the **copy assistant** tool to get started. Or Select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
 
 :::image type="content" source="media/tutorial-load-data-lakehouse-transform/copy-data.png" alt-text="Screenshot showing the Copy data button on a new pipeline.":::
 
