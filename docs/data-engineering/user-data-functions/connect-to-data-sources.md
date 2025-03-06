@@ -1,5 +1,5 @@
 ---
-title: Connnect to data sources - Fabric User Data Functions (preview)
+title: Connect to data sources - Fabric User Data Functions (preview)
 description: Learn how to connect your Fabric User Data Functions to data sources.
 ms.author: luisbosquez
 author: luisbosquez
@@ -10,9 +10,9 @@ ms.search.form: Fabric User Data Functions
 
 # Connect to data sources from your Fabric User Data Functions item (Preview)
 
-Fabric User Data Functions provides native data source connections by using the Manage Connections feature in the Fabric portal. This feature allows you to read, write or modify data in your Fabric data sources using your User Data Functions without having to create connection strings or manage access credentials. 
+Fabric User Data Functions provides native data source connections by using the `Manage Connections` feature in the Fabric portal. This feature allows you to connect to your Fabric data sources without having to create connection strings or manage access credentials. 
 
-In this article, you will learn how to:
+In this article, you'll learn how to:
 1. Create a new connection for your User Data Functions item. 
 1. Use your new connection in your function code.
 1. Modify or delete your data connection.
@@ -30,7 +30,7 @@ Any data connections you add will be associated with your User Data Functions it
 ### 1. Open the Manage Connections menu from your Functions portal
 You will find the **Manage Connections button** in the top bar of the Functions portal editor.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-1.png" alt-text="Portal editor with a highlight for the manage connections button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-1.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-1.png" alt-text="Portal editor with a highlight on a button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-1.png":::
 
 Once you click on it, this will open a side panel. This panel will contain the data connections you create. Click on **Add data connection** to create a new one.
 
@@ -51,7 +51,7 @@ This will create a new connection to the data source you selected and add it to 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-4.png" alt-text="The connections side panel with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\manage-connections-4.png":::
 
 ### 3. Use your connection alias in your function code
-Once you are back in the portal editor, you can use the alias you created in the Manage Connections tab inside of your code. For example, the following code sample allows you to connect to a SQL Database and run a query:
+Once you're back in the portal editor, you can add the alias you created in the `Manage Connections` tab to your code. For example, the following code sample allows you to connect to a SQL Database and run a query:
 
 ```python
 @udf.connection(argName="sqlDB",alias="<alias for sql database>")
@@ -81,7 +81,7 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
     return results
 ```
 
-To use the data connection you created, modify the first line in this sample: `@udf.connection(argName="sqlDB",alias="<alias for sql database>")` by replacing the value of the `alias` with the one you obtained from the Manage connections tab. The below code shows this example with the value `ContosoDatabase`:
+To use the data connection you created, modify the following line in this sample: `@udf.connection(argName="sqlDB",alias="<alias for sql database>")` by replacing the value of the `alias` with the one you obtained from the Manage connections tab. The below code shows this example with the value `ContosoDatabase`:
 
 ```python
 @udf.connection(argName="sqlDB",alias="ContosoDatabase")
@@ -114,5 +114,5 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
 And that's all you need to connect to a data source from your Fabric User Data Functions. Make sure to publish your functions before you try to run your changes.
 
 ## Next steps
-- [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md) or by using [the VSCode extension](./create-user-data-functions-vs-code.md).
+- [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md), or by using [the VS Code extension](./create-user-data-functions-vs-code.md).
 - [Learn about User data functions programming model](./python-programming-model.md)
