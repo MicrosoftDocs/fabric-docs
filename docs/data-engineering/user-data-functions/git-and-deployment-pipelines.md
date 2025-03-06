@@ -8,7 +8,6 @@ ms.date: 03/27/2025
 ms.search.form: Using Git and Deployment pipelines in User Data Functions
 ---
 
-
 # User data functions source control and deployment (Preview)
 
 This article explains how Git integration and deployment pipelines work for User data functions in Microsoft Fabric. Fabric User data functions offer Git integration for source control with Azure DevOps repositories. With Git integration, you can version control your User data functions item, collaborate using Git branches, and manage your user data function content lifecycle entirely within Fabric.
