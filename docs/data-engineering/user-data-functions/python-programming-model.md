@@ -11,14 +11,14 @@ ms.search.form: Writing new User Data Functions
 
 # Overview of Fabric user data functions programming model (Preview)
 
-The Fabric User Data Functions programming model is a SDK that provides the necessary functionality to author and publish runnable functions in Fabric, and seamlessly integrate with other items in the Fabric ecosystem, such as Fabric data sources. This library is [publicly available in PyPI](https://pypi.org/project/fabric-user-data-functions/) and is pre-installed in your User Data Functions items.
+The Fabric User Data Functions programming model is an SDK that provides the necessary functionality to author and publish runnable functions in Fabric. The SDK also allows you to seamlessly integrate with other items in the Fabric ecosystem, such as Fabric data sources. This library is [publicly available in PyPI](https://pypi.org/project/fabric-user-data-functions/) and is pre-installed in your User Data Functions items.
 
 ## User data functions SDK 
 A Fabric User Data Functions item contains one or many functions you can invoke from the Fabric portal, from another Fabric item or from an external application using the provided REST endpoint. Each function is a method in your Python script that allows passing parameters and returning an output to the invoker. The User Data Functions programming model contains the following components: 
 
 - The `fabric.functions` library provides the code you need to create User data functions in Python. You can see this library being imported in your first function template when you create a new User Data Functions item.
 
-- The method `fn.UserDataFunctions()` provides the execution context. This is added at the beginning of the code file in all new User Data Functions items, before any function defintions.
+- The method `fn.UserDataFunctions()` provides the execution context. This is added at the beginning of the code file in all new User Data Functions items, before any function definitions.
 
   **Example:**
   ```python
@@ -43,11 +43,11 @@ A Fabric User Data Functions item contains one or many functions you can invoke 
       return f"Welcome to Fabric Functions, {name}, at {datetime.datetime.now()}!"
   ```
 
-- Any Python methods without the `@udf.function()` decorator cannot be invoked directly. They can only be invoked from functions that contain the decorator, and can be used as helper functions.
+- Any Python methods without the `@udf.function()` decorator can't be invoked directly. They can only be invoked from functions that contain the decorator, and can be used as helper functions.
 
   **Helper function example**
   ```python
-  # This is a helper function that can be invoked from other functions, but cannot be invoked or run directly because it doesn't have the @udf.function() decorator
+  # This is a helper function that can be invoked from other functions, but can't be invoked or run directly because it doesn't have the @udf.function() decorator
 
   def uppercase_name(name: str) -> str:
       return name.upper()
@@ -80,7 +80,7 @@ The output data types supported are:
 | None|
 
 ## Data connections to Fabric data sources
-This module allows you to reference the data connections that were created in the [Manage connections feature](./connect-to-data-sources.md) without the need for writing connection strings in your code. The library `fabric.functions` provides two ways to handle data connections: 
+This module allows you to reference the [data connections](./connect-to-data-sources.md) without the need for writing connection strings in your code. The library `fabric.functions` provides two ways to handle data connections: 
 
 - **fabric.functions.FabricSqlConnection:** It allows you to work with SQL databases in Fabric, including SQL Analytics endpoints and Fabric Warehouses.
 - **fabric.functions.FabricLakehouseClient:** It allows you to work with Lakehouses, with a way to connect to both Lakehouse tables and Lakehouse files.
@@ -92,7 +92,7 @@ To reference a connection to a data source, you need to use the `@udf.connection
 - `@udf.connection("<alias for data connection>")`
 
 The arguments for `@udf.connection` are:
-- `argName` is the name of the variable you will use as input for your function.
+- `argName` is the name of the variable the connection will use in your function.
 - `alias` is the alias of the connection you added in the **Manage connections** menu.
 - If the `argName` and `alias` have the same value, you can use `@udf.connection("<alias and argName for the data connection>")`.
 
@@ -112,7 +112,7 @@ def read_from_sql_db(demosqldatabase: fn.FabricSqlConnection)-> list:
 ```
 
 ## Get invocation properties using UserDataFunctionContext
-The programming model also includes the `UserDataFunctionContext` object. This is object contains the function invocation metadata and can be used to create specific app logic for certain invocation mechanisms.
+The programming model also includes the `UserDataFunctionContext` object. This object contains the function invocation metadata and can be used to create specific app logic for certain invocation mechanisms.
 
 The following are the properties for the `UserDataFunctionContext` object:
 
@@ -126,7 +126,7 @@ The `ExecutingUser` object contains the following information:
 
 | Property Name| Data Type| Description|
 |----------------| ----------------|-----------------------------------------|
-| OID | string (GUID) | The user's object ID, which is an immutable identifier for the requestor. This is the verified identity of the user or service principal used to invoke this function across applications. |
+| Oid | string (GUID) | The user's object ID, which is an immutable identifier for the requestor. This is the verified identity of the user or service principal used to invoke this function across applications. |
 | TenantId | string (GUID) | The ID of the tenant that the user is signed in to. |
 | PreferredUsername | string | The preferred username of the invoking user, as set by them. This value is mutable. | 
 
