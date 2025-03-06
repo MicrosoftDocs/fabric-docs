@@ -5,7 +5,7 @@ ms.author: luisbosquez
 author: luisbosquez
 ms.topic: overview
 ms.date: 03/27/2025
-ms.search.form: Fabric User Data Functions
+ms.search.form: User Data Functions overview
 ---
 
 # What is Fabric User Data Functions (Preview)?

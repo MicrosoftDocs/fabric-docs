@@ -5,7 +5,7 @@ ms.author: luisbosquez
 author: luisbosquez
 ms.topic: overview
 ms.date: 03/27/2025
-ms.search.form: Fabric User Data Functions
+ms.search.form: Adding new data connections to User Data Functions
 ---
 
 # Connect to data sources from your Fabric User Data Functions item (Preview)

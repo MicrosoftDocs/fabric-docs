@@ -5,7 +5,7 @@ ms.author: sumuth
 author: mksuni
 ms.topic: overview
 ms.date: 02/20/2025
-ms.search.form: Fabric User Data Functions
+ms.search.form: Writing new User Data Functions
 ---
 
 

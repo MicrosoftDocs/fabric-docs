@@ -5,6 +5,7 @@ ms.author: sumuth
 author: mksuni
 ms.topic: how-to
 ms.date: 03/27/2025
+ms.search.form: Using Git and Deployment pipelines in User Data Functions
 ---
 
 
