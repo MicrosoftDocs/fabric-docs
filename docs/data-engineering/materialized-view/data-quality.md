@@ -1,5 +1,5 @@
 ---
-title: "Data Quality in Fabric Materialized View"
+title: "Data quality in Fabric Materialized View"
 description: Learn about Data quality in Fabric Materialized View
 author: abhishjain002 
 ms.author: abhishjain 
@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 03/06/2025
 ---
 
-# Data Quality in Fabric Materialized View
+# Data quality in Fabric Materialized View
 
 In the era of big data, the Medallion Architecture has gained prominence as a robust framework for managing and processing data across different stages of refinement, from raw data to highly curated datasets. This structured approach not only enhances data manageability but also ensures that data quality is maintained throughout the data lifecycle.
 
@@ -15,11 +15,11 @@ Ensuring data quality is essential at every stage of the Medallion Architecture,
  
 This article explains how to implement data quality in Fabric Materialized Views.
 
-## Implement Data Quality 
+## Implement data quality
 
 When you transform data, it becomes important to compose precise queries to exclude poor quality data from the source tables, which increases processing time and occasionally causes the whole pipeline to fail because of minor data issues.
  
-Data Quality is achieved by defining the constraints while defining the materialized views. MV within Fabric aims to offer a swift and action-oriented approach to implement checks that ensure data quality management.
+Data quality is achieved by defining the constraints while defining the materialized views. MV within Fabric aims to offer a swift and action-oriented approach to implement checks that ensure data quality management.
  
 The following actions can be taken when constraints are defined.
 
