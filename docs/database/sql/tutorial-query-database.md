@@ -1,13 +1,13 @@
 ---
-title: SQL database tutorial - Query the database and review Copilot features
+title: SQL Database Tutorial - Query the Database and Review Copilot Features
 description: In this tutorial step, learn how to query the database and review Copilot features.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: bwoody
-ms.date: 10/28/2024
+ms.date: 02/20/2025
 ms.topic: tutorial
-ms.custom:
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 # Query the database and review Copilot features
 

@@ -72,6 +72,8 @@ items:
     href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Data types
     href: data-types.md
+  - name: Manage objects in a warehouse
+    href: manage-objects.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md
   - name: Source control with Warehouse
@@ -110,6 +112,8 @@ items:
     href: dimensional-modeling-load-tables.md
 - name: Load data into the warehouse
   items:
+  - name: Explore file content with OPENROWSET
+    href: browse-file-content-with-openrowset.md
   - name: Ingesting data into the warehouse
     href: ingest-data.md
   - name: Ingest data with data pipelines

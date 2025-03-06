@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: sukkaur
 ms.date: 11/05/2024
 ms.topic: conceptual
-ms.custom:
+ms.search.form: Performance monitoring in SQL database
 ---
 # Performance Dashboard for SQL database in Microsoft Fabric
 

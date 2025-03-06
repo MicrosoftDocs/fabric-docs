@@ -1,14 +1,15 @@
 ---
-title: Copilot for Data Warehouse (preview)
+title: "Copilot for Data Warehouse (Preview)"
 description: Learn more about Microsoft Copilot for Fabric Data Warehouse, the integrated AI assistant for your Fabric warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 09/25/2024
+ms.date: 02/20/2025
 ms.topic: conceptual
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ms.custom:
-- copilot-learning-hub
+  - copilot-learning-hub
 ---
 # Overview of Copilot for Data Warehouse
 
@@ -80,7 +81,7 @@ Here are the current limitations of Copilot for Data Warehouse:
 
 ## Related content
 
-- [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md)
+- [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
 - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
 - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 - [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)

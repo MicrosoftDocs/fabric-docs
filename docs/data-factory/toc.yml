@@ -547,6 +547,12 @@
         href: connector-salesforce-reports-overview.md
       - name: Set up your connection
         href: connector-salesforce-reports.md
+    - name: Salesforce Service Cloud
+      items:
+      - name: Salesforce Service Cloud - Overview
+        href: connector-salesforce-service-cloud-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-salesforce-service-cloud-copy-activity.md
     - name: SAP BW Application Server
       items:
       - name: SAP BW Application Server - Overview
