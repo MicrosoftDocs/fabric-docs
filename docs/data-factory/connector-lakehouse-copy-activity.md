@@ -77,7 +77,7 @@ The following properties are **required**:
 
     [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported when you apply reader version 2 or reader version 3 with `columnMapping` in `readerFeatures` in your Lakehouse table. 
         
-    Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can read from an existing delta Lake table with `delta.columnMapping.mode` being `name` or `id`.
+    Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can read from an existing delta Lake table with `delta.columnMapping.mode` set to `name` or `id`.
 
     [Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported 
     when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your Lakehouse table.
@@ -154,9 +154,9 @@ The following properties are **required**:
 
     Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can:
 
-    - Write to an existing delta lake table with `delta.columnMapping.mode` being `name` or `id`.
-    - Auto-create a table with `delta.columnMapping.mode` being `name` when the destination table does not exist and source columns contain special characters and whitespaces.
-    - Auto-create a table with `delta.columnMapping.mode` being `name` when **Table action** is **Overwrite** and source dataset columns contain special characters and whitespaces.
+    - Write to an existing delta lake table with `delta.columnMapping.mode` set to `name` or `id`.
+    - Auto-create a table with `delta.columnMapping.mode` set to `name` when the destination table does not exist and source columns include special characters and whitespaces.
+    - Auto-create a table with `delta.columnMapping.mode` set to `name` when **Table action** is **Overwrite** and source dataset columns include special characters and whitespaces.
 
   - If you select **Files**:
     - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
