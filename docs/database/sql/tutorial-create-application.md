@@ -4,7 +4,7 @@ description: In this eighth tutorial step, learn how to create an application us
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: bwoody
-ms.date: 10/24/2024
+ms.date: 03/06/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -102,7 +102,7 @@ You've now seen how you can interact with your SQL database object schemas from 
 
 Connecting to a database application often involves installing a set of libraries for your application that use the Tabular Data Stream (TDS) protocol that interacts directly with the database.
 
-Microsoft Fabric includes a GraphQL interface for working not only with databases, but with multiple data sources. You can also combine these sources for an integrated data view. GraphQL is a query language for APIs that allows you to request exactly the data you need, making it easier to evolve APIs over time and enabling powerful developer tools. It provides a complete and understandable description of the data in your API, giving clients the power to ask for exactly what they need and nothing more. This makes apps using GraphQL fast and stable because they control the data they get, not the server. You can think of the GraphQL interface as providing a view of a set of data contained within a data source. You can query the data and change the data using mutations. You can learn more about GraphQL at this reference.
+Microsoft Fabric includes a GraphQL interface for working not only with databases, but with multiple data sources. You can also combine these sources for an integrated data view. GraphQL is a query language for APIs that allows you to request exactly the data you need, making it easier to evolve APIs over time and enabling powerful developer tools. It provides a complete and understandable description of the data in your API, giving clients the power to ask for exactly what they need and nothing more. This makes apps using GraphQL fast and stable because they control the data they get, not the server. You can think of the GraphQL interface as providing a view of a set of data contained within a data source. You can query the data and change the data using mutations. For more infomration on GraphQL, see [What is Microsoft Fabric API for GraphQL?](../../data-engineering/api-graphql-overview.md)
 
 You can start building GraphQL APIs directly from within the Fabric SQL query editor. Fabric builds the GraphQL schema automatically based on your data, and applications are ready to connect in minutes.
 
