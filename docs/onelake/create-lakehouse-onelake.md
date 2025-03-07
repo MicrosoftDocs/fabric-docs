@@ -28,7 +28,7 @@ This tutorial is a quick guide to creating a lakehouse and getting started with 
 
    :::image type="content" source="media\create-lakehouse-onelake\new-lakehouse-name.png" alt-text="Screenshot showing where to enter your new lakehouse name." lightbox="media\create-lakehouse-onelake\new-lakehouse-name.png":::
 
-1. A new lakehouse is created and if this is your first OneLake item, OneLake is provisioned behind the scenes.
+1. A new lakehouse is created and, if this lakehouse is your first OneLake item, OneLake is provisioned behind the scenes.
 
 At this point, you have a lakehouse running on top of OneLake. Next, add some data and start organizing your lake.
 
@@ -46,13 +46,13 @@ At this point, you have a lakehouse running on top of OneLake. Next, add some da
 
    :::image type="content" source="media\create-lakehouse-onelake\upload-files-screen.png" alt-text="Screenshot of the upload files screen where you can select a local file to upload.":::
 
-1. You’ve now added data to OneLake. To add data in bulk or schedule data loads into OneLake, use the **Get data** button to create pipelines. Find more details about options for getting data in [Microsoft Fabric decision guide: copy activity, dataflow, or Spark](../fundamentals/decision-guide-pipeline-dataflow-spark.md).
+1. You now have data in OneLake. To add data in bulk or schedule data loads into OneLake, use the **Get data** button to create pipelines. Find more details about options for getting data in [Microsoft Fabric decision guide: copy activity, dataflow, or Spark](../fundamentals/decision-guide-pipeline-dataflow-spark.md).
 
 1. Select more options (**...**) for the file you uploaded and select **Properties** from the menu.
 
    The **Properties** screen shows the various details for the file, including the URL and Azure Blob File System (ABFS) path for use with Notebooks. You can copy the ABFS into a Fabric Notebook to query the data using Apache Spark. To learn more about notebooks in Fabric, see [Explore the data in your lakehouse with a notebook](..\data-engineering\lakehouse-notebook-explore.md).
 
-You've now created your first lakehouse with data stored in OneLake.
+Now you have your first lakehouse with data stored in OneLake.
 
 ## Related content
 

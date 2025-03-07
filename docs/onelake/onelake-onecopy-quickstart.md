@@ -53,7 +53,7 @@ In this section, you upload test data into your lakehouse using OneLake file exp
 In this section, you convert the unmanaged CSV files into a managed table using Delta format.
 
 > [!NOTE]
-> Always create, load, or create a shortcut to Delta-Parquet data *directly* under the **Tables** section of the lakehouse. Do not nest your tables in subfolders under the **Tables** section as the lakehouse will not recognize it as a table and will label it as Unidentified.
+> Always create, load, or create a shortcut to Delta-Parquet data *directly* under the **Tables** section of the lakehouse. Don't nest your tables in subfolders under the **Tables** section as the lakehouse won't recognize it as a table and will label it as Unidentified.
 
 1. In your lakehouse, select **Open notebook**, then **New notebook** to create a notebook.
 
@@ -105,7 +105,7 @@ You can also access any Delta table on OneLake via a SQL analytics endpoint. A S
 
 1. Navigate to your lakehouse, then select **Lakehouse** > **SQL analytics endpoint** from the drop-down menu.
 
-   :::image type="content" source="\media\onelake-onecopy-quickstart\open-sql-analytics-endpoint.png" alt-text="Screenshot that shows navigating to the SQL analytics endpoint.":::
+   :::image type="content" source="media\onelake-onecopy-quickstart\open-sql-analytics-endpoint.png" alt-text="Screenshot that shows navigating to the SQL analytics endpoint.":::
 
 1. Select **New SQL Query** to query the table using T-SQL.
 

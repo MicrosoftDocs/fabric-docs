@@ -22,7 +22,7 @@ When you create, update, or delete a file via Windows File Explorer, it automati
 
 ## Installation instructions
 
-OneLake file explorer currently supports Windows and has been validated on Windows 10 and 11.
+OneLake file explorer currently supports Windows and is validated on Windows 10 and 11.
 
 To install:
 
@@ -32,7 +32,7 @@ To install:
 
    The storage location on your PC for the placeholders and any downloaded content is `\%USERPROFILE%\OneLake - Microsoft\`.
 
-Once you have installed and launched the application, you can now see your OneLake data in Windows File Explorer. If you encounter any access errors, you might need to restart your computer for setup to complete.
+Once the application is installed and running, you can see your OneLake data in Windows File Explorer. If you encounter any access errors, you might need to restart your computer for setup to complete.
 
 Starting in version 1.0.13, the OneLake file explorer app notifies you when a new update is available. When a new version becomes available, you receive a Windows notification and the OneLake icon changes. Right-click on the OneLake icon in the Windows notification area. Select **Update Available** and follow steps to update.
 
@@ -74,7 +74,7 @@ When you sign in with another account, you see the list of workspaces and items 
 
 ### Option to open workspaces and items on the web portal
 
-Starting in version 1.0.10.0, you can transition between using OneLake file explorer and the Fabric web portal. When browsing your OneLake data using OneLake file explorer, right-click on a workspace and select **OneLake** > **View workspace online**. This action opens the workspace browser on the Fabric web portal.  
+Starting in version 1.0.10.0, you can transition between using OneLake file explorer and the Fabric web portal. From OneLake file explorer, right-click on a workspace and select **OneLake** > **View workspace online**. This action opens the workspace browser on the Fabric web portal.  
 
 You can right-click on an item, subfolder, or file and select **OneLake** > **View item online**. This action opens the item browser on the Fabric web portal. If you select a subfolder or file, the Fabric web portal always opens the root folder of the item.
 
@@ -91,7 +91,7 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 1. Right-click and select **New folder** or **New file type**.
 
 > [!NOTE]
-> If you write data to locations where you don't have write permission, such as the root of the item or workspace, the sync fails. Clean up files or folders that fail to sync by moving them to the correct location or deleting them.
+> OneLake sync fails if you write data to locations where you don't have write permission, such as the root of the item or workspace. Clean up files or folders that fail to sync by moving them to the correct location or deleting them.
 
 ### Delete files or folders in OneLake file explorer
 
@@ -103,7 +103,7 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 
 ### Edit files
 
-You can open files using your favorite apps and make edits. Select **Save** to sync the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the update in Excel and it will initiate the sync to OneLake.
+You can open files using your favorite apps and make edits. Select **Save** to sync the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the update in Excel and it initiates the sync to OneLake.
 
 If you edit a file locally and select **Save**, the OneLake file explorer app detects if that file was updated elsewhere (by someone else) since you last selected **Sync from OneLake**. A **Confirm the action** dialog box appears:
 
@@ -131,11 +131,11 @@ Starting in version 1.0.10, you can find your client-side logs by right-clicking
 
 Client-side logs are stored on your local machine under `%temp%\OneLake\Diagnostics\`.
 
-You can enable additional client-side logging by selecting **Diagnostic operations** > **Enable tracing**.
+You can enable more client-side logging by selecting **Diagnostic operations** > **Enable tracing**.
 
 ### Release Notes
 
-Starting in version 1.0.11, you can find information about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This action opens the OneLake file explorer release notes page in your browser window.
+Starting in version 1.0.11, you can find information about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar. Select **About** > **Release Notes**. This action opens the OneLake file explorer release notes page in your browser window.
 
 ### Uninstall instructions
 
@@ -153,7 +153,7 @@ These OneLake file explorer icons appear in Windows File Explorer to indicate th
 | --- | --- | ---|
 | :::image type="icon" source="media\onelake-file-explorer\blue-cloud.png"::: | Blue cloud icon | The file is only available online. Online-only files don’t take up space on your computer. |
 | :::image type="icon" source="media\onelake-file-explorer\green-checkmark.png"::: | Green tick | The file is downloaded to your local computer. |
-| :::image type="icon" source="media\onelake-file-explorer\sync-pending.png"::: | Sync pending arrows | Sync is in progress. This icon may appear when you're uploading files. If the sync pending arrows are persistent, then your file or folder may have an error syncing. You can find more information in the client-side logs on your local machine under `%temp%\OneLake\Diagnostics\`.|
+| :::image type="icon" source="media\onelake-file-explorer\sync-pending.png"::: | Sync pending arrows | Sync is in progress. This icon might appear when you're uploading files. If the sync pending arrows are persistent, then your file or folder might have an error syncing. You can find more information in the client-side logs on your local machine under `%temp%\OneLake\Diagnostics\`.|
 
 ## Related content
 
