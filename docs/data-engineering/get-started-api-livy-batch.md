@@ -187,20 +187,21 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
    newlakehouseName = "YourNewLakehouseName"
    create_lakehouse = api_base_url_mist + "/workspaces/" + workspace_id + "/items"
    create_lakehouse_payload = {
-      "displayName": newlakehouseName,
-      "type": 'Lakehouse'
+        "displayName": newlakehouseName,
+        "type": 'Lakehouse'
    }
 
    create_lakehouse_response = requests.post(create_lakehouse, headers=headers, json=create_lakehouse_payload)
    print(create_lakehouse_response.json())
 
    payload_data = {
-      "name":"livybatchdemo_with"+ newlakehouseName,
-      "file":"abfss://YourABFSPathToYourPayload.py", 
-      "conf": {
+    "name":"livybatchdemo_with"+ newlakehouseName,
+    "file":"abfss://YourABFSPathToYourPayload.py", 
+    "conf": {
         "spark.targetLakehouse": "Fabric_LakehouseID"
       }
    }
+
    get_batch_response = requests.post(get_livy_get_batch, headers=headers, json=payload_data)
 
    print("The Livy batch job submitted successful")
@@ -212,6 +213,21 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     :::image type="content" source="media\livy-api\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job has been successfully submitted." lightbox="media\livy-api\Livy-batch-job-submission.png" :::
 
 1. Navigate back to your Lakehouse to see the changes.
+
+### Integration with Fabric Environments
+
+By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use your Fabric Environment, simply update the prior notebook cell with this one line line change.
+
+    ```python
+    payload_data = {
+    "name":"livybatchdemo_with"+ newlakehouseName,
+    "file":"abfss://YourABFSPathToYourPayload.py", 
+    "conf": {
+        "spark.targetLakehouse": "Fabric_LakehouseID",
+         "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
+      }
+   }
+    ```
 
 ## View your jobs in the Monitoring hub
 
