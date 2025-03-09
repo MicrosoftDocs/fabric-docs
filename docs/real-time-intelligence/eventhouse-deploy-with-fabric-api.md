@@ -4,12 +4,12 @@ description: Learn how to use Fabric APIs for Eventhouse and KQL Database to aut
 author: shsagir
 ms.author: shsagir
 ms.reviewer: bwatts
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 01/28/2025
 ms.custom:
 #customer intent: As a developer, I want to use the Eventhouse and KQL APIs so that I can automate deployments and manage data efficiently.
 ---
-# Tutorial: Deploy an eventhouse using Fabric APIs with schema script
+# Deploy an eventhouse using Fabric APIs with schema script
 
 You can fully automate the deployment of your Eventhouses with KQL Databases using APIs. You can use Fabric APIs to create, update, and delete items within your workspace. You can then use one of the following methods to manage your eventhouses and databases by performing actions such as creating tables and changing policies:
 
@@ -23,7 +23,7 @@ When choosing the right method to manage your Eventhouse and KQL Database, consi
 * **Database schema script**: Use this method if you want to define the schema of your database as part of the database definition. This method is useful when you want to define the schema of your database in a single place.
 * **Kusto API**: Use this method if you want to execute management commands to configure your database. This method is useful when you want to execute management commands to configure your database.
 
-In this tutorial, you:
+In this article, you learn how to:
 
 > [!div class="checklist"]
 >
@@ -39,7 +39,7 @@ In this tutorial, you:
 
 ## Set up your environment
 
-For this tutorial, you use Fabric notbooks to run python [code snippets](../data-engineering/author-execute-notebook.md#code-snippets). You use the *sempy.fabric* package in *semantic-link* python package to make the API calls using your credentials. The API calls and payload are identical, regardless of the tool you use.
+For this article, you use Fabric notbooks to run python [code snippets](../data-engineering/author-execute-notebook.md#code-snippets). You use the *sempy.fabric* package in *semantic-link* python package to make the API calls using your credentials. The API calls and payload are identical, regardless of the tool you use.
 
 Start by setting up your environment:
 
@@ -282,20 +282,9 @@ else:
   print(f"The operation is in an unexpected state: {status}")
 ```
 
-## Clean up resources
-
-Once you finish the tutorial, you might want to delete all resources you created. You can delete the eventhouse and database, or you can delete the entire workspace.
-
-1. Browse to the workspace in which you created the tutorial.
-1. From the menu ribbon, select **Workspace settings**.
-1. In the **General** settings pane, scroll down to the **Delete workspace** section.
-1. Select **Remove this workspace**.
-1. On the warning dialog that open, select **Delete**. Once a workspace is deleted, it can't be recovered.
-
 ## Related content
 
-* [Deploy an eventhouse using APIs overview](eventhouse-deploy-with-api-overview.md)
-* [Tutorial: Deploy an eventhouse using Fabric and Kusto APIs](eventhouse-deploy-with-fabric-kusto-api.md)
 * [Eventhouse item operations](/rest/api/fabric/eventhouse/items)
 * [KQL Database item operations](/rest/api/fabric/kqldatabase/items)
 * [KQL Database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition)
+* [Kusto API overview](/kusto/api?view=microsoft-fabric&preserve-view=true)
