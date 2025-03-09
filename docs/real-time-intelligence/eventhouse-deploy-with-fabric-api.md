@@ -47,7 +47,7 @@ Start by setting up your environment:
 
 1. In a code cell, enter code to import the packages:
 
-    ### [Schema script](#tab/schema-script)
+    ### [Database schema script](#tab/schema-script)
 
     ```python
     !pip install semantic-link --q
@@ -101,7 +101,7 @@ Start by setting up your environment:
 
 ## Create a KQL database and schema
 
-### [Schema script](#tab/schema-script)
+### [Database schema script](#tab/schema-script)
 
 The [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) uses [item definitions](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) for database properties and schemas that require base64 strings. The properties set the database level retention policies and database schema script contains the commands to run to create database entities.
 
