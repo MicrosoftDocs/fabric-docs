@@ -37,7 +37,7 @@ You must be an admin or a member in your workspace to share a SQL database item 
     - No additional permissions - Select no additional permissions if you plan to [configure granular access for the recipient via SQL access controls](configure-sql-access-controls.md). By default, the recipient is granted only the "Read" item permission. Read item permission allows the recipient to read properties of the SQL database, its SQL analytics endpoint, its default semantic model, and to connect to the SQL database and its SQL analytics endpoint. The recipient won't be able to query any table or view.
     - **Read all data using SQL database** - Grants the recipient the ReadData item permission for the SQL database, allowing the recipient to read all data in the SQL database using Transact-SQL queries, for example by using [SQL query editor for SQL database](query-editor.md). You can [grant the recipient access to more capabilities via SQL access controls](configure-sql-access-controls.md).
     - **Read all data using SQL analytics endpoint** - Grants the recipient the ReadData item permission for the SQL analytics endpoint, allowing the recipient to read all data via the SQL analytics endpoint using Transact-SQL queries, for example by using [SQL query editor for SQL analytics endpoint](query-editor.md). You can grant the recipient access to more capabilities by configuring [SQL granular permissions for SQL analytics endpoint](share-data.md).
-    - **Read all data using Apache Spark** - Grants the ReadAll item permission to the recipient, allowing them to access the mirrored data in OneLake, for example, by using Spark or [OneLake Explorer](../mirrored-database/explore-data-directly.md).
+    - **Read all data using Apache Spark** - Grants the ReadAll item permission and subscribeOneLakeEvent permission to the recipient, allowing them to access the mirrored data in OneLake, for example, by using Spark or [OneLake Explorer](../mirrored-database/explore-data-directly.md), and subscribe to OneLake events in Real time hub.
     - **Build reports on the default dataset** - Grants the Build permission to the recipient, enabling users to [Create simple reports on your SQL database in Power BI](create-reports.md).
 1. Select **Notify recipients by email** to notify the recipients. The recipients receives an email with the link to the shared database.
 1. Select **Grant**.
@@ -55,6 +55,8 @@ If you have the **Share** permission for a SQL database, you can also use the **
 
 - It can take up to two hours for Fabric permission changes to be visible to users and applications.
 - Granting item permissions for a database has no impact on the security metadata inside the database, like the metadata in the [sys.database_permissions](/sql/relational-databases/system-catalog-views/sys-database-permissions-transact-sql), [sys.database_roles_members](/sql/relational-databases/system-catalog-views/sys-database-permissions-transact-sql), and [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql) catalog views. Therefore, to determine if a user or an application can access a database based on their item permissions, use the **Manage permissions** page in Fabric portal.
+- The sharing dialog for SQL database does now show the option to subscribe to OneLake events. Permission to subscribe to OneLake events is granted along with the Read All Apache Spark permission. This is a temporary limitation.
+
 
 ## Related content
 
