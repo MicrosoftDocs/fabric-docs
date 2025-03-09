@@ -47,7 +47,7 @@ Start by setting up your environment:
 
 1. In a code cell, enter code to import the packages:
 
-    ### [Schema script](#schema-script)
+    ### [Schema script](#tab/schema-script)
 
     ```python
     !pip install semantic-link --q
@@ -59,7 +59,7 @@ Start by setting up your environment:
     import json
     ```
 
-    ### [Kusto API](#kusto-api)
+    ### [Kusto API](#tab/kusto-api)
 
     ```python
     !pip install semantic-link --q
@@ -101,7 +101,7 @@ Start by setting up your environment:
 
 ## Create a KQL database and schema
 
-### [Schema script](#schema-script)
+### [Schema script](#tab/schema-script)
 
 The [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) uses [item definitions](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) for database properties and schemas that require base64 strings. The properties set the database level retention policies and database schema script contains the commands to run to create database entities.
 
@@ -178,7 +178,7 @@ payload = {
 response = client.post(url, json=payload)
 ```
 
-### [Kusto API](#kusto-api)
+### [Kusto API](#tab/kusto-api)
 
 Create a KQL database and schema in the eventhouse you created earlier.
 
