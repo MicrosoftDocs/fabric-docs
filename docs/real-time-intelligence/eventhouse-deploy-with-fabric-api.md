@@ -11,7 +11,17 @@ ms.custom:
 ---
 # Tutorial: Deploy an eventhouse using Fabric APIs with schema script
 
-This article teaches you how to fully automate the deployment of an eventhouses with KQL databases by using Fabric APIs with a database schema script. Fabric APIs allow you to create, update, and delete items within Fabric. Meanwhile, KQL APIs enable you to manage your eventhouses and databases by performing actions such as creating tables, changing policies, and running queries on your data.
+You can fully automate the deployment of your Eventhouses with KQL Databases using APIs. You can use Fabric APIs to create, update, and delete items within your workspace. You can then use one of the following methods to manage your eventhouses and databases by performing actions such as creating tables and changing policies:
+
+* **Database schema script**: You can specify a database schema script as part of the [KQL Database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) to configure your database.
+* **Kusto API**: You can use the Kusto API to execute [manangement commands](/kusto/management/?view=microsoft-fabric&preserve-view=true) to configure your database.
+
+## Choose the right method
+
+When choosing the right method to manage your Eventhouse and KQL Database, consider the following:
+
+* **Database schema script**: Use this method if you want to define the schema of your database as part of the database definition. This method is useful when you want to define the schema of your database in a single place.
+* **Kusto API**: Use this method if you want to execute management commands to configure your database. This method is useful when you want to execute management commands to configure your database.
 
 In this tutorial, you:
 
@@ -19,8 +29,7 @@ In this tutorial, you:
 >
 > * Set up your environment
 > * Create an eventhouse
-> * Create base64 strings for definitions
-> * Create and configure the KQL database
+> * Create a KQL database and schema
 > * Monitor the operation for completion
 
 ## Prerequisites
@@ -35,17 +44,32 @@ For this tutorial, you use Fabric notbooks to run python [code snippets](../data
 Start by setting up your environment:
 
 1. Navigate to an existing notebook or create a new one.
+
 1. In a code cell, enter code to import the packages:
+
+    ### [Schema script](#schema-script)
 
     ```python
     !pip install semantic-link --q
 
     import sempy.fabric as fabric
-    import base64
     import time
     import uuid
+    import base64
     import json
     ```
+
+    ### [Kusto API](#kusto-api)
+
+    ```python
+    !pip install semantic-link --q
+
+    import sempy.fabric as fabric
+    import time
+    import uuid
+    ```
+
+    ---
 
 1. Set up your client to make the API calls and set a variable for your workspace ID and a UUID to ensure the names are unique:
 
@@ -55,7 +79,7 @@ Start by setting up your environment:
     uuid = uuid.uuid4()
     ```
 
-### Create an eventhouse
+## Create an eventhouse
 
 1. Add a variable for your eventhouse name.
 
@@ -75,21 +99,15 @@ Start by setting up your environment:
     eventhouse_id = response.json()['id']
     ```
 
-<!-- **Output**
+## Create a KQL database and schema
 
-```
-{
-  "id": "<Item_Id>",
-  "type": "Eventhouse",
-  "displayName": "SampleEventhouse",
-  "description": "",
-  "workspace_id": "<Workspace_ID>"
-}
-``` -->
-
-### Create Base64 strings for definitions
+### [Schema script](#schema-script)
 
 The [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) uses [item definitions](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) for database properties and schemas that require base64 strings. The properties set the database level retention policies and database schema script contains the commands to run to create database entities.
+
+### Create the database properties definition
+
+Create the base64 string for the database properties. The database properties set the database level retention policies. You use the definition as part of the database creation API call to create a new KQL database.
 
 1. Add variables for your configuring you KQL database.
 
@@ -115,6 +133,10 @@ The [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-k
     database_properties_string = database_properties_bytes.decode('utf-8')
     ```
 
+### Create the database schema definition
+
+Create the base64 string for the database schema. The database schema script contains the commands to run to create database entities. You use the definition as part of the database creation API call to create a new KQL database.
+
 1. Create a base64 string for the database schema:
 
     ```python
@@ -128,7 +150,7 @@ The [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-k
     database_schema_string = database_schema_bytes.decode('utf-8')
     ```
 
-### Create and configure the KQL database
+### Run the database creation API
 
 Use the [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to create a new KQL database with the retention policies and schema you defined.
 
@@ -156,7 +178,78 @@ payload = {
 response = client.post(url, json=payload)
 ```
 
-### Monitor the operation for completion
+### [Kusto API](#kusto-api)
+
+Create a KQL database and schema in the eventhouse you created earlier.
+
+### Create a KQL database
+
+1. Add variables for your configuring you KQL database and database level retention policies.
+
+    ```python
+    database_name = f"{'SampleDatabase'}_{uuid}"
+    database_cache = "3d"
+    database_storage = "30d"
+    ```
+
+1. Use the [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to add a new database to this eventhouse.
+
+    ```python
+    url = f"v1/workspaces/{workspace_id}/kqlDatabases"
+
+    payload = {
+      "displayName": f"{database_name}",
+      "creationPayload": {
+        "databaseType": "ReadWrite",
+        "parentEventhouseItemId": f"{eventhouseId}"
+//TODO: Brad, do we need to add the following for parity?
+        "oneLakeCachingPeriod": f"{database_cache}",
+        "oneLakeStandardStoragePeriod": f"{database_storage}"
+      }
+    }
+
+    response = client.post(url, json=payload)
+    ```
+
+### Create a table
+
+1. Use the [Fabric Get Eventhouse API](/rest/api/fabric/eventhouse/items/get-eventhouse) to get the Query URI for your eventhouse:
+
+    ```python
+    url = f"v1/workspaces/{workspace_id}/eventhouses/{eventhouseId}"
+
+    response = client.get(url)
+
+    query_uri = response.json()['properties']['queryServiceUri']
+    ```
+
+1. Import the *requests* module to make Kusto API calls as the Fabric API doesn't support Kusto operations directly. Then, use the *mssparkutils* package to get the token string for authentication:
+
+    ```python
+    import requests
+    token_string = mssparkutils.credentials.getToken(f"{query_uri}")
+    ```
+
+1. Use the [Kusto management API](/kusto/api/rest/request?view=microsoft-fabric&preserve=true) to create a table, set the cache policy, and set the retention policy:
+
+    ```python
+    url = f"{query_uri}/v1/rest/mgmt"
+
+    payload = {
+      "csl": '.execute database script with (ContinueOnErrors=true) <| .create-merge table T(a:string, b:string); .alter-merge table T policy retention softdelete = 10d; .alter table T policy caching hot = 3d',
+      "db": f"{database_name}"
+    }
+
+    header = {'Content-Type':'application/json','Authorization': f'Bearer {token_string}'}
+
+    response = requests.post(url, json=payload, headers=header)
+    ```
+
+---
+
+## Monitor the operation for completion
+
+//TODO: Brad, do we need to add Kusto API monitoring for parity?
 
 Creating an item with a definition is a long-running operation that runs asynchronously. You can monitor the operation using status_code and location information in the response object from the create database API call, as follows:
 
