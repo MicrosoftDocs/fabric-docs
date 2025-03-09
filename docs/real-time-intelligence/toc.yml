@@ -256,7 +256,7 @@ items:
     - name: Create an eventhouse
       href: create-eventhouse.md
     - name: Deploy an eventhouse using APIs
-        href: eventhouse-deploy-with-fabric-api.md
+      href: eventhouse-deploy-with-fabric-api.md
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
   - name: KQL Database
