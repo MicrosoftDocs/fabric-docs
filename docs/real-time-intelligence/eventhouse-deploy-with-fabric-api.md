@@ -14,16 +14,16 @@ ms.custom:
 You can fully automate the deployment of your Eventhouses with KQL Databases using APIs. Fabric APIs allow you to create, update, and delete items within your workspace. You can manage your Eventhouses and Databases by performing actions such as creating tables and changing policies using one of the following methods:
 
 * **Database schema script**: You can specify a database schema script as part of the [KQL Database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) to configure your database.
-* **Kusto API**: You can use the Kusto API to execute [manangement commands](/kusto/management/?view=microsoft-fabric&preserve-view=true) to configure your database.
+* **Kusto API**: You can use the Kusto API to execute [management commands](/kusto/management/?view=microsoft-fabric&preserve-view=true) to configure your database.
 
 ## Choose the right method
 
-When choosing the right method to manage your Eventhouse and KQL Database, consider the following:
+When choosing the right method to manage your Eventhouse and KQL Database, consider these points:
 
 * **Database schema script**: Use this method if you want to define the schema of your database as part of the database definition. This method is useful when you want to define the schema of your database in a single place.
 * **Kusto API**: Use this method if you want to execute management commands to configure your database. This method is useful when you want to execute management commands to configure your database.
 
-In this article, you learn how to:
+In this article, you learn to:
 
 > [!div class="checklist"]
 >
@@ -39,9 +39,9 @@ In this article, you learn how to:
 
 ## Set up your environment
 
-For this article, you use Fabric notbooks to run python [code snippets](../data-engineering/author-execute-notebook.md#code-snippets). You use the *sempy.fabric* package in *semantic-link* python package to make the API calls using your credentials. The API calls and payload are identical, regardless of the tool you use.
+For this article, you use Fabric notebooks to run python [code snippets](../data-engineering/author-execute-notebook.md#code-snippets). Use the *sempy.fabric* package in *semantic-link* Python package to make API calls using your credentials. The API calls and payload are identical, regardless of the tool you use.
 
-Start by setting up your environment:
+Setting up your environment:
 
 1. Navigate to an existing notebook or create a new one.
 
@@ -81,7 +81,7 @@ Start by setting up your environment:
 
 ## Create an eventhouse
 
-1. Add a variable for your eventhouse name.
+1. Add a variable for the eventhouse name.
 
     ```python
     eventhouse_name = f"{'SampleEventhouse'}_{uuid}"
@@ -109,7 +109,7 @@ The [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-k
 
 Create the base64 string for the database properties. The database properties set the database level retention policies. You use the definition as part of the database creation API call to create a new KQL database.
 
-1. Add variables for your configuring you KQL database.
+1. Add variables for configuring the KQL database.
 
     ```python
     database_name = f"{'SampleDatabase'}_{uuid}"
@@ -192,7 +192,7 @@ Create a KQL database and schema in the eventhouse you created earlier.
     database_storage = "30d"
     ```
 
-1. Use the [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to add a new database to this eventhouse.
+1. Use the Fabric [Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to add a new database to this eventhouse.
 
     ```python
     url = f"v1/workspaces/{workspace_id}/kqlDatabases"
@@ -253,7 +253,7 @@ Create a KQL database and schema in the eventhouse you created earlier.
 
 //TODO: Brad, do we need to add Kusto API monitoring for parity?
 
-Creating an item with a definition is a long-running operation that runs asynchronously. You can monitor the operation using status_code and location information in the response object from the create database API call, as follows:
+Creating an item with a definition is a long-running operation that runs asynchronously. You can monitor the operation using *status_code* and *location* information in the response object from the Create KQL Database API call, as follows:
 
 ```python
 print(f"Create request status code: {response.status_code}")
