@@ -201,8 +201,10 @@ Create a KQL database and schema in the eventhouse you created earlier.
       "displayName": f"{database_name}",
       "creationPayload": {
         "databaseType": "ReadWrite",
-        "parentEventhouseItemId": f"{eventhouseId}"
-//TODO: Brad, do we need to add the following for parity?
+        "parentEventhouseItemId": f"{eventhouseId}",
+
+        "//TODO": "BRAD, do we need to add the following for parity?",
+
         "oneLakeCachingPeriod": f"{database_cache}",
         "oneLakeStandardStoragePeriod": f"{database_storage}"
       }
@@ -230,7 +232,7 @@ Create a KQL database and schema in the eventhouse you created earlier.
     token_string = mssparkutils.credentials.getToken(f"{query_uri}")
     ```
 
-1. Use the [Kusto management API](/kusto/api/rest/request?view=microsoft-fabric&preserve=true) to create a table, set the cache policy, and set the retention policy:
+1. Use the [Kusto management API](/kusto/api/rest/request?view=microsoft-fabric&preserve-view=true) to create a table, set the cache policy, and set the retention policy:
 
     ```python
     url = f"{query_uri}/v1/rest/mgmt"
