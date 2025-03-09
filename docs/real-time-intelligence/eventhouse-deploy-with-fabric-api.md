@@ -16,13 +16,6 @@ You can fully automate the deployment of your Eventhouses with KQL Databases usi
 * **Database schema script**: You can specify a database schema script as part of the [KQL Database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) to configure your database.
 * **Kusto API**: You can use the Kusto API to execute [management commands](/kusto/management/?view=microsoft-fabric&preserve-view=true) to configure your database.
 
-## Choose the right method
-
-When choosing the right method to manage your Eventhouse and KQL Database, consider these points:
-
-* **Database schema script**: Use this method if you want to define the schema of your database as part of the database definition. This method is useful when you want to define the schema of your database in a single place.
-* **Kusto API**: Use this method if you want to execute management commands to configure your database. This method is useful when you want to execute management commands to configure your database.
-
 In this article, you learn to:
 
 > [!div class="checklist"]
@@ -36,6 +29,13 @@ In this article, you learn to:
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Your workspace ID. For more information, see [Identify your workspace ID](../admin/portal-workspace.md#identify-your-workspace-id).
+
+## Choose the right method
+
+When choosing the right method to manage your Eventhouse and KQL Database, consider these points:
+
+* **Database schema script**: Use this method if you want to define the schema of your database as part of the database definition. This method is useful when you want to define the schema of your database in a single place.
+* **Kusto API**: Use this method if you want to execute management commands to configure your database. This method is useful when you want to execute management commands to configure your database.
 
 ## Set up your environment
 
