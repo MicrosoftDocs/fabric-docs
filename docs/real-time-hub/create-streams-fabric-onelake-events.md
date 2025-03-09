@@ -36,6 +36,7 @@ For more information, see [Explore OneLake events](explore-fabric-onelake-events
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+- SusbcribeOneLakeEvent permission on the data sources
 
 ## Create streams for OneLake events
 You can create streams for OneLake events in Real-Time hub using one of the ways:
