@@ -1,17 +1,13 @@
 ---
-title: "How to: Use Copilot quick actions for Fabric Data Warehouse"
+title: "How To: Use Copilot Quick Actions for Fabric Data Warehouse"
 description: Learn more about Microsoft Copilot quick actions for Fabric Data Warehouse, to explain and fix SQL queries in the SQL query editor.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 10/22/2024
+ms.date: 02/20/2025
 ms.topic: how-to
-ms.collection: ce-skilling-ai-copilot
-ms.custom:
-  - build-2024
-  - build-2024-dataai
-  - build-2024-fabric
-  - ignite-2024
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 # How to: Use Copilot quick actions for Fabric Data Warehouse
 
@@ -19,7 +15,7 @@ ms.custom:
 
 There are two AI-powered quick actions that are currently supported in Copilot for Data Warehouse: **Explain** and **Fix**.
 
-:::image type="content" source="media/copilot-quick-action/explain-fix.png" alt-text="Screenshot from the Fabric portal showing the Explain and Fix buttons above a new empty SQL query tab.":::
+:::image type="content" source="media/copilot-quick-action/explain-fix.png" alt-text="Screenshot from the Fabric portal showing the Explain and Fix buttons above a new empty SQL query tab." lightbox="media/copilot-quick-action/explain-fix.png":::
 
 Quick actions can accelerate productivity by helping you write and understand queries faster. These buttons are located at the top of the SQL query editor, near the **Run** button.
 
@@ -65,13 +61,13 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 
 1. Copilot will analyze your query and try to find the best way to fix it. It will also add comments to explain what it fixed and why.
 
-    :::image type="content" source="media/copilot-quick-action/fix-t-sql.png" alt-text="Screenshot from the Fabric portal showing comments added by Copilot to the T-SQL query." lightbox="media/copilot-quick-action/fix-t-sql.png":::
+    :::image type="content" source="media/copilot-quick-action/fix-t-sql.png" alt-text="Screenshot from the Fabric portal showing comments added by Copilot to the T-SQL query.":::
 
 1. Review the changes that Copilot made and select **Run** to execute the fixed query. You can also undo the changes if you don't like them, or make further edits.
 
 ## Related content
 
-- [Microsoft Copilot for Fabric Data Warehouse](copilot.md)
+- [Overview of Copilot for Data Warehouse](copilot.md)
 - [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
 - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
-- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md)

@@ -2,12 +2,10 @@
 title: Discover and respond to events
 description: Learn about the Real-Time Intelligence tutorial user flow 1 and how to discover and respond to events in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: concept-article
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Get started

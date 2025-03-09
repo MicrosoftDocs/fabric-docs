@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 11/19/2024
+ms.date: 01/27/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -20,7 +20,9 @@ For troubleshooting, see:
 
 ## Feature availability
 
-You can configure your Azure SQL Managed Instance for mirroring if it is deployed to any Azure **except**: East US 2; West US 2; Central US; West US. For a complete list of region support, see [Fabric regions that support Mirroring](#fabric-regions-that-support-mirroring).
+You can configure Azure SQL Managed Instance for mirroring if it is deployed to any Azure region, **except** for these regions currently: East US 2; West US 2; Central US; West US. 
+
+The feature availability also depends on Fabric regions. For a complete list of Fabric region support, see [Fabric regions that support Mirroring](#supported-regions).
 
 ## Database level limitations
 
@@ -90,70 +92,26 @@ You can configure your Azure SQL Managed Instance for mirroring if it is deploye
   - User Defined Types (UDT)
   - **geometry**
   - **geography**
-- Column names for a SQL table can't contain spaces nor the following characters: `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
+- Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
 - The following column level data definition language (DDL) operations aren't supported on source tables when they're enabled for SQL Managed Instance mirroring to Microsoft Fabric:
   - Alter column
   - Rename column (`sp_rename`)
 
-### Mirrored item limitations
+## Mirrored item limitations
 
 - User needs to be a member of the Admin/Member role for the workspace to create SQL Managed Instance mirroring.  
 - Stopping mirroring disables mirroring completely.  
 - Starting mirroring reseeds all the tables, effectively starting from scratch.  
 - If Fabric capacity is stopped and then restarted, mirroring will stop working and needs to be manually restarted. There won't be warnings/error messages indicating that mirroring stopped working.
 
-#### SQL analytics endpoint limitations
+## SQL analytics endpoint limitations
 
 - The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. See [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
-- Source schema hierarchy isn't replicated to the mirrored database. Instead, source schema is flattened, and schema name is encoded into the mirrored database table name.  
+- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. Learn more from [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
 
-#### Fabric regions that support Mirroring
+## Supported regions
 
-The following are the Fabric regions that support Mirroring for Azure SQL Managed Instance:
-
-:::row:::
-   :::column span="":::
-    **Asia Pacific**:
-
-    - Australia East
-    - Australia Southeast
-    - Central India
-    - East Asia
-    - Japan East
-    - Korea Central
-    - Southeast Asia
-    - South India
-   :::column-end:::
-   :::column span="":::
-   **Europe**
-
-    - North Europe
-    - West Europe
-    - France Central
-    - Germany West Central
-    - Norway East
-    - Sweden Central
-    - Switzerland North
-    - Switzerland West
-    - UK South
-    - UK West
-   :::column-end:::
-   :::column span="":::
-    **Americas**:
-
-    - Brazil South
-    - Canada Central
-    - Canada East
-    - East US2
-    - West US2
-   :::column-end:::
-   :::column span="":::
-    **Middle East and Africa**:
-
-    - South Africa North
-    - UAE North
-   :::column-end:::
-:::row-end:::
+[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Next step
 

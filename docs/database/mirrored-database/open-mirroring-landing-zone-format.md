@@ -4,7 +4,7 @@ description: Review the requirements for files in the landing for open mirroring
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur
-ms.date: 11/19/2024
+ms.date: 01/21/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -25,9 +25,9 @@ For every mirrored database, there is a unique storage location in OneLake for m
 
 For example, if you have tables (`Table A`, `Table B`, `Table C`) to be created in the landing zone, create folders like the following URLs:
 
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/TableA`
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/TableB`
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/TableC`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableA`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableB`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableC`
 
 
 ### Metadata file in the landing zone
@@ -40,9 +40,7 @@ For example, to declare columns `C1` and `C2` as a compound unique key for the t
 
 ```json
 {
-
-   "keyColumns": ["C1", "C2"],
-
+   "keyColumns" : ["C1", "C2"]
 }
 ```
 
@@ -124,9 +122,9 @@ A table path can be specified within a schema folder. A schema landing zone shou
 
 For example, if you have schemas (`Schema1`, `Schema2`) and tables (`Table A`, `Table B`, `Table C`) to be created in the landing zone, create folders like the following paths in OneLake:
 
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Schema1.schema/TableA`
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Schema1.schema/TableB`
-- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/LandingZone/Schema2.schema/TableC`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/Schema1.schema/TableA`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/Schema1.schema/TableB`
+- `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/Schema2.schema/TableC`
 
 ## Table columns and column operations
 

@@ -2,11 +2,10 @@
 title: Query acceleration over OneLake shortcuts (preview)
 description: Learn how to use the query acceleration policy over OneLake shortcuts to improve query performance and reduce latency for external delta tables.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
@@ -21,8 +20,8 @@ This article explains how to use the query acceleration policy to accelerate que
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Role of **Admin**, **Contributor**, or **Member** [in the workspace](../get-started/roles-workspaces.md)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* Role of **Admin**, **Contributor**, or **Member** [in the workspace](../fundamentals/roles-workspaces.md)
 
 ## Enable query acceleration on a new shortcut
 

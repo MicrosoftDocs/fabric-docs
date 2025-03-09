@@ -7,10 +7,8 @@ ms.reviewer: ''
 
 ms.custom:
   - admin-portal
-  - build-2023
-  - ignite-2023
 ms.topic: concept-article
-ms.date: 08/19/2024
+ms.date: 12/04/2024
 LocalizationGroup: Administration
 ---
 
@@ -34,7 +32,7 @@ The following table describes the columns of the list of workspaces.
 | **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](/power-bi/enterprise/service-admin-premium-manage). |
 | **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a Microsoft Fabric upgrade. |
 
-The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup**, all other workspaces are of type **Workspace**. For more information, see [Workspaces](../get-started/workspaces.md).
+The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup**, all other workspaces are of type **Workspace**. For more information, see [Workspaces](../fundamentals/workspaces.md).
 
 ## Workspace states
 
@@ -178,23 +176,23 @@ Moving workspaces from one capacity to another, has the following restrictions:
 
 * When you move a workspace, all jobs related to items in the workspace get cancelled.
 
-* Workspaces with non Power BI Fabric items can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
+* Workspaces with Fabric items (such as lakehouses and notebooks) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
 
-* Non Power BI Fabric items can't move between regions.
+* Fabric items can't move between regions.
 
 This means the following:
 
 * **Moving a workspace from one capacity to another within the same region**
 
-    If the workspace has non Power BI Fabric items, you can only move it from one Premium or Fabric capacity to another Premium or Fabric capacity. If you want to move the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, you won't be able to do so unless you delete all non-Power BI Fabric items first.
+    If the workspace has Fabric items (such as lakehouses or notebooks), you can only move it from one Premium or Fabric capacity to another Premium or Fabric capacity. If you want to move the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, you won't be able to do so unless you delete all Fabric items first.
 
-    If the workspace has no non Power BI Fabric items (that is, it has only Power BI items) moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
+    If the workspace has no Fabric items (that is, it has only Power BI items) moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    If the workspace has no non Power BI Fabric items (only Power BI items) then moving the workspace to another capacity in a different region is supported.
+    If the workspace has no Fabric items (that is, it has only Power BI items) then moving the workspace to another capacity in a different region is supported.
 
-    If you want to move a workspace that contains non Power BI Fabric items, you must delete all the non Power BI Fabric items first.  After the workspace is migrated to a different region, it can take up to an hour before you can create new non-Power BI Fabric items.
+    If you want to move a workspace that contains Fabric items, you must delete all the Fabric items first.  After the workspace is migrated to a different region, it can take up to an hour before you can create new Fabric items.
 
 ## Related content
 

@@ -6,7 +6,6 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -98,6 +97,8 @@ The Kafka format is compatible with the Apache Kafka protocol, which is a popula
 The **Sample code** page on the **Kafka** tab provides ready-made code, including the necessary connection keys in Kafka format. Simply copy it for your use.
 
 :::image type="content" source="./media/add-destination-custom-app-enhanced/kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream live view.":::
+
+For a clear guide on using the custom endpoint with the Kafka protocol, refer to [this tutorial](stream-consume-events-use-kafka-endpoint.md). It provides detailed steps for streaming and consuming events using the custom endpoint with the Kafka protocol.
 
 ### AMQP
 

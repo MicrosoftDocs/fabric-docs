@@ -2,12 +2,10 @@
 title: What is Real-Time Intelligence
 description: Learn about Real-Time Intelligence in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: overview
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Overview

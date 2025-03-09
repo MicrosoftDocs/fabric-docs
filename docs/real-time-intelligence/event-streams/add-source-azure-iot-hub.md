@@ -6,7 +6,6 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -25,7 +24,7 @@ This article shows you how to add an Azure IoT Hub source to an eventstream.
 Before you start, you must complete the following prerequisites: 
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
+- You need to have appropriate permission to get IoT hub's access keys. If your Iot hub is within a protected network, [connect to it using a managed private endpoint](set-up-private-endpoint.md). Otherwise, ensure the Iot hub is publicly accessible and not behind a firewall.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Launch the Select a data source wizard
@@ -83,10 +82,10 @@ Follow these steps to add an Azure IoT hub as your eventstream source:
    :::image type="content" source="./media/add-iot-hub-source/iot-hub-configuration-pane.png" alt-text="Screenshot that shows where to configure Azure IoT Hub in the eventstream.":::
 
     1. **Source name**: Enter a name for your Azure IoT Hub, such as **iothub-source**.
-    2. **Cloud connection**: Select an existing cloud connection that links your Azure IoT Hub to Microsoft Fabric. If you don't have one, proceed to step 3 to create a new cloud connection.
-    3. **Data format**. Choose a data format (AVRO, JSON, or CSV) for streaming your IoT Hub data into the eventstream.
-    4. **Consumer group**. Choose a consumer group from your Azure IoT Hub, or leave it as **$Default**. Then select **Add** to finish the Azure IoT Hub configuration.
-    5. Once it's added successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
+    1. **Cloud connection**: Select an existing cloud connection that links your Azure IoT Hub to Microsoft Fabric. If you don't have one, proceed to step 3 to create a new cloud connection.
+    1. **Data format**. Choose a data format (AVRO, JSON, or CSV) for streaming your IoT Hub data into the eventstream.
+    1. **Consumer group**. Choose a consumer group from your Azure IoT Hub, or leave it as **$Default**. Then select **Add** to finish the Azure IoT Hub configuration.
+    1. Once it adds successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
 
        :::image type="content" source="./media/add-iot-hub-source/successfully-added-iot-hub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor.":::
 

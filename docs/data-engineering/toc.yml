@@ -10,11 +10,11 @@ items:
 - name: Get started
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
-    href: ../get-started/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+    href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Decision guide - choose a data store
-    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+    href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Decision guide - Warehouse and Lakehouse
-    href: ../get-started/decision-guide-lakehouse-warehouse.md
+    href: ../fundamentals/decision-guide-lakehouse-warehouse.md
   - name: Upload CSV to delta tables
     href: get-started-csv-upload.md
   - name: Get streaming data into lakehouse
@@ -65,6 +65,36 @@ items:
     href: lakehouse-streaming-data.md
   - name: Get streaming data into lakehouse with eventstreams 
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
+- name: Copilot
+  items:
+  - name: Copilot for Data Science and Data Engineering
+    href: copilot-notebooks-overview.md
+  - name: Chat-magics in notebooks (preview)
+    href: copilot-notebooks-chat-magics.md
+  - name: Use the Copilot chat panel (preview)
+    href: copilot-notebooks-chat-pane.md
+- name: AI functions
+  items: 
+    - name: Transform and enrich data with AI functions
+      href: ../data-science/ai-functions/overview.md
+    - name: ai.similarity
+      href: ../data-science/ai-functions/similarity.md
+    - name: ai.classify
+      href: ../data-science/ai-functions/classify.md
+    - name: ai.analyze_sentiment
+      href: ../data-science/ai-functions/analyze-sentiment.md
+    - name: ai.extract
+      href: ../data-science/ai-functions/extract.md
+    - name: ai.fix_grammar
+      href: ../data-science/ai-functions/fix-grammar.md
+    - name: ai.summarize
+      href: ../data-science/ai-functions/summarize.md
+    - name: ai.translate
+      href: ../data-science/ai-functions/translate.md
+    - name: ai.generate_response
+      href: ../data-science/ai-functions/generate-response.md
+    - name: Customize AI function configurations
+      href: ../data-science/ai-functions/configuration.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
@@ -129,7 +159,7 @@ items:
     items:
     - name: Capacity settings overview
       href: capacity-settings-overview.md
-    - name: Configure capacity Settings
+    - name: Configure capacity settings
       href: capacity-settings-management.md
     - name: Spark workspace settings 
       href: workspace-admin-settings.md
@@ -153,12 +183,20 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
+    - name: Monitor Apache Spark applications resource utilization 
+      href: monitor-spark-resource-utilization.md
     - name: Monitor run series
       href: apache-spark-monitor-run-series.md
     - name: Navigate the Apache Spark history server
       href: apache-spark-history-server.md  
     - name: Monitor Spark capacity consumption
       href: monitor-spark-capacity-consumption.md
+    - name: Collect Spark logs and metrics with Azure Log Analytics
+      href: azure-fabric-diagnostic-emitters-log-analytics.md
+    - name: Collect Spark logs and metrics with Azure Storage Account
+      href: azure-fabric-diagnostic-emitters-azure-storage.md
+    - name: Collect Spark logs and metrics with Azure Event Hub 
+      href: azure-fabric-diagnostic-emitters-azure-event-hub.md
   - name: Spark Connectors
     items:
     - name: Data warehouse and lakehouse connector
@@ -190,6 +228,8 @@ items:
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
     href: author-execute-notebook.md  
+  - name: Use Python experience on notebook
+    href: using-python-experience-on-notebook.md  
   - name: NotebookUtils
     href: notebook-utilities.md
     displayName: MSSparkUtils
@@ -247,6 +287,8 @@ items:
     href: explore-lakehouse-with-vs-code.md
   - name: Develop notebook with VS Code web experience
     href: author-notebook-with-vs-code-web.md
+  - name: Develop notebook with Fabric runtime
+    href: fabric-runtime-in-vscode.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse
@@ -287,3 +329,11 @@ items:
      href: multiple-data-sources-graphql.md
    - name: Monitoring GraphQL operations
      href: graphql-operations.md
+   - name: Monitoring dashboard and logging (preview)
+     href: graphql-monitor-log.md
+   - name: Limitations
+     href: api-graphql-limits.md
+- name: Partner integration
+  items:
+   - name: Esri - ArcGIS GeoAnalytics (preview)
+     href: spark-arcgis-geoanalytics.md

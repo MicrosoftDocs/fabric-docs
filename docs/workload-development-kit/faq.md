@@ -17,7 +17,7 @@ This article contains frequently asked questions relating to the Microsoft Workl
 ### I have a question that isn't answered in this FAQ, where can I get help?
 
 Post your question at [Microsoft-Fabric-workload-development-sample/discussions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/discussions) 
-or [Microsoft-Fabric-workload-development-sample/issues](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/issues) so that it can be addressed by the Fabric team. 
+or [Microsoft-Fabric-workload-development-sample/issues](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/issues) and the Fabric team can answer the question directly. 
 
 ## Fabric Workload Design
 
@@ -35,7 +35,7 @@ Specific screens in Fabric are collected in the Page examples file while more ge
 
 ### What guidelines should I follow if, I want to use icons in my workloads?
 
-Review the [Fabric UX System](https://aka.ms/fabricux) for further information on this.
+Review the [Fabric UX System](https://aka.ms/fabricux) for further information on design guidelines.
 
 ## Fabric Workload Business model
 
@@ -45,7 +45,7 @@ You can choose how you want to structure the trial experience. If you want to pr
 
 ### What business model should I choose for my SaaS offer?
 
-This really depends on your offer. The Azure Marketplace provides different ways to monetize your offer (for example, per user, per your own metric, flat fee, ...). In the end, you want to optimize your business model to the needs of your customer. Further information can be found at [SaaS Pricing Models](/partner-center/marketplace/plan-saas-offer#saas-pricing-models).
+Azure Marketplace provides different ways to monetize your offer (for example, per user, per your own metric, flat fee, ...). In the end, you want to optimize your business model to the needs of your customer. Further information can be found at [SaaS Pricing Models](/partner-center/marketplace/plan-saas-offer#saas-pricing-models).
 
 ### What can I do to support my existing customers in Fabric? 
 
@@ -54,6 +54,18 @@ You can choose if you want to offer the fabric capability to your customers as p
 ### I don't have an Azure Marketplace SaaS offer. Where can I get started?
 
 Further information can be found here: [Plan a Saas offer for the commercial marketplace](/partner-center/marketplace/plan-saas-offer).
+
+### Is there a plan to certify these workloads?
+
+We don't perform code certification as these workloads are embedded in Fabric, not hosted on it. Workloads are embedded in Fabric similarly to how apps are embedded in Microsoft Teams. We validate the workload publishers and request them to attest to specific areas, use the certification link from the [Workload detailed page](../fundamentals/fabric-home.md) to review the publisher attestations. Furthermore, all workloads are governed with a Microsoft Entra application, giving Tenant admins full control over who can consent to which applications or scopes, ensuring compliance with organizational Microsoft Entra governance. 
+
+### Is the Partner Workload running on a Fabric Capacity?
+
+No, the Partner Workloads can't charge the Fabric capacity directly. To purchase Partner Workloads, you need to follow Azure Marketplace offer located on the workload page. The capacity is only used as a restriction scope to where items can be created. Partner Workloads may create and run  Fabric items (for example: Lakehouse, Notebook) on behalf of the working user based on Microsoft Entra permissions.
+
+### On which capacities can I assign the Partner Workload? 
+
+Partner Workloads can be assigned on F & P Capacities. 
 
 <!--
 ## Fabric Workload Submission 

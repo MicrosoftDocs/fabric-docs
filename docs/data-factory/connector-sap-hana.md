@@ -4,11 +4,9 @@ description: This article provides information about how to create an SAP HANA d
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 09/13/2024
+ms.date: 02/06/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your SAP HANA database connection
@@ -22,7 +20,8 @@ The SAP HANA database connector supports the following authentication types for 
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Basic (Username/Password)| n/a | √ |
+|Basic (Username/Password)| √ | √ |
+|Windows | √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 

@@ -7,7 +7,6 @@ ms.reviewer: nzagorac
 ms.date: 11/15/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ---
 # Limitations for Fabric SQL database mirroring (preview)
 

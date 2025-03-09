@@ -6,8 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
 ms.custom:
-  - build-2024
-ms.date: 04/15/2023
+ms.date: 12/18/2024
 ---
 
 # Tutorial: Orchestrate an Azure Data Factory (ADF) Pipeline with Apache Airflow Job.

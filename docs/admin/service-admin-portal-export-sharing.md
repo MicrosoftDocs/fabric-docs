@@ -3,11 +3,8 @@ title: Export and sharing tenant settings
 description: Learn how to configure export and sharing settings in Fabric.
 author: paulinbar
 ms.author: painbar
-ms.reviewer: ''
-
-ms.custom:
 ms.topic: how-to
-ms.date: 03/16/2024
+ms.date: 02/16/2025
 LocalizationGroup: Administration
 ---
 
@@ -74,12 +71,6 @@ This setting allows Microsoft Entra B2B guest users to have full access to the b
 To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
 ## Users can see guest users in lists of suggested people
-
-This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
-
-To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
-
-## Show Microsoft Entra guests in lists of suggested people
 
 This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Microsoft Entra guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
 
@@ -295,4 +286,5 @@ Users can deliver reports to OneDrive or SharePoint. If the **Users can set up s
 
 ## Related content
 
-* [About tenant settings](tenant-settings-index.md)
+* [About tenant settings](about-tenant-settings.md)
+* [Tenant settings index](tenant-settings-index.md)

@@ -7,9 +7,6 @@ ms.reviewer: anithaa, wiassaf
 ms.date: 11/19/2024
 ms.topic: overview
 ms.custom:
-  - ignite-2024
-ms.collection:
-  - ce-skilling-ai-copilot
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -25,7 +22,7 @@ You can use built-in Power BI capabilities to access data in OneLake in DirectLa
 In addition to Power BI, you can use T-SQL to run complex aggregate queries or use Spark for data exploration. You can seamlessly access the data in notebooks and use data science to build machine learning models.
 
 > [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Mirroring for Azure Cosmos DB is currently in [preview](../../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Why use mirroring in Fabric?
 
@@ -180,8 +177,7 @@ You can also build medallion architecture solutions, cleaning and transforming t
 
 ## Pricing
 
-Mirroring is free of cost for compute used to replicate your Cosmos DB data into Fabric OneLake. Storage in OneLake is free of cost based on certain conditions. For more information, see [OneLake pricing for mirroring.](https://azure.microsoft.com/pricing/details/microsoft-fabric/)
-The compute usage for querying data via SQL, Power BI or, Spark is still charged based on the Fabric Capacity. 
+Fabric compute used to replicate your Cosmos DB data into Fabric OneLake is free. Storage in OneLake is free of cost based the capacity size. For more information, see [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute usage for querying data via SQL, Power BI, or Spark is still charged based on the Fabric Capacity. 
 
 If you're using the data explorer in Fabric mirroring, you accrue typical costs based on request unit (RU) usage to explore the containers and query the items in the source Azure Cosmos DB database. The Azure Cosmos DB continuous backup feature is a prerequisite to mirroring: Standard charges for continuous backup apply. There are no additional charges for mirroring on continuous backup billing. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
 

@@ -6,7 +6,6 @@ ms.author: aamerril
 author: aamerril
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
 ms.date: 11/15/2023
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
@@ -43,7 +42,7 @@ You can simplify the management of Fabric workspace roles by assigning them to s
 
 ## Item permissions
 
-With the [sharing](../../get-started/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. Item permissions grant access to connect to that item and which item endpoints the user is able to access.
+With the [sharing](../../fundamentals/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. Item permissions grant access to connect to that item and which item endpoints the user is able to access.
 
 |     Permission |   See the item metadata? |     See data in SQL? |     See data in OneLake? |
 |----------------|--------------------------|----------------------|--------------------------|
@@ -89,6 +88,6 @@ Learn more about the security model for shortcuts in [Data Access Control Model]
 
 - [Fabric and OneLake security overview](./fabric-onelake-security.md)
 - [OneLake data access roles (preview)](./get-started-data-access-roles.md)
-- [Workspace roles](../../get-started/roles-workspaces.md)
+- [Workspace roles](../../fundamentals/roles-workspaces.md)
 - [OneLake file explorer](../onelake-file-explorer.md)
-- [Share items](../../get-started/share-items.md)
+- [Share items](../../fundamentals/share-items.md)

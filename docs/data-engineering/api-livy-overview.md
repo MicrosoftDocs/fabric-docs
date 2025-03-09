@@ -9,7 +9,7 @@ ms.search.form: Livy API Overview for Data Engineering
 ms.date: 11/19/2024
 ---
 
-# What is the Livy API for Data Engineering?
+# What is the Livy API for Data Engineering? (Preview)
 
 > [!NOTE]
 > The Livy API for Fabric Data Engineering is in preview.

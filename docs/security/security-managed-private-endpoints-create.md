@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 09/05/2024
 ---
 
@@ -16,6 +15,10 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 * The user can also monitor the status and the approval process of the managed private endpoints from the **Network security** section of the workspace settings.
 
 * The user can access the data sources using the private endpoint name from the Fabric Spark workloads.
+
+## Prerequisites
+
+A Microsoft.Network resource provider needs to be registered in the Azure subscription 
 
 ## Create a managed private endpoint
 
@@ -83,8 +86,6 @@ This guide provides code samples to help you get started in your own notebooks t
 1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 
 1. Use the experience switcher on the left-hand side of your home page to switch the **Develop** experience.
-
-    :::image type="content" source="./media/security-managed-private-endpoints-create/enter-data-engineering-experience.png" alt-text="Screenshot showing how to get into the data engineering experience in Fabric.":::
 
 1. Navigate to your desired workspace or create a new one if needed.
 

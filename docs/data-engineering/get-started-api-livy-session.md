@@ -20,9 +20,7 @@ Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
 
 ## Prerequisites
 
-* Fabric [Premium](/power-bi/enterprise/service-premium-per-user-faq) or [Trial capacity](../get-started/fabric-trial.md) with a Lakehouse.
-
-* Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API (preview).
+* Fabric [Premium](/power-bi/enterprise/service-premium-per-user-faq) or [Trial capacity](../fundamentals/fabric-trial.md) with a Lakehouse.
 
 * A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
 
@@ -154,8 +152,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         time.sleep(5)
         print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
-    # Make the next request
-    get_statement_response = requests.get(get_statement, headers=headers)
+        # Make the next request
+        get_statement_response = requests.get(get_statement, headers=headers)
 
     rst = get_statement_response.json()['output']['data']['text/plain']
     print(rst)
@@ -197,8 +195,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         time.sleep(5)
         print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
-    # Make the next request
-    get_statement_response = requests.get(get_statement, headers=headers)
+        # Make the next request
+        get_statement_response = requests.get(get_statement, headers=headers)
 
     rst = get_statement_response.json()['output']['data']['text/plain']
     print(rst)
@@ -236,7 +234,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 1. In this Livy API session case, you can see your previous sessions submissions, run details, Spark versions, and configuration. Notice the stopped status on the top right.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." :::
+    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-activity-details.png" :::
 
 To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Microsoft Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
 

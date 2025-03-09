@@ -6,8 +6,6 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: concept-article
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---
@@ -42,9 +40,9 @@ Here's the list of operations supported for real-time data processing:
 
 The supported destinations are:
 
-- **Lakehouse**: This destination provides you with the ability to transform your real-time events prior to ingestion into your lakehouse. Real-time events convert into Delta Lake format and then store in the designated lakehouse tables. This destination helps with data warehousing scenarios.
+- **Lakehouse**: This destination provides you with the ability to transform your real-time events before ingestion into your lakehouse. Real-time events convert into Delta Lake format and then store in the designated lakehouse tables. This destination helps with data warehousing scenarios.
 
-- **KQL Database**: This destination enables you to ingest your real-time event data into KQL Database, where you can use the powerful Kusto Query Language (KQL) to query and analyze the data. With the data in KQL Database, you can gain deeper insights into your event data and create rich reports and dashboards.
+- **Eventhouse**: This destination enables you to ingest your real-time event data into Eventhouse, where you can use the powerful Kusto Query Language (KQL) to query and analyze the data. With the data in Eventhouse, you can gain deeper insights into your event data and create rich reports and dashboards.
 
 - **Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]**: This destination lets you directly connect your real-time event data to a Fabric Activator. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is a type of intelligent agent that contains all the information necessary to connect to data, monitor conditions, and act. When the data reaches certain thresholds or matches other patterns, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
@@ -52,7 +50,7 @@ The supported destinations are:
 
 - **Stream**: This destination represents the default raw eventstream transformed by a series of operations, also called a derived stream. Once created, you can view the stream from the Real-Time hub.
 
-The following example shows how three distinct Fabric eventstream destinations can serve separate functions for a single data stream source. One KQL database is designated for storing raw data, a second KQL database is for retaining filtered data streams, and the Lakehouse is used for storing aggregated values.
+The following example shows how three distinct Fabric eventstream destinations can serve separate functions for a single data stream source. One Eventhouse is designated for storing raw data, a second Eventhouse is for retaining filtered data streams, and the Lakehouse is used for storing aggregated values.
 
 :::image type="content" border="true" source="media/route-events-based-on-content/route-events.png" alt-text="A screenshot of routing events based on content.":::
 

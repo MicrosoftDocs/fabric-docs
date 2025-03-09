@@ -3,11 +3,10 @@ title: "Microsoft Fabric Mirrored Databases From Azure SQL Database"
 description: Learn about the mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: roblescarlos
+ms.reviewer: imotiwala
 ms.date: 11/19/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -59,7 +58,6 @@ Currently, Mirroring doesn't support Azure SQL Database logical servers behind a
 
 - Active transactions continue to hold the transaction log truncation until the transaction commits and the mirrored Azure SQL Database catches up, or the transaction aborts. Long-running transactions might result in the transaction log filling up more than usual. The source database transaction log should be monitored so that the transaction log does not fill. For more information, see [Transaction log grows due to long-running transactions and CDC](/troubleshoot/sql/database-engine/replication/monitor-long-running-transactions-and-log-growth).
 - Each user workload varies. During initial snapshot, there might be more resource usage on the source database, for both CPU and IOPS (input/output operations per second, to read the pages). Table updates/delete operations can lead to increased log generation. Learn more on how to [monitor resources for your Azure SQL Database](/azure/azure-sql/database/monitor-tune-overview?view=azuresql-db&preserve-view=true#azure-sql-database-and-azure-sql-managed-instance-resource-monitoring).
-- The replicator engine monitors each table for changes independently. If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there is a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
 
 ## Tier and purchasing model support
 
@@ -67,6 +65,10 @@ The source Azure SQL Database can be either a single database or a database in a
 
 - All service tiers in the [vCore purchasing model](/azure/azure-sql/database/service-tiers-sql-database-vcore) are supported.
 - For the [DTU (Database Transaction Unit) purchasing model](/azure/azure-sql/database/service-tiers-dtu), databases created in the **Free**, **Basic**, or **Standard service tiers** with fewer than **100 DTUs** are **not supported.**
+
+## Pricing
+
+Fabric compute used to replicate your data into Fabric OneLake is free. Storage in OneLake is free of cost based the capacity size. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute usage for querying data via SQL, Power BI, or Spark is still charged based on the Fabric Capacity. 
 
 ## Next step
 

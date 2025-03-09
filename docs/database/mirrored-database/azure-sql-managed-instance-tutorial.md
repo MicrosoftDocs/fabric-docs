@@ -19,7 +19,7 @@ ms.topic: tutorial
   - The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
   - If you don't have an Azure SQL Managed Instance, [you can create a new SQL managed instance](/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal&preserve-view=true). You can use the [Azure SQL Managed Instance free offer](/azure/azure-sql/managed-instance/free-offer?view=azuresql&preserve-view=true) if you like.
   - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/restore-sample-database-quickstart?view=azuresql&preserve-view=true).
-- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
   - The Fabric capacity needs to be active and running. A paused or deleted capacity impacts Mirroring and no data are replicated.
 - Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [About tenant settings](../../admin/about-tenant-settings.md).
 - Networking requirements for Fabric to access your Azure SQL Managed Instance:
@@ -146,9 +146,6 @@ If the initial sync is completed, a **Last completed** timestamp is shown next t
 Also, note the **Rows replicated** column. It counts all the rows that have been replicated for the table. Each time a row is replicated, it is counted again. This means that, for example, inserting a row with primary key =1 on the source increases the "Rows replicated" count by one. If you update the row with the same primary key, replicates to Fabric again, and the row count increases by one, even though it's the same row which replicated again. Fabric counts all replications that happened on the row, including inserts, deletes, updates.
 
 The **Monitor replication** screen also reflects any errors and warnings with tables being mirrored. If the table has unsupported column types or if the entire table is unsupported (for example, in memory or columnstore indexes), a notification about the limitation is shown on this screen. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
-
-> [!IMPORTANT]
-> If there are no updates in the source tables, the replicator engine will start to back off with an exponentially increasing duration, up to an hour. The replicator engine will automatically resume regular polling after updated data is detected.
 
 ## Related content
 

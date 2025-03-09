@@ -6,9 +6,6 @@ ms.author: jaszymas
 ms.reviewer: wiassaf
 ms.date: 10/11/2024
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
-ms.search.form:
 ---
 # Authorization in SQL database in Microsoft Fabric
 
@@ -39,8 +36,8 @@ In Fabric, you can control access using Fabric [workspace roles](/fabric/securit
 
 Fabric [workspace roles](/fabric/security/permission-model#workspace-roles) let you manage who can do what in a Microsoft Fabric workspace.
 
-- For an overview of workspace roles, see [Roles in workspaces](../../get-started/roles-workspaces.md).
-- For instructions on assigning workspace roles, see [Give users access to workspaces](../../get-started/give-access-workspaces.md).
+- For an overview of workspace roles, see [Roles in workspaces](../../fundamentals/roles-workspaces.md).
+- For instructions on assigning workspace roles, see [Give users access to workspaces](../../fundamentals/give-access-workspaces.md).
 
 The following table captures SQL database-specific capabilities, members of particular workspace roles are allowed to access.
 

@@ -1,11 +1,10 @@
 ---
 title: Include file for the OneLake shortcut Real-Time Intelligence
 description: Include file for the OneLake shortcut in Real-Time Intelligence
-author: YaelSchuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.topic: include
 ms.custom:
-  - ignite-2024
 ms.date: 10/28/2024
 ---
 1. Browse to an existing KQL database.
