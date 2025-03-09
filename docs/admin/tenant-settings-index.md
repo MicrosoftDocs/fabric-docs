@@ -3,10 +3,10 @@ title: Tenant settings index
 description: Index to Fabric tenant settings.
 author: paulinbar
 ms.author: painbar
-ms.topic: conceptual
+ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 03/02/2025
+ms.date: 03/09/2025
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
