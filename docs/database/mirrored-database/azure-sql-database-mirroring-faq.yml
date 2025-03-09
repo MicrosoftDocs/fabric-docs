@@ -123,7 +123,7 @@ sections:
       - question: |
           What are the costs associated with Mirroring?
         answer: 
-          There is no compute cost for mirroring data from the source to Fabric OneLake. The Mirroring storage cost is free up to a certain limit based on the purchased compute capacity SKU you provision. Learn more from the Mirroring section in [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+          Fabric compute used to replicate your data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
       - question: |
           What do we recommend a customer do to avoid or reduce Azure SQL Database costs? 
         answer: 

@@ -13,17 +13,18 @@ ms.search.form: AI functions
 
 # Customize the configuration of AI functions
 
-AI functions, currently in public preview, allow users to harness the power of Fabric's native large language model (LLM) to [transform and enrich their enterprise data](./overview.md). They're designed to work out-of-the-box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+AI functions, currently in public preview, allow users to harness the power of Fabric's native large language models (LLMs) to [transform and enrich their enterprise data](./overview.md). They're designed to work out-of-the-box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 ## Customizing AI functions with pandas
 
-By default, AI functions are powered by the native Fabric LLM endpoint. The LLM's settings are globally configured in the `aifunc.Conf` class. If you work with AI functions in pandas, you can use the `aifunc.Conf` class to modify some or all of these settings:
+By default, AI functions are powered by Fabric's built-in AI endpoint. The LLM's settings are globally configured in the `aifunc.Conf` class. If you work with AI functions in pandas, you can use the `aifunc.Conf` class to modify some or all of these settings:
 
 | **Parameter** | **Description** | **Default** |
 |---|---|---|
@@ -31,7 +32,7 @@ By default, AI functions are powered by the native Fabric LLM endpoint. The LLM'
 | **`embedding_deployment_name`**<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | **text-embedding-ada-002** |
 | **`temperature`**<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between **0.0** and **1.0** that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | **0.0** |
 | **`seed`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | **openai.NOT_GIVEN** |
-| **`timeout`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no time out. | **None** |
+| **`timeout`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no time-out. | **None** |
 | **`max_concurrency`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to be processed in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). | **4** |
 
 The next code sample shows how to override `aifunc.Conf` settings globally, so that they apply to all AI function calls in a given session:
@@ -91,7 +92,7 @@ aifunc.setup(client)  # Set the client for all functions
 
 ## Customizing AI functions with PySpark
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show how you can override the native Fabric LLM endpoint with a custom Azure OpenAI LLM deployment:
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show how you can override the built-in Fabric AI endpoint with a custom Azure OpenAI LLM deployment:
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
