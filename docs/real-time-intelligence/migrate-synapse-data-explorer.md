@@ -36,7 +36,7 @@ Before you migrate, consider the following key points:
 - The migration is performed on the entire cluster, including all its databases.
 - The migration process is irreversible.
 - You must manually add users from other tenants who previously had access to the cluster to the new eventhouse.
-- The cluster and the eventhouse must be in the same region.
+- The cluster and the eventhouse must be in the same tenant and region.
 - The migration process can take a few hours to complete, depending on the size of the cluster. For information on tracking the status, see [Monitor migration progress](migrate-api-to-eventhouse.md#monitor-migration-progress).
 
 ## Which features can be migrated?
