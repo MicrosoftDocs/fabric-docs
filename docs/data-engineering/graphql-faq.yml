@@ -34,6 +34,9 @@ sections:
 
       - question: Which regions are not yet supported by the API for GraphQL?
         answer: API for GraphQL is currently not supported in the West US 3 region.
+      
+      - question: How can I provide feedback or suggestions for API for GraphQL?
+        answer: We welcome your feedback and suggestions! You can provide feedback through [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/ct-p/fbc_ideas). Our team actively monitors the feedback and suggestions submitted through this platform. You can also reach out to us via [Microsoft Fabric Support](https://support.fabric.microsoft.com/support/) for any specific queries or concerns.
 
 additionalContent: |
     ## Related content

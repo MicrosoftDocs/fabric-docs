@@ -87,7 +87,7 @@ Use the following steps to get started with Copilot for Dataflow Gen2:
 
     ```Create a new query with sample data that lists all the Microsoft OS versions and the year they were released```
 
-    Copilot adds a new query to the Queries pane list, containing the results of your input. At this point, you can either transform data in the user interface, continue to edit with Copilot text input, or delete the query with an input such as ```Delete my current query```.
+    Copilot adds a new query to the Queries pane list, containing the results of your input. At this point, you can either transform data in the user interface, continue to edit with Copilot text input, or ask Copilot to explain the query with an input such as ```Explain my current query```.
 
     :::image type="content" source="media/copilot-fabric-data-factory/copilot-create-new-query.png" alt-text="Screenshot showing a new query being created." lightbox="media/copilot-fabric-data-factory/copilot-create-new-query.png":::
 
