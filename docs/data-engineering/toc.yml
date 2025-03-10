@@ -341,7 +341,6 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
-     href: spark-arcgis-geoanalytics.md
 - name: User data functions (preview)
   items:
    - name: Create User data functions
