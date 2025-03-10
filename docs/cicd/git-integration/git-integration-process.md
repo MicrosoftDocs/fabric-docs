@@ -110,6 +110,8 @@ If you don’t select which content to sync, you can’t continue to work.
 
 ### Folders
 
+Folders are not yet supported in Git. Currently, all items appear in the top level of the Git folder even if your workspace has folders.
+
 <!--- 
 When connected and synced, the workspace structure is mirrored in the Git repository, including folders structure. Workspace items in folders are exported to folders with the same name in the Git repo. Conversely, items in Git folders are imported to folders with the same name in the workspace.
 
