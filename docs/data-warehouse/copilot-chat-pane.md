@@ -41,6 +41,7 @@ The supported capabilities of interacting through chat include:
 
 1. In the **Data warehouse** workload, open a warehouse, and open a new SQL query.
 1. To open the Copilot chat pane, select the **Copilot** button.
+
     :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon." lightbox="media/copilot-chat-pane/copilot-button.png":::
 
 1. The chat pane offers helpful starter prompts to get started and familiar with Copilot. Select any option to ask Copilot a question. The **Ask a question** button provides example questions that are tailored specifically to your warehouse.
@@ -48,6 +49,7 @@ The supported capabilities of interacting through chat include:
 1. You can also type a request of your choice in the chat box and Copilot responds accordingly.
 
 1. To find documentation related to your request, select the **Help** button.
+
     :::image type="content" source="media/copilot-chat-pane/copilot-chat.png" alt-text="Screenshot from the Fabric portal showing the Copilot chat.":::
 
 ## More powerful use cases

@@ -34,9 +34,12 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 ## Get started
 
 1. Verify the **Show Copilot completions** setting in enabled in your warehouse settings.
-   - You can also check the setting's status through the status bar at the bottom of the query editor. 
-      :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar.":::
-   - If not enabled, then in your warehouse **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
+
+    1. You can also check the setting's status through the status bar at the bottom of the query editor. 
+
+        :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar.":::
+
+    1. If not enabled, then in your warehouse **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
       :::image type="content" source="media/copilot-code-completion/copilot-setting.png" alt-text="Screenshot of the Copilot in-line completions setting in the setting pane." lightbox="media/copilot-code-completion/copilot-setting.png":::
 
 1. Start writing your query in the SQL query editor within the warehouse. As you type, Copilot will provide real-time code suggestions and completions of your query by presenting a dimmed ghost text.
