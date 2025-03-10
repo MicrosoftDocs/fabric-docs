@@ -4,7 +4,7 @@ description: "Learn more about the Microsoft Copilot for SQL database in Fabric,
 author: markingmyname
 ms.author:  maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 02/26/2025
+ms.date: 3/31/2025
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
