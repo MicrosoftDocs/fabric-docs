@@ -340,9 +340,7 @@ items:
 - name: Partner integration
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
-<<<<<<< HEAD
      href: spark-arcgis-geoanalytics.md
-=======
      href: spark-arcgis-geoanalytics.md
 - name: User data functions (preview)
   items:
@@ -361,4 +359,3 @@ items:
   
         
      
->>>>>>> 8f61f809b80e1bc841c28528d0d9d9e614242d60
