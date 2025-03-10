@@ -4,7 +4,7 @@ description: A known issue is posted where syncs for data warehouse and SQL anal
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/03/2025
+ms.date: 03/10/2025
 ms.custom: known-issue-1039
 ---
 
@@ -18,7 +18,7 @@ You have a data warehouse or a SQL analytics endpoint in the West Europe region.
 
 ## Symptoms
 
-Your data warehouse or SQL analytics endpoint has table latency issues or failures when trying to sync the tables, schema, or semantic models.
+Your data warehouse or SQL analytics endpoint has table latency issues or failures when trying to sync the tables, schema, or semantic models. The errors are associated with the item's metadata database and might be reflected in the error messages.
 
 ## Solutions and workarounds
 

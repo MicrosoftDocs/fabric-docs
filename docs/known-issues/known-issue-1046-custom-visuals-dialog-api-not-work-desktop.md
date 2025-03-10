@@ -4,7 +4,7 @@ description: A known issue is posted where custom visuals using the dialog or do
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/05/2025
+ms.date: 03/10/2025
 ms.custom: known-issue-1046
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1046
 
 You can create a custom visual that uses the dialog API, which is the API for showing modal dialogs from custom visuals, or the download API. If you use the custom visual, it doesn't work in the February version of Power BI Desktop (Version: 2.140.1078.0).
 
-**Status:** Open
+**Status:** Fixed: March 10, 2025
 
 **Product Experience:** Power BI
 
@@ -22,7 +22,7 @@ If you try to open a custom visual that uses the dialog or download API, the dia
 
 ## Solutions and workarounds
 
-To work around the issue, use Power BI service to open the affected custom visual. Alternatively, you can use the [January version of Power BI Desktop](/power-bi/fundamentals/desktop-latest-update-archive) to open the visual.
+The latest version of Power BI Desktop includes the fix to the known issue. If you're a Microsoft Store customer, you get the new version automatically. If you're a Download Center customer, you can download the new version (Version: 2.140.1454.0).
 
 ## Next steps
 
