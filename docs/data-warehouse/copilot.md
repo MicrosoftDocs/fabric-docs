@@ -8,7 +8,10 @@ ms.date: 03/31/2025
 ms.topic: conceptual
 ms.collection:
   - ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ms.custom:
+  - copilot-learning-hub
   - copilot-learning-hub
 ---
 
