@@ -26,13 +26,26 @@ There are two ways to get started with Materialized view creation.
 * Create Materialized View from **Manage materialized views** option
 * Create a Materialized View directly from the Notebook attached to your Lakehouse.
 
-1. Create `Materialized View from **Manage materialized views** option.
+1. Create Materialized View from **Manage materialized views** option.
+
     1. Go to your Lakehouse, select **Manage materialized views**.
-    1. Select on **New materialized view**, which opens a new notebook.
+       
+       :::image type="content" source="./media/create-materialized-view/manage-materialized-views.png" alt-text="Screenshot showing how to create materialized view." border="true" lightbox="./media/create-materialized-view/manage-materialized-views.png":::
+
+    1. Select **New materialized view**, which opens a new notebook.
+        
+       :::image type="content" source="./media/create-materialized-view/new-materialized-view.png" alt-text="Screenshot showing how to create materialized view." border="true" lightbox="./media/create-materialized-view/new-materialized-view.png":::
+       
+       :::image type="content" source="./media/create-materialized-view/materialized-view.png" alt-text="Screenshot showing how to create materialized view." border="true" lightbox="./media/create-materialized-view/materialized-view.png":::
+
+ 
     
 1. Create a Materialized View directly from the Notebook attached to your Lakehouse. 
 
-    1. Go to your Lakehouse, select **Open notebook** to create a new notebook. 
+    1. Go to your Lakehouse, select **Open notebook** to create a new notebook.
+       
+       :::image type="content" source="./media/create-materialized-view/open-netebook.png" alt-text="Screenshot showing how to open netebook." border="true" lightbox="./media/create-materialized-view/open-netebook.png":::
+ 
 
 ## Materialized View with SQL Syntax
 
