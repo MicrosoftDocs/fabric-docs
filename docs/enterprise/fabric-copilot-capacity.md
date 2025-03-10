@@ -11,15 +11,17 @@ ms.date: 02/11/2025
 
 # Background on Fabric Copilot Capacity
 
-Fabric Copilot capacity is a feature that allows users to utilize Copilot from Power BI Desktop, Pro and PPU workspaces and smaller F SKU workspaces even if their Power BI reports are not on a P1/F64 capacity. By designating a capacity as an Fabric Copilot capacity, capacity admins can ensure that all Copilot consumption is billed to this capacity, making it easier for users to access and use Copilot without the need for specific capacity assignments. Fabric Copilot capacity also consolidates all Copilot usage across the Fabric tenant for a user, which means that if they are using Copilot for Power BI or Copilot for Fabric Spark or Copilot for Fabric Datawarehouse, all their usage will be billed to a singular Fabric Copilot capacity. 
+Fabric Copilot capacity is a capacity level feature that enables users to charge Copilot usage from Power BI Desktop, Pro and PPU workspaces to a single capacity. By designating a capacity as an Fabric Copilot capacity for specific users, capacity admins can ensure that all Copilot consumption is billed to this capacity, making it easier for users to access and use Copilot without the need for specific capacity assignments. 
+
+Fabric Copilot capacity consolidates all Copilot usage across the Fabric tenant for a user, which means that if they are using Copilot for Power BI or Copilot for Fabric Spark or Copilot for Fabric Datawarehouse, all their usage will be billed to a singular Fabric Copilot capacity. 
 
 In addition to Copilot, Fabric Copilot capacity also consolidates AI Skills billing across the tenant for designated users.
 
-# Set up Fabric Copilot capacity
+## Set up Fabric Copilot capacity
 
 This section describes how to set up a Fabric Copilot capacity.
 
-## Enable Fabric Copilot capacity
+### Enable Fabric Copilot capacity
 
 There are three steps required to enable Fabric Copilot capacity.
 
@@ -28,6 +30,15 @@ There are three steps required to enable Fabric Copilot capacity.
 2. The Fabric administrator enables capacity administrators as [authorized to designate their capacity as a Copilot capacity](../admin/service-admin-portal-copilot.md).
 
 3. The capacity administrator needs to assign a group of users as [Fabric Copilot capacity users](../admin/capacity-settings.md) on their capacity.
+
+### Using Fabric Copilot capacity
+
+Users assigned to an FCC can use it in these scenarios:
+
+* Copilot on Power BI Desktop
+* Copilot in Power BI on (1) a Pro workspace or (2) a Fabric workspace smaller than F64.
+* Fabric Copilot scenarios on a Fabric workspace smaller than F64.
+* AI Skills scenarios on a Fabric workspace smaller than F64.
 
 ## Considerations and limitations
 
