@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot chat pane for SQL database in Mi
 author: markingmyname
 ms.author:  maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 02/26/2025
+ms.date: 3/31/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
