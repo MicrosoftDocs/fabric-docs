@@ -19,7 +19,7 @@ In this article, you learn how to turn on availability of KQL database data in O
 
 ## How it works
 
-You can turn on **OneLake availability** at the database or table level. When enabled at the database level, all new tables and their data are made available in OneLake. When turning on the feature, you can also choose to apply this option to existing tables by selecting the Apply to existing tables option. Turning on at the table level makes only that table and its data available in OneLake. The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. If you turn off **OneLake availability**, data is soft deleted from OneLake.
+You can turn on **OneLake availability** at the database or table level. When enabled at the database level, all new tables and their data are made available in OneLake. When turning on the feature, you can also choose to apply this option to existing tables by selecting the *Apply to existing tables* option, to include historic backfill. Turning on at the table level makes only that table and its data available in OneLake. The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. If you turn off **OneLake availability**, data is soft deleted from OneLake.
 
 While **OneLake availability** is turned on, you can't do the following tasks:
 
@@ -31,17 +31,18 @@ While **OneLake availability** is turned on, you can't do the following tasks:
 If you need to do any of these tasks, use the following steps:
 
 > [!IMPORTANT]
-> Turning off **OneLake availability** soft deletes your data from OneLake. When you turn availability back on, only new data is made available in OneLake with no backfill of the deleted data.
+> Turning off **OneLake availability** soft deletes your data from OneLake. When you turn availability back on, all data is made available in OneLake, including historic backfill of the deleted data.
 
 1. Turn off **OneLake availability**.
 
 1. Perform the desired task.
+
 1. Turn on **OneLake availability**.
 
 > [!IMPORTANT]
 > For more information about the time it takes for data to appear in OneLake, see [Adaptive behavior](#adaptive-behavior).
 >
-> There's no additional storage cost to turn on **OneLake availability**. For more information, see [resource consumption](kql-database-consumption.md#storage-billing).
+> There's no extra storage cost to turn on **OneLake availability**. For more information, see [resource consumption](kql-database-consumption.md#storage-billing).
 
 ## Prerequisites
 
@@ -50,24 +51,28 @@ If you need to do any of these tasks, use the following steps:
 
 ## Turn on OneLake availability
 
-You can turn on **OneLake availability** either on a KQL database or table level.
+You can turn on **OneLake availability** either on a KQL database or table.
 
-1. To turn on **OneLake availability**, browse to the **OneLake** section in the details pane of your KQL database or table.
-1. Set **Availability** to **On**.
+1. To turn on **OneLake availability**, browse to the **Database details** or **Table details**.
+1. In the **OneLake** section of the details pane, set **Availability** to **Enabled**.
 
     :::image type="content" source="media/event-house-onelake-availability/onelake-availability.png" alt-text="Screenshot of the OneLake section of the Database details pane showing the Availability option highlighted.":::
 
-1. The database refreshes automatically.
+1. In the **Enable Onelake Availability** window, select **Apply to existing tables**, and then select **Enable**.
 
-    :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake section details in Real-Time Intelligence once Availability is set to On. The option to expose data to OneLake is turned on.":::
+    :::image type="content" source="media/event-house-onelake-availability/enable-onelake-availability.png" alt-text="Screenshot of the Enable Onelake Availability window showing the Apply to existing tables option.":::
 
-You turned on **OneLake availability** in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
+1. The database or table refreshes automatically.
+
+    :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake section details once Availability is set to Enabled. The option to expose data to OneLake is turned on.":::
+
+You turned on **OneLake availability** in your KQL database or table. You can now access all the data in your database or table at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 
 ## Adaptive behavior
 
 Eventhouse offers a robust mechanism that intelligently batches incoming data streams into one or more Parquet files, structured for analysis. Batching data streams is important when dealing with trickling data. Writing many small Parquet files into the lake can be inefficient resulting in higher costs and poor performance.
 
-Eventhouse's adaptive mechanism can delay write operations if there isn't enough data to create optimal Parquet files. This ensures Parquet files are optimal in size and adhere to Delta Lake best practices. The Eventhouse adaptive mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
+Eventhouse's adaptive mechanism can delay write operations if there isn't enough data to create optimal Parquet files. This behavior ensures Parquet files are optimal in size and adhere to Delta Lake best practices. The Eventhouse adaptive mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
 
 > [!NOTE]
 >
