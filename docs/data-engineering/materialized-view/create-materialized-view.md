@@ -43,7 +43,7 @@ There are two ways to get started with Materialized view creation.
 
     1. Go to your Lakehouse, select **Open notebook** to create a new notebook.
        
-       :::image type="content" source="./media/create-materialized-view/open-netebook.png" alt-text="Screenshot showing how to open netebook." border="true" lightbox="./media/create-materialized-view/open-netebook.png":::
+       :::image type="content" source="./media/create-materialized-view/open-notebook.png" alt-text="Screenshot showing how to open notebook." border="true" lightbox="./media/create-materialized-view/open-notebook.png":::
  
 
 ## Materialized View with SQL Syntax
