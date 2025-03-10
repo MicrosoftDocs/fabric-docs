@@ -1,14 +1,15 @@
 ---
 title: "How To: Use the Copilot Chat Pane for Fabric Data Warehouse"
 description: Learn more about Microsoft Copilot chat pane for Fabric Data Warehouse, to ask questions specific to your warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: salilkanade
-ms.date: 02/20/2025
+author: markingmyname
+ms.author: maghan
+ms.reviewer: salilkanade, wiassaf
+ms.date: 03/31/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
 ---
+
 # How to: Use the Copilot chat pane for Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]

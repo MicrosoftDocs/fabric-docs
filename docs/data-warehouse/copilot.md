@@ -12,7 +12,6 @@ ms.collection:
   - ce-skilling-ai-copilot
 ms.custom:
   - copilot-learning-hub
-  - copilot-learning-hub
 ---
 
 # What is Copilot for Data Warehouse (Preview)?
