@@ -1,0 +1,101 @@
+---
+title: Quickstart - Create a new Uuser data functions item in Visual Studio Code
+description: Add a new Uuser data functions item in VS Code 
+ms.author: sumuth
+author: mksuni
+ms.topic: quickstart
+ms.date: 03/27/2025
+ms.search.form: Fabric Uuser data functions, VSCode
+---
+
+# Create a user data functions item in Visual Studio Code (Preview)
+
+Microsoft Fabric Data Functions is a serverless solution that enables you to quickly and easily develop applications on top of Fabric-native data sources. You can use user data functions to create efficient and scalable web services, APIs, or microservices. The advantages are increased flexibility and cost-effectiveness of serverless computing in Fabric. Fabric user data functions are invoked as an HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
+
+In this quickstart, you learn how to create a user data functions item in Visual Studio Code. 
+
+## Prerequisites
+- [A Fabric Workspace](../../get-started/create-workspaces.md)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Python](https://www.python.org/downloads/)
+- [Azure Functions Core Tools v4](/azure/azure-functions/functions-run-local)
+- [Microsoft Fabric Extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric) 
+- [User data functions extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions)
+
+## Select your workspace 
+1. Open Visual Studio Code and Open Fabric Explorer.-
+2. **Sign in to Fabric** in VS Code.
+3. Select your **Fabric workspace** or **create a new workspace**.
+4. Select **+** to create a new user data functions item.
+5. Select **User data functions** item type.
+6. Provide a name for the new user data functions item and press Enter. 
+7. Select the runtime language, **Python**. A new user data function set in Fabric is created. 
+8. Create a virtual environment for this user data functions item. 
+9. Select Python runtime. User data functions requires Python 3.11 version. 
+10. Set the virtual environment for the folder by selecting **Yes**.
+11. Open `function_app.py` to add more than one function.
+
+    :::image type="content" source="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png" alt-text="Screenshot showing an user data functions item opened in VS Code." lightbox="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png":::
+
+## Write your first function
+Write a user defined data function with `@udf.function()` decorator to define the start of function. You can pass an input for the function such as primitive data types like str, int, float, etc. Within the function, you can write your custom business logic. 
+
+Here's an example of `hello_fabric` function.
+
+```python
+@udf.function()
+def hello_fabric(name: str) -> str:
+    # Use logging to write custom logs to help trace and debug issues 
+    logging.info('Python UDF trigger function processed a request.')
+    logging.info('Executing hello fabric function.')
+    
+    return f"Welcome to Fabric Functions, {name}, at {datetime.datetime.now()}!" 
+
+```
+## Manage user data functions in VS Code 
+You can view the user data functions in Fabric explorer in VS Code within the currently opened workspace.
+
+:::image type="content" source="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png" alt-text="Screenshot showing fabric explorer view and local folder view." lightbox="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png":::
+
+All the functions in Fabric workspace, can be opened in Explorer in VS Code to start editing. Select the function you want to open and select **Open in Explorer**. You can see connections, libraries and all the functions written within the user data functions item. 
+
+### Manage connections and libraries 
+- **Connections**: All the data connections added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage connections in Fabric** to add new libraries for the user data functions items in the Fabric portal.
+
+- **Libraries**: All the libraries added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage libraries in Fabric** to add new libraries for the user data functions items in the Fabric portal. 
+
+- **Functions**: You can view all the published functions here. Select a function and perform these actions:
+    - **Run and test** to test the function in VS Code without having to use API testing tools.
+    - **Copy public URL** if this function is publicly accessible invoke from external application. 
+
+## Local folder to manage your user data functions 
+
+The user data functions item, opened in VS Code explorer is visible in Local folder view. The local folder allows you test and sees the local changes made to the user data function item. It allows you to:
+
+- **Functions**: You can view all the functions that are in your local `function_app.py` file. To start with a sample, right select on **Functions** and select **Add a function** to add a sample function.
+
+    :::image type="content" source="..\media\user-data-functions-create-in-vs-code\add-a-new-function-sample.png" alt-text="Screenshot showing how add a new functions in a user data functions item for local development." lightbox="..\media\user-data-functions-create-in-vs-code\add-a-new-function-sample.png":::
+
+    To test your function locally, press **F5** to start debugging. You can also select the function item and select **Run and debug**.
+
+
+- **View connections and libraries for local function**: You can view all the connections that are present in `local.settings.json` and the libraries in `requirements.txt` file on your local environment.
+    - **Sync connections from local.settings** to show the current list of connections on your local environment. 
+    - **Sync requirements.txt** to show the current list of libraries on your local environment.
+
+### Publish the User data function
+Once you test your changes, publish the user data function to Fabric. It can take a few minutes to publish any changes.
+
+:::image type="content" source="..\media\user-data-functions-create-in-vs-code\publish-user-data-function.png" alt-text="Screenshot showing how to publish your changes or newly added functions in a user data functions item for local development." lightbox="..\media\user-data-functions-create-in-vs-code\publish-user-data-function.png":::
+
+
+## Local debugging with breakpoints
+To debug your fabric functions, select **F5**. You can add a breakpoint anywhere in your code. In debug mode, your breakpoints are hit as expected and test your code as you would test a deployed function.
+
+
+:::image type="content" source="..\media\user-data-functions-create-in-vs-code\local-debugging.png" alt-text="Screenshot showing how to debug locally with breakpoints." lightbox="..\media\user-data-functions-create-in-vs-code\local-debugging.png":::
+
+## Next steps
+- [Learn user data functions programming model](./python-programming-model.md)
+- [Invoke the function from an app](./tutorial-invoke-from-python-app.md)
+
