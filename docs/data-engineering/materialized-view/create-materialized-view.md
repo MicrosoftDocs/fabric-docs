@@ -29,13 +29,13 @@ There are two ways to get started with Materialized view creation.
 
     1. Go to your Lakehouse, select **Manage materialized views**.
        
-       :::image type="content" source="./media/create-materialized-view/manage-materialized-views.png" alt-text="Screenshot showing how to create materialized view." border="true" lightbox="./media/create-materialized-view/manage-materialized-views.png":::
+       :::image type="content" source="./media/create-materialized-view/manage-materialized-views.png" alt-text="Screenshot showing materialized view." border="true" lightbox="./media/create-materialized-view/manage-materialized-views.png":::
 
     1. Select **New materialized view**, which opens a new notebook.
         
-       :::image type="content" source="./media/create-materialized-view/new-materialized-view.png" alt-text="Screenshot showing how to create materialized view." border="true" lightbox="./media/create-materialized-view/new-materialized-view.png":::
+       :::image type="content" source="./media/create-materialized-view/new-materialized-view.png" alt-text="Screenshot showing how to create new materialized view." border="true" lightbox="./media/create-materialized-view/new-materialized-view.png":::
        
-       :::image type="content" source="./media/create-materialized-view/materialized-view.png" alt-text="Screenshot showing how to create materialized view." border="true" lightbox="./media/create-materialized-view/materialized-view.png":::
+       :::image type="content" source="./media/create-materialized-view/materialized-view.png" alt-text="Screenshot showing how to new materialized view." border="true" lightbox="./media/create-materialized-view/materialized-view.png":::
 
  
     
