@@ -17,8 +17,6 @@ Microsoft Fabric is an enterprise-ready, end-to-end analytics platform. It unifi
 
 Fabric provides a seamless, user-friendly SaaS experience. It integrates separate components into a cohesive stack. It centralizes data storage with OneLake and embeds AI capabilities, eliminating the need for manual integration. With Fabric, you can efficiently transform raw data into actionable insights.
 
-[!INCLUDE [new user recruitment](../includes/fabric-new-user-research.md)]
-
 ## Capabilities of Fabric
 
 Microsoft Fabric enhances productivity, data management, and AI integration. Here are some of its key capabilities:
