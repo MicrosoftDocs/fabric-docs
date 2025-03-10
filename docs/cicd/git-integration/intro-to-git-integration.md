@@ -52,7 +52,7 @@ The following Git providers are supported:
 
 * [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
 * [GitHub](https://github.com/) (cloud versions only)
-* [GitHub Enterprise](https://github.com/enterprise)
+* [GitHub Enterprise](https://github.com/enterprise) (cloud versions only)
 
 ## Supported items
 
