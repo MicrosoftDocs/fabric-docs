@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: strrodic
 ms.date: 12/18/2024
 ms.topic: how-to
-ms.search.form: Backup & Restore
+ms.search.form: Backup and Restore
 ---
 # Automatic backups in SQL database in Microsoft Fabric
 

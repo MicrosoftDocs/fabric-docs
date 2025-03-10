@@ -177,8 +177,7 @@ You can also build medallion architecture solutions, cleaning and transforming t
 
 ## Pricing
 
-Mirroring is free of cost for compute used to replicate your Cosmos DB data into Fabric OneLake. Storage in OneLake is free of cost based on certain conditions. For more information, see [OneLake pricing for mirroring.](https://azure.microsoft.com/pricing/details/microsoft-fabric/)
-The compute usage for querying data via SQL, Power BI or, Spark is still charged based on the Fabric Capacity. 
+Fabric compute used to replicate your Cosmos DB data into Fabric OneLake is free. Storage in OneLake is free of cost based the capacity size. For more information, see [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute usage for querying data via SQL, Power BI, or Spark is still charged based on the Fabric Capacity. 
 
 If you're using the data explorer in Fabric mirroring, you accrue typical costs based on request unit (RU) usage to explore the containers and query the items in the source Azure Cosmos DB database. The Azure Cosmos DB continuous backup feature is a prerequisite to mirroring: Standard charges for continuous backup apply. There are no additional charges for mirroring on continuous backup billing. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
 

@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot for Fabric Data Warehouse, the i
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 02/26/2025
+ms.date: 03/31/2025
 ms.topic: conceptual
 ms.collection:
   - ce-skilling-ai-copilot
@@ -89,6 +89,7 @@ Here are the current limitations of Copilot for Data Warehouse:
 
 ## Related content
 
+- [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
 - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
 - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)

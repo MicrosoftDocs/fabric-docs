@@ -59,6 +59,10 @@ API for GraphQL includes an editor where you can easily develop and test your qu
 - A results pane to visualize the output of queries or mutations
 - Support for query or mutation parameters
 - Intellisense with support for GraphQL syntax and schema object names
+ 
+## Limitations
+
+Please refer to [ API for GraphQL Limitations](api-graphql-limits.md) for more information.
 
 ## Related content
 
