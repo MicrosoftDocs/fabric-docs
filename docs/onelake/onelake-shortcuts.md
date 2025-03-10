@@ -142,7 +142,7 @@ Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
 > You don't need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
-> 
+>
 > Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
 
 #### Authorization
@@ -154,6 +154,8 @@ The IAM user must have the following permissions on the bucket that the shortcut
 - `S3:GetObject`
 - `S3:GetBucketLocation`
 - `S3:ListBucket`
+
+S3 shortcuts support S3 buckets that use [S3 Bucket Keys for SSE-KMS encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html). To access data encrypted with SSE-KMS encryption, the user must have encrypt/decrypt permissions for the bucket key, otherwise they receive a **"Forbidden" error (403)**.
 
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
