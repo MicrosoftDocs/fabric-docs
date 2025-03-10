@@ -27,7 +27,7 @@ For the **retention** setting, you can specify the duration for which the incomi
 
 ## Event throughput setting
 
-For the **event throughput** setting, you can select the throughput level for incoming and outgoing events in your eventstream. This feature allows you to scale your eventstream by optimizing performance for its sources and destinations based on the selected level. Throughput levels include:    
+For the **event throughput** setting, you can select the throughput level for incoming and outgoing events in your eventstream. This feature allows you to scale your eventstream by optimizing performance for its sources and destinations based on the selected level. Throughput levels include:
 - **Low**: < 10 MB/s  
 - **Medium**: 10–100 MB/s  
 - **High**: > 100 MB/s  
@@ -55,7 +55,7 @@ When the partition count is 4, 16, or 32, throughput depends on the selected lev
 
 ### Streaming connector sources
 
-The throughput for streaming connector sources is up to **30 MB/s**. If higher throughput is needed, please contact product group.
+The throughput for streaming connector sources is up to **30 MB/s**. If higher throughput is needed, please contact product group team.
 
 **Streaming connector sources include**:
 - Azure SQL Database Change Data Capture (CDC)
@@ -89,11 +89,13 @@ The following table shows the throughput upper limit for different nodes.
 |                            |              | Medium           | 100 MB/s             |
 |                            |              | High             | 200 MB/s             |
 
-**\*Note**: The above throughput limits were tested under these conditions:
+**\*Note#1**: The above throughput limits were tested under these conditions:
 
 1. The source event sender and Eventstream are in the same data center.
 1. Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
 1. The source event data was sent using thousands of threads to continuously send data via EventHubProducerClient.
+1. The test setup followed a 'One Source → One Eventstream → One Destination' structure. No processing operators were applied before data routed the Lakehouse or Eventhouse (pre-ingestion processing) destinations.
+
 
 
 ## Endorsement setting
