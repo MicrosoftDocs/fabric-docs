@@ -1,9 +1,8 @@
 ---
 title: "Create Materialized View"
 description: Learn How to create a materialized view.
-author: 
-ms.author: 
-ms.reviewer: 
+author: abhishjain002
+ms.author: abhishjain 
 ms.topic: how-to
 ms.date: 03/09/2025
 ---
