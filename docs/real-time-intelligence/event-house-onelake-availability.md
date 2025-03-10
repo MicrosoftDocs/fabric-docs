@@ -53,20 +53,21 @@ If you need to do any of these tasks, use the following steps:
 
 You can turn on **OneLake availability** either on a KQL database or table.
 
-1. To turn on **OneLake availability**, browse to the **Database details** or **Table details**.
+1. To turn on **OneLake availability**, select a database or table.
+
 1. In the **OneLake** section of the details pane, set **Availability** to **Enabled**.
 
     :::image type="content" source="media/event-house-onelake-availability/onelake-availability.png" alt-text="Screenshot of the OneLake section of the Database details pane showing the Availability option highlighted.":::
 
-1. In the **Enable Onelake Availability** window, select **Apply to existing tables**, and then select **Enable**.
+1. In the **Enable Onelake Availability** window, select **Enable**.
 
     :::image type="content" source="media/event-house-onelake-availability/enable-onelake-availability.png" alt-text="Screenshot of the Enable Onelake Availability window showing the Apply to existing tables option.":::
 
-1. The database or table refreshes automatically.
+1. The database or table details refresh automatically.
 
     :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake section details once Availability is set to Enabled. The option to expose data to OneLake is turned on.":::
 
-You turned on **OneLake availability** in your KQL database or table. You can now access all the data in your database or table at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
+With the **OneLake availability** in your KQL database or table turned on, you can now access all the data at the given OneLake path in Delta Lake format. You can also create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 
 ## Adaptive behavior
 
