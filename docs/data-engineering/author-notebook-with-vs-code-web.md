@@ -79,17 +79,17 @@ This debug session runs on the remote compute, requiring network traffic to sync
 :::image type="content" source="media\vscode\debug-notebook-vs-code-status-bar.png" alt-text="Screenshot showing debug session status bar.":::
 
 > [!IMPORTANT]
-> Please wait for the synchronization to finish before you continue the debug operation.
+> Wait for the synchronization to finish before you continue the debug operation.
 
 ## Update Python Version from VS Code side
 
-For Python Notebook, you can check and update the Python version from the VS Code side. You can find the python version in the bottom right corner of the status bar. If you want to update the Python version, you can click the version number in the status bar. You can pick the Python version from the list of available Python versions. The selected Python version will be used for the current notebook session.
+For Python Notebook, you can check and update the Python version from the VS Code side. You can find the python version in the bottom right corner of the status bar. If you want to update the Python version, you can click the version number in the status bar. You can pick the Python version from the list of available Python versions. The selected Python version is used for the following notebook run.
 
 :::image type="content" source="media\vscode\python-version-status-bar.png" alt-text="Screenshot showing Python version in the status bar.":::
 :::image type="content" source="media\vscode\select-python-version.png" alt-text="Screenshot showing how to select Python version.":::
 
 > [!IMPORTANT]
-> To make sure the version you selected is saved in the remote workspace, please save the notebook after you select the Python version.
+> To make sure the version you selected is saved in the remote workspace,save the notebook after you select the Python version.
 
 ## Related content
 
