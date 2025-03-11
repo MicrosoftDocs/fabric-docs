@@ -44,8 +44,8 @@ The databases page of an eventhouse shows you database information either in lis
 * Database Activity Tracker
 * Database tables
 * Data preview
-* Query insights
-* Ingestion failures
+* Query insights - top 100 queries
+<!--* Ingestion failures - add pot-fabcon-->
 
 For more information, see [Database details](create-database.md#database-details).
 
