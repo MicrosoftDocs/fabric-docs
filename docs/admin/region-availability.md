@@ -44,8 +44,8 @@ This table lists regions where all Fabric workloads are available.
 | West US 3<sup>*</sup>        | UK South                   |             |                    |                                 |
 |                              | UK West<sup>*</sup>        |             |                    |                                 |
 
-<sup>*</sup> [Fabric SQL database](../database/sql/overview.md) and [Fabric API for GraphQL](../data-engineering/api-graphql-overview.md) aren't available in this region.
-<sup>**</sup> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region.
+\* [Fabric SQL database](../database/sql/overview.md) and [Fabric API for GraphQL](../data-engineering/api-graphql-overview.md) aren't available in this region.
+\*\* [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region.
 
 ### Power BI
 
@@ -62,7 +62,7 @@ This table lists regions where the only available Fabric workload is Power BI.
 
 This table lists regions where public preview features are available, according to workload.
 
-| Region | Copilot<sup>**</sup> | Retail Solutions | Dataflow Gen2 with CI/CD |
+| Region | Copilot\*\* | Retail Solutions | Dataflow Gen2 with CI/CD |
 |:-|:-|:-|:-|
 | Australia East | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
 | Australia Southeast | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
@@ -97,7 +97,7 @@ This table lists regions where public preview features are available, according 
 | West US2 | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x274C; |
 | West US3 | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x274C; |
 
-<sup>**</sup> Only the workloads listed in the table are available in each region. If no workloads are listed, Copilot isn't available in that region.
+\*\* Only the workloads listed in the table are available in each region. If no workloads are listed, Copilot isn't available in that region.
 
 ## Related content
 
