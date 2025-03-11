@@ -45,6 +45,7 @@ This table lists regions where all Fabric workloads are available.
 |                              | UK West<sup>*</sup>        |             |                    |                                 |
 
 \* [Fabric SQL database](../database/sql/overview.md) and [Fabric API for GraphQL](../data-engineering/api-graphql-overview.md) aren't available in this region.
+
 \*\* [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region.
 
 ### Power BI
