@@ -1,8 +1,8 @@
 ---
 title: Limitations of API for GraphQL
 description: This article contains a list of current limitations in Microsoft Fabric API for GraphQL
-author: afernandez
-ms.author: afernandez
+author: plaicebo
+ms.author: plaicebo
 ms.reviewer: snehagunda
 ms.date: 03/04/2025
 ms.topic: conceptual
