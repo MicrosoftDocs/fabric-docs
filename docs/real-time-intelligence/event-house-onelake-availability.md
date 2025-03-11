@@ -123,7 +123,7 @@ To partition your delta tables, use the [.alter-merge table policy mirroring](/a
 
 ## Query delta tables
 
-You can use Fabric Notebook to read the data using following code snippet.
+You can use Fabric Notebook to read the Onelake data using the following code snippet.
 
   ```python
 
