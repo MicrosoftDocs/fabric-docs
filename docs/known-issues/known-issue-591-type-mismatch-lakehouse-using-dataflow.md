@@ -4,7 +4,7 @@ description: A known issue is posted where there's a type mismatch when writing 
 author: kfollis
 ms.author: kfollis
 ms.topic: troubleshooting 
-ms.date: 02/16/2024
+ms.date: 02/14/2025
 ms.custom: known-issue-591
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-591
 
 You can create a Dataflow Gen2 dataflow that writes data to a lakehouse as an output destination. If the source data has a **Decimal** or **Date** data type, you might see a different data type appear in the lakehouse after running the dataflow. For example, when the data type is **Date**, the resulting data type is sometimes converted to **Datetime**, and when the data type is **Decimal**, the resulting data type is sometime converted to **Float**.
 
-**Status:** Open
+**Status:** Fixed: February 14, 2025
 
 **Product Experience:** Data Factory
 
