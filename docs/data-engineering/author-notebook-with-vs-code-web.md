@@ -68,7 +68,7 @@ Besides running the notebook, you can also debug the notebook in the VS Code web
 ```
 
 > [!NOTE]
-> * It might take 2-5 minutes to finish the configuration. For each livy session, you only need to run this setup once. This feature only available for Spark notebooks.
+> * It might take 2-5 minutes to finish the configuration. For each live session, you only need to run this setup once. This feature only available for Spark notebooks.
 
 After you run this configuration, you can set breakpoints in the notebook editor and run the notebook in debug mode. When the debug session starts, a notification is shown in bottom right corner of the editor to indicate that the debug session is initiated.
 
@@ -89,7 +89,7 @@ For Python Notebook, you can check and update the Python version from the VS Cod
 :::image type="content" source="media\vscode\select-python-version.png" alt-text="Screenshot showing how to select Python version.":::
 
 > [!IMPORTANT]
-> To make sure the version you selected is saved in the remote workspace,save the notebook after you select the Python version.
+> To make sure the version you selected is saved in the remote workspace, save the notebook after you select the Python version.
 
 ## Related content
 
