@@ -3,8 +3,8 @@ title: Workload management
 description: Learn how Microsoft manages data warehouse compute resources to service workloads.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: stevehow
-ms.date: 04/24/2024
+ms.reviewer: stevehow, prlangad
+ms.date: 03/11/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
