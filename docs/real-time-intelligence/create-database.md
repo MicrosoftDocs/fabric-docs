@@ -62,15 +62,15 @@ The right information pane displays the details of the selected database.
 -->
 |Card | Item| Description|
 |---|---|---|
-| **Size**|
+| **Size** |
 | | Compressed| Total size of compressed data.|
 | | Original | Total size of uncompressed data.|
-| **OneLake**|
-| | Availability| Set OneLake availability to **On** or **Off**. When OneLake availability is turned on, tables can't be renamed.|
+| **OneLake** |
+| | Availability| Set OneLake availability to **Enabled** or **Disabled**. When OneLake availability is enabled, tables can't be renamed.|
 | | Latency| The maximum time until data is available across tables in OneLake.|
-| |Table number |The number of tables available in OneLake. |
-| | OneLake folder | Copy the OneLake folder path for creating shortcuts.|
-|**Overview**|
+| | Table number |The number of tables available in OneLake. |
+| | OneLake path | Copy the OneLake folder path for creating shortcuts.|
+|**Overview** |
 | | Created by | The user name of person who created the database.|
 | | Created on | The creation date of the database, if available.|
 | | Region | Shows the region where your capacity is hosted. For more information, see [Fabric region availability](../admin/region-availability.md).|
@@ -82,7 +82,7 @@ The right information pane displays the details of the selected database.
 
 ### Database center information pane
 
-The center database information pane depicts data activity, table information including query insights and, ingestion failures.  
+The center database information pane depicts data activity, table information including query insights. <!-- and, ingestion failures. Add post fabcon -->
 
 You can filter by user, application, and/or query status to refine the database overview data.
 
@@ -93,17 +93,17 @@ You can filter by user, application, and/or query status to refine the database 
 | | Last run | The time when the histogram was last generated.|
 | | Interval | Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, 7 days, and 30 days. |
 | | Refresh | Refresh your histogram.|
-| | Histogram | The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time.|
+| | Histogram | The query and ingestion data display side by side, with two differnt vertical scales. The ingestion scale is shown on the left of the histogram and the query scale is shown on the right of the histogram. The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time.|
 |**Tables**|
-| | Tables display | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake* availability or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Caching*, and *Retention*. |
+| | Tables display | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, Caching*, *Retention*, *OneLake* status, and *Created on*. |
 |**Data preview**|
-| | Data preview | Shows a preview of the last 100 records ingested for each table. Displays Ingestion time, TableName, and Record. Select **Columns** to select columns and values for a Pivot view.|
-|**Query insights**|
+| | Data preview | Shows a preview of the last 100 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
+|**Query insights - top 100 queries**|
 | | Daily query duration percentiles over time|  |
 | | Cache hit misses over time|  |
 | | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
-|**Ingestion failures**|
-| | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|
+<!--|**Ingestion failures**|
+| | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
 ## Table details
 
@@ -113,19 +113,19 @@ Select a table in your KQL database to see an overview of the table. The followi
 
 The right information pane displays the details of the selected table.
 
-|Card | Item| Description|
+| Card | Item| Description|
 |---|---|---|
 | **Size**|
 | | Compressed | Total size of compressed data.|
 | | Original size | Total size of uncompressed data.|
 | **OneLake**|
-| | Availability | Set OneLake availability to **On** or **Off**. When OneLake availability is turned on, tables can't be renamed. |
+| | Availability | Set OneLake availability to **Enabled** or **Disabled**. When OneLake availability is turned on, tables can't be renamed. |
 | | Latency| The maximum time until table data is available in OneLake.|
 | | Since | The start time from when availability is recorded. |
-| | OneLake folder | OneLake folder path that can be used for creating shortcuts.|
+| | OneLake path | OneLake folder path that can be used for creating shortcuts.|
 |**Overview**|
 | | Row count | The number of rows in the table.|
-| | Rows ingested last 24 h | The number of rows ingested in the last 24 hours.|
+| | Rows ingested last 24h | The number of rows ingested in the last 24 hours.|
 | | Schema last altered by | When the schema was last altered and by whom.|
 | | Ingestion URI | The date of the last data ingestion and the URI that can be used to get data.|
 | | Caching Policy | The time period in which data is cached and kept in local SSD storage. For more information, see [Caching policy](/fabric/real-time-intelligence/data-policies#caching-policy).|
