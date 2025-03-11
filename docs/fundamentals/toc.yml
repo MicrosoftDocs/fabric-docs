@@ -183,7 +183,7 @@ items:
       href: https://support.fabric.microsoft.com/known-issues
     - name: AI skill creation fails when tenant settings restricted to security groups
       href: ../known-issues/known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md
-    - name: Custom visuals using dialog API don't work in February Desktop
+    - name: Custom visuals using dialog or download API don't work in February Desktop
       href: ../known-issues/known-issue-1046-custom-visuals-dialog-api-not-work-desktop.md
     - name: Live connection to local model conversion resets report content in February Desktop
       href: ../known-issues/known-issue-1045-live-connection-local-model-resets-report-content-desktop.md
