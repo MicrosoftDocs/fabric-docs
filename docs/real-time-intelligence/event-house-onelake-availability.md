@@ -121,6 +121,20 @@ You can partition your delta tables to improve query speed. For information abou
 
 To partition your delta tables, use the [.alter-merge table policy mirroring](/azure/data-explorer/kusto/management/alter-merge-mirroring-policy-command?context=/fabric/context/context-rti&pivots=fabric) command.
 
+## Query delta tables
+
+You can use Fabric Notebook to read the data using following code snippet.
+
+  ```python
+
+delta_table_path = 'abfss://<workspace_name>@onelake.dfs.fabric.microsoft.com/<item_name>.KustoDatabase/Tables/<table_name>'
+#delta_table_path = 'abfss://<workspace_guid>@onelake.dfs.fabric.microsoft.com/<eventhouse_guid>/Tables/<table_name>'
+
+df = spark.read.format("delta").load(delta_table_path)
+
+df.show()
+   ```
+
 ## Related content
 
 * To expose the data in OneLake, see [Create a shortcut in OneLake](../onelake/create-onelake-shortcut.md)
