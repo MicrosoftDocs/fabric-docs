@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 03/10/2025
+ms.date: 03/11/2025
 ---
 
 # Eventhouse OneLake Availability
