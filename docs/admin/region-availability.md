@@ -63,7 +63,7 @@ This table lists regions where the only available Fabric workload is Power BI.
 This table lists regions where public preview features are available, according to workload.
 
 | Region | Copilot\*\* | Retail Solutions | Dataflow Gen2 with CI/CD |
-|:-|:-|:-|:-|
+|:---------------|:---------------|:---------------|:---------------|
 | Australia East | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
 | Australia Southeast | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
 | Brazil South | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
