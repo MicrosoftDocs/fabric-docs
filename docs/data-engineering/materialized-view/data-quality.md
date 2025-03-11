@@ -28,7 +28,7 @@ The following actions can be taken when constraints are defined.
 
 **DROP** – This action processes the materialized view (MV) and excludes records that don't meet the specified constraint. It also provides the count of excluded records in the Directed Acyclic Graph (DAG).
 
-> [NOTE]
+> [!NOTE]
 > If DROP and FAIL both actions are defined in the same MV then, FAIL action takes the precedence.
 
 

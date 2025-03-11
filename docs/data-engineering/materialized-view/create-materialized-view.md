@@ -15,8 +15,8 @@ In this article, you learn how to create materialized views in Lakehouse in Micr
 
 ## Prerequisites
 
-* A workspace with a Microsoft Fabric-enabled capacity
-* A Lakehouse with Lakehouse Schemas enabled
+* A [workspace](../../fundamentals/fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
+* A Lakehouse with [Lakehouse Schemas](../lakehouse-schemas.md) enabled
 
 ## Create Materialized View
 
