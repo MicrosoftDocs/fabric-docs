@@ -344,7 +344,7 @@ items:
     - name: Create a Fabric Materialized View
       href: ./materialized-view/create-materialized-view.md 
     - name: Refresh a Fabric Materialized View
-      href: ./materialized-view/refresh-materialized-view.md
+      href: ./materialized-view/refresh-fabric-materialized-view.md
   - name: Data quality
     items:   
     - name: Data quality in Fabric Materialized View
