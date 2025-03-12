@@ -138,7 +138,7 @@ df.show()
 > [!NOTE]
 > For an Azure Data Explorer database, use this code:
 >
-> delta_table_path = 'abfss://`<workspaceName>`@onelake.dfs.fabric.microsoft.com/`<itemName>`.KustoDatabase/Tables/`<tableName>`'
+> `delta_table_path = 'abfss://`<workspaceName>`@onelake.dfs.fabric.microsoft.com/`<itemName>`.KustoDatabase/Tables/`<tableName>`'`
 
 ## Related content
 
