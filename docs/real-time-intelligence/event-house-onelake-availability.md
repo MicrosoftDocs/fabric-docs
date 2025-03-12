@@ -128,7 +128,7 @@ You can use Fabric Notebook to read the Onelake data using the following code sn
 > In the code snippet, replace `<workspaceGuid>`, `<workspaceGuid>`, and `<tableName>` with your own values.
 
   ```python
-delta_table_path = 'abfss://<workspaceGuid>@onelake.dfs.fabric.microsoft.com/<eventhouseGuid>/Tables/<tableName>'
+delta_table_path = 'abfss://`<workspaceGuid>`@onelake.dfs.fabric.microsoft.com/`<eventhouseGuid>`/Tables/`<tableName>`'
 
 df = spark.read.format("delta").load(delta_table_path)
 
@@ -138,7 +138,9 @@ df.show()
 > [!NOTE]
 > For an Azure Data Explorer database, use this code:
 >
-> `delta_table_path = 'abfss://`<workspaceName>`@onelake.dfs.fabric.microsoft.com/`<itemName>`.KustoDatabase/Tables/`<tableName>`'`
+> ```python
+> delta_table_path = 'abfss://`<workspaceName>`@onelake.dfs.fabric.microsoft.com/`<itemName>`.KustoDatabase/Tables/`<tableName>`'
+> ```
 
 ## Related content
 
