@@ -41,12 +41,12 @@ This table lists regions where all Fabric workloads are available.
 | South Central US<sup>**</sup>| Sweden Central             |             |                    | South India                     |
 | West US                      | Switzerland North          |             |                    |                                 |
 | West US 2                    | Switzerland West           |             |                    |                                 |
-| West US 3<sup>*</sup>        | UK South                   |             |                    |                                 |
+| West US 3\* \***     | UK South                   |             |                    |                                 |
 |                              | UK West<sup>*</sup>        |             |                    |                                 |
 
-\* [Fabric SQL database](../database/sql/overview.md) and [Fabric API for GraphQL](../data-engineering/api-graphql-overview.md) aren't available in this region.
-
+\* [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
 \*\* [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region.
+\*\*\* [Fabric API for GraphQL](../data-engineering/api-graphql-overview.md) isn't  available in this region.
 
 ### Power BI
 
