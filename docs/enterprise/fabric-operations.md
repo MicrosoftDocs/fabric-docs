@@ -148,14 +148,14 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 | Operation | Description | Item | Azure billing meter | Type |
 |--|--|--|--|--|
-| Artificial intelligence (AI) | AI function evaluation  | AI | Power BI Capacity Usage CU | Background |
+| Artificial intelligence (AI) | AI function evaluation  | AI | Power BI Capacity Usage CU | Interactive |
 | Background query | Queries for refreshing tiles and creating report snapshots  | Semantic model | Power BI Capacity Usage CU | Background |
 | [Dataflow DirectQuery](/power-bi/transform-model/dataflows/dataflows-directquery) | Connect directly to a dataflow without the need to import the data into a semantic model  | Dataflow Gen1 | Power BI Capacity Usage CU | Interactive |
 | [Dataflow refresh](/power-bi/transform-model/dataflows/dataflows-understand-optimize-refresh) | An on-demand or scheduled background dataflow refresh, performed by the service or with REST APIs. | Dataflow Gen1 | Power BI Capacity Usage CU | Background |
 | Semantic model on-demand refresh | A background semantic model refresh initiated by the user, using the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Semantic model scheduled refresh | A scheduled background semantic model refresh, performed by the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Full report email subscription | A PDF or PowerPoint copy of an entire Power BI report, attached to an [email subscription](/power-bi/collaborate-share/end-user-subscribe)  | Report | Power BI Capacity Usage CU | Background |
-| Interactive query | Queries initiated by an on-demand data request. For example, loading a model when opening a report, user interaction with a report, or querying a dataset before rendering.| Semantic model | Power BI Capacity Usage CU | Interactive |
+| Interactive query | Queries initiated by an on-demand data request. For example, loading a model when opening a report, user interaction with a report, or querying a dataset before rendering. Loading a semantic model might be reported as a standalone interactive query operation. | Semantic model | Power BI Capacity Usage CU | Interactive |
 | PublicApiExport | A Power BI report exported with the [export report to file](/power-bi/developer/embedded/export-to) REST API | Report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report exported with the [export paginated report to file](/power-bi/developer/embedded/export-paginated-report) REST API  | Paginated report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report viewed in Power BI service   | Paginated report | Power BI Capacity Usage CU | Interactive |

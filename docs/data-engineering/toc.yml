@@ -73,6 +73,28 @@ items:
     href: copilot-notebooks-chat-magics.md
   - name: Use the Copilot chat panel (preview)
     href: copilot-notebooks-chat-pane.md
+- name: AI functions
+  items: 
+    - name: Transform and enrich data with AI functions
+      href: ../data-science/ai-functions/overview.md
+    - name: ai.similarity
+      href: ../data-science/ai-functions/similarity.md
+    - name: ai.classify
+      href: ../data-science/ai-functions/classify.md
+    - name: ai.analyze_sentiment
+      href: ../data-science/ai-functions/analyze-sentiment.md
+    - name: ai.extract
+      href: ../data-science/ai-functions/extract.md
+    - name: ai.fix_grammar
+      href: ../data-science/ai-functions/fix-grammar.md
+    - name: ai.summarize
+      href: ../data-science/ai-functions/summarize.md
+    - name: ai.translate
+      href: ../data-science/ai-functions/translate.md
+    - name: ai.generate_response
+      href: ../data-science/ai-functions/generate-response.md
+    - name: Customize AI function configurations
+      href: ../data-science/ai-functions/configuration.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
@@ -309,6 +331,8 @@ items:
      href: graphql-operations.md
    - name: Monitoring dashboard and logging (preview)
      href: graphql-monitor-log.md
+   - name: Limitations
+     href: api-graphql-limits.md
 - name: Partner integration
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)

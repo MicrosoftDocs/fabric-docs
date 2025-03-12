@@ -44,8 +44,9 @@ This table lists regions where all Fabric workloads are available.
 | West US 3<sup>*</sup>        | UK South                   |             |                    |                                 |
 |                              | UK West<sup>*</sup>        |             |                    |                                 |
 
-<sup>*</sup> [Fabric SQL database](../database/sql/overview.md) isn't available in this region.<br>
-<sup>**</sup> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region.
+\* [Fabric SQL database](../database/sql/overview.md) and [Fabric API for GraphQL](../data-engineering/api-graphql-overview.md) aren't available in this region.
+
+\*\* [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region.
 
 ### Power BI
 
@@ -62,42 +63,42 @@ This table lists regions where the only available Fabric workload is Power BI.
 
 This table lists regions where public preview features are available, according to workload.
 
-| Region | Copilot<sup>**</sup> | Graph QL | Retail Solutions | Dataflow Gen2 with CI/CD |
-|:-|:-|:-|:-|:-|
-| Australia East | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| Australia Southeast | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| Brazil South | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| Canada Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; |&#x2705; | &#x2705; |
-| Canada East | Synapse Notebook | &#x274C; | &#x274C; | &#x2705; |
-| Central India | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| Central US | &#x274C; | &#x274C; | &#x274C; | &#x2705; |
-| East Asia |Synapse Notebook  | &#x2705; | &#x2705; | &#x2705; |
-| East US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| East US2 | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| France Central | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x274C; | &#x2705; |
-| Germany West Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x274C; | &#x2705; |
-| Italy North | &#x274C; | &#x274C; | &#x274C; | &#x2705; |
-| Japan East | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| Korea Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x274C; | &#x2705; |
-| North Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| North Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| Norway East | &#x274C; | &#x274C; | &#x274C; | &#x2705; |
-| Poland Central | &#x274C; | &#x274C; | &#x274C; | &#x2705; |
-| South Africa North | Synapse Notebook | &#x2705; | &#x2705; | &#x2705; |
-| South Africa West | &#x274C; | &#x274C; | &#x274C; | &#x2705; |
-| South Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| Southeast Asia | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| South India | <li>Dataflows</li><li>Exploration</li> | &#x274C; | &#x274C; | &#x2705; |
-| Sweden Central | Synapse Notebook | &#x274C; | &#x274C; | &#x2705; |
-| Switzerland North | Synapse Notebook | &#x2705; | &#x274C; | &#x2705; |
-| Switzerland West | &#x274C; | &#x274C; | &#x274C; | &#x2705; |
-| UAE North | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> |  |  | &#x2705; |
-| West Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| West US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x2705; |
-| West US2 | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; | &#x274C; |
-| West US3 | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x2705; | &#x274C; |
+| Region | Copilot\*\* | Retail Solutions | Dataflow Gen2 with CI/CD |
+|:---------------|:---------------|:---------------|:---------------|
+| Australia East | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Australia Southeast | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Brazil South | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Canada Central | <li>Dataflows</li><li>Synapse Notebook</li> |&#x2705; | &#x2705; |
+| Canada East | Synapse Notebook | &#x274C; | &#x2705; |
+| Central India | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; |
+| Central US | &#x274C;  | &#x274C; | &#x2705; |
+| East Asia |Synapse Notebook   | &#x2705; | &#x2705; |
+| East US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| East US2 | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| France Central | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x274C; | &#x2705; |
+| Germany West Central | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x274C; | &#x2705; |
+| Italy North | &#x274C; | &#x274C; | &#x2705; |
+| Japan East | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Korea Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x274C; | |
+| North Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; |
+| North Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Norway East | &#x274C; | &#x274C; | &#x2705; |
+| Poland Central | &#x274C;  | &#x274C; | &#x2705; |
+| South Africa North | Synapse Notebook  | &#x2705; | &#x2705; |
+| South Africa West | &#x274C; | &#x274C; | &#x2705; |
+| South Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x274C; |
+| Southeast Asia | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| South India | <li>Dataflows</li><li>Exploration</li>  | &#x274C; | &#x2705; |
+| Sweden Central | Synapse Notebook  | &#x274C; | &#x2705; |
+| Switzerland North | Synapse Notebook  | &#x274C; | &#x2705; |
+| Switzerland West | &#x274C;  | &#x274C; | &#x2705; |
+| UAE North | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> |  | &#x2705; |
+| West Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| West US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| West US2 | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x274C; |
+| West US3 | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x274C; |
 
-<sup>**</sup> Only the workloads listed in the table are available in each region. If no workloads are listed, Copilot isn't available in that region.
+\*\* Only the workloads listed in the table are available in each region. If no workloads are listed, Copilot isn't available in that region.
 
 ## Related content
 
