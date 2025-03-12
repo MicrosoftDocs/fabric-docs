@@ -2,12 +2,10 @@
 title: Dataflow Gen2 connectors in Microsoft Fabric
 description: Provides a list of all the supported Dataflow Gen2 connectors used by Data Factory in Microsoft Fabric.
 author: DougKlopfenstein
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.author: dougklo
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.search.form: product-data-factory
 ---
 
@@ -66,7 +64,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](connector-google-analytics.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](connector-google-bigquery.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Azure AD) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
+| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](connector-google-analytics.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](connector-google-bigquery.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Entra ID) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
 
 ## H
 

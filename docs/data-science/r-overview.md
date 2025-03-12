@@ -1,13 +1,11 @@
 ---
 title: Use R for Apache Spark
 description: Overview of developing Spark applications using the R language.
-ms.reviewer: sgilley
-author: ruixinxu
-ms.author: ruxu
+ms.reviewer: None
+author: sdgilley
+ms.author: sgilley
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: R Language
 ---
@@ -84,7 +82,7 @@ The R ecosystem offers multiple graphing libraries that come packed with many di
 
 Learn more about how to create R visualizations by visiting [R visualization](./r-visualization.md).
 
-## Next steps
+## Related content
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)

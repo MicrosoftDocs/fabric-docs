@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Azure Data Explorer overview
@@ -25,7 +23,7 @@ The Azure Data Explorer connector supports the following capabilities in data pi
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | User Auth |
-| **Lookup activity** | None | User Auth |
+| **Copy activity (source/destination)** | None <br> On-premises | User Auth |
+| **Lookup activity** | None <br> On-premises | User Auth |
 
 To learn more about the copy activity configuration for Azure Data Explorer in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-data-explorer-copy-activity.md).

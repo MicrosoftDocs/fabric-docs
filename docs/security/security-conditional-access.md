@@ -5,8 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/07/2023
 ---
 
@@ -41,7 +39,7 @@ To ensure that conditional access for Fabric works as intended and expected, it'
 
 The following steps show how to configure a conditional access policy for Microsoft Fabric.
 
-1. Sign in to the Azure portal using an account with *global administrator permissions*.
+1. Sign in to the Azure portal as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Select **Microsoft Entra ID**.
 1. On the Overview page, choose **Security** from the menu.
 1. On the Security | Getting started page, choose **Conditional Access**.
@@ -52,6 +50,6 @@ The following steps show how to configure a conditional access policy for Micros
 1. Under **Access controls**, put your cursor in the **Grant** field. In the **Grant** side pane that appears, configure the policy you want to apply, and then click **Select**.
 1. Set the **Enable policy** toggle to **On**, then select **Create**.
 
-## Next steps
+## Related content
 
 * [Microsoft Entra Conditional Access documentation](/entra/identity/conditional-access/)

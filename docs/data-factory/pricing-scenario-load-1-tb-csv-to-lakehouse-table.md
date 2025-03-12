@@ -6,9 +6,7 @@ ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Pricing scenario using a data pipeline to load 1 TB of CSV data to a Lakehouse table
@@ -39,7 +37,7 @@ The data movement operation utilized 282,240 CU seconds with a 763.78 second (12
 
 **Total run cost at $0.18/CU hour** = (78.4 CU-hours) * ($0.18/CU hour) ~= **$14.11**
 
-## Next steps
+## Related content
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)

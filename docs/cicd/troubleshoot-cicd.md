@@ -5,10 +5,10 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
+ms.service: fabric
+ms.subservice: cicd
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 08/24/2023
+ms.date: 02/27/2025
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -23,8 +23,8 @@ To understand the considerations and limitations of various lifecycle management
 | **General limitations** | [general Git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
 | **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
 | **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#considerations-and-limitations) |
-| **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
-| **Semantic model** |   | [Dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
+| **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) |
+| **Semantic model** |   | [Semantic model limitations](deployment-pipelines/understand-the-deployment-process.md#semantic-model-limitations)
 
 * [Git integration](#git-integration)  
 
@@ -53,8 +53,8 @@ To understand the considerations and limitations of various lifecycle management
 :::image type="content" source="./media/troubleshoot-cicd/no-access.png" alt-text="Screenshot of error message when the user doesn't have access to Azure DevOps.":::
 -->
 
-**Cause**: If the authentication method in Power BI is weaker than the authentication method in Azure DevOps, the functionalities between them won't work.  
-**Workaround**: The admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies for Azure AD are defined in [Manage authentication methods](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy).
+**Cause**: If the authentication method in Power BI is weaker than the authentication method in Azure DevOps, the functionalities between them doesn't work.  
+**Workaround**: The admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies for Microsoft Entra ID (formerly known as Azure Active Directory) are defined in [Manage authentication methods](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy).
 
 ### Connect issues
 
@@ -62,7 +62,7 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: When I try to connect to a Git repo I get a message that it can't connect because the workspace is in a different region.  
 **Cause**: If the workspace and repo are located in different regions, the cross-region switch must be enabled.  
-**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations).
 
 #### Connect failure: It says something went wrong when I try to connect
 
@@ -76,22 +76,10 @@ To understand the considerations and limitations of various lifecycle management
 
 **Solution**: Open the Git repository in Azure DevOps and navigate to the Git folder defined in the connection. If the Git folder contains subdirectories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a subdirectory. If the Git folder doesn't contain any item directories, you can't connect to it. Either remove the subdirectories or connect to a different folder that doesn't contain subdirectories.
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
-
-**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
-
-:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
-
-**Cause**: The folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
-
-**Solution**:
-
-* To create a new folder and connect it to the workspace, select **Create and sync**.  
-* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
 
 #### The Source control icon doesn't have a number
 
-**Description of problem**: The number on the Source control icon indicates the number of changes that have been made to the workspace since the last commit. If the icon doesn't have a number, there may have been a problem connecting to the branch.  
+**Description of problem**: The number on the Source control icon indicates the number of changes that were made to the workspace since the last commit. If the icon doesn't have a number, there might have been a problem connecting to the branch.  
 **Solution**: Disconnect and reconnect.
 
 :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
@@ -99,15 +87,59 @@ To understand the considerations and limitations of various lifecycle management
 #### Connect failure: It says I need a Premium license to connect to git
 
 **Description of problem**: My workspace was previously connected to a Git repo, but now it says that I need a premium license to connect.  
-**Cause**: You can only connect to Git repos if you have a valid Premium license. If your license expired or you change your license to a license that doesn't include Git integration, you will not be able to connect to that repo anymore. This applies to trial licenses as well.  
+**Cause**: You can only connect to Git repos if you have a valid Premium license. If your license expired or you change your license to a license that doesn't include Git integration, you won't be able to connect to that repo anymore. This applies to trial licenses as well.  
 **Solution**: Disconnect from Git and work without source control, or purchase a Premium license.
+
+#### Branching out: I don't see the branch I want to connect to
+
+**Description of problem**: I don't see the workspace I want to connect to in the branching out tab of the **Source control** panel.  
+**Cause**: The branching out list only shows workspaces that you have permission to view.  
+**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission to see [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
+
+#### Branching out: My new workspace wasn’t synced with my Git repository
+
+**Description of problem**: When branching out to a new workspace, I’m navigated to the new workspace but Git integration isn’t enabled there.
+**Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace won't have Git integration enabled and you'll need to manually enable it from the workspace settings before syncing the workspace with Git.
+**Solution**: Enable Git integration from the workspace settings of your new workspace.
+
+### Connect folder issues
+
+#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
+
+**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
+
+:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
+
+**Cause**: The folder you're trying to connect doesn't exist, was deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
+
+**Solution**:
+
+* To create a new folder and connect it to the workspace, select **Create and sync**.  
+* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
+
+#### My Git status says I have uncommitted changes, but I didn't make any changes to my workspace 
+
+**Description of problem**: I want to update my workspace but it says that I have uncommitted changes. I didn't make any changes to my workspace.
+
+**Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. If your workspace has folders but the Git branch doesn't, you see the *uncommitted changes* message. If you try to update the workspace before committing the changes, you get a conflict. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
+
+**Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
 
 ### Commit issues
 
 #### The Commit button is disabled
 
 **Description of problem**: If there were updates made to the Git branch, commits are disabled until you update your workspace.  
-**Solution**: Update your workspace to enable commits.
+**Solution**: To enable commits, update your workspace.
+
+#### Maximum commit size exceeded
+
+**Description of problem**: When trying to commit items to Git, I get an error saying that I exceeded maximum commit size.
+
+  :::image type="content" source="./media/troubleshoot-cicd/maximum-commit-size.png" alt-text="Screenshot or error message that says Maximum commit size exceeded.":::
+
+**Cause**: The total size of files to commit is limited to 50 MB.  
+**Solution**: If you're trying to commit several items at once, consider committing them in smaller batches. If your commit contains one item with many files, contact <a href="https://support.fabric.microsoft.com/" target="_blank">support</a>.
 
 ### Update issues
 
@@ -115,6 +147,22 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: Changing the same item in the workspace and the Git branch can lead a possible conflict. If changes were made in the workspace and in the Git branch on the same item, updates are disabled until the conflict is resolved.  
 **Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
+
+#### Update failure: Fix duplicate logical IDs
+
+**Description of problem**: When trying to update, a dialog pops up indicating failure because the Git directory contains items with duplicate logical IDs.
+
+:::image type="content" source="./media/troubleshoot-cicd/duplicate-logical-id.png" alt-text="Screenshot of error message in the source control pane about duplicate logical IDs.":::
+
+**Cause**: The [logical ID](./git-integration/source-code-format.md#automatically-generated-system-files) of each item in the workspace must be unique. When you copy an item in the workspace, the logical ID is automatically changed to a unique ID. When you copy an item's directory in Git, the logical ID isn't changed. If you copy an item file in Git, and then try to update to the workspace, the logical ID is duplicated, causing an error.
+
+**Solution**: To resolve the issue, you need to change the logical ID of the duplicate item or items in Git before updating the workspace. You have two options:
+
+:::image type="content" source="./media/troubleshoot-cicd/fix-logical-id.png" alt-text="Screenshot of error message offering two options for fixing logical IDs.":::
+
+* If you have permission to make direct commits to the branch, select **Fix with direct commit**. This will modify the item's system file to create a unique logical ID in Git. The workspace data isn't modified until you update from Git.
+
+* If you don't have permission to make direct commits to the branch, select **Create branch and go to Git**. This will open a new branch and change the logical ID. You then need to merge the changes in Git before they can be seen in Fabric. Then, when you update from Git, the workspace data is modified.
 
 #### Update failure: Update doesn't complete because it would break dependency links
 
@@ -128,8 +176,8 @@ To understand the considerations and limitations of various lifecycle management
 
 To resolve the issue, delete the problematic item(s):
 
-* If the item isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
-* If the item is supported by Git (for example, reports), delete it either from Git (if it exists) or from the workspace.
+* If the item isn't [supported by Git](./git-integration/intro-to-git-integration.md#supported-items) (for example, Dashboards), delete it manually from the workspace.
+* If the item is [supported by Git](./git-integration/intro-to-git-integration.md#supported-items) (for example, reports), delete it either from Git (if it exists) or from the workspace.
 
 Select **Update All**.  
 For more information, see [Manually Update from Git](./git-integration/partial-update.md).
@@ -142,7 +190,7 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 **Solution**: To fix the dependencies, do one of the following actions:
 
-* Edit the bim file of the ProxyDataset in the Git repository so that it points to the correct dataset, and then, in the workspace, update from Git to receive the change.
+* Edit the *bim* file of the ProxyDataset in the Git repository so that it points to the correct dataset, and then, in the workspace, update from Git to receive the change.
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
 ### Resolve error issues
@@ -159,7 +207,7 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 #### Dependency error: After selecting "Undo", "Update", or "Switch branch" a dialog pops up indicating failure because the action would break a dependency link
 
-**Description of problem**: The following error appears after an undo, update or switch branch action:
+**Description of problem**: The following error appears after an undo, update, or switch branch action:
 
 :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when undo fails because the action would break a dependency link.":::
 
@@ -184,14 +232,13 @@ If the following conditions aren't met, you can't see the deployment pipelines b
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
-* You're an admin of a [workspace](../get-started/create-workspaces.md).
+* You're an admin of a [workspace](../fundamentals/create-workspaces.md).
 
 ### I can't see the pipeline stage tag in my workspace
 
 Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
 
-> [!div class="mx-imgBorder"]
-> ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/production-tag.png" alt-text="A screenshot of the production tag in a production pipeline workspace.":::
 
 ### Lost connections after deployment
 
@@ -200,7 +247,7 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 ### I can't assign a workspace to a stage
 
-**Cause**: When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **Can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there's more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two semantic modelts titled 'regional sales semantic model', and there's a semantic model with the same name in either the *development* or *production* stages.  
+**Cause**: When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called "regional sales", if there's more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two semantic models titled "regional sales semantic model", and there's a semantic model with the same name in either the *development* or *production* stages.  
 **Solution**: To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric.
 
 :::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the *Can't assign the workspace* error message in deployment pipelines.":::
@@ -220,30 +267,32 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 * The workspace isn't assigned to any other pipeline
 
-* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-license)
+* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity)
 
 Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
 
 ### My first deployment failed
 
-**Cause**: Your first deployment may have failed for any of several reasons.  
+**Cause**: Your first deployment might have failed for any of several reasons.  
 **Solution**: Some possible reasons for failure with their solutions are listed in the following table.
 
 |Error  |Action  |
 |---------|---------|
-|You don't have [capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-workspace).     |If you work in an organization that has a Fabric capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with a Fabric capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq).        |
+|You don't have [capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-workspace).     |If you work in an organization that has a Fabric capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br> If you don't work in an organization with a Fabric capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq).        |
 |You don't have workspace permissions.     |To deploy, you need to be a workspace member. Ask your workspace admin to grant you the appropriate permissions.         |
 |Your Fabric admin disabled the creation of workspaces.     |Contact your Fabric admin for support.         |
-|You're using [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your semantic model or dataflow. Your unselected content (such as semantic models, reports or dashboards) won't be copied to the next stage. </br></br>Select the semantic model or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
+|You're using [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your semantic model or dataflow. Your unselected content (such as semantic models, reports, or dashboards) won't be copied to the next stage. </br></br>Select the semantic model or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
 
 ### I have 'unsupported items' in my workspace when I'm trying to deploy
 
 **Cause**: Deployment pipelines doesn't support all items.  
-**Solution**: For a comprehensive list of items that aren't supported in deployment pipelines, see the following sections:
+**Solution**: For a comprehensive list of supported items that in deployment pipelines, see the following sections:
 
-* [Unsupported items](deployment-pipelines/understand-the-deployment-process.md#unsupported-items)
+* [Supported items](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items)
 
 * [Item properties that aren't copied](deployment-pipelines/understand-the-deployment-process.md#item-properties-that-are-not-copied)
+
+Any item not listed in the supported items list isn't copied to the next stage.
 
 ### I want to change the data source in the pipeline stages
 
@@ -278,7 +327,7 @@ After a deployment fails due to schema changes, the target stage displays the *D
 
 **Cause**: When you're using [incremental refresh](deployment-pipelines/understand-the-deployment-process.md#incremental-refresh), only certain [changes to the semantic model](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) you're deploying are allowed. If you made semantic model changes that aren't allowed, your deployment fails and you receive this message:
 
-:::image type="content" source="media/troubleshoot-cicd/cannot-start-deployment-error.png" alt-text="A screenshot of the Can't start the deployment error message in deployment pipelines.":::
+:::image type="content" source="media/troubleshoot-cicd/cannot-start-deployment-error.png" alt-text="A screenshot of the can't start the deployment error message in deployment pipelines.":::
   
 **Solution**: If you made changes to your semantic model intentionally, use one of the following workarounds:
 
@@ -307,9 +356,9 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 ### Mismatch error: Source and target semantic model format version mismatch error
 
-**Description of problem**: The *Can’t start deployment* error that states that *the source and target semantic models have different data modeling formats*, occurs when the semantic models in the target stage has a higher model version than the semantic models in the source stage. In such cases, deployment pipelines aren’t able to deploy from the source stage to the target stage. To avoid this error, use a semantic model that has the same (or higher) model version in the source stage.
+**Description of problem**: The *Can’t start deployment* error that states that *the source and target semantic models have different data modeling formats*, occurs when the semantic models in the target stage have a higher model version than the semantic models in the source stage. In such cases, deployment pipelines aren’t able to deploy from the source stage to the target stage. To avoid this error, use a semantic model that has the same (or higher) model version in the source stage.
 
-**Solution**: Upgrade the semantic model model in the source stage using an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write) or Power BI Desktop. After upgrading the semantic model, republish it to the source stage.
+**Solution**: Upgrade the semantic model in the source stage using an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write) or Power BI Desktop. After upgrading the semantic model, republish it to the source stage.
 
 ### Mismatch error: Data source connectivity mode mismatch error
 
@@ -318,17 +367,24 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 ### My semantic model deployment failed
 
-**Cause**: There could be a few possible reasons for your semantic model deployment to fail. One of the reasons may be due to a large semantic model that isn't configured with the [large semantic model format](/power-bi/enterprise/service-premium-large-models).  
-**Solution**: If your semantic model is larger than 4 GB and isn't using the large semantic model format, it might fail to be deployed. Try setting your semantic model to use the large semantic model format, and redeploy.
+**Cause**: There could be a few possible reasons for your semantic model deployment to fail. The following are possible reasons for failure:
 
-### I have a semantic model with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables
+* A large semantic model isn't configured with the [large semantic model format](/power-bi/enterprise/service-premium-large-models).
+* The semantic model contains a circular or self dependency (for example, item A references item B and item B references item A). In this case you'll see the following error message: *One or more items failed to deploy because it will result in a two way dependency between items*.
+
+**Solution**:
+
+* If your semantic model is larger than 4 GB and isn't using the large semantic model format, it might fail to be deployed. Try setting your semantic model to use the large semantic model format, and redeploy.
+* If your semantic model contains a circular or self dependency, remove the dependency and redeploy.
+
+### I have a semantic model with DirectQuery or Composite connectivity mode that uses variation or auto date/time tables
 
 **Cause**: Semantic models that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines.  
 **Solution**: If your deployment fails and you think it's because you have a semantic model with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the following methods to edit your semantic model so that it works in deployment pipelines.
 
 * Use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode instead of *DirectQuery* or *Composite* mode in your semantic model.
 
-* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your semantic model. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your semantic model model works as it may result in data corruption in your visuals.
+* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your semantic model. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation might invalidate user authored measures, calculated columns, and calculated tables. Use this method only if you understand how your semantic model model works as it could result in data corruption in your visuals.
 
 ### Paginated reports
 
@@ -342,12 +398,12 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 When you deploy a paginated report that's connected to a Fabric semantic model, it continues to point to the semantic model it was originally connected to. Use [deployment rules](deployment-pipelines/create-rules.md) to point your paginated report to any semantic model you want, including, for example,  the target stage semantic model.
 
-**Solution**: If you're using a paginated report with a Fabric semantic model, see [How do I create a deployment rule for a paginated report with a Fabric semantic model?](./faq.md#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-semantic-model)
+**Solution**: If you're using a paginated report with a Fabric semantic model, see [How do I create a deployment rule for a paginated report with a Fabric semantic model?](./faq.yml#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-semantic-model)
 
 #### Deployment failure: Large number of paginated reports fails
 
 **Description of problem**: A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity.  
-**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-license), or use selective deployment.
+**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity), or use selective deployment.
 
 ### Dataflows
 
@@ -369,21 +425,27 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 
 **Solution**: To deploy a datamart, you must be the owner of the datamart.
 
+#### Deployment problem: My datamart deployment failed because of a circular dependency
+
+:::image type="content" source="./media/troubleshoot-cicd/circular-dependency.png" alt-text="Screenshot of error message about circular or self dependencies.":::
+
+**Solution**: There's either an item that references itself, or more than one item involved in a circular chain of references (for example, item A references item B and item B references item A). To deploy the datamart, remove the circular dependency and redeploy.
+
 ### Permissions
 
 #### Who can deploy content between stages?
 
-Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-license).
+Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity).
 
 * **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#per-user-licenses) user who's a member or admin in the source workspace.
 
-* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#capacity-license) user who's a member or admin of both workspaces in the source and target deployment stages.
+* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#capacity) user who's a member or admin of both workspaces in the source and target deployment stages.
 
 * **Overwriting a semantic model** - Deployment overwrites each semantic model that is included in the target stage, even if the semantic model wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target semantic model owners only.
 
 #### I can't see a workspace in the pipeline
 
-**Cause**: Pipeline and workspace permissions are managed separately. You may have pipeline permissions, but not workspace permissions.  
+**Cause**: Pipeline and workspace permissions are managed separately. You might have pipeline permissions, but not workspace permissions.  
 **Solution**: For more information, review the [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) section.
 
 #### Error message: 'workspace member permissions needed'
@@ -398,7 +460,7 @@ Content can be deployed to an empty stage or to a stage that contains content. T
 
 **Solution**: If you have problems configuring deployment rules, visit [deployment rules](deployment-pipelines/create-rules.md), and make sure you follow the [deployment rules limitations](deployment-pipelines/create-rules.md#considerations-and-limitations).
 
-If your deployment was previously successful, and is suddenly failing with broken rules, it may be due to a semantic model being republished. The following changes to the source semantic model result in a failed deployment:
+If your deployment was previously successful, and is suddenly failing with broken rules, it could be due to a semantic model being republished. The following changes to the source semantic model result in a failed deployment:
 
 ##### **Parameter rules**
 
@@ -408,15 +470,15 @@ If your deployment was previously successful, and is suddenly failing with broke
 
 ##### **Data source rules**
 
-Your deployment rules are missing values. This may have happened if your semantic model changed.
+Your deployment rules are missing values. This might have happened if your semantic model changed.
 
-![A screenshot of the invalid rules error displayed when a deployment fails due to broken links.](media/troubleshoot-cicd/broken-rule.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/broken-rule.png" alt-text="A screenshot of the invalid rules error displayed when a deployment fails due to broken links.":::
 
 When a previously successful deployment fails due to broken links, a warning is displayed. You can select **Configure rules** to navigate to the deployment rules pane, where the failed semantic model is marked. When you select the semantic model, the broken rules are marked.
 
 To deploy successfully, fix or remove the broken rules, and redeploy.
 
-#### Deployment problem: I configured rules, but it did't deploy
+#### Deployment problem: I configured rules, but it didn't deploy
 
 **Cause**: Deployment rules aren't applied immediately after they're configured.
 
@@ -426,8 +488,7 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 **Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
 
->[!div class="mx-imgBorder"]
->![A screenshot showing deployment pipelines deployment rules greyed out.](media/troubleshoot-cicd/rules-greyed-out.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/rules-greyed-out.png" alt-text="A screenshot showing deployment pipelines deployment rules greyed out.":::
 
 If one of the rule options is greyed out, it could be because of the following reasons:
 
@@ -437,11 +498,11 @@ If one of the rule options is greyed out, it could be because of the following r
 
 #### My data source rule for a semantic model failed
 
-**Solution**: Saving data source rules may fail due to one of these reasons:
+**Solution**: Saving data source rules might fail due to one of these reasons:
 
 * Your semantic model contains a function connected to a data source. In such cases, data source rules aren't supported.
 
-* Your data source is using parameters. You can't create a data source rule for a dasemantic modeltaset that uses parameters. Create a parameter rule instead.
+* Your data source is using parameters. You can't create a data source rule for a semantic model that uses parameters. Create a parameter rule instead.
 
 #### I can't connect to a semantic model when creating a new semantic model rule
 
@@ -462,7 +523,7 @@ Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-ru
 |Multiple data sources aren't supported |A semantic model rule can't be applied due to its data source configuration. Either remove the rule, or rewrite the semantic model queries using standard Power BI Desktop tools. |
 |Target semantic model can only be changed by its owner |Your rule will overwrite some semantic models in the destination workspace. You must be the owner of any semantic model that will be overwritten. |  
 
-## Next steps
+## Related content
 
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
 * [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)

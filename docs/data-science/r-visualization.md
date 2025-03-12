@@ -1,13 +1,11 @@
 ---
 title: Visualize data in R
 description: How to create R visualizations.
-ms.reviewer: sgilley
-ms.author: ruxu
-author: ruixinxu
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: R Language
 ---
@@ -28,7 +26,7 @@ The R ecosystem offers multiple graphing libraries that come packed with many di
 
 The [ggplot2](https://ggplot2.tidyverse.org/) library is popular for data visualization and exploratory data analysis.
 
-![Screenshot of ggplot2 scatterplot.](./media/r-visualization/ggplot2.png)
+:::image type="content" border="true" source="./media/r-visualization/ggplot2.png" alt-text="Screenshot of ggplot2 scatterplot.":::
 
 ```R
 %%sparkr
@@ -52,7 +50,7 @@ g + geom_point() +
 
 [rbokeh](https://hafen.github.io/rbokeh/) is a native R plotting library for creating interactive graphics.
 
-![Screenshot of rbokeh points.](./media/r-visualization/bokeh-plot.png)
+:::image type="content" border="true" source="./media/r-visualization/bokeh-plot.png" alt-text="Screenshot of rbokeh points.":::
 
 ```R
 library(rbokeh)
@@ -67,7 +65,7 @@ p
 
 [Plotly](https://plotly.com/r/) is an R graphing library that makes interactive, publication-quality graphs.
 
-![Screenshot of plot line.](./media/r-visualization/rplot.png)
+:::image type="content" border="true" source="./media/r-visualization/rplot.png" alt-text="Screenshot of plot line.":::
 
 ```R
 library(plotly) 
@@ -83,7 +81,7 @@ fig
 
 [Highcharter](https://jkunst.com/highcharter/) is an R wrapper for Highcharts JavaScript library and its modules.
 
-![Screenshot of highchart scatter.](./media/r-visualization/highchart.png)
+:::image type="content" border="true" source="./media/r-visualization/highchart.png" alt-text="Screenshot of highchart scatter.":::
 
 ```R
 library(magrittr)
@@ -92,7 +90,7 @@ hchart(mtcars, "scatter", hcaes(wt, mpg, z = drat, color = hp)) %>%
   hc_title(text = "Scatter chart with size and color")
 ```
 
-## Next steps
+## Related content
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
 - [How to use Tidyverse](./r-use-tidyverse.md)

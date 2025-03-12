@@ -6,7 +6,6 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 11/15/2023
 ---
 
@@ -18,7 +17,7 @@ The KQL activity in Data Factory for Microsoft Fabric allows you to run a query 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a KQL activity to a pipeline with UI
@@ -43,9 +42,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### KQL activity settings
 
-1. Select the **Settings** tab, then select a **Data store type**. You can use a KQL database created within your Fabric workspace, or connect to an external database with Azure Data Explorer by providing a cluster URI, database, and credentials.
-
-1. Next, select your **KQL Database** connection. If you select a workspace data store you can use dynamic content to parameterize the database selection by selecting the **Add dynamic content** option that appears in the dropdown.
+1. Select the **Settings** tab, and then select your **KQL Database** connection from the dropdown, or create a new one. If you select a workspace data store you can use dynamic content to parameterize the database selection by selecting the **Add dynamic content** option that appears in the dropdown.
 
 1. Then provide a KQL query to execute against the selected database for the **Command** property. You can use dynamic content in the query by selecting the **Add dynamic content** link that appears when the text box is selected.
 
@@ -59,6 +56,6 @@ The KQL activity might typically be used with other activities. After you config
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

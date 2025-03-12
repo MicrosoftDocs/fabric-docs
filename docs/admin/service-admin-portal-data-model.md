@@ -4,11 +4,9 @@ description: Learn how to configure data model settings as the Fabric administra
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -24,7 +22,7 @@ Users can edit data models in the Power BI service (preview) tenant settings. Th
 
 To learn more, see [Enabling data model editing in the admin portal](/power-bi/transform-model/service-edit-data-models#enabling-data-model-editing-in-the-admin-portal).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)
 * [Edit data models in the Power BI service(preview)](/power-bi/transform-model/service-edit-data-models)

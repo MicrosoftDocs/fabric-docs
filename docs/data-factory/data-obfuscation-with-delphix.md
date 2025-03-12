@@ -4,8 +4,6 @@ description: This article describes how to use Delphix Compliance Services maski
 author: ptyx507
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/15/2023
 ms.author: miescobar
 ---
@@ -68,7 +66,7 @@ Once this change is complete, select **Invoke** to run the data flow. This selec
 
 Your data is now ready to be used safely by end users. The data is masked consistently, ensuring that references remain intact across data sets. As an example, George Smith becomes Edward Robinson regardless of data source or destination, ensuring it’s still valuable for integrated analytics scenarios.
 
-## Next steps
+## Related content
 
 - [Delphix free preview page](https://www.delphix.com/solutions/azure-trial)
 - [Delphix documentation](https://maskingdocs.delphix.com/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/)

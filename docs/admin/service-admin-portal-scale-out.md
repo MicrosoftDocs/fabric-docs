@@ -4,11 +4,9 @@ description: Learn how to configure scale-out tenant settings as the Fabric admi
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -24,6 +22,6 @@ For semantic models that use the large semantic model storage format, Power BI P
 
 For more information, see [Power BI semantic model scale-out](/power-bi/enterprise/service-premium-scale-out).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

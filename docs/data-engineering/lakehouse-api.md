@@ -1,14 +1,12 @@
 ---
 title: Lakehouse management API
-description: Manage the lakehouse in Microsoft Fabric with REST API
+description: Learn how to manage your lakehouses in Microsoft Fabric with the Fabric REST API, including how to create, update, and delete a lakehouse.
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 01/16/2025
 ms.search.form: lakehouse api
 ---
 
@@ -28,7 +26,9 @@ The Microsoft Fabric Rest API provides service endpoint for the CRUD operation o
 
 ## Prerequisites
 
-Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The placeholders `{workspaceId}` and `{lakehouseId}` should be replaced with the appropriate values when issuing the commands exemplified in this article.
+* To use the Fabric REST API, you first need to [get a Microsoft Entra token for Fabric service](/rest/api/fabric/articles/get-started/fabric-api-quickstart). Then use that token in the authorization header of the API call.
+
+* Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The placeholders `{workspaceId}` and `{lakehouseId}` should be replaced with the appropriate values when issuing the commands exemplified in this article.
 
 ## Lakehouse CRUD
 
@@ -105,7 +105,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lak
         "oneLakeTablesPath": "https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Tables", 
         "oneLakeFilesPath": "https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Files", 
         "sqlEndpointProperties": { 
-            "connectionString": "hkpobavgthae5kji5cuqxtivcu-dda6npvkyiaeteyrkfkgim53xa-datawarehouse.pbidedicated.windows.net", 
+            "connectionString": "A1bC2dE3fH4iJ5kL6mN7oP8qR9-C2dE3fH4iJ5kL6mN7oP8qR9sT0uV-datawarehouse.pbidedicated.windows.net", 
             "id": "0dfbd45a-2c4b-4f91-920a-0bb367826479", 
             "provisioningStatus": "Success" 
         } 
@@ -207,7 +207,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
     "mode": "overwrite", 
     "formatOptions": 
     { 
-        "header": true, 
+        "header": "true", 
         "delimiter": ",", 
         "format": "CSV" 
     } 
@@ -249,7 +249,7 @@ Possible operation status for load to tables:
 
 ## Table maintenance
 
-This API surfaces the capabilities of the Lakehouse [table maintenance feature](lakehouse-table-maintenance.md). With this API, it's possible to apply bin-compaction, V-Order, and unreferenced old files cleanup.
+This API surfaces the capabilities of the Lakehouse [table maintenance feature](lakehouse-table-maintenance.md). With this API, it's possible to apply bin-compaction, V-Order, and unreferenced old files cleanup (vacuum).
 
 This API is asynchronous, so two steps are required:
 
@@ -267,8 +267,9 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehou
 {
     "executionData": {
         "tableName": "{table_name}",
+        "schemaName": "{schema_name}",
         "optimizeSettings": {
-            "vOrder": true,
+            "vOrder": "true",
             "zOrderBy": [
                 "tipAmount"
             ]
@@ -284,6 +285,9 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehou
 The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
 The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b``. The guid ``f2d65699-dd22-4889-980c-15226deb0e1b`` is the operation ID to query the status of running table maintenance operations as described in the next section.
+
+> [!IMPORTANT]
+> Setting a shorter retention period impacts Delta's time travel capabilities. It's a general best practice to set a retention interval to at least seven days, because old snapshots and uncommitted files can still be in use by the concurrent table readers and writers. Cleaning up active files with the VACUUM command might lead to reader failures or even table corruption if the uncommitted files are removed. Table maintenance experiences in the user interface and in the Public APIs __will fail__ by default when intervals are less than 7 days. In order to __force__ lower retention intervals for the vacuum command, configure the ```spark.databricks.delta.retentionDurationCheck.enabled``` to ```false``` in the workspace. Table Maintenance jobs will then pick-up the configuration and allow the lower rentention during the job execution.
 
 ### Monitoring table maintenance operations
 
@@ -331,7 +335,7 @@ Possible operation status for table maintenance:
 * Canceled - Job canceled
 * Deduped - An instance of the same job type is already running and this job instance is skipped
 
-## Next steps
+## Related content
 
 - [Load to Tables](load-to-tables.md) Lakehouse feature.
 - [Use table maintenance feature to manage delta tables in Fabric](lakehouse-table-maintenance.md).

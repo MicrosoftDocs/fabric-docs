@@ -6,9 +6,7 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Expressions and functions for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
@@ -3365,6 +3363,6 @@ And returns this result: `"Paris"`
 > [!NOTE]
 > One can add comments to data flow expressions, but not in pipeline expressions.
 
-## Next steps
+## Related content
 
 For instructions on general parameter usage, refer to [Parameters for Data Factory in Fabric](parameters.md)

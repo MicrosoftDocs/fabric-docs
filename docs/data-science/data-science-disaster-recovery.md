@@ -1,13 +1,11 @@
 ---
 title: Disaster recovery guidance for Fabric Data Science
 description: Guidance for disaster recovery in Fabric Data Science
-ms.reviewer: larryfr
-ms.author: midesa
-author: midesa
+ms.reviewer: midesa
+ms.author: larryfr
+author: Blackmist
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 10/13/2023
 ---
 
@@ -27,6 +25,6 @@ Then, export and copy your Fabric notebooks into your secondary workspace and re
 
 If a regional outage occurs, you can then access your machine learning items in the different region where the items were copied.
 
-## Next step
+## Related content
 
 - [OneLake Disaster Recovery](../onelake/onelake-disaster-recovery.md)

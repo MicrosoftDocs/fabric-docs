@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Configure Azure Data Explorer in a copy activity
@@ -112,6 +110,6 @@ The following tables contain more information about a copy activity in an Azure 
 |**Ingestion mapping name** | The name of a mapping that was pre-created and assigned to Azure Data Explorer destination table in advance. |\<your ingestion mapping name>|No|ingestionMappingName|
 |**Additional properties** | A property bag that can be used for specifying any of the ingestion properties that aren't being set already by the Azure Data Explorer destination. Specifically, it can be useful for specifying ingestion tags. Learn more from [Azure Data Explorer data ingestion](/azure/data-explorer/ingestion-properties).|• Name<br> • Type<br> • Value|No|additionalProperties|
 
-## Next steps
+## Related content
 
 - [Azure Data Explorer connector overview](connector-azure-data-explorer-overview.md)

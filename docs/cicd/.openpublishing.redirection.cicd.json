@@ -1,0 +1,14 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/cicd/deployment-pipelines/manage-workspace-content.md",
+            "redirect_url": "/fabric/cicd/deployment-pipelines/understand-the-deployment-process",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/cicd/deployment-pipelines/manage-deployment-pipelines.md",
+            "redirect_url": "/fabric/cicd/manage-deployment",
+            "redirect_document_id": false
+        }       
+    ]
+}

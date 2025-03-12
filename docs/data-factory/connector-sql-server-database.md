@@ -4,11 +4,9 @@ description: This article provides information about how to create a SQL Server 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 01/23/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your SQL Server database connection
@@ -22,15 +20,15 @@ The SQL Server database connector supports the following authentication types fo
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Basic (Username/Password)| n/a | √ |
+|Basic (Username/Password)| √ | √ |
 |Organizational account| n/a | √ |
-|Windows| n/a | √ |
+|Windows| √ (When use on-premises data gateway) | √ |
 
 ## Set up your connection in Dataflow Gen2
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a SQL Server database. The following links provide the specific Power Query connector information you need to connect to a SQL Server database in Dataflow Gen2:
 
-- To get started using the SQL Server database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the SQL Server database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [SQL Server database prerequisites](/power-query/connectors/sql-server#prerequisites) before connecting to the SQL Server database connector.
 - To connect to the SQL Server database connector from Power Query, go to [Connect to SQL Servers database from Power Query Online](/power-query/connectors/sql-server#connect-to-sql-server-database-from-power-query-online).
 

@@ -9,11 +9,10 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-factory
   ms.custom:
-    - ignite-2023
   ms.topic: landing-page # Required
   author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
   ms.author: dougklo #Required; microsoft alias of author; optional team alias.
-  ms.date: 11/15/2023 #Required; mm/dd/yyyy format.
+  ms.date: 9/17/2024 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -53,7 +52,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Data Factory training
-            url: /training/paths/get-started-fabric
+            url: /training/browse/?terms=data%20factory%20fabric
   
   # Card 
   - title: Working with data pipelines
@@ -70,7 +69,23 @@ landingContent:
             url: activity-overview.md
           - text: Move data with copy assistant
             url: tutorial-move-data-lakehouse-copy-assistant.md
+          - text: Migrate from Dataflow Gen1 to Dataflow Gen2
+            url: dataflow-gen2-migrate-from-dataflow-gen1.md
 
+  # Card
+  - title: Data gateway
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+        - text: What is an on-premises data gateway?
+          url: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
+        - text: On-premises data gateway FAQ
+          url: /data-integration/gateway/service-gateway-onprem-faq?toc=/fabric/data-factory/toc.json 
+        - text: What is a virtual network data gateway?
+          url: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json 
+        - text: Virtual network data gateway FAQ
+          url: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
+          
   # Card 
   - title: Working with dataflows
     linkLists:
@@ -90,3 +105,17 @@ landingContent:
         links:
         - text: Frequently asked questions
           url: frequently-asked-questions.yml
+
+  # Card
+  - title: Connectors
+    linkLists:
+      - linkListType: get-started
+        links:
+        - text: Dataflow Gen2 connectors
+          url: dataflow-support.md
+        - text: Data pipeline connectors
+          url: pipeline-support.md
+      - linkListType: how-to-guide
+        links:
+        - text: Connector certification
+          url: connector-certification.md

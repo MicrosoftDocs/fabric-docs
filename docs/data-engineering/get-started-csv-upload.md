@@ -1,14 +1,12 @@
 ---
-title: CSV upload to Delta for PBI reporting
-description: Go from your CSV file to a Lakehouse table to a PBI report.
+title: CSV file upload to Delta table for Power BI reporting
+description: Learn how to upload a CSV file to a lakehouse, convert it to a Delta table, and generate a semantic model and Power BI report.
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: get-started
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/23/2023
+ms.date: 11/11/2024
 ms.search.form: csv load to delta to pbi report
 ---
 
@@ -18,30 +16,30 @@ ms.search.form: csv load to delta to pbi report
 
 In this tutorial you learn to:
 
-* Upload a CSV file to a Lakehouse
+* Upload a CSV file to a lakehouse
 * Convert the file to a Delta table
 * Generate a semantic model and create a Power BI report
 
-## Create a Lakehouse and get a CSV file ready
+## Create a lakehouse and get a CSV file ready
 
-1. In Microsoft Fabric, select **Synapse Data Engineering** experience
-1. Make sure you are in desired workspace or select/create one
-1. Select **Lakehouse** icon under New section in the main mage
+1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
+1. Make sure that you're in your desired workspace. Open your existing workspace or create a new one.
+1. From the workspace, select **New item**, then select **Lakehouse**.
 
-   :::image type="content" source="media\get-started-csv-upload\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-streaming\new-lakehouse.png":::
+   :::image type="content" source="media\get-started-csv-upload\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-csv-upload\new-lakehouse.png":::
 
-1. Enter name of your Lakehouse
-1. Select **Create**
+1. Enter the name of your lakehouse.
+1. Select **Create**.
 1. Download the "Taxi Zone Lookup Table" [CSV file](https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv) from the [TLC Trip Record Data website](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page), and save to a location in your computer.
 
-## Upload a CSV file to the Lakehouse
+## Upload a CSV file to the lakehouse
 
-1. Create the ```TaxiData```  folder under the ```Files``` section of your Lakehouse.
+1. Create the ```TaxiData```  folder under the ```Files``` section of your lakehouse.
 1. Upload the file to the folder, by using the **Upload file** item in the folder contextual menu.
 1. Once uploaded, select the folder to see its content.
 1. Rename the file to remove special characters, in this example, remove the '+' character. To see the full list of special characters, read the [Load to Delta Lake tables](load-to-tables.md) article.
 
-   :::image type="content" source="media\get-started-csv-upload\upload-csv-lakehouse.gif" alt-text="Animated image showing upload CSV and CSV renaming" lightbox="media\get-started-csv-upload\upload-csv-lakehouse.gif":::
+   :::image type="content" source="media\get-started-csv-upload\upload-csv-lakehouse.gif" alt-text="Animated image showing upload CSV and CSV renaming." lightbox="media\get-started-csv-upload\upload-csv-lakehouse.gif":::
 
 ## Load the file to a Delta table
 
@@ -50,7 +48,7 @@ In this tutorial you learn to:
 1. Select **Load** to execute the load.
 1. The table now shows up in the lakehouse explorer, expand the table to see the columns and its types. Select the table to see a preview.
 
-   :::image type="content" source="media\get-started-csv-upload\load-to-table.gif" alt-text="Animated image showing load to table and table preview" lightbox="media\get-started-csv-upload\load-to-table.gif":::
+   :::image type="content" source="media\get-started-csv-upload\load-to-table.gif" alt-text="Animated image showing load to table and table preview." lightbox="media\get-started-csv-upload\load-to-table.gif":::
 
 > [!NOTE]
 > If the table already exists, different __load mode__ options are shown. __Overwrite__ will drop and recreate the table. __Append__ will insert all CSV content as new data. For an in-depth guide on the __Load to Tables__ feature, read the [Load to Tables](load-to-tables.md) article.
@@ -58,14 +56,14 @@ In this tutorial you learn to:
 ## Generate a semantic model and create a Power BI report
 
 1. Select **New Power BI semantic model** on the Lakehouse ribbon.
-1. Select the table to be added to the semantic model model, select the **Confirm** button.
-1. On the semantic model editing experience, you are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
+1. Select the table to be added to the semantic model, select the **Confirm** button.
+1. With semantic model editing, you are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
 1. Select **New report** on the ribbon.
-1. Use the report builder experience to design a Power BI report.
+1. Use the report builder to design a Power BI report.
 
-   :::image type="content" source="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif" alt-text="Animated image showing semantic model and power bi report generation" lightbox="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif":::
+   :::image type="content" source="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif" alt-text="Animated image showing semantic model and power bi report generation." lightbox="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif":::
 
-## Next steps
+## Related content
 
 - [Load to Delta Lake tables](load-to-tables.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

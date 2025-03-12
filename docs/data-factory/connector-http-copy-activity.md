@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Configure HTTP in a copy activity
@@ -98,6 +96,6 @@ The following table contains more information about the copy activity in HTTP.
 |**Skip line count** |The number of non-empty rows to skip when reading data from input files.| \<your skip line count> |No |skipLineCount|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
 - [Set up your HTTP connection](connector-http.md)

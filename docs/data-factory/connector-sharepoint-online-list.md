@@ -4,11 +4,9 @@ description: This article provides information about how to create a SharePoint 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your SharePoint Online List connection
@@ -38,7 +36,7 @@ In some cases, the Power Query connector article might include advanced options,
 
 To create a connection in a data pipeline:
 
-1. From the page header in Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
+1. From the page header in Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
@@ -77,7 +75,7 @@ Select **Service Principal** under **Authentication method**, and fill in the re
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-service-principal.png" alt-text="Screenshot showing that service principal authentication method.":::
 
 - **Tenant Id**: The tenant ID under which your application resides.
-- **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details, including the permission settings.
+- **Service principal ID**: The Application (client) ID of the application registered in Microsoft Entra ID. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details, including the permission settings.
 - **Service principal key**: The application's key.
 
 ### Step 3: Specify the privacy level that you want to apply
@@ -110,9 +108,9 @@ The following table contains the supported authentication type properties.
 |:---|:---|:---|:---|:---|
 |**Service Principal**||||✓|
 |- Tenant ID|The tenant ID under which your application resides.|Yes |||
-|- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
+|- Service Principal ID|The Application (client) ID of the application registered in Microsoft Entra ID. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure SharePoint Online List in a copy activity](connector-sharepoint-online-list-copy-activity.md)

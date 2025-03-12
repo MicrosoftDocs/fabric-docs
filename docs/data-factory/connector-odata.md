@@ -4,11 +4,9 @@ description: This article provides information about how to create an OData conn
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your OData connection
@@ -38,7 +36,7 @@ In some cases, the Power Query connector article might include advanced options,
 
 To create a connection in a data pipeline:
 
-1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon.](./media/connector-common/settings.png) > **Manage connections and gateways**.
+1. From the page header in the Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open the manage gateway resource.":::
 
@@ -117,6 +115,6 @@ The properties in the following table are the supported authentication type.
 |- Username|The user name to use to access the OData endpoint.|Yes |||
 |- Password|The password for the specified username.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure OData in a copy activity](connector-odata-copy-activity.md)

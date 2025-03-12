@@ -6,9 +6,8 @@ ms.author: mahi
 author: matt1883
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Synapse Analytics so that I can efficiently read and write data into Fabric using Azure Synapse Spark pool.
 ---
 
 # Integrate OneLake with Azure Synapse Analytics
@@ -102,6 +101,6 @@ Follow these steps to use SQL serverless to read data from OneLake from Azure Sy
 
 Congratulations. You can now read data from OneLake using SQL serverless in Azure Synapse Analytics.
 
-## Next steps
+## Related content
 
 - [Integrate OneLake with Azure Storage Explorer](onelake-azure-storage-explorer.md)

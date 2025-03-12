@@ -6,8 +6,6 @@ ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -39,7 +37,7 @@ The data movement operation utilized 95,760 CU seconds with a 290.27 second (4.8
 
 **Total run cost at $0.18/CU hour** = (26.6 CU-hours) * ($0.18/CU hour) ~= **$4.79**
 
-## Next steps
+## Related content
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)

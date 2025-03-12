@@ -4,9 +4,7 @@ description: This article describes how to save a draft version of your dataflow
 author: luitwieler
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Tutorials
 ---
@@ -30,17 +28,17 @@ To publish the changes you made in your draft, you take the following steps:
 
 1. Navigate to your workspace.
 
-   :::image type="content" source="./media/dataflows-gen2-save-draft/workspace-view.png" alt-text="Screenshot of the workspace view." lightbox="./media/dataflows-gen2-save-draft/workspace-view.png":::
+   :::image type="content" source="./media/dataflows-gen2-save-draft/workspace-view-inline.png" alt-text="Screenshot of the workspace view." lightbox="./media/dataflows-gen2-save-draft/workspace-view.png":::
 
 1. Open the draft dataflow that you recently saved changes to.
 1. Review all the changes you made last time.
-1. Publish the dataflow with the button on the bottom of the page
+1. Publish the dataflow with the button on the bottom of the page.
 
-   :::image type="content" source="./media/dataflows-gen2-save-draft/publish-dataflow.png" alt-text="Screenshot that shows how to publish your dataflow." lightbox="./media/dataflows-gen2-save-draft/publish-dataflow.png":::
+   :::image type="content" source="./media/dataflows-gen2-save-draft/publish-dataflow-inline.png" alt-text="Screenshot that shows how to publish your dataflow." lightbox="./media/dataflows-gen2-save-draft/publish-dataflow.png":::
 
 Your dataflow starts the publishing process in the background, which is indicated by a spinner next to the dataflow name. Once the spinner completes, the dataflow can be refreshed. If there are any publishing related errors, an indication is visible next to the dataflow name. Selecting the indication reveals the publishing errors and allows you to edit the dataflow from your last saved version.
 
-## Next steps
+## Related content
 
 - [Compare differences between Dataflow Gen1 and Gen2 in Data Factory](dataflows-gen2-overview.md)
 - [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)

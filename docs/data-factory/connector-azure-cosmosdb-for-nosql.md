@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your Azure Cosmos DB for NoSQL connection
@@ -31,7 +29,7 @@ The Azure Cosmos DB for NoSQL connector isn't currently supported in Dataflow Ge
 
 To create a connection in a data pipeline:
 
-1. From the page header in the [!INCLUDE [product-name](../includes/product-name.md)] service, select **Settings** ![Settings gear icon](media/connector-common/settings.png) > **Manage connections and gateways**.
+1. From the page header in the [!INCLUDE [product-name](../includes/product-name.md)] service, select **Settings** :::image type="icon" source="media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
@@ -47,7 +45,7 @@ To create a connection in a data pipeline:
 
 ### Step 1: Specify the new connection name, type, account endpoint and database
 
-   :::image type="content" source="media/connector-cosmosdbnosql/connection-details.png" alt-text="Screenshot showing how to set new connection":::
+   :::image type="content" source="media/connector-cosmosdbnosql/connection-details.png" alt-text="Screenshot showing how to set new connection.":::
 
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
@@ -102,6 +100,6 @@ The properties in the following table are the supported authentication types.
 |**Key**||||✓|
 |- Account key|The  Azure Cosmos DB for NoSQL account key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)

@@ -6,9 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Get Metadata activity to look up data from a data source
@@ -19,12 +17,12 @@ You can use the Get Metadata activity to retrieve the metadata of any data in a 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
-## Add a lookup activity to a pipeline with UI
+## Add a Get Metadata activity to a pipeline with UI
 
-To use a Lookup activity in a pipeline, complete the following steps:
+To use a Get Metadata activity in a pipeline, complete the following steps:
 
 ### Creating the activity
 
@@ -39,7 +37,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Get Metadata settings
 
-Select the **Settings** tab, and then select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details. Then select a table, to choose from the various metadata fields available for the table, including column count, exists, structure, and dynamic content.
+Select the **Settings** tab, and then select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details. Then select a table, to choose from the various metadata fields available for the table, including column count, exists, structure, and dynamic content.
 
 :::image type="content" source="media/get-metadata-activity/get-metadata-activity-settings.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 
@@ -59,6 +57,6 @@ After adding any other activities necessary to your pipeline, you can save and r
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

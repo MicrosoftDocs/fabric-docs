@@ -1,13 +1,11 @@
 ---
 title: Use sparklyr
 description: How to use sparklyr, an R interface to Apache Spark.
-ms.reviewer: sgilley
-ms.author: ruxu
-author: ruixinxu
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: R Language
 ---
@@ -183,7 +181,7 @@ summary(fit)
 
 ### Use the model
 
-You can apply the model on the testing dataset by calling `ml_predict()`.
+You can apply the model on the test dataset by calling `ml_predict()`.
 
 ```R
 pred <- ml_predict(fit, partitions$test)
@@ -202,7 +200,7 @@ spark_disconnect(sc)
 ```
 
 
-## Next steps
+## Related content
 
 Learn more about the R functionalities:
 

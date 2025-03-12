@@ -3,11 +3,13 @@ title: Hyperparameter tuning
 description: Identify the best combination of hyperparameters for your chosen classifiers with SynapseML.
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
+ms.author: ssalgado
+author: ssalgadodev
 ms.reviewer: jessiwang
-author: JessicaXYWang
-ms.author: jessiwang
+reviewer: JessicaXYWang
+
+
+
 ms.date: 05/08/2023
 ---
 # HyperParameterTuning - Fighting Breast Cancer
@@ -113,7 +115,7 @@ prediction = bestModel.transform(test)
 metrics = ComputeModelStatistics().transform(prediction)
 metrics.limit(10).toPandas()
 ```
-## Next steps
+## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
 - [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)

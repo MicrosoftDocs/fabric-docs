@@ -1,13 +1,11 @@
 ---
 title: Use SparkR
 description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
-ms.reviewer: sgilley
-ms.author: ruxu
-author: ruixinxu
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: R Language
 ---
@@ -106,47 +104,6 @@ createOrReplaceTempView(df, "eruptions")
 waiting <- sql("SELECT * FROM eruptions")
 
 head(waiting)
-```
-
-### Read and write SQL tables through RODBC
-
-Use RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the following example code.  Substitute your own connection details for `<database>`, `<uid>`, `<password>`, and `<table>`.
-
-```R
-# load RODBC package
-library(RODBC)
-
-
-# config connection string
-
-DriverVersion <- substr(system("apt list --installed *msodbc*", intern=TRUE, ignore.stderr=TRUE)[2],10,11)
-ServerName <- "your-server-name"
-DatabaseName <- "your-database-name"
-Uid <- "your-user-id-list"
-Password <- "your-password"
-
-ConnectionString = sprintf("Driver={ODBC Driver %s for SQL Server};
-Server=%s;
-Database=%s;
-Uid=%s;
-Pwd=%s;
-Encrypt=yes;
-TrustServerCertificate=yes;
-Connection Timeout=30;",DriverVersion,ServerName,DatabaseName,Uid,Password)
-print(ConnectionString)
-
-
-# connect to driver
-channel <-odbcDriverConnect(ConnectionString)
-
-# query from existing tables
-Rdf <- sqlQuery(channel, "select * from <table>")
-class(Rdf)
-
-# use SparkR::as.DataFrame to convert R date.frame to SparkR DataFrame.
-spark_df <- as.DataFrame(Rdf)
-class(spark_df)
-head(spark_df)
 ```
 
 ## DataFrame operations
@@ -326,7 +283,7 @@ model <- spark.glm(carsDF, mpg ~ wt + cyl, family = "gaussian")
 summary(model)
 ```
 
-## Next steps
+## Related content
 
 - [How to use sparklyr](./r-use-sparklyr.md)
 - [How to use Tidyverse](./r-use-tidyverse.md)

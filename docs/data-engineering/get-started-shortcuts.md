@@ -1,14 +1,12 @@
 ---
 title: Get started for referencing data
-description: Learn how to create shortcuts in lakehouse and use data in your data science projects
+description: Learn how to create shortcuts to ADLS accounts in your lakehouse, and reference that data in your data science projects.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/23/2023
+ms.date: 11/11/2024
 ms.search.form: Get Started Lakehouse Shortcuts Data Science
 ---
 
@@ -34,12 +32,12 @@ This quickstart explains how to reference data stored in external ADLS account a
 1. Under files create a folder where you reference data
 1. Right select (...) and select New Shortcut next to the folder name
 
-   :::image type="content" source="media\get-started-shortcuts\new-shortcut.png" alt-text="Screenshot of new shortcut link." lightbox="media\get-started-shortcuts\new-shortcut.png":::
+   :::image type="content" source="media\get-started-shortcuts\new-shortcut.png" alt-text="Screenshot of new shortcut link from the lakehouse explorer." lightbox="media\get-started-shortcuts\new-shortcut.png":::
 
 1. Select External Sources > ADLS Gen2
 1. Provide shortcut name, storage account endpoint, end your data folder location in storage account
 
-   :::image type="content" source="media\get-started-shortcuts\shortcut-dialog.png" alt-text="Screenshot of new shortcut dialog." lightbox="media\get-started-shortcuts\shortcut-dialog.png":::
+   :::image type="content" source="media\get-started-shortcuts\shortcut-dialog.png" alt-text="Screenshot of new shortcut dialog where shortcut details are entered." lightbox="media\get-started-shortcuts\shortcut-dialog.png":::
 
 1. Select create
 
@@ -52,7 +50,7 @@ This quickstart explains how to reference data stored in external ADLS account a
 1. Execute code to get file content
 1. Add code for data analysis
 
-## Next steps
+## Related content
 
 - [Load to Delta Lake tables](load-to-tables.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

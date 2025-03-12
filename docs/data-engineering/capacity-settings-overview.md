@@ -1,13 +1,11 @@
 ---
-title: Data engineering and science capacity administration settings
-description: Learn about the capacity administration settings for data engineering and data science experiences.
+title: Data engineering and science capacity admin settings
+description: Learn about the capacity administration settings for the data engineering and data science experiences.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 05/23/2023
 ---
 
@@ -23,6 +21,6 @@ From the Admin portal, navigate to the **Data Engineering/Science Settings** sec
 
 :::image type="content" source="media\capacity-settings\capacity-settings-without-user-defined-pools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science.":::
 
-## Next steps
+## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-management.md)

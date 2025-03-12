@@ -5,10 +5,7 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 09/16/2024
 ms.search.form: Pipeline Activity Overview
 ---
 
@@ -18,7 +15,7 @@ This article helps you understand activities in [!INCLUDE [product-name](../incl
 
 ## Overview
 
-A [!INCLUDE [product-name](../includes/product-name.md)] Workspace can have one or more pipelines. A pipeline is a logical grouping of activities that together perform a task. For example, a pipeline could contain a set of activities that ingest and clean log data, and then kick off a mapping data flow to analyze the log data. The pipeline allows you to manage the activities as a set instead of each one individually. You deploy and schedule the pipeline instead of the activities independently.
+A [!INCLUDE [product-name](../includes/product-name.md)] Workspace can have one or more pipelines. A pipeline is a logical grouping of activities that together perform a task. For example, a pipeline could contain a set of activities that ingest and clean log data, and then kick off a data flow to analyze the log data. The pipeline allows you to manage the activities as a set instead of each one individually. You deploy and schedule the pipeline instead of the activities independently.
 
 The activities in a pipeline define actions to perform on your data. For example, you can use a copy activity to copy data from SQL Server to an Azure Blob Storage. Then, use a Dataflow activity or a Notebook activity to process and transform data from the blob storage to an Azure Synapse Analytics pool on top of which business intelligence reporting solutions are built.
 
@@ -42,7 +39,8 @@ Data transformation activity | Compute environment
 [Dataflow Gen2](dataflows-gen2-overview.md) | Compute manager by Microsoft Fabric
 [Delete data](delete-data-activity.md) | Compute manager by Microsoft Fabric
 [Fabric Notebook](notebook-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-Fabric Spark job definition (coming soon) | Apache Spark clusters managed by Microsoft Fabric
+[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Microsoft Fabric 
+[Spark Job Definition](spark-job-definition-activity.md) | Apache Spark clusters managed by Microsoft Fabric
 [Stored Procedure](stored-procedure-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 [SQL script](script-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 
@@ -54,8 +52,10 @@ Control activity | Description
 ---------------- | -----------
 [Append variable](append-variable-activity.md) | Add a value to an existing array variable.
 [Azure Batch activity](azure-batch-activity.md) | Runs an Azure Batch script.
+[Azure Databricks activity](azure-databricks-activity.md) | Runs an Azure Databricks job (Notebook, Jar, Python).
 [Azure Machine Learning activity](azure-machine-learning-activity.md) | Runs an Azure Machine Learning job.
 [Deactivate activity](deactivate-activity.md) | Deactivates another activity.
+[Fail](fail-activity.md) | Cause pipeline execution to fail with a customized error message and error code.
 [Filter](filter-activity.md) | Apply a filter expression to an input array.
 [ForEach](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
 [Functions activity](functions-activity.md) | Executes an Azure Function.
@@ -97,8 +97,11 @@ The general settings will always include **Name** and **Description** fields for
 |Retry |Maximum number of retry attempts. |
 |(Advanced properties) Retry interval (sec) |The number of seconds between each retry attempt. |
 |(Advanced properties) Secure output |When checked, output from the activity isn't captured in logging. |
-|(Advanced properties) Secure input |The number of seconds between each retry attempt. |
+|(Advanced properties) Secure input |When checked, input from the activity isn't captured in logging. |
 
-## Next steps
+> [!NOTE]
+> There is a default soft limit of maximum 80 activities per pipeline, which includes inner activities for containers.
 
-[Create your first pipeline](create-first-pipeline-with-sample-data.md)
+## Related content
+
+- [Create your first pipeline](create-first-pipeline-with-sample-data.md) 

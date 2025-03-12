@@ -4,11 +4,9 @@ description: Learn how to manage and understand how to use Power BI Premium Per 
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -38,10 +36,8 @@ Use the following settings to override the *automatic refresh* settings in indiv
 
 [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools) allow Microsoft and third-party apps and tools to connect to Power BI semantic models. Use this setting to determine if in the PPU capacity XMLA endpoints are turned off, or configured for read only or read and write.
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)
-
 - [Power BI Premium Per User FAQ](/power-bi/enterprise/service-premium-per-user-faq)
-
 - [Automatic page refresh in Power BI](/power-bi/create-reports/desktop-automatic-page-refresh)

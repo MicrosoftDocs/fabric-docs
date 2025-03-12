@@ -6,8 +6,6 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/15/2023
 ---
 
@@ -56,7 +54,7 @@ You need to enable ACS to acquire the access token. Take the following steps:
 1. Use ACS to get the access token. 
 
 
-## Next steps
+## Related content
 
 For more troubleshooting help, try these resources:
 

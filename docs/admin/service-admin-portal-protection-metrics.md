@@ -4,11 +4,9 @@ description: Learn how to protect your organization's information and view data 
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -24,8 +22,7 @@ You must have a Fabric administrator role to open and view the report. To view t
 
 See [Data protection metrics report](/power-bi/enterprise/service-security-data-protection-metrics-report) for details about the report.
 
-## Next steps
+## Related content
 
 - [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview)
-
 - [What is the admin portal?](admin-center.md)

@@ -5,18 +5,21 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/02/2023
+ms.date: 02/27/2025
 ---
 
 # Scale your capacity
 
 This article shows how to scale a Microsoft Fabric capacity in Azure. Scaling allows you to increase or decrease the size of your capacity.
 
+You are charged pay as you go hourly rates according to the capacity size you scale up or down to. However, scaling below your reserved instance capacity doesn't affect your bill.
+
+>[!NOTE]
+>Scaling up or down between SKUs smaller or equal to F256 and equal or higher than F512, might result in a slower experience.
+
 ## Prerequisites
 
-To scale your capacity you need:
+To scale your capacity, you need:
 
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
@@ -26,7 +29,7 @@ To scale your capacity you need:
 
 1. Sign into the [Azure portal](https://portal.azure.com/).
 
-2. Select the **Microsoft Fabric (preview)** service to see your capacities. You can search for *Microsoft Fabric (preview)* in the search menu.
+2. Select the **Microsoft Fabric** service to see your capacities. You can search for *Microsoft Fabric* in the search menu.
 
 3. Select the capacity you want to scale. The current size for each capacity is listed under *SKU*. When you make your selection, information about that capacity is displayed next to it. This information includes the current capacity scale  under *SKU*.
 
@@ -38,9 +41,9 @@ To scale your capacity you need:
 
 ## Considerations and limitations
 
-Scaling up a capacity that’s smaller than F64, may take up to three hours. During this time, Fabric Free users may see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
+Scaling up a capacity that’s smaller than F64 to a larger capacity happens almost immediately. The capacity license updates usually take up to a day, however some updates could take longer. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
 
-## Next steps
+## Related content
 
 * [Pause and resume your capacity](pause-resume.md)
 

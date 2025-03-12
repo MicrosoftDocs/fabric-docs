@@ -3,12 +3,10 @@ title: Sensitivity label downstream inheritance in Power BI
 description: Learn how sensitivity labels can be propagated to downstream content.
 author: paulinbar
 ms.author: painbar
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-ms.date: 09/12/2023
+ms.date: 11/30/2024
 LocalizationGroup: Data from files
 ---
 
@@ -59,9 +57,10 @@ In certain cases, downstream inheritance (like other automated labeling scenario
 
 ## Enabling fully automated downstream inheritance
 
-By default, downstream inheritance operates in user consent mode. To switch downstream inheritance in the tenant to fully automated mode, the Power BI admin must enable the **Automatically apply sensitivity labels to downstream content** tenant setting in the admin portal.
+Fully automated downstream inheritance is controlled by the tenant setting **Automatically apply sensitivity labels to downstream content**. This setting is enabled by default when information protection is enabled (that is, when the tenant setting **Allow users to apply sensitivity labels for content**
+is enabled). To change the downstream inheritance setting, [go to the tenant settings in the admin portal](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings) and enable/disable the **Automatically apply sensitivity labels to downstream content** setting as desired.
 
-:::image type="content" source="media/sensitivity-labels/downstream-inheritance-fully-automated-tenant-switch.png" alt-text="Screenshot of tenant setting for automatically applying labels to downstream content.":::
+:::image type="content" source="media/service-security-sensitivity-label-downstream-inheritance/downstream-inheritance-fully-automated-tenant-switch.png" alt-text="Screenshot of tenant setting for automatically applying labels to downstream content.":::
 
 ## Considerations and limitations
 
@@ -74,7 +73,7 @@ By default, downstream inheritance operates in user consent mode. To switch down
 
 When you publish a *.pbix* file that has a sensitivity label, the label that's inherited by the semantic model and report created in the service is considered to be automatically or manually applied depending on whether the label on the *.pbix* file was automatically or manually applied. This has implications for subsequent downstream inheritance from the semantic model to its associated report. If the label on the *.pbix* file was automatically applied, then later, after publishing, if the label on the semantic model is changed, the associated report inherits the change. If, however, the label on the *.pbix* file was manually applied, then if the label on the semantic model is changed, the label on its associated report **is not** be overwritten, as it's considered to be manually applied. This is in keeping with the rule that downstream inheritance never overwrites a manually applied label.
 
-## Next steps
+## Related content
 
 * [Sensitivity label overview](/power-bi/enterprise/service-security-sensitivity-label-overview)
 * [Label change enforcement](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement)

@@ -1,14 +1,12 @@
 ---
 title: Migrate Spark libraries
-description: Learn about how to migrate Spark libraries from Azure Synapse Spark to Fabric.
+description: Learn about migrating Spark libraries from Azure Synapse Spark to Fabric, including migration prerequisites and options.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -20,7 +18,7 @@ For Spark library considerations, refer to [differences between Azure Synapse Sp
 
 ## Prerequisites
 
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 * If you don’t have one already, create an [Environment](create-and-use-environment.md) in your workspace. 
 
 ## Option 1: Adding Spark libraries to custom environment
@@ -32,7 +30,7 @@ You can move Spark pool libraries to an environment as follows:
     * Go to **Manage** area and select on **Apache Spark pools.**
     * Find the Apache Spark pool, select **Packages** and locate the Spark libraries for the pool.
 1.	**Get Spark libraries**: Locate the requirements.txt, environment.yml, or workspace packages installed in the pool. Get the list of installed libraries on the pool.
-1.	Once you have Spark libraries, add custom Spark libraries to an environment in [Fabric](https://app.fabric.microsoft.com). Within your **Environment**, go to **Libraries** and add libraries:
+1.	Once you have Spark libraries, add custom Spark libraries to an environment in [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-migrate-synapse-spark-libraries). Within your **Environment**, go to **Libraries** and add libraries:
     * From **Public Libraries,** you can upload a .yml file. You can also install libraries using PyPI and Conda.
     * From **Custom Libraries,** you can install libraries by using .jar/.whl/.tar.gz files.
 1.	Click on **Save** and **Publish** changes.
@@ -44,7 +42,7 @@ Learn more on adding Spark libraries to an [Environment](environment-manage-libr
 > [!NOTE]
 > Note that library installation may take some time.
 
-## Next steps
+## Related content
 
 - [Migrate Spark configurations](migrate-synapse-spark-configurations.md)
 - [Migrate Spark notebooks](migrate-synapse-notebooks.md)

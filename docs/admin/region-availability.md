@@ -5,57 +5,102 @@ author: paulinbar
 ms.author: painbar
 ms.custom:
   - references_regions
-  - build-2023
-  - ignite-2023
 ms.topic: overview
-ms.date: 11/07/2023
+ms.date: 02/13/2025
 ---
 
 # Fabric region availability
 
-Microsoft Fabric Public Preview is available in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+This article lists the region availability of the Microsoft Fabric [F SKUs](../enterprise/licenses.md#capacity), which are available in the [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). Some of the Fabric workloads might not be immediately available in new regions, or regions where data centers become constrained.
 
-To find out what your Fabric home region is, see [Find your Fabric home region](./find-fabric-home-region.md).
+For details about purchasing a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
-Asia Pacific
-* AustraliaEast
-* AustraliaSoutheast
-* CentralIndia
-* EastAsia
-* JapanEast
-* KoreaCentral
-* SoutheastAsia
-* SouthIndia
+## Home region
 
-Europe
-* NorthEurope
-* WestEurope
-* FranceCentral
-* NorwayEast
-* SwedenCentral
-* SwitzerlandNorth
-* SwitzerlandWest
-* UKSouth
-* UKWest
+Your [home region](find-fabric-home-region.md) is associated with your tenant. If your home region doesn't reside in the regions listed below, you won’t be able to access all the Fabric functionalities. In such cases, to access all the Fabric features, you can create a capacity in a region where Fabric is available. For more information, see [Multi-Geo support for Fabric](service-admin-premium-multi-geo.md).
 
-Americas
-* BrazilSouth
-* CanadaCentral
-* CanadaEast
-* EastUS
-* EastUS2
-* NorthCentralUS
-* SouthCentralUS
-* WestUS
-* WestUS2
-* WestUS3
+[!INCLUDE [tenant-region-availability-note](../includes/tenant-region-availability-note.md)]
 
-Middle East and Africa
-* SouthAfricaNorth
-* UAENorth
+## Workload and feature availability
 
+The tables below list the availability of Fabric workloads according to the region your tenant is in.
 
-## Next steps
+### All workloads
+
+This table lists regions where all Fabric workloads are available.
+
+| Americas                     | Europe                     | Middle East | Africa             | Asia Pacific                    |
+|:-----------------------------|:---------------------------|:------------|:-------------------|:--------------------------------|
+| Brazil South                 | North Europe               | UAE North   | South Africa North | Australia East                  |
+| Canada Central               | West Europe                |             |                    | Australia Southeast<sup>*</sup> |
+| Canada East                  | France Central             |             |                    | Central India                   |
+| Central US                   | Germany West Central       |             |                    | East Asia                       |
+| East US                      | Italy North<sup>*</sup>    |             |                    | Japan East<sup>*</sup>          |
+| East US 2                    | Norway East                |             |                    | Korea Central                   |
+| North Central US             | Poland Central<sup>*</sup> |             |                    | Southeast Asia                  |
+| South Central US<sup>**</sup>| Sweden Central             |             |                    | South India                     |
+| West US                      | Switzerland North          |             |                    |                                 |
+| West US 2                    | Switzerland West           |             |                    |                                 |
+| West US 3\* \***     | UK South                   |             |                    |                                 |
+|                              | UK West<sup>*</sup>        |             |                    |                                 |
+
+\* [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
+\*\* [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region.
+\*\*\* [Fabric API for GraphQL](../data-engineering/api-graphql-overview.md) isn't  available in this region.
+
+### Power BI
+
+This table lists regions where the only available Fabric workload is Power BI.
+
+| Americas       | Europe        | Middle East    | Africa            | Asia Pacific |
+|:---------------|:--------------|:---------------|:------------------|:-------------|
+| Mexico Central | France South  | Israel Central | South Africa West | India West   |
+|                | Germany North | Qatar Central  |                   | Japan West   |
+|                | Norway West   | UAE Central    |                   | Korea South  |
+|                | Spain Central |                |                   |              |
+
+### Public preview
+
+This table lists regions where public preview features are available, according to workload.
+
+| Region | Copilot\*\* | Retail Solutions | Dataflow Gen2 with CI/CD |
+|:---------------|:---------------|:---------------|:---------------|
+| Australia East | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Australia Southeast | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Brazil South | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Canada Central | <li>Dataflows</li><li>Synapse Notebook</li> |&#x2705; | &#x2705; |
+| Canada East | Synapse Notebook | &#x274C; | &#x2705; |
+| Central India | <li>Dataflows</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; |
+| Central US | &#x274C;  | &#x274C; | &#x2705; |
+| East Asia |Synapse Notebook   | &#x2705; | &#x2705; |
+| East US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| East US2 | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| France Central | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x274C; | &#x2705; |
+| Germany West Central | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x274C; | &#x2705; |
+| Italy North | &#x274C; | &#x274C; | &#x2705; |
+| Japan East | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Korea Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x274C; | |
+| North Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; |
+| North Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| Norway East | &#x274C; | &#x274C; | &#x2705; |
+| Poland Central | &#x274C;  | &#x274C; | &#x2705; |
+| South Africa North | Synapse Notebook  | &#x2705; | &#x2705; |
+| South Africa West | &#x274C; | &#x274C; | &#x2705; |
+| South Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x274C; |
+| Southeast Asia | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| South India | <li>Dataflows</li><li>Exploration</li>  | &#x274C; | &#x2705; |
+| Sweden Central | Synapse Notebook  | &#x274C; | &#x2705; |
+| Switzerland North | Synapse Notebook  | &#x274C; | &#x2705; |
+| Switzerland West | &#x274C;  | &#x274C; | &#x2705; |
+| UAE North | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> |  | &#x2705; |
+| West Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| West US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
+| West US2 | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x274C; |
+| West US3 | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x2705; | &#x274C; |
+
+\*\* Only the workloads listed in the table are available in each region. If no workloads are listed, Copilot isn't available in that region.
+
+## Related content
 
 * [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
 * [Find your Fabric home region](./find-fabric-home-region.md)

@@ -6,9 +6,7 @@ ms.author: qixwang
 author: qixwang
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 08/09/2023
+ms.date: 05/13/2024
 ms.search.form: VSCodeExtension
 ---
 
@@ -53,8 +51,8 @@ The following screenshot shows the **util.py** file moved to the **_backup** sub
 
 :::image type="content" source="media\vscode\update-nb-resource-sample.png" alt-text="Screenshot showing a deleted file moved into a backup subfolder.":::
 
-## Next steps
+## Related content
 
-- [Microsoft Fabric notebook experience in VS Code](author-notebook-with-vs-code.md)
-- [Spark job definition experience in VS Code](author-sjd-with-vs-code.md)
+- [Create and manage Microsoft Fabric notebooks inside Visual Studio Code for the Web](author-notebook-with-vs-code.md)
+- [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md)
 - [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)

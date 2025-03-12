@@ -4,11 +4,9 @@ description: Learn how to manage Power BI organizational visuals by using the ad
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -22,8 +20,7 @@ The *organizational visuals* admin setting allows you to manage the list of Powe
 
 All the Power BI visuals admin settings, including Power BI visuals tenant settings, are described in [Manage Power BI visuals admin settings](organizational-visuals.md).
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)
-
 - [Manage Power BI visuals admin settings](organizational-visuals.md)

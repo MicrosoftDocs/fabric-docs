@@ -6,9 +6,7 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 08/13/2024
 ---
 
 # Transform data by running a notebook
@@ -23,7 +21,7 @@ This section describes how to use a Notebook activity in a pipeline.
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 - A notebook is created in your workspace. To create a new notebook, refer to [How to create [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
@@ -46,12 +44,23 @@ Select the **Settings** tab, select an existing notebook from the **Notebook** d
 
 :::image type="content" source="media/notebook-activity/choose-notebook-and-add-parameters.png" alt-text="Screenshot showing the Notebook settings tab highlighting the tab, where to choose a notebook, and where to add parameters.":::
 
+#### Session tag
+
+In order to minimize the amount of time it takes to execute your notebook job, you could optionally set a session tag. Setting the session tag will instruct Spark to reuse any existing Spark session thereby minimizing the startup time. Any arbitrary string value can be used for the session tag. If no session exists a new one would be created using the tag value.
+
+:::image type="content" source="media/notebook-activity/session-tag-001.png" alt-text="Screenshot showing the Notebook settings tab highlighting the tab, where to add session tag.":::
+
+> [!NOTE]
+> To be able to use the session tag, High concurrency mode for pipeline running multiple notebooks option must be turned on. This option can be found under the High concurrency mode for Spark settings under the Workspace settings
+
+> :::image type="content" source="media/notebook-activity/turn-on-high-concurrency-mode-for-session-tags.png" alt-text="Screenshot showing the Workspace settings tab highlighting the tab, where to enable high concurrency mode for pipelines running multiple notebooks.":::
+
 ## Save and run or schedule the pipeline
 
 Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/notebook-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

@@ -1,14 +1,13 @@
 ---
 title: Integrate OneLake with Azure Storage Explorer
-description: Learn more about Microsoft Fabric integration with Azure Storage Explorer. Connect, browse and download existing data, add new tables or files, and move them from one location to another.
+description: Learn more about OneLake integration with Azure Storage Explorer to connect to, browse, manage, and download existing data.
 ms.reviewer: eloldag
 ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a user of OneLake, I want to learn how to integrate it with Azure Storage Explorer so that I can easily connect to, browse, manage, and download existing data.
 ---
 
 # Integrate OneLake with Azure Storage Explorer
@@ -61,6 +60,6 @@ This article demonstrates OneLake integration with Azure Storage Explorer. Azure
 
 If a workspace name has capital letters, deletion of files or folders fails due to a restriction from the storage service. We recommend using your workspace name in lowercase letters.
 
-## Next steps
+## Related content
 
 - [Integrate OneLake with Azure Databricks](onelake-azure-databricks.md)

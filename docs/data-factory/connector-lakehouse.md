@@ -4,11 +4,9 @@ description: This article details how to use the Data Factory Lakehouse connecto
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - ignite-2023
-  - ignite-2023-fabric
 ---
 
 # Set up your Lakehouse connection
@@ -33,6 +31,6 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Next steps
+## Related content
 
 * [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)

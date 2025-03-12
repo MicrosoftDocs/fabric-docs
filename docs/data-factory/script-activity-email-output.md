@@ -6,8 +6,7 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ---
 
 # Run a Script activity and send an output summary by email
@@ -18,7 +17,7 @@ This example shows how to run a script on an Azure SQL instance and send an outp
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Create a script activity and configure its output to be sent by email
@@ -43,7 +42,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Create the connection and specify a SQL script
 
-1. Select the **Settings** tab, and then select an existing Azure SQL or Azure SQL Managed Instance connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+1. Select the **Settings** tab, and then select an existing Azure SQL or Azure SQL Managed Instance connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
 1. Specify a script. You can execute any query, or non-query scripts that perform operations on the database as well, in the **Script** textbox on the Script activity settings page. For this example, you can use this simple SQL script:
 
@@ -93,8 +92,6 @@ After the pipeline runs successfully, check the account(s) you specified in the 
 
 :::image type="content" source="media/script-activity-email-output/pipeline-succeeded.png" alt-text="Screenshot showing successful execution of the pipeline." lightbox="media/script-activity-email-output/pipeline-succeeded.png":::
 
+## Related content
 
-
-## Next steps
-
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

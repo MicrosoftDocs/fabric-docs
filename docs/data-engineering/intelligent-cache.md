@@ -6,8 +6,6 @@ ms.author: arali
 author: ms-arali
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -47,7 +45,6 @@ You can disable or enable the intelligent cache within a session by running the 
 spark.conf.set("spark.synapse.vegas.useCache", "false/true") 
 ```
 
-
-## Next steps
+## Related content
 
 - [What is Spark compute in Microsoft Fabric?](spark-compute.md)

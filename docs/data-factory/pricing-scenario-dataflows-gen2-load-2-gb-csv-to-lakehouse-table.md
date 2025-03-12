@@ -6,8 +6,6 @@ ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -38,7 +36,7 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2-gb-on-premises-csv-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-1.png" alt-text="Screenshot showing details of the Dataflow Gen2 Refresh cost":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-1.png" alt-text="Screenshot showing details of the Dataflow Gen2 Refresh cost.":::
 
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-2.png" alt-text="Screenshot showing details of a Dataflow Gen2 High Scale Dataflow Compute consumption used in the run.":::
 
@@ -58,7 +56,7 @@ The Dataflow Gen2 Refresh operation consumed 4749.42 CU seconds, and two High Sc
 
 **Total run cost at $0.18/CU hour** = (1.32 CU-hours) * ($0.18/CU hour) ~= **$0.24**
 
-## Next steps
+## Related content
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)

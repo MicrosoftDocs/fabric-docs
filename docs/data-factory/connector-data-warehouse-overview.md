@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Data Warehouse connector overview
@@ -25,10 +23,10 @@ The Data Warehouse connector supports the following capabilities in data pipelin
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | User Auth  |
-| **Lookup activity** | None |User Auth |
-| **GetMetadata activity** | None |User Auth |
-| **Script activity** | None |User Auth |
-| **Stored Procedure Activity** | None |User Auth |
+| **Copy activity (source/destination)** | None <br> On-premises | User Auth  |
+| **Lookup activity** | None <br> On-premises |User Auth |
+| **GetMetadata activity** | None <br> On-premises |User Auth |
+| **Script activity** | None <br> On-premises |User Auth |
+| **Stored Procedure Activity** | None <br> On-premises |User Auth |
 
 To learn more about the copy activity configuration for Data Warehouse in data pipelines, go to [Configure in a data pipeline copy activity](connector-data-warehouse-copy-activity.md).

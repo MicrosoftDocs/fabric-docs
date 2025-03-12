@@ -4,11 +4,9 @@ description: Learn how to manage featured content in Power BI.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -24,8 +22,6 @@ As a Fabric admin, you can monitor this featured content and remove it from the 
 
 In the [admin portal](admin-center.md), select **Featured content**.
 
-![Screenshot of manage featured content page in the Fabric admin portal.](media/service-admin-portal-featured-content/powerbi-admin-portal-manage-featured-content.png)
-
 Here you see a list of all featured items along with their relevant metadata. If something looks suspicious, or you want to clean up the **Featured** section, you can delete featured items as needed.
 
 To delete an item, mouse over and select the item, and then click the trash can that appears in the top ribbon, or choose **More options (...) > Delete**. It's possible to select multiple items and then delete.
@@ -34,8 +30,7 @@ To delete an item, mouse over and select the item, and then click the trash can 
 
 The featured content feature is enabled, disabled, and configured (for example, specifying who can feature content) via an admin setting. To learn more, see [Featured content](service-admin-portal-export-sharing.md#featured-content).
 
-## Next steps
+## Related content
 
 * [Feature content on colleagues' Power BI Home page](/power-bi/collaborate-share/service-featured-content)
-
 * [What is the admin portal?](admin-center.md)

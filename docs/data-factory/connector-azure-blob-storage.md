@@ -4,11 +4,9 @@ description: This article provides information about how to create an Azure Blob
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your Azure Blob Storage connection
@@ -48,7 +46,7 @@ You have two ways to browse to this page:
 * In copy assistant, browse to this page after selecting the connector.
 * In pipeline, browse to this page after selecting + New in Connection section and selecting the connector.
 
-### Step 1: Specify the account name or URL, connection and connection name
+### Step 1: Specify the account name or URL, connection, and connection name
 
 :::image type="content" source="./media/connector-azure-blob-storage/configure-azure-blob-storage-connection-common.png" alt-text="Screenshot showing the common connection setup for Azure Blob Storage.":::
 
@@ -112,7 +110,7 @@ You need to specify the tenant ID, service principal client ID and service princ
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Authorize access to blobs using Azure Active Directory](/azure/storage/blobs/authorize-access-azure-active-directory#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
+1. Register an application entity in Microsoft Entra ID by following [Authorize access to blobs using Microsoft Entra ID](/azure/storage/blobs/authorize-access-azure-active-directory#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
 
    * Tenant ID
    * Application ID

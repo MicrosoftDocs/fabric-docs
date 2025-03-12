@@ -1,18 +1,16 @@
 ---
 title: Migrate Hive Metastore metadata
-description: Learn about how to migrate HMS metadata from Azure Synapse Spark to Fabric.
+description: Learn about your different options for migrating Hive Metastore metadata from Azure Synapse Spark to Microsoft Fabric.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
-# Migrate Hive Metastore metadata from Azure Synapse to Fabric
+# Migrate Hive Metastore metadata from Azure Synapse Analytics to Fabric
 
 The initial step in the Hive Metastore (HMS) migration involves determining the databases, tables, and partitions you want to transfer. It's not necessary to migrate everything; you can select specific databases. When identifying databases for migration, make sure to verify if there are managed or external Spark tables.
 
@@ -23,7 +21,7 @@ For HMS considerations, refer to [differences between Azure Synapse Spark and Fa
 
 ## Prerequisites
 
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 * If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
 
 ## Option 1: Export and import HMS to lakehouse metastore
@@ -139,13 +137,12 @@ Alternatively, all imported tables are visible within the Lakehouse explorer UI 
 
 :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse.":::
 
-
 ### Other considerations
 
 -	Scalability: The solution here's using internal Spark catalog API to do import/export, but it isn't connecting directly to HMS to get catalog objects, so the solution couldn't scale well if the catalog is large. You would need to change the export logic using HMS DB.
 -	Data accuracy: There's no isolation guarantee, which means that if the Spark compute engine is doing concurrent modifications to the metastore while the migration notebook is running, inconsistent data can be introduced in Fabric lakehouse.
 
-## Next steps
+## Related content
 
 - [Fabric vs. Azure Synapse Spark](comparison-between-fabric-and-azure-synapse-spark.md)
 - Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark job definition](migrate-synapse-spark-job-definition.md)

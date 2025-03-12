@@ -6,9 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/18/2024
 ms.search.form: product-data-factory
 ---
 
@@ -54,7 +52,7 @@ The scenario is divided into three modules:
 
 You use the sample dataset **NYC-Taxi** as the data source for the tutorial. After you finish, you'll be able to gain insight into daily discounts on taxi fares for a specific period of time using Data Factory in Microsoft Fabric.
 
-## Next steps
+## Related content
 
 In this introduction to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned:
 

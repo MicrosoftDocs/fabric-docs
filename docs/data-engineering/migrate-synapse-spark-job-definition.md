@@ -1,14 +1,12 @@
 ---
 title: Migrate Spark job definition
-description: Learn about how to migrate Spark job definition from Azure Synapse Spark to Fabric.
+description: Learn about migrating Spark job definitions from Azure Synapse Spark to Fabric, including migration prerequisites and options.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -23,7 +21,7 @@ For Spark job definition considerations, refer to [differences between Azure Syn
 
 ## Prerequisites
 
-If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 
 ## Option 1: Create Spark job definition manually
 
@@ -37,7 +35,7 @@ To export a Spark job definition from Azure Synapse:
 
 To create a new Spark job definition (SJD) based on the exported SJD information in Fabric:
 
-1.	**Access Fabric workspace**: Sign-in into [Fabric](https://app.fabric.microsoft.com) and access your workspace.
+1.	**Access Fabric workspace**: Sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-migrate-synapse-notebook-job-definition) and access your workspace.
 1.	**Create a new Spark job definition in Fabric**:
     * In Fabric, go to **Data Engineering homepage**.
     * Select **Spark Job Definition.**
@@ -71,7 +69,7 @@ The prerequisites include actions you need to consider before starting Spark job
 
 The focus of Step 1 is on exporting Spark job definition from Azure Synapse workspace to OneLake in json format. This process is as follows:
 
-* **1.1) Import SJD migration notebook** to [Fabric](https://app.fabric.microsoft.com) workspace. [This notebook](https://github.com/microsoft/fabric-migration/tree/main/data-engineering/spark-sjd) exports all Spark job definitions from a given Azure Synapse workspace to an intermediate directory in OneLake. Synapse API is used to export SJD.
+* **1.1) Import SJD migration notebook** to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-migrate-synapse-notebook-job-definition) workspace. [This notebook](https://github.com/microsoft/fabric-migration/tree/main/data-engineering/spark-sjd) exports all Spark job definitions from a given Azure Synapse workspace to an intermediate directory in OneLake. Synapse API is used to export SJD.
 * **1.2) Configure the parameters** in the first command to export Spark job definition to an intermediate storage (OneLake). This only exports the json metadata file. The following snippet is used to configure the source and destination parameters. Ensure to replace them with your own values.
 
 ```python
@@ -106,7 +104,7 @@ Step 2 is when Spark job definitions are imported from intermediate storage into
 > [!NOTE]
 > The export option outputs a json metadata file. Ensure that Spark job definition executable files, reference files, and arguments are accessible from Fabric.
 
-## Next steps
+## Related content
 
 - [Migrate notebooks](migrate-synapse-notebooks.md)
 - [Migrate data and pipelines](migrate-synapse-data-pipelines.md)

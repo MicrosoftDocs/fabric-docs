@@ -1,24 +1,23 @@
 ---
-title: Access OneLake shortcuts in a Spark notebook
-description: Learn how to access OneLake shortcuts as folders and as tables in a Spark notebook.
+title: Access OneLake shortcuts in an Apache Spark notebook
+description: Learn how to access Microsoft Fabric OneLake shortcuts as folders and as tables in an Apache Spark notebook.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/15/2023
+#customer intent: As a data analyst, I want to learn how to access OneLake shortcuts in an Apache Spark notebook so that I can easily read data from shortcuts and use them in my Spark analysis.
 ---
 
-# Access Fabric OneLake shortcuts in a Spark notebook
+# Access Fabric OneLake shortcuts in an Apache Spark notebook
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
-## Access shortcuts as folders in a Spark notebook
+## Access shortcuts as folders in an Apache Spark notebook
 
-Shortcuts appear as folders in OneLake, and Spark can read from them just like any other folder in OneLake.
+Shortcuts appear as folders in OneLake, and Apache Spark can read from them just like any other folder in OneLake.
 
 To access a shortcut as a folder:
 
@@ -70,6 +69,6 @@ You can also access shortcuts through the Azure Blob Filesystem (ABFS) driver or
 
 1. Select the copy icon next to the **ABFS path** or **URL** in the **Properties** screen.
 
-## Next steps
+## Related content
 
 - [OneLake access and APIs](onelake-access-api.md)

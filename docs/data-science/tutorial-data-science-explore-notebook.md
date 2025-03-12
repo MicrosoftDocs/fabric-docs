@@ -1,13 +1,11 @@
 ---
 title: "Tutorial: Explore and visualize data with notebooks"
 description: In this second part of the tutorial series, learn how to read data from a delta table, explore, and cleanse the data.
-ms.reviewer: sgilley
-ms.author: amjafari
-author: amhjf
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 10/16/2023
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
 ---

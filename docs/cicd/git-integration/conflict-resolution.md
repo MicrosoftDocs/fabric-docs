@@ -1,14 +1,15 @@
 ---
 title: Resolve conflicts with Git integration
-description: Learn how to resolve conflicts when using Fabric's Git integration tools.
+description: Learn how to resolve conflicts when using Fabric's Git integration tools, including selecting versions, reverting states, and resolving conflicts in Git.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
-ms.date: 10/16/2023
+ms.date: 12/06/2024
 ms.custom:
-  - build-2023
-  - ignite-2023
+#customer intent: As a developer, I want to know how to resolve conflicts when using Fabric's Git integration tools.
 ---
 
 # Conflict resolution
@@ -16,8 +17,6 @@ ms.custom:
 A conflict occurs when changes are made *to the same item* in both the workspace and the remote Git repository. When a conflict occurs, the Git status says **Conflict** and **Commit** is disabled.
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a Git status that says conflict.":::
-
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 When you select **Update** when there are conflicts, a message notifies you that you need to resolve the conflicts before you can update.
 
@@ -28,6 +27,7 @@ There are three ways to resolve a conflict:
 - [Select which version to keep](#resolve-conflict-in-ui) through the UI.
 - [Revert](#revert-to-a-previous-state) either the workspace or the Git repository to a previous synced state.
 - [Resolve](#resolve-conflict-in-git) the conflict in Git.
+- [Manually update](./partial-update.md) the workspace if one or more items fail to update.
 
 ## Resolve conflict in UI
 
@@ -57,20 +57,20 @@ If you're not sure what changes were made and which version to choose and don’
 >[!NOTE]
 >Only a workspace admin can reconnect the workspace to the new branch.
 
-1. From the **Source control** pane, check out a new branch using the last synced branch ID shown on bottom of screen
+1. From the **Source control** panel, check out a new branch using the last synced branch ID shown on bottom of screen
 
-   :::image type="content" source="./media/conflict-resolution/checkout-new-branch.png" alt-text="Screenshot showing how to check out a new branch from the source control pane by selecting the down arrow.":::
+   :::image type="content" source="./media/conflict-resolution/checkout-new-branch.png" alt-text="Screenshot showing how to check out a new branch from the source control panel by selecting the down arrow.":::
 
    :::image type="content" source="./media/conflict-resolution/sync-info.png" alt-text="Screenshot of branch ID information shown on bottom of the screen.":::
 
-   This step creates a new branch from the conflicted branch using the last synced Git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** pane, but there's nothing to update from the Git branch. The *checkout branch* keeps the current workspace state, so uncommitted changes are retained when changing the branch.
+   This step creates a new branch from the conflicted branch using the last synced Git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** panel, but there's nothing to update from the Git branch. The *checkout branch* keeps the current workspace state, so uncommitted changes are retained when changing the branch.
 
 1. Commit your changes into the new branch. This new branch now has the changes you made to the items connected to an earlier version of the Git branch that doesn't conflict with your changes.
 1. In git, resolve the conflicts between the original branch and the new branch.
 1. In git, merge the new branch into the original branch
 1. In Fabric, [switch](./manage-branches.md#switch-branches) the workspace back to the original branch.
 
-## Next steps
+## Related content
 
 - [Manually update after a failed update](./partial-update.md)
-- [Lifecycle management Frequently asked questions](../faq.md)
+- [Lifecycle management Frequently asked questions](../faq.yml)
