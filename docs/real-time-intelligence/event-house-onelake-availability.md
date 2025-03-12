@@ -31,7 +31,7 @@ While **OneLake availability** is turned on, you can't do the following tasks:
 If you need to do any of these tasks, use the following steps:
 
 > [!IMPORTANT]
-> Turning off **OneLake availability** soft deletes your data from OneLake. When you turn availability back on, all data is made available in OneLake, including historic backfill of the deleted data.
+> Turning off **OneLake availability** soft deletes your data from OneLake. When you turn availability back on, all data is made available in OneLake, including historic backfill of the.
 
 1. Turn off **OneLake availability**.
 
@@ -124,16 +124,19 @@ To partition your delta tables, use the [.alter-merge table policy mirroring](/a
 ## Query delta tables
 
 You can use Fabric Notebook to read the Onelake data using the following code snippet.
+In the code snippet, replace `<workspaceGuid>`, `<workspaceGuid>`, and `<tableName>` with your values.
 
   ```python
-
-delta_table_path = 'abfss://<workspace_name>@onelake.dfs.fabric.microsoft.com/<item_name>.KustoDatabase/Tables/<table_name>'
-#delta_table_path = 'abfss://<workspace_guid>@onelake.dfs.fabric.microsoft.com/<eventhouse_guid>/Tables/<table_name>'
+delta_table_path = 'abfss://<workspaceGuid>@onelake.dfs.fabric.microsoft.com/<eventhouseGuid>/Tables/<tableName>'
 
 df = spark.read.format("delta").load(delta_table_path)
 
 df.show()
    ```
+
+> For a Data Explorer database, use this code:
+> delta_table_path = 'abfss://<workspaceName>@onelake.dfs.fabric.microsoft.com/<itemName>.KustoDatabase/Tables/<tableName>'
+> Replace `<workspaceName>`, `<itemName>`, and `<tableName>` with your values.
 
 ## Related content
 
