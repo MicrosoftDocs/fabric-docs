@@ -63,7 +63,7 @@ You can choose from the following data delivery styles.
 
 You can also choose how data is written to your destination store.
 
-By default, Copy Job **appends** data to your destination, so that you won't miss any change history. But, you can also adjust the update method to **merge** or **overwrite**. When performing a merge, a key column must be provided. By default, the primary key is used if it has.
+By default, Copy Job **appends** data to your destination, so that you won't miss any change history. But, you can also adjust the update method to **merge** or **overwrite**. When performing a merge, you need to provide a key column. By default, the primary key is used if it has.
 
 - When copy data to storage store: New rows from the tables or files are copied to new files in the destination. If a file with the same name already exists on target store, it will be overwritten.
 - When copy data to database: New rows from the tables or files are appended to destination tables. You can change the update method to merge (on SQL DB or SQL Server) or overwrite (on Fabric Lakehouse tables).
