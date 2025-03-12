@@ -228,11 +228,13 @@ To read more about dependencies, see [Understand dependencies](./git-integration
 
 ### I can't see the deployment pipelines button
 
-If the following conditions aren't met, you can't see the deployment pipelines button.
+The following conditions must be met in order to see the deployment pipelines button.
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
 * You're an admin of a [workspace](../fundamentals/create-workspaces.md).
+
+* You have [admin permissions](./deployment-pipelines/understand-the-deployment-process.md#permissions) for the deployment pipeline.
 
 ### I can't see the pipeline stage tag in my workspace
 
