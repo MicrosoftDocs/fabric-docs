@@ -5,9 +5,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 07/31/2024
 #customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.
 ---
@@ -18,7 +15,7 @@ OneLake usage is defined by data stored and the number of transactions. This pag
 
 ## Storage
 
-OneLake storage is billed at a pay-as-you-go rate per GB of data used and doesn't consume Fabric Capacity Units (CUs). Fabric items like lakehouses and warehouses consume OneLake storage. Data stored in OneLake for Power BI import semantic models is included in the price of your Power BI licensing. For Mirroring storage, data up to a certain limit is free based on the purchased compute capacity SKU you provision. For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+OneLake storage is billed at a pay-as-you-go rate per GB of data used and doesn't consume Fabric Capacity Units (CUs). Fabric items like lakehouses and warehouses consume OneLake storage. For Mirroring storage, data up to a certain limit is free based on the purchased compute capacity SKU you provision. For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). For native mirrored storage, OneLake storage isn't billed as it's included in the cost of items like [Power BI import semantic models](/power-bi/enterprise/onelake-integration-overview) and [Fabric SQL database](/fabric/database/sql/mirroring-overview). 
 
 You can visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. Also note that [soft-deleted data](/fabric/onelake/onelake-disaster-recovery#soft-delete-for-onelake-files) is billed at the same rate as active data. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md). To understand OneLake consumption more, see the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md)
 
@@ -59,7 +56,7 @@ When you access data via a shortcut to a source external to OneLake, such as to 
 
 ## Paused Capacity
 
-When a capacity is paused, the data stored is continued to be billed using the pay-as-you-go rate per GB. All transactions to that capacity are rejected when it is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
+When a capacity is paused, the data stored continues to be billed using the pay-as-you-go rate per GB. All transactions to that capacity are rejected when it is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
 
 The consumption of the data via shortcuts is always counted against the consumer’s capacity, so the capacity where the data is stored can be paused without disrupting downstream consumers in other capacities. See an example on the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md#onelake-compute)
 
@@ -72,10 +69,6 @@ OneLake usage when disaster recovery is enabled is also defined by the amount of
 When disaster recovery is enabled, the data in OneLake gets geo-replicated. Thus, the storage is billed as Business Continuity and Disaster Recovery (BCDR) Storage. For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Disaster recovery transactions
-
-> [!IMPORTANT]
-> 
-> Currently, OneLake BCDR transactions via Redirect are consuming Fabric CUs at the rate of non-BCDR transactions. The CU consumption for OneLake BCDR write operations is higher than non-BCDR. This is a temporary situation. Kindly check the [Known Issues](../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) for updates on when the issue will be corrected.
 
 When disaster recovery is enabled for a given capacity, write operations consume higher capacity units.
 

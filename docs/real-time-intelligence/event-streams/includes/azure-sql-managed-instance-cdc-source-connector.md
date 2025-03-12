@@ -1,15 +1,13 @@
 ---
 title: SQL Server on Virtual Machine (VM) - database (DB) CDC connector for Fabric event streams
-description: This include file has the common content for configuring a SQL Server on a Virtual Machine - database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
+description: Provides the common content for configuring a SQL Server on a Virtual Machine - database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
 ms.author: xujiang1
-author: xujxu 
+author: xujxu
 ms.topic: include
-ms.date: 09/02/2024
+ms.custom:
+ms.date: 11/18/2024
 ---
 
-1. On the **Select a data source** screen, select **Azure SQL MI DB (CDC)** as the data source.
-
-    :::image type="content" source="media/azure-sql-managed-instance-cdc-source-connector/select-external-source.png" alt-text="Screenshot that shows the selection of SQL Server on VM DB (CDC) connector." lightbox="media/azure-sql-managed-instance-cdc-source-connector/select-external-source.png":::
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="media/azure-sql-managed-instance-cdc-source-connector/new-connection.png" alt-text="Screenshot that shows the selection of New connection link on the Connect page." lightbox="media/azure-sql-managed-instance-cdc-source-connector/new-connection.png":::    
@@ -29,12 +27,15 @@ ms.date: 09/02/2024
     - Enter **Username** and **Password** for the SQL Server on VM.
 
 1. Select **Connect** at the bottom of the page.
-1. Now, on the **Connect** page, select **All tables**, or enter the **table names separated by commas**, such as: `dbo.table1, dbo.table2`.
+1. Now, on the **Connect** page, select **All tables** or **Enter table name(s)**. If you select the latter, specify tables using a comma-separated list of full table identifiers (`schemaName.tableName`) or valid regular expressions. For example:  
+
+    - Use `dbo.test.*` to select all tables whose names start with `dbo.test`.  
+    - Use `dbo\.(test1|test2)` to select `dbo.test1` and `dbo.test2`.  
+
+    You can mix both formats using commas. Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
 1. Select **Next**.
 
     :::image type="content" source="media/azure-sql-managed-instance-cdc-source-connector/select-tables.png" alt-text="Screenshot that shows selection of All tables option." lightbox="media/azure-sql-managed-instance-cdc-source-connector/select-tables.png"::: 
-1. On the **Review and create** screen, review the summary, and then select **Add**.
+1. On the **Review + connect** page, review the summary, and then select **Connect**.
 
     :::image type="content" source="media/azure-sql-managed-instance-cdc-source-connector/review-add.png" alt-text="Screenshot that shows the selection of the Add button." lightbox="media/azure-sql-managed-instance-cdc-source-connector/review-add.png"::: 
-
-

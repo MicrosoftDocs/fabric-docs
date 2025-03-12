@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subervice: security
 ms.topic: how-to #Don't change
-ms.date: 08/23/2024
+ms.date: 10/30/2024
 
 #customer intent: As a data engineer, I want to authenticate using workspace identity so that my Fabric items can connect with data sources securely.
 
@@ -69,10 +69,6 @@ Follow the steps listed in [Module 1 - Create a pipeline with Data Factory](../d
 
 > [!NOTE]
 > The user creating the shortcut with workspace identity must have an admin, member or contributor role in the workspace. Users accessing the shortcuts only need permissions on the lakehouse.
-
-## Known issues
-
-Write to shortcut destination fails when using workspace identity as the authentication method.
 
 ## Considerations and limitations
 

@@ -6,8 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -25,7 +24,7 @@ This article shows you how to add a custom endpoint destination or a custom app 
 
 ## Prerequisites
 
-Before you start, you must get access to a premium workspace with Contributor or higher permissions where your eventstream is located.
+Before you start, you must get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions where your eventstream is located. 
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -99,6 +98,8 @@ The **Sample code** page on the **Kafka** tab provides ready-made code, includin
 
 :::image type="content" source="./media/add-destination-custom-app-enhanced/kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream live view.":::
 
+For a clear guide on using the custom endpoint with the Kafka protocol, refer to [this tutorial](stream-consume-events-use-kafka-endpoint.md). It provides detailed steps for streaming and consuming events using the custom endpoint with the Kafka protocol.
+
 ### AMQP
 
 The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between various platforms and languages. You can use this format to connect to your eventstream by using the AMQP protocol.
@@ -118,7 +119,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Derived stream](add-destination-derived-stream.md)
 - [KQL Database](add-destination-kql-database.md)
 - [Lakehouse](add-destination-lakehouse.md)
-- [Reflex](add-destination-reflex.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 
 ::: zone-end
 
@@ -126,7 +127,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 ## Prerequisites
 
-Before you start, you must get access to a premium workspace with Contributor or higher permissions where your eventstream is located.
+Before you start, you must get access to the eventstream's workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -206,6 +207,6 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 - [Eventhouse](add-destination-kql-database.md)
 - [Lakehouse](add-destination-lakehouse.md)
-- [Reflex](add-destination-reflex.md)
+- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 
 ::: zone-end

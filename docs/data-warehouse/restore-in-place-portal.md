@@ -88,4 +88,4 @@ For more information, see [Restore point retention](restore-in-place.md#restore-
 ## Related content
 
 - [Restore in-place of a warehouse in Microsoft Fabric](restore-in-place.md)
-- [Microsoft Fabric terminology](../get-started/fabric-terminology.md)
+- [Microsoft Fabric terminology](../fundamentals/fabric-terminology.md)

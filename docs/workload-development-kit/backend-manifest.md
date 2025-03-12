@@ -67,6 +67,8 @@ Represent the configuration of a specific logical endpoint, for example the back
 ```
 * `<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information about the resolution context and response.
 
+> [!NOTE]
+> Endpoint resolution for Frontend is not supported.
 
 ## Item Manifest - Key Manifest Components
 

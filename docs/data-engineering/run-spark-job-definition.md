@@ -6,8 +6,6 @@ ms.author: qixwang
 author: qixwang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 10/20/2023
 ms.search.form: spark_job_definition
 ---
@@ -20,7 +18,7 @@ Learn how to run a Microsoft Fabric Apache Spark job definition and find the job
 
 Before you get started, you must:
 
-- Create a Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- Create a Microsoft Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - Understand the Spark job definition: see [What is an Apache Spark job definition?](spark-job-definition.md).
 - Create a Spark job definition: see [How to create an Apache Spark job definition in Fabric](create-spark-job-definition.md).
 

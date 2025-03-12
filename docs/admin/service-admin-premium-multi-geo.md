@@ -5,9 +5,8 @@ author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: ''
 ms.custom:
-  - ignite-2023
 ms.topic: how-to
-ms.date: 08/14/2024
+ms.date: 02/02/2025
 LocalizationGroup: Premium
 ---
 
@@ -69,7 +68,9 @@ Trial capacities are created in your home region and don't support Multi-Geo.
 
 Follow the steps below to move workspaces from one capacity to another in the same region. During migration, certain operations might fail, such as publishing new semantic models or scheduled data refresh.
 
-1. Open the [workspace settings](../get-started/workspaces.md#workspace-settings).
+When you're performing a migration, don't delete or pause either the source or destination workspace capacities. Deleting or pausing a capacity during migration, can result in missing items. If you deleted or paused your capacity before the migration is finished and you have missing items in the migrated workspace, try migrating the workspace again.
+
+1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
 2. From the side bar, select **License info**.
 
@@ -98,6 +99,7 @@ Large-storage format semantic models shouldn't be moved from the region where th
 * Confirm that any movement you initiate between regions follows all corporate and government compliance requirements prior to initiating data transfer.
 
 * When you're using Multi-Geo, the following items are stored in the region that isn't your home region:
+    * SQL databases
     * Models (*.ABF* files) for import and DirectQuery semantic models
     * Query cache
     * R images
@@ -120,6 +122,8 @@ Large-storage format semantic models shouldn't be moved from the region where th
 * Certain features such as screenshots, data alerts and others process data in the home region.
 
 * The detailed semantic model metadata that is cached as part of [enhanced metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning) is always stored in the home region, even if the scanned semantic model is located in a remote region.
+  
+* Detailed semantic model metadata lives in the home tenant.
 
 * The [dataflows](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) feature isn't supported on Multi-Geo.
 
@@ -127,8 +131,12 @@ Large-storage format semantic models shouldn't be moved from the region where th
 
 * Multi-Geo doesn't support [Metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
+* Workspaces with non-Power BI Fabric items can't be moved between regions. You must delete all the non-Power BI Fabric items before moving a workspace to a different region. Once the workspace is moved, it can take up to 30 minutes before non-Power BI items can be created.
+
 ## Related content
 
 * [What is Power BI Premium?](/power-bi/enterprise/service-premium-what-is)
 
 * [Multi-Geo support for Power BI Embedded](/power-bi/developer/embedded/embedded-multi-geo)
+
+* [Moving data around](portal-workspaces.md#moving-data-around)

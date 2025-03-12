@@ -4,11 +4,9 @@ description: Use the extended Apache Spark history server to debug and diagnose 
 author: jejiang
 ms.author: jejiang
 ms.topic: overview
-ms.date: 04/30/2023
+ms.date: 09/11/2024
 ms.custom:
   - template-howto
-  - build-2023
-  - ignite-2023
 ms.search.form: Spark history server to debug apps
 ---
 
@@ -28,7 +26,7 @@ When an Apache Spark job is triggered, the button to open **Spark web UI** is in
 
 ### Open the Spark web UI from Apache Spark application detail page
 
-The Spark web UI can also be opened through the Apache Spark application detail page. Select **Monitoring hub** on the left side of the page, and then select an Apache Spark application. The detail page of the application appears.
+The Spark web UI can also be opened through the Apache Spark application detail page. Select **Monitor** on the left side of the page, and then select an Apache Spark application. The detail page of the application appears.
 
 :::image type="content" source="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png" alt-text="Screenshot showing open the Spark web UI from Apache Spark application detail page." lightbox="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png":::
 

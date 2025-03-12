@@ -6,8 +6,6 @@ author: sdgilley
 ms.author: sgilley
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 01/22/2024
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to create a machine learning model by using R so I can predict prices.
@@ -197,7 +195,7 @@ conv_houston_ts_arima <- auto.arima(conv_houston_ts,
 checkresiduals(conv_houston_ts_arima)
 ```
 
-![Screenshot that shows a graph of residuals.](./media/r-avocado/residuals.png)
+:::image type="content" border="true" source="./media/r-avocado/residuals.png" alt-text="Screenshot that shows a graph of residuals.":::
 
 Show a graph of forecasts from the Houston ARIMA model:
 

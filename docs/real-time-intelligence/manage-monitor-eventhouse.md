@@ -5,7 +5,8 @@ ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
-ms.date: 09/10/2024
+ms.custom:
+ms.date: 11/19/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -15,9 +16,11 @@ The Eventhouse page serves as the central hub for all your interactions within t
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
+For advanced analytic insights, see [Eventhouse monitoring overview](monitor-eventhouse.md).
+
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
 
 ## Navigate to an Eventhouse page
@@ -69,7 +72,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
         * **Running**: The eventhouse is running optimally.
-        * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later.
+        * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later. If you have enabled security features, try connecting to your environment using a VPN connection.
         * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute [capacity reached its limits](../enterprise/throttling.md). Try again later or contact your capacity admin to [increase the capacity](../enterprise/scale-capacity.md).
         * **Suspended capacity**: The capacity used for this eventhouse was suspended. Contact your capacity admin to [reverse the suspension](../enterprise/pause-resume.md).
         * **Unknown**: For unknown reasons, the eventhouse is unavailable.
@@ -138,8 +141,13 @@ You can perform the following actions:
 * To query tables in a database, hover over the desired database > select **More menu** [**...**] > **Query data**. The **Explore your data** pane opens where you can write and run queries on the selected database. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 * To ingest data into a database, hover over the desired database > select **More menu** [**...**] > **Get data** > select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
 * To delete a database, hover over the desired database > select **More menu** [**...**] > **Delete** > **Delete database**.
+* To share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
+
+> [!NOTE]
+> Sharing multiple databases or sharing the Eventhouse is not supported.
 
 ## Related content
 
 * [Eventhouse overview](eventhouse.md)
 * [Create an eventhouse](create-eventhouse.md)
+* [Eventhouse monitoring overview](monitor-eventhouse.md)

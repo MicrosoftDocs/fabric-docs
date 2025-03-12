@@ -6,11 +6,9 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: how-to
-ms.date: 06/06/2024
+ms.topic: concept-article
+ms.date: 10/27/2024
 ms.custom:
-  - build-2023
-  - ignite-2023
 #customer intent: As a developer, I want to learn how to use Git branches in Fabric so that I can work in my own isolated environment.
 ---
 
@@ -41,11 +39,11 @@ If the items you're developing are available in other tools, you can work on tho
 
 The workflow for developers using a client tool like Power BI Desktop should look something like this:
 
-1. [Clone](/azure/devops/repos/git/clone?) the repo into a local machine. (You only need to do this step once.)
+1. [Clone](/azure/devops/repos/git/clone?) the repo onto a local machine. (You only need to do this step once.)
 1. Open the project in Power BI Desktop using the local copy of the *PBIProj*.
 1. Make changes and save the updated files locally. [Commit](/azure/devops/repos/git/gitquickstart#commit-your-work) to the local repo.
 1. When ready, [push](/azure/devops/repos/git/pushing) the branch and commits to the remote repo.
-1. Test the changes against other items or more data by connecting the new branch to a separate workspace, and uploading the semantic model and reports using the *update all* button in the source control panel. Do any tests or configuration changes there before merging into the *main* branch.
+1. Test the changes against other items or against more data. To test the changes, connect the new branch to a separate workspace, and upload the semantic model and reports using the *update all* button in the source control panel. Do any tests or configuration changes there before merging into the *main* branch.
 
    If no tests are required in the workspace, the developer can merge changes directly into the *main* branch, without the need for another workspace.
 
@@ -59,11 +57,11 @@ For a specific guidance on how to use the new Power BI Desktop file format in gi
 
 For a developer who works in the web, the flow would be as follows:
 
-1. From the *Branches* tab of the **Source control** menu, select **Branch out to new workspace**.
+1. From the *Branches* tab of the **Source control** menu, select **Branch out to another workspace**.
 
     :::image type="content" source="./media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-1. Specify the names of the branch and workspace. The new branch created based on the branch connected to the current workspace.
+1. Specify if you want to create a new workspace or switch to an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list.
 
    :::image type="content" source="./media/manage-branches/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
@@ -71,7 +69,7 @@ For a developer who works in the web, the flow would be as follows:
 
    Fabric creates the new workspace and branch. You're automatically taken to the new workspace.
 
-   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new isolated environment. This might take a few minutes. See troubleshooting tips for more information on [branching out](../troubleshoot-cicd.md#branching-out-i-dont-see-the-branch-i-want-to-connect-to).
+   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new isolated environment. The sync might take a few minutes. For more information on branching out, see [troubleshooting tips](../troubleshoot-cicd.md#branching-out-i-dont-see-the-branch-i-want-to-connect-to).
 
    :::image type="content" source="./media/manage-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
@@ -80,29 +78,29 @@ For a developer who works in the web, the flow would be as follows:
 
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
-See [branching out limitations](./git-integration-process.md#branching-out-limitations) for more information.
+For more information, see [branching out limitations](./git-integration-process.md#branching-out-limitations).
 
 ## Release process
 
-The release process begins once new updates have completed a Pull Request process and merged into the team’s shared branch (such as ‘Main’, ‘Dev’ etc). From this point, we will outline the different options to build a release process in Fabric. You can find the different considerations for the release process in [manage deployment pipelines](../manage-deployment.md).
+The release process begins once new updates complete a Pull Request process and merge into the team’s shared branch (such as *Main*, *Dev*, etc.). From this point, There are different options to build a release process in Fabric. To read about different options to consider when designing your workflow, see [release process](../manage-deployment.md#release-process).
 
 ## Switch branches
 
-If your workspace is connected to a Git branch and you want to switch to another branch, you can do so quickly from the **Source control** panel without disconnecting and reconnecting.  
+If your workspace is connected to a Git branch and you want to switch to another branch, you can do so quickly from the **Source control** pane without disconnecting and reconnecting.  
 When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced. If an item is in the old branch, but not the new one, it gets deleted.
 To switch between branches, follow these steps:
 
-1. From the *Branches* tab of the **Source control** menu, select **Check out new branch**.
+1. From the *Branches* tab of the **Source control** menu, select **Switch branch**.
 
     :::image type="content" source="media/manage-branches/check-out-new-branch.png" alt-text="Screenshot of source control check out a new branch option.":::
 
-1. Specify the branch you want to connect to. This branch must contain the same directory as the current branch.
+1. Specify the branch you want to connect to or create a new branch. This branch must contain the same directory as the current branch.
 
-1. Select **Check out branch**.
+1. Select **Switch branch**.
 
-If you have any unsaved changes in the workspace, they will be lost if you switch branches without saving them first. Select **Cancel** to go back and save your changes before switching branches.
+You can't switch branches if you have any uncommitted changes in the workspace. Select **Cancel** to go back and commit your changes before switching branches.
 
-:::image type="content" source="media/manage-branches/switch-branch-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to switch branches.":::
+To connect the current workspace to a new branch while keeping the existing workspace status, select **Checkout new branch**. Learn more about checking out a new branch at [Resolve conflicts in Git](./conflict-resolution.md#resolve-conflict-in-git).
 
 ## Related content
 

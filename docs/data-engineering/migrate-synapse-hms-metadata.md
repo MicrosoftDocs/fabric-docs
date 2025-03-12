@@ -7,12 +7,10 @@ author: murggu
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
-# Migrate Hive Metastore metadata from Azure Synapse to Fabric
+# Migrate Hive Metastore metadata from Azure Synapse Analytics to Fabric
 
 The initial step in the Hive Metastore (HMS) migration involves determining the databases, tables, and partitions you want to transfer. It's not necessary to migrate everything; you can select specific databases. When identifying databases for migration, make sure to verify if there are managed or external Spark tables.
 
@@ -23,7 +21,7 @@ For HMS considerations, refer to [differences between Azure Synapse Spark and Fa
 
 ## Prerequisites
 
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 * If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
 
 ## Option 1: Export and import HMS to lakehouse metastore

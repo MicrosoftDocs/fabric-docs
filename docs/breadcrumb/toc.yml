@@ -3,6 +3,9 @@ items:
   tocHref: /fabric/
   topicHref: /fabric/index
   items:
+  - name: Database
+    tocHref: /fabric/database/
+    topicHref: /fabric/database/index
   - name: Data Engineering
     tocHref: /fabric/data-engineering/
     topicHref: /fabric/data-engineering/index
@@ -33,6 +36,9 @@ items:
   - name: Get started
     tocHref: /fabric/get-started/
     topicHref: /fabric/get-started/index
+  - name: Fundamentals
+    tocHref: /fabric/fundamentals/
+    topicHref: /fabric/fundamentals/index
 - name: Microsoft Fabric
   tocHref: /azure/
   topicHref: /fabric/index
