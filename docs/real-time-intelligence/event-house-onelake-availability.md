@@ -77,8 +77,8 @@ Eventhouse's adaptive mechanism can delay write operations if there isn't enough
 
 > [!NOTE]
 >
-> - By default, the write operation can take up to 3 hours or until files of sufficient size (typically 200-256 MB) are created.
-> - You can adjust the delay to a value between 5 minutes and 3 hours.
+> * By default, the write operation can take up to 3 hours or until files of sufficient size (typically 200-256 MB) are created.
+> * You can adjust the delay to a value between 5 minutes and 3 hours.
 
 For example, use the following command to set the delay to 5 minutes:
 
@@ -138,7 +138,7 @@ In the code snippet, replace `<workspaceGuid>`, `<workspaceGuid>`, and `<tableNa
 > [!NOTE]
 > For a Data Explorer database, use this code:
 >
-> delta_table_path = 'abfss://<workspaceName>@onelake.dfs.fabric.microsoft.com/<itemName>.KustoDatabase/Tables/<tableName>'
+> delta_table_path = 'abfss://`<workspaceName>`@onelake.dfs.fabric.microsoft.com/`<itemName>`.KustoDatabase/Tables/`<tableName>`'
 >
 > Replace `<workspaceName>`, `<itemName>`, and `<tableName>` with your values.
 
