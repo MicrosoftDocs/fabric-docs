@@ -169,11 +169,11 @@ Syntax:
 
 `DROP MATERIALIZED VIEW MV_Identifier;`
 
-Example 
+Example
 
 `DROP MATERIALIZED VIEW customers_enriched;`
 
-## Limitations 
+## Limitations
 
 * DML statements aren't supported with Materialized Views. 
  

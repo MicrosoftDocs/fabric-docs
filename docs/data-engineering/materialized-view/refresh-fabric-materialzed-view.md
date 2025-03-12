@@ -31,4 +31,4 @@ If the FULL keyword isn't included, the internal service determines, based on th
 
 ## Related content
 
-* [Create materiazed view](./create-materialized-view.md)
+* [Create materialized view](./create-materialized-view.md)

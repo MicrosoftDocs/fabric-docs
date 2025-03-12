@@ -70,4 +70,4 @@ To update the Data quality constraints, you need to recreate the MV.
  
 ## Related content
 
-* [Create materiazed view](./create-materialized-view.md)
+* [Create materialized view](./create-materialized-view.md)
