@@ -115,7 +115,7 @@ The [Workload Hub](https://app.fabric.microsoft.com/workloadhub) in Microsoft Fa
 
 Users can leverage partner workloads listed under the **More Workloads** tab and use it within their analytical projects. Fabric administrators have the rights to [manage workload](../../workload-development-kit/more-workloads-add.md) availability, making them accessible across the entire tenant or within specific capacities. This extensibility ensures that Fabric remains a flexible and scalable platform, allowing organizations to tailor their workload environment to meet evolving data and business requirements. By integrating seamlessly with Fabric’s security and governance framework, the Workload Hub simplifies workload deployment and management.
 
-:::image type="content" source="media/partner-integration/isv-workloads.png" alt-text="Diagram showing how to create your own fabric workload." lightbox="media/partner-integration/isv-workloads.png.png":::
+:::image type="content" source="media/partner-integration/isv-workloads.png" alt-text="Diagram showing how to create your own fabric workload." lightbox="media/partner-integration/isv-workloads.png":::
 
 Currently, the Workload Hub offers five workloads in Public Preview, enabling organizations to enhance and extend Fabric’s capabilities. Every workload comes with a trial experience for users to quickly get started. These available workloads include:
 
