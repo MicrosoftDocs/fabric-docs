@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/fb93b810-25e7-43b5-baef-4b957cbd4cc9)---
 title: What is Copy job (preview) in Data Factory
 description: This article explains the concept of the Copy job (preview) and the benefits it provides.
 author: dearandyxu
