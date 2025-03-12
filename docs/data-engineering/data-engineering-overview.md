@@ -25,6 +25,8 @@ Microsoft Fabric provides various data engineering capabilities to ensure that y
 
   :::image type="content" source="media\data-engineering-overview\data-engineering-artifacts.png" alt-text="Screenshot showing Data Engineering objects.":::
 
+To access the data engineering homepage, select **Workloads** from the navigation pane, then select the **Data Engineering** tile.
+
 ## Lakehouse
 
 Lakehouses are data architectures that allow organizations to store and manage structured and unstructured data in a single location, using various tools and frameworks to process and analyze that data. These tools and frameworks can include SQL-based queries and analytics, as well as machine learning and other advanced analytics techniques.
