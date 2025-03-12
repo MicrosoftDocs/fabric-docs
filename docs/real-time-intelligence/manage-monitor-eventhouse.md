@@ -16,6 +16,8 @@ The Eventhouse page serves as the central hub for all your interactions within t
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
+For advanced analytic insights, see [Eventhouse monitoring overview](monitor-eventhouse.md).
+
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
@@ -166,8 +168,13 @@ You can perform the following actions:
 * To query tables in a database, hover over the desired database > select **More menu** [**...**] > **Query data**. The **Explore your data** pane opens where you can write and run queries on the selected database. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 * To ingest data into a database, hover over the desired database > select **More menu** [**...**] > **Get data** > select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
 * To delete a database, hover over the desired database > select **More menu** [**...**] > **Delete** > **Delete database**.
+* To share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
+
+> [!NOTE]
+> Sharing multiple databases or sharing the Eventhouse is not supported.
 
 ## Related content
 
 * [Eventhouse overview](eventhouse.md)
 * [Create an eventhouse](create-eventhouse.md)
+* [Eventhouse monitoring overview](monitor-eventhouse.md)

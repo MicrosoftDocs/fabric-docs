@@ -89,7 +89,7 @@ items:
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
   - name: Enable service principal authentication
-    href: metadata-scanning-enable-read-only-apis.md
+    href: enable-service-principal-admin-apis.md
   - name: Configure Multi-Geo support
     href: service-admin-premium-multi-geo.md
 - name: Fabric tenant settings
@@ -103,8 +103,8 @@ items:
   - name: Tenant settings
     expanded: false
     items:
-    - name: Microsoft Fabric
-      href: fabric-switch.md
+    - name: Microsoft Fabric settings
+      href: service-admin-portal-microsoft-fabric-tenant-settings.md
     - name: Product feedback
       href: product-feedback.md      
     - name: Help and support settings

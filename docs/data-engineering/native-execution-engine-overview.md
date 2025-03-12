@@ -2,8 +2,8 @@
 title: Native execution engine for Fabric Spark
 description: How to enable and use the native execution engine to execute Apache Spark jobs for faster and cheaper data processing in Microsoft Fabric.
 ms.reviewer: snehagunda
-ms.author: eskot
-author: ekote
+ms.author: sngun
+author: SnehaGunda
 ms.topic: conceptual
 ms.custom:
 ms.date: 01/06/2025

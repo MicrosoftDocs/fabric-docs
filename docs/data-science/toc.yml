@@ -31,6 +31,28 @@ items:
     href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use the Copilot chat panel
     href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+- name: AI functions
+  items: 
+    - name: Transform and enrich data with AI functions
+      href: ./ai-functions/overview.md
+    - name: ai.similarity
+      href: ./ai-functions/similarity.md
+    - name: ai.classify
+      href: ./ai-functions/classify.md
+    - name: ai.analyze_sentiment
+      href: ./ai-functions/analyze-sentiment.md
+    - name: ai.extract
+      href: ./ai-functions/extract.md
+    - name: ai.fix_grammar
+      href: ./ai-functions/fix-grammar.md
+    - name: ai.summarize
+      href: ./ai-functions/summarize.md
+    - name: ai.translate
+      href: ./ai-functions/translate.md
+    - name: ai.generate_response
+      href: ./ai-functions/generate-response.md
+    - name: Customize AI function configurations
+      href: ./ai-functions/configuration.md
 - name: AI skill
   items: 
     - name: What is the AI skill?
@@ -115,6 +137,8 @@ items:
   items:
   - name: Read and write data with Pandas
     href: read-write-pandas.md
+  - name: Transform and enrich data seamlessly with AI functions
+    href: ./ai-functions/overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
   - name: Explore and transform Spark data with Data Wrangler
