@@ -76,7 +76,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 |---|---| -------- |
 | New SQL query | `Ctrl + J` | `Cmd + J`|
 | Close current tab | `Ctrl + Shift + F4` | `Cmd + Shift + F4` |
-|Run SQL Script|`Ctrl + Enter, Shift +Enter`|`Cmd + Enter, Shift +Enter`|
+| Run SQL Script| `Ctrl + Enter, Shift +Enter`|`Cmd + Enter, Shift +Enter`|
 | Search string | `Ctrl + F` |`Cmd + F`|
 | Replace string | `Ctrl + H` | `Cmd + H`|
 | Undo | `Ctrl + Z` |`Cmd + Z`|
