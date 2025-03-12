@@ -39,9 +39,6 @@ In this article, you learn how to get data from OneLake into either a new or exi
 
 1. Choose your **Workspace**, **Lakehouse**, and **File** from the dropdowns.
 
-    > [!NOTE]
-    > You can add up to 10 items of up to 1-GB uncompressed size each.
-
     :::image type="content" source="media/get-data-onelake/configure-tab.png" alt-text="Screenshot of configure tab with Workspace, Lakehouse, and File dropdowns." lightbox="media/get-data-onelake/configure-tab.png":::
 
 1. Select **Next**.
