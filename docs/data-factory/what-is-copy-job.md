@@ -14,7 +14,7 @@ Data Factory in Fabric empowers users to seamlessly integrate data from over 100
 
 ## Advantages of the Copy job
 
-While the Copy activity within data pipelines handles data ingestion with bulk/batch operations, creating data pipelines in Data Factory still proves challenging for many users that are new to the field, with a steeper learning curve. So, we're thrilled to introduce the Copy job, elevating the data ingestion experience to a more streamlined and user-friendly process from any source to any destination. Now, copying your data is easier than ever before. Moreover, Copy job supports various data delivery styles, including both batch copy and incremental copy, offering flexibility to meet your specific needs.
+While the Copy activity within data pipelines handles data ingestion with bulk/batch operations, creating data pipelines in Data Factory still proves to challenge for many users that are new to the field, with a steeper learning curve. So, we're thrilled to introduce the Copy job, elevating the data ingestion experience to a more streamlined and user-friendly process from any source to any destination. Now, copying your data is easier than ever before. Moreover, Copy job supports various data delivery styles, including both batch copy and incremental copy, offering flexibility to meet your specific needs.
 
 :::image type="content" source="media/copy-job/monitor-copy-job.png" lightbox="media/copy-job/monitor-copy-job.png" alt-text="Screenshot showing the Copy job and its results pane.":::
 
@@ -46,9 +46,9 @@ Currently, you can use the Copy job for cloud data transfer or copying data from
 - MySQL
 - Azure MySQL
 
-   > [!NOTE]
-   > - Some connectors do not yet support incremental copy, but those will be available soon.
-   > - The product team is exploring more connector support in a quick way, so [stay tuned for updates](../fundamentals/whats-new.md).
+> [!NOTE]
+> - Some connectors don't yet support incremental copy, but those will be available soon.
+> - The product team is exploring more connector support in a quick way, so [stay tuned for updates](../fundamentals/whats-new.md).
 
 
 ## Copy behavior
@@ -63,14 +63,14 @@ You can choose from the following data delivery styles.
 
 You can also choose how data is written to your destination store.
 
-By default, Copy Job **appends** data to your destination, so that you will not miss any change history. But, you can also adjust the write behavior to **merge** or **overwrite**. When performing a merge, a key column must be provided. By default, the primary key will be used if it has.
+By default, Copy Job **appends** data to your destination, so that you won't miss any change history. But, you can also adjust the update method to **merge** or **overwrite**. When performing a merge, a key column must be provided. By default, the primary key is used if it has.
 
 - When copy data to storage store: New rows from the tables or files are copied to new files in the destination. If a file with the same name already exists on target store, it will be overwritten.
-- When copy data to database: New rows from the tables or files are appended to destination tables. You can change the write behavior to merge (on SQL DB or SQL Server) or overwrite (on Fabric Lakehouse tables).
+- When copy data to database: New rows from the tables or files are appended to destination tables. You can change the update method to merge (on SQL DB or SQL Server) or overwrite (on Fabric Lakehouse tables).
 
 ## Incremental column
 
-In incremental copy mode, you will need to select an incremental column for each table to identify changes. Copy Job uses this column as a watermark, comparing its value with the same from last run in order to copy the new or updated data only. The incremental column has to be a timestamp or an increasing INT.
+In incremental copy mode, you need to select an incremental column for each table to identify changes. Copy Job uses this column as a watermark, comparing its value with the same from last run in order to copy the new or updated data only. The incremental column has to be a timestamp or an increasing INT.
 
 ## Region availability
 
