@@ -13,9 +13,9 @@ ms.search.form: Adding new data connections to User Data Functions
 Fabric User Data Functions provides native data source connections by using the `Manage Connections` feature in the Fabric portal. This feature allows you to connect to your Fabric data sources without having to create connection strings or manage access credentials. 
 
 In this article, you'll learn how to:
-1. Create a new connection for your User Data Functions item. 
-1. Use your new connection in your function code.
-1. Modify or delete your data connection.
+- Create a new connection for your User Data Functions item. 
+- Use your new connection in your function code.
+- Modify or delete your data connection.
 
 ## Supported data source connections in Fabric User Data Functions
 The following data sources are currently supported for Fabric User Data Functions:
@@ -30,25 +30,25 @@ Any data connections you add will be associated with your User Data Functions it
 ### 1. Open the `Manage Connections` menu from your Functions portal
 You will find the **Manage Connections button** in the top bar of the Functions portal editor.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-1.png" alt-text="Portal editor with a highlight on a button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-1.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-1.png" alt-text="Screenshot of portal editor with a highlight on a button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-1.png":::
 
 Once you click on it, this will open a side panel. This panel contains any data connections you created. Click on **Add data connection** to create a new one.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-2.png" alt-text="Manage connections side panel with no connections listed." lightbox="..\media\user-data-functions-manage-connections\manage-connections-2.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-2.png" alt-text="Screenshot of the Manage connections side panel with no connections listed." lightbox="..\media\user-data-functions-manage-connections\manage-connections-2.png":::
 
 ### 2. Select your data connection from the OneLake Catalog
 After clicking on `Add data connection`, you will see the OneLake catalog with a list of all the data sources your user account has access to. This list includes data sources that may be in other Workspaces. This list is also filtered to include the supported data sources only. 
 
 From here, select your data source of choice and **click on the Connect button**.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-3.png" alt-text="OneLake data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-3.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-3.png" alt-text="Screenshot of OneLake data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-3.png":::
 
 > [!NOTE]
 > If you can't find the data source you are looking for, make sure you have the right permissions to connect to it. Alternatively, make sure you are using a supported data source, as listed at the top of this article.
 
 This will create a new connection to the data source you selected and add it to the connections side panel. Once you see this connection, **take note of the Alias field** that was generated. You will need this alias to reference this connection from any function in your User Data Functions item.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-4.png" alt-text="The connections side panel with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\manage-connections-4.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-4.png" alt-text="Screenshot of the connections side panel with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\manage-connections-4.png":::
 
 ### 3. Use your connection alias in your function code
 Once you're back in the portal editor, you can add the alias you created in the `Manage Connections` tab to your code. For example, the following code sample allows you to connect to a SQL Database and run a query:

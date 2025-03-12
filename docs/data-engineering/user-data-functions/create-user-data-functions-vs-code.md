@@ -1,11 +1,11 @@
 ---
-title: Quickstart - Create a new Uuser data functions item in Visual Studio Code
-description: Add a new Uuser data functions item in VS Code 
+title: Quickstart - Create a new User data functions item in Visual Studio Code
+description: Add a new User data functions item in VS Code 
 ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
 ms.date: 03/27/2025
-ms.search.form: Fabric Uuser data functions, VSCode
+ms.search.form: Fabric User data functions, VSCode
 ---
 
 # Create a user data functions item in Visual Studio Code (Preview)
@@ -35,7 +35,7 @@ In this quickstart, you learn how to create a User Data Functions item in Visual
 10. Set the virtual environment for the folder by selecting **Yes**.
 11. Open `function_app.py` to add more than one function.
 
-    :::image type="content" source="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png" alt-text="Screenshot showing an user data functions item opened in VS Code." lightbox="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png":::
+    :::image type="content" source="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png" alt-text="Screenshot showing a user data functions item opened in VS Code." lightbox="..\media\user-data-functions-create-in-vs-code\open-fabric-udf.png":::
 
 ## Write your first function
 Write a user defined data function with `@udf.function()` decorator to define the start of function. You can pass an input for the function such as primitive data types like str, int, float, etc. Within the function, you can write your custom business logic. 
@@ -74,7 +74,7 @@ The user data functions item, opened in VS Code explorer is visible in Local fol
 
 - **Functions**: You can view all the functions that are in your local `function_app.py` file. To start with a sample, right select on **Functions** and select **Add a function** to add a sample function.
 
-    :::image type="content" source="..\media\user-data-functions-create-in-vs-code\add-a-new-function-sample.png" alt-text="Screenshot showing how add a new functions in a user data functions item for local development." lightbox="..\media\user-data-functions-create-in-vs-code\add-a-new-function-sample.png":::
+    :::image type="content" source="..\media\user-data-functions-create-in-vs-code\add-a-new-function-sample.png" alt-text="Screenshot showing how to add a new function in a user data functions item for local development." lightbox="..\media\user-data-functions-create-in-vs-code\add-a-new-function-sample.png":::
 
     To test your function locally, press **F5** to start debugging. You can also select the function item and select **Run and debug**.
 

@@ -38,7 +38,7 @@ In this guide, we will create a new User Data Functions item and write new funct
 
    :::image type="content" source="..\media\user-data-functions-create-in-portal\hello-fabric-template.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="..\media\user-data-functions-create-in-portal\hello-fabric-template.png":::
 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\run-1.png" alt-text="Running a user data function" lightbox="..\media\user-data-functions-create-in-portal\run-1.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\run-1.png" alt-text="Screenshot of portal running a user data function" lightbox="..\media\user-data-functions-create-in-portal\run-1.png":::
 
 ### Programming model key concepts 
 Your User Data Functions use the [User Data Functions Python Programming model](./python-programming-model.md) to create, run, debug and modify individual functions. All the functions within a User data functions item are written to file called `function_app.py` that you can open in VS Code. 
