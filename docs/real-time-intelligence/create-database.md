@@ -94,10 +94,10 @@ You can filter by user, application, and/or query status to refine the database 
 | | Interval | Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, 7 days, and 30 days. |
 | | Refresh | Refresh your histogram.|
 | | Histogram | The query and ingestion data display side by side, with two differnt vertical scales. The ingestion scale is shown on the left of the histogram and the query scale is shown on the right of the histogram. The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time.|
-|**Tables**|
+<!--|**Tables**|
 | | Tables display | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, Caching*, *Retention*, *OneLake* status, and *Created on*. |
 |**Data preview**|
-| | Data preview | Shows a preview of the last 100 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
+| | Data preview | Shows a preview of the last 100 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|-->
 |**Query insights - top 100 queries**|
 | | Daily query duration percentiles over time|  |
 | | Cache hit misses over time|  |
