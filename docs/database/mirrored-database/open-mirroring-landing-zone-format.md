@@ -71,9 +71,9 @@ All the Parquet files written to the landing zone have the following format:
 
 ### Initial load
 
-For the initial load of data into an open mirrored database, all rows should have INSERT as row marker. 
+For the initial load of data into an open mirrored database, `rowMarker` in the initial data file is optional and not recommended. Mirroring treats the entire file as an INSERT when `rowMarker` doesn't exist.
 
-Without `rowMarker` data in a file, mirroring treats the entire file as an INSERT. Having a `rowMarker` is not recommended for the initial data, only for incremental changes. 
+For better performance and accurate metrics, `rowMarker` is a mandatory field only for incremental changes to apply update/delete/upsert operation. 
 
 ### Incremental changes
 
@@ -160,7 +160,7 @@ To rename a column, delete the table folder and recreate the folder with all the
 
 ### Cleanup process
 
-A cleanup process for opening mirroring moves all proceesed files to a separate folder called `_ProcessedFiles`. After 7 days, the files are removed from this folder. 
+A cleanup process for opening mirroring moves all proceesed files to a separate folder called `_ProcessedFiles` or `_FilesReadyToDelete`. After 7 days, the files are removed from this folder. 
 
 ## Next step
 
