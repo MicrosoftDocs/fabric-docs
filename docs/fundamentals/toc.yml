@@ -181,6 +181,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Workspaces created during Fabric preview only support limited OneLake features
+      href: ../known-issues/known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md
+    - name: Spark Job Definition activity incorrectly shows failure status
+      href: ../known-issues/known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md
     - name: AI skill creation fails when tenant settings restricted to security groups
       href: ../known-issues/known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md
     - name: Custom visuals using dialog or download API don't work in February Desktop
