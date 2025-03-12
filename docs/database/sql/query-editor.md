@@ -4,7 +4,7 @@ description: Learn how to use the SQL database query editor in the Microsoft Fab
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen
-ms.date: 12/19/2024
+ms.date: 03/12/2025
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
