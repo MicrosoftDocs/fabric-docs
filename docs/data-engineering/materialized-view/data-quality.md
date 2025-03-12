@@ -68,4 +68,6 @@ ON c.customerID = o.customerID;
 
 To update the Data quality constraints, you need to recreate the MV.
  
-## Next steps
+## Related content
+
+* [Create materiazed view](./create-materialized-view.md)

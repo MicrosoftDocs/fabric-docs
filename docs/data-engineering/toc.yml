@@ -337,15 +337,3 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
-- name: Materialzed view
-  items:
-  - name: Create a Fabric Materialized View 
-    items:   
-    - name: Create a Fabric Materialized View
-      href: ./materialized-view/create-materialized-view.md 
-    - name: Refresh a Fabric Materialized View
-      href: ./materialized-view/refresh-fabric-materialzed-view.md
-  - name: Data quality
-    items:   
-    - name: Data quality in Fabric Materialized View
-      href: ./materialized-view/data-quality.md     

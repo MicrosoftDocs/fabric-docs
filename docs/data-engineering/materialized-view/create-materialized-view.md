@@ -173,12 +173,13 @@ Example
 
 `DROP MATERIALIZED VIEW customers_enriched;`
 
- 
-
 ## Limitations 
 
 * DML statements aren't supported with Materialized Views. 
  
+## Related content
 
+* [Create a workspace](../../fundamentals/create-workspaces.md)
+* [Lakehouse schemas](../lakehouse-schemas.md)
 
 

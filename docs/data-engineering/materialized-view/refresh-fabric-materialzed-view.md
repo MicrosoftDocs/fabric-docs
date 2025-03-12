@@ -29,4 +29,6 @@ FULL: Optional. If the FULL keyword is included in the command, a full refresh i
 
 If the FULL keyword isn't included, the internal service determines, based on the data, whether a full refresh or no refresh should be executed.
 
-## Next steps
+## Related content
+
+* [Create materiazed view](./create-materialized-view.md)
