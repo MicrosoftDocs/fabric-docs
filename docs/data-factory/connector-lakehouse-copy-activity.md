@@ -80,7 +80,7 @@ The following properties are **required**:
     Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can read data from an existing delta Lake table with `delta.columnMapping.mode` set to `name` or `id`.
 
     [Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported 
-    when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your Lakehouse table.
+    when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your Lakehouse table. Rows that are soft deleted are marked in deletion vector files and skipped in the delta lake table reading process. 
 
   - If you select **Files**:
     - **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The following list describes the configuration of each setting：
@@ -152,7 +152,7 @@ The following properties are **required**:
 
     Writer version 2 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
 
-    Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can:
+    [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported. This capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can:
 
     - Write data to an existing delta lake table with `delta.columnMapping.mode` set to `name` or `id`.
     - Auto-create a table with `delta.columnMapping.mode` set to `name` when the destination table does not exist and the source columns include special characters and whitespaces.
