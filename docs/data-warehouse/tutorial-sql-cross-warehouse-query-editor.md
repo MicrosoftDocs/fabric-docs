@@ -77,9 +77,6 @@ In this task, learn how to run the cross-warehouse query. Specifically, you will
 
 1. When execution completes, rename the query as `Cross-warehouse Query`.
 
-> [!NOTE]
-> You can also run cross-warehouse queries that span data from a warehouse in a different workspace. However, cross-warehouse cross-workspace querying is only supported for queries _within the same region_.
-
 ## Next step
 
 > [!div class="nextstepaction"]
