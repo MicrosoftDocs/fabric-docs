@@ -124,7 +124,6 @@ To partition your delta tables, use the [.alter-merge table policy mirroring](/a
 ## Query delta tables
 
 You can use Fabric Notebook to read the Onelake data using the following code snippet.
-In the code snippet, replace `<workspaceGuid>`, `<workspaceGuid>`, and `<tableName>` with your values.
 
   ```python
 delta_table_path = 'abfss://<workspaceGuid>@onelake.dfs.fabric.microsoft.com/<eventhouseGuid>/Tables/<tableName>'
@@ -134,8 +133,13 @@ df = spark.read.format("delta").load(delta_table_path)
 df.show()
    ```
 
+In the code snippet, replace `<workspaceGuid>`, `<workspaceGuid>`, and `<tableName>` with your values.
+
+> [!NOTE]
 > For a Data Explorer database, use this code:
+>
 > delta_table_path = 'abfss://<workspaceName>@onelake.dfs.fabric.microsoft.com/<itemName>.KustoDatabase/Tables/<tableName>'
+>
 > Replace `<workspaceName>`, `<itemName>`, and `<tableName>` with your values.
 
 ## Related content
