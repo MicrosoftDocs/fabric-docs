@@ -12,7 +12,7 @@ ms.search.form: User Data Functions overview
 
 Fabric User Data Functions is a platform that allows you to host and run applications on Fabric. This empowers data developers to write custom logic and embed it into their Fabric ecosystem. This feature supports the [Python 3.11 runtime](https://www.python.org/downloads/release/python-3110/) and allows you to use [public libraries from PyPI](https://pypi.org/). 
 
-:::image type="content" source="..\media\user-data-functions-overview\user_data_functions_overview.gif" alt-text="Animated GIF showing the interface of Fabric User Data Functions." lightbox="..\media\user-data-functions-overview\user_data_functions_overview.gif":::
+:::image type="content" source="..\media\user-data-functions-overview\user-data-functions-overview.gif" alt-text="Animated GIF showing the interface of Fabric User Data Functions." lightbox="..\media\user-data-functions-overview\user-data-functions-overview.gif":::
 
 You can use the native Fabric integrations to connect to your Fabric data sources, such as Fabric Warehouse, Fabric Lakehouse or Fabric SQL Databases, or invoke your functions from Fabric Notebooks, Power BI reports or Data Pipelines. You can edit your functions directly in the Fabric portal using the in-browser tooling, or with the dedicated VS Code extension.
 
