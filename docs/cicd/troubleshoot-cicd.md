@@ -234,7 +234,7 @@ The following conditions must be met in order to see the deployment pipelines bu
 
 * You're an admin of a [workspace](../fundamentals/create-workspaces.md).
 
-* You have [admin permissions](./deployment-pipelines/understand-the-deployment-process.md#permissions) for the deployment pipeline.
+* You have [admin permissions](./deployment-pipelines/understand-the-deployment-process.md#permissions) for the deployment pipeline the workspace is assigned to.
 
 ### I can't see the pipeline stage tag in my workspace
 
