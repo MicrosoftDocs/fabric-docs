@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: concept-article
 ms.custom:
-ms.date: 03/12/2025
+ms.date: 02/12/2025
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview
@@ -42,10 +42,10 @@ The databases page of an eventhouse shows you database information either in lis
 * Database name
 * Database details
 * Database Activity Tracker
-* Query insights - top 100 queries
-<!--* Database tables
+* Database tables
 * Data preview
-* Ingestion failures - add pot-fabcon-->
+* Query insights - top 100 queries
+<!--* Ingestion failures - add pot-fabcon-->
 
 For more information, see [Database details](create-database.md#database-details).
 

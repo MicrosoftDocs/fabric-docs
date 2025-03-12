@@ -93,15 +93,18 @@ You can filter by user, application, and/or query status to refine the database 
 | | Last run | The time when the histogram was last generated.|
 | | Interval | Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, 7 days, and 30 days. |
 | | Refresh | Refresh your histogram.|
-| | Histogram | The query and ingestion data display side by side, with two differnt vertical scales. The ingestion scale is shown on the left of the histogram and the query scale is shown on the right of the histogram. The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time.|
-<!--|**Tables**|
+| | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram. The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. Hover over the histogram to display total rows ingested and total queries per status. |
+|**Tables**|
 | | Tables display | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, Caching*, *Retention*, *OneLake* status, and *Created on*. |
 |**Data preview**|
-| | Data preview | Shows a preview of the last 100 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|-->
+| | Data preview | Shows a preview of the last 100 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
 |**Query insights - top 100 queries**|
 | | Daily query duration percentiles over time|  |
 | | Cache hit misses over time|  |
 | | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
+
+:::image type="content" source="media/histogram-dashboard.png" alt-text="View of hover over histogram showing total ingestion rows and total queries per query status."lightbox="media/histogram-dashboard.png":::<!--Add new image here-->
+
 <!--|**Ingestion failures**|
 | | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
@@ -149,7 +152,7 @@ The center database information pane depicts a histogram of the ingestion data, 
 | | Columns | For each column in a table, shows insights for column values, such as date ranges, minimum and maximum values, or the number of unique values.|
 | | Top 10 | Select a column listed in the *Columns* section to display the top 10 values for that column.|
 
-:::image type="content" source="media/create-database/table-dashboard.png" alt-text="Screenshot of KQL table page showing the table details cards.":::
+:::image type="content" source="media/create-database/table-dashboard.png" alt-text="Screenshot of KQL table page showing the table details cards.":::<!-- TODO: Update the image when dev is complete-->
 
 ## Related content
 
