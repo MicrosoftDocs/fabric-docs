@@ -32,7 +32,7 @@ To install:
 
    The storage location on your PC for the placeholders and any downloaded content is `\%USERPROFILE%\OneLake - Microsoft\`.
 
-Once the application is installed and running, you can see your OneLake data in Windows File Explorer. If you encounter any access errors, you might need to restart your computer for setup to complete.
+Once the application is installed and running, you can see your OneLake data in Windows File Explorer.
 
 Starting in version 1.0.13, the OneLake file explorer app notifies you when a new update is available. When a new version becomes available, you receive a Windows notification and the OneLake icon changes. Right-click on the OneLake icon in the Windows notification area. Select **Update Available** and follow steps to update.
 

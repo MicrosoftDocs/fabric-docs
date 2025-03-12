@@ -53,7 +53,7 @@ In this section, you upload test data into your lakehouse using OneLake file exp
 In this section, you convert the unmanaged CSV files into a managed table using Delta format.
 
 > [!NOTE]
-> Always create, load, or create a shortcut to Delta-Parquet data *directly* under the **Tables** section of the lakehouse. Don't nest your tables in subfolders under the **Tables** section as the lakehouse won't recognize it as a table and will label it as Unidentified.
+> Always create, load, or create a shortcut to Delta-Parquet data *directly* under the **Tables** section of the lakehouse. Don't nest your tables in subfolders under the **Tables** section. The lakehouse doesn't recognize subfolders as tables and labels them as **Unidentified**.
 
 1. In your lakehouse, select **Open notebook**, then **New notebook** to create a notebook.
 
