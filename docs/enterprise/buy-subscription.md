@@ -79,9 +79,10 @@ To buy an Azure SKU, follow these steps:
 6. Select **Review + create**.
 
 ### Fabric quotas
-Microsoft Fabric provides limits (quotas) on how many total Fabric CUs you can provision on your subscription depending on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). The following sections explain how to review your provisioned CU usage in your Azure subscription and how to request a quota increase for Microsoft Fabric.
+Microsoft Fabric provides limits (quotas) on how many total Fabric CUs you can provision on your subscription depending on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). The Fabric Quota determines the maximum size of the capacities you can provision in your subscription. You are charged only for the provisioned capacities, not for the quota itself. In essence, you cannot provision capacities that exceed the quota.
+The following sections explain how to review your provisioned CU usage in your Azure subscription and how to request a quota increase for Microsoft Fabric through the Azure Portal and using Azure Quota APIs
 
-##### Viewing your Fabric CU quota usage
+##### Viewing your Fabric CU quota usage using the Azure Portal
 To view your provisioned CU usage, you must have an Azure account with the contributor role, or another role that includes *contributor* access. Follow these steps to view your Fabric quota usage.
 1. Sign in to the [Azure portal](https://portal.azure.com/#home)
 2. Search for *quotas* and select **Quotas**.
@@ -91,8 +92,10 @@ To view your provisioned CU usage, you must have an Azure account with the contr
    * **Subscription** - Select the subscription you want to see usage for.
    * **Region** - Select the region you want to see usage for.
    * **Usage** - Select *Show all*.
+     ![image](https://github.com/user-attachments/assets/39df7c88-950a-45f2-81f9-7c2a55521b9b)
+
   
-##### Requesting a quota increase
+##### Requesting a quota increase through the Azure Portal
 To request a quota increase, you must have an Azure account with the contributor role, or another role that includes *contributor* access. Follow these steps to submit a request for a quota increase.
 1. Sign in to the [Azure portal](https://portal.azure.com/#home)
 2. Search for *quotas* and select **Quotas**.
@@ -101,9 +104,79 @@ To request a quota increase, you must have an Azure account with the contributor
     * Enter a new limit
     * Adjust the usage %
     * You can also [add **Quotas** to your **Favorites** list](/azure/azure-portal/azure-portal-add-remove-sort-favorites) so that you  can quickly go back to it.
+      ![image](https://github.com/user-attachments/assets/9433b2db-b582-4bc1-b816-65b7fdb0a2fa)
 5. When you're finished, select **Submit**.
 
 Your request will be reviewed, and you'll be notified if the request can be fulfilled. This usually happens within a few minutes. If your request isn't fulfilled, you'll need to open a support request so that a support engineer can assist you with the increase.
+
+##### Viewing or Requesting a quota increase through the APIs
+If you have an automation to provision your capacities or want to check the quota availability or increase it programatically, you may use the Azure Quota APIs to do so. The API documentation is in the [Using Quota APIs doc](/rest/api/quota/?view=rest-quota-2023-02-01#using-quota-apis)
+
+1. **Check your current quota and usage:**
+   Documentation is [here](/fabric-capacities/list-usages?view=rest-microsoftfabric-2025-01-15-preview&tabs=HTTP#code-try-0)
+   While making the get call, there are 4 key parameters - the URI, subscriptionID, location and API Version.
+   Use "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Fabric/locations/{location}/usages?api-version={2023-11-01}" for Subscription URI and "2023-11-01" for Version You will input your subscriptionID and location based on your request.
+   Your response format will be like this:
+   {
+  "value": [
+    {
+      "name": {
+        "value": "CapacityQuota",
+        "localizedValue": "CapacityQuota"
+      },
+      "unit": "CU",
+      "currentValue": 256,
+      "limit": 280,
+      "id": null
+    }
+  ]
+}
+Limit identifies the quota set for your subscription and the "CurrentValue" determines how much has been used. If the new capacity you are provisioning is larger than available quota, then you will need to make a request to increase the quota using the following steps.
+
+2. **Request an increase in quota using API:**
+   You will make the PATCH call to update the quota increased. The quota API URI to be used has the following format: "https://management.azure.com/{SCOPE}/providers/Microsoft.Quota/quotas/{ResourceName}?api-version=2023-02-01". There are 2 main placeholders in the quota API URI that needs to be updated before making the call. "ResourceName" needs to be capacityquota and "SCOPE" needs to be replaced with this: subscriptions/<usbscriptionID>/providers/Microsoft.Fabric/locations/<location>. You will need to update "SubscriptionID and location" with your subscription and location values.
+   The request body will look like this:
+   {
+  "properties": {
+    "limit": {
+      "limitObjectType": "LimitValue",
+      "value": 280   -> Update this to desired quota
+    },
+    "name": {
+      "value": "capacityquota"
+    }
+  }
+}
+
+The "value" is the new quota limit you are requesting, which must be greater than the current limit.
+
+Here is a sample request body:
+{
+  "properties": {
+    "limit": {
+      "limitObjectType": "LimitValue",
+      "limitType": "Independent",
+      "value": 280
+    },
+    "name": {
+      "value": "CAPACITYQUOTA"
+    },
+    "properties": {},
+    "provisioningState": "InProgress",
+    "isQuotaApplicable": true
+  },
+  "id": "/subscriptions/8a70be23-9bdb-4b1a-9739-8a9860597949/providers/Microsoft.Fabric/locations/westcentralus/providers/Microsoft.Quota/quotaRequests/cd32bfd2-8211-4b29-8594-a93e1cafbc15",
+  "type": "Microsoft.Quota/Quotas",
+  "name": "cd32bfd2-8211-4b29-8594-a93e1cafbc15"
+}
+   
+4. **Check the Status of your request**
+You need to check the status using the GET request by updating the SCOPE with your subscriptionID and location -
+Example:
+subscriptions/8a70be23-9bdb-4b1a-9739-8a9860597949/providers/Microsoft.Fabric/locations/westcentralus
+![image](https://github.com/user-attachments/assets/1314d11c-b0ca-450d-9ea4-4648ef426a43)
+
+If it is a failure, you will need to contact support to get the quota increase
 
 ##### Create support request for quota increase
 To request an increase to your quota, do the following:
