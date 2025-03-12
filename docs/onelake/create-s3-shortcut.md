@@ -17,6 +17,8 @@ In this article, you learn how to create an Amazon S3 shortcut inside a Fabric l
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
+You can secure your S3 buckets using customer-managed KMS keys. As long as the IAM user has encrypt/decrypt permissions for the bucket key, OneLake can access the encrypted data in the S3 bucket. For more information, see [Configuring your bucket to use an S3 Bucket Key with SSE-KMS for new objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-bucket-key.html).
+
 ## Prerequisites
 
 - If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).

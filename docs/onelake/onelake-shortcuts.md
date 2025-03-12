@@ -155,7 +155,7 @@ The IAM user must have the following permissions on the bucket that the shortcut
 - `S3:GetBucketLocation`
 - `S3:ListBucket`
 
-S3 shortcuts support S3 buckets that use [S3 Bucket Keys for SSE-KMS encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html). To access data encrypted with SSE-KMS encryption, the user must have encrypt/decrypt permissions for the bucket key, otherwise they receive a **"Forbidden" error (403)**.
+S3 shortcuts support S3 buckets that use S3 Bucket Keys for SSE-KMS encryption. To access data encrypted with SSE-KMS encryption, the user must have encrypt/decrypt permissions for the bucket key, otherwise they receive a **"Forbidden" error (403)**. For more information, see [Configuring your bucket to use an S3 Bucket Key with SSE-KMS for new objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-bucket-key.html).
 
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
