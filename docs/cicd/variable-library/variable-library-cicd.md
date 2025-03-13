@@ -19,7 +19,7 @@ Variable libraries make it easy to manage configurations across different stages
 
 ## Variable libraries and deployment pipelines
 
-Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. Each stage has its own active value set which can be changed at any time.
+Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. Each stage has its own active value set which can be changed at any time. The active value set in each stage is unaffected by deployments.
 
 <!--- * Permissions for Item reference are checked during deployment.
 * --->
