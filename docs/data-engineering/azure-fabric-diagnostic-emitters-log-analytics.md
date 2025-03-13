@@ -219,6 +219,7 @@ Using `spark.synaspe.diagnostic.emitter.*` prefix to configure the Log Analytics
 | `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd`. |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger`. |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match`    | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used`.|
+| `spark.fabric.pools.skipStarterPools`    | Required. This Spark property is used to force an on-demand Spark session. You should set the value to `true` when using the default pool in order to trigger the libraries to emit logs and metrics.|
 
 Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics information.
 
@@ -234,6 +235,7 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
 | `spark.synapse.logAnalytics.filter.eventName.match` | - | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerJobStart,SparkListenerJobEnd`. |
 | `spark.synapse.logAnalytics.filter.loggerName.match` | - | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger`. |
 | `spark.synapse.logAnalytics.filter.metricName.match` | - | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used`. |
+| `spark.fabric.pools.skipStarterPools`    | true | Required. This Spark property is used to force an on-demand Spark session. You should set the value to `true` when using the default pool in order to trigger the libraries to emit logs and metrics.|
 
 > [!NOTE]
 >
