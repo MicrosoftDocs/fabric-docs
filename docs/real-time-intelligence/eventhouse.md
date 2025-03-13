@@ -29,9 +29,9 @@ The system overview page of an eventhouse shows you the following information:
 * Eventhouse storage
 * System resources
 * Compute usage
-* Activity in minutes
+* Top user activity in minutes
 * Ingestion rate
-* Most queried databases
+* Top queried databases
 * Top ingested databases
 * What's new
 

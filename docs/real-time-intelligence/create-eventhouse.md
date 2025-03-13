@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 02/19/2025
+ms.date: 03/13/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an eventhouse for data storage in Real-Time Intelligence so that I can effectively manage my data.
 ---
@@ -25,7 +25,7 @@ In this article, you learn how to create an eventhouse, add new databases to an 
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select **New** > **Eventhouse**.
 
-    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating a new eventhouse item in Real-Time Intelligence." lightbox="media/eventhouse/new-eventhouse.png"::::::
+    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating a new eventhouse item in Real-Time Intelligence." lightbox="media/eventhouse/new-eventhouse.png":::
 
 1. Enter a name for the eventhouse. Both an eventhouse and its default child KQL database are created with the same name. The database name, like all items in Fabric, can be renamed at any time.
 
@@ -48,7 +48,7 @@ In this article, you learn how to create an eventhouse, add new databases to an 
 
 1. The [Database details](create-database.md#database-details) page for your new database opens in the main view area.
 
-    :::image type="content" source="media/eventhouse/database-details.png" alt-text="Screenshot of the database details page for your new database.":::
+    :::image type="content" source="media/eventhouse/database-details.png" alt-text="Screenshot of the database details page for your new database. lightbox="media/eventhouse/database-details.png"":::
 
 To learn more about creating KQL databases, see [Create a KQL database](create-database.md).
 

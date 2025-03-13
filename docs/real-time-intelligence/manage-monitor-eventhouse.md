@@ -79,7 +79,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
 1. From the **Eventhouse** explorer, select **System overview**.
 
-    :::image type="content" source="media/eventhouse/system-overview.png" alt-text="Screenshot of the system overview page in Real-Time Intelligence." lightbox="media/eventhouse/system-overview.png":::
+    :::image type="content" source="media/eventhouse/fabcon-figma.png" alt-text="Screenshot of the system overview page in Real-Time Intelligence." lightbox="media/eventhouse/fabcon-figma.png":::
 
     The system overview page displays the following information:
 
@@ -98,7 +98,7 @@ The system overview page provides a snapshot of the current state of the eventho
     * **Eventhouse storage**: Shows the storage capacity and cache misses of the eventhouse. The storage capacity is divided into categories:
         * **Original size**: The uncompressed original size of the eventhouse.
         * **Compressed size**: The compressed size of the eventhouse, giving you a snapshot of the data footprint.
-        * **Premium**: The total high-performance storage currently in use by this Eventhouse.
+        * **Premium**: The total high-performance storage tier utilized by the Eventhouse and accessed for real-time processing and analysis. For more information, review your [caching policy](data-policies.md#caching-policy).
         <!--  * **Cache misses**
             * **Cache misses**: The current percentage of cache misses from the last hour.
             * **Last 24 hours**: The percentage change from 1 hour to 24 hours ago​.
@@ -112,15 +112,15 @@ The system overview page provides a snapshot of the current state of the eventho
 
         In the case where 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
-    * **Ingestion**: Shows the number of ingested rows and the number of databases along a time line. The information can help you understand the efficiency with which data is being ingested into the eventhouse.
+    * **Ingested Rows**: Shows the number of ingested rows and the number of databases along a time line. The information can help you understand the efficiency with which data is being ingested into the eventhouse.
 
-    * **Compute minutes - top 5 users**: Shows the total compute minutes the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
+    * **Top 5 users activity in minutes**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
 
-    * **Databases**: Lists the most queried and top ingested databases in the eventhouse.
-        * **Most queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses per database. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
-        * **Top ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows.
+    * **Top queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses per database. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
 
-    * **What's new**: Highlights recent eventhouse events, such as the following operations:
+    * **Top ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows.
+
+    * **What's new**: Highlights database owners and recent eventhouse events, such as the following operations:
 
         * Create or delete a database
         * Create, alter, or delete a table
