@@ -111,7 +111,9 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
    > [!NOTE]
    >
-   > Only workspace admins can manage configurations. The values will apply to notebooks and Spark job definitions that attach to Workspace Settings. For more details, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
+   > Only workspace admins can set an environment as the default for a workspace.
+   >
+   > When an environment is set as the workspace default, it applies to all notebooks and Spark job definitions within that workspace, unless a specific environment is specified for them. For more details, refer to [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 **To attach the environment to notebooks or Spark job definitions:**
 1. Navigate to your notebook or Spark job definition in Fabric.
@@ -235,7 +237,7 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
 | `spark.synapse.logAnalytics.filter.eventName.match` | - | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerJobStart,SparkListenerJobEnd`. |
 | `spark.synapse.logAnalytics.filter.loggerName.match` | - | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger`. |
 | `spark.synapse.logAnalytics.filter.metricName.match` | - | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used`. |
-| `spark.fabric.pools.skipStarterPools`    | true | Required. This Spark property is used to force an on-demand Spark session. You should set the value to `true` when using the default pool in order to trigger the libraries to emit logs and metrics.|
+| `spark.fabric.pools.skipStarterPools`    | true | Required. This Spark property is used to force an on-demand Spark session.|
 
 > [!NOTE]
 >

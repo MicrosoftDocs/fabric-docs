@@ -75,7 +75,9 @@ To configure Azure Key Vault for storing the workspace key:
 
    > [!NOTE]
    >
-   > Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
+   > Only workspace admins can set an environment as the default for a workspace.
+   >
+   > When an environment is set as the workspace default, it applies to all notebooks and Spark job definitions within that workspace, unless a specific environment is specified for them. For more details, refer to [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 **To attach the environment to Notebooks or Spark job definitions**:
 
