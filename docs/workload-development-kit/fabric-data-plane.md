@@ -106,12 +106,12 @@ The other way is using the Eventhouse Rest API - [Eventhouse Rest API overview](
 
 ### Query data
 
-In addition query data from an Eventhouse KQL Database, follow these steps: First, authenticate using the appropriate method. Next, connect to the Eventhouse to retrieve the list of databases. Then, query the specific database you want to access. It's important to distinguish between query commands, such as `.show tables`, and data queries, such as `<TableName> | take 10`. For full documentation on the KQL REST API, see [KQL REST API documentation](/kusto/api/rest/?view=microsoft-fabric).
+In addition query data from an Eventhouse KQL Database, follow these steps: First, authenticate using the appropriate method. Next, connect to the Eventhouse to retrieve the list of databases. Then, query the specific database you want to access. It's important to distinguish between query commands, such as `.show tables`, and data queries, such as `<TableName> | take 10`. For full documentation on the KQL REST API, see [KQL REST API documentation](/kusto/api/rest).
 
 The other way is using the Eventhouse Rest API - [Eventhouse Rest API overview](/rest/api/fabric/eventhouse/items).
 1. Authorize.
 1. Acquire a token with *KQLDatabase.ReadWrite.All* scope on behalf of the user using the bearer token passed from the front end.
-1. Use the *Kql* token to call the [KQL Rest API](/kusto/api/rest/?view=microsoft-fabric).
+1. Use the *Kql* token to call the [KQL Rest API](/kusto/api/rest).
 
 ### Writing data 
 
