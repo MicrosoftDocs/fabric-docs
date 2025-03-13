@@ -6,7 +6,7 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom:
-ms.date: 01/16/2025
+ms.date: 03/12/2025
 ---
 
 # Lakehouse tutorial: Ingest data into the lakehouse
@@ -43,17 +43,17 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-http-connection.png" alt-text="Screenshot showing the parameters to configure the Http connection.":::
 
-1. In the next step, enable the **Binary copy** and choose **ZipDeflate (.zip)** as the **Compression type** since the source is a .zip file. Keep the other fields at their default values and click **Next**.
+1. In the next step, enable the **Binary copy** and choose **ZipDeflate (.zip)** as the **Compression type** since the source is a .zip file. Keep the other fields at their default values and select **Next**.
 
     :::image type="content" source="media\tutorial-lakehouse-data-ingestion\select-compression-type.png" alt-text="Screenshot showing how to choose a compression type.":::
 
-1. In the **Connect to data destination** window, specify the **Root folder** as **Files** and click **Next**. This will write the data to the *Files* section of the lakehouse.
+1. In the **Connect to data destination** window, specify the **Root folder** as **Files** and select **Next**. This will write the data to the *Files* section of the lakehouse.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-destination-connection.png" alt-text="Screenshot showing the destination connection settings of the lakehouse.":::
 
-1. Choose the **File format** as **Binary** for the destination. Click **Next** and then **Save+Run**. You can schedule pipelines to refresh data periodically. In this tutorial, we only run the pipeline once. The data copy process takes approximately 10-15 minutes to complete.
+1. Select **Next**, the destination file format is automatically set to **Binary**. Next select **Save+Run**. You can schedule pipelines to refresh data periodically. In this tutorial, we only run the pipeline once. The data copy process takes approximately 10-15 minutes to complete.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-file-format.png" alt-text="Screenshot showing the destination file format.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\copy-activity-summary.png" alt-text="Screenshot showing the copy activity summary.":::
 
 1. You can monitor the pipeline execution and activity in the **Output** tab. You can also view detailed data transfer information by selecting the glasses icon next to the pipeline name, which appears when you hover over the name.
 

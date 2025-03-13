@@ -15,14 +15,15 @@ ms.search.form: AI functions
 
 The `ai.classify` function uses Generative AI to categorize input text according to custom labels you choose—all with a single line of code.
 
-AI functions unlock dynamic insights by putting the power of the Fabric native large language model into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - Visit [this article](./configuration.md) to learn about customizing AI function configurations.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
 > [!TIP]
 > We recommend using the `ai.classify` function with at least two input labels.
@@ -88,7 +89,7 @@ df.ai.classify(labels=["category1", "category2", "category3"], input_col="text",
 
 ### Returns
 
-The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains classification labels that match each input column text row. If a text value can't be classified, the corresponding label is `null`.
+The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains classification labels that match each input text row. If a text value can't be classified, the corresponding label is `null`.
 
 ### Example
 
@@ -117,3 +118,4 @@ display(categories)
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
 - Learn more about the full set of AI functions [here](./overview.md).
 - Learn how to customize the configuration of AI functions [here](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
