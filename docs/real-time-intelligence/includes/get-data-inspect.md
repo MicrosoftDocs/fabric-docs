@@ -7,7 +7,7 @@ ms.topic: include
 ms.custom: 
 ms.date: 03/13/2025
 ---
-You can view, inspect, and configure the ingeted data. The numbers in the image above correspond to the descriptions below.
+You can view, inspect, and configure the ingested data. The numbers in the image correspond to these options:
 
 (1) Select **Command viewer** to view and copy the automatic commands generated from your inputs.
 
