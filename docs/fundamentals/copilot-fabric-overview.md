@@ -7,7 +7,7 @@ ms.reviewer: 'guptamaya'
 ms.custom:
 - copilot-learning-hub
 ms.topic: conceptual
-ms.date: 12/22/2024
+ms.date: 03/13/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -83,7 +83,7 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 
 To access the prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), including the [Copilot in Fabric](copilot-fabric-overview.md), you must have an F64 or higher SKU or a P SKU in the following [Fabric regions](../admin/region-availability.md). The Azure OpenAI Service isn't available on trial SKUs.
 
-[Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) is powered by large language models that are currently only deployed to US datacenters (East US, East US2, South Central US, and West US) and EU datacenter (France Central). If your data is outside the US or EU, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../admin/service-admin-portal-copilot.md).
+The Azure OpenAI Service used to power Fabric Copilot is currently deployed only in US datacenters (East US, East US2, South Central US, and West US) and one EU datacenter (France Central). This differs from the standard Azure OpenAI Service available in the Azure portal, which is accessible in many more regions. For details on standard Azure OpenAI region availability, see [Azure OpenAI Service region availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#model-summary-table-and-region-availability). If your data is outside the US or EU, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../admin/service-admin-portal-copilot.md).
 
 ### Data processing across geographic areas
 
