@@ -95,18 +95,18 @@ Alternatively, if you choose to utilize Azure SQL Database, you can implement th
 1. This connection can now be queried to access data from the Warehouse. For more information on utilizing the *Microsoft.Data.SqlClient* namespace, see [Microsoft.Data.SqlClient Namespace Documentation](/dotnet/api/microsoft.data.sqlclient).
 
 ### Eventhouse API
-Once you authenticate, you can perform action like create Eventhouse, delete Eventhouse, get a list of Eventhouses, etc.
+Once you authenticate, you can perform actions like create Eventhouse, delete Eventhouse, get a list of Eventhouses, etc.
 One way to do it is using the portal - [Eventhouse overview](/fabric/real-time-intelligence/eventhouse).
 
 The other way is using the Eventhouse Rest API - [Eventhouse Rest API overview](/rest/api/fabric/eventhouse/items).
 1. Authorize.
 1. Acquire a token with *FabricEventhouse.Read.All* scope on behalf of the user using the bearer token passed from the front end.
 1. Use the *Fabric* token to call the [Get Eventhouse API](/rest/api/fabric/eventhouse/items/get-eventhouse).
-1. Now with a list of the Databases of the Eventhouse, you can Query the specific DB you want, like described in Query data below.
+1. Now with a list of the Databases of the Eventhouse, you can Query the specific DB you want, as described in the Query data section below.
 
 ### Query data
 
-In addition query data from an Eventhouse KQL Database, follow these steps: First, authenticate using the appropriate method. Next, connect to the Eventhouse to retrieve the list of databases. Then, query the specific database you want to access. It's important to distinguish between query commands, such as `.show tables`, and data queries, such as `<TableName> | take 10`. For full documentation on the KQL REST API, see [KQL REST API documentation](/kusto/api/rest).
+In order to query data from an Eventhouse KQL Database, follow these steps: First, authenticate using the appropriate method. Next, connect to the Eventhouse to retrieve the list of databases. Then, query the specific database you want to access. It's important to distinguish between query commands, such as `.show tables`, and data queries, such as `<TableName> | take 10`. For full documentation on the KQL REST API, see [KQL REST API documentation](/kusto/api/rest).
 
 The other way is using the Eventhouse Rest API - [Eventhouse Rest API overview](/rest/api/fabric/eventhouse/items).
 1. Authorize.
