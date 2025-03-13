@@ -44,7 +44,7 @@ Clicking the button opens a new **Options** dialog. In the vertical menu, select
 
 You can select the OK button to commit these changes.
 
-When this mode is enabled, you'll get a notification in the Manage parameters dialog that reads "Public parameter mode is enabled" at the top of the dialog.
+When this mode is enabled, you get a notification in the Manage parameters dialog that reads "Public parameter mode is enabled" at the top of the dialog.
 
 ![Screenshot of the manage parameters dialog showing the notification that the public parameter mode is enabled](media/dataflow-parameters/manage-parameters-dialog.png)
 
@@ -54,11 +54,11 @@ Once the public parameter mode has been enabled, you can go ahead and save your 
 
 ## Passing custom parameter values for refresh
 
-You can use the Fabric Public REST API to trigger a refresh of your Dataflow Gen2 with CI/CD support and pass parameters.
+You can use the [Fabric Public REST API](https://aka.ms/DFG2PublicParametersAPI) to trigger a refresh of your Dataflow Gen2 with CI/CD support and pass parameters.
 
-For example, you could create a Notebook in Fabric that leverages a PySpark cell and uses a sample code as the one shown below that passes a single parameter with the name Region and the value Western to be refreshed:
+For example, you could create a Notebook in Fabric that applies a PySpark cell and uses a sample code as the one shown below that passes a single parameter with the name Region and the value Western to be refreshed:
 
-```pyspark
+```python
 import sempy.fabric as fabric
 
 client = fabric.FabricRestClient()
@@ -69,11 +69,10 @@ response = client.post(f"/v1/workspaces/{workspace_id}/items/{item_id}/jobs/inst
 print (response)
 ```
 
->[NOTE]
-> Native experiences within Fabric to trigger the refresh of a Dataflow by passing parameters will be enabled later in the calendar year 2025.
+>[!NOTE]
+> Native experiences within Fabric to trigger the refresh of a Dataflow by passing parameters will come later in the calendar year 2025.
 
 The public parameter mode follows the definition of the parameters for the Dataflow where there's a distinction between required and nonrequired parameters.
 
 * **Required parameters**: if a parameter is set as required, in order to refresh the Dataflow a value needs to be passed to the refresh job. The refresh fails if no value is passed for a parameter that is set to required.
-* **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a refresh to be triggered. If no value is passed, the **Current value** defined within your parameter will be used for refresh. However, you can always pass an override value which is used for refresh.
-
+* **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a refresh to be triggered. If no value is passed, the **Current value** defined within your parameter used for refresh. However, you can always pass an override value which is used for refresh.
