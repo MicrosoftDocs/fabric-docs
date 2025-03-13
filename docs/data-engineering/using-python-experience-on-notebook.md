@@ -116,7 +116,7 @@ Similar with personalizing a [Spark session configuration](author-execute-notebo
 Here are the supported properties in Python notebook **%%configure**:
 
 ```JSON
-%%configure
+%%configure -f
 {
     "vCores": 4, // Recommended values: [4, 8, 16, 32, 64], Fabric will allocate matched memory according to the specified vCores.
     "defaultLakehouse": {  
