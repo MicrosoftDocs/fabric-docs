@@ -11,13 +11,13 @@ ms.search.form: Variable library overview
 #customer intent: As a developer, I want to learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize my stages so that I can manage my content lifecycle.
 ---
 
-# What is a Fabric Variable library? (preview)
+# What is a Variable library? (preview)
 
-The Microsoft Fabric Variable Library presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the fabric that contains a list of variables, along with their respective values for each stage of the release pipeline.
+The Microsoft Fabric Variable Library presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline.
 
 The Fabric Variable library:
 
-* Is compatible with CI/CD processes, allowing integration with Git and deployment through Deployment pipelines.
+* Is compatible with CI/CD processes, allowing [integration with Git](../git-integration/intro-to-git-integration.md) and deployment through [Deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md).
 * Supports automation via Microsoft Fabric public APIs.
 
 > [!NOTE]
@@ -50,9 +50,9 @@ Variable libraries contain one or more variables. Each variable has a name, type
 The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets-optional).  
 All variables must have a default value. If the variable type is *String*, the default value can be null.
 
-### Alternative value sets (optional)
+### Alternative value sets
 
-Value sets are additional sets of values for the Variable library item. You can have multiple value sets for each Variable library item, and choose which one to use in each stage by setting it to be active. The active (or effective) value set is the one that is used in the current workspace stage. An active value set of a Variable library isn't changed during deployment or update from Git.
+Value sets define the values of each variable in the Variable library. A Variable library typically contains multiple value sets. Choose which value set to use in each workspace by setting it to be active. The active (or effective) value set is the one that is used in the current workspace stage. An active value set of a Variable library isn't changed during deployment or update from Git.
 
 :::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of variable library with several alternative value sets.":::
 
@@ -65,6 +65,10 @@ The following items support the Variable library:
 * Data pipeline
 <!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Notebook --->
+
+## Considerations and limitations
+
+ [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
 
 ## Related content
 
