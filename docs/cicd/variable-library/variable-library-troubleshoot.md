@@ -3,7 +3,7 @@ title: Troubleshoot Variable libraries
 description: "[Article description]."
 author: mberdugo
 ms.author: monaberdugo
-ms.service: Fabric
+ms.service: fabric
 ms.topic: troubleshooting-problem-resolution #Don't change.
 ms.date: 02/16/2025
 

@@ -86,7 +86,7 @@ Now that we have our sample data, create a new workspace that will contain the V
 
 ### Declare the variables
 
-Now that the value-sets are defined, we [declare the variables](../../data-factory/activity-overview.md#adding-activities-to-a-pipeline-with-the-include-product-name-ui) in the pipeline so that we can use them in the pipeline stages.
+Now that the value-sets are defined, we [declare the variables](../../data-factory/activity-overview.md#adding-activities-to-a-pipeline-with-the--ui) in the pipeline so that we can use them in the pipeline stages.
 
 1. In the data pipeline, click on the canvass to open the pipeline settings.
 1. Select the **Library variables** tab.
