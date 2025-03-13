@@ -32,7 +32,7 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 * **The public parameters mode allows users to modify the logic defined within the Dataflow by overriding the parameter values.** It  would allow others who have permissions to the Dataflow to refresh the data with other values, resulting in different outputs from the data sources used in the Dataflow.
 * **Refresh history doen't display information about the parameters passed during the invocation of the Dataflow.**
 * **Monitoring hub doen't display information about the parameters passed during the invocation of the Dataflow.**
-* **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. However, it is highly encouraged to use explicit data destinations when leveraging the public parameters mode.
+* **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. However, it's highly encouraged to use explicit data destinations when using the public parameters mode.
 
 ## Enabling the public parameter mode
 
@@ -72,7 +72,7 @@ print (response)
 ```
 
 >[!NOTE]
-> Native experiences within Fabric to trigger the refresh of a Dataflow by passing parameters will come later in the calendar year 2025.
+> Native experiences within Fabric to trigger the refresh of a Dataflow by passing parameters come later in the calendar year 2025.
 
 The public parameter mode follows the definition of the parameters for the Dataflow where there's a distinction between required and nonrequired parameters.
 
