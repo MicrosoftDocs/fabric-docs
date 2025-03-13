@@ -103,7 +103,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 > [!NOTE]
 >
-> The Azure Eventhub instance connection string should always contains the `EntityPath`, which is the name of the Azure Event Hubs instance.
+> The Azure EventHub instance connection string should always contain the `EntityPath`, which is the name of the Azure Event Hubs instance.
 
 ## Log data sample
 
