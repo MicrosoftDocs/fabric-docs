@@ -86,15 +86,13 @@ Now that we have our sample data, create a new workspace that will contain the V
 
 ### Declare the variables
 
-Now that the value-sets are defined, we declare the variables in the pipeline so that we can use them in the pipeline stages.
+Now that the value-sets are defined, we [declare the variables](../../data-factory/activity-overview.md#adding-activities-to-a-pipeline-with-the-include-product-name-ui) in the pipeline so that we can use them in the pipeline stages.
 
 1. In the data pipeline, click on the canvass to open the pipeline settings.
 1. Select the **Library variables** tab.
 1. Enter a name for each variable, and enter its library, variable name and type.
 
 :::image type="content" source="./media/tutorial-variable-library/declare-variable-library.png" alt-text="Screenshot of the data pipeline settings.":::
-
-### Set rules for the active value-set
 
 ## Step 4: Set the source and destination in the lakehouse
 
