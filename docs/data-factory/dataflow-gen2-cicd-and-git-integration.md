@@ -6,7 +6,7 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
 ms.custom:
-ms.date: 02/13/2025
+ms.date: 03/13/2025
 ---
 
 # Dataflow Gen2 with CI/CD and Git integration support (Preview)
@@ -98,6 +98,10 @@ To view the refresh history of the dataflow, you can either select the refresh h
 ## Settings for Dataflow Gen2 with CI/CD
 
 Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is similar to any other Fabric item. You can access the settings by selecting the more options ellipsis icon next to the dataflow and selecting the settings.
+
+## Saving replaces the publish operation
+
+With Dataflow Gen2 with CI/CD and Git support, the save operation replaces the publish operation. This means that when you save your dataflow, it automatically "publishes" the changes to the dataflow. This is a significant change from the previous version of Dataflow Gen2, where you had to explicitly publish your changes. The saving operation is directly overwriting the dataflow in the workspace. If you want to discard the changes, you can do that by selecting the **Discard changes** when closing the editor. During the save operation we also check if the dataflow is in a valid state. If the dataflow is not in a valid state, we will show an error message in the dropdown menu in the workspace view. We determine the validity of the dataflow by running a "zero row" evaluation for all the queries in the dataflow. This means that we run all the queries in the dataflow with a zero row input to check if the dataflow is valid and what the schema of the queries are. If an error occurs or the schema is not determined within 10 minutes, we will result into an invalid state and use the former saved version of the dataflow for the next refresh.
 
 ## Limitations and known issues
 
