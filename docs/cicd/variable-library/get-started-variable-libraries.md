@@ -29,6 +29,10 @@ To create Variable library items in Fabric, you need:
 
   These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your [organization's settings](../../admin/delegate-settings.md).
 
+## Before you begin
+
+Before you create a Variable library, make sure you understand who will have [permission](./variable-library-permissions.md) to access it.
+
 ## Create a Variable library item
 
 You can create a Variable library item from the Fabric home page or from inside your workspace.
@@ -72,7 +76,7 @@ To add a new variable to the library:
 
 1. Select **+ New variable**
 1. Enter a name (make sure it follows the [naming conventions](./variable-types.md#variable-name))
-1. Select a type from the drop-down list
+1. Select a type from the drop-down list (See a list of [suppoerted variable types](./variable-types.md#variable-types))
 1. Enter a default value
 1. Add a note explaining what the variable is for or how to use it (optional)
 1. Select **Save**
@@ -117,8 +121,3 @@ To reset a variable value of each variable to the default value, select the rese
 ## Considerations and limitations
 
  [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
-
-## Related content
-
-* [Related article title](link.md)
-* [Related article title](link.md)

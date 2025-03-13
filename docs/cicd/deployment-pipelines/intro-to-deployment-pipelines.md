@@ -56,7 +56,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Semantic model (that originates from a .pbix file and isn't a PUSH dataset)
 * SQL database *(preview)*
 * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
-* [Variable libraries](../variable-library/variable-library-cicd.md) *(preview)*
+* [Variable libraries](../variable-library/variable-library-cicd.md#variable-libraries-and-deployment-pipelines) *(preview)*
 
 ## Pipeline structure
 

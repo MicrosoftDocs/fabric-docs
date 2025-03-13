@@ -21,8 +21,3 @@ ms.date: 02/16/2025
 * The name of each value set must be unique within the Variable library.
 * Variable names must be unique within a Variable library. You can have two variables with the same name in a workspace if they are in different items.
 * There is one and only one active value set in a Variable library at a time. You can't delete the active value set. To delete it, first set another value set to be active. You can set a different active value set for each stage of a deployment pipeline.
-
-### Automation considerations
-
-* Item names and variable names are *not* case sensitive. Therefore, when a consumer item requests a variable’s value resolution, we return the value even if the case doesn't match.
-

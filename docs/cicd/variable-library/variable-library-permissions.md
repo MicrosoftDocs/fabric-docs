@@ -19,7 +19,7 @@ This article explains who can access Variable libraries and their values.
 
 ## Variable library item permissions
 
-The Microsoft Fabric Variable library permissions are aligned with the Fabric workspace model. Permissions are according to your workspace role, or the Variable library can be shared directly. 
+The Microsoft Fabric Variable library permissions are aligned with the Fabric workspace model. Permissions are according to your workspace role, or the Variable library can be shared directly.
 
 Workspace role | Permissions
 ---------------|------------

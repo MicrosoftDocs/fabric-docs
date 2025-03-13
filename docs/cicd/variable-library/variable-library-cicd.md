@@ -24,7 +24,7 @@ Variable libraries and their values can be deployed in deployment pipelines to m
 <!--- * Permissions for Item reference are checked during deployment.
 * --->
 
-If you update the Variable library variables or value sets, the item will appear as different in a granular compare.
+If you update the Variable library variables or value set, the item will appear as different in a when you [compare](../deployment-pipelines/compare-pipeline-content.md) them.
 For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
 
 * added, deleted or edited variables
@@ -32,9 +32,9 @@ For example, the following changes in the Variable library are reflected as *dif
 * names of variables
 * order of variables
 
-:::image type="content" source="./media/variable-library-cicd/variable-library-compare.png" alt-text="Screenshot of granular compare in deployment pipelines with the variable library showing as different in the two stages.":::
+:::image type="content" source="./media/variable-library-cicd/variable-library-compare.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages.":::
 
-Changes to the active value set doesn't register as in a *different* in the granular compare since the active value set is not stored in the deployment pipeline, and not in the Variable library itself.
+Changes to the **active** value set doesn't register as in a *different* when you compare since the active value set is stored in the deployment pipeline, and not in the Variable library itself.
 
 ## Variable libraries and Git integration
 

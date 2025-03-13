@@ -58,7 +58,7 @@ The value set names have the same restrictions as [variable names](#variable-nam
 ## Variable types
 
 Before you can add a value to a variable, you must define the variable type.
-The variables in the Variable library can be any of the following basic types:
+The variables in the Variable library can be any of the following types:
 
 - String: Any character Can be null or empty.
 - Boolean: *True* or *False*.
