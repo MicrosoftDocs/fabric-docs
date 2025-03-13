@@ -31,24 +31,24 @@ When you use a Starter Pool **without any extra library dependencies or custom S
 However, there are several scenarios where your session might take longer to start:
 
 1. **You have custom libraries or Spark properties**  
-   If you've configured libraries or custom settings in your environment, Spark has to personalize the session once it's created. This process can add around **2 to 5 minutes** to your startup time, depending on the number and size of your library dependencies.
+   If you've configured libraries or custom settings in your environment, Spark has to personalize the session once it's created. This process can add around **30 seconds to 5 minutes** to your startup time, depending on the number and size of your library dependencies.
 
 2. **Starter Pools in your region are fully used**  
-   In rare cases, a region's Starter Pools might be temporarily exhausted due to high traffic. When that happens, Fabric spins up a **new cluster** to accommodate your request, which takes about **2 to 5 minutes**. Once the new cluster is available, your session starts. If you also have custom libraries to install, you need to add the additional **2 to 5 minutes** required for personalization.
+   In rare cases, a region's Starter Pools might be temporarily exhausted due to high traffic. When that happens, Fabric spins up a **new cluster** to accommodate your request, which takes about **2 to 5 minutes**. Once the new cluster is available, your session starts. If you also have custom libraries to install, you need to add the additional **30 seconds to 5 minutes** required for personalization.
 
 3. **Advanced networking or security features (Private Links or Managed VNets)**  
-   When your workspace has networking features such as **Tenant Private Links** or **Managed VNets**, Starter Pools aren't supported. In this situation, Fabric must create a cluster on demand, which adds **2 to 5 minutes** to your session start time. If you also have library dependencies, that personalization step can again add another **2 to 5 minutes**.
+   When your workspace has networking features such as **Tenant Private Links** or **Managed VNets**, Starter Pools aren't supported. In this situation, Fabric must create a cluster on demand, which adds **2 to 5 minutes** to your session start time. If you also have library dependencies, that personalization step can again add another **30 seconds to 5 minutes**.
 
 Here are a few example scenarios to illustrate potential start times:
 
 | Scenario                                           | Typical Startup Time                                     |
 |----------------------------------------------------|----------------------------------------------------------|
 | **Default settings, no libraries**                 | 5 – 10 seconds                                           |
-| **Default settings + library dependencies**        | 5 – 10 seconds + 2 – 5 min (for library setup)           |
+| **Default settings + library dependencies**        | 5 – 10 seconds + 30 seconds – 5 min (for library setup)           |
 | **High traffic in region, no libraries**           | 2 – 5 minutes                                            |
-| **High traffic + library dependencies**            | 2 – 5 minutes + 2 – 5 min (for libraries)                |
+| **High traffic + library dependencies**            | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
 | **Network security (Private Links/VNet), no libraries**  | 2 – 5 minutes                                            |
-| **Network security + library dependencies**        | 2 – 5 minutes + 2 – 5 min (for libraries)                |
+| **Network security + library dependencies**        | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
 
 
 
