@@ -23,7 +23,7 @@ ms.date: 03/14/2025
     1. For **Connection name**, enter a name for the connection to the MQTT. 
     1. Enter the **Username** and **Password** for the MQTT broker. 
 
-        :::image type="content" source="./media/mqtt-source-connector/connection-settings.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted.":::  
+        :::image type="content" source="./media/mqtt-source-connector/connection-settings.png" alt-text="Screenshot that shows the Connection settings section.":::  
     1. Select **Connect**. 
 1. Now, on the Connect page of the wizard, you must enter a single **Topic name**. Multiple topics aren't supported yet. 
 1. For **Version**, only MQTT **V5** is currently supported. 

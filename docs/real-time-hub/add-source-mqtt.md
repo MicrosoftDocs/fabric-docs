@@ -10,13 +10,13 @@ ms.date: 03/14/2025
 # Add an MQTT topic as source in Real-Time hub
 This article describes how to add an MQTT topic as an event source in Fabric Real-Time hub. 
 
-[!INCLUDE [mqtt-source-description-prerequisites](./includes/mqtt-source-description-prerequisites.md)]
+[!INCLUDE [mqtt-source-description-prerequisites](../real-time-intelligence/event-streams/includes/mqtt-source-description-prerequisites.md)]
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add MQTT topic as a source
 
-[!INCLUDE [mqtt-source-connector](./includes/mqtt-source-connector.md)]
+[!INCLUDE [mqtt-source-connector](../real-time-intelligence/event-streams/includes/mqtt-source-connector.md)]
 
 ## View data stream details
 
