@@ -16,11 +16,11 @@ ms.date: 03/14/2025
 
     If there's an existing connection to your Solace PubSub+ source, select that existing connection. 
 1. In the **Connection settings** section, follow these steps:
-    1. For Solace PubSub+ broker URL, enter the SMF URI, starting with ‘tcp://’. 
+    1. For Solace PubSub+ broker URL, enter the SMF URI, starting with `tcp://`. 
 
         > [!NOTE]
         > The Solace PubSub+ source currently supports only the PLAIN-TEXT Solace Message Format (SMF) protocol between your Solace PubSub+ broker and Eventstream. Support for secured SMF over TLS/SSL will be available soon. 
-    1. For **Connection name**,enter a name for the connection to the Solace PubSub+. 
+    1. For **Connection name**, enter a name for the connection to the Solace PubSub+. 
     1. Enter the **Username** and **Password** for the Solace PubSub+ client. 
 
         :::image type="content" source="./media/solace-pub-sub-source-connector/connection-settings.png" alt-text="Screenshot that shows the Connection settings section.":::  
@@ -29,9 +29,9 @@ ms.date: 03/14/2025
     - If you selected **Queue** as the Solace PubSub+ type, make sure the queue exists, and enter the **Queue name**. 
     
         > [!NOTE]
-        > If you are not the owner of the queue, ensure you have the appropriate permission, specifically Consume, Modify Topic and Delete are valid, while No Access and Read Only do not work. 
+        > If you aren't the owner of the queue, ensure you have the appropriate permission, specifically Consume, Modify Topic and Delete are valid, while No Access and Read Only don't work. 
     - If you selected **Topic**, enter the **Topic name**. You can enter multiple topic names separated by commas.  
-1. Enter the **Message vpn name**, ensure you have appropriate permissions on the Message VPN.
+1. Enter the **Message vpn name**. Ensure you have appropriate permissions on the Message VPN.
 1. Then, select **Next**
 
     :::image type="content" source="./media/solace-pub-sub-source-connector/configure-solace-pub-sub-source.png" alt-text="Screenshot that shows the Configure Solace PubSub+ data source section." lightbox="./media/solace-pub-sub-source-connector/configure-solace-pub-sub-source.png":::                
