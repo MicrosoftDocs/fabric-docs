@@ -124,7 +124,7 @@ To use a Fabric Environment in a Livy Spark batch session, simply update the jso
         "spark.targetLakehouse": "Fabric_LakehouseID",
          "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
       }
-   }
+    }
     ```
 
 ## How to monitor the request history
