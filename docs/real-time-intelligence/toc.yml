@@ -336,7 +336,7 @@ items:
       href: vector-database.md
     - name: "Tutorial: Use an Eventhouse as a vector database"
       href: vector-database-eventhouse.md
-  - name: Timeseries anomaly detection
+  - name: Time series anomaly detection
     items:
     - name: Univariate anomaly detection and forecasting
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
