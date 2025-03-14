@@ -115,6 +115,8 @@ items:
         href: event-streams/add-source-fabric-job.md
       - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
+      - name: MQTT
+        href: event-streams/add-source-mqtt.md
     - name: Add destinations to eventstreams
       items:
       - name: Add and manage a destination
@@ -334,7 +336,7 @@ items:
       href: vector-database.md
     - name: "Tutorial: Use an Eventhouse as a vector database"
       href: vector-database-eventhouse.md
-  - name: Timeseries anomaly detection
+  - name: Time series anomaly detection
     items:
     - name: Univariate anomaly detection and forecasting
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
