@@ -110,7 +110,7 @@ The following properties are **required**:
         - **Partition root path**: When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns.
       - **Max concurrent connections**: Indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-## Destination
+### Destination
 
 The following properties are supported for Lakehouse under the **Destination** tab of a copy activity.
 
