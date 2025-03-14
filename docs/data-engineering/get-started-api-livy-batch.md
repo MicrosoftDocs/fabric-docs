@@ -103,7 +103,6 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
 ```python
-
     from msal import PublicClientApplication
     import requests
     import time
@@ -159,7 +158,6 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 1. Add another notebook cell and insert this code.
 
 ```python
-
     # call get batch API
 
     get_livy_get_batch = livy_base_url
@@ -181,7 +179,6 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 1. Add another notebook cell and insert this code.
 
 ```python
-
     # submit payload to existing batch session
 
     print('Submit a spark job via the livy batch API to ') 

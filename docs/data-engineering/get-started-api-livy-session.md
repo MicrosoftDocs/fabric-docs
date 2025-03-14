@@ -52,7 +52,6 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
 ```python
-
     from msal import PublicClientApplication
     import requests
     import time
@@ -65,7 +64,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     app = PublicClientApplication(
         client_id,
         authority="https://login.microsoftonline.com/"Entra_TenantID"
-        )
+    )
 
     result = None
 
@@ -107,7 +106,6 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 1. Add another notebook cell and insert this code.
 
 ```python
-
     create_livy_session = requests.post(livy_base_url, headers=headers, json={})
     print('The request to create the Livy session is submitted:' + str(create_livy_session.json()))
 
@@ -140,7 +138,6 @@ By default, this Livy API session runs against the default starter pool for the 
 1. Add another notebook cell and insert this code.
 
 ```python
-
     # call get session API
     livy_session_id = create_livy_session.json()['id']
     livy_session_url = livy_base_url + "/" + livy_session_id
@@ -185,7 +182,6 @@ By default, this Livy API session runs against the default starter pool for the 
 1. Add another notebook cell and insert this code.
 
 ```python
-
     # call get session API
 
     livy_session_id = create_livy_session.json()['id']
@@ -231,7 +227,6 @@ By default, this Livy API session runs against the default starter pool for the 
 1. Add another notebook cell and insert this code.
 
 ```python
-
     # call get session API with a delete session statement
 
     get_session_response = requests.get(livy_session_url, headers=headers)
